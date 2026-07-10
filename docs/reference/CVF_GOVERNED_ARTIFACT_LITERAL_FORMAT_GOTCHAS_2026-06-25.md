@@ -453,6 +453,26 @@ runtime/product code, and does not itself implement or modify any checker.
     before the Agent Handoff Contract Control Block table. Do not rename the
     contract, and do not cite it as the active handoff.
 
+44. **A helper that generates a governed artifact skeleton can silently drift
+    from the checker it is meant to satisfy.** MSEA-R91 found that
+    `governance/compat/run_worker_return_scaffold.py`'s emitted worker-return
+    skeleton was missing `Self-declared worker-return artifact: yes`,
+    `Responds to work order:`, `## Checker Source Read-Ahead Block`,
+    `## git status --short`, `## Changed Files`, and `## No-Commit
+    Statement` - all required by `check_worker_return_quality_gate.py`'s
+    `REQUIRED_HEADINGS`/`SELF_DECLARE_MARKER`/`RESPONDS_MARKER` - while a
+    second, comparison scaffold builder
+    (`governance/compat/build_worker_return_skeleton_scaffold.py`) already
+    emitted the correct shape. When two generators exist for the same
+    governed output, diff their emitted text against the current checker
+    constants directly; do not assume a scaffold is correct just because it
+    once passed, or because a sibling generator for a related packet type
+    passes. Separately, a worker return is not finished merely because the
+    scaffold's headings are present - every `TODO_PASS_FAIL_BLOCKED`,
+    `TODO_YES_NO`, and similar placeholder must be replaced with the actual
+    first-run and final-run result captured after edits are complete, not
+    left as the value the scaffold was generated with.
+
 ## When This Checklist Is Not Enough
 
 This file only captures gotchas already observed. It is not a substitute

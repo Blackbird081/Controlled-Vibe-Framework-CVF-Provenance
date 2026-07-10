@@ -39,6 +39,70 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
         self.assertIn("python governance/compat/run_worker_return_fast_gate.py", text)
         self.assertIn("Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason", text)
 
+    def test_full_scaffold_has_shared_checker_required_envelope(self):
+        """Both profiles must open with the exact shared marker/heading envelope
+        the worker-return quality checker requires (REQUIRED_HEADINGS parity)."""
+        text = scaffold.build_scaffold("Example Worker Return")
+        self.assertIn("Self-declared worker-return artifact: yes", text)
+        self.assertIn("Responds to work order:", text)
+        self.assertIn("## Checker Source Read-Ahead Block", text)
+        self.assertIn("## git status --short", text)
+        self.assertIn("## Changed Files", text)
+        self.assertIn("## No-Commit Statement", text)
+        self.assertIn("WORKER_MUST_NOT_COMMIT honored", text)
+
+    def test_compact_scaffold_has_shared_checker_required_envelope(self):
+        """The compact profile must preserve the exact same shared envelope as
+        full, per FAST_DOC_REQUIRED_HEADINGS parity in the checker."""
+        text = scaffold.build_scaffold(
+            "Fast Doc Worker Return", scaffold.FAST_DOC_PROFILE
+        )
+        self.assertIn("Self-declared worker-return artifact: yes", text)
+        self.assertIn("Responds to work order:", text)
+        self.assertIn("## Checker Source Read-Ahead Block", text)
+        self.assertIn("## git status --short", text)
+        self.assertIn("## Changed Files", text)
+        self.assertIn("## No-Commit Statement", text)
+        self.assertIn("WORKER_MUST_NOT_COMMIT honored", text)
+
+    def test_checker_read_ahead_table_has_all_four_required_fields(self):
+        text = scaffold.build_scaffold("Example Worker Return")
+        section_start = text.index("## Checker Source Read-Ahead Block")
+        section_end = text.index("## Gate Evidence", section_start)
+        section = text[section_start:section_end]
+        for required_field in (
+            "applicableCheckersRead",
+            "literalTokensReviewed",
+            "gateRunPurpose",
+            "claimBoundary",
+        ):
+            self.assertIn(f"| {required_field} |", section)
+        self.assertNotIn("first discovery", section.casefold())
+
+    def test_command_evidence_carries_finalization_instruction(self):
+        text = scaffold.build_scaffold("Example Worker Return")
+        section_start = text.index("## Command Evidence")
+        section_end = text.index("## No-Commit Statement", section_start)
+        section = text[section_start:section_end]
+        self.assertIn("LAST-MILE FINALIZATION", section)
+        self.assertIn("actual first-run and final-run", section)
+        self.assertIn("Do not leave a scaffold", section)
+
+    def test_compact_scaffold_still_consolidates_conditional_controls_only(self):
+        """Compact must add exactly the three-heading consolidation on top of the
+        shared envelope; it must not gain any other eligibility-widening shape."""
+        full_sections = set(scaffold.WORKER_RETURN_SCAFFOLD_SECTIONS)
+        compact_sections = set(scaffold.FAST_DOC_SCAFFOLD_SECTIONS)
+        self.assertEqual(
+            full_sections - compact_sections,
+            {
+                "External Knowledge Intake Routing",
+                "Rescan Intelligence Hardening",
+                "Corpus Completeness And Report Integrity",
+            },
+        )
+        self.assertEqual(compact_sections - full_sections, set())
+
     def test_external_knowledge_intake_routing_uses_required_row_label_shape(self):
         text = scaffold.build_scaffold("Example Worker Return")
         section_start = text.index("## External Knowledge Intake Routing")

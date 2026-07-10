@@ -198,6 +198,45 @@ captured `executionBaseHead` and current `HEAD`, for example:
 The purpose of the gate run is confirmation/evidence after reading checker
 source, not first discovery of required literal tokens.
 
+### Last-Mile Finalization Discipline
+
+Do not return a packet while any scaffold placeholder remains -
+`TODO_PASS_FAIL_BLOCKED`, `TODO_YES_NO`, `TODO_NONE_OR_SECTION`,
+`TODO_NUMBER`, `TODO: fill before review`, `TODO_MATCH_OR_EXPLAIN`, or any
+other bracketed TODO token. Before returning for review:
+
+- Run the worker-return fast gate at least twice: once mid-draft to catch
+  gate-shape defects early, and once as the final run whose actual result
+  (not a placeholder) is recorded in `## Gate Evidence` and
+  `## Command Evidence`.
+- Replace every `Status:`, changed-set, and diff-evidence placeholder with
+  the real value captured after edits are complete, not the value captured
+  when the scaffold was first generated.
+- Confirm the final `git status --short` and `git diff --name-status`
+  output pasted into the packet reflects the actual final worktree state,
+  not an earlier snapshot.
+
+### Corpus Reconciliation Literal Shapes
+
+When a changed `docs/reviews/` worker return also carries a
+`## Corpus Completeness And Report Integrity` claim (not the compact
+`NOT_APPLICABLE_WITH_REASON` disposition), `check_corpus_completeness_report_integrity.py`
+enforces exact literal shapes that are easy to get wrong on the first pass:
+
+- The `Reconciliation:` line must contain all four bare markers
+  `manifest=`, `ledger_terminal=`, `exclusions=`, and `unresolved=` on the
+  same line, for example `Reconciliation: manifest=16, ledger_terminal=16,
+  exclusions=0, unresolved=0.`
+- `Declared exclusions:` and `Unreadable or unsupported files:` must be a
+  bare none-like value when there are none - `none`, `n/a`, or `0` (with or
+  without a trailing period) - not a sentence such as `none; the reason is
+  ...`. The checker's `_is_none_like` comparison only accepts the bare
+  token, so any explanatory clause after `none`/`0` fails the check even
+  though it reads naturally.
+- `COMPLETE_VERIFIED` requires both `Declared exclusions:` and
+  `Unreadable or unsupported files:` to be none-like; use
+  `COMPLETE_WITH_DECLARED_EXCLUSIONS` instead when a real exclusion exists.
+
 ### Work-Order Dispatch Contract
 
 No-commit work orders should cite the compact worker-return full-gate profile

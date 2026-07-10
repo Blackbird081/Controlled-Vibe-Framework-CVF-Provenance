@@ -29,6 +29,7 @@ WORKER_RETURN_SCAFFOLD_SECTIONS = (
     "Findings / Position",
     "Risk / Corrective Action",
     "Claim Boundary",
+    "Checker Source Read-Ahead Block",
     "Gate Evidence",
     "Actual Changed Set",
     "Core Guard Self-Protection Authorization",
@@ -43,7 +44,10 @@ WORKER_RETURN_SCAFFOLD_SECTIONS = (
     "Agent Operation Trace Block",
     "Delta Execution Claim Boundary Control Block",
     "Public Export Disposition",
+    "git status --short",
+    "Changed Files",
     "Command Evidence",
+    "No-Commit Statement",
     "Machine Closure Package",
 )
 FAST_DOC_SCAFFOLD_SECTIONS = tuple(
@@ -74,6 +78,15 @@ def _section_body(section: str) -> list[str]:
             "- `TODO/path/to/changed-file.ext`",
             "",
             "List real paths; do not replace this with prose.",
+        ]
+    if section == "Checker Source Read-Ahead Block":
+        return [
+            "| Field | Value |",
+            "|---|---|",
+            f"| applicableCheckersRead | {SCAFFOLD_TABLE_TODO}: list `governance/compat/check_*.py` paths actually read |",
+            f"| literalTokensReviewed | {SCAFFOLD_TABLE_TODO}: exact headings, table labels, enum tokens, or regex-sensitive words reviewed |",
+            f"| gateRunPurpose | {SCAFFOLD_TABLE_TODO}: state confirmation/evidence after reading checker source ahead of writing |",
+            f"| claimBoundary | {SCAFFOLD_TABLE_TODO}: bound what this read-ahead block does and does not cover |",
         ]
     if section == "Core Guard Self-Protection Authorization":
         return [
@@ -190,6 +203,28 @@ def _section_body(section: str) -> list[str]:
             "| Command | Result |",
             "|---|---|",
             "| `python governance/compat/run_worker_return_fast_gate.py` | TODO_PASS_FAIL_BLOCKED |",
+            "",
+            "LAST-MILE FINALIZATION: before returning this packet for review, replace every",
+            "`TODO_PASS_FAIL_BLOCKED`, `TODO_YES_NO`, `TODO_NONE_OR_SECTION`, and",
+            f"`{SCAFFOLD_TABLE_TODO}` placeholder with the actual first-run and final-run",
+            "fast-gate result, the actual final status output, and real changed-set/diff",
+            "evidence captured after edits are complete. Do not leave a scaffold",
+            "placeholder token anywhere in the returned packet.",
+        ]
+    if section == "git status --short":
+        return [
+            "```",
+            f"{SCAFFOLD_TABLE_TODO}: paste `git status --short` output here",
+            "```",
+        ]
+    if section == "Changed Files":
+        return [
+            f"{SCAFFOLD_TABLE_TODO}: list changed files with `git diff --name-status` evidence.",
+        ]
+    if section == "No-Commit Statement":
+        return [
+            "WORKER_MUST_NOT_COMMIT honored: HEAD unchanged; no git commit performed by",
+            "worker. Reviewer/closer owns material commit.",
         ]
     if section == "Machine Closure Package":
         return [
@@ -213,6 +248,10 @@ def build_scaffold(title: str = "", profile: str = FULL_PROFILE) -> str:
         "docType: review",
         "",
         "Status: TODO_WORKER_STATUS",
+        "",
+        "Self-declared worker-return artifact: yes",
+        "",
+        "Responds to work order: `TODO_WORK_ORDER_PATH`",
         "",
         "dispatchWorkOrder: `TODO_WORK_ORDER_PATH`",
         "",

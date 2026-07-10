@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-10
 
@@ -196,7 +196,10 @@ reviewerOwnedClosurePaths:
 
 - every worker-owned path;
 - this work order;
-- the completion review above.
+- the completion review above;
+- `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` only if the pre-commit
+  archive-hygiene gate requires registration of the touched canonical gotchas
+  owner as a binding active reference.
 
 closureOwner: reviewer/closer role.
 
@@ -239,6 +242,25 @@ Rollback boundary: revert only MSEA-R92 changes.
 | `docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md` | Add concise finalization and corpus-literal authoring guidance backed by existing checkers. |
 | `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` | Record direct-scaffold divergence and actual-result finalization lesson without duplicating existing gotchas. |
 | `docs/reviews/CVF_MSEA_R92_WORKER_RETURN_SCAFFOLD_LAST_MILE_HARDENING_WORKER_RETURN_2026-07-10.md` | Return full evidence under WORKER_MUST_NOT_COMMIT. |
+
+## Required Artifact Manifest
+
+| Path | Required at handoff | Purpose |
+|---|---|---|
+| `governance/compat/run_worker_return_scaffold.py` | Yes | shared full and compact scaffold envelope |
+| `governance/compat/test_run_worker_return_scaffold.py` | Yes | focused scaffold contract tests |
+| `docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md` | Yes | authoring finalization guidance |
+| `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` | Yes | literal-shape lesson |
+| `docs/reviews/CVF_MSEA_R92_WORKER_RETURN_SCAFFOLD_LAST_MILE_HARDENING_WORKER_RETURN_2026-07-10.md` | Yes | worker evidence return |
+
+## Current Runtime Freshness Verification
+
+This tranche changes a repository authoring helper, not product runtime. The
+worker and reviewer re-read the helper, checker, tests, and guidance owners at
+`executionBaseHead 38f94af2b`; direct profile comparison used the current
+checker constants, and repository search found no fixed-offset output consumer.
+Any later source drift must be re-verified rather than inferred from this
+closure.
 
 ## Implementation Requirements
 
@@ -348,29 +370,29 @@ five-path worker set before acceptance.
 
 ## Acceptance Criteria
 
-- [ ] Exactly five worker-owned paths change.
-- [ ] Both profiles emit the required shared evidence envelope.
-- [ ] Compact conditional consolidation and eligibility semantics are unchanged.
-- [ ] No checker, hook, autorun catalog, golden fixture, or session path changes.
-- [ ] Direct-helper focused tests pass.
-- [ ] Worker-return fast gate passes.
-- [ ] Worker leaves HEAD unchanged and performs no commit.
+- [x] Exactly five worker-owned paths change.
+- [x] Both profiles emit the required shared evidence envelope.
+- [x] Compact conditional consolidation and eligibility semantics are unchanged.
+- [x] No checker, hook, autorun catalog, golden fixture, or session path changes.
+- [x] Direct-helper focused tests pass.
+- [x] Worker-return fast gate passes.
+- [x] Worker leaves HEAD unchanged and performs no commit.
 
 Fail conditions:
 
-- [ ] Any checker or enforcement severity changes.
-- [ ] Compact becomes default, inferred, or worker-selectable without dispatch.
-- [ ] Automatic prose/evidence rewriting is added.
-- [ ] Any path outside the exact manifest changes.
+- [x] Confirmed absent: any checker or enforcement severity changes.
+- [x] Confirmed absent: compact becomes default, inferred, or worker-selectable without dispatch.
+- [x] Confirmed absent: automatic prose/evidence rewriting is added.
+- [x] Confirmed absent: any path outside the exact manifest changes.
 
 ## Closure Checklist
 
-- [ ] Worker manifest matches exactly five paths.
-- [ ] All acceptance criteria resolve PASS or blocking return.
-- [ ] Reviewer-generated full and compact shapes match the intended contract.
-- [ ] Focused tests and worker-return fast gate pass.
-- [ ] No pending scaffold placeholder remains in the worker return.
-- [ ] Material and session-sync commits remain separate.
+- [x] Worker manifest matches exactly five paths.
+- [x] All acceptance criteria resolve PASS or blocking return.
+- [x] Reviewer-generated full and compact shapes match the intended contract.
+- [x] Focused tests and worker-return fast gate pass.
+- [x] No pending scaffold placeholder remains in the worker return.
+- [x] Material and session-sync commits remain separate.
 
 ## Return-To-Orchestrator Conditions
 
@@ -427,6 +449,32 @@ cleanup, public work, or roadmap implementation.
 DEFERRED_PRIVATE_ONLY
 
 Reason: MSEA-R92 is private provenance helper hardening.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Worker route preserves `WORKER_MUST_NOT_COMMIT` | Worker HEAD remained `38f94af2b` and no commit was performed | PASS |
+| FULL and COMPACT share the checker-required envelope | Reviewer comparison reported no missing headings or markers | PASS |
+| COMPACT delta remains exactly three conditional sections | Corpus, external-intake, and rescan sections only | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R92_WORKER_RETURN_SCAFFOLD_LAST_MILE_HARDENING_COMPLETION_2026-07-10.md` | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | N/A with reason: standalone bounded hardening tranche | no roadmap status changed | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check passed; no entry change required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | current registry front door retained; no entry change required | PASS |
+| External evidence digest | N/A with reason: repo-local evidence only | no external artifact used | N/A with reason |
+| System loop interlock | direct helper tests and worker-return fast gate | 13 tests and reviewer-fast 60/60 | PASS |
+| Session continuity | active handoff and generated session state | separate reviewer-owned session-sync commit | PASS |
+
+Reviewer closure normalization: the pre-commit archive-hygiene gate required
+the touched canonical literal-gotchas owner to be registered in
+`governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`. This reuses the existing
+binding-reference mechanism and does not change checker logic or worker scope.
 
 ## Claim Boundary
 
