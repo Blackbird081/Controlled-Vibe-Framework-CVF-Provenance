@@ -4,7 +4,7 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity after MSEA-R82 Windows distribution RC closure.
+Purpose: compact continuity for MSEA-R85 residual value absorption execution.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r84_lean_governance_follow_through_closed_pending_next_product_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select one high-value product lane; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the integrated R85 work order from dispatch commit f350d506d; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,16 @@ Startup acknowledged: current mode=`msea_r84_lean_governance_follow_through_clos
 
 ## Current Mode
 
-`msea_r84_lean_governance_follow_through_closed_pending_next_product_selection`
+`msea_r85_gop_y_cvf_residual_value_absorption_dispatched_implementation_next`
 
 ## Latest Work / Changes
+
+MSEA-R85 residual value absorption is dispatched at `f350d506d`. It authorizes
+terminal reconciliation of all 27 files under `Gop y CVF`, bounded CVF-native
+BUILD-loop and public-trust references, a five-minute trust demo, public-safe
+projection through the sibling clone, closure, and session sync. It does not
+authorize checker/hook, runtime/provider/live, private-output, Memory/RAG,
+retrieval, or unrelated repository work.
 
 MSEA-R84 closed `CLOSED_PASS_BOUNDED` at material commit `a4b504b53`.
 `WORKER_RETURN_FAST_DOC_V1` is dispatch-authenticated, the legacy full profile
@@ -91,11 +98,12 @@ public push occurred.
 
 ## Active Boundary
 
-R84 is closed. No implementation lane is active until one high-value product
-lane is selected. Provenance remains the source of truth and no public-sync
-mutation is authorized by R84.
+R85 is the active implementation lane. Provenance remains the source of truth;
+public-sync mutation is limited to the exact validated R85 public-safe outputs.
 
 ## Current HEAD
+
+R85 dispatch material commit before this session-sync: `f350d506d`.
 
 R84 closure material commit before this session-sync: `a4b504b53`.
 
@@ -136,11 +144,27 @@ External agent memory files: non-canonical convenience only.
 
 ## Next Allowed Move
 
-Next allowed move: select the next high-value product lane after the bounded
-R83 Windows release candidate. No further implementation is implied.
-`Policy_Local`, operator-local distribution, provider/live, hosted/production,
-cross-platform, entitlement, and downstream use-case claims remain outside
-scope. Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: execute the integrated R85 work order from `f350d506d`,
+validate the exact public-safe projection, close the historical absorption
+lane, and synchronize continuity. Checker/hook, runtime/provider/live,
+private-output, Memory/RAG, retrieval, and unrelated repository work remain
+outside scope. Latest closed numbered LHW wave remains `LHW24`.
+
+## Core Guard Self-Protection Authorization - MSEA-R85 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R85 dispatch
+material commit `f350d506d`.
+
+Protected paths: `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V40_2026-07-10.md`,
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+`CVF_SESSION/state/entries/nextAllowedMove.json`, and generated active-session
+state/read-model artifacts.
+
+Operator authorization: absorb all remaining value in `Gop y CVF` before
+moving to another repository.
+
+Rollback boundary: revert only this session-sync; do not revert the R85
+dispatch material commit.
 
 ## Core Guard Self-Protection Authorization - MSEA-R83 Closure Session Sync
 
