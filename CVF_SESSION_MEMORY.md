@@ -4,7 +4,7 @@ Memory class: active-session-front-door
 
 Status: ACTIVE
 
-Last compacted: 2026-07-10
+Last compacted: 2026-07-11
 
 ## Startup Order
 
@@ -34,24 +34,26 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r92_worker_return_scaffold_hardening_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh governed Gop y CVF legacy-cleanup packet; parked checkpoint=R73F remains blocked and R84 effectiveness waits for its measured reopen threshold.
+Startup acknowledged: current mode=`msea_r94_system_chain_gap_closure_roadmap_ready`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author the fresh R94-T0 GC-018 and no-commit audit work order; parked checkpoint=R73F and R84 effectiveness remain evidence-gated.
 
 ## Current Mode
 
-Current mode marker: `msea_r92_worker_return_scaffold_hardening_closed`
+Current mode marker: `msea_r94_system_chain_gap_closure_roadmap_ready`
 
-Current mode: `msea_r92_worker_return_scaffold_hardening_closed`
+Current mode: `msea_r94_system_chain_gap_closure_roadmap_ready`
 
-`msea_r92_worker_return_scaffold_hardening_closed`
+`msea_r94_system_chain_gap_closure_roadmap_ready`
 
 Previous mode:
 
-`msea_r92_worker_return_scaffold_hardening_dispatched`
+`msea_r92_worker_return_scaffold_hardening_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R94 System Chain Gap Closure roadmap | `383a273c8` | PROPOSED. Prioritizes a 50-row contract-to-runtime audit, then targeted repairs and doctrine reconciliation; operator-surface implementation remains value-gated. |
+| MSEA-R93 Gop y CVF storage cleanup | `0f05b7942` | REVIEWER_ACCEPTED_BOUNDED. Preserved 16 active advisory files under external reviews, 27 older files in private legacy, and removed the visible root. |
 | MSEA-R92 worker-return scaffold last-mile hardening closure | `4284a5acd` | REVIEWER_ACCEPTED_BOUNDED. FULL and COMPACT share checker-required markers/headings; compact keeps its exact three-section conditional delta; 13 focused tests and reviewer-fast 60/60 pass. |
 | MSEA-R92 worker-return scaffold last-mile hardening dispatch | `115dd8d16` | DISPATCH_READY. Profile-neutral five-path helper/test/guidance hardening; no checker, compact eligibility, hook, session, cleanup, or roadmap mutation. |
 | MSEA-R91 system-chain map and freshness control closure | `017ae9718` | REVIEWER_ACCEPTED_BOUNDED. Five-lane human/machine map, 28 required fingerprints, 30-day freshness ceiling, 17 tests, local/CI/weekly enforcement, corrected evidence paths, and GC-051 registration closed. |
@@ -75,12 +77,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r92_worker_return_scaffold_hardening_closed`
+Mode: `msea_r94_system_chain_gap_closure_roadmap_ready`
 
-Next allowed move: author a fresh governed cleanup packet for relocating
-`Gop y CVF/` into `.private_reference/legacy/`. Do not move the directory
-before that packet passes dispatch gates, and do not mix roadmap or public
-work into the cleanup. Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: author a fresh GC-018 baseline and
+`WORKER_MUST_NOT_COMMIT` work order for R94-T0 only. The packet must inventory
+all 50 Governance Control Matrix rows and must not implement T1, T2, or T3.
+Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
