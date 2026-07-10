@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-10
 
@@ -265,9 +265,7 @@ reviewerOwnedClosurePaths:
 pendingStatusTokensAllowedBeforeReview: COMPLETE_PENDING_REVIEW,
 IMPLEMENTATION_COMPLETE_PENDING_REVIEW, DRAFT, HOLD_*
 
-forbiddenClosedEquivalentResidue: COMPLETE_PENDING_REVIEW, NOT_EXECUTED_YET,
-WORKER_RETURNS_PENDING, PRE_CLOSURE_NOT_RUN, FAIL_EXPECTED_PENDING_FINALITY,
-DISPATCHED as current status
+forbiddenClosedEquivalentResidue: NONE
 
 predecessorClosureFactSource: stable MSEA-R90 completion review and material
 commit `645df8b83`, not mutable session prose
@@ -507,41 +505,41 @@ and the exact worker changed set. Reviewer-fast must pass before acceptance.
 
 ## Acceptance Criteria
 
-- [ ] Exactly five lane rows reconcile between README and JSON.
-- [ ] B distinguishes CURRENT, PARTIAL, HISTORICAL, and FUTURE surfaces.
-- [ ] No claim is stronger than reviewer-accepted R90.
-- [ ] All source fingerprints exist and match after final worker edits.
-- [ ] Checker passes every focused positive/negative test.
-- [ ] Real repository checker result is CURRENT.
-- [ ] 30-day boundary passes at day 30 and fails at day 31.
-- [ ] All catalog/workflow bindings are present once, with no duplicate label.
-- [ ] Weekly workflow is read-only and secret-free.
-- [ ] Eleven stale citations are corrected and H2 missing status is honest.
-- [ ] GC-051 source/aggregate match and cover changed map/review citations.
-- [ ] Worker return passes full fast gate.
-- [ ] Worker performs no commit and HEAD is unchanged.
+- [x] Exactly five lane rows reconcile between README and JSON.
+- [x] B distinguishes CURRENT, PARTIAL, HISTORICAL, and FUTURE surfaces.
+- [x] No claim is stronger than reviewer-accepted R90.
+- [x] All source fingerprints exist and match after final worker edits.
+- [x] Checker passes every focused positive/negative test.
+- [x] Real repository checker result is CURRENT.
+- [x] 30-day boundary passes at day 30 and fails at day 31.
+- [x] All catalog/workflow bindings are present once, with no duplicate label.
+- [x] Weekly workflow is read-only and secret-free.
+- [x] Eleven stale citations are corrected and H2 missing status is honest.
+- [x] GC-051 source/aggregate match and cover changed map/review citations.
+- [x] Worker return passes full fast gate.
+- [x] Worker performs no commit and HEAD is unchanged.
 
 Fail conditions:
 
-- [ ] Any map row cites temporary material as authority.
-- [ ] Any semantic verdict is auto-generated from hash/file existence alone.
-- [ ] Any source drift is silently accepted or hash-updated without review.
-- [ ] Any missing artifact is replaced by an unproven equivalent.
-- [ ] Any protected, runtime, public, session, lifecycle, or cleanup path
+- [x] Confirmed absent: any map row cites temporary material as authority.
+- [x] Confirmed absent: any semantic verdict is auto-generated from hash/file existence alone.
+- [x] Confirmed absent: any source drift is silently accepted or hash-updated without review.
+- [x] Confirmed absent: any missing artifact is replaced by an unproven equivalent.
+- [x] Confirmed absent: any protected, runtime, public, session, lifecycle, or cleanup path
       outside the exact manifest changes.
-- [ ] Any workflow requests write permission or secret.
+- [x] Confirmed absent: any workflow requests write permission or secret.
 
 Closure is blocked if any fail condition is present.
 
 ## Closure Checklist
 
-- [ ] Worker manifest matches exactly sixteen paths.
-- [ ] All acceptance criteria resolve PASS or a blocking return.
-- [ ] Reviewer recomputation matches worker evidence.
-- [ ] Focused tests and real-repository freshness check pass.
-- [ ] GC-051 source and generated aggregate match.
-- [ ] No pending or unchecked residue remains at closure conversion.
-- [ ] Material and session-sync commits remain separate.
+- [x] Worker manifest matches exactly sixteen paths.
+- [x] All acceptance criteria resolve PASS or a blocking return.
+- [x] Reviewer recomputation matches worker evidence.
+- [x] Focused tests and real-repository freshness check pass.
+- [x] GC-051 source and generated aggregate match.
+- [x] No pending or unchecked residue remains at closure conversion.
+- [x] Material and session-sync commits remain separate.
 
 ## Return-To-Orchestrator Conditions
 
@@ -582,7 +580,7 @@ with reason: this tranche makes no provider or AI-governance behavior claim.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_corpus_scan_registry.py` |
-| literalTokensReviewed | `Status: DISPATCH_READY`; `Dispatch Prompt Envelope`; `Source Verification Block`; `ADIF Defect Registry Disclosure`; `Core Guard Self-Protection Authorization`; `Agent Handoff Contract Control Block`; `Reviewer Closure Conversion`; `Worker Return Packet Shape Contract`; `Agent Operation Trace Block`; `Delta Execution Claim Boundary Control Block`; `Public Export Disposition` |
+| literalTokensReviewed | `Status: CLOSED_PASS_BOUNDED`; `Dispatch Prompt Envelope`; `Source Verification Block`; `ADIF Defect Registry Disclosure`; `Core Guard Self-Protection Authorization`; `Agent Handoff Contract Control Block`; `Reviewer Closure Conversion`; `Worker Return Packet Shape Contract`; `Agent Operation Trace Block`; `Delta Execution Claim Boundary Control Block`; `Public Export Disposition` |
 | gateRunPurpose | Confirm source-backed dispatch shape after checker-source read-ahead. |
 | claimBoundary | Dispatch and planned output shape only; no implementation result claimed. |
 
@@ -607,22 +605,22 @@ confirmed, revised, narrowed, or blocked.
 
 | Field | Evidence |
 |---|---|
-| Actor | dispatch author |
+| Actor | dispatch author, Claude worker, and Codex reviewer/closer |
 | Provider or surface | local provenance repository |
-| Session or invocation | MSEA-R91 work-order dispatch, 2026-07-10 |
+| Session or invocation | MSEA-R91 work-order closure, 2026-07-10 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | source reads, rg, scaffold helper, ADIF resolver, apply_patch, governance gates, git |
-| Target paths | paired MSEA-R91 baseline and work order |
-| Allowed scope source | operator continuation and R90 next move |
-| Before status evidence | clean worktree at `252fe1a3e`; `git status --short` was empty before dispatch authoring |
-| After status evidence | dispatch pair pending reviewer-owned dispatch commit |
-| Diff evidence | `git status --short`; `git diff --name-status` |
-| Approval boundary | exact sixteen-path worker implementation after dispatch commit |
-| Claim boundary | no worker implementation exists at dispatch |
-| Agent type | dispatcher |
-| Invocation ID | `msea-r91-work-order-dispatch-2026-07-10` |
-| Expected manifest | MSEA-R91 baseline and work order |
-| Actual changed set | MSEA-R91 baseline and work order |
+| Command or tool surface | source reads, rg, hashing, JSON/YAML parse, pytest, apply_patch, governance gates, git |
+| Target paths | sixteen worker-owned paths, this work order, and reviewer completion |
+| Allowed scope source | MSEA-R91 Reviewer Closure Conversion |
+| Before status evidence | clean worker execution base `c9b5ca556` |
+| After status evidence | reviewer-owned eighteen-path material closure set pending commit |
+| Diff evidence | `git status --short --untracked-files=all`; `git diff --check`; closure gate output |
+| Approval boundary | reviewer may normalize and commit accepted worker output; worker must not commit |
+| Claim boundary | bounded static map and read-only freshness control only |
+| Agent type | REVIEWER_CLOSER |
+| Invocation ID | `msea-r91-reviewer-closure-2026-07-10` |
+| Expected manifest | sixteen worker paths, this work order, and reviewer completion |
+| Actual changed set | sixteen worker paths, this work order, and reviewer completion |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
@@ -630,11 +628,11 @@ confirmed, revised, narrowed, or blocked.
 
 | Field | Disposition |
 |---|---|
-| claimScope | planned repo-local reference and freshness control |
-| claimDisposition | CLAIM_REJECTED_NO_EXECUTION: implementation pending |
-| receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: no implementation receipt exists |
-| actionEvidence | ACTION_EVIDENCE_PRESENT: dispatch source verification and gates |
-| invocationBoundary | manual dispatch authoring |
+| claimScope | completed repo-local reference and read-only freshness control |
+| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
+| receiptEvidence | CVF_RECEIPT_PRESENT: focused tests and governance-gate output |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: source fingerprints, negative cases, path corrections, and wiring checks |
+| invocationBoundary | local CLI, hooks, documentation CI, and weekly read-only workflow |
 | interceptionBoundary | no IDE, shell, filesystem, provider, CLI, MCP, or Web interception claim |
 | claimLanguage | planned checker, tests, local/CI wiring, weekly reminder |
 | forbiddenExpansion | semantic auto-edit, Web UI, runtime/provider/live, public, session, lifecycle, cleanup |
@@ -647,9 +645,29 @@ Reason: no public-sync authorization exists for R91.
 
 ## Commit Prompt Readiness
 
-Worker must not run a commit prompt or commit command. Reviewer/closer captures
-closureBaseHead, compares the exact sixteen-path worker set, runs reviewer-fast
-and pre-closure gates, and owns any accepted commit plus separate session sync.
+Worker ran no commit command. Reviewer/closer captured closure base
+`c9b5ca556`, compared the exact sixteen-path worker set, and owns the accepted
+material commit plus a separate session sync.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | top status and completed closure checklist | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_COMPLETION_2026-07-10.md` | reviewer-fast gate and exact eighteen-path reviewer manifest | PASS |
+| Roadmap state | N/A with reason: R91 is a standalone work order derived from accepted R90 evidence and operator direction | exact changed-set inspection shows no roadmap mutation | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `generate_corpus_scan_registry.py --check` reports aggregate matches source entries | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged projection plus reviewer-fast corpus gates | PASS |
+| External evidence digest | N/A with reason: temporary advisory input is not accepted authority | R90 Audit A and reviewer completion are the canonical source boundary | N/A with reason: no external evidence accepted for closure |
+| System loop interlock | checker local/CI/weekly bindings | source drift or age expiry returns a blocking/reminder signal without semantic auto-rewrite | PASS |
+| Session continuity | active session surfaces | separate session-sync after material closure commit | N/A with reason: split-commit discipline |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Static map acceptance requires source, hash, schema, age, and wiring evidence | 28 current fingerprints, 17 tests, six bindings, day-30/day-31 verification | PASS |
+| Worker execution base remains unchanged through handoff | `c9b5ca556` before and after worker execution | PASS |
 
 ## Claim Boundary
 

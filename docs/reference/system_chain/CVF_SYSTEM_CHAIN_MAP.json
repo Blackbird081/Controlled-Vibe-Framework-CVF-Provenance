@@ -1,0 +1,234 @@
+{
+  "schemaVersion": "cvf.system_chain_map.v1",
+  "mapId": "cvf-system-chain-map-2026-07-10",
+  "sourceAudit": "docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_2026-07-10.md",
+  "sourceAuditEvidence": "docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_EVIDENCE_2026-07-10.json",
+  "reviewerCompletion": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md",
+  "reviewerCompletionMaterialCommit": "645df8b83",
+  "lastVerifiedDate": "2026-07-10",
+  "maxAgeDays": 30,
+  "reminderPolicy": "This machine map and its human companion record reviewer-accepted MSEA-R90 Audit A findings. Source-file drift and review age are detected automatically by governance/compat/check_system_chain_map_freshness.py. Detecting drift or age expiry never rewrites a lane's currentPosture or verdict automatically; only a fresh governed review may change those fields.",
+  "lanes": [
+    {
+      "laneId": "DOCTRINE_TO_CONTRACT",
+      "laneOrder": 1,
+      "planeRange": "L0-L6 (frozen doctrine layer model) plus non-doctrine module-map narrations",
+      "currentPosture": "PARTIAL",
+      "verdict": "PARTIAL_CHAIN_WITH_DOCUMENTED_DRIFT",
+      "implementedBy": "ECOSYSTEM/doctrine/ (L0 present); ECOSYSTEM/operating-model/ (L3 present); L1/L2 doctrine-named content exists only under the legacy-reference mirror, not the active ECOSYSTEM/ tree",
+      "invokedBy": "N/A_WITH_REASON: doctrine is read-time governance authority, not an invoked runtime path",
+      "testedBy": "HISTORICAL: no machine test enforces doctrine-to-folder mapping",
+      "evidenceOwner": "docs/reference/CVF_MODULE_INVENTORY.md; docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+      "operatorSurface": "ARCHITECTURE.md front door; ECOSYSTEM/README.md",
+      "knownGaps": "Two of seven doctrine-named locations (L1, L2) have no active-tree counterpart; three non-doctrine module maps (ARCHITECTURE.md, CVF_ARCHITECTURE_DIAGRAMS.md, CVF_CORE_KNOWLEDGE_BASE.md) use independent layer-numbering schemes not cross-referenced to the doctrine.",
+      "nextReviewAction": "A separate doctrine/architecture reconciliation decision may cross-reference or intentionally separate the narrations; not authorized by this map.",
+      "sourceFingerprints": [
+        {
+          "path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md",
+          "sha256": "b3529fdd4d71bb69be3558230267042549d482aeb4732c3015048b86733156a0",
+          "evidenceRole": "frozen doctrine authority for L0-L6 layer naming"
+        },
+        {
+          "path": "ARCHITECTURE.md",
+          "sha256": "a0eb5f29af68f0dd34a9eddc222653210849886ce0569c04fb2e65104f163419",
+          "evidenceRole": "non-doctrine module-map narration (4-role stack)"
+        },
+        {
+          "path": "docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md",
+          "sha256": "84f06ebad0892a5b641c7dfeac4c3110db1a6bf304dc6f20500398cb1758a599",
+          "evidenceRole": "non-doctrine module-map narration (5 Layers mermaid stack)"
+        },
+        {
+          "path": "docs/CVF_CORE_KNOWLEDGE_BASE.md",
+          "sha256": "8b18091c9f409091b79a922a9cf0ba61da3cd7e155b5bddbb7693f8677bbee8e",
+          "evidenceRole": "non-doctrine module-map narration (5 Layers version stack)"
+        }
+      ]
+    },
+    {
+      "laneId": "CONTRACT_TO_RUNTIME",
+      "laneOrder": 2,
+      "planeRange": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md GC-001 through GC-050 rows (3 rows sampled)",
+      "currentPosture": "PARTIAL",
+      "verdict": "PARTIAL_RUNTIME_CONNECTION_FOR_SAMPLED_ROWS",
+      "implementedBy": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts (GC-001); EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts (GC-009); EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts (GC-011)",
+      "invokedBy": "GC-001 invoked at EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts:122; GC-009 has no confirmed non-test production caller repository-wide; GC-011 invoked at EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts:132",
+      "testedBy": "GC-001 cited test EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts exercises a distinct, non-identical PhaseGateGuard source than the one the matrix row cites (INVOKED_WITH_CITED_TEST_PAIRING_MISMATCH); GC-009 cited test EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.test.ts correctly pairs with its cited source; GC-011 cited test EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/pipeline.orchestrator.test.ts is confirmed present and consistent",
+      "evidenceOwner": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+      "operatorSurface": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance (Web governance dashboard route, confirmed present)",
+      "knownGaps": "Only 3 of 50 control-matrix rows were sampled. Of those, GC-011 alone reached a fully proven source-caller-test match; GC-001 has a cited-test mismatch; GC-009 has no confirmed production caller.",
+      "nextReviewAction": "A fresh source-verified implementation or matrix-maintenance packet may correct the GC-001 test citation and decide whether GC-009 needs a caller or a downgraded matrix claim; not authorized by this map.",
+      "sourceFingerprints": [
+        {
+          "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+          "sha256": "2cade7ee04568a01e37abca26891297105848a5abf4094da7c323fe2df5e1a73",
+          "evidenceRole": "control matrix rows GC-001, GC-009, GC-011, GC-019"
+        },
+        {
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts",
+          "sha256": "fc5c509f0273155f946018484683906efd2e6a2513023acd78119055a39257f6",
+          "evidenceRole": "GC-001 cited implementation"
+        },
+        {
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+          "sha256": "265ed780e335e2d959cd86399a6ca55d8a9f48ee8e7e5ef936ca539e1154ff51",
+          "evidenceRole": "GC-001 real production caller (registerGuard)"
+        },
+        {
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts",
+          "sha256": "a65840c568df14ab53c03d0dbbfd656841d8d700d0a93079f92e0c91eadf090c",
+          "evidenceRole": "GC-009 cited implementation"
+        },
+        {
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.test.ts",
+          "sha256": "ec8bf4c58e310ef1bc06836218fb5da97d8fbe1490edb96227a152fe6d7715b2",
+          "evidenceRole": "GC-009 cited test, valid source pairing"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts",
+          "sha256": "5a6c6c6dded1010357f20e30543697d7222e2bf148f5b7d138f2ae63109dad02",
+          "evidenceRole": "GC-011 cited implementation"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts",
+          "sha256": "17e220c23f580ed38752d0d3806493204e03119cb38b2a057939c0abe22e00ca",
+          "evidenceRole": "GC-011 real production caller and GC-001 alternate-class registration site"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts",
+          "sha256": "c43caf04dc25c97192f8f28f2f0a435054ff54124adca249e45ac2a77d501160",
+          "evidenceRole": "GC-001 cited test, mismatched source pairing"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/pipeline.orchestrator.test.ts",
+          "sha256": "5b2218e54e28108d6592a8b494abb7ee2ec1b9c35fe364ee3fae03f97f4a2b8b",
+          "evidenceRole": "GC-011 cited test, valid pairing"
+        }
+      ]
+    },
+    {
+      "laneId": "RUNTIME_TO_ENFORCEMENT",
+      "laneOrder": 3,
+      "planeRange": "9 deep-chain cross-family checkers (CF-076 through CF-084) plus their registry-driven invocation chain",
+      "currentPosture": "CURRENT",
+      "verdict": "PROVEN_CONNECTED_VIA_DATA_DRIVEN_REGISTRY",
+      "implementedBy": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_*.py (9 files)",
+      "invokedBy": ".github/workflows/documentation-testing.yml conformance-artifact-consistency job -> scripts/run_cvf_cross_extension_conformance.py (reads docs/reference/CVF_CONFORMANCE_SCENARIOS.json) -> CF-076..CF-084 command arrays -> scripts/run_cvf_packet_posture_gate_conformance.py --gate -> checker",
+      "testedBy": "governance/compat/check_conformance_artifact_consistency.py enforces registry/report/summary mutual consistency; 9/9 per-checker historical PASS rows recomputed in MSEA-R90 Audit A",
+      "evidenceOwner": "docs/reference/CVF_CONFORMANCE_SCENARIOS.json",
+      "operatorSurface": "GitHub Actions job log for Conformance Artifact Consistency (CI-only)",
+      "knownGaps": "The R72F RETIREMENT_HOLD_SOURCE_GAP lifecycle disposition for these nine checkers is unchanged; execution-edge existence and retirement-safety are separate questions and this map does not reopen that disposition.",
+      "nextReviewAction": "No action required by this map; the R72F lifecycle decision remains the controlling authority and is out of R91 scope.",
+      "sourceFingerprints": [
+        {
+          "path": ".github/workflows/documentation-testing.yml",
+          "sha256": "aa368c975348d93ae2240a7bc164933baf988d74639850535734eabb4d971033",
+          "evidenceRole": "CI job invoking the conformance runner"
+        },
+        {
+          "path": "scripts/run_cvf_cross_extension_conformance.py",
+          "sha256": "5dffce139e1699bc43f26dc4eb250ea4543d84878967569b6886d357c274c7a1",
+          "evidenceRole": "reads scenario registry and subprocess-executes each command"
+        },
+        {
+          "path": "scripts/run_cvf_packet_posture_gate_conformance.py",
+          "sha256": "afc6fb63d04bab644d0580d0d448d88a4931f523ef315e78e286b6ba543c49a7",
+          "evidenceRole": "generic --gate runner against 4 canonical packet postures"
+        },
+        {
+          "path": "docs/reference/CVF_CONFORMANCE_SCENARIOS.json",
+          "sha256": "aaf625239e390fd97dbffad75a3bda687fd2ac40ca8cd9732b9c386a114beabb",
+          "evidenceRole": "scenario registry with CF-076..CF-084 command arrays"
+        },
+        {
+          "path": "governance/compat/check_conformance_artifact_consistency.py",
+          "sha256": "7d6dc567eef11b1134ed3686cd1b2b283b877b2d5bd92e198892a533336a5585",
+          "evidenceRole": "registry/report/summary mutual-consistency enforcement"
+        },
+        {
+          "path": "docs/reference/CVF_MSEA_R72F_FIRST_RETIREMENT_OR_CONSOLIDATION_PILOT_DECISION_MATRIX_2026-07-08.md",
+          "sha256": "7f81f8c864e0d1ad8eebaa0f0fce49087d726739216d67ce85b5fcc6f67f07e4",
+          "evidenceRole": "unchanged R72F lifecycle disposition authority"
+        }
+      ]
+    },
+    {
+      "laneId": "ENFORCEMENT_TO_EVIDENCE",
+      "laneOrder": 4,
+      "planeRange": "7-document evidence manifest citation integrity (Governance Control Matrix, Operational Reference Index, and related owners)",
+      "currentPosture": "CURRENT",
+      "verdict": "TWELVE_OF_TWELVE_DISPOSITIONED",
+      "implementedBy": "N/A: this lane audits citation integrity across the evidence-manifest documents, not a single implementing symbol",
+      "invokedBy": "N/A_WITH_REASON: citation resolution is a static-document property, not an invoked runtime path",
+      "testedBy": "MSEA-R90 Audit A fresh recomputation: 11 STALE_ARCHIVE_MOVE dispositions (each with a confirmed archive successor) and 1 confirmed MISSING disposition, verified by full-repository basename search",
+      "evidenceOwner": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md; docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "operatorSurface": "the evidence-manifest documents themselves, as read by any future agent or operator",
+      "knownGaps": "The GC-019 stale roadmap citation and the ten distinct Operational Reference Index stale/missing citations are corrected by this R91 tranche in the same batch as this map (see Evidence Path Correction Rules in the paired work order); the H2 missing citation is marked explicitly missing, not replaced by an unproven equivalent.",
+      "nextReviewAction": "Re-verify basename and path existence after any future edit to either corrected owner document.",
+      "sourceFingerprints": [
+        {
+          "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+          "sha256": "2cade7ee04568a01e37abca26891297105848a5abf4094da7c323fe2df5e1a73",
+          "evidenceRole": "GC-019 corrected archive-qualified citation"
+        },
+        {
+          "path": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+          "sha256": "0eb7004e3801050cbef333db29969e57d7e82baa26c64d5db3660bb6a79347f4",
+          "evidenceRole": "ten corrected archive-qualified citations plus honest H2-missing wording"
+        }
+      ]
+    },
+    {
+      "laneId": "EVIDENCE_TO_OPERATOR_SURFACE",
+      "laneOrder": 5,
+      "planeRange": "RUNTIME_GUARD class (GC-001..GC-014) and CI_REPO_GATE class (186 governance/compat/check_*.py checkers)",
+      "currentPosture": "PARTIAL",
+      "verdict": "PARTIAL_OPERATOR_VISIBILITY_BY_ENFORCEMENT_CLASS",
+      "implementedBy": "scripts/cvf_doctor.py; governance/compat/run_agent_autorun_workflow_gate.py; governance/compat/run_local_governance_hook_chain.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts",
+      "invokedBy": "operator runs scripts/cvf_doctor.py directly; autorun receipts are written by run_agent_autorun_workflow_gate.py at each phase run; Web Operations dispatches jobs from web-governance-jobs.ts JOB_DEFINITIONS",
+      "testedBy": "CLI aggregate/per-check human-readable PASS/FAIL output confirmed by direct source read for both the autorun gate and the hook chain; Web job registry confirmed to expose exactly 5 job types with exactly 1 named governance/compat checker wired directly (docs_governance_check -> check_docs_governance_compat.py)",
+      "evidenceOwner": "the receipt file itself; scripts/cvf_doctor.py source; web-governance-jobs.ts JOB_DEFINITIONS",
+      "operatorSurface": "MIXED: CI_REPO_GATE class evidence surfaces via CI job logs, local terminal stdout, and raw JSON receipt files; RUNTIME_GUARD class evidence surfaces via the confirmed Web governance dashboard route",
+      "knownGaps": "No unified Web inventory/readout exists for all 186 governance/compat checker scripts; only a bounded 5-job-type subset is exposed, with exactly one checker wired directly into a job definition.",
+      "nextReviewAction": "Any unified readout belongs in a fresh Deliverable B or maintenance packet after separate operator authorization; not authorized by this map.",
+      "sourceFingerprints": [
+        {
+          "path": "scripts/cvf_doctor.py",
+          "sha256": "c30d272dc444761cfd90d6953b60b2c52b54c7d396fc9e8ebef6ff8e6dc6a689",
+          "evidenceRole": "CLI human-readable operator readout"
+        },
+        {
+          "path": "governance/compat/run_agent_autorun_workflow_gate.py",
+          "sha256": "0af53a656933ba783412707de3f78b869030b0f992d2d027ec4b6af4f3dbcb04",
+          "evidenceRole": "per-checker PASS/FAIL CLI print plus JSON receipt"
+        },
+        {
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "sha256": "ee89ca632dc594ece4519e1309936c5f3c4c23ce4ca850670f18e1ca820f0252",
+          "evidenceRole": "per-hook-step PASS/FAIL CLI print"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts",
+          "sha256": "ac0dae3f9afac15f021ba964499f23659482f9bf477a9e3ccb55d3e546d2a585",
+          "evidenceRole": "Web job registry, 5 job types, 1 directly wired checker"
+        }
+      ]
+    }
+  ],
+  "auditManifestFingerprint": {
+    "path": "docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_2026-07-10.md",
+    "sha256": "e280b23392b76d9da73a90a9a0e6884e9706a056565e5e3748566044070a00b6",
+    "evidenceRole": "canonical source audit Markdown"
+  },
+  "auditEvidenceFingerprint": {
+    "path": "docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_EVIDENCE_2026-07-10.json",
+    "sha256": "341c7622f9298efde2407405e23da80ba943b6e3e067ce25ae7607dce4cbe465",
+    "evidenceRole": "canonical source JSON evidence companion"
+  },
+  "reviewerCompletionFingerprint": {
+    "path": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md",
+    "sha256": "773a668127a163801d113cb3b7dd8f5697b1ce2b32a62c66e3b2bfb739533fc8",
+    "evidenceRole": "reviewer acceptance record, REVIEWER_ACCEPTED_BOUNDED"
+  },
+  "claimBoundary": "This machine map records five lane verdicts accepted by MSEA-R90 Audit A reviewer closure at material commit 645df8b83. It does not certify semantic correctness beyond that acceptance, does not authorize a Web dashboard, runtime/provider/live behavior, public export, R72F lifecycle change, or session mutation, and does not authorize automatic rewriting of any lane's currentPosture or verdict from hash or age signals alone."
+}

@@ -329,6 +329,10 @@ PRE_PUSH_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_governed_file_size.py", "--enforce"],
         ),
         (
+            "system chain map freshness",
+            ["python", "governance/compat/check_system_chain_map_freshness.py", "--enforce"],
+        ),
+        (
             "governed python automation size",
             ["python", "governance/compat/check_python_automation_size.py", "--enforce"],
         ),

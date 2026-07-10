@@ -4638,6 +4638,90 @@
         "CVF_H2_WORKING_MEMORY_RUNTIME_PROOF_COMPLETION_2026-05-22.md basename"
       ],
       "nextScanRecommendation": "Do not rescan Audit A from zero; use its terminal rows as the baseline for a fresh Deliverable B and freshness-design packet."
+    },
+    {
+      "id": "msea-r91-system-chain-map-and-freshness",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "MSEA-R91 system-chain whole-picture map and freshness control",
+      "scopePaths": [
+        "docs/reference/system_chain/README.md",
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_FRESHNESS_STANDARD.md",
+        "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+        "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+        "governance/compat/check_system_chain_map_freshness.py",
+        "governance/compat/test_check_system_chain_map_freshness.py",
+        "governance/compat/agent_autorun_command_catalog.py",
+        "governance/compat/local_governance_hook_catalog_pre_commit.py",
+        "governance/compat/local_governance_hook_catalog_pre_push.py",
+        "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+        ".github/workflows/documentation-testing.yml",
+        ".github/workflows/system-chain-map-freshness.yml",
+        "docs/corpus-intelligence/registry/entries/msea-r91-system-chain-map-and-freshness.json",
+        "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+        "docs/reviews/CVF_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_WORKER_RETURN_2026-07-10.md"
+      ],
+      "fileCount": 16,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MSEA-R91",
+      "scanDate": "2026-07-10",
+      "manifestHash": "49324b2c6413dbd9a6c3bd6eac173beec66c1f5f62501504d22a390cd47eb393",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+      "manifestPath": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+      "packetPath": "docs/reference/system_chain/README.md",
+      "completionReviewPath": "docs/reviews/CVF_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_WORKER_RETURN_2026-07-10.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_2026-07-10.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "doctrine-to-contract",
+        "contract-to-runtime",
+        "runtime-to-enforcement",
+        "enforcement-to-evidence",
+        "evidence-to-operator-surface"
+      ],
+      "priorAbsorption": "MSEA-R90 Audit A (reviewer-accepted, material commit 645df8b83) is the sole semantic authority for the five lane verdicts this map records; this tranche adds a stable reference presentation and a read-only freshness-detection layer without producing a new audit.",
+      "findings": [
+        {
+          "id": "msea-r91-map-built-from-accepted-audit-only",
+          "summary": "The human and machine system-chain map surfaces only reviewer-accepted MSEA-R90 Audit A lane verdicts, without strengthening or weakening any claim.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "No further action required; future lane-verdict changes require a fresh governed review, not an edit to this map alone.",
+          "defectClass": "DOCUMENTATION_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_WORKER_RETURN_2026-07-10.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "msea-r91-freshness-checker-is-read-only",
+          "summary": "The new freshness checker detects source-hash drift, path loss, Markdown/JSON disagreement, and review-age expiry, but never auto-rewrites a lane's semantic verdict.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Any future semantic verdict change must come from a governed review that reads the drifted source, not from this checker's own detection signal.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_WORKER_RETURN_2026-07-10.md#finding-to-governance-learning-disposition",
+          "workOrderRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_2026-07-10.md"
+        },
+        {
+          "id": "msea-r91-evidence-path-corrections",
+          "summary": "Corrected the GC-019 roadmap citation and ten distinct stale/missing Operational Reference Index citations identified by MSEA-R90 Audit A to their confirmed archive-qualified successors, and marked the H2 citation explicitly missing rather than substituting an unproven equivalent.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Re-verify basename and path existence after any future edit to either corrected owner document.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_WORKER_RETURN_2026-07-10.md#finding-to-governance-learning-disposition",
+          "workOrderRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_2026-07-10.md"
+        }
+      ],
+      "negativeSearchTerms": [
+        "MSEA-R91 SYSTEM_CHAIN_MAP system-chain-map-freshness output-path collision",
+        "check_system_chain_map_freshness.py checker-name collision",
+        "CVF_H2_WORKING_MEMORY_RUNTIME_PROOF_COMPLETION_2026-05-22.md basename"
+      ],
+      "nextScanRecommendation": "Do not rescan MSEA-R90 Audit A from zero; use its reviewer-accepted terminal rows as the unchanged semantic baseline. Any future rescan of the map itself should recompute fingerprints and review age through the freshness checker, not through a manual diff."
     }
   ]
 }
