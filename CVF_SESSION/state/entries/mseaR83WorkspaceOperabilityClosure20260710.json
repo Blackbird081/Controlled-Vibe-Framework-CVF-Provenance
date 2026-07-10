@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1630,
+  "stateKey": "mseaR83WorkspaceOperabilityClosure20260710",
+  "value": "RC_PASS_BOUNDED_AND_PUBLIC_SYNCED. R83A-R83E closed at provenance commit 213c6ab4f after product commit 202d7dd92 and pre-R83 compatibility fix 38672f496. Public product commit 3d6a85008 and compatibility fix fbb6c4d49 are pushed. Four health verdicts, read-only status, repair invariants, cross-shell deterministic build, R82-to-R83 migration, forced rollback, and final public static CI 8/8 passed. Version 0.2.0-rc1 remains a Windows release candidate, not a cross-platform or GA claim."
+}

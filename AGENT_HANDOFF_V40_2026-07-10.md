@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r83_workspace_health_repair_upgrade_integrated_execution_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=integrated R83A-R83E execution only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r83_workspace_operability_rc_public_synced_pending_next_product_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select the next high-value product lane after the bounded R83 Windows RC; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,16 @@ Startup acknowledged: current mode=`msea_r83_workspace_health_repair_upgrade_int
 
 ## Current Mode
 
-`msea_r83_workspace_health_repair_upgrade_integrated_execution_dispatched`
+`msea_r83_workspace_operability_rc_public_synced_pending_next_product_selection`
 
 ## Latest Work / Changes
+
+MSEA-R83A-R83E closed `RC_PASS_BOUNDED_AND_PUBLIC_SYNCED` at provenance
+commit `213c6ab4f`. Product commit `202d7dd92`, compatibility fix `38672f496`,
+public product commit `3d6a85008`, and public compatibility fix `fbb6c4d49`
+are pushed. Four health verdicts, read-only status, repair invariants,
+deterministic build, stale migration, forced rollback, and public static CI
+8/8 passed for version `0.2.0-rc1`.
 
 MSEA-R83 Workspace Health Repair And Upgrade Experience is dispatched at
 `22262eb6`. It authorizes integrated R83A-R83E status, bounded repair, unified
@@ -100,6 +107,12 @@ R83 workspace operability implementation material commit: `202d7dd92`.
 
 R83 pre-R83 manifest compatibility fix commit: `38672f496`.
 
+R83 closure review commit before this session-sync: `213c6ab4f`.
+
+R83 public product commit: `3d6a85008`.
+
+R83 public compatibility fix commit: `fbb6c4d49`.
+
 Remote tracking branch: `origin/main`.
 
 Exact remote SHA must be derived live from git when needed.
@@ -108,10 +121,33 @@ External agent memory files: non-canonical convenience only.
 
 ## Next Allowed Move
 
-Next allowed move: integrated R83A-R83E execution only. `Policy_Local`,
-operator-local distribution, provider/live, hosted/production, cross-platform,
-entitlement, checker, hook, Fast Lane, and downstream use-case work remain
-forbidden. Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: select the next high-value product lane after the bounded
+R83 Windows release candidate. No further implementation is implied.
+`Policy_Local`, operator-local distribution, provider/live, hosted/production,
+cross-platform, entitlement, and downstream use-case claims remain outside
+scope. Latest closed numbered LHW wave remains `LHW24`.
+
+## Core Guard Self-Protection Authorization - MSEA-R83 Closure Session Sync
+
+Authorized guard-maintenance scope: final session-sync after R83 closure commit
+`213c6ab4f`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to post-R83 product selection. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R83 closure and parent HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set post-R83 mode. |
+| `CVF_SESSION/state/entries/mseaR83WorkspaceOperabilityClosure20260710.json` | Record closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next product selection. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: complete R83 execution and closure.
+
+Rollback boundary: revert only this closure session-sync; do not revert R83
+product, review, or public commits.
 
 ## Core Guard Self-Protection Authorization - MSEA-R83 Dispatch Session Sync
 
