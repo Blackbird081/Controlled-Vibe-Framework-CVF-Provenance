@@ -1,0 +1,436 @@
+{
+  "schemaVersion": "cvf.msea_r90.audit_a.v1",
+  "batchId": "MSEA-R90",
+  "generatedUtc": "2026-07-10T12:58:41Z",
+  "executionBaseHead": "b6cba5924",
+  "executionBaseHeadFull": "b6cba5924f2ad1a001b059a408542a2897b786ed",
+  "dispatchBaseHead": "3bdb6640a",
+  "worker": "delegated worker role",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "sourceManifest": [
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "AGENT_HANDOFF_V40_2026-07-10.md",
+    "docs/reference/guard_orientation/README.md",
+    "docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md",
+    "docs/baselines/CVF_GC018_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md",
+    "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md",
+    "ARCHITECTURE.md",
+    "docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md",
+    "docs/reference/CVF_MODULE_INVENTORY.md",
+    "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+    "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+    "docs/CVF_CORE_KNOWLEDGE_BASE.md",
+    "docs/reference/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_MATRIX_2026-06-13.md",
+    "docs/reference/CVF_MSEA_R72F_FIRST_RETIREMENT_OR_CONSOLIDATION_PILOT_DECISION_MATRIX_2026-07-08.md",
+    "docs/reference/CVF_CONFORMANCE_SCENARIOS.json",
+    "scripts/run_cvf_cross_extension_conformance.py",
+    "scripts/run_cvf_packet_posture_gate_conformance.py",
+    ".github/workflows/documentation-testing.yml",
+    "governance/compat/check_conformance_artifact_consistency.py",
+    "ECOSYSTEM/operating-model/CVF_AGENT_OPERATING_MODEL.md",
+    "ECOSYSTEM/operating-model/CVF_BUILDER_MODEL.md",
+    "ECOSYSTEM/strategy/CVF_STRATEGIC_SUMMARY.md",
+    "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts",
+    "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts",
+    "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts",
+    "scripts/cvf_doctor.py",
+    "EXTENSIONS/CVF_v1.7.2_SAFETY_DASHBOARD",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance",
+    "docs/reviews/cvf_phase_governance/CVF_CONFORMANCE_TRACE_2026-03-07.md"
+  ],
+  "corpusCompleteness": {
+    "corpusTaskClass": "BOUNDED_REPOSITORY_SYSTEM_CHAIN_AUDIT",
+    "manifestCount": 31,
+    "ledgerTerminalCount": 31,
+    "exclusionsCount": 3,
+    "unresolvedCount": 0,
+    "unreadableCount": 0,
+    "manifestHashAlgorithm": "sha256",
+    "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b",
+    "manifestHashNormalization": "31 sourceManifest entries in declared array order, one path per line, UTF-8, LF line endings, no trailing per-line whitespace, single trailing newline, hashed with hashlib.sha256(...).hexdigest()",
+    "verdict": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+    "declaredExclusions": [
+      ".private_reference/legacy/CVF_Restructure/CVF_ECOSYSTEM/ (legacy archived doctrine mirror, searched for existence only, not treated as current authority)",
+      "docs/reviews/cvf_phase_governance/CVF_CROSS_EXTENSION_CONFORMANCE_SUMMARY_2026-03-07.json (CI-generated artifact, absent from working tree by design; regenerated at CI runtime)",
+      "external Document Translator and Policy_Local source trees (out of FPC-T1 scope and out of this audit's scope per work order forbidden paths)"
+    ],
+    "repairNote": "Prior draft miscounted manifestCount/ledgerTerminalCount as 30; a direct len() count of the sourceManifest array below confirms 31 entries. Manifest hash was previously not computed ('not separately computed'); this repair pass computes it deterministically and records it here and in each manifestRecords entry."
+  },
+  "manifestRecords": [
+    {"path": "CVF_SESSION_MEMORY.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "CVF_SESSION/ACTIVE_SESSION_STATE.json", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "AGENT_HANDOFF_V40_2026-07-10.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/reference/guard_orientation/README.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/baselines/CVF_GC018_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "ARCHITECTURE.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/reference/CVF_MODULE_INVENTORY.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/CVF_CORE_KNOWLEDGE_BASE.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/reference/CVF_FPC_T1_FOUNDATION_PLANES_WORKFLOW_CHAIN_SYSTEM_AUDIT_MATRIX_2026-06-13.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/reference/CVF_MSEA_R72F_FIRST_RETIREMENT_OR_CONSOLIDATION_PILOT_DECISION_MATRIX_2026-07-08.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/reference/CVF_CONFORMANCE_SCENARIOS.json", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "scripts/run_cvf_cross_extension_conformance.py", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "scripts/run_cvf_packet_posture_gate_conformance.py", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": ".github/workflows/documentation-testing.yml", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "governance/compat/check_conformance_artifact_consistency.py", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "ECOSYSTEM/operating-model/CVF_AGENT_OPERATING_MODEL.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "ECOSYSTEM/operating-model/CVF_BUILDER_MODEL.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "ECOSYSTEM/strategy/CVF_STRATEGIC_SUMMARY.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "scripts/cvf_doctor.py", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "EXTENSIONS/CVF_v1.7.2_SAFETY_DASHBOARD", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"},
+    {"path": "docs/reviews/cvf_phase_governance/CVF_CONFORMANCE_TRACE_2026-03-07.md", "terminalStatus": "READ", "manifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b"}
+  ],
+  "chainEdges": [
+    {
+      "chainLink": "DOCTRINE_TO_CONTRACT",
+      "chainLinkOrder": 1,
+      "claimedBy": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md, Layer Overview section, lines 18-32",
+      "implementedBy": "ECOSYSTEM/doctrine/ (L0 present), ECOSYSTEM/operating-model/ (L3 present), ECOSYSTEM/strategy/ (adjacent to L1/L2, not doctrine-named)",
+      "invokedBy": "N/A_WITH_REASON: doctrine is read-time governance authority, not an invoked runtime path",
+      "testedBy": "HISTORICAL: no machine test enforces doctrine-to-folder mapping",
+      "evidenceOwner": "docs/reference/CVF_MODULE_INVENTORY.md (module family listing); docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md (control ownership)",
+      "operatorSurface": "docs (ARCHITECTURE.md front door; ECOSYSTEM/README.md)",
+      "evidenceClass": "STRUCTURAL",
+      "freshnessDisposition": "CURRENT_WITH_DRIFT",
+      "verdict": "PARTIAL_CHAIN_WITH_DOCUMENTED_DRIFT",
+      "sourceCitations": [
+        {"path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md", "section": "Layer Overview", "lines": "18-32", "note": "Declares 7 layers L0-L6"},
+        {"path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md", "section": "L0 Doctrine", "lines": "38-67", "note": "Illustrative location '/doctrine'; actual repo location is ECOSYSTEM/doctrine/"},
+        {"path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md", "section": "L1 System Definition", "lines": "70-90", "note": "Illustrative location '/system'; CVF_PROJECT_MANIFEST.md not found in active ECOSYSTEM/; only present under .private_reference/legacy/CVF_Restructure/CVF_ECOSYSTEM/system/"},
+        {"path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md", "section": "L2 Build Protocol", "lines": "94-114", "note": "Illustrative location '/protocols'; CVF_AGENT_BUILD_PROTOCOL.md not found in active ECOSYSTEM/; only present under .private_reference/legacy/CVF_Restructure/CVF_ECOSYSTEM/protocols/"},
+        {"path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md", "section": "L3 Operating Model", "lines": "118-139", "note": "Illustrative location '/operating-model'; actual repo location ECOSYSTEM/operating-model/ contains CVF_AGENT_OPERATING_MODEL.md and CVF_BUILDER_MODEL.md, matching doctrine content list"},
+        {"path": "ARCHITECTURE.md", "section": "1. System Shape", "lines": "9-24", "note": "A second, actively maintained module map (Meta Governance / Control Plane / Execution Channels / Evidence) that does not name L0-L6 doctrine terms directly"},
+        {"path": "docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md", "section": "1. Full Architecture Overview (5 Layers)", "lines": "7-73", "note": "A third module map using a 'Layer 0-5' numbering distinct from doctrine's L0-L6; file footer dated 'February 25, 2026'"},
+        {"path": "docs/CVF_CORE_KNOWLEDGE_BASE.md", "section": "II. KIEN TRUC 5 LAYERS", "lines": "62-167", "note": "A fourth module map with its own 'Layer 0-5' numbering (v1.0-v1.7.2 version stack); explicitly says any layer/architecture change must update this file (Rule 4)"}
+      ],
+      "contradictionNote": "Four distinct layer-numbering schemes currently coexist as read surfaces: doctrine L0-L6 (ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md), ARCHITECTURE.md's 4-role stack, CVF_ARCHITECTURE_DIAGRAMS.md's 'Layer 0-5', and CVF_CORE_KNOWLEDGE_BASE.md's 'Layer 0-5'. None of the three non-doctrine documents is declared subordinate to or a restatement of the doctrine L0-L6 model in their own text. Per work-order Authority Chain, current source and canonical contracts outrank prior reviews; the doctrine file is the canonical contract for layer naming, so L0-L6 is used as this audit's authority baseline, and the other three are recorded as parallel/legacy module-map narrations, not falsified.",
+      "authorityPrecedenceApplied": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md (Status: Frozen - CVF Doctrine) outranks ARCHITECTURE.md, CVF_ARCHITECTURE_DIAGRAMS.md, and CVF_CORE_KNOWLEDGE_BASE.md for layer-naming claims, per Governed Artifact authority rules; the latter three remain valid as separate module/version narrations but are not the doctrine source."
+    },
+    {
+      "chainLink": "CONTRACT_TO_RUNTIME",
+      "chainLinkOrder": 2,
+      "claimedBy": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md, Control Matrix table, GC-001 through GC-050 rows",
+      "implementedBy": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/*.guard.ts (GC-001 through GC-008); EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/*.ts (GC-009, GC-010); EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts (GC-011 through GC-013)",
+      "invokedBy": "PER_ROW_TRACED: GC-001 PhaseGateGuard registered at EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts line 122 (engine.registerGuard) and at EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts line 821 (a different, non-identical PhaseGateGuard class); GC-009 MandatoryGateway/createMandatoryGateway has NO confirmed non-test caller anywhere in the repository (grep -rn across all .ts files outside its own test returned zero matches); GC-011 PipelineOrchestrator instantiated at governance/guard_runtime/sdk/cvf.sdk.ts line 132 (this.pipeline = new PipelineOrchestrator(this.engine)), imported at line 38, re-exported at governance/guard_runtime/index.ts line 47",
+      "testedBy": "PER_ROW_TRACED: GC-001's cited test EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts imports PhaseGateGuard from ../governance/guard_runtime/guards/phase.gate.guard.js (confirmed by direct diff: this is a v1.1.3-hardening rewrite, NOT the same file as the matrix row's cited EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts - different import surface, different phase/role tables) - test-to-cited-source pairing is MISMATCHED; GC-009's cited test EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.test.ts imports MandatoryGateway from ./mandatory-gateway (same directory, same file - pairing CONFIRMED VALID) but no production caller found; GC-011's cited test EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/pipeline.orchestrator.test.ts confirmed present, paired with a confirmed real caller",
+      "evidenceOwner": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+      "operatorSurface": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance (Web governance dashboard route, confirmed present)",
+      "evidenceClass": "MACHINE_CHECKED",
+      "freshnessDisposition": "CURRENT",
+      "verdict": "PARTIAL_RUNTIME_CONNECTION_FOR_SAMPLED_ROWS",
+      "rowDispositions": [
+        {"row": "GC-001", "disposition": "INVOKED_WITH_CITED_TEST_PAIRING_MISMATCH", "note": "cited source file has a real production caller at index.ts:122; the cvf.sdk.ts:821 registration uses a different same-named class and is not evidence for GC-001; cited test (guard.runtime.test.ts) exercises that other source file, not the one the matrix row names"},
+        {"row": "GC-009", "disposition": "IMPLEMENTED_NOT_INVOCATION_PROVEN", "note": "cited source and cited test are a valid matched pair; zero production callers found anywhere in the repository outside the test file"},
+        {"row": "GC-011", "disposition": "PROVEN_CONNECTED", "note": "cited source, a real production caller (cvf.sdk.ts:132), and the cited test are all confirmed present and consistent"}
+      ],
+      "sourceCitations": [
+        {"path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md", "section": "Control Matrix, GC-001 row", "lines": "36", "note": "cites EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts and EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts as its test; source file existence confirmed, but the cited test imports a different PhaseGateGuard class from governance/guard_runtime/guards/phase.gate.guard.ts, not the cited source"},
+        {"path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts", "section": "createGuardEngine factory", "lines": "122", "note": "engine.registerGuard(new PhaseGateGuard()) - real production caller for the GC-001 cited source file"},
+        {"path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts", "section": "SDK constructor", "lines": "821", "note": "engine.registerGuard(new PhaseGateGuard()) - this PhaseGateGuard is imported from the module's own guards/phase.gate.guard.js, confirmed by diff to be a different, non-identical class from the GC-001 cited source file"},
+        {"path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md", "section": "Control Matrix, GC-009 row", "lines": "44", "note": "cites EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts and its .test.ts; source-test pairing confirmed valid (test imports from same-directory ./mandatory-gateway); repo-wide grep for MandatoryGateway/createMandatoryGateway across all non-test .ts files found zero matches"},
+        {"path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md", "section": "Control Matrix, GC-011 row", "lines": "46", "note": "cites EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts - file existence confirmed present"},
+        {"path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts", "section": "SDK constructor", "lines": "38, 132", "note": "import { PipelineOrchestrator } from '../pipeline.orchestrator.js' (line 38); this.pipeline = new PipelineOrchestrator(this.engine) (line 132) - real production caller for GC-011"},
+        {"path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md", "section": "Control Matrix, GC-019 row", "lines": "54", "note": "cites docs/roadmaps/CVF_RESTRUCTURING_ROADMAP_2026-03-21.md as an active-path evidence pointer; file exists only under docs/roadmaps/archive/CVF_RESTRUCTURING_ROADMAP_2026-03-21.md - see enforcement-to-evidence lane candidate #1"}
+      ],
+      "contradictionNote": "Only 3 of 50 GC rows were spot-verified (GC-001, GC-009, GC-011); the remaining 47 rows are accepted on the matrix's own authority as a canonical ownership reference without individual re-verification in this bounded pass, consistent with the work order's bounded evidence lanes. This is recorded as a sampling limit, not a claim that all 50 rows are proven. Of the 3 sampled, file existence alone was insufficient: only GC-011 reached a fully proven caller+test match; GC-001 and GC-009 are downgraded per rowDispositions above.",
+      "authorityPrecedenceApplied": "N/A: no contradiction between sources requiring precedence; sampling limit is a scope boundary, not a source conflict."
+    },
+    {
+      "chainLink": "RUNTIME_TO_ENFORCEMENT",
+      "chainLinkOrder": 3,
+      "claimedBy": "docs/reference/CVF_MSEA_R72F_FIRST_RETIREMENT_OR_CONSOLIDATION_PILOT_DECISION_MATRIX_2026-07-08.md, Decision Matrix row 1",
+      "implementedBy": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_*.py (9 files)",
+      "invokedBy": "INDIRECT_REGISTRY_CHAIN: .github/workflows/documentation-testing.yml line 747 (conformance-artifact-consistency job) -> scripts/run_cvf_cross_extension_conformance.py line 20 (SCENARIO_REGISTRY constant) and line 204 (_load_scenarios reads registry) -> docs/reference/CVF_CONFORMANCE_SCENARIOS.json scenario records CF-076 through CF-084 (lines 532-611, verified 9 records, verified each cites a distinct one of the 9 checker files as a --gate argument) -> scripts/run_cvf_packet_posture_gate_conformance.py main() (lines 42-56, parses --gate argument and subprocess-invokes the named checker against 4 canonical packet postures)",
+      "testedBy": "CI_ENFORCED: governance/compat/check_conformance_artifact_consistency.py enforces that the scenario registry, the generated Markdown report, and the generated JSON summary stay mutually consistent whenever the conformance-artifact-consistency workflow job runs; HISTORICAL_TEXTUAL: docs/reviews/cvf_phase_governance/CVF_CONFORMANCE_TRACE_2026-03-07.md lines 718, 743, 766, 789, 812, 835 record 'canonical Wave 1 remains scenarioCount = 84, overallResult = PASS' as design-log prose from the 2026-03-07 remediation wave, not a live current-run receipt",
+      "evidenceOwner": "docs/reviews/cvf_phase_governance/CVF_CROSS_EXTENSION_CONFORMANCE_SUMMARY_2026-03-07.json (generated at CI/local run time; absent from the working tree at this audit's executionBaseHead because it is a build artifact, not committed source)",
+      "operatorSurface": "GitHub Actions job log for 'Conformance Artifact Consistency' (CI-only; no CVF Web/CLI operator readout for individual CF-076..CF-084 pass/fail results was found in this audit)",
+      "evidenceClass": "MACHINE_CHECKED_INDIRECT",
+      "freshnessDisposition": "CURRENT",
+      "verdict": "PROVEN_CONNECTED_VIA_DATA_DRIVEN_REGISTRY",
+      "perCheckerHistoricalEvidence": [
+        {"checkerId": "CF-076", "checkerPath": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_attestation_verification.py", "registryLines": "532-537", "traceAdditionLine": 488, "traceHistoricalPassLine": 504, "traceHistoricalPassValue": "scenarioCount = 76"},
+        {"checkerId": "CF-077", "checkerPath": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_provenance_verification.py", "registryLines": "539-544", "traceAdditionLine": 511, "traceHistoricalPassLine": 527, "traceHistoricalPassValue": "scenarioCount = 77"},
+        {"checkerId": "CF-078", "checkerPath": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_provenance_attestation_verification.py", "registryLines": "546-551", "traceAdditionLine": 534, "traceHistoricalPassLine": 550, "traceHistoricalPassValue": "scenarioCount = 78"},
+        {"checkerId": "CF-079", "checkerPath": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_provenance_attestation_freshness.py", "registryLines": "553-558", "traceAdditionLine": 557, "traceHistoricalPassLine": 573, "traceHistoricalPassValue": "scenarioCount = 79"},
+        {"checkerId": "CF-080", "checkerPath": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_provenance_attestation_provenance.py", "registryLines": "560-565", "traceAdditionLine": 580, "traceHistoricalPassLine": 596, "traceHistoricalPassValue": "scenarioCount = 80"},
+        {"checkerId": "CF-081", "checkerPath": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_provenance_attestation_provenance_verification.py", "registryLines": "567-572", "traceAdditionLine": 603, "traceHistoricalPassLine": 619, "traceHistoricalPassValue": "scenarioCount = 81"},
+        {"checkerId": "CF-082", "checkerPath": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_provenance_attestation_provenance_freshness.py", "registryLines": "574-579", "traceAdditionLine": 626, "traceHistoricalPassLine": 642, "traceHistoricalPassValue": "scenarioCount = 82"},
+        {"checkerId": "CF-083", "checkerPath": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_provenance_attestation_provenance_freshness_proof.py", "registryLines": "581-586", "traceAdditionLine": 649, "traceHistoricalPassLine": 665, "traceHistoricalPassValue": "scenarioCount = 83"},
+        {"checkerId": "CF-084", "checkerPath": "governance/compat/check_cross_family_approval_artifact_external_revocation_issuer_proof_authority_provenance_attestation_provenance_freshness_proof_verification.py", "registryLines": "588-594", "traceAdditionLine": 672, "traceHistoricalPassLine": 688, "traceHistoricalPassValue": "scenarioCount = 84"}
+      ],
+      "sourceCitations": [
+        {"path": ".github/workflows/documentation-testing.yml", "section": "conformance-artifact-consistency job", "lines": "734-751", "note": "job step 'Rebuild conformance artifacts' runs python scripts/run_cvf_cross_extension_conformance.py at line 747; step 'Enforce conformance artifact consistency' runs governance/compat/check_conformance_artifact_consistency.py --enforce"},
+        {"path": "scripts/run_cvf_cross_extension_conformance.py", "section": "module constants", "lines": "20", "note": "SCENARIO_REGISTRY = REPO_ROOT / docs/reference/CVF_CONFORMANCE_SCENARIOS.json"},
+        {"path": "scripts/run_cvf_cross_extension_conformance.py", "section": "_load_scenarios", "lines": "203-218", "note": "reads registry JSON, builds Scenario records including command list, for every entry in registry['scenarios']"},
+        {"path": "scripts/run_cvf_cross_extension_conformance.py", "section": "main / _run", "lines": "372-397", "note": "iterates all loaded scenarios and subprocess-executes each scenario.command"},
+        {"path": "docs/reference/CVF_CONFORMANCE_SCENARIOS.json", "section": "scenarios array", "lines": "532-594", "note": "9 scenario records CF-076..CF-084, each command is exactly ['python','scripts/run_cvf_packet_posture_gate_conformance.py','--gate','governance/compat/<one of the 9 checker files>']; verified with a fresh JSON parse at this audit's executionBaseHead, 84 total scenarios in file, 9 matched; exact per-checker registry line ranges recorded in perCheckerHistoricalEvidence above"},
+        {"path": "scripts/run_cvf_packet_posture_gate_conformance.py", "section": "main", "lines": "42-56", "note": "argparse requires --gate; resolves to absolute path; subprocess-runs the gate script with --packet against 4 canonical packet postures listed in PACKETS tuple lines 17-22"},
+        {"path": "governance/compat/check_conformance_artifact_consistency.py", "section": "module constants", "lines": "19-21", "note": "SCENARIO_REGISTRY_PATH, REPORT_PATH, SUMMARY_PATH constants confirm the checker's enforcement target is registry/report/summary mutual consistency"},
+        {"path": "docs/reviews/cvf_phase_governance/CVF_CONFORMANCE_TRACE_2026-03-07.md", "section": "Status line", "lines": "5", "note": "'Status: local-only conformance trace for W2 remediation' - self-declared as a local/historical trace, not a live evidence receipt"},
+        {"path": "docs/reviews/cvf_phase_governance/CVF_CONFORMANCE_TRACE_2026-03-07.md", "section": "Batch 76-84 sections", "lines": "488-688", "note": "each of the 9 checkers has its own dedicated batch heading recording the checker's addition and a scenarioCount-tagged historical PASS line at that point in history, per perCheckerHistoricalEvidence above - not only a single reused aggregate scenarioCount=84 line"}
+      ],
+      "contradictionNote": "The prior temporary advisory report (outside CVF authority, see Negative Search row) originally miscounted this chain as having zero execution edge for the 9 checkers, because it searched only literal check_*.py tokens in governance/compat/*.py, scripts/*.py, and .github/workflows/* source text and did not parse the JSON scenario registry's command arrays. This audit's fresh recomputation from the registry JSON and both runner scripts confirms a real, data-driven, parameterized execution edge for all 9 checkers. This corrects and supersedes the temporary report's finding; it does not alter the R72F governance disposition below.",
+      "lifecycleDisposition": {
+        "source": "docs/reference/CVF_MSEA_R72F_FIRST_RETIREMENT_OR_CONSOLIDATION_PILOT_DECISION_MATRIX_2026-07-08.md",
+        "section": "Decision Matrix",
+        "decision": "RETIREMENT_HOLD_SOURCE_GAP",
+        "note": "R72F is the later, superseding decision over R72B's earlier R72F_RETIREMENT_REVIEW_CANDIDATE classification. This audit does not reopen, alter, or re-decide the R72F lifecycle disposition; it is cited as-is per authority precedence (current source and canonical contracts, and the most recent governed decision, outrank earlier candidate classifications)."
+      },
+      "authorityPrecedenceApplied": "R72F decision matrix (2026-07-08, later) outranks R72B's earlier candidate classification (also 2026-07-08 but earlier in sequence per R72F's own Source Verification Block); this audit's fresh source recomputation outranks the temporary non-CVF advisory report per work-order Authority Chain."
+    },
+    {
+      "chainLink": "ENFORCEMENT_TO_EVIDENCE",
+      "chainLinkOrder": 4,
+      "claimedBy": "docs/reference/CVF_MODULE_INVENTORY.md, docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md, docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md, docs/CVF_CORE_KNOWLEDGE_BASE.md cross-references",
+      "implementedBy": "N/A: this lane audits citation integrity across the 7-document evidence manifest, not a single implementing symbol",
+      "invokedBy": "N/A_WITH_REASON: citation resolution is a static-document property, not an invoked runtime path",
+      "testedBy": "FRESH_RECOMPUTE: filesystem-backed direct read plus regex extraction of markdown-link and backtick-path tokens across the 7-document evidence manifest, resolved doc-relative for markdown links and repo-root-relative for backtick paths, cross-checked against an archive-sibling search for every non-resolving path",
+      "evidenceOwner": "this audit's pathDispositions array (below)",
+      "operatorSurface": "the 7 evidence-manifest documents themselves, as read by any future agent or operator",
+      "evidenceClass": "STRUCTURAL",
+      "freshnessDisposition": "RECOMPUTED_AT_THIS_AUDIT",
+      "verdict": "TWELVE_OF_TWELVE_DISPOSITIONED",
+      "sourceCitations": [
+        {"path": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md", "section": "Lookup Table, row 'Checking Pain H memory status'", "lines": "58", "note": "cites docs/reviews/CVF_H2_WORKING_MEMORY_RUNTIME_PROOF_COMPLETION_2026-05-22.md; confirmed absent from both active docs/reviews/ and docs/reviews/archive/ by full-repo basename search"}
+      ],
+      "contradictionNote": "None; this lane's 12 candidates are individually itemized in pathDispositions below, matching the work order's cited count of 'twelve prior path candidates' exactly.",
+      "authorityPrecedenceApplied": "N/A: no cross-document contradiction found in this lane; all 12 dispositions are internally consistent fresh recomputations."
+    },
+    {
+      "chainLink": "EVIDENCE_TO_OPERATOR_SURFACE",
+      "chainLinkOrder": 5,
+      "claimedBy": "work-order New Doc-Only Fields operatorSurface requirement",
+      "implementedBy": "scripts/cvf_doctor.py (CLI human-readable readout with remediation lines); governance/compat/run_agent_autorun_workflow_gate.py and governance/compat/run_local_governance_hook_chain.py (CLI PASS/FAIL per configured checker); .cvf/runtime/autorun-receipts/*.json (machine-readable gate receipts); EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts (Web job registry, 5 job types, exactly 1 named governance/compat checker wired directly); EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance/operations/page.tsx (Web Operations UI) and .../governance (Web UI route) for GC-001..GC-014 RUNTIME_GUARD-class evidence",
+      "invokedBy": "operator runs scripts/cvf_doctor.py directly; autorun receipts are written by governance/compat/run_agent_autorun_workflow_gate.py at each phase run (confirmed by this audit's own pre-implementation gate run, receipt at .cvf/runtime/autorun-receipts/pre-implementation.json); Web Operations page dispatches jobs via web-governance-jobs.ts JOB_DEFINITIONS keyed by JobType",
+      "testedBy": "DIRECT_COMMAND: this audit ran python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base b6cba5924 --head HEAD and confirmed the receipt file was written with schema/status/phase/base/head/baseSha/headSha/commandManifestHash/worktreeFingerprint/totalDurationSeconds keys; DIRECT_SOURCE_READ: web-governance-jobs.ts GovernanceJobType union (lines 16-21) and JOB_DEFINITIONS buildArgv entries (lines 140-174) traced for each of the 5 job types",
+      "evidenceOwner": "the receipt file itself; scripts/cvf_doctor.py source; web-governance-jobs.ts JOB_DEFINITIONS",
+      "operatorSurface": "THREE_PART_DISTINCTION: (a) CLI_AGGREGATE_AND_PER_CHECK_PROVEN - both run_agent_autorun_workflow_gate.py and run_local_governance_hook_chain.py print a human-readable PASS/FAIL line per configured checker plus an aggregate summary line, confirmed by direct source read; (b) WEB_SUBSET_NOT_FULL_186 - Web Operations exposes exactly 5 job types, of which docs_governance_check wires to exactly 1 named governance/compat checker (check_docs_governance_compat.py), and 2 release-gate job types delegate to an untraced bundle script (scripts/run_cvf_release_gate_bundle.py); (c) UNIFIED_186_WEB_INVENTORY_NOT_PROVEN - no file in this manifest shows the Web UI iterating the full governance/compat/check_*.py directory or rendering a per-checker table for all 186 scripts; this must not be inferred from the mere presence of the /governance route directory",
+      "evidenceClass": "MANUAL",
+      "freshnessDisposition": "CURRENT",
+      "verdict": "PARTIAL_OPERATOR_VISIBILITY_BY_ENFORCEMENT_CLASS",
+      "sourceCitations": [
+        {"path": "scripts/cvf_doctor.py", "section": "main", "lines": "203-227", "note": "prints 'CVF Doctor: <status>' plus per-check lines and remediation hints; confirmed by source read"},
+        {"path": "governance/compat/run_agent_autorun_workflow_gate.py", "section": "_print_result", "lines": "72-76", "note": "print(f'[{status}] {result.name} ({result.duration_s:.2f}s)') where status is PASS/FAIL from result.returncode - confirmed real per-checker human-readable CLI output"},
+        {"path": "governance/compat/run_local_governance_hook_chain.py", "section": "hook-step status print", "lines": "195-196, 267", "note": "status = 'PASS' if result.returncode == 0 else 'FAIL' printed per hook-chain step (line 144 gives START [{index}/{total}] framing); line 267 prints an aggregate 'All {args.hook} governance checks passed.' line"},
+        {"path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts", "section": "JobType union", "lines": "7", "note": "exactly 5 job types: cvf_doctor, provider_check, docs_governance_check, release_gate_dry_readiness, full_live_release_gate"},
+        {"path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts", "section": "JOB_DEFINITIONS.docs_governance_check", "lines": "154-160", "note": "buildArgv returns ['governance/compat/check_docs_governance_compat.py', '--base', 'HEAD~1', '--head', 'HEAD', '--json'] - exactly one named checker, not a loop over 186 files"},
+        {"path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts", "section": "JOB_DEFINITIONS.release_gate_dry_readiness / full_live_release_gate", "lines": "161-174", "note": "both delegate to scripts/run_cvf_release_gate_bundle.py; this audit did not trace how many individual checkers that bundle script runs internally or whether its output is rendered per-checker in the Operations page"},
+        {"path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance/operations/page.tsx", "section": "job type references", "lines": "n/a", "note": "confirmed to reference the same job type identifiers as web-governance-jobs.ts (grep match), consistent with the 5-job-type registry it calls; no full-186-checker enumeration found"},
+        {"path": ".cvf/runtime/autorun-receipts/pre-implementation.json", "section": "top-level keys", "lines": "n/a (generated JSON)", "note": "generated by this audit's own pre-implementation gate run at executionBaseHead b6cba5924; confirmed present with expected schema keys"},
+        {"path": "EXTENSIONS/CVF_v1.7.2_SAFETY_DASHBOARD", "section": "app/, components/", "lines": "n/a", "note": "directory confirmed present; grep for governance/compat or autorun-receipts references returned zero matches, confirming this dashboard is NOT wired to the 186 CI_REPO_GATE checkers"},
+        {"path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance", "section": "route directory", "lines": "n/a", "note": "directory confirmed present via find; this is the RUNTIME_GUARD-class (GC-001..GC-014) operator surface, distinct from the CI_REPO_GATE-class checkers this audit traces in the runtime-to-enforcement lane; presence of this route is NOT evidence of a unified 186-checker Web readout"}
+      ],
+      "contradictionNote": "None; this lane distinguishes two enforcement classes (RUNTIME_GUARD vs CI_REPO_GATE per docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md Enforcement Classes table) with different operator-surface maturity, and further distinguishes CLI aggregate/per-check proof from Web subset exposure from an unproven unified Web inventory claim, recording all three honestly rather than collapsing them into one claim.",
+      "authorityPrecedenceApplied": "N/A: no contradiction requiring precedence in this lane."
+    }
+  ],
+  "pathDispositions": [
+    {
+      "id": "EPD-01",
+      "citingDoc": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+      "citingLine": 54,
+      "citedPath": "docs/roadmaps/CVF_RESTRUCTURING_ROADMAP_2026-03-21.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/roadmaps/archive/CVF_RESTRUCTURING_ROADMAP_2026-03-21.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924"
+    },
+    {
+      "id": "EPD-02",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 22,
+      "citedPath": "docs/audits/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/audits/archive/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924"
+    },
+    {
+      "id": "EPD-03",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 23,
+      "citedPath": "docs/reviews/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/reviews/archive/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_CODEX_REVIEW_2026-05-23.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924"
+    },
+    {
+      "id": "EPD-04",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 24,
+      "citedPath": "docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924"
+    },
+    {
+      "id": "EPD-05",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 25,
+      "citedPath": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/roadmaps/archive/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924"
+    },
+    {
+      "id": "EPD-06",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 38,
+      "citedPath": "docs/reference/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924",
+      "note": "duplicate citation of EPD-04's target at a second line in the same document"
+    },
+    {
+      "id": "EPD-07",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 38,
+      "citedPath": "docs/audits/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/audits/archive/CVF_LEGACY_SPEC_ABSORPTION_BLINDSPOT_AUDIT_2026-05-23.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924",
+      "note": "duplicate citation of EPD-02's target at a second line in the same document"
+    },
+    {
+      "id": "EPD-08",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 41,
+      "citedPath": "docs/reference/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/reference/archive/CVF_QWEN3_HOSTED_PROOF_PREREQUISITES_2026-05-23.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924"
+    },
+    {
+      "id": "EPD-09",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 41,
+      "citedPath": "docs/reviews/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/reviews/archive/CVF_D10_QWEN3_R1_COMPATIBLE_HOSTED_PROOF_COMPLETION_2026-05-23.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924"
+    },
+    {
+      "id": "EPD-10",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 46,
+      "citedPath": "docs/work_orders/CVF_WO_AIF_C_MEMORY_GATEWAY_PHASE2_2026-05-23.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/work_orders/archive/CVF_WO_AIF_C_MEMORY_GATEWAY_PHASE2_2026-05-23.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924"
+    },
+    {
+      "id": "EPD-11",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 47,
+      "citedPath": "docs/work_orders/CVF_WO_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-23.md",
+      "disposition": "STALE_ARCHIVE_MOVE",
+      "successorPath": "docs/work_orders/archive/CVF_WO_AIF_B_GRAPH_KNOWLEDGE_PHASE1_2026-05-23.md",
+      "successorConfirmed": true,
+      "recomputedAtHead": "b6cba5924"
+    },
+    {
+      "id": "EPD-12",
+      "citingDoc": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
+      "citingLine": 58,
+      "citedPath": "docs/reviews/CVF_H2_WORKING_MEMORY_RUNTIME_PROOF_COMPLETION_2026-05-22.md",
+      "disposition": "MISSING",
+      "successorPath": null,
+      "successorConfirmed": false,
+      "recomputedAtHead": "b6cba5924",
+      "note": "confirmed absent via full-repository basename search (find -iname), not only archive-sibling check; sibling artifact CVF_T5_RUNTIME_MEMORY_WIRING_COMPLETION_2026-05-22.md exists in docs/reviews/archive/ but is a distinct file, not a renamed H2 file"
+    }
+  ],
+  "reconciliation": {
+    "markdownEdgeIdCount": 5,
+    "jsonEdgeIdCount": 5,
+    "markdownPathDispositionCount": 12,
+    "jsonPathDispositionCount": 12,
+    "markdownManifestCount": 31,
+    "jsonSourceManifestCount": 31,
+    "jsonManifestRecordsCount": 31,
+    "markdownManifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b",
+    "jsonManifestHash": "98fc0f14315c51e717ed9dacc23e9b1dd4c14438feb42353a9ef81558926181b",
+    "markdownPerCheckerHistoricalRowCount": 9,
+    "jsonPerCheckerHistoricalEvidenceCount": 9,
+    "match": true
+  },
+  "repairHistory": [
+    {
+      "repairId": "RPR-01",
+      "topic": "Corpus manifest count mismatch",
+      "finding": "sourceManifest array has 31 entries; corpusCompleteness.manifestCount and the Markdown Corpus Completeness block both said 30",
+      "action": "Recounted via direct len() of the JSON array (31 confirmed); corrected manifestCount, ledgerTerminalCount, and reconciliation counts to 31 in both artifacts; added a manifestRecords array with one per-path terminalStatus:READ entry"
+    },
+    {
+      "repairId": "RPR-02",
+      "topic": "Missing manifest hash",
+      "finding": "Markdown said 'Manifest hash: not separately computed'",
+      "action": "Computed sha256 over the 31 sourceManifest entries in declared order, normalized as one path per line (UTF-8, LF, no trailing whitespace, trailing newline); recorded the same hash in both artifacts and in every manifestRecords entry"
+    },
+    {
+      "repairId": "RPR-03",
+      "topic": "Contract-to-runtime file-existence-only sampling",
+      "finding": "GC-001, GC-009, GC-011 were marked PROVEN_CONNECTED_FOR_SAMPLED_ROWS on file-existence checks alone, without tracing a caller/invocation route or verifying the cited test actually exercises the cited source",
+      "action": "Traced each row to an actual caller site and diffed cited test imports against cited source files; classified GC-001 as INVOKED_WITH_CITED_TEST_PAIRING_MISMATCH, GC-009 as IMPLEMENTED_NOT_INVOCATION_PROVEN, and GC-011 as PROVEN_CONNECTED; narrowed the lane verdict to PARTIAL_RUNTIME_CONNECTION_FOR_SAMPLED_ROWS"
+    },
+    {
+      "repairId": "RPR-04",
+      "topic": "Evidence-to-operator overclaim risk on Web surfacing",
+      "finding": "Prior draft risked reading '/governance route present' as proof the 186 CI_REPO_GATE checkers are Web-surfaced",
+      "action": "Recomputed from run_agent_autorun_workflow_gate.py, run_local_governance_hook_chain.py, the Operations page, and web-governance-jobs.ts; separated the claim into (a) CLI aggregate/per-check output proven, (b) Web exposes a 5-job-type subset with exactly 1 named checker wired directly, (c) unified 186-checker Web inventory NOT established"
+    },
+    {
+      "repairId": "RPR-05",
+      "topic": "Runtime-to-enforcement historical evidence was aggregate-only",
+      "finding": "Only a single reused scenarioCount=84 aggregate PASS line was cited for all 9 CF-076..CF-084 checkers",
+      "action": "Located each checker's own dedicated trace batch heading (addition line) and its own scenarioCount-tagged historical PASS line (76 through 84 respectively) plus its exact registry line range; added a 9-row perCheckerHistoricalEvidence array to the JSON and a matching Markdown table"
+    }
+  ],
+  "contradictionLedger": [
+    {
+      "id": "CL-01",
+      "topic": "Layer/architecture numbering",
+      "sources": [
+        "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md (L0-L6, Frozen doctrine)",
+        "ARCHITECTURE.md (4-role stack, actively maintained front door)",
+        "docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md ('5 Layers', dated 2026-02-25)",
+        "docs/CVF_CORE_KNOWLEDGE_BASE.md ('5 Layers' v1.0-v1.7.2 stack, self-declared authoritative for its own scope)"
+      ],
+      "resolution": "AUTHORITY_PRECEDENCE_APPLIED",
+      "precedenceRule": "Frozen doctrine outranks non-doctrine module-map narrations for layer-naming claims; the other three remain valid as separate, non-contradictory module/version descriptions scoped to their own documents.",
+      "narrowedClaim": "This audit uses L0-L6 as the doctrine-authoritative layer model. It does not claim the three other documents are wrong, retired, or in need of correction; it records that they use different, internally-consistent numbering schemes not derived from or mapped to the doctrine model in their own text."
+    },
+    {
+      "id": "CL-02",
+      "topic": "Runtime-to-enforcement invocation status of the 9 cross-family checkers",
+      "sources": [
+        "Temporary non-CVF advisory report (Gop y CVF/10.07/, cited only as advisory input per work order)",
+        "This audit's fresh recomputation from docs/reference/CVF_CONFORMANCE_SCENARIOS.json and both runner scripts"
+      ],
+      "resolution": "AUTHORITY_PRECEDENCE_APPLIED",
+      "precedenceRule": "Fresh recomputation from CVF-owned current source outranks a temporary advisory report per work-order Authority Chain and Negative Search And Collision Discipline.",
+      "narrowedClaim": "The 9 checkers have a real, data-driven, parameterized execution edge (CI workflow -> conformance runner -> JSON scenario registry -> posture gate runner -> checker). This does not change their R72F-held lifecycle disposition (RETIREMENT_HOLD_SOURCE_GAP); execution-edge existence and retirement-safety are separate questions."
+    }
+  ],
+  "claimBoundary": "This JSON is a bounded, source-verified evidence companion for MSEA-R90 Audit A. It records what was read, what was found, and how contradictions were resolved by authority precedence. It does not certify semantic correctness of every governed artifact in the repository, does not authorize any runtime, checker, hook, or session-state mutation, does not authorize Deliverable B or a maintenance/freshness mechanism, and does not reopen or re-decide the R72F lifecycle disposition. This repair pass corrected a manifest miscount (30 to 31), added a computed manifest hash, downgraded 2 of 3 contract-to-runtime sampled rows from file-existence-only proof to invocation-unproven dispositions after tracing actual callers and test-source pairing, narrowed the evidence-to-operator claim into three explicit CLI/Web-subset/unified-inventory parts, and added per-checker (not only aggregate) historical evidence for the 9 CF-076..CF-084 checkers. See repairHistory above for the itemized corrections."
+}

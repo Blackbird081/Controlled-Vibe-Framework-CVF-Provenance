@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work-order
 
@@ -260,13 +260,13 @@ reviewerOwnedClosurePaths:
 - `docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md`
 - `docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_2026-07-10.md`
 - `docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_EVIDENCE_2026-07-10.json`
+- `docs/corpus-intelligence/registry/entries/msea-r90-system-chain-audit-a.json`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
 
-pendingStatusTokensAllowedBeforeReview: COMPLETE_PENDING_REVIEW,
-IMPLEMENTATION_COMPLETE_PENDING_REVIEW, DRAFT, HOLD_*
+pendingStatusTokensAllowedBeforeReview: RESOLVED_AT_REVIEW
 
-forbiddenClosedEquivalentResidue: COMPLETE_PENDING_REVIEW, NOT_EXECUTED_YET,
-WORKER_RETURNS_PENDING, PRE_CLOSURE_NOT_RUN, FAIL_EXPECTED_PENDING_FINALITY,
-DISPATCHED as current status
+forbiddenClosedEquivalentResidue: RESOLVED_AT_REVIEW; no pending worker or
+pre-closure status remains current
 
 predecessorClosureFactSource: stable completion/review artifact, not mutable
 active session current mode
@@ -346,7 +346,7 @@ extractedTextAuthority: SOURCE_AUTHORITY
 |---|---|
 | Foundation path class | Dated audit and review evidence in existing governed path families; no new stable reference foundation. |
 | Storage decision | Human Audit A and machine JSON companion stay together under the existing audits owner; worker return stays under the existing reviews owner. |
-| Existing aggregate impact | None; this tranche does not create or edit a generated aggregate. |
+| Existing aggregate impact | Closure amendment: GC-051 requires one MSEA-R90 entry source and regenerated `CVF_CORPUS_SCAN_REGISTRY.json` so the completed bounded corpus audit is discoverable; no other aggregate changes. |
 | Generated state impact | None; no session or workspace state change. |
 | Durable governance boundary | A later maintenance packet may create a stable front door, generator, and freshness checker only with fresh authorization. |
 
@@ -497,32 +497,32 @@ backend output.
 
 ## Acceptance Criteria
 
-- [ ] All five chain lanes have terminal, source-backed rows.
-- [ ] Runtime-to-enforcement correction includes exact workflow, registry,
+- [x] All five chain lanes have terminal, source-backed rows.
+- [x] Runtime-to-enforcement correction includes exact workflow, registry,
       runner, checker, and per-checker historical evidence lines.
-- [ ] Doctrine-to-contract rows use L0-L6 authority and do not reuse provider
+- [x] Doctrine-to-contract rows use L0-L6 authority and do not reuse provider
       guidance.
-- [ ] Contract-to-runtime rows cite current symbols/callers/tests or use a
+- [x] Contract-to-runtime rows cite current symbols/callers/tests or use a
       bounded non-implementation disposition.
-- [ ] All twelve evidence-path candidates have current dispositions and owner
+- [x] All twelve evidence-path candidates have current dispositions and owner
       actions; Markdown and JSON agree.
-- [ ] Evidence-to-operator rows prove a real surface or explicitly record its
+- [x] Evidence-to-operator rows prove a real surface or explicitly record its
       absence.
-- [ ] JSON is deterministic, schema-versioned, secret-free, and contains
+- [x] JSON is deterministic, schema-versioned, secret-free, and contains
       source manifest/hash/reconciliation data.
-- [ ] No final complete-A claim remains if any required edge is unresolved.
-- [ ] Worker return passes its full fast gate and records actual pending paths.
-- [ ] Worker performs no commit and HEAD remains unchanged.
+- [x] No final complete-A claim remains if any required edge is unresolved.
+- [x] Worker return passes its full fast gate and records actual pending paths.
+- [x] Worker performs no commit and HEAD remains unchanged.
 
-Fail conditions:
+Fail conditions (checked means reviewer confirmed absent):
 
-- [ ] Any accepted row cites temporary/provider-specific material as CVF
+- [x] N/A with reason: no accepted row cites temporary/provider-specific material as CVF
       authority.
-- [ ] Any indirect invocation skips a registry/runner hop or lacks source-line
+- [x] N/A with reason: no indirect invocation skips a registry/runner hop or lacks source-line
       evidence.
-- [ ] Any stale path is called missing without archive/successor search.
-- [ ] Any operator-surface claim lacks a real route, readout, command, or doc.
-- [ ] Any runtime, provider/live, public, B, maintenance implementation,
+- [x] N/A with reason: no stale path is called missing without archive/successor search.
+- [x] N/A with reason: no operator-surface claim lacks a real route, readout, command, or doc.
+- [x] N/A with reason: no runtime, provider/live, public, B, maintenance implementation,
       cleanup, retirement, or session mutation appears in the changed set.
 
 Closure is blocked if any fail condition is present.
@@ -620,17 +620,37 @@ non-empty committed range and reviewer-owned completion artifact.
 
 ## Closure Checklist
 
-- [ ] Worker artifacts match the planned manifest.
-- [ ] All acceptance criteria resolved PASS or explicit blocking disposition.
-- [ ] No fail condition remains.
-- [ ] Reviewer recomputed representative source edges and path dispositions.
-- [ ] Markdown and JSON reconciliation passes.
-- [ ] Worker-return fast gate passes.
-- [ ] Commit mode remains WORKER_MUST_NOT_COMMIT for worker handoff.
-- [ ] Reviewer captures closureBaseHead and owns any accepted commit.
-- [ ] Deliverable B remains unauthorized until Audit A reviewer acceptance.
-- [ ] Maintenance/freshness implementation remains a later fresh packet.
-- [ ] Advisory-directory relocation remains a later governed cleanup batch.
+- [x] Worker artifacts match the planned manifest.
+- [x] All acceptance criteria resolved PASS or explicit blocking disposition.
+- [x] No fail condition remains.
+- [x] Reviewer recomputed representative source edges and path dispositions.
+- [x] Markdown and JSON reconciliation passes.
+- [x] Worker-return fast gate passes.
+- [x] Commit mode remains WORKER_MUST_NOT_COMMIT for worker handoff.
+- [x] Reviewer captures closureBaseHead and owns any accepted commit.
+- [x] Deliverable B remains unauthorized until Audit A reviewer acceptance.
+- [x] Maintenance/freshness implementation remains a later fresh packet.
+- [x] Advisory-directory relocation remains a later governed cleanup batch.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | top status and completed closure checklist | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md` | reviewer-fast gate and exact seven-path reviewer manifest | PASS |
+| Roadmap state | N/A with reason: R90 is a standalone work order; cited roadmap paths are audited evidence candidates, not a changed roadmap | exact changed-set inspection shows no roadmap mutation | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | `generate_corpus_scan_registry.py --check` reports aggregate matches source entries | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged registry projection and reviewer-fast corpus gates | PASS |
+| External evidence digest | N/A with reason: temporary advisory input is not accepted authority; every fact was recomputed from repo-local source | Audit A authority and contradiction ledger | N/A with reason: no external evidence accepted for closure |
+| System loop interlock | this work order `System Loop Interlock Routing` | Audit A is the upstream output; downstream B remains separately gated | PASS |
+| Session continuity | active session surfaces | separate session-sync after material closure commit | N/A with reason: split-commit discipline |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| No runtime or query receipt is required for static Audit A acceptance | Source reads, deterministic JSON, hash reconciliation, and governance gates are the accepted evidence classes | PASS |
+| Worker execution base remains unchanged through handoff | `b6cba5924` before and after worker execution | PASS |
 
 ## Return-To-Orchestrator Conditions
 
