@@ -96,6 +96,8 @@ R82 public distribution commit: `a4d5dba915`.
 
 R83 dispatch material commit before this session-sync: `22262eb6`.
 
+R83 workspace operability implementation material commit: `202d7dd92`.
+
 Remote tracking branch: `origin/main`.
 
 Exact remote SHA must be derived live from git when needed.
