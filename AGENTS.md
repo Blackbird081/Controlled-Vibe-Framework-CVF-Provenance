@@ -45,6 +45,11 @@ state one concise acknowledgment naming:
 - next allowed move;
 - any parked operator checkpoint.
 
+When the operator asks to create or refresh a local CVF Workspace from a fresh
+provenance clone, use `Initialize-CVF-Operator-Workspace.ps1` as the autorun
+entrypoint and preserve interactive profile selection unless the operator has
+already selected an exact path and profile.
+
 Suggested format:
 
 `Startup acknowledged: current mode=<mode>; active handoff=<handoff>; next allowed move=<summary>; parked checkpoint=<none|summary>.`

@@ -176,6 +176,10 @@
       "exposureClass": "INTERNAL_ONLY"
     },
     {
+      "path": "Initialize-CVF-Operator-Workspace.ps1",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
       "path": "LICENSE",
       "exposureClass": "PUBLIC_DOCS_ONLY"
     },
