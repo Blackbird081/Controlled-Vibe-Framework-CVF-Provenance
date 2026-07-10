@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: INTEGRATED_EXECUTION_AUTHORIZED
+Status: RC_PASS_BOUNDED_AND_PUBLIC_SYNCED
 
 docType: roadmap
 
@@ -70,12 +70,12 @@ weaken remote validation, path containment, profile allowlisting, or rollback.
 
 | Tranche | Objective | Required evidence | Status |
 |---|---|---|---|
-| R82A | Distribution/version contract | manifest and source-backed public boundary | AUTHORIZED |
-| R82B | Public-safe installer and profile materializer | parser, path, and deny-token checks | AUTHORIZED |
-| R82C | Clean-room install proof | PowerShell 5.1 and PowerShell 7 results | AUTHORIZED |
-| R82D | Update and rollback proof | successful refresh plus invalid-update restoration | AUTHORIZED |
-| R82E | Profile delivery proof | public-free and paid-user-safe manifests; operator-local rejection | AUTHORIZED |
-| R82F | Public-sync and release decision | remote, changed-set, CI/gate, push, and final decision | AUTHORIZED |
+| R82A | Distribution/version contract | manifest and source-backed public boundary | PASS |
+| R82B | Public-safe installer and profile materializer | parser, path, and deny-token checks | PASS |
+| R82C | Clean-room install proof | PowerShell 5.1 and PowerShell 7 results | PASS |
+| R82D | Update and rollback proof | successful refresh plus invalid-update restoration | PASS |
+| R82E | Profile delivery proof | public-free and paid-user-safe manifests; operator-local rejection | PASS |
+| R82F | Public-sync and release decision | remote, changed-set, CI/gate, push, and final decision | PASS |
 
 ## Work Plan
 
@@ -120,10 +120,30 @@ weaken remote validation, path containment, profile allowlisting, or rollback.
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: roadmap and execution evidence stay in provenance. Only separately
-allowlisted public-safe product files may be exported during R82F.
+Public remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public commit: `a4d5dba915f9ca8acea251a3a479ca9e1420d1fc`
+
+Exported front door:
+`docs/reference/workspace_distribution/README.md`
+
+The roadmap and private execution evidence remain provenance-only. The public
+commit contains the bounded distribution scripts, manifest, public guidance,
+and workspace templates only.
+
+## Machine Closure Package
+
+| Closure item | Evidence | Final status |
+|---|---|---|
+| Roadmap state | This file has `Status: RC_PASS_BOUNDED_AND_PUBLIC_SYNCED`. | PASS |
+| R82A-R82B product source | Provenance material commit `4939e59d0`; manifest version `0.1.0-rc1`. | PASS |
+| R82C clean installs | Windows PowerShell 5.1 `public-free` and PowerShell 7 `paid-user-safe` targets. | PASS |
+| R82D update and restore | successful update plus forced invalid-replacement restoration to the prior HEAD and remote | PASS |
+| R82E profile boundary | 7-artifact and 9-artifact public profiles passed; `operator-local` was rejected | PASS |
+| R82F public release | public commit `a4d5dba915f9ca8acea251a3a479ca9e1420d1fc`; public static CI 8/8 | PASS |
+| Completion review | `docs/reviews/CVF_MSEA_R82_WORKSPACE_DISTRIBUTION_AND_UPDATE_RELEASE_COMPLETION_REVIEW_2026-07-10.md` | PASS |
 
 ## Claim Boundary
 
