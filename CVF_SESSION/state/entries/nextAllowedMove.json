@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1621,
+  "stateOrder": 1623,
   "stateKey": "nextAllowedMove",
-  "value": "MSEA-R81B integrated Workspace RC checklist and smoke execution is DISPATCHED at provenance material commit 810ace2ee. Next allowed move is worker execution of the paired R81B baseline and work order only: create the checklist and integrated review, run disposable fresh-project and adopt-existing smoke, run documented workspace update proof, restore operator-local profile if needed, and make the R81F decision from command evidence. No Policy_Local app mutation, public-sync mutation, public push, provider/live proof, hosted/production claim, runtime/checker/hook/Fast Lane change, Memory/RAG, retrieval, vectorization, or legal workflow is authorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "MSEA-R81 Workspace Productization Release Candidate is RC_PASS_BOUNDED at provenance material commit c067328d5. Next allowed move is operator selection of the next product-value lane or a fresh public-safe packaging/distribution packet with repository-boundary verification. No automatic public-sync mutation or push, Policy_Local app mutation, provider/live proof, hosted/production claim, runtime/checker/hook/Fast Lane change, Memory/RAG, retrieval, vectorization, or legal workflow is authorized. R73F checker retirement remains parked until active conformance/evidence-pack references are removed or reattached. LHW24 remains latest closed numbered LHW wave."
 }

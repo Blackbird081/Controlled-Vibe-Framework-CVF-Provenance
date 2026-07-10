@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1.0",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
-  "sessionMemoryFrontDoorArchive": "CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-06-26.md",
+  "sessionMemoryFrontDoorArchive": "CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-07-10.md",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V39_2026-07-08.md",
+  "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -72,15 +72,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V35_2026-07-03.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V37_2026-07-06.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r81b_workspace_rc_integrated_execution_dispatched",
-  "previousMode": "msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018",
+  "currentMode": "msea_r81_workspace_rc_pass_bounded_pending_product_selection",
+  "previousMode": "msea_r81b_workspace_rc_integrated_execution_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -10549,5 +10550,6 @@
   "mseaR81WorkspaceProductizationReleaseCandidateRoadmap20260709": "ROADMAP_ACTIVE_PENDING_R81B_GC018. Provenance material commit 5500f357c added docs/roadmaps/CVF_MSEA_R81_WORKSPACE_PRODUCTIZATION_RELEASE_CANDIDATE_ROADMAP_2026-07-09.md as the CVF Workspace Productization Release Candidate lane. R81A source map and boundary confirmation is reviewer accepted at material commit 60dfb0495 with source map, worker return, and completion review evidence. R81 focuses on CVF product value: provenance/public/local workspace boundary, public-safe workspace core, local rule-pack and continuity inheritance, disposable fresh/adopted project smoke proof, and a small release-candidate checklist. Next authorized move is R81B only: source-verified GC-018 baseline and work order for compact RC checklist definition. R81 does not authorize Policy_Local app logic, legal workflow, retrieval, Memory/RAG, vectorization, provider/live proof, hosted production claims, checker retirement, hook/Fast Lane edits, public push, or broad governance refactoring.",
   "mseaR81AWorkspaceProductizationRCSourceMapClosure20260710": "REVIEWER_ACCEPTED_BOUNDED. Provenance material commit 60dfb0495 accepted the no-commit R81A worker output: docs/reference/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md, docs/reviews/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_WORKER_RETURN_2026-07-09.md, and docs/reviews/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_COMPLETION_REVIEW_2026-07-09.md. Reviewer-return fast gate PASS 59/59, material pre-commit hook PASS 80/80, and the committed range contains only the three R81A documentation artifacts. The source map confirms provenance, public core, public-sync, local workspace, and downstream-project boundaries; it keeps operator-local continuity distinct from paid-user-safe output. R81B checklist authoring is allowed next, but no fresh bootstrap, adoption, update, public-sync, public release, paid-user production, provider/live, or downstream application proof is claimed.",
   "mseaR81BWorkspaceRCIntegratedExecutionDispatch20260710": "DISPATCHED. Provenance material commit 810ace2ee added the MSEA-R81B GC-018 baseline and WORKER_MAY_COMMIT work order for compact Workspace RC checklist definition plus integrated R81C fresh-project, R81D adopt-existing, R81E update, and R81F evidence decision. Pre-dispatch autorun PASS 73/73 and material pre-commit hook PASS 80/80. Worker may create only the checklist reference, integrated smoke/closure review, and evidence-backed R81 roadmap update, while using disposable workspace targets outside Policy_Local. Public-sync, public push, provider/live proof, runtime/checker/hook/Fast Lane changes, production claims, and downstream app mutation remain forbidden.",
-  "nextAllowedMove": "MSEA-R81B integrated Workspace RC checklist and smoke execution is DISPATCHED at provenance material commit 810ace2ee. Next allowed move is worker execution of the paired R81B baseline and work order only: create the checklist and integrated review, run disposable fresh-project and adopt-existing smoke, run documented workspace update proof, restore operator-local profile if needed, and make the R81F decision from command evidence. No Policy_Local app mutation, public-sync mutation, public push, provider/live proof, hosted/production claim, runtime/checker/hook/Fast Lane change, Memory/RAG, retrieval, vectorization, or legal workflow is authorized. LHW24 remains latest closed numbered LHW wave."
+  "mseaR81WorkspaceRCClosure20260710": "RC_PASS_BOUNDED. Provenance material commit c067328d5 created the compact Workspace RC checklist, integrated smoke and closure review, R81 roadmap closure update, and reference-index classification. Fresh bootstrap and existing-project adoption each passed doctor and enforcement 17/17. Local workspace update passed. Public-free and paid-user-safe protected-token scans passed. Operator-local was blocked without explicit continuity allowance and passed with it. No Policy_Local, public-sync, public push, provider/live, runtime, checker, hook, Fast Lane, hosted/production, Memory/RAG, retrieval, vectorization, or legal-workflow mutation occurred.",
+  "nextAllowedMove": "MSEA-R81 Workspace Productization Release Candidate is RC_PASS_BOUNDED at provenance material commit c067328d5. Next allowed move is operator selection of the next product-value lane or a fresh public-safe packaging/distribution packet with repository-boundary verification. No automatic public-sync mutation or push, Policy_Local app mutation, provider/live proof, hosted/production claim, runtime/checker/hook/Fast Lane change, Memory/RAG, retrieval, vectorization, or legal workflow is authorized. R73F checker retirement remains parked until active conformance/evidence-pack references are removed or reattached. LHW24 remains latest closed numbered LHW wave."
 }
