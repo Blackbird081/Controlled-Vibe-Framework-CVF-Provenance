@@ -34,25 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r82_workspace_distribution_integrated_execution_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=integrated R82A-R82F execution only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r82_workspace_distribution_release_candidate_public_synced_pending_next_product_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select the next high-value product lane from the bounded R82 Windows release candidate; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r82_workspace_distribution_integrated_execution_dispatched`
+Current mode marker: `msea_r82_workspace_distribution_release_candidate_public_synced_pending_next_product_selection`
 
-Current mode: `msea_r82_workspace_distribution_integrated_execution_dispatched`
+Current mode: `msea_r82_workspace_distribution_release_candidate_public_synced_pending_next_product_selection`
 
-`msea_r82_workspace_distribution_integrated_execution_dispatched`
+`msea_r82_workspace_distribution_release_candidate_public_synced_pending_next_product_selection`
 
 Previous mode:
 
-`msea_r81_workspace_rc_pass_bounded_pending_product_selection`
+`msea_r82_workspace_distribution_integrated_execution_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MSEA-R82 Workspace Distribution And Update Release | `203a4e0f4` | DISPATCH_READY. Integrated R82A-R82F authority covers a Windows-first public-safe manifest, installer, profile materializer, clean-room proof, update/rollback proof, bounded public-sync, and release decision. No operator-local distribution, Policy_Local mutation, provider/live, hosted/production, checker, hook, or Fast Lane change is authorized. |
+| MSEA-R82 Workspace Distribution And Update Release | `4bd363a81` | RC_PASS_BOUNDED_AND_PUBLIC_SYNCED after implementation `4939e59d0` and public commit `a4d5dba915`. Windows PowerShell 5.1 and PowerShell 7 clean installs, update, rollback, deterministic build, profile boundary, leakage scans, and public static CI 8/8 passed for version `0.1.0-rc1`. |
 | MSEA-R81 Workspace Productization Release Candidate | `c067328d5` | RC_PASS_BOUNDED. Fresh bootstrap and existing-project adoption each passed doctor and enforcement 17/17. Workspace update passed. Public-free and paid-user-safe profile boundary scans passed. Operator-local failed without explicit continuity allowance and passed with it. No `Policy_Local`, public-sync, provider/live, runtime, checker, hook, or Fast Lane mutation occurred. |
 | MSEA-R81B integrated dispatch | `810ace2ee` | Fulfilled by the R81 material closure commit. |
 | MSEA-R81A source map | `60dfb0495` | REVIEWER_ACCEPTED_BOUNDED and consumed by R81 checklist/closure. |
@@ -61,13 +61,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r82_workspace_distribution_integrated_execution_dispatched`
+Mode: `msea_r82_workspace_distribution_release_candidate_public_synced_pending_next_product_selection`
 
-Next allowed move: integrated R82A-R82F worker execution from the accepted
-roadmap, baseline, and work order at `203a4e0f4`. `Policy_Local` and
-`operator-local` distribution remain forbidden. Public-sync is allowed only
-after local install, profile, update, rollback, leakage, and shell evidence
-passes. Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: select the next high-value product lane from the bounded R82
+Windows release candidate. R82 does not itself authorize more implementation.
+`Policy_Local`, operator-local distribution, provider/live, hosted/production,
+cross-platform, entitlement, and downstream-app claims remain outside scope.
+Latest closed numbered LHW wave remains `LHW24`.
 
 The parked R73F checker-retirement candidate must not reopen until its active
 conformance and evidence-pack references are removed or reattached under a
@@ -84,8 +84,8 @@ separate source-verified packet.
   fresh remote verification and explicit authorization.
 - Local workspace may consume curated profiles; private continuity requires
   `operator-local` plus explicit allowance.
-- Do not infer hosted, public, paid-user production, provider/live, Memory/RAG,
-  retrieval, vectorization, or legal-workflow readiness from R81.
+- Do not infer hosted, paid-user production, cross-platform, provider/live,
+  Memory/RAG, retrieval, vectorization, or legal-workflow readiness from R82.
 
 ## History
 

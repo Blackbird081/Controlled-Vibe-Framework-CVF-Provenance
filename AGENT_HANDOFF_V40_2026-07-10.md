@@ -4,14 +4,14 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity after MSEA-R81 Workspace RC bounded closure.
+Purpose: compact continuity after MSEA-R82 Windows distribution RC closure.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
 ## Purpose
 
-Record the accepted R81 local workspace RC evidence, current boundaries, and
-the next operator decision without carrying forward the historical status log.
+Record the accepted R82 Windows distribution RC evidence, current boundaries,
+and the next product-selection decision without carrying forward a status log.
 
 ## Scope / Target / Owner Boundary
 
@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r82_workspace_distribution_integrated_execution_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=integrated R82A-R82F execution only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r82_workspace_distribution_release_candidate_public_synced_pending_next_product_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select the next high-value product lane from the bounded R82 Windows release candidate; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,16 +36,16 @@ Startup acknowledged: current mode=`msea_r82_workspace_distribution_integrated_e
 
 ## Current Mode
 
-`msea_r82_workspace_distribution_integrated_execution_dispatched`
+`msea_r82_workspace_distribution_release_candidate_public_synced_pending_next_product_selection`
 
 ## Latest Work / Changes
 
-MSEA-R82 integrated Workspace Distribution And Update Release is dispatched at
-material commit `203a4e0f4`. It authorizes R82A-R82F as one Windows-first batch:
-distribution manifest/version, standalone public installer, public profile
-delivery, clean-room shell proof, update/rollback proof, bounded public-sync,
-and final release decision. `operator-local`, `Policy_Local`, provider/live,
-hosted/production, checker, hook, and Fast Lane work remain forbidden.
+MSEA-R82A-R82F closed `RC_PASS_BOUNDED_AND_PUBLIC_SYNCED` at provenance
+review commit `4bd363a81`, after product implementation `4939e59d0` and public
+commit `a4d5dba915`. Windows PowerShell 5.1 and PowerShell 7 clean installs,
+deterministic build, profile materialization, update, forced rollback,
+protected-token scans, and public static CI 8/8 passed for version
+`0.1.0-rc1`.
 
 MSEA-R81 closed RC_PASS_BOUNDED at material commit `c067328d5`. The closure
 created the reusable workspace RC checklist, recorded integrated smoke evidence,
@@ -67,9 +67,10 @@ public push occurred.
 
 ## Active Boundary
 
-R81 is closed as a bounded local RC and R82 is the only active execution lane.
-Provenance remains the full private source of truth. Public-sync may receive
-only the allowlisted R82 product projection after local proof passes.
+R82 is closed as a bounded Windows distribution RC. No implementation lane is
+active until the next product selection. Provenance remains the full private
+source of truth; the public repository contains only the allowlisted R82
+product projection.
 
 ## Current HEAD
 
@@ -84,6 +85,10 @@ R82 dispatch material commit before this session-sync: `203a4e0f4`.
 
 R82 Windows distribution implementation material commit: `4939e59d0`.
 
+R82 closure review commit before this session-sync: `4bd363a81`.
+
+R82 public distribution commit: `a4d5dba915`.
+
 Remote tracking branch: `origin/main`.
 
 Exact remote SHA must be derived live from git when needed.
@@ -92,10 +97,34 @@ External agent memory files: non-canonical convenience only.
 
 ## Next Allowed Move
 
-Next allowed move: integrated R82A-R82F worker execution only. `Policy_Local`
-and `operator-local` distribution remain outside scope. Public-sync may proceed
-only after local evidence passes. Latest closed numbered LHW wave remains
-`LHW24`.
+Next allowed move: select the next high-value product lane from the bounded R82
+Windows release candidate. No new implementation is implied. `Policy_Local`,
+operator-local distribution, provider/live, hosted/production, cross-platform,
+entitlement, and downstream application claims remain outside scope. Latest
+closed numbered LHW wave remains `LHW24`.
+
+## Core Guard Self-Protection Authorization - MSEA-R82 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R82 closure review
+commit `4bd363a81`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to post-R82 product selection. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R82 closure and parent HEAD freshness. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set the post-R82 mode. |
+| `CVF_SESSION/state/entries/mseaR82WorkspaceDistributionClosure20260710.json` | Record R82 closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route the next product selection. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical session state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts. |
+
+Operator authorization: the operator authorized autonomous completion of
+R82A-R82F.
+
+Rollback boundary: revert only this closure session-sync; do not revert R82
+product, closure, or public commits.
 
 ## Core Guard Self-Protection Authorization - MSEA-R82 Dispatch Session Sync
 
