@@ -4,14 +4,14 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity after MSEA-R91 system-chain map and freshness-control closure.
+Purpose: compact continuity for MSEA-R92 worker-return scaffold hardening dispatch.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
 ## Purpose
 
-Record accepted MSEA-R91 Deliverable B and freshness enforcement, then route
-the separate advisory-directory cleanup packet.
+Route a five-path last-mile authoring-helper hardening tranche before the
+separate advisory-directory cleanup packet.
 
 ## Scope / Target / Owner Boundary
 
@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r91_system_chain_map_and_freshness_control_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh bounded cleanup packet for relocating Gop y CVF into private legacy storage; parked checkpoint=R73F remains blocked by active references.
+Startup acknowledged: current mode=`msea_r92_worker_return_scaffold_hardening_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=delegated worker executes MSEA-R92 without committing; parked checkpoint=Gop y CVF legacy cleanup follows R92 and R73F remains blocked.
 
 ## Mandatory Startup Reads
 
@@ -36,16 +36,16 @@ Startup acknowledged: current mode=`msea_r91_system_chain_map_and_freshness_cont
 
 ## Current Mode
 
-`msea_r91_system_chain_map_and_freshness_control_closed`
+`msea_r92_worker_return_scaffold_hardening_dispatched`
 
 ## Latest Work / Changes
 
-MSEA-R91 closed `REVIEWER_ACCEPTED_BOUNDED` at material commit `017ae9718`.
-The canonical five-lane human/machine map preserves all accepted R90 verdicts,
-requires 28 matching fingerprints, expires after 30 days without review, and
-is enforced by local catalogs, documentation CI, and a weekly read-only
-workflow. Seventeen focused tests pass. Evidence paths and GC-051 registration
-are reconciled. No Web/runtime/provider/public or lifecycle change occurred.
+MSEA-R92 is `DISPATCH_READY` at commit `115dd8d16`. The delegated worker must
+execute the exact five-path work order under `WORKER_MUST_NOT_COMMIT`. Scope is
+profile-neutral direct scaffold output, its focused tests, two existing
+guidance owners, and the worker return. Checker semantics, compact eligibility,
+hooks, session state, cleanup, public work, and roadmap continuation are
+forbidden.
 
 MSEA-R89 closed at provenance material commit `17362cf7d`. The shared wizard
 now offers `Check`, `Update`, or `Create`. Read-only assessment covers public
@@ -424,28 +424,28 @@ Rollback boundary: revert only this session-sync; do not revert closure commit
 This handoff is private provenance continuity. Public-facing changes require
 the sibling public-sync clone, fresh remote evidence, and separate authority.
 
-## Core Guard Self-Protection Authorization - MSEA-R91 Closure Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R92 Dispatch Session Sync
 
-Authorized guard-maintenance scope: session-sync only after MSEA-R91 material
-closure commit `017ae9718`.
+Authorized guard-maintenance scope: session-sync only after MSEA-R92 dispatch
+commit `115dd8d16`.
 
 Protected paths:
 
 | Path | Purpose |
 |---|---|
-| `CVF_SESSION_MEMORY.md` | Route startup to bounded advisory cleanup packet authoring. |
-| `AGENT_HANDOFF_V40_2026-07-10.md` | Record MSEA-R91 closure and material HEAD. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set MSEA-R91 closed mode. |
-| `CVF_SESSION/state/entries/mseaR91SystemChainMapFreshnessClosure20260710.json` | Record bounded closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route fresh cleanup packet authoring without moving files. |
+| `CVF_SESSION_MEMORY.md` | Route startup to MSEA-R92 worker execution. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record MSEA-R92 dispatch and material HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set MSEA-R92 dispatched mode. |
+| `CVF_SESSION/state/entries/mseaR92WorkerReturnScaffoldHardeningDispatch20260710.json` | Record bounded dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route exact no-commit worker execution. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
 
-Operator authorization: complete R91, preserve an automatically checked map,
-and move temporary advisory material to legacy only through a later packet.
+Operator authorization: harden repeated worker-return authoring friction before
+roadmap and cleanup continuation.
 
-Rollback boundary: revert only this session-sync; do not revert R91 closure,
-R91 dispatch, R90 closure, or unrelated workspace work.
+Rollback boundary: revert only this session-sync; do not revert R92 dispatch,
+R91 closure, or unrelated workspace work.
 
 ## Core Guard Self-Protection Authorization - MSEA-R88 Closure Session Sync
 

@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r91_system_chain_map_and_freshness_control_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh bounded cleanup packet for relocating Gop y CVF into private legacy storage; parked checkpoint=R73F remains blocked by active references.
+Startup acknowledged: current mode=`msea_r92_worker_return_scaffold_hardening_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=delegated worker executes MSEA-R92 without committing; parked checkpoint=Gop y CVF legacy cleanup follows R92 and R73F remains blocked.
 
 ## Current Mode
 
-Current mode marker: `msea_r91_system_chain_map_and_freshness_control_closed`
+Current mode marker: `msea_r92_worker_return_scaffold_hardening_dispatched`
 
-Current mode: `msea_r91_system_chain_map_and_freshness_control_closed`
+Current mode: `msea_r92_worker_return_scaffold_hardening_dispatched`
 
-`msea_r91_system_chain_map_and_freshness_control_closed`
+`msea_r92_worker_return_scaffold_hardening_dispatched`
 
 Previous mode:
 
-`msea_r91_system_chain_map_and_freshness_control_dispatched`
+`msea_r91_system_chain_map_and_freshness_control_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R92 worker-return scaffold last-mile hardening dispatch | `115dd8d16` | DISPATCH_READY. Profile-neutral five-path helper/test/guidance hardening; no checker, compact eligibility, hook, session, cleanup, or roadmap mutation. |
 | MSEA-R91 system-chain map and freshness control closure | `017ae9718` | REVIEWER_ACCEPTED_BOUNDED. Five-lane human/machine map, 28 required fingerprints, 30-day freshness ceiling, 17 tests, local/CI/weekly enforcement, corrected evidence paths, and GC-051 registration closed. |
 | MSEA-R91 system-chain map and freshness control dispatch | `4b5b02f7c` | DISPATCH_READY. Claude builds Deliverable B from accepted R90 evidence, adds deterministic freshness detection, local/CI/weekly reminder wiring, corrects confirmed stale paths, and returns without committing. |
 | MSEA-R90 system-chain Audit A closure | `645df8b83` | REVIEWER_ACCEPTED_BOUNDED. Five bounded lanes closed; registry-driven invocation proven; 31-record manifest and GC-051 registry entry reconciled; B and freshness implementation require a fresh packet. |
@@ -73,14 +74,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r91_system_chain_map_and_freshness_control_closed`
+Mode: `msea_r92_worker_return_scaffold_hardening_dispatched`
 
-Next allowed repository move: author a fresh bounded cleanup packet to relocate
-`Gop y CVF/` into `.private_reference/legacy/` now that its canonical R90/R91
-outputs have governed owners. Do not move the folder before that packet passes
-pre-dispatch and exact reference checks. An R84 worker-experience retrospective
-may proceed as a non-mutating operator interview. Latest closed numbered LHW
-wave remains `LHW24`.
+Next allowed move: delegated worker executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R92_WORKER_RETURN_SCAFFOLD_LAST_MILE_HARDENING_2026-07-10.md`
+under `WORKER_MUST_NOT_COMMIT`, then returns exactly five paths for reviewer
+closure. `Gop y CVF/` legacy cleanup remains next after R92; do not move it in
+this tranche. Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

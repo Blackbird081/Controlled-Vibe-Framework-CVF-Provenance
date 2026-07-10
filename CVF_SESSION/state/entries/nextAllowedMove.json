@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "MSEA-R91 is REVIEWER_ACCEPTED_BOUNDED at material commit 017ae9718. The canonical five-lane map, 28 required source fingerprints, 30-day freshness ceiling, local and CI gates, weekly read-only reminder, corrected evidence paths, 17 focused tests, and GC-051 registration are closed. Next allowed repository move is to author a fresh bounded cleanup packet for relocating Gop y CVF/ into .private_reference/legacy/ after exact reference checks; do not move it before dispatch passes. An R84 worker-experience retrospective may proceed as a non-mutating operator interview. R73F remains parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "MSEA-R92 is DISPATCH_READY at commit 115dd8d16. Next allowed move is delegated worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R92_WORKER_RETURN_SCAFFOLD_LAST_MILE_HARDENING_2026-07-10.md under WORKER_MUST_NOT_COMMIT, followed by reviewer closure. Scope is exactly the direct scaffold helper, its test, two existing guidance owners, and one worker return; no checker, compact eligibility, hook, session, cleanup, public, or roadmap mutation. Gop y CVF/ legacy cleanup follows R92 through a fresh packet. R73F remains parked. LHW24 remains latest closed numbered LHW wave."
 }
