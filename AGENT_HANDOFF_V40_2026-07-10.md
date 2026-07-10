@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r82_workspace_distribution_release_candidate_public_synced_pending_next_product_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select the next high-value product lane from the bounded R82 Windows release candidate; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r83_workspace_health_repair_upgrade_integrated_execution_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=integrated R83A-R83E execution only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,14 @@ Startup acknowledged: current mode=`msea_r82_workspace_distribution_release_cand
 
 ## Current Mode
 
-`msea_r82_workspace_distribution_release_candidate_public_synced_pending_next_product_selection`
+`msea_r83_workspace_health_repair_upgrade_integrated_execution_dispatched`
 
 ## Latest Work / Changes
+
+MSEA-R83 Workspace Health Repair And Upgrade Experience is dispatched at
+`22262eb6`. It authorizes integrated R83A-R83E status, bounded repair, unified
+management, migration and rollback proof, exact public-safe export, closure,
+and session sync.
 
 MSEA-R82A-R82F closed `RC_PASS_BOUNDED_AND_PUBLIC_SYNCED` at provenance
 review commit `4bd363a81`, after product implementation `4939e59d0` and public
@@ -89,6 +94,8 @@ R82 closure review commit before this session-sync: `4bd363a81`.
 
 R82 public distribution commit: `a4d5dba915`.
 
+R83 dispatch material commit before this session-sync: `22262eb6`.
+
 Remote tracking branch: `origin/main`.
 
 Exact remote SHA must be derived live from git when needed.
@@ -97,11 +104,32 @@ External agent memory files: non-canonical convenience only.
 
 ## Next Allowed Move
 
-Next allowed move: select the next high-value product lane from the bounded R82
-Windows release candidate. No new implementation is implied. `Policy_Local`,
+Next allowed move: integrated R83A-R83E execution only. `Policy_Local`,
 operator-local distribution, provider/live, hosted/production, cross-platform,
-entitlement, and downstream application claims remain outside scope. Latest
-closed numbered LHW wave remains `LHW24`.
+entitlement, checker, hook, Fast Lane, and downstream use-case work remain
+forbidden. Latest closed numbered LHW wave remains `LHW24`.
+
+## Core Guard Self-Protection Authorization - MSEA-R83 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R83 dispatch
+commit `22262eb6`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to R83 execution. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R83 dispatch and parent HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set R83 mode. |
+| `CVF_SESSION/state/entries/mseaR83WorkspaceOperabilityDispatch20260710.json` | Record dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route only to R83 execution. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: complete R83 execution.
+
+Rollback boundary: revert only this dispatch session-sync; do not revert R83
+dispatch or prior R82 product/public commits.
 
 ## Core Guard Self-Protection Authorization - MSEA-R82 Closure Session Sync
 

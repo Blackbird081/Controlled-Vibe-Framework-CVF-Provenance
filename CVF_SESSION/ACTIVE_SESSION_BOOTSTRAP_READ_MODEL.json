@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r82_workspace_distribution_release_candidate_public_synced_pending_next_product_selection",
+  "currentMode": "msea_r83_workspace_health_repair_upgrade_integrated_execution_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R82A-R82F is RC_PASS_BOUNDED_AND_PUBLIC_SYNCED at provenance closure commit 4bd363a81 and public commit a4d5dba915. Next allowed move is product selection from the bounded Windows workspace distribution candidate; no new implementation lane is selected by this closure. Policy_Local, operator-local distribution, provider/live, hosted/production, runtime application, checker, hook, Fast Lane, Memory/RAG, retrieval, vectorization, and legal-workflow work remain outside the R82 claim. R73F remains parked until its active reference condition is satisfied. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R83 Workspace Health Repair And Upgrade Experience is DISPATCH_READY at provenance commit 22262eb6. Next allowed move is integrated R83A-R83E execution only: status, bounded repair, unified management, migration proof, exact public-safe export, closure, and session sync. Policy_Local, operator-local distribution, provider/live, hosted/production, cross-platform, entitlement, runtime application, checker, hook, Fast Lane, Memory/RAG, retrieval, vectorization, legal workflow, and downstream use-case work remain forbidden. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
