@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r83_workspace_operability_rc_public_synced_pending_next_product_selection",
+  "currentMode": "msea_r84_lean_governance_follow_through_dispatched_implementation_next",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R83A-R83E is RC_PASS_BOUNDED_AND_PUBLIC_SYNCED at provenance closure commit 213c6ab4f, public product commit 3d6a85008, and public compatibility fix fbb6c4d49. Next allowed move is selection of the next high-value product lane; R83 authorizes no further implementation. Policy_Local, operator-local distribution, provider/live, hosted/production, cross-platform, entitlement, runtime application, checker, hook, Fast Lane, Memory/RAG, retrieval, vectorization, legal workflow, and downstream use-case work remain outside the R83 claim. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R84 Lean Governance Follow-Through is dispatched at material commit dc91b6807. Next allowed move is bounded R84 implementation: one dispatch-authorized compact docs-only worker-return profile, focused backward-compatibility and fail-closed tests, one lifecycle disposition for the existing worker-return quality checker, completion review, and session sync. No public-sync, global checker demotion, checker retirement, new checker or hook, runtime/provider/live work, workspace distribution, Memory/RAG, retrieval, or downstream use-case work is authorized. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
