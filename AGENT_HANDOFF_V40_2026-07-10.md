@@ -4,7 +4,7 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity after MSEA-R89 workspace update assessment and user-selected refresh closure.
+Purpose: compact continuity after MSEA-R90 system-chain Audit A completion dispatch.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r89_workspace_update_assessment_and_user_selected_refresh_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r90_system_chain_audit_a_completion_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=Claude executes the committed MSEA-R90 work order without committing; parked checkpoint=Deliverable B, freshness automation, and legacy relocation remain out of scope until Audit A is accepted; R73F remains blocked by active references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,16 @@ Startup acknowledged: current mode=`msea_r89_workspace_update_assessment_and_use
 
 ## Current Mode
 
-`msea_r89_workspace_update_assessment_and_user_selected_refresh_closed_pending_next_repository_selection`
+`msea_r90_system_chain_audit_a_completion_dispatched`
 
 ## Latest Work / Changes
+
+MSEA-R90 system-chain Audit A completion is dispatched at material commit
+`2abdb8857`. The worker must complete the three unresolved chain rows and
+revalidate the two prior rows from canonical sources, produce governed audit,
+JSON evidence, and worker-return artifacts, and must not commit. Deliverable B,
+freshness automation, legacy relocation, runtime/checker mutation, governance
+lane changes, and session-state mutation remain outside worker scope.
 
 MSEA-R89 closed at provenance material commit `17362cf7d`. The shared wizard
 now offers `Check`, `Update`, or `Create`. Read-only assessment covers public
@@ -205,14 +212,13 @@ External agent memory files: non-canonical convenience only.
 
 ## Next Allowed Move
 
-Next allowed move: select and source-verify the next repository, check the
-conditional reopen index, and author a fresh bounded packet before absorption.
-R85 through R88 are closed. Do not reopen workspace setup without observed
-cross-machine friction. `Policy_Local` remains a closed workspace enforcement
-proof target, not the next implementation task. R88 does not authorize
-checker/hook, runtime/provider/live, private-output,
-Memory/RAG, retrieval, or new repository mutation. Latest closed numbered LHW
-wave remains `LHW24`.
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md`
+from a fresh execution-base anchor and returns the three governed worker
+artifacts without committing. Codex then reviews and closes or returns the
+packet. Deliverable B, freshness automation, legacy relocation, runtime/checker
+mutation, governance-lane changes, and session-state mutation remain out of
+scope. Latest closed numbered LHW wave remains `LHW24`.
 
 ## Core Guard Self-Protection Authorization - MSEA-R85 Closure Session Sync
 
@@ -419,28 +425,27 @@ Rollback boundary: revert only this session-sync; do not revert closure commit
 This handoff is private provenance continuity. Public-facing changes require
 the sibling public-sync clone, fresh remote evidence, and separate authority.
 
-## Core Guard Self-Protection Authorization - MSEA-R89 Closure Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R90 Dispatch Session Sync
 
-Authorized guard-maintenance scope: session-sync only after R89 material
-commit `17362cf7d`.
+Authorized guard-maintenance scope: session-sync only after R90 dispatch
+material commit `2abdb8857`.
 
 Protected paths:
 
 | Path | Purpose |
 |---|---|
-| `CVF_SESSION_MEMORY.md` | Route startup to post-R89 repository selection. |
-| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R89 closure and material HEAD. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set post-R89 mode. |
-| `CVF_SESSION/state/entries/mseaR89WorkspaceUpdateAssessmentUserSelectedRefreshClosure20260710.json` | Record bounded closure evidence. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Keep next repository selection bounded. |
+| `CVF_SESSION_MEMORY.md` | Route startup to R90 worker execution. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R90 dispatch and material HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set R90 dispatched mode. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route the bounded worker execution. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
 
-Operator authorization: integrate filtered provenance update assessment and
-user-selected update into the double-click workspace wizard.
+Operator authorization: process the corrected scout result and build the work
+order for Claude to execute.
 
-Rollback boundary: revert only this session-sync; do not revert R89 material,
-R88 wizard, public root-rules fix, or the local workspace refresh.
+Rollback boundary: revert only this session-sync; do not revert R90 dispatch,
+R89 material, the workspace wizard, or the local workspace refresh.
 
 ## Core Guard Self-Protection Authorization - MSEA-R88 Closure Session Sync
 
