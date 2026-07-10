@@ -168,6 +168,9 @@ reopen without observed cross-machine friction.
 
 ## Current HEAD
 
+MSEA-R93 storage-cleanup material commit before this session-sync:
+`0f05b7942`.
+
 R89 workspace update assessment material commit before this session-sync:
 `17362cf7d`.
 
@@ -440,6 +443,23 @@ Rollback boundary: revert only this session-sync; do not revert closure commit
 
 This handoff is private provenance continuity. Public-facing changes require
 the sibling public-sync clone, fresh remote evidence, and separate authority.
+
+## Core Guard Self-Protection Authorization - MSEA-R93 Packet Authoring Freshness Sync
+
+Authorized guard-maintenance scope: handoff-only HEAD freshness before the
+operator-authorized R93 cleanup packet is committed and dispatched.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record current pre-R93 material HEAD required by active-session compatibility. |
+
+Operator authorization: clean up `Gop y CVF` while preserving the important
+`10.07` review trail and moving the older source family to legacy.
+
+Rollback boundary: revert only this handoff freshness line; do not revert R84,
+R92, or any R93 material packet.
 
 ## Core Guard Self-Protection Authorization - R84 Effectiveness Checkpoint Sync
 
