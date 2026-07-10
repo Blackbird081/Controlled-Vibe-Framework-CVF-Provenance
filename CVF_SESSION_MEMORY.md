@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r92_worker_return_scaffold_hardening_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh governed Gop y CVF legacy-cleanup packet; parked checkpoint=R73F remains blocked.
+Startup acknowledged: current mode=`msea_r92_worker_return_scaffold_hardening_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh governed Gop y CVF legacy-cleanup packet; parked checkpoint=R73F remains blocked and R84 effectiveness waits for its measured reopen threshold.
 
 ## Current Mode
 
@@ -88,6 +88,16 @@ next implementation task.
 The parked R73F checker-retirement candidate must not reopen until its active
 conformance and evidence-pack references are removed or reattached under a
 separate source-verified packet.
+
+R84 effectiveness follow-up is `DEFERRED_AND_REVISIT_ON_EVIDENCE`. R84 proved
+shape reduction, not end-to-end token or latency savings. Collect at least five
+post-R92 compact-eligible worker returns across at least two task classes. A
+bounded improvement may reopen only if two returns each need at least two
+repairs attributable to the same ceremony/scaffold issue, comparable evidence
+from at least three runs shows less than 20 percent token or elapsed-time
+improvement versus full-profile evidence, or a reviewer cites a real missed
+defect caused by insufficient compact context. Do not re-propose a governance
+refactor before one condition is met.
 
 ## Boundaries
 

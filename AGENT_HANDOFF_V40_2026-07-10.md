@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r92_worker_return_scaffold_hardening_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh governed Gop y CVF legacy-cleanup packet; parked checkpoint=R73F remains blocked.
+Startup acknowledged: current mode=`msea_r92_worker_return_scaffold_hardening_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh governed Gop y CVF legacy-cleanup packet; parked checkpoint=R73F remains blocked and R84 effectiveness waits for its measured reopen threshold.
 
 ## Mandatory Startup Reads
 
@@ -52,6 +52,17 @@ permanent active-window registry.
 Next allowed move is authoring a fresh governed packet to relocate `Gop y CVF/`
 into `.private_reference/legacy/`. Do not move it before dispatch gates pass and
 do not combine that cleanup with roadmap implementation or public work.
+
+R84 effectiveness follow-up is `DEFERRED_AND_REVISIT_ON_EVIDENCE`. Its current
+evidence proves shape reduction but not end-to-end token or latency savings.
+Collect at least five post-R92 compact-eligible returns across at least two task
+classes using the existing scaffold-effectiveness fields. Reopen only if two
+returns each require at least two repairs attributable to the same recurring
+ceremony/scaffold issue, comparable evidence from at least three runs shows
+less than 20 percent token or elapsed-time improvement against full-profile
+evidence, or a reviewer cites a real missed defect caused by insufficient
+compact context. R92's three FULL-profile repair cycles are a measurement
+signal, not causal evidence against R84.
 
 MSEA-R89 closed at provenance material commit `17362cf7d`. The shared wizard
 now offers `Check`, `Update`, or `Create`. Read-only assessment covers public
@@ -429,6 +440,28 @@ Rollback boundary: revert only this session-sync; do not revert closure commit
 
 This handoff is private provenance continuity. Public-facing changes require
 the sibling public-sync clone, fresh remote evidence, and separate authority.
+
+## Core Guard Self-Protection Authorization - R84 Effectiveness Checkpoint Sync
+
+Authorized guard-maintenance scope: session-only recording of the operator's
+R84 effectiveness measurement and conditional-reopen checkpoint.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Expose the parked R84 measurement threshold at startup. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Preserve the same threshold in active handoff continuity. |
+| `CVF_SESSION/state/entries/mseaR84EffectivenessConditionalReopenCheckpoint20260710.json` | Record the durable evidence-triggered reopen condition. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Keep cleanup primary while parking R84 with a checkable condition. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: note R84 token/latency effectiveness risk and retain a
+future improvement route only after sufficient evidence exists.
+
+Rollback boundary: revert only this checkpoint sync; do not revert R84, R92,
+change the primary cleanup next move, or open a governance refactor.
 
 ## Core Guard Self-Protection Authorization - MSEA-R92 Closure Session Sync
 
