@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r81_workspace_rc_pass_bounded_pending_product_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=operator selection of the next product-value lane or fresh public-safe packaging packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r82_workspace_distribution_integrated_execution_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=integrated R82A-R82F execution only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r81_workspace_rc_pass_bounded_pending_product_selection`
+Current mode marker: `msea_r82_workspace_distribution_integrated_execution_dispatched`
 
-Current mode: `msea_r81_workspace_rc_pass_bounded_pending_product_selection`
+Current mode: `msea_r82_workspace_distribution_integrated_execution_dispatched`
 
-`msea_r81_workspace_rc_pass_bounded_pending_product_selection`
+`msea_r82_workspace_distribution_integrated_execution_dispatched`
 
 Previous mode:
 
-`msea_r81b_workspace_rc_integrated_execution_dispatched`
+`msea_r81_workspace_rc_pass_bounded_pending_product_selection`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R82 Workspace Distribution And Update Release | `203a4e0f4` | DISPATCH_READY. Integrated R82A-R82F authority covers a Windows-first public-safe manifest, installer, profile materializer, clean-room proof, update/rollback proof, bounded public-sync, and release decision. No operator-local distribution, Policy_Local mutation, provider/live, hosted/production, checker, hook, or Fast Lane change is authorized. |
 | MSEA-R81 Workspace Productization Release Candidate | `c067328d5` | RC_PASS_BOUNDED. Fresh bootstrap and existing-project adoption each passed doctor and enforcement 17/17. Workspace update passed. Public-free and paid-user-safe profile boundary scans passed. Operator-local failed without explicit continuity allowance and passed with it. No `Policy_Local`, public-sync, provider/live, runtime, checker, hook, or Fast Lane mutation occurred. |
 | MSEA-R81B integrated dispatch | `810ace2ee` | Fulfilled by the R81 material closure commit. |
 | MSEA-R81A source map | `60dfb0495` | REVIEWER_ACCEPTED_BOUNDED and consumed by R81 checklist/closure. |
@@ -60,13 +61,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r81_workspace_rc_pass_bounded_pending_product_selection`
+Mode: `msea_r82_workspace_distribution_integrated_execution_dispatched`
 
-Next allowed move: operator selection of a fresh product-value lane or a fresh
-public-safe packaging/distribution packet with repository-boundary verification.
-`Policy_Local` remains outside automatic continuation. No automatic public-sync
-mutation or push follows from R81. Latest closed numbered LHW wave remains
-`LHW24`.
+Next allowed move: integrated R82A-R82F worker execution from the accepted
+roadmap, baseline, and work order at `203a4e0f4`. `Policy_Local` and
+`operator-local` distribution remain forbidden. Public-sync is allowed only
+after local install, profile, update, rollback, leakage, and shell evidence
+passes. Latest closed numbered LHW wave remains `LHW24`.
 
 The parked R73F checker-retirement candidate must not reopen until its active
 conformance and evidence-pack references are removed or reattached under a

@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1623,
+  "stateOrder": 1625,
   "stateKey": "nextAllowedMove",
-  "value": "MSEA-R81 Workspace Productization Release Candidate is RC_PASS_BOUNDED at provenance material commit c067328d5. Next allowed move is operator selection of the next product-value lane or a fresh public-safe packaging/distribution packet with repository-boundary verification. No automatic public-sync mutation or push, Policy_Local app mutation, provider/live proof, hosted/production claim, runtime/checker/hook/Fast Lane change, Memory/RAG, retrieval, vectorization, or legal workflow is authorized. R73F checker retirement remains parked until active conformance/evidence-pack references are removed or reattached. LHW24 remains latest closed numbered LHW wave."
+  "value": "MSEA-R82 Workspace Distribution And Update Release is DISPATCH_READY at provenance material commit 203a4e0f4. Next allowed move is integrated R82A-R82F execution only: implement the Windows public-safe distribution manifest, installer, profile materializer, clean-room shell proof, update/rollback proof, bounded public-sync, and evidence-backed release decision. Policy_Local and operator-local distribution remain forbidden. No provider/live, hosted/production, runtime application, checker, hook, Fast Lane, Memory/RAG, retrieval, vectorization, or legal-workflow work is authorized. R73F remains parked. LHW24 remains latest closed numbered LHW wave."
 }

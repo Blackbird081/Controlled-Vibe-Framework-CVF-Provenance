@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1624,
+  "stateKey": "mseaR82WorkspaceDistributionDispatch20260710",
+  "value": "DISPATCH_READY. Provenance material commit 203a4e0f4 added the R82 integrated roadmap, GC-018 baseline, and WORKER_MAY_COMMIT work order for R82A-R82F. Scope is Windows-first public-safe workspace distribution, clean-room install, public profile delivery, update/rollback proof, bounded public-sync, and final decision. Pre-dispatch artifact checks passed except the expected pre-session-sync HEAD freshness condition. Policy_Local, operator-local export, provider/live, hosted/production, checker, hook, Fast Lane, Memory/RAG, retrieval, vectorization, and legal workflow remain forbidden."
+}

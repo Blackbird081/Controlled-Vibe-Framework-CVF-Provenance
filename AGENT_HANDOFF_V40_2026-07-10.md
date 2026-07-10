@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r81_workspace_rc_pass_bounded_pending_product_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=operator selection of the next product-value lane or fresh public-safe packaging packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r82_workspace_distribution_integrated_execution_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=integrated R82A-R82F execution only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,16 @@ Startup acknowledged: current mode=`msea_r81_workspace_rc_pass_bounded_pending_p
 
 ## Current Mode
 
-`msea_r81_workspace_rc_pass_bounded_pending_product_selection`
+`msea_r82_workspace_distribution_integrated_execution_dispatched`
 
 ## Latest Work / Changes
+
+MSEA-R82 integrated Workspace Distribution And Update Release is dispatched at
+material commit `203a4e0f4`. It authorizes R82A-R82F as one Windows-first batch:
+distribution manifest/version, standalone public installer, public profile
+delivery, clean-room shell proof, update/rollback proof, bounded public-sync,
+and final release decision. `operator-local`, `Policy_Local`, provider/live,
+hosted/production, checker, hook, and Fast Lane work remain forbidden.
 
 MSEA-R81 closed RC_PASS_BOUNDED at material commit `c067328d5`. The closure
 created the reusable workspace RC checklist, recorded integrated smoke evidence,
@@ -60,9 +67,9 @@ public push occurred.
 
 ## Active Boundary
 
-R81 is closed as a bounded local RC. Provenance remains the full private source
-of truth, public output remains held behind the sibling public-sync lane, and
-local continuity remains restricted to explicit operator-local selection.
+R81 is closed as a bounded local RC and R82 is the only active execution lane.
+Provenance remains the full private source of truth. Public-sync may receive
+only the allowlisted R82 product projection after local proof passes.
 
 ## Current HEAD
 
@@ -73,6 +80,8 @@ Session-sync and continuity-rotation commit before this pointer sync:
 
 Continuity compatibility commit before this final pointer sync: `754931b55`.
 
+R82 dispatch material commit before this session-sync: `203a4e0f4`.
+
 Remote tracking branch: `origin/main`.
 
 Exact remote SHA must be derived live from git when needed.
@@ -81,10 +90,33 @@ External agent memory files: non-canonical convenience only.
 
 ## Next Allowed Move
 
-Next allowed move: operator selection of a fresh product-value lane or a fresh
-public-safe packaging/distribution packet. `Policy_Local` remains outside
-automatic continuation. Do not treat the local RC as public release authority.
-Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: integrated R82A-R82F worker execution only. `Policy_Local`
+and `operator-local` distribution remain outside scope. Public-sync may proceed
+only after local evidence passes. Latest closed numbered LHW wave remains
+`LHW24`.
+
+## Core Guard Self-Protection Authorization - MSEA-R82 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R82 dispatch
+material commit `203a4e0f4`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup and next move to R82 execution. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R82 dispatch and current HEAD freshness. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set the R82 execution mode. |
+| `CVF_SESSION/state/entries/mseaR82WorkspaceDistributionDispatch20260710.json` | Record R82 dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route only to integrated R82 execution. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical session state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts. |
+
+Operator authorization: the operator explicitly authorized completion of
+R82A-R82F.
+
+Rollback boundary: revert only this R82 dispatch session-sync; do not revert
+material commit `203a4e0f4` or prior R81 closure.
 
 ## Parked Checkpoint
 
