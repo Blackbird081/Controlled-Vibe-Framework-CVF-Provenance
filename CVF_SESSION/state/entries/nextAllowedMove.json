@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1633,
+  "stateOrder": 1635,
   "stateKey": "nextAllowedMove",
-  "value": "MSEA-R85 residual value absorption is REVIEWER_ACCEPTED_BOUNDED at provenance material commit 6872dbc94 and public commit c2663b1ee. The 27-file Gop y CVF source family and historical R64-R70 roadmap are closed; EI-06 through EI-10 have bounded CVF-native owners, and no runtime/checker debt is inherited. Next allowed move is to select and source-verify the next repository, check the conditional reopen index, and author a fresh bounded packet before absorption. No checker/hook, runtime/provider/live work, private/generated output, Memory/RAG, retrieval, or new repository mutation is authorized by R85. R73F remains parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "MSEA-R86 workspace classification guidance is closed at provenance material commit c5b1fddd1 and public commit 4c0d06cf2. The actual operator workspace is refreshed to public core 4c0d06cf2, retains operator-local with explicit continuity allowance, includes the root classification guide, and passes workspace enforcement with Policy_Local plus three proof projects enforced and the recorded older projects remaining legacy-exempt. Next allowed move is to select and source-verify the next repository, check the conditional reopen index, and author a fresh bounded packet before absorption. Do not reopen workspace classification merely for wording polish; require observed user or automation friction. R73F remains parked. LHW24 remains latest closed numbered LHW wave."
 }

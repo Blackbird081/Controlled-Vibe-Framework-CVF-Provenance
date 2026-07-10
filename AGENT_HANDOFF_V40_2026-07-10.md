@@ -4,7 +4,7 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity after MSEA-R85 residual value absorption closure.
+Purpose: compact continuity after MSEA-R86 workspace classification guide closure.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r86_workspace_classification_guide_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,18 @@ Startup acknowledged: current mode=`msea_r85_gop_y_cvf_residual_value_absorption
 
 ## Current Mode
 
-`msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection`
+`msea_r86_workspace_classification_guide_closed_pending_next_repository_selection`
 
 ## Latest Work / Changes
+
+MSEA-R86 workspace classification guidance closed at provenance material
+commit `c5b1fddd1` and public commit `4c0d06cf2`. The detailed guide separates
+audience profile, technical health, and downstream project state; it is wired
+into the profile catalog, public distribution manifest, root installer, and
+bounded public workspace kit. The actual operator workspace is on public core
+`4c0d06cf2`, retains `operator-local` with explicit continuity allowance, and
+passes workspace enforcement. `Policy_Local` and three proof projects are
+enforced; pre-recorded older projects remain legacy-exempt.
 
 MSEA-R85 closed `REVIEWER_ACCEPTED_BOUNDED` at provenance material commit
 `6872dbc94` and public commit `c2663b1ee`. The fresh corpus is 27 files and
@@ -105,11 +114,17 @@ public push occurred.
 
 ## Active Boundary
 
-R85 and its historical source family are closed. Provenance remains the source
-of truth; no new repository absorption is active until a source-verified target
-and fresh packet are selected.
+R85, R86, and the historical R64-R70 source family are closed. Provenance
+remains the source of truth; no new repository absorption is active until a
+source-verified target and fresh packet are selected. Workspace classification
+does not reopen without observed user or automation friction.
 
 ## Current HEAD
+
+R86 workspace classification material commit before this session-sync:
+`c5b1fddd1`.
+
+R86 public-safe projection commit: `4c0d06cf2`.
 
 R85 closure material commit before this session-sync: `6872dbc94`.
 
@@ -158,7 +173,10 @@ External agent memory files: non-canonical convenience only.
 
 Next allowed move: select and source-verify the next repository, check the
 conditional reopen index, and author a fresh bounded packet before absorption.
-R85 does not authorize checker/hook, runtime/provider/live, private-output,
+R85 and R86 are closed. Do not reopen workspace classification for wording
+polish; require observed user or automation friction. `Policy_Local` remains a
+closed workspace enforcement proof target, not the next implementation task.
+R86 does not authorize checker/hook, runtime/provider/live, private-output,
 Memory/RAG, retrieval, or new repository mutation. Latest closed numbered LHW
 wave remains `LHW24`.
 
@@ -366,6 +384,29 @@ Rollback boundary: revert only this session-sync; do not revert closure commit
 
 This handoff is private provenance continuity. Public-facing changes require
 the sibling public-sync clone, fresh remote evidence, and separate authority.
+
+## Core Guard Self-Protection Authorization - MSEA-R86 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R86 material
+commit `c5b1fddd1` and public commit `4c0d06cf2`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to post-R86 repository selection. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R86 closure and material HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set post-R86 mode. |
+| `CVF_SESSION/state/entries/mseaR86WorkspaceClassificationGuideClosure20260710.json` | Record bounded closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Keep next repository selection bounded. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: create and install the detailed workspace
+classification guide.
+
+Rollback boundary: revert only this session-sync; do not revert material
+commit `c5b1fddd1`, public commit `4c0d06cf2`, or local workspace refresh.
 
 ## Claim Boundary
 
