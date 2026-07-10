@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r88_double_click_workspace_setup_wizard_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r89_workspace_update_assessment_and_user_selected_refresh_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r88_double_click_workspace_setup_wizard_closed_pending_next_repository_selection`
+Current mode marker: `msea_r89_workspace_update_assessment_and_user_selected_refresh_closed_pending_next_repository_selection`
 
-Current mode: `msea_r88_double_click_workspace_setup_wizard_closed_pending_next_repository_selection`
+Current mode: `msea_r89_workspace_update_assessment_and_user_selected_refresh_closed_pending_next_repository_selection`
 
-`msea_r88_double_click_workspace_setup_wizard_closed_pending_next_repository_selection`
+`msea_r89_workspace_update_assessment_and_user_selected_refresh_closed_pending_next_repository_selection`
 
 Previous mode:
 
@@ -69,14 +69,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r88_double_click_workspace_setup_wizard_closed_pending_next_repository_selection`
+Mode: `msea_r89_workspace_update_assessment_and_user_selected_refresh_closed_pending_next_repository_selection`
 
 Next allowed move: select and source-verify the next repository, check the
 conditional reopen index, and author a fresh bounded packet before reading or
-absorbing it. R85 through R88 are closed. Do not reopen workspace setup without
+absorbing it. R85 through R89 are closed. Do not reopen workspace setup without
 observed cross-machine friction. No checker/hook, runtime/provider/live,
 private-output, Memory/RAG, retrieval, or new repo mutation is authorized by
-R88. Latest closed numbered LHW wave remains `LHW24`.
+R89. The current operator workspace uses public core `a78b35c9d` and filtered
+`operator-local` source `17362cf7d`; enforcement passes. Latest closed numbered
+LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

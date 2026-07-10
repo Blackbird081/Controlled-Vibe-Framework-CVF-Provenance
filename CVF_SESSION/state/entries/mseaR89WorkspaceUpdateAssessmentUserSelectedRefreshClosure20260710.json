@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1640,
+  "stateKey": "mseaR89WorkspaceUpdateAssessmentUserSelectedRefreshClosure20260710",
+  "value": "CLOSED_PASS_BOUNDED. Provenance material commit 17362cf7d adds read-only workspace assessment and explicit Check, Update, or Create selection to the double-click wizard. Check covers approved remotes, hidden-core and provenance revisions, active profile, filtered non-local source changes, materialized hashes, and required root files. Existing-workspace actions preserve the active profile; profile selection is available only for Create. GUI and launcher smoke tests, parser checks, synthetic filtered-drift proof, actual CURRENT assessment, full operator-local update, and workspace enforcement passed. The actual operator workspace remains on public core a78b35c9d with operator-local materialized from 17362cf7d. No public repository change was required."
+}

@@ -4,7 +4,7 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity after MSEA-R88 double-click workspace setup wizard closure.
+Purpose: compact continuity after MSEA-R89 workspace update assessment and user-selected refresh closure.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r88_double_click_workspace_setup_wizard_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r89_workspace_update_assessment_and_user_selected_refresh_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,18 @@ Startup acknowledged: current mode=`msea_r88_double_click_workspace_setup_wizard
 
 ## Current Mode
 
-`msea_r88_double_click_workspace_setup_wizard_closed_pending_next_repository_selection`
+`msea_r89_workspace_update_assessment_and_user_selected_refresh_closed_pending_next_repository_selection`
 
 ## Latest Work / Changes
+
+MSEA-R89 closed at provenance material commit `17362cf7d`. The shared wizard
+now offers `Check`, `Update`, or `Create`. Read-only assessment covers public
+core and provenance revisions, active profile, filtered source changes,
+materialized hashes, and required root files. Existing-workspace actions
+preserve the active profile; `Check` offers update only when status is
+`UPDATE_AVAILABLE`. The actual operator workspace remains on public core
+`a78b35c9d`, now materialized from operator-local source `17362cf7d`, and its
+project-enforcement gate passes.
 
 MSEA-R88 closed at provenance material commit `b7d0e818d`.
 `START_CVF_WORKSPACE_SETUP.cmd` now provides the actual double-click UX: a
@@ -128,12 +137,15 @@ public push occurred.
 
 ## Active Boundary
 
-R85 through R88 and the historical R64-R70 source family are closed. Provenance
+R85 through R89 and the historical R64-R70 source family are closed. Provenance
 remains the source of truth; no new repository absorption is active until a
 source-verified target and fresh packet are selected. Workspace setup does not
 reopen without observed cross-machine friction.
 
 ## Current HEAD
+
+R89 workspace update assessment material commit before this session-sync:
+`17362cf7d`.
 
 R88 double-click workspace wizard material commit before this session-sync:
 `b7d0e818d`.
@@ -406,6 +418,29 @@ Rollback boundary: revert only this session-sync; do not revert closure commit
 
 This handoff is private provenance continuity. Public-facing changes require
 the sibling public-sync clone, fresh remote evidence, and separate authority.
+
+## Core Guard Self-Protection Authorization - MSEA-R89 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R89 material
+commit `17362cf7d`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to post-R89 repository selection. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R89 closure and material HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set post-R89 mode. |
+| `CVF_SESSION/state/entries/mseaR89WorkspaceUpdateAssessmentUserSelectedRefreshClosure20260710.json` | Record bounded closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Keep next repository selection bounded. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: integrate filtered provenance update assessment and
+user-selected update into the double-click workspace wizard.
+
+Rollback boundary: revert only this session-sync; do not revert R89 material,
+R88 wizard, public root-rules fix, or the local workspace refresh.
 
 ## Core Guard Self-Protection Authorization - MSEA-R88 Closure Session Sync
 
