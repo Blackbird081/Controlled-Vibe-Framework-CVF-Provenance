@@ -66,7 +66,16 @@ local continuity remains restricted to explicit operator-local selection.
 
 ## Current HEAD
 
-Material closure HEAD before this session-sync: `c067328d5`.
+Material closure HEAD: `c067328d5`.
+
+Session-sync and continuity-rotation commit before this pointer sync:
+`b6452e57d`.
+
+Remote tracking branch: `origin/main`.
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
 
 ## Next Allowed Move
 
