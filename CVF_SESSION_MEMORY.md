@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r90_system_chain_audit_a_closed_pending_deliverable_b_and_freshness_packet`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh bounded packet for Deliverable B plus freshness design; parked checkpoint=advisory-directory relocation remains separate and R73F remains blocked by active references.
+Startup acknowledged: current mode=`msea_r91_system_chain_map_and_freshness_control_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=Claude executes the MSEA-R91 work order at dispatch commit 4b5b02f7c without committing; parked checkpoint=advisory-directory relocation remains separate and R73F remains blocked by active references.
 
 ## Current Mode
 
-Current mode marker: `msea_r90_system_chain_audit_a_closed_pending_deliverable_b_and_freshness_packet`
+Current mode marker: `msea_r91_system_chain_map_and_freshness_control_dispatched`
 
-Current mode: `msea_r90_system_chain_audit_a_closed_pending_deliverable_b_and_freshness_packet`
+Current mode: `msea_r91_system_chain_map_and_freshness_control_dispatched`
 
-`msea_r90_system_chain_audit_a_closed_pending_deliverable_b_and_freshness_packet`
+`msea_r91_system_chain_map_and_freshness_control_dispatched`
 
 Previous mode:
 
-`msea_r90_system_chain_audit_a_completion_dispatched`
+`msea_r90_system_chain_audit_a_closed_pending_deliverable_b_and_freshness_packet`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R91 system-chain map and freshness control dispatch | `4b5b02f7c` | DISPATCH_READY. Claude builds Deliverable B from accepted R90 evidence, adds deterministic freshness detection, local/CI/weekly reminder wiring, corrects confirmed stale paths, and returns without committing. |
 | MSEA-R90 system-chain Audit A closure | `645df8b83` | REVIEWER_ACCEPTED_BOUNDED. Five bounded lanes closed; registry-driven invocation proven; 31-record manifest and GC-051 registry entry reconciled; B and freshness implementation require a fresh packet. |
 | MSEA-R90 system-chain Audit A completion dispatch | `1398098cf` | DISPATCH_READY after initial packet commit `2abdb8857`. Complete and revalidate all five chain rows; worker produces governed audit, JSON evidence, and worker return without committing. Deliverable B, maintenance automation, legacy relocation, runtime/checker changes, governance-lane changes, and session mutation remain excluded. |
 | MSEA-R88 double-click workspace setup wizard | `b7d0e818d` | CLOSED_PASS_BOUNDED. Added a one-file double-click launcher and three-step Windows GUI over the shared R87 setup engine; GUI and launcher smoke proofs passed. |
@@ -71,13 +72,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r90_system_chain_audit_a_closed_pending_deliverable_b_and_freshness_packet`
+Mode: `msea_r91_system_chain_map_and_freshness_control_dispatched`
 
-Next allowed move: author a fresh GC-018/work-order packet for Deliverable B
-and a durable freshness design using reviewer-accepted Audit A as baseline.
-Do not implement the readout or freshness checker before that packet passes
-pre-dispatch. Advisory-directory relocation remains a separate governed
-cleanup after canonical owners are established. Latest closed numbered LHW
+Next allowed move: Claude executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_2026-07-10.md`
+from dispatch commit `4b5b02f7c` under `WORKER_MUST_NOT_COMMIT`, then returns
+the exact worker-owned changed set for Codex review. Advisory-directory
+relocation remains a separate governed cleanup. Latest closed numbered LHW
 wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

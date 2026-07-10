@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r90_system_chain_audit_a_closed_pending_deliverable_b_and_freshness_packet",
+  "currentMode": "msea_r91_system_chain_map_and_freshness_control_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R90 system-chain Audit A is REVIEWER_ACCEPTED_BOUNDED at material commit 645df8b83. Five bounded chain lanes are terminal; the 31-record manifest and GC-051 registry entry reconcile. Next allowed move is to author a fresh GC-018/work-order packet for Deliverable B plus a durable freshness design; no readout or freshness implementation starts before pre-dispatch passes. Advisory-directory relocation remains separate. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R91 is DISPATCH_READY at commit 4b5b02f7c. Next allowed move is Claude execution of docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R91_SYSTEM_CHAIN_MAP_AND_FRESHNESS_CONTROL_2026-07-10.md under WORKER_MUST_NOT_COMMIT, followed by Codex review. Build Deliverable B only from accepted R90 evidence; implement deterministic freshness detection plus local, CI, and weekly reminder wiring within the exact worker-owned scope. Advisory-directory relocation remains separate. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
