@@ -15,6 +15,9 @@ param(
     [ValidateSet("", "public-free", "paid-user-safe", "operator-local")]
     [string]$ProfileName = "",
 
+    [ValidateSet("", "Create", "Check", "Update")]
+    [string]$Action = "",
+
     [switch]$NonInteractive,
 
     [switch]$Gui,
@@ -99,7 +102,7 @@ function Show-WorkspaceSetupWizard {
     $title.Location = New-Object System.Drawing.Point(28, 20)
     $title.Size = New-Object System.Drawing.Size(580, 34)
     $title.Font = New-Object System.Drawing.Font("Segoe UI Semibold", 17)
-    $title.Text = "Create or refresh a CVF Workspace"
+    $title.Text = "Check, update, or create a CVF Workspace"
     $form.Controls.Add($title)
 
     $stepLabel = New-Object System.Windows.Forms.Label
@@ -117,38 +120,70 @@ function Show-WorkspaceSetupWizard {
     $profilePage.Dock = "Fill"
     $content.Controls.Add($profilePage)
 
+    $actionLabel = New-Object System.Windows.Forms.Label
+    $actionLabel.Location = New-Object System.Drawing.Point(0, 0)
+    $actionLabel.Size = New-Object System.Drawing.Size(150, 28)
+    $actionLabel.Text = "Action"
+    $actionLabel.Font = New-Object System.Drawing.Font("Segoe UI Semibold", 11)
+    $profilePage.Controls.Add($actionLabel)
+
+    $actionBox = New-Object System.Windows.Forms.ComboBox
+    $actionBox.Location = New-Object System.Drawing.Point(160, 0)
+    $actionBox.Size = New-Object System.Drawing.Size(405, 30)
+    $actionBox.DropDownStyle = "DropDownList"
+    [void]$actionBox.Items.Add("Check status and available updates (recommended)")
+    [void]$actionBox.Items.Add("Update an existing workspace")
+    [void]$actionBox.Items.Add("Create a new workspace")
+    $actionBox.SelectedIndex = 0
+    $profilePage.Controls.Add($actionBox)
+
     $profilePrompt = New-Object System.Windows.Forms.Label
-    $profilePrompt.Location = New-Object System.Drawing.Point(0, 0)
+    $profilePrompt.Location = New-Object System.Drawing.Point(0, 48)
     $profilePrompt.Size = New-Object System.Drawing.Size(560, 28)
-    $profilePrompt.Text = "Who will use this workspace?"
+    $profilePrompt.Text = "Profile (choose only when creating)"
     $profilePrompt.Font = New-Object System.Drawing.Font("Segoe UI Semibold", 11)
     $profilePage.Controls.Add($profilePrompt)
 
     $operatorRadio = New-Object System.Windows.Forms.RadioButton
-    $operatorRadio.Location = New-Object System.Drawing.Point(8, 42)
+    $operatorRadio.Location = New-Object System.Drawing.Point(8, 82)
     $operatorRadio.Size = New-Object System.Drawing.Size(550, 32)
     $operatorRadio.Text = "operator-local - private operator machine (recommended)"
     $operatorRadio.Checked = $true
     $profilePage.Controls.Add($operatorRadio)
 
     $paidRadio = New-Object System.Windows.Forms.RadioButton
-    $paidRadio.Location = New-Object System.Drawing.Point(8, 84)
+    $paidRadio.Location = New-Object System.Drawing.Point(8, 120)
     $paidRadio.Size = New-Object System.Drawing.Size(550, 32)
     $paidRadio.Text = "paid-user-safe - shared team or future paid-user workspace"
     $profilePage.Controls.Add($paidRadio)
 
     $publicRadio = New-Object System.Windows.Forms.RadioButton
-    $publicRadio.Location = New-Object System.Drawing.Point(8, 126)
+    $publicRadio.Location = New-Object System.Drawing.Point(8, 158)
     $publicRadio.Size = New-Object System.Drawing.Size(550, 32)
     $publicRadio.Text = "public-free - lightest public-safe workspace"
     $profilePage.Controls.Add($publicRadio)
 
     $profileNote = New-Object System.Windows.Forms.Label
-    $profileNote.Location = New-Object System.Drawing.Point(8, 175)
-    $profileNote.Size = New-Object System.Drawing.Size(550, 55)
+    $profileNote.Location = New-Object System.Drawing.Point(8, 202)
+    $profileNote.Size = New-Object System.Drawing.Size(550, 38)
     $profileNote.Text = "Private continuity is available only in operator-local. Do not use it for a customer or public workspace."
     $profileNote.ForeColor = [System.Drawing.Color]::FromArgb(90, 90, 90)
     $profilePage.Controls.Add($profileNote)
+
+    $setProfileSelectionState = {
+        $canSelectProfile = ($actionBox.SelectedIndex -eq 2)
+        $operatorRadio.Enabled = $canSelectProfile
+        $paidRadio.Enabled = $canSelectProfile
+        $publicRadio.Enabled = $canSelectProfile
+        $profileNote.Text = if ($canSelectProfile) {
+            "Choose the smallest profile that fits the workspace audience."
+        }
+        else {
+            "The active profile will be detected and preserved for this existing workspace."
+        }
+    }
+    $actionBox.Add_SelectedIndexChanged($setProfileSelectionState)
+    & $setProfileSelectionState
 
     $pathPage = New-Object System.Windows.Forms.Panel
     $pathPage.Dock = "Fill"
@@ -231,6 +266,7 @@ function Show-WorkspaceSetupWizard {
 
     $state = @{
         Page = 0
+        Action = "Check"
         ProfileName = "operator-local"
         WorkspaceRoot = $DefaultWorkspace
     }
@@ -244,7 +280,16 @@ function Show-WorkspaceSetupWizard {
         }
         $stepLabel.Text = "Step $($Index + 1) of 3"
         $backButton.Enabled = ($Index -gt 0)
-        $nextButton.Text = if ($Index -eq 2) { "Install" } else { "Next >" }
+        $nextButton.Text = if ($Index -eq 2) {
+            switch ($state.Action) {
+                "Check" { "Check" }
+                "Update" { "Update" }
+                default { "Create" }
+            }
+        }
+        else {
+            "Next >"
+        }
     }
 
     $browseButton.Add_Click({
@@ -265,6 +310,7 @@ function Show-WorkspaceSetupWizard {
 
     $nextButton.Add_Click({
         if ($state.Page -eq 0) {
+            $state.Action = @("Check", "Update", "Create")[$actionBox.SelectedIndex]
             $state.ProfileName = if ($operatorRadio.Checked) {
                 "operator-local"
             }
@@ -302,12 +348,19 @@ function Show-WorkspaceSetupWizard {
                 ) | Out-Null
                 return
             }
-            $summaryText.Text = "Profile:`r`n  $($state.ProfileName)`r`n`r`nWorkspace:`r`n  $($state.WorkspaceRoot)"
+            if ($state.Action -ne "Create") {
+                $activeForPath = Get-ActiveProfile -Path $state.WorkspaceRoot
+                if ($null -ne $activeForPath) {
+                    $state.ProfileName = $activeForPath.activeProfile
+                }
+            }
+            $summaryText.Text = "Action:`r`n  $($state.Action)`r`n`r`nProfile:`r`n  $($state.ProfileName)`r`n`r`nWorkspace:`r`n  $($state.WorkspaceRoot)"
             & $showPage 2
             return
         }
 
         $form.Tag = [pscustomobject]@{
+            Action = $state.Action
             ProfileName = $state.ProfileName
             WorkspaceRoot = $state.WorkspaceRoot
         }
@@ -323,6 +376,7 @@ function Show-WorkspaceSetupWizard {
         $timer.Add_Tick({
             $timer.Stop()
             $form.Tag = [pscustomobject]@{
+                Action = "Check"
                 ProfileName = "operator-local"
                 WorkspaceRoot = $DefaultWorkspace
             }
@@ -340,7 +394,6 @@ function Show-WorkspaceSetupWizard {
     }
     return $selection
 }
-
 function Assert-Prerequisites {
     foreach ($command in @("git", "powershell")) {
         if (-not (Get-Command $command -ErrorAction SilentlyContinue)) {
@@ -404,6 +457,17 @@ function Install-NewWorkspace([string]$Path, [string]$Profile) {
         -Arguments @("-WorkspaceRoot", $Path)
 }
 
+function Update-ProvenanceSource {
+    if (@(git -C $provenanceRoot status --porcelain).Count -gt 0) {
+        throw "Provenance clone is dirty. Commit, discard, or move those changes before updating workspace sources."
+    }
+    Write-Step "Fast-forwarding the provenance source"
+    git -C $provenanceRoot pull --ff-only
+    if ($LASTEXITCODE -ne 0) {
+        throw "Provenance fast-forward failed."
+    }
+}
+
 function Refresh-ExistingWorkspace([string]$Path) {
     $corePath = Join-Path $Path ".Controlled-Vibe-Framework-CVF"
     if (-not (Test-Path -LiteralPath $corePath -PathType Container)) {
@@ -456,52 +520,7 @@ function Apply-SelectedProfile([string]$Path, [string]$Profile) {
         -Arguments @("-WorkspaceRoot", $Path, "-ProfileName", $Profile)
 }
 
-function Test-WorkspaceResult([string]$Path, [string]$Profile) {
-    $corePath = Join-Path $Path ".Controlled-Vibe-Framework-CVF"
-    $remote = (git -C $corePath remote get-url origin).Trim()
-    if ($remote -ne $publicRemote) {
-        throw "Post-install hidden core remote mismatch: $remote"
-    }
-
-    $active = Get-ActiveProfile -Path $Path
-    if ($null -eq $active -or $active.activeProfile -ne $Profile) {
-        throw "Post-install active profile mismatch. Expected: $Profile"
-    }
-
-    foreach ($requiredRootFile in @(
-        "WORKSPACE_RULES.md",
-        "CVF_WORKSPACE_CLASSIFICATION_GUIDE.md",
-        "CVF_WORKSPACE_MEMORY.md",
-        "AGENT_HANDOFF.md",
-        "New-CVF-Governed-Project.ps1",
-        "Run-CVF-NewProject-Enforcement.ps1"
-    )) {
-        if (-not (Test-Path -LiteralPath (Join-Path $Path $requiredRootFile) -PathType Leaf)) {
-            throw "Post-install workspace artifact is missing: $requiredRootFile"
-        }
-    }
-
-    if ($Profile -ne "operator-local") {
-        $manager = Join-Path $Path "Manage-CVF-Workspace.ps1"
-        Invoke-CheckedPowerShell `
-            -ScriptPath $manager `
-            -Arguments @("-Action", "Status")
-    }
-
-    if (-not $SkipEnforcementGate) {
-        Write-Step "Running workspace project-enforcement gate"
-        Invoke-CheckedPowerShell `
-            -ScriptPath (Join-Path $Path "Run-CVF-NewProject-Enforcement.ps1")
-    }
-
-    $coreCommit = (git -C $corePath rev-parse --short HEAD).Trim()
-    Write-Ok "Workspace ready"
-    Write-Host "  Root:           $Path"
-    Write-Host "  Profile:        $Profile"
-    Write-Host "  Public core:    $coreCommit"
-    Write-Host "  Classification: $(Join-Path $Path 'CVF_WORKSPACE_CLASSIFICATION_GUIDE.md')"
-    Write-Host "  Next command:   .\New-CVF-Governed-Project.ps1 -ProjectName <name>"
-}
+. (Join-Path $PSScriptRoot "scripts\\cvf_workspace_assessment.ps1")
 
 try {
     Assert-Prerequisites
@@ -515,6 +534,7 @@ try {
         if ($null -eq $guiSelection) {
             exit 0
         }
+        $Action = $guiSelection.Action
         $ProfileName = $guiSelection.ProfileName
         $WorkspaceRoot = $guiSelection.WorkspaceRoot
         if ($GuiSmokeTest) {
@@ -524,13 +544,15 @@ try {
     }
 
     if ([string]::IsNullOrWhiteSpace($ProfileName)) {
-        if (-not $interactive) {
+        if (-not $interactive -and $Action -notin @("Check", "Update")) {
             throw "-ProfileName is required with -NonInteractive."
         }
-        $ProfileName = Select-WorkspaceProfile
-        if ([string]::IsNullOrWhiteSpace($ProfileName)) {
-            Write-Host "Setup cancelled." -ForegroundColor Yellow
-            exit 0
+        if ($interactive) {
+            $ProfileName = Select-WorkspaceProfile
+            if ([string]::IsNullOrWhiteSpace($ProfileName)) {
+                Write-Host "Setup cancelled." -ForegroundColor Yellow
+                exit 0
+            }
         }
     }
 
@@ -550,8 +572,20 @@ try {
     $workspaceResolved = [System.IO.Path]::GetFullPath($WorkspaceRoot)
     Assert-WorkspaceBoundary -Path $workspaceResolved
     $coreExists = Test-Path -LiteralPath (Join-Path $workspaceResolved ".Controlled-Vibe-Framework-CVF") -PathType Container
-    $operation = if ($coreExists) { "REFRESH_EXISTING" } else { "CREATE_NEW" }
     $activeBefore = Get-ActiveProfile -Path $workspaceResolved
+    if ([string]::IsNullOrWhiteSpace($Action)) {
+        $Action = if ($coreExists) { "Update" } else { "Create" }
+    }
+    if ($Action -eq "Create" -and $coreExists) {
+        throw "Create requires a new target without a hidden public core. Choose Check or Update for this workspace."
+    }
+    if ($Action -in @("Check", "Update") -and -not $coreExists) {
+        throw "$Action requires an existing CVF Workspace with a hidden public core."
+    }
+    if ([string]::IsNullOrWhiteSpace($ProfileName) -and $null -ne $activeBefore) {
+        $ProfileName = $activeBefore.activeProfile
+    }
+    $operation = $Action.ToUpperInvariant()
 
     if (-not $coreExists -and (Test-Path -LiteralPath $workspaceResolved -PathType Container)) {
         $existingItems = @(Get-ChildItem -LiteralPath $workspaceResolved -Force)
@@ -573,7 +607,7 @@ try {
     Write-Host "  Provenance: $provenanceRoot"
     Write-Host "  Workspace:  $workspaceResolved"
     Write-Host "  Profile:    $ProfileName"
-    Write-Host "  Operation:  $operation"
+    Write-Host "  Action:     $operation"
     Write-Host "  Boundary:   workspace root stays non-git; application projects stay outside hidden core"
 
     if ($PlanOnly) {
@@ -589,8 +623,41 @@ try {
         }
     }
 
+    if ($Action -eq "Check") {
+        $assessment = Get-WorkspaceAssessment -Path $workspaceResolved
+        Write-WorkspaceAssessment -Assessment $assessment
+        if ($Gui) {
+            Add-Type -AssemblyName System.Windows.Forms
+            $detail = (@($assessment.Updates) + @($assessment.Issues)) -join "`r`n"
+            if ([string]::IsNullOrWhiteSpace($detail)) { $detail = "No updates or repair issues found." }
+            if ($assessment.Status -eq "UPDATE_AVAILABLE") {
+                $decision = [System.Windows.Forms.MessageBox]::Show(
+                    "Status: UPDATE_AVAILABLE`r`nProfile: $($assessment.Profile)`r`n`r`n$detail`r`n`r`nUpdate now?",
+                    "CVF Workspace Check",
+                    [System.Windows.Forms.MessageBoxButtons]::YesNo,
+                    [System.Windows.Forms.MessageBoxIcon]::Question
+                )
+                if ($decision -eq [System.Windows.Forms.DialogResult]::Yes) {
+                    $Action = "Update"
+                }
+                else { exit 0 }
+            }
+            else {
+                [System.Windows.Forms.MessageBox]::Show(
+                    "Status: $($assessment.Status)`r`nProfile: $($assessment.Profile)`r`n`r`n$detail",
+                    "CVF Workspace Check",
+                    [System.Windows.Forms.MessageBoxButtons]::OK,
+                    [System.Windows.Forms.MessageBoxIcon]::Information
+                ) | Out-Null
+                exit 0
+            }
+        }
+        else { exit $(if ($assessment.Status -eq "REPAIR_REQUIRED") { 1 } else { 0 }) }
+    }
+
+    Update-ProvenanceSource
     New-Item -ItemType Directory -Path $workspaceResolved -Force | Out-Null
-    if ($coreExists) {
+    if ($Action -eq "Update") {
         Refresh-ExistingWorkspace -Path $workspaceResolved
     }
     else {

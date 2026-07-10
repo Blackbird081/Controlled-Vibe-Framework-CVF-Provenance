@@ -17,7 +17,10 @@ For human setup on Windows, the easiest path is to double-click:
 START_CVF_WORKSPACE_SETUP.cmd
 ```
 
-It opens a three-step Windows wizard for profile, folder, and confirmation.
+It opens a three-step Windows wizard. The operator first chooses `Check`,
+`Update`, or `Create`, then chooses the profile and folder, and finally reviews
+the plan. `Check` is read-only and offers `Update now?` only when an update is
+available.
 
 Interactive use is the default and preserves the operator decision. Do not
 preselect a profile for the operator.
@@ -36,6 +39,15 @@ Use `-PlanOnly` first when the requested path or existing-workspace posture is
 uncertain. Never select `operator-local` for a public, customer, or shared
 workspace. Stop if the hidden public core is dirty or its remote is not the
 approved public CVF repository.
+
+Agent read-only check:
+
+```powershell
+.\Initialize-CVF-Operator-Workspace.ps1 `
+  -WorkspaceRoot "D:\CVF-Workspace" `
+  -Action Check `
+  -NonInteractive
+```
 
 Successful completion must leave the workspace root non-git, preserve sibling
 project isolation, verify the active profile, and run the workspace enforcement

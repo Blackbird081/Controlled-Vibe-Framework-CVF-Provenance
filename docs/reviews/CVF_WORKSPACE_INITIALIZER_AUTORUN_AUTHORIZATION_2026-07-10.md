@@ -46,6 +46,10 @@ workspace for public or paid use after `operator-local`.
 - Interactive menu plan: PASS.
 - Three-step Windows GUI render and selection smoke test: PASS.
 - Double-click CMD launcher routes to the GUI with STA and execution-policy bypass.
+- Read-only workspace/provenance/profile/filter assessment on the actual operator workspace: `CURRENT`.
+- Synthetic filtered-artifact drift proof returned `UPDATE_AVAILABLE` and named the changed source artifact.
+- Check-to-update routing is offered only for `UPDATE_AVAILABLE`; repair findings remain fail-closed.
+- Existing-workspace actions preserve the active profile; profile selection is enabled only for `Create`.
 - Non-interactive existing `operator-local` refresh and enforcement: PASS.
 - Disposable clean `public-free` install and enforcement: PASS.
 - Disposable clean `operator-local` install, 28-artifact materialization, and
@@ -97,6 +101,7 @@ public-safe root-rules fix may be exported through the bounded workspace kit.
 - `Initialize-CVF-Operator-Workspace.ps1`
 - `START_CVF_WORKSPACE_SETUP.cmd`
 - `.agents/workflows/cvf-workspace-setup.md`
+- `scripts/cvf_workspace_assessment.ps1`
 - `scripts/install_cvf_workspace_root_wrappers_public.ps1`
 - `docs/reference/workspace_distribution/CVF_WORKSPACE_DISTRIBUTION_MANIFEST.json`
 
