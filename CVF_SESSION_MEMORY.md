@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_system_chain_gap_closure_roadmap_ready`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author the fresh R94-T0 GC-018 and no-commit audit work order; parked checkpoint=R73F and R84 effectiveness remain evidence-gated.
+Startup acknowledged: current mode=`msea_r94_t0_contract_runtime_inventory_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=worker executes only the R94-T0 50-row inventory without committing; parked checkpoint=R73F and R84 effectiveness remain evidence-gated.
 
 ## Current Mode
 
-Current mode marker: `msea_r94_system_chain_gap_closure_roadmap_ready`
+Current mode marker: `msea_r94_t0_contract_runtime_inventory_dispatched`
 
-Current mode: `msea_r94_system_chain_gap_closure_roadmap_ready`
+Current mode: `msea_r94_t0_contract_runtime_inventory_dispatched`
 
-`msea_r94_system_chain_gap_closure_roadmap_ready`
+`msea_r94_t0_contract_runtime_inventory_dispatched`
 
 Previous mode:
 
-`msea_r92_worker_return_scaffold_hardening_closed`
+`msea_r94_system_chain_gap_closure_roadmap_ready`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R94-T0 Contract-to-Runtime 50-row inventory dispatch | `a58b61ae8` | DISPATCH_READY. No-commit read-only audit with per-row implementation, invocation, test-pairing, and operator/evidence-route proof. |
 | MSEA-R94 System Chain Gap Closure roadmap | `383a273c8` | PROPOSED. Prioritizes a 50-row contract-to-runtime audit, then targeted repairs and doctrine reconciliation; operator-surface implementation remains value-gated. |
 | MSEA-R93 Gop y CVF storage cleanup | `0f05b7942` | REVIEWER_ACCEPTED_BOUNDED. Preserved 16 active advisory files under external reviews, 27 older files in private legacy, and removed the visible root. |
 | MSEA-R92 worker-return scaffold last-mile hardening closure | `4284a5acd` | REVIEWER_ACCEPTED_BOUNDED. FULL and COMPACT share checker-required markers/headings; compact keeps its exact three-section conditional delta; 13 focused tests and reviewer-fast 60/60 pass. |
@@ -77,12 +78,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r94_system_chain_gap_closure_roadmap_ready`
+Mode: `msea_r94_t0_contract_runtime_inventory_dispatched`
 
-Next allowed move: author a fresh GC-018 baseline and
-`WORKER_MUST_NOT_COMMIT` work order for R94-T0 only. The packet must inventory
-all 50 Governance Control Matrix rows and must not implement T1, T2, or T3.
-Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: worker executes only the committed R94-T0 work order from
+dispatch commit `a58b61ae8`, captures executionBaseHead, creates the exact three
+worker-owned outputs, and returns `COMPLETE_PENDING_REVIEW` without committing.
+Do not implement T1, T2, T3, runtime, checker, Web, lifecycle, public, or
+session work. Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

@@ -4,14 +4,13 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity after MSEA-R94 System Chain Gap Closure roadmap authoring.
+Purpose: compact continuity for dispatched MSEA-R94-T0 50-row inventory.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
 ## Purpose
 
-Route the next fresh R94-T0 audit packet after R93 storage cleanup and R94
-roadmap authoring.
+Route the no-commit R94-T0 worker execution after source-verified dispatch.
 
 ## Scope / Target / Owner Boundary
 
@@ -23,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_system_chain_gap_closure_roadmap_ready`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author the fresh R94-T0 GC-018 and no-commit audit work order; parked checkpoint=R73F and R84 effectiveness remain evidence-gated.
+Startup acknowledged: current mode=`msea_r94_t0_contract_runtime_inventory_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=worker executes only the R94-T0 50-row inventory without committing; parked checkpoint=R73F and R84 effectiveness remain evidence-gated.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +35,14 @@ Startup acknowledged: current mode=`msea_r94_system_chain_gap_closure_roadmap_re
 
 ## Current Mode
 
-`msea_r94_system_chain_gap_closure_roadmap_ready`
+`msea_r94_t0_contract_runtime_inventory_dispatched`
 
 ## Latest Work / Changes
+
+MSEA-R94-T0 dispatch is committed at `a58b61ae8`. The worker must read the
+paired GC-018/work order, capture that execution base, inventory exactly 50
+matrix rows into the named Markdown/JSON/worker-return outputs, run the required
+gates, and stop without commit. T1-T4 implementation remains unauthorized.
 
 MSEA-R94 roadmap is committed at `383a273c8`. It routes the first follow-up to
 a complete 50-row contract-to-runtime inventory, preserves the two proven
@@ -50,9 +54,8 @@ MSEA-R93 storage cleanup is accepted at material commit `0f05b7942`. The 16
 `.private_reference/external_reviews/system_chain_gap_closure_2026-07-10/`;
 the other 27 files are preserved in private legacy. The visible root is absent.
 
-Next allowed move is authoring a fresh GC-018 baseline and
-`WORKER_MUST_NOT_COMMIT` work order for R94-T0 only. Do not implement T1, T2,
-T3, runtime, checker, Web, lifecycle, or public work in the T0 audit packet.
+Next allowed move is worker execution of the committed R94-T0 work order only.
+Reviewer/closer retains all commit and closure ownership.
 
 MSEA-R92 closed `REVIEWER_ACCEPTED_BOUNDED` at material commit `4284a5acd`.
 FULL and COMPACT direct scaffolds now share checker-required markers, headings,
@@ -182,8 +185,8 @@ reopen without observed cross-machine friction.
 
 ## Current HEAD
 
-MSEA-R94 roadmap material commit before this session-sync:
-`383a273c8`.
+MSEA-R94-T0 dispatch material commit before this session-sync:
+`a58b61ae8`.
 
 R89 workspace update assessment material commit before this session-sync:
 `17362cf7d`.
