@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: INTEGRATED_EXECUTION_AUTHORIZED
+Status: RC_PASS_BOUNDED_AND_PUBLIC_SYNCED
 
 docType: roadmap
 
@@ -62,11 +62,11 @@ blocks public release.
 
 | Tranche | Objective | Required evidence | Status |
 |---|---|---|---|
-| R83A | Workspace status contract | deterministic verdict and machine-readable output | AUTHORIZED |
-| R83B | Doctor and repair | missing/drifted generated artifacts restored without profile change | AUTHORIZED |
-| R83C | Unified upgrade UX | root status/update/repair command and guides | AUTHORIZED |
-| R83D | Migration proof | stale core, missing wrapper, drift, update, and rollback cases | AUTHORIZED |
-| R83E | Public release | exact diff, public checks, push, and bounded closure | AUTHORIZED |
+| R83A | Workspace status contract | deterministic verdict and machine-readable output | PASS |
+| R83B | Doctor and repair | missing/drifted generated artifacts restored without profile change | PASS |
+| R83C | Unified upgrade UX | root status/update/repair command and guides | PASS |
+| R83D | Migration proof | stale core, missing wrapper, drift, update, and rollback cases | PASS |
+| R83E | Public release | exact diff, public checks, push, and bounded closure | PASS |
 
 ## Work Plan
 
@@ -106,10 +106,29 @@ URLs, changed sets, public static checks, and post-push equality.
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: the roadmap remains provenance-only. Public-safe product files may be
-exported only after R83 local proof passes.
+Public remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public product commit: `3d6a8500864227bfbb620cba137efd5c541e5c99`
+
+Public compatibility fix commit: `fbb6c4d493182bc50fe04fd9c74fc8bc09d4a348`
+
+Exported front door: `docs/reference/workspace_distribution/README.md`
+
+The roadmap and private evidence remain provenance-only.
+
+## Machine Closure Package
+
+| Closure item | Evidence | Final status |
+|---|---|---|
+| Roadmap state | This file has `Status: RC_PASS_BOUNDED_AND_PUBLIC_SYNCED`. | PASS |
+| R83A status | four verdicts and JSON output proven on disposable workspaces | PASS |
+| R83B repair | core HEAD/profile preserved and drift removed | PASS |
+| R83C management | generated root command routes status, update, and repair | PASS |
+| R83D migration | R82 commit upgraded to R83; forced failure restored exact state | PASS |
+| R83E public release | public commits `3d6a85008` and `fbb6c4d49`; static CI 8/8 | PASS |
+| Completion review | `docs/reviews/CVF_MSEA_R83_WORKSPACE_HEALTH_REPAIR_AND_UPGRADE_EXPERIENCE_COMPLETION_REVIEW_2026-07-10.md` | PASS |
 
 ## Claim Boundary
 
