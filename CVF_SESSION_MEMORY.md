@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r84_lean_governance_follow_through_dispatched_implementation_next`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=implement and close the bounded R84 compact docs-only worker-return pilot; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r84_lean_governance_follow_through_closed_pending_next_product_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select one high-value product lane; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r84_lean_governance_follow_through_dispatched_implementation_next`
+Current mode marker: `msea_r84_lean_governance_follow_through_closed_pending_next_product_selection`
 
-Current mode: `msea_r84_lean_governance_follow_through_dispatched_implementation_next`
+Current mode: `msea_r84_lean_governance_follow_through_closed_pending_next_product_selection`
 
-`msea_r84_lean_governance_follow_through_dispatched_implementation_next`
+`msea_r84_lean_governance_follow_through_closed_pending_next_product_selection`
 
 Previous mode:
 
-`msea_r83_workspace_operability_rc_public_synced_pending_next_product_selection`
+`msea_r84_lean_governance_follow_through_dispatched_implementation_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R84 Lean Governance Follow-Through closure | `a4b504b53` | CLOSED_PASS_BOUNDED. Dispatch-authenticated compact profile; full compatibility; protected controls remain blocking; 175 focused tests pass. |
 | MSEA-R84 Lean Governance Follow-Through dispatch | `dc91b6807` | DISPATCH_READY for one compact docs-only worker-return profile and one bounded checker lifecycle disposition; no public-sync or global demotion. |
 | MSEA-R83 Workspace Health Repair And Upgrade Experience | `213c6ab4f` | RC_PASS_BOUNDED_AND_PUBLIC_SYNCED after product `202d7dd92`, compatibility fix `38672f496`, and public commits `3d6a85008` plus `fbb6c4d49`. Four verdicts, repair, deterministic build, migration, rollback, and static CI 8/8 passed. |
 | MSEA-R82 Workspace Distribution And Update Release | `4bd363a81` | RC_PASS_BOUNDED_AND_PUBLIC_SYNCED after implementation `4939e59d0` and public commit `a4d5dba915`. Windows PowerShell 5.1 and PowerShell 7 clean installs, update, rollback, deterministic build, profile boundary, leakage scans, and public static CI 8/8 passed for version `0.1.0-rc1`. |
@@ -63,13 +64,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r84_lean_governance_follow_through_dispatched_implementation_next`
+Mode: `msea_r84_lean_governance_follow_through_closed_pending_next_product_selection`
 
-Next allowed move: implement, test, review, and close the bounded R84 compact
-docs-only worker-return pilot. The full profile and protected evidence remain
-blocking. Public-sync, global checker demotion or retirement, new checker/hook,
-runtime/provider/live, workspace distribution, and downstream use-case work
-remain outside scope. Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: select one high-value product lane. R84 is closed and does
+not authorize more governance tuning by default. Public-sync, global checker
+demotion or retirement, new checker/hook, runtime/provider/live, and downstream
+use-case work require their own value and authority decision. Latest closed
+numbered LHW wave remains `LHW24`.
 
 The parked R73F checker-retirement candidate must not reopen until its active
 conformance and evidence-pack references are removed or reattached under a

@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r84_lean_governance_follow_through_dispatched_implementation_next`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=implement and close bounded R84; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r84_lean_governance_follow_through_closed_pending_next_product_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select one high-value product lane; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,15 @@ Startup acknowledged: current mode=`msea_r84_lean_governance_follow_through_disp
 
 ## Current Mode
 
-`msea_r84_lean_governance_follow_through_dispatched_implementation_next`
+`msea_r84_lean_governance_follow_through_closed_pending_next_product_selection`
 
 ## Latest Work / Changes
+
+MSEA-R84 closed `CLOSED_PASS_BOUNDED` at material commit `a4b504b53`.
+`WORKER_RETURN_FAST_DOC_V1` is dispatch-authenticated, the legacy full profile
+remains compatible, protected evidence remains blocking, and 175 focused tests
+pass. Targeted conditional headings fell 66.7 percent and conditional lines
+86.4 percent; total scaffold lines fell 10.1 percent, with no broader claim.
 
 MSEA-R84 Lean Governance Follow-Through is dispatched at `dc91b6807`. It
 authorizes one compact docs-only worker-return profile, backward-compatibility
@@ -85,11 +91,13 @@ public push occurred.
 
 ## Active Boundary
 
-R84 is the only active implementation lane. It is bounded to private
-worker-return authoring/checker calibration; provenance remains the source of
-truth and no public-sync mutation is authorized.
+R84 is closed. No implementation lane is active until one high-value product
+lane is selected. Provenance remains the source of truth and no public-sync
+mutation is authorized by R84.
 
 ## Current HEAD
+
+R84 closure material commit before this session-sync: `a4b504b53`.
 
 R84 dispatch material commit before this session-sync: `dc91b6807`.
 
@@ -280,6 +288,27 @@ Operator authorization: complete the bounded Lean Governance Follow-Through.
 
 Rollback boundary: revert only this session-sync; do not revert R84 dispatch
 commit `dc91b6807`.
+
+## Core Guard Self-Protection Authorization - MSEA-R84 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R84 closure
+material commit `a4b504b53`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to post-R84 product selection. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R84 closure and parent HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set post-R84 mode. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route to product selection. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: complete R84 and proceed autonomously through closure.
+
+Rollback boundary: revert only this session-sync; do not revert closure commit
+`a4b504b53` or prior product work.
 
 ## Public/Provenance Boundary
 

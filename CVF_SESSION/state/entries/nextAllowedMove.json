@@ -1,5 +1,5 @@
 {
   "stateOrder": 1631,
   "stateKey": "nextAllowedMove",
-  "value": "MSEA-R84 Lean Governance Follow-Through is dispatched at material commit dc91b6807. Next allowed move is bounded R84 implementation: one dispatch-authorized compact docs-only worker-return profile, focused backward-compatibility and fail-closed tests, one lifecycle disposition for the existing worker-return quality checker, completion review, and session sync. No public-sync, global checker demotion, checker retirement, new checker or hook, runtime/provider/live work, workspace distribution, Memory/RAG, retrieval, or downstream use-case work is authorized. R73F remains parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "MSEA-R84 Lean Governance Follow-Through is CLOSED_PASS_BOUNDED at material closure commit a4b504b53. WORKER_RETURN_FAST_DOC_V1 is dispatch-authenticated; the full profile remains compatible; protected evidence remains blocking; targeted conditional headings fell 66.7 percent and lines 86.4 percent. Next allowed move is selection of one high-value product lane, not further governance tuning by default. No public-sync, global checker demotion, checker retirement, new checker or hook, runtime/provider/live work, Memory/RAG, retrieval, or downstream use-case work is authorized by R84. R73F remains parked. LHW24 remains latest closed numbered LHW wave."
 }
