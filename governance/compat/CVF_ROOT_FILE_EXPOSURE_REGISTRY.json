@@ -212,6 +212,10 @@
       "exposureClass": "PUBLIC_DOCS_ONLY"
     },
     {
+      "path": "START_CVF_WORKSPACE_SETUP.cmd",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
       "path": "workspace_overlay_catalog.json",
       "exposureClass": "INTERNAL_ONLY"
     },

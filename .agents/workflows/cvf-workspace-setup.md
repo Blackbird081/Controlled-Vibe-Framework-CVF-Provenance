@@ -11,6 +11,14 @@ CVF Workspace from this provenance repository, use the root entrypoint:
 .\Initialize-CVF-Operator-Workspace.ps1
 ```
 
+For human setup on Windows, the easiest path is to double-click:
+
+```text
+START_CVF_WORKSPACE_SETUP.cmd
+```
+
+It opens a three-step Windows wizard for profile, folder, and confirmation.
+
 Interactive use is the default and preserves the operator decision. Do not
 preselect a profile for the operator.
 

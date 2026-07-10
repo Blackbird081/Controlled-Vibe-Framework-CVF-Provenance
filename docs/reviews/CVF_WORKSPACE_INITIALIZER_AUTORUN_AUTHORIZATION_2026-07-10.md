@@ -44,6 +44,8 @@ workspace for public or paid use after `operator-local`.
 ## Evidence
 
 - Interactive menu plan: PASS.
+- Three-step Windows GUI render and selection smoke test: PASS.
+- Double-click CMD launcher routes to the GUI with STA and execution-policy bypass.
 - Non-interactive existing `operator-local` refresh and enforcement: PASS.
 - Disposable clean `public-free` install and enforcement: PASS.
 - Disposable clean `operator-local` install, 28-artifact materialization, and
@@ -93,6 +95,7 @@ public-safe root-rules fix may be exported through the bounded workspace kit.
 ## Related Artifacts
 
 - `Initialize-CVF-Operator-Workspace.ps1`
+- `START_CVF_WORKSPACE_SETUP.cmd`
 - `.agents/workflows/cvf-workspace-setup.md`
 - `scripts/install_cvf_workspace_root_wrappers_public.ps1`
 - `docs/reference/workspace_distribution/CVF_WORKSPACE_DISTRIBUTION_MANIFEST.json`
