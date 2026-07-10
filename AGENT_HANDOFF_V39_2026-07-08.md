@@ -2,14 +2,14 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R81A Workspace Productization RC Source Map reviewer acceptance.
+Purpose: compact current-session continuity after MSEA-R81B integrated Workspace RC execution dispatch.
 Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, unbounded public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production claim, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R81A reviewer acceptance, and route the next executable move to R81B checklist-definition dispatch authoring.
+Provide compact active-session continuity after MSEA-R81B dispatch, and route the next executable move to the bounded integrated local proof.
 
 ## Scope / Target / Owner Boundary
 
@@ -17,13 +17,13 @@ This handoff is private provenance continuity owned by Codex in reviewer/closer 
 
 ## Latest Work / Changes
 
-R81A Workspace Productization RC Source Map And Boundary Confirmation is reviewer accepted at provenance material commit `60dfb0495`. It accepted `docs/reference/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md`, `docs/reviews/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_WORKER_RETURN_2026-07-09.md`, and `docs/reviews/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_COMPLETION_REVIEW_2026-07-09.md`. Reviewer-return fast gate PASS 59/59 and material pre-commit hook PASS 80/80. The map keeps operator-local continuity distinct from paid-user-safe output and makes no smoke, public-export, or RC-pass claim. Next move is R81B GC-018/work-order authoring for compact checklist definition only.
+R81B integrated Workspace RC execution is dispatched at provenance material commit `810ace2ee`. It added the paired GC-018 baseline and WORKER_MAY_COMMIT work order for checklist definition plus disposable fresh/adoption, local update, profile-boundary, and R81F evidence. Pre-dispatch autorun PASS 73/73 and material pre-commit hook PASS 80/80. Worker may create only the named checklist, integrated review, and evidence-backed R81 roadmap update; `Policy_Local`, public-sync, provider/live, and runtime/checker/hook paths remain out of scope.
 
 R80C Workspace Bootstrap Log Ignore Negation Fix is closed bounded and public-synced. Provenance commit `bd3a38f57` repaired `scripts/check_cvf_workspace_agent_enforcement.ps1` so gitignore negation rules such as `!docs/CVF_BOOTSTRAP_LOG_*.md` do not produce a false bootstrap-log warning. Public-sync commit `f593c58db` exported the bounded workspace-kit doctor update. Local `CVF-Workspace` hidden public core updated to `f593c58`; `Policy_Local` doctor and workspace-wide gate report PASS 17/17 without warning. `Policy_Local` local commit `edd92aa` added the CVF workspace scaffold and `.gitignore` exception only; `Policy_Local` remains ahead 9 with pre-existing app changes and untracked app/debug files, and no `Policy_Local` push was performed. R80B, R80, R79, R78, R77, R76, R75, and R74 remain closed bounded. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81B GC-018 and source-verified work-order authoring for compact Workspace Productization RC checklist definition only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r81b_workspace_rc_integrated_execution_dispatched`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81B integrated checklist and local smoke execution only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -37,7 +37,7 @@ Startup acknowledged: current mode=`msea_r81a_workspace_productization_rc_source
 
 ## Current Mode
 
-`msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018`
+`msea_r81b_workspace_rc_integrated_execution_dispatched`
 
 ## Active Boundary
 
@@ -983,17 +983,34 @@ material acceptance commit `60dfb0495` or older workspace productization history
 
 ## Next Allowed Move
 
-Next allowed move is R81B GC-018 and source-verified work-order authoring only
-for compact Workspace Productization RC checklist definition. R81B may use the
-accepted R81A source map, R81 roadmap, and current workspace product sources to
-define required commands and pass/fail meanings. It must preserve public/private
-boundary, source verification, no-commit/reviewer separation, and closure
-evidence. It must not execute R81C-R81F, mutate scripts, public-sync, workspace
-files, or `Policy_Local` app code, run provider/live proof, create
-hosted/public/production claims, perform public push, or reopen checker
-retirement, hook, or Fast Lane changes.
+Next allowed move is R81B integrated checklist and local smoke execution only.
+Use the paired dispatch packet to create the checklist and integrated review,
+run disposable fresh/adoption and documented update evidence, restore
+`operator-local` if needed, and issue R81F from command evidence. Do not mutate
+`Policy_Local`, public-sync, runtime, checker, hook, Fast Lane, provider, or
+production surfaces.
 
 ## Public/Provenance Boundary
+
+## Core Guard Self-Protection Authorization - MSEA-R81B Integrated Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after MSEA-R81B material
+dispatch commit `810ace2ee`, including mode, next move, generated state,
+bootstrap model, active handoff, and dispatch entry.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Record R81B execution routing. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Generated compact startup facts. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Generated session aggregate. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set R81B execution mode. |
+| `CVF_SESSION/state/entries/mseaR81BWorkspaceRCIntegratedExecutionDispatch20260710.json` | Record dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route only to the integrated worker execution. |
+
+Rollback boundary: revert this session-sync only; do not revert material commit
+`810ace2ee` or prior R81 evidence.
 
 This handoff is private provenance continuity only. Public-facing changes still
 require the sibling public-sync clone, fresh remote verification, a governed

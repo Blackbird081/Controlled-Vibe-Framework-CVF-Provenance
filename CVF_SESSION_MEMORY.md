@@ -33,19 +33,19 @@ For governed artifact authoring, also read:
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81B GC-018 and source-verified work-order authoring for compact Workspace Productization RC checklist definition only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r81b_workspace_rc_integrated_execution_dispatched`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81B integrated checklist and local smoke execution only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018`
+Current mode marker: `msea_r81b_workspace_rc_integrated_execution_dispatched`
 
-Current mode: `msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018`
+Current mode: `msea_r81b_workspace_rc_integrated_execution_dispatched`
 
-`msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018`
+`msea_r81b_workspace_rc_integrated_execution_dispatched`
 
 Previous mode:
 
-`msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018`
+`msea_r81b_workspace_rc_integrated_execution_dispatched`
 
 ## Current Work
 
@@ -191,18 +191,15 @@ and new-owner claims unless a fresh source-verified packet releases them.
 
 ## Next Allowed Move
 
-Mode: `msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018`
+Mode: `msea_r81b_workspace_rc_integrated_execution_dispatched`
 
-MSEA-R81A Workspace Productization RC Source Map And Boundary Confirmation is
-REVIEWER_ACCEPTED_BOUNDED at provenance material commit `60dfb0495`. The next
-allowed move is R81B GC-018 and source-verified work-order authoring only for
-a compact Workspace Productization RC checklist definition. R81B must preserve
-public/private boundary, source verification, no-commit/reviewer separation,
-and closure evidence. It must not execute R81C-R81F, mutate scripts,
-public-sync, workspace, or `Policy_Local` app code, run provider/live proof,
-create hosted/public/production claims, perform public push, or reopen checker
-retirement, hook, or Fast Lane changes. LHW24 remains latest closed numbered
-LHW wave.
+MSEA-R81B integrated checklist and local smoke execution is DISPATCHED at
+provenance material commit `810ace2ee`. Worker may now execute only the paired
+R81B packet: create the checklist, run disposable fresh/adoption and workspace
+update evidence, restore `operator-local` if needed, and make an evidence-backed
+R81F decision. Public-sync, public push, provider/live proof, runtime/checker/
+hook/Fast Lane change, production claims, and `Policy_Local` mutation remain
+forbidden. LHW24 remains latest closed numbered LHW wave.
 
 ## Current Closed Work
 
