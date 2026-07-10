@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r86_workspace_classification_guide_closed_pending_next_repository_selection",
+  "currentMode": "msea_r87_interactive_operator_workspace_initializer_closed_pending_next_repository_selection",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R86 workspace classification guidance is closed at provenance material commit c5b1fddd1 and public commit 4c0d06cf2. The actual operator workspace is refreshed to public core 4c0d06cf2, retains operator-local with explicit continuity allowance, includes the root classification guide, and passes workspace enforcement with Policy_Local plus three proof projects enforced and the recorded older projects remaining legacy-exempt. Next allowed move is to select and source-verify the next repository, check the conditional reopen index, and author a fresh bounded packet before absorption. Do not reopen workspace classification merely for wording polish; require observed user or automation friction. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R87 interactive operator workspace initialization is closed at provenance material commit b3004069d and public root-rules fix a78b35c9d. Fresh public-free and operator-local disposable installs, existing operator-local refresh, interactive menu planning, profile-conversion blocking, non-empty-target blocking, and enforcement all passed. The actual operator workspace uses public core a78b35c9d and operator-local materialized from b3004069d; Policy_Local remains ENFORCED_PASS. Next allowed move is to select and source-verify the next repository, check the conditional reopen index, and author a fresh bounded packet before absorption. Do not reopen workspace setup without observed cross-machine friction. R73F remains parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -4,7 +4,7 @@ Memory class: active-agent-handoff
 
 Status: ACTIVE
 
-Purpose: compact continuity after MSEA-R86 workspace classification guide closure.
+Purpose: compact continuity after MSEA-R87 interactive operator workspace initializer closure.
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md`
 
@@ -23,7 +23,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r86_workspace_classification_guide_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r87_interactive_operator_workspace_initializer_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -36,9 +36,17 @@ Startup acknowledged: current mode=`msea_r86_workspace_classification_guide_clos
 
 ## Current Mode
 
-`msea_r86_workspace_classification_guide_closed_pending_next_repository_selection`
+`msea_r87_interactive_operator_workspace_initializer_closed_pending_next_repository_selection`
 
 ## Latest Work / Changes
+
+MSEA-R87 closed at provenance material commit `b3004069d` and public commit
+`a78b35c9d`. `Initialize-CVF-Operator-Workspace.ps1` is now the options-driven
+fresh-clone entrypoint, with agent autorun routing and fail-closed path,
+profile, remote, and dirty-core checks. Disposable clean installs passed for
+`public-free` and `operator-local`; existing operator refresh and enforcement
+also passed. The actual operator workspace is on public core `a78b35c9d` with
+`operator-local` materialized from `b3004069d`.
 
 MSEA-R86 workspace classification guidance closed at provenance material
 commit `c5b1fddd1` and public commit `4c0d06cf2`. The detailed guide separates
@@ -114,12 +122,17 @@ public push occurred.
 
 ## Active Boundary
 
-R85, R86, and the historical R64-R70 source family are closed. Provenance
+R85 through R87 and the historical R64-R70 source family are closed. Provenance
 remains the source of truth; no new repository absorption is active until a
-source-verified target and fresh packet are selected. Workspace classification
-does not reopen without observed user or automation friction.
+source-verified target and fresh packet are selected. Workspace setup does not
+reopen without observed cross-machine friction.
 
 ## Current HEAD
+
+R87 interactive workspace initializer material commit before this session-sync:
+`b3004069d`.
+
+R87 public-safe root-rules fix: `a78b35c9d`.
 
 R86 workspace classification material commit before this session-sync:
 `c5b1fddd1`.
@@ -173,10 +186,10 @@ External agent memory files: non-canonical convenience only.
 
 Next allowed move: select and source-verify the next repository, check the
 conditional reopen index, and author a fresh bounded packet before absorption.
-R85 and R86 are closed. Do not reopen workspace classification for wording
-polish; require observed user or automation friction. `Policy_Local` remains a
-closed workspace enforcement proof target, not the next implementation task.
-R86 does not authorize checker/hook, runtime/provider/live, private-output,
+R85 through R87 are closed. Do not reopen workspace setup without observed
+cross-machine friction. `Policy_Local` remains a closed workspace enforcement
+proof target, not the next implementation task. R87 does not authorize
+checker/hook, runtime/provider/live, private-output,
 Memory/RAG, retrieval, or new repository mutation. Latest closed numbered LHW
 wave remains `LHW24`.
 
@@ -384,6 +397,29 @@ Rollback boundary: revert only this session-sync; do not revert closure commit
 
 This handoff is private provenance continuity. Public-facing changes require
 the sibling public-sync clone, fresh remote evidence, and separate authority.
+
+## Core Guard Self-Protection Authorization - MSEA-R87 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R87 material
+commit `b3004069d` and public commit `a78b35c9d`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to post-R87 repository selection. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R87 closure and material HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set post-R87 mode. |
+| `CVF_SESSION/state/entries/mseaR87InteractiveOperatorWorkspaceInitializerClosure20260710.json` | Record bounded closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Keep next repository selection bounded. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: provide agent autorun and one options-driven file for
+convenient workspace creation on another machine.
+
+Rollback boundary: revert only this session-sync; do not revert material
+commit `b3004069d`, public commit `a78b35c9d`, or local workspace refresh.
 
 ## Core Guard Self-Protection Authorization - MSEA-R86 Closure Session Sync
 

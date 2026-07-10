@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1636,
+  "stateKey": "mseaR87InteractiveOperatorWorkspaceInitializerClosure20260710",
+  "value": "CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED. Provenance material commit b3004069d adds Initialize-CVF-Operator-Workspace.ps1, agent autorun routing, an internal workflow, fail-closed profile/path/remote/dirty-core boundaries, and an accepted authorization review. Public commit a78b35c9d makes WORKSPACE_RULES.md a required and create-if-missing root artifact. Proof passed for interactive menu plan, non-interactive existing operator-local refresh, disposable fresh public-free install, disposable fresh operator-local install with 28 artifacts, workspace enforcement, blocked operator-local in-place downgrade, and blocked non-empty new target. The actual operator workspace is refreshed to public core a78b35c9d and operator-local source b3004069d. No runtime/provider/live or downstream application behavior changed."
+}

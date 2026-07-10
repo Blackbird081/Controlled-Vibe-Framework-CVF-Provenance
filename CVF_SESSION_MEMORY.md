@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r86_workspace_classification_guide_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r87_interactive_operator_workspace_initializer_closed_pending_next_repository_selection`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select and source-verify the next repository before opening a fresh absorption packet; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Current Mode
 
-Current mode marker: `msea_r86_workspace_classification_guide_closed_pending_next_repository_selection`
+Current mode marker: `msea_r87_interactive_operator_workspace_initializer_closed_pending_next_repository_selection`
 
-Current mode: `msea_r86_workspace_classification_guide_closed_pending_next_repository_selection`
+Current mode: `msea_r87_interactive_operator_workspace_initializer_closed_pending_next_repository_selection`
 
-`msea_r86_workspace_classification_guide_closed_pending_next_repository_selection`
+`msea_r87_interactive_operator_workspace_initializer_closed_pending_next_repository_selection`
 
 Previous mode:
 
-`msea_r85_gop_y_cvf_residual_value_absorption_closed_pending_next_repo_selection`
+`msea_r86_workspace_classification_guide_closed_pending_next_repository_selection`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R87 interactive operator workspace initializer | `b3004069d` | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED. Added one options-driven provenance entrypoint and agent autorun routing; fresh and existing workspace proofs passed; public root-rules fix exported at `a78b35c9d`. |
 | MSEA-R86 workspace classification guide | `c5b1fddd1` | CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED. Added the detailed classification guide, exported public commit `4c0d06cf2`, refreshed the actual operator workspace, retained `operator-local`, and passed workspace enforcement. |
 | MSEA-R85 residual value absorption closure | `6872dbc94` | REVIEWER_ACCEPTED_BOUNDED. Reconciled 27/27 source files, created bounded BUILD-loop and public-trust owners, exported public commit `c2663b1ee`, and closed the historical R64-R70 roadmap. |
 | MSEA-R85 residual value absorption dispatch | `f350d506d` | DISPATCH_READY for terminal 27-file reconciliation, bounded BUILD-loop and public-trust owner surfaces, five-minute demo, public-safe projection, and closure. |
@@ -67,15 +68,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r86_workspace_classification_guide_closed_pending_next_repository_selection`
+Mode: `msea_r87_interactive_operator_workspace_initializer_closed_pending_next_repository_selection`
 
 Next allowed move: select and source-verify the next repository, check the
 conditional reopen index, and author a fresh bounded packet before reading or
-absorbing it. R85 and R86 are closed. Do not reopen workspace classification
-for wording polish; require observed user or automation friction. No
-checker/hook, runtime/provider/live, private-output, Memory/RAG, retrieval, or
-new repo mutation is authorized by R86. Latest closed numbered LHW wave
-remains `LHW24`.
+absorbing it. R85 through R87 are closed. Do not reopen workspace setup without
+observed cross-machine friction. No checker/hook, runtime/provider/live,
+private-output, Memory/RAG, retrieval, or new repo mutation is authorized by
+R87. Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
