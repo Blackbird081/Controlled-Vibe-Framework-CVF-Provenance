@@ -74,9 +74,9 @@ separate source-verified packet.
 
 ## Boundaries
 
-- Broad external knowledge absorption remains a separately authorized work
+- `broad external knowledge absorption` remains a separately authorized work
   class; it is not an automatic next move.
-- Blocked work classes remain blocked until their recorded source condition or
+- `blocked work classes` remain blocked until their recorded source condition or
   operator checkpoint is satisfied.
 - Provenance remains the full private source of truth.
 - Public-facing changes go only through the sibling public-sync clone after

@@ -71,6 +71,8 @@ Material closure HEAD: `c067328d5`.
 Session-sync and continuity-rotation commit before this pointer sync:
 `b6452e57d`.
 
+Continuity compatibility commit before this final pointer sync: `754931b55`.
+
 Remote tracking branch: `origin/main`.
 
 Exact remote SHA must be derived live from git when needed.
@@ -113,6 +115,9 @@ Protected paths:
 
 Operator authorization: the operator authorized autonomous completion of the
 R81 roadmap and asked Codex to continue through closure.
+
+Compatibility note: the compact front door retains the exact knowledge-intake
+and blocked-work marker literals required by the current pre-push chain.
 
 Rollback boundary: revert only this session-sync and continuity rotation; do
 not revert R81 material commit `c067328d5` or earlier workspace product work.
