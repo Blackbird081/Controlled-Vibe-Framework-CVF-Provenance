@@ -82,6 +82,8 @@ Continuity compatibility commit before this final pointer sync: `754931b55`.
 
 R82 dispatch material commit before this session-sync: `203a4e0f4`.
 
+R82 Windows distribution implementation material commit: `4939e59d0`.
+
 Remote tracking branch: `origin/main`.
 
 Exact remote SHA must be derived live from git when needed.
