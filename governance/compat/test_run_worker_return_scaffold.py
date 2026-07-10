@@ -57,6 +57,19 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
         ):
             self.assertIn(f"| {required_row_label} |", section)
 
+    def test_fast_doc_scaffold_consolidates_conditional_controls(self):
+        text = scaffold.build_scaffold(
+            "Fast Doc Worker Return", scaffold.FAST_DOC_PROFILE
+        )
+        self.assertIn("contractProfile: WORKER_RETURN_FAST_DOC_V1", text)
+        self.assertIn("## Conditional Controls Disposition", text)
+        self.assertIn(
+            "conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA", text
+        )
+        self.assertNotIn("## External Knowledge Intake Routing", text)
+        self.assertNotIn("## Rescan Intelligence Hardening", text)
+        self.assertNotIn("## Corpus Completeness And Report Integrity", text)
+
     def test_delta_execution_claim_boundary_uses_required_field_table_shape(self):
         text = scaffold.build_scaffold("Example Worker Return")
         section_start = text.index("## Delta Execution Claim Boundary Control Block")

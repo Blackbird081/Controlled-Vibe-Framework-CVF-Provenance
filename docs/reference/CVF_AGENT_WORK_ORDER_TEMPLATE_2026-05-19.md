@@ -912,6 +912,10 @@ individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 ```
 
+For a GC-018-authorized docs-only no-commit tranche, the dispatcher may use
+`WORKER_RETURN_FAST_DOC_V1` exactly as defined by
+`docs/reference/work_order_authoring/CVF_WORKER_RETURN_FULL_GATE_CONTRACT_STANDARD.md`.
+
 `## Verification Commands` must include
 `python governance/compat/run_worker_return_fast_gate.py`. When the work order
 names focused tests, add one `--pytest-target <path>` per test path.
@@ -923,6 +927,9 @@ before writing long prose:
 python governance/compat/run_worker_return_scaffold.py --write docs/reviews/<worker-return>.md --title "<worker return title>"
 python governance/compat/run_worker_return_fast_gate.py
 ```
+
+For an eligible compact dispatch, append
+`--profile WORKER_RETURN_FAST_DOC_V1` to the scaffold command.
 
 Run the fast gate once while the file is still a short skeleton, then fill the
 content and rerun. This catches required headings, literal fields, and Source

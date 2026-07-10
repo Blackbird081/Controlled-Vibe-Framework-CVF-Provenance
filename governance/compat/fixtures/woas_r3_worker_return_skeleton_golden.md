@@ -9,6 +9,7 @@ Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS-R3-GOLDEN_20
 dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS-R3-GOLDEN_2026-07-01.md`
 executionBaseHead: TO_FILL_capture with `git rev-parse --short HEAD` before edits
 rawMemoryReleased=false
+contractProfile: WORKER_RETURN_FULL_GATE_V1
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Scope / Methodology

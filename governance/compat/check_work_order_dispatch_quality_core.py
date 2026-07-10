@@ -466,7 +466,11 @@ def _validate_worker_return_packet_shape_contract(text: str) -> list[str]:
         ]
 
     issues: list[str] = []
-    for term in WORKER_RETURN_FULL_GATE_REQUIRED_TERMS:
+    if f"contractProfile: {WORKER_RETURN_FAST_DOC_PROFILE}" in section:
+        required_terms = WORKER_RETURN_FAST_DOC_REQUIRED_TERMS
+    else:
+        required_terms = WORKER_RETURN_FULL_GATE_REQUIRED_TERMS
+    for term in required_terms:
         if term not in section:
             issues.append(
                 f"`## {WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER}` missing required contract term `{term}`"

@@ -12,6 +12,26 @@ def build_worker_return_skeleton(args: Any) -> str:
         f"docs/work_orders/CVF_AGENT_WORK_ORDER_{args.batch_id}_{args.date}.md"
     )
     invocation_id = f"{args.batch_id.lower()}-{args.date}"
+    profile = getattr(args, "worker_return_profile", "WORKER_RETURN_FULL_GATE_V1")
+    fast_doc = profile == "WORKER_RETURN_FAST_DOC_V1"
+    conditional_controls = """## Conditional Controls Disposition
+conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA
+""" if fast_doc else """## External Knowledge Intake Routing
+| Field | Value |
+| --- | --- |
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | operator-provided external comparison, critique, or recommendation |
+| Chain map route | N/A with reason: fill if external knowledge intake applies |
+| Matching local-view guard | TO_FILL or N/A with reason |
+| Owner surface | TO_FILL |
+| Disposition | NOT_APPLICABLE_WITH_REASON: fill if external knowledge intake applies |
+| Claim boundary | TO_FILL |
+## Rescan Intelligence Hardening
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+Reason: N/A with reason: this worker return is not a rescan, intake-refresh, or source-backed reassessment output.
+## Corpus Completeness And Report Integrity
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason: no corpus completeness claim in this worker return.
+"""
     return f"""# CVF {args.batch_id} Worker Return Skeleton
 Memory class: FULL_RECORD
 Status: COMPLETE_PENDING_REVIEW
@@ -23,6 +43,7 @@ Responds to work order: `{work_order_path}`
 dispatchWorkOrder: `{work_order_path}`
 executionBaseHead: TO_FILL_capture with `git rev-parse --short HEAD` before edits
 rawMemoryReleased=false
+contractProfile: {profile}
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Scope / Methodology
@@ -73,21 +94,7 @@ TO_FILL: state risks and corrective actions if any.
 ## Public Export Disposition
 DEFERRED_PRIVATE_ONLY
 Reason: TO_FILL: default private-only worker return; override with real EXPORTED or BLOCKED_MISSING_PUBLIC_ARTIFACTS evidence only if this return genuinely changes public-sync scope.
-## External Knowledge Intake Routing
-| Field | Value |
-| --- | --- |
-| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
-| Input type | operator-provided external comparison, critique, or recommendation |
-| Chain map route | N/A with reason: fill if external knowledge intake applies |
-| Matching local-view guard | TO_FILL or N/A with reason |
-| Owner surface | TO_FILL |
-| Disposition | NOT_APPLICABLE_WITH_REASON: fill if external knowledge intake applies |
-| Claim boundary | TO_FILL |
-## Rescan Intelligence Hardening
-- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
-Reason: N/A with reason: this worker return is not a rescan, intake-refresh, or source-backed reassessment output.
-## Corpus Completeness And Report Integrity
-- Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason: no corpus completeness claim in this worker return.
+{conditional_controls.rstrip()}
 ## Finding-To-Governance Learning Disposition
 | Field | Value |
 | --- | --- |

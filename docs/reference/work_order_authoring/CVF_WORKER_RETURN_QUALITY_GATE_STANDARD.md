@@ -48,6 +48,26 @@ Eligible worker-return packets must include:
 The packet must not retain scaffold placeholders such as `FILL_ME` or
 `WORKER_MUST_CAPTURE_AT_START`.
 
+### Dispatch-Authorized Fast Doc Variant
+
+`WORKER_RETURN_FAST_DOC_V1` retains every required heading above except the
+three conditional headings for external intake, rescan intelligence, and
+corpus completeness. It replaces them with:
+
+- `## Conditional Controls Disposition`
+- `conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA`
+
+The variant is valid only when the `dispatchWorkOrder` file contains all
+eligibility terms defined by the full-gate contract standard, including
+`DOCUMENTATION_AND_EVIDENCE_ONLY_NO_COMMIT`, no-commit mode, and explicit
+forbidden dispositions for public-sync, live/runtime, checker mutation, and
+worker self-selection. The worker cannot opt in from its return packet.
+
+Purpose, scope, findings, risk, checker read-ahead, operation trace, Delta
+boundary, public export, governance learning, epistemic process, claim
+boundary, git status, changed files, command evidence, and no-commit evidence
+remain required and blocking.
+
 ## Checker-Source Authoring Checklist
 
 Before writing the first line of a no-commit worker return, read
@@ -79,6 +99,10 @@ an exact physical-line heading:
 - `## Changed Files`
 - `## Command Evidence`
 - `## No-Commit Statement`
+
+For `WORKER_RETURN_FAST_DOC_V1`, `FAST_DOC_REQUIRED_HEADINGS` removes only the
+three conditional headings named above and adds `## Conditional Controls
+Disposition`.
 
 ### Raw Placeholder Scan
 
@@ -184,6 +208,11 @@ instead of repeating each individual worker-return checker section:
 The dispatch-quality checker requires this profile, the
 `run_worker_return_fast_gate.py` command, `individualCheckerSubstitution:
 FORBIDDEN`, and `workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED`.
+
+Dispatch-authorized docs-only work orders may instead use the Fast Doc Contract
+from `CVF_WORKER_RETURN_FULL_GATE_CONTRACT_STANDARD.md`. The dispatch-quality
+checker validates all fail-closed eligibility terms before dispatch, and the
+worker-return checker validates the cited work order again at return time.
 
 ## Claim Boundary
 

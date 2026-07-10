@@ -19,6 +19,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 ALLOWED_DIR = "docs/reviews/"
 SCAFFOLD_TODO = "TODO: worker fills this section before returning for review."
 SCAFFOLD_TABLE_TODO = "TODO: fill before review"
+FULL_PROFILE = "WORKER_RETURN_FULL_GATE_V1"
+FAST_DOC_PROFILE = "WORKER_RETURN_FAST_DOC_V1"
 
 WORKER_RETURN_SCAFFOLD_SECTIONS = (
     "Source Inventory",
@@ -43,6 +45,16 @@ WORKER_RETURN_SCAFFOLD_SECTIONS = (
     "Public Export Disposition",
     "Command Evidence",
     "Machine Closure Package",
+)
+FAST_DOC_SCAFFOLD_SECTIONS = tuple(
+    section
+    for section in WORKER_RETURN_SCAFFOLD_SECTIONS
+    if section
+    not in {
+        "External Knowledge Intake Routing",
+        "Rescan Intelligence Hardening",
+        "Corpus Completeness And Report Integrity",
+    }
 )
 
 
@@ -96,6 +108,8 @@ def _section_body(section: str) -> list[str]:
         return [
             "- Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason: no corpus completeness claim in this worker return.",
         ]
+    if section == "Conditional Controls Disposition":
+        return ["conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA"]
     if section == "Finding-To-Governance Learning Disposition":
         return [
             "| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |",
@@ -189,7 +203,7 @@ def _section_body(section: str) -> list[str]:
     return [SCAFFOLD_TODO]
 
 
-def build_scaffold(title: str = "") -> str:
+def build_scaffold(title: str = "", profile: str = FULL_PROFILE) -> str:
     heading = title.strip() or "Worker Return Scaffold"
     lines = [
         f"# {heading}",
@@ -205,11 +219,15 @@ def build_scaffold(title: str = "") -> str:
         "executionBaseHead: `TODO_EXECUTION_BASE_HEAD`",
         "",
         "rawMemoryReleased=false",
+        f"contractProfile: {profile}",
         "",
         "NOTE: L1 scaffold only. Replace every TODO line before returning for review.",
         "",
     ]
-    for section in WORKER_RETURN_SCAFFOLD_SECTIONS:
+    sections = WORKER_RETURN_SCAFFOLD_SECTIONS
+    if profile == FAST_DOC_PROFILE:
+        sections = FAST_DOC_SCAFFOLD_SECTIONS + ("Conditional Controls Disposition",)
+    for section in sections:
         lines.append(f"## {section}")
         lines.append("")
         lines.extend(_section_body(section))
@@ -226,7 +244,7 @@ def _path_is_allowed(path: Path) -> bool:
     return resolved != allowed_root and allowed_root in resolved.parents
 
 
-def write_scaffold(target: str, title: str = "") -> Path:
+def write_scaffold(target: str, title: str = "", profile: str = FULL_PROFILE) -> Path:
     candidate = Path(target)
     if not candidate.is_absolute():
         candidate = REPO_ROOT / candidate
@@ -239,7 +257,7 @@ def write_scaffold(target: str, title: str = "") -> Path:
     candidate.parent.mkdir(parents=True, exist_ok=True)
     derived_title = title.strip() or candidate.stem.replace("_", " ")
     with open(candidate, "x", encoding="utf-8") as handle:
-        handle.write(build_scaffold(derived_title))
+        handle.write(build_scaffold(derived_title, profile))
     return candidate
 
 
@@ -250,15 +268,21 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--emit", action="store_true", help="Print scaffold to stdout")
     parser.add_argument("--write", metavar="PATH", help="Create one new scaffold file")
     parser.add_argument("--title", default="", help="Optional scaffold title")
+    parser.add_argument(
+        "--profile",
+        choices=(FULL_PROFILE, FAST_DOC_PROFILE),
+        default=FULL_PROFILE,
+        help="Worker-return contract profile",
+    )
     args = parser.parse_args(argv)
     if args.emit == bool(args.write):
         print("VIOLATION: choose exactly one of --emit or --write", file=sys.stderr)
         return 2
     if args.emit:
-        print(build_scaffold(args.title), end="")
+        print(build_scaffold(args.title, args.profile), end="")
         return 0
     try:
-        written = write_scaffold(args.write, args.title)
+        written = write_scaffold(args.write, args.title, args.profile)
     except ValueError as exc:
         print(f"VIOLATION: {exc}", file=sys.stderr)
         return 2

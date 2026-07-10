@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: INTEGRATED_EXECUTION_AUTHORIZED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -60,10 +60,10 @@ Protected evidence remains identical to the full profile.
 
 | Tranche | Objective | Exit evidence | Status |
 |---|---|---|---|
-| R84A | Ratify compact profile and eligibility | source-backed standard and dispatch contract | AUTHORIZED |
-| R84B | Implement checker and scaffold routing | focused tests for full and compact profiles | AUTHORIZED |
-| R84C | Measure value and regress protected controls | A/B shape metric and negative eligibility tests | AUTHORIZED |
-| R84D | Close or revert the pilot | bounded completion review and session sync | AUTHORIZED |
+| R84A | Ratify compact profile and eligibility | source-backed standard and dispatch contract | PASS |
+| R84B | Implement checker and scaffold routing | focused tests for full and compact profiles | PASS |
+| R84C | Measure value and regress protected controls | A/B shape metric and negative eligibility tests | PASS |
+| R84D | Close or revert the pilot | bounded completion review and session sync | PASS |
 
 ## Work Plan
 
@@ -103,6 +103,24 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: R84 is a private governance-control calibration; no public-sync
 artifact is authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Compact eligibility | `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py` | focused unit-test PASS | PASS |
+| Full compatibility | `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md` | golden and legacy tests PASS | PASS |
+| Protected controls | `governance/compat/test_check_worker_return_quality_gate.py` | negative cases PASS | PASS |
+| Value threshold | completion review | 66.7 percent headings; 86.4 percent conditional lines | PASS |
+| Completion review | `docs/reviews/CVF_MSEA_R84_LEAN_GOVERNANCE_FOLLOW_THROUGH_COMPLETION_REVIEW_2026-07-10.md` | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Work order status | N/A with reason: the dispatch packet remains immutable authority. | accepted completion review carries final execution disposition | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R84_LEAN_GOVERNANCE_FOLLOW_THROUGH_COMPLETION_REVIEW_2026-07-10.md` | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generator drift check passes; registry content remains unchanged | PASS |
+| Registry Markdown | `docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md` | GCI-017 is ACTIVE with consolidated pilot criteria | PASS |
+| External evidence digest | N/A with reason: no external evidence is consumed. | local source and command evidence only | N/A with reason |
+| System loop interlock | N/A with reason: R84 changes no runtime or system loop. | no interlock path in changed set | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md` | session-sync follows the committed material closure as a separate commit | N/A with reason |
 
 ## Claim Boundary
 

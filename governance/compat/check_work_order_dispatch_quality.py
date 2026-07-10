@@ -76,6 +76,7 @@ INTAKE_ROLE_ROUTING_MARKER = "Intake Role Routing Decision"
 EVIDENCE_REUSE_ENCODING_PLAN_MARKER = "Evidence Reuse And Encoding Plan"
 WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER = "Worker Return Packet Shape Contract"
 WORKER_RETURN_FULL_GATE_PROFILE = "WORKER_RETURN_FULL_GATE_V1"
+WORKER_RETURN_FAST_DOC_PROFILE = "WORKER_RETURN_FAST_DOC_V1"
 REQUIRED_PROOF_ATOMIC_LITERAL_MARKER = "Required Proof Manifest Atomic Literal Discipline"
 LEGACY_COVERAGE_DISPOSITION_MARKER = "Legacy Absorption Coverage Index Disposition"
 PROVIDER_MEMORY_AUTHORITY_BOUNDARY_MARKER = "Provider Memory Authority Boundary"
@@ -175,6 +176,17 @@ WORKER_RETURN_FULL_GATE_REQUIRED_TERMS = (
     "run_worker_return_fast_gate.py",
     "individualCheckerSubstitution: FORBIDDEN",
     "workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED",
+)
+WORKER_RETURN_FAST_DOC_REQUIRED_TERMS = (
+    f"contractProfile: {WORKER_RETURN_FAST_DOC_PROFILE}",
+    "scopeClassification: DOCUMENTATION_AND_EVIDENCE_ONLY_NO_COMMIT",
+    "requiredGate:", "run_worker_return_fast_gate.py",
+    "individualCheckerSubstitution: FORBIDDEN",
+    "workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED",
+    "publicSyncDisposition: FORBIDDEN",
+    "liveRuntimeDisposition: FORBIDDEN",
+    "checkerMutationDisposition: FORBIDDEN",
+    "workerSelfSelection: FORBIDDEN",
 )
 EVIDENCE_REUSE_VERIFICATION_MODES = {
     "REUSE_PRIOR_VERIFICATION",

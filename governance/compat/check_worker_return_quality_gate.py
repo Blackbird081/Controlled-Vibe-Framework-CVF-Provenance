@@ -37,6 +37,20 @@ RESPONDS_MARKER = "Responds to work order:"
 DISPATCH_WORK_ORDER_MARKER = "dispatchWorkOrder:"
 PLACEHOLDER_MARKERS = ("FILL_ME", "WORKER_MUST_CAPTURE_AT_START")
 
+FAST_DOC_PROFILE = "WORKER_RETURN_FAST_DOC_V1"
+FAST_DOC_SCOPE = "DOCUMENTATION_AND_EVIDENCE_ONLY_NO_COMMIT"
+FAST_DOC_HEADING = "## Conditional Controls Disposition"
+FAST_DOC_DISPOSITION = "conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA"
+FAST_DOC_DISPATCH_TERMS = (
+    f"contractProfile: {FAST_DOC_PROFILE}",
+    f"scopeClassification: {FAST_DOC_SCOPE}",
+    "Commit mode: WORKER_MUST_NOT_COMMIT",
+    "publicSyncDisposition: FORBIDDEN",
+    "liveRuntimeDisposition: FORBIDDEN",
+    "checkerMutationDisposition: FORBIDDEN",
+    "workerSelfSelection: FORBIDDEN",
+)
+
 REQUIRED_HEADINGS = (
     "## Purpose",
     "## Scope / Methodology",
@@ -57,6 +71,16 @@ REQUIRED_HEADINGS = (
     "## Command Evidence",
     "## No-Commit Statement",
 )
+FAST_DOC_REQUIRED_HEADINGS = tuple(
+    heading
+    for heading in REQUIRED_HEADINGS
+    if heading
+    not in {
+        "## External Knowledge Intake Routing",
+        "## Rescan Intelligence Hardening",
+        "## Corpus Completeness And Report Integrity",
+    }
+) + (FAST_DOC_HEADING,)
 
 READ_AHEAD_FIELDS = (
     "applicableCheckersRead",
@@ -220,6 +244,23 @@ def _has_all(section: str, labels: tuple[str, ...]) -> list[str]:
     return [label for label in labels if label not in section]
 
 
+def _fast_doc_dispatch_issues(text: str) -> list[str]:
+    match = re.search(r"(?m)^dispatchWorkOrder:\s*`([^`]+)`\s*$", text)
+    if not match:
+        return ["fast-doc return lacks a readable `dispatchWorkOrder` path"]
+    work_order_path = _normalize(match.group(1))
+    if not work_order_path.startswith("docs/work_orders/"):
+        return ["fast-doc dispatch path must be under `docs/work_orders/`"]
+    work_order = _read(work_order_path)
+    if not work_order:
+        return [f"fast-doc dispatch work order is missing: `{work_order_path}`"]
+    return [
+        f"fast-doc dispatch work order lacks `{term}`"
+        for term in FAST_DOC_DISPATCH_TERMS
+        if term not in work_order
+    ]
+
+
 def diagnose(path: str, text: str) -> Diagnostic:
     if not is_eligible_worker_return(path, text):
         return Diagnostic(path=path, eligible=False)
@@ -230,9 +271,19 @@ def diagnose(path: str, text: str) -> Diagnostic:
         if marker in text:
             issues.append(f"unresolved placeholder `{marker}` remains")
 
-    for heading in REQUIRED_HEADINGS:
+    fast_doc = f"contractProfile: {FAST_DOC_PROFILE}" in text
+    required_headings = FAST_DOC_REQUIRED_HEADINGS if fast_doc else REQUIRED_HEADINGS
+    for heading in required_headings:
         if heading not in text:
             issues.append(f"missing required heading `{heading}`")
+
+    if fast_doc:
+        issues.extend(_fast_doc_dispatch_issues(text))
+        compact = _section(text, FAST_DOC_HEADING)
+        if FAST_DOC_DISPOSITION not in compact:
+            issues.append(
+                "fast-doc conditional controls block lacks the canonical compact disposition"
+            )
 
     if SELF_DECLARE_MARKER not in text:
         issues.append(f"missing `{SELF_DECLARE_MARKER}`")
@@ -263,9 +314,10 @@ def diagnose(path: str, text: str) -> Diagnostic:
     if delta and not any(token in delta for token in DELTA_ACTION_TOKENS):
         issues.append("Delta block lacks action evidence token")
 
-    external = _section(text, "## External Knowledge Intake Routing")
-    if external and EXTERNAL_INPUT_CANONICAL not in external:
-        issues.append("external knowledge input type is not canonical")
+    if not fast_doc:
+        external = _section(text, "## External Knowledge Intake Routing")
+        if external and EXTERNAL_INPUT_CANONICAL not in external:
+            issues.append("external knowledge input type is not canonical")
 
     public_export = _section(text, "## Public Export Disposition")
     if public_export and not any(token in public_export for token in PUBLIC_EXPORT_TOKENS):

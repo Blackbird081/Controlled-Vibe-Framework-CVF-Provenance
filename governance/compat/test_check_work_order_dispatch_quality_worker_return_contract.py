@@ -67,6 +67,46 @@ class WorkerReturnContractDispatchQualityTests(unittest.TestCase):
             report["violations"][0]["issues"],
         )
 
+    def test_fast_doc_contract_requires_fail_closed_eligibility_terms(self) -> None:
+        text = "\n".join(
+            (
+                "Commit mode: WORKER_MUST_NOT_COMMIT",
+                "## Worker Return Packet Shape Contract",
+                "contractProfile: WORKER_RETURN_FAST_DOC_V1",
+                "scopeClassification: DOCUMENTATION_AND_EVIDENCE_ONLY_NO_COMMIT",
+                "requiredGate: `python governance/compat/run_worker_return_fast_gate.py`",
+                "individualCheckerSubstitution: FORBIDDEN",
+                "workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED",
+                "publicSyncDisposition: FORBIDDEN",
+                "liveRuntimeDisposition: FORBIDDEN",
+                "checkerMutationDisposition: FORBIDDEN",
+                "workerSelfSelection: FORBIDDEN",
+                "## Verification Commands",
+                "`python governance/compat/run_worker_return_fast_gate.py`",
+            )
+        )
+        self.assertEqual(MODULE._validate_worker_return_packet_shape_contract(text), [])
+
+    def test_fast_doc_contract_missing_boundary_term_fails(self) -> None:
+        text = "\n".join(
+            (
+                "Commit mode: WORKER_MUST_NOT_COMMIT",
+                "## Worker Return Packet Shape Contract",
+                "contractProfile: WORKER_RETURN_FAST_DOC_V1",
+                "scopeClassification: DOCUMENTATION_AND_EVIDENCE_ONLY_NO_COMMIT",
+                "requiredGate: `python governance/compat/run_worker_return_fast_gate.py`",
+                "individualCheckerSubstitution: FORBIDDEN",
+                "workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED",
+                "liveRuntimeDisposition: FORBIDDEN",
+                "checkerMutationDisposition: FORBIDDEN",
+                "workerSelfSelection: FORBIDDEN",
+                "## Verification Commands",
+                "`python governance/compat/run_worker_return_fast_gate.py`",
+            )
+        )
+        issues = MODULE._validate_worker_return_packet_shape_contract(text)
+        self.assertTrue(any("publicSyncDisposition" in issue for issue in issues))
+
 
 if __name__ == "__main__":
     unittest.main()

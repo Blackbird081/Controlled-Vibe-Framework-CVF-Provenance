@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import importlib.util
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -180,6 +181,76 @@ class DiagnoseTests(unittest.TestCase):
         d = chk.diagnose("docs/reviews/CVF_X_WORKER_RETURN.md", text)
         self.assertFalse(d.is_clean)
         self.assertTrue(any("canonical" in issue for issue in d.issues))
+
+    def test_dispatch_authorized_fast_doc_return_is_clean(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            repo_root = Path(tmp)
+            work_order = repo_root / "docs/work_orders/CVF_AGENT_WORK_ORDER_X_2026-07-01.md"
+            work_order.parent.mkdir(parents=True)
+            work_order.write_text(
+                "\n".join(
+                    (
+                        "Commit mode: WORKER_MUST_NOT_COMMIT",
+                        "contractProfile: WORKER_RETURN_FAST_DOC_V1",
+                        "scopeClassification: DOCUMENTATION_AND_EVIDENCE_ONLY_NO_COMMIT",
+                        "publicSyncDisposition: FORBIDDEN",
+                        "liveRuntimeDisposition: FORBIDDEN",
+                        "checkerMutationDisposition: FORBIDDEN",
+                        "workerSelfSelection: FORBIDDEN",
+                    )
+                ),
+                encoding="utf-8",
+            )
+            text = VALID_RETURN + "\ncontractProfile: WORKER_RETURN_FAST_DOC_V1\n"
+            for heading in (
+                "## External Knowledge Intake Routing",
+                "## Rescan Intelligence Hardening",
+                "## Corpus Completeness And Report Integrity",
+            ):
+                text = text.replace(chk._section(text, heading), "")
+            text += (
+                "\n## Conditional Controls Disposition\n"
+                "conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA\n"
+            )
+            original_root = chk.REPO_ROOT
+            chk.REPO_ROOT = repo_root
+            try:
+                d = chk.diagnose("docs/reviews/CVF_X_WORKER_RETURN.md", text)
+                without_command_evidence = text.replace(
+                    chk._section(text, "## Command Evidence"), ""
+                )
+                protected = chk.diagnose(
+                    "docs/reviews/CVF_X_WORKER_RETURN.md", without_command_evidence
+                )
+            finally:
+                chk.REPO_ROOT = original_root
+            self.assertTrue(d.is_clean, d.issues)
+            self.assertFalse(protected.is_clean)
+            self.assertTrue(
+                any("Command Evidence" in issue for issue in protected.issues)
+            )
+
+    def test_fast_doc_self_selection_without_dispatch_authority_fails(self) -> None:
+        text = VALID_RETURN + "\ncontractProfile: WORKER_RETURN_FAST_DOC_V1\n"
+        for heading in (
+            "## External Knowledge Intake Routing",
+            "## Rescan Intelligence Hardening",
+            "## Corpus Completeness And Report Integrity",
+        ):
+            text = text.replace(chk._section(text, heading), "")
+        text += (
+            "\n## Conditional Controls Disposition\n"
+            "conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA\n"
+        )
+        d = chk.diagnose("docs/reviews/CVF_X_WORKER_RETURN.md", text)
+        self.assertFalse(d.is_clean)
+        self.assertTrue(any("dispatch work order" in issue for issue in d.issues))
+
+    def test_fast_doc_still_requires_no_commit_evidence(self) -> None:
+        text = VALID_RETURN.replace("WORKER_MUST_NOT_COMMIT honored", "no commit")
+        d = chk.diagnose("docs/reviews/CVF_X_WORKER_RETURN.md", text)
+        self.assertFalse(d.is_clean)
+        self.assertTrue(any("no-commit statement" in issue for issue in d.issues))
 
 
 class WoasR7GeneratedSkeletonQualityGateTests(unittest.TestCase):
