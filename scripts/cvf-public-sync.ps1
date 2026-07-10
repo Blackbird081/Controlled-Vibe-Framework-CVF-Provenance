@@ -109,6 +109,7 @@ $MAPPED_FILES = @(
 
 $WORKSPACE_KIT_FILES = @(
     'docs\GET_STARTED.md',
+    'docs\guides\CVF_WORKSPACE_CLASSIFICATION_AND_USAGE_GUIDE.md',
     'docs\reference\CVF_NEW_MACHINE_SETUP_CHECKLIST.md',
     'docs\reference\CVF_W114_PUBLIC_EVIDENCE_PACKET_2026-04-23.md',
     'docs\reference\CVF_WORKSPACE_RULES.md',

@@ -39,6 +39,18 @@
       "reason": "Product-facing profile tier map for choosing public-free, paid-user-safe, or operator-local workspace rule packs."
     },
     {
+      "artifactId": "workspace-classification-and-usage-guide",
+      "path": "docs\\guides\\CVF_WORKSPACE_CLASSIFICATION_AND_USAGE_GUIDE.md",
+      "artifactClass": "workspace-guide",
+      "selectionTags": [
+        "workspace-standard",
+        "workspace-boundary"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Decision tree and command guide for classifying workspace audience, profile, health, and downstream project state."
+    },
+    {
       "artifactId": "workspace-paid-user-authoring-guide",
       "path": "docs\\reference\\CVF_WORKSPACE_PAID_USER_AUTHORING_GUIDE.md",
       "artifactClass": "reference-guide",
