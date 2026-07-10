@@ -2,28 +2,28 @@
 
 Memory class: active-agent-handoff
 Status: ACTIVE
-Purpose: compact current-session continuity after MSEA-R81A Workspace Productization RC Source Map dispatch.
+Purpose: compact current-session continuity after MSEA-R81A Workspace Productization RC Source Map reviewer acceptance.
 Scope/target/owner boundary: private provenance continuity only; Codex reviewer/closer plus session-sync steward owns this handoff update. No checker retirement implementation, checker deletion/disablement, hook/Fast Lane edit, unbounded public-sync mutation, provider-local config, private/generated MinerU output, direct external import, production claim, or use-case/legal workflow change is authorized here.
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md`
 Opened because: V38 reached 995 lines and active-session compatibility needed current HEAD freshness; rotating avoids adding continuity debt to a near-threshold active handoff.
 
 ## Purpose
 
-Provide compact active-session continuity after MSEA-R81A Workspace Productization RC Source Map dispatch, and route the next executable move to R81A no-commit worker execution.
+Provide compact active-session continuity after MSEA-R81A reviewer acceptance, and route the next executable move to R81B checklist-definition dispatch authoring.
 
 ## Scope / Target / Owner Boundary
 
-This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R80C Workspace Bootstrap Log Ignore Negation Fix closure, generated session-state refresh, and next-move routing only. It does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, provider/live proof, production claims, or use-case/legal workflow changes.
+This handoff is private provenance continuity owned by Codex in reviewer/closer and session-sync steward roles. It covers R81A reviewer acceptance, generated session-state refresh, and R81B dispatch authoring only. It does not authorize checker deletion or disablement, checker severity split, Fast Lane standard edits, metrics automation, provider/live proof, production claims, or use-case/legal workflow changes.
 
 ## Latest Work / Changes
 
-R81A Workspace Productization RC Source Map And Boundary Confirmation is dispatched at provenance material commit `9e31ff777`. It added `docs/baselines/CVF_GC018_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md`. Pre-dispatch autorun PASS 73/73 and material pre-commit hook PASS 80/80. Next move is R81A no-commit worker execution only: create the source-map reference artifact and worker return named in the work order, run required gates, and leave changes uncommitted.
+R81A Workspace Productization RC Source Map And Boundary Confirmation is reviewer accepted at provenance material commit `60dfb0495`. It accepted `docs/reference/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md`, `docs/reviews/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_WORKER_RETURN_2026-07-09.md`, and `docs/reviews/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_COMPLETION_REVIEW_2026-07-09.md`. Reviewer-return fast gate PASS 59/59 and material pre-commit hook PASS 80/80. The map keeps operator-local continuity distinct from paid-user-safe output and makes no smoke, public-export, or RC-pass claim. Next move is R81B GC-018/work-order authoring for compact checklist definition only.
 
 R80C Workspace Bootstrap Log Ignore Negation Fix is closed bounded and public-synced. Provenance commit `bd3a38f57` repaired `scripts/check_cvf_workspace_agent_enforcement.ps1` so gitignore negation rules such as `!docs/CVF_BOOTSTRAP_LOG_*.md` do not produce a false bootstrap-log warning. Public-sync commit `f593c58db` exported the bounded workspace-kit doctor update. Local `CVF-Workspace` hidden public core updated to `f593c58`; `Policy_Local` doctor and workspace-wide gate report PASS 17/17 without warning. `Policy_Local` local commit `edd92aa` added the CVF workspace scaffold and `.gitignore` exception only; `Policy_Local` remains ahead 9 with pre-existing app changes and untracked app/debug files, and no `Policy_Local` push was performed. R80B, R80, R79, R78, R77, R76, R75, and R74 remain closed bounded. R73F follow-up remains source-blocked for actual checker retirement because active conformance/evidence-pack references still name the candidate family.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r81a_workspace_productization_rc_source_map_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81A no-commit worker execution for Workspace Productization RC source map and boundary confirmation only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
+Startup acknowledged: current mode=`msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018`; active handoff=AGENT_HANDOFF_V39_2026-07-08.md; next allowed move=R81B GC-018 and source-verified work-order authoring for compact Workspace Productization RC checklist definition only; parked checkpoint=R73F checker retirement remains blocked by active conformance/evidence-pack references.
 
 ## Mandatory Startup Reads
 
@@ -37,7 +37,7 @@ Startup acknowledged: current mode=`msea_r81a_workspace_productization_rc_source
 
 ## Current Mode
 
-`msea_r81a_workspace_productization_rc_source_map_dispatched_pending_worker_execution`
+`msea_r81a_workspace_productization_rc_source_map_reviewer_accepted_pending_r81b_gc018`
 
 ## Active Boundary
 
@@ -959,10 +959,10 @@ Protected paths:
 Rollback boundary: revert only this R81 roadmap session-sync if rejected; do not
 revert material roadmap commit `5500f357c` or older R80 workspace history.
 
-## Core Guard Self-Protection Authorization - MSEA-R81A Source Map Dispatch Session Sync
+## Core Guard Self-Protection Authorization - MSEA-R81A Source Map Acceptance Session Sync
 
 Authorized guard-maintenance scope: session-sync only after MSEA-R81A source-map
-dispatch material commit `9e31ff777`, including active mode, next allowed move,
+acceptance material commit `60dfb0495`, including active mode, next allowed move,
 generated active state, bootstrap read model, front-door continuity, active
 handoff, and current HEAD freshness.
 
@@ -973,30 +973,25 @@ Protected paths:
 | `CVF_SESSION_MEMORY.md` | Update current mode, current work, startup acknowledgment, and next allowed move after R81A dispatch material commit. |
 | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate compact startup facts after active state update. |
 | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate aggregate from state sources after R81A dispatch session-sync. |
-| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R81A dispatch pending worker execution. |
-| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R81A no-commit worker execution only. |
-| `AGENT_HANDOFF_V39_2026-07-08.md` | Record R81A dispatch, current HEAD freshness, and R81A worker-execution next move. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Update `currentMode` and `previousMode` for R81A reviewer acceptance pending R81B GC-018. |
+| `CVF_SESSION/state/entries/mseaR81AWorkspaceProductizationRCSourceMapClosure20260710.json` | Record R81A reviewer acceptance evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next move to R81B GC-018/work-order authoring only. |
+| `AGENT_HANDOFF_V39_2026-07-08.md` | Record R81A acceptance, current HEAD freshness, and R81B-authoring next move. |
 
 Rollback boundary: revert only this R81A session-sync if rejected; do not revert
-material dispatch commit `9e31ff777` or older workspace productization history.
+material acceptance commit `60dfb0495` or older workspace productization history.
 
 ## Next Allowed Move
 
-Next allowed move is R81A no-commit worker execution only: create
-`docs/reference/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md`
-and
-`docs/reviews/CVF_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_WORKER_RETURN_2026-07-09.md`
-under
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R81A_WORKSPACE_PRODUCTIZATION_RC_SOURCE_MAP_AND_BOUNDARY_CONFIRMATION_2026-07-09.md`,
-run required gates, and leave changes uncommitted.
-
-R81A worker may map workspace scripts, generated guides, profile manifests,
-public-sync scripts, current local workspace generated files, and continuity
-surfaces needed for the provenance/public/local workspace boundary. R81A worker
-must not edit runtime/source/tests/checkers, mutate scripts, public-sync,
-workspace files, or `Policy_Local` app code, run provider/live proof, create
-hosted/public/production claims, perform public push, execute R81B-R81F early,
-or reopen checker retirement, hook, or Fast Lane changes.
+Next allowed move is R81B GC-018 and source-verified work-order authoring only
+for compact Workspace Productization RC checklist definition. R81B may use the
+accepted R81A source map, R81 roadmap, and current workspace product sources to
+define required commands and pass/fail meanings. It must preserve public/private
+boundary, source verification, no-commit/reviewer separation, and closure
+evidence. It must not execute R81C-R81F, mutate scripts, public-sync, workspace
+files, or `Policy_Local` app code, run provider/live proof, create
+hosted/public/production claims, perform public push, or reopen checker
+retirement, hook, or Fast Lane changes.
 
 ## Public/Provenance Boundary
 
@@ -1006,8 +1001,8 @@ public-sync packet, and explicit operator authorization.
 
 ## Claim Boundary
 
-This handoff records R80C Workspace Bootstrap Log Ignore Negation Fix closure
-and next-selection routing only. It does not authorize unbounded public-sync
+This handoff records R81A reviewer acceptance and R81B-authoring routing only.
+It does not authorize unbounded public-sync
 mutation, checker retirement or disablement, checker severity change, Fast Lane
 standard edit, metrics automation, production release, product extraction,
 operator onboarding, or actual absorption.
