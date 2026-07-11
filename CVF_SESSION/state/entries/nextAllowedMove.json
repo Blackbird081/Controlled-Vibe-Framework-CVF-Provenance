@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "MAO-T5 is REVIEWER_ACCEPTED_BOUNDED at 9b225f0e4. Next allowed move is refresh/release of the two MAO-T6 packet files followed by one delegated WORKER_MUST_NOT_COMMIT local lifecycle-controller execution. MAO-T7 through T9 remain dependency-held. Provider/network, queue, UI, public-sync, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "MAO-T6 is REVIEWER_ACCEPTED_BOUNDED at ee5a1a400. Next allowed move is refresh/release of the two MAO-T7 packet files followed by one delegated WORKER_MUST_NOT_COMMIT local evidence/observability/readout execution. MAO-T8 and T9 remain dependency-held. Provider/network, UI, public-sync, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave."
 }

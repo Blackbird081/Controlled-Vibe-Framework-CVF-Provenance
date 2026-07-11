@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t6_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=refresh/release T6 and execute one MAO-T6 no-commit tranche; parked checkpoint=MAO-T7-T9 dependencies, provider/network, broader MAO runtime, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t7_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=refresh/release T7 and execute one MAO-T7 no-commit tranche; parked checkpoint=MAO-T8-T9 dependencies, provider/network, UI/public, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -32,9 +32,13 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t6_dispatched`
+`mao_t7_dispatched`
 
 ## Latest Work / Changes
+
+MAO-T6 material closure commit `ee5a1a400` is
+`REVIEWER_ACCEPTED_BOUNDED`; 58/58 tests and typecheck pass. MAO-T7 is
+released for packet refresh and one no-commit execution.
 
 MAO-T5 is closed at `9b225f0e4`; MAO-T6 local lifecycle-controller packet is
 released for anchor/status refresh and one no-commit worker execution.
@@ -148,14 +152,14 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Refresh/release T6 and execute one local MAO-T6 no-commit tranche.
-MAO-T7-T9, provider/network, and broader runtime remain parked.
+Refresh/release T7 and execute one local MAO-T7 no-commit tranche.
+MAO-T8-T9, provider/network, UI and broader runtime remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
 
-MAO-T5 is closed and T6 local execution is released. No real provider, queue,
-UI, public-sync, MAO-T7+, R91/ASC semantic, L4, R84, or R73F change is authorized.
+MAO-T6 is closed and T7 local execution is released. No real provider, UI,
+public-sync, MAO-T8+, R91/ASC semantic, L4, R84, or R73F change is authorized.
 
 ## Core Guard Self-Protection Authorization - MAO Roadmap Session Sync
 
@@ -189,6 +193,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/maoT4Closure20260711.json`
 - `CVF_SESSION/state/entries/maoT5T9PacketChain20260711.json`
 - `CVF_SESSION/state/entries/maoT5ClosureT6Release20260711.json`
+- `CVF_SESSION/state/entries/maoT6ClosureT7Release20260711.json`
 - `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
