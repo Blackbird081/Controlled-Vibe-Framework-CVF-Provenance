@@ -17,9 +17,9 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t3_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T3
-fake/local WORKER_MUST_NOT_COMMIT execution from clean post-sync HEAD; parked checkpoint=real provider/network, MAO-T4+, broader MAO runtime, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t3_closed`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T4
+GC-018 and source-verified work-order authoring only; parked checkpoint=MAO-T4 implementation, real provider/network, broader MAO runtime, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -33,9 +33,13 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t3_dispatched`
+`mao_t3_closed`
 
 ## Latest Work / Changes
+
+MAO-T3 closure commit `052845fa1` is `REVIEWER_ACCEPTED_BOUNDED`. Reviewer
+repaired admission-role, capability-role, idempotency-input, and diagnostic
+bindings. Focused tests 21/21 and all closure gates pass.
 
 MAO-T3 dispatch commit `1738d9263` is `DISPATCH_READY`. Worker produces exactly
 four fake/local adapter outputs and returns without commit. Provider/network,
@@ -116,9 +120,9 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Execute MAO-T3 once under `WORKER_MUST_NOT_COMMIT` from clean post-sync HEAD.
-Real provider/network, MAO-T4+, L4, T3B, R73F, R84 effectiveness, and broader
-runtime remain parked. Latest closed numbered LHW wave remains `LHW24`.
+Author fresh MAO-T4 GC-018 and source-verified work order only. Implementation,
+real provider/network, and broader runtime remain parked.
+Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
 
@@ -152,6 +156,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/maoT2Dispatch20260711.json`
 - `CVF_SESSION/state/entries/maoT2Closure20260711.json`
 - `CVF_SESSION/state/entries/maoT3Dispatch20260711.json`
+- `CVF_SESSION/state/entries/maoT3Closure20260711.json`
 - `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
