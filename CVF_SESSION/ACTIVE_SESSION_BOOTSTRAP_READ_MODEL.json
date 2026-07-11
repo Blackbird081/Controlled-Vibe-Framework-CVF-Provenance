@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mao_t7_dispatched",
+  "currentMode": "mao_t7_closed_awaiting_t8_pilot_selection",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "MAO-T6 is REVIEWER_ACCEPTED_BOUNDED at ee5a1a400. Next allowed move is refresh/release of the two MAO-T7 packet files followed by one delegated WORKER_MUST_NOT_COMMIT local evidence/observability/readout execution. MAO-T8 and T9 remain dependency-held. Provider/network, UI, public-sync, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO-T7 is REVIEWER_ACCEPTED_BOUNDED at material commit 2ae63592e with 35/35 focused tests and typecheck PASS. Next allowed move is a fresh MAO-T8 pilot-selection checkpoint that names one real bounded task and proof class before any T8 dispatch refresh. MAO-T8 execution and T9 remain held until that evidence exists. Provider/network, UI, public-sync, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

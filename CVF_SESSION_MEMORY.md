@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t7_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=refresh/release T7 packet then one MAO-T7 WORKER_MUST_NOT_COMMIT execution; parked checkpoint=MAO-T8-T9 dependencies, provider/network, UI and public work.
+Startup acknowledged: current mode=`mao_t7_closed_awaiting_t8_pilot_selection`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T8 pilot-selection checkpoint naming one real bounded task and proof class; parked checkpoint=MAO-T8 execution, T9, provider/network, UI and public work.
 
 ## Current Mode
 
-Current mode marker: `mao_t7_dispatched`
+Current mode marker: `mao_t7_closed_awaiting_t8_pilot_selection`
 
-Current mode: `mao_t7_dispatched`
+Current mode: `mao_t7_closed_awaiting_t8_pilot_selection`
 
-`mao_t7_dispatched`
+`mao_t7_closed_awaiting_t8_pilot_selection`
 
 Previous mode:
 
-`mao_t6_closed`
+`mao_t7_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T7 evidence/readout closure | `2ae63592e` | REVIEWER_ACCEPTED_BOUNDED after cross-graph admission repair; 35/35 tests and typecheck PASS. |
 | MAO-T6 lifecycle/recovery closure | `ee5a1a400` | REVIEWER_ACCEPTED_BOUNDED; 58/58 tests and typecheck PASS. |
 | MAO-T5 closer/interlock closure | `9b225f0e4` | REVIEWER_ACCEPTED_BOUNDED; 54/54 tests and typecheck PASS. |
 | MAO-T5-T9 packet chain | `5a5dc0364` | T6 released for refresh/execution; T7-T9 remain dependency-held. |
@@ -113,10 +114,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t7_dispatched`
+Mode: `mao_t7_closed_awaiting_t8_pilot_selection`
 
-MAO-T4 is dispatch-ready at `68cc94572`. Next allowed move is one delegated
-local worker execution from clean post-sync HEAD with exactly five outputs and no commit.
+MAO-T7 is accepted at `2ae63592e`. Next allowed move is a fresh MAO-T8
+pilot-selection checkpoint naming one real bounded task and proof class. T8
+execution is not released by chat history alone.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 

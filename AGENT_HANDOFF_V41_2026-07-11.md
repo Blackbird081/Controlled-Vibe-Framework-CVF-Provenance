@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t7_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=refresh/release T7 and execute one MAO-T7 no-commit tranche; parked checkpoint=MAO-T8-T9 dependencies, provider/network, UI/public, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t7_closed_awaiting_t8_pilot_selection`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T8 pilot-selection checkpoint naming one real bounded task and proof class; parked checkpoint=MAO-T8 execution, T9, provider/network, UI/public, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t7_dispatched`
+`mao_t7_closed_awaiting_t8_pilot_selection`
 
 ## Latest Work / Changes
 
@@ -226,6 +226,40 @@ Protected paths:
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
+
+## MAO-T7 Closure And T8 Pilot-Selection Checkpoint
+
+Material closure HEAD: `2ae63592e`.
+
+MAO-T7 is `REVIEWER_ACCEPTED_BOUNDED`. The worker returned exactly five
+uncommitted outputs. Codex repaired cross-graph evidence admission and added a
+negative test; final focused Vitest is 35/35 PASS and typecheck PASS. The
+catalog packet remains `CANDIDATE_PENDING_ADMISSION`. Redaction proves only the
+explicit denylisted-field-name boundary, not general content DLP.
+
+Next allowed move: author a fresh MAO-T8 pilot-selection checkpoint that names
+one real bounded task and its proof class. Do not refresh or dispatch T8 until
+that selection evidence exists. T9 remains dependency-held.
+
+Session-sync parent HEAD: `2ae63592e`.
+
+## Core Guard Self-Protection Authorization - MAO-T7 Closure Sync
+
+Operator authorization: review and close the reported MAO-T7 worker return,
+then preserve governed continuity in a separate session-sync commit.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/maoT7ClosureAwaitingT8PilotSelection20260711.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this session-sync batch; retain MAO-T7 material
+commit `2ae63592e`.
 
 The MAO result is a roadmap awaiting independent critique, not runtime
 implementation, provider proof, public projection, an Agent OS, or production
