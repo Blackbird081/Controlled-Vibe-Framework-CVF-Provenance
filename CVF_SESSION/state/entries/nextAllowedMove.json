@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "MAO-T8 pilot `MAO-T8-LOCAL-STALE-READOUT-REPAIR` is selected and DISPATCH_READY at material commit 23d1b23ce. Next allowed move is one delegated WORKER_MUST_NOT_COMMIT execution from the clean post-sync HEAD producing exactly five manifest outputs. Proof class is DETERMINISTIC_LOCAL_CONTRACT_PROOF with NO_PROVIDER_LOCAL_ONLY. MAO-T9 remains dependency-held. Provider/network, UI, public-sync, durable queue, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "MAO-T8 is REVIEWER_ACCEPTED_BOUNDED at material commit f5a3def2a after monotonic-time repair; focused tests PASS 25/25 and typecheck PASS. Next allowed move is refresh and source-verify the held MAO-T9 independent critique, reconciliation, and closure packet before dispatch. Provider/network, UI, public-sync, durable queue, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave."
 }

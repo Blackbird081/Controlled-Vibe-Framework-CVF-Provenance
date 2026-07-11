@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1644,
+  "stateKey": "maoT8ClosureT9RefreshReady20260711",
+  "value": "MAO-T8 is REVIEWER_ACCEPTED_BOUNDED at material commit f5a3def2a. Worker returned exactly five uncommitted outputs with 24 passing tests, but Codex rejected the stale-to-current proof because it moved the revision clock backward from +999999ms to +2500ms without new evidence. Reviewer repair enforces monotonic timestamps, appends a new revision OUTPUT receipt, and adds a backward-time negative. Final evidence: focused Vitest PASS 25/25, TypeScript typecheck PASS, worker-return fast gate PASS, reviewer-fast PASS 61/61, and pre-commit PASS 82/82. Next move is refresh/source-verification of the held MAO-T9 critique/reconciliation/closure packet before dispatch."
+}

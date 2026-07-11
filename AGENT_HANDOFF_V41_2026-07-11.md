@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t8_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T8 no-commit execution producing exactly five outputs; parked checkpoint=MAO-T9, provider/network, UI/public, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t8_closed_t9_packet_refresh_ready`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=refresh/source-verify held MAO-T9 packet; parked checkpoint=provider/network, UI/public, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t8_dispatched`
+`mao_t8_closed_t9_packet_refresh_ready`
 
 ## Latest Work / Changes
 
@@ -226,6 +226,33 @@ Protected paths:
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
+
+## MAO-T8 Closure And T9 Packet-Refresh Release
+
+Material closure HEAD: `f5a3def2a`.
+
+MAO-T8 is `REVIEWER_ACCEPTED_BOUNDED` after reviewer repair of a false
+time-travel freshness proof. Final focused tests are 25/25 PASS and typecheck
+PASS. Next move is refresh and source-verification of the held MAO-T9 packet.
+
+Session-sync parent HEAD: `f5a3def2a`.
+
+## Core Guard Self-Protection Authorization - MAO-T8 Closure Sync
+
+Operator authorization: review/close MAO-T8 and preserve continuity separately.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/maoT8ClosureT9RefreshReady20260711.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this session-sync batch; retain material commit
+`f5a3def2a`.
 
 ## MAO-T8 Representative Pilot Dispatch
 
