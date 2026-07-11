@@ -154,3 +154,32 @@ export {
   makeIntegrationDecision,
   verifyIntegrationReceiptConsistency,
 } from "./closer.interlock.contract";
+
+// --- MAO-T6 timeout, heartbeat, cancel, retry, and recovery ---
+
+export type {
+  MaoDeterministicClock,
+  MaoTimeoutResult,
+  MaoHeartbeatRecord,
+  MaoCancelState,
+  MaoCancelTracker,
+  MaoRetryClass,
+  MaoIdempotencyGuard,
+  MaoOrphanClassification,
+  MaoAttemptRecord,
+} from "./lifecycle.controller.contract";
+
+export {
+  createDeterministicClock,
+  detectTimeout,
+  recordHeartbeat,
+  isHeartbeatStale,
+  createCancelTracker,
+  requestCancel,
+  acceptCancel,
+  mayStartNewChild,
+  classifyRetry,
+  createIdempotencyGuard,
+  classifyOrphan,
+  MaoLifecycleController,
+} from "./lifecycle.controller.contract";

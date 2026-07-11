@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MAO-RUNTIME-T6
 
@@ -102,7 +102,7 @@ Returned defects: NONE_RETURNED
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py` |
 | literalTokensReviewed | HOLD status, dependency evidence, handoff fields |
 | gateRunPurpose | held-packet confirmation |
-| claimBoundary | not dispatch authorization |
+| claimBoundary | local T6 authorization evidence only |
 
 ## Source Verification Block
 
@@ -124,10 +124,11 @@ Returned defects: NONE_RETURNED
 
 | Artifact | Owner | Required final status |
 |---|---|---|
-| lifecycle source | worker | COMPLETE_PENDING_REVIEW |
-| focused test | worker | COMPLETE_PENDING_REVIEW |
-| bounded exports | worker | COMPLETE_PENDING_REVIEW |
-| worker return | worker | COMPLETE_PENDING_REVIEW |
+| lifecycle source | worker | PASS |
+| focused test | worker | PASS |
+| bounded exports | worker | PASS |
+| worker return | worker | PASS |
+| completion review and GC-051 coverage | reviewer | PASS |
 
 ## Execution Plan
 
@@ -136,10 +137,30 @@ orphan rules, then focused tests, typecheck, and worker-return gate.
 
 ## Acceptance Criteria
 
-- [ ] packet remains held until MAO-T5 acceptance;
-- [ ] deterministic clock tests cover timeout and heartbeat;
-- [ ] duplicate, retry, cancel, and orphan paths are classified;
-- [ ] worker does not commit.
+- [x] MAO-T5 dependency accepted;
+- [x] deterministic clock tests cover timeout and heartbeat;
+- [x] duplicate, retry, cancel, and orphan paths are classified;
+- [x] worker does not commit.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | dated T6 completion review | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Roadmap state | MAO roadmap T6 | accepted; T7 held | PASS |
+| Registry JSON | GC-051 aggregate | generated and aligned | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing governed registry front door | PASS |
+| External evidence digest | N/A with reason: local evidence only | N/A | N/A with reason: local evidence only |
+| System loop interlock | current registry | unchanged | PASS |
+| Session continuity | separate steward commit | pending | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| T6-Q1 | focused test output | N/A | 58 passing | 58 passing | PASS |
+| T6-Q2 | typecheck output | N/A | exit 0 | exit 0 | PASS |
 
 ## Evidence Requirements
 
@@ -212,7 +233,7 @@ Focused tests, typecheck, reviewer-fast and steward preflight.
 
 ## Closure Checklist
 
-- [ ] dependency released; - [ ] manifest exact; - [ ] tests pass; - [ ] no commit.
+- [x] dependency released; - [x] manifest exact; - [x] tests pass; - [x] no commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -234,7 +255,7 @@ Required only for scope/provider/runtime expansion.
 | Target paths | paired T6 packet |
 | Allowed scope source | operator and roadmap |
 | Before status evidence | clean worktree at handoff-sync HEAD `cbf56ff50`; T5 accepted at `9b225f0e4` |
-| After status evidence | source-verified DISPATCH_READY packet |
+| After status evidence | source-verified execution packet accepted and closed |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | packet preparation only |
 | Claim boundary | no execution |

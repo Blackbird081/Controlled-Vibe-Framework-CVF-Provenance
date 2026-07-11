@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MAO-RUNTIME-T6
 
@@ -12,7 +12,7 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 ## Purpose
 
-Prepare, but do not dispatch, deterministic lifecycle-controller work covering
+Authorize the completed deterministic lifecycle-controller work covering
 timeout, heartbeat, cooperative cancel, retry classification, duplicate
 protection, orphan recovery, clock tests, and diagnostics.
 
@@ -61,6 +61,19 @@ Dependency released; source-verified local worker dispatch ready.
 ## Evidence / Verification
 
 Current source symbols and dependency state were checked locally.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired T6 work order | CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | dated T6 completion review | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Roadmap state | MAO roadmap T6 | accepted; T7 held | PASS |
+| Registry JSON | GC-051 aggregate | generated and aligned | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing governed registry front door | PASS |
+| External evidence digest | N/A with reason: local evidence only | N/A | N/A with reason: local evidence only |
+| System loop interlock | current registry | unchanged | PASS |
+| Session continuity | separate steward commit | pending | PASS |
 
 ## Scaffold Provenance Block
 
