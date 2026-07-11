@@ -58,6 +58,8 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
+Pre-push compatibility repair commit: `ad4d5ec3f`.
+
 ## Verification
 
 - focused tests: 18/18 PASS;
