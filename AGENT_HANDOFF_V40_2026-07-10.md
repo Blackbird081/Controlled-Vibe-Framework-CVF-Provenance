@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_t1a_contract_guard_matrix_correction_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=worker executes only R94-T1A without committing; parked checkpoint=R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
+Startup acknowledged: current mode=`msea_r94_t1a_contract_guard_matrix_correction_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author fresh R94-T1B packet for GC-009/010 without implementation; parked checkpoint=T1C, T2-T4, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
 
 ## Mandatory Startup Reads
 
@@ -35,9 +35,14 @@ Startup acknowledged: current mode=`msea_r94_t1a_contract_guard_matrix_correctio
 
 ## Current Mode
 
-`msea_r94_t1a_contract_guard_matrix_correction_dispatched`
+`msea_r94_t1a_contract_guard_matrix_correction_closed`
 
 ## Latest Work / Changes
+
+MSEA-R94-T1A closed `REVIEWER_ACCEPTED_BOUNDED` at material commit
+`ee39d8e62`. Six matrix evidence pairings are FIXED_AND_PROVEN, the existing
+contract suite passes 34/34, and the R91 freshness interlock is CURRENT after
+reviewer reconciliation. No runtime or test source changed.
 
 MSEA-R94-T1A dispatch is committed at `f32175bdc`. It authorizes correction of
 exactly six Governance Control Matrix evidence cells using the existing direct
@@ -200,6 +205,9 @@ reopen without observed cross-machine friction.
 
 ## Current HEAD
 
+MSEA-R94-T1A closure material commit before this session-sync:
+`ee39d8e62`.
+
 MSEA-R94-T1A dispatch material commit before this session-sync:
 `f32175bdc`.
 
@@ -270,12 +278,30 @@ External agent memory files: non-canonical convenience only.
 
 ## Next Allowed Move
 
-Next allowed move: worker executes only the committed R94-T1A work order,
-corrects exactly six matrix evidence cells, creates the named worker return,
-runs focused and governance gates, and stops without commit. No test, runtime,
-other row, T1B/T1C, T2-T4, session, lifecycle, provider, public, or external
-absorption mutation is authorized. Latest closed numbered LHW wave remains
+Next allowed move: author a fresh source-verified R94-T1B GC-018/work-order
+packet for the shared GC-009/GC-010 gateway invocation decision. No caller,
+matrix downgrade, runtime/test edit, or worker dispatch is authorized before
+that packet passes pre-dispatch. Latest closed numbered LHW wave remains
 `LHW24`.
+
+## Core Guard Self-Protection Authorization - MSEA-R94-T1A Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`ee39d8e62`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V40_2026-07-10.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mseaR94T1AContractGuardMatrixCorrectionClosure20260711.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+Operator authorization: continue R94 in governed order.
+
+Rollback boundary: revert only this sync; do not revert `ee39d8e62`.
 
 ## Core Guard Self-Protection Authorization - MSEA-R94-T1A Dispatch Session Sync
 

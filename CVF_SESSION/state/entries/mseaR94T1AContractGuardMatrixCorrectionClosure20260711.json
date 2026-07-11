@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1651,
+  "stateKey": "mseaR94T1AContractGuardMatrixCorrectionClosure20260711",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-11",
+    "materialCommit": "ee39d8e62",
+    "executionBaseHead": "960018737",
+    "completionReview": "docs/reviews/CVF_MSEA_R94_T1A_CONTRACT_GUARD_MATRIX_EVIDENCE_CORRECTION_COMPLETION_2026-07-11.md",
+    "fixedRows": ["GC-001", "GC-002", "GC-003", "GC-005", "GC-006", "GC-008"],
+    "testEvidence": "guard contract focused suite PASS 34/34",
+    "freshnessState": "CURRENT",
+    "nextAllowedMove": "author a fresh R94-T1B packet for GC-009 and GC-010; no implementation before pre-dispatch",
+    "claimBoundary": "six matrix evidence pairings and existing R91 map refresh only; no runtime/test/checker/public behavior change"
+  }
+}
