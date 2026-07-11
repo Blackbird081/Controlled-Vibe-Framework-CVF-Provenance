@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r99_l1_system_definition_owner_design_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh L4 promotion/readiness decision packet or select another governed lane; parked checkpoint=T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_asc_as_built_architecture_catalog_roadmap_proposed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=external reviewer critique of the ASC roadmap, then internal source verification before ASC-T0; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Current Mode
 
-Current mode marker: `msea_r99_l1_system_definition_owner_design_closed`
+Current mode marker: `msea_asc_as_built_architecture_catalog_roadmap_proposed`
 
-Current mode: `msea_r99_l1_system_definition_owner_design_closed`
+Current mode: `msea_asc_as_built_architecture_catalog_roadmap_proposed`
 
-`msea_r99_l1_system_definition_owner_design_closed`
+`msea_asc_as_built_architecture_catalog_roadmap_proposed`
 
 Previous mode:
 
-`msea_r99_l1_system_definition_owner_design_dispatched`
+`msea_r99_l1_system_definition_owner_design_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-ASC as-built architecture and system catalog roadmap | `027ead038` | PROPOSED. Machine catalog, proof-class edge graph, indexed gap README/JSON, human front door, freshness/admission controls, and independent critique sequence. |
 | MSEA-R99 L1 system-definition owner design closure | `ea57cc634` | REVIEWER_ACCEPTED_BOUNDED. Compact pointer owner created; L1 path/authority/freeze boundaries retained; freshness CURRENT. |
 | MSEA-R99 L1 system-definition owner design dispatch | `31ed30db8` | DISPATCH_READY. Create one compact pointer owner and reconcile L1 route/freshness; no doctrine or legacy mutation. |
 | MSEA-R98 L2 build-protocol owner ratification closure | `21aeae180` | REVIEWER_ACCEPTED_BOUNDED under single-agent self-review boundary. L2 is NAMED_DIFFERENTLY_ACTIVE_OWNER_WITH_BOUNDARY; freshness CURRENT. |
@@ -92,12 +93,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r99_l1_system_definition_owner_design_closed`
+Mode: `msea_asc_as_built_architecture_catalog_roadmap_proposed`
 
-Next allowed move: author a fresh L4 promotion/readiness decision packet or
-select another governed lane. R99 created the bounded L1 pointer owner and
-R91 freshness is CURRENT. Independent review is not claimed. Latest closed
-numbered LHW wave remains `LHW24`.
+Next allowed move: obtain external reviewer critique of the proposed MSEA-ASC
+roadmap, then internally source-verify and fold or reject each finding. Only
+after that review may ASC-T0 receive a fresh GC-018 and work order. L4 is
+VALUE_PARKED_WITH_REOPEN_CONDITIONS. Latest closed numbered LHW wave remains
+`LHW24`.
 
 Multi-Agent Orchestration Runtime Foundation is
 `VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,

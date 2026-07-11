@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r99_l1_system_definition_owner_design_closed",
+  "currentMode": "msea_asc_as_built_architecture_catalog_roadmap_proposed",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R99 L1 System Definition Owner Design is REVIEWER_ACCEPTED_BOUNDED at material commit ea57cc634 under an explicit single-agent self-review boundary; independent review is not claimed. L1 is ACTIVE_OWNER_CREATED_WITH_BOUNDARY through a compact pointer; /system path, legacy authority, duplicate architecture, and frozen-status equivalence are rejected. R91 freshness is CURRENT. Next allowed move is a fresh L4 promotion/readiness decision packet or another governed lane. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "The MSEA-ASC As-Built Architecture And System Catalog roadmap is PROPOSED at commit 027ead038. Next allowed move is external reviewer critique of the roadmap, followed by internal source verification and fold/reject decisions. Only after critique may a fresh GC-018 and work order be authored for ASC-T0. L4 is VALUE_PARKED_WITH_REOPEN_CONDITIONS. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

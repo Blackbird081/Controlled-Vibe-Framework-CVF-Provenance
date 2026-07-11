@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r99_l1_system_definition_owner_design_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh L4 promotion/readiness decision packet or select another governed lane; parked checkpoint=T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_asc_as_built_architecture_catalog_roadmap_proposed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=external reviewer critique of the ASC roadmap, then internal verification before ASC-T0; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r99_l1_system_definition_owner_design_c
 
 ## Current Mode
 
-`msea_r99_l1_system_definition_owner_design_closed`
+`msea_asc_as_built_architecture_catalog_roadmap_proposed`
 
 ## Latest Work / Changes
 
@@ -1062,6 +1062,24 @@ Protected paths: `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V40_2026-07-10.md`;
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 Operator authorization: execute R99. Rollback boundary: revert only this sync;
 retain `ea57cc634`.
+
+## MSEA-ASC As-Built Architecture Catalog Roadmap - 2026-07-11
+
+Roadmap commit: `027ead038`. Status: PROPOSED. Next move is external critique,
+then internal source verification; ASC-T0 is not yet dispatched. L4 remains
+value-parked with measurable reopen conditions.
+
+## Core Guard Self-Protection Authorization - MSEA-ASC Roadmap Session Sync
+
+Authorized guard-maintenance scope: session-sync after `027ead038`.
+Protected paths: `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V40_2026-07-10.md`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/mseaAscAsBuiltArchitectureCatalogRoadmapProposed20260711.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+Operator authorization: create the detailed roadmap. Rollback boundary: revert
+only this sync; retain `027ead038`.
 
 ## Claim Boundary
 
