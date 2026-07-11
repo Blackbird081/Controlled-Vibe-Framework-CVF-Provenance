@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r99_l1_system_definition_owner_design_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute and close the bounded R99 L1 owner-design packet; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_r99_l1_system_definition_owner_design_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh L4 promotion/readiness decision packet or select another governed lane; parked checkpoint=T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Current Mode
 
-Current mode marker: `msea_r99_l1_system_definition_owner_design_dispatched`
+Current mode marker: `msea_r99_l1_system_definition_owner_design_closed`
 
-Current mode: `msea_r99_l1_system_definition_owner_design_dispatched`
+Current mode: `msea_r99_l1_system_definition_owner_design_closed`
 
-`msea_r99_l1_system_definition_owner_design_dispatched`
+`msea_r99_l1_system_definition_owner_design_closed`
 
 Previous mode:
 
-`msea_r98_l2_build_protocol_owner_ratification_closed`
+`msea_r99_l1_system_definition_owner_design_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R99 L1 system-definition owner design closure | `ea57cc634` | REVIEWER_ACCEPTED_BOUNDED. Compact pointer owner created; L1 path/authority/freeze boundaries retained; freshness CURRENT. |
 | MSEA-R99 L1 system-definition owner design dispatch | `31ed30db8` | DISPATCH_READY. Create one compact pointer owner and reconcile L1 route/freshness; no doctrine or legacy mutation. |
 | MSEA-R98 L2 build-protocol owner ratification closure | `21aeae180` | REVIEWER_ACCEPTED_BOUNDED under single-agent self-review boundary. L2 is NAMED_DIFFERENTLY_ACTIVE_OWNER_WITH_BOUNDARY; freshness CURRENT. |
 | MSEA-R98 L2 build-protocol owner ratification dispatch | `cd58b0211` | DISPATCH_READY. Decide whether `AGENTS.md` is the bounded active L2 owner; no doctrine, AGENTS, runtime, checker, or public mutation. |
@@ -91,13 +92,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r99_l1_system_definition_owner_design_dispatched`
+Mode: `msea_r99_l1_system_definition_owner_design_closed`
 
-Next allowed move: execute and close the bounded MSEA-R99 five-path scope.
-Create one compact L1 pointer owner, reconcile the human/machine maps and
-freshness fingerprint, adversarially self-review, then split material and
-session commits. Independent review is not claimed. L4 promotion remains
-parked. Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: author a fresh L4 promotion/readiness decision packet or
+select another governed lane. R99 created the bounded L1 pointer owner and
+R91 freshness is CURRENT. Independent review is not claimed. Latest closed
+numbered LHW wave remains `LHW24`.
 
 Multi-Agent Orchestration Runtime Foundation is
 `VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,

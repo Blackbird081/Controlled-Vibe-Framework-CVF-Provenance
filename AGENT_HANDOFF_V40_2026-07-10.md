@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r99_l1_system_definition_owner_design_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute and close the bounded R99 L1 owner-design packet; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_r99_l1_system_definition_owner_design_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh L4 promotion/readiness decision packet or select another governed lane; parked checkpoint=T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r99_l1_system_definition_owner_design_d
 
 ## Current Mode
 
-`msea_r99_l1_system_definition_owner_design_dispatched`
+`msea_r99_l1_system_definition_owner_design_closed`
 
 ## Latest Work / Changes
 
@@ -1043,6 +1043,25 @@ Protected paths: `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V40_2026-07-10.md`;
 
 Operator authorization: continue after R98. Rollback boundary: revert only
 this sync; retain `31ed30db8`.
+
+## MSEA-R99 L1 System Definition Owner Design Closure - 2026-07-11
+
+Material commit: `ea57cc634`. L1 is `ACTIVE_OWNER_CREATED_WITH_BOUNDARY`
+through a compact pointer owner. `/system` path, legacy authority, duplicate
+architecture, and frozen-status equivalence remain rejected. R91 freshness is
+CURRENT. Independent review is not claimed.
+
+## Core Guard Self-Protection Authorization - MSEA-R99 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync after `ea57cc634`.
+Protected paths: `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V40_2026-07-10.md`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/mseaR99L1SystemDefinitionOwnerDesignClosure20260711.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+Operator authorization: execute R99. Rollback boundary: revert only this sync;
+retain `ea57cc634`.
 
 ## Claim Boundary
 

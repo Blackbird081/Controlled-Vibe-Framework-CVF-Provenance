@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r99_l1_system_definition_owner_design_dispatched",
+  "currentMode": "msea_r99_l1_system_definition_owner_design_closed",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R99 L1 System Definition Owner Design is DISPATCH_READY at commit 31ed30db8. Next allowed move is execute the bounded single-agent multi-role five-path scope: create one compact system-definition pointer owner, reconcile L1 maps and freshness, self-review, and close without claiming independence. L4 promotion remains parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R99 L1 System Definition Owner Design is REVIEWER_ACCEPTED_BOUNDED at material commit ea57cc634 under an explicit single-agent self-review boundary; independent review is not claimed. L1 is ACTIVE_OWNER_CREATED_WITH_BOUNDARY through a compact pointer; /system path, legacy authority, duplicate architecture, and frozen-status equivalence are rejected. R91 freshness is CURRENT. Next allowed move is a fresh L4 promotion/readiness decision packet or another governed lane. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
