@@ -96,6 +96,15 @@ exists for this value; composer must fail closed rather than infer).
 
 ## Freshness Rules
 
+### Artifact Selection Within One Material Entry
+
+When one eligible generated state entry cites multiple governed artifacts, the
+single `artifactPath` uses this ratified role order: `completionReview`,
+`completionReviewPath`, `roadmap`, `roadmapPath`, `baseline`, `baselinePath`,
+`gc018`, `gc018Baseline`, `workOrder`, then `workOrderPath`. A sole unknown
+artifact role may be used. Multiple unknown artifact roles fail closed to
+`MISSING_SOURCE`; JSON insertion order is never authority.
+
 Freshness is computed per source anchor first, then aggregated. This mirrors
 the pattern already proven by MAO-T7's `classifyReadoutFreshness`
 (evaluate one owner's last-recorded timestamp against an explicit

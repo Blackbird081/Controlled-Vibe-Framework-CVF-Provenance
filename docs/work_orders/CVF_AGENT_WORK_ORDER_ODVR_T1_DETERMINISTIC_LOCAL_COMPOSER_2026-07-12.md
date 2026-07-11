@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-12
 
@@ -10,9 +10,9 @@ Batch ID: ODVR-T1-DISPATCH
 
 dispatchBaseHead: `ef8702226`
 
-executionBaseHead: capture exact committed dispatch HEAD before any edit
+executionBaseHead: `f3a9a7699`
 
-closureBaseHead: executionBaseHead captured by worker at start
+closureBaseHead: `f3a9a7699`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -219,6 +219,15 @@ commit, and separate session sync.
 Exactly four worker-owned outputs: helper, focused test, front-door update, and
 worker return. No optional files.
 
+## Required Artifact Manifest
+
+| Path | Owner | Required disposition |
+|---|---|---|
+| `governance/compat/run_odvr_readout.py` | worker | implemented and reviewer accepted |
+| `governance/compat/test_run_odvr_readout.py` | worker | 22 reviewer-expanded tests pass |
+| `docs/reference/operator_decision_value_readout/README.md` | worker | local usage pointer updated |
+| `docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_WORKER_RETURN_2026-07-12.md` | worker | COMPLETE_PENDING_REVIEW converted by reviewer |
+
 ## Worker Return Packet Shape Contract
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
@@ -311,12 +320,12 @@ public, state-mutation, or outside-source checkpoint is crossed.
 
 ## Closure Checklist
 
-- [ ] Exact four-output manifest reviewed.
-- [ ] Positive and negative tests pass.
-- [ ] T0 schema validation passes.
-- [ ] No mutation or duplicate-owner behavior exists.
-- [ ] Worker-return fast gate passes.
-- [ ] Reviewer completion and material commit complete.
+- [x] Exact four-output manifest reviewed.
+- [x] Positive and negative tests pass.
+- [x] T0 schema validation passes.
+- [x] No mutation or duplicate-owner behavior exists.
+- [x] Worker-return fast gate passes.
+- [x] Reviewer completion and material commit prepared.
 
 ## Agent Operation Trace Block
 
@@ -364,6 +373,20 @@ dispatch, or autonomous action authority.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private local implementation dispatch; no public artifact authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Baseline | `docs/baselines/CVF_GC018_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_2026-07-12.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md` | `Status: REVIEWER_ACCEPTED_AFTER_REPAIR` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_OPERATOR_DECISION_AND_VALUE_READOUT_ROADMAP_2026-07-12.md` | `PROPOSED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no mutation; aggregate drift check passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no mutation required | PASS |
+| External evidence digest | N/A with reason: internal local implementation | no external evidence | N/A with reason |
+| System loop interlock | current ODVR contract and schema | deterministic read-only boundary retained | PASS |
+| Session continuity | separate session-sync after material commit | not part of material batch | N/A with reason |
 
 ## Claim Boundary
 

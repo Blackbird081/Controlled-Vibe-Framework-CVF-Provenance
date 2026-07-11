@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-12
 
@@ -10,9 +10,9 @@ Batch ID: ODVR-T1-DISPATCH
 
 dispatchBaseHead: `ef8702226`
 
-executionBaseHead: worker captures committed dispatch HEAD before editing
+executionBaseHead: `f3a9a7699`
 
-closureBaseHead: executionBaseHead captured by worker at start
+closureBaseHead: `f3a9a7699`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -122,6 +122,19 @@ validation, diff hygiene, governed-file-size, reviewer-fast, and autorun gates.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private local foundation dispatch; no public artifact is authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_2026-07-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md` | `Status: REVIEWER_ACCEPTED_AFTER_REPAIR` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_OPERATOR_DECISION_AND_VALUE_READOUT_ROADMAP_2026-07-12.md` | `PROPOSED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no mutation; aggregate drift check passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no mutation required | PASS |
+| External evidence digest | N/A with reason: internal local implementation | no external evidence | N/A with reason |
+| System loop interlock | current ODVR contract and schema | deterministic read-only boundary retained | PASS |
+| Session continuity | separate session-sync after material commit | not part of material batch | N/A with reason |
 
 ## Claim Boundary
 
