@@ -333,10 +333,14 @@ Stop and return to the operator or reviewer if a tranche:
 
 ## Next Allowed Move
 
-Author a fresh GC-018 baseline and `WORKER_MUST_NOT_COMMIT` work order for
-R94-T0 only. Source-verify the current Governance Control Matrix, its 50 rows,
-the runtime owners, and the evidence schema before dispatch. Do not implement
-T1, T2, or T3 in the T0 audit packet.
+R94-T0, T1A, and T1B are reviewer-accepted. Operator authorization on
+2026-07-11 permits one integrated `MSEA-R94-REMAINING-WAVE` no-commit worker
+packet for T1C, T2, T3A, and T4 readiness. The packet may group these remaining
+documentation/read-model phases to reduce repeated dispatch latency, but each
+phase must retain its own evidence ledger and terminal disposition. T3B runtime
+or UI implementation remains excluded. A phase needing runtime, tests, a new
+checker, or a second freshness owner must return `BLOCKED_WITH_OWNER_ACTION`
+without stopping independent documentation phases.
 
 ## Public Export Disposition
 
