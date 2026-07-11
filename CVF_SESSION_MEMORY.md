@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t9_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one independent MAO-T9 no-commit critique producing exactly four outputs; parked checkpoint=reviewer-owned roadmap/export/catalog-gap closure, provider/network, UI and public work.
+Startup acknowledged: current mode=`mao_runtime_foundation_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh operator lane selection and new governed packet; parked checkpoint=provider, durable queue, UI, public projection and ASC admission.
 
 ## Current Mode
 
-Current mode marker: `mao_t9_dispatched`
+Current mode marker: `mao_runtime_foundation_closed`
 
-Current mode: `mao_t9_dispatched`
+Current mode: `mao_runtime_foundation_closed`
 
-`mao_t9_dispatched`
+`mao_runtime_foundation_closed`
 
 Previous mode:
 
-`mao_t8_closed_t9_packet_refresh_ready`
+`mao_t9_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO runtime foundation T0-T9 closure | `29c55ca36` | CLOSED_PASS_BOUNDED; T9-F1 REJECT; zero blocking findings. |
 | MAO-T9 independent critique dispatch | `c40991cc5` | DISPATCH_READY; exactly four review outputs, no worker commit or owner-surface mutation. |
 | MAO-T8 representative pilot closure | `f5a3def2a` | REVIEWER_ACCEPTED_BOUNDED after monotonic-time repair; 25/25 tests and typecheck PASS. |
 | MAO-T8 representative pilot dispatch | `23d1b23ce` | DISPATCH_READY; local stale-readout repair pilot, exactly five outputs, no provider and no worker commit. |
@@ -117,11 +118,10 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t9_dispatched`
+Mode: `mao_runtime_foundation_closed`
 
-MAO-T9 is dispatch-ready at `c40991cc5`. Next allowed move is one independent
-critic execution from clean post-sync HEAD producing exactly four uncommitted
-review outputs.
+MAO T0-T9 is closed bounded at `29c55ca36`. Next work requires fresh operator
+selection and a new roadmap/GC-018/source-verified work order.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 

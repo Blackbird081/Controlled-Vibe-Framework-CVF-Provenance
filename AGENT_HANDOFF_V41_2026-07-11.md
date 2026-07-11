@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t9_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one independent MAO-T9 no-commit critique with four outputs; parked checkpoint=reviewer-owned roadmap/export/catalog-gap closure, provider/network, UI/public, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_runtime_foundation_closed`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh operator lane selection and governed packet; parked checkpoint=provider/durable queue/UI/public/ASC admission, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t9_dispatched`
+`mao_runtime_foundation_closed`
 
 ## Latest Work / Changes
 
@@ -226,6 +226,27 @@ Protected paths:
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
+
+## MAO Runtime Foundation Final Closure
+
+Material closure HEAD: `29c55ca36`. T0-T9 are `CLOSED_PASS_BOUNDED`; T9-F1 is
+REJECT; zero blocking findings remain. Session-sync parent HEAD: `29c55ca36`.
+
+## Core Guard Self-Protection Authorization - MAO Final Closure Sync
+
+Operator authorization: complete MAO roadmap and preserve final continuity.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/maoRuntimeFoundationClosure20260712.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this sync; retain material commit `29c55ca36`.
 
 ## MAO-T9 Independent Critique Dispatch
 
