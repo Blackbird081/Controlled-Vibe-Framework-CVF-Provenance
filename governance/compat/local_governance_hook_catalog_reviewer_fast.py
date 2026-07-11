@@ -233,6 +233,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_system_chain_map_freshness.py", "--enforce"],
     ),
     (
+        "as-built system catalog drift",
+        ["python", "governance/compat/check_as_built_system_catalog_drift.py", "--enforce"],
+    ),
+    (
         "memory consolidation artifact quality",
         ["python", "governance/compat/check_memory_consolidation_artifact_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),

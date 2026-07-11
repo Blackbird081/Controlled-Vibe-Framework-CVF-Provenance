@@ -448,6 +448,10 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             ("python", "governance/compat/check_system_chain_map_freshness.py", "--enforce"),
         ),
         GateCommand(
+            "as-built system catalog drift",
+            ("python", "governance/compat/check_as_built_system_catalog_drift.py", "--enforce"),
+        ),
+        GateCommand(
             "governed python automation size",
             ("python", "governance/compat/check_python_automation_size.py", "--enforce"),
         ),

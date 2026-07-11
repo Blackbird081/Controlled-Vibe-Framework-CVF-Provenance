@@ -25,6 +25,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_system_chain_map_freshness.py", "--enforce"],
         ),
         (
+            "as-built system catalog drift",
+            ["python", "governance/compat/check_as_built_system_catalog_drift.py", "--enforce"],
+        ),
+        (
             "governed python automation size",
             ["python", "governance/compat/check_python_automation_size.py", "--enforce"],
         ),

@@ -1,0 +1,613 @@
+{
+  "schemaVersion": "cvf.as_built_system_catalog.schema.v0",
+  "generatedBy": "governance/compat/generate_as_built_system_catalog.py",
+  "sourceDir": "docs/reference/system_architecture_catalog/entries/",
+  "entityCount": 22,
+  "entities": [
+    {
+      "stableId": "cvf.asc.authority_source.frozen_layer_model.v1",
+      "entityType": "AUTHORITY_SOURCE",
+      "name": "Frozen Layer Model",
+      "authorityClass": "FROZEN_DOCTRINE",
+      "frozen": true,
+      "ownerPaths": [
+        "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md"
+      ],
+      "citations": [
+        {
+          "path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md",
+          "lineOrSection": "whole document",
+          "evidenceRole": "authority source"
+        }
+      ],
+      "claimBoundary": "Supreme layer-naming and architectural-freeze authority for L0-L6.",
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_ASC_T0_SOURCE_SCHEMA_AND_RECONCILIATION_CONTRACT_WORKER_RETURN_2026-07-11.md"
+      }
+    },
+    {
+      "stableId": "cvf.asc.authority_source.governance_control_matrix.v1",
+      "entityType": "AUTHORITY_SOURCE",
+      "name": "Governance Control Matrix",
+      "authorityClass": "ACTIVE_GOVERNED_STANDARD",
+      "frozen": false,
+      "ownerPaths": [
+        "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md"
+      ],
+      "citations": [
+        {
+          "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+          "lineOrSection": "whole document",
+          "evidenceRole": "authority source"
+        }
+      ],
+      "claimBoundary": "Authority for GC-NNN rule-to-owner mapping; not frozen, may be amended by governed edit.",
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_ASC_T0_SOURCE_SCHEMA_AND_RECONCILIATION_CONTRACT_WORKER_RETURN_2026-07-11.md"
+      }
+    },
+    {
+      "stableId": "cvf.asc.edge.contract_to_runtime_to_runtime_to_enforcement.v1",
+      "entityType": "EDGE",
+      "sourceId": "cvf.asc.plane.contract_to_runtime.v1",
+      "targetId": "cvf.asc.plane.runtime_to_enforcement.v1",
+      "edgeProofClass": "DECLARED_EDGE",
+      "evidenceRecency": "NOT_APPLICABLE",
+      "operatorVisibility": "ABSENT",
+      "citations": [],
+      "claimBoundary": "Declared plane-sequence relationship reused from the R91 five-lane whole-picture ordering. DECLARED_EDGE only: no aggregate execution claim across the full chain.",
+      "freshnessInputs": [
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "sampledOnly": false
+    },
+    {
+      "stableId": "cvf.asc.edge.cross_family_registry_invocation.v1",
+      "entityType": "EDGE",
+      "sourceId": "cvf.asc.plane.runtime_to_enforcement.v1",
+      "targetId": "cvf.asc.plane.enforcement_to_evidence.v1",
+      "edgeProofClass": "EXECUTED_AND_EVIDENCED_EDGE",
+      "evidenceRecency": "HISTORICAL_TRACE",
+      "operatorVisibility": "CI_ONLY",
+      "citations": [
+        {
+          "path": "docs/reference/CVF_CONFORMANCE_SCENARIOS.json",
+          "lineOrSection": "CF-076..CF-084 command arrays",
+          "evidenceRole": "registry-driven invocation source"
+        },
+        {
+          "path": ".github/workflows/documentation-testing.yml",
+          "lineOrSection": "conformance-artifact-consistency job",
+          "evidenceRole": "CI invocation site"
+        }
+      ],
+      "claimBoundary": "Nine cross-family checkers invoked via data-driven registry through CI only. CI_ONLY operatorVisibility per schema invariant (cannot be OPERATOR_VISIBLE_EDGE without OPERATOR_SURFACED).",
+      "freshnessInputs": [
+        "docs/reference/CVF_CONFORMANCE_SCENARIOS.json",
+        ".github/workflows/documentation-testing.yml"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "sampledOnly": false
+    },
+    {
+      "stableId": "cvf.asc.edge.doctrine_to_contract_to_contract_to_runtime.v1",
+      "entityType": "EDGE",
+      "sourceId": "cvf.asc.plane.doctrine_to_contract.v1",
+      "targetId": "cvf.asc.plane.contract_to_runtime.v1",
+      "edgeProofClass": "DECLARED_EDGE",
+      "evidenceRecency": "NOT_APPLICABLE",
+      "operatorVisibility": "ABSENT",
+      "citations": [],
+      "claimBoundary": "Declared plane-sequence relationship reused from the R91 five-lane whole-picture ordering. DECLARED_EDGE only: no aggregate execution claim across the full chain.",
+      "freshnessInputs": [
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "sampledOnly": false
+    },
+    {
+      "stableId": "cvf.asc.edge.enforcement_to_evidence_to_evidence_to_operator_surface.v1",
+      "entityType": "EDGE",
+      "sourceId": "cvf.asc.plane.enforcement_to_evidence.v1",
+      "targetId": "cvf.asc.plane.evidence_to_operator_surface.v1",
+      "edgeProofClass": "DECLARED_EDGE",
+      "evidenceRecency": "NOT_APPLICABLE",
+      "operatorVisibility": "ABSENT",
+      "citations": [],
+      "claimBoundary": "Declared plane-sequence relationship reused from the R91 five-lane whole-picture ordering. DECLARED_EDGE only: no aggregate execution claim across the full chain.",
+      "freshnessInputs": [
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "sampledOnly": false
+    },
+    {
+      "stableId": "cvf.asc.edge.gc001_registercaller.v1",
+      "entityType": "EDGE",
+      "sourceId": "cvf.asc.module.guard_contract_runtime.v1",
+      "targetId": "cvf.asc.plane.contract_to_runtime.v1",
+      "edgeProofClass": "EXECUTED_AND_EVIDENCED_EDGE",
+      "evidenceRecency": "HISTORICAL_TRACE",
+      "operatorVisibility": "CI_ONLY",
+      "citations": [
+        {
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+          "lineOrSection": "line 122 registerGuard call site",
+          "evidenceRole": "R90 Audit A Lane 2 sampled caller evidence"
+        }
+      ],
+      "claimBoundary": "GC-001 registerGuard Caller: reused verbatim from R90 Audit A Lane 2 sampled finding (3-of-50 sample). Marked sampledOnly; must not be cited as proof for the full GC-001..GC-050 matrix.",
+      "freshnessInputs": [
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "sampledOnly": true
+    },
+    {
+      "stableId": "cvf.asc.edge.gc009_gateway_no_caller.v1",
+      "entityType": "EDGE",
+      "sourceId": "cvf.asc.module.guard_contract_runtime.v1",
+      "targetId": "cvf.asc.plane.contract_to_runtime.v1",
+      "edgeProofClass": "IMPLEMENTED_EDGE",
+      "evidenceRecency": "NOT_APPLICABLE",
+      "operatorVisibility": "ABSENT",
+      "citations": [
+        {
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts",
+          "lineOrSection": "MSEA-R94-T1B: implemented and tested, no proven non-test production caller",
+          "evidenceRole": "R90 Audit A Lane 2 sampled caller evidence"
+        }
+      ],
+      "claimBoundary": "GC-009 Mandatory Gateway (No Production Caller): reused verbatim from R90 Audit A Lane 2 sampled finding (3-of-50 sample). Marked sampledOnly; must not be cited as proof for the full GC-001..GC-050 matrix.",
+      "freshnessInputs": [
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "sampledOnly": true
+    },
+    {
+      "stableId": "cvf.asc.edge.gc011_pipeline_orchestrator.v1",
+      "entityType": "EDGE",
+      "sourceId": "cvf.asc.module.guard_contract_runtime.v1",
+      "targetId": "cvf.asc.plane.contract_to_runtime.v1",
+      "edgeProofClass": "EXECUTED_AND_EVIDENCED_EDGE",
+      "evidenceRecency": "HISTORICAL_TRACE",
+      "operatorVisibility": "CI_ONLY",
+      "citations": [
+        {
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts",
+          "lineOrSection": "line 132 real production caller",
+          "evidenceRole": "R90 Audit A Lane 2 sampled caller evidence"
+        }
+      ],
+      "claimBoundary": "GC-011 Pipeline Orchestrator Caller: reused verbatim from R90 Audit A Lane 2 sampled finding (3-of-50 sample). Marked sampledOnly; must not be cited as proof for the full GC-001..GC-050 matrix.",
+      "freshnessInputs": [
+        "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "sampledOnly": true
+    },
+    {
+      "stableId": "cvf.asc.edge.runtime_to_enforcement_to_enforcement_to_evidence.v1",
+      "entityType": "EDGE",
+      "sourceId": "cvf.asc.plane.runtime_to_enforcement.v1",
+      "targetId": "cvf.asc.plane.enforcement_to_evidence.v1",
+      "edgeProofClass": "DECLARED_EDGE",
+      "evidenceRecency": "NOT_APPLICABLE",
+      "operatorVisibility": "ABSENT",
+      "citations": [],
+      "claimBoundary": "Declared plane-sequence relationship reused from the R91 five-lane whole-picture ordering. DECLARED_EDGE only: no aggregate execution claim across the full chain.",
+      "freshnessInputs": [
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "sampledOnly": false
+    },
+    {
+      "stableId": "cvf.asc.module.docs_root.v1",
+      "entityType": "MODULE",
+      "name": "Docs Root L6 Owner",
+      "authorityClass": "ACTIVE_GOVERNED_STANDARD",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "docs/"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.doctrine_to_contract.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md",
+          "lineOrSection": "cited row",
+          "evidenceRole": "module owner/status evidence"
+        }
+      ],
+      "claimBoundary": "Owns documentation/onboarding responsibility for doctrine L6 Ecosystem Layer.",
+      "freshnessInputs": [
+        "docs/"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_ASC_T0_SOURCE_SCHEMA_AND_RECONCILIATION_CONTRACT_WORKER_RETURN_2026-07-11.md"
+      },
+      "boundaryCaveat": "Doctrine-named /examples does not exist as a root directory; L6 responsibility is distributed across docs/, EXTENSIONS/examples/, and governance/toolkit/06_EXAMPLES/.",
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.module.extensions_examples.v1",
+      "entityType": "MODULE",
+      "name": "EXTENSIONS Examples L6 Owner",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "EXTENSIONS/examples/"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.doctrine_to_contract.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/CVF_MODULE_INVENTORY.md",
+          "lineOrSection": "cited row",
+          "evidenceRole": "module owner/status evidence"
+        }
+      ],
+      "claimBoundary": "R97-inventoried active-reference L6 examples surface with 13 tracked files across four subdirectories.",
+      "freshnessInputs": [
+        "EXTENSIONS/examples/"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "boundaryCaveat": "Distributed example owner, not a runtime or release package; does not consolidate L6 into one root path.",
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.module.governance_l5_owner.v1",
+      "entityType": "MODULE",
+      "name": "Governance L5 Owner",
+      "authorityClass": "ACTIVE_GOVERNED_STANDARD",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "governance/"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.doctrine_to_contract.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md",
+          "lineOrSection": "cited row",
+          "evidenceRole": "module owner/status evidence"
+        }
+      ],
+      "claimBoundary": "Active-tree governance-infrastructure owner for doctrine L5 (subfolders compat/, contracts/, registries/, schemas/, skill-library/, toolkit/).",
+      "freshnessInputs": [
+        "governance/"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_ASC_T0_SOURCE_SCHEMA_AND_RECONCILIATION_CONTRACT_WORKER_RETURN_2026-07-11.md"
+      },
+      "boundaryCaveat": "None of the four doctrine-named folders (/agents, /policy, /audit, /identity) exist verbatim in the active tree.",
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.module.guard_contract_runtime.v1",
+      "entityType": "MODULE",
+      "name": "Guard Contract Runtime Owner",
+      "authorityClass": "ACTIVE_GOVERNED_STANDARD",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "EXTENSIONS/CVF_GUARD_CONTRACT/"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.contract_to_runtime.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/CVF_MODULE_INVENTORY.md",
+          "lineOrSection": "cited row",
+          "evidenceRole": "module owner/status evidence"
+        }
+      ],
+      "claimBoundary": "Active helper line implementing GC-001, GC-009, GC-011 and other mandatory-gateway/runtime-guard contract rows.",
+      "freshnessInputs": [
+        "EXTENSIONS/CVF_GUARD_CONTRACT/"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_ASC_T0_SOURCE_SCHEMA_AND_RECONCILIATION_CONTRACT_WORKER_RETURN_2026-07-11.md"
+      },
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.module.l1_system_definition_pointer.v1",
+      "entityType": "MODULE",
+      "name": "L1 System Definition Pointer",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "STABLE",
+      "ownerPaths": [
+        "docs/reference/system_chain/CVF_SYSTEM_DEFINITION.md"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.doctrine_to_contract.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md",
+          "lineOrSection": "cited row",
+          "evidenceRole": "module owner/status evidence"
+        }
+      ],
+      "claimBoundary": "MSEA-R99 compact pointer owner for doctrine L1 System Definition.",
+      "freshnessInputs": [
+        "docs/reference/system_chain/CVF_SYSTEM_DEFINITION.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "boundaryCaveat": "Does not claim the doctrine-named /system path, does not copy legacy content, does not inherit frozen-doctrine status.",
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.module.l2_build_protocol_active_owner.v1",
+      "entityType": "MODULE",
+      "name": "L2 Build Protocol Active Owner",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "AGENTS.md"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.doctrine_to_contract.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md",
+          "lineOrSection": "cited row",
+          "evidenceRole": "module owner/status evidence"
+        }
+      ],
+      "claimBoundary": "MSEA-R98 ratified AGENTS.md as the differently named active L2 operational owner.",
+      "freshnessInputs": [
+        "AGENTS.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      },
+      "boundaryCaveat": "Broader than the historical protocol; not a one-to-one textual adaptation; does not make /protocols exist; does not inherit frozen status.",
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.module.web_agent_platform.v1",
+      "entityType": "MODULE",
+      "name": "Web Agent Platform Owner",
+      "authorityClass": "ACTIVE_GOVERNED_STANDARD",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.evidence_to_operator_surface.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/CVF_MODULE_INVENTORY.md",
+          "lineOrSection": "cited row",
+          "evidenceRole": "module owner/status evidence"
+        }
+      ],
+      "claimBoundary": "Current main Web UI line; hosts the confirmed governance dashboard route and the bounded 5-job-type Web Operations registry.",
+      "freshnessInputs": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_ASC_T0_SOURCE_SCHEMA_AND_RECONCILIATION_CONTRACT_WORKER_RETURN_2026-07-11.md"
+      },
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.plane.contract_to_runtime.v1",
+      "entityType": "PLANE",
+      "name": "Contract To Runtime",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+        "EXTENSIONS/CVF_GUARD_CONTRACT/"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+          "lineOrSection": "lanes[1]",
+          "evidenceRole": "reviewer-accepted MSEA-R90 Audit A lane verdict"
+        }
+      ],
+      "claimBoundary": "Catalog pointer to the R91-owned Contract To Runtime lane verdict. GC-001 through GC-050 governance control matrix rows and their runtime callers. Does not re-derive or upgrade the R91 finding.",
+      "freshnessInputs": [
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+        "docs/reference/system_chain/README.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      }
+    },
+    {
+      "stableId": "cvf.asc.plane.doctrine_to_contract.v1",
+      "entityType": "PLANE",
+      "name": "Doctrine To Contract",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "ECOSYSTEM/doctrine/",
+        "docs/reference/system_chain/CVF_SYSTEM_DEFINITION.md",
+        "AGENTS.md",
+        "ECOSYSTEM/operating-model/"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [
+        "cvf.asc.edge.doctrine_to_contract_to_contract_to_runtime.v1"
+      ],
+      "citations": [
+        {
+          "path": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+          "lineOrSection": "lanes[0] laneId DOCTRINE_TO_CONTRACT",
+          "evidenceRole": "reviewer-accepted MSEA-R90 Audit A lane verdict, R91 machine map"
+        },
+        {
+          "path": "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md",
+          "lineOrSection": "L0-L6 Doctrine Route Table",
+          "evidenceRole": "R94-T2 active route consolidation"
+        }
+      ],
+      "claimBoundary": "Reuses R91 lane 1 verdict PARTIAL_CHAIN_WITH_DOCUMENTED_DRIFT as-is; does not re-derive or upgrade it. This PLANE record is a catalog pointer to the R91-owned finding, not a new semantic claim.",
+      "freshnessInputs": [
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+        "docs/reference/system_chain/README.md",
+        "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      }
+    },
+    {
+      "stableId": "cvf.asc.plane.enforcement_to_evidence.v1",
+      "entityType": "PLANE",
+      "name": "Enforcement To Evidence",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+        "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+          "lineOrSection": "lanes[3]",
+          "evidenceRole": "reviewer-accepted MSEA-R90 Audit A lane verdict"
+        }
+      ],
+      "claimBoundary": "Catalog pointer to the R91-owned Enforcement To Evidence lane verdict. Evidence-manifest citation integrity across the governance control matrix and operational reference index. Does not re-derive or upgrade the R91 finding.",
+      "freshnessInputs": [
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+        "docs/reference/system_chain/README.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      }
+    },
+    {
+      "stableId": "cvf.asc.plane.evidence_to_operator_surface.v1",
+      "entityType": "PLANE",
+      "name": "Evidence To Operator Surface",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "scripts/cvf_doctor.py",
+        "governance/compat/run_agent_autorun_workflow_gate.py",
+        "governance/compat/run_local_governance_hook_chain.py",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+          "lineOrSection": "lanes[4]",
+          "evidenceRole": "reviewer-accepted MSEA-R90 Audit A lane verdict"
+        }
+      ],
+      "claimBoundary": "Catalog pointer to the R91-owned Evidence To Operator Surface lane verdict. RUNTIME_GUARD Web dashboard route and CI_REPO_GATE CLI/receipt surfaces for 186 governance/compat checkers. Does not re-derive or upgrade the R91 finding.",
+      "freshnessInputs": [
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+        "docs/reference/system_chain/README.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      }
+    },
+    {
+      "stableId": "cvf.asc.plane.runtime_to_enforcement.v1",
+      "entityType": "PLANE",
+      "name": "Runtime To Enforcement",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "ACTIVE",
+      "ownerPaths": [
+        "governance/compat/",
+        "scripts/run_cvf_cross_extension_conformance.py"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+          "lineOrSection": "lanes[2]",
+          "evidenceRole": "reviewer-accepted MSEA-R90 Audit A lane verdict"
+        }
+      ],
+      "claimBoundary": "Catalog pointer to the R91-owned Runtime To Enforcement lane verdict. Nine deep-chain cross-family checkers (CF-076..CF-084) and their registry-driven CI invocation. Does not re-derive or upgrade the R91 finding.",
+      "freshnessInputs": [
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+        "docs/reference/system_chain/README.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-11",
+        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      }
+    }
+  ]
+}

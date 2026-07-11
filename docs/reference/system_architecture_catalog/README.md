@@ -8,25 +8,101 @@ docType: reference
 
 Date: 2026-07-11
 
-Batch ID: MSEA-ASC-T0
+Batch ID: MSEA-ASC-RW
 
-executionBaseHead: `928bab031`
+executionBaseHead: `0a2f3c2e6`
 
 EPISTEMIC_PROCESS_NA_WITH_REASON: family front-door/index reference; no
 empirical claim or evidence-comparison work is asserted by this document
-itself.
+itself beyond migrating already-accepted MSEA-R90/R96 findings into the
+catalog schema.
 
 ## Purpose
 
 Front door for the CVF as-built system architecture catalog family. This
-family will eventually let a contributor or agent determine what CVF
-contains, who owns each responsibility, how planes connect, which edges
-execute, where evidence is retained, and which gaps are open, without
-reconstructing the answer from historical reviews - per
+family lets a contributor or agent determine what CVF contains, who owns
+each responsibility, how planes connect, which edges execute, where
+evidence is retained, and which gaps are open, without reconstructing the
+answer from historical reviews - per
 `docs/roadmaps/CVF_AS_BUILT_ARCHITECTURE_AND_SYSTEM_CATALOG_ROADMAP_2026-07-11.md`.
 
-**This T0 tranche defines contracts only. No catalog record, generator,
-checker, gap index, or diagram exists yet.**
+**ASC-T1 through ASC-T4 (this wave) populate 22 catalog entities (5 planes,
+7 modules, 2 authority sources, 8 edges) and 3 gap entries from
+reviewer-accepted MSEA-R90/R96 evidence. ASC-T5 (this wave) adds a scoped
+sibling freshness/drift checker. ASC-T6 (independent review and closure) has
+not yet run.**
+
+## As-Built Architecture At A Glance
+
+The five R91 lane planes, in chain order, with their catalog-record IDs:
+
+| Order | Plane | stableId | Posture (reused from R91) |
+|---|---|---|---|
+| 1 | Doctrine To Contract | `cvf.asc.plane.doctrine_to_contract.v1` | PARTIAL |
+| 2 | Contract To Runtime | `cvf.asc.plane.contract_to_runtime.v1` | PARTIAL |
+| 3 | Runtime To Enforcement | `cvf.asc.plane.runtime_to_enforcement.v1` | CURRENT |
+| 4 | Enforcement To Evidence | `cvf.asc.plane.enforcement_to_evidence.v1` | CURRENT |
+| 5 | Evidence To Operator Surface | `cvf.asc.plane.evidence_to_operator_surface.v1` | PARTIAL |
+
+### Plane-Sequence Diagram
+
+Every edge below resolves to a catalog `stableId` in
+`docs/reference/system_architecture_catalog/entries/`. Edge style key:
+`==>` DECLARED_EDGE (declared sequence only, no execution claim); `-->`
+EXECUTED_AND_EVIDENCED_EDGE (CI-only visibility unless noted).
+
+```
+[Doctrine To Contract]
+   cvf.asc.plane.doctrine_to_contract.v1
+        | edge: cvf.asc.edge.doctrine_to_contract_to_contract_to_runtime.v1 (DECLARED_EDGE) ==>
+        v
+[Contract To Runtime]
+   cvf.asc.plane.contract_to_runtime.v1
+        | sampled edges (3-of-50, sampledOnly=true):
+        |   cvf.asc.edge.gc001_registercaller.v1 (EXECUTED_AND_EVIDENCED_EDGE, CI_ONLY)
+        |   cvf.asc.edge.gc009_gateway_no_caller.v1 (IMPLEMENTED_EDGE, ABSENT)
+        |   cvf.asc.edge.gc011_pipeline_orchestrator.v1 (EXECUTED_AND_EVIDENCED_EDGE, CI_ONLY)
+        | edge: cvf.asc.edge.contract_to_runtime_to_runtime_to_enforcement.v1 (DECLARED_EDGE) ==>
+        v
+[Runtime To Enforcement]
+   cvf.asc.plane.runtime_to_enforcement.v1
+        | edge: cvf.asc.edge.cross_family_registry_invocation.v1 (EXECUTED_AND_EVIDENCED_EDGE, CI_ONLY) -->
+        | edge: cvf.asc.edge.runtime_to_enforcement_to_enforcement_to_evidence.v1 (DECLARED_EDGE) ==>
+        v
+[Enforcement To Evidence]
+   cvf.asc.plane.enforcement_to_evidence.v1
+        | edge: cvf.asc.edge.enforcement_to_evidence_to_evidence_to_operator_surface.v1 (DECLARED_EDGE) ==>
+        v
+[Evidence To Operator Surface]
+   cvf.asc.plane.evidence_to_operator_surface.v1
+        | gap: cvf.asc.gap.web_checker_inventory_not_unified.v1 (EVIDENCED_NOT_OPERATOR_VISIBLE)
+```
+
+This diagram is a generated-adjacent human projection: every node and edge
+label above is a literal `stableId` present in
+`docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json`
+after running the generator. It does not assert any edge, proof class, or
+visibility beyond what that entity's own record declares.
+
+### Open Gaps (See Full Ledger For Detail)
+
+| gapId | Status | Front door |
+|---|---|---|
+| `cvf.asc.gap.l4_product_implementation_unresolved.v1` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `docs/reference/system_chain/gaps/README.md` |
+| `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `docs/reference/system_chain/gaps/README.md` |
+| `cvf.asc.gap.web_checker_inventory_not_unified.v1` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `docs/reference/system_chain/gaps/README.md` |
+
+### How To Answer Common Questions
+
+- **"What owns X?"** Search `ownerPaths` across
+  `docs/reference/system_architecture_catalog/entries/*.json` for the path.
+- **"Is this edge proven or just declared?"** Read the entity's
+  `edgeProofClass`, `evidenceRecency`, and `operatorVisibility` fields; never
+  infer proof from file existence alone.
+- **"What is not yet resolved?"** Read
+  `docs/reference/system_chain/gaps/README.md`.
+- **"Is this catalog itself still fresh?"** Run
+  `python governance/compat/check_as_built_system_catalog_drift.py --enforce`.
 
 ## Scope / Applies To
 
@@ -36,14 +112,16 @@ Does not implement, modify, or supersede the R91 system-chain map family
 (`docs/reference/system_chain/`), frozen doctrine, the module inventory, or
 the governance control matrix.
 
-## Family Contents (This Tranche)
+## Family Contents
 
 | File | Purpose | Status |
 |---|---|---|
-| `README.md` | this file: family front door | DOC_ONLY_NEW |
-| `CVF_AS_BUILT_SYSTEM_CATALOG_SCHEMA.json` | JSON Schema contract: entity types, fields, enums, conditional constraints | DOC_ONLY_NEW |
-| `CVF_AS_BUILT_SYSTEM_CATALOG_RECONCILIATION_CONTRACT.md` | precedence, conflict, lineage, negative-search, migration table, admission routing | DOC_ONLY_NEW |
-| `CVF_AS_BUILT_SYSTEM_CATALOG_TOPOLOGY_DECISIONS.md` | generated-layout, freshness-ownership, and front-door topology decisions | DOC_ONLY_NEW |
+| `README.md` | this file: family front door and ASC-T4 human architecture front door | ACTIVE |
+| `CVF_AS_BUILT_SYSTEM_CATALOG_SCHEMA.json` | JSON Schema contract: entity types, fields, enums, conditional constraints | ACTIVE |
+| `CVF_AS_BUILT_SYSTEM_CATALOG_RECONCILIATION_CONTRACT.md` | precedence, conflict, lineage, negative-search, migration table, admission routing | ACTIVE |
+| `CVF_AS_BUILT_SYSTEM_CATALOG_TOPOLOGY_DECISIONS.md` | generated-layout, freshness-ownership, and front-door topology decisions | ACTIVE |
+| `entries/` | compact per-entity JSON sources (editable authority) | ACTIVE, 22 entities |
+| `CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json` | generated aggregate (rebuild via generator, do not hand-edit) | GENERATED |
 
 ## Relationship To The R91 System-Chain Map Family
 
@@ -58,18 +136,18 @@ families.
 If you need "is CVF's governance chain wired together for the 5 proven
 lanes," read `docs/reference/system_chain/README.md` - that remains the
 authority for those 5 lanes. If you need the fuller as-built plane/module/
-edge/gap picture this catalog family will eventually provide, that surface
-does not exist yet; this README will be updated to route to it once ASC-T1
-through ASC-T4 are authorized and implemented.
+edge/gap picture, this README (the As-Built Architecture At A Glance section
+above) and the gap ledger front door now provide it for the entities
+populated in this wave.
 
-## Future Routes (Not Yet Implemented)
+## Future Routes
 
 | Future route | Owning tranche | Status |
 |---|---|---|
-| Populated catalog entities (`entries/` + generated aggregate) | ASC-T1, ASC-T2 | reserved path only, see Topology Decisions Decision 1 |
-| Gap ledger front door and index (`docs/reference/system_chain/gaps/`) | ASC-T3 | reserved path only, roadmap-owned |
-| Human as-built architecture front door | ASC-T4 | reserved path only, see Topology Decisions Decision 3 |
-| Catalog/gap-index freshness checker | ASC-T5 | reserved path only, see Topology Decisions Decision 2 |
+| Populated catalog entities (`entries/` + generated aggregate) | ASC-T1, ASC-T2 | POPULATED this wave: 22 entities |
+| Gap ledger front door and index (`docs/reference/system_chain/gaps/`) | ASC-T3 | POPULATED this wave: 3 gap entries |
+| Human as-built architecture front door | ASC-T4 | POPULATED this wave: this README's At A Glance section |
+| Catalog/gap-index freshness checker | ASC-T5 | POPULATED this wave: `governance/compat/check_as_built_system_catalog_drift.py` |
 | Independent review and closure | ASC-T6 | not yet opened |
 
 ## Governing Documents
@@ -82,13 +160,16 @@ through ASC-T4 are authorized and implemented.
 
 ## Claim Boundary
 
-This README is a family front door for a schema/contract-only T0 tranche. It
-does not claim any catalog record exists, does not authorize ASC-T1 or later
-implementation, and does not modify the R91 system-chain map family.
+This README is the family front door and the ASC-T4 human architecture front
+door for the entities populated in the MSEA-ASC-RW wave (22 catalog entities,
+3 gap entries). It does not claim exhaustive coverage of every CVF module,
+interface, or edge, does not modify the R91 system-chain map family, does not
+authorize ASC-T6 independent review/closure, and does not authorize runtime,
+public, provider, Web, or L4 promotion work.
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance T0 design tranche; no public-sync authorization
+Reason: private provenance architecture-catalog wave; no public-sync authorization
 exists for this family.
