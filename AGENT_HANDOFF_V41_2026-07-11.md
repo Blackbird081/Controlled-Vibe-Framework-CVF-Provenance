@@ -39,6 +39,8 @@ R73F, and R84 effectiveness.
 MAO-T5 is closed at `9b225f0e4`; MAO-T6 local lifecycle-controller packet is
 released for anchor/status refresh and one no-commit worker execution.
 
+MAO-T5 closure/T6 release session commit is `8a5fc03e6`.
+
 MAO-T5 material closure commit `9b225f0e4` is
 `REVIEWER_ACCEPTED_BOUNDED`; reviewer verification passed 54/54 focused tests,
 typecheck, worker-return/reviewer-fast, and 82/82 pre-commit checks.
