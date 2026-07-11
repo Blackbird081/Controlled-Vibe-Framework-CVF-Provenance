@@ -183,3 +183,32 @@ export {
   classifyOrphan,
   MaoLifecycleController,
 } from "./lifecycle.controller.contract";
+
+// --- MAO-T7 evidence, observability, and operator readout ---
+
+export type {
+  MaoReceiptKind,
+  MaoRedactionResult,
+  MaoEvidenceRecord,
+  MaoIngestReceiptEvidenceInput,
+  MaoIngestEvidenceFailureReason,
+  MaoIngestEvidenceResult,
+  MaoEvidenceReadout,
+  MaoRetentionDecision,
+  MaoRetentionPolicyInput,
+  MaoFreshnessClass,
+  MaoWorkspaceMilestoneKind,
+  MaoWorkspaceMilestoneProjection,
+} from "./evidence.readout.contract";
+
+export {
+  MAO_MILESTONE_RECEIPT_KINDS,
+  redactFields,
+  MaoEvidenceLedger,
+  buildEvidenceReadout,
+  readoutsAreEqual,
+  evaluateRetention,
+  classifyReadoutFreshness,
+  milestoneForReceiptKind,
+  projectWorkspaceMilestones,
+} from "./evidence.readout.contract";

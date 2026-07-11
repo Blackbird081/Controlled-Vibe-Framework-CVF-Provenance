@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MAO-RUNTIME-T7
 
@@ -125,7 +125,8 @@ Returned defects: NONE_RETURNED
 
 | Artifact | Owner | Required final status |
 |---|---|---|
-| source/test/exports/catalog candidate/worker return | worker | COMPLETE_PENDING_REVIEW |
+| source/test/exports/catalog candidate/worker return | worker | PASS |
+| completion review and GC-051 entry | reviewer/closer | PASS |
 
 ## Execution Plan
 
@@ -134,10 +135,10 @@ freshness, test drift, then typecheck and gate.
 
 ## Acceptance Criteria
 
-- [ ] packet stays held until T6 acceptance;
-- [ ] receipts and read model are deterministic and secret-safe;
-- [ ] workspace remains projection-only;
-- [ ] no UI and no worker commit.
+- [x] packet stayed held until T6 acceptance;
+- [x] receipts and read model are deterministic with denylisted-field redaction;
+- [x] workspace remains projection-only;
+- [x] no UI and no worker commit.
 
 ## Evidence Requirements
 
@@ -210,7 +211,7 @@ Focused tests, secret review, typecheck, reviewer-fast and steward preflight.
 
 ## Closure Checklist
 
-- [ ] dependency released; - [ ] secret-safe; - [ ] tests pass; - [ ] no UI/commit.
+- [x] dependency released; - [x] denylisted fields redacted; - [x] tests pass; - [x] no UI/commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -232,7 +233,7 @@ Required for UI, provider, authoritative workspace, or public expansion.
 | Target paths | paired T7 packet |
 | Allowed scope source | operator and roadmap |
 | Before status evidence | clean worktree at `746d8e08c`; T6 accepted at `ee5a1a400` |
-| After status evidence | source-verified DISPATCH_READY packet |
+| After status evidence | source-verified packet, later reviewer-accepted bounded |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | packet preparation only |
 | Claim boundary | no execution/UI |
@@ -289,3 +290,24 @@ cd ../..
 python governance/compat/run_worker_return_fast_gate.py
 git status --short
 ```
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_T7_EVIDENCE_OBSERVABILITY_AND_OPERATOR_READOUT_COMPLETION_2026-07-11.md` | reviewer acceptance | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | T7 bounded implementation complete; roadmap remains active through T9 | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated GC-051 aggregate | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no Markdown regeneration required for source coverage entry | PASS |
+| External evidence digest | N/A with reason: T7 uses repository-local source and tests only | no external source ingestion | N/A with reason: not applicable |
+| System loop interlock | `docs/reviews/CVF_MAO_T7_EVIDENCE_OBSERVABILITY_AND_OPERATOR_READOUT_CATALOG_CANDIDATE_2026-07-11.md` | candidate remains pending admission; no aggregate mutation | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` and active handoff | refreshed in separate session-sync change after material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| focused receipt/readout tests | PASS | 35/35 PASS | PASS |
+| graph-bound evidence admission | mismatched graph rejected | `TASK_GRAPH_ID_MISMATCH` and no stored record | PASS |
+| worker commit boundary | no worker commit | five outputs returned uncommitted | PASS |

@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MAO-RUNTIME-T7
 
@@ -56,7 +56,7 @@ DEFERRED_PRIVATE_ONLY
 
 ## Baseline Decision
 
-Dependencies released; source-verified dispatch ready.
+Dependencies released; source-verified tranche accepted after reviewer repair.
 
 ## Scaffold Provenance Block
 
@@ -73,3 +73,24 @@ Dependencies released; source-verified dispatch ready.
 ## Evidence / Verification
 
 Current source symbols and dependency state were checked locally.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_T7_EVIDENCE_OBSERVABILITY_AND_OPERATOR_READOUT_2026-07-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_T7_EVIDENCE_OBSERVABILITY_AND_OPERATOR_READOUT_COMPLETION_2026-07-11.md` | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | T7 bounded implementation complete; roadmap remains active through T9 | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated GC-051 aggregate | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no Markdown regeneration required for source coverage entry | PASS |
+| External evidence digest | N/A with reason: repository-local source and tests only | no external source ingestion | N/A with reason: not applicable |
+| System loop interlock | `docs/reviews/CVF_MAO_T7_EVIDENCE_OBSERVABILITY_AND_OPERATOR_READOUT_CATALOG_CANDIDATE_2026-07-11.md` | candidate remains pending admission | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` and active handoff | refreshed after material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| focused receipt/readout tests | PASS | 35/35 PASS | PASS |
+| graph-bound evidence admission | mismatched graph rejected | `TASK_GRAPH_ID_MISMATCH` and no stored record | PASS |
+| worker commit boundary | no worker commit | five outputs returned uncommitted | PASS |
