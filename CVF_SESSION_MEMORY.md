@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_t0_contract_runtime_inventory_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh R94-T1 packet without implementation; parked checkpoint=R73F, R84 effectiveness, and Multi-Agent Orchestration Runtime Foundation remain evidence-gated.
+Startup acknowledged: current mode=`msea_r94_t1a_contract_guard_matrix_correction_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=worker executes only R94-T1A without committing; parked checkpoint=R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
 
 ## Current Mode
 
-Current mode marker: `msea_r94_t0_contract_runtime_inventory_closed`
+Current mode marker: `msea_r94_t1a_contract_guard_matrix_correction_dispatched`
 
-Current mode: `msea_r94_t0_contract_runtime_inventory_closed`
+Current mode: `msea_r94_t1a_contract_guard_matrix_correction_dispatched`
 
-`msea_r94_t0_contract_runtime_inventory_closed`
+`msea_r94_t1a_contract_guard_matrix_correction_dispatched`
 
 Previous mode:
 
-`msea_r94_t0_contract_runtime_inventory_dispatched`
+`msea_r94_t0_contract_runtime_inventory_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R94-T1A contract-guard matrix evidence correction dispatch | `f32175bdc` | DISPATCH_READY. Correct exactly six mismatched evidence cells using existing direct contract tests; no test/runtime mutation. |
 | MSEA-R94-T0 Contract-to-Runtime 50-row inventory closure | `db4e2369a` | REVIEWER_ACCEPTED_BOUNDED. 50/50 terminal rows, 82-file reproducible manifest, catalog invocation evidence, 50/50 operator evidence, and full pre-commit 81/81 pass. |
 | MSEA-R94-T0 Contract-to-Runtime 50-row inventory dispatch | `a58b61ae8` | DISPATCH_READY. No-commit read-only audit with per-row implementation, invocation, test-pairing, and operator/evidence-route proof. |
 | MSEA-R94 System Chain Gap Closure roadmap | `383a273c8` | PROPOSED. Prioritizes a 50-row contract-to-runtime audit, then targeted repairs and doctrine reconciliation; operator-surface implementation remains value-gated. |
@@ -79,13 +80,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r94_t0_contract_runtime_inventory_closed`
+Mode: `msea_r94_t1a_contract_guard_matrix_correction_dispatched`
 
-Next allowed move: author a fresh source-verified GC-018 and
-`WORKER_MUST_NOT_COMMIT` work order for R94-T1 repair decisions using the
-accepted 50-row ledger. Do not implement T1 or widen into T2, T3, runtime,
-checker, Web, lifecycle, public, or external-absorption work before that packet
-passes pre-dispatch. Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: worker executes only the committed R94-T1A work order,
+corrects exactly six matrix evidence cells, creates the named worker return,
+runs focused and governance gates, and stops without commit. No test, runtime,
+other row, T1B/T1C, T2-T4, session, lifecycle, provider, public, or external
+absorption mutation is authorized. Latest closed numbered LHW wave remains
+`LHW24`.
 
 Multi-Agent Orchestration Runtime Foundation is
 `VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,

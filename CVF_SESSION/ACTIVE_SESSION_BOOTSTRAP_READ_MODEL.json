@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r94_t0_contract_runtime_inventory_closed",
+  "currentMode": "msea_r94_t1a_contract_guard_matrix_correction_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R94-T0 closed REVIEWER_ACCEPTED_BOUNDED at material commit db4e2369a. Next allowed move is authoring a fresh source-verified GC-018 and WORKER_MUST_NOT_COMMIT work order for R94-T1 repair decisions using the accepted 50-row ledger. Do not implement T1, T2, T3, runtime, tests, checker, Web, lifecycle, public, or external-absorption work before that packet passes pre-dispatch. R73F and R84 effectiveness remain evidence-gated. Multi-Agent Orchestration Runtime Foundation remains VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE. After the full R94 roadmap closes, harden the automatic R85-style external-absorption intake trigger before considering that multi-agent roadmap. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R94-T1A is DISPATCH_READY at material commit f32175bdc. Next allowed move is WORKER_MUST_NOT_COMMIT execution of docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R94_T1A_CONTRACT_GUARD_MATRIX_EVIDENCE_CORRECTION_2026-07-11.md only: correct exactly six matrix evidence cells using the existing contract index test, create the named worker return, run focused and governance gates, and stop without commit. Do not edit tests, runtime, other matrix rows, T1B/T1C, T2-T4, session, lifecycle, provider, public, or external-absorption paths. R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
