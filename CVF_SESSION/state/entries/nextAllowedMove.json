@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "MAO-T4 is REVIEWER_ACCEPTED_BOUNDED at material commit f71ba01f6. Next allowed move is fresh MAO-T5 GC-018 baseline and source-verified work-order authoring only. MAO-T5 implementation, provider/network, queue, UI, closer/commit interlock, workspace runtime, public-sync, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "MAO-T5-T9 packet chain is prepared at 5a5dc0364. Next allowed move is release of the two T5 packet status lines to DISPATCH_READY followed by one delegated WORKER_MUST_NOT_COMMIT local MAO-T5 execution. MAO-T6 through T9 remain dependency-held. Provider/network, queue, UI, public-sync, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave."
 }

@@ -81,8 +81,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mao_t4_closed",
-  "previousMode": "mao_t4_dispatched",
+  "currentMode": "mao_t5_dispatched",
+  "previousMode": "mao_t4_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -10560,7 +10560,7 @@
   "mseaR87InteractiveOperatorWorkspaceInitializerClosure20260710": "CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED. Provenance material commit b3004069d adds Initialize-CVF-Operator-Workspace.ps1, agent autorun routing, an internal workflow, fail-closed profile/path/remote/dirty-core boundaries, and an accepted authorization review. Public commit a78b35c9d makes WORKSPACE_RULES.md a required and create-if-missing root artifact. Proof passed for interactive menu plan, non-interactive existing operator-local refresh, disposable fresh public-free install, disposable fresh operator-local install with 28 artifacts, workspace enforcement, blocked operator-local in-place downgrade, and blocked non-empty new target. The actual operator workspace is refreshed to public core a78b35c9d and operator-local source b3004069d. No runtime/provider/live or downstream application behavior changed.",
   "mseaR88DoubleClickWorkspaceSetupWizardClosure20260710": "CLOSED_PASS_BOUNDED. Provenance material commit b7d0e818d adds START_CVF_WORKSPACE_SETUP.cmd and a three-step WinForms wizard to the existing initializer. The user double-clicks one launcher, selects operator-local, paid-user-safe, or public-free, chooses a folder, reviews the summary, and starts setup. The launcher uses Windows PowerShell STA plus execution-policy bypass. GUI render smoke and launcher-route smoke passed; non-interactive plan regression passed. The implementation reuses the R87 setup engine and does not add a second installation path. Public repo behavior is unchanged from a78b35c9d.",
   "mseaR89WorkspaceUpdateAssessmentUserSelectedRefreshClosure20260710": "CLOSED_PASS_BOUNDED. Provenance material commit 17362cf7d adds read-only workspace assessment and explicit Check, Update, or Create selection to the double-click wizard. Check covers approved remotes, hidden-core and provenance revisions, active profile, filtered non-local source changes, materialized hashes, and required root files. Existing-workspace actions preserve the active profile; profile selection is available only for Create. GUI and launcher smoke tests, parser checks, synthetic filtered-drift proof, actual CURRENT assessment, full operator-local update, and workspace enforcement passed. The actual operator workspace remains on public core a78b35c9d with operator-local materialized from 17362cf7d. No public repository change was required.",
-  "nextAllowedMove": "MAO-T4 is REVIEWER_ACCEPTED_BOUNDED at material commit f71ba01f6. Next allowed move is fresh MAO-T5 GC-018 baseline and source-verified work-order authoring only. MAO-T5 implementation, provider/network, queue, UI, closer/commit interlock, workspace runtime, public-sync, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO-T5-T9 packet chain is prepared at 5a5dc0364. Next allowed move is release of the two T5 packet status lines to DISPATCH_READY followed by one delegated WORKER_MUST_NOT_COMMIT local MAO-T5 execution. MAO-T6 through T9 remain dependency-held. Provider/network, queue, UI, public-sync, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
   "mseaR90SystemChainAuditAClosure20260710": "REVIEWER_ACCEPTED_BOUNDED at material commit 645df8b83. Audit A closes five bounded doctrine-to-operator chain lanes with a 31-record deterministic manifest, twelve evidence-path dispositions, nine registry-invoked cross-family checker records, and a GC-051 corpus registry entry. Contract-to-runtime remains partial for sampled rows; CLI per-checker output exists while unified Web inventory is not proven. R72F lifecycle hold remains unchanged. No Deliverable B, freshness implementation, advisory-directory relocation, runtime/checker/hook mutation, public sync, or lifecycle re-decision occurred.",
   "mseaR91SystemChainMapFreshnessDispatch20260710": "DISPATCH_READY at commit 4b5b02f7c. The source-verified GC-018 and work order authorize Claude under WORKER_MUST_NOT_COMMIT to build the stable system-chain map from accepted MSEA-R90 evidence, add a deterministic source-fingerprint and age freshness checker, wire local autorun and hook catalogs plus documentation CI and a weekly read-only reminder, correct confirmed stale owner paths, add tests and GC-051 registration, and return the exact worker-owned changed set. Web/runtime/provider/public/session changes, advisory-directory relocation, and R72F lifecycle re-decision remain excluded.",
   "mseaR91SystemChainMapFreshnessClosure20260710": "REVIEWER_ACCEPTED_BOUNDED at material commit 017ae9718. MSEA-R91 closes the canonical five-lane human and machine system-chain map, 25 lane fingerprints plus 3 required top-level authority fingerprints, a 30-day governed review ceiling, read-only local and documentation-CI enforcement, a weekly reminder workflow, 17 focused tests, eleven corrected stale citations plus one honest missing-artifact disposition, and GC-051 registration. Semantic verdicts are never auto-rewritten. Web, runtime, provider, public, session-product, advisory relocation, and R72F/R73F lifecycle changes remain outside the material closure.",
@@ -11028,5 +11028,17 @@
     "verification": "78/78 focused tests, typecheck, worker-return fast, reviewer-fast, pre-commit, and committed pre-closure checks PASS except continuity pending this sync",
     "nextAllowedMove": "fresh MAO-T5 GC-018 and source-verified work-order authoring only",
     "claimBoundary": "local reviewer isolation, dissent, and bounded revision mechanics only; no provider, durable runtime, public, or production claim"
+  },
+  "maoT5T9PacketChain20260711": {
+    "status": "T5_RELEASED_T6_T9_HELD",
+    "materialCommit": "5a5dc0364",
+    "nextAllowedMove": "release T5 status then one no-commit T5 worker execution",
+    "heldPackets": [
+      "MAO-T6",
+      "MAO-T7",
+      "MAO-T8",
+      "MAO-T9"
+    ],
+    "claimBoundary": "packet preparation and T5 local worker release only"
   }
 }

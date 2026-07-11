@@ -17,9 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t4_closed`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T5
-GC-018 baseline and source-verified work-order authoring only; parked checkpoint=MAO-T5 implementation, provider/network, closer/commit interlock, broader MAO runtime, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t5_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=release T5 status and execute one MAO-T5 no-commit tranche; parked checkpoint=MAO-T6-T9 dependencies, provider/network, broader MAO runtime, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -33,9 +32,13 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t4_closed`
+`mao_t5_dispatched`
 
 ## Latest Work / Changes
+
+MAO-T5 through T9 packet-chain commit `5a5dc0364` passed gates. T5 is
+released for its final status flip and one local WORKER_MUST_NOT_COMMIT
+execution. T6-T9 remain dependency-held.
 
 MAO-T4 closure commit `f71ba01f6` is `REVIEWER_ACCEPTED_BOUNDED`.
 Independent execution rejected the worker's Vitest/Node incompatibility claim,
@@ -130,14 +133,14 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Author a fresh MAO-T5 GC-018 baseline and source-verified work order only.
-MAO-T5 implementation, provider/network, closer/commit interlock, and broader runtime remain parked.
+Release T5 packet status and execute one local MAO-T5 no-commit tranche.
+MAO-T6-T9, provider/network, and broader runtime remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
 
-MAO-T4 is closed with bounded local evidence. No real provider, queue, UI,
-public-sync, MAO-T5 implementation, R91/ASC semantic, L4, R84, or R73F change is authorized.
+MAO-T4 is closed and T5 local execution is released. No real provider, queue,
+UI, public-sync, MAO-T6+, R91/ASC semantic, L4, R84, or R73F change is authorized.
 
 ## Core Guard Self-Protection Authorization - MAO Roadmap Session Sync
 
@@ -169,6 +172,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/maoT3Closure20260711.json`
 - `CVF_SESSION/state/entries/maoT4Dispatch20260711.json`
 - `CVF_SESSION/state/entries/maoT4Closure20260711.json`
+- `CVF_SESSION/state/entries/maoT5T9PacketChain20260711.json`
 - `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 

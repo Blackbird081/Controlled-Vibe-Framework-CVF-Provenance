@@ -1,0 +1,11 @@
+{
+  "stateOrder": 1683,
+  "stateKey": "maoT5T9PacketChain20260711",
+  "value": {
+    "status": "T5_RELEASED_T6_T9_HELD",
+    "materialCommit": "5a5dc0364",
+    "nextAllowedMove": "release T5 status then one no-commit T5 worker execution",
+    "heldPackets": ["MAO-T6", "MAO-T7", "MAO-T8", "MAO-T9"],
+    "claimBoundary": "packet preparation and T5 local worker release only"
+  }
+}
