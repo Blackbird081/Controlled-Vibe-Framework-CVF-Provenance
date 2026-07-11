@@ -17,7 +17,7 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_live_t1_closed_value_not_proven`;
+Startup acknowledged: current mode=`odvr_roadmap_proposed_packet_authoring_ready`;
 active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=another operator-selected roadmap; parked checkpoint=MAO live reopen without harder-task hypothesis, durable queue/UI/public/ASC admission, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_live_t1_closed_value_not_proven`
+`odvr_roadmap_proposed_packet_authoring_ready`
 
 ## Latest Work / Changes
 
@@ -479,3 +479,41 @@ commit `2ae63592e`.
 The MAO result is a roadmap awaiting independent critique, not runtime
 implementation, provider proof, public projection, an Agent OS, or production
 orchestration readiness. ASC remains a bounded initial catalog, not exhaustive.
+
+## ODVR Roadmap Proposal And Packet-Authoring Release
+
+Material roadmap HEAD: `7c6f13ab8`.
+
+The operator selected the Operator Decision And Value Readout roadmap before
+returning to absorption of a newly chosen external repository or folder. ODVR
+is `PROPOSED`; it composes canonical decision/value pointers and must not create
+a duplicate dashboard or truth store.
+
+Next allowed move: author a fresh ODVR-T0 GC-018 baseline and source-verified
+`WORKER_MUST_NOT_COMMIT` work order for the source/overlap inventory and
+readout contract only. Composer, CLI, UI, provider/live, public-sync, and
+external repository absorption remain unauthorized. After ODVR is accepted,
+parked, or rejected, the operator may choose a new source-mirror-backed
+absorption target. Existing Agent Skills, CodeGraph, and MinerU mirrors remain
+closed absent drift or a new owner-surface gap.
+
+Session-sync parent HEAD: `7c6f13ab8`.
+
+## Core Guard Self-Protection Authorization - ODVR Roadmap Sync
+
+Operator authorization: proceed with the recommended ODVR roadmap first, then
+preserve the option to absorb other newly selected repositories.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/odvrRoadmapProposed20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain ODVR roadmap
+material commit `7c6f13ab8`.

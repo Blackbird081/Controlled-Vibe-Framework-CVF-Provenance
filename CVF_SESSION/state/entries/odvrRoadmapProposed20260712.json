@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1686,
+  "stateKey": "odvrRoadmapProposed20260712",
+  "value": {
+    "status": "PROPOSED",
+    "date": "2026-07-12",
+    "materialCommit": "7c6f13ab8",
+    "roadmap": "docs/roadmaps/CVF_OPERATOR_DECISION_AND_VALUE_READOUT_ROADMAP_2026-07-12.md",
+    "roadmapId": "ODVR",
+    "nextAllowedMove": "author a fresh ODVR-T0 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for source and overlap inventory plus the readout contract only",
+    "laterOperatorOption": "after ODVR is accepted, parked, or rejected, select a newly justified external repository or folder for source-mirror-backed absorption",
+    "claimBoundary": "roadmap and ODVR-T0 packet-authoring authorization only; no composer, CLI, UI, provider/live proof, public-sync, autonomous decision, session mutation by the future readout, or external repository absorption"
+  }
+}

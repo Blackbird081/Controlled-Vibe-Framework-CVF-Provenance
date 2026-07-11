@@ -81,8 +81,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mao_live_t1_closed_value_not_proven",
-  "previousMode": "mao_live_t1_dispatched",
+  "currentMode": "odvr_roadmap_proposed_packet_authoring_ready",
+  "previousMode": "mao_live_t1_closed_value_not_proven",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -5920,7 +5920,7 @@
     "nextAllowedMove": "Select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation.",
     "claimBoundary": "MKG owner-verification decision only; no runtime, UI, checker, MCP, CLI, IDE bridge, provider-live, public-sync, generated-state, resolver, adapter, registry, package, certification, DICE, or push scope."
   },
-  "lastUpdated": "2026-07-06",
+  "lastUpdated": "2026-07-12",
   "mpiT3ExternalAgentMemoryReadContractClosure20260627": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "b825a69c",
@@ -10560,7 +10560,7 @@
   "mseaR87InteractiveOperatorWorkspaceInitializerClosure20260710": "CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED. Provenance material commit b3004069d adds Initialize-CVF-Operator-Workspace.ps1, agent autorun routing, an internal workflow, fail-closed profile/path/remote/dirty-core boundaries, and an accepted authorization review. Public commit a78b35c9d makes WORKSPACE_RULES.md a required and create-if-missing root artifact. Proof passed for interactive menu plan, non-interactive existing operator-local refresh, disposable fresh public-free install, disposable fresh operator-local install with 28 artifacts, workspace enforcement, blocked operator-local in-place downgrade, and blocked non-empty new target. The actual operator workspace is refreshed to public core a78b35c9d and operator-local source b3004069d. No runtime/provider/live or downstream application behavior changed.",
   "mseaR88DoubleClickWorkspaceSetupWizardClosure20260710": "CLOSED_PASS_BOUNDED. Provenance material commit b7d0e818d adds START_CVF_WORKSPACE_SETUP.cmd and a three-step WinForms wizard to the existing initializer. The user double-clicks one launcher, selects operator-local, paid-user-safe, or public-free, chooses a folder, reviews the summary, and starts setup. The launcher uses Windows PowerShell STA plus execution-policy bypass. GUI render smoke and launcher-route smoke passed; non-interactive plan regression passed. The implementation reuses the R87 setup engine and does not add a second installation path. Public repo behavior is unchanged from a78b35c9d.",
   "mseaR89WorkspaceUpdateAssessmentUserSelectedRefreshClosure20260710": "CLOSED_PASS_BOUNDED. Provenance material commit 17362cf7d adds read-only workspace assessment and explicit Check, Update, or Create selection to the double-click wizard. Check covers approved remotes, hidden-core and provenance revisions, active profile, filtered non-local source changes, materialized hashes, and required root files. Existing-workspace actions preserve the active profile; profile selection is available only for Create. GUI and launcher smoke tests, parser checks, synthetic filtered-drift proof, actual CURRENT assessment, full operator-local update, and workspace enforcement passed. The actual operator workspace remains on public core a78b35c9d with operator-local materialized from 17362cf7d. No public repository change was required.",
-  "nextAllowedMove": "MAO-LIVE-T1 is REVIEWER_ACCEPTED_VALUE_NOT_PROVEN. Reopen only when direct baseline is at most 80/100 or has one rubric-defined material defect, the reviewer hypothesis names that defect, success requires at least 10 quality points or defect correction, the run stays within four calls/one revision/50 percent latency overhead, and the operator approves a fresh packet. Existing Agent Skills, CodeGraph, and MinerU mirrors are already deeply absorbed; do not reopen them without upstream drift or a new owner-surface gap. Next move is an operator-decision/readout roadmap or a newly justified source-mirror target. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "ODVR roadmap is PROPOSED at material commit 7c6f13ab8. Next move is fresh ODVR-T0 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work-order authoring for the overlap inventory and readout contract only. No composer, CLI, UI, provider, public-sync, or external repository absorption is authorized yet. After ODVR is accepted, parked, or rejected, the operator may select a newly justified external repository or folder for source-mirror-backed absorption. Existing Agent Skills, CodeGraph, and MinerU mirrors remain closed absent upstream drift or a new owner-surface gap. MAO live reopen remains subject to its five quantified conditions. LHW24 remains latest closed numbered LHW wave.",
   "maoT7ClosureAwaitingT8PilotSelection20260711": "MAO-T7 Evidence, Observability, And Operator Readout is REVIEWER_ACCEPTED_BOUNDED at material commit 2ae63592e from clean execution HEAD 3a56da449. Worker returned exactly five uncommitted outputs. Codex independently reran the focused suite and typecheck, found that the graph-bound ledger accepted cross-graph evidence, repaired it with fail-closed TASK_GRAPH_ID_MISMATCH handling, and added a negative test. Final evidence: focused Vitest PASS 35/35, TypeScript typecheck PASS, worker-return fast gate PASS, reviewer-fast 61/61 PASS, pre-commit 82/82 PASS, and committed-range pre-closure content gates PASS except the expected active-handoff HEAD freshness before this session sync. The catalog artifact remains CANDIDATE_PENDING_ADMISSION and the secret-safety claim is bounded to denylisted-field-name redaction. Next move is a fresh MAO-T8 pilot-selection checkpoint naming one real bounded task and proof class; T8 execution and T9 remain held.",
   "mseaR90SystemChainAuditAClosure20260710": "REVIEWER_ACCEPTED_BOUNDED at material commit 645df8b83. Audit A closes five bounded doctrine-to-operator chain lanes with a 31-record deterministic manifest, twelve evidence-path dispositions, nine registry-invoked cross-family checker records, and a GC-051 corpus registry entry. Contract-to-runtime remains partial for sampled rows; CLI per-checker output exists while unified Web inventory is not proven. R72F lifecycle hold remains unchanged. No Deliverable B, freshness implementation, advisory-directory relocation, runtime/checker/hook mutation, public sync, or lifecycle re-decision occurred.",
   "maoT8PilotDispatch20260711": "MAO-T8 Representative End-To-End Pilot is DISPATCH_READY at material commit 23d1b23ce from base 47ed44b12. Fresh selection checkpoint chooses MAO-T8-LOCAL-STALE-READOUT-REPAIR with proof class DETERMINISTIC_LOCAL_CONTRACT_PROOF and provider disposition NO_PROVIDER_LOCAL_ONLY. Worker owns exactly five outputs: representative.pilot.contract.ts, its focused test, bounded mao/index.ts exports, the T8 pilot evidence packet, and the T8 worker return. WORKER_MUST_NOT_COMMIT. Pre-dispatch autorun PASS 75/75, dispatch commit steward PASS, and pre-commit PASS 82/82. T9 remains dependency-held; no provider, network, UI, public-sync, durable queue, or production claim is authorized.",
@@ -11063,5 +11063,15 @@
     "verification": "58/58 focused tests, typecheck and governance gates PASS",
     "nextAllowedMove": "refresh T7 packet then one no-commit T7 execution",
     "claimBoundary": "T6 local closure and T7 local evidence/readout packet release only"
+  },
+  "odvrRoadmapProposed20260712": {
+    "status": "PROPOSED",
+    "date": "2026-07-12",
+    "materialCommit": "7c6f13ab8",
+    "roadmap": "docs/roadmaps/CVF_OPERATOR_DECISION_AND_VALUE_READOUT_ROADMAP_2026-07-12.md",
+    "roadmapId": "ODVR",
+    "nextAllowedMove": "author a fresh ODVR-T0 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for source and overlap inventory plus the readout contract only",
+    "laterOperatorOption": "after ODVR is accepted, parked, or rejected, select a newly justified external repository or folder for source-mirror-backed absorption",
+    "claimBoundary": "roadmap and ODVR-T0 packet-authoring authorization only; no composer, CLI, UI, provider/live proof, public-sync, autonomous decision, session mutation by the future readout, or external repository absorption"
   }
 }
