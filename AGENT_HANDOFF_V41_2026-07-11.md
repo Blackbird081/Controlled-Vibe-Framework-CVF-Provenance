@@ -17,9 +17,9 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t1_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=delegated worker
-captures clean post-sync HEAD and executes MAO-T1 without committing; parked checkpoint=MAO-T2+, provider/integration, broader MAO runtime, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t1_closed`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T2
+GC-018 and source-verified work-order authoring only; parked checkpoint=MAO-T2 implementation, provider/integration, broader MAO runtime, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -33,13 +33,15 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t1_dispatched`
+`mao_t1_closed`
 
 ## Latest Work / Changes
 
-MAO-T1 material dispatch commit `6383e8180` is `DISPATCH_READY`. Worker must
-capture the actual clean post-session-sync HEAD, produce exactly six outputs,
-and return without committing. Root barrels/monoliths and integration are forbidden.
+MAO-T1 material closure commit `01618e9dc` is `REVIEWER_ACCEPTED_BOUNDED`.
+Reviewer verification passed 39/39 focused tests, TypeScript typecheck, GC-051
+coverage, worker-return/reviewer-fast gates, and the 82/82 pre-commit chain.
+The reviewer permitted shared write scope only when dependency reachability
+serializes the task pair; unordered overlap remains rejected.
 
 MAO-T0 material closure commit `dbe963b03` is
 `REVIEWER_ACCEPTED_BOUNDED`. It adds the MAO front door, source inventory,
@@ -98,15 +100,15 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Execute MAO-T1 as one `WORKER_MUST_NOT_COMMIT` worker after capturing the clean
-post-sync HEAD. MAO-T2+, provider/integration, L4, T3B, R73F, R84 effectiveness, and broader MAO runtime remain
-parked. Latest closed numbered LHW wave remains `LHW24`.
+Author a fresh MAO-T2 GC-018 and source-verified work order only. MAO-T2
+implementation, provider/integration, L4, T3B, R73F, R84 effectiveness, and
+broader MAO runtime remain parked. Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
 
-MAO is roadmap-only and awaiting critique. No GC-018/work order, runtime,
-provider, queue, UI, package, public-sync, R91/ASC semantic, L4, R84, or R73F
-change is authorized. ASC remains closed bounded with three terminal gaps.
+MAO-T1 is closed bounded. Only MAO-T2 packet authoring is authorized; no T2
+implementation, provider, queue, UI, public-sync, R91/ASC semantic, L4, R84,
+or R73F change is authorized. ASC remains closed bounded with three terminal gaps.
 
 ## Core Guard Self-Protection Authorization - MAO Roadmap Session Sync
 
@@ -131,6 +133,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/maoT0Dispatch20260711.json`
 - `CVF_SESSION/state/entries/maoT0Closure20260711.json`
 - `CVF_SESSION/state/entries/maoT1Dispatch20260711.json`
+- `CVF_SESSION/state/entries/maoT1Closure20260711.json`
 - `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 

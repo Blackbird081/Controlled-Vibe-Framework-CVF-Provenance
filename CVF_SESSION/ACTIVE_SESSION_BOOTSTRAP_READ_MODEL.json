@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mao_t1_dispatched",
+  "currentMode": "mao_t1_closed",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "MAO-T1-DISPATCH is DISPATCH_READY at material commit 6383e8180. Next allowed move is one delegated WORKER_MUST_NOT_COMMIT execution after capturing the actual clean post-sync HEAD. Produce exactly five implementation/test files plus one worker return. Provider, resolver, adapter, queue, UI, root-barrel, workspace/session, public-sync, and MAO-T2 work remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO-T1 is REVIEWER_ACCEPTED_BOUNDED at material commit 01618e9dc. Next allowed move is fresh MAO-T2 GC-018 and source-verified work-order authoring only. MAO-T2 implementation, provider, resolver, adapter, queue, UI, workspace runtime, public-sync, and production claims remain unauthorized until that packet is reviewed and dispatched. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t1_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=delegated worker captures clean post-sync HEAD and executes MAO-T1 without committing; parked checkpoint=MAO-T2+, provider/integration, broader MAO runtime, L4, T3B, R73F, R84 effectiveness.
+Startup acknowledged: current mode=`mao_t1_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T2 GC-018 and source-verified work-order authoring only; parked checkpoint=MAO-T2 implementation, provider/integration, broader MAO runtime, L4, T3B, R73F, R84 effectiveness.
 
 ## Current Mode
 
-Current mode marker: `mao_t1_dispatched`
+Current mode marker: `mao_t1_closed`
 
-Current mode: `mao_t1_dispatched`
+Current mode: `mao_t1_closed`
 
-`mao_t1_dispatched`
+`mao_t1_closed`
 
 Previous mode:
 
-`mao_t0_closed`
+`mao_t1_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T1 task graph/state foundation closure | `01618e9dc` | REVIEWER_ACCEPTED_BOUNDED; 39/39 focused tests, typecheck, GC-051 coverage, and 82/82 pre-commit checks pass. |
 | MAO-T1 task graph/state foundation dispatch | `6383e8180` | DISPATCH_READY; six exact worker outputs; worker must not commit. |
 | MAO-T0 contract/schema foundation closure | `dbe963b03` | REVIEWER_ACCEPTED_BOUNDED; four reference/schema artifacts plus accepted return/review. |
 | MAO-T0 contract foundation dispatch | `f42195d20` | DISPATCH_READY; delegated worker must not commit; five exact outputs. |
@@ -103,11 +104,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t1_dispatched`
+Mode: `mao_t1_closed`
 
-MAO-T1 is dispatch-ready at `6383e8180`. Next allowed move is one delegated
-worker execution after capturing the actual clean post-sync HEAD, producing
-five implementation/test files plus one worker return without committing.
+MAO-T1 is reviewer-accepted bounded at `01618e9dc`. Next allowed move is fresh
+MAO-T2 GC-018 and source-verified work-order authoring only. MAO-T2
+implementation remains unauthorized until that packet is reviewed and dispatched.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 
