@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -10,9 +10,9 @@ Batch: MAO-T3
 
 dispatchBaseHead: `ecb2679a6`
 
-executionBaseHead: capture actual clean post-dispatch-sync HEAD before editing.
+executionBaseHead: `e053f5e29`
 
-closureBaseHead: N/A with reason: reviewer conversion has not occurred.
+closureBaseHead: `e053f5e29`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -217,10 +217,10 @@ Exactly four worker paths.
 
 | Artifact | Owner | Required evidence | Status |
 |---|---|---|---|
-| adapter source | worker | focused tests/typecheck | REQUIRED |
-| focused test | worker | positive/negative/idempotency cases | REQUIRED |
-| local MAO barrel | worker | bounded export only | REQUIRED |
-| worker return | worker | complete pending review | REQUIRED |
+| adapter source | worker | focused tests/typecheck | PASS |
+| focused test | worker | positive/negative/idempotency cases | PASS |
+| local MAO barrel | worker | bounded export only | PASS |
+| worker return | worker | complete pending review | PASS |
 
 ## Worker Return Packet Shape Contract
 
@@ -254,12 +254,12 @@ Inventory, trace, Delta boundary, public disposition, and actual status.
 
 ## Acceptance Criteria
 
-- [ ] Capability and authority are validated before fake/local action.
-- [ ] Only admitted roles may invoke; approval-required/rejected plans fail closed.
-- [ ] Idempotency replay returns existing receipt and conflicts are classified.
-- [ ] Receipt matches T0 invocation fields and diagnostics are secret-safe.
-- [ ] No provider/network/commit/queue/public action occurs.
-- [ ] Focused tests, typecheck, fast gate, and self-audit pass.
+- [x] Capability and authority are validated before fake/local action.
+- [x] Only admitted roles may invoke; approval-required/rejected plans fail closed.
+- [x] Idempotency replay returns existing receipt and conflicts are classified.
+- [x] Receipt matches T0 invocation fields and diagnostics are secret-safe.
+- [x] No provider/network/commit/queue/public action occurs.
+- [x] Focused tests, typecheck, fast gate, and self-audit pass.
 
 ## Evidence Requirements
 
@@ -278,10 +278,10 @@ reviewer-return steward preflight before acceptance.
 
 ## Closure Checklist
 
-- [ ] Requirements and commands pass after final edit.
-- [ ] Closure Diff Gate and exact changed-set evidence complete.
-- [ ] No runtime/provider/public expansion occurred.
-- [ ] Continuity sync remains separate after material commit.
+- [x] Requirements and commands pass after final edit.
+- [x] Closure Diff Gate and exact changed-set evidence complete.
+- [x] No runtime/provider/public expansion occurred.
+- [x] Continuity sync remains separate after material commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -356,13 +356,24 @@ Next action: retain in provenance through MAO closure.
 
 ## Machine Closure Package
 
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T3 completion review | `REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | governing MAO roadmap | `PROPOSED` | PASS |
+| Registry JSON | corpus registry JSON | generated MAO-T3 coverage | PASS |
+| Registry Markdown | corpus registry Markdown | current companion | PASS |
+| External evidence digest | N/A with reason: none | internal evidence only | N/A with reason |
+| System loop interlock | existing registry | no mutation required | PASS |
+| Session continuity | active front doors | separate sync required | PASS |
+
 | Field | Value |
 |---|---|
-| Work-order state | `DISPATCH_READY` |
+| Work-order state | `CLOSED_PASS_BOUNDED` |
 | Commit mode | `WORKER_MUST_NOT_COMMIT` |
 | Dependencies | T1/T2 accepted |
 | Worker terminal status | `COMPLETE_PENDING_REVIEW` only |
-| Next action | delegated fake/local execution from clean post-sync HEAD |
+| Next action | fresh MAO-T4 packet authoring only |
 
 ## Acceptance Receipt Assertion Matrix
 

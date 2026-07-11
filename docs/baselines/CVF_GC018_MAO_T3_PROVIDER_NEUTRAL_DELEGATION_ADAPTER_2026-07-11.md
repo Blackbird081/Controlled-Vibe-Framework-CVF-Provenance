@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -10,9 +10,9 @@ Batch: MAO-T3
 
 dispatchBaseHead: `ecb2679a6`
 
-executionBaseHead: capture actual clean post-dispatch-sync HEAD before editing.
+executionBaseHead: `e053f5e29`
 
-closureBaseHead: N/A with reason: worker and reviewer conversion have not occurred.
+closureBaseHead: `e053f5e29`
 
 ## Purpose
 
@@ -130,12 +130,23 @@ Next action: retain in provenance through MAO closure.
 
 ## Machine Closure Package
 
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T3 completion review | `REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | governing MAO roadmap | `PROPOSED` | PASS |
+| Registry JSON | corpus registry JSON | generated MAO-T3 coverage | PASS |
+| Registry Markdown | corpus registry Markdown | current companion | PASS |
+| External evidence digest | N/A with reason: none | internal evidence only | N/A with reason |
+| System loop interlock | existing registry | no mutation required | PASS |
+| Session continuity | active front doors | separate sync required | PASS |
+
 | Field | Value |
 |---|---|
-| Baseline state | `DISPATCH_READY` |
+| Baseline state | `CLOSED_PASS_BOUNDED` |
 | Dependencies | T1/T2 accepted |
 | Commit mode | `WORKER_MUST_NOT_COMMIT` |
-| Next action | execute paired work order only |
+| Next action | fresh MAO-T4 packet authoring only |
 
 ## Acceptance Receipt Assertion Matrix
 

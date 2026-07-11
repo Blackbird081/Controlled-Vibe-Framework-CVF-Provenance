@@ -75,3 +75,18 @@ export type {
 } from "./read.model.contract";
 
 export { buildReadModel, readModelsAreEqual } from "./read.model.contract";
+
+export type {
+  MaoAdmissionReceiptLike,
+  MaoDiagnosticClass,
+  MaoCapabilityDeclaration,
+  MaoUsageEnvelope,
+  MaoInvocationReceipt,
+  MaoInvocationRejectionReason,
+  MaoInvocationRequest,
+  MaoInvocationSuccess,
+  MaoInvocationFailure,
+  MaoInvocationResult,
+} from "./delegation.adapter.contract";
+
+export { MaoDelegationAdapter, createMaoDelegationAdapter } from "./delegation.adapter.contract";
