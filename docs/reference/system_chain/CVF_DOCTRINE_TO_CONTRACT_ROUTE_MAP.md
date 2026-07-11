@@ -10,8 +10,8 @@ Date: 2026-07-11
 
 EPISTEMIC_PROCESS_NA_WITH_REASON: this reference consolidates reviewer-accepted
 MSEA-R90/R91 Lane 1 findings into one navigable route table; the L1/L2/L4/L6
-rows below additionally carry MSEA-R96's worker-return evidence pending
-independent reviewer acceptance. This reference does not itself compare new
+rows below additionally carry reviewer-accepted MSEA-R96 evidence and the R97
+L6 inventory alignment. This reference does not itself compare new
 evidence or update an empirical claim beyond that acceptance.
 
 ## Purpose
@@ -59,7 +59,7 @@ acceptance.
 | L3 - Operating Model | `/operating-model` | `ECOSYSTEM/operating-model/` | ACTIVE_PRESENT | direct read: `ECOSYSTEM/operating-model/` exists in the active tree, matching doctrine's named contents |
 | L4 - Product Implementation | `/cvf-core` | none proven as a current doctrine-equivalent owner | SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE | MSEA-R96 reviewer-accepted evidence: the doctrine-named `/cvf-core` location does not exist; `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/README.md` self-declares Pre-Public Status and not yet published, consistent with `docs/reference/CVF_MODULE_INVENTORY.md` listing it as `draft`/`future-facing`, which is insufficient to promote it to the active L4 doctrine owner |
 | L5 - Governance Modules | `/agents`, `/policy`, `/audit`, `/identity` | `governance/` | NAMED_DIFFERENTLY_ACTIVE_OWNER | `governance/` (subfolders `compat/`, `contracts/`, `registries/`, `schemas/`, `skill-library/`, `toolkit/`) is the active-tree governance-infrastructure owner; none of the four doctrine-named folders (`/agents`, `/policy`, `/audit`, `/identity`) exist verbatim in the active tree |
-| L6 - Ecosystem Layer | `/examples`, `/docs` | `docs/` plus `EXTENSIONS/examples/` and `governance/toolkit/06_EXAMPLES/` (partial) | PARTIAL_OWNER_WITH_GAP | MSEA-R96 reviewer-accepted evidence: `docs/` exists and matches the doctrine's documentation/onboarding responsibility; `/examples` does not exist as a named active-tree directory; `EXTENSIONS/examples/` (13 tracked files across 4 subdirectories) and `governance/toolkit/06_EXAMPLES/` together match the example-content responsibility by content, but neither is consolidated or listed in the module inventory |
+| L6 - Ecosystem Layer | `/examples`, `/docs` | `docs/` plus `EXTENSIONS/examples/` and `governance/toolkit/06_EXAMPLES/` (partial) | PARTIAL_OWNER_WITH_GAP | R96 evidence plus R97 inventory alignment: `docs/` owns documentation/onboarding; `/examples` does not exist as a named root directory; `EXTENSIONS/examples/` is now inventoried as an `active-reference` L6 examples surface with 13 tracked files, while toolkit examples remain a narrower second location; responsibility is real but still distributed and unconsolidated |
 
 Row disposition vocabulary used above:
 
@@ -81,9 +81,9 @@ Row disposition vocabulary used above:
   responsibility by content under a different name/location; a doctrine-level
   adaptation decision is evidence-supported but not executed.
 - `PARTIAL_OWNER_WITH_GAP`: responsibility coverage is confirmed real but
-  distributed across more than one un-consolidated active-tree location, none
-  of which is the doctrine-named folder itself, and at least one is absent
-  from the module inventory.
+  distributed across more than one unconsolidated active-tree location, none
+  of which is the doctrine-named root folder itself. R97 removed the inventory
+  omission for `EXTENSIONS/examples/`; the distributed/path-alignment gap remains.
 
 ## Independent Numbering Map Cross-Reference
 
@@ -119,14 +119,13 @@ intentional, not unresolved drift requiring reconciliation:
 This reference does not decide whether the L1/L4 unresolved-owner rows should
 be closed by creating active-tree `system/` or `cvf-core/` directories, does
 not execute the L2 `ADAPTATION_CANDIDATE` finding as a doctrine change, does
-not execute the L6 `PARTIAL_OWNER_WITH_GAP` finding as a module-inventory or
-consolidation change, does not reconcile the independent numbering schemes
+records the R97 module-inventory alignment but does not execute L6 content
+consolidation or root-path alignment, does not reconcile the independent numbering schemes
 into one vocabulary, and does not change any doctrine, module-map, or
 governance-control-matrix content. Per the R94 roadmap, "a separate
 doctrine/architecture reconciliation decision may cross-reference or
 intentionally separate the narrations; not authorized by this map." The
-MSEA-R96 evidence cited in the L1/L2/L4/L6 rows is worker-return evidence
-reviewer acceptance recorded; see
+MSEA-R96 evidence cited in the L1/L2/L4/L6 rows is reviewer accepted; see
 `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md`.
 
 ## Freshness
@@ -147,8 +146,8 @@ the legacy mirror (read only to confirm an already-governed L1/L2 absence,
 not to absorb it), reviewer-accepted MSEA-R90/R91 Lane 1 findings, and
 reviewer-accepted MSEA-R96 L1/L2/L4/L6 evidence. It does not certify architectural correctness beyond that
 acceptance, does not promote legacy-only content to active CVF authority,
-does not execute the L2 `ADAPTATION_CANDIDATE` or L6 `PARTIAL_OWNER_WITH_GAP`
-findings as doctrine or inventory changes, does not reconcile the independent
+does not execute the L2 `ADAPTATION_CANDIDATE` or close the L6
+`PARTIAL_OWNER_WITH_GAP`, does not reconcile the independent
 numbering schemes into one vocabulary, does not authorize a new active-tree
 `system/`, `protocols/`, `cvf-core/`, or `examples/` directory, and does not
 introduce a second freshness mechanism.

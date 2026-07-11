@@ -60,8 +60,9 @@ R94-T2 adds the active companion route
 cross-references the three CVF-governed independent numbering narratives
 without treating them as equivalent. R96 retains L1 and L4 as unresolved with
 search evidence, identifies `AGENTS.md` as an L2 adaptation candidate pending
-ratification, and records L6 responsibility as real but distributed with an
-inventory/consolidation gap.
+ratification, and records L6 responsibility as real but distributed. R97 adds
+the missing module-inventory row for `EXTENSIONS/examples/`; consolidation and
+root-path alignment remain open.
 
 **Posture: PARTIAL.** Verdict: `PARTIAL_CHAIN_WITH_DOCUMENTED_DRIFT`.
 
