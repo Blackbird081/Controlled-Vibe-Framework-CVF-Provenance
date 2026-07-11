@@ -17,9 +17,9 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t0_dispatch_authoring`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author and
-gate fresh MAO-T0 GC-018/work order; parked checkpoint=MAO runtime implementation, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t0_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=delegated worker
+executes MAO-T0 from `f42195d20` without committing; parked checkpoint=MAO runtime implementation, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -33,9 +33,13 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t0_dispatch_authoring`
+`mao_t0_dispatched`
 
 ## Latest Work / Changes
+
+MAO-T0 dispatch commit `f42195d20` is `DISPATCH_READY`. The delegated worker
+must use exact execution base `f42195d20`, produce exactly five outputs, and
+return without committing.
 
 MAO critique reconciliation commit `d61c3c92c` is
 `REVIEWER_ACCEPTED_BOUNDED` with verdict
@@ -85,8 +89,8 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Author and gate a fresh MAO-T0 GC-018/source-verified work order for one
-`WORKER_MUST_NOT_COMMIT` worker. L4, T3B, R73F, R84 effectiveness, and MAO runtime implementation remain
+Execute MAO-T0 from `f42195d20` as one `WORKER_MUST_NOT_COMMIT` worker. L4,
+T3B, R73F, R84 effectiveness, and MAO runtime implementation remain
 parked. Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
@@ -115,6 +119,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/maoRoadmapProposed20260711.json`
 - `CVF_SESSION/state/entries/maoRoadmapCritiqueReconciliation20260711.json`
+- `CVF_SESSION/state/entries/maoT0Dispatch20260711.json`
 - `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 

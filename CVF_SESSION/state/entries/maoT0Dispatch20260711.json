@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1673,
+  "stateKey": "maoT0Dispatch20260711",
+  "value": {
+    "status": "DISPATCH_READY",
+    "commit": "f42195d20",
+    "baseline": "docs/baselines/CVF_GC018_MAO_T0_SOURCE_INVENTORY_ARCHITECTURE_DECISIONS_AND_SCHEMAS_2026-07-11.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_T0_SOURCE_INVENTORY_ARCHITECTURE_DECISIONS_AND_SCHEMAS_2026-07-11.md",
+    "executionBaseHead": "f42195d20",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerOutputs": 5,
+    "nextAllowedMove": "delegated worker executes MAO-T0 and returns uncommitted material for independent review",
+    "claimBoundary": "docs/schema contract tranche only; no MAO runtime implementation"
+  }
+}

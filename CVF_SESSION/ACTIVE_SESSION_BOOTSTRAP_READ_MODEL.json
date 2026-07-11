@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mao_t0_dispatch_authoring",
+  "currentMode": "mao_t0_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "MAO critique reconciliation is REVIEWER_ACCEPTED_BOUNDED at commit d61c3c92c with verdict INTERNAL_RECONCILIATION_ACCEPTED_WITH_T0_CAVEATS. Next allowed move is author and gate a fresh MAO-T0 GC-018/source-verified work order for one WORKER_MUST_NOT_COMMIT worker. No runtime implementation, provider call, queue, UI, public-sync, or session mutation by the worker. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO-T0-DISPATCH is DISPATCH_READY at commit f42195d20. Next allowed move is delegated worker execution from exact base f42195d20 under WORKER_MUST_NOT_COMMIT, producing exactly four reference/schema artifacts plus one worker return. No runtime implementation, provider call, subagent spawn, queue, UI, public-sync, or session mutation by the worker. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

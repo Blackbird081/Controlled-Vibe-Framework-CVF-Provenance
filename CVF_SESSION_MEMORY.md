@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t0_dispatch_authoring`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author and gate fresh MAO-T0 GC-018/work order; parked checkpoint=MAO runtime implementation, L4 promotion, T3B, R73F, and R84 effectiveness.
+Startup acknowledged: current mode=`mao_t0_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=delegated worker executes MAO-T0 from `f42195d20` without committing; parked checkpoint=MAO runtime implementation, L4 promotion, T3B, R73F, and R84 effectiveness.
 
 ## Current Mode
 
-Current mode marker: `mao_t0_dispatch_authoring`
+Current mode marker: `mao_t0_dispatched`
 
-Current mode: `mao_t0_dispatch_authoring`
+Current mode: `mao_t0_dispatched`
 
-`mao_t0_dispatch_authoring`
+`mao_t0_dispatched`
 
 Previous mode:
 
-`mao_roadmap_proposed_awaiting_external_critique`
+`mao_t0_dispatch_authoring`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T0 contract foundation dispatch | `f42195d20` | DISPATCH_READY; delegated worker must not commit; five exact outputs. |
 | MAO roadmap critique reconciliation | `d61c3c92c` | REVIEWER_ACCEPTED_BOUNDED; T0 packet authoring released with three caveats. |
 | MAO runtime foundation roadmap | `6a08a041e` | PROPOSED after R94/R95 reopen audit; external critique is next; implementation remains parked. |
 | MSEA-ASC architecture catalog closure | `6273f3413` | REVIEWER_ACCEPTED_BOUNDED; 22 entities, 3 gaps, deterministic local/CI/weekly freshness. |
@@ -100,11 +101,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t0_dispatch_authoring`
+Mode: `mao_t0_dispatched`
 
-MAO critique reconciliation is accepted at `d61c3c92c`. Next allowed move is
-author and gate a fresh MAO-T0 GC-018 and source-verified
-`WORKER_MUST_NOT_COMMIT` work order. MAO runtime implementation remains parked.
+MAO-T0-DISPATCH is ready at `f42195d20`. Next allowed move is delegated worker
+execution from that exact base under `WORKER_MUST_NOT_COMMIT`, producing four
+reference/schema artifacts plus one worker return. MAO runtime implementation remains parked.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 
