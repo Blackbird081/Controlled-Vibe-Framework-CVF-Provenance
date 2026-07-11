@@ -42,6 +42,9 @@ released for packet refresh and one no-commit execution.
 
 MAO-T6 closure/T7 release session commit is `494961fde`.
 
+MAO-T7 dispatch commit `460a5ba5f` is `DISPATCH_READY`; worker returns exactly
+five uncommitted outputs and must not build UI or mutate workspace state.
+
 MAO-T5 is closed at `9b225f0e4`; MAO-T6 local lifecycle-controller packet is
 released for anchor/status refresh and one no-commit worker execution.
 
