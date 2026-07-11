@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -10,9 +10,9 @@ Batch ID: MAO-T1-DISPATCH
 
 dispatchBaseHead: `329f4a985`
 
-executionBaseHead: `TO_BE_CAPTURED_BY_WORKER_AT_START`
+executionBaseHead: `c1089bf2a`
 
-closureBaseHead: `TO_BE_CAPTURED_BY_REVIEWER_AT_CLOSURE`
+closureBaseHead: `c1089bf2a`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -225,7 +225,10 @@ Contract sources, active and not archive:
 completionReviewPath: `docs/reviews/CVF_MAO_T1_TASK_GRAPH_AND_STATE_CONTRACT_COMPLETION_2026-07-11.md`
 
 reviewerOwnedClosurePaths: completion review, baseline/work-order closure
-conversion, and allowed repairs to the six worker paths. Session sync is separate.
+conversion, allowed repairs to the six worker paths, and the minimum GC-051
+registry source/aggregate coverage required for the five new execution-plane
+source/test paths. Session sync is separate. Registry coverage is reviewer-only
+closure metadata; the worker prohibition remains enforced.
 
 ## Roadmap-to-Work-Order Trace Matrix
 
@@ -242,6 +245,17 @@ conversion, and allowed repairs to the six worker paths. Session sync is separat
 ## Work-Order Fulfillment Manifest
 
 Exactly five implementation/test files plus one worker return. No optional path.
+
+## Required Artifact Manifest
+
+| Artifact | Owner | Required disposition |
+|---|---|---|
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.graph.contract.ts` | worker | REQUIRED |
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/event.ledger.contract.ts` | worker | REQUIRED |
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/read.model.contract.ts` | worker | REQUIRED |
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/index.ts` | worker | REQUIRED |
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.task.graph.state.contract.test.ts` | worker | REQUIRED |
+| `docs/reviews/CVF_MAO_T1_TASK_GRAPH_AND_STATE_CONTRACT_WORKER_RETURN_2026-07-11.md` | worker | REQUIRED |
 
 ## Worker Return Packet Shape Contract
 
@@ -308,12 +322,12 @@ semantics against T0, validates exact manifest, and alone accepts/commits.
 
 ## Closure Checklist
 
-- [ ] Six worker paths reviewed.
-- [ ] T0 vocabulary mapping verified.
-- [ ] Positive and negative tests pass.
-- [ ] Deterministic replay proven.
-- [ ] No forbidden path or claim.
-- [ ] Worker-return fast gate passes.
+- [x] Six worker paths reviewed.
+- [x] T0 vocabulary mapping verified.
+- [x] Positive and negative tests pass.
+- [x] Deterministic replay proven.
+- [x] No forbidden path or claim.
+- [x] Worker-return fast gate passes after reviewer-owned GC-051 coverage.
 
 ## Return-To-Orchestrator Conditions
 
@@ -373,7 +387,7 @@ a separate packet and sibling public-sync clone.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | DISPATCH_READY | N/A with reason: execution pending |
+| Work order status | this work order | CLOSED_PASS_BOUNDED | PASS |
 | Completion or reviewer artifact | T0 completion review | REVIEWER_ACCEPTED_BOUNDED | PASS |
 | Roadmap state | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | PROPOSED | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | current; no T1 registration required | PASS |

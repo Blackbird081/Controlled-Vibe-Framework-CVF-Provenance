@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -10,9 +10,9 @@ Batch ID: MAO-T1-DISPATCH
 
 dispatchBaseHead: `329f4a985`
 
-executionBaseHead: `TO_BE_CAPTURED_BY_WORKER_AT_START`
+executionBaseHead: `c1089bf2a`
 
-closureBaseHead: `TO_BE_CAPTURED_BY_REVIEWER_AT_CLOSURE`
+closureBaseHead: `c1089bf2a`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -129,7 +129,7 @@ requires a separate packet in the sibling public-sync clone.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired work order | DISPATCH_READY | N/A with reason: execution pending |
+| Work order status | paired work order | CLOSED_PASS_BOUNDED | PASS |
 | Completion or reviewer artifact | T0 completion review | REVIEWER_ACCEPTED_BOUNDED | PASS |
 | Roadmap state | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | PROPOSED | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | current; no T1 registration required | PASS |
