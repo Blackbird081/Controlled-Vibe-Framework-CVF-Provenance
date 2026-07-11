@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r96_doctrine_route_gap_reconciliation_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select a fresh bounded owner-action packet from accepted R96 dispositions; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_r97_l6_examples_inventory_alignment_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute and close the bounded R97 single-agent multi-role packet; parked checkpoint=L2 ratification, L1 owner design, L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r96_doctrine_route_gap_reconciliation_c
 
 ## Current Mode
 
-`msea_r96_doctrine_route_gap_reconciliation_closed`
+`msea_r97_l6_examples_inventory_alignment_dispatched`
 
 ## Latest Work / Changes
 
@@ -939,6 +939,25 @@ Protected paths:
 
 Operator authorization: complete R96 review. Rollback boundary: revert only
 this session-sync; retain material commit `d733abd70`.
+
+## Core Guard Self-Protection Authorization - MSEA-R97 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync after `6eea64bf5`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to R97 execution. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R97 dispatch. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set dispatched mode. |
+| `CVF_SESSION/state/entries/mseaR97L6ExamplesInventoryAlignmentDispatch20260711.json` | Record dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route bounded execution. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: handle L6 directly. Rollback boundary: revert only
+this sync; retain `6eea64bf5`.
 
 ## Claim Boundary
 

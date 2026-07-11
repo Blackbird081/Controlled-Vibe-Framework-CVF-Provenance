@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r96_doctrine_route_gap_reconciliation_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select a fresh bounded owner-action packet from accepted R96 dispositions; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_r97_l6_examples_inventory_alignment_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute and close the bounded R97 single-agent multi-role packet; parked checkpoint=L2 ratification, L1 owner design, L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Current Mode
 
-Current mode marker: `msea_r96_doctrine_route_gap_reconciliation_closed`
+Current mode marker: `msea_r97_l6_examples_inventory_alignment_dispatched`
 
-Current mode: `msea_r96_doctrine_route_gap_reconciliation_closed`
+Current mode: `msea_r97_l6_examples_inventory_alignment_dispatched`
 
-`msea_r96_doctrine_route_gap_reconciliation_closed`
+`msea_r97_l6_examples_inventory_alignment_dispatched`
 
 Previous mode:
 
-`msea_r96_doctrine_route_gap_reconciliation_dispatched`
+`msea_r96_doctrine_route_gap_reconciliation_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R97 L6 examples inventory alignment dispatch | `6eea64bf5` | DISPATCH_READY. Single-agent multi-role, five material paths, no consolidation or doctrine change. |
 | MSEA-R96 doctrine route gap reconciliation closure | `d733abd70` | REVIEWER_ACCEPTED_BOUNDED. L1/L4 unresolved with search evidence; L2 adaptation candidate pending ratification; L6 partial distributed owner; R91 freshness CURRENT. |
 | MSEA-R96 doctrine route gap reconciliation dispatch | `54666a41d` | DISPATCH_READY. Four-layer L1/L2/L4/L6 source decision pass; exact four outputs; no legacy promotion, doctrine/runtime mutation, or worker commit. |
 | MSEA-R95 external repository absorption entry hardening closure | `8c5755051` | REVIEWER_ACCEPTED_BOUNDED. Existing ADIF-0014 owner extended; 44/44 tests, reviewer-fast 60/60, closure pre-commit 81/81. |
@@ -86,14 +87,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r96_doctrine_route_gap_reconciliation_closed`
+Mode: `msea_r97_l6_examples_inventory_alignment_dispatched`
 
-Next allowed move: author a fresh bounded packet for one accepted R96 owner
-action. Recommended order: L6 module-inventory decision first, then L2
-doctrine-ratification decision, then L1 owner-design decision. L4 remains
-parked until a credible candidate exits draft/pre-public status. No structural
-or doctrine mutation is authorized without its own packet. Latest closed
-numbered LHW wave remains `LHW24`.
+Next allowed move: execute and close
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R97_L6_EXAMPLES_INVENTORY_ALIGNMENT_2026-07-11.md`
+under its Single-Agent Multi-Role Control Block. Add one inventory row, retain
+L6 `PARTIAL_OWNER_WITH_GAP`, keep R91 freshness CURRENT, and split material
+from session commits. Latest closed numbered LHW wave remains `LHW24`.
 
 Multi-Agent Orchestration Runtime Foundation is
 `VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,
