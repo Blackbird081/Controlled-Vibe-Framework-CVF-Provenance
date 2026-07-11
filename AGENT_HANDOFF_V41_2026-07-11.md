@@ -17,9 +17,9 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t1_closed`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T2
-GC-018 and source-verified work-order authoring only; parked checkpoint=MAO-T2 implementation, provider/integration, broader MAO runtime, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t2_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T2
+WORKER_MUST_NOT_COMMIT execution from clean post-sync HEAD; parked checkpoint=provider/integration, MAO-T3+, broader MAO runtime, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -33,9 +33,15 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t1_closed`
+`mao_t2_dispatched`
 
 ## Latest Work / Changes
+
+MAO-T2 dispatch commit `570cd6452` is `DISPATCH_READY`. The worker must capture
+the clean post-sync HEAD, produce exactly four owned outputs, run focused tests,
+typecheck, and worker-return fast gate, then return without committing. Provider
+invocation, adapter, queue, UI, root-barrel, public, session, and MAO-T3+ work
+remain forbidden.
 
 MAO-T1 material closure commit `01618e9dc` is `REVIEWER_ACCEPTED_BOUNDED`.
 Reviewer verification passed 39/39 focused tests, TypeScript typecheck, GC-051
@@ -100,15 +106,15 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Author a fresh MAO-T2 GC-018 and source-verified work order only. MAO-T2
-implementation, provider/integration, L4, T3B, R73F, R84 effectiveness, and
+Execute MAO-T2 once under `WORKER_MUST_NOT_COMMIT` from the clean post-sync
+HEAD. Provider/integration, MAO-T3+, L4, T3B, R73F, R84 effectiveness, and
 broader MAO runtime remain parked. Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
 
-MAO-T1 is closed bounded. Only MAO-T2 packet authoring is authorized; no T2
-implementation, provider, queue, UI, public-sync, R91/ASC semantic, L4, R84,
-or R73F change is authorized. ASC remains closed bounded with three terminal gaps.
+MAO-T1 is closed bounded and MAO-T2 is dispatched. Only the four-path MAO-T2
+worker execution is authorized; no provider, queue, UI, public-sync, MAO-T3+,
+R91/ASC semantic, L4, R84, or R73F change is authorized.
 
 ## Core Guard Self-Protection Authorization - MAO Roadmap Session Sync
 
@@ -134,6 +140,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/maoT0Closure20260711.json`
 - `CVF_SESSION/state/entries/maoT1Dispatch20260711.json`
 - `CVF_SESSION/state/entries/maoT1Closure20260711.json`
+- `CVF_SESSION/state/entries/maoT2Dispatch20260711.json`
 - `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
