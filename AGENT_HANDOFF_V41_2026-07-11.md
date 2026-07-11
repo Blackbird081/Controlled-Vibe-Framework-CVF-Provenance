@@ -50,6 +50,13 @@ Dispatch commits: `fa4838c57` material and `0a2f3c2e6` session sync.
 ASC-T0 contract closure remains `9f8815fb7`.
 Closure-state and handoff-rotation commit: `d020f6a9c`.
 Roadmap/completion closure commit: `735c4e8c3`.
+Final ASC closure HEAD sync: `012300bd6`.
+
+Remote tracking branch: `origin/main`.
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
 
 ## Verification
 

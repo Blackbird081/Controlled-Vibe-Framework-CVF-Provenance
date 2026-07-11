@@ -58,6 +58,12 @@
       "exposureClass": "INTERNAL_ONLY",
       "rationale": "Agent-tool startup guidance root for Cursor rule files. Internal-only convenience config; not a public CVF product surface."
     },
+    {
+      "path": ".qwen",
+      "lifecycleClass": "ACTIVE_CANONICAL",
+      "exposureClass": "INTERNAL_ONLY",
+      "rationale": "Provider-local agent settings. Execution convenience only; not CVF authority or public product content."
+    },
     { "path": ".githooks", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".github", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
     { "path": ".vscode", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
@@ -92,14 +98,6 @@
     },
     { "path": "EXTENSIONS", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
     { "path": "governance", "lifecycleClass": "ACTIVE_CANONICAL", "exposureClass": "INTERNAL_ONLY" },
-    {
-      "path": "Gop y CVF",
-      "lifecycleClass": "FROZEN_REFERENCE",
-      "exposureClass": "INTERNAL_ONLY",
-      "retentionPolicy": "FREEZE_IN_PLACE",
-      "relocationPolicy": "DO_NOT_MOVE_WITHOUT_SEPARATE_PRESERVATION_OVERRIDE",
-      "rationale": "Operator-provided advisory comparison/input root. Internal-only reference material; not a CVF source of truth and not intended for direct public export."
-    },
     {
       "path": "public",
       "lifecycleClass": "ACTIVE_CANONICAL",
