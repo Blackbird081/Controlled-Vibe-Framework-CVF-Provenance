@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-12
 
@@ -10,9 +10,9 @@ Batch ID: ODVR-T0-DISPATCH
 
 dispatchBaseHead: `933f7a420`
 
-executionBaseHead: capture exact committed dispatch HEAD before any edit
+executionBaseHead: `c691e4fe4`
 
-closureBaseHead: reviewer assigns after worker return
+closureBaseHead: `c691e4fe4`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -338,13 +338,13 @@ dissent, repairs only allowed scope, and alone decides acceptance and commit.
 
 ## Closure Checklist
 
-- [ ] Exactly four worker outputs reviewed.
-- [ ] Every source fact and proposed field classified.
-- [ ] Schema and representative examples validated.
-- [ ] Duplicate-owner stop rule resolved.
-- [ ] No forbidden path or implementation claim present.
-- [ ] Worker return fast gate passes.
-- [ ] Reviewer authors completion review and owns material commit.
+- [x] Exactly four worker outputs reviewed.
+- [x] Every source fact and proposed field classified.
+- [x] Schema and representative examples validated.
+- [x] Duplicate-owner stop rule resolved.
+- [x] No forbidden path or implementation claim present.
+- [x] Worker return fast gate passes.
+- [x] Reviewer authors completion review and owns material commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -425,3 +425,16 @@ COMPARISON_ONLY_NO_ABSORPTION
 
 No outside source target is selected or consumed. Any later source-mirror lane
 requires a separate operator-selected packet.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | ODVR-T0 completion review | `REVIEWER_ACCEPTED_AFTER_REPAIR` | PASS |
+| Roadmap state | ODVR roadmap | `PROPOSED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate check PASS; no ODVR entry required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | current companion retained | PASS |
+| External evidence digest | N/A with reason: internal CVF sources only | no external digest | N/A with reason |
+| System loop interlock | current R91/ASC evidence | CURRENT | PASS |
+| Session continuity | separate session-sync after material commit | pending separate batch | N/A with reason |

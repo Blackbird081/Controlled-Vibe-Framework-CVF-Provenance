@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-12
 
@@ -10,9 +10,9 @@ Batch ID: ODVR-T0-DISPATCH
 
 dispatchBaseHead: `933f7a420`
 
-executionBaseHead: worker captures committed dispatch HEAD before editing
+executionBaseHead: `c691e4fe4`
 
-closureBaseHead: reviewer assigns after worker return
+closureBaseHead: `c691e4fe4`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -67,7 +67,7 @@ recommendation rather than manufacture a new owner.
 
 | Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|---|
-| active session generator requires current mode and next move | EXISTS | `governance/compat/generate_active_session_state.py` | `REQUIRED_CORE_KEYS` | `currentMode`; `nextAllowedMove` | active session state generator | ACCEPT |
+| active session generator requires current mode and next move | EXISTS | `governance/compat/generate_active_session_state.py` | `BOOTSTRAP_FIELDS` | `currentMode`; `nextAllowedMove` | active session state generator | ACCEPT |
 | bootstrap projection exposes mode, handoff, next move, and claim boundary | EXISTS | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | top-level object | `currentMode`; `activeHandoff`; `nextAllowedMove`; `claimBoundary` | bootstrap read model | ACCEPT |
 | MAO task-graph evidence readout and freshness classifier exist | EXISTS | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/evidence.readout.contract.ts` | deterministic read-model and freshness sections | `MaoEvidenceReadout`; `buildEvidenceReadout`; `classifyReadoutFreshness` | MAO-T7 evidence/readout contract | ACCEPT |
 | MLW route advisory decision readout exists | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw-next-runtime-decision-readout.ts` | exports | `MlwNextRuntimeDecisionReadout`; `buildMlwNextRuntimeDecisionReadout` | MLW-NRD1 readout | ACCEPT |
@@ -156,3 +156,16 @@ This baseline authorizes ODVR-T0 documentation, JSON Schema, and representative
 doc fixtures only. It does not authorize a composer, CLI, UI, provider/live
 proof, mutable state, automatic decision, session mutation, public-sync,
 outside-source intake, ODVR-T1, or production-readiness claim.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired ODVR-T0 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | ODVR-T0 completion review | `REVIEWER_ACCEPTED_AFTER_REPAIR` | PASS |
+| Roadmap state | ODVR roadmap | `PROPOSED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate check PASS; no ODVR entry required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | current companion retained | PASS |
+| External evidence digest | N/A with reason: internal CVF sources only | no external digest | N/A with reason |
+| System loop interlock | current R91/ASC evidence | CURRENT | PASS |
+| Session continuity | separate session-sync after material commit | pending separate batch | N/A with reason |

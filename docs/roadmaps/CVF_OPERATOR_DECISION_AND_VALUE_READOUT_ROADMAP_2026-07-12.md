@@ -117,7 +117,7 @@ No tranche may use a zero-change range as evidence for changed artifacts.
 
 | Item | Search or inspection evidence | Current disposition |
 |---|---|---|
-| active session generated owner | `governance/compat/generate_active_session_state.py` directly declares `currentMode` and `nextAllowedMove` in `REQUIRED_CORE_KEYS` | current canonical owner |
+| active session generated owner | `governance/compat/generate_active_session_state.py` directly declares `currentMode` and `nextAllowedMove` in `BOOTSTRAP_FIELDS` | current canonical owner |
 | compact startup projection | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` currently contains mode, handoff, next move, and claim boundary | current generated projection |
 | MAO evidence readout | repository inspection found `MaoEvidenceReadout`, `buildEvidenceReadout`, and `classifyReadoutFreshness` in the MAO-T7 source | current narrower owner |
 | MLW decision readout | repository inspection found `MlwNextRuntimeDecisionReadout` and its builder in the MLW-NRD1 source | current narrower owner |
@@ -150,7 +150,7 @@ It does not claim that a composer, CLI, UI, or runtime behavior exists.
 
 | Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|---|
-| generated active session state owns current mode and next move | EXISTS | `governance/compat/generate_active_session_state.py` | `REQUIRED_CORE_KEYS` | `currentMode`; `nextAllowedMove` | active session state generator | ACCEPT |
+| generated active session state owns current mode and next move | EXISTS | `governance/compat/generate_active_session_state.py` | `BOOTSTRAP_FIELDS` | `currentMode`; `nextAllowedMove` | active session state generator | ACCEPT |
 | compact bootstrap projection exists | EXISTS | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | top-level fields | `currentMode`; `activeHandoff`; `nextAllowedMove`; `claimBoundary` | active session bootstrap read model | ACCEPT |
 | MAO evidence readout exists | EXISTS | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/evidence.readout.contract.ts` | deterministic read-model projection | `MaoEvidenceReadout`; `buildEvidenceReadout`; `classifyReadoutFreshness` | MAO-T7 evidence/readout contract | ACCEPT |
 | route-visible advisory runtime decision readout exists | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/mlw-next-runtime-decision-readout.ts` | exported readout and builder | `MlwNextRuntimeDecisionReadout`; `buildMlwNextRuntimeDecisionReadout` | MLW-NRD1 readout | ACCEPT |
