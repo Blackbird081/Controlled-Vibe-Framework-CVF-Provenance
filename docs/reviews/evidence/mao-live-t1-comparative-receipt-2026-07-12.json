@@ -1,0 +1,62 @@
+{
+  "pilot": "mao-live-t1-provider-adapter-value-pilot",
+  "startedAt": "2026-07-11T17:51:44.170Z",
+  "finishedAt": "2026-07-11T17:52:16.622Z",
+  "providerId": "alibaba",
+  "modelId": "qwen3.7-plus",
+  "endpointHost": "dashscope-intl.aliyuncs.com",
+  "keyAliasUsed": "DASHSCOPE_API_KEY",
+  "taskPrompt": "List exactly three prime numbers between 10 and 20, separated by commas, and output nothing else.",
+  "totalCallsSpent": 2,
+  "verdict": "VALUE_NOT_PROVEN",
+  "reason": "MAO lane rubric score 100 does not exceed direct lane score 100 (call cost 1 vs 1)",
+  "direct": {
+    "ok": true,
+    "latencyMs": 14705,
+    "usage": {
+      "inputTokens": 33,
+      "outputTokens": 742
+    },
+    "rubric": {
+      "score": 100,
+      "maxScore": 100,
+      "matchedTokens": [
+        "11",
+        "13",
+        "17"
+      ],
+      "withinLengthCeiling": true,
+      "nonEmpty": true,
+      "passed": true
+    },
+    "diagnostic": null,
+    "responseTextLength": 10,
+    "responseTextPreview": "11, 13, 17"
+  },
+  "mao": {
+    "ok": true,
+    "totalLatencyMs": 17744,
+    "callsSpent": 1,
+    "revisionUsed": false,
+    "finalRubric": {
+      "score": 100,
+      "maxScore": 100,
+      "matchedTokens": [
+        "11",
+        "13",
+        "17"
+      ],
+      "withinLengthCeiling": true,
+      "nonEmpty": true,
+      "passed": true
+    },
+    "diagnostic": null,
+    "reviewCount": 1,
+    "reviewDecisions": [
+      "ACCEPT"
+    ],
+    "integrationDecision": "ACCEPT",
+    "finalResponseTextLength": 10,
+    "finalResponseTextPreview": "11, 13, 17"
+  }
+}

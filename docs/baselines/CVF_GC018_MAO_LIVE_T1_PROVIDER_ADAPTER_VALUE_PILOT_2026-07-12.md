@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_VALUE_NOT_PROVEN
 
 Batch ID: MAO-LIVE-T1
 
@@ -65,7 +65,7 @@ No durable queue, UI, public-sync, provider parity, production, or broad tuning.
 
 ## Baseline Decision
 
-Dependencies and current source authority are verified; bounded live dispatch is ready.
+Bounded live comparison completed; value was not proven on the selected task.
 
 ## Evidence / Verification
 

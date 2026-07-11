@@ -244,3 +244,36 @@ export {
   runBudgetCeilingNegative,
   runPilotChain,
 } from "./representative.pilot.contract";
+
+// --- MAO-LIVE-T1 live provider adapter value pilot bridge ---
+
+export type {
+  MaoLiveRubricScore,
+  MaoLiveCallDiagnosticClass,
+  MaoLiveCallDiagnostic,
+  MaoLiveDirectLaneResult,
+  MaoLiveWorkerAttempt,
+  MaoLiveReviewOutcome,
+  MaoLiveLaneResult,
+  MaoLiveValueVerdict,
+  MaoLiveComparativeResult,
+} from "./live.provider.value.pilot";
+
+export {
+  LIVE_PILOT_TASK_ID,
+  LIVE_PILOT_WORKER_IDENTITY,
+  LIVE_PILOT_REVIEWER_IDENTITY,
+  LIVE_PILOT_CLOSER_IDENTITY,
+  LIVE_PILOT_TASK_GRAPH_ID,
+  LIVE_PILOT_MAX_REVISION_DEPTH,
+  LIVE_PILOT_MAX_LIVE_CALLS,
+  LIVE_PILOT_TASK_PROMPT,
+  LIVE_PILOT_EXPECTED_TOKENS,
+  LIVE_PILOT_REQUIRED_MATCH_COUNT,
+  LIVE_PILOT_MAX_RESPONSE_LENGTH,
+  scoreAgainstRubric,
+  MaoLiveCallLedger,
+  runDirectLane,
+  runMaoLane,
+  decideValueVerdict,
+} from "./live.provider.value.pilot";

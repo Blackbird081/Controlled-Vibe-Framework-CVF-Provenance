@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_VALUE_NOT_PROVEN
 
 Batch ID: MAO-LIVE-T1
 
@@ -120,13 +120,13 @@ latency/call/usage/receipt/quality comparison; return one terminal value verdict
 
 ## Acceptance Criteria
 
-- [ ] identical task, model lane, rubric and secret-safe input;
-- [ ] four calls maximum and one revision maximum;
-- [ ] independent reviewer and designated closer enforced;
-- [ ] every failed call has diagnostic before retry;
-- [ ] receipts contain no raw key or raw provider payload;
-- [ ] verdict is VALUE_PROVEN, VALUE_NOT_PROVEN, or BLOCKED_LIVE_PROVIDER;
-- [ ] worker does not commit.
+- [x] identical task, model lane, rubric and secret-safe input;
+- [x] four calls maximum and one revision maximum;
+- [x] independent reviewer and designated closer enforced;
+- [x] no failed call or retry occurred;
+- [x] receipts contain no raw key or raw provider payload;
+- [x] verdict is VALUE_NOT_PROVEN;
+- [x] worker did not commit.
 
 ## Evidence Requirements
 
@@ -224,7 +224,7 @@ workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 | Target paths | paired baseline and work order |
 | Allowed scope source | operator and MAO-LIVE roadmap |
 | Before status evidence | clean worktree at `93662e2a2`; no pending paths |
-| After status evidence | source-verified DISPATCH_READY packet |
+| After status evidence | source-verified packet, later closed VALUE_NOT_PROVEN |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | packet authoring only |
 | Claim boundary | no new API call or result claim |
