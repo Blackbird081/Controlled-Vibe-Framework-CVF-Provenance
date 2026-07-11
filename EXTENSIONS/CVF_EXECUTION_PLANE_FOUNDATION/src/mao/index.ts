@@ -90,3 +90,46 @@ export type {
 } from "./delegation.adapter.contract";
 
 export { MaoDelegationAdapter, createMaoDelegationAdapter } from "./delegation.adapter.contract";
+
+// --- MAO-T4 reviewer isolation, dissent, and revision loop ---
+
+export type {
+  MaoIsolatedSourcePacket,
+  MaoExcludedContextEntry,
+  MaoReviewerSourceContract,
+  MaoSelfApprovalCheck,
+  MaoRecomputedEvidence,
+} from "./reviewer.isolation.contract";
+
+export {
+  buildIsolatedSourcePacket,
+  verifyIsolatedSourcePacket,
+  checkSelfApproval,
+  checkEvidenceIndependence,
+  buildRecomputedEvidence,
+} from "./reviewer.isolation.contract";
+
+export type {
+  MaoDefectClass,
+  MaoReviewDecision,
+  MaoDissentRecord,
+  MaoDefectEntry,
+  MaoReviewReceipt,
+  MaoRevisionLedger,
+  MaoReviewReceiptInput,
+  MaoRevisionCeilingCheck,
+  MaoRecordReviewResult,
+  MaoReviewTerminalDecision,
+} from "./dissent.revision.contract";
+
+export {
+  buildReviewReceipt,
+  buildDefectEntry,
+  buildDissentRecord,
+  checkRevisionCeiling,
+  createRevisionLedger,
+  recordReviewInLedger,
+  terminalReviewDecision,
+  verifyDissentDeterminism,
+  verifyReviewReceiptConsistency,
+} from "./dissent.revision.contract";

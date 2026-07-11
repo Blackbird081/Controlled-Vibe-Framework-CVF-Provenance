@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -10,9 +10,9 @@ Batch: MAO-T4
 
 dispatchBaseHead: `300c9dfa3`
 
-executionBaseHead: capture actual clean post-dispatch-sync HEAD before editing.
+executionBaseHead: `490436eb9`
 
-closureBaseHead: N/A with reason: reviewer conversion has not occurred.
+closureBaseHead: `490436eb9`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -214,11 +214,11 @@ Exactly five worker paths.
 
 | Artifact | Owner | Required evidence | Status |
 |---|---|---|---|
-| isolation source | worker | focused tests/typecheck | REQUIRED |
-| dissent/revision source | worker | bounded loop tests | REQUIRED |
-| focused test | worker | positive/negative matrix | REQUIRED |
-| local barrel | worker | bounded exports only | REQUIRED |
-| worker return | worker | complete pending review | REQUIRED |
+| isolation source | worker | focused tests/typecheck | PASS |
+| dissent/revision source | worker | bounded loop tests | PASS |
+| focused test | worker | positive/negative matrix | PASS |
+| local barrel | worker | bounded exports only | PASS |
+| worker return | worker | complete pending review | PASS |
 
 ## Worker Return Packet Shape Contract
 
@@ -253,12 +253,12 @@ Inventory, trace, Delta boundary, public disposition, and actual status.
 
 ## Acceptance Criteria
 
-- [ ] Isolated packet hash/exclusions are deterministic and worker conclusions are excluded.
-- [ ] Reviewer identity cannot equal worker/output author identity.
-- [ ] Review receipt requires recomputed evidence and a valid decision.
-- [ ] Dissent/defect class/repair owner are preserved deterministically.
-- [ ] Revision depth cannot exceed authority; overflow escalates/stops.
-- [ ] No provider/commit/queue/public action occurs; tests/typecheck/gates pass.
+- [x] Isolated packet hash/exclusions are deterministic and worker conclusions are excluded.
+- [x] Reviewer identity cannot equal worker/output author identity.
+- [x] Review receipt requires recomputed evidence and a valid decision.
+- [x] Dissent/defect class/repair owner are preserved deterministically.
+- [x] Revision depth cannot exceed authority; overflow escalates/stops.
+- [x] No provider/commit/queue/public action occurs; tests/typecheck/gates pass.
 
 ## Evidence Requirements
 
@@ -277,10 +277,10 @@ reviewer-return steward preflight before acceptance.
 
 ## Closure Checklist
 
-- [ ] Requirements/commands pass after final edit.
-- [ ] Closure Diff Gate and exact changed set complete.
-- [ ] No provider/commit/public expansion occurred.
-- [ ] Continuity sync remains separate.
+- [x] Requirements/commands pass after final edit.
+- [x] Closure Diff Gate and exact changed set complete.
+- [x] No provider/commit/public expansion occurred.
+- [x] Continuity sync remains separate.
 
 ## Return-To-Orchestrator Conditions
 
@@ -355,13 +355,24 @@ Next action: retain in provenance through MAO closure.
 
 ## Machine Closure Package
 
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T4 completion review | `REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | governing MAO roadmap | `PROPOSED` | PASS |
+| Registry JSON | corpus registry JSON | generated MAO-T4 coverage | PASS |
+| Registry Markdown | corpus registry Markdown | current companion | PASS |
+| External evidence digest | N/A with reason: none | internal evidence only | N/A with reason |
+| System loop interlock | existing registry | no mutation required | PASS |
+| Session continuity | active front doors | separate sync required | PASS |
+
 | Field | Value |
 |---|---|
-| Work-order state | `DISPATCH_READY` |
+| Work-order state | `CLOSED_PASS_BOUNDED` |
 | Commit mode | `WORKER_MUST_NOT_COMMIT` |
 | Dependencies | T1-T3 accepted |
 | Worker terminal status | `COMPLETE_PENDING_REVIEW` only |
-| Next action | delegated local execution from clean post-sync HEAD |
+| Next action | fresh MAO-T5 packet authoring only |
 
 ## Acceptance Receipt Assertion Matrix
 
