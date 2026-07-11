@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_live_t1_packet_authoring_ready`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author fresh MAO-LIVE-T1 roadmap/GC-018/work order; parked checkpoint=implementation until packet gates pass, durable queue/UI/public/ASC admission, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_live_t1_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-LIVE-T1 no-commit live execution with six outputs/four-call ceiling; parked checkpoint=fifth call, durable queue/UI/public/ASC admission, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_live_t1_packet_authoring_ready`
+`mao_live_t1_dispatched`
 
 ## Latest Work / Changes
 
@@ -226,6 +226,28 @@ Protected paths:
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
+
+## MAO-LIVE-T1 Dispatch
+
+Dispatch material HEAD: `013e9fe21`. Worker starts from clean post-sync HEAD,
+produces exactly six outputs, uses at most four live calls, diagnoses before any
+retry, and returns without commit. Session-sync parent HEAD: `013e9fe21`.
+
+## Core Guard Self-Protection Authorization - MAO-LIVE-T1 Dispatch Sync
+
+Operator authorization: create and execute the bounded live MAO value pilot.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/maoLiveT1Dispatch20260712.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this sync; retain dispatch commit `013e9fe21`.
 
 ## MAO-LIVE Roadmap Proposed
 

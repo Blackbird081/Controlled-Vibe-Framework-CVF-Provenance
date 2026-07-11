@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_live_t1_packet_authoring_ready`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author fresh MAO-LIVE-T1 roadmap/GC-018/source-verified work order; parked checkpoint=implementation until packet gates pass, durable queue, UI, public projection and ASC admission.
+Startup acknowledged: current mode=`mao_live_t1_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-LIVE-T1 no-commit implementation/live run with six outputs and four-call ceiling; parked checkpoint=fifth call, durable queue, UI, public projection and ASC admission.
 
 ## Current Mode
 
-Current mode marker: `mao_live_t1_packet_authoring_ready`
+Current mode marker: `mao_live_t1_dispatched`
 
-Current mode: `mao_live_t1_packet_authoring_ready`
+Current mode: `mao_live_t1_dispatched`
 
-`mao_live_t1_packet_authoring_ready`
+`mao_live_t1_dispatched`
 
 Previous mode:
 
-`mao_runtime_foundation_closed`
+`mao_live_t1_packet_authoring_ready`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-LIVE-T1 dispatch | `013e9fe21` | DISPATCH_READY; six outputs, four-call ceiling, no worker commit. |
 | MAO-LIVE value pilot roadmap | `82b3fb511` | PROPOSED; fresh T1 GC-018/work order is next, no implementation yet. |
 | Post-MAO live governance proof | `a0b40ecfb` | LIVE_PROOF_PASS_BOUNDED; live governance PASS, not MAO provider orchestration. |
 | MAO runtime foundation T0-T9 closure | `29c55ca36` | CLOSED_PASS_BOUNDED; T9-F1 REJECT; zero blocking findings. |
@@ -120,7 +121,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_live_t1_packet_authoring_ready`
+Mode: `mao_live_t1_dispatched`
 
 MAO T0-T9 remains closed. Next allowed move is fresh MAO-LIVE-T1 packet
 authoring that reuses existing Model Gateway live harness authority.

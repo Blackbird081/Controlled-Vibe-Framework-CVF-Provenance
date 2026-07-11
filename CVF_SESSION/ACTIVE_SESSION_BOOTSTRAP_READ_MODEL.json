@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mao_live_t1_packet_authoring_ready",
+  "currentMode": "mao_live_t1_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "MAO-LIVE decision-first roadmap is PROPOSED at 82b3fb511. Next allowed move is author the fresh MAO-LIVE-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order reusing the existing Model Gateway live proof harness. No implementation or additional API call begins before packet gates pass. Durable queue, UI, public-sync, production readiness, and broad provider parity remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO-LIVE-T1 is DISPATCH_READY at 013e9fe21. Next allowed move is one WORKER_MUST_NOT_COMMIT implementation/live execution from clean post-sync HEAD producing exactly six outputs, using one provider lane and at most four live calls. No rerun before diagnostic. Durable queue, UI, public-sync, production readiness, broad provider parity, and a fifth call remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
