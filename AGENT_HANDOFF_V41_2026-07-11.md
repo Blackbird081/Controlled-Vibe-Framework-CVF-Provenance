@@ -17,7 +17,7 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_t0_closed_t1_packet_eligible`;
+Startup acknowledged: current mode=`odvr_t1_dispatched`;
 active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=another operator-selected roadmap; parked checkpoint=MAO live reopen without harder-task hypothesis, durable queue/UI/public/ASC admission, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`odvr_t0_closed_t1_packet_eligible`
+`odvr_t1_dispatched`
 
 ## Latest Work / Changes
 
@@ -586,3 +586,32 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain ODVR-T0 material
 closure commit `2af788683`.
+
+## ODVR-T1 Local Composer Dispatch
+
+Dispatch material HEAD: `a60b37760`.
+
+ODVR-T1 is `DISPATCH_READY`. Worker starts from the clean post-sync HEAD and
+produces exactly the local read-only helper, focused test, ODVR README update,
+and worker return. Worker must not spawn subagents, commit, edit session/T0
+owners, add UI/Web routes, call providers, wire hooks, publish, run T2, or
+absorb outside sources.
+
+Session-sync parent HEAD: `a60b37760`.
+
+## Core Guard Self-Protection Authorization - ODVR-T1 Dispatch Sync
+
+Operator authorization: create and dispatch the next ODVR work order.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/odvrT1Dispatch20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain ODVR-T1 dispatch
+commit `a60b37760`.

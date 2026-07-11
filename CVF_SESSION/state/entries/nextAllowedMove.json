@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "ODVR-T0 is REVIEWER_ACCEPTED_AFTER_REPAIR at material commit 2af788683. The bounded composition gap is confirmed after correcting decision selection to generated stateOrder plus materialCommit evidence and enforcing JSON Schema freshness invariants. Next move is fresh ODVR-T1 GC-018 and source-verified WORKER_MUST_NOT_COMMIT work-order authoring for a deterministic read-only local composer and CLI-readable JSON only. No T1 implementation, UI, provider/live proof, session mutation, public-sync, ODVR-T2 value proof, or outside-source absorption is authorized yet. LHW24 remains latest closed numbered LHW wave."
+  "value": "ODVR-T1 is DISPATCH_READY at dispatch commit a60b37760. Next move is one delegated WORKER_MUST_NOT_COMMIT execution from the clean post-sync HEAD, producing exactly run_odvr_readout.py, its focused test, the ODVR README update, and one worker return. The worker must not spawn subagents, commit, edit session state or T0 contract/schema, add UI/Web routes, call providers, wire checkers/hooks, touch public-sync, run T2 value proof, or absorb outside sources. The independent reviewer owns acceptance, repair, material commit, and later session sync. LHW24 remains latest closed numbered LHW wave."
 }
