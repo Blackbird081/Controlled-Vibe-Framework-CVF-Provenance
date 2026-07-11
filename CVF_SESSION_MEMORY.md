@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t3_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T4 GC-018 and source-verified work-order authoring only; parked checkpoint=MAO-T4 implementation, real provider/network, broader runtime and public work.
+Startup acknowledged: current mode=`mao_t4_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T4 WORKER_MUST_NOT_COMMIT local execution from clean post-sync HEAD; parked checkpoint=provider/network, closer/commit interlock, MAO-T5+, broader runtime and public work.
 
 ## Current Mode
 
-Current mode marker: `mao_t3_closed`
+Current mode marker: `mao_t4_dispatched`
 
-Current mode: `mao_t3_closed`
+Current mode: `mao_t4_dispatched`
 
-`mao_t3_closed`
+`mao_t4_dispatched`
 
 Previous mode:
 
-`mao_t3_dispatched`
+`mao_t3_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T4 reviewer isolation/dissent/revision dispatch | `68cc94572` | DISPATCH_READY; five exact outputs; worker must not commit. |
 | MAO-T3 adapter closure | `052845fa1` | REVIEWER_ACCEPTED_BOUNDED; 21/21 tests, typecheck, reviewer-fast and 82/82 pre-commit pass. |
 | MAO-T3 provider-neutral delegation adapter dispatch | `1738d9263` | DISPATCH_READY; fake/local only; four outputs; worker must not commit. |
 | MAO-T2 risk-based role resolver closure | `854bb3a92` | REVIEWER_ACCEPTED_BOUNDED after semantic repairs; 22/22 tests, typecheck, GC-051 and 82/82 pre-commit pass. |
@@ -108,10 +109,10 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t3_closed`
+Mode: `mao_t4_dispatched`
 
-MAO-T3 is reviewer-accepted bounded at `052845fa1`. Next allowed move is fresh
-MAO-T4 GC-018 and source-verified work-order authoring only.
+MAO-T4 is dispatch-ready at `68cc94572`. Next allowed move is one delegated
+local worker execution from clean post-sync HEAD with exactly five outputs and no commit.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 
