@@ -17,9 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_t1_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=another operator-selected roadmap; parked checkpoint=MAO live reopen without harder-task hypothesis, durable queue/UI/public/ASC admission, L4 promotion, T3B,
-R73F, and R84 effectiveness.
+Startup acknowledged: current mode=`odvr_t1_closed_t2_packet_eligible`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author fresh ODVR-T2 GC-018 and source-verified no-commit work order for representative operator value proof; parked checkpoint=T2 implementation before packet, UI/provider/public work, and outside-source absorption.
 
 ## Mandatory Startup Reads
 
@@ -32,7 +31,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`odvr_t1_dispatched`
+`odvr_t1_closed_t2_packet_eligible`
 
 ## Latest Work / Changes
 
@@ -615,3 +614,39 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain ODVR-T1 dispatch
 commit `a60b37760`.
+
+## ODVR-T1 Local Composer Reviewer Closure
+
+Material closure HEAD: `16364f797`.
+
+ODVR-T1 is `REVIEWER_ACCEPTED_AFTER_REPAIR`. The reviewer corrected false
+contradiction for identical equal-order evidence, ratified artifact-role
+precedence with ambiguous-role fail-close behavior, and stopped ordinary
+closure statuses from being emitted as value verdicts. The expanded 22-test
+suite, live schema validation, worker-return fast gate, commit steward, and
+pre-commit governance chain pass.
+
+Next allowed move: author a fresh ODVR-T2 GC-018 and source-verified
+`WORKER_MUST_NOT_COMMIT` work order for one representative operator value
+proof. T2 implementation, UI/Web, provider/live, mutable state, public-sync,
+and outside-source absorption remain unauthorized in that authoring batch.
+
+Session-sync parent HEAD: `16364f797`.
+
+## Core Guard Self-Protection Authorization - ODVR-T1 Closure Sync
+
+Operator authorization: review and close the ODVR-T1 worker return and preserve
+the governed next move.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/odvrT1Closure20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain ODVR-T1 material
+closure commit `16364f797`.

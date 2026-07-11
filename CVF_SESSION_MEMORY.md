@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_t1_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one delegated no-commit ODVR-T1 execution with exactly four outputs; parked checkpoint=UI, provider/public work, T2 value proof, and outside-source absorption.
+Startup acknowledged: current mode=`odvr_t1_closed_t2_packet_eligible`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author fresh ODVR-T2 GC-018 and source-verified no-commit work order for representative operator value proof; parked checkpoint=UI, provider/public work, T2 implementation before packet, and outside-source absorption.
 
 ## Current Mode
 
-Current mode marker: `odvr_t1_dispatched`
+Current mode marker: `odvr_t1_closed_t2_packet_eligible`
 
-Current mode: `odvr_t1_dispatched`
+Current mode: `odvr_t1_closed_t2_packet_eligible`
 
-`odvr_t1_dispatched`
+`odvr_t1_closed_t2_packet_eligible`
 
 Previous mode:
 
-`odvr_t0_closed_t1_packet_eligible`
+`odvr_t1_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ODVR-T1 local composer closure | `16364f797` | REVIEWER_ACCEPTED_AFTER_REPAIR; 22/22 tests, schema-valid CURRENT readout, T2 packet authoring eligible. |
 | ODVR-T1 local composer dispatch | `a60b37760` | DISPATCH_READY; exactly four no-commit outputs. |
 | ODVR-T0 contract/schema closure | `2af788683` | REVIEWER_ACCEPTED_AFTER_REPAIR; narrowed T1 packet authoring eligible. |
 | ODVR-T0 contract inventory dispatch | `fa240e816` | DISPATCH_READY; exactly four no-commit worker outputs. |
@@ -127,13 +128,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `odvr_t1_dispatched`
+Mode: `odvr_t1_closed_t2_packet_eligible`
 
-ODVR-T1 is DISPATCH_READY at `a60b37760`. Next allowed move is one delegated
-`WORKER_MUST_NOT_COMMIT` execution from the clean post-sync HEAD, producing
-exactly the helper, focused test, ODVR README update, and worker return. UI,
-provider/live, session mutation, public-sync, T2 value proof, and outside-source
-absorption remain unauthorized. Latest closed numbered LHW wave remains `LHW24`.
+ODVR-T1 is REVIEWER_ACCEPTED_AFTER_REPAIR at `16364f797`. Next allowed move is
+authoring a fresh GC-018 baseline and source-verified `WORKER_MUST_NOT_COMMIT`
+work order for ODVR-T2 representative operator value proof only. T2
+implementation before that packet, UI/provider/live, session mutation,
+public-sync, and outside-source absorption remain unauthorized. Latest closed
+numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

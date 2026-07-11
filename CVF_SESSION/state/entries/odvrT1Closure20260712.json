@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1690,
+  "stateKey": "odvrT1Closure20260712",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
+    "date": "2026-07-12",
+    "materialCommit": "16364f797",
+    "roadmap": "docs/roadmaps/CVF_OPERATOR_DECISION_AND_VALUE_READOUT_ROADMAP_2026-07-12.md",
+    "baseline": "docs/baselines/CVF_GC018_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_2026-07-12.md",
+    "completionReview": "docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md",
+    "testCount": 22,
+    "nextAllowedMove": "author fresh ODVR-T2 GC-018 and source-verified no-commit work order for representative operator value proof only",
+    "claimBoundary": "ODVR-T1 local read-only composer closure only; no T2 implementation, UI, provider/live, state mutation, public-sync, outside-source absorption, or production readiness"
+  }
+}

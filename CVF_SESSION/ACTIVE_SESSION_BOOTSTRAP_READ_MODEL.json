@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "odvr_t1_dispatched",
+  "currentMode": "odvr_t1_closed_t2_packet_eligible",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "ODVR-T1 is DISPATCH_READY at dispatch commit a60b37760. Next move is one delegated WORKER_MUST_NOT_COMMIT execution from the clean post-sync HEAD, producing exactly run_odvr_readout.py, its focused test, the ODVR README update, and one worker return. The worker must not spawn subagents, commit, edit session state or T0 contract/schema, add UI/Web routes, call providers, wire checkers/hooks, touch public-sync, run T2 value proof, or absorb outside sources. The independent reviewer owns acceptance, repair, material commit, and later session sync. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "ODVR-T1 is REVIEWER_ACCEPTED_AFTER_REPAIR at material commit 16364f797. Next move is authoring a fresh GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for ODVR-T2 representative operator value proof only. Do not implement T2 before that packet, add UI/Web routes, call providers, mutate state, touch public-sync, or absorb outside sources in the packet-authoring batch. Outside-source repository absorption remains the operator's later option after the bounded ODVR proof lane. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
