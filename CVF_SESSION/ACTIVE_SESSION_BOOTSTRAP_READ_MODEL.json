@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r94_t1a_contract_guard_matrix_correction_closed",
+  "currentMode": "msea_r94_t1b_gateway_helper_ownership_disposition_closed",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R94-T1A closed REVIEWER_ACCEPTED_BOUNDED at material commit ee39d8e62. Next allowed move is authoring a fresh source-verified R94-T1B GC-018/work-order packet for the shared GC-009/GC-010 gateway invocation decision. Do not add callers, downgrade matrix claims, edit runtime/tests, or dispatch T1B before the packet establishes doctrine/runtime ownership and passes pre-dispatch. T1C, T2-T4, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R94-T1B closed REVIEWER_ACCEPTED_BOUNDED at material commit 3c5e87d7b. GC-009 and GC-010 are CLAIM_DOWNGRADED_WITH_REASON: implemented and tested, with no proven production caller or active package export. Next allowed move is authoring a fresh source-verified R94-T1C GC-018/work-order packet for GC-012 and GC-013 semantic/test evidence correction. Do not edit those matrix rows, runtime, or tests and do not dispatch implementation before the packet passes pre-dispatch. T2-T4, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

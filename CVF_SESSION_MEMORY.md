@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_t1a_contract_guard_matrix_correction_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author fresh R94-T1B packet for GC-009/010 without implementation; parked checkpoint=T1C, T2-T4, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
+Startup acknowledged: current mode=`msea_r94_t1b_gateway_helper_ownership_disposition_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author fresh R94-T1C packet for GC-012/013 without implementation; parked checkpoint=T2-T4, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
 
 ## Current Mode
 
-Current mode marker: `msea_r94_t1a_contract_guard_matrix_correction_closed`
+Current mode marker: `msea_r94_t1b_gateway_helper_ownership_disposition_closed`
 
-Current mode: `msea_r94_t1a_contract_guard_matrix_correction_closed`
+Current mode: `msea_r94_t1b_gateway_helper_ownership_disposition_closed`
 
-`msea_r94_t1a_contract_guard_matrix_correction_closed`
+`msea_r94_t1b_gateway_helper_ownership_disposition_closed`
 
 Previous mode:
 
-`msea_r94_t1a_contract_guard_matrix_correction_dispatched`
+`msea_r94_t1a_contract_guard_matrix_correction_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R94-T1B gateway helper ownership disposition closure | `3c5e87d7b` | REVIEWER_ACCEPTED_BOUNDED. GC-009/010 CLAIM_DOWNGRADED_WITH_REASON; focused tests 54/54; system-chain freshness CURRENT. |
 | MSEA-R94-T1A contract-guard matrix evidence correction closure | `ee39d8e62` | REVIEWER_ACCEPTED_BOUNDED. Six rows FIXED_AND_PROVEN, focused tests 34/34, system-chain freshness CURRENT. |
 | MSEA-R94-T1A contract-guard matrix evidence correction dispatch | `f32175bdc` | DISPATCH_READY. Correct exactly six mismatched evidence cells using existing direct contract tests; no test/runtime mutation. |
 | MSEA-R94-T0 Contract-to-Runtime 50-row inventory closure | `db4e2369a` | REVIEWER_ACCEPTED_BOUNDED. 50/50 terminal rows, 82-file reproducible manifest, catalog invocation evidence, 50/50 operator evidence, and full pre-commit 81/81 pass. |
@@ -81,7 +82,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r94_t1a_contract_guard_matrix_correction_closed`
+Mode: `msea_r94_t1b_gateway_helper_ownership_disposition_closed`
 
 Next allowed move: author a fresh source-verified R94-T1B GC-018/work-order
 packet for the shared GC-009/GC-010 gateway invocation decision. Do not add

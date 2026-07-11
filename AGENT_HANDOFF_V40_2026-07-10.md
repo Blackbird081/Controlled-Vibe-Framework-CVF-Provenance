@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_t1a_contract_guard_matrix_correction_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author fresh R94-T1B packet for GC-009/010 without implementation; parked checkpoint=T1C, T2-T4, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
+Startup acknowledged: current mode=`msea_r94_t1b_gateway_helper_ownership_disposition_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author fresh R94-T1C packet for GC-012/013 without implementation; parked checkpoint=T2-T4, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r94_t1a_contract_guard_matrix_correctio
 
 ## Current Mode
 
-`msea_r94_t1a_contract_guard_matrix_correction_closed`
+`msea_r94_t1b_gateway_helper_ownership_disposition_closed`
 
 ## Latest Work / Changes
 
@@ -721,6 +721,44 @@ dispatch SHA; material worker changes remain reviewer-pending.
 
 Rollback boundary: revert only this handoff catch-up; do not revert dispatch
 commit `37a7be8e8` or pending worker material.
+
+## MSEA-R94-T1B Closure - 2026-07-11
+
+Material closure commit: `3c5e87d7b`.
+
+Disposition: REVIEWER_ACCEPTED_BOUNDED. GC-009 and GC-010 are
+`CLAIM_DOWNGRADED_WITH_REASON`: both helpers are implemented and tested, but no
+non-test production caller or active package export is proven. Focused tests
+pass 54/54 and the existing system-chain freshness owner is CURRENT.
+
+Next allowed move: author a fresh R94-T1C GC-018/work order for GC-012 and
+GC-013 semantic/test evidence correction. No matrix/runtime/test implementation
+is authorized before that packet passes pre-dispatch.
+
+Rollback boundary: revert only this closure session-sync; do not revert
+material commit `3c5e87d7b` or unrelated R94 work.
+
+## Core Guard Self-Protection Authorization - MSEA-R94-T1B Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after material commit
+`3c5e87d7b`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to R94-T1C packet authoring. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record T1B closure and current HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set T1B closed mode. |
+| `CVF_SESSION/state/entries/mseaR94T1BGatewayHelperOwnershipDispositionClosure20260711.json` | Record closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route exact T1C packet authoring. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: continue MSEA-R94 after accepted T1B closure.
+
+Rollback boundary: revert only this session-sync; do not revert material commit
+`3c5e87d7b` or unrelated work.
 
 ## Claim Boundary
 

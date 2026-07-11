@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1652,
+  "stateKey": "mseaR94T1BGatewayHelperOwnershipDispositionClosure20260711",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-11",
+    "materialCommit": "3c5e87d7b",
+    "executionBaseHead": "37a7be8e8",
+    "completionReview": "docs/reviews/CVF_MSEA_R94_T1B_GATEWAY_HELPER_OWNERSHIP_DISPOSITION_COMPLETION_2026-07-11.md",
+    "rows": ["GC-009", "GC-010"],
+    "disposition": "CLAIM_DOWNGRADED_WITH_REASON",
+    "testEvidence": "gateway and agent runtime focused suites PASS 54/54",
+    "freshnessState": "CURRENT",
+    "nextAllowedMove": "author fresh R94-T1C packet for GC-012 and GC-013; no implementation before pre-dispatch",
+    "claimBoundary": "two matrix ownership claims and existing R91 freshness/GC-051 reconciliation only; no runtime, export, test, provider, or public behavior change"
+  }
+}
