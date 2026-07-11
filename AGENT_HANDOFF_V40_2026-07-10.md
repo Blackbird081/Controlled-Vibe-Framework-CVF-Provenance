@@ -708,6 +708,20 @@ classification guide.
 Rollback boundary: revert only this session-sync; do not revert material
 commit `c5b1fddd1`, public commit `4c0d06cf2`, or local workspace refresh.
 
+## MSEA-R94-T1B Dispatch Catch-Up - 2026-07-11
+
+Current HEAD: `37a7be8e8` (`docs: dispatch MSEA-R94-T1B gateway disposition`).
+
+R94-T1B is dispatched under `WORKER_MUST_NOT_COMMIT`. The bounded worker scope
+is GC-009/GC-010 production-ownership verification and, when no active caller
+is proven, correction of only those two Governance Control Matrix rows. No
+caller, package export, runtime, test, provider, public, or other R94 mutation
+is authorized. This handoff-only catch-up records the already-committed
+dispatch SHA; material worker changes remain reviewer-pending.
+
+Rollback boundary: revert only this handoff catch-up; do not revert dispatch
+commit `37a7be8e8` or pending worker material.
+
 ## Claim Boundary
 
 This handoff records a bounded local workspace RC result and continuity state.
