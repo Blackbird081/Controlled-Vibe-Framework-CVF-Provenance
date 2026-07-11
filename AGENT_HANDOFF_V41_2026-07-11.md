@@ -17,10 +17,9 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_roadmap_proposed_awaiting_external_critique`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=independent
-external critique of the MAO roadmap, then internal source-verified finding
-classification; parked checkpoint=MAO implementation, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t0_dispatch_authoring`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author and
+gate fresh MAO-T0 GC-018/work order; parked checkpoint=MAO runtime implementation, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -34,9 +33,14 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_roadmap_proposed_awaiting_external_critique`
+`mao_t0_dispatch_authoring`
 
 ## Latest Work / Changes
+
+MAO critique reconciliation commit `d61c3c92c` is
+`REVIEWER_ACCEPTED_BOUNDED` with verdict
+`INTERNAL_RECONCILIATION_ACCEPTED_WITH_T0_CAVEATS`. It releases MAO-T0 packet
+authoring only.
 
 MAO roadmap material commit `6a08a041e` is `PROPOSED`. Direct CVF-governed
 evidence confirms R94 `CLOSED_PASS_BOUNDED` and R95
@@ -81,10 +85,8 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Send the MAO roadmap to Claude or another independent external reviewer. Then
-source-verify and classify every critique internally. Only after an accepted
-reconciliation may a fresh MAO-T0 GC-018/work order be authored. Stop before
-implementation. L4, T3B, R73F, R84 effectiveness, and MAO implementation remain
+Author and gate a fresh MAO-T0 GC-018/source-verified work order for one
+`WORKER_MUST_NOT_COMMIT` worker. L4, T3B, R73F, R84 effectiveness, and MAO runtime implementation remain
 parked. Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
@@ -112,6 +114,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/maoRoadmapProposed20260711.json`
+- `CVF_SESSION/state/entries/maoRoadmapCritiqueReconciliation20260711.json`
 - `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 

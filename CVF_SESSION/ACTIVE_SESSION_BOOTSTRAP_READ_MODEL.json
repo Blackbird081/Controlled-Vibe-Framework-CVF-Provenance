@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mao_roadmap_proposed_awaiting_external_critique",
+  "currentMode": "mao_t0_dispatch_authoring",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "MAO roadmap is PROPOSED at material commit 6a08a041e after direct R94/R95 reopen-condition verification. Next allowed move is independent external critique of docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md, followed by internal source-verified classification of every finding. Stop before MAO-T0 GC-018/work-order authoring. MAO implementation, L4, T3B, R73F, and R84 effectiveness remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO critique reconciliation is REVIEWER_ACCEPTED_BOUNDED at commit d61c3c92c with verdict INTERNAL_RECONCILIATION_ACCEPTED_WITH_T0_CAVEATS. Next allowed move is author and gate a fresh MAO-T0 GC-018/source-verified work order for one WORKER_MUST_NOT_COMMIT worker. No runtime implementation, provider call, queue, UI, public-sync, or session mutation by the worker. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

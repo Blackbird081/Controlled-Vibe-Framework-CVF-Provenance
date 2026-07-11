@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_roadmap_proposed_awaiting_external_critique`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=independent external critique of the MAO roadmap, then internal source-verified finding classification; parked checkpoint=MAO implementation, L4 promotion, T3B, R73F, and R84 effectiveness.
+Startup acknowledged: current mode=`mao_t0_dispatch_authoring`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author and gate fresh MAO-T0 GC-018/work order; parked checkpoint=MAO runtime implementation, L4 promotion, T3B, R73F, and R84 effectiveness.
 
 ## Current Mode
 
-Current mode marker: `mao_roadmap_proposed_awaiting_external_critique`
+Current mode marker: `mao_t0_dispatch_authoring`
 
-Current mode: `mao_roadmap_proposed_awaiting_external_critique`
+Current mode: `mao_t0_dispatch_authoring`
 
-`mao_roadmap_proposed_awaiting_external_critique`
+`mao_t0_dispatch_authoring`
 
 Previous mode:
 
-`msea_asc_architecture_catalog_closed`
+`mao_roadmap_proposed_awaiting_external_critique`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO roadmap critique reconciliation | `d61c3c92c` | REVIEWER_ACCEPTED_BOUNDED; T0 packet authoring released with three caveats. |
 | MAO runtime foundation roadmap | `6a08a041e` | PROPOSED after R94/R95 reopen audit; external critique is next; implementation remains parked. |
 | MSEA-ASC architecture catalog closure | `6273f3413` | REVIEWER_ACCEPTED_BOUNDED; 22 entities, 3 gaps, deterministic local/CI/weekly freshness. |
 | MSEA-ASC-RW integrated remaining wave dispatch | `fa4838c57` | DISPATCH_READY; one no-commit T1-T5 execution, exact T5 wiring owners, one final independent review. |
@@ -99,13 +100,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_roadmap_proposed_awaiting_external_critique`
+Mode: `mao_t0_dispatch_authoring`
 
-MAO roadmap is `PROPOSED` at material commit `6a08a041e`. Next allowed move is
-independent external critique of
-`docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md`,
-followed by internal source-verified classification of every critique. Stop
-before MAO-T0 GC-018/work-order authoring. MAO implementation remains parked.
+MAO critique reconciliation is accepted at `d61c3c92c`. Next allowed move is
+author and gate a fresh MAO-T0 GC-018 and source-verified
+`WORKER_MUST_NOT_COMMIT` work order. MAO runtime implementation remains parked.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 

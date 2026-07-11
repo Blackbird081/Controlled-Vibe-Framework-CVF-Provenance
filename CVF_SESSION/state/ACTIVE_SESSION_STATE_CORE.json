@@ -81,8 +81,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mao_roadmap_proposed_awaiting_external_critique",
-  "previousMode": "msea_asc_architecture_catalog_closed",
+  "currentMode": "mao_t0_dispatch_authoring",
+  "previousMode": "mao_roadmap_proposed_awaiting_external_critique",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
