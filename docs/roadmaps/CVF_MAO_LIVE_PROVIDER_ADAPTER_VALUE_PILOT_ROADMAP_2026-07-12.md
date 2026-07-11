@@ -150,6 +150,21 @@ DEFERRED_PRIVATE_ONLY
 Roadmap closed. Do not continue MAO live investment unless a materially harder
 task and measurable reopen hypothesis receive fresh operator authorization.
 
+Concrete reopen condition: all of the following must be true before a new MAO
+live packet is proposed:
+
+1. An accepted benchmark or prior direct-call receipt shows the same candidate
+   task scores at most 80/100 or contains one rubric-defined material defect.
+2. The task has a predeclared independent-review hypothesis naming the defect
+   class the MAO reviewer can detect and one bounded repair can correct.
+3. Success requires either at least a 10-point independently recomputed quality
+   gain over direct call or correction of that material defect, with no secret,
+   policy, or receipt-completeness regression.
+4. The proposed run keeps one provider lane, at most four calls, at most one
+   revision, and a latency-overhead ceiling of 50 percent.
+5. The operator explicitly approves a fresh GC-018 and source-verified work
+   order after reviewing the candidate task and baseline evidence.
+
 ## Claim Boundary
 
 Decision-first live pilot planning only; no live MAO adapter or value claim yet.
