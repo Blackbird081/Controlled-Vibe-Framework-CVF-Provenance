@@ -40,6 +40,8 @@ MAO-T6 material closure commit `ee5a1a400` is
 `REVIEWER_ACCEPTED_BOUNDED`; 58/58 tests and typecheck pass. MAO-T7 is
 released for packet refresh and one no-commit execution.
 
+MAO-T6 closure/T7 release session commit is `494961fde`.
+
 MAO-T5 is closed at `9b225f0e4`; MAO-T6 local lifecycle-controller packet is
 released for anchor/status refresh and one no-commit worker execution.
 
