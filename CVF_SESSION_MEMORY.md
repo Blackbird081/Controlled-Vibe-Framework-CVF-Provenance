@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r95_external_repository_absorption_entry_hardening_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the MSEA-R95 no-commit worker order; parked checkpoint=T3B, R73F, R84 effectiveness, and Multi-Agent Orchestration Runtime Foundation.
+Startup acknowledged: current mode=`msea_r95_external_repository_absorption_entry_hardening_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh source-verified packet for the selected next lane; parked checkpoint=T3B, R73F, and R84 effectiveness.
 
 ## Current Mode
 
-Current mode marker: `msea_r95_external_repository_absorption_entry_hardening_dispatched`
+Current mode marker: `msea_r95_external_repository_absorption_entry_hardening_closed`
 
-Current mode: `msea_r95_external_repository_absorption_entry_hardening_dispatched`
+Current mode: `msea_r95_external_repository_absorption_entry_hardening_closed`
 
-`msea_r95_external_repository_absorption_entry_hardening_dispatched`
+`msea_r95_external_repository_absorption_entry_hardening_closed`
 
 Previous mode:
 
-`msea_r94_system_chain_gap_closure_closed`
+`msea_r95_external_repository_absorption_entry_hardening_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R95 external repository absorption entry hardening closure | `8c5755051` | REVIEWER_ACCEPTED_BOUNDED. Existing ADIF-0014 owner extended; 44/44 tests, reviewer-fast 60/60, closure pre-commit 81/81. |
 | MSEA-R95 external repository absorption entry hardening dispatch | `dd92fa6d6` | DISPATCH_READY. Extend ADIF-0014 entry detection and guidance with source-mirror and explicit intake triggers, an R85-style terminal-ledger control block, focused compatibility tests, and no new checker or hook. Worker must not commit. |
 | MSEA-R94-T1B gateway helper ownership disposition closure | `3c5e87d7b` | REVIEWER_ACCEPTED_BOUNDED. GC-009/010 CLAIM_DOWNGRADED_WITH_REASON; focused tests 54/54; system-chain freshness CURRENT. |
 | MSEA-R94-T1A contract-guard matrix evidence correction closure | `ee39d8e62` | REVIEWER_ACCEPTED_BOUNDED. Six rows FIXED_AND_PROVEN, focused tests 34/34, system-chain freshness CURRENT. |
@@ -83,15 +84,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r95_external_repository_absorption_entry_hardening_dispatched`
+Mode: `msea_r95_external_repository_absorption_entry_hardening_closed`
 
-Next allowed move: execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R95_EXTERNAL_REPOSITORY_ABSORPTION_ENTRY_HARDENING_2026-07-11.md`
-as `WORKER_MUST_NOT_COMMIT` from dispatch commit `dd92fa6d6`. The worker may
-change only the six worker-owned paths named by the work order, must return the
-named worker-return artifact, and must stop at `COMPLETE_PENDING_REVIEW`.
-Multi-Agent Orchestration Runtime Foundation remains parked until reviewer
-closure of R95. Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: select and author a fresh source-verified GC-018/work-order
+packet. The prior value-park condition for Multi-Agent Orchestration Runtime
+Foundation is now satisfied by R94 and R95 closure, so that roadmap may be
+selected through a fresh packet; no MAO implementation is authorized yet.
+Latest closed numbered LHW wave remains `LHW24`.
 
 Multi-Agent Orchestration Runtime Foundation is
 `VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,

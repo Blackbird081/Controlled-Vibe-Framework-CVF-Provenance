@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r95_external_repository_absorption_entry_hardening_dispatched",
+  "currentMode": "msea_r95_external_repository_absorption_entry_hardening_closed",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R95 External Repository Absorption Entry Hardening is DISPATCH_READY at commit dd92fa6d6. Next allowed move is no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R95_EXTERNAL_REPOSITORY_ABSORPTION_ENTRY_HARDENING_2026-07-11.md. Worker may change only the six worker-owned paths named by that order, must create the named worker return, and must stop at COMPLETE_PENDING_REVIEW without committing. Multi-Agent Orchestration Runtime Foundation remains parked until reviewer closure of R95. T3B, R73F, and R84 effectiveness remain value/evidence parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R95 External Repository Absorption Entry Hardening is REVIEWER_ACCEPTED_BOUNDED at closure commit 8c5755051. The existing ADIF-0014 owner now recognizes source mirrors and bounded explicit intake language, requires R85-style entry evidence, and retains focused compatibility coverage. The prior MAO value-park condition is satisfied by R94 and R95 closure; the operator may select fresh source-verified GC-018/work-order authoring for Multi-Agent Orchestration Runtime Foundation, but no MAO implementation is authorized yet. T3B, R73F, and R84 effectiveness remain value/evidence parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

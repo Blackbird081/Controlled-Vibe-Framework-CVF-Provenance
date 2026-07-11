@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r95_external_repository_absorption_entry_hardening_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the MSEA-R95 no-commit worker order; parked checkpoint=T3B, R73F, R84 effectiveness, and Multi-Agent Orchestration Runtime Foundation.
+Startup acknowledged: current mode=`msea_r95_external_repository_absorption_entry_hardening_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh source-verified packet for the selected next lane; parked checkpoint=T3B, R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r95_external_repository_absorption_entr
 
 ## Current Mode
 
-`msea_r95_external_repository_absorption_entry_hardening_dispatched`
+`msea_r95_external_repository_absorption_entry_hardening_closed`
 
 ## Latest Work / Changes
 
@@ -870,6 +870,26 @@ Protected paths:
 Operator authorization: process the MSEA-R95 worker report through reviewer
 closure. Rollback boundary: revert only this handoff addition and the paired
 completion review; retain implementation commit `457a98e9b`.
+
+## Core Guard Self-Protection Authorization - MSEA-R95 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync after closure commit
+`8c5755051`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup after R95 closure. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record closed mode and next boundary. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set R95 closed mode. |
+| `CVF_SESSION/state/entries/mseaR95ExternalRepositoryAbsorptionEntryHardeningClosure20260711.json` | Record closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Release fresh packet selection only. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: process and close MSEA-R95. Rollback boundary: revert
+only this session-sync; retain closure commit `8c5755051`.
 
 ## Claim Boundary
 
