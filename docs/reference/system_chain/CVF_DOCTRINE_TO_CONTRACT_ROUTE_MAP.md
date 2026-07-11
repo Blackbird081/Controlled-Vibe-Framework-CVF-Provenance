@@ -10,8 +10,8 @@ Date: 2026-07-11
 
 EPISTEMIC_PROCESS_NA_WITH_REASON: this reference consolidates reviewer-accepted
 MSEA-R90/R91 Lane 1 findings into one navigable route table; the L1/L2/L4/L6
-rows below additionally carry reviewer-accepted MSEA-R96 evidence and the R97
-L6 inventory alignment. This reference does not itself compare new
+rows below additionally carry reviewer-accepted MSEA-R96 evidence, the R97
+L6 inventory alignment, and the bounded MSEA-R98 L2 owner decision. This reference does not itself compare new
 evidence or update an empirical claim beyond that acceptance.
 
 ## Purpose
@@ -55,7 +55,7 @@ acceptance.
 |---|---|---|---|---|
 | L0 - Doctrine | `/doctrine` | `ECOSYSTEM/doctrine/` | ACTIVE_PRESENT | direct read: `ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md` exists with the four named doctrine files |
 | L1 - System Definition | `/system` | none proven as a current doctrine-equivalent owner | SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE | MSEA-R96 reviewer-accepted evidence: `.private_reference/legacy/CVF_Restructure/CVF_ECOSYSTEM/system/CVF_PROJECT_MANIFEST.md` exists only under the legacy mirror; no active-tree `system/` directory exists; `START_HERE.md` and `README.md` were searched and rejected as self-declared redirect/triage pages, not system-identity owners |
-| L2 - Build Protocol | `/protocols` | `AGENTS.md` (adaptation candidate) | ADAPTATION_CANDIDATE | MSEA-R96 reviewer-accepted evidence: `.private_reference/legacy/CVF_Restructure/CVF_ECOSYSTEM/protocols/CVF_AGENT_BUILD_PROTOCOL.md` exists only under the legacy mirror; no active-tree `protocols/` directory exists; `AGENTS.md` matches the legacy protocol's own responsibility sections (reading order, structure protection, implementation discipline, spec compliance) by content, under a different name and location; doctrine has not been adapted |
+| L2 - Build Protocol | `/protocols` | `AGENTS.md` (bounded active operational owner) | NAMED_DIFFERENTLY_ACTIVE_OWNER_WITH_BOUNDARY | MSEA-R98 decision: `AGENTS.md` actively defines agent build behavior through mandatory startup, source-verification, implementation, autorun, closure, handoff, and repository-protection controls. This satisfies the L2 responsibility under a different name/location. Boundary: it is broader than the historical protocol, is not a one-to-one textual adaptation, does not make `/protocols` exist, and does not inherit frozen-doctrine status. |
 | L3 - Operating Model | `/operating-model` | `ECOSYSTEM/operating-model/` | ACTIVE_PRESENT | direct read: `ECOSYSTEM/operating-model/` exists in the active tree, matching doctrine's named contents |
 | L4 - Product Implementation | `/cvf-core` | none proven as a current doctrine-equivalent owner | SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE | MSEA-R96 reviewer-accepted evidence: the doctrine-named `/cvf-core` location does not exist; `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/README.md` self-declares Pre-Public Status and not yet published, consistent with `docs/reference/CVF_MODULE_INVENTORY.md` listing it as `draft`/`future-facing`, which is insufficient to promote it to the active L4 doctrine owner |
 | L5 - Governance Modules | `/agents`, `/policy`, `/audit`, `/identity` | `governance/` | NAMED_DIFFERENTLY_ACTIVE_OWNER | `governance/` (subfolders `compat/`, `contracts/`, `registries/`, `schemas/`, `skill-library/`, `toolkit/`) is the active-tree governance-infrastructure owner; none of the four doctrine-named folders (`/agents`, `/policy`, `/audit`, `/identity`) exist verbatim in the active tree |
@@ -72,14 +72,16 @@ Row disposition vocabulary used above:
 - `NAMED_DIFFERENTLY_ACTIVE_OWNER`: the doctrine-named folder does not exist
   verbatim, but a fresh direct read confirms an active-tree module or
   directory owns the same responsibility under a different name.
+- `NAMED_DIFFERENTLY_ACTIVE_OWNER_WITH_BOUNDARY`: an active differently named
+  source owns the doctrine responsibility operationally, while the route map
+  records that the source is broader, not textually equivalent, not located at
+  the illustrative doctrine path, and does not inherit doctrine freeze status.
 - `PARTIAL_ACTIVE_OWNER`: one doctrine-named location exists and matches; a
   sibling doctrine-named location under the same layer does not.
 - `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`: the named location is absent
   and current CVF-governed sources do not establish an equivalent active owner.
-- `ADAPTATION_CANDIDATE`: the named location is absent, but a fresh worker
-  audit (MSEA-R96) found an active-tree file matching the doctrine
-  responsibility by content under a different name/location; a doctrine-level
-  adaptation decision is evidence-supported but not executed.
+- `ADAPTATION_CANDIDATE`: historical MSEA-R96 intermediate disposition,
+  superseded for L2 by the bounded MSEA-R98 owner decision.
 - `PARTIAL_OWNER_WITH_GAP`: responsibility coverage is confirmed real but
   distributed across more than one unconsolidated active-tree location, none
   of which is the doctrine-named root folder itself. R97 removed the inventory
@@ -118,7 +120,7 @@ intentional, not unresolved drift requiring reconciliation:
 
 This reference does not decide whether the L1/L4 unresolved-owner rows should
 be closed by creating active-tree `system/` or `cvf-core/` directories, does
-not execute the L2 `ADAPTATION_CANDIDATE` finding as a doctrine change, does
+records the bounded L2 active owner without changing doctrine or `AGENTS.md`, does
 records the R97 module-inventory alignment but does not execute L6 content
 consolidation or root-path alignment, does not reconcile the independent numbering schemes
 into one vocabulary, and does not change any doctrine, module-map, or
@@ -146,8 +148,9 @@ the legacy mirror (read only to confirm an already-governed L1/L2 absence,
 not to absorb it), reviewer-accepted MSEA-R90/R91 Lane 1 findings, and
 reviewer-accepted MSEA-R96 L1/L2/L4/L6 evidence. It does not certify architectural correctness beyond that
 acceptance, does not promote legacy-only content to active CVF authority,
-does not execute the L2 `ADAPTATION_CANDIDATE` or close the L6
-`PARTIAL_OWNER_WITH_GAP`, does not reconcile the independent
+does not claim textual equivalence between L2 doctrine and `AGENTS.md`, does
+not transfer frozen-doctrine status to `AGENTS.md`, and does not close the L6
+`PARTIAL_OWNER_WITH_GAP`; it does not reconcile the independent
 numbering schemes into one vocabulary, does not authorize a new active-tree
 `system/`, `protocols/`, `cvf-core/`, or `examples/` directory, and does not
 introduce a second freshness mechanism.
