@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_t2_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one delegated no-commit ODVR-T2 execution with exactly three evidence outputs; parked checkpoint=composer changes, UI/provider/public work, and outside-source absorption.
+Startup acknowledged: current mode=`odvr_closed_value_not_proven_external_absorption_selection`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=operator selects one newly justified external repository or folder for source-mirror-first governed absorption entry; parked checkpoint=ODVR reopen, UI/provider/public work, and absorption before target selection.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one delegated 
 
 ## Current Mode
 
-`odvr_t2_dispatched`
+`odvr_closed_value_not_proven_external_absorption_selection`
 
 ## Latest Work / Changes
 
@@ -681,3 +681,36 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain ODVR-T2 dispatch
 commit `1a79ba7a3`.
+
+## ODVR-T2 Terminal Value Closure
+
+Material closure HEAD: `da53959ec`.
+
+ODVR-T2 is `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN`; the roadmap is
+`CLOSED_VALUE_NOT_PROVEN`. Reviewer recomputation corrected the closed-lane
+score from 4/7 to 3/7 exact facts; the parked/reopen lane preserved 0/7. The
+value threshold fails, so no UI or implementation continuation opens.
+
+Next allowed move: operator selects one newly justified external repository or
+folder. Source-mirror verification and a fresh governed absorption entry packet
+must precede absorption. No target is selected by this closure.
+
+Session-sync parent HEAD: `da53959ec`.
+
+## Core Guard Self-Protection Authorization - ODVR-T2 Closure Sync
+
+Operator authorization: independently review ODVR-T2, close the roadmap, and
+return continuity to external-source target selection.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/odvrT2Closure20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain ODVR-T2 material
+closure commit `da53959ec`.

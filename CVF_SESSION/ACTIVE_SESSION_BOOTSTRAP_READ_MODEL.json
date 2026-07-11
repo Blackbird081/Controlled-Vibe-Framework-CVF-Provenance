@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "odvr_t2_dispatched",
+  "currentMode": "odvr_closed_value_not_proven_external_absorption_selection",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "ODVR-T2 is DISPATCH_READY at commit 1a79ba7a3. Next move is one delegated WORKER_MUST_NOT_COMMIT execution producing exactly the JSON measurement receipt, T2 proof report, and worker return. The worker compares identical operator questions across one closed and one parked/reopen scenario using manual and composed paths. No composer edit, UI/Web, provider/live, session mutation, public-sync, outside-source absorption, or worker commit is authorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "ODVR is CLOSED_VALUE_NOT_PROVEN at material commit da53959ec; no UI or implementation continuation opens. Next move is operator selection of one newly justified external repository or folder, followed by source-mirror verification and a fresh governed absorption entry packet before any absorption work. No external target is currently selected. Do not reopen ODVR unless a fresh operator decision names a concrete lane-scoping and missing-field hypothesis. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
