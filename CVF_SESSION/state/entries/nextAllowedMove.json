@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "MAO runtime foundation roadmap T0-T9 is CLOSED_PASS_BOUNDED at material commit 29c55ca36. T9-F1 is REJECTED; zero blocking findings remain. Public export is DEFERRED_PRIVATE_ONLY and ASC admission is deferred pending proof-classed edges. Next work requires fresh operator selection and a new roadmap/GC-018/source-verified work order; provider, durable queue, UI, public projection, or ASC admission are not implicitly authorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "Post-MAO canonical live governance proof PASS is recorded at a0b40ecfb. Operator selected one bounded MAO-LIVE-T1 provider-adapter value pilot. Next allowed move is author a fresh decision-first roadmap, GC-018 baseline, and source-verified WORKER_MUST_NOT_COMMIT work order reusing the existing Model Gateway live proof harness. No implementation begins before packet gates pass. Durable queue, UI, public-sync, production readiness, and broad provider parity remain unauthorized. LHW24 remains latest closed numbered LHW wave."
 }

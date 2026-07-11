@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_runtime_foundation_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh operator lane selection and new governed packet; parked checkpoint=provider, durable queue, UI, public projection and ASC admission.
+Startup acknowledged: current mode=`mao_live_t1_packet_authoring_ready`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author fresh MAO-LIVE-T1 roadmap/GC-018/source-verified work order; parked checkpoint=implementation until packet gates pass, durable queue, UI, public projection and ASC admission.
 
 ## Current Mode
 
-Current mode marker: `mao_runtime_foundation_closed`
+Current mode marker: `mao_live_t1_packet_authoring_ready`
 
-Current mode: `mao_runtime_foundation_closed`
+Current mode: `mao_live_t1_packet_authoring_ready`
 
-`mao_runtime_foundation_closed`
+`mao_live_t1_packet_authoring_ready`
 
 Previous mode:
 
-`mao_t9_dispatched`
+`mao_runtime_foundation_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Post-MAO live governance proof | `a0b40ecfb` | LIVE_PROOF_PASS_BOUNDED; live governance PASS, not MAO provider orchestration. |
 | MAO runtime foundation T0-T9 closure | `29c55ca36` | CLOSED_PASS_BOUNDED; T9-F1 REJECT; zero blocking findings. |
 | MAO-T9 independent critique dispatch | `c40991cc5` | DISPATCH_READY; exactly four review outputs, no worker commit or owner-surface mutation. |
 | MAO-T8 representative pilot closure | `f5a3def2a` | REVIEWER_ACCEPTED_BOUNDED after monotonic-time repair; 25/25 tests and typecheck PASS. |
@@ -118,10 +119,10 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_runtime_foundation_closed`
+Mode: `mao_live_t1_packet_authoring_ready`
 
-MAO T0-T9 is closed bounded at `29c55ca36`. Next work requires fresh operator
-selection and a new roadmap/GC-018/source-verified work order.
+MAO T0-T9 remains closed. Next allowed move is fresh MAO-LIVE-T1 packet
+authoring that reuses existing Model Gateway live harness authority.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 

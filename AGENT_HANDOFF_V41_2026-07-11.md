@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_runtime_foundation_closed`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh operator lane selection and governed packet; parked checkpoint=provider/durable queue/UI/public/ASC admission, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_live_t1_packet_authoring_ready`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author fresh MAO-LIVE-T1 roadmap/GC-018/work order; parked checkpoint=implementation until packet gates pass, durable queue/UI/public/ASC admission, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_runtime_foundation_closed`
+`mao_live_t1_packet_authoring_ready`
 
 ## Latest Work / Changes
 
@@ -226,6 +226,29 @@ Protected paths:
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
+
+## Post-MAO Live Proof And MAO-LIVE-T1 Selection
+
+Live evidence HEAD: `a0b40ecfb`. Canonical live governance bundle PASS. The
+operator selected one bounded MAO-LIVE-T1 value pilot; only packet authoring is
+released. Session-sync parent HEAD: `a0b40ecfb`.
+
+## Core Guard Self-Protection Authorization - MAO-LIVE-T1 Selection Sync
+
+Operator authorization: use configured keys for proof, then proceed with the
+recommended bounded live MAO pilot through fresh governed packet authoring.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/maoPostClosureLiveProofAndPilotSelection20260712.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this sync; retain live evidence commit `a0b40ecfb`.
 
 ## MAO Runtime Foundation Final Closure
 
