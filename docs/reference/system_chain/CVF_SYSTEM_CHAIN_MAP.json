@@ -20,8 +20,8 @@
       "testedBy": "HISTORICAL: no machine test enforces doctrine-to-folder mapping",
       "evidenceOwner": "docs/reference/CVF_MODULE_INVENTORY.md; docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
       "operatorSurface": "ARCHITECTURE.md front door; ECOSYSTEM/README.md",
-      "knownGaps": "R94-T2 now cross-references the three independent CVF-governed module maps without false equivalence. L1/L2 remain legacy-only gaps, L4 has no proven current doctrine-equivalent owner, and L6 is partial.",
-      "nextReviewAction": "Use docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md as the active route record. Reopen L1/L2/L4/L6 only with a source-backed owner decision; do not promote legacy-only content.",
+      "knownGaps": "R96 retains L1 and L4 as SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE, identifies AGENTS.md as an L2 ADAPTATION_CANDIDATE pending doctrine ratification, and records L6 as PARTIAL_OWNER_WITH_GAP because responsibility is distributed and incompletely inventoried.",
+      "nextReviewAction": "Use docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md as the active route record. Any L1 owner creation, L2 doctrine ratification, L4 promotion, or L6 inventory/consolidation change requires a fresh governed packet.",
       "sourceFingerprints": [
         {
           "path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md",
@@ -45,7 +45,7 @@
         },
         {
           "path": "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md",
-          "sha256": "e1ce8563aa32144f59f60a6f8267971fa9570e19a5e22f74105941239460a32f",
+          "sha256": "b42a223cf40560766047094ea13a02a308381468ecabb9380d7b39660444159f",
           "evidenceRole": "R94-T2 active doctrine route and intentional-separation record"
         }
       ]

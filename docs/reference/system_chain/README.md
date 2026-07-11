@@ -58,8 +58,10 @@ laneId: `DOCTRINE_TO_CONTRACT`
 R94-T2 adds the active companion route
 `docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md`. It
 cross-references the three CVF-governed independent numbering narratives
-without treating them as equivalent. L1/L2 remain legacy-only gaps, L4 has no
-proven current doctrine-equivalent owner, and L6 remains partial.
+without treating them as equivalent. R96 retains L1 and L4 as unresolved with
+search evidence, identifies `AGENTS.md` as an L2 adaptation candidate pending
+ratification, and records L6 responsibility as real but distributed with an
+inventory/consolidation gap.
 
 **Posture: PARTIAL.** Verdict: `PARTIAL_CHAIN_WITH_DOCUMENTED_DRIFT`.
 
@@ -67,8 +69,9 @@ Frozen doctrine (`ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md`) declares seven
 layers L0 through L6. L0 (`ECOSYSTEM/doctrine/`) and L3
 (`ECOSYSTEM/operating-model/`) exist in the active tree and match the
 doctrine's named contents. L1 and L2 doctrine-named content exists only
-under a legacy-reference mirror, not the active `ECOSYSTEM/` tree - this is
-a **historical** gap, not a current implementation. Three additional
+under a legacy-reference mirror, not the active `ECOSYSTEM/` tree. R96 found
+a substantial L2 responsibility match in `AGENTS.md`, but no doctrine-level
+ratification has occurred. Three additional
 module-map documents (`ARCHITECTURE.md`, `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md`,
 `docs/CVF_CORE_KNOWLEDGE_BASE.md`) use independent layer-numbering schemes
 not cross-referenced to the doctrine; this is recorded drift, not an error

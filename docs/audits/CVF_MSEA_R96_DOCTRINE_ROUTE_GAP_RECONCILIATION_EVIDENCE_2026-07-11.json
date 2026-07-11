@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "MSEA-R96",
+  "docType": "audit-evidence",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "date": "2026-07-11",
+  "executionBaseHead": "ea104987c",
+  "markdownCompanion": "docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md",
+  "sourceManifest": [
+    "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md",
+    "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md",
+    "docs/reference/system_chain/README.md",
+    "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+    "docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_2026-07-10.md",
+    "docs/reviews/CVF_MSEA_R94_REMAINING_WAVE_SYSTEM_CHAIN_COMPLETION_2026-07-11.md",
+    "ARCHITECTURE.md",
+    "docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md",
+    "docs/reference/CVF_MODULE_INVENTORY.md",
+    ".private_reference/legacy/CVF_Restructure/CVF_ECOSYSTEM/system/CVF_PROJECT_MANIFEST.md",
+    ".private_reference/legacy/CVF_Restructure/CVF_ECOSYSTEM/protocols/CVF_AGENT_BUILD_PROTOCOL.md",
+    "START_HERE.md",
+    "README.md",
+    "AGENTS.md",
+    "EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/README.md",
+    "EXTENSIONS/examples/",
+    "governance/toolkit/06_EXAMPLES/EXAMPLE_LOGISTICS_CONTAINER_COST.md"
+  ],
+  "manifestHashAlgorithm": "sha256(normalized_manifest.encode(utf-8)).hexdigest(); one path per line, LF line endings, single trailing newline, declared array order",
+  "manifestHash": "sha256:fe9d2d9950f5ae55112c18df49189773c8451c201e466ac9b805547b2360a528",
+  "manifestRecords": [
+    { "path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md", "terminalStatus": "READ" },
+    { "path": "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md", "terminalStatus": "READ" },
+    { "path": "docs/reference/system_chain/README.md", "terminalStatus": "READ" },
+    { "path": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json", "terminalStatus": "READ" },
+    { "path": "docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_2026-07-10.md", "terminalStatus": "READ" },
+    { "path": "docs/reviews/CVF_MSEA_R94_REMAINING_WAVE_SYSTEM_CHAIN_COMPLETION_2026-07-11.md", "terminalStatus": "READ" },
+    { "path": "ARCHITECTURE.md", "terminalStatus": "READ" },
+    { "path": "docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md", "terminalStatus": "READ" },
+    { "path": "docs/reference/CVF_MODULE_INVENTORY.md", "terminalStatus": "READ" },
+    { "path": ".private_reference/legacy/CVF_Restructure/CVF_ECOSYSTEM/system/CVF_PROJECT_MANIFEST.md", "terminalStatus": "READ" },
+    { "path": ".private_reference/legacy/CVF_Restructure/CVF_ECOSYSTEM/protocols/CVF_AGENT_BUILD_PROTOCOL.md", "terminalStatus": "READ" },
+    { "path": "START_HERE.md", "terminalStatus": "READ" },
+    { "path": "README.md", "terminalStatus": "READ" },
+    { "path": "AGENTS.md", "terminalStatus": "READ" },
+    { "path": "EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/README.md", "terminalStatus": "READ" },
+    { "path": "EXTENSIONS/examples/", "terminalStatus": "READ" },
+    { "path": "governance/toolkit/06_EXAMPLES/EXAMPLE_LOGISTICS_CONTAINER_COST.md", "terminalStatus": "READ" }
+  ],
+  "layerDecisions": [
+    {
+      "layerId": "L1",
+      "layerName": "System Definition",
+      "doctrineLocation": "/system",
+      "priorDisposition": "LEGACY_ONLY_GAP",
+      "candidateOwners": [
+        { "path": "START_HERE.md", "verdict": "REJECTED", "reason": "self-declared redirect, not a system-identity/component-map document (line 3, line 18)" },
+        { "path": "README.md", "verdict": "REJECTED", "reason": "role-based triage per START_HERE.md's own Front-Door Rule, not a system-identity document" },
+        { "path": "ARCHITECTURE.md", "verdict": "REJECTED", "reason": "system-shape/engineering-structure narration, an independent non-doctrine numbering scheme per the existing route map" }
+      ],
+      "negativeSearch": "test -d system at repository root -> NOT_FOUND_system",
+      "responsibilityMatch": "NO_ACTIVE_OWNER_MATCHES_COMPOSITE_RESPONSIBILITY",
+      "finalDisposition": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "confidenceBoundary": "folder absence confirmed; three plausible candidates searched and rejected by responsibility mismatch, not filename absence alone",
+      "nextOwnerAction": "operator decision: extend START_HERE.md scope or author a fresh L1 owner through a separate governed packet"
+    },
+    {
+      "layerId": "L2",
+      "layerName": "Build Protocol",
+      "doctrineLocation": "/protocols",
+      "priorDisposition": "LEGACY_ONLY_GAP",
+      "candidateOwners": [
+        { "path": "AGENTS.md", "verdict": "ACCEPTED_AS_CANDIDATE", "reason": "content comparison against legacy CVF_AGENT_BUILD_PROTOCOL.md section list (reading order, structure protection, implementation discipline, spec compliance) matches AGENTS.md sections at lines 3, 175, 277, 337, 352, 555" }
+      ],
+      "negativeSearch": "test -d protocols at repository root -> NOT_FOUND_protocols",
+      "responsibilityMatch": "SUBSTANTIAL_CANDIDATE_MATCH_BY_CONTENT_RATIFICATION_PENDING",
+      "finalDisposition": "ADAPTATION_CANDIDATE",
+      "confidenceBoundary": "AGENTS.md substantially matches the active L2 responsibility by content comparison but is not yet a ratified doctrine-equivalent owner; doctrine has not been adapted or changed by this audit",
+      "nextOwnerAction": "operator decision on whether to formally adapt doctrine language to recognize AGENTS.md as the L2 owner; not decided by this audit"
+    },
+    {
+      "layerId": "L4",
+      "layerName": "Product Implementation",
+      "doctrineLocation": "/cvf-core",
+      "priorDisposition": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "candidateOwners": [
+        { "path": "EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/", "verdict": "REJECTED", "reason": "self-declares Pre-Public Status, not yet published, breaking changes may occur before any publication decision (README.md lines 5-7, 16, 70); consistent with module inventory row: operational status draft, branch-track/future-facing" }
+      ],
+      "negativeSearch": "test -d cvf-core at repository root -> NOT_FOUND_cvf-core",
+      "responsibilityMatch": "ONLY_CANDIDATE_SELF_DECLARES_DRAFT_STATUS",
+      "finalDisposition": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "confidenceBoundary": "disposition unchanged from R94; this audit adds fresh direct-source re-verification of draft/pre-public status rather than reusing the module inventory row alone",
+      "nextOwnerAction": "re-evaluate only if EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/ completes a publication decision and exits pre-public status, through a fresh governed packet"
+    },
+    {
+      "layerId": "L6",
+      "layerName": "Ecosystem Layer",
+      "doctrineLocation": "/examples and /docs",
+      "priorDisposition": "PARTIAL_ACTIVE_OWNER",
+      "candidateOwners": [
+        { "path": "docs/", "verdict": "ACCEPTED_UNCHANGED", "reason": "confirmed active owner from existing route map; not re-litigated by this audit" },
+        { "path": "governance/toolkit/06_EXAMPLES/", "verdict": "ACCEPTED_AS_PARTIAL", "reason": "one content file (EXAMPLE_LOGISTICS_CONTAINER_COST.md); real but narrow" },
+        { "path": "EXTENSIONS/examples/", "verdict": "ACCEPTED_AS_PARTIAL", "reason": "13 tracked files across 4 subdirectories confirmed by git ls-files count and git log history (commits 34ebb5bfb, 4eb99de56); absent from module inventory by direct grep" }
+      ],
+      "negativeSearch": "test -d examples at repository root -> NOT_FOUND_examples; grep for EXTENSIONS/examples in docs/reference/CVF_MODULE_INVENTORY.md -> NOT_LISTED_IN_MODULE_INVENTORY",
+      "responsibilityMatch": "RESPONSIBILITY_COVERED_BY_DISTRIBUTED_UNINVENTORIED_OWNERS",
+      "finalDisposition": "PARTIAL_OWNER_WITH_GAP",
+      "confidenceBoundary": "evidentiary upgrade from R94's PARTIAL_ACTIVE_OWNER; no single /examples folder exists, responsibility coverage is real but distributed and uninventoried, not absent",
+      "nextOwnerAction": "operator decision: consolidate example content, add EXTENSIONS/examples/ to module inventory, or retain current distributed state"
+    }
+  ],
+  "priorRouteMapComparison": {
+    "l1": { "before": "LEGACY_ONLY_GAP", "after": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE", "changeType": "EVIDENTIARY_UPGRADE_SAME_CONCLUSION" },
+    "l2": { "before": "LEGACY_ONLY_GAP", "after": "ADAPTATION_CANDIDATE", "changeType": "DISPOSITION_CHANGED_ON_NEW_EVIDENCE" },
+    "l4": { "before": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE", "after": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE", "changeType": "UNCHANGED_EVIDENTIARY_UPGRADE" },
+    "l6": { "before": "PARTIAL_ACTIVE_OWNER", "after": "PARTIAL_OWNER_WITH_GAP", "changeType": "DISPOSITION_CHANGED_ON_NEW_EVIDENCE" }
+  },
+  "negativeSearchLog": [
+    { "check": "system directory at repo root", "command": "test -d system", "result": "NOT_FOUND_system" },
+    { "check": "protocols directory at repo root", "command": "test -d protocols", "result": "NOT_FOUND_protocols" },
+    { "check": "cvf-core directory at repo root", "command": "test -d cvf-core", "result": "NOT_FOUND_cvf-core" },
+    { "check": "examples directory at repo root", "command": "test -d examples", "result": "NOT_FOUND_examples" },
+    { "check": "EXTENSIONS/examples in module inventory", "command": "grep -n \"EXTENSIONS/examples\" docs/reference/CVF_MODULE_INVENTORY.md", "result": "NOT_LISTED_IN_MODULE_INVENTORY" },
+    { "check": "EXTENSIONS/examples tracked file count", "command": "git ls-files EXTENSIONS/examples/ | wc -l", "result": "13" },
+    { "check": "EXTENSIONS/examples commit history presence", "command": "git log --oneline -3 -- EXTENSIONS/examples/", "result": "34ebb5bfb, 4eb99de56 present" }
+  ],
+  "corpusCompleteness": {
+    "corpusTaskClass": "BOUNDED_DOCTRINE_ROUTE_RECONCILIATION",
+    "manifestCount": 17,
+    "ledgerTerminalCount": 17,
+    "exclusions": 0,
+    "unresolved": 0,
+    "corpusVerdict": "COMPLETE_VERIFIED"
+  },
+  "blindSpotControl": {
+    "gate1EnumerationComplete": true,
+    "gate2TerminalPerCandidate": true,
+    "gate3NegativeSearchesRecorded": true,
+    "verdict": "CLEAR"
+  },
+  "claimBoundary": "This evidence file backs a bounded four-layer doctrine-route decision pass only. It does not authorize legacy promotion, new architecture folders, doctrine edits, runtime changes, or a universal system-chain completeness claim."
+}
