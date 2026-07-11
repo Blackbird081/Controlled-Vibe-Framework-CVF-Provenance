@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_asc_roadmap_external_critique_classified",
+  "currentMode": "msea_asc_t0_source_schema_contract_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "The MSEA-ASC external critique is internally classified and folded at commit 6485fc7ad. Ten findings are accepted or calibrated; freshness topology, current R98/R99 lineage, determinism, admission, verification classes, and projection boundaries are now explicit. Next allowed move is author a fresh GC-018 baseline and work order for ASC-T0 only. L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-ASC-T0 Source Schema And Reconciliation Contract is DISPATCH_READY at commit cbc5348bf with WORKER_MUST_NOT_COMMIT. Next allowed move is delegated worker execution from the dispatch-session HEAD, producing exactly four reference/schema outputs and one worker return, then stopping COMPLETE_PENDING_REVIEW. No ASC-T1+, catalog population, gap index, generator, checker, diagram, runtime, public, or provider work is authorized. L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

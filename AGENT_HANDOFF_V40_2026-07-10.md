@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_asc_roadmap_external_critique_classified`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh GC-018 and work order for ASC-T0 only; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_asc_t0_source_schema_contract_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=delegated worker executes ASC-T0 and returns COMPLETE_PENDING_REVIEW without commit; parked checkpoint=L4 promotion, ASC-T1+, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_asc_roadmap_external_critique_classifie
 
 ## Current Mode
 
-`msea_asc_roadmap_external_critique_classified`
+`msea_asc_t0_source_schema_contract_dispatched`
 
 ## Latest Work / Changes
 
@@ -1100,6 +1100,24 @@ Protected paths: `AGENT_HANDOFF_V40_2026-07-10.md`;
 
 Operator authority: review Claude rebuttal. Rollback only this sync; retain
 `6485fc7ad`.
+
+## MSEA-ASC-T0 Source Schema Contract Dispatch - 2026-07-11
+
+Dispatch commit: `cbc5348bf`. `WORKER_MUST_NOT_COMMIT`. Worker produces exactly
+four reference/schema outputs plus one worker return and stops
+`COMPLETE_PENDING_REVIEW`.
+
+## Core Guard Self-Protection Authorization - MSEA-ASC-T0 Dispatch Session Sync
+
+Authorized scope: session-sync after `cbc5348bf`. Protected paths:
+`AGENT_HANDOFF_V40_2026-07-10.md`; `CVF_SESSION_MEMORY.md`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/mseaAscT0SourceSchemaContractDispatch20260711.json`.
+Operator authority: create ASC-T0 work order. Rollback only this sync; retain
+`cbc5348bf`.
 
 ## Claim Boundary
 

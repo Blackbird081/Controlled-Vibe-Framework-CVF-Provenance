@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_asc_roadmap_external_critique_classified`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh GC-018 and work order for ASC-T0 only; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_asc_t0_source_schema_contract_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=delegated worker executes ASC-T0 and returns COMPLETE_PENDING_REVIEW without commit; parked checkpoint=L4 promotion, ASC-T1+, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Current Mode
 
-Current mode marker: `msea_asc_roadmap_external_critique_classified`
+Current mode marker: `msea_asc_t0_source_schema_contract_dispatched`
 
-Current mode: `msea_asc_roadmap_external_critique_classified`
+Current mode: `msea_asc_t0_source_schema_contract_dispatched`
 
-`msea_asc_roadmap_external_critique_classified`
+`msea_asc_t0_source_schema_contract_dispatched`
 
 Previous mode:
 
-`msea_asc_as_built_architecture_catalog_roadmap_proposed`
+`msea_asc_roadmap_external_critique_classified`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-ASC-T0 source schema and reconciliation contract dispatch | `cbc5348bf` | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; exactly four reference/schema outputs plus one worker return. |
 | MSEA-ASC external critique classification and fold | `6485fc7ad` | REVIEWER_ACCEPTED_BOUNDED. Ten findings accepted/calibrated; roadmap ready for ASC-T0 packet authoring only. |
 | MSEA-ASC as-built architecture and system catalog roadmap | `027ead038` | PROPOSED. Machine catalog, proof-class edge graph, indexed gap README/JSON, human front door, freshness/admission controls, and independent critique sequence. |
 | MSEA-R99 L1 system-definition owner design closure | `ea57cc634` | REVIEWER_ACCEPTED_BOUNDED. Compact pointer owner created; L1 path/authority/freeze boundaries retained; freshness CURRENT. |
@@ -94,12 +95,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_asc_roadmap_external_critique_classified`
+Mode: `msea_asc_t0_source_schema_contract_dispatched`
 
-Next allowed move: author a fresh GC-018 baseline and work order for ASC-T0
-only. External critique is classified and folded. No ASC-T1+ implementation is
-authorized. L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. Latest closed
-numbered LHW wave remains `LHW24`.
+Next allowed move: delegated worker executes ASC-T0 from the dispatch-session
+HEAD and returns exactly five uncommitted outputs with
+`COMPLETE_PENDING_REVIEW`. No ASC-T1+, population, gap index, generator,
+checker, diagram, runtime, public, or provider work is authorized. L4 remains
+VALUE_PARKED_WITH_REOPEN_CONDITIONS. Latest closed numbered LHW wave remains
+`LHW24`.
 
 Multi-Agent Orchestration Runtime Foundation is
 `VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,
