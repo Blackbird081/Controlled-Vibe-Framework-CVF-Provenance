@@ -4,19 +4,34 @@ CVF Absorption Blind-Spot Control Presence Guard (ADIF-0014)
 
 Scope-triggered presence checker: when a changed work order, GC-018 baseline,
 or completion review touches an absorption source under
-``.private_reference/legacy/`` or ``.private_reference/external_repos/``, the
-artifact must carry both the Mandatory Blind-Spot Control Block heading and the
-Corpus Completeness And Report Integrity section heading (or an allowed
-``NOT_APPLICABLE_WITH_REASON`` / ``SKIPPED_WITH_REASON`` disposition), independent
-of any completeness claim.
+``.private_reference/legacy/``, ``.private_reference/external_repos/``, or
+``.private_reference/source_mirrors/``, or its content uses bounded, explicit
+external-repository/copied-folder intake language, the artifact must carry
+the Mandatory Blind-Spot Control Block heading, the Corpus Completeness And
+Report Integrity section heading, and the External Repository Absorption
+Entry Control heading (or an allowed ``NOT_APPLICABLE_WITH_REASON`` /
+``SKIPPED_WITH_REASON`` disposition for each), independent of any
+completeness claim.
 
 This closes ADIF-0014: the claim-triggered checkers stay silent when an artifact
 simply omits both the claim and the control blocks.  This checker fires when a
 changed governed artifact's *content* references an absorption source path
-under ``.private_reference/legacy/`` or ``.private_reference/external_repos/``,
-not on whether the artifact happens to claim completeness.  The absorption
-source files themselves are gitignored and do not appear in the changed set;
-the trigger must scan artifact content, not changed paths.
+under ``.private_reference/legacy/``, ``.private_reference/external_repos/``,
+or ``.private_reference/source_mirrors/``, or uses bounded explicit intake
+language, not on whether the artifact happens to claim completeness.  The
+absorption source files themselves are gitignored and do not appear in the
+changed set; the trigger must scan artifact content, not changed paths.
+
+The R95 tranche additionally requires an ``## External Repository Absorption
+Entry Control`` block, modeled on the MSEA-R85 terminal-ledger discipline
+(``docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md``),
+so an agent declares source type, upstream/source-mirror disposition,
+enumeration/manifest plan, per-file terminal-ledger plan, owner/overlap
+route, value-disposition route, and claim boundary before absorption
+planning begins - not only after an absorption artifact already exists. A
+narrow, explicit ``COMPARISON_ONLY_NO_ABSORPTION`` disposition is allowed for
+artifacts that cite an external source purely for side-by-side comparison
+and make no absorption claim.
 """
 
 from __future__ import annotations
@@ -37,15 +52,48 @@ ARCHIVE_MARKER = "/archive/"
 
 BLIND_SPOT_HEADING = "## Mandatory Blind-Spot Control Block"
 CORPUS_HEADING = "## Corpus Completeness And Report Integrity"
+ENTRY_CONTROL_HEADING = "## External Repository Absorption Entry Control"
 
 ALLOWED_DISPOSITION_PATTERNS = (
     re.compile(r"NOT_APPLICABLE_WITH_REASON", re.IGNORECASE),
     re.compile(r"SKIPPED_WITH_REASON", re.IGNORECASE),
 )
 
+# Comparison-only artifacts may narrowly exempt the entry control block by
+# stating this exact disposition inside the heading's own section. This does
+# not exempt the Blind-Spot or Corpus headings, which retain their existing
+# NOT_APPLICABLE_WITH_REASON / SKIPPED_WITH_REASON allowance only.
+COMPARISON_ONLY_DISPOSITION_PATTERN = re.compile(
+    r"COMPARISON_ONLY_NO_ABSORPTION", re.IGNORECASE
+)
+
 ABSORPTION_SOURCE_PREFIXES = (
     ".private_reference/legacy/",
     ".private_reference/external_repos/",
+    ".private_reference/source_mirrors/",
+)
+
+# Bounded, explicit multi-word intake phrases only. Generic bare words such
+# as "repo" are forbidden triggers per the R95 work order; each phrase below
+# reuses the canonical vocabulary already established by
+# governance/compat/check_external_absorption_core.py so the same intent is
+# recognized consistently across absorption-related checkers.
+EXTERNAL_INTAKE_TEXT_MARKERS = (
+    "external repository absorption",
+    "external repo or copied folder",
+    "copied folder absorption",
+    "external repository intake",
+    "copied-folder intake",
+)
+
+REQUIRED_ENTRY_CONTROL_FIELDS = (
+    "Source type",
+    "Upstream or source-mirror disposition",
+    "Enumeration or manifest plan",
+    "Per-file terminal-ledger plan",
+    "Owner or overlap route",
+    "Value-disposition route",
+    "Claim boundary",
 )
 
 GOVERNED_ARTIFACT_PREFIXES = (
@@ -151,8 +199,10 @@ def _read_rel(path: str) -> str:
 
 def _artifact_references_absorption_source(path: str) -> bool:
     """Return True if the governed artifact's content references an
-    absorption source path under ``.private_reference/legacy/`` or
-    ``.private_reference/external_repos/``.
+    absorption source path under ``.private_reference/legacy/``,
+    ``.private_reference/external_repos/``, or
+    ``.private_reference/source_mirrors/``, or uses bounded, explicit
+    external-repository/copied-folder intake language.
 
     The absorption source files are gitignored and do not appear in the
     changed set; the trigger must scan artifact content, not changed paths.
@@ -161,7 +211,10 @@ def _artifact_references_absorption_source(path: str) -> bool:
         text = _read_rel(path)
     except OSError:
         return False
-    return any(prefix in text for prefix in ABSORPTION_SOURCE_PREFIXES)
+    if any(prefix in text for prefix in ABSORPTION_SOURCE_PREFIXES):
+        return True
+    lowered = text.casefold()
+    return any(marker in lowered for marker in EXTERNAL_INTAKE_TEXT_MARKERS)
 
 
 def _is_governed_artifact(path: str) -> bool:
@@ -192,6 +245,18 @@ def _extract_section(text: str, header: str) -> str:
     return text[section_start:next_header]
 
 
+def _has_comparison_only_disposition(text: str) -> bool:
+    section = _extract_section(text, ENTRY_CONTROL_HEADING)
+    if not section:
+        return False
+    return bool(COMPARISON_ONLY_DISPOSITION_PATTERN.search(section))
+
+
+def _missing_entry_control_fields(text: str) -> list[str]:
+    section = _extract_section(text, ENTRY_CONTROL_HEADING)
+    return [field for field in REQUIRED_ENTRY_CONTROL_FIELDS if field not in section]
+
+
 def _check_artifact(path: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
     try:
@@ -206,9 +271,7 @@ def _check_artifact(path: str) -> list[dict[str, str]]:
 
     has_blind_spot = BLIND_SPOT_HEADING in text
     has_corpus = CORPUS_HEADING in text
-
-    if has_blind_spot and has_corpus:
-        return violations
+    has_entry_control = ENTRY_CONTROL_HEADING in text
 
     if not has_blind_spot and _has_allowed_disposition(text, BLIND_SPOT_HEADING):
         pass
@@ -237,6 +300,35 @@ def _check_artifact(path: str) -> list[dict[str, str]]:
                 "NOT_APPLICABLE_WITH_REASON / SKIPPED_WITH_REASON disposition"
             ),
         })
+
+    if _has_comparison_only_disposition(text):
+        pass
+    elif _has_allowed_disposition(text, ENTRY_CONTROL_HEADING):
+        pass
+    elif not has_entry_control:
+        violations.append({
+            "path": path,
+            "type": "MISSING_ENTRY_CONTROL_BLOCK",
+            "message": (
+                f"absorption source artifact `{path}` touches a legacy/external/"
+                "source-mirror path or uses explicit external-repository intake "
+                "language but does not carry the `## External Repository "
+                "Absorption Entry Control` heading, an allowed "
+                "NOT_APPLICABLE_WITH_REASON / SKIPPED_WITH_REASON disposition, "
+                "or an explicit COMPARISON_ONLY_NO_ABSORPTION disposition"
+            ),
+        })
+    else:
+        missing_fields = _missing_entry_control_fields(text)
+        if missing_fields:
+            violations.append({
+                "path": path,
+                "type": "INCOMPLETE_ENTRY_CONTROL_BLOCK",
+                "message": (
+                    f"absorption source artifact `{path}` carries `{ENTRY_CONTROL_HEADING}` "
+                    f"but is missing required field(s): {', '.join(missing_fields)}"
+                ),
+            })
 
     return violations
 

@@ -60,29 +60,43 @@ semantics.
 2. Classify the input type through the chain map before deciding whether the
    task is packet authoring, returned-output absorption, legacy/corpus intake,
    or implementation planning.
-3. For high-value external repositories, check
+3. If the changed artifact touches `.private_reference/legacy/`,
+   `.private_reference/external_repos/`, or
+   `.private_reference/source_mirrors/`, or uses bounded explicit intake
+   language ("external repository absorption", "copied folder absorption",
+   "external repo or copied folder"), declare the R85-style
+   `## External Repository Absorption Entry Control` block (source type,
+   upstream/source-mirror disposition, enumeration/manifest plan, per-file
+   terminal-ledger plan, owner/overlap route, value-disposition route, claim
+   boundary) required by the `AGENTS.md` Mandatory External Repository
+   Absorption Entry Rule section and machine-checked by
+   `governance/compat/check_absorption_blindspot_control_presence.py`
+   (ADIF-0014) before proceeding to source-mirror checks or packet
+   authoring. Use the narrow `COMPARISON_ONLY_NO_ABSORPTION` disposition only
+   when the reference is genuinely comparison-only.
+4. For high-value external repositories, check
    `.private_reference/source_mirrors/INDEX.md`. If only a derived
    external-agent pack exists and the upstream repo can be cloned, create or
    request a pinned source mirror before claiming full absorption.
-4. Start from `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md` when an external
+5. Start from `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md` when an external
    agent review packet is needed.
-5. Run the checks in `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`.
-6. Use `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` as
+6. Run the checks in `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`.
+7. Use `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` as
    the bounded example for workflow-chain, MCP, and workspace review context.
-7. After the external agent returns output, classify every returned item through
+8. After the external agent returns output, classify every returned item through
     `CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` before creating a
     finding, standard, roadmap, work order, review, reference artifact, or
     operator decision.
-8. Before opening a new owner surface or follow-up lane, fill the
+9. Before opening a new owner surface or follow-up lane, fill the
    `## Overlap And Novelty Classification` section required by
    `CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; compare against existing CVF
    owner surfaces and use `CONFIRMED_EXISTING`, `ENRICH_EXISTING`,
    `NEW_FINDING`, `REJECT_DIRECT_IMPORT`, `NO_NEW_VALUE`, or
    `OWNER_SURFACE_NOT_FOUND`.
-9. If a closeout parks a package, runtime, checker, or valuable deferred item,
+10. If a closeout parks a package, runtime, checker, or valuable deferred item,
    add or update `CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`, cite an
    existing row, or state `NO_CONDITIONAL_REOPEN_INDEX_ENTRY_WITH_REASON`.
-10. For changed external-return absorption reviews, satisfy
+11. For changed external-return absorption reviews, satisfy
    `governance/compat/check_external_agent_absorption_table.py` before closure.
 
 ## Required Read Trigger
@@ -161,6 +175,18 @@ public, and it does not authorize public-sync or external-facing readiness.
 | Direct external implementation ideas | Existing governed CVF owner surface or `OWNER_SURFACE_NOT_FOUND` per artifact | REJECT_DIRECT_IMPORT | Direct import stays rejected even when CVF-native doctrine or candidate value remains. | Route through value matrix and overlap ledger. |
 | Duplicate or already-owned guidance | Existing governed CVF owner surface | NO_NEW_VALUE | Material must be compared before no-value closure. | State no-new-value reason in the artifact. |
 
+## Source Mirror Migration Control
+
+| Field | Value |
+|---|---|
+| Legacy source path | `.private_reference/external_repos/` |
+| Source mirror path | `.private_reference/source_mirrors/` |
+| Mirror index row | `.private_reference/source_mirrors/INDEX.md` (see the Mirror Ledger for per-repository rows) |
+| Pinned upstream commit | LEGACY_REFERENCE_ONLY_WITH_REASON: this front door names the legacy path descriptively as one of the ADIF-0014 trigger prefixes and does not migrate a specific repository |
+| Migration disposition | LEGACY_REFERENCE_ONLY_WITH_REASON |
+| Legacy cleanup disposition | N/A with reason: no repository-specific legacy folder is being cleaned up by this front-door update |
+| Claim boundary | this section documents the trigger vocabulary only; it authorizes no runtime, no install, no package activation, no provider, no public, and no production behavior |
+
 ## External Knowledge Intake Routing
 
 | Field | Value |
@@ -168,9 +194,9 @@ public, and it does not authorize public-sync or external-facing readiness.
 | Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
 | Input type | external knowledge intake routing guard implementation |
 | Chain map route | external-agent review front door -> chain-map classification -> context packet, returned-output absorption, conditional reopen index, or governed implementation planning |
-| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py` |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_absorption_blindspot_control_presence.py` |
 | Owner surface | `docs/reference/external_agent_review/README.md` |
-| Disposition | ADAPT front-door routing to include the conditional reopen index |
+| Disposition | ADAPT front-door routing to include the conditional reopen index and the R95 external repository absorption entry control step |
 | Claim boundary | front-door routing only; no runtime, provider, public, package activation, checker wiring, or production claim |
 
 ## Epistemic Process Block

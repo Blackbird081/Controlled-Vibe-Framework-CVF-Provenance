@@ -865,6 +865,43 @@ This is a bounded intake bridge only. It does not authorize autonomous rule
 mutation, runtime behavior mutation, provider prompt changes, memory
 reinjection, model tuning, public readiness, or production readiness.
 
+## Mandatory External Repository Absorption Entry Rule - 2026-07-11
+
+Machine guard (extends ADIF-0014, no second checker created):
+
+`governance/compat/check_absorption_blindspot_control_presence.py`
+
+Before authoring, editing, or dispatching a governed work order, GC-018
+baseline, or completion review that references a `.private_reference/legacy/`,
+`.private_reference/external_repos/`, or `.private_reference/source_mirrors/`
+absorption source path, or that uses bounded explicit intake language such as
+"external repository absorption", "copied folder absorption", or the
+canonical "external repo or copied folder" phrase, the agent must declare
+R85-style entry evidence in a `## External Repository Absorption Entry
+Control` block before absorption planning proceeds. R85's terminal-ledger
+discipline is the model:
+`docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md`.
+
+The block must name: source type, upstream/source-mirror disposition,
+enumeration/manifest plan, per-file terminal-ledger plan, owner/overlap
+route, value-disposition route, and claim boundary. Check
+`.private_reference/source_mirrors/INDEX.md` for an existing pinned mirror
+before treating a derived external-agent pack as source authority.
+
+The block may be replaced by an allowed `NOT_APPLICABLE_WITH_REASON` /
+`SKIPPED_WITH_REASON` disposition, matching the existing two ADIF-0014
+blocks, or by the narrow `COMPARISON_ONLY_NO_ABSORPTION` disposition when the
+artifact cites an external source purely for side-by-side wording comparison
+and makes no absorption, adaptation, or import claim. Generic bare words such
+as `repo` are forbidden triggers; only exact source paths or the bounded
+multi-word intake phrases above may activate this rule.
+
+This rule does not create a second absorption mechanism, checker, or
+registry. It extends the same ADIF-0014 presence checker that already
+requires the Mandatory Blind-Spot Control Block and Corpus Completeness And
+Report Integrity headings, so pre-dispatch entry recognition happens before
+an absorption artifact exists, not only after.
+
 ## Mandatory Knowledge Absorption Blind-Spot Prevention - 2026-06-01
 
 Canonical standard:
