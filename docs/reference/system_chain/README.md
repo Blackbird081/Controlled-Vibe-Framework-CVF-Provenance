@@ -78,14 +78,14 @@ MSEA-R94-T0 inventoried all fifty matrix rows. MSEA-R94-T1A then corrected
 the six contract/protocol test-pairing mismatches for GC-001, GC-002, GC-003,
 GC-005, GC-006, and GC-008 to the existing direct contract test owner
 `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts`; its focused suite passes
-34/34. After that correction, 44 of 50 rows have connected dispositions with
-explicit test bounds.
+34/34. R94-T1B then confirmed that GC-009 and GC-010 are implemented and
+tested but have no proven non-test production caller or active package export.
+Their matrix rows now state `IMPLEMENTED_NOT_INVOCATION_PROVEN` instead of
+implying active entrypoints.
 
-The remaining action rows stay explicit: GC-009 and GC-010 lack proven
-production invocation; GC-012 and GC-013 lack independent semantic/test proof;
-GC-019 and GC-046 remain contract-only with reason. Separate source-verified
-R94-T1B and R94-T1C packets own the next decisions; this map does not infer
-their outcome.
+The remaining action rows stay explicit: GC-012 and GC-013 lack independent
+semantic/test proof; GC-019 and GC-046 remain contract-only with reason. A
+separate source-verified R94-T1C packet owns the next decision.
 
 ### Lane 3 - Runtime to Enforcement
 

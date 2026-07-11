@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MSEA-R94-T1B
 
@@ -133,3 +133,16 @@ This baseline authorizes source verification and, when no active owner is
 proven, correction of GC-009 and GC-010 matrix claims. It does not authorize a
 caller, export, implementation, test, Web, protocol, provider, public-sync,
 lifecycle, checker, hook, workflow, session, or other R94 change.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | R94-T1B work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | R94-T1B completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | R94 roadmap | parent remains open; T1C separate | PASS |
+| Registry JSON | N/A with reason | no corpus state change | N/A with reason |
+| Registry Markdown | N/A with reason | no corpus state change | N/A with reason |
+| External evidence digest | N/A with reason | no external evidence | N/A with reason |
+| System loop interlock | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | freshness CURRENT | PASS |
+| Session continuity | active front doors | separate sync follows material commit | N/A with reason |

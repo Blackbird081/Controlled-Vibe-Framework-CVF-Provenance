@@ -4,7 +4,9 @@
   "corpusType": "CVF_EXTENSION",
   "displayName": "MSEA-R94-T0 contract-to-runtime 50-row inventory",
   "scopePaths": [
+    "EXTENSIONS/CVF_GUARD_CONTRACT/package.json",
     "EXTENSIONS/CVF_GUARD_CONTRACT/src",
+    "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/guard.runtime.engine.ts",
     "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts",
     "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts",
     "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/wiring/extension.bridge.ts",
@@ -20,11 +22,11 @@
     "docs/reviews/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_COMPLETION_2026-07-11.md",
     "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_2026-07-11.md"
   ],
-  "fileCount": 15,
+  "fileCount": 17,
   "status": "SCANNED_WITH_FINDINGS",
   "scanWave": "MSEA-R94-T0",
   "scanDate": "2026-07-11",
-  "manifestHash": "38356e0e8ae11d3c9d4deadc3cbd1b754f5dfa727d6549a1ec156aee021bbe35",
+  "manifestHash": "d80dd98b9059629d84a2083e9fa0ffe6cfd74b52425c033b7ac814a5e193b3af",
   "hashAlgorithm": "sha256",
   "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
   "manifestPath": "docs/audits/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_EVIDENCE_2026-07-11.json",

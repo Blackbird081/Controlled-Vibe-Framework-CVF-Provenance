@@ -52,16 +52,16 @@
       "currentPosture": "PARTIAL",
       "verdict": "PARTIAL_RUNTIME_CONNECTION_FULL_INVENTORY",
       "implementedBy": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts (GC-001); EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts (GC-009); EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts (GC-011)",
-      "invokedBy": "GC-001 invoked at EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts:122; GC-009 has no confirmed non-test production caller repository-wide; GC-011 invoked at EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts:132",
+      "invokedBy": "GC-001 invoked at EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts:122; MSEA-R94-T1B confirms GC-009 and GC-010 have no non-test production caller or active package export; GC-011 invoked at EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts:132",
       "testedBy": "MSEA-R94-T0 inventoried all 50 rows. MSEA-R94-T1A corrected GC-001, GC-002, GC-003, GC-005, GC-006, and GC-008 to the existing direct contract test owner EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts; focused suite passes 34/34. Twelve invoked rows remain bounded without standalone tests.",
       "evidenceOwner": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
       "operatorSurface": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance (Web governance dashboard route, confirmed present)",
-      "knownGaps": "After T1A, 44 of 50 rows have connected dispositions with explicit test bounds. GC-009 and GC-010 lack proven production invocation; GC-012 and GC-013 lack independent semantics/test proof; GC-019 and GC-046 remain contract-only with reason.",
-      "nextReviewAction": "Use separate source-verified R94-T1B and R94-T1C packets for the remaining gateway and approval-checkpoint decisions. Preserve GC-019 and GC-046 unless a later authority changes their human/template posture.",
+      "knownGaps": "After T1B, GC-009 and GC-010 are explicitly IMPLEMENTED_NOT_INVOCATION_PROVEN rather than active-entrypoint claims. GC-012 and GC-013 still lack independent semantics/test proof; GC-019 and GC-046 remain contract-only with reason.",
+      "nextReviewAction": "Use a separate source-verified R94-T1C packet for GC-012 and GC-013. Preserve the bounded GC-009/GC-010 downgrade and GC-019/GC-046 contract-only status unless later authority proves an active owner.",
       "sourceFingerprints": [
         {
           "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
-          "sha256": "77bbfd5371f93099a757c987dc3a0a93e3969885411972e9d22ff0ddebf075a4",
+          "sha256": "478fe8e6c47d93573d54f5ec692f7d0aef5d86342810b445ca65955d3e267f99",
           "evidenceRole": "control matrix rows GC-001, GC-009, GC-011, GC-019"
         },
         {
@@ -168,7 +168,7 @@
       "sourceFingerprints": [
         {
           "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
-          "sha256": "77bbfd5371f93099a757c987dc3a0a93e3969885411972e9d22ff0ddebf075a4",
+          "sha256": "478fe8e6c47d93573d54f5ec692f7d0aef5d86342810b445ca65955d3e267f99",
           "evidenceRole": "GC-019 corrected archive-qualified citation"
         },
         {

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MSEA-R94-T1B
 
@@ -321,13 +321,13 @@ run focused tests, reconcile system-chain freshness, and run reviewer-fast.
 
 ## Closure Checklist
 
-- [ ] Both rows have terminal ownership dispositions.
-- [ ] Caller and export searches are reproducible.
-- [ ] Matrix wording matches proven invocation bounds.
-- [ ] Source and test existence evidence remains cited.
-- [ ] Focused tests pass.
-- [ ] Only worker-owned paths changed.
-- [ ] Worker return is complete and uncommitted.
+- [x] Both rows have terminal ownership dispositions.
+- [x] Caller and export searches are reproducible.
+- [x] Matrix wording matches proven invocation bounds.
+- [x] Source and test existence evidence remains cited.
+- [x] Focused tests pass.
+- [x] Only worker-owned paths changed.
+- [x] Worker return is complete and uncommitted.
 
 ## Return-To-Orchestrator Conditions
 
@@ -389,3 +389,25 @@ This work order authorizes a two-row ownership audit and documentation downgrade
 when invocation is not proven. It does not authorize new runtime behavior,
 exports, callers, tests, universal connectivity, other matrix rows, later R94
 tranches, lifecycle, provider, public, or session changes.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED`; finalized checklist | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R94_T1B_GATEWAY_HELPER_OWNERSHIP_DISPOSITION_COMPLETION_2026-07-11.md` | reviewer decision | PASS |
+| Roadmap state | R94 roadmap | parent remains open; T1C separate | PASS |
+| Registry JSON | N/A with reason | no corpus state change | N/A with reason |
+| Registry Markdown | N/A with reason | no corpus state change | N/A with reason |
+| External evidence digest | N/A with reason | no external evidence | N/A with reason |
+| System loop interlock | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | freshness CURRENT | PASS |
+| Session continuity | active front doors | separate sync follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path or evidence field | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| R94-T1B-Q1 | Governance Control Matrix | GC row count | 50 rows | 50 rows | PASS |
+| R94-T1B-Q2 | focused Vitest output | test total | 54 pass | 54 pass | PASS |
+| R94-T1B-Q3 | worker return | production caller evidence | none proven for GC-009/GC-010 | none proven | PASS |
+| R94-T1B-Q4 | system-chain freshness output | violation count | 0 | 0 | PASS |
