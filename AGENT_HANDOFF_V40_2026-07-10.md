@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_asc_t0_source_schema_contract_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh GC-018 and work order for ASC-T1 only; parked checkpoint=L4 promotion, ASC-T2+, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_asc_rw_integrated_remaining_wave_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the committed ASC-RW T1-T5 work order once as WORKER_MUST_NOT_COMMIT; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_asc_t0_source_schema_contract_closed`; 
 
 ## Current Mode
 
-`msea_asc_t0_source_schema_contract_closed`
+`msea_asc_rw_integrated_remaining_wave_dispatched`
 
 ## Latest Work / Changes
 
@@ -1137,6 +1137,29 @@ Authorized scope: session-sync after `9f8815fb7`. Protected paths:
 `CVF_SESSION/state/entries/mseaAscT0SourceSchemaContractClosure20260711.json`.
 Operator authority: review ASC-T0 return. Rollback only this sync; retain
 `9f8815fb7`.
+
+## MSEA-ASC-RW Integrated Remaining Wave Dispatch - 2026-07-11
+
+Dispatch commit: `fa4838c57`. One `WORKER_MUST_NOT_COMMIT` execution covers
+ASC-T1 through ASC-T5 in order and returns once for final independent review.
+T5 is locked to the exact five existing catalog/workflow owners and one new
+weekly workflow named in the work order; the worker may not select substitutes.
+
+Next allowed move: execute only
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_ASC_RW_INTEGRATED_REMAINING_WAVE_2026-07-11.md`
+and return `COMPLETE_PENDING_REVIEW` without commit.
+
+## Core Guard Self-Protection Authorization - MSEA-ASC-RW Dispatch Session Sync
+
+Authorized scope: session-sync after `fa4838c57`. Protected paths:
+`AGENT_HANDOFF_V40_2026-07-10.md`; `CVF_SESSION_MEMORY.md`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/mseaAscRwIntegratedRemainingWaveDispatch20260711.json`.
+Operator authority: batch ASC-T1 through ASC-T5 in one execution. Rollback only
+this sync; retain dispatch commit `fa4838c57`.
 
 ## Claim Boundary
 

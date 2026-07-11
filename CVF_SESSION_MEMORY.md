@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_asc_t0_source_schema_contract_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh GC-018 and work order for ASC-T1 only; parked checkpoint=L4 promotion, ASC-T2+, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_asc_rw_integrated_remaining_wave_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the committed ASC-RW T1-T5 work order once as WORKER_MUST_NOT_COMMIT; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Current Mode
 
-Current mode marker: `msea_asc_t0_source_schema_contract_closed`
+Current mode marker: `msea_asc_rw_integrated_remaining_wave_dispatched`
 
-Current mode: `msea_asc_t0_source_schema_contract_closed`
+Current mode: `msea_asc_rw_integrated_remaining_wave_dispatched`
 
-`msea_asc_t0_source_schema_contract_closed`
+`msea_asc_rw_integrated_remaining_wave_dispatched`
 
 Previous mode:
 
-`msea_asc_t0_source_schema_contract_dispatched`
+`msea_asc_t0_source_schema_contract_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-ASC-RW integrated remaining wave dispatch | `fa4838c57` | DISPATCH_READY; one no-commit T1-T5 execution, exact T5 wiring owners, one final independent review. |
 | MSEA-ASC-T0 source schema and reconciliation contract closure | `9f8815fb7` | REVIEWER_ACCEPTED_BOUNDED after Round 2 JSON Schema invariant correction and independent negative validation. |
 | MSEA-ASC-T0 source schema and reconciliation contract dispatch | `cbc5348bf` | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; exactly four reference/schema outputs plus one worker return. |
 | MSEA-ASC external critique classification and fold | `6485fc7ad` | REVIEWER_ACCEPTED_BOUNDED. Ten findings accepted/calibrated; roadmap ready for ASC-T0 packet authoring only. |
@@ -96,13 +97,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_asc_t0_source_schema_contract_closed`
+Mode: `msea_asc_rw_integrated_remaining_wave_dispatched`
 
-Next allowed move: author a fresh GC-018 baseline and work order for ASC-T1
-As-Built Plane And Module Inventory only. No ASC-T2+, gap index, generator,
-freshness checker, diagram, runtime, public, or provider work is authorized.
-L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. Latest closed numbered LHW
-wave remains `LHW24`.
+Next allowed move: execute the committed MSEA-ASC-RW integrated T1-T5 work
+order once as `WORKER_MUST_NOT_COMMIT`, then return one
+`COMPLETE_PENDING_REVIEW`. Exact T5 wiring paths are locked by the work order;
+no substitute owner, doctrine, R91 semantic, runtime, public, provider,
+session, L4 promotion, commit, or push work is authorized. L4 remains
+VALUE_PARKED_WITH_REOPEN_CONDITIONS. Latest closed numbered LHW wave remains
+`LHW24`.
 
 Multi-Agent Orchestration Runtime Foundation is
 `VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,
