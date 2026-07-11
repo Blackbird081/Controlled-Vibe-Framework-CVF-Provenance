@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mao_t5_dispatched",
+  "currentMode": "mao_t6_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "MAO-T5-T9 packet chain is prepared at 5a5dc0364. Next allowed move is release of the two T5 packet status lines to DISPATCH_READY followed by one delegated WORKER_MUST_NOT_COMMIT local MAO-T5 execution. MAO-T6 through T9 remain dependency-held. Provider/network, queue, UI, public-sync, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO-T5 is REVIEWER_ACCEPTED_BOUNDED at 9b225f0e4. Next allowed move is refresh/release of the two MAO-T6 packet files followed by one delegated WORKER_MUST_NOT_COMMIT local lifecycle-controller execution. MAO-T7 through T9 remain dependency-held. Provider/network, queue, UI, public-sync, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

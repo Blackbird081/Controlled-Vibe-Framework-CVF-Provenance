@@ -34,25 +34,26 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t5_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=release T5 packet status then one MAO-T5 WORKER_MUST_NOT_COMMIT execution; parked checkpoint=MAO-T6-T9 dependencies, provider/network, broader runtime and public work.
+Startup acknowledged: current mode=`mao_t6_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=refresh/release T6 packet then one MAO-T6 WORKER_MUST_NOT_COMMIT execution; parked checkpoint=MAO-T7-T9 dependencies, provider/network, broader runtime and public work.
 
 ## Current Mode
 
-Current mode marker: `mao_t5_dispatched`
+Current mode marker: `mao_t6_dispatched`
 
-Current mode: `mao_t5_dispatched`
+Current mode: `mao_t6_dispatched`
 
-`mao_t5_dispatched`
+`mao_t6_dispatched`
 
 Previous mode:
 
-`mao_t4_closed`
+`mao_t5_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
-| MAO-T5-T9 packet chain | `5a5dc0364` | T5 released for status flip/execution; T6-T9 source-complete but dependency-held. |
+| MAO-T5 closer/interlock closure | `9b225f0e4` | REVIEWER_ACCEPTED_BOUNDED; 54/54 tests and typecheck PASS. |
+| MAO-T5-T9 packet chain | `5a5dc0364` | T6 released for refresh/execution; T7-T9 remain dependency-held. |
 | MAO-T4 reviewer isolation/dissent/revision closure | `f71ba01f6` | REVIEWER_ACCEPTED_BOUNDED after independent evidence and semantic repair; 78/78 tests, typecheck, worker-return/reviewer-fast and pre-commit pass. |
 | MAO-T4 reviewer isolation/dissent/revision dispatch | `68cc94572` | DISPATCH_READY; five exact outputs; worker must not commit. |
 | MAO-T3 adapter closure | `052845fa1` | REVIEWER_ACCEPTED_BOUNDED; 21/21 tests, typecheck, reviewer-fast and 82/82 pre-commit pass. |
@@ -111,7 +112,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t5_dispatched`
+Mode: `mao_t6_dispatched`
 
 MAO-T4 is dispatch-ready at `68cc94572`. Next allowed move is one delegated
 local worker execution from clean post-sync HEAD with exactly five outputs and no commit.

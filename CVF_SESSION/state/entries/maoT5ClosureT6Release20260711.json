@@ -1,0 +1,11 @@
+{
+  "stateOrder": 1684,
+  "stateKey": "maoT5ClosureT6Release20260711",
+  "value": {
+    "status": "MAO_T5_ACCEPTED_MAO_T6_RELEASED",
+    "maoT5MaterialCommit": "9b225f0e4",
+    "maoT5HandoffCommit": "e03a031c4",
+    "nextAllowedMove": "refresh T6 packet to DISPATCH_READY then one no-commit T6 execution",
+    "claimBoundary": "T5 local closure and T6 local lifecycle packet release only"
+  }
+}
