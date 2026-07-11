@@ -2,11 +2,11 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: HOLD_UNTIL_MAO_T6_PASS
+Status: DISPATCH_READY
 
-Batch ID: MAO-T7
+Batch ID: MAO-RUNTIME-T7
 
-Dispatch base head: `3294d555a`
+Dispatch base head: `746d8e08c`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -20,7 +20,7 @@ freshness/drift, retention, and catalog-admission candidate work without UI.
 | Dependency | Current evidence | Release rule | Disposition |
 |---|---|---|---|
 | MAO-T1 through T4 | accepted closure commits exist | accepted material exists | ACCEPT |
-| MAO-T5 and T6 | no accepted execution evidence yet | both accepted with refreshed anchors | HOLD |
+| MAO-T5 and T6 | accepted materials `9b225f0e4` and `ee5a1a400`; completion reviews and tests pass | accepted evidence exists | ACCEPT |
 
 ## ADIF Defect Registry Disclosure
 
@@ -47,8 +47,8 @@ Returned defects: NONE_RETURNED
 
 ## Claim Boundary
 
-Held contract/read-model packet only; no UI, queue, provider, or authoritative
-workspace runtime is authorized.
+One local evidence/read-model contract/test/catalog-candidate tranche only; no
+UI, provider, queue or authoritative workspace runtime.
 
 ## Public Export Disposition
 
@@ -56,7 +56,19 @@ DEFERRED_PRIVATE_ONLY
 
 ## Baseline Decision
 
-Source-complete but dependency-held.
+Dependencies released; source-verified dispatch ready.
+
+## Scaffold Provenance Block
+
+| Field | Value |
+|---|---|
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind held-dependency --batch-id MAO-T7 --title "Evidence Observability And Operator Readout" --date 2026-07-11 --base 3294d555a --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
+| generatedProfile | held dependency promoted to no-commit dispatch |
+| generatedSkeletonStatus | USED_AS_STARTING_POINT |
+| manualEditsAfterScaffold | T6 evidence, anchors and exact outputs refreshed |
+| checkerReadAheadConfirmation | dispatch/workspace/ADIF checkers read |
+| docOnlyNewFields | none in baseline |
+| claimBoundary | authoring provenance only |
 
 ## Evidence / Verification
 

@@ -2,21 +2,79 @@
 
 Memory class: governed-worker-dispatch
 
-Status: HOLD_UNTIL_MAO_T6_PASS
+Status: DISPATCH_READY
 
-Batch ID: MAO-T7
+Batch ID: MAO-RUNTIME-T7
 
-dispatchBaseHead: `3294d555a`
+dispatchBaseHead: `746d8e08c`
 
-executionBaseHead: `NOT_RELEASED`
+executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `NOT_RELEASED`
+closureBaseHead: `REVIEWER_TO_SET`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
+## Dispatch Prompt Envelope
+
+Role: delegated worker
+
+Canonical packet: this file
+
+Commit mode: WORKER_MUST_NOT_COMMIT
+
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+
+Current-time notes: use actual clean post-dispatch HEAD.
+
+Do-not-misread notes: no UI, provider, queue, session mutation or T8.
+
+Required first actions: read startup, baseline, packet, workspace topology, cited sources/checkers; capture HEAD/status.
+
+Return contract: produce exactly five outputs, run gates, leave uncommitted, return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
+
 ## Purpose
 
-Define held receipt-ledger and operator read-model implementation work.
+Implement secret-safe local evidence/read-model contracts, tests and catalog candidate.
+
+## Scaffold Provenance Block
+
+| Field | Value |
+|---|---|
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind held-dependency --batch-id MAO-T7 --title "Evidence Observability And Operator Readout" --date 2026-07-11 --base 3294d555a --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
+| generatedProfile | held dependency promoted to no-commit dispatch |
+| generatedSkeletonStatus | USED_AS_STARTING_POINT |
+| manualEditsAfterScaffold | dependency, anchors, manifest and controls refreshed |
+| checkerReadAheadConfirmation | dispatch/workspace/return checkers read |
+| docOnlyNewFields | new T7 evidence/readout contract fields |
+| claimBoundary | authoring provenance only |
+
+## Worker Autonomy / No-Question Rule
+
+Repair allowed-scope checker defects; return only for source conflict or forbidden expansion.
+
+## Intake Role Routing Decision
+
+| Field | Disposition |
+|---|---|
+| Intake source | roadmap plus accepted T1-T6 evidence |
+| Intake role | local evidence/read-model worker |
+| Reviewer role | independent reviewer/closer |
+| Routing decision | WORKER_MUST_NOT_COMMIT |
+| Public route | DEFERRED_PRIVATE_ONLY |
+| risk sensitivity | high due secret-safe evidence and authority projection |
+| scope classification | bounded local contract/tests/catalog candidate |
+| canonical route mode | MULTI_AGENT_SINGLE_ROLE |
+| selected role route | worker return to reviewer/closer |
+| escalation condition | UI/provider/queue/authoritative workspace/T8 need |
+
+## Single-Agent Multi-Role Control Block
+
+| Field | Disposition |
+|---|---|
+| role separation ledger | worker=implementation; reviewer/closer=review/commit; steward=session sync |
+| gate sequence | pre-implementation, worker-return fast, reviewer-fast, pre-closure, session-sync |
+| evidence basis independent of memory | current source, tests, git and governed review |
+| escalation conditions | self-review, commit, UI/provider/public/T8 blocks worker |
 
 ## Scope / Methodology
 
@@ -28,7 +86,7 @@ retention checks, milestone projection, and a catalog candidate packet. No UI.
 | Dependency | Current evidence | Release rule | Disposition |
 |---|---|---|---|
 | MAO-T1 through T4 | accepted material exists | retained | ACCEPT |
-| MAO-T5/T6 | no accepted T6 execution | both accepted and anchors refreshed | HOLD |
+| MAO-T5/T6 | accepted materials `9b225f0e4` and `ee5a1a400`; reviews/tests pass | accepted evidence exists | ACCEPT |
 
 ## ADIF Defect Registry Disclosure
 
@@ -55,8 +113,19 @@ Returned defects: NONE_RETURNED
 
 ## Work-Order Fulfillment Manifest
 
-Receipt ledger/read-model source, focused tests, bounded exports, catalog
-candidate packet, and worker return; exact paths assigned at dependency release.
+| Artifact | Required action |
+|---|---|
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/evidence.readout.contract.ts` | create secret-safe ledger/read-model contract |
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.evidence.readout.contract.test.ts` | create focused tests |
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/index.ts` | bounded exports |
+| `docs/reviews/CVF_MAO_T7_EVIDENCE_OBSERVABILITY_AND_OPERATOR_READOUT_CATALOG_CANDIDATE_2026-07-11.md` | create catalog-admission candidate packet |
+| `docs/reviews/CVF_MAO_T7_EVIDENCE_OBSERVABILITY_AND_OPERATOR_READOUT_WORKER_RETURN_2026-07-11.md` | create worker return |
+
+## Required Artifact Manifest
+
+| Artifact | Owner | Required final status |
+|---|---|---|
+| source/test/exports/catalog candidate/worker return | worker | COMPLETE_PENDING_REVIEW |
 
 ## Execution Plan
 
@@ -82,19 +151,20 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 |---|---|
 | route | SINGLE_AGENT_MULTI_ROLE |
 | rolePattern | worker then reviewer/closer |
-| phase | HOLD |
-| baseHeadFor(phase) | dispatchBaseHead=3294d555a; executionBaseHead=NOT_RELEASED; closureBaseHead=NOT_RELEASED |
-| changedSetScope(phase) | none while held |
-| traceScope(phase, actor) | dispatcher only |
+| phase | EXECUTION |
+| baseHeadFor(phase) | dispatchBaseHead=746d8e08c; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| changedSetScope(phase) | exactly five manifest outputs |
+| traceScope(phase, actor) | worker execution then reviewer closure |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT |
-| crossBatchIsolation | release only after T6 closure |
+| crossBatchIsolation | clean worktree at `746d8e08c`; T6 fully committed; no overlap |
+| Before status evidence | clean worktree at `746d8e08c`; no pending prior paths |
 | nextMoveSurfaces | refresh before dispatch |
 
 ## Reviewer Closure Conversion
 
 | Field | Value |
 |---|---|
-| completionReviewPath | dated MAO-T7 completion review assigned at release |
+| completionReviewPath | `docs/reviews/CVF_MAO_T7_EVIDENCE_OBSERVABILITY_AND_OPERATOR_READOUT_COMPLETION_2026-07-11.md` |
 | reviewerOwnedClosurePaths | packet, review, registry/catalog coverage |
 | closureOwner | reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
@@ -112,7 +182,7 @@ DEFERRED_PRIVATE_ONLY
 
 ## Claim Boundary
 
-Source-complete held packet only; no T7 implementation or UI is dispatched.
+Worker may create exactly five local T7 outputs and must not commit; no UI.
 
 ## Authority Chain
 
@@ -132,7 +202,7 @@ Refresh T6 evidence, anchors, manifest, HEAD and worktree.
 
 ## Write Ownership
 
-No writes while held; exact paths assigned at release.
+Worker owns exactly five manifest outputs.
 
 ## Review Gate
 
@@ -144,7 +214,7 @@ Focused tests, secret review, typecheck, reviewer-fast and steward preflight.
 
 ## Return-To-Orchestrator Conditions
 
-No execution while held; after release return pending review or blocked.
+Return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit.
 
 ## Operator Checkpoint
 
@@ -161,8 +231,8 @@ Required for UI, provider, authoritative workspace, or public expansion.
 | Command or tool surface | source reads and apply patch |
 | Target paths | paired T7 packet |
 | Allowed scope source | operator and roadmap |
-| Before status evidence | T6 not accepted |
-| After status evidence | source-complete HOLD packet |
+| Before status evidence | clean worktree at `746d8e08c`; T6 accepted at `ee5a1a400` |
+| After status evidence | source-verified DISPATCH_READY packet |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | packet preparation only |
 | Claim boundary | no execution/UI |
@@ -172,3 +242,50 @@ Required for UI, provider, authoritative workspace, or public expansion.
 | Actual changed set | captured before commit |
 | Manifest delta | pending gate confirmation |
 | Deletion or rename disposition | N/A with reason: none |
+
+## Worker Return Packet Shape Contract
+
+workerReturnPath: `docs/reviews/CVF_MAO_T7_EVIDENCE_OBSERVABILITY_AND_OPERATOR_READOUT_WORKER_RETURN_2026-07-11.md`
+
+contractProfile: WORKER_RETURN_FULL_GATE_V1
+
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
+
+individualCheckerSubstitution: FORBIDDEN
+
+workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
+
+## Agent Workspace Design Control Block
+
+| Field | Disposition |
+|---|---|
+| Workspace purpose | milestone projection target only; not authoritative runtime state |
+| Contract source | archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_TOPOLOGY_CONTRACT.md` |
+| Front door | `docs/reference/agent_workspace/README.md` |
+| Design standard | `docs/reference/agent_workspace/CVF_AGENT_INTERACTION_WORKSPACE_DESIGN_STANDARD.md` |
+| Storage class | no workspace state mutation; projection contract only |
+| Handoff fields | existing AHB fields remain authoritative |
+| State ownership | execution-plane ledger owns runtime evidence; workspace is read-only projection |
+| Guard owner | `governance/compat/check_agent_workspace_design.py` |
+| Build boundary | runtime source: T7 evidence contract only; provider proof: no; public-sync: no; registry edits: catalog candidate only, no admission |
+
+## Foundation Storage Layout Block
+
+| Field | Disposition |
+|---|---|
+| Foundation path class | execution-plane MAO source/test plus dated catalog candidate |
+| Storage decision | extend existing `src/mao/`; keep candidate under `docs/reviews/` |
+| Existing aggregate impact | bounded barrel export only |
+| Generated state impact | none; workspace generated state is not changed |
+| Durable governance boundary | no new hidden store; receipt ledger contract remains local/in-memory foundation |
+
+## Verification Commands
+
+```powershell
+cd EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION
+npx vitest run --config vitest.config.ts tests/mao.evidence.readout.contract.test.ts
+npx tsc -p tsconfig.json --noEmit
+cd ../..
+python governance/compat/run_worker_return_fast_gate.py
+git status --short
+```
