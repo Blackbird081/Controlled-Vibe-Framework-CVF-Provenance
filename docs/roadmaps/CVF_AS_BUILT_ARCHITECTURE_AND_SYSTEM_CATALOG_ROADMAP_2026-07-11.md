@@ -32,6 +32,8 @@ Primary sources:
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
 - `ARCHITECTURE.md`
 - R90-R99 audits, reviews, and closure evidence.
+- `docs/reviews/CVF_MSEA_R98_L2_BUILD_PROTOCOL_OWNER_RATIFICATION_COMPLETION_2026-07-11.md`
+- `docs/reviews/CVF_MSEA_R99_L1_SYSTEM_DEFINITION_OWNER_DESIGN_COMPLETION_2026-07-11.md`
 
 ## Authorization / Decision
 
@@ -91,10 +93,15 @@ The catalog must represent at least these entity types:
 | EVIDENCE_OWNER | receipt, test, audit, log, ledger, or review surface |
 | OPERATOR_SURFACE | where a human discovers, invokes, or interprets the result |
 | GAP | missing, partial, intentionally separated, parked, or unresolved connection |
+| AUTHORITY_SOURCE | doctrine, canonical contract, or governed decision source with authority/freeze semantics |
 
 Each catalog record must include stable ID, name, type, plane, owner paths,
 status/maturity, authority class, inbound/outbound edges, evidence citations,
 operator route, claim boundary, freshness inputs, and last-reviewed evidence.
+The ASC-T0 schema must also include `authorityClass`, `boundaryCaveat`,
+`rejectedCandidates`, `negativeSearchEvidence`, `priorDisposition`, and
+`supersededBy` so maturity, authority, bounded owners, rejected alternatives,
+and decision lineage remain distinct.
 
 ## Edge Proof Taxonomy
 
@@ -111,6 +118,12 @@ No lower class may be silently promoted to a higher class. Capability is not
 invocation; file existence is not connection; historical PASS is not a current
 live receipt.
 
+Every executed/evidenced edge must carry `evidenceRecency` with a canonical
+value such as `LIVE_RECEIPT`, `CURRENT_TEST`, or `HISTORICAL_TRACE`. Operator
+visibility must separately classify `DIRECT_OPERATOR`, `LOCAL_CLI`, `CI_ONLY`,
+`RAW_EVIDENCE_ONLY`, or `ABSENT`; `CI_ONLY` cannot satisfy a direct-operator
+visibility claim.
+
 ## Gap Ledger Front Door And Index
 
 The gap system must be easy to inspect without opening every audit.
@@ -126,6 +139,11 @@ Planned machine index:
 Planned compact source records:
 
 `docs/reference/system_chain/gaps/entries/`
+
+ASC-T0 must reserve the generator/check surfaces; ASC-T3 must implement a
+deterministic UTF-8/LF, stable-key-order generator and a recomputation drift
+check. The committed JSON index must be byte-stable for unchanged entries and
+must fail validation when aggregate-only edits diverge from source entries.
 
 The README must provide:
 
@@ -165,6 +183,8 @@ Canonical initial statuses:
 - `INTENTIONAL_SEPARATION_WITH_REASON`
 - `VALUE_PARKED_WITH_REOPEN_CONDITIONS`
 - `CLOSED_WITH_EVIDENCE`
+- `ACTIVE_OWNER_CREATED_WITH_BOUNDARY`
+- `NAMED_DIFFERENTLY_ACTIVE_OWNER_WITH_BOUNDARY`
 
 ## Catalog Admission Rules
 
@@ -183,6 +203,10 @@ must include a catalog disposition:
 External absorption must identify the destination plane and existing owner
 before value is adapted. `NEW_OWNER_JUSTIFIED` requires overlap evidence,
 interface mapping, authority boundary, evidence route, and freshness ownership.
+This admission is a consumer of the existing R85/R95 absorption-entry,
+source-mirror, overlap, and blind-spot controls; it is not a parallel intake
+gate. An approved frozen-doctrine layer change must trigger catalog and gap
+reconciliation as a downstream obligation.
 
 ## Work Plan
 
@@ -196,6 +220,12 @@ Deliver:
   doctrine route map, and gap index;
 - generated-source layout decision;
 - bounded migration plan from R90-R99 evidence.
+- explicit freshness topology decision: keep the R91 five-lane checker scoped
+  to its current family and define a non-competing catalog sibling, or formally
+  widen/version the R91 schema/checker with source/test changes deferred to T5;
+- architecture front-door topology decision: prefer a new as-built front door
+  linking the R91 README, unless a source-verified delimited comparison change
+  is authorized.
 
 Exit: schema is human-reviewable, machine-parseable, and rejects proof-class
 inflation.
@@ -231,18 +261,21 @@ and trigger; README/index/entries reconcile deterministically.
 
 ### ASC-T4 - Human As-Built Architecture Front Door
 
-Reconcile `docs/reference/system_chain/README.md` as the human architecture
-front door. Add the smallest useful diagrams/tables generated or checked
-against the catalog. Show planes, direction, proven edge class, gaps, and
-operator/evidence routes. Avoid decorative diagrams without source links.
+Create a dedicated as-built architecture front door that links, rather than
+silently expands, the R91 five-lane README. Add the smallest useful diagrams
+or tables generated/checked against the catalog. Every rendered edge must
+resolve to a catalog edge ID and visually distinguish declared, implemented,
+executed/evidenced, CI-only, partial, and absent-operator states. Avoid
+decorative diagrams without source links.
 
 Exit: a new contributor can answer owner, edge, evidence, gap, and next-action
 questions using the front door and direct links.
 
 ### ASC-T5 - Freshness And Admission Enforcement
 
-Extend or reuse the R91 freshness mechanism so catalog sources, projections,
-and gap index drift are detected. Add admission checks only after the catalog
+Implement the freshness topology selected in ASC-T0 so catalog sources,
+projections, and gap index drift are detected without competing with the R91
+five-lane owner. Add admission checks only after the catalog
 shape stabilizes and evidence shows a checker is necessary. Prefer extending
 an existing guard to creating a parallel checker.
 
@@ -262,20 +295,23 @@ counts, deterministic generation, freshness, and retrieval tests pass.
 
 T0-T2 establish truth before presentation. T3 implements the operator-requested
 README/index retrieval surface. T4 projects the verified catalog. T5 hardens
-maintenance only after stable evidence. T6 challenges the integrated result.
+maintenance only after stable evidence, using the topology already decided in
+T0. T6 challenges the integrated result.
 
 ## Acceptance Criteria
 
-- One machine catalog is the source for as-built plane/module/edge records.
-- One human front door routes to catalog, gaps, evidence, and operator surfaces.
-- Gap README and JSON index reconcile with compact source entries.
-- Every edge has exactly one highest proven proof class.
-- Every gap has terminal status, evidence, close condition, and action owner.
-- Parked gaps have measurable reopen conditions.
-- New layer/module/absorption work has an explicit catalog disposition.
-- R91 freshness is reused or extended, not duplicated.
-- Human diagrams cannot drift silently from machine records.
-- No public, runtime, provider, or production claim is inferred.
+| Criterion | Verification class | Required proof |
+|---|---|---|
+| one machine catalog owns as-built records | MACHINE_VERIFIABLE | schema, unique IDs, generated aggregate drift check |
+| one human front door routes to catalog/gaps/evidence | MACHINE_VERIFIABLE | link/path and catalog-ID resolution |
+| gap README/index reconcile with entries | MACHINE_VERIFIABLE | deterministic regeneration and count/hash match |
+| each edge has one highest proof class | MACHINE_VERIFIABLE | schema enum and transition validation |
+| each gap has terminal fields and action owner | MACHINE_VERIFIABLE | required-field and enum validation |
+| parked gaps have structured measurable reopen conditions | MIXED | typed condition/operator/threshold/evidence fields plus reviewer semantic judgment |
+| new layer/module/absorption has catalog disposition | MACHINE_VERIFIABLE | changed-range admission record |
+| freshness topology does not compete with R91 owner | MIXED | source/test topology proof plus reviewer authority judgment |
+| human diagrams do not drift from machine records | MACHINE_VERIFIABLE_AFTER_T4 | generated edge-ID/link comparison target defined in T0 and implemented by T4 |
+| claims remain inside public/runtime/provider boundaries | REVIEWER_JUDGMENT_WITH_EXISTING_GUARDS | existing claim-boundary/public/provider guards plus semantic review; no universal architecture checker |
 
 ## Verification / Evidence
 
