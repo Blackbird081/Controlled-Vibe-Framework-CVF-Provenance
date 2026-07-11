@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MAO-T9
 
@@ -54,7 +54,29 @@ DEFERRED_PRIVATE_ONLY
 
 ## Baseline Decision
 
-T8 dependency released; independent critique dispatch ready.
+Independent critique accepted with T9-F1 rejected; roadmap closure complete.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | T9 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_T9_INDEPENDENT_CRITIQUE_RECONCILIATION_AND_CLOSURE_COMPLETION_2026-07-12.md` | reviewer decision | PASS |
+| Roadmap state | MAO roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | existing T1-T8 coverage aligned | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing registry surface retained | PASS |
+| External evidence digest | N/A with reason: repository-local critique | no external input | N/A with reason: not applicable |
+| System loop interlock | T7 catalog candidate | deferred pending proof-classed edges | PASS |
+| Session continuity | active state/handoff | separate session sync | PASS |
+
+## Current Runtime Freshness Verification
+
+| Field | Evidence |
+|---|---|
+| verification scope | current MAO source and T0-T8 closure commits |
+| verification method | direct source reads plus T9 independent test reproduction |
+| verified at | `4dbfba72c` execution base |
+| disposition | CURRENT_FOR_BOUNDED_LOCAL_CLAIMS |
 
 ## Evidence / Verification
 

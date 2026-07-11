@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MAO-T9
 
@@ -112,10 +112,10 @@ session-sync instructions.
 ## Acceptance Criteria
 
 - [x] T8 evidence dependency released;
-- [ ] every finding has source-backed ACCEPT/CALIBRATE/REJECT/BLOCKED disposition;
-- [ ] closure diff has no unresolved roadmap requirement;
-- [ ] export and ASC/gap dispositions are explicit;
-- [ ] worker does not commit or mutate session state.
+- [x] every finding has a source-backed final disposition;
+- [x] closure diff has no unresolved roadmap requirement;
+- [x] export and ASC/gap dispositions are explicit;
+- [x] worker did not commit or mutate session state.
 
 ## Evidence Requirements
 
@@ -203,7 +203,7 @@ Source-backed finding classification, closure diff and committed-range gates.
 
 ## Closure Checklist
 
-- [x] T8 complete; - [ ] findings classified; - [ ] closure diff reconciled; - [ ] export decided by reviewer.
+- [x] T8 complete; - [x] findings classified; - [x] closure diff reconciled; - [x] export decided by reviewer.
 
 ## Return-To-Orchestrator Conditions
 
@@ -225,7 +225,7 @@ Required for scope-expanding repairs or public export.
 | Target paths | paired T9 packet |
 | Allowed scope source | operator and roadmap |
 | Before status evidence | clean worktree at `1b0835c17`; T8 accepted |
-| After status evidence | source-verified DISPATCH_READY critique packet |
+| After status evidence | source-verified critique packet, later reviewer-accepted bounded |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | packet preparation only |
 | Claim boundary | no critique/closure executed |
@@ -271,3 +271,16 @@ python governance/compat/check_public_export_disposition.py --base 1b0835c17 --h
 git diff --check
 git status --short
 ```
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_T9_INDEPENDENT_CRITIQUE_RECONCILIATION_AND_CLOSURE_COMPLETION_2026-07-12.md` | reviewer decision | PASS |
+| Roadmap state | MAO roadmap | closed bounded | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | existing T1-T8 coverage aligned | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing registry surface retained | PASS |
+| External evidence digest | N/A with reason: local critique | none | N/A with reason: not applicable |
+| System loop interlock | T7 catalog candidate | deferred pending proof-classed edges | PASS |
+| Session continuity | active state/handoff | separate session sync | PASS |
