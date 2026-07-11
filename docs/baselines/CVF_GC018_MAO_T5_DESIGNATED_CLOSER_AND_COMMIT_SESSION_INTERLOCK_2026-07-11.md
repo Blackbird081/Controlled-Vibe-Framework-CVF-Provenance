@@ -2,11 +2,11 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: HOLD_PENDING_SESSION_RELEASE
+Status: DISPATCH_READY
 
-Batch ID: MAO-T5
+Batch ID: MAO-RUNTIME-T5
 
-Dispatch base head: `3294d555a`
+Dispatch base head: `f1f895f31`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -54,6 +54,18 @@ Disclosed defectIds: none.
 Local deterministic contracts and tests only. No adapter receives commit
 authority; no git mutation, provider call, durable runtime, public-sync, or
 production claim is authorized for the worker.
+
+## Scaffold Provenance Block
+
+| Field | Value |
+|---|---|
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind generic-worker-dispatch --batch-id MAO-T5 --title "Designated Closer And Commit Session Interlock" --date 2026-07-11 --base 3294d555a --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
+| generatedProfile | generic no-commit dispatch |
+| generatedSkeletonStatus | USED_AS_STARTING_POINT |
+| manualEditsAfterScaffold | source verification, dependency release, exact scope and gates |
+| checkerReadAheadConfirmation | dispatch, handoff and ADIF checkers read |
+| docOnlyNewFields | none in baseline |
+| claimBoundary | authoring provenance only |
 
 ## Public Export Disposition
 

@@ -2,11 +2,11 @@
 
 Memory class: governed-worker-dispatch
 
-Status: HOLD_PENDING_SESSION_RELEASE
+Status: DISPATCH_READY
 
-Batch ID: MAO-T5
+Batch ID: MAO-RUNTIME-T5
 
-dispatchBaseHead: `3294d555a`
+dispatchBaseHead: `f1f895f31`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
@@ -16,14 +16,66 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 ## Dispatch Prompt Envelope
 
-Role: delegated worker. Canonical packet: this file. Read startup surfaces,
-paired GC-018, cited sources, and checker sources first. Implement only the
-manifest below, run gates, leave all changes uncommitted, and return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+Role: delegated worker
+
+Canonical packet: this file
+
+Commit mode: WORKER_MUST_NOT_COMMIT
+
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+
+Current-time notes: artifact date 2026-07-11; use actual clean HEAD at execution.
+
+Do-not-misread notes: no provider, git mutation, session mutation, or T6 work.
+
+Required first actions: read startup, baseline, this packet, sources and checkers; capture HEAD/status.
+
+Return contract: implement only the manifest, run gates, leave changes uncommitted, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
 
 ## Purpose
 
 Implement local closer/commit/session interlock contracts and focused tests.
+
+## Scaffold Provenance Block
+
+| Field | Value |
+|---|---|
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind generic-worker-dispatch --batch-id MAO-T5 --title "Designated Closer And Commit Session Interlock" --date 2026-07-11 --base 3294d555a --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
+| generatedProfile | generic no-commit dispatch |
+| generatedSkeletonStatus | USED_AS_STARTING_POINT |
+| manualEditsAfterScaffold | source verification, exact manifest, controls and gates |
+| checkerReadAheadConfirmation | dispatch, handoff and worker-return checkers read |
+| docOnlyNewFields | integrationDecisionId; sessionProjectionRequired |
+| claimBoundary | authoring provenance only |
+
+## Worker Autonomy / No-Question Rule
+
+Repair allowed-scope checker defects directly. Return only for source conflict,
+missing authority, or forbidden-scope need.
+
+## Intake Role Routing Decision
+
+| Field | Disposition |
+|---|---|
+| Intake source | CVF roadmap and accepted T4 closure evidence |
+| Intake role | local contract/test worker |
+| Reviewer role | independent reviewer/closer |
+| Routing decision | WORKER_MUST_NOT_COMMIT |
+| Public route | DEFERRED_PRIVATE_ONLY |
+| risk sensitivity | high because commit/session authority must fail closed |
+| scope classification | bounded local execution-plane contract and tests |
+| canonical route mode | MULTI_AGENT_SINGLE_ROLE |
+| selected role route | worker return to reviewer/closer closure conversion |
+| escalation condition | return blocked for source conflict, git mutation need, provider/runtime/public expansion, or missing authority |
+
+## Single-Agent Multi-Role Control Block
+
+| Field | Disposition |
+|---|---|
+| role separation ledger | worker=implementation; reviewer/closer=review and material commit; steward=session sync |
+| gate sequence | pre-implementation, worker-return fast, reviewer-fast, pre-closure, session-sync |
+| evidence basis independent of memory | cited runtime source, focused tests, git evidence, governed completion review |
+| escalation conditions | any self-review, commit, session mutation, provider, public, or T6 scope need blocks worker |
 
 ## Scope / Methodology
 
@@ -113,7 +165,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | SINGLE_AGENT_MULTI_ROLE |
 | rolePattern | worker then independent reviewer/closer |
 | phase | EXECUTION |
-| baseHeadFor(phase) | dispatchBaseHead=3294d555a; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=f1f895f31; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
 | changedSetScope(phase) | four manifest paths only |
 | traceScope(phase, actor) | worker traces execution; reviewer traces closure |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT; reviewer/closer owns accepted material commit |
@@ -141,13 +193,13 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 
 workerReturnPath: `docs/reviews/CVF_MAO_T5_DESIGNATED_CLOSER_AND_COMMIT_SESSION_INTERLOCK_WORKER_RETURN_2026-07-11.md`
 
-contractProfile: `WORKER_RETURN_FULL_GATE_V1`
+contractProfile: WORKER_RETURN_FULL_GATE_V1
 
 requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 
-individualCheckerSubstitution: `FORBIDDEN`
+individualCheckerSubstitution: FORBIDDEN
 
-workerReturnSkeleton: `CHECKER_SAFE_SKELETON_REQUIRED`
+workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
 ## Verification Commands
 
@@ -171,7 +223,7 @@ git status --short
 | Command or tool surface | source reads, apply patch, gates |
 | Target paths | paired T5 baseline and work order |
 | Allowed scope source | operator request and roadmap MAO-T5 |
-| Before status evidence | MAO-T4 closed at `f71ba01f6` |
+| Before status evidence | clean worktree at session release commit `f1f895f31`; MAO-T4 closed at `f71ba01f6` |
 | After status evidence | source-verified packet ready for worker |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | packet authoring and bounded T5 worker dispatch |
