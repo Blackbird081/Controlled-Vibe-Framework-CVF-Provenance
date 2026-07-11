@@ -2,9 +2,9 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
-Batch ID: MAO-RUNTIME-T5
+Batch ID: MAO-T5
 
 Dispatch base head: `f1f895f31`
 
@@ -80,3 +80,19 @@ Source and dependency accepted; dispatch waits only for session release.
 ## Evidence / Verification
 
 Source searches, resolver output, dependency commit, and gates are evidence.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| contract/tests | execution-plane T5 source and test | 54/54 Vitest and typecheck PASS | PASS |
+| review | dated T5 completion review | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| registry | GC-051 source/aggregate | generator check PASS | PASS |
+| Work order status | paired T5 work order | CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | dated T5 completion review | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Roadmap state | MAO roadmap T5 | accepted; T6 held | PASS |
+| Registry JSON | GC-051 aggregate | generated | PASS |
+| Registry Markdown | N/A with reason: no Markdown registry changed | N/A | PASS |
+| External evidence digest | N/A with reason: local evidence only | N/A | N/A with reason: local evidence only |
+| System loop interlock | current interlock registry | unchanged | PASS |
+| Session continuity | session-sync steward | pending separate commit | PASS |

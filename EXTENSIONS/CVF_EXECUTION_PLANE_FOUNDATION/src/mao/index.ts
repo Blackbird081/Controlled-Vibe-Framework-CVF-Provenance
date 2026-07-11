@@ -133,3 +133,24 @@ export {
   verifyDissentDeterminism,
   verifyReviewReceiptConsistency,
 } from "./dissent.revision.contract";
+
+// --- MAO-T5 designated closer and commit/session interlock ---
+
+export type {
+  MaoIntegrationDecision,
+  MaoIntegrationReceipt,
+  MaoIntegrationReceiptInput,
+  MaoCloserValidationResult,
+  MaoCommitAuthorizationResult,
+  MaoSessionSyncProjection,
+} from "./closer.interlock.contract";
+
+export {
+  validateExactlyOneCloser,
+  checkCloserIdentity,
+  buildIntegrationReceipt,
+  checkCommitAuthorization,
+  buildSessionSyncProjection,
+  makeIntegrationDecision,
+  verifyIntegrationReceiptConsistency,
+} from "./closer.interlock.contract";

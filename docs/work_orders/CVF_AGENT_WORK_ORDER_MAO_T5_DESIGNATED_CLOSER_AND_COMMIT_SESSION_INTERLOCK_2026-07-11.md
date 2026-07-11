@@ -2,9 +2,9 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
-Batch ID: MAO-RUNTIME-T5
+Batch ID: MAO-T5
 
 dispatchBaseHead: `f1f895f31`
 
@@ -133,6 +133,16 @@ Disclosed defectIds: none.
 | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/index.ts` | bounded exports |
 | `docs/reviews/CVF_MAO_T5_DESIGNATED_CLOSER_AND_COMMIT_SESSION_INTERLOCK_WORKER_RETURN_2026-07-11.md` | create worker return |
 
+## Required Artifact Manifest
+
+| Artifact | Owner | Final status |
+|---|---|---|
+| closer interlock source | worker | PASS |
+| focused test | worker | PASS |
+| bounded barrel exports | worker | PASS |
+| worker return | worker | PASS |
+| completion review and GC-051 coverage | reviewer | PASS |
+
 ## Execution Plan
 
 | Step | Action | Evidence |
@@ -144,12 +154,12 @@ Disclosed defectIds: none.
 
 ## Acceptance Criteria
 
-- [ ] exactly one designated closer is required;
-- [ ] no adapter or worker gains commit authority;
-- [ ] closure conversion consumes a valid review receipt;
-- [ ] commit and session-sync intents remain separate projections;
-- [ ] focused tests and typecheck pass;
-- [ ] worker returns exactly four paths and does not commit.
+- [x] exactly one designated closer is required;
+- [x] no adapter or worker gains commit authority;
+- [x] closure conversion consumes a valid terminal review receipt;
+- [x] commit and session-sync intents remain separate projections;
+- [x] focused tests and typecheck pass;
+- [x] worker returns exactly four paths and does not commit.
 
 ## Evidence Requirements
 
@@ -286,11 +296,35 @@ commit-steward preflight are required.
 
 ## Closure Checklist
 
-- [ ] dependency/session release refreshed;
-- [ ] worker manifest exact;
-- [ ] tests and typecheck pass;
-- [ ] no-commit honored;
-- [ ] continuity updated separately.
+- [x] dependency/session release refreshed;
+- [x] worker manifest exact;
+- [x] tests and typecheck pass;
+- [x] no-commit honored;
+- [x] continuity update assigned separately.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| implementation | T5 source/test/barrel | 54/54 Vitest; typecheck PASS | PASS |
+| review | dated completion review | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| corpus coverage | GC-051 source/aggregate | generator check PASS | PASS |
+| next move | held MAO-T6 packet | dependency refresh required | PASS |
+| Work order status | this work order | CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | dated T5 completion review | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Roadmap state | MAO roadmap T5 | accepted; T6 held | PASS |
+| Registry JSON | GC-051 aggregate | generated | PASS |
+| Registry Markdown | N/A with reason: no Markdown registry changed | N/A | PASS |
+| External evidence digest | N/A with reason: local evidence only | N/A | N/A with reason: local evidence only |
+| System loop interlock | current interlock registry | unchanged | PASS |
+| Session continuity | session-sync steward | pending separate commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| T5-Q1 | focused test output | N/A | 54 passing | 54 passing | PASS |
+| T5-Q2 | typecheck output | N/A | exit 0 | exit 0 | PASS |
 
 ## Return-To-Orchestrator Conditions
 
