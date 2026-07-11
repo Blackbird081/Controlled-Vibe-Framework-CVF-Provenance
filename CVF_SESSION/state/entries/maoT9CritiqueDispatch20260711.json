@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1645,
+  "stateKey": "maoT9CritiqueDispatch20260711",
+  "value": "MAO-T9 independent critique is DISPATCH_READY at material commit c40991cc5 from base 1b0835c17. Worker owns exactly four uncommitted review outputs: independent runtime-foundation critique, finding classification and reconciliation candidate, roadmap closure-diff evidence, and worker return. WORKER_MUST_NOT_COMMIT. Worker may not mutate roadmap, runtime, session, public-sync, ASC aggregate, or gap registry; Codex remains reviewer/closer. Pre-dispatch autorun PASS 75/75, dispatch commit steward PASS, and pre-commit PASS 82/82."
+}

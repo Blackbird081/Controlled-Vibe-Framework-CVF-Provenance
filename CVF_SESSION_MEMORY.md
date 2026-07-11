@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t8_closed_t9_packet_refresh_ready`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=refresh and source-verify held MAO-T9 packet before dispatch; parked checkpoint=provider/network, UI and public work.
+Startup acknowledged: current mode=`mao_t9_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one independent MAO-T9 no-commit critique producing exactly four outputs; parked checkpoint=reviewer-owned roadmap/export/catalog-gap closure, provider/network, UI and public work.
 
 ## Current Mode
 
-Current mode marker: `mao_t8_closed_t9_packet_refresh_ready`
+Current mode marker: `mao_t9_dispatched`
 
-Current mode: `mao_t8_closed_t9_packet_refresh_ready`
+Current mode: `mao_t9_dispatched`
 
-`mao_t8_closed_t9_packet_refresh_ready`
+`mao_t9_dispatched`
 
 Previous mode:
 
-`mao_t8_dispatched`
+`mao_t8_closed_t9_packet_refresh_ready`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T9 independent critique dispatch | `c40991cc5` | DISPATCH_READY; exactly four review outputs, no worker commit or owner-surface mutation. |
 | MAO-T8 representative pilot closure | `f5a3def2a` | REVIEWER_ACCEPTED_BOUNDED after monotonic-time repair; 25/25 tests and typecheck PASS. |
 | MAO-T8 representative pilot dispatch | `23d1b23ce` | DISPATCH_READY; local stale-readout repair pilot, exactly five outputs, no provider and no worker commit. |
 | MAO-T7 evidence/readout closure | `2ae63592e` | REVIEWER_ACCEPTED_BOUNDED after cross-graph admission repair; 35/35 tests and typecheck PASS. |
@@ -116,10 +117,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t8_closed_t9_packet_refresh_ready`
+Mode: `mao_t9_dispatched`
 
-MAO-T8 is accepted at `f5a3def2a`. Next allowed move is refresh and
-source-verification of the held MAO-T9 critique/reconciliation/closure packet.
+MAO-T9 is dispatch-ready at `c40991cc5`. Next allowed move is one independent
+critic execution from clean post-sync HEAD producing exactly four uncommitted
+review outputs.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 

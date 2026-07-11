@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t8_closed_t9_packet_refresh_ready`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=refresh/source-verify held MAO-T9 packet; parked checkpoint=provider/network, UI/public, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t9_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one independent MAO-T9 no-commit critique with four outputs; parked checkpoint=reviewer-owned roadmap/export/catalog-gap closure, provider/network, UI/public, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t8_closed_t9_packet_refresh_ready`
+`mao_t9_dispatched`
 
 ## Latest Work / Changes
 
@@ -226,6 +226,33 @@ Protected paths:
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
+
+## MAO-T9 Independent Critique Dispatch
+
+Dispatch material HEAD: `c40991cc5`.
+
+Worker starts from clean post-sync HEAD, creates exactly four critique outputs,
+runs worker-return fast gate, leaves all changes uncommitted, and returns
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Roadmap and all closure owner
+surfaces remain reviewer-owned.
+
+Session-sync parent HEAD: `c40991cc5`.
+
+## Core Guard Self-Protection Authorization - MAO-T9 Dispatch Sync
+
+Operator authorization: continue to MAO-T9 and preserve continuity separately.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/maoT9CritiqueDispatch20260711.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this sync; retain dispatch commit `c40991cc5`.
 
 ## MAO-T8 Closure And T9 Packet-Refresh Release
 
