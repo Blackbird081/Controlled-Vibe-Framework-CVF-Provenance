@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_asc_t0_source_schema_contract_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=delegated worker executes ASC-T0 and returns COMPLETE_PENDING_REVIEW without commit; parked checkpoint=L4 promotion, ASC-T1+, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_asc_t0_source_schema_contract_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh GC-018 and work order for ASC-T1 only; parked checkpoint=L4 promotion, ASC-T2+, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_asc_t0_source_schema_contract_dispatche
 
 ## Current Mode
 
-`msea_asc_t0_source_schema_contract_dispatched`
+`msea_asc_t0_source_schema_contract_closed`
 
 ## Latest Work / Changes
 
@@ -1118,6 +1118,25 @@ Authorized scope: session-sync after `cbc5348bf`. Protected paths:
 `CVF_SESSION/state/entries/mseaAscT0SourceSchemaContractDispatch20260711.json`.
 Operator authority: create ASC-T0 work order. Rollback only this sync; retain
 `cbc5348bf`.
+
+## MSEA-ASC-T0 Source Schema Contract Closure - 2026-07-11
+
+Material commit: `9f8815fb7`. Status: REVIEWER_ACCEPTED_BOUNDED. Round 2
+replaced ignored prose constraints with Draft 2020-12 machine enforcement;
+independent negative cases all reject as expected. Next move is ASC-T1 packet
+authoring only.
+
+## Core Guard Self-Protection Authorization - MSEA-ASC-T0 Closure Session Sync
+
+Authorized scope: session-sync after `9f8815fb7`. Protected paths:
+`AGENT_HANDOFF_V40_2026-07-10.md`; `CVF_SESSION_MEMORY.md`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/mseaAscT0SourceSchemaContractClosure20260711.json`.
+Operator authority: review ASC-T0 return. Rollback only this sync; retain
+`9f8815fb7`.
 
 ## Claim Boundary
 

@@ -1,0 +1,12 @@
+{
+  "stateOrder": 1668,
+  "stateKey": "mseaAscT0SourceSchemaContractClosure20260711",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-11",
+    "materialCommit": "9f8815fb7",
+    "workerReturn": "docs/reviews/CVF_MSEA_ASC_T0_SOURCE_SCHEMA_AND_RECONCILIATION_CONTRACT_WORKER_RETURN_2026-07-11.md",
+    "nextAllowedMove": "author fresh GC-018 and work order for ASC-T1 only",
+    "claimBoundary": "T0 contracts/topology only; no catalog population or later implementation"
+  }
+}

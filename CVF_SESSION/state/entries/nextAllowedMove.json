@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "MSEA-ASC-T0 Source Schema And Reconciliation Contract is DISPATCH_READY at commit cbc5348bf with WORKER_MUST_NOT_COMMIT. Next allowed move is delegated worker execution from the dispatch-session HEAD, producing exactly four reference/schema outputs and one worker return, then stopping COMPLETE_PENDING_REVIEW. No ASC-T1+, catalog population, gap index, generator, checker, diagram, runtime, public, or provider work is authorized. L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. LHW24 remains latest closed numbered LHW wave."
+  "value": "MSEA-ASC-T0 Source Schema And Reconciliation Contract is REVIEWER_ACCEPTED_BOUNDED at material commit 9f8815fb7 after Round 2 machine-enforced JSON Schema correction. Next allowed move is author a fresh GC-018 and work order for ASC-T1 As-Built Plane And Module Inventory only. No ASC-T2+, gap index, generator, freshness checker, diagram, runtime, public, or provider work is authorized. L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. LHW24 remains latest closed numbered LHW wave."
 }
