@@ -17,9 +17,9 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t4_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T4
-WORKER_MUST_NOT_COMMIT local execution from clean post-sync HEAD; parked checkpoint=provider/network, closer/commit interlock, MAO-T5+, broader MAO runtime, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t4_closed`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T5
+GC-018 baseline and source-verified work-order authoring only; parked checkpoint=MAO-T5 implementation, provider/network, closer/commit interlock, broader MAO runtime, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -33,9 +33,15 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t4_dispatched`
+`mao_t4_closed`
 
 ## Latest Work / Changes
+
+MAO-T4 closure commit `f71ba01f6` is `REVIEWER_ACCEPTED_BOUNDED`.
+Independent execution rejected the worker's Vitest/Node incompatibility claim,
+repaired the contradictory assertion and contract edge cases, then passed 78/78
+focused tests, typecheck, worker-return fast, reviewer-fast, and pre-commit.
+Next movement is fresh MAO-T5 packet authoring only.
 
 MAO-T4 dispatch commit `68cc94572` is `DISPATCH_READY`. Worker produces exactly
 five local reviewer-isolation/dissent/revision outputs and returns without commit.
@@ -124,14 +130,14 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Execute MAO-T4 once under `WORKER_MUST_NOT_COMMIT` from clean post-sync HEAD.
-Provider/network, closer/commit interlock, MAO-T5+, and broader runtime remain parked.
+Author a fresh MAO-T5 GC-018 baseline and source-verified work order only.
+MAO-T5 implementation, provider/network, closer/commit interlock, and broader runtime remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
 
-MAO-T2 is closed and MAO-T3 fake/local execution is dispatched. No real provider,
-queue, UI, public-sync, MAO-T4+, R91/ASC semantic, L4, R84, or R73F change is authorized.
+MAO-T4 is closed with bounded local evidence. No real provider, queue, UI,
+public-sync, MAO-T5 implementation, R91/ASC semantic, L4, R84, or R73F change is authorized.
 
 ## Core Guard Self-Protection Authorization - MAO Roadmap Session Sync
 
@@ -162,6 +168,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/maoT3Dispatch20260711.json`
 - `CVF_SESSION/state/entries/maoT3Closure20260711.json`
 - `CVF_SESSION/state/entries/maoT4Dispatch20260711.json`
+- `CVF_SESSION/state/entries/maoT4Closure20260711.json`
 - `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 

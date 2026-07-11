@@ -1,0 +1,12 @@
+{
+  "stateOrder": 1682,
+  "stateKey": "maoT4Closure20260711",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "materialCommit": "f71ba01f6",
+    "completionReview": "docs/reviews/CVF_MAO_T4_REVIEWER_ISOLATION_DISSENT_AND_REVISION_LOOP_COMPLETION_2026-07-11.md",
+    "verification": "78/78 focused tests, typecheck, worker-return fast, reviewer-fast, pre-commit, and committed pre-closure checks PASS except continuity pending this sync",
+    "nextAllowedMove": "fresh MAO-T5 GC-018 and source-verified work-order authoring only",
+    "claimBoundary": "local reviewer isolation, dissent, and bounded revision mechanics only; no provider, durable runtime, public, or production claim"
+  }
+}

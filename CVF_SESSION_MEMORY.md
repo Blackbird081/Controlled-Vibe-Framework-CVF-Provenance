@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t4_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T4 WORKER_MUST_NOT_COMMIT local execution from clean post-sync HEAD; parked checkpoint=provider/network, closer/commit interlock, MAO-T5+, broader runtime and public work.
+Startup acknowledged: current mode=`mao_t4_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T5 GC-018 baseline and source-verified work-order authoring only; parked checkpoint=MAO-T5 implementation, provider/network, closer/commit interlock, broader runtime and public work.
 
 ## Current Mode
 
-Current mode marker: `mao_t4_dispatched`
+Current mode marker: `mao_t4_closed`
 
-Current mode: `mao_t4_dispatched`
+Current mode: `mao_t4_closed`
 
-`mao_t4_dispatched`
+`mao_t4_closed`
 
 Previous mode:
 
-`mao_t3_closed`
+`mao_t4_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T4 reviewer isolation/dissent/revision closure | `f71ba01f6` | REVIEWER_ACCEPTED_BOUNDED after independent evidence and semantic repair; 78/78 tests, typecheck, worker-return/reviewer-fast and pre-commit pass. |
 | MAO-T4 reviewer isolation/dissent/revision dispatch | `68cc94572` | DISPATCH_READY; five exact outputs; worker must not commit. |
 | MAO-T3 adapter closure | `052845fa1` | REVIEWER_ACCEPTED_BOUNDED; 21/21 tests, typecheck, reviewer-fast and 82/82 pre-commit pass. |
 | MAO-T3 provider-neutral delegation adapter dispatch | `1738d9263` | DISPATCH_READY; fake/local only; four outputs; worker must not commit. |
@@ -109,7 +110,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t4_dispatched`
+Mode: `mao_t4_closed`
 
 MAO-T4 is dispatch-ready at `68cc94572`. Next allowed move is one delegated
 local worker execution from clean post-sync HEAD with exactly five outputs and no commit.
