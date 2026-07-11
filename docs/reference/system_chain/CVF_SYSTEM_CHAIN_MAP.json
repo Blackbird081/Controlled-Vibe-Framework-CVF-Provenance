@@ -15,13 +15,13 @@
       "planeRange": "L0-L6 (frozen doctrine layer model) plus non-doctrine module-map narrations",
       "currentPosture": "PARTIAL",
       "verdict": "PARTIAL_CHAIN_WITH_DOCUMENTED_DRIFT",
-      "implementedBy": "ECOSYSTEM/doctrine/ (L0 present); AGENTS.md (L2 differently named active operational owner with boundary); ECOSYSTEM/operating-model/ (L3 present)",
+      "implementedBy": "ECOSYSTEM/doctrine/ (L0 present); docs/reference/system_chain/CVF_SYSTEM_DEFINITION.md (L1 pointer owner with boundary); AGENTS.md (L2 active operational owner with boundary); ECOSYSTEM/operating-model/ (L3 present)",
       "invokedBy": "N/A_WITH_REASON: doctrine is read-time governance authority, not an invoked runtime path",
       "testedBy": "HISTORICAL: no machine test enforces doctrine-to-folder mapping",
       "evidenceOwner": "docs/reference/CVF_MODULE_INVENTORY.md; docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
       "operatorSurface": "ARCHITECTURE.md front door; ECOSYSTEM/README.md",
-      "knownGaps": "R96 retains L1 and L4 as SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE and records L6 as PARTIAL_OWNER_WITH_GAP. R97 inventories EXTENSIONS/examples as active-reference. R98 resolves L2 as NAMED_DIFFERENTLY_ACTIVE_OWNER_WITH_BOUNDARY; AGENTS.md is broader than the historical protocol, is not textually equivalent, does not create /protocols, and does not inherit frozen-doctrine status.",
-      "nextReviewAction": "Use docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md as the active route record. Any L1 owner creation, L4 promotion, L6 consolidation/root-path change, or later attempt to claim exact L2 textual/path equivalence requires a fresh governed packet.",
+      "knownGaps": "R99 closes the L1 active-owner gap with a pointer while retaining /system path and authority boundaries. R96 retains L4 as SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE and L6 as PARTIAL_OWNER_WITH_GAP. R98 resolves L2 with explicit non-equivalence boundaries.",
+      "nextReviewAction": "Use docs/reference/system_chain/CVF_SYSTEM_DEFINITION.md and the doctrine route map as active L1 routes. Any L4 promotion, L6 consolidation/root-path change, or exact path/text/freeze equivalence claim requires a fresh governed packet.",
       "sourceFingerprints": [
         {
           "path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md",
@@ -45,8 +45,13 @@
         },
         {
           "path": "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md",
-          "sha256": "5eae22bffc340bee07cf0c0616d147fcf4d29e79d9d2042fc98045217b57f83e",
+          "sha256": "ba6122efe310706d97c2c0929796ade301d33bb0e70fd6d2361e9d5ef42d987b",
           "evidenceRole": "R94-T2 active doctrine route and intentional-separation record"
+        },
+        {
+          "path": "docs/reference/system_chain/CVF_SYSTEM_DEFINITION.md",
+          "sha256": "5f1d43483537f09f294c4b072a152dae3dd0ffa4f1f5d7c31ad206397c83fc57",
+          "evidenceRole": "R99 active L1 identity, component, and navigation pointer owner"
         }
       ]
     },

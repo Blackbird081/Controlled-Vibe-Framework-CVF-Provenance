@@ -54,7 +54,7 @@ acceptance.
 | Doctrine layer | Doctrine location | Active-tree owner | Status | Evidence |
 |---|---|---|---|---|
 | L0 - Doctrine | `/doctrine` | `ECOSYSTEM/doctrine/` | ACTIVE_PRESENT | direct read: `ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md` exists with the four named doctrine files |
-| L1 - System Definition | `/system` | none proven as a current doctrine-equivalent owner | SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE | MSEA-R96 reviewer-accepted evidence: `.private_reference/legacy/CVF_Restructure/CVF_ECOSYSTEM/system/CVF_PROJECT_MANIFEST.md` exists only under the legacy mirror; no active-tree `system/` directory exists; `START_HERE.md` and `README.md` were searched and rejected as self-declared redirect/triage pages, not system-identity owners |
+| L1 - System Definition | `/system` | `docs/reference/system_chain/CVF_SYSTEM_DEFINITION.md` | ACTIVE_OWNER_CREATED_WITH_BOUNDARY | MSEA-R99 compact pointer owner covers system identity, core components, and agent/contributor navigation. It does not copy legacy, create `/system`, replace linked owners, create a new authority hierarchy, or inherit frozen status. |
 | L2 - Build Protocol | `/protocols` | `AGENTS.md` (bounded active operational owner) | NAMED_DIFFERENTLY_ACTIVE_OWNER_WITH_BOUNDARY | MSEA-R98 decision: `AGENTS.md` actively defines agent build behavior through mandatory startup, source-verification, implementation, autorun, closure, handoff, and repository-protection controls. This satisfies the L2 responsibility under a different name/location. Boundary: it is broader than the historical protocol, is not a one-to-one textual adaptation, does not make `/protocols` exist, and does not inherit frozen-doctrine status. |
 | L3 - Operating Model | `/operating-model` | `ECOSYSTEM/operating-model/` | ACTIVE_PRESENT | direct read: `ECOSYSTEM/operating-model/` exists in the active tree, matching doctrine's named contents |
 | L4 - Product Implementation | `/cvf-core` | none proven as a current doctrine-equivalent owner | SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE | MSEA-R96 reviewer-accepted evidence: the doctrine-named `/cvf-core` location does not exist; `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/README.md` self-declares Pre-Public Status and not yet published, consistent with `docs/reference/CVF_MODULE_INVENTORY.md` listing it as `draft`/`future-facing`, which is insufficient to promote it to the active L4 doctrine owner |
@@ -80,6 +80,9 @@ Row disposition vocabulary used above:
   sibling doctrine-named location under the same layer does not.
 - `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`: the named location is absent
   and current CVF-governed sources do not establish an equivalent active owner.
+- `ACTIVE_OWNER_CREATED_WITH_BOUNDARY`: a governed pointer now covers the
+  layer responsibilities while rejecting path equivalence, copied legacy
+  authority, duplicate architecture, and frozen-status transfer.
 - `ADAPTATION_CANDIDATE`: historical MSEA-R96 intermediate disposition,
   superseded for L2 by the bounded MSEA-R98 owner decision.
 - `PARTIAL_OWNER_WITH_GAP`: responsibility coverage is confirmed real but

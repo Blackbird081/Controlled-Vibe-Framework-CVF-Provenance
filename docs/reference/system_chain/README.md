@@ -58,8 +58,10 @@ laneId: `DOCTRINE_TO_CONTRACT`
 R94-T2 adds the active companion route
 `docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md`. It
 cross-references the three CVF-governed independent numbering narratives
-without treating them as equivalent. R96 retains L1 and L4 as unresolved with
-search evidence and records L6 responsibility as real but distributed. R98
+without treating them as equivalent. R96 retained L1 and L4 as unresolved with
+search evidence. R99 closes the L1 owner gap with the compact
+`CVF_SYSTEM_DEFINITION.md` pointer while retaining path and authority
+boundaries. L4 remains unresolved. R98
 ratifies `AGENTS.md` as the differently named active L2 operational owner with
 an explicit boundary: responsibility coverage is proven, but textual
 equivalence, `/protocols` path existence, and frozen-status transfer are not.
@@ -73,7 +75,8 @@ Frozen doctrine (`ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md`) declares seven
 layers L0 through L6. L0 (`ECOSYSTEM/doctrine/`) and L3
 (`ECOSYSTEM/operating-model/`) exist in the active tree and match the
 doctrine's named contents. L1 and L2 doctrine-named content exists only
-under a legacy-reference mirror, not the active `ECOSYSTEM/` tree. R96 found
+under a legacy-reference mirror, not the active `ECOSYSTEM/` tree. R99 now
+provides a differently located active L1 pointer owner. R96 found
 a substantial L2 responsibility match in `AGENTS.md`; R98 resolves that
 candidate as `NAMED_DIFFERENTLY_ACTIVE_OWNER_WITH_BOUNDARY`. Three additional
 module-map documents (`ARCHITECTURE.md`, `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md`,
