@@ -55,6 +55,12 @@ row as `CURRENT` coverage of the full named scope.
 
 laneId: `DOCTRINE_TO_CONTRACT`
 
+R94-T2 adds the active companion route
+`docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md`. It
+cross-references the three CVF-governed independent numbering narratives
+without treating them as equivalent. L1/L2 remain legacy-only gaps, L4 has no
+proven current doctrine-equivalent owner, and L6 remains partial.
+
 **Posture: PARTIAL.** Verdict: `PARTIAL_CHAIN_WITH_DOCUMENTED_DRIFT`.
 
 Frozen doctrine (`ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md`) declares seven
@@ -83,9 +89,9 @@ tested but have no proven non-test production caller or active package export.
 Their matrix rows now state `IMPLEMENTED_NOT_INVOCATION_PROVEN` instead of
 implying active entrypoints.
 
-The remaining action rows stay explicit: GC-012 and GC-013 lack independent
-semantic/test proof; GC-019 and GC-046 remain contract-only with reason. A
-separate source-verified R94-T1C packet owns the next decision.
+R94-T1C confirms direct semantic tests for GC-012 and GC-013. Remaining bounded
+rows stay explicit: GC-009/010 are implemented without proven production
+invocation, while GC-019/046 remain contract-only with reason.
 
 ### Lane 3 - Runtime to Enforcement
 

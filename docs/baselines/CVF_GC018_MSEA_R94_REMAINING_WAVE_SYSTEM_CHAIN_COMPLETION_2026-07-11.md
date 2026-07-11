@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MSEA-R94-REMAINING-WAVE
 
@@ -118,6 +118,19 @@ Resolver command: `python governance/compat/run_adif_defect_resolver.py --task-c
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance R94 completion work; no public-sync scope.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | remaining-wave work order | CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | remaining-wave completion | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Roadmap state | R94 roadmap | CLOSED_PASS_BOUNDED | PASS |
+| Registry JSON | corpus registry | generated aggregate current | PASS |
+| Registry Markdown | corpus registry Markdown | current companion retained | PASS |
+| External evidence digest | N/A with reason | no external evidence | N/A with reason |
+| System loop interlock | system-chain map | CURRENT | PASS |
+| Session continuity | active front doors | separate sync | N/A with reason |
 
 ## Claim Boundary
 

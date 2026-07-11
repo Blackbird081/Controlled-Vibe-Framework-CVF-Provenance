@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MSEA-R94-REMAINING-WAVE
 
@@ -347,13 +347,13 @@ existing system-chain map/fingerprints, reconciles GC-051, and runs reviewer-fas
 
 ## Closure Checklist
 
-- [ ] T1C terminal and source-backed.
-- [ ] T2 route map complete for L0-L6.
-- [ ] T3A BUILD/DEFER decision measurable.
-- [ ] T3B remains unimplemented.
-- [ ] T4 readiness reuses R91 owner.
-- [ ] Four worker paths only.
-- [ ] Worker return complete and uncommitted.
+- [x] T1C terminal and source-backed.
+- [x] T2 route map complete for L0-L6 with bounded unresolved owners.
+- [x] T3A DEFER decision measurable.
+- [x] T3B remains unimplemented.
+- [x] T4 readiness reuses R91 owner.
+- [x] Four worker paths only.
+- [x] Worker return complete and uncommitted.
 
 ## Return-To-Orchestrator Conditions
 
@@ -408,6 +408,28 @@ requires fresh authorization after reviewer closure.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance R94 completion; no public-sync scope.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | remaining-wave completion review | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Roadmap state | R94 roadmap | CLOSED_PASS_BOUNDED | PASS |
+| Registry JSON | corpus registry | generated aggregate current | PASS |
+| Registry Markdown | corpus registry Markdown | current companion retained | PASS |
+| External evidence digest | N/A with reason | no external evidence | N/A with reason |
+| System loop interlock | system-chain map | CURRENT | PASS |
+| Session continuity | active front doors | separate sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | Evidence field | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| R94-RW-Q1 | matrix | row count | 50 | 50 | PASS |
+| R94-RW-Q2 | focused tests | passing tests | 91 | 91 | PASS |
+| R94-RW-Q3 | phase ledger | terminal phases | 4 | 4 | PASS |
+| R94-RW-Q4 | freshness gate | violations | 0 | 0 | PASS |
 
 ## Claim Boundary
 

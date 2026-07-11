@@ -20,8 +20,8 @@
       "testedBy": "HISTORICAL: no machine test enforces doctrine-to-folder mapping",
       "evidenceOwner": "docs/reference/CVF_MODULE_INVENTORY.md; docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
       "operatorSurface": "ARCHITECTURE.md front door; ECOSYSTEM/README.md",
-      "knownGaps": "Two of seven doctrine-named locations (L1, L2) have no active-tree counterpart; three non-doctrine module maps (ARCHITECTURE.md, CVF_ARCHITECTURE_DIAGRAMS.md, CVF_CORE_KNOWLEDGE_BASE.md) use independent layer-numbering schemes not cross-referenced to the doctrine.",
-      "nextReviewAction": "A separate doctrine/architecture reconciliation decision may cross-reference or intentionally separate the narrations; not authorized by this map.",
+      "knownGaps": "R94-T2 now cross-references the three independent CVF-governed module maps without false equivalence. L1/L2 remain legacy-only gaps, L4 has no proven current doctrine-equivalent owner, and L6 is partial.",
+      "nextReviewAction": "Use docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md as the active route record. Reopen L1/L2/L4/L6 only with a source-backed owner decision; do not promote legacy-only content.",
       "sourceFingerprints": [
         {
           "path": "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md",
@@ -42,6 +42,11 @@
           "path": "docs/CVF_CORE_KNOWLEDGE_BASE.md",
           "sha256": "8b18091c9f409091b79a922a9cf0ba61da3cd7e155b5bddbb7693f8677bbee8e",
           "evidenceRole": "non-doctrine module-map narration (5 Layers version stack)"
+        },
+        {
+          "path": "docs/reference/system_chain/CVF_DOCTRINE_TO_CONTRACT_ROUTE_MAP.md",
+          "sha256": "e1ce8563aa32144f59f60a6f8267971fa9570e19a5e22f74105941239460a32f",
+          "evidenceRole": "R94-T2 active doctrine route and intentional-separation record"
         }
       ]
     },
@@ -56,12 +61,12 @@
       "testedBy": "MSEA-R94-T0 inventoried all 50 rows. MSEA-R94-T1A corrected GC-001, GC-002, GC-003, GC-005, GC-006, and GC-008 to the existing direct contract test owner EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts; focused suite passes 34/34. Twelve invoked rows remain bounded without standalone tests.",
       "evidenceOwner": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
       "operatorSurface": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance (Web governance dashboard route, confirmed present)",
-      "knownGaps": "After T1B, GC-009 and GC-010 are explicitly IMPLEMENTED_NOT_INVOCATION_PROVEN rather than active-entrypoint claims. GC-012 and GC-013 still lack independent semantics/test proof; GC-019 and GC-046 remain contract-only with reason.",
-      "nextReviewAction": "Use a separate source-verified R94-T1C packet for GC-012 and GC-013. Preserve the bounded GC-009/GC-010 downgrade and GC-019/GC-046 contract-only status unless later authority proves an active owner.",
+      "knownGaps": "After T1C, GC-012 and GC-013 have direct source/test evidence. GC-009 and GC-010 remain explicitly IMPLEMENTED_NOT_INVOCATION_PROVEN; GC-019 and GC-046 remain contract-only with reason.",
+      "nextReviewAction": "Preserve the bounded GC-009/GC-010 downgrade and GC-019/GC-046 contract-only status unless later authority proves an active owner or changes the human/template boundary.",
       "sourceFingerprints": [
         {
           "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
-          "sha256": "478fe8e6c47d93573d54f5ec692f7d0aef5d86342810b445ca65955d3e267f99",
+          "sha256": "fbb57c15bc3f5c1290f259bbc70e2eab064f888837f7b5399448503db84920ad",
           "evidenceRole": "control matrix rows GC-001, GC-009, GC-011, GC-019"
         },
         {
@@ -168,7 +173,7 @@
       "sourceFingerprints": [
         {
           "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
-          "sha256": "478fe8e6c47d93573d54f5ec692f7d0aef5d86342810b445ca65955d3e267f99",
+          "sha256": "fbb57c15bc3f5c1290f259bbc70e2eab064f888837f7b5399448503db84920ad",
           "evidenceRole": "GC-019 corrected archive-qualified citation"
         },
         {

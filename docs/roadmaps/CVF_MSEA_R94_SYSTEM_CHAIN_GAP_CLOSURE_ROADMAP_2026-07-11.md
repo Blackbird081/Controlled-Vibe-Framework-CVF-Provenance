@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -333,25 +333,43 @@ Stop and return to the operator or reviewer if a tranche:
 
 ## Next Allowed Move
 
-R94-T0, T1A, and T1B are reviewer-accepted. Operator authorization on
-2026-07-11 permits one integrated `MSEA-R94-REMAINING-WAVE` no-commit worker
-packet for T1C, T2, T3A, and T4 readiness. The packet may group these remaining
-documentation/read-model phases to reduce repeated dispatch latency, but each
-phase must retain its own evidence ledger and terminal disposition. T3B runtime
-or UI implementation remains excluded. A phase needing runtime, tests, a new
-checker, or a second freshness owner must return `BLOCKED_WITH_OWNER_ACTION`
-without stopping independent documentation phases.
+R94 is closed `CLOSED_PASS_BOUNDED`. The next allowed roadmap move is a fresh
+GC-018 packet for automatic R85-style external-absorption trigger hardening,
+before the parked Multi-Agent Orchestration Runtime Foundation is reconsidered.
+T3B remains value-parked until one recorded measurable reopen condition is met.
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: this is a private provenance roadmap. No public artifact, runtime
+Reason: this is a private provenance roadmap. No public-sync artifact, runtime
 feature, or public catalog claim is authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | remaining-wave work order | CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | remaining-wave completion review | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Roadmap state | this roadmap | CLOSED_PASS_BOUNDED | PASS |
+| Registry JSON | corpus registry | generated aggregate current | PASS |
+| Registry Markdown | corpus registry Markdown | current companion retained | PASS |
+| External evidence digest | N/A with reason | no external evidence | N/A with reason |
+| System loop interlock | system-chain map | CURRENT | PASS |
+| Session continuity | active front doors | separate sync follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | Evidence field | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| R94-Q1 | matrix | row count | 50 | 50 | PASS |
+| R94-Q2 | focused tests | passing tests | 91 | 91 | PASS |
+| R94-Q3 | phase ledger | terminal phases | 4 | 4 | PASS |
+| R94-Q4 | freshness gate | violations | 0 | 0 | PASS |
 
 ## Claim Boundary
 
-This roadmap defines evidence order, tranche boundaries, success measures, and
-reopen conditions. It does not claim the three partial lanes are already
-closed, authorize runtime or Web implementation, modify lifecycle decisions,
-or promote the active advisory files to semantic authority.
+This roadmap closes its authorized audit, correction, route-map, value-decision,
+and freshness work. It does not claim universal system-chain completeness,
+authorize T3B/runtime/Web implementation, modify lifecycle decisions, or
+promote advisory or legacy files to semantic authority.
