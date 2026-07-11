@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r96_doctrine_route_gap_reconciliation_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the MSEA-R96 no-commit worker order; parked checkpoint=T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_r96_doctrine_route_gap_reconciliation_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=select a fresh bounded owner-action packet from accepted R96 dispositions; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r96_doctrine_route_gap_reconciliation_d
 
 ## Current Mode
 
-`msea_r96_doctrine_route_gap_reconciliation_dispatched`
+`msea_r96_doctrine_route_gap_reconciliation_closed`
 
 ## Latest Work / Changes
 
@@ -914,6 +914,31 @@ Protected paths:
 
 Operator authorization: continue L1/L2/L4/L6 reconciliation. Rollback boundary:
 revert only this session-sync; retain dispatch commit `54666a41d`.
+
+## MSEA-R96 Doctrine Route Gap Reconciliation Closure - 2026-07-11
+
+Material commit: `d733abd70`. R96 is `REVIEWER_ACCEPTED_BOUNDED`; L1/L4 remain
+unresolved, L2 is an adaptation candidate pending ratification, L6 is a
+distributed partial owner, and the R91 freshness state is CURRENT.
+
+## Core Guard Self-Protection Authorization - MSEA-R96 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync after `d733abd70`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup after R96 closure. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R96 closure and next boundary. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set R96 closed mode. |
+| `CVF_SESSION/state/entries/mseaR96DoctrineRouteGapReconciliationClosure20260711.json` | Record closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route bounded owner-action selection. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: complete R96 review. Rollback boundary: revert only
+this session-sync; retain material commit `d733abd70`.
 
 ## Claim Boundary
 
