@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_remaining_wave_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute integrated T1C/T2/T3A/T4-readiness packet without commit; parked checkpoint=T3B, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
+Startup acknowledged: current mode=`msea_r94_system_chain_gap_closure_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author automatic R85-style external-absorption trigger hardening packet; parked checkpoint=T3B, R73F, R84 effectiveness, and Multi-Agent Orchestration Runtime Foundation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r94_remaining_wave_dispatched`; active 
 
 ## Current Mode
 
-`msea_r94_remaining_wave_dispatched`
+`msea_r94_system_chain_gap_closure_closed`
 
 ## Latest Work / Changes
 
@@ -765,6 +765,33 @@ Protected paths:
 Operator authorization: batch remaining R94 documentation/read-model phases.
 
 Rollback boundary: revert only this sync; do not revert `685f571bb`.
+
+## MSEA-R94 System Chain Gap Closure - 2026-07-11
+
+Material closure commit: `cf3187659`. R94 is `CLOSED_PASS_BOUNDED`; focused
+tests pass 91/91 and system-chain freshness is CURRENT. T3B remains value
+parked. Next allowed move is authoring a fresh automatic R85-style
+external-absorption trigger hardening packet before Multi-Agent Orchestration.
+
+## Core Guard Self-Protection Authorization - MSEA-R94 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after `cf3187659`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to absorption-trigger packet authoring. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R94 closure. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set R94 closed mode. |
+| `CVF_SESSION/state/entries/mseaR94SystemChainGapClosure20260711.json` | Record closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route exact next packet. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: close R94 and continue to absorption-trigger hardening.
+
+Rollback boundary: revert only this sync; do not revert `cf3187659`.
 
 ## Core Guard Self-Protection Authorization - MSEA-R94-T1B Closure Session Sync
 

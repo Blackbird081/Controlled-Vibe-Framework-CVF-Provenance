@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_remaining_wave_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute integrated T1C/T2/T3A/T4-readiness packet without commit; parked checkpoint=T3B, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
+Startup acknowledged: current mode=`msea_r94_system_chain_gap_closure_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author automatic R85-style external-absorption trigger hardening packet; parked checkpoint=T3B, R73F, R84 effectiveness, and Multi-Agent Orchestration Runtime Foundation.
 
 ## Current Mode
 
-Current mode marker: `msea_r94_remaining_wave_dispatched`
+Current mode marker: `msea_r94_system_chain_gap_closure_closed`
 
-Current mode: `msea_r94_remaining_wave_dispatched`
+Current mode: `msea_r94_system_chain_gap_closure_closed`
 
-`msea_r94_remaining_wave_dispatched`
+`msea_r94_system_chain_gap_closure_closed`
 
 Previous mode:
 
@@ -82,7 +82,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r94_remaining_wave_dispatched`
+Mode: `msea_r94_system_chain_gap_closure_closed`
 
 Next allowed move: author a fresh source-verified R94-T1B GC-018/work-order
 packet for the shared GC-009/GC-010 gateway invocation decision. Do not add
