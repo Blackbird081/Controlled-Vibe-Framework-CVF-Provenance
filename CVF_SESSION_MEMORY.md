@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_t1_closed_t2_packet_eligible`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author fresh ODVR-T2 GC-018 and source-verified no-commit work order for representative operator value proof; parked checkpoint=UI, provider/public work, T2 implementation before packet, and outside-source absorption.
+Startup acknowledged: current mode=`odvr_t2_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one delegated no-commit ODVR-T2 execution with exactly three evidence outputs; parked checkpoint=UI, provider/public work, composer changes, and outside-source absorption.
 
 ## Current Mode
 
-Current mode marker: `odvr_t1_closed_t2_packet_eligible`
+Current mode marker: `odvr_t2_dispatched`
 
-Current mode: `odvr_t1_closed_t2_packet_eligible`
+Current mode: `odvr_t2_dispatched`
 
-`odvr_t1_closed_t2_packet_eligible`
+`odvr_t2_dispatched`
 
 Previous mode:
 
-`odvr_t1_dispatched`
+`odvr_t1_closed_t2_packet_eligible`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ODVR-T2 representative value-proof dispatch | `1a79ba7a3` | DISPATCH_READY; exactly three no-commit evidence outputs. |
 | ODVR-T1 local composer closure | `16364f797` | REVIEWER_ACCEPTED_AFTER_REPAIR; 22/22 tests, schema-valid CURRENT readout, T2 packet authoring eligible. |
 | ODVR-T1 local composer dispatch | `a60b37760` | DISPATCH_READY; exactly four no-commit outputs. |
 | ODVR-T0 contract/schema closure | `2af788683` | REVIEWER_ACCEPTED_AFTER_REPAIR; narrowed T1 packet authoring eligible. |
@@ -128,14 +129,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `odvr_t1_closed_t2_packet_eligible`
+Mode: `odvr_t2_dispatched`
 
-ODVR-T1 is REVIEWER_ACCEPTED_AFTER_REPAIR at `16364f797`. Next allowed move is
-authoring a fresh GC-018 baseline and source-verified `WORKER_MUST_NOT_COMMIT`
-work order for ODVR-T2 representative operator value proof only. T2
-implementation before that packet, UI/provider/live, session mutation,
-public-sync, and outside-source absorption remain unauthorized. Latest closed
-numbered LHW wave remains `LHW24`.
+ODVR-T2 is DISPATCH_READY at `1a79ba7a3`. Next allowed move is one delegated
+`WORKER_MUST_NOT_COMMIT` execution producing exactly the JSON measurement
+receipt, T2 proof report, and worker return. Composer edits, UI/provider/live,
+session mutation, public-sync, and outside-source absorption remain
+unauthorized. Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

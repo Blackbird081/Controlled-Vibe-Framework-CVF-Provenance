@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_t1_closed_t2_packet_eligible`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author fresh ODVR-T2 GC-018 and source-verified no-commit work order for representative operator value proof; parked checkpoint=T2 implementation before packet, UI/provider/public work, and outside-source absorption.
+Startup acknowledged: current mode=`odvr_t2_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one delegated no-commit ODVR-T2 execution with exactly three evidence outputs; parked checkpoint=composer changes, UI/provider/public work, and outside-source absorption.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=author fresh O
 
 ## Current Mode
 
-`odvr_t1_closed_t2_packet_eligible`
+`odvr_t2_dispatched`
 
 ## Latest Work / Changes
 
@@ -650,3 +650,34 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain ODVR-T1 material
 closure commit `16364f797`.
+
+## ODVR-T2 Representative Operator Value Proof Dispatch
+
+Dispatch material HEAD: `1a79ba7a3`.
+
+ODVR-T2 is `DISPATCH_READY`. One no-commit worker must return exactly the JSON
+measurement receipt, T2 proof report, and worker return. The measurement uses
+identical questions across one closed and one parked/reopen scenario, with
+manual and composed traces, raw counts, elapsed time, and fact comparison.
+No composer edit, UI/Web, provider/live, state mutation, public-sync,
+outside-source absorption, or worker commit is authorized.
+
+Session-sync parent HEAD: `1a79ba7a3`.
+
+## Core Guard Self-Protection Authorization - ODVR-T2 Dispatch Sync
+
+Operator authorization: continue the ODVR roadmap by creating and dispatching
+the T2 evidence-only work order.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/odvrT2Dispatch20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain ODVR-T2 dispatch
+commit `1a79ba7a3`.
