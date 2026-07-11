@@ -40,6 +40,9 @@ MAO-T5 through T9 packet-chain commit `5a5dc0364` passed gates. T5 is
 released for its final status flip and one local WORKER_MUST_NOT_COMMIT
 execution. T6-T9 remain dependency-held.
 
+MAO-T5 dispatch release commit `b103a3f60` is `DISPATCH_READY`; this is the
+clean execution base that the worker must verify before producing four paths.
+
 MAO-T4 closure commit `f71ba01f6` is `REVIEWER_ACCEPTED_BOUNDED`.
 Independent execution rejected the worker's Vitest/Node incompatibility claim,
 repaired the contradictory assertion and contract edge cases, then passed 78/78
