@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r97_l6_examples_inventory_alignment_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh L2 doctrine-ratification decision packet or select another governed lane; parked checkpoint=L1 owner design, L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_r98_l2_build_protocol_owner_ratification_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute and close the bounded R98 L2 owner-ratification packet; parked checkpoint=L1 owner design, L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r97_l6_examples_inventory_alignment_clo
 
 ## Current Mode
 
-`msea_r97_l6_examples_inventory_alignment_closed`
+`msea_r98_l2_build_protocol_owner_ratification_dispatched`
 
 ## Latest Work / Changes
 
@@ -983,6 +983,25 @@ Protected paths:
 
 Operator authorization: handle and close L6 directly. Rollback boundary:
 revert only this sync; retain `8295f5534`.
+
+## Core Guard Self-Protection Authorization - MSEA-R98 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync after `cd58b0211`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to R98 execution. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R98 dispatch. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set dispatched mode. |
+| `CVF_SESSION/state/entries/mseaR98L2BuildProtocolOwnerRatificationDispatch20260711.json` | Record dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route bounded execution. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: continue and handle L2 directly. Rollback boundary:
+revert only this sync; retain `cd58b0211`.
 
 ## Claim Boundary
 
