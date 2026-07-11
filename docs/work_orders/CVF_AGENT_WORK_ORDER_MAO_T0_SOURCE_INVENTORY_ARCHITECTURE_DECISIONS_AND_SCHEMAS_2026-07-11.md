@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -10,9 +10,9 @@ Batch ID: MAO-T0-DISPATCH
 
 dispatchBaseHead: `636f9639f`
 
-executionBaseHead: `TO_BE_CAPTURED_BY_WORKER_AT_START`
+executionBaseHead: `209a9b4b3`
 
-closureBaseHead: `TO_BE_CAPTURED_BY_REVIEWER_AT_CLOSURE`
+closureBaseHead: `209a9b4b3`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -290,12 +290,12 @@ and alone decides acceptance/commit.
 
 ## Closure Checklist
 
-- [ ] Exactly five worker outputs reviewed.
-- [ ] Every source fact and new field classified.
-- [ ] Schema and negative cases validated.
-- [ ] No forbidden path or runtime claim present.
-- [ ] Worker return fast gate passes.
-- [ ] Reviewer authors completion review and owns commit.
+- [x] Exactly five worker outputs reviewed.
+- [x] Every source fact and new field classified.
+- [x] Schema and negative cases validated.
+- [x] No forbidden path or runtime claim present.
+- [x] Worker return fast gate passes.
+- [x] Reviewer authors completion review and owns commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -360,12 +360,12 @@ public-sync, ASC/R91 semantic, L4, R84, R73F, or production-readiness work.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | DISPATCH_READY | N/A with reason: not closed |
+| Work order status | this work order | CLOSED_PASS_BOUNDED | PASS |
 | Completion or reviewer artifact | critique reconciliation | REVIEWER_ACCEPTED_BOUNDED | PASS |
 | Roadmap state | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | PROPOSED | PASS |
-| Registry JSON | N/A with reason: no registry edit | no change | N/A with reason |
-| Registry Markdown | N/A with reason: no registry edit | no change | N/A with reason |
-| External evidence digest | critique reconciliation | `d61c3c92c` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate current; no T0 registration required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | current companion retained | PASS |
+| External evidence digest | critique reconciliation | sha256 `E7392BC13A7F56E8647E94D091B5F76BB8EA3D67ACCF4245EE0E150A5354726D` | PASS |
 | System loop interlock | R91/ASC freshness | CURRENT | PASS |
 | Session continuity | active front doors | dispatch authoring current | PASS |
 

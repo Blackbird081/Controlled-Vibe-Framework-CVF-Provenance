@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -10,9 +10,9 @@ Batch ID: MAO-T0-DISPATCH
 
 dispatchBaseHead: `636f9639f`
 
-executionBaseHead: `TO_BE_CAPTURED_BY_WORKER_AT_START`
+executionBaseHead: `209a9b4b3`
 
-closureBaseHead: `TO_BE_CAPTURED_BY_REVIEWER_AT_CLOSURE`
+closureBaseHead: `209a9b4b3`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -116,7 +116,7 @@ dispatch-quality, AHB, workspace-design, and autorun gates on the real range.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired work order | DISPATCH_READY | N/A with reason: dispatch packet, not closure |
+| Work order status | paired work order | CLOSED_PASS_BOUNDED | PASS |
 | Completion or reviewer artifact | critique reconciliation | REVIEWER_ACCEPTED_BOUNDED | PASS |
 | Roadmap state | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | PROPOSED | PASS |
 | Registry JSON | N/A with reason: no registry edit | no change | N/A with reason |
