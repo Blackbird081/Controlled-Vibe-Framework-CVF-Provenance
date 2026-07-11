@@ -36,6 +36,10 @@ R73F, and R84 effectiveness.
 
 ## Latest Work / Changes
 
+MAO-T5 material closure commit `9b225f0e4` is
+`REVIEWER_ACCEPTED_BOUNDED`; reviewer verification passed 54/54 focused tests,
+typecheck, worker-return/reviewer-fast, and 82/82 pre-commit checks.
+
 MAO-T5 through T9 packet-chain commit `5a5dc0364` passed gates. T5 is
 released for its final status flip and one local WORKER_MUST_NOT_COMMIT
 execution. T6-T9 remain dependency-held.
