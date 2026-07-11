@@ -17,7 +17,7 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_roadmap_proposed_packet_authoring_ready`;
+Startup acknowledged: current mode=`odvr_t0_dispatched`;
 active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=another operator-selected roadmap; parked checkpoint=MAO live reopen without harder-task hypothesis, durable queue/UI/public/ASC admission, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`odvr_roadmap_proposed_packet_authoring_ready`
+`odvr_t0_dispatched`
 
 ## Latest Work / Changes
 
@@ -517,3 +517,37 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain ODVR roadmap
 material commit `7c6f13ab8`.
+
+## ODVR-T0 Contract Inventory Dispatch
+
+Dispatch material HEAD: `fa240e816`.
+
+ODVR-T0 is `DISPATCH_READY`. The delegated worker must start from the clean
+post-sync HEAD, read the paired GC-018 and work order, produce exactly three
+reference/schema outputs plus one worker return, leave all changes uncommitted,
+and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+
+The worker must not spawn subagents, commit, edit session state, implement a
+composer/CLI/UI, call providers, touch public-sync, or perform outside-source
+absorption. The independent reviewer owns acceptance, allowed-scope repair,
+material commit, closure conversion, and later session sync.
+
+Session-sync parent HEAD: `fa240e816`.
+
+## Core Guard Self-Protection Authorization - ODVR-T0 Dispatch Sync
+
+Operator authorization: create the ODVR-T0 work order and preserve the governed
+worker/reviewer route in active continuity.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/odvrT0Dispatch20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain ODVR-T0 dispatch
+commit `fa240e816`.

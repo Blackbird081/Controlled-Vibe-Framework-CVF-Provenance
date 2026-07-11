@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1687,
+  "stateKey": "odvrT0Dispatch20260712",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "dispatchCommit": "fa240e816",
+    "roadmap": "docs/roadmaps/CVF_OPERATOR_DECISION_AND_VALUE_READOUT_ROADMAP_2026-07-12.md",
+    "baseline": "docs/baselines/CVF_GC018_ODVR_T0_SOURCE_OVERLAP_AND_READOUT_CONTRACT_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ODVR_T0_SOURCE_OVERLAP_AND_READOUT_CONTRACT_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedOutputs": 4,
+    "nextAllowedMove": "one delegated no-commit ODVR-T0 execution from the clean post-sync HEAD, followed by independent reviewer closure",
+    "claimBoundary": "docs/schema source-overlap and readout-contract execution only; no composer, CLI, UI, provider/live proof, session mutation, public-sync, outside-source absorption, ODVR-T1/T2, or production readiness"
+  }
+}

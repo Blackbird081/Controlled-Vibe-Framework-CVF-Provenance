@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_roadmap_proposed_packet_authoring_ready`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh ODVR-T0 GC-018 and source-verified no-commit work-order authoring; parked checkpoint=MAO quantified reopen conditions, ODVR composer/CLI/UI, and new-repository absorption until ODVR is accepted, parked, or rejected.
+Startup acknowledged: current mode=`odvr_t0_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one delegated no-commit ODVR-T0 execution producing exactly four outputs; parked checkpoint=ODVR-T1/T2, composer/CLI/UI, provider/public work, and new-source absorption.
 
 ## Current Mode
 
-Current mode marker: `odvr_roadmap_proposed_packet_authoring_ready`
+Current mode marker: `odvr_t0_dispatched`
 
-Current mode: `odvr_roadmap_proposed_packet_authoring_ready`
+Current mode: `odvr_t0_dispatched`
 
-`odvr_roadmap_proposed_packet_authoring_ready`
+`odvr_t0_dispatched`
 
 Previous mode:
 
-`mao_live_t1_closed_value_not_proven`
+`odvr_roadmap_proposed_packet_authoring_ready`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ODVR-T0 contract inventory dispatch | `fa240e816` | DISPATCH_READY; exactly four no-commit worker outputs. |
 | ODVR decision and value readout roadmap | `7c6f13ab8` | PROPOSED; fresh ODVR-T0 packet authoring only; new-repository absorption remains the later operator option. |
 | MAO live reopen condition | `482f6ec52` | Five checkable conditions; no easy-task rerun. |
 | MAO-LIVE-T1 closure | `75f5c0b90` | REVIEWER_ACCEPTED_VALUE_NOT_PROVEN; 2/4 calls, tied quality, +20.7% latency. |
@@ -124,16 +125,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `odvr_roadmap_proposed_packet_authoring_ready`
+Mode: `odvr_t0_dispatched`
 
-ODVR roadmap is PROPOSED. Next allowed move is a fresh ODVR-T0 GC-018 baseline
-and source-verified no-commit work order for source/overlap inventory and the
-readout contract only. No composer, CLI, UI, provider, public-sync, or external
-repository absorption is authorized by the roadmap. After ODVR is accepted,
-parked, or rejected, the operator may select a newly justified external
-repository or folder for source-mirror-backed absorption. MAO live remains
-parked under its five quantified reopen conditions. Latest closed numbered
-LHW wave remains `LHW24`.
+ODVR-T0 is DISPATCH_READY at `fa240e816`. Next allowed move is one delegated
+`WORKER_MUST_NOT_COMMIT` execution from the clean post-sync HEAD, producing
+exactly the three reference/schema outputs and one worker return named in the
+work order. The worker must not spawn subagents, commit, edit session state,
+implement a composer/CLI/UI, call providers, touch public-sync, or absorb an
+outside source. The independent reviewer owns closure. ODVR-T1/T2 and
+new-source absorption remain parked. Latest closed numbered LHW wave remains
+`LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

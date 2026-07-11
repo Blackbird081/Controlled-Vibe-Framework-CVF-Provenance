@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "odvr_roadmap_proposed_packet_authoring_ready",
+  "currentMode": "odvr_t0_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "ODVR roadmap is PROPOSED at material commit 7c6f13ab8. Next move is fresh ODVR-T0 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work-order authoring for the overlap inventory and readout contract only. No composer, CLI, UI, provider, public-sync, or external repository absorption is authorized yet. After ODVR is accepted, parked, or rejected, the operator may select a newly justified external repository or folder for source-mirror-backed absorption. Existing Agent Skills, CodeGraph, and MinerU mirrors remain closed absent upstream drift or a new owner-surface gap. MAO live reopen remains subject to its five quantified conditions. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "ODVR-T0 is DISPATCH_READY at dispatch commit fa240e816. Next move is one delegated WORKER_MUST_NOT_COMMIT execution from the clean post-sync HEAD, producing exactly the three reference/schema outputs and one worker return named in the work order. The worker must not spawn subagents, commit, edit session state, implement a composer/CLI/UI, call providers, touch public-sync, or perform outside-source absorption. The independent reviewer owns acceptance, allowed-scope repair, material commit, closure conversion, and later session sync. ODVR-T1/T2 and new-source absorption remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
