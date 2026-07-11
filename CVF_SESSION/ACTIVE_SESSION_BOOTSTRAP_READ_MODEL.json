@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_asc_rw_integrated_remaining_wave_dispatched",
-  "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-ASC-RW Integrated Remaining Wave is DISPATCH_READY at material commit fa4838c57. Next allowed move is one WORKER_MUST_NOT_COMMIT execution of docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_ASC_RW_INTEGRATED_REMAINING_WAVE_2026-07-11.md across ASC-T1 through ASC-T5 in order, with one final COMPLETE_PENDING_REVIEW return. No substitute hook/CI/weekly owner, doctrine, R91 semantic, runtime, public, provider, session, L4 promotion, commit, or push work is authorized. L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. LHW24 remains latest closed numbered LHW wave.",
+  "currentMode": "msea_asc_architecture_catalog_closed",
+  "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
+  "nextAllowedMove": "MSEA-ASC is REVIEWER_ACCEPTED_BOUNDED at material commit 6273f3413. Next allowed move is select a fresh governed roadmap outside ASC. Do not expand the catalog merely for coverage counts; new entities, layers, and absorbed value must use compact source records plus deterministic regeneration. L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. R84 effectiveness and MAO implementation remain parked under their recorded conditions. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

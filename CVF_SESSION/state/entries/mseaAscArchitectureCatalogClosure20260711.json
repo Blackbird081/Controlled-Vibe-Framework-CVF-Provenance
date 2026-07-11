@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1670,
+  "stateKey": "mseaAscArchitectureCatalogClosure20260711",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-11",
+    "materialCommit": "6273f3413",
+    "completionReview": "docs/reviews/CVF_MSEA_ASC_RW_INTEGRATED_REMAINING_WAVE_COMPLETION_2026-07-11.md",
+    "catalogEntityCount": 22,
+    "gapCount": 3,
+    "focusedTests": "18/18 PASS",
+    "freshness": "ASC CURRENT; R91 CURRENT",
+    "nextAllowedMove": "select a fresh governed roadmap outside ASC",
+    "claimBoundary": "bounded non-exhaustive architecture catalog; three gaps remain open under terminal conditions"
+  }
+}

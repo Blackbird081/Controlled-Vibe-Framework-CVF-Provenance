@@ -1163,6 +1163,23 @@ this sync; retain dispatch commit `fa4838c57`.
 
 ## Claim Boundary
 
+## MSEA-ASC-RW Reviewer Closure Conversion - 2026-07-11
+
+Material implementation commit: `6273f3413`. Independent review confirmed
+22 catalog entities, 3 terminal gaps, deterministic aggregate/index hashes,
+18/18 focused tests, both freshness families CURRENT, worker-return fast PASS,
+and material pre-commit 82/82. Round 2 replaced the shared fingerprinted CI
+edit with a dedicated local/CI/weekly workflow. Completion disposition is
+`REVIEWER_ACCEPTED_BOUNDED`.
+
+## Core Guard Self-Protection Authorization - MSEA-ASC-RW Reviewer Closure Handoff
+
+Authorized scope: record the material HEAD and reviewer closure conversion in
+the active handoff. Protected path: `AGENT_HANDOFF_V40_2026-07-10.md`.
+Operator authority: integrated ASC remaining wave and final independent review.
+Rollback only this handoff addition and paired completion review; retain
+material commit `6273f3413`.
+
 This handoff records a bounded local workspace RC result and continuity state.
 It does not claim public, hosted, paid-user production, provider, or downstream
 application readiness.

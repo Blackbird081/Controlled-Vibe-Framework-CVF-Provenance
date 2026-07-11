@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V40_2026-07-10.md`
+4. `AGENT_HANDOFF_V41_2026-07-11.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V40_2026-07-10.md` |
+| Active handoff | `AGENT_HANDOFF_V41_2026-07-11.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_asc_rw_integrated_remaining_wave_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the committed ASC-RW T1-T5 work order once as WORKER_MUST_NOT_COMMIT; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_asc_architecture_catalog_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=select a fresh governed roadmap outside ASC; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Current Mode
 
-Current mode marker: `msea_asc_rw_integrated_remaining_wave_dispatched`
+Current mode marker: `msea_asc_architecture_catalog_closed`
 
-Current mode: `msea_asc_rw_integrated_remaining_wave_dispatched`
+Current mode: `msea_asc_architecture_catalog_closed`
 
-`msea_asc_rw_integrated_remaining_wave_dispatched`
+`msea_asc_architecture_catalog_closed`
 
 Previous mode:
 
-`msea_asc_t0_source_schema_contract_closed`
+`msea_asc_rw_integrated_remaining_wave_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-ASC architecture catalog closure | `6273f3413` | REVIEWER_ACCEPTED_BOUNDED; 22 entities, 3 gaps, deterministic local/CI/weekly freshness. |
 | MSEA-ASC-RW integrated remaining wave dispatch | `fa4838c57` | DISPATCH_READY; one no-commit T1-T5 execution, exact T5 wiring owners, one final independent review. |
 | MSEA-ASC-T0 source schema and reconciliation contract closure | `9f8815fb7` | REVIEWER_ACCEPTED_BOUNDED after Round 2 JSON Schema invariant correction and independent negative validation. |
 | MSEA-ASC-T0 source schema and reconciliation contract dispatch | `cbc5348bf` | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; exactly four reference/schema outputs plus one worker return. |
@@ -97,13 +98,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_asc_rw_integrated_remaining_wave_dispatched`
+Mode: `msea_asc_architecture_catalog_closed`
 
-Next allowed move: execute the committed MSEA-ASC-RW integrated T1-T5 work
-order once as `WORKER_MUST_NOT_COMMIT`, then return one
-`COMPLETE_PENDING_REVIEW`. Exact T5 wiring paths are locked by the work order;
-no substitute owner, doctrine, R91 semantic, runtime, public, provider,
-session, L4 promotion, commit, or push work is authorized. L4 remains
+Next allowed move: select a fresh governed roadmap outside ASC. Do not expand
+the catalog for coverage counts. New entities and absorbed value must use the
+compact-source/generator admission path. L4 remains
 VALUE_PARKED_WITH_REOPEN_CONDITIONS. Latest closed numbered LHW wave remains
 `LHW24`.
 
