@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r98_l2_build_protocol_owner_ratification_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute and close the bounded R98 L2 owner-ratification packet; parked checkpoint=L1 owner design, L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_r98_l2_build_protocol_owner_ratification_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh L1 owner-design decision packet or select another governed lane; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r98_l2_build_protocol_owner_ratificatio
 
 ## Current Mode
 
-`msea_r98_l2_build_protocol_owner_ratification_dispatched`
+`msea_r98_l2_build_protocol_owner_ratification_closed`
 
 ## Latest Work / Changes
 
@@ -1002,6 +1002,33 @@ Protected paths:
 
 Operator authorization: continue and handle L2 directly. Rollback boundary:
 revert only this sync; retain `cd58b0211`.
+
+## MSEA-R98 L2 Build Protocol Owner Ratification Closure - 2026-07-11
+
+Material commit: `21aeae180`. L2 is
+`NAMED_DIFFERENTLY_ACTIVE_OWNER_WITH_BOUNDARY`: `AGENTS.md` owns active
+operational build responsibilities, but exact textual/path equivalence and
+frozen-status transfer are rejected. R91 freshness is CURRENT. Single-agent
+self-review was used; independent review is not claimed.
+
+## Core Guard Self-Protection Authorization - MSEA-R98 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync after `21aeae180`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup after R98 closure. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record closure and material HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set closed mode. |
+| `CVF_SESSION/state/entries/mseaR98L2BuildProtocolOwnerRatificationClosure20260711.json` | Record closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next bounded decision. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: continue and handle L2 directly. Rollback boundary:
+revert only this sync; retain `21aeae180`.
 
 ## Claim Boundary
 

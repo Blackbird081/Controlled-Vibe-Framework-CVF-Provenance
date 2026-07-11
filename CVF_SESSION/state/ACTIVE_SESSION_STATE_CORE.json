@@ -80,8 +80,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r98_l2_build_protocol_owner_ratification_dispatched",
-  "previousMode": "msea_r97_l6_examples_inventory_alignment_closed",
+  "currentMode": "msea_r98_l2_build_protocol_owner_ratification_closed",
+  "previousMode": "msea_r98_l2_build_protocol_owner_ratification_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

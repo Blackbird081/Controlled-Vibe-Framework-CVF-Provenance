@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r98_l2_build_protocol_owner_ratification_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute and close the bounded R98 L2 owner-ratification packet; parked checkpoint=L1 owner design, L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_r98_l2_build_protocol_owner_ratification_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh L1 owner-design decision packet or select another governed lane; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Current Mode
 
-Current mode marker: `msea_r98_l2_build_protocol_owner_ratification_dispatched`
+Current mode marker: `msea_r98_l2_build_protocol_owner_ratification_closed`
 
-Current mode: `msea_r98_l2_build_protocol_owner_ratification_dispatched`
+Current mode: `msea_r98_l2_build_protocol_owner_ratification_closed`
 
-`msea_r98_l2_build_protocol_owner_ratification_dispatched`
+`msea_r98_l2_build_protocol_owner_ratification_closed`
 
 Previous mode:
 
-`msea_r97_l6_examples_inventory_alignment_closed`
+`msea_r98_l2_build_protocol_owner_ratification_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R98 L2 build-protocol owner ratification closure | `21aeae180` | REVIEWER_ACCEPTED_BOUNDED under single-agent self-review boundary. L2 is NAMED_DIFFERENTLY_ACTIVE_OWNER_WITH_BOUNDARY; freshness CURRENT. |
 | MSEA-R98 L2 build-protocol owner ratification dispatch | `cd58b0211` | DISPATCH_READY. Decide whether `AGENTS.md` is the bounded active L2 owner; no doctrine, AGENTS, runtime, checker, or public mutation. |
 | MSEA-R97 L6 examples inventory alignment closure | `8295f5534` | REVIEWER_ACCEPTED_BOUNDED under single-agent self-review boundary. One active-reference row added; L6 remains PARTIAL_OWNER_WITH_GAP; freshness CURRENT. |
 | MSEA-R97 L6 examples inventory alignment dispatch | `6eea64bf5` | DISPATCH_READY. Single-agent multi-role, five material paths, no consolidation or doctrine change. |
@@ -89,13 +90,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r98_l2_build_protocol_owner_ratification_dispatched`
+Mode: `msea_r98_l2_build_protocol_owner_ratification_closed`
 
-Next allowed move: execute and close the bounded MSEA-R98 single-agent
-multi-role decision pass. Adversarially self-review the proposed `AGENTS.md`
-owner mapping and update only the four authorized material artifacts.
-Independent review is not claimed. L1 owner design and L4 promotion remain
-parked. Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: author a fresh L1 owner-design decision packet or select
+another governed lane. R98 establishes `AGENTS.md` as the differently named
+active L2 operational owner with explicit non-equivalence boundaries.
+Independent review is not claimed. L4 promotion remains parked. Latest closed
+numbered LHW wave remains `LHW24`.
 
 Multi-Agent Orchestration Runtime Foundation is
 `VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,
