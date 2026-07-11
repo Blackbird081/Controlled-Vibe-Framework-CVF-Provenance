@@ -212,3 +212,35 @@ export {
   milestoneForReceiptKind,
   projectWorkspaceMilestones,
 } from "./evidence.readout.contract";
+
+// --- MAO-T8 representative end-to-end pilot harness ---
+
+export type {
+  MaoPilotSeedReceipt,
+  MaoPilotReviewOutcome,
+  MaoPilotCloseOutcome,
+  MaoPilotDuplicateResult,
+  MaoPilotTimeoutResult,
+  MaoPilotCancelResult,
+  MaoPilotBudgetResult,
+  MaoPilotChainResult,
+} from "./representative.pilot.contract";
+
+export {
+  PILOT_TASK_ID,
+  PILOT_WORKER_IDENTITY,
+  PILOT_REVIEWER_IDENTITY,
+  PILOT_CLOSER_IDENTITY,
+  PILOT_TASK_GRAPH_ID,
+  PILOT_STALE_AFTER_MS,
+  PILOT_MAX_REVISION_DEPTH,
+  compilePilotGraph,
+  runWorkerPhase,
+  runReviewerPhase,
+  runCloserPhase,
+  runDuplicateAdmissionNegative,
+  runTimeoutNegative,
+  runCancelNegative,
+  runBudgetCeilingNegative,
+  runPilotChain,
+} from "./representative.pilot.contract";

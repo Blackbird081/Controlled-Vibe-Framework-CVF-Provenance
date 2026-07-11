@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MAO-T8
 
@@ -102,6 +102,13 @@ Returned defects: NONE_RETURNED
 | `docs/reviews/CVF_MAO_T8_REPRESENTATIVE_END_TO_END_PILOT_EVIDENCE_2026-07-11.md` | record command-backed receipts and proof boundary |
 | `docs/reviews/CVF_MAO_T8_REPRESENTATIVE_END_TO_END_PILOT_WORKER_RETURN_2026-07-11.md` | return execution evidence without commit |
 
+## Required Artifact Manifest
+
+| Artifact | Owner | Required final status |
+|---|---|---|
+| five worker outputs | worker | PASS |
+| completion review and GC-051 entry | reviewer/closer | PASS |
+
 ## Execution Plan
 
 Select task and proof class, refresh sources/anchors, run the bounded chain,
@@ -110,10 +117,10 @@ exercise negatives, and record command-backed receipts.
 ## Acceptance Criteria
 
 - [x] T7 and pilot selection dependencies released;
-- [ ] proves one bounded worker-reviewer-revision-closer chain;
-- [ ] covers self-approval, duplicate, timeout, cancel, budget negatives;
-- [ ] real-provider claims use mandatory live proof and diagnostics;
-- [ ] worker does not commit.
+- [x] proves one bounded worker-reviewer-revision-closer chain;
+- [x] covers self-approval, duplicate, timeout, cancel, budget negatives;
+- [x] real-provider proof is N/A with reason: local-only proof class;
+- [x] worker did not commit.
 
 ## Evidence Requirements
 
@@ -200,7 +207,7 @@ Independent review, receipt reconciliation, negatives and closure preflight.
 
 ## Closure Checklist
 
-- [x] T7 accepted; - [x] pilot selected; - [ ] receipts complete; - [ ] negatives pass.
+- [x] T7 accepted; - [x] pilot selected; - [x] receipts complete; - [x] negatives pass.
 
 ## Return-To-Orchestrator Conditions
 
@@ -222,7 +229,7 @@ Required for pilot selection and any live/provider proof.
 | Target paths | paired T8 packet |
 | Allowed scope source | operator and roadmap |
 | Before status evidence | clean worktree at `47ed44b12`; T7 accepted; pilot selection checkpoint absent |
-| After status evidence | fresh pilot selected and source-verified DISPATCH_READY packet |
+| After status evidence | fresh pilot selected and source-verified packet, later reviewer-accepted bounded |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | packet preparation only |
 | Claim boundary | no pilot/live execution |
@@ -269,3 +276,24 @@ cd ../..
 python governance/compat/run_worker_return_fast_gate.py
 git status --short
 ```
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_T8_REPRESENTATIVE_END_TO_END_PILOT_COMPLETION_2026-07-11.md` | reviewer acceptance | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | T8 complete; T9 remains | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no regeneration required | PASS |
+| External evidence digest | N/A with reason: local-only proof | no external evidence | N/A with reason: not applicable |
+| System loop interlock | completion review | false time-travel proof repaired | PASS |
+| Session continuity | active state and handoff | separate session sync | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| focused pilot tests | PASS | 25/25 PASS | PASS |
+| monotonic revision | required | enforced and negative-tested | PASS |
+| no worker commit | required | five paths returned uncommitted | PASS |

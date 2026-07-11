@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MAO-T8
 
@@ -58,7 +58,28 @@ DEFERRED_PRIVATE_ONLY
 
 ## Baseline Decision
 
-Dependencies and fresh pilot selection are accepted; dispatch is ready.
+Dependencies, pilot selection, and reviewer-repaired local proof are accepted.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_T8_REPRESENTATIVE_END_TO_END_PILOT_2026-07-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_T8_REPRESENTATIVE_END_TO_END_PILOT_COMPLETION_2026-07-11.md` | reviewer acceptance | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | T8 bounded pilot complete; T9 remains | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated GC-051 aggregate | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no Markdown regeneration required | PASS |
+| External evidence digest | N/A with reason: local deterministic proof only | no external evidence | N/A with reason: not applicable |
+| System loop interlock | T8 completion review | monotonic revision evidence required | PASS |
+| Session continuity | active state and handoff | refreshed after material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| focused pilot tests | PASS | 25/25 PASS | PASS |
+| revision time order | monotonic | backward-time revision rejected | PASS |
+| fresh revision evidence | new receipt before re-review | revision OUTPUT receipt appended | PASS |
 
 ## Evidence / Verification
 
