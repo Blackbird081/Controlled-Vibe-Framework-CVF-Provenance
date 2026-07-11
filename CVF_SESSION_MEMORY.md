@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_t0_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one delegated no-commit ODVR-T0 execution producing exactly four outputs; parked checkpoint=ODVR-T1/T2, composer/CLI/UI, provider/public work, and new-source absorption.
+Startup acknowledged: current mode=`odvr_t0_closed_t1_packet_eligible`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh ODVR-T1 GC-018 and source-verified no-commit work-order authoring only; parked checkpoint=T1 implementation, UI, provider/public work, T2 value proof, and new-source absorption.
 
 ## Current Mode
 
-Current mode marker: `odvr_t0_dispatched`
+Current mode marker: `odvr_t0_closed_t1_packet_eligible`
 
-Current mode: `odvr_t0_dispatched`
+Current mode: `odvr_t0_closed_t1_packet_eligible`
 
-`odvr_t0_dispatched`
+`odvr_t0_closed_t1_packet_eligible`
 
 Previous mode:
 
-`odvr_roadmap_proposed_packet_authoring_ready`
+`odvr_t0_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| ODVR-T0 contract/schema closure | `2af788683` | REVIEWER_ACCEPTED_AFTER_REPAIR; narrowed T1 packet authoring eligible. |
 | ODVR-T0 contract inventory dispatch | `fa240e816` | DISPATCH_READY; exactly four no-commit worker outputs. |
 | ODVR decision and value readout roadmap | `7c6f13ab8` | PROPOSED; fresh ODVR-T0 packet authoring only; new-repository absorption remains the later operator option. |
 | MAO live reopen condition | `482f6ec52` | Five checkable conditions; no easy-task rerun. |
@@ -125,16 +126,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `odvr_t0_dispatched`
+Mode: `odvr_t0_closed_t1_packet_eligible`
 
-ODVR-T0 is DISPATCH_READY at `fa240e816`. Next allowed move is one delegated
-`WORKER_MUST_NOT_COMMIT` execution from the clean post-sync HEAD, producing
-exactly the three reference/schema outputs and one worker return named in the
-work order. The worker must not spawn subagents, commit, edit session state,
-implement a composer/CLI/UI, call providers, touch public-sync, or absorb an
-outside source. The independent reviewer owns closure. ODVR-T1/T2 and
-new-source absorption remain parked. Latest closed numbered LHW wave remains
-`LHW24`.
+ODVR-T0 is REVIEWER_ACCEPTED_AFTER_REPAIR at `2af788683`. Next allowed move is
+fresh ODVR-T1 GC-018 and source-verified no-commit work-order authoring for a
+deterministic read-only local composer and CLI-readable JSON only. T1
+implementation, UI, provider/live proof, session mutation, public-sync, T2
+value proof, and outside-source absorption remain unauthorized. Latest closed
+numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

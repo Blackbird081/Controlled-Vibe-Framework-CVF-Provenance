@@ -17,7 +17,7 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_t0_dispatched`;
+Startup acknowledged: current mode=`odvr_t0_closed_t1_packet_eligible`;
 active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=another operator-selected roadmap; parked checkpoint=MAO live reopen without harder-task hypothesis, durable queue/UI/public/ASC admission, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`odvr_t0_dispatched`
+`odvr_t0_closed_t1_packet_eligible`
 
 ## Latest Work / Changes
 
@@ -551,3 +551,38 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain ODVR-T0 dispatch
 commit `fa240e816`.
+
+## ODVR-T0 Reviewer Closure
+
+Material closure HEAD: `2af788683`.
+
+ODVR-T0 is `REVIEWER_ACCEPTED_AFTER_REPAIR`. Reviewer corrected the stale
+source symbol, replaced filesystem-date decision selection with generated
+`stateOrder` plus resolvable `materialCommit`, replaced age freshness with
+generator/commit/path/status consistency, and made the JSON Schema reject four
+invalid freshness states. Worker-return fast and reviewer-fast gates pass.
+
+Next allowed move: author a fresh ODVR-T1 GC-018 and source-verified
+`WORKER_MUST_NOT_COMMIT` work order for the deterministic read-only local
+composer and CLI-readable JSON only. T1 implementation and all UI/provider/
+public/T2/outside-source work remain unauthorized.
+
+Session-sync parent HEAD: `2af788683`.
+
+## Core Guard Self-Protection Authorization - ODVR-T0 Closure Sync
+
+Operator authorization: review the ODVR-T0 return and preserve the governed
+next move after reviewer closure.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/odvrT0Closure20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain ODVR-T0 material
+closure commit `2af788683`.
