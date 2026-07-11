@@ -2,21 +2,80 @@
 
 Memory class: governed-worker-dispatch
 
-Status: HOLD_UNTIL_MAO_T5_PASS
+Status: DISPATCH_READY
 
-Batch ID: MAO-T6
+Batch ID: MAO-RUNTIME-T6
 
-dispatchBaseHead: `3294d555a`
+dispatchBaseHead: `cbf56ff50`
 
-executionBaseHead: `NOT_RELEASED`
+executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `NOT_RELEASED`
+closureBaseHead: `REVIEWER_TO_SET`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
+## Dispatch Prompt Envelope
+
+Role: delegated worker
+
+Canonical packet: this file
+
+Commit mode: WORKER_MUST_NOT_COMMIT
+
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+
+Current-time notes: use actual clean HEAD after this dispatch commit.
+
+Do-not-misread notes: deterministic local clock only; no provider, queue, UI or T7.
+
+Required first actions: read startup, paired baseline, this packet, cited sources/checkers; capture HEAD/status.
+
+Return contract: produce exactly four paths, run gates, leave uncommitted, return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
+
 ## Purpose
 
-Define the held worker contract for deterministic lifecycle control and tests.
+Implement deterministic local lifecycle control and focused tests.
+
+## Scaffold Provenance Block
+
+| Field | Value |
+|---|---|
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind held-dependency --batch-id MAO-T6 --title "Timeout Heartbeat Cancel Retry And Recovery" --date 2026-07-11 --base 3294d555a --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
+| generatedProfile | held dependency promoted to no-commit dispatch |
+| generatedSkeletonStatus | USED_AS_STARTING_POINT |
+| manualEditsAfterScaffold | dependency, anchors, exact paths and controls refreshed |
+| checkerReadAheadConfirmation | applicable dispatch/handoff/return checkers read |
+| docOnlyNewFields | lifecycle/retry/recovery fields defined only by new T6 contract |
+| claimBoundary | authoring provenance only |
+
+## Worker Autonomy / No-Question Rule
+
+Repair allowed-scope checker defects directly; return only for source conflict,
+missing authority or forbidden expansion.
+
+## Intake Role Routing Decision
+
+| Field | Disposition |
+|---|---|
+| Intake source | roadmap plus accepted T3-T5 source/closure evidence |
+| Intake role | local lifecycle contract/test worker |
+| Reviewer role | independent reviewer/closer |
+| Routing decision | WORKER_MUST_NOT_COMMIT |
+| Public route | DEFERRED_PRIVATE_ONLY |
+| risk sensitivity | high because retry/cancel/recovery must fail closed |
+| scope classification | bounded local deterministic contract/tests |
+| canonical route mode | MULTI_AGENT_SINGLE_ROLE |
+| selected role route | worker return to reviewer/closer |
+| escalation condition | source contradiction, real clock/provider/queue need, or T7 expansion |
+
+## Single-Agent Multi-Role Control Block
+
+| Field | Disposition |
+|---|---|
+| role separation ledger | worker=implementation; reviewer/closer=review and commit; steward=session sync |
+| gate sequence | pre-implementation, worker-return fast, reviewer-fast, pre-closure, session-sync |
+| evidence basis independent of memory | current runtime source, focused tests, git evidence and governed review |
+| escalation conditions | self-review, commit, provider, queue, real clock, public, or T7 scope blocks worker |
 
 ## Scope / Methodology
 
@@ -28,7 +87,7 @@ barrel exports, and one no-commit worker return. No provider or real clock.
 | Dependency | Current evidence | Release rule | Disposition |
 |---|---|---|---|
 | MAO-T3/T4 | `052845fa1`; `f71ba01f6` | accepted evidence exists | ACCEPT |
-| MAO-T5 | packet only; execution absent | accepted completion, material commit, and refreshed anchors | HOLD |
+| MAO-T5 | material `9b225f0e4`; accepted completion review; 54/54 tests | accepted material and review exist | ACCEPT |
 
 ## ADIF Defect Registry Disclosure
 
@@ -54,9 +113,21 @@ Returned defects: NONE_RETURNED
 
 ## Work-Order Fulfillment Manifest
 
-`lifecycle.controller.contract.ts`; its focused test; bounded `src/mao/index.ts`
-exports; and the dated MAO-T6 worker return. Exact paths must be refreshed at
-dependency release before status can become ready.
+| Artifact | Required action |
+|---|---|
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/lifecycle.controller.contract.ts` | create deterministic lifecycle controller |
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.lifecycle.controller.contract.test.ts` | create focused tests |
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/index.ts` | bounded exports |
+| `docs/reviews/CVF_MAO_T6_TIMEOUT_HEARTBEAT_CANCEL_RETRY_AND_RECOVERY_WORKER_RETURN_2026-07-11.md` | create worker return |
+
+## Required Artifact Manifest
+
+| Artifact | Owner | Required final status |
+|---|---|---|
+| lifecycle source | worker | COMPLETE_PENDING_REVIEW |
+| focused test | worker | COMPLETE_PENDING_REVIEW |
+| bounded exports | worker | COMPLETE_PENDING_REVIEW |
+| worker return | worker | COMPLETE_PENDING_REVIEW |
 
 ## Execution Plan
 
@@ -82,19 +153,20 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 |---|---|
 | route | SINGLE_AGENT_MULTI_ROLE |
 | rolePattern | worker then reviewer/closer |
-| phase | HOLD |
-| baseHeadFor(phase) | dispatchBaseHead=3294d555a; executionBaseHead=NOT_RELEASED; closureBaseHead=NOT_RELEASED |
-| changedSetScope(phase) | no execution changed set while held |
-| traceScope(phase, actor) | dispatcher trace only until release |
+| phase | EXECUTION |
+| baseHeadFor(phase) | dispatchBaseHead=cbf56ff50; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| changedSetScope(phase) | exactly four manifest paths |
+| traceScope(phase, actor) | worker execution trace then reviewer closure trace |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT |
-| crossBatchIsolation | release only after T5 worktree closure |
+| crossBatchIsolation | clean worktree verified at `cbf56ff50`; prior T5 batch fully committed; no overlapping batch |
+| Before status evidence | clean worktree verified at handoff-sync commit `cbf56ff50`; no pending prior batch paths |
 | nextMoveSurfaces | refresh dependency and anchors before dispatch |
 
 ## Reviewer Closure Conversion
 
 | Field | Value |
 |---|---|
-| completionReviewPath | dated MAO-T6 completion review, assigned at release |
+| completionReviewPath | `docs/reviews/CVF_MAO_T6_TIMEOUT_HEARTBEAT_CANCEL_RETRY_AND_RECOVERY_COMPLETION_2026-07-11.md` |
 | reviewerOwnedClosurePaths | baseline, work order, completion and GC-051 coverage if required |
 | closureOwner | reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
@@ -112,7 +184,7 @@ DEFERRED_PRIVATE_ONLY
 
 ## Claim Boundary
 
-Source-complete held packet only; no T6 implementation is dispatched.
+Worker may implement only the four local MAO-T6 paths and must not commit.
 
 ## Authority Chain
 
@@ -132,7 +204,7 @@ Refresh T5 evidence, anchors, status, manifest, HEAD and worktree.
 
 ## Write Ownership
 
-No worker writes while held; exact paths assigned at release.
+Worker owns exactly the four fulfillment-manifest paths.
 
 ## Review Gate
 
@@ -144,7 +216,7 @@ Focused tests, typecheck, reviewer-fast and steward preflight.
 
 ## Return-To-Orchestrator Conditions
 
-No execution while held; after release return pending review or blocked.
+Return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit.
 
 ## Operator Checkpoint
 
@@ -161,8 +233,8 @@ Required only for scope/provider/runtime expansion.
 | Command or tool surface | source reads and apply patch |
 | Target paths | paired T6 packet |
 | Allowed scope source | operator and roadmap |
-| Before status evidence | T5 not accepted |
-| After status evidence | source-complete HOLD packet |
+| Before status evidence | clean worktree at handoff-sync HEAD `cbf56ff50`; T5 accepted at `9b225f0e4` |
+| After status evidence | source-verified DISPATCH_READY packet |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | packet preparation only |
 | Claim boundary | no execution |
@@ -172,3 +244,26 @@ Required only for scope/provider/runtime expansion.
 | Actual changed set | captured before commit |
 | Manifest delta | pending gate confirmation |
 | Deletion or rename disposition | N/A with reason: none |
+
+## Worker Return Packet Shape Contract
+
+workerReturnPath: `docs/reviews/CVF_MAO_T6_TIMEOUT_HEARTBEAT_CANCEL_RETRY_AND_RECOVERY_WORKER_RETURN_2026-07-11.md`
+
+contractProfile: WORKER_RETURN_FULL_GATE_V1
+
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
+
+individualCheckerSubstitution: FORBIDDEN
+
+workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
+
+## Verification Commands
+
+```powershell
+cd EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION
+npx vitest run --config vitest.config.ts tests/mao.lifecycle.controller.contract.test.ts
+npx tsc -p tsconfig.json --noEmit
+cd ../..
+python governance/compat/run_worker_return_fast_gate.py
+git status --short
+```

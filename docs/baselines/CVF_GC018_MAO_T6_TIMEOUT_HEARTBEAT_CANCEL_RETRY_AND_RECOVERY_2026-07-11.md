@@ -2,11 +2,11 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: HOLD_UNTIL_MAO_T5_PASS
+Status: DISPATCH_READY
 
-Batch ID: MAO-T6
+Batch ID: MAO-RUNTIME-T6
 
-Dispatch base head: `3294d555a`
+Dispatch base head: `cbf56ff50`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -21,7 +21,7 @@ protection, orphan recovery, clock tests, and diagnostics.
 | Dependency | Current evidence | Release rule | Disposition |
 |---|---|---|---|
 | MAO-T3 and T4 | accepted commits `052845fa1` and `f71ba01f6` | accepted material exists | ACCEPT |
-| MAO-T5 | packet authored in this batch; no accepted execution evidence | accepted MAO-T5 completion and refreshed anchors required | HOLD |
+| MAO-T5 | material `9b225f0e4`; completion review `REVIEWER_ACCEPTED_BOUNDED`; 54/54 tests and typecheck PASS | accepted material and review exist | ACCEPT |
 
 ## ADIF Defect Registry Disclosure
 
@@ -47,8 +47,8 @@ Returned defects: NONE_RETURNED
 
 ## Claim Boundary
 
-Held design packet only; no lifecycle implementation may start before MAO-T5
-acceptance and refreshed dependency-release evidence.
+One local deterministic lifecycle contract/test tranche only. No provider,
+real clock, queue, UI, public-sync, or production claim.
 
 ## Public Export Disposition
 
@@ -56,8 +56,20 @@ DEFERRED_PRIVATE_ONLY
 
 ## Baseline Decision
 
-Source-complete but dependency-held.
+Dependency released; source-verified local worker dispatch ready.
 
 ## Evidence / Verification
 
 Current source symbols and dependency state were checked locally.
+
+## Scaffold Provenance Block
+
+| Field | Value |
+|---|---|
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind held-dependency --batch-id MAO-T6 --title "Timeout Heartbeat Cancel Retry And Recovery" --date 2026-07-11 --base 3294d555a --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
+| generatedProfile | held dependency promoted to no-commit dispatch |
+| generatedSkeletonStatus | USED_AS_STARTING_POINT |
+| manualEditsAfterScaffold | refreshed T5 evidence, anchors, exact outputs and gates |
+| checkerReadAheadConfirmation | dispatch, handoff and ADIF checkers read |
+| docOnlyNewFields | none in baseline |
+| claimBoundary | authoring provenance only |
