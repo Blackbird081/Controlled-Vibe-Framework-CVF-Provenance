@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1663,
+  "stateKey": "mseaR99L1SystemDefinitionOwnerDesignDispatch20260711",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-11",
+    "dispatchCommit": "31ed30db8",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R99_L1_SYSTEM_DEFINITION_OWNER_DESIGN_2026-07-11.md",
+    "route": "SINGLE_AGENT_MULTI_ROLE",
+    "nextAllowedMove": "execute and close bounded R99 material scope",
+    "claimBoundary": "one compact L1 pointer owner plus route/freshness reconciliation; no doctrine or legacy mutation"
+  }
+}
