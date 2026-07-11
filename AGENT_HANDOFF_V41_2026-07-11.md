@@ -227,6 +227,26 @@ Protected paths:
 
 ## Claim Boundary
 
+## MAO-LIVE Roadmap Proposed
+
+Roadmap material HEAD: `82b3fb511`. Next move is fresh MAO-LIVE-T1 GC-018 and
+source-verified no-commit work order. Session-sync parent HEAD: `82b3fb511`.
+
+## Core Guard Self-Protection Authorization - MAO-LIVE Roadmap Sync
+
+Operator authorization: continue from roadmap creation into governed packet authoring.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/maoLiveRoadmapProposed20260712.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this sync; retain roadmap commit `82b3fb511`.
+
 ## Post-MAO Live Proof And MAO-LIVE-T1 Selection
 
 Live evidence HEAD: `a0b40ecfb`. Canonical live governance bundle PASS. The

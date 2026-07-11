@@ -52,6 +52,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-LIVE value pilot roadmap | `82b3fb511` | PROPOSED; fresh T1 GC-018/work order is next, no implementation yet. |
 | Post-MAO live governance proof | `a0b40ecfb` | LIVE_PROOF_PASS_BOUNDED; live governance PASS, not MAO provider orchestration. |
 | MAO runtime foundation T0-T9 closure | `29c55ca36` | CLOSED_PASS_BOUNDED; T9-F1 REJECT; zero blocking findings. |
 | MAO-T9 independent critique dispatch | `c40991cc5` | DISPATCH_READY; exactly four review outputs, no worker commit or owner-surface mutation. |
