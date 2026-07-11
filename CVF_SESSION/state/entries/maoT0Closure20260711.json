@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1674,
+  "stateKey": "maoT0Closure20260711",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "materialCommit": "dbe963b03",
+    "completionReview": "docs/reviews/CVF_MAO_T0_SOURCE_INVENTORY_ARCHITECTURE_DECISIONS_AND_SCHEMAS_COMPLETION_2026-07-11.md",
+    "frontDoor": "docs/reference/multi_agent_orchestration/README.md",
+    "contract": "docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_CONTRACT.md",
+    "schema": "docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_SCHEMA.json",
+    "verification": ["worker-return fast PASS", "reviewer-fast 61/61 PASS", "pre-commit 82/82 PASS"],
+    "nextAllowedMove": "fresh MAO-T1 GC-018 and source-verified work-order authoring only",
+    "claimBoundary": "T0 documentation/schema foundation only; no runtime implementation"
+  }
+}

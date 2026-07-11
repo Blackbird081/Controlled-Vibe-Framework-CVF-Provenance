@@ -17,9 +17,9 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t0_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=delegated worker
-executes MAO-T0 from `f42195d20` without committing; parked checkpoint=MAO runtime implementation, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t0_closed`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T1
+GC-018/work-order authoring only; parked checkpoint=MAO-T1 implementation, broader MAO runtime, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -33,9 +33,14 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t0_dispatched`
+`mao_t0_closed`
 
 ## Latest Work / Changes
+
+MAO-T0 material closure commit `dbe963b03` is
+`REVIEWER_ACCEPTED_BOUNDED`. It adds the MAO front door, source inventory,
+runtime-foundation contract, Draft 2020-12 schema, worker return, and independent
+completion review. Worker-return fast, reviewer-fast 61/61, and pre-commit 82/82 pass.
 
 MAO-T0 dispatch commit `f42195d20` is `DISPATCH_READY`. The delegated worker
 must use exact execution base `f42195d20`, produce exactly five outputs, and
@@ -89,8 +94,8 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Execute MAO-T0 from `f42195d20` as one `WORKER_MUST_NOT_COMMIT` worker. L4,
-T3B, R73F, R84 effectiveness, and MAO runtime implementation remain
+Author a fresh MAO-T1 GC-018/source-verified work order for task graph/state
+contract only. MAO-T1 implementation, L4, T3B, R73F, R84 effectiveness, and broader MAO runtime remain
 parked. Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
@@ -120,6 +125,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/maoRoadmapProposed20260711.json`
 - `CVF_SESSION/state/entries/maoRoadmapCritiqueReconciliation20260711.json`
 - `CVF_SESSION/state/entries/maoT0Dispatch20260711.json`
+- `CVF_SESSION/state/entries/maoT0Closure20260711.json`
 - `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 

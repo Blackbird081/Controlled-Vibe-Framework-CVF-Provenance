@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t0_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=delegated worker executes MAO-T0 from `f42195d20` without committing; parked checkpoint=MAO runtime implementation, L4 promotion, T3B, R73F, and R84 effectiveness.
+Startup acknowledged: current mode=`mao_t0_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T1 GC-018/work-order authoring only; parked checkpoint=MAO-T1 implementation, broader MAO runtime, L4 promotion, T3B, R73F, and R84 effectiveness.
 
 ## Current Mode
 
-Current mode marker: `mao_t0_dispatched`
+Current mode marker: `mao_t0_closed`
 
-Current mode: `mao_t0_dispatched`
+Current mode: `mao_t0_closed`
 
-`mao_t0_dispatched`
+`mao_t0_closed`
 
 Previous mode:
 
-`mao_t0_dispatch_authoring`
+`mao_t0_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T0 contract/schema foundation closure | `dbe963b03` | REVIEWER_ACCEPTED_BOUNDED; four reference/schema artifacts plus accepted return/review. |
 | MAO-T0 contract foundation dispatch | `f42195d20` | DISPATCH_READY; delegated worker must not commit; five exact outputs. |
 | MAO roadmap critique reconciliation | `d61c3c92c` | REVIEWER_ACCEPTED_BOUNDED; T0 packet authoring released with three caveats. |
 | MAO runtime foundation roadmap | `6a08a041e` | PROPOSED after R94/R95 reopen audit; external critique is next; implementation remains parked. |
@@ -101,11 +102,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t0_dispatched`
+Mode: `mao_t0_closed`
 
-MAO-T0-DISPATCH is ready at `f42195d20`. Next allowed move is delegated worker
-execution from that exact base under `WORKER_MUST_NOT_COMMIT`, producing four
-reference/schema artifacts plus one worker return. MAO runtime implementation remains parked.
+MAO-T0 is accepted at `dbe963b03`. Next allowed move is fresh MAO-T1 GC-018
+and source-verified work-order authoring for task graph/state contract only.
+MAO-T1 implementation and broader runtime remain parked until that packet passes.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 
