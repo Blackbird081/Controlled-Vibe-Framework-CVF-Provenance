@@ -1,0 +1,26 @@
+{
+  "stateOrder": 1649,
+  "stateKey": "multiAgentOrchestrationRuntimeFoundationParked20260711",
+  "value": {
+    "title": "Multi-Agent Orchestration Runtime Foundation",
+    "status": "VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE",
+    "sequence": [
+      "complete the MSEA-R94 System Chain Gap Closure roadmap",
+      "harden automatic R85-style external-repository absorption intake triggering",
+      "consider a fresh Multi-Agent Orchestration Runtime Foundation roadmap"
+    ],
+    "scope": [
+      "task graph",
+      "risk-based role resolver",
+      "provider-neutral spawn adapter",
+      "reviewer context isolation",
+      "revision loop",
+      "designated closer",
+      "commit and session interlock",
+      "timeout, heartbeat, cancel, and retry controls",
+      "end-to-end proof"
+    ],
+    "reuseBoundary": "reuse existing CVF governance, Agent Handoff Contract, and agent workspace foundations; do not create parallel governance",
+    "reopenCondition": "R94 is terminal and the automatic external-absorption intake trigger hardening is accepted through a separate governed packet"
+  }
+}

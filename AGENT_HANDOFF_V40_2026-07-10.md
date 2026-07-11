@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_t0_contract_runtime_inventory_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=worker executes only the R94-T0 50-row inventory without committing; parked checkpoint=R73F and R84 effectiveness remain evidence-gated.
+Startup acknowledged: current mode=`msea_r94_t0_contract_runtime_inventory_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh R94-T1 packet without implementation; parked checkpoint=R73F, R84 effectiveness, and Multi-Agent Orchestration Runtime Foundation remain evidence-gated.
 
 ## Mandatory Startup Reads
 
@@ -35,9 +35,17 @@ Startup acknowledged: current mode=`msea_r94_t0_contract_runtime_inventory_dispa
 
 ## Current Mode
 
-`msea_r94_t0_contract_runtime_inventory_dispatched`
+`msea_r94_t0_contract_runtime_inventory_closed`
 
 ## Latest Work / Changes
+
+MSEA-R94-T0 closed `REVIEWER_ACCEPTED_BOUNDED` at material commit
+`db4e2369a`. The accepted ledger contains 50 terminal rows, a reproducible
+82-file manifest, executable catalog evidence, and operator evidence for every
+row. Six test-pairing mismatches, four invocation-unproven implementations,
+and two contract-only rows remain bounded R94-T1 decision inputs. Full
+pre-commit passed 81/81. No runtime, test, checker, hook, Web, lifecycle,
+public, provider, or session path changed in the material commit.
 
 MSEA-R94-T0 dispatch is committed at `a58b61ae8`. The worker must read the
 paired GC-018/work order, capture that execution base, inventory exactly 50
@@ -185,6 +193,9 @@ reopen without observed cross-machine friction.
 
 ## Current HEAD
 
+MSEA-R94-T0 material closure commit before this session-sync:
+`db4e2369a`.
+
 MSEA-R94-T0 dispatch material commit before this session-sync:
 `a58b61ae8`.
 
@@ -249,12 +260,37 @@ External agent memory files: non-canonical convenience only.
 
 ## Next Allowed Move
 
-Next allowed move: author a fresh GC-018/work-order packet for Deliverable B
-and a durable freshness design using reviewer-accepted Audit A as baseline.
-Do not implement the readout or freshness checker before that packet passes
-pre-dispatch. Advisory-directory relocation remains a separate governed
-cleanup after canonical owners are established. Latest closed numbered LHW
-wave remains `LHW24`.
+Next allowed move: author a fresh source-verified GC-018 and
+`WORKER_MUST_NOT_COMMIT` work order for R94-T1 repair decisions using the
+accepted 50-row ledger. Do not implement T1 or widen into T2, T3, runtime,
+checker, Web, lifecycle, public, or external-absorption work before that packet
+passes pre-dispatch. Latest closed numbered LHW wave remains `LHW24`.
+
+Multi-Agent Orchestration Runtime Foundation is parked until the full R94
+roadmap and a separate automatic R85-style external-absorption intake trigger
+hardening tranche both close.
+
+## Core Guard Self-Protection Authorization - MSEA-R94-T0 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync only after R94-T0 material
+closure commit `db4e2369a`.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V40_2026-07-10.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mseaR94T0ContractRuntimeInventoryClosure20260711.json`
+- `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+Operator authorization: continue the R94 roadmap in governed order and retain
+the future multi-agent foundation item without mixing it into R94.
+
+Rollback boundary: revert only this session-sync; do not revert material
+closure commit `db4e2369a`.
 
 ## Core Guard Self-Protection Authorization - MSEA-R85 Closure Session Sync
 
