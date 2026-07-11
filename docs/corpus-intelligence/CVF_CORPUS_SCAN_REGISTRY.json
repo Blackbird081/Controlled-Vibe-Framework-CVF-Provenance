@@ -4722,6 +4722,78 @@
         "CVF_H2_WORKING_MEMORY_RUNTIME_PROOF_COMPLETION_2026-05-22.md basename"
       ],
       "nextScanRecommendation": "Do not rescan MSEA-R90 Audit A from zero; use its reviewer-accepted terminal rows as the unchanged semantic baseline. Any future rescan of the map itself should recompute fingerprints and review age through the freshness checker, not through a manual diff."
+    },
+    {
+      "id": "msea-r94-t0-contract-runtime-inventory",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "MSEA-R94-T0 contract-to-runtime 50-row inventory",
+      "scopePaths": [
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src",
+        "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts",
+        "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts",
+        "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/wiring/extension.bridge.ts",
+        "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/conformance.runner.test.ts",
+        "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/extension.bridge.test.ts",
+        "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts",
+        "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/multi.agent.runtime.test.ts",
+        "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/pipeline.orchestrator.test.ts",
+        "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/sdk.test.ts",
+        "docs/audits/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_2026-07-11.md",
+        "docs/audits/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_EVIDENCE_2026-07-11.json",
+        "docs/baselines/CVF_GC018_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_2026-07-11.md",
+        "docs/reviews/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_COMPLETION_2026-07-11.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_2026-07-11.md"
+      ],
+      "fileCount": 15,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "MSEA-R94-T0",
+      "scanDate": "2026-07-11",
+      "manifestHash": "38356e0e8ae11d3c9d4deadc3cbd1b754f5dfa727d6549a1ec156aee021bbe35",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+      "manifestPath": "docs/audits/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_EVIDENCE_2026-07-11.json",
+      "packetPath": "docs/audits/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_2026-07-11.md",
+      "completionReviewPath": "docs/reviews/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_COMPLETION_2026-07-11.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_2026-07-11.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "contract-to-runtime",
+        "implementation-invocation-test-pairing",
+        "operator-evidence-route"
+      ],
+      "priorAbsorption": "MSEA-R90 supplied three calibration rows; R94-T0 freshly recomputed all 50 Governance Control Matrix rows from current source.",
+      "findings": [
+        {
+          "id": "msea-r94-t0-test-pairing-mismatch",
+          "summary": "Six matrix rows cite a test surface that does not pair with the cited contract implementation.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Use a fresh R94-T1 packet to decide citation correction or claim downgrade.",
+          "defectClass": "DOCUMENTATION_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_COMPLETION_2026-07-11.md#finding-to-governance-learning-disposition",
+          "workOrderRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_2026-07-11.md"
+        },
+        {
+          "id": "msea-r94-t0-invocation-unproven",
+          "summary": "Four implemented controls have no proven production invocation and two controls remain contract-only with reason.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Use a fresh R94-T1 packet to select caller addition, matrix downgrade, or evidence-backed deferral.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+          "f2gRef": "docs/reviews/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_COMPLETION_2026-07-11.md#finding-to-governance-learning-disposition",
+          "workOrderRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_2026-07-11.md"
+        }
+      ],
+      "negativeSearchTerms": [
+        "non-test production caller for GC-009",
+        "standalone tests for twelve bounded catalog-backed rows",
+        "contract guard and protocol guard source identity equivalence"
+      ],
+      "nextScanRecommendation": "Do not rescan all 50 rows from zero; use this accepted ledger as the R94-T1 decision baseline and rely on MSEA-R91 freshness signaling for later drift."
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MSEA-R94-T0
 
@@ -224,3 +224,16 @@ Reason: private provenance audit dispatch; no public artifact is authorized.
 
 This baseline authorizes only the R94-T0 inventory. It does not establish any
 row outcome in advance, close a system-chain gap, or authorize later repair.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_2026-07-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_COMPLETION_2026-07-11.md` | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MSEA_R94_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_2026-07-11.md` | parent remains open; T0 dependency is satisfied | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | current aggregate passes; no state mutation | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no state mutation required | PASS |
+| External evidence digest | audit JSON companion | 82 records; sha256:5bd27a365a1a265a165f863df9b614e7d779d13e005342b122f4aaeba5aae433 | PASS |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | no new interlock for static audit | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`, generated active state, active handoff | separate session-sync follows material commit | N/A with reason |

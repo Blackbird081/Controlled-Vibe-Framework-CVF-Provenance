@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MSEA-R94-T0
 
@@ -461,18 +461,18 @@ evidence. The reviewer must approve any added enum.
 
 ## Acceptance Criteria
 
-- [ ] Exactly 50 unique rows are present in both audit artifacts.
-- [ ] Every row preserves the six matrix source fields.
-- [ ] Every row has independent implementation, invocation, test-pairing, and
+- [x] Exactly 50 unique rows are present in both audit artifacts.
+- [x] Every row preserves the six matrix source fields.
+- [x] Every row has independent implementation, invocation, test-pairing, and
       operator/evidence-route evidence or a bounded reason.
-- [ ] GC-001, GC-009, and GC-011 are freshly re-derived.
-- [ ] All indirect execution mechanisms are considered before non-invocation.
-- [ ] Every same-name collision is explicitly dispositioned.
-- [ ] Every row has one terminal disposition and one next action.
-- [ ] Markdown and JSON counts, row IDs, dispositions, and manifest hash agree.
-- [ ] Repair candidates are risk-ranked; no implementation is performed.
-- [ ] Worker return records actual uncommitted status and no commit.
-- [ ] Required governance gates pass or the return is blocked honestly.
+- [x] GC-001, GC-009, and GC-011 are freshly re-derived.
+- [x] All indirect execution mechanisms are considered before non-invocation.
+- [x] Every same-name collision is explicitly dispositioned.
+- [x] Every row has one terminal disposition and one next action.
+- [x] Markdown and JSON counts, row IDs, dispositions, and manifest hash agree.
+- [x] Repair candidates are risk-ranked; no implementation is performed.
+- [x] Worker return records actual uncommitted status and no commit.
+- [x] Required governance gates pass or the return is blocked honestly.
 
 ## Verification Commands
 
@@ -570,14 +570,14 @@ file-existence-only proof.
 
 ## Closure Checklist
 
-- [ ] 50/50 row reconciliation accepted.
-- [ ] Calibration rows independently confirmed or corrected.
-- [ ] Negative searches and collisions reviewed.
-- [ ] Markdown/JSON schema and hash match.
-- [ ] Changed set contains only authorized outputs plus reviewer-owned closure.
-- [ ] No implementation or source mutation occurred.
-- [ ] Material and session commits remain separate.
-- [ ] Roadmap T1 remains undispatched until reviewer acceptance.
+- [x] 50/50 row reconciliation accepted.
+- [x] Calibration rows independently confirmed or corrected.
+- [x] Negative searches and collisions reviewed.
+- [x] Markdown/JSON schema and hash match.
+- [x] Changed set contains only authorized outputs plus reviewer-owned closure.
+- [x] No implementation or source mutation occurred.
+- [x] Material and session commits remain separate.
+- [x] Roadmap T1 remains undispatched pending a fresh governed packet.
 
 ## Return-To-Orchestrator Conditions
 
@@ -606,3 +606,25 @@ This work order authorizes a complete static inventory only. It does not
 predetermine row outcomes, authorize repair, declare the system chain closed,
 or change matrix, runtime, tests, governance, lifecycle, Web, provider, public,
 or session state.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED`; all checklists finalized | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_R94_T0_CONTRACT_TO_RUNTIME_50_ROW_INVENTORY_COMPLETION_2026-07-11.md` | reviewer decision and closure evidence | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MSEA_R94_SYSTEM_CHAIN_GAP_CLOSURE_ROADMAP_2026-07-11.md` | parent remains open; T1 requires a fresh packet | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check passes; no registry mutation | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no registry mutation required | PASS |
+| External evidence digest | audit JSON companion | 82-record manifest; sha256:5bd27a365a1a265a165f863df9b614e7d779d13e005342b122f4aaeba5aae433 | PASS |
+| System loop interlock | `docs/reference/CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json` | static audit creates no new interlock | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`, generated active state, active handoff | separate session-sync follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| R94-T0-Q1 | audit JSON companion | `rows` length | 50 | 50 | PASS |
+| R94-T0-Q2 | audit JSON companion | `operatorEvidenceCoverage` | 50 | 50 | PASS |
+| R94-T0-Q3 | audit JSON companion | `manifestCount` | 82 | 82 | PASS |
+| R94-T0-Q4 | audit JSON companion | `manifestHash` | reproducible normalized SHA-256 | `5bd27a365a1a265a165f863df9b614e7d779d13e005342b122f4aaeba5aae433` | PASS |
