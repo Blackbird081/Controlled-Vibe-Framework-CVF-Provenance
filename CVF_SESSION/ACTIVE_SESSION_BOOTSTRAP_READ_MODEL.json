@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r94_system_chain_gap_closure_closed",
+  "currentMode": "msea_r95_external_repository_absorption_entry_hardening_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R94 System Chain Gap Closure is CLOSED_PASS_BOUNDED at material commit cf3187659. T1C is FIXED_AND_PROVEN, T2 route gaps remain explicit, T3A is DEFERRED_WITH_REOPEN_CONDITION, and R91 remains the sole freshness owner. Next allowed move is authoring a fresh GC-018/work-order packet for automatic R85-style external-absorption trigger hardening. Do not implement the trigger or start Multi-Agent Orchestration Runtime Foundation before that packet passes pre-dispatch. T3B, R73F, and R84 effectiveness remain value/evidence parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R95 External Repository Absorption Entry Hardening is DISPATCH_READY at commit dd92fa6d6. Next allowed move is no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R95_EXTERNAL_REPOSITORY_ABSORPTION_ENTRY_HARDENING_2026-07-11.md. Worker may change only the six worker-owned paths named by that order, must create the named worker return, and must stop at COMPLETE_PENDING_REVIEW without committing. Multi-Agent Orchestration Runtime Foundation remains parked until reviewer closure of R95. T3B, R73F, and R84 effectiveness remain value/evidence parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

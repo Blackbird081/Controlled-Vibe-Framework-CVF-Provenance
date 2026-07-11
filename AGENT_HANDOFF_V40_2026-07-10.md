@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_system_chain_gap_closure_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author automatic R85-style external-absorption trigger hardening packet; parked checkpoint=T3B, R73F, R84 effectiveness, and Multi-Agent Orchestration Runtime Foundation.
+Startup acknowledged: current mode=`msea_r95_external_repository_absorption_entry_hardening_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the MSEA-R95 no-commit worker order; parked checkpoint=T3B, R73F, R84 effectiveness, and Multi-Agent Orchestration Runtime Foundation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r94_system_chain_gap_closure_closed`; a
 
 ## Current Mode
 
-`msea_r94_system_chain_gap_closure_closed`
+`msea_r95_external_repository_absorption_entry_hardening_dispatched`
 
 ## Latest Work / Changes
 
@@ -814,6 +814,42 @@ Operator authorization: continue MSEA-R94 after accepted T1B closure.
 
 Rollback boundary: revert only this session-sync; do not revert material commit
 `3c5e87d7b` or unrelated work.
+
+## MSEA-R95 External Repository Absorption Entry Hardening Dispatch - 2026-07-11
+
+Dispatch commit: `dd92fa6d6`. The packet extends the existing ADIF-0014
+checker and current absorption front doors so source-mirror paths and bounded
+explicit external repository or copied-folder intake language trigger an
+R85-style entry control block. The worker must preserve existing behavior, add
+focused positive, negative, and compatibility tests, create the named worker
+return, and stop without commit.
+
+Next allowed move: execute only
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R95_EXTERNAL_REPOSITORY_ABSORPTION_ENTRY_HARDENING_2026-07-11.md`
+as `WORKER_MUST_NOT_COMMIT` and return `COMPLETE_PENDING_REVIEW`.
+
+## Core Guard Self-Protection Authorization - MSEA-R95 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after dispatch commit
+`dd92fa6d6`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to R95 worker execution. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R95 dispatch and execution boundary. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set R95 dispatched mode. |
+| `CVF_SESSION/state/entries/mseaR95ExternalRepositoryAbsorptionEntryHardeningDispatch20260711.json` | Record dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route exact no-commit worker execution. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: proceed with R95 before returning to the parked
+Multi-Agent Orchestration Runtime Foundation roadmap.
+
+Rollback boundary: revert only this session-sync; do not revert dispatch
+commit `dd92fa6d6` or unrelated work.
 
 ## Claim Boundary
 
