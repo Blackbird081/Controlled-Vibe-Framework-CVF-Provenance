@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-12
 
@@ -10,9 +10,9 @@ Batch ID: ODVR-T2-DISPATCH
 
 dispatchBaseHead: `9fa305afd`
 
-executionBaseHead: worker captures committed dispatch HEAD before editing
+executionBaseHead: `99c2875cd`
 
-closureBaseHead: executionBaseHead captured by worker at start
+closureBaseHead: `99c2875cd`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -145,6 +145,27 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private evidence dispatch. Public-sync boundary: no T2 artifact may be
 copied or pushed by this tranche.
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| ODVR-T2-A1 | `docs/evidence/odvr/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_RECEIPT_2026-07-12.json` | `$.scenarios[0].factsPreserved` | 7 for value proof | 3 | FAIL_VALUE_THRESHOLD |
+| ODVR-T2-A2 | `docs/evidence/odvr/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_RECEIPT_2026-07-12.json` | `$.scenarios[1].factsPreserved` | 7 for value proof | 0 | FAIL_VALUE_THRESHOLD |
+| ODVR-T2-A3 | `docs/evidence/odvr/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_RECEIPT_2026-07-12.json` | `$.scenarios[*].traces[*].rawEvents` | all declared totals recompute | four of four traces recompute | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_2026-07-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_2026-07-12.md` | `Status: REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_OPERATOR_DECISION_AND_VALUE_READOUT_ROADMAP_2026-07-12.md` | `Status: CLOSED_VALUE_NOT_PROVEN` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no mutation; aggregate drift check passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no mutation required | PASS |
+| External evidence digest | N/A with reason: internal local measurement | no external evidence | N/A with reason |
+| System loop interlock | T2 receipt and canonical sources | value threshold fails without mutation | PASS |
+| Session continuity | separate session-sync after material commit | not part of material closure | N/A with reason |
 
 ## Claim Boundary
 

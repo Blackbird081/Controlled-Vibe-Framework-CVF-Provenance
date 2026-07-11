@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-12
 
@@ -10,9 +10,9 @@ Batch ID: ODVR-T2-DISPATCH
 
 dispatchBaseHead: `9fa305afd`
 
-executionBaseHead: capture exact committed dispatch HEAD before any edit
+executionBaseHead: `99c2875cd`
 
-closureBaseHead: executionBaseHead captured by worker at start
+closureBaseHead: `99c2875cd`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -356,13 +356,13 @@ requires a positive reviewed result and separate operator authorization.
 
 ## Closure Checklist
 
-- [ ] Exact three-output manifest reviewed.
-- [ ] Same-question equivalence proven.
-- [ ] Raw counts independently recompute.
-- [ ] Both composed outputs are schema-valid.
-- [ ] All canonical facts match or value is not proven.
-- [ ] Worker-return fast gate passes.
-- [ ] Reviewer decision and material commit complete.
+- [x] Exact three-output manifest reviewed.
+- [x] Same-question equivalence proven.
+- [x] Raw counts independently recompute.
+- [x] Both composed outputs are schema-valid.
+- [x] Canonical fact mismatches recorded and value is not proven.
+- [x] Worker-return fast gate passes.
+- [x] Reviewer decision and material commit prepared.
 
 ## Agent Operation Trace Block
 
@@ -419,6 +419,27 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private measurement dispatch. Public-sync boundary: worker must not
 copy, commit, or push any T2 artifact to the sibling public repository.
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| ODVR-T2-A1 | `docs/evidence/odvr/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_RECEIPT_2026-07-12.json` | `$.scenarios[0].factsPreserved` | 7 for value proof | 3 | FAIL_VALUE_THRESHOLD |
+| ODVR-T2-A2 | `docs/evidence/odvr/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_RECEIPT_2026-07-12.json` | `$.scenarios[1].factsPreserved` | 7 for value proof | 0 | FAIL_VALUE_THRESHOLD |
+| ODVR-T2-A3 | `docs/evidence/odvr/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_RECEIPT_2026-07-12.json` | `$.scenarios[*].traces[*].rawEvents` | all declared totals recompute | four of four traces recompute | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_2026-07-12.md` | `Status: REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_OPERATOR_DECISION_AND_VALUE_READOUT_ROADMAP_2026-07-12.md` | `Status: CLOSED_VALUE_NOT_PROVEN` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no mutation; aggregate drift check passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no mutation required | PASS |
+| External evidence digest | N/A with reason: internal local measurement | no external evidence | N/A with reason |
+| System loop interlock | T2 receipt and canonical sources | value threshold fails without mutation | PASS |
+| Session continuity | separate session-sync after material commit | not part of material closure | N/A with reason |
 
 ## Claim Boundary
 

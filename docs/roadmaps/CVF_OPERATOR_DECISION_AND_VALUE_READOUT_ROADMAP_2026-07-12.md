@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 Date: 2026-07-12
 
-Status: PROPOSED
+Status: CLOSED_VALUE_NOT_PROVEN
 
 Roadmap ID: ODVR
 
@@ -200,8 +200,9 @@ questions and canonical facts across manual and composed paths.
 
 DEFERRED_PRIVATE_ONLY
 
-Next action: keep ODVR artifacts in private provenance unless a later closure
-identifies a public-safe artifact and receives separate export authorization.
+Reason: ODVR closed with value not proven, so no public artifact is justified.
+Public-sync boundary: no ODVR artifact may be copied, committed, or pushed to
+the sibling public repository by this closure.
 
 ## Next Allowed Move
 
@@ -209,6 +210,37 @@ Author a fresh ODVR-T0 GC-018 baseline and source-verified no-commit work order.
 After ODVR is accepted, parked, or rejected, the operator may select a newly
 justified external repository or folder for source-mirror-backed absorption.
 No external target is selected by this roadmap.
+
+## T2 Closure Decision
+
+ODVR-T2 is `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN`. The composed path preserved
+3 of 7 exact canonical facts for the closed lane and 0 of 7 for the
+parked/reopen lane. It reduced navigation only for the globally-latest lane,
+lost public-export disposition entirely, and could not answer the parked lane.
+No UI tranche opens. ODVR is closed without further implementation; a future
+reopen requires a new operator decision and fresh packet tied to a concrete
+lane-scoping and missing-field hypothesis.
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| ODVR-T2-A1 | `docs/evidence/odvr/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_RECEIPT_2026-07-12.json` | `$.scenarios[0].factsPreserved` | 7 for value proof | 3 | FAIL_VALUE_THRESHOLD |
+| ODVR-T2-A2 | `docs/evidence/odvr/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_RECEIPT_2026-07-12.json` | `$.scenarios[1].factsPreserved` | 7 for value proof | 0 | FAIL_VALUE_THRESHOLD |
+| ODVR-T2-A3 | `docs/evidence/odvr/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_RECEIPT_2026-07-12.json` | `$.scenarios[*].traces[*].rawEvents` | all declared totals recompute | four of four traces recompute | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_2026-07-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_2026-07-12.md` | `Status: REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_VALUE_NOT_PROVEN` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no mutation; aggregate drift check passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no mutation required | PASS |
+| External evidence digest | N/A with reason: internal local measurement | no external evidence | N/A with reason |
+| System loop interlock | T2 receipt and reviewed report | negative value result retained | PASS |
+| Session continuity | separate session-sync after material commit | not part of material closure | N/A with reason |
 
 ## Claim Boundary
 

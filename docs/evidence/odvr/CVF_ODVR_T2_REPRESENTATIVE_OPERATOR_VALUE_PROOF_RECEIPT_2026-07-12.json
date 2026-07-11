@@ -1,0 +1,220 @@
+{
+  "receiptVersion": "cvf.odvrT2.valueProofReceipt.v1",
+  "date": "2026-07-12",
+  "executionBaseHead": "99c2875cd",
+  "operatorQuestionSet": [
+    "Q1: what is the current lane status/verdict?",
+    "Q2: what is the latest material decision and its material commit?",
+    "Q3: what is the claim boundary?",
+    "Q4: is there a parked or blocked condition, and a checkable reopen condition when applicable?",
+    "Q5: what is the canonical next allowed move?",
+    "Q6: what is the public export disposition?",
+    "Q7: what is the source freshness?"
+  ],
+  "claimBoundary": "This receipt records raw measurement events and answer comparisons only. It does not itself constitute the terminal value verdict; the independent reviewer recomputes and decides VALUE_PROVEN_BOUNDED, VALUE_NOT_PROVEN, or BLOCKED_EVIDENCE_INVALID.",
+  "scenarios": [
+    {
+      "scenarioId": "scenario1_closed_lane_odvr_t1",
+      "description": "ODVR-T1 deterministic local composer closure (closed lane).",
+      "canonicalExpectedAnswers": {
+        "Q1": "REVIEWER_ACCEPTED_AFTER_REPAIR",
+        "Q2": "docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md at materialCommit 16364f797",
+        "Q3": "ODVR-T1 local read-only composer, CLI, tests, reference update, and reviewer closure only. No UI, Web route, provider/live proof, state mutation, autonomous selection, dispatch, public-sync, outside-source intake, ODVR-T2 operator-value proof, or production readiness is authorized or claimed.",
+        "Q4": "N/A - lane is closed, no parked/blocked condition or reopen condition applies to ODVR-T1 itself",
+        "Q5": "author fresh ODVR-T2 GC-018 and source-verified no-commit work order for representative operator value proof only",
+        "Q6": "DEFERRED_PRIVATE_ONLY",
+        "Q7": "CURRENT (generator drift check passes; entry status matches cited artifact status)"
+      },
+      "expectedAnswerSourceAnchors": {
+        "Q1": "docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md#Status",
+        "Q2": "CVF_SESSION/state/entries/odvrT1Closure20260712.json#value.materialCommit",
+        "Q3": "docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md##Claim Boundary",
+        "Q4": "CVF_SESSION/state/entries/odvrT1Closure20260712.json (no reopen field present)",
+        "Q5": "CVF_SESSION/state/entries/odvrT1Closure20260712.json#value.nextAllowedMove",
+        "Q6": "docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md##Public Export Disposition",
+        "Q7": "governance/compat/generate_active_session_state.py --check (exit 0) plus entry/artifact status agreement"
+      },
+      "traces": [
+        {
+          "pathKind": "MANUAL",
+          "rawEvents": [
+            { "seq": 1, "action": "FILE_READ", "target": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json", "purpose": "startup mode/handoff context" },
+            { "seq": 2, "action": "FILE_READ", "target": "CVF_SESSION/state/entries/odvrT1Closure20260712.json", "purpose": "latest material decision, materialCommit, lane nextAllowedMove" },
+            { "seq": 3, "action": "FILE_READ", "target": "docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md", "purpose": "Status line, Claim Boundary section, Public Export Disposition section" },
+            { "seq": 4, "action": "COMMAND_RUN", "target": "python governance/compat/generate_active_session_state.py --check", "purpose": "confirm generator drift-free (freshness)" }
+          ],
+          "stepCount": 4,
+          "filesRead": 3,
+          "elapsedMs": 109.759,
+          "answers": {
+            "Q1": "REVIEWER_ACCEPTED_AFTER_REPAIR",
+            "Q2": "docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md at materialCommit 16364f797",
+            "Q3": "ODVR-T1 local read-only composer, CLI, tests, reference update, and reviewer closure only. No UI, Web route, provider/live proof, state mutation, autonomous selection, dispatch, public-sync, outside-source intake, ODVR-T2 operator-value proof, or production readiness is authorized or claimed.",
+            "Q4": "N/A - no parked/blocked or reopen field on this entry",
+            "Q5": "author fresh ODVR-T2 GC-018 and source-verified no-commit work order for representative operator value proof only",
+            "Q6": "DEFERRED_PRIVATE_ONLY",
+            "Q7": "CURRENT (drift check exit 0; entry status REVIEWER_ACCEPTED_AFTER_REPAIR matches artifact Status line)"
+          }
+        },
+        {
+          "pathKind": "COMPOSED",
+          "rawEvents": [
+            { "seq": 1, "action": "COMMAND_RUN", "target": "python governance/compat/run_odvr_readout.py --json", "purpose": "invoke committed CLI over live repository state" }
+          ],
+          "stepCount": 1,
+          "filesRead": 0,
+          "elapsedMs": 242.185,
+          "composedOutput": {
+            "contractVersion": "cvf.odvrT0.readoutContract.doc.v1",
+            "currentMode": "odvr_t2_dispatched",
+            "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
+            "latestMaterialDecision": {
+              "artifactPath": "docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md",
+              "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
+              "materialCommit": "16364f797",
+              "stateOrder": 1690
+            },
+            "terminalValueVerdict": null,
+            "claimBoundary": "ODVR-T1 local read-only composer closure only; no T2 implementation, UI, provider/live, state mutation, public-sync, outside-source absorption, or production readiness",
+            "canonicalNextAllowedMove": "ODVR-T2 is DISPATCH_READY at commit 1a79ba7a3. Next move is one delegated WORKER_MUST_NOT_COMMIT execution producing exactly the JSON measurement receipt, T2 proof report, and worker return. The worker compares identical operator questions across one closed and one parked/reopen scenario using manual and composed paths. No composer edit, UI/Web, provider/live, session mutation, public-sync, outside-source absorption, or worker commit is authorized. LHW24 remains latest closed numbered LHW wave.",
+            "sourceAnchors": [
+              "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+              "docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md"
+            ],
+            "aggregateFreshness": "CURRENT",
+            "parkedOrBlockedConditions": [
+              "The worker compares identical operator questions across one closed and one parked/reopen scenario using manual and composed paths."
+            ]
+          },
+          "answers": {
+            "Q1": "REVIEWER_ACCEPTED_AFTER_REPAIR",
+            "Q2": "docs/reviews/CVF_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_COMPLETION_2026-07-12.md at materialCommit 16364f797",
+            "Q3": "ODVR-T1 local read-only composer closure only; no T2 implementation, UI, provider/live, state mutation, public-sync, outside-source absorption, or production readiness",
+            "Q4": "parkedOrBlockedConditions contains one sentence describing the CURRENT SESSION's next move (ODVR-T2 worker instructions), not a parked/reopen condition for the ODVR-T1 lane itself",
+            "Q5": "canonicalNextAllowedMove returns the CURRENT SESSION's next move (ODVR-T2 dispatch text), not the lane-specific nextAllowedMove recorded on the odvrT1Closure20260712 entry itself",
+            "Q6": "FIELD ABSENT - the T0 schema has no publicExportDisposition (or equivalent) property; this question cannot be answered from composed output at all",
+            "Q7": "CURRENT"
+          }
+        }
+      ],
+      "factComparison": {
+        "Q1": "MATCH",
+        "Q2": "MATCH",
+        "Q3": "MISMATCH - composed claimBoundary is a shorter state-entry summary, not the canonical completion-review Claim Boundary answer; semantic similarity does not satisfy exact fact preservation",
+        "Q4": "MISMATCH - composed output substitutes the current session's next-move prose for a lane-scoped parked/reopen answer; MANUAL correctly reports N/A for this closed lane",
+        "Q5": "MISMATCH - composed output returns the global session nextAllowedMove, not the lane-level nextAllowedMove that MANUAL reads directly from the cited state entry",
+        "Q6": "FACT_LOST - composed output has no field to answer Q6 at all; MANUAL answer (DEFERRED_PRIVATE_ONLY) is unavailable from the composed JSON",
+        "Q7": "MATCH"
+      },
+      "factsPreserved": 3,
+      "factsTotal": 7,
+      "manualStepCount": 4,
+      "manualFilesRead": 3,
+      "composedStepCount": 1,
+      "composedFilesRead": 0
+    },
+    {
+      "scenarioId": "scenario2_parked_reopen_lane_mao_live",
+      "description": "MAO-LIVE-T1 value pilot, REVIEWER_ACCEPTED_VALUE_NOT_PROVEN with an explicit five-condition reopen gate (parked/reopen lane).",
+      "canonicalExpectedAnswers": {
+        "Q1": "REVIEWER_ACCEPTED_VALUE_NOT_PROVEN",
+        "Q2": "docs/roadmaps/CVF_MAO_LIVE_PROVIDER_ADAPTER_VALUE_PILOT_ROADMAP_2026-07-12.md at material commit 75f5c0b90 (per maoLiveT1Closure20260712 entry text)",
+        "Q3": "Decision-first live pilot planning only; no live MAO adapter or value claim yet.",
+        "Q4": "Parked - roadmap closed; reopen requires all 5 conditions in 'Concrete reopen condition': (1) accepted benchmark/receipt shows candidate task scores <=80/100 or one rubric-defined material defect, (2) predeclared independent-review hypothesis naming a detectable/correctable defect class, (3) >=10-point independently recomputed quality gain or defect correction with no secret/policy/receipt-completeness regression, (4) one provider lane, <=4 calls, <=1 revision, <=50% latency-overhead ceiling, (5) operator explicit approval of fresh GC-018 and work order",
+        "Q5": "Roadmap closed. Do not continue MAO live investment unless a materially harder task and measurable reopen hypothesis receive fresh operator authorization.",
+        "Q6": "DEFERRED_PRIVATE_ONLY",
+        "Q7": "CURRENT (roadmap Status line and closure state entry agree; no drift)"
+      },
+      "expectedAnswerSourceAnchors": {
+        "Q1": "docs/roadmaps/CVF_MAO_LIVE_PROVIDER_ADAPTER_VALUE_PILOT_ROADMAP_2026-07-12.md#Status",
+        "Q2": "CVF_SESSION/state/entries/maoLiveT1Closure20260712.json (value string names commit 75f5c0b90)",
+        "Q3": "docs/roadmaps/CVF_MAO_LIVE_PROVIDER_ADAPTER_VALUE_PILOT_ROADMAP_2026-07-12.md##Claim Boundary",
+        "Q4": "docs/roadmaps/CVF_MAO_LIVE_PROVIDER_ADAPTER_VALUE_PILOT_ROADMAP_2026-07-12.md##Next Allowed Move (Concrete reopen condition list, 5 items)",
+        "Q5": "docs/roadmaps/CVF_MAO_LIVE_PROVIDER_ADAPTER_VALUE_PILOT_ROADMAP_2026-07-12.md##Next Allowed Move",
+        "Q6": "docs/roadmaps/CVF_MAO_LIVE_PROVIDER_ADAPTER_VALUE_PILOT_ROADMAP_2026-07-12.md##Public Export Disposition",
+        "Q7": "roadmap Status line cross-checked against maoLiveT1Closure20260712 entry text"
+      },
+      "traces": [
+        {
+          "pathKind": "MANUAL",
+          "rawEvents": [
+            { "seq": 1, "action": "FILE_READ", "target": "docs/roadmaps/CVF_MAO_LIVE_PROVIDER_ADAPTER_VALUE_PILOT_ROADMAP_2026-07-12.md", "purpose": "Status, Claim Boundary, Next Allowed Move, Concrete reopen condition, Public Export Disposition" },
+            { "seq": 2, "action": "FILE_READ", "target": "CVF_SESSION/state/entries/maoLiveRoadmapProposed20260712.json", "purpose": "cross-check roadmap proposal state" },
+            { "seq": 3, "action": "FILE_READ", "target": "CVF_SESSION/state/entries/maoLiveT1Dispatch20260712.json", "purpose": "cross-check dispatch state" },
+            { "seq": 4, "action": "FILE_READ", "target": "CVF_SESSION/state/entries/maoLiveT1Closure20260712.json", "purpose": "cross-check closure state and material commit" }
+          ],
+          "stepCount": 4,
+          "filesRead": 4,
+          "elapsedMs": 0.343,
+          "answers": {
+            "Q1": "REVIEWER_ACCEPTED_VALUE_NOT_PROVEN",
+            "Q2": "docs/roadmaps/CVF_MAO_LIVE_PROVIDER_ADAPTER_VALUE_PILOT_ROADMAP_2026-07-12.md at material commit 75f5c0b90",
+            "Q3": "Decision-first live pilot planning only; no live MAO adapter or value claim yet.",
+            "Q4": "Parked with 5 explicit reopen conditions (benchmark score/defect, predeclared hypothesis, quality-gain threshold, call/lane/latency ceilings, operator approval)",
+            "Q5": "Roadmap closed. Do not continue MAO live investment unless a materially harder task and measurable reopen hypothesis receive fresh operator authorization.",
+            "Q6": "DEFERRED_PRIVATE_ONLY",
+            "Q7": "CURRENT"
+          }
+        },
+        {
+          "pathKind": "COMPOSED",
+          "rawEvents": [
+            { "seq": 1, "action": "FILE_READ", "target": "CVF_SESSION/state/entries/maoLiveRoadmapProposed20260712.json", "purpose": "load raw entry for injected composer input" },
+            { "seq": 2, "action": "FILE_READ", "target": "CVF_SESSION/state/entries/maoLiveT1Dispatch20260712.json", "purpose": "load raw entry for injected composer input" },
+            { "seq": 3, "action": "FILE_READ", "target": "CVF_SESSION/state/entries/maoLiveT1Closure20260712.json", "purpose": "load raw entry for injected composer input" },
+            { "seq": 4, "action": "COMPOSER_CALL", "target": "run_odvr_readout.build_odvr_readout (injected ComposerInputs scoped to the 3 MAO-LIVE entries)", "purpose": "compose readout for this lane; the committed CLI has no lane-scoping parameter, so the pure composer is invoked directly with only this lane's entries, per the work order's explicit allowance to use 'the committed helper/CLI or its injected composer'" }
+          ],
+          "stepCount": 4,
+          "filesRead": 3,
+          "elapsedMs": 0.267,
+          "composedOutput": {
+            "contractVersion": "cvf.odvrT0.readoutContract.doc.v1",
+            "currentMode": "UNKNOWN",
+            "activeHandoff": "UNKNOWN",
+            "latestMaterialDecision": {
+              "artifactPath": "CVF_SESSION/state/entries/*.json (no eligible entry)",
+              "status": "UNKNOWN",
+              "materialCommit": "00000000",
+              "stateOrder": 0
+            },
+            "terminalValueVerdict": null,
+            "claimBoundary": "UNKNOWN",
+            "canonicalNextAllowedMove": "UNKNOWN",
+            "sourceAnchors": [
+              "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+              "CVF_SESSION/state/entries/*.json (no eligible entry)"
+            ],
+            "aggregateFreshness": "MISSING_SOURCE",
+            "missingSourceAnchor": "CVF_SESSION/state/entries/*.json (no eligible entry)"
+          },
+          "answers": {
+            "Q1": "UNKNOWN (status field literally 'UNKNOWN')",
+            "Q2": "UNKNOWN (artifactPath is a diagnostic placeholder, not a real path; materialCommit is a placeholder '00000000')",
+            "Q3": "UNKNOWN (claimBoundary field literally 'UNKNOWN')",
+            "Q4": "UNKNOWN - no reopenCondition field populated; missingSourceAnchor names only the entries glob, not the reopen condition text",
+            "Q5": "UNKNOWN (canonicalNextAllowedMove field literally 'UNKNOWN')",
+            "Q6": "FIELD ABSENT - no publicExportDisposition property exists in the schema at all",
+            "Q7": "MISSING_SOURCE (correctly signals the composer could not resolve a lane owner for these three string-valued entries)"
+          }
+        }
+      ],
+      "factComparison": {
+        "Q1": "FACT_LOST - composed answer is UNKNOWN; MANUAL correctly reports REVIEWER_ACCEPTED_VALUE_NOT_PROVEN",
+        "Q2": "FACT_LOST - composed answer is a placeholder; MANUAL correctly reports the roadmap path and commit 75f5c0b90",
+        "Q3": "FACT_LOST - composed answer is UNKNOWN; MANUAL correctly quotes the roadmap's Claim Boundary",
+        "Q4": "FACT_LOST - none of the 5 reopen conditions are recoverable from the composed output",
+        "Q5": "FACT_LOST - composed answer is UNKNOWN; MANUAL correctly quotes the Next Allowed Move text",
+        "Q6": "FACT_LOST - no schema field exists to carry this answer under any composer result",
+        "Q7": "MATCH_BY_FAIL_CLOSED_DESIGN - MISSING_SOURCE is the contractually correct signal for an out-of-eligibility-shape entry set, so this one question is answerable, but only as 'the composer cannot answer', not as a fact"
+      },
+      "factsPreserved": 0,
+      "factsTotal": 7,
+      "manualStepCount": 4,
+      "manualFilesRead": 4,
+      "composedStepCount": 4,
+      "composedFilesRead": 3
+    }
+  ],
+  "recomputationNotes": "Every stepCount/filesRead value above is directly recountable from the rawEvents array in the same trace (stepCount = len(rawEvents); filesRead = count of FILE_READ actions). elapsedMs values were captured with time.perf_counter() around exactly the listed actions and are reported for information only; per the work order, elapsed time cannot override a file/step/fact failure.",
+  "secretsScanNote": "All composed outputs and this receipt were scanned for api_key, apikey, secret, password, bearer, access_token (case-insensitive); none present."
+}
