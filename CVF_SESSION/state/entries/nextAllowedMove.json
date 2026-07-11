@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "MAO-T2 is DISPATCH_READY at material commit 570cd6452. Next allowed move is one delegated WORKER_MUST_NOT_COMMIT execution from the actual clean post-sync HEAD, producing exactly four owned outputs. Provider invocation, adapter, queue, UI, workspace/session mutation, public-sync, root-barrel changes, MAO-T3+, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "MAO-T2 is REVIEWER_ACCEPTED_BOUNDED at material commit 854bb3a92. Next allowed move is fresh MAO-T3 GC-018 and source-verified work-order authoring only. MAO-T3 implementation, provider invocation, queue, UI, workspace runtime, public-sync, and production claims remain unauthorized until a reviewed dispatch packet exists. LHW24 remains latest closed numbered LHW wave."
 }

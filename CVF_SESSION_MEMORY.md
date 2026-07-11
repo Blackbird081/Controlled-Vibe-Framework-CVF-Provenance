@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t2_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T2 WORKER_MUST_NOT_COMMIT execution from clean post-sync HEAD; parked checkpoint=provider/integration, MAO-T3+, broader MAO runtime, L4, T3B, R73F, R84 effectiveness.
+Startup acknowledged: current mode=`mao_t2_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T3 GC-018 and source-verified work-order authoring only; parked checkpoint=MAO-T3 implementation, provider integration, broader runtime, public work, L4, T3B, R73F, R84 effectiveness.
 
 ## Current Mode
 
-Current mode marker: `mao_t2_dispatched`
+Current mode marker: `mao_t2_closed`
 
-Current mode: `mao_t2_dispatched`
+Current mode: `mao_t2_closed`
 
-`mao_t2_dispatched`
+`mao_t2_closed`
 
 Previous mode:
 
-`mao_t1_closed`
+`mao_t2_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T2 risk-based role resolver closure | `854bb3a92` | REVIEWER_ACCEPTED_BOUNDED after semantic repairs; 22/22 tests, typecheck, GC-051 and 82/82 pre-commit pass. |
 | MAO-T2 risk-based role resolver dispatch | `570cd6452` | DISPATCH_READY; four exact outputs; worker must not commit; no provider invocation. |
 | MAO-T1 task graph/state foundation closure | `01618e9dc` | REVIEWER_ACCEPTED_BOUNDED; 39/39 focused tests, typecheck, GC-051 coverage, and 82/82 pre-commit checks pass. |
 | MAO-T1 task graph/state foundation dispatch | `6383e8180` | DISPATCH_READY; six exact worker outputs; worker must not commit. |
@@ -105,11 +106,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t2_dispatched`
+Mode: `mao_t2_closed`
 
-MAO-T2 is dispatch-ready at `570cd6452`. Next allowed move is one delegated
-worker execution from the actual clean post-sync HEAD, producing exactly four
-owned outputs without committing. Provider invocation and MAO-T3+ remain unauthorized.
+MAO-T2 is reviewer-accepted bounded at `854bb3a92`. Next allowed move is fresh
+MAO-T3 GC-018 and source-verified work-order authoring only. MAO-T3
+implementation and provider invocation remain unauthorized.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 
