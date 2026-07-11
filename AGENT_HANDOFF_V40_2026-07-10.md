@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_asc_as_built_architecture_catalog_roadmap_proposed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=external reviewer critique of the ASC roadmap, then internal verification before ASC-T0; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_asc_roadmap_external_critique_classified`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh GC-018 and work order for ASC-T0 only; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_asc_as_built_architecture_catalog_roadm
 
 ## Current Mode
 
-`msea_asc_as_built_architecture_catalog_roadmap_proposed`
+`msea_asc_roadmap_external_critique_classified`
 
 ## Latest Work / Changes
 
@@ -1080,6 +1080,26 @@ Protected paths: `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V40_2026-07-10.md`;
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 Operator authorization: create the detailed roadmap. Rollback boundary: revert
 only this sync; retain `027ead038`.
+
+## MSEA-ASC External Critique Classification - 2026-07-11
+
+Material commit: `6485fc7ad`. Ten findings were accepted or calibrated and
+folded. Next move is ASC-T0 packet authoring only; implementation is not yet
+authorized.
+
+## Core Guard Self-Protection Authorization - MSEA-ASC Critique Session Sync
+
+Authorized scope: session-sync after `6485fc7ad`.
+
+Protected paths: `AGENT_HANDOFF_V40_2026-07-10.md`;
+`CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/mseaAscRoadmapExternalCritiqueClassified20260711.json`.
+
+Operator authority: review Claude rebuttal. Rollback only this sync; retain
+`6485fc7ad`.
 
 ## Claim Boundary
 

@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_asc_as_built_architecture_catalog_roadmap_proposed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=external reviewer critique of the ASC roadmap, then internal source verification before ASC-T0; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_asc_roadmap_external_critique_classified`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh GC-018 and work order for ASC-T0 only; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Current Mode
 
-Current mode marker: `msea_asc_as_built_architecture_catalog_roadmap_proposed`
+Current mode marker: `msea_asc_roadmap_external_critique_classified`
 
-Current mode: `msea_asc_as_built_architecture_catalog_roadmap_proposed`
+Current mode: `msea_asc_roadmap_external_critique_classified`
 
-`msea_asc_as_built_architecture_catalog_roadmap_proposed`
+`msea_asc_roadmap_external_critique_classified`
 
 Previous mode:
 
-`msea_r99_l1_system_definition_owner_design_closed`
+`msea_asc_as_built_architecture_catalog_roadmap_proposed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-ASC external critique classification and fold | `6485fc7ad` | REVIEWER_ACCEPTED_BOUNDED. Ten findings accepted/calibrated; roadmap ready for ASC-T0 packet authoring only. |
 | MSEA-ASC as-built architecture and system catalog roadmap | `027ead038` | PROPOSED. Machine catalog, proof-class edge graph, indexed gap README/JSON, human front door, freshness/admission controls, and independent critique sequence. |
 | MSEA-R99 L1 system-definition owner design closure | `ea57cc634` | REVIEWER_ACCEPTED_BOUNDED. Compact pointer owner created; L1 path/authority/freeze boundaries retained; freshness CURRENT. |
 | MSEA-R99 L1 system-definition owner design dispatch | `31ed30db8` | DISPATCH_READY. Create one compact pointer owner and reconcile L1 route/freshness; no doctrine or legacy mutation. |
@@ -93,13 +94,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_asc_as_built_architecture_catalog_roadmap_proposed`
+Mode: `msea_asc_roadmap_external_critique_classified`
 
-Next allowed move: obtain external reviewer critique of the proposed MSEA-ASC
-roadmap, then internally source-verify and fold or reject each finding. Only
-after that review may ASC-T0 receive a fresh GC-018 and work order. L4 is
-VALUE_PARKED_WITH_REOPEN_CONDITIONS. Latest closed numbered LHW wave remains
-`LHW24`.
+Next allowed move: author a fresh GC-018 baseline and work order for ASC-T0
+only. External critique is classified and folded. No ASC-T1+ implementation is
+authorized. L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. Latest closed
+numbered LHW wave remains `LHW24`.
 
 Multi-Agent Orchestration Runtime Foundation is
 `VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,

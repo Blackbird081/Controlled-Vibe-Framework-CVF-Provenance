@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "The MSEA-ASC As-Built Architecture And System Catalog roadmap is PROPOSED at commit 027ead038. Next allowed move is external reviewer critique of the roadmap, followed by internal source verification and fold/reject decisions. Only after critique may a fresh GC-018 and work order be authored for ASC-T0. L4 is VALUE_PARKED_WITH_REOPEN_CONDITIONS. LHW24 remains latest closed numbered LHW wave."
+  "value": "The MSEA-ASC external critique is internally classified and folded at commit 6485fc7ad. Ten findings are accepted or calibrated; freshness topology, current R98/R99 lineage, determinism, admission, verification classes, and projection boundaries are now explicit. Next allowed move is author a fresh GC-018 baseline and work order for ASC-T0 only. L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. LHW24 remains latest closed numbered LHW wave."
 }
