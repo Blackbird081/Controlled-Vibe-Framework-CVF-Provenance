@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1643,
+  "stateKey": "maoT8PilotDispatch20260711",
+  "value": "MAO-T8 Representative End-To-End Pilot is DISPATCH_READY at material commit 23d1b23ce from base 47ed44b12. Fresh selection checkpoint chooses MAO-T8-LOCAL-STALE-READOUT-REPAIR with proof class DETERMINISTIC_LOCAL_CONTRACT_PROOF and provider disposition NO_PROVIDER_LOCAL_ONLY. Worker owns exactly five outputs: representative.pilot.contract.ts, its focused test, bounded mao/index.ts exports, the T8 pilot evidence packet, and the T8 worker return. WORKER_MUST_NOT_COMMIT. Pre-dispatch autorun PASS 75/75, dispatch commit steward PASS, and pre-commit PASS 82/82. T9 remains dependency-held; no provider, network, UI, public-sync, durable queue, or production claim is authorized."
+}

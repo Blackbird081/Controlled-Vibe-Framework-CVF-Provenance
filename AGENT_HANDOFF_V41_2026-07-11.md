@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t7_closed_awaiting_t8_pilot_selection`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T8 pilot-selection checkpoint naming one real bounded task and proof class; parked checkpoint=MAO-T8 execution, T9, provider/network, UI/public, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t8_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T8 no-commit execution producing exactly five outputs; parked checkpoint=MAO-T9, provider/network, UI/public, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t7_closed_awaiting_t8_pilot_selection`
+`mao_t8_dispatched`
 
 ## Latest Work / Changes
 
@@ -226,6 +226,41 @@ Protected paths:
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
+
+## MAO-T8 Representative Pilot Dispatch
+
+Dispatch material HEAD: `23d1b23ce`.
+
+Selected pilot: `MAO-T8-LOCAL-STALE-READOUT-REPAIR`.
+
+Proof class: `DETERMINISTIC_LOCAL_CONTRACT_PROOF`.
+
+Provider disposition: `NO_PROVIDER_LOCAL_ONLY`.
+
+The worker must start from the clean post-sync HEAD, read the selection
+checkpoint and T8 work order, create exactly five manifest outputs, run focused
+Vitest/typecheck and worker-return fast gate, leave all changes uncommitted, and
+return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. T9 remains held.
+
+Session-sync parent HEAD: `23d1b23ce`.
+
+## Core Guard Self-Protection Authorization - MAO-T8 Dispatch Sync
+
+Operator authorization: select and release the next MAO pilot, then preserve
+governed continuity in a separate session-sync commit.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/maoT8PilotDispatch20260711.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this session-sync batch; retain MAO-T8 dispatch
+commit `23d1b23ce`.
 
 ## MAO-T7 Closure And T8 Pilot-Selection Checkpoint
 

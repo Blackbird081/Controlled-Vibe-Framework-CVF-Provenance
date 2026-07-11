@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t7_closed_awaiting_t8_pilot_selection`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T8 pilot-selection checkpoint naming one real bounded task and proof class; parked checkpoint=MAO-T8 execution, T9, provider/network, UI and public work.
+Startup acknowledged: current mode=`mao_t8_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T8 WORKER_MUST_NOT_COMMIT execution producing exactly five outputs; parked checkpoint=MAO-T9, provider/network, UI and public work.
 
 ## Current Mode
 
-Current mode marker: `mao_t7_closed_awaiting_t8_pilot_selection`
+Current mode marker: `mao_t8_dispatched`
 
-Current mode: `mao_t7_closed_awaiting_t8_pilot_selection`
+Current mode: `mao_t8_dispatched`
 
-`mao_t7_closed_awaiting_t8_pilot_selection`
+`mao_t8_dispatched`
 
 Previous mode:
 
-`mao_t7_dispatched`
+`mao_t7_closed_awaiting_t8_pilot_selection`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T8 representative pilot dispatch | `23d1b23ce` | DISPATCH_READY; local stale-readout repair pilot, exactly five outputs, no provider and no worker commit. |
 | MAO-T7 evidence/readout closure | `2ae63592e` | REVIEWER_ACCEPTED_BOUNDED after cross-graph admission repair; 35/35 tests and typecheck PASS. |
 | MAO-T6 lifecycle/recovery closure | `ee5a1a400` | REVIEWER_ACCEPTED_BOUNDED; 58/58 tests and typecheck PASS. |
 | MAO-T5 closer/interlock closure | `9b225f0e4` | REVIEWER_ACCEPTED_BOUNDED; 54/54 tests and typecheck PASS. |
@@ -114,11 +115,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t7_closed_awaiting_t8_pilot_selection`
+Mode: `mao_t8_dispatched`
 
-MAO-T7 is accepted at `2ae63592e`. Next allowed move is a fresh MAO-T8
-pilot-selection checkpoint naming one real bounded task and proof class. T8
-execution is not released by chat history alone.
+MAO-T8 pilot is dispatch-ready at `23d1b23ce`. Next allowed move is one
+delegated local worker execution from clean post-sync HEAD producing exactly
+five outputs without commit. T9 remains held.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 
