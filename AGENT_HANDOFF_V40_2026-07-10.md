@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r94_t1b_gateway_helper_ownership_disposition_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author fresh R94-T1C packet for GC-012/013 without implementation; parked checkpoint=T2-T4, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
+Startup acknowledged: current mode=`msea_r94_remaining_wave_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute integrated T1C/T2/T3A/T4-readiness packet without commit; parked checkpoint=T3B, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r94_t1b_gateway_helper_ownership_dispos
 
 ## Current Mode
 
-`msea_r94_t1b_gateway_helper_ownership_disposition_closed`
+`msea_r94_remaining_wave_dispatched`
 
 ## Latest Work / Changes
 
@@ -737,6 +737,34 @@ is authorized before that packet passes pre-dispatch.
 
 Rollback boundary: revert only this closure session-sync; do not revert
 material commit `3c5e87d7b` or unrelated R94 work.
+
+## MSEA-R94 Remaining-Wave Dispatch - 2026-07-11
+
+Dispatch commit: `685f571bb`. One `WORKER_MUST_NOT_COMMIT` execution covers
+T1C, T2, T3A, and T4 readiness. Worker owns only the four paths named by the
+work order. T3B, runtime, UI, tests, checkers, providers, public-sync, commits,
+and session mutation remain forbidden.
+
+## Core Guard Self-Protection Authorization - MSEA-R94 Remaining-Wave Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync only after dispatch commit
+`685f571bb`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to integrated worker execution. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record remaining-wave dispatch. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set dispatched mode. |
+| `CVF_SESSION/state/entries/mseaR94RemainingWaveDispatch20260711.json` | Record dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route exact worker execution. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: batch remaining R94 documentation/read-model phases.
+
+Rollback boundary: revert only this sync; do not revert `685f571bb`.
 
 ## Core Guard Self-Protection Authorization - MSEA-R94-T1B Closure Session Sync
 

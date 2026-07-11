@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "MSEA-R94-T1B closed REVIEWER_ACCEPTED_BOUNDED at material commit 3c5e87d7b. GC-009 and GC-010 are CLAIM_DOWNGRADED_WITH_REASON: implemented and tested, with no proven production caller or active package export. Next allowed move is authoring a fresh source-verified R94-T1C GC-018/work-order packet for GC-012 and GC-013 semantic/test evidence correction. Do not edit those matrix rows, runtime, or tests and do not dispatch implementation before the packet passes pre-dispatch. T2-T4, R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "MSEA-R94 remaining-wave packet is DISPATCH_READY at material commit 685f571bb. Next allowed move is one WORKER_MUST_NOT_COMMIT execution covering T1C, T2, T3A, and T4 readiness under the integrated work order. The worker may edit only the four named paths and must return one phase-ledger COMPLETE_PENDING_REVIEW packet. T3B, runtime, UI, tests, checkers, providers, public-sync, commits, and session mutation remain forbidden. R73F, R84 effectiveness, absorption-trigger hardening, and Multi-Agent Orchestration Runtime Foundation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
