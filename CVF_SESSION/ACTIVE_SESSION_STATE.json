@@ -80,8 +80,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "msea_r97_l6_examples_inventory_alignment_dispatched",
-  "previousMode": "msea_r96_doctrine_route_gap_reconciliation_closed",
+  "currentMode": "msea_r97_l6_examples_inventory_alignment_closed",
+  "previousMode": "msea_r97_l6_examples_inventory_alignment_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -10559,7 +10559,7 @@
   "mseaR87InteractiveOperatorWorkspaceInitializerClosure20260710": "CLOSED_PASS_BOUNDED_AND_PUBLIC_SYNCED. Provenance material commit b3004069d adds Initialize-CVF-Operator-Workspace.ps1, agent autorun routing, an internal workflow, fail-closed profile/path/remote/dirty-core boundaries, and an accepted authorization review. Public commit a78b35c9d makes WORKSPACE_RULES.md a required and create-if-missing root artifact. Proof passed for interactive menu plan, non-interactive existing operator-local refresh, disposable fresh public-free install, disposable fresh operator-local install with 28 artifacts, workspace enforcement, blocked operator-local in-place downgrade, and blocked non-empty new target. The actual operator workspace is refreshed to public core a78b35c9d and operator-local source b3004069d. No runtime/provider/live or downstream application behavior changed.",
   "mseaR88DoubleClickWorkspaceSetupWizardClosure20260710": "CLOSED_PASS_BOUNDED. Provenance material commit b7d0e818d adds START_CVF_WORKSPACE_SETUP.cmd and a three-step WinForms wizard to the existing initializer. The user double-clicks one launcher, selects operator-local, paid-user-safe, or public-free, chooses a folder, reviews the summary, and starts setup. The launcher uses Windows PowerShell STA plus execution-policy bypass. GUI render smoke and launcher-route smoke passed; non-interactive plan regression passed. The implementation reuses the R87 setup engine and does not add a second installation path. Public repo behavior is unchanged from a78b35c9d.",
   "mseaR89WorkspaceUpdateAssessmentUserSelectedRefreshClosure20260710": "CLOSED_PASS_BOUNDED. Provenance material commit 17362cf7d adds read-only workspace assessment and explicit Check, Update, or Create selection to the double-click wizard. Check covers approved remotes, hidden-core and provenance revisions, active profile, filtered non-local source changes, materialized hashes, and required root files. Existing-workspace actions preserve the active profile; profile selection is available only for Create. GUI and launcher smoke tests, parser checks, synthetic filtered-drift proof, actual CURRENT assessment, full operator-local update, and workspace enforcement passed. The actual operator workspace remains on public core a78b35c9d with operator-local materialized from 17362cf7d. No public repository change was required.",
-  "nextAllowedMove": "MSEA-R97 L6 Examples Inventory Alignment is DISPATCH_READY at commit 6eea64bf5. Next allowed move is bounded single-agent multi-role implementation and closure of the R97 work order: add exactly one EXTENSIONS/examples module-inventory row, retain L6 PARTIAL_OWNER_WITH_GAP, refresh the existing R91 fingerprint, and split material/session commits. No example move, consolidation, doctrine edit, runtime, public-sync, provider, or MAO work is authorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R97 L6 Examples Inventory Alignment is REVIEWER_ACCEPTED_BOUNDED at material commit 8295f5534 under an explicit single-agent self-review boundary; independent review is not claimed. EXTENSIONS/examples is now inventoried as active-reference with 13 tracked files. L6 remains PARTIAL_OWNER_WITH_GAP because responsibility is distributed and root-path alignment/consolidation remain open. R91 freshness is CURRENT. Next allowed move is fresh L2 doctrine-ratification decision packet authoring or another governed lane. L1 owner design and L4 promotion remain parked. LHW24 remains latest closed numbered LHW wave.",
   "mseaR90SystemChainAuditAClosure20260710": "REVIEWER_ACCEPTED_BOUNDED at material commit 645df8b83. Audit A closes five bounded doctrine-to-operator chain lanes with a 31-record deterministic manifest, twelve evidence-path dispositions, nine registry-invoked cross-family checker records, and a GC-051 corpus registry entry. Contract-to-runtime remains partial for sampled rows; CLI per-checker output exists while unified Web inventory is not proven. R72F lifecycle hold remains unchanged. No Deliverable B, freshness implementation, advisory-directory relocation, runtime/checker/hook mutation, public sync, or lifecycle re-decision occurred.",
   "mseaR91SystemChainMapFreshnessDispatch20260710": "DISPATCH_READY at commit 4b5b02f7c. The source-verified GC-018 and work order authorize Claude under WORKER_MUST_NOT_COMMIT to build the stable system-chain map from accepted MSEA-R90 evidence, add a deterministic source-fingerprint and age freshness checker, wire local autorun and hook catalogs plus documentation CI and a weekly read-only reminder, correct confirmed stale owner paths, add tests and GC-051 registration, and return the exact worker-owned changed set. Web/runtime/provider/public/session changes, advisory-directory relocation, and R72F lifecycle re-decision remain excluded.",
   "mseaR91SystemChainMapFreshnessClosure20260710": "REVIEWER_ACCEPTED_BOUNDED at material commit 017ae9718. MSEA-R91 closes the canonical five-lane human and machine system-chain map, 25 lane fingerprints plus 3 required top-level authority fingerprints, a 30-day governed review ceiling, read-only local and documentation-CI enforcement, a weekly reminder workflow, 17 focused tests, eleven corrected stale citations plus one honest missing-artifact disposition, and GC-051 registration. Semantic verdicts are never auto-rewritten. Web, runtime, provider, public, session-product, advisory relocation, and R72F/R73F lifecycle changes remain outside the material closure.",
@@ -10775,5 +10775,17 @@
     "route": "SINGLE_AGENT_MULTI_ROLE",
     "nextAllowedMove": "execute and close bounded R97 material scope",
     "claimBoundary": "one inventory row and L6 freshness alignment only"
+  },
+  "mseaR97L6ExamplesInventoryAlignmentClosure20260711": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-11",
+    "materialCommit": "8295f5534",
+    "completionReview": "docs/reviews/CVF_MSEA_R97_L6_EXAMPLES_INVENTORY_ALIGNMENT_COMPLETION_2026-07-11.md",
+    "reviewBoundary": "SINGLE_AGENT_MULTI_ROLE_SELF_REVIEW_INDEPENDENCE_NOT_CLAIMED",
+    "trackedFiles": 13,
+    "l6Disposition": "PARTIAL_OWNER_WITH_GAP",
+    "freshnessState": "CURRENT",
+    "nextAllowedMove": "fresh L2 doctrine-ratification decision packet or another governed lane",
+    "claimBoundary": "inventory omission removed; L6 not closed and no consolidation/doctrine/runtime/public action"
   }
 }

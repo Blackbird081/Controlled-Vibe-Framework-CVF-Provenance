@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_r97_l6_examples_inventory_alignment_dispatched",
+  "currentMode": "msea_r97_l6_examples_inventory_alignment_closed",
   "activeHandoff": "AGENT_HANDOFF_V40_2026-07-10.md",
-  "nextAllowedMove": "MSEA-R97 L6 Examples Inventory Alignment is DISPATCH_READY at commit 6eea64bf5. Next allowed move is bounded single-agent multi-role implementation and closure of the R97 work order: add exactly one EXTENSIONS/examples module-inventory row, retain L6 PARTIAL_OWNER_WITH_GAP, refresh the existing R91 fingerprint, and split material/session commits. No example move, consolidation, doctrine edit, runtime, public-sync, provider, or MAO work is authorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MSEA-R97 L6 Examples Inventory Alignment is REVIEWER_ACCEPTED_BOUNDED at material commit 8295f5534 under an explicit single-agent self-review boundary; independent review is not claimed. EXTENSIONS/examples is now inventoried as active-reference with 13 tracked files. L6 remains PARTIAL_OWNER_WITH_GAP because responsibility is distributed and root-path alignment/consolidation remain open. R91 freshness is CURRENT. Next allowed move is fresh L2 doctrine-ratification decision packet authoring or another governed lane. L1 owner design and L4 promotion remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

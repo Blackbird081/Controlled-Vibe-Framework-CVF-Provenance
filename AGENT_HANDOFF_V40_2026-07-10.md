@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r97_l6_examples_inventory_alignment_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute and close the bounded R97 single-agent multi-role packet; parked checkpoint=L2 ratification, L1 owner design, L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`msea_r97_l6_examples_inventory_alignment_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh L2 doctrine-ratification decision packet or select another governed lane; parked checkpoint=L1 owner design, L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r97_l6_examples_inventory_alignment_dis
 
 ## Current Mode
 
-`msea_r97_l6_examples_inventory_alignment_dispatched`
+`msea_r97_l6_examples_inventory_alignment_closed`
 
 ## Latest Work / Changes
 
@@ -958,6 +958,31 @@ Protected paths:
 
 Operator authorization: handle L6 directly. Rollback boundary: revert only
 this sync; retain `6eea64bf5`.
+
+## MSEA-R97 L6 Examples Inventory Alignment Closure - 2026-07-11
+
+Material commit: `8295f5534`. One active-reference inventory row was added for
+13 tracked example files. L6 remains `PARTIAL_OWNER_WITH_GAP`; R91 freshness is
+CURRENT. Single-agent self-review was used; independent review is not claimed.
+
+## Core Guard Self-Protection Authorization - MSEA-R97 Closure Session Sync
+
+Authorized guard-maintenance scope: session-sync after `8295f5534`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup after R97 closure. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record closure and material HEAD. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set closed mode. |
+| `CVF_SESSION/state/entries/mseaR97L6ExamplesInventoryAlignmentClosure20260711.json` | Record closure evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route next bounded decision. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: handle and close L6 directly. Rollback boundary:
+revert only this sync; retain `8295f5534`.
 
 ## Claim Boundary
 
