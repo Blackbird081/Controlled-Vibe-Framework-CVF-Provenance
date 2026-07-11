@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t0_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T1 GC-018/work-order authoring only; parked checkpoint=MAO-T1 implementation, broader MAO runtime, L4 promotion, T3B, R73F, and R84 effectiveness.
+Startup acknowledged: current mode=`mao_t1_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=delegated worker captures clean post-sync HEAD and executes MAO-T1 without committing; parked checkpoint=MAO-T2+, provider/integration, broader MAO runtime, L4, T3B, R73F, R84 effectiveness.
 
 ## Current Mode
 
-Current mode marker: `mao_t0_closed`
+Current mode marker: `mao_t1_dispatched`
 
-Current mode: `mao_t0_closed`
+Current mode: `mao_t1_dispatched`
 
-`mao_t0_closed`
+`mao_t1_dispatched`
 
 Previous mode:
 
-`mao_t0_dispatched`
+`mao_t0_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T1 task graph/state foundation dispatch | `6383e8180` | DISPATCH_READY; six exact worker outputs; worker must not commit. |
 | MAO-T0 contract/schema foundation closure | `dbe963b03` | REVIEWER_ACCEPTED_BOUNDED; four reference/schema artifacts plus accepted return/review. |
 | MAO-T0 contract foundation dispatch | `f42195d20` | DISPATCH_READY; delegated worker must not commit; five exact outputs. |
 | MAO roadmap critique reconciliation | `d61c3c92c` | REVIEWER_ACCEPTED_BOUNDED; T0 packet authoring released with three caveats. |
@@ -102,11 +103,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t0_closed`
+Mode: `mao_t1_dispatched`
 
-MAO-T0 is accepted at `dbe963b03`. Next allowed move is fresh MAO-T1 GC-018
-and source-verified work-order authoring for task graph/state contract only.
-MAO-T1 implementation and broader runtime remain parked until that packet passes.
+MAO-T1 is dispatch-ready at `6383e8180`. Next allowed move is one delegated
+worker execution after capturing the actual clean post-sync HEAD, producing
+five implementation/test files plus one worker return without committing.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 
