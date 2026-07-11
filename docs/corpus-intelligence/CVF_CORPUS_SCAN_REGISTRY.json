@@ -4867,6 +4867,41 @@
         "MAO workspace state as execution truth (rejected)"
       ],
       "nextScanRecommendation": "Re-scan when a later MAO tranche changes these source surfaces or authorizes bounded integration."
+    },
+    {
+      "id": "mao-t2-risk-role-resolver-source-surfaces",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MAO-T2 risk-based role resolver source surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/mao/",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/mao.role.resolver.contract.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "MAO-T2",
+      "scanDate": "2026-07-11",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MAO_T2_RISK_BASED_ROLE_RESOLVER_WORKER_RETURN_2026-07-11.md",
+      "completionReviewPath": "docs/reviews/CVF_MAO_T2_RISK_BASED_ROLE_RESOLVER_COMPLETION_2026-07-11.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MAO_T2_RISK_BASED_ROLE_RESOLVER_2026-07-11.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "MAO_ROLE_RESOLVER",
+        "MAO_ROLE_RESOLVER_TESTS"
+      ],
+      "priorAbsorption": "MAO-T2 implements a deterministic local control-plane role-admission policy. It does not establish provider, adapter, queue, UI, public, or production authority.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "provider invocation",
+        "production orchestration",
+        "automatic commit authority"
+      ],
+      "nextScanRecommendation": "Re-scan when a later MAO tranche changes resolver semantics or adds a source-verified adapter boundary."
     }
   ]
 }

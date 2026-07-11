@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -10,9 +10,9 @@ Batch: MAO-T2
 
 dispatchBaseHead: `8b9f8f528`
 
-executionBaseHead: capture actual clean post-dispatch-sync HEAD before editing.
+executionBaseHead: `df85d58b3`
 
-closureBaseHead: N/A with reason: reviewer conversion has not occurred.
+closureBaseHead: `df85d58b3`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -124,7 +124,7 @@ provider/public/live action.
 | route conditions and evidence | `docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_CONTRACT.md` | Risk-Based Role Model | `Risk-Based Role Model` | MAO T0 contract | ACCEPT |
 | fan-out ceilings and stop behavior | `docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_CONTRACT.md` | Cost / Token / Latency Controls | `Cost / Token / Latency Controls` | MAO T0 contract | ACCEPT |
 | decision, risk, budget, task fields | `docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_SCHEMA.json` | definitions | `roleResolutionReceipt`, `riskLevel`, `budgetAllocation`, `taskDefinition` | Draft 2020-12 schema | ACCEPT |
-| compiled authority/task input | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.graph.contract.ts` | exports | `MaoCompiledTaskGraph`, `MaoAuthorityEnvelope`, `MaoTaskDefinition` | MAO-T1 task graph contract | ACCEPT |
+| compiled authority/task input | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.graph.contract.ts` | exports | `MaoTaskGraph`, `MaoAuthorityEnvelope`, `MaoTaskDefinition` | MAO-T1 task graph contract | ACCEPT |
 | route tokens and closer ownership | `docs/reference/agent_handoff/README.md` | Ratified Central Core and contract-field index | `route`, `commitOwner(phase)` | Agent Handoff Contract front door | ACCEPT |
 
 ## Current Runtime Freshness Verification
@@ -228,6 +228,17 @@ semantics and may repair only allowed implementation/test paths.
 
 Worker produces exactly four allowed paths and no others.
 
+## Required Artifact Manifest
+
+| Required artifact | Owner | Final evidence | Status |
+|---|---|---|---|
+| role resolver source | worker/reviewer | focused tests and typecheck | PASS |
+| focused resolver test | worker/reviewer | 22/22 PASS | PASS |
+| execution-plane local barrel note | worker | comment-only bounded diff | PASS |
+| worker return | worker | `COMPLETE_PENDING_REVIEW` | PASS |
+| completion review | reviewer | `REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| GC-051 registration | reviewer | generated aggregate and coverage gate | PASS |
+
 ## Worker Return Packet Shape Contract
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
@@ -264,12 +275,12 @@ Agent Operation Trace Block, and actual untracked status.
 
 ## Acceptance Criteria
 
-- [ ] Four resolver decisions are deterministic and carry explicit reasons.
-- [ ] Single-worker is the default and fan-out cannot exceed authority/budget.
-- [ ] High-risk fan-out requires specialist, reviewer, closer, and checkpoint.
-- [ ] Invalid overlap, decomposition, capability, packet, closer, or budget fails closed.
-- [ ] No provider/router/adapter call or provider-specific branch exists.
-- [ ] Focused tests, typecheck, fast gate, and final self-audit pass.
+- [x] Four resolver decisions are deterministic and carry explicit reasons.
+- [x] Single-worker is the default and fan-out cannot exceed authority/budget.
+- [x] High-risk fan-out requires specialist, reviewer, closer, and checkpoint.
+- [x] Invalid overlap, decomposition, capability, packet, closer, or budget fails closed.
+- [x] No provider/router/adapter call or provider-specific branch exists.
+- [x] Focused tests, typecheck, fast gate, and final self-audit pass.
 
 ## Evidence Requirements
 
@@ -292,11 +303,11 @@ Worker stops at `COMPLETE_PENDING_REVIEW`. Reviewer reruns focused tests and
 
 ## Closure Checklist
 
-- [ ] Roadmap trace rows remain satisfied.
-- [ ] Required commands pass after the final edit.
-- [ ] Closure Diff Gate compares roadmap, work order, outputs, and claims.
-- [ ] Changed-set evidence is exact and inside allowed/reviewer-owned scope.
-- [ ] Public export remains deferred and continuity is synced separately.
+- [x] Roadmap trace rows remain satisfied.
+- [x] Required commands pass after the final edit.
+- [x] Closure Diff Gate compares roadmap, work order, outputs, and claims.
+- [x] Changed-set evidence is exact and inside allowed/reviewer-owned scope.
+- [x] Public export remains deferred and continuity is synced separately.
 
 ## Return-To-Orchestrator Conditions
 
@@ -374,13 +385,28 @@ projection packet.
 
 ## Machine Closure Package
 
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | MAO-T2 completion review | `REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | `PROPOSED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated with MAO-T2 entry | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | current companion; no semantic edit required | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | internal source verification only | N/A with reason |
+| System loop interlock | existing system-loop registry | no interlock mutation required | PASS |
+| Session continuity | active front doors | separate post-material sync required | PASS |
+| resolver source | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/mao/role.resolver.contract.ts` | focused tests and typecheck | PASS |
+| focused tests | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/mao.role.resolver.contract.test.ts` | 22/22 PASS | PASS |
+| worker return | `docs/reviews/CVF_MAO_T2_RISK_BASED_ROLE_RESOLVER_WORKER_RETURN_2026-07-11.md` | worker no-commit evidence | PASS |
+| completion review | `docs/reviews/CVF_MAO_T2_RISK_BASED_ROLE_RESOLVER_COMPLETION_2026-07-11.md` | reviewer decision | PASS |
+
 | Field | Value |
 |---|---|
-| Work-order state | `DISPATCH_READY` |
+| Work-order state | `CLOSED_PASS_BOUNDED` |
 | Commit mode | `WORKER_MUST_NOT_COMMIT` |
 | Dependency | MAO-T1 accepted at `01618e9dc` |
 | Worker terminal status | `COMPLETE_PENDING_REVIEW` only |
-| Next action | delegated execution from clean post-sync HEAD |
+| Next action | fresh MAO-T3 GC-018 and source-verified work-order authoring only |
 
 ## Acceptance Receipt Assertion Matrix
 

@@ -2,9 +2,19 @@
 //
 // Stable local barrel for the src/mao/ task-graph/event-ledger/read-model
 // foundation. This file is a LOCAL front door only: it is not imported by
-// the root ../index.ts barrel, not consumed by a provider/resolver/adapter,
-// and not wired to any queue, scheduler, UI, or runtime caller. A future
-// bounded packet may wire root integration; MAO-T1 does not.
+// the root ../index.ts barrel and not wired to any queue, scheduler, UI, or
+// runtime caller. A future bounded packet may wire root integration; MAO-T1
+// does not.
+//
+// MAO-T2 consumer note: the control-plane role resolver
+// (EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/mao/role.resolver.contract.ts)
+// imports MaoTaskGraph, MaoAuthorityEnvelope, MaoTaskDefinition,
+// MaoRiskLevel, and MaoTaskRole directly from ./task.graph.contract (not
+// through this barrel, to avoid adding a barrel-level dependency edge). The
+// dependency direction is control-plane -> execution-plane only, per the
+// MAO contract's Role Resolver Ownership decision: execution-plane owns
+// task-graph/state mechanics; the control-plane resolver owns admission
+// policy and must never be imported back into this module.
 //
 // See docs/reference/multi_agent_orchestration/README.md and
 // docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_CONTRACT.md

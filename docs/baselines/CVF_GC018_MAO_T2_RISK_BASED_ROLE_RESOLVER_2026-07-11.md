@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -10,9 +10,9 @@ Batch: MAO-T2
 
 dispatchBaseHead: `8b9f8f528`
 
-executionBaseHead: capture actual clean post-dispatch-sync HEAD before editing.
+executionBaseHead: `df85d58b3`
 
-closureBaseHead: N/A with reason: pending worker return and reviewer closure.
+closureBaseHead: `df85d58b3`
 
 ## Purpose
 
@@ -71,7 +71,7 @@ budget, closer, source-packet, and checkpoint evidence.
 | resolver ownership and four decisions | `docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_CONTRACT.md` | Role Resolver Ownership | `role resolver` | MAO T0 contract | ACCEPT |
 | risk routes and evidence | `docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_CONTRACT.md` | Risk-Based Role Model | `Risk-Based Role Model` | MAO T0 contract | ACCEPT |
 | risk, budget, task, and receipt fields | `docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_SCHEMA.json` | definitions | `riskLevel`, `budgetAllocation`, `taskDefinition`, `roleResolutionReceipt` | Draft 2020-12 schema | ACCEPT |
-| compiled graph and authority inputs | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.graph.contract.ts` | exported types and compiler | `MaoCompiledTaskGraph`, `MaoAuthorityEnvelope`, `MaoTaskDefinition` | MAO-T1 task graph contract | ACCEPT |
+| compiled graph and authority inputs | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.graph.contract.ts` | exported types and compiler | `MaoTaskGraph`, `MaoAuthorityEnvelope`, `MaoTaskDefinition` | MAO-T1 task graph contract | ACCEPT |
 
 ## Current Runtime Freshness Verification
 
@@ -129,13 +129,28 @@ public-safe projection packet before any export.
 
 ## Machine Closure Package
 
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired MAO-T2 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | MAO-T2 completion review | `REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | `PROPOSED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated with MAO-T2 entry | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | current companion; no semantic edit required | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | internal source verification only | N/A with reason |
+| System loop interlock | existing system-loop registry | no interlock mutation required | PASS |
+| Session continuity | active front doors | separate post-material sync required | PASS |
+| resolver source | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/mao/role.resolver.contract.ts` | focused tests and typecheck | PASS |
+| focused tests | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/mao.role.resolver.contract.test.ts` | 22/22 PASS | PASS |
+| worker return | `docs/reviews/CVF_MAO_T2_RISK_BASED_ROLE_RESOLVER_WORKER_RETURN_2026-07-11.md` | `COMPLETE_PENDING_REVIEW` converted by reviewer | PASS |
+| completion review | `docs/reviews/CVF_MAO_T2_RISK_BASED_ROLE_RESOLVER_COMPLETION_2026-07-11.md` | `REVIEWER_ACCEPTED_BOUNDED` | PASS |
+
 | Field | Value |
 |---|---|
-| Baseline state | `DISPATCH_READY` |
+| Baseline state | `CLOSED_PASS_BOUNDED` |
 | Dependency | released by `01618e9dc` |
 | Commit mode | `WORKER_MUST_NOT_COMMIT` |
 | Runtime claim | local deterministic control-plane policy only |
-| Next action | execute only under the paired work order |
+| Next action | fresh MAO-T3 GC-018 and source-verified work-order authoring only |
 
 ## Acceptance Receipt Assertion Matrix
 
