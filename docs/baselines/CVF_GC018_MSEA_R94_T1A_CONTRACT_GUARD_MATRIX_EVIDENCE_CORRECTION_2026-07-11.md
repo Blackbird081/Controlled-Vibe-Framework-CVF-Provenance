@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MSEA-R94-T1A
 
@@ -128,3 +128,16 @@ authorized.
 This baseline authorizes correction of six matrix evidence cells only. It does
 not authorize guard, test, runtime, Web, checker, hook, workflow, lifecycle,
 provider, public, R94-T1B/T1C, T2, or T3 changes.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | R94-T1A work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | R94-T1A completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | R94 roadmap | parent remains open | PASS |
+| Registry JSON | N/A with reason | no corpus state change | N/A with reason |
+| Registry Markdown | N/A with reason | no corpus state change | N/A with reason |
+| External evidence digest | N/A with reason | no external evidence | N/A with reason |
+| System loop interlock | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | freshness CURRENT | PASS |
+| Session continuity | active front doors | separate sync follows material commit | N/A with reason |

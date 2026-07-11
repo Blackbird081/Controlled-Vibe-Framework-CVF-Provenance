@@ -72,25 +72,20 @@ in any of the four documents individually.
 
 laneId: `CONTRACT_TO_RUNTIME`
 
-**Posture: PARTIAL.** Verdict: `PARTIAL_RUNTIME_CONNECTION_FOR_SAMPLED_ROWS`.
+**Posture: PARTIAL.** Verdict: `PARTIAL_RUNTIME_CONNECTION_FULL_INVENTORY`.
 
-Three of the Governance Control Matrix's fifty `GC-NNN` rows were sampled
-past file existence, to an actual caller/invocation route and to whether the
-cited test exercises the cited source:
+MSEA-R94-T0 inventoried all fifty matrix rows. MSEA-R94-T1A then corrected
+the six contract/protocol test-pairing mismatches for GC-001, GC-002, GC-003,
+GC-005, GC-006, and GC-008 to the existing direct contract test owner
+`EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts`; its focused suite passes
+34/34. After that correction, 44 of 50 rows have connected dispositions with
+explicit test bounds.
 
-- **GC-011** is the one **current**, fully proven row: a real production
-  caller exists at `EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts:132`,
-  and its cited test matches its cited source.
-- **GC-001** is invoked (a real caller exists at
-  `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts:122`), but its cited test
-  exercises a distinct, non-identical source file from the one the matrix
-  row names. Disposition: `INVOKED_WITH_CITED_TEST_PAIRING_MISMATCH`.
-- **GC-009** has a valid, matched source-and-test pair, but no confirmed
-  production caller was found anywhere in the repository.
-
-The remaining 47 rows were not individually re-verified in this bounded
-pass; treat them as a **future** verification target, not proven runtime
-connections.
+The remaining action rows stay explicit: GC-009 and GC-010 lack proven
+production invocation; GC-012 and GC-013 lack independent semantic/test proof;
+GC-019 and GC-046 remain contract-only with reason. Separate source-verified
+R94-T1B and R94-T1C packets own the next decisions; this map does not infer
+their outcome.
 
 ### Lane 3 - Runtime to Enforcement
 

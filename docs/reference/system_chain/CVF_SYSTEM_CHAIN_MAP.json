@@ -5,7 +5,7 @@
   "sourceAuditEvidence": "docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_EVIDENCE_2026-07-10.json",
   "reviewerCompletion": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md",
   "reviewerCompletionMaterialCommit": "645df8b83",
-  "lastVerifiedDate": "2026-07-10",
+  "lastVerifiedDate": "2026-07-11",
   "maxAgeDays": 30,
   "reminderPolicy": "This machine map and its human companion record reviewer-accepted MSEA-R90 Audit A findings. Source-file drift and review age are detected automatically by governance/compat/check_system_chain_map_freshness.py. Detecting drift or age expiry never rewrites a lane's currentPosture or verdict automatically; only a fresh governed review may change those fields.",
   "lanes": [
@@ -48,20 +48,20 @@
     {
       "laneId": "CONTRACT_TO_RUNTIME",
       "laneOrder": 2,
-      "planeRange": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md GC-001 through GC-050 rows (3 rows sampled)",
+      "planeRange": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md GC-001 through GC-050 rows (50 rows inventoried by MSEA-R94-T0)",
       "currentPosture": "PARTIAL",
-      "verdict": "PARTIAL_RUNTIME_CONNECTION_FOR_SAMPLED_ROWS",
+      "verdict": "PARTIAL_RUNTIME_CONNECTION_FULL_INVENTORY",
       "implementedBy": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts (GC-001); EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts (GC-009); EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts (GC-011)",
       "invokedBy": "GC-001 invoked at EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts:122; GC-009 has no confirmed non-test production caller repository-wide; GC-011 invoked at EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts:132",
-      "testedBy": "GC-001 cited test EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts exercises a distinct, non-identical PhaseGateGuard source than the one the matrix row cites (INVOKED_WITH_CITED_TEST_PAIRING_MISMATCH); GC-009 cited test EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.test.ts correctly pairs with its cited source; GC-011 cited test EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/pipeline.orchestrator.test.ts is confirmed present and consistent",
+      "testedBy": "MSEA-R94-T0 inventoried all 50 rows. MSEA-R94-T1A corrected GC-001, GC-002, GC-003, GC-005, GC-006, and GC-008 to the existing direct contract test owner EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts; focused suite passes 34/34. Twelve invoked rows remain bounded without standalone tests.",
       "evidenceOwner": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
       "operatorSurface": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance (Web governance dashboard route, confirmed present)",
-      "knownGaps": "Only 3 of 50 control-matrix rows were sampled. Of those, GC-011 alone reached a fully proven source-caller-test match; GC-001 has a cited-test mismatch; GC-009 has no confirmed production caller.",
-      "nextReviewAction": "A fresh source-verified implementation or matrix-maintenance packet may correct the GC-001 test citation and decide whether GC-009 needs a caller or a downgraded matrix claim; not authorized by this map.",
+      "knownGaps": "After T1A, 44 of 50 rows have connected dispositions with explicit test bounds. GC-009 and GC-010 lack proven production invocation; GC-012 and GC-013 lack independent semantics/test proof; GC-019 and GC-046 remain contract-only with reason.",
+      "nextReviewAction": "Use separate source-verified R94-T1B and R94-T1C packets for the remaining gateway and approval-checkpoint decisions. Preserve GC-019 and GC-046 unless a later authority changes their human/template posture.",
       "sourceFingerprints": [
         {
           "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
-          "sha256": "2cade7ee04568a01e37abca26891297105848a5abf4094da7c323fe2df5e1a73",
+          "sha256": "77bbfd5371f93099a757c987dc3a0a93e3969885411972e9d22ff0ddebf075a4",
           "evidenceRole": "control matrix rows GC-001, GC-009, GC-011, GC-019"
         },
         {
@@ -95,9 +95,9 @@
           "evidenceRole": "GC-011 real production caller and GC-001 alternate-class registration site"
         },
         {
-          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts",
-          "sha256": "c43caf04dc25c97192f8f28f2f0a435054ff54124adca249e45ac2a77d501160",
-          "evidenceRole": "GC-001 cited test, mismatched source pairing"
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts",
+          "sha256": "65dc42971b52e66098b7d36bf07ec3b630e2e33d5673ef782611a14cf0fe8c05",
+          "evidenceRole": "direct contract tests for GC-001 through GC-008 guard implementations"
         },
         {
           "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/pipeline.orchestrator.test.ts",
@@ -168,7 +168,7 @@
       "sourceFingerprints": [
         {
           "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
-          "sha256": "2cade7ee04568a01e37abca26891297105848a5abf4094da7c323fe2df5e1a73",
+          "sha256": "77bbfd5371f93099a757c987dc3a0a93e3969885411972e9d22ff0ddebf075a4",
           "evidenceRole": "GC-019 corrected archive-qualified citation"
         },
         {
