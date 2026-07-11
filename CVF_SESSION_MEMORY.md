@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_asc_architecture_catalog_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=select a fresh governed roadmap outside ASC; parked checkpoint=L4 promotion, T3B, R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`mao_roadmap_proposed_awaiting_external_critique`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=independent external critique of the MAO roadmap, then internal source-verified finding classification; parked checkpoint=MAO implementation, L4 promotion, T3B, R73F, and R84 effectiveness.
 
 ## Current Mode
 
-Current mode marker: `msea_asc_architecture_catalog_closed`
+Current mode marker: `mao_roadmap_proposed_awaiting_external_critique`
 
-Current mode: `msea_asc_architecture_catalog_closed`
+Current mode: `mao_roadmap_proposed_awaiting_external_critique`
 
-`msea_asc_architecture_catalog_closed`
+`mao_roadmap_proposed_awaiting_external_critique`
 
 Previous mode:
 
-`msea_asc_rw_integrated_remaining_wave_dispatched`
+`msea_asc_architecture_catalog_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO runtime foundation roadmap | `6a08a041e` | PROPOSED after R94/R95 reopen audit; external critique is next; implementation remains parked. |
 | MSEA-ASC architecture catalog closure | `6273f3413` | REVIEWER_ACCEPTED_BOUNDED; 22 entities, 3 gaps, deterministic local/CI/weekly freshness. |
 | MSEA-ASC-RW integrated remaining wave dispatch | `fa4838c57` | DISPATCH_READY; one no-commit T1-T5 execution, exact T5 wiring owners, one final independent review. |
 | MSEA-ASC-T0 source schema and reconciliation contract closure | `9f8815fb7` | REVIEWER_ACCEPTED_BOUNDED after Round 2 JSON Schema invariant correction and independent negative validation. |
@@ -98,18 +99,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_asc_architecture_catalog_closed`
+Mode: `mao_roadmap_proposed_awaiting_external_critique`
 
-Next allowed move: select a fresh governed roadmap outside ASC. Do not expand
-the catalog for coverage counts. New entities and absorbed value must use the
-compact-source/generator admission path. L4 remains
-VALUE_PARKED_WITH_REOPEN_CONDITIONS. Latest closed numbered LHW wave remains
-`LHW24`.
-
-Multi-Agent Orchestration Runtime Foundation is
-`VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,
-then harden automatic R85-style external-absorption intake triggering, then
-consider that roadmap through a fresh governed packet.
+MAO roadmap is `PROPOSED` at material commit `6a08a041e`. Next allowed move is
+independent external critique of
+`docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md`,
+followed by internal source-verified classification of every critique. Stop
+before MAO-T0 GC-018/work-order authoring. MAO implementation remains parked.
+L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
+wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

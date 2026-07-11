@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "msea_asc_architecture_catalog_closed",
+  "currentMode": "mao_roadmap_proposed_awaiting_external_critique",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "MSEA-ASC is REVIEWER_ACCEPTED_BOUNDED at material commit 6273f3413. Next allowed move is select a fresh governed roadmap outside ASC. Do not expand the catalog merely for coverage counts; new entities, layers, and absorbed value must use compact source records plus deterministic regeneration. L4 remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. R84 effectiveness and MAO implementation remain parked under their recorded conditions. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO roadmap is PROPOSED at material commit 6a08a041e after direct R94/R95 reopen-condition verification. Next allowed move is independent external critique of docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md, followed by internal source-verified classification of every finding. Stop before MAO-T0 GC-018/work-order authoring. MAO implementation, L4, T3B, R73F, and R84 effectiveness remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

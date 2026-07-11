@@ -1,0 +1,19 @@
+{
+  "stateOrder": 1671,
+  "stateKey": "maoRoadmapProposed20260711",
+  "value": {
+    "status": "PROPOSED",
+    "date": "2026-07-11",
+    "roadmap": "docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md",
+    "materialCommit": "6a08a041e",
+    "reopenVerdict": "ROADMAP_CANDIDATE_ALLOWED",
+    "reopenEvidence": [
+      "MSEA-R94 CLOSED_PASS_BOUNDED",
+      "MSEA-R95 REVIEWER_ACCEPTED_BOUNDED"
+    ],
+    "tranches": ["MAO-T0", "MAO-T1", "MAO-T2", "MAO-T3", "MAO-T4", "MAO-T5", "MAO-T6", "MAO-T7", "MAO-T8", "MAO-T9"],
+    "nextAllowedMove": "independent external critique, then internal source-verified finding classification; stop before MAO-T0 GC-018/work-order authoring",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "roadmap only; no runtime implementation, provider call, automatic spawn, UI, package, ASC/R91 semantic change, public-sync, or production-readiness claim"
+  }
+}

@@ -17,10 +17,11 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_asc_architecture_catalog_closed`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=select a
-fresh governed roadmap outside ASC; parked checkpoint=L4 promotion, T3B,
-R73F, R84 effectiveness, and MAO implementation.
+Startup acknowledged: current mode=`mao_roadmap_proposed_awaiting_external_critique`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=independent
+external critique of the MAO roadmap, then internal source-verified finding
+classification; parked checkpoint=MAO implementation, L4 promotion, T3B,
+R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
 
@@ -33,9 +34,18 @@ R73F, R84 effectiveness, and MAO implementation.
 
 ## Current Mode
 
-`msea_asc_architecture_catalog_closed`
+`mao_roadmap_proposed_awaiting_external_critique`
 
 ## Latest Work / Changes
+
+MAO roadmap material commit `6a08a041e` is `PROPOSED`. Direct CVF-governed
+evidence confirms R94 `CLOSED_PASS_BOUNDED` and R95
+`REVIEWER_ACCEPTED_BOUNDED`, so MAO is reopened for roadmap consideration only.
+Roadmap: `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md`.
+It defines T0-T9, keeps single-worker execution as the default, assigns runtime
+state to the execution plane with an append-only event/receipt ledger and
+generated read models, keeps workspace state as a projection, and preserves
+AHB closer/commit/session authority. No runtime or provider work occurred.
 
 MSEA-ASC-RW material commit `6273f3413` is `REVIEWER_ACCEPTED_BOUNDED`.
 It establishes 22 compact catalog entities, 3 terminal indexed gaps, an
@@ -71,27 +81,28 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Select a fresh governed roadmap outside ASC. Do not extend the catalog merely
-for coverage counts. New entities/layers/absorbed value must use compact source
-records and deterministic regeneration. L4 remains
-`VALUE_PARKED_WITH_REOPEN_CONDITIONS`; R84 effectiveness and MAO implementation
-remain parked under their recorded conditions. Latest closed numbered LHW wave
-remains `LHW24`.
+Send the MAO roadmap to Claude or another independent external reviewer. Then
+source-verify and classify every critique internally. Only after an accepted
+reconciliation may a fresh MAO-T0 GC-018/work order be authored. Stop before
+implementation. L4, T3B, R73F, R84 effectiveness, and MAO implementation remain
+parked. Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
 
-ASC is closed bounded. Its three gaps remain terminally open. Any new roadmap,
-gap repair, or catalog expansion requires fresh governed authority.
+MAO is roadmap-only and awaiting critique. No GC-018/work order, runtime,
+provider, queue, UI, package, public-sync, R91/ASC semantic, L4, R84, or R73F
+change is authorized. ASC remains closed bounded with three terminal gaps.
 
-## Core Guard Self-Protection Authorization - ASC Closure And Handoff Rotation
+## Core Guard Self-Protection Authorization - MAO Roadmap Session Sync
 
-Authorized guard-maintenance scope: close ASC, rotate near-limit V40 to
-archive, open compact V41, and synchronize generated session state after
-material commit `6273f3413`.
-Operator authorization: complete the integrated ASC roadmap.
+Authorized guard-maintenance scope: synchronize current mode, generated active
+state, bootstrap read model, front door, active handoff, MAO roadmap state, and
+next allowed move after material roadmap commit `6a08a041e`.
+Operator authorization: create the MAO roadmap, commit it after gates pass, and
+perform a separate protected session-sync commit.
 
-Rollback boundary: revert only this closure/sync; retain material commit
-`6273f3413`.
+Rollback boundary: revert only this session sync; retain material roadmap
+commit `6a08a041e`.
 
 Protected paths:
 
@@ -100,7 +111,8 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/mseaAscArchitectureCatalogClosure20260711.json`
+- `CVF_SESSION/state/entries/maoRoadmapProposed20260711.json`
+- `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 
 ## Agent Operation Trace Block
@@ -109,24 +121,25 @@ Protected paths:
 |---|---|
 | Actor | reviewer/closer and session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | MSEA-ASC closure, 2026-07-11 |
+| Session or invocation | MAO roadmap session sync, 2026-07-11 |
 | Working directory | repository root |
 | Command or tool surface | apply_patch, state generator, governance gates, git |
 | Target paths | active handoff and session front-door/state paths listed above |
-| Allowed scope source | ASC-RW reviewer closure conversion and GC-023 rotation requirement |
-| Before status evidence | V40 active at material HEAD `6273f3413` and 1185 lines |
-| After status evidence | V40 archive-qualified; compact V41 active; generated state aligned |
-| Diff evidence | staged rename plus exact session-pointer changes |
-| Approval boundary | closure and continuity only |
-| Claim boundary | no new material implementation claim |
+| Allowed scope source | operator MAO roadmap process and required separate protected session-sync commit |
+| Before status evidence | roadmap committed at `6a08a041e`; mode still `msea_asc_architecture_catalog_closed` |
+| After status evidence | mode `mao_roadmap_proposed_awaiting_external_critique`; generated state aligned |
+| Diff evidence | exact protected session-sync changed set |
+| Approval boundary | roadmap continuity only |
+| Claim boundary | no runtime implementation, provider, public, or production claim |
 | Agent type | reviewer/closer and session-sync steward |
-| Invocation ID | msea-asc-closure-handoff-rotation-2026-07-11 |
-| Expected manifest | protected paths above plus V40 archive, V41, and root exposure registry |
-| Actual changed set | staged session rotation manifest |
+| Invocation ID | mao-roadmap-session-sync-2026-07-11 |
+| Expected manifest | protected paths listed above |
+| Actual changed set | protected paths listed above |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | V40 renamed to `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V40_2026-07-10.md`; content retained, no deletion |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
 
-The ASC result is a bounded initial architecture catalog, not an exhaustive
-inventory, closure of its three gaps, or runtime/public/provider readiness.
+The MAO result is a roadmap awaiting independent critique, not runtime
+implementation, provider proof, public projection, an Agent OS, or production
+orchestration readiness. ASC remains a bounded initial catalog, not exhaustive.

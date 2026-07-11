@@ -3,7 +3,7 @@
   "stateKey": "multiAgentOrchestrationRuntimeFoundationParked20260711",
   "value": {
     "title": "Multi-Agent Orchestration Runtime Foundation",
-    "status": "VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE",
+    "status": "ROADMAP_PROPOSED_AWAITING_EXTERNAL_CRITIQUE",
     "sequence": [
       "complete the MSEA-R94 System Chain Gap Closure roadmap",
       "harden automatic R85-style external-repository absorption intake triggering",
@@ -21,6 +21,10 @@
       "end-to-end proof"
     ],
     "reuseBoundary": "reuse existing CVF governance, Agent Handoff Contract, and agent workspace foundations; do not create parallel governance",
-    "reopenCondition": "R94 is terminal and the automatic external-absorption intake trigger hardening is accepted through a separate governed packet"
+    "reopenCondition": "SATISFIED: R94 is CLOSED_PASS_BOUNDED and R95 automatic external-absorption intake trigger hardening is REVIEWER_ACCEPTED_BOUNDED",
+    "roadmap": "docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md",
+    "materialCommit": "6a08a041e",
+    "nextAllowedMove": "independent external critique, then internal source-verified finding classification; stop before MAO-T0 packet authoring",
+    "implementationBoundary": "PARKED until critique reconciliation and a fresh MAO-T0 GC-018/source-verified work order"
   }
 }
