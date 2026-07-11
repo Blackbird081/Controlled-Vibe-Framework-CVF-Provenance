@@ -22,7 +22,7 @@ vectorization, or legal workflow.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r95_external_repository_absorption_entry_hardening_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh source-verified packet for the selected next lane; parked checkpoint=T3B, R73F, and R84 effectiveness.
+Startup acknowledged: current mode=`msea_r96_doctrine_route_gap_reconciliation_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the MSEA-R96 no-commit worker order; parked checkpoint=T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Mandatory Startup Reads
 
@@ -35,7 +35,7 @@ Startup acknowledged: current mode=`msea_r95_external_repository_absorption_entr
 
 ## Current Mode
 
-`msea_r95_external_repository_absorption_entry_hardening_closed`
+`msea_r96_doctrine_route_gap_reconciliation_dispatched`
 
 ## Latest Work / Changes
 
@@ -890,6 +890,30 @@ Protected paths:
 
 Operator authorization: process and close MSEA-R95. Rollback boundary: revert
 only this session-sync; retain closure commit `8c5755051`.
+
+## MSEA-R96 Doctrine Route Gap Reconciliation Dispatch - 2026-07-11
+
+Dispatch commit: `54666a41d`. Execute only the four-layer L1/L2/L4/L6
+source-decision work order as `WORKER_MUST_NOT_COMMIT` and return for review.
+
+## Core Guard Self-Protection Authorization - MSEA-R96 Dispatch Session Sync
+
+Authorized guard-maintenance scope: session-sync after `54666a41d`.
+
+Protected paths:
+
+| Path | Purpose |
+|---|---|
+| `CVF_SESSION_MEMORY.md` | Route startup to R96 worker execution. |
+| `AGENT_HANDOFF_V40_2026-07-10.md` | Record R96 dispatch boundary. |
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Set R96 dispatched mode. |
+| `CVF_SESSION/state/entries/mseaR96DoctrineRouteGapReconciliationDispatch20260711.json` | Record dispatch evidence. |
+| `CVF_SESSION/state/entries/nextAllowedMove.json` | Route exact worker execution. |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | Regenerate canonical state. |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | Regenerate startup facts. |
+
+Operator authorization: continue L1/L2/L4/L6 reconciliation. Rollback boundary:
+revert only this session-sync; retain dispatch commit `54666a41d`.
 
 ## Claim Boundary
 

@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`msea_r95_external_repository_absorption_entry_hardening_closed`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=author a fresh source-verified packet for the selected next lane; parked checkpoint=T3B, R73F, and R84 effectiveness.
+Startup acknowledged: current mode=`msea_r96_doctrine_route_gap_reconciliation_dispatched`; active handoff=AGENT_HANDOFF_V40_2026-07-10.md; next allowed move=execute the MSEA-R96 no-commit worker order; parked checkpoint=T3B, R73F, R84 effectiveness, and MAO implementation.
 
 ## Current Mode
 
-Current mode marker: `msea_r95_external_repository_absorption_entry_hardening_closed`
+Current mode marker: `msea_r96_doctrine_route_gap_reconciliation_dispatched`
 
-Current mode: `msea_r95_external_repository_absorption_entry_hardening_closed`
+Current mode: `msea_r96_doctrine_route_gap_reconciliation_dispatched`
 
-`msea_r95_external_repository_absorption_entry_hardening_closed`
+`msea_r96_doctrine_route_gap_reconciliation_dispatched`
 
 Previous mode:
 
-`msea_r95_external_repository_absorption_entry_hardening_dispatched`
+`msea_r95_external_repository_absorption_entry_hardening_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MSEA-R96 doctrine route gap reconciliation dispatch | `54666a41d` | DISPATCH_READY. Four-layer L1/L2/L4/L6 source decision pass; exact four outputs; no legacy promotion, doctrine/runtime mutation, or worker commit. |
 | MSEA-R95 external repository absorption entry hardening closure | `8c5755051` | REVIEWER_ACCEPTED_BOUNDED. Existing ADIF-0014 owner extended; 44/44 tests, reviewer-fast 60/60, closure pre-commit 81/81. |
 | MSEA-R95 external repository absorption entry hardening dispatch | `dd92fa6d6` | DISPATCH_READY. Extend ADIF-0014 entry detection and guidance with source-mirror and explicit intake triggers, an R85-style terminal-ledger control block, focused compatibility tests, and no new checker or hook. Worker must not commit. |
 | MSEA-R94-T1B gateway helper ownership disposition closure | `3c5e87d7b` | REVIEWER_ACCEPTED_BOUNDED. GC-009/010 CLAIM_DOWNGRADED_WITH_REASON; focused tests 54/54; system-chain freshness CURRENT. |
@@ -84,13 +85,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `msea_r95_external_repository_absorption_entry_hardening_closed`
+Mode: `msea_r96_doctrine_route_gap_reconciliation_dispatched`
 
-Next allowed move: select and author a fresh source-verified GC-018/work-order
-packet. The prior value-park condition for Multi-Agent Orchestration Runtime
-Foundation is now satisfied by R94 and R95 closure, so that roadmap may be
-selected through a fresh packet; no MAO implementation is authorized yet.
-Latest closed numbered LHW wave remains `LHW24`.
+Next allowed move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md`
+as `WORKER_MUST_NOT_COMMIT`. Produce exactly four worker-owned outputs and stop
+at `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. No legacy promotion,
+new architecture folder, frozen-doctrine/runtime mutation, or MAO work is
+authorized. Latest closed numbered LHW wave remains `LHW24`.
 
 Multi-Agent Orchestration Runtime Foundation is
 `VALUE_PARKED_UNTIL_R94_AND_ABSORPTION_TRIGGER_HARDENING_CLOSE`. Finish R94,
