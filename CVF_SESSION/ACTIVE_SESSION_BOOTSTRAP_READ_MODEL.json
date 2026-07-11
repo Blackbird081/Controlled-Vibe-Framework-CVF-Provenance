@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "mao_live_t1_closed_value_not_proven",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "MAO-LIVE-T1 is REVIEWER_ACCEPTED_VALUE_NOT_PROVEN at 75f5c0b90. Both lanes scored 100; MAO added 20.7 percent latency, used 2/4 total calls, and no rerun occurred. Do not continue this easy-task lane. Next move is another operator-selected roadmap; reopening live MAO requires a materially harder task and measurable quality-gain hypothesis through fresh governance. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO-LIVE-T1 is REVIEWER_ACCEPTED_VALUE_NOT_PROVEN. Reopen only when direct baseline is at most 80/100 or has one rubric-defined material defect, the reviewer hypothesis names that defect, success requires at least 10 quality points or defect correction, the run stays within four calls/one revision/50 percent latency overhead, and the operator approves a fresh packet. Existing Agent Skills, CodeGraph, and MinerU mirrors are already deeply absorbed; do not reopen them without upstream drift or a new owner-surface gap. Next move is an operator-decision/readout roadmap or a newly justified source-mirror target. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

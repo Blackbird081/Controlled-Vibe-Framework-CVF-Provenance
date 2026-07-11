@@ -52,6 +52,7 @@ Previous mode:
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO live reopen condition | `482f6ec52` | Five checkable conditions; no easy-task rerun. |
 | MAO-LIVE-T1 closure | `75f5c0b90` | REVIEWER_ACCEPTED_VALUE_NOT_PROVEN; 2/4 calls, tied quality, +20.7% latency. |
 | MAO-LIVE-T1 dispatch | `013e9fe21` | DISPATCH_READY; six outputs, four-call ceiling, no worker commit. |
 | MAO-LIVE value pilot roadmap | `82b3fb511` | PROPOSED; fresh T1 GC-018/work order is next, no implementation yet. |

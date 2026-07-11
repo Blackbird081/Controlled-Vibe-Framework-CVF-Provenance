@@ -227,6 +227,26 @@ Protected paths:
 
 ## Claim Boundary
 
+## MAO Live Reopen Condition
+
+Material HEAD: `482f6ec52`. Reopen requires direct baseline at most 80/100 or a
+material defect, a named reviewer hypothesis, at least 10 quality points or
+defect correction, four-call/one-revision/50-percent-latency ceilings, and fresh
+operator-approved packet. Session-sync parent HEAD: `482f6ec52`.
+
+## Core Guard Self-Protection Authorization - MAO Reopen Condition Sync
+
+Operator authorization: record the concrete reopen condition and select the next lane.
+
+Authorized protected paths:
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this sync; retain `482f6ec52`.
+
 ## MAO-LIVE-T1 Final Value Decision
 
 Material HEAD: `75f5c0b90`. Verdict: `VALUE_NOT_PROVEN`. Both lanes scored 100;
