@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mao_t2_closed",
+  "currentMode": "mao_t3_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "MAO-T2 is REVIEWER_ACCEPTED_BOUNDED at material commit 854bb3a92. Next allowed move is fresh MAO-T3 GC-018 and source-verified work-order authoring only. MAO-T3 implementation, provider invocation, queue, UI, workspace runtime, public-sync, and production claims remain unauthorized until a reviewed dispatch packet exists. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO-T3 is DISPATCH_READY at material commit 1738d9263. Next allowed move is one delegated WORKER_MUST_NOT_COMMIT fake/local adapter execution from the actual clean post-sync HEAD, producing exactly four owned outputs. Real provider/network calls, queue, UI, workspace/session mutation, public-sync, root-barrel changes, MAO-T4+, and production claims remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

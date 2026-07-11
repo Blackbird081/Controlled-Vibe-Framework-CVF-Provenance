@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1679,
+  "stateKey": "maoT3Dispatch20260711",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "1738d9263",
+    "baseline": "docs/baselines/CVF_GC018_MAO_T3_PROVIDER_NEUTRAL_DELEGATION_ADAPTER_2026-07-11.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_T3_PROVIDER_NEUTRAL_DELEGATION_ADAPTER_2026-07-11.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerOutputs": 4,
+    "nextAllowedMove": "delegated worker captures clean post-sync HEAD, implements fake/local MAO-T3, and returns uncommitted material",
+    "claimBoundary": "fake/local provider-neutral adapter contract only; no real provider, network, public, or production claim"
+  }
+}

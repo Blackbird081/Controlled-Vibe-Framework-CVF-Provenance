@@ -17,9 +17,9 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t2_closed`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T3
-GC-018 and source-verified work-order authoring only; parked checkpoint=MAO-T3 implementation, provider integration, broader MAO runtime, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_t3_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T3
+fake/local WORKER_MUST_NOT_COMMIT execution from clean post-sync HEAD; parked checkpoint=real provider/network, MAO-T4+, broader MAO runtime, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -33,9 +33,13 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_t2_closed`
+`mao_t3_dispatched`
 
 ## Latest Work / Changes
+
+MAO-T3 dispatch commit `1738d9263` is `DISPATCH_READY`. Worker produces exactly
+four fake/local adapter outputs and returns without commit. Provider/network,
+queue, UI, root-barrel, session/public, retry lifecycle, and MAO-T4+ are forbidden.
 
 MAO-T2 material closure commit `854bb3a92` is `REVIEWER_ACCEPTED_BOUNDED`.
 Independent review repaired serialized-overlap handling, role receipt values,
@@ -112,15 +116,14 @@ Pre-push compatibility repair commit: `ad4d5ec3f`.
 
 ## Next Allowed Move
 
-Author fresh MAO-T3 GC-018 and a source-verified work order only.
-Provider/integration implementation, L4, T3B, R73F, R84 effectiveness, and
-broader runtime remain parked. Latest closed numbered LHW wave remains `LHW24`.
+Execute MAO-T3 once under `WORKER_MUST_NOT_COMMIT` from clean post-sync HEAD.
+Real provider/network, MAO-T4+, L4, T3B, R73F, R84 effectiveness, and broader
+runtime remain parked. Latest closed numbered LHW wave remains `LHW24`.
 
 ## Active Boundary
 
-MAO-T2 is closed bounded. Only MAO-T3 packet authoring is authorized; no MAO-T3
-implementation, provider, queue, UI, public-sync, R91/ASC semantic, L4, R84,
-or R73F change is authorized.
+MAO-T2 is closed and MAO-T3 fake/local execution is dispatched. No real provider,
+queue, UI, public-sync, MAO-T4+, R91/ASC semantic, L4, R84, or R73F change is authorized.
 
 ## Core Guard Self-Protection Authorization - MAO Roadmap Session Sync
 
@@ -148,6 +151,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/maoT1Closure20260711.json`
 - `CVF_SESSION/state/entries/maoT2Dispatch20260711.json`
 - `CVF_SESSION/state/entries/maoT2Closure20260711.json`
+- `CVF_SESSION/state/entries/maoT3Dispatch20260711.json`
 - `CVF_SESSION/state/entries/multiAgentOrchestrationRuntimeFoundationParked20260711.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 

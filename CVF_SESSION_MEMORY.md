@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_t2_closed`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh MAO-T3 GC-018 and source-verified work-order authoring only; parked checkpoint=MAO-T3 implementation, provider integration, broader runtime, public work, L4, T3B, R73F, R84 effectiveness.
+Startup acknowledged: current mode=`mao_t3_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-T3 fake/local WORKER_MUST_NOT_COMMIT execution from clean post-sync HEAD; parked checkpoint=real provider/network, MAO-T4+, broader runtime, public work, L4, T3B, R73F, R84 effectiveness.
 
 ## Current Mode
 
-Current mode marker: `mao_t2_closed`
+Current mode marker: `mao_t3_dispatched`
 
-Current mode: `mao_t2_closed`
+Current mode: `mao_t3_dispatched`
 
-`mao_t2_closed`
+`mao_t3_dispatched`
 
 Previous mode:
 
-`mao_t2_dispatched`
+`mao_t2_closed`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-T3 provider-neutral delegation adapter dispatch | `1738d9263` | DISPATCH_READY; fake/local only; four outputs; worker must not commit. |
 | MAO-T2 risk-based role resolver closure | `854bb3a92` | REVIEWER_ACCEPTED_BOUNDED after semantic repairs; 22/22 tests, typecheck, GC-051 and 82/82 pre-commit pass. |
 | MAO-T2 risk-based role resolver dispatch | `570cd6452` | DISPATCH_READY; four exact outputs; worker must not commit; no provider invocation. |
 | MAO-T1 task graph/state foundation closure | `01618e9dc` | REVIEWER_ACCEPTED_BOUNDED; 39/39 focused tests, typecheck, GC-051 coverage, and 82/82 pre-commit checks pass. |
@@ -106,11 +107,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_t2_closed`
+Mode: `mao_t3_dispatched`
 
-MAO-T2 is reviewer-accepted bounded at `854bb3a92`. Next allowed move is fresh
-MAO-T3 GC-018 and source-verified work-order authoring only. MAO-T3
-implementation and provider invocation remain unauthorized.
+MAO-T3 is dispatch-ready at `1738d9263`. Next allowed move is one delegated
+fake/local worker execution from the clean post-sync HEAD with exactly four
+outputs and no commit. Real provider/network invocation remains unauthorized.
 L4 remains `VALUE_PARKED_WITH_REOPEN_CONDITIONS`. Latest closed numbered LHW
 wave remains `LHW24`.
 
