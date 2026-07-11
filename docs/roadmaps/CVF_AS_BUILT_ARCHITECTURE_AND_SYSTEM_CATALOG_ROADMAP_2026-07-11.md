@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-11
 
@@ -398,10 +398,36 @@ Stop a tranche if it:
 
 ## Next Allowed Move
 
-Obtain external reviewer critique of this proposed roadmap. After critique is
-internally source-verified and folded or rejected with reason, author a fresh
-GC-018 baseline and work order for ASC-T0 only. Do not dispatch later tranches
-from this roadmap text alone.
+Roadmap execution and independent review are complete. Select a fresh governed
+roadmap outside ASC. Future catalog admission must use compact source records,
+deterministic regeneration, and the existing freshness family.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Material implementation | commit `6273f3413` | 39-path committed diff | PASS |
+| Independent completion review | `docs/reviews/CVF_MSEA_ASC_RW_INTEGRATED_REMAINING_WAVE_COMPLETION_2026-07-11.md` | T0-T6 trace matrix | PASS |
+| Freshness | both checker owners | ASC CURRENT; R91 CURRENT | PASS |
+| Public export | this roadmap and completion review | DEFERRED_PRIVATE_ONLY | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_ASC_RW_INTEGRATED_REMAINING_WAVE_2026-07-11.md` | worker return and material commit | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_ASC_RW_INTEGRATED_REMAINING_WAVE_COMPLETION_2026-07-11.md` | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Registry JSON | `docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json` | deterministic hash in completion review | PASS |
+| Registry Markdown | `docs/reference/system_architecture_catalog/README.md` | stable-ID diagram and indexed routes | PASS |
+| External evidence digest | N/A with reason: no new external evidence intake | internal governed source citations only | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop-owned action | no bypass or invocation claim | PASS |
+| Session continuity | `AGENT_HANDOFF_V41_2026-07-11.md` | generated active state and next move aligned | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Catalog aggregate | 22 schema-valid entities | PASS |
+| Gap index | 3 terminal gap entries | PASS |
+| Deterministic generation | identical catalog and gap hashes across two runs | PASS |
+| Freshness ownership | ASC CURRENT and R91 CURRENT | PASS |
+| Local/CI/weekly enforcement | hook catalogs, autorun catalog, dedicated workflow | PASS |
 
 ## Public Export Disposition
 

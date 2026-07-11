@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: MSEA-ASC-RW
 
@@ -345,16 +345,16 @@ before acceptance.
 
 ## Closure Checklist
 
-- [ ] T1-T5 each has a terminal phase disposition.
-- [ ] Every changed file is individually enumerated.
-- [ ] Catalog source records and generated aggregate reconcile.
-- [ ] Gap entries, README and JSON index reconcile.
-- [ ] Diagram/front-door edges resolve to catalog edge IDs.
-- [ ] Freshness/admission checker and focused tests pass.
-- [ ] R91-owned semantics remain unchanged.
-- [ ] Forbidden paths remain unchanged.
-- [ ] Worker did not commit.
-- [ ] Final status truthfully reflects dirty worktree.
+- [x] T1-T5 each has a terminal phase disposition.
+- [x] Every changed file is individually enumerated.
+- [x] Catalog source records and generated aggregate reconcile.
+- [x] Gap entries, README and JSON index reconcile.
+- [x] Diagram/front-door edges resolve to catalog edge IDs.
+- [x] Freshness/admission checker and focused tests pass.
+- [x] R91-owned semantics remain unchanged.
+- [x] Forbidden paths remain unchanged.
+- [x] Worker did not commit.
+- [x] Final status truthfully reflects dirty worktree.
 
 ## Return-To-Orchestrator Conditions
 
@@ -467,3 +467,24 @@ revert the ASC-RW protected diff only; R91 remains unchanged.
 
 This work order consolidates T1-T5 execution and removes intermediate review
 ceremony. It does not weaken phase evidence, final independent review, or scope.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Roadmap state | `docs/roadmaps/CVF_AS_BUILT_ARCHITECTURE_AND_SYSTEM_CATALOG_ROADMAP_2026-07-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MSEA_ASC_RW_INTEGRATED_REMAINING_WAVE_COMPLETION_2026-07-11.md` | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Registry JSON | `docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json` | deterministic generated aggregate | PASS |
+| Registry Markdown | `docs/reference/system_architecture_catalog/README.md` | stable-ID front door | PASS |
+| External evidence digest | N/A with reason: no new external evidence | governed internal citations only | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop action | no invocation or bypass claim | N/A with reason |
+| Session continuity | `AGENT_HANDOFF_V41_2026-07-11.md` | closed mode and next move | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| T1-T5 terminality | five PASS rows | PASS |
+| Catalog and gap determinism | repeated hashes match | PASS |
+| Freshness ownership | ASC CURRENT; R91 CURRENT | PASS |
