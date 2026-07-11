@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_live_t1_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one MAO-LIVE-T1 no-commit live execution with six outputs/four-call ceiling; parked checkpoint=fifth call, durable queue/UI/public/ASC admission, L4 promotion, T3B,
+Startup acknowledged: current mode=`mao_live_t1_closed_value_not_proven`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=another operator-selected roadmap; parked checkpoint=MAO live reopen without harder-task hypothesis, durable queue/UI/public/ASC admission, L4 promotion, T3B,
 R73F, and R84 effectiveness.
 
 ## Mandatory Startup Reads
@@ -32,7 +32,7 @@ R73F, and R84 effectiveness.
 
 ## Current Mode
 
-`mao_live_t1_dispatched`
+`mao_live_t1_closed_value_not_proven`
 
 ## Latest Work / Changes
 
@@ -226,6 +226,26 @@ Protected paths:
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
+
+## MAO-LIVE-T1 Final Value Decision
+
+Material HEAD: `75f5c0b90`. Verdict: `VALUE_NOT_PROVEN`. Both lanes scored 100;
+MAO added 20.7 percent latency. Session-sync parent HEAD: `75f5c0b90`.
+
+## Core Guard Self-Protection Authorization - MAO-LIVE-T1 Closure Sync
+
+Operator authorization: complete and close the bounded live value pilot.
+
+Authorized protected paths:
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/maoLiveT1Closure20260712.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Rollback boundary: revert only this sync; retain `75f5c0b90`.
 
 ## MAO-LIVE-T1 Dispatch
 

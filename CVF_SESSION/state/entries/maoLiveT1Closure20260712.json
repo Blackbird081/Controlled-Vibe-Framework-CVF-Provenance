@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1650,
+  "stateKey": "maoLiveT1Closure20260712",
+  "value": "MAO-LIVE-T1 is REVIEWER_ACCEPTED_VALUE_NOT_PROVEN at 75f5c0b90. Two live calls were used out of four; direct and MAO lanes both scored 100 while MAO latency was 20.7 percent higher. Reviewer reconciled a seventh machine-receipt path omitted from the six-output dispatch manifest and repaired future MAO usage propagation without rerunning or reconstructing missing historical usage. Final focused tests PASS 27/27, typecheck PASS, reviewer-fast PASS 61/61, and pre-commit PASS 82/82. Reopen only for a materially harder task with a predeclared quality-gain hypothesis."
+}

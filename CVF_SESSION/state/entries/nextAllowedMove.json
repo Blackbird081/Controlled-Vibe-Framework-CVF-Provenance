@@ -1,5 +1,5 @@
 {
   "stateOrder": 1641,
   "stateKey": "nextAllowedMove",
-  "value": "MAO-LIVE-T1 is DISPATCH_READY at 013e9fe21. Next allowed move is one WORKER_MUST_NOT_COMMIT implementation/live execution from clean post-sync HEAD producing exactly six outputs, using one provider lane and at most four live calls. No rerun before diagnostic. Durable queue, UI, public-sync, production readiness, broad provider parity, and a fifth call remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "MAO-LIVE-T1 is REVIEWER_ACCEPTED_VALUE_NOT_PROVEN at 75f5c0b90. Both lanes scored 100; MAO added 20.7 percent latency, used 2/4 total calls, and no rerun occurred. Do not continue this easy-task lane. Next move is another operator-selected roadmap; reopening live MAO requires a materially harder task and measurable quality-gain hypothesis through fresh governance. LHW24 remains latest closed numbered LHW wave."
 }
