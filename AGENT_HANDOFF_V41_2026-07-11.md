@@ -769,3 +769,31 @@ Authorized protected paths:
 
 Rollback boundary: revert only this handoff sync; retain advisory evidence
 commit `0818ac6d7`.
+
+## SOT3-T0R Semantic Reconciliation Dispatch
+
+Dispatch material HEAD: `2507fcdfe`.
+
+SOT3-T0R is dispatch-ready as a no-commit external semantic-review tranche.
+The worker must audit all 61 documentation files, every ABSORB and REJECT row,
+and all disputed source boundaries; return exactly three review artifacts; and
+keep implementation `NOT_AUTHORIZED`.
+
+Next allowed move: the operator-selected external reviewer executes
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T0R_SEMANTIC_RECONCILIATION_2026-07-12.md`.
+The reviewer/closer then accepts, revises, or rejects the recommendation before
+any implementation tranche is authored.
+
+Session-sync parent HEAD: `2507fcdfe`.
+
+## Core Guard Self-Protection Authorization - SOT3-T0R Dispatch Sync
+
+Operator authorization: create the next critique tranche, commit it cleanly,
+and send the execution prompt to the selected external reviewer.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+
+Rollback boundary: revert only this dispatch sync; retain T0R material dispatch
+commit `2507fcdfe`.
