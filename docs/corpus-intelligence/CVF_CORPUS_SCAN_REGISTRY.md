@@ -80,6 +80,7 @@ prior scan here before starting new work.
 | `CVF_Important/Knowledge Base_Graphify/` | LEGACY | SCANNED_WITH_FINDINGS | CI1-T2 | 5 | G-GM-* guard absent; CLI absent; KGR1 partial |
 | `CVF ADD/code-review-graph/` | LEGACY | SCANNED_WITH_FINDINGS | CI1-T3 | 7 | graph governance signals deferred; command/MCP surface deferred; performance claims bounded |
 | `CGE-R1 CodeGraph full reabsorption snapshot` | EXTERNAL_SOURCE | SCANNED_WITH_FINDINGS | CGE-R1 | 89 | 33 ADAPTED, 54 REJECTED, 2 NO_NEW_VALUE; template/example/schema over-defer repaired into owner-surface doctrine; runtime/package/checker/public lanes remain separately gated |
+| `SOT3-T0 retained Refinery, Truth Kernel, and Truth Flow advisory scan` | LEGACY_FOLDER | PARTIALLY_SCANNED | SOT3-T0 | 305 | Per-file corpus identity and major architecture findings retained; semantic dispositions and final three-layer decision require SOT3-T0R; no implementation authorized |
 | `CVF_Important/` (broad) | LEGACY | PARTIALLY_SCANNED | LHW-RESCAN-A | 230 | Inventory only; Graphify subfamily done |
 | `CVF ADD/` | LEGACY | PARTIALLY_SCANNED | LHW-RESCAN-C | 167 | `code-review-graph/` is CI1-T3 candidate |
 | `CVF 16.5/` | LEGACY | PARTIALLY_SCANNED | LHW-RESCAN-C | 100 | Broad routing only |
