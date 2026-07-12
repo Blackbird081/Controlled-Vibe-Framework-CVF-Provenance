@@ -81,8 +81,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t1_owner_novelty_reconciliation_dispatched",
-  "previousMode": "sot3_t0r_reviewer_accepted_t1_planning_next",
+  "currentMode": "sot3_t1_reviewer_accepted_t2_packet_next",
+  "previousMode": "sot3_t1_owner_novelty_reconciliation_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11168,5 +11168,18 @@
     "nextAllowedMove": "one no-commit SOT3-T1 worker execution and reviewer return",
     "claimBoundary": "owner/novelty evidence only; no owner creation, contracts, implementation, runtime, provider/live, or public work"
   },
-  "nextAllowedMove": "SOT3-T1 owner and novelty reconciliation is DISPATCH_READY at material commit 20b70908e. Next allowed move is one no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T1_OWNER_NOVELTY_RECONCILIATION_2026-07-12.md, producing exactly the three planned review outputs. Implementation and SOT3-T2 contract work remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
+  "sot3T1Closure20260712": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-12",
+    "materialCommit": "520ffb4cc",
+    "roadmap": "docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T1_OWNER_NOVELTY_RECONCILIATION_2026-07-12.md",
+    "completionReview": "docs/reviews/CVF_SOT3_T1_COMPLETION_REVIEW_2026-07-12.md",
+    "capabilityReconciliation": "12/12 exact and unique",
+    "existingOwnerEnrichments": 2,
+    "newOwnerCandidates": 5,
+    "nextAllowedMove": "fresh source-verified SOT3-T2 canonical inter-layer contract packet authoring only",
+    "claimBoundary": "owner planning accepted; no owner surface, contract execution, implementation, runtime, provider/live, or public work authorized"
+  },
+  "nextAllowedMove": "SOT3-T1 owner and novelty reconciliation is REVIEWER_ACCEPTED_BOUNDED at material commit 520ffb4cc. CAP-01 remains a new SOT three-layer architecture owner candidate; CAP-04 and CAP-09 enrich the existing TKG-T1 truth-foundation owner; CAP-05 remains a fresh Kernel runtime owner candidate. Next allowed move is fresh source-verified SOT3-T2 canonical inter-layer contract packet authoring only. Contract authoring/execution and all implementation remain NOT_AUTHORIZED until that packet is separately dispatched. LHW24 remains latest closed numbered LHW wave."
 }

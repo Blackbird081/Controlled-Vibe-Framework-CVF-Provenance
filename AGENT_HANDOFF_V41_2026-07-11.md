@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t1_owner_novelty_reconciliation_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit SOT3-T1 owner/novelty worker execution; parked checkpoint=all owner creation, contract, implementation, package, runtime, schema, test, guard, provider/live, and public work.
+Startup acknowledged: current mode=`sot3_t1_reviewer_accepted_t2_packet_next`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh source-verified SOT3-T2 canonical inter-layer contract packet authoring only; parked checkpoint=contract execution and all owner creation, implementation, package, runtime, schema, test, guard, provider/live, and public work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit 
 
 ## Current Mode
 
-`sot3_t1_owner_novelty_reconciliation_dispatched`
+`sot3_t1_reviewer_accepted_t2_packet_next`
 
 ## Latest Work / Changes
 
@@ -868,3 +868,37 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain SOT3-T1
 dispatch commit `20b70908e`.
+
+## SOT3-T1 Reviewer-Accepted Closure
+
+Material closure HEAD: `520ffb4cc`.
+
+SOT3-T1 is `REVIEWER_ACCEPTED_BOUNDED`. Twelve capability keys reconcile
+exactly. CAP-01 is a new SOT three-layer architecture owner candidate;
+CAP-04/CAP-09 enrich the existing TKG-T1 truth-foundation owner; CAP-05 remains
+a fresh Kernel runtime owner candidate. Two value defers retain concrete reopen
+conditions.
+
+Next allowed move is fresh source-verified SOT3-T2 canonical inter-layer
+contract packet authoring only. Contract execution, owner creation, and all
+implementation remain unauthorized.
+
+Session-sync parent HEAD: `520ffb4cc`.
+
+## Core Guard Self-Protection Authorization - SOT3-T1 Closure Sync
+
+Operator authorization: continue review of the completed bounded repair and
+preserve the pre-contract, pre-implementation boundary.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T1Closure20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain SOT3-T1
+material closure commit `520ffb4cc`.
