@@ -139,6 +139,23 @@ The matching T4 dispatch session-sync commit is `08f103b38`; this anchors the
 current governed HEAD for reviewer-fast continuity checks.
 T4 reviewer closure material is committed at `6bf81979b` with disposition
 `REVIEWER_ACCEPTED_AFTER_REPAIR`.
+The held SOT3-T5 packet and its Kernel current-reference authority blocker are
+committed at `76f1ea998`; T5 implementation remains unauthorized.
+
+## Core Guard Self-Protection Authorization - SOT3-T5 Hold Anchor
+
+Authorized guard-maintenance scope: anchor the reviewer-held T5 packet before
+dispatching its separately governed T4R1 prerequisite repair.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+
+Operator authorization: continue with Codex review before another agent
+implements; the reviewer must preserve the HOLD and prerequisite boundary.
+
+Rollback boundary: revert only this handoff anchor; retain held packet commit
+`76f1ea998`.
 
 ## Core Guard Self-Protection Authorization - SOT3-T4 Closure Sync
 
