@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_rap_t0_reverse_projection_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit SOT3-RAP-T0 execution followed by independent reviewer closure; parked checkpoint=SOT3-RCS-T1 until T0 pass plus runtime, schema, test, package, provider/live, public, and out-of-scope Catalog/GAP work.
+Startup acknowledged: current mode=`sot3_rap_t0_reviewer_accepted_rcs_t1_next`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh GC-018/work-order authoring for SOT3-RCS-T1 only; parked checkpoint=T1 implementation plus runtime, schema, test, package, provider/live, public, and further Catalog/GAP work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit 
 
 ## Current Mode
 
-`sot3_rap_t0_reverse_projection_dispatched`
+`sot3_rap_t0_reviewer_accepted_rcs_t1_next`
 
 ## Latest Work / Changes
 
@@ -1025,3 +1025,34 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain dispatch material
 commit `38a9e3a30`.
+
+## SOT3-RAP-T0 Reviewer Closure
+
+Material closure commit: `d394b6018`.
+
+Disposition: `REVIEWER_ACCEPTED_BOUNDED`. The accepted projection adds two
+contract/exclusion Catalog entries and three unresolved GAP entries. Catalog
+and GAP stable IDs are unique at 24/24 and 6/6; no SOT3 runtime owner is
+created. Worker repair rounds after return: zero; live quota consumed: zero.
+
+Next allowed move is fresh GC-018 and source-verified work-order authoring for
+SOT3-RCS-T1 review-cost systemization only. T1 implementation remains
+unauthorized until a new packet passes pre-dispatch.
+
+## Core Guard Self-Protection Authorization - SOT3 RAP-T0 Closure Sync
+
+Operator authorization: review and close the returned no-commit SOT3-RAP-T0
+tranche, then preserve the next bounded planning move.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3RapT0Closure20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain SOT3-RAP-T0
+material closure commit `d394b6018`.

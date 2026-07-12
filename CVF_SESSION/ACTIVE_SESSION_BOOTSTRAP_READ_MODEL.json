@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_rap_t0_reverse_projection_dispatched",
+  "currentMode": "sot3_rap_t0_reviewer_accepted_rcs_t1_next",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "SOT3-RAP-T0 is DISPATCH_READY at material commit 38a9e3a30. Next allowed move is one delegated WORKER_MUST_NOT_COMMIT execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_RAP_T0_REVERSE_ARCHITECTURE_PROJECTION_2026-07-12.md followed by independent reviewer closure. SOT3-RCS-T1 remains HOLD_UNTIL_T0_PASS. Runtime, schemas, tests, packages, providers/live, public-sync, and any Catalog/GAP mutation outside the exact T0 projection scope remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-RAP-T0 is REVIEWER_ACCEPTED_BOUNDED at material commit d394b6018. Next allowed move is fresh GC-018 and source-verified work-order authoring for SOT3-RCS-T1 review-cost systemization only; no T1 implementation is authorized before that packet passes pre-dispatch. Runtime, schemas, tests, packages, providers/live, public-sync, and further Catalog/GAP mutation remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -81,8 +81,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_rap_t0_reverse_projection_dispatched",
-  "previousMode": "sot3_t2_reviewer_accepted_reverse_projection_next",
+  "currentMode": "sot3_rap_t0_reviewer_accepted_rcs_t1_next",
+  "previousMode": "sot3_rap_t0_reverse_projection_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11216,5 +11216,18 @@
     "nextAllowedMove": "fresh source-verified reverse-architecture-projection and review-cost-systemization packet authoring only",
     "claimBoundary": "documentation contracts accepted; no runtime, schema, test, package, provider/live, public, or as-built projection implementation authorized"
   },
-  "nextAllowedMove": "SOT3-RAP-T0 is DISPATCH_READY at material commit 38a9e3a30. Next allowed move is one delegated WORKER_MUST_NOT_COMMIT execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_RAP_T0_REVERSE_ARCHITECTURE_PROJECTION_2026-07-12.md followed by independent reviewer closure. SOT3-RCS-T1 remains HOLD_UNTIL_T0_PASS. Runtime, schemas, tests, packages, providers/live, public-sync, and any Catalog/GAP mutation outside the exact T0 projection scope remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
+  "sot3RapT0Closure20260712": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-12",
+    "materialCommit": "d394b6018",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_RAP_T0_REVERSE_ARCHITECTURE_PROJECTION_2026-07-12.md",
+    "completionReview": "docs/reviews/CVF_SOT3_RAP_T0_COMPLETION_REVIEW_2026-07-12.md",
+    "catalogEntities": "24/24 unique",
+    "gapEntries": "6/6 unique",
+    "workerRepairRounds": 0,
+    "liveQuotaCalls": 0,
+    "nextAllowedMove": "fresh source-verified SOT3-RCS-T1 GC-018 and work-order authoring only",
+    "claimBoundary": "reverse architecture projection accepted; no SOT3 runtime owner, T1 implementation, provider/live, public-sync, or further Catalog/GAP mutation authorized"
+  },
+  "nextAllowedMove": "SOT3-RAP-T0 is REVIEWER_ACCEPTED_BOUNDED at material commit d394b6018. Next allowed move is fresh GC-018 and source-verified work-order authoring for SOT3-RCS-T1 review-cost systemization only; no T1 implementation is authorized before that packet passes pre-dispatch. Runtime, schemas, tests, packages, providers/live, public-sync, and further Catalog/GAP mutation remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
 }
