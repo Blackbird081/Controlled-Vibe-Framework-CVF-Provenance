@@ -81,8 +81,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t2_documentation_contracts_dispatched",
-  "previousMode": "sot3_t1_reviewer_accepted_t2_packet_next",
+  "currentMode": "sot3_t2_reviewer_accepted_reverse_projection_next",
+  "previousMode": "sot3_t2_documentation_contracts_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11191,5 +11191,18 @@
     "nextAllowedMove": "one no-commit SOT3-T2 documentation-contract execution",
     "claimBoundary": "documentation contracts only; no runtime, schemas, tests, guards, checkers, packages, provider/live, or public work"
   },
-  "nextAllowedMove": "SOT3-T2 documentation-contract work is DISPATCH_READY at material commit b2c7aca4d. Next allowed move is one no-commit execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T2_CANONICAL_INTER_LAYER_CONTRACTS_2026-07-12.md producing exactly five documentation/review outputs. Runtime, schemas, tests, guards, checkers, packages, provider/live, and public work remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
+  "nextAllowedMove": "SOT3-T2 documentation contracts are REVIEWER_ACCEPTED_BOUNDED at material commit 9c7b05b40. Next allowed move is fresh GC-018/work-order authoring for one bounded reverse-architecture-projection and review-cost-systemization tranche using ADIF-0026/0027. Catalog/GAP source projection, checker decisions, or implementation must remain held until that packet is source-verified and dispatched. SOT3 runtime, schemas, tests, packages, provider/live, and public work remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave.",
+  "sot3T2Closure20260712": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-12",
+    "materialCommit": "9c7b05b40",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T2_CANONICAL_INTER_LAYER_CONTRACTS_2026-07-12.md",
+    "completionReview": "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md",
+    "contracts": 8,
+    "invariants": 10,
+    "negativeCases": 14,
+    "reviewFindingsClosed": "R1-R12",
+    "nextAllowedMove": "fresh source-verified reverse-architecture-projection and review-cost-systemization packet authoring only",
+    "claimBoundary": "documentation contracts accepted; no runtime, schema, test, package, provider/live, public, or as-built projection implementation authorized"
+  }
 }

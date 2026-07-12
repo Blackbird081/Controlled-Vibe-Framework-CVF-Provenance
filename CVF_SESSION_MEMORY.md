@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t2_documentation_contracts_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit execution of the SOT3-T2 documentation-contract work order; parked checkpoint=runtime, schema, test, guard, checker, package, provider/live, and public work.
+Startup acknowledged: current mode=`sot3_t2_reviewer_accepted_reverse_projection_next`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh GC-018/work-order authoring for bounded reverse architecture projection and review-cost systemization; parked checkpoint=SOT3 runtime, schema, test, package, provider/live, public, and undispatched Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_t2_documentation_contracts_dispatched`
+Current mode marker: `sot3_t2_reviewer_accepted_reverse_projection_next`
 
-Current mode: `sot3_t2_documentation_contracts_dispatched`
+Current mode: `sot3_t2_reviewer_accepted_reverse_projection_next`
 
-`sot3_t2_documentation_contracts_dispatched`
+`sot3_t2_reviewer_accepted_reverse_projection_next`
 
 Previous mode:
 
-`sot3_t1_reviewer_accepted_t2_packet_next`
+`sot3_t2_documentation_contracts_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T2 canonical inter-layer contract closure | `9c7b05b40` | REVIEWER_ACCEPTED_BOUNDED; 8 contracts, 10 invariants, 14 negative cases, R1-R12 closed; implementation remains unauthorized. |
 | SOT3-T2 canonical documentation-contract dispatch | `b2c7aca4d` | DISPATCH_READY; exactly five no-commit outputs; no runtime/schema/test/guard/checker/package work. |
 | SOT3-T1 owner/novelty reconciliation closure | `520ffb4cc` | REVIEWER_ACCEPTED_BOUNDED; 12/12 capability keys; 2 existing-owner enrichments, 5 new-owner candidates; T2 packet authoring only released. |
 | SOT3-T1 owner/novelty reconciliation dispatch | `20b70908e` | DISPATCH_READY; exactly three no-commit evidence outputs; no owner creation or T2 contract work. |

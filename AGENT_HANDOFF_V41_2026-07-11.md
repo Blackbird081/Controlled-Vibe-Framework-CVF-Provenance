@@ -928,3 +928,38 @@ Authorized protected paths:
 - `CVF_SESSION/state/entries/sot3T2Dispatch20260712.json`
 
 Rollback boundary: revert only this session-sync batch; retain T2 dispatch commit `b2c7aca4d`.
+
+## SOT3-T2 Reviewer-Accepted Closure
+
+Material closure HEAD: `9c7b05b40`.
+
+SOT3-T2 is `REVIEWER_ACCEPTED_BOUNDED`. Eight inter-layer contracts, ten
+fail-closed invariants, and fourteen negative cases are accepted after R1-R12
+repair. The receipt hash test vector independently reproduces 522 UTF-8 bytes
+and SHA-256 `bc32424380bd483ca208edd8ee18bcaaa874b109584341e8febc01b5e46ab5a3`.
+
+Next allowed move is fresh GC-018/work-order authoring for one bounded reverse
+architecture projection and review-cost systemization tranche. ADIF-0026 and
+ADIF-0027 are the new shared learning inputs. Catalog/GAP mutation, checker
+work, and all SOT3 runtime/schema/test/package/provider/public work remain held
+until separately source-verified and dispatched.
+
+Session-sync parent HEAD: `9c7b05b40`.
+
+## Core Guard Self-Protection Authorization - SOT3-T2 Closure Sync
+
+Operator authorization: close SOT3-T2 cleanly, retain reviewer-cost and reverse
+projection learning, and open only a fresh carefully scoped tranche next.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T2Closure20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain SOT3-T2 material
+closure commit `9c7b05b40`.
