@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-12
 
@@ -63,8 +63,8 @@ existing TKG-T1 owner boundary.
 
 | Tranche | Objective | Outputs | Status |
 |---|---|---|---|
-| SOT3-RAP-T0 | Reverse-project accepted SOT3 contract/candidate/gap facts into Catalog/GAP source entries, README summaries, and regenerated aggregates | bounded Catalog entries; GAP entries; refreshed README/index/aggregate; worker return | WORK_ORDER_READY |
-| SOT3-RCS-T1 | Decide and, only if justified, implement narrow shape enforcement for review-cost telemetry and reverse-projection presence | fresh GC-018, source-verified checker decision, tests if authorized | HOLD_UNTIL_T0_PASS |
+| SOT3-RAP-T0 | Reverse-project accepted SOT3 contract/candidate/gap facts into Catalog/GAP source entries, README summaries, and regenerated aggregates | bounded Catalog entries; GAP entries; refreshed README/index/aggregate; worker return | REVIEWER_ACCEPTED_BOUNDED at `d394b6018` |
+| SOT3-RCS-T1 | Decide and implement narrow shape enforcement for review-cost telemetry | standard, checker, tests, three hook bindings, completion review | REVIEWER_ACCEPTED_AFTER_REPAIR at `ead8d7d51` |
 
 ## Work Plan
 
@@ -83,7 +83,7 @@ PASS, exact diff/status, reviewer semantic audit, and split committed ranges.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_roadmap_closure_freshness.py` |
-| literalTokensReviewed | PROPOSED; WORK_ORDER_READY; HOLD_UNTIL_T0_PASS; Public Export Disposition |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; REVIEWER_ACCEPTED_BOUNDED; REVIEWER_ACCEPTED_AFTER_REPAIR; Public Export Disposition |
 | gateRunPurpose | confirm author-derived roadmap structure and provide dispatch evidence |
 | claimBoundary | roadmap gates do not authorize implementation |
 
@@ -143,9 +143,51 @@ Web, public-sync, and product implementation remain `NOT_AUTHORIZED`.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance architecture projection and governance planning.
+Reason: private provenance architecture projection and governance planning;
+no public-sync batch or public artifact set is authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | T0 and T1 work orders | dispatch and completion commits exist; no open work-order checklist controls execution | PASS |
+| Completion or reviewer artifact | T0 and T1 completion reviews | final reviewer dispositions and committed gate evidence | PASS |
+| Roadmap state | this roadmap | top `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `N/A with reason` | no corpus registry state changed by roadmap closure | PASS |
+| Registry Markdown | `N/A with reason` | no corpus registry Markdown changed by roadmap closure | PASS |
+| External evidence digest | `N/A with reason` | no new external evidence source introduced in closure reconciliation | N/A with reason |
+| System loop interlock | `N/A with reason` | no system-loop registry state changed | PASS |
+| T0 reverse projection | `docs/reviews/CVF_SOT3_RAP_T0_COMPLETION_REVIEW_2026-07-12.md` | material commit `d394b6018`; `REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| T1 review-cost control | `docs/reviews/CVF_SOT3_RCS_T1_COMPLETION_REVIEW_2026-07-12.md` | material commit `ead8d7d51`; `REVIEWER_ACCEPTED_AFTER_REPAIR`; 24 tests | PASS_AFTER_REPAIR |
+| Catalog/GAP freshness | generated Catalog aggregate and GAP index | drift checker CURRENT; 24/24 unique entities; 6/6 unique gaps | PASS |
+| Review-cost hook wiring | three local hook catalogs | reviewer-fast 62/62 and pre-commit 83/83 | PASS |
+| Runtime/public boundary | T0 and T1 completion reviews | NOT_AUTHORIZED; DEFERRED_PRIVATE_ONLY | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION_MEMORY.md`; active handoff | current next move is this bounded roadmap closure; final operator-selection sync follows in a separate commit | PASS |
+
+## Closure Diff Gate
+
+| Roadmap requirement | Work-order instruction | Final evidence | Result |
+|---|---|---|---|
+| reverse-project accepted SOT3 facts | T0 six-row projection | five compact records, README updates, regenerated outputs | PASS |
+| recompute value/cost before T1 | T0 closure telemetry | zero worker repair rounds and zero live calls | PASS |
+| enforce only machine-safe review-cost shape | T1 nine fields and round-three control | standard, checker, 24 tests, three hook bindings | PASS_AFTER_REPAIR |
+| preserve semantic reviewer ownership | forbid automatic value/criticality scoring | checker validates shape only | PASS |
+| prevent silent telemetry omission | mandatory changed-completion-review coverage | docType applicability and missing-marker test | PASS_AFTER_REPAIR |
+| avoid runtime/public expansion | forbidden-scope controls | committed material contains no runtime/provider/public work | PASS |
+
+## Completion Checklist
+
+- [x] T0 dependency and closure evidence are committed.
+- [x] T1 dependency release and closure evidence are committed.
+- [x] Catalog/GAP reverse projection is discoverable and fresh.
+- [x] Review-cost control is mandatory for changed completion reviews.
+- [x] Semantic value remains reviewer-owned.
+- [x] Runtime, provider/live, public-sync, and new SOT3 implementation remain unauthorized.
+- [x] Public Export Disposition is `DEFERRED_PRIVATE_ONLY`.
 
 ## Claim Boundary
 
-This roadmap authorizes packet creation and, after dispatch, bounded T0
-projection. It does not itself change Catalog/GAP state or authorize T1.
+This roadmap is closed after accepted T0 projection and accepted-after-repair
+T1 review-cost systemization. It does not authorize SOT3 runtime, semantic
+review scoring, provider/live work, public-sync, or another implementation
+tranche.
