@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t3_refinery_core_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one SOT3-T3 WORKER_MUST_NOT_COMMIT Refinery Core execution from `200889d32`; parked checkpoint=T4-T7, package activation, provider/live, public, and unrelated Catalog/GAP work.
+Startup acknowledged: current mode=`sot3_t4_kernel_packet_authoring_next`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh SOT3-T4 Truth Kernel hardening packet authoring; parked checkpoint=T4 implementation plus T5-T7, activation, provider/live, public, and unrelated Catalog/GAP work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one SOT3-T3 WO
 
 ## Current Mode
 
-`sot3_t3_refinery_core_dispatched`
+`sot3_t4_kernel_packet_authoring_next`
 
 ## Latest Work / Changes
 
@@ -1144,3 +1144,30 @@ Authorized protected paths:
 - `CVF_SESSION/state/entries/sot3T3Dispatch20260712.json`
 
 Rollback boundary: revert only this session sync; retain dispatch commit `200889d32`.
+
+## SOT3-T3 Refinery Core Reviewer Closure
+
+Material closure commit: `fea7e2bba`.
+
+T4 packet-authoring roadmap release commit: `151812a07`.
+
+Disposition: `REVIEWER_ACCEPTED_AFTER_REPAIR`. Reviewer repaired T2
+REVIEW_REQUIRED/failure-token coupling and the missing SourceEnvelope and
+RefineryPacket schema surfaces. Typecheck/build and 4 suites/19 tests pass;
+pre-commit passes 83/83. Next move is T4 packet authoring only.
+
+## Core Guard Self-Protection Authorization - SOT3-T3 Closure Sync
+
+Operator authorization: continue the main three-folder absorption roadmap.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T3Closure20260712.json`
+
+Rollback boundary: revert only this sync; retain material commit `fea7e2bba`.

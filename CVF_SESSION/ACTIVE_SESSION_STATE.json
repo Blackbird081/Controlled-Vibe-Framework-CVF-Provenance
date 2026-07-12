@@ -81,8 +81,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t3_refinery_core_dispatched",
-  "previousMode": "sot3_t3_refinery_packet_authoring_next",
+  "currentMode": "sot3_t4_kernel_packet_authoring_next",
+  "previousMode": "sot3_t3_refinery_core_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11283,5 +11283,15 @@
     "nextAllowedMove": "one bounded deterministic no-AI SOT3-T3 package execution and no-commit worker return",
     "claimBoundary": "T3 Refinery Core only; T4-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain held"
   },
-  "nextAllowedMove": "Execute exactly one SOT3-T3 WORKER_MUST_NOT_COMMIT tranche from dispatch commit 200889d32 to implement the independent deterministic no-AI Refinery Core under EXTENSIONS/CVF_REFINERY and return COMPLETE_PENDING_REVIEW. T4-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave."
+  "sot3T3Closure20260712": {
+    "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
+    "date": "2026-07-12",
+    "materialCommit": "fea7e2bba",
+    "completionReview": "docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md",
+    "packageRoot": "EXTENSIONS/CVF_REFINERY/",
+    "verification": "typecheck and build PASS; Vitest 4 suites and 19 tests PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "fresh SOT3-T4 Truth Kernel hardening packet authoring only",
+    "claimBoundary": "T3 Refinery Core accepted bounded; T4 implementation and T5-T7 remain held"
+  },
+  "nextAllowedMove": "SOT3-T3 is reviewer-accepted after bounded repair at fea7e2bba. Next allowed move is fresh GC-018 and source-verified work-order authoring for SOT3-T4 Truth Kernel hardening only. T4 implementation and T5-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave."
 }

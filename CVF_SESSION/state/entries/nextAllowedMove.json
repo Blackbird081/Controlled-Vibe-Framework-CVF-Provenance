@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1714,
+  "stateOrder": 1716,
   "stateKey": "nextAllowedMove",
-  "value": "Execute exactly one SOT3-T3 WORKER_MUST_NOT_COMMIT tranche from dispatch commit 200889d32 to implement the independent deterministic no-AI Refinery Core under EXTENSIONS/CVF_REFINERY and return COMPLETE_PENDING_REVIEW. T4-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3-T3 is reviewer-accepted after bounded repair at fea7e2bba. Next allowed move is fresh GC-018 and source-verified work-order authoring for SOT3-T4 Truth Kernel hardening only. T4 implementation and T5-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave."
 }

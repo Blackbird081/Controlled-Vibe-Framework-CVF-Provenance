@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_t3_refinery_core_dispatched",
+  "currentMode": "sot3_t4_kernel_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "Execute exactly one SOT3-T3 WORKER_MUST_NOT_COMMIT tranche from dispatch commit 200889d32 to implement the independent deterministic no-AI Refinery Core under EXTENSIONS/CVF_REFINERY and return COMPLETE_PENDING_REVIEW. T4-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-T3 is reviewer-accepted after bounded repair at fea7e2bba. Next allowed move is fresh GC-018 and source-verified work-order authoring for SOT3-T4 Truth Kernel hardening only. T4 implementation and T5-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1715,
+  "stateKey": "sot3T3Closure20260712",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
+    "date": "2026-07-12",
+    "materialCommit": "fea7e2bba",
+    "completionReview": "docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md",
+    "packageRoot": "EXTENSIONS/CVF_REFINERY/",
+    "verification": "typecheck and build PASS; Vitest 4 suites and 19 tests PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "fresh SOT3-T4 Truth Kernel hardening packet authoring only",
+    "claimBoundary": "T3 Refinery Core accepted bounded; T4 implementation and T5-T7 remain held"
+  }
+}

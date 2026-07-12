@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t3_refinery_core_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one SOT3-T3 WORKER_MUST_NOT_COMMIT Refinery Core execution from `200889d32`; parked checkpoint=T4-T7, package activation, provider/live, public, and unrelated Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_t4_kernel_packet_authoring_next`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh SOT3-T4 Truth Kernel hardening packet authoring; parked checkpoint=T4 implementation plus T5-T7, activation, provider/live, public, and unrelated Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_t3_refinery_core_dispatched`
+Current mode marker: `sot3_t4_kernel_packet_authoring_next`
 
-Current mode: `sot3_t3_refinery_core_dispatched`
+Current mode: `sot3_t4_kernel_packet_authoring_next`
 
-`sot3_t3_refinery_core_dispatched`
+`sot3_t4_kernel_packet_authoring_next`
 
 Previous mode:
 
-`sot3_t3_refinery_packet_authoring_next`
+`sot3_t3_refinery_core_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T3 deterministic Refinery Core closure | `fea7e2bba` | REVIEWER_ACCEPTED_AFTER_REPAIR; 4 suites/19 tests; T4 packet authoring next. |
 | SOT3-T3 deterministic Refinery Core dispatch | `200889d32` | DISPATCH_READY; one no-commit package worker; T4-T7 held. |
 | Main SOT3 absorption roadmap resumed | `c897094d8` | T0-T2 accepted; T3 packet authoring next; T4-T7 dependency-held. |
 | SOT3 reverse projection and review-cost roadmap closure | `6d28e3de4` | CLOSED_PASS_BOUNDED; T0 and T1 closed; no open tranche or pre-authorized implementation. |
@@ -142,13 +143,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t3_refinery_core_dispatched`
+Mode: `sot3_t4_kernel_packet_authoring_next`
 
-Execute exactly one SOT3-T3 `WORKER_MUST_NOT_COMMIT` tranche from dispatch
-commit `200889d32`. The worker implements only `EXTENSIONS/CVF_REFINERY/` and
-returns pending review. T4-T7, package activation, provider/live, public-sync,
-and unrelated Catalog/GAP mutation remain held. Latest closed numbered LHW
-wave remains `LHW24`.
+SOT3-T3 is accepted after bounded repair at `fea7e2bba`. Next allowed move is
+fresh GC-018 and source-verified work-order authoring for SOT3-T4 Truth Kernel
+hardening only. T4 implementation and T5-T7, activation, provider/live,
+public-sync, and unrelated Catalog/GAP mutation remain held. Latest closed
+numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
