@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t5_truth_flow_packet_refresh_next",
-  "previousMode": "sot3_t4r1_kernel_reference_authority_dispatched",
+  "currentMode": "sot3_t5_truth_flow_dispatched",
+  "previousMode": "sot3_t5_truth_flow_packet_refresh_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11305,7 +11305,7 @@
     "nextAllowedMove": "one bounded deterministic SOT3-T4 Kernel execution and no-commit worker return",
     "claimBoundary": "T4 Kernel only; T5-T7, activation, Flow, monitors, database, adapters, provider/live and public remain held"
   },
-  "nextAllowedMove": "Refresh and re-review only the held SOT3-T5 GC-018 and work order against accepted T4R1 commit cda8fec64. T5 implementation and T6-T7 remain held until a fresh pre-dispatch pass and reviewer dispatch commit. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute exactly one SOT3-T5 WORKER_MUST_NOT_COMMIT post-Kernel Truth Flow tranche from dispatch commit 231bc8aea and return COMPLETE_PENDING_REVIEW. T6-T7, activation, adapters, provider/live, and public work remain held. LHW24 remains latest closed numbered LHW wave.",
   "sot3T4Closure20260712": {
     "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
     "date": "2026-07-12",
@@ -11335,5 +11335,16 @@
     "verification": "typecheck and build PASS; Vitest 7 suites and 54 tests PASS; reviewer-fast and pre-commit PASS",
     "nextAllowedMove": "refresh and re-review held SOT3-T5 packet only",
     "claimBoundary": "T5 implementation and T6-T7 remain held"
+  },
+  "sot3T5Dispatch20260713": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-13",
+    "materialCommit": "231bc8aea",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_T5_TRUTH_FLOW_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T5_TRUTH_FLOW_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "prerequisiteCommit": "cda8fec64",
+    "nextAllowedMove": "one bounded post-Kernel Truth Flow worker return",
+    "claimBoundary": "T6-T7 and activation/provider/public remain held"
   }
 }

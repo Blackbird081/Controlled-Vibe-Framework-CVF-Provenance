@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1722,
+  "stateKey": "sot3T5Dispatch20260713",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-13",
+    "materialCommit": "231bc8aea",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_T5_TRUTH_FLOW_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T5_TRUTH_FLOW_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "prerequisiteCommit": "cda8fec64",
+    "nextAllowedMove": "one bounded post-Kernel Truth Flow worker return",
+    "claimBoundary": "T6-T7 and activation/provider/public remain held"
+  }
+}

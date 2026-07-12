@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t5_truth_flow_packet_refresh_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=refresh and re-review held SOT3-T5 packet against `cda8fec64`; parked checkpoint=T5 implementation, T6-T7, activation, monitor, database, adapters, provider/live, public, and unrelated Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_t5_truth_flow_dispatched`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one SOT3-T5 WORKER_MUST_NOT_COMMIT execution from `231bc8aea`; parked checkpoint=T6-T7, activation, monitor, database, adapters, provider/live, public, and unrelated Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_t5_truth_flow_packet_refresh_next`
+Current mode marker: `sot3_t5_truth_flow_dispatched`
 
-Current mode: `sot3_t5_truth_flow_packet_refresh_next`
+Current mode: `sot3_t5_truth_flow_dispatched`
 
-`sot3_t5_truth_flow_packet_refresh_next`
+`sot3_t5_truth_flow_dispatched`
 
 Previous mode:
 
-`sot3_t4r1_kernel_reference_authority_dispatched`
+`sot3_t5_truth_flow_packet_refresh_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T5 post-Kernel Truth Flow dispatch | `231bc8aea` | DISPATCH_READY after T4R1; one no-commit worker; T6-T7 held. |
 | SOT3-T4R1 Kernel current-reference authority repair closure | `cda8fec64` | REVIEWER_ACCEPTED_BOUNDED; 7 suites/54 tests; T5 packet refresh only next. |
 | SOT3-T4R1 Kernel current-reference authority repair dispatch | `f667f1daa` | DISPATCH_READY; T5 held at `76f1ea998`; one no-commit worker. |
 | SOT3-T4 Truth Kernel hardening closure | `6bf81979b` | REVIEWER_ACCEPTED_AFTER_REPAIR; 6 suites/33 tests; T5 packet authoring released at `7dafc9185`. |
@@ -147,11 +148,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t5_truth_flow_packet_refresh_next`
+Mode: `sot3_t5_truth_flow_dispatched`
 
-Refresh and re-review only the held SOT3-T5 GC-018 and work order against
-accepted T4R1 commit `cda8fec64`. T5 implementation and T6-T7 remain held
-until a fresh pre-dispatch pass and reviewer dispatch commit.
+Execute exactly one SOT3-T5 `WORKER_MUST_NOT_COMMIT` post-Kernel Truth Flow
+tranche from dispatch commit `231bc8aea`. T6-T7 and activation/provider/public
+work remain held.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

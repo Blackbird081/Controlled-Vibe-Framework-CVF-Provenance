@@ -1,5 +1,5 @@
 {
   "stateOrder": 1718,
   "stateKey": "nextAllowedMove",
-  "value": "Refresh and re-review only the held SOT3-T5 GC-018 and work order against accepted T4R1 commit cda8fec64. T5 implementation and T6-T7 remain held until a fresh pre-dispatch pass and reviewer dispatch commit. LHW24 remains latest closed numbered LHW wave."
+  "value": "Execute exactly one SOT3-T5 WORKER_MUST_NOT_COMMIT post-Kernel Truth Flow tranche from dispatch commit 231bc8aea and return COMPLETE_PENDING_REVIEW. T6-T7, activation, adapters, provider/live, and public work remain held. LHW24 remains latest closed numbered LHW wave."
 }

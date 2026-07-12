@@ -17,10 +17,9 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t5_truth_flow_packet_refresh_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=refresh and
-re-review held SOT3-T5 packet against `cda8fec64`; parked checkpoint=T5
-implementation, T6-T7, activation,
+Startup acknowledged: current mode=`sot3_t5_truth_flow_dispatched`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one SOT3-T5
+WORKER_MUST_NOT_COMMIT execution from `231bc8aea`; parked checkpoint=T6-T7, activation,
 provider/live, public, monitor, database, adapter, and unrelated Catalog/GAP work.
 
 Latest closed numbered LHW wave remains `LHW24`.
@@ -36,7 +35,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_t5_truth_flow_packet_refresh_next`
+`sot3_t5_truth_flow_dispatched`
 
 ## Latest Work / Changes
 
@@ -55,11 +54,12 @@ The main roadmap releases T5 packet authoring at `7dafc9185`.
 T5 is held at `76f1ea998`; the reviewed T4R1 prerequisite repair packet is
 dispatched at `f667f1daa` after 75/75 pre-dispatch checks passed.
 T4R1 closed reviewer-accepted at `cda8fec64` with 7 suites/54 tests PASS.
+The refreshed T5 packet passed 75/75 pre-dispatch and is committed at
+`231bc8aea`.
 
 ## Next Allowed Move
 
-Refresh and re-review only the held T5 packet against `cda8fec64`. T5
-implementation and T6-T7 remain held until a fresh dispatch commit.
+Execute exactly one no-commit T5 tranche from `231bc8aea`. T6-T7 remain held.
 
 ## Active Boundary
 
@@ -223,3 +223,23 @@ continuity must not silently dispatch held T5 implementation.
 
 Rollback boundary: revert only this closure sync; retain T4R1 material commit
 `cda8fec64` and held T5 packet commit `76f1ea998`.
+
+## Core Guard Self-Protection Authorization - SOT3-T5 Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize the reviewed T5 dispatch and
+preserve T6-T7 plus activation/provider/public holds.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T5Dispatch20260713.json`
+
+Operator authorization: continue SOT3 after reviewer-controlled packet refresh.
+
+Rollback boundary: revert only this dispatch sync; retain T5 packet commit
+`231bc8aea` and T4R1 closure `cda8fec64`.
