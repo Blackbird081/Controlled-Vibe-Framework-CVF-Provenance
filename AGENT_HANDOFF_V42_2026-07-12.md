@@ -135,3 +135,5 @@ Rollback boundary: revert only this protected session-sync and handoff
 rotation; retain T4 dispatch material commit `52e8b0a4c`.
 The matching T4 dispatch session-sync commit is `08f103b38`; this anchors the
 current governed HEAD for reviewer-fast continuity checks.
+T4 reviewer closure material is committed at `6bf81979b` with disposition
+`REVIEWER_ACCEPTED_AFTER_REPAIR`.
