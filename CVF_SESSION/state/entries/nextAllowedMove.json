@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1706,
+  "stateOrder": 1708,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3-RCS-T1 is DISPATCH_READY at material commit 252844462. Next allowed move is one delegated WORKER_MUST_NOT_COMMIT execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_RCS_T1_REVIEW_COST_SYSTEMIZATION_2026-07-12.md followed by independent reviewer closure. Semantic review scoring, SOT3 runtime, schemas, packages, providers/live, public-sync, and Catalog/GAP mutation remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3-RCS-T1 is REVIEWER_ACCEPTED_AFTER_REPAIR at material commit ead8d7d51. Next allowed move is bounded same-roadmap closure reconciliation only; no new implementation tranche is authorized. Semantic review scoring, SOT3 runtime, schemas, packages, providers/live, public-sync, and Catalog/GAP mutation remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
 }

@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_rcs_t1_review_cost_systemization_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit SOT3-RCS-T1 execution followed by independent reviewer closure; parked checkpoint=semantic scoring plus runtime, schema, package, provider/live, public, and Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=bounded same-roadmap closure reconciliation only; parked checkpoint=all new implementation plus semantic scoring, runtime, provider/live, public, and Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_rcs_t1_review_cost_systemization_dispatched`
+Current mode marker: `sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`
 
-Current mode: `sot3_rcs_t1_review_cost_systemization_dispatched`
+Current mode: `sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`
 
-`sot3_rcs_t1_review_cost_systemization_dispatched`
+`sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`
 
 Previous mode:
 
-`sot3_rap_t0_reviewer_accepted_rcs_t1_next`
+`sot3_rcs_t1_review_cost_systemization_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-RCS-T1 review-cost systemization closure | `ead8d7d51` | REVIEWER_ACCEPTED_AFTER_REPAIR; mandatory changed-completion-review telemetry, 24 tests, 3 hook bindings, no semantic scoring. |
 | SOT3-RCS-T1 review-cost systemization dispatch | `252844462` | DISPATCH_READY; shape-only checker, nine telemetry fields, round-three escalation, worker must not commit. |
 | SOT3-RAP-T0 reverse architecture projection closure | `d394b6018` | REVIEWER_ACCEPTED_BOUNDED; 2 contract/exclusion Catalog entries, 3 unresolved GAP entries, 24/24 unique entities, 6/6 unique gaps; no runtime owner created. |
 | SOT3 reverse architecture projection and review-cost roadmap plus RAP-T0 dispatch | `38a9e3a30` | DISPATCH_READY; T0 performs bounded Catalog/GAP reverse projection; RCS-T1 remains HOLD_UNTIL_T0_PASS; worker must not commit. |
@@ -138,13 +139,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_rcs_t1_review_cost_systemization_dispatched`
+Mode: `sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`
 
-SOT3-RCS-T1 is DISPATCH_READY at `252844462`. Next allowed move is one
-no-commit execution of its bounded review-cost evidence-shape checker work
-order, followed by independent reviewer closure. Semantic scoring, SOT3
-runtime, and all other implementation remain NOT_AUTHORIZED. Latest closed
-numbered LHW wave remains `LHW24`.
+SOT3-RCS-T1 is REVIEWER_ACCEPTED_AFTER_REPAIR at `ead8d7d51`. Next allowed
+move is bounded closure reconciliation of the existing SOT3-RAP-RCS roadmap
+only. No new implementation is authorized. Latest closed numbered LHW wave
+remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
