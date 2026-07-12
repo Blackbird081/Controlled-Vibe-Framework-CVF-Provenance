@@ -17,10 +17,10 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t5_truth_flow_packet_authoring_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh SOT3-T5
-post-Kernel Truth Flow GC-018 and source-verified work-order authoring only from
-`7dafc9185`; parked checkpoint=T5 implementation, T6-T7, activation,
+Startup acknowledged: current mode=`sot3_t4r1_kernel_reference_authority_dispatched`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one SOT3-T4R1
+WORKER_MUST_NOT_COMMIT repair from `f667f1daa`; parked checkpoint=T5
+implementation, T6-T7, activation,
 provider/live, public, monitor, database, adapter, and unrelated Catalog/GAP work.
 
 Latest closed numbered LHW wave remains `LHW24`.
@@ -36,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_t5_truth_flow_packet_authoring_next`
+`sot3_t4r1_kernel_reference_authority_dispatched`
 
 ## Latest Work / Changes
 
@@ -52,11 +52,13 @@ owner and rejecting direct prototype import.
 T4 reviewer closure material is committed at `6bf81979b` with disposition
 `REVIEWER_ACCEPTED_AFTER_REPAIR`; typecheck/build and 6 suites/33 tests pass.
 The main roadmap releases T5 packet authoring at `7dafc9185`.
+T5 is held at `76f1ea998`; the reviewed T4R1 prerequisite repair packet is
+dispatched at `f667f1daa` after 75/75 pre-dispatch checks passed.
 
 ## Next Allowed Move
 
-Author only a fresh SOT3-T5 post-Kernel Truth Flow GC-018 baseline and
-source-verified no-commit work order. T5 implementation and T6-T7 remain held.
+Execute exactly one no-commit T4R1 repair from `f667f1daa`. T5 implementation
+and T6-T7 remain held.
 
 ## Active Boundary
 
@@ -178,3 +180,24 @@ reviewer acceptance and continuity sync are required before T5 packet work.
 
 Rollback boundary: revert only this T4 closure session sync; retain T4 material
 commit `6bf81979b` and roadmap release commit `7dafc9185`.
+
+## Core Guard Self-Protection Authorization - SOT3-T4R1 Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize the reviewed T4R1 dispatch
+and keep held T5 implementation out of the next move.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T4R1Dispatch20260712.json`
+
+Operator authorization: Codex reviews and dispatches the prerequisite repair
+before another agent implements; session continuity must reflect that route.
+
+Rollback boundary: revert only this dispatch session sync; retain held T5
+commit `76f1ea998` and T4R1 packet commit `f667f1daa`.

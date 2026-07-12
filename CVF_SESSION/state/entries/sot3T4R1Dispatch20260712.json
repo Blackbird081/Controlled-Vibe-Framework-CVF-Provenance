@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1720,
+  "stateKey": "sot3T4R1Dispatch20260712",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "materialCommit": "f667f1daa",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_T4R1_KERNEL_CURRENT_REFERENCE_AUTHORITY_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T4R1_KERNEL_CURRENT_REFERENCE_AUTHORITY_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "one bounded T4R1 Kernel current-reference authority repair worker return",
+    "claimBoundary": "T5 implementation and T6-T7 remain held"
+  }
+}

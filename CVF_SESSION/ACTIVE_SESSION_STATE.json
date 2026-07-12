@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t5_truth_flow_packet_authoring_next",
-  "previousMode": "sot3_t4_truth_kernel_dispatched",
+  "currentMode": "sot3_t4r1_kernel_reference_authority_dispatched",
+  "previousMode": "sot3_t5_truth_flow_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11305,7 +11305,7 @@
     "nextAllowedMove": "one bounded deterministic SOT3-T4 Kernel execution and no-commit worker return",
     "claimBoundary": "T4 Kernel only; T5-T7, activation, Flow, monitors, database, adapters, provider/live and public remain held"
   },
-  "nextAllowedMove": "Author only a fresh SOT3-T5 post-Kernel Truth Flow GC-018 baseline and source-verified no-commit work order from roadmap release commit 7dafc9185. T5 implementation and T6-T7, package activation, monitor, database, adapter, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute exactly one SOT3-T4R1 WORKER_MUST_NOT_COMMIT Kernel current-reference authority repair from dispatch commit f667f1daa and return COMPLETE_PENDING_REVIEW. SOT3-T5 implementation and T6-T7 remain held. LHW24 remains latest closed numbered LHW wave.",
   "sot3T4Closure20260712": {
     "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
     "date": "2026-07-12",
@@ -11316,5 +11316,15 @@
     "verification": "typecheck and build PASS; Vitest 6 suites and 33 tests PASS; reviewer-fast PASS; pre-commit 83/83 PASS",
     "nextAllowedMove": "fresh SOT3-T5 post-Kernel Truth Flow packet authoring only",
     "claimBoundary": "T4 Truth Kernel accepted bounded; T5 implementation and T6-T7 remain held"
+  },
+  "sot3T4R1Dispatch20260712": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "materialCommit": "f667f1daa",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_T4R1_KERNEL_CURRENT_REFERENCE_AUTHORITY_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T4R1_KERNEL_CURRENT_REFERENCE_AUTHORITY_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "one bounded T4R1 Kernel current-reference authority repair worker return",
+    "claimBoundary": "T5 implementation and T6-T7 remain held"
   }
 }
