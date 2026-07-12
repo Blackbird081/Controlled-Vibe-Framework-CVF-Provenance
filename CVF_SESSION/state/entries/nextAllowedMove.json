@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1712,
+  "stateOrder": 1714,
   "stateKey": "nextAllowedMove",
-  "value": "The auxiliary SOT3 reverse-projection/review-cost roadmap is closed, but the main 305-file SOT3 absorption roadmap remains active through T7. Next allowed move is fresh GC-018 and source-verified work-order authoring for SOT3-T3 independent deterministic no-AI Refinery Core only. T3 implementation is not authorized before pre-dispatch; T4-T7, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave."
+  "value": "Execute exactly one SOT3-T3 WORKER_MUST_NOT_COMMIT tranche from dispatch commit 200889d32 to implement the independent deterministic no-AI Refinery Core under EXTENSIONS/CVF_REFINERY and return COMPLETE_PENDING_REVIEW. T4-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave."
 }

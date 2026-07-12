@@ -81,8 +81,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t3_refinery_packet_authoring_next",
-  "previousMode": "sot3_roadmap_closed_operator_selection",
+  "currentMode": "sot3_t3_refinery_core_dispatched",
+  "previousMode": "sot3_t3_refinery_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11272,5 +11272,16 @@
     "nextAllowedMove": "fresh SOT3-T3 GC-018 and source-verified work-order authoring for deterministic no-AI Refinery Core",
     "claimBoundary": "main absorption roadmap remains active; no T3 implementation before dispatch and T4-T7 remain dependency-held"
   },
-  "nextAllowedMove": "The auxiliary SOT3 reverse-projection/review-cost roadmap is closed, but the main 305-file SOT3 absorption roadmap remains active through T7. Next allowed move is fresh GC-018 and source-verified work-order authoring for SOT3-T3 independent deterministic no-AI Refinery Core only. T3 implementation is not authorized before pre-dispatch; T4-T7, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave."
+  "sot3T3Dispatch20260712": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "materialCommit": "200889d32",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_T3_REFINERY_CORE_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T3_REFINERY_CORE_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "targetRoot": "EXTENSIONS/CVF_REFINERY/",
+    "nextAllowedMove": "one bounded deterministic no-AI SOT3-T3 package execution and no-commit worker return",
+    "claimBoundary": "T3 Refinery Core only; T4-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain held"
+  },
+  "nextAllowedMove": "Execute exactly one SOT3-T3 WORKER_MUST_NOT_COMMIT tranche from dispatch commit 200889d32 to implement the independent deterministic no-AI Refinery Core under EXTENSIONS/CVF_REFINERY and return COMPLETE_PENDING_REVIEW. T4-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave."
 }

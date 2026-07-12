@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t3_refinery_packet_authoring_next`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh SOT3-T3 GC-018/source-verified work-order authoring for deterministic no-AI Refinery Core; parked checkpoint=T3 implementation before pre-dispatch plus T4-T7, provider/live, public, and unrelated Catalog/GAP work.
+Startup acknowledged: current mode=`sot3_t3_refinery_core_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one SOT3-T3 WORKER_MUST_NOT_COMMIT Refinery Core execution from `200889d32`; parked checkpoint=T4-T7, package activation, provider/live, public, and unrelated Catalog/GAP work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh SOT3-T3 
 
 ## Current Mode
 
-`sot3_t3_refinery_packet_authoring_next`
+`sot3_t3_refinery_core_dispatched`
 
 ## Latest Work / Changes
 
@@ -1117,3 +1117,30 @@ Authorized protected paths:
 
 Rollback boundary: revert only this correction sync; retain main-roadmap
 correction commit `c897094d8` and all accepted T0-T2 material.
+
+## SOT3-T3 Deterministic Refinery Core Dispatch
+
+Dispatch material commit: `200889d32`.
+
+The packet passed pre-dispatch 75/75 and commit-hook 83/83. One no-commit
+worker may create only `EXTENSIONS/CVF_REFINERY/**` plus the named worker
+return. T2 contracts control; retained code is adapt/reject evidence only.
+T4-T7, activation, provider/live, public-sync, and unrelated Catalog/GAP work
+remain held.
+
+## Core Guard Self-Protection Authorization - SOT3-T3 Dispatch Sync
+
+Operator authorization: continue absorbing the three SOT folders and dispatch
+the bounded T3 Refinery Core tranche.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T3Dispatch20260712.json`
+
+Rollback boundary: revert only this session sync; retain dispatch commit `200889d32`.

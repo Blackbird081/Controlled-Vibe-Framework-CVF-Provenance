@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t3_refinery_packet_authoring_next`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh GC-018/source-verified work-order authoring for SOT3-T3 deterministic no-AI Refinery Core; parked checkpoint=T3 implementation before pre-dispatch plus T4-T7, provider/live, public, and unrelated Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_t3_refinery_core_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one SOT3-T3 WORKER_MUST_NOT_COMMIT Refinery Core execution from `200889d32`; parked checkpoint=T4-T7, package activation, provider/live, public, and unrelated Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_t3_refinery_packet_authoring_next`
+Current mode marker: `sot3_t3_refinery_core_dispatched`
 
-Current mode: `sot3_t3_refinery_packet_authoring_next`
+Current mode: `sot3_t3_refinery_core_dispatched`
 
-`sot3_t3_refinery_packet_authoring_next`
+`sot3_t3_refinery_core_dispatched`
 
 Previous mode:
 
-`sot3_roadmap_closed_operator_selection`
+`sot3_t3_refinery_packet_authoring_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T3 deterministic Refinery Core dispatch | `200889d32` | DISPATCH_READY; one no-commit package worker; T4-T7 held. |
 | Main SOT3 absorption roadmap resumed | `c897094d8` | T0-T2 accepted; T3 packet authoring next; T4-T7 dependency-held. |
 | SOT3 reverse projection and review-cost roadmap closure | `6d28e3de4` | CLOSED_PASS_BOUNDED; T0 and T1 closed; no open tranche or pre-authorized implementation. |
 | SOT3-RCS-T1 review-cost systemization closure | `ead8d7d51` | REVIEWER_ACCEPTED_AFTER_REPAIR; mandatory changed-completion-review telemetry, 24 tests, 3 hook bindings, no semantic scoring. |
@@ -141,12 +142,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t3_refinery_packet_authoring_next`
+Mode: `sot3_t3_refinery_core_dispatched`
 
-The auxiliary SOT3-RAP-RCS roadmap is closed, but the main SOT3 absorption
-roadmap continues. Next allowed move is fresh SOT3-T3 GC-018 and source-
-verified work-order authoring for deterministic no-AI Refinery Core. T4-T7
-remain held. Latest closed numbered LHW wave remains `LHW24`.
+Execute exactly one SOT3-T3 `WORKER_MUST_NOT_COMMIT` tranche from dispatch
+commit `200889d32`. The worker implements only `EXTENSIONS/CVF_REFINERY/` and
+returns pending review. T4-T7, package activation, provider/live, public-sync,
+and unrelated Catalog/GAP mutation remain held. Latest closed numbered LHW
+wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
