@@ -1,11 +1,21 @@
 import type { KernelStores } from "../stores/kernel-stores.js";
 import type { TruthReceipt } from "../types/truth-receipt.js";
+import type { TruthReference } from "../types/truth-reference.js";
 
 export type RevocationRejectionReason = "RECEIPT_NOT_FOUND" | "RECEIPT_NOT_ISSUED";
 
 export interface RevocationResult {
   revoked: boolean;
   reasons: RevocationRejectionReason[];
+}
+
+export type ReferenceRevocationRejectionReason =
+  | "REFERENCE_NOT_FOUND"
+  | "REFERENCE_ALREADY_REVOKED";
+
+export interface ReferenceRevocationResult {
+  revoked: boolean;
+  reasons: ReferenceRevocationRejectionReason[];
 }
 
 /**
@@ -37,4 +47,45 @@ export function currentReceiptStatus(
 ): TruthReceipt["status"] {
   if (isReceiptRevoked(receipt.receipt_id, stores)) return "REVOKED";
   return receipt.status;
+}
+
+/**
+ * Revokes a `TruthReference` directly, independent of its bound receipt's
+ * own revocation status (T4R1 Required Invariant 2). Recorded as a new
+ * append-only entry in stores.referenceRevocations keyed by reference_id.
+ */
+export function revokeReference(
+  referenceId: string,
+  stores: KernelStores,
+): ReferenceRevocationResult {
+  const reference = stores.references.get(referenceId);
+  if (!reference) {
+    return { revoked: false, reasons: ["REFERENCE_NOT_FOUND"] };
+  }
+  if (isReferenceDirectlyRevoked(referenceId, stores)) {
+    return { revoked: false, reasons: ["REFERENCE_ALREADY_REVOKED"] };
+  }
+  stores.referenceRevocations.insert(referenceId, { reference_id: referenceId });
+  return { revoked: true, reasons: [] };
+}
+
+export function isReferenceDirectlyRevoked(referenceId: string, stores: KernelStores): boolean {
+  return stores.referenceRevocations.has(referenceId);
+}
+
+/**
+ * A `TruthReference` reads REVOKED if it was revoked directly or if its
+ * bound receipt was revoked (T4R1 Required Invariant 2). Either cause is
+ * authoritative; there is no precedence between the two revocation paths
+ * because both resolve to the same REVOKED outcome.
+ */
+export function isReferenceEffectivelyRevoked(
+  reference: TruthReference,
+  receipt: TruthReceipt,
+  stores: KernelStores,
+): boolean {
+  return (
+    isReferenceDirectlyRevoked(reference.reference_id, stores) ||
+    currentReceiptStatus(receipt, stores) === "REVOKED"
+  );
 }

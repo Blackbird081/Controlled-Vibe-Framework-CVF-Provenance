@@ -10,9 +10,22 @@ import type { TruthReference } from "./types/truth-reference.js";
 import { admitRequest } from "./engine/admission.js";
 import { produceVerificationResults, computeDecision } from "./engine/evaluator.js";
 import { issueReceipt } from "./engine/receipt-issuer.js";
-import { revokeReceipt, currentReceiptStatus } from "./engine/revocation.js";
-import { issueReference, computeReferenceState } from "./engine/reference-issuer.js";
-import type { ReferenceIssuanceResult } from "./engine/reference-issuer.js";
+import {
+  revokeReceipt,
+  currentReceiptStatus,
+  revokeReference as revokeReferenceRecord,
+} from "./engine/revocation.js";
+import type { RevocationResult, ReferenceRevocationResult } from "./engine/revocation.js";
+import {
+  issueReference,
+  computeCurrentReferenceState,
+  supersedeReference,
+} from "./engine/reference-issuer.js";
+import type {
+  ReferenceIssuanceResult,
+  ReferenceStateResolutionResult,
+  SupersessionResult,
+} from "./engine/reference-issuer.js";
 
 export interface EvaluateInput {
   requestId: string;
@@ -120,7 +133,7 @@ export class TruthKernel {
     return { request, decision, receipt: issuance.receipt };
   }
 
-  revoke(receiptId: string) {
+  revoke(receiptId: string): RevocationResult {
     return revokeReceipt(receiptId, this.stores);
   }
 
@@ -139,12 +152,29 @@ export class TruthKernel {
     return issueReference(receiptId, scope, version, validFromUtc, validUntilUtc, this.stores, deps);
   }
 
-  referenceState(
-    reference: TruthReference,
-    nowUtcIso: string,
-    isRevoked = false,
-    isSuperseded = false,
-  ): TruthReference["reference_state"] {
-    return computeReferenceState(reference, this.stores, nowUtcIso, isRevoked, isSuperseded);
+  /**
+   * Resolves current reference_state at read time. Accepts only a
+   * reference_id and the read-time timestamp; no caller-supplied
+   * reference object, isRevoked, or isSuperseded parameter exists
+   * (T4R1 Required Invariant 1).
+   */
+  referenceState(referenceId: string, nowUtcIso: string): ReferenceStateResolutionResult {
+    return computeCurrentReferenceState(referenceId, this.stores, nowUtcIso);
+  }
+
+  /**
+   * Revokes a TruthReference directly, independent of its bound
+   * receipt's own revocation status (T4R1 Required Invariant 2).
+   */
+  revokeReference(referenceId: string): ReferenceRevocationResult {
+    return revokeReferenceRecord(referenceId, this.stores);
+  }
+
+  /**
+   * Records that newReferenceId supersedes oldReferenceId under the
+   * validation rules in T4R1 Required Invariant 3.
+   */
+  supersede(oldReferenceId: string, newReferenceId: string): SupersessionResult {
+    return supersedeReference(oldReferenceId, newReferenceId, this.stores);
   }
 }

@@ -1,7 +1,7 @@
 import type { KernelStores } from "../stores/kernel-stores.js";
 import type { TruthReference } from "../types/truth-reference.js";
 import type { StageDeps } from "./deps-context.js";
-import { currentReceiptStatus } from "./revocation.js";
+import { currentReceiptStatus, isReferenceEffectivelyRevoked } from "./revocation.js";
 import { computeReceiptHash } from "../receipt/receipt-hash.js";
 
 export type ReferenceRejectionReason =
@@ -160,20 +160,110 @@ export function issueReference(
   return { issued: true, reference, reasons: [] };
 }
 
+export type ReferenceStateResolutionReason =
+  | "REFERENCE_NOT_FOUND"
+  | "BOUND_RECEIPT_NOT_FOUND"
+  | "INVALID_READ_TIME";
+
+export interface ReferenceStateResolutionResult {
+  resolved: boolean;
+  state?: TruthReference["reference_state"];
+  reasons: ReferenceStateResolutionReason[];
+}
+
+export type SupersessionRejectionReason =
+  | "SUPERSEDED_REFERENCE_NOT_FOUND"
+  | "SUPERSEDING_REFERENCE_NOT_FOUND"
+  | "SUPERSESSION_SELF_LINK"
+  | "SUPERSESSION_CROSS_SCOPE"
+  | "SUPERSESSION_NOT_LATER"
+  | "SUPERSESSION_ALREADY_RECORDED";
+
+export interface SupersessionResult {
+  superseded: boolean;
+  reasons: SupersessionRejectionReason[];
+}
+
 /**
- * Computes reference_state at read time per the T2 precedence rule:
- * REVOKED > SUPERSEDED > EXPIRED > ACTIVE. Expiry is derived from
- * valid_until_utc, never a separately stored flag.
+ * Resolves reference_state at read time per the T2 precedence rule:
+ * REVOKED > SUPERSEDED > EXPIRED > ACTIVE (T4R1 Required Invariant 4).
+ * Resolves the caller's reference_id to the immutable stored reference and
+ * its bound receipt first (T4R1 Required Invariant 1); no caller-supplied
+ * reference object, isRevoked, or isSuperseded parameter exists. Every
+ * missing record or invalid read-time timestamp fails closed with a typed
+ * reason instead of a default ACTIVE (T4R1 Required Invariant 7). Expiry is
+ * derived from valid_until_utc, never a separately stored flag (T4R1
+ * Required Invariant 5).
  */
-export function computeReferenceState(
-  reference: TruthReference,
+export function computeCurrentReferenceState(
+  referenceId: string,
   stores: KernelStores,
   nowUtcIso: string,
-  isRevoked: boolean,
-  isSuperseded: boolean,
-): TruthReference["reference_state"] {
-  if (isRevoked) return "REVOKED";
-  if (isSuperseded) return "SUPERSEDED";
-  if (Date.parse(nowUtcIso) >= Date.parse(reference.valid_until_utc)) return "EXPIRED";
-  return "ACTIVE";
+): ReferenceStateResolutionResult {
+  const reference = stores.references.get(referenceId);
+  if (!reference) {
+    return { resolved: false, reasons: ["REFERENCE_NOT_FOUND"] };
+  }
+  const receipt = stores.receipts.get(reference.receipt_id);
+  if (!receipt) {
+    return { resolved: false, reasons: ["BOUND_RECEIPT_NOT_FOUND"] };
+  }
+  if (Number.isNaN(Date.parse(nowUtcIso))) {
+    return { resolved: false, reasons: ["INVALID_READ_TIME"] };
+  }
+
+  if (isReferenceEffectivelyRevoked(reference, receipt, stores)) {
+    return { resolved: true, state: "REVOKED", reasons: [] };
+  }
+  if (stores.supersessions.has(reference.reference_id)) {
+    return { resolved: true, state: "SUPERSEDED", reasons: [] };
+  }
+  if (Date.parse(nowUtcIso) >= Date.parse(reference.valid_until_utc)) {
+    return { resolved: true, state: "EXPIRED", reasons: [] };
+  }
+  return { resolved: true, state: "ACTIVE", reasons: [] };
+}
+
+/**
+ * Records that `newReferenceId` supersedes `oldReferenceId` (T4R1 Required
+ * Invariant 3). Both references must already exist and be distinct, share
+ * the same scope, and the superseding reference's valid_from_utc must be
+ * strictly later than the superseded reference's valid_from_utc. Each
+ * superseded reference may be recorded at most once, matching the
+ * ImmutableStore's insert-rejects-overwrite contract.
+ */
+export function supersedeReference(
+  oldReferenceId: string,
+  newReferenceId: string,
+  stores: KernelStores,
+): SupersessionResult {
+  const oldReference = stores.references.get(oldReferenceId);
+  if (!oldReference) {
+    return { superseded: false, reasons: ["SUPERSEDED_REFERENCE_NOT_FOUND"] };
+  }
+  const newReference = stores.references.get(newReferenceId);
+  if (!newReference) {
+    return { superseded: false, reasons: ["SUPERSEDING_REFERENCE_NOT_FOUND"] };
+  }
+  if (oldReferenceId === newReferenceId) {
+    return { superseded: false, reasons: ["SUPERSESSION_SELF_LINK"] };
+  }
+  if (oldReference.scope !== newReference.scope) {
+    return { superseded: false, reasons: ["SUPERSESSION_CROSS_SCOPE"] };
+  }
+  if (
+    Number.isNaN(Date.parse(oldReference.valid_from_utc)) ||
+    Number.isNaN(Date.parse(newReference.valid_from_utc)) ||
+    Date.parse(newReference.valid_from_utc) <= Date.parse(oldReference.valid_from_utc)
+  ) {
+    return { superseded: false, reasons: ["SUPERSESSION_NOT_LATER"] };
+  }
+  if (stores.supersessions.has(oldReferenceId)) {
+    return { superseded: false, reasons: ["SUPERSESSION_ALREADY_RECORDED"] };
+  }
+  stores.supersessions.insert(oldReferenceId, {
+    superseded_reference_id: oldReferenceId,
+    superseding_reference_id: newReferenceId,
+  });
+  return { superseded: true, reasons: [] };
 }
