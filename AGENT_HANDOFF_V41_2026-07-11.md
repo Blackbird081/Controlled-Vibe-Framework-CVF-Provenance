@@ -963,3 +963,32 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain SOT3-T2 material
 closure commit `9c7b05b40`.
+
+## SOT3 Reviewer Learning Material Closure
+
+Learning material HEAD: `b054829a7`.
+
+ADIF-0026 now requires dependency-closure review, repair-cost telemetry, and
+round-three diminishing-return escalation. ADIF-0027 now requires accepted
+architecture-changing absorption to resolve a Reverse Architecture Projection
+Matrix for Catalog/GAP/README/Index surfaces while keeping pending candidates
+out of as-built claims.
+
+Next allowed move remains fresh GC-018/work-order authoring for one bounded
+reverse architecture projection and review-cost systemization tranche. No
+Catalog/GAP mutation or implementation is authorized by the learning commit.
+
+Session-sync parent HEAD: `b054829a7`.
+
+## Core Guard Self-Protection Authorization - SOT3 Learning Handoff Sync
+
+Operator authorization: preserve the mandatory shared learning after clean T2
+closure and prepare a fresh carefully scoped tranche.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+
+Rollback boundary: revert only this handoff-sync batch; retain SOT3-T2 closure
+commit `9c7b05b40`, session-sync commit `add1b1fb3`, and learning material
+commit `b054829a7`.
