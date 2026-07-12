@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T4_KERNEL_PACKET_AUTHORING_NEXT
+Status: ACTIVE_T5_TRUTH_FLOW_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -172,18 +172,19 @@ remain untrusted.
 
 ## Authorization / Decision
 
-SOT3-T0/T0R/T1/T2/T3 are reviewer-accepted. T2 canonical contracts closed at
+SOT3-T0/T0R/T1/T2/T3/T4 are reviewer-accepted. T2 canonical contracts closed at
 material commit `9c7b05b40`; reverse architecture projection closed at
 `d394b6018`; the separate review-cost control closed at `ead8d7d51`; and the
-deterministic Refinery Core closed after bounded repair at `fea7e2bba`.
+deterministic Refinery Core closed after bounded repair at `fea7e2bba`; and
+Truth Kernel hardening closed after bounded repair at `6bf81979b`.
 
 Operator correction confirms that closing the auxiliary projection/review-cost
 roadmap did not close this main 305-file absorption roadmap. Authorization is
 now limited to fresh GC-018 and source-verified work-order authoring for
-SOT3-T4 Truth Kernel hardening. T4 implementation remains unauthorized until
-that packet passes pre-dispatch. SOT3-T5 through SOT3-T7 remain
-dependency-held. No Truth Flow, vertical-slice, provider, live, or public work
-is authorized.
+SOT3-T5 post-Kernel Truth Flow. T5 implementation remains unauthorized until
+that packet passes pre-dispatch. SOT3-T6 and SOT3-T7 remain dependency-held.
+No Truth Flow implementation, vertical-slice, provider, live, or public work
+is authorized by this roadmap update.
 
 ## Design Control Gate
 
@@ -196,7 +197,7 @@ is authorized.
 | Claim boundary | external output remains advisory | PASS |
 | Acceptance criteria | source accounting, cross-layer map, contradictions, and dispositions observable | PASS |
 | Verification evidence | manifest arithmetic, body-read ledger, review report, and no-commit evidence | REQUIRED |
-| Dispatch readiness | T3 accepted at `fea7e2bba`; fresh SOT3-T4 GC-018 and source-verified work order must pass pre-dispatch | T4_PACKET_AUTHORING_RELEASED |
+| Dispatch readiness | T4 accepted at `6bf81979b`; fresh SOT3-T5 GC-018 and source-verified work order must pass pre-dispatch | T5_PACKET_AUTHORING_RELEASED |
 
 ## Tranche Plan
 
@@ -212,19 +213,19 @@ is authorized.
 | SOT3-T6 | three-layer vertical slice | internal, project, and market-source scenario across all contracts | end-to-end evidence preserves source, scope, conflict, receipt, route, and lifecycle |
 | SOT3-T7 | semantic value audit and closeout | complete conversion ledger and parked-value index reconciliation | all 305 source items terminal and unresolved value equals zero |
 
-SOT3-T0 through SOT3-T3 are accepted evidence, contract, and implementation
-tranches. SOT3-T4 packet authoring is released, but implementation remains
+SOT3-T0 through SOT3-T4 are accepted evidence, contract, and implementation
+tranches. SOT3-T5 packet authoring is released, but implementation remains
 unauthorized until its fresh GC-018 baseline and work order pass pre-dispatch.
-SOT3-T5 through SOT3-T7 remain dependency-held.
+SOT3-T6 and SOT3-T7 remain dependency-held.
 
 ## Work Plan
 
-1. Preserve accepted T0/T0R/T1/T2/T3 evidence, contracts, and Refinery owner.
-2. Author fresh SOT3-T4 GC-018 and source-verified no-commit work order.
-3. Keep T4 implementation unauthorized before pre-dispatch and
+1. Preserve accepted T0/T0R/T1/T2/T3/T4 evidence, contracts, Refinery, and Kernel owners.
+2. Author fresh SOT3-T5 GC-018 and source-verified no-commit work order.
+3. Keep T5 implementation unauthorized before pre-dispatch and
    pre-implementation pass.
-4. Review and close T4 before releasing T5 packet authoring.
-5. Keep T5-T7 on dependency hold until each prior tranche is accepted.
+4. Review and close T5 before releasing T6 packet authoring.
+5. Keep T6-T7 on dependency hold until each prior tranche is accepted.
 
 ## Acceptance Criteria
 
