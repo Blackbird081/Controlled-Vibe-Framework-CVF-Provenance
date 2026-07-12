@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
+  "activeHandoff": "AGENT_HANDOFF_V42_2026-07-12.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -75,14 +75,15 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V40_2026-07-10.md"
+    ,"CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V41_2026-07-11.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t4_kernel_packet_authoring_next",
-  "previousMode": "sot3_t3_refinery_core_dispatched",
+  "currentMode": "sot3_t4_truth_kernel_dispatched",
+  "previousMode": "sot3_t4_kernel_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

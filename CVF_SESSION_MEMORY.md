@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V41_2026-07-11.md`
+4. `AGENT_HANDOFF_V42_2026-07-12.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V41_2026-07-11.md` |
+| Active handoff | `AGENT_HANDOFF_V42_2026-07-12.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t4_kernel_packet_authoring_next`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh SOT3-T4 Truth Kernel hardening packet authoring; parked checkpoint=T4 implementation plus T5-T7, activation, provider/live, public, and unrelated Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_t4_truth_kernel_dispatched`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one SOT3-T4 WORKER_MUST_NOT_COMMIT Truth Kernel execution from `52e8b0a4c`; parked checkpoint=T5-T7, activation, Flow, monitor, database, adapters, provider/live, public, and unrelated Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_t4_kernel_packet_authoring_next`
+Current mode marker: `sot3_t4_truth_kernel_dispatched`
 
-Current mode: `sot3_t4_kernel_packet_authoring_next`
+Current mode: `sot3_t4_truth_kernel_dispatched`
 
-`sot3_t4_kernel_packet_authoring_next`
+`sot3_t4_truth_kernel_dispatched`
 
 Previous mode:
 
-`sot3_t3_refinery_core_dispatched`
+`sot3_t4_kernel_packet_authoring_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T4 Truth Kernel hardening dispatch | `52e8b0a4c` | DISPATCH_READY; one no-commit worker; T5-T7 held. |
 | SOT3-T3 deterministic Refinery Core closure | `fea7e2bba` | REVIEWER_ACCEPTED_AFTER_REPAIR; 4 suites/19 tests; T4 packet authoring next. |
 | SOT3-T3 deterministic Refinery Core dispatch | `200889d32` | DISPATCH_READY; one no-commit package worker; T4-T7 held. |
 | Main SOT3 absorption roadmap resumed | `c897094d8` | T0-T2 accepted; T3 packet authoring next; T4-T7 dependency-held. |
@@ -143,13 +144,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t4_kernel_packet_authoring_next`
+Mode: `sot3_t4_truth_kernel_dispatched`
 
-SOT3-T3 is accepted after bounded repair at `fea7e2bba`. Next allowed move is
-fresh GC-018 and source-verified work-order authoring for SOT3-T4 Truth Kernel
-hardening only. T4 implementation and T5-T7, activation, provider/live,
-public-sync, and unrelated Catalog/GAP mutation remain held. Latest closed
-numbered LHW wave remains `LHW24`.
+Execute exactly one SOT3-T4 `WORKER_MUST_NOT_COMMIT` Truth Kernel tranche from
+dispatch commit `52e8b0a4c`. T5-T7, activation, Flow, monitors, database,
+adapters, provider/live, public-sync, and unrelated Catalog/GAP mutation remain
+held. Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
