@@ -1,0 +1,40 @@
+{
+  "stableId": "cvf.asc.interface.sot_three_layer_contract_chain.v1",
+  "entityType": "INTERFACE",
+  "name": "SOT Three-Layer Canonical Contract Chain",
+  "interfaceKind": "CONTRACT",
+  "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+  "maturity": "DRAFT",
+  "ownerPaths": [
+    "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
+    "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_INVARIANTS_AND_NEGATIVE_CASES.md"
+  ],
+  "citations": [
+    {
+      "path": "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md",
+      "lineOrSection": "Disposition",
+      "evidenceRole": "reviewer-accepted documentation-contract acceptance"
+    },
+    {
+      "path": "docs/reviews/CVF_SOT3_T2_CONTRACT_SOURCE_RECONCILIATION_2026-07-12.md",
+      "lineOrSection": "Compatibility/Exclusion Decision Summary",
+      "evidenceRole": "eight-contract primary-disposition source reconciliation (6 ADAPT, 2 NEW_DOC_ONLY)"
+    },
+    {
+      "path": "docs/reviews/CVF_SOT3_T0R_THREE_LAYER_ARCHITECTURE_DECISION_RECOMMENDATION_2026-07-12.md",
+      "lineOrSection": "Producer/Consumer Packet And Receipt Mapping table",
+      "evidenceRole": "three-layer architecture decision basis"
+    }
+  ],
+  "claimBoundary": "CONTRACT_ONLY. Documents eight accepted inter-layer contract types (SourceEnvelope, RefineryPacket, KernelEvaluationRequest, KernelDecision, TruthReceipt, TruthReference, DistributionPackage, FeedbackProposal) spanning the SOT three-layer family (Refinery, Truth Kernel, post-Kernel Truth Flow). This entry does not claim any of the three layers, or the contract chain itself, is implemented as CVF runtime. No Refinery, Kernel, or Flow runtime exists in the active tree.",
+  "freshnessInputs": [
+    "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
+    "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+  ],
+  "lastReviewed": {
+    "date": "2026-07-12",
+    "acceptedArtifact": "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+  },
+  "boundaryCaveat": "Does not claim Refinery, Truth Kernel, or post-Kernel Truth Flow runtime exists; does not claim TKG-T1 evidence/obligation field reconciliation is complete (deferred to a future TKG-T2-style tranche per T1 CAP-04).",
+  "priorDisposition": ""
+}

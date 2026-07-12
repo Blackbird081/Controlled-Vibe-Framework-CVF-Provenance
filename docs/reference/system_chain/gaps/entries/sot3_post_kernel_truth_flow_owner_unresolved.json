@@ -1,0 +1,47 @@
+{
+  "stableId": "cvf.asc.gap.sot3_post_kernel_truth_flow_owner_unresolved.v1",
+  "entityType": "GAP",
+  "sourcePlaneId": "cvf.asc.plane.contract_to_runtime.v1",
+  "targetPlaneId": "cvf.asc.plane.runtime_to_enforcement.v1",
+  "sourceOwner": "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
+  "targetOwner": "NONE_WITH_REASON: no current CVF module implements a post-Kernel Truth Flow lifecycle (TruthReference issuance, DistributionPackage, FeedbackProposal handling); T1 mandatory TruthReference and Truth Flow/post-Kernel searches found zero matches in docs/reference, EXTENSIONS, and governance",
+  "missingEdge": "The accepted SOT three-layer contract chain names a post-Kernel Truth Flow layer (TruthReference lifecycle, DistributionPackage, FeedbackProposal), but no CVF module owns or implements this layer as runtime.",
+  "currentStatus": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE",
+  "proofClass": "DECLARED_EDGE",
+  "citations": [
+    {
+      "path": "docs/reviews/CVF_SOT3_T1_OWNER_NOVELTY_MAP_2026-07-12.md",
+      "lineOrSection": "CAP-06 Flow lifecycle",
+      "evidenceRole": "reviewer-accepted NEW_OWNER_CANDIDATE disposition"
+    },
+    {
+      "path": "docs/reviews/CVF_SOT3_T2_CONTRACT_SOURCE_RECONCILIATION_2026-07-12.md",
+      "lineOrSection": "Capability Key Cross-Reference",
+      "evidenceRole": "confirms CAP-06 remains future-tranche NEW_OWNER_CANDIDATE, not this tranche"
+    }
+  ],
+  "impact": "Blocks any as-built claim that CVF has a post-Kernel Truth Flow lifecycle; does not block the accepted documentation-contract chain or any other plane/module.",
+  "closeCondition": {
+    "conditionKind": "NAMED_ARTIFACT_ACCEPTED",
+    "conditionText": "A source-verified SOT3-T3-style (or later) implementation tranche is authorized, builds a post-Kernel Truth Flow runtime module, and a reviewer accepts a completion review naming its owner path."
+  },
+  "reopenCondition": {
+    "conditionKind": "OPERATOR_DECISION_RECORDED",
+    "conditionText": "Operator authorizes a fresh post-Kernel Truth Flow implementation roadmap/work order citing the accepted SOT3-T2 contract chain as its basis."
+  },
+  "actionOwner": "PARKED_WITH_REASON: no implementation tranche is currently authorized; Truth Flow remains OWNER_CANDIDATE per T1 CAP-06",
+  "freshnessInputs": [
+    "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
+    "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+  ],
+  "lastReviewed": {
+    "date": "2026-07-12",
+    "acceptedArtifact": "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+  },
+  "negativeSearchEvidence": [
+    {
+      "searchCommand": "rg -n -i \"sot|refinery|truth.kernel|truth.flow|TruthReceipt|cvf.asc.(module|interface|gap).sot\" docs/reference/system_architecture_catalog/entries docs/reference/system_chain/gaps/entries docs/reference EXTENSIONS governance .private_reference/legacy",
+      "searchResult": "No CVF-owned post-Kernel Truth Flow module or interface owner found; only SKSOT (unrelated Skill Source of Truth token) and SOT3 governance-doc self-references matched."
+    }
+  ]
+}

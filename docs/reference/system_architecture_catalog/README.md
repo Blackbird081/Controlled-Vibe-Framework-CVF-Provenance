@@ -32,6 +32,15 @@ reviewer-accepted MSEA-R90/R96 evidence. ASC-T5 (this wave) adds a scoped
 sibling freshness/drift checker. ASC-T6 (independent review and closure) has
 not yet run.**
 
+**SOT3-RAP-T0 (2026-07-12) reverse-projects the reviewer-accepted SOT3-T2
+documentation-contract chain: 2 new interface entries
+(`cvf.asc.interface.sot_three_layer_contract_chain.v1`,
+`cvf.asc.interface.sot_three_layer_rejected_competing_shapes.v1`) and 3 new
+GAP entries for the Refinery, Truth Kernel runtime, and post-Kernel Truth
+Flow owner candidates, bringing the catalog to 24 entities and the gap ledger
+to 6 entries. No Refinery, Kernel, or Flow runtime is claimed; see
+`docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md`.**
+
 ## As-Built Architecture At A Glance
 
 The five R91 lane planes, in chain order, with their catalog-record IDs:
@@ -120,7 +129,7 @@ the governance control matrix.
 | `CVF_AS_BUILT_SYSTEM_CATALOG_SCHEMA.json` | JSON Schema contract: entity types, fields, enums, conditional constraints | ACTIVE |
 | `CVF_AS_BUILT_SYSTEM_CATALOG_RECONCILIATION_CONTRACT.md` | precedence, conflict, lineage, negative-search, migration table, admission routing | ACTIVE |
 | `CVF_AS_BUILT_SYSTEM_CATALOG_TOPOLOGY_DECISIONS.md` | generated-layout, freshness-ownership, and front-door topology decisions | ACTIVE |
-| `entries/` | compact per-entity JSON sources (editable authority) | ACTIVE, 22 entities |
+| `entries/` | compact per-entity JSON sources (editable authority) | ACTIVE, 24 entities |
 | `CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json` | generated aggregate (rebuild via generator, do not hand-edit) | GENERATED |
 
 ## Relationship To The R91 System-Chain Map Family

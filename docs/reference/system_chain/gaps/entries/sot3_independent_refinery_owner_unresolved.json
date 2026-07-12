@@ -1,0 +1,47 @@
+{
+  "stableId": "cvf.asc.gap.sot3_independent_refinery_owner_unresolved.v1",
+  "entityType": "GAP",
+  "sourcePlaneId": "cvf.asc.plane.doctrine_to_contract.v1",
+  "targetPlaneId": "cvf.asc.plane.contract_to_runtime.v1",
+  "sourceOwner": "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
+  "targetOwner": "NONE_WITH_REASON: no current CVF module implements an independent CVF Refinery; T1 mandatory RefineryPacket search found zero matches in docs/reference, EXTENSIONS, and governance",
+  "missingEdge": "The accepted SOT three-layer contract chain names an independent CVF Refinery layer (SourceEnvelope/RefineryPacket producer), but no CVF module owns or implements this layer as runtime.",
+  "currentStatus": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE",
+  "proofClass": "DECLARED_EDGE",
+  "citations": [
+    {
+      "path": "docs/reviews/CVF_SOT3_T1_OWNER_NOVELTY_MAP_2026-07-12.md",
+      "lineOrSection": "CAP-02/CAP-03 Refinery Core",
+      "evidenceRole": "reviewer-accepted NEW_OWNER_CANDIDATE disposition"
+    },
+    {
+      "path": "docs/reviews/CVF_SOT3_T2_CONTRACT_SOURCE_RECONCILIATION_2026-07-12.md",
+      "lineOrSection": "Capability Key Cross-Reference",
+      "evidenceRole": "confirms CAP-02/CAP-03 remain future-tranche NEW_OWNER_CANDIDATE, not this tranche"
+    }
+  ],
+  "impact": "Blocks any as-built claim that CVF has an independent Refinery layer; does not block the accepted documentation-contract chain or any other plane/module.",
+  "closeCondition": {
+    "conditionKind": "NAMED_ARTIFACT_ACCEPTED",
+    "conditionText": "A source-verified SOT3-T3-style (or later) implementation tranche is authorized, builds a Refinery runtime module, and a reviewer accepts a completion review naming its owner path."
+  },
+  "reopenCondition": {
+    "conditionKind": "OPERATOR_DECISION_RECORDED",
+    "conditionText": "Operator authorizes a fresh Refinery implementation roadmap/work order citing the accepted SOT3-T2 contract chain as its basis."
+  },
+  "actionOwner": "PARKED_WITH_REASON: no implementation tranche is currently authorized; Refinery remains OWNER_CANDIDATE per T1 CAP-02/CAP-03",
+  "freshnessInputs": [
+    "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
+    "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+  ],
+  "lastReviewed": {
+    "date": "2026-07-12",
+    "acceptedArtifact": "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+  },
+  "negativeSearchEvidence": [
+    {
+      "searchCommand": "rg -n -i \"sot|refinery|truth.kernel|truth.flow|TruthReceipt|cvf.asc.(module|interface|gap).sot\" docs/reference/system_architecture_catalog/entries docs/reference/system_chain/gaps/entries docs/reference EXTENSIONS governance .private_reference/legacy",
+      "searchResult": "No CVF-owned Refinery module or interface owner found; only SKSOT (unrelated Skill Source of Truth token) and SOT3 governance-doc self-references matched."
+    }
+  ]
+}
