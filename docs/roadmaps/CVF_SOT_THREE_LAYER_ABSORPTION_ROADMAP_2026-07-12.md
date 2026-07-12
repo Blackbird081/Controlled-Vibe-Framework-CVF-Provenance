@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED_EXTERNAL_REVIEW_FIRST
+Status: PROPOSED_SEMANTIC_RECONCILIATION_DISPATCH
 
 docType: roadmap
 
@@ -195,6 +195,7 @@ work.
 | Tranche | Objective | Required output | Release condition |
 |---|---|---|---|
 | SOT3-T0 | independent full-corpus architecture review | external-review packet, 305-file manifest/ledger, cross-layer critique, advisory return | exact corpus reconciliation and reviewer return without implementation |
+| SOT3-T0R | recover advisory evidence into a clear pre-implementation architecture decision recommendation | semantic reconciliation matrix, explicit three-layer decision recommendation, no-commit worker return | every disputed boundary decided or visibly blocked; implementation remains unauthorized |
 | SOT3-T1 | CVF owner and novelty reconciliation | owner map and absorb/adapt/defer/reject ledger | every capability group has an owner or explicit owner decision |
 | SOT3-T2 | canonical inter-layer contracts | SourceEnvelope, RefineryPacket, Kernel evaluation/receipt, TruthReference, distribution and feedback specifications | no duplicate packet or lifecycle authority |
 | SOT3-T3 | independent Refinery Core | deterministic package, schemas, tests, fixtures, no-AI dependency proof | default pipeline cannot bypass required stages and negative tests fail closed |
