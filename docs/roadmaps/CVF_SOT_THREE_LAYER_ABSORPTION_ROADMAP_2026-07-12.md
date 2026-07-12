@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED_SEMANTIC_RECONCILIATION_DISPATCH
+Status: PROPOSED_T1_OWNER_RECONCILIATION_DISPATCH
 
 docType: roadmap
 
@@ -172,10 +172,11 @@ remain untrusted.
 
 ## Authorization / Decision
 
-Authorization is limited to SOT3-T0 external review planning and dispatch.
-SOT3-T1 through SOT3-T7 remain proposal rows and require fresh authorization.
-Current decision: proceed to independent critique before contract or runtime
-work.
+SOT3-T0R is reviewer-accepted at material commit `ae7d53385`. Authorization is
+now limited to SOT3-T1 owner and novelty reconciliation planning/dispatch.
+SOT3-T2 through SOT3-T7 remain proposal rows and require fresh authorization.
+Current decision: map every accepted capability group to an existing owner,
+explicit new-owner candidate, defer, or rejection before contract work.
 
 ## Design Control Gate
 
