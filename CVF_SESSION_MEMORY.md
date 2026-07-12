@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t1_reviewer_accepted_t2_packet_next`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh source-verified SOT3-T2 canonical inter-layer contract packet authoring only; parked checkpoint=contract execution and all owner creation, implementation, package, runtime, schema, test, guard, provider/live, and public work.
+Startup acknowledged: current mode=`sot3_t2_documentation_contracts_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit execution of the SOT3-T2 documentation-contract work order; parked checkpoint=runtime, schema, test, guard, checker, package, provider/live, and public work.
 
 ## Current Mode
 
-Current mode marker: `sot3_t1_reviewer_accepted_t2_packet_next`
+Current mode marker: `sot3_t2_documentation_contracts_dispatched`
 
-Current mode: `sot3_t1_reviewer_accepted_t2_packet_next`
+Current mode: `sot3_t2_documentation_contracts_dispatched`
 
-`sot3_t1_reviewer_accepted_t2_packet_next`
+`sot3_t2_documentation_contracts_dispatched`
 
 Previous mode:
 
-`sot3_t1_owner_novelty_reconciliation_dispatched`
+`sot3_t1_reviewer_accepted_t2_packet_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T2 canonical documentation-contract dispatch | `b2c7aca4d` | DISPATCH_READY; exactly five no-commit outputs; no runtime/schema/test/guard/checker/package work. |
 | SOT3-T1 owner/novelty reconciliation closure | `520ffb4cc` | REVIEWER_ACCEPTED_BOUNDED; 12/12 capability keys; 2 existing-owner enrichments, 5 new-owner candidates; T2 packet authoring only released. |
 | SOT3-T1 owner/novelty reconciliation dispatch | `20b70908e` | DISPATCH_READY; exactly three no-commit evidence outputs; no owner creation or T2 contract work. |
 | SOT3-T0R semantic reconciliation closure | `ae7d53385` | REVIEWER_ACCEPTED_BOUNDED; 61/61 docs, 35/35 ABSORB, and 9/9 REJECT verified; architecture planning basis accepted; implementation remains NOT_AUTHORIZED. |
@@ -133,13 +134,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t1_reviewer_accepted_t2_packet_next`
+Mode: `sot3_t2_documentation_contracts_dispatched`
 
-SOT3-T1 is REVIEWER_ACCEPTED_BOUNDED at `520ffb4cc`. CAP-01 remains a new SOT
-three-layer architecture owner candidate; CAP-04/CAP-09 enrich TKG-T1; CAP-05
-remains a fresh Kernel runtime owner candidate. Next allowed move is fresh
-source-verified SOT3-T2 canonical inter-layer contract packet authoring only.
-Contract execution and all implementation remain NOT_AUTHORIZED. Latest closed
+SOT3-T2 is DISPATCH_READY at `b2c7aca4d`. Next allowed move is one no-commit
+execution of its canonical documentation-contract work order with exactly five
+outputs. Runtime and all implementation remain NOT_AUTHORIZED. Latest closed
 numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1699,
+  "stateKey": "sot3T2Dispatch20260712",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "materialCommit": "b2c7aca4d",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T2_CANONICAL_INTER_LAYER_CONTRACTS_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "plannedOutputs": 5,
+    "nextAllowedMove": "one no-commit SOT3-T2 documentation-contract execution",
+    "claimBoundary": "documentation contracts only; no runtime, schemas, tests, guards, checkers, packages, provider/live, or public work"
+  }
+}

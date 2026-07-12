@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t1_reviewer_accepted_t2_packet_next`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh source-verified SOT3-T2 canonical inter-layer contract packet authoring only; parked checkpoint=contract execution and all owner creation, implementation, package, runtime, schema, test, guard, provider/live, and public work.
+Startup acknowledged: current mode=`sot3_t2_documentation_contracts_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit SOT3-T2 documentation-contract execution; parked checkpoint=runtime, schema, test, guard, checker, package, provider/live, and public work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh source-v
 
 ## Current Mode
 
-`sot3_t1_reviewer_accepted_t2_packet_next`
+`sot3_t2_documentation_contracts_dispatched`
 
 ## Latest Work / Changes
 
@@ -902,3 +902,29 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain SOT3-T1
 material closure commit `520ffb4cc`.
+
+## SOT3-T2 Documentation Contract Dispatch
+
+Dispatch material HEAD: `b2c7aca4d`.
+
+SOT3-T2 is `DISPATCH_READY` for one no-commit worker creating exactly five
+documentation/review outputs. Runtime, schemas, tests, guards, checkers,
+packages, provider/live, and public work remain unauthorized.
+
+Session-sync parent HEAD: `b2c7aca4d`.
+
+## Core Guard Self-Protection Authorization - SOT3-T2 Dispatch Sync
+
+Operator authorization: continue from accepted T1 into bounded T2 contract documentation.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T2Dispatch20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain T2 dispatch commit `b2c7aca4d`.
