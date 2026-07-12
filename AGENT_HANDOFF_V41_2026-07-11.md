@@ -714,3 +714,32 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain ODVR-T2 material
 closure commit `da53959ec`.
+
+## SOT3-T0 Dispatch HEAD Reconciliation
+
+Dispatch material HEAD: `4937a610e`.
+
+The operator selected the retained `CVF_SOT 10.07` folder family for governed
+three-layer review. The dispatch commit created the SOT3 roadmap, external
+review packet, GC-018 baseline, and no-commit external-review work order. The
+worker later returned advisory evidence, but the committed work order remained
+in HOLD status; therefore SOT3-T0 is not recorded as a valid closed tranche.
+
+Next move remains reviewer normalization of the advisory evidence followed by
+a fresh SOT3-T0R semantic-reconciliation dispatch. No implementation, contract
+ratification, runtime/checker mutation, provider/live proof, or public-sync is
+released.
+
+Session-sync parent HEAD: `4937a610e`.
+
+## Core Guard Self-Protection Authorization - SOT3-T0 Dispatch HEAD Reconciliation
+
+Operator authorization: commit current advisory evidence cleanly, create a
+fresh Claude tranche for further critique, and preserve accurate continuity.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+
+Rollback boundary: revert only this handoff reconciliation if rejected; retain
+dispatch material commit `4937a610e` and do not alter SOT3 advisory evidence.
