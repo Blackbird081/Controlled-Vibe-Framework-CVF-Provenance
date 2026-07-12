@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_roadmap_closed_operator_selection`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=operator selects a fresh high-value lane then new GC-018/source-verified work order; parked checkpoint=all implementation plus semantic scoring, SOT3 runtime, provider/live, public, and further Catalog/GAP work.
+Startup acknowledged: current mode=`sot3_t3_refinery_packet_authoring_next`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh SOT3-T3 GC-018/source-verified work-order authoring for deterministic no-AI Refinery Core; parked checkpoint=T3 implementation before pre-dispatch plus T4-T7, provider/live, public, and unrelated Catalog/GAP work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=operator selec
 
 ## Current Mode
 
-`sot3_roadmap_closed_operator_selection`
+`sot3_t3_refinery_packet_authoring_next`
 
 ## Latest Work / Changes
 
@@ -993,69 +993,11 @@ Rollback boundary: revert only this handoff-sync batch; retain SOT3-T2 closure
 commit `9c7b05b40`, session-sync commit `add1b1fb3`, and learning material
 commit `b054829a7`.
 
-## SOT3 Reverse Architecture Projection Dispatch
+## SOT3 Auxiliary Projection History - Compacted
 
-Dispatch material commit: `38a9e3a30`.
-
-The roadmap, GC-018 baseline, and source-verified SOT3-RAP-T0 work order are
-dispatch-ready. T0 is bounded to reverse-projecting accepted SOT3 architecture
-facts into the existing Catalog/GAP source-and-generator topology. It does not
-authorize runtime, schema, test, package, provider/live, public-sync, or
-out-of-scope Catalog/GAP changes.
-
-Next allowed move: one delegated `WORKER_MUST_NOT_COMMIT` execution of
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_RAP_T0_REVERSE_ARCHITECTURE_PROJECTION_2026-07-12.md`,
-then independent Codex reviewer closure. SOT3-RCS-T1 remains
-`HOLD_UNTIL_T0_PASS`.
-
-## Core Guard Self-Protection Authorization - SOT3 RAP-T0 Dispatch Sync
-
-Operator authorization: record the accepted roadmap/work-order dispatch and
-release exactly one bounded no-commit worker execution.
-
-Authorized protected paths:
-
-- `AGENT_HANDOFF_V41_2026-07-11.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/sot3RapT0Dispatch20260712.json`
-
-Rollback boundary: revert only this session-sync batch; retain dispatch material
-commit `38a9e3a30`.
-
-## SOT3-RAP-T0 Reviewer Closure
-
-Material closure commit: `d394b6018`.
-
-Disposition: `REVIEWER_ACCEPTED_BOUNDED`. The accepted projection adds two
-contract/exclusion Catalog entries and three unresolved GAP entries. Catalog
-and GAP stable IDs are unique at 24/24 and 6/6; no SOT3 runtime owner is
-created. Worker repair rounds after return: zero; live quota consumed: zero.
-
-Next allowed move is fresh GC-018 and source-verified work-order authoring for
-SOT3-RCS-T1 review-cost systemization only. T1 implementation remains
-unauthorized until a new packet passes pre-dispatch.
-
-## Core Guard Self-Protection Authorization - SOT3 RAP-T0 Closure Sync
-
-Operator authorization: review and close the returned no-commit SOT3-RAP-T0
-tranche, then preserve the next bounded planning move.
-
-Authorized protected paths:
-
-- `AGENT_HANDOFF_V41_2026-07-11.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/sot3RapT0Closure20260712.json`
-
-Rollback boundary: revert only this session-sync batch; retain SOT3-RAP-T0
-material closure commit `d394b6018`.
+RAP-T0 dispatch `38a9e3a30` closed at `d394b6018`. Canonical detail is retained
+in `CVF_SESSION/state/entries/sot3RapT0Dispatch20260712.json` and
+`CVF_SESSION/state/entries/sot3RapT0Closure20260712.json`.
 
 ## SOT3-RCS-T1 Dispatch
 
@@ -1148,3 +1090,30 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain roadmap closure
 commit `6d28e3de4`.
+
+## Main SOT3 Absorption Roadmap Resume Correction
+
+Correction material commit: `c897094d8`.
+
+The closed roadmap at `6d28e3de4` was only the auxiliary reverse-projection and
+review-cost lane. The main 305-file SOT3 absorption roadmap remains active:
+T0-T2 are accepted; T3-T7 remain. Next allowed move is T3 packet authoring for
+the independent deterministic no-AI Refinery Core. T4-T7 remain held.
+
+## Core Guard Self-Protection Authorization - Main SOT3 Resume Sync
+
+Operator authorization: correct the mistaken whole-lane closure claim and
+continue absorbing the three SOT folders.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3MainRoadmapResume20260712.json`
+
+Rollback boundary: revert only this correction sync; retain main-roadmap
+correction commit `c897094d8` and all accepted T0-T2 material.

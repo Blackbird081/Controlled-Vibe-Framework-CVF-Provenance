@@ -81,8 +81,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_roadmap_closed_operator_selection",
-  "previousMode": "sot3_rcs_t1_reviewer_accepted_roadmap_closure_next",
+  "currentMode": "sot3_t3_refinery_packet_authoring_next",
+  "previousMode": "sot3_roadmap_closed_operator_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11262,5 +11262,15 @@
     "nextAllowedMove": "operator selects a fresh high-value lane followed by new GC-018 and source-verified work-order authoring",
     "claimBoundary": "roadmap closed; no semantic scoring, SOT3 runtime, provider/live, public-sync, or further Catalog/GAP mutation authorized"
   },
-  "nextAllowedMove": "The SOT3 reverse-projection and review-cost roadmap is CLOSED_PASS_BOUNDED at material commit 6d28e3de4. Next allowed move is operator selection of a fresh high-value lane followed by new GC-018 and source-verified work-order authoring; no implementation is pre-authorized. Semantic review scoring, SOT3 runtime, schemas, packages, providers/live, public-sync, and further Catalog/GAP mutation remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
+  "sot3MainRoadmapResume20260712": {
+    "status": "ACTIVE_T3_PACKET_AUTHORING_NEXT",
+    "date": "2026-07-12",
+    "materialCommit": "c897094d8",
+    "mainRoadmap": "docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md",
+    "acceptedTranches": "T0, T0R, T1, T2",
+    "remainingTranches": "T3, T4, T5, T6, T7",
+    "nextAllowedMove": "fresh SOT3-T3 GC-018 and source-verified work-order authoring for deterministic no-AI Refinery Core",
+    "claimBoundary": "main absorption roadmap remains active; no T3 implementation before dispatch and T4-T7 remain dependency-held"
+  },
+  "nextAllowedMove": "The auxiliary SOT3 reverse-projection/review-cost roadmap is closed, but the main 305-file SOT3 absorption roadmap remains active through T7. Next allowed move is fresh GC-018 and source-verified work-order authoring for SOT3-T3 independent deterministic no-AI Refinery Core only. T3 implementation is not authorized before pre-dispatch; T4-T7, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave."
 }

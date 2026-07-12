@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1710,
+  "stateOrder": 1712,
   "stateKey": "nextAllowedMove",
-  "value": "The SOT3 reverse-projection and review-cost roadmap is CLOSED_PASS_BOUNDED at material commit 6d28e3de4. Next allowed move is operator selection of a fresh high-value lane followed by new GC-018 and source-verified work-order authoring; no implementation is pre-authorized. Semantic review scoring, SOT3 runtime, schemas, packages, providers/live, public-sync, and further Catalog/GAP mutation remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
+  "value": "The auxiliary SOT3 reverse-projection/review-cost roadmap is closed, but the main 305-file SOT3 absorption roadmap remains active through T7. Next allowed move is fresh GC-018 and source-verified work-order authoring for SOT3-T3 independent deterministic no-AI Refinery Core only. T3 implementation is not authorized before pre-dispatch; T4-T7, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave."
 }
