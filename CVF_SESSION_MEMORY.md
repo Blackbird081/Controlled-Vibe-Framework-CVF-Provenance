@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_closed_value_not_proven_external_absorption_selection`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=operator selects one newly justified external repository or folder for source-mirror-first governed absorption entry; parked checkpoint=ODVR reopen, UI, provider/public work, and absorption before target selection.
+Startup acknowledged: current mode=`sot3_t0r_reviewer_accepted_t1_planning_next`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh source-verified SOT3-T1 owner and novelty reconciliation packet authoring; parked checkpoint=all implementation, contract, package, runtime, schema, test, guard, provider/live, and public work.
 
 ## Current Mode
 
-Current mode marker: `odvr_closed_value_not_proven_external_absorption_selection`
+Current mode marker: `sot3_t0r_reviewer_accepted_t1_planning_next`
 
-Current mode: `odvr_closed_value_not_proven_external_absorption_selection`
+Current mode: `sot3_t0r_reviewer_accepted_t1_planning_next`
 
-`odvr_closed_value_not_proven_external_absorption_selection`
+`sot3_t0r_reviewer_accepted_t1_planning_next`
 
 Previous mode:
 
-`odvr_t2_dispatched`
+`odvr_closed_value_not_proven_external_absorption_selection`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T0R semantic reconciliation closure | `ae7d53385` | REVIEWER_ACCEPTED_BOUNDED; 61/61 docs, 35/35 ABSORB, and 9/9 REJECT verified; architecture planning basis accepted; implementation remains NOT_AUTHORIZED. |
 | ODVR-T2 and roadmap closure | `da53959ec` | REVIEWER_ACCEPTED_VALUE_NOT_PROVEN; closed lane 3/7, parked lane 0/7; no UI continuation. |
 | ODVR-T2 representative value-proof dispatch | `1a79ba7a3` | DISPATCH_READY; exactly three no-commit evidence outputs. |
 | ODVR-T1 local composer closure | `16364f797` | REVIEWER_ACCEPTED_AFTER_REPAIR; 22/22 tests, schema-valid CURRENT readout, T2 packet authoring eligible. |
@@ -130,13 +131,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `odvr_closed_value_not_proven_external_absorption_selection`
+Mode: `sot3_t0r_reviewer_accepted_t1_planning_next`
 
-ODVR is CLOSED_VALUE_NOT_PROVEN at `da53959ec`; no UI or implementation
-continuation opens. Next allowed move is operator selection of one newly
-justified external repository or folder, followed by source-mirror verification
-and a fresh governed absorption entry packet. No external target is currently
-selected. Latest closed numbered LHW wave remains `LHW24`.
+SOT3-T0R is REVIEWER_ACCEPTED_BOUNDED at `ae7d53385`. The accepted planning
+architecture is independent deterministic no-AI Refinery, SourceEnvelope-first
+lineage, duplicate-before-conflict, sole Kernel trust/receipt authority,
+post-Kernel-only Flow, fail-closed empty evidence, and one canonical contract
+chain. Implementation remains NOT_AUTHORIZED. Next allowed move is fresh
+source-verified SOT3-T1 owner and novelty reconciliation packet authoring.
+Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

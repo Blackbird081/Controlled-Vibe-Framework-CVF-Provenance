@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`odvr_closed_value_not_proven_external_absorption_selection`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=operator selects one newly justified external repository or folder for source-mirror-first governed absorption entry; parked checkpoint=ODVR reopen, UI/provider/public work, and absorption before target selection.
+Startup acknowledged: current mode=`sot3_t0r_reviewer_accepted_t1_planning_next`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh source-verified SOT3-T1 owner and novelty reconciliation packet authoring; parked checkpoint=all implementation, contract, package, runtime, schema, test, guard, provider/live, and public work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=operator selec
 
 ## Current Mode
 
-`odvr_closed_value_not_proven_external_absorption_selection`
+`sot3_t0r_reviewer_accepted_t1_planning_next`
 
 ## Latest Work / Changes
 
@@ -797,3 +797,41 @@ Authorized protected paths:
 
 Rollback boundary: revert only this dispatch sync; retain T0R material dispatch
 commit `2507fcdfe`.
+
+## SOT3-T0R Reviewer-Accepted Closure
+
+Material closure HEAD: `ae7d53385`.
+
+SOT3-T0R is `REVIEWER_ACCEPTED_BOUNDED`. Reviewer recomputation confirmed exact
+61/61 documentation coverage, 35/35 ABSORB-ledger coverage, and 9/9 REJECT
+coverage after bounded repair.
+
+Accepted planning architecture: independent deterministic no-AI Refinery;
+SourceEnvelope-first persistent lineage; duplicate-before-conflict; sole Kernel
+trust and TruthReceipt authority; post-Kernel-only Flow; fail-closed empty
+stages/evidence/results; and one canonical cross-layer contract chain.
+
+Implementation remains `NOT_AUTHORIZED`. Next allowed move is fresh
+source-verified SOT3-T1 owner and novelty reconciliation packet authoring. No
+contract, package, runtime, schema, test, guard, provider/live, or public work
+opens automatically.
+
+Session-sync parent HEAD: `ae7d53385`.
+
+## Core Guard Self-Protection Authorization - SOT3-T0R Closure Sync
+
+Operator authorization: continue review and closure of the completed bounded
+repair while preserving the pre-implementation decision boundary.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T0RClosure20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain SOT3-T0R
+material closure commit `ae7d53385`.

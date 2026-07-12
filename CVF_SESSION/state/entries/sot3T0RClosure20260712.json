@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1693,
+  "stateKey": "sot3T0RClosure20260712",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-12",
+    "materialCommit": "ae7d53385",
+    "roadmap": "docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T0R_SEMANTIC_RECONCILIATION_2026-07-12.md",
+    "completionReview": "docs/reviews/CVF_SOT3_T0R_COMPLETION_REVIEW_2026-07-12.md",
+    "documentationCoverage": "61/61 exact-set verified",
+    "absorbAuditCoverage": "35/35 exact-set verified",
+    "rejectAuditCoverage": "9/9 verified",
+    "nextAllowedMove": "fresh source-verified SOT3-T1 owner and novelty reconciliation packet authoring",
+    "claimBoundary": "architecture planning basis accepted; implementation, contracts, packages, runtime, schemas, tests, guards, provider/live, and public work remain unauthorized"
+  }
+}
