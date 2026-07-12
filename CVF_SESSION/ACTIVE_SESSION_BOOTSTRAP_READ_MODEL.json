@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_t4_truth_kernel_dispatched",
+  "currentMode": "sot3_t5_truth_flow_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V42_2026-07-12.md",
-  "nextAllowedMove": "Execute exactly one SOT3-T4 WORKER_MUST_NOT_COMMIT Truth Kernel hardening tranche from dispatch commit 52e8b0a4c and return COMPLETE_PENDING_REVIEW. T5-T7, package activation, Flow, monitor, database, adapter, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author only a fresh SOT3-T5 post-Kernel Truth Flow GC-018 baseline and source-verified no-commit work order from roadmap release commit 7dafc9185. T5 implementation and T6-T7, package activation, monitor, database, adapter, provider/live, public-sync, and unrelated Catalog/GAP mutation remain dependency-held. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

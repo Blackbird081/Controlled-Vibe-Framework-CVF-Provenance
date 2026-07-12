@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t4_truth_kernel_dispatched`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one SOT3-T4 WORKER_MUST_NOT_COMMIT Truth Kernel execution from `52e8b0a4c`; parked checkpoint=T5-T7, activation, Flow, monitor, database, adapters, provider/live, public, and unrelated Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_t5_truth_flow_packet_authoring_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh SOT3-T5 post-Kernel Truth Flow GC-018 and source-verified work-order authoring only from `7dafc9185`; parked checkpoint=T5 implementation, T6-T7, activation, monitor, database, adapters, provider/live, public, and unrelated Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_t4_truth_kernel_dispatched`
+Current mode marker: `sot3_t5_truth_flow_packet_authoring_next`
 
-Current mode: `sot3_t4_truth_kernel_dispatched`
+Current mode: `sot3_t5_truth_flow_packet_authoring_next`
 
-`sot3_t4_truth_kernel_dispatched`
+`sot3_t5_truth_flow_packet_authoring_next`
 
 Previous mode:
 
-`sot3_t4_kernel_packet_authoring_next`
+`sot3_t4_truth_kernel_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T4 Truth Kernel hardening closure | `6bf81979b` | REVIEWER_ACCEPTED_AFTER_REPAIR; 6 suites/33 tests; T5 packet authoring released at `7dafc9185`. |
 | SOT3-T4 Truth Kernel hardening dispatch | `52e8b0a4c` | DISPATCH_READY; one no-commit worker; T5-T7 held. |
 | SOT3-T3 deterministic Refinery Core closure | `fea7e2bba` | REVIEWER_ACCEPTED_AFTER_REPAIR; 4 suites/19 tests; T4 packet authoring next. |
 | SOT3-T3 deterministic Refinery Core dispatch | `200889d32` | DISPATCH_READY; one no-commit package worker; T4-T7 held. |
@@ -144,12 +145,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t4_truth_kernel_dispatched`
+Mode: `sot3_t5_truth_flow_packet_authoring_next`
 
-Execute exactly one SOT3-T4 `WORKER_MUST_NOT_COMMIT` Truth Kernel tranche from
-dispatch commit `52e8b0a4c`. T5-T7, activation, Flow, monitors, database,
-adapters, provider/live, public-sync, and unrelated Catalog/GAP mutation remain
-held. Latest closed numbered LHW wave remains `LHW24`.
+Author only a fresh SOT3-T5 post-Kernel Truth Flow GC-018 baseline and
+source-verified no-commit work order from roadmap release commit `7dafc9185`.
+T5 implementation and T6-T7, activation, monitors, database, adapters,
+provider/live, public-sync, and unrelated Catalog/GAP mutation remain held.
+Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

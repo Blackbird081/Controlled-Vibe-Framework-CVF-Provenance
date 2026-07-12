@@ -17,11 +17,11 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t4_truth_kernel_dispatched`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one SOT3-T4
-WORKER_MUST_NOT_COMMIT Truth Kernel execution from `52e8b0a4c`; parked
-checkpoint=T5-T7, activation, provider/live, public, Flow, monitor, database,
-adapter, and unrelated Catalog/GAP work.
+Startup acknowledged: current mode=`sot3_t5_truth_flow_packet_authoring_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh SOT3-T5
+post-Kernel Truth Flow GC-018 and source-verified work-order authoring only from
+`7dafc9185`; parked checkpoint=T5 implementation, T6-T7, activation,
+provider/live, public, monitor, database, adapter, and unrelated Catalog/GAP work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -36,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_t4_truth_kernel_dispatched`
+`sot3_t5_truth_flow_packet_authoring_next`
 
 ## Latest Work / Changes
 
@@ -49,16 +49,18 @@ pre-dispatch 75/75 and commit-hook 83/83. It creates a deterministic local
 Truth Kernel runtime candidate while retaining Truth Foundation as doctrine
 owner and rejecting direct prototype import.
 
+T4 reviewer closure material is committed at `6bf81979b` with disposition
+`REVIEWER_ACCEPTED_AFTER_REPAIR`; typecheck/build and 6 suites/33 tests pass.
+The main roadmap releases T5 packet authoring at `7dafc9185`.
+
 ## Next Allowed Move
 
-Execute exactly one no-commit T4 tranche using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T4_TRUTH_KERNEL_HARDENING_2026-07-12.md`.
-Return `COMPLETE_PENDING_REVIEW`; reviewer then performs one dependency-closure
-matrix before any repair. T5-T7 remain held.
+Author only a fresh SOT3-T5 post-Kernel Truth Flow GC-018 baseline and
+source-verified no-commit work order. T5 implementation and T6-T7 remain held.
 
 ## Active Boundary
 
-No Truth Flow, package activation, monitor, database/SOT-index service,
+No Truth Flow implementation, package activation, monitor, database/SOT-index service,
 adapter, provider/live, public-sync, Web/UI, governance checker, or unrelated
 Catalog/GAP mutation is authorized.
 
@@ -137,3 +139,25 @@ The matching T4 dispatch session-sync commit is `08f103b38`; this anchors the
 current governed HEAD for reviewer-fast continuity checks.
 T4 reviewer closure material is committed at `6bf81979b` with disposition
 `REVIEWER_ACCEPTED_AFTER_REPAIR`.
+
+## Core Guard Self-Protection Authorization - SOT3-T4 Closure Sync
+
+Authorized guard-maintenance scope: synchronize T4 closure, the T5 packet-only
+next move, and generated active-session state after roadmap release commit
+`7dafc9185`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T4Closure20260712.json`
+
+Operator authorization: continue SOT3 absorption after the T4 worker return;
+reviewer acceptance and continuity sync are required before T5 packet work.
+
+Rollback boundary: revert only this T4 closure session sync; retain T4 material
+commit `6bf81979b` and roadmap release commit `7dafc9185`.
