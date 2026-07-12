@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t2_reviewer_accepted_reverse_projection_next`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh GC-018/work-order authoring for bounded reverse architecture projection and review-cost systemization; parked checkpoint=SOT3 runtime, schema, test, package, provider/live, public, and undispatched Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_rap_t0_reverse_projection_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit SOT3-RAP-T0 worker execution followed by independent reviewer closure; parked checkpoint=SOT3-RCS-T1 until T0 pass plus runtime, schema, test, package, provider/live, public, and out-of-scope Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_t2_reviewer_accepted_reverse_projection_next`
+Current mode marker: `sot3_rap_t0_reverse_projection_dispatched`
 
-Current mode: `sot3_t2_reviewer_accepted_reverse_projection_next`
+Current mode: `sot3_rap_t0_reverse_projection_dispatched`
 
-`sot3_t2_reviewer_accepted_reverse_projection_next`
+`sot3_rap_t0_reverse_projection_dispatched`
 
 Previous mode:
 
-`sot3_t2_documentation_contracts_dispatched`
+`sot3_t2_reviewer_accepted_reverse_projection_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 reverse architecture projection and review-cost roadmap plus RAP-T0 dispatch | `38a9e3a30` | DISPATCH_READY; T0 performs bounded Catalog/GAP reverse projection; RCS-T1 remains HOLD_UNTIL_T0_PASS; worker must not commit. |
 | SOT3-T2 canonical inter-layer contract closure | `9c7b05b40` | REVIEWER_ACCEPTED_BOUNDED; 8 contracts, 10 invariants, 14 negative cases, R1-R12 closed; implementation remains unauthorized. |
 | SOT3-T2 canonical documentation-contract dispatch | `b2c7aca4d` | DISPATCH_READY; exactly five no-commit outputs; no runtime/schema/test/guard/checker/package work. |
 | SOT3-T1 owner/novelty reconciliation closure | `520ffb4cc` | REVIEWER_ACCEPTED_BOUNDED; 12/12 capability keys; 2 existing-owner enrichments, 5 new-owner candidates; T2 packet authoring only released. |
@@ -135,12 +136,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t2_documentation_contracts_dispatched`
+Mode: `sot3_rap_t0_reverse_projection_dispatched`
 
-SOT3-T2 is DISPATCH_READY at `b2c7aca4d`. Next allowed move is one no-commit
-execution of its canonical documentation-contract work order with exactly five
-outputs. Runtime and all implementation remain NOT_AUTHORIZED. Latest closed
-numbered LHW wave remains `LHW24`.
+SOT3-RAP-T0 is DISPATCH_READY at `38a9e3a30`. Next allowed move is one
+no-commit execution of its bounded reverse architecture projection work order,
+followed by independent reviewer closure. SOT3-RCS-T1 remains
+`HOLD_UNTIL_T0_PASS`; runtime and all other implementation remain
+NOT_AUTHORIZED. Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

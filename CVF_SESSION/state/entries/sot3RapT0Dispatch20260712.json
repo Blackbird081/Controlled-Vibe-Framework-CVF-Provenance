@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1701,
+  "stateKey": "sot3RapT0Dispatch20260712",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "materialCommit": "38a9e3a30",
+    "roadmap": "docs/roadmaps/CVF_SOT3_REVERSE_ARCHITECTURE_PROJECTION_AND_REVIEW_COST_SYSTEMIZATION_ROADMAP_2026-07-12.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_RAP_T0_REVERSE_ARCHITECTURE_PROJECTION_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_RAP_T0_REVERSE_ARCHITECTURE_PROJECTION_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "one no-commit SOT3-RAP-T0 reverse architecture projection worker execution followed by independent reviewer closure",
+    "heldFollowup": "SOT3-RCS-T1 remains HOLD_UNTIL_T0_PASS",
+    "claimBoundary": "bounded Catalog/GAP reverse projection only; no runtime, schemas, tests, packages, provider/live, public-sync, or out-of-scope Catalog/GAP mutation"
+  }
+}

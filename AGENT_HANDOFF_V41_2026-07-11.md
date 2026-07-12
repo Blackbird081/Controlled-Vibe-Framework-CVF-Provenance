@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t2_documentation_contracts_dispatched`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit SOT3-T2 documentation-contract execution; parked checkpoint=runtime, schema, test, guard, checker, package, provider/live, and public work.
+Startup acknowledged: current mode=`sot3_rap_t0_reverse_projection_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit SOT3-RAP-T0 execution followed by independent reviewer closure; parked checkpoint=SOT3-RCS-T1 until T0 pass plus runtime, schema, test, package, provider/live, public, and out-of-scope Catalog/GAP work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit 
 
 ## Current Mode
 
-`sot3_t2_documentation_contracts_dispatched`
+`sot3_rap_t0_reverse_projection_dispatched`
 
 ## Latest Work / Changes
 
@@ -992,3 +992,36 @@ Authorized protected paths:
 Rollback boundary: revert only this handoff-sync batch; retain SOT3-T2 closure
 commit `9c7b05b40`, session-sync commit `add1b1fb3`, and learning material
 commit `b054829a7`.
+
+## SOT3 Reverse Architecture Projection Dispatch
+
+Dispatch material commit: `38a9e3a30`.
+
+The roadmap, GC-018 baseline, and source-verified SOT3-RAP-T0 work order are
+dispatch-ready. T0 is bounded to reverse-projecting accepted SOT3 architecture
+facts into the existing Catalog/GAP source-and-generator topology. It does not
+authorize runtime, schema, test, package, provider/live, public-sync, or
+out-of-scope Catalog/GAP changes.
+
+Next allowed move: one delegated `WORKER_MUST_NOT_COMMIT` execution of
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_RAP_T0_REVERSE_ARCHITECTURE_PROJECTION_2026-07-12.md`,
+then independent Codex reviewer closure. SOT3-RCS-T1 remains
+`HOLD_UNTIL_T0_PASS`.
+
+## Core Guard Self-Protection Authorization - SOT3 RAP-T0 Dispatch Sync
+
+Operator authorization: record the accepted roadmap/work-order dispatch and
+release exactly one bounded no-commit worker execution.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3RapT0Dispatch20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain dispatch material
+commit `38a9e3a30`.
