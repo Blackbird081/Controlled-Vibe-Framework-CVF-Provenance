@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1705,
+  "stateKey": "sot3RcsT1Dispatch20260712",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "materialCommit": "252844462",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_RCS_T1_REVIEW_COST_SYSTEMIZATION_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_RCS_T1_REVIEW_COST_SYSTEMIZATION_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "plannedOutputs": 8,
+    "nextAllowedMove": "one no-commit SOT3-RCS-T1 worker execution followed by independent reviewer closure",
+    "claimBoundary": "review-cost evidence shape and round-three escalation only; no semantic scoring, SOT3 runtime, provider/live, public-sync, or Catalog/GAP mutation"
+  }
+}

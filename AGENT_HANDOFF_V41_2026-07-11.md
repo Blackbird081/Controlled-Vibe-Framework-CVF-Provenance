@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_rap_t0_reviewer_accepted_rcs_t1_next`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh GC-018/work-order authoring for SOT3-RCS-T1 only; parked checkpoint=T1 implementation plus runtime, schema, test, package, provider/live, public, and further Catalog/GAP work.
+Startup acknowledged: current mode=`sot3_rcs_t1_review_cost_systemization_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit SOT3-RCS-T1 execution followed by independent reviewer closure; parked checkpoint=semantic scoring plus runtime, schema, package, provider/live, public, and Catalog/GAP work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh GC-018/w
 
 ## Current Mode
 
-`sot3_rap_t0_reviewer_accepted_rcs_t1_next`
+`sot3_rcs_t1_review_cost_systemization_dispatched`
 
 ## Latest Work / Changes
 
@@ -1056,3 +1056,35 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain SOT3-RAP-T0
 material closure commit `d394b6018`.
+
+## SOT3-RCS-T1 Dispatch
+
+Dispatch material commit: `252844462`.
+
+The packet authorizes one no-commit worker to implement a provider-neutral
+review-cost evidence-shape standard/checker, focused tests, and three hook
+catalog bindings. It may enforce nine telemetry fields, stop-disposition
+vocabulary, and round-three escalation. Semantic value and criticality remain
+reviewer-owned and are not machine-scored.
+
+Next allowed move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_RCS_T1_REVIEW_COST_SYSTEMIZATION_2026-07-12.md`
+once, return pending review, and do not commit.
+
+## Core Guard Self-Protection Authorization - SOT3 RCS-T1 Dispatch Sync
+
+Operator authorization: continue after accepted T0 and record the bounded T1
+dispatch.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3RcsT1Dispatch20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain dispatch commit
+`252844462`.
