@@ -743,3 +743,29 @@ Authorized protected paths:
 
 Rollback boundary: revert only this handoff reconciliation if rejected; retain
 dispatch material commit `4937a610e` and do not alter SOT3 advisory evidence.
+
+## SOT3-T0 Advisory Evidence Reconciliation
+
+Advisory evidence HEAD: `0818ac6d7`.
+
+The committed 305-file manifest, processing ledger, external-review return,
+process findings, and corpus registry entry are retained as advisory input.
+Their disposition is `REJECT_WORK_ORDER_CLOSURE_ACCEPT_ADVISORY_INPUT`; semantic
+coverage remains partial and no architecture or implementation is ratified.
+
+Next move is a fresh SOT3-T0R no-commit semantic-reconciliation dispatch for
+independent critique before any implementation lane.
+
+Session-sync parent HEAD: `0818ac6d7`.
+
+## Core Guard Self-Protection Authorization - SOT3-T0 Advisory Evidence Sync
+
+Operator authorization: commit the advisory evidence cleanly and create the
+next Claude critique tranche before implementation.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+
+Rollback boundary: revert only this handoff sync; retain advisory evidence
+commit `0818ac6d7`.
