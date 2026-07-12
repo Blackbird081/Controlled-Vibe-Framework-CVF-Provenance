@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_t0r_reviewer_accepted_t1_planning_next",
+  "currentMode": "sot3_t1_owner_novelty_reconciliation_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V41_2026-07-11.md",
-  "nextAllowedMove": "SOT3-T0R is REVIEWER_ACCEPTED_BOUNDED at material commit ae7d53385. The accepted planning architecture is independent deterministic no-AI Refinery, SourceEnvelope-first lineage, duplicate-before-conflict, sole Kernel trust/receipt authority, post-Kernel-only Flow, fail-closed empty evidence, and one canonical contract chain. Implementation remains NOT_AUTHORIZED. Next allowed move is fresh source-verified SOT3-T1 owner and novelty reconciliation packet authoring; no contract, package, runtime, schema, test, guard, provider/live, or public work opens automatically. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-T1 owner and novelty reconciliation is DISPATCH_READY at material commit 20b70908e. Next allowed move is one no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T1_OWNER_NOVELTY_RECONCILIATION_2026-07-12.md, producing exactly the three planned review outputs. Implementation and SOT3-T2 contract work remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

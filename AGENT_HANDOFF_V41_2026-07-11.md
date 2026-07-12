@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t0r_reviewer_accepted_t1_planning_next`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh source-verified SOT3-T1 owner and novelty reconciliation packet authoring; parked checkpoint=all implementation, contract, package, runtime, schema, test, guard, provider/live, and public work.
+Startup acknowledged: current mode=`sot3_t1_owner_novelty_reconciliation_dispatched`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit SOT3-T1 owner/novelty worker execution; parked checkpoint=all owner creation, contract, implementation, package, runtime, schema, test, guard, provider/live, and public work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh source-v
 
 ## Current Mode
 
-`sot3_t0r_reviewer_accepted_t1_planning_next`
+`sot3_t1_owner_novelty_reconciliation_dispatched`
 
 ## Latest Work / Changes
 
@@ -835,3 +835,36 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain SOT3-T0R
 material closure commit `ae7d53385`.
+
+## SOT3-T1 Owner And Novelty Reconciliation Dispatch
+
+Dispatch material HEAD: `20b70908e`.
+
+SOT3-T1 is `DISPATCH_READY` for one no-commit evidence worker. The worker must
+reconcile the 12 accepted capability groups against current CVF owner surfaces,
+record semantic collisions and negative searches, and return exactly three
+review outputs.
+
+Next allowed move: execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T1_OWNER_NOVELTY_RECONCILIATION_2026-07-12.md`.
+Owner creation, SOT3-T2 contracts, and all implementation remain unauthorized.
+
+Session-sync parent HEAD: `20b70908e`.
+
+## Core Guard Self-Protection Authorization - SOT3-T1 Dispatch Sync
+
+Operator authorization: continue from accepted T0R into the next bounded
+owner/novelty planning tranche.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T1Dispatch20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain SOT3-T1
+dispatch commit `20b70908e`.

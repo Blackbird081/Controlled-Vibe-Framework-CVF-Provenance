@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t0r_reviewer_accepted_t1_planning_next`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=fresh source-verified SOT3-T1 owner and novelty reconciliation packet authoring; parked checkpoint=all implementation, contract, package, runtime, schema, test, guard, provider/live, and public work.
+Startup acknowledged: current mode=`sot3_t1_owner_novelty_reconciliation_dispatched`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=one no-commit execution of the SOT3-T1 owner/novelty work order; parked checkpoint=all owner creation, contract, implementation, package, runtime, schema, test, guard, provider/live, and public work.
 
 ## Current Mode
 
-Current mode marker: `sot3_t0r_reviewer_accepted_t1_planning_next`
+Current mode marker: `sot3_t1_owner_novelty_reconciliation_dispatched`
 
-Current mode: `sot3_t0r_reviewer_accepted_t1_planning_next`
+Current mode: `sot3_t1_owner_novelty_reconciliation_dispatched`
 
-`sot3_t0r_reviewer_accepted_t1_planning_next`
+`sot3_t1_owner_novelty_reconciliation_dispatched`
 
 Previous mode:
 
-`odvr_closed_value_not_proven_external_absorption_selection`
+`sot3_t0r_reviewer_accepted_t1_planning_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T1 owner/novelty reconciliation dispatch | `20b70908e` | DISPATCH_READY; exactly three no-commit evidence outputs; no owner creation or T2 contract work. |
 | SOT3-T0R semantic reconciliation closure | `ae7d53385` | REVIEWER_ACCEPTED_BOUNDED; 61/61 docs, 35/35 ABSORB, and 9/9 REJECT verified; architecture planning basis accepted; implementation remains NOT_AUTHORIZED. |
 | ODVR-T2 and roadmap closure | `da53959ec` | REVIEWER_ACCEPTED_VALUE_NOT_PROVEN; closed lane 3/7, parked lane 0/7; no UI continuation. |
 | ODVR-T2 representative value-proof dispatch | `1a79ba7a3` | DISPATCH_READY; exactly three no-commit evidence outputs. |
@@ -131,15 +132,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t0r_reviewer_accepted_t1_planning_next`
+Mode: `sot3_t1_owner_novelty_reconciliation_dispatched`
 
-SOT3-T0R is REVIEWER_ACCEPTED_BOUNDED at `ae7d53385`. The accepted planning
-architecture is independent deterministic no-AI Refinery, SourceEnvelope-first
-lineage, duplicate-before-conflict, sole Kernel trust/receipt authority,
-post-Kernel-only Flow, fail-closed empty evidence, and one canonical contract
-chain. Implementation remains NOT_AUTHORIZED. Next allowed move is fresh
-source-verified SOT3-T1 owner and novelty reconciliation packet authoring.
-Latest closed numbered LHW wave remains `LHW24`.
+SOT3-T1 is DISPATCH_READY at `20b70908e`. Next allowed move is one no-commit
+worker execution of
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T1_OWNER_NOVELTY_RECONCILIATION_2026-07-12.md`
+with exactly three planned review outputs. Implementation and SOT3-T2 contract
+work remain NOT_AUTHORIZED. Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
