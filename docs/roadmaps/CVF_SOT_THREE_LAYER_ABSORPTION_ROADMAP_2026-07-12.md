@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED_T2_CONTRACT_PACKET_DISPATCH
+Status: PROPOSED_T3_REFINERY_PACKET_AUTHORING
 
 docType: roadmap
 
@@ -172,11 +172,17 @@ remain untrusted.
 
 ## Authorization / Decision
 
-SOT3-T1 is reviewer-accepted at material commit `520ffb4cc`. Authorization is
-now limited to SOT3-T2 canonical inter-layer contract packet dispatch and one
-bounded documentation-only contract execution. SOT3-T3 through SOT3-T7 remain
-proposal rows and require fresh authorization. No runtime or package work is
-authorized.
+SOT3-T0/T0R/T1/T2 are reviewer-accepted. T2 canonical contracts closed at
+material commit `9c7b05b40`; reverse architecture projection closed at
+`d394b6018`; the separate review-cost control closed at `ead8d7d51`.
+
+Operator correction confirms that closing the auxiliary projection/review-cost
+roadmap did not close this main 305-file absorption roadmap. Authorization is
+now limited to fresh GC-018 and source-verified work-order authoring for
+SOT3-T3 independent deterministic Refinery Core. T3 implementation remains
+unauthorized until that packet passes pre-dispatch. SOT3-T4 through SOT3-T7
+remain dependency-held. No Truth Kernel, Truth Flow, vertical-slice, provider,
+live, or public work is authorized.
 
 ## Design Control Gate
 
@@ -189,7 +195,7 @@ authorized.
 | Claim boundary | external output remains advisory | PASS |
 | Acceptance criteria | source accounting, cross-layer map, contradictions, and dispositions observable | PASS |
 | Verification evidence | manifest arithmetic, body-read ledger, review report, and no-commit evidence | REQUIRED |
-| Dispatch readiness | paired GC-018 and source-verified work order must pass pre-dispatch | HOLD_PENDING_GATES |
+| Dispatch readiness | fresh SOT3-T3 GC-018 and source-verified work order must pass pre-dispatch | T3_PACKET_AUTHORING_RELEASED |
 
 ## Tranche Plan
 
@@ -205,16 +211,19 @@ authorized.
 | SOT3-T6 | three-layer vertical slice | internal, project, and market-source scenario across all contracts | end-to-end evidence preserves source, scope, conflict, receipt, route, and lifecycle |
 | SOT3-T7 | semantic value audit and closeout | complete conversion ledger and parked-value index reconciliation | all 305 source items terminal and unresolved value equals zero |
 
-SOT3-T1 through SOT3-T7 remain unauthorized implementation or mutation lanes
-until their own fresh GC-018 baseline and work order exist.
+SOT3-T0 through SOT3-T2 are accepted evidence/contract tranches. SOT3-T3 packet
+authoring is released, but implementation remains unauthorized until its fresh
+GC-018 baseline and work order pass pre-dispatch. SOT3-T4 through SOT3-T7
+remain dependency-held.
 
 ## Work Plan
 
-1. Release the SOT3-T0 packet from a clean governed dispatch commit.
-2. Receive complete manifest, ledger, and advisory external return.
-3. Classify atomic returned observations through the external-finding workflow.
-4. Decide whether SOT3-T1 owner reconciliation should proceed.
-5. Keep every implementation tranche on HOLD until its own authorization.
+1. Preserve accepted T0/T0R/T1/T2 evidence and the canonical contracts.
+2. Author fresh SOT3-T3 GC-018 and source-verified no-commit work order.
+3. Implement only the independent deterministic no-AI Refinery Core after
+   pre-dispatch and pre-implementation pass.
+4. Review and close T3 before releasing T4 packet authoring.
+5. Keep T4-T7 on dependency hold until each prior tranche is accepted.
 
 ## Acceptance Criteria
 
