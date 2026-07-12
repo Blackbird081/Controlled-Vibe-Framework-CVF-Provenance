@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T4_CURRENT_REFERENCE_AUTHORITY
+Status: DISPATCH_READY
 
 Date: 2026-07-12
 
@@ -10,7 +10,7 @@ Work Order ID: SOT3-T5
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
-dispatchBaseHead: `1bf21dcee`
+dispatchBaseHead: `646d37ed4`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
@@ -28,9 +28,12 @@ Base: capture HEAD and full status before edits.
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-Current-time notes: T0-T4 are accepted; only T5 is released.
+Current-time notes: T0-T4 and prerequisite T4R1 (`cda8fec64`) are accepted;
+only T5 is released.
 
-Do-not-misread notes: Flow never evaluates trust and never mints, forges, or
+Do-not-misread notes: Flow calls the actual T4R1 `TruthKernel` instance for
+current state before every action; it never accepts a substitute resolver,
+evaluates trust, or mints, forges, or
 restates `KernelDecision`/`TruthReceipt`/`TruthReference`; Flow never produces
 a second `RefineryPacket`; retained Flow code is evidence, not import
 authority; T2 overrides prototype shapes; T4's accepted Kernel package is
@@ -130,37 +133,18 @@ Use and reopen every row in the paired baseline. T2 and the accepted T4
 Kernel package are canonical; retained Flow sources have ADAPT or REJECT
 authority only.
 
-Dispatch disposition: `BLOCKED_SOURCE_NOT_FOUND`. The paired baseline proves
-that current T4 code has no Kernel-owned resolver deriving effective
-revocation, supersession, and expiry state without caller-supplied authority
-flags. Do not execute this work order until a separately reviewed T4 bounded
-repair closes that source gap and this packet is refreshed against its commit.
-
-## Negative Search And Collision Discipline
-
-Exact search command or query: the three `rg -n` commands in the table below.
-Search roots: repository source, tests, docs, JSON, and external/legacy
-evidence. Coverage includes current Kernel runtime plus governed contracts.
-Absent-versus-collision disposition: same-token occurrences are not binding.
-Collision/non-authoritative occurrence: `ADAPT` appears throughout governed absorption artifacts but does not provide Kernel current-reference authority.
-
-| Search | Result | Dispatch consequence |
-|---|---|---|
-| `rg -n "computeReferenceState|referenceState" EXTENSIONS/CVF_TRUTH_KERNEL/src` | no standalone `computeReferenceState` root export; only internal function plus `TruthKernel.referenceState` | original source row rejected and corrected |
-| `rg -n "isRevoked|isSuperseded" EXTENSIONS/CVF_TRUTH_KERNEL/src/engine/reference-issuer.ts EXTENSIONS/CVF_TRUTH_KERNEL/src/kernel.ts` | effective revocation/supersession inputs remain caller-supplied | T5 execution held |
-| `rg -n "current.*Reference|effective.*Reference|supersed" EXTENSIONS/CVF_TRUTH_KERNEL/src` | no authoritative store-derived current-reference resolver found | return to upstream T4 repair before refresh |
-
-Name-collision disposition: `KernelReferenceStateResolver` is only a proposed
-T5 doc/runtime interface name. It must not be represented as an existing
-Kernel symbol, and a caller-provided implementation cannot satisfy NC-11.
+Prerequisite disposition: SATISFIED at T4R1 material commit `cda8fec64` and
+completion review `docs/reviews/CVF_SOT3_T4R1_COMPLETION_REVIEW_2026-07-13.md`.
+The worker must use the actual `TruthKernel.referenceState(referenceId,
+nowUtcIso)` API and must not introduce a caller-controlled substitute resolver.
 
 ## Implementation Contract
 
 - Public contracts: `DistributionPackage`, `FeedbackProposal`, per T2 contract
   chain sections 7-8.
 - Flow type-consumes an already-issued `TruthReference`, but current authority
-  comes only from an injected `KernelReferenceStateResolver` that evaluates
-  the effective state at a supplied action time. It never trusts the raw
+  comes only from the actual injected `TruthKernel` instance and its
+  `referenceState(referenceId, nowUtcIso)` result. It never trusts the raw
   issuance snapshot as current state, computes revocation/supersession/expiry
   itself, or imports/duplicates Kernel evaluation logic.
 - `DistributionPackage.routing_decision` is derived only from a resolved
@@ -227,7 +211,7 @@ Contract source archive-qualified exception:
 | rolePattern | dispatcher -> no-commit package worker -> reviewer/closer |
 | phase | SOT3-T5 post-Kernel Truth Flow |
 | contractSource | canonical contract citation immediately above |
-| baseHeadFor(phase) | dispatch=`1bf21dcee`; execution=worker-captured HEAD; closure=reviewer-captured base |
+| baseHeadFor(phase) | dispatch=`646d37ed4`; execution=worker-captured HEAD; closure=reviewer-captured base |
 | changedSetScope(phase) | target package root plus one worker return |
 | traceScope(phase, actor) | reads, manifest, code, schemas, tests, scans, gates, no-commit evidence |
 | commitOwner(phase) | worker=WORKER_MUST_NOT_COMMIT; reviewer owns accepted commit |
@@ -264,15 +248,16 @@ session continuity in a separate commit.
    types for `DistributionPackage` and `FeedbackProposal`. Input: T2 field
    minimums. Output: `src/types/*.ts`. Validation: `tsc --noEmit`. Stop
    condition: field omitted from T2 minimum.
-4. Implement a read-only `KernelReferenceStateResolver` boundary. The injected
-   owner resolves a bound reference and returns its effective Kernel-owned
-   state for the supplied action time; Flow neither reads a raw snapshot as
-   current authority nor reimplements precedence. Input: accepted Kernel
-   `TruthReference` type plus `TruthKernel.referenceState` source behavior.
-   Output: `src/kernel-reference/*.ts`. Validation: tests prove missing
+4. Implement a read-only Kernel authority boundary accepting the actual
+   `TruthKernel` instance and calling its public ID-only `referenceState()` at
+   the supplied action time; Flow neither accepts a substitute resolver, reads
+   a raw snapshot as current authority, nor reimplements precedence. Input:
+   accepted Kernel exports from `cda8fec64`. Output:
+   `src/kernel-reference/*.ts`. Validation: integration tests with a real
+   `TruthKernel` prove missing
    resolution fails closed, effective state overrides a stale ACTIVE snapshot,
    and no local revocation/supersession/expiry logic exists. Stop condition:
-   resolver accepts caller state flags or reimplements Kernel precedence.
+   boundary accepts caller state flags/substitute resolver or reimplements Kernel precedence.
 5. Implement routing, dose, distribution, acknowledgement, and consumption
    engines gated on a fresh resolver call at every action.
    Input: step 4 output. Output: `src/routing/*.ts`, `src/distribution/*.ts`.
@@ -440,7 +425,7 @@ per-file terminal reconciliation.
 | Command or tool surface | governed reads, rg, source verification, file writes, dispatch gates |
 | Target paths | paired T5 baseline and this work order |
 | Allowed scope source | operator request to create the next work order |
-| Before status evidence | HEAD `1bf21dcee`; clean worktree; target package absent |
+| Before status evidence | clean worktree at refreshed dispatch base `646d37ed4`; T4R1 accepted at `cda8fec64`; target package absent |
 | After status evidence | T5 packet authored; implementation awaits pre-dispatch |
 | Diff evidence | exact two-path packet diff before commit |
 | Approval boundary | T5 packet authoring and bounded no-commit dispatch |
