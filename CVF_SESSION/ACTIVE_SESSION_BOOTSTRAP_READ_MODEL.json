@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_t4r1_kernel_reference_authority_dispatched",
+  "currentMode": "sot3_t5_truth_flow_packet_refresh_next",
   "activeHandoff": "AGENT_HANDOFF_V42_2026-07-12.md",
-  "nextAllowedMove": "Execute exactly one SOT3-T4R1 WORKER_MUST_NOT_COMMIT Kernel current-reference authority repair from dispatch commit f667f1daa and return COMPLETE_PENDING_REVIEW. SOT3-T5 implementation and T6-T7 remain held. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Refresh and re-review only the held SOT3-T5 GC-018 and work order against accepted T4R1 commit cda8fec64. T5 implementation and T6-T7 remain held until a fresh pre-dispatch pass and reviewer dispatch commit. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

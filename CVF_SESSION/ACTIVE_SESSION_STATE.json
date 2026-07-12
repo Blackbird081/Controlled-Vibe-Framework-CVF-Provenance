@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t4r1_kernel_reference_authority_dispatched",
-  "previousMode": "sot3_t5_truth_flow_packet_authoring_next",
+  "currentMode": "sot3_t5_truth_flow_packet_refresh_next",
+  "previousMode": "sot3_t4r1_kernel_reference_authority_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11305,7 +11305,7 @@
     "nextAllowedMove": "one bounded deterministic SOT3-T4 Kernel execution and no-commit worker return",
     "claimBoundary": "T4 Kernel only; T5-T7, activation, Flow, monitors, database, adapters, provider/live and public remain held"
   },
-  "nextAllowedMove": "Execute exactly one SOT3-T4R1 WORKER_MUST_NOT_COMMIT Kernel current-reference authority repair from dispatch commit f667f1daa and return COMPLETE_PENDING_REVIEW. SOT3-T5 implementation and T6-T7 remain held. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Refresh and re-review only the held SOT3-T5 GC-018 and work order against accepted T4R1 commit cda8fec64. T5 implementation and T6-T7 remain held until a fresh pre-dispatch pass and reviewer dispatch commit. LHW24 remains latest closed numbered LHW wave.",
   "sot3T4Closure20260712": {
     "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
     "date": "2026-07-12",
@@ -11325,6 +11325,15 @@
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T4R1_KERNEL_CURRENT_REFERENCE_AUTHORITY_2026-07-12.md",
     "commitMode": "WORKER_MUST_NOT_COMMIT",
     "nextAllowedMove": "one bounded T4R1 Kernel current-reference authority repair worker return",
+    "claimBoundary": "T5 implementation and T6-T7 remain held"
+  },
+  "sot3T4R1Closure20260713": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-13",
+    "materialCommit": "cda8fec64",
+    "completionReview": "docs/reviews/CVF_SOT3_T4R1_COMPLETION_REVIEW_2026-07-13.md",
+    "verification": "typecheck and build PASS; Vitest 7 suites and 54 tests PASS; reviewer-fast and pre-commit PASS",
+    "nextAllowedMove": "refresh and re-review held SOT3-T5 packet only",
     "claimBoundary": "T5 implementation and T6-T7 remain held"
   }
 }

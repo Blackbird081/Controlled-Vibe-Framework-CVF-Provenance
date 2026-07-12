@@ -17,9 +17,9 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t4r1_kernel_reference_authority_dispatched`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one SOT3-T4R1
-WORKER_MUST_NOT_COMMIT repair from `f667f1daa`; parked checkpoint=T5
+Startup acknowledged: current mode=`sot3_t5_truth_flow_packet_refresh_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=refresh and
+re-review held SOT3-T5 packet against `cda8fec64`; parked checkpoint=T5
 implementation, T6-T7, activation,
 provider/live, public, monitor, database, adapter, and unrelated Catalog/GAP work.
 
@@ -36,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_t4r1_kernel_reference_authority_dispatched`
+`sot3_t5_truth_flow_packet_refresh_next`
 
 ## Latest Work / Changes
 
@@ -54,11 +54,12 @@ T4 reviewer closure material is committed at `6bf81979b` with disposition
 The main roadmap releases T5 packet authoring at `7dafc9185`.
 T5 is held at `76f1ea998`; the reviewed T4R1 prerequisite repair packet is
 dispatched at `f667f1daa` after 75/75 pre-dispatch checks passed.
+T4R1 closed reviewer-accepted at `cda8fec64` with 7 suites/54 tests PASS.
 
 ## Next Allowed Move
 
-Execute exactly one no-commit T4R1 repair from `f667f1daa`. T5 implementation
-and T6-T7 remain held.
+Refresh and re-review only the held T5 packet against `cda8fec64`. T5
+implementation and T6-T7 remain held until a fresh dispatch commit.
 
 ## Active Boundary
 
@@ -201,3 +202,24 @@ before another agent implements; session continuity must reflect that route.
 
 Rollback boundary: revert only this dispatch session sync; retain held T5
 commit `76f1ea998` and T4R1 packet commit `f667f1daa`.
+
+## Core Guard Self-Protection Authorization - SOT3-T4R1 Closure Sync
+
+Authorized guard-maintenance scope: synchronize accepted T4R1 closure and
+release only T5 packet refresh/re-review.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T4R1Closure20260713.json`
+
+Operator authorization: continue SOT3 with Codex reviewer control; closure
+continuity must not silently dispatch held T5 implementation.
+
+Rollback boundary: revert only this closure sync; retain T4R1 material commit
+`cda8fec64` and held T5 packet commit `76f1ea998`.
