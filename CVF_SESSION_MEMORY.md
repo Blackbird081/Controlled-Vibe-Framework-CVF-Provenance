@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=bounded same-roadmap closure reconciliation only; parked checkpoint=all new implementation plus semantic scoring, runtime, provider/live, public, and Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_roadmap_closed_operator_selection`; active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=operator selects a fresh high-value lane, then new GC-018/source-verified work order; parked checkpoint=all implementation plus semantic scoring, SOT3 runtime, provider/live, public, and further Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`
+Current mode marker: `sot3_roadmap_closed_operator_selection`
 
-Current mode: `sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`
+Current mode: `sot3_roadmap_closed_operator_selection`
 
-`sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`
+`sot3_roadmap_closed_operator_selection`
 
 Previous mode:
 
-`sot3_rcs_t1_review_cost_systemization_dispatched`
+`sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 reverse projection and review-cost roadmap closure | `6d28e3de4` | CLOSED_PASS_BOUNDED; T0 and T1 closed; no open tranche or pre-authorized implementation. |
 | SOT3-RCS-T1 review-cost systemization closure | `ead8d7d51` | REVIEWER_ACCEPTED_AFTER_REPAIR; mandatory changed-completion-review telemetry, 24 tests, 3 hook bindings, no semantic scoring. |
 | SOT3-RCS-T1 review-cost systemization dispatch | `252844462` | DISPATCH_READY; shape-only checker, nine telemetry fields, round-three escalation, worker must not commit. |
 | SOT3-RAP-T0 reverse architecture projection closure | `d394b6018` | REVIEWER_ACCEPTED_BOUNDED; 2 contract/exclusion Catalog entries, 3 unresolved GAP entries, 24/24 unique entities, 6/6 unique gaps; no runtime owner created. |
@@ -139,12 +140,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`
+Mode: `sot3_roadmap_closed_operator_selection`
 
-SOT3-RCS-T1 is REVIEWER_ACCEPTED_AFTER_REPAIR at `ead8d7d51`. Next allowed
-move is bounded closure reconciliation of the existing SOT3-RAP-RCS roadmap
-only. No new implementation is authorized. Latest closed numbered LHW wave
-remains `LHW24`.
+The SOT3-RAP-RCS roadmap is CLOSED_PASS_BOUNDED at `6d28e3de4`. Next allowed
+move is operator selection of a fresh high-value lane followed by new GC-018
+and source-verified work-order authoring. No implementation is pre-authorized.
+Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

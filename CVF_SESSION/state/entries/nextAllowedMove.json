@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1708,
+  "stateOrder": 1710,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3-RCS-T1 is REVIEWER_ACCEPTED_AFTER_REPAIR at material commit ead8d7d51. Next allowed move is bounded same-roadmap closure reconciliation only; no new implementation tranche is authorized. Semantic review scoring, SOT3 runtime, schemas, packages, providers/live, public-sync, and Catalog/GAP mutation remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
+  "value": "The SOT3 reverse-projection and review-cost roadmap is CLOSED_PASS_BOUNDED at material commit 6d28e3de4. Next allowed move is operator selection of a fresh high-value lane followed by new GC-018 and source-verified work-order authoring; no implementation is pre-authorized. Semantic review scoring, SOT3 runtime, schemas, packages, providers/live, public-sync, and further Catalog/GAP mutation remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
 }

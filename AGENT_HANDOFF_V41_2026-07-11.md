@@ -17,8 +17,8 @@ provider, public-sync, Web, L4 promotion, or further catalog population.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`;
-active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=bounded same-roadmap closure reconciliation only; parked checkpoint=all new implementation plus semantic scoring, runtime, provider/live, public, and Catalog/GAP work.
+Startup acknowledged: current mode=`sot3_roadmap_closed_operator_selection`;
+active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=operator selects a fresh high-value lane then new GC-018/source-verified work order; parked checkpoint=all implementation plus semantic scoring, SOT3 runtime, provider/live, public, and further Catalog/GAP work.
 
 ## Mandatory Startup Reads
 
@@ -31,7 +31,7 @@ active handoff=AGENT_HANDOFF_V41_2026-07-11.md; next allowed move=bounded same-r
 
 ## Current Mode
 
-`sot3_rcs_t1_reviewer_accepted_roadmap_closure_next`
+`sot3_roadmap_closed_operator_selection`
 
 ## Latest Work / Changes
 
@@ -1118,3 +1118,33 @@ Authorized protected paths:
 
 Rollback boundary: revert only this session-sync batch; retain T1 material
 closure commit `ead8d7d51`.
+
+## SOT3 Roadmap Closure
+
+Roadmap closure commit: `6d28e3de4`.
+
+The SOT3 reverse architecture projection and review-cost systemization roadmap
+is `CLOSED_PASS_BOUNDED`. T0 closed at `d394b6018`; T1 closed after one bounded
+repair at `ead8d7d51`. No SOT3 runtime, semantic scoring, provider/live,
+public-sync, or new implementation tranche is authorized.
+
+Next allowed move: operator selects a fresh high-value lane, followed by new
+GC-018 and a source-verified work order.
+
+## Core Guard Self-Protection Authorization - SOT3 Roadmap Closure Sync
+
+Operator authorization: continue the bounded roadmap closure reconciliation
+and return control to operator selection without opening implementation.
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V41_2026-07-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3RoadmapClosure20260712.json`
+
+Rollback boundary: revert only this session-sync batch; retain roadmap closure
+commit `6d28e3de4`.

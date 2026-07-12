@@ -81,8 +81,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_rcs_t1_reviewer_accepted_roadmap_closure_next",
-  "previousMode": "sot3_rcs_t1_review_cost_systemization_dispatched",
+  "currentMode": "sot3_roadmap_closed_operator_selection",
+  "previousMode": "sot3_rcs_t1_reviewer_accepted_roadmap_closure_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11251,5 +11251,16 @@
     "nextAllowedMove": "bounded existing-roadmap closure reconciliation only",
     "claimBoundary": "mandatory completion-review telemetry shape only; no semantic scoring, SOT3 runtime, provider/live, public-sync, or Catalog/GAP mutation"
   },
-  "nextAllowedMove": "SOT3-RCS-T1 is REVIEWER_ACCEPTED_AFTER_REPAIR at material commit ead8d7d51. Next allowed move is bounded same-roadmap closure reconciliation only; no new implementation tranche is authorized. Semantic review scoring, SOT3 runtime, schemas, packages, providers/live, public-sync, and Catalog/GAP mutation remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
+  "sot3RoadmapClosure20260712": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-12",
+    "roadmapCommit": "6d28e3de4",
+    "t0ClosureCommit": "d394b6018",
+    "t1ClosureCommit": "ead8d7d51",
+    "roadmap": "docs/roadmaps/CVF_SOT3_REVERSE_ARCHITECTURE_PROJECTION_AND_REVIEW_COST_SYSTEMIZATION_ROADMAP_2026-07-12.md",
+    "openTranches": 0,
+    "nextAllowedMove": "operator selects a fresh high-value lane followed by new GC-018 and source-verified work-order authoring",
+    "claimBoundary": "roadmap closed; no semantic scoring, SOT3 runtime, provider/live, public-sync, or further Catalog/GAP mutation authorized"
+  },
+  "nextAllowedMove": "The SOT3 reverse-projection and review-cost roadmap is CLOSED_PASS_BOUNDED at material commit 6d28e3de4. Next allowed move is operator selection of a fresh high-value lane followed by new GC-018 and source-verified work-order authoring; no implementation is pre-authorized. Semantic review scoring, SOT3 runtime, schemas, packages, providers/live, public-sync, and further Catalog/GAP mutation remain NOT_AUTHORIZED. LHW24 remains latest closed numbered LHW wave."
 }
