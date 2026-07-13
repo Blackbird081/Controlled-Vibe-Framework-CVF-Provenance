@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1735,
+  "stateOrder": 1737,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3 activation A3 blocked-attempt evidence, one-use runner permit, pre-network call ledger, and ADIF-0030 are committed at dd64479bc. Direct Vitest invocation proved 1 offline guard PASS and 1 live suite SKIP. Operator authorization on 2026-07-13 declares Alibaba provider calls unmetered for A3 recovery; diagnostic-before-rerun and diminishing-return controls remain binding. Next allowed move is the runner-only A3 recovery live proof and reviewer closure. A4-A5 remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3 activation A3 is CLOSED_PASS_BOUNDED at 4d9263c7d with claim REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED. Recovery evidence records one Alibaba qwen-turbo call, HTTP 200, approved-context hash inclusion, and complete governance/SOT3 correlation; original blocked evidence and ADIF-0030 remain retained. Next allowed move is fresh A4 GC-018 and source-verified work-order authoring for zero-call rejection and bounded recovery proof. Alibaba calls are operator-declared unmetered, while diagnostic-before-rerun and diminishing-return controls remain binding. A4 implementation and A5 remain unauthorized until dispatch. LHW24 remains latest closed numbered LHW wave."
 }

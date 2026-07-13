@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_activation_a3_recovery_guard_proven_live_ready",
-  "previousMode": "sot3_activation_a3_live_proof_dispatched",
+  "currentMode": "sot3_activation_a3_closed_bounded_a4_packet_next",
+  "previousMode": "sot3_activation_a3_recovery_guard_proven_live_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11463,5 +11463,19 @@
     "adifEntry": "ADIF-0030",
     "claimBoundary": "No A3 PASS yet; recovery must persist receipt correlation before reviewer closure; A4-A5 remain unauthorized."
   },
-  "nextAllowedMove": "SOT3 activation A3 blocked-attempt evidence, one-use runner permit, pre-network call ledger, and ADIF-0030 are committed at dd64479bc. Direct Vitest invocation proved 1 offline guard PASS and 1 live suite SKIP. Operator authorization on 2026-07-13 declares Alibaba provider calls unmetered for A3 recovery; diagnostic-before-rerun and diminishing-return controls remain binding. Next allowed move is the runner-only A3 recovery live proof and reviewer closure. A4-A5 remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "sot3ActivationA3Closure20260713": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "4d9263c7d",
+    "claim": "REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED",
+    "provider": "alibaba",
+    "model": "qwen-turbo",
+    "recoveryHttpStatus": 200,
+    "recoveryObservedCallCount": 1,
+    "approvedContextIncluded": true,
+    "traceCount": 1,
+    "completionReview": "docs/reviews/CVF_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_COMPLETION_2026-07-13.md",
+    "nextTranche": "A4_PACKET_AUTHORING",
+    "claimBoundary": "A4 failure/recovery, A5 release proof, and LIVE_GOVERNANCE_PROVEN_BOUNDED remain open."
+  },
+  "nextAllowedMove": "SOT3 activation A3 is CLOSED_PASS_BOUNDED at 4d9263c7d with claim REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED. Recovery evidence records one Alibaba qwen-turbo call, HTTP 200, approved-context hash inclusion, and complete governance/SOT3 correlation; original blocked evidence and ADIF-0030 remain retained. Next allowed move is fresh A4 GC-018 and source-verified work-order authoring for zero-call rejection and bounded recovery proof. Alibaba calls are operator-declared unmetered, while diagnostic-before-rerun and diminishing-return controls remain binding. A4 implementation and A5 remain unauthorized until dispatch. LHW24 remains latest closed numbered LHW wave."
 }

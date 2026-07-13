@@ -17,10 +17,10 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a3_recovery_guard_proven_live_ready`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one bounded
-runner-only A3 recovery live proof and reviewer closure; parked
-checkpoint=A4-A5, release, public, production,
+Startup acknowledged: current mode=`sot3_activation_a3_closed_bounded_a4_packet_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A4
+GC-018 and source-verified work-order authoring; parked checkpoint=A4
+implementation, A5, final live-governance claim, release, public, production,
 distributed-durability, and user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
@@ -36,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a3_recovery_guard_proven_live_ready`
+`sot3_activation_a3_closed_bounded_a4_packet_next`
 
 ## Latest Work / Changes
 
@@ -60,17 +60,50 @@ The refreshed T5 packet passed 75/75 pre-dispatch and is committed at
 
 ## Next Allowed Move
 
-SOT3 activation A3 blocked-attempt evidence and the recovery guard are
-committed at `dd64479bc`. The next allowed move is the runner-only recovery
-live proof and reviewer closure. Alibaba calls are operator-declared unmetered;
-diagnostic-before-rerun and diminishing-return rules remain binding.
+SOT3 activation A3 is closed at `4d9263c7d` with claim
+`REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED`. The next allowed move is fresh
+A4 GC-018 and source-verified work-order authoring. Alibaba calls are
+operator-declared unmetered; diagnostic-before-rerun and diminishing-return
+rules remain binding.
 
 ## Active Boundary
 
-Only the A3 runner-guard recovery and closure are authorized. No A4-A5
+Only A4 packet authoring is authorized. No A4 implementation or A5
 failure/recovery or release execution, public-sync, production or
 distributed-durability claim, user-validation claim, governance checker, or
 unrelated Catalog/GAP mutation is authorized.
+
+## SOT3 Activation A3 Closure Anchor - 2026-07-13
+
+A3 closes at material commit `4d9263c7d` after bounded reviewer repair and
+operator-authorized recovery. The retained receipt records one Alibaba
+`qwen-turbo` recovery call, HTTP 200, approved-context hash inclusion, one
+durable SOT3 trace, and complete governance plus Refinery-Kernel-Flow owner
+identifiers. The accepted claim is
+`REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED`.
+
+The original three-call breach remains retained as blocked evidence. The
+one-use permit, pre-network ledger, Windows launcher diagnostic, and ADIF-0030
+remain part of the closure. A4 and A5 are still required before
+`LIVE_GOVERNANCE_PROVEN_BOUNDED`.
+
+## Core Guard Self-Protection Authorization - SOT3 A3 Closure Sync
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA3Closure20260713.json`
+
+Operator authorization: A3 repair, ADIF guard, Alibaba-unmetered recovery, and
+reviewer closure on 2026-07-13.
+
+Rollback boundary: revert only this closure continuity batch; retain material
+commit `4d9263c7d` and all blocked/recovery evidence.
 
 ## SOT3 Activation A3 Recovery Guard Anchor - 2026-07-13
 
