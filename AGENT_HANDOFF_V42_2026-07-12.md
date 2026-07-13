@@ -17,11 +17,11 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a2_durable_evidence_dispatched`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one bounded
-no-commit A2 implementation from the canonical work order; parked
-checkpoint=A3-A5 provider/live, release, public, production,
-distributed-durability, and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a2_closed_bounded_a3_packet_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A3
+GC-018 and source-verified work-order authoring only; parked checkpoint=A3
+implementation and A4-A5 release, public, production, distributed-durability,
+and user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -36,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a2_durable_evidence_dispatched`
+`sot3_activation_a2_closed_bounded_a3_packet_next`
 
 ## Latest Work / Changes
 
@@ -60,14 +60,14 @@ The refreshed T5 packet passed 75/75 pre-dispatch and is committed at
 
 ## Next Allowed Move
 
-SOT3 activation A2 is dispatched at `7e118f16e`. The next allowed move is one
-bounded no-commit implementation from the canonical A2 work order, followed
-by a worker return for independent review.
+SOT3 activation A2 is closed at `fdead7c99` with claim
+`DURABLE_EVIDENCE_REPLAY_PROVEN_LOCAL`. The next allowed move is fresh A3
+GC-018 and source-verified work-order authoring only.
 
 ## Active Boundary
 
-Only the exact A2 Allowed Scope is authorized. No A3-A5 provider/live or
-release execution, public-sync, production or distributed-durability claim,
+Only A3 packet authoring is authorized. No A3 implementation, A4-A5 release
+execution, public-sync, production or distributed-durability claim,
 user-validation claim, governance checker, or unrelated Catalog/GAP mutation
 is authorized.
 
@@ -537,3 +537,41 @@ order sequence.
 Rollback boundary: revert only this dispatch continuity batch; retain A2
 packet commit `7e118f16e`, A1 material `149832b16`, and A0 material
 `a777c3fd9`.
+
+## SOT3 Activation A2 Closure Anchor - 2026-07-13
+
+A2 is reviewer-accepted after bounded repair at material commit `fdead7c99`.
+The local durable evidence path preserves complete owner fields, rejects
+invalid or smuggled record shapes before write, emits canonical bytes, and
+retains exact persistence diagnostics. Focused tests passed 71/71; full
+non-live tests passed 3207 with 2 skipped; typecheck, build, reviewer-fast
+62/62, and pre-commit 83/83 passed. The bounded claim is
+`DURABLE_EVIDENCE_REPLAY_PROVEN_LOCAL`.
+
+ADIF-0029 records the reusable durable-evidence projection and admission
+learning. The next allowed move is fresh A3 GC-018 and source-verified
+work-order authoring only. No A3 implementation or A4-A5 release, public,
+production, distributed-durability, live-provider, or user-validation claim
+is authorized.
+
+## Core Guard Self-Protection Authorization - SOT3 Activation A2 Closure Sync
+
+Authorized guard-maintenance scope: synchronize accepted A2 closure after
+material commit `fdead7c99`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA2Closure20260713.json`
+
+Operator authorization: process the completed A2 implementation and continue
+the dependency-ordered SOT3 activation roadmap.
+
+Rollback boundary: revert only this closure continuity batch; retain A2
+material commit `fdead7c99`, A2 dispatch `7e118f16e`, and A1 material
+`149832b16`.
