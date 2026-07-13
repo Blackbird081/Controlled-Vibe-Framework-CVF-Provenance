@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_activation_a5_dispatched_worker_execution_next",
-  "previousMode": "sot3_activation_a4_closed_a5_packet_next",
+  "currentMode": "sot3_activation_a5_blocked_recovery_packet_next",
+  "previousMode": "sot3_activation_a5_dispatched_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11522,5 +11522,17 @@
     "nextAllowedMove": "one no-commit A5 worker execution",
     "claimBoundary": "Final LIVE_GOVERNANCE_PROVEN_BOUNDED remains reviewer-reserved; no public, production, scale, or user-validation claim."
   },
-  "nextAllowedMove": "SOT3-ACT-A5 canonical release-proof packet is DISPATCH_READY at commit 12f090798 after 75/75 pre-dispatch and 83/83 pre-commit checks. Next allowed move is one no-commit worker execution from docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A5_CANONICAL_RELEASE_PROOF_2026-07-13.md. The worker must make SOT3 mandatory in canonical release JSON and manifest evidence, remove blind live retry, run local tests before one planned canonical live command, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Final LIVE_GOVERNANCE_PROVEN_BOUNDED remains reviewer-reserved. Public, production, scale, and user validation remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "sot3ActivationA5BlockedReview20260713": {
+    "status": "BLOCKED_WITH_REASON",
+    "materialCommit": "f038bcb81",
+    "sot3Check": "PASS",
+    "canonicalReleaseResult": "FAIL",
+    "failureClass": "Next.js development-bundler dependency resolution failure",
+    "failureBoundary": "cvf-refinery source package .js import specifier on the execute-route chain",
+    "reviewerLiveCalls": 0,
+    "rerunDisposition": "FORBIDDEN_UNTIL_RESULT_CHANGING_REPAIR",
+    "nextAllowedMove": "Claude-authored fresh GC-018 and source-verified bounded recovery work order; Codex final review after worker execution",
+    "claimBoundary": "LIVE_GOVERNANCE_PROVEN_BOUNDED and all public, production, scale, and user-validation claims remain unclaimed."
+  },
+  "nextAllowedMove": "SOT3-ACT-A5 blocked evidence and mandatory release integration are retained at material commit f038bcb81. SOT3 itself passed, but the canonical release result failed because Next.js development bundling could not resolve the Refinery source package .js import specifier on the execute-route chain. Next allowed move is Claude-authored fresh GC-018 and source-verified bounded recovery work order covering the Refinery package-consumption boundary and structured release-level live-stage diagnostic. No live rerun is allowed until a concrete result-changing local repair passes. Codex remains final reviewer. LIVE_GOVERNANCE_PROVEN_BOUNDED, public, production, scale, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
 }

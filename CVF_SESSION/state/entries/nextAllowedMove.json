@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1745,
+  "stateOrder": 1747,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3-ACT-A5 canonical release-proof packet is DISPATCH_READY at commit 12f090798 after 75/75 pre-dispatch and 83/83 pre-commit checks. Next allowed move is one no-commit worker execution from docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A5_CANONICAL_RELEASE_PROOF_2026-07-13.md. The worker must make SOT3 mandatory in canonical release JSON and manifest evidence, remove blind live retry, run local tests before one planned canonical live command, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Final LIVE_GOVERNANCE_PROVEN_BOUNDED remains reviewer-reserved. Public, production, scale, and user validation remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3-ACT-A5 blocked evidence and mandatory release integration are retained at material commit f038bcb81. SOT3 itself passed, but the canonical release result failed because Next.js development bundling could not resolve the Refinery source package .js import specifier on the execute-route chain. Next allowed move is Claude-authored fresh GC-018 and source-verified bounded recovery work order covering the Refinery package-consumption boundary and structured release-level live-stage diagnostic. No live rerun is allowed until a concrete result-changing local repair passes. Codex remains final reviewer. LIVE_GOVERNANCE_PROVEN_BOUNDED, public, production, scale, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
 }

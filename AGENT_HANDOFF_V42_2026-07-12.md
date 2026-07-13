@@ -17,11 +17,12 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a5_dispatched_worker_execution_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit
-A5 worker execution from packet commit `12f090798`; parked checkpoint=A5
-review/closure, final live-governance claim, public, production, scale,
-distributed-durability, and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a5_blocked_recovery_packet_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=Claude-authored
+bounded A5 recovery packet for the diagnosed Refinery-to-Next.js integration
+defect; parked checkpoint=post-repair canonical live rerun, final
+live-governance claim, public, production, scale, distributed-durability, and
+user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -36,15 +37,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a5_dispatched_worker_execution_next`
+`sot3_activation_a5_blocked_recovery_packet_next`
 
 ## Latest Work / Changes
 
-SOT3-ACT-A5 GC-018 and source-verified work order are committed at
-`12f090798`. Pre-dispatch passed 75/75 and pre-commit passed 83/83. The packet
-makes SOT3 a mandatory canonical release JSON/manifest check, forbids mock
-bypass and blind live retry, and permits one planned canonical run after local
-proof. The worker must not commit. Final claim review remains parked.
+SOT3-ACT-A5 blocked evidence and mandatory release integration are committed
+at `f038bcb81`. The SOT3-specific check passed, but the canonical release
+result failed because Next.js development bundling could not resolve the
+Refinery source package `.js` import on the execute-route chain. No reviewer
+live rerun occurred. Fresh bounded recovery packet authoring is next; final
+claim review remains parked.
 
 ## Core Guard Self-Protection Authorization - SOT3 Activation A5 Dispatch Sync
 
@@ -739,6 +741,46 @@ the dependency-ordered SOT3 activation roadmap.
 Rollback boundary: revert only this closure continuity batch; retain A2
 material commit `fdead7c99`, A2 dispatch `7e118f16e`, and A1 material
 `149832b16`.
+
+## SOT3 Activation A5 Blocked Review Anchor - 2026-07-13
+
+A5 mandatory release integration and failed canonical evidence are retained
+at material commit `f038bcb81` with disposition `BLOCKED_WITH_REASON`. The
+SOT3-specific check passed every accepted denominator and correlation, but the
+overall release result is FAIL. Independent trace review identified the exact
+failure before any rerun: Next.js development bundling could not resolve the
+Refinery source package `.js` import specifier on the execute-route chain,
+returning HTTP 500 HTML to the live E2E requests. Reviewer live-call count is
+zero.
+
+The next allowed move is Claude-authored fresh GC-018 and a source-verified
+bounded recovery work order covering the Refinery package-consumption boundary
+and structured release-level live-stage diagnostic. A worker may rerun the
+canonical live bundle only after a concrete result-changing local repair
+passes. Codex remains the final reviewer. `LIVE_GOVERNANCE_PROVEN_BOUNDED`,
+public, production, scale, and user-validation claims remain unclaimed.
+
+## Core Guard Self-Protection Authorization - SOT3 Activation A5 Blocked Sync
+
+Authorized guard-maintenance scope: synchronize the reviewer-blocked A5 result
+after material commit `f038bcb81`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA5BlockedReview20260713.json`
+
+Operator authorization: continue SOT3 activation toward the bounded live
+governance claim while preserving reviewer and work-order role separation.
+
+Rollback boundary: revert only this blocked-result continuity batch; retain A5
+material commit `f038bcb81`, A5 dispatch `12f090798`, and A4 closure
+`cab8133ea`.
 
 ## SOT3 Activation A3 Dispatch Anchor - 2026-07-13
 
