@@ -17,11 +17,11 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a2_closed_bounded_a3_packet_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A3
-GC-018 and source-verified work-order authoring only; parked checkpoint=A3
-implementation and A4-A5 release, public, production, distributed-durability,
-and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a3_live_proof_dispatched`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one bounded
+no-commit A3 live-proof execution from the canonical work order; parked
+checkpoint=A4-A5 failure/recovery, release, public, production,
+distributed-durability, and user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -36,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a2_closed_bounded_a3_packet_next`
+`sot3_activation_a3_live_proof_dispatched`
 
 ## Latest Work / Changes
 
@@ -60,16 +60,16 @@ The refreshed T5 packet passed 75/75 pre-dispatch and is committed at
 
 ## Next Allowed Move
 
-SOT3 activation A2 is closed at `fdead7c99` with claim
-`DURABLE_EVIDENCE_REPLAY_PROVEN_LOCAL`. The next allowed move is fresh A3
-GC-018 and source-verified work-order authoring only.
+SOT3 activation A3 is dispatched at `0771e22fa`. The next allowed move is one
+bounded no-commit A3 execution from the canonical work order, using one planned
+live call and at most one diagnostic-gated retry.
 
 ## Active Boundary
 
-Only A3 packet authoring is authorized. No A3 implementation, A4-A5 release
-execution, public-sync, production or distributed-durability claim,
-user-validation claim, governance checker, or unrelated Catalog/GAP mutation
-is authorized.
+Only the exact A3 worker manifest and call budget are authorized. No A4-A5
+failure/recovery or release execution, public-sync, production or
+distributed-durability claim, user-validation claim, governance checker, or
+unrelated Catalog/GAP mutation is authorized.
 
 ## Core Guard Self-Protection Authorization - SOT3-T4 Dispatch And V42 Rotation
 
@@ -575,3 +575,38 @@ the dependency-ordered SOT3 activation roadmap.
 Rollback boundary: revert only this closure continuity batch; retain A2
 material commit `fdead7c99`, A2 dispatch `7e118f16e`, and A1 material
 `149832b16`.
+
+## SOT3 Activation A3 Dispatch Anchor - 2026-07-13
+
+A3 real-provider approved-context proof GC-018 and source-verified work order
+are committed at `0771e22fa`. Pre-dispatch passed 75/75 and the commit hook
+passed 83/83. The packet permits exactly five worker outputs, one planned live
+call, and at most one retry only after a complete retryable diagnostic and an
+explicit result-changing action. The worker must not commit.
+
+The next allowed move is one bounded A3 execution from
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`.
+Valid returns are `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. A4-A5,
+release integration, public-sync, production, distributed durability,
+universal control, and user validation remain unauthorized.
+
+## Core Guard Self-Protection Authorization - SOT3 Activation A3 Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize A3 dispatch after packet
+commit `0771e22fa`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA3Dispatch20260713.json`
+
+Operator authorization: continue the dependency-ordered SOT3 activation work
+order sequence.
+
+Rollback boundary: revert only this dispatch continuity batch; retain A3 packet
+commit `0771e22fa`, A2 material `fdead7c99`, and A1 material `149832b16`.

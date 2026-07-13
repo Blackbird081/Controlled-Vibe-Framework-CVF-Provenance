@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1732,
+  "stateKey": "sot3ActivationA3Dispatch20260713",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-13",
+    "dispatchCommit": "0771e22fa",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "preDispatch": "75/75 PASS",
+    "preCommit": "83/83 PASS",
+    "callBudget": "one planned live call plus at most one diagnostic-gated retry",
+    "nextAllowedMove": "one bounded no-commit A3 worker execution and COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON return",
+    "claimBoundary": "A3 private real-provider happy-path proof only; no A4-A5 failure/recovery, release, public, production, universal, or user-validation claim"
+  }
+}

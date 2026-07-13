@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_activation_a2_closed_bounded_a3_packet_next",
-  "previousMode": "sot3_activation_a2_durable_evidence_dispatched",
+  "currentMode": "sot3_activation_a3_live_proof_dispatched",
+  "previousMode": "sot3_activation_a2_closed_bounded_a3_packet_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11439,5 +11439,18 @@
     "nextAllowedMove": "fresh A3 GC-018 and source-verified work-order authoring only",
     "claimBoundary": "no live provider proof, release-quality proof, production readiness, distributed durability, public export, universal control, or user validation"
   },
-  "nextAllowedMove": "SOT3 activation A2 is CLOSED_PASS_BOUNDED at material commit fdead7c99 with claim DURABLE_EVIDENCE_REPLAY_PROVEN_LOCAL. Next allowed move is fresh A3 GC-018 and source-verified work-order authoring only. A3 implementation and A4-A5 release/public/user-validation work remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "sot3ActivationA3Dispatch20260713": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-13",
+    "dispatchCommit": "0771e22fa",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "preDispatch": "75/75 PASS",
+    "preCommit": "83/83 PASS",
+    "callBudget": "one planned live call plus at most one diagnostic-gated retry",
+    "nextAllowedMove": "one bounded no-commit A3 worker execution and COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON return",
+    "claimBoundary": "A3 private real-provider happy-path proof only; no A4-A5 failure/recovery, release, public, production, universal, or user-validation claim"
+  },
+  "nextAllowedMove": "SOT3 activation A3 real-provider proof is DISPATCH_READY at commit 0771e22fa after 75/75 pre-dispatch and 83/83 pre-commit checks passed. Next allowed move is one bounded WORKER_MUST_NOT_COMMIT A3 execution from the canonical work order with one planned live call and at most one diagnostic-gated retry. A4-A5 remain unauthorized. LHW24 remains latest closed numbered LHW wave."
 }
