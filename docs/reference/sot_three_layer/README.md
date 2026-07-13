@@ -46,6 +46,7 @@ surface, or generated aggregate. It does not supersede
 |---|---|
 | `CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` | Canonical eight-contract chain: producer, consumers, field minimums, status vocabulary, transitions, authority boundary, source provenance, compatibility decision per type |
 | `CVF_SOT_THREE_LAYER_INVARIANTS_AND_NEGATIVE_CASES.md` | Ten fail-closed invariants and fourteen negative cases (twelve originally required plus NC-04A and NC-04B added by bounded repair) with expected fail-closed outcomes |
+| `CVF_SOT3_ACTIVATION_ARCHITECTURE_DECISION.md` | Ratified bounded A0 decision selecting the scoped `/api/execute` knowledge-context seam and the A1-A5 proof ladder toward `LIVE_GOVERNANCE_PROVEN_BOUNDED` |
 
 ## Authority Map
 
