@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1749,
+  "stateOrder": 1751,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3-ACT-A5R1 bounded recovery packet is DISPATCH_READY at commit a036ce891 after semantic review, 75/75 pre-dispatch checks, and 83/83 pre-commit checks. Next allowed move is one no-commit worker execution from docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_2026-07-13.md. The worker must reproduce locally, apply only the proven smallest repair, pass Refinery and web checks plus the real next-dev zero-provider regression, then run exactly one canonical invocation using fresh 2026-07-14 evidence paths and report actual provider calls by stage. Codex remains final reviewer. LIVE_GOVERNANCE_PROVEN_BOUNDED, public, production, scale, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3 activation A1-A5 and A5R1 recovery are CLOSED_PASS_BOUNDED at material commit 62ab80ab4. Canonical release and SOT3 checks PASS; exact claim LIVE_GOVERNANCE_PROVEN_BOUNDED is accepted for the selected path, Alibaba lane, environment, and evidence window. No further SOT3 activation work is allowed without a concrete regression or new product requirement. Next value-bearing move is separately authorized shipment/release followed by real-user feedback. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
 }

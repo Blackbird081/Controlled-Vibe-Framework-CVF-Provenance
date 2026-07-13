@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V42_2026-07-12.md`
+4. `AGENT_HANDOFF_V43_2026-07-14.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V42_2026-07-12.md` |
+| Active handoff | `AGENT_HANDOFF_V43_2026-07-14.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a5r1_dispatched_worker_execution_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit A5R1 worker execution from packet commit a036ce891; parked checkpoint=post-repair review, final live-governance claim, public, production, scale, and user validation.
+Startup acknowledged: current mode=`sot3_activation_closed_live_governance_proven_bounded`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=separately authorize shipment or wait for real-user feedback; parked checkpoint=public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `sot3_activation_a5r1_dispatched_worker_execution_next`
+Current mode marker: `sot3_activation_closed_live_governance_proven_bounded`
 
-Current mode: `sot3_activation_a5r1_dispatched_worker_execution_next`
+Current mode: `sot3_activation_closed_live_governance_proven_bounded`
 
-`sot3_activation_a5r1_dispatched_worker_execution_next`
+`sot3_activation_closed_live_governance_proven_bounded`
 
 Previous mode:
 
-`sot3_activation_a5_blocked_recovery_packet_next`
+`sot3_activation_a5r1_dispatched_worker_execution_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 activation A5R1 and roadmap closure | `62ab80ab4` | CLOSED_PASS_BOUNDED; canonical release PASS with SOT3 PASS, 19 negative rows, 18 zero-call rows, six external Alibaba calls across one invocation, and exact claim `LIVE_GOVERNANCE_PROVEN_BOUNDED`; operator-authorized role collapse disclosed. |
 | SOT3 activation A5R1 bounded recovery dispatch | `a036ce891` | DISPATCH_READY after semantic repair, 75/75 pre-dispatch and 83/83 pre-commit PASS; real next-dev zero-provider regression, bounded four-file repair surface, one canonical invocation with measured provider calls; worker must not commit. |
 | SOT3 activation A5 blocked canonical release proof | `f038bcb81` | BLOCKED_WITH_REASON; SOT3 check PASS but canonical release FAIL; retained trace proves Next.js development bundling cannot resolve the Refinery source package `.js` import on the execute-route chain; no reviewer rerun; bounded recovery packet authoring next. |
 | SOT3 activation A5 canonical release-proof dispatch | `12f090798` | DISPATCH_READY; mandatory SOT3 release JSON/manifest, no mock bypass, no blind live retry, one planned canonical run; worker must not commit. |
@@ -165,14 +166,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_activation_a5r1_dispatched_worker_execution_next`
+Mode: `sot3_activation_closed_live_governance_proven_bounded`
 
-SOT3-ACT-A5R1 recovery packet is committed at `a036ce891`. The next move is
-one no-commit worker execution from the governed A5R1 work order. The worker
-must reproduce and repair locally, pass the real `next dev` zero-provider
-regression and all package checks, then run exactly one canonical invocation
-with fresh 2026-07-14 evidence and measured provider calls by stage. Codex
-remains final reviewer. `LIVE_GOVERNANCE_PROVEN_BOUNDED` remains unclaimed.
+SOT3 activation is closed at material commit `62ab80ab4` with exact claim
+`LIVE_GOVERNANCE_PROVEN_BOUNDED`. No further SOT3 activation work is allowed
+without a concrete regression or new product requirement. The next
+value-bearing move is a separately authorized shipment/release lane, then
+real-user feedback. Public export, production, scale, universal enforcement,
+and user validation remain unclaimed.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

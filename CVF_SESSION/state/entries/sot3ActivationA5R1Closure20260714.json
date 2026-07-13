@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1750,
+  "stateKey": "sot3ActivationA5R1Closure20260714",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "62ab80ab4",
+    "roadmapStatus": "CLOSED_PASS_BOUNDED_LIVE_GOVERNANCE_PROVEN_BOUNDED",
+    "completionReview": "docs/reviews/CVF_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_COMPLETION_2026-07-14.md",
+    "canonicalResult": "PASS",
+    "sot3Result": "PASS",
+    "externalProviderCalls": 6,
+    "canonicalInvocationCount": 1,
+    "finalClaim": "LIVE_GOVERNANCE_PROVEN_BOUNDED",
+    "reviewBoundary": "Operator-authorized same-agent worker/closer role collapse; no independent-review claim.",
+    "nextAllowedMove": "separately authorized shipment/release followed by real-user feedback",
+    "claimBoundary": "Selected CVF Web knowledge-context path, controlled scenarios, Alibaba lane, local environment, and retained evidence window only."
+  }
+}

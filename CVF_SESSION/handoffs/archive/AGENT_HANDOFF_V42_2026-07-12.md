@@ -2,7 +2,7 @@
 
 Memory class: active-agent-handoff
 
-Status: ACTIVE
+Status: ARCHIVED
 
 Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V41_2026-07-11.md`
 

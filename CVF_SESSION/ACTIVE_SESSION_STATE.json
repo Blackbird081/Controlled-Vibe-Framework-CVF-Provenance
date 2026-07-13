@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V42_2026-07-12.md",
+  "activeHandoff": "AGENT_HANDOFF_V43_2026-07-14.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -75,15 +75,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V38_2026-07-06.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V40_2026-07-10.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V41_2026-07-11.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V41_2026-07-11.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V42_2026-07-12.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_activation_a5r1_dispatched_worker_execution_next",
-  "previousMode": "sot3_activation_a5_blocked_recovery_packet_next",
+  "currentMode": "sot3_activation_closed_live_governance_proven_bounded",
+  "previousMode": "sot3_activation_a5r1_dispatched_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11546,5 +11547,19 @@
     "nextAllowedMove": "one no-commit A5R1 worker execution",
     "claimBoundary": "Final LIVE_GOVERNANCE_PROVEN_BOUNDED remains reviewer-reserved; no public, production, scale, or user-validation claim."
   },
-  "nextAllowedMove": "SOT3-ACT-A5R1 bounded recovery packet is DISPATCH_READY at commit a036ce891 after semantic review, 75/75 pre-dispatch checks, and 83/83 pre-commit checks. Next allowed move is one no-commit worker execution from docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_2026-07-13.md. The worker must reproduce locally, apply only the proven smallest repair, pass Refinery and web checks plus the real next-dev zero-provider regression, then run exactly one canonical invocation using fresh 2026-07-14 evidence paths and report actual provider calls by stage. Codex remains final reviewer. LIVE_GOVERNANCE_PROVEN_BOUNDED, public, production, scale, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
+  "sot3ActivationA5R1Closure20260714": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "62ab80ab4",
+    "roadmapStatus": "CLOSED_PASS_BOUNDED_LIVE_GOVERNANCE_PROVEN_BOUNDED",
+    "completionReview": "docs/reviews/CVF_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_COMPLETION_2026-07-14.md",
+    "canonicalResult": "PASS",
+    "sot3Result": "PASS",
+    "externalProviderCalls": 6,
+    "canonicalInvocationCount": 1,
+    "finalClaim": "LIVE_GOVERNANCE_PROVEN_BOUNDED",
+    "reviewBoundary": "Operator-authorized same-agent worker/closer role collapse; no independent-review claim.",
+    "nextAllowedMove": "separately authorized shipment/release followed by real-user feedback",
+    "claimBoundary": "Selected CVF Web knowledge-context path, controlled scenarios, Alibaba lane, local environment, and retained evidence window only."
+  },
+  "nextAllowedMove": "SOT3 activation A1-A5 and A5R1 recovery are CLOSED_PASS_BOUNDED at material commit 62ab80ab4. Canonical release and SOT3 checks PASS; exact claim LIVE_GOVERNANCE_PROVEN_BOUNDED is accepted for the selected path, Alibaba lane, environment, and evidence window. No further SOT3 activation work is allowed without a concrete regression or new product requirement. Next value-bearing move is separately authorized shipment/release followed by real-user feedback. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
 }
