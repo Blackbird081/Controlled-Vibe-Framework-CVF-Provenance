@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: A4_CLOSED_PASS_BOUNDED_A5_PACKET_NEXT
+Status: CLOSED_PASS_BOUNDED_LIVE_GOVERNANCE_PROVEN_BOUNDED
 
 docType: roadmap
 
@@ -307,9 +307,11 @@ fit, or user validation.
 
 ## Next Allowed Move
 
-Create a fresh A5 GC-018 and source-verified work order for canonical release
-bundle integration and the final bounded claim decision. Do not execute A5
-directly from this roadmap.
+Roadmap execution is complete. Preserve the exact bounded claim and evidence.
+The next value-bearing move is shipment through a separately authorized
+product/release lane followed by real-user feedback; do not reopen SOT3
+activation for prompt tuning, broader case multiplication, or repeated live
+proof without a concrete regression or new product requirement.
 
 ## Checker Source Read-Ahead Block
 
@@ -355,12 +357,12 @@ Returned defectIds: none.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this roadmap | `Status: A4_CLOSED_PASS_BOUNDED_A5_PACKET_NEXT`; A0-A4 closed; A5 open | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_COMPLETION_2026-07-14.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED_LIVE_GOVERNANCE_PROVEN_BOUNDED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS | PASS |
 | Registry Markdown | `docs/corpus-intelligence/README.md` | existing registry front door | PASS |
-| External evidence digest | N/A with reason: A2 is local non-live implementation | N/A | N/A with reason |
+| External evidence digest | `docs/reviews/evidence/sot3-act-a5r1-recovery-release-gate-manifest-2026-07-14.json` | result sha256 `3e65e359de66888f45c143ea9a2809f29f27e6b7097edf0a910db2c855f0ca8b`; unsigned and unanchored | PASS |
 | System loop interlock | N/A with reason: no automated loop edge | N/A | N/A with reason |
 | Session continuity | separate post-material session sync | pending until material commit | N/A with reason |
 
@@ -371,7 +373,8 @@ Returned defectIds: none.
 | A2 durable evidence claim remains local | atomic local-file, restart, integrity, duplicate, corruption, and partial-write proof only | PASS |
 | A3 owns real-provider correlation | accepted recovery receipt correlates provider, governance, and SOT3 IDs | PASS |
 | A4 failure/recovery acceptance | 19/19 local rows GREEN; 18 zero-call rows; one rollback spy call; one retained live recovery call | PASS |
-| A5 release acceptance remains unclaimed | canonical release tranche remains open | PASS |
+| A5 release acceptance | canonical bundle overall PASS with SOT3 PASS and fresh manifest | PASS |
+| Final bounded claim | selected path, scenario, Alibaba lane, environment, and evidence window only | PASS |
 
 ## Agent Operation Trace Block
 

@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -258,13 +258,13 @@ private provenance evidence. No public-sync authority exists.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | this artifact | `Status: DISPATCH_READY` | N/A with reason: dispatch only |
-| Work order status | paired A5 recovery work order | `Status: DISPATCH_READY` | N/A with reason: execution pending |
-| Completion or reviewer artifact | future A5 recovery completion review | future reviewer evidence | N/A with reason: execution pending |
-| Roadmap state | activation roadmap | `Status: A4_CLOSED_PASS_BOUNDED_A5_PACKET_NEXT` unchanged until recovery closes | PASS |
-| Registry JSON | corpus registry | BLOCKED with reason: A5 recovery has no corpus ownership | BLOCKED with reason |
-| Registry Markdown | corpus front door | BLOCKED with reason: A5 recovery has no catalog ownership | BLOCKED with reason |
-| External evidence digest | future A5 recovery manifest | future SHA-256 entries | N/A with reason: worker-owned future evidence |
+| Baseline status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | paired A5 recovery work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_COMPLETION_2026-07-14.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | activation roadmap | `Status: CLOSED_PASS_BOUNDED_LIVE_GOVERNANCE_PROVEN_BOUNDED` | PASS |
+| Registry JSON | corpus registry | generated aggregate check PASS | PASS |
+| Registry Markdown | corpus front door | existing front door; no change required | PASS |
+| External evidence digest | A5R1 recovery manifest | result sha256 `3e65e359de66888f45c143ea9a2809f29f27e6b7097edf0a910db2c855f0ca8b`; three evidence entries; unsigned | PASS |
 | System loop interlock | N/A with reason: no automated loop edge at dispatch | N/A | N/A with reason |
 | Session continuity | separate post-dispatch sync | pending after packet commit | N/A with reason |
 

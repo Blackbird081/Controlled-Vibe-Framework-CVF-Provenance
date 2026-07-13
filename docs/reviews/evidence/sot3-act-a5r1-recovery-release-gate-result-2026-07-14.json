@@ -1,0 +1,73 @@
+{
+  "date": "2026-07-14",
+  "gate_result": "PASS",
+  "checks": [
+    {
+      "name": "Web build (npm run build)",
+      "status": "PASS",
+      "message": "Build succeeded",
+      "detail": []
+    },
+    {
+      "name": "TypeScript check (guard contract)",
+      "status": "PASS",
+      "message": "TypeScript check clean",
+      "detail": []
+    },
+    {
+      "name": "Provider readiness",
+      "status": "PASS",
+      "message": "CERTIFIED lanes: 3 \u2014 status: CERTIFIED",
+      "detail": []
+    },
+    {
+      "name": "Secrets scan",
+      "status": "PASS",
+      "message": "No secret patterns detected",
+      "detail": []
+    },
+    {
+      "name": "Docs governance (RC docs present)",
+      "status": "PASS",
+      "message": "All 3 required RC docs present",
+      "detail": []
+    },
+    {
+      "name": "E2E Playwright UI (mock)",
+      "status": "PASS",
+      "message": "Playwright UI mock suite passed",
+      "detail": [
+        "\u001b[1A\u001b[2K  6 passed (1.3m)"
+      ]
+    },
+    {
+      "name": "E2E Playwright Governance (live)",
+      "status": "PASS",
+      "message": "Playwright live governance suite passed",
+      "detail": [
+        "\u001b[2m[WebServer] \u001b[22m./src/app/api/execute/route.ts"
+      ]
+    },
+    {
+      "name": "SOT3 canonical release proof (A5)",
+      "status": "PASS",
+      "message": "SOT3 canonical release proof PASS with full owner correlation",
+      "detail": []
+    }
+  ],
+  "sot3": {
+    "admissionFailures": [],
+    "approvedContextIncluded": true,
+    "claim": "SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED",
+    "durableOwnerCorrelationComplete": true,
+    "httpStatus": 200,
+    "localNegativeGatePassed": true,
+    "negativeCaseCount": 19,
+    "overall": "PASS",
+    "providerSuccess": true,
+    "recoveryProviderCallCount": 1,
+    "rollbackProviderCallCount": 1,
+    "traceCount": 1,
+    "zeroProviderCallCaseCount": 18
+  }
+}

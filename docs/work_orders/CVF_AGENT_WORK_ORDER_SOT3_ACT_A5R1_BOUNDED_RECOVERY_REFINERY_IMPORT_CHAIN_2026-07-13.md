@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -48,9 +48,9 @@ Date: 2026-07-13
 
 dispatchBaseHead: `57f1a9fda`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `fa03f028f`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `fa03f028f`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -132,7 +132,7 @@ read-only to the worker.
 | the referenced `deps.ts` file exists (specifier is a `.js`-extension convention over real `.ts` source, per Node16/bundler `moduleResolution`) | EXISTS | `EXTENSIONS/CVF_REFINERY/src/deps.ts` | full file | `DeterministicClock`, `SequentialIdFactory` | Refinery deterministic-services module | ACCEPT |
 | Refinery package maps `main`/`types`/`exports` directly at TypeScript source, no build/dist step is consumed by the web app | EXISTS | `EXTENSIONS/CVF_REFINERY/package.json` | `main`, `types`, `exports` fields | `main` | Refinery package manifest | ACCEPT |
 | Refinery `tsconfig.json` uses `moduleResolution: "bundler"` | EXISTS | `EXTENSIONS/CVF_REFINERY/tsconfig.json` | `compilerOptions.moduleResolution` | `moduleResolution` | Refinery TypeScript config | ACCEPT |
-| Truth Kernel and Truth Flow use the identical `./deps.js`-to-`deps.ts` and `main`-at-source pattern as Refinery | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_TRUTH_KERNEL/src/index.ts`; `EXTENSIONS/CVF_TRUTH_FLOW/src/index.ts`; `EXTENSIONS/CVF_TRUTH_KERNEL/package.json`; `EXTENSIONS/CVF_TRUTH_FLOW/package.json` | lines 1-2 of each `index.ts`; `main`/`exports` of both package manifests | `DeterministicClock`, `SequentialIdFactory` | Truth Kernel and Truth Flow package entrypoints | ACCEPT |
+| Truth Kernel and Truth Flow each import `./deps.js` over `deps.ts` and expose TypeScript source through `main` | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_TRUTH_KERNEL/src/index.ts`; `EXTENSIONS/CVF_TRUTH_FLOW/src/index.ts`; `EXTENSIONS/CVF_TRUTH_KERNEL/package.json`; `EXTENSIONS/CVF_TRUTH_FLOW/package.json` | lines 1-2 of each `index.ts`; `main`/`exports` of both package manifests | `DeterministicClock`, `SequentialIdFactory` | Truth Kernel and Truth Flow package entrypoints | ACCEPT |
 | the web app links all three sibling packages through `file:` dependencies | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json` | dependency block; matching `node_modules/cvf-*` lock entries with `link: true` | `cvf-refinery` | web package dependency and lock manifests | ACCEPT |
 | the execute route's knowledge-context chain imports directly from `cvf-refinery` | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-knowledge-context.ts` | line 37 | `DeterministicClock`, `SequentialIdFactory` | execute route knowledge-context helper | ACCEPT |
 | the SOT3 product adapter also imports Refinery, Truth Kernel, and Truth Flow symbols directly | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.ts` | lines 14-20 | `RefineryEngine`, `TruthKernel`, `DistributionEngine` | SOT3 product adapter | ACCEPT |
@@ -315,7 +315,7 @@ generalized provider wrapper.
 12. Write the no-commit worker return, run worker-return gates and steward
     preflight, and leave HEAD unchanged.
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
 | Artifact | Required worker action |
 |---|---|
@@ -327,6 +327,8 @@ generalized provider wrapper.
 | `docs/reviews/evidence/sot3-act-a5r1-recovery-release-sot3-diagnostic-2026-07-14.json` | fresh SOT3 diagnostic from the post-repair run |
 | `docs/reviews/evidence/sot3-act-a5r1-recovery-release-e2e-diagnostic-2026-07-14.json` | new structured E2E diagnostic (present as `null` on success) |
 | `docs/reviews/CVF_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_WORKER_RETURN_2026-07-14.md` | checker-safe no-commit worker return |
+| `docs/corpus-intelligence/registry/entries/sot3-act-a5r1-refinery-import-chain-dev-regression.json` | mandatory GC-051 coverage for the new governed test |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | regenerated aggregate from the new source entry |
 
 If the proven repair requires touching a source path not selected in the
 first manifest row, the worker may edit only
@@ -559,17 +561,17 @@ reserved for a separate reviewer decision after this recovery closes.
 
 ## Closure Checklist
 
-- [ ] Exact manifest only; no historical A1-A4 or retained blocked-A5 evidence
+- [x] Exact manifest plus mandatory GC-051 registry coverage only; no historical A1-A4 or retained blocked-A5 evidence
   mutation.
-- [ ] Reproduction, repair rationale, and minimality evidence recorded.
-- [ ] Refinery own typecheck/build/test green and unweakened.
-- [ ] Web package production build and typecheck pass.
-- [ ] New Refinery-import-chain regression passes.
-- [ ] Structured `e2eDiagnostic` and `--e2e-diagnostic-output` implemented.
-- [ ] Local checks green before the one post-repair canonical live call.
-- [ ] Post-repair canonical live call is fully accounted, one call only.
-- [ ] Worker-return fast gate and steward preflight pass.
-- [ ] HEAD remains unchanged and worker made no commit.
+- [x] Reproduction, repair rationale, and minimality evidence recorded.
+- [x] Refinery own typecheck/build/test green and unweakened.
+- [x] Web package production build and typecheck pass.
+- [x] New Refinery-import-chain regression passes.
+- [x] Structured `e2eDiagnostic` and `--e2e-diagnostic-output` implemented.
+- [x] Local checks green before the one post-repair canonical live call.
+- [x] One post-repair canonical invocation fully accounted; six external calls across its live stages.
+- [x] Worker-return fast gate and steward preflight pass.
+- [x] HEAD remained unchanged through worker return and worker made no commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -645,8 +647,17 @@ credentials; no public-sync authority exists.
 
 ## Machine Closure Package
 
-NOT_APPLICABLE_WITH_REASON: this is a dispatch-ready work order, not a
-closure artifact. Reviewer closure conversion owns the final machine package.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired A5R1 baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_COMPLETION_2026-07-14.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | activation roadmap | `Status: CLOSED_PASS_BOUNDED_LIVE_GOVERNANCE_PROVEN_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate check PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/README.md` | existing front door; no change required | PASS |
+| External evidence digest | A5R1 recovery manifest | result sha256 `3e65e359de66888f45c143ea9a2809f29f27e6b7097edf0a910db2c855f0ca8b`; three evidence entries; unsigned | PASS |
+| System loop interlock | N/A with reason: no automated loop edge added | N/A | N/A with reason |
+| Session continuity | separate post-material session sync | pending until material commit | N/A with reason |
 
 ## Claim Boundary
 

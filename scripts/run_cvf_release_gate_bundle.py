@@ -36,6 +36,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from types import SimpleNamespace
@@ -166,6 +167,18 @@ def check_web_build(dry_run: bool) -> CheckResult:
     if dry_run:
         return CheckResult(name, "SKIP", "dry-run — would run: npm run build", [str(CVF_WEB)])
     if not CVF_WEB.exists():
+        _LAST_E2E_DIAGNOSTIC = {
+            "stage": "e2e_execution",
+            "class": "dependency_unavailable",
+            "retryable": False,
+            "userAction": "restore_cvf_web_workspace",
+            "safeMessage": "The cvf-web workspace was not available to the release runner.",
+            "provider": None,
+            "model": None,
+            "httpStatus": None,
+            "latencyMs": None,
+            "traceOrReceipt": None,
+        }
         return CheckResult(name, "FAIL", "cvf-web directory not found", [str(CVF_WEB)])
     code, stdout, stderr = run_cmd(["npm", "run", "build"], cwd=CVF_WEB, timeout=900)
     if code == 0:
@@ -251,7 +264,52 @@ def check_secrets(dry_run: bool) -> CheckResult:
     return CheckResult(name, "PASS", "No secret patterns detected")
 
 
+_LAST_E2E_DIAGNOSTIC: dict | None = None
+
+
+def build_e2e_diagnostic(output: str, mode: str, latency_ms: int | None = None) -> dict:
+    """Classify an E2E failure without retaining provider output or secrets."""
+    lowered = output.lower()
+    http_match = re.search(r"(?:http(?: status)?|status)\D{0,8}(\d{3})", lowered)
+    http_status = int(http_match.group(1)) if http_match else None
+
+    if "cannot resolve" in lowered or "module not found" in lowered:
+        failure_class = "dependency_resolution_failed"
+        retryable = True
+        user_action = "repair_dependency_resolution_then_retry"
+        safe_message = "The E2E route did not compile because a dependency import could not be resolved."
+    elif "timed out" in lowered or "timeout" in lowered:
+        failure_class = "timeout"
+        retryable = True
+        user_action = "classify_timeout_stage_then_retry"
+        safe_message = "The E2E run exceeded its bounded timeout."
+    elif "no dashscope-compatible live key" in lowered:
+        failure_class = "credential_unavailable"
+        retryable = False
+        user_action = "provide_operator_managed_live_key"
+        safe_message = "A DashScope-compatible live key was not available to the release runner."
+    else:
+        failure_class = "e2e_failed"
+        retryable = False
+        user_action = "inspect_secret_safe_test_artifacts_before_retry"
+        safe_message = f"The {mode} E2E suite failed; inspect the retained test artifacts before retrying."
+
+    return {
+        "stage": "e2e_execution",
+        "class": failure_class,
+        "retryable": retryable,
+        "userAction": user_action,
+        "safeMessage": safe_message,
+        "provider": "alibaba" if mode == "live governance" else None,
+        "model": None,
+        "httpStatus": http_status,
+        "latencyMs": latency_ms,
+        "traceOrReceipt": None,
+    }
+
+
 def check_e2e(dry_run: bool, live: bool) -> CheckResult:
+    global _LAST_E2E_DIAGNOSTIC
     mode = "live governance" if live else "UI mock"
     config = "playwright.config.ts" if live else "playwright.config.mock.ts"
     specs = [
@@ -267,16 +325,23 @@ def check_e2e(dry_run: bool, live: bool) -> CheckResult:
         cmd_str = f"npx playwright test --config {config} {' '.join(specs)} --reporter=line"
         return CheckResult(name, "SKIP", f"dry-run — would run: {cmd_str}", [str(CVF_WEB)])
     if not CVF_WEB.exists():
+        _LAST_E2E_DIAGNOSTIC = build_e2e_diagnostic(
+            "cvf-web workspace not found", mode
+        )
         return CheckResult(name, "FAIL", "cvf-web directory not found", [str(CVF_WEB)])
     if live:
         bootstrap_live_provider_env()
     if live and not os.environ.get("DASHSCOPE_API_KEY"):
+        message = "No DashScope-compatible live key set - live governance E2E is mandatory for release-quality CVF proof"
+        _LAST_E2E_DIAGNOSTIC = build_e2e_diagnostic(message, mode)
         return CheckResult(
             name, "FAIL",
-            "No DashScope-compatible live key set — live governance E2E is mandatory for release-quality CVF proof"
+            message
         )
     cmd = ["npx", "playwright", "test", "--config", config, *specs, "--reporter=line"]
+    started = time.monotonic()
     code, stdout, stderr = run_cmd(cmd, cwd=CVF_WEB, timeout=600)
+    latency_ms = round((time.monotonic() - started) * 1000)
     output = (stdout + stderr).strip()
     lines = output.splitlines()
     summary = next((l for l in reversed(lines) if l.strip()), "")
@@ -286,6 +351,7 @@ def check_e2e(dry_run: bool, live: bool) -> CheckResult:
     # summary; a later rerun may only happen after a human/worker records an
     # explicit result-changing action outside this bundle (per the A5 work
     # order's no-blind-retry requirement).
+    _LAST_E2E_DIAGNOSTIC = build_e2e_diagnostic(output, mode, latency_ms)
     failures = [l for l in lines if "failed" in l.lower() or "error" in l.lower()][:8]
     return CheckResult(name, "FAIL", f"Playwright {mode} suite failed", failures or lines[-8:])
 
@@ -473,6 +539,8 @@ def build_secret_safe_rerun_command(args: argparse.Namespace) -> str:
         parts.append("--e2e-live")
     if getattr(args, "sot3_diagnostic_output", None):
         parts.append("--sot3-diagnostic-output <path>")
+    if getattr(args, "e2e_diagnostic_output", None):
+        parts.append("--e2e-diagnostic-output <path>")
     parts.append("--json")
     return " ".join(parts)
 
@@ -534,6 +602,11 @@ def main() -> None:
         type=Path,
         help="Write the SOT3 A5 secret-safe diagnostic to this JSON path; also hashed into the manifest when --manifest-output is supplied",
     )
+    parser.add_argument(
+        "--e2e-diagnostic-output",
+        type=Path,
+        help="Write the secret-safe E2E failure diagnostic, or JSON null on success; also hash it into the evidence manifest",
+    )
     parser.add_argument("--e2e", action="store_true", dest="e2e", help="Targeted run: UI-only mock Playwright specs")
     parser.add_argument(
         "--e2e-live",
@@ -576,10 +649,18 @@ def main() -> None:
     payload = result_payload(results, today, sot3=_LAST_SOT3_PAYLOAD)
     if args.output:
         write_json_payload(payload, args.output)
+    if args.e2e_diagnostic_output:
+        args.e2e_diagnostic_output.parent.mkdir(parents=True, exist_ok=True)
+        args.e2e_diagnostic_output.write_text(
+            json.dumps(_LAST_E2E_DIAGNOSTIC, indent=2) + "\n",
+            encoding="utf-8",
+        )
     if args.manifest_output:
         evidence_paths = [args.output]
         if args.sot3_diagnostic_output and Path(args.sot3_diagnostic_output).exists():
             evidence_paths.append(args.sot3_diagnostic_output)
+        if args.e2e_diagnostic_output and Path(args.e2e_diagnostic_output).exists():
+            evidence_paths.append(args.e2e_diagnostic_output)
         write_live_evidence_manifest(
             evidence_paths,
             args.manifest_output,
