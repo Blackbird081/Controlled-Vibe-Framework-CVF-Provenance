@@ -2,6 +2,7 @@
  * Wave 1 — Execute path retrieval partitioning integration tests
  */
 import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { mkdtemp, rm } from 'node:fs/promises';
 import os from 'node:os';
@@ -10,6 +11,8 @@ import path from 'node:path';
 import { appendKnowledgeCollectionScopeEvent } from '@/lib/policy-events';
 import { readAuditEvents } from '@/lib/control-plane-events';
 import { knowledgeStore, type Sot3KnowledgeSourceMetadata } from '@/lib/knowledge-store';
+import { Sot3ActivationEvidenceStore } from '@/lib/sot3-activation-evidence-store';
+import { resetRateLimitStoresForTest } from '@/lib/rate-limit';
 
 function computeExpectedContentHash(records: Array<Record<string, unknown>>): string {
   const sorted = records.map((record) => {
@@ -88,6 +91,7 @@ describe('/api/execute — retrieval partitioning enforcement', () => {
     tempDir = await mkdtemp(path.join(os.tmpdir(), 'cvf-execute-knowledge-'));
     process.env = { ...originalEnv };
     process.env.CVF_CONTROL_PLANE_EVENTS_PATH = path.join(tempDir, 'events.json');
+    process.env.CVF_SOT3_ACTIVATION_EVIDENCE_PATH = path.join(tempDir, 'sot3-activation-evidence.json');
     process.env.OPENAI_API_KEY = 'openai-test-key';
     delete process.env.ANTHROPIC_API_KEY;
     delete process.env.GOOGLE_AI_API_KEY;
@@ -382,9 +386,11 @@ describe('/api/execute - SOT3 knowledge activation modes', () => {
   let tempDir = '';
 
   beforeEach(async () => {
+    resetRateLimitStoresForTest();
     tempDir = await mkdtemp(path.join(os.tmpdir(), 'cvf-execute-sot3-'));
     process.env = { ...originalEnv };
     process.env.CVF_CONTROL_PLANE_EVENTS_PATH = path.join(tempDir, 'events.json');
+    process.env.CVF_SOT3_ACTIVATION_EVIDENCE_PATH = path.join(tempDir, 'sot3-activation-evidence.json');
     process.env.OPENAI_API_KEY = 'openai-test-key';
     delete process.env.ANTHROPIC_API_KEY;
     delete process.env.GOOGLE_AI_API_KEY;
@@ -467,6 +473,16 @@ describe('/api/execute - SOT3 knowledge activation modes', () => {
     const options = executeAIMock.mock.calls[0][3] as Record<string, unknown>;
     expect(options.systemPrompt as string).toContain('ROUTE-ENFORCE-SIGNAL governed content');
     expect(data.knowledgeInjection.injected).toBe(true);
+
+    const evidenceRaw = readFileSync(process.env.CVF_SOT3_ACTIVATION_EVIDENCE_PATH as string, 'utf8');
+    const evidenceDocument = JSON.parse(evidenceRaw);
+    expect(evidenceDocument.records).toHaveLength(1);
+    expect(evidenceDocument.records[0].traces).toHaveLength(1);
+    expect(evidenceRaw).not.toContain('ROUTE-ENFORCE-SIGNAL governed content');
+
+    const freshReader = new Sot3ActivationEvidenceStore(process.env.CVF_SOT3_ACTIVATION_EVIDENCE_PATH);
+    const rehydrated = freshReader.findByRecordId(evidenceDocument.records[0].recordId);
+    expect(rehydrated?.recordId).toBe(evidenceDocument.records[0].recordId);
   });
 
   it('ENFORCE mode with missing provenance calls the provider mock once without a knowledge block', async () => {

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -61,9 +61,10 @@ closure and commit.
 
 ## Decision / Baseline / Proposed Tranche
 
-DISPATCH_READY: one no-commit A2 implementation. A3 live provider proof, A4
-adverse-path live proof, A5 claim closure, public export, database/distributed
-ledger work, production readiness, and user validation remain outside scope.
+CLOSED_PASS_BOUNDED: the no-commit A2 implementation is reviewer-accepted
+after one bounded repair. A3 live provider proof, A4 adverse-path live proof,
+A5 claim closure, public export, database/distributed ledger work, production
+readiness, and user validation remain outside scope.
 
 ## Dependency Release Evidence
 
@@ -167,7 +168,7 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "Work-
 
 Returned defectIds: ADIF-0001, ADIF-0002, ADIF-0006, ADIF-0007,
 ADIF-0014, ADIF-0015, ADIF-0016, ADIF-0017, ADIF-0020, ADIF-0021,
-ADIF-0024, ADIF-0028.
+ADIF-0024, ADIF-0028, ADIF-0029.
 
 ## Checker Source Read-Ahead Block
 
@@ -202,6 +203,26 @@ ADIF-0024, ADIF-0028.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private-provenance A2 dispatch packet only.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md` | `Status: A2_CLOSED_PASS_BOUNDED_A3_PACKET_NEXT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/README.md` | existing registry front door | PASS |
+| External evidence digest | N/A with reason: local non-live implementation | N/A | N/A with reason |
+| System loop interlock | N/A with reason: no automated loop edge | N/A | N/A with reason |
+| Session continuity | separate post-material session sync | pending until material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| local durable record admission and replay proof | 71 focused tests plus full non-live/typecheck/build evidence | PASS |
+| no live or release receipt claim | local evidence record only; A3-A5 remain open | PASS |
 
 ## Claim Boundary
 

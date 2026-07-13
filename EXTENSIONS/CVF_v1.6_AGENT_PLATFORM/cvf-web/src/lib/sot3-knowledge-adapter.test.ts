@@ -183,3 +183,110 @@ describe('evaluateSot3KnowledgeActivation', () => {
     expect(result.approvedContext).toBeNull();
   });
 });
+
+describe('evaluateSot3KnowledgeActivation - lifecycle traces', () => {
+  it('returns exactly one complete trace for a single approved chunk with actual owner outputs', () => {
+    const chunk = buildValidChunk();
+    const result = evaluateSot3KnowledgeActivation({ ...buildInputBase(), chunks: [chunk] }, 'ENFORCE');
+
+    expect(result.traces).toHaveLength(1);
+    const [trace] = result.traces;
+    expect(trace.chunkId).toBe('chunk-001');
+    expect(trace.collectionId).toBe('col-1');
+    expect(trace.sourceId).toBe('src-001');
+    expect(trace.terminalOutcome).toBe('APPROVED');
+    expect(trace.failureStage).toBeNull();
+    expect(trace.refineryPacketId).toBe(result.refineryPacketId);
+    expect(trace.refineryPacketHash).toBeTruthy();
+    expect(trace.kernelDecision?.decision_id).toBe(result.kernelDecisionId);
+    expect(trace.kernelDecision?.decision).toBe('ACCEPT_EVIDENCE_CANDIDATE');
+    expect(trace.kernelDecision?.request_id).toBe('req-1');
+    expect(trace.kernelDecision?.packet_hash).toBe(trace.refineryPacketHash);
+    expect(trace.kernelDecision?.verification_result_refs).toHaveLength(1);
+    expect(trace.truthReceipt?.receipt_id).toBeTruthy();
+    expect(trace.truthReceipt?.receipt_hash).toBeTruthy();
+    expect(trace.truthReceipt?.decision_id).toBe(trace.kernelDecision?.decision_id);
+    expect(trace.truthReceipt?.evaluated_content_hash).toBe(trace.refineryPacketHash);
+    expect(trace.truthReceipt?.evidence_refs).toHaveLength(1);
+    expect(trace.truthReceipt?.verification_result_refs).toEqual(trace.kernelDecision?.verification_result_refs);
+    expect(trace.truthReceipt?.policy_version).toBe('v1');
+    expect(trace.truthReceipt?.rule_version).toBe('v1');
+    expect(trace.truthReference?.reference_id).toBe(result.truthReferenceId);
+    expect(trace.truthReference?.receipt_id).toBe(trace.truthReceipt?.receipt_id);
+    expect(trace.truthReference?.reference_state).toBe('ACTIVE');
+    expect(trace.flowPackage?.package_id).toBe(result.flowPackageId);
+    expect(trace.flowPackage?.truth_references).toEqual([trace.truthReference?.reference_id]);
+    expect(trace.flowPackage?.dose).toBe('single-use-context');
+    expect(trace.flowPackage?.restrictions).toEqual([]);
+    expect(trace.flowPackage?.acknowledgement_state).toBe('ACKNOWLEDGED');
+  });
+
+  it('produces identical trace fields for identical semantic input (deterministic)', () => {
+    const chunkA = buildValidChunk();
+    const chunkB = buildValidChunk();
+    const resultA = evaluateSot3KnowledgeActivation({ ...buildInputBase(), chunks: [chunkA] }, 'ENFORCE');
+    const resultB = evaluateSot3KnowledgeActivation({ ...buildInputBase(), chunks: [chunkB] }, 'ENFORCE');
+
+    expect(resultA.traces[0].refineryPacketHash).toBe(resultB.traces[0].refineryPacketHash);
+    expect(resultA.traces[0].kernelDecision?.decision).toBe(resultB.traces[0].kernelDecision?.decision);
+  });
+
+  it('returns exactly one trace per evaluated chunk with no cross-chunk ID mixing', () => {
+    const first = buildValidChunk();
+    const secondContent = 'Second source content must not bypass Kernel evidence checks';
+    const secondRecord = { source_id: 'src-002', id: 'chunk-002', content: secondContent };
+    const second: Sot3KnowledgeChunkInput = {
+      id: 'chunk-002',
+      content: secondContent,
+      collectionId: 'col-2',
+      sot3Source: {
+        ...first.sot3Source!,
+        sourceId: 'src-002',
+        expectedContentHash: computeExpectedContentHash([secondRecord]),
+        rawReference: { type: 'object', location: 'knowledge-store://chunk-002' },
+      },
+    };
+
+    const result = evaluateSot3KnowledgeActivation({ ...buildInputBase(), chunks: [first, second] }, 'ENFORCE');
+
+    expect(result.traces).toHaveLength(2);
+    expect(result.traces[0].chunkId).toBe('chunk-001');
+    expect(result.traces[0].sourceId).toBe('src-001');
+    expect(result.traces[0].collectionId).toBe('col-1');
+    expect(result.traces[1].chunkId).toBe('chunk-002');
+    expect(result.traces[1].sourceId).toBe('src-002');
+    expect(result.traces[1].collectionId).toBe('col-2');
+    expect(result.traces[0].refineryPacketId).not.toBe(result.traces[1].refineryPacketId);
+    expect(result.traces[0].kernelDecision?.decision_id).not.toBe(result.traces[1].kernelDecision?.decision_id);
+    expect(result.traces[0].truthReference?.reference_id).not.toBe(result.traces[1].truthReference?.reference_id);
+    expect(result.traces[0].flowPackage?.package_id).not.toBe(result.traces[1].flowPackage?.package_id);
+  });
+
+  it('includes a trace with failure stage and no downstream fields when a chunk is rejected', () => {
+    const chunk = buildValidChunk({ expectedContentHash: 'sha256:0000000000000000000000000000000000000000000000000000000000000000' });
+    const result = evaluateSot3KnowledgeActivation({ ...buildInputBase(), chunks: [chunk] }, 'ENFORCE');
+
+    expect(result.traces).toHaveLength(1);
+    expect(result.traces[0].terminalOutcome).toBe('REJECTED');
+    expect(result.traces[0].failureStage).toBe('REFINERY_NOT_READY');
+    expect(result.traces[0].refineryPacketHash).toMatch(/^sha256:/);
+    expect(result.traces[0].kernelDecision).toBeNull();
+    expect(result.traces[0].truthReceipt).toBeNull();
+    expect(result.traces[0].truthReference).toBeNull();
+    expect(result.traces[0].flowPackage).toBeNull();
+  });
+
+  it('never persists raw chunk content, prompt, or secret-shaped values in trace fields', () => {
+    const chunk = buildValidChunk();
+    const result = evaluateSot3KnowledgeActivation({ ...buildInputBase(), chunks: [chunk] }, 'ENFORCE');
+    const serialized = JSON.stringify(result.traces);
+
+    expect(serialized).not.toContain(chunk.content);
+    expect(serialized).not.toMatch(/sk-|api[_-]?key|bearer\s/i);
+  });
+
+  it('returns an empty trace list when there are no chunks to evaluate', () => {
+    const result = evaluateSot3KnowledgeActivation({ ...buildInputBase(), chunks: [] }, 'ENFORCE');
+    expect(result.traces).toEqual([]);
+  });
+});

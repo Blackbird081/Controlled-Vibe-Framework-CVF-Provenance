@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -14,9 +14,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `656c176a2`
 
-executionBaseHead: worker must capture clean HEAD at start
+executionBaseHead: `8d928802b`
 
-closureBaseHead: reviewer must capture before closure
+closureBaseHead: `8d928802b`
 
 Worker return path: `docs/reviews/CVF_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_WORKER_RETURN_2026-07-13.md`
 
@@ -504,7 +504,7 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "Work-
 
 Returned defectIds: ADIF-0001, ADIF-0002, ADIF-0006, ADIF-0007,
 ADIF-0014, ADIF-0015, ADIF-0016, ADIF-0017, ADIF-0020, ADIF-0021,
-ADIF-0024, ADIF-0028.
+ADIF-0024, ADIF-0028, ADIF-0029.
 
 ## Checker Source Read-Ahead Block
 
@@ -584,6 +584,26 @@ no governed foundation folder index or stable reference front door.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private-provenance A2 implementation and local proof only.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md` | `Status: A2_CLOSED_PASS_BOUNDED_A3_PACKET_NEXT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/README.md` | existing registry front door | PASS |
+| External evidence digest | N/A with reason: local non-live implementation | N/A | N/A with reason |
+| System loop interlock | N/A with reason: no automated loop edge | N/A | N/A with reason |
+| Session continuity | separate post-material session sync | pending until material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| worker return and reviewer repair satisfy A2 | 71 focused tests; 274 full-suite files and 3207 tests PASS | PASS |
+| local evidence record is not a live receipt | A3-A5 remain unclaimed and open | PASS |
 
 ## Claim Boundary
 

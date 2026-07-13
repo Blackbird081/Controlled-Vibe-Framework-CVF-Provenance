@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: A1_CLOSED_PASS_BOUNDED_A2_PACKET_NEXT
+Status: A2_CLOSED_PASS_BOUNDED_A3_PACKET_NEXT
 
 docType: roadmap
 
@@ -25,7 +25,7 @@ scale, and post-shipment learning belong to a later product-validation lane.
 - SOT3 absorption and package implementation are closed boundedly.
 - T8 packet binding closed at material commit `0ffede4f1`.
 - Session closure was recorded at `2628213b7`.
-- Current honest claim: `IMPLEMENTED_AND_INTEGRATION_PROVEN_LOCAL`.
+- Current honest claim: `DURABLE_EVIDENCE_REPLAY_PROVEN_LOCAL`.
 - Activation, persistence, provider/live, and public work were outside the
   absorption lane and require fresh tranche authorization here.
 
@@ -306,8 +306,8 @@ fit, or user validation.
 
 ## Next Allowed Move
 
-Create a fresh A2 GC-018 and source-verified work order for durable,
-restart-safe evidence. Do not implement A2 directly from this roadmap.
+Create a fresh A3 GC-018 and source-verified work order for the bounded real
+provider approved-context path. Do not execute A3 directly from this roadmap.
 
 ## Checker Source Read-Ahead Block
 
@@ -353,12 +353,12 @@ Returned defectIds: none.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this roadmap | `Status: A1_CLOSED_PASS_BOUNDED_A2_PACKET_NEXT`; A0 and A1 closed; A2-A5 open | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: A2_CLOSED_PASS_BOUNDED_A3_PACKET_NEXT`; A0-A2 closed; A3-A5 open | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS | PASS |
 | Registry Markdown | `docs/corpus-intelligence/README.md` | existing registry front door | PASS |
-| External evidence digest | N/A with reason: A1 is local non-live implementation | N/A | N/A with reason |
+| External evidence digest | N/A with reason: A2 is local non-live implementation | N/A | N/A with reason |
 | System loop interlock | N/A with reason: no automated loop edge | N/A | N/A with reason |
 | Session continuity | separate post-material session sync | pending until material commit | N/A with reason |
 
@@ -366,9 +366,9 @@ Returned defectIds: none.
 
 | Required value | Observed value | Status |
 |---|---|---|
-| A1 must not claim durable receipt evidence | local adapter IDs and non-live test evidence only | PASS |
-| A2 owns restart-safe receipt persistence | A2 remains open and is the next packet-authoring move | PASS |
-| A3-A5 receipt acceptance remains unclaimed | all live and release tranches remain open | PASS |
+| A2 durable evidence claim remains local | atomic local-file, restart, integrity, duplicate, corruption, and partial-write proof only | PASS |
+| A3 owns real-provider correlation | A3 remains open and is the next packet-authoring move | PASS |
+| A3-A5 live/release acceptance remains unclaimed | all provider/live and release tranches remain open | PASS |
 
 ## Agent Operation Trace Block
 

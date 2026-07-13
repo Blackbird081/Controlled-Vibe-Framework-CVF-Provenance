@@ -15,8 +15,9 @@ import type { Clock, IdFactory, RefineryRunInput } from 'cvf-refinery';
 import { RefineryEngine, computeRefineryPacketHash } from 'cvf-refinery';
 import type { SourceEnvelope } from 'cvf-refinery';
 import { TruthKernel } from 'cvf-truth-kernel';
-import type { EvidenceRecord, RefineryPacketRef } from 'cvf-truth-kernel';
+import type { EvidenceRecord, RefineryPacketRef, KernelDecision, TruthReceipt, TruthReference } from 'cvf-truth-kernel';
 import { DistributionEngine, KernelAuthorityBoundary } from 'cvf-truth-flow';
+import type { DistributionPackage } from 'cvf-truth-flow';
 import type { Sot3KnowledgeSourceMetadata } from './knowledge-store';
 
 export type Sot3KnowledgeActivationMode = 'OFF' | 'SHADOW' | 'ENFORCE';
@@ -30,7 +31,8 @@ export type Sot3KnowledgeFailureStage =
   | 'FLOW_NOT_CREATED'
   | 'FLOW_DELIVERY_REJECTED'
   | 'FLOW_CONSUMPTION_REJECTED'
-  | 'FLOW_ACKNOWLEDGEMENT_REJECTED';
+  | 'FLOW_ACKNOWLEDGEMENT_REJECTED'
+  | 'EVIDENCE_PERSISTENCE_FAILED';
 
 export type Sot3KnowledgeTerminalOutcome = 'APPROVED' | 'REJECTED' | 'NO_CONTEXT';
 
@@ -39,6 +41,28 @@ export interface Sot3KnowledgeChunkInput {
   content: string;
   collectionId: string;
   sot3Source: Sot3KnowledgeSourceMetadata | undefined;
+}
+
+/**
+ * One complete, source-backed Source-to-Flow lifecycle trace for a single
+ * evaluated chunk. Every field is copied from an actual owner output
+ * (Refinery/Kernel/Flow); none are invented, defaulted, or reconstructed
+ * from a parallel ID array. `null` marks a stage that was never reached
+ * because an earlier stage rejected.
+ */
+export interface Sot3KnowledgeLifecycleTrace {
+  chunkId: string;
+  collectionId: string;
+  sourceId: string | null;
+  terminalOutcome: Sot3KnowledgeTerminalOutcome;
+  failureStage: Sot3KnowledgeFailureStage | null;
+  refineryPacketId: string | null;
+  refineryPacketHash: string | null;
+  refineryStatus: string | null;
+  kernelDecision: KernelDecision | null;
+  truthReceipt: TruthReceipt | null;
+  truthReference: TruthReference | null;
+  flowPackage: DistributionPackage | null;
 }
 
 export interface Sot3KnowledgeEvaluationInput {
@@ -71,6 +95,7 @@ export interface Sot3KnowledgeActivationResult {
   flowPackageId: string | null;
   flowPackageIds: string[];
   flowAcknowledgementState: string | null;
+  traces: Sot3KnowledgeLifecycleTrace[];
 }
 
 function noContextResult(mode: Sot3KnowledgeActivationMode): Sot3KnowledgeActivationResult {
@@ -92,6 +117,7 @@ function noContextResult(mode: Sot3KnowledgeActivationMode): Sot3KnowledgeActiva
     flowPackageId: null,
     flowPackageIds: [],
     flowAcknowledgementState: null,
+    traces: [],
   };
 }
 
@@ -118,6 +144,7 @@ function rejectedResult(
     flowPackageId: null,
     flowPackageIds: [],
     flowAcknowledgementState: null,
+    traces: [],
     ...partial,
   };
 }
@@ -166,18 +193,40 @@ function evaluateSingleSot3KnowledgeChunk(
     return noContextResult(mode);
   }
 
+  const chunk = input.chunks[0];
+  const traceBase: Pick<Sot3KnowledgeLifecycleTrace, 'chunkId' | 'collectionId'> = {
+    chunkId: chunk.id,
+    collectionId: chunk.collectionId,
+  };
+
   const envelopes: SourceEnvelope[] = [];
-  for (const chunk of input.chunks) {
-    const envelope = buildSourceEnvelope(chunk, input.organization, input.team);
+  for (const item of input.chunks) {
+    const envelope = buildSourceEnvelope(item, input.organization, input.team);
     if (!envelope) {
-      return rejectedResult(mode, 'MISSING_PROVENANCE');
+      return rejectedResult(mode, 'MISSING_PROVENANCE', {
+        traces: [{
+          ...traceBase,
+          sourceId: null,
+          terminalOutcome: 'REJECTED',
+          failureStage: 'MISSING_PROVENANCE',
+          refineryPacketId: null,
+          refineryPacketHash: null,
+          refineryStatus: null,
+          kernelDecision: null,
+          truthReceipt: null,
+          truthReference: null,
+          flowPackage: null,
+        }],
+      });
     }
     envelopes.push(envelope);
   }
 
+  const sourceId = envelopes[0]?.source_id ?? null;
+
   const refineryInput: RefineryRunInput = {
     sourceEnvelopes: envelopes,
-    rawRecords: input.chunks.map((chunk) => ({ source_id: chunk.sot3Source!.sourceId, id: chunk.id, content: chunk.content })),
+    rawRecords: input.chunks.map((item) => ({ source_id: item.sot3Source!.sourceId, id: item.id, content: item.content })),
     ruleManifest: { manifest_id: 'cvf-web-knowledge-context', version: input.ruleVersion },
     declaredScope: { organization: input.organization, project: input.team ?? null },
     declaredOwner: envelopes[0]?.owner ?? '',
@@ -187,15 +236,28 @@ function evaluateSingleSot3KnowledgeChunk(
   const refineryResult = refinery.run(refineryInput);
   const packet = refineryResult.packet;
 
+  const packetHash = computeRefineryPacketHash(packet);
+
   if (packet.status !== 'READY_FOR_KERNEL') {
     return rejectedResult(mode, 'REFINERY_NOT_READY', {
       refineryPacketId: packet.refinery_packet_id,
       refineryPacketIds: [packet.refinery_packet_id],
       refineryStatus: packet.status,
+      traces: [{
+        ...traceBase,
+        sourceId,
+        terminalOutcome: 'REJECTED',
+        failureStage: 'REFINERY_NOT_READY',
+        refineryPacketId: packet.refinery_packet_id,
+        refineryPacketHash: packetHash,
+        refineryStatus: packet.status,
+        kernelDecision: null,
+        truthReceipt: null,
+        truthReference: null,
+        flowPackage: null,
+      }],
     });
   }
-
-  const packetHash = computeRefineryPacketHash(packet);
 
   const kernel = new TruthKernel(input.clock, input.ids, input.policyVersion, input.ruleVersion);
 
@@ -233,6 +295,19 @@ function evaluateSingleSot3KnowledgeChunk(
     requestedDecisionContext: input.requestId,
   });
 
+  const decisionTrace: Sot3KnowledgeLifecycleTrace['kernelDecision'] = {
+    ...decision,
+    reasons: [...decision.reasons],
+    failed_obligations: [...decision.failed_obligations],
+    verification_result_refs: [...decision.verification_result_refs],
+  };
+  const receiptTrace: Sot3KnowledgeLifecycleTrace['truthReceipt'] = {
+    ...receipt,
+    evidence_refs: [...receipt.evidence_refs],
+    obligation_refs: [...receipt.obligation_refs],
+    verification_result_refs: [...receipt.verification_result_refs],
+  };
+
   const kernelBase = {
     refineryPacketId: packet.refinery_packet_id,
     refineryPacketIds: [packet.refinery_packet_id],
@@ -244,7 +319,22 @@ function evaluateSingleSot3KnowledgeChunk(
   };
 
   if (decision.decision !== 'ACCEPT_EVIDENCE_CANDIDATE') {
-    return rejectedResult(mode, 'KERNEL_NOT_ACCEPTED', kernelBase);
+    return rejectedResult(mode, 'KERNEL_NOT_ACCEPTED', {
+      ...kernelBase,
+      traces: [{
+        ...traceBase,
+        sourceId,
+        terminalOutcome: 'REJECTED',
+        failureStage: 'KERNEL_NOT_ACCEPTED',
+        refineryPacketId: packet.refinery_packet_id,
+        refineryPacketHash: packetHash,
+        refineryStatus: packet.status,
+        kernelDecision: decisionTrace,
+        truthReceipt: receiptTrace,
+        truthReference: null,
+        flowPackage: null,
+      }],
+    });
   }
 
   const validFromUtc = input.clock.nowUtcIso();
@@ -259,8 +349,25 @@ function evaluateSingleSot3KnowledgeChunk(
   );
 
   if (!issuance.issued || !issuance.reference) {
-    return rejectedResult(mode, 'REFERENCE_NOT_ACTIVE', kernelBase);
+    return rejectedResult(mode, 'REFERENCE_NOT_ACTIVE', {
+      ...kernelBase,
+      traces: [{
+        ...traceBase,
+        sourceId,
+        terminalOutcome: 'REJECTED',
+        failureStage: 'REFERENCE_NOT_ACTIVE',
+        refineryPacketId: packet.refinery_packet_id,
+        refineryPacketHash: packetHash,
+        refineryStatus: packet.status,
+        kernelDecision: decisionTrace,
+        truthReceipt: receiptTrace,
+        truthReference: null,
+        flowPackage: null,
+      }],
+    });
   }
+
+  const referenceTrace: Sot3KnowledgeLifecycleTrace['truthReference'] = { ...issuance.reference };
 
   const withReference = {
     ...kernelBase,
@@ -285,25 +392,97 @@ function evaluateSingleSot3KnowledgeChunk(
   });
 
   if (!created.created || !created.distributionPackage) {
-    return rejectedResult(mode, 'FLOW_NOT_CREATED', withReference);
+    return rejectedResult(mode, 'FLOW_NOT_CREATED', {
+      ...withReference,
+      traces: [{
+        ...traceBase,
+        sourceId,
+        terminalOutcome: 'REJECTED',
+        failureStage: 'FLOW_NOT_CREATED',
+        refineryPacketId: packet.refinery_packet_id,
+        refineryPacketHash: packetHash,
+        refineryStatus: packet.status,
+        kernelDecision: decisionTrace,
+        truthReceipt: receiptTrace,
+        truthReference: referenceTrace,
+        flowPackage: null,
+      }],
+    });
   }
 
   const packageId = created.distributionPackage.package_id;
   const withPackage = { ...withReference, flowPackageId: packageId, flowPackageIds: [packageId] };
+  const flowPackageTraceBase: Omit<NonNullable<Sot3KnowledgeLifecycleTrace['flowPackage']>, 'acknowledgement_state'> = {
+    package_id: created.distributionPackage.package_id,
+    recipient: created.distributionPackage.recipient,
+    role: created.distributionPackage.role,
+    task: created.distributionPackage.task,
+    phase: created.distributionPackage.phase,
+    truth_references: [...created.distributionPackage.truth_references],
+    dose: created.distributionPackage.dose,
+    restrictions: [...created.distributionPackage.restrictions],
+    routing_decision: created.distributionPackage.routing_decision,
+    expiry_utc: created.distributionPackage.expiry_utc,
+  };
 
   const delivered = flow.deliverOrConsume(packageId, actionTimeUtcIso);
   if (!delivered.succeeded) {
-    return rejectedResult(mode, 'FLOW_DELIVERY_REJECTED', withPackage);
+    return rejectedResult(mode, 'FLOW_DELIVERY_REJECTED', {
+      ...withPackage,
+      traces: [{
+        ...traceBase,
+        sourceId,
+        terminalOutcome: 'REJECTED',
+        failureStage: 'FLOW_DELIVERY_REJECTED',
+        refineryPacketId: packet.refinery_packet_id,
+        refineryPacketHash: packetHash,
+        refineryStatus: packet.status,
+        kernelDecision: decisionTrace,
+        truthReceipt: receiptTrace,
+        truthReference: referenceTrace,
+        flowPackage: { ...flowPackageTraceBase, acknowledgement_state: created.distributionPackage.acknowledgement_state },
+      }],
+    });
   }
 
   const consumed = flow.deliverOrConsume(packageId, actionTimeUtcIso);
   if (!consumed.succeeded) {
-    return rejectedResult(mode, 'FLOW_CONSUMPTION_REJECTED', withPackage);
+    return rejectedResult(mode, 'FLOW_CONSUMPTION_REJECTED', {
+      ...withPackage,
+      traces: [{
+        ...traceBase,
+        sourceId,
+        terminalOutcome: 'REJECTED',
+        failureStage: 'FLOW_CONSUMPTION_REJECTED',
+        refineryPacketId: packet.refinery_packet_id,
+        refineryPacketHash: packetHash,
+        refineryStatus: packet.status,
+        kernelDecision: decisionTrace,
+        truthReceipt: receiptTrace,
+        truthReference: referenceTrace,
+        flowPackage: { ...flowPackageTraceBase, acknowledgement_state: delivered.distributionPackage?.acknowledgement_state ?? created.distributionPackage.acknowledgement_state },
+      }],
+    });
   }
 
   const acknowledged = flow.acknowledge(packageId, actionTimeUtcIso);
   if (!acknowledged.succeeded || !acknowledged.distributionPackage) {
-    return rejectedResult(mode, 'FLOW_ACKNOWLEDGEMENT_REJECTED', withPackage);
+    return rejectedResult(mode, 'FLOW_ACKNOWLEDGEMENT_REJECTED', {
+      ...withPackage,
+      traces: [{
+        ...traceBase,
+        sourceId,
+        terminalOutcome: 'REJECTED',
+        failureStage: 'FLOW_ACKNOWLEDGEMENT_REJECTED',
+        refineryPacketId: packet.refinery_packet_id,
+        refineryPacketHash: packetHash,
+        refineryStatus: packet.status,
+        kernelDecision: decisionTrace,
+        truthReceipt: receiptTrace,
+        truthReference: referenceTrace,
+        flowPackage: { ...flowPackageTraceBase, acknowledgement_state: consumed.distributionPackage?.acknowledgement_state ?? created.distributionPackage.acknowledgement_state },
+      }],
+    });
   }
 
   return {
@@ -324,6 +503,19 @@ function evaluateSingleSot3KnowledgeChunk(
     flowPackageId: packageId,
     flowPackageIds: [packageId],
     flowAcknowledgementState: acknowledged.distributionPackage.acknowledgement_state,
+    traces: [{
+      ...traceBase,
+      sourceId,
+      terminalOutcome: 'APPROVED',
+      failureStage: null,
+      refineryPacketId: packet.refinery_packet_id,
+      refineryPacketHash: packetHash,
+      refineryStatus: packet.status,
+      kernelDecision: decisionTrace,
+      truthReceipt: receiptTrace,
+      truthReference: referenceTrace,
+      flowPackage: { ...flowPackageTraceBase, acknowledgement_state: acknowledged.distributionPackage.acknowledgement_state },
+    }],
   };
 }
 
@@ -353,6 +545,7 @@ export function evaluateSot3KnowledgeActivation(
         kernelEvidenceCount: approved.reduce((count, item) => count + item.kernelEvidenceCount, 0) + result.kernelEvidenceCount,
         truthReferenceIds: [...approved.flatMap((item) => item.truthReferenceIds), ...result.truthReferenceIds],
         flowPackageIds: [...approved.flatMap((item) => item.flowPackageIds), ...result.flowPackageIds],
+        traces: [...approved.flatMap((item) => item.traces), ...result.traces],
       };
     }
     approved.push(result);
@@ -367,6 +560,7 @@ export function evaluateSot3KnowledgeActivation(
     kernelEvidenceCount: approved.reduce((count, item) => count + item.kernelEvidenceCount, 0),
     truthReferenceIds: approved.flatMap((item) => item.truthReferenceIds),
     flowPackageIds: approved.flatMap((item) => item.flowPackageIds),
+    traces: approved.flatMap((item) => item.traces),
   };
 }
 

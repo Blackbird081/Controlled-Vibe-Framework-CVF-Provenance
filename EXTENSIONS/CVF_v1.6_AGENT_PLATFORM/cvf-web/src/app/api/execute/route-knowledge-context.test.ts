@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { mkdtemp, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
@@ -28,6 +29,7 @@ vi.mock('@/lib/middleware-auth', () => ({
 }));
 
 import { blockInlineKnowledgeContextBypass, resolveKnowledgeContext } from './route-knowledge-context';
+import { Sot3ActivationEvidenceStore, type Sot3EvidenceFsPort } from '@/lib/sot3-activation-evidence-store';
 
 function computeExpectedContentHash(records: Array<Record<string, unknown>>): string {
   const sorted = records.map((record) => {
@@ -64,6 +66,7 @@ describe('route-knowledge-context', () => {
     tempDir = await mkdtemp(path.join(os.tmpdir(), 'cvf-knowledge-context-'));
     process.env = { ...originalEnv };
     process.env.CVF_CONTROL_PLANE_EVENTS_PATH = path.join(tempDir, 'events.json');
+    process.env.CVF_SOT3_ACTIVATION_EVIDENCE_PATH = path.join(tempDir, 'sot3-activation-evidence.json');
 
     (knowledgeStore as unknown as { _store: Map<string, unknown> })._store.clear();
     (knowledgeStore as unknown as { _ephemeral: Map<string, unknown> })._ephemeral.clear();
@@ -336,6 +339,242 @@ describe('route-knowledge-context', () => {
 
       const events = await readAuditEvents();
       expect(events.some((event) => event.eventType === 'KNOWLEDGE_SCOPE_FILTER_APPLIED')).toBe(true);
+    });
+  });
+
+  describe('resolveKnowledgeContext - A2 durable activation evidence', () => {
+    it('persists an evidence record before prompt construction in ENFORCE and reaches the provider-visible context only after a durable write', async () => {
+      process.env.CVF_SOT3_KNOWLEDGE_ACTIVATION_MODE = 'ENFORCE';
+      const provenance = buildProvenance('src-evidence-enforce', 'evidence-enforce governed content');
+      knowledgeStore.seed([
+        { id: 'col-1', name: 'Col', description: 'd', orgId: 'org_a', teamId: 'team_a', chunks: [{ id: 'src-evidence-enforce', content: 'evidence-enforce governed content', keywords: ['governance'], sot3Source: provenance }] },
+      ]);
+      const evidenceStore = new Sot3ActivationEvidenceStore(path.join(tempDir, 'evidence.json'));
+
+      const result = await resolveKnowledgeContext({
+        intent: 'governance content question',
+        orgId: 'org_a',
+        teamId: 'team_a',
+        requestedCollectionId: undefined,
+        templateLabel: 'tmpl',
+        session: null,
+        evidenceStore,
+        activationRuntime: {
+          requestIdFactory: () => 'req-fixed-enforce',
+          nowUtcIso: () => '2026-07-13T01:02:03.000Z',
+        },
+      });
+
+      expect(result.sot3?.terminalOutcome).toBe('APPROVED');
+      expect(result.knowledgeInjected).toBe(true);
+
+      const persisted = evidenceStore.list();
+      expect(persisted).toHaveLength(1);
+      expect(persisted[0].traces).toHaveLength(1);
+      expect(persisted[0].mode).toBe('ENFORCE');
+      expect(persisted[0].requestId).toBe('req-fixed-enforce');
+      expect(persisted[0].createdAtUtc).toBe('2026-07-13T01:02:03.000Z');
+
+      const events = await readAuditEvents();
+      const persistedEvent = events.find((event) => event.eventType === 'SOT3_ACTIVATION_EVIDENCE_PERSISTED');
+      expect(persistedEvent).toBeDefined();
+      expect((persistedEvent?.payload as { diagnosticClass?: string } | undefined)?.diagnosticClass).toBe('PERSISTED');
+    });
+
+    it('SHADOW mode persists evidence on success and preserves the current raw downstream context', async () => {
+      process.env.CVF_SOT3_KNOWLEDGE_ACTIVATION_MODE = 'SHADOW';
+      const provenance = buildProvenance('src-evidence-shadow', 'evidence-shadow governed content');
+      knowledgeStore.seed([
+        { id: 'col-1', name: 'Col', description: 'd', orgId: 'org_a', teamId: 'team_a', chunks: [{ id: 'src-evidence-shadow', content: 'evidence-shadow governed content', keywords: ['governance'], sot3Source: provenance }] },
+      ]);
+      const evidenceStore = new Sot3ActivationEvidenceStore(path.join(tempDir, 'evidence.json'));
+
+      const result = await resolveKnowledgeContext({
+        intent: 'governance content question',
+        orgId: 'org_a',
+        teamId: 'team_a',
+        requestedCollectionId: undefined,
+        templateLabel: 'tmpl',
+        session: null,
+        evidenceStore,
+      });
+
+      expect(result.knowledgeInjected).toBe(true);
+      expect(result.finalKnowledgeContext).toContain('evidence-shadow governed content');
+      expect(evidenceStore.list()).toHaveLength(1);
+    });
+
+    it('ENFORCE persistence failure admits no knowledge block but the request may still call the provider without knowledge', async () => {
+      process.env.CVF_SOT3_KNOWLEDGE_ACTIVATION_MODE = 'ENFORCE';
+      const provenance = buildProvenance('src-evidence-fail', 'evidence-fail governed content');
+      knowledgeStore.seed([
+        { id: 'col-1', name: 'Col', description: 'd', orgId: 'org_a', teamId: 'team_a', chunks: [{ id: 'src-evidence-fail', content: 'evidence-fail governed content', keywords: ['governance'], sot3Source: provenance }] },
+      ]);
+      const failingPort: Sot3EvidenceFsPort = {
+        existsSync: () => false,
+        mkdirSync: () => undefined,
+        readFileSync: () => '',
+        writeFileSync: () => {
+          throw new Error('injected persistence failure');
+        },
+        renameSync: () => undefined,
+        unlinkSync: () => undefined,
+      };
+      const evidenceStore = new Sot3ActivationEvidenceStore(path.join(tempDir, 'evidence.json'), failingPort);
+
+      const result = await resolveKnowledgeContext({
+        intent: 'governance content question',
+        orgId: 'org_a',
+        teamId: 'team_a',
+        requestedCollectionId: undefined,
+        templateLabel: 'tmpl',
+        session: null,
+        evidenceStore,
+      });
+
+      expect(result.knowledgeInjected).toBe(false);
+      expect(result.finalKnowledgeContext).toBeUndefined();
+      expect(result.sot3?.failureStage).toBe('EVIDENCE_PERSISTENCE_FAILED');
+
+      const events = await readAuditEvents();
+      const persistedEvent = events.find((event) => event.eventType === 'SOT3_ACTIVATION_EVIDENCE_PERSISTED');
+      expect((persistedEvent?.payload as { diagnosticClass?: string } | undefined)?.diagnosticClass).toBe('SOT3_EVIDENCE_PERSISTENCE_FAILED');
+    });
+
+    it('SHADOW persistence failure emits a classified audit but preserves the raw downstream context', async () => {
+      process.env.CVF_SOT3_KNOWLEDGE_ACTIVATION_MODE = 'SHADOW';
+      const provenance = buildProvenance('src-evidence-shadow-fail', 'evidence-shadow-fail governed content');
+      knowledgeStore.seed([
+        { id: 'col-1', name: 'Col', description: 'd', orgId: 'org_a', teamId: 'team_a', chunks: [{ id: 'src-evidence-shadow-fail', content: 'evidence-shadow-fail governed content', keywords: ['governance'], sot3Source: provenance }] },
+      ]);
+      const failingPort: Sot3EvidenceFsPort = {
+        existsSync: () => false,
+        mkdirSync: () => undefined,
+        readFileSync: () => '',
+        writeFileSync: () => {
+          throw new Error('injected persistence failure');
+        },
+        renameSync: () => undefined,
+        unlinkSync: () => undefined,
+      };
+      const evidenceStore = new Sot3ActivationEvidenceStore(path.join(tempDir, 'evidence.json'), failingPort);
+
+      const result = await resolveKnowledgeContext({
+        intent: 'governance content question',
+        orgId: 'org_a',
+        teamId: 'team_a',
+        requestedCollectionId: undefined,
+        templateLabel: 'tmpl',
+        session: null,
+        evidenceStore,
+      });
+
+      expect(result.knowledgeInjected).toBe(true);
+      expect(result.finalKnowledgeContext).toContain('evidence-shadow-fail governed content');
+
+      const events = await readAuditEvents();
+      const persistedEvent = events.find((event) => event.eventType === 'SOT3_ACTIVATION_EVIDENCE_PERSISTED');
+      expect((persistedEvent?.payload as { diagnosticClass?: string } | undefined)?.diagnosticClass).toBe('SOT3_EVIDENCE_PERSISTENCE_FAILED');
+    });
+
+    it('preserves a corrupt main file and audits the exact corrupt-store diagnostic in SHADOW', async () => {
+      process.env.CVF_SOT3_KNOWLEDGE_ACTIVATION_MODE = 'SHADOW';
+      const provenance = buildProvenance('src-evidence-corrupt', 'evidence-corrupt governed content');
+      knowledgeStore.seed([
+        { id: 'col-1', name: 'Col', description: 'd', orgId: 'org_a', teamId: 'team_a', chunks: [{ id: 'src-evidence-corrupt', content: 'evidence-corrupt governed content', keywords: ['governance'], sot3Source: provenance }] },
+      ]);
+      const evidencePath = path.join(tempDir, 'corrupt-evidence.json');
+      writeFileSync(evidencePath, '{ corrupt main bytes', 'utf8');
+      const evidenceStore = new Sot3ActivationEvidenceStore(evidencePath);
+
+      const result = await resolveKnowledgeContext({
+        intent: 'governance content question', orgId: 'org_a', teamId: 'team_a',
+        requestedCollectionId: undefined, templateLabel: 'tmpl', session: null, evidenceStore,
+      });
+
+      expect(result.finalKnowledgeContext).toContain('evidence-corrupt governed content');
+      expect(readFileSync(evidencePath, 'utf8')).toBe('{ corrupt main bytes');
+      const events = await readAuditEvents();
+      const persistedEvent = events.filter((event) => event.eventType === 'SOT3_ACTIVATION_EVIDENCE_PERSISTED').at(-1);
+      expect((persistedEvent?.payload as { diagnosticClass?: string } | undefined)?.diagnosticClass).toBe('SOT3_EVIDENCE_CORRUPT_STORE');
+    });
+
+    it('audits an exact duplicate-conflict diagnostic for the same activation identity with changed evidence', async () => {
+      process.env.CVF_SOT3_KNOWLEDGE_ACTIVATION_MODE = 'SHADOW';
+      const evidenceStore = new Sot3ActivationEvidenceStore(path.join(tempDir, 'duplicate-conflict.json'));
+      const activationRuntime = {
+        requestIdFactory: () => 'req-duplicate-conflict',
+        nowUtcIso: () => '2026-07-13T02:00:00.000Z',
+      };
+      const firstContent = 'first governed content';
+      knowledgeStore.seed([
+        { id: 'col-1', name: 'Col', description: 'd', orgId: 'org_a', teamId: 'team_a', chunks: [{ id: 'src-duplicate', content: firstContent, keywords: ['governance'], sot3Source: buildProvenance('src-duplicate', firstContent) }] },
+      ]);
+      const params = {
+        intent: 'governance content question', orgId: 'org_a', teamId: 'team_a',
+        requestedCollectionId: undefined, templateLabel: 'tmpl', session: null, evidenceStore, activationRuntime,
+      };
+      await resolveKnowledgeContext(params);
+
+      const secondContent = 'changed governed content';
+      knowledgeStore.seed([
+        { id: 'col-1', name: 'Col', description: 'd', orgId: 'org_a', teamId: 'team_a', chunks: [{ id: 'src-duplicate', content: secondContent, keywords: ['governance'], sot3Source: buildProvenance('src-duplicate', secondContent) }] },
+      ]);
+      const result = await resolveKnowledgeContext(params);
+
+      expect(result.finalKnowledgeContext).toContain(secondContent);
+      expect(evidenceStore.list()).toHaveLength(1);
+      const events = await readAuditEvents();
+      const persistedEvent = events.filter((event) => event.eventType === 'SOT3_ACTIVATION_EVIDENCE_PERSISTED').at(-1);
+      expect((persistedEvent?.payload as { diagnosticClass?: string } | undefined)?.diagnosticClass).toBe('SOT3_EVIDENCE_DUPLICATE_CONFLICT');
+    });
+
+    it('OFF mode performs no SOT3 evidence write', async () => {
+      delete process.env.CVF_SOT3_KNOWLEDGE_ACTIVATION_MODE;
+      knowledgeStore.seed([
+        { id: 'col-1', name: 'Col', description: 'd', orgId: 'org_a', teamId: 'team_a', chunks: [{ id: 'c1', content: 'off mode legacy content', keywords: ['governance'] }] },
+      ]);
+      const evidenceStore = new Sot3ActivationEvidenceStore(path.join(tempDir, 'evidence.json'));
+
+      await resolveKnowledgeContext({
+        intent: 'governance content question',
+        orgId: 'org_a',
+        teamId: 'team_a',
+        requestedCollectionId: undefined,
+        templateLabel: 'tmpl',
+        session: null,
+        evidenceStore,
+      });
+
+      expect(evidenceStore.list()).toEqual([]);
+      const events = await readAuditEvents();
+      expect(events.some((event) => event.eventType === 'SOT3_ACTIVATION_EVIDENCE_PERSISTED')).toBe(false);
+    });
+
+    it('audit inspection: no raw content or secret in the persistence audit payload', async () => {
+      process.env.CVF_SOT3_KNOWLEDGE_ACTIVATION_MODE = 'ENFORCE';
+      const provenance = buildProvenance('src-evidence-audit', 'EVIDENCE-AUDIT-SECRET-MARKER content');
+      knowledgeStore.seed([
+        { id: 'col-1', name: 'Col', description: 'd', orgId: 'org_a', teamId: 'team_a', chunks: [{ id: 'src-evidence-audit', content: 'EVIDENCE-AUDIT-SECRET-MARKER content', keywords: ['governance'], sot3Source: provenance }] },
+      ]);
+      const evidenceStore = new Sot3ActivationEvidenceStore(path.join(tempDir, 'evidence.json'));
+
+      await resolveKnowledgeContext({
+        intent: 'governance content question',
+        orgId: 'org_a',
+        teamId: 'team_a',
+        requestedCollectionId: undefined,
+        templateLabel: 'tmpl',
+        session: null,
+        evidenceStore,
+      });
+
+      const events = await readAuditEvents();
+      const persistedEvent = events.find((event) => event.eventType === 'SOT3_ACTIVATION_EVIDENCE_PERSISTED');
+      expect(JSON.stringify(persistedEvent?.payload ?? {})).not.toContain('EVIDENCE-AUDIT-SECRET-MARKER');
+
+      const persistedFileRaw = readFileSync(path.join(tempDir, 'evidence.json'), 'utf8');
+      expect(persistedFileRaw).not.toContain('EVIDENCE-AUDIT-SECRET-MARKER');
     });
   });
 });
