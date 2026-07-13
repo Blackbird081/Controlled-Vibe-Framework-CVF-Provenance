@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1726,
+  "stateKey": "sot3ActivationA0Decision20260713",
+  "value": {
+    "status": "A0_PASS_BOUNDED",
+    "date": "2026-07-13",
+    "materialCommit": "a777c3fd9",
+    "roadmap": "docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md",
+    "architectureDecision": "docs/reference/sot_three_layer/CVF_SOT3_ACTIVATION_ARCHITECTURE_DECISION.md",
+    "selectedSeam": "tenant-scoped knowledge retrieval after queryKnowledgeChunks and before buildKnowledgeSystemPrompt/executeAI",
+    "currentClaim": "IMPLEMENTED_AND_INTEGRATION_PROVEN_LOCAL",
+    "targetClaim": "LIVE_GOVERNANCE_PROVEN_BOUNDED",
+    "nextAllowedMove": "fresh A1 GC-018 and source-verified work-order authoring only",
+    "claimBoundary": "A0 architecture only; no adapter, persistence, provider call, release proof, public export, production readiness, or user validation"
+  }
+}

@@ -1,5 +1,5 @@
 {
   "stateOrder": 1718,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3-T8 is closed boundedly at 0ffede4f1. Operator may select a fresh high-value lane followed by new GC-018 and source-verified work-order authoring. Activation, adapters, provider/live, public-sync, and unrelated mutation remain held. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3 activation A0 is ratified boundedly at a777c3fd9. Next allowed move is fresh A1 GC-018 and source-verified work-order authoring for the scoped CVF Web knowledge-context adapter. A1 implementation and A2-A5 persistence/provider/live/release work remain held until dependency release. LHW24 remains latest closed numbered LHW wave."
 }

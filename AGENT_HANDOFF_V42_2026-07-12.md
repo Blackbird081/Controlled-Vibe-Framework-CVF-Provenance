@@ -17,11 +17,11 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t8_packet_binding_contract_closed_pass_bounded`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=operator
-selects a fresh high-value lane with a new governed packet; parked checkpoint=
-activation, provider/live, public, monitor,
-database, adapter, and unrelated Catalog/GAP work.
+Startup acknowledged: current mode=`sot3_activation_a0_pass_bounded_a1_packet_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A1
+GC-018 and source-verified work-order authoring for the scoped knowledge-context
+adapter; parked checkpoint=A1 implementation and A2-A5 persistence,
+provider/live, release, public, and user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -36,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_t8_packet_binding_contract_closed_pass_bounded`
+`sot3_activation_a0_pass_bounded_a1_packet_next`
 
 ## Latest Work / Changes
 
@@ -404,3 +404,35 @@ Operator authorization: process the completed T8 worker return.
 
 Rollback boundary: revert only closure continuity; retain material commit
 `0ffede4f1` and dispatch commit `e0fc0a5bb`.
+
+## SOT3 Activation A0 Anchor - 2026-07-13
+
+A0 is ratified boundedly at material commit `a777c3fd9`. The selected product
+seam is tenant-scoped knowledge retrieval after `queryKnowledgeChunks` and
+before `buildKnowledgeSystemPrompt` and `executeAI`. A1-A5 are dependency
+ordered toward `LIVE_GOVERNANCE_PROVEN_BOUNDED`; the current claim remains
+`IMPLEMENTED_AND_INTEGRATION_PROVEN_LOCAL`.
+
+Next allowed move: fresh A1 GC-018 and source-verified work-order authoring.
+No A1 implementation or A2-A5 persistence/provider/live/release work is
+authorized by A0 closure.
+
+## Core Guard Self-Protection Authorization - SOT3 Activation A0 Sync
+
+Authorized guard-maintenance scope: synchronize the operator-authorized A0
+decision and A1 packet-authoring route after material commit `a777c3fd9`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA0Decision20260713.json`
+
+Operator authorization: execute A0 and design A1-A5.
+
+Rollback boundary: revert only this session-sync batch; retain A0 material
+commit `a777c3fd9` and prior SOT3 closure commits.

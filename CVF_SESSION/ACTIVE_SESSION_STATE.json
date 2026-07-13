@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t8_packet_binding_contract_closed_pass_bounded",
-  "previousMode": "sot3_t8_packet_binding_contract_dispatched",
+  "currentMode": "sot3_activation_a0_pass_bounded_a1_packet_next",
+  "previousMode": "sot3_t8_packet_binding_contract_closed_pass_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11305,7 +11305,7 @@
     "nextAllowedMove": "one bounded deterministic SOT3-T4 Kernel execution and no-commit worker return",
     "claimBoundary": "T4 Kernel only; T5-T7, activation, Flow, monitors, database, adapters, provider/live and public remain held"
   },
-  "nextAllowedMove": "SOT3-T8 is closed boundedly at 0ffede4f1. Operator may select a fresh high-value lane followed by new GC-018 and source-verified work-order authoring. Activation, adapters, provider/live, public-sync, and unrelated mutation remain held. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3 activation A0 is ratified boundedly at a777c3fd9. Next allowed move is fresh A1 GC-018 and source-verified work-order authoring for the scoped CVF Web knowledge-context adapter. A1 implementation and A2-A5 persistence/provider/live/release work remain held until dependency release. LHW24 remains latest closed numbered LHW wave.",
   "sot3T4Closure20260712": {
     "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
     "date": "2026-07-12",
@@ -11377,5 +11377,17 @@
     "tests": "Refinery 30/30; T6 slice 18/18; Kernel 54/54; Flow 21/21",
     "nextAllowedMove": "operator selects a fresh high-value lane with new governed packet",
     "claimBoundary": "no activation, adapters, provider/live, public-sync, release, or production readiness"
+  },
+  "sot3ActivationA0Decision20260713": {
+    "status": "A0_PASS_BOUNDED",
+    "date": "2026-07-13",
+    "materialCommit": "a777c3fd9",
+    "roadmap": "docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md",
+    "architectureDecision": "docs/reference/sot_three_layer/CVF_SOT3_ACTIVATION_ARCHITECTURE_DECISION.md",
+    "selectedSeam": "tenant-scoped knowledge retrieval after queryKnowledgeChunks and before buildKnowledgeSystemPrompt/executeAI",
+    "currentClaim": "IMPLEMENTED_AND_INTEGRATION_PROVEN_LOCAL",
+    "targetClaim": "LIVE_GOVERNANCE_PROVEN_BOUNDED",
+    "nextAllowedMove": "fresh A1 GC-018 and source-verified work-order authoring only",
+    "claimBoundary": "A0 architecture only; no adapter, persistence, provider call, release proof, public export, production readiness, or user validation"
   }
 }

@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t8_packet_binding_contract_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=operator selects a fresh high-value lane with a new governed packet; parked checkpoint=activation, monitor, database, adapters, provider/live, public, and unrelated mutation.
+Startup acknowledged: current mode=`sot3_activation_a0_pass_bounded_a1_packet_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A1 GC-018 and source-verified work-order authoring for the scoped knowledge-context adapter; parked checkpoint=A1 implementation and A2-A5 persistence, provider/live, release, public, and user-validation work.
 
 ## Current Mode
 
-Current mode marker: `sot3_t8_packet_binding_contract_closed_pass_bounded`
+Current mode marker: `sot3_activation_a0_pass_bounded_a1_packet_next`
 
-Current mode: `sot3_t8_packet_binding_contract_closed_pass_bounded`
+Current mode: `sot3_activation_a0_pass_bounded_a1_packet_next`
 
-`sot3_t8_packet_binding_contract_closed_pass_bounded`
+`sot3_activation_a0_pass_bounded_a1_packet_next`
 
 Previous mode:
 
-`sot3_t8_packet_binding_contract_dispatched`
+`sot3_t8_packet_binding_contract_closed_pass_bounded`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 activation A0 architecture and A1-A5 operational-proof roadmap | `a777c3fd9` | A0_PASS_BOUNDED; scoped knowledge-context seam selected; A1 packet authoring next; current claim remains `IMPLEMENTED_AND_INTEGRATION_PROVEN_LOCAL`. |
 | SOT3-T8 Refinery-to-Kernel packet-binding owner closure | `0ffede4f1` | CLOSED_PASS_BOUNDED after reviewer repair; owner GAP resolved with boundary. |
 | SOT3-T8 Refinery-to-Kernel packet-binding contract dispatch | `e0fc0a5bb` | DISPATCH_READY; one no-commit worker; Refinery owner, T6 migration, no Kernel/Flow mutation. |
 | SOT3-T7 semantic-value audit and main roadmap closure | `5d7318098` | CLOSED_PASS_BOUNDED; 305 terminal items, zero unresolved semantic source value; packet-binding architecture GAP remains open and routes to T8 packet authoring. |
@@ -151,12 +152,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t8_packet_binding_contract_closed_pass_bounded`
+Mode: `sot3_activation_a0_pass_bounded_a1_packet_next`
 
-SOT3-T8 is closed boundedly at `0ffede4f1`. The operator may select a fresh
-high-value lane followed by a new GC-018 and source-verified work order.
-Activation, adapters, provider/live, public-sync, and unrelated mutation
-remain held.
+SOT3 activation A0 is ratified boundedly at `a777c3fd9`. The next allowed move
+is fresh A1 GC-018 and source-verified work-order authoring for the scoped CVF
+Web knowledge-context adapter. A1 implementation and A2-A5 persistence,
+provider/live, release, public, and user-validation work remain held until
+their dependency gates release them.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
