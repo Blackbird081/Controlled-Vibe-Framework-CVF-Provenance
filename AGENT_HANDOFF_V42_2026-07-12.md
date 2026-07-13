@@ -17,11 +17,11 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a4_closed_a5_packet_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A5
-GC-018 and source-verified work-order authoring; parked checkpoint=A5
-implementation, final live-governance claim, release, public, production,
-scale, distributed-durability, and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a5_dispatched_worker_execution_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit
+A5 worker execution from packet commit `12f090798`; parked checkpoint=A5
+review/closure, final live-governance claim, public, production, scale,
+distributed-durability, and user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -36,18 +36,36 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a4_closed_a5_packet_next`
+`sot3_activation_a5_dispatched_worker_execution_next`
 
 ## Latest Work / Changes
 
-SOT3-ACT-A4 closed at material commit `cab8133ea` as
-`CLOSED_PASS_BOUNDED`. Reviewer R2 reconciled the public export path, real
-Kernel wrong-packet mapping, and rollback denominator without another live
-call. Final evidence has 19/19 local rows GREEN, 18 zero-call rows, one
-rollback provider-spy call, and one retained Alibaba `qwen-turbo` HTTP 200
-recovery with approved-context and owner-chain correlation. The bounded claim
-is `SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED`. Fresh A5 packet authoring is next;
-A5 implementation and the final claim remain unauthorized.
+SOT3-ACT-A5 GC-018 and source-verified work order are committed at
+`12f090798`. Pre-dispatch passed 75/75 and pre-commit passed 83/83. The packet
+makes SOT3 a mandatory canonical release JSON/manifest check, forbids mock
+bypass and blind live retry, and permits one planned canonical run after local
+proof. The worker must not commit. Final claim review remains parked.
+
+## Core Guard Self-Protection Authorization - SOT3 Activation A5 Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize accepted A5 dispatch after
+packet commit `12f090798`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA5Dispatch20260713.json`
+
+Operator authorization: continue the dependency-ordered SOT3 activation
+sequence through A5.
+
+Rollback boundary: revert only this dispatch continuity batch; retain A5
+packet commit `12f090798` and A4 closure material `cab8133ea`.
 
 ## Core Guard Self-Protection Authorization - SOT3 Activation A4 Closure Sync
 

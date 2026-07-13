@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_activation_a4_closed_a5_packet_next",
-  "previousMode": "sot3_activation_a4_repaired_worker_reexecution_next",
+  "currentMode": "sot3_activation_a5_dispatched_worker_execution_next",
+  "previousMode": "sot3_activation_a4_closed_a5_packet_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11511,5 +11511,16 @@
     "nextAllowedMove": "fresh A5 GC-018 and source-verified work-order authoring only",
     "claimBoundary": "A5, final LIVE_GOVERNANCE_PROVEN_BOUNDED, public, production, scale, and user validation remain open."
   },
-  "nextAllowedMove": "SOT3-ACT-A4 closed at material commit cab8133ea as CLOSED_PASS_BOUNDED. The accepted evidence has 19/19 local rows GREEN, 18 zero-call rows, one rollback provider-spy call, and one retained Alibaba qwen-turbo HTTP 200 recovery call with approved-context and owner-chain correlation. No reviewer live call was made. Next allowed move is fresh A5 GC-018 and source-verified work-order authoring for canonical release-bundle integration and the final bounded claim decision. A5 implementation, LIVE_GOVERNANCE_PROVEN_BOUNDED, public, production, scale, and user-validation claims remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "sot3ActivationA5Dispatch20260713": {
+    "status": "DISPATCH_READY",
+    "packetCommit": "12f090798",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_ACT_A5_CANONICAL_RELEASE_PROOF_2026-07-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A5_CANONICAL_RELEASE_PROOF_2026-07-13.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "preDispatchChecks": "75/75 PASS",
+    "preCommitChecks": "83/83 PASS",
+    "nextAllowedMove": "one no-commit A5 worker execution",
+    "claimBoundary": "Final LIVE_GOVERNANCE_PROVEN_BOUNDED remains reviewer-reserved; no public, production, scale, or user-validation claim."
+  },
+  "nextAllowedMove": "SOT3-ACT-A5 canonical release-proof packet is DISPATCH_READY at commit 12f090798 after 75/75 pre-dispatch and 83/83 pre-commit checks. Next allowed move is one no-commit worker execution from docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A5_CANONICAL_RELEASE_PROOF_2026-07-13.md. The worker must make SOT3 mandatory in canonical release JSON and manifest evidence, remove blind live retry, run local tests before one planned canonical live command, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Final LIVE_GOVERNANCE_PROVEN_BOUNDED remains reviewer-reserved. Public, production, scale, and user validation remain unauthorized. LHW24 remains latest closed numbered LHW wave."
 }
