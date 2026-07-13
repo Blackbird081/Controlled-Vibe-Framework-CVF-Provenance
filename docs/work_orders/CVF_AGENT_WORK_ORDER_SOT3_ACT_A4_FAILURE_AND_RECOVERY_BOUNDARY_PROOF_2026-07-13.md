@@ -1,7 +1,7 @@
 # CVF Agent Work Order - SOT3 Activation A4 Failure And Recovery Boundary Proof
 
 Memory class: governed-worker-dispatch
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 docType: work_order
 Batch ID: SOT3-ACT-A4
 Date: 2026-07-13
@@ -148,6 +148,7 @@ Returned defects: NONE_RETURNED
 | Flow package creation | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts` | lines 51-86 | `create` | `DistributionEngine` | ACCEPT |
 | Flow read action | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts` | lines 112-141 | `deliverOrConsume` | `DistributionEngine` | ACCEPT |
 | Consumption-time binding is absent | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts` | lines 128-141 | `DistributionEngine.deliverOrConsume` | Truth Flow distribution engine | REJECT |
+| Truth Flow public package exports | EXISTS | `EXTENSIONS/CVF_TRUTH_FLOW/src/index.ts` | public export surface | `DistributionEngine` | Truth Flow package entrypoint | ACCEPT |
 | Reference current-state authority | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_TRUTH_KERNEL/src/engine/reference-issuer.ts` | `computeCurrentReferenceState` | `computeCurrentReferenceState` | Truth Kernel | ACCEPT |
 | Wrong-packet evidence fails admission | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_TRUTH_KERNEL/tests/negative-matrix.test.ts` | test `evidence bound to another packet` | `evaluate` | `TruthKernel` | ACCEPT |
 | Product adapter currently creates and consumes Flow package | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.ts` | `evaluateSingleSot3KnowledgeChunk` | `evaluateSot3KnowledgeActivation` | SOT3 product adapter | ACCEPT |
@@ -263,11 +264,12 @@ index row is owned by this tranche.
 | ENFORCE to OFF rollback | execute route | legacy behavior restored | exactly one provider spy call |
 | bounded live recovery | real execute route and Alibaba | approved context and correlated durable evidence | exactly one per invocation |
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
 | Artifact | Required worker action |
 |---|---|
 | `EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts` | add strict consumption binding without weakening existing checks |
+| `EXTENSIONS/CVF_TRUTH_FLOW/src/index.ts` | export the new consumption-binding type required by the product adapter |
 | `EXTENSIONS/CVF_TRUTH_FLOW/tests/negative-matrix.test.ts` | cover binding, inactive lifecycle, expiry, and replay |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.ts` | use strict Flow consumption |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.test.ts` | add adapter rejection coverage |
@@ -410,12 +412,12 @@ omission, provider call on a reject row, secret leak, or scope expansion.
 
 ## Closure Checklist
 
-- [ ] Exact manifest only; no historical A3 mutation.
-- [ ] All negative and rollback rows resolved with command evidence.
-- [ ] Local negative gate preceded the live permit.
-- [ ] Live receipt is fresh, one-call-per-invocation, and secret-safe.
-- [ ] Worker-return full gate and commit-steward preflight pass.
-- [ ] HEAD remains unchanged and worker made no commit.
+- [x] Exact manifest only after R2; no historical A3 mutation.
+- [x] All negative and rollback rows resolved with command evidence.
+- [x] Local negative gate preceded the live permit.
+- [x] Live receipt is fresh, one-call-per-invocation, and secret-safe.
+- [x] Worker-return full gate and reviewer closure gates pass.
+- [x] Worker HEAD remained unchanged and worker made no commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -486,8 +488,27 @@ public-sync authority exists.
 
 ## Machine Closure Package
 
-NOT_APPLICABLE_WITH_REASON: this is a dispatch-ready work order, not a closure
-artifact. Reviewer closure conversion owns the final machine package.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired A4 baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | A4 completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | activation roadmap | `Status: A4_CLOSED_PASS_BOUNDED_A5_PACKET_NEXT` | PASS |
+| Registry JSON | corpus registry | BLOCKED with reason: A4 has no corpus ownership | BLOCKED with reason |
+| Registry Markdown | corpus front door | BLOCKED with reason: A4 has no catalog ownership | BLOCKED with reason |
+| External evidence digest | A4 evidence manifest | live receipt sha256 `8489595af1eb0050dd4b89107c362f7447f3933ce8ea553d6f9b3877b63cedd1` | PASS |
+| System loop interlock | N/A with reason: no automated loop edge added | N/A | N/A with reason |
+| Session continuity | separate post-material session sync | pending until material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| local negative gate PASS | 19/19 rows GREEN | PASS |
+| zero-call negative denominator | 18 rows | PASS |
+| rollback provider-spy denominator | 1 call | PASS |
+| retained recovery call denominator | 1 Alibaba call | PASS |
+| bounded claim token | `SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED` | PASS |
 
 ## Claim Boundary
 
@@ -504,3 +525,16 @@ the original writable manifest. R1 adds that one existing test path and
 requires its missing-provenance ENFORCE assertion to move from one provider
 call to secret-safe 409 plus zero calls. All other authority, runtime, live,
 claim, and no-commit boundaries remain unchanged.
+
+## Bounded Repair R2 - Source-Required Export And Evidence Reconciliation
+
+Independent review found that the product adapter imports the new
+`DistributionConsumptionBinding` type through the Truth Flow package public
+entrypoint, so `EXTENSIONS/CVF_TRUTH_FLOW/src/index.ts` is a source-required
+part of the same bounded implementation. R2 adds that path to the exact
+manifest. R2 also requires the runner's wrong-packet row to execute the real
+Truth Kernel negative-matrix test and requires rollback provider-spy count to
+be reported as one, leaving 18 of 19 local rows with zero provider calls.
+No additional live call is authorized or required; the accepted live
+observation remains immutable and only derived local aggregates and hashes
+may be reconciled.

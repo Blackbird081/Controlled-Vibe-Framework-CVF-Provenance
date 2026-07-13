@@ -184,6 +184,52 @@ describe('evaluateSot3KnowledgeActivation', () => {
   });
 });
 
+describe('evaluateSot3KnowledgeActivation - strict Flow consumption binding (SOT3-ACT-A4)', () => {
+  it('approves and acknowledges through strict consumeFor when the adapter binding is self-consistent for a given actor', () => {
+    const chunk = buildValidChunk();
+    const result = evaluateSot3KnowledgeActivation({ ...buildInputBase(), actorId: 'usr_actor_one', chunks: [chunk] }, 'ENFORCE');
+
+    expect(result.terminalOutcome).toBe('APPROVED');
+    expect(result.flowAcknowledgementState).toBe('ACKNOWLEDGED');
+    expect(result.traces[0].flowPackage?.recipient).toBe('usr_actor_one');
+    expect(result.traces[0].flowPackage?.role).toBe('execute-route-consumer');
+    expect(result.traces[0].flowPackage?.task).toBe('knowledge-context-injection');
+    expect(result.traces[0].flowPackage?.phase).toBe('PHASE_D_EXECUTE');
+    expect(result.traces[0].flowPackage?.dose).toBe('single-use-context');
+  });
+
+  it('different actorId values each bind and acknowledge their own package with the correct recipient stamped on that package only', () => {
+    const chunkA = buildValidChunk();
+    const resultA = evaluateSot3KnowledgeActivation({ ...buildInputBase(), actorId: 'usr_actor_a', chunks: [chunkA] }, 'ENFORCE');
+    expect(resultA.terminalOutcome).toBe('APPROVED');
+    expect(resultA.traces[0].flowPackage?.recipient).toBe('usr_actor_a');
+    expect(resultA.traces[0].flowPackage?.recipient).not.toBe('usr_actor_b');
+
+    const chunkB = buildValidChunk({ sourceId: 'src-actor-b' });
+    const resultB = evaluateSot3KnowledgeActivation({ ...buildInputBase(), actorId: 'usr_actor_b', chunks: [chunkB] }, 'ENFORCE');
+    expect(resultB.terminalOutcome).toBe('APPROVED');
+    expect(resultB.traces[0].flowPackage?.recipient).toBe('usr_actor_b');
+    expect(resultB.traces[0].flowPackage?.recipient).not.toBe('usr_actor_a');
+  });
+
+  it('two independent evaluations of the same chunk each complete their own full strict-consume-then-acknowledge lifecycle (no shared cross-call Flow state)', () => {
+    // Each adapter evaluation call constructs its own DistributionEngine
+    // instance (see evaluateSingleSot3KnowledgeChunk), so there is no
+    // shared in-memory package for a second call to replay against; this
+    // proves the adapter does not expose or rely on any cross-call replay
+    // shortcut, and every call independently goes through the full
+    // Refinery -> Kernel -> Flow strict-consume -> acknowledge lifecycle.
+    const chunk = buildValidChunk();
+    const firstCallResult = evaluateSot3KnowledgeActivation({ ...buildInputBase(), chunks: [chunk] }, 'ENFORCE');
+    const secondCallResult = evaluateSot3KnowledgeActivation({ ...buildInputBase(), chunks: [chunk] }, 'ENFORCE');
+
+    expect(firstCallResult.terminalOutcome).toBe('APPROVED');
+    expect(secondCallResult.terminalOutcome).toBe('APPROVED');
+    expect(firstCallResult.flowAcknowledgementState).toBe('ACKNOWLEDGED');
+    expect(secondCallResult.flowAcknowledgementState).toBe('ACKNOWLEDGED');
+  });
+});
+
 describe('evaluateSot3KnowledgeActivation - lifecycle traces', () => {
   it('returns exactly one complete trace for a single approved chunk with actual owner outputs', () => {
     const chunk = buildValidChunk();

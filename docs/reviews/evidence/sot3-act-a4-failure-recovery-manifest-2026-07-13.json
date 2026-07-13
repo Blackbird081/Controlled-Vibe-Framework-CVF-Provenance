@@ -1,0 +1,43 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": "docs/reviews/evidence/sot3-act-a4-failure-recovery-live-receipt-2026-07-13.json",
+      "sha256": "8489595af1eb0050dd4b89107c362f7447f3933ce8ea553d6f9b3877b63cedd1",
+      "sizeBytes": 2080
+    },
+    {
+      "path": "docs/reviews/evidence/sot3-act-a4-failure-recovery-live-diagnostic-2026-07-13.json",
+      "sha256": "1449505915de6ef061a57e6524e540eb5d55e251a60f5ba1dea69732ec138735",
+      "sizeBytes": 534
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-07-13T15:46:00.739844+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "f16f358c93027d3dd27990b92027a5dc906e4ffe",
+    "dirtyStatus": "M EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts\n M EXTENSIONS/CVF_TRUTH_FLOW/src/index.ts\n M EXTENSIONS/CVF_TRUTH_FLOW/tests/negative-matrix.test.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.knowledge.test.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-activation-evidence-store.test.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.test.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.ts\n M docs/reviews/CVF_SOT3_ACT_A4_FAILURE_AND_RECOVERY_BOUNDARY_PROOF_WORKER_RETURN_2026-07-13.md\n M docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A4_FAILURE_AND_RECOVERY_BOUNDARY_PROOF_2026-07-13.md\n?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.sot3-activation-failure-recovery.test.ts\n?? docs/reviews/evidence/sot3-act-a4-failure-recovery-live-diagnostic-2026-07-13.json\n?? docs/reviews/evidence/sot3-act-a4-failure-recovery-live-receipt-2026-07-13.json\n?? docs/reviews/evidence/sot3-act-a4-failure-recovery-manifest-2026-07-13.json\n?? docs/reviews/evidence/sot3-act-a4-failure-recovery-negative-receipt-2026-07-13.json\n?? scripts/run_cvf_sot3_a4_failure_recovery_proof.py",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_sot3_a4_failure_recovery_proof.py --live",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}

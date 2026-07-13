@@ -293,6 +293,29 @@ describe('sot3-activation-evidence-store', () => {
       expect(() => readFileSync(storePath, 'utf8')).toThrow();
     });
 
+    it('SOT3-ACT-A4: restart-and-valid-recovery row - a fresh store instance after process restart integrity-verifies and restores every previously persisted record with zero additional writes', async () => {
+      const writer = new Sot3ActivationEvidenceStore(storePath);
+      const first = buildRecord({ requestId: 'req-a4-restart-1' });
+      const second = buildRecord({ requestId: 'req-a4-restart-2' });
+      await writer.append(first);
+      await writer.append(second);
+      const bytesBeforeRestart = readFileSync(storePath, 'utf8');
+
+      // Simulates process restart: a brand-new store instance with no
+      // in-memory state, reading only from the durable main file.
+      const restarted = new Sot3ActivationEvidenceStore(storePath);
+      const restoredAll = restarted.list();
+      const restoredFirst = restarted.findByRecordId(first.recordId);
+      const restoredSecond = restarted.findByRequestId('req-a4-restart-2');
+
+      expect(restoredAll).toHaveLength(2);
+      expect(restoredFirst?.integrityHash).toBe(first.integrityHash);
+      expect(restoredSecond).toHaveLength(1);
+      expect(restoredSecond[0].integrityHash).toBe(second.integrityHash);
+      // A read-only restart-recovery path must never rewrite the main file.
+      expect(readFileSync(storePath, 'utf8')).toBe(bytesBeforeRestart);
+    });
+
     it('writes byte-identical canonical documents regardless of append order', async () => {
       const secondPath = join(tempDir, 'second-order.json');
       const first = buildRecord({ requestId: 'req-canonical-a' });

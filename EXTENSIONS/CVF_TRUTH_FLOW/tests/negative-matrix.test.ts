@@ -276,3 +276,150 @@ describe("negative matrix", () => {
     expect(JSON.stringify(created1)).toBe(JSON.stringify(created2));
   });
 });
+
+describe("consumeFor - strict consumption binding (SOT3-ACT-A4)", () => {
+  function makePackage(kernel: ReturnType<typeof makeRealKernel>, overrides: Partial<{
+    recipient: string;
+    role: string;
+    task: string;
+    phase: string;
+    dose: string;
+    expiryUtc: string;
+  }> = {}) {
+    const referenceId = issueActiveReferenceId(kernel);
+    const { flow } = makeFlow(kernel);
+    const created = flow.create({
+      recipient: "agent-1",
+      role: "worker",
+      task: "review",
+      phase: "delivery",
+      truthReferences: [referenceId],
+      dose: "summary",
+      restrictions: [],
+      expiryUtc: "2026-08-12T00:00:00Z",
+      actionTimeUtcIso: "2026-07-12T00:00:01Z",
+      ...overrides,
+    });
+    return { flow, packageId: created.distributionPackage!.package_id };
+  }
+
+  const correctBinding = { recipient: "agent-1", role: "worker", task: "review", phase: "delivery", dose: "summary" };
+
+  it("correctly bound consumer succeeds via the same path as deliverOrConsume", () => {
+    const kernel = makeRealKernel();
+    const { flow, packageId } = makePackage(kernel);
+    const result = flow.consumeFor(packageId, correctBinding, "2026-07-12T00:00:02Z");
+    expect(result.succeeded).toBe(true);
+    expect(result.distributionPackage?.package_id).toBe(packageId);
+  });
+
+  it("wrong recipient -> PACKAGE_CONSUMER_BINDING_MISMATCH", () => {
+    const kernel = makeRealKernel();
+    const { flow, packageId } = makePackage(kernel);
+    const result = flow.consumeFor(packageId, { ...correctBinding, recipient: "agent-2" }, "2026-07-12T00:00:02Z");
+    expect(result.succeeded).toBe(false);
+    expect(result.reasons).toContain("PACKAGE_CONSUMER_BINDING_MISMATCH");
+  });
+
+  it("wrong role -> PACKAGE_CONSUMER_BINDING_MISMATCH", () => {
+    const kernel = makeRealKernel();
+    const { flow, packageId } = makePackage(kernel);
+    const result = flow.consumeFor(packageId, { ...correctBinding, role: "reviewer" }, "2026-07-12T00:00:02Z");
+    expect(result.succeeded).toBe(false);
+    expect(result.reasons).toContain("PACKAGE_CONSUMER_BINDING_MISMATCH");
+  });
+
+  it("wrong task -> PACKAGE_CONSUMER_BINDING_MISMATCH", () => {
+    const kernel = makeRealKernel();
+    const { flow, packageId } = makePackage(kernel);
+    const result = flow.consumeFor(packageId, { ...correctBinding, task: "audit" }, "2026-07-12T00:00:02Z");
+    expect(result.succeeded).toBe(false);
+    expect(result.reasons).toContain("PACKAGE_CONSUMER_BINDING_MISMATCH");
+  });
+
+  it("wrong phase -> PACKAGE_CONSUMER_BINDING_MISMATCH", () => {
+    const kernel = makeRealKernel();
+    const { flow, packageId } = makePackage(kernel);
+    const result = flow.consumeFor(packageId, { ...correctBinding, phase: "intake" }, "2026-07-12T00:00:02Z");
+    expect(result.succeeded).toBe(false);
+    expect(result.reasons).toContain("PACKAGE_CONSUMER_BINDING_MISMATCH");
+  });
+
+  it("wrong dose -> PACKAGE_CONSUMER_BINDING_MISMATCH", () => {
+    const kernel = makeRealKernel();
+    const { flow, packageId } = makePackage(kernel);
+    const result = flow.consumeFor(packageId, { ...correctBinding, dose: "full" }, "2026-07-12T00:00:02Z");
+    expect(result.succeeded).toBe(false);
+    expect(result.reasons).toContain("PACKAGE_CONSUMER_BINDING_MISMATCH");
+  });
+
+  it("binding mismatch is checked before lifecycle/expiry - a nonexistent package still reports PACKAGE_NOT_FOUND, not a binding reason", () => {
+    const kernel = makeRealKernel();
+    const { flow } = makeFlow(kernel);
+    const result = flow.consumeFor("DPKG-DOES-NOT-EXIST", correctBinding, "2026-07-12T00:00:02Z");
+    expect(result.succeeded).toBe(false);
+    expect(result.reasons).toContain("PACKAGE_NOT_FOUND");
+  });
+
+  it("expired package with correct binding -> PACKAGE_EXPIRED (existing expiry check still applies after binding passes)", () => {
+    const kernel = makeRealKernel();
+    const { flow, packageId } = makePackage(kernel, { expiryUtc: "2026-07-13T00:00:00Z" });
+    const result = flow.consumeFor(packageId, correctBinding, "2026-07-13T00:00:00Z");
+    expect(result.succeeded).toBe(false);
+    expect(result.reasons).toContain("PACKAGE_EXPIRED");
+  });
+
+  it("inactive lifecycle - package already ACKNOWLEDGED (terminal) -> PACKAGE_NOT_ACTIONABLE via strict consume", () => {
+    const kernel = makeRealKernel();
+    const { flow, packageId } = makePackage(kernel);
+    const acknowledged = flow.acknowledge(packageId, "2026-07-12T00:00:02Z");
+    expect(acknowledged.succeeded).toBe(true);
+    const result = flow.consumeFor(packageId, correctBinding, "2026-07-12T00:00:03Z");
+    expect(result.succeeded).toBe(false);
+    expect(result.reasons).toContain("PACKAGE_NOT_ACTIONABLE");
+  });
+
+  it("inactive lifecycle - withdrawn package -> PACKAGE_NOT_ACTIONABLE via strict consume", () => {
+    const kernel = makeRealKernel();
+    const { flow, packageId } = makePackage(kernel);
+    const withdrawn = flow.withdraw(packageId);
+    expect(withdrawn.succeeded).toBe(true);
+    const result = flow.consumeFor(packageId, correctBinding, "2026-07-12T00:00:03Z");
+    expect(result.succeeded).toBe(false);
+    expect(result.reasons).toContain("PACKAGE_NOT_ACTIONABLE");
+  });
+
+  it("replay after acknowledgement - correctly bound second consumeFor call is rejected as not actionable, not silently re-approved", () => {
+    const kernel = makeRealKernel();
+    const { flow, packageId } = makePackage(kernel);
+    const first = flow.consumeFor(packageId, correctBinding, "2026-07-12T00:00:02Z");
+    expect(first.succeeded).toBe(true);
+    const acknowledged = flow.acknowledge(packageId, "2026-07-12T00:00:02Z");
+    expect(acknowledged.succeeded).toBe(true);
+    const replay = flow.consumeFor(packageId, correctBinding, "2026-07-12T00:00:03Z");
+    expect(replay.succeeded).toBe(false);
+    expect(replay.reasons).toContain("PACKAGE_NOT_ACTIONABLE");
+  });
+
+  it("revoked reference at consumption time -> REFERENCE_NOT_CURRENTLY_ACTIVE via strict consume (existing check preserved)", () => {
+    const kernel = makeRealKernel();
+    const referenceId = issueActiveReferenceId(kernel);
+    const { flow } = makeFlow(kernel);
+    const created = flow.create({
+      recipient: "agent-1",
+      role: "worker",
+      task: "review",
+      phase: "delivery",
+      truthReferences: [referenceId],
+      dose: "summary",
+      restrictions: [],
+      expiryUtc: "2026-08-12T00:00:00Z",
+      actionTimeUtcIso: "2026-07-12T00:00:01Z",
+    });
+    const packageId = created.distributionPackage!.package_id;
+    kernel.revokeReference(referenceId);
+    const result = flow.consumeFor(packageId, correctBinding, "2026-07-12T00:00:02Z");
+    expect(result.succeeded).toBe(false);
+    expect(result.reasons).toContain("REFERENCE_NOT_CURRENTLY_ACTIVE");
+  });
+});

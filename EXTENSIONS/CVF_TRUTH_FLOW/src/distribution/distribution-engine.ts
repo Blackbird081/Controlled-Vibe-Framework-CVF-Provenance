@@ -12,7 +12,8 @@ export type DistributionRejectionReason =
   | "PACKAGE_NOT_ACTIONABLE"
   | "INCOMPLETE_ROUTING_SCOPE"
   | "INVALID_DOSE_OR_EXPIRY"
-  | "PACKAGE_EXPIRED";
+  | "PACKAGE_EXPIRED"
+  | "PACKAGE_CONSUMER_BINDING_MISMATCH";
 
 export interface DistributionCreationResult {
   created: boolean;
@@ -24,6 +25,23 @@ export interface DistributionActionResult {
   succeeded: boolean;
   distributionPackage?: DistributionPackage;
   reasons: DistributionRejectionReason[];
+}
+
+/**
+ * The exact consumer identity a caller asserts when reading/consuming a
+ * package (A4). Every field is compared against the package's own immutable
+ * routing fields; dose is compared for exact equality because A4's product
+ * consumer always requests the single dose it was granted (no partial-dose
+ * consumption semantics exist). A mismatch on any field returns
+ * `PACKAGE_CONSUMER_BINDING_MISMATCH` before any lifecycle/expiry/reference
+ * check runs, so a wrong-binding caller never learns lifecycle state.
+ */
+export interface DistributionConsumptionBinding {
+  recipient: string;
+  role: string;
+  task: string;
+  phase: string;
+  dose: string;
 }
 
 /**
@@ -138,6 +156,40 @@ export class DistributionEngine {
       return { succeeded: false, reasons: ["REFERENCE_NOT_CURRENTLY_ACTIVE"] };
     }
     return { succeeded: true, distributionPackage: { ...pkg }, reasons: [] };
+  }
+
+  /**
+   * Strict consumption-time binding check (A4). Compares the caller-asserted
+   * `binding` against the package's own immutable recipient/role/task/phase/
+   * dose fields before applying every existing `deliverOrConsume` check
+   * (read-actionable lifecycle state, expiry, and fresh Kernel reference
+   * resolution). A binding mismatch returns
+   * `PACKAGE_CONSUMER_BINDING_MISMATCH` and never mutates state or reveals
+   * lifecycle/expiry detail for a caller that does not match the package's
+   * own routing scope. Existing `deliverOrConsume` behavior for a correctly
+   * bound caller is unchanged: this method delegates to it once binding
+   * passes, so actionable/expiry/current-reference checks are not
+   * duplicated or weakened.
+   */
+  consumeFor(
+    packageId: string,
+    binding: DistributionConsumptionBinding,
+    actionTimeUtcIso: string,
+  ): DistributionActionResult {
+    const pkg = this.packages.get(packageId);
+    if (!pkg) {
+      return { succeeded: false, reasons: ["PACKAGE_NOT_FOUND"] };
+    }
+    const bindingMatches =
+      pkg.recipient === binding.recipient &&
+      pkg.role === binding.role &&
+      pkg.task === binding.task &&
+      pkg.phase === binding.phase &&
+      pkg.dose === binding.dose;
+    if (!bindingMatches) {
+      return { succeeded: false, reasons: ["PACKAGE_CONSUMER_BINDING_MISMATCH"] };
+    }
+    return this.deliverOrConsume(packageId, actionTimeUtcIso);
   }
 
   acknowledge(packageId: string, actionTimeUtcIso: string): DistributionActionResult {

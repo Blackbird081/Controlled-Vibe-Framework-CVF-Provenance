@@ -17,6 +17,7 @@ export type {
   DistributionCreationResult,
   DistributionActionResult,
   DistributionRejectionReason,
+  DistributionConsumptionBinding,
 } from "./distribution/distribution-engine.js";
 
 export {

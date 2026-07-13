@@ -684,7 +684,7 @@ export async function POST(request: NextRequest) {
         const executionMaxTokens = resolveExecutionMaxTokens(executionTemplateId, routedProvider, body.model);
 
         // -- KNOWLEDGE RETRIEVAL + TENANT PARTITION ENFORCEMENT + SOT3 ACTIVATION --
-        const { retrievalResult, finalKnowledgeContext, knowledgeInjected, knowledgeSource, knowledgeSystemPrompt, requestedKnowledgeCollectionId } = await resolveKnowledgeContext({
+        const { retrievalResult, finalKnowledgeContext, knowledgeInjected, knowledgeSource, knowledgeSystemPrompt, requestedKnowledgeCollectionId, sot3 } = await resolveKnowledgeContext({
             intent: body.intent!,
             orgId: session?.orgId,
             teamId: session?.teamId,
@@ -692,6 +692,46 @@ export async function POST(request: NextRequest) {
             templateLabel: body.templateName || body.templateId || 'unknown-template',
             session,
         });
+
+        // SOT3-ACT-A4: fail closed before any provider call. In ENFORCE mode a
+        // SOT3-rejected activation must never fall through to raw/legacy
+        // context or reach `executeAI`. An explicitly requested governed
+        // collection (requestedKnowledgeCollectionId is non-null) that
+        // resolves to NO_CONTEXT is also rejected here, because the caller
+        // named a specific collection and got nothing governed back; an
+        // unrequested empty retrieval (requestedKnowledgeCollectionId is
+        // null) is not SOT3's concern and preserves ordinary route behavior.
+        const sot3ExplicitNoContext = sot3 !== null && sot3.terminalOutcome === 'NO_CONTEXT' && requestedKnowledgeCollectionId !== null;
+        if (sot3 !== null && (sot3.terminalOutcome === 'REJECTED' || sot3ExplicitNoContext)) {
+            const governanceEvidenceReceipt = buildEvidenceReceipt({
+                envelope: govEnvelope,
+                decision: 'DENY',
+                riskLevel: enforcement.riskGate?.riskLevel,
+                provider: routedProvider,
+                model: 'sot3-rejected',
+                routingDecision: routingResult.decision,
+                knowledgeSource,
+                knowledgeInjected,
+                knowledgeCollectionId: requestedKnowledgeCollectionId,
+                knowledgeChunkCount: retrievalResult.allowedChunkCount,
+            });
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: 'Governed knowledge activation rejected this request before provider execution.',
+                    provider: routedProvider,
+                    model: 'sot3-rejected',
+                    enforcement,
+                    guardResult,
+                    governanceEnvelope: govEnvelope,
+                    policySnapshotId: govEnvelope.policySnapshotId,
+                    governanceEvidenceReceipt,
+                    diagnostic: buildExecutionDiagnostic({ stage: 'governance', class: 'policy_blocked', provider: routedProvider, model: 'sot3-rejected', httpStatus: 409 }),
+                },
+                { status: 409 }
+            );
+        }
+
         const durableMemoryRoute = evaluateDurableMemoryRoute({ request: body, actorId: executionActorId, actorRole: resolveDurableMemoryActorRole(resolvedExecutionRole.role), defaultQuery: body.intent! });
         const durableMemorySystemPrompt = durableMemoryRoute.promptBlock ? buildDurableMemorySystemPrompt(knowledgeSystemPrompt, durableMemoryRoute.promptBlock) : knowledgeSystemPrompt;
         const aifMemoryReinjection = evaluateAifMemoryReinjection(body.aifMemoryReinjection);

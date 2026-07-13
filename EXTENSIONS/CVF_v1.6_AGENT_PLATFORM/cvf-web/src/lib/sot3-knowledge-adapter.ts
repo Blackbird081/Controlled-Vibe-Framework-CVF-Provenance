@@ -17,7 +17,7 @@ import type { SourceEnvelope } from 'cvf-refinery';
 import { TruthKernel } from 'cvf-truth-kernel';
 import type { EvidenceRecord, RefineryPacketRef, KernelDecision, TruthReceipt, TruthReference } from 'cvf-truth-kernel';
 import { DistributionEngine, KernelAuthorityBoundary } from 'cvf-truth-flow';
-import type { DistributionPackage } from 'cvf-truth-flow';
+import type { DistributionConsumptionBinding, DistributionPackage } from 'cvf-truth-flow';
 import type { Sot3KnowledgeSourceMetadata } from './knowledge-store';
 
 export type Sot3KnowledgeActivationMode = 'OFF' | 'SHADOW' | 'ENFORCE';
@@ -379,13 +379,27 @@ function evaluateSingleSot3KnowledgeChunk(
   const flow = new DistributionEngine(authority, input.ids);
   const actionTimeUtcIso = input.clock.nowUtcIso();
 
-  const created = flow.create({
+  // A4: the product adapter is always its own sole intended consumer, so its
+  // creation-time routing fields ARE the strict consumption binding it will
+  // assert back at delivery/consumption time. This is not a caller-supplied
+  // approval boolean; every field here is the same literal value passed to
+  // `flow.create` below, and `consumeFor` re-derives its own comparison
+  // against the immutable stored package, never trusting this local copy.
+  const consumptionBinding: DistributionConsumptionBinding = {
     recipient: input.actorId,
     role: 'execute-route-consumer',
     task: 'knowledge-context-injection',
     phase: 'PHASE_D_EXECUTE',
-    truthReferences: [issuance.reference.reference_id],
     dose: 'single-use-context',
+  };
+
+  const created = flow.create({
+    recipient: consumptionBinding.recipient,
+    role: consumptionBinding.role,
+    task: consumptionBinding.task,
+    phase: consumptionBinding.phase,
+    truthReferences: [issuance.reference.reference_id],
+    dose: consumptionBinding.dose,
     restrictions: [],
     expiryUtc: validUntilUtc,
     actionTimeUtcIso,
@@ -425,7 +439,7 @@ function evaluateSingleSot3KnowledgeChunk(
     expiry_utc: created.distributionPackage.expiry_utc,
   };
 
-  const delivered = flow.deliverOrConsume(packageId, actionTimeUtcIso);
+  const delivered = flow.consumeFor(packageId, consumptionBinding, actionTimeUtcIso);
   if (!delivered.succeeded) {
     return rejectedResult(mode, 'FLOW_DELIVERY_REJECTED', {
       ...withPackage,
@@ -445,7 +459,7 @@ function evaluateSingleSot3KnowledgeChunk(
     });
   }
 
-  const consumed = flow.deliverOrConsume(packageId, actionTimeUtcIso);
+  const consumed = flow.consumeFor(packageId, consumptionBinding, actionTimeUtcIso);
   if (!consumed.succeeded) {
     return rejectedResult(mode, 'FLOW_CONSUMPTION_REJECTED', {
       ...withPackage,

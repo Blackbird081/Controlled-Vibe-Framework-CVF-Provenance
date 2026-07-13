@@ -485,7 +485,7 @@ describe('/api/execute - SOT3 knowledge activation modes', () => {
     expect(rehydrated?.recordId).toBe(evidenceDocument.records[0].recordId);
   });
 
-  it('ENFORCE mode with missing provenance calls the provider mock once without a knowledge block', async () => {
+  it('ENFORCE mode with missing provenance rejects with a secret-safe 409 before any provider call (SOT3-ACT-A4)', async () => {
     process.env.CVF_SOT3_KNOWLEDGE_ACTIVATION_MODE = 'ENFORCE';
     knowledgeStore.seed([
       {
@@ -511,11 +511,16 @@ describe('/api/execute - SOT3 knowledge activation modes', () => {
     const res = await POST(req as never);
     const data = await res.json();
 
-    expect(res.status).toBe(200);
-    expect(executeAIMock).toHaveBeenCalledTimes(1);
-    const options = executeAIMock.mock.calls[0][3] as Record<string, unknown>;
-    expect(options.systemPrompt as string | undefined ?? '').not.toContain('ROUTE-NOPROV-SIGNAL');
-    expect(data.knowledgeInjection.injected).toBe(false);
+    // SOT3-ACT-A4: ENFORCE + REJECTED (here MISSING_PROVENANCE) now stops
+    // before executeAI with a secret-safe 409. MISSING_PROVENANCE is not
+    // exempted from the new pre-provider rejection rule; this regression
+    // still proves ENFORCE + missing-provenance is rejected, with the
+    // corrected expected shape (409, zero calls) instead of the prior
+    // shape (200, provider called once, raw content silently dropped).
+    expect(res.status).toBe(409);
+    expect(executeAIMock).toHaveBeenCalledTimes(0);
+    expect(data.success).toBe(false);
+    expect(JSON.stringify(data)).not.toContain('ROUTE-NOPROV-SIGNAL');
 
     const events = await readAuditEvents();
     const sot3Event = events.find((event) => event.eventType === 'SOT3_KNOWLEDGE_ACTIVATION_EVALUATED');

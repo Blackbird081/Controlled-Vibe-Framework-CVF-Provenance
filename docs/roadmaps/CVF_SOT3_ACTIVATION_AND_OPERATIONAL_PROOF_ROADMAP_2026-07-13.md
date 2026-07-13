@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: A3_CLOSED_PASS_BOUNDED_A4_PACKET_NEXT
+Status: A4_CLOSED_PASS_BOUNDED_A5_PACKET_NEXT
 
 docType: roadmap
 
@@ -307,8 +307,9 @@ fit, or user validation.
 
 ## Next Allowed Move
 
-Create a fresh A4 GC-018 and source-verified work order for zero-call rejection
-and bounded recovery proof. Do not execute A4 directly from this roadmap.
+Create a fresh A5 GC-018 and source-verified work order for canonical release
+bundle integration and the final bounded claim decision. Do not execute A5
+directly from this roadmap.
 
 ## Checker Source Read-Ahead Block
 
@@ -356,7 +357,7 @@ Returned defectIds: none.
 |---|---|---|---|
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this roadmap | `Status: A3_CLOSED_PASS_BOUNDED_A4_PACKET_NEXT`; A0-A3 closed; A4-A5 open | PASS |
+| Roadmap state | this roadmap | `Status: A4_CLOSED_PASS_BOUNDED_A5_PACKET_NEXT`; A0-A4 closed; A5 open | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS | PASS |
 | Registry Markdown | `docs/corpus-intelligence/README.md` | existing registry front door | PASS |
 | External evidence digest | N/A with reason: A2 is local non-live implementation | N/A | N/A with reason |
@@ -369,13 +370,14 @@ Returned defectIds: none.
 |---|---|---|
 | A2 durable evidence claim remains local | atomic local-file, restart, integrity, duplicate, corruption, and partial-write proof only | PASS |
 | A3 owns real-provider correlation | accepted recovery receipt correlates provider, governance, and SOT3 IDs | PASS |
-| A4-A5 live/release acceptance remains unclaimed | failure/recovery and release tranches remain open | PASS |
+| A4 failure/recovery acceptance | 19/19 local rows GREEN; 18 zero-call rows; one rollback spy call; one retained live recovery call | PASS |
+| A5 release acceptance remains unclaimed | canonical release tranche remains open | PASS |
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | architect/reviewer; A3 reviewer/closer amendment |
+| Actor | architect/reviewer; A4 reviewer/closer amendment |
 | Provider or surface | local private provenance repository |
 | Session or invocation | SOT3-ACT roadmap, 2026-07-13 |
 | Working directory | repository root |
@@ -386,7 +388,7 @@ Returned defectIds: none.
 | After status evidence | A0-A3 closed; A4 is the next fresh packet-authoring move |
 | Diff evidence | material changed-set captured before commit |
 | Approval boundary | A3 bounded recovery and roadmap state transition only |
-| Claim boundary | A3 `REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED`; no A4/A5/final claim |
+| Claim boundary | A4 `SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED`; no A5/final claim |
 | Agent type | architect/reviewer |
 | Invocation ID | `sot3-act-roadmap-2026-07-13` |
 | Expected manifest | `scripts/run_cvf_sot3_a3_live_proof.py`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-launch-diagnostic-2026-07-13.json`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-receipt-2026-07-13.json`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-manifest-2026-07-13.json`; `docs/baselines/CVF_GC018_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md`; `docs/reviews/CVF_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_COMPLETION_2026-07-13.md` |
