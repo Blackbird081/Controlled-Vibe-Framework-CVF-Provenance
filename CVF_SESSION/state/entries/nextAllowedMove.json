@@ -1,5 +1,5 @@
 {
   "stateOrder": 1718,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3 activation A1 packet is dispatched at dcc95616d. Next allowed move is one WORKER_MUST_NOT_COMMIT execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_2026-07-13.md followed by independent reviewer closure. A2-A5 persistence/provider/live/release and public work remain held. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3 activation A1 closed boundedly at material commit 149832b16 with PRODUCT_PATH_WIRED_LOCAL. Next allowed move is fresh A2 GC-018 and source-verified work-order authoring for durable, restart-safe SOT3 evidence. A2 implementation and A3-A5 provider/live/release/public work remain unauthorized until their dependency gates pass. LHW24 remains latest closed numbered LHW wave."
 }

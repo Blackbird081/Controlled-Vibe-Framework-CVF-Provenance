@@ -17,10 +17,11 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a1_product_adapter_dispatched`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit
-A1 worker execution from dispatch `dcc95616d`; parked checkpoint=A2-A5
-persistence, provider/live, release, public, and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a1_closed_bounded_a2_packet_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A2
+GC-018 and source-verified work-order authoring; parked checkpoint=A2
+implementation and A3-A5 provider/live, release, public, and user-validation
+work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -35,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a1_product_adapter_dispatched`
+`sot3_activation_a1_closed_bounded_a2_packet_next`
 
 ## Latest Work / Changes
 
@@ -59,13 +60,14 @@ The refreshed T5 packet passed 75/75 pre-dispatch and is committed at
 
 ## Next Allowed Move
 
-SOT3-T8 is closed boundedly at `0ffede4f1`. Operator lane selection and a new
-governed packet are required before further material work.
+SOT3 activation A1 is closed boundedly at `149832b16`. The next allowed move
+is fresh A2 GC-018 and source-verified work-order authoring for durable,
+restart-safe evidence. Do not implement A2 directly from the roadmap.
 
 ## Active Boundary
 
-No Truth Flow implementation, package activation, monitor, database/SOT-index service,
-adapter, provider/live, public-sync, Web/UI, governance checker, or unrelated
+No A2 implementation, A3-A5 provider/live or release execution, public-sync,
+production claim, user-validation claim, governance checker, or unrelated
 Catalog/GAP mutation is authorized.
 
 ## Core Guard Self-Protection Authorization - SOT3-T4 Dispatch And V42 Rotation
@@ -462,3 +464,38 @@ Operator authorization: create a work order for delegated A1 implementation.
 
 Rollback boundary: revert only dispatch continuity; retain A1 packet commit
 `dcc95616d` and A0 material commit `a777c3fd9`.
+
+## SOT3 Activation A1 Closure Anchor - 2026-07-13
+
+A1 is reviewer-accepted after bounded repair at material commit `149832b16`.
+The CVF Web knowledge seam now runs one complete Refinery, Kernel, and Flow
+lifecycle per chunk and aggregates context only after every chunk is
+acknowledged. Focused tests passed 37/37; full non-live tests, typecheck, build,
+reviewer-fast 62/62, and pre-commit 83/83 passed. The bounded claim is
+`PRODUCT_PATH_WIRED_LOCAL`.
+
+ADIF-0028 records the reusable authority-cardinality learning. The next
+allowed move is fresh A2 GC-018 and source-verified work-order authoring for
+durable, restart-safe evidence. No A2 implementation or A3-A5 provider/live,
+release, public, production, or user-validation claim is authorized.
+
+## Core Guard Self-Protection Authorization - SOT3 Activation A1 Closure Sync
+
+Authorized guard-maintenance scope: synchronize accepted A1 closure after
+material commit `149832b16`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA1Closure20260713.json`
+
+Operator authorization: process the completed A1 implementation and continue
+the dependency-ordered SOT3 activation roadmap.
+
+Rollback boundary: revert only this closure continuity batch; retain material
+commit `149832b16`, A1 dispatch `dcc95616d`, and A0 material `a777c3fd9`.

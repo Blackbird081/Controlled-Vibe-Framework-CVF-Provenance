@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a1_product_adapter_dispatched`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit A1 worker execution from dispatch `dcc95616d`; parked checkpoint=A2-A5 persistence, provider/live, release, public, and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a1_closed_bounded_a2_packet_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A2 GC-018 and source-verified work-order authoring; parked checkpoint=A2 implementation and A3-A5 provider/live, release, public, and user-validation work.
 
 ## Current Mode
 
-Current mode marker: `sot3_activation_a1_product_adapter_dispatched`
+Current mode marker: `sot3_activation_a1_closed_bounded_a2_packet_next`
 
-Current mode: `sot3_activation_a1_product_adapter_dispatched`
+Current mode: `sot3_activation_a1_closed_bounded_a2_packet_next`
 
-`sot3_activation_a1_product_adapter_dispatched`
+`sot3_activation_a1_closed_bounded_a2_packet_next`
 
 Previous mode:
 
-`sot3_activation_a0_pass_bounded_a1_packet_next`
+`sot3_activation_a1_product_adapter_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 activation A1 scoped knowledge-context product adapter closure | `149832b16` | CLOSED_PASS_BOUNDED after reviewer repair; per-chunk Refinery-Kernel-Flow lifecycle, 37/37 focused tests, full non-live/typecheck/build, 83/83 pre-commit; claim `PRODUCT_PATH_WIRED_LOCAL`; A2 packet authoring next. |
 | SOT3 activation A1 scoped knowledge-context product adapter dispatch | `dcc95616d` | DISPATCH_READY; 75/75 pre-dispatch and 83/83 pre-commit PASS; worker must not commit. |
 | SOT3 activation A0 architecture and A1-A5 operational-proof roadmap | `a777c3fd9` | A0_PASS_BOUNDED; scoped knowledge-context seam selected; A1 packet authoring next; current claim remains `IMPLEMENTED_AND_INTEGRATION_PROVEN_LOCAL`. |
 | SOT3-T8 Refinery-to-Kernel packet-binding owner closure | `0ffede4f1` | CLOSED_PASS_BOUNDED after reviewer repair; owner GAP resolved with boundary. |
@@ -153,13 +154,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_activation_a1_product_adapter_dispatched`
+Mode: `sot3_activation_a1_closed_bounded_a2_packet_next`
 
-SOT3 activation A1 is dispatched at `dcc95616d`. The next allowed move is one
-`WORKER_MUST_NOT_COMMIT` execution of the scoped knowledge-context product
-adapter work order, followed by independent reviewer closure. A2-A5
-persistence, provider/live, release, public, and user-validation work remain
-held.
+SOT3 activation A1 closed boundedly at `149832b16` with claim
+`PRODUCT_PATH_WIRED_LOCAL`. The next allowed move is fresh A2 GC-018 and
+source-verified work-order authoring for durable, restart-safe evidence. A2
+implementation and A3-A5 provider/live, release, public, and user-validation
+work remain unauthorized until their dependency gates pass.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
