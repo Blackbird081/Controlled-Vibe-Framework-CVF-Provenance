@@ -60,8 +60,7 @@ this table when entries change.
 |---|---|
 | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | 2 |
 | `EVIDENCED_NOT_OPERATOR_VISIBLE` | 1 |
-| `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` | 3 |
-| `OPEN_CONFIRMED_GAP` | 1 |
+| `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` | 4 |
 
 ### Open / Parked / Intentionally Separated Gaps
 
@@ -70,13 +69,13 @@ this table when entries change.
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
-| `cvf.asc.gap.sot3_refinery_kernel_packet_binding_hash_owner_unresolved.v1` | contract_to_runtime | `EXTENSIONS/CVF_REFINERY/` -> `NONE_WITH_REASON` | `OPEN_CONFIRMED_GAP` | `DECLARED_EDGE` | `entries/sot3_refinery_kernel_packet_binding_hash_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | Reopen only when an operator-authorized packet-binding-hash contract tranche is dispatched; the T6 integration-local hash helper remains bounded, not an owner-level contract |
 
 ### Recently Closed Gaps
 
 | gapId | Plane | Owner (source -> target) | Status | Proof class | Entry / Evidence | Boundary caveat |
 |---|---|---|---|---|---|---|
 | `cvf.asc.gap.sot3_independent_refinery_owner_unresolved.v1` | doctrine_to_contract -> contract_to_runtime | `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` -> `EXTENSIONS/CVF_REFINERY/` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_independent_refinery_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | No package activation, adapter, provider/live, or public-sync claim; private-provenance implementation only |
+| `cvf.asc.gap.sot3_refinery_kernel_packet_binding_hash_owner_unresolved.v1` | contract_to_runtime | `EXTENSIONS/CVF_REFINERY/` -> `EXTENSIONS/CVF_REFINERY/src/packet-hash/packet-hash.ts` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_refinery_kernel_packet_binding_hash_owner_unresolved.json`; `EXTENSIONS/CVF_REFINERY/tests/packet-hash-vector.test.ts`; `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` | No package activation, adapter, provider/live, or public-sync claim; no Kernel/Flow source change; exactly one hash profile exists; private-provenance implementation only, pending reviewer acceptance |
 | `cvf.asc.gap.sot3_truth_kernel_runtime_unresolved.v1` | doctrine_to_contract -> contract_to_runtime | `docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md` -> `EXTENSIONS/CVF_TRUTH_KERNEL/` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_truth_kernel_runtime_unresolved.json`; `docs/reviews/CVF_SOT3_T4R1_COMPLETION_REVIEW_2026-07-13.md`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | No package activation, adapter, provider/live, or public-sync claim; TKG-T1 remains the doctrine owner, not duplicated; private-provenance implementation only |
 | `cvf.asc.gap.sot3_post_kernel_truth_flow_owner_unresolved.v1` | contract_to_runtime -> runtime_to_enforcement | `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` -> `EXTENSIONS/CVF_TRUTH_FLOW/` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_post_kernel_truth_flow_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T5_COMPLETION_REVIEW_2026-07-13.md`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | No package activation, adapter, provider/live, or public-sync claim; private-provenance implementation only |
 

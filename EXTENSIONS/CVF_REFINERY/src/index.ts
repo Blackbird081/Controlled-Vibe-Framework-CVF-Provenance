@@ -32,3 +32,12 @@ export type {
 
 export type { RefineryRunInput, RefineryRunResult } from "./pipeline/engine.js";
 export { RefineryEngine, REQUIRED_STAGE_CHAIN } from "./pipeline/engine.js";
+
+export {
+  REFINERY_PACKET_HASH_PROFILE,
+  REFINERY_PACKET_HASH_DIGEST_ALGORITHM,
+  buildRefineryPacketHashPreimage,
+  computeRefineryPacketHash,
+  UnsupportedPacketHashValueError,
+} from "./packet-hash/packet-hash.js";
+export type { RefineryPacketHashProjection } from "./packet-hash/packet-hash.js";

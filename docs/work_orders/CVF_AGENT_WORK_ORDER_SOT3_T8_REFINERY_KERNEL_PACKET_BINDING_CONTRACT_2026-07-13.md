@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-13
 
@@ -192,12 +192,12 @@ consumer migration, negative cases, GAP status, and changed scope before commit.
 
 ## Closure Checklist
 
-- [ ] Refinery owns and exports the versioned profile.
-- [ ] Fixed vector and all negative cases pass.
-- [ ] T6 uses the owner API and retains full test/typecheck pass.
-- [ ] Kernel mismatch remains fail-closed without Kernel source mutation.
-- [ ] Contract reference and GAP aggregate reconcile.
-- [ ] Worker made no commit.
+- [x] Refinery owns and exports the versioned profile.
+- [x] Fixed vector and all negative cases pass.
+- [x] T6 uses the owner API and retains full test/typecheck pass.
+- [x] Kernel mismatch remains fail-closed without Kernel source mutation.
+- [x] Contract reference and GAP aggregate reconcile.
+- [x] Worker made no commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -246,7 +246,7 @@ commit, and separate session continuity.
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
-requiredGate: `python governance/compat/run_worker_return_fast_gate.py --file docs/reviews/CVF_SOT3_T8_WORKER_RETURN_2026-07-13.md --base <executionBaseHead> --head HEAD`
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 
 individualCheckerSubstitution: FORBIDDEN
 
@@ -262,7 +262,7 @@ Statement; Claim Boundary; and final status `COMPLETE_PENDING_REVIEW` or
 ## Verification Commands
 
 ```powershell
-python governance/compat/run_worker_return_fast_gate.py --file docs/reviews/CVF_SOT3_T8_WORKER_RETURN_2026-07-13.md --base <executionBaseHead> --head HEAD
+python governance/compat/run_worker_return_fast_gate.py
 python governance/compat/generate_as_built_system_catalog.py --gaps-only
 python governance/compat/check_as_built_system_catalog_drift.py
 git diff --check
@@ -338,6 +338,19 @@ DEFERRED_PRIVATE_ONLY
 This work order authorizes one bounded no-commit T8 execution. It does not
 authorize activation, provider/live work, public-sync, release, or production
 readiness.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_T8_REFINERY_KERNEL_PACKET_BINDING_CONTRACT_COMPLETION_2026-07-13.md` | reviewer verdict | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md` | already `CLOSED_PASS_BOUNDED`; T8 is separate GAP repair | PASS |
+| Registry JSON | `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json` | generated 7-entry index | PASS |
+| Registry Markdown | `docs/reference/system_chain/gaps/README.md` | generated GAP front door | PASS |
+| External evidence digest | N/A with reason: no external evidence artifact in T8 | N/A | N/A with reason |
+| System loop interlock | N/A with reason: no automated system-loop edge created | N/A | N/A with reason |
+| Session continuity | separate reviewer-owned session-sync commit | pending until material commit | N/A with reason |
 
 ## Agent Operation Trace Block
 

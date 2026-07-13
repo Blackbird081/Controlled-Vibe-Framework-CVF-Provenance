@@ -1,10 +1,9 @@
 import type { Clock, IdFactory, RefineryRunInput } from "cvf-refinery";
-import { RefineryEngine } from "cvf-refinery";
+import { RefineryEngine, computeRefineryPacketHash } from "cvf-refinery";
 import { TruthKernel } from "cvf-truth-kernel";
 import type { EvidenceRecord, RefineryPacketRef } from "cvf-truth-kernel";
 import { DistributionEngine, KernelAuthorityBoundary } from "cvf-truth-flow";
 import type { CanonicalScenarioEvidence } from "./evidence/canonical-evidence.js";
-import { packetContentHash } from "./evidence/packet-hash.js";
 
 export type OrchestratorFailureStage =
   | "REFINERY_NOT_RELEASED"
@@ -116,7 +115,7 @@ export function runThreeLayerScenario(
 
   const packetRef: RefineryPacketRef = {
     refinery_packet_id: packet.refinery_packet_id,
-    content_hash: packetContentHash(packet),
+    content_hash: computeRefineryPacketHash(packet),
     declared_scope: packet.declared_scope,
     status: packet.status,
   };

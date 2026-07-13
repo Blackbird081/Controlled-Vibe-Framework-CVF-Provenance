@@ -1,10 +1,16 @@
 import { describe, it, expect } from "vitest";
-import { DeterministicClock, SequentialIdFactory } from "cvf-refinery";
+import {
+  DeterministicClock,
+  SequentialIdFactory,
+  computeRefineryPacketHash,
+  REFINERY_PACKET_HASH_PROFILE,
+  RefineryEngine,
+} from "cvf-refinery";
 import { TruthKernel } from "cvf-truth-kernel";
 import { DistributionEngine, KernelAuthorityBoundary } from "cvf-truth-flow";
 import * as orchestratorModule from "../src/orchestrator.js";
 import { runThreeLayerScenario } from "../src/orchestrator.js";
-import { internalScenario, POLICY_VERSION, RULE_VERSION } from "../src/scenarios/fixtures.js";
+import { internalScenario, projectScenario, POLICY_VERSION, RULE_VERSION } from "../src/scenarios/fixtures.js";
 
 describe("SOT3-T6 negative test matrix", () => {
   it("Refinery result is not released -> Kernel call is not made; fails closed", () => {
@@ -145,5 +151,59 @@ describe("SOT3-T6 negative test matrix", () => {
     const result2 = runThreeLayerScenario(internalScenario(), clock2, ids2);
 
     expect(JSON.stringify(result1.evidence)).toBe(JSON.stringify(result2.evidence));
+  });
+
+  it("caller supplies a digest for a different packet -> real Kernel admission rejects with PACKET_HASH_MISMATCH", () => {
+    const clock = new DeterministicClock("2026-07-13T00:00:00Z", 1000);
+    const ids = new SequentialIdFactory();
+    const kernel = new TruthKernel(clock, ids, POLICY_VERSION, RULE_VERSION);
+
+    const refinery = new RefineryEngine(clock, ids);
+    const { packet: packetA } = refinery.run(internalScenario().refineryInput);
+    const { packet: packetB } = refinery.run(projectScenario().refineryInput);
+
+    // Register packetA under its own real hash, but present packetB's real
+    // hash as the request's claimed packetHash - a genuine cross-packet
+    // digest substitution, not a fabricated string.
+    kernel.registerPacket({
+      refinery_packet_id: packetA.refinery_packet_id,
+      content_hash: computeRefineryPacketHash(packetA),
+      declared_scope: packetA.declared_scope,
+      status: packetA.status,
+    });
+    kernel.registerEvidence({
+      evidence_id: "EV-MISMATCH-1",
+      bound_packet_id: packetA.refinery_packet_id,
+      bound_source_id: "SRC-MISMATCH-1",
+      provenance_label: "SOURCE_BACKED",
+      captured_at_utc: "2026-07-13T00:00:00Z",
+      valid_until_utc: null,
+    });
+
+    const { decision } = kernel.evaluate({
+      requestId: "REQ-MISMATCH-1",
+      packetHash: computeRefineryPacketHash(packetB),
+      packetReference: packetA.refinery_packet_id,
+      policyVersion: POLICY_VERSION,
+      ruleVersion: RULE_VERSION,
+      evidenceRefs: ["EV-MISMATCH-1"],
+      obligationRefs: [],
+      verificationMode: "STRICT",
+      requestedDecisionContext: "packet-hash-mismatch-negative-case",
+    });
+
+    expect(decision.decision).toBe("REJECT");
+    expect(decision.reasons).toContain("PACKET_HASH_MISMATCH");
+  });
+
+  it("caller attempts another packet-hash profile -> unavailable, since the owner API exposes exactly one profile and no selector parameter", () => {
+    // The Refinery owner API (computeRefineryPacketHash) takes exactly one
+    // parameter, the packet itself, with no profile-selection argument.
+    // A caller cannot request cvf.sotThreeLayer.refineryPacketHash.v2 (or
+    // any other profile) because no such parameter or branch exists; the
+    // unsupported-profile path is unavailable by construction, not merely
+    // rejected at runtime.
+    expect(computeRefineryPacketHash.length).toBe(1);
+    expect(REFINERY_PACKET_HASH_PROFILE).toBe("cvf.sotThreeLayer.refineryPacketHash.v1");
   });
 });

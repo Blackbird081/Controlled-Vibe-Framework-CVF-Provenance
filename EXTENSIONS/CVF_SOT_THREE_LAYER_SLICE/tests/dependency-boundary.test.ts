@@ -89,7 +89,7 @@ describe("SOT3-T6 boundary scan", () => {
     const importLines = content
       .split("\n")
       .filter((line) => line.trim().startsWith("import"));
-    const allowedSpecifiers = /^import .* from "(cvf-refinery|cvf-truth-kernel|cvf-truth-flow|\.\/evidence\/canonical-evidence\.js|\.\/evidence\/packet-hash\.js)";?$/;
+    const allowedSpecifiers = /^import .* from "(cvf-refinery|cvf-truth-kernel|cvf-truth-flow|\.\/evidence\/canonical-evidence\.js)";?$/;
     for (const line of importLines) {
       expect(allowedSpecifiers.test(line.trim()), `unexpected import: ${line}`).toBe(true);
     }

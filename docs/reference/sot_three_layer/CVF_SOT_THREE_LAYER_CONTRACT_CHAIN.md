@@ -152,6 +152,64 @@ producer. Feedback is proposal-only and can never directly mutate a
   it is a second, incompatible producer of the same contract type and is
   retired, not merged.
 
+### RefineryPacket Packet-Binding Hash Canonical Profile (`cvf.sotThreeLayer.refineryPacketHash.v1`)
+
+`RefineryPacket` has no top-level `content_hash` field of its own, but
+`KernelEvaluationRequest.packet_hash` and its Kernel-side registered
+`RefineryPacketRef.content_hash` both require a binding-identity value
+comparable at Kernel admission (see section 3, Invalid Transitions, and
+Negative Case NC-04). CVF Refinery is the sole owner of the canonical
+algorithm that derives this binding identity from a `RefineryPacket`, since
+Refinery is the sole producer of `RefineryPacket` itself.
+
+- **Owning package:** `EXTENSIONS/CVF_REFINERY/src/packet-hash/packet-hash.ts`,
+  exported from `EXTENSIONS/CVF_REFINERY/src/index.ts` as
+  `computeRefineryPacketHash`, `buildRefineryPacketHashPreimage`,
+  `REFINERY_PACKET_HASH_PROFILE`, and `REFINERY_PACKET_HASH_DIGEST_ALGORITHM`.
+- **Included field projection:** all fourteen `RefineryPacket` field
+  minimums listed above (`refinery_packet_id`, `source_envelopes`,
+  `normalized_records`, `duplicate_groups`, `conflict_sets`,
+  `quality_findings`, `integrity_results`, `transformation_lineage`,
+  `declared_scope`, `declared_owner`, `rule_manifest`, `status`,
+  `failure_tokens`, `created_at_utc`), named explicitly rather than derived
+  from an arbitrary enumerable-property walk.
+- **Canonicalization:** object keys are sorted lexicographically at every
+  nesting level (construction-order independence for objects); array
+  element order is preserved exactly, since every `RefineryPacket` array
+  field is a semantically ordered list of records or events, not an
+  unordered reference set (this differs from the sibling
+  `cvf.sotThreeLayer.receiptHash.v1` profile, whose `evidence_refs`/
+  `obligation_refs`/`verification_result_refs` are unordered reference sets
+  and are therefore sorted). String scalars use the same RFC 8785
+  (JCS)-style minimal-escaping serialization as
+  `cvf.sotThreeLayer.receiptHash.v1`.
+- **Digest format:** SHA-256 over the UTF-8 canonical-JSON preimage bytes,
+  returned as `sha256:<lowercase-hex>` (matching the format already used by
+  Refinery's own integrity-stage content hash and by the Kernel-side
+  `RefineryPacketRef.content_hash`/`KernelEvaluationRequest.packet_hash`
+  fields this value is compared against; this differs from
+  `cvf.sotThreeLayer.receiptHash.v1`, which returns a bare hex digest).
+- **Rejection rule:** `undefined`, functions, symbols, `bigint`, and
+  non-finite numbers (`NaN`/`Infinity`) are rejected by throwing
+  `UnsupportedPacketHashValueError` rather than being silently dropped or
+  coerced by generic `JSON.stringify` behavior.
+- **Versioning:** the profile identifier
+  (`cvf.sotThreeLayer.refineryPacketHash.v1`) is bound into the preimage
+  itself as `refinery_packet_hash_profile`, so a future `.v2` profile change
+  is guaranteed to produce a different digest even if the field projection
+  is otherwise unchanged. No caller-selectable profile parameter exists;
+  the owner API always computes exactly this one profile.
+- **Published test vector:** `EXTENSIONS/CVF_REFINERY/tests/packet-hash-vector.test.ts`
+  fixes one canonical `RefineryPacket`, its exact 1337-byte UTF-8 preimage,
+  and its SHA-256 digest
+  (`sha256:3854d51f58485b3672032dfdc478cfb2ad41402f2a6255aff36932bf19888ee9`),
+  reproduced byte-for-byte by any independent implementation of this
+  profile.
+- **Consumer migration:** `EXTENSIONS/CVF_SOT_THREE_LAYER_SLICE/` (the T6
+  three-layer integration slice) consumes `computeRefineryPacketHash`
+  directly from `cvf-refinery`; it retains no independent packet-hash
+  algorithm of its own.
+
 ## 3. KernelEvaluationRequest
 
 - **Sole producer:** the Kernel adapter at the Refinery-to-Kernel submission
