@@ -243,3 +243,23 @@ Operator authorization: continue SOT3 after reviewer-controlled packet refresh.
 
 Rollback boundary: revert only this dispatch sync; retain T5 packet commit
 `231bc8aea` and T4R1 closure `cda8fec64`.
+
+## SOT3-T5 Material Closure Anchor - 2026-07-13
+
+T5 material closure is accepted at `8a653370a`. The next governed move is T6
+packet authoring; T7 remains held until T6 reviewer acceptance.
+
+## Core Guard Self-Protection Authorization - SOT3-T5 Material Anchor
+
+Authorized guard-maintenance scope: anchor accepted T5 material closure before
+authoring T6 and held T7 dispatch packets.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+
+Operator authorization: create SOT3-T6 and SOT3-T7 work orders after T5 worker
+execution was submitted for reviewer handling.
+
+Rollback boundary: revert only this handoff anchor; retain material closure
+commit `8a653370a`.
