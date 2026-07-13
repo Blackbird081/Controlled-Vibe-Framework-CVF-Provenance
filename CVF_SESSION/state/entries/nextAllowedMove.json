@@ -1,5 +1,5 @@
 {
   "stateOrder": 1718,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3 activation A1 closed boundedly at material commit 149832b16 with PRODUCT_PATH_WIRED_LOCAL. Next allowed move is fresh A2 GC-018 and source-verified work-order authoring for durable, restart-safe SOT3 evidence. A2 implementation and A3-A5 provider/live/release/public work remain unauthorized until their dependency gates pass. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3 activation A2 durable-evidence packet is DISPATCH_READY at commit 7e118f16e after 75/75 pre-dispatch and 83/83 pre-commit checks passed. Next allowed move is one bounded WORKER_MUST_NOT_COMMIT A2 implementation from the canonical work order, ending in COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. A3-A5 provider/live/release/public work remain unauthorized. LHW24 remains latest closed numbered LHW wave."
 }

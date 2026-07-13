@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a1_closed_bounded_a2_packet_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A2 GC-018 and source-verified work-order authoring; parked checkpoint=A2 implementation and A3-A5 provider/live, release, public, and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a2_durable_evidence_dispatched`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one bounded no-commit A2 implementation from the canonical work order; parked checkpoint=A3-A5 provider/live, release, public, production, distributed-durability, and user-validation work.
 
 ## Current Mode
 
-Current mode marker: `sot3_activation_a1_closed_bounded_a2_packet_next`
+Current mode marker: `sot3_activation_a2_durable_evidence_dispatched`
 
-Current mode: `sot3_activation_a1_closed_bounded_a2_packet_next`
+Current mode: `sot3_activation_a2_durable_evidence_dispatched`
 
-`sot3_activation_a1_closed_bounded_a2_packet_next`
+`sot3_activation_a2_durable_evidence_dispatched`
 
 Previous mode:
 
-`sot3_activation_a1_product_adapter_dispatched`
+`sot3_activation_a1_closed_bounded_a2_packet_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 activation A2 durable activation-evidence dispatch | `7e118f16e` | DISPATCH_READY; atomic local store, per-chunk lifecycle traces, restart/duplicate/corrupt/partial-write proof; 75/75 pre-dispatch and 83/83 pre-commit PASS; worker must not commit. |
 | SOT3 activation A1 scoped knowledge-context product adapter closure | `149832b16` | CLOSED_PASS_BOUNDED after reviewer repair; per-chunk Refinery-Kernel-Flow lifecycle, 37/37 focused tests, full non-live/typecheck/build, 83/83 pre-commit; claim `PRODUCT_PATH_WIRED_LOCAL`; A2 packet authoring next. |
 | SOT3 activation A1 scoped knowledge-context product adapter dispatch | `dcc95616d` | DISPATCH_READY; 75/75 pre-dispatch and 83/83 pre-commit PASS; worker must not commit. |
 | SOT3 activation A0 architecture and A1-A5 operational-proof roadmap | `a777c3fd9` | A0_PASS_BOUNDED; scoped knowledge-context seam selected; A1 packet authoring next; current claim remains `IMPLEMENTED_AND_INTEGRATION_PROVEN_LOCAL`. |
@@ -154,13 +155,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_activation_a1_closed_bounded_a2_packet_next`
+Mode: `sot3_activation_a2_durable_evidence_dispatched`
 
-SOT3 activation A1 closed boundedly at `149832b16` with claim
-`PRODUCT_PATH_WIRED_LOCAL`. The next allowed move is fresh A2 GC-018 and
-source-verified work-order authoring for durable, restart-safe evidence. A2
-implementation and A3-A5 provider/live, release, public, and user-validation
-work remain unauthorized until their dependency gates pass.
+SOT3 activation A2 durable-evidence packet is committed at `7e118f16e`. The
+next allowed move is one bounded `WORKER_MUST_NOT_COMMIT` A2 implementation
+from the canonical work order, ending in `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. A3-A5 provider/live, release, public, production,
+distributed-durability, and user-validation work remain unauthorized.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

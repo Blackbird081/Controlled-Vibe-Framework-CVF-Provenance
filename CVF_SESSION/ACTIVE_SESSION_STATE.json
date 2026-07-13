@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_activation_a1_closed_bounded_a2_packet_next",
-  "previousMode": "sot3_activation_a1_product_adapter_dispatched",
+  "currentMode": "sot3_activation_a2_durable_evidence_dispatched",
+  "previousMode": "sot3_activation_a1_closed_bounded_a2_packet_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11305,7 +11305,7 @@
     "nextAllowedMove": "one bounded deterministic SOT3-T4 Kernel execution and no-commit worker return",
     "claimBoundary": "T4 Kernel only; T5-T7, activation, Flow, monitors, database, adapters, provider/live and public remain held"
   },
-  "nextAllowedMove": "SOT3 activation A1 closed boundedly at material commit 149832b16 with PRODUCT_PATH_WIRED_LOCAL. Next allowed move is fresh A2 GC-018 and source-verified work-order authoring for durable, restart-safe SOT3 evidence. A2 implementation and A3-A5 provider/live/release/public work remain unauthorized until their dependency gates pass. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3 activation A2 durable-evidence packet is DISPATCH_READY at commit 7e118f16e after 75/75 pre-dispatch and 83/83 pre-commit checks passed. Next allowed move is one bounded WORKER_MUST_NOT_COMMIT A2 implementation from the canonical work order, ending in COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. A3-A5 provider/live/release/public work remain unauthorized. LHW24 remains latest closed numbered LHW wave.",
   "sot3T4Closure20260712": {
     "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
     "date": "2026-07-12",
@@ -11414,5 +11414,17 @@
     "verification": "focused 37/37 PASS; full non-live suite, typecheck, build, reviewer-fast 62/62, pre-commit 83/83 PASS",
     "nextAllowedMove": "fresh A2 GC-018 and source-verified work-order authoring only",
     "claimBoundary": "no durable restart evidence, live provider behavior, release-quality proof, production readiness, public export, universal control, or user validation"
+  },
+  "sot3ActivationA2Dispatch20260713": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-13",
+    "dispatchCommit": "7e118f16e",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_2026-07-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_2026-07-13.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "preDispatch": "75/75 PASS",
+    "preCommit": "83/83 PASS",
+    "nextAllowedMove": "one bounded no-commit A2 implementation and COMPLETE_PENDING_REVIEW return",
+    "claimBoundary": "local durable activation-evidence implementation only; no A3-A5 provider/live, release, public export, production readiness, distributed durability, or user validation"
   }
 }
