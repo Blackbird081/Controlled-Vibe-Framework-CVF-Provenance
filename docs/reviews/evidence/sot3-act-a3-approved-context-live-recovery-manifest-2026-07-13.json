@@ -1,0 +1,38 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": "docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-receipt-2026-07-13.json",
+      "sha256": "cec9eb0925e7afaec48b3af92fb55abb0484b92480b2ee5d1987e87a1b40df56",
+      "sizeBytes": 2074
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-07-13T10:25:13.647243+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "40d790039046661c4be702e985cc88517b8cf3e5",
+    "dirtyStatus": "M scripts/run_cvf_sot3_a3_live_proof.py\n?? docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-launch-diagnostic-2026-07-13.json\n?? docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-receipt-2026-07-13.json",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_sot3_a3_live_proof.py --receipt docs\\reviews\\evidence\\sot3-act-a3-approved-context-live-recovery-receipt-2026-07-13.json --manifest docs\\reviews\\evidence\\sot3-act-a3-approved-context-live-recovery-manifest-2026-07-13.json",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}

@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -58,7 +58,7 @@ authorized.
 |---|---|---|---|
 | A2 durable evidence closure | `docs/reviews/CVF_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_COMPLETION_2026-07-13.md`; material commit `fdead7c99`; `Status: CLOSED_PASS_BOUNDED`; claim `DURABLE_EVIDENCE_REPLAY_PROVEN_LOCAL` | accepted durable restart and integrity evidence exists before provider quota is spent | ACCEPT |
 | A3 roadmap release | `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md`; `Status: A2_CLOSED_PASS_BOUNDED_A3_PACKET_NEXT`; A3 Detailed Design | fresh source-verified packet is required | ACCEPT |
-| Operator live-proof authority | operator instruction to execute A0 then A1-A5 toward `LIVE_GOVERNANCE_PROVEN_BOUNDED`, renewed by `tiep tuc` on 2026-07-13 | A3 remains within one planned call plus one diagnostic-gated retry | ACCEPT |
+| Operator live-proof authority | operator instruction to execute A0 then A1-A5 toward `LIVE_GOVERNANCE_PROVEN_BOUNDED`, plus the 2026-07-13 recovery authorization | Alibaba calls are numerically unmetered; diagnostic-before-rerun and diminishing-return controls remain binding | ACCEPT |
 
 ## Risk Classification
 
@@ -210,22 +210,22 @@ No public-sync action or public capability claim is authorized.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md` | `Status: DISPATCH_READY` | N/A with reason: A3 is dispatched, not closed |
-| Completion or reviewer artifact | N/A with reason: reviewer-owned completion does not exist at dispatch | worker must first return live evidence | N/A with reason |
-| Roadmap state | `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md` | `Status: A2_CLOSED_PASS_BOUNDED_A3_PACKET_NEXT`; A3 is the open next tranche | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md` | `Status: A3_CLOSED_PASS_BOUNDED_A4_PACKET_NEXT` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | BLOCKED with reason: A3 does not scan or classify a corpus and has no GC-051 registry ownership | BLOCKED with reason |
-| Registry Markdown | `docs/corpus-intelligence/README.md` | BLOCKED with reason: A3 does not scan or classify a corpus and has no registry front-door ownership | BLOCKED with reason |
-| External evidence digest | N/A with reason: fresh live receipt is a worker output | pending worker execution | N/A with reason |
+| Registry Markdown | `docs/corpus-intelligence/README.md` | BLOCKED with reason: A3 does not modify corpus routing and has no registry front-door ownership | BLOCKED with reason |
+| External evidence digest | recovery receipt SHA-256 `cec9eb0925e7afaec48b3af92fb55abb0484b92480b2ee5d1987e87a1b40df56` | recomputed PASS; unsigned, no external anchor | PASS |
 | System loop interlock | N/A with reason: no automated loop edge is changed | no interlock mutation | N/A with reason |
-| Session continuity | separate post-dispatch session sync | pending packet material commit | N/A with reason |
+| Session continuity | separate post-closure session sync | pending closure material commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Observed value | Status |
 |---|---|---|
 | A2 prerequisite is accepted before live quota | material commit `fdead7c99` and bounded A2 completion exist | PASS |
-| A3 receipt is fresh rather than reused | no A3 receipt or manifest exists at dispatch; worker must generate both | PASS |
-| dispatch makes no live result claim | current claim remains `DURABLE_EVIDENCE_REPLAY_PROVEN_LOCAL` | PASS |
+| A3 receipt is fresh rather than reused | recovery receipt and manifest generated at execution HEAD `40d790039` | PASS |
+| bounded live result | recovery receipt claims `REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED` | PASS |
 
 ## Claim Boundary
 
@@ -238,21 +238,21 @@ roadmap-final `LIVE_GOVERNANCE_PROVEN_BOUNDED`, which still requires A4 and A5.
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex dispatcher |
+| Actor | dispatcher; reviewer/closer amendment |
 | Provider or surface | private provenance workspace |
 | Session or invocation | SOT3-ACT-A3 dispatch authoring, 2026-07-13 |
 | Working directory | repository root |
 | Command or tool surface | startup reads, source search, scaffold helper, checker reads, apply_patch, gates |
-| Target paths | paired A3 baseline and work order |
+| Target paths | A3 recovery and closure material manifest |
 | Allowed scope source | operator A0-A5 authorization, A2 closure, and parent roadmap A3 next move |
 | Before status evidence | clean worktree at `02d7b765c`; all planned paths absent |
-| After status evidence | source-verified A3 dispatch packet only |
+| After status evidence | source-verified dispatch plus accepted recovery receipt and bounded closure |
 | Diff evidence | `git diff --name-status` before packet commit |
-| Approval boundary | A3 packet authoring and dispatch only |
-| Claim boundary | no provider call or A3 result at dispatch |
+| Approval boundary | A3 packet, bounded repair, recovery, learning, and closure only |
+| Claim boundary | `REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED` only |
 | Agent type | dispatcher |
 | Invocation ID | `sot3-act-a3-dispatch-2026-07-13` |
-| Expected manifest | `docs/baselines/CVF_GC018_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md` |
+| Expected manifest | `scripts/run_cvf_sot3_a3_live_proof.py`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-launch-diagnostic-2026-07-13.json`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-receipt-2026-07-13.json`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-manifest-2026-07-13.json`; `docs/baselines/CVF_GC018_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md`; `docs/reviews/CVF_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_COMPLETION_2026-07-13.md` |
+| Actual changed set | `scripts/run_cvf_sot3_a3_live_proof.py`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-launch-diagnostic-2026-07-13.json`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-receipt-2026-07-13.json`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-manifest-2026-07-13.json`; `docs/baselines/CVF_GC018_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md`; `docs/reviews/CVF_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_COMPLETION_2026-07-13.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |

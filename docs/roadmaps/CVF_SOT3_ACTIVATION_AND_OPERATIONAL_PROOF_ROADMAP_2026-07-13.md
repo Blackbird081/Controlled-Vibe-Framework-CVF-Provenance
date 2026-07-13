@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: A2_CLOSED_PASS_BOUNDED_A3_PACKET_NEXT
+Status: A3_CLOSED_PASS_BOUNDED_A4_PACKET_NEXT
 
 docType: roadmap
 
@@ -171,9 +171,10 @@ A4 must cover:
 - rollback from `ENFORCE` to `OFF`.
 
 Cases that reject before provider execution must assert zero provider calls.
-A4 permits at most one real recovery call after local negative proof. A failed
-live attempt requires a secret-safe diagnostic before retry. Provisional risk:
-R2.
+A4 uses operator-unmetered Alibaba calls only after local negative proof. A
+failed or unclear live attempt requires a secret-safe diagnostic and a
+result-changing action before retry; diminishing-return controls remain
+binding. Provisional risk: R2.
 
 ## A5 Detailed Design
 
@@ -219,7 +220,7 @@ Provisional risk: R2 release-quality proof.
 2. Author and review the A1 GC-018 and work order before runtime edits.
 3. Close A1 locally before opening durable evidence work in A2.
 4. Close A2 restart and integrity proof before spending provider quota.
-5. Execute A3 with its bounded live-call budget and diagnostic discipline.
+5. Execute A3 through the runner-only permit with diagnostic discipline.
 6. Prove A4 rejection and recovery boundaries, favoring zero-call negatives.
 7. Add A5 to the canonical release bundle, run it once, and independently
    review the exact bounded claim.
@@ -306,8 +307,8 @@ fit, or user validation.
 
 ## Next Allowed Move
 
-Create a fresh A3 GC-018 and source-verified work order for the bounded real
-provider approved-context path. Do not execute A3 directly from this roadmap.
+Create a fresh A4 GC-018 and source-verified work order for zero-call rejection
+and bounded recovery proof. Do not execute A4 directly from this roadmap.
 
 ## Checker Source Read-Ahead Block
 
@@ -355,7 +356,7 @@ Returned defectIds: none.
 |---|---|---|---|
 | Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | this roadmap | `Status: A2_CLOSED_PASS_BOUNDED_A3_PACKET_NEXT`; A0-A2 closed; A3-A5 open | PASS |
+| Roadmap state | this roadmap | `Status: A3_CLOSED_PASS_BOUNDED_A4_PACKET_NEXT`; A0-A3 closed; A4-A5 open | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS | PASS |
 | Registry Markdown | `docs/corpus-intelligence/README.md` | existing registry front door | PASS |
 | External evidence digest | N/A with reason: A2 is local non-live implementation | N/A | N/A with reason |
@@ -367,27 +368,27 @@ Returned defectIds: none.
 | Required value | Observed value | Status |
 |---|---|---|
 | A2 durable evidence claim remains local | atomic local-file, restart, integrity, duplicate, corruption, and partial-write proof only | PASS |
-| A3 owns real-provider correlation | A3 remains open and is the next packet-authoring move | PASS |
-| A3-A5 live/release acceptance remains unclaimed | all provider/live and release tranches remain open | PASS |
+| A3 owns real-provider correlation | accepted recovery receipt correlates provider, governance, and SOT3 IDs | PASS |
+| A4-A5 live/release acceptance remains unclaimed | failure/recovery and release tranches remain open | PASS |
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex architect/reviewer |
+| Actor | architect/reviewer; A3 reviewer/closer amendment |
 | Provider or surface | local private provenance repository |
 | Session or invocation | SOT3-ACT roadmap, 2026-07-13 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, source search, line-count inspection, `apply_patch` |
-| Target paths | roadmap, A0 decision, SOT3 reference front door |
+| Target paths | A3 recovery and closure material manifest |
 | Allowed scope source | operator instruction to execute A0 and design A1-A5 |
 | Before status evidence | no activation roadmap; live/provider work parked |
-| After status evidence | A0 passed and A1-A5 form a dependency-ordered proof ladder |
+| After status evidence | A0-A3 closed; A4 is the next fresh packet-authoring move |
 | Diff evidence | material changed-set captured before commit |
-| Approval boundary | A0 design only; A1 needs a fresh governed packet |
-| Claim boundary | roadmap planning and A0 decision, not runtime or live proof |
+| Approval boundary | A3 bounded recovery and roadmap state transition only |
+| Claim boundary | A3 `REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED`; no A4/A5/final claim |
 | Agent type | architect/reviewer |
 | Invocation ID | `sot3-act-roadmap-2026-07-13` |
-| Expected manifest | roadmap, A0 decision, SOT3 reference front door |
-| Actual changed set | roadmap, A0 decision, SOT3 reference front door |
+| Expected manifest | `scripts/run_cvf_sot3_a3_live_proof.py`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-launch-diagnostic-2026-07-13.json`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-receipt-2026-07-13.json`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-manifest-2026-07-13.json`; `docs/baselines/CVF_GC018_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md`; `docs/reviews/CVF_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_COMPLETION_2026-07-13.md` |
+| Actual changed set | `scripts/run_cvf_sot3_a3_live_proof.py`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-launch-diagnostic-2026-07-13.json`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-receipt-2026-07-13.json`; `docs/reviews/evidence/sot3-act-a3-approved-context-live-recovery-manifest-2026-07-13.json`; `docs/baselines/CVF_GC018_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_2026-07-13.md`; `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md`; `docs/reviews/CVF_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_COMPLETION_2026-07-13.md` |
 | Manifest delta | MATCH |

@@ -1,0 +1,70 @@
+{
+  "batchId": "SOT3-ACT-A3",
+  "callBudget": {
+    "attempts": [
+      {
+        "attempt": 1,
+        "httpStatus": 200,
+        "latencyMs": 3668,
+        "success": true
+      }
+    ],
+    "observedCallCount": 1,
+    "operatorQuotaPolicy": "ALIBABA_PROVIDER_UNMETERED_2026-07-13",
+    "priorBlockedCallCount": 3,
+    "runnerInvocationLimit": 1,
+    "taskObservedCallCount": 4
+  },
+  "claim": "REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED",
+  "contextObservation": {
+    "approvedContextHash": "bc835f5934430193afca03fa7c66d6845554c23a37e80c23d258df9c6a6c5d2a",
+    "approvedContextIncluded": true,
+    "providerRequestObserved": true,
+    "providerSystemPromptHash": "be324a60b8f694a87a762459d81893b7950d91e5a741a6319a6f28b81f33b6c1",
+    "rawPromptPersisted": false
+  },
+  "correlation": {
+    "envelopeId": "env-mrj2t4za-vu2qla",
+    "flowPackageIds": [
+      "DPKG-000001"
+    ],
+    "governanceReceiptId": "rcpt-env-mrj2t4za-vu2qla",
+    "kernelDecisionIds": [
+      "KD-000001"
+    ],
+    "packetIds": [
+      "RP-000001"
+    ],
+    "sot3IntegrityHash": "sha256:80515c7ae12a6867413d349068f8a4df0693a9a3ae0a0e3533fe3ca9b24f426e",
+    "sot3RecordId": "SOT3EV-a6524cfb2a60b0774616fa833ad72284",
+    "sot3RequestId": "91e8a2fc-76f6-48dc-b8a9-95f14c322908",
+    "traceCount": 1,
+    "truthReceiptIds": [
+      "RCPT-000001"
+    ],
+    "truthReferenceIds": [
+      "TREF-000001"
+    ]
+  },
+  "diagnostic": null,
+  "executionBaseHead": "40d790039",
+  "finishedAtUtc": "2026-07-13T10:25:13.512870+00:00",
+  "overall": "PASS",
+  "providerProof": {
+    "httpStatus": 200,
+    "keyAliasUsed": "ALIBABA_API_KEY",
+    "latencyMs": 3668,
+    "model": "qwen-turbo",
+    "outputLength": 1858,
+    "provider": "alibaba",
+    "success": true
+  },
+  "schemaVersion": "cvf.sot3ActA3LiveReceipt.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "startedAtUtc": "2026-07-13T10:25:02.403907+00:00"
+}

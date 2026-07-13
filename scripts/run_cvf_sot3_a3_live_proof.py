@@ -28,6 +28,7 @@ import argparse
 import hashlib
 import json
 import secrets
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -227,8 +228,11 @@ def run_live_test(
     }
 
     merged_env = {**os.environ, **env_overrides}
+    npx_executable = shutil.which("npx.cmd") or shutil.which("npx")
+    if not npx_executable:
+        return 127, "Local launch failed: npx executable was not found on PATH.\n", 0
     result = subprocess.run(
-        ["npx", "vitest", "run", LIVE_TEST_RELATIVE_PATH],
+        [npx_executable, "vitest", "run", LIVE_TEST_RELATIVE_PATH],
         cwd=CVF_WEB_DIR,
         env=merged_env,
         capture_output=True,
