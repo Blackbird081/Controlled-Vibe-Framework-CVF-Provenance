@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "cvf.system_chain_live_proof_coverage.v1",
+  "ledgerId": "cvf-system-chain-live-proof-coverage-2026-07-14",
+  "standard": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_AND_LEARNING_LOOP_STANDARD.md",
+  "sourceMap": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+  "lastReviewedDate": "2026-07-14",
+  "claimBoundary": "This ledger classifies live-proof applicability and current evidence for five generic CVF system-chain lanes. It preserves each source map verdict and does not treat SOT3 UC-01 as proof of any other lane.",
+  "useCases": [
+    {
+      "useCaseId": "UC-01-SOT3-BOUNDED-ACTIVATION",
+      "status": "PROVEN_BOUNDED",
+      "requiredProofClass": "REAL_PROVIDER_BOUNDED",
+      "observedProofClass": "REAL_PROVIDER_BOUNDED",
+      "scope": "selected CVF Web knowledge-context path, controlled scenario, Alibaba provider lane, environment, and evidence window",
+      "evidenceOwner": "docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md",
+      "retainedClaim": "LIVE_GOVERNANCE_PROVEN_BOUNDED",
+      "notProven": "other system chains, universal SOT3 activation, production, scale, public shipment, or real-user value"
+    },
+    {
+      "useCaseId": "UC-02-RUNTIME-TO-ENFORCEMENT-CURRENT-RUN",
+      "status": "PLANNED_NOT_DISPATCHED",
+      "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "scope": "registry-driven CF-076 through CF-084 invocation chain",
+      "selectionReason": "current map says connected, while cited per-checker PASS rows are historical rather than a retained current-run receipt",
+      "providerCallRequired": false
+    },
+    {
+      "useCaseId": "UC-03-CONTRACT-TO-RUNTIME-REPRESENTATIVE-PATH",
+      "status": "PLANNED_NOT_DISPATCHED",
+      "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "scope": "one active caller-backed Governance Control Matrix route selected by source verification; unresolved no-caller rows remain excluded",
+      "selectionReason": "file existence and unit tests do not prove production invocation",
+      "providerCallRequired": "CONDITIONAL_ON_SELECTED_ROUTE"
+    },
+    {
+      "useCaseId": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
+      "status": "PLANNED_NOT_DISPATCHED",
+      "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "scope": "CLI current-run readout first, then the bounded Web Operations subset as a separate scenario",
+      "selectionReason": "source inspection proves wiring shape but not current operator usability",
+      "providerCallRequired": "ONLY_IF_THE_SELECTED_JOB_ASSERTS_AI_GOVERNANCE_BEHAVIOR"
+    }
+  ],
+  "lanes": [
+    {
+      "laneId": "DOCTRINE_TO_CONTRACT",
+      "semanticPosture": "PARTIAL",
+      "semanticVerdict": "PARTIAL_CHAIN_WITH_DOCUMENTED_DRIFT",
+      "liveApplicability": "STATIC_RECOMPUTE_REQUIRED",
+      "requiredProofClass": "STATIC_SOURCE_VERIFIED",
+      "observedProofClass": "STATIC_SOURCE_VERIFIED",
+      "operationalProofStatus": "NOT_APPLICABLE_STATIC_WITH_REASON",
+      "reason": "doctrine ownership and mapping are read-time governance properties, not runtime invocation claims",
+      "nextUseCase": "NONE",
+      "nextAction": "refresh source mapping and gap dispositions during the next governed semantic review"
+    },
+    {
+      "laneId": "CONTRACT_TO_RUNTIME",
+      "semanticPosture": "PARTIAL",
+      "semanticVerdict": "PARTIAL_RUNTIME_CONNECTION_FULL_INVENTORY",
+      "liveApplicability": "RUNTIME_LIVE_REQUIRED",
+      "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "observedProofClass": "LOCAL_DETERMINISTIC_EXECUTION",
+      "operationalProofStatus": "PARTIAL",
+      "reason": "active callers and focused tests exist for bounded rows, but not every row is invocation-proven and no-caller rows are explicitly retained",
+      "nextUseCase": "UC-03-CONTRACT-TO-RUNTIME-REPRESENTATIVE-PATH",
+      "nextAction": "select one source-verified active caller path; do not use GC-009 or GC-010 unless an active caller is first established"
+    },
+    {
+      "laneId": "RUNTIME_TO_ENFORCEMENT",
+      "semanticPosture": "CURRENT",
+      "semanticVerdict": "PROVEN_CONNECTED_VIA_DATA_DRIVEN_REGISTRY",
+      "liveApplicability": "RUNTIME_LIVE_REQUIRED",
+      "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "observedProofClass": "LOCAL_DETERMINISTIC_EXECUTION",
+      "operationalProofStatus": "STALE",
+      "reason": "the chain edge is source-proven and has historical PASS rows, but the retained evidence is not a current-run receipt",
+      "nextUseCase": "UC-02-RUNTIME-TO-ENFORCEMENT-CURRENT-RUN",
+      "nextAction": "invoke the real registry-driven chain once, retain aggregate and per-scenario receipts, and reconcile all nine outcomes"
+    },
+    {
+      "laneId": "ENFORCEMENT_TO_EVIDENCE",
+      "semanticPosture": "CURRENT",
+      "semanticVerdict": "TWELVE_OF_TWELVE_DISPOSITIONED",
+      "liveApplicability": "STATIC_RECOMPUTE_REQUIRED",
+      "requiredProofClass": "STATIC_SOURCE_VERIFIED",
+      "observedProofClass": "STATIC_SOURCE_VERIFIED",
+      "operationalProofStatus": "NOT_APPLICABLE_STATIC_WITH_REASON",
+      "reason": "citation/path integrity is a repository property and is proved by fresh deterministic recomputation, not a provider or runtime call",
+      "nextUseCase": "NONE",
+      "nextAction": "recompute citation and path dispositions when either evidence-owner document changes"
+    },
+    {
+      "laneId": "EVIDENCE_TO_OPERATOR_SURFACE",
+      "semanticPosture": "PARTIAL",
+      "semanticVerdict": "PARTIAL_OPERATOR_VISIBILITY_BY_ENFORCEMENT_CLASS",
+      "liveApplicability": "OPERATOR_SURFACE_LIVE_REQUIRED",
+      "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "observedProofClass": "STATIC_SOURCE_VERIFIED",
+      "operationalProofStatus": "MISSING",
+      "reason": "direct source read proves output and job definitions, but no retained current operator invocation proves the surfaces work now",
+      "nextUseCase": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
+      "nextAction": "prove CLI readout first; then test the bounded Web subset separately without implying a unified all-checker Web inventory"
+    }
+  ]
+}
+

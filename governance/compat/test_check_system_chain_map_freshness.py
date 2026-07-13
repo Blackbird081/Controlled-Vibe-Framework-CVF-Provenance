@@ -71,6 +71,43 @@ def _readme_text(doc: dict) -> str:
     return "\n".join(parts)
 
 
+def _valid_coverage(doc: dict) -> dict:
+    use_case_ids = [
+        "UC-01-SOT3-BOUNDED-ACTIVATION",
+        "UC-02-RUNTIME-TO-ENFORCEMENT-CURRENT-RUN",
+    ]
+    lanes = []
+    for lane in doc["lanes"]:
+        static = lane["laneId"] in (
+            "DOCTRINE_TO_CONTRACT",
+            "ENFORCEMENT_TO_EVIDENCE",
+        )
+        lanes.append(
+            {
+                "laneId": lane["laneId"],
+                "semanticPosture": lane["currentPosture"],
+                "semanticVerdict": lane["verdict"],
+                "liveApplicability": "STATIC_RECOMPUTE_REQUIRED" if static else "RUNTIME_LIVE_REQUIRED",
+                "requiredProofClass": "STATIC_SOURCE_VERIFIED" if static else "CURRENT_RUNTIME_INVOCATION",
+                "observedProofClass": "STATIC_SOURCE_VERIFIED" if static else "LOCAL_DETERMINISTIC_EXECUTION",
+                "operationalProofStatus": "NOT_APPLICABLE_STATIC_WITH_REASON" if static else "PARTIAL",
+                "reason": "test reason",
+                "nextUseCase": "NONE" if static else "UC-02-RUNTIME-TO-ENFORCEMENT-CURRENT-RUN",
+                "nextAction": "test action",
+            }
+        )
+    return {
+        "schemaVersion": "test.v1",
+        "ledgerId": "test-ledger",
+        "standard": "standard.md",
+        "sourceMap": MODULE.MAP_PATH,
+        "lastReviewedDate": "2026-07-14",
+        "claimBoundary": "test boundary",
+        "useCases": [{"useCaseId": use_case_id} for use_case_id in use_case_ids],
+        "lanes": lanes,
+    }
+
+
 def test_valid_fixture_with_matching_hashes_and_age_within_30_passes(monkeypatch, tmp_path) -> None:
     doc = _valid_doc(tmp_path)
     monkeypatch.setattr(MODULE, "REPO_ROOT", tmp_path)
@@ -84,6 +121,24 @@ def test_valid_fixture_with_matching_hashes_and_age_within_30_passes(monkeypatch
     assert issues == []
     issues = MODULE.validate_age(doc, dt.date(2026, 8, 9))
     assert issues == []
+    issues = MODULE.validate_live_proof_coverage(doc, _valid_coverage(doc))
+    assert issues == []
+
+
+def test_live_coverage_semantic_verdict_drift_fails(tmp_path) -> None:
+    doc = _valid_doc(tmp_path)
+    coverage = _valid_coverage(doc)
+    coverage["lanes"][0]["semanticVerdict"] = "STALE_VERDICT"
+    issues = MODULE.validate_live_proof_coverage(doc, coverage)
+    assert any("semanticVerdict" in issue for issue in issues)
+
+
+def test_unproven_runtime_lane_without_use_case_fails(tmp_path) -> None:
+    doc = _valid_doc(tmp_path)
+    coverage = _valid_coverage(doc)
+    coverage["lanes"][1]["nextUseCase"] = "NONE"
+    issues = MODULE.validate_live_proof_coverage(doc, coverage)
+    assert any("has no next use case" in issue for issue in issues)
 
 
 def test_one_source_path_missing_fails(monkeypatch, tmp_path) -> None:
@@ -254,6 +309,9 @@ def test_json_output_is_valid_and_secret_free(monkeypatch, tmp_path, capsys) -> 
     map_dir = tmp_path / "docs" / "reference" / "system_chain"
     map_dir.mkdir(parents=True, exist_ok=True)
     (map_dir / "CVF_SYSTEM_CHAIN_MAP.json").write_text(json.dumps(doc), encoding="utf-8")
+    (map_dir / "CVF_SYSTEM_CHAIN_LIVE_PROOF_COVERAGE.json").write_text(
+        json.dumps(_valid_coverage(doc)), encoding="utf-8"
+    )
     (map_dir / "README.md").write_text(_readme_text(doc), encoding="utf-8")
     for rel_path, _label in MODULE.WIRING_TARGETS:
         full = tmp_path / rel_path

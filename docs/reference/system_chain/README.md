@@ -37,6 +37,16 @@ summarizes.
   (`Status: REVIEWER_ACCEPTED_BOUNDED`, material commit `645df8b83`)
 - Machine map: `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json`
 - Freshness contract: `docs/reference/system_chain/CVF_SYSTEM_CHAIN_FRESHNESS_STANDARD.md`
+- Live-proof and learning standard:
+  `docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_AND_LEARNING_LOOP_STANDARD.md`
+- Live-proof coverage ledger:
+  `docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_COVERAGE.json`
+
+The semantic map and live-proof coverage ledger are orthogonal. `CURRENT` in
+the semantic map means the exact source-backed conclusion is current; it does
+not by itself mean a retained current runtime or provider receipt exists. The
+coverage ledger classifies the required proof type and queues only the lanes
+whose claims actually cross a runtime, operator-surface, or provider boundary.
 
 This README and its JSON companion carry only findings already accepted by
 the MSEA-R90 reviewer closure. No claim here is stronger than that

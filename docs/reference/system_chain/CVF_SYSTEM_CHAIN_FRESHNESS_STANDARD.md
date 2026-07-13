@@ -12,7 +12,8 @@ Date: 2026-07-10
 
 Define the deterministic contract that keeps
 `docs/reference/system_chain/README.md` and
-`docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` from silently going
+`docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json`, plus the orthogonal
+`docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_COVERAGE.json`, from silently going
 stale after reviewer-accepted MSEA-R90 Audit A. This standard governs
 `governance/compat/check_system_chain_map_freshness.py`: what it must
 detect, what it must never do, and how local, CI, and weekly automation
@@ -34,6 +35,7 @@ of a fresh governed review.
 | `SOURCE_DRIFT` | A fingerprinted source file's SHA-256 no longer matches the recorded value. | The cited file changed since `lastVerifiedDate`. |
 | `PATH_MISSING` | A fingerprinted source path no longer exists. | The cited file was moved, renamed, or deleted. |
 | `MAP_DRIFT` | README lane IDs or verdict wording disagree with the JSON `lanes` array. | The Markdown and JSON companions were edited independently and now disagree. |
+| `COVERAGE_DRIFT` | Live-proof coverage is missing, incomplete, uses invalid enums, disagrees with semantic posture/verdict, or leaves an unproven live-applicable lane without a use case. | The semantic map and operational-proof ledger changed independently. |
 | `AGE_EXPIRED` | `asOfDate - lastVerifiedDate > maxAgeDays`. | No governed review has refreshed `lastVerifiedDate` within the review-age ceiling. |
 
 ## Machine JSON Contract
@@ -70,7 +72,11 @@ of a fresh governed review.
 4. Compare the README's lane IDs and verdict tokens against the JSON's
    `lanes` array and fail on any disagreement.
 5. Fail when `asOfDate - lastVerifiedDate > maxAgeDays`.
-6. Validate that the checker's own command is present exactly once in each
+6. Validate exactly one live-proof coverage row per canonical lane, agreement
+   with semantic posture and verdict, valid proof/applicability/status enums,
+   retained SOT3 UC-01 evidence, and a known next use case for every unproven
+   live-applicable lane.
+7. Validate that the checker's own command is present exactly once in each
    of the four local catalogs
    (`governance/compat/agent_autorun_command_catalog.py`,
    `governance/compat/local_governance_hook_catalog_pre_commit.py`,
@@ -79,11 +85,11 @@ of a fresh governed review.
    both CI workflow surfaces
    (`.github/workflows/documentation-testing.yml`,
    `.github/workflows/system-chain-map-freshness.yml`).
-7. Emit one actionable, human-readable remediation message per failure
+8. Emit one actionable, human-readable remediation message per failure
    class, plus a secret-free `--json` machine output.
-8. Accept `--as-of-date YYYY-MM-DD`, `--json`, and `--enforce` command-line
+9. Accept `--as-of-date YYYY-MM-DD`, `--json`, and `--enforce` command-line
    flags.
-9. **Never write** the map, its fingerprints, its verdicts, session state,
+10. **Never write** the map, its fingerprints, its verdicts, session state,
    or any source file. This checker is strictly read-only.
 
 ## No-Auto-Semantics Guarantee

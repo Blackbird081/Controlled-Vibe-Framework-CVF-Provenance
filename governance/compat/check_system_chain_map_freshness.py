@@ -2,8 +2,9 @@
 """
 CVF System Chain Map Freshness Checker
 
-Validates that docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json and its
-docs/reference/system_chain/README.md companion remain fresh: every
+Validates that docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json, its
+live-proof coverage ledger, and its docs/reference/system_chain/README.md
+companion remain fresh: every
 fingerprinted source still exists and matches its recorded SHA-256, the
 Markdown and JSON lane records agree, and the map's last-verified date is
 within its maximum review age.
@@ -29,6 +30,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 MAP_PATH = "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json"
 README_PATH = "docs/reference/system_chain/README.md"
 STANDARD_PATH = "docs/reference/system_chain/CVF_SYSTEM_CHAIN_FRESHNESS_STANDARD.md"
+COVERAGE_PATH = "docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_COVERAGE.json"
 
 THIS_CHECKER_PATH = "governance/compat/check_system_chain_map_freshness.py"
 
@@ -72,6 +74,51 @@ CANONICAL_LANE_IDS = (
     "EVIDENCE_TO_OPERATOR_SURFACE",
 )
 CANONICAL_LANE_ORDERS = (1, 2, 3, 4, 5)
+
+COVERAGE_REQUIRED_TOP_KEYS = (
+    "schemaVersion",
+    "ledgerId",
+    "standard",
+    "sourceMap",
+    "lastReviewedDate",
+    "claimBoundary",
+    "useCases",
+    "lanes",
+)
+COVERAGE_REQUIRED_LANE_KEYS = (
+    "laneId",
+    "semanticPosture",
+    "semanticVerdict",
+    "liveApplicability",
+    "requiredProofClass",
+    "observedProofClass",
+    "operationalProofStatus",
+    "reason",
+    "nextUseCase",
+    "nextAction",
+)
+ALLOWED_LIVE_APPLICABILITY = (
+    "STATIC_RECOMPUTE_REQUIRED",
+    "RUNTIME_LIVE_REQUIRED",
+    "OPERATOR_SURFACE_LIVE_REQUIRED",
+    "PROVIDER_LIVE_REQUIRED",
+    "FIELD_VALIDATION_REQUIRED",
+)
+ALLOWED_PROOF_CLASSES = (
+    "STATIC_SOURCE_VERIFIED",
+    "LOCAL_DETERMINISTIC_EXECUTION",
+    "MOCK_OR_SIMULATED_EXECUTION",
+    "CURRENT_RUNTIME_INVOCATION",
+    "REAL_PROVIDER_BOUNDED",
+    "REAL_USER_OBSERVED",
+)
+ALLOWED_OPERATIONAL_STATUSES = (
+    "PROVEN",
+    "PARTIAL",
+    "MISSING",
+    "STALE",
+    "NOT_APPLICABLE_STATIC_WITH_REASON",
+)
 
 TOP_LEVEL_FINGERPRINT_KEYS = (
     "auditManifestFingerprint",
@@ -265,6 +312,90 @@ def validate_map_agreement(doc: dict[str, Any], readme_text: str) -> list[str]:
     return issues
 
 
+def validate_live_proof_coverage(
+    map_doc: dict[str, Any], coverage_doc: dict[str, Any]
+) -> list[str]:
+    """Require one live-proof classification per canonical semantic lane."""
+    issues: list[str] = []
+    for key in COVERAGE_REQUIRED_TOP_KEYS:
+        if key not in coverage_doc:
+            issues.append(f"COVERAGE_DRIFT: missing required top-level key `{key}`")
+
+    use_cases = coverage_doc.get("useCases")
+    if not isinstance(use_cases, list):
+        issues.append("COVERAGE_DRIFT: `useCases` must be a list")
+        use_cases = []
+    use_case_ids = {
+        item.get("useCaseId")
+        for item in use_cases
+        if isinstance(item, dict) and item.get("useCaseId")
+    }
+    if "UC-01-SOT3-BOUNDED-ACTIVATION" not in use_case_ids:
+        issues.append("COVERAGE_DRIFT: retained SOT3 UC-01 use case is missing")
+
+    lanes = coverage_doc.get("lanes")
+    if not isinstance(lanes, list):
+        issues.append("COVERAGE_DRIFT: `lanes` must be a list")
+        return issues
+    coverage_ids = [lane.get("laneId") for lane in lanes if isinstance(lane, dict)]
+    if tuple(coverage_ids) != CANONICAL_LANE_IDS:
+        issues.append(
+            "COVERAGE_DRIFT: live-proof lane order must match the five canonical "
+            f"lane IDs, found {coverage_ids}"
+        )
+
+    map_by_id = {
+        lane.get("laneId"): lane
+        for lane in map_doc.get("lanes", [])
+        if isinstance(lane, dict)
+    }
+    for index, lane in enumerate(lanes):
+        if not isinstance(lane, dict):
+            issues.append(f"COVERAGE_DRIFT: lane at index {index} is not an object")
+            continue
+        lane_id = lane.get("laneId")
+        for key in COVERAGE_REQUIRED_LANE_KEYS:
+            if key not in lane:
+                issues.append(
+                    f"COVERAGE_DRIFT: lane `{lane_id}` missing required key `{key}`"
+                )
+        source_lane = map_by_id.get(lane_id)
+        if source_lane:
+            if lane.get("semanticPosture") != source_lane.get("currentPosture"):
+                issues.append(
+                    f"COVERAGE_DRIFT: lane `{lane_id}` semanticPosture does not "
+                    "match source map currentPosture"
+                )
+            if lane.get("semanticVerdict") != source_lane.get("verdict"):
+                issues.append(
+                    f"COVERAGE_DRIFT: lane `{lane_id}` semanticVerdict does not "
+                    "match source map verdict"
+                )
+        if lane.get("liveApplicability") not in ALLOWED_LIVE_APPLICABILITY:
+            issues.append(f"COVERAGE_DRIFT: lane `{lane_id}` has invalid liveApplicability")
+        if lane.get("requiredProofClass") not in ALLOWED_PROOF_CLASSES:
+            issues.append(f"COVERAGE_DRIFT: lane `{lane_id}` has invalid requiredProofClass")
+        if lane.get("observedProofClass") not in ALLOWED_PROOF_CLASSES:
+            issues.append(f"COVERAGE_DRIFT: lane `{lane_id}` has invalid observedProofClass")
+        if lane.get("operationalProofStatus") not in ALLOWED_OPERATIONAL_STATUSES:
+            issues.append(f"COVERAGE_DRIFT: lane `{lane_id}` has invalid operationalProofStatus")
+        next_use_case = lane.get("nextUseCase")
+        if next_use_case != "NONE" and next_use_case not in use_case_ids:
+            issues.append(
+                f"COVERAGE_DRIFT: lane `{lane_id}` references unknown nextUseCase "
+                f"`{next_use_case}`"
+            )
+        if (
+            lane.get("liveApplicability") != "STATIC_RECOMPUTE_REQUIRED"
+            and lane.get("operationalProofStatus") != "PROVEN"
+            and next_use_case == "NONE"
+        ):
+            issues.append(
+                f"COVERAGE_DRIFT: unproven live-applicable lane `{lane_id}` has no next use case"
+            )
+    return issues
+
+
 def validate_age(doc: dict[str, Any], as_of_date: dt.date) -> list[str]:
     """Fail when asOfDate - lastVerifiedDate exceeds maxAgeDays."""
     issues: list[str] = []
@@ -317,6 +448,13 @@ def run_all_validations(as_of_date: dt.date) -> tuple[list[str], dict[str, Any] 
     issues: list[str] = []
     issues.extend(validate_schema(doc))
 
+    coverage_doc, coverage_err = _read_json(REPO_ROOT / COVERAGE_PATH)
+    if coverage_err:
+        issues.append(f"COVERAGE_DRIFT: {coverage_err}")
+    else:
+        assert coverage_doc is not None
+        issues.extend(validate_live_proof_coverage(doc, coverage_doc))
+
     readme_full = REPO_ROOT / README_PATH
     readme_text, readme_err = _read_text(readme_full)
     if readme_err:
@@ -332,7 +470,7 @@ def run_all_validations(as_of_date: dt.date) -> tuple[list[str], dict[str, Any] 
 
 
 def _classify(issues: list[str]) -> dict[str, int]:
-    counts = {"PATH_MISSING": 0, "SOURCE_DRIFT": 0, "MAP_DRIFT": 0, "AGE_EXPIRED": 0, "schema": 0, "wiring": 0}
+    counts = {"PATH_MISSING": 0, "SOURCE_DRIFT": 0, "MAP_DRIFT": 0, "COVERAGE_DRIFT": 0, "AGE_EXPIRED": 0, "schema": 0, "wiring": 0}
     for issue in issues:
         for key in counts:
             if issue.startswith(f"{key}:"):
@@ -360,7 +498,7 @@ def main(argv: list[str] | None = None) -> int:
     issues, _doc = run_all_validations(as_of_date)
     counts = _classify(issues)
     freshness_state = "CURRENT" if not issues else next(
-        (k for k in ("PATH_MISSING", "SOURCE_DRIFT", "MAP_DRIFT", "AGE_EXPIRED", "schema", "wiring") if counts[k]),
+        (k for k in ("PATH_MISSING", "SOURCE_DRIFT", "MAP_DRIFT", "COVERAGE_DRIFT", "AGE_EXPIRED", "schema", "wiring") if counts[k]),
         "CURRENT",
     )
 
