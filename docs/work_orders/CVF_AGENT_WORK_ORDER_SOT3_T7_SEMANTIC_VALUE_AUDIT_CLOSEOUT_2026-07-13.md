@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_UNTIL_T6_PASS
+Status: PROPOSED_PRE_DISPATCH
 
 Date: 2026-07-13
 
@@ -10,11 +10,32 @@ Work Order ID: SOT3-T7
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
-dispatchBaseHead: `BLOCKED_BY_T6_CLOSURE`
+dispatchBaseHead: `2c4c498da`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
 closureBaseHead: `REVIEWER_MUST_CAPTURE_AT_CLOSURE`
+
+## Dispatch Prompt Envelope
+
+Role: no-commit semantic audit worker.
+
+Canonical packet: this work order and paired T7 GC-018.
+
+Commit mode: WORKER_MUST_NOT_COMMIT
+
+Base: capture HEAD and clean full status before edits.
+
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+
+Current-time notes: T6 accepted at `2c4c498da`; T7 is the final semantic and GAP audit.
+
+Do-not-misread notes: zero unresolved requires semantic evidence; do not implement the packet-hash GAP.
+
+Required first actions: startup reads, T0 ledger, T1-T6 reviews, Catalog/GAP
+owners, paired baseline.
+
+Return contract: complete audit evidence and `COMPLETE_PENDING_REVIEW`, no commit.
 
 ## Purpose
 
@@ -45,6 +66,28 @@ fresh T7 GC-018 -> refreshed T7 work order.
 Dispatcher refreshes dependencies; worker audits without commit; reviewer/
 closer accepts evidence; session-sync steward closes continuity.
 
+## Worker Autonomy / No-Question Rule
+
+Resolve in-scope ledger, evidence, and documentation defects without asking the
+operator. Stop only for missing canonical source, value requiring a new
+runtime/owner tranche, forbidden paths, or scope expansion.
+
+## Intake Role Routing Decision
+
+| Field | Disposition |
+|---|---|
+| Intake source | accepted T0-T6 evidence and retained T0 manifest |
+| Scope classification | SEMANTIC_AUDIT_AND_CLOSEOUT |
+| Intake role | no-commit audit worker |
+| Risk sensitivity | HIGH: false zero-unresolved claim |
+| Provider surface | local deterministic tools only |
+| Reviewer role | semantic sampling, owner/GAP and arithmetic audit |
+| Routing decision | WORKER_MUST_NOT_COMMIT |
+| Escalation condition | ownerless value, runtime need, or missing source |
+| Public route | DEFERRED_PRIVATE_ONLY |
+| canonical route mode | MULTI_AGENT_MULTI_ROLE |
+| selected role route | dispatcher -> audit worker -> reviewer/closer |
+
 ## Required First Reads
 
 Startup front doors, guard orientation, literal gotchas, roadmap, T0 manifest
@@ -64,14 +107,13 @@ Future worker owns only released T7 docs/evidence paths and must not commit.
 
 | Dependency | Required evidence | Current disposition |
 |---|---|---|
-| T6 vertical slice | reviewer completion review and material commit | HOLD_MISSING_T6_EVIDENCE |
-| fresh T7 GC-018 | baseline authored after T6 acceptance | HOLD_MISSING_T7_BASELINE |
-| refreshed base anchors | clean post-T6 dispatch base | HOLD_MISSING_BASE_ANCHORS |
+| T6 vertical slice | `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md`; `2c4c498da` | SATISFIED |
+| fresh T7 GC-018 | `docs/baselines/CVF_GC018_SOT3_T7_SEMANTIC_VALUE_AUDIT_CLOSEOUT_2026-07-13.md` | SATISFIED |
+| refreshed base anchors | clean material closure `2c4c498da` | SATISFIED |
 
-This work order must remain `HOLD_UNTIL_T6_PASS`. After T6 acceptance, the
-dispatcher must source-verify current T0-T6 artifacts, author a fresh T7
-GC-018, replace all blocked dependency rows, capture dispatch anchors, and pass
-pre-dispatch before assigning a worker.
+T6 dependencies are released. Worker execution remains unauthorized until this
+refreshed packet and baseline pass pre-dispatch and the reviewer explicitly
+marks the packet dispatch-ready.
 
 ## Allowed Scope
 
@@ -84,10 +126,11 @@ session state by worker; provider/live; public-sync; activation; adapters.
 
 ## Source Verification Block
 
-Dispatch is blocked. Current roadmap facts are verified from
+Roadmap facts are verified from
 `docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md`, Tranche
-Plan SOT3-T7. T6 closure facts do not yet exist in this packet and therefore
-remain dependency-held; no worker may infer them from chat or memory.
+Plan SOT3-T7. T6 closure is verified from
+`docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` and material commit
+`2c4c498da`. The paired fresh GC-018 controls remaining source verification.
 
 ## Acceptance Criteria
 
@@ -100,6 +143,8 @@ remain dependency-held; no worker may infer them from chat or memory.
   as as-built architecture.
 - Roadmap closure, public export disposition, and session sync occur only after
   reviewer acceptance.
+- The Refinery-to-Kernel canonical packet-binding hash GAP is assigned an
+  owner/disposition/next action without runtime implementation.
 
 ## Execution Plan
 
@@ -130,6 +175,32 @@ commit-steward preflight.
 
 After release only, return `COMPLETE_PENDING_REVIEW` or exact blocked evidence;
 never commit.
+
+## Worker Return Packet Shape Contract
+
+contractProfile: WORKER_RETURN_FULL_GATE_V1
+
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
+
+individualCheckerSubstitution: FORBIDDEN
+
+workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
+
+Return `docs/reviews/CVF_SOT3_T7_WORKER_RETURN_2026-07-13.md` with Purpose,
+Target / Source, Scope / Methodology, Findings / Position, Risk / Corrective
+Action, Claim Boundary, checker read-ahead, source inventory, corpus and rescan
+evidence, intake routing, learning disposition, epistemic block, operation
+trace, delta claim boundary, public disposition, actual changed set, commands,
+full git status, and no-commit statement.
+
+## Verification Commands
+
+```powershell
+python governance/compat/generate_corpus_scan_registry.py --check
+python governance/compat/run_worker_return_fast_gate.py
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
+git status --short --untracked-files=all
+```
 
 ## Operator Checkpoint
 
@@ -177,7 +248,7 @@ Target paths: future T7 Allowed Scope
 
 Allowed scope source: refreshed T7 packet
 
-Before status evidence: worker-captured full status
+Before status evidence: clean worktree required and worker-captured full status
 
 After status evidence: worker-return full status
 
@@ -203,14 +274,16 @@ Manifest delta: worker reconciles expected versus actual
 |---|---|
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | dispatcher -> no-commit audit worker -> reviewer/closer |
-| phase | SOT3-T7 held semantic closeout |
+| phase | SOT3-T7 semantic closeout |
 | contractSource | `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md` |
-| baseHeadFor(phase) | dispatch blocked pending T6; execution and closure uncaptured |
+| baseHeadFor(phase) | dispatch=`2c4c498da`; execution and closure actor-captured |
 | changedSetScope(phase) | future T7 docs/evidence only |
 | traceScope(phase, actor) | manifest reads, semantic mapping, arithmetic, gates |
 | commitOwner(phase) | worker=WORKER_MUST_NOT_COMMIT; reviewer owns accepted commit |
 | crossBatchIsolation | package/runtime/session/provider/public excluded |
 | nextMoveSurfaces | reviewer/session-sync steward only after acceptance |
+
+Before status evidence: clean worktree required at worker execution start.
 
 ## Reviewer Closure Conversion
 
@@ -219,6 +292,16 @@ completionReviewPath: `docs/reviews/CVF_SOT3_T7_COMPLETION_REVIEW_2026-07-13.md`
 reviewerOwnedClosurePaths: future T7 audit/evidence and completion review;
 session continuity in a separate commit.
 
+## Foundation Storage Layout Block
+
+| Field | Disposition |
+|---|---|
+| durable foundation change | N/A with reason: update existing Catalog/GAP owners only |
+| source layout | existing canonical owner files control |
+| aggregate discipline | use existing generators where applicable |
+| index/front door | update existing discovery surfaces only after acceptance |
+| claim boundary | no parallel foundation tree |
+
 ## Checker Source Read-Ahead Block
 
 | Field | Disposition |
@@ -226,11 +309,24 @@ session continuity in a separate commit.
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_public_export_disposition.py` |
 | literalTokensReviewed | HOLD_UNTIL_T6_PASS; Dependency Release Evidence; Source Verification Block; Roadmap-to-Work-Order Trace Matrix; Agent Handoff Contract Control Block |
 | gateRunPurpose | confirm the pre-read machine-visible hold without fabricating dependency evidence |
-| claimBoundary | this held packet is not dispatch authorization |
+| claimBoundary | dispatch authorization only; no completion claim |
+
+## Scaffold Provenance Block
+
+| Field | Value |
+|---|---|
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind generic-worker-dispatch --batch-id SOT3-T7 --title "Semantic Value Audit And Closeout" --date 2026-07-13 --base 2c4c498da --commit-mode WORKER_MUST_NOT_COMMIT --stdout --include-worker-return-skeleton` |
+| generatedProfile | no-commit docs/evidence audit worker |
+| generatedSkeletonStatus | NOT_USED_WITH_REASON |
+| manualEditsAfterScaffold | Refreshed held packet using current T6 closure evidence and T7 audit requirements. |
+| checkerReadAheadConfirmation | dispatch, corpus, rescan, handoff, worker-return guards |
+| docOnlyNewFields | T7 audit outputs only |
+| claimBoundary | dispatch only; no semantic closure proof |
 
 ## Commit Prompt Readiness
 
-NOT_READY_WITH_REASON: T6 closure and fresh T7 baseline are missing.
+Pre-dispatch passed on the refreshed packet; worker must still capture its own
+execution base and clean start status.
 
 ## External Knowledge Intake Routing
 
