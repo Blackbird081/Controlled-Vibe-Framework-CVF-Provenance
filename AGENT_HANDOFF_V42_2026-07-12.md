@@ -17,10 +17,11 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t5_truth_flow_dispatched`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one SOT3-T5
-WORKER_MUST_NOT_COMMIT execution from `231bc8aea`; parked checkpoint=T6-T7, activation,
-provider/live, public, monitor, database, adapter, and unrelated Catalog/GAP work.
+Startup acknowledged: current mode=`sot3_t8_packet_binding_contract_packet_authoring_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh SOT3-T8
+GC-018 and source-verified no-commit work-order authoring; parked checkpoint=T8
+implementation before pre-dispatch, activation, provider/live, public, monitor,
+database, adapter, and unrelated Catalog/GAP work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -35,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_t5_truth_flow_dispatched`
+`sot3_t8_packet_binding_contract_packet_authoring_next`
 
 ## Latest Work / Changes
 
@@ -59,7 +60,9 @@ The refreshed T5 packet passed 75/75 pre-dispatch and is committed at
 
 ## Next Allowed Move
 
-Execute exactly one no-commit T5 tranche from `231bc8aea`. T6-T7 remain held.
+Author fresh SOT3-T8 GC-018 and a source-verified no-commit work order for the
+shared Refinery-to-Kernel packet-binding contract GAP. Implementation remains
+unauthorized before pre-dispatch.
 
 ## Active Boundary
 
@@ -319,3 +322,34 @@ Protected paths:
 Operator authorization: continue T7 execution and review.
 
 Rollback boundary: revert only this anchor; retain packet commit `81955f371`.
+
+## SOT3-T7 Closure And T8 Route - 2026-07-13
+
+T7 is reviewer-accepted at material commit `5d7318098`. The main 305-file SOT3
+absorption roadmap is closed boundedly: all source items are terminal and
+unresolved semantic source value is zero. The shared Refinery-to-Kernel
+packet-binding contract remains an open architecture GAP. The next allowed
+move is fresh SOT3-T8 GC-018 and source-verified no-commit work-order
+authoring. Activation, adapters, provider/live, and public-sync remain held.
+Roadmap closure reconciliation commit: `f017dc775`.
+
+## Core Guard Self-Protection Authorization - SOT3-T7 Closure Sync
+
+Authorized guard-maintenance scope: synchronize the accepted T7 closure and
+T8 next-move route across canonical session front doors after material commit
+`5d7318098`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T7Closure20260713.json`
+
+Operator authorization: process T7 and proceed to the next tranche.
+
+Rollback boundary: revert only this closure/session-sync batch; retain T7
+material commit `5d7318098` and the open packet-binding GAP record.

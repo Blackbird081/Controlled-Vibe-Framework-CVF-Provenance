@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t5_truth_flow_dispatched`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one SOT3-T5 WORKER_MUST_NOT_COMMIT execution from `231bc8aea`; parked checkpoint=T6-T7, activation, monitor, database, adapters, provider/live, public, and unrelated Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_t8_packet_binding_contract_packet_authoring_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh SOT3-T8 GC-018 and source-verified no-commit work-order authoring; parked checkpoint=implementation before pre-dispatch, activation, monitor, database, adapters, provider/live, public, and unrelated Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_t5_truth_flow_dispatched`
+Current mode marker: `sot3_t8_packet_binding_contract_packet_authoring_next`
 
-Current mode: `sot3_t5_truth_flow_dispatched`
+Current mode: `sot3_t8_packet_binding_contract_packet_authoring_next`
 
-`sot3_t5_truth_flow_dispatched`
+`sot3_t8_packet_binding_contract_packet_authoring_next`
 
 Previous mode:
 
-`sot3_t5_truth_flow_packet_refresh_next`
+`sot3_t7_semantic_value_audit_closed_pass_bounded`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T7 semantic-value audit and main roadmap closure | `5d7318098` | CLOSED_PASS_BOUNDED; 305 terminal items, zero unresolved semantic source value; packet-binding architecture GAP remains open and routes to T8 packet authoring. |
 | SOT3-T5 post-Kernel Truth Flow dispatch | `231bc8aea` | DISPATCH_READY after T4R1; one no-commit worker; T6-T7 held. |
 | SOT3-T4R1 Kernel current-reference authority repair closure | `cda8fec64` | REVIEWER_ACCEPTED_BOUNDED; 7 suites/54 tests; T5 packet refresh only next. |
 | SOT3-T4R1 Kernel current-reference authority repair dispatch | `f667f1daa` | DISPATCH_READY; T5 held at `76f1ea998`; one no-commit worker. |
@@ -148,11 +149,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t5_truth_flow_dispatched`
+Mode: `sot3_t8_packet_binding_contract_packet_authoring_next`
 
-Execute exactly one SOT3-T5 `WORKER_MUST_NOT_COMMIT` post-Kernel Truth Flow
-tranche from dispatch commit `231bc8aea`. T6-T7 and activation/provider/public
-work remain held.
+Author fresh SOT3-T8 GC-018 and a source-verified `WORKER_MUST_NOT_COMMIT`
+work order for the shared Refinery-to-Kernel packet-binding contract GAP.
+Implementation before pre-dispatch, activation, adapters, provider/live,
+public-sync, and unrelated GAP mutation remain held.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

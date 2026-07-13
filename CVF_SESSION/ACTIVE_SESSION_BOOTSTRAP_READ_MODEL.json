@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_t5_truth_flow_dispatched",
+  "currentMode": "sot3_t8_packet_binding_contract_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V42_2026-07-12.md",
-  "nextAllowedMove": "Execute exactly one SOT3-T5 WORKER_MUST_NOT_COMMIT post-Kernel Truth Flow tranche from dispatch commit 231bc8aea and return COMPLETE_PENDING_REVIEW. T6-T7, activation, adapters, provider/live, and public work remain held. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author a fresh SOT3-T8 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for the shared Refinery-to-Kernel packet-binding contract GAP. Do not implement before pre-dispatch. Activation, adapters, provider/live, public-sync, and unrelated GAP mutation remain held. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

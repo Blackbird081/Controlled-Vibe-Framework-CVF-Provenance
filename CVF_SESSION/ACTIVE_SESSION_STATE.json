@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t5_truth_flow_dispatched",
-  "previousMode": "sot3_t5_truth_flow_packet_refresh_next",
+  "currentMode": "sot3_t8_packet_binding_contract_packet_authoring_next",
+  "previousMode": "sot3_t7_semantic_value_audit_closed_pass_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11305,7 +11305,7 @@
     "nextAllowedMove": "one bounded deterministic SOT3-T4 Kernel execution and no-commit worker return",
     "claimBoundary": "T4 Kernel only; T5-T7, activation, Flow, monitors, database, adapters, provider/live and public remain held"
   },
-  "nextAllowedMove": "Execute exactly one SOT3-T5 WORKER_MUST_NOT_COMMIT post-Kernel Truth Flow tranche from dispatch commit 231bc8aea and return COMPLETE_PENDING_REVIEW. T6-T7, activation, adapters, provider/live, and public work remain held. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author a fresh SOT3-T8 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for the shared Refinery-to-Kernel packet-binding contract GAP. Do not implement before pre-dispatch. Activation, adapters, provider/live, public-sync, and unrelated GAP mutation remain held. LHW24 remains latest closed numbered LHW wave.",
   "sot3T4Closure20260712": {
     "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
     "date": "2026-07-12",
@@ -11346,5 +11346,16 @@
     "prerequisiteCommit": "cda8fec64",
     "nextAllowedMove": "one bounded post-Kernel Truth Flow worker return",
     "claimBoundary": "T6-T7 and activation/provider/public remain held"
+  },
+  "sot3T7Closure20260713": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-13",
+    "materialCommit": "5d7318098",
+    "roadmap": "docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md",
+    "completionReview": "docs/reviews/CVF_SOT3_T7_SEMANTIC_VALUE_AUDIT_CLOSEOUT_COMPLETION_2026-07-13.md",
+    "corpusDisposition": "305 terminal source items and zero unresolved semantic source value",
+    "remainingGap": "shared Refinery-to-Kernel packet-binding contract remains OPEN_CONFIRMED_GAP",
+    "nextAllowedMove": "fresh SOT3-T8 GC-018 and source-verified no-commit work-order authoring",
+    "claimBoundary": "no activation, adapters, provider/live, public-sync, or runtime adoption"
   }
 }
