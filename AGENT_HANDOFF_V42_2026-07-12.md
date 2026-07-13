@@ -17,10 +17,10 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a3_closed_bounded_a4_packet_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A4
-GC-018 and source-verified work-order authoring; parked checkpoint=A4
-implementation, A5, final live-governance claim, release, public, production,
+Startup acknowledged: current mode=`sot3_activation_a4_dispatched_worker_execution_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit
+A4 worker execution from dispatch commit `f91622aa9`; parked checkpoint=A4
+review/closure, A5, final live-governance claim, release, public, production,
 distributed-durability, and user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
@@ -36,9 +36,38 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a3_closed_bounded_a4_packet_next`
+`sot3_activation_a4_dispatched_worker_execution_next`
 
 ## Latest Work / Changes
+
+SOT3-ACT-A4 failure/recovery GC-018 and source-verified work order are
+committed at `f91622aa9`. Pre-dispatch passed 75/75 and pre-commit passed
+83/83. The packet requires local negative proof before live recovery, strict
+Flow consumer binding, route-level zero-call ENFORCE rejection, restart/replay
+and rollback evidence, and one call per explicit live invocation. The worker
+must not commit. A5 and the final claim remain unauthorized.
+
+## Core Guard Self-Protection Authorization - SOT3 Activation A4 Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize the accepted A4 dispatch after
+packet commit `f91622aa9`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA4Dispatch20260713.json`
+
+Operator authorization: continue the dependency-ordered SOT3 activation work
+and dispatch one no-commit A4 worker execution.
+
+Rollback boundary: revert only this A4 dispatch continuity batch; retain A4
+packet commit `f91622aa9`, A3 material `4d9263c7d`, and all accepted A0-A2
+material.
 
 SOT3-T3 closed at `fea7e2bba` as `REVIEWER_ACCEPTED_AFTER_REPAIR` with
 typecheck/build and 4 suites/19 tests PASS. Roadmap T4 release is `151812a07`;

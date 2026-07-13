@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1738,
+  "stateKey": "sot3ActivationA4Dispatch20260713",
+  "value": {
+    "status": "DISPATCH_READY",
+    "dispatchCommit": "f91622aa9",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A4_FAILURE_AND_RECOVERY_BOUNDARY_PROOF_2026-07-13.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "localNegativeGateBeforeLive": true,
+    "provider": "alibaba",
+    "numericCallQuota": "UNMETERED_BY_OPERATOR",
+    "perInvocationCallLimit": 1,
+    "nextAllowedMove": "one bounded no-commit A4 worker execution and COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON return",
+    "claimBoundary": "A4 worker evidence remains pending review; A5 and final LIVE_GOVERNANCE_PROVEN_BOUNDED are unauthorized."
+  }
+}
