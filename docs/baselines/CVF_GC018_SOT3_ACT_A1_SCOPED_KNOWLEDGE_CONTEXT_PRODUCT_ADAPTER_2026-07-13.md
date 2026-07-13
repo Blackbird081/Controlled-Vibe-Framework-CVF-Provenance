@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -55,7 +55,7 @@ tests, audit evidence, and reviewer-owned commit.
 
 ## Decision / Baseline / Proposed Tranche
 
-DISPATCH_READY: one no-commit A1 implementation. A2 persistence, external
+CLOSED_PASS_BOUNDED: one no-commit A1 implementation. A2 persistence, external
 provider invocation, A3-A5 proof, public export, and readiness claims remain
 outside this baseline.
 
@@ -150,7 +150,7 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "Work-
 
 Returned defectIds: ADIF-0001, ADIF-0002, ADIF-0006, ADIF-0007,
 ADIF-0014, ADIF-0015, ADIF-0016, ADIF-0017, ADIF-0020, ADIF-0021,
-ADIF-0024.
+ADIF-0024, ADIF-0028.
 
 ## Checker Source Read-Ahead Block
 
@@ -183,6 +183,19 @@ ADIF-0024.
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md` | `Status: A1_CLOSED_PASS_BOUNDED_A2_PACKET_NEXT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/README.md` | existing registry front door | PASS |
+| External evidence digest | N/A with reason: local non-live implementation | N/A | N/A with reason |
+| System loop interlock | N/A with reason: no automated loop edge | N/A | N/A with reason |
+| Session continuity | separate post-material session sync | pending until material commit | N/A with reason |
 
 Reason: private-provenance product integration only; no public-sync mutation.
 

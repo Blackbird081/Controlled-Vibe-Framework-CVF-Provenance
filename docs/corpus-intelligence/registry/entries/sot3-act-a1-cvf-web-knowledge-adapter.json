@@ -1,0 +1,45 @@
+{
+  "registryOrder": 141,
+  "id": "sot3-act-a1-cvf-web-knowledge-adapter",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "SOT3-ACT-A1 CVF Web scoped knowledge adapter surfaces",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/next.config.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-knowledge-context.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-knowledge-context.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.knowledge.test.ts"
+  ],
+  "fileCount": 10,
+  "status": "SCANNED",
+  "scanWave": "SOT3-ACT-A1",
+  "scanDate": "2026-07-13",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_WORKER_RETURN_2026-07-13.md",
+  "completionReviewPath": "docs/reviews/CVF_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_COMPLETION_2026-07-13.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_2026-07-13.md",
+  "verdicts": {
+    "gc047": "N/A",
+    "gc048": "N/A",
+    "gc050": "N/A"
+  },
+  "semanticRegions": [
+    "SOT3_PRODUCT_ADAPTER",
+    "SCOPED_KNOWLEDGE_CONTEXT",
+    "REFINERY_KERNEL_FLOW_ACTIVATION"
+  ],
+  "priorAbsorption": "A1 wires the accepted SOT3 owner packages into one OFF-by-default CVF Web knowledge-context seam, with one complete lifecycle per chunk, local audit projection, mocked-provider tests, and no durable or live-provider claim.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw context fallback after ENFORCE rejection",
+    "one evidence record authorizes multiple unrelated chunks",
+    "live provider proof in A1"
+  ],
+  "nextScanRecommendation": "Reopen these surfaces only for A2 durable evidence source verification or a later source-verified product-adapter change."
+}

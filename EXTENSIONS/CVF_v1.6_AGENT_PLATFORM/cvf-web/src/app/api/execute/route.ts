@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { executeAI, CVF_SYSTEM_PROMPT, type AIProvider, type ExecutionRequest, type ExecutionResponse } from '@/lib/ai';
+import { executeAI, type AIProvider, type ExecutionRequest, type ExecutionResponse } from '@/lib/ai';
 import { evaluateEnforcement } from '@/lib/enforcement';
 import { getTemplateById } from '@/lib/templates';
 import { verifySessionCookie } from '@/lib/middleware-auth';
@@ -12,7 +12,6 @@ import { getSharedGuardEngine } from '@/lib/guard-engine-singleton';
 import { validateOutput, shouldRetry, type ValidationResult, type RetryState } from '@/lib/output-validator';
 import { routeWebProvider } from '@/lib/ai/provider-router-adapter';
 import { lookupGuidedResponse } from './guided.response.registry';
-import { buildKnowledgeSystemPrompt, hasKnowledgeContext } from '@/lib/knowledge-context-injector';
 import { buildAifMemoryReinjectionSystemPrompt, evaluateAifMemoryReinjection } from '@/lib/aif-memory-reinjection';
 import { appendAifMemoryReinjectionAudit, buildAifMemoryReinjectionDeniedResponse } from '@/lib/aif-memory-reinjection-route';
 import { buildExecutionPrompt } from '@/lib/execute-prompt-contract';
@@ -21,7 +20,7 @@ import { appendAuditEvent } from '@/lib/control-plane-events';
 import { applyDLPFilter } from '@/lib/dlp-filter';
 import { withSessionAuditPayload } from '@/lib/middleware-auth';
 import { resolveAlibabaApiKey } from '@/lib/alibaba-env';
-import { formatKnowledgeChunks, queryKnowledgeChunks } from '@/lib/knowledge-retrieval';
+import { blockInlineKnowledgeContextBypass, resolveKnowledgeContext } from './route-knowledge-context';
 import { buildEvidenceReceipt, buildGovernanceEnvelope } from '@/lib/web-governance-envelope';
 import { deriveServiceTokenIdentity, verifyServiceTokenRequest } from '@/lib/service-token-auth';
 import { hasValidationRetryBudget, resolveExecutionMaxTokens } from '@/lib/execute-route-budget';
@@ -165,29 +164,8 @@ export async function POST(request: NextRequest) {
                 { status: 400 }
             );
         }
-        if (!session && isServiceAllowed && typeof body.knowledgeContext === 'string' && body.knowledgeContext.trim()) {
-            await appendAuditEvent({
-                eventType: 'INLINE_KNOWLEDGE_CONTEXT_BLOCKED',
-                actorId: 'service-account',
-                actorRole: 'service',
-                targetResource: body.templateName || body.templateId || 'unknown-template',
-                action: 'BLOCK_INLINE_KNOWLEDGE_CONTEXT',
-                riskLevel: body.cvfRiskLevel ?? 'R2',
-                phase: body.cvfPhase ?? 'PHASE D',
-                outcome: 'BLOCKED',
-                payload: {
-                    reason: 'service-token-inline-knowledge-disabled',
-                },
-            });
-
-            return NextResponse.json(
-                {
-                    success: false,
-                    error: 'Inline knowledgeContext is no longer accepted for service-token execution. Use scoped retrieval instead.',
-                },
-                { status: 400 },
-            );
-        }
+        const inlineKnowledgeContextBlockResponse = await blockInlineKnowledgeContextBypass({ session, isServiceAllowed, knowledgeContext: body.knowledgeContext, templateLabel: body.templateName || body.templateId || 'unknown-template', riskLevel: body.cvfRiskLevel, phase: body.cvfPhase });
+        if (inlineKnowledgeContextBlockResponse) return inlineKnowledgeContextBlockResponse;
         // Get provider config from environment or request
         const provider: AIProvider = body.provider ||
             (process.env.DEFAULT_AI_PROVIDER as AIProvider) || 'openai';
@@ -705,24 +683,15 @@ export async function POST(request: NextRequest) {
         const routedApiKey = apiKeyMap[routedProvider];
         const executionMaxTokens = resolveExecutionMaxTokens(executionTemplateId, routedProvider, body.model);
 
-        // ── KNOWLEDGE RETRIEVAL + TENANT PARTITION ENFORCEMENT ────────────────────
-        const retrievalResult = await queryKnowledgeChunks({
+        // -- KNOWLEDGE RETRIEVAL + TENANT PARTITION ENFORCEMENT + SOT3 ACTIVATION --
+        const { retrievalResult, finalKnowledgeContext, knowledgeInjected, knowledgeSource, knowledgeSystemPrompt, requestedKnowledgeCollectionId } = await resolveKnowledgeContext({
             intent: body.intent!,
             orgId: session?.orgId,
             teamId: session?.teamId,
-            collectionId: typeof body.knowledgeCollectionId === 'string' ? body.knowledgeCollectionId : undefined,
+            requestedCollectionId: typeof body.knowledgeCollectionId === 'string' ? body.knowledgeCollectionId : undefined,
+            templateLabel: body.templateName || body.templateId || 'unknown-template',
+            session,
         });
-        const retrievedKnowledgeContext = formatKnowledgeChunks(retrievalResult.chunks);
-        const finalKnowledgeContext = retrievedKnowledgeContext ?? undefined;
-        const requestedKnowledgeCollectionId =
-            typeof body.knowledgeCollectionId === 'string' && body.knowledgeCollectionId.trim()
-                ? body.knowledgeCollectionId.trim()
-                : null;
-        const knowledgeInjected = hasKnowledgeContext(finalKnowledgeContext);
-        const knowledgeSource = knowledgeInjected ? 'retrieval' : 'none';
-        const knowledgeSystemPrompt = knowledgeInjected
-            ? buildKnowledgeSystemPrompt(CVF_SYSTEM_PROMPT, finalKnowledgeContext, { orgId: session?.orgId, teamId: session?.teamId })
-            : CVF_SYSTEM_PROMPT;
         const durableMemoryRoute = evaluateDurableMemoryRoute({ request: body, actorId: executionActorId, actorRole: resolveDurableMemoryActorRole(resolvedExecutionRole.role), defaultQuery: body.intent! });
         const durableMemorySystemPrompt = durableMemoryRoute.promptBlock ? buildDurableMemorySystemPrompt(knowledgeSystemPrompt, durableMemoryRoute.promptBlock) : knowledgeSystemPrompt;
         const aifMemoryReinjection = evaluateAifMemoryReinjection(body.aifMemoryReinjection);
@@ -733,28 +702,6 @@ export async function POST(request: NextRequest) {
         }
 
         const enrichedSystemPrompt = aifMemoryReinjection.promptBlock ? buildAifMemoryReinjectionSystemPrompt(durableMemorySystemPrompt, aifMemoryReinjection.promptBlock) : knowledgeInjected || durableMemoryRoute.injected ? durableMemorySystemPrompt : undefined;
-
-        if (retrievalResult.droppedChunkCount > 0) {
-            await appendAuditEvent({
-                eventType: 'KNOWLEDGE_SCOPE_FILTER_APPLIED',
-                actorId: session?.userId ?? 'service-account',
-                actorRole: session?.role ?? 'service',
-                targetResource: body.templateName || body.templateId || 'unknown-template',
-                action: 'FILTER_KNOWLEDGE_SCOPE',
-                riskLevel: 'R2',
-                phase: 'PHASE D',
-                outcome: 'FILTERED',
-                payload: withSessionAuditPayload(session, {
-                    requestedOrgId: session?.orgId ?? null,
-                    requestedTeamId: session?.teamId ?? null,
-                    retrievedChunkCount: retrievalResult.matchedChunkCount,
-                    allowedChunkCount: retrievalResult.allowedChunkCount,
-                    droppedChunkCount: retrievalResult.droppedChunkCount,
-                    allowedCollectionIds: retrievalResult.allowedCollectionIds,
-                    droppedCollectionIds: retrievalResult.droppedCollectionIds,
-                }),
-            });
-        }
 
         if (!routedApiKey) {
             const governanceEvidenceReceipt = buildEvidenceReceipt({

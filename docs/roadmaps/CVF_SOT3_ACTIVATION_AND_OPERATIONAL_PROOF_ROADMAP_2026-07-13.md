@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: A0_PASS_BOUNDED_A1_PACKET_NEXT
+Status: A1_CLOSED_PASS_BOUNDED_A2_PACKET_NEXT
 
 docType: roadmap
 
@@ -89,7 +89,7 @@ or supersede truth state.
 | Source verification | every packet verifies current route, package, store, test, and release symbols |
 | Claim boundary | final claim is bounded to the selected path, scenario, provider lane, environment, and evidence window |
 | Acceptance evidence | local tests, durable replay, provider evidence, zero-call rejection evidence, release manifest |
-| Dispatch readiness | only A0 passed; A1 requires fresh GC-018 and a source-verified work order |
+| Dispatch readiness | A1 closed boundedly; A2 requires fresh GC-018 and a source-verified work order |
 
 ## Tranche Plan
 
@@ -289,8 +289,9 @@ or a result-changing repair.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance activation and live proof only. Public export needs a
-separate decision after closure.
+Reason: private provenance activation and live proof only. No public-sync
+repository mutation is authorized; public export needs a separate decision
+after closure.
 
 ## Claim Boundary
 
@@ -305,8 +306,8 @@ fit, or user validation.
 
 ## Next Allowed Move
 
-Create a fresh A1 GC-018 and source-verified work order. Do not implement A1
-directly from this roadmap.
+Create a fresh A2 GC-018 and source-verified work order for durable,
+restart-safe evidence. Do not implement A2 directly from this roadmap.
 
 ## Checker Source Read-Ahead Block
 
@@ -350,15 +351,24 @@ Returned defectIds: none.
 
 ## Machine Closure Package
 
-| Field | Value |
-|---|---|
-| Roadmap state | `Status: A0_PASS_BOUNDED_A1_PACKET_NEXT` |
-| Closed tranche | A0 only |
-| Open tranches | A1, A2, A3, A4, A5 |
-| Current claim | `IMPLEMENTED_AND_INTEGRATION_PROVEN_LOCAL` |
-| Target claim | `LIVE_GOVERNANCE_PROVEN_BOUNDED` |
-| Next allowed move | fresh A1 GC-018 and work order authoring |
-| Public export | `DEFERRED_PRIVATE_ONLY` |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: A1_CLOSED_PASS_BOUNDED_A2_PACKET_NEXT`; A0 and A1 closed; A2-A5 open | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/README.md` | existing registry front door | PASS |
+| External evidence digest | N/A with reason: A1 is local non-live implementation | N/A | N/A with reason |
+| System loop interlock | N/A with reason: no automated loop edge | N/A | N/A with reason |
+| Session continuity | separate post-material session sync | pending until material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| A1 must not claim durable receipt evidence | local adapter IDs and non-live test evidence only | PASS |
+| A2 owns restart-safe receipt persistence | A2 remains open and is the next packet-authoring move | PASS |
+| A3-A5 receipt acceptance remains unclaimed | all live and release tranches remain open | PASS |
 
 ## Agent Operation Trace Block
 

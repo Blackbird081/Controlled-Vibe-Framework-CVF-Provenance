@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -14,9 +14,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 dispatchBaseHead: `e4d56f2be`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `5ef2b597b`
 
-closureBaseHead: `REVIEWER_MUST_CAPTURE_AT_CLOSURE`
+closureBaseHead: `5ef2b597b`
 
 Worker return path: `docs/reviews/CVF_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_WORKER_RETURN_2026-07-13.md`
 
@@ -464,7 +464,7 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "Work-
 
 Returned defectIds: ADIF-0001, ADIF-0002, ADIF-0006, ADIF-0007,
 ADIF-0014, ADIF-0015, ADIF-0016, ADIF-0017, ADIF-0020, ADIF-0021,
-ADIF-0024.
+ADIF-0024, ADIF-0028.
 
 ## Checker Source Read-Ahead Block
 
@@ -525,6 +525,26 @@ Reason: private-provenance A1 implementation and local proof only.
 Successful A1 closure may claim `PRODUCT_PATH_WIRED_LOCAL` only. It cannot
 claim durable operational evidence, live provider behavior,
 `LIVE_GOVERNANCE_PROVEN_BOUNDED`, production readiness, or user validation.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md` | `Status: A1_CLOSED_PASS_BOUNDED_A2_PACKET_NEXT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/README.md` | existing registry front door | PASS |
+| External evidence digest | N/A with reason: local non-live implementation | N/A | N/A with reason |
+| System loop interlock | N/A with reason: no automated loop edge | N/A | N/A with reason |
+| Session continuity | separate post-material session sync | pending until material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| No durable or live receipt claim in A1 | local IDs and mocked-provider test evidence only | PASS |
+| Durable receipt work remains in A2 | roadmap keeps A2 open and next | PASS |
 
 ## Agent Operation Trace Block
 
