@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a4_repaired_worker_reexecution_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one fresh no-commit A4 worker execution from repair commit 698eaf587; parked checkpoint=A4 review/closure, A5, final live-governance claim, release, public, production, and user validation.
+Startup acknowledged: current mode=`sot3_activation_a4_closed_a5_packet_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A5 GC-018 and source-verified work-order authoring; parked checkpoint=A5 implementation, final live-governance claim, release, public, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `sot3_activation_a4_repaired_worker_reexecution_next`
+Current mode marker: `sot3_activation_a4_closed_a5_packet_next`
 
-Current mode: `sot3_activation_a4_repaired_worker_reexecution_next`
+Current mode: `sot3_activation_a4_closed_a5_packet_next`
 
-`sot3_activation_a4_repaired_worker_reexecution_next`
+`sot3_activation_a4_closed_a5_packet_next`
 
 Previous mode:
 
-`sot3_activation_a4_dispatched_worker_execution_next`
+`sot3_activation_a4_repaired_worker_reexecution_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 activation A4 failure/recovery closure | `cab8133ea` | CLOSED_PASS_BOUNDED after R2 reviewer repair; 19/19 local rows GREEN, 18 zero-call rows, one rollback spy call, one retained Alibaba HTTP 200 recovery; claim `SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED`; A5 packet authoring next. |
 | SOT3 activation A4 bounded manifest repair | `698eaf587` | Valid blocker accepted; existing route regression added to writable manifest; ADIF-0031 recorded; fresh worker execution next. |
 | SOT3 activation A4 failure/recovery dispatch | `f91622aa9` | DISPATCH_READY; strict Flow consumption binding, ENFORCE zero-call rejection, negative/replay/restart/rollback matrix, and local-gate-before-live recovery; worker must not commit. |
 | SOT3 activation A3 real-provider approved-context proof closure | `4d9263c7d` | CLOSED_PASS_BOUNDED after runner guard and recovery; Alibaba qwen-turbo HTTP 200, one recovery call, approved-context hash inclusion, complete governance/SOT3 correlation; claim `REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED`; A4 packet authoring next. |
@@ -161,13 +162,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_activation_a4_repaired_worker_reexecution_next`
+Mode: `sot3_activation_a4_closed_a5_packet_next`
 
-SOT3-ACT-A4 bounded repair is committed at `698eaf587`. The first worker
-correctly stopped before edits because an existing rejected regression was
-outside the writable manifest. The repaired packet adds that exact path and
-ADIF-0031. The next move is one fresh no-commit worker execution. Local
-negative proof remains mandatory before Alibaba recovery. A5 and the final
+SOT3-ACT-A4 closed at `cab8133ea` as `CLOSED_PASS_BOUNDED`. The accepted
+evidence has 19/19 local rows GREEN, 18 zero-call rows, one rollback spy call,
+and one retained Alibaba HTTP 200 recovery. The next move is fresh A5 GC-018
+and source-verified work-order authoring only. A5 implementation and the final
 `LIVE_GOVERNANCE_PROVEN_BOUNDED` claim remain unauthorized.
 Latest closed numbered LHW wave remains `LHW24`.
 

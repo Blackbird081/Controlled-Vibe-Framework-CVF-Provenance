@@ -17,11 +17,11 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a4_repaired_worker_reexecution_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one fresh
-no-commit A4 worker execution from repair commit `698eaf587`; parked checkpoint=A4
-review/closure, A5, final live-governance claim, release, public, production,
-distributed-durability, and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a4_closed_a5_packet_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A5
+GC-018 and source-verified work-order authoring; parked checkpoint=A5
+implementation, final live-governance claim, release, public, production,
+scale, distributed-durability, and user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -36,16 +36,39 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a4_repaired_worker_reexecution_next`
+`sot3_activation_a4_closed_a5_packet_next`
 
 ## Latest Work / Changes
 
-The first A4 worker return correctly stopped on a manifest contradiction
-before code edits or live calls. Bounded repair `698eaf587` adds the existing
-`route.knowledge.test.ts` regression to writable scope, requires 409 plus zero
-provider calls for ENFORCE missing provenance, preserves the blocked return,
-and records ADIF-0031. Pre-dispatch and pre-commit are green. One fresh
-no-commit worker execution is next; A5/final claim remain unauthorized.
+SOT3-ACT-A4 closed at material commit `cab8133ea` as
+`CLOSED_PASS_BOUNDED`. Reviewer R2 reconciled the public export path, real
+Kernel wrong-packet mapping, and rollback denominator without another live
+call. Final evidence has 19/19 local rows GREEN, 18 zero-call rows, one
+rollback provider-spy call, and one retained Alibaba `qwen-turbo` HTTP 200
+recovery with approved-context and owner-chain correlation. The bounded claim
+is `SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED`. Fresh A5 packet authoring is next;
+A5 implementation and the final claim remain unauthorized.
+
+## Core Guard Self-Protection Authorization - SOT3 Activation A4 Closure Sync
+
+Authorized guard-maintenance scope: synchronize accepted A4 closure after
+material commit `cab8133ea`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA4Closure20260713.json`
+
+Operator authorization: process the A4 worker return and continue the
+dependency-ordered activation sequence.
+
+Rollback boundary: revert only this closure continuity batch; retain A4
+material commit `cab8133ea`, repair commit `698eaf587`, and A3 closure.
 
 ## Core Guard Self-Protection Authorization - SOT3 A4 Repair Sync
 
