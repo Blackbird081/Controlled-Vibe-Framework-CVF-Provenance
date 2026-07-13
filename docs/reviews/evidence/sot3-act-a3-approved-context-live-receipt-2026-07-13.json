@@ -1,0 +1,60 @@
+{
+  "batchId": "SOT3-ACT-A3",
+  "callBudget": {
+    "attempts": [],
+    "diagnosticGatedRetryBudget": 1,
+    "observedCallCount": 3,
+    "plannedCallBudget": 1,
+    "hardCeiling": 2,
+    "callBudgetBreach": true,
+    "callBudgetNote": "3 real DashScope calls occurred this task during live-test authoring/debugging (one failing on a test-fixture defect unrelated to the provider, one passing after an intent-token fix, one accidental re-run while inspecting vitest config). None of the three runs captured the observation side-file needed to populate providerProof/correlation/contextObservation without a further live call, so this receipt is BLOCKED rather than fabricated. observedCallCount records the total DashScope calls made this task, not calls made by this specific runner invocation (which made zero)."
+  },
+  "claim": "N/A with reason: overall is BLOCKED; no A3 proof claim is made",
+  "contextObservation": {
+    "approvedContextHash": null,
+    "approvedContextIncluded": null,
+    "providerRequestObserved": false,
+    "providerSystemPromptHash": null,
+    "rawPromptPersisted": false
+  },
+  "correlation": {
+    "envelopeId": null,
+    "flowPackageIds": [],
+    "governanceReceiptId": null,
+    "kernelDecisionIds": [],
+    "packetIds": [],
+    "sot3IntegrityHash": null,
+    "sot3RecordId": null,
+    "sot3RequestId": null,
+    "traceCount": null,
+    "truthReceiptIds": [],
+    "truthReferenceIds": []
+  },
+  "diagnostic": {
+    "class": "unknown_error",
+    "retryable": false,
+    "safeMessage": "Call-budget ceiling breach: 3 real DashScope calls occurred this task against a hard ceiling of 2 (1 planned plus 1 diagnostic-gated retry). The second call (after a documented intent-token fixture fix) passed all in-test assertions including exactly-one-call-per-invocation, but no observation side-file was captured to disk during any of the three runs, so this receipt cannot be populated with real provider/correlation values without a further live call, which is forbidden. Reported BLOCKED rather than fabricated.",
+    "stage": "governance",
+    "userAction": "do_not_retry_without_new_evidence"
+  },
+  "executionBaseHead": "082e65eed",
+  "finishedAtUtc": "2026-07-13T09:58:52.942563+00:00",
+  "overall": "BLOCKED",
+  "providerProof": {
+    "httpStatus": null,
+    "keyAliasUsed": "ALIBABA_API_KEY",
+    "latencyMs": null,
+    "model": "qwen-turbo",
+    "outputLength": null,
+    "provider": "alibaba",
+    "success": false
+  },
+  "schemaVersion": "cvf.sot3ActA3LiveReceipt.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "startedAtUtc": "2026-07-13T09:58:52.942563+00:00"
+}
