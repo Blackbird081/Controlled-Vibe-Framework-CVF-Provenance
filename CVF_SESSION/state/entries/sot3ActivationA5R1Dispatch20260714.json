@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1748,
+  "stateKey": "sot3ActivationA5R1Dispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "packetCommit": "a036ce891",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_2026-07-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_2026-07-13.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "preDispatchChecks": "75/75 PASS",
+    "preCommitChecks": "83/83 PASS",
+    "reviewRepairs": "real next-dev regression, explicit webpack repair surface, invocation-versus-provider-call accounting, source and actor provenance corrections",
+    "nextAllowedMove": "one no-commit A5R1 worker execution",
+    "claimBoundary": "Final LIVE_GOVERNANCE_PROVEN_BOUNDED remains reviewer-reserved; no public, production, scale, or user-validation claim."
+  }
+}

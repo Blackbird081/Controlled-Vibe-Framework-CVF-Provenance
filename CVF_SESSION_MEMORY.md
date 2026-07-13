@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a5_blocked_recovery_packet_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=Claude-authored bounded A5 recovery packet for the diagnosed Refinery-to-Next.js integration defect; parked checkpoint=post-repair canonical live rerun, final live-governance claim, public, production, scale, and user validation.
+Startup acknowledged: current mode=`sot3_activation_a5r1_dispatched_worker_execution_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit A5R1 worker execution from packet commit a036ce891; parked checkpoint=post-repair review, final live-governance claim, public, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `sot3_activation_a5_blocked_recovery_packet_next`
+Current mode marker: `sot3_activation_a5r1_dispatched_worker_execution_next`
 
-Current mode: `sot3_activation_a5_blocked_recovery_packet_next`
+Current mode: `sot3_activation_a5r1_dispatched_worker_execution_next`
 
-`sot3_activation_a5_blocked_recovery_packet_next`
+`sot3_activation_a5r1_dispatched_worker_execution_next`
 
 Previous mode:
 
-`sot3_activation_a5_dispatched_worker_execution_next`
+`sot3_activation_a5_blocked_recovery_packet_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 activation A5R1 bounded recovery dispatch | `a036ce891` | DISPATCH_READY after semantic repair, 75/75 pre-dispatch and 83/83 pre-commit PASS; real next-dev zero-provider regression, bounded four-file repair surface, one canonical invocation with measured provider calls; worker must not commit. |
 | SOT3 activation A5 blocked canonical release proof | `f038bcb81` | BLOCKED_WITH_REASON; SOT3 check PASS but canonical release FAIL; retained trace proves Next.js development bundling cannot resolve the Refinery source package `.js` import on the execute-route chain; no reviewer rerun; bounded recovery packet authoring next. |
 | SOT3 activation A5 canonical release-proof dispatch | `12f090798` | DISPATCH_READY; mandatory SOT3 release JSON/manifest, no mock bypass, no blind live retry, one planned canonical run; worker must not commit. |
 | SOT3 activation A4 failure/recovery closure | `cab8133ea` | CLOSED_PASS_BOUNDED after R2 reviewer repair; 19/19 local rows GREEN, 18 zero-call rows, one rollback spy call, one retained Alibaba HTTP 200 recovery; claim `SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED`; A5 packet authoring next. |
@@ -164,16 +165,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_activation_a5_blocked_recovery_packet_next`
+Mode: `sot3_activation_a5r1_dispatched_worker_execution_next`
 
-SOT3-ACT-A5 blocked material is committed at `f038bcb81`. The SOT3 check
-passed, but the canonical release result failed on a diagnosed
-Refinery-to-Next.js development-bundler integration defect. The next move is
-Claude-authored fresh GC-018 and a source-verified bounded recovery work order
-covering the package-consumption boundary and structured release-level
-diagnostic. Do not rerun live proof before a concrete result-changing local
-repair passes. Codex remains final reviewer. The
-`LIVE_GOVERNANCE_PROVEN_BOUNDED` claim remains unclaimed.
+SOT3-ACT-A5R1 recovery packet is committed at `a036ce891`. The next move is
+one no-commit worker execution from the governed A5R1 work order. The worker
+must reproduce and repair locally, pass the real `next dev` zero-provider
+regression and all package checks, then run exactly one canonical invocation
+with fresh 2026-07-14 evidence and measured provider calls by stage. Codex
+remains final reviewer. `LIVE_GOVERNANCE_PROVEN_BOUNDED` remains unclaimed.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

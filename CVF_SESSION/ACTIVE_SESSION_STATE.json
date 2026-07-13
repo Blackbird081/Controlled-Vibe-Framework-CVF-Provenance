@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_activation_a5_blocked_recovery_packet_next",
-  "previousMode": "sot3_activation_a5_dispatched_worker_execution_next",
+  "currentMode": "sot3_activation_a5r1_dispatched_worker_execution_next",
+  "previousMode": "sot3_activation_a5_blocked_recovery_packet_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11534,5 +11534,17 @@
     "nextAllowedMove": "Claude-authored fresh GC-018 and source-verified bounded recovery work order; Codex final review after worker execution",
     "claimBoundary": "LIVE_GOVERNANCE_PROVEN_BOUNDED and all public, production, scale, and user-validation claims remain unclaimed."
   },
-  "nextAllowedMove": "SOT3-ACT-A5 blocked evidence and mandatory release integration are retained at material commit f038bcb81. SOT3 itself passed, but the canonical release result failed because Next.js development bundling could not resolve the Refinery source package .js import specifier on the execute-route chain. Next allowed move is Claude-authored fresh GC-018 and source-verified bounded recovery work order covering the Refinery package-consumption boundary and structured release-level live-stage diagnostic. No live rerun is allowed until a concrete result-changing local repair passes. Codex remains final reviewer. LIVE_GOVERNANCE_PROVEN_BOUNDED, public, production, scale, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
+  "sot3ActivationA5R1Dispatch20260714": {
+    "status": "DISPATCH_READY",
+    "packetCommit": "a036ce891",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_2026-07-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_2026-07-13.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "preDispatchChecks": "75/75 PASS",
+    "preCommitChecks": "83/83 PASS",
+    "reviewRepairs": "real next-dev regression, explicit webpack repair surface, invocation-versus-provider-call accounting, source and actor provenance corrections",
+    "nextAllowedMove": "one no-commit A5R1 worker execution",
+    "claimBoundary": "Final LIVE_GOVERNANCE_PROVEN_BOUNDED remains reviewer-reserved; no public, production, scale, or user-validation claim."
+  },
+  "nextAllowedMove": "SOT3-ACT-A5R1 bounded recovery packet is DISPATCH_READY at commit a036ce891 after semantic review, 75/75 pre-dispatch checks, and 83/83 pre-commit checks. Next allowed move is one no-commit worker execution from docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_2026-07-13.md. The worker must reproduce locally, apply only the proven smallest repair, pass Refinery and web checks plus the real next-dev zero-provider regression, then run exactly one canonical invocation using fresh 2026-07-14 evidence paths and report actual provider calls by stage. Codex remains final reviewer. LIVE_GOVERNANCE_PROVEN_BOUNDED, public, production, scale, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
 }

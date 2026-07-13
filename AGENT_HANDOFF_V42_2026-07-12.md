@@ -17,12 +17,11 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a5_blocked_recovery_packet_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=Claude-authored
-bounded A5 recovery packet for the diagnosed Refinery-to-Next.js integration
-defect; parked checkpoint=post-repair canonical live rerun, final
-live-governance claim, public, production, scale, distributed-durability, and
-user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a5r1_dispatched_worker_execution_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit
+A5R1 worker execution from packet commit `a036ce891`; parked
+checkpoint=post-repair review, final live-governance claim, public,
+production, scale, distributed-durability, and user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -37,16 +36,37 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a5_blocked_recovery_packet_next`
+`sot3_activation_a5r1_dispatched_worker_execution_next`
 
 ## Latest Work / Changes
 
-SOT3-ACT-A5 blocked evidence and mandatory release integration are committed
-at `f038bcb81`. The SOT3-specific check passed, but the canonical release
-result failed because Next.js development bundling could not resolve the
-Refinery source package `.js` import on the execute-route chain. No reviewer
-live rerun occurred. Fresh bounded recovery packet authoring is next; final
+SOT3-ACT-A5R1 bounded recovery is dispatched at `a036ce891`. Semantic review
+required a real `next dev` zero-provider regression, an explicit webpack
+development repair surface, accurate invocation-versus-provider-call
+accounting, and corrected source/actor provenance. Pre-dispatch passed 75/75
+and pre-commit passed 83/83. One no-commit worker execution is next; final
 claim review remains parked.
+
+## Core Guard Self-Protection Authorization - SOT3 Activation A5R1 Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize the reviewed A5R1 dispatch
+after packet commit `a036ce891`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA5R1Dispatch20260714.json`
+
+Operator authorization: continue SOT3 A5 bounded recovery while retaining
+Codex as independent final reviewer.
+
+Rollback boundary: revert only this dispatch continuity batch; retain A5R1
+packet commit `a036ce891` and blocked A5 material `f038bcb81`.
 
 ## Core Guard Self-Protection Authorization - SOT3 Activation A5 Dispatch Sync
 
