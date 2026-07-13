@@ -1,4 +1,4 @@
-# CVF SOT3-T7 Completion Review
+# CVF SOT3-T7 Semantic Value Audit Closeout Completion Review
 
 Memory class: FULL_RECORD
 
@@ -7,6 +7,8 @@ docType: review
 Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-13
+
+Responds to work order: CVF_AGENT_WORK_ORDER_SOT3_T7_SEMANTIC_VALUE_AUDIT_CLOSEOUT_2026-07-13
 
 ## Purpose
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T6_VERTICAL_SLICE_PACKET_AUTHORING_NEXT
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -172,18 +172,21 @@ remain untrusted.
 
 ## Authorization / Decision
 
-SOT3-T0/T0R/T1/T2/T3/T4/T5 are reviewer-accepted. T2 canonical contracts closed at
+SOT3-T0/T0R/T1/T2/T3/T4/T5/T6/T7 are reviewer-accepted. T2 canonical contracts closed at
 material commit `9c7b05b40`; reverse architecture projection closed at
 `d394b6018`; the separate review-cost control closed at `ead8d7d51`; and the
 deterministic Refinery Core closed after bounded repair at `fea7e2bba`; and
 Truth Kernel hardening closed after bounded repair at `6bf81979b`; T4R1 closed
-at `cda8fec64`; and post-Kernel Truth Flow closed at `8a653370a`.
+at `cda8fec64`; post-Kernel Truth Flow closed at `8a653370a`; the three-layer
+vertical slice closed at `2c4c498da`; and semantic value closeout closed at
+`5d7318098`.
 
-Operator correction confirms that closing the auxiliary projection/review-cost
-roadmap did not close this main 305-file absorption roadmap. Authorization is
-now limited to fresh GC-018 and source-verified work-order authoring for
-SOT3-T6 three-layer vertical slice. T6 implementation remains unauthorized
-until that packet passes pre-dispatch. SOT3-T7 remains dependency-held.
+The main 305-file absorption roadmap is now closed boundedly. All source items
+have terminal dispositions and unresolved semantic source value is zero. This
+does not mean all architecture gaps are closed: the shared Refinery-to-Kernel
+packet-binding contract remains an explicit open GAP. The next allowed move is
+fresh GC-018 and source-verified work-order authoring for a separate SOT3-T8
+contract tranche; implementation remains unauthorized before pre-dispatch.
 
 ## Design Control Gate
 
@@ -196,7 +199,7 @@ until that packet passes pre-dispatch. SOT3-T7 remains dependency-held.
 | Claim boundary | external output remains advisory | PASS |
 | Acceptance criteria | source accounting, cross-layer map, contradictions, and dispositions observable | PASS |
 | Verification evidence | manifest arithmetic, body-read ledger, review report, and no-commit evidence | REQUIRED |
-| Dispatch readiness | T5 accepted at `8a653370a`; fresh SOT3-T6 GC-018 and source-verified work order must pass pre-dispatch | T6_PACKET_AUTHORING_RELEASED |
+| Dispatch readiness | T7 accepted at `5d7318098`; a separate T8 packet is required for the remaining packet-binding GAP | ROADMAP_CLOSED_T8_PACKET_AUTHORING_NEXT |
 
 ## Tranche Plan
 
@@ -212,20 +215,17 @@ until that packet passes pre-dispatch. SOT3-T7 remains dependency-held.
 | SOT3-T6 | three-layer vertical slice | internal, project, and market-source scenario across all contracts | end-to-end evidence preserves source, scope, conflict, receipt, route, and lifecycle |
 | SOT3-T7 | semantic value audit and closeout | complete conversion ledger and parked-value index reconciliation | all 305 source items terminal and unresolved value equals zero |
 
-SOT3-T0 through SOT3-T5 are accepted evidence, contract, and implementation
-tranches. SOT3-T6 packet authoring is released, but implementation remains
-unauthorized until its fresh GC-018 baseline and work order pass pre-dispatch.
-SOT3-T7 remains dependency-held until T6 is reviewer-accepted.
+SOT3-T0 through SOT3-T7 are accepted boundedly. The absorption roadmap is
+closed. A separate SOT3-T8 packet may address the remaining shared
+Refinery-to-Kernel packet-binding contract GAP; no T8 implementation is
+authorized by this closure.
 
 ## Work Plan
 
-1. Preserve accepted T0/T0R/T1/T2/T3/T4/T5 evidence and implementation owners.
-2. Author fresh SOT3-T6 GC-018 and source-verified no-commit work order.
-3. Keep T6 implementation unauthorized before pre-dispatch and
-   pre-implementation pass.
-4. Review and close T6 before releasing T7 implementation.
-5. Keep T7 on dependency hold until T6 is reviewer-accepted and its dependency
-   evidence is refreshed.
+1. Preserve accepted T0/T0R/T1/T2/T3/T4/T5/T6/T7 evidence and owners.
+2. Keep the packet-binding GAP visible and distinct from semantic-source value.
+3. Require a separate T8 GC-018 and source-verified work order before any
+   contract implementation.
 
 ## Acceptance Criteria
 
@@ -377,3 +377,34 @@ It does not authorize direct import, contract ratification, runtime or checker
 implementation, package activation, provider/live proof, public-sync, release,
 or production readiness. External-review output remains advisory until CVF
 classifies it through the governed absorption workflow.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T7_SEMANTIC_VALUE_AUDIT_CLOSEOUT_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_T7_SEMANTIC_VALUE_AUDIT_CLOSEOUT_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Material closure commit | T7 material closure | `5d7318098` | PASS |
+| Corpus reconciliation | T7 semantic audit | 305 terminal source items; unresolved semantic source value zero | PASS_BOUNDED |
+| Remaining architecture GAP | system-chain GAP registry | Refinery-to-Kernel packet-binding contract | OPEN_CONFIRMED_GAP |
+| Public export | private retained-source absorption | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Registry JSON | `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json` | generated GAP index | PASS |
+| Registry Markdown | `docs/reference/system_chain/gaps/README.md` | generated GAP front door | PASS |
+| External evidence digest | `docs/reviews/CVF_SOT3_T7_SEMANTIC_VALUE_AUDIT_2026-07-13.md` | SHA-256 `012682f41213265f57a6e0f4209e50eca0a22c9d562602d2088ed3a29bee6350` | PASS |
+| System loop interlock | N/A with reason: closure creates no automated system-loop edge | N/A | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | T8 packet-authoring next after session sync | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| SOT3-CLOSE-01 | `docs/reviews/CVF_SOT3_T7_SEMANTIC_VALUE_AUDIT_2026-07-13.md` | N/A with reason: governed Markdown audit | 305 terminal source items | 305 terminal source items | PASS |
+| SOT3-CLOSE-02 | `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json` | packet-binding GAP entry | open architecture GAP retained | open architecture GAP retained | PASS |
+
+## Final Wave Completion
+
+SOT3-T0 through SOT3-T7 are closed boundedly. The three-layer architecture,
+CVF-native owners, deterministic vertical slice, and terminal semantic ledger
+are retained. The remaining packet-binding GAP is not hidden by roadmap
+closure and is routed to separately governed T8 packet authoring.

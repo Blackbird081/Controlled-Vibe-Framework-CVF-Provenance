@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED_PRE_DISPATCH
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-13
 
@@ -164,12 +164,12 @@ commit-steward preflight.
 
 ## Closure Checklist
 
-- [ ] Fresh T6 and T7 anchors exist.
-- [ ] Exactly 305 terminal rows reconcile.
-- [ ] Unresolved value equals zero.
-- [ ] Parked items have checkable reopen conditions.
-- [ ] Catalog/GAP projection is reconciled.
-- [ ] Worker made no commit.
+- [x] Fresh T6 and T7 anchors exist.
+- [x] Exactly 305 terminal rows reconcile.
+- [x] Unresolved value equals zero.
+- [x] Parked items have checkable reopen conditions.
+- [x] Catalog/GAP projection is reconciled.
+- [x] Worker made no commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -210,10 +210,10 @@ Required if value demands a new owner/runtime tranche or scope change.
 
 | Roadmap requirement | Work order section | Future output | Verification | Status |
 |---|---|---|---|---|
-| complete conversion ledger | Acceptance Criteria | terminal ledger | count and hash reconciliation | HOLD |
-| parked-value index reconciliation | Acceptance Criteria | parked-value review | owner/reopen audit | HOLD |
-| 305 terminal items | Acceptance Criteria | ledger | arithmetic | HOLD |
-| unresolved value zero | Acceptance Criteria | closeout review | semantic reviewer audit | HOLD |
+| complete conversion ledger | Acceptance Criteria | terminal ledger | count and hash reconciliation | PASS |
+| parked-value index reconciliation | Acceptance Criteria | parked-value review | owner/reopen audit | PASS |
+| 305 terminal items | Acceptance Criteria | ledger | arithmetic | PASS |
+| unresolved value zero | Acceptance Criteria | closeout review | semantic reviewer audit | PASS_BOUNDED |
 
 ## Dual Agent Surface Matrix
 
@@ -337,7 +337,7 @@ execution base and clean start status.
 | Chain map route | T0 ledger -> T7 semantic audit -> owner reconciliation |
 | Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
 | Owner surface | future T7 audit packet |
-| Disposition | HOLD until T6 and fresh GC-018 |
+| Disposition | satisfied by accepted T6 closure and refreshed T7 GC-018 |
 | Claim boundary | retained input is evidence, not CVF authority |
 
 ## Future Release Requirements
@@ -367,5 +367,24 @@ DEFERRED_PRIVATE_ONLY
 
 ## Claim Boundary
 
-This file is a dependency-held planning packet. It authorizes no T7 execution,
-roadmap closure, runtime change, public export, release, or production claim.
+This work order is closed boundedly by the accepted T7 worker return and
+completion review. It authorizes no runtime activation, provider/live work,
+public export, release, or production claim.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion review | `docs/reviews/CVF_SOT3_T7_SEMANTIC_VALUE_AUDIT_CLOSEOUT_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_SOT3_T7_WORKER_RETURN_2026-07-13.md` | reviewer-accepted at material commit `5d7318098` | PASS |
+| Semantic audit | `docs/reviews/CVF_SOT3_T7_SEMANTIC_VALUE_AUDIT_2026-07-13.md` | 305 terminal source items; unresolved semantic source value zero | PASS_BOUNDED |
+| Remaining GAP | system-chain GAP registry | packet-binding contract remains open | OPEN_CONFIRMED_GAP |
+| Public export | private provenance only | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_T7_SEMANTIC_VALUE_AUDIT_CLOSEOUT_COMPLETION_2026-07-13.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json` | generated GAP index | PASS |
+| Registry Markdown | `docs/reference/system_chain/gaps/README.md` | generated GAP front door | PASS |
+| External evidence digest | `docs/reviews/CVF_SOT3_T7_SEMANTIC_VALUE_AUDIT_2026-07-13.md` | SHA-256 `012682f41213265f57a6e0f4209e50eca0a22c9d562602d2088ed3a29bee6350` | PASS |
+| System loop interlock | N/A with reason: no new system-loop edge or automated dispatch was created | N/A | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | T8 packet-authoring next after session sync | PASS |
