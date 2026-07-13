@@ -35,6 +35,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
 from types import SimpleNamespace
@@ -46,6 +47,24 @@ REPO_ROOT = Path(__file__).parent.parent
 CVF_WEB = REPO_ROOT / "EXTENSIONS" / "CVF_v1.6_AGENT_PLATFORM" / "cvf-web"
 GUARD_CONTRACT = REPO_ROOT / "EXTENSIONS" / "CVF_GUARD_CONTRACT"
 PROVIDER_READINESS = REPO_ROOT / "scripts" / "check_cvf_provider_release_readiness.py"
+SOT3_A5_ADAPTER = REPO_ROOT / "scripts" / "run_cvf_sot3_a5_release_proof.py"
+
+# Fields that must be present with a required value for a SOT3 payload to be
+# admitted as PASS-supporting. Mirrors the accepted A4 denominators; kept in
+# sync with run_cvf_sot3_a5_release_proof.py's own admission logic, which is
+# the actual source of truth for the underlying provider-call/owner-array
+# validation. This dict only checks that the projected top-level fields the
+# release JSON depends on are present and hold their required shape/value.
+SOT3_REQUIRED_FIELD_CHECKS: list[tuple[str, object]] = [
+    ("localNegativeGatePassed", True),
+    ("negativeCaseCount", 19),
+    ("zeroProviderCallCaseCount", 18),
+    ("rollbackProviderCallCount", 1),
+    ("recoveryProviderCallCount", 1),
+    ("approvedContextIncluded", True),
+    ("durableOwnerCorrelationComplete", True),
+    ("httpStatus", 200),
+]
 
 # Required docs for the docs governance check
 REQUIRED_DOCS = [
@@ -263,15 +282,10 @@ def check_e2e(dry_run: bool, live: bool) -> CheckResult:
     summary = next((l for l in reversed(lines) if l.strip()), "")
     if code == 0:
         return CheckResult(name, "PASS", f"Playwright {mode} suite passed", [summary] if summary else [])
-    retry_code, retry_stdout, retry_stderr = run_cmd(cmd, cwd=CVF_WEB, timeout=600)
-    retry_output = (retry_stdout + retry_stderr).strip()
-    retry_lines = retry_output.splitlines()
-    retry_summary = next((l for l in reversed(retry_lines) if l.strip()), "")
-    if retry_code == 0:
-        detail = ["initial attempt failed; retry passed"]
-        if retry_summary:
-            detail.append(retry_summary)
-        return CheckResult(name, "PASS", f"Playwright {mode} suite passed on retry", detail)
+    # No automatic blind retry. Return the first failure and a diagnostic
+    # summary; a later rerun may only happen after a human/worker records an
+    # explicit result-changing action outside this bundle (per the A5 work
+    # order's no-blind-retry requirement).
     failures = [l for l in lines if "failed" in l.lower() or "error" in l.lower()][:8]
     return CheckResult(name, "FAIL", f"Playwright {mode} suite failed", failures or lines[-8:])
 
@@ -282,6 +296,90 @@ def check_docs_governance() -> CheckResult:
     if missing:
         return CheckResult(name, "FAIL", f"{len(missing)} required RC doc(s) missing", missing)
     return CheckResult(name, "PASS", f"All {len(REQUIRED_DOCS)} required RC docs present")
+
+
+def call_sot3_a5_adapter(output_path: Path, diagnostic_path: Path) -> tuple[dict | None, int]:
+    """Invokes scripts/run_cvf_sot3_a5_release_proof.py --run as a subprocess.
+
+    Returns (parsed_result_json_or_None, returncode). This is the only call
+    site for the SOT3 A5 adapter; the release bundle never invokes Vitest or
+    the provider route directly itself -- the adapter (which in turn invokes
+    only the accepted A4 runner) owns that chain.
+    """
+    cmd = [
+        sys.executable,
+        str(SOT3_A5_ADAPTER),
+        "--run",
+        "--json",
+        "--output", str(output_path),
+        "--diagnostic-output", str(diagnostic_path),
+    ]
+    code, stdout, stderr = run_cmd(cmd, cwd=REPO_ROOT, timeout=600)
+    try:
+        data = json.loads(output_path.read_text(encoding="utf-8")) if output_path.exists() else None
+    except (OSError, ValueError, json.JSONDecodeError):
+        data = None
+    return data, code
+
+
+_LAST_SOT3_PAYLOAD: dict | None = None
+
+
+def check_sot3(dry_run: bool, diagnostic_output: Path | None = None) -> CheckResult:
+    """Mandatory SOT3 canonical release proof check.
+
+    Only `--dry-run` may mark this SKIP. `--mock` has no effect on this
+    check at all -- there is no mock-bypass parameter -- so `--mock` cannot
+    cause SOT3 to report PASS without a real adapter invocation.
+
+    The parsed `sot3` payload (or a secret-safe absent/malformed marker) is
+    cached in the module-level `_LAST_SOT3_PAYLOAD` so `main()` can project it
+    as a top-level `sot3` object in the release JSON without re-running the
+    adapter a second time. When `diagnostic_output` is provided, the A5
+    adapter's own secret-safe diagnostic is persisted there (for both PASS
+    and FAIL) so it can also be hashed into the live evidence manifest.
+    """
+    global _LAST_SOT3_PAYLOAD
+    name = "SOT3 canonical release proof (A5)"
+    if dry_run:
+        _LAST_SOT3_PAYLOAD = {"overall": "SKIP", "reason": "dry_run"}
+        return CheckResult(
+            name, "SKIP",
+            "dry-run - would run: python scripts/run_cvf_sot3_a5_release_proof.py --run --json",
+            [str(SOT3_A5_ADAPTER)],
+        )
+    if not SOT3_A5_ADAPTER.exists():
+        _LAST_SOT3_PAYLOAD = {"overall": "FAIL", "reason": "adapter_script_not_found"}
+        return CheckResult(name, "FAIL", "SOT3 A5 adapter script not found", [str(SOT3_A5_ADAPTER)])
+
+    with tempfile.TemporaryDirectory(prefix="cvf-release-sot3-") as tmp:
+        output_path = Path(tmp) / "sot3-a5-result.json"
+        tmp_diagnostic_path = Path(tmp) / "sot3-a5-diagnostic.json"
+        data, code = call_sot3_a5_adapter(output_path, tmp_diagnostic_path)
+        if diagnostic_output is not None and tmp_diagnostic_path.exists():
+            diagnostic_output.parent.mkdir(parents=True, exist_ok=True)
+            diagnostic_output.write_text(tmp_diagnostic_path.read_text(encoding="utf-8"), encoding="utf-8")
+
+    if data is None or "sot3" not in data or not isinstance(data.get("sot3"), dict):
+        _LAST_SOT3_PAYLOAD = {"overall": "FAIL", "reason": "missing_or_malformed_payload", "adapterReturnCode": code}
+        return CheckResult(name, "FAIL", "SOT3 payload missing or malformed", [f"adapter returncode={code}"])
+
+    sot3 = data["sot3"]
+    _LAST_SOT3_PAYLOAD = sot3
+
+    if sot3.get("overall") != "PASS":
+        admission_failures = sot3.get("admissionFailures") or []
+        return CheckResult(name, "FAIL", "SOT3 proof did not PASS", admission_failures[:8] or [f"overall={sot3.get('overall')}"])
+
+    mismatches = [
+        f"{field}!={expected}(got {sot3.get(field)!r})"
+        for field, expected in SOT3_REQUIRED_FIELD_CHECKS
+        if sot3.get(field) != expected
+    ]
+    if mismatches:
+        return CheckResult(name, "FAIL", "SOT3 payload failed strict field admission", mismatches[:8])
+
+    return CheckResult(name, "PASS", "SOT3 canonical release proof PASS with full owner correlation", [])
 
 
 # ---------------------------------------------------------------------------
@@ -320,16 +418,42 @@ def print_results(results: list[CheckResult], date: str) -> int:
     return 1 if fails else 0
 
 
-def result_payload(results: list[CheckResult], date: str) -> dict:
+def result_payload(results: list[CheckResult], date: str, sot3: dict | None = None) -> dict:
+    """Builds the machine-readable release JSON payload.
+
+    `sot3` is the top-level SOT3 evidence object. A missing, malformed, or
+    non-PASS SOT3 payload always makes `gate_result` FAIL, independent of
+    every other check's status -- including the dry-run case, where SOT3 is
+    SKIP and can never support a PASS claim. Callers that omit `sot3`
+    entirely (legacy call shape) are treated as a missing payload only when
+    a SOT3-named check is present in `results`; when no SOT3-related check is
+    part of this payload at all (a caller building a non-release, non-SOT3
+    payload shape), `sot3` is omitted from gate-result computation.
+    """
     fails = sum(1 for r in results if r.status == "FAIL")
-    return {
+    has_sot3_check = any(r.name.startswith("SOT3") for r in results)
+
+    sot3_payload = sot3
+    if sot3_payload is None and has_sot3_check:
+        sot3_payload = {"overall": "ABSENT", "reason": "sot3_payload_not_provided"}
+
+    sot3_blocks_pass = False
+    if has_sot3_check or sot3_payload is not None:
+        sot3_blocks_pass = not (isinstance(sot3_payload, dict) and sot3_payload.get("overall") == "PASS")
+
+    gate_result = "FAIL" if (fails or sot3_blocks_pass) else "PASS"
+
+    payload: dict = {
         "date": date,
-        "gate_result": "FAIL" if fails else "PASS",
+        "gate_result": gate_result,
         "checks": [
             {"name": r.name, "status": r.status, "message": r.message, "detail": r.detail}
             for r in results
         ],
     }
+    if sot3_payload is not None:
+        payload["sot3"] = sot3_payload
+    return payload
 
 
 def write_json_payload(payload: dict, output_path: Path) -> None:
@@ -347,20 +471,28 @@ def build_secret_safe_rerun_command(args: argparse.Namespace) -> str:
         parts.append("--e2e")
     if args.e2e_live:
         parts.append("--e2e-live")
+    if getattr(args, "sot3_diagnostic_output", None):
+        parts.append("--sot3-diagnostic-output <path>")
     parts.append("--json")
     return " ".join(parts)
 
 
 def write_live_evidence_manifest(
-    evidence_path: Path,
+    evidence_paths: list[Path],
     manifest_path: Path,
     rerun_command: str,
     anchor_id: str,
     anchor_url: str,
 ) -> None:
+    """Hashes every path in `evidence_paths` into one manifest.
+
+    When both the release result JSON and the SOT3 A5 diagnostic JSON are
+    supplied (`--output` and `--sot3-diagnostic-output` both present), the
+    manifest hashes both artifacts, not just one.
+    """
     manifest = build_live_evidence_manifest(
         SimpleNamespace(
-            evidence=[str(evidence_path)],
+            evidence=[str(p) for p in evidence_paths],
             command=rerun_command,
             anchor_id=anchor_id,
             anchor_url=anchor_url,
@@ -397,6 +529,11 @@ def main() -> None:
     )
     parser.add_argument("--manifest-anchor-id", default="", help="Optional external immutable anchor identifier")
     parser.add_argument("--manifest-anchor-url", default="", help="Optional external immutable anchor URL")
+    parser.add_argument(
+        "--sot3-diagnostic-output",
+        type=Path,
+        help="Write the SOT3 A5 secret-safe diagnostic to this JSON path; also hashed into the manifest when --manifest-output is supplied",
+    )
     parser.add_argument("--e2e", action="store_true", dest="e2e", help="Targeted run: UI-only mock Playwright specs")
     parser.add_argument(
         "--e2e-live",
@@ -431,12 +568,20 @@ def main() -> None:
         results.append(check_e2e(args.dry_run, live=False))
         results.append(check_e2e(args.dry_run, live=True))
 
-    payload = result_payload(results, today)
+    # SOT3 is a mandatory check in the default canonical release path. It is
+    # appended once per run regardless of --e2e/--e2e-live scoping; only
+    # --dry-run marks it SKIP, and --mock has no bypass effect on it at all.
+    results.append(check_sot3(args.dry_run, diagnostic_output=args.sot3_diagnostic_output))
+
+    payload = result_payload(results, today, sot3=_LAST_SOT3_PAYLOAD)
     if args.output:
         write_json_payload(payload, args.output)
     if args.manifest_output:
+        evidence_paths = [args.output]
+        if args.sot3_diagnostic_output and Path(args.sot3_diagnostic_output).exists():
+            evidence_paths.append(args.sot3_diagnostic_output)
         write_live_evidence_manifest(
-            args.output,
+            evidence_paths,
             args.manifest_output,
             build_secret_safe_rerun_command(args),
             args.manifest_anchor_id,
