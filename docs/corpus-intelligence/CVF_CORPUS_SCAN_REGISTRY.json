@@ -5251,6 +5251,41 @@
         "receipt-bound retained Flow VERIFIED transition"
       ],
       "nextScanRecommendation": "Execute SOT3-T0R semantic reconciliation from committed advisory evidence. Do not rescan file hashes and do not implement runtime or contracts."
+    },
+    {
+      "id": "sot3-t6-three-layer-vertical-slice",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "SOT3-T6 deterministic three-layer vertical slice",
+      "scopePaths": [
+        "EXTENSIONS/CVF_SOT_THREE_LAYER_SLICE"
+      ],
+      "fileCount": 10,
+      "status": "SCANNED",
+      "scanWave": "SOT3-T6",
+      "scanDate": "2026-07-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_SOT3_T6_WORKER_RETURN_2026-07-13.md",
+      "completionReviewPath": "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_SOT3_T6_THREE_LAYER_VERTICAL_SLICE_2026-07-13.md",
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "REFINERY_KERNEL_FLOW_INTEGRATION",
+        "DETERMINISTIC_EVIDENCE_CHAIN",
+        "LAYER_BOUNDARY_NEGATIVE_TESTS"
+      ],
+      "priorAbsorption": "T6 composes accepted Refinery, Truth Kernel, and Truth Flow public APIs without replacing their authority or activating provider, adapter, live, or public paths. Refinery output lacks an owner-level Kernel-binding content-hash contract; T6 uses a local canonical whole-packet hash pending T7 reconciliation.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "retained legacy import",
+        "AI provider dependency",
+        "layer authority reimplementation"
+      ],
+      "nextScanRecommendation": "Re-scan when an owner-level Refinery-to-Kernel packet hash contract replaces the T6-local mapping or the three-layer integration API changes."
     }
   ]
 }
