@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a0_pass_bounded_a1_packet_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A1 GC-018 and source-verified work-order authoring for the scoped knowledge-context adapter; parked checkpoint=A1 implementation and A2-A5 persistence, provider/live, release, public, and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a1_product_adapter_dispatched`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit A1 worker execution from dispatch `dcc95616d`; parked checkpoint=A2-A5 persistence, provider/live, release, public, and user-validation work.
 
 ## Current Mode
 
-Current mode marker: `sot3_activation_a0_pass_bounded_a1_packet_next`
+Current mode marker: `sot3_activation_a1_product_adapter_dispatched`
 
-Current mode: `sot3_activation_a0_pass_bounded_a1_packet_next`
+Current mode: `sot3_activation_a1_product_adapter_dispatched`
 
-`sot3_activation_a0_pass_bounded_a1_packet_next`
+`sot3_activation_a1_product_adapter_dispatched`
 
 Previous mode:
 
-`sot3_t8_packet_binding_contract_closed_pass_bounded`
+`sot3_activation_a0_pass_bounded_a1_packet_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 activation A1 scoped knowledge-context product adapter dispatch | `dcc95616d` | DISPATCH_READY; 75/75 pre-dispatch and 83/83 pre-commit PASS; worker must not commit. |
 | SOT3 activation A0 architecture and A1-A5 operational-proof roadmap | `a777c3fd9` | A0_PASS_BOUNDED; scoped knowledge-context seam selected; A1 packet authoring next; current claim remains `IMPLEMENTED_AND_INTEGRATION_PROVEN_LOCAL`. |
 | SOT3-T8 Refinery-to-Kernel packet-binding owner closure | `0ffede4f1` | CLOSED_PASS_BOUNDED after reviewer repair; owner GAP resolved with boundary. |
 | SOT3-T8 Refinery-to-Kernel packet-binding contract dispatch | `e0fc0a5bb` | DISPATCH_READY; one no-commit worker; Refinery owner, T6 migration, no Kernel/Flow mutation. |
@@ -152,13 +153,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_activation_a0_pass_bounded_a1_packet_next`
+Mode: `sot3_activation_a1_product_adapter_dispatched`
 
-SOT3 activation A0 is ratified boundedly at `a777c3fd9`. The next allowed move
-is fresh A1 GC-018 and source-verified work-order authoring for the scoped CVF
-Web knowledge-context adapter. A1 implementation and A2-A5 persistence,
-provider/live, release, public, and user-validation work remain held until
-their dependency gates release them.
+SOT3 activation A1 is dispatched at `dcc95616d`. The next allowed move is one
+`WORKER_MUST_NOT_COMMIT` execution of the scoped knowledge-context product
+adapter work order, followed by independent reviewer closure. A2-A5
+persistence, provider/live, release, public, and user-validation work remain
+held.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

@@ -1,5 +1,5 @@
 {
   "stateOrder": 1718,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3 activation A0 is ratified boundedly at a777c3fd9. Next allowed move is fresh A1 GC-018 and source-verified work-order authoring for the scoped CVF Web knowledge-context adapter. A1 implementation and A2-A5 persistence/provider/live/release work remain held until dependency release. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3 activation A1 packet is dispatched at dcc95616d. Next allowed move is one WORKER_MUST_NOT_COMMIT execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_2026-07-13.md followed by independent reviewer closure. A2-A5 persistence/provider/live/release and public work remain held. LHW24 remains latest closed numbered LHW wave."
 }

@@ -17,11 +17,10 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a0_pass_bounded_a1_packet_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh A1
-GC-018 and source-verified work-order authoring for the scoped knowledge-context
-adapter; parked checkpoint=A1 implementation and A2-A5 persistence,
-provider/live, release, public, and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a1_product_adapter_dispatched`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit
+A1 worker execution from dispatch `dcc95616d`; parked checkpoint=A2-A5
+persistence, provider/live, release, public, and user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -36,7 +35,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a0_pass_bounded_a1_packet_next`
+`sot3_activation_a1_product_adapter_dispatched`
 
 ## Latest Work / Changes
 
@@ -436,3 +435,30 @@ Operator authorization: execute A0 and design A1-A5.
 
 Rollback boundary: revert only this session-sync batch; retain A0 material
 commit `a777c3fd9` and prior SOT3 closure commits.
+
+## SOT3 Activation A1 Dispatch Anchor - 2026-07-13
+
+A1 GC-018 and work order are dispatched at `dcc95616d`. Pre-dispatch passed
+75/75 and the commit hook passed 83/83. The worker must not commit. The worker
+implements only local scoped knowledge-context wiring and returns
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+
+## Core Guard Self-Protection Authorization - SOT3 Activation A1 Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize A1 dispatch after packet
+commit `dcc95616d`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA1Dispatch20260713.json`
+
+Operator authorization: create a work order for delegated A1 implementation.
+
+Rollback boundary: revert only dispatch continuity; retain A1 packet commit
+`dcc95616d` and A0 material commit `a777c3fd9`.

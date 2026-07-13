@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1727,
+  "stateKey": "sot3ActivationA1Dispatch20260713",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-13",
+    "dispatchCommit": "dcc95616d",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_2026-07-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_2026-07-13.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "preDispatch": "75/75 PASS",
+    "preCommit": "83/83 PASS",
+    "nextAllowedMove": "one bounded no-commit A1 worker execution and COMPLETE_PENDING_REVIEW return",
+    "claimBoundary": "local adapter implementation only; no A2 persistence, provider/live, release, public export, production readiness, or user validation"
+  }
+}
