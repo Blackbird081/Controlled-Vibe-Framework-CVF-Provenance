@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t8_packet_binding_contract_dispatched`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit SOT3-T8 execution from `e0fc0a5bb`; parked checkpoint=Kernel/Flow mutation, activation, monitor, database, adapters, provider/live, public, and unrelated Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_t8_packet_binding_contract_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=operator selects a fresh high-value lane with a new governed packet; parked checkpoint=activation, monitor, database, adapters, provider/live, public, and unrelated mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_t8_packet_binding_contract_dispatched`
+Current mode marker: `sot3_t8_packet_binding_contract_closed_pass_bounded`
 
-Current mode: `sot3_t8_packet_binding_contract_dispatched`
+Current mode: `sot3_t8_packet_binding_contract_closed_pass_bounded`
 
-`sot3_t8_packet_binding_contract_dispatched`
+`sot3_t8_packet_binding_contract_closed_pass_bounded`
 
 Previous mode:
 
-`sot3_t8_packet_binding_contract_packet_authoring_next`
+`sot3_t8_packet_binding_contract_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T8 Refinery-to-Kernel packet-binding owner closure | `0ffede4f1` | CLOSED_PASS_BOUNDED after reviewer repair; owner GAP resolved with boundary. |
 | SOT3-T8 Refinery-to-Kernel packet-binding contract dispatch | `e0fc0a5bb` | DISPATCH_READY; one no-commit worker; Refinery owner, T6 migration, no Kernel/Flow mutation. |
 | SOT3-T7 semantic-value audit and main roadmap closure | `5d7318098` | CLOSED_PASS_BOUNDED; 305 terminal items, zero unresolved semantic source value; packet-binding architecture GAP remains open and routes to T8 packet authoring. |
 | SOT3-T5 post-Kernel Truth Flow dispatch | `231bc8aea` | DISPATCH_READY after T4R1; one no-commit worker; T6-T7 held. |
@@ -150,12 +151,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t8_packet_binding_contract_dispatched`
+Mode: `sot3_t8_packet_binding_contract_closed_pass_bounded`
 
-Execute exactly one SOT3-T8 `WORKER_MUST_NOT_COMMIT` tranche from dispatch
-commit `e0fc0a5bb`. Return uncommitted `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Kernel/Flow mutation, activation, adapters,
-provider/live, public-sync, and unrelated GAP mutation remain held.
+SOT3-T8 is closed boundedly at `0ffede4f1`. The operator may select a fresh
+high-value lane followed by a new GC-018 and source-verified work order.
+Activation, adapters, provider/live, public-sync, and unrelated mutation
+remain held.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

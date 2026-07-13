@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_t8_packet_binding_contract_dispatched",
-  "previousMode": "sot3_t8_packet_binding_contract_packet_authoring_next",
+  "currentMode": "sot3_t8_packet_binding_contract_closed_pass_bounded",
+  "previousMode": "sot3_t8_packet_binding_contract_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11305,7 +11305,7 @@
     "nextAllowedMove": "one bounded deterministic SOT3-T4 Kernel execution and no-commit worker return",
     "claimBoundary": "T4 Kernel only; T5-T7, activation, Flow, monitors, database, adapters, provider/live and public remain held"
   },
-  "nextAllowedMove": "Execute exactly one SOT3-T8 WORKER_MUST_NOT_COMMIT tranche from dispatch commit e0fc0a5bb and return uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Activation, adapters, provider/live, public-sync, Kernel/Flow mutation, and unrelated GAP mutation remain held. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-T8 is closed boundedly at 0ffede4f1. Operator may select a fresh high-value lane followed by new GC-018 and source-verified work-order authoring. Activation, adapters, provider/live, public-sync, and unrelated mutation remain held. LHW24 remains latest closed numbered LHW wave.",
   "sot3T4Closure20260712": {
     "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
     "date": "2026-07-12",
@@ -11367,5 +11367,15 @@
     "commitMode": "WORKER_MUST_NOT_COMMIT",
     "nextAllowedMove": "one bounded T8 worker execution and uncommitted return",
     "claimBoundary": "no Kernel/Flow mutation, activation, provider/live, public-sync, or unrelated GAP mutation"
+  },
+  "sot3T8Closure20260713": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-13",
+    "materialCommit": "0ffede4f1",
+    "completionReview": "docs/reviews/CVF_SOT3_T8_REFINERY_KERNEL_PACKET_BINDING_CONTRACT_COMPLETION_2026-07-13.md",
+    "ownerPath": "EXTENSIONS/CVF_REFINERY/src/packet-hash/packet-hash.ts",
+    "tests": "Refinery 30/30; T6 slice 18/18; Kernel 54/54; Flow 21/21",
+    "nextAllowedMove": "operator selects a fresh high-value lane with new governed packet",
+    "claimBoundary": "no activation, adapters, provider/live, public-sync, release, or production readiness"
   }
 }

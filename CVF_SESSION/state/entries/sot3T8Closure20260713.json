@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1725,
+  "stateKey": "sot3T8Closure20260713",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-13",
+    "materialCommit": "0ffede4f1",
+    "completionReview": "docs/reviews/CVF_SOT3_T8_REFINERY_KERNEL_PACKET_BINDING_CONTRACT_COMPLETION_2026-07-13.md",
+    "ownerPath": "EXTENSIONS/CVF_REFINERY/src/packet-hash/packet-hash.ts",
+    "tests": "Refinery 30/30; T6 slice 18/18; Kernel 54/54; Flow 21/21",
+    "nextAllowedMove": "operator selects a fresh high-value lane with new governed packet",
+    "claimBoundary": "no activation, adapters, provider/live, public-sync, release, or production readiness"
+  }
+}

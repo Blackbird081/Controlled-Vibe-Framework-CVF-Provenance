@@ -1,5 +1,5 @@
 {
   "stateOrder": 1718,
   "stateKey": "nextAllowedMove",
-  "value": "Execute exactly one SOT3-T8 WORKER_MUST_NOT_COMMIT tranche from dispatch commit e0fc0a5bb and return uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Activation, adapters, provider/live, public-sync, Kernel/Flow mutation, and unrelated GAP mutation remain held. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3-T8 is closed boundedly at 0ffede4f1. Operator may select a fresh high-value lane followed by new GC-018 and source-verified work-order authoring. Activation, adapters, provider/live, public-sync, and unrelated mutation remain held. LHW24 remains latest closed numbered LHW wave."
 }
