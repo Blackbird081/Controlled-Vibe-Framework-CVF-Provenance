@@ -283,3 +283,22 @@ Operator authorization: commit T6 cleanly and write the T7 work order.
 
 Rollback boundary: revert only this handoff anchor; retain packet commit
 `b87079d62`.
+
+## SOT3-T6 Material Closure Anchor - 2026-07-13
+
+T6 is reviewer-accepted at `2c4c498da`. T7 fresh baseline/work-order authoring
+is the next allowed material move; implementation still requires pre-dispatch.
+
+## Core Guard Self-Protection Authorization - SOT3-T6 Closure Anchor
+
+Authorized guard-maintenance scope: anchor accepted T6 material closure before
+T7 packet refresh.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+
+Operator authorization: commit T6 cleanly and write T7 work order.
+
+Rollback boundary: revert only this anchor; retain T6 material commit
+`2c4c498da`.
