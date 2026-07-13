@@ -13,6 +13,10 @@ Worker: delegated implementation and live-proof worker
 Reviewer/closer: Codex reviewer/closer
 Worker return path: `docs/reviews/CVF_SOT3_ACT_A4_FAILURE_AND_RECOVERY_BOUNDARY_PROOF_WORKER_RETURN_2026-07-13.md`
 
+boundedRepairBaseHead: `bf50f7b6b`
+
+boundedRepairDisposition: `MANIFEST_PATH_ADDED_AFTER_VALID_BLOCKER`
+
 ## Dispatch Prompt Envelope
 
 Role: delegated SOT3 A4 implementation and proof worker.
@@ -67,6 +71,7 @@ retains final decision authority.
 - `docs/reference/guard_orientation/README.md` and literal gotchas;
 - paired A4 baseline, activation roadmap A4 section, and A3 completion;
 - `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0030.md`;
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0031.md`;
 - current Flow, adapter, store, execute route, and checker sources below.
 
 ## Pre-Flight Checks
@@ -124,7 +129,7 @@ Returned defects: NONE_RETURNED
 | Returned defect count | 0 |
 | Returned defects | NONE_RETURNED |
 | Disclosed defectIds | NONE_RETURNED |
-| Dispatch impact | worker must additionally read and obey `CVF_ADIF-0030` because A4 reuses the A3 live runner lane |
+| Dispatch impact | worker must read `CVF_ADIF-0030` for live entrypoint control and `CVF_ADIF-0031` for repaired manifest fidelity |
 
 ## Checker Source Read-Ahead Block
 
@@ -218,7 +223,9 @@ index row is owned by this tranche.
    SOT3 returns `REJECTED`, return a secret-safe 409 before `executeAI`. Also
    reject an explicitly requested governed collection that resolves to
    `NO_CONTEXT`; an unrequested empty retrieval must preserve ordinary route
-   behavior.
+   behavior. Update the pre-existing missing-provenance ENFORCE regression in
+   `route.knowledge.test.ts` to expect the same 409 and zero provider calls;
+   do not exempt `MISSING_PROVENANCE` and do not delete that regression.
 5. Add a focused A4 test file. Use real Refinery, Kernel, Flow, adapter, and A2
    store APIs. Mock only the downstream provider to count calls.
 6. Generate the deterministic negative receipt. The runner must refuse live
@@ -265,6 +272,7 @@ index row is owned by this tranche.
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.ts` | use strict Flow consumption |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.test.ts` | add adapter rejection coverage |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | stop ENFORCE rejection before provider call |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.knowledge.test.ts` | update the existing ENFORCE missing-provenance assertion to 409 and zero provider calls; preserve the regression |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.sot3-activation-failure-recovery.test.ts` | new route-level zero-call and rollback proof |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-activation-evidence-store.test.ts` | fill any missing A4 restart, corrupt, partial, or replay row |
 | `scripts/run_cvf_sot3_a4_failure_recovery_proof.py` | local-negative-first runner and one-use live permit |
@@ -351,7 +359,7 @@ command evidence, and no-commit statement.
 ```powershell
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 48f5e70d3 --head HEAD
 pnpm --dir EXTENSIONS/CVF_TRUTH_FLOW test
-pnpm --dir EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web exec vitest run src/lib/sot3-knowledge-adapter.test.ts src/lib/sot3-activation-evidence-store.test.ts src/app/api/execute/route.sot3-activation-failure-recovery.test.ts
+pnpm --dir EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web exec vitest run src/lib/sot3-knowledge-adapter.test.ts src/lib/sot3-activation-evidence-store.test.ts src/app/api/execute/route.knowledge.test.ts src/app/api/execute/route.sot3-activation-failure-recovery.test.ts
 python scripts/run_cvf_sot3_a4_failure_recovery_proof.py --local-only --json
 python scripts/run_cvf_sot3_a4_failure_recovery_proof.py --live --json
 pnpm --dir EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web typecheck
@@ -487,3 +495,12 @@ This work order authorizes exactly A4. Even a complete worker return remains
 pending independent review and may support only
 `SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED`. The final
 `LIVE_GOVERNANCE_PROVEN_BOUNDED` claim remains reserved for accepted A5.
+
+## Bounded Repair R1 - Writable Manifest Reconciliation
+
+The first worker return correctly identified that the behavior-changing
+Source Verification `REJECT` row for `route.knowledge.test.ts` conflicted with
+the original writable manifest. R1 adds that one existing test path and
+requires its missing-provenance ENFORCE assertion to move from one provider
+call to secret-safe 409 plus zero calls. All other authority, runtime, live,
+claim, and no-commit boundaries remain unchanged.
