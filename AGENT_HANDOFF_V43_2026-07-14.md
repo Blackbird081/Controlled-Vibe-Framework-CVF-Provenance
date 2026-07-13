@@ -19,11 +19,11 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_closed_live_governance_proven_bounded`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=separately
-authorize shipment/release or wait for real-user feedback; parked
-checkpoint=public export, production, scale, universal enforcement, and user
-validation.
+Startup acknowledged: current mode=`system_chain_live_proof_process_established_uc02_packet_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author fresh
+UC-02 GC-018 and source-verified work order only; parked checkpoint=UC-02
+execution, UC-03/UC-04 dispatch, public export, production, scale, universal
+enforcement, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -38,19 +38,25 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_closed_live_governance_proven_bounded`
+`system_chain_live_proof_process_established_uc02_packet_next`
 
 ## Active Boundary
 
-- Active material closure: `62ab80ab4`.
+- Active material process commit: `e4a585b8c`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: none for SOT3 activation.
-- Next permitted value lane: separately authorized shipment/release, then
-  real-user feedback.
+- Active work queue: UC-02 packet authoring only; execution is undispatched.
+- Next permitted value lane: source-verified UC-02 dispatch preparation.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
 ## Latest Work / Changes
+
+The system-chain live-proof and learning-loop T0 process was established at
+material commit `e4a585b8c`. It retains SOT3 as UC-01 only, classifies all five
+generic lanes by live applicability and proof status, sequences UC-02 through
+UC-04, and extends the existing freshness checker so coverage drift is a
+machine failure. Focused checker tests pass 19/19. No new live invocation was
+performed.
 
 SOT3-ACT-A5R1 and the activation roadmap closed at material commit
 `62ab80ab4`. The development import-chain repair explicitly selects Webpack,
@@ -86,10 +92,10 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-No SOT3 activation tranche remains open. Preserve the exact bounded claim and
-evidence. Open new work only for a concrete regression, a new product
-requirement, or separately authorized shipment/release. After shipment,
-real-user feedback owns the next validation step.
+Author a fresh UC-02 GC-018 and source-verified work order for one current
+invocation of the registry-driven CF-076 through CF-084 chain. The roadmap does
+not authorize execution. Preserve the exact SOT3 bounded claim; UC-03 and UC-04
+remain undispatched.
 
 ## Parked Checkpoint
 
@@ -107,7 +113,30 @@ scale, universal, or user-value claim.
 
 Material closure HEAD: `62ab80ab4`
 
+System-chain live-proof process HEAD: `e4a585b8c`
+
 Session-sync closure HEAD: `946ae2a61`
 
 The current in-place handoff-sync commit has the session-sync closure HEAD
 above as its parent. Material closure remains anchored at `62ab80ab4`.
+
+## Core Guard Self-Protection Authorization - System Chain Live Proof Session Sync
+
+Authorized guard-maintenance scope: synchronize the accepted system-chain
+live-proof T0 process after material commit `e4a585b8c`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainLiveProofProcessEstablished20260714.json`
+
+Operator authorization: create a durable standard, classify remaining system
+chains, and retain continuing live-run learning as CVF architecture process.
+
+Rollback boundary: revert only this session-sync batch; retain material commit
+`e4a585b8c` and all accepted SOT3 closure commits.

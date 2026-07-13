@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_closed_live_governance_proven_bounded`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=separately authorize shipment or wait for real-user feedback; parked checkpoint=public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_live_proof_process_established_uc02_packet_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author fresh UC-02 GC-018 and source-verified work order only; parked checkpoint=UC-02 execution, UC-03/UC-04 dispatch, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `sot3_activation_closed_live_governance_proven_bounded`
+Current mode marker: `system_chain_live_proof_process_established_uc02_packet_next`
 
-Current mode: `sot3_activation_closed_live_governance_proven_bounded`
+Current mode: `system_chain_live_proof_process_established_uc02_packet_next`
 
-`sot3_activation_closed_live_governance_proven_bounded`
+`system_chain_live_proof_process_established_uc02_packet_next`
 
 Previous mode:
 
-`sot3_activation_a5r1_dispatched_worker_execution_next`
+`sot3_activation_closed_live_governance_proven_bounded`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain live-proof and learning-loop T0 | `e4a585b8c` | T0 process established; five lanes classified orthogonally; SOT3 retained as UC-01 only; freshness checker enforces coverage ledger alignment; UC-02 packet authoring next, with execution still undispatched. |
 | SOT3 activation A5R1 and roadmap closure | `62ab80ab4` | CLOSED_PASS_BOUNDED; canonical release PASS with SOT3 PASS, 19 negative rows, 18 zero-call rows, six external Alibaba calls across one invocation, and exact claim `LIVE_GOVERNANCE_PROVEN_BOUNDED`; operator-authorized role collapse disclosed. |
 | SOT3 activation A5R1 bounded recovery dispatch | `a036ce891` | DISPATCH_READY after semantic repair, 75/75 pre-dispatch and 83/83 pre-commit PASS; real next-dev zero-provider regression, bounded four-file repair surface, one canonical invocation with measured provider calls; worker must not commit. |
 | SOT3 activation A5 blocked canonical release proof | `f038bcb81` | BLOCKED_WITH_REASON; SOT3 check PASS but canonical release FAIL; retained trace proves Next.js development bundling cannot resolve the Refinery source package `.js` import on the execute-route chain; no reviewer rerun; bounded recovery packet authoring next. |
@@ -166,14 +167,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_activation_closed_live_governance_proven_bounded`
+Mode: `system_chain_live_proof_process_established_uc02_packet_next`
 
-SOT3 activation is closed at material commit `62ab80ab4` with exact claim
-`LIVE_GOVERNANCE_PROVEN_BOUNDED`. No further SOT3 activation work is allowed
-without a concrete regression or new product requirement. The next
-value-bearing move is a separately authorized shipment/release lane, then
-real-user feedback. Public export, production, scale, universal enforcement,
-and user validation remain unclaimed.
+SOT3 activation remains closed at material commit `62ab80ab4` with exact claim
+`LIVE_GOVERNANCE_PROVEN_BOUNDED`. The system-chain live-proof process is
+established at `e4a585b8c`. The next allowed move is authoring a fresh UC-02
+GC-018 and source-verified work order for one current registry-driven CF-076
+through CF-084 invocation. The roadmap alone does not authorize execution.
+UC-03 and UC-04 remain undispatched. Public export, production, scale,
+universal enforcement, and user validation remain unclaimed.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
