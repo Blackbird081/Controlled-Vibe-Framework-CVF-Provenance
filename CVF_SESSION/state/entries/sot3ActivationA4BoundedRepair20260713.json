@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1740,
+  "stateKey": "sot3ActivationA4BoundedRepair20260713",
+  "value": {
+    "status": "DISPATCH_READY_REPAIRED_R1",
+    "repairCommit": "698eaf587",
+    "blockerAccepted": true,
+    "addedWritablePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.knowledge.test.ts",
+    "requiredAssertion": "ENFORCE missing provenance returns secret-safe 409 and zero provider calls",
+    "learning": "ADIF-0031",
+    "nextAllowedMove": "one fresh no-commit A4 worker execution from repaired HEAD",
+    "claimBoundary": "No A4 runtime or live PASS yet; A5 and final claim remain unauthorized."
+  }
+}

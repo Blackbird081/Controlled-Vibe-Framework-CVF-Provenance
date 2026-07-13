@@ -82,8 +82,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_activation_a4_dispatched_worker_execution_next",
-  "previousMode": "sot3_activation_a3_closed_bounded_a4_packet_next",
+  "currentMode": "sot3_activation_a4_repaired_worker_reexecution_next",
+  "previousMode": "sot3_activation_a4_dispatched_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11489,5 +11489,15 @@
     "nextAllowedMove": "one bounded no-commit A4 worker execution and COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON return",
     "claimBoundary": "A4 worker evidence remains pending review; A5 and final LIVE_GOVERNANCE_PROVEN_BOUNDED are unauthorized."
   },
-  "nextAllowedMove": "SOT3-ACT-A4 dispatch is committed at f91622aa9 after all 75 pre-dispatch gates and 83 pre-commit hooks passed. Next allowed move is one no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A4_FAILURE_AND_RECOVERY_BOUNDARY_PROOF_2026-07-13.md, beginning with local negative proof and permitting Alibaba recovery only after that gate passes. Alibaba calls are operator-declared numerically unmetered; one-call-per-invocation, diagnostic-before-rerun, result-changing action, and diminishing-return controls remain binding. Valid return is COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. A5 and final LIVE_GOVERNANCE_PROVEN_BOUNDED remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "sot3ActivationA4BoundedRepair20260713": {
+    "status": "DISPATCH_READY_REPAIRED_R1",
+    "repairCommit": "698eaf587",
+    "blockerAccepted": true,
+    "addedWritablePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.knowledge.test.ts",
+    "requiredAssertion": "ENFORCE missing provenance returns secret-safe 409 and zero provider calls",
+    "learning": "ADIF-0031",
+    "nextAllowedMove": "one fresh no-commit A4 worker execution from repaired HEAD",
+    "claimBoundary": "No A4 runtime or live PASS yet; A5 and final claim remain unauthorized."
+  },
+  "nextAllowedMove": "SOT3-ACT-A4 first worker return correctly stopped on a writable-manifest contradiction. Bounded repair commit 698eaf587 adds route.knowledge.test.ts with an exact 409/zero-call assertion update, retains the blocked return as evidence, and records ADIF-0031. Pre-dispatch passed 75/75 and pre-commit passed 83/83. Next allowed move is one fresh no-commit A4 worker execution from the repaired HEAD. Local negative proof must pass before Alibaba recovery. Calls remain operator-unmetered but one-call-per-invocation, diagnostics, result-changing rerun action, and diminishing-return controls remain binding. A5 and final LIVE_GOVERNANCE_PROVEN_BOUNDED remain unauthorized. LHW24 remains latest closed numbered LHW wave."
 }

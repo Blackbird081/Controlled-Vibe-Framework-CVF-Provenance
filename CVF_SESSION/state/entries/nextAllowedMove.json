@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1739,
+  "stateOrder": 1741,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3-ACT-A4 dispatch is committed at f91622aa9 after all 75 pre-dispatch gates and 83 pre-commit hooks passed. Next allowed move is one no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A4_FAILURE_AND_RECOVERY_BOUNDARY_PROOF_2026-07-13.md, beginning with local negative proof and permitting Alibaba recovery only after that gate passes. Alibaba calls are operator-declared numerically unmetered; one-call-per-invocation, diagnostic-before-rerun, result-changing action, and diminishing-return controls remain binding. Valid return is COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. A5 and final LIVE_GOVERNANCE_PROVEN_BOUNDED remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3-ACT-A4 first worker return correctly stopped on a writable-manifest contradiction. Bounded repair commit 698eaf587 adds route.knowledge.test.ts with an exact 409/zero-call assertion update, retains the blocked return as evidence, and records ADIF-0031. Pre-dispatch passed 75/75 and pre-commit passed 83/83. Next allowed move is one fresh no-commit A4 worker execution from the repaired HEAD. Local negative proof must pass before Alibaba recovery. Calls remain operator-unmetered but one-call-per-invocation, diagnostics, result-changing rerun action, and diminishing-return controls remain binding. A5 and final LIVE_GOVERNANCE_PROVEN_BOUNDED remain unauthorized. LHW24 remains latest closed numbered LHW wave."
 }

@@ -17,9 +17,9 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a4_dispatched_worker_execution_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit
-A4 worker execution from dispatch commit `f91622aa9`; parked checkpoint=A4
+Startup acknowledged: current mode=`sot3_activation_a4_repaired_worker_reexecution_next`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one fresh
+no-commit A4 worker execution from repair commit `698eaf587`; parked checkpoint=A4
 review/closure, A5, final live-governance claim, release, public, production,
 distributed-durability, and user-validation work.
 
@@ -36,9 +36,37 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a4_dispatched_worker_execution_next`
+`sot3_activation_a4_repaired_worker_reexecution_next`
 
 ## Latest Work / Changes
+
+The first A4 worker return correctly stopped on a manifest contradiction
+before code edits or live calls. Bounded repair `698eaf587` adds the existing
+`route.knowledge.test.ts` regression to writable scope, requires 409 plus zero
+provider calls for ENFORCE missing provenance, preserves the blocked return,
+and records ADIF-0031. Pre-dispatch and pre-commit are green. One fresh
+no-commit worker execution is next; A5/final claim remain unauthorized.
+
+## Core Guard Self-Protection Authorization - SOT3 A4 Repair Sync
+
+Authorized guard-maintenance scope: synchronize A4 bounded repair after
+material commit `698eaf587`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA4BoundedRepair20260713.json`
+
+Operator authorization: process A4 worker evidence and continue the
+dependency-ordered activation sequence.
+
+Rollback boundary: revert only this repair continuity batch; retain repair
+commit `698eaf587`, original dispatch `f91622aa9`, and A3 closure material.
 
 SOT3-ACT-A4 failure/recovery GC-018 and source-verified work order are
 committed at `f91622aa9`. Pre-dispatch passed 75/75 and pre-commit passed
