@@ -1,5 +1,5 @@
 {
   "stateOrder": 1718,
   "stateKey": "nextAllowedMove",
-  "value": "Author a fresh SOT3-T8 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for the shared Refinery-to-Kernel packet-binding contract GAP. Do not implement before pre-dispatch. Activation, adapters, provider/live, public-sync, and unrelated GAP mutation remain held. LHW24 remains latest closed numbered LHW wave."
+  "value": "Execute exactly one SOT3-T8 WORKER_MUST_NOT_COMMIT tranche from dispatch commit e0fc0a5bb and return uncommitted COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Activation, adapters, provider/live, public-sync, Kernel/Flow mutation, and unrelated GAP mutation remain held. LHW24 remains latest closed numbered LHW wave."
 }

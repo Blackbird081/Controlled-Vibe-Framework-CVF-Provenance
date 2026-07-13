@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t8_packet_binding_contract_packet_authoring_next`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh SOT3-T8 GC-018 and source-verified no-commit work-order authoring; parked checkpoint=implementation before pre-dispatch, activation, monitor, database, adapters, provider/live, public, and unrelated Catalog/GAP mutation.
+Startup acknowledged: current mode=`sot3_t8_packet_binding_contract_dispatched`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit SOT3-T8 execution from `e0fc0a5bb`; parked checkpoint=Kernel/Flow mutation, activation, monitor, database, adapters, provider/live, public, and unrelated Catalog/GAP mutation.
 
 ## Current Mode
 
-Current mode marker: `sot3_t8_packet_binding_contract_packet_authoring_next`
+Current mode marker: `sot3_t8_packet_binding_contract_dispatched`
 
-Current mode: `sot3_t8_packet_binding_contract_packet_authoring_next`
+Current mode: `sot3_t8_packet_binding_contract_dispatched`
 
-`sot3_t8_packet_binding_contract_packet_authoring_next`
+`sot3_t8_packet_binding_contract_dispatched`
 
 Previous mode:
 
-`sot3_t7_semantic_value_audit_closed_pass_bounded`
+`sot3_t8_packet_binding_contract_packet_authoring_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-T8 Refinery-to-Kernel packet-binding contract dispatch | `e0fc0a5bb` | DISPATCH_READY; one no-commit worker; Refinery owner, T6 migration, no Kernel/Flow mutation. |
 | SOT3-T7 semantic-value audit and main roadmap closure | `5d7318098` | CLOSED_PASS_BOUNDED; 305 terminal items, zero unresolved semantic source value; packet-binding architecture GAP remains open and routes to T8 packet authoring. |
 | SOT3-T5 post-Kernel Truth Flow dispatch | `231bc8aea` | DISPATCH_READY after T4R1; one no-commit worker; T6-T7 held. |
 | SOT3-T4R1 Kernel current-reference authority repair closure | `cda8fec64` | REVIEWER_ACCEPTED_BOUNDED; 7 suites/54 tests; T5 packet refresh only next. |
@@ -149,12 +150,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_t8_packet_binding_contract_packet_authoring_next`
+Mode: `sot3_t8_packet_binding_contract_dispatched`
 
-Author fresh SOT3-T8 GC-018 and a source-verified `WORKER_MUST_NOT_COMMIT`
-work order for the shared Refinery-to-Kernel packet-binding contract GAP.
-Implementation before pre-dispatch, activation, adapters, provider/live,
-public-sync, and unrelated GAP mutation remain held.
+Execute exactly one SOT3-T8 `WORKER_MUST_NOT_COMMIT` tranche from dispatch
+commit `e0fc0a5bb`. Return uncommitted `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Kernel/Flow mutation, activation, adapters,
+provider/live, public-sync, and unrelated GAP mutation remain held.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

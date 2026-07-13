@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1724,
+  "stateKey": "sot3T8Dispatch20260713",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-13",
+    "materialCommit": "e0fc0a5bb",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_T8_REFINERY_KERNEL_PACKET_BINDING_CONTRACT_2026-07-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T8_REFINERY_KERNEL_PACKET_BINDING_CONTRACT_2026-07-13.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "one bounded T8 worker execution and uncommitted return",
+    "claimBoundary": "no Kernel/Flow mutation, activation, provider/live, public-sync, or unrelated GAP mutation"
+  }
+}

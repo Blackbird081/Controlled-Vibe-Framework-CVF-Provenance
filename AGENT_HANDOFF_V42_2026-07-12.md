@@ -17,10 +17,10 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_t8_packet_binding_contract_packet_authoring_next`;
-active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=fresh SOT3-T8
-GC-018 and source-verified no-commit work-order authoring; parked checkpoint=T8
-implementation before pre-dispatch, activation, provider/live, public, monitor,
+Startup acknowledged: current mode=`sot3_t8_packet_binding_contract_dispatched`;
+active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one no-commit
+SOT3-T8 execution from `e0fc0a5bb`; parked checkpoint=Kernel/Flow mutation,
+activation, provider/live, public, monitor,
 database, adapter, and unrelated Catalog/GAP work.
 
 Latest closed numbered LHW wave remains `LHW24`.
@@ -36,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_t8_packet_binding_contract_packet_authoring_next`
+`sot3_t8_packet_binding_contract_dispatched`
 
 ## Latest Work / Changes
 
@@ -60,9 +60,8 @@ The refreshed T5 packet passed 75/75 pre-dispatch and is committed at
 
 ## Next Allowed Move
 
-Author fresh SOT3-T8 GC-018 and a source-verified no-commit work order for the
-shared Refinery-to-Kernel packet-binding contract GAP. Implementation remains
-unauthorized before pre-dispatch.
+Execute one no-commit SOT3-T8 tranche from `e0fc0a5bb` and return it for
+review. No Kernel/Flow mutation or external action is authorized.
 
 ## Active Boundary
 
@@ -353,3 +352,29 @@ Operator authorization: process T7 and proceed to the next tranche.
 
 Rollback boundary: revert only this closure/session-sync batch; retain T7
 material commit `5d7318098` and the open packet-binding GAP record.
+
+## SOT3-T8 Dispatch Anchor - 2026-07-13
+
+T8 baseline/work-order dispatch commit is `e0fc0a5bb`; pre-dispatch passed
+75/75 and commit hook passed 83/83. One `WORKER_MUST_NOT_COMMIT` execution is
+next. Reviewer owns acceptance and commit.
+
+## Core Guard Self-Protection Authorization - SOT3-T8 Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize T8 dispatch across canonical
+session front doors.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3T8Dispatch20260713.json`
+
+Operator authorization: proceed with the next SOT3 tranche.
+
+Rollback boundary: revert only dispatch continuity; retain packet commit
+`e0fc0a5bb` and prior SOT3 closure commits.
