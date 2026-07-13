@@ -263,3 +263,23 @@ execution was submitted for reviewer handling.
 
 Rollback boundary: revert only this handoff anchor; retain material closure
 commit `8a653370a`.
+
+## SOT3-T6 Packet Commit Anchor - 2026-07-13
+
+T6/T7 packet authoring commit `b87079d62` is the execution base for the
+reviewed T6 worker return. T6 material remains uncommitted pending reviewer
+closure; T7 implementation remains held.
+
+## Core Guard Self-Protection Authorization - SOT3-T6 Packet Anchor
+
+Authorized guard-maintenance scope: anchor packet commit `b87079d62` before T6
+material closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+
+Operator authorization: commit T6 cleanly and write the T7 work order.
+
+Rollback boundary: revert only this handoff anchor; retain packet commit
+`b87079d62`.
