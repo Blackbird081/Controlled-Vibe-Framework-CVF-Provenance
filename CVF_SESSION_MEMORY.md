@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a3_live_proof_dispatched`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one bounded no-commit A3 live-proof execution from the canonical work order; parked checkpoint=A4-A5 failure/recovery, release, public, production, distributed-durability, and user-validation work.
+Startup acknowledged: current mode=`sot3_activation_a3_recovery_guard_proven_live_ready`; active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=runner-only A3 recovery live proof and reviewer closure; parked checkpoint=A4-A5, release, public, production, distributed-durability, and user-validation work.
 
 ## Current Mode
 
-Current mode marker: `sot3_activation_a3_live_proof_dispatched`
+Current mode marker: `sot3_activation_a3_recovery_guard_proven_live_ready`
 
-Current mode: `sot3_activation_a3_live_proof_dispatched`
+Current mode: `sot3_activation_a3_recovery_guard_proven_live_ready`
 
-`sot3_activation_a3_live_proof_dispatched`
+`sot3_activation_a3_recovery_guard_proven_live_ready`
 
 Previous mode:
 
-`sot3_activation_a2_closed_bounded_a3_packet_next`
+`sot3_activation_a3_live_proof_dispatched`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 activation A3 blocked attempt and recovery guard | `dd64479bc` | BLOCKED evidence retained; one-use runner permit, pre-network call ledger, direct-invocation negative proof, and ADIF-0030 added; operator declares Alibaba calls unmetered for recovery; A3 PASS not yet claimed. |
 | SOT3 activation A3 real-provider approved-context proof dispatch | `0771e22fa` | DISPATCH_READY; proof-only runner/test plus receipt/manifest; one planned live call and at most one diagnosed retry; 75/75 pre-dispatch and 83/83 pre-commit PASS; worker must not commit. |
 | SOT3 activation A2 durable activation-evidence closure | `fdead7c99` | CLOSED_PASS_BOUNDED after reviewer repair; focused 71/71, full non-live 3207 PASS with 2 skipped, typecheck/build and 83/83 pre-commit PASS; claim `DURABLE_EVIDENCE_REPLAY_PROVEN_LOCAL`; A3 packet authoring next. |
 | SOT3 activation A2 durable activation-evidence dispatch | `7e118f16e` | DISPATCH_READY; atomic local store, per-chunk lifecycle traces, restart/duplicate/corrupt/partial-write proof; 75/75 pre-dispatch and 83/83 pre-commit PASS; worker must not commit. |
@@ -157,13 +158,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_activation_a3_live_proof_dispatched`
+Mode: `sot3_activation_a3_recovery_guard_proven_live_ready`
 
-SOT3 activation A3 is dispatched at `0771e22fa`. The next allowed move is one
-bounded `WORKER_MUST_NOT_COMMIT` execution from the canonical A3 work order,
-using one planned live call and at most one diagnostic-gated retry, then a
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` return. A4-A5 remain
-unauthorized.
+SOT3 activation A3 blocked-attempt evidence and the recovery guard are
+committed at `dd64479bc`. The next allowed move is the canonical runner-only
+A3 recovery live proof, followed by reviewer closure. Alibaba provider calls
+are operator-declared unmetered for this recovery; every failed or unclear run
+still requires a secret-safe diagnostic and a result-changing action before
+rerun. A4-A5 remain unauthorized.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

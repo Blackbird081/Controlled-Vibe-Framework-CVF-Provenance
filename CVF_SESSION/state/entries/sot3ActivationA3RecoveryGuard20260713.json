@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1734,
+  "stateKey": "sot3ActivationA3RecoveryGuard20260713",
+  "value": {
+    "status": "RECOVERY_LIVE_READY",
+    "materialCommit": "dd64479bc",
+    "priorDisposition": "BLOCKED_WITH_REASON",
+    "priorObservedAlibabaCalls": 3,
+    "operatorQuotaPolicy": "ALIBABA_PROVIDER_UNMETERED_2026-07-13",
+    "runnerControl": "ONE_USE_NONCE_PERMIT_AND_PRE_NETWORK_CALL_LEDGER",
+    "offlineDirectInvocationProof": "1 guard test PASS; 1 live suite SKIP",
+    "adifEntry": "ADIF-0030",
+    "claimBoundary": "No A3 PASS yet; recovery must persist receipt correlation before reviewer closure; A4-A5 remain unauthorized."
+  }
+}

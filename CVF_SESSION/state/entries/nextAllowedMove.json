@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1733,
+  "stateOrder": 1735,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3 activation A3 real-provider proof is DISPATCH_READY at commit 0771e22fa after 75/75 pre-dispatch and 83/83 pre-commit checks passed. Next allowed move is one bounded WORKER_MUST_NOT_COMMIT A3 execution from the canonical work order with one planned live call and at most one diagnostic-gated retry. A4-A5 remain unauthorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3 activation A3 blocked-attempt evidence, one-use runner permit, pre-network call ledger, and ADIF-0030 are committed at dd64479bc. Direct Vitest invocation proved 1 offline guard PASS and 1 live suite SKIP. Operator authorization on 2026-07-13 declares Alibaba provider calls unmetered for A3 recovery; diagnostic-before-rerun and diminishing-return controls remain binding. Next allowed move is the runner-only A3 recovery live proof and reviewer closure. A4-A5 remain unauthorized. LHW24 remains latest closed numbered LHW wave."
 }

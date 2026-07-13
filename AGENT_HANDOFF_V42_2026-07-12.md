@@ -17,10 +17,10 @@ root and named worker return; reviewer/closer owns acceptance and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_activation_a3_live_proof_dispatched`;
+Startup acknowledged: current mode=`sot3_activation_a3_recovery_guard_proven_live_ready`;
 active handoff=AGENT_HANDOFF_V42_2026-07-12.md; next allowed move=one bounded
-no-commit A3 live-proof execution from the canonical work order; parked
-checkpoint=A4-A5 failure/recovery, release, public, production,
+runner-only A3 recovery live proof and reviewer closure; parked
+checkpoint=A4-A5, release, public, production,
 distributed-durability, and user-validation work.
 
 Latest closed numbered LHW wave remains `LHW24`.
@@ -36,7 +36,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_activation_a3_live_proof_dispatched`
+`sot3_activation_a3_recovery_guard_proven_live_ready`
 
 ## Latest Work / Changes
 
@@ -60,16 +60,49 @@ The refreshed T5 packet passed 75/75 pre-dispatch and is committed at
 
 ## Next Allowed Move
 
-SOT3 activation A3 is dispatched at `0771e22fa`. The next allowed move is one
-bounded no-commit A3 execution from the canonical work order, using one planned
-live call and at most one diagnostic-gated retry.
+SOT3 activation A3 blocked-attempt evidence and the recovery guard are
+committed at `dd64479bc`. The next allowed move is the runner-only recovery
+live proof and reviewer closure. Alibaba calls are operator-declared unmetered;
+diagnostic-before-rerun and diminishing-return rules remain binding.
 
 ## Active Boundary
 
-Only the exact A3 worker manifest and call budget are authorized. No A4-A5
+Only the A3 runner-guard recovery and closure are authorized. No A4-A5
 failure/recovery or release execution, public-sync, production or
 distributed-durability claim, user-validation claim, governance checker, or
 unrelated Catalog/GAP mutation is authorized.
+
+## SOT3 Activation A3 Recovery Guard Anchor - 2026-07-13
+
+The first worker return is honestly `BLOCKED_WITH_REASON`: three real Alibaba
+calls occurred against the original two-call ceiling, and the passing second
+run did not persist an observation. No A3 PASS was accepted from memory.
+
+At `dd64479bc`, reviewer repair added a one-use nonce permit, provider-key
+resolution only after permit validation, a secret-safe pre-network call
+ledger, and ADIF-0030. Direct Vitest invocation produced one offline guard
+PASS and skipped the live suite. The operator then declared Alibaba provider
+calls unmetered for A3 recovery. This removes the numeric quota ceiling only;
+it does not remove diagnostic-before-rerun, evidence persistence, or
+diminishing-return controls.
+
+## Core Guard Self-Protection Authorization - SOT3 A3 Recovery Sync
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ActivationA3RecoveryGuard20260713.json`
+
+Operator authorization: bounded A3 repair, ADIF guard, runner-only recovery,
+and unmetered Alibaba provider use on 2026-07-13.
+
+Rollback boundary: revert only this recovery continuity batch; retain
+`dd64479bc`, the blocked receipt, the runner guard, and ADIF-0030.
 
 ## Core Guard Self-Protection Authorization - SOT3-T4 Dispatch And V42 Rotation
 
