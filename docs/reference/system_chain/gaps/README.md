@@ -49,7 +49,7 @@ adding, editing, or closing a gap entry.
 
 ## Current Gaps (Generated Summary)
 
-This table is a human summary of the 6 gap entries generated at authoring
+This table is a human summary of the 7 gap entries generated at authoring
 time. Always trust `CVF_SYSTEM_CHAIN_GAP_INDEX.json` and the `entries/`
 directory over this prose if they disagree; re-run the generator and refresh
 this table when entries change.
@@ -60,7 +60,8 @@ this table when entries change.
 |---|---|
 | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | 2 |
 | `EVIDENCED_NOT_OPERATOR_VISIBLE` | 1 |
-| `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE` | 3 |
+| `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` | 3 |
+| `OPEN_CONFIRMED_GAP` | 1 |
 
 ### Open / Parked / Intentionally Separated Gaps
 
@@ -69,14 +70,21 @@ this table when entries change.
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
-| `cvf.asc.gap.sot3_independent_refinery_owner_unresolved.v1` | doctrine_to_contract -> contract_to_runtime | `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` -> `NONE_WITH_REASON` | `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE` | `DECLARED_EDGE` | `entries/sot3_independent_refinery_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md` | Reopen only when an operator-authorized Refinery implementation tranche is dispatched |
-| `cvf.asc.gap.sot3_truth_kernel_runtime_unresolved.v1` | doctrine_to_contract -> contract_to_runtime | `docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md` -> `NONE_WITH_REASON` | `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE` | `DECLARED_EDGE` | `entries/sot3_truth_kernel_runtime_unresolved.json`; `docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md` | Reopen only when an operator-authorized Truth Kernel runtime implementation tranche is dispatched; existing TKG-T1 doctrine owner is unaffected |
-| `cvf.asc.gap.sot3_post_kernel_truth_flow_owner_unresolved.v1` | contract_to_runtime -> runtime_to_enforcement | `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` -> `NONE_WITH_REASON` | `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE` | `DECLARED_EDGE` | `entries/sot3_post_kernel_truth_flow_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md` | Reopen only when an operator-authorized post-Kernel Truth Flow implementation tranche is dispatched |
+| `cvf.asc.gap.sot3_refinery_kernel_packet_binding_hash_owner_unresolved.v1` | contract_to_runtime | `EXTENSIONS/CVF_REFINERY/` -> `NONE_WITH_REASON` | `OPEN_CONFIRMED_GAP` | `DECLARED_EDGE` | `entries/sot3_refinery_kernel_packet_binding_hash_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | Reopen only when an operator-authorized packet-binding-hash contract tranche is dispatched; the T6 integration-local hash helper remains bounded, not an owner-level contract |
 
 ### Recently Closed Gaps
 
-None. This is the ledger's first populated wave (ASC-RW); no gap has been
-closed since creation.
+| gapId | Plane | Owner (source -> target) | Status | Proof class | Entry / Evidence | Boundary caveat |
+|---|---|---|---|---|---|---|
+| `cvf.asc.gap.sot3_independent_refinery_owner_unresolved.v1` | doctrine_to_contract -> contract_to_runtime | `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` -> `EXTENSIONS/CVF_REFINERY/` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_independent_refinery_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | No package activation, adapter, provider/live, or public-sync claim; private-provenance implementation only |
+| `cvf.asc.gap.sot3_truth_kernel_runtime_unresolved.v1` | doctrine_to_contract -> contract_to_runtime | `docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md` -> `EXTENSIONS/CVF_TRUTH_KERNEL/` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_truth_kernel_runtime_unresolved.json`; `docs/reviews/CVF_SOT3_T4R1_COMPLETION_REVIEW_2026-07-13.md`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | No package activation, adapter, provider/live, or public-sync claim; TKG-T1 remains the doctrine owner, not duplicated; private-provenance implementation only |
+| `cvf.asc.gap.sot3_post_kernel_truth_flow_owner_unresolved.v1` | contract_to_runtime -> runtime_to_enforcement | `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` -> `EXTENSIONS/CVF_TRUTH_FLOW/` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_post_kernel_truth_flow_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T5_COMPLETION_REVIEW_2026-07-13.md`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | No package activation, adapter, provider/live, or public-sync claim; private-provenance implementation only |
+
+Reconciled by SOT3-T7 (2026-07-13) after SOT3-T3/T4/T4R1/T5/T6 reviewer
+acceptance created private-provenance runtime owners for all three
+previously unresolved SOT3 GAP candidates. See
+`docs/reviews/CVF_SOT3_T7_WORKER_RETURN_2026-07-13.md` for the full
+reconciliation evidence.
 
 ## Search Examples
 
@@ -129,10 +137,34 @@ Decision 2.
 
 ## Claim Boundary
 
-This README is the gap ledger's human front door for the 3 gap entries
-populated in the MSEA-ASC-RW wave. It does not claim exhaustive coverage of
+This README is the gap ledger's human front door for the 7 gap entries
+currently generated (3 populated in the original MSEA-ASC-RW wave, 3 added by
+SOT3-RAP-T0, and 1 added by SOT3-T7). It does not claim exhaustive coverage of
 every possible CVF architecture gap, does not modify any R91-owned artifact,
 and does not authorize runtime, public, provider, Web, or L4 promotion work.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | worker |
+| Provider or surface | local private provenance workspace |
+| Session or invocation | SOT3-T7 execution, 2026-07-13 |
+| Working directory | repository root |
+| Command or tool surface | Read, Edit, Bash (git, python governance/compat/generate_as_built_system_catalog.py, python governance/compat/check_as_built_system_catalog_drift.py) |
+| Target paths | this README plus the paired T7 semantic audit and worker return, and the 3 updated plus 1 new GAP entries |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T7_SEMANTIC_VALUE_AUDIT_CLOSEOUT_2026-07-13.md`, authored at commit `81955f371` |
+| Before status evidence | clean worktree at HEAD `81955f371`; this file listed 6 gap entries and 3 SOURCE_OWNER_UNRESOLVED SOT3 GAPs before edits |
+| After status evidence | this file lists 7 gap entries, 3 SOT3 GAPs reconciled to ACTIVE_OWNER_CREATED_WITH_BOUNDARY, and 1 new packet-binding-hash GAP, confirmed by `check_as_built_system_catalog_drift.py --enforce` PASS |
+| Diff evidence | `git diff --name-status` |
+| Approval boundary | Catalog/GAP reconciliation only; no commit |
+| Claim boundary | no package/runtime/checker/session/public-sync mutation claim |
+| Agent type | no-commit audit worker |
+| Invocation ID | `sot3-t7-execution-2026-07-13` |
+| Expected manifest | `docs/reviews/CVF_SOT3_T7_SEMANTIC_VALUE_AUDIT_2026-07-13.md`; `docs/reference/system_chain/gaps/entries/sot3_independent_refinery_owner_unresolved.json`; `docs/reference/system_chain/gaps/entries/sot3_truth_kernel_runtime_unresolved.json`; `docs/reference/system_chain/gaps/entries/sot3_post_kernel_truth_flow_owner_unresolved.json`; `docs/reference/system_chain/gaps/entries/sot3_refinery_kernel_packet_binding_hash_owner_unresolved.json`; `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json`; `docs/reference/system_chain/gaps/README.md`; `docs/reviews/CVF_SOT3_T7_WORKER_RETURN_2026-07-13.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
+| Actual changed set | `docs/reviews/CVF_SOT3_T7_SEMANTIC_VALUE_AUDIT_2026-07-13.md`; `docs/reference/system_chain/gaps/entries/sot3_independent_refinery_owner_unresolved.json`; `docs/reference/system_chain/gaps/entries/sot3_truth_kernel_runtime_unresolved.json`; `docs/reference/system_chain/gaps/entries/sot3_post_kernel_truth_flow_owner_unresolved.json`; `docs/reference/system_chain/gaps/entries/sot3_refinery_kernel_packet_binding_hash_owner_unresolved.json`; `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json`; `docs/reference/system_chain/gaps/README.md`; `docs/reviews/CVF_SOT3_T7_WORKER_RETURN_2026-07-13.md`; `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this execution |
 
 ## Public Export Disposition
 

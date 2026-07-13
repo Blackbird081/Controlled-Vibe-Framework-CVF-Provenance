@@ -302,3 +302,20 @@ Operator authorization: commit T6 cleanly and write T7 work order.
 
 Rollback boundary: revert only this anchor; retain T6 material commit
 `2c4c498da`.
+
+## SOT3-T7 Packet Anchor - 2026-07-13
+
+T7 packet commit `81955f371` is the reviewed worker execution base. T7 material
+is pending reviewer closure with bounded scope repairs only.
+
+## Core Guard Self-Protection Authorization - SOT3-T7 Packet Anchor
+
+Authorized guard-maintenance scope: anchor T7 packet commit before material closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V42_2026-07-12.md`
+
+Operator authorization: continue T7 execution and review.
+
+Rollback boundary: revert only this anchor; retain packet commit `81955f371`.

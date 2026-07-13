@@ -2,11 +2,12 @@
   "schemaVersion": "cvf.system_chain_gap_index.v1",
   "generatedBy": "governance/compat/generate_as_built_system_catalog.py",
   "sourceDir": "docs/reference/system_chain/gaps/entries/",
-  "gapCount": 6,
+  "gapCount": 7,
   "countsByStatus": {
     "VALUE_PARKED_WITH_REOPEN_CONDITIONS": 1,
     "PARTIAL_CHAIN_WITH_BOUNDARY": 1,
-    "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE": 3,
+    "ACTIVE_OWNER_CREATED_WITH_BOUNDARY": 3,
+    "OPEN_CONFIRMED_GAP": 1,
     "EVIDENCED_NOT_OPERATOR_VISIBLE": 1
   },
   "gaps": [
@@ -93,46 +94,48 @@
       "sourcePlaneId": "cvf.asc.plane.doctrine_to_contract.v1",
       "targetPlaneId": "cvf.asc.plane.contract_to_runtime.v1",
       "sourceOwner": "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
-      "targetOwner": "NONE_WITH_REASON: no current CVF module implements an independent CVF Refinery; T1 mandatory RefineryPacket search found zero matches in docs/reference, EXTENSIONS, and governance",
-      "missingEdge": "The accepted SOT three-layer contract chain names an independent CVF Refinery layer (SourceEnvelope/RefineryPacket producer), but no CVF module owns or implements this layer as runtime.",
-      "currentStatus": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE",
-      "proofClass": "DECLARED_EDGE",
+      "targetOwner": "EXTENSIONS/CVF_REFINERY/",
+      "missingEdge": "The accepted SOT three-layer contract chain names an independent CVF Refinery layer (SourceEnvelope/RefineryPacket producer). SOT3-T3 built this as a deterministic local package (`RefineryEngine.run`, `REQUIRED_STAGE_CHAIN`); SOT3-T6 proved it executes as a real dependency inside the three-layer vertical slice.",
+      "currentStatus": "ACTIVE_OWNER_CREATED_WITH_BOUNDARY",
+      "proofClass": "EXECUTED_AND_EVIDENCED_EDGE",
       "citations": [
         {
           "path": "docs/reviews/CVF_SOT3_T1_OWNER_NOVELTY_MAP_2026-07-12.md",
           "lineOrSection": "CAP-02/CAP-03 Refinery Core",
-          "evidenceRole": "reviewer-accepted NEW_OWNER_CANDIDATE disposition"
+          "evidenceRole": "reviewer-accepted NEW_OWNER_CANDIDATE disposition (superseded by T3/T6 owner creation)"
         },
         {
-          "path": "docs/reviews/CVF_SOT3_T2_CONTRACT_SOURCE_RECONCILIATION_2026-07-12.md",
-          "lineOrSection": "Capability Key Cross-Reference",
-          "evidenceRole": "confirms CAP-02/CAP-03 remain future-tranche NEW_OWNER_CANDIDATE, not this tranche"
+          "path": "docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md",
+          "lineOrSection": "Closure Checklist",
+          "evidenceRole": "reviewer acceptance of the Refinery Core package as deterministic runtime owner"
+        },
+        {
+          "path": "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md",
+          "lineOrSection": "Dependency-Closure Matrix, row `real three-layer instances`",
+          "evidenceRole": "reviewer acceptance that `RefineryEngine.run` executes as a real dependency, not a mock, inside the accepted vertical slice"
         }
       ],
-      "impact": "Blocks any as-built claim that CVF has an independent Refinery layer; does not block the accepted documentation-contract chain or any other plane/module.",
+      "impact": "Was: blocked any as-built claim that CVF has an independent Refinery layer. Now: the layer has a private-provenance runtime owner; remaining impact is limited to activation, adapter, provider/live, and public-sync claims, none of which this GAP closure asserts.",
       "closeCondition": {
         "conditionKind": "NAMED_ARTIFACT_ACCEPTED",
-        "conditionText": "A source-verified SOT3-T3-style (or later) implementation tranche is authorized, builds a Refinery runtime module, and a reviewer accepts a completion review naming its owner path."
+        "conditionText": "SATISFIED: `docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md` accepts the Refinery Core package as owner; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` accepts real-instance execution."
       },
       "reopenCondition": {
         "conditionKind": "OPERATOR_DECISION_RECORDED",
-        "conditionText": "Operator authorizes a fresh Refinery implementation roadmap/work order citing the accepted SOT3-T2 contract chain as its basis."
+        "conditionText": "Reopen only if a future review finds the `EXTENSIONS/CVF_REFINERY/` owner path removed, superseded, or materially non-functional, or if an operator authorizes package activation/adapter/provider work that changes this GAP's boundary."
       },
-      "actionOwner": "PARKED_WITH_REASON: no implementation tranche is currently authorized; Refinery remains OWNER_CANDIDATE per T1 CAP-02/CAP-03",
+      "actionOwner": "SOT3-T7 semantic value audit and closeout",
       "freshnessInputs": [
         "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
-        "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+        "docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md",
+        "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md"
       ],
       "lastReviewed": {
-        "date": "2026-07-12",
-        "acceptedArtifact": "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+        "date": "2026-07-13",
+        "acceptedArtifact": "docs/reviews/CVF_SOT3_T7_WORKER_RETURN_2026-07-13.md"
       },
-      "negativeSearchEvidence": [
-        {
-          "searchCommand": "rg -n -i \"sot|refinery|truth.kernel|truth.flow|TruthReceipt|cvf.asc.(module|interface|gap).sot\" docs/reference/system_architecture_catalog/entries docs/reference/system_chain/gaps/entries docs/reference EXTENSIONS governance .private_reference/legacy",
-          "searchResult": "No CVF-owned Refinery module or interface owner found; only SKSOT (unrelated Skill Source of Truth token) and SOT3 governance-doc self-references matched."
-        }
-      ]
+      "boundaryCaveat": "Does not claim package activation, an execution adapter, provider/live proof, public-sync readiness, or production readiness. Does not claim the Refinery-to-Kernel packet-binding hash is an owner-level shared contract (see the separately tracked packet-binding-hash GAP disposition). Private-provenance implementation only.",
+      "priorDisposition": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE"
     },
     {
       "stableId": "cvf.asc.gap.sot3_post_kernel_truth_flow_owner_unresolved.v1",
@@ -140,44 +143,98 @@
       "sourcePlaneId": "cvf.asc.plane.contract_to_runtime.v1",
       "targetPlaneId": "cvf.asc.plane.runtime_to_enforcement.v1",
       "sourceOwner": "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
-      "targetOwner": "NONE_WITH_REASON: no current CVF module implements a post-Kernel Truth Flow lifecycle (TruthReference issuance, DistributionPackage, FeedbackProposal handling); T1 mandatory TruthReference and Truth Flow/post-Kernel searches found zero matches in docs/reference, EXTENSIONS, and governance",
-      "missingEdge": "The accepted SOT three-layer contract chain names a post-Kernel Truth Flow layer (TruthReference lifecycle, DistributionPackage, FeedbackProposal), but no CVF module owns or implements this layer as runtime.",
-      "currentStatus": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE",
-      "proofClass": "DECLARED_EDGE",
+      "targetOwner": "EXTENSIONS/CVF_TRUTH_FLOW/",
+      "missingEdge": "The accepted SOT three-layer contract chain names a post-Kernel Truth Flow layer (TruthReference lifecycle, DistributionPackage, FeedbackProposal). SOT3-T5 built this as a deterministic local package (`DistributionEngine`, `KernelAuthorityBoundary`, `FeedbackEngine`) bound only to the real Kernel's own `referenceState()` resolver; SOT3-T6 proved it executes as a real dependency through delivery, consumption, and terminal acknowledgement inside the three-layer vertical slice.",
+      "currentStatus": "ACTIVE_OWNER_CREATED_WITH_BOUNDARY",
+      "proofClass": "EXECUTED_AND_EVIDENCED_EDGE",
       "citations": [
         {
           "path": "docs/reviews/CVF_SOT3_T1_OWNER_NOVELTY_MAP_2026-07-12.md",
           "lineOrSection": "CAP-06 Flow lifecycle",
-          "evidenceRole": "reviewer-accepted NEW_OWNER_CANDIDATE disposition"
+          "evidenceRole": "reviewer-accepted NEW_OWNER_CANDIDATE disposition (superseded by T5/T6 owner creation)"
         },
         {
-          "path": "docs/reviews/CVF_SOT3_T2_CONTRACT_SOURCE_RECONCILIATION_2026-07-12.md",
-          "lineOrSection": "Capability Key Cross-Reference",
-          "evidenceRole": "confirms CAP-06 remains future-tranche NEW_OWNER_CANDIDATE, not this tranche"
+          "path": "docs/reviews/CVF_SOT3_T5_COMPLETION_REVIEW_2026-07-13.md",
+          "lineOrSection": "Closure Checklist",
+          "evidenceRole": "reviewer acceptance of the post-Kernel Truth Flow package as deterministic runtime owner"
+        },
+        {
+          "path": "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md",
+          "lineOrSection": "Dependency-Closure Matrix, rows `delivery and consumption` and `terminal lifecycle`",
+          "evidenceRole": "reviewer acceptance that `DistributionEngine` executes as a real dependency, not a mock, reaching terminal `ACKNOWLEDGED` state inside the accepted vertical slice"
         }
       ],
-      "impact": "Blocks any as-built claim that CVF has a post-Kernel Truth Flow lifecycle; does not block the accepted documentation-contract chain or any other plane/module.",
+      "impact": "Was: blocked any as-built claim that CVF has a post-Kernel Truth Flow lifecycle. Now: the layer has a private-provenance runtime owner; remaining impact is limited to activation, adapter, provider/live, and public-sync claims, none of which this GAP closure asserts.",
       "closeCondition": {
         "conditionKind": "NAMED_ARTIFACT_ACCEPTED",
-        "conditionText": "A source-verified SOT3-T3-style (or later) implementation tranche is authorized, builds a post-Kernel Truth Flow runtime module, and a reviewer accepts a completion review naming its owner path."
+        "conditionText": "SATISFIED: `docs/reviews/CVF_SOT3_T5_COMPLETION_REVIEW_2026-07-13.md` accepts the post-Kernel Truth Flow package as owner; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` accepts real-instance execution to terminal lifecycle."
       },
       "reopenCondition": {
         "conditionKind": "OPERATOR_DECISION_RECORDED",
-        "conditionText": "Operator authorizes a fresh post-Kernel Truth Flow implementation roadmap/work order citing the accepted SOT3-T2 contract chain as its basis."
+        "conditionText": "Reopen only if a future review finds the `EXTENSIONS/CVF_TRUTH_FLOW/` owner path removed, superseded, or materially non-functional, or if an operator authorizes package activation/adapter/provider work that changes this GAP's boundary."
       },
-      "actionOwner": "PARKED_WITH_REASON: no implementation tranche is currently authorized; Truth Flow remains OWNER_CANDIDATE per T1 CAP-06",
+      "actionOwner": "SOT3-T7 semantic value audit and closeout",
       "freshnessInputs": [
         "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
-        "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+        "docs/reviews/CVF_SOT3_T5_COMPLETION_REVIEW_2026-07-13.md",
+        "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md"
       ],
       "lastReviewed": {
-        "date": "2026-07-12",
-        "acceptedArtifact": "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+        "date": "2026-07-13",
+        "acceptedArtifact": "docs/reviews/CVF_SOT3_T7_WORKER_RETURN_2026-07-13.md"
+      },
+      "boundaryCaveat": "Does not claim package activation, an execution adapter, provider/live proof, public-sync readiness, or production readiness. Private-provenance implementation only.",
+      "priorDisposition": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE"
+    },
+    {
+      "stableId": "cvf.asc.gap.sot3_refinery_kernel_packet_binding_hash_owner_unresolved.v1",
+      "entityType": "GAP",
+      "sourcePlaneId": "cvf.asc.plane.contract_to_runtime.v1",
+      "targetPlaneId": "cvf.asc.plane.contract_to_runtime.v1",
+      "sourceOwner": "EXTENSIONS/CVF_REFINERY/",
+      "targetOwner": "NONE_WITH_REASON: Refinery's RefineryPacket type has no top-level content_hash field, and no CVF module owns a canonical Refinery-to-Kernel packet-binding hash contract; Kernel's RefineryPacketRef.content_hash and EvaluateInput.packetHash both require a binding-identity value that Refinery itself does not produce",
+      "missingEdge": "The accepted T2 contract chain binds Kernel admission to a Refinery-produced packet via content_hash equality (RefineryPacketRef.content_hash == EvaluateInput.packetHash), but neither Refinery nor Kernel owns the canonical algorithm for deriving that hash from a RefineryPacket. SOT3-T6's integration package added a local `packetContentHash()` helper (canonical-JSON SHA-256 over stable RefineryPacket fields) strictly as caller-side type-mapping to satisfy this binding inside one bounded integration slice; it is not a shared, owner-level contract that other future callers can rely on.",
+      "currentStatus": "OPEN_CONFIRMED_GAP",
+      "proofClass": "DECLARED_EDGE",
+      "citations": [
+        {
+          "path": "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md",
+          "lineOrSection": "Findings / Position; Dependency-Closure Matrix row `packet binding`",
+          "evidenceRole": "reviewer finding that the T6 local hash helper is adequate for the bounded slice but does not create an owner-level Refinery-to-Kernel hash contract, and that T7 must reconcile the GAP"
+        },
+        {
+          "path": "EXTENSIONS/CVF_SOT_THREE_LAYER_SLICE/src/evidence/packet-hash.ts",
+          "lineOrSection": "packetContentHash function",
+          "evidenceRole": "caller-side, integration-local type-mapping helper; not exported by cvf-refinery or cvf-truth-kernel"
+        },
+        {
+          "path": "EXTENSIONS/CVF_TRUTH_KERNEL/src/types/refinery-packet.ts",
+          "lineOrSection": "RefineryPacketRef interface",
+          "evidenceRole": "confirms content_hash is a Kernel-side input field with no producing algorithm owned by Refinery"
+        }
+      ],
+      "impact": "Any future caller that needs to bind a RefineryPacket to a Kernel evaluation request must independently invent or copy a packet-hash derivation, risking divergent, non-interoperable hash algorithms across future integration slices. Does not block the accepted T3 Refinery, T4/T4R1 Truth Kernel, T5 Truth Flow, or T6 vertical-slice acceptances, all of which remain valid within their own bounded scope.",
+      "closeCondition": {
+        "conditionKind": "NAMED_ARTIFACT_ACCEPTED",
+        "conditionText": "A source-verified future tranche is authorized, defines a canonical Refinery-to-Kernel packet-binding hash contract (algorithm, owning package or shared contract module, and field-stability rules), and a reviewer accepts a completion review naming its owner path."
+      },
+      "reopenCondition": {
+        "conditionKind": "OPERATOR_DECISION_RECORDED",
+        "conditionText": "Operator authorizes a fresh packet-binding-hash contract roadmap/work order citing this GAP and the T6 completion review as its basis. Do not implement this contract as an unplanned side effect of an unrelated tranche."
+      },
+      "actionOwner": "docs/reference/sot_three_layer/README.md (contract-chain owner; a future source-verified contract tranche is required before runtime adoption)",
+      "freshnessInputs": [
+        "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md",
+        "EXTENSIONS/CVF_SOT_THREE_LAYER_SLICE/src/evidence/packet-hash.ts"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-13",
+        "acceptedArtifact": "docs/reviews/CVF_SOT3_T7_WORKER_RETURN_2026-07-13.md"
       },
       "negativeSearchEvidence": [
         {
-          "searchCommand": "rg -n -i \"sot|refinery|truth.kernel|truth.flow|TruthReceipt|cvf.asc.(module|interface|gap).sot\" docs/reference/system_architecture_catalog/entries docs/reference/system_chain/gaps/entries docs/reference EXTENSIONS governance .private_reference/legacy",
-          "searchResult": "No CVF-owned post-Kernel Truth Flow module or interface owner found; only SKSOT (unrelated Skill Source of Truth token) and SOT3 governance-doc self-references matched."
+          "searchCommand": "rg -n \"content_hash|packetHash\" EXTENSIONS/CVF_REFINERY/src EXTENSIONS/CVF_TRUTH_KERNEL/src",
+          "searchResult": "content_hash/packetHash appear only as Kernel-side input fields (RefineryPacketRef, EvaluateInput) and in test fixtures; no shared hash-derivation function is exported by either package."
         }
       ]
     },
@@ -187,40 +244,53 @@
       "sourcePlaneId": "cvf.asc.plane.doctrine_to_contract.v1",
       "targetPlaneId": "cvf.asc.plane.contract_to_runtime.v1",
       "sourceOwner": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
-      "targetOwner": "NONE_WITH_REASON: no current CVF module implements a Truth Kernel verification-gate, receipt hash-chain, or truth-packet schema runtime; TKG-T1 Source Conversion Matrix line 63 already REJECT_DIRECT_IMPORTs the retained Kernel runtime independently of SOT3",
-      "missingEdge": "TKG-T1 (docs/reference/truth_foundation/) already owns the Truth Kernel doctrine language (evidence/obligation/provenance minimums), but no CVF module implements the Kernel's runtime verification gate, receipt hash-chain, or truth-packet schema described by the accepted SOT3 contract chain.",
-      "currentStatus": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE",
-      "proofClass": "DECLARED_EDGE",
+      "targetOwner": "EXTENSIONS/CVF_TRUTH_KERNEL/",
+      "missingEdge": "TKG-T1 (docs/reference/truth_foundation/) already owns the Truth Kernel doctrine language (evidence/obligation/provenance minimums). SOT3-T4 built the runtime verification gate, receipt hash-chain, and admission logic (`TruthKernel.evaluate`); SOT3-T4R1 repaired the current-reference-state authority gap; SOT3-T6 proved the runtime executes as a real dependency inside the three-layer vertical slice.",
+      "currentStatus": "ACTIVE_OWNER_CREATED_WITH_BOUNDARY",
+      "proofClass": "EXECUTED_AND_EVIDENCED_EDGE",
       "citations": [
         {
           "path": "docs/reviews/CVF_SOT3_T1_OWNER_NOVELTY_MAP_2026-07-12.md",
           "lineOrSection": "CAP-05: kernel_receipt_gate_schema_implementation",
-          "evidenceRole": "reviewer-accepted NEW_OWNER_CANDIDATE runtime disposition; doctrine already ENRICH_EXISTING_OWNER via CAP-04"
+          "evidenceRole": "reviewer-accepted NEW_OWNER_CANDIDATE runtime disposition (superseded by T4/T4R1/T6 owner creation); doctrine ENRICH_EXISTING_OWNER via CAP-04 unaffected"
+        },
+        {
+          "path": "docs/reviews/CVF_SOT3_T4R1_COMPLETION_REVIEW_2026-07-13.md",
+          "lineOrSection": "Closure Checklist",
+          "evidenceRole": "reviewer acceptance of the Truth Kernel runtime package, including the current-reference-state authority repair, as owner"
+        },
+        {
+          "path": "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md",
+          "lineOrSection": "Dependency-Closure Matrix, row `real three-layer instances`",
+          "evidenceRole": "reviewer acceptance that `TruthKernel.evaluate`/`issueReference` execute as a real dependency, not a mock, inside the accepted vertical slice"
         },
         {
           "path": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
           "lineOrSection": "Evidence/Obligation/Verification Result Minimums",
-          "evidenceRole": "existing TKG-T1 doctrine owner, retained and enriched, not duplicated"
+          "evidenceRole": "existing TKG-T1 doctrine owner, retained and enriched, not duplicated by the new runtime owner"
         }
       ],
-      "impact": "Blocks any as-built claim that CVF has a Truth Kernel runtime; does not block the existing TKG-T1 doctrine owner, the accepted documentation-contract chain, or any other plane/module.",
+      "impact": "Was: blocked any as-built claim that CVF has a Truth Kernel runtime. Now: the runtime has a private-provenance owner; the existing TKG-T1 doctrine owner is unaffected and not duplicated. Remaining impact is limited to activation, adapter, provider/live, and public-sync claims, none of which this GAP closure asserts.",
       "closeCondition": {
         "conditionKind": "NAMED_ARTIFACT_ACCEPTED",
-        "conditionText": "A source-verified SOT3-T3-style (or later) implementation tranche is authorized, builds a Truth Kernel runtime module consistent with TKG-T1 doctrine, and a reviewer accepts a completion review naming its owner path."
+        "conditionText": "SATISFIED: `docs/reviews/CVF_SOT3_T4R1_COMPLETION_REVIEW_2026-07-13.md` accepts the Truth Kernel runtime package as owner; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` accepts real-instance execution."
       },
       "reopenCondition": {
         "conditionKind": "OPERATOR_DECISION_RECORDED",
-        "conditionText": "Operator authorizes a fresh Truth Kernel runtime implementation roadmap/work order citing TKG-T1 doctrine and the accepted SOT3-T2 contract chain as its basis."
+        "conditionText": "Reopen only if a future review finds the `EXTENSIONS/CVF_TRUTH_KERNEL/` owner path removed, superseded, or materially non-functional, or if an operator authorizes package activation/adapter/provider work that changes this GAP's boundary."
       },
-      "actionOwner": "PARKED_WITH_REASON: no implementation tranche is currently authorized; Kernel runtime remains NEW_OWNER_CANDIDATE per T1 CAP-05 while TKG-T1 doctrine ownership stands unchanged",
+      "actionOwner": "SOT3-T7 semantic value audit and closeout",
       "freshnessInputs": [
         "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
-        "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+        "docs/reviews/CVF_SOT3_T4R1_COMPLETION_REVIEW_2026-07-13.md",
+        "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md"
       ],
       "lastReviewed": {
-        "date": "2026-07-12",
-        "acceptedArtifact": "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+        "date": "2026-07-13",
+        "acceptedArtifact": "docs/reviews/CVF_SOT3_T7_WORKER_RETURN_2026-07-13.md"
       },
+      "boundaryCaveat": "Does not claim package activation, an execution adapter, provider/live proof, public-sync readiness, or production readiness. Does not create a second Truth Kernel doctrine owner; TKG-T1 remains the doctrine authority and this runtime owner is additive to it. Does not claim the Refinery-to-Kernel packet-binding hash is an owner-level shared contract (see the separately tracked packet-binding-hash GAP disposition). Private-provenance implementation only.",
+      "priorDisposition": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE",
       "rejectedCandidates": [
         {
           "candidatePath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/receipt-binding.contract.ts",
