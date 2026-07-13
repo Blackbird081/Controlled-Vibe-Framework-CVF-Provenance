@@ -107,5 +107,7 @@ scale, universal, or user-value claim.
 
 Material closure HEAD: `62ab80ab4`
 
-This handoff is part of a dedicated session-sync commit whose parent is the
-material closure HEAD above.
+Session-sync closure HEAD: `946ae2a61`
+
+The current in-place handoff-sync commit has the session-sync closure HEAD
+above as its parent. Material closure remains anchored at `62ab80ab4`.
