@@ -19,10 +19,10 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04a_r1_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one no-commit
-positive-only UC-04A-R1 worker execution; parked checkpoint=UC-03 harness
-identity repair until its reuse trigger, GC-009/GC-010 promotion, UC-04B Web,
+Startup acknowledged: current mode=`system_chain_uc04a_closed_uc04b_packet_authoring_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
+bounded UC-04B Web packet only; parked checkpoint=UC-03 harness identity
+repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory,
 public export, production, scale, universal enforcement, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
@@ -38,16 +38,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04a_r1_dispatched_worker_next`
+`system_chain_uc04a_closed_uc04b_packet_authoring_next`
 
 ## Active Boundary
 
-- Active UC-04A-R1 dispatch commit: `d1ffbf3eb`.
+- Active UC-04A-R1 closure commit: `b335c0e4c`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: one no-commit UC-04A-R1 positive-only worker execution.
-- Next permitted value lane: require 39/39 focused tests, invoke one direct
-  positive pre-dispatch CLI call, and reuse retained negative evidence without
-  invoking the two-call runner; zero retry/provider and no protected mutation.
+- Active work queue: UC-04B source-verified packet authoring only.
+- Next permitted value lane: bound the existing Web Operations subset, decide
+  whether its selected job crosses AI governance behavior, and stop before
+  execution pending dispatch review.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -515,3 +515,24 @@ bounded blocker closure and dispatch review.
 
 Rollback boundary: revert only this session-sync batch; retain recovery
 dispatch `d1ffbf3eb`, blocked closure `da93a4b73`, and all retained evidence.
+
+## Core Guard Self-Protection Authorization - UC-04A-R1 Closure Sync
+
+Authorized scope: synchronize accepted UC-04A-R1 material closure
+`b335c0e4c` and route UC-04B packet authoring only.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc04aR1Closure20260714.json`
+
+Operator authorization: continue the system-chain use-case sequence after
+accepted positive recovery evidence.
+
+Rollback boundary: revert only this session-sync batch; retain material
+closure `b335c0e4c`, recovery dispatch `d1ffbf3eb`, and historical evidence.

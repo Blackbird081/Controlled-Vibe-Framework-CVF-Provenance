@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_uc04a_r1_dispatched_worker_next",
+  "currentMode": "system_chain_uc04a_closed_uc04b_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V43_2026-07-14.md",
-  "nextAllowedMove": "UC-04A-R1 positive-only recovery packet is DISPATCH_READY at material commit d1ffbf3eb. Next allowed move is one no-commit SCLP-UC04A-R1 worker execution from a clean execution base: refresh sources; run the committed focused suite and require 39/39 PASS; invoke the current autorun CLI directly exactly once in pre-dispatch mode with the dedicated R1 receipt directory; retain and cite the accepted negative case without invoking the two-call runner or negative path; zero retries, zero provider calls, and no protected-path mutation. Worker returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON and must not stage or commit. UC-04B Web, unified all-checker inventory, CLI-owner mutation, public, production, scale, certification, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "UC-04A-R1 closed CLOSED_PASS_BOUNDED at material commit b335c0e4c. The focused suite passed 39/39; one direct positive pre-dispatch CLI call passed 75/75 with a valid named-result receipt; the accepted negative range/finality evidence was retained without rerun; retry, provider, and protected-mutation counts were zero. UC-04A CLI is PROVEN_BOUNDED, while the Evidence-to-Operator lane remains PARTIAL because UC-04B Web is unproven. Next allowed move is to author one fresh bounded UC-04B GC-018 and source-verified work order only for the existing Web Operations subset. Do not execute Web before dispatch review, infer a unified checker inventory, rerun UC-04A, authorize provider calls unless the selected Web job crosses AI governance behavior, or claim public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

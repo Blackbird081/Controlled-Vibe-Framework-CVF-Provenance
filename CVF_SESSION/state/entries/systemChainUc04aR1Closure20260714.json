@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1782,
+  "stateKey": "systemChainUc04aR1Closure20260714",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "b335c0e4c",
+    "workOrderId": "SCLP-UC04A-R1",
+    "executionBaseHead": "6c0a7f3ee",
+    "focusedTests": "39_OF_39_PASS",
+    "positiveCliInvocationCount": 1,
+    "positiveResult": "PASS_75_OF_75_COMPLIANT_WITH_RECEIPT",
+    "retainedNegativeInvocationCount": 0,
+    "retainedNegativeResult": "PASS_RANGE_AND_DIRTY_FINALITY_READOUT",
+    "retryCount": 0,
+    "providerCallCount": 0,
+    "protectedPathMutationCount": 0,
+    "uc04aStatus": "PROVEN_BOUNDED",
+    "operatorLaneStatus": "PARTIAL_UC04B_UNPROVEN",
+    "nextAllowedMove": "author a fresh bounded UC-04B Web packet only; do not execute before dispatch review",
+    "claimBoundary": "Current CLI aggregate, per-check, receipt, and selected failure readouts proven bounded. No UC-04B Web, unified inventory, provider governance, public, production, scale, certification, or user-value claim."
+  }
+}
