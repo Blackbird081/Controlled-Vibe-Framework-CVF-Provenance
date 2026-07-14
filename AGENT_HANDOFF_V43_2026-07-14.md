@@ -19,12 +19,12 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc03_closed_uc04a_packet_authoring_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
-fresh bounded UC-04A CLI operator-readout packet only; parked checkpoint=UC-03
-harness identity repair until its reuse trigger, GC-009/GC-010 promotion,
-UC-04B Web, public export, production, scale, universal enforcement, and user
-validation.
+Startup acknowledged: current mode=`system_chain_uc04a_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute the
+committed SCLP-UC04A-T3 packet once with a no-commit worker; parked
+checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010
+promotion, UC-04B Web, public export, production, scale, universal enforcement,
+and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -39,15 +39,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc03_closed_uc04a_packet_authoring_next`
+`system_chain_uc04a_dispatched_worker_next`
 
 ## Active Boundary
 
-- Active UC-03 closure commit: `7a8f7268f`.
+- Active UC-04A dispatch commit: `f48430d7d`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: UC-04A CLI operator-readout packet authoring only.
-- Next permitted value lane: select one current CLI owner and one meaningful
-  failure/readout in a fresh bounded GC-018 and source-verified work order.
+- Active work queue: one no-commit SCLP-UC04A-T3 worker execution.
+- Next permitted value lane: source-refresh the autorun CLI, pass focused
+  tests, then run one harness with exactly two local CLI calls and zero retry.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -108,6 +108,14 @@ wrapper tests are placeholders. Do not rerun solely for that limitation.
 Reopen the harness repair only when a later proof reuses distinct case identity
 or a consumer requires stable case IDs.
 
+UC-04A is dispatch-ready at material commit `f48430d7d`. The selected owner is
+the current autorun workflow CLI. The worker may invoke one proof harness that
+makes exactly two local CLI calls with stable case IDs: a successful
+`pre-dispatch` readout with a structured PASS receipt and an expected failing
+`pre-closure` readout that exposes the non-empty committed-range and
+closure-finality boundary. Retry, provider calls, CLI-owner edits, UC-04B Web,
+and unified all-checker inventory claims are forbidden.
+
 SOT3-ACT-A5R1 and the activation roadmap closed at material commit
 `62ab80ab4`. The development import-chain repair explicitly selects Webpack,
 the zero-provider real-dev regression passes, and the one canonical release
@@ -142,11 +150,10 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Author one fresh bounded GC-018 and source-verified work order for UC-04A CLI
-operator readout only. Select one current CLI owner and one meaningful
-failure/readout. Do not include UC-04B Web, a unified checker inventory, or a
-provider call unless the selected CLI claim crosses a provider boundary. Do
-not execute before dispatch review. GC-009 and GC-010 remain excluded.
+Execute the committed SCLP-UC04A-T3 work order once with a no-commit worker.
+Require clean execution base, source refresh, focused tests before one harness
+invocation, exactly two stable-identity CLI cases, zero retries, zero provider
+calls, and a return for reviewer disposition. UC-04B Web remains held.
 
 ## Parked Checkpoint
 
@@ -186,10 +193,12 @@ System-chain post-UC-02 roadmap reconciliation HEAD: `ed4052a27`
 
 UC-03 material closure HEAD: `7a8f7268f`
 
-Session-sync closure HEAD: `7a8f7268f`
+UC-04A dispatch HEAD: `f48430d7d`
 
-The current in-place handoff-sync commit has the UC-03 material closure HEAD
-above as its parent. SOT3 material closure remains anchored at `62ab80ab4`.
+Session-sync closure HEAD: `f48430d7d`
+
+The current in-place handoff-sync commit has the UC-04A dispatch HEAD above as
+its parent. SOT3 material closure remains anchored at `62ab80ab4`.
 
 ## Core Guard Self-Protection Authorization - System Chain Live Proof Session Sync
 
@@ -435,3 +444,23 @@ UC-03 worker return and reviewer closure.
 
 Rollback boundary: revert only this session-sync batch; retain material
 closure `7a8f7268f`, dispatch `a12f427ec`, and all UC-03 evidence.
+
+## Core Guard Self-Protection Authorization - UC-04A Dispatch Sync
+
+Authorized scope: synchronize source-verified UC-04A dispatch material commit
+`f48430d7d` and route one exact no-commit SCLP-UC04A-T3 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc04aDispatch20260714.json`
+
+Operator authorization: continue the system-chain use-case sequence.
+
+Rollback boundary: revert only this session-sync batch; retain material
+dispatch `f48430d7d`, UC-03 closure `7a8f7268f`, and all prior evidence.

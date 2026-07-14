@@ -83,8 +83,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc03_closed_uc04a_packet_authoring_next",
-  "previousMode": "system_chain_uc03_dispatched_worker_next",
+  "currentMode": "system_chain_uc04a_dispatched_worker_next",
+  "previousMode": "system_chain_uc03_closed_uc04a_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11724,5 +11724,21 @@
     "nextAllowedMove": "author a fresh bounded UC-04A CLI operator-readout GC-018 and source-verified work order only",
     "claimBoundary": "Representative current-runtime operational proof only; no broader Contract-to-Runtime semantic completion, GC-009/GC-010 promotion, Web, provider, public, production, scale, universal, certification, or user-value claim."
   },
-  "nextAllowedMove": "UC-03 closed CLOSED_PASS_BOUNDED_WITH_LIMITATION at material commit 7a8f7268f. GC-011 operational representative proof is PROVEN_BOUNDED; the broader Contract-to-Runtime semantic lane remains PARTIAL, GC-009 and GC-010 remain excluded, and the proof-harness identity repair is parked until a later proof reuses distinct case identity or a consumer requires stable case IDs. Next allowed move is to author one fresh bounded GC-018 and source-verified work order for UC-04A CLI operator readout only: select one current CLI owner and one meaningful failure/readout. Do not include UC-04B Web, a unified checker inventory, or a provider call unless the selected CLI claim crosses a provider boundary. Do not execute before dispatch review. Public, production, scale, universal, certification, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc04aDispatch20260714": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "f48430d7d",
+    "workOrderId": "SCLP-UC04A-T3",
+    "selectedOwner": "governance/compat/run_agent_autorun_workflow_gate.py",
+    "executionBoundary": "one no-commit worker; one proof harness invocation; exactly two local CLI calls; zero retries; zero provider calls",
+    "caseIds": [
+      "positive_pre_dispatch",
+      "negative_pre_closure"
+    ],
+    "positiveBoundary": "pre-dispatch per-check PASS, aggregate COMPLIANT, and structured PASS receipt",
+    "negativeBoundary": "pre-closure non-empty committed-range failure plus dirty-finality observation",
+    "uc04bStatus": "HELD",
+    "nextAllowedMove": "execute the committed UC-04A work order once with no worker commit",
+    "claimBoundary": "Dispatch only; no UC-04A operational PASS, UC-04B Web, unified inventory, provider, public, production, scale, certification, or user-value claim."
+  },
+  "nextAllowedMove": "UC-04A dispatch packet SCLP-UC04A-T3 is DISPATCH_READY at material commit f48430d7d. Next allowed move is one no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC04A_CLI_OPERATOR_READOUT_2026-07-14.md: source-refresh the current autorun CLI, pass focused mock-subprocess tests, invoke the proof harness exactly once for exactly two local CLI calls with stable case IDs positive_pre_dispatch and negative_pre_closure, retain the positive PASS receipt and meaningful negative range/finality readout, use zero retries and zero provider calls, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. UC-04B Web, unified all-checker inventory, owner mutation, public, production, scale, certification, and user-value claims remain unavailable. UC-03 harness repair remains parked under its reuse trigger. LHW24 remains latest closed numbered LHW wave."
 }
