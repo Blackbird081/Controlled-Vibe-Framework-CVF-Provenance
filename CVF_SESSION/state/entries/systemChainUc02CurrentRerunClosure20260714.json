@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1764,
+  "stateKey": "systemChainUc02CurrentRerunClosure20260714",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "9173af70b",
+    "proofInvocationCount": 1,
+    "bootstrap": "PASS_ONCE",
+    "scenarioResult": "9_OF_9_PASS",
+    "providerCalls": 0,
+    "coverageStatus": "PROVEN",
+    "archivePathGap": "CLOSED_WITH_EVIDENCE",
+    "rendererGap": "OPEN_CONFIRMED_GAP",
+    "nextAllowedMove": "author one renderer-conformance repair packet without rerunning UC-02",
+    "claimBoundary": "Bounded local Runtime-to-Enforcement proof only; no provider, public, production, scale, universal, certification, or user-value claim."
+  }
+}

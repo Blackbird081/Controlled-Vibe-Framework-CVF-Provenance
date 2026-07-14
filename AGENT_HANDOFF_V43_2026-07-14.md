@@ -19,7 +19,7 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_rerun_dispatched_worker_next`;
+Startup acknowledged: current mode=`system_chain_uc02_proven_renderer_repair_packet_next`;
 active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one
 no-commit worker executes SCLP-UC02-R2 exactly once with zero retries; parked
 checkpoint=reviewer coverage/GAP closure, UC-03/UC-04 dispatch, public export,
@@ -38,7 +38,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc02_rerun_dispatched_worker_next`
+`system_chain_uc02_proven_renderer_repair_packet_next`
 
 ## Active Boundary
 
@@ -122,11 +122,9 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Execute `docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_CURRENT_RERUN_2026-07-14.md`
-with one no-commit worker. Run the retained focused suite first, then invoke
-the existing runner exactly once with the fresh rerun paths. Retry count is
-zero; diagnose and stop on failure. Coverage remains `STALE` and the GAP stays
-open until reviewer acceptance of 9/9. UC-03 and UC-04 remain held.
+Author one source-verified renderer-conformance repair packet for the three
+actual renderer owners. Regenerate outputs without rerunning UC-02 or calling
+a provider. UC-03 and UC-04 remain held.
 
 ## Parked Checkpoint
 
@@ -155,6 +153,8 @@ UC-02 archive-path repair dispatch HEAD: `7edfc7f13`
 UC-02 archive-path repair closure HEAD: `abb58be27`
 
 UC-02 repaired current rerun dispatch HEAD: `a16f5b7d1`
+
+UC-02 repaired current rerun closure HEAD: `9173af70b`
 
 Session-sync closure HEAD: `946ae2a61`
 
@@ -265,6 +265,23 @@ Remote tracking branch: `origin/main`
 Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
+
+## Core Guard Self-Protection Authorization - UC-02 Rerun Closure Sync
+
+Authorized scope: synchronize material closure `9173af70b` and route only the
+renderer-conformance packet-authoring step.
+
+Protected paths: `AGENT_HANDOFF_V43_2026-07-14.md`, `CVF_SESSION_MEMORY.md`,
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`,
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+`CVF_SESSION/state/entries/nextAllowedMove.json`, and
+`CVF_SESSION/state/entries/systemChainUc02CurrentRerunClosure20260714.json`.
+
+Operator authorization: continue the system-chain use-case sequence.
+
+Rollback boundary: revert only this session-sync batch; retain material
+closure `9173af70b` and its evidence.
 
 ## Core Guard Self-Protection Authorization - UC-02 Rerun Dispatch Sync
 

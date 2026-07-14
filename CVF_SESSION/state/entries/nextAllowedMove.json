@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1763,
+  "stateOrder": 1765,
   "stateKey": "nextAllowedMove",
-  "value": "SCLP-UC02-R2 dispatch is committed at a16f5b7d1 after pre-dispatch 75/75 and pre-commit 83/83 PASS. Next allowed move is one no-commit worker executing docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_CURRENT_RERUN_2026-07-14.md: run the retained focused suite, then invoke the existing UC-02 proof runner exactly once with the fresh rerun receipt and diagnostic paths. Retry count is zero; diagnose and stop on failure. Coverage remains STALE and the GAP remains open until reviewer acceptance of 9/9. UC-03 and UC-04 remain held. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
+  "value": "UC-02 closed CLOSED_PASS_BOUNDED at material commit 9173af70b with one bootstrap PASS and CF-076 through CF-084 PASS 9/9. Coverage is PROVEN and the archive-path GAP is CLOSED_WITH_EVIDENCE. A distinct generated-Markdown renderer GAP is open. Next allowed move is authoring one source-verified repair packet for scripts/runtime_evidence_manifest/baselines.py, scripts/runtime_evidence_manifest/manifest_builder.py, and scripts/export_cvf_release_packet.py, with focused tests and output regeneration but no UC-02 rerun or provider call. UC-03 and UC-04 remain held. Public, production, scale, universal, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave."
 }
