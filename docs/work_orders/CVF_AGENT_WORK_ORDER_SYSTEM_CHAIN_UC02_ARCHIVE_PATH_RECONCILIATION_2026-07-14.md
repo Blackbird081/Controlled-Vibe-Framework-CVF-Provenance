@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -496,6 +496,28 @@ This work order authorizes only the exact repair manifest and focused tests.
 It does not authorize real evidence generation, UC-02 rerun, semantic verdict
 change, GAP closure, coverage promotion, provider call, public sync,
 production, scale, certification, or user validation.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired GC-018 | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | system-chain live-proof roadmap | unchanged; one rerun packet remains required | N/A with reason |
+| Registry JSON | system-chain GAP index | unchanged; repair does not prove 9/9 | BLOCKED with reason |
+| Registry Markdown | system-chain GAP README | unchanged; GAP remains open | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external evidence consumed | repository source only | N/A with reason |
+| System loop interlock | focused repair suite | source repair accepted; runtime coverage remains `STALE` | PASS |
+| Session continuity | active session state | separate synchronization after material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| R1-W-01 | focused pytest output | N/A with reason: command output | 15 passing tests | 15 passed | PASS |
+| R1-W-02 | source and focused tests | N/A with reason: source constants | release once and fail closed | exact order and negative assertions pass | PASS |
+| R1-W-03 | N/A with reason: no runtime receipt permitted | N/A with reason: no current invocation | no UC-02 success claim | coverage remains `STALE` | PASS |
 
 ## Agent Operation Trace Block
 

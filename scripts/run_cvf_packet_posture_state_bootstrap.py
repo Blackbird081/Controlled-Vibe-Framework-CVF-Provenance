@@ -11,6 +11,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+RELEASE_GATE = REPO_ROOT / "scripts" / "run_cvf_runtime_evidence_release_gate.py"
 LOCAL_PACKET = REPO_ROOT / "scripts" / "run_cvf_cross_family_packet_coverage_conformance.py"
 SECONDARY_PACKETS = REPO_ROOT / "scripts" / "run_cvf_secondary_packet_cross_family_coverage_conformance.py"
 PACKET_POSTURE_CACHE = (
@@ -43,6 +44,10 @@ def _run(command: list[str], env_overrides: dict[str, str] | None = None) -> tup
 
 
 def main() -> int:
+    release_code, _release_output = _run([sys.executable, str(RELEASE_GATE)])
+    if release_code != 0:
+        raise SystemExit(release_code)
+
     shared_env = {"CVF_SKIP_RUNTIME_EVIDENCE_RELEASE_GATE": "1"}
     local_code, local_output = _run([sys.executable, str(LOCAL_PACKET)], env_overrides=shared_env)
     if local_code != 0:

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: gc018_baseline
 
@@ -157,6 +157,28 @@ Reason: private provenance runtime-chain repair packet; no public-sync scope.
 This baseline authorizes only the archive/live ownership repair and focused
 tests. It does not prove UC-02, change the semantic system-chain verdict, or
 claim provider, public, production, scale, certification, or user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | paired SCLP-UC02-R1 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | SCLP-UC02-R1 completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | system-chain live-proof roadmap | unchanged; UC-02 remains rerun-required | N/A with reason |
+| Registry JSON | system-chain GAP index | unchanged; repair does not close the runtime GAP | BLOCKED with reason |
+| Registry Markdown | system-chain GAP README | unchanged; 9/9 receipt is still absent | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external evidence consumed | repository source only | N/A with reason |
+| System loop interlock | focused source/test evidence | structural repair accepted; runtime proof remains `STALE` | PASS |
+| Session continuity | active session state | separate synchronization after material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| R1-B-01 | focused pytest output | N/A with reason: command output | 15 passing tests | 15 passed | PASS |
+| R1-B-02 | source and focused tests | N/A with reason: source constants | five archive inputs and live outputs preserved | exact ownership assertions pass | PASS |
+| R1-B-03 | N/A with reason: no runtime receipt permitted | N/A with reason: no current invocation | no UC-02 success claim | coverage remains `STALE` | PASS |
 
 ## Agent Operation Trace Block
 
