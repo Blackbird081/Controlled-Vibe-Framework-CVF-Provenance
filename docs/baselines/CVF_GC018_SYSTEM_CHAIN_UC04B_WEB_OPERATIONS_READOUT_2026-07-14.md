@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 docType: gc018_baseline
 
@@ -200,9 +200,22 @@ governance, production, public readiness, scale, certification, or user value.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | this baseline | `DISPATCH_READY` | READY |
-| Work order status | paired SCLP-UC04B-T4 work order | `DISPATCH_READY` | READY |
-| Completion or reviewer artifact | declared completion path | reviewer-owned | READY |
-| Worker return | declared worker-return path | worker-owned, no commit | READY |
-| Web proof receipt | declared evidence JSON | two stable cases and exact counters | READY |
-| diagnostic | declared conditional evidence JSON | required only on non-PASS | READY |
+| Baseline status | this baseline | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | paired SCLP-UC04B-T4 work order | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared completion path | reviewer blocker closure | PASS |
+| Roadmap state | system-chain roadmap | recovery packet next | PASS |
+| Registry JSON | coverage ledger and GC-051 | Web blocked; proof test registered | PASS |
+| Registry Markdown | system-chain and ADIF front doors | blocker/learning recorded | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | repository evidence only | N/A with reason |
+| System loop interlock | corrected proof receipt | FAIL retained; no PASS promotion | PASS |
+| Session continuity | active session | separate sync after material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Playwright invocation | 1 | 2 | BLOCKED |
+| Web submissions | 2 | 0 | BLOCKED |
+| checker executions | 1 | 0 | BLOCKED |
+| retry count | 0 | 1 | BLOCKED |
+| provider calls | 0 | 0 | PASS |

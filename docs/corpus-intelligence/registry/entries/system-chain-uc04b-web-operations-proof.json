@@ -1,0 +1,37 @@
+{
+  "registryOrder": 143,
+  "id": "system-chain-uc04b-web-operations-proof",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "System-chain UC-04B Web Operations bounded proof",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts"
+  ],
+  "fileCount": 3,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "SCLP-UC04B-T4",
+  "scanDate": "2026-07-14",
+  "manifestHash": null,
+  "manifestPath": "docs/reviews/evidence/system-chain-uc04b-web-operations-readout-proof-2026-07-14.json",
+  "packetPath": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_WEB_OPERATIONS_READOUT_WORKER_RETURN_2026-07-14.md",
+  "completionReviewPath": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_WEB_OPERATIONS_READOUT_COMPLETION_2026-07-14.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_SYSTEM_CHAIN_UC04B_WEB_OPERATIONS_READOUT_2026-07-14.md",
+  "notes": "Proof-only Playwright consumer retained from the blocked bounded attempt; no Web submission, checker execution, provider call, or UC-04B PASS claim.",
+  "findings": [
+    {
+      "id": "uc04b-proof-procedure-evidence-divergence",
+      "summary": "Two Playwright invocations contradicted the one-invocation receipt and zero-retry packet; authentication root cause remains unresolved.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Use a fresh recovery packet with source-backed auth preflight and one immutable invocation ledger.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "UC-04B PASS",
+    "missing env proven",
+    "Vitest globally broken"
+  ],
+  "nextScanRecommendation": "AFTER_RECOVERY_PACKET"
+}

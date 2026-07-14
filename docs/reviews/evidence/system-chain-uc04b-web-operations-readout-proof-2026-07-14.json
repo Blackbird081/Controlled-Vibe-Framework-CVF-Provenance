@@ -1,0 +1,20 @@
+{
+  "proofClass": "WEB_OPERATIONS_READOUT_INVOCATION",
+  "useCaseId": "UC-04B-WEB-OPERATIONS-READOUT",
+  "webOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+  "selectedJob": "docs_governance_check",
+  "harnessInvocationCount": 2,
+  "webSubmissionCount": 0,
+  "checkerExecutionCount": 0,
+  "retryCount": 1,
+  "providerCallCount": 0,
+  "caseDenominator": 2,
+  "casePassCount": 0,
+  "overallResult": "FAIL",
+  "blockedReasons": [
+    "PROOF_PROCEDURE: Playwright was invoked twice after a proof-spec repair despite a one-invocation and zero-retry ceiling",
+    "AUTH_PREFLIGHT: both attempts stopped before Web submission; retained evidence does not establish the root cause",
+    "EVIDENCE_RECONCILIATION: the original worker receipt reported one invocation and zero retry, contradicting the worker methodology and operation trace"
+  ],
+  "cases": []
+}

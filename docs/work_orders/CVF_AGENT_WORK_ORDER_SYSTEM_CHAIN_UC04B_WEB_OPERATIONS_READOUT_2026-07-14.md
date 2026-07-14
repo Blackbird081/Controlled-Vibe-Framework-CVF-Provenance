@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Work Order ID: SCLP-UC04B-T4
 
@@ -461,15 +461,25 @@ production, public readiness, scale, certification, or user value.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | paired UC-04B GC-018 | `DISPATCH_READY` | READY |
-| Work order status | this work order | `DISPATCH_READY` | READY |
-| Completion or reviewer artifact | declared completion review | reviewer-owned | READY |
-| Roadmap state | system-chain live-proof roadmap | UC-04B packet dispatched | READY |
-| Registry JSON | live-proof coverage ledger | remains Web-unproven until accepted proof | READY |
-| Registry Markdown | system-chain README and Catalog/GAP decision | reviewer-owned after acceptance | READY |
+| Baseline status | paired UC-04B GC-018 | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | this work order | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared completion review | reviewer blocker closure | PASS |
+| Roadmap state | system-chain live-proof roadmap | recovery packet next | PASS |
+| Registry JSON | live-proof coverage ledger and GC-051 | Web blocked and proof test registered | PASS |
+| Registry Markdown | system-chain README and ADIF front door | blocker/learning recorded | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | repository/runtime evidence only | N/A with reason |
-| System loop interlock | fresh UC-04B receipt | two cases and exact counters | READY |
-| Session continuity | active session state | separate post-material synchronization | READY |
+| System loop interlock | corrected UC-04B receipt | FAIL retained; no PASS promotion | PASS |
+| Session continuity | active session state | separate post-material synchronization | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Playwright invocation | 1 | 2 | BLOCKED |
+| Web submissions | 2 | 0 | BLOCKED |
+| checker executions | 1 | 0 | BLOCKED |
+| retry count | 0 | 1 | BLOCKED |
+| provider calls | 0 | 0 | PASS |
 
 ## Agent Operation Trace Block
 

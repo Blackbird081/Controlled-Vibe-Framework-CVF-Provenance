@@ -190,6 +190,15 @@ direct positive CLI call from a clean base: 75/75 checks passed, aggregate
 output was COMPLIANT, and a structured PASS receipt retained all 75 named
 results. The negative case was not repeated. This closes the CLI boundary only;
 UC-04B Web remains unproven.
+
+The first UC-04B attempt is closed `CLOSED_BLOCKED_BOUNDED`. Both browser
+attempts stopped before Web submission; checker and provider call counts were
+zero. Reviewer reconciliation rejected the claimed global Vitest and missing
+environment root causes: the focused suite passed 20/20, the required local
+environment file exists, and auth source retains fallback configuration. The
+actionable defect was proof-procedure/evidence divergence: two Playwright
+invocations versus a one-call/zero-retry packet and a receipt that initially
+reported only one. Recovery requires a fresh packet; no Web claim follows.
 Operations exposes a bounded five-job-type subset
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts`),
 of which exactly one job type (`docs_governance_check`) wires directly to

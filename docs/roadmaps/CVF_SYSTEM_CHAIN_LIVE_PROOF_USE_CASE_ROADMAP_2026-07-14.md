@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC04A_CLOSED_UC04B_PACKET_NEXT
+Status: ACTIVE_UC04B_BLOCKED_RECOVERY_PACKET_NEXT
 
 docType: roadmap
 
@@ -218,11 +218,11 @@ public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-Author one fresh bounded UC-04B GC-018 and source-verified work order for the
-existing Web Operations subset only. Preserve the completed UC-04A CLI
-receipts; do not rerun CLI proof, infer a unified checker inventory, authorize
-provider calls unless the selected Web job actually asserts AI governance
-behavior, or reopen UC-03 harness repair without its recorded reuse trigger.
+The first UC-04B attempt is closed blocked: two Playwright invocations exceeded
+the one-call/zero-retry packet and no Web submission occurred. Author one fresh
+positive-and-negative recovery packet only after source-backed auth preflight,
+focused tests, GC-051 coverage, and an immutable invocation ledger are fixed.
+Preserve UC-04A evidence and do not infer unified inventory or provider use.
 
 ## Checker Source Read-Ahead Block
 
