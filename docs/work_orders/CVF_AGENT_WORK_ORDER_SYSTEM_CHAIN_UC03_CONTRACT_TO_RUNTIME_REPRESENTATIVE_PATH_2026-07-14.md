@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_LIMITATION
 
 docType: work_order
 
@@ -451,14 +451,14 @@ scale, certification, or user value.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | paired GC-018 | `Status: DISPATCH_READY` | PASS |
-| Work order status | this work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | declared completion review | not yet created | BLOCKED |
-| Roadmap state | system-chain live-proof roadmap | UC-03 packet next | PASS |
-| Registry JSON | coverage and Catalog/GAP owners | unchanged until accepted proof | BLOCKED with reason |
-| Registry Markdown | system-chain GAP README | unchanged until accepted proof | BLOCKED with reason |
+| Baseline status | paired GC-018 | `Status: CLOSED_PASS_BOUNDED_WITH_LIMITATION` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_WITH_LIMITATION` | PASS |
+| Completion or reviewer artifact | declared completion review | reviewer accepted bounded proof with receipt-identity limitation | PASS |
+| Roadmap state | system-chain live-proof roadmap | UC-03 closed; UC-04 packet next | PASS |
+| Registry JSON | live-proof coverage ledger | UC-03 PROVEN_BOUNDED; GC-009/GC-010 excluded | PASS |
+| Registry Markdown | system-chain README and Catalog/GAP decision | representative proof noted; no architecture GAP created | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | repository/runtime evidence only | N/A with reason |
-| System loop interlock | fresh UC-03 receipt | not yet executed | BLOCKED |
+| System loop interlock | fresh UC-03 receipt | one invocation, two of two PASS, zero provider calls | PASS |
 | Session continuity | active session state | separate post-material synchronization | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
@@ -467,10 +467,10 @@ scale, certification, or user value.
 |---|---|---|---|
 | Proof invocation | exactly one | NOT_RUN at dispatch | BLOCKED |
 | Selected control | GC-011 | GC-011 | PASS |
-| Positive case | PASS | NOT_RUN at dispatch | BLOCKED |
-| Negative case | PASS | NOT_RUN at dispatch | BLOCKED |
-| Case denominator | 2 | NOT_RUN at dispatch | BLOCKED |
-| Worker retry count | 0 | NOT_RUN at dispatch | BLOCKED |
+| Positive case | PASS | PASS through exact two-test file and Vitest exit zero | PASS |
+| Negative case | PASS | PASS through exact two-test file and Vitest exit zero | PASS |
+| Case denominator | 2 | 2 | PASS |
+| Worker retry count | 0 | 0 | PASS |
 | Provider calls | 0 | 0 during authoring | PASS |
 
 ## Agent Operation Trace Block

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_LIMITATION
 
 docType: gc018_baseline
 
@@ -174,24 +174,24 @@ public readiness, scale, certification, or user value.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | this baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | paired SCLP-UC03-T2 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | declared completion review | reviewer decision after worker return | BLOCKED |
-| Roadmap state | system-chain live-proof roadmap | UC-03 packet next | PASS |
-| Registry JSON | coverage and Catalog/GAP owners | unchanged until accepted proof | BLOCKED with reason |
-| Registry Markdown | system-chain GAP README | unchanged until accepted proof | BLOCKED with reason |
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED_WITH_LIMITATION` | PASS |
+| Work order status | paired SCLP-UC03-T2 work order | `Status: CLOSED_PASS_BOUNDED_WITH_LIMITATION` | PASS |
+| Completion or reviewer artifact | declared completion review | reviewer accepted bounded proof with receipt-identity limitation | PASS |
+| Roadmap state | system-chain live-proof roadmap | UC-03 closed; UC-04 packet next | PASS |
+| Registry JSON | live-proof coverage ledger | UC-03 PROVEN_BOUNDED; GC-009/GC-010 excluded | PASS |
+| Registry Markdown | system-chain README and Catalog/GAP decision | representative proof noted; no architecture GAP created | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | repository source only | N/A with reason |
-| System loop interlock | fresh UC-03 receipt | not yet executed | BLOCKED |
+| System loop interlock | fresh UC-03 receipt | one invocation, two of two PASS, zero provider calls | PASS |
 | Session continuity | active session sources | separate synchronization after material completion | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Proof invocation | exactly one | NOT_RUN at dispatch | BLOCKED |
-| Positive path | PASS | NOT_RUN at dispatch | BLOCKED |
-| Negative path | PASS | NOT_RUN at dispatch | BLOCKED |
-| Evidence denominator | 2 | NOT_RUN at dispatch | BLOCKED |
+| Proof invocation | exactly one | 1 | PASS |
+| Positive path | PASS | PASS through exact two-test file and Vitest exit zero | PASS |
+| Negative path | PASS | PASS through exact two-test file and Vitest exit zero | PASS |
+| Evidence denominator | 2 | 2 | PASS |
 | Provider calls | 0 | 0 during packet authoring | PASS |
 
 ## Agent Operation Trace Block

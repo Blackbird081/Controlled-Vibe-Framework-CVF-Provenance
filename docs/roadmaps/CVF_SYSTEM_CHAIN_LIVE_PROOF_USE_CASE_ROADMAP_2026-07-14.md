@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC02_AND_RENDERER_REPAIR_CLOSED_UC03_PACKET_NEXT
+Status: ACTIVE_UC03_CLOSED_BOUNDED_UC04A_PACKET_NEXT
 
 docType: roadmap
 
@@ -153,7 +153,12 @@ state differs: UC-02 closed `CLOSED_PASS_BOUNDED` at material commit
 `9173af70b` with bootstrap PASS and CF-076 through CF-084 PASS 9/9. Its
 separate generated-Markdown renderer repair closed at `36aefceab`; all twenty
 outputs are current and all twelve governed Markdown outputs pass the
-applicable checker surface. UC-03 and UC-04 remain undispatched and unexecuted.
+applicable checker surface. UC-03 then closed bounded through GC-011: one
+provider-free invocation ran the exact two-test proof file through `CvfSdk`
+into `PipelineOrchestrator`; both the positive and missing-PLAN negative cases
+passed. The receipt lost distinct case display names and two focused tests were
+placeholder-only, so closure retains an evidence-quality limitation without a
+costly decision-neutral rerun. UC-04 remains undispatched and unexecuted.
 
 ## Stop Conditions
 
@@ -196,18 +201,19 @@ no public-sync artifact or sibling public-sync commit is authorized.
 
 ## Claim Boundary
 
-This roadmap establishes a bounded use-case sequence and records the accepted
-bounded UC-02 execution plus its downstream renderer closure. It does not claim
-UC-03 or UC-04 has executed, does not promote UC-02 beyond its recorded local
-boundary, and does not prove production, public, scale, or real-user outcomes.
+This roadmap establishes a bounded use-case sequence and records accepted
+bounded UC-02 and representative GC-011 UC-03 execution. UC-03 does not prove
+GC-009, GC-010, or every matrix row. UC-04 has not executed. Nothing here
+proves production, public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-Author a fresh bounded GC-018 and source-verified work order for UC-03 route
-selection only. Prove one representative active caller-backed
-Contract-to-Runtime path; do not select GC-009 or GC-010 while no active caller
-is source-proven. Keep UC-04 held. Do not execute UC-03 until its packet passes
-dispatch review.
+Author a fresh bounded GC-018 and source-verified work order for UC-04A CLI
+operator readout only. Select the existing current CLI owner and one meaningful
+failure/readout boundary. Do not include UC-04B Web work, a unified checker
+inventory, or a provider call unless the selected CLI claim actually crosses a
+provider boundary. Do not reopen UC-03 harness repair unless a later proof must
+reuse distinct per-case receipt identity.
 
 ## Checker Source Read-Ahead Block
 

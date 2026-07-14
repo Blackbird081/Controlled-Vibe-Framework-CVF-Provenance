@@ -30,11 +30,16 @@
     },
     {
       "useCaseId": "UC-03-CONTRACT-TO-RUNTIME-REPRESENTATIVE-PATH",
-      "status": "PLANNED_NOT_DISPATCHED",
+      "status": "PROVEN_BOUNDED",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
       "scope": "one active caller-backed Governance Control Matrix route selected by source verification; unresolved no-caller rows remain excluded",
       "selectionReason": "file existence and unit tests do not prove production invocation",
-      "providerCallRequired": "CONDITIONAL_ON_SELECTED_ROUTE"
+      "providerCallRequired": false,
+      "selectedControlId": "GC-011",
+      "latestEvidence": "docs/reviews/evidence/system-chain-uc03-contract-runtime-proof-2026-07-14.json",
+      "latestResult": "PASS_TWO_OF_TWO_WITH_RECEIPT_CASE_IDENTITY_LIMITATION",
+      "nextAction": "retain the bounded GC-011 result; do not promote GC-009 or GC-010; repair the harness only if a later proof must reuse per-case receipt identity"
     },
     {
       "useCaseId": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
@@ -64,11 +69,11 @@
       "semanticVerdict": "PARTIAL_RUNTIME_CONNECTION_FULL_INVENTORY",
       "liveApplicability": "RUNTIME_LIVE_REQUIRED",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
-      "observedProofClass": "LOCAL_DETERMINISTIC_EXECUTION",
-      "operationalProofStatus": "PARTIAL",
-      "reason": "active callers and focused tests exist for bounded rows, but not every row is invocation-proven and no-caller rows are explicitly retained",
-      "nextUseCase": "UC-03-CONTRACT-TO-RUNTIME-REPRESENTATIVE-PATH",
-      "nextAction": "select one source-verified active caller path; do not use GC-009 or GC-010 unless an active caller is first established"
+      "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "operationalProofStatus": "PROVEN",
+      "reason": "the representative GC-011 path executed once through CvfSdk into PipelineOrchestrator with positive and fail-closed negative cases; this operational proof does not change the lane's PARTIAL semantic posture or promote invocation-unproven rows",
+      "nextUseCase": "NONE",
+      "nextAction": "retain the bounded GC-011 receipt and explicit GC-009/GC-010 exclusion; reopen only for a materially different contract-to-runtime claim or proven active caller"
     },
     {
       "laneId": "RUNTIME_TO_ENFORCEMENT",

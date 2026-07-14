@@ -113,6 +113,14 @@ R94-T1C confirms direct semantic tests for GC-012 and GC-013. Remaining bounded
 rows stay explicit: GC-009/010 are implemented without proven production
 invocation, while GC-019/046 remain contract-only with reason.
 
+SCLP-UC03-T2 then selected GC-011 and executed one current provider-free proof
+through `CvfSdk.runReferenceGovernedLoop` into `PipelineOrchestrator`. The
+positive and missing-PLAN fail-closed cases passed two of two. Operational
+coverage for this representative route is `PROVEN`; the lane's semantic
+posture remains `PARTIAL`, GC-009/010 remain invocation-unproven, and the
+receipt's lost per-case display names are retained as a bounded evidence
+limitation rather than grounds for another proof call.
+
 ### Lane 3 - Runtime to Enforcement
 
 laneId: `RUNTIME_TO_ENFORCEMENT`
