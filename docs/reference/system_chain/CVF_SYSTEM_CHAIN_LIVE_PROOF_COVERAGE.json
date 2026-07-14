@@ -18,11 +18,15 @@
     },
     {
       "useCaseId": "UC-02-RUNTIME-TO-ENFORCEMENT-CURRENT-RUN",
-      "status": "PLANNED_NOT_DISPATCHED",
+      "status": "BLOCKED_DIAGNOSED_REPAIR_REQUIRED",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "observedProofClass": "LOCAL_DETERMINISTIC_EXECUTION",
       "scope": "registry-driven CF-076 through CF-084 invocation chain",
       "selectionReason": "current map says connected, while cited per-checker PASS rows are historical rather than a retained current-run receipt",
-      "providerCallRequired": false
+      "providerCallRequired": false,
+      "latestEvidence": "docs/reviews/evidence/system-chain-uc02-current-run-2026-07-14.json",
+      "latestResult": "FAIL_BOOTSTRAP_0_OF_9",
+      "nextAction": "reconcile intentionally archived phase-governance artifacts with stale live-path consumers under a fresh bounded repair packet, then rerun UC-02"
     },
     {
       "useCaseId": "UC-03-CONTRACT-TO-RUNTIME-REPRESENTATIVE-PATH",
@@ -74,9 +78,9 @@
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
       "observedProofClass": "LOCAL_DETERMINISTIC_EXECUTION",
       "operationalProofStatus": "STALE",
-      "reason": "the chain edge is source-proven and has historical PASS rows, but the retained evidence is not a current-run receipt",
+      "reason": "the chain edge remains source-proven, but the current UC-02 attempt stopped at the shared bootstrap because intentionally archived phase-governance artifacts still have stale live-path consumers; no scenario executed",
       "nextUseCase": "UC-02-RUNTIME-TO-ENFORCEMENT-CURRENT-RUN",
-      "nextAction": "invoke the real registry-driven chain once, retain aggregate and per-scenario receipts, and reconcile all nine outcomes"
+      "nextAction": "repair the archive-to-consumer path contract under a fresh bounded packet, then rerun the retained UC-02 proof runner and require 9/9 before upgrading STALE"
     },
     {
       "laneId": "ENFORCEMENT_TO_EVIDENCE",
@@ -104,4 +108,3 @@
     }
   ]
 }
-

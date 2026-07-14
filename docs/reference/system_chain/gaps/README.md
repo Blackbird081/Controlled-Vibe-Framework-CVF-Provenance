@@ -49,7 +49,7 @@ adding, editing, or closing a gap entry.
 
 ## Current Gaps (Generated Summary)
 
-This table is a human summary of the 7 gap entries generated at authoring
+This table is a human summary of the 8 gap entries generated at review
 time. Always trust `CVF_SYSTEM_CHAIN_GAP_INDEX.json` and the `entries/`
 directory over this prose if they disagree; re-run the generator and refresh
 this table when entries change.
@@ -58,9 +58,10 @@ this table when entries change.
 
 | Status | Count |
 |---|---|
-| `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | 2 |
+| `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | 1 |
 | `EVIDENCED_NOT_OPERATOR_VISIBLE` | 1 |
 | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` | 4 |
+| `IMPLEMENTED_NOT_INVOCATION_PROVEN` | 1 |
 
 ### Open / Parked / Intentionally Separated Gaps
 
@@ -69,6 +70,7 @@ this table when entries change.
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
+| `cvf.asc.gap.packet_posture_bootstrap_archive_path_drift.v1` | runtime_to_enforcement | `scripts/run_cvf_packet_posture_state_bootstrap.py` -> phase-governance evidence consumers | `IMPLEMENTED_NOT_INVOCATION_PROVEN` | `LOCAL_RUNTIME_VERIFIED_EDGE` | `entries/packet_posture_bootstrap_archive_path_drift.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC02_RUNTIME_TO_ENFORCEMENT_CURRENT_RUN_COMPLETION_2026-07-14.md` | Reconcile archive authority and consumer paths, then require UC-02 9/9 |
 
 ### Recently Closed Gaps
 
@@ -84,6 +86,10 @@ acceptance created private-provenance runtime owners for all three
 previously unresolved SOT3 GAP candidates. See
 `docs/reviews/CVF_SOT3_T7_WORKER_RETURN_2026-07-13.md` for the full
 reconciliation evidence.
+
+UC-02 current invocation added the eighth gap on 2026-07-14 after the real
+packet-posture bootstrap stopped before all nine scenarios. The new entry
+keeps the semantic edge intact while recording the missing operational proof.
 
 ## Search Examples
 
@@ -136,7 +142,7 @@ Decision 2.
 
 ## Claim Boundary
 
-This README is the gap ledger's human front door for the 7 gap entries
+This README is the gap ledger's human front door for the 8 gap entries
 currently generated (3 populated in the original MSEA-ASC-RW wave, 3 added by
 SOT3-RAP-T0, and 1 added by SOT3-T7). It does not claim exhaustive coverage of
 every possible CVF architecture gap, does not modify any R91-owned artifact,

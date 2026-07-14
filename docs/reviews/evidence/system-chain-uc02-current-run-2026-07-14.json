@@ -1,0 +1,93 @@
+{
+  "proofClass": "CURRENT_RUNTIME_INVOCATION",
+  "useCaseId": "UC-02-RUNTIME-TO-ENFORCEMENT-CURRENT-RUN",
+  "scenarioRegistry": "docs/reference/CVF_CONFORMANCE_SCENARIOS.json",
+  "scenarioRegistrySha256": "aaf625239e390fd97dbffad75a3bda687fd2ac40ca8cd9732b9c386a114beabb",
+  "scenarioDenominator": 9,
+  "proofRunInvocationCount": 1,
+  "bootstrapResult": {
+    "command": [
+      "python",
+      "scripts/run_cvf_packet_posture_state_bootstrap.py"
+    ],
+    "result": "FAIL",
+    "exitCode": 1,
+    "durationSeconds": 0.18
+  },
+  "scenarioEvents": [
+    {
+      "scenarioId": "CF-076",
+      "title": "Cross-family approval artifact external revocation issuer proof authority attestation verification",
+      "commandSha256": "ff348b399f61a8269a808e600802b313163b5a0c3808ccfde90e56b6c54d9866",
+      "result": "SKIPPED_BOOTSTRAP_FAILED",
+      "exitCode": null,
+      "durationSeconds": 0.0
+    },
+    {
+      "scenarioId": "CF-077",
+      "title": "Cross-family approval artifact external revocation issuer proof authority provenance verification",
+      "commandSha256": "4dc7307dc80396fd465fb42f8961cebd73bbcd4bab99856e3bc39d9794b3463b",
+      "result": "SKIPPED_BOOTSTRAP_FAILED",
+      "exitCode": null,
+      "durationSeconds": 0.0
+    },
+    {
+      "scenarioId": "CF-078",
+      "title": "Cross-family approval artifact external revocation issuer proof authority provenance attestation verification",
+      "commandSha256": "fe3e78b9bde6fc8eb8da0a2ae5f6db91063664b0665753fc32b5dd76057d4c32",
+      "result": "SKIPPED_BOOTSTRAP_FAILED",
+      "exitCode": null,
+      "durationSeconds": 0.0
+    },
+    {
+      "scenarioId": "CF-079",
+      "title": "Cross-family approval artifact external revocation issuer proof authority provenance attestation freshness",
+      "commandSha256": "597055cd54f8f00eb11c310231a4b772221056c6e0847dba2b12a3b76a185fd9",
+      "result": "SKIPPED_BOOTSTRAP_FAILED",
+      "exitCode": null,
+      "durationSeconds": 0.0
+    },
+    {
+      "scenarioId": "CF-080",
+      "title": "Cross-family approval artifact external revocation issuer proof authority provenance attestation provenance",
+      "commandSha256": "5d1017abcab5da7de646a4f153dcab3f716e987fdc0be56ffbeb1eb4b4cc8403",
+      "result": "SKIPPED_BOOTSTRAP_FAILED",
+      "exitCode": null,
+      "durationSeconds": 0.0
+    },
+    {
+      "scenarioId": "CF-081",
+      "title": "Cross-family approval artifact external revocation issuer proof authority provenance attestation provenance verification",
+      "commandSha256": "3ed31619424fbdcbad00e8487a4df1412b58587b1c5950a9dab1f2e9ef55464f",
+      "result": "SKIPPED_BOOTSTRAP_FAILED",
+      "exitCode": null,
+      "durationSeconds": 0.0
+    },
+    {
+      "scenarioId": "CF-082",
+      "title": "Cross-family approval artifact external revocation issuer proof authority provenance attestation provenance freshness",
+      "commandSha256": "b03b492c70015e7c3c9795b473003474d1255792ffbf83d3813c7724d5872b45",
+      "result": "SKIPPED_BOOTSTRAP_FAILED",
+      "exitCode": null,
+      "durationSeconds": 0.0
+    },
+    {
+      "scenarioId": "CF-083",
+      "title": "Cross-family approval artifact external revocation issuer proof authority provenance attestation provenance freshness proof",
+      "commandSha256": "cff848592c4f86ae2b5794a64fecb522f4f2c87eefaed0411f711e436bfc4968",
+      "result": "SKIPPED_BOOTSTRAP_FAILED",
+      "exitCode": null,
+      "durationSeconds": 0.0
+    },
+    {
+      "scenarioId": "CF-084",
+      "title": "Cross-family approval artifact external revocation issuer proof authority provenance attestation provenance freshness proof verification",
+      "commandSha256": "028546c5c46167e7ac14b22c72102bc8b9ab4f0d7eb7b1c69294244bacaf460e",
+      "result": "SKIPPED_BOOTSTRAP_FAILED",
+      "exitCode": null,
+      "durationSeconds": 0.0
+    }
+  ],
+  "passCount": 0,
+  "overallResult": "FAIL"
+}

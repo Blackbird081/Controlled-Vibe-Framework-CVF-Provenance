@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 docType: work_order
 
@@ -422,6 +422,27 @@ Passing UC-02 may prove only that the canonical registry-driven CF-076 through
 CF-084 chain executed successfully in the recorded local environment and
 evidence window. It does not prove provider governance, all CVF controls,
 production, public readiness, scale, certification, or user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | UC-02 completion review | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Roadmap state | live-proof use-case roadmap | UC-02 repair required; later use cases held | PASS |
+| Registry JSON | system-chain GAP generated index | UC-02 path-drift entry generated | PASS |
+| Registry Markdown | system-chain GAP README | UC-02 gap listed | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | local repository evidence only | N/A with reason |
+| System loop interlock | current-run receipt | AC-03 through AC-07 not met; bootstrap FAIL and zero of nine executed | BLOCKED |
+| Session continuity | active session sources | separate post-material-commit synchronization | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Bootstrap | PASS once | FAIL once | BLOCKED |
+| Scenario denominator | 9 | 9 retained events | PASS |
+| Scenario result | 9/9 PASS | 0 executed; 9 skipped | BLOCKED |
 
 ## Agent Operation Trace Block
 
