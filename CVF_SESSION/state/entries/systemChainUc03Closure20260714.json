@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1774,
+  "stateKey": "systemChainUc03Closure20260714",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_LIMITATION",
+    "materialCommit": "7a8f7268f",
+    "workOrderId": "SCLP-UC03-T2",
+    "selectedControlId": "GC-011",
+    "operationalProofStatus": "PROVEN_BOUNDED",
+    "semanticLaneStatus": "PARTIAL",
+    "proofInvocationCount": 1,
+    "evidenceCaseCount": 2,
+    "providerCallCount": 0,
+    "excludedRows": ["GC-009", "GC-010"],
+    "retainedLimitation": "receipt does not retain distinct per-case identity and two Python wrapper tests are placeholder bodies; exact invoked TypeScript suite still proves one positive and one negative case",
+    "durableLearning": "CVF_ADIF-0032",
+    "parkedRepairTrigger": "reopen only when a later proof reuses distinct per-case identity or a consumer requires stable case IDs",
+    "nextAllowedMove": "author a fresh bounded UC-04A CLI operator-readout GC-018 and source-verified work order only",
+    "claimBoundary": "Representative current-runtime operational proof only; no broader Contract-to-Runtime semantic completion, GC-009/GC-010 promotion, Web, provider, public, production, scale, universal, certification, or user-value claim."
+  }
+}
