@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC03_CLOSED_BOUNDED_UC04A_PACKET_NEXT
+Status: ACTIVE_UC04A_BLOCKED_RECOVERY_PACKET_NEXT
 
 docType: roadmap
 
@@ -158,7 +158,13 @@ provider-free invocation ran the exact two-test proof file through `CvfSdk`
 into `PipelineOrchestrator`; both the positive and missing-PLAN negative cases
 passed. The receipt lost distinct case display names and two focused tests were
 placeholder-only, so closure retains an evidence-quality limitation without a
-costly decision-neutral rerun. UC-04 remains undispatched and unexecuted.
+costly decision-neutral rerun. UC-04A then executed one bounded two-case CLI
+harness. Its negative case passed with the expected range/finality readout.
+The positive case failed 73/75 because the dispatch packet required a new
+protected `governance/compat` test path without a Core Guard Self-Protection
+Authorization block. This is an orchestrator packet gap, not a CLI defect.
+The negative evidence is retained; only one positive recovery call is next.
+UC-04B remains undispatched and unexecuted.
 
 ## Stop Conditions
 
@@ -208,12 +214,12 @@ proves production, public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-Author a fresh bounded GC-018 and source-verified work order for UC-04A CLI
-operator readout only. Select the existing current CLI owner and one meaningful
-failure/readout boundary. Do not include UC-04B Web work, a unified checker
-inventory, or a provider call unless the selected CLI claim actually crosses a
-provider boundary. Do not reopen UC-03 harness repair unless a later proof must
-reuse distinct per-case receipt identity.
+Author one fresh bounded UC-04A-R1 GC-018 and source-verified recovery work
+order. Reuse the retained `negative_pre_closure` PASS and the committed focused
+test/runner evidence. Authorize exactly one direct positive `pre-dispatch` CLI
+call, zero retry, zero provider calls, and no new protected path. Do not rerun
+the negative case, open UC-04B Web, claim a unified checker inventory, or
+reopen UC-03 harness repair without its recorded reuse trigger.
 
 ## Checker Source Read-Ahead Block
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 docType: work_order
 
@@ -54,6 +54,13 @@ receipt, and meaningful failure readouts.
 Produce one current two-case receipt for the selected CLI owner without
 changing that owner or implying Web, unified-checker, provider, or production
 coverage.
+
+Reviewer closure update: the one authorized harness invocation completed with
+stable case identity. `negative_pre_closure` passed. `positive_pre_dispatch`
+failed 73/75 because the dispatch manifest placed its focused test under the
+protected `governance/compat` directory without a dispatch-time Core Guard
+Self-Protection Authorization block. The CLI owner behaved correctly. This
+attempt is closed blocked; no retry is authorized by this work order.
 
 ## Authority / Decision
 
@@ -206,6 +213,17 @@ the conditional diagnostic, and the dedicated generated PASS receipt. All
 other paths are forbidden. Required proof literals are
 `positive_pre_dispatch`, `negative_pre_closure`, `harnessInvocationCount=1`,
 `cliInvocationCount=2`, `retryCount=0`, and `providerCallCount=0`.
+
+## Required Artifact Manifest
+
+| Required artifact | Planned path | Final evidence | Status |
+|---|---|---|---|
+| proof runner | `scripts/run_cvf_system_chain_uc04a_cli_operator_readout_proof.py` | worker additive file | PASS |
+| focused tests | `governance/compat/test_run_cvf_system_chain_uc04a_cli_operator_readout_proof.py` | 39/39 PASS | PASS |
+| two-case receipt | `docs/reviews/evidence/system-chain-uc04a-cli-operator-readout-proof-2026-07-14.json` | positive FAIL; negative PASS | PASS |
+| diagnostic | declared conditional diagnostic path | non-retryable packet gap | PASS |
+| worker return | declared worker-return path | `BLOCKED_WITH_REASON` | PASS |
+| generated positive PASS receipt | dedicated receipt directory | absent because positive aggregate failed | BLOCKED |
 
 ## Dual Agent Surface Matrix
 
@@ -496,15 +514,28 @@ scale, certification, or user value.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | paired UC-04A GC-018 | dispatch-ready token | N/A with reason: execution pending |
-| Work order status | this work order | dispatch-ready token | N/A with reason: execution pending |
-| Completion or reviewer artifact | declared completion review | reviewer disposition | N/A with reason: worker not run |
-| Roadmap state | system-chain live-proof roadmap | UC-04A dispatch/closure state | N/A with reason: reviewer-owned |
-| Registry JSON | live-proof coverage ledger | CLI proof status | N/A with reason: reviewer-owned |
-| Registry Markdown | system-chain README and Catalog/GAP decision | bounded CLI result | N/A with reason: reviewer-owned |
+| Baseline status | paired UC-04A GC-018 | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | this work order | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared completion review | reviewer accepted deterministic packet blocker | PASS |
+| Roadmap state | system-chain live-proof roadmap | UC-04A recovery packet next | PASS |
+| Registry JSON | live-proof coverage ledger | CLI proof partial blocked | PASS |
+| Registry Markdown | system-chain README and Catalog/GAP decision | packet blocker recorded; no architecture gap | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | repository/runtime evidence only | N/A with reason |
-| System loop interlock | fresh UC-04A receipt | stable positive and negative case IDs | N/A with reason: execution pending |
+| System loop interlock | fresh UC-04A receipt | positive FAIL 73/75; negative PASS; stable case IDs | PASS |
 | Session continuity | active session state | separate post-material synchronization | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| harness invocation | exactly one | 1 | PASS |
+| CLI calls | exactly two | 2 | PASS |
+| positive aggregate | PASS | FAIL 73/75 | BLOCKED |
+| positive receipt | present | absent by fail-closed receipt behavior | BLOCKED |
+| negative range/finality | PASS | PASS | PASS |
+| stable case IDs | two distinct | two distinct | PASS |
+| retry count | 0 | 0 | PASS |
+| provider calls | 0 | 0 | PASS |
 
 ## Agent Operation Trace Block
 

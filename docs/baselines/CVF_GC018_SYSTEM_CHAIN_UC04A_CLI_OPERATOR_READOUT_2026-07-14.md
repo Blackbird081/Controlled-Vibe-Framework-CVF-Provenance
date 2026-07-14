@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 docType: gc018_baseline
 
@@ -31,6 +31,14 @@ proof runner, focused runner tests, one receipt, one diagnostic, and one worker
 return. The proof runner may be invoked exactly once and may invoke the
 selected CLI exactly twice: one successful `pre-dispatch` call and one expected
 failing `pre-closure` call. No retry and no provider call are authorized.
+
+Reviewer closure update: the attempt executed once and is closed
+`CLOSED_BLOCKED_BOUNDED`. The negative readout passed, while the positive
+readout was blocked because this packet authorized a new protected
+`governance/compat` test path without carrying the required Core Guard
+Self-Protection Authorization block. No retry occurred. A separate R1 packet
+must reuse the retained negative evidence and authorize only one positive CLI
+call after the protected proof test is committed through reviewer closure.
 
 ## Scope / Target / Owner Boundary
 
@@ -199,6 +207,37 @@ receipt, and selected failure information in one local environment and evidence
 window. It does not prove UC-04B Web, every checker surface, external-agent
 readiness, provider governance, production, public readiness, scale,
 certification, or user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this baseline | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | paired SCLP-UC04A-T3 work order | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | UC-04A completion review | reviewer blocker disposition | PASS |
+| Worker return | declared worker-return path | `BLOCKED_WITH_REASON` | PASS |
+| Runtime receipt | UC-04A two-case JSON | positive FAIL 73/75; negative PASS | PASS |
+| Diagnostic | UC-04A diagnostic JSON | non-retryable packet gap | PASS |
+| Roadmap state | system-chain roadmap | recovery packet next | PASS |
+| Registry JSON | live-proof coverage ledger | UC-04A partial blocked | PASS |
+| Registry Markdown | system-chain README and Catalog/GAP decision | blocker and no architecture gap recorded | PASS |
+| Learning | ADIF-0033 | resolver-discoverable packet rule | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | local repository evidence only | N/A with reason |
+| System loop interlock | retained UC-04A receipt and diagnostic | one bounded attempt, zero retry, partial result preserved | PASS |
+| Session continuity | active session sources | separate post-material synchronization | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| harness invocation | 1 | 1 | PASS |
+| CLI invocation count | 2 | 2 | PASS |
+| positive aggregate | PASS | FAIL 73/75 | BLOCKED |
+| positive PASS receipt | present | absent because aggregate failed | BLOCKED |
+| negative readout | PASS | PASS | PASS |
+| stable case IDs | 2 distinct | 2 distinct | PASS |
+| retry count | 0 | 0 | PASS |
+| provider calls | 0 | 0 | PASS |
 
 ## Agent Operation Trace Block
 

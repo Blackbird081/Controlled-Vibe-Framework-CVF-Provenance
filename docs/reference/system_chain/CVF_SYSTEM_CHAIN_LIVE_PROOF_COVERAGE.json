@@ -43,11 +43,15 @@
     },
     {
       "useCaseId": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
-      "status": "PLANNED_NOT_DISPATCHED",
+      "status": "BLOCKED_BOUNDED_RECOVERY_REQUIRED",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
       "scope": "CLI current-run readout first, then the bounded Web Operations subset as a separate scenario",
       "selectionReason": "source inspection proves wiring shape but not current operator usability",
-      "providerCallRequired": "ONLY_IF_THE_SELECTED_JOB_ASSERTS_AI_GOVERNANCE_BEHAVIOR"
+      "providerCallRequired": "ONLY_IF_THE_SELECTED_JOB_ASSERTS_AI_GOVERNANCE_BEHAVIOR",
+      "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "latestEvidence": "docs/reviews/evidence/system-chain-uc04a-cli-operator-readout-proof-2026-07-14.json",
+      "latestResult": "POSITIVE_FAIL_73_OF_75_PACKET_AUTHORIZATION_GAP_NEGATIVE_PASS",
+      "nextAction": "retain the negative case; dispatch one positive-only recovery after reviewer commits the protected proof test with explicit authorization; do not rerun the negative case"
     }
   ],
   "lanes": [
@@ -105,11 +109,11 @@
       "semanticVerdict": "PARTIAL_OPERATOR_VISIBILITY_BY_ENFORCEMENT_CLASS",
       "liveApplicability": "OPERATOR_SURFACE_LIVE_REQUIRED",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
-      "observedProofClass": "STATIC_SOURCE_VERIFIED",
-      "operationalProofStatus": "MISSING",
-      "reason": "direct source read proves output and job definitions, but no retained current operator invocation proves the surfaces work now",
+      "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "operationalProofStatus": "PARTIAL",
+      "reason": "one current invocation retained stable case identities: the negative CLI failure readout passed, while the positive readout was blocked by a dispatch-time protected-path authorization gap rather than a CLI defect",
       "nextUseCase": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
-      "nextAction": "prove CLI readout first; then test the bounded Web subset separately without implying a unified all-checker Web inventory"
+      "nextAction": "run one positive-only CLI recovery after authorized blocked-evidence closure; retain the negative evidence and keep Web held"
     }
   ]
 }
