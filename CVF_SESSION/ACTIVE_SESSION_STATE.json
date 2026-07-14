@@ -83,8 +83,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc04b_dispatched_worker_next",
-  "previousMode": "system_chain_uc04a_closed_uc04b_packet_authoring_next",
+  "currentMode": "system_chain_uc04b_blocked_recovery_packet_next",
+  "previousMode": "system_chain_uc04b_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11806,5 +11806,22 @@
     "nextAllowedMove": "one no-commit UC-04B worker execution from a clean execution base",
     "claimBoundary": "Dispatch authorization only. No current UC-04B runtime proof, unified checker inventory, all-Web coverage, provider governance, public, production, scale, certification, or user-value claim."
   },
-  "nextAllowedMove": "UC-04B Web Operations proof packet is DISPATCH_READY at material commit 9b3e46810. The selected job is docs_governance_check: one real Next development-runtime Playwright command, one authorized developer/operator UI submission, one authenticated reviewer policy-block submission, exactly one checker subprocess, zero retries, and zero provider calls. Worker must not commit or mutate existing Web/API/auth/job/checker owners. Return COMPLETE_PENDING_REVIEW only with two stable case IDs, positive UI/audit reconciliation, negative HTTP 403 with read_only_role_cannot_trigger and no running event, exact counters, clean changed set, and unchanged HEAD; otherwise return BLOCKED_WITH_REASON with one diagnostic and no rerun. Do not infer a unified checker inventory, all-Web coverage, provider governance, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc04bBlockedClosure20260714": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "d69b6d7b3",
+    "workOrderId": "SCLP-UC04B-T4",
+    "focusedTests": "20_OF_20_PASS_REVIEWER_VERIFIED",
+    "playwrightInvocationCount": 2,
+    "unauthorizedRetryCount": 1,
+    "webSubmissionCount": 0,
+    "checkerExecutionCount": 0,
+    "providerCallCount": 0,
+    "workerEnvironmentRootCauseAccepted": false,
+    "authRootCause": "UNRESOLVED",
+    "adifLearning": "ADIF-0034",
+    "uc04bStatus": "UNPROVEN_RECOVERY_REQUIRED",
+    "nextAllowedMove": "author a fresh bounded UC-04B recovery packet only; no live rerun before dispatch review",
+    "claimBoundary": "Blocked attempt and corrected diagnostic only. No Web Operations, unified inventory, provider governance, public, production, scale, certification, or user-value proof."
+  },
+  "nextAllowedMove": "SCLP-UC04B-T4 is CLOSED_BLOCKED_BOUNDED at material commit d69b6d7b3. Reviewer verification passed the focused owner suite 20/20 and rejected the worker's global Vitest and missing-environment diagnoses. The corrected ledger records two Playwright invocations, one unauthorized retry, zero Web submissions, zero checker executions, and zero provider calls; UC-04B remains unproven. ADIF-0034 and GC-051 capture the reusable evidence/dispatch defects. Next allowed move is to author one fresh bounded UC-04B recovery GC-018 and source-verified work order only, with source-backed auth preflight, frozen proof source, immutable invocation ledger, exactly one later Playwright command, and no provider call. Do not rerun under T4 or claim unified inventory, Web coverage, auth root cause, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
 }

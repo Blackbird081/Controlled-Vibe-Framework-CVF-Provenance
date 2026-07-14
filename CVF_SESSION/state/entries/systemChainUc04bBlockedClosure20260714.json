@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1786,
+  "stateKey": "systemChainUc04bBlockedClosure20260714",
+  "value": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "d69b6d7b3",
+    "workOrderId": "SCLP-UC04B-T4",
+    "focusedTests": "20_OF_20_PASS_REVIEWER_VERIFIED",
+    "playwrightInvocationCount": 2,
+    "unauthorizedRetryCount": 1,
+    "webSubmissionCount": 0,
+    "checkerExecutionCount": 0,
+    "providerCallCount": 0,
+    "workerEnvironmentRootCauseAccepted": false,
+    "authRootCause": "UNRESOLVED",
+    "adifLearning": "ADIF-0034",
+    "uc04bStatus": "UNPROVEN_RECOVERY_REQUIRED",
+    "nextAllowedMove": "author a fresh bounded UC-04B recovery packet only; no live rerun before dispatch review",
+    "claimBoundary": "Blocked attempt and corrected diagnostic only. No Web Operations, unified inventory, provider governance, public, production, scale, certification, or user-value proof."
+  }
+}
