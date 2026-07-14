@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1784,
+  "stateKey": "systemChainUc04bDispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "9b3e46810",
+    "workOrderId": "SCLP-UC04B-T4",
+    "dispatchBaseHead": "17d69ec1c",
+    "selectedJob": "docs_governance_check",
+    "playwrightInvocationCeiling": 1,
+    "webSubmissionCount": 2,
+    "checkerExecutionCount": 1,
+    "retryCount": 0,
+    "providerCallCount": 0,
+    "positiveCaseId": "positive_developer_docs_check",
+    "negativeCaseId": "negative_reviewer_docs_check",
+    "workerCommitPermission": "FORBIDDEN",
+    "nextAllowedMove": "one no-commit UC-04B worker execution from a clean execution base",
+    "claimBoundary": "Dispatch authorization only. No current UC-04B runtime proof, unified checker inventory, all-Web coverage, provider governance, public, production, scale, certification, or user-value claim."
+  }
+}

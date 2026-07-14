@@ -19,9 +19,9 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04a_closed_uc04b_packet_authoring_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
-bounded UC-04B Web packet only; parked checkpoint=UC-03 harness identity
+Startup acknowledged: current mode=`system_chain_uc04b_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one no-commit
+UC-04B Web proof worker execution; parked checkpoint=UC-03 harness identity
 repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory,
 public export, production, scale, universal enforcement, and user validation.
 
@@ -38,16 +38,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04a_closed_uc04b_packet_authoring_next`
+`system_chain_uc04b_dispatched_worker_next`
 
 ## Active Boundary
 
-- Active UC-04A-R1 closure commit: `b335c0e4c`.
+- Active UC-04B dispatch commit: `9b3e46810`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: UC-04B source-verified packet authoring only.
-- Next permitted value lane: bound the existing Web Operations subset, decide
-  whether its selected job crosses AI governance behavior, and stop before
-  execution pending dispatch review.
+- Active work queue: one no-commit SCLP-UC04B-T4 worker execution.
+- Next permitted value lane: one real Playwright command with the selected
+  provider-free docs checker, developer positive, reviewer deny, one checker
+  execution, zero retries, and zero provider calls.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -536,3 +536,24 @@ accepted positive recovery evidence.
 
 Rollback boundary: revert only this session-sync batch; retain material
 closure `b335c0e4c`, recovery dispatch `d1ffbf3eb`, and historical evidence.
+
+## Core Guard Self-Protection Authorization - UC-04B Dispatch Sync
+
+Authorized scope: synchronize source-verified UC-04B dispatch material commit
+`9b3e46810` and route one exact no-commit SCLP-UC04B-T4 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc04bDispatch20260714.json`
+
+Operator authorization: continue the system-chain use-case sequence after
+dispatch review.
+
+Rollback boundary: revert only this session-sync batch; retain material
+dispatch `9b3e46810`, UC-04A closure `b335c0e4c`, and historical evidence.

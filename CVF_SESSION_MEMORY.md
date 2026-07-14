@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04a_closed_uc04b_packet_authoring_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author a bounded UC-04B Web packet only; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc04b_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one no-commit UC-04B Web proof worker execution; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc04a_closed_uc04b_packet_authoring_next`
+Current mode marker: `system_chain_uc04b_dispatched_worker_next`
 
-Current mode: `system_chain_uc04a_closed_uc04b_packet_authoring_next`
+Current mode: `system_chain_uc04b_dispatched_worker_next`
 
-`system_chain_uc04a_closed_uc04b_packet_authoring_next`
+`system_chain_uc04b_dispatched_worker_next`
 
 Previous mode:
 
-`system_chain_uc04a_r1_dispatched_worker_next`
+`system_chain_uc04a_closed_uc04b_packet_authoring_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-04B Web Operations readout dispatch | `9b3e46810` | DISPATCH_READY; one real Playwright command, developer positive plus reviewer policy-deny, one docs checker execution, zero retries/provider calls, worker must not commit. |
 | System-chain UC-04A-R1 positive CLI recovery closure | `b335c0e4c` | CLOSED_PASS_BOUNDED; 39/39 tests, one positive CLI call PASS 75/75 with receipt, retained negative not rerun, zero retries/provider/protected mutation; UC-04B packet authoring next. |
 | System-chain UC-04A-R1 positive CLI recovery dispatch | `d1ffbf3eb` | DISPATCH_READY; committed runner/test read-only, 39/39 required before exactly one direct positive CLI call, retained negative not rerun, zero retries/provider calls, worker must not commit. |
 | System-chain UC-04A blocked CLI proof closure | `da93a4b73` | CLOSED_BLOCKED_BOUNDED; negative range/finality readout PASS, positive 73/75 blocked by missing dispatch-time protected-path authorization; ADIF-0033; positive-only R1 packet next. |
@@ -182,13 +183,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc04a_closed_uc04b_packet_authoring_next`
+Mode: `system_chain_uc04b_dispatched_worker_next`
 
-UC-04A-R1 closed bounded at `b335c0e4c`: 39/39 focused tests and one direct
-positive CLI call passed 75/75 with a valid receipt; retained negative evidence
-was not rerun; zero retry/provider/protected mutation. The next allowed move is
-to author one fresh source-verified UC-04B Web packet only. Do not execute Web
-before dispatch review or infer unified checker inventory from CLI proof.
+UC-04B is dispatch-ready at `9b3e46810`. The next allowed move is one
+no-commit worker execution from a clean base: one real Playwright command, one
+developer/operator positive submission, one reviewer policy-deny submission,
+one docs checker execution, zero retry, and zero provider calls. Existing
+owners and UC-04A evidence remain read-only. Do not infer unified checker
+inventory, all-Web coverage, provider governance, public, production, scale,
+certification, or user value.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
