@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: gc018_baseline
 
@@ -67,7 +67,7 @@ No provider result or provider-local memory is used as authority.
 | keep UC-02 proof | no proof runner invocation | zero-call statement | READY |
 | repair actual owners | exact three-source manifest | source diff and focused tests | READY |
 | regenerate current outputs | existing release gate once | 20 output paths | READY |
-| close downstream GAP | reviewer-owned after clean gates | completion and GAP update | HOLD_FOR_REVIEWER |
+| close downstream GAP | reviewer-owned after clean gates | completion and GAP update | PASS |
 
 ## Cost And Retry Control
 
@@ -149,20 +149,20 @@ or user value.
 | renderer GAP before repair | open | `cvf.asc.gap.phase_governance_generated_markdown_conformance.v1` open | PASS |
 | template-owner count | exactly 3 | three source-verified renderer symbols | PASS |
 | live-call authorization | 0 UC-02 and 0 provider calls | dispatch authorizes zero | PASS |
-| repair execution receipt | worker return plus regenerated outputs | not executed at dispatch | N/A with reason: dispatch phase |
+| repair execution receipt | worker return plus regenerated outputs | 20 outputs current; 12/12 Markdown conformant | PASS |
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | this baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | paired work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | declared completion review | not yet executed | BLOCKED |
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | paired work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared completion review | reviewer accepted bounded repair | PASS |
 | Roadmap state | system-chain roadmap | UC-02 stays proven | N/A with reason |
-| Registry JSON | renderer GAP index | open until repair review | BLOCKED with reason |
-| Registry Markdown | GAP README | open until repair review | BLOCKED with reason |
+| Registry JSON | renderer GAP index | `CLOSED_WITH_EVIDENCE` | PASS |
+| Registry Markdown | GAP README | human summary reconciled | PASS |
 | External evidence digest | N/A with reason: no external evidence | repository source only | N/A with reason |
-| System loop interlock | regenerated outputs | not yet executed | BLOCKED |
+| System loop interlock | regenerated outputs | 20 current outputs; 12/12 Markdown conformant | PASS |
 | Session continuity | active state | separate after material closure | N/A with reason |
 
 ## Agent Operation Trace Block

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -205,8 +205,9 @@ counters, and runs pre-closure before changing GAP or session state.
 ## Fail Conditions
 
 Fourth source owner, direct generated-output hand editing, checker weakening,
-fabricated verification evidence, UC-02/provider call, unexpected path, second
-retry, secret leakage, or stronger claim returns `BLOCKED_WITH_REASON`.
+fabricated verification evidence, UC-02/provider call, unexpected path, any
+regeneration beyond the reviewer-authorized recovery cycle below, secret
+leakage, or stronger claim returns `BLOCKED_WITH_REASON`.
 
 ## Return-To-Orchestrator Conditions
 
@@ -217,14 +218,14 @@ no additional regeneration attempt beyond the authorized maximum.
 
 ## Closure Checklist
 
-- [ ] Source ownership refreshed at execution base.
-- [ ] Only the exact fulfillment manifest changed.
-- [ ] Focused and archive-path tests passed.
-- [ ] Twenty outputs regenerated through the release gate.
-- [ ] Twelve Markdown outputs passed applicable checkers.
-- [ ] UC-02, scenario-event, and provider-call counts are zero.
-- [ ] Worker-return fast gate passed and HEAD stayed unchanged.
-- [ ] Reviewer converted the no-commit return into governed closure.
+- [x] Source ownership refreshed at execution base.
+- [x] Only the exact worker fulfillment manifest plus reviewer-owned closure paths changed.
+- [x] Focused and archive-path tests passed.
+- [x] Twenty outputs regenerated through the release gate and bounded packet scripts.
+- [x] Twelve Markdown outputs passed applicable checkers.
+- [x] UC-02, scenario-event, and provider-call counts are zero.
+- [x] Worker-return fast gate passed and HEAD stayed unchanged.
+- [x] Reviewer converted the no-commit return into governed closure.
 
 ## Worker Autonomy / No-Question Rule
 
@@ -244,6 +245,42 @@ to repair machine-gate failures inside scope. Stop only at a forbidden boundary.
 
 UC-02 calls 0; scenario events 0; provider calls 0; release-gate calls 1 planned;
 one diagnosed result-changing regeneration retry maximum.
+
+## Reviewer Bounded Recovery Authorization - R3-R1
+
+Authorization status: AUTHORIZED_ONCE
+
+Reviewer verification at worker HEAD `c7d14d846` established all of the
+following before authorization:
+
+- the three source templates each contain
+  `EPISTEMIC_PROCESS_NA_WITH_REASON:`;
+- the current generated Markdown outputs contain zero instances of that
+  marker;
+- focused renderer tests pass 5/5;
+- archive-path reconciliation tests pass 15/15;
+- `check_epistemic_process_packet.py` reports exactly twelve stale-output
+  violations and no contradictory source failure.
+
+The same no-commit worker may now perform exactly one final regeneration
+cycle from the already-repaired source:
+
+1. invoke `python scripts/run_cvf_runtime_evidence_release_gate.py` once;
+2. invoke each of the production-candidate, internal-audit, and
+   enterprise-onboarding packet conformance scripts once with
+   `CVF_SKIP_RUNTIME_EVIDENCE_RELEASE_GATE=1`;
+3. make no further renderer, test, checker, work-order, GAP, coverage,
+   roadmap, or session edit;
+4. rerun the focused tests, archive-path tests,
+   `check_epistemic_process_packet.py`, and the worker-return fast gate;
+5. update only the existing worker return with the recovery command counts,
+   final gate evidence, and `COMPLETE_PENDING_REVIEW` if all gates pass;
+6. retain HEAD `c7d14d846`, stage nothing, and return to reviewer.
+
+This authorization adds one regeneration cycle, not another source-repair
+retry budget. Any failure after this cycle, any changed source requirement,
+or any unexpected path returns `BLOCKED_WITH_REASON` without another run.
+UC-02 proof calls, scenario events, and provider calls remain fixed at zero.
 
 ## Agent Handoff Contract Control Block
 
@@ -376,6 +413,34 @@ Reason: internal private-provenance repair.
 Passing this repair proves generated Markdown conformance only. UC-02 remains
 bounded by its retained receipt; no provider, production, public, scale,
 certification, or user-value claim is added.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Renderer owners | exactly 3 | 3 | PASS |
+| Generated outputs | exactly 20 | 20 | PASS |
+| Governed Markdown outputs | 12/12 conformant | 12/12 | PASS |
+| Focused tests | 5/5 PASS | 5/5 PASS | PASS |
+| Archive-path tests | 15/15 PASS | 15/15 PASS | PASS |
+| Worker-return fast gate | PASS | 62/62 plus diff hygiene PASS | PASS |
+| UC-02 proof calls | 0 | 0 | PASS |
+| Scenario events | 0 | 0 | PASS |
+| Provider calls | 0 | 0 | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired GC-018 | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | system-chain live-proof roadmap | UC-02 remains proven; renderer GAP closed | PASS |
+| Registry JSON | generated GAP index | renderer GAP `CLOSED_WITH_EVIDENCE` | PASS |
+| Registry Markdown | GAP README | human summary reconciled | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | repository evidence only | N/A with reason |
+| System loop interlock | regenerated outputs and tests | 12/12 conformant; 5/5 and 15/15 PASS | PASS |
+| Session continuity | active session sources | separate post-material synchronization | N/A with reason |
 
 ## Agent Operation Trace Block
 

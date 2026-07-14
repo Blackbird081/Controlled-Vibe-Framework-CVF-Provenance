@@ -62,8 +62,8 @@ this table when entries change.
 | `PARTIAL_CHAIN_WITH_BOUNDARY` | 1 |
 | `EVIDENCED_NOT_OPERATOR_VISIBLE` | 1 |
 | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` | 4 |
-| `OPEN_CONFIRMED_GAP` | 1 |
-| `CLOSED_WITH_EVIDENCE` | 1 |
+| `OPEN_CONFIRMED_GAP` | 0 |
+| `CLOSED_WITH_EVIDENCE` | 2 |
 
 ### Open / Parked / Intentionally Separated Gaps
 
@@ -72,12 +72,12 @@ this table when entries change.
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
-| `cvf.asc.gap.phase_governance_generated_markdown_conformance.v1` | enforcement_to_evidence -> evidence_to_operator_surface | three current renderer owners -> phase-governance Markdown outputs | `OPEN_CONFIRMED_GAP` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/phase_governance_generated_markdown_conformance.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC02_CURRENT_RERUN_COMPLETION_2026-07-14.md` | Repair and regenerate twelve Markdown outputs without rerunning UC-02 |
 
 ### Recently Closed Gaps
 
 | gapId | Plane | Owner (source -> target) | Status | Proof class | Entry / Evidence | Boundary caveat |
 |---|---|---|---|---|---|---|
+| `cvf.asc.gap.phase_governance_generated_markdown_conformance.v1` | enforcement_to_evidence -> evidence_to_operator_surface | three current renderer owners -> phase-governance Markdown outputs | `CLOSED_WITH_EVIDENCE` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/phase_governance_generated_markdown_conformance.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC02_RENDERER_CONFORMANCE_REPAIR_COMPLETION_2026-07-14.md` | Closed after all 20 outputs were regenerated and all 12 governed Markdown outputs passed the applicable checker surface; zero UC-02/scenario/provider calls |
 | `cvf.asc.gap.packet_posture_bootstrap_archive_path_drift.v1` | runtime_to_enforcement | `scripts/run_cvf_packet_posture_state_bootstrap.py` -> phase-governance evidence consumers | `CLOSED_WITH_EVIDENCE` (was `IMPLEMENTED_NOT_INVOCATION_PROVEN`) | `LOCAL_RUNTIME_VERIFIED_EDGE` | `entries/packet_posture_bootstrap_archive_path_drift.json`; `docs/reviews/evidence/system-chain-uc02-current-rerun-2026-07-14.json` | Closed by one bootstrap PASS and CF-076 through CF-084 PASS 9/9; downstream Markdown conformance is tracked separately |
 | `cvf.asc.gap.sot3_independent_refinery_owner_unresolved.v1` | doctrine_to_contract -> contract_to_runtime | `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` -> `EXTENSIONS/CVF_REFINERY/` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_independent_refinery_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | No package activation, adapter, provider/live, or public-sync claim; private-provenance implementation only |
 | `cvf.asc.gap.sot3_refinery_kernel_packet_binding_hash_owner_unresolved.v1` | contract_to_runtime | `EXTENSIONS/CVF_REFINERY/` -> `EXTENSIONS/CVF_REFINERY/src/packet-hash/packet-hash.ts` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_refinery_kernel_packet_binding_hash_owner_unresolved.json`; `EXTENSIONS/CVF_REFINERY/tests/packet-hash-vector.test.ts`; `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` | No package activation, adapter, provider/live, or public-sync claim; no Kernel/Flow source change; exactly one hash profile exists; private-provenance implementation only, pending reviewer acceptance |
@@ -94,6 +94,10 @@ UC-02 rerun closed the archive-path gap on 2026-07-14 with one bootstrap PASS
 and nine of nine scenario PASS results. The same run exposed a distinct ninth
 gap in twelve generated Markdown outputs. That downstream conformance gap does
 not downgrade the retained Runtime-to-Enforcement receipt.
+
+SCLP-UC02-R3 closed that downstream renderer-conformance gap on 2026-07-14.
+The three source-verified template owners and all 20 generated outputs now pass
+their bounded conformance checks without another UC-02 or provider call.
 
 ## Search Examples
 
