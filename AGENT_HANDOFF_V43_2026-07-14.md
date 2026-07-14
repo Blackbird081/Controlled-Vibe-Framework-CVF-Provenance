@@ -19,9 +19,9 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_auth_projection_repair_packet_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
-source-verified UC-04B auth-projection repair packet only; parked checkpoint=UC-03 harness identity
+Startup acknowledged: current mode=`system_chain_uc04b_r2_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute exact
+no-commit SCLP-UC04B-R2 only; parked checkpoint=UC-03 harness identity
 repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory,
 public export, production, scale, universal enforcement, and user validation.
 
@@ -38,15 +38,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04b_auth_projection_repair_packet_next`
+`system_chain_uc04b_r2_dispatched_worker_next`
 
 ## Active Boundary
 
-- Active UC-04B R1 blocked closure commit: `eebc3f8ce`.
+- Active UC-04B R2 dispatch commit: `978aa3e8d`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: one source-verified auth-projection repair packet only.
-- Next permitted value lane: isolate the confirmed NextAuth-to-application
-  projection gap and dispatch a bounded owner repair; no Web rerun yet.
+- Active work queue: one exact no-commit auth-projection repair worker.
+- Next permitted value lane: execute the bounded request-token repair, focused
+  tests, and one dedicated regression command; no UC-04B business run.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -618,3 +618,24 @@ closure of the bounded R1 blocker.
 
 Rollback boundary: revert only this session-sync batch; retain material
 closure `eebc3f8ce`, recovery dispatch `b224015f8`, and all evidence.
+
+## Core Guard Self-Protection Authorization - UC-04B-R2 Dispatch Sync
+
+Authorized scope: synchronize source-verified repair dispatch material commit
+`978aa3e8d` and route one exact no-commit SCLP-UC04B-R2 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc04bR2Dispatch20260714.json`
+
+Operator authorization: continue the system-chain sequence through the bounded
+auth-projection repair packet.
+
+Rollback boundary: revert only this session-sync batch; retain material
+dispatch `978aa3e8d`, R1 closure `eebc3f8ce`, and all governed evidence.
