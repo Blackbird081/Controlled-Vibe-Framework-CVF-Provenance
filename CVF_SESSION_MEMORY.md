@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04a_blocked_recovery_packet_authoring_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author a positive-only UC-04A-R1 recovery packet; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, UC-04B Web, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc04a_r1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one no-commit UC-04A-R1 positive-only worker execution; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, UC-04B Web, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc04a_blocked_recovery_packet_authoring_next`
+Current mode marker: `system_chain_uc04a_r1_dispatched_worker_next`
 
-Current mode: `system_chain_uc04a_blocked_recovery_packet_authoring_next`
+Current mode: `system_chain_uc04a_r1_dispatched_worker_next`
 
-`system_chain_uc04a_blocked_recovery_packet_authoring_next`
+`system_chain_uc04a_r1_dispatched_worker_next`
 
 Previous mode:
 
-`system_chain_uc04a_dispatched_worker_next`
+`system_chain_uc04a_blocked_recovery_packet_authoring_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-04A-R1 positive CLI recovery dispatch | `d1ffbf3eb` | DISPATCH_READY; committed runner/test read-only, 39/39 required before exactly one direct positive CLI call, retained negative not rerun, zero retries/provider calls, worker must not commit. |
 | System-chain UC-04A blocked CLI proof closure | `da93a4b73` | CLOSED_BLOCKED_BOUNDED; negative range/finality readout PASS, positive 73/75 blocked by missing dispatch-time protected-path authorization; ADIF-0033; positive-only R1 packet next. |
 | System-chain UC-04A CLI operator-readout dispatch | `f48430d7d` | DISPATCH_READY; current autorun CLI owner, stable positive/negative case identity, one harness/two CLI calls, zero retries/provider calls; UC-04B Web held. |
 | System-chain UC-03 GC-011 representative-path closure | `7a8f7268f` | CLOSED_PASS_BOUNDED_WITH_LIMITATION; one provider-free invocation proved positive and negative current-runtime behavior, operational row PROVEN_BOUNDED, semantic lane remains PARTIAL; ADIF-0032 records missing distinct receipt case identity and placeholder wrapper-test risk. |
@@ -180,14 +181,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc04a_blocked_recovery_packet_authoring_next`
+Mode: `system_chain_uc04a_r1_dispatched_worker_next`
 
-UC-04A first attempt closed blocked at `da93a4b73`. The next allowed move is to
-author one fresh UC-04A-R1 GC-018 and source-verified recovery work order only.
-Reuse the committed runner, 39/39 focused tests, stable case identities, and
-retained negative PASS. Authorize exactly one direct positive pre-dispatch CLI
-call with zero retry, zero provider calls, and no new protected path. Do not
-execute before dispatch review. UC-04B Web and unified inventory remain held.
+UC-04A-R1 is dispatch-ready at `d1ffbf3eb`. The next allowed move is one
+no-commit worker execution from a clean base. Require 39/39 focused tests, then
+invoke the current autorun CLI directly exactly once in positive pre-dispatch
+mode. Cite the retained negative PASS without invoking the two-call runner or
+negative path. Zero retry, zero provider calls, and no protected mutation.
+UC-04B Web and unified inventory remain held.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
