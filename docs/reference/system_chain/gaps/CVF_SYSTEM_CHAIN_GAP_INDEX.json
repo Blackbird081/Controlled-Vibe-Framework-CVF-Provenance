@@ -2,13 +2,14 @@
   "schemaVersion": "cvf.system_chain_gap_index.v1",
   "generatedBy": "governance/compat/generate_as_built_system_catalog.py",
   "sourceDir": "docs/reference/system_chain/gaps/entries/",
-  "gapCount": 9,
+  "gapCount": 10,
   "countsByStatus": {
     "VALUE_PARKED_WITH_REOPEN_CONDITIONS": 1,
     "PARTIAL_CHAIN_WITH_BOUNDARY": 1,
     "CLOSED_WITH_EVIDENCE": 2,
     "ACTIVE_OWNER_CREATED_WITH_BOUNDARY": 4,
-    "EVIDENCED_NOT_OPERATOR_VISIBLE": 1
+    "EVIDENCED_NOT_OPERATOR_VISIBLE": 1,
+    "OPEN_CONFIRMED_GAP": 1
   },
   "gaps": [
     {
@@ -443,6 +444,49 @@
       "lastReviewed": {
         "date": "2026-07-11",
         "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+      }
+    },
+    {
+      "stableId": "cvf.asc.gap.web_nextauth_application_projection_split.v1",
+      "entityType": "GAP",
+      "sourcePlaneId": "cvf.asc.plane.evidence_to_operator_surface.v1",
+      "targetPlaneId": "cvf.asc.plane.evidence_to_operator_surface.v1",
+      "sourceOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts; /api/auth/session",
+      "targetOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts; src/app/api/auth/me/route.ts; src/app/api/system/jobs/route.ts; Operations page",
+      "missingEdge": "In the real Next development runtime, direct credentials authentication is visible at the NextAuth session endpoint with role developer, but the application authentication projection used by verifySessionCookie/auth() and the Operations page remains anonymous_local.",
+      "currentStatus": "OPEN_CONFIRMED_GAP",
+      "proofClass": "EXECUTED_AND_EVIDENCED_EDGE",
+      "citations": [
+        {
+          "path": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R1_WEB_AUTH_AND_READOUT_RECOVERY_COMPLETION_2026-07-14.md",
+          "lineOrSection": "Evidence Reconciliation",
+          "evidenceRole": "reviewer-accepted bounded runtime blocker"
+        },
+        {
+          "path": "docs/reviews/evidence/system-chain-uc04b-r1-web-operations-proof-2026-07-14.json",
+          "lineOrSection": "cases[0]",
+          "evidenceRole": "one-invocation receipt showing developer session versus anonymous Operations projection"
+        }
+      ],
+      "impact": "Authenticated developer and reviewer roles cannot currently be proven through the real Web Operations path; UC-04B remains unproven and no checker submission is authorized until repair.",
+      "closeCondition": {
+        "conditionKind": "EXECUTED_PROOF_ACCEPTED",
+        "conditionText": "A source-verified repair aligns the application auth projection with the authenticated NextAuth session, focused real-runtime regression passes, and a fresh governed UC-04B proof is accepted."
+      },
+      "reopenCondition": {
+        "conditionKind": "OPERATOR_DECISION_RECORDED",
+        "conditionText": "Already open; a fresh GC-018 authorizes the auth-boundary repair tranche."
+      },
+      "actionOwner": "NEXT_TRANCHE: source-verified Web auth-boundary repair packet",
+      "freshnessInputs": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/auth/me/route.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/system/jobs/route.ts"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-14",
+        "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R1_WEB_AUTH_AND_READOUT_RECOVERY_COMPLETION_2026-07-14.md"
       }
     }
   ]

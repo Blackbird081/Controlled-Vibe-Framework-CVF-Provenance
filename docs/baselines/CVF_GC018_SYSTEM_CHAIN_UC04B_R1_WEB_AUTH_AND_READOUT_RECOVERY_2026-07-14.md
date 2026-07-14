@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 docType: gc018_baseline
 
@@ -167,3 +167,30 @@ A PASS may prove only one local development Web path for one selected checker,
 one authorized role, and one read-only denial in one evidence window. It does
 not prove all jobs, provider governance, production, public readiness, scale,
 certification, or user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this baseline | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | SCLP-UC04B-R1 | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | R1 completion review | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Roadmap state | system-chain roadmap | auth-boundary repair packet next | PASS |
+| Registry JSON | coverage and GAP index | blocker retained; GAP open | PASS |
+| Registry Markdown | system-chain and GAP README | repair route recorded | PASS |
+| External evidence digest | N/A with reason: repository/runtime only | no external input | N/A with reason |
+| System loop interlock | R1 ledger and receipt | FAIL retained; no PASS promotion | PASS |
+| Session continuity | active session | separate post-material sync | N/A with reason |
+| Public export | this baseline | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Playwright invocation | 1 | 1 | PASS |
+| Web submissions | 2 | 0 | BLOCKED |
+| checker executions | 1 | 0 | BLOCKED |
+| retry count | 0 | 0 | PASS |
+| provider calls | 0 | 0 | PASS |
+| positive case | succeeded | pre-submission auth projection failure | BLOCKED |
+| negative case | 403 denial | serial-skipped | BLOCKED |

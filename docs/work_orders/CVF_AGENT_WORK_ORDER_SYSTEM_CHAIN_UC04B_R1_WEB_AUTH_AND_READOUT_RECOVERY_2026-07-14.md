@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Work Order ID: SCLP-UC04B-R1
 
@@ -437,14 +437,28 @@ certification, or user value.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| baseline | paired R1 GC-018 | dispatch-ready status | READY |
-| work order | this file | dispatch-ready status | READY |
-| completion | declared reviewer path | future reviewer decision | OPEN |
-| roadmap | system-chain roadmap | UC-04B recovery active | OPEN |
-| registry | coverage/Catalog/GAP/ADIF | reviewer-owned reverse projection | OPEN |
-| external evidence | N/A with reason: local repository/runtime only | no external input | N/A with reason |
-| system loop | R1 ledger and receipt | future exact counters | OPEN |
-| session continuity | active session sources | separate sync after dispatch commit | OPEN |
+| Baseline status | paired R1 GC-018 | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | this file | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared reviewer path | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Roadmap state | system-chain roadmap | auth-boundary repair packet next | PASS |
+| Registry JSON | coverage and GAP index | auth-projection GAP open | PASS |
+| Registry Markdown | system-chain and GAP README | repair route recorded | PASS |
+| External evidence digest | N/A with reason: local repository/runtime only | no external input | N/A with reason |
+| System loop interlock | R1 ledger and receipt | FAIL; 1 invocation; 0 submissions/checkers/providers | PASS |
+| Session continuity | active session sources | separate sync after material closure | N/A with reason |
+| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Playwright invocation | 1 | 1 | PASS |
+| Web submissions | 2 | 0 | BLOCKED |
+| checker executions | 1 | 0 | BLOCKED |
+| retry count | 0 | 0 | PASS |
+| provider calls | 0 | 0 | PASS |
+| positive case | succeeded | pre-submission auth projection failure | BLOCKED |
+| negative case | 403 denial | serial-skipped | BLOCKED |
 
 ## Agent Operation Trace Block
 

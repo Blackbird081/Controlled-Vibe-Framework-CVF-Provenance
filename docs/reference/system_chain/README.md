@@ -199,6 +199,15 @@ environment file exists, and auth source retains fallback configuration. The
 actionable defect was proof-procedure/evidence divergence: two Playwright
 invocations versus a one-call/zero-retry packet and a receipt that initially
 reported only one. Recovery requires a fresh packet; no Web claim follows.
+
+The fresh UC-04B-R1 recovery is also closed `CLOSED_BLOCKED_BOUNDED`. Direct
+NextAuth authentication returned the developer role, but the real Operations
+page projected `anonymous_local`; the run stopped before submission. The exact
+counters are one Playwright invocation, zero Web submissions, zero checker
+executions, zero retries, and zero provider calls. This is tracked as
+`cvf.asc.gap.web_nextauth_application_projection_split.v1`. A source-verified
+auth-boundary repair packet is required before another UC-04B proof.
+
 Operations exposes a bounded five-job-type subset
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts`),
 of which exactly one job type (`docs_governance_check`) wires directly to

@@ -18,31 +18,65 @@ const OPERATIONS_URL = '/governance/operations';
 const JOB_TYPE = 'docs_governance_check';
 const RUN_TEST_ID = `governance-job-run-${JOB_TYPE}-default`;
 
-async function loginViaForm(page: import('@playwright/test').Page, username: string, password: string) {
-  await page.goto('/login', { waitUntil: 'domcontentloaded', timeout: 20_000 });
+type ExpectedRole = 'developer' | 'reviewer';
 
-  // Fill login form using placeholder-based locators from the client component
-  const usernameInput = page.locator('input[type="text"]').first();
-  const passwordInput = page.locator('input[type="password"]').first();
+type JobResult = {
+  jobId: string;
+  status: string;
+  decision: string;
+  decisionReason: string;
+};
 
-  await usernameInput.waitFor({ state: 'visible', timeout: 10_000 });
-  await usernameInput.fill(username);
-  await passwordInput.fill(password);
+type AuditEvent = {
+  jobId: string;
+  eventType: string;
+  status: string;
+};
 
-  // Submit by pressing Enter on the password field
-  await passwordInput.press('Enter');
+async function authenticateDirectly(
+  page: import('@playwright/test').Page,
+  username: string,
+  password: string,
+  expectedRole: ExpectedRole,
+) {
+  const csrfResponse = await page.request.get('/api/auth/csrf');
+  expect(csrfResponse.ok()).toBe(true);
+  const csrfBody = await csrfResponse.json() as { csrfToken?: string };
+  expect(csrfBody.csrfToken).toBeTruthy();
 
-  // Wait for redirect away from login page
-  await page.waitForURL((url) => !url.pathname.startsWith('/login'), { timeout: 20_000 });
+  const callbackResponse = await page.request.post('/api/auth/callback/credentials?redirect=false', {
+    form: {
+      username,
+      password,
+      csrfToken: csrfBody.csrfToken as string,
+      callbackUrl: OPERATIONS_URL,
+      json: 'true',
+    },
+  });
+  expect(callbackResponse.ok()).toBe(true);
+
+  const sessionResponse = await page.request.get('/api/auth/session');
+  expect(sessionResponse.ok()).toBe(true);
+  const sessionBody = await sessionResponse.json() as { user?: { role?: string } };
+  expect(sessionBody.user?.role).toBe(expectedRole);
+}
+
+async function readAuditEvents(page: import('@playwright/test').Page): Promise<AuditEvent[]> {
+  const response = await page.request.get('/api/system/jobs');
+  expect(response.ok()).toBe(true);
+  const body = await response.json() as { events?: AuditEvent[] };
+  return body.events ?? [];
 }
 
 test.describe('UC-04B Web Operations Readout', () => {
+  test.describe.configure({ mode: 'serial' });
+
   test.beforeEach(async ({ page }) => {
     await seedStorage(page);
   });
 
   test('positive_developer_docs_check: developer submits docs_governance_check and sees succeeded readout', async ({ page }) => {
-    await loginViaForm(page, 'dev', 'dev123');
+    await authenticateDirectly(page, 'dev', 'dev123', 'developer');
     await page.goto(OPERATIONS_URL, { waitUntil: 'domcontentloaded', timeout: 20_000 });
 
     await expect(page.getByText('operator')).toBeVisible({ timeout: 15_000 });
@@ -51,7 +85,15 @@ test.describe('UC-04B Web Operations Readout', () => {
     await expect(runButton).toBeVisible({ timeout: 10_000 });
     await expect(runButton).toBeEnabled({ timeout: 5_000 });
 
+    const responsePromise = page.waitForResponse((response) => (
+      response.url().endsWith('/api/system/jobs') && response.request().method() === 'POST'
+    ));
     await runButton.click();
+    const response = await responsePromise;
+    expect(response.status()).toBe(200);
+    const result = await response.json() as JobResult;
+    expect(result.status).toBe('succeeded');
+    expect(result.decision).toBe('allowed');
 
     await expect(
       page.getByText('succeeded', { exact: false }).first()
@@ -59,10 +101,13 @@ test.describe('UC-04B Web Operations Readout', () => {
 
     await expect(page.getByText(JOB_TYPE, { exact: false }).first()).toBeVisible();
     await expect(page.getByText(/Docs Governance Check/).first()).toBeVisible();
+
+    const events = (await readAuditEvents(page)).filter((event) => event.jobId === result.jobId);
+    expect(events.map((event) => event.eventType)).toEqual(['requested', 'running', 'succeeded']);
   });
 
   test('negative_reviewer_docs_check: reviewer is blocked from submitting docs_governance_check', async ({ page }) => {
-    await loginViaForm(page, 'reviewer', 'reviewer123');
+    await authenticateDirectly(page, 'reviewer', 'reviewer123', 'reviewer');
     await page.goto(OPERATIONS_URL, { waitUntil: 'domcontentloaded', timeout: 20_000 });
 
     await expect(page.getByText('reviewer')).toBeVisible({ timeout: 15_000 });
@@ -80,8 +125,12 @@ test.describe('UC-04B Web Operations Readout', () => {
     });
 
     expect(response.status()).toBe(403);
-    const body = await response.json() as Record<string, unknown>;
+    const body = await response.json() as JobResult;
     expect(body.status).toBe('blocked_by_policy');
-    expect(String(body.decisionReason ?? '')).toContain('read_only_role_cannot_trigger');
+    expect(body.decisionReason).toBe('read_only_role_cannot_trigger');
+
+    const events = (await readAuditEvents(page)).filter((event) => event.jobId === body.jobId);
+    expect(events.map((event) => event.eventType)).toEqual(['requested', 'blocked_by_policy']);
+    expect(events.some((event) => ['running', 'succeeded', 'failed', 'timed_out'].includes(event.eventType))).toBe(false);
   });
 });

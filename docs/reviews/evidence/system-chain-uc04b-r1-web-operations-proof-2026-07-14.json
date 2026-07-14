@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "workOrderId": "SCLP-UC04B-R1",
+  "executionBaseHead": "c3a8bd89b",
+  "overallResult": "FAIL",
+  "proofSpecPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts",
+  "proofSpecSha256": "89aaf5a078c7c90bb01265d5f982110f6a077343641bff09e245eb5cff271d49",
+  "invocationLedgerPath": "docs/reviews/evidence/system-chain-uc04b-r1-invocation-ledger-2026-07-14.json",
+  "commandFingerprint": "npx playwright test tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts --config playwright.config.ts --workers=1",
+  "focusedPreflight": {
+    "webOwnerTests": "20_OF_20_PASS",
+    "authTests": "12_OF_12_PASS",
+    "envLocalExists": true,
+    "fallbackSecretSourceVerified": true
+  },
+  "cases": [
+    {
+      "caseId": "positive_developer_docs_check",
+      "result": "FAIL_BEFORE_SUBMISSION",
+      "directNextAuthSessionRole": "developer",
+      "operationsPageRole": "anonymous_local",
+      "webSubmissionCount": 0,
+      "checkerExecutionCount": 0,
+      "failureStage": "operations_page_auth_projection"
+    },
+    {
+      "caseId": "negative_reviewer_docs_check",
+      "result": "NOT_RUN_SERIAL_AFTER_POSITIVE_FAILURE",
+      "webSubmissionCount": 0,
+      "checkerExecutionCount": 0
+    }
+  ],
+  "playwrightInvocationCount": 1,
+  "webSubmissionCount": 0,
+  "checkerExecutionCount": 0,
+  "retryCount": 0,
+  "providerCallCount": 0,
+  "auditEvidence": {
+    "newUc04bEventCount": 0,
+    "basis": "runtime audit line count and tail showed no new UC-04B event after the invocation"
+  },
+  "diagnosticPath": "docs/reviews/evidence/system-chain-uc04b-r1-web-operations-diagnostic-2026-07-14.json",
+  "claimBoundary": "Failed bounded recovery evidence only. No Web submission, checker execution, provider call, UC-04B proof, or broader readiness claim."
+}

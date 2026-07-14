@@ -218,11 +218,12 @@ public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-The first UC-04B attempt is closed blocked: two Playwright invocations exceeded
-the one-call/zero-retry packet and no Web submission occurred. Author one fresh
-positive-and-negative recovery packet only after source-backed auth preflight,
-focused tests, GC-051 coverage, and an immutable invocation ledger are fixed.
-Preserve UC-04A evidence and do not infer unified inventory or provider use.
+UC-04B-R1 is closed blocked after the one authorized Playwright command. Direct
+NextAuth session verification returned developer, but the Operations page
+projected anonymous_local; zero Web submissions, checker executions, retries,
+and provider calls occurred. The next allowed move is one source-verified
+auth-boundary repair packet targeting the confirmed projection GAP. Do not
+rerun T4/R1 or infer Web coverage, unified inventory, or provider use.
 
 ## Checker Source Read-Ahead Block
 

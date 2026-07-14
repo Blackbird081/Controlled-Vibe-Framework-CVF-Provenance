@@ -49,7 +49,7 @@ adding, editing, or closing a gap entry.
 
 ## Current Gaps (Generated Summary)
 
-This table is a human summary of the 9 gap entries generated at review
+This table is a human summary of the 10 gap entries generated at review
 time. Always trust `CVF_SYSTEM_CHAIN_GAP_INDEX.json` and the `entries/`
 directory over this prose if they disagree; re-run the generator and refresh
 this table when entries change.
@@ -62,7 +62,7 @@ this table when entries change.
 | `PARTIAL_CHAIN_WITH_BOUNDARY` | 1 |
 | `EVIDENCED_NOT_OPERATOR_VISIBLE` | 1 |
 | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` | 4 |
-| `OPEN_CONFIRMED_GAP` | 0 |
+| `OPEN_CONFIRMED_GAP` | 1 |
 | `CLOSED_WITH_EVIDENCE` | 2 |
 
 ### Open / Parked / Intentionally Separated Gaps
@@ -72,6 +72,7 @@ this table when entries change.
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
+| `cvf.asc.gap.web_nextauth_application_projection_split.v1` | evidence_to_operator_surface | NextAuth session endpoint -> application `verifySessionCookie`/Operations projection | `OPEN_CONFIRMED_GAP` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_nextauth_application_projection_split.json`; UC-04B-R1 completion | Source-verify and repair the auth projection before any new Web proof |
 
 ### Recently Closed Gaps
 
@@ -98,6 +99,12 @@ not downgrade the retained Runtime-to-Enforcement receipt.
 SCLP-UC02-R3 closed that downstream renderer-conformance gap on 2026-07-14.
 The three source-verified template owners and all 20 generated outputs now pass
 their bounded conformance checks without another UC-02 or provider call.
+
+SCLP-UC04B-R1 exposed a distinct Web auth-projection gap on 2026-07-14. The
+direct NextAuth session endpoint returned the authenticated developer role,
+while the real Operations page remained anonymous. The one authorized command
+stopped before submission, so this entry records an open connection gap rather
+than a successful Web proof or a proven internal implementation cause.
 
 ## Search Examples
 
