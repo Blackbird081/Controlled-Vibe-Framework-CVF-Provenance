@@ -3,7 +3,7 @@
   "entityType": "GAP",
   "sourcePlaneId": "cvf.asc.plane.enforcement_to_evidence.v1",
   "targetPlaneId": "cvf.asc.plane.evidence_to_operator_surface.v1",
-  "sourceOwner": "scripts/runtime_evidence_manifest/baselines.py; scripts/runtime_evidence_manifest/manifest_builder.py; scripts/export_cvf_release_packet.py",
+  "sourceOwner": "scripts/export_cvf_remediation_receipt_log.py; scripts/runtime_evidence_manifest/manifest_builder.py; scripts/export_cvf_release_packet.py",
   "targetOwner": "docs/reviews/cvf_phase_governance/*.md",
   "missingEdge": "Twelve current phase-governance Markdown outputs generated during the repaired bootstrap do not satisfy current governed Markdown structure, checker-read-ahead, dispatch-range, or ASCII encoding controls.",
   "currentStatus": "OPEN_CONFIRMED_GAP",
@@ -31,7 +31,7 @@
   },
   "actionOwner": "future SCLP-UC02-R3 generator-conformance repair tranche",
   "freshnessInputs": [
-    "scripts/runtime_evidence_manifest/baselines.py",
+    "scripts/export_cvf_remediation_receipt_log.py",
     "scripts/runtime_evidence_manifest/manifest_builder.py",
     "scripts/export_cvf_release_packet.py",
     "governance/compat/check_markdown_structural_completeness.py",

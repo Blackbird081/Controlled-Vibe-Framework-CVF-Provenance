@@ -54,13 +54,15 @@ Runtime-to-Enforcement invocation.
 The worker's root-cause inventory required correction. The actual renderer
 owners are:
 
-- `scripts/runtime_evidence_manifest/baselines.py` for seven family logs;
+- `scripts/export_cvf_remediation_receipt_log.py::build_log` for seven family
+  logs, called through `scripts/runtime_evidence_manifest/baselines.py`;
 - `scripts/runtime_evidence_manifest/manifest_builder.py` for the manifest log;
 - `scripts/export_cvf_release_packet.py` for four release/audit/onboarding packets.
 
-`scripts/export_cvf_multi_runtime_evidence_manifest.py` is a wrapper over the
-first two renderers. `scripts/export_cvf_remediation_receipt_log.py` did not
-generate the failing runtime-adapter-hub log in this execution.
+`scripts/runtime_evidence_manifest/baselines.py` and
+`scripts/export_cvf_multi_runtime_evidence_manifest.py` are orchestration
+surfaces, not the Markdown template owners. The imported `build_log` renderer
+does generate the failing runtime-adapter-hub log in this execution.
 
 ## Risk / Corrective Action
 
@@ -109,7 +111,7 @@ provider.
 | Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
 |---|---|---|---|---|---|
 | live bootstrap exposed generated Markdown that unit/source review did not exercise | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RUNTIME_LEARNING_CANDIDATE | repair three renderer owners and add focused template tests | handled by new GAP; implementation deferred |
-| wrapper names were reported instead of actual renderer owners | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | source-verify `build_log`, `build_manifest_log`, and `build_packet` before dispatch | handled in this review |
+| wrapper names were reported instead of actual renderer owners | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | source-verify `build_log`, `build_manifest_log`, and `build_packet` before dispatch | corrected before renderer-repair dispatch |
 
 ADIF disposition: no new agent-defect entry. The durable architecture GAP and
 source-verified repair route are the appropriate owners for this runtime
