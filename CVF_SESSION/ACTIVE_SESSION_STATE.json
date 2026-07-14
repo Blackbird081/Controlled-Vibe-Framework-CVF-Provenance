@@ -83,8 +83,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc02_closed_uc03_packet_authoring_next",
-  "previousMode": "system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next",
+  "currentMode": "system_chain_uc03_dispatched_worker_next",
+  "previousMode": "system_chain_uc02_closed_uc03_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11689,5 +11689,20 @@
     "nextAllowedMove": "author one bounded UC-03 GC-018 and source-verified route-selection work order",
     "claimBoundary": "Roadmap reconciliation only; no UC-03 execution, provider, public, production, scale, universal, certification, or user-value claim."
   },
-  "nextAllowedMove": "UC-02 and its downstream renderer repair are closed with evidence at material commits 9173af70b and 36aefceab; roadmap reconciliation committed at ed4052a27. Next allowed move is authoring one fresh bounded GC-018 and source-verified work order for UC-03 route selection only: one representative active caller-backed Contract-to-Runtime path. Do not select GC-009 or GC-010 without a source-proven active caller, and do not execute UC-03 before dispatch review. UC-04 remains held. Public, production, scale, universal, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc03Dispatch20260714": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "a12f427ec",
+    "workOrderId": "SCLP-UC03-T2",
+    "selectedControlId": "GC-011",
+    "selectedRoute": "CvfSdk.runReferenceGovernedLoop to PipelineOrchestrator",
+    "executionBoundary": "one no-commit worker; one proof invocation; two evidence cases; zero retries; zero provider calls",
+    "excludedRows": [
+      "GC-009",
+      "GC-010"
+    ],
+    "uc04Status": "HELD",
+    "nextAllowedMove": "execute the committed UC-03 work order once with no worker commit",
+    "claimBoundary": "Dispatch only; no UC-03 operational PASS, coverage promotion, public, production, scale, universal, certification, or user-value claim."
+  },
+  "nextAllowedMove": "UC-03 dispatch packet SCLP-UC03-T2 is DISPATCH_READY at material commit a12f427ec. Next allowed move is one no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC03_CONTRACT_TO_RUNTIME_REPRESENTATIVE_PATH_2026-07-14.md: source-refresh GC-011, create only the declared proof harness and evidence paths, run focused tests before exactly one two-case provider-free proof invocation, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. GC-009 and GC-010 remain excluded; UC-04 remains held. Public, production, scale, universal, certification, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave."
 }

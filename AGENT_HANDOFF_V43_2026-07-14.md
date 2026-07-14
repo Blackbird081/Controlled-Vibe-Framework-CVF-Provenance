@@ -19,11 +19,11 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_closed_uc03_packet_authoring_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
-bounded GC-018 and source-verified UC-03 route-selection work order; parked
-checkpoint=UC-03 execution, UC-04 dispatch, public export, production, scale,
-universal enforcement, and user validation.
+Startup acknowledged: current mode=`system_chain_uc03_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute the
+committed SCLP-UC03-T2 packet once with a no-commit worker; parked
+checkpoint=GC-009/GC-010 promotion, UC-04 dispatch, public export, production,
+scale, universal enforcement, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -38,15 +38,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc02_closed_uc03_packet_authoring_next`
+`system_chain_uc03_dispatched_worker_next`
 
 ## Active Boundary
 
-- Active roadmap reconciliation commit: `ed4052a27`.
+- Active UC-03 dispatch commit: `a12f427ec`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: UC-03 packet authoring only.
-- Next permitted value lane: source-verify one representative active
-  caller-backed Contract-to-Runtime route; no execution yet.
+- Active work queue: one no-commit SCLP-UC03-T2 worker execution.
+- Next permitted value lane: source-refresh and execute the selected GC-011
+  SDK-to-PipelineOrchestrator proof exactly once; two cases and zero retries.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -378,3 +378,24 @@ accepted R3-R1 closure.
 
 Rollback boundary: revert only this session-sync batch; retain roadmap commit
 `ed4052a27`, renderer closure `36aefceab`, and UC-02 proof `9173af70b`.
+
+## Core Guard Self-Protection Authorization - UC-03 Dispatch Sync
+
+Authorized scope: synchronize source-verified UC-03 dispatch material commit
+`a12f427ec` and route one exact no-commit SCLP-UC03-T2 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc03Dispatch20260714.json`
+
+Operator authorization: continue the system-chain use-case sequence.
+
+Rollback boundary: revert only this session-sync batch; retain material
+dispatch `a12f427ec`, roadmap reconciliation `ed4052a27`, renderer closure
+`36aefceab`, and accepted UC-02 proof `9173af70b`.

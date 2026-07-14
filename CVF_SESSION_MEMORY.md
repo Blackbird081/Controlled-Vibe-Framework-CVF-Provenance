@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_closed_uc03_packet_authoring_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one bounded GC-018 and source-verified UC-03 route-selection work order; parked checkpoint=UC-03 execution, UC-04 dispatch, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc03_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute committed SCLP-UC03-T2 once with a no-commit worker; parked checkpoint=GC-009/GC-010 promotion, UC-04 dispatch, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc02_closed_uc03_packet_authoring_next`
+Current mode marker: `system_chain_uc03_dispatched_worker_next`
 
-Current mode: `system_chain_uc02_closed_uc03_packet_authoring_next`
+Current mode: `system_chain_uc03_dispatched_worker_next`
 
-`system_chain_uc02_closed_uc03_packet_authoring_next`
+`system_chain_uc03_dispatched_worker_next`
 
 Previous mode:
 
-`system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
+`system_chain_uc02_closed_uc03_packet_authoring_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-03 GC-011 representative-path dispatch | `a12f427ec` | DISPATCH_READY; source-proven `CvfSdk` caller into `PipelineOrchestrator`; one no-commit worker, one two-case proof invocation, zero retries/provider calls; GC-009/GC-010 excluded and UC-04 held. |
 | System-chain roadmap post-UC-02 reconciliation | `ed4052a27` | RECONCILED; UC-02 and renderer repair closed, UC-03 packet authoring next, UC-04 held; no new execution claim. |
 | System-chain UC-02 renderer-conformance repair closure | `36aefceab` | CLOSED_PASS_BOUNDED; three owners repaired, 20 outputs current, 12/12 Markdown conformant, 5/5 and 15/15 tests PASS, renderer GAP closed; zero UC-02/scenario/provider calls. |
 | System-chain UC-02 renderer-conformance repair dispatch | `9078fec00` | DISPATCH_READY; exact three template owners, one focused test, 20 enumerated release-gate outputs, one no-commit worker return; zero UC-02/scenario/provider calls; pre-dispatch 75/75 and pre-commit 83/83 PASS. |
@@ -176,12 +177,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc02_closed_uc03_packet_authoring_next`
+Mode: `system_chain_uc03_dispatched_worker_next`
 
-UC-02 and its renderer repair are closed, and the roadmap is reconciled at
-`ed4052a27`. The next allowed move is authoring one bounded GC-018 and
-source-verified UC-03 route-selection work order. Do not execute UC-03 before
-dispatch review. UC-04 remains held.
+UC-03 packet SCLP-UC03-T2 is dispatch-ready at `a12f427ec`. The next allowed
+move is one no-commit worker execution of the committed work order: refresh the
+GC-011 caller chain, run focused tests, invoke the two-case provider-free proof
+exactly once, and return for review. GC-009/GC-010 remain excluded and UC-04
+remains held.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

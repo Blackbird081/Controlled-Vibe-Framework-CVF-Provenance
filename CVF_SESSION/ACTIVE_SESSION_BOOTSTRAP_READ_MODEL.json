@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_uc02_closed_uc03_packet_authoring_next",
+  "currentMode": "system_chain_uc03_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V43_2026-07-14.md",
-  "nextAllowedMove": "UC-02 and its downstream renderer repair are closed with evidence at material commits 9173af70b and 36aefceab; roadmap reconciliation committed at ed4052a27. Next allowed move is authoring one fresh bounded GC-018 and source-verified work order for UC-03 route selection only: one representative active caller-backed Contract-to-Runtime path. Do not select GC-009 or GC-010 without a source-proven active caller, and do not execute UC-03 before dispatch review. UC-04 remains held. Public, production, scale, universal, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "UC-03 dispatch packet SCLP-UC03-T2 is DISPATCH_READY at material commit a12f427ec. Next allowed move is one no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC03_CONTRACT_TO_RUNTIME_REPRESENTATIVE_PATH_2026-07-14.md: source-refresh GC-011, create only the declared proof harness and evidence paths, run focused tests before exactly one two-case provider-free proof invocation, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. GC-009 and GC-010 remain excluded; UC-04 remains held. Public, production, scale, universal, certification, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

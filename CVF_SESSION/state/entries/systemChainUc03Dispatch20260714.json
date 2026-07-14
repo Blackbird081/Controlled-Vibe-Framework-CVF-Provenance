@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1772,
+  "stateKey": "systemChainUc03Dispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "a12f427ec",
+    "workOrderId": "SCLP-UC03-T2",
+    "selectedControlId": "GC-011",
+    "selectedRoute": "CvfSdk.runReferenceGovernedLoop to PipelineOrchestrator",
+    "executionBoundary": "one no-commit worker; one proof invocation; two evidence cases; zero retries; zero provider calls",
+    "excludedRows": ["GC-009", "GC-010"],
+    "uc04Status": "HELD",
+    "nextAllowedMove": "execute the committed UC-03 work order once with no worker commit",
+    "claimBoundary": "Dispatch only; no UC-03 operational PASS, coverage promotion, public, production, scale, universal, certification, or user-value claim."
+  }
+}
