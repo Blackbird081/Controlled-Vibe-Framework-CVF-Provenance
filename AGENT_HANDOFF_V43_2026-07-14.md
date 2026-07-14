@@ -19,9 +19,9 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_blocked_recovery_packet_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
-bounded UC-04B recovery packet only; parked checkpoint=UC-03 harness identity
+Startup acknowledged: current mode=`system_chain_uc04b_r1_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one no-commit
+SCLP-UC04B-R1 worker under the frozen-source and one-invocation contract; parked checkpoint=UC-03 harness identity
 repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory,
 public export, production, scale, universal enforcement, and user validation.
 
@@ -38,15 +38,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04b_blocked_recovery_packet_next`
+`system_chain_uc04b_r1_dispatched_worker_next`
 
 ## Active Boundary
 
-- Active UC-04B blocked closure commit: `d69b6d7b3`.
+- Active UC-04B R1 dispatch commit: `b224015f8`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: source-verified UC-04B recovery packet authoring only.
-- Next permitted value lane: freeze a corrected auth proof path and immutable
-  invocation ledger before authorizing exactly one later provider-free
+- Active work queue: one no-commit UC-04B-R1 worker execution only.
+- Next permitted value lane: direct auth and focused-test preflight, then freeze
+  proof source and start the immutable ledger before exactly one provider-free
   Playwright recovery command.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
@@ -157,10 +157,10 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Author one fresh bounded UC-04A-R1 GC-018 and source-verified recovery work
-order only. Reuse committed evidence, authorize exactly one positive
-pre-dispatch CLI call, zero retries/provider calls, and no new protected path.
-Do not execute before dispatch review. UC-04B Web remains held.
+Execute one no-commit SCLP-UC04B-R1 worker from a clean base. Complete direct
+NextAuth and focused-test preflight before proof freeze; then invoke exactly
+one Playwright command with two cases, two submissions, one docs checker,
+zero retries, and zero provider calls. Any failure stops with one diagnostic.
 
 ## Parked Checkpoint
 
@@ -578,3 +578,24 @@ reviewer blocker reconciliation.
 
 Rollback boundary: revert only this session-sync batch; retain blocked closure
 `d69b6d7b3`, dispatch `9b3e46810`, and all corrected evidence.
+
+## Core Guard Self-Protection Authorization - UC-04B-R1 Dispatch Sync
+
+Authorized scope: synchronize recovery dispatch material commit `b224015f8`
+and route one exact no-commit SCLP-UC04B-R1 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc04bR1Dispatch20260714.json`
+
+Operator authorization: continue the system-chain use-case sequence through
+the bounded recovery packet.
+
+Rollback boundary: revert only this session-sync batch; retain recovery
+dispatch `b224015f8`, blocked closure `d69b6d7b3`, and all retained evidence.
