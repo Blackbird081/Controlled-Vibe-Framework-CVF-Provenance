@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_renderer_repair_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one exact no-commit SCLP-UC02-R3 worker execution with zero UC-02/provider calls; parked checkpoint=UC-03/UC-04 dispatch, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=reconcile the system-chain roadmap with accepted UC-02/R3 closure before UC-03 packet authoring; parked checkpoint=UC-03 execution, UC-04 dispatch, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc02_renderer_repair_dispatched_worker_next`
+Current mode marker: `system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
 
-Current mode: `system_chain_uc02_renderer_repair_dispatched_worker_next`
+Current mode: `system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
 
-`system_chain_uc02_renderer_repair_dispatched_worker_next`
+`system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
 
 Previous mode:
 
-`system_chain_uc02_proven_renderer_repair_packet_next`
+`system_chain_uc02_renderer_repair_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-02 renderer-conformance repair closure | `36aefceab` | CLOSED_PASS_BOUNDED; three owners repaired, 20 outputs current, 12/12 Markdown conformant, 5/5 and 15/15 tests PASS, renderer GAP closed; zero UC-02/scenario/provider calls. |
 | System-chain UC-02 renderer-conformance repair dispatch | `9078fec00` | DISPATCH_READY; exact three template owners, one focused test, 20 enumerated release-gate outputs, one no-commit worker return; zero UC-02/scenario/provider calls; pre-dispatch 75/75 and pre-commit 83/83 PASS. |
 | System-chain UC-02 repaired current rerun closure | `9173af70b` | CLOSED_PASS_BOUNDED; bootstrap PASS once, CF-076 through CF-084 PASS 9/9, coverage PROVEN, archive-path GAP closed; separate generated-Markdown renderer GAP open; no rerun/provider call. |
 | System-chain UC-02 repaired current rerun dispatch | `a16f5b7d1` | DISPATCH_READY; existing runner only; 21 enumerated live generated outputs plus fresh receipt, diagnostic, and worker return; exactly one proof invocation, zero retries, zero provider calls; pre-dispatch 75/75 and pre-commit 83/83 PASS. |
@@ -174,13 +175,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc02_renderer_repair_dispatched_worker_next`
+Mode: `system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
 
-SCLP-UC02-R3 is dispatch-ready at `9078fec00`. The next allowed move is one
-exact no-commit worker execution against the three source-verified template
-owners and 20 enumerated outputs. Run the release gate once; at most one
-diagnosed result-changing regeneration retry is allowed. UC-02 proof calls,
-scenario events, and provider calls remain zero. UC-03/UC-04 remain held.
+SCLP-UC02-R3 closed at `36aefceab`. The next allowed move is one bounded
+roadmap semantic reconciliation so status, claim boundary, and next-move text
+reflect accepted UC-02 and renderer closure. UC-03 packet authoring remains
+held until that correction commits and state is refreshed. UC-04 remains held.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

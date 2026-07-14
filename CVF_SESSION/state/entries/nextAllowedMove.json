@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1767,
+  "stateOrder": 1769,
   "stateKey": "nextAllowedMove",
-  "value": "Renderer-conformance repair dispatch SCLP-UC02-R3 is ready at material commit 9078fec00. Next allowed move is one no-commit worker execution using exactly three source-verified template owners: scripts/export_cvf_remediation_receipt_log.py, scripts/runtime_evidence_manifest/manifest_builder.py, and scripts/export_cvf_release_packet.py; one focused test; exactly 20 release-gate outputs; and one worker return. Invoke the release gate once, with at most one diagnosed result-changing regeneration retry. UC-02 proof calls, scenario events, and provider calls remain zero. UC-03 and UC-04 remain held. Public, production, scale, universal, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave."
+  "value": "SCLP-UC02-R3 closed CLOSED_PASS_BOUNDED at material commit 36aefceab. Three renderer owners are repaired, twenty outputs are current, twelve governed Markdown outputs are conformant, and the renderer GAP is CLOSED_WITH_EVIDENCE. Next allowed move is a bounded semantic reconciliation of the system-chain roadmap so its status, claim boundary, and next-move text reflect the accepted UC-02 and renderer closure. Do not author or execute UC-03 until that reconciliation commits and session state is refreshed. UC-04 remains held. Public, production, scale, universal, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave."
 }

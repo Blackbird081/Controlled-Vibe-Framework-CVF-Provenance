@@ -19,11 +19,11 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_renderer_repair_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one exact
-no-commit SCLP-UC02-R3 worker execution with zero UC-02/scenario/provider
-calls; parked checkpoint=reviewer GAP closure, UC-03/UC-04 dispatch, public
-export, production, scale, universal enforcement, and user validation.
+Startup acknowledged: current mode=`system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=reconcile
+the system-chain roadmap with accepted UC-02/R3 closure before UC-03 packet
+authoring; parked checkpoint=UC-03 execution, UC-04 dispatch, public export,
+production, scale, universal enforcement, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -38,15 +38,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc02_renderer_repair_dispatched_worker_next`
+`system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
 
 ## Active Boundary
 
-- Active material dispatch commit: `9078fec00`.
+- Active material closure commit: `36aefceab`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: one no-commit SCLP-UC02-R3 worker execution.
-- Next permitted value lane: three renderer owners, one focused test, and 20
-  release-gate outputs; zero UC-02/scenario/provider calls.
+- Active work queue: system-chain roadmap semantic reconciliation only.
+- Next permitted value lane: remove stale UC-02/renderer next-move text before
+  authoring any UC-03 packet.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -131,10 +131,10 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Execute SCLP-UC02-R3 once through one no-commit worker. Use the exact manifest
-at `9078fec00`; run the release gate once with at most one diagnosed
-result-changing regeneration retry. Do not invoke UC-02 or a provider. UC-03
-and UC-04 remain held.
+Reconcile the system-chain roadmap status, current execution note, claim
+boundary, and next allowed move against accepted material closure `36aefceab`.
+Do not author or execute UC-03 before that correction and its session refresh.
+UC-04 remains held.
 
 ## Parked Checkpoint
 
@@ -167,6 +167,8 @@ UC-02 repaired current rerun dispatch HEAD: `a16f5b7d1`
 UC-02 repaired current rerun closure HEAD: `9173af70b`
 
 UC-02 renderer-conformance repair dispatch HEAD: `9078fec00`
+
+UC-02 renderer-conformance repair closure HEAD: `36aefceab`
 
 Session-sync closure HEAD: `946ae2a61`
 
@@ -334,3 +336,23 @@ Operator authorization: continue the system-chain use-case sequence.
 
 Rollback boundary: revert only this session-sync batch; retain material
 dispatch `9078fec00`, UC-02 proof closure `9173af70b`, and all evidence.
+
+## Core Guard Self-Protection Authorization - UC-02 Renderer Repair Closure Sync
+
+Authorized scope: synchronize accepted material closure `36aefceab` and route
+only the stale-roadmap semantic reconciliation before UC-03 packet authoring.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc02RendererRepairClosure20260714.json`
+
+Operator authorization: continue and close the accepted R3-R1 tranche.
+
+Rollback boundary: revert only this session-sync batch; retain material
+closure `36aefceab`, dispatch `9078fec00`, and the accepted UC-02 proof.
