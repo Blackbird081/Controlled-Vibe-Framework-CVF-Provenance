@@ -19,11 +19,11 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_repair_closed_rerun_packet_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
-fresh packet for exactly one UC-02 current rerun; parked checkpoint=rerun execution before packet commit, UC-03/UC-04 dispatch,
-public export, production, scale, universal
-enforcement, and user validation.
+Startup acknowledged: current mode=`system_chain_uc02_rerun_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one
+no-commit worker executes SCLP-UC02-R2 exactly once with zero retries; parked
+checkpoint=reviewer coverage/GAP closure, UC-03/UC-04 dispatch, public export,
+production, scale, universal enforcement, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -38,14 +38,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc02_repair_closed_rerun_packet_next`
+`system_chain_uc02_rerun_dispatched_worker_next`
 
 ## Active Boundary
 
-- Active material closure commit: `abb58be27`.
+- Active material dispatch commit: `a16f5b7d1`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: UC-02 single-rerun packet authoring.
-- Next permitted value lane: source-verify and commit one diagnostic-first rerun packet only.
+- Active work queue: one no-commit SCLP-UC02-R2 worker execution.
+- Next permitted value lane: retained focused suite, then one proof invocation and zero retries.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -68,6 +68,12 @@ fake-subprocess tests and make zero real bootstrap, UC-02, or provider calls.
 The repair closed `CLOSED_PASS_BOUNDED` at material commit `abb58be27` after
 two in-scope reviewer corrections. Fifteen focused tests, reviewer-fast 62/62,
 and pre-commit 83/83 pass. No real bootstrap, UC-02, or provider call occurred.
+
+The repaired UC-02 rerun packet is dispatch-ready at material commit
+`a16f5b7d1` after pre-dispatch 75/75 and pre-commit 83/83 pass. It enumerates
+21 current live generated outputs plus a fresh receipt, diagnostic, and worker
+return. The worker may invoke the retained runner exactly once, has zero retry
+authority, must diagnose and stop on failure, and must not commit.
 Coverage remains `STALE` and the GAP remains open until a later 9/9 receipt.
 
 UC-02 dispatch is ready at material commit `9f2fdc210`. The packet authorizes
@@ -116,9 +122,11 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Author a fresh source-verified packet for exactly one retained UC-02 current
-rerun through the real bootstrap. Require diagnostic-first stopping and do not
-execute before packet commit. UC-03 and UC-04 remain held.
+Execute `docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_CURRENT_RERUN_2026-07-14.md`
+with one no-commit worker. Run the retained focused suite first, then invoke
+the existing runner exactly once with the fresh rerun paths. Retry count is
+zero; diagnose and stop on failure. Coverage remains `STALE` and the GAP stays
+open until reviewer acceptance of 9/9. UC-03 and UC-04 remain held.
 
 ## Parked Checkpoint
 
@@ -145,6 +153,8 @@ UC-02 blocked closure HEAD: `7619d807a`
 UC-02 archive-path repair dispatch HEAD: `7edfc7f13`
 
 UC-02 archive-path repair closure HEAD: `abb58be27`
+
+UC-02 repaired current rerun dispatch HEAD: `a16f5b7d1`
 
 Session-sync closure HEAD: `946ae2a61`
 
@@ -255,3 +265,23 @@ Remote tracking branch: `origin/main`
 Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
+
+## Core Guard Self-Protection Authorization - UC-02 Rerun Dispatch Sync
+
+Authorized scope: synchronize repaired UC-02 rerun dispatch commit
+`a16f5b7d1` and route one exact no-commit worker invocation.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc02CurrentRerunDispatch20260714.json`
+
+Operator authorization: continue the system-chain use-case sequence.
+
+Rollback boundary: revert only this session-sync batch; retain dispatch commit
+`a16f5b7d1`, repair closure `abb58be27`, and all historical blocker evidence.

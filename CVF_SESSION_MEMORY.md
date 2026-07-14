@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_repair_closed_rerun_packet_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author a fresh packet for exactly one UC-02 current rerun; parked checkpoint=rerun execution before packet commit, UC-03/UC-04 dispatch, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc02_rerun_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one no-commit worker executes SCLP-UC02-R2 exactly once with zero retries; parked checkpoint=reviewer coverage/GAP closure, UC-03/UC-04 dispatch, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc02_repair_closed_rerun_packet_next`
+Current mode marker: `system_chain_uc02_rerun_dispatched_worker_next`
 
-Current mode: `system_chain_uc02_repair_closed_rerun_packet_next`
+Current mode: `system_chain_uc02_rerun_dispatched_worker_next`
 
-`system_chain_uc02_repair_closed_rerun_packet_next`
+`system_chain_uc02_rerun_dispatched_worker_next`
 
 Previous mode:
 
-`system_chain_uc02_archive_path_repair_dispatched_worker_next`
+`system_chain_uc02_repair_closed_rerun_packet_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-02 repaired current rerun dispatch | `a16f5b7d1` | DISPATCH_READY; existing runner only; 21 enumerated live generated outputs plus fresh receipt, diagnostic, and worker return; exactly one proof invocation, zero retries, zero provider calls; pre-dispatch 75/75 and pre-commit 83/83 PASS. |
 | System-chain UC-02 archive-path repair closure | `abb58be27` | CLOSED_PASS_BOUNDED after two in-scope reviewer corrections; 15 focused tests, reviewer-fast 62/62, pre-commit 83/83; zero real bootstrap/UC-02/provider calls; coverage remains STALE and GAP open. |
 | System-chain UC-02 archive-path repair dispatch | `7edfc7f13` | DISPATCH_READY; source-verified archive/live ownership repair; one no-commit worker; focused fake-subprocess tests; zero real bootstrap, UC-02, and provider calls. |
 | System-chain UC-02 bounded blocked closure | `7619d807a` | CLOSED_BLOCKED_BOUNDED; shared bootstrap FAIL, 0/9 scenarios executed, coverage remains STALE; archive/live path GAP registered; fresh repair packet only next. |
@@ -171,13 +172,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc02_repair_closed_rerun_packet_next`
+Mode: `system_chain_uc02_rerun_dispatched_worker_next`
 
-UC-02 archive-path repair closed at `abb58be27`. The next allowed move is
-authoring a fresh source-verified packet for exactly one current UC-02 rerun
-through the real bootstrap, with diagnostic-first stopping. Do not execute the
-rerun before that packet is committed. Coverage remains `STALE`, the GAP
-remains open, and UC-03/UC-04 remain held. Public export, production, scale,
+SCLP-UC02-R2 dispatch is committed at `a16f5b7d1`. The next allowed move is one
+no-commit worker executing the committed work order: run the retained focused
+suite, then invoke the existing UC-02 runner exactly once with the new rerun
+receipt and diagnostic paths. Worker retries are zero. On failure, diagnose
+and stop. Coverage remains `STALE` and the GAP remains open until reviewer
+accepts 9/9. UC-03/UC-04 remain held. Public export, production, scale,
 universal enforcement, and user validation remain unclaimed.
 Latest closed numbered LHW wave remains `LHW24`.
 
