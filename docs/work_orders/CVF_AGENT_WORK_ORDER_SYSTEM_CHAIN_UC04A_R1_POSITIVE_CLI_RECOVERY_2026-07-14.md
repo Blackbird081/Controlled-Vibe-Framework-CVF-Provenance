@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -451,6 +451,38 @@ PASS can complete only bounded UC-04A CLI evidence when combined with retained
 negative evidence. It cannot prove UC-04B Web, every checker surface, external
 agent readiness, provider governance, production, public readiness, scale,
 certification, or user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired R1 baseline | `CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared completion path | reviewer disposition | PASS |
+| Worker return | declared worker-return path | pending return accepted | PASS |
+| Positive receipt | declared R1 receipt path | schema/status and 75 named PASS rows | PASS |
+| Retained negative | accepted original receipt | cited without invocation | PASS |
+| Exact worker changed set | receipt plus worker return | two new paths | PASS |
+| Roadmap state | system-chain roadmap | UC-04A bounded; UC-04B packet next | PASS |
+| Registry JSON | live-proof coverage ledger | CLI bounded, Web unproven | PASS |
+| Registry Markdown | system-chain README | combined positive/negative CLI evidence | PASS |
+| Catalog/GAP | completion decision | no owner/edge delta | N/A with reason |
+| External evidence digest | N/A with reason: no external evidence consumed | local repository evidence only | N/A with reason |
+| System loop interlock | one positive plus retained negative | no retry or negative rerun | PASS |
+| Session continuity | active session sources | separate sync commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+|---|---|---|---|
+| focused tests | 39/39 before call | 39/39 | PASS |
+| positive CLI invocation | exactly one | 1 | PASS |
+| positive output | COMPLIANT | COMPLIANT 75/75 | PASS |
+| receipt | current schema/status PASS | present; 75/75 named PASS | PASS |
+| retained negative invocation | zero | 0 | PASS |
+| retry count | zero | 0 | PASS |
+| provider calls | zero | 0 | PASS |
+| worker commit | forbidden | none | PASS |
 
 ## Agent Operation Trace Block
 

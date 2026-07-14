@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC04A_BLOCKED_RECOVERY_PACKET_NEXT
+Status: ACTIVE_UC04A_CLOSED_UC04B_PACKET_NEXT
 
 docType: roadmap
 
@@ -163,8 +163,11 @@ harness. Its negative case passed with the expected range/finality readout.
 The positive case failed 73/75 because the dispatch packet required a new
 protected `governance/compat` test path without a Core Guard Self-Protection
 Authorization block. This is an orchestrator packet gap, not a CLI defect.
-The negative evidence is retained; only one positive recovery call is next.
-UC-04B remains undispatched and unexecuted.
+The negative evidence was retained. UC-04A-R1 then passed the committed 39-test
+suite and one direct positive CLI call: 75/75 configured checks passed,
+aggregate output was COMPLIANT, and the structured receipt retained 75 named
+PASS results. The combined positive and retained negative evidence closes the
+bounded CLI surface. UC-04B remains undispatched and unexecuted.
 
 ## Stop Conditions
 
@@ -208,18 +211,18 @@ no public-sync artifact or sibling public-sync commit is authorized.
 ## Claim Boundary
 
 This roadmap establishes a bounded use-case sequence and records accepted
-bounded UC-02 and representative GC-011 UC-03 execution. UC-03 does not prove
-GC-009, GC-010, or every matrix row. UC-04 has not executed. Nothing here
-proves production, public, scale, certification, or real-user outcomes.
+bounded UC-02, representative GC-011 UC-03, and UC-04A CLI execution. UC-03
+does not prove GC-009, GC-010, or every matrix row. UC-04A does not prove
+UC-04B Web or a unified checker inventory. Nothing here proves production,
+public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-Author one fresh bounded UC-04A-R1 GC-018 and source-verified recovery work
-order. Reuse the retained `negative_pre_closure` PASS and the committed focused
-test/runner evidence. Authorize exactly one direct positive `pre-dispatch` CLI
-call, zero retry, zero provider calls, and no new protected path. Do not rerun
-the negative case, open UC-04B Web, claim a unified checker inventory, or
-reopen UC-03 harness repair without its recorded reuse trigger.
+Author one fresh bounded UC-04B GC-018 and source-verified work order for the
+existing Web Operations subset only. Preserve the completed UC-04A CLI
+receipts; do not rerun CLI proof, infer a unified checker inventory, authorize
+provider calls unless the selected Web job actually asserts AI governance
+behavior, or reopen UC-03 harness repair without its recorded reuse trigger.
 
 ## Checker Source Read-Ahead Block
 

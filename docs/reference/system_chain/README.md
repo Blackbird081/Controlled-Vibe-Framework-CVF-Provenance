@@ -183,13 +183,13 @@ scripts, including the nine cross-family checkers from Lane 3) has proven
 `governance/compat/run_local_governance_hook_chain.py` prints a
 `PASS`/`FAIL` line per hook-chain step plus an aggregate summary. Web
 
-UC-04A current invocation adds a bounded partial result. The retained
+UC-04A is now proven bounded for the CLI surface. The retained
 `negative_pre_closure` case exposed the expected non-empty range and dirty
-worktree readout. The positive case stopped at 73/75 because its dispatch
-packet placed a new focused test under the protected governance compatibility
-path without the required authorization block. This is a packet-authoring
-defect, not evidence that the CLI readout owner is broken. One positive-only
-recovery is required; the negative case must not be repeated.
+worktree readout. The R1 recovery then ran the committed 39-test suite and one
+direct positive CLI call from a clean base: 75/75 checks passed, aggregate
+output was COMPLIANT, and a structured PASS receipt retained all 75 named
+results. The negative case was not repeated. This closes the CLI boundary only;
+UC-04B Web remains unproven.
 Operations exposes a bounded five-job-type subset
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts`),
 of which exactly one job type (`docs_governance_check`) wires directly to

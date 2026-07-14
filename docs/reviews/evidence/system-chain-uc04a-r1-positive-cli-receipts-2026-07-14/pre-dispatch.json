@@ -1,0 +1,987 @@
+{
+  "schema": "cvf.autorun.pass-receipt.v1",
+  "status": "PASS",
+  "phase": "pre-dispatch",
+  "base": "6c0a7f3ee",
+  "head": "6c0a7f3ee",
+  "baseSha": "6c0a7f3ee",
+  "headSha": "6c0a7f3ee",
+  "commandManifestHash": "8a8e32775d65a2753658912a6384c298fc1e3d70710f1d983d7f70d1cf0b323d",
+  "worktreeFingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "totalDurationSeconds": 6.313,
+  "checks": [
+    {
+      "name": "closure packaging preflight",
+      "command": [
+        "python",
+        "governance/compat/check_closure_packaging_preflight.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.578,
+      "status": "PASS"
+    },
+    {
+      "name": "core guard self-protection",
+      "command": [
+        "python",
+        "governance/compat/check_core_guard_self_protection.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.68,
+      "status": "PASS"
+    },
+    {
+      "name": "docs governance compatibility",
+      "command": [
+        "python",
+        "governance/compat/check_docs_governance_compat.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.662,
+      "status": "PASS"
+    },
+    {
+      "name": "markdown structural completeness",
+      "command": [
+        "python",
+        "governance/compat/check_markdown_structural_completeness.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.45,
+      "status": "PASS"
+    },
+    {
+      "name": "governed artifact checker read-ahead",
+      "command": [
+        "python",
+        "governance/compat/check_governed_artifact_checker_read_ahead.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.356,
+      "status": "PASS"
+    },
+    {
+      "name": "work-order dispatch quality",
+      "command": [
+        "python",
+        "governance/compat/check_work_order_dispatch_quality.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.988,
+      "status": "PASS"
+    },
+    {
+      "name": "worker-return quality gate",
+      "command": [
+        "python",
+        "governance/compat/check_worker_return_quality_gate.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.348,
+      "status": "PASS"
+    },
+    {
+      "name": "ADIF defect registry disclosure",
+      "command": [
+        "python",
+        "governance/compat/check_adif_defect_registry_disclosure.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.482,
+      "status": "PASS"
+    },
+    {
+      "name": "dispatch packet lifecycle hygiene",
+      "command": [
+        "python",
+        "governance/compat/check_dispatch_packet_lifecycle_hygiene.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.326,
+      "status": "PASS"
+    },
+    {
+      "name": "source intake decision packet preflight",
+      "command": [
+        "python",
+        "governance/compat/check_source_intake_decision_packet_preflight.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.326,
+      "status": "PASS"
+    },
+    {
+      "name": "dispatch prompt envelope",
+      "command": [
+        "python",
+        "governance/compat/check_dispatch_prompt_envelope.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.478,
+      "status": "PASS"
+    },
+    {
+      "name": "PLCS companion routing block",
+      "command": [
+        "python",
+        "governance/compat/check_plcs_companion_routing_block.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.457,
+      "status": "PASS"
+    },
+    {
+      "name": "agent operation trace integrity",
+      "command": [
+        "python",
+        "governance/compat/check_agent_operation_trace.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.512,
+      "status": "PASS"
+    },
+    {
+      "name": "agent handoff boundary",
+      "command": [
+        "python",
+        "governance/compat/check_agent_handoff_boundary.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.703,
+      "status": "PASS"
+    },
+    {
+      "name": "agent workspace design boundary",
+      "command": [
+        "python",
+        "governance/compat/check_agent_workspace_design.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.514,
+      "status": "PASS"
+    },
+    {
+      "name": "agent workspace state",
+      "command": [
+        "python",
+        "governance/compat/check_agent_workspace_state.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.201,
+      "status": "PASS"
+    },
+    {
+      "name": "agent workspace skeleton",
+      "command": [
+        "python",
+        "governance/compat/check_agent_workspace_skeleton.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.213,
+      "status": "PASS"
+    },
+    {
+      "name": "agent workspace runtime boundary",
+      "command": [
+        "python",
+        "governance/compat/check_agent_workspace_runtime_boundary.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.198,
+      "status": "PASS"
+    },
+    {
+      "name": "machine closure package",
+      "command": [
+        "python",
+        "governance/compat/check_machine_closure_package.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.539,
+      "status": "PASS"
+    },
+    {
+      "name": "roadmap closure freshness",
+      "command": [
+        "python",
+        "governance/compat/check_roadmap_closure_freshness.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.554,
+      "status": "PASS"
+    },
+    {
+      "name": "multi-provider execution log quality",
+      "command": [
+        "python",
+        "governance/compat/check_multi_provider_execution_log.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.545,
+      "status": "PASS"
+    },
+    {
+      "name": "finding-to-governance learning quality",
+      "command": [
+        "python",
+        "governance/compat/check_finding_to_governance_learning.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.537,
+      "status": "PASS"
+    },
+    {
+      "name": "external-agent absorption table",
+      "command": [
+        "python",
+        "governance/compat/check_external_agent_absorption_table.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.445,
+      "status": "PASS"
+    },
+    {
+      "name": "external knowledge intake routing",
+      "command": [
+        "python",
+        "governance/compat/check_external_knowledge_intake_routing.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.403,
+      "status": "PASS"
+    },
+    {
+      "name": "external absorption core",
+      "command": [
+        "python",
+        "governance/compat/check_external_absorption_core.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.541,
+      "status": "PASS"
+    },
+    {
+      "name": "external absorption value conversion",
+      "command": [
+        "python",
+        "governance/compat/check_external_absorption_value_conversion.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.602,
+      "status": "PASS"
+    },
+    {
+      "name": "external absorption overlap discipline",
+      "command": [
+        "python",
+        "governance/compat/check_external_absorption_overlap_discipline.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.469,
+      "status": "PASS"
+    },
+    {
+      "name": "source mirror migration",
+      "command": [
+        "python",
+        "governance/compat/check_source_mirror_migration.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.582,
+      "status": "PASS"
+    },
+    {
+      "name": "Delta mutating profile boundary",
+      "command": [
+        "python",
+        "governance/compat/check_delta_mutating_profile_boundary.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.428,
+      "status": "PASS"
+    },
+    {
+      "name": "Delta execution claim boundary",
+      "command": [
+        "python",
+        "governance/compat/check_delta_execution_claim_boundary.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.491,
+      "status": "PASS"
+    },
+    {
+      "name": "foundation storage layout",
+      "command": [
+        "python",
+        "governance/compat/check_foundation_storage_layout.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.548,
+      "status": "PASS"
+    },
+    {
+      "name": "public export disposition quality",
+      "command": [
+        "python",
+        "governance/compat/check_public_export_disposition.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.527,
+      "status": "PASS"
+    },
+    {
+      "name": "corpus completeness and report integrity",
+      "command": [
+        "python",
+        "governance/compat/check_corpus_completeness_report_integrity.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.529,
+      "status": "PASS"
+    },
+    {
+      "name": "absorption blind-spot control presence",
+      "command": [
+        "python",
+        "governance/compat/check_absorption_blindspot_control_presence.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.57,
+      "status": "PASS"
+    },
+    {
+      "name": "rescan intelligence hardening",
+      "command": [
+        "python",
+        "governance/compat/check_rescan_intelligence_hardening.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.351,
+      "status": "PASS"
+    },
+    {
+      "name": "corpus-to-knowledge-map reconciliation",
+      "command": [
+        "python",
+        "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.573,
+      "status": "PASS"
+    },
+    {
+      "name": "corpus intelligence classification",
+      "command": [
+        "python",
+        "governance/compat/check_corpus_intelligence_classification.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.486,
+      "status": "PASS"
+    },
+    {
+      "name": "index classification",
+      "command": [
+        "python",
+        "governance/compat/check_index_classification.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.425,
+      "status": "PASS"
+    },
+    {
+      "name": "memory access claim",
+      "command": [
+        "python",
+        "governance/compat/check_memory_access_claim.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.6,
+      "status": "PASS"
+    },
+    {
+      "name": "external provider skill usage trace",
+      "command": [
+        "python",
+        "governance/compat/check_external_provider_skill_usage_trace.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.242,
+      "status": "PASS"
+    },
+    {
+      "name": "CVF skill usage receipt trace",
+      "command": [
+        "python",
+        "governance/compat/check_cvf_skill_usage_receipt_trace.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.184,
+      "status": "PASS"
+    },
+    {
+      "name": "skill truth packets",
+      "command": [
+        "python",
+        "governance/compat/check_skill_truth_packets.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.267,
+      "status": "PASS"
+    },
+    {
+      "name": "package skill productionization pipeline",
+      "command": [
+        "python",
+        "governance/compat/check_package_skill_productionization_pipeline.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.626,
+      "status": "PASS"
+    },
+    {
+      "name": "skill control plane inventory",
+      "command": [
+        "python",
+        "governance/compat/check_skill_control_plane_inventory.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.158,
+      "status": "PASS"
+    },
+    {
+      "name": "CVF Web skill control plane projection",
+      "command": [
+        "python",
+        "governance/compat/check_cvf_web_skill_control_plane_projection.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.109,
+      "status": "PASS"
+    },
+    {
+      "name": "truth foundation claim guard",
+      "command": [
+        "python",
+        "governance/compat/check_truth_foundation_claim_guard.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.272,
+      "status": "PASS"
+    },
+    {
+      "name": "raw memory release invariant",
+      "command": [
+        "python",
+        "governance/compat/check_raw_memory_release_invariant.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.488,
+      "status": "PASS"
+    },
+    {
+      "name": "DICE machine-candidate coverage",
+      "command": [
+        "python",
+        "governance/compat/check_dice_machine_candidates.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.588,
+      "status": "PASS"
+    },
+    {
+      "name": "corpus packet source hash (NR-04)",
+      "command": [
+        "python",
+        "governance/compat/check_corpus_packet_source_hash.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.56,
+      "status": "PASS"
+    },
+    {
+      "name": "corpus packet normalized path (NR-05)",
+      "command": [
+        "python",
+        "governance/compat/check_corpus_packet_normalized_path.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.541,
+      "status": "PASS"
+    },
+    {
+      "name": "corpus packet disposition canonical (NR-11)",
+      "command": [
+        "python",
+        "governance/compat/check_corpus_packet_disposition_canonical.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.531,
+      "status": "PASS"
+    },
+    {
+      "name": "corpus scan registry",
+      "command": [
+        "python",
+        "governance/compat/check_corpus_scan_registry.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.348,
+      "status": "PASS"
+    },
+    {
+      "name": "ASSF certified metadata admission",
+      "command": [
+        "python",
+        "governance/compat/check_assf_certified_metadata_admission.py"
+      ],
+      "durationSeconds": 0.119,
+      "status": "PASS"
+    },
+    {
+      "name": "ASSF package candidate anatomy",
+      "command": [
+        "python",
+        "governance/compat/check_assf_package_candidate_anatomy.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.113,
+      "status": "PASS"
+    },
+    {
+      "name": "ASSF external-agent metadata readout",
+      "command": [
+        "python",
+        "governance/compat/check_assf_external_agent_metadata_readout.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.118,
+      "status": "PASS"
+    },
+    {
+      "name": "system loop interlock",
+      "command": [
+        "python",
+        "governance/compat/check_system_loop_interlock.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.335,
+      "status": "PASS"
+    },
+    {
+      "name": "FPC system-chain acceptance ledger",
+      "command": [
+        "python",
+        "governance/compat/check_fpc_system_chain_acceptance_ledger.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.35,
+      "status": "PASS"
+    },
+    {
+      "name": "FPC parked reopen inventory",
+      "command": [
+        "python",
+        "governance/compat/check_fpc_parked_reopen_inventory.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.306,
+      "status": "PASS"
+    },
+    {
+      "name": "KIOD runtime candidate reopen inventory",
+      "command": [
+        "python",
+        "governance/compat/check_kiod_runtime_candidate_reopen_inventory.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.395,
+      "status": "PASS"
+    },
+    {
+      "name": "ERH CI public-evaluation workflow chain",
+      "command": [
+        "python",
+        "governance/compat/check_erh_ci_public_evaluation_workflow.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.108,
+      "status": "PASS"
+    },
+    {
+      "name": "ERH public-surface drift workflow chain",
+      "command": [
+        "python",
+        "governance/compat/check_erh_public_surface_drift_workflow.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.194,
+      "status": "PASS"
+    },
+    {
+      "name": "ERH dependency risk workflow chain",
+      "command": [
+        "python",
+        "governance/compat/check_erh_dependency_risk_workflow.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.09,
+      "status": "PASS"
+    },
+    {
+      "name": "ERH cvf-web dependency audit workflow chain",
+      "command": [
+        "python",
+        "governance/compat/check_erh_cvf_web_dependency_audit_workflow.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.1,
+      "status": "PASS"
+    },
+    {
+      "name": "ERH SAF1 safety workflow chain",
+      "command": [
+        "python",
+        "governance/compat/check_erh_safety_workflow_chain.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.107,
+      "status": "PASS"
+    },
+    {
+      "name": "ERH SAF2 output safety workflow chain",
+      "command": [
+        "python",
+        "governance/compat/check_erh_output_safety_workflow_chain.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.102,
+      "status": "PASS"
+    },
+    {
+      "name": "ERH DUR1 durable evidence policy snapshot workflow chain",
+      "command": [
+        "python",
+        "governance/compat/check_erh_durable_evidence_policy_snapshot.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.09,
+      "status": "PASS"
+    },
+    {
+      "name": "ERH DUR2 external storage adapter workflow chain",
+      "command": [
+        "python",
+        "governance/compat/check_erh_external_storage_adapter.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.082,
+      "status": "PASS"
+    },
+    {
+      "name": "active session state compatibility",
+      "command": [
+        "python",
+        "governance/compat/check_active_session_state.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.502,
+      "status": "PASS"
+    },
+    {
+      "name": "next-move freshness",
+      "command": [
+        "python",
+        "governance/compat/check_next_move_freshness.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.217,
+      "status": "PASS"
+    },
+    {
+      "name": "governed file size compatibility",
+      "command": [
+        "python",
+        "governance/compat/check_governed_file_size.py",
+        "--enforce"
+      ],
+      "durationSeconds": 1.697,
+      "status": "PASS"
+    },
+    {
+      "name": "system chain map freshness",
+      "command": [
+        "python",
+        "governance/compat/check_system_chain_map_freshness.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.122,
+      "status": "PASS"
+    },
+    {
+      "name": "as-built system catalog drift",
+      "command": [
+        "python",
+        "governance/compat/check_as_built_system_catalog_drift.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.305,
+      "status": "PASS"
+    },
+    {
+      "name": "governed python automation size",
+      "command": [
+        "python",
+        "governance/compat/check_python_automation_size.py",
+        "--enforce"
+      ],
+      "durationSeconds": 0.704,
+      "status": "PASS"
+    },
+    {
+      "name": "dispatch scaffold provenance",
+      "command": [
+        "python",
+        "governance/compat/check_dispatch_scaffold_provenance.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.332,
+      "status": "PASS"
+    },
+    {
+      "name": "MinerU receipt boundary",
+      "command": [
+        "python",
+        "governance/compat/check_mineru_receipt_boundary.py",
+        "--base",
+        "6c0a7f3ee",
+        "--head",
+        "6c0a7f3ee",
+        "--enforce"
+      ],
+      "durationSeconds": 0.453,
+      "status": "PASS"
+    }
+  ]
+}

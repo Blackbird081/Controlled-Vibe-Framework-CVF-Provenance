@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: gc018_baseline
 
@@ -211,6 +211,37 @@ only the bounded UC-04A CLI evidence when combined with the retained negative
 case. It does not prove UC-04B Web, every checker surface, external-agent
 readiness, provider governance, production, public readiness, scale,
 certification, or user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this baseline | `CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | paired R1 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | R1 completion review | reviewer disposition | PASS |
+| Worker return | R1 worker return | `COMPLETE_PENDING_REVIEW` converted by reviewer | PASS |
+| Positive receipt | dedicated R1 receipt | schema/status and 75 named PASS rows | PASS |
+| Retained negative | original UC-04A receipt | range/finality PASS without rerun | PASS |
+| Roadmap state | system-chain roadmap | UC-04A bounded; UC-04B next | PASS |
+| Registry JSON | live-proof coverage ledger | CLI bounded, Web unproven | PASS |
+| Registry Markdown | system-chain README | combined positive/negative CLI evidence | PASS |
+| Catalog/GAP | completion decision | no architecture owner or edge changed | N/A with reason |
+| External evidence digest | N/A with reason: no external evidence consumed | local repository evidence only | N/A with reason |
+| System loop interlock | one positive plus retained negative | no retry or negative rerun | PASS |
+| Session continuity | active session sources | separate post-material synchronization | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+|---|---|---|---|
+| focused tests | 39/39 before call | 39/39 | PASS |
+| positive CLI calls | exactly one | 1 | PASS |
+| positive aggregate | COMPLIANT | COMPLIANT 75/75 | PASS |
+| positive receipt | current schema and PASS | present, 75 named PASS rows | PASS |
+| negative rerun | zero | 0 | PASS |
+| retries | zero | 0 | PASS |
+| provider calls | zero | 0 | PASS |
+| protected mutation | none | none | PASS |
 
 ## Agent Operation Trace Block
 
