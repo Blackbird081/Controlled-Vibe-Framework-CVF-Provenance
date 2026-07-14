@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_archive_path_repair_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one no-commit worker executes the committed archive-path reconciliation packet with focused tests only; parked checkpoint=real bootstrap, UC-02 rerun, UC-03/UC-04 dispatch, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc02_repair_closed_rerun_packet_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author a fresh packet for exactly one UC-02 current rerun; parked checkpoint=rerun execution before packet commit, UC-03/UC-04 dispatch, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc02_archive_path_repair_dispatched_worker_next`
+Current mode marker: `system_chain_uc02_repair_closed_rerun_packet_next`
 
-Current mode: `system_chain_uc02_archive_path_repair_dispatched_worker_next`
+Current mode: `system_chain_uc02_repair_closed_rerun_packet_next`
 
-`system_chain_uc02_archive_path_repair_dispatched_worker_next`
+`system_chain_uc02_repair_closed_rerun_packet_next`
 
 Previous mode:
 
-`system_chain_uc02_blocked_archive_path_repair_packet_next`
+`system_chain_uc02_archive_path_repair_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-02 archive-path repair closure | `abb58be27` | CLOSED_PASS_BOUNDED after two in-scope reviewer corrections; 15 focused tests, reviewer-fast 62/62, pre-commit 83/83; zero real bootstrap/UC-02/provider calls; coverage remains STALE and GAP open. |
 | System-chain UC-02 archive-path repair dispatch | `7edfc7f13` | DISPATCH_READY; source-verified archive/live ownership repair; one no-commit worker; focused fake-subprocess tests; zero real bootstrap, UC-02, and provider calls. |
 | System-chain UC-02 bounded blocked closure | `7619d807a` | CLOSED_BLOCKED_BOUNDED; shared bootstrap FAIL, 0/9 scenarios executed, coverage remains STALE; archive/live path GAP registered; fresh repair packet only next. |
 | System-chain UC-02 current-run dispatch | `9f2fdc210` | DISPATCH_READY; one no-commit worker; exact CF-076 through CF-084 registry-driven proof; no provider or existing checker mutation. |
@@ -170,16 +171,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc02_archive_path_repair_dispatched_worker_next`
+Mode: `system_chain_uc02_repair_closed_rerun_packet_next`
 
-UC-02 archive-path repair dispatch is committed at `7edfc7f13`. The next
-allowed move is one no-commit worker executing the committed work order with
-focused fake-subprocess tests only. Do not run the real packet-posture
-bootstrap, release gate, UC-02 proof runner, or a provider call. Reviewer
-acceptance is required before a later single UC-02 rerun. Coverage remains
-`STALE`, the GAP remains open, and UC-03/UC-04 remain held. Public export,
-production, scale, universal enforcement, and user validation remain
-unclaimed.
+UC-02 archive-path repair closed at `abb58be27`. The next allowed move is
+authoring a fresh source-verified packet for exactly one current UC-02 rerun
+through the real bootstrap, with diagnostic-first stopping. Do not execute the
+rerun before that packet is committed. Coverage remains `STALE`, the GAP
+remains open, and UC-03/UC-04 remain held. Public export, production, scale,
+universal enforcement, and user validation remain unclaimed.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

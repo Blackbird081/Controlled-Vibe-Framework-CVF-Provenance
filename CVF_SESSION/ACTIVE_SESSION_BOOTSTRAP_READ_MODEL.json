@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_uc02_archive_path_repair_dispatched_worker_next",
+  "currentMode": "system_chain_uc02_repair_closed_rerun_packet_next",
   "activeHandoff": "AGENT_HANDOFF_V43_2026-07-14.md",
-  "nextAllowedMove": "UC-02 archive-path reconciliation dispatch is committed at 7edfc7f13. Next allowed move is one no-commit worker executing docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_ARCHIVE_PATH_RECONCILIATION_2026-07-14.md with focused fake-subprocess tests only. Do not run the real packet-posture bootstrap, release gate, UC-02 proof runner, or any provider call. Reviewer acceptance is required before a later single UC-02 rerun; UC-03 and UC-04 remain held. Coverage remains STALE and the archive-path GAP remains open. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "UC-02 archive-path repair closed at material commit abb58be27 with 15 focused tests, reviewer-fast 62/62, pre-commit 83/83, zero real bootstrap calls, zero UC-02 calls, and zero provider calls. Coverage remains STALE and the archive-path GAP remains open. Next allowed move is authoring a fresh source-verified packet for exactly one retained UC-02 current rerun through the real bootstrap with diagnostic-first stopping. Do not run the rerun before that packet is committed. UC-03 and UC-04 remain held. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -19,9 +19,9 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_archive_path_repair_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one
-no-commit worker executes the committed archive-path reconciliation packet with focused tests only; parked checkpoint=real bootstrap, UC-02 rerun, UC-03/UC-04 dispatch,
+Startup acknowledged: current mode=`system_chain_uc02_repair_closed_rerun_packet_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
+fresh packet for exactly one UC-02 current rerun; parked checkpoint=rerun execution before packet commit, UC-03/UC-04 dispatch,
 public export, production, scale, universal
 enforcement, and user validation.
 
@@ -38,14 +38,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc02_archive_path_repair_dispatched_worker_next`
+`system_chain_uc02_repair_closed_rerun_packet_next`
 
 ## Active Boundary
 
-- Active dispatch commit: `7edfc7f13`.
+- Active material closure commit: `abb58be27`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: UC-02 archive/live path repair worker execution.
-- Next permitted value lane: exact no-commit manifest and focused fake-subprocess tests only.
+- Active work queue: UC-02 single-rerun packet authoring.
+- Next permitted value lane: source-verify and commit one diagnostic-first rerun packet only.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -64,6 +64,11 @@ The archive-path repair packet is dispatch-ready at material commit
 generated outputs at live owners, and requires release-gate-once ordering
 before both downstream packet families. Worker execution must use focused
 fake-subprocess tests and make zero real bootstrap, UC-02, or provider calls.
+
+The repair closed `CLOSED_PASS_BOUNDED` at material commit `abb58be27` after
+two in-scope reviewer corrections. Fifteen focused tests, reviewer-fast 62/62,
+and pre-commit 83/83 pass. No real bootstrap, UC-02, or provider call occurred.
+Coverage remains `STALE` and the GAP remains open until a later 9/9 receipt.
 
 UC-02 dispatch is ready at material commit `9f2fdc210`. The packet authorizes
 one no-commit worker to produce a current CF-076 through CF-084 registry-driven
@@ -111,11 +116,9 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_ARCHIVE_PATH_RECONCILIATION_2026-07-14.md`
-with one no-commit worker. Preserve the archived authority and generated-output
-ownership. Rerun the retained UC-02 runner only after reviewer-accepted
-result-changing repair; UC-03 and UC-04 remain held.
+Author a fresh source-verified packet for exactly one retained UC-02 current
+rerun through the real bootstrap. Require diagnostic-first stopping and do not
+execute before packet commit. UC-03 and UC-04 remain held.
 
 ## Parked Checkpoint
 
@@ -140,6 +143,8 @@ UC-02 dispatch HEAD: `9f2fdc210`
 UC-02 blocked closure HEAD: `7619d807a`
 
 UC-02 archive-path repair dispatch HEAD: `7edfc7f13`
+
+UC-02 archive-path repair closure HEAD: `abb58be27`
 
 Session-sync closure HEAD: `946ae2a61`
 
@@ -223,6 +228,27 @@ Operator authorization: continue after the UC-02 bounded blocker.
 
 Rollback boundary: revert only this session-sync batch; retain repair dispatch
 commit `7edfc7f13`, blocked closure `7619d807a`, and retained evidence.
+
+## Core Guard Self-Protection Authorization - UC-02 Repair Closure Sync
+
+Authorized scope: synchronize accepted repair material commit `abb58be27` and
+route only the next rerun packet-authoring step.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc02ArchivePathRepairClosure20260714.json`
+
+Operator authorization: continue the system-chain use-case sequence after
+worker completion and reviewer closure.
+
+Rollback boundary: revert only this session-sync batch; retain material repair
+closure `abb58be27`, dispatch `7edfc7f13`, and blocked receipt evidence.
 
 Remote tracking branch: `origin/main`
 
