@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_live_proof_process_established_uc02_packet_next",
+  "currentMode": "system_chain_uc02_dispatched_worker_execution_next",
   "activeHandoff": "AGENT_HANDOFF_V43_2026-07-14.md",
-  "nextAllowedMove": "System-chain live-proof T0 process is established at material commit e4a585b8c. SOT3 remains UC-01 with exact bounded claim LIVE_GOVERNANCE_PROVEN_BOUNDED. Next allowed move is authoring a fresh UC-02 GC-018 and source-verified work order for one current invocation of the registry-driven CF-076 through CF-084 chain; UC-02 execution is not authorized by the roadmap alone. UC-03 and UC-04 remain sequenced and undispatched. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "UC-02 dispatch is ready at material commit 9f2fdc210. Next allowed move is one no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_RUNTIME_TO_ENFORCEMENT_CURRENT_RUN_2026-07-14.md, returning COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. UC-03 and UC-04 remain undispatched. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -19,10 +19,10 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_live_proof_process_established_uc02_packet_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author fresh
-UC-02 GC-018 and source-verified work order only; parked checkpoint=UC-02
-execution, UC-03/UC-04 dispatch, public export, production, scale, universal
+Startup acknowledged: current mode=`system_chain_uc02_dispatched_worker_execution_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one bounded
+no-commit UC-02 worker execution; parked checkpoint=UC-03/UC-04 dispatch,
+public export, production, scale, universal
 enforcement, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
@@ -38,18 +38,23 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_live_proof_process_established_uc02_packet_next`
+`system_chain_uc02_dispatched_worker_execution_next`
 
 ## Active Boundary
 
 - Active material process commit: `e4a585b8c`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: UC-02 packet authoring only; execution is undispatched.
-- Next permitted value lane: source-verified UC-02 dispatch preparation.
+- Active work queue: one no-commit UC-02 worker execution.
+- Next permitted value lane: execute the committed UC-02 work order only.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
 ## Latest Work / Changes
+
+UC-02 dispatch is ready at material commit `9f2fdc210`. The packet authorizes
+one no-commit worker to produce a current CF-076 through CF-084 registry-driven
+receipt; existing checkers, registry commands, semantic map, and provider lanes
+remain read-only.
 
 The system-chain live-proof and learning-loop T0 process was established at
 material commit `e4a585b8c`. It retains SOT3 as UC-01 only, classifies all five
@@ -92,10 +97,9 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Author a fresh UC-02 GC-018 and source-verified work order for one current
-invocation of the registry-driven CF-076 through CF-084 chain. The roadmap does
-not authorize execution. Preserve the exact SOT3 bounded claim; UC-03 and UC-04
-remain undispatched.
+Execute the committed UC-02 work order once with a no-commit worker and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Preserve the exact SOT3
+bounded claim; UC-03 and UC-04 remain undispatched.
 
 ## Parked Checkpoint
 
@@ -114,6 +118,8 @@ scale, universal, or user-value claim.
 Material closure HEAD: `62ab80ab4`
 
 System-chain live-proof process HEAD: `e4a585b8c`
+
+UC-02 dispatch HEAD: `9f2fdc210`
 
 Session-sync closure HEAD: `946ae2a61`
 
@@ -140,3 +146,19 @@ chains, and retain continuing live-run learning as CVF architecture process.
 
 Rollback boundary: revert only this session-sync batch; retain material commit
 `e4a585b8c` and all accepted SOT3 closure commits.
+
+## Core Guard Self-Protection Authorization - UC-02 Dispatch Session Sync
+
+Authorized scope: synchronize UC-02 dispatch commit `9f2fdc210`.
+
+Protected paths: `AGENT_HANDOFF_V43_2026-07-14.md`, `CVF_SESSION_MEMORY.md`,
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`,
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+`CVF_SESSION/state/entries/nextAllowedMove.json`, and
+`CVF_SESSION/state/entries/systemChainUc02Dispatch20260714.json`.
+
+Operator authorization: continue through the next allowed UC-02 packet lane.
+
+Rollback boundary: revert only this sync batch; retain dispatch commit
+`9f2fdc210`.

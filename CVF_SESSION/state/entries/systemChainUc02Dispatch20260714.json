@@ -1,0 +1,12 @@
+{
+  "stateOrder": 1754,
+  "stateKey": "systemChainUc02Dispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "9f2fdc210",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_RUNTIME_TO_ENFORCEMENT_CURRENT_RUN_2026-07-14.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "one bounded no-commit UC-02 worker execution",
+    "claimBoundary": "Packet only; UC-02 current-run evidence not yet produced or accepted."
+  }
+}
