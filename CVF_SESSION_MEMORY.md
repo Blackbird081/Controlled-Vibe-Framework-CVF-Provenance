@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_proven_renderer_repair_packet_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one source-verified renderer-conformance repair packet without rerunning UC-02; parked checkpoint=UC-03/UC-04 dispatch, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc02_renderer_repair_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one exact no-commit SCLP-UC02-R3 worker execution with zero UC-02/provider calls; parked checkpoint=UC-03/UC-04 dispatch, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc02_proven_renderer_repair_packet_next`
+Current mode marker: `system_chain_uc02_renderer_repair_dispatched_worker_next`
 
-Current mode: `system_chain_uc02_proven_renderer_repair_packet_next`
+Current mode: `system_chain_uc02_renderer_repair_dispatched_worker_next`
 
-`system_chain_uc02_proven_renderer_repair_packet_next`
+`system_chain_uc02_renderer_repair_dispatched_worker_next`
 
 Previous mode:
 
-`system_chain_uc02_rerun_dispatched_worker_next`
+`system_chain_uc02_proven_renderer_repair_packet_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-02 renderer-conformance repair dispatch | `9078fec00` | DISPATCH_READY; exact three template owners, one focused test, 20 enumerated release-gate outputs, one no-commit worker return; zero UC-02/scenario/provider calls; pre-dispatch 75/75 and pre-commit 83/83 PASS. |
 | System-chain UC-02 repaired current rerun closure | `9173af70b` | CLOSED_PASS_BOUNDED; bootstrap PASS once, CF-076 through CF-084 PASS 9/9, coverage PROVEN, archive-path GAP closed; separate generated-Markdown renderer GAP open; no rerun/provider call. |
 | System-chain UC-02 repaired current rerun dispatch | `a16f5b7d1` | DISPATCH_READY; existing runner only; 21 enumerated live generated outputs plus fresh receipt, diagnostic, and worker return; exactly one proof invocation, zero retries, zero provider calls; pre-dispatch 75/75 and pre-commit 83/83 PASS. |
 | System-chain UC-02 archive-path repair closure | `abb58be27` | CLOSED_PASS_BOUNDED after two in-scope reviewer corrections; 15 focused tests, reviewer-fast 62/62, pre-commit 83/83; zero real bootstrap/UC-02/provider calls; coverage remains STALE and GAP open. |
@@ -173,13 +174,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc02_proven_renderer_repair_packet_next`
+Mode: `system_chain_uc02_renderer_repair_dispatched_worker_next`
 
-UC-02 closed `CLOSED_PASS_BOUNDED` at `9173af70b`: one bootstrap PASS and 9/9
-scenario PASS. Coverage is `PROVEN`; the archive-path GAP is closed. The next
-allowed move is authoring one source-verified renderer-conformance repair
-packet for the three actual renderer owners. It must regenerate outputs without
-rerunning UC-02 or calling a provider. UC-03/UC-04 remain held.
+SCLP-UC02-R3 is dispatch-ready at `9078fec00`. The next allowed move is one
+exact no-commit worker execution against the three source-verified template
+owners and 20 enumerated outputs. Run the release gate once; at most one
+diagnosed result-changing regeneration retry is allowed. UC-02 proof calls,
+scenario events, and provider calls remain zero. UC-03/UC-04 remain held.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

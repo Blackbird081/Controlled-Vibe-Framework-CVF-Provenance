@@ -19,11 +19,11 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_proven_renderer_repair_packet_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one
-no-commit worker executes SCLP-UC02-R2 exactly once with zero retries; parked
-checkpoint=reviewer coverage/GAP closure, UC-03/UC-04 dispatch, public export,
-production, scale, universal enforcement, and user validation.
+Startup acknowledged: current mode=`system_chain_uc02_renderer_repair_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one exact
+no-commit SCLP-UC02-R3 worker execution with zero UC-02/scenario/provider
+calls; parked checkpoint=reviewer GAP closure, UC-03/UC-04 dispatch, public
+export, production, scale, universal enforcement, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -38,14 +38,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc02_proven_renderer_repair_packet_next`
+`system_chain_uc02_renderer_repair_dispatched_worker_next`
 
 ## Active Boundary
 
-- Active material dispatch commit: `a16f5b7d1`.
+- Active material dispatch commit: `9078fec00`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: one no-commit SCLP-UC02-R2 worker execution.
-- Next permitted value lane: retained focused suite, then one proof invocation and zero retries.
+- Active work queue: one no-commit SCLP-UC02-R3 worker execution.
+- Next permitted value lane: three renderer owners, one focused test, and 20
+  release-gate outputs; zero UC-02/scenario/provider calls.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -75,6 +76,14 @@ The repaired UC-02 rerun packet is dispatch-ready at material commit
 return. The worker may invoke the retained runner exactly once, has zero retry
 authority, must diagnose and stop on failure, and must not commit.
 Coverage remains `STALE` and the GAP remains open until a later 9/9 receipt.
+
+The renderer-conformance repair packet is dispatch-ready at material commit
+`9078fec00` after pre-dispatch 75/75 and pre-commit 83/83 pass. Fresh source
+verification corrected the actual family-log template owner to
+`scripts/export_cvf_remediation_receipt_log.py::build_log`; `baselines.py` is
+orchestration only. The worker owns exactly three template sources, one focused
+test, 20 enumerated generated outputs, and one no-commit return. UC-02 proof,
+scenario, and provider calls remain zero.
 
 UC-02 dispatch is ready at material commit `9f2fdc210`. The packet authorizes
 one no-commit worker to produce a current CF-076 through CF-084 registry-driven
@@ -122,9 +131,10 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Author one source-verified renderer-conformance repair packet for the three
-actual renderer owners. Regenerate outputs without rerunning UC-02 or calling
-a provider. UC-03 and UC-04 remain held.
+Execute SCLP-UC02-R3 once through one no-commit worker. Use the exact manifest
+at `9078fec00`; run the release gate once with at most one diagnosed
+result-changing regeneration retry. Do not invoke UC-02 or a provider. UC-03
+and UC-04 remain held.
 
 ## Parked Checkpoint
 
@@ -155,6 +165,8 @@ UC-02 archive-path repair closure HEAD: `abb58be27`
 UC-02 repaired current rerun dispatch HEAD: `a16f5b7d1`
 
 UC-02 repaired current rerun closure HEAD: `9173af70b`
+
+UC-02 renderer-conformance repair dispatch HEAD: `9078fec00`
 
 Session-sync closure HEAD: `946ae2a61`
 
@@ -302,3 +314,23 @@ Operator authorization: continue the system-chain use-case sequence.
 
 Rollback boundary: revert only this session-sync batch; retain dispatch commit
 `a16f5b7d1`, repair closure `abb58be27`, and all historical blocker evidence.
+
+## Core Guard Self-Protection Authorization - UC-02 Renderer Repair Dispatch Sync
+
+Authorized scope: synchronize renderer-conformance repair dispatch material
+commit `9078fec00` and route one exact no-commit SCLP-UC02-R3 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc02RendererRepairDispatch20260714.json`
+
+Operator authorization: continue the system-chain use-case sequence.
+
+Rollback boundary: revert only this session-sync batch; retain material
+dispatch `9078fec00`, UC-02 proof closure `9173af70b`, and all evidence.
