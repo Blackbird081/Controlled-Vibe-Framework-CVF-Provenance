@@ -231,7 +231,7 @@ do not archive or rename the generated output owners.
 | Session or invocation | SCLP-UC02-R3 reviewer closure, 2026-07-14 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, marker inventory, unittest, pytest, worker-return fast gate, apply_patch, GAP generator |
-| Target paths | worker manifest plus paired packet, completion review, GAP entry/index/README, and review retention registry |
+| Target paths | worker manifest plus paired packet, completion review, GAP entry/index/README, system-chain roadmap, and review retention registry |
 | Allowed scope source | Reviewer Closure Conversion in SCLP-UC02-R3 |
 | Before status evidence | HEAD `c7d14d846`; 25 worker-owned paths plus reviewer work-order amendment; nothing staged |
 | After status evidence | accepted repair, current outputs, closed GAP, closure packet |
@@ -240,7 +240,7 @@ do not archive or rename the generated output owners.
 | Claim boundary | bounded local renderer conformance; no UC-02/provider/public/production/scale/user claim |
 | Agent type | reviewer/closer |
 | Invocation ID | system-chain-uc02-r3-reviewer-2026-07-14 |
-| Expected manifest | worker 25 paths plus reviewer-owned paired packet, completion, GAP surfaces, and review retention registry |
+| Expected manifest | worker 25 paths plus reviewer-owned paired packet, completion, GAP surfaces, system-chain roadmap, and review retention registry |
 | Actual changed set | recomputed before material commit |
 | Manifest delta | MATCH after reviewer closure conversion |
 | Deletion or rename disposition | N/A with reason: none |

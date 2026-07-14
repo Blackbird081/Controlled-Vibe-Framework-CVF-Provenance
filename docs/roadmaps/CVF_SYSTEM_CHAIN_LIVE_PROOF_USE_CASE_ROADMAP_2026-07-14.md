@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC02_PROVEN_GENERATOR_REPAIR_REQUIRED
+Status: ACTIVE_UC02_AND_RENDERER_REPAIR_CLOSED_UC03_PACKET_NEXT
 
 docType: roadmap
 
@@ -65,7 +65,7 @@ and reopen decisions.
 |---|---|---|---|
 | Doctrine to Contract | static recomputation | not applicable to live invocation | preserve semantic review; no live use case |
 | Contract to Runtime | runtime invocation | partial | UC-03 |
-| Runtime to Enforcement | runtime invocation | proven bounded current-run evidence | UC-02 complete; generator conformance follow-up separate |
+| Runtime to Enforcement | runtime invocation | proven bounded current-run evidence | UC-02 and its downstream renderer-conformance repair complete |
 | Enforcement to Evidence | static recomputation | not applicable to live invocation | preserve deterministic path audit |
 | Evidence to Operator Surface | operator-surface invocation | missing | UC-04 |
 
@@ -146,6 +146,15 @@ Observed T0 result: `CURRENT` with zero violations, including
 `COVERAGE_DRIFT: 0`. This verifies the ledger/checker contract only. UC-02,
 UC-03, and UC-04 remain not dispatched and not executed.
 
+## Current Execution Update
+
+The paragraph above is retained as the historical T0 observation. Current
+state differs: UC-02 closed `CLOSED_PASS_BOUNDED` at material commit
+`9173af70b` with bootstrap PASS and CF-076 through CF-084 PASS 9/9. Its
+separate generated-Markdown renderer repair closed at `36aefceab`; all twenty
+outputs are current and all twelve governed Markdown outputs pass the
+applicable checker surface. UC-03 and UC-04 remain undispatched and unexecuted.
+
 ## Stop Conditions
 
 - source owner, caller, or invocation route cannot be verified;
@@ -182,21 +191,23 @@ cost of latency, investigation, or weak evidence.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance proof planning and current internal chain inventory.
+Reason: private provenance proof planning and current internal chain inventory;
+no public-sync artifact or sibling public-sync commit is authorized.
 
 ## Claim Boundary
 
-This roadmap establishes a bounded use-case sequence. It does not claim UC-02,
-UC-03, or UC-04 has executed, does not upgrade the current five-lane semantic
-map, and does not prove production, public, scale, or real-user outcomes.
+This roadmap establishes a bounded use-case sequence and records the accepted
+bounded UC-02 execution plus its downstream renderer closure. It does not claim
+UC-03 or UC-04 has executed, does not promote UC-02 beyond its recorded local
+boundary, and does not prove production, public, scale, or real-user outcomes.
 
 ## Next Allowed Move
 
-Author a fresh bounded GC-018 and source-verified repair work order for the
-phase-governance archive-to-consumer path contract. Determine the current
-authority before changing paths; do not restore archived files merely to
-satisfy stale consumers. After reviewer acceptance of that repair, rerun the
-retained UC-02 proof runner and require 9/9. Keep UC-03 and UC-04 held.
+Author a fresh bounded GC-018 and source-verified work order for UC-03 route
+selection only. Prove one representative active caller-backed
+Contract-to-Runtime path; do not select GC-009 or GC-010 while no active caller
+is source-proven. Keep UC-04 held. Do not execute UC-03 until its packet passes
+dispatch review.
 
 ## Checker Source Read-Ahead Block
 
