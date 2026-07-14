@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_uc04b_r1_dispatched_worker_next",
+  "currentMode": "system_chain_uc04b_auth_projection_repair_packet_next",
   "activeHandoff": "AGENT_HANDOFF_V43_2026-07-14.md",
-  "nextAllowedMove": "SCLP-UC04B-R1 is DISPATCH_READY at material commit b224015f8. Next allowed move is one no-commit worker execution from a clean execution base using the canonical R1 work order. Complete source-backed direct NextAuth and focused-test preflight before freezing the retained proof spec. Then create the monotonic invocation ledger and invoke exactly one Playwright command containing positive_developer_docs_check and negative_reviewer_docs_check. Authorized totals are one invocation, two Web submissions, one docs checker execution, zero retries, and zero provider calls. After ledger start, proof/auth/assertion logic is frozen; any failure gets one diagnostic and stops. Do not rerun T4 or R1, mutate runtime owners, or claim unified inventory, all-Web coverage, provider governance, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SCLP-UC04B-R1 is CLOSED_BLOCKED_BOUNDED at material commit eebc3f8ce. The sole Playwright invocation stopped before submission: direct NextAuth session returned developer but the Operations page projected anonymous_local. Exact counters are one invocation, zero Web submissions, zero checker executions, zero retries, and zero provider calls. The confirmed connection gap is cvf.asc.gap.web_nextauth_application_projection_split.v1. Next allowed move is to author one fresh source-verified auth-projection repair GC-018 and work order only. Do not rerun T4/R1, edit auth owners before dispatch review, or claim UC-04B Web coverage, unified inventory, provider governance, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

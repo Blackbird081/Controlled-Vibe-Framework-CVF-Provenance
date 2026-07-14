@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1790,
+  "stateKey": "systemChainUc04bR1BlockedClosure20260714",
+  "value": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "eebc3f8ce",
+    "workOrderId": "SCLP-UC04B-R1",
+    "executionBaseHead": "c3a8bd89b",
+    "focusedWebTests": "20_OF_20_PASS",
+    "focusedAuthTests": "12_OF_12_PASS",
+    "playwrightInvocationCount": 1,
+    "webSubmissionCount": 0,
+    "checkerExecutionCount": 0,
+    "retryCount": 0,
+    "providerCallCount": 0,
+    "failureClass": "RUNTIME_AUTH_CONTEXT_SPLIT",
+    "gapId": "cvf.asc.gap.web_nextauth_application_projection_split.v1",
+    "uc04bStatus": "UNPROVEN_AUTH_PROJECTION_REPAIR_REQUIRED",
+    "nextAllowedMove": "author one source-verified auth-projection repair packet only; no Web rerun",
+    "claimBoundary": "Bounded blocker only. No successful Web operation, unified inventory, provider governance, public, production, scale, certification, or user-value proof."
+  }
+}

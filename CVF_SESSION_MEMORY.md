@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one no-commit SCLP-UC04B-R1 worker using direct auth preflight, frozen proof source, immutable ledger, and one Playwright command; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc04b_auth_projection_repair_packet_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one source-verified UC-04B auth-projection repair packet only; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc04b_r1_dispatched_worker_next`
+Current mode marker: `system_chain_uc04b_auth_projection_repair_packet_next`
 
-Current mode: `system_chain_uc04b_r1_dispatched_worker_next`
+Current mode: `system_chain_uc04b_auth_projection_repair_packet_next`
 
-`system_chain_uc04b_r1_dispatched_worker_next`
+`system_chain_uc04b_auth_projection_repair_packet_next`
 
 Previous mode:
 
-`system_chain_uc04b_blocked_recovery_packet_next`
+`system_chain_uc04b_r1_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-04B-R1 auth-projection blocker closure | `eebc3f8ce` | CLOSED_BLOCKED_BOUNDED; 20/20 Web and 12/12 auth tests PASS; one Playwright invocation exposed developer session versus anonymous Operations projection; 0 submissions/checkers/retries/providers; architecture GAP registered; repair packet next. |
 | System-chain UC-04B-R1 Web auth/readout recovery dispatch | `b224015f8` | DISPATCH_READY; direct NextAuth and focused-test preflight before source freeze; monotonic ledger; exactly one Playwright invocation, two submissions, one docs checker, zero retries/provider calls; worker must not commit. |
 | System-chain UC-04B blocked Web proof closure | `d69b6d7b3` | CLOSED_BLOCKED_BOUNDED; reviewer 20/20 focused PASS, two Playwright invocations/one unauthorized retry, zero submissions/checker/provider calls; unsupported environment diagnoses rejected; ADIF-0034; recovery packet next. |
 | System-chain UC-04B Web Operations readout dispatch | `9b3e46810` | DISPATCH_READY; one real Playwright command, developer positive plus reviewer policy-deny, one docs checker execution, zero retries/provider calls, worker must not commit. |
@@ -185,15 +186,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc04b_r1_dispatched_worker_next`
+Mode: `system_chain_uc04b_auth_projection_repair_packet_next`
 
-UC-04B R1 is dispatch-ready at `b224015f8`. Next run one no-commit worker from
-a clean execution base. Direct NextAuth and focused tests must pass before the
-proof source is frozen. The monotonic ledger then authorizes exactly one
-Playwright command, two submissions, one docs checker execution, zero retries,
-and zero provider calls. Any failure stops with one diagnostic; do not infer
-Web coverage, unified inventory, provider governance, public, production,
-scale, certification, or user value.
+UC-04B R1 closed blocked at `eebc3f8ce`. One Playwright command proved the
+NextAuth endpoint returned developer while the Operations page remained
+anonymous; zero submissions, checkers, retries, and providers occurred. Next
+author one source-verified auth-projection repair packet only. Do not rerun T4
+or R1, edit auth owners before dispatch, or infer Web coverage, unified
+inventory, provider governance, public, production, scale, certification, or
+user value.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

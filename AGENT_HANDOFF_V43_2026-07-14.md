@@ -19,9 +19,9 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r1_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one no-commit
-SCLP-UC04B-R1 worker under the frozen-source and one-invocation contract; parked checkpoint=UC-03 harness identity
+Startup acknowledged: current mode=`system_chain_uc04b_auth_projection_repair_packet_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
+source-verified UC-04B auth-projection repair packet only; parked checkpoint=UC-03 harness identity
 repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory,
 public export, production, scale, universal enforcement, and user validation.
 
@@ -38,16 +38,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04b_r1_dispatched_worker_next`
+`system_chain_uc04b_auth_projection_repair_packet_next`
 
 ## Active Boundary
 
-- Active UC-04B R1 dispatch commit: `b224015f8`.
+- Active UC-04B R1 blocked closure commit: `eebc3f8ce`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: one no-commit UC-04B-R1 worker execution only.
-- Next permitted value lane: direct auth and focused-test preflight, then freeze
-  proof source and start the immutable ledger before exactly one provider-free
-  Playwright recovery command.
+- Active work queue: one source-verified auth-projection repair packet only.
+- Next permitted value lane: isolate the confirmed NextAuth-to-application
+  projection gap and dispatch a bounded owner repair; no Web rerun yet.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -157,10 +156,9 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Execute one no-commit SCLP-UC04B-R1 worker from a clean base. Complete direct
-NextAuth and focused-test preflight before proof freeze; then invoke exactly
-one Playwright command with two cases, two submissions, one docs checker,
-zero retries, and zero provider calls. Any failure stops with one diagnostic.
+Author one fresh GC-018 and source-verified work order for the confirmed
+NextAuth-to-application auth-projection GAP. Do not rerun T4/R1 or edit auth
+owners before dispatch review.
 
 ## Parked Checkpoint
 
@@ -599,3 +597,24 @@ the bounded recovery packet.
 
 Rollback boundary: revert only this session-sync batch; retain recovery
 dispatch `b224015f8`, blocked closure `d69b6d7b3`, and all retained evidence.
+
+## Core Guard Self-Protection Authorization - UC-04B-R1 Blocked Closure Sync
+
+Authorized scope: synchronize material closure `eebc3f8ce` and route bounded
+auth-projection repair packet authoring only.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc04bR1BlockedClosure20260714.json`
+
+Operator authorization: continue the system-chain sequence after reviewer
+closure of the bounded R1 blocker.
+
+Rollback boundary: revert only this session-sync batch; retain material
+closure `eebc3f8ce`, recovery dispatch `b224015f8`, and all evidence.
