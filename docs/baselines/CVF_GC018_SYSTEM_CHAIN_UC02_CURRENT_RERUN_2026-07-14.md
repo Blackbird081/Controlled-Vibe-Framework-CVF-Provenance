@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: gc018_baseline
 
@@ -70,7 +70,7 @@ session, archive, provider, and public surfaces are read-only.
 | current UC-02 operational proof | invoke retained runner once | fresh receipt and diagnostic output | READY |
 | 9/9 complete denominator | fail closed below nine PASS events | call-level and event-level fields | READY |
 | diagnosis before retry | zero worker retries | failure diagnostic then stop | READY |
-| reverse projection | reviewer-owned only after accepted proof | coverage/GAP diff in closure | HOLD_FOR_REVIEWER |
+| reverse projection | reviewer-owned only after accepted proof | coverage/GAP diff in closure | PASS |
 | later use cases remain parked | no UC-03/UC-04 work | exact changed-set review | READY |
 
 ## Cost And Retry Control

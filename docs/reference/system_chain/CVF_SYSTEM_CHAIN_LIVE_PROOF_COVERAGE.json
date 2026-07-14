@@ -18,15 +18,15 @@
     },
     {
       "useCaseId": "UC-02-RUNTIME-TO-ENFORCEMENT-CURRENT-RUN",
-      "status": "BLOCKED_DIAGNOSED_REPAIR_REQUIRED",
+      "status": "PROVEN_BOUNDED",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
-      "observedProofClass": "LOCAL_DETERMINISTIC_EXECUTION",
+      "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
       "scope": "registry-driven CF-076 through CF-084 invocation chain",
       "selectionReason": "current map says connected, while cited per-checker PASS rows are historical rather than a retained current-run receipt",
       "providerCallRequired": false,
-      "latestEvidence": "docs/reviews/evidence/system-chain-uc02-current-run-2026-07-14.json",
-      "latestResult": "FAIL_BOOTSTRAP_0_OF_9",
-      "nextAction": "reconcile intentionally archived phase-governance artifacts with stale live-path consumers under a fresh bounded repair packet, then rerun UC-02"
+      "latestEvidence": "docs/reviews/evidence/system-chain-uc02-current-rerun-2026-07-14.json",
+      "latestResult": "PASS_BOOTSTRAP_9_OF_9",
+      "nextAction": "retain this bounded proof; repair downstream generated Markdown conformance separately without rerunning UC-02"
     },
     {
       "useCaseId": "UC-03-CONTRACT-TO-RUNTIME-REPRESENTATIVE-PATH",
@@ -76,11 +76,11 @@
       "semanticVerdict": "PROVEN_CONNECTED_VIA_DATA_DRIVEN_REGISTRY",
       "liveApplicability": "RUNTIME_LIVE_REQUIRED",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
-      "observedProofClass": "LOCAL_DETERMINISTIC_EXECUTION",
-      "operationalProofStatus": "STALE",
-      "reason": "the chain edge remains source-proven, but the current UC-02 attempt stopped at the shared bootstrap because intentionally archived phase-governance artifacts still have stale live-path consumers; no scenario executed",
-      "nextUseCase": "UC-02-RUNTIME-TO-ENFORCEMENT-CURRENT-RUN",
-      "nextAction": "repair the archive-to-consumer path contract under a fresh bounded packet, then rerun the retained UC-02 proof runner and require 9/9 before upgrading STALE"
+      "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
+      "operationalProofStatus": "PROVEN",
+      "reason": "the repaired shared bootstrap passed once and the retained registry-driven UC-02 runner recorded CF-076 through CF-084 as nine of nine PASS in one current invocation",
+      "nextUseCase": "UC-03-CONTRACT-TO-RUNTIME-REPRESENTATIVE-PATH",
+      "nextAction": "retain the bounded receipt; treat downstream generated-artifact conformance as a separate GAP and do not rerun UC-02 for that repair"
     },
     {
       "laneId": "ENFORCEMENT_TO_EVIDENCE",

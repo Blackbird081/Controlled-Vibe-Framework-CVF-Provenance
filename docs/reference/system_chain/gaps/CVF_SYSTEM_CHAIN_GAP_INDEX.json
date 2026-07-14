@@ -2,11 +2,12 @@
   "schemaVersion": "cvf.system_chain_gap_index.v1",
   "generatedBy": "governance/compat/generate_as_built_system_catalog.py",
   "sourceDir": "docs/reference/system_chain/gaps/entries/",
-  "gapCount": 8,
+  "gapCount": 9,
   "countsByStatus": {
     "VALUE_PARKED_WITH_REOPEN_CONDITIONS": 1,
     "PARTIAL_CHAIN_WITH_BOUNDARY": 1,
-    "IMPLEMENTED_NOT_INVOCATION_PROVEN": 1,
+    "CLOSED_WITH_EVIDENCE": 1,
+    "OPEN_CONFIRMED_GAP": 1,
     "ACTIVE_OWNER_CREATED_WITH_BOUNDARY": 4,
     "EVIDENCED_NOT_OPERATOR_VISIBLE": 1
   },
@@ -96,7 +97,7 @@
       "sourceOwner": "scripts/run_cvf_packet_posture_state_bootstrap.py",
       "targetOwner": "scripts/export_cvf_release_packet.py; scripts/run_cvf_remediation_export_conformance.py; scripts/export_cvf_remediation_receipt_log.py; scripts/runtime_evidence_manifest/fixtures.py; scripts/runtime_evidence_manifest/baselines.py",
       "missingEdge": "The packet-posture bootstrap is implemented, but current invocation cannot reach CF-076 through CF-084 because consumer scripts still require two phase-governance artifacts at former live paths after those artifacts were intentionally moved into archive.",
-      "currentStatus": "IMPLEMENTED_NOT_INVOCATION_PROVEN",
+      "currentStatus": "CLOSED_WITH_EVIDENCE",
       "proofClass": "LOCAL_RUNTIME_VERIFIED_EDGE",
       "citations": [
         {
@@ -110,7 +111,7 @@
           "evidenceRole": "evidence that both source artifacts were moved intentionally"
         }
       ],
-      "impact": "UC-02 remains operationally STALE: the real current run produced a bootstrap failure and zero of nine scenarios executed. The semantic registry-to-checker edge is not downgraded by this finding.",
+      "impact": "Closed: the repaired bootstrap passed once and the retained UC-02 runner recorded nine of nine scenario PASS results. The semantic registry-to-checker edge is operationally PROVEN bounded.",
       "closeCondition": {
         "conditionKind": "MEASURED_THRESHOLD_CROSSED",
         "conditionText": "A governed repair reconciles the archive authority with all current consumers and the retained UC-02 proof runner then records bootstrap PASS and nine of nine scenario PASS results."
@@ -119,7 +120,7 @@
         "conditionKind": "PATTERN_OBSERVED_ON_NAMED_SURFACE",
         "conditionText": "Reopen if a later packet-posture bootstrap or release evidence consumer again resolves an archived phase-governance artifact through a nonexistent live path."
       },
-      "actionOwner": "SCLP-UC02 bootstrap archive-path reconciliation repair tranche",
+      "actionOwner": "CLOSED_BY_SCLP_UC02_R2_CURRENT_RERUN",
       "freshnessInputs": [
         "docs/reviews/cvf_phase_governance/archive/CVF_ARCHIVE_INDEX.md",
         "scripts/run_cvf_packet_posture_state_bootstrap.py",
@@ -131,7 +132,53 @@
       ],
       "lastReviewed": {
         "date": "2026-07-14",
-        "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC02_RUNTIME_TO_ENFORCEMENT_CURRENT_RUN_COMPLETION_2026-07-14.md"
+        "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC02_CURRENT_RERUN_COMPLETION_2026-07-14.md"
+      }
+    },
+    {
+      "stableId": "cvf.asc.gap.phase_governance_generated_markdown_conformance.v1",
+      "entityType": "GAP",
+      "sourcePlaneId": "cvf.asc.plane.enforcement_to_evidence.v1",
+      "targetPlaneId": "cvf.asc.plane.evidence_to_operator_surface.v1",
+      "sourceOwner": "scripts/runtime_evidence_manifest/baselines.py; scripts/runtime_evidence_manifest/manifest_builder.py; scripts/export_cvf_release_packet.py",
+      "targetOwner": "docs/reviews/cvf_phase_governance/*.md",
+      "missingEdge": "Twelve current phase-governance Markdown outputs generated during the repaired bootstrap do not satisfy current governed Markdown structure, checker-read-ahead, dispatch-range, or ASCII encoding controls.",
+      "currentStatus": "OPEN_CONFIRMED_GAP",
+      "proofClass": "EXECUTED_AND_EVIDENCED_EDGE",
+      "citations": [
+        {
+          "path": "docs/reviews/CVF_SYSTEM_CHAIN_UC02_CURRENT_RERUN_COMPLETION_2026-07-14.md",
+          "lineOrSection": "Findings / Position",
+          "evidenceRole": "reviewer-reconciled downstream generator-conformance finding"
+        },
+        {
+          "path": "docs/reviews/CVF_SYSTEM_CHAIN_UC02_RUNTIME_TO_ENFORCEMENT_RERUN_WORKER_RETURN_2026-07-14.md",
+          "lineOrSection": "Command Evidence",
+          "evidenceRole": "worker-observed reviewer-fast failures after successful UC-02 execution"
+        }
+      ],
+      "impact": "Blocks clean governed admission of the regenerated Markdown outputs, but does not invalidate the separately retained UC-02 9/9 runtime-to-enforcement receipt.",
+      "closeCondition": {
+        "conditionKind": "NAMED_ARTIFACT_ACCEPTED",
+        "conditionText": "A separate governed repair updates the three actual renderer owners, regenerates the twelve Markdown outputs without rerunning UC-02, and passes reviewer-fast plus closure gates."
+      },
+      "reopenCondition": {
+        "conditionKind": "PATTERN_OBSERVED_ON_NAMED_SURFACE",
+        "conditionText": "Reopen if a later phase-governance generator run emits a governed Markdown output that fails current structural, checker-read-ahead, range-fidelity, or ASCII controls."
+      },
+      "actionOwner": "future SCLP-UC02-R3 generator-conformance repair tranche",
+      "freshnessInputs": [
+        "scripts/runtime_evidence_manifest/baselines.py",
+        "scripts/runtime_evidence_manifest/manifest_builder.py",
+        "scripts/export_cvf_release_packet.py",
+        "governance/compat/check_markdown_structural_completeness.py",
+        "governance/compat/check_governed_artifact_checker_read_ahead.py",
+        "governance/compat/check_work_order_dispatch_quality.py",
+        "governance/compat/check_agent_packet_authority_and_encoding.py"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-14",
+        "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC02_CURRENT_RERUN_COMPLETION_2026-07-14.md"
       }
     },
     {

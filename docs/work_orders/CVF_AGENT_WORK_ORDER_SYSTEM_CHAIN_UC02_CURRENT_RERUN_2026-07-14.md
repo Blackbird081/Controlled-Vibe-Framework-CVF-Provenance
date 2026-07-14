@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -436,6 +436,32 @@ A 9/9 result may prove only that the canonical CF-076 through CF-084 chain
 executed successfully in the recorded local environment and evidence window.
 It does not prove provider governance, all CVF controls, production, public
 readiness, scale, certification, or user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired GC-018 | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | system-chain live-proof roadmap | UC-02 proven; renderer repair required | PASS |
+| Registry JSON | coverage and GAP index | UC-02 PROVEN; renderer GAP open | PASS |
+| Registry Markdown | GAP README | reverse projection reconciled | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | repository/runtime evidence only | N/A with reason |
+| System loop interlock | fresh rerun receipt | bootstrap PASS; 9/9 PASS | PASS |
+| Session continuity | active session state | separate post-material synchronization | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Proof invocation | exactly one | 1 | PASS |
+| Bootstrap | PASS once | PASS once | PASS |
+| Scenario denominator | 9 | 9 | PASS |
+| Scenario result | 9/9 PASS | 9/9 PASS | PASS |
+| Worker retry count | 0 | 0 | PASS |
+| Provider calls | 0 | 0 | PASS |
+| Diagnostic | JSON `null` on PASS | `null` | PASS |
 
 ## Agent Operation Trace Block
 

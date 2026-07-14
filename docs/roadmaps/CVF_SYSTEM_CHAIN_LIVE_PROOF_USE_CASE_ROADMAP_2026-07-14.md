@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC02_BLOCKED_REPAIR_REQUIRED
+Status: ACTIVE_UC02_PROVEN_GENERATOR_REPAIR_REQUIRED
 
 docType: roadmap
 
@@ -65,7 +65,7 @@ and reopen decisions.
 |---|---|---|---|
 | Doctrine to Contract | static recomputation | not applicable to live invocation | preserve semantic review; no live use case |
 | Contract to Runtime | runtime invocation | partial | UC-03 |
-| Runtime to Enforcement | runtime invocation | stale current-run evidence | UC-02, first |
+| Runtime to Enforcement | runtime invocation | proven bounded current-run evidence | UC-02 complete; generator conformance follow-up separate |
 | Enforcement to Evidence | static recomputation | not applicable to live invocation | preserve deterministic path audit |
 | Evidence to Operator Surface | operator-surface invocation | missing | UC-04 |
 
@@ -88,7 +88,7 @@ proof for any row above.
 | Tranche | Objective | Required output | Stop condition |
 |---|---|---|---|
 | T0 | establish the durable proof and learning process | standard, coverage ledger, roadmap, front-door link | process artifacts pass governed checks |
-| T1 / UC-02 | execute the real registry-driven CF-076 through CF-084 chain | current aggregate and nine per-scenario results, diagnostics, ledger update | `BLOCKED_DIAGNOSED_REPAIR_REQUIRED`: shared bootstrap failed before scenario execution because archived evidence owners and stale live-path consumers disagree |
+| T1 / UC-02 | execute the real registry-driven CF-076 through CF-084 chain | current aggregate and nine per-scenario results, diagnostics, ledger update | `PROVEN_BOUNDED`: repaired bootstrap PASS once and CF-076 through CF-084 PASS 9/9; downstream generated Markdown conformance routes to a separate repair without UC-02 rerun |
 | T2 / UC-03 | prove one representative active caller-backed contract-to-runtime path | source-verified caller chain, focused negative, current invocation receipt | do not select GC-009/GC-010 while no active caller is proven |
 | T3 / UC-04A | prove current CLI operator readout | real CLI output, receipt path, usability and failure evidence | stop after aggregate and one meaningful failure/readout boundary |
 | T4 / UC-04B | prove the bounded Web Operations subset | real development runtime, selected job execution, visible outcome | no unified 186-checker claim and no provider call unless selected job asserts AI governance behavior |
