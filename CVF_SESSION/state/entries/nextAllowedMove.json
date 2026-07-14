@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1769,
+  "stateOrder": 1771,
   "stateKey": "nextAllowedMove",
-  "value": "SCLP-UC02-R3 closed CLOSED_PASS_BOUNDED at material commit 36aefceab. Three renderer owners are repaired, twenty outputs are current, twelve governed Markdown outputs are conformant, and the renderer GAP is CLOSED_WITH_EVIDENCE. Next allowed move is a bounded semantic reconciliation of the system-chain roadmap so its status, claim boundary, and next-move text reflect the accepted UC-02 and renderer closure. Do not author or execute UC-03 until that reconciliation commits and session state is refreshed. UC-04 remains held. Public, production, scale, universal, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave."
+  "value": "UC-02 and its downstream renderer repair are closed with evidence at material commits 9173af70b and 36aefceab; roadmap reconciliation committed at ed4052a27. Next allowed move is authoring one fresh bounded GC-018 and source-verified work order for UC-03 route selection only: one representative active caller-backed Contract-to-Runtime path. Do not select GC-009 or GC-010 without a source-proven active caller, and do not execute UC-03 before dispatch review. UC-04 remains held. Public, production, scale, universal, and user-value claims remain unavailable. LHW24 remains latest closed numbered LHW wave."
 }

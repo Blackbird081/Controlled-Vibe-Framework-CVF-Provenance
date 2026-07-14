@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=reconcile the system-chain roadmap with accepted UC-02/R3 closure before UC-03 packet authoring; parked checkpoint=UC-03 execution, UC-04 dispatch, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc02_closed_uc03_packet_authoring_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one bounded GC-018 and source-verified UC-03 route-selection work order; parked checkpoint=UC-03 execution, UC-04 dispatch, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
+Current mode marker: `system_chain_uc02_closed_uc03_packet_authoring_next`
 
-Current mode: `system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
+Current mode: `system_chain_uc02_closed_uc03_packet_authoring_next`
 
-`system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
+`system_chain_uc02_closed_uc03_packet_authoring_next`
 
 Previous mode:
 
-`system_chain_uc02_renderer_repair_dispatched_worker_next`
+`system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain roadmap post-UC-02 reconciliation | `ed4052a27` | RECONCILED; UC-02 and renderer repair closed, UC-03 packet authoring next, UC-04 held; no new execution claim. |
 | System-chain UC-02 renderer-conformance repair closure | `36aefceab` | CLOSED_PASS_BOUNDED; three owners repaired, 20 outputs current, 12/12 Markdown conformant, 5/5 and 15/15 tests PASS, renderer GAP closed; zero UC-02/scenario/provider calls. |
 | System-chain UC-02 renderer-conformance repair dispatch | `9078fec00` | DISPATCH_READY; exact three template owners, one focused test, 20 enumerated release-gate outputs, one no-commit worker return; zero UC-02/scenario/provider calls; pre-dispatch 75/75 and pre-commit 83/83 PASS. |
 | System-chain UC-02 repaired current rerun closure | `9173af70b` | CLOSED_PASS_BOUNDED; bootstrap PASS once, CF-076 through CF-084 PASS 9/9, coverage PROVEN, archive-path GAP closed; separate generated-Markdown renderer GAP open; no rerun/provider call. |
@@ -175,12 +176,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc02_renderer_repair_closed_roadmap_reconciliation_next`
+Mode: `system_chain_uc02_closed_uc03_packet_authoring_next`
 
-SCLP-UC02-R3 closed at `36aefceab`. The next allowed move is one bounded
-roadmap semantic reconciliation so status, claim boundary, and next-move text
-reflect accepted UC-02 and renderer closure. UC-03 packet authoring remains
-held until that correction commits and state is refreshed. UC-04 remains held.
+UC-02 and its renderer repair are closed, and the roadmap is reconciled at
+`ed4052a27`. The next allowed move is authoring one bounded GC-018 and
+source-verified UC-03 route-selection work order. Do not execute UC-03 before
+dispatch review. UC-04 remains held.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
