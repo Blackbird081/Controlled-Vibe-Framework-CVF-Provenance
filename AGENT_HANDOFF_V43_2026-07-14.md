@@ -19,9 +19,9 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_blocked_archive_path_repair_packet_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
-fresh bounded archive-to-consumer path reconciliation repair packet; parked checkpoint=UC-02 rerun, UC-03/UC-04 dispatch,
+Startup acknowledged: current mode=`system_chain_uc02_archive_path_repair_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one
+no-commit worker executes the committed archive-path reconciliation packet with focused tests only; parked checkpoint=real bootstrap, UC-02 rerun, UC-03/UC-04 dispatch,
 public export, production, scale, universal
 enforcement, and user validation.
 
@@ -38,14 +38,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc02_blocked_archive_path_repair_packet_next`
+`system_chain_uc02_archive_path_repair_dispatched_worker_next`
 
 ## Active Boundary
 
-- Active material closure commit: `7619d807a`.
+- Active dispatch commit: `7edfc7f13`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: UC-02 archive/live path repair packet authoring.
-- Next permitted value lane: source-verify and dispatch the bounded repair only.
+- Active work queue: UC-02 archive/live path repair worker execution.
+- Next permitted value lane: exact no-commit manifest and focused fake-subprocess tests only.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -58,6 +58,12 @@ path defect is registered as
 `cvf.asc.gap.packet_posture_bootstrap_archive_path_drift.v1`. Do not copy
 archived files back or rerun UC-02 until a fresh source-verified repair resolves
 authority and changes the expected result.
+
+The archive-path repair packet is dispatch-ready at material commit
+`7edfc7f13`. It keeps accepted historical inputs in the archive, keeps current
+generated outputs at live owners, and requires release-gate-once ordering
+before both downstream packet families. Worker execution must use focused
+fake-subprocess tests and make zero real bootstrap, UC-02, or provider calls.
 
 UC-02 dispatch is ready at material commit `9f2fdc210`. The packet authorizes
 one no-commit worker to produce a current CF-076 through CF-084 registry-driven
@@ -105,10 +111,11 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Author a fresh GC-018 and source-verified work order for bounded
-archive-to-consumer path reconciliation. Preserve the archived authority until
-the repair packet decides ownership. Rerun the retained UC-02 runner only after
-accepted result-changing repair; UC-03 and UC-04 remain held.
+Execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_ARCHIVE_PATH_RECONCILIATION_2026-07-14.md`
+with one no-commit worker. Preserve the archived authority and generated-output
+ownership. Rerun the retained UC-02 runner only after reviewer-accepted
+result-changing repair; UC-03 and UC-04 remain held.
 
 ## Parked Checkpoint
 
@@ -131,6 +138,8 @@ System-chain live-proof process HEAD: `e4a585b8c`
 UC-02 dispatch HEAD: `9f2fdc210`
 
 UC-02 blocked closure HEAD: `7619d807a`
+
+UC-02 archive-path repair dispatch HEAD: `7edfc7f13`
 
 Session-sync closure HEAD: `946ae2a61`
 
@@ -194,6 +203,26 @@ review the completed no-commit UC-02 worker return.
 
 Rollback boundary: revert only this session-sync batch; retain material commit
 `7619d807a`, dispatch commit `9f2fdc210`, and all retained evidence.
+
+## Core Guard Self-Protection Authorization - UC-02 Repair Dispatch Sync
+
+Authorized scope: synchronize archive-path repair dispatch commit `7edfc7f13`
+and its exact no-commit worker boundary.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc02ArchivePathRepairDispatch20260714.json`
+
+Operator authorization: continue after the UC-02 bounded blocker.
+
+Rollback boundary: revert only this session-sync batch; retain repair dispatch
+commit `7edfc7f13`, blocked closure `7619d807a`, and retained evidence.
 
 Remote tracking branch: `origin/main`
 

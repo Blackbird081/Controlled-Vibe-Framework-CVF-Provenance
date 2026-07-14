@@ -83,8 +83,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc02_blocked_archive_path_repair_packet_next",
-  "previousMode": "system_chain_uc02_dispatched_worker_execution_next",
+  "currentMode": "system_chain_uc02_archive_path_repair_dispatched_worker_next",
+  "previousMode": "system_chain_uc02_blocked_archive_path_repair_packet_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11591,5 +11591,17 @@
     "nextAllowedMove": "author fresh GC-018 and source-verified archive-to-consumer path reconciliation repair packet",
     "claimBoundary": "The current invocation proves a shared-bootstrap archive/live path defect, not UC-02 operational success; no retry, provider call, UC-03/UC-04 dispatch, public, production, scale, universal, or user-value claim."
   },
-  "nextAllowedMove": "UC-02 bounded blocked closure is retained at material commit 7619d807a: bootstrap FAIL, zero of nine scenarios executed, and runtime-to-enforcement operational proof remains STALE. Next allowed move is authoring a fresh GC-018 and source-verified archive-to-consumer path reconciliation work order; do not restore archived files without authority resolution and do not rerun UC-02 until a result-changing repair is accepted. UC-03 and UC-04 remain held. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc02ArchivePathRepairDispatch20260714": {
+    "status": "DISPATCH_READY",
+    "dispatchCommit": "7edfc7f13",
+    "gc018": "docs/baselines/CVF_GC018_SYSTEM_CHAIN_UC02_ARCHIVE_PATH_RECONCILIATION_2026-07-14.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_ARCHIVE_PATH_RECONCILIATION_2026-07-14.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "plannedRealBootstrapCalls": 0,
+    "plannedUc02ProofCalls": 0,
+    "plannedProviderCalls": 0,
+    "nextAllowedMove": "one no-commit worker executes the committed repair manifest and focused fake-subprocess tests",
+    "claimBoundary": "Dispatch proves source-verified repair authorization only; coverage remains STALE, the GAP remains open, and UC-02 operational success is not claimed."
+  },
+  "nextAllowedMove": "UC-02 archive-path reconciliation dispatch is committed at 7edfc7f13. Next allowed move is one no-commit worker executing docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_ARCHIVE_PATH_RECONCILIATION_2026-07-14.md with focused fake-subprocess tests only. Do not run the real packet-posture bootstrap, release gate, UC-02 proof runner, or any provider call. Reviewer acceptance is required before a later single UC-02 rerun; UC-03 and UC-04 remain held. Coverage remains STALE and the archive-path GAP remains open. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
 }

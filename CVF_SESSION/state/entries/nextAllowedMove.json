@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1757,
+  "stateOrder": 1759,
   "stateKey": "nextAllowedMove",
-  "value": "UC-02 bounded blocked closure is retained at material commit 7619d807a: bootstrap FAIL, zero of nine scenarios executed, and runtime-to-enforcement operational proof remains STALE. Next allowed move is authoring a fresh GC-018 and source-verified archive-to-consumer path reconciliation work order; do not restore archived files without authority resolution and do not rerun UC-02 until a result-changing repair is accepted. UC-03 and UC-04 remain held. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
+  "value": "UC-02 archive-path reconciliation dispatch is committed at 7edfc7f13. Next allowed move is one no-commit worker executing docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_ARCHIVE_PATH_RECONCILIATION_2026-07-14.md with focused fake-subprocess tests only. Do not run the real packet-posture bootstrap, release gate, UC-02 proof runner, or any provider call. Reviewer acceptance is required before a later single UC-02 rerun; UC-03 and UC-04 remain held. Coverage remains STALE and the archive-path GAP remains open. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
 }

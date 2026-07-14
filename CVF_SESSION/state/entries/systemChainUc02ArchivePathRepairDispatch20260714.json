@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1758,
+  "stateKey": "systemChainUc02ArchivePathRepairDispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "dispatchCommit": "7edfc7f13",
+    "gc018": "docs/baselines/CVF_GC018_SYSTEM_CHAIN_UC02_ARCHIVE_PATH_RECONCILIATION_2026-07-14.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_ARCHIVE_PATH_RECONCILIATION_2026-07-14.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "plannedRealBootstrapCalls": 0,
+    "plannedUc02ProofCalls": 0,
+    "plannedProviderCalls": 0,
+    "nextAllowedMove": "one no-commit worker executes the committed repair manifest and focused fake-subprocess tests",
+    "claimBoundary": "Dispatch proves source-verified repair authorization only; coverage remains STALE, the GAP remains open, and UC-02 operational success is not claimed."
+  }
+}
