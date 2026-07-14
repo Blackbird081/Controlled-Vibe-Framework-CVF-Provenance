@@ -19,12 +19,11 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04a_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute the
-committed SCLP-UC04A-T3 packet once with a no-commit worker; parked
-checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010
-promotion, UC-04B Web, public export, production, scale, universal enforcement,
-and user validation.
+Startup acknowledged: current mode=`system_chain_uc04a_blocked_recovery_packet_authoring_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
+positive-only UC-04A-R1 recovery packet; parked checkpoint=UC-03 harness
+identity repair until its reuse trigger, GC-009/GC-010 promotion, UC-04B Web,
+public export, production, scale, universal enforcement, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -39,15 +38,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04a_dispatched_worker_next`
+`system_chain_uc04a_blocked_recovery_packet_authoring_next`
 
 ## Active Boundary
 
-- Active UC-04A dispatch commit: `f48430d7d`.
+- Active UC-04A blocked closure commit: `da93a4b73`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: one no-commit SCLP-UC04A-T3 worker execution.
-- Next permitted value lane: source-refresh the autorun CLI, pass focused
-  tests, then run one harness with exactly two local CLI calls and zero retry.
+- Active work queue: UC-04A-R1 positive-only recovery packet authoring.
+- Next permitted value lane: reuse retained negative evidence and authorize one
+  direct positive pre-dispatch CLI call; do not execute before dispatch review.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -116,6 +115,13 @@ makes exactly two local CLI calls with stable case IDs: a successful
 closure-finality boundary. Retry, provider calls, CLI-owner edits, UC-04B Web,
 and unified all-checker inventory claims are forbidden.
 
+The first UC-04A attempt closed `CLOSED_BLOCKED_BOUNDED` at material commit
+`da93a4b73`. The negative range/finality case passed. The positive case failed
+73/75 only because the dispatch packet named a new protected focused-test path
+without a dispatch-time authorization carrier. ADIF-0033 records this
+orchestrator packet gap. The runner, 39/39 focused tests, stable case IDs, and
+negative PASS are retained; recovery must make only one positive CLI call.
+
 SOT3-ACT-A5R1 and the activation roadmap closed at material commit
 `62ab80ab4`. The development import-chain repair explicitly selects Webpack,
 the zero-provider real-dev regression passes, and the one canonical release
@@ -150,10 +156,10 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Execute the committed SCLP-UC04A-T3 work order once with a no-commit worker.
-Require clean execution base, source refresh, focused tests before one harness
-invocation, exactly two stable-identity CLI cases, zero retries, zero provider
-calls, and a return for reviewer disposition. UC-04B Web remains held.
+Author one fresh bounded UC-04A-R1 GC-018 and source-verified recovery work
+order only. Reuse committed evidence, authorize exactly one positive
+pre-dispatch CLI call, zero retries/provider calls, and no new protected path.
+Do not execute before dispatch review. UC-04B Web remains held.
 
 ## Parked Checkpoint
 
@@ -195,10 +201,12 @@ UC-03 material closure HEAD: `7a8f7268f`
 
 UC-04A dispatch HEAD: `f48430d7d`
 
-Session-sync closure HEAD: `f48430d7d`
+UC-04A blocked closure HEAD: `da93a4b73`
 
-The current in-place handoff-sync commit has the UC-04A dispatch HEAD above as
-its parent. SOT3 material closure remains anchored at `62ab80ab4`.
+Session-sync closure HEAD: `da93a4b73`
+
+The current in-place handoff-sync commit has the UC-04A blocked closure HEAD
+above as its parent. SOT3 material closure remains anchored at `62ab80ab4`.
 
 ## Core Guard Self-Protection Authorization - System Chain Live Proof Session Sync
 
@@ -464,3 +472,24 @@ Operator authorization: continue the system-chain use-case sequence.
 
 Rollback boundary: revert only this session-sync batch; retain material
 dispatch `f48430d7d`, UC-03 closure `7a8f7268f`, and all prior evidence.
+
+## Core Guard Self-Protection Authorization - UC-04A Blocked Closure Sync
+
+Authorized scope: synchronize accepted blocked material closure `da93a4b73`
+and route positive-only UC-04A-R1 packet authoring.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc04aBlockedClosure20260714.json`
+
+Operator authorization: continue the system-chain use-case sequence after
+reviewer blocker disposition.
+
+Rollback boundary: revert only this session-sync batch; retain blocked material
+closure `da93a4b73`, dispatch `f48430d7d`, and all retained evidence.
