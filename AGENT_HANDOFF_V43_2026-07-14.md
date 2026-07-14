@@ -19,9 +19,9 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_dispatched_worker_execution_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one bounded
-no-commit UC-02 worker execution; parked checkpoint=UC-03/UC-04 dispatch,
+Startup acknowledged: current mode=`system_chain_uc02_blocked_archive_path_repair_packet_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
+fresh bounded archive-to-consumer path reconciliation repair packet; parked checkpoint=UC-02 rerun, UC-03/UC-04 dispatch,
 public export, production, scale, universal
 enforcement, and user validation.
 
@@ -38,18 +38,26 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc02_dispatched_worker_execution_next`
+`system_chain_uc02_blocked_archive_path_repair_packet_next`
 
 ## Active Boundary
 
-- Active material process commit: `e4a585b8c`.
+- Active material closure commit: `7619d807a`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: one no-commit UC-02 worker execution.
-- Next permitted value lane: execute the committed UC-02 work order only.
+- Active work queue: UC-02 archive/live path repair packet authoring.
+- Next permitted value lane: source-verify and dispatch the bounded repair only.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
 ## Latest Work / Changes
+
+UC-02 closed `CLOSED_BLOCKED_BOUNDED` at material commit `7619d807a`. The real
+proof runner reached the shared bootstrap once, which failed before all nine
+CF-076 through CF-084 scenarios. Coverage remains `STALE`; the archive/live
+path defect is registered as
+`cvf.asc.gap.packet_posture_bootstrap_archive_path_drift.v1`. Do not copy
+archived files back or rerun UC-02 until a fresh source-verified repair resolves
+authority and changes the expected result.
 
 UC-02 dispatch is ready at material commit `9f2fdc210`. The packet authorizes
 one no-commit worker to produce a current CF-076 through CF-084 registry-driven
@@ -97,9 +105,10 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Execute the committed UC-02 work order once with a no-commit worker and return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Preserve the exact SOT3
-bounded claim; UC-03 and UC-04 remain undispatched.
+Author a fresh GC-018 and source-verified work order for bounded
+archive-to-consumer path reconciliation. Preserve the archived authority until
+the repair packet decides ownership. Rerun the retained UC-02 runner only after
+accepted result-changing repair; UC-03 and UC-04 remain held.
 
 ## Parked Checkpoint
 
@@ -120,6 +129,8 @@ Material closure HEAD: `62ab80ab4`
 System-chain live-proof process HEAD: `e4a585b8c`
 
 UC-02 dispatch HEAD: `9f2fdc210`
+
+UC-02 blocked closure HEAD: `7619d807a`
 
 Session-sync closure HEAD: `946ae2a61`
 
@@ -162,3 +173,30 @@ Operator authorization: continue through the next allowed UC-02 packet lane.
 
 Rollback boundary: revert only this sync batch; retain dispatch commit
 `9f2fdc210`.
+
+## Core Guard Self-Protection Authorization - UC-02 Blocked Closure Sync
+
+Authorized scope: synchronize UC-02 blocked material closure commit
+`7619d807a` and its next repair-packet boundary.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc02BlockedClosure20260714.json`
+
+Operator authorization: continue the system-chain live-proof sequence and
+review the completed no-commit UC-02 worker return.
+
+Rollback boundary: revert only this session-sync batch; retain material commit
+`7619d807a`, dispatch commit `9f2fdc210`, and all retained evidence.
+
+Remote tracking branch: `origin/main`
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.

@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc02_dispatched_worker_execution_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=one no-commit UC-02 worker execution; parked checkpoint=UC-03/UC-04 dispatch, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc02_blocked_archive_path_repair_packet_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author a fresh bounded archive-to-consumer path reconciliation repair packet; parked checkpoint=UC-02 rerun until repair, UC-03/UC-04 dispatch, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc02_dispatched_worker_execution_next`
+Current mode marker: `system_chain_uc02_blocked_archive_path_repair_packet_next`
 
-Current mode: `system_chain_uc02_dispatched_worker_execution_next`
+Current mode: `system_chain_uc02_blocked_archive_path_repair_packet_next`
 
-`system_chain_uc02_dispatched_worker_execution_next`
+`system_chain_uc02_blocked_archive_path_repair_packet_next`
 
 Previous mode:
 
-`system_chain_live_proof_process_established_uc02_packet_next`
+`system_chain_uc02_dispatched_worker_execution_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-02 bounded blocked closure | `7619d807a` | CLOSED_BLOCKED_BOUNDED; shared bootstrap FAIL, 0/9 scenarios executed, coverage remains STALE; archive/live path GAP registered; fresh repair packet only next. |
 | System-chain UC-02 current-run dispatch | `9f2fdc210` | DISPATCH_READY; one no-commit worker; exact CF-076 through CF-084 registry-driven proof; no provider or existing checker mutation. |
 | System-chain live-proof and learning-loop T0 | `e4a585b8c` | T0 process established; five lanes classified orthogonally; SOT3 retained as UC-01 only; freshness checker enforces coverage ledger alignment; UC-02 packet authoring next, with execution still undispatched. |
 | SOT3 activation A5R1 and roadmap closure | `62ab80ab4` | CLOSED_PASS_BOUNDED; canonical release PASS with SOT3 PASS, 19 negative rows, 18 zero-call rows, six external Alibaba calls across one invocation, and exact claim `LIVE_GOVERNANCE_PROVEN_BOUNDED`; operator-authorized role collapse disclosed. |
@@ -168,15 +169,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc02_dispatched_worker_execution_next`
+Mode: `system_chain_uc02_blocked_archive_path_repair_packet_next`
 
-SOT3 activation remains closed at material commit `62ab80ab4` with exact claim
-`LIVE_GOVERNANCE_PROVEN_BOUNDED`. The system-chain live-proof process is
-established at `e4a585b8c`. The next allowed move is authoring a fresh UC-02
-GC-018 and source-verified work order for one current registry-driven CF-076
-through CF-084 invocation. The roadmap alone does not authorize execution.
-UC-03 and UC-04 remain undispatched. Public export, production, scale,
-universal enforcement, and user validation remain unclaimed.
+UC-02 closed blocked at material commit `7619d807a`: the shared bootstrap
+failed before all nine scenarios, so operational proof remains `STALE`. The
+next allowed move is authoring a fresh GC-018 and source-verified repair work
+order for archive-to-consumer path reconciliation. Do not restore archived
+files without resolving authority, and do not rerun UC-02 until a
+result-changing repair is accepted. UC-03 and UC-04 remain held. Public
+export, production, scale, universal enforcement, and user validation remain
+unclaimed.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

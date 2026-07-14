@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_uc02_dispatched_worker_execution_next",
+  "currentMode": "system_chain_uc02_blocked_archive_path_repair_packet_next",
   "activeHandoff": "AGENT_HANDOFF_V43_2026-07-14.md",
-  "nextAllowedMove": "UC-02 dispatch is ready at material commit 9f2fdc210. Next allowed move is one no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_RUNTIME_TO_ENFORCEMENT_CURRENT_RUN_2026-07-14.md, returning COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. UC-03 and UC-04 remain undispatched. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "UC-02 bounded blocked closure is retained at material commit 7619d807a: bootstrap FAIL, zero of nine scenarios executed, and runtime-to-enforcement operational proof remains STALE. Next allowed move is authoring a fresh GC-018 and source-verified archive-to-consumer path reconciliation work order; do not restore archived files without authority resolution and do not rerun UC-02 until a result-changing repair is accepted. UC-03 and UC-04 remain held. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

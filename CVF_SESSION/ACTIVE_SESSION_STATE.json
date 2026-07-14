@@ -83,8 +83,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc02_dispatched_worker_execution_next",
-  "previousMode": "system_chain_live_proof_process_established_uc02_packet_next",
+  "currentMode": "system_chain_uc02_blocked_archive_path_repair_packet_next",
+  "previousMode": "system_chain_uc02_dispatched_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11580,5 +11580,16 @@
     "nextAllowedMove": "one bounded no-commit UC-02 worker execution",
     "claimBoundary": "Packet only; UC-02 current-run evidence not yet produced or accepted."
   },
-  "nextAllowedMove": "UC-02 dispatch is ready at material commit 9f2fdc210. Next allowed move is one no-commit worker execution of docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_RUNTIME_TO_ENFORCEMENT_CURRENT_RUN_2026-07-14.md, returning COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. UC-03 and UC-04 remain undispatched. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc02BlockedClosure20260714": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "7619d807a",
+    "completionReview": "docs/reviews/CVF_SYSTEM_CHAIN_UC02_RUNTIME_TO_ENFORCEMENT_CURRENT_RUN_COMPLETION_2026-07-14.md",
+    "receipt": "docs/reviews/evidence/system-chain-uc02-current-run-2026-07-14.json",
+    "result": "FAIL_BOOTSTRAP_0_OF_9",
+    "coverageStatus": "STALE",
+    "gapId": "cvf.asc.gap.packet_posture_bootstrap_archive_path_drift.v1",
+    "nextAllowedMove": "author fresh GC-018 and source-verified archive-to-consumer path reconciliation repair packet",
+    "claimBoundary": "The current invocation proves a shared-bootstrap archive/live path defect, not UC-02 operational success; no retry, provider call, UC-03/UC-04 dispatch, public, production, scale, universal, or user-value claim."
+  },
+  "nextAllowedMove": "UC-02 bounded blocked closure is retained at material commit 7619d807a: bootstrap FAIL, zero of nine scenarios executed, and runtime-to-enforcement operational proof remains STALE. Next allowed move is authoring a fresh GC-018 and source-verified archive-to-consumer path reconciliation work order; do not restore archived files without authority resolution and do not rerun UC-02 until a result-changing repair is accepted. UC-03 and UC-04 remain held. Public export, production, scale, universal enforcement, and user validation remain unclaimed. LHW24 remains latest closed numbered LHW wave."
 }
