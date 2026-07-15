@@ -4,7 +4,7 @@
   "standard": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_AND_LEARNING_LOOP_STANDARD.md",
   "sourceMap": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
   "lastReviewedDate": "2026-07-15",
-  "claimBoundary": "This ledger classifies live-proof applicability and current evidence for five generic CVF system-chain lanes. It preserves each source map verdict and does not treat SOT3 UC-01 as proof of any other lane.",
+  "claimBoundary": "This ledger classifies live-proof applicability and current evidence for five generic CVF system-chain lanes. It preserves each source map verdict and does not treat SOT3 UC-01 as proof of any other lane. SCLP-T5 (2026-07-15) reconciled all four use cases and five lanes, retained their bounded evidence states, and retired the stale UC-03 next-use-case pointer after UC-03 closure.",
   "useCases": [
     {
       "useCaseId": "UC-01-SOT3-BOUNDED-ACTIVATION",
@@ -88,7 +88,7 @@
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
       "operationalProofStatus": "PROVEN",
       "reason": "the repaired shared bootstrap passed once and the retained registry-driven UC-02 runner recorded CF-076 through CF-084 as nine of nine PASS in one current invocation",
-      "nextUseCase": "UC-03-CONTRACT-TO-RUNTIME-REPRESENTATIVE-PATH",
+      "nextUseCase": "NONE",
       "nextAction": "retain the bounded receipt; treat downstream generated-artifact conformance as a separate GAP and do not rerun UC-02 for that repair"
     },
     {

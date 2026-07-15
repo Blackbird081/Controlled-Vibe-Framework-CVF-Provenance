@@ -434,15 +434,16 @@
       },
       "reopenCondition": {
         "conditionKind": "OPERATOR_DECISION_RECORDED",
-        "conditionText": "Operator authorizes a Web checker-inventory tranche."
+        "conditionText": "Reopen only when (a) an operator-authorized product or release requirement names Web-surfaced visibility for a specific additional checker or checker family beyond the current bounded five-job-type subset, or (b) a governed packet materially expands the Web job-type registry (EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts) beyond its current five entries for reasons other than this GAP. Operator interest alone, without a named product/release requirement or a materially expanded job registry, is insufficient."
       },
-      "actionOwner": "PARKED_WITH_REASON: explicit future gap per R91 Lane 5; not authorized by this wave",
+      "actionOwner": "PARKED_WITH_REASON: explicit future gap per R91 Lane 5; not authorized by this wave; strengthened concrete reopen trigger recorded by SCLP-T5",
       "freshnessInputs": [
-        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json"
+        "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts"
       ],
       "lastReviewed": {
-        "date": "2026-07-11",
-        "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
+        "date": "2026-07-15",
+        "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_T5_FINAL_SEQUENCE_CLOSURE_COMPLETION_2026-07-15.md"
       }
     },
     {

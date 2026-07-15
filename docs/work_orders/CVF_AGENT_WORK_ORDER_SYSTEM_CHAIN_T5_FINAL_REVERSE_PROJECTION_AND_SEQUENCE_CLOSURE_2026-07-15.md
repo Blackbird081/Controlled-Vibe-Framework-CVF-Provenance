@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -78,6 +78,22 @@ Allowed scope:
   unified-Web-inventory GAP, and generated GAP index;
 - repair stale statements only when direct committed evidence supports them;
 - close or value-park every remaining branch with a concrete reopen condition.
+
+Reviewer closure scope additionally includes these exact paths required by the
+declared Reviewer Closure Conversion:
+
+- `docs/baselines/CVF_GC018_SYSTEM_CHAIN_T5_FINAL_REVERSE_PROJECTION_AND_SEQUENCE_CLOSURE_2026-07-15.md`;
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_T5_FINAL_REVERSE_PROJECTION_AND_SEQUENCE_CLOSURE_2026-07-15.md`;
+- `docs/reviews/CVF_SYSTEM_CHAIN_T5_FINAL_REVERSE_PROJECTION_AUDIT_2026-07-15.md`;
+- `docs/reviews/CVF_SYSTEM_CHAIN_T5_WORKER_RETURN_2026-07-15.md`;
+- `docs/reviews/CVF_SYSTEM_CHAIN_T5_FINAL_SEQUENCE_CLOSURE_COMPLETION_2026-07-15.md`;
+- `docs/roadmaps/CVF_SYSTEM_CHAIN_LIVE_PROOF_USE_CASE_ROADMAP_2026-07-14.md`;
+- `docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_COVERAGE.json`;
+- `docs/reference/system_chain/README.md`;
+- `docs/reference/system_chain/gaps/entries/web_checker_inventory_not_unified.json`;
+- `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json`;
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0039.md`;
+- `docs/reference/agent_defect_intelligence/entries/README.md`.
 
 Forbidden scope:
 
@@ -265,12 +281,12 @@ the worker return for scaffold residue; and reject any broader claim.
 
 ## Closure Checklist
 
-- [ ] Four use cases and five lanes reconciled.
-- [ ] Finding destination matrix has no silent cell.
-- [ ] Parked branches have concrete reopen triggers.
-- [ ] Seven-path manifest matches.
-- [ ] Required gates pass and work remains uncommitted.
-- [ ] Closure recommendation remains bounded.
+- [x] Four use cases and five lanes reconciled.
+- [x] Finding destination matrix has no silent cell.
+- [x] Parked branches have concrete reopen triggers.
+- [x] Seven-path worker manifest matches.
+- [x] Required gates pass and worker work remained uncommitted.
+- [x] Closure decision remains bounded.
 
 ## Stop Conditions
 
@@ -356,6 +372,17 @@ workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 Before return, raw-scan the complete worker return for scaffold residue even if
 the fast gate passes, per ADIF-0038.
 
+The return must contain Purpose, Target / Source, Scope / Methodology,
+Findings / Position, Risk / Corrective Action, Decision / Disposition, Claim
+Boundary, Source Inventory with bare action tokens, Checker Source Read-Ahead
+Block, Gate Evidence, Actual Changed Set, Core Guard Self-Protection
+Authorization N/A, External Knowledge Intake Routing, Rescan Intelligence
+Hardening N/A, Corpus Completeness And Report Integrity N/A,
+Finding-To-Governance Learning Disposition, Epistemic Process Block, Worker
+Experience Retrospective, Agent Operation Trace Block, Delta Execution Claim
+Boundary Control Block, Public Export Disposition, status/diff, no-commit
+statement, and Machine Closure Package pending reviewer conversion.
+
 ## Verification Commands
 
 ```powershell
@@ -436,6 +463,30 @@ changes. Record the actual untracked/modified state.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance closure audit; no public-sync authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_T5_FINAL_SEQUENCE_CLOSURE_COMPLETION_2026-07-15.md` | reviewer acceptance | PASS |
+| Worker return | T5 worker return | `COMPLETE_PENDING_REVIEW` accepted after bounded repair | PASS |
+| Roadmap state | system-chain live-proof roadmap | `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | coverage and generated GAP index | current; stale sequencing pointer retired | PASS |
+| Registry Markdown | system-chain front door | accepted T5 closure projected | PASS |
+| Architecture learning | ADIF-0039 | recurring dispatch omission recorded | PASS |
+| System loop interlock | T5 audit destination matrices | no chat-only system-chain finding remains | PASS |
+| External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason |
+| Session continuity | active session | separate post-material sync | N/A with reason |
+| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| retained UC evidence | accepted completion per use case | UC-01 through UC-04B artifacts cited by T5 audit | PASS |
+| worker execution boundary | unchanged execution HEAD and no worker commit | `edec8008a`; no worker commit | PASS |
+| new invocation boundary | zero live/provider/browser/business CLI call | zero | PASS |
 
 ## Claim Boundary
 

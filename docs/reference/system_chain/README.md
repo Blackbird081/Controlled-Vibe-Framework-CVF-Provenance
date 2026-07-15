@@ -293,6 +293,19 @@ inventory across all 186 checkers exists** - this remains an explicit
 **future** gap, not something to infer from the presence of the
 `/governance` route directory alone.
 
+SCLP-T5 (2026-07-15) performed the final reverse-projection audit across
+UC-01 through UC-04. It independently reconciled all four use cases and all
+five lanes against their accepted completion reviews. Reviewer closure retired
+a stale UC-03 sequencing pointer, routed the repeated dispatch omission to
+ADIF-0039, and confirmed every finding has a governed destination (focused
+regression, diagnostic, ADIF, coverage, GAP, or architecture owner). T5 also strengthened
+`cvf.asc.gap.web_checker_inventory_not_unified.v1`'s reopen condition into two
+concrete, checkable triggers instead of vague operator interest. See
+`docs/reviews/CVF_SYSTEM_CHAIN_T5_FINAL_SEQUENCE_CLOSURE_COMPLETION_2026-07-15.md`
+for the accepted `CLOSED_PASS_BOUNDED` decision and
+`docs/reviews/CVF_SYSTEM_CHAIN_T5_FINAL_REVERSE_PROJECTION_AUDIT_2026-07-15.md`
+for the full matrices.
+
 ## Operator Readout
 
 If you need to know "is CVF's governance chain actually wired together,"

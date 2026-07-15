@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T5_FINAL_REVERSE_PROJECTION_AND_SEQUENCE_CLOSURE_NEXT
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -21,7 +21,7 @@ current-run receipt.
 
 The operator authorized durable process standardization, an audit of system
 chains already concluded without live proof, and design of later use cases.
-This roadmap records that sequence. It does not dispatch or execute UC-02,
+This roadmap records that sequence. Its original authorization excluded execution of UC-02,
 UC-03, or UC-04; each needs a fresh source-verified work order and dependency
 release evidence.
 
@@ -144,7 +144,7 @@ named owners, focused freshness-checker tests, and:
 
 Observed T0 result: `CURRENT` with zero violations, including
 `COVERAGE_DRIFT: 0`. This verifies the ledger/checker contract only. UC-02,
-UC-03, and UC-04 remain not dispatched and not executed.
+UC-03 and UC-04 were outside that earlier execution scope.
 
 ## Current Execution Update
 
@@ -167,9 +167,9 @@ The negative evidence was retained. UC-04A-R1 then passed the committed 39-test
 suite and one direct positive CLI call: 75/75 configured checks passed,
 aggregate output was COMPLIANT, and the structured receipt retained 75 named
 PASS results. The combined positive and retained negative evidence closes the
-bounded CLI surface. Subsequent UC-04B work now retains the developer business
-PASS, locator repair, and accepted R3R2 local reviewer-projection repair; the
-fresh reviewer negative browser proof remains pending under R3R3.
+bounded CLI surface. UC-04B then closed its selected Web pair through retained
+developer success and the accepted R3R3 reviewer denial. T5 completed the final
+reverse projection and closed this roadmap bounded.
 
 ## Stop Conditions
 
@@ -220,15 +220,62 @@ public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-UC-04B-R3R3 is closed `CLOSED_PASS_BOUNDED`. One canonical-origin invocation
-observed reviewer, submitted exactly one `docs_governance_check` request, and
-received the expected 403 `blocked_by_policy` result. Audit order is exactly
-`requested` then `blocked_by_policy`; checker execution, retry, and provider
-calls are zero. Together with retained R3 developer success, this closes the
-selected Web pair and the auth-projection GAP. The next allowed move is T5:
-perform one final reverse-projection audit and close or value-park the use-case
-sequence. Do not expand T5 into unified Web inventory, provider governance,
-public, production, scale, certification, or user-value claims.
+UC-04B-R3R3 is closed `CLOSED_PASS_BOUNDED` using accepted closure evidence in
+`docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R3_REVIEWER_NEGATIVE_PROOF_COMPLETION_2026-07-15.md`.
+One canonical-origin invocation observed reviewer, submitted exactly one
+`docs_governance_check` request, and received the expected 403
+`blocked_by_policy` result. Audit order is exactly `requested` then
+`blocked_by_policy`; checker execution, retry, and provider calls are zero.
+Together with retained R3 developer success, this closes the selected Web pair
+and the auth-projection GAP.
+
+T5 has executed its final reverse-projection audit using accepted closure
+evidence from UC-01 through UC-04B; see
+`docs/reviews/CVF_SYSTEM_CHAIN_T5_FINAL_REVERSE_PROJECTION_AUDIT_2026-07-15.md`
+for the use-case, lane, finding-destination, and parked-branch matrices. The
+audit found no chat-only system-chain learning remaining after reviewer repair,
+and this roadmap is `CLOSED_PASS_BOUNDED`. There is no active SCLP execution
+tranche. Reopen only when a recorded concrete parked-branch trigger is
+satisfied or a materially new system-chain claim requires its own proof class
+and source-verified packet. Do not expand this closure into
+unified Web inventory, provider governance, public, production, scale,
+certification, or user-value claims. Do not reopen `web_checker_inventory_not_unified`
+without one of its two concrete reopen triggers recorded in the T5 audit's
+Parked Branch Matrix.
+
+## Catalog / GAP Reverse Projection
+
+Coverage retires the stale UC-03 sequencing pointer. The existing unified-Web
+inventory GAP remains value-parked with two concrete reopen triggers. The GAP
+index is regenerated from its source entries; no duplicate GAP or owner is
+created.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
+|---|---|---|---|---|---|
+| repeated omission of automation-assist enumerated terms in three dispatch packets | RULE_GAP | GOVERNANCE_CONTROL_PLANE | ADIF-0039 | future authorized scaffold-helper hardening | durable learning handled; implementation deferred |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | SCLP-T5 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T5 final closure completion | reviewer acceptance | PASS |
+| Roadmap state | this roadmap | `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | coverage and generated GAP index | current; stale pointer retired | PASS |
+| Registry Markdown | system-chain README | T5 closure projected | PASS |
+| External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason |
+| System loop interlock | T5 audit destination matrices | no chat-only system-chain finding | PASS |
+| Session continuity | active session surfaces | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| retained UC evidence | accepted completion per use case | UC-01 through UC-04B accepted artifacts cited by T5 audit | PASS |
+| T5 invocation boundary | no new live or provider call | zero new invocation | PASS |
+| final sequence state | bounded closure only | `CLOSED_PASS_BOUNDED` | PASS |
 
 ## Checker Source Read-Ahead Block
 

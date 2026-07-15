@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -115,13 +115,13 @@ Reason: private provenance closure audit; no public-sync authority.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired T5 work order | dispatch only; worker not executed | N/A with reason |
-| Completion or reviewer artifact | future T5 completion | reviewer-owned and not yet created | N/A with reason |
-| Roadmap state | SCLP roadmap | T5 active next at dispatch | PASS |
-| Registry JSON | coverage and generated GAP index | current at dispatch; worker final audit pending | PASS |
-| Registry Markdown | system-chain front door | current R3R3/T5 route at dispatch | PASS |
+| Work order status | paired T5 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_T5_FINAL_SEQUENCE_CLOSURE_COMPLETION_2026-07-15.md` | reviewer acceptance | PASS |
+| Roadmap state | SCLP roadmap | `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | coverage and generated GAP index | current; stale UC-03 pointer retired | PASS |
+| Registry Markdown | system-chain front door | T5 accepted closure projected | PASS |
 | External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason |
-| System loop interlock | T5 audit | worker reconciliation pending | N/A with reason |
+| System loop interlock | T5 audit and completion | no chat-only system-chain finding remains | PASS |
 | Session continuity | active session | separate post-material sync | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
