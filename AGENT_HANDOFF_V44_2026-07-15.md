@@ -8,9 +8,9 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after the fresh SOT3-APP-T0A dispatch and route only
-the exact two-output no-commit metadata/declaration/sample worker.
-SCLP-X-T3, T0B, and all SOT-Application execution, runtime work, or
+Carry compact continuity after bounded SOT3-APP-T0A reviewer closure and route
+only fresh T0B GC-018 baseline and source-verified work-order authoring.
+SCLP-X-T3, T0B execution, and all SOT-Application execution, runtime work, or
 historical-ledger/runtime/source/Catalog/GAP/ADIF mutation remain held.
 
 ## Scope / Target / Owner Boundary
@@ -30,13 +30,15 @@ packet-defect review.
 Material commit `aa08ea980` owns the corrected R1 redispatch packet.
 Material commit `7fda3b511` owns the fresh T0A roadmap release, GC-018, and
 work order.
+Material commit `5a49ee650` owns bounded T0A acceptance and reviewer repairs.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0a_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only
-the exact two-output no-commit T0A worker from dispatch `7fda3b511`; parked checkpoint=T0B full-corpus
-semantic disposition, SCLP-X-T3, and all SOT-Application or hidden-clone execution or mutation,
+Startup acknowledged: current mode=`sot3_app_t0a_closed_t0b_packet_authoring_next`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author and
+validate only a fresh T0B GC-018 baseline and source-verified work order after
+bounded T0A closure `5a49ee650`; parked checkpoint=T0B execution, SCLP-X-T3,
+and all SOT-Application or hidden-clone execution or mutation,
 and all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/
 business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF mutation,
 public export, production, scale, and user validation.
@@ -54,7 +56,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_app_t0a_dispatched_worker_next`
+`sot3_app_t0a_closed_t0b_packet_authoring_next`
 
 ## Active Boundary
 
@@ -85,6 +87,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - SOT3-APP-T0 corrected R1 redispatch commit: `aa08ea980`.
 - SOT3-APP-T0 R1 scope-blocker review commit: `55007483c`.
 - SOT3-APP-T0A fresh dispatch commit: `7fda3b511`.
+- SOT3-APP-T0A bounded closure commit: `5a49ee650`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
@@ -100,26 +103,25 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Latest Work / Changes
 
-SOT3-APP-T0A dispatch is committed at `7fda3b511` after 75/75 pre-dispatch and
-83/83 pre-commit PASS. The prior R1 packet remains held. The fresh packet
-requires all 336 metadata rows, the canonical ordinal aggregate, all 13 current
-declaration occurrences, and exact SAM-01 through SAM-20 semantic calibration.
-Original blocked and digest-repair evidence remains preserved.
+SOT3-APP-T0A is closed at `5a49ee650` with disposition
+`CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS`. Accepted evidence is 336 frozen
+metadata rows, 20 terminal semantic sample rows, 316 unresolved semantic rows,
+13 declaration occurrences, 3 missing declared extension targets, and zero
+terminal declaration dispositions. Original blocked, digest-repair, dispatch,
+and worker-return evidence remains preserved.
 
 ## Next Allowed Move
 
-Execute only
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0A_CORPUS_FREEZE_AND_SEMANTIC_CALIBRATION_2026-07-16.md`
-from a clean committed dispatch HEAD. Create exactly the named metadata/sample
-ledger and worker return, leave both uncommitted, and return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Do not execute the held R1
-packet. T0B remains dependency-held. Do not modify or run SOT-Application or
-its hidden clone.
+Author and validate only a fresh SOT3-APP-T0B GC-018 baseline and
+source-verified work order using the accepted T0A evidence. T0B execution
+remains held until fresh dependency-release evidence exists and pre-dispatch
+gates pass. Do not execute the held R1 packet or modify or run SOT-Application
+or its hidden clone.
 
 ## Parked Checkpoint
 
-T0B full 336-row semantic disposition remains parked until T0A reviewer
-acceptance. UC-03 harness identity repair remains parked until reuse. T3 remains parked
+T0B execution remains parked until a fresh source-verified packet passes
+dependency-release and pre-dispatch gates. UC-03 harness identity repair remains parked until reuse. T3 remains parked
 until a current non-test production caller or active package export is source-
 proven for GC-009 or GC-010. SOT-Application execution and mutation remain
 parked until a later committed packet passes pre-dispatch. All runtime, test,
@@ -130,7 +132,7 @@ parked.
 
 ## HEAD / Commit Boundary
 
-Current material HEAD: `7fda3b511`
+Current material HEAD: `5a49ee650`
 
 R3R1 material closure HEAD: `0856e090d`
 
@@ -725,6 +727,76 @@ Reason: private continuity sync; no public-sync action.
 | Claim boundary | session routing only; T0A execution and acceptance are not claimed |
 | Agent type | session-sync steward |
 | Invocation ID | sot3-app-t0a-dispatch-session-sync-2026-07-16 |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
+| Actual changed set | same seven-path session-sync manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## SOT3-APP-T0A Closure Session Sync - 2026-07-16
+
+Material commit `5a49ee650` records bounded T0A acceptance with reviewer
+disposition `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS`. The reviewer
+independently recomputed the 336-file snapshot, 238522 bytes, aggregate SHA-256
+`bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`,
+all 336 path/byte/hash rows, exact SRC-001 through SRC-336 IDs, exact SAM-01
+through SAM-20 rows, and all 13 declaration occurrences.
+
+Accepted reconciliation is 336 metadata-frozen rows, 20 terminal sample rows,
+316 unresolved semantic rows, 13 declaration occurrences, 3 missing declared
+extension targets, zero terminal declaration dispositions, and corpus verdict
+`PARTIAL`. Reviewer repairs corrected DEC-05, DEC-06, and DEC-08 to
+`targetExists=false`; removed the SAM-07 runtime-consumption overclaim;
+narrowed SAM-12 continuation semantics; corrected the SAM-15 Fastify
+fall-through overclaim and rebuttal reference; and reconciled stale T0A-pending
+status.
+
+The next allowed move is fresh T0B GC-018 baseline and source-verified
+work-order authoring only. T0B execution remains held until dependency-release
+evidence is refreshed and pre-dispatch gates pass. SCLP-X-T3 and all external
+source mutation, runtime/test/build/live-provider/public work remain parked.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T0A Closure Session Sync
+
+Authorized guard-maintenance scope: synchronize material closure `5a49ee650`
+and route only fresh T0B packet authoring.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3AppT0AClosure20260716.json`
+
+Rollback boundary: revert only this session-sync batch; retain material closure
+`5a49ee650`, worker execution base `120c0f90a`, and dispatch `7fda3b511`.
+
+## Public Export Disposition - SOT3-APP-T0A Closure Session Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.
+
+## Agent Operation Trace Block - SOT3-APP-T0A Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | reviewer and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | SOT3-APP-T0A closure continuity sync, 2026-07-16 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | seven protected paths listed above |
+| Allowed scope source | material closure `5a49ee650` and handoff contract next-move requirement |
+| Before status evidence | clean worktree at material closure HEAD `5a49ee650` |
+| After status evidence | continuity routes only fresh T0B GC-018 and work-order authoring |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sync only; no T0B execution or source/runtime/public mutation |
+| Claim boundary | T0A documentation-only bounded closure; no full-corpus semantic or declaration completion claim |
+| Agent type | reviewer and session-sync steward |
+| Invocation ID | sot3-app-t0a-closure-session-sync-2026-07-16 |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same seven-path session-sync manifest |
 | Manifest delta | MATCH |

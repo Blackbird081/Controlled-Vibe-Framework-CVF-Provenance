@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0a_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact two-output no-commit SOT3-APP-T0A metadata/declaration/sample worker from dispatch `7fda3b511`; parked checkpoint=T0B full semantic disposition, SCLP-X-T3, and all SOT-Application/hidden-clone mutation or execution.
+Startup acknowledged: current mode=`sot3_app_t0a_closed_t0b_packet_authoring_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author and validate only a fresh SOT3-APP-T0B GC-018 baseline and source-verified work order after bounded T0A closure `5a49ee650`; parked checkpoint=T0B execution, SCLP-X-T3, and all SOT-Application/hidden-clone mutation or execution.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t0a_dispatched_worker_next`
+Current mode marker: `sot3_app_t0a_closed_t0b_packet_authoring_next`
 
-Current mode: `sot3_app_t0a_dispatched_worker_next`
+Current mode: `sot3_app_t0a_closed_t0b_packet_authoring_next`
 
-`sot3_app_t0a_dispatched_worker_next`
+`sot3_app_t0a_closed_t0b_packet_authoring_next`
 
 Previous mode:
 
-`sot3_app_t0_scope_split_packet_authoring_next`
+`sot3_app_t0a_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-APP-T0A corpus freeze and semantic calibration closure | `5a49ee650` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS; 336 metadata rows frozen, 20 sample rows terminal, 316 semantic rows unresolved, 13 declaration occurrences recorded, 3 declared extension targets missing, and zero terminal declaration dispositions; T0B packet authoring only next. |
 | SOT3-APP-T0A corpus freeze and semantic calibration dispatch | `7fda3b511` | DISPATCH_READY after 75/75 pre-dispatch and 83/83 pre-commit PASS; all 336 metadata rows, canonical ordinal aggregate, all 13 declaration occurrences, and exact SAM-01 through SAM-20 are required in two uncommitted worker outputs; 316 semantic rows and terminal declaration decisions remain T0B-held. |
 | SOT3-APP-T0 R1 scope-blocker review | `55007483c` | REVIEWED_SCOPE_SPLIT_REQUIRED; 50-100-file completion rejected; two-phase full-corpus T0A/T0B route accepted; prior R1 packet held; fresh T0A packet authoring only next; post-SOT3 source-intent correction reserved for that fresh packet. |
 | SOT3-APP-T0 corrected R1 redispatch | `aa08ea980` | DISPATCH_READY_R1 after 75/75 pre-dispatch and 83/83 pre-commit PASS; canonical ordinal aggregate `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; fresh R1 worker-return path; original blocked evidence preserved. |
@@ -218,19 +219,18 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t0a_dispatched_worker_next`
+Mode: `sot3_app_t0a_closed_t0b_packet_authoring_next`
 
-SOT3-APP-T0A dispatch is committed at `7fda3b511`. Next execute only
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0A_CORPUS_FREEZE_AND_SEMANTIC_CALIBRATION_2026-07-16.md`
-from a clean committed dispatch HEAD. The delegated worker must create exactly
-the named metadata/sample ledger and worker return, leave both uncommitted, and
-return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Required evidence is
-336 metadata rows, the canonical ordinal aggregate, all 13 current declaration
-occurrences, and exact SAM-01 through SAM-20 semantic calibration. T0B, the
-remaining 316 semantic decisions, terminal declaration decisions, all external
-source mutation/execution, and SCLP-X-T3 remain parked. Do not infer runtime,
-universal E2E, production, scale, certification, shipment, or user-value proof.
-Latest closed numbered LHW wave remains `LHW24`.
+SOT3-APP-T0A is closed at material commit `5a49ee650` with reviewer disposition
+`CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS`. Next author and validate only a
+fresh T0B GC-018 baseline and source-verified work order using the accepted 336
+metadata rows, 20 terminal sample rows, 316 unresolved semantic rows, 13
+declaration occurrences, and 3 missing declared extension targets. T0B
+execution remains held until fresh dependency-release evidence exists and
+pre-dispatch gates pass. All external source mutation/execution and SCLP-X-T3
+remain parked. Do not infer runtime, universal E2E, production, scale,
+certification, shipment, or user-value proof. Latest closed numbered LHW wave
+remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
