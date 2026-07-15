@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "four_surface_control_boundary_adapt_t0_dispatched_worker_next",
+  "currentMode": "sot3_app_t0_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
-  "nextAllowedMove": "FSCB-ADAPT-T0 is DISPATCH_READY at material commit 8fd769cec after pre-dispatch PASS. Capture the clean committed execution base, run pre-implementation, and create exactly the source-processing ledger, Four-Surface crosswalk, and no-commit worker return named by the work order. Do not modify the retained source, checkers, runtime, tests, roadmaps, baseline, work order, session state, Catalog, GAP, ADIF, or public surfaces. SOT3-APP-T0 remains queued until FSCB-ADAPT-T0 material review closure. SCLP-X-T3 remains parked until its caller/export condition. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "FSCB-ADAPT-T0 is CLOSED_PASS_BOUNDED at material commit 21659a3ac. Next author and validate only the fresh GC-018 baseline and source-verified work order for SOT3-APP-T0 source-ledger and provenance disposition, including the 336-file terminal ledger contract and declared hidden-clone path inventory/disposition. Prepare the packet for a no-commit Claude worker, but do not execute the worker or modify/run SOT-Application yet. Do not run runtime, test, build, typecheck, CI, live-provider, browser, or public work, and do not modify retained FSCB sources, checkers, Catalog, GAP, or ADIF. SCLP-X-T3 remains parked until its caller/export condition. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

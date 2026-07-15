@@ -8,10 +8,10 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after operator authorization of the split SOT3
-downstream-application and Four-Surface absorption lanes. SCLP-X-T3 and all
-runtime execution or historical-ledger/runtime/source/Catalog/GAP/ADIF
-mutation remain held.
+Carry compact continuity after bounded FSCB-ADAPT-T0 material closure and route
+only fresh SOT3-APP-T0 GC-018/work-order packet authoring for a later no-commit
+Claude worker. SCLP-X-T3 and all SOT-Application execution, runtime work, or
+historical-ledger/runtime/source/Catalog/GAP/ADIF mutation remain held.
 
 ## Scope / Target / Owner Boundary
 
@@ -22,18 +22,19 @@ bounded T2 caller-verification closure; `6634796da` owns the T2G1 dispatch; and
 `4858129d5` owns the bounded T2G1 closure; `242afa1b5` owns T4 dispatch; and
 `2fdb9d383` owns T4 acceptance and bounded roadmap closure. Material commit
 `24d50f0d7` owns the accepted SOT3/Four-Surface intake review and Claude
-rebuttal.
+rebuttal. Material commit `21659a3ac` owns the bounded FSCB-ADAPT-T0 ledger,
+crosswalk, completion review, and roadmap/work-order closure.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`four_surface_control_boundary_adapt_t0_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only
-the exact documentation-only three-output FSCB-ADAPT-T0 worker batch at
-dispatch `8fd769cec` and return without commit; parked checkpoint=SOT3-APP-T0
-until FSCB-ADAPT-T0 material review closure, plus SCLP-X-T3 at its caller/export
-condition and all runtime/test/build/typecheck/CI/live/provider/browser/
-Playwright/business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF
-mutation, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`sot3_app_t0_packet_authoring_next`; active
+handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author and validate
+only the fresh SOT3-APP-T0 GC-018 and source-verified work order for a later
+no-commit Claude worker; parked checkpoint=SCLP-X-T3 at its caller/export
+condition, all SOT-Application execution or mutation until packet dispatch,
+and all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/
+business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF mutation,
+public export, production, scale, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -48,7 +49,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`four_surface_control_boundary_adapt_t0_dispatched_worker_next`
+`sot3_app_t0_packet_authoring_next`
 
 ## Active Boundary
 
@@ -73,6 +74,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - SCLP-X-T4 dispatch commit: `242afa1b5`.
 - SOT3/Four-Surface intake authorization commit: `24d50f0d7`.
 - FSCB-ADAPT-T0 dispatch commit: `8fd769cec`.
+- FSCB-ADAPT-T0 bounded material closure commit: `21659a3ac`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
@@ -88,30 +90,37 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Latest Work / Changes
 
-FSCB-ADAPT-T0 is dispatch-ready at `8fd769cec` after full pre-dispatch PASS.
-The exact worker scope is one 37-file source-processing ledger, one derived
-Four-Surface crosswalk, and one no-commit worker return. SOT3-APP-T0 remains
-queued; no retained-source/runtime/checker implementation is released.
+FSCB-ADAPT-T0 is CLOSED_PASS_BOUNDED at material commit `21659a3ac`. The
+accepted evidence reconciles 37/37 files, 84,563 bytes, aggregate SHA-256
+`1f97d9eb219d9f12b601d80e911cc34506b80cb05aad0584177c02a9c50462fa`, and
+zero unresolved items. The logical crosswalk is accepted bounded. Review used
+operator-authorized sequential single-agent multi-role conversion; independent
+review is not claimed. No retained-source/runtime/checker implementation was
+performed.
 
 ## Next Allowed Move
 
-Capture the clean committed execution base, run pre-implementation, then create
-exactly the source-processing ledger, Four-Surface crosswalk, and no-commit
-worker return named by the work order. SOT3-APP-T0 remains queued until FSCB-
-ADAPT-T0 material review closure.
+Author and validate only the fresh GC-018 baseline and source-verified work
+order for SOT3-APP-T0 source-ledger and provenance disposition. Bind the
+336-file terminal ledger contract and every declared hidden-clone path to a
+path, owner, version/drift, and runtime-use disposition. Prepare a later
+no-commit Claude worker, but do not execute the worker or modify/run
+SOT-Application yet.
 
 ## Parked Checkpoint
 
 UC-03 harness identity repair remains parked until reuse. T3 remains parked
 until a current non-test production caller or active package export is source-
-proven for GC-009 or GC-010. All runtime, test, build, typecheck, CI, live/
-provider/browser/Playwright/business-CLI runs, Catalog/GAP/ADIF promotion,
-unified inventory implementation, public export, production readiness, scale,
-certification, and real-user validation remain parked.
+proven for GC-009 or GC-010. SOT-Application execution and mutation remain
+parked until a later committed packet passes pre-dispatch. All runtime, test,
+build, typecheck, CI, live/provider/browser/Playwright/business-CLI runs,
+Catalog/GAP/ADIF promotion, unified inventory implementation, public export,
+production readiness, scale, certification, and real-user validation remain
+parked.
 
 ## HEAD / Commit Boundary
 
-Current material HEAD: `8fd769cec`
+Current material HEAD: `21659a3ac`
 
 R3R1 material closure HEAD: `0856e090d`
 
@@ -210,6 +219,66 @@ Reason: private continuity sync; no public-sync action.
 | Invocation ID | system-chain-exhaustive-proof-t4-dispatch-session-sync-2026-07-15 |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## FSCB-ADAPT-T0 Closure Session Sync
+
+Material commit `21659a3ac` closes FSCB-ADAPT-T0 bounded with 37/37 terminal
+source decisions, zero unresolved items, and an accepted logical owner
+crosswalk. The retained source was not modified. The next lane is packet
+authoring only for SOT3-APP-T0; no SOT-Application execution is released.
+
+The material pre-closure bundle passed all content gates and reported only the
+expected active-handoff HEAD drift before this continuity sync. Final closure
+verification must use the committed material range
+`5448c872c..21659a3ac` after this session-sync commit.
+
+## Core Guard Self-Protection Authorization - FSCB-ADAPT-T0 Closure Session Sync
+
+Authorized guard-maintenance scope: synchronize material closure `21659a3ac`
+and route only fresh SOT3-APP-T0 GC-018/work-order packet authoring.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/fscbAdaptT0Closure20260715.json`
+
+Rollback boundary: revert only this session-sync batch; retain FSCB material
+closure `21659a3ac`, dispatch `8fd769cec`, and intake authorization
+`24d50f0d7`.
+
+## Public Export Disposition - FSCB-ADAPT-T0 Closure Session Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.
+
+## Agent Operation Trace Block - FSCB-ADAPT-T0 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | FSCB-ADAPT-T0 closure continuity sync, 2026-07-15 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | protected paths listed in the matching authorization section |
+| Allowed scope source | material closure `21659a3ac` and operator instruction to finish the tranche |
+| Before status evidence | clean worktree at material closure HEAD `21659a3ac` |
+| After status evidence | continuity routes only SOT3-APP-T0 packet authoring for a later no-commit Claude worker |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sync only; no SOT-Application worker execution or source/runtime/public mutation |
+| Claim boundary | session routing only; independent FSCB review is not claimed |
+| Agent type | session-sync steward |
+| Invocation ID | fscb-adapt-t0-closure-session-sync-2026-07-15 |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
+| Actual changed set | same seven-path session-sync manifest |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
