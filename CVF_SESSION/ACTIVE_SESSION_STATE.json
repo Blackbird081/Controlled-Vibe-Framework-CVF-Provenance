@@ -84,8 +84,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_live_proof_t5_final_reverse_projection_next",
-  "previousMode": "system_chain_uc04b_r3r3_dispatched_worker_next",
+  "currentMode": "system_chain_t5_dispatched_worker_next",
+  "previousMode": "system_chain_live_proof_t5_final_reverse_projection_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12086,5 +12086,18 @@
     "nextAllowedMove": "author one T5 final reverse-projection and bounded sequence-closure packet",
     "claimBoundary": "Selected Web developer-success/reviewer-denial pair only. Unified inventory, other roles/jobs, provider governance, public, production, scale, certification, and user value remain excluded."
   },
-  "nextAllowedMove": "SCLP-UC04B-R3R3 is CLOSED_PASS_BOUNDED at material commit f9c1b14a1. The selected Web developer-success/reviewer-denial pair is proven bounded and the auth-projection GAP is CLOSED_WITH_EVIDENCE. Next, author one T5 final reverse-projection and sequence-closure packet: reconcile all accepted use cases, close or value-park remaining branches with concrete reopen conditions, and do not expand into unified Web inventory, provider governance, public, production, scale, certification, or user-value claims. LHW24 remains latest closed numbered LHW wave."
+  "systemChainT5Dispatch20260715": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "fd9fe3945",
+    "workOrderId": "SCLP-T5",
+    "dispatchBaseHead": "66318a8b6",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedManifestCount": 7,
+    "liveInvocationCeiling": 0,
+    "providerCallCeiling": 0,
+    "runtimeMutationCeiling": 0,
+    "nextAllowedMove": "execute exact T5 seven-path reverse-projection audit and return for reviewer closure",
+    "claimBoundary": "Final documentation and registry reconciliation only. Unified inventory, provider governance, public, production, scale, certification, and user value remain excluded."
+  },
+  "nextAllowedMove": "SCLP-T5 is DISPATCH_READY at material commit fd9fe3945. Execute the exact no-commit seven-path final reverse-projection audit: reconcile UC-01 through UC-04 and all five lanes, map every finding to regression/diagnostic/GAP/ADIF/coverage destinations, repair stale allowed-scope state, and close or value-park each remaining branch with a concrete reopen trigger. Zero live, provider, Playwright, business CLI, runtime, checker, ADIF, session, public, or new-GAP action. Return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. LHW24 remains latest closed numbered LHW wave."
 }

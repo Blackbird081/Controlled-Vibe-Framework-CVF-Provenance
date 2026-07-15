@@ -20,9 +20,9 @@ verification.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_live_proof_t5_final_reverse_projection_next`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author one T5
-final reverse-projection and bounded sequence-closure packet; parked checkpoint=UC-03 harness
+Startup acknowledged: current mode=`system_chain_t5_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute the
+exact no-commit T5 seven-path reverse-projection audit; parked checkpoint=UC-03 harness
 identity repair until its reuse trigger, GC-009/GC-010 promotion, unified
 inventory, public export, production, scale, and user validation.
 
@@ -39,7 +39,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_live_proof_t5_final_reverse_projection_next`
+`system_chain_t5_dispatched_worker_next`
 
 ## Active Boundary
 
@@ -50,31 +50,29 @@ Latest closed numbered LHW wave remains `LHW24`.
 - R3R2 closure commit: `52efec528`.
 - R3R3 dispatch commit: `523748cec`.
 - R3R3 closure commit: `f9c1b14a1`.
+- T5 dispatch commit: `fd9fe3945`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
 - One R3R3 invocation proved reviewer projection, one 403 policy denial, exact
   requested-to-blocked audit order, and 1/1/0/0/0 counters.
 - The selected Web pair is proven bounded and the auth-projection GAP is closed.
-- T5 must only reconcile and close/value-park the sequence; broader inventory
-  or readiness expansion is forbidden.
+- T5 is dispatched as an exact seven-path no-commit audit; broader inventory,
+  runtime, provider, public, ADIF, or readiness expansion is forbidden.
 
 ## Latest Work / Changes
 
-SCLP-UC04B-R3R3 closed `CLOSED_PASS_BOUNDED` at `f9c1b14a1`. The canonical
-reviewer path rendered reviewer, submitted once, returned the expected 403
-policy denial, and emitted only requested then blocked audit events. Exact
-counters are 1/1/0/0/0. The selected Web pair is proven bounded, the
-auth-projection GAP is closed, and ADIF-0038 records the recurring scaffold
-finalization checker gap.
+SCLP-T5 is dispatch-ready at `fd9fe3945`. It requires a single-pass audit of
+all four use cases, five lanes, accepted findings, diagnostics, GAP/Catalog,
+regressions, ADIF, coverage, and stale routing. The worker may change exactly
+seven named paths and must not commit or run any live/runtime/provider action.
 
 ## Next Allowed Move
 
-Author one T5 final reverse-projection and bounded sequence-closure packet from
-`f9c1b14a1`. Reconcile all accepted use cases, GAP/catalog/coverage projection,
-and remaining branches. Close or value-park each remaining branch with a
-concrete reopen condition. Do not expand into unified inventory, provider,
-public, production, scale, certification, or user-value claims.
+Execute SCLP-T5 from `fd9fe3945`. Confirm clean worktree and capture execution
+base, then produce the exact seven-path no-commit audit and return. Reconcile
+all use cases and lanes, require destination dispositions and concrete parked
+reopen triggers, and run only deterministic documentation/registry gates.
 
 ## Parked Checkpoint
 
@@ -100,9 +98,10 @@ R3R3 dispatch HEAD: `523748cec`
 
 R3R3 material closure HEAD: `f9c1b14a1`
 
-The next material commit may contain only the source-verified T5 final
-reverse-projection and bounded sequence-closure packet. Session sync remains
-separate.
+T5 dispatch HEAD: `fd9fe3945`
+
+The next material commit may contain only reviewer-accepted T5 worker evidence
+and closure surfaces. Session sync remains separate.
 
 ## Claim Boundary
 
@@ -111,10 +110,10 @@ path. UC-04B now separately proves a selected Web developer-success and
 reviewer-denial pair bounded; it does not broaden the SOT3 claim or prove
 unified inventory, provider governance, or production readiness.
 
-## Core Guard Self-Protection Authorization - R3R3 Closure Session Sync
+## Core Guard Self-Protection Authorization - T5 Dispatch Session Sync
 
-Authorized guard-maintenance scope: synchronize material closure `f9c1b14a1`
-and route only T5 final reverse-projection and bounded sequence closure.
+Authorized guard-maintenance scope: synchronize T5 dispatch `fd9fe3945` and
+route only the exact no-commit T5 worker.
 
 Protected paths (every changed guard/control path is listed):
 
@@ -124,13 +123,13 @@ Protected paths (every changed guard/control path is listed):
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/systemChainUc04bR3r3Closure20260715.json`
+- `CVF_SESSION/state/entries/systemChainT5Dispatch20260715.json`
 
 Operator authorization: continue the system-chain sequence and process the
 completed no-commit worker return.
 
-Rollback boundary: revert only this session-sync batch; retain material commit
-`f9c1b14a1` and all historical proof evidence.
+Rollback boundary: revert only this session-sync batch; retain material commits
+`f9c1b14a1`, `fd9fe3945`, and all historical proof evidence.
 
 ## Public Export Disposition
 
@@ -144,18 +143,18 @@ Reason: private continuity sync; no public-sync action.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | R3R3 closure continuity sync, 2026-07-15 |
+| Session or invocation | T5 dispatch continuity sync, 2026-07-15 |
 | Working directory | repository root |
 | Command or tool surface | state-source edits, active-state generator, continuity gates, git |
 | Target paths | protected paths listed in the Core Guard Self-Protection Authorization section |
-| Allowed scope source | operator continuation and material closure `f9c1b14a1` |
-| Before status evidence | V44 routed the R3R3 no-commit worker |
-| After status evidence | V44 routes T5 final reverse projection and sequence closure only |
+| Allowed scope source | operator continuation and T5 dispatch `fd9fe3945` |
+| Before status evidence | V44 routed T5 packet authoring |
+| After status evidence | V44 routes the exact T5 no-commit worker only |
 | Diff evidence | session-only staged diff and generated-state check |
 | Approval boundary | continuity sync only; no material repair or live run |
 | Claim boundary | session routing only |
 | Agent type | session-sync steward |
-| Invocation ID | system-chain-uc04b-r3r3-closure-session-sync-2026-07-15 |
+| Invocation ID | system-chain-t5-dispatch-session-sync-2026-07-15 |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
 | Manifest delta | MATCH |

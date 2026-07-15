@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_live_proof_t5_final_reverse_projection_next",
+  "currentMode": "system_chain_t5_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
-  "nextAllowedMove": "SCLP-UC04B-R3R3 is CLOSED_PASS_BOUNDED at material commit f9c1b14a1. The selected Web developer-success/reviewer-denial pair is proven bounded and the auth-projection GAP is CLOSED_WITH_EVIDENCE. Next, author one T5 final reverse-projection and sequence-closure packet: reconcile all accepted use cases, close or value-park remaining branches with concrete reopen conditions, and do not expand into unified Web inventory, provider governance, public, production, scale, certification, or user-value claims. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SCLP-T5 is DISPATCH_READY at material commit fd9fe3945. Execute the exact no-commit seven-path final reverse-projection audit: reconcile UC-01 through UC-04 and all five lanes, map every finding to regression/diagnostic/GAP/ADIF/coverage destinations, repair stale allowed-scope state, and close or value-park each remaining branch with a concrete reopen trigger. Zero live, provider, Playwright, business CLI, runtime, checker, ADIF, session, public, or new-GAP action. Return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
