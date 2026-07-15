@@ -1,0 +1,26 @@
+{
+  "stateOrder": 1834,
+  "stateKey": "systemChainExhaustiveProofT2g1Closure20260715",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "4858129d5",
+    "workOrderId": "SCLP-X-T2G1",
+    "executionBaseHead": "aaa64c067",
+    "pairedGapEntryCount": 1,
+    "gapIndexCount": 12,
+    "uniqueGapIdCount": 12,
+    "schemaErrorCount": 0,
+    "readmeMissingIdCount": 0,
+    "workerOutputCount": 4,
+    "reviewerRepairCount": 0,
+    "runtimeInvocationCount": 0,
+    "testInvocationCount": 0,
+    "liveInvocationCount": 0,
+    "providerCallCount": 0,
+    "sourceCatalogAdifMutationCount": 0,
+    "t3Disposition": "VALUE_PARKED_WITH_REOPEN_CONDITION",
+    "t3ReopenCondition": "a current non-test production caller or active package export is source-proven for GC-009 or GC-010",
+    "nextAllowedMove": "author only a fresh source-verified T4 final reverse-projection and bounded roadmap-closure GC-018/work order",
+    "claimBoundary": "One paired GC-009/GC-010 architecture GAP is recorded and indexed with bounded closure evidence. No invocation, runtime, test, live, provider, public, production, scale, certification, shipment, or user-value claim."
+  }
+}

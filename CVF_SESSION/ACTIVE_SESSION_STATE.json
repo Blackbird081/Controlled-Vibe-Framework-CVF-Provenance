@@ -84,8 +84,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_exhaustive_proof_t2g1_dispatched_worker_next",
-  "previousMode": "system_chain_exhaustive_proof_t2_closed_gap_packet_authoring_next",
+  "currentMode": "system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next",
+  "previousMode": "system_chain_exhaustive_proof_t2g1_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12236,5 +12236,27 @@
     "nextAllowedMove": "execute exact four-path no-commit T2G1 paired architecture-GAP recording worker only",
     "claimBoundary": "Dispatch authority for one compact paired GAP entry and its generated/human read models only. No runtime or test execution, live or provider proof, runtime/source/catalog/ADIF mutation, T3-T4 release, public, production, scale, certification, shipment, or user-value claim."
   },
-  "nextAllowedMove": "SCLP-X-T2G1 is DISPATCH_READY at material commit 6634796da. Execute only the exact no-commit four-path worker: create one paired compact GC-009/GC-010 GAP entry, regenerate the GAP index, align the GAP README, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Zero runtime, test, build, typecheck, CI, live, provider, browser, business CLI, runtime/source/catalog/ADIF mutation, public action, or T3-T4 release. LHW24 remains latest closed numbered LHW wave."
+  "systemChainExhaustiveProofT2g1Closure20260715": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "4858129d5",
+    "workOrderId": "SCLP-X-T2G1",
+    "executionBaseHead": "aaa64c067",
+    "pairedGapEntryCount": 1,
+    "gapIndexCount": 12,
+    "uniqueGapIdCount": 12,
+    "schemaErrorCount": 0,
+    "readmeMissingIdCount": 0,
+    "workerOutputCount": 4,
+    "reviewerRepairCount": 0,
+    "runtimeInvocationCount": 0,
+    "testInvocationCount": 0,
+    "liveInvocationCount": 0,
+    "providerCallCount": 0,
+    "sourceCatalogAdifMutationCount": 0,
+    "t3Disposition": "VALUE_PARKED_WITH_REOPEN_CONDITION",
+    "t3ReopenCondition": "a current non-test production caller or active package export is source-proven for GC-009 or GC-010",
+    "nextAllowedMove": "author only a fresh source-verified T4 final reverse-projection and bounded roadmap-closure GC-018/work order",
+    "claimBoundary": "One paired GC-009/GC-010 architecture GAP is recorded and indexed with bounded closure evidence. No invocation, runtime, test, live, provider, public, production, scale, certification, shipment, or user-value claim."
+  },
+  "nextAllowedMove": "SCLP-X-T2G1 is CLOSED_PASS_BOUNDED at material commit 4858129d5. T3 is VALUE_PARKED_WITH_REOPEN_CONDITION until a current non-test production caller or active package export is source-proven for GC-009 or GC-010. Author only a fresh source-verified T4 final reverse-projection and bounded roadmap-closure GC-018/work order; do not execute T4, runtime, tests, build, typecheck, CI, live, provider, browser, business CLI, or mutate runtime/source/catalog/ADIF. LHW24 remains latest closed numbered LHW wave."
 }
