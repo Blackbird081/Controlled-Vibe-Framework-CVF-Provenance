@@ -85,6 +85,15 @@ UC-03 harness identity repair remains parked until reuse. GC-009/GC-010,
 unified inventory, public export, production readiness, scale, certification,
 and real-user validation remain parked.
 
+## HEAD / Commit Boundary
+
+R3R1 material closure HEAD: `0856e090d`
+
+R3R1 session-sync HEAD: `a06265e49`
+
+The next material commit may contain only the R3R2 dispatch packet. Its later
+session-sync commit must refresh this block and the generated state separately.
+
 ## Claim Boundary
 
 `LIVE_GOVERNANCE_PROVEN_BOUNDED` remains limited to its prior selected SOT3
