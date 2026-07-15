@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_exhaustive_proof_t2_dispatched_worker_next",
+  "currentMode": "system_chain_exhaustive_proof_t2_closed_gap_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
-  "nextAllowedMove": "SCLP-X-T2 is DISPATCH_READY at material commit e0e5e755f. Execute only the exact no-commit three-path worker manifest for repository-wide read-only caller verification of MandatoryGateway, createMandatoryGateway, and AgentExecutionRuntime; classify every match and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Zero runtime, test, build, typecheck, CI, live, provider, browser, business CLI, owner/GAP/ADIF mutation, public action, or T3-T4 release. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SCLP-X-T2 is CLOSED_PASS_BOUNDED at material commit 498413cc9. Author only a fresh source-verified GC-018 and work order for the paired GC-009/GC-010 architecture-GAP recording decision. Do not directly mutate GAP, owner, or ADIF surfaces; run runtime, test, build, typecheck, CI, live, provider, browser, business CLI action; perform public action; or release T3-T4. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

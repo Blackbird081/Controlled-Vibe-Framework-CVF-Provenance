@@ -84,8 +84,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_exhaustive_proof_t2_dispatched_worker_next",
-  "previousMode": "system_chain_exhaustive_proof_t1_closed_t2_packet_authoring_next",
+  "currentMode": "system_chain_exhaustive_proof_t2_closed_gap_packet_authoring_next",
+  "previousMode": "system_chain_exhaustive_proof_t2_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12199,5 +12199,26 @@
     "nextAllowedMove": "execute exact three-path no-commit T2 repository-wide read-only caller verification worker only",
     "claimBoundary": "Dispatch authority only. No caller result, runtime or test execution, live or provider proof, owner/GAP/ADIF mutation, T3-T4 release, public, production, scale, certification, shipment, or user-value claim."
   },
-  "nextAllowedMove": "SCLP-X-T2 is DISPATCH_READY at material commit e0e5e755f. Execute only the exact no-commit three-path worker manifest for repository-wide read-only caller verification of MandatoryGateway, createMandatoryGateway, and AgentExecutionRuntime; classify every match and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Zero runtime, test, build, typecheck, CI, live, provider, browser, business CLI, owner/GAP/ADIF mutation, public action, or T3-T4 release. LHW24 remains latest closed numbered LHW wave."
+  "systemChainExhaustiveProofT2Closure20260715": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "498413cc9",
+    "workOrderId": "SCLP-X-T2",
+    "executionBaseHead": "9e3a672e6",
+    "searchFileCount": 22026,
+    "rawMatchCount": 500,
+    "terminalLedgerRowCount": 329,
+    "targetDecisionCount": 2,
+    "noCallerDecisionCount": 2,
+    "ambiguousReferenceCount": 0,
+    "nonTestProductionCallerCount": 0,
+    "reviewerRepairRowCount": 2,
+    "runtimeInvocationCount": 0,
+    "testInvocationCount": 0,
+    "liveInvocationCount": 0,
+    "providerCallCount": 0,
+    "ownerGapMutationCount": 0,
+    "nextAllowedMove": "author only a fresh source-verified paired GC-009/GC-010 architecture-GAP recording decision GC-018 and work order",
+    "claimBoundary": "Repository-wide read-only caller-verification closure for exactly two targets. No runtime or test execution, live or provider proof, GAP/owner/ADIF mutation, T3-T4 release, public, production, scale, certification, shipment, or user-value claim."
+  },
+  "nextAllowedMove": "SCLP-X-T2 is CLOSED_PASS_BOUNDED at material commit 498413cc9. Author only a fresh source-verified GC-018 and work order for the paired GC-009/GC-010 architecture-GAP recording decision. Do not directly mutate GAP, owner, or ADIF surfaces; run runtime, test, build, typecheck, CI, live, provider, browser, business CLI action; perform public action; or release T3-T4. LHW24 remains latest closed numbered LHW wave."
 }
