@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T0B_DISPATCH_READY
+Status: T0B_CLOSED_PASS_BOUNDED_MAO_ROADMAP_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -32,8 +32,12 @@ R1 packet is held and is no longer executable. Fresh T0A GC-018 and work-order
 artifacts released only the full 336-file metadata freeze, complete
 hidden-clone declaration inventory, and exact reviewer-selected 20-file
 semantic calibration sample. T0A is reviewer-accepted with repairs. The fresh
-T0B GC-018/work-order packet now releases one exact two-output no-commit worker
-for full-corpus semantic and terminal provenance evidence.
+T0B executed from `6f7393ed0` and is independently accepted with one
+consolidated reviewer repair. The full 336-row semantic ledger and all 13
+terminal provenance decisions are closed as static evidence. SOT3-APP T1 and
+all later absorption/implementation tranches are now parked behind the MAO
+Operational Adoption And Agent Execution Assurance roadmap, which must be
+authored and completed before this roadmap may resume.
 
 ## Purpose
 
@@ -68,9 +72,9 @@ owners before modifying the sibling source.
 
 | Control | Decision |
 |---|---|
-| current active tranche | SOT3-APP-T0B full-corpus semantic and provenance evidence |
+| current active tranche | T0B closed bounded; no SOT3-APP execution tranche is active |
 | committed packet | prior paired T0 GC-018 and work order are held and must not be executed |
-| scheduling release | exact T0B no-commit worker only after this packet is committed from a clean dispatch HEAD |
+| scheduling release | MAO Operational Adoption And Agent Execution Assurance roadmap authoring only; T1 and later SOT3-APP/absorption work remain parked |
 | source mutation | forbidden until a later source-verified implementation work order passes pre-dispatch |
 | hidden-clone coupling | T0A enumerates every declaration; T0B retains terminal sever/govern/block decisions |
 | runtime/live | separately authorized only in tranches whose acceptance requires it |
@@ -89,7 +93,10 @@ owners before modifying the sibling source.
 | SOT3-APP-T5 | optional operational/live proof | separately authorized real-provider and release evidence | exact bounded claim only; no production or universal SOT3 inference |
 
 Each tranche after T0B requires accepted predecessor evidence, fresh GC-018, a
-source-verified work order, and a clean dispatch base.
+source-verified work order, and a clean dispatch base. In addition, no T1 or
+later absorption tranche may resume until the separately governed MAO
+Operational Adoption And Agent Execution Assurance roadmap is authored and
+completed.
 
 ## Acceptance Criteria
 
@@ -139,10 +146,11 @@ two-phase full-corpus route. Continuity commit `e7f45e120` released fresh T0A
 packet authoring. T0A executed from `120c0f90a` and closed with reviewer repairs
 in `docs/reviews/CVF_SOT3_APP_T0A_COMPLETION_2026-07-16.md`.
 
-T0B packet authoring now consumes the accepted calibration, 316-row residual
-obligation, 13 declaration decisions, and three missing declared targets. The
-fresh paired packet releases only the exact T0B no-commit evidence worker once
-committed from a clean dispatch base. T1 and every later tranche remain held.
+T0B consumed the accepted calibration, all 316 residual semantic obligations,
+all 13 declaration decisions, and the three missing declared targets. The
+independent reviewer accepted the repaired 336-row/13-row evidence with zero
+unresolved identities. T1 and every later SOT3-APP or absorption tranche remain
+held behind completion of the separately governed MAO adoption roadmap.
 
 ## T0A Dispatch Packet
 
@@ -167,8 +175,9 @@ committed from a clean dispatch base. T1 and every later tranche remain held.
 | accepted predecessor | T0A completion `5a49ee650`; `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` |
 | GC-018 | `docs/baselines/CVF_GC018_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md` |
 | work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md` |
-| planned ledger | `docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md` |
-| planned worker return | `docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md` |
+| accepted ledger | `docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md`; `ACCEPTED_BY_REVIEWER_WITH_REPAIRS` |
+| accepted worker return | `docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md`; `ACCEPTED_BY_REVIEWER_WITH_REPAIRS` |
+| completion review | `docs/reviews/CVF_SOT3_APP_T0B_COMPLETION_2026-07-16.md`; `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` |
 | commit mode | `WORKER_MUST_NOT_COMMIT` |
 | execution boundary | 336 semantic rows and 13 provenance rows only; no source/runtime/test/build/live/public mutation |
 
@@ -176,14 +185,14 @@ committed from a clean dispatch base. T1 and every later tranche remain held.
 
 | Accepted value group | Catalog/GAP owner check | Disposition before closure | Target source | Claim class | Evidence |
 |---|---|---|---|---|---|
-| downstream SOT product owner | current as-built catalog | `DEFER_PENDING_ACCEPTANCE` | existing entity or proposed GAP after T1 | downstream product candidate | T0 ledger and T1 owner map |
-| application runtime gaps | current runtime owners and GAP registry | `DEFER_PENDING_ACCEPTANCE` | existing owner update or proposed GAP | runtime candidate | later source and behavior proof |
+| downstream SOT product owner | current as-built catalog | `DEFER_PENDING_MAO_AND_T1_OWNER_RATIFICATION` | existing entity or proposed GAP only after MAO completion and fresh T1 authority | downstream product candidate | accepted T0B ledger; no as-built promotion |
+| application runtime gaps | current runtime owners and GAP registry | `DEFER_PENDING_MAO_AND_T1_OWNER_RATIFICATION` | existing owner update or proposed GAP only after MAO completion and fresh T1 authority | runtime candidate | static evidence only; later source and behavior proof required |
 
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
 |---|---|---|---|---|---|
-| `INTERNAL_AGENT` | roadmap and future governed tranche artifacts | no source mutation without released work order | per-tranche evidence | repository and sibling-source operations only as authorized | `PROPOSED` |
+| `INTERNAL_AGENT` | roadmap and future governed tranche artifacts | no source mutation without released work order | accepted T0B static evidence | contract-only routing; no agent runtime adapter | `CONTRACT_ONLY` |
 | `EXTERNAL_AGENT_CLI_MCP` | no downstream adapter ratified | no external ingress or execution claim | explicit no-adapter boundary | fresh adapter roadmap required | `DEFERRED_WITH_REASON` |
 
 ## External Repository Absorption Entry Control
@@ -192,11 +201,11 @@ committed from a clean dispatch base. T1 and every later tranche remain held.
 |---|---|
 | Source type | downstream copied-folder application |
 | Upstream or source-mirror disposition | `LOCAL_OPERATOR_AUTHORED_INPUT_WITHOUT_UPSTREAM`; no local Git provenance exists |
-| Enumeration or manifest plan | dispatched T0A direct recursive enumeration with relative path, bytes, and SHA-256 |
-| Per-file terminal-ledger plan | T0A accepted 336 metadata and 20 calibrated semantic rows; dispatched T0B requires full-body terminal semantic decisions for all 336 and terminal provenance decisions for all 13 declarations |
-| Owner or overlap route | T1 maps accepted groups to current SOT3, package, runtime, evidence, and product owners |
+| Enumeration or manifest plan | completed direct recursive enumeration with relative path, bytes, SHA-256, UTF-8 full-body reads, and ordinal aggregate |
+| Per-file terminal-ledger plan | complete: 336 semantic rows and 13 terminal provenance rows independently accepted |
+| Owner or overlap route | 37 exact owner routes preserved; future owner ratification remains parked behind MAO and fresh T1 authority |
 | Value-disposition route | ABSORB, ADAPT, DEFER, REJECT, BLOCK, or NO_NEW_VALUE plus reviewer semantic audit |
-| Claim boundary | dispatched T0B semantic/provenance evidence only; no source mutation, runtime proof, or product completion |
+| Claim boundary | accepted T0B static semantic/provenance evidence only; no source mutation, runtime proof, product completion, or T1 release |
 
 ## Mandatory Blind-Spot Control Block
 
@@ -207,8 +216,8 @@ committed from a clean dispatch base. T1 and every later tranche remain held.
 | Corpus completeness section | PRESENT |
 | Completeness trigger model | one full-body read and terminal semantic row per SRC-001 through SRC-336 plus one terminal provenance row per DEC-01 through DEC-13 |
 | Blind-spot prevention action | preserve all identities/digests, prohibit family-level substitution, and audit every defer/reject/block/no-new-value/owner-not-found group |
-| Residual gap | 316 semantic and 13 provenance decisions remain open until T0B reviewer acceptance |
-| Blind-spot verdict | T0B_DISPATCH_READY_FULL_CORPUS_REQUIRED |
+| Residual gap | zero semantic or provenance identities; later owner/runtime proof is intentionally parked, not an unresolved T0B identity |
+| Blind-spot verdict | T0B_COMPLETE_VERIFIED_WITH_REVIEWER_REPAIRS |
 
 ## External Absorption Core
 
@@ -218,37 +227,34 @@ committed from a clean dispatch base. T1 and every later tranche remain held.
 | Input root or repository | literal sibling source root in Scope / Target / Owner Boundary |
 | Enumeration command | T0B hidden-inclusive physical filesystem enumeration, full-body reads, relative path/bytes/SHA-256, ordinal aggregate, and exact declaration search |
 | Manifest artifact or inline manifest | accepted T0A 336-row metadata ledger, freshly recomputed by T0B |
-| Processing ledger artifact or inline ledger | planned T0B full-corpus semantic/provenance ledger |
+| Processing ledger artifact or inline ledger | accepted T0B full-corpus semantic/provenance ledger |
 | Ledger terminal statuses | READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE |
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | inline Overlap And Novelty Classification table plus `docs/reference/sot_three_layer/README.md` |
-| Unresolved items | 316 semantic decisions and 13 provenance decisions at dispatch; target zero at reviewer-accepted T0B closure |
-| Completion claim boundary | dispatched T0B evidence only; no absorption acceptance or runtime claim |
+| Unresolved items | zero semantic or provenance identities; MAO/T1 owner and runtime work remains separately parked |
+| Completion claim boundary | T0B static evidence accepted; no absorption implementation, source mutation, runtime, or product claim |
 
 ## Corpus Completeness And Report Integrity
 
 - Corpus task class: downstream SOT application intake and productization.
 - Corpus root: literal sibling source root in Scope / Target / Owner Boundary.
-- Snapshot time: 2026-07-16 dispatch-author recomputation.
+- Snapshot time: 2026-07-16 worker and independent-review recomputation.
 - Enumeration command: `rg --files --hidden --no-ignore` plus filesystem-backed
   relative-path, byte, SHA-256, and ordinal normalized-path aggregate reads.
 - Manifest artifact or inline manifest: inline 336-file and 238,522-byte snapshot.
-- Manifest hash: T0A dispatch expectation is
-  `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`;
-  worker must recompute it.
-- Processing ledger artifact or inline ledger: dispatched T0A metadata/sample ledger.
+- Manifest hash: `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`.
+- Processing ledger artifact or inline ledger: accepted T0B 336-row semantic and 13-row provenance ledger.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE
-- Reconciliation: manifest=336; ledger_terminal=20; metadata_frozen=336; semantic_sample_terminal=20; semantic_unresolved=316; unresolved=316; declaration_occurrences=13; missing declared extension targets=3; exclusions=0.
-- T0A target reconciliation: manifest=336; metadata_frozen=336;
-  sample_semantic_terminal=20; semantic_unresolved=316; exclusions=0.
-- Unresolved files: 316 semantic files plus terminal provenance disposition for all 13 declarations in T0B.
+- Reconciliation: manifest=336; ledger_terminal=336; semantic_terminal=336; unresolved=0; declaration_terminal=13; missing_declared_extension_targets=3; exclusions=0.
+- T0B target reconciliation: manifest=336; semantic_terminal=336; declaration_terminal=13; unresolved=0; exclusions=0.
+- Unresolved files: 0
 - Declared exclusions: none.
-- Unreadable or unsupported files: none observed during intake.
-- Aggregation check: 336 files and 238,522 bytes in accepted intake snapshot.
-- Drift check: T0A recomputes paths, counts, bytes, hashes, declarations, and all sample hashes.
+- Unreadable or unsupported files: none
+- Aggregation check: 336 files and 238,522 bytes; aggregate and every path/byte/hash match.
+- Drift check: worker and independent reviewer recomputed paths, counts, bytes, hashes, declarations, and all sample meanings with zero drift.
 - Output traceability: source path, digest, status, disposition, owner, and reason.
 - Adversarial verification: roadmap authorization is not source or product proof.
-- Corpus verdict: PARTIAL
+- Corpus verdict: COMPLETE_VERIFIED
 
 ## External Absorption Value Conversion Matrix
 
@@ -278,9 +284,9 @@ committed from a clean dispatch base. T1 and every later tranche remain held.
 | Input type | External repo or copied folder |
 | Chain map route | intake authorization -> scope split -> T0A calibration -> reviewer acceptance -> committed T0B packet -> full-corpus no-commit ledger -> reviewer audit |
 | Matching local-view guard | `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py` |
-| Owner surface | this roadmap until T0B reviewer acceptance; later owner ratification remains T1-owned |
+| Owner surface | this roadmap records accepted T0B evidence; later owner ratification remains parked behind MAO and fresh T1 authority |
 | Disposition | PACKAGE_CANDIDATE and RUNTIME_CANDIDATE; reject direct import |
-| Claim boundary | dispatched T0B evidence lane only; no accepted full-corpus or runtime claim yet |
+| Claim boundary | accepted full-corpus static evidence only; no runtime, product, public, or T1 release claim |
 
 ## Epistemic Process Block
 
@@ -295,27 +301,26 @@ reference controllers, missing lockfile, and declared hidden-clone paths.
 Contradiction Or Gap Disposition: T0/T1 must record source contradictions as
 blocked rows or proposed owner gaps rather than guessing current CVF contracts.
 
-Claim Update: T0A is closed bounded with reviewer repairs. The 336-row metadata
-freeze, 20-row sample rubric, 316-row residual, 13 declarations, and three
-missing declared extension targets are accepted T0B inputs. The fresh T0B
-packet releases only the exact no-commit evidence worker; source mutation and
-later tranches remain unauthorized.
+Claim Update: T0B is closed bounded with reviewer repairs. All 336 semantic
+rows and 13 provenance rows are independently accepted with zero unresolved
+identities. Source mutation and later tranches remain unauthorized; MAO roadmap
+authoring and completion is the only next roadmap lane.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | Status: T0B_DISPATCH_READY; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; PARTIAL; Public Export Disposition; Claim Boundary |
-| gateRunPurpose | confirmation of T0B dependency release and external-absorption shape; gates are evidence and not first discovery |
+| literalTokensReviewed | Status: T0B_CLOSED_PASS_BOUNDED_MAO_ROADMAP_AUTHORING_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; COMPLETE_VERIFIED; Public Export Disposition; Machine Closure Package; Claim Boundary |
+| gateRunPurpose | confirm T0B reviewer closure structure after independent semantic and objective recomputation |
 | claimBoundary | structural confirmation only; no source, runtime, or product proof |
 
 ## Current Runtime Freshness Verification
 
-The T0A closure remains accepted execution history. Current T0B packet
-authoring uses only source reads, hashing, read-only Git metadata, governed
-documentation edits, and governance gates. No T0B worker execution, application
-runtime, test, build, server, browser, or live-provider action is claimed.
+T0A and T0B remain accepted static execution history. T0B worker/reviewer
+activity used source reads, hashing, read-only Git metadata, governed
+documentation edits, and governance gates only. No application runtime, test,
+build, server, browser, or live-provider action is claimed.
 
 ## Public Export Disposition
 
@@ -328,31 +333,31 @@ public-safe artifact set exists.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0A_CORPUS_FREEZE_AND_SEMANTIC_CALIBRATION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
-| Worker ledger | `docs/reviews/CVF_SOT3_APP_T0A_CORPUS_METADATA_AND_SAMPLE_LEDGER_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
-| Worker return | `docs/reviews/CVF_SOT3_APP_T0A_WORKER_RETURN_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
-| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T0A_COMPLETION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
-| Roadmap state | this artifact | `Status: T0B_DISPATCH_READY` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Worker ledger | `docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS`; semantic_terminal=336; declaration_terminal=13 | PASS_WITH_REPAIR |
+| Worker return | `docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T0B_COMPLETION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Roadmap state | this artifact | `Status: T0B_CLOSED_PASS_BOUNDED_MAO_ROADMAP_AUTHORING_NEXT` | PASS |
 | Registry JSON | N/A with reason: no registry JSON is required or changed | no generated registry mutation | PASS |
 | Registry Markdown | N/A with reason: no registry Markdown is required or changed | no registry mutation | PASS |
-| External evidence digest | N/A with reason: no external benchmark or live digest is authorized | no digest created | N/A with reason |
-| System loop interlock | N/A with reason: no runtime or system-loop source changed | documentation-only closure | N/A with reason |
+| External evidence digest | accepted T0B ledger | 336 files; 238522 bytes; sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; declaration inventory | PASS |
+| System loop interlock | T0B accepted output -> MAO roadmap authoring | T1 and later absorption parked until MAO completion | PASS |
 | Session continuity | active session front door, state, and handoff | separate sync after material commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Observed value | Status |
 |---|---|---|
-| T0A corpus acceptance | 336 metadata rows, 20 semantic rows, 316 unresolved semantics, 13 declarations, and 3 missing declared targets | PASS |
+| T0B corpus acceptance | 336 terminal semantic rows, 13 terminal provenance rows, zero unresolved identities, and 3 missing declared targets retained | PASS |
 | Runtime receipt evidence | N/A with reason: no runtime receipt was authorized | no runtime action occurred | N/A_WITH_REASON |
-| Query acceptance evidence | N/A with reason: T0A performs no acceptance query | no query receipt exists or is claimed | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: T0B performs no runtime acceptance query | no query receipt exists or is claimed | N/A_WITH_REASON |
 
 ## Claim Boundary
 
-This roadmap records an operator-authorized sequence and a reviewer-selected
-two-phase full-corpus T0 route. T0A is accepted with reviewer repairs and the
-fresh T0B packet releases only one exact no-commit semantic/provenance evidence
-worker. It does not yet complete or accept 336 semantic dispositions, ratify
-application contracts, authorize source mutation, prove build/runtime/live
-behavior, promote the application into CVF Core, or claim public or production
-readiness.
+This roadmap records an operator-authorized sequence and a completed,
+independently accepted two-phase full-corpus T0 route. It accepts static
+semantic/provenance evidence only. It does not ratify application contracts,
+authorize source mutation or T1, prove build/runtime/live behavior, promote the
+application into CVF Core, or claim public or production readiness. MAO roadmap
+authoring and completion is the only next roadmap lane before absorption may
+resume.
