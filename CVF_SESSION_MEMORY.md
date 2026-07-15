@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_t5_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute the exact no-commit T5 seven-path reverse-projection audit; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_live_proof_sequence_closed_value_parked`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=no active SCLP tranche; reopen only on a concrete parked trigger or materially new claim with a fresh proof packet; parked checkpoint=UC-03 harness identity repair until reuse, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_t5_dispatched_worker_next`
+Current mode marker: `system_chain_live_proof_sequence_closed_value_parked`
 
-Current mode: `system_chain_t5_dispatched_worker_next`
+Current mode: `system_chain_live_proof_sequence_closed_value_parked`
 
-`system_chain_t5_dispatched_worker_next`
+`system_chain_live_proof_sequence_closed_value_parked`
 
 Previous mode:
 
-`system_chain_live_proof_t5_final_reverse_projection_next`
+`system_chain_t5_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain T5 final reverse-projection and sequence closure | `61662d9b0` | CLOSED_PASS_BOUNDED; four use cases/five lanes reconciled; stale sequencing and telemetry repaired; ADIF-0039 recorded; no active SCLP tranche. |
 | System-chain T5 final reverse-projection dispatch | `fd9fe3945` | DISPATCH_READY; exact seven-path no-commit audit; UC-01 through UC-04 and five lanes; zero live/provider/runtime/public expansion. |
 | System-chain UC-04B-R3R3 reviewer negative proof closure | `f9c1b14a1` | CLOSED_PASS_BOUNDED; reviewer visible, one 403 policy denial, exact requested-to-blocked audit, 1/1/0/0/0; selected Web pair proven bounded; projection GAP closed; ADIF-0038 recorded. |
 | System-chain UC-04B-R3R3 reviewer negative-only proof dispatch | `523748cec` | DISPATCH_READY; one case/invocation/submission, expected 403 policy denial and 1/1/0/0/0; zero retry/provider; worker must not commit. |
@@ -199,14 +200,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_t5_dispatched_worker_next`
+Mode: `system_chain_live_proof_sequence_closed_value_parked`
 
-SCLP-T5 is dispatch-ready at `fd9fe3945`. Execute the exact seven-path
-no-commit audit. Reconcile UC-01 through UC-04 and all five lanes, map every
-finding to all applicable governed destinations, repair stale allowed-scope
-state, and close or value-park remaining branches with concrete reopen
-triggers. Zero live/provider/Playwright/business CLI/runtime/checker/ADIF/
-session/public/new-GAP action. Return for reviewer closure.
+SCLP-T5 and the system-chain live-proof sequence are closed bounded at
+`61662d9b0`. No SCLP tranche is active. Reopen only when a recorded concrete
+parked-branch trigger is satisfied or a materially new system-chain claim
+requires a fresh source-verified proof packet. Do not reopen unified Web
+checker inventory from interest alone. Public export, production, scale,
+certification, shipment, and real-user validation remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
