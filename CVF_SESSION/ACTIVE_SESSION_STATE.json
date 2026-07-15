@@ -83,8 +83,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc04b_business_proof_packet_next",
-  "previousMode": "system_chain_uc04b_r2r1_dispatched_worker_next",
+  "currentMode": "system_chain_uc04b_r3_dispatched_worker_next",
+  "previousMode": "system_chain_uc04b_business_proof_packet_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11938,5 +11938,27 @@
     "nextAllowedMove": "author one fresh source-verified UC-04B business-proof packet only",
     "claimBoundary": "Bounded developer/anonymous auth projection under one canonical local origin only. No business submission, reviewer-role, all-auth, all-host, unified inventory, provider, public, production, scale, certification, or user-value proof."
   },
-  "nextAllowedMove": "SCLP-UC04B-R2R1 is CLOSED_PASS_BOUNDED at material commit 37942fb38. The frozen proof hash matched R2, focused auth tests passed 12/12 with clean typecheck, and one canonical localhost Playwright invocation passed both developer and anonymous projections. Exact counters are one invocation and zero business submissions, checker executions, retries, and provider calls. The auth-projection GAP is CLOSED_WITH_EVIDENCE for this bounded pair. Next allowed move is author one fresh source-verified UC-04B business-proof GC-018 and work order only. Do not rerun T4, R1, R2, or R2R1, and do not infer reviewer-role coverage, every host/auth path, unified inventory, provider governance, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc04bR3Dispatch20260715": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "74aa3d246",
+    "workOrderId": "SCLP-UC04B-R3",
+    "dispatchBaseHead": "4c8a8231f",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "playwrightBaseUrl": "http://localhost:3001",
+    "playwrightInvocationCeiling": 1,
+    "webSubmissionCeiling": 2,
+    "selectedCheckerExecutionCeiling": 1,
+    "retryCeiling": 0,
+    "providerCallCeiling": 0,
+    "retainedProofSha256": "89aaf5a078c7c90bb01265d5f982110f6a077343641bff09e245eb5cff271d49",
+    "runtimeMutationAuthorized": false,
+    "retainedProofMutationAuthorized": false,
+    "requiredCaseIds": [
+      "positive_developer_docs_check",
+      "negative_reviewer_docs_check"
+    ],
+    "nextAllowedMove": "execute the exact no-commit R3 business-proof work order once and return for reviewer closure",
+    "claimBoundary": "Dispatch authority only. No current business PASS, unified inventory, other jobs/roles, provider, public, production, scale, certification, or user-value claim."
+  },
+  "nextAllowedMove": "SCLP-UC04B-R3 is DISPATCH_READY at material commit 74aa3d246. Execute the exact no-commit provider-free business-proof work order once. Required preflight is the current five-file focused suite at 32/32 and frozen proof hash match. The sole Playwright invocation must use PLAYWRIGHT_BASE_URL=http://localhost:3001 and run both retained business cases serially. Exact ceilings are one invocation, two Web submissions, one selected docs-checker execution, zero retries, and zero provider calls. Stop with a secret-safe diagnostic on any non-PASS. Do not edit runtime, UI, auth, route, job, config, test, proof, checker, roadmap, registry, or session owners, and do not infer unified inventory, other jobs/roles, provider governance, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
 }
