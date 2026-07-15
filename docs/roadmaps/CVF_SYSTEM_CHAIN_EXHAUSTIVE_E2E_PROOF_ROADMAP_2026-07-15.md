@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T0_CLOSED_T1_PACKET_AUTHORING_NEXT
+Status: ACTIVE_T0_CLOSED_T1_DISPATCH_READY
 
 docType: roadmap
 
@@ -81,7 +81,7 @@ still lacking a reviewable answer to the broader question.
 | source-verification plan | exact owner files, arrays/rows, proof ledger, and live-proof standard |
 | claim boundary | exhaustive source-claim inventory, not universal E2E proof |
 | verification | corpus reconciliation, hashes, claim provenance, reviewer recomputation |
-| dispatch readiness | only T0 is dispatch-ready through its paired packet |
+| dispatch readiness | T0 is closed bounded; only T1 is dispatch-ready through its paired packet |
 
 ## Inventory Model
 
@@ -133,12 +133,12 @@ is `MISSING_PROOF` unless a governed value decision parks it.
 | Tranche | Objective | Required output | Release condition |
 |---|---|---|---|
 | T0 | exhaustive source-item and normalized-claim inventory | JSON inventory, inventory audit, no-commit worker return | `CLOSED_PASS_BOUNDED`: reviewer confirmed 99/99 source-item terminal accounting, dedupe traceability, and honest dispositions after one bounded proof-class repair |
-| T1 | reviewer reconciliation and value selection | accepted claim set, contradiction ledger, ranked missing-proof candidates | T0 `CLOSED_PASS_BOUNDED`; no live execution |
+| T1 | reviewer reconciliation and value selection | accepted claim set, contradiction ledger, ranked missing-proof candidates | `DISPATCH_READY` through paired T1 baseline/work order; no live execution |
 | T2 | lowest-cost deterministic runtime proof batch | selected local/CI/runtime receipts and diagnostics | T1 selects decision-changing cases and fresh GC-018/work orders |
 | T3 | operator-surface or provider proof batch | selected CLI/Web/provider receipts and recovery evidence | T2 reviewed; only cases requiring higher proof class proceed |
 | T4 | final reverse projection and bounded closure | coverage/catalog/GAP/learning updates and final claim boundary | every inventory claim is terminally dispositioned; no unresolved silent row |
 
-T1 through T4 are not dispatch-ready. Each requires fresh source verification,
+T2 through T4 are not dispatch-ready. Each requires fresh source verification,
 dependency-release evidence, GC-018, and a separate work order.
 
 ## Acceptance Criteria
@@ -210,9 +210,10 @@ freshness as repository evidence only. Any missing current invocation remains
 
 ## Next Allowed Move
 
-Author only a fresh source-verified T1 reviewer-reconciliation and value-
-selection packet using the accepted T0 inventory. Do not run live cases, mutate
-owners/GAPs, or infer T2-T4 release from T0 closure.
+Execute only `SCLP-X-T1` under its exact no-commit three-path manifest. Reconcile
+the six-record decision corpus, rank the three missing-proof claims, and return
+for reviewer acceptance. Do not run live cases, mutate owners/GAPs, or infer
+T2-T4 release from T1 recommendations.
 
 ## Public Export Disposition
 
