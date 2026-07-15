@@ -8,21 +8,23 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after SCLP-X-T0 dispatch and route only the exhaustive
-inventory worker while all live execution remains held.
+Carry compact continuity after SCLP-X-T0 closure and route only fresh T1 packet
+authoring while all live execution remains held.
 
 ## Scope / Target / Owner Boundary
 
 This handoff owns continuity pointers only. Material commit `48e873857` owns
-the exhaustive roadmap and exact no-commit T0 dispatch packet.
+the exhaustive roadmap and T0 dispatch packet; `e6034224c` owns the accepted
+inventory and bounded closure.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_exhaustive_proof_t0_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute exact
-three-path SCLP-X-T0 inventory with 99/99 source-record accounting and zero
-live action; parked checkpoint=T1-T4, live/provider runs, unified inventory
-implementation, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_exhaustive_proof_t0_closed_t1_packet_authoring_next`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author fresh
+source-verified SCLP-X-T1 reviewer-reconciliation and value-selection packet
+only; parked checkpoint=all live/provider runs, T2-T4 execution, owner/GAP
+promotion, unified inventory implementation, public export, production, scale,
+and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -37,7 +39,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_exhaustive_proof_t0_dispatched_worker_next`
+`system_chain_exhaustive_proof_t0_closed_t1_packet_authoring_next`
 
 ## Active Boundary
 
@@ -51,6 +53,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - T5 dispatch commit: `fd9fe3945`.
 - T5 closure commit: `61662d9b0`.
 - SCLP-X-T0 dispatch commit: `48e873857`.
+- SCLP-X-T0 closure commit: `e6034224c`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
@@ -58,26 +61,28 @@ Latest closed numbered LHW wave remains `LHW24`.
   requested-to-blocked audit order, and 1/1/0/0/0 counters.
 - The selected Web pair is proven bounded and the auth-projection GAP is closed.
 - T5 and the selected SCLP roadmap remain closed bounded.
-- T0 inventories 5 map lanes, 20 interlock connections, 50 controls, and 24
-  catalog entities; later live selection remains forbidden.
+- T0 reconciles 5 map lanes, 20 interlock connections, 50 controls, and 24
+  catalog entities into 99 terminal claims: 5 proven, 78 static, 13 parked,
+  and 3 missing; later live selection remains forbidden.
 
 ## Latest Work / Changes
 
-SCLP-X-T0 is dispatch-ready at `48e873857`. It requires one exhaustive 99-row
-source-item reconciliation, conservative claim dedupe, exact proof matching,
-and four terminal inventory dispositions in three uncommitted output files.
+SCLP-X-T0 is closed bounded at `e6034224c`. Independent review accepted 99/99
+source records and 99 terminal claims after one observed-proof-class token
+repair. No live/provider/runtime action occurred.
 
 ## Next Allowed Move
 
-Execute only SCLP-X-T0 from `48e873857`. Confirm clean worktree, capture the
-execution base, produce the exact three outputs, and return without commit.
-Zero live/provider/browser/business CLI/runtime/test/checker/owner mutation.
+Author only a fresh source-verified SCLP-X-T1 reviewer-reconciliation and
+value-selection packet grounded in `e6034224c`. Decide the three missing-proof
+claims and two proposed owner/GAP candidates without execution or promotion.
 
 ## Parked Checkpoint
 
-UC-03 harness identity repair remains parked until reuse. GC-009/GC-010,
-unified inventory, public export, production readiness, scale, certification,
-and real-user validation remain parked.
+UC-03 harness identity repair remains parked until reuse. All live/provider
+runs, T2-T4 execution, owner/GAP promotion, unified inventory implementation,
+public export, production readiness, scale, certification, and real-user
+validation remain parked.
 
 ## HEAD / Commit Boundary
 
@@ -103,8 +108,10 @@ T5 material closure HEAD: `61662d9b0`
 
 SCLP-X-T0 dispatch HEAD: `48e873857`
 
-The next material commit may contain only reviewer-accepted T0 inventory
-outputs and reviewer-owned closure surfaces. Session sync remains separate.
+SCLP-X-T0 material closure HEAD: `e6034224c`
+
+The next material commit may contain only fresh T1 packet authoring surfaces.
+Session sync remains separate.
 
 ## Claim Boundary
 
@@ -113,10 +120,10 @@ path. UC-04B now separately proves a selected Web developer-success and
 reviewer-denial pair bounded; it does not broaden the SOT3 claim or prove
 unified inventory, provider governance, or production readiness.
 
-## Core Guard Self-Protection Authorization - SCLP-X-T0 Dispatch Session Sync
+## Core Guard Self-Protection Authorization - SCLP-X-T0 Closure Session Sync
 
-Authorized guard-maintenance scope: synchronize T0 dispatch `48e873857` and
-route only the exact no-commit inventory worker.
+Authorized guard-maintenance scope: synchronize T0 closure `e6034224c` and
+route only fresh T1 packet authoring.
 
 Protected paths (every changed guard/control path is listed):
 
@@ -126,12 +133,13 @@ Protected paths (every changed guard/control path is listed):
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/systemChainExhaustiveProofT0Dispatch20260715.json`
+- `CVF_SESSION/state/entries/systemChainExhaustiveProofT0Closure20260715.json`
 
-Operator authorization: proceed with the accepted inventory-first proposal.
+Operator authorization: proceed with the accepted inventory-first proposal and
+its governed reviewer closure route.
 
 Rollback boundary: revert only this session-sync batch; retain material commits
-`61662d9b0`, `48e873857`, and all historical proof evidence.
+`61662d9b0`, `48e873857`, `e6034224c`, and all historical proof evidence.
 
 ## Public Export Disposition
 
@@ -145,18 +153,18 @@ Reason: private continuity sync; no public-sync action.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | SCLP-X-T0 dispatch continuity sync, 2026-07-15 |
+| Session or invocation | SCLP-X-T0 closure continuity sync, 2026-07-15 |
 | Working directory | repository root |
 | Command or tool surface | state-source edits, active-state generator, continuity gates, git |
 | Target paths | protected paths listed in the Core Guard Self-Protection Authorization section |
-| Allowed scope source | operator inventory-first authorization and dispatch `48e873857` |
-| Before status evidence | V44 recorded the selected SCLP sequence closed/value-parked |
-| After status evidence | V44 routes only the exact T0 inventory worker |
+| Allowed scope source | operator inventory-first authorization and closure `e6034224c` |
+| Before status evidence | V44 routed only the exact T0 inventory worker |
+| After status evidence | V44 routes only fresh T1 packet authoring |
 | Diff evidence | session-only staged diff and generated-state check |
-| Approval boundary | continuity sync only; no material repair or live run |
+| Approval boundary | continuity sync only; no T1 execution or live run |
 | Claim boundary | session routing only |
 | Agent type | session-sync steward |
-| Invocation ID | system-chain-exhaustive-proof-t0-dispatch-session-sync-2026-07-15 |
+| Invocation ID | system-chain-exhaustive-proof-t0-closure-session-sync-2026-07-15 |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
 | Manifest delta | MATCH |
