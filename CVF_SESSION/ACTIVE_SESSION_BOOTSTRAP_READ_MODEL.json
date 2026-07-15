@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_exhaustive_proof_roadmap_closed_no_active_tranche",
+  "currentMode": "sot3_absorption_authorized_fscb_t0_packet_authoring",
   "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
-  "nextAllowedMove": "SCLP-X is CLOSED_PASS_BOUNDED at material commit 2fdb9d383; no SCLP-X tranche is active. Reopen only T3 when current source proves a non-test production caller or active package export for GC-009 or GC-010. Any other continuation requires a fresh operator-authorized roadmap and GC-018 packet. Do not infer runtime, live-provider, universal E2E, public, production, scale, certification, shipment, or user-value proof. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Operator-authorized intake review is accepted at material commit 24d50f0d7. Author and machine-validate the split FSCB-ADAPT and SOT3-APP roadmaps plus the FSCB-ADAPT-T0 GC-018/work-order packet; commit the dispatch packet only after pre-dispatch PASS, then execute only the documentation-only three-output FSCB-ADAPT-T0 worker scope. SOT3-APP-T0 remains queued until FSCB-ADAPT-T0 material review closure. SCLP-X-T3 remains parked until its caller/export condition. Do not infer runtime, live-provider, universal E2E, public, production, scale, certification, shipment, or user-value proof. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

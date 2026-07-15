@@ -1,0 +1,12 @@
+{
+  "stateOrder": 1840,
+  "stateKey": "sot3ApplicationAndFscbAbsorptionIntakeAuthorization20260715",
+  "value": {
+    "status": "OPERATOR_AUTHORIZED_FOR_ROADMAP_AND_FSCB_T0_PACKET_AUTHORING",
+    "materialCommit": "24d50f0d7",
+    "intakeReview": "docs/reviews/CVF_SOT3_DOWNSTREAM_APPLICATION_AND_FOUR_SURFACE_ABSORPTION_INTAKE_REVIEW_2026-07-15.md",
+    "claudeRebuttal": "docs/reviews/CVF_SOT3_APP_INTAKE_REVIEW_CLAUDE_REBUTTAL_FOR_CODEX_2026-07-15.md",
+    "nextAllowedMove": "Author and validate the split FSCB-ADAPT and SOT3-APP roadmaps plus the documentation-only FSCB-ADAPT-T0 GC-018/work order. SOT3-APP implementation remains queued; no runtime, test, build, live-provider, public-sync, package activation, or source-checker mutation is authorized.",
+    "parkedCheckpoint": "SCLP-X-T3 remains parked until current source proves a non-test production caller or active package export for GC-009 or GC-010."
+  }
+}

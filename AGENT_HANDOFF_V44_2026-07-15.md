@@ -8,9 +8,10 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after bounded SCLP-X roadmap closure, with no active
-SCLP-X tranche. T3 and all runtime execution or historical-ledger/runtime/
-source/Catalog/GAP/ADIF mutation remain held.
+Carry compact continuity after operator authorization of the split SOT3
+downstream-application and Four-Surface absorption lanes. SCLP-X-T3 and all
+runtime execution or historical-ledger/runtime/source/Catalog/GAP/ADIF
+mutation remain held.
 
 ## Scope / Target / Owner Boundary
 
@@ -19,18 +20,20 @@ the accepted T0 inventory and bounded closure; `c53bef36c` owns accepted T1
 value selection; `e0e5e755f` owns the T2 dispatch packet; `498413cc9` owns the
 bounded T2 caller-verification closure; `6634796da` owns the T2G1 dispatch; and
 `4858129d5` owns the bounded T2G1 closure; `242afa1b5` owns T4 dispatch; and
-`2fdb9d383` owns T4 acceptance and bounded roadmap closure.
+`2fdb9d383` owns T4 acceptance and bounded roadmap closure. Material commit
+`24d50f0d7` owns the accepted SOT3/Four-Surface intake review and Claude
+rebuttal.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=no active
-SCLP-X tranche, with any new work requiring a fresh operator-authorized roadmap
-and GC-018 packet; parked checkpoint=T3 until a current non-test production
-caller or active package export is source-proven, plus all runtime/test/build/
-typecheck/CI/live/provider/browser/Playwright/business-CLI runs, historical-
-ledger/runtime/source/Catalog/GAP/ADIF mutation, public export, production,
-scale, and user validation.
+Startup acknowledged: current mode=`sot3_absorption_authorized_fscb_t0_packet_authoring`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author and
+machine-validate the split roadmaps plus the documentation-only FSCB-ADAPT-T0
+GC-018/work order, then dispatch only after gate PASS; parked checkpoint=SCLP-
+X-T3 until a current non-test production caller or active package export is
+source-proven, plus all runtime/test/build/typecheck/CI/live/provider/browser/
+Playwright/business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF
+mutation, public export, production, scale, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -45,7 +48,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
+`sot3_absorption_authorized_fscb_t0_packet_authoring`
 
 ## Active Boundary
 
@@ -68,6 +71,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - SCLP-X-T4 bounded roadmap closure commit: `2fdb9d383`.
 - SCLP-X-T2G1 bounded closure commit: `4858129d5`.
 - SCLP-X-T4 dispatch commit: `242afa1b5`.
+- SOT3/Four-Surface intake authorization commit: `24d50f0d7`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
@@ -83,16 +87,17 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Latest Work / Changes
 
-SCLP-X-T4 is dispatch-ready at `242afa1b5`: one derived 99-claim final
-projection, human audit, roadmap/front-door alignment, and worker return are
-authorized as an exact five-path no-commit batch. T3 remains value-parked.
+The SOT3/Four-Surface intake review and Claude rebuttal are accepted at
+`24d50f0d7`. Operator authorization releases split roadmap authoring and the
+documentation-only FSCB-ADAPT-T0 GC-018/work-order packet. No source/runtime or
+SOT-Application implementation is released.
 
 ## Next Allowed Move
 
-SCLP-X is `CLOSED_PASS_BOUNDED` at material commit `2fdb9d383`; no SCLP-X
-tranche is active. Reopen only T3 when current source proves a non-test
-production caller or active package export for GC-009 or GC-010. Any other
-continuation requires a fresh operator-authorized roadmap and GC-018 packet.
+Author and machine-validate the split FSCB-ADAPT and SOT3-APP roadmaps plus the
+FSCB-ADAPT-T0 GC-018/work order. Commit dispatch only after pre-dispatch PASS,
+then execute only the exact documentation-only three-output worker scope.
+SOT3-APP-T0 remains queued until FSCB-ADAPT-T0 material review closure.
 
 ## Parked Checkpoint
 
@@ -104,6 +109,8 @@ unified inventory implementation, public export, production readiness, scale,
 certification, and real-user validation remain parked.
 
 ## HEAD / Commit Boundary
+
+Current material HEAD: `24d50f0d7`
 
 R3R1 material closure HEAD: `0856e090d`
 
@@ -244,3 +251,60 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 DEFERRED_PRIVATE_ONLY
 
 Reason: private continuity sync; no public-sync action.
+
+## SOT3/Four-Surface Intake Authorization Session Sync
+
+Material commit `24d50f0d7` accepts the two governed intake/rebuttal review
+documents and records operator authorization for split roadmap authoring. The
+next bounded execution lane is FSCB-ADAPT-T0 source-ledger/crosswalk evidence;
+SOT3-APP implementation remains queued.
+
+## Core Guard Self-Protection Authorization - SOT3/FSCB Intake Session Sync
+
+Authorized guard-maintenance scope: synchronize material intake authorization
+`24d50f0d7` and route only roadmap plus FSCB-ADAPT-T0 packet authoring.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3ApplicationAndFscbAbsorptionIntakeAuthorization20260715.json`
+
+Operator authorization: begin after the Codex/Claude rebuttal; roadmap and
+documentation-only first-tranche packet authoring are released.
+
+Rollback boundary: revert only this session-sync batch; retain material commit
+`24d50f0d7`, SCLP-X closure `2fdb9d383`, and prior accepted evidence.
+
+## Public Export Disposition - SOT3/FSCB Intake Session Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.
+
+## Agent Operation Trace Block - SOT3/FSCB Intake Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | SOT3/FSCB intake authorization continuity sync, 2026-07-15 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | protected paths listed in the matching authorization section |
+| Allowed scope source | material intake authorization `24d50f0d7` and operator direction to begin |
+| Before status evidence | clean worktree at material HEAD `24d50f0d7` after isolated dispatch WIP was stashed |
+| After status evidence | continuity routes only split roadmap and FSCB-ADAPT-T0 packet authoring |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sync only; no worker execution or source/runtime/public mutation |
+| Claim boundary | session routing only |
+| Agent type | session-sync steward |
+| Invocation ID | sot3-fscb-intake-session-sync-2026-07-15 |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
+| Actual changed set | same session-sync manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |

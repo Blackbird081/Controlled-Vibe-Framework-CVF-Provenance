@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=no active SCLP-X tranche; parked checkpoint=T3 until its caller/export condition, while any other continuation requires a fresh operator-authorized roadmap and GC-018 packet.
+Startup acknowledged: current mode=`sot3_absorption_authorized_fscb_t0_packet_authoring`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author and validate the split roadmaps plus the documentation-only FSCB-ADAPT-T0 packet; parked checkpoint=SCLP-X-T3 until its caller/export condition, with SOT3-APP implementation queued.
 
 ## Current Mode
 
-Current mode marker: `system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
+Current mode marker: `sot3_absorption_authorized_fscb_t0_packet_authoring`
 
-Current mode: `system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
+Current mode: `sot3_absorption_authorized_fscb_t0_packet_authoring`
 
-`system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
+`sot3_absorption_authorized_fscb_t0_packet_authoring`
 
 Previous mode:
 
-`system_chain_exhaustive_proof_t4_dispatched_worker_next`
+`system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3 downstream-application and Four-Surface absorption intake authorization | `24d50f0d7` | OPERATOR_AUTHORIZED_FOR_ROADMAP_AUTHORING; Codex intake and Claude rebuttal accepted; split roadmap authoring plus documentation-only FSCB-ADAPT-T0 packet released; SOT3-APP implementation remains queued. |
 | System-chain exhaustive proof T4 and roadmap closure | `2fdb9d383` | CLOSED_PASS_BOUNDED; 99/99 unique terminal projection rows, zero silent/unmapped, seven exact T1 applicability citations, four frozen hashes matched, one consolidated reviewer repair batch, T3 preserved parked, and zero runtime/test/live/provider/Catalog/GAP/ADIF mutation. |
 | System-chain exhaustive proof T4 final reverse-projection dispatch | `242afa1b5` | DISPATCH_READY; exact 99-claim derived projection, audit, roadmap/front-door alignment, and five-path no-commit return; T3 preserved parked; zero runtime/test/live/provider/Catalog/GAP/ADIF mutation. |
 | System-chain exhaustive proof T2G1 paired architecture-GAP recording closure | `4858129d5` | CLOSED_PASS_BOUNDED; one paired GC-009/GC-010 GAP, 12/12 unique index IDs, zero schema or README coverage errors, zero reviewer repairs, and zero runtime/test/live/provider/source/catalog/ADIF mutation; T3 value-parked and T4 packet authoring next. |
@@ -210,15 +211,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
+Mode: `sot3_absorption_authorized_fscb_t0_packet_authoring`
 
-SCLP-X is `CLOSED_PASS_BOUNDED` at `2fdb9d383`; no SCLP-X tranche is active.
-Reopen only T3 when current source proves a non-test production caller or
-active package export for GC-009 or GC-010. Any other continuation requires a
-fresh operator-authorized roadmap and GC-018 packet. Do not infer runtime,
-live-provider, universal E2E, public, production, scale, certification,
-shipment, or user-value proof. Latest closed numbered LHW wave remains
-`LHW24`.
+The intake/rebuttal pair is accepted at `24d50f0d7`. Author and validate the
+split FSCB-ADAPT and SOT3-APP roadmaps plus the FSCB-ADAPT-T0 GC-018/work
+order; commit dispatch only after pre-dispatch PASS, then execute only the
+documentation-only three-output T0 worker scope. SOT3-APP-T0 stays queued
+until FSCB-ADAPT-T0 material review closure. SCLP-X-T3 remains parked at its
+caller/export condition. Do not infer runtime, live-provider, universal E2E,
+public, production, scale, certification, shipment, or user-value proof.
+Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
