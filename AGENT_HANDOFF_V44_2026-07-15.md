@@ -508,6 +508,79 @@ Reason: private continuity sync; no public-sync action.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
+## Operator Sequence Lock After SOT3-APP-T0B - 2026-07-16
+
+The operator fixed one mandatory cross-roadmap sequence:
+
+1. complete SOT3-APP-T0B under its existing exact two-output no-commit work
+   order and obtain independent reviewer acceptance/closure;
+2. author and complete a fresh governed roadmap named MAO Operational Adoption
+   And Agent Execution Assurance, based on the audited gap between the closed
+   MAO contract/test/pilot foundation and real orchestrator-owned agent project
+   execution; and
+3. only after that roadmap closes may SOT3-APP-T1, later SOT3-APP work, or any
+   other high-value-folder absorption continue.
+
+The current mode remains `sot3_app_t0b_dispatched_worker_next`. This sequence
+lock does not create the MAO adoption roadmap, authorize implementation, or
+change the T0B output manifest. Because this continuity sync advances HEAD
+before either T0B output exists, the T0B worker must refresh its clean
+`executionBaseHead` and rerun execution-start drift/pre-implementation checks
+before continuing.
+
+## Core Guard Self-Protection Authorization - Post-T0B Sequence Lock
+
+Authorized guard-maintenance scope: record the operator-selected order T0B
+closure -> MAO Operational Adoption And Agent Execution Assurance roadmap
+closure -> absorption continuation, without executing any of those future
+lanes in this session-sync batch.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3AppPostT0BMaoOperationalAdoptionSequence20260716.json`
+
+Rollback boundary: revert only this sequence-lock session-sync batch; retain
+SOT3-APP-T0B dispatch `e93d63883`, T0A closure `5a49ee650`, and all prior MAO
+closure evidence.
+
+Not authorized: T0B worker output mutation, new roadmap authoring, MAO source or
+checker mutation, agent launch, runtime/test/build/live/provider/public work,
+or any absorption continuation.
+
+## Public Export Disposition - Post-T0B Sequence Lock
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sequencing only; no public-sync action.
+
+## Agent Operation Trace Block - Post-T0B Sequence Lock
+
+| Field | Evidence |
+|---|---|
+| Actor | operator and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | post-T0B MAO adoption sequencing lock, 2026-07-16 |
+| Working directory | repository root |
+| Command or tool surface | operator instruction, state-source edits, active-state generator, continuity gates, git |
+| Target paths | six protected paths listed above |
+| Allowed scope source | operator instruction to finish T0B, then complete MAO Operational Adoption And Agent Execution Assurance, then resume absorption |
+| Before status evidence | clean worktree at `42468a4f7`; both T0B output paths absent |
+| After status evidence | current T0B execution retained; post-T0B MAO adoption roadmap closure is the only release route before absorption resumes |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sequencing only; no T0B execution or future roadmap implementation |
+| Claim boundary | operator sequence lock only; no MAO adoption, runtime, provider, public, or absorption-completion claim |
+| Agent type | session-sync steward |
+| Invocation ID | post-t0b-mao-adoption-sequence-lock-2026-07-16 |
+| Expected manifest | V44, memory, bootstrap, active-state aggregate, next-move source, and one new sequence source entry |
+| Actual changed set | same six-path session-sync manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## SCLP-X-T4 Closure And Roadmap Finalization
 
 Reviewer/closer accepted the corrected 99-row final reverse projection and

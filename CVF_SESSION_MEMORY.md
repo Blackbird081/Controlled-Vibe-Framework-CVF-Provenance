@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0b_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact two-output no-commit SOT3-APP-T0B full-corpus semantic/provenance worker from dispatch `e93d63883`; parked checkpoint=T1 and later SOT3-APP tranches, SCLP-X-T3, and all SOT-Application/hidden-clone mutation or runtime execution.
+Startup acknowledged: current mode=`sot3_app_t0b_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact two-output no-commit SOT3-APP-T0B full-corpus semantic/provenance worker from the latest clean committed session-sync HEAD; parked checkpoint=after T0B closure, complete the MAO Operational Adoption And Agent Execution Assurance roadmap before any further SOT3-APP or other high-value-folder absorption, with SCLP-X-T3 and all external-root/runtime/public work still parked.
 
 ## Current Mode
 
@@ -47,6 +47,21 @@ Current mode: `sot3_app_t0b_dispatched_worker_next`
 Previous mode:
 
 `sot3_app_t0a_closed_t0b_packet_authoring_next`
+
+## Operator Sequence Lock - 2026-07-16
+
+The operator fixed the following mandatory order:
+
+1. finish SOT3-APP-T0B and obtain independent reviewer acceptance/closure;
+2. author and complete the MAO Operational Adoption And Agent Execution
+   Assurance roadmap, using the audited MAO adoption/wiring gap rather than
+   creating a duplicate orchestration foundation; and
+3. resume SOT3-APP or any other high-value-folder absorption only after that
+   roadmap reaches governed closure.
+
+This record fixes sequence and parking only. It does not claim that the new
+MAO adoption roadmap already exists, release its implementation, or alter the
+current T0B two-output/no-commit boundary.
 
 ## Latest Material Work
 
