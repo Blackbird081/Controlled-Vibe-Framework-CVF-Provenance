@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_absorption_authorized_fscb_t0_packet_authoring",
+  "currentMode": "four_surface_control_boundary_adapt_t0_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
-  "nextAllowedMove": "Operator-authorized intake review is accepted at material commit 24d50f0d7. Author and machine-validate the split FSCB-ADAPT and SOT3-APP roadmaps plus the FSCB-ADAPT-T0 GC-018/work-order packet; commit the dispatch packet only after pre-dispatch PASS, then execute only the documentation-only three-output FSCB-ADAPT-T0 worker scope. SOT3-APP-T0 remains queued until FSCB-ADAPT-T0 material review closure. SCLP-X-T3 remains parked until its caller/export condition. Do not infer runtime, live-provider, universal E2E, public, production, scale, certification, shipment, or user-value proof. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "FSCB-ADAPT-T0 is DISPATCH_READY at material commit 8fd769cec after pre-dispatch PASS. Capture the clean committed execution base, run pre-implementation, and create exactly the source-processing ledger, Four-Surface crosswalk, and no-commit worker return named by the work order. Do not modify the retained source, checkers, runtime, tests, roadmaps, baseline, work order, session state, Catalog, GAP, ADIF, or public surfaces. SOT3-APP-T0 remains queued until FSCB-ADAPT-T0 material review closure. SCLP-X-T3 remains parked until its caller/export condition. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

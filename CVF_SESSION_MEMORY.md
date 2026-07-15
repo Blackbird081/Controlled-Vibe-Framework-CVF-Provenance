@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_absorption_authorized_fscb_t0_packet_authoring`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author and validate the split roadmaps plus the documentation-only FSCB-ADAPT-T0 packet; parked checkpoint=SCLP-X-T3 until its caller/export condition, with SOT3-APP implementation queued.
+Startup acknowledged: current mode=`four_surface_control_boundary_adapt_t0_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact documentation-only three-output FSCB-ADAPT-T0 worker batch at `8fd769cec`; parked checkpoint=SOT3-APP-T0 until FSCB review closure and SCLP-X-T3 until its caller/export condition.
 
 ## Current Mode
 
-Current mode marker: `sot3_absorption_authorized_fscb_t0_packet_authoring`
+Current mode marker: `four_surface_control_boundary_adapt_t0_dispatched_worker_next`
 
-Current mode: `sot3_absorption_authorized_fscb_t0_packet_authoring`
+Current mode: `four_surface_control_boundary_adapt_t0_dispatched_worker_next`
 
-`sot3_absorption_authorized_fscb_t0_packet_authoring`
+`four_surface_control_boundary_adapt_t0_dispatched_worker_next`
 
 Previous mode:
 
-`system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
+`sot3_absorption_authorized_fscb_t0_packet_authoring`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Four-Surface control-boundary adaptation T0 dispatch | `8fd769cec` | DISPATCH_READY after pre-dispatch 75/75 PASS; exact 37-file ledger, derived crosswalk, and no-commit worker return; SOT3-APP-T0 queued; zero retained-source/runtime/checker implementation. |
 | SOT3 downstream-application and Four-Surface absorption intake authorization | `24d50f0d7` | OPERATOR_AUTHORIZED_FOR_ROADMAP_AUTHORING; Codex intake and Claude rebuttal accepted; split roadmap authoring plus documentation-only FSCB-ADAPT-T0 packet released; SOT3-APP implementation remains queued. |
 | System-chain exhaustive proof T4 and roadmap closure | `2fdb9d383` | CLOSED_PASS_BOUNDED; 99/99 unique terminal projection rows, zero silent/unmapped, seven exact T1 applicability citations, four frozen hashes matched, one consolidated reviewer repair batch, T3 preserved parked, and zero runtime/test/live/provider/Catalog/GAP/ADIF mutation. |
 | System-chain exhaustive proof T4 final reverse-projection dispatch | `242afa1b5` | DISPATCH_READY; exact 99-claim derived projection, audit, roadmap/front-door alignment, and five-path no-commit return; T3 preserved parked; zero runtime/test/live/provider/Catalog/GAP/ADIF mutation. |
@@ -211,16 +212,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_absorption_authorized_fscb_t0_packet_authoring`
+Mode: `four_surface_control_boundary_adapt_t0_dispatched_worker_next`
 
-The intake/rebuttal pair is accepted at `24d50f0d7`. Author and validate the
-split FSCB-ADAPT and SOT3-APP roadmaps plus the FSCB-ADAPT-T0 GC-018/work
-order; commit dispatch only after pre-dispatch PASS, then execute only the
-documentation-only three-output T0 worker scope. SOT3-APP-T0 stays queued
-until FSCB-ADAPT-T0 material review closure. SCLP-X-T3 remains parked at its
-caller/export condition. Do not infer runtime, live-provider, universal E2E,
-public, production, scale, certification, shipment, or user-value proof.
-Latest closed numbered LHW wave remains `LHW24`.
+FSCB-ADAPT-T0 is dispatch-ready at `8fd769cec` after pre-dispatch 75/75 PASS.
+Capture the clean committed execution base, run pre-implementation, and create
+exactly the source-processing ledger, Four-Surface crosswalk, and no-commit
+worker return named by the work order. SOT3-APP-T0 stays queued until material
+review closure. SCLP-X-T3 remains parked at its caller/export condition. Do not
+infer runtime, live-provider, universal E2E, public, production, scale,
+certification, shipment, or user-value proof. Latest closed numbered LHW wave
+remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

@@ -26,12 +26,12 @@ rebuttal.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_absorption_authorized_fscb_t0_packet_authoring`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author and
-machine-validate the split roadmaps plus the documentation-only FSCB-ADAPT-T0
-GC-018/work order, then dispatch only after gate PASS; parked checkpoint=SCLP-
-X-T3 until a current non-test production caller or active package export is
-source-proven, plus all runtime/test/build/typecheck/CI/live/provider/browser/
+Startup acknowledged: current mode=`four_surface_control_boundary_adapt_t0_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only
+the exact documentation-only three-output FSCB-ADAPT-T0 worker batch at
+dispatch `8fd769cec` and return without commit; parked checkpoint=SOT3-APP-T0
+until FSCB-ADAPT-T0 material review closure, plus SCLP-X-T3 at its caller/export
+condition and all runtime/test/build/typecheck/CI/live/provider/browser/
 Playwright/business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF
 mutation, public export, production, scale, and user validation.
 
@@ -48,7 +48,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_absorption_authorized_fscb_t0_packet_authoring`
+`four_surface_control_boundary_adapt_t0_dispatched_worker_next`
 
 ## Active Boundary
 
@@ -72,6 +72,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - SCLP-X-T2G1 bounded closure commit: `4858129d5`.
 - SCLP-X-T4 dispatch commit: `242afa1b5`.
 - SOT3/Four-Surface intake authorization commit: `24d50f0d7`.
+- FSCB-ADAPT-T0 dispatch commit: `8fd769cec`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
@@ -87,17 +88,17 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Latest Work / Changes
 
-The SOT3/Four-Surface intake review and Claude rebuttal are accepted at
-`24d50f0d7`. Operator authorization releases split roadmap authoring and the
-documentation-only FSCB-ADAPT-T0 GC-018/work-order packet. No source/runtime or
-SOT-Application implementation is released.
+FSCB-ADAPT-T0 is dispatch-ready at `8fd769cec` after full pre-dispatch PASS.
+The exact worker scope is one 37-file source-processing ledger, one derived
+Four-Surface crosswalk, and one no-commit worker return. SOT3-APP-T0 remains
+queued; no retained-source/runtime/checker implementation is released.
 
 ## Next Allowed Move
 
-Author and machine-validate the split FSCB-ADAPT and SOT3-APP roadmaps plus the
-FSCB-ADAPT-T0 GC-018/work order. Commit dispatch only after pre-dispatch PASS,
-then execute only the exact documentation-only three-output worker scope.
-SOT3-APP-T0 remains queued until FSCB-ADAPT-T0 material review closure.
+Capture the clean committed execution base, run pre-implementation, then create
+exactly the source-processing ledger, Four-Surface crosswalk, and no-commit
+worker return named by the work order. SOT3-APP-T0 remains queued until FSCB-
+ADAPT-T0 material review closure.
 
 ## Parked Checkpoint
 
@@ -110,7 +111,7 @@ certification, and real-user validation remain parked.
 
 ## HEAD / Commit Boundary
 
-Current material HEAD: `24d50f0d7`
+Current material HEAD: `8fd769cec`
 
 R3R1 material closure HEAD: `0856e090d`
 
@@ -304,6 +305,60 @@ Reason: private continuity sync; no public-sync action.
 | Claim boundary | session routing only |
 | Agent type | session-sync steward |
 | Invocation ID | sot3-fscb-intake-session-sync-2026-07-15 |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
+| Actual changed set | same session-sync manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## FSCB-ADAPT-T0 Dispatch Session Sync
+
+Material commit `8fd769cec` records the two roadmaps and paired FSCB-ADAPT-T0
+GC-018/work order. Pre-dispatch autorun passed 75/75 checks from base
+`1ac885667`. The worker must not commit and may create only the three named
+documentation/evidence outputs.
+
+## Core Guard Self-Protection Authorization - FSCB-ADAPT-T0 Dispatch Session Sync
+
+Authorized guard-maintenance scope: synchronize dispatch `8fd769cec` and route
+only the exact no-commit FSCB-ADAPT-T0 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/fscbAdaptT0Dispatch20260715.json`
+
+Rollback boundary: revert only this session-sync batch; retain dispatch commit
+`8fd769cec` and intake authorization `24d50f0d7`.
+
+## Public Export Disposition - FSCB-ADAPT-T0 Dispatch Session Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.
+
+## Agent Operation Trace Block - FSCB-ADAPT-T0 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | FSCB-ADAPT-T0 dispatch continuity sync, 2026-07-15 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | protected paths listed in the matching authorization section |
+| Allowed scope source | dispatch `8fd769cec` |
+| Before status evidence | clean worktree at dispatch HEAD `8fd769cec` |
+| After status evidence | continuity routes only the exact three-output no-commit worker |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sync only; no worker execution or source/runtime/public mutation |
+| Claim boundary | session routing only |
+| Agent type | session-sync steward |
+| Invocation ID | fscb-adapt-t0-dispatch-session-sync-2026-07-15 |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
 | Manifest delta | MATCH |
