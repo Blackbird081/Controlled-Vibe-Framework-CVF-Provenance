@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1798,
+  "stateKey": "systemChainUc04bR2r1Closure20260715",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "37942fb38",
+    "workOrderId": "SCLP-UC04B-R2R1",
+    "executionBaseHead": "054ed004c",
+    "focusedTests": "12_OF_12_PASS",
+    "typecheck": "PASS",
+    "playwrightInvocationCount": 1,
+    "positiveCase": "PASS",
+    "negativeCase": "PASS",
+    "observedHosts": [
+      "localhost:3001"
+    ],
+    "businessSubmissionCount": 0,
+    "checkerExecutionCount": 0,
+    "retryCount": 0,
+    "providerCallCount": 0,
+    "gapDisposition": "CLOSED_WITH_EVIDENCE_BOUNDED_PAIR",
+    "nextAllowedMove": "author one fresh source-verified UC-04B business-proof packet only",
+    "claimBoundary": "Bounded developer/anonymous auth projection under one canonical local origin only. No business submission, reviewer-role, all-auth, all-host, unified inventory, provider, public, production, scale, certification, or user-value proof."
+  }
+}
