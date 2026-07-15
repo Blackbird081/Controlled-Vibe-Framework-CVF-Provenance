@@ -84,8 +84,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t0_scope_split_packet_authoring_next",
-  "previousMode": "sot3_app_t0_r1_dispatched_worker_next",
+  "currentMode": "sot3_app_t0a_dispatched_worker_next",
+  "previousMode": "sot3_app_t0_scope_split_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12298,7 +12298,6 @@
     "nextAllowedMove": "no active SCLP-X tranche; reopen only T3 if its source condition is met, otherwise require a fresh operator-authorized roadmap and GC-018 packet",
     "claimBoundary": "Bounded repository-evidence reconciliation over 99 accepted claims only. No runtime, live-provider, universal E2E, public, production, scale, certification, shipment, or user-value proof."
   },
-  "nextAllowedMove": "SOT3-APP-T0 scope-blocker review is committed at 55007483c. The reduced 50-100-file completion option is rejected; the two-phase full-corpus route is accepted. The prior single-pass R1 roadmap, GC-018, and work order are HOLD_SCOPE_SPLIT_REPAIR and must not be executed. Next author only a fresh T0A GC-018/work order for all 336 metadata rows, canonical ordinal aggregate, complete hidden-clone declaration inventory, and a reviewer-stratified 20-row semantic sample. Include the operator-provided post-SOT3 source-intent and chronology correction in that fresh packet without promoting either source root to CVF authority. T0B full 336-row semantic disposition remains dependency-held until T0A review acceptance. Do not modify or run SOT-Application or its hidden clone, and do not run application, install, runtime, test, build, typecheck, CI, live-provider, browser, server, binding-validation, public-sync, or push work. SCLP-X-T3 remains parked. LHW24 remains latest closed numbered LHW wave.",
   "sot3ApplicationAndFscbAbsorptionIntakeAuthorization20260715": {
     "status": "OPERATOR_AUTHORIZED_FOR_ROADMAP_AND_FSCB_T0_PACKET_AUTHORING",
     "materialCommit": "24d50f0d7",
@@ -12386,5 +12385,29 @@
     "t0aBoundary": "336 metadata rows, canonical ordinal aggregate, complete hidden-clone declaration inventory, and reviewer-stratified 20-row semantic sample.",
     "t0bBoundary": "Dependency-held full 336-row semantic disposition after accepted T0A calibration.",
     "claimBoundary": "Scope review and packet hold only; no T0 completion, source mutation, runtime proof, public-sync, or product-readiness claim."
-  }
+  },
+  "sot3AppT0ADispatch20260716": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "7fda3b511",
+    "dispatchBaseHead": "e7f45e120",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_APP_T0A_CORPUS_FREEZE_AND_SEMANTIC_CALIBRATION_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0A_CORPUS_FREEZE_AND_SEMANTIC_CALIBRATION_2026-07-16.md",
+    "ledgerOutput": "docs/reviews/CVF_SOT3_APP_T0A_CORPUS_METADATA_AND_SAMPLE_LEDGER_2026-07-16.md",
+    "workerReturnOutput": "docs/reviews/CVF_SOT3_APP_T0A_WORKER_RETURN_2026-07-16.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "sourceSnapshot": {
+      "fileCount": 336,
+      "totalBytes": 238522,
+      "aggregateSha256": "bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee",
+      "declarationOccurrences": 13,
+      "semanticSampleCount": 20,
+      "semanticUnresolvedAfterT0A": 316
+    },
+    "gateEvidence": "pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute only the exact two-output no-commit T0A worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "heldNextTranche": "SOT3-APP-T0B remains dependency-held until independent T0A reviewer acceptance and a fresh dispatch packet.",
+    "claimBoundary": "Dispatch only; no worker execution, T0A acceptance, T0B release, source or hidden-clone mutation, runtime/test/build/live proof, public-sync, or product-readiness claim."
+  },
+  "nextAllowedMove": "SOT3-APP-T0A dispatch is committed at 7fda3b511 after 75/75 pre-dispatch and 83/83 pre-commit PASS. Next execute only docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0A_CORPUS_FREEZE_AND_SEMANTIC_CALIBRATION_2026-07-16.md from a clean committed dispatch HEAD. The delegated worker must capture executionBaseHead, create exactly docs/reviews/CVF_SOT3_APP_T0A_CORPUS_METADATA_AND_SAMPLE_LEDGER_2026-07-16.md and docs/reviews/CVF_SOT3_APP_T0A_WORKER_RETURN_2026-07-16.md, leave both uncommitted, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T0A requires metadata for all 336 files, the canonical ordinal aggregate, all 13 current hidden-clone declaration occurrences, and semantic calibration for exact SAM-01 through SAM-20; metadata completion is not full semantic completion. T0B full-corpus semantic disposition and terminal declaration decisions remain dependency-held until independent T0A review acceptance and a fresh packet. Do not modify either external root or run application, install, runtime, test, build, typecheck, CI, live-provider, browser, server, binding-validation, public-sync, push, Catalog, GAP, ADIF, checker, session, or package work. SCLP-X-T3 remains parked. LHW24 remains latest closed numbered LHW wave."
 }

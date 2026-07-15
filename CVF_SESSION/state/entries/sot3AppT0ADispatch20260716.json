@@ -1,0 +1,27 @@
+{
+  "stateOrder": 1847,
+  "stateKey": "sot3AppT0ADispatch20260716",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "7fda3b511",
+    "dispatchBaseHead": "e7f45e120",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_APP_T0A_CORPUS_FREEZE_AND_SEMANTIC_CALIBRATION_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0A_CORPUS_FREEZE_AND_SEMANTIC_CALIBRATION_2026-07-16.md",
+    "ledgerOutput": "docs/reviews/CVF_SOT3_APP_T0A_CORPUS_METADATA_AND_SAMPLE_LEDGER_2026-07-16.md",
+    "workerReturnOutput": "docs/reviews/CVF_SOT3_APP_T0A_WORKER_RETURN_2026-07-16.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "sourceSnapshot": {
+      "fileCount": 336,
+      "totalBytes": 238522,
+      "aggregateSha256": "bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee",
+      "declarationOccurrences": 13,
+      "semanticSampleCount": 20,
+      "semanticUnresolvedAfterT0A": 316
+    },
+    "gateEvidence": "pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute only the exact two-output no-commit T0A worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "heldNextTranche": "SOT3-APP-T0B remains dependency-held until independent T0A reviewer acceptance and a fresh dispatch packet.",
+    "claimBoundary": "Dispatch only; no worker execution, T0A acceptance, T0B release, source or hidden-clone mutation, runtime/test/build/live proof, public-sync, or product-readiness claim."
+  }
+}
