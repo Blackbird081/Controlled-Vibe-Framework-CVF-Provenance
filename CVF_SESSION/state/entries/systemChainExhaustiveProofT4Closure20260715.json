@@ -1,0 +1,27 @@
+{
+  "stateOrder": 1838,
+  "stateKey": "systemChainExhaustiveProofT4Closure20260715",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "2fdb9d383",
+    "workOrderId": "SCLP-X-T4",
+    "executionBaseHead": "244fc6e92",
+    "finalProjectionClaimCount": 99,
+    "uniqueClaimKeyCount": 99,
+    "silentRowCount": 0,
+    "unmappedDestinationCount": 0,
+    "t1ApplicableClaimCount": 7,
+    "valueParkedClaimCount": 13,
+    "workerOutputCount": 5,
+    "reviewerRepairBatchCount": 1,
+    "runtimeInvocationCount": 0,
+    "testInvocationCount": 0,
+    "liveInvocationCount": 0,
+    "providerCallCount": 0,
+    "catalogGapAdifMutationCount": 0,
+    "t3Disposition": "VALUE_PARKED_WITH_REOPEN_CONDITION",
+    "t3ReopenCondition": "a current non-test production caller or active package export is source-proven for GC-009 or GC-010",
+    "nextAllowedMove": "no active SCLP-X tranche; reopen only T3 if its source condition is met, otherwise require a fresh operator-authorized roadmap and GC-018 packet",
+    "claimBoundary": "Bounded repository-evidence reconciliation over 99 accepted claims only. No runtime, live-provider, universal E2E, public, production, scale, certification, shipment, or user-value proof."
+  }
+}

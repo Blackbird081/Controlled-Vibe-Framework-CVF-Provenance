@@ -8,9 +8,9 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after SCLP-X-T4 dispatch and route only its exact
-five-path no-commit final reverse-projection worker while T3 and all runtime
-execution or historical-ledger/runtime/source/Catalog/GAP/ADIF mutation remain held.
+Carry compact continuity after bounded SCLP-X roadmap closure, with no active
+SCLP-X tranche. T3 and all runtime execution or historical-ledger/runtime/
+source/Catalog/GAP/ADIF mutation remain held.
 
 ## Scope / Target / Owner Boundary
 
@@ -18,17 +18,19 @@ This handoff owns continuity pointers only. Material commit `e6034224c` owns
 the accepted T0 inventory and bounded closure; `c53bef36c` owns accepted T1
 value selection; `e0e5e755f` owns the T2 dispatch packet; `498413cc9` owns the
 bounded T2 caller-verification closure; `6634796da` owns the T2G1 dispatch; and
-`4858129d5` owns the bounded T2G1 closure; and `242afa1b5` owns T4 dispatch.
+`4858129d5` owns the bounded T2G1 closure; `242afa1b5` owns T4 dispatch; and
+`2fdb9d383` owns T4 acceptance and bounded roadmap closure.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_exhaustive_proof_t4_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only
-the exact five-path no-commit SCLP-X-T4 final reverse-projection worker; parked
-checkpoint=T3 until a current non-test production caller or active package
-export is source-proven, all runtime/test/build/typecheck/CI/live/provider/
-browser/Playwright/business-CLI runs, historical-ledger/runtime/source/Catalog/
-GAP/ADIF mutation, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=no active
+SCLP-X tranche, with any new work requiring a fresh operator-authorized roadmap
+and GC-018 packet; parked checkpoint=T3 until a current non-test production
+caller or active package export is source-proven, plus all runtime/test/build/
+typecheck/CI/live/provider/browser/Playwright/business-CLI runs, historical-
+ledger/runtime/source/Catalog/GAP/ADIF mutation, public export, production,
+scale, and user validation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -43,7 +45,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_exhaustive_proof_t4_dispatched_worker_next`
+`system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
 
 ## Active Boundary
 
@@ -63,6 +65,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - SCLP-X-T2 dispatch commit: `e0e5e755f`.
 - SCLP-X-T2 bounded closure commit: `498413cc9`.
 - SCLP-X-T2G1 dispatch commit: `6634796da`.
+- SCLP-X-T4 bounded roadmap closure commit: `2fdb9d383`.
 - SCLP-X-T2G1 bounded closure commit: `4858129d5`.
 - SCLP-X-T4 dispatch commit: `242afa1b5`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
@@ -86,11 +89,10 @@ authorized as an exact five-path no-commit batch. T3 remains value-parked.
 
 ## Next Allowed Move
 
-Execute only the exact five-path no-commit SCLP-X-T4 worker grounded in
-`242afa1b5`. Return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Do not
-touch a sixth worker path, run runtime/tests/build/typecheck/CI/live/provider/
-browser/Playwright/business-CLI action, mutate historical T0-T2 ledgers,
-runtime/source/Catalog/GAP/ADIF/session/public surfaces, or reopen T3.
+SCLP-X is `CLOSED_PASS_BOUNDED` at material commit `2fdb9d383`; no SCLP-X
+tranche is active. Reopen only T3 when current source proves a non-test
+production caller or active package export for GC-009 or GC-010. Any other
+continuation requires a fresh operator-authorized roadmap and GC-018 packet.
 
 ## Parked Checkpoint
 
@@ -141,8 +143,9 @@ SCLP-X-T2G1 material closure HEAD: `4858129d5`
 
 SCLP-X-T4 dispatch HEAD: `242afa1b5`
 
-The next material change may contain only the exact five T4 worker outputs.
-Worker must not commit; reviewer closure and session sync remain separate.
+SCLP-X-T4 material closure HEAD: `2fdb9d383`
+
+No SCLP-X tranche is active. T3 remains source-condition parked.
 
 ## Claim Boundary
 
@@ -201,3 +204,43 @@ Reason: private continuity sync; no public-sync action.
 | Actual changed set | same session-sync manifest |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## SCLP-X-T4 Closure And Roadmap Finalization
+
+Reviewer/closer accepted the corrected 99-row final reverse projection and
+closed SCLP-X as `CLOSED_PASS_BOUNDED` at `2fdb9d383`. Independent checks found
+99 unique claim keys, zero missing/extra/provenance-mismatch/silent/unmapped
+rows, seven exact T1 applicability citations, 13 retained value-parked claims,
+and four exact frozen input hashes. One consolidated reviewer repair batch
+corrected evidence applicability, parked-row wording, closure telemetry, and
+machine-package/allowed-scope literals. It changed no T0 disposition or T4
+destination count.
+
+T3 remains `VALUE_PARKED_WITH_REOPEN_CONDITION`: reopen only if current source
+proves a non-test production caller or active package export for GC-009 or
+GC-010. Zero runtime, test, build, typecheck, CI, live, provider, browser,
+Playwright, business-CLI, Catalog, GAP, ADIF, or public action occurred.
+
+## Core Guard Self-Protection Authorization - SCLP-X-T4 Closure Session Sync
+
+Authorized guard-maintenance scope: synchronize material closure `2fdb9d383`,
+record no active SCLP-X tranche, and retain T3's concrete parked condition.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainExhaustiveProofT4Closure20260715.json`
+
+Rollback boundary: revert only this session-sync batch; retain material commit
+`2fdb9d383` and all accepted T0-T2G1 proof evidence.
+
+## Public Export Disposition - SCLP-X-T4 Closure Session Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.

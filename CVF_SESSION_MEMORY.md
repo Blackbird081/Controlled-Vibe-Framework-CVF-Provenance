@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_exhaustive_proof_t4_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact five-path no-commit SCLP-X-T4 final reverse-projection worker; parked checkpoint=T3 until its caller/export condition, plus all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/business-CLI and historical-ledger/runtime/source/Catalog/GAP/ADIF/session/public mutation.
+Startup acknowledged: current mode=`system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=no active SCLP-X tranche; parked checkpoint=T3 until its caller/export condition, while any other continuation requires a fresh operator-authorized roadmap and GC-018 packet.
 
 ## Current Mode
 
-Current mode marker: `system_chain_exhaustive_proof_t4_dispatched_worker_next`
+Current mode marker: `system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
 
-Current mode: `system_chain_exhaustive_proof_t4_dispatched_worker_next`
+Current mode: `system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
 
-`system_chain_exhaustive_proof_t4_dispatched_worker_next`
+`system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
 
 Previous mode:
 
-`system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next`
+`system_chain_exhaustive_proof_t4_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain exhaustive proof T4 and roadmap closure | `2fdb9d383` | CLOSED_PASS_BOUNDED; 99/99 unique terminal projection rows, zero silent/unmapped, seven exact T1 applicability citations, four frozen hashes matched, one consolidated reviewer repair batch, T3 preserved parked, and zero runtime/test/live/provider/Catalog/GAP/ADIF mutation. |
 | System-chain exhaustive proof T4 final reverse-projection dispatch | `242afa1b5` | DISPATCH_READY; exact 99-claim derived projection, audit, roadmap/front-door alignment, and five-path no-commit return; T3 preserved parked; zero runtime/test/live/provider/Catalog/GAP/ADIF mutation. |
 | System-chain exhaustive proof T2G1 paired architecture-GAP recording closure | `4858129d5` | CLOSED_PASS_BOUNDED; one paired GC-009/GC-010 GAP, 12/12 unique index IDs, zero schema or README coverage errors, zero reviewer repairs, and zero runtime/test/live/provider/source/catalog/ADIF mutation; T3 value-parked and T4 packet authoring next. |
 | System-chain exhaustive proof T2G1 paired architecture-GAP recording dispatch | `6634796da` | DISPATCH_READY; one paired compact GAP entry, regenerated index, aligned README, exact four-path no-commit worker return; zero runtime/test/build/typecheck/CI/live/provider/source/catalog/ADIF mutation. |
@@ -209,15 +210,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_exhaustive_proof_t4_dispatched_worker_next`
+Mode: `system_chain_exhaustive_proof_roadmap_closed_no_active_tranche`
 
-SCLP-X-T4 is dispatch-ready at `242afa1b5`. Execute only its exact five-path
-no-commit worker: derived 99-claim final projection JSON, T4 audit, roadmap
-alignment, system-chain front-door alignment, and worker return. Preserve T3
-as value-parked. Do not run runtime/tests/build/typecheck/CI/live/provider/
-browser/Playwright/business-CLI action or mutate historical T0-T2 ledgers,
-runtime/source, Catalog/GAP/ADIF, session/handoff, or public surfaces.
-Latest closed numbered LHW wave remains `LHW24`.
+SCLP-X is `CLOSED_PASS_BOUNDED` at `2fdb9d383`; no SCLP-X tranche is active.
+Reopen only T3 when current source proves a non-test production caller or
+active package export for GC-009 or GC-010. Any other continuation requires a
+fresh operator-authorized roadmap and GC-018 packet. Do not infer runtime,
+live-provider, universal E2E, public, production, scale, certification,
+shipment, or user-value proof. Latest closed numbered LHW wave remains
+`LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

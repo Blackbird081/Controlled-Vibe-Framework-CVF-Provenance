@@ -84,8 +84,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_exhaustive_proof_t4_dispatched_worker_next",
-  "previousMode": "system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next",
+  "currentMode": "system_chain_exhaustive_proof_roadmap_closed_no_active_tranche",
+  "previousMode": "system_chain_exhaustive_proof_t4_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12275,5 +12275,28 @@
     "nextAllowedMove": "execute exact five-path no-commit T4 final reverse-projection worker only",
     "claimBoundary": "Dispatch authority for one derived 99-claim final projection, audit, roadmap/front-door alignment, and worker return only. No runtime, test, live, provider, Catalog/GAP/ADIF mutation, public, production, scale, certification, shipment, or user-value claim."
   },
-  "nextAllowedMove": "SCLP-X-T4 is DISPATCH_READY at material commit 242afa1b5. Execute only the exact five-path no-commit worker: create the derived 99-claim final projection JSON, T4 audit, roadmap alignment, system-chain front-door alignment, and worker return. Preserve T3 as VALUE_PARKED_WITH_REOPEN_CONDITION. Do not run runtime, tests, build, typecheck, CI, live, provider, browser, Playwright, or business CLI, and do not mutate historical T0-T2 ledgers, runtime/source, Catalog/GAP/ADIF, session/handoff, or public surfaces. LHW24 remains latest closed numbered LHW wave."
+  "systemChainExhaustiveProofT4Closure20260715": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "2fdb9d383",
+    "workOrderId": "SCLP-X-T4",
+    "executionBaseHead": "244fc6e92",
+    "finalProjectionClaimCount": 99,
+    "uniqueClaimKeyCount": 99,
+    "silentRowCount": 0,
+    "unmappedDestinationCount": 0,
+    "t1ApplicableClaimCount": 7,
+    "valueParkedClaimCount": 13,
+    "workerOutputCount": 5,
+    "reviewerRepairBatchCount": 1,
+    "runtimeInvocationCount": 0,
+    "testInvocationCount": 0,
+    "liveInvocationCount": 0,
+    "providerCallCount": 0,
+    "catalogGapAdifMutationCount": 0,
+    "t3Disposition": "VALUE_PARKED_WITH_REOPEN_CONDITION",
+    "t3ReopenCondition": "a current non-test production caller or active package export is source-proven for GC-009 or GC-010",
+    "nextAllowedMove": "no active SCLP-X tranche; reopen only T3 if its source condition is met, otherwise require a fresh operator-authorized roadmap and GC-018 packet",
+    "claimBoundary": "Bounded repository-evidence reconciliation over 99 accepted claims only. No runtime, live-provider, universal E2E, public, production, scale, certification, shipment, or user-value proof."
+  },
+  "nextAllowedMove": "SCLP-X is CLOSED_PASS_BOUNDED at material commit 2fdb9d383; no SCLP-X tranche is active. Reopen only T3 when current source proves a non-test production caller or active package export for GC-009 or GC-010. Any other continuation requires a fresh operator-authorized roadmap and GC-018 packet. Do not infer runtime, live-provider, universal E2E, public, production, scale, certification, shipment, or user-value proof. LHW24 remains latest closed numbered LHW wave."
 }
