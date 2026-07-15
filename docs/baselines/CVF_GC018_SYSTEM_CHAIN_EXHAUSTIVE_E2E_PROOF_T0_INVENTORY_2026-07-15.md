@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -126,14 +126,14 @@ authority.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired T0 work order | worker not executed | N/A with reason |
-| Completion or reviewer artifact | future reviewer completion | reviewer-owned | N/A with reason |
-| Roadmap state | exhaustive roadmap | T0 execution next | PASS |
-| Registry JSON | future exhaustive inventory | worker output pending | BLOCKED with reason: worker has not executed |
-| Registry Markdown | T0 audit | worker output pending | BLOCKED with reason: worker has not executed |
+| Work order status | paired T0 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T0_INVENTORY_COMPLETION_2026-07-15.md` | reviewer acceptance with one bounded proof-class repair | PASS |
+| Roadmap state | exhaustive roadmap | T0 closed; T1 packet authoring only is next | PASS |
+| Registry JSON | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_INVENTORY.json` | 99/99 claims terminally reconciled | PASS |
+| Registry Markdown | `docs/audits/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T0_INVENTORY_AUDIT_2026-07-15.md` | human review of proof/value distribution | PASS |
 | External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason |
 | System loop interlock | read-only input registry | no mutation in T0 | N/A with reason |
-| Session continuity | active session | separate post-dispatch sync | N/A with reason |
+| Session continuity | active session | separate post-material sync | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 

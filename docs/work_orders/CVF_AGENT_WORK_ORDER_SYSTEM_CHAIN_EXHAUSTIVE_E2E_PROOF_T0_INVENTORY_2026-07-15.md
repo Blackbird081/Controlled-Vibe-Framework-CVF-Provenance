@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -14,7 +14,7 @@ dispatchBaseHead: `b51aa9b6b`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `671cfe3bf`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -84,10 +84,22 @@ Allowed scope:
 
 - read and parse the four canonical corpus files and current proof ledger;
 - read accepted receipts/completions only when needed to verify a claimed proof;
-- create the exact three worker output paths;
+- create the exact three worker output paths:
+  `docs/reference/system_chain/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_INVENTORY.json`,
+  `docs/audits/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T0_INVENTORY_AUDIT_2026-07-15.md`,
+  and
+  `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T0_WORKER_RETURN_2026-07-15.md`;
 - normalize claim keys while retaining every source reference;
 - record proposed owner/GAP destinations in the audit without mutating owners;
 - repair only the three new output files when gates fail inside scope.
+- reviewer closure conversion may accept/repair the three worker output paths,
+  update this work order,
+  `docs/baselines/CVF_GC018_SYSTEM_CHAIN_EXHAUSTIVE_E2E_PROOF_T0_INVENTORY_2026-07-15.md`,
+  and
+  `docs/roadmaps/CVF_SYSTEM_CHAIN_EXHAUSTIVE_E2E_PROOF_ROADMAP_2026-07-15.md`,
+  and create
+  `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T0_INVENTORY_COMPLETION_2026-07-15.md`;
+  this reviewer-only allowance does not widen worker execution scope.
 
 Forbidden scope:
 
@@ -258,18 +270,18 @@ Forbidden output: any other changed path.
 
 ## Acceptance Criteria
 
-- [ ] Clean execution base captured.
-- [ ] Four source files and hashes recorded.
-- [ ] 5/20/50/24 counts independently recomputed.
-- [ ] 99/99 source items have terminal rows.
-- [ ] Normalized claims retain all source provenance.
-- [ ] Every claim has proof applicability, required/observed evidence, freshness,
+- [x] Clean execution base captured.
+- [x] Four source files and hashes recorded.
+- [x] 5/20/50/24 counts independently recomputed.
+- [x] 99/99 source items have terminal rows.
+- [x] Normalized claims retain all source provenance.
+- [x] Every claim has proof applicability, required/observed evidence, freshness,
       and one allowed terminal inventory disposition.
-- [ ] `MISSING_PROOF` and `VALUE_PARKED` rows have actionable next fields.
-- [ ] Corpus and map reconciliations have zero silent/unmapped row.
-- [ ] Exact three-path manifest matches.
-- [ ] Zero live/provider/browser/business CLI/runtime/test/checker mutation.
-- [ ] Required gates pass and work remains uncommitted.
+- [x] `MISSING_PROOF` and `VALUE_PARKED` rows have actionable next fields.
+- [x] Corpus and map reconciliations have zero silent/unmapped row.
+- [x] Exact three-path worker manifest matches.
+- [x] Zero live/provider/browser/business CLI/runtime/test/checker mutation.
+- [x] Required worker gates passed and the worker returned without commit.
 
 ## Review Gate
 
@@ -280,13 +292,13 @@ the worker summary or gate PASS.
 
 ## Closure Checklist
 
-- [ ] Worker base and exact manifest reconciled.
-- [ ] File-level and source-item corpus totals independently recomputed.
-- [ ] Claim dedupe does not lose source references.
-- [ ] Four dispositions are semantically correct and terminal.
-- [ ] No live case or next tranche is silently authorized.
-- [ ] Catalog/GAP candidates are proposed only, not promoted.
-- [ ] Reviewer decision and bounded claim recorded.
+- [x] Worker base and exact manifest reconciled.
+- [x] File-level and source-item corpus totals independently recomputed.
+- [x] Claim dedupe does not lose source references.
+- [x] Four dispositions are semantically correct and terminal after one bounded reviewer repair.
+- [x] No live case or next tranche is silently authorized.
+- [x] Catalog/GAP candidates are proposed only, not promoted.
+- [x] Reviewer decision and bounded claim recorded.
 
 ## Stop Conditions
 
@@ -506,6 +518,27 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance inventory and proof-gap planning; no public-sync
 authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this T0 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T0_INVENTORY_COMPLETION_2026-07-15.md` | reviewer acceptance with one bounded proof-class repair | PASS |
+| Roadmap state | exhaustive roadmap | T0 closed; T1 packet authoring only is next | PASS |
+| Registry JSON | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_INVENTORY.json` | 99/99 claims terminally reconciled | PASS |
+| Registry Markdown | `docs/audits/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T0_INVENTORY_AUDIT_2026-07-15.md` | human proof/value reconciliation | PASS |
+| External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason |
+| System loop interlock | read-only interlock corpus input | no mutation or new downstream route | N/A with reason |
+| Session continuity | active session | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| accepted receipt reuse | exact claim scope and required proof class match | 5 `PROVEN` claims matched current coverage-ledger evidence after one observed-proof-class repair | PASS |
+| receipt non-promotion | no file/test-only inference and no universal promotion | 3 missing, 13 parked, and 78 static claims remain non-proven | PASS |
+| new receipt creation | none in inventory-only T0 | zero live/runtime/provider receipt created | PASS |
 
 ## Claim Boundary
 

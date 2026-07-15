@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T0_INVENTORY_EXECUTION_NEXT
+Status: ACTIVE_T0_CLOSED_T1_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -132,7 +132,7 @@ is `MISSING_PROOF` unless a governed value decision parks it.
 
 | Tranche | Objective | Required output | Release condition |
 |---|---|---|---|
-| T0 | exhaustive source-item and normalized-claim inventory | JSON inventory, inventory audit, no-commit worker return | reviewer confirms 99/99 source-item terminal accounting, dedupe traceability, and honest dispositions |
+| T0 | exhaustive source-item and normalized-claim inventory | JSON inventory, inventory audit, no-commit worker return | `CLOSED_PASS_BOUNDED`: reviewer confirmed 99/99 source-item terminal accounting, dedupe traceability, and honest dispositions after one bounded proof-class repair |
 | T1 | reviewer reconciliation and value selection | accepted claim set, contradiction ledger, ranked missing-proof candidates | T0 `CLOSED_PASS_BOUNDED`; no live execution |
 | T2 | lowest-cost deterministic runtime proof batch | selected local/CI/runtime receipts and diagnostics | T1 selects decision-changing cases and fresh GC-018/work orders |
 | T3 | operator-surface or provider proof batch | selected CLI/Web/provider receipts and recovery evidence | T2 reviewed; only cases requiring higher proof class proceed |
@@ -210,9 +210,9 @@ freshness as repository evidence only. Any missing current invocation remains
 
 ## Next Allowed Move
 
-Execute only `SCLP-X-T0` under its exact no-commit three-path manifest. Produce
-the exhaustive inventory and audit; do not select or run live cases. Return for
-reviewer acceptance before T1 packet authoring.
+Author only a fresh source-verified T1 reviewer-reconciliation and value-
+selection packet using the accepted T0 inventory. Do not run live cases, mutate
+owners/GAPs, or infer T2-T4 release from T0 closure.
 
 ## Public Export Disposition
 
@@ -240,19 +240,22 @@ value-parked rows.
 
 ### Evidence Comparison
 
-Pending T0 execution. The current known evidence proves only that four use
-cases and five lanes were reconciled bounded, not that all 99 source records
-map to live-proven claims.
+T0 reconciled all 99 source records into 99 provenance-preserving claims:
+5 `PROVEN`, 78 `STATIC_NOT_APPLICABLE`, 13 `VALUE_PARKED`, and 3
+`MISSING_PROOF`. The result confirms that the prior four-use-case/five-lane
+closure was bounded and must not be promoted to universal live proof.
 
 ### Contradiction Or Gap Disposition
 
-Do not guess the missing set. Build the terminal source-item ledger first, then
-let reviewer reconciliation decide which proof gaps are real and valuable.
+The terminal source-item ledger is complete. T1 remains required to decide
+which of the three missing-proof claims are decision-changing and whether the
+two proposed owner/GAP candidates should update an existing owner, add a GAP,
+or remain parked.
 
 ### Claim Update
 
-No universal claim is made. The roadmap creates the process required to decide
-whether a later bounded universal inventory claim is supportable.
+The exhaustive repository-evidence inventory is accepted bounded. No universal
+runtime or E2E claim is made, and no live branch is released by this update.
 
 ## Claim Boundary
 
