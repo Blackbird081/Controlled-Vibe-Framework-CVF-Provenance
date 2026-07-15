@@ -83,8 +83,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc04b_r2r1_recovery_packet_next",
-  "previousMode": "system_chain_uc04b_r2_dispatched_worker_next",
+  "currentMode": "system_chain_uc04b_r2r1_dispatched_worker_next",
+  "previousMode": "system_chain_uc04b_r2r1_recovery_packet_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11895,5 +11895,27 @@
     "nextAllowedMove": "author one localhost-normalized R2R1 recovery packet only",
     "claimBoundary": "Bounded runtime repair and blocker closure only. No browser projection agreement, UC-04B Web operation, unified inventory, provider governance, public, production, scale, certification, or user-value proof."
   },
-  "nextAllowedMove": "SCLP-UC04B-R2 is CLOSED_BLOCKED_BOUNDED at material commit 545628ca4. The request-bound auth adapter repair is accepted through reviewer 12/12 focused tests and clean typecheck, but the one browser invocation failed before client auth/jobs fetch and the negative case did not run. Reviewer trace inspection rejected browser cookie-loss attribution and retained a canonical localhost/dev-hydration mismatch. Exact counters are one invocation and zero business submissions, checker executions, retries, and provider calls. Next allowed move is author one fresh localhost-normalized R2R1 recovery GC-018 and work order only. Do not rerun R2 or claim UC-04B Web coverage, unified inventory, provider governance, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc04bR2r1Dispatch20260715": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "e8145c3b3",
+    "workOrderId": "SCLP-UC04B-R2R1",
+    "dispatchBaseHead": "2feb62046",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "playwrightBaseUrl": "http://localhost:3001",
+    "playwrightInvocationCeiling": 1,
+    "businessSubmissionCeiling": 0,
+    "checkerExecutionCeiling": 0,
+    "retryCeiling": 0,
+    "providerCallCeiling": 0,
+    "runtimeMutationAuthorized": false,
+    "retainedProofMutationAuthorized": false,
+    "requiredCaseIds": [
+      "positive_developer_auth_projection",
+      "negative_anonymous_auth_projection"
+    ],
+    "requiredHostExclusion": "127.0.0.1:3001",
+    "nextAllowedMove": "execute the exact no-commit R2R1 work order once and return for reviewer closure",
+    "claimBoundary": "Dispatch authority only. No recovery execution, UC-04B business coverage, unified inventory, provider governance, public, production, scale, certification, or user-value claim."
+  },
+  "nextAllowedMove": "SCLP-UC04B-R2R1 is DISPATCH_READY at material commit e8145c3b3. Execute the exact no-commit localhost-normalized recovery work order once. Required preflight is the retained 12-test auth suite plus clean typecheck. The sole Playwright invocation must use PLAYWRIGHT_BASE_URL=http://localhost:3001, run the retained two-case auth-projection regression serially, and prove that the observed host set excludes 127.0.0.1:3001. Ceilings are one Playwright invocation and zero business submissions, checker executions, retries, and provider calls. Stop with a secret-safe diagnostic on failure. Do not mutate runtime/config/test/proof/application owners or claim UC-04B business coverage, unified inventory, provider governance, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
 }

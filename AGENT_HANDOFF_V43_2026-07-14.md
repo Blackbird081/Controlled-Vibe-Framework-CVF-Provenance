@@ -19,9 +19,9 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r2r1_recovery_packet_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
-localhost-normalized R2R1 recovery packet only; parked checkpoint=UC-03 harness identity
+Startup acknowledged: current mode=`system_chain_uc04b_r2r1_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute one
+exact no-commit localhost-normalized R2R1 recovery; parked checkpoint=UC-03 harness identity
 repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory,
 public export, production, scale, universal enforcement, and user validation.
 
@@ -38,15 +38,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04b_r2r1_recovery_packet_next`
+`system_chain_uc04b_r2r1_dispatched_worker_next`
 
 ## Active Boundary
 
-- Active UC-04B R2 blocked closure commit: `545628ca4`.
+- Active UC-04B R2R1 dispatch commit: `e8145c3b3`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: one localhost-normalized R2R1 recovery packet only.
-- Next permitted value lane: author the bounded recovery dispatch; no R2 rerun
-  or UC-04B business run.
+- Active work queue: one exact no-commit localhost-normalized R2R1 worker.
+- Next permitted value lane: execute the bounded recovery once; no retry,
+  retained-owner mutation, provider call, or UC-04B business run.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -156,9 +156,10 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Author one fresh GC-018 and source-verified work order for the confirmed
-NextAuth-to-application auth-projection GAP. Do not rerun T4/R1 or edit auth
-owners before dispatch review.
+Execute the exact no-commit SCLP-UC04B-R2R1 work order once from material
+dispatch `e8145c3b3`. Use the canonical localhost origin, run the retained
+preflight and two-case proof, and stop with a diagnostic on failure. Do not
+retry, mutate retained owners, run the business spec, or infer UC-04B coverage.
 
 ## Parked Checkpoint
 
@@ -202,10 +203,12 @@ UC-04A dispatch HEAD: `f48430d7d`
 
 UC-04A blocked closure HEAD: `da93a4b73`
 
-Session-sync closure HEAD: `da93a4b73`
+UC-04B-R2 blocked closure HEAD: `545628ca4`
 
-The current in-place handoff-sync commit has the UC-04A blocked closure HEAD
-above as its parent. SOT3 material closure remains anchored at `62ab80ab4`.
+UC-04B-R2R1 recovery dispatch HEAD: `e8145c3b3`
+
+The current in-place handoff sync records the R2R1 material dispatch above.
+SOT3 material closure remains anchored at `62ab80ab4`.
 
 ## Core Guard Self-Protection Authorization - System Chain Live Proof Session Sync
 
@@ -660,3 +663,24 @@ return under the existing reviewer/closer route.
 
 Rollback boundary: revert only this session-sync batch; retain material
 closure `545628ca4`, R2 dispatch `978aa3e8d`, and all governed evidence.
+
+## Core Guard Self-Protection Authorization - UC-04B-R2R1 Dispatch Sync
+
+Authorized scope: synchronize localhost-normalized recovery dispatch material
+commit `e8145c3b3` and route one exact no-commit SCLP-UC04B-R2R1 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc04bR2r1Dispatch20260715.json`
+
+Operator authorization: continue the system-chain sequence through the bounded
+localhost-normalized recovery packet.
+
+Rollback boundary: revert only this session-sync batch; retain material
+dispatch `e8145c3b3`, R2 blocked closure `545628ca4`, and all governed evidence.
