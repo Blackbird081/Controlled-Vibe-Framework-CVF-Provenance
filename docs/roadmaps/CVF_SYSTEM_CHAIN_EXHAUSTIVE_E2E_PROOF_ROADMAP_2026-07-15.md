@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T1_CLOSED_T2_PACKET_AUTHORING_NEXT
+Status: ACTIVE_T1_CLOSED_T2_DISPATCH_READY
 
 docType: roadmap
 
@@ -134,7 +134,7 @@ is `MISSING_PROOF` unless a governed value decision parks it.
 |---|---|---|---|
 | T0 | exhaustive source-item and normalized-claim inventory | JSON inventory, inventory audit, no-commit worker return | `CLOSED_PASS_BOUNDED`: reviewer confirmed 99/99 source-item terminal accounting, dedupe traceability, and honest dispositions after one bounded proof-class repair |
 | T1 | reviewer reconciliation and value selection | accepted claim set, contradiction ledger, ranked missing-proof candidates | `CLOSED_PASS_BOUNDED`: six of six terminal; GC-009 and GC-010 selected only for future read-only T2 packet authoring |
-| T2 | lowest-cost deterministic runtime proof batch | selected local/CI/runtime receipts and diagnostics | T1 selects decision-changing cases and fresh GC-018/work orders |
+| T2 | repository-wide read-only caller verification | terminal match ledger and two caller decisions | `DISPATCH_READY` through paired T2 baseline/work order; no runtime execution |
 | T3 | operator-surface or provider proof batch | selected CLI/Web/provider receipts and recovery evidence | T2 reviewed; only cases requiring higher proof class proceed |
 | T4 | final reverse projection and bounded closure | coverage/catalog/GAP/learning updates and final claim boundary | every inventory claim is terminally dispositioned; no unresolved silent row |
 
@@ -210,11 +210,11 @@ freshness as repository evidence only. Any missing current invocation remains
 
 ## Next Allowed Move
 
-Author only a fresh source-verified SCLP-X-T2 GC-018 and work order for
-repository-wide, read-only caller verification of `MandatoryGateway`,
-`createMandatoryGateway`, and `AgentExecutionRuntime`. Do not execute T2, run
-live cases, mutate owners/GAPs, or infer T3-T4 release from the accepted T1
-recommendation.
+Execute only `SCLP-X-T2` under its exact no-commit three-path manifest. Perform
+repository-wide read-only caller verification for `MandatoryGateway`,
+`createMandatoryGateway`, and `AgentExecutionRuntime`; terminally classify
+every match and return for reviewer acceptance. Do not run runtime, tests, live
+cases, mutate owners/GAPs, or infer T3-T4 release from a caller result.
 
 ## Public Export Disposition
 
