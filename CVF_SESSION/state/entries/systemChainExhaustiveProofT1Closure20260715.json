@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1826,
+  "stateKey": "systemChainExhaustiveProofT1Closure20260715",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "c53bef36c",
+    "workOrderId": "SCLP-X-T1",
+    "executionBaseHead": "c1aaa4112",
+    "decisionRecordCount": 6,
+    "missingProofDecisionCount": 3,
+    "ownerGapDecisionCount": 2,
+    "contradictionDecisionCount": 1,
+    "selectedT2CandidateCount": 2,
+    "independentBranchCount": 2,
+    "ownerGapMutationCount": 0,
+    "liveInvocationCount": 0,
+    "providerCallCount": 0,
+    "nextAllowedMove": "author fresh source-verified SCLP-X-T2 GC-018 and work order for repository-wide read-only caller verification only",
+    "claimBoundary": "Six-record repository-evidence value selection only. No T2 execution, live proof, owner or GAP promotion, provider, public, production, scale, certification, shipment, or user-value claim."
+  }
+}

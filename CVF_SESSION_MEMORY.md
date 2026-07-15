@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_exhaustive_proof_t1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact three-path no-commit SCLP-X-T1 reconciliation and value-selection worker over six frozen records; parked checkpoint=all live/provider runs, T2-T4 execution, owner/GAP promotion, unified inventory implementation, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_exhaustive_proof_t1_closed_t2_packet_authoring_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author only a fresh source-verified SCLP-X-T2 GC-018 and work order for repository-wide read-only caller verification; parked checkpoint=all T2 execution, live/provider runs, T3-T4 action, owner/GAP promotion, unified inventory implementation, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_exhaustive_proof_t1_dispatched_worker_next`
+Current mode marker: `system_chain_exhaustive_proof_t1_closed_t2_packet_authoring_next`
 
-Current mode: `system_chain_exhaustive_proof_t1_dispatched_worker_next`
+Current mode: `system_chain_exhaustive_proof_t1_closed_t2_packet_authoring_next`
 
-`system_chain_exhaustive_proof_t1_dispatched_worker_next`
+`system_chain_exhaustive_proof_t1_closed_t2_packet_authoring_next`
 
 Previous mode:
 
-`system_chain_exhaustive_proof_t0_closed_t1_packet_authoring_next`
+`system_chain_exhaustive_proof_t1_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain exhaustive proof T1 value-selection closure | `c53bef36c` | CLOSED_PASS_BOUNDED; 6/6 terminal decisions; GC-009 and GC-010 selected only for future read-only T2 packet authoring; both owner/GAP candidates parked; CTR-01 retained resolved; zero live/provider/runtime/test/owner/GAP mutation. |
 | System-chain exhaustive proof T1 value-selection dispatch | `6e6f14eee` | DISPATCH_READY; six frozen decision records, exact three-path no-commit return, read-only source verification, zero live/provider/runtime/test/owner/GAP mutation. |
 | System-chain exhaustive proof T0 inventory closure | `e6034224c` | CLOSED_PASS_BOUNDED; 5/20/50/24 and 99/99 source records reconciled into 99 claims; 5 PROVEN, 78 STATIC_NOT_APPLICABLE, 13 VALUE_PARKED, 3 MISSING_PROOF; one proof-class token reviewer-repaired; zero live/provider/runtime action. |
 | System-chain exhaustive proof T0 inventory dispatch | `48e873857` | DISPATCH_READY; 5/20/50/24 source families, 99 source records, exact three-path no-commit inventory, zero live/provider/runtime action. |
@@ -203,15 +204,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_exhaustive_proof_t1_dispatched_worker_next`
+Mode: `system_chain_exhaustive_proof_t1_closed_t2_packet_authoring_next`
 
-SCLP-X-T1 is dispatch-ready at `6e6f14eee`. Execute only its exact three-path
-no-commit reconciliation and value-selection worker over the six frozen
-records: three `MISSING_PROOF` claims, `OWNER-GAP-01`, `OWNER-GAP-02`, and
-`CTR-01`. Use read-only source verification and return
-`COMPLETE_PENDING_REVIEW`. Do not run or select live cases, mutate runtime,
-tests, checker source, owners, GAPs, or ADIF, or execute T2-T4. A T2
-recommendation is not authorization.
+SCLP-X-T1 is closed bounded at `c53bef36c`: six of six records are terminal;
+GC-009 and GC-010 are future read-only source-verification candidates; the
+related GC-009 catalog edge is not an independent branch; both owner/GAP
+candidates remain parked; and `CTR-01` remains resolved. Author only a fresh
+source-verified SCLP-X-T2 GC-018 and work order for repository-wide caller
+verification. Do not execute T2, run live/provider/runtime/test action, mutate
+owners/GAPs/ADIF, or release T3-T4.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

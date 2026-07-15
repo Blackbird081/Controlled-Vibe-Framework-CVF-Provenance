@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1825,
+  "stateOrder": 1827,
   "stateKey": "nextAllowedMove",
-  "value": "SCLP-X-T1 is DISPATCH_READY at material commit 6e6f14eee. Execute only the exact three-path no-commit reconciliation and value-selection worker over the six frozen records: three MISSING_PROOF claims, OWNER-GAP-01, OWNER-GAP-02, and CTR-01. Use read-only source verification; return COMPLETE_PENDING_REVIEW. Zero live, provider, browser, business CLI, runtime, test, checker-source, registry-owner, GAP, ADIF, public, or T2-T4 execution. A T2 recommendation is not authorization. LHW24 remains latest closed numbered LHW wave."
+  "value": "SCLP-X-T1 is CLOSED_PASS_BOUNDED at material commit c53bef36c with six of six terminal decisions: GC-009 and GC-010 selected only as future read-only source-verification candidates, the related GC-009 catalog edge not selected independently, both owner/GAP candidates VALUE_PARKED, and CTR-01 retained resolved. Author only a fresh source-verified SCLP-X-T2 GC-018 and work order for repository-wide caller verification. Zero T2 execution, live, provider, browser, business CLI, runtime, test, checker-source, registry-owner, GAP, ADIF, public, or T3-T4 action. LHW24 remains latest closed numbered LHW wave."
 }
