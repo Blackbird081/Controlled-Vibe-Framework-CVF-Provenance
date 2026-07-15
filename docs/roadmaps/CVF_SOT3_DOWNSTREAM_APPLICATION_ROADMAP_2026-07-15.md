@@ -17,8 +17,9 @@ rebuttal were classified at material commit `24d50f0d7`.
 
 Decision: retain the application as a sibling downstream product candidate,
 not CVF Core. FSCB-ADAPT-T0 closed at material commit `21659a3ac`; the separate
-T0 packet is now released from clean dispatch base `baaf21cd2` so the two source
-families remain isolated.
+T0 packet is re-released from clean dispatch base `ddd7d603a` after independent
+review confirmed a digest-sort defect rather than source drift, so the two
+source families remain isolated.
 
 ## Purpose
 
@@ -55,7 +56,7 @@ owners before modifying the sibling source.
 |---|---|
 | current active tranche | SOT3-APP-T0 source ledger and provenance disposition |
 | committed packet | paired T0 GC-018 and source-verified work order in this dispatch batch |
-| scheduling release | SATISFIED by FSCB-ADAPT-T0 material closure `21659a3ac` and clean dispatch base `baaf21cd2` |
+| scheduling release | SATISFIED by FSCB-ADAPT-T0 material closure `21659a3ac`, blocked-return review `2a948fdb2`, and clean redispatch base `ddd7d603a` |
 | source mutation | forbidden until a later source-verified implementation work order passes pre-dispatch |
 | hidden-clone coupling | T0 must sever, govern, or block every declared path |
 | runtime/live | separately authorized only in tranches whose acceptance requires it |
@@ -124,10 +125,11 @@ No later tranche is released by this roadmap table alone.
 
 | Field | Value |
 |---|---|
-| dispatchBaseHead | `baaf21cd2` |
+| dispatchBaseHead | `ddd7d603a` |
 | GC-018 | `docs/baselines/CVF_GC018_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md` |
 | work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md` |
-| worker outputs | source-processing/provenance ledger plus no-commit worker return |
+| blocked-return review | `docs/reviews/CVF_SOT3_APP_T0_BLOCKED_RETURN_REVIEW_2026-07-15.md`; material commit `2a948fdb2`; packet digest defect confirmed |
+| worker outputs | source-processing/provenance ledger plus R1 no-commit worker return |
 | commit mode | `WORKER_MUST_NOT_COMMIT` |
 | execution boundary | read/hash/classify copied folder and read-only hidden-clone Git metadata; no application execution or mutation |
 
@@ -192,7 +194,7 @@ No later tranche is released by this roadmap table alone.
 - Enumeration command: future filesystem-backed direct recursive `Get-ChildItem` enumeration.
 - Manifest artifact or inline manifest: inline 336-file and 238,522-byte snapshot.
 - Manifest hash: T0 dispatch expectation is
-  `538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc`;
+  `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`;
   worker must recompute it.
 - Processing ledger artifact or inline ledger: dispatched T0 file-level ledger.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE

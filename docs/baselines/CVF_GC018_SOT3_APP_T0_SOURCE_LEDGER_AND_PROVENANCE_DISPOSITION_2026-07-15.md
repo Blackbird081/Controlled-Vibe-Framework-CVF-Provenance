@@ -10,7 +10,7 @@ Date: 2026-07-15
 
 Batch ID: `SOT3-APP-T0`
 
-Dispatch base head: `baaf21cd2`
+Dispatch base head: `ddd7d603a`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -26,6 +26,23 @@ Authorize one documentation-and-evidence-only source-intake tranche that
 freezes the current 336-file SOT-Application snapshot, terminally processes
 every file, and gives every declared hidden-CVF-clone path a path, owner,
 version/drift, and runtime-use disposition before any application mutation.
+
+## Digest Canonicalization Correction And Redispatch
+
+The first worker attempt stopped on a digest mismatch and is preserved at
+`docs/reviews/CVF_SOT3_APP_T0_WORKER_RETURN_2026-07-15.md`. Independent review
+at material commit `2a948fdb2` proved the packet digest used case-insensitive
+path sorting while this baseline requires ordinal sorting.
+
+Canonical aggregate SHA-256:
+`bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`.
+
+Rejected diagnostic-only case-insensitive aggregate:
+`538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc`.
+
+This correction records a packet-authoring defect, not source drift. R1 worker
+execution must sort normalized paths by ordinal code-point order and preserve
+the blocked return without modification.
 
 ## Proposed Tranche / Decision
 
@@ -54,6 +71,7 @@ not authorized.
 | FSCB cross-batch scheduling condition | `docs/reviews/CVF_FSCB_ADAPT_T0_COMPLETION_2026-07-15.md` | `21659a3ac` | `REVIEWER_ACCEPTED_BOUNDED` | PASS |
 | active continuity release | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `baaf21cd2` | `sot3_app_t0_packet_authoring_next` | PASS |
 | SOT3-APP roadmap T0 route | `docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md` | current dispatch batch | `T0_DISPATCH_READY` | PASS for T0 only |
+| blocked-return diagnosis | `docs/reviews/CVF_SOT3_APP_T0_BLOCKED_RETURN_REVIEW_2026-07-15.md` | `2a948fdb2` | `REDISPATCH_REQUIRED` | PASS for corrected R1 dispatch |
 
 ## Source Verification Block
 
@@ -105,7 +123,7 @@ folder. They are evidence inputs, not CVF authority and not runtime proof.
 | Evidence item | External locator | Direct observation at dispatch authoring | Claim class |
 |---|---|---|---|
 | source root | `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application` | exists; 336 files; 238522 bytes | FILESYSTEM_SNAPSHOT |
-| aggregate digest | sorted `relativePath<TAB>bytes<TAB>sha256<LF>` over all 336 files | `538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc` | REPRODUCIBILITY_SNAPSHOT |
+| aggregate digest | ordinally sorted `relativePath<TAB>bytes<TAB>sha256<LF>` over all 336 files | `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee` | REPRODUCIBILITY_SNAPSHOT |
 | application manifest | `.cvf/manifest.json` line 5 | `governance_root` points to `../.Controlled-Vibe-Framework-CVF` | DECLARATION_ONLY |
 | binding target family | seven files under `.cvf/bindings/`, each line 4 | all seven targets resolve through `../.Controlled-Vibe-Framework-CVF` | DECLARATION_ONLY |
 | environment default | `.env.example` lines 7-9 | workspace root `..`, core path hidden clone, local binding mode | DECLARATION_ONLY |
@@ -120,7 +138,7 @@ Dispatcher read-only verification established:
 
 - exact 336-file and 238522-byte snapshot parity with the accepted roadmap;
 - aggregate SHA-256
-  `538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc`;
+  `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`;
 - eight machine-consumed hidden-clone declarations: one manifest root and seven
   binding targets;
 - two configuration declarations: `.env.example` and API config default;
@@ -190,7 +208,7 @@ remains unproven.
 - Manifest artifact or inline manifest: inline 336-file and 238522-byte
   dispatch snapshot; planned full ledger.
 - Manifest hash:
-  `538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc`.
+  `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`.
 - Processing ledger artifact or inline ledger:
   `docs/reviews/CVF_SOT3_APP_T0_SOURCE_PROCESSING_AND_PROVENANCE_LEDGER_2026-07-15.md`.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED,

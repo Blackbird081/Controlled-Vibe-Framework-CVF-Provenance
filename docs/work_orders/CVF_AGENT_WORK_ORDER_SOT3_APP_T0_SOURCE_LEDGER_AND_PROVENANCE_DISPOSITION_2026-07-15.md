@@ -10,14 +10,14 @@ Date: 2026-07-15
 
 Batch ID: `SOT3-APP-T0`
 
-dispatchBaseHead: `baaf21cd2`
+dispatchBaseHead: `ddd7d603a`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 Worker return path:
-`docs/reviews/CVF_SOT3_APP_T0_WORKER_RETURN_2026-07-15.md`
+`docs/reviews/CVF_SOT3_APP_T0_R1_WORKER_RETURN_2026-07-15.md`
 
 ## Dispatch Prompt Envelope
 
@@ -56,6 +56,23 @@ Freeze and terminally process all 336 SOT-Application files, reproduce the
 accepted source snapshot, enumerate every declared hidden-CVF-clone path, and
 give each declaration an evidence-backed provenance disposition without
 executing or changing the application.
+
+## Prior Blocked Attempt And R1 Redispatch Correction
+
+The original worker return is preserved at
+`docs/reviews/CVF_SOT3_APP_T0_WORKER_RETURN_2026-07-15.md`. Independent review
+at material commit `2a948fdb2` accepted the worker's stop behavior, rejected
+source drift as the cause, and confirmed a dispatcher sorting defect.
+
+R1 must use ordinal code-point sorting over normalized forward-slash paths.
+The canonical aggregate is
+`bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`.
+The case-insensitive comparison digest
+`538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc`
+is diagnostic-only and must not be used as the expected corpus digest.
+
+Do not modify the preserved blocked return. The R1 worker return uses the new
+path declared at the top of this packet.
 
 ## Authority Chain
 
@@ -117,7 +134,7 @@ binding-validation changes or commands.
 | Path | Worker action | Owner boundary |
 |---|---|---|
 | `docs/reviews/CVF_SOT3_APP_T0_SOURCE_PROCESSING_AND_PROVENANCE_LEDGER_2026-07-15.md` | create | 336-file manifest, hashes, terminal decisions, declaration inventory, hidden-clone provenance dispositions |
-| `docs/reviews/CVF_SOT3_APP_T0_WORKER_RETURN_2026-07-15.md` | create | execution evidence, gate evidence, claim boundary, and no-commit return |
+| `docs/reviews/CVF_SOT3_APP_T0_R1_WORKER_RETURN_2026-07-15.md` | create | R1 execution evidence, gate evidence, claim boundary, and no-commit return |
 
 Worker may not edit any pre-existing governed or external file.
 
@@ -130,6 +147,7 @@ Worker may not edit any pre-existing governed or external file.
 | continuity release | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | `baaf21cd2` | `sot3_app_t0_packet_authoring_next` | PASS |
 | roadmap T0 release | `docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md` | current dispatch batch | `T0_DISPATCH_READY` | PASS - T0 only |
 | GC-018 source/claim boundary | `docs/baselines/CVF_GC018_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md` | current dispatch batch | `DISPATCH_READY` | PASS |
+| blocked-return diagnosis | `docs/reviews/CVF_SOT3_APP_T0_BLOCKED_RETURN_REVIEW_2026-07-15.md` | `2a948fdb2` | `REDISPATCH_REQUIRED` | PASS for corrected R1 dispatch |
 
 ## Required First Reads
 
@@ -157,7 +175,7 @@ Worker may not edit any pre-existing governed or external file.
 4. Confirm both planned output paths are absent before creation.
 5. Enumerate the source root directly with hidden files included.
 6. Require exactly 336 files, 238522 bytes, and aggregate SHA-256
-   `538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc`.
+   `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`.
 7. Recompute the hidden target existence, Git HEAD, branch/worktree state, and
    remote without changing it. Require short HEAD `a78b35c`, clean worktree,
    branch `main`, and the remote recorded by the baseline.
@@ -209,6 +227,8 @@ contract field.
 1. Enumerate all files recursively from the literal source root with hidden
    files included.
 2. Normalize relative paths to forward slashes and sort ordinally by path.
+   Ordinal means direct code-point ordering. Do not use culture-aware,
+   case-insensitive, lowercase, or `casefold` ordering.
 3. Record byte length and lowercase SHA-256 for each file.
 4. Build the aggregate digest from sorted lines shaped
    `relativePath<TAB>bytes<TAB>sha256<LF>`, UTF-8 encoded, then SHA-256 hashed.
@@ -304,7 +324,7 @@ or treeview references found by the full-source search.
   provenance ledger.
 - Manifest hash: deterministic aggregate digest defined in Required Inventory
   Method; dispatch expectation is
-  `538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc`.
+  `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`.
 - Processing ledger artifact or inline ledger:
   `docs/reviews/CVF_SOT3_APP_T0_SOURCE_PROCESSING_AND_PROVENANCE_LEDGER_2026-07-15.md`.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED,
@@ -341,7 +361,7 @@ or treeview references found by the full-source search.
 | Artifact | Required worker action |
 |---|---|
 | `docs/reviews/CVF_SOT3_APP_T0_SOURCE_PROCESSING_AND_PROVENANCE_LEDGER_2026-07-15.md` | create 336-row file ledger, aggregate receipt, hidden-clone declaration inventory, terminal dispositions, and reconciliation |
-| `docs/reviews/CVF_SOT3_APP_T0_WORKER_RETURN_2026-07-15.md` | create no-commit execution return with evidence, gates, risks, and claim boundary |
+| `docs/reviews/CVF_SOT3_APP_T0_R1_WORKER_RETURN_2026-07-15.md` | create R1 no-commit execution return with evidence, gates, risks, and claim boundary |
 
 No other worker-owned artifact is authorized.
 
@@ -591,7 +611,7 @@ Stable front door: `docs/reference/agent_handoff/README.md`, section `Central Co
 | route | `MULTI_AGENT_MULTI_ROLE` |
 | rolePattern | dispatcher authors committed packet; distinct delegated worker executes and returns without commit; independent reviewer/closer accepts and commits; session-sync steward updates continuity separately |
 | phase | `DISPATCH_AUTHORING`; `EXECUTION`; `CLOSURE`; `SESSION_SYNC` |
-| baseHeadFor(phase) | dispatchBaseHead=`baaf21cd2`; executionBaseHead=worker captures clean committed dispatch HEAD; closureBaseHead=reviewer captures execution base |
+| baseHeadFor(phase) | dispatchBaseHead=`ddd7d603a`; executionBaseHead=worker captures clean committed redispatch HEAD; closureBaseHead=reviewer captures execution base |
 | changedSetScope(phase) | dispatch=SOT3-APP roadmap plus paired GC-018/work order; execution=exact two planned outputs; closure=accepted worker outputs plus reviewer-owned roadmap/work-order/completion paths; session-sync=protected continuity paths only |
 | traceScope(phase, actor) | each role records only phase-local commands, paths, hashes, diffs, HEAD, and gate evidence |
 | commitOwner(phase) | dispatcher commits dispatch; worker forbidden; reviewer/closer commits accepted material; session-sync steward commits continuity separately |
@@ -610,7 +630,7 @@ Stable front door: `docs/reference/agent_handoff/README.md`, section `Central Co
 ## Worker Return Packet Shape Contract
 
 workerReturnPath:
-`docs/reviews/CVF_SOT3_APP_T0_WORKER_RETURN_2026-07-15.md`
+`docs/reviews/CVF_SOT3_APP_T0_R1_WORKER_RETURN_2026-07-15.md`
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
