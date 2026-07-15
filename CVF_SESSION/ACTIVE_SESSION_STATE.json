@@ -84,8 +84,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc04b_r3r2_dispatched_worker_next",
-  "previousMode": "system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next",
+  "currentMode": "system_chain_uc04b_r3r3_reviewer_negative_proof_packet_next",
+  "previousMode": "system_chain_uc04b_r3r2_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12035,5 +12035,22 @@
     "nextAllowedMove": "execute the exact no-commit R3R2 local repair and return for reviewer closure",
     "claimBoundary": "Dispatch and local repair only. Reviewer browser denial, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value remain unproven."
   },
-  "nextAllowedMove": "SCLP-UC04B-R3R2 is DISPATCH_READY at material commit 23f884abf. Execute the exact no-commit local repair: extract OperationsClient with initialRole/initialUser, replace page.tsx with ambient verifySessionCookie server bootstrap, retain client /api/auth/me refresh, add exactly two deterministic projection tests, require focused 34/34 and typecheck PASS, and return unstaged with unchanged HEAD. Playwright/browser invocations, Web submissions, selected checker jobs, retries, and provider calls are all zero. Do not edit the retained proof, auth API/adapter, shell hook, job runtime, GAP/roadmap, or session owners. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc04bR3r2Closure20260715": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "52efec528",
+    "workOrderId": "SCLP-UC04B-R3R2",
+    "executionBaseHead": "5ff38c4ae",
+    "repair": "ambient server session initial projection plus retained client auth refresh",
+    "focusedResult": "34/34 PASS",
+    "typecheckResult": "PASS",
+    "browserInvocations": 0,
+    "webSubmissions": 0,
+    "selectedCheckerJobs": 0,
+    "retries": 0,
+    "providerCalls": 0,
+    "gapStatus": "OPEN_CONFIRMED_GAP narrowed to fresh negative browser acceptance",
+    "nextAllowedMove": "author one source-verified R3R3 reviewer negative-only browser proof packet",
+    "claimBoundary": "Local reviewer projection repair only. Reviewer browser denial, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value remain unproven."
+  },
+  "nextAllowedMove": "SCLP-UC04B-R3R2 is CLOSED_PASS_BOUNDED at material commit 52efec528. The ambient server session now supplies initial reviewer role/user, the retained client /api/auth/me refresh is covered, focused tests pass 34/34, typecheck passes, and all browser/business/checker-job/retry/provider counters remain zero. The next allowed move is author one source-verified R3R3 negative-only canonical-origin browser proof packet requiring reviewer projection, exactly one policy POST, denied outcome, blocked audit evidence, zero retry, and zero provider call. Do not repeat the positive developer path. LHW24 remains latest closed numbered LHW wave."
 }

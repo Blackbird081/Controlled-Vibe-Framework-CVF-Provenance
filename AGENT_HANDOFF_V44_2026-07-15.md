@@ -8,21 +8,21 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after SCLP-UC04B-R3R1 closure and route only the
-source-verified reviewer auth-projection repair packet.
+Carry compact continuity after SCLP-UC04B-R3R2 local repair closure and route
+only the source-verified reviewer negative browser-proof packet.
 
 ## Scope / Target / Owner Boundary
 
-This handoff owns continuity pointers only. Material commit `0856e090d` owns
-the R3R1 evidence, closure decision, GAP transitions, roadmap projection, and
-ADIF-0037. A later R3R2 dispatch must use fresh GC-018 and source verification.
+This handoff owns continuity pointers only. Material commit `52efec528` owns
+the R3R2 source/test repair, closure decision, GAP narrowing, roadmap, and
+coverage projection. A later R3R3 dispatch must use fresh GC-018 and source
+verification.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r3r2_dispatched_worker_next`;
+Startup acknowledged: current mode=`system_chain_uc04b_r3r3_reviewer_negative_proof_packet_next`;
 active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author one
-execute the no-commit R3R2 local projection repair with deterministic tests
-and zero browser/business/provider action; parked checkpoint=UC-03 harness
+source-verified R3R3 reviewer negative-only browser proof packet; parked checkpoint=UC-03 harness
 identity repair until its reuse trigger, GC-009/GC-010 promotion, unified
 inventory, public export, production, scale, and user validation.
 
@@ -39,7 +39,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04b_r3r2_dispatched_worker_next`
+`system_chain_uc04b_r3r3_reviewer_negative_proof_packet_next`
 
 ## Active Boundary
 
@@ -47,37 +47,31 @@ Latest closed numbered LHW wave remains `LHW24`.
 - R3 developer business PASS remains retained.
 - R3R1 locator hardening remains retained and its ambiguity GAP is closed.
 - The existing auth-projection GAP is reopened only for reviewer scope.
-- R3R2 dispatch commit: `23f884abf`.
-- No browser, business, checker-job, retry, or provider invocation is authorized.
-- The next packet must source-verify server session, shell identity, Operations
-  client state, `/api/auth/me`, and the policy POST boundary.
-- Deterministic provider-free regression must prove request emission and
-  reviewer role mapping before a later browser execution packet may open.
-- Timeout-only tuning and repetition of the positive path are forbidden.
+- R3R2 closure commit: `52efec528`.
+- Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
+  accepted through focused 34/34 and typecheck PASS.
+- R3R2 browser, business, checker-job, retry, and provider counters are zero.
+- The next packet must source-verify the retained negative proof route and
+  require reviewer projection, one policy POST, denied outcome, blocked audit,
+  zero retry, and zero provider call.
+- Repetition of the positive developer path is forbidden.
 
 ## Latest Work / Changes
 
-SCLP-UC04B-R3R1 closed `CLOSED_BLOCKED_BOUNDED`. The exact locator edit and
-32/32 focused tests are accepted. One canonical negative-only invocation
-eliminated the prior five-match ambiguity but stopped before POST with counters
-1/0/0/0/0. Trace inspection found no `/api/auth/me`, no `/api/system/jobs`,
-and no console or page error. Direct session reported reviewer, the shell
-snapshot showed admin, and Operations remained anonymous_local.
-
-`cvf.asc.gap.web_reviewer_denial_proof_locator_ambiguity.v1` is closed with
-evidence. `cvf.asc.gap.web_nextauth_application_projection_split.v1` is
-reopened under its pre-existing fresh-evidence contradiction condition for
-reviewer scope. ADIF-0037 records that server session assertion is not client
-projection readiness.
+SCLP-UC04B-R3R2 closed `CLOSED_PASS_BOUNDED`. The Operations entry now derives
+initial role/user from the ambient server session and the extracted client
+retains its auth refresh. Five focused files pass 34/34 and typecheck passes.
+No browser or business action occurred. The existing projection GAP remains
+open only for fresh canonical-origin reviewer denial proof.
 
 ## Next Allowed Move
 
-Execute the exact no-commit SCLP-UC04B-R3R2 work order from `23f884abf`.
-Require the three source/test implementation paths plus worker return, exactly
-two new projection tests, focused 34/34, typecheck PASS, zero live counters,
-unstaged status, and unchanged worker HEAD. Retain the R3 positive path and do
-not infer full UC-04B, unified inventory, provider governance, public,
-production, scale, certification, or user value.
+Author one source-verified SCLP-UC04B-R3R3 negative-only browser proof packet.
+Require one canonical-origin invocation, reviewer projection, exactly one
+policy POST, denied outcome, blocked audit evidence, zero retry, and zero
+provider call. Retain the R3 positive path and do not infer full UC-04B,
+unified inventory, provider governance, public, production, scale,
+certification, or user value.
 
 ## Parked Checkpoint
 
@@ -93,8 +87,12 @@ R3R1 session-sync HEAD: `a06265e49`
 
 R3R2 dispatch HEAD: `23f884abf`
 
-The next material commit may contain only the R3R2 dispatch packet. Its later
-session-sync commit must refresh this block and the generated state separately.
+R3R2 dispatch session-sync HEAD: `5ff38c4ae`
+
+R3R2 material closure HEAD: `52efec528`
+
+The next material commit may contain only the R3R3 packet. Its later
+session-sync commit must refresh this block and generated state separately.
 
 ## Claim Boundary
 
@@ -102,11 +100,10 @@ session-sync commit must refresh this block and the generated state separately.
 path. For UC-04B, only the developer business success and bounded prior auth
 pair are retained; reviewer browser denial is not proven.
 
-## Core Guard Self-Protection Authorization - R3R1 Closure And R3R2 Dispatch Session Sync
+## Core Guard Self-Protection Authorization - R3R2 Closure Session Sync
 
-Authorized guard-maintenance scope: synchronize material closure `0856e090d`,
-rotate the active handoff, then synchronize R3R2 dispatch `23f884abf` and route
-its exact no-commit worker only.
+Authorized guard-maintenance scope: synchronize material closure `52efec528`
+and route only R3R3 packet authoring.
 
 Protected paths (every changed guard/control path is listed):
 
@@ -118,14 +115,13 @@ Protected paths (every changed guard/control path is listed):
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/systemChainUc04bR3r1BlockedClosure20260715.json`
-- `CVF_SESSION/state/entries/systemChainUc04bR3r2Dispatch20260715.json`
+- `CVF_SESSION/state/entries/systemChainUc04bR3r2Closure20260715.json`
 
 Operator authorization: continue the system-chain sequence and process the
 completed no-commit worker return.
 
 Rollback boundary: revert only this session-sync batch; retain material commit
-`0856e090d` and all historical evidence.
+`52efec528` and all historical evidence.
 
 ## Public Export Disposition
 
@@ -139,19 +135,19 @@ Reason: private continuity sync; no public-sync action.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | R3R1 closure continuity sync, 2026-07-15 |
+| Session or invocation | R3R2 closure continuity sync, 2026-07-15 |
 | Working directory | repository root |
 | Command or tool surface | state-source edits, active-state generator, continuity gates, git |
 | Target paths | protected paths listed in the Core Guard Self-Protection Authorization section |
-| Allowed scope source | operator continuation and material closure `0856e090d` |
-| Before status evidence | V43 routed the completed R3R1 worker execution |
-| After status evidence | V44 routes R3R2 packet authoring only |
+| Allowed scope source | operator continuation and material closure `52efec528` |
+| Before status evidence | V44 routed the completed R3R2 worker execution |
+| After status evidence | V44 routes R3R3 packet authoring only |
 | Diff evidence | session-only staged diff and generated-state check |
 | Approval boundary | continuity sync and handoff rotation; no material repair or live run |
 | Claim boundary | session routing only |
 | Agent type | session-sync steward |
-| Invocation ID | system-chain-uc04b-r3r1-session-sync-2026-07-15 |
-| Expected manifest | AGENTS pointer, V43 archive, V44, memory, bootstrap, active-state sources and aggregate |
+| Invocation ID | system-chain-uc04b-r3r2-session-sync-2026-07-15 |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | V43 moved intact to the governed handoff archive |
