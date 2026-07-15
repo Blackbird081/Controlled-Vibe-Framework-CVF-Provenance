@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1831,
+  "stateOrder": 1833,
   "stateKey": "nextAllowedMove",
-  "value": "SCLP-X-T2 is CLOSED_PASS_BOUNDED at material commit 498413cc9. Author only a fresh source-verified GC-018 and work order for the paired GC-009/GC-010 architecture-GAP recording decision. Do not directly mutate GAP, owner, or ADIF surfaces; run runtime, test, build, typecheck, CI, live, provider, browser, business CLI action; perform public action; or release T3-T4. LHW24 remains latest closed numbered LHW wave."
+  "value": "SCLP-X-T2G1 is DISPATCH_READY at material commit 6634796da. Execute only the exact no-commit four-path worker: create one paired compact GC-009/GC-010 GAP entry, regenerate the GAP index, align the GAP README, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Zero runtime, test, build, typecheck, CI, live, provider, browser, business CLI, runtime/source/catalog/ADIF mutation, public action, or T3-T4 release. LHW24 remains latest closed numbered LHW wave."
 }

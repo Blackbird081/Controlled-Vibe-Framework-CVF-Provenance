@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_exhaustive_proof_t2_closed_gap_packet_authoring_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author only a fresh source-verified paired GC-009/GC-010 architecture-GAP decision GC-018 and work order; parked checkpoint=direct GAP/owner/ADIF mutation, all runtime/test/build/typecheck/CI/live/provider/browser/business-CLI action, T3-T4 action, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_exhaustive_proof_t2g1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact no-commit four-path SCLP-X-T2G1 paired architecture-GAP recording worker; parked checkpoint=runtime/source/catalog/ADIF mutation, all runtime/test/build/typecheck/CI/live/provider/browser/business-CLI action, T3-T4 action, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_exhaustive_proof_t2_closed_gap_packet_authoring_next`
+Current mode marker: `system_chain_exhaustive_proof_t2g1_dispatched_worker_next`
 
-Current mode: `system_chain_exhaustive_proof_t2_closed_gap_packet_authoring_next`
+Current mode: `system_chain_exhaustive_proof_t2g1_dispatched_worker_next`
 
-`system_chain_exhaustive_proof_t2_closed_gap_packet_authoring_next`
+`system_chain_exhaustive_proof_t2g1_dispatched_worker_next`
 
 Previous mode:
 
-`system_chain_exhaustive_proof_t2_dispatched_worker_next`
+`system_chain_exhaustive_proof_t2_closed_gap_packet_authoring_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain exhaustive proof T2G1 paired architecture-GAP recording dispatch | `6634796da` | DISPATCH_READY; one paired compact GAP entry, regenerated index, aligned README, exact four-path no-commit worker return; zero runtime/test/build/typecheck/CI/live/provider/source/catalog/ADIF mutation. |
 | System-chain exhaustive proof T2 caller-verification closure | `498413cc9` | CLOSED_PASS_BOUNDED; 22,026 files, 500 raw matches, 329 unique ledger rows, zero ambiguous references, and zero non-test production callers for both targets; two reviewer classification repairs; zero runtime/test/build/typecheck/CI/live/provider/owner/GAP mutation. |
 | System-chain exhaustive proof T2 caller-verification dispatch | `e0e5e755f` | DISPATCH_READY; repository-wide read-only match classification for exactly two targets; exact three-path no-commit worker return; zero runtime/test/build/typecheck/CI/live/provider/owner/GAP mutation. |
 | System-chain exhaustive proof T1 value-selection closure | `c53bef36c` | CLOSED_PASS_BOUNDED; 6/6 terminal decisions; GC-009 and GC-010 selected only for future read-only T2 packet authoring; both owner/GAP candidates parked; CTR-01 retained resolved; zero live/provider/runtime/test/owner/GAP mutation. |
@@ -206,13 +207,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_exhaustive_proof_t2_closed_gap_packet_authoring_next`
+Mode: `system_chain_exhaustive_proof_t2g1_dispatched_worker_next`
 
-SCLP-X-T2 is closed bounded at `498413cc9`. Author only a fresh source-verified
-GC-018 and work order for the paired GC-009/GC-010 architecture-GAP recording
-decision. Do not directly mutate GAP, owner, or ADIF surfaces; run runtime,
-tests, builds, typecheck, CI, live/provider/browser/business-CLI action; or
-release T3-T4.
+SCLP-X-T2G1 is dispatch-ready at `6634796da`. Execute only its exact no-commit
+four-path worker: create one paired compact GAP entry, regenerate the GAP
+index, align the README, and return for independent review. Do not mutate
+runtime/source/catalog/ADIF, run runtime/tests/build/typecheck/CI/live/provider/
+browser/business-CLI action, or release T3-T4.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
