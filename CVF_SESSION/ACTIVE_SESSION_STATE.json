@@ -83,8 +83,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc04b_r2_dispatched_worker_next",
-  "previousMode": "system_chain_uc04b_auth_projection_repair_packet_next",
+  "currentMode": "system_chain_uc04b_r2r1_recovery_packet_next",
+  "previousMode": "system_chain_uc04b_r2_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11875,5 +11875,25 @@
     "nextAllowedMove": "execute the exact no-commit R2 work order and return for reviewer closure",
     "claimBoundary": "Dispatch authority only. No repair execution, UC-04B business proof, unified inventory, provider governance, public, production, scale, certification, or user-value claim."
   },
-  "nextAllowedMove": "SCLP-UC04B-R2 is DISPATCH_READY at material commit 978aa3e8d. One no-commit worker may perform only the source-verified request-bound auth repair, focused tests, and one dedicated two-case Playwright regression command. Exact live ceilings are one Playwright invocation and zero business submissions, checker executions, retries, and provider calls. The retained UC-04B business spec must not run. Next allowed move is execute this exact work order and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; reviewer/closer owns closure and commits. Do not infer UC-04B Web coverage, unified inventory, provider governance, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc04bR2BlockedClosure20260715": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "545628ca4",
+    "workOrderId": "SCLP-UC04B-R2",
+    "runtimeRepairStatus": "ACCEPTED_UNIT_PROVEN_BOUNDED",
+    "focusedTests": "12_OF_12_PASS",
+    "typecheck": "PASS",
+    "playwrightInvocationCount": 1,
+    "positiveCase": "FAIL_BEFORE_CLIENT_AUTH_FETCH",
+    "negativeCase": "DID_NOT_RUN",
+    "businessSubmissionCount": 0,
+    "checkerExecutionCount": 0,
+    "retryCount": 0,
+    "providerCallCount": 0,
+    "acceptedFailureClass": "CANONICAL_DEV_HOST_AND_CLIENT_HYDRATION_MISMATCH",
+    "rejectedDiagnosis": "BROWSER_NAVIGATION_COOKIE_NOT_SENT",
+    "adif": "ADIF-0035",
+    "nextAllowedMove": "author one localhost-normalized R2R1 recovery packet only",
+    "claimBoundary": "Bounded runtime repair and blocker closure only. No browser projection agreement, UC-04B Web operation, unified inventory, provider governance, public, production, scale, certification, or user-value proof."
+  },
+  "nextAllowedMove": "SCLP-UC04B-R2 is CLOSED_BLOCKED_BOUNDED at material commit 545628ca4. The request-bound auth adapter repair is accepted through reviewer 12/12 focused tests and clean typecheck, but the one browser invocation failed before client auth/jobs fetch and the negative case did not run. Reviewer trace inspection rejected browser cookie-loss attribution and retained a canonical localhost/dev-hydration mismatch. Exact counters are one invocation and zero business submissions, checker executions, retries, and provider calls. Next allowed move is author one fresh localhost-normalized R2R1 recovery GC-018 and work order only. Do not rerun R2 or claim UC-04B Web coverage, unified inventory, provider governance, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
 }

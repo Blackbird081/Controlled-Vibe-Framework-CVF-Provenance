@@ -19,9 +19,9 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r2_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute exact
-no-commit SCLP-UC04B-R2 only; parked checkpoint=UC-03 harness identity
+Startup acknowledged: current mode=`system_chain_uc04b_r2r1_recovery_packet_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
+localhost-normalized R2R1 recovery packet only; parked checkpoint=UC-03 harness identity
 repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory,
 public export, production, scale, universal enforcement, and user validation.
 
@@ -38,15 +38,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04b_r2_dispatched_worker_next`
+`system_chain_uc04b_r2r1_recovery_packet_next`
 
 ## Active Boundary
 
-- Active UC-04B R2 dispatch commit: `978aa3e8d`.
+- Active UC-04B R2 blocked closure commit: `545628ca4`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: one exact no-commit auth-projection repair worker.
-- Next permitted value lane: execute the bounded request-token repair, focused
-  tests, and one dedicated regression command; no UC-04B business run.
+- Active work queue: one localhost-normalized R2R1 recovery packet only.
+- Next permitted value lane: author the bounded recovery dispatch; no R2 rerun
+  or UC-04B business run.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -639,3 +639,24 @@ auth-projection repair packet.
 
 Rollback boundary: revert only this session-sync batch; retain material
 dispatch `978aa3e8d`, R1 closure `eebc3f8ce`, and all governed evidence.
+
+## Core Guard Self-Protection Authorization - UC-04B-R2 Blocked Closure Sync
+
+Authorized scope: synchronize accepted material closure `545628ca4` and route
+one localhost-normalized R2R1 recovery packet authoring step only.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc04bR2BlockedClosure20260715.json`
+
+Operator authorization: review and continue the reported R2 blocked worker
+return under the existing reviewer/closer route.
+
+Rollback boundary: revert only this session-sync batch; retain material
+closure `545628ca4`, R2 dispatch `978aa3e8d`, and all governed evidence.

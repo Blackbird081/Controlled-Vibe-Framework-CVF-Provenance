@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r2_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute exact no-commit SCLP-UC04B-R2 only; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc04b_r2r1_recovery_packet_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one localhost-normalized R2R1 recovery packet only; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc04b_r2_dispatched_worker_next`
+Current mode marker: `system_chain_uc04b_r2r1_recovery_packet_next`
 
-Current mode: `system_chain_uc04b_r2_dispatched_worker_next`
+Current mode: `system_chain_uc04b_r2r1_recovery_packet_next`
 
-`system_chain_uc04b_r2_dispatched_worker_next`
+`system_chain_uc04b_r2r1_recovery_packet_next`
 
 Previous mode:
 
-`system_chain_uc04b_auth_projection_repair_packet_next`
+`system_chain_uc04b_r2_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-04B-R2 auth-projection repair blocker closure | `545628ca4` | CLOSED_BLOCKED_BOUNDED; runtime adapter accepted through 12/12 plus typecheck; one browser run blocked before client fetch, 0 business/checker/retry/provider; cookie-loss diagnosis rejected; ADIF-0035; localhost-normalized recovery packet next. |
 | System-chain UC-04B-R2 auth-projection repair dispatch | `978aa3e8d` | DISPATCH_READY; request-bound auth owner repair, focused tests, one dedicated two-case Playwright regression; zero business submissions/checkers/retries/providers; worker must not commit. |
 | System-chain UC-04B-R1 auth-projection blocker closure | `eebc3f8ce` | CLOSED_BLOCKED_BOUNDED; 20/20 Web and 12/12 auth tests PASS; one Playwright invocation exposed developer session versus anonymous Operations projection; 0 submissions/checkers/retries/providers; architecture GAP registered; repair packet next. |
 | System-chain UC-04B-R1 Web auth/readout recovery dispatch | `b224015f8` | DISPATCH_READY; direct NextAuth and focused-test preflight before source freeze; monotonic ledger; exactly one Playwright invocation, two submissions, one docs checker, zero retries/provider calls; worker must not commit. |
@@ -187,14 +188,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc04b_r2_dispatched_worker_next`
+Mode: `system_chain_uc04b_r2r1_recovery_packet_next`
 
-UC-04B R2 is dispatch-ready at `978aa3e8d`. Execute only the exact no-commit
-request-bound auth repair work order. It permits focused tests and one dedicated
-two-case Playwright regression with zero business submissions, checkers,
-retries, and providers. Do not run the retained UC-04B business spec or infer
-Web coverage, unified inventory, provider governance, public, production,
-scale, certification, or user value.
+UC-04B R2 is closed blocked at `545628ca4`. The request-bound adapter repair
+is retained as unit-proven, but browser projection remains unproven. Author one
+fresh localhost-normalized R2R1 recovery packet only. Do not rerun R2, mutate
+`next.config.ts` from the rejected cookie-loss diagnosis, run the UC-04B
+business spec, or infer Web coverage, unified inventory, provider governance,
+public, production, scale, certification, or user value.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

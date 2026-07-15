@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1794,
+  "stateKey": "systemChainUc04bR2BlockedClosure20260715",
+  "value": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "545628ca4",
+    "workOrderId": "SCLP-UC04B-R2",
+    "runtimeRepairStatus": "ACCEPTED_UNIT_PROVEN_BOUNDED",
+    "focusedTests": "12_OF_12_PASS",
+    "typecheck": "PASS",
+    "playwrightInvocationCount": 1,
+    "positiveCase": "FAIL_BEFORE_CLIENT_AUTH_FETCH",
+    "negativeCase": "DID_NOT_RUN",
+    "businessSubmissionCount": 0,
+    "checkerExecutionCount": 0,
+    "retryCount": 0,
+    "providerCallCount": 0,
+    "acceptedFailureClass": "CANONICAL_DEV_HOST_AND_CLIENT_HYDRATION_MISMATCH",
+    "rejectedDiagnosis": "BROWSER_NAVIGATION_COOKIE_NOT_SENT",
+    "adif": "ADIF-0035",
+    "nextAllowedMove": "author one localhost-normalized R2R1 recovery packet only",
+    "claimBoundary": "Bounded runtime repair and blocker closure only. No browser projection agreement, UC-04B Web operation, unified inventory, provider governance, public, production, scale, certification, or user-value proof."
+  }
+}
