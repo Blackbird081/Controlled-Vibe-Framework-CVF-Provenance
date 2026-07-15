@@ -84,8 +84,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t0_digest_repair_next",
-  "previousMode": "sot3_app_t0_dispatched_worker_next",
+  "currentMode": "sot3_app_t0_r1_dispatched_worker_next",
+  "previousMode": "sot3_app_t0_digest_repair_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12298,7 +12298,7 @@
     "nextAllowedMove": "no active SCLP-X tranche; reopen only T3 if its source condition is met, otherwise require a fresh operator-authorized roadmap and GC-018 packet",
     "claimBoundary": "Bounded repository-evidence reconciliation over 99 accepted claims only. No runtime, live-provider, universal E2E, public, production, scale, certification, shipment, or user-value proof."
   },
-  "nextAllowedMove": "SOT3-APP-T0 blocked worker return and independent review are committed at 2a948fdb2. The worker stop behavior is accepted, source drift is rejected, and a case-insensitive-versus-ordinal digest packet defect is confirmed. Next repair and validate only the roadmap, GC-018, and work order with canonical ordinal aggregate bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee and a fresh R1 worker-return path. Do not execute R1 until the corrected packet and a separate continuity sync are committed. Do not modify or run SOT-Application or its hidden clone, and do not run application, install, runtime, test, build, typecheck, CI, live-provider, browser, server, binding-validation, public-sync, or push work. SCLP-X-T3 remains parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-APP-T0 R1 corrected redispatch is committed at aa08ea980 after pre-dispatch 75/75 and pre-commit 83/83 PASS. Next a delegated no-commit Claude worker may execute only the corrected work order, using ordinal code-point path sorting, canonical aggregate bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee, the existing ledger output path, and fresh R1 worker-return path docs/reviews/CVF_SOT3_APP_T0_R1_WORKER_RETURN_2026-07-15.md. Preserve the original blocked return and review. Capture executionBaseHead from clean committed HEAD. Do not modify or run SOT-Application or its hidden clone, and do not run application, install, runtime, test, build, typecheck, CI, live-provider, browser, server, binding-validation, public-sync, or push work. SCLP-X-T3 remains parked. LHW24 remains latest closed numbered LHW wave.",
   "sot3ApplicationAndFscbAbsorptionIntakeAuthorization20260715": {
     "status": "OPERATOR_AUTHORIZED_FOR_ROADMAP_AND_FSCB_T0_PACKET_AUTHORING",
     "materialCommit": "24d50f0d7",
@@ -12360,5 +12360,17 @@
     "rejectedDiagnosticAggregateSha256": "538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc",
     "nextAllowedMove": "Repair and validate only the three-file R1 redispatch packet, then sync continuity before worker execution.",
     "claimBoundary": "No 336-row ledger, hidden-clone provenance acceptance, T0 closure, T1 release, source mutation, runtime proof, public-sync, or product-readiness claim."
+  },
+  "sot3AppT0R1Redispatch20260715": {
+    "status": "DISPATCH_READY_R1",
+    "redispatchCommit": "aa08ea980",
+    "blockedReviewCommit": "2a948fdb2",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md",
+    "canonicalAggregateSha256": "bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee",
+    "ledgerOutput": "docs/reviews/CVF_SOT3_APP_T0_SOURCE_PROCESSING_AND_PROVENANCE_LEDGER_2026-07-15.md",
+    "workerReturnOutput": "docs/reviews/CVF_SOT3_APP_T0_R1_WORKER_RETURN_2026-07-15.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Execute the exact corrected two-output R1 worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit.",
+    "claimBoundary": "Redispatch only; no ledger completion, hidden-clone provenance acceptance, T0 closure, T1 release, source mutation, runtime proof, public-sync, or product-readiness claim."
   }
 }

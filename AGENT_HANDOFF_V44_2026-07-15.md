@@ -8,8 +8,8 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after the reviewed SOT3-APP-T0 blocked return and
-route only the three-file digest-correction R1 redispatch packet.
+Carry compact continuity after corrected SOT3-APP-T0 R1 redispatch and route
+only the exact two-output no-commit R1 worker.
 SCLP-X-T3 and all SOT-Application execution, runtime work, or
 historical-ledger/runtime/source/Catalog/GAP/ADIF mutation remain held.
 
@@ -27,13 +27,14 @@ crosswalk, completion review, and roadmap/work-order closure. Material commit
 `dcbce63a4` owns the SOT3-APP-T0 roadmap release, GC-018, and work order.
 Material commit `2a948fdb2` owns the blocked worker return and independent
 packet-defect review.
+Material commit `aa08ea980` owns the corrected R1 redispatch packet.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0_digest_repair_next`; active
-handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=repair and validate
-only the three-file SOT3-APP-T0 R1 redispatch packet; parked checkpoint=SCLP-X-T3,
-all R1 execution, and all SOT-Application or hidden-clone execution or mutation,
+Startup acknowledged: current mode=`sot3_app_t0_r1_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only
+the corrected two-output SOT3-APP-T0 R1 no-commit worker; parked checkpoint=
+SCLP-X-T3 and all SOT-Application or hidden-clone execution or mutation,
 and all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/
 business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF mutation,
 public export, production, scale, and user validation.
@@ -51,7 +52,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_app_t0_digest_repair_next`
+`sot3_app_t0_r1_dispatched_worker_next`
 
 ## Active Boundary
 
@@ -79,6 +80,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - FSCB-ADAPT-T0 bounded material closure commit: `21659a3ac`.
 - SOT3-APP-T0 source-ledger/provenance dispatch commit: `dcbce63a4`.
 - SOT3-APP-T0 blocked-return review commit: `2a948fdb2`.
+- SOT3-APP-T0 corrected R1 redispatch commit: `aa08ea980`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
@@ -94,17 +96,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Latest Work / Changes
 
-The SOT3-APP-T0 blocked return is reviewed at material commit `2a948fdb2`.
-Worker stop behavior is accepted, source drift is rejected, and a dispatcher
-case-insensitive-sort defect is confirmed. The canonical ordinal aggregate is
-`bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`.
-SOT-Application remains untouched and unexecuted.
+SOT3-APP-T0 corrected R1 redispatch is committed at `aa08ea980`. The packet
+uses canonical ordinal aggregate
+`bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`
+and a fresh R1 worker-return path. Original blocked evidence remains preserved.
 
 ## Next Allowed Move
 
-Repair and validate only the SOT3-APP-T0 roadmap, GC-018, and work order with
-the canonical ordinal digest and a fresh R1 worker-return path. Do not execute
-R1 until corrected packet and continuity commits exist. Do not modify or run
+Execute only the corrected SOT3-APP-T0 R1 work order as a delegated no-commit
+worker. Preserve original blocked evidence and do not modify or run
 SOT-Application or its hidden clone.
 
 ## Parked Checkpoint
@@ -217,6 +217,59 @@ Reason: private continuity sync; no public-sync action.
 | Claim boundary | session routing only |
 | Agent type | session-sync steward |
 | Invocation ID | system-chain-exhaustive-proof-t4-dispatch-session-sync-2026-07-15 |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
+| Actual changed set | same session-sync manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## SOT3-APP-T0 R1 Redispatch Session Sync
+
+Material commit `aa08ea980` corrects the digest algorithm, records the
+canonical ordinal aggregate, and introduces a fresh R1 worker-return path.
+Only the exact no-commit R1 worker is released.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T0 R1 Redispatch Sync
+
+Authorized guard-maintenance scope: synchronize redispatch `aa08ea980` and
+route only the exact corrected R1 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3AppT0R1Redispatch20260715.json`
+
+Rollback boundary: revert only this session-sync batch; retain redispatch
+`aa08ea980` and blocked-review evidence `2a948fdb2`.
+
+## Public Export Disposition - SOT3-APP-T0 R1 Redispatch Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.
+
+## Agent Operation Trace Block - SOT3-APP-T0 R1 Redispatch Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | SOT3-APP-T0 R1 redispatch continuity sync, 2026-07-15 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | protected paths listed in the matching authorization section |
+| Allowed scope source | corrected redispatch `aa08ea980` |
+| Before status evidence | clean worktree at redispatch HEAD `aa08ea980` |
+| After status evidence | continuity routes only exact two-output R1 no-commit worker |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sync only; no worker execution or source/runtime/public mutation |
+| Claim boundary | R1 routing only; T0 completion and T1 release are not claimed |
+| Agent type | session-sync steward |
+| Invocation ID | `sot3-app-t0-r1-redispatch-session-sync-2026-07-15` |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
 | Manifest delta | MATCH |

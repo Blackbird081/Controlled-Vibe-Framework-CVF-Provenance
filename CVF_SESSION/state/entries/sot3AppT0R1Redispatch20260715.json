@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1845,
+  "stateKey": "sot3AppT0R1Redispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY_R1",
+    "redispatchCommit": "aa08ea980",
+    "blockedReviewCommit": "2a948fdb2",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md",
+    "canonicalAggregateSha256": "bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee",
+    "ledgerOutput": "docs/reviews/CVF_SOT3_APP_T0_SOURCE_PROCESSING_AND_PROVENANCE_LEDGER_2026-07-15.md",
+    "workerReturnOutput": "docs/reviews/CVF_SOT3_APP_T0_R1_WORKER_RETURN_2026-07-15.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Execute the exact corrected two-output R1 worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit.",
+    "claimBoundary": "Redispatch only; no ledger completion, hidden-clone provenance acceptance, T0 closure, T1 release, source mutation, runtime proof, public-sync, or product-readiness claim."
+  }
+}
