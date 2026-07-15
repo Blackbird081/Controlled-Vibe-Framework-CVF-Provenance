@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -518,3 +518,25 @@ A PASS may prove only the selected reviewer rejection path and, with retained R3
 positive evidence, support bounded selected-pair closure. It does not prove a
 unified checker inventory, other jobs/roles, provider governance, public or
 production readiness, scale, certification, or real-user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | R3R3 completion review | `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | system-chain roadmap | T5 final projection next | PASS |
+| Registry JSON | coverage and generated GAP index | selected pair projected | PASS |
+| Registry Markdown | system-chain front door | R3R3 accepted | PASS |
+| External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason |
+| System loop interlock | receipt and isolated audit sequence | reviewer denied before runner/provider | PASS |
+| Session continuity | active session surfaces | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Criterion | Required value | Observed value | Status |
+|---|---|---|---|
+| selected case | negative only | one negative, positive absent | PASS |
+| submission | exactly one | one | PASS |
+| denial | 403 and exact reason | 403 `read_only_role_cannot_trigger` | PASS |
+| stop boundary | zero checker/provider | zero/zero | PASS |

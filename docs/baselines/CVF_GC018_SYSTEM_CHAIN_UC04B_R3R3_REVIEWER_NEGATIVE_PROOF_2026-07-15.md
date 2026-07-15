@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -180,3 +180,25 @@ This baseline authorizes one local negative reviewer proof. It does not prove
 the retained positive path again, full UC-04B, unified checker inventory,
 provider governance, public or production readiness, scale, certification, or
 real-user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | R3R3 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | R3R3 completion review | reviewer acceptance | PASS |
+| Roadmap state | system-chain roadmap | T5 final projection next | PASS |
+| Registry JSON | coverage and generated GAP index | selected pair projected | PASS |
+| Registry Markdown | system-chain front door | R3R3 accepted | PASS |
+| External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason |
+| System loop interlock | receipt and isolated audit sequence | exact 1/1/0/0/0 | PASS |
+| Session continuity | active session surfaces | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Criterion | Required value | Observed value | Status |
+|---|---|---|---|
+| reviewer projection | reviewer | reviewer | PASS |
+| policy outcome | HTTP 403 blocked | HTTP 403 `blocked_by_policy` | PASS |
+| audit sequence | requested then blocked | requested then blocked | PASS |
+| counters | 1/1/0/0/0 | 1/1/0/0/0 | PASS |

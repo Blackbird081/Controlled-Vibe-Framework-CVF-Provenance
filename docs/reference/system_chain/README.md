@@ -275,6 +275,16 @@ not reviewer browser-denial proof: no browser, Web submission, checker job,
 retry, or provider call occurred. One R3R3 negative-only canonical-origin proof
 is the next allowed packet; the positive developer path must not be repeated.
 
+UC-04B-R3R3 is closed `CLOSED_PASS_BOUNDED`. One canonical-origin negative-only
+invocation rendered reviewer, submitted exactly one `docs_governance_check`
+request, and received HTTP 403 with `blocked_by_policy` and
+`read_only_role_cannot_trigger`. Its isolated audit sequence is exactly
+`requested` then `blocked_by_policy`; checker execution, retry, and provider
+calls are zero. Together with retained R3 developer success, the selected Web
+pair is proven bounded and the auth-projection GAP is closed with evidence.
+No unified Web checker inventory, other role/job, or provider-governance claim
+is implied.
+
 Operations exposes a bounded five-job-type subset
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts`),
 of which exactly one job type (`docs_governance_check`) wires directly to

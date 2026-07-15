@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC04B_R3R3_REVIEWER_NEGATIVE_PROOF_PACKET_NEXT
+Status: ACTIVE_T5_FINAL_REVERSE_PROJECTION_AND_SEQUENCE_CLOSURE_NEXT
 
 docType: roadmap
 
@@ -220,17 +220,15 @@ public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-UC-04B-R3R2 is closed `CLOSED_PASS_BOUNDED`. The Operations entry now derives
-the initial role and user from the ambient server session, while the extracted
-client retains its `/api/auth/me` refresh. Five focused files pass 34/34 and
-TypeScript typecheck passes; reviewer initial projection and request emission
-are deterministically covered. No browser, Web submission, checker job, retry,
-or provider call occurred. The projection GAP remains open only for fresh
-browser acceptance. The next allowed move is author one R3R3 negative-only
-canonical-origin proof packet requiring reviewer projection, one policy POST,
-denied outcome, blocked audit evidence, zero retry, and zero provider call. Do
-not repeat the positive path or infer unified Web inventory, provider
-governance, public, production, scale, certification, or user value.
+UC-04B-R3R3 is closed `CLOSED_PASS_BOUNDED`. One canonical-origin invocation
+observed reviewer, submitted exactly one `docs_governance_check` request, and
+received the expected 403 `blocked_by_policy` result. Audit order is exactly
+`requested` then `blocked_by_policy`; checker execution, retry, and provider
+calls are zero. Together with retained R3 developer success, this closes the
+selected Web pair and the auth-projection GAP. The next allowed move is T5:
+perform one final reverse-projection audit and close or value-park the use-case
+sequence. Do not expand T5 into unified Web inventory, provider governance,
+public, production, scale, certification, or user-value claims.
 
 ## Checker Source Read-Ahead Block
 

@@ -43,15 +43,15 @@
     },
     {
       "useCaseId": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
-      "status": "PROVEN_BOUNDED_CLI_AUTH_PROJECTION_AND_WEB_POSITIVE_REVIEWER_DENIAL_PENDING",
+      "status": "PROVEN_BOUNDED_CLI_AND_SELECTED_WEB_PAIR",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
       "scope": "CLI current-run readout first, then the bounded Web Operations subset as a separate scenario",
       "selectionReason": "source inspection proves wiring shape but not current operator usability",
       "providerCallRequired": "ONLY_IF_THE_SELECTED_JOB_ASSERTS_AI_GOVERNANCE_BEHAVIOR",
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
-      "latestEvidence": "docs/reviews/evidence/system-chain-uc04b-r3-business-proof-2026-07-15.json",
-      "latestResult": "WEB_DEVELOPER_BUSINESS_PASS_REVIEWER_PRE_POST_LOCATOR_BLOCKED",
-      "nextAction": "retain CLI and developer business PASS evidence plus the accepted R3R2 local projection repair; author one R3R3 negative-only browser proof packet with one submission, zero retry, and zero provider call"
+      "latestEvidence": "docs/reviews/evidence/system-chain-uc04b-r3r3-reviewer-negative-proof-2026-07-15.json",
+      "latestResult": "WEB_DEVELOPER_SUCCESS_AND_REVIEWER_DENIAL_PASS_BOUNDED",
+      "nextAction": "retain CLI plus the selected Web developer-success/reviewer-denial pair; do not expand into unified checker inventory without a separate value-assessed packet"
     }
   ],
   "lanes": [
@@ -110,10 +110,10 @@
       "liveApplicability": "OPERATOR_SURFACE_LIVE_REQUIRED",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
-      "operationalProofStatus": "PARTIAL",
-      "reason": "the CLI surface and developer Web business path are proven bounded; R3R2 deterministically repairs reviewer bootstrap and client auth-request emission, while fresh reviewer browser denial remains pending",
-      "nextUseCase": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
-      "nextAction": "retain bounded CLI, developer business, prior projection, locator, and R3R2 local repair evidence; run one governed R3R3 negative-only browser proof before closing the reviewer edge"
+      "operationalProofStatus": "PROVEN",
+      "reason": "the CLI surface and selected Web pair are proven bounded: the developer path succeeds and the reviewer path is denied before runner/provider work with exact one-submission evidence; the lane remains semantically PARTIAL because no unified Web checker inventory is claimed",
+      "nextUseCase": "NONE",
+      "nextAction": "retain bounded CLI and selected Web pair evidence; reopen only for a materially broader, value-assessed operator-surface claim"
     }
   ]
 }
