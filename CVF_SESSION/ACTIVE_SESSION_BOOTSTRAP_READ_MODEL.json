@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_uc04b_r3r3_dispatched_worker_next",
+  "currentMode": "system_chain_live_proof_t5_final_reverse_projection_next",
   "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
-  "nextAllowedMove": "SCLP-UC04B-R3R3 is DISPATCH_READY at material commit 523748cec. Execute only negative_reviewer_docs_check from the committed proof hash, after focused 34/34, typecheck, and one-case list PASS. Permit exactly one canonical-localhost Playwright invocation and one reviewer POST; require HTTP 403, blocked_by_policy, read_only_role_cannot_trigger, requested then blocked audit events, and exact counters 1/1/0/0/0. Zero retry and zero provider call. Do not edit source, run the positive case, stage, or commit. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SCLP-UC04B-R3R3 is CLOSED_PASS_BOUNDED at material commit f9c1b14a1. The selected Web developer-success/reviewer-denial pair is proven bounded and the auth-projection GAP is CLOSED_WITH_EVIDENCE. Next, author one T5 final reverse-projection and sequence-closure packet: reconcile all accepted use cases, close or value-park remaining branches with concrete reopen conditions, and do not expand into unified Web inventory, provider governance, public, production, scale, certification, or user-value claims. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

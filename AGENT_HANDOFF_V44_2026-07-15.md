@@ -20,9 +20,9 @@ verification.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r3r3_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute the
-exact no-commit R3R3 reviewer negative-only browser proof; parked checkpoint=UC-03 harness
+Startup acknowledged: current mode=`system_chain_live_proof_t5_final_reverse_projection_next`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author one T5
+final reverse-projection and bounded sequence-closure packet; parked checkpoint=UC-03 harness
 identity repair until its reuse trigger, GC-009/GC-010 promotion, unified
 inventory, public export, production, scale, and user validation.
 
@@ -39,7 +39,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04b_r3r3_dispatched_worker_next`
+`system_chain_live_proof_t5_final_reverse_projection_next`
 
 ## Active Boundary
 
@@ -49,29 +49,32 @@ Latest closed numbered LHW wave remains `LHW24`.
 - The existing auth-projection GAP is reopened only for reviewer scope.
 - R3R2 closure commit: `52efec528`.
 - R3R3 dispatch commit: `523748cec`.
+- R3R3 closure commit: `f9c1b14a1`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
-- The next packet must source-verify the retained negative proof route and
-  require reviewer projection, one policy POST, denied outcome, blocked audit,
-  zero retry, and zero provider call.
-- Repetition of the positive developer path is forbidden.
+- One R3R3 invocation proved reviewer projection, one 403 policy denial, exact
+  requested-to-blocked audit order, and 1/1/0/0/0 counters.
+- The selected Web pair is proven bounded and the auth-projection GAP is closed.
+- T5 must only reconcile and close/value-park the sequence; broader inventory
+  or readiness expansion is forbidden.
 
 ## Latest Work / Changes
 
-SCLP-UC04B-R3R2 closed `CLOSED_PASS_BOUNDED`. The Operations entry now derives
-initial role/user from the ambient server session and the extracted client
-retains its auth refresh. Five focused files pass 34/34 and typecheck passes.
-No browser or business action occurred. The existing projection GAP remains
-open only for fresh canonical-origin reviewer denial proof.
+SCLP-UC04B-R3R3 closed `CLOSED_PASS_BOUNDED` at `f9c1b14a1`. The canonical
+reviewer path rendered reviewer, submitted once, returned the expected 403
+policy denial, and emitted only requested then blocked audit events. Exact
+counters are 1/1/0/0/0. The selected Web pair is proven bounded, the
+auth-projection GAP is closed, and ADIF-0038 records the recurring scaffold
+finalization checker gap.
 
 ## Next Allowed Move
 
-Execute SCLP-UC04B-R3R3 from `523748cec`. Run local 34/34, typecheck, and the
-one-case list before exactly one canonical-localhost invocation. Require
-reviewer projection, one policy POST, HTTP 403 denial, blocked audit sequence,
-and exact 1/1/0/0/0. Zero retry/provider. Do not edit source, run positive,
-stage, commit, or infer broader readiness.
+Author one T5 final reverse-projection and bounded sequence-closure packet from
+`f9c1b14a1`. Reconcile all accepted use cases, GAP/catalog/coverage projection,
+and remaining branches. Close or value-park each remaining branch with a
+concrete reopen condition. Do not expand into unified inventory, provider,
+public, production, scale, certification, or user-value claims.
 
 ## Parked Checkpoint
 
@@ -95,38 +98,39 @@ R3R2 closure session-sync HEAD: `ae9607022`
 
 R3R3 dispatch HEAD: `523748cec`
 
-The next material commit may contain only reviewer-accepted R3R3 worker
-evidence and closure. Session sync remains separate.
+R3R3 material closure HEAD: `f9c1b14a1`
+
+The next material commit may contain only the source-verified T5 final
+reverse-projection and bounded sequence-closure packet. Session sync remains
+separate.
 
 ## Claim Boundary
 
 `LIVE_GOVERNANCE_PROVEN_BOUNDED` remains limited to its prior selected SOT3
-path. For UC-04B, only the developer business success and bounded prior auth
-pair are retained; reviewer browser denial is not proven.
+path. UC-04B now separately proves a selected Web developer-success and
+reviewer-denial pair bounded; it does not broaden the SOT3 claim or prove
+unified inventory, provider governance, or production readiness.
 
-## Core Guard Self-Protection Authorization - R3R3 Dispatch Session Sync
+## Core Guard Self-Protection Authorization - R3R3 Closure Session Sync
 
-Authorized guard-maintenance scope: synchronize material dispatch `523748cec`
-and route only the exact R3R3 no-commit worker.
+Authorized guard-maintenance scope: synchronize material closure `f9c1b14a1`
+and route only T5 final reverse-projection and bounded sequence closure.
 
 Protected paths (every changed guard/control path is listed):
 
-- `AGENTS.md`
 - `AGENT_HANDOFF_V44_2026-07-15.md`
-- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/systemChainUc04bR3r2Closure20260715.json`
-- `CVF_SESSION/state/entries/systemChainUc04bR3r3Dispatch20260715.json`
+- `CVF_SESSION/state/entries/systemChainUc04bR3r3Closure20260715.json`
 
 Operator authorization: continue the system-chain sequence and process the
 completed no-commit worker return.
 
-Rollback boundary: revert only this session-sync batch; retain material commits
-`52efec528`, `523748cec`, and all historical evidence.
+Rollback boundary: revert only this session-sync batch; retain material commit
+`f9c1b14a1` and all historical proof evidence.
 
 ## Public Export Disposition
 
@@ -140,19 +144,19 @@ Reason: private continuity sync; no public-sync action.
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | R3R3 dispatch continuity sync, 2026-07-15 |
+| Session or invocation | R3R3 closure continuity sync, 2026-07-15 |
 | Working directory | repository root |
 | Command or tool surface | state-source edits, active-state generator, continuity gates, git |
 | Target paths | protected paths listed in the Core Guard Self-Protection Authorization section |
-| Allowed scope source | operator continuation and material dispatch `523748cec` |
-| Before status evidence | V44 routed R3R3 packet authoring |
-| After status evidence | V44 routes the exact R3R3 no-commit worker only |
+| Allowed scope source | operator continuation and material closure `f9c1b14a1` |
+| Before status evidence | V44 routed the R3R3 no-commit worker |
+| After status evidence | V44 routes T5 final reverse projection and sequence closure only |
 | Diff evidence | session-only staged diff and generated-state check |
-| Approval boundary | continuity sync and handoff rotation; no material repair or live run |
+| Approval boundary | continuity sync only; no material repair or live run |
 | Claim boundary | session routing only |
 | Agent type | session-sync steward |
-| Invocation ID | system-chain-uc04b-r3r3-dispatch-session-sync-2026-07-15 |
+| Invocation ID | system-chain-uc04b-r3r3-closure-session-sync-2026-07-15 |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | V43 moved intact to the governed handoff archive |
+| Deletion or rename disposition | N/A with reason: none |

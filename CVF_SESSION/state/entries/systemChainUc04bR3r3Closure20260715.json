@@ -1,0 +1,20 @@
+{
+  "stateOrder": 1814,
+  "stateKey": "systemChainUc04bR3r3Closure20260715",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "f9c1b14a1",
+    "workOrderId": "SCLP-UC04B-R3R3",
+    "executionBaseHead": "9c04a8d67",
+    "selectedCase": "negative_reviewer_docs_check",
+    "httpStatus": 403,
+    "decision": "blocked_by_policy",
+    "decisionReason": "read_only_role_cannot_trigger",
+    "auditSequence": "requested_then_blocked_by_policy",
+    "exactCounters": "1/1/0/0/0",
+    "projectionGapStatus": "CLOSED_WITH_EVIDENCE",
+    "learningEntry": "ADIF-0038",
+    "nextAllowedMove": "author one T5 final reverse-projection and bounded sequence-closure packet",
+    "claimBoundary": "Selected Web developer-success/reviewer-denial pair only. Unified inventory, other roles/jobs, provider governance, public, production, scale, certification, and user value remain excluded."
+  }
+}
