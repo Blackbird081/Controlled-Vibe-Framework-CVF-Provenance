@@ -49,7 +49,7 @@ adding, editing, or closing a gap entry.
 
 ## Current Gaps (Generated Summary)
 
-This table is a human summary of the 10 gap entries generated at review
+This table is a human summary of the 11 gap entries generated at review
 time. Always trust `CVF_SYSTEM_CHAIN_GAP_INDEX.json` and the `entries/`
 directory over this prose if they disagree; re-run the generator and refresh
 this table when entries change.
@@ -62,7 +62,7 @@ this table when entries change.
 | `PARTIAL_CHAIN_WITH_BOUNDARY` | 1 |
 | `EVIDENCED_NOT_OPERATOR_VISIBLE` | 1 |
 | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` | 4 |
-| `OPEN_CONFIRMED_GAP` | 0 |
+| `OPEN_CONFIRMED_GAP` | 1 |
 | `CLOSED_WITH_EVIDENCE` | 3 |
 
 ### Open / Parked / Intentionally Separated Gaps
@@ -72,6 +72,7 @@ this table when entries change.
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
+| `cvf.asc.gap.web_reviewer_denial_proof_locator_ambiguity.v1` | evidence_to_operator_surface | retained UC-04B business proof -> reviewer denial/audit evidence | `OPEN_CONFIRMED_GAP` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_reviewer_denial_proof_locator_ambiguity.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3_BUSINESS_PROOF_COMPLETION_2026-07-15.md` | Repair only the negative locator and execute one fresh reviewer-denial recovery |
 
 ### Recently Closed Gaps
 
@@ -111,6 +112,11 @@ spec remained byte-identical, the request-bound repair retained 12/12 focused
 PASS plus clean typecheck, and one canonical `localhost` Playwright invocation
 passed both developer and anonymous projection cases. This does not promote
 the separately unexecuted UC-04B business chain.
+
+SCLP-UC04B-R3 proved the developer business path on 2026-07-15 but exposed a
+distinct proof-harness gap before the reviewer denial POST. The positive path
+is retained. The open locator GAP requires one fresh negative-only recovery;
+it does not reopen the auth-projection repair or imply a runtime-policy defect.
 
 ## Search Examples
 

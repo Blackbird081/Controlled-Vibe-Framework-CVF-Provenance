@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Work Order ID: `SCLP-UC04B-R3`
 
@@ -394,10 +394,12 @@ Resolver query: taskClass=`Live runtime or provider proof`, role=`dispatcher`, l
 
 Query: `python governance/compat/run_adif_defect_resolver.py --task-class "Live runtime or provider proof" --role dispatcher --lifecycle-phase pre-dispatch --surface-selector cvf-web --max-results 20 --json`
 
-Returned defects: ADIF-0033; ADIF-0034; ADIF-0035
+Returned defects: ADIF-0033; ADIF-0034; ADIF-0035; ADIF-0036
 
 Directly applicable governed defects: `CVF_ADIF-0033`; `CVF_ADIF-0034`;
 `CVF_ADIF-0035`.
+`CVF_ADIF-0036` was added during closure after the live rendered page exposed
+the retained proof's unscoped pre-action text locator.
 
 The direct resolver returned zero JSON items. Changed-range applicability and
 retained UC-04 history require protected-path authorization, immutable ledger
@@ -442,7 +444,7 @@ store, queue, provider memory, or public surface is created.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | `Status: DISPATCH_READY`; `WORKER_MUST_NOT_COMMIT`; `Source Verification Block`; `Planned Worker Fulfillment Manifest`; `Agent Handoff Contract Control Block`; `Reviewer Closure Conversion`; `Public Export Disposition` |
+| literalTokensReviewed | `Status: CLOSED_BLOCKED_BOUNDED`; `WORKER_MUST_NOT_COMMIT`; `Source Verification Block`; `Planned Worker Fulfillment Manifest`; `Agent Handoff Contract Control Block`; `Reviewer Closure Conversion`; `Public Export Disposition` |
 | gateRunPurpose | confirm current business/auth/UI/proof/cost contracts before dispatch |
 | claimBoundary | one provider-free business-proof dispatch only |
 
@@ -481,3 +483,32 @@ public readiness, production readiness, scale, certification, or user value.
 | Actual changed set | paired R3 baseline and work order |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3_BUSINESS_PROOF_COMPLETION_2026-07-15.md` | reviewer closure | PASS |
+| Worker return | `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3_BUSINESS_PROOF_WORKER_RETURN_2026-07-15.md` | `BLOCKED_WITH_REASON` reviewed | PASS |
+| Changed set | worker manifest plus reviewer-owned closure projections | completion review Actual changed set evidence | PASS |
+| Gate evidence | worker-return and reviewer closure gates | command-backed evidence | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SYSTEM_CHAIN_LIVE_PROOF_USE_CASE_ROADMAP_2026-07-14.md` | `ACTIVE_UC04B_R3R1_LOCATOR_RECOVERY_PACKET_NEXT` | PASS |
+| Registry JSON | coverage ledger and generated GAP index | R3 partial projection and locator GAP | PASS |
+| Registry Markdown | system-chain, GAP, and ADIF front doors | R3 blocker and learning recorded | PASS |
+| System loop interlock | coverage ledger and R3 receipt | positive edge retained; reviewer edge remains partial | PASS |
+| External evidence digest | N/A with reason: repository and local runtime evidence only | no external input | N/A with reason |
+| Session continuity | active session surfaces | separate post-material sync | N/A with reason |
+| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+|---|---|---|---|
+| Playwright invocation | 1 | 1 | PASS |
+| developer positive | PASS | PASS | PASS |
+| reviewer negative | PASS | pre-POST locator FAIL | BLOCKED |
+| Web submissions | 2 | 1 | BLOCKED_DIAGNOSED |
+| checker executions | 1 | 1 | PASS |
+| retries | 0 | 0 | PASS |
+| provider calls | 0 | 0 | PASS |

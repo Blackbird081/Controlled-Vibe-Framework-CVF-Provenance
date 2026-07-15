@@ -248,6 +248,15 @@ auth-projection GAP. It does not resolve the unexecuted business chain.
 Web auth projection is proven bounded for the selected pair; UC-04B business
 submission and visible job outcome remain unproven.
 
+UC-04B-R3 is closed `CLOSED_BLOCKED_BOUNDED`. One canonical Playwright
+invocation proved the developer `docs_governance_check` business path through
+submission, checker execution, succeeded readout, and the expected three-event
+audit sequence. The reviewer case stopped before POST because its retained
+unscoped reviewer-text locator matched five rendered elements. Exact counters
+were 1/1/1/0/0 for invocation, Web submission, selected checker, retry, and
+provider calls. The positive edge is retained; reviewer browser denial remains
+unproven and routes to one locator-only R3R1 recovery packet.
+
 Operations exposes a bounded five-job-type subset
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts`),
 of which exactly one job type (`docs_governance_check`) wires directly to

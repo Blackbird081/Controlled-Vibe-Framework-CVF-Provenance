@@ -1,0 +1,43 @@
+{
+  "stableId": "cvf.asc.gap.web_reviewer_denial_proof_locator_ambiguity.v1",
+  "entityType": "GAP",
+  "sourcePlaneId": "cvf.asc.plane.evidence_to_operator_surface.v1",
+  "targetPlaneId": "cvf.asc.plane.evidence_to_operator_surface.v1",
+  "sourceOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts",
+  "targetOwner": "reviewer-denial POST and blocked_by_policy audit proof for docs_governance_check",
+  "missingEdge": "The retained negative browser case stops at an ambiguous unscoped reviewer-text locator before its POST, so current browser-level reviewer-denial and blocked audit evidence is missing even though focused policy tests pass.",
+  "currentStatus": "OPEN_CONFIRMED_GAP",
+  "proofClass": "EXECUTED_AND_EVIDENCED_EDGE",
+  "citations": [
+    {
+      "path": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3_BUSINESS_PROOF_WORKER_RETURN_2026-07-15.md",
+      "lineOrSection": "Findings / Position",
+      "evidenceRole": "one-invocation source-backed blocker classification"
+    },
+    {
+      "path": "docs/reviews/evidence/system-chain-uc04b-r3-business-diagnostic-2026-07-15.json",
+      "lineOrSection": "stage and invocationLedgerReconciliation",
+      "evidenceRole": "secret-safe failure stage and exact counters"
+    }
+  ],
+  "impact": "The developer docs-check business path is operator-visible and current-run proven, but the materially different reviewer rejection is not browser-proven and UC-04B cannot yet be promoted to a two-case bounded business proof.",
+  "closeCondition": {
+    "conditionKind": "EXECUTED_PROOF_ACCEPTED",
+    "conditionText": "A fresh governed recovery packet repairs the negative case locator, passes focused regression, and one authorized browser invocation reaches the reviewer POST and records HTTP 403, read_only_role_cannot_trigger, and requested then blocked_by_policy with no runner event."
+  },
+  "reopenCondition": {
+    "conditionKind": "NOT_APPLICABLE_WITH_REASON",
+    "conditionText": "The gap is open; no reopen condition applies until it is closed."
+  },
+  "actionOwner": "NEXT_PACKET: source-verified R3R1 proof-locator repair and one-invocation negative recovery",
+  "freshnessInputs": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/system/jobs/route.ts"
+  ],
+  "lastReviewed": {
+    "date": "2026-07-15",
+    "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3_BUSINESS_PROOF_COMPLETION_2026-07-15.md"
+  }
+}
+

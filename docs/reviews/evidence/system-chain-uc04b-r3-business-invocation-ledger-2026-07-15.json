@@ -1,0 +1,42 @@
+{
+  "packet": "SCLP-UC04B-R3",
+  "executionBaseHead": "0c14698602f92cfdd3041a8fb3e65d21192c47fc",
+  "commandFingerprint": "$env:PLAYWRIGHT_BASE_URL='http://localhost:3001'; npx playwright test tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts --config playwright.config.ts --workers=1",
+  "canonicalOrigin": "http://localhost:3001",
+  "playwrightBaseUrlInherited": false,
+  "frozenSpecPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts",
+  "frozenSpecSha256": "89aaf5a078c7c90bb01265d5f982110f6a077343641bff09e245eb5cff271d49",
+  "specHashMatchesDeclared": true,
+  "invocationCeiling": 1,
+  "invocationStarted": 1,
+  "ledgerCreatedAt": "2026-07-15T04:57:03Z",
+  "invocationStartedAt": "2026-07-15T04:57:30Z",
+  "invocationCompletedAt": "2026-07-15T04:58:15Z",
+  "result": "FAIL",
+  "cases": {
+    "positive_developer_docs_check": "PASS",
+    "negative_reviewer_docs_check": "FAIL"
+  },
+  "runtimeAuditBaseline": {
+    "path": ".cvf/runtime/web-governance-jobs.jsonl",
+    "preRunLineCount": 33,
+    "postRunLineCount": 36,
+    "newEventsAppended": 3
+  },
+  "observedHosts": [
+    "localhost:3001"
+  ],
+  "counters": {
+    "webSubmissions": 1,
+    "selectedCheckerExecutions": 1,
+    "retries": 0,
+    "providerCalls": 0
+  },
+  "expectedCounters": {
+    "playwrightInvocations": 1,
+    "webSubmissions": 2,
+    "selectedCheckerExecutions": 1,
+    "retries": 0,
+    "providerCalls": 0
+  }
+}

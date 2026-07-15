@@ -43,15 +43,15 @@
     },
     {
       "useCaseId": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
-      "status": "PROVEN_BOUNDED_CLI_AND_WEB_AUTH_PROJECTION_BUSINESS_PENDING",
+      "status": "PROVEN_BOUNDED_CLI_AUTH_PROJECTION_AND_WEB_POSITIVE_REVIEWER_DENIAL_PENDING",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
       "scope": "CLI current-run readout first, then the bounded Web Operations subset as a separate scenario",
       "selectionReason": "source inspection proves wiring shape but not current operator usability",
       "providerCallRequired": "ONLY_IF_THE_SELECTED_JOB_ASSERTS_AI_GOVERNANCE_BEHAVIOR",
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
-      "latestEvidence": "docs/reviews/evidence/system-chain-uc04b-r2r1-localhost-regression-2026-07-15.json",
-      "latestResult": "CLI_PASS_RETAINED_PLUS_WEB_AUTH_PROJECTION_PASS_2_OF_2",
-      "nextAction": "retain CLI and bounded Web auth-projection evidence; author a fresh source-verified UC-04B business-proof packet before any submission"
+      "latestEvidence": "docs/reviews/evidence/system-chain-uc04b-r3-business-proof-2026-07-15.json",
+      "latestResult": "WEB_DEVELOPER_BUSINESS_PASS_REVIEWER_PRE_POST_LOCATOR_BLOCKED",
+      "nextAction": "retain CLI, auth-projection, and developer business PASS evidence; author one source-verified locator-only R3R1 recovery for reviewer browser denial; do not repeat the positive path unless source coupling requires it"
     }
   ],
   "lanes": [
@@ -111,9 +111,9 @@
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
       "operationalProofStatus": "PARTIAL",
-      "reason": "the CLI surface is proven bounded and R2R1 proves developer/anonymous Web auth projection under one canonical local origin; the UC-04B business submission and visible job outcome remain unexecuted",
+      "reason": "the CLI surface and R2R1 auth projection are proven bounded; R3 proves one developer Web business submission, selected checker execution, visible succeeded outcome, and audit sequence, while the reviewer case remains browser-unproven because its retained pre-POST locator was ambiguous",
       "nextUseCase": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
-      "nextAction": "retain bounded CLI and auth-projection evidence; author a fresh source-verified UC-04B business-proof packet; do not infer unified inventory, provider governance, or broader Web coverage"
+      "nextAction": "retain bounded CLI, auth-projection, and developer business evidence; repair only the reviewer-case locator under a fresh R3R1 packet and run one negative recovery; do not infer unified inventory, provider governance, or broader Web coverage"
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC04B_BUSINESS_PROOF_PACKET_NEXT
+Status: ACTIVE_UC04B_R3R1_LOCATOR_RECOVERY_PACKET_NEXT
 
 docType: roadmap
 
@@ -218,13 +218,12 @@ public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-UC-04B-R2R1 is closed `CLOSED_PASS_BOUNDED`. The retained proof hash matches
-R2, the request-bound repair retains 12/12 focused PASS plus clean typecheck,
-and one canonical `localhost` Playwright invocation passed both developer and
-anonymous projection cases. Exact counters are one invocation and zero
-business submissions, checker executions, retries, and provider calls. The
-next allowed move is author one fresh source-verified UC-04B business-proof
-packet only. Do not rerun T4/R1/R2/R2R1 or infer unified Web inventory,
+UC-04B-R3 is closed `CLOSED_BLOCKED_BOUNDED`. One canonical invocation proved
+the selected developer business path end to end, but the reviewer case stopped
+at an ambiguous retained locator before POST. Exact counters are 1/1/1/0/0.
+The next allowed move is author one source-verified R3R1 locator-only recovery
+packet for the reviewer denial path. Do not rerun R3, repeat the positive path
+without a source-backed coupling reason, or infer unified Web inventory,
 provider governance, public, production, scale, certification, or user value.
 
 ## Checker Source Read-Ahead Block

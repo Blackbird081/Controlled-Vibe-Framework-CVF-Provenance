@@ -1,0 +1,59 @@
+{
+  "packet": "SCLP-UC04B-R3",
+  "executionBaseHead": "0c14698602f92cfdd3041a8fb3e65d21192c47fc",
+  "canonicalOrigin": "http://localhost:3001",
+  "frozenSpecPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts",
+  "frozenSpecSha256": "89aaf5a078c7c90bb01265d5f982110f6a077343641bff09e245eb5cff271d49",
+  "specHashMatchesDeclared": true,
+  "commandFingerprint": "$env:PLAYWRIGHT_BASE_URL='http://localhost:3001'; npx playwright test tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts --config playwright.config.ts --workers=1",
+  "invocationCount": 1,
+  "cases": {
+    "positive_developer_docs_check": "PASS",
+    "negative_reviewer_docs_check": "FAIL"
+  },
+  "projections": {
+    "positive": {
+      "actorRole": "developer, mapped to operator",
+      "jobId": "0b57a99a-56d1-4a15-9186-1d10863d7027",
+      "jobType": "docs_governance_check",
+      "httpStatus": 200,
+      "decision": "allowed",
+      "decisionReason": "role_authorized",
+      "status": "succeeded",
+      "uiVisibleReadout": "job type, status succeeded, and Docs Governance Check label all visible",
+      "auditSequence": ["requested", "running", "succeeded"],
+      "auditSequenceMatchesExpected": true
+    },
+    "negative": {
+      "actorRole": "reviewer",
+      "failureStage": "pre-submission UI assertion (page.getByText('reviewer') strict-mode ambiguity, 5 matches)",
+      "reviewerPostAttempted": false,
+      "httpStatus": null,
+      "decision": null,
+      "auditSequence": [],
+      "reason": "retained proof spec locator ambiguity; see diagnostic"
+    }
+  },
+  "focusedUnitTests": {
+    "command": "npx vitest run \"src/app/(dashboard)/governance/operations/page.test.tsx\" src/app/api/system/jobs/route.test.ts src/lib/server/web-governance-jobs.test.ts src/lib/middleware-auth.test.ts src/app/api/auth/me/route.test.ts --reporter=dot",
+    "result": "PASS",
+    "passed": 32,
+    "failed": 0
+  },
+  "counters": {
+    "playwrightInvocations": 1,
+    "webSubmissions": 1,
+    "webSubmissionsExpected": 2,
+    "selectedCheckerExecutions": 1,
+    "selectedCheckerExecutionsExpected": 1,
+    "retries": 0,
+    "providerCalls": 0
+  },
+  "observedHosts": [
+    "localhost:3001"
+  ],
+  "runtimeAuditNewEvents": 3,
+  "diagnosticPath": "docs/reviews/evidence/system-chain-uc04b-r3-business-diagnostic-2026-07-15.json",
+  "overallResult": "BLOCKED_WITH_REASON",
+  "blockReason": "The retained proof spec's negative case fails its own pre-submission UI assertion (ambiguous getByText('reviewer') locator matching 5 elements on the reviewer's own page) before ever attempting the reviewer-denial POST, so the negative case and one of the two expected Web submissions did not occur. The runtime business path itself (positive submission, fixed checker execution, audit trail) is proven working by the passing positive case."
+}
