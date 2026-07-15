@@ -8,8 +8,8 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after committed SOT3-APP-T0 dispatch and route only
-the exact two-output no-commit source-ledger/provenance worker contract.
+Carry compact continuity after the reviewed SOT3-APP-T0 blocked return and
+route only the three-file digest-correction R1 redispatch packet.
 SCLP-X-T3 and all SOT-Application execution, runtime work, or
 historical-ledger/runtime/source/Catalog/GAP/ADIF mutation remain held.
 
@@ -25,14 +25,15 @@ bounded T2 caller-verification closure; `6634796da` owns the T2G1 dispatch; and
 rebuttal. Material commit `21659a3ac` owns the bounded FSCB-ADAPT-T0 ledger,
 crosswalk, completion review, and roadmap/work-order closure. Material commit
 `dcbce63a4` owns the SOT3-APP-T0 roadmap release, GC-018, and work order.
+Material commit `2a948fdb2` owns the blocked worker return and independent
+packet-defect review.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0_dispatched_worker_next`; active
-handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the
-committed two-output SOT3-APP-T0 no-commit worker contract; parked
-checkpoint=SCLP-X-T3 at its caller/export condition, all SOT-Application or
-hidden-clone execution or mutation,
+Startup acknowledged: current mode=`sot3_app_t0_digest_repair_next`; active
+handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=repair and validate
+only the three-file SOT3-APP-T0 R1 redispatch packet; parked checkpoint=SCLP-X-T3,
+all R1 execution, and all SOT-Application or hidden-clone execution or mutation,
 and all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/
 business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF mutation,
 public export, production, scale, and user validation.
@@ -50,7 +51,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_app_t0_dispatched_worker_next`
+`sot3_app_t0_digest_repair_next`
 
 ## Active Boundary
 
@@ -77,6 +78,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - FSCB-ADAPT-T0 dispatch commit: `8fd769cec`.
 - FSCB-ADAPT-T0 bounded material closure commit: `21659a3ac`.
 - SOT3-APP-T0 source-ledger/provenance dispatch commit: `dcbce63a4`.
+- SOT3-APP-T0 blocked-return review commit: `2a948fdb2`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
@@ -92,19 +94,18 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Latest Work / Changes
 
-SOT3-APP-T0 is DISPATCH_READY at material commit `dcbce63a4`. Pre-dispatch
-passed 75/75 and pre-commit passed 83/83. The committed contract freezes the
-336-file, 238,522-byte source snapshot with aggregate SHA-256
-`538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc`, binds
-the hidden clone snapshot at clean `main`/`a78b35c`, and permits exactly two
-no-commit review outputs. SOT-Application remains untouched and unexecuted.
+The SOT3-APP-T0 blocked return is reviewed at material commit `2a948fdb2`.
+Worker stop behavior is accepted, source drift is rejected, and a dispatcher
+case-insensitive-sort defect is confirmed. The canonical ordinal aggregate is
+`bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`.
+SOT-Application remains untouched and unexecuted.
 
 ## Next Allowed Move
 
-Execute only the committed SOT3-APP-T0 work order as a delegated no-commit
-worker. Capture clean committed `executionBaseHead`, recompute the exact source
-and hidden-clone snapshots, and write only the two named review outputs. Do not
-modify or run SOT-Application or its hidden clone.
+Repair and validate only the SOT3-APP-T0 roadmap, GC-018, and work order with
+the canonical ordinal digest and a fresh R1 worker-return path. Do not execute
+R1 until corrected packet and continuity commits exist. Do not modify or run
+SOT-Application or its hidden clone.
 
 ## Parked Checkpoint
 
@@ -216,6 +217,60 @@ Reason: private continuity sync; no public-sync action.
 | Claim boundary | session routing only |
 | Agent type | session-sync steward |
 | Invocation ID | system-chain-exhaustive-proof-t4-dispatch-session-sync-2026-07-15 |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
+| Actual changed set | same session-sync manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## SOT3-APP-T0 Blocked Return Review Session Sync
+
+Material commit `2a948fdb2` preserves the blocked worker return and independent
+review. The worker followed the stop condition, but the review proved a packet
+sorting defect rather than source drift. Only three-file R1 packet repair is
+released; R1 execution remains held.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T0 Blocked Review Sync
+
+Authorized guard-maintenance scope: synchronize review `2a948fdb2` and route
+only corrected R1 packet authoring.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3AppT0BlockedReturnReview20260715.json`
+
+Rollback boundary: revert only this session-sync batch; retain evidence commit
+`2a948fdb2` and original dispatch `dcbce63a4`.
+
+## Public Export Disposition - SOT3-APP-T0 Blocked Review Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.
+
+## Agent Operation Trace Block - SOT3-APP-T0 Blocked Review Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | SOT3-APP-T0 blocked-review continuity sync, 2026-07-15 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | protected paths listed in the matching authorization section |
+| Allowed scope source | blocked-return review `2a948fdb2` |
+| Before status evidence | clean worktree at evidence HEAD `2a948fdb2` |
+| After status evidence | continuity routes only three-file R1 packet repair |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sync only; no worker execution or source/runtime/public mutation |
+| Claim boundary | session routing only; T0 completion and T1 release are not claimed |
+| Agent type | session-sync steward |
+| Invocation ID | `sot3-app-t0-blocked-review-session-sync-2026-07-15` |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
 | Manifest delta | MATCH |

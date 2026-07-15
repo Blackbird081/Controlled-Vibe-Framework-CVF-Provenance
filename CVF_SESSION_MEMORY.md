@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the committed two-output SOT3-APP-T0 no-commit worker contract; parked checkpoint=SCLP-X-T3 until its caller/export condition, plus all SOT-Application and hidden-clone mutation or execution.
+Startup acknowledged: current mode=`sot3_app_t0_digest_repair_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=repair and validate only the three-file SOT3-APP-T0 R1 redispatch packet; parked checkpoint=SCLP-X-T3 plus all R1 execution and all SOT-Application/hidden-clone mutation or execution until corrected packet and continuity commits.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t0_dispatched_worker_next`
+Current mode marker: `sot3_app_t0_digest_repair_next`
 
-Current mode: `sot3_app_t0_dispatched_worker_next`
+Current mode: `sot3_app_t0_digest_repair_next`
 
-`sot3_app_t0_dispatched_worker_next`
+`sot3_app_t0_digest_repair_next`
 
 Previous mode:
 
-`sot3_app_t0_packet_authoring_next`
+`sot3_app_t0_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-APP-T0 blocked return review | `2a948fdb2` | Worker stop accepted; source drift rejected; packet digest sort defect confirmed; canonical ordinal aggregate is `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; R1 redispatch packet repair next. |
 | SOT3 downstream-application T0 source-ledger/provenance dispatch | `dcbce63a4` | DISPATCH_READY after pre-dispatch 75/75 and pre-commit 83/83 PASS; exact 336-file read-only ledger contract, hidden-clone provenance disposition, two-output `WORKER_MUST_NOT_COMMIT` return, and zero application/runtime/test/build/live/public execution. |
 | Four-Surface control-boundary adaptation T0 closure | `21659a3ac` | CLOSED_PASS_BOUNDED; 37/37 files terminal, 84,563 bytes, aggregate SHA-256 `1f97d9eb219d9f12b601d80e911cc34506b80cb05aad0584177c02a9c50462fa`, logical owner crosswalk accepted, zero unresolved, no retained-source/checker/runtime/test/live/public mutation; sequential single-agent multi-role review disclosed and independent review not claimed. |
 | Four-Surface control-boundary adaptation T0 dispatch | `8fd769cec` | DISPATCH_READY after pre-dispatch 75/75 PASS; exact 37-file ledger, derived crosswalk, and no-commit worker return; SOT3-APP-T0 queued; zero retained-source/runtime/checker implementation. |
@@ -214,18 +215,18 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t0_dispatched_worker_next`
+Mode: `sot3_app_t0_digest_repair_next`
 
-SOT3-APP-T0 dispatch is committed at `dcbce63a4`. Next a delegated no-commit
-Claude worker may execute only the exact source-ledger and provenance contract
-in the committed work order, capture a clean committed `executionBaseHead`, and
-write exactly the two named governed review outputs. SOT-Application and its
-hidden clone remain read-only evidence inputs. Do not modify or run them, and
-do not run application, install, runtime, test, build, typecheck, CI, live,
-provider, browser, server, binding-validation, public-sync, push, or product
-work. SCLP-X-T3 remains parked at its caller/export condition. Do not infer
-runtime, universal E2E, production, scale, certification, shipment, or
-user-value proof.
+SOT3-APP-T0 blocked return and independent review are committed at
+`2a948fdb2`. The stop behavior is accepted, source drift is rejected, and the
+packet's case-insensitive-versus-ordinal digest defect is confirmed. Next
+repair and validate only the roadmap, GC-018, and work order using canonical
+ordinal aggregate
+`bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`
+and a fresh R1 worker-return path. Do not execute R1 until corrected packet and
+continuity commits exist. SOT-Application and its hidden clone remain read-only
+evidence inputs. SCLP-X-T3 remains parked. Do not infer runtime, universal E2E,
+production, scale, certification, shipment, or user-value proof.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
