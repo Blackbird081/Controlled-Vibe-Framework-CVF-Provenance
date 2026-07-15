@@ -8,8 +8,8 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after corrected SOT3-APP-T0 R1 redispatch and route
-only the exact two-output no-commit R1 worker.
+Carry compact continuity after SOT3-APP-T0 R1 scope-blocker review and route
+only fresh T0A packet authoring; no worker execution is currently released.
 SCLP-X-T3 and all SOT-Application execution, runtime work, or
 historical-ledger/runtime/source/Catalog/GAP/ADIF mutation remain held.
 
@@ -31,10 +31,11 @@ Material commit `aa08ea980` owns the corrected R1 redispatch packet.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0_r1_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only
-the corrected two-output SOT3-APP-T0 R1 no-commit worker; parked checkpoint=
-SCLP-X-T3 and all SOT-Application or hidden-clone execution or mutation,
+Startup acknowledged: current mode=`sot3_app_t0_scope_split_packet_authoring_next`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author only
+a fresh T0A GC-018/work order for complete 336-file metadata freeze and a
+reviewer-stratified 20-row semantic sample; parked checkpoint=T0B full-corpus
+semantic disposition, SCLP-X-T3, and all SOT-Application or hidden-clone execution or mutation,
 and all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/
 business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF mutation,
 public export, production, scale, and user validation.
@@ -52,7 +53,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_app_t0_r1_dispatched_worker_next`
+`sot3_app_t0_scope_split_packet_authoring_next`
 
 ## Active Boundary
 
@@ -81,6 +82,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - SOT3-APP-T0 source-ledger/provenance dispatch commit: `dcbce63a4`.
 - SOT3-APP-T0 blocked-return review commit: `2a948fdb2`.
 - SOT3-APP-T0 corrected R1 redispatch commit: `aa08ea980`.
+- SOT3-APP-T0 R1 scope-blocker review commit: `55007483c`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
@@ -96,20 +98,25 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Latest Work / Changes
 
-SOT3-APP-T0 corrected R1 redispatch is committed at `aa08ea980`. The packet
-uses canonical ordinal aggregate
-`bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`
-and a fresh R1 worker-return path. Original blocked evidence remains preserved.
+SOT3-APP-T0 R1 scope-blocker review is committed at `55007483c`. The reduced
+50-100-file completion route is rejected; the two-phase full-corpus route is
+accepted. The prior R1 roadmap, GC-018, and work order are held. Fresh T0A
+packet authoring only is next; post-SOT3 source-intent correction belongs in
+that fresh packet. Original blocked and digest-repair evidence remains preserved.
 
 ## Next Allowed Move
 
-Execute only the corrected SOT3-APP-T0 R1 work order as a delegated no-commit
-worker. Preserve original blocked evidence and do not modify or run
-SOT-Application or its hidden clone.
+Author only a fresh SOT3-APP-T0A GC-018/work order for all 336 metadata rows,
+the canonical ordinal aggregate, complete hidden-clone declaration inventory,
+and a reviewer-stratified 20-row semantic sample. Include the operator-provided
+post-SOT3 source-intent and chronology correction without promoting either
+source root to CVF authority. Do not execute the held R1 packet. T0B remains
+dependency-held. Do not modify or run SOT-Application or its hidden clone.
 
 ## Parked Checkpoint
 
-UC-03 harness identity repair remains parked until reuse. T3 remains parked
+T0B full 336-row semantic disposition remains parked until T0A reviewer
+acceptance. UC-03 harness identity repair remains parked until reuse. T3 remains parked
 until a current non-test production caller or active package export is source-
 proven for GC-009 or GC-010. SOT-Application execution and mutation remain
 parked until a later committed packet passes pre-dispatch. All runtime, test,
@@ -120,7 +127,7 @@ parked.
 
 ## HEAD / Commit Boundary
 
-Current material HEAD: `21659a3ac`
+Current material HEAD: `55007483c`
 
 R3R1 material closure HEAD: `0856e090d`
 
@@ -220,6 +227,59 @@ Reason: private continuity sync; no public-sync action.
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
 | Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## SOT3-APP-T0 R1 Scope-Blocker Review Session Sync
+
+Material commit `55007483c` rejects reduced-corpus completion, accepts the
+two-phase full-corpus route, and holds the prior single-pass R1 packet. Only
+fresh T0A packet authoring is released; no worker execution is released.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T0 R1 Scope Review Sync
+
+Authorized guard-maintenance scope: synchronize review `55007483c`, remove the
+stale R1 execution route, and route only fresh T0A packet authoring.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3AppT0R1ScopeBlockerReview20260715.json`
+
+Rollback boundary: revert only this session-sync batch; retain material review
+`55007483c`, redispatch `aa08ea980`, and blocked-review evidence `2a948fdb2`.
+
+## Public Export Disposition - SOT3-APP-T0 R1 Scope Review Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.
+
+## Agent Operation Trace Block - SOT3-APP-T0 R1 Scope Review Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | SOT3-APP-T0 R1 scope-review continuity sync, 2026-07-15 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | protected paths listed in the matching authorization section |
+| Allowed scope source | material review `55007483c` and operator instruction to process the Claude response before later supplementation |
+| Before status evidence | clean worktree at material review HEAD `55007483c` |
+| After status evidence | continuity routes only fresh T0A packet authoring; held R1 worker execution removed |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sync only; no worker execution or source/runtime/public mutation |
+| Claim boundary | session routing only; T0A dispatch and T0/T0B completion are not claimed |
+| Agent type | session-sync steward |
+| Invocation ID | `sot3-app-t0-r1-scope-review-session-sync-2026-07-15` |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
+| Actual changed set | same seven-path session-sync manifest |
+| Manifest delta | MATCH required before commit |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## SOT3-APP-T0 R1 Redispatch Session Sync

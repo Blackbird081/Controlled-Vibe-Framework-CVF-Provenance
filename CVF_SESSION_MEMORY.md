@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0_r1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the corrected two-output SOT3-APP-T0 R1 no-commit worker; parked checkpoint=SCLP-X-T3 plus all SOT-Application/hidden-clone mutation or execution.
+Startup acknowledged: current mode=`sot3_app_t0_scope_split_packet_authoring_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author only a fresh SOT3-APP-T0A GC-018/work order for complete metadata freeze plus a reviewer-stratified 20-row semantic sample; parked checkpoint=T0B full semantic disposition, SCLP-X-T3, and all SOT-Application/hidden-clone mutation or execution.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t0_r1_dispatched_worker_next`
+Current mode marker: `sot3_app_t0_scope_split_packet_authoring_next`
 
-Current mode: `sot3_app_t0_r1_dispatched_worker_next`
+Current mode: `sot3_app_t0_scope_split_packet_authoring_next`
 
-`sot3_app_t0_r1_dispatched_worker_next`
+`sot3_app_t0_scope_split_packet_authoring_next`
 
 Previous mode:
 
-`sot3_app_t0_digest_repair_next`
+`sot3_app_t0_r1_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-APP-T0 R1 scope-blocker review | `55007483c` | REVIEWED_SCOPE_SPLIT_REQUIRED; 50-100-file completion rejected; two-phase full-corpus T0A/T0B route accepted; prior R1 packet held; fresh T0A packet authoring only next; post-SOT3 source-intent correction reserved for that fresh packet. |
 | SOT3-APP-T0 corrected R1 redispatch | `aa08ea980` | DISPATCH_READY_R1 after 75/75 pre-dispatch and 83/83 pre-commit PASS; canonical ordinal aggregate `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; fresh R1 worker-return path; original blocked evidence preserved. |
 | SOT3-APP-T0 blocked return review | `2a948fdb2` | Worker stop accepted; source drift rejected; packet digest sort defect confirmed; canonical ordinal aggregate is `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; R1 redispatch packet repair next. |
 | SOT3 downstream-application T0 source-ledger/provenance dispatch | `dcbce63a4` | DISPATCH_READY after pre-dispatch 75/75 and pre-commit 83/83 PASS; exact 336-file read-only ledger contract, hidden-clone provenance disposition, two-output `WORKER_MUST_NOT_COMMIT` return, and zero application/runtime/test/build/live/public execution. |
@@ -216,16 +217,17 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t0_r1_dispatched_worker_next`
+Mode: `sot3_app_t0_scope_split_packet_authoring_next`
 
-SOT3-APP-T0 corrected R1 redispatch is committed at `aa08ea980`. Next a
-delegated no-commit Claude worker may execute only the corrected work order,
-using ordinal code-point sorting, canonical aggregate
-`bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`,
-the existing ledger path, and fresh R1 worker-return path. Preserve the original
-blocked return and review. SOT-Application and its hidden clone remain read-only
-evidence inputs. SCLP-X-T3 remains parked. Do not infer runtime, universal E2E,
-production, scale, certification, shipment, or user-value proof.
+SOT3-APP-T0 scope-blocker review is committed at `55007483c`. The prior R1
+packet is held and must not execute. Next author only a fresh T0A GC-018/work
+order for the complete 336-file metadata freeze, canonical ordinal aggregate,
+complete hidden-clone declaration inventory, and a reviewer-stratified 20-row
+semantic sample. Include the operator-provided post-SOT3 source-intent
+correction in that fresh packet. T0B and all SOT-Application or hidden-clone
+mutation/execution remain parked. SCLP-X-T3 remains parked. Do not infer
+runtime, universal E2E, production, scale, certification, shipment, or
+user-value proof.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

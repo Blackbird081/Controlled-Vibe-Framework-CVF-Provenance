@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1846,
+  "stateKey": "sot3AppT0R1ScopeBlockerReview20260715",
+  "value": {
+    "status": "REVIEWED_SCOPE_SPLIT_REQUIRED",
+    "materialCommit": "55007483c",
+    "review": "docs/reviews/CVF_SOT3_APP_T0_R1_SCOPE_BLOCKER_REVIEW_2026-07-15.md",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "heldBaseline": "docs/baselines/CVF_GC018_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md",
+    "heldWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md",
+    "decision": "ACCEPT_TWO_PHASE_FULL_CORPUS_WITH_CHANGES",
+    "rejectedOption": "50-100-file proof-of-concept completion",
+    "nextAllowedMove": "Author fresh T0A GC-018/work order only; no worker execution is released.",
+    "t0aBoundary": "336 metadata rows, canonical ordinal aggregate, complete hidden-clone declaration inventory, and reviewer-stratified 20-row semantic sample.",
+    "t0bBoundary": "Dependency-held full 336-row semantic disposition after accepted T0A calibration.",
+    "claimBoundary": "Scope review and packet hold only; no T0 completion, source mutation, runtime proof, public-sync, or product-readiness claim."
+  }
+}
