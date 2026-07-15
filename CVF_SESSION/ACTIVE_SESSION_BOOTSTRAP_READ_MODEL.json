@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_uc04b_r3r3_reviewer_negative_proof_packet_next",
+  "currentMode": "system_chain_uc04b_r3r3_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
-  "nextAllowedMove": "SCLP-UC04B-R3R2 is CLOSED_PASS_BOUNDED at material commit 52efec528. The ambient server session now supplies initial reviewer role/user, the retained client /api/auth/me refresh is covered, focused tests pass 34/34, typecheck passes, and all browser/business/checker-job/retry/provider counters remain zero. The next allowed move is author one source-verified R3R3 negative-only canonical-origin browser proof packet requiring reviewer projection, exactly one policy POST, denied outcome, blocked audit evidence, zero retry, and zero provider call. Do not repeat the positive developer path. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SCLP-UC04B-R3R3 is DISPATCH_READY at material commit 523748cec. Execute only negative_reviewer_docs_check from the committed proof hash, after focused 34/34, typecheck, and one-case list PASS. Permit exactly one canonical-localhost Playwright invocation and one reviewer POST; require HTTP 403, blocked_by_policy, read_only_role_cannot_trigger, requested then blocked audit events, and exact counters 1/1/0/0/0. Zero retry and zero provider call. Do not edit source, run the positive case, stage, or commit. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
