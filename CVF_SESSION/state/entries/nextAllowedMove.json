@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1827,
+  "stateOrder": 1829,
   "stateKey": "nextAllowedMove",
-  "value": "SCLP-X-T1 is CLOSED_PASS_BOUNDED at material commit c53bef36c with six of six terminal decisions: GC-009 and GC-010 selected only as future read-only source-verification candidates, the related GC-009 catalog edge not selected independently, both owner/GAP candidates VALUE_PARKED, and CTR-01 retained resolved. Author only a fresh source-verified SCLP-X-T2 GC-018 and work order for repository-wide caller verification. Zero T2 execution, live, provider, browser, business CLI, runtime, test, checker-source, registry-owner, GAP, ADIF, public, or T3-T4 action. LHW24 remains latest closed numbered LHW wave."
+  "value": "SCLP-X-T2 is DISPATCH_READY at material commit e0e5e755f. Execute only the exact no-commit three-path worker manifest for repository-wide read-only caller verification of MandatoryGateway, createMandatoryGateway, and AgentExecutionRuntime; classify every match and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Zero runtime, test, build, typecheck, CI, live, provider, browser, business CLI, owner/GAP/ADIF mutation, public action, or T3-T4 release. LHW24 remains latest closed numbered LHW wave."
 }
