@@ -19,9 +19,9 @@ separate operator authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r3r1_locator_recovery_packet_next`;
-active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one
-source-verified negative-only UC-04B R3R1 locator recovery packet; parked checkpoint=UC-03 harness identity
+Startup acknowledged: current mode=`system_chain_uc04b_r3r1_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute one
+exact no-commit negative-only UC-04B R3R1 locator recovery; parked checkpoint=UC-03 harness identity
 repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory,
 public export, production, scale, universal enforcement, and user validation.
 
@@ -38,16 +38,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04b_r3r1_locator_recovery_packet_next`
+`system_chain_uc04b_r3r1_dispatched_worker_next`
 
 ## Active Boundary
 
-- Active UC-04B R3 blocked closure commit: `e1ce6dc18`.
+- Active UC-04B R3R1 dispatch commit: `ac46a1bf7`.
 - Active claim: `LIVE_GOVERNANCE_PROVEN_BOUNDED` within the stated boundary.
-- Active work queue: one source-verified negative-only UC-04B R3R1 locator
-  recovery packet authoring step.
-- Next permitted value lane: repair only the proof-harness locator under a new
-  packet; retain the positive business PASS and do not rerun R3.
+- Active work queue: one exact no-commit negative-only UC-04B R3R1 worker.
+- Next permitted value lane: one-line locator repair plus one negative browser
+  invocation at exact 1/1/0/0/0; retain and do not rerun the positive path.
 - Prohibited inference: no public, production, scale, universal, or user-value
   status follows from this closure.
 
@@ -157,10 +156,10 @@ Rollback boundary: revert only this session-sync batch; retain material commit
 
 ## Next Allowed Move
 
-Author one fresh source-verified SCLP-UC04B-R3R1 locator-only recovery packet
-for the reviewer denial path. Retain material closure `e1ce6dc18`, the positive
-business PASS, and exact R3 counters 1/1/1/0/0. Do not rerun R3 or repeat the
-positive path without a source-backed coupling reason.
+Execute the exact no-commit SCLP-UC04B-R3R1 work order from material dispatch
+`ac46a1bf7`. Require the one-line scoped locator diff, focused 32/32, one
+negative selected case, canonical localhost, and exact 1/1/0/0/0. Do not run
+the positive case or edit UI/runtime owners.
 
 ## Parked Checkpoint
 
@@ -213,6 +212,8 @@ UC-04B-R2R1 recovery closure HEAD: `37942fb38`
 UC-04B-R3 business-proof dispatch HEAD: `74aa3d246`
 
 UC-04B-R3 blocked business-proof closure HEAD: `e1ce6dc18`
+
+UC-04B-R3R1 negative locator recovery dispatch HEAD: `ac46a1bf7`
 
 The current in-place handoff sync records the R2R1 material dispatch above.
 SOT3 material closure remains anchored at `62ab80ab4`.
@@ -755,3 +756,24 @@ under the existing reviewer/closer route.
 
 Rollback boundary: revert only this session-sync batch; retain material
 closure `e1ce6dc18`, dispatch `74aa3d246`, and all governed evidence.
+
+## Core Guard Self-Protection Authorization - UC-04B-R3R1 Dispatch Sync
+
+Authorized scope: synchronize negative-only locator recovery dispatch material
+commit `ac46a1bf7` and route one exact no-commit SCLP-UC04B-R3R1 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V43_2026-07-14.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/systemChainUc04bR3r1Dispatch20260715.json`
+
+Operator authorization: continue the system-chain sequence through the bounded
+negative-only locator recovery packet.
+
+Rollback boundary: revert only this session-sync batch; retain material
+dispatch `ac46a1bf7`, R3 closure `e1ce6dc18`, and all governed evidence.

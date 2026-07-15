@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1803,
+  "stateOrder": 1805,
   "stateKey": "nextAllowedMove",
-  "value": "SCLP-UC04B-R3 is CLOSED_BLOCKED_BOUNDED at material commit e1ce6dc18. Retain the developer docs-check business PASS and exact 1/1/1/0/0 counters. The reviewer case remains browser-unproven because the retained pre-POST reviewer-text locator matched five elements. Author one fresh source-verified R3R1 locator-only recovery packet for the negative case; do not rerun R3 or repeat the positive path without a source-backed coupling reason. No runtime, UI, auth, route, job, checker, provider, public, production, scale, certification, or user-value expansion is authorized. LHW24 remains latest closed numbered LHW wave."
+  "value": "SCLP-UC04B-R3R1 is DISPATCH_READY at material commit ac46a1bf7. Execute the exact no-commit negative-only locator recovery once. Replace only the line-113 reviewer locator with the scoped Active role container expression, require focused 32/32 and a Playwright --list result containing exactly the negative case, then invoke that case once under PLAYWRIGHT_BASE_URL=http://localhost:3001. Exact ceilings are one browser invocation, one Web submission, zero selected checker executions, zero retries, and zero provider calls. Do not run the retained positive case, edit UI/runtime/auth/job/route/config, or infer unified inventory, provider, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
 }

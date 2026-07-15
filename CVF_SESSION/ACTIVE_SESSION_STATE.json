@@ -83,8 +83,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc04b_r3r1_locator_recovery_packet_next",
-  "previousMode": "system_chain_uc04b_r3_dispatched_worker_next",
+  "currentMode": "system_chain_uc04b_r3r1_dispatched_worker_next",
+  "previousMode": "system_chain_uc04b_r3r1_locator_recovery_packet_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11979,5 +11979,24 @@
     "nextAllowedMove": "author one source-verified negative-only R3R1 locator recovery packet",
     "claimBoundary": "Developer docs-check business success only. Reviewer browser denial, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value remain unproven."
   },
-  "nextAllowedMove": "SCLP-UC04B-R3 is CLOSED_BLOCKED_BOUNDED at material commit e1ce6dc18. Retain the developer docs-check business PASS and exact 1/1/1/0/0 counters. The reviewer case remains browser-unproven because the retained pre-POST reviewer-text locator matched five elements. Author one fresh source-verified R3R1 locator-only recovery packet for the negative case; do not rerun R3 or repeat the positive path without a source-backed coupling reason. No runtime, UI, auth, route, job, checker, provider, public, production, scale, certification, or user-value expansion is authorized. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc04bR3r1Dispatch20260715": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "ac46a1bf7",
+    "workOrderId": "SCLP-UC04B-R3R1",
+    "dispatchBaseHead": "a41660892",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedCase": "negative_reviewer_docs_check",
+    "positiveCaseExcluded": true,
+    "playwrightBaseUrl": "http://localhost:3001",
+    "playwrightInvocationCeiling": 1,
+    "webSubmissionCeiling": 1,
+    "selectedCheckerExecutionCeiling": 0,
+    "retryCeiling": 0,
+    "providerCallCeiling": 0,
+    "proofMutationAuthorized": "one exact locator-expression replacement only",
+    "runtimeMutationAuthorized": false,
+    "nextAllowedMove": "execute the exact no-commit negative-only R3R1 work order once and return for reviewer closure",
+    "claimBoundary": "Dispatch authority only. R3 positive evidence is retained and must not be rerun; reviewer denial, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value are not yet promoted."
+  },
+  "nextAllowedMove": "SCLP-UC04B-R3R1 is DISPATCH_READY at material commit ac46a1bf7. Execute the exact no-commit negative-only locator recovery once. Replace only the line-113 reviewer locator with the scoped Active role container expression, require focused 32/32 and a Playwright --list result containing exactly the negative case, then invoke that case once under PLAYWRIGHT_BASE_URL=http://localhost:3001. Exact ceilings are one browser invocation, one Web submission, zero selected checker executions, zero retries, and zero provider calls. Do not run the retained positive case, edit UI/runtime/auth/job/route/config, or infer unified inventory, provider, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
 }
