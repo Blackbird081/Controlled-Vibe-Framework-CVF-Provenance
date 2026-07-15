@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 docType: work_order
 
@@ -12,9 +12,9 @@ Batch ID: `SOT3-APP-T0A`
 
 dispatchBaseHead: `e7f45e120`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `120c0f90a`
 
-closureBaseHead: `REVIEWER_MUST_CAPTURE_AT_START`
+closureBaseHead: `120c0f90a`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -406,7 +406,7 @@ exact commands and exit results, gate evidence, no-commit statement, and one of
 the two allowed return statuses. Prior reviews are navigation evidence only;
 all acceptance facts require fresh recomputation.
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
 | Required artifact | Required content | Worker disposition at return |
 |---|---|---|
@@ -602,7 +602,7 @@ rawMemoryReleased=false
 | Completeness trigger model | full 336 metadata freeze plus exact reviewer-stratified 20-file semantic sample |
 | Blind-spot prevention action | preserve all file identities, enumerate all declarations, retain T0B obligation, and adversarially audit low-value/reject/defer rows |
 | Residual gap | 316 semantic rows and all terminal declaration decisions |
-| Blind-spot verdict | PARTIAL_PENDING_T0A_EXECUTION |
+| Blind-spot verdict | PARTIAL_T0A_ACCEPTED_T0B_REQUIRED |
 
 ## External Absorption Core
 
@@ -874,7 +874,7 @@ by deleting rows.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_source_intake_decision_packet_preflight.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Role:; Canonical packet:; Commit mode:; executionBaseHead; Current-time notes:; Do-not-misread notes:; Required first actions:; Return contract:; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Negative Search And Collision Discipline; Evidence Reuse And Encoding Plan; Source Intake Decision Packet; Work-Order Fulfillment Manifest; Required Proof Manifest Atomic Literal Discipline; Roadmap-To-Work-Order Trace Matrix; Acceptance Criteria; Review Gate; Closure Diff Gate; Worker Autonomy / No-Question Rule; Legacy Absorption Coverage Index Disposition; Provider Memory Authority Boundary; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; Reverse Architecture Projection Matrix; External Knowledge Intake Routing; Corpus Completeness And Report Integrity; Dual Agent Surface Matrix; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; COMPLETE_PENDING_REVIEW; BLOCKED_WITH_REASON; WORKER_MUST_NOT_COMMIT; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS; Dispatch Prompt Envelope; Role:; Canonical packet:; Commit mode:; executionBaseHead; Current-time notes:; Do-not-misread notes:; Required first actions:; Return contract:; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Negative Search And Collision Discipline; Evidence Reuse And Encoding Plan; Source Intake Decision Packet; Work-Order Fulfillment Manifest; Required Proof Manifest Atomic Literal Discipline; Roadmap-To-Work-Order Trace Matrix; Acceptance Criteria; Review Gate; Closure Diff Gate; Worker Autonomy / No-Question Rule; Legacy Absorption Coverage Index Disposition; Provider Memory Authority Boundary; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; Reverse Architecture Projection Matrix; External Knowledge Intake Routing; Corpus Completeness And Report Integrity; Dual Agent Surface Matrix; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; COMPLETE_PENDING_REVIEW; BLOCKED_WITH_REASON; WORKER_MUST_NOT_COMMIT; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm exact dispatch and worker-output shape after checker-source review; gates are proof, not first discovery |
 | claimBoundary | checker conformance does not prove corpus semantics, provenance safety, runtime behavior, or product quality |
 
@@ -942,6 +942,19 @@ public-sync packet and must not expose private paths or operator-only evidence.
 | Manifest delta | MATCH required |
 | Deletion or rename disposition | N/A with reason: none planned |
 
+## Reviewer Closure Evidence
+
+| Check | Reviewer result |
+|---|---|
+| execution base | `120c0f90a`; clean before worker writes |
+| worker changed set | exact two planned untracked review artifacts |
+| metadata | 336 physical files, 238522 bytes, exact per-file equality, aggregate `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee` |
+| declarations | 13 exact source path/line rows; DEC-05/06/08 repaired to `targetExists=false` |
+| semantic sample | exact SAM-01 through SAM-20 independently audited; SAM-06/07/08/12/15 wording repaired |
+| reconciliation | metadata=336; sample=20; semantic_unresolved=316; declarations=13; missing declared extension targets=3 |
+| claim boundary | T0B packet authoring only; no T0B execution or source/runtime/public mutation |
+| completion review | `docs/reviews/CVF_SOT3_APP_T0A_COMPLETION_2026-07-16.md` |
+
 ## Delta Execution Claim Boundary Control Block
 
 | Field | Value |
@@ -955,11 +968,37 @@ public-sync packet and must not expose private paths or operator-only evidence.
 | claimLanguage | objective source identity and bounded semantic-calibration evidence only |
 | forbiddenExpansion | runtime/provider/live/public/package/Web/MCP/checker behavior requires fresh source-verified authorization |
 
+## Current Runtime Freshness Verification
+
+The closure's non-use statement is scoped to this T0A execution. Current Git
+evidence shows only the five reviewer-owned governed documentation paths, and
+the worker/reviewer operation traces contain enumeration, hashing, source
+reads, read-only Git metadata, documentation lookup, and governance gates.
+No application, runtime, test, server, browser, or live-provider command was
+run. This is not a claim that such code is absent from SOT-Application.
+
 ## Machine Closure Package
 
-N/A with reason: this is a dispatch-ready work order, not a closure artifact.
-The worker must include an execution-state Machine Closure Package in the
-worker return, and the reviewer owns any final T0A completion package.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Worker ledger | `docs/reviews/CVF_SOT3_APP_T0A_CORPUS_METADATA_AND_SAMPLE_LEDGER_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS`; 336 metadata; 20 samples; 316 unresolved; 13 declarations; 3 missing targets | PASS_WITH_REPAIR |
+| Worker return | `docs/reviews/CVF_SOT3_APP_T0A_WORKER_RETURN_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T0A_COMPLETION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md` | `Status: T0A_CLOSED_PASS_BOUNDED_T0B_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | N/A with reason: no registry JSON is required or changed | no generated registry mutation | PASS |
+| Registry Markdown | N/A with reason: no registry Markdown is required or changed | no registry mutation | PASS |
+| External evidence digest | N/A with reason: no external benchmark or live digest is authorized | no digest created | N/A with reason |
+| System loop interlock | N/A with reason: no runtime or system-loop source changed | documentation-only closure | N/A with reason |
+| Session continuity | active session front door, state, and handoff | separate sync after material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| T0A evidence acceptance | 336 metadata rows, 20 semantic rows, 316 unresolved semantics, 13 declarations, and 3 missing declared targets | PASS |
+| Runtime receipt evidence | N/A with reason: no runtime receipt was authorized | no runtime action occurred | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: T0A performs no acceptance query | no query receipt exists or is claimed | N/A_WITH_REASON |
 
 ## Public Export Disposition
 

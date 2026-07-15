@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T0A_DISPATCH_READY
+Status: T0A_CLOSED_PASS_BOUNDED_T0B_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -29,9 +29,10 @@ of concept or a two-phase return. Review
 `docs/reviews/CVF_SOT3_APP_T0_R1_SCOPE_BLOCKER_REVIEW_2026-07-15.md` rejects the
 reduced-corpus option and accepts a two-phase full-corpus route. The existing
 R1 packet is held and is no longer executable. Fresh T0A GC-018 and work-order
-artifacts now release only the full 336-file metadata freeze, complete
+artifacts released only the full 336-file metadata freeze, complete
 hidden-clone declaration inventory, and exact reviewer-selected 20-file
-semantic calibration sample. T0B remains held for reviewer acceptance.
+semantic calibration sample. T0A is now reviewer-accepted with repairs; T0B
+packet authoring is next, while T0B execution remains held.
 
 ## Purpose
 
@@ -66,9 +67,9 @@ owners before modifying the sibling source.
 
 | Control | Decision |
 |---|---|
-| current active tranche | SOT3-APP-T0A corpus freeze and semantic calibration |
+| current active tranche | SOT3-APP-T0A closed bounded; T0B packet authoring next |
 | committed packet | prior paired T0 GC-018 and work order are held and must not be executed |
-| scheduling release | T0A only, from clean dispatch base `e7f45e120`, after the fresh packet passes pre-dispatch gates |
+| scheduling release | fresh T0B GC-018/work-order authoring only; no T0B dispatch until dependency evidence and pre-dispatch gates pass |
 | source mutation | forbidden until a later source-verified implementation work order passes pre-dispatch |
 | hidden-clone coupling | T0A enumerates every declaration; T0B retains terminal sever/govern/block decisions |
 | runtime/live | separately authorized only in tranches whose acceptance requires it |
@@ -134,11 +135,13 @@ Boundary; this is cross-batch isolation, not a semantic dependency on the
 Four-Surface doctrine result. Scope-blocker decision commit `55007483c`
 withdrew the earlier single-pass T0 execution release and selected the
 two-phase full-corpus route. Continuity commit `e7f45e120` released fresh T0A
-packet authoring. The current paired T0A packet releases only T0A after its
-pre-dispatch gates pass.
+packet authoring. T0A executed from `120c0f90a` and closed with reviewer repairs
+in `docs/reviews/CVF_SOT3_APP_T0A_COMPLETION_2026-07-16.md`.
 
-T0B and every later tranche remain held. T0B requires reviewer acceptance or
-correction of the T0A calibration and a fresh dependency-released packet.
+T0B execution and every later tranche remain held. T0B packet authoring may
+now consume the accepted calibration, 316-row residual obligation, and the
+three missing declared targets; execution still requires a fresh
+dependency-released packet and clean dispatch base.
 
 ## T0A Dispatch Packet
 
@@ -151,8 +154,9 @@ correction of the T0A calibration and a fresh dependency-released packet.
 | scope-blocker review | `docs/reviews/CVF_SOT3_APP_T0_R1_SCOPE_BLOCKER_REVIEW_2026-07-15.md`; material commit `55007483c`; reduced-corpus option rejected; full-corpus two-phase route selected |
 | worker ledger | `docs/reviews/CVF_SOT3_APP_T0A_CORPUS_METADATA_AND_SAMPLE_LEDGER_2026-07-16.md` |
 | worker return | `docs/reviews/CVF_SOT3_APP_T0A_WORKER_RETURN_2026-07-16.md` |
+| completion review | `docs/reviews/CVF_SOT3_APP_T0A_COMPLETION_2026-07-16.md`; `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` |
 | commit mode | `WORKER_MUST_NOT_COMMIT` |
-| execution boundary | T0A read-only evidence execution only; T0B and all mutation remain held |
+| execution boundary | T0A read-only evidence accepted; T0B execution and all mutation remain held |
 
 ## Reverse Architecture Projection Matrix
 
@@ -190,7 +194,7 @@ correction of the T0A calibration and a fresh dependency-released packet.
 | Completeness trigger model | exact 336-file metadata enumeration plus an exact 20-file semantic calibration sample |
 | Blind-spot prevention action | preserve all paths/digests, use reviewer-selected stratification, and audit every low-value/reject/defer sample row |
 | Residual gap | 316 un-sampled semantic decisions and final declaration dispositions remain T0B-owned |
-| Blind-spot verdict | PARTIAL_PENDING_T0A_EXECUTION |
+| Blind-spot verdict | PARTIAL_T0A_ACCEPTED_T0B_REQUIRED |
 
 ## External Absorption Core
 
@@ -220,10 +224,10 @@ correction of the T0A calibration and a fresh dependency-released packet.
   worker must recompute it.
 - Processing ledger artifact or inline ledger: dispatched T0A metadata/sample ledger.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE
-- Reconciliation: manifest=336; ledger_terminal=0; exclusions=0; unresolved=336 before T0A execution.
+- Reconciliation: manifest=336; ledger_terminal=20; metadata_frozen=336; semantic_sample_terminal=20; semantic_unresolved=316; unresolved=316; declaration_occurrences=13; missing declared extension targets=3; exclusions=0.
 - T0A target reconciliation: manifest=336; metadata_frozen=336;
   sample_semantic_terminal=20; semantic_unresolved=316; exclusions=0.
-- Unresolved files: 336 before T0A execution; target is 316 semantic files after successful T0A.
+- Unresolved files: 316 semantic files plus terminal provenance disposition for all 13 declarations in T0B.
 - Declared exclusions: none.
 - Unreadable or unsupported files: none observed during intake.
 - Aggregation check: 336 files and 238,522 bytes in accepted intake snapshot.
@@ -277,19 +281,30 @@ reference controllers, missing lockfile, and declared hidden-clone paths.
 Contradiction Or Gap Disposition: T0/T1 must record source contradictions as
 blocked rows or proposed owner gaps rather than guessing current CVF contracts.
 
-Claim Update: operator authorization and FSCB cross-batch closure still support
-the roadmap. The single-pass T0 evidence packet remains held. Fresh T0A is now
-dispatch-ready for bounded no-commit evidence execution; T0B and source
-mutation remain unauthorized.
+Claim Update: T0A is closed bounded with reviewer repairs. The 336-row metadata
+freeze, 20-row sample rubric, 13 declarations, and three missing declared
+extension targets are accepted as T0B packet inputs. T0B execution and source
+mutation remain unauthorized until a fresh packet passes pre-dispatch.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | Status: T0A_DISPATCH_READY; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; PARTIAL; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: T0A_CLOSED_PASS_BOUNDED_T0B_PACKET_AUTHORING_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; PARTIAL; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirmation of T0A dispatch release and external-absorption shape |
 | claimBoundary | structural confirmation only; no source, runtime, or product proof |
+
+## Current Runtime Freshness Verification
+
+The T0A closure makes an execution-history claim, not a repository-wide
+absence claim. Current `git status --short` and `git diff --name-status` show
+only the five reviewer-owned governed documentation paths. The worker command
+ledger and reviewer operation trace contain enumeration, hashing, source reads,
+read-only Git metadata, documentation lookup, and governance gates only. This
+supports the bounded statement that T0A performed no application/runtime or
+live-provider action; it does not claim that the downstream source has no
+provider or runtime code.
 
 ## Public Export Disposition
 
@@ -298,12 +313,35 @@ DEFERRED_PRIVATE_ONLY
 Reason: private sibling-source roadmap; no public-sync authorization or
 public-safe artifact set exists.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0A_CORPUS_FREEZE_AND_SEMANTIC_CALIBRATION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Worker ledger | `docs/reviews/CVF_SOT3_APP_T0A_CORPUS_METADATA_AND_SAMPLE_LEDGER_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
+| Worker return | `docs/reviews/CVF_SOT3_APP_T0A_WORKER_RETURN_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T0A_COMPLETION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Roadmap state | this artifact | `Status: T0A_CLOSED_PASS_BOUNDED_T0B_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | N/A with reason: no registry JSON is required or changed | no generated registry mutation | PASS |
+| Registry Markdown | N/A with reason: no registry Markdown is required or changed | no registry mutation | PASS |
+| External evidence digest | N/A with reason: no external benchmark or live digest is authorized | no digest created | N/A with reason |
+| System loop interlock | N/A with reason: no runtime or system-loop source changed | documentation-only closure | N/A with reason |
+| Session continuity | active session front door, state, and handoff | separate sync after material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| T0A corpus acceptance | 336 metadata rows, 20 semantic rows, 316 unresolved semantics, 13 declarations, and 3 missing declared targets | PASS |
+| Runtime receipt evidence | N/A with reason: no runtime receipt was authorized | no runtime action occurred | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: T0A performs no acceptance query | no query receipt exists or is claimed | N/A_WITH_REASON |
+
 ## Claim Boundary
 
 This roadmap records an operator-authorized sequence and a reviewer-selected
-two-phase full-corpus T0 route. It releases only no-commit T0A evidence work:
-336 metadata rows, every hidden-clone declaration, and the exact 20-file
-semantic sample. It does not release T0B, authorize source mutation, complete
-336 semantic dispositions, ratify application contracts, prove
-build/runtime/live behavior, promote the application into CVF Core, or claim
-public or production readiness.
+two-phase full-corpus T0 route. T0A is accepted with reviewer repairs and now
+releases only fresh T0B GC-018/work-order authoring. T0B execution and source
+mutation remain held. The roadmap does not complete 336 semantic
+dispositions, ratify application contracts, prove build/runtime/live behavior,
+promote the application into CVF Core, or claim public or production
+readiness.
