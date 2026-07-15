@@ -8,10 +8,10 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after the fresh SOT3-APP-T0B dispatch and route only
-the exact two-output no-commit full-corpus semantic/provenance worker.
-SCLP-X-T3, T1 and later SOT3-APP work, and all SOT-Application execution, runtime work, or
-historical-ledger/runtime/source/Catalog/GAP/ADIF mutation remain held.
+Carry compact continuity after bounded SOT3-APP-T0B closure and route only MAO
+Operational Adoption And Agent Execution Assurance roadmap authoring next.
+SCLP-X-T3, T1 and later SOT3-APP work, all other absorption, and unscoped
+SOT-Application execution, runtime, source, Catalog, GAP, or ADIF work remain held.
 
 ## Scope / Target / Owner Boundary
 
@@ -32,13 +32,18 @@ Material commit `7fda3b511` owns the fresh T0A roadmap release, GC-018, and
 work order.
 Material commit `5a49ee650` owns bounded T0A acceptance and reviewer repairs.
 Material commit `e93d63883` owns the T0B roadmap release, GC-018, and work order.
+Material commit `577237cba` owns bounded T0B acceptance, reviewer repairs,
+the 336-row semantic ledger, 13-row provenance ledger, completion review, and
+roadmap/work-order closure.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0b_dispatched_worker_next`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only
-the exact two-output no-commit T0B worker from dispatch `e93d63883`; parked checkpoint=T1 and later SOT3-APP tranches, SCLP-X-T3,
-and all SOT-Application or hidden-clone execution or mutation,
+Startup acknowledged: current mode=`sot3_app_t0b_closed_mao_roadmap_authoring_next`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author the
+governed MAO Operational Adoption And Agent Execution Assurance roadmap and
+required source-verified packets, then complete it through fresh tranche
+authority; parked checkpoint=T1 and later SOT3-APP tranches, all other
+high-value-folder absorption, SCLP-X-T3, and all unscoped external-root work,
 and all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/
 business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF mutation,
 public export, production, scale, and user validation.
@@ -56,7 +61,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_app_t0b_dispatched_worker_next`
+`sot3_app_t0b_closed_mao_roadmap_authoring_next`
 
 ## Active Boundary
 
@@ -88,6 +93,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - SOT3-APP-T0 R1 scope-blocker review commit: `55007483c`.
 - SOT3-APP-T0A fresh dispatch commit: `7fda3b511`.
 - SOT3-APP-T0A bounded closure commit: `5a49ee650`.
+- SOT3-APP-T0B bounded closure commit: `577237cba`.
 - SOT3-APP-T0B dispatch commit: `e93d63883`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
@@ -231,6 +237,76 @@ Reason: private continuity sync; no public-sync action.
 | Invocation ID | system-chain-exhaustive-proof-t4-dispatch-session-sync-2026-07-15 |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## SOT3-APP-T0B Closure Session Sync - 2026-07-16
+
+Material commit `577237cba` records bounded T0B closure after independent
+objective and semantic recomputation. The accepted evidence contains 336/336
+terminal semantic rows, 13/13 terminal provenance rows, zero unresolved
+identities, 238522 bytes, and aggregate SHA-256
+`bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`.
+
+The independent initial audit required one consolidated reviewer repair for
+six semantic blocker families. Independent re-audit accepted the repaired
+packet. The worker honored `WORKER_MUST_NOT_COMMIT`; reviewer/closer owns the
+material commit and this separate continuity sync.
+
+The next allowed move is MAO Operational Adoption And Agent Execution
+Assurance roadmap authoring with fresh source verification and governed
+packets. That roadmap must reach governed closure before SOT3-APP-T1, later
+SOT3-APP work, or any other high-value-folder absorption may resume.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T0B Closure Session Sync
+
+Authorized guard-maintenance scope: synchronize material closure `577237cba`,
+advance the current mode, and route only MAO roadmap authoring next.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3AppT0BClosure20260716.json`
+
+Rollback boundary: revert only this session-sync batch; retain material closure
+`577237cba`, dispatch `e93d63883`, and T0A closure `5a49ee650`.
+
+Not authorized: MAO roadmap material authoring in this sync, MAO
+implementation, T1 or later absorption, external-root mutation, application,
+runtime, test, build, provider, live, browser, public-sync, push, Catalog, GAP,
+ADIF, checker, or package work.
+
+## Public Export Disposition - SOT3-APP-T0B Closure Session Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.
+
+## Agent Operation Trace Block - SOT3-APP-T0B Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | reviewer/closer and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | SOT3-APP-T0B closure continuity sync, 2026-07-16 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | seven protected paths listed above |
+| Allowed scope source | material closure `577237cba` and operator sequence lock |
+| Before status evidence | clean worktree at material closure HEAD `577237cba` |
+| After status evidence | continuity routes only MAO roadmap authoring; T1 and absorption remain parked |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sync only; no roadmap material or implementation |
+| Claim boundary | static T0B closure only; no runtime, provider, public, production, or user-value claim |
+| Agent type | reviewer/closer and session-sync steward |
+| Invocation ID | sot3-app-t0b-closure-session-sync-2026-07-16 |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
+| Actual changed set | same seven-path session-sync manifest |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
