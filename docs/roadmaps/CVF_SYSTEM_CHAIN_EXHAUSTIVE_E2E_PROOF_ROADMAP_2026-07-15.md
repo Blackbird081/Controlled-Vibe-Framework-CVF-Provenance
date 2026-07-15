@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T2G1_CLOSED_T4_PACKET_AUTHORING_NEXT
+Status: ACTIVE_T4_DISPATCHED_WORKER_NEXT
 
 docType: roadmap
 
@@ -137,11 +137,11 @@ is `MISSING_PROOF` unless a governed value decision parks it.
 | T2 | repository-wide read-only caller verification | terminal match ledger and two caller decisions | `CLOSED_PASS_BOUNDED`: 22,026 files; 500 raw hits; 329 terminal rows; zero ambiguous or production-caller rows; both targets recommend proposal-only GAP entry |
 | T2G1 | paired GC-009/GC-010 architecture GAP recording | one compact GAP entry, regenerated index, aligned README, no-commit return | `CLOSED_PASS_BOUNDED`: schema-valid paired entry; 12/12 unique GAP IDs; README aligned; zero runtime/test/live/provider action |
 | T3 | operator-surface or provider proof batch | selected CLI/Web/provider receipts and recovery evidence | `VALUE_PARKED_WITH_REOPEN_CONDITION`: reopen only if a current non-test production caller or active package export is source-proven for GC-009 or GC-010; no caller means no executable higher-proof route |
-| T4 | final reverse projection and bounded closure | coverage/catalog/GAP/learning updates and final claim boundary | every inventory claim is terminally dispositioned; no unresolved silent row |
+| T4 | final reverse projection and bounded closure | exact 99-row final projection, human audit, roadmap/front-door alignment, and no-commit return | `DISPATCH_READY`: T0/T1/T2/T2G1 dependencies source-backed; exact five-path documentation/evidence worker; every inventory claim must be terminally dispositioned with no unresolved silent row |
 
 T2G1 is closed bounded. T3 is value-parked under its concrete caller/export
-reopen condition. T4 remains dependency-held and requires a separate governed
-packet.
+reopen condition. T4 is dispatch-ready under its paired GC-018/work order at
+dispatch base `285daeca2`; execution remains a separate no-commit worker phase.
 
 ## Acceptance Criteria
 
@@ -212,10 +212,11 @@ freshness as repository evidence only. Any missing current invocation remains
 
 ## Next Allowed Move
 
-Author only a fresh source-verified T4 final reverse-projection and bounded
-roadmap-closure GC-018/work order. Preserve T3 as value-parked unless its
-current caller/export reopen condition is first proven. Do not run runtime/
-tests/live/provider cases or mutate source/catalog/ADIF from T2G1 closure.
+Execute only the exact five-path no-commit SCLP-X-T4 worker: create the derived
+99-claim final projection, human audit, roadmap/front-door alignment, and worker
+return. Preserve T3 as value-parked. Do not run runtime/tests/build/typecheck/
+CI/live/provider/browser/business-CLI action or mutate historical T0-T2 ledgers,
+source, Catalog/GAP/ADIF, session, handoff, or public surfaces.
 
 ## Public Export Disposition
 
