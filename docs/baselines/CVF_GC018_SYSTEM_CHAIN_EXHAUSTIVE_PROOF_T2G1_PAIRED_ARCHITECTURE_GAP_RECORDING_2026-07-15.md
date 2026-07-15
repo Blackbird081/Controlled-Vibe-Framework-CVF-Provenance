@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -143,6 +143,28 @@ the applicable completeness controls.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance architecture GAP packet; no public-sync authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T2G1_PAIRED_ARCHITECTURE_GAP_RECORDING_2026-07-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T2G1_PAIRED_ARCHITECTURE_GAP_RECORDING_COMPLETION_2026-07-15.md` | reviewer decision and closure diff gate | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SYSTEM_CHAIN_EXHAUSTIVE_E2E_PROOF_ROADMAP_2026-07-15.md` | T2G1 row closed bounded; T3 parked; T4 packet authoring next | PASS |
+| Registry JSON | `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json` | 12 gaps; paired stable ID exactly once | PASS |
+| Registry Markdown | `docs/reference/system_chain/gaps/README.md` | 12 IDs and status counts aligned | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | no external path or digest | N/A with reason: internal CVF evidence only |
+| System loop interlock | N/A with reason: no interlock registry change | no runtime/interlock claim | N/A with reason: architecture GAP read model only |
+| Session continuity | active session sync follows material commit | reviewer-owned session-only batch | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required evidence | Actual evidence | Status |
+|---|---|---|---|
+| paired entry accepted | one schema-valid stable ID | schema errors 0; ID count 1 | PASS |
+| generated index accepted | deterministic compact-source aggregate | 12/12 unique; generator hash `bb6b52aab555...` | PASS |
+| README accepted | all index IDs discoverable | missing ID count 0; counts sum 12 | PASS |
+| execution boundary accepted | exact four-path no-commit return | status/diff evidence at `aaa64c067` | PASS |
 
 ## Claim Boundary
 

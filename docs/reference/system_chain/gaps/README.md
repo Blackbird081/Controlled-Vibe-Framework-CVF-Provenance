@@ -49,7 +49,7 @@ adding, editing, or closing a gap entry.
 
 ## Current Gaps (Generated Summary)
 
-This table is a human summary of the 11 gap entries generated at review
+This table is a human summary of the 12 gap entries generated at review
 time. Always trust `CVF_SYSTEM_CHAIN_GAP_INDEX.json` and the `entries/`
 directory over this prose if they disagree; re-run the generator and refresh
 this table when entries change.
@@ -62,23 +62,24 @@ this table when entries change.
 | `PARTIAL_CHAIN_WITH_BOUNDARY` | 1 |
 | `EVIDENCED_NOT_OPERATOR_VISIBLE` | 1 |
 | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` | 4 |
-| `OPEN_CONFIRMED_GAP` | 1 |
-| `CLOSED_WITH_EVIDENCE` | 3 |
+| `IMPLEMENTED_NOT_INVOCATION_PROVEN` | 1 |
+| `CLOSED_WITH_EVIDENCE` | 4 |
 
 ### Open / Parked / Intentionally Separated Gaps
 
 | gapId | Plane | Owner (source -> target) | Status | Proof class | Entry / Evidence | Next action |
 |---|---|---|---|---|---|---|
+| `cvf.asc.gap.gc009_gc010_no_production_caller.v1` | contract_to_runtime | `EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts` -> `NONE_WITH_REASON` | `IMPLEMENTED_NOT_INVOCATION_PROVEN` | `IMPLEMENTED_EDGE` | `entries/gc009_gc010_no_production_caller.json`; `docs/reference/system_chain/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T2_CALLER_VERIFICATION.json`; `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T2_CALLER_VERIFICATION_COMPLETION_2026-07-15.md` | Requires a fresh source-verified packet proving non-test production caller ownership and bounded invocation evidence for both GC-009 and GC-010 before this paired entry can close |
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
-| `cvf.asc.gap.web_nextauth_application_projection_split.v1` | evidence_to_operator_surface | NextAuth reviewer session -> Operations client reviewer projection | `OPEN_CONFIRMED_GAP` (reopened after bounded developer/anonymous closure) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_nextauth_application_projection_split.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R1_NEGATIVE_LOCATOR_RECOVERY_COMPLETION_2026-07-15.md` | Source-verify all auth projections and add deterministic client request-emission regression before another browser invocation |
 
 ### Recently Closed Gaps
 
 | gapId | Plane | Owner (source -> target) | Status | Proof class | Entry / Evidence | Boundary caveat |
 |---|---|---|---|---|---|---|
-| `cvf.asc.gap.web_reviewer_denial_proof_locator_ambiguity.v1` | evidence_to_operator_surface | retained UC-04B negative proof -> unique reviewer role locator | `CLOSED_WITH_EVIDENCE` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_reviewer_denial_proof_locator_ambiguity.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R1_NEGATIVE_LOCATOR_RECOVERY_COMPLETION_2026-07-15.md` | Locator ambiguity is closed; reviewer denial remains blocked under the reopened auth-projection gap |
+| `cvf.asc.gap.web_nextauth_application_projection_split.v1` | evidence_to_operator_surface | NextAuth reviewer session -> Operations client reviewer projection | `CLOSED_WITH_EVIDENCE` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_nextauth_application_projection_split.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R3_REVIEWER_NEGATIVE_PROOF_COMPLETION_2026-07-15.md` | Selected developer-success and reviewer-denial pair only; does not create a unified checker inventory or prove other roles, jobs, providers, or production behavior |
+| `cvf.asc.gap.web_reviewer_denial_proof_locator_ambiguity.v1` | evidence_to_operator_surface | retained UC-04B negative proof -> unique reviewer role locator | `CLOSED_WITH_EVIDENCE` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_reviewer_denial_proof_locator_ambiguity.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R1_NEGATIVE_LOCATOR_RECOVERY_COMPLETION_2026-07-15.md` | Locator ambiguity is closed; reviewer denial closure is recorded separately under the auth-projection entry above |
 | `cvf.asc.gap.phase_governance_generated_markdown_conformance.v1` | enforcement_to_evidence -> evidence_to_operator_surface | three current renderer owners -> phase-governance Markdown outputs | `CLOSED_WITH_EVIDENCE` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/phase_governance_generated_markdown_conformance.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC02_RENDERER_CONFORMANCE_REPAIR_COMPLETION_2026-07-14.md` | Closed after all 20 outputs were regenerated and all 12 governed Markdown outputs passed the applicable checker surface; zero UC-02/scenario/provider calls |
 | `cvf.asc.gap.packet_posture_bootstrap_archive_path_drift.v1` | runtime_to_enforcement | `scripts/run_cvf_packet_posture_state_bootstrap.py` -> phase-governance evidence consumers | `CLOSED_WITH_EVIDENCE` (was `IMPLEMENTED_NOT_INVOCATION_PROVEN`) | `LOCAL_RUNTIME_VERIFIED_EDGE` | `entries/packet_posture_bootstrap_archive_path_drift.json`; `docs/reviews/evidence/system-chain-uc02-current-rerun-2026-07-14.json` | Closed by one bootstrap PASS and CF-076 through CF-084 PASS 9/9; downstream Markdown conformance is tracked separately |
 | `cvf.asc.gap.sot3_independent_refinery_owner_unresolved.v1` | doctrine_to_contract -> contract_to_runtime | `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` -> `EXTENSIONS/CVF_REFINERY/` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_independent_refinery_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | No package activation, adapter, provider/live, or public-sync claim; private-provenance implementation only |
@@ -125,6 +126,28 @@ reviewer while the Operations client stayed anonymous_local and emitted no
 reopen condition. The bounded developer/anonymous proof remains retained; only
 reviewer scope is open, and another browser run waits for deterministic local
 request-emission and role-mapping regression.
+
+SCLP-UC04B-R3R2 then repaired the reviewer-role projection gap on 2026-07-15
+with a deterministic server-derived reviewer bootstrap and a retained
+`/api/auth/me` request-emission repair. SCLP-UC04B-R3R3 followed with one
+canonical-origin invocation that observed the reviewer role in the browser and
+reached the expected policy-denial POST, closing the auth-projection entry as
+`CLOSED_WITH_EVIDENCE`. This closes the selected developer-success and
+reviewer-denial pair only; it does not create a unified checker inventory or
+prove other roles, jobs, providers, or production behavior.
+
+SCLP-X-T2 then established, from a separate repository-wide caller search
+(22,026 files, 500 raw hits, 329 unique rows), that no non-test production
+caller connects either `MandatoryGateway`/`createMandatoryGateway` (GC-009) or
+`AgentExecutionRuntime` (GC-010) to an execution channel. SCLP-X-T2G1 records
+that accepted finding as one paired `contract_to_runtime` GAP entry
+(`cvf.asc.gap.gc009_gc010_no_production_caller.v1`), citing the related
+`cvf.asc.edge.gc009_gateway_no_caller.v1` catalog edge as supporting evidence
+only, without treating it as a second or independent runtime branch. This
+paired entry does not create a caller; it records an architecture-
+discoverability gap only, bounded to: both helpers exist and are implemented
+and unit-tested, but no non-test production caller connects either to an
+execution channel.
 
 ## Search Examples
 
@@ -177,11 +200,15 @@ Decision 2.
 
 ## Claim Boundary
 
-This README is the gap ledger's human front door for the 8 gap entries
-currently generated (3 populated in the original MSEA-ASC-RW wave, 3 added by
-SOT3-RAP-T0, and 1 added by SOT3-T7). It does not claim exhaustive coverage of
-every possible CVF architecture gap, does not modify any R91-owned artifact,
-and does not authorize runtime, public, provider, Web, or L4 promotion work.
+This README is the gap ledger's human front door for the 12 gap entries
+currently generated per `CVF_SYSTEM_CHAIN_GAP_INDEX.json` (originally 3
+populated in the MSEA-ASC-RW wave, 3 added by SOT3-RAP-T0, 1 added by SOT3-T7,
+4 added or reconciled by the SCLP-UC02/UC04B waves, and 1 paired entry added
+by SCLP-X-T2G1 recording the accepted GC-009/GC-010 no-production-caller
+finding). It does not claim exhaustive coverage of every possible CVF
+architecture gap, does not modify any R91-owned artifact, does not claim
+invocation or enforcement coverage for GC-009/GC-010, and does not authorize
+runtime, public, provider, Web, or L4 promotion work.
 
 ## Agent Operation Trace Block
 

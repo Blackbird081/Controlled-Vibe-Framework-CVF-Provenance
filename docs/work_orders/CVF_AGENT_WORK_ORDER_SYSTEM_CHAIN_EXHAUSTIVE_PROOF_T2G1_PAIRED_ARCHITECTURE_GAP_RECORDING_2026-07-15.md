@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -14,7 +14,7 @@ dispatchBaseHead: `241f5fec0`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `aaa64c067`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -269,18 +269,18 @@ Forbidden output: any fifth worker path.
 
 ## Acceptance Criteria
 
-- [ ] Clean execution base captured and hashes match.
-- [ ] Pre-edit GAP index drift check passes.
-- [ ] Exactly one paired compact GAP entry exists with fixed stable ID.
-- [ ] Entry validates against the canonical GAP schema.
-- [ ] Status and proof class remain bounded to implementation without invocation.
-- [ ] Both control IDs and related GC-009 edge retain provenance without branch inflation.
-- [ ] Close/reopen conditions are concrete and checkable.
-- [ ] Generated index matches compact entries.
-- [ ] README counts and new row match current index truth.
-- [ ] Exact four-path worker manifest matches.
-- [ ] Zero runtime/test/build/typecheck/CI/live/provider/browser/business-CLI and ADIF/catalog/source mutation.
-- [ ] Required gates pass and worker return remains uncommitted.
+- [x] Clean execution base captured and hashes match.
+- [x] Pre-edit GAP index drift check passes.
+- [x] Exactly one paired compact GAP entry exists with fixed stable ID.
+- [x] Entry validates against the canonical GAP schema.
+- [x] Status and proof class remain bounded to implementation without invocation.
+- [x] Both control IDs and related GC-009 edge retain provenance without branch inflation.
+- [x] Close/reopen conditions are concrete and checkable.
+- [x] Generated index matches compact entries.
+- [x] README counts and new row match current index truth.
+- [x] Exact four-path worker manifest matches.
+- [x] Zero runtime/test/build/typecheck/CI/live/provider/browser/business-CLI and ADIF/catalog/source mutation.
+- [x] Required gates pass and worker return remains uncommitted.
 
 ## Review Gate
 
@@ -291,12 +291,12 @@ invocation or universal-enforcement overclaim.
 
 ## Closure Checklist
 
-- [ ] Worker base and exact four-path manifest reconciled.
-- [ ] Hashes, schema validation, and generator equality independently verified.
-- [ ] One paired entry preserves both controls without duplicate branch claim.
-- [ ] README and index align with all compact entry sources.
-- [ ] No runtime, live, provider, T3-T4, public, or production claim introduced.
-- [ ] Reviewer decision and bounded claim recorded.
+- [x] Worker base and exact four-path manifest reconciled.
+- [x] Hashes, schema validation, and generator equality independently verified.
+- [x] One paired entry preserves both controls without duplicate branch claim.
+- [x] README and index align with all compact entry sources.
+- [x] No runtime, live, provider, T3-T4, public, or production claim introduced.
+- [x] Reviewer decision and bounded claim recorded.
 
 ## Stop Conditions
 
@@ -515,6 +515,29 @@ are forbidden.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance architecture dispatch; no public-sync authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED`; all acceptance and closure checks resolved | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T2G1_PAIRED_ARCHITECTURE_GAP_RECORDING_COMPLETION_2026-07-15.md` | reviewer decision and closure diff gate | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SYSTEM_CHAIN_EXHAUSTIVE_E2E_PROOF_ROADMAP_2026-07-15.md` | T2G1 closed; T3 parked; T4 packet authoring next | PASS |
+| Registry JSON | `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json` | 12/12 unique; paired ID once | PASS |
+| Registry Markdown | `docs/reference/system_chain/gaps/README.md` | all 12 IDs and counts aligned | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | internal CVF sources only | N/A with reason: no digest required |
+| System loop interlock | N/A with reason: no interlock change | no runtime/interlock claim | N/A with reason: GAP projection only |
+| Session continuity | active session sync after material closure | separate session-only commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required evidence | Actual evidence | Status |
+|---|---|---|---|
+| input acceptance | three exact hashes | all three MATCH | PASS |
+| schema acceptance | zero GAP validation errors | Draft 2020-12 errors 0 | PASS |
+| aggregate acceptance | generator equality and unique ID | 12 unique; paired count 1 | PASS |
+| README acceptance | index-to-front-door reconciliation | missing IDs 0; counts sum 12 | PASS |
+| no-commit acceptance | exact execution base and changed set | `aaa64c067`; four paths | PASS |
 
 ## Claim Boundary
 
