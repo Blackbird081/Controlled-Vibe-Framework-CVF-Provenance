@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T0_DISPATCH_READY
+Status: T0_HOLD_SCOPE_SPLIT_REPAIR
 
 docType: roadmap
 
@@ -20,6 +20,13 @@ not CVF Core. FSCB-ADAPT-T0 closed at material commit `21659a3ac`; the separate
 T0 packet is re-released from clean dispatch base `ddd7d603a` after independent
 review confirmed a digest-sort defect rather than source drift, so the two
 source families remain isolated.
+
+The operator later relayed a Claude worker response that declined the single-
+pass 336-file semantic disposition and recommended either a 50-100-file proof
+of concept or a two-phase return. Review
+`docs/reviews/CVF_SOT3_APP_T0_R1_SCOPE_BLOCKER_REVIEW_2026-07-15.md` rejects the
+reduced-corpus option and accepts a two-phase full-corpus route. The existing
+R1 packet is held and is no longer executable.
 
 ## Purpose
 
@@ -54,9 +61,9 @@ owners before modifying the sibling source.
 
 | Control | Decision |
 |---|---|
-| current active tranche | SOT3-APP-T0 source ledger and provenance disposition |
-| committed packet | paired T0 GC-018 and source-verified work order in this dispatch batch |
-| scheduling release | SATISFIED by FSCB-ADAPT-T0 material closure `21659a3ac`, blocked-return review `2a948fdb2`, and clean redispatch base `ddd7d603a` |
+| current active tranche | none; T0A/T0B scope-split packet repair is next |
+| committed packet | prior paired T0 GC-018 and work order are held and must not be executed |
+| scheduling release | HOLD pending fresh T0A GC-018/work-order authoring and pre-dispatch evidence |
 | source mutation | forbidden until a later source-verified implementation work order passes pre-dispatch |
 | hidden-clone coupling | T0 must sever, govern, or block every declared path |
 | runtime/live | separately authorized only in tranches whose acceptance requires it |
@@ -66,19 +73,22 @@ owners before modifying the sibling source.
 
 | Tranche | Objective | Required output | Release condition |
 |---|---|---|---|
-| SOT3-APP-T0 | freeze application intake and provenance | 336-row terminal ledger, aggregate digest, declared hidden-clone path inventory and disposition | 336/336 terminal; zero unresolved declared clone paths; reviewer semantic audit PASS |
+| SOT3-APP-T0A | freeze the complete corpus and calibrate semantic disposition | 336-row path/byte/hash metadata ledger, aggregate digest, complete hidden-clone declaration inventory, and a reviewer-selected 20-row semantic sample spanning every source/value/risk family | 336/336 metadata rows reconcile; sample coverage is explicit; reviewer accepts or corrects the disposition rubric |
+| SOT3-APP-T0B | apply the calibrated rubric to the complete corpus | full-body semantic disposition for all 336 rows plus terminal hidden-clone provenance decisions | 336/336 terminal semantic rows; zero unresolved declared clone paths; reviewer semantic audit PASS |
 | SOT3-APP-T1 | ratify downstream contracts | owner map for business domain, current CVF public adapters, T8 packet binding, decision semantics, evidence, and freeze | every runtime/source symbol and decision value directly source-verified |
 | SOT3-APP-T2 | harden application boundaries | identity, phase/guard decisions, all decision consumers, controller-service wiring, redaction, and freeze | negative paths and non-continuable decisions reach no output/provider lane |
 | SOT3-APP-T3 | establish reproducible build and real tests | lockfile, owned package scripts, schema compatibility, request-admission tests, and behavior-path failure injection | build/typecheck/tests command-backed and non-tautological |
 | SOT3-APP-T4 | prove Controlled Quotation locally | real local source-to-freeze-impact-recall slice with replayable receipts | complete identifier/evidence chain survives replay |
 | SOT3-APP-T5 | optional operational/live proof | separately authorized real-provider and release evidence | exact bounded claim only; no production or universal SOT3 inference |
 
-Each tranche after T0 requires accepted predecessor evidence, fresh GC-018, a
+Each tranche after T0B requires accepted predecessor evidence, fresh GC-018, a
 source-verified work order, and a clean dispatch base.
 
 ## Acceptance Criteria
 
-- T0 reconciles all 336 files before any source mutation.
+- T0A reconciles all 336 metadata rows and calibrates a 20-row semantic sample
+  before T0B applies the rubric to all 336 files.
+- T0B reconciles all 336 terminal semantic rows before any source mutation.
 - Hidden-clone declarations receive path, owner, version/drift, and runtime-use
   dispositions.
 - Application-local duplicates are rejected or rewritten against current CVF
@@ -114,10 +124,10 @@ Stop and return to the orchestrator when:
 ## Dependency And Sequence Control
 
 Material commit `24d50f0d7` released roadmap authoring. FSCB-ADAPT-T0 material
-closure `21659a3ac` satisfies the concrete scheduling condition in Dispatch
+closure `21659a3ac` satisfies the earlier scheduling condition in Dispatch
 Boundary; this is cross-batch isolation, not a semantic dependency on the
-Four-Surface doctrine result. T0 execution is released only through the paired
-GC-018 and work order below.
+Four-Surface doctrine result. The earlier single-pass T0 execution release is
+withdrawn. Fresh T0A packet authoring and pre-dispatch evidence are required.
 
 No later tranche is released by this roadmap table alone.
 
@@ -129,9 +139,10 @@ No later tranche is released by this roadmap table alone.
 | GC-018 | `docs/baselines/CVF_GC018_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md` |
 | work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md` |
 | blocked-return review | `docs/reviews/CVF_SOT3_APP_T0_BLOCKED_RETURN_REVIEW_2026-07-15.md`; material commit `2a948fdb2`; packet digest defect confirmed |
-| worker outputs | source-processing/provenance ledger plus R1 no-commit worker return |
+| scope-blocker review | `docs/reviews/CVF_SOT3_APP_T0_R1_SCOPE_BLOCKER_REVIEW_2026-07-15.md`; reduced-corpus option rejected; full-corpus two-phase route selected |
+| worker outputs | none currently released; fresh T0A output paths must be collision-checked |
 | commit mode | `WORKER_MUST_NOT_COMMIT` |
-| execution boundary | read/hash/classify copied folder and read-only hidden-clone Git metadata; no application execution or mutation |
+| execution boundary | HOLD; packet authoring only until a fresh T0A dispatch passes gates |
 
 ## Reverse Architecture Projection Matrix
 
@@ -253,8 +264,9 @@ reference controllers, missing lockfile, and declared hidden-clone paths.
 Contradiction Or Gap Disposition: T0/T1 must record source contradictions as
 blocked rows or proposed owner gaps rather than guessing current CVF contracts.
 
-Claim Update: operator authorization plus FSCB cross-batch closure releases the
-committed T0 evidence packet; source mutation remains unauthorized.
+Claim Update: operator authorization and FSCB cross-batch closure still support
+the roadmap, but the single-pass T0 evidence packet is held. Only fresh T0A
+packet authoring is next; source mutation remains unauthorized.
 
 ## Checker Source Read-Ahead Block
 
@@ -274,8 +286,8 @@ public-safe artifact set exists.
 
 ## Claim Boundary
 
-This roadmap records an operator-authorized sequence and releases only the
-committed T0 source/provenance evidence packet. It does not authorize source
-mutation, complete the 336-file ledger, ratify application contracts, prove
-build/runtime/live behavior, promote the application into CVF Core, or claim
-public or production readiness.
+This roadmap records an operator-authorized sequence and a reviewer-selected
+two-phase full-corpus T0 route. It does not currently release worker execution,
+authorize source mutation, complete the 336-file ledger, ratify application
+contracts, prove build/runtime/live behavior, promote the application into CVF
+Core, or claim public or production readiness.

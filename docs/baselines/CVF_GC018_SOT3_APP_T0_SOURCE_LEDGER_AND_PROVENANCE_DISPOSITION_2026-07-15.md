@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: HOLD_SCOPE_SPLIT_REPAIR
 
 docType: baseline
 
@@ -19,6 +19,20 @@ Decision owner: operator
 Reviewer owner: reviewer/closer
 
 Worker target: delegated worker role
+
+## Execution Hold And Scope-Split Review
+
+The operator relayed a Claude worker response that declined the single-pass
+336-file semantic disposition and proposed either a reduced 50-100-file proof
+of concept or a two-phase full-corpus return. Governed review at
+`docs/reviews/CVF_SOT3_APP_T0_R1_SCOPE_BLOCKER_REVIEW_2026-07-15.md` rejects the
+reduced-corpus route and selects the two-phase route.
+
+This baseline is retained as packet history but is no longer execution
+authority. Do not execute its worker instructions. The next allowed material
+action is fresh T0A GC-018/work-order authoring for complete 336-file metadata
+freeze plus a reviewer-calibrated 20-row semantic sample. T0B remains held
+until that calibration is accepted.
 
 ## Purpose
 
@@ -46,7 +60,7 @@ the blocked return without modification.
 
 ## Proposed Tranche / Decision
 
-Decision: `PROCEED_WITH_BOUNDED_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION`.
+Decision: `HOLD_FOR_TWO_PHASE_PACKET_REPLACEMENT`.
 
 The application remains a sibling downstream product candidate, not CVF Core.
 This tranche creates no application code, runtime behavior, binding adapter,
@@ -314,10 +328,11 @@ authorization or public-safe artifact set exists.
 
 ## Claim Boundary
 
-This GC-018 baseline authorizes only one 336-file documentation/evidence ledger
-and one no-commit worker return. It does not authorize SOT-Application or hidden
-clone mutation, repository synchronization, dependency installation, runtime,
-build, typecheck, test, CI, provider, browser, server, binding validation,
-package activation, CVF Core promotion, Catalog/GAP/ADIF change, public-sync,
-commit by the worker, or any claim that the downstream product is integrated,
-reproducible, safe, live, production-ready, or user-validated.
+This GC-018 baseline is held as historical packet evidence and authorizes no
+worker execution. A fresh T0A baseline/work order is required. This file does
+not authorize SOT-Application or hidden-clone mutation, repository
+synchronization, dependency installation, runtime, build, typecheck, test, CI,
+provider, browser, server, binding validation, package activation, CVF Core
+promotion, Catalog/GAP/ADIF change, public-sync, commit by a worker, or any
+claim that the downstream product is integrated, reproducible, safe, live,
+production-ready, or user-validated.

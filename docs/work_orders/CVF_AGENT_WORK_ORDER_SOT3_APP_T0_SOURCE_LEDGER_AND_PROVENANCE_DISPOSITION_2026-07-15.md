@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: HOLD_SCOPE_SPLIT_REPAIR
 
 docType: work_order
 
@@ -18,6 +18,19 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 Worker return path:
 `docs/reviews/CVF_SOT3_APP_T0_R1_WORKER_RETURN_2026-07-15.md`
+
+## Execution Hold
+
+Do not execute this work order. The operator relayed a Claude worker response
+that declined the single-pass 336-file semantic disposition and recommended a
+reduced proof of concept or a two-phase return. Review
+`docs/reviews/CVF_SOT3_APP_T0_R1_SCOPE_BLOCKER_REVIEW_2026-07-15.md` rejects the
+reduced-corpus option and accepts a two-phase full-corpus route.
+
+This packet is retained as dispatch history. The next allowed move is fresh
+T0A packet authoring for a complete 336-file metadata freeze, complete
+hidden-clone declaration inventory, and a reviewer-calibrated 20-row semantic
+sample. T0B full-corpus semantic disposition remains dependency-held.
 
 ## Dispatch Prompt Envelope
 
@@ -761,8 +774,9 @@ authority or public-safe artifact set exists.
 
 ## Claim Boundary
 
-This work order authorizes exactly two documentation/evidence outputs from a
-clean committed dispatch base. It does not authorize SOT-Application or hidden
+This work order is held and authorizes no worker execution. Its historical
+scope covered exactly two documentation/evidence outputs from a clean
+committed dispatch base. It does not authorize SOT-Application or hidden
 clone mutation, dependency synchronization, source copying, direct import,
 contract ratification, runtime/binding integration, install, build, typecheck,
 test, CI, server, browser, provider/live execution, Catalog/GAP/ADIF/index or
