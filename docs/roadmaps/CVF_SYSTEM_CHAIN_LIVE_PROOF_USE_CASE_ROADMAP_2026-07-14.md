@@ -218,12 +218,13 @@ public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-UC-04B-R1 is closed blocked after the one authorized Playwright command. Direct
-NextAuth session verification returned developer, but the Operations page
-projected anonymous_local; zero Web submissions, checker executions, retries,
-and provider calls occurred. The next allowed move is one source-verified
-auth-boundary repair packet targeting the confirmed projection GAP. Do not
-rerun T4/R1 or infer Web coverage, unified inventory, or provider use.
+UC-04B-R2 is closed blocked after its one authorized Playwright command. The
+request-bound auth adapter repair is accepted through 12/12 focused tests and
+clean typecheck, but browser projection remains unproven. Trace review narrowed
+the blocker to mixed development-host/hydration behavior and rejected browser
+cookie-loss attribution. The next allowed move is one fresh
+`localhost`-normalized auth-projection recovery packet. Do not rerun T4/R1/R2
+or infer Web coverage, unified inventory, or provider use.
 
 ## Checker Source Read-Ahead Block
 

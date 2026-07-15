@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Work Order ID: SCLP-UC04B-R2
 
@@ -477,3 +477,33 @@ user value.
 | Actual changed set | paired R2 baseline and work order |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired R2 GC-018 | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | this file | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared completion path | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Worker return | declared R2 return | `BLOCKED_WITH_REASON` | PASS |
+| Runtime repair | auth owners plus focused tests | reviewer 12/12 and typecheck PASS | PASS_BOUNDED |
+| Web regression | R2 ledger/receipt/diagnostic | FAIL; exact 1/0/0/0/0 | BLOCKED |
+| Roadmap state | system-chain use-case roadmap | localhost-normalized recovery next | PASS |
+| Registry JSON | coverage, GAP index, and corpus aggregate | R2 blocked and GAP open | PASS |
+| Registry Markdown | system-chain, GAP, and ADIF front doors | corrected blocker route | PASS |
+| External evidence digest | N/A with reason: repository/runtime evidence only | no external input | N/A with reason |
+| System loop interlock | R2 ledger and receipt | FAIL retained; no Web promotion | PASS |
+| Session continuity | active session | separate sync after material closure | N/A with reason |
+| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+|---|---|---|---|
+| Playwright invocation | 1 | 1 | PASS |
+| positive projection | PASS | FAIL before client auth fetch | BLOCKED |
+| negative projection | PASS | DID_NOT_RUN | BLOCKED |
+| business submissions | 0 | 0 | PASS |
+| checker executions | 0 | 0 | PASS |
+| retries | 0 | 0 | PASS |
+| provider calls | 0 | 0 | PASS |

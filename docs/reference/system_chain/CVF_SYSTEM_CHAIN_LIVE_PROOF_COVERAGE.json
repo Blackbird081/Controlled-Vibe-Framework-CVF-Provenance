@@ -3,7 +3,7 @@
   "ledgerId": "cvf-system-chain-live-proof-coverage-2026-07-14",
   "standard": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_AND_LEARNING_LOOP_STANDARD.md",
   "sourceMap": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
-  "lastReviewedDate": "2026-07-14",
+  "lastReviewedDate": "2026-07-15",
   "claimBoundary": "This ledger classifies live-proof applicability and current evidence for five generic CVF system-chain lanes. It preserves each source map verdict and does not treat SOT3 UC-01 as proof of any other lane.",
   "useCases": [
     {
@@ -51,7 +51,7 @@
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
       "latestEvidence": "docs/reviews/evidence/system-chain-uc04a-r1-positive-cli-receipts-2026-07-14/pre-dispatch.json",
       "latestResult": "CLI_POSITIVE_PASS_75_OF_75_PLUS_RETAINED_NEGATIVE_PASS",
-      "nextAction": "retain CLI proof; repair the confirmed NextAuth-to-application auth projection GAP under a fresh packet before any new UC-04B proof"
+      "nextAction": "retain CLI proof; run one fresh localhost-normalized auth-projection recovery before any UC-04B business proof"
     }
   ],
   "lanes": [
@@ -111,9 +111,9 @@
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
       "operationalProofStatus": "PARTIAL",
-      "reason": "the R1 positive CLI call passed 75 of 75 with a structured receipt and combines with retained negative evidence; the first Web attempt made zero submissions and is closed blocked after two Playwright invocations contradicted its one-call ceiling",
+      "reason": "the CLI surface is proven bounded; Web R2 accepted a unit-proven request-auth repair but its one browser invocation remained blocked by mixed dev-host/hydration evidence before any submission",
       "nextUseCase": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
-      "nextAction": "retain bounded CLI evidence and source-verify the confirmed Web auth-projection GAP; do not rerun T4/R1 or infer Web coverage or unified inventory"
+      "nextAction": "retain bounded CLI evidence and run one fresh localhost-normalized auth-projection recovery; do not rerun T4/R1/R2 or infer Web coverage or unified inventory"
     }
   ]
 }

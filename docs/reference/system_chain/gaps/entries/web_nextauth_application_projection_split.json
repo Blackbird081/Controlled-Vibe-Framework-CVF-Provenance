@@ -5,7 +5,7 @@
   "targetPlaneId": "cvf.asc.plane.evidence_to_operator_surface.v1",
   "sourceOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts; /api/auth/session",
   "targetOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts; src/app/api/auth/me/route.ts; src/app/api/system/jobs/route.ts; Operations page",
-  "missingEdge": "In the real Next development runtime, direct credentials authentication is visible at the NextAuth session endpoint with role developer, but the application authentication projection used by verifySessionCookie/auth() and the Operations page remains anonymous_local.",
+  "missingEdge": "The request-bound verifySessionCookie adapter is repaired and reviewer unit-proven, but real browser projection remains unproven: R2 mixed 127.0.0.1/localhost callback evidence and emitted no client auth/jobs fetch after the cookie-bearing browser navigation.",
   "currentStatus": "OPEN_CONFIRMED_GAP",
   "proofClass": "EXECUTED_AND_EVIDENCED_EDGE",
   "citations": [
@@ -18,6 +18,11 @@
       "path": "docs/reviews/evidence/system-chain-uc04b-r1-web-operations-proof-2026-07-14.json",
       "lineOrSection": "cases[0]",
       "evidenceRole": "one-invocation receipt showing developer session versus anonymous Operations projection"
+    },
+    {
+      "path": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2_WEB_AUTH_PROJECTION_REPAIR_COMPLETION_2026-07-14.md",
+      "lineOrSection": "Evidence Reconciliation",
+      "evidenceRole": "reviewer-accepted adapter repair and corrected dev-host/hydration blocker"
     }
   ],
   "impact": "Authenticated developer and reviewer roles cannot currently be proven through the real Web Operations path; UC-04B remains unproven and no checker submission is authorized until repair.",
@@ -29,7 +34,7 @@
     "conditionKind": "OPERATOR_DECISION_RECORDED",
     "conditionText": "Already open; a fresh GC-018 authorizes the auth-boundary repair tranche."
   },
-  "actionOwner": "NEXT_TRANCHE: source-verified Web auth-boundary repair packet",
+  "actionOwner": "NEXT_TRANCHE: localhost-normalized auth-projection recovery proof",
   "freshnessInputs": [
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
@@ -37,7 +42,7 @@
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/system/jobs/route.ts"
   ],
   "lastReviewed": {
-    "date": "2026-07-14",
-    "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R1_WEB_AUTH_AND_READOUT_RECOVERY_COMPLETION_2026-07-14.md"
+    "date": "2026-07-15",
+    "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2_WEB_AUTH_PROJECTION_REPAIR_COMPLETION_2026-07-14.md"
   }
 }

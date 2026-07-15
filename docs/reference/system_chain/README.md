@@ -208,6 +208,14 @@ executions, zero retries, and zero provider calls. This is tracked as
 `cvf.asc.gap.web_nextauth_application_projection_split.v1`. A source-verified
 auth-boundary repair packet is required before another UC-04B proof.
 
+UC-04B-R2 is closed `CLOSED_BLOCKED_BOUNDED`. The request-bound auth adapter
+repair is reviewer-accepted through 12/12 focused tests and clean typecheck,
+but browser projection remains unproven. Reviewer trace inspection corrected
+the worker diagnosis: the actual browser navigation used `127.0.0.1` and
+carried the session cookie; the mixed-host redirect occurred inside the API
+request context, and no client auth/jobs request followed page load. One fresh
+`localhost`-normalized recovery proof is required; R2 must not be rerun.
+
 Operations exposes a bounded five-job-type subset
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts`),
 of which exactly one job type (`docs_governance_check`) wires directly to

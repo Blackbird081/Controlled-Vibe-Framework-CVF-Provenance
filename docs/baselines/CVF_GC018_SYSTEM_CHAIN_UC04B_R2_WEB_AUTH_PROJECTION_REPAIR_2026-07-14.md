@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 docType: gc018_baseline
 
@@ -164,3 +164,31 @@ Next development regression command. It does not prove the UC-04B business
 chain, all authentication paths, provider governance, production, public
 readiness, scale, certification, or user value.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this baseline | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | SCLP-UC04B-R2 | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | declared R2 completion | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Worker return | declared R2 return | `BLOCKED_WITH_REASON` | PASS |
+| Runtime repair | auth owners plus focused tests | reviewer 12/12 and typecheck PASS | PASS_BOUNDED |
+| Web regression | R2 receipt and diagnostic | FAIL; exact 1/0/0/0/0 | BLOCKED |
+| Roadmap state | system-chain use-case roadmap | localhost-normalized recovery next | PASS |
+| Registry JSON | coverage, GAP index, and corpus aggregate | R2 blocked and GAP open | PASS |
+| Registry Markdown | system-chain, GAP, and ADIF front doors | corrected blocker route | PASS |
+| External evidence digest | N/A with reason: repository/runtime evidence only | no external input | N/A with reason |
+| System loop interlock | R2 ledger and receipt | FAIL retained; no Web promotion | PASS |
+| Session continuity | active session | separate sync after material closure | N/A with reason |
+| Public export | this baseline | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+|---|---|---|---|
+| Playwright invocation | 1 | 1 | PASS |
+| two projection cases | 2 PASS | positive FAIL; negative DID_NOT_RUN | BLOCKED |
+| business submissions | 0 | 0 | PASS |
+| checker executions | 0 | 0 | PASS |
+| retries | 0 | 0 | PASS |
+| provider calls | 0 | 0 | PASS |

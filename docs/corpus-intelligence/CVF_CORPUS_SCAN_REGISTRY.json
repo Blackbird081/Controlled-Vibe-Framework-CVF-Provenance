@@ -5388,6 +5388,46 @@
         "Vitest globally broken"
       ],
       "nextScanRecommendation": "AFTER_RECOVERY_PACKET"
+    },
+    {
+      "id": "system-chain-uc04b-r2-auth-projection-regression",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "System-chain UC-04B R2 Web auth projection regression",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-auth-projection-regression.spec.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@auth/core/jwt.d.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/next-auth/jwt.d.ts"
+      ],
+      "fileCount": 6,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "SCLP-UC04B-R2",
+      "scanDate": "2026-07-14",
+      "manifestHash": null,
+      "manifestPath": "docs/reviews/evidence/system-chain-uc04b-r2-auth-projection-regression-2026-07-14.json",
+      "packetPath": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2_WEB_AUTH_PROJECTION_REPAIR_WORKER_RETURN_2026-07-14.md",
+      "completionReviewPath": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2_WEB_AUTH_PROJECTION_REPAIR_COMPLETION_2026-07-14.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_SYSTEM_CHAIN_UC04B_R2_WEB_AUTH_PROJECTION_REPAIR_2026-07-14.md",
+      "notes": "Request-bound verifySessionCookie repair is reviewer-accepted as unit-proven (12/12 focused Vitest, clean tsc). The one authorized Playwright invocation failed under mixed 127.0.0.1/localhost dev-host evidence. Reviewer trace inspection rejected browser cookie-loss attribution: the browser navigation used 127.0.0.1 and carried the session cookie, but emitted no client auth/jobs fetch after page load.",
+      "findings": [
+        {
+          "id": "uc04b-r2-dev-origin-cookie-split",
+          "summary": "Auth.js callback handling inside page.request crossed from 127.0.0.1 to localhost, while the later browser navigation stayed on 127.0.0.1 with its session cookie but emitted no client auth/jobs fetch; the Operations role remained anonymous_local.",
+          "disposition": "BLOCKED_PENDING_DECISION",
+          "nextAction": "Run one fresh localhost-normalized regression under a successor packet; do not mutate next.config.ts from the rejected browser cookie-loss diagnosis.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "workOrderRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC04B_R2_WEB_AUTH_PROJECTION_REPAIR_2026-07-14.md"
+        }
+      ],
+      "negativeSearchTerms": [
+        "UC-04B R2 PASS",
+        "projection agreement proven",
+        "auth repair unproven"
+      ],
+      "nextScanRecommendation": "AFTER_SUCCESSOR_PACKET"
     }
   ]
 }
