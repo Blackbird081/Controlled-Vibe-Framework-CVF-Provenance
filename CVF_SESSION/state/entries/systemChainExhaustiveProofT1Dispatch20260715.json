@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1824,
+  "stateKey": "systemChainExhaustiveProofT1Dispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "6e6f14eee",
+    "workOrderId": "SCLP-X-T1",
+    "dispatchBaseHead": "a292d704d",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedManifestCount": 3,
+    "decisionRecordCount": 6,
+    "missingProofClaimCount": 3,
+    "ownerGapCandidateCount": 2,
+    "contradictionRecordCount": 1,
+    "liveInvocationCeiling": 0,
+    "providerCallCeiling": 0,
+    "runtimeMutationCeiling": 0,
+    "nextAllowedMove": "execute exact three-path no-commit reconciliation and value-selection worker and return COMPLETE_PENDING_REVIEW",
+    "claimBoundary": "Reviewer reconciliation and value selection only. No live execution, owner or GAP promotion, T2 authorization, runtime mutation, provider, public, production, scale, certification, shipment, or user-value claim."
+  }
+}

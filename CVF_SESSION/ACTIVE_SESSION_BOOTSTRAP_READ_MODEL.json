@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_exhaustive_proof_t0_closed_t1_packet_authoring_next",
+  "currentMode": "system_chain_exhaustive_proof_t1_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
-  "nextAllowedMove": "SCLP-X-T0 is CLOSED_PASS_BOUNDED at material commit e6034224c with 99/99 source records and 99 claims terminally reconciled: 5 PROVEN, 78 STATIC_NOT_APPLICABLE, 13 VALUE_PARKED, and 3 MISSING_PROOF. Author only a fresh source-verified SCLP-X-T1 reviewer-reconciliation and value-selection packet that decides the three missing-proof claims and two proposed owner/GAP candidates. Zero live, provider, browser, business CLI, runtime, test, checker-source, registry-owner, GAP, ADIF, public, or T2-T4 execution. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SCLP-X-T1 is DISPATCH_READY at material commit 6e6f14eee. Execute only the exact three-path no-commit reconciliation and value-selection worker over the six frozen records: three MISSING_PROOF claims, OWNER-GAP-01, OWNER-GAP-02, and CTR-01. Use read-only source verification; return COMPLETE_PENDING_REVIEW. Zero live, provider, browser, business CLI, runtime, test, checker-source, registry-owner, GAP, ADIF, public, or T2-T4 execution. A T2 recommendation is not authorization. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

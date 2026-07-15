@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_exhaustive_proof_t0_closed_t1_packet_authoring_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author fresh source-verified SCLP-X-T1 reviewer-reconciliation and value-selection packet only; parked checkpoint=all live/provider runs, T2-T4 execution, owner/GAP promotion, unified inventory implementation, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_exhaustive_proof_t1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact three-path no-commit SCLP-X-T1 reconciliation and value-selection worker over six frozen records; parked checkpoint=all live/provider runs, T2-T4 execution, owner/GAP promotion, unified inventory implementation, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_exhaustive_proof_t0_closed_t1_packet_authoring_next`
+Current mode marker: `system_chain_exhaustive_proof_t1_dispatched_worker_next`
 
-Current mode: `system_chain_exhaustive_proof_t0_closed_t1_packet_authoring_next`
+Current mode: `system_chain_exhaustive_proof_t1_dispatched_worker_next`
 
-`system_chain_exhaustive_proof_t0_closed_t1_packet_authoring_next`
+`system_chain_exhaustive_proof_t1_dispatched_worker_next`
 
 Previous mode:
 
-`system_chain_exhaustive_proof_t0_dispatched_worker_next`
+`system_chain_exhaustive_proof_t0_closed_t1_packet_authoring_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain exhaustive proof T1 value-selection dispatch | `6e6f14eee` | DISPATCH_READY; six frozen decision records, exact three-path no-commit return, read-only source verification, zero live/provider/runtime/test/owner/GAP mutation. |
 | System-chain exhaustive proof T0 inventory closure | `e6034224c` | CLOSED_PASS_BOUNDED; 5/20/50/24 and 99/99 source records reconciled into 99 claims; 5 PROVEN, 78 STATIC_NOT_APPLICABLE, 13 VALUE_PARKED, 3 MISSING_PROOF; one proof-class token reviewer-repaired; zero live/provider/runtime action. |
 | System-chain exhaustive proof T0 inventory dispatch | `48e873857` | DISPATCH_READY; 5/20/50/24 source families, 99 source records, exact three-path no-commit inventory, zero live/provider/runtime action. |
 | System-chain T5 final reverse-projection and sequence closure | `61662d9b0` | CLOSED_PASS_BOUNDED; four use cases/five lanes reconciled; stale sequencing and telemetry repaired; ADIF-0039 recorded; no active SCLP tranche. |
@@ -202,13 +203,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_exhaustive_proof_t0_closed_t1_packet_authoring_next`
+Mode: `system_chain_exhaustive_proof_t1_dispatched_worker_next`
 
-SCLP-X-T0 is closed bounded at `e6034224c`: 99/99 source records map to 99
-terminal claims (5 `PROVEN`, 78 `STATIC_NOT_APPLICABLE`, 13 `VALUE_PARKED`,
-3 `MISSING_PROOF`). Author only a fresh source-verified SCLP-X-T1 value-
-selection packet for reviewer reconciliation. Do not run or
-select live cases. T1-T4 remain dependency-held.
+SCLP-X-T1 is dispatch-ready at `6e6f14eee`. Execute only its exact three-path
+no-commit reconciliation and value-selection worker over the six frozen
+records: three `MISSING_PROOF` claims, `OWNER-GAP-01`, `OWNER-GAP-02`, and
+`CTR-01`. Use read-only source verification and return
+`COMPLETE_PENDING_REVIEW`. Do not run or select live cases, mutate runtime,
+tests, checker source, owners, GAPs, or ADIF, or execute T2-T4. A T2
+recommendation is not authorization.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
