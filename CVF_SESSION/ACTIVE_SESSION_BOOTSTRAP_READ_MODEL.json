@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_uc04b_r3_dispatched_worker_next",
+  "currentMode": "system_chain_uc04b_r3r1_locator_recovery_packet_next",
   "activeHandoff": "AGENT_HANDOFF_V43_2026-07-14.md",
-  "nextAllowedMove": "SCLP-UC04B-R3 is DISPATCH_READY at material commit 74aa3d246. Execute the exact no-commit provider-free business-proof work order once. Required preflight is the current five-file focused suite at 32/32 and frozen proof hash match. The sole Playwright invocation must use PLAYWRIGHT_BASE_URL=http://localhost:3001 and run both retained business cases serially. Exact ceilings are one invocation, two Web submissions, one selected docs-checker execution, zero retries, and zero provider calls. Stop with a secret-safe diagnostic on any non-PASS. Do not edit runtime, UI, auth, route, job, config, test, proof, checker, roadmap, registry, or session owners, and do not infer unified inventory, other jobs/roles, provider governance, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SCLP-UC04B-R3 is CLOSED_BLOCKED_BOUNDED at material commit e1ce6dc18. Retain the developer docs-check business PASS and exact 1/1/1/0/0 counters. The reviewer case remains browser-unproven because the retained pre-POST reviewer-text locator matched five elements. Author one fresh source-verified R3R1 locator-only recovery packet for the negative case; do not rerun R3 or repeat the positive path without a source-backed coupling reason. No runtime, UI, auth, route, job, checker, provider, public, production, scale, certification, or user-value expansion is authorized. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r3_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute the exact no-commit UC-04B R3 business proof once; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc04b_r3r1_locator_recovery_packet_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=author one source-verified negative-only UC-04B R3R1 locator recovery packet; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc04b_r3_dispatched_worker_next`
+Current mode marker: `system_chain_uc04b_r3r1_locator_recovery_packet_next`
 
-Current mode: `system_chain_uc04b_r3_dispatched_worker_next`
+Current mode: `system_chain_uc04b_r3r1_locator_recovery_packet_next`
 
-`system_chain_uc04b_r3_dispatched_worker_next`
+`system_chain_uc04b_r3r1_locator_recovery_packet_next`
 
 Previous mode:
 
-`system_chain_uc04b_business_proof_packet_next`
+`system_chain_uc04b_r3_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-04B-R3 blocked business-proof closure | `e1ce6dc18` | CLOSED_BLOCKED_BOUNDED; developer business path PASS; reviewer case blocked before POST by five-match locator ambiguity; exact 1/1/1/0/0; GAP and ADIF-0036 recorded; negative-only R3R1 packet next. |
 | System-chain UC-04B-R3 provider-free business-proof dispatch | `74aa3d246` | DISPATCH_READY; retained spec read-only; focused 32/32 preflight; one localhost invocation; exact ceilings 1/2/1/0/0; worker must not commit. |
 | System-chain UC-04B-R2R1 localhost-normalized recovery closure | `37942fb38` | CLOSED_PASS_BOUNDED; frozen hash match; 12/12 plus typecheck; one localhost invocation passed 2/2; exact 1/0/0/0/0; auth-projection GAP closed for bounded pair; business packet authoring next. |
 | System-chain UC-04B-R2R1 localhost-normalized recovery dispatch | `e8145c3b3` | DISPATCH_READY; retained owners read-only; localhost-only two-case auth projection; one Playwright invocation; 0 business/checker/retry/provider; worker must not commit. |
@@ -191,14 +192,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc04b_r3_dispatched_worker_next`
+Mode: `system_chain_uc04b_r3r1_locator_recovery_packet_next`
 
-UC-04B R3 is dispatch-ready at `74aa3d246`. Execute the exact no-commit
-business-proof work order once under `http://localhost:3001` after focused
-32/32 and proof-hash match. Run both retained cases serially. Exact ceilings
-are 1/2/1/0/0 for invocation/submission/selected-checker/retry/provider. Do not
-edit retained owners or infer unified inventory, other jobs/roles, provider
-governance, public, production, scale, certification, or user value.
+UC-04B R3 is closed `CLOSED_BLOCKED_BOUNDED` at `e1ce6dc18`. Retain the
+developer business PASS and exact 1/1/1/0/0 counters. Author one fresh
+source-verified R3R1 locator-only recovery packet for the reviewer denial path.
+Do not rerun R3 or repeat the positive path without a source-backed coupling
+reason. Do not infer unified inventory, provider governance, public,
+production, scale, certification, or user value.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
