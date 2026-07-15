@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -136,42 +136,65 @@ packet.
 - Corpus task class: `FULL_REPOSITORY_MATCH_CORPUS` planned for worker
   execution; dispatch authoring itself uses targeted authority reads.
 - Corpus root: repository filesystem at worker `executionBaseHead`.
-- Snapshot time: worker execution start; not captured by this dispatch packet.
+- Snapshot time: 2026-07-15 worker execution at `9e3a672e6`.
 - Enumeration command: `rg --files --hidden --no-ignore` with only the explicit
   exclusions in Negative Search And Collision Discipline.
-- Manifest artifact or inline manifest: planned T2 JSON `searchUniverse` and
+- Manifest artifact or inline manifest: accepted T2 JSON `searchUniverse` and
   `queryManifest` fields.
-- Manifest hash: worker must record the deterministic path-list hash.
-- Processing ledger artifact or inline ledger: planned T2 JSON `matchLedger`.
+- Manifest hash: `47e2c963495f5a5c85b74d019736df38bc306b27b0d1334affe750fd9f973101`.
+- Processing ledger artifact or inline ledger: accepted T2 JSON `matchLedger`.
 - Allowed terminal statuses: `READ`, `SKIPPED_WITH_REASON`,
   `DEFERRED`, and `BLOCKED_UNREADABLE`. Match rows additionally use the ten
   `matchClassification` values authorized by this baseline.
-- Reconciliation: manifest=planned-T2-JSON-search-universe; ledger_terminal=required-for-every-unique-match; exclusions=explicit-five-operational-classes-only; unresolved=0-required-for-a-no-caller-decision.
-- Unresolved files: 0 required at worker completion; dispatch result is N/A
-  with reason: the worker search has not executed.
-- Declared exclusions: `.git`, dependency installs including `node_modules`,
-  `.next`, build output, and `.cvf` runtime receipts.
-- Unreadable or unsupported files: none permitted for terminal completion.
-- Aggregation check: raw query hits must equal deduplicated ledger membership
-  with every contributing query retained.
-- Drift check: reviewer repeats enumeration and every query from the worker
-  execution base.
+- Reconciliation: manifest=22026; ledger_terminal=329; exclusions=0-post-enumeration; unresolved=0.
+- Unresolved files: 0.
+- Declared exclusions: none
+- Corpus boundary note: operational enumeration filters define the corpus
+  boundary and are not post-enumeration omissions.
+- Unreadable or unsupported files: none.
+- Aggregation check: PASS - 500 raw hits reconcile to 329 unique path/line
+  ledger rows with every contributing query retained.
+- Drift check: PASS - reviewer repeated enumeration, manifest hashing, and all
+  16 queries against the worker execution-base snapshot.
 - Output traceability: every target decision cites terminal ledger rows.
 - Adversarial verification: generated, historical, private, test-only, type,
   and comment collisions cannot establish a production caller.
-- Corpus verdict: PARTIAL
+- Corpus verdict: COMPLETE_VERIFIED
 
-Reason: dispatch specifies the complete method, but worker enumeration and
-terminal reconciliation have not executed.
+Reason: independent reviewer recomputation matched 22,026 files, all 16 raw
+query counts, 500-to-329 reconciliation, zero unreadable/unresolved files,
+zero ambiguous references, and both terminal target decisions.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired T2 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | paired T2 completion review | `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | exhaustive roadmap | `Status: ACTIVE_T2_CLOSED_GAP_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | accepted T2 caller-verification JSON | 22,026 files; 500 raw; 329 terminal; two no-caller decisions | PASS |
+| Registry Markdown | accepted T2 audit | human reconciliation and reviewer repair | PASS |
+| External evidence digest | N/A with reason: private evidence is collision-only non-authority | no external claim absorbed | N/A with reason |
+| System loop interlock | N/A with reason: no runtime interlock mutation | read-only caller evidence only | N/A with reason |
+| Session continuity | active session | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| accepted T1 input hashes | exact match | both SHA-256 values match | PASS |
+| caller-search completeness | all 16 queries and zero unresolved | 500 raw, 329 terminal, unresolved 0 | PASS |
+| target decisions | exactly two terminal decisions | GC-009 and GC-010 both no-caller | PASS |
+| runtime receipt creation | none | zero runtime/live/provider receipt | PASS |
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_corpus_to_knowledge_map_reconciliation.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | `Status: DISPATCH_READY`; `Dependency Release Evidence`; `Source Verification Block`; `Negative Search And Collision Discipline`; `Reviewer Closure Conversion`; `COMPLETE_VERIFIED`; `Public Export Disposition` |
-| gateRunPurpose | confirm T2 source fidelity, search-corpus accounting, handoff shape, and zero-execution boundary after read-ahead |
-| claimBoundary | dispatch structure only; no caller result or architecture mutation claim |
+| literalTokensReviewed | `Status: CLOSED_PASS_BOUNDED`; `Dependency Release Evidence`; `Source Verification Block`; `Negative Search And Collision Discipline`; `Reviewer Closure Conversion`; `COMPLETE_VERIFIED`; `Machine Closure Package`; `Public Export Disposition` |
+| gateRunPurpose | confirm T2 source fidelity, search-corpus accounting, reviewer closure shape, and zero-execution boundary after read-ahead |
+| claimBoundary | bounded caller-existence closure only; no runtime or architecture mutation authority |
 
 ## Scaffold Provenance Block
 

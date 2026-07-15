@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T1_CLOSED_T2_DISPATCH_READY
+Status: ACTIVE_T2_CLOSED_GAP_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -134,7 +134,7 @@ is `MISSING_PROOF` unless a governed value decision parks it.
 |---|---|---|---|
 | T0 | exhaustive source-item and normalized-claim inventory | JSON inventory, inventory audit, no-commit worker return | `CLOSED_PASS_BOUNDED`: reviewer confirmed 99/99 source-item terminal accounting, dedupe traceability, and honest dispositions after one bounded proof-class repair |
 | T1 | reviewer reconciliation and value selection | accepted claim set, contradiction ledger, ranked missing-proof candidates | `CLOSED_PASS_BOUNDED`: six of six terminal; GC-009 and GC-010 selected only for future read-only T2 packet authoring |
-| T2 | repository-wide read-only caller verification | terminal match ledger and two caller decisions | `DISPATCH_READY` through paired T2 baseline/work order; no runtime execution |
+| T2 | repository-wide read-only caller verification | terminal match ledger and two caller decisions | `CLOSED_PASS_BOUNDED`: 22,026 files; 500 raw hits; 329 terminal rows; zero ambiguous or production-caller rows; both targets recommend proposal-only GAP entry |
 | T3 | operator-surface or provider proof batch | selected CLI/Web/provider receipts and recovery evidence | T2 reviewed; only cases requiring higher proof class proceed |
 | T4 | final reverse projection and bounded closure | coverage/catalog/GAP/learning updates and final claim boundary | every inventory claim is terminally dispositioned; no unresolved silent row |
 
@@ -210,11 +210,10 @@ freshness as repository evidence only. Any missing current invocation remains
 
 ## Next Allowed Move
 
-Execute only `SCLP-X-T2` under its exact no-commit three-path manifest. Perform
-repository-wide read-only caller verification for `MandatoryGateway`,
-`createMandatoryGateway`, and `AgentExecutionRuntime`; terminally classify
-every match and return for reviewer acceptance. Do not run runtime, tests, live
-cases, mutate owners/GAPs, or infer T3-T4 release from a caller result.
+Author only a fresh source-verified GC-018/work order deciding the bounded
+architecture GAP recording route for the paired GC-009 and GC-010 no-caller
+results accepted from `SCLP-X-T2`. Do not mutate an owner/GAP directly, run
+runtime/tests/live/provider cases, or release T3-T4 from caller evidence alone.
 
 ## Public Export Disposition
 
