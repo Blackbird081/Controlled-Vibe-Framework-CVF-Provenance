@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0b_closed_mao_roadmap_authoring_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author the governed MAO Operational Adoption And Agent Execution Assurance roadmap and its required source-verified packets, then complete that roadmap through fresh tranche authority; parked checkpoint=T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all unscoped external-root/runtime/public work.
+Startup acknowledged: current mode=`mao_oa_t0_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact two-output no-commit MAO-OA-T0 owner and execution-gap audit; parked checkpoint=MAO-OA-T1 and later MAO tranches, T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all unscoped external-root/runtime/public work.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t0b_closed_mao_roadmap_authoring_next`
+Current mode marker: `mao_oa_t0_dispatched_worker_next`
 
-Current mode: `sot3_app_t0b_closed_mao_roadmap_authoring_next`
+Current mode: `mao_oa_t0_dispatched_worker_next`
 
-`sot3_app_t0b_closed_mao_roadmap_authoring_next`
+`mao_oa_t0_dispatched_worker_next`
 
 Previous mode:
 
-`sot3_app_t0b_dispatched_worker_next`
+`sot3_app_t0b_closed_mao_roadmap_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -59,15 +59,16 @@ The operator fixed the following mandatory order:
 3. resume SOT3-APP or any other high-value-folder absorption only after that
    roadmap reaches governed closure.
 
-T0B is now independently accepted and closed at material commit `577237cba`.
-The sequence lock now releases MAO roadmap authoring only. It does not claim
-that the MAO adoption roadmap already exists or release any implementation
-outside a fresh source-verified tranche packet.
+T0B is independently accepted and closed at material commit `577237cba`.
+The MAO adoption roadmap and its T0 audit packet are now committed at
+`35a8c367b`. The sequence lock releases only the exact documentation-only T0
+worker; MAO-OA-T1, later MAO tranches, and all absorption remain held.
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-OA-T0 operational-adoption owner and execution-gap audit dispatch | `35a8c367b` | DISPATCH_READY after reviewer-fast 62/62, pre-dispatch 75/75, and pre-commit 83/83 PASS; exact two-output no-commit worker audits 18 owner families; no runtime/provider/live/public execution. |
 | SOT3-APP-T0B full-corpus semantic and provenance closure | `577237cba` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS; 336/336 terminal semantic rows, 13/13 terminal provenance rows, zero unresolved identities, independent re-audit ACCEPTED; MAO roadmap authoring next and all absorption parked until MAO closure. |
 | SOT3-APP-T0B full-corpus semantic and provenance dispatch | `e93d63883` | DISPATCH_READY after 75/75 pre-dispatch and 83/83 pre-commit PASS; exact two-output no-commit worker requires 336 full-body semantic rows and 13 terminal provenance rows with zero unresolved identities; T1 and later work held. |
 | SOT3-APP-T0A corpus freeze and semantic calibration closure | `5a49ee650` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS; 336 metadata rows frozen, 20 sample rows terminal, 316 semantic rows unresolved, 13 declaration occurrences recorded, 3 declared extension targets missing, and zero terminal declaration dispositions; T0B packet authoring only next. |
@@ -237,16 +238,18 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t0b_closed_mao_roadmap_authoring_next`
+Mode: `mao_oa_t0_dispatched_worker_next`
 
-SOT3-APP-T0B is closed at `577237cba`. Next author the governed MAO
-Operational Adoption And Agent Execution Assurance roadmap and its required
-source-verified governance packets, then complete that roadmap only through
-fresh tranche authority. Do not author or execute T1, later SOT3-APP work, or
-any other high-value-folder absorption before MAO roadmap closure. SCLP-X-T3
-and unscoped external-root/runtime/public work remain parked. Do not infer
-runtime, universal E2E, production, scale, certification, shipment, or
-user-value proof. Latest closed numbered LHW wave remains `LHW24`.
+Execute only
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_EXECUTION_GAP_AUDIT_2026-07-16.md`
+from clean committed dispatch HEAD `35a8c367b`. Create exactly the named owner
+and gap matrix plus worker return, leave both uncommitted, and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. MAO-OA-T1 and later MAO
+tranches, T1 and later SOT3-APP work, every other high-value-folder absorption,
+SCLP-X-T3, and unscoped external-root/runtime/public work remain parked. Do not
+infer runtime adoption, universal E2E, production, scale, certification,
+shipment, or user-value proof. Latest closed numbered LHW wave remains
+`LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

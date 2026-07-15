@@ -8,8 +8,8 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after bounded SOT3-APP-T0B closure and route only MAO
-Operational Adoption And Agent Execution Assurance roadmap authoring next.
+Carry compact continuity after MAO-OA-T0 dispatch and route only its exact
+two-output no-commit evidence worker next. MAO-OA-T1 and later MAO tranches,
 SCLP-X-T3, T1 and later SOT3-APP work, all other absorption, and unscoped
 SOT-Application execution, runtime, source, Catalog, GAP, or ADIF work remain held.
 
@@ -35,16 +35,17 @@ Material commit `e93d63883` owns the T0B roadmap release, GC-018, and work order
 Material commit `577237cba` owns bounded T0B acceptance, reviewer repairs,
 the 336-row semantic ledger, 13-row provenance ledger, completion review, and
 roadmap/work-order closure.
+Material commit `35a8c367b` owns the MAO Operational Adoption And Agent
+Execution Assurance roadmap, MAO-OA-T0 GC-018, and source-verified work order.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0b_closed_mao_roadmap_authoring_next`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author the
-governed MAO Operational Adoption And Agent Execution Assurance roadmap and
-required source-verified packets, then complete it through fresh tranche
-authority; parked checkpoint=T1 and later SOT3-APP tranches, all other
-high-value-folder absorption, SCLP-X-T3, and all unscoped external-root work,
-and all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/
+Startup acknowledged: current mode=`mao_oa_t0_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only
+the exact two-output no-commit MAO-OA-T0 owner and execution-gap audit; parked
+checkpoint=MAO-OA-T1 and later MAO tranches, T1 and later SOT3-APP tranches,
+all other high-value-folder absorption, SCLP-X-T3, all unscoped external-root
+work, and all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/
 business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF mutation,
 public export, production, scale, and user validation.
 
@@ -61,7 +62,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_app_t0b_closed_mao_roadmap_authoring_next`
+`mao_oa_t0_dispatched_worker_next`
 
 ## Active Boundary
 
@@ -95,6 +96,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - SOT3-APP-T0A bounded closure commit: `5a49ee650`.
 - SOT3-APP-T0B bounded closure commit: `577237cba`.
 - SOT3-APP-T0B dispatch commit: `e93d63883`.
+- MAO-OA-T0 operational-adoption audit dispatch commit: `35a8c367b`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
@@ -110,24 +112,25 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Latest Work / Changes
 
-SOT3-APP-T0B dispatch is committed at `e93d63883` after pre-dispatch 75/75 and
-pre-commit 83/83 PASS. It requires 336 full-body semantic rows and 13 terminal
-current-tranche provenance rows with zero unresolved identities in exactly two
-uncommitted outputs. Accepted T0A evidence remains the comparison anchor.
+MAO-OA-T0 dispatch is committed at `35a8c367b` after reviewer-fast 62/62,
+pre-dispatch 75/75, and pre-commit 83/83 PASS. It requires a source-backed
+terminal audit of 18 owner families in exactly two uncommitted review outputs.
+It does not authorize runtime, provider, live, build, test, or public work.
 
 ## Next Allowed Move
 
 Execute only
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md`
-from a clean committed dispatch HEAD. Create exactly the named ledger and
-worker return, leave both uncommitted, and return `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. Do not execute held predecessor packets or modify or run
-SOT-Application or its hidden clone.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_EXECUTION_GAP_AUDIT_2026-07-16.md`
+from clean committed dispatch HEAD `35a8c367b`. Create exactly the named owner
+and gap matrix plus worker return, leave both uncommitted, and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Do not execute held
+predecessor packets or modify or run SOT-Application or its hidden clone.
 
 ## Parked Checkpoint
 
-T1 and later SOT3-APP work remain parked until independent T0B reviewer
-acceptance and a fresh packet. UC-03 harness identity repair remains parked until reuse. T3 remains parked
+MAO-OA-T1 and later MAO tranches remain parked until independent T0 reviewer
+acceptance and fresh release evidence. T1 and later SOT3-APP work remain parked
+until MAO roadmap closure. UC-03 harness identity repair remains parked until reuse. T3 remains parked
 until a current non-test production caller or active package export is source-
 proven for GC-009 or GC-010. SOT-Application execution and mutation remain
 parked until a later committed packet passes pre-dispatch. All runtime, test,
@@ -138,7 +141,7 @@ parked.
 
 ## HEAD / Commit Boundary
 
-Current material HEAD: `e93d63883`
+Current material HEAD: `35a8c367b`
 
 R3R1 material closure HEAD: `0856e090d`
 
@@ -237,6 +240,60 @@ Reason: private continuity sync; no public-sync action.
 | Invocation ID | system-chain-exhaustive-proof-t4-dispatch-session-sync-2026-07-15 |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same session-sync manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## MAO-OA-T0 Dispatch Session Sync - 2026-07-16
+
+Material commit `35a8c367b` records the MAO adoption roadmap, fresh T0
+GC-018, and source-verified work order. Route only the exact two-output
+documentation audit with `WORKER_MUST_NOT_COMMIT`; MAO-OA-T1 and every later
+lane remain held.
+
+## Core Guard Self-Protection Authorization - MAO-OA-T0 Dispatch Session Sync
+
+Authorized guard-maintenance scope: synchronize material dispatch `35a8c367b`
+and route only its exact no-commit T0 worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/maoOaT0Dispatch20260716.json`
+
+Rollback boundary: revert only this session-sync batch; retain material
+dispatch `35a8c367b` and prior SOT3-APP-T0B closure `577237cba`.
+
+## Public Export Disposition - MAO-OA-T0 Dispatch Session Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.
+
+## Agent Operation Trace Block - MAO-OA-T0 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T0 dispatch continuity sync, 2026-07-16 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | seven protected paths listed above |
+| Allowed scope source | material dispatch `35a8c367b` and handoff contract next-move requirement |
+| Before status evidence | clean worktree at material dispatch HEAD `35a8c367b` |
+| After status evidence | continuity routes only the exact two-output no-commit MAO-OA-T0 worker |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sync only; no worker execution, T1 release, or source/runtime/public mutation |
+| Claim boundary | dispatch routing only; MAO operational adoption and value are not claimed |
+| Agent type | session-sync steward |
+| Invocation ID | mao-oa-t0-dispatch-session-sync-2026-07-16 |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
+| Actual changed set | same seven-path session-sync manifest |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 

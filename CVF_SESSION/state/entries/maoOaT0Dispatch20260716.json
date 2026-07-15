@@ -1,0 +1,28 @@
+{
+  "stateOrder": 1855,
+  "stateKey": "maoOaT0Dispatch20260716",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-16",
+    "materialCommit": "35a8c367b",
+    "dispatchBaseHead": "c137986c6",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_EXECUTION_GAP_AUDIT_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_EXECUTION_GAP_AUDIT_2026-07-16.md",
+    "ownerGapMatrixOutput": "docs/reviews/CVF_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_GAP_MATRIX_2026-07-16.md",
+    "workerReturnOutput": "docs/reviews/CVF_MAO_OA_T0_WORKER_RETURN_2026-07-16.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "requiredOwnerFamilies": 18,
+    "allowedOutputCount": 2,
+    "gateEvidence": "reviewer-fast 62/62 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute only the exact two-output no-commit MAO-OA-T0 evidence worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "heldNextTranche": "MAO-OA-T1 and all later MAO tranches remain held until independent T0 reviewer acceptance and fresh governed release evidence.",
+    "parkedLanes": [
+      "SOT3-APP-T1 and later SOT3-APP tranches",
+      "other high-value-folder absorption continuation",
+      "SCLP-X-T3"
+    ],
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Dispatch only; no worker execution, runtime adoption, provider/live behavior, durable orchestration, production, public-sync, or user-value claim."
+  }
+}
