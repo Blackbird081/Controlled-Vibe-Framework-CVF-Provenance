@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC04B_BLOCKED_RECOVERY_PACKET_NEXT
+Status: ACTIVE_UC04B_BUSINESS_PROOF_PACKET_NEXT
 
 docType: roadmap
 
@@ -218,13 +218,14 @@ public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-UC-04B-R2 is closed blocked after its one authorized Playwright command. The
-request-bound auth adapter repair is accepted through 12/12 focused tests and
-clean typecheck, but browser projection remains unproven. Trace review narrowed
-the blocker to mixed development-host/hydration behavior and rejected browser
-cookie-loss attribution. The next allowed move is one fresh
-`localhost`-normalized auth-projection recovery packet. Do not rerun T4/R1/R2
-or infer Web coverage, unified inventory, or provider use.
+UC-04B-R2R1 is closed `CLOSED_PASS_BOUNDED`. The retained proof hash matches
+R2, the request-bound repair retains 12/12 focused PASS plus clean typecheck,
+and one canonical `localhost` Playwright invocation passed both developer and
+anonymous projection cases. Exact counters are one invocation and zero
+business submissions, checker executions, retries, and provider calls. The
+next allowed move is author one fresh source-verified UC-04B business-proof
+packet only. Do not rerun T4/R1/R2/R2R1 or infer unified Web inventory,
+provider governance, public, production, scale, certification, or user value.
 
 ## Checker Source Read-Ahead Block
 

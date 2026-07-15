@@ -43,15 +43,15 @@
     },
     {
       "useCaseId": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
-      "status": "PROVEN_BOUNDED_CLI_WEB_BLOCKED_RECOVERY_REQUIRED",
+      "status": "PROVEN_BOUNDED_CLI_AND_WEB_AUTH_PROJECTION_BUSINESS_PENDING",
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
       "scope": "CLI current-run readout first, then the bounded Web Operations subset as a separate scenario",
       "selectionReason": "source inspection proves wiring shape but not current operator usability",
       "providerCallRequired": "ONLY_IF_THE_SELECTED_JOB_ASSERTS_AI_GOVERNANCE_BEHAVIOR",
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
-      "latestEvidence": "docs/reviews/evidence/system-chain-uc04a-r1-positive-cli-receipts-2026-07-14/pre-dispatch.json",
-      "latestResult": "CLI_POSITIVE_PASS_75_OF_75_PLUS_RETAINED_NEGATIVE_PASS",
-      "nextAction": "retain CLI proof; run one fresh localhost-normalized auth-projection recovery before any UC-04B business proof"
+      "latestEvidence": "docs/reviews/evidence/system-chain-uc04b-r2r1-localhost-regression-2026-07-15.json",
+      "latestResult": "CLI_PASS_RETAINED_PLUS_WEB_AUTH_PROJECTION_PASS_2_OF_2",
+      "nextAction": "retain CLI and bounded Web auth-projection evidence; author a fresh source-verified UC-04B business-proof packet before any submission"
     }
   ],
   "lanes": [
@@ -111,9 +111,9 @@
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
       "operationalProofStatus": "PARTIAL",
-      "reason": "the CLI surface is proven bounded; Web R2 accepted a unit-proven request-auth repair but its one browser invocation remained blocked by mixed dev-host/hydration evidence before any submission",
+      "reason": "the CLI surface is proven bounded and R2R1 proves developer/anonymous Web auth projection under one canonical local origin; the UC-04B business submission and visible job outcome remain unexecuted",
       "nextUseCase": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
-      "nextAction": "retain bounded CLI evidence and run one fresh localhost-normalized auth-projection recovery; do not rerun T4/R1/R2 or infer Web coverage or unified inventory"
+      "nextAction": "retain bounded CLI and auth-projection evidence; author a fresh source-verified UC-04B business-proof packet; do not infer unified inventory, provider governance, or broader Web coverage"
     }
   ]
 }

@@ -216,6 +216,38 @@ carried the session cookie; the mixed-host redirect occurred inside the API
 request context, and no client auth/jobs request followed page load. One fresh
 `localhost`-normalized recovery proof is required; R2 must not be rerun.
 
+UC-04B-R2R1 is closed `CLOSED_PASS_BOUNDED`. The retained proof spec remained
+byte-identical, the focused auth suite passed 12/12 with clean typecheck, and
+one canonical `http://localhost:3001` Playwright invocation passed both the
+developer and anonymous projection cases. Exact counters are one invocation
+and zero business submissions, checker executions, retries, and provider
+calls. The auth-projection GAP is closed for this bounded pair. UC-04B business
+submission and visible job outcome remain unexecuted and require a fresh
+source-verified packet.
+
+## UC-04B-R2R1 Epistemic Process Block
+
+### Expected Result / Prediction
+
+If the R2 blocker came from mixed canonical-host evidence rather than a
+remaining request-auth defect, the unchanged proof would pass both cases when
+all relative requests and navigation used one localhost origin.
+
+### Evidence Comparison
+
+The frozen proof hash matched R2 and one explicit localhost invocation passed
+both developer and anonymous projection cases without retained-owner changes.
+
+### Contradiction Or Gap Disposition
+
+The outcome resolves the R2 environment blocker and closes the bounded
+auth-projection GAP. It does not resolve the unexecuted business chain.
+
+### Claim Update
+
+Web auth projection is proven bounded for the selected pair; UC-04B business
+submission and visible job outcome remain unproven.
+
 Operations exposes a bounded five-job-type subset
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts`),
 of which exactly one job type (`docs_governance_check`) wires directly to

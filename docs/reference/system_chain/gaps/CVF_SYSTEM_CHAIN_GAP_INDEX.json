@@ -6,10 +6,9 @@
   "countsByStatus": {
     "VALUE_PARKED_WITH_REOPEN_CONDITIONS": 1,
     "PARTIAL_CHAIN_WITH_BOUNDARY": 1,
-    "CLOSED_WITH_EVIDENCE": 2,
+    "CLOSED_WITH_EVIDENCE": 3,
     "ACTIVE_OWNER_CREATED_WITH_BOUNDARY": 4,
-    "EVIDENCED_NOT_OPERATOR_VISIBLE": 1,
-    "OPEN_CONFIRMED_GAP": 1
+    "EVIDENCED_NOT_OPERATOR_VISIBLE": 1
   },
   "gaps": [
     {
@@ -453,8 +452,8 @@
       "targetPlaneId": "cvf.asc.plane.evidence_to_operator_surface.v1",
       "sourceOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts; /api/auth/session",
       "targetOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts; src/app/api/auth/me/route.ts; src/app/api/system/jobs/route.ts; Operations page",
-      "missingEdge": "The request-bound verifySessionCookie adapter is repaired and reviewer unit-proven, but real browser projection remains unproven: R2 mixed 127.0.0.1/localhost callback evidence and emitted no client auth/jobs fetch after the cookie-bearing browser navigation.",
-      "currentStatus": "OPEN_CONFIRMED_GAP",
+      "missingEdge": "CLOSED_WITH_EVIDENCE: the request-bound verifySessionCookie adapter is repaired, focused-test proven, and browser-proven for developer and anonymous projections under one canonical localhost origin. UC-04B business submission remains outside this gap and is still unproven.",
+      "currentStatus": "CLOSED_WITH_EVIDENCE",
       "proofClass": "EXECUTED_AND_EVIDENCED_EDGE",
       "citations": [
         {
@@ -471,18 +470,28 @@
           "path": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2_WEB_AUTH_PROJECTION_REPAIR_COMPLETION_2026-07-14.md",
           "lineOrSection": "Evidence Reconciliation",
           "evidenceRole": "reviewer-accepted adapter repair and corrected dev-host/hydration blocker"
+        },
+        {
+          "path": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2R1_LOCALHOST_NORMALIZED_RECOVERY_COMPLETION_2026-07-15.md",
+          "lineOrSection": "Evidence Reconciliation",
+          "evidenceRole": "reviewer-accepted canonical-origin browser projection closure"
+        },
+        {
+          "path": "docs/reviews/evidence/system-chain-uc04b-r2r1-localhost-regression-2026-07-15.json",
+          "lineOrSection": "cases and projections",
+          "evidenceRole": "one-invocation two-case PASS receipt"
         }
       ],
-      "impact": "Authenticated developer and reviewer roles cannot currently be proven through the real Web Operations path; UC-04B remains unproven and no checker submission is authorized until repair.",
+      "impact": "Resolved for the bounded developer and anonymous auth-projection pair. This closure does not authorize or prove UC-04B business submission, reviewer-role coverage, every host configuration, or unified checker visibility.",
       "closeCondition": {
         "conditionKind": "EXECUTED_PROOF_ACCEPTED",
-        "conditionText": "A source-verified repair aligns the application auth projection with the authenticated NextAuth session, focused real-runtime regression passes, and a fresh governed UC-04B proof is accepted."
+        "conditionText": "SATISFIED: the source-verified request-bound repair passed 12 focused tests and the fresh governed canonical-origin browser regression passed both developer and anonymous projection cases."
       },
       "reopenCondition": {
-        "conditionKind": "OPERATOR_DECISION_RECORDED",
-        "conditionText": "Already open; a fresh GC-018 authorizes the auth-boundary repair tranche."
+        "conditionKind": "FRESH_EVIDENCE_CONTRADICTION",
+        "conditionText": "Reopen only if a fresh governed browser proof reproduces a NextAuth-to-application projection mismatch under one canonical origin, or the auth ownership contract materially changes."
       },
-      "actionOwner": "NEXT_TRANCHE: localhost-normalized auth-projection recovery proof",
+      "actionOwner": "CLOSED: retain R2R1 evidence; route UC-04B business proof separately",
       "freshnessInputs": [
         "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts",
         "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
@@ -491,7 +500,7 @@
       ],
       "lastReviewed": {
         "date": "2026-07-15",
-        "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2_WEB_AUTH_PROJECTION_REPAIR_COMPLETION_2026-07-14.md"
+        "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2R1_LOCALHOST_NORMALIZED_RECOVERY_COMPLETION_2026-07-15.md"
       }
     }
   ]

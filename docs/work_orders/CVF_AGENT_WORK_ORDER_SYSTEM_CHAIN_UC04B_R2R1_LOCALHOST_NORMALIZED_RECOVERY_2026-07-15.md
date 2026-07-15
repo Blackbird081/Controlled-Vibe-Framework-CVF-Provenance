@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Work Order ID: SCLP-UC04B-R2R1
 
@@ -406,7 +406,7 @@ production surface is added.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | `Status: DISPATCH_READY`; `WORKER_MUST_NOT_COMMIT`; `Source Verification Block`; `Planned Worker Fulfillment Manifest`; `Agent Handoff Contract Control Block`; `Public Export Disposition` |
+| literalTokensReviewed | `Status: CLOSED_PASS_BOUNDED`; `WORKER_MUST_NOT_COMMIT`; `Source Verification Block`; `Planned Worker Fulfillment Manifest`; `Agent Handoff Contract Control Block`; `Public Export Disposition` |
 | gateRunPurpose | confirmation after complete source and evidence inventory |
 | claimBoundary | no-commit provider-free localhost recovery proof |
 
@@ -445,3 +445,32 @@ scale, certification, or user value.
 | Actual changed set | paired R2R1 baseline and work order |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired R2R1 baseline | `CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | R2R1 completion review | bounded two-case acceptance | PASS |
+| Worker return | R2R1 worker return | `COMPLETE_PENDING_REVIEW` reviewed | PASS |
+| Roadmap state | system-chain live-proof roadmap | business packet next | PASS |
+| Registry JSON | coverage ledger and generated GAP index | projection accepted; GAP closed | PASS |
+| Registry Markdown | system-chain and GAP front doors | bounded closure recorded | PASS |
+| External evidence digest | N/A with reason: repository/runtime evidence only | no external input | N/A with reason |
+| System loop interlock | ledger and receipt | 2/2 PASS; exact 1/0/0/0/0 | PASS |
+| Session continuity | active session | separate post-material sync | N/A with reason |
+| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+|---|---|---|---|
+| Playwright invocation | 1 | 1 | PASS |
+| positive projection | PASS | PASS | PASS |
+| negative projection | PASS | PASS | PASS |
+| observed host exclusion | no `127.0.0.1:3001` | localhost-only source/command inventory | PASS_BOUNDED |
+| business submissions | 0 | 0 | PASS |
+| checker executions | 0 | 0 | PASS |
+| retries | 0 | 0 | PASS |
+| provider calls | 0 | 0 | PASS |

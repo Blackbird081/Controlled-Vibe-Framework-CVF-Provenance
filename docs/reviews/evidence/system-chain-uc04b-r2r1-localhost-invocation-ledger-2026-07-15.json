@@ -1,0 +1,30 @@
+{
+  "packet": "SCLP-UC04B-R2R1",
+  "executionBaseHead": "054ed004c568017b5f9b33ceb3a98bfe3246090d",
+  "commandFingerprint": "$env:PLAYWRIGHT_BASE_URL='http://localhost:3001'; npx playwright test tests/e2e/system-chain-uc04b-auth-projection-regression.spec.ts --config playwright.config.ts --workers=1",
+  "canonicalOrigin": "http://localhost:3001",
+  "playwrightBaseUrlInherited": false,
+  "frozenSpecPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-auth-projection-regression.spec.ts",
+  "frozenSpecSha256": "2d4980dc57e4dd2cfc9d02cd04cad0c5493dd7b662b1754cd6424bf12afbac07",
+  "specHashMatchesR2": true,
+  "invocationCeiling": 1,
+  "invocationStarted": 1,
+  "ledgerCreatedAt": "2026-07-15T04:07:41Z",
+  "invocationStartedAt": "2026-07-15T04:08:10Z",
+  "invocationCompletedAt": "2026-07-15T04:08:50Z",
+  "result": "PASS",
+  "cases": {
+    "positive_developer_auth_projection": "PASS",
+    "negative_anonymous_auth_projection": "PASS"
+  },
+  "observedHosts": [
+    "localhost:3001"
+  ],
+  "observedHostsNote": "No trace.zip was retained for this run because playwright.config.ts sets trace: 'retain-on-failure' and both cases passed; no disposable Playwright output (trace, screenshot, video) exists under test-results/ beyond the tracked .last-run.json. Host confirmation is via the explicit PLAYWRIGHT_BASE_URL=http://localhost:3001 override (which governs every relative page.request/page.goto call in the frozen spec) plus both assertions passing, which requires the Operations page to have received the session cookie and completed its client-side /api/auth/me fetch under that single origin.",
+  "counters": {
+    "businessSubmissions": 0,
+    "checkerExecutions": 0,
+    "retries": 0,
+    "providerCalls": 0
+  }
+}

@@ -56,6 +56,8 @@ and hydration errors. State only the failure stage the trace proves.
 - `docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_AND_LEARNING_LOOP_STANDARD.md`
 - `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2_WEB_AUTH_PROJECTION_REPAIR_WORKER_RETURN_2026-07-14.md`
 - `docs/reviews/evidence/system-chain-uc04b-r2-auth-projection-diagnostic-2026-07-14.json`
+- `docs/reviews/evidence/system-chain-uc04b-r2r1-localhost-regression-2026-07-15.json`
+- `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2R1_LOCALHOST_NORMALIZED_RECOVERY_COMPLETION_2026-07-15.md`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts`
 
 ## Remediation
@@ -67,6 +69,14 @@ and hydration errors. State only the failure stage the trace proves.
 5. Verify cookies on the actual browser request and verify whether expected
    client requests were emitted before naming a cookie or auth-owner defect.
 6. Do not retry under the same packet; use a fresh recovery authorization.
+
+## Confirming Recovery Evidence
+
+SCLP-UC04B-R2R1 applied one explicit `http://localhost:3001` origin without
+changing the frozen proof spec. One invocation passed both developer and
+anonymous projection cases with zero business, checker, retry, and provider
+calls. This confirms the remediation guidance while preserving the rule that
+a passing auth projection is not a UC-04B business-operation claim.
 
 ## Epistemic Process Block
 

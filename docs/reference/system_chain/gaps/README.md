@@ -62,8 +62,8 @@ this table when entries change.
 | `PARTIAL_CHAIN_WITH_BOUNDARY` | 1 |
 | `EVIDENCED_NOT_OPERATOR_VISIBLE` | 1 |
 | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` | 4 |
-| `OPEN_CONFIRMED_GAP` | 1 |
-| `CLOSED_WITH_EVIDENCE` | 2 |
+| `OPEN_CONFIRMED_GAP` | 0 |
+| `CLOSED_WITH_EVIDENCE` | 3 |
 
 ### Open / Parked / Intentionally Separated Gaps
 
@@ -72,12 +72,12 @@ this table when entries change.
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
-| `cvf.asc.gap.web_nextauth_application_projection_split.v1` | evidence_to_operator_surface | NextAuth session endpoint -> application `verifySessionCookie`/Operations projection | `OPEN_CONFIRMED_GAP` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_nextauth_application_projection_split.json`; UC-04B-R2 completion | Retain the unit-proven adapter repair and run one localhost-normalized browser projection recovery |
 
 ### Recently Closed Gaps
 
 | gapId | Plane | Owner (source -> target) | Status | Proof class | Entry / Evidence | Boundary caveat |
 |---|---|---|---|---|---|---|
+| `cvf.asc.gap.web_nextauth_application_projection_split.v1` | evidence_to_operator_surface | NextAuth session endpoint -> application `verifySessionCookie`/Operations projection | `CLOSED_WITH_EVIDENCE` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_nextauth_application_projection_split.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2R1_LOCALHOST_NORMALIZED_RECOVERY_COMPLETION_2026-07-15.md` | Closed for the bounded developer/anonymous canonical-origin projection pair only; UC-04B business submission, reviewer role, all-host, unified inventory, and production claims remain separate |
 | `cvf.asc.gap.phase_governance_generated_markdown_conformance.v1` | enforcement_to_evidence -> evidence_to_operator_surface | three current renderer owners -> phase-governance Markdown outputs | `CLOSED_WITH_EVIDENCE` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/phase_governance_generated_markdown_conformance.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC02_RENDERER_CONFORMANCE_REPAIR_COMPLETION_2026-07-14.md` | Closed after all 20 outputs were regenerated and all 12 governed Markdown outputs passed the applicable checker surface; zero UC-02/scenario/provider calls |
 | `cvf.asc.gap.packet_posture_bootstrap_archive_path_drift.v1` | runtime_to_enforcement | `scripts/run_cvf_packet_posture_state_bootstrap.py` -> phase-governance evidence consumers | `CLOSED_WITH_EVIDENCE` (was `IMPLEMENTED_NOT_INVOCATION_PROVEN`) | `LOCAL_RUNTIME_VERIFIED_EDGE` | `entries/packet_posture_bootstrap_archive_path_drift.json`; `docs/reviews/evidence/system-chain-uc02-current-rerun-2026-07-14.json` | Closed by one bootstrap PASS and CF-076 through CF-084 PASS 9/9; downstream Markdown conformance is tracked separately |
 | `cvf.asc.gap.sot3_independent_refinery_owner_unresolved.v1` | doctrine_to_contract -> contract_to_runtime | `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` -> `EXTENSIONS/CVF_REFINERY/` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_independent_refinery_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | No package activation, adapter, provider/live, or public-sync claim; private-provenance implementation only |
@@ -105,6 +105,12 @@ direct NextAuth session endpoint returned the authenticated developer role,
 while the real Operations page remained anonymous. The one authorized command
 stopped before submission, so this entry records an open connection gap rather
 than a successful Web proof or a proven internal implementation cause.
+
+SCLP-UC04B-R2R1 closed that projection gap on 2026-07-15. The retained proof
+spec remained byte-identical, the request-bound repair retained 12/12 focused
+PASS plus clean typecheck, and one canonical `localhost` Playwright invocation
+passed both developer and anonymous projection cases. This does not promote
+the separately unexecuted UC-04B business chain.
 
 ## Search Examples
 
