@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -12,9 +12,9 @@ Work Order ID: `SCLP-X-T1`
 
 dispatchBaseHead: `a292d704d`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `c1aaa4112`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `c1aaa4112`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -93,12 +93,18 @@ Allowed scope:
   contradiction record;
 - recommend at most a future T2 candidate; do not authorize it;
 - repair only the three new output paths when gates fail inside scope.
+- reviewer/closer may accept the three outputs, update this work order,
+  `docs/baselines/CVF_GC018_SYSTEM_CHAIN_EXHAUSTIVE_E2E_PROOF_T1_VALUE_SELECTION_2026-07-15.md`,
+  and
+  `docs/roadmaps/CVF_SYSTEM_CHAIN_EXHAUSTIVE_E2E_PROOF_ROADMAP_2026-07-15.md`,
+  and create
+  `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T1_VALUE_SELECTION_COMPLETION_2026-07-15.md`.
 
 Forbidden scope:
 
 - modification of T0 inventory, coverage, map, control matrix, catalog, GAP,
-  ADIF, roadmap, baseline, work order, runtime, tests, checkers, hooks, session,
-  handoff, legacy, or public files;
+  ADIF, runtime, tests, checkers, hooks, session, handoff, legacy, or public
+  files; roadmap/baseline/work-order edits are limited to reviewer closure;
 - live/provider/Playwright/browser/business CLI/runtime/test/CI invocation;
 - API-key loading, external service access, implementation, source edits,
   owner/GAP creation or promotion, proof-status promotion, T2-T4 execution;
@@ -108,8 +114,9 @@ Risk ceiling: `R1` repository-evidence reconciliation only.
 
 ## Write Ownership
 
-Worker owns exactly the three output paths named in Allowed scope. All other
-paths are read-only.
+Worker owns exactly the three output paths named in Allowed scope. Reviewer/
+closer owns the paired baseline, work order, roadmap T1 row, accepted worker
+outputs, and conventional completion review during closure conversion.
 
 ## Dependency Release Evidence
 
@@ -279,18 +286,18 @@ Forbidden output: any other changed path.
 
 ## Acceptance Criteria
 
-- [ ] Clean execution base captured.
-- [ ] Accepted T0 hashes and 99-claim distribution verified.
-- [ ] All six decision records have terminal rows.
-- [ ] All three missing claims have unique ranks and allowed decisions.
-- [ ] Related GC-009 claims are grouped without provenance loss.
-- [ ] Both owner/GAP candidates have proposal-only decisions.
-- [ ] `CTR-01` is retained or reopened with evidence.
-- [ ] Every selected/parked row has actionable next or reopen fields.
-- [ ] Corpus and knowledge-map reconciliations have zero silent/unmapped row.
-- [ ] Exact three-path manifest matches.
-- [ ] Zero live/provider/browser/business CLI/runtime/test/CI invocation and zero owner/GAP mutation.
-- [ ] Required gates pass and work remains uncommitted.
+- [x] Clean execution base captured.
+- [x] Accepted T0 hashes and 99-claim distribution verified.
+- [x] All six decision records have terminal rows.
+- [x] All three missing claims have unique ranks and allowed decisions.
+- [x] Related GC-009 claims are grouped without provenance loss.
+- [x] Both owner/GAP candidates have proposal-only decisions.
+- [x] `CTR-01` is retained or reopened with evidence.
+- [x] Every selected/parked row has actionable next or reopen fields.
+- [x] Corpus and knowledge-map reconciliations have zero silent/unmapped row.
+- [x] Exact three-path manifest matches.
+- [x] Zero live/provider/browser/business CLI/runtime/test/CI invocation and zero owner/GAP mutation.
+- [x] Required worker and reviewer gates pass; reviewer/closer owns commit.
 
 ## Review Gate
 
@@ -301,12 +308,12 @@ smallest proof step, prerequisite, and bounded stop condition.
 
 ## Closure Checklist
 
-- [ ] Worker base and exact manifest reconciled.
-- [ ] Input hashes and six-record totals independently recomputed.
-- [ ] Rank and decision enums are unique/terminal.
-- [ ] Owner/GAP decisions remain proposal-only.
-- [ ] No T2 or live case is silently authorized.
-- [ ] Reviewer decision and bounded claim recorded.
+- [x] Worker base and exact manifest reconciled.
+- [x] Input hashes and six-record totals independently recomputed.
+- [x] Rank and decision enums are unique/terminal.
+- [x] Owner/GAP decisions remain proposal-only.
+- [x] No T2 or live case is silently authorized.
+- [x] Reviewer decision and bounded claim recorded.
 
 ## Stop Conditions
 
@@ -523,6 +530,27 @@ Do not use a committed-only empty range as changed-artifact evidence.
 | Actual changed set | exhaustive roadmap; paired T1 baseline; paired T1 work order |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | paired T1 completion review | `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | exhaustive roadmap | `Status: ACTIVE_T1_CLOSED_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | accepted T1 value-selection JSON | six terminal decisions; 3/2/1 reconciliation | PASS |
+| Registry Markdown | accepted T1 audit | human ranking and decision rationale | PASS |
+| External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason |
+| System loop interlock | N/A with reason: no interlock mutation | no new downstream runtime route | N/A with reason |
+| Session continuity | active session | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| accepted T0 evidence reuse | exact hashes and six frozen decision records | both hashes match; 3/2/1 corpus present | PASS |
+| recommendation non-promotion | no candidate becomes execution authority | two T2 candidates remain recommendation-only | PASS |
+| new receipt creation | none in repository-evidence T1 | zero live/runtime/provider receipt created | PASS |
 
 ## Public Export Disposition
 

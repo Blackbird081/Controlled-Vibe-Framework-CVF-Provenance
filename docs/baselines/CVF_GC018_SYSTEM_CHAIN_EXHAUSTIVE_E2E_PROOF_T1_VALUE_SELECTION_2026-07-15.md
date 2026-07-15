@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -117,10 +117,31 @@ decision accounting, no-commit role separation, and explicit T2 hold controls.
 
 ## Verification / Evidence
 
-Dispatch evidence is T0 material closure `e6034224c`, current input hashes,
-the verified 3/2/1 decision corpus, current definition paths, and bounded
-negative caller searches. T1 decisions remain pending worker execution and
-independent reviewer acceptance.
+Closure evidence is T0 material closure `e6034224c`, matched input hashes, the
+accepted 3/2/1 decision corpus, current definition paths, bounded negative
+caller searches, and the paired T1 completion review. T1 execution is complete
+and only fresh T2 packet authoring is released.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired T1 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | paired T1 completion review | `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | exhaustive roadmap | `Status: ACTIVE_T1_CLOSED_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | accepted T1 value-selection JSON | six terminal decisions; 3/2/1 reconciliation | PASS |
+| Registry Markdown | accepted T1 audit | human ranking and decision rationale | PASS |
+| External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason |
+| System loop interlock | N/A with reason: no interlock mutation | no new downstream runtime route | N/A with reason |
+| Session continuity | active session | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| accepted T0 evidence reuse | exact hashes and six frozen decision records | both hashes match; 3/2/1 corpus present | PASS |
+| recommendation non-promotion | no candidate becomes execution authority | two T2 candidates remain recommendation-only | PASS |
+| new receipt creation | none in repository-evidence T1 | zero live/runtime/provider receipt created | PASS |
 
 ## Public Export Disposition
 

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T0_CLOSED_T1_DISPATCH_READY
+Status: ACTIVE_T1_CLOSED_T2_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -13,8 +13,8 @@ Roadmap ID: `SCLP-X`
 ## Authorization / Decision
 
 Operator authorization: proceed with the proposed inventory-first method. T0
-is authorized for documentation and JSON inventory only. T1 through T4 remain
-dependency-held and require fresh governed packets.
+and T1 are closed bounded. T2 through T4 remain dependency-held and require
+fresh governed packets.
 
 ## Purpose
 
@@ -81,7 +81,7 @@ still lacking a reviewable answer to the broader question.
 | source-verification plan | exact owner files, arrays/rows, proof ledger, and live-proof standard |
 | claim boundary | exhaustive source-claim inventory, not universal E2E proof |
 | verification | corpus reconciliation, hashes, claim provenance, reviewer recomputation |
-| dispatch readiness | T0 is closed bounded; only T1 is dispatch-ready through its paired packet |
+| dispatch readiness | T0 and T1 are closed bounded; T2 packet authoring is next, but T2 execution is not authorized |
 
 ## Inventory Model
 
@@ -133,7 +133,7 @@ is `MISSING_PROOF` unless a governed value decision parks it.
 | Tranche | Objective | Required output | Release condition |
 |---|---|---|---|
 | T0 | exhaustive source-item and normalized-claim inventory | JSON inventory, inventory audit, no-commit worker return | `CLOSED_PASS_BOUNDED`: reviewer confirmed 99/99 source-item terminal accounting, dedupe traceability, and honest dispositions after one bounded proof-class repair |
-| T1 | reviewer reconciliation and value selection | accepted claim set, contradiction ledger, ranked missing-proof candidates | `DISPATCH_READY` through paired T1 baseline/work order; no live execution |
+| T1 | reviewer reconciliation and value selection | accepted claim set, contradiction ledger, ranked missing-proof candidates | `CLOSED_PASS_BOUNDED`: six of six terminal; GC-009 and GC-010 selected only for future read-only T2 packet authoring |
 | T2 | lowest-cost deterministic runtime proof batch | selected local/CI/runtime receipts and diagnostics | T1 selects decision-changing cases and fresh GC-018/work orders |
 | T3 | operator-surface or provider proof batch | selected CLI/Web/provider receipts and recovery evidence | T2 reviewed; only cases requiring higher proof class proceed |
 | T4 | final reverse projection and bounded closure | coverage/catalog/GAP/learning updates and final claim boundary | every inventory claim is terminally dispositioned; no unresolved silent row |
@@ -210,10 +210,11 @@ freshness as repository evidence only. Any missing current invocation remains
 
 ## Next Allowed Move
 
-Execute only `SCLP-X-T1` under its exact no-commit three-path manifest. Reconcile
-the six-record decision corpus, rank the three missing-proof claims, and return
-for reviewer acceptance. Do not run live cases, mutate owners/GAPs, or infer
-T2-T4 release from T1 recommendations.
+Author only a fresh source-verified SCLP-X-T2 GC-018 and work order for
+repository-wide, read-only caller verification of `MandatoryGateway`,
+`createMandatoryGateway`, and `AgentExecutionRuntime`. Do not execute T2, run
+live cases, mutate owners/GAPs, or infer T3-T4 release from the accepted T1
+recommendation.
 
 ## Public Export Disposition
 
