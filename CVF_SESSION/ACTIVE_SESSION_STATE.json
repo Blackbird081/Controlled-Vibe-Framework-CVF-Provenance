@@ -84,8 +84,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next",
-  "previousMode": "system_chain_exhaustive_proof_t2g1_dispatched_worker_next",
+  "currentMode": "system_chain_exhaustive_proof_t4_dispatched_worker_next",
+  "previousMode": "system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12258,5 +12258,22 @@
     "nextAllowedMove": "author only a fresh source-verified T4 final reverse-projection and bounded roadmap-closure GC-018/work order",
     "claimBoundary": "One paired GC-009/GC-010 architecture GAP is recorded and indexed with bounded closure evidence. No invocation, runtime, test, live, provider, public, production, scale, certification, shipment, or user-value claim."
   },
-  "nextAllowedMove": "SCLP-X-T2G1 is CLOSED_PASS_BOUNDED at material commit 4858129d5. T3 is VALUE_PARKED_WITH_REOPEN_CONDITION until a current non-test production caller or active package export is source-proven for GC-009 or GC-010. Author only a fresh source-verified T4 final reverse-projection and bounded roadmap-closure GC-018/work order; do not execute T4, runtime, tests, build, typecheck, CI, live, provider, browser, business CLI, or mutate runtime/source/catalog/ADIF. LHW24 remains latest closed numbered LHW wave."
+  "systemChainExhaustiveProofT4Dispatch20260715": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "242afa1b5",
+    "workOrderId": "SCLP-X-T4",
+    "dispatchBaseHead": "285daeca2",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedFinalProjectionClaimCount": 99,
+    "workerOutputCount": 5,
+    "runtimeInvocationCeiling": 0,
+    "testInvocationCeiling": 0,
+    "liveInvocationCeiling": 0,
+    "providerCallCeiling": 0,
+    "catalogGapAdifMutationCeiling": 0,
+    "t3Disposition": "VALUE_PARKED_WITH_REOPEN_CONDITION",
+    "nextAllowedMove": "execute exact five-path no-commit T4 final reverse-projection worker only",
+    "claimBoundary": "Dispatch authority for one derived 99-claim final projection, audit, roadmap/front-door alignment, and worker return only. No runtime, test, live, provider, Catalog/GAP/ADIF mutation, public, production, scale, certification, shipment, or user-value claim."
+  },
+  "nextAllowedMove": "SCLP-X-T4 is DISPATCH_READY at material commit 242afa1b5. Execute only the exact five-path no-commit worker: create the derived 99-claim final projection JSON, T4 audit, roadmap alignment, system-chain front-door alignment, and worker return. Preserve T3 as VALUE_PARKED_WITH_REOPEN_CONDITION. Do not run runtime, tests, build, typecheck, CI, live, provider, browser, Playwright, or business CLI, and do not mutate historical T0-T2 ledgers, runtime/source, Catalog/GAP/ADIF, session/handoff, or public surfaces. LHW24 remains latest closed numbered LHW wave."
 }

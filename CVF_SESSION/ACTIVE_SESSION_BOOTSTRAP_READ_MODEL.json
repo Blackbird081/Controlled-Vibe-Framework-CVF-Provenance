@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next",
+  "currentMode": "system_chain_exhaustive_proof_t4_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
-  "nextAllowedMove": "SCLP-X-T2G1 is CLOSED_PASS_BOUNDED at material commit 4858129d5. T3 is VALUE_PARKED_WITH_REOPEN_CONDITION until a current non-test production caller or active package export is source-proven for GC-009 or GC-010. Author only a fresh source-verified T4 final reverse-projection and bounded roadmap-closure GC-018/work order; do not execute T4, runtime, tests, build, typecheck, CI, live, provider, browser, business CLI, or mutate runtime/source/catalog/ADIF. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SCLP-X-T4 is DISPATCH_READY at material commit 242afa1b5. Execute only the exact five-path no-commit worker: create the derived 99-claim final projection JSON, T4 audit, roadmap alignment, system-chain front-door alignment, and worker return. Preserve T3 as VALUE_PARKED_WITH_REOPEN_CONDITION. Do not run runtime, tests, build, typecheck, CI, live, provider, browser, Playwright, or business CLI, and do not mutate historical T0-T2 ledgers, runtime/source, Catalog/GAP/ADIF, session/handoff, or public surfaces. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

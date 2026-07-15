@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1836,
+  "stateKey": "systemChainExhaustiveProofT4Dispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "242afa1b5",
+    "workOrderId": "SCLP-X-T4",
+    "dispatchBaseHead": "285daeca2",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedFinalProjectionClaimCount": 99,
+    "workerOutputCount": 5,
+    "runtimeInvocationCeiling": 0,
+    "testInvocationCeiling": 0,
+    "liveInvocationCeiling": 0,
+    "providerCallCeiling": 0,
+    "catalogGapAdifMutationCeiling": 0,
+    "t3Disposition": "VALUE_PARKED_WITH_REOPEN_CONDITION",
+    "nextAllowedMove": "execute exact five-path no-commit T4 final reverse-projection worker only",
+    "claimBoundary": "Dispatch authority for one derived 99-claim final projection, audit, roadmap/front-door alignment, and worker return only. No runtime, test, live, provider, Catalog/GAP/ADIF mutation, public, production, scale, certification, shipment, or user-value claim."
+  }
+}

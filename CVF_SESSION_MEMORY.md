@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author only a fresh source-verified T4 final reverse-projection and bounded roadmap-closure packet; parked checkpoint=T3 until a current non-test production caller or active package export is source-proven, plus all runtime/test/build/typecheck/CI/live/provider/browser/business-CLI and runtime/source/catalog/ADIF mutation.
+Startup acknowledged: current mode=`system_chain_exhaustive_proof_t4_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact five-path no-commit SCLP-X-T4 final reverse-projection worker; parked checkpoint=T3 until its caller/export condition, plus all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/business-CLI and historical-ledger/runtime/source/Catalog/GAP/ADIF/session/public mutation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next`
+Current mode marker: `system_chain_exhaustive_proof_t4_dispatched_worker_next`
 
-Current mode: `system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next`
+Current mode: `system_chain_exhaustive_proof_t4_dispatched_worker_next`
 
-`system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next`
+`system_chain_exhaustive_proof_t4_dispatched_worker_next`
 
 Previous mode:
 
-`system_chain_exhaustive_proof_t2g1_dispatched_worker_next`
+`system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain exhaustive proof T4 final reverse-projection dispatch | `242afa1b5` | DISPATCH_READY; exact 99-claim derived projection, audit, roadmap/front-door alignment, and five-path no-commit return; T3 preserved parked; zero runtime/test/live/provider/Catalog/GAP/ADIF mutation. |
 | System-chain exhaustive proof T2G1 paired architecture-GAP recording closure | `4858129d5` | CLOSED_PASS_BOUNDED; one paired GC-009/GC-010 GAP, 12/12 unique index IDs, zero schema or README coverage errors, zero reviewer repairs, and zero runtime/test/live/provider/source/catalog/ADIF mutation; T3 value-parked and T4 packet authoring next. |
 | System-chain exhaustive proof T2G1 paired architecture-GAP recording dispatch | `6634796da` | DISPATCH_READY; one paired compact GAP entry, regenerated index, aligned README, exact four-path no-commit worker return; zero runtime/test/build/typecheck/CI/live/provider/source/catalog/ADIF mutation. |
 | System-chain exhaustive proof T2 caller-verification closure | `498413cc9` | CLOSED_PASS_BOUNDED; 22,026 files, 500 raw matches, 329 unique ledger rows, zero ambiguous references, and zero non-test production callers for both targets; two reviewer classification repairs; zero runtime/test/build/typecheck/CI/live/provider/owner/GAP mutation. |
@@ -208,14 +209,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_exhaustive_proof_t2g1_closed_t4_packet_authoring_next`
+Mode: `system_chain_exhaustive_proof_t4_dispatched_worker_next`
 
-SCLP-X-T2G1 is `CLOSED_PASS_BOUNDED` at `4858129d5`. T3 is value-parked until
-a current non-test production caller or active package export is source-proven
-for GC-009 or GC-010. Author only a fresh source-verified T4 final reverse-
-projection and bounded roadmap-closure GC-018/work order. Do not execute T4,
-runtime/tests/build/typecheck/CI/live/provider/browser/business-CLI action, or
-mutate runtime/source/catalog/ADIF.
+SCLP-X-T4 is dispatch-ready at `242afa1b5`. Execute only its exact five-path
+no-commit worker: derived 99-claim final projection JSON, T4 audit, roadmap
+alignment, system-chain front-door alignment, and worker return. Preserve T3
+as value-parked. Do not run runtime/tests/build/typecheck/CI/live/provider/
+browser/Playwright/business-CLI action or mutate historical T0-T2 ledgers,
+runtime/source, Catalog/GAP/ADIF, session/handoff, or public surfaces.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
