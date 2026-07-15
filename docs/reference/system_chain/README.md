@@ -267,6 +267,14 @@ developer/anonymous projection and developer business evidence remain retained.
 A source-verified R3R2 packet must prove deterministic reviewer client-role
 projection before another browser invocation; timeout-only tuning is excluded.
 
+UC-04B-R3R2 is closed `CLOSED_PASS_BOUNDED`. A server wrapper now projects the
+ambient session role and user into the Operations client before hydration, and
+the client retains its `/api/auth/me` refresh. The focused five-file regression
+passes 34/34 and TypeScript typecheck passes. This is local source/test proof,
+not reviewer browser-denial proof: no browser, Web submission, checker job,
+retry, or provider call occurred. One R3R3 negative-only canonical-origin proof
+is the next allowed packet; the positive developer path must not be repeated.
+
 Operations exposes a bounded five-job-type subset
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts`),
 of which exactly one job type (`docs_governance_check`) wires directly to

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC04B_R3R2_REVIEWER_AUTH_PROJECTION_PACKET_NEXT
+Status: ACTIVE_UC04B_R3R3_REVIEWER_NEGATIVE_PROOF_PACKET_NEXT
 
 docType: roadmap
 
@@ -167,7 +167,9 @@ The negative evidence was retained. UC-04A-R1 then passed the committed 39-test
 suite and one direct positive CLI call: 75/75 configured checks passed,
 aggregate output was COMPLIANT, and the structured receipt retained 75 named
 PASS results. The combined positive and retained negative evidence closes the
-bounded CLI surface. UC-04B remains undispatched and unexecuted.
+bounded CLI surface. Subsequent UC-04B work now retains the developer business
+PASS, locator repair, and accepted R3R2 local reviewer-projection repair; the
+fresh reviewer negative browser proof remains pending under R3R3.
 
 ## Stop Conditions
 
@@ -218,18 +220,17 @@ public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-UC-04B-R3R1 is closed `CLOSED_BLOCKED_BOUNDED`. The exact locator repair
-eliminated the prior five-match ambiguity, but the canonical-origin reviewer
-case remained `anonymous_local`, emitted no `/api/auth/me` request, and stopped
-before POST. Exact counters are 1/0/0/0/0. The prior developer/anonymous
-projection evidence remains retained, while the auth-projection GAP is reopened
-for reviewer scope under its recorded fresh-contradiction condition. The next
-allowed move is author one source-verified R3R2 auth-projection/hydration repair
-packet with deterministic local regression. Do not authorize another browser
-invocation merely by increasing timeout; first prove that the client request
-emits and the reviewer role reaches the Operations owner. Do not repeat the
-positive path or infer unified Web inventory, provider governance, public,
-production, scale, certification, or user value.
+UC-04B-R3R2 is closed `CLOSED_PASS_BOUNDED`. The Operations entry now derives
+the initial role and user from the ambient server session, while the extracted
+client retains its `/api/auth/me` refresh. Five focused files pass 34/34 and
+TypeScript typecheck passes; reviewer initial projection and request emission
+are deterministically covered. No browser, Web submission, checker job, retry,
+or provider call occurred. The projection GAP remains open only for fresh
+browser acceptance. The next allowed move is author one R3R3 negative-only
+canonical-origin proof packet requiring reviewer projection, one policy POST,
+denied outcome, blocked audit evidence, zero retry, and zero provider call. Do
+not repeat the positive path or infer unified Web inventory, provider
+governance, public, production, scale, certification, or user value.
 
 ## Checker Source Read-Ahead Block
 

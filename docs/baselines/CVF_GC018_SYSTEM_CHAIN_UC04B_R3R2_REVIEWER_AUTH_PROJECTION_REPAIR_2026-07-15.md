@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: baseline
 
@@ -164,3 +164,19 @@ Reason: private provenance repair dispatch; no public-sync authority.
 This baseline authorizes a bounded local projection repair. It does not prove
 browser hydration, reviewer denial, full UC-04B, unified inventory, provider
 governance, public or production readiness, scale, certification, or user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | SCLP-UC04B-R3R2 | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R2_REVIEWER_AUTH_PROJECTION_REPAIR_COMPLETION_2026-07-15.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | declared R3R2 return | `COMPLETE_PENDING_REVIEW` accepted | PASS |
+| Deterministic regression | five focused files | 34/34 PASS and typecheck PASS | PASS |
+| Registry JSON | coverage and generated GAP index | local repair accepted; browser proof pending | PASS |
+| Registry Markdown | system-chain front door | R3R3 negative proof next | PASS |
+| System loop interlock | local request-emission regression | browser invocation remains zero | PASS |
+| Roadmap state | system-chain roadmap | R3R3 negative proof packet next | PASS |
+| External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason |
+| Session continuity | active session | separate post-material sync | N/A with reason |
+| Public export | this baseline | `DEFERRED_PRIVATE_ONLY` | PASS |

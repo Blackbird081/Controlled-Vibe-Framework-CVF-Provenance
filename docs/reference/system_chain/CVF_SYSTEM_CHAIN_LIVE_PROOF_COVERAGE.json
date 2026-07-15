@@ -51,7 +51,7 @@
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
       "latestEvidence": "docs/reviews/evidence/system-chain-uc04b-r3-business-proof-2026-07-15.json",
       "latestResult": "WEB_DEVELOPER_BUSINESS_PASS_REVIEWER_PRE_POST_LOCATOR_BLOCKED",
-      "nextAction": "retain CLI and developer business PASS evidence plus the scoped locator hardening; author one source-verified R3R2 reviewer auth-projection repair with deterministic local request-emission regression before any browser retry"
+      "nextAction": "retain CLI and developer business PASS evidence plus the accepted R3R2 local projection repair; author one R3R3 negative-only browser proof packet with one submission, zero retry, and zero provider call"
     }
   ],
   "lanes": [
@@ -111,9 +111,9 @@
       "requiredProofClass": "CURRENT_RUNTIME_INVOCATION",
       "observedProofClass": "CURRENT_RUNTIME_INVOCATION",
       "operationalProofStatus": "PARTIAL",
-      "reason": "the CLI surface and developer Web business path are proven bounded; R3R1 closes the locator ambiguity, but fresh reviewer evidence reopens auth projection because the direct session reports reviewer while Operations remains anonymous_local and emits no client auth request",
+      "reason": "the CLI surface and developer Web business path are proven bounded; R3R2 deterministically repairs reviewer bootstrap and client auth-request emission, while fresh reviewer browser denial remains pending",
       "nextUseCase": "UC-04-EVIDENCE-TO-OPERATOR-SURFACE",
-      "nextAction": "retain bounded CLI, developer business, prior developer/anonymous projection, and locator evidence; source-verify and repair reviewer client auth projection under R3R2 with deterministic local regression before another negative browser invocation"
+      "nextAction": "retain bounded CLI, developer business, prior projection, locator, and R3R2 local repair evidence; run one governed R3R3 negative-only browser proof before closing the reviewer edge"
     }
   ]
 }
