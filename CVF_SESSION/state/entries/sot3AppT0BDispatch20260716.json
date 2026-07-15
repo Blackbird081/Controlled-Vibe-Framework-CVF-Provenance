@@ -1,0 +1,34 @@
+{
+  "stateOrder": 1851,
+  "stateKey": "sot3AppT0BDispatch20260716",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "e93d63883",
+    "dispatchBaseHead": "3b98dc86d",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md",
+    "ledgerOutput": "docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md",
+    "workerReturnOutput": "docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "acceptedPredecessor": {
+      "materialCommit": "5a49ee650",
+      "metadataFrozen": 336,
+      "semanticSampleTerminal": 20,
+      "semanticUnresolved": 316,
+      "declarationOccurrences": 13,
+      "missingDeclaredExtensionTargets": 3
+    },
+    "requiredReturn": {
+      "semanticTerminal": 336,
+      "semanticUnresolved": 0,
+      "declarationTerminal": 13,
+      "declarationUnresolved": 0,
+      "outputCount": 2
+    },
+    "gateEvidence": "pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute only the exact two-output no-commit T0B worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "heldNextTranche": "SOT3-APP-T1 and all later tranches remain held until independent T0B reviewer acceptance and a fresh packet.",
+    "claimBoundary": "Dispatch only; no worker execution, semantic acceptance, terminal provenance safety, external-root mutation, runtime/test/build/live proof, public-sync, or product-readiness claim."
+  }
+}

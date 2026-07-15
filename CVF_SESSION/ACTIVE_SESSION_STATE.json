@@ -84,8 +84,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t0a_closed_t0b_packet_authoring_next",
-  "previousMode": "sot3_app_t0a_dispatched_worker_next",
+  "currentMode": "sot3_app_t0b_dispatched_worker_next",
+  "previousMode": "sot3_app_t0a_closed_t0b_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12432,5 +12432,35 @@
     "nextAllowedMove": "Author and validate only a fresh T0B GC-018 baseline and source-verified work order; T0B execution remains held pending dependency release and pre-dispatch PASS.",
     "claimBoundary": "Documentation-only metadata freeze and bounded semantic calibration; no terminal disposition for the remaining 316 rows or 13 declaration occurrences, external-root mutation, runtime/test/build/live proof, public-sync, or product-readiness claim."
   },
-  "nextAllowedMove": "SOT3-APP-T0A is closed at material commit 5a49ee650 with reviewer disposition CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS. Next author and validate only a fresh T0B GC-018 baseline and source-verified work order using the accepted 336 metadata rows, 20 terminal sample rows, 316 unresolved semantic rows, 13 declaration occurrences, and 3 missing declared extension targets. T0B execution remains held until fresh dependency-release evidence exists and pre-dispatch gates pass. Do not modify either external root or run application, install, runtime, test, build, typecheck, CI, live-provider, browser, server, binding-validation, public-sync, push, Catalog, GAP, ADIF, checker, or package work. SCLP-X-T3 remains parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3AppT0BDispatch20260716": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "e93d63883",
+    "dispatchBaseHead": "3b98dc86d",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md",
+    "ledgerOutput": "docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md",
+    "workerReturnOutput": "docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "acceptedPredecessor": {
+      "materialCommit": "5a49ee650",
+      "metadataFrozen": 336,
+      "semanticSampleTerminal": 20,
+      "semanticUnresolved": 316,
+      "declarationOccurrences": 13,
+      "missingDeclaredExtensionTargets": 3
+    },
+    "requiredReturn": {
+      "semanticTerminal": 336,
+      "semanticUnresolved": 0,
+      "declarationTerminal": 13,
+      "declarationUnresolved": 0,
+      "outputCount": 2
+    },
+    "gateEvidence": "pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute only the exact two-output no-commit T0B worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "heldNextTranche": "SOT3-APP-T1 and all later tranches remain held until independent T0B reviewer acceptance and a fresh packet.",
+    "claimBoundary": "Dispatch only; no worker execution, semantic acceptance, terminal provenance safety, external-root mutation, runtime/test/build/live proof, public-sync, or product-readiness claim."
+  },
+  "nextAllowedMove": "SOT3-APP-T0B dispatch is committed at e93d63883 after pre-dispatch 75/75 and pre-commit 83/83 PASS. Next execute only docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md from a clean committed dispatch HEAD. The worker must capture executionBaseHead, create exactly docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md and docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md, leave both uncommitted, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Required evidence is 336 full-body terminal semantic rows and 13 terminal current-tranche provenance rows with zero unresolved identities. Do not modify either external root or run application, install, runtime, test, build, typecheck, CI, live-provider, browser, server, binding-validation, public-sync, push, Catalog, GAP, ADIF, checker, session, or package work. T1 and later SOT3-APP tranches plus SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave."
 }

@@ -8,9 +8,9 @@ Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md`
 
 ## Purpose
 
-Carry compact continuity after bounded SOT3-APP-T0A reviewer closure and route
-only fresh T0B GC-018 baseline and source-verified work-order authoring.
-SCLP-X-T3, T0B execution, and all SOT-Application execution, runtime work, or
+Carry compact continuity after the fresh SOT3-APP-T0B dispatch and route only
+the exact two-output no-commit full-corpus semantic/provenance worker.
+SCLP-X-T3, T1 and later SOT3-APP work, and all SOT-Application execution, runtime work, or
 historical-ledger/runtime/source/Catalog/GAP/ADIF mutation remain held.
 
 ## Scope / Target / Owner Boundary
@@ -31,13 +31,13 @@ Material commit `aa08ea980` owns the corrected R1 redispatch packet.
 Material commit `7fda3b511` owns the fresh T0A roadmap release, GC-018, and
 work order.
 Material commit `5a49ee650` owns bounded T0A acceptance and reviewer repairs.
+Material commit `e93d63883` owns the T0B roadmap release, GC-018, and work order.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t0a_closed_t0b_packet_authoring_next`;
-active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author and
-validate only a fresh T0B GC-018 baseline and source-verified work order after
-bounded T0A closure `5a49ee650`; parked checkpoint=T0B execution, SCLP-X-T3,
+Startup acknowledged: current mode=`sot3_app_t0b_dispatched_worker_next`;
+active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only
+the exact two-output no-commit T0B worker from dispatch `e93d63883`; parked checkpoint=T1 and later SOT3-APP tranches, SCLP-X-T3,
 and all SOT-Application or hidden-clone execution or mutation,
 and all runtime/test/build/typecheck/CI/live/provider/browser/Playwright/
 business-CLI runs, historical-ledger/runtime/source/Catalog/GAP/ADIF mutation,
@@ -56,7 +56,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_app_t0a_closed_t0b_packet_authoring_next`
+`sot3_app_t0b_dispatched_worker_next`
 
 ## Active Boundary
 
@@ -88,6 +88,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 - SOT3-APP-T0 R1 scope-blocker review commit: `55007483c`.
 - SOT3-APP-T0A fresh dispatch commit: `7fda3b511`.
 - SOT3-APP-T0A bounded closure commit: `5a49ee650`.
+- SOT3-APP-T0B dispatch commit: `e93d63883`.
 - Server-derived reviewer bootstrap and retained `/api/auth/me` refresh are
   accepted through focused 34/34 and typecheck PASS.
 - R3R2 browser, business, checker-job, retry, and provider counters are zero.
@@ -103,25 +104,24 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Latest Work / Changes
 
-SOT3-APP-T0A is closed at `5a49ee650` with disposition
-`CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS`. Accepted evidence is 336 frozen
-metadata rows, 20 terminal semantic sample rows, 316 unresolved semantic rows,
-13 declaration occurrences, 3 missing declared extension targets, and zero
-terminal declaration dispositions. Original blocked, digest-repair, dispatch,
-and worker-return evidence remains preserved.
+SOT3-APP-T0B dispatch is committed at `e93d63883` after pre-dispatch 75/75 and
+pre-commit 83/83 PASS. It requires 336 full-body semantic rows and 13 terminal
+current-tranche provenance rows with zero unresolved identities in exactly two
+uncommitted outputs. Accepted T0A evidence remains the comparison anchor.
 
 ## Next Allowed Move
 
-Author and validate only a fresh SOT3-APP-T0B GC-018 baseline and
-source-verified work order using the accepted T0A evidence. T0B execution
-remains held until fresh dependency-release evidence exists and pre-dispatch
-gates pass. Do not execute the held R1 packet or modify or run SOT-Application
-or its hidden clone.
+Execute only
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md`
+from a clean committed dispatch HEAD. Create exactly the named ledger and
+worker return, leave both uncommitted, and return `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. Do not execute held predecessor packets or modify or run
+SOT-Application or its hidden clone.
 
 ## Parked Checkpoint
 
-T0B execution remains parked until a fresh source-verified packet passes
-dependency-release and pre-dispatch gates. UC-03 harness identity repair remains parked until reuse. T3 remains parked
+T1 and later SOT3-APP work remain parked until independent T0B reviewer
+acceptance and a fresh packet. UC-03 harness identity repair remains parked until reuse. T3 remains parked
 until a current non-test production caller or active package export is source-
 proven for GC-009 or GC-010. SOT-Application execution and mutation remain
 parked until a later committed packet passes pre-dispatch. All runtime, test,
@@ -132,7 +132,7 @@ parked.
 
 ## HEAD / Commit Boundary
 
-Current material HEAD: `5a49ee650`
+Current material HEAD: `e93d63883`
 
 R3R1 material closure HEAD: `0856e090d`
 
@@ -797,6 +797,77 @@ Reason: private continuity sync; no public-sync action.
 | Claim boundary | T0A documentation-only bounded closure; no full-corpus semantic or declaration completion claim |
 | Agent type | reviewer and session-sync steward |
 | Invocation ID | sot3-app-t0a-closure-session-sync-2026-07-16 |
+| Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
+| Actual changed set | same seven-path session-sync manifest |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## SOT3-APP-T0B Dispatch Session Sync - 2026-07-16
+
+Material commit `e93d63883` records the T0B roadmap release, fresh GC-018, and
+source-verified work order. Pre-dispatch autorun passed 75/75 checks and the
+pre-commit hook passed 83/83 checks. The exact worker route is documentation
+and evidence only with `WORKER_MUST_NOT_COMMIT`.
+
+The worker must start from the clean committed dispatch HEAD, capture
+`executionBaseHead`, and create exactly:
+
+- `docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md`
+- `docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md`
+
+Required return evidence is 336 full-body terminal semantic rows keyed
+SRC-001 through SRC-336 and 13 terminal current-tranche provenance rows keyed
+DEC-01 through DEC-13, with zero missing, duplicate, unreadable, or unresolved
+identities. T0A material closure `5a49ee650` remains the accepted comparison
+anchor. The worker must freshly recompute all objective anchors and stop on
+drift.
+
+The worker must not commit, modify either external root, execute the
+application, or run install/runtime/test/build/typecheck/CI/live/provider/
+browser/server/binding/public work. T1 and later SOT3-APP tranches remain held.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T0B Dispatch Session Sync
+
+Authorized guard-maintenance scope: synchronize material dispatch `e93d63883`
+and route only the exact two-output no-commit T0B worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V44_2026-07-15.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/sot3AppT0BDispatch20260716.json`
+
+Rollback boundary: revert only this session-sync batch; retain dispatch
+`e93d63883` and T0A closure `5a49ee650`.
+
+## Public Export Disposition - SOT3-APP-T0B Dispatch Session Sync
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private continuity sync; no public-sync action.
+
+## Agent Operation Trace Block - SOT3-APP-T0B Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | SOT3-APP-T0B dispatch continuity sync, 2026-07-16 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | seven protected paths listed above |
+| Allowed scope source | material dispatch `e93d63883` and handoff contract next-move requirement |
+| Before status evidence | clean worktree at material dispatch HEAD `e93d63883` |
+| After status evidence | continuity routes only the exact two-output no-commit T0B worker |
+| Diff evidence | session-only staged diff and generated-state drift check |
+| Approval boundary | continuity sync only; no worker execution, T1 release, or source/runtime/public mutation |
+| Claim boundary | dispatch routing only; T0B execution and acceptance are not claimed |
+| Agent type | session-sync steward |
+| Invocation ID | sot3-app-t0b-dispatch-session-sync-2026-07-16 |
 | Expected manifest | V44, memory, bootstrap, active-state sources and aggregate |
 | Actual changed set | same seven-path session-sync manifest |
 | Manifest delta | MATCH |
