@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T0_DISPATCH_AUTHORIZED
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -61,7 +61,7 @@ CVF remains the authority. The retained patch is input evidence only.
 | checker boundary | value decision only; no checker implementation or wiring |
 | physical layout | source hierarchy is not imported |
 | dependency | intake authorization commit `24d50f0d7` |
-| execution | T0 requires fresh GC-018, source-verified work order, and pre-dispatch PASS |
+| execution | T0 executed from clean base `5448c872c` under committed GC-018/work order authority and closed through bounded reviewer recomputation |
 | claim boundary | doctrine/candidate disposition only |
 
 ## Work Plan
@@ -70,7 +70,11 @@ CVF remains the authority. The retained patch is input evidence only.
 |---|---|---|---|
 | FSCB-ADAPT-T0 | complete source ledger, owner crosswalk, checker-value audit, and reverse projection | 37-row ledger, CVF-owned crosswalk, no-commit worker return | 37/37 terminal rows; zero unresolved items; no duplicate owner; each checker family receives `CHECKER_CANDIDATE`, `ENRICH_EXISTING`, `NO_NEW_VALUE`, or `REJECT_DIRECT_IMPORT`; reviewer semantic audit PASS |
 
-No later tranche is pre-authorized. A checker implementation may open only if
+Final T0 disposition: `CLOSED_PASS_BOUNDED`. The accepted outputs contain 37
+terminal source rows, 24 logical crosswalk rows, three rule-level checker
+audits, and zero unresolved items.
+
+No later FSCB tranche is pre-authorized. A checker implementation may open only if
 T0 proves an owner gap and a decision-changing machine-enforcement benefit.
 
 ## Acceptance Criteria
@@ -110,9 +114,9 @@ Return `BLOCKED_WITH_REASON` when:
 
 ## Dependency And Sequence Control
 
-The intake authorization at `24d50f0d7` releases T0 packet authoring. T0
-execution remains blocked until its paired GC-018 and work order are committed
-with `DISPATCH_READY` evidence and the pre-dispatch autorun phase passes.
+The intake authorization at `24d50f0d7` released packet authoring. Dispatch
+material commit `8fd769cec` and continuity base `5448c872c` released execution.
+T0 is now closed with bounded documentation evidence.
 
 The separate SOT3-APP roadmap is not a dependency. It remains queued to avoid
 mixing source families and commit ownership in one active batch.
@@ -121,8 +125,9 @@ mixing source families and commit ownership in one active batch.
 
 | Accepted value group | Catalog/GAP owner check | Disposition before T0 closure | Target source | Claim class | Evidence |
 |---|---|---|---|---|---|
-| Four-Surface logical dimensions | governance control matrix, governance control index, system-chain map, as-built catalog | `DEFER_PENDING_ACCEPTANCE` | existing owner or proposed GAP selected by reviewer | doctrine projection only | T0 crosswalk and owner citations |
-| source checker rule deltas | existing checker families | `DEFER_PENDING_ACCEPTANCE` | existing checker owner or conditional reopen entry | checker candidate only | T0 rule-by-rule audit |
+| Four-Surface logical dimensions | governance control matrix, governance control index, system-chain map, as-built catalog | `UPDATE_EXISTING` | accepted Four-Surface crosswalk over existing owners | doctrine projection only | 24-row crosswalk and 32 verified owner paths |
+| generic control-matrix checker | no accepted native profile/schema owner | `DEFER_PENDING_ACCEPTANCE` | reopen only after a native owner and enum/schema mapping exist | checker candidate only | FSCB-CHECK-01 rule audit |
+| claim-boundary and evidence-link rule deltas | existing claim/source-fidelity checker families | `UPDATE_EXISTING` | selected future enrichment only after a proven current-owner gap | checker candidate only | FSCB-CHECK-02 and FSCB-CHECK-03 rule audits |
 
 Pending rows are not as-built authority and do not authorize Catalog/GAP or
 checker mutation.
@@ -155,8 +160,8 @@ checker mutation.
 | Corpus completeness section | PRESENT |
 | Completeness trigger model | exact 37-file enumeration plus terminal per-file ledger |
 | Blind-spot prevention action | retain every path and digest; audit rejected and no-new-value groups |
-| Residual gap | all 37 terminal decisions remain open until T0 reviewer closure |
-| Blind-spot verdict | PARTIAL_PENDING_T0_LEDGER |
+| Residual gap | independent review is not claimed because the operator authorized sequential single-agent closure; semantic evidence was freshly recomputed |
+| Blind-spot verdict | COMPLETE_VERIFIED |
 
 ## External Absorption Core
 
@@ -165,33 +170,34 @@ checker mutation.
 | Standard | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` |
 | Input root or repository | literal source root in Scope / Target / Owner Boundary |
 | Enumeration command | filesystem-backed direct recursive `Get-ChildItem` enumeration |
-| Manifest artifact or inline manifest | inline 37-file/84,563-byte snapshot; T0 file-level ledger |
-| Processing ledger artifact or inline ledger | inline Work Plan and Corpus Completeness And Report Integrity sections; T0 file-level terminal ledger and crosswalk outputs are fixed by the work order |
+| Manifest artifact or inline manifest | `docs/reviews/CVF_FSCB_ADAPT_T0_SOURCE_PROCESSING_LEDGER_2026-07-15.md` |
+| Processing ledger artifact or inline ledger | accepted 37-row ledger plus `docs/reference/CVF_FOUR_SURFACE_CONTROL_BOUNDARY_CROSSWALK.md` |
 | Ledger terminal statuses | READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE |
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | inline Overlap And Novelty Classification table plus `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md` |
-| Unresolved items | 37 file-level terminal decisions |
-| Completion claim boundary | roadmap authorization only; no absorption completion or implementation claim |
+| Unresolved items | 0 |
+| Completion claim boundary | complete documentation-level source disposition and bounded logical crosswalk only |
 
 ## Corpus Completeness And Report Integrity
 
 - Corpus task class: retained Four-Surface source adaptation.
 - Corpus root: literal source root in Scope / Target / Owner Boundary.
-- Snapshot time: 2026-07-15 intake snapshot.
+- Snapshot time: 2026-07-15 at execution/closure base `5448c872c`.
 - Enumeration command: filesystem-backed direct recursive `Get-ChildItem` enumeration.
-- Manifest artifact or inline manifest: inline 37-file and 84,563-byte snapshot.
-- Manifest hash: T0 must recompute per-file SHA-256 and aggregate digest.
-- Processing ledger artifact or inline ledger: future T0 file-level ledger.
-- Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE
-- Reconciliation: manifest=37; ledger_terminal=0; exclusions=0; unresolved=37.
-- Unresolved files: 37.
+- Manifest artifact or inline manifest: accepted 37-row source-processing ledger.
+- Manifest hash: `1f97d9eb219d9f12b601d80e911cc34506b80cb05aad0584177c02a9c50462fa`.
+- Processing ledger artifact or inline ledger: accepted source-processing ledger and Four-Surface crosswalk.
+- Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED,
+  BLOCKED_UNREADABLE, ADAPTED, REJECTED, NO_NEW_VALUE.
+- Reconciliation: manifest=37; ledger_terminal=37; exclusions=0; unresolved=0.
+- Unresolved files: 0.
 - Declared exclusions: none.
-- Unreadable or unsupported files: none observed during intake.
-- Aggregation check: 37 files and 84,563 bytes in the accepted intake snapshot.
-- Drift check: T0 recomputes paths, counts, bytes, and hashes before classification.
+- Unreadable or unsupported files: none.
+- Aggregation check: PASS - 37 unique files, 84,563 bytes, terminal distribution 13+10+4+10=37.
+- Drift check: PASS - all 37 ledger path/byte/hash rows match the retained source.
 - Output traceability: source path, digest, status, disposition, owner, and reason.
-- Adversarial verification: roadmap authorization is not terminal source review.
-- Corpus verdict: PARTIAL
+- Adversarial verification: all deferred, rejected, and no-value groups plus all three checker families were read and challenged.
+- Corpus verdict: COMPLETE_VERIFIED
 
 ## External Absorption Value Conversion Matrix
 
@@ -211,7 +217,7 @@ checker mutation.
 | governance control model | `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md` | `ENRICH_EXISTING` | adds object/mode/timing/maturity projection | adapt through crosswalk |
 | governance control navigation | `docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md` | `CONFIRMED_EXISTING` | existing owner remains authoritative | cite, do not duplicate |
 | system-chain projection | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | `ENRICH_EXISTING` | derived control-surface view | propose owner update only if reviewer accepts |
-| source checker rules | `governance/compat/check_governed_artifact_checker_read_ahead.py` | `NEW_FINDING` | possible rule-level enforcement delta | audit before any checker proposal |
+| source checker rules | `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` | `ENRICH_EXISTING` | selected phrase and placeholder/maturity deltas; generic matrix checker remains deferred | fresh gap-backed packet only |
 | source hierarchy and canonical claim | `OWNER_SURFACE_NOT_FOUND` | `REJECT_DIRECT_IMPORT` | incompatible second authority | retain only as provenance input |
 
 ## External Knowledge Intake Routing
@@ -239,8 +245,9 @@ file and rule level.
 Contradiction Or Gap Disposition: an ownerless, decision-changing rule becomes
 a proposed GAP or conditional-reopen candidate, not an automatic new checker.
 
-Claim Update: operator authorization opens T0 dispatch authoring only; no
-source value or implementation claim is promoted before the terminal ledger.
+Claim Update: T0 closes with a complete source ledger and accepted logical
+crosswalk. No source checker, schema, package, Catalog/GAP entry, runtime, or
+application implementation is activated.
 
 ## Checker Source Read-Ahead Block
 
@@ -251,17 +258,56 @@ source value or implementation claim is promoted before the terminal ledger.
 | gateRunPurpose | confirmation of roadmap and external-absorption artifact shape before dispatch |
 | claimBoundary | structural confirmation only; no semantic-acceptance or runtime proof |
 
+## Closure Review Result
+
+FSCB-ADAPT-T0 is accepted as `CLOSED_PASS_BOUNDED`. Fresh closure recomputation
+matched all 37 path/byte/hash rows, the 84,563-byte total, the final-LF aggregate
+digest, and four JSON parses. Semantic review accepted 13 adapted, 10 deferred,
+4 rejected, and 10 no-value decisions; it found no source value that justifies
+direct hierarchy, checker, schema, package, Catalog, or GAP activation.
+
+The same Codex instance performed worker and reviewer/closer roles after the
+operator directed continuation. Independent review is not claimed; the paired
+work order and completion review carry the Single-Agent Multi-Role Control
+Block and fresh-evidence boundary.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| source count and bytes | 37 files; 84,563 bytes | PASS |
+| ledger identity | 37 unique rows; zero path/byte/hash mismatch | PASS |
+| aggregate digest | `sha256:1f97d9eb219d9f12b601d80e911cc34506b80cb05aad0584177c02a9c50462fa` | PASS |
+| JSON schemas | four of four parse | PASS |
+| terminal decisions | 13 adapted; 10 deferred; 4 rejected; 10 no-value | PASS |
+| logical crosswalk | 24 unique rows and 32 existing owner paths | PASS |
+| checker audit | 16 matrix, 18 claim, and 8 evidence-link rules | PASS |
+| forbidden execution | zero source-checker/test/runtime/build/typecheck/CI/live/provider/public invocation | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_FSCB_ADAPT_T0_SOURCE_LEDGER_AND_CROSSWALK_2026-07-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_FSCB_ADAPT_T0_COMPLETION_2026-07-15.md` | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check; no entry mutation required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | current front door retained; no entry mutation required | PASS |
+| External evidence digest | source-processing ledger | `sha256:1f97d9eb219d9f12b601d80e911cc34506b80cb05aad0584177c02a9c50462fa` | PASS |
+| System loop interlock | accepted crosswalk Reverse Architecture Projection | existing owners or bounded reopen conditions; zero Catalog/GAP mutation | PASS |
+| Session continuity | active front door, generated state, and handoff | separate post-material session-sync commit | N/A with reason |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private retained source and roadmap dispatch evidence; no public-sync
+Reason: private retained source and bounded closure evidence; no public-sync
 authorization or public-safe artifact set exists.
 
 ## Claim Boundary
 
-This roadmap authorizes one documentation-only source-ledger, crosswalk, and
-checker-value tranche after its paired dispatch passes. It does not complete
-the 37-file absorption, create a canonical Four-Surface taxonomy, authorize
-direct import or checker implementation, mutate runtime/source/tests/session
-state, or claim provider/live/public/production readiness.
+This roadmap closes one documentation-only source-ledger, logical crosswalk,
+and checker-value tranche. It does not create a physical Four-Surface taxonomy,
+authorize direct import or checker implementation, activate deferred schemas or
+packages, mutate runtime/source/tests/session state, claim independent review,
+or claim provider/live/public/production readiness.

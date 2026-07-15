@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -12,7 +12,9 @@ Batch ID: `FSCB-ADAPT-T0`
 
 dispatchBaseHead: `1ac885667`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `5448c872c`
+
+closureBaseHead: `5448c872c`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -77,6 +79,11 @@ surface.
 | reviewer/closer | samples hashes and semantics, repairs allowed-scope defects, accepts or rejects, commits accepted material | accepted closure material only |
 | session-sync steward | updates protected continuity using accepted material-closure evidence when next move changes | separate session-sync commit |
 
+Closure role conversion: after the no-commit worker return, the operator directed
+the same Codex instance to continue. The final reviewer/closer pass therefore
+uses the Single-Agent Multi-Role Control Block below and does not claim
+independent review.
+
 ## Scope / Target / Owner Boundary
 
 Allowed source root, read-only:
@@ -116,7 +123,7 @@ root, or any pre-existing CVF owner.
 |---|---|---|---|---|
 | intake critique and operator authorization | `docs/reviews/CVF_SOT3_DOWNSTREAM_APPLICATION_AND_FOUR_SURFACE_ABSORPTION_INTAKE_REVIEW_2026-07-15.md` | `24d50f0d7` | `OPERATOR_AUTHORIZED_FOR_ROADMAP_AUTHORING` | PASS |
 | roadmap T0 release | `docs/roadmaps/CVF_FOUR_SURFACE_CONTROL_BOUNDARY_ADAPTATION_ROADMAP_2026-07-15.md` | current dispatch batch | `ACTIVE_T0_DISPATCH_AUTHORIZED` | PASS - FSCB-ADAPT-T0 only |
-| GC-018 source/claim boundary | `docs/baselines/CVF_GC018_FSCB_ADAPT_T0_SOURCE_LEDGER_AND_CROSSWALK_2026-07-15.md` | current dispatch batch | `DISPATCH_READY` | PASS |
+| GC-018 source/claim boundary | `docs/baselines/CVF_GC018_FSCB_ADAPT_T0_SOURCE_LEDGER_AND_CROSSWALK_2026-07-15.md` | committed dispatch batch | `SATISFIED_AT_DISPATCH` | PASS |
 
 ## Required First Reads
 
@@ -317,38 +324,46 @@ Rows describe planned worker outputs and do not claim those files already exist.
 
 ## Acceptance Criteria
 
-- [ ] execution starts from clean committed dispatch HEAD;
-- [ ] direct source snapshot is exactly 37 files and reconciles byte total;
-- [ ] all 37 paths are unique and terminally dispositioned;
-- [ ] deterministic aggregate digest is documented and recomputable;
-- [ ] all four JSON schemas parse;
-- [ ] crosswalk covers all required logical/control/evidence dimensions;
-- [ ] each accepted crosswalk row cites source and current CVF owner evidence;
-- [ ] all three source checker families have rule-level terminal decisions;
-- [ ] no duplicate owner or physical taxonomy is created;
-- [ ] reverse architecture projection is explicit and remains proposal-only;
-- [ ] semantic audit covers deferred, rejected, and no-value groups;
-- [ ] exact changed set contains only the three planned outputs;
-- [ ] required worker gates PASS;
-- [ ] HEAD remains equal to executionBaseHead and worker performs no commit.
+- [x] execution starts from clean committed dispatch HEAD;
+- [x] direct source snapshot is exactly 37 files and reconciles byte total;
+- [x] all 37 paths are unique and terminally dispositioned;
+- [x] deterministic aggregate digest is documented and recomputable;
+- [x] all four JSON schemas parse;
+- [x] crosswalk covers all required logical/control/evidence dimensions;
+- [x] each accepted crosswalk row cites source and current CVF owner evidence;
+- [x] all three source checker families have rule-level terminal decisions;
+- [x] no duplicate owner or physical taxonomy is created;
+- [x] reverse architecture projection is explicit and remains proposal-only;
+- [x] semantic audit covers deferred, rejected, and no-value groups;
+- [x] exact worker changed set contains only the three planned outputs;
+- [x] required worker gates PASS;
+- [x] HEAD remains equal to executionBaseHead and worker performs no commit.
 
 ## Review Gate
 
-Reviewer/closer must independently recompute file count, total bytes, aggregate
-digest, and at least six sampled file hashes spanning documentation, schemas,
-examples, checkers, tests, and root navigation. Reviewer must inspect every
-checker-family decision and all `DEFERRED`, `REJECTED`, and `NO_NEW_VALUE`
-groups. Gate PASS alone is insufficient semantic acceptance.
+Reviewer/closer recomputed all 37 path/byte/hash rows, total bytes, aggregate
+digest, and four JSON parses. The reviewer read every source body, with explicit
+semantic audit of all checker decisions and every `DEFERRED`, `REJECTED`, and
+`NO_NEW_VALUE` group. Gate PASS alone was not used as semantic acceptance.
+Because the operator converted the same Codex instance into reviewer/closer,
+independent review is not claimed.
+
+## Current Runtime Freshness Verification
+
+N/A with reason: FSCB-ADAPT-T0 is documentation and retained-source evidence
+only. Fresh closure verification used the current retained filesystem snapshot,
+current CVF owner paths, and the exact git changed set. No runtime/source owner
+was modified, executed, or used to support a runtime-behavior claim.
 
 ## Closure Checklist
 
-- [ ] Roadmap-to-work-order trace is complete.
-- [ ] Closure diff compares roadmap, work order, final artifacts, and claims.
-- [ ] Every acceptance item is checked, N/A with reason, or blocked.
-- [ ] No open row or unchecked item remains in a closed-equivalent artifact.
-- [ ] File-change and no-runtime/no-public/no-live claims have command evidence.
-- [ ] Reviewer decides reverse architecture projection and conditional reopen.
-- [ ] Session continuity is updated only after accepted material commit.
+- [x] Roadmap-to-work-order trace is complete.
+- [x] Closure diff compares roadmap, work order, final artifacts, and claims.
+- [x] Every acceptance item is checked, N/A with reason, or blocked.
+- [x] No open row or unchecked item remains in this closed-equivalent artifact.
+- [x] File-change and no-runtime/no-public/no-live claims have command evidence.
+- [x] Reviewer decides reverse architecture projection and conditional reopen.
+- [x] Session continuity remains reserved for a separate post-material commit.
 
 ## Stop Conditions
 
@@ -394,12 +409,31 @@ return condition requires new authority or a materially different result.
 | Intake source | operator-authored retained legacy patch |
 | Intake role | no-commit source-intake and crosswalk worker |
 | Provider surface | local cooperating agent; provider identity is not authority |
-| Reviewer role | independent reviewer/closer validates terminal and semantic evidence |
+| Reviewer role | operator-authorized sequential Codex reviewer/closer; independent review not claimed |
 | Routing decision | `WORKER_MUST_NOT_COMMIT`; documentation/evidence only |
 | Public route | `DEFERRED_PRIVATE_ONLY` |
-| canonical route mode | `MULTI_AGENT_MULTI_ROLE` |
-| selected role route | dispatcher -> no-commit worker -> independent reviewer/closer -> session-sync steward if needed |
+| canonical route mode | `SINGLE_AGENT_MULTI_ROLE` after operator closure conversion |
+| selected role route | dispatcher -> no-commit worker -> same-agent reviewer/closer with fresh recomputation -> separate session-sync steward |
 | escalation condition | source drift, unreadable input, owner contradiction, forbidden-path need, or scope expansion |
+
+## Single-Agent Multi-Role Control Block
+
+- Role separation ledger: dispatcher, no-commit worker, reviewer/closer, and
+  session-sync duties remain sequential and phase-local even though Codex owns
+  the first three roles after the operator's continuation instruction.
+- Evidence basis: closure uses direct filesystem enumeration, all 37 source
+  hashes, full source reads, JSON parsing, owner-path existence checks, exact
+  crosswalk/checker-row counts, git diff/status evidence, and governance gates;
+  no memory-only worker claim is accepted.
+- Self-review boundary: independent review not claimed. This is bounded
+  single-agent multi-role closure of documentation/evidence only.
+- Escalation conditions: stop for source drift, semantic contradiction,
+  forbidden-path need, runtime/test/provider/live/public work, secrets,
+  destructive action, or claim-boundary expansion.
+- Gate sequence: worker-return fast gate, reviewer-fast, reviewer-return
+  commit-steward preflight, material commit, pre-closure and closure
+  commit-steward verification on the real non-empty `5448c872c..HEAD` range,
+  then separate session sync.
 
 ## Legacy Absorption Coverage Index Disposition
 
@@ -547,11 +581,11 @@ Contract source archive-qualified exception:
 
 | Field | Value |
 |---|---|
-| route | `MULTI_AGENT_MULTI_ROLE` |
-| rolePattern | one cooperating agent may perform dispatch authoring and later no-commit worker execution as explicit sequential roles; an independent reviewer/closer owns acceptance and commit |
+| route | `SINGLE_AGENT_MULTI_ROLE` after operator closure conversion |
+| rolePattern | one Codex instance performs dispatch, no-commit worker execution, and bounded reviewer/closer recomputation sequentially; independent review is not claimed; session sync remains separate |
 | phase | `DISPATCH_AUTHORING`; `EXECUTION`; `CLOSURE`; `SESSION_SYNC` |
-| baseHeadFor(phase) | dispatchBaseHead=`1ac885667`; executionBaseHead=worker captures clean committed dispatch HEAD; closureBaseHead=reviewer captures execution base |
-| changedSetScope(phase) | dispatch=two roadmaps plus paired baseline/work order; execution=exact three planned outputs; closure=accepted worker outputs plus reviewer-owned roadmap/closure paths; session-sync=protected continuity paths only |
+| baseHeadFor(phase) | dispatchBaseHead=`1ac885667`; executionBaseHead=`5448c872c`; closureBaseHead=`5448c872c` |
+| changedSetScope(phase) | dispatch=two roadmaps plus paired baseline/work order; execution=exact three planned outputs; closure=accepted worker outputs plus FSCB roadmap, work-order status, and completion review; session-sync=protected continuity paths only |
 | traceScope(phase, actor) | each role records only phase-local commands, paths, hashes, diffs, and HEAD evidence |
 | commitOwner(phase) | dispatcher commits dispatch; worker forbidden; reviewer/closer commits accepted material; session-sync steward commits continuity separately |
 | crossBatchIsolation | clean worktree required before execution; SOT3-APP remains queued and outside worker changed set |
@@ -561,9 +595,9 @@ Contract source archive-qualified exception:
 
 | Field | Value |
 |---|---|
-| completionReviewPath | `docs/reviews/CVF_FSCB_ADAPT_T0_COMPLETION_2026-07-15.md` (optional; reviewer may omit when the accepted worker return carries closure evidence safely) |
-| reviewerOwnedClosurePaths | FSCB roadmap status/closure evidence and any required conditional-reopen or reverse-projection owner selected after review |
-| closureOwner | independent reviewer/closer |
+| completionReviewPath | `docs/reviews/CVF_FSCB_ADAPT_T0_COMPLETION_2026-07-15.md` |
+| reviewerOwnedClosurePaths | FSCB roadmap status/closure evidence, this work-order status, completion review, accepted crosswalk status, and conditional-reopen dispositions |
+| closureOwner | operator-authorized sequential Codex reviewer/closer under the Single-Agent Multi-Role Control Block; independent review not claimed |
 | workerCommitPermission | FORBIDDEN |
 
 ## Worker Return Packet Shape Contract
@@ -630,7 +664,7 @@ git status --short
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Authority Chain; Agent Roles; Scope; Required First Reads; Pre-Flight Checks; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Execution Plan; Evidence Requirements; Acceptance Criteria; Review Gate; Closure Checklist; Return-To-Orchestrator Conditions; Operator Checkpoint; Worker Return Packet Shape Contract; COMPLETE_PENDING_REVIEW; BLOCKED_WITH_REASON |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED; Dispatch Prompt Envelope; Authority Chain; Agent Roles; Scope; Required First Reads; Pre-Flight Checks; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Execution Plan; Evidence Requirements; Acceptance Criteria; Review Gate; Closure Checklist; Return-To-Orchestrator Conditions; Operator Checkpoint; Worker Return Packet Shape Contract; COMPLETE_PENDING_REVIEW; BLOCKED_WITH_REASON |
 | gateRunPurpose | confirm exact dispatch and worker-output shape after checker source review |
 | claimBoundary | checker-shape evidence does not prove corpus completeness, doctrine value, or checker novelty |
 
@@ -681,16 +715,53 @@ git status --short
 | claimLanguage | source-processing evidence and derived reference only |
 | forbiddenExpansion | runtime/provider/live/public/package/Web/MCP/checker behavior requires fresh source-verified authorization |
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| source manifest | 37 files, 84,563 bytes, 37 unique paths | PASS |
+| ledger reconciliation | 37 rows; zero missing, extra, hash, or byte mismatches | PASS |
+| terminal distribution | 13 ADAPTED, 10 DEFERRED, 4 REJECTED, 10 NO_NEW_VALUE | PASS |
+| aggregate digest | `sha256:1f97d9eb219d9f12b601d80e911cc34506b80cb05aad0584177c02a9c50462fa` | PASS |
+| JSON parse | four of four schema files parse | PASS |
+| crosswalk and checker audit | 24 unique crosswalk rows; 16 matrix, 18 claim, and 8 link rules | PASS |
+| current owner evidence | 32 unique cited owner paths; zero missing | PASS |
+| execution boundary | zero source-checker/test/runtime/build/typecheck/CI/live/provider/public invocation | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED`; execution and closure base `5448c872c` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_FSCB_ADAPT_T0_COMPLETION_2026-07-15.md` | reviewer disposition and closure diff | PASS |
+| Roadmap state | `docs/roadmaps/CVF_FOUR_SURFACE_CONTROL_BOUNDARY_ADAPTATION_ROADMAP_2026-07-15.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check; no registry entry mutation required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | current front door retained; no registry entry mutation required | PASS |
+| External evidence digest | source-processing ledger | `sha256:1f97d9eb219d9f12b601d80e911cc34506b80cb05aad0584177c02a9c50462fa` | PASS |
+| System loop interlock | accepted crosswalk Reverse Architecture Projection | existing owners or bounded reopen conditions; zero Catalog/GAP mutation | PASS |
+| Session continuity | active front door, generated state, and handoff | separate post-material session-sync commit | N/A with reason |
+
+## Closure Diff Gate
+
+The closure range contains exactly the three worker outputs, this work-order
+status conversion, the FSCB roadmap closure conversion, and the reviewer
+completion. It adds no retained-source, checker, test, runtime, build,
+typecheck, CI, provider/live, browser, public, Catalog, GAP, ADIF, coverage-index,
+or session mutation. Roadmap requirements, work-order acceptance criteria,
+worker claims, source bodies, manifest hashes, owner paths, crosswalk rows, and
+checker decisions were compared directly.
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private retained-source dispatch and outputs; no public-sync authority.
+Reason: private retained-source closure evidence; no public-sync authority.
 
 ## Claim Boundary
 
-This work order authorizes exactly three documentation/evidence outputs from a
-clean committed dispatch base. It does not authorize source mutation, physical
+This work order closes one documentation-level Four-Surface source-ledger and
+logical-crosswalk tranche. It does not authorize source mutation, physical
 taxonomy copy, checker execution/import/implementation/wiring, Catalog/GAP or
 session changes, runtime/test/build/provider/live/public action, commit by the
-worker, or any claim that Four-Surface value has already been absorbed.
+worker, independent-review claims, or activation of any deferred checker,
+schema, package, or application candidate.
