@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V43_2026-07-14.md`
+4. `AGENT_HANDOFF_V44_2026-07-15.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V43_2026-07-14.md` |
+| Active handoff | `AGENT_HANDOFF_V44_2026-07-15.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r3r1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V43_2026-07-14.md; next allowed move=execute one exact no-commit negative-only UC-04B R3R1 locator recovery; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author one source-verified UC-04B R3R2 reviewer auth-projection packet with deterministic local regression before another browser run; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc04b_r3r1_dispatched_worker_next`
+Current mode marker: `system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`
 
-Current mode: `system_chain_uc04b_r3r1_dispatched_worker_next`
+Current mode: `system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`
 
-`system_chain_uc04b_r3r1_dispatched_worker_next`
+`system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`
 
 Previous mode:
 
-`system_chain_uc04b_r3r1_locator_recovery_packet_next`
+`system_chain_uc04b_r3r1_dispatched_worker_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-04B-R3R1 blocked locator recovery closure | `0856e090d` | CLOSED_BLOCKED_BOUNDED; scoped locator ambiguity closed; reviewer session/client projection contradiction reopens existing auth-projection GAP; exact 1/0/0/0/0; ADIF-0037; R3R2 packet with deterministic local precondition next. |
 | System-chain UC-04B-R3R1 negative-only locator recovery dispatch | `ac46a1bf7` | DISPATCH_READY; one exact proof locator edit; positive excluded; focused 32/32 plus one-case list required; exact 1/1/0/0/0; worker must not commit. |
 | System-chain UC-04B-R3 blocked business-proof closure | `e1ce6dc18` | CLOSED_BLOCKED_BOUNDED; developer business path PASS; reviewer case blocked before POST by five-match locator ambiguity; exact 1/1/1/0/0; GAP and ADIF-0036 recorded; negative-only R3R1 packet next. |
 | System-chain UC-04B-R3 provider-free business-proof dispatch | `74aa3d246` | DISPATCH_READY; retained spec read-only; focused 32/32 preflight; one localhost invocation; exact ceilings 1/2/1/0/0; worker must not commit. |
@@ -193,12 +194,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc04b_r3r1_dispatched_worker_next`
+Mode: `system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`
 
-UC-04B R3R1 is dispatch-ready at `ac46a1bf7`. Execute the exact no-commit
-negative-only locator recovery once. Require the one-line proof diff, focused
-32/32, exactly one negative case in Playwright list, canonical localhost, and
-exact 1/1/0/0/0. Do not run the retained positive case or edit UI/runtime.
+UC-04B R3R1 closed blocked at `0856e090d`. Author one source-verified R3R2
+reviewer auth-projection packet with deterministic local `/api/auth/me`
+request-emission and reviewer-role mapping regression before any browser retry.
+Retain the positive path and scoped locator; timeout-only tuning is excluded.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

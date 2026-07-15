@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V43_2026-07-14.md",
+  "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -76,15 +76,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V39_2026-07-08.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V40_2026-07-10.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V41_2026-07-11.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V42_2026-07-12.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V42_2026-07-12.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "system_chain_uc04b_r3r1_dispatched_worker_next",
-  "previousMode": "system_chain_uc04b_r3r1_locator_recovery_packet_next",
+  "currentMode": "system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next",
+  "previousMode": "system_chain_uc04b_r3r1_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -11998,5 +11999,24 @@
     "nextAllowedMove": "execute the exact no-commit negative-only R3R1 work order once and return for reviewer closure",
     "claimBoundary": "Dispatch authority only. R3 positive evidence is retained and must not be rerun; reviewer denial, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value are not yet promoted."
   },
-  "nextAllowedMove": "SCLP-UC04B-R3R1 is DISPATCH_READY at material commit ac46a1bf7. Execute the exact no-commit negative-only locator recovery once. Replace only the line-113 reviewer locator with the scoped Active role container expression, require focused 32/32 and a Playwright --list result containing exactly the negative case, then invoke that case once under PLAYWRIGHT_BASE_URL=http://localhost:3001. Exact ceilings are one browser invocation, one Web submission, zero selected checker executions, zero retries, and zero provider calls. Do not run the retained positive case, edit UI/runtime/auth/job/route/config, or infer unified inventory, provider, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
+  "systemChainUc04bR3r1BlockedClosure20260715": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "0856e090d",
+    "workOrderId": "SCLP-UC04B-R3R1",
+    "completionReview": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R1_NEGATIVE_LOCATOR_RECOVERY_COMPLETION_2026-07-15.md",
+    "locatorAmbiguityGap": "CLOSED_WITH_EVIDENCE",
+    "reviewerAuthProjectionGap": "OPEN_CONFIRMED_GAP",
+    "observedCounters": {
+      "playwrightInvocations": 1,
+      "webSubmissions": 0,
+      "selectedCheckerExecutions": 0,
+      "retries": 0,
+      "providerCalls": 0
+    },
+    "traceObservation": "direct session reviewer; shell admin; Operations anonymous_local; zero /api/auth/me requests",
+    "adifId": "ADIF-0037",
+    "nextAllowedMove": "author one source-verified R3R2 reviewer auth-projection packet with deterministic local regression before any browser retry",
+    "claimBoundary": "Locator ambiguity only is closed. Reviewer browser denial, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value remain unproven."
+  },
+  "nextAllowedMove": "SCLP-UC04B-R3R1 closed CLOSED_BLOCKED_BOUNDED at material commit 0856e090d. Retain the scoped locator, prior developer/anonymous projection proof, and developer business PASS. Next author one source-verified R3R2 reviewer auth-projection packet that inventories server, shell, and Operations client projections and adds deterministic provider-free regression proving /api/auth/me request emission plus reviewer role mapping. Do not authorize another browser invocation or timeout-only tuning until that local precondition passes. Do not repeat the positive path or infer full UC-04B, unified inventory, provider, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave."
 }
