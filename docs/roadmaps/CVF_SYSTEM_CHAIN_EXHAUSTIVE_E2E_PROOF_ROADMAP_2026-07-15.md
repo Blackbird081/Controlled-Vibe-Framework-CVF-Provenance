@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T4_DISPATCHED_WORKER_NEXT
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -12,9 +12,9 @@ Roadmap ID: `SCLP-X`
 
 ## Authorization / Decision
 
-Operator authorization: proceed with the proposed inventory-first method. T0
-and T1 are closed bounded. T2 through T4 remain dependency-held and require
-fresh governed packets.
+Operator authorization: proceed with the proposed inventory-first method. T0,
+T1, T2, T2G1, and T4 are now closed bounded. T3 remains value-parked under its
+concrete caller/export reopen condition.
 
 ## Purpose
 
@@ -42,7 +42,8 @@ evidence inputs. They do not replace source-item enumeration.
 
 T0 owns inventory only. It may not call a provider, start a browser or business
 runtime, mutate runtime/tests/checkers, promote a claim, or create implementation
-work. Later tranches remain dependency-held until the prior reviewer closure.
+work. The ordered dependency sequence was enforced through separate reviewer
+closures and fresh dispatch packets.
 
 ## Target / Source
 
@@ -137,11 +138,12 @@ is `MISSING_PROOF` unless a governed value decision parks it.
 | T2 | repository-wide read-only caller verification | terminal match ledger and two caller decisions | `CLOSED_PASS_BOUNDED`: 22,026 files; 500 raw hits; 329 terminal rows; zero ambiguous or production-caller rows; both targets recommend proposal-only GAP entry |
 | T2G1 | paired GC-009/GC-010 architecture GAP recording | one compact GAP entry, regenerated index, aligned README, no-commit return | `CLOSED_PASS_BOUNDED`: schema-valid paired entry; 12/12 unique GAP IDs; README aligned; zero runtime/test/live/provider action |
 | T3 | operator-surface or provider proof batch | selected CLI/Web/provider receipts and recovery evidence | `VALUE_PARKED_WITH_REOPEN_CONDITION`: reopen only if a current non-test production caller or active package export is source-proven for GC-009 or GC-010; no caller means no executable higher-proof route |
-| T4 | final reverse projection and bounded closure | exact 99-row final projection, human audit, roadmap/front-door alignment, and no-commit return | `DISPATCH_READY`: T0/T1/T2/T2G1 dependencies source-backed; exact five-path documentation/evidence worker; every inventory claim must be terminally dispositioned with no unresolved silent row |
+| T4 | final reverse projection and bounded closure | exact 99-row final projection, human audit, roadmap/front-door alignment, and no-commit return | `CLOSED_PASS_BOUNDED`: reviewer independently confirmed four hashes, 99/99 unique rows, zero silent/unmapped destinations, exact provenance, corrected four T1-applicability cells, and retained T3/claim boundaries |
 
-T2G1 is closed bounded. T3 is value-parked under its concrete caller/export
-reopen condition. T4 is dispatch-ready under its paired GC-018/work order at
-dispatch base `285daeca2`; execution remains a separate no-commit worker phase.
+T2G1 and T4 are closed bounded. T3 remains value-parked under its concrete
+caller/export reopen condition. The complete SCLP-X chain is accepted through
+the final projection, audit, worker return, and reviewer completion; no active
+tranche remains.
 
 ## Acceptance Criteria
 
@@ -212,11 +214,12 @@ freshness as repository evidence only. Any missing current invocation remains
 
 ## Next Allowed Move
 
-Execute only the exact five-path no-commit SCLP-X-T4 worker: create the derived
-99-claim final projection, human audit, roadmap/front-door alignment, and worker
-return. Preserve T3 as value-parked. Do not run runtime/tests/build/typecheck/
-CI/live/provider/browser/business-CLI action or mutate historical T0-T2 ledgers,
-source, Catalog/GAP/ADIF, session, handoff, or public surfaces.
+No active SCLP-X tranche remains. Reopen only T3 if its existing checkable
+condition is satisfied by current source evidence for a non-test production
+caller or active package export for GC-009 or GC-010. Any other continuation
+requires a fresh operator-authorized roadmap and source-verified GC-018/work
+order. Do not infer runtime, provider, public, production, scale, certification,
+shipment, or user-value readiness from this bounded closure.
 
 ## Public Export Disposition
 
@@ -251,19 +254,41 @@ closure was bounded and must not be promoted to universal live proof.
 
 ### Contradiction Or Gap Disposition
 
-The terminal source-item ledger is complete. T1 remains required to decide
-which of the three missing-proof claims are decision-changing and whether the
-two proposed owner/GAP candidates should update an existing owner, add a GAP,
-or remain parked.
+The terminal source-item ledger is complete. T1 decided all six value rows, T2
+closed the two caller questions, T2G1 projected the paired GAP, and T4 mapped
+all 99 claims to terminal destinations with no silent row.
 
 ### Claim Update
 
-The exhaustive repository-evidence inventory is accepted bounded. No universal
-runtime or E2E claim is made, and no live branch is released by this update.
+The full SCLP-X evidence chain is accepted bounded. T3 remains parked; no
+universal runtime/E2E claim or live branch is released by closure.
 
 ## Claim Boundary
 
-This roadmap authorizes an exhaustive governed inventory of four canonical
-source families and later value-selected proof planning. It does not prove that
-all CVF system chains work E2E, authorize any live/provider/runtime action,
-certify production readiness, or establish real-user value.
+This roadmap closes an exhaustive governed inventory and reverse projection of
+four canonical source families. It does not prove that all CVF system chains
+work E2E, authorize live/provider/runtime action, certify production readiness,
+or establish real-user value.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | T4 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T4_FINAL_ROADMAP_CLOSURE_COMPLETION_2026-07-15.md` | reviewer acceptance | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | final projection JSON | 99 unique terminal rows; zero silent/unmapped | PASS |
+| Registry Markdown | system-chain front door | SCLP-X bounded final readout | PASS |
+| External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason: no digest required |
+| System loop interlock | final projection destination matrix | 99 terminal destinations | PASS |
+| Session continuity | active session | separate post-material sync | N/A with reason: protected continuity sync follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| T0 claim set | 99 source and normalized claims | 99/99 | PASS |
+| final projection | 99 unique rows | 99/99 | PASS |
+| terminal gaps | zero silent and zero unmapped | zero/zero | PASS |
+| T3 | concrete parked condition retained | unchanged | PASS |
+| execution boundary | zero runtime/test/live/provider | zero | PASS |

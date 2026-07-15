@@ -306,6 +306,38 @@ for the accepted `CLOSED_PASS_BOUNDED` decision and
 `docs/reviews/CVF_SYSTEM_CHAIN_T5_FINAL_REVERSE_PROJECTION_AUDIT_2026-07-15.md`
 for the full matrices.
 
+## SCLP-X Exhaustive-Proof Chain Final Readout
+
+The SCLP-X roadmap (`docs/roadmaps/CVF_SYSTEM_CHAIN_EXHAUSTIVE_E2E_PROOF_ROADMAP_2026-07-15.md`)
+ran a separate exhaustive-inventory question across four canonical source
+families (5 map lanes, 20 interlock connections, 50 governance controls, 24
+catalog entities; 99 source records) distinct from the five-lane picture
+above. T0 built a 99-claim inventory (5 `PROVEN`, 78
+`STATIC_NOT_APPLICABLE`, 13 `VALUE_PARKED`, 3 `MISSING_PROOF`). T1 ranked the
+three `MISSING_PROOF` claims and selected GC-009 (`MandatoryGateway`) and
+GC-010 (`AgentExecutionRuntime`) for future read-only caller verification. T2
+ran a repository-wide read-only search (22,026 files, 500 raw hits, 329
+terminal match-ledger rows, zero ambiguous rows) and found
+`NO_NON_TEST_PRODUCTION_CALLER_FOUND` for both controls. T2G1 recorded that
+finding as one paired architecture GAP,
+`cvf.asc.gap.gc009_gc010_no_production_caller.v1` (see
+`docs/reference/system_chain/gaps/README.md`). T4 built a final 99-row
+reverse projection reconciling all four tranches with zero silent rows and
+zero unmapped destinations; see
+`docs/reference/system_chain/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_FINAL_PROJECTION.json`
+and
+`docs/audits/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T4_FINAL_REVERSE_PROJECTION_AUDIT_2026-07-15.md`.
+
+SCLP-X claim boundary: this chain accounts for 99 claims across four
+canonical source families and records GC-009/GC-010 as
+invocation-unproven with a discoverable architecture GAP. T3 (an
+operator-surface or provider proof batch) remains
+`VALUE_PARKED_WITH_REOPEN_CONDITION`: reopen only if a current non-test
+production caller or active package export is later source-proven for
+GC-009 or GC-010. This chain does not claim universal CVF end-to-end proof,
+does not claim GC-009 or GC-010 is production-invoked, and does not claim
+production, public, scale, certification, shipment, or real-user readiness.
+
 ## Operator Readout
 
 If you need to know "is CVF's governance chain actually wired together,"

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -14,7 +14,7 @@ dispatchBaseHead: `285daeca2`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `244fc6e92`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -87,8 +87,22 @@ Allowed scope:
   accepted T2G1 projection already owns the finding;
 - value-park any non-decision-changing branch with a concrete reopen condition.
 
-Reviewer closure scope additionally includes the paired baseline, this work
-order, and a reviewer-owned completion review.
+The exact worker-owned allowed paths are:
+
+- `docs/reference/system_chain/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_FINAL_PROJECTION.json`;
+- `docs/audits/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T4_FINAL_REVERSE_PROJECTION_AUDIT_2026-07-15.md`;
+- `docs/roadmaps/CVF_SYSTEM_CHAIN_EXHAUSTIVE_E2E_PROOF_ROADMAP_2026-07-15.md`;
+- `docs/reference/system_chain/README.md`;
+- `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T4_WORKER_RETURN_2026-07-15.md`.
+
+Reviewer closure scope additionally includes these exact reviewer-owned paths:
+
+- `docs/baselines/CVF_GC018_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T4_FINAL_REVERSE_PROJECTION_AND_BOUNDED_ROADMAP_CLOSURE_2026-07-15.md`;
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T4_FINAL_REVERSE_PROJECTION_AND_BOUNDED_ROADMAP_CLOSURE_2026-07-15.md`;
+- `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T4_FINAL_ROADMAP_CLOSURE_COMPLETION_2026-07-15.md`.
+
+Together with the five worker-owned manifest paths, these form the exact
+eight-path material closure range.
 
 Forbidden scope:
 
@@ -287,14 +301,14 @@ and Closure Diff Gate before accepting any roadmap closure.
 
 ## Closure Checklist
 
-- [ ] Four input hashes match at worker start.
-- [ ] Exactly 99 final projection rows and unique claim keys reconcile.
-- [ ] Every row has terminal evidence/destination/claim/non-claim fields.
-- [ ] T1, T2, and T2G1 decisions are projected without branch inflation.
-- [ ] T3 remains value-parked with the existing concrete reopen condition.
-- [ ] Five-path worker manifest matches and no forbidden path changed.
-- [ ] Worker return fast gate and deterministic drift checks pass.
-- [ ] Worker work remains uncommitted for reviewer conversion.
+- [x] Four input hashes match at worker start.
+- [x] Exactly 99 final projection rows and unique claim keys reconcile.
+- [x] Every row has terminal evidence/destination/claim/non-claim fields.
+- [x] T1, T2, and T2G1 decisions are projected without branch inflation.
+- [x] T3 remains value-parked with the existing concrete reopen condition.
+- [x] Five-path worker manifest matches and no forbidden path changed.
+- [x] Worker return fast gate and deterministic drift checks pass.
+- [x] Worker work remained uncommitted for reviewer conversion.
 
 ## Stop Conditions
 
@@ -343,7 +357,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | `MULTI_AGENT_MULTI_ROLE` |
 | rolePattern | dispatcher; delegated worker; reviewer/closer; session-sync steward following committed material closure |
 | phase | `DISPATCH_AUTHORING`; `EXECUTION`; `CLOSURE`; `SESSION_SYNC` |
-| baseHeadFor(phase) | dispatchBaseHead=`285daeca2`; executionBaseHead=`WORKER_MUST_CAPTURE_AT_START`; closureBaseHead=`NOT_EXECUTED_YET` |
+| baseHeadFor(phase) | dispatchBaseHead=`285daeca2`; executionBaseHead=`244fc6e92`; closureBaseHead=`244fc6e92` |
 | changedSetScope(phase) | dispatch=paired packet and roadmap release; execution=exact five-path manifest; closure=accepted manifest plus paired packet status and reviewer completion; session-sync=protected continuity paths only |
 | traceScope(phase, actor) | each actor records only its phase-local changed set and commands |
 | commitOwner(phase) | dispatcher commits packet; worker forbidden; reviewer/closer commits accepted material; session steward commits continuity separately |
@@ -467,6 +481,29 @@ business-CLI command is authorized.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance evidence reconciliation; no public-sync authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED`; checklist resolved | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T4_FINAL_ROADMAP_CLOSURE_COMPLETION_2026-07-15.md` | independent review and closure diff | PASS |
+| Roadmap state | SCLP-X roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | final projection JSON | 99/99 unique terminal rows; zero silent/unmapped | PASS |
+| Registry Markdown | system-chain front door | bounded final readout aligned | PASS |
+| External evidence digest | N/A with reason: repository evidence only | no external input | N/A with reason: no digest required |
+| System loop interlock | final projection destination matrix | 99 terminal destinations | PASS |
+| Session continuity | active session | separate post-material sync | N/A with reason: session sync follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| input hashes | four exact matches | four independently recomputed matches | PASS |
+| final rows | 99 total and unique | 99/99 | PASS |
+| silent/unmapped | zero/zero | zero/zero | PASS |
+| T3 | parked condition unchanged | preserved verbatim | PASS |
+| execution boundary | zero runtime/test/live/provider | zero | PASS |
 
 ## Operator Checkpoint
 
