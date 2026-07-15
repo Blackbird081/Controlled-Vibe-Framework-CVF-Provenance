@@ -72,13 +72,13 @@ this table when entries change.
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
-| `cvf.asc.gap.web_reviewer_denial_proof_locator_ambiguity.v1` | evidence_to_operator_surface | retained UC-04B business proof -> reviewer denial/audit evidence | `OPEN_CONFIRMED_GAP` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_reviewer_denial_proof_locator_ambiguity.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3_BUSINESS_PROOF_COMPLETION_2026-07-15.md` | Repair only the negative locator and execute one fresh reviewer-denial recovery |
+| `cvf.asc.gap.web_nextauth_application_projection_split.v1` | evidence_to_operator_surface | NextAuth reviewer session -> Operations client reviewer projection | `OPEN_CONFIRMED_GAP` (reopened after bounded developer/anonymous closure) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_nextauth_application_projection_split.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R1_NEGATIVE_LOCATOR_RECOVERY_COMPLETION_2026-07-15.md` | Source-verify all auth projections and add deterministic client request-emission regression before another browser invocation |
 
 ### Recently Closed Gaps
 
 | gapId | Plane | Owner (source -> target) | Status | Proof class | Entry / Evidence | Boundary caveat |
 |---|---|---|---|---|---|---|
-| `cvf.asc.gap.web_nextauth_application_projection_split.v1` | evidence_to_operator_surface | NextAuth session endpoint -> application `verifySessionCookie`/Operations projection | `CLOSED_WITH_EVIDENCE` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_nextauth_application_projection_split.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2R1_LOCALHOST_NORMALIZED_RECOVERY_COMPLETION_2026-07-15.md` | Closed for the bounded developer/anonymous canonical-origin projection pair only; UC-04B business submission, reviewer role, all-host, unified inventory, and production claims remain separate |
+| `cvf.asc.gap.web_reviewer_denial_proof_locator_ambiguity.v1` | evidence_to_operator_surface | retained UC-04B negative proof -> unique reviewer role locator | `CLOSED_WITH_EVIDENCE` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_reviewer_denial_proof_locator_ambiguity.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R1_NEGATIVE_LOCATOR_RECOVERY_COMPLETION_2026-07-15.md` | Locator ambiguity is closed; reviewer denial remains blocked under the reopened auth-projection gap |
 | `cvf.asc.gap.phase_governance_generated_markdown_conformance.v1` | enforcement_to_evidence -> evidence_to_operator_surface | three current renderer owners -> phase-governance Markdown outputs | `CLOSED_WITH_EVIDENCE` (was `OPEN_CONFIRMED_GAP`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/phase_governance_generated_markdown_conformance.json`; `docs/reviews/CVF_SYSTEM_CHAIN_UC02_RENDERER_CONFORMANCE_REPAIR_COMPLETION_2026-07-14.md` | Closed after all 20 outputs were regenerated and all 12 governed Markdown outputs passed the applicable checker surface; zero UC-02/scenario/provider calls |
 | `cvf.asc.gap.packet_posture_bootstrap_archive_path_drift.v1` | runtime_to_enforcement | `scripts/run_cvf_packet_posture_state_bootstrap.py` -> phase-governance evidence consumers | `CLOSED_WITH_EVIDENCE` (was `IMPLEMENTED_NOT_INVOCATION_PROVEN`) | `LOCAL_RUNTIME_VERIFIED_EDGE` | `entries/packet_posture_bootstrap_archive_path_drift.json`; `docs/reviews/evidence/system-chain-uc02-current-rerun-2026-07-14.json` | Closed by one bootstrap PASS and CF-076 through CF-084 PASS 9/9; downstream Markdown conformance is tracked separately |
 | `cvf.asc.gap.sot3_independent_refinery_owner_unresolved.v1` | doctrine_to_contract -> contract_to_runtime | `docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` -> `EXTENSIONS/CVF_REFINERY/` | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` (was `SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE`) | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/sot3_independent_refinery_owner_unresolved.json`; `docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md`; `docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md` | No package activation, adapter, provider/live, or public-sync claim; private-provenance implementation only |
@@ -117,6 +117,14 @@ SCLP-UC04B-R3 proved the developer business path on 2026-07-15 but exposed a
 distinct proof-harness gap before the reviewer denial POST. The positive path
 is retained. The open locator GAP requires one fresh negative-only recovery;
 it does not reopen the auth-projection repair or imply a runtime-policy defect.
+
+SCLP-UC04B-R3R1 closed the locator GAP on 2026-07-15, but the negative case
+then exposed fresh reviewer-role projection evidence: the direct session was
+reviewer while the Operations client stayed anonymous_local and emitted no
+`/api/auth/me` request. This satisfies the existing projection GAP's explicit
+reopen condition. The bounded developer/anonymous proof remains retained; only
+reviewer scope is open, and another browser run waits for deterministic local
+request-emission and role-mapping regression.
 
 ## Search Examples
 

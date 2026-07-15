@@ -110,7 +110,7 @@ test.describe('UC-04B Web Operations Readout', () => {
     await authenticateDirectly(page, 'reviewer', 'reviewer123', 'reviewer');
     await page.goto(OPERATIONS_URL, { waitUntil: 'domcontentloaded', timeout: 20_000 });
 
-    await expect(page.getByText('reviewer')).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText('Active role', { exact: true }).locator('..').getByText('reviewer', { exact: true })).toBeVisible({ timeout: 15_000 });
 
     const runButton = page.locator(`[data-testid="${RUN_TEST_ID}"]`);
     await expect(runButton).toBeVisible({ timeout: 10_000 });

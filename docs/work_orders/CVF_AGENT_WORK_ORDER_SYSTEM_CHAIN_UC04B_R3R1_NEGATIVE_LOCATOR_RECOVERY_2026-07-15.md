@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Work Order ID: `SCLP-UC04B-R3R1`
 
@@ -491,3 +491,28 @@ public or production readiness, scale, certification, or user value.
 | Actual changed set | paired R3R1 baseline and work order |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | SCLP-UC04B-R3R1 | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R1_NEGATIVE_LOCATOR_RECOVERY_COMPLETION_2026-07-15.md` | `CLOSED_BLOCKED_BOUNDED` | PASS |
+| Registry JSON | coverage and generated GAP index | reviewer projection reopened | PASS |
+| Registry Markdown | system-chain and GAP front doors | R3R2 route | PASS |
+| System loop interlock | exact worker ledger | 1/0/0/0/0 | PASS |
+| Roadmap state | system-chain roadmap | R3R2 packet next | PASS |
+| External evidence digest | N/A with reason: repository/runtime evidence only | no external input | N/A with reason |
+| Session continuity | active session | separate post-material sync | N/A with reason |
+| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+|---|---|---|---|
+| Playwright invocation | 1 | 1 | PASS |
+| reviewer denial | PASS | pre-POST projection FAIL | BLOCKED |
+| Web submissions | 1 | 0 | BLOCKED_DIAGNOSED |
+| checker executions | 0 | 0 | PASS |
+| retries | 0 | 0 | PASS |
+| provider calls | 0 | 0 | PASS |

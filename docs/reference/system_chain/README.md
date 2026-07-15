@@ -257,6 +257,16 @@ were 1/1/1/0/0 for invocation, Web submission, selected checker, retry, and
 provider calls. The positive edge is retained; reviewer browser denial remains
 unproven and routes to one locator-only R3R1 recovery packet.
 
+UC-04B-R3R1 is closed `CLOSED_BLOCKED_BOUNDED`. The scoped exact locator
+eliminated the prior five-match ambiguity, but the canonical-origin trace
+contained no `/api/auth/me` request, the Operations role remained
+`anonymous_local`, and the reviewer POST was not attempted. Fresh reviewer
+evidence therefore satisfies the recorded reopen condition for
+`cvf.asc.gap.web_nextauth_application_projection_split.v1`. Prior bounded
+developer/anonymous projection and developer business evidence remain retained.
+A source-verified R3R2 packet must prove deterministic reviewer client-role
+projection before another browser invocation; timeout-only tuning is excluded.
+
 Operations exposes a bounded five-job-type subset
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts`),
 of which exactly one job type (`docs_governance_check`) wires directly to

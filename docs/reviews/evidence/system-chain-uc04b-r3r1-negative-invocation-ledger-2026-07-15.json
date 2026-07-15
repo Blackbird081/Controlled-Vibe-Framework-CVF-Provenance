@@ -1,0 +1,47 @@
+{
+  "packet": "SCLP-UC04B-R3R1",
+  "executionBaseHead": "c8995160ed804dae4c9005179d753b6f2254d723",
+  "commandFingerprint": "$env:PLAYWRIGHT_BASE_URL='http://localhost:3001'; npx playwright test tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts --config playwright.config.ts --workers=1 --grep \"negative_reviewer_docs_check\"",
+  "canonicalOrigin": "http://localhost:3001",
+  "playwrightBaseUrlInherited": false,
+  "frozenSpecPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts",
+  "preEditSpecSha256": "89aaf5a078c7c90bb01265d5f982110f6a077343641bff09e245eb5cff271d49",
+  "postEditSpecSha256": "6568f0463feaa0b2680365e89bcd31c49c4245648cd3de12d409ed37e713f0ec",
+  "preEditHashMatchesDeclared": true,
+  "locatorDiffMatchesAuthorizedShape": true,
+  "authorizedLocatorShape": "page.getByText('Active role', { exact: true }).locator('..').getByText('reviewer', { exact: true })",
+  "listSelectionCommand": "npx playwright test tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts --config playwright.config.ts --grep \"negative_reviewer_docs_check\" --list",
+  "listSelectionResult": "exactly 1 test: negative_reviewer_docs_check",
+  "positiveCaseExcluded": true,
+  "invocationCeiling": 1,
+  "invocationStarted": 1,
+  "ledgerCreatedAt": "2026-07-15T05:26:40Z",
+  "invocationStartedAt": "2026-07-15T05:27:05Z",
+  "invocationCompletedAt": "2026-07-15T05:28:18Z",
+  "result": "FAIL",
+  "selectedCases": {
+    "negative_reviewer_docs_check": "FAIL"
+  },
+  "runtimeAuditBaseline": {
+    "path": ".cvf/runtime/web-governance-jobs.jsonl",
+    "preRunLineCount": 36,
+    "postRunLineCount": 36,
+    "newEventsAppended": 0
+  },
+  "observedHosts": [
+    "localhost:3001"
+  ],
+  "counters": {
+    "webSubmissions": 0,
+    "selectedCheckerExecutions": 0,
+    "retries": 0,
+    "providerCalls": 0
+  },
+  "expectedCounters": {
+    "playwrightInvocations": 1,
+    "webSubmissions": 1,
+    "selectedCheckerExecutions": 0,
+    "retries": 0,
+    "providerCalls": 0
+  }
+}

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_UC04B_R3R1_LOCATOR_RECOVERY_PACKET_NEXT
+Status: ACTIVE_UC04B_R3R2_REVIEWER_AUTH_PROJECTION_PACKET_NEXT
 
 docType: roadmap
 
@@ -218,13 +218,18 @@ public, scale, certification, or real-user outcomes.
 
 ## Next Allowed Move
 
-UC-04B-R3 is closed `CLOSED_BLOCKED_BOUNDED`. One canonical invocation proved
-the selected developer business path end to end, but the reviewer case stopped
-at an ambiguous retained locator before POST. Exact counters are 1/1/1/0/0.
-The next allowed move is author one source-verified R3R1 locator-only recovery
-packet for the reviewer denial path. Do not rerun R3, repeat the positive path
-without a source-backed coupling reason, or infer unified Web inventory,
-provider governance, public, production, scale, certification, or user value.
+UC-04B-R3R1 is closed `CLOSED_BLOCKED_BOUNDED`. The exact locator repair
+eliminated the prior five-match ambiguity, but the canonical-origin reviewer
+case remained `anonymous_local`, emitted no `/api/auth/me` request, and stopped
+before POST. Exact counters are 1/0/0/0/0. The prior developer/anonymous
+projection evidence remains retained, while the auth-projection GAP is reopened
+for reviewer scope under its recorded fresh-contradiction condition. The next
+allowed move is author one source-verified R3R2 auth-projection/hydration repair
+packet with deterministic local regression. Do not authorize another browser
+invocation merely by increasing timeout; first prove that the client request
+emits and the reviewer role reaches the Operations owner. Do not repeat the
+positive path or infer unified Web inventory, provider governance, public,
+production, scale, certification, or user value.
 
 ## Checker Source Read-Ahead Block
 

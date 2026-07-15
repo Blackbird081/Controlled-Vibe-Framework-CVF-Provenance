@@ -5,8 +5,8 @@
   "targetPlaneId": "cvf.asc.plane.evidence_to_operator_surface.v1",
   "sourceOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts; /api/auth/session",
   "targetOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts; src/app/api/auth/me/route.ts; src/app/api/system/jobs/route.ts; Operations page",
-  "missingEdge": "CLOSED_WITH_EVIDENCE: the request-bound verifySessionCookie adapter is repaired, focused-test proven, and browser-proven for developer and anonymous projections under one canonical localhost origin. UC-04B business submission remains outside this gap and is still unproven.",
-  "currentStatus": "CLOSED_WITH_EVIDENCE",
+  "missingEdge": "Fresh canonical-origin reviewer evidence contradicts the bounded developer/anonymous closure: the direct NextAuth session reports reviewer while the Operations client remains anonymous_local, emits no /api/auth/me request, and never reaches the reviewer denial POST.",
+  "currentStatus": "OPEN_CONFIRMED_GAP",
   "proofClass": "EXECUTED_AND_EVIDENCED_EDGE",
   "citations": [
     {
@@ -33,18 +33,28 @@
       "path": "docs/reviews/evidence/system-chain-uc04b-r2r1-localhost-regression-2026-07-15.json",
       "lineOrSection": "cases and projections",
       "evidenceRole": "one-invocation two-case PASS receipt"
+    },
+    {
+      "path": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R1_NEGATIVE_LOCATOR_RECOVERY_COMPLETION_2026-07-15.md",
+      "lineOrSection": "Evidence Reconciliation",
+      "evidenceRole": "fresh governed reviewer-role contradiction that satisfies the recorded reopen condition"
+    },
+    {
+      "path": "docs/reviews/evidence/system-chain-uc04b-r3r1-negative-diagnostic-2026-07-15.json",
+      "lineOrSection": "stage and invocationLedgerReconciliation",
+      "evidenceRole": "no client auth projection request before timeout and exact zero-submission counters"
     }
   ],
-  "impact": "Resolved for the bounded developer and anonymous auth-projection pair. This closure does not authorize or prove UC-04B business submission, reviewer-role coverage, every host configuration, or unified checker visibility.",
+  "impact": "Developer and anonymous projection evidence remains retained, but reviewer projection is currently open. The selected UC-04B reviewer-denial business path cannot be promoted until the application client observes the authenticated reviewer role and reaches the policy POST.",
   "closeCondition": {
     "conditionKind": "EXECUTED_PROOF_ACCEPTED",
-    "conditionText": "SATISFIED: the source-verified request-bound repair passed 12 focused tests and the fresh governed canonical-origin browser regression passed both developer and anonymous projection cases."
+    "conditionText": "A source-verified repair proves one coherent reviewer projection from NextAuth through the Operations client, including an observed /api/auth/me request, before a fresh negative-only browser proof reaches the policy POST."
   },
   "reopenCondition": {
-    "conditionKind": "FRESH_EVIDENCE_CONTRADICTION",
-    "conditionText": "Reopen only if a fresh governed browser proof reproduces a NextAuth-to-application projection mismatch under one canonical origin, or the auth ownership contract materially changes."
+    "conditionKind": "NOT_APPLICABLE_WITH_REASON",
+    "conditionText": "The gap is open after its recorded fresh-evidence reopen condition was satisfied; no further reopen condition applies until closure."
   },
-  "actionOwner": "CLOSED: retain R2R1 evidence; route UC-04B business proof separately",
+  "actionOwner": "NEXT_PACKET: source-verify the three auth projections, diagnose why the Operations client emits no /api/auth/me request, add deterministic local regression, and forbid a browser retry until that precondition passes",
   "freshnessInputs": [
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
@@ -53,6 +63,6 @@
   ],
   "lastReviewed": {
     "date": "2026-07-15",
-    "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R2R1_LOCALHOST_NORMALIZED_RECOVERY_COMPLETION_2026-07-15.md"
+    "acceptedArtifact": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R1_NEGATIVE_LOCATOR_RECOVERY_COMPLETION_2026-07-15.md"
   }
 }

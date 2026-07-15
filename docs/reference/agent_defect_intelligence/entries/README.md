@@ -64,6 +64,7 @@ registry edit is required when adding a new entry beyond this table.
 | `CVF_ADIF-0034.md` | ADIF-0034 | CLOSURE_EVIDENCE | GUIDANCE_ONLY |
 | `CVF_ADIF-0035.md` | ADIF-0035 | CLOSURE_EVIDENCE | GUIDANCE_ONLY |
 | `CVF_ADIF-0036.md` | ADIF-0036 | CLOSURE_EVIDENCE | GUIDANCE_ONLY |
+| `CVF_ADIF-0037.md` | ADIF-0037 | CLOSURE_EVIDENCE | GUIDANCE_ONLY |
 
 ## Claim Boundary
 
