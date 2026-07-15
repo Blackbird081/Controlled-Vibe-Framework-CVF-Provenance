@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1819,
+  "stateOrder": 1821,
   "stateKey": "nextAllowedMove",
-  "value": "The system-chain live-proof sequence and SCLP-T5 are CLOSED_PASS_BOUNDED at material commit 61662d9b0. No SCLP tranche is active. Retain the accepted UC-01 through UC-04B evidence and reopen only when a recorded concrete parked-branch trigger is satisfied or a materially new system-chain claim requires a fresh source-verified proof packet. Do not reopen unified Web checker inventory from interest alone. Public export, production, scale, certification, shipment, and real-user validation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "SCLP-X-T0 is DISPATCH_READY at material commit 48e873857. Execute only the exact no-commit three-path exhaustive inventory: terminally account for 5 system-chain lanes, 20 interlock connections, 50 governance controls, and 24 catalog entities; reconcile 99/99 source records before claim deduplication; classify each normalized claim as PROVEN, STATIC_NOT_APPLICABLE, MISSING_PROOF, or VALUE_PARKED. Zero live, provider, browser, business CLI, runtime, test, checker, registry-owner, ADIF, session, public, or T1-T4 action. Return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. LHW24 remains latest closed numbered LHW wave."
 }

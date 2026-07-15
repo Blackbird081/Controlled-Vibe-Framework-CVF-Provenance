@@ -1,0 +1,19 @@
+{
+  "stateOrder": 1820,
+  "stateKey": "systemChainExhaustiveProofT0Dispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "48e873857",
+    "workOrderId": "SCLP-X-T0",
+    "dispatchBaseHead": "b51aa9b6b",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedManifestCount": 3,
+    "sourceFamilyCounts": "5/20/50/24",
+    "sourceItemTotal": 99,
+    "liveInvocationCeiling": 0,
+    "providerCallCeiling": 0,
+    "runtimeMutationCeiling": 0,
+    "nextAllowedMove": "execute exact three-path exhaustive proof inventory and return for reviewer closure",
+    "claimBoundary": "Inventory of governed source claims only. No universal E2E proof, execution selection, provider, public, production, scale, certification, shipment, or user-value claim."
+  }
+}
