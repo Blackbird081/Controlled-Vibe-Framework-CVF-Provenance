@@ -19,10 +19,10 @@ ADIF-0037. A later R3R2 dispatch must use fresh GC-018 and source verification.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`;
+Startup acknowledged: current mode=`system_chain_uc04b_r3r2_dispatched_worker_next`;
 active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author one
-source-verified R3R2 reviewer auth-projection packet with deterministic local
-regression before another browser invocation; parked checkpoint=UC-03 harness
+execute the no-commit R3R2 local projection repair with deterministic tests
+and zero browser/business/provider action; parked checkpoint=UC-03 harness
 identity repair until its reuse trigger, GC-009/GC-010 promotion, unified
 inventory, public export, production, scale, and user validation.
 
@@ -39,7 +39,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`
+`system_chain_uc04b_r3r2_dispatched_worker_next`
 
 ## Active Boundary
 
@@ -47,7 +47,8 @@ Latest closed numbered LHW wave remains `LHW24`.
 - R3 developer business PASS remains retained.
 - R3R1 locator hardening remains retained and its ambiguity GAP is closed.
 - The existing auth-projection GAP is reopened only for reviewer scope.
-- No browser or provider invocation is currently authorized.
+- R3R2 dispatch commit: `23f884abf`.
+- No browser, business, checker-job, retry, or provider invocation is authorized.
 - The next packet must source-verify server session, shell identity, Operations
   client state, `/api/auth/me`, and the policy POST boundary.
 - Deterministic provider-free regression must prove request emission and
@@ -71,13 +72,12 @@ projection readiness.
 
 ## Next Allowed Move
 
-Author one fresh GC-018 and source-verified SCLP-UC04B-R3R2 work order. The
-packet may investigate and repair the bounded reviewer auth-projection owner
-and add deterministic local tests. It must not authorize a browser invocation
-until those tests prove `/api/auth/me` request emission and reviewer role
-mapping. Retain the R3 positive path and do not infer full UC-04B, unified
-inventory, provider governance, public, production, scale, certification, or
-user value.
+Execute the exact no-commit SCLP-UC04B-R3R2 work order from `23f884abf`.
+Require the three source/test implementation paths plus worker return, exactly
+two new projection tests, focused 34/34, typecheck PASS, zero live counters,
+unstaged status, and unchanged worker HEAD. Retain the R3 positive path and do
+not infer full UC-04B, unified inventory, provider governance, public,
+production, scale, certification, or user value.
 
 ## Parked Checkpoint
 
@@ -91,6 +91,8 @@ R3R1 material closure HEAD: `0856e090d`
 
 R3R1 session-sync HEAD: `a06265e49`
 
+R3R2 dispatch HEAD: `23f884abf`
+
 The next material commit may contain only the R3R2 dispatch packet. Its later
 session-sync commit must refresh this block and the generated state separately.
 
@@ -100,10 +102,11 @@ session-sync commit must refresh this block and the generated state separately.
 path. For UC-04B, only the developer business success and bounded prior auth
 pair are retained; reviewer browser denial is not proven.
 
-## Core Guard Self-Protection Authorization - R3R1 Closure Session Sync
+## Core Guard Self-Protection Authorization - R3R1 Closure And R3R2 Dispatch Session Sync
 
-Authorized guard-maintenance scope: synchronize material closure `0856e090d`, rotate the active
-handoff, and route R3R2 packet authoring only.
+Authorized guard-maintenance scope: synchronize material closure `0856e090d`,
+rotate the active handoff, then synchronize R3R2 dispatch `23f884abf` and route
+its exact no-commit worker only.
 
 Protected paths (every changed guard/control path is listed):
 
@@ -116,6 +119,7 @@ Protected paths (every changed guard/control path is listed):
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/systemChainUc04bR3r1BlockedClosure20260715.json`
+- `CVF_SESSION/state/entries/systemChainUc04bR3r2Dispatch20260715.json`
 
 Operator authorization: continue the system-chain sequence and process the
 completed no-commit worker return.

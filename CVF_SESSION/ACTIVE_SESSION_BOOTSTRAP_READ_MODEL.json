@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next",
+  "currentMode": "system_chain_uc04b_r3r2_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V44_2026-07-15.md",
-  "nextAllowedMove": "SCLP-UC04B-R3R1 closed CLOSED_BLOCKED_BOUNDED at material commit 0856e090d. Retain the scoped locator, prior developer/anonymous projection proof, and developer business PASS. Next author one source-verified R3R2 reviewer auth-projection packet that inventories server, shell, and Operations client projections and adds deterministic provider-free regression proving /api/auth/me request emission plus reviewer role mapping. Do not authorize another browser invocation or timeout-only tuning until that local precondition passes. Do not repeat the positive path or infer full UC-04B, unified inventory, provider, public, production, scale, certification, or user value. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SCLP-UC04B-R3R2 is DISPATCH_READY at material commit 23f884abf. Execute the exact no-commit local repair: extract OperationsClient with initialRole/initialUser, replace page.tsx with ambient verifySessionCookie server bootstrap, retain client /api/auth/me refresh, add exactly two deterministic projection tests, require focused 34/34 and typecheck PASS, and return unstaged with unchanged HEAD. Playwright/browser invocations, Web submissions, selected checker jobs, retries, and provider calls are all zero. Do not edit the retained proof, auth API/adapter, shell hook, job runtime, GAP/roadmap, or session owners. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

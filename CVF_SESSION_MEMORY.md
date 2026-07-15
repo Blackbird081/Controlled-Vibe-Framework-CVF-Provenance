@@ -34,24 +34,25 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=author one source-verified UC-04B R3R2 reviewer auth-projection packet with deterministic local regression before another browser run; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
+Startup acknowledged: current mode=`system_chain_uc04b_r3r2_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute the no-commit UC-04B R3R2 local projection repair with 34/34 and typecheck, zero browser/business/provider action; parked checkpoint=UC-03 harness identity repair until its reuse trigger, GC-009/GC-010 promotion, unified inventory, public export, production, scale, and user validation.
 
 ## Current Mode
 
-Current mode marker: `system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`
+Current mode marker: `system_chain_uc04b_r3r2_dispatched_worker_next`
 
-Current mode: `system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`
+Current mode: `system_chain_uc04b_r3r2_dispatched_worker_next`
 
-`system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`
+`system_chain_uc04b_r3r2_dispatched_worker_next`
 
 Previous mode:
 
-`system_chain_uc04b_r3r1_dispatched_worker_next`
+`system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| System-chain UC-04B-R3R2 reviewer auth-projection local repair dispatch | `23f884abf` | DISPATCH_READY; server-derived initial projection, retained client refresh, exactly two new tests, focused 34/34 plus typecheck; zero browser/business/checker-job/retry/provider; worker must not commit. |
 | System-chain UC-04B-R3R1 blocked locator recovery closure | `0856e090d` | CLOSED_BLOCKED_BOUNDED; scoped locator ambiguity closed; reviewer session/client projection contradiction reopens existing auth-projection GAP; exact 1/0/0/0/0; ADIF-0037; R3R2 packet with deterministic local precondition next. |
 | System-chain UC-04B-R3R1 negative-only locator recovery dispatch | `ac46a1bf7` | DISPATCH_READY; one exact proof locator edit; positive excluded; focused 32/32 plus one-case list required; exact 1/1/0/0/0; worker must not commit. |
 | System-chain UC-04B-R3 blocked business-proof closure | `e1ce6dc18` | CLOSED_BLOCKED_BOUNDED; developer business path PASS; reviewer case blocked before POST by five-match locator ambiguity; exact 1/1/1/0/0; GAP and ADIF-0036 recorded; negative-only R3R1 packet next. |
@@ -194,12 +195,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `system_chain_uc04b_r3r2_reviewer_auth_projection_packet_next`
+Mode: `system_chain_uc04b_r3r2_dispatched_worker_next`
 
-UC-04B R3R1 closed blocked at `0856e090d`. Author one source-verified R3R2
-reviewer auth-projection packet with deterministic local `/api/auth/me`
-request-emission and reviewer-role mapping regression before any browser retry.
-Retain the positive path and scoped locator; timeout-only tuning is excluded.
+UC-04B R3R2 is dispatch-ready at `23f884abf`. Execute the exact no-commit
+server initial-projection repair with two deterministic tests, focused 34/34,
+and typecheck. Browser, Web submission, checker-job, retry, and provider counts
+remain zero. Retain the positive path and scoped locator.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
