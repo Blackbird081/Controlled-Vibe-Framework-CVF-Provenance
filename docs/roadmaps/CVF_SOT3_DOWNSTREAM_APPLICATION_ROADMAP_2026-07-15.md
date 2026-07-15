@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: OPERATOR_AUTHORIZED_T0_QUEUED
+Status: T0_DISPATCH_READY
 
 docType: roadmap
 
@@ -16,8 +16,9 @@ The operator authorized roadmap authoring after the intake and independent
 rebuttal were classified at material commit `24d50f0d7`.
 
 Decision: retain the application as a sibling downstream product candidate,
-not CVF Core. Queue T0 packet authoring until FSCB-ADAPT-T0 has a material
-closure commit so the two source families do not share one changed set.
+not CVF Core. FSCB-ADAPT-T0 closed at material commit `21659a3ac`; the separate
+T0 packet is now released from clean dispatch base `baaf21cd2` so the two source
+families remain isolated.
 
 ## Purpose
 
@@ -52,9 +53,9 @@ owners before modifying the sibling source.
 
 | Control | Decision |
 |---|---|
-| current active tranche | none |
-| queued next packet | SOT3-APP-T0 source ledger and provenance disposition |
-| scheduling release | FSCB-ADAPT-T0 material closure commit exists and worktree is clean |
+| current active tranche | SOT3-APP-T0 source ledger and provenance disposition |
+| committed packet | paired T0 GC-018 and source-verified work order in this dispatch batch |
+| scheduling release | SATISFIED by FSCB-ADAPT-T0 material closure `21659a3ac` and clean dispatch base `baaf21cd2` |
 | source mutation | forbidden until a later source-verified implementation work order passes pre-dispatch |
 | hidden-clone coupling | T0 must sever, govern, or block every declared path |
 | runtime/live | separately authorized only in tranches whose acceptance requires it |
@@ -111,12 +112,24 @@ Stop and return to the orchestrator when:
 
 ## Dependency And Sequence Control
 
-Material commit `24d50f0d7` releases roadmap authoring. SOT3-APP-T0 packet
-authoring is queued behind the concrete scheduling condition in Dispatch
+Material commit `24d50f0d7` released roadmap authoring. FSCB-ADAPT-T0 material
+closure `21659a3ac` satisfies the concrete scheduling condition in Dispatch
 Boundary; this is cross-batch isolation, not a semantic dependency on the
-Four-Surface doctrine result.
+Four-Surface doctrine result. T0 execution is released only through the paired
+GC-018 and work order below.
 
 No later tranche is released by this roadmap table alone.
+
+## T0 Dispatch Packet
+
+| Field | Value |
+|---|---|
+| dispatchBaseHead | `baaf21cd2` |
+| GC-018 | `docs/baselines/CVF_GC018_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md` |
+| work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md` |
+| worker outputs | source-processing/provenance ledger plus no-commit worker return |
+| commit mode | `WORKER_MUST_NOT_COMMIT` |
+| execution boundary | read/hash/classify copied folder and read-only hidden-clone Git metadata; no application execution or mutation |
 
 ## Reverse Architecture Projection Matrix
 
@@ -138,11 +151,11 @@ No later tranche is released by this roadmap table alone.
 |---|---|
 | Source type | downstream copied-folder application |
 | Upstream or source-mirror disposition | `LOCAL_OPERATOR_AUTHORED_INPUT_WITHOUT_UPSTREAM`; no local Git provenance exists |
-| Enumeration or manifest plan | future T0 direct recursive enumeration with relative path, bytes, and SHA-256 |
+| Enumeration or manifest plan | dispatched T0 direct recursive enumeration with relative path, bytes, and SHA-256 |
 | Per-file terminal-ledger plan | one row for each of 336 files using READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, or BLOCKED_UNREADABLE |
 | Owner or overlap route | T1 maps accepted groups to current SOT3, package, runtime, evidence, and product owners |
 | Value-disposition route | ABSORB, ADAPT, DEFER, REJECT, BLOCK, or NO_NEW_VALUE plus reviewer semantic audit |
-| Claim boundary | queued roadmap only; no source mutation or absorption completion |
+| Claim boundary | dispatched T0 source/provenance evidence only; no source mutation or absorption completion |
 
 ## Mandatory Blind-Spot Control Block
 
@@ -163,13 +176,13 @@ No later tranche is released by this roadmap table alone.
 | Standard | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` |
 | Input root or repository | literal sibling source root in Scope / Target / Owner Boundary |
 | Enumeration command | future filesystem-backed direct recursive `Get-ChildItem` enumeration |
-| Manifest artifact or inline manifest | inline 336-file/238,522-byte snapshot; future T0 ledger |
-| Processing ledger artifact or inline ledger | inline Work Plan and Corpus Completeness And Report Integrity sections; future T0 file-level ledger path is fixed by its work order |
+| Manifest artifact or inline manifest | inline 336-file/238,522-byte snapshot; dispatched T0 ledger path is fixed by its work order |
+| Processing ledger artifact or inline ledger | inline Work Plan and Corpus Completeness And Report Integrity sections plus dispatched T0 file-level ledger |
 | Ledger terminal statuses | READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE |
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | inline Overlap And Novelty Classification table plus `docs/reference/sot_three_layer/README.md` |
 | Unresolved items | 336 file-level terminal decisions |
-| Completion claim boundary | queued roadmap only; no absorption completion or runtime claim |
+| Completion claim boundary | dispatched T0 evidence only; no absorption completion or runtime claim |
 
 ## Corpus Completeness And Report Integrity
 
@@ -178,8 +191,10 @@ No later tranche is released by this roadmap table alone.
 - Snapshot time: 2026-07-15 intake snapshot.
 - Enumeration command: future filesystem-backed direct recursive `Get-ChildItem` enumeration.
 - Manifest artifact or inline manifest: inline 336-file and 238,522-byte snapshot.
-- Manifest hash: future T0 must compute per-file SHA-256 and aggregate digest.
-- Processing ledger artifact or inline ledger: future T0 file-level ledger.
+- Manifest hash: T0 dispatch expectation is
+  `538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc`;
+  worker must recompute it.
+- Processing ledger artifact or inline ledger: dispatched T0 file-level ledger.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE
 - Reconciliation: manifest=336; ledger_terminal=0; exclusions=0; unresolved=336.
 - Unresolved files: 336.
@@ -217,11 +232,11 @@ No later tranche is released by this roadmap table alone.
 |---|---|
 | Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
 | Input type | External repo or copied folder |
-| Chain map route | intake authorization -> queued SOT3-APP roadmap -> future T0 GC-018/work order -> file ledger -> contract ratification -> bounded implementation |
+| Chain map route | intake authorization -> SOT3-APP roadmap -> committed T0 GC-018/work order -> no-commit file ledger -> contract ratification -> bounded implementation |
 | Matching local-view guard | `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py` |
 | Owner surface | this roadmap until a T0 completion review selects the application owner route |
 | Disposition | PACKAGE_CANDIDATE and RUNTIME_CANDIDATE; reject direct import |
-| Claim boundary | queued roadmap only |
+| Claim boundary | dispatched T0 evidence lane only |
 
 ## Epistemic Process Block
 
@@ -236,16 +251,16 @@ reference controllers, missing lockfile, and declared hidden-clone paths.
 Contradiction Or Gap Disposition: T0/T1 must record source contradictions as
 blocked rows or proposed owner gaps rather than guessing current CVF contracts.
 
-Claim Update: operator authorization opens roadmap sequencing only; T0 packet
-authoring remains queued and source mutation remains unauthorized.
+Claim Update: operator authorization plus FSCB cross-batch closure releases the
+committed T0 evidence packet; source mutation remains unauthorized.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; PARTIAL; Public Export Disposition; Claim Boundary |
-| gateRunPurpose | confirmation of queued roadmap and external-absorption shape |
+| literalTokensReviewed | Status: T0_DISPATCH_READY; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0 Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; PARTIAL; Public Export Disposition; Claim Boundary |
+| gateRunPurpose | confirmation of T0 dispatch release and external-absorption shape |
 | claimBoundary | structural confirmation only; no source, runtime, or product proof |
 
 ## Public Export Disposition
@@ -257,8 +272,8 @@ public-safe artifact set exists.
 
 ## Claim Boundary
 
-This roadmap records an operator-authorized sequence and a concrete T0 packet-
-authoring queue condition. It does not dispatch T0, authorize source mutation,
-complete the 336-file ledger, ratify application contracts, prove build/runtime/
-live behavior, promote the application into CVF Core, or claim public or
-production readiness.
+This roadmap records an operator-authorized sequence and releases only the
+committed T0 source/provenance evidence packet. It does not authorize source
+mutation, complete the 336-file ledger, ratify application contracts, prove
+build/runtime/live behavior, promote the application into CVF Core, or claim
+public or production readiness.
