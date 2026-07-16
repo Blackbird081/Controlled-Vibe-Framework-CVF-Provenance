@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1858,
+  "stateOrder": 1860,
   "stateKey": "nextAllowedMove",
-  "value": "MAO-OA-T1 is DISPATCH_READY at material commit 332ec7f62 with one three-path governed dispatch packet and an exact ten-path worker manifest: nine source/test paths plus docs/reviews/CVF_MAO_OA_T1_WORKER_RETURN_2026-07-16.md. Execute only docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md under WORKER_MUST_NOT_COMMIT, capture executionBaseHead at clean start, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. MAO-OA-T2 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped external-root mutation, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "MAO-OA-T1 is CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR at material commit 1bb5ff7f3. Independent review accepted the package-root and pure composition seam after focused tests, both typechecks, and one reviewer-owned GC-051 source-entry plus generated-aggregate repair. Await an explicit operator checkpoint before authoring or dispatching MAO-OA-T2. MAO-OA-T2 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped external-root mutation, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
 }

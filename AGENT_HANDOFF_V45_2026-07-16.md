@@ -9,25 +9,25 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after MAO-OA-T1 dispatch and route only its exact
-no-commit worker implementation. V44 was rotated at 1,080 lines under the
+Carry compact continuity after MAO-OA-T1 independent closure and hold at the
+operator checkpoint before MAO-OA-T2. V44 was rotated at 1,080 lines under the
 Governed File Size Guard; its history remains in the archive and canonical
 detail remains in the active state registry and governed artifacts.
 
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`332ec7f62` owns the dispatch packet. The worker may execute only its exact
-ten-path manifest and must not commit. No later-tranche, provider, durable
-runtime, public, or push authority is granted here.
+`1bb5ff7f3` owns the accepted T1 source/test closure and reviewer-owned GC-051
+repair. No later-tranche, provider, durable runtime, public, or push authority
+is granted here.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`mao_oa_t1_dispatched_worker_next`;
+current mode=`mao_oa_t1_closed_operator_checkpoint_next`;
 active handoff=`AGENT_HANDOFF_V45_2026-07-16.md`;
-next allowed move=execute only the committed MAO-OA-T1 work order under
-WORKER_MUST_NOT_COMMIT and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON;
+next allowed move=await an explicit operator checkpoint before any MAO-OA-T2
+packet authoring or dispatch;
 parked checkpoint=MAO-OA-T2 and later, SOT3-APP-T1 and later absorption,
 unscoped runtime/provider/live/public work, and push.
 
@@ -44,25 +44,29 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`mao_oa_t1_dispatched_worker_next`
+`mao_oa_t1_closed_operator_checkpoint_next`
 
-Previous mode: `mao_oa_t0_closed_t1_packet_authoring_next`.
+Previous mode: `mao_oa_t1_dispatched_worker_next`.
 
 ## Latest Work / Changes
 
-Material commit `332ec7f62` dispatches MAO-OA-T1 with a source-verified
-GC-018, canonical work order, and aligned roadmap transition.
+Material commit `1bb5ff7f3` closes MAO-OA-T1 after independent recomputation
+and one reviewer-owned registry repair.
 
-Dispatch evidence:
+Accepted evidence:
 
-- reviewer-fast passed 62/62;
-- pre-dispatch passed 75/75;
-- pre-commit passed 83/83;
-- worker manifest is exactly nine source/test paths plus
-  `docs/reviews/CVF_MAO_OA_T1_WORKER_RETURN_2026-07-16.md`;
-- commit mode is `WORKER_MUST_NOT_COMMIT`; and
-- durable storage, worker/provider launch, lifecycle/reviewer/closer execution,
-  UI, CLI/MCP, live proof, public-sync, and push remain forbidden.
+- worker `WORKER_MUST_NOT_COMMIT` was honored from `77e6c3a64`;
+- execution package-root tests passed 3/3 and control composition tests passed
+  11/11;
+- both TypeScript checks passed;
+- execution root remains 1,418 lines against its 1,450-line ceiling;
+- the worker correctly disclosed a 61/62 GC-051 gap for three new paths;
+- reviewer added one source entry covering those paths plus the changed control
+  root cited by staged reviews, regenerated the aggregate, and obtained
+  reviewer-fast 62/62;
+- pre-commit passed 83/83; and
+- completion review is
+  `docs/reviews/CVF_MAO_OA_T1_COMPLETION_REVIEW_2026-07-16.md`.
 
 MAO-OA-T0 remains independently accepted and closed at `2de211da0` with
 reviewer repairs.
@@ -84,28 +88,22 @@ Accepted evidence:
 - the completion review is
   `docs/reviews/CVF_MAO_OA_T0_COMPLETION_REVIEW_2026-07-16.md`.
 
-The T1 implementation worker has not started. No T1 source or test path has
-been changed by the dispatcher.
-
 ## Active Boundary
 
-T0 is closed. T1 is dispatch-ready. Only the exact committed package-root and
-pure composition work order is executable; all later-tranche and unlisted
-authority remains parked.
+T0 and T1 are closed. T1 proves package-root discoverability and pure
+graph-plus-role composition only. All later-tranche and unlisted authority
+remains parked.
 
 ## Next Allowed Move
 
-Execute only
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md`.
-Capture a clean `executionBaseHead`, honor its exact ten-path manifest, leave
-all changes uncommitted, and return `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`.
+Await an explicit operator checkpoint before authoring or dispatching any
+MAO-OA-T2 packet.
 
 ## Parked Boundary
 
 Remain parked:
 
-- MAO-OA-T2 through T7 and every T1 path not listed by the work order;
+- MAO-OA-T2 through T7;
 - durable storage, worker/provider launch, lifecycle execution, review/closer
   execution, CLI/MCP, UI, and operator projection;
 - SOT3-APP-T1 and later SOT3-APP work;
@@ -117,12 +115,12 @@ Remain parked:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize material dispatch
-`332ec7f62` and route only exact MAO-OA-T1 worker execution.
+Authorized guard-maintenance scope: synchronize material closure
+`1bb5ff7f3` and route only the post-T1 operator checkpoint.
 
-Operator authorization: create the governed work order for delegated
-implementation; the handoff contract and GC-020 require protected continuity
-synchronization after dispatch.
+Operator authorization: independent reviewer/closer must own material commit
+and completion review after the disclosed GC-051 follow-up; the handoff
+contract and GC-020 require protected continuity synchronization after closure.
 
 Protected paths:
 
@@ -132,10 +130,10 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/maoOaT1Dispatch20260716.json`
+- `CVF_SESSION/state/entries/maoOaT1Closure20260716.json`
 
 Rollback boundary: revert only this protected continuity batch; retain material
-dispatch `332ec7f62` and prior T0 closure `2de211da0`.
+closure `1bb5ff7f3`, dispatch `332ec7f62`, and prior T0 closure `2de211da0`.
 
 ## Public Export Disposition
 
@@ -234,8 +232,31 @@ work.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
+## Agent Operation Trace Block - MAO-OA-T1 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | independent reviewer/closer and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T1 closure continuity sync, 2026-07-16 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, git |
+| Target paths | seven protected paths listed above |
+| Allowed scope source | material closure `1bb5ff7f3`, Reviewer Closure Conversion, and GC-020 continuity |
+| Before status evidence | clean worktree at material closure HEAD `1bb5ff7f3` |
+| After status evidence | V45 active; continuity holds at the post-T1 operator checkpoint |
+| Diff evidence | protected session-only diff, generated-state drift check, and session-sync preflight |
+| Approval boundary | continuity sync after bounded T1 closure only |
+| Claim boundary | no T2-T7, runtime/provider/live, public, or push claim |
+| Agent type | independent reviewer/closer and session-sync steward |
+| Invocation ID | `mao-oa-t1-closure-session-sync-2026-07-16` |
+| Expected manifest | seven protected paths listed above |
+| Actual changed set | seven protected paths listed above |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Claim Boundary
 
-This handoff records bounded T1 dispatch and continuity only. It does not prove
-completed root adoption, durable orchestration, worker/provider launch, live
-governance, public readiness, production readiness, or user value.
+This handoff records bounded T1 closure and continuity only. It does not prove
+durable orchestration, worker/provider launch, live governance, public
+readiness, production readiness, or user value.
