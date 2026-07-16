@@ -1,0 +1,28 @@
+{
+  "stateOrder": 1857,
+  "stateKey": "maoOaT1Dispatch20260716",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-16",
+    "materialCommit": "332ec7f62",
+    "dispatchBaseHead": "233e1ab98",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md",
+    "workerReturnOutput": "docs/reviews/CVF_MAO_OA_T1_WORKER_RETURN_2026-07-16.md",
+    "completionReviewOwner": "independent reviewer/closer",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedSourceTestPathCount": 9,
+    "allowedWorkerPathCount": 10,
+    "gateEvidence": "reviewer-fast 62/62 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute only the committed MAO-OA-T1 work order and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with all worker changes uncommitted.",
+    "heldNextTranche": "MAO-OA-T2 through T7 remain held until independent T1 reviewer acceptance and fresh governed release evidence.",
+    "parkedLanes": [
+      "SOT3-APP-T1 and later SOT3-APP tranches",
+      "other high-value-folder absorption continuation",
+      "SCLP-X-T3"
+    ],
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Dispatch only. No worker execution, completed root integration, durable scheduling, worker/provider launch, runtime/live behavior, production, public-sync, or user-value claim."
+  }
+}

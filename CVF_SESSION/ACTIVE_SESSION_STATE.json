@@ -85,8 +85,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mao_oa_t0_closed_t1_packet_authoring_next",
-  "previousMode": "mao_oa_t0_dispatched_worker_next",
+  "currentMode": "mao_oa_t1_dispatched_worker_next",
+  "previousMode": "mao_oa_t0_closed_t1_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12463,7 +12463,6 @@
     "heldNextTranche": "SOT3-APP-T1 and all later tranches remain held until independent T0B reviewer acceptance and a fresh packet.",
     "claimBoundary": "Dispatch only; no worker execution, semantic acceptance, terminal provenance safety, external-root mutation, runtime/test/build/live proof, public-sync, or product-readiness claim."
   },
-  "nextAllowedMove": "MAO-OA-T0 is independently accepted and closed at material commit 2de211da0 with 18/18 terminal owner-family rows, 16 current-owner concerns, OA-15 and OA-16 explicit NEW_OWNER_REQUIRED concerns, corrected 2/6/6/3/1 terminal counts, and OA-18 preserved as UNRESOLVED_INVOCATION. Author and validate only a fresh source-verified MAO-OA-T1 GC-018 and work order for execution-plane and control-plane package-root re-exports plus one pure deterministic orchestration composition contract reusing compileTaskGraph and resolveRole. T1 implementation, MAO-OA-T2 and later tranches, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, external-root mutation, application/install/runtime/test/build/typecheck/CI/live-provider/browser/server/binding-validation/public-sync/push/Catalog/GAP/ADIF/checker/package work remain parked until fresh governed release evidence exists. LHW24 remains latest closed numbered LHW wave.",
   "sot3AppPostT0BMaoOperationalAdoptionSequence20260716": {
     "status": "OPERATOR_SEQUENCE_LOCK_RECORDED",
     "date": "2026-07-16",
@@ -12566,5 +12565,30 @@
     "nextAllowedMove": "Author and validate only a fresh source-verified MAO-OA-T1 GC-018 and work order for package-root re-exports plus one pure deterministic orchestration composition contract reusing compileTaskGraph and resolveRole; implementation remains held.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "claimBoundary": "Static source-backed audit closure only. No T1 implementation, durable storage, worker/provider launch, runtime/live behavior, public readiness, production readiness, or user-value claim."
-  }
+  },
+  "maoOaT1Dispatch20260716": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-16",
+    "materialCommit": "332ec7f62",
+    "dispatchBaseHead": "233e1ab98",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md",
+    "workerReturnOutput": "docs/reviews/CVF_MAO_OA_T1_WORKER_RETURN_2026-07-16.md",
+    "completionReviewOwner": "independent reviewer/closer",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedSourceTestPathCount": 9,
+    "allowedWorkerPathCount": 10,
+    "gateEvidence": "reviewer-fast 62/62 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute only the committed MAO-OA-T1 work order and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with all worker changes uncommitted.",
+    "heldNextTranche": "MAO-OA-T2 through T7 remain held until independent T1 reviewer acceptance and fresh governed release evidence.",
+    "parkedLanes": [
+      "SOT3-APP-T1 and later SOT3-APP tranches",
+      "other high-value-folder absorption continuation",
+      "SCLP-X-T3"
+    ],
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Dispatch only. No worker execution, completed root integration, durable scheduling, worker/provider launch, runtime/live behavior, production, public-sync, or user-value claim."
+  },
+  "nextAllowedMove": "MAO-OA-T1 is DISPATCH_READY at material commit 332ec7f62 with one three-path governed dispatch packet and an exact ten-path worker manifest: nine source/test paths plus docs/reviews/CVF_MAO_OA_T1_WORKER_RETURN_2026-07-16.md. Execute only docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md under WORKER_MUST_NOT_COMMIT, capture executionBaseHead at clean start, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. MAO-OA-T2 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped external-root mutation, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
 }
