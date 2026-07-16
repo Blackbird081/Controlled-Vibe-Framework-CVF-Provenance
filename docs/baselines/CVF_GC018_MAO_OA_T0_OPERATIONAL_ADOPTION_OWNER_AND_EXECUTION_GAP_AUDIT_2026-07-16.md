@@ -4,7 +4,7 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 Date: 2026-07-16
 
@@ -153,8 +153,8 @@ summaries and provider memory are not CVF authority.
 
 | Artifact | Owner | Required state |
 |---|---|---|
-| `docs/reviews/CVF_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_GAP_MATRIX_2026-07-16.md` | worker | complete terminal owner/gap matrix |
-| `docs/reviews/CVF_MAO_OA_T0_WORKER_RETURN_2026-07-16.md` | worker | `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` |
+| `docs/reviews/CVF_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_GAP_MATRIX_2026-07-16.md` | worker plus reviewer/closer | `ACCEPTED_BY_REVIEWER_WITH_REPAIRS` |
+| `docs/reviews/CVF_MAO_OA_T0_WORKER_RETURN_2026-07-16.md` | worker plus reviewer/closer | `ACCEPTED_BY_REVIEWER_WITH_REPAIRS` |
 
 ## Acceptance Criteria
 
@@ -173,12 +173,51 @@ An independent reviewer must recompute root searches, caller families, and the
 selected T1 seam. Gate PASS is structural evidence only and cannot substitute
 for semantic review.
 
+## Closure Decision
+
+Decision: `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS`.
+
+The reviewer independently recomputed 13 MAO source files, 9 tests, one live
+pilot script, both package-root negatives, tracked caller families, and
+in-memory boundaries. One consolidated repair corrected the current-owner
+count, OA-05 disposition arithmetic, OA-18 dynamic-invocation ambiguity, and
+the T1 boundary. T1 packet authoring is released; implementation remains held.
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+|---|---|---|---|---|---|
+| `INTERNAL_AGENT` | current deterministic MAO contracts and accepted T1 composition boundary | T0 static closure only; no execution or mutation authority | accepted matrix and reviewer recomputation | fresh T1 packet required for internal composition implementation | `CONTRACT_ONLY` |
+| `EXTERNAL_AGENT_CLI_MCP` | no current MAO CLI/MCP owner | no ingress, authentication, approval, receipt, raw-data, mutation, or public behavior | OA-18 tracked search and unresolved external dynamic invocation | external adapter remains parked | `N/A_WITH_REASON` |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired MAO-OA-T0 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_OA_T0_COMPLETION_REVIEW_2026-07-16.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS` | PASS |
+| Roadmap state | MAO-OA roadmap | `Status: MAO_OA_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | N/A with reason: no corpus registry state changed | no registry mutation | N/A with reason |
+| Registry Markdown | N/A with reason: no corpus registry state changed | no registry mutation | N/A with reason |
+| External evidence digest | N/A with reason: no external evidence consumed | none | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop owner changed | none | N/A with reason |
+| Session continuity | active state, front door, and handoff | dedicated session-sync follows material closure | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: documentation-only audit; no runtime action | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: no runtime query acceptance | N/A_WITH_REASON |
+| Worker-return acceptance | accepted after independent recomputation and reviewer repairs | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` static evidence only | PASS |
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Purpose; Scope / Target / Owner Boundary; Authority Chain; Dependency Release Evidence; Scaffold Provenance Block; ADIF Defect Registry Disclosure; Source Verification Block; Current Runtime Freshness Verification; Negative Search And Collision Discipline; Evidence Reuse And Encoding Plan; Required Artifact Manifest; Acceptance Criteria; Review Gate; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS; Purpose; Scope / Target / Owner Boundary; Authority Chain; Dependency Release Evidence; Scaffold Provenance Block; ADIF Defect Registry Disclosure; Source Verification Block; Current Runtime Freshness Verification; Negative Search And Collision Discipline; Evidence Reuse And Encoding Plan; Required Artifact Manifest; Acceptance Criteria; Review Gate; Closure Decision; Dual Agent Surface Matrix; Machine Closure Package; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm exact baseline and paired dispatch structure before commit |
 | claimBoundary | checker conformance does not prove source completeness or runtime adoption |
 
@@ -191,7 +230,7 @@ authorization exists.
 
 ## Claim Boundary
 
-This baseline authorizes one read-only MAO operational-adoption audit producing
-two uncommitted review artifacts. It does not authorize source/test/runtime
+This baseline closes one read-only MAO operational-adoption audit after
+reviewer repairs and releases T1 packet authoring only. It does not authorize source/test/runtime
 mutation, provider calls, root export wiring, durable storage, worker launch,
 session mutation, public-sync, production claims, or later-tranche release.

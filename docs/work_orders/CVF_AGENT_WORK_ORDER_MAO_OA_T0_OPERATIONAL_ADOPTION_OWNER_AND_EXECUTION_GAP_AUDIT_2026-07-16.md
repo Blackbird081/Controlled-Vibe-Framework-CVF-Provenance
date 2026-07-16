@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 Date: 2026-07-16
 
@@ -12,9 +12,9 @@ Batch ID: MAO-OA-T0
 
 dispatchBaseHead: `c137986c6`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `5df149a36`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `5df149a36`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -42,9 +42,10 @@ literal gotchas, governing roadmap, paired GC-018, MAO reference front door,
 prior closures, and checker sources named below; capture clean status and
 execution base; then recompute current sources.
 
-Return contract: create exactly the two named review artifacts, run required
-working-tree gates, leave both uncommitted, and return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+Historical worker return contract: create exactly the two named review
+artifacts, run required working-tree gates, leave both uncommitted, and return
+the pending-review or blocked token. The worker fulfilled that contract and
+the reviewer has now converted it to accepted bounded closure.
 
 ## Purpose
 
@@ -85,7 +86,7 @@ from current governed files.
 | T0B acceptance | completion review and material commit `577237cba` | exact closed artifact exists | ACCEPT |
 | MAO T0-T9 closure | T9 completion and roadmap closure at `29c55ca36` | foundation must be terminal | ACCEPT |
 | value-pilot boundary | accepted `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` at `75f5c0b90` | audit may proceed; easy task cannot be repeated | ACCEPT |
-| roadmap T0 release | roadmap status is `MAO_OA_T0_DISPATCH_READY` | only two-output audit is released | ACCEPT |
+| roadmap T0 release and closure | roadmap status is `MAO_OA_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | T0 audit accepted; T1 packet authoring only is released | ACCEPT |
 
 ## Scaffold Provenance Block
 
@@ -263,13 +264,13 @@ contracts only; summaries and provider-local memory are not authority.
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |
 |---|---|---|---|---|
-| account for every MAO owner family | Execution Plan | owner/gap matrix `ownerId` rows | source family reconciliation | READY |
-| classify current entrypoints and callers | Current Runtime Freshness Verification | `rootExportStatus`, `callerEvidence` | exact root and repository searches | READY |
-| classify durability and recovery | Required Matrix Schema | `persistenceStatus`, `livenessStatus` | direct source lines | READY |
-| preserve ambiguous invocation edges | Acceptance Criteria | `UNRESOLVED_INVOCATION` terminal token | reviewer semantic audit | READY |
-| prevent duplicate foundation owners | Design Control Carry-Forward | `adoptionGap`, `minimalNextSeam` | overlap review | READY |
-| select smallest T1 seam | Execution Plan | T1 recommendation section | independent reviewer recomputation | READY |
-| keep T1/later held | Forbidden Scope | claim and status boundaries | roadmap/work-order status check | READY |
+| account for every MAO owner family | Execution Plan | owner/gap matrix `ownerId` rows | source family reconciliation | PASS |
+| classify current entrypoints and callers | Current Runtime Freshness Verification | `rootExportStatus`, `callerEvidence` | exact root and repository searches | PASS |
+| classify durability and recovery | Required Matrix Schema | `persistenceStatus`, `livenessStatus` | direct source lines | PASS |
+| preserve ambiguous invocation edges | Acceptance Criteria | `UNRESOLVED_INVOCATION` terminal token | reviewer semantic audit | PASS |
+| prevent duplicate foundation owners | Design Control Carry-Forward | `adoptionGap`, `minimalNextSeam` | overlap review | PASS |
+| select smallest T1 seam | Execution Plan | T1 recommendation section | independent reviewer recomputation | PASS |
+| keep T1/later held | Forbidden Scope | claim and status boundaries | roadmap/work-order status check | PASS |
 
 ## Worker Autonomy / No-Question Rule
 
@@ -427,18 +428,17 @@ Contract source archive-named canonical exception: `docs/reference/CVF_AHB_T2_AG
 
 | Field | Value |
 |---|---|
-| completionReviewPath | `docs/reviews/CVF_MAO_OA_T0_COMPLETION_2026-07-16.md` optional; create only if the worker return cannot carry the reviewer decision safely |
-| reviewerOwnedClosurePaths | roadmap, GC-018, work order, both worker outputs, and optional completion review |
+| completionReviewPath | `docs/reviews/CVF_MAO_OA_T0_COMPLETION_REVIEW_2026-07-16.md` |
+| reviewerOwnedClosurePaths | roadmap, GC-018, work order, both worker outputs, and the completion review |
 | closureOwner | independent reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
 
 ## Dual Agent Surface Matrix
 
-| Surface | Disposition | Evidence requirement |
-|---|---|---|
-| INTERNAL_AGENT | CONTRACT_ONLY | audit internal source ownership; do not claim operational execution |
-| EXTERNAL_AGENT_CLI_MCP | N/A_WITH_REASON | no external CLI/MCP runtime is authorized; classify any discovered static edge only |
-| adapter boundary | DEFERRED | T3 owns any future provider-neutral worker launcher after T0-T2 acceptance |
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+|---|---|---|---|---|---|
+| `INTERNAL_AGENT` | current deterministic MAO contracts and accepted T1 composition boundary | T0 static closure only; no execution, mutation, provider, or commit authority | accepted matrix and independent reviewer recomputation | fresh T1 packet required; worker/provider launch remains T3 | `CONTRACT_ONLY` |
+| `EXTERNAL_AGENT_CLI_MCP` | no current MAO CLI/MCP owner | no ingress, authentication, approval, receipt, raw-data, mutation, or public behavior is authorized | OA-18 tracked-source search with external dynamic invocation unresolved | external adapter remains parked under a later source-verified tranche | `N/A_WITH_REASON` |
 
 ## Epistemic Process Block
 
@@ -490,15 +490,15 @@ mutation, network, public-sync, or push command is authorized.
 
 ## Acceptance Criteria
 
-- [ ] exactly two worker outputs exist and no other path changed;
-- [ ] all 18 required owner families have terminal evidence;
-- [ ] every discovered MAO source/test/script family is accounted for;
-- [ ] every matrix row uses one allowed terminal disposition;
-- [ ] unproven caller edges use `UNRESOLVED_INVOCATION`;
-- [ ] prior value-not-proven evidence is preserved without rerun or tuning;
-- [ ] one minimal T1 seam is source-verified or T1 is explicitly blocked;
-- [ ] worker-return fast gate and required component gates pass;
-- [ ] worker leaves changes uncommitted.
+- [x] exactly two worker outputs existed before reviewer-owned closure conversion;
+- [x] all 18 required owner families have terminal evidence;
+- [x] every discovered MAO source/test/script family is accounted for;
+- [x] every matrix row uses one allowed terminal disposition;
+- [x] unproven external dynamic invocation uses `UNRESOLVED_INVOCATION`;
+- [x] prior value-not-proven evidence is preserved without rerun or tuning;
+- [x] one minimal T1 packet boundary is source-verified and reviewer-repaired;
+- [x] worker-return fast gate and required component gates pass;
+- [x] worker left changes uncommitted for reviewer/closer ownership.
 
 Fail conditions:
 
@@ -534,13 +534,45 @@ status.
 
 | Item | Dispatch disposition |
 |---|---|
-| exact two-output changed set | PENDING_WORKER |
-| 18 owner families reconciled | PENDING_WORKER |
-| current source and invocation evidence recomputed | PENDING_WORKER |
-| terminal dispositions and T1 boundary reviewed | PENDING_REVIEWER |
-| fast gate and focused component gates pass | PENDING_WORKER |
-| worker no-commit boundary proven | PENDING_REVIEWER |
-| material/session commit separation | PENDING_REVIEWER |
+| exact two-output worker changed set | PASS |
+| 18 owner families reconciled | PASS |
+| current source and invocation evidence recomputed | PASS |
+| terminal dispositions and T1 boundary reviewed | PASS |
+| fast gate and focused component gates pass | PASS |
+| worker no-commit boundary proven | PASS |
+| material/session commit separation | PASS: material closure first; session sync follows separately |
+
+## Reviewer Closure Decision
+
+Decision: `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS`.
+
+The reviewer independently recomputed the complete current source/test/script
+manifest, both package-root searches, tracked caller families, in-memory
+storage/liveness facts, and the T1 dependency boundary. One consolidated
+repair corrected four contract blockers without a worker repair turn. Fresh
+MAO-OA-T1 packet authoring is next; implementation remains held.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS`; execution/closure base `5df149a36` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_OA_T0_COMPLETION_REVIEW_2026-07-16.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md` | `Status: MAO_OA_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS; no MAO-OA corpus-state mutation required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged lookup remains consistent with no MAO-OA corpus-state mutation | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | none | N/A with reason |
+| System loop interlock | N/A with reason: no interlock owner changed | none | N/A with reason |
+| Session continuity | active front door, generated state, and handoff | dedicated session-sync follows material closure | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: T0 executed no runtime or provider action | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: T0 performed no runtime query acceptance | N/A_WITH_REASON |
+| Worker-return acceptance | accepted after independent source recomputation and one consolidated reviewer repair round | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` documentation/evidence closure only | PASS |
 
 ## Return-To-Orchestrator Conditions
 
@@ -558,7 +590,7 @@ Return `BLOCKED_WITH_REASON` if:
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Role:; Canonical packet:; Commit mode:; executionBaseHead; Current-time notes:; Do-not-misread notes:; Required first actions:; Return contract:; Purpose; Scope / Target / Owner Boundary; Authority Chain; Dependency Release Evidence; Scaffold Provenance Block; ADIF Defect Registry Disclosure; Source Verification Block; Current Runtime Freshness Verification; Negative Search And Collision Discipline; Evidence Reuse And Encoding Plan; Roadmap-To-Work-Order Trace Matrix; Worker Autonomy / No-Question Rule; Design Control Carry-Forward; Required Matrix Schema; Work-Order Fulfillment Manifest; Execution Plan; Worker Return Packet Shape Contract; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Dual Agent Surface Matrix; Epistemic Process Block; Verification Commands; Evidence Requirements; Acceptance Criteria; Review Gate; Closure Diff Gate; Return-To-Orchestrator Conditions; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS; Dispatch Prompt Envelope; Role:; Canonical packet:; Commit mode:; executionBaseHead; Current-time notes:; Do-not-misread notes:; Required first actions:; Return contract:; Purpose; Scope / Target / Owner Boundary; Authority Chain; Dependency Release Evidence; Scaffold Provenance Block; ADIF Defect Registry Disclosure; Source Verification Block; Current Runtime Freshness Verification; Negative Search And Collision Discipline; Evidence Reuse And Encoding Plan; Roadmap-To-Work-Order Trace Matrix; Worker Autonomy / No-Question Rule; Design Control Carry-Forward; Required Matrix Schema; Work-Order Fulfillment Manifest; Execution Plan; Worker Return Packet Shape Contract; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Dual Agent Surface Matrix; Epistemic Process Block; Verification Commands; Evidence Requirements; Acceptance Criteria; Review Gate; Closure Diff Gate; Closure Checklist; Reviewer Closure Decision; Machine Closure Package; Return-To-Orchestrator Conditions; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm exact source-verified dispatch and worker-output contract before material commit |
 | claimBoundary | checker conformance does not prove audit completeness, runtime adoption, provider behavior, or value |
 
@@ -607,8 +639,9 @@ artifact set or public-sync authority exists.
 
 ## Claim Boundary
 
-This work order authorizes one no-commit worker to create a complete current
-MAO operational-adoption owner/gap audit and pending return. It does not prove
+This work order records reviewer-accepted bounded closure of one no-commit MAO
+operational-adoption owner/gap audit and releases fresh T1 packet authoring
+only. It does not prove
 root integration, durable scheduling, agent launch, liveness, automatic review,
 commit control, provider orchestration, production readiness, scale, public
 readiness, certification, shipment, or user value, and it releases no later

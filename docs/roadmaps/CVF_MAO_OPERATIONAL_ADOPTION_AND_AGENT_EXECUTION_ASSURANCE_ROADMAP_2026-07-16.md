@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T0_DISPATCH_READY
+Status: MAO_OA_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT
 
 Roadmap ID: MAO-OA
 
@@ -24,10 +24,11 @@ source-verified packet. SOT3-APP-T0B closed at material commit `577237cba`.
 The earlier MAO foundation closed at `29c55ca36`, and its bounded live value
 pilot closed `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` at `75f5c0b90`.
 
-Decision: `AUTHORIZE_MAO_OA_T0_AUDIT_ONLY`.
+Decision: `MAO_OA_T0_ACCEPTED_WITH_REVIEWER_REPAIRS`.
 
-This decision releases MAO-OA-T0 documentation/evidence execution. It does not
-release MAO-OA-T1 or later implementation.
+T0 is accepted as a documentation/evidence closure. This decision releases
+fresh MAO-OA-T1 GC-018 and work-order authoring only. It does not release T1
+implementation or any later tranche.
 
 ## Scope / Target / Owner Boundary
 
@@ -115,8 +116,8 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 
 | Tranche | Scope | Dependency | Status |
 |---|---|---|---|
-| MAO-OA-T0 | current owner, entrypoint, caller, durable-state, liveness, evidence, reviewer, closer, and operator-route audit | dependencies above | DISPATCH_READY |
-| MAO-OA-T1 | root/package adoption seam and orchestrator contract | accepted T0 owner/gap matrix | HOLD |
+| MAO-OA-T0 | current owner, entrypoint, caller, durable-state, liveness, evidence, reviewer, closer, and operator-route audit | dependencies above | PASS_BOUNDED_WITH_REVIEWER_REPAIRS |
+| MAO-OA-T1 | root/package adoption seam and orchestrator contract | accepted T0 owner/gap matrix | PACKET_AUTHORING_NEXT |
 | MAO-OA-T2 | durable run store, replay, recovery, and idempotent resume | accepted T1 contract and exact storage authority | HOLD |
 | MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 | HOLD |
 | MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 | HOLD |
@@ -183,13 +184,30 @@ the phase-matching agent autorun gate, and an independently recomputed closure
 decision. T0 evidence is limited to repository reads and documentation gates;
 it does not establish runtime, provider, live, or public behavior.
 
+## MAO-OA-T0 Closure Evidence
+
+- accepted matrix: 18/18 terminal rows with 16 current-owner concerns, two
+  explicit ownerless concerns, and one unresolved external-dynamic-invocation
+  boundary;
+- disposition reconciliation: 2 reuse, 6 wire, 6 defer-value-not-proven, 3
+  new-owner-required, and 1 unresolved invocation;
+- current source manifest: 13 MAO source files, 9 MAO tests, and one dedicated
+  live-pilot script;
+- root/caller result: neither package root exports MAO; no tracked
+  non-test/non-MAO-local caller of the audited symbols was found;
+- accepted T1 packet boundary: package-root re-exports plus one pure
+  orchestration composition contract reusing `compileTaskGraph` and
+  `resolveRole`; no worker/provider launch or durable storage;
+- reviewer decision: accepted after one consolidated repair round; no worker
+  repair turn, provider call, runtime command, source mutation, or public work.
+- completion review: `docs/reviews/CVF_MAO_OA_T0_COMPLETION_REVIEW_2026-07-16.md`.
+
 ## Dual Agent Surface Matrix
 
-| Surface | Disposition | Current roadmap handling |
-|---|---|---|
-| INTERNAL_AGENT | CONTRACT_ONLY | MAO-OA-T0 audits current local owners and gaps; no runtime adoption claim |
-| EXTERNAL_AGENT_CLI_MCP | N/A_WITH_REASON | no CLI/MCP adapter is authorized in T0; future adapter work needs a separate source-verified tranche |
-| adapter boundary | PARKED | provider-neutral launch/wiring belongs to T3 only after T0-T2 acceptance |
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+|---|---|---|---|---|---|
+| `INTERNAL_AGENT` | current deterministic MAO foundation plus proposed T1 composition boundary | T0 closure is static evidence only; T1 needs fresh source-verified authority | accepted T0 matrix and reviewer recomputation | internal composition only; worker/provider launch remains T3 | `CONTRACT_ONLY` |
+| `EXTERNAL_AGENT_CLI_MCP` | no current MAO CLI/MCP owner | no ingress, authentication, approval, receipt, raw-data, mutation, or public behavior is authorized | OA-18 tracked-source search with dynamic ambiguity retained | external adapter remains parked under a later separate tranche | `N/A_WITH_REASON` |
 
 ## Checker Source Read-Ahead Block
 
@@ -225,14 +243,15 @@ not authorized.
 
 ## Next Allowed Move
 
-Execute only MAO-OA-T0 under its paired GC-018 and no-commit work order. T1 and
-later MAO-OA work, SOT3-APP-T1, other absorption, runtime mutation, live proof,
-public-sync, and push remain parked.
+Author only a fresh source-verified MAO-OA-T1 GC-018 and work order for the
+accepted root/package plus pure orchestration-composition boundary. T1
+implementation, T2-T7, SOT3-APP-T1, other absorption, runtime mutation, live
+proof, public-sync, and push remain parked.
 
 ## Claim Boundary
 
-This roadmap authorizes a documentation-only T0 owner/gap audit. It defines a
-future governed path toward operational adoption but does not claim root
+This roadmap records a reviewer-accepted documentation-only T0 owner/gap
+audit and releases T1 packet authoring only. It defines a future governed path toward operational adoption but does not claim root
 integration, durable scheduling, worker launch, liveness, provider control,
 automatic review, automatic commit, public readiness, production readiness,
 scale, certification, shipment, or demonstrated user value.
