@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_oa_t1_closed_operator_checkpoint_next`; active handoff=AGENT_HANDOFF_V45_2026-07-16.md; next allowed move=await an explicit operator checkpoint before any MAO-OA-T2 packet authoring or dispatch; parked checkpoint=MAO-OA-T2 through T7, T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all unscoped external-root/runtime/live/public work.
+Startup acknowledged: current mode=`mao_oa_t2_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V45_2026-07-16.md; next allowed move=execute only the committed MAO-OA-T2 work order under WORKER_MUST_NOT_COMMIT and return uncommitted evidence; parked checkpoint=MAO-OA-T3 through T7, T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all unscoped external-root/worker-provider/live/public work.
 
 ## Current Mode
 
-Current mode marker: `mao_oa_t1_closed_operator_checkpoint_next`
+Current mode marker: `mao_oa_t2_dispatched_worker_next`
 
-Current mode: `mao_oa_t1_closed_operator_checkpoint_next`
+Current mode: `mao_oa_t2_dispatched_worker_next`
 
-`mao_oa_t1_closed_operator_checkpoint_next`
+`mao_oa_t2_dispatched_worker_next`
 
 Previous mode:
 
-`mao_oa_t1_dispatched_worker_next`
+`mao_oa_t1_closed_operator_checkpoint_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -62,13 +62,15 @@ The operator fixed the following mandatory order:
 T0B is independently accepted and closed at material commit `577237cba`.
 The MAO adoption roadmap T0 audit is independently accepted and closed at
 `2de211da0`. MAO-OA-T1 is independently accepted and closed at material commit
-`1bb5ff7f3` after one reviewer-owned GC-051 repair. No T2-T7 tranche or other
-absorption lane is released.
+`1bb5ff7f3` after one reviewer-owned GC-051 repair. MAO-OA-T2 is dispatched at
+material commit `54a5e3452` for one bounded no-commit worker return. T3-T7 and
+all other absorption lanes remain parked.
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-OA-T2 durable run-store dispatch | `54a5e3452` | DISPATCH_READY after reviewer-fast 62/62, working-tree pre-dispatch 75/75, pre-commit 83/83, and commit-steward PASS; exact six-path no-commit worker manifest covers store, barrel, focused test, GC-051 source/aggregate, and worker return; no worker/provider/later-tranche/live/public/push action. |
 | MAO-OA-T1 package-root and pure composition closure | `1bb5ff7f3` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; worker no-commit honored; execution 3/3 and control 11/11 focused tests plus both typechecks PASS; reviewer repaired only GC-051 source/aggregate coverage; pre-commit 83/83 PASS; T2-T7 parked pending operator checkpoint. |
 | MAO-OA-T1 package-root and pure composition dispatch | `332ec7f62` | DISPATCH_READY after reviewer-fast 62/62, pre-dispatch 75/75, and pre-commit 83/83 PASS; exact ten-path no-commit worker manifest has nine source/test paths plus one worker return; no durable state, worker/provider launch, runtime/live/public action, or push. |
 | MAO-OA-T0 operational-adoption owner and execution-gap audit closure | `2de211da0` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS; 18/18 terminal rows, 16 current-owner concerns, OA-15/OA-16 ownerless, corrected 2/6/6/3/1 counts, OA-18 unresolved invocation, fresh T1 packet authoring only next. |
@@ -242,14 +244,19 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_oa_t1_closed_operator_checkpoint_next`
+Mode: `mao_oa_t2_dispatched_worker_next`
 
-Await an explicit operator checkpoint before authoring or dispatching any
-MAO-OA-T2 packet. MAO-OA-T2 through T7, T1 and later SOT3-APP work, every other
-high-value-folder absorption, SCLP-X-T3, and unscoped external-root/runtime/
-live/public work remain parked. Do not infer durable orchestration, universal
-E2E, production, scale, certification, shipment, or user-value proof from the
-bounded T1 contract closure. Latest closed numbered LHW wave remains `LHW24`.
+Execute only
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T2_DURABLE_RUN_STORE_REPLAY_RECOVERY_AND_IDEMPOTENT_RESUME_2026-07-16.md`
+under `WORKER_MUST_NOT_COMMIT`. The worker must capture `executionBaseHead` from
+the committed dispatch state, change exactly six authorized paths, and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` without commit. MAO-OA-T3
+through T7, T1 and later SOT3-APP work, every other high-value-folder
+absorption, SCLP-X-T3, worker/provider launch, lifecycle/reviewer/closer
+execution, unscoped external-root/live/public work remain parked. Dispatch does
+not prove durable orchestration, universal E2E, production, scale,
+certification, shipment, or user value. Latest closed numbered LHW wave remains
+`LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

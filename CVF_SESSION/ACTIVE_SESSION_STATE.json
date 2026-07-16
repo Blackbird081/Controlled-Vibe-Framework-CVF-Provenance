@@ -85,8 +85,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mao_oa_t1_closed_operator_checkpoint_next",
-  "previousMode": "mao_oa_t1_dispatched_worker_next",
+  "currentMode": "mao_oa_t2_dispatched_worker_next",
+  "previousMode": "mao_oa_t1_closed_operator_checkpoint_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12609,5 +12609,22 @@
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "claimBoundary": "Package-root discoverability and pure deterministic graph-plus-role composition only. No durable state, worker/provider launch, live behavior, public, production, or user-value claim."
   },
-  "nextAllowedMove": "MAO-OA-T1 is CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR at material commit 1bb5ff7f3. Independent review accepted the package-root and pure composition seam after focused tests, both typechecks, and one reviewer-owned GC-051 source-entry plus generated-aggregate repair. Await an explicit operator checkpoint before authoring or dispatching MAO-OA-T2. MAO-OA-T2 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped external-root mutation, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "maoOaT2Dispatch20260716": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-16",
+    "materialCommit": "54a5e3452",
+    "dispatchBaseHead": "b5aa0d8a3",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T2_DURABLE_RUN_STORE_REPLAY_RECOVERY_AND_IDEMPOTENT_RESUME_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T2_DURABLE_RUN_STORE_REPLAY_RECOVERY_AND_IDEMPOTENT_RESUME_2026-07-16.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_MAO_OA_T2_WORKER_RETURN_2026-07-16.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerManifest": "exact six paths: durable store source, MAO local barrel, focused test, narrow GC-051 source entry, generator-owned corpus aggregate, and worker return",
+    "verification": "reviewer-fast 62/62 PASS; pre-dispatch working-tree 75/75 PASS; pre-commit 83/83 PASS; commit steward PASS",
+    "nextAllowedMove": "Execute only the committed MAO-OA-T2 work order and return uncommitted evidence for independent review.",
+    "heldNextTranche": "MAO-OA-T3 through T7 remain parked.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Dispatch packet only. No worker implementation, durable behavior, provider/live action, public action, production readiness, or user-value claim."
+  },
+  "nextAllowedMove": "MAO-OA-T2 is DISPATCH_READY at material commit 54a5e3452. Execute only docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T2_DURABLE_RUN_STORE_REPLAY_RECOVERY_AND_IDEMPOTENT_RESUME_2026-07-16.md under WORKER_MUST_NOT_COMMIT. The worker may change exactly the six authorized store, local-barrel, focused-test, GC-051 source/aggregate, and worker-return paths; must capture executionBaseHead from committed dispatch state; and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit. MAO-OA-T3 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped external-root mutation, worker/provider launch, lifecycle/reviewer/closer execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
 }
