@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT
+Status: MAO_OA_T1_DISPATCH_READY_WORKER_NEXT
 
 Roadmap ID: MAO-OA
 
@@ -24,11 +24,12 @@ source-verified packet. SOT3-APP-T0B closed at material commit `577237cba`.
 The earlier MAO foundation closed at `29c55ca36`, and its bounded live value
 pilot closed `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` at `75f5c0b90`.
 
-Decision: `MAO_OA_T0_ACCEPTED_WITH_REVIEWER_REPAIRS`.
+Decision: `MAO_OA_T1_DISPATCH_READY`.
 
-T0 is accepted as a documentation/evidence closure. This decision releases
-fresh MAO-OA-T1 GC-018 and work-order authoring only. It does not release T1
-implementation or any later tranche.
+T0 is accepted as a documentation/evidence closure. The fresh source-verified
+MAO-OA-T1 GC-018 and work order are now dispatch-ready and release only the
+bounded no-commit worker implementation they define. No later tranche is
+released.
 
 ## Scope / Target / Owner Boundary
 
@@ -117,7 +118,7 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 | Tranche | Scope | Dependency | Status |
 |---|---|---|---|
 | MAO-OA-T0 | current owner, entrypoint, caller, durable-state, liveness, evidence, reviewer, closer, and operator-route audit | dependencies above | PASS_BOUNDED_WITH_REVIEWER_REPAIRS |
-| MAO-OA-T1 | root/package adoption seam and orchestrator contract | accepted T0 owner/gap matrix | PACKET_AUTHORING_NEXT |
+| MAO-OA-T1 | root/package adoption seam and orchestrator contract | accepted T0 owner/gap matrix plus fresh GC-018 and work order | DISPATCH_READY |
 | MAO-OA-T2 | durable run store, replay, recovery, and idempotent resume | accepted T1 contract and exact storage authority | HOLD |
 | MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 | HOLD |
 | MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 | HOLD |
@@ -202,6 +203,20 @@ it does not establish runtime, provider, live, or public behavior.
   repair turn, provider call, runtime command, source mutation, or public work.
 - completion review: `docs/reviews/CVF_MAO_OA_T0_COMPLETION_REVIEW_2026-07-16.md`.
 
+## MAO-OA-T1 Dispatch Evidence
+
+- paired baseline:
+  `docs/baselines/CVF_GC018_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md`;
+- canonical work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md`;
+- route: `WORKER_MUST_NOT_COMMIT` implementation worker followed by independent
+  reviewer/closer and separate session-sync steward;
+- implementation boundary: execution/control package-root exports plus one pure
+  deterministic composition contract reusing `compileTaskGraph` and
+  `resolveRole`;
+- forbidden boundary: no durable storage, worker/provider launch, lifecycle,
+  reviewer/closer execution, UI, CLI/MCP, live proof, public-sync, or push.
+
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
@@ -243,15 +258,17 @@ not authorized.
 
 ## Next Allowed Move
 
-Author only a fresh source-verified MAO-OA-T1 GC-018 and work order for the
-accepted root/package plus pure orchestration-composition boundary. T1
-implementation, T2-T7, SOT3-APP-T1, other absorption, runtime mutation, live
-proof, public-sync, and push remain parked.
+Execute only the committed MAO-OA-T1 work order under
+`WORKER_MUST_NOT_COMMIT`, then return `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. MAO-OA-T2 through T7, SOT3-APP-T1, other absorption,
+runtime/provider/live expansion, public-sync, and push remain parked.
 
 ## Claim Boundary
 
-This roadmap records a reviewer-accepted documentation-only T0 owner/gap
-audit and releases T1 packet authoring only. It defines a future governed path toward operational adoption but does not claim root
-integration, durable scheduling, worker launch, liveness, provider control,
+This roadmap records a reviewer-accepted documentation-only T0 owner/gap audit
+and a dispatch-ready T1 source/test packet. It releases only bounded no-commit
+T1 worker implementation. It defines a future governed path toward operational
+adoption but does not claim completed root integration, durable scheduling,
+worker launch, liveness, provider control,
 automatic review, automatic commit, public readiness, production readiness,
 scale, certification, shipment, or demonstrated user value.
