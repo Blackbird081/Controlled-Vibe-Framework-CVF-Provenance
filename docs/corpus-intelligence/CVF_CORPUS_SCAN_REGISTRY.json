@@ -5466,6 +5466,43 @@
         "production readiness"
       ],
       "nextScanRecommendation": "Re-scan when a later authorized MAO operational-adoption tranche changes these package-root or composition surfaces."
+    },
+    {
+      "id": "mao-oa-t2-durable-run-store-surfaces",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MAO-OA-T2 durable run store surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/package.json",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/durable.run.store.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.durable.run.store.test.ts"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "scanWave": "MAO-OA-T2",
+      "scanDate": "2026-07-16",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MAO_OA_T2_WORKER_RETURN_2026-07-16.md",
+      "completionReviewPath": "docs/reviews/CVF_MAO_OA_T2_COMPLETION_REVIEW_2026-07-16.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MAO_OA_T2_DURABLE_RUN_STORE_REPLAY_RECOVERY_AND_IDEMPOTENT_RESUME_2026-07-16.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "EXECUTION_PACKAGE_TEST_COMMAND_AUTHORITY",
+        "MAO_DURABLE_RUN_STORE",
+        "MAO_DURABLE_RUN_STORE_TESTS"
+      ],
+      "priorAbsorption": "MAO-OA-T2 adds one bounded local file-backed durable run store persisting an immutable task graph plus append-only event entries under a caller-supplied root directory, with deterministic replay through the existing MaoEventLedger and fail-closed recovery. It does not establish worker/provider launch, lifecycle, reviewer/closer, public, or production authority.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "distributed concurrency",
+        "database durability",
+        "worker or provider launch authority"
+      ],
+      "nextScanRecommendation": "Re-scan when a later authorized MAO operational-adoption tranche changes this durable run-store surface."
     }
   ]
 }

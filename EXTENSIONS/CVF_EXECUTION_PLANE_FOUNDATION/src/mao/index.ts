@@ -278,3 +278,16 @@ export {
   runMaoLane,
   decideValueVerdict,
 } from "./live.provider.value.pilot";
+
+// --- MAO-OA-T2 durable run store, replay recovery, and idempotent resume ---
+
+export type {
+  MaoDurableRunSnapshot,
+  MaoDurableRunStoreFailureReason,
+  MaoDurableRunStoreFailure,
+  MaoDurableRunCreateSuccess,
+  MaoDurableRunAppendSuccess,
+  MaoDurableRunResumeSuccess,
+} from "./durable.run.store";
+
+export { MAO_DURABLE_RUN_SNAPSHOT_SCHEMA_VERSION, MaoFileRunStore } from "./durable.run.store";

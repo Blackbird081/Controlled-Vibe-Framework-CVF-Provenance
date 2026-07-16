@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 Date: 2026-07-16
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 GC-018 ID: MAO-OA-T2
 
@@ -30,7 +30,7 @@ live proof.
 
 ## Baseline Decision
 
-`DISPATCH_READY`.
+`CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR`.
 
 MAO-OA-T1 is independently accepted at material commit `1bb5ff7f3`. The
 operator checkpoint on 2026-07-16 releases T2 authoring and dispatch. Exact
@@ -210,24 +210,24 @@ implementation before accepting or committing it.
 
 ## Machine Closure Package
 
-| Closure item | Required artifact/path | Dispatch evidence | Status |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired T2 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | planned T2 completion review | reviewer-owned after worker return | N/A with reason |
-| Roadmap state | governing MAO-OA roadmap | T2 dispatched; T3-T7 held | PASS |
-| Registry JSON | planned T2 source entry and generated aggregate | worker generator plus reviewer drift check | N/A with reason |
-| Registry Markdown | N/A with reason: GC-051 uses JSON source and aggregate | no Markdown registry owner | N/A with reason |
+| Work order status | paired T2 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_OA_T2_COMPLETION_REVIEW_2026-07-16.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR` | PASS |
+| Roadmap state | governing MAO-OA roadmap | T2 accepted; T3-T7 held | PASS |
+| Registry JSON | T2 source entry and generated aggregate | generator and zero-violation coverage checks | PASS |
+| Registry Markdown | N/A with reason: GC-051 uses JSON source and aggregate | no separate Markdown registry owner; required JSON registry surfaces updated | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | none | N/A with reason |
 | System loop interlock | N/A with reason: T2 does not launch an execution loop | none | N/A with reason |
-| Session continuity | reviewer-owned protected sync after material acceptance | worker forbidden | N/A with reason |
+| Session continuity | reviewer-owned protected sync after material acceptance | separate session-sync commit follows material closure | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Required evidence | Dispatch state |
 |---|---|---|
-| durable component behavior | focused temp-directory tests and deterministic replay | PENDING_WORKER |
+| durable component behavior | 21/21 focused tests plus 1689-test package regression suite | PASS |
 | provider acceptance | N/A with reason: provider invocation forbidden | N/A_WITH_REASON |
-| reviewer acceptance | independent completion review | PENDING_REVIEW |
+| reviewer acceptance | independent completion review with bounded malformed-snapshot repair | PASS |
 | public acceptance | N/A with reason: no public export authorized | N/A_WITH_REASON |
 
 ## Checker Source Read-Ahead Block
