@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T1_DISPATCH_READY_WORKER_NEXT
+Status: MAO_OA_T1_PASS_BOUNDED_OPERATOR_CHECKPOINT_NEXT
 
 Roadmap ID: MAO-OA
 
@@ -24,12 +24,12 @@ source-verified packet. SOT3-APP-T0B closed at material commit `577237cba`.
 The earlier MAO foundation closed at `29c55ca36`, and its bounded live value
 pilot closed `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` at `75f5c0b90`.
 
-Decision: `MAO_OA_T1_DISPATCH_READY`.
+Decision: `MAO_OA_T1_PASS_BOUNDED_WITH_REVIEWER_REPAIR`.
 
-T0 is accepted as a documentation/evidence closure. The fresh source-verified
-MAO-OA-T1 GC-018 and work order are now dispatch-ready and release only the
-bounded no-commit worker implementation they define. No later tranche is
-released.
+T0 remains accepted as a documentation/evidence closure. MAO-OA-T1 is now
+independently accepted after one reviewer-owned GC-051 registry repair. No
+later tranche is released; MAO-OA-T2 through T7 remain parked pending a fresh
+operator checkpoint and source-verified storage authority.
 
 ## Scope / Target / Owner Boundary
 
@@ -118,7 +118,7 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 | Tranche | Scope | Dependency | Status |
 |---|---|---|---|
 | MAO-OA-T0 | current owner, entrypoint, caller, durable-state, liveness, evidence, reviewer, closer, and operator-route audit | dependencies above | PASS_BOUNDED_WITH_REVIEWER_REPAIRS |
-| MAO-OA-T1 | root/package adoption seam and orchestrator contract | accepted T0 owner/gap matrix plus fresh GC-018 and work order | DISPATCH_READY |
+| MAO-OA-T1 | root/package adoption seam and orchestrator contract | accepted T0 owner/gap matrix plus fresh GC-018 and work order | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T2 | durable run store, replay, recovery, and idempotent resume | accepted T1 contract and exact storage authority | HOLD |
 | MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 | HOLD |
 | MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 | HOLD |
@@ -217,6 +217,24 @@ it does not establish runtime, provider, live, or public behavior.
 - forbidden boundary: no durable storage, worker/provider launch, lifecycle,
   reviewer/closer execution, UI, CLI/MCP, live proof, public-sync, or push.
 
+## MAO-OA-T1 Closure Evidence
+
+- execution package root forwards the existing MAO barrel once; control package
+  root forwards one MAO domain barrel;
+- `composeOrchestrationPlan` reuses `compileTaskGraph` and `resolveRole`, returns
+  compile failures with null role resolution, and preserves resolver rejection
+  and operator-approval-required receipts;
+- reviewer reruns passed 3/3 execution tests, 11/11 control tests, and both
+  TypeScript checks;
+- execution root is 1,418 lines against the approved 1,450-line ceiling;
+- the worker preserved `WORKER_MUST_NOT_COMMIT` at base `77e6c3a64`;
+- reviewer reproduced the sole 61/62 fast-gate gap, added one generated-source
+  registry entry covering the three missing new paths plus the changed control
+  root cited by staged closure evidence, regenerated the GC-051 aggregate, and
+  obtained 62/62 reviewer-fast PASS; and
+- completion review:
+  `docs/reviews/CVF_MAO_OA_T1_COMPLETION_REVIEW_2026-07-16.md`.
+
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
@@ -258,17 +276,16 @@ not authorized.
 
 ## Next Allowed Move
 
-Execute only the committed MAO-OA-T1 work order under
-`WORKER_MUST_NOT_COMMIT`, then return `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. MAO-OA-T2 through T7, SOT3-APP-T1, other absorption,
+Await an explicit operator checkpoint before authoring or dispatching any
+MAO-OA-T2 packet. MAO-OA-T2 through T7, SOT3-APP-T1, other absorption,
 runtime/provider/live expansion, public-sync, and push remain parked.
 
 ## Claim Boundary
 
 This roadmap records a reviewer-accepted documentation-only T0 owner/gap audit
-and a dispatch-ready T1 source/test packet. It releases only bounded no-commit
-T1 worker implementation. It defines a future governed path toward operational
-adoption but does not claim completed root integration, durable scheduling,
-worker launch, liveness, provider control,
+and a reviewer-accepted bounded T1 package-root and pure-composition seam. It
+does not release T2 or any later implementation. It defines a future governed
+path toward operational adoption but does not claim durable scheduling, worker
+launch, liveness, provider control,
 automatic review, automatic commit, public readiness, production readiness,
 scale, certification, shipment, or demonstrated user value.

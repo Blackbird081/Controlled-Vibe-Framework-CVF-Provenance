@@ -1413,3 +1413,6 @@ function buildAuthorizationBoundaryMarkdownSurface(
     ),
   ].join("\n");
 }
+
+// MAO-OA-T1 - MAO local barrel root forwarding (package-root discoverability)
+export * from "./mao";

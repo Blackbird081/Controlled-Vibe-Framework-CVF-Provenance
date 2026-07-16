@@ -8,7 +8,10 @@
 // provider-neutral policy function: it decides whether extra roles are
 // admitted, never which provider serves a role. It consumes a compiled
 // MaoTaskGraph from MAO-T1 as its only structural input. Local control-plane
-// module only; no provider, adapter, queue, UI, or runtime caller.
+// module; MAO-OA-T1 forwards this resolver through the package root via
+// control.plane.mao.barrel.ts and reuses it (unchanged) inside the pure
+// orchestration.composition.contract.ts. No provider, adapter, queue, UI,
+// or runtime caller.
 
 import type {
   MaoAuthorityEnvelope,

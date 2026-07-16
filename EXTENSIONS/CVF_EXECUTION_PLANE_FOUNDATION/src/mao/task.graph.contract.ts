@@ -4,8 +4,9 @@
 // docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_CONTRACT.md
 // ("Task / Role / State Lifecycle" step 2) and the taskGraph/authorityEnvelope
 // shapes in CVF_MAO_RUNTIME_FOUNDATION_SCHEMA.json. Local execution-plane
-// module only; not wired to the root barrel, a provider, a resolver, a queue,
-// or any runtime caller.
+// module. MAO-OA-T1 forwards this module's exports through the package root
+// via the local ./index.ts barrel; it is still not wired to a provider,
+// storage, queue, or any runtime caller.
 
 import { computeDeterministicHash } from "../../../CVF_v1.9_DETERMINISTIC_REPRODUCIBILITY/core/deterministic.hash";
 

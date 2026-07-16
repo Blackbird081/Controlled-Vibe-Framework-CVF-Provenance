@@ -1,10 +1,11 @@
 // CVF MAO-T1 - Local Module Front Door
 //
 // Stable local barrel for the src/mao/ task-graph/event-ledger/read-model
-// foundation. This file is a LOCAL front door only: it is not imported by
-// the root ../index.ts barrel and not wired to any queue, scheduler, UI, or
-// runtime caller. A future bounded packet may wire root integration; MAO-T1
-// does not.
+// foundation. MAO-OA-T1 forwards this barrel through the package root
+// (../index.ts, one `export * from "./mao"` line) so the compiler and
+// related MAO contracts are discoverable from the execution-plane package
+// entrypoint. This barrel remains the local source of truth; it is not
+// wired to any queue, scheduler, UI, or runtime caller.
 //
 // MAO-T2 consumer note: the control-plane role resolver
 // (EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/mao/role.resolver.contract.ts)

@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Date: 2026-07-16
 
@@ -12,9 +12,9 @@ Batch ID: MAO-OA-T1
 
 dispatchBaseHead: `233e1ab98`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `77e6c3a64`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `77e6c3a64`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -369,7 +369,7 @@ The worker must implement this bounded behavior:
 6. Do not catch and reinterpret owner results, synthesize new reason codes,
    mutate inputs, or launch any downstream action.
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
 | Artifact | Required worker action |
 |---|---|
@@ -576,25 +576,25 @@ return-to-orchestrator action.
 
 ## Reviewer Closure Decision
 
-Current dispatch decision: `PENDING_INDEPENDENT_REVIEW`.
+Final reviewer decision: `REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR`.
 
-Only the independent reviewer/closer may convert this packet to a
-closed-equivalent status after recomputation. The worker must return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+The independent reviewer/closer recomputed the source, focused tests,
+typechecks, import direction, negative cases, file-size boundary, and worker
+no-commit evidence. The only repair was reviewer-owned GC-051 registry coverage
+for three new `EXTENSIONS/` paths; no worker-scope widening occurred.
 
 ## Machine Closure Package
 
-| Closure item | Required artifact/path | Required state |
-|---|---|---|
-| work order | this file | reviewer-updated terminal status |
-| baseline | paired GC-018 | reviewer-updated terminal status |
-| completion review | `docs/reviews/CVF_MAO_OA_T1_COMPLETION_REVIEW_2026-07-16.md` | reviewer-owned final decision |
-| roadmap | governing MAO operational-adoption roadmap | T1 row reconciled; T2 packet authoring only if accepted |
-| registry JSON | N/A with reason: no registry mutation authorized | none |
-| registry Markdown | N/A with reason: no registry mutation authorized | none |
-| external evidence digest | N/A with reason: no external evidence consumed | none |
-| system loop interlock | N/A with reason: pure contract seam only | none |
-| session continuity | active state sources, generated state, front door, and active handoff | separate session-sync batch |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_OA_T1_COMPLETION_REVIEW_2026-07-16.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR` | PASS |
+| Roadmap state | governing MAO operational-adoption roadmap | T1 row reconciled; no later tranche released | PASS |
+| Registry JSON | aggregate and `mao-oa-t1-package-root-and-composition-surfaces` source entry | reviewer-owned GC-051 repair generated from source and verified | PASS |
+| Registry Markdown | N/A with reason: GC-051 coverage is owned by the generated JSON registry source and aggregate | no separate Markdown registry mutation required | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | none | N/A with reason |
+| System loop interlock | N/A with reason: pure contract seam only | none | N/A with reason |
+| Session continuity | active state sources, generated state, front door, and active handoff | separate session-sync batch follows material closure | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -602,8 +602,8 @@ closed-equivalent status after recomputation. The worker must return
 |---|---|---|
 | runtime receipt | N/A with reason: runtime execution forbidden | N/A_WITH_REASON |
 | provider acceptance | N/A with reason: provider invocation forbidden | N/A_WITH_REASON |
-| contract acceptance | focused tests and typechecks | WORKER_TO_PROVE |
-| reviewer acceptance | independent completion review | NOT_EXECUTED_YET |
+| contract acceptance | focused tests and typechecks | PASS |
+| reviewer acceptance | independent completion review | PASS |
 
 ## Return-To-Orchestrator Conditions
 
@@ -623,7 +623,7 @@ Return `BLOCKED_WITH_REASON` without scope expansion when:
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Role:; Canonical packet:; Commit mode:; executionBaseHead; Current-time notes:; Do-not-misread notes:; Required first actions:; Return contract:; Purpose; Scope / Target / Owner Boundary; Authority Chain; Dependency Release Evidence; Scaffold Provenance Block; ADIF Defect Registry Disclosure; Source Verification Block; New Doc-Only Fields; Current Runtime Freshness Verification; Negative Search And Collision Discipline; Evidence Reuse And Encoding Plan; Roadmap-To-Work-Order Trace Matrix; Worker Autonomy / No-Question Rule; Design Control Carry-Forward; Work-Order Fulfillment Manifest; Execution Plan; Worker Return Packet Shape Contract; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Dual Agent Surface Matrix; Epistemic Process Block; Verification Commands; Evidence Requirements; Acceptance Criteria; Review Gate; Closure Diff Gate; Closure Checklist; Reviewer Closure Decision; Machine Closure Package; Return-To-Orchestrator Conditions; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; Dispatch Prompt Envelope; Role:; Canonical packet:; Commit mode:; executionBaseHead; Current-time notes:; Do-not-misread notes:; Required first actions:; Return contract:; Purpose; Scope / Target / Owner Boundary; Authority Chain; Dependency Release Evidence; Scaffold Provenance Block; ADIF Defect Registry Disclosure; Source Verification Block; New Doc-Only Fields; Current Runtime Freshness Verification; Negative Search And Collision Discipline; Evidence Reuse And Encoding Plan; Roadmap-To-Work-Order Trace Matrix; Worker Autonomy / No-Question Rule; Design Control Carry-Forward; Required Artifact Manifest; Execution Plan; Worker Return Packet Shape Contract; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Dual Agent Surface Matrix; Epistemic Process Block; Verification Commands; Evidence Requirements; Acceptance Criteria; Review Gate; Closure Diff Gate; Closure Checklist; Reviewer Closure Decision; Machine Closure Package; Return-To-Orchestrator Conditions; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm exact source-verified implementation dispatch and worker-output contract before material commit |
 | claimBoundary | checker conformance does not prove implementation correctness, runtime adoption, provider behavior, or user value |
 

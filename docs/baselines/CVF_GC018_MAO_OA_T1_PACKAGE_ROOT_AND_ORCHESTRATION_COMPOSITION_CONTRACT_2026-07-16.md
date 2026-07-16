@@ -4,7 +4,7 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Date: 2026-07-16
 
@@ -212,16 +212,16 @@ substitute for semantic review.
 
 ## Machine Closure Package
 
-| Closure item | Required artifact/path | Machine-readable evidence | Dispatch state |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order | paired MAO-OA-T1 work order | ready status and exact manifest | DISPATCH_READY |
-| Completion review | `docs/reviews/CVF_MAO_OA_T1_COMPLETION_REVIEW_2026-07-16.md` | reviewer-owned final disposition | NOT_EXECUTED_YET |
-| Roadmap | MAO operational-adoption roadmap | T1 terminal status only on accepted closure | NOT_EXECUTED_YET |
-| Registry JSON | N/A with reason: no registry mutation authorized | none | N/A with reason |
-| Registry Markdown | N/A with reason: no registry mutation authorized | none | N/A with reason |
+| Work order status | paired MAO-OA-T1 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_OA_T1_COMPLETION_REVIEW_2026-07-16.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR` | PASS |
+| Roadmap state | MAO operational-adoption roadmap | T1 reconciled as `PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` plus source entry `docs/corpus-intelligence/registry/entries/mao-oa-t1-package-root-and-composition-surfaces.json` | generated aggregate covers the three new paths that GC-051 initially rejected | PASS |
+| Registry Markdown | N/A with reason: GC-051 coverage is owned by the generated JSON registry source and aggregate | no separate Markdown registry mutation required | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | none | N/A with reason |
 | System loop interlock | N/A with reason: T1 is pure composition only | none | N/A with reason |
-| Session continuity | active state, front door, and active handoff | separate session-sync batch | NOT_EXECUTED_YET |
+| Session continuity | active state, front door, and active handoff | separate session-sync batch follows material closure | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -229,15 +229,15 @@ substitute for semantic review.
 |---|---|---|
 | Runtime receipt evidence | N/A with reason: T1 forbids runtime execution | N/A_WITH_REASON |
 | Query acceptance evidence | N/A with reason: no runtime query or provider call | N/A_WITH_REASON |
-| Source/test evidence | focused deterministic tests and both package typechecks | WORKER_TO_PROVE |
-| Worker-return acceptance | independent reviewer decision | NOT_EXECUTED_YET |
+| Source/test evidence | focused deterministic tests and both package typechecks | PASS |
+| Worker-return acceptance | independent reviewer decision | PASS |
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Purpose; Scope / Target / Owner Boundary; Authority Chain; Dependency Release Evidence; Scaffold Provenance Block; ADIF Defect Registry Disclosure; Source Verification Block; Current Runtime Freshness Verification; Negative Search And Collision Discipline; Evidence Reuse And Encoding Plan; Required Artifact Manifest; Acceptance Criteria; Review Gate; Dual Agent Surface Matrix; Machine Closure Package; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; Purpose; Scope / Target / Owner Boundary; Authority Chain; Dependency Release Evidence; Scaffold Provenance Block; ADIF Defect Registry Disclosure; Source Verification Block; Current Runtime Freshness Verification; Negative Search And Collision Discipline; Evidence Reuse And Encoding Plan; Required Artifact Manifest; Acceptance Criteria; Review Gate; Dual Agent Surface Matrix; Machine Closure Package; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm exact baseline and paired implementation-dispatch structure before material commit |
 | claimBoundary | checker conformance does not prove implementation correctness, runtime adoption, provider behavior, or user value |
 
