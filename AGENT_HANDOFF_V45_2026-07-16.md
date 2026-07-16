@@ -9,25 +9,25 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after MAO-OA-T1 independent closure and MAO-OA-T2
-bounded no-commit dispatch. V44 was rotated at 1,080 lines under the
+Carry compact continuity after MAO-OA-T2 independent closure with bounded
+reviewer repair. V44 was rotated at 1,080 lines under the
 Governed File Size Guard; its history remains in the archive and canonical
 detail remains in the active state registry and governed artifacts.
 
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`54a5e3452` owns the T2 dispatch packet; `1bb5ff7f3` owns the accepted T1
-source/test closure and reviewer-owned GC-051 repair. No T3+, provider launch,
-live, public, or push authority is granted here.
+`042abf44b` owns the accepted T2 source/test closure and bounded reviewer
+repair; `54a5e3452` owns the historical T2 dispatch packet. No T3+, provider
+launch, live, public, or push authority is granted here.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`mao_oa_t2_dispatched_worker_next`;
+current mode=`mao_oa_t2_closed_operator_checkpoint_next`;
 active handoff=`AGENT_HANDOFF_V45_2026-07-16.md`;
-next allowed move=execute only the committed MAO-OA-T2 work order under
-WORKER_MUST_NOT_COMMIT and return uncommitted evidence;
+next allowed move=await an explicit operator checkpoint before MAO-OA-T3 packet
+authoring or dispatch;
 parked checkpoint=MAO-OA-T3 and later, SOT3-APP-T1 and later absorption,
 worker/provider launch, unscoped runtime/live/public work, and push.
 
@@ -44,13 +44,30 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`mao_oa_t2_dispatched_worker_next`
+`mao_oa_t2_closed_operator_checkpoint_next`
 
-Previous mode: `mao_oa_t1_closed_operator_checkpoint_next`.
+Previous mode: `mao_oa_t2_dispatched_worker_next`.
 
 ## Latest Work / Changes
 
-Material commit `54a5e3452` dispatches MAO-OA-T2 to one no-commit worker.
+Material commit `042abf44b` closes MAO-OA-T2 after independent review and one
+bounded source/test repair.
+
+Accepted evidence:
+
+- worker `WORKER_MUST_NOT_COMMIT` was honored from `ff6b4f238` with exactly six
+  pending paths and nothing staged;
+- reviewer added structural validation for malformed nested authority and event
+  values plus two focused negative tests;
+- focused tests passed 21/21, TypeScript check passed, and the full execution
+  package passed 66 files and 1689 tests;
+- the T2 GC-051 entry covers the source, test, and cited package test-command
+  authority; generated aggregate, coverage, and reviewer-fast 62/62 passed;
+- pre-commit passed 83/83; and
+- completion review is
+  `docs/reviews/CVF_MAO_OA_T2_COMPLETION_REVIEW_2026-07-16.md`.
+
+Material commit `54a5e3452` dispatched MAO-OA-T2 to one no-commit worker.
 
 Dispatch evidence:
 
@@ -108,13 +125,13 @@ Accepted evidence:
 
 ## Active Boundary
 
-T0 and T1 are closed. T2 is dispatched for a bounded local durable-store
+T0, T1, and T2 are closed. T2 is a bounded local durable-store and replay
 component only. It does not release worker/provider launch or any T3+ owner.
 
 ## Next Allowed Move
 
-Execute only the committed MAO-OA-T2 work order under
-`WORKER_MUST_NOT_COMMIT`; return uncommitted evidence for independent review.
+Await an explicit operator checkpoint before authoring or dispatching
+MAO-OA-T3.
 
 ## Parked Boundary
 
@@ -132,12 +149,12 @@ Remain parked:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize material dispatch `54a5e3452`
-and route only the bounded T2 no-commit worker.
+Authorized guard-maintenance scope: synchronize material closure `042abf44b`
+and park T3-T7 pending an explicit operator checkpoint.
 
-Operator authorization: the operator released continuation after T1 closure;
-the handoff contract and GC-020 require protected continuity synchronization
-after the material dispatch.
+Operator authorization: the operator directed independent review and closure
+after the no-commit T2 return; the handoff contract and GC-020 require protected
+continuity synchronization after the material closure.
 
 Protected paths:
 
@@ -147,10 +164,10 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/maoOaT2Dispatch20260716.json`
+- `CVF_SESSION/state/entries/maoOaT2Closure20260716.json`
 
 Rollback boundary: revert only this protected continuity batch; retain T2
-material dispatch `54a5e3452`, T1 closure `1bb5ff7f3`, and T0 closure
+material closure `042abf44b`, T1 closure `1bb5ff7f3`, and T0 closure
 `2de211da0`.
 
 ## Public Export Disposition
@@ -363,8 +380,31 @@ T3-T7, provider/live work, public-sync, or push.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
+## Agent Operation Trace Block - MAO-OA-T2 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | independent reviewer/closer and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T2 closure continuity sync, 2026-07-16 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, apply_patch, git |
+| Target paths | seven protected session paths |
+| Allowed scope source | material closure `042abf44b`, Reviewer Closure Conversion, and GC-020 continuity |
+| Before status evidence | clean material worktree at closure HEAD `042abf44b` |
+| After status evidence | V45 active; continuity records T2 closed and T3-T7 parked |
+| Diff evidence | protected session-only diff, generated-state drift check, and session-sync preflight |
+| Approval boundary | continuity synchronization after bounded T2 closure only |
+| Claim boundary | no T3-T7, worker/provider launch, live, public, or push action |
+| Agent type | independent reviewer/closer and session-sync steward |
+| Invocation ID | `mao-oa-t2-closure-session-sync-2026-07-16` |
+| Expected manifest | seven protected session paths |
+| Actual changed set | seven protected session paths |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Claim Boundary
 
-This handoff records bounded T1 closure plus T2 dispatch continuity. It does
-not prove the T2 implementation, durable orchestration, worker/provider launch,
-live governance, public readiness, production readiness, or user value.
+This handoff records bounded T2 closure continuity. It does not prove durable
+orchestration, distributed concurrency, worker/provider launch, live
+governance, public readiness, production readiness, or user value.

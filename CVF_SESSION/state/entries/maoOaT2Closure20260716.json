@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1863,
+  "stateKey": "maoOaT2Closure20260716",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR",
+    "date": "2026-07-16",
+    "materialCommit": "042abf44b",
+    "closureBaseHead": "ff6b4f238",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T2_DURABLE_RUN_STORE_REPLAY_RECOVERY_AND_IDEMPOTENT_RESUME_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T2_DURABLE_RUN_STORE_REPLAY_RECOVERY_AND_IDEMPOTENT_RESUME_2026-07-16.md",
+    "workerReturn": "docs/reviews/CVF_MAO_OA_T2_WORKER_RETURN_2026-07-16.md",
+    "completionReview": "docs/reviews/CVF_MAO_OA_T2_COMPLETION_REVIEW_2026-07-16.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT honored",
+    "sourceTestEvidence": "21/21 focused tests PASS; TypeScript check PASS; 66 files and 1689 package tests PASS",
+    "reviewerRepair": "added fail-closed structural validation for malformed nested authority and event snapshot values plus two regression tests",
+    "registryEvidence": "T2 source entry covers durable source, focused test, and cited package test-command authority; generated aggregate, GC-051, and reviewer-fast 62/62 PASS",
+    "preCommitEvidence": "83/83 PASS",
+    "nextAllowedMove": "Await an explicit operator checkpoint before any MAO-OA-T3 packet authoring or dispatch.",
+    "heldNextTranche": "MAO-OA-T3 through T7 remain parked.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Local file-backed durable graph/event snapshot and deterministic ledger replay only. No distributed concurrency, crash-proof fsync, worker/provider launch, liveness, live, public, production, or user-value claim."
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1862,
+  "stateOrder": 1864,
   "stateKey": "nextAllowedMove",
-  "value": "MAO-OA-T2 is DISPATCH_READY at material commit 54a5e3452. Execute only docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T2_DURABLE_RUN_STORE_REPLAY_RECOVERY_AND_IDEMPOTENT_RESUME_2026-07-16.md under WORKER_MUST_NOT_COMMIT. The worker may change exactly the six authorized store, local-barrel, focused-test, GC-051 source/aggregate, and worker-return paths; must capture executionBaseHead from committed dispatch state; and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit. MAO-OA-T3 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped external-root mutation, worker/provider launch, lifecycle/reviewer/closer execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "MAO-OA-T2 is CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR at material commit 042abf44b. Await an explicit operator checkpoint before authoring or dispatching MAO-OA-T3. MAO-OA-T3 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped external-root mutation, worker/provider launch, lifecycle/reviewer/closer execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
 }
