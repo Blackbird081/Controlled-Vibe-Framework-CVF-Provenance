@@ -137,6 +137,40 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private continuity sync only; no public-sync or public claim.
 
+## GC-020 Marker - MAO-OA-T0 Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`ee639c10e`. Because the current content-addressed SHA cannot be known before
+commit creation, the active-session checker may accept this parent SHA for the
+handoff-sync-only child commit.
+
+This marker changes no mode, next move, material decision, or authority. It
+does not authorize T1 implementation, runtime/provider/live work, public-sync,
+or push.
+
+## Agent Operation Trace Block - GC-020 Handoff Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | handoff-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T0 GC-020 handoff bridge, 2026-07-16 |
+| Working directory | repository root |
+| Command or tool surface | active-handoff edit, handoff-sync commit stewardship, git |
+| Target paths | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Allowed scope source | GC-020 in-place HEAD rule after session-sync commit `ee639c10e` |
+| Before status evidence | clean worktree at session-sync HEAD `ee639c10e` |
+| After status evidence | parent SHA recorded for a dedicated root-handoff-only child commit |
+| Diff evidence | one-path staged diff and committed-range active-session check |
+| Approval boundary | handoff bookkeeping only; no material or session-state change |
+| Claim boundary | no mode, next-move, runtime, provider/live, public, or push claim |
+| Agent type | handoff-sync steward |
+| Invocation ID | `mao-oa-t0-gc020-handoff-sync-2026-07-16` |
+| Expected manifest | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Actual changed set | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
