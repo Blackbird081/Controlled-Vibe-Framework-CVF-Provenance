@@ -1,0 +1,36 @@
+{
+  "stateOrder": 1856,
+  "stateKey": "maoOaT0Closure20260716",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",
+    "date": "2026-07-16",
+    "materialCommit": "2de211da0",
+    "executionBaseHead": "5df149a36",
+    "dispatchCommit": "35a8c367b",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_EXECUTION_GAP_AUDIT_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_EXECUTION_GAP_AUDIT_2026-07-16.md",
+    "ownerGapMatrix": "docs/reviews/CVF_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_GAP_MATRIX_2026-07-16.md",
+    "workerReturn": "docs/reviews/CVF_MAO_OA_T0_WORKER_RETURN_2026-07-16.md",
+    "completionReview": "docs/reviews/CVF_MAO_OA_T0_COMPLETION_REVIEW_2026-07-16.md",
+    "acceptedEvidence": {
+      "requiredOwnerFamilies": 18,
+      "terminalRows": 18,
+      "currentOwnerConcerns": 16,
+      "ownerlessConcerns": 2,
+      "sourceFiles": 13,
+      "testFiles": 9,
+      "dedicatedScriptCallers": 1,
+      "reuseAsIs": 2,
+      "wireExisting": 6,
+      "deferValueNotProven": 6,
+      "newOwnerRequired": 3,
+      "unresolvedInvocation": 1
+    },
+    "reviewerRepairs": "Corrected the current-owner count, OA-05 terminal arithmetic, OA-18 dynamic-invocation certainty, and the exports-only T1 recommendation in one consolidated reviewer round.",
+    "gateEvidence": "reviewer-fast 62/62 PASS; commit-steward PASS; pre-commit 83/83 PASS; committed-range pre-closure material checks PASS with continuity sync as the sole remaining requirement",
+    "nextAllowedMove": "Author and validate only a fresh source-verified MAO-OA-T1 GC-018 and work order for package-root re-exports plus one pure deterministic orchestration composition contract reusing compileTaskGraph and resolveRole; implementation remains held.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Static source-backed audit closure only. No T1 implementation, durable storage, worker/provider launch, runtime/live behavior, public readiness, production readiness, or user-value claim."
+  }
+}

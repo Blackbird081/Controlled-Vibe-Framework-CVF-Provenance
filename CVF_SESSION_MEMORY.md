@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V44_2026-07-15.md`
+4. `AGENT_HANDOFF_V45_2026-07-16.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V44_2026-07-15.md` |
+| Active handoff | `AGENT_HANDOFF_V45_2026-07-16.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_oa_t0_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V44_2026-07-15.md; next allowed move=execute only the exact two-output no-commit MAO-OA-T0 owner and execution-gap audit; parked checkpoint=MAO-OA-T1 and later MAO tranches, T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all unscoped external-root/runtime/public work.
+Startup acknowledged: current mode=`mao_oa_t0_closed_t1_packet_authoring_next`; active handoff=AGENT_HANDOFF_V45_2026-07-16.md; next allowed move=author and validate only fresh MAO-OA-T1 GC-018 and work order for package-root re-exports plus one pure deterministic orchestration composition contract; parked checkpoint=T1 implementation, later MAO tranches, T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all unscoped external-root/runtime/public work.
 
 ## Current Mode
 
-Current mode marker: `mao_oa_t0_dispatched_worker_next`
+Current mode marker: `mao_oa_t0_closed_t1_packet_authoring_next`
 
-Current mode: `mao_oa_t0_dispatched_worker_next`
+Current mode: `mao_oa_t0_closed_t1_packet_authoring_next`
 
-`mao_oa_t0_dispatched_worker_next`
+`mao_oa_t0_closed_t1_packet_authoring_next`
 
 Previous mode:
 
-`sot3_app_t0b_closed_mao_roadmap_authoring_next`
+`mao_oa_t0_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -60,14 +60,16 @@ The operator fixed the following mandatory order:
    roadmap reaches governed closure.
 
 T0B is independently accepted and closed at material commit `577237cba`.
-The MAO adoption roadmap and its T0 audit packet are now committed at
-`35a8c367b`. The sequence lock releases only the exact documentation-only T0
-worker; MAO-OA-T1, later MAO tranches, and all absorption remain held.
+The MAO adoption roadmap T0 audit is independently accepted and closed at
+`2de211da0`. The sequence lock releases only fresh MAO-OA-T1 GC-018 and
+work-order authoring; T1 implementation, later MAO tranches, and all
+absorption remain held.
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-OA-T0 operational-adoption owner and execution-gap audit closure | `2de211da0` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS; 18/18 terminal rows, 16 current-owner concerns, OA-15/OA-16 ownerless, corrected 2/6/6/3/1 counts, OA-18 unresolved invocation, fresh T1 packet authoring only next. |
 | MAO-OA-T0 operational-adoption owner and execution-gap audit dispatch | `35a8c367b` | DISPATCH_READY after reviewer-fast 62/62, pre-dispatch 75/75, and pre-commit 83/83 PASS; exact two-output no-commit worker audits 18 owner families; no runtime/provider/live/public execution. |
 | SOT3-APP-T0B full-corpus semantic and provenance closure | `577237cba` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS; 336/336 terminal semantic rows, 13/13 terminal provenance rows, zero unresolved identities, independent re-audit ACCEPTED; MAO roadmap authoring next and all absorption parked until MAO closure. |
 | SOT3-APP-T0B full-corpus semantic and provenance dispatch | `e93d63883` | DISPATCH_READY after 75/75 pre-dispatch and 83/83 pre-commit PASS; exact two-output no-commit worker requires 336 full-body semantic rows and 13 terminal provenance rows with zero unresolved identities; T1 and later work held. |
@@ -238,13 +240,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_oa_t0_dispatched_worker_next`
+Mode: `mao_oa_t0_closed_t1_packet_authoring_next`
 
-Execute only
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T0_OPERATIONAL_ADOPTION_OWNER_AND_EXECUTION_GAP_AUDIT_2026-07-16.md`
-from clean committed dispatch HEAD `35a8c367b`. Create exactly the named owner
-and gap matrix plus worker return, leave both uncommitted, and return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. MAO-OA-T1 and later MAO
+Author and validate only a fresh source-verified MAO-OA-T1 GC-018 and work
+order for execution-plane and control-plane package-root re-exports plus one
+pure deterministic orchestration composition contract reusing
+`compileTaskGraph` and `resolveRole`. T1 implementation, MAO-OA-T2 and later
 tranches, T1 and later SOT3-APP work, every other high-value-folder absorption,
 SCLP-X-T3, and unscoped external-root/runtime/public work remain parked. Do not
 infer runtime adoption, universal E2E, production, scale, certification,
