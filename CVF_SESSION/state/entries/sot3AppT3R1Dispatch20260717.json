@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1911,
+  "stateKey": "sot3AppT3R1Dispatch20260717",
+  "value": {
+    "status": "DISPATCHED",
+    "materialCommit": "1a7f4447f",
+    "dispatchBaseHead": "7e347cae0",
+    "dependencyCommit": "30dbcae4a",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T3_R1_SOURCE_LOCAL_TYPE_NARROWING_AND_BUILD_CLOSURE_2026-07-17.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "externalSourceOutputCount": 4,
+    "provenanceOutputCount": 2,
+    "verification": "Pre-dispatch 75/75, commit steward, and pre-commit 83/83 PASS.",
+    "nextAllowedMove": "Execute exact T3-R1 no-commit worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "claimBoundary": "Source-local TypeScript narrowing and deterministic tests only; no compiler weakening or T4/service action."
+  }
+}

@@ -22,17 +22,17 @@ work, public-sync, or push.
 
 ## Active Boundary
 
-Active work is limited to authoring the exact SOT3-APP-T3-R1 repair packet.
+Active work is limited to the exact committed SOT3-APP-T3-R1 no-commit worker.
 No T4+, T6B, provider/model/live,
 network/live, browser/UI, public-sync, push, or production action is active.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_app_t3_block_accepted_r1_packet_authoring_next`;
+current mode=`sot3_app_t3_r1_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=author and dispatch one narrow T3-R1 packet after accepted
-blocked-return commit `30dbcae4a`;
+next allowed move=execute the committed T3-R1 work order from material dispatch
+`1a7f4447f` under WORKER_MUST_NOT_COMMIT;
 parked checkpoint=T4 and later, MAO-OA-T6B, SCLP-X-T3, provider/model/live,
 runtime/live, UI/queue, public-sync, and push work.
 
@@ -57,6 +57,31 @@ Current mode: `sot3_app_t3_block_accepted_r1_packet_authoring_next`.
 Independent review reproduced frozen install and 42/42 tests, accepted the
 worker's scope stop, and isolated exactly two source-local compiler blockers.
 Only fresh T3-R1 packet authoring is next; T4+ and service lanes stay parked.
+
+## SOT3-APP-T3-R1 Dispatch Continuity - 2026-07-17
+
+Material dispatch commit: `1a7f4447f`.
+
+Current mode: `sot3_app_t3_r1_dispatched_worker_next`.
+
+The exact no-commit worker may modify four external source/test outputs and
+create two provenance returns. Compiler weakening, T4+, provider/live/browser,
+public, push, and production remain forbidden.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T3-R1 Dispatch Sync
+
+Authorized protected scope: continuity synchronization after material dispatch
+commit `1a7f4447f`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT3R1Dispatch20260717.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No source implementation, registry, provider, or public artifact belongs here.
 
 ## Core Guard Self-Protection Authorization - SOT3-APP-T3 Block Review Sync
 
@@ -265,9 +290,9 @@ No material, source, registry, or public artifact changes belong to this sync.
 
 ## Current Mode
 
-`sot3_app_t3_block_accepted_r1_packet_authoring_next`
+`sot3_app_t3_r1_dispatched_worker_next`
 
-Previous mode: `sot3_app_t3_dispatched_worker_next`.
+Previous mode: `sot3_app_t3_block_accepted_r1_packet_authoring_next`.
 
 ## MAO-OA Final Closure Continuity - 2026-07-17
 
@@ -297,8 +322,8 @@ Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 
 ## Next Allowed Move
 
-Author and dispatch one narrow SOT3-APP-T3-R1 packet from accepted block commit
-`30dbcae4a`. T4 and external service lanes remain parked.
+Execute the committed SOT3-APP-T3-R1 work order from `1a7f4447f` under
+`WORKER_MUST_NOT_COMMIT`. T4 and service lanes remain parked.
 
 ## Agent Operation Trace Block - MAO-OA Final Closure Session Sync
 
