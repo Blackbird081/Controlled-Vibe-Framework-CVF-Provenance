@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED
 
 Batch ID: SOT3-APP-T5
 
@@ -104,6 +104,8 @@ Returned defects: NONE_RETURNED
 | current governed execution abstraction | EXISTS | `CANONICAL_CONTRACT: external sibling direct-read evidence; packages/cvf-bindings/src/governed-execution.adapter.ts` | `GovernedExecutionPort` and `GovernedExecutionAdapter.execute` | `GovernedExecutionAdapter` | SOT Application CVF bindings | ACCEPT |
 | current output service calls execution adapter | RUNTIME_BEHAVIOR | `CANONICAL_CONTRACT: external sibling direct-read evidence; packages/application/src/services/governed-output.service.ts` | `this.execution.execute(...)` after usable ALLOW context | `GovernedOutputService.create` | SOT Application application service | ACCEPT |
 | Model Gateway live harness pattern | EXISTS | `EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts` | `runLiveProof` resolves secret only when liveAuthorized and calls OpenAI-compatible endpoint through fetch | `runLiveProof` | Model Gateway live proof harness | ACCEPT |
+| Model Gateway provider registry surface | EXISTS | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` | `export class ProviderRegistry` | `ProviderRegistry` | Model Gateway provider registry | ACCEPT |
+| Model Gateway capability registry surface | EXISTS | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` | `export const PROVIDER_CAPABILITY_REGISTRY` includes providerId `alibaba` | `PROVIDER_CAPABILITY_REGISTRY` | Model Gateway provider capability registry | ACCEPT |
 | DashScope-compatible endpoint owner | EXISTS | `EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts` | `ALIBABA_DASHSCOPE_INTL_ENDPOINT`; endpoint resolver aliases | `resolveAlibabaDashScopeEndpoint` | Model Gateway Alibaba ledger | ACCEPT |
 | currently usable model candidate | VALUE_SET | `EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts` | `qwen3.7-plus` entry expires 2026-08-31 | `qwen3.7-plus` | Model Gateway Alibaba ledger | ACCEPT |
 
@@ -161,29 +163,30 @@ diff/status/no-commit proof.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired T5 work order | `Status: DISPATCH_READY` | READY |
-| Completion or reviewer artifact | reviewer to create after worker return | worker return must be independently reviewed before closure | PENDING_REVIEW |
-| Roadmap state | SOT3-APP roadmap | T5 dispatch packet recorded | READY |
-| Registry JSON | N/A with reason: T5 worker does not own CVF generated corpus registry mutation | no registry mutation in worker scope | N/A with reason |
-| External evidence digest | T5 evidence JSON | required after worker execution | PENDING_WORKER |
+| Work order status | paired T5 work order | `Status: CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T5_COMPLETION_REVIEW_2026-07-18.md` | reviewer accepted one-call live proof | PASS |
+| Roadmap state | SOT3-APP roadmap | final bounded T5 closure recorded | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated registry mutation not required; registry check remains in closure gates | PASS |
+| Registry Markdown | N/A with reason: no registry Markdown mutation required for T5 closure | reviewer confirms no registry Markdown owner in this batch | PASS |
+| External evidence digest | `docs/reviews/evidence/sot3-app-t5-live-provider-proof-2026-07-18.json` | sha256 `FE936B13D3B45B7E533A418030048F1336F50AC4B18FDC687C56C5986E0DDE15`; sanitized live receipt accepted | PASS |
 | System loop interlock | T4 -> T5 | T5 worker released; later lanes remain parked | PASS |
-| Session continuity | active session | session sync follows material dispatch commit | PENDING_STEWARD |
+| Session continuity | active session | session sync follows material closure commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Required value | Observed value at dispatch | Status |
 |---|---|---|---|
-| call count | exactly one attempted provider call by worker | not yet executed | PENDING_WORKER |
-| retry count | zero | not yet executed | PENDING_WORKER |
-| key handling | process env only, no key persistence | authorized by packet | READY |
-| live result | secret-safe PASS or diagnostic | not yet executed | PENDING_WORKER |
+| call count | exactly one attempted provider call by worker | one | PASS |
+| retry count | zero | zero | PASS |
+| key handling | process env only, no key persistence | reviewer secret-value scan found no raw key values | PASS |
+| live result | secret-safe PASS or diagnostic | `SOT3_APP_T5_LIVE_PROOF_PASS` | PASS |
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; WORKER_MUST_NOT_COMMIT; Source Verification Block; ADIF Defect Registry Disclosure; Current Runtime Freshness Verification; Runtime Expansion Control Block; Live Key Transfer Control Block; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED; WORKER_MUST_NOT_COMMIT; Source Verification Block; ADIF Defect Registry Disclosure; Current Runtime Freshness Verification; Runtime Expansion Control Block; Live Key Transfer Control Block; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm source-backed live authorization before worker execution |
 | claimBoundary | checker read-ahead is not live-result evidence |
 

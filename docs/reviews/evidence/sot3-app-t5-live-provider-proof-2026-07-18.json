@@ -1,0 +1,116 @@
+{
+  "memoryClass": "governed-live-run-evidence",
+  "batchId": "SOT3-APP-T5",
+  "date": "2026-07-18",
+  "executionBaseHead": "01eb3eb31",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "sourceWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T5_OPERATIONAL_LIVE_PROVIDER_PROOF_2026-07-18.md",
+  "pairedBaseline": "docs/baselines/CVF_GC018_SOT3_APP_T5_OPERATIONAL_LIVE_PROVIDER_PROOF_2026-07-18.md",
+  "claimBoundary": "SIBLING_LIVE_PROVIDER_PROOF_NOT_PRODUCTION_OR_PUBLIC_READINESS",
+  "keyTransfer": {
+    "sourceKeyLocation": "root CVF EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.local",
+    "transferMode": "process environment only, single command invocation",
+    "allowedAliasesChecked": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY",
+      "DEEPSEEK_API_KEY"
+    ],
+    "aliasPresence": {
+      "DASHSCOPE_API_KEY": "PRESENT_REDACTED",
+      "ALIBABA_API_KEY": "PRESENT_REDACTED",
+      "CVF_ALIBABA_API_KEY": "ABSENT",
+      "CVF_BENCHMARK_ALIBABA_KEY": "ABSENT",
+      "DEEPSEEK_API_KEY": "PRESENT_REDACTED"
+    },
+    "aliasResolvedForCall": "DASHSCOPE_API_KEY",
+    "rawKeyValuePersisted": false,
+    "authorizationHeaderPersisted": false,
+    "envLocalCopiedToSibling": false
+  },
+  "callLedger": {
+    "callCountAttempted": 1,
+    "callCountMaximum": 1,
+    "retryCount": 0,
+    "retryCountMaximum": 0,
+    "providerId": "alibaba",
+    "modelId": "qwen3.7-plus",
+    "endpoint": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions",
+    "endpointOwnerReference": "EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts (ALIBABA_DASHSCOPE_INTL_ENDPOINT; protocol pattern only, not a cross-package import)",
+    "routeDecision": "ALLOW",
+    "latencyMs": 22215
+  },
+  "result": {
+    "status": "SOT3_APP_T5_LIVE_PROOF_PASS",
+    "liveBindingsExecuted": true,
+    "contextPackageId": "CTX-ab726119-2662-4da9-9e3c-518662a3c787",
+    "outputId": "OUT-4074ce00-68dc-4334-b11f-4767876043b4",
+    "outputContentHash": "sha256:3b0afca186ba56dfb5231e237382a1ed0cddc8f29422a8dc8c2bda0cb53f21fe",
+    "executionReceiptId": "LIVE-CTX-ab726119-2662-4da9-9e3c-518662a3c787",
+    "usageReported": false,
+    "usageNote": "provider response did not include a usage object for this call; runner reports usage only when returned, per work-order evidence requirements"
+  },
+  "diagnostic": {
+    "applicable": false,
+    "reason": "call succeeded on first and only attempt; no failure, partial result, timeout, or empty output occurred, so the Mandatory Live Run Diagnostic Standard's diagnostic-object requirement does not trigger"
+  },
+  "focusedTests": {
+    "command": "corepack pnpm@9.15.0 vitest run tests/e2e/live-governed-output.e2e.test.ts --workspace vitest.workspace.ts",
+    "filesPassed": 1,
+    "testsPassed": 7,
+    "testsFailed": 0,
+    "cases": [
+      "ALLOW context with fake provider output returns governed result via exactly one fetch call",
+      "BLOCK context never invokes the provider fetch",
+      "REVIEW_REQUIRED (non-continuable) context never invokes the provider fetch",
+      "missing key produces a secret-safe diagnostic and never calls fetch",
+      "provider error status produces a diagnostic with status and safe class, not raw body",
+      "malformed output (no completion text) fails closed with a diagnostic",
+      "redaction scan: serialized evidence for a full ALLOW run contains no key alias values or Authorization header"
+    ]
+  },
+  "rootCommands": {
+    "typecheck": { "command": "corepack pnpm@9.15.0 -r typecheck", "result": "PASS" },
+    "build": { "command": "corepack pnpm@9.15.0 -r build", "result": "PASS" },
+    "fullTestSuite": { "command": "corepack pnpm@9.15.0 test", "result": "PASS", "filesPassed": 31, "testsPassed": 52 }
+  },
+  "redactionScan": {
+    "scannedArtifact": "live call stdout/stderr capture and this evidence file",
+    "rawKeyValueFound": false,
+    "authorizationHeaderFound": false,
+    "bearerTokenFound": false,
+    "rawRequestPayloadPersisted": false,
+    "rawResponsePayloadPersisted": false,
+    "outputContentPersisted": false,
+    "outputContentPersistedReason": "only the sha256 content hash is recorded; the drafted quotation summary text itself is not persisted to this evidence file"
+  },
+  "changedSetSiblingRoot": [
+    {
+      "path": "packages/cvf-bindings/src/live-provider-governed-execution.adapter.ts",
+      "action": "created",
+      "sha256After": "365549c8d2af9f2a4d52e6e44cefa9727788db8f3efa3a78471fdb0389cda91f",
+      "lines": 184
+    },
+    {
+      "path": "packages/cvf-bindings/src/index.ts",
+      "action": "modified (added one export line)",
+      "sha256After": "47957e1078e07146e9e7ab8aedcb02c1b13f051d9ac1e76ed3e57cccb3881757",
+      "lines": 11
+    },
+    {
+      "path": "tests/e2e/live-governed-output.e2e.test.ts",
+      "action": "created",
+      "sha256After": "d7ce3cf01f89342d7f13d58f21f110826b53e646de8a2b94a8b08102073a1913",
+      "lines": 252
+    },
+    {
+      "path": "scripts/run-live-governed-output.ts",
+      "action": "created",
+      "sha256After": "56c71fa9e751a74086e89522a2098dfc10eebf1161d00a25aee6657774156295",
+      "lines": 300
+    }
+  ],
+  "noCommitStatement": "no git command was run in the sibling application root (non-Git); no staging or commit occurred in the provenance repository",
+  "claim": "one bounded sibling-application live provider execution succeeded through the governed GovernedExecutionAdapter boundary with route_decision=ALLOW, exactly one attempted call, zero retries, and no raw secret or payload persistence. This does not certify production readiness, public readiness, browser/UI behavior, or universal SOT3 behavior."
+}

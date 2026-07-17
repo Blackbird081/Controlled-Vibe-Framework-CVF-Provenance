@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED
 
 Batch ID: SOT3-APP-T5
 
@@ -215,6 +215,8 @@ Returned defects: NONE_RETURNED
 | governed execution adapter | RUNTIME_BEHAVIOR | `CANONICAL_CONTRACT: external sibling direct-read evidence; packages/cvf-bindings/src/governed-execution.adapter.ts` | adapter fail-closes without port or context IDs and delegates to port | `GovernedExecutionAdapter.execute` | SOT Application CVF bindings | ACCEPT |
 | output service execution call | RUNTIME_BEHAVIOR | `CANONICAL_CONTRACT: external sibling direct-read evidence; packages/application/src/services/governed-output.service.ts` | calls execution after `context.route_decision` check | `GovernedOutputService.create` | SOT Application application service | ACCEPT |
 | Model Gateway live harness pattern | EXISTS | `EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts` | `runLiveProof`; `createOpenAiCompatibleExecuteAdapter` | `runLiveProof` | Model Gateway live proof harness | ACCEPT |
+| Model Gateway provider registry surface | EXISTS | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` | `export class ProviderRegistry` | `ProviderRegistry` | Model Gateway provider registry | ACCEPT |
+| Model Gateway capability registry surface | EXISTS | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts` | `export const PROVIDER_CAPABILITY_REGISTRY` includes providerId `alibaba` | `PROVIDER_CAPABILITY_REGISTRY` | Model Gateway provider capability registry | ACCEPT |
 | DashScope endpoint owner | EXISTS | `EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts` | endpoint constants and resolver | `resolveAlibabaDashScopeEndpoint` | Model Gateway Alibaba ledger | ACCEPT |
 | usable default model | VALUE_SET | `EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts` | `qwen3.7-plus` entry with expiration 2026-08-31 | `qwen3.7-plus` | Model Gateway Alibaba ledger | ACCEPT |
 
@@ -306,9 +308,9 @@ response hash, diagnostic, command evidence, and no-commit evidence.
 
 | Artifact group | Owner | Required final status |
 |---|---|---|
-| five fulfillment paths plus worker return | worker | COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON |
-| completion review | reviewer/closer | REVIEWER_TO_DECIDE |
-| roadmap and continuity | reviewer/session steward | REVIEWER_TO_DECIDE |
+| five fulfillment paths plus worker return | worker | COMPLETE_PENDING_REVIEW accepted by reviewer |
+| completion review | reviewer/closer | CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED |
+| roadmap and continuity | reviewer/session steward | final bounded closure; protected sync follows material commit |
 
 ## Execution Plan
 
@@ -548,12 +550,26 @@ retry.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: DISPATCH_READY` | READY |
-| Worker return | `docs/reviews/CVF_SOT3_APP_T5_WORKER_RETURN_2026-07-18.md` | worker to create | PENDING_WORKER |
-| Evidence JSON | `docs/reviews/evidence/sot3-app-t5-live-provider-proof-2026-07-18.json` | worker to create | PENDING_WORKER |
-| Completion review | `docs/reviews/CVF_SOT3_APP_T5_COMPLETION_REVIEW_2026-07-18.md` | reviewer-owned | PENDING_REVIEW |
-| Registry JSON | N/A with reason: no generated registry mutation authorized for worker | no registry mutation | N/A with reason |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED` | PASS |
+| Worker return | `docs/reviews/CVF_SOT3_APP_T5_WORKER_RETURN_2026-07-18.md` | `Status: COMPLETE_PENDING_REVIEW`; reviewer accepted | PASS |
+| Evidence JSON | `docs/reviews/evidence/sot3-app-t5-live-provider-proof-2026-07-18.json` | sanitized live receipt accepted | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T5_COMPLETION_REVIEW_2026-07-18.md` | reviewer-owned closure | PASS |
+| Roadmap state | `docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md` | `Status: SOT3_APP_CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated registry mutation not required; registry check remains in closure gates | PASS |
+| Registry Markdown | N/A with reason: no registry Markdown mutation required for T5 closure | reviewer confirms no registry Markdown owner in this batch | PASS |
+| External evidence digest | `docs/reviews/evidence/sot3-app-t5-live-provider-proof-2026-07-18.json` | sha256 `FE936B13D3B45B7E533A418030048F1336F50AC4B18FDC687C56C5986E0DDE15`; sanitized one-call receipt accepted | PASS |
+| System loop interlock | T4 closure -> T5 closure -> roadmap closure | no next tranche in this roadmap | PASS |
 | Session continuity | N/A with reason: session steward owns protected sync after material commit | no worker state mutation | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| call count | exactly one attempted provider call | `callCountAttempted=1` | PASS |
+| retry count | zero retries | `retryCount=0` | PASS |
+| route decision | provider call only after ALLOW | `routeDecision=ALLOW` | PASS |
+| provider/model | source-backed DashScope-compatible candidate | `providerId=alibaba`; `modelId=qwen3.7-plus` | PASS |
+| evidence digest | secret-safe receipt hash captured | sha256 `FE936B13D3B45B7E533A418030048F1336F50AC4B18FDC687C56C5986E0DDE15` | PASS |
 
 ## Public Export Disposition
 
