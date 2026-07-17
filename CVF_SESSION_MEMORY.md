@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t3_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute committed SOT3-APP-T3 work order from material dispatch `263b7c39c` under WORKER_MUST_NOT_COMMIT; parked checkpoint=T4 and later, MAO-OA-T6B, SCLP-X-T3, and provider/model/live/browser/UI/public-sync/push/production work.
+Startup acknowledged: current mode=`sot3_app_t3_block_accepted_r1_packet_authoring_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=author and dispatch one narrow SOT3-APP-T3-R1 packet after accepted block commit `30dbcae4a`; parked checkpoint=T4 and later, MAO-OA-T6B, SCLP-X-T3, and provider/model/live/browser/UI/public-sync/push/production work.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t3_dispatched_worker_next`
+Current mode marker: `sot3_app_t3_block_accepted_r1_packet_authoring_next`
 
-Current mode: `sot3_app_t3_dispatched_worker_next`
+Current mode: `sot3_app_t3_block_accepted_r1_packet_authoring_next`
 
-`sot3_app_t3_dispatched_worker_next`
+`sot3_app_t3_block_accepted_r1_packet_authoring_next`
 
 Previous mode:
 
-`sot3_app_t2_closed_t3_packet_authoring_next`
+`sot3_app_t3_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-APP-T3 blocked-return review | `30dbcae4a` | REVIEWED_BLOCK_ACCEPTED_R1_REQUIRED; frozen install and 42/42 tests reproduced; build/typecheck remain blocked by exactly two source-local type errors outside original scope; narrow T3-R1 packet authoring next. |
 | SOT3-APP-T3 reproducible-build and real-test dispatch | `263b7c39c` | DISPATCH_READY after author-fast 5/5, pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS; exact 19 external source outputs plus two no-commit provenance outputs; package registry narrowly released; T4+ and service lanes parked. |
 | SOT3-APP-T2 application-boundary closure | `8ee6c0030` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; nine external hashes recomputed; reviewer closed an SOT-prefixed raw-suffix redaction leak; dependencies remain absent and no test/typecheck PASS is claimed; fresh T3 packet authoring next. |
 | SOT3-APP-T2-R1 packet repair and redispatch | `4be38018f` | Original stop-before-edit block independently accepted; dispatcher repaired the worker-return contract, preserved the blocked return, and released a fresh R1 output route after automation-assist, worker-fast 62/62, pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS. |
@@ -272,12 +273,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t3_dispatched_worker_next`
+Mode: `sot3_app_t3_block_accepted_r1_packet_authoring_next`
 
-Execute the committed SOT3-APP-T3 work order from material dispatch
-`263b7c39c` under `WORKER_MUST_NOT_COMMIT`. Only narrow package-registry
-dependency resolution and deterministic install/build/typecheck/test are
-released; T4 and external service lanes remain parked.
+Author and dispatch one fresh SOT3-APP-T3-R1 packet from accepted blocked-return
+commit `30dbcae4a`. Scope it to the API unknown-error narrowing and web
+navigation tuple narrowing plus focused regression proof. T4 and external
+service lanes remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

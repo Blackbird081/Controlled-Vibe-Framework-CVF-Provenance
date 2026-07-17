@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t3_dispatched_worker_next",
-  "previousMode": "sot3_app_t2_closed_t3_packet_authoring_next",
+  "currentMode": "sot3_app_t3_block_accepted_r1_packet_authoring_next",
+  "previousMode": "sot3_app_t3_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12988,5 +12988,19 @@
     "nextAllowedMove": "Execute the exact T3 no-commit worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
     "claimBoundary": "Narrow package-registry dependency resolution plus deterministic install/build/typecheck/test only; no provider/live/public/T4 action."
   },
-  "nextAllowedMove": "SOT3-APP-T3 is dispatched at material commit 263b7c39c. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T3_REPRODUCIBLE_BUILD_AND_REAL_TEST_HARDENING_2026-07-17.md under WORKER_MUST_NOT_COMMIT from the clean post-dispatch HEAD. Package-registry access is limited to manifest-declared dependency resolution; provider/model/live/browser/UI/public-sync/push/production and T4+ remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3AppT3BlockedReview20260717": {
+    "status": "REVIEWED_BLOCK_ACCEPTED_R1_REQUIRED",
+    "materialCommit": "30dbcae4a",
+    "executionBaseHead": "41e96d206",
+    "workerDisposition": "BLOCKED_WITH_REASON",
+    "passingEvidence": "frozen install; 29 test files; 42 tests; doctor healthy",
+    "blockers": [
+      "apps/api/src/middleware/error.middleware.ts:6 unknown error dereference",
+      "apps/web/src/layouts/application-layout.tsx:27 undefined navigation target inference"
+    ],
+    "reviewArtifact": "docs/reviews/CVF_SOT3_APP_T3_BLOCKED_RETURN_REVIEW_2026-07-17.md",
+    "nextAllowedMove": "fresh T3-R1 packet authoring only",
+    "parked": "T4+, provider/model/live/browser/UI/public-sync/push/production"
+  },
+  "nextAllowedMove": "SOT3-APP-T3 blocked return is independently accepted at material commit 30dbcae4a. Author and dispatch one fresh T3-R1 packet for exactly the API unknown-error narrowing and web navigation tuple narrowing plus focused regression proof. T4+, provider/model/live/browser/UI/public-sync/push/production remain parked. LHW24 remains latest closed numbered LHW wave."
 }

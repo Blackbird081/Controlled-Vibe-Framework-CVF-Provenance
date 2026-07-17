@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_app_t3_dispatched_worker_next",
+  "currentMode": "sot3_app_t3_block_accepted_r1_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
-  "nextAllowedMove": "SOT3-APP-T3 is dispatched at material commit 263b7c39c. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T3_REPRODUCIBLE_BUILD_AND_REAL_TEST_HARDENING_2026-07-17.md under WORKER_MUST_NOT_COMMIT from the clean post-dispatch HEAD. Package-registry access is limited to manifest-declared dependency resolution; provider/model/live/browser/UI/public-sync/push/production and T4+ remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-APP-T3 blocked return is independently accepted at material commit 30dbcae4a. Author and dispatch one fresh T3-R1 packet for exactly the API unknown-error narrowing and web navigation tuple narrowing plus focused regression proof. T4+, provider/model/live/browser/UI/public-sync/push/production remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
