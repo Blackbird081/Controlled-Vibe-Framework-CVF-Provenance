@@ -24,23 +24,25 @@ push.
 
 ## Active Boundary
 
-Active work is limited to SOT3-APP-T5 packet authoring. No T5 execution, T6B,
-provider/model/live, network/live, browser/UI, public-sync, push, or production
-action is active until a fresh source-verified packet releases it.
+Active work is limited to executing the committed SOT3-APP-T5 work order. The
+worker may use root CVF live keys as process environment only, may attempt one
+provider call maximum, must not retry, stage, or commit, and must return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Later lanes, browser/UI,
+public-sync, push, production, and session-state mutation remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_app_t4_closed_t5_packet_authoring_next`;
+current mode=`sot3_app_t5_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=author fresh source-verified SOT3-APP-T5 packet for optional
-operational/live proof boundary decision;
-parked checkpoint=T5 execution, MAO-OA-T6B, SCLP-X-T3, provider/model/live,
-runtime/live, UI/queue, public-sync, and push work until fresh packet release.
+next allowed move=execute only the committed SOT3-APP-T5 work order and return
+uncommitted and unstaged evidence for independent review;
+parked checkpoint=later lanes, MAO-OA-T6B, SCLP-X-T3, browser/UI, public-sync,
+push, production, session-state mutation, and any second provider call or retry.
 
 ## Current Mode
 
-`sot3_app_t4_closed_t5_packet_authoring_next`
+`sot3_app_t5_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -185,6 +187,40 @@ Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 Rollback boundary: revert this seven-path protected continuity set together.
 No source implementation, registry, provider, public, or T5 packet artifact
 belongs here.
+
+## SOT3-APP-T5 Dispatch Continuity - 2026-07-18
+
+Material dispatch commit: `b21ee86d1`.
+
+Current mode: `sot3_app_t5_dispatched_worker_next`.
+
+The committed T5 packet releases exactly one no-commit worker execution of
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T5_OPERATIONAL_LIVE_PROVIDER_PROOF_2026-07-18.md`.
+The worker may add the minimal sibling live adapter, barrel export, focused
+fake-fetch test, one-call runner, sanitized evidence JSON, and worker return
+named in that packet. Root CVF keys may be loaded into process environment only;
+raw key values, authorization headers, copied `.env.local`, raw provider
+payloads, retries, second calls, staging, and commits are forbidden.
+
+Next allowed move: execute exact T5 worker and return `COMPLETE_PENDING_REVIEW`
+or `BLOCKED_WITH_REASON`. Later lanes, browser/UI, public-sync, push,
+production, and session-state mutation remain parked.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T5 Dispatch Sync
+
+Authorized protected scope: continuity synchronization after material dispatch
+commit `b21ee86d1`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT5Dispatch20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No material, sibling source, live evidence, registry, provider, or public
+artifact belongs to this sync.
 
 ## Core Guard Self-Protection Authorization - SOT3-APP-T3 Block Review Sync
 

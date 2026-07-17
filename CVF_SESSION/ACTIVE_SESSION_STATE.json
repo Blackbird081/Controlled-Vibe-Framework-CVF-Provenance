@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t4_closed_t5_packet_authoring_next",
-  "previousMode": "sot3_app_t4_dispatched_worker_next",
+  "currentMode": "sot3_app_t5_dispatched_worker_next",
+  "previousMode": "sot3_app_t4_closed_t5_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13061,5 +13061,30 @@
     "nextAllowedMove": "T5 packet authoring only; provider/live execution remains parked until a fresh source-verified T5 packet releases the exact boundary.",
     "claimBoundary": "Deterministic local in-process T4 proof only; no provider/live/browser/UI/public-sync/push/production or T5 execution claim."
   },
-  "nextAllowedMove": "SOT3-APP-T4 is closed at material commit 1f815d7f5 with reviewer-owned work-order literal repair. Next allowed move is T5 packet authoring only: create a fresh source-verified GC-018/work order for optional operational/live proof and explicitly decide the provider/live boundary. T5 execution, provider/model/live/browser/UI/public-sync/push/production remain parked until that packet is committed. LHW24 remains latest closed numbered LHW wave."
+  "nextAllowedMove": "SOT3-APP-T5 is dispatched at material commit b21ee86d1. Next allowed move is execute only the committed SOT3-APP-T5 work order, using root CVF API keys as process environment only, with one attempted provider call maximum, zero retries, no raw key or raw provider payload persistence, no staging or commit by worker, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Later lanes, browser/UI, public-sync, push, production, and session-state mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "sot3AppT5Dispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "b21ee86d1",
+    "dispatchBaseHead": "1bd039a07",
+    "workOrderId": "SOT3-APP-T5",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_APP_T5_OPERATIONAL_LIVE_PROVIDER_PROOF_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T5_OPERATIONAL_LIVE_PROVIDER_PROOF_2026-07-18.md",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_SOT3_APP_T5_WORKER_RETURN_2026-07-18.md",
+    "expectedEvidence": "docs/reviews/evidence/sot3-app-t5-live-provider-proof-2026-07-18.json",
+    "allowedExternalPaths": [
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\SOT-Application\\packages\\cvf-bindings\\src\\live-provider-governed-execution.adapter.ts",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\SOT-Application\\packages\\cvf-bindings\\src\\index.ts",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\SOT-Application\\tests\\e2e\\live-governed-output.e2e.test.ts",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\SOT-Application\\scripts\\run-live-governed-output.ts"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "liveInvocationCeiling": 1,
+    "retryCeiling": 0,
+    "keyTransferMode": "process environment only from root CVF .env.local; no raw key output or persistence",
+    "verification": "pre-dispatch autorun 75/75 PASS; dispatch-quality enforce PASS; commit-steward PASS; pre-commit 83/83 PASS.",
+    "nextAllowedMove": "Execute only the committed SOT3-APP-T5 work order and return uncommitted and unstaged evidence for independent review.",
+    "heldNextTranche": "Later lanes remain parked until T5 acceptance; browser/UI, public-sync, push, production, and session-state mutation remain parked.",
+    "claimBoundary": "Dispatch packet only. One bounded sibling application live-provider proof worker is authorized; no completed live proof, production, public, browser/UI, queue/daemon, or universal SOT3 behavior is claimed."
+  }
 }

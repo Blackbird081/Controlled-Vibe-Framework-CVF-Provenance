@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_app_t4_closed_t5_packet_authoring_next",
+  "currentMode": "sot3_app_t5_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
-  "nextAllowedMove": "SOT3-APP-T4 is closed at material commit 1f815d7f5 with reviewer-owned work-order literal repair. Next allowed move is T5 packet authoring only: create a fresh source-verified GC-018/work order for optional operational/live proof and explicitly decide the provider/live boundary. T5 execution, provider/model/live/browser/UI/public-sync/push/production remain parked until that packet is committed. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-APP-T5 is dispatched at material commit b21ee86d1. Next allowed move is execute only the committed SOT3-APP-T5 work order, using root CVF API keys as process environment only, with one attempted provider call maximum, zero retries, no raw key or raw provider payload persistence, no staging or commit by worker, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Later lanes, browser/UI, public-sync, push, production, and session-state mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
