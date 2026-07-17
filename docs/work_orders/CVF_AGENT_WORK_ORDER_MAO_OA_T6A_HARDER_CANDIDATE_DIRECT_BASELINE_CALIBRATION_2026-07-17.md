@@ -2,13 +2,13 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_IMPLEMENTATION_LIVE_RESULT_NOT_ACCEPTED
+Status: CLOSED_PASS_BOUNDED_IMPLEMENTATION_LIVE_RESULT_NOT_ACCEPTED
 
 Batch ID: MAO-OA-T6A
 
 dispatchBaseHead: `95fb21377`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `63658c1e6`
 
 closureBaseHead: `63658c1e6`
 
@@ -22,7 +22,7 @@ Canonical packet: this file
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`.
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `63658c1e6`
 
 Current-time notes: use the actual clean post-dispatch HEAD and configured local
 key bootstrap on 2026-07-17; do not reuse prior result receipts.
@@ -322,7 +322,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | worker, independent reviewer/designated closer, session-sync steward |
 | phase | EXECUTION |
-| baseHeadFor(phase) | dispatchBaseHead=95fb21377; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=95fb21377; executionBaseHead=63658c1e6; closureBaseHead=63658c1e6 |
 | changedSetScope(phase) | exactly seven fulfillment paths |
 | traceScope(phase, actor) | worker call receipt; reviewer recomputation; closer commit; steward continuity |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT; reviewer owns material commit |
@@ -424,23 +424,25 @@ persist that field, but no second provider call is authorized or performed.
 
 ## Machine Closure Package
 
-| Field | Value |
-|---|---|
-| workerTerminalState | COMPLETE_PENDING_REVIEW reviewed |
-| requiredReviewerEvidence | ledger, secret scan, tests, gates, and diff/status accepted; score/defects blocked by missing candidate |
-| registryMutation | GC-051 source/aggregate accepted |
-| protectedStateMutation | N/A with reason: reviewer/session steward only |
-| materialCommit | reviewer-owned closure commit |
-| publicMutation | N/A with reason: private provenance only |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_IMPLEMENTATION_LIVE_RESULT_NOT_ACCEPTED`; checklist resolved | PASS |
+| Completion or reviewer artifact | T6A completion review | implementation accepted bounded; live result not accepted; `T6B_NOT_RELEASED` | PASS |
+| Roadmap state | MAO-OA roadmap | T6A terminal bounded status | PASS |
+| Registry JSON | GC-051 source entry and generated aggregate | accepted source/aggregate and drift check | PASS |
+| Registry Markdown | GC-051 registry documentation contract | unchanged; registry checks pass | PASS |
+| External evidence digest | N/A with reason: no external evidence | T6A evidence JSON is an internal governed receipt | N/A with reason: no external digest required |
+| System loop interlock | T6A completion decision | T6B not released | PASS |
+| Session continuity | active session | separate protected-path closure batch completed | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 
-| Assertion | Evidence owner | Dispatch state |
-|---|---|---|
-| one call, zero retries | worker and reviewer | ACCEPTED_BOUNDED |
-| score/material defects | scorer and reviewer | NOT_ACCEPTED_MISSING_RECOMPUTABLE_INPUT |
-| secret safety | worker and reviewer | ACCEPTED |
-| T6B release | reviewer only | T6B_NOT_RELEASED |
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| one call, zero retries | exactly one call and zero retries | accepted ledger receipt | ACCEPTED_BOUNDED |
+| score/material defects | independently recomputable candidate | sanitized candidate absent | NOT_ACCEPTED_MISSING_RECOMPUTABLE_INPUT |
+| secret safety | no raw secret | secret scan accepted | ACCEPTED |
+| T6B release | accepted threshold evidence | threshold evidence absent | T6B_NOT_RELEASED |
 
 ## Return-To-Orchestrator Conditions
 

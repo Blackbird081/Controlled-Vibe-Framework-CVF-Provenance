@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Batch ID: MAO-OA-T7
 
@@ -101,14 +101,16 @@ and no-commit proof.
 
 ## Machine Closure Package
 
-| Field | Value |
-|---|---|
-| workerTerminalState | COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON |
-| roadmapMutation | N/A with reason: reviewer/closer only |
-| registryMutation | N/A with reason: no new source/test path |
-| protectedStateMutation | N/A with reason: session steward only |
-| materialCommit | N/A with reason: WORKER_MUST_NOT_COMMIT |
-| publicMutation | N/A with reason: private assessment only |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | T7 work order | `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR`; checklist resolved | PASS |
+| Completion or reviewer artifact | T7 final completion review | decision and Closure Diff Gate | PASS |
+| Roadmap state | MAO-OA roadmap | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Registry JSON | existing GC-051 registry | aggregate drift and coverage checks pass; no new source/test path | PASS |
+| Registry Markdown | GC-051 registry documentation contract | unchanged; registry checks pass | PASS |
+| External evidence digest | N/A with reason: repository-governed evidence only | no external evidence | N/A with reason: no digest required |
+| System loop interlock | T0-T7 trace and reopen conditions | every tranche terminally reconciled | PASS |
+| Session continuity | active session | separate protected-path batch | N/A with reason: follows material commit |
 
 ## Checker Source Read-Ahead Block
 

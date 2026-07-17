@@ -2,15 +2,15 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Batch ID: MAO-OA-T7
 
 dispatchBaseHead: `43c916a50`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `778f4d8ad`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `778f4d8ad`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -309,13 +309,13 @@ git rev-parse --short HEAD
 
 ## Acceptance Criteria
 
-- [ ] exact T0-T6 trace and no missing tranche;
-- [ ] T6A implementation/receipt separated from rejected score/result;
-- [ ] closure diff and terminal claim ledger complete;
-- [ ] bounded architecture admission and public disposition explicit;
-- [ ] residual limitations and concrete reopen conditions explicit;
-- [ ] recommendation is `CLOSE_BOUNDED` or `DO_NOT_CLOSE` with evidence;
-- [ ] exactly two paths, nothing staged, HEAD unchanged.
+- [x] exact T0-T6 trace and no missing tranche;
+- [x] T6A implementation/receipt separated from rejected score/result;
+- [x] closure diff and terminal claim ledger complete;
+- [x] bounded architecture admission and public disposition explicit;
+- [x] residual limitations and concrete reopen conditions explicit;
+- [x] recommendation is `CLOSE_BOUNDED` or `DO_NOT_CLOSE` with evidence;
+- [x] exactly two paths, nothing staged, HEAD unchanged.
 
 ## Review Gate
 
@@ -329,29 +329,41 @@ reopen condition, unchecked item, extra path, or worker closure claim fails.
 
 ## Closure Checklist
 
-- [ ] dependencies current;
-- [ ] exact worker manifest verified;
-- [ ] every roadmap tranche reconciled;
-- [ ] final claims classified;
-- [ ] architecture/public decisions bounded;
-- [ ] limitations/reopen conditions accepted;
-- [ ] reviewer owns material closure;
-- [ ] continuity follows separately.
+- [x] dependencies current;
+- [x] exact worker manifest verified;
+- [x] every roadmap tranche reconciled;
+- [x] final claims classified;
+- [x] architecture/public decisions bounded;
+- [x] limitations/reopen conditions accepted;
+- [x] reviewer owns material closure;
+- [x] continuity follows separately.
 
 ## Reviewer Closure Decision
 
-OPEN_REVIEWER_TO_DECIDE
+REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR
 
 ## Machine Closure Package
 
-| Field | Value |
-|---|---|
-| workerTerminalState | COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON |
-| roadmapMutation | N/A with reason: reviewer/closer only |
-| registryMutation | N/A with reason: no new governed source/test path |
-| protectedStateMutation | N/A with reason: session steward only |
-| materialCommit | N/A with reason: worker commit forbidden |
-| publicMutation | N/A with reason: private provenance only |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR`; checklist resolved | PASS |
+| Completion or reviewer artifact | T7 final completion review | reviewer decision and Closure Diff Gate | PASS |
+| Roadmap state | MAO-OA roadmap | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Registry JSON | existing GC-051 registry | aggregate drift and coverage checks pass; no new source/test path | PASS |
+| Registry Markdown | GC-051 registry documentation contract | unchanged; registry checks pass | PASS |
+| External evidence digest | N/A with reason: repository-governed evidence only | no external evidence | N/A with reason: no digest required |
+| System loop interlock | T0-T7 trace and reopen conditions | every tranche terminally reconciled | PASS |
+| Session continuity | active session | separate protected-path batch | N/A with reason: follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| worker manifest | exactly two paths | exactly two untracked paths at worker return | PASS |
+| worker commit boundary | unchanged HEAD and nothing staged | `778f4d8ad`; nothing staged | PASS |
+| focused F1/F2 verification | all tests pass | 22/22 PASS | PASS |
+| T0-T6A trace | every tranche terminal | seven terminal review rows | PASS |
+| rejected live result | remains not accepted | T6B_NOT_RELEASED | PASS |
 
 ## Return-To-Orchestrator Conditions
 

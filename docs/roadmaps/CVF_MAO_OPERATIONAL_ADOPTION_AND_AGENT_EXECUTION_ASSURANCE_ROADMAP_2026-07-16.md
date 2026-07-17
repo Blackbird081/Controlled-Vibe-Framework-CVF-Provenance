@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T6A_IMPLEMENTATION_ACCEPTED_LIVE_RESULT_NOT_ACCEPTED_T7_DISPATCHED_WORKER_NEXT
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Roadmap ID: MAO-OA
 
@@ -24,7 +24,7 @@ source-verified packet. SOT3-APP-T0B closed at material commit `577237cba`.
 The earlier MAO foundation closed at `29c55ca36`, and its bounded live value
 pilot closed `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` at `75f5c0b90`.
 
-Decision: `MAO_OA_T5_DISPATCHED_WORKER_NEXT`.
+Decision: `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR`.
 
 T0 remains accepted as a documentation/evidence closure. MAO-OA-T1 is
 independently accepted after one reviewer-owned GC-051 registry repair. The
@@ -41,8 +41,11 @@ parked until the operator's standing 2026-07-17 continuation authority. That
 authority releases one source-verified T4 packet for local independent-evidence,
 dissent/revision, closer convergence, and non-mutating commit/session interlock
 composition. T4 is independently accepted after one reviewer-owned exact-one-
-closer cardinality repair. Standing continuation authority releases fresh T5
-GC-018 and source-verified work-order authoring; T6-T7 remain parked.
+closer cardinality repair. Standing continuation authority released T5, T6A,
+and the final T7 critique in dependency order. T5 closed bounded. T6A's
+implementation and one-call receipt were accepted, but its live score/result
+were not accepted and T6B was not released. T7 independently reconciled the
+full chain and is reviewer-accepted with one provenance-label repair.
 
 ## Scope / Target / Owner Boundary
 
@@ -137,7 +140,7 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 | MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 closure `eead77edf`, standing operator continuation authority, and current-source verification | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 `ede430587` plus fresh GC-018 and source-verified work order | PASS_BOUNDED |
 | MAO-OA-T6 | materially harder representative agent-project proof with predeclared value hypothesis | accepted T5 plus explicit live/provider authority | T6A_IMPLEMENTATION_ACCEPTED_LIVE_RESULT_NOT_ACCEPTED_T6B_NOT_RELEASED |
-| MAO-OA-T7 | independent critique, closure diff, architecture/public disposition, and roadmap closure | accepted bounded T6A disposition | DISPATCHED_WORKER_NEXT |
+| MAO-OA-T7 | independent critique, closure diff, architecture/public disposition, and roadmap closure | accepted bounded T6A disposition | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 
 ## MAO-OA-T0 Required Output
 
@@ -368,6 +371,19 @@ it does not establish runtime, provider, live, or public behavior.
   live, public-sync, or push mutation by the worker; and
 - final roadmap closure remains reviewer-owned.
 
+## MAO-OA-T7 Closure Evidence
+
+- exact two-path worker return at unchanged `executionBaseHead` `778f4d8ad`;
+- independent F1/F2 source and focused-test recomputation: 22/22 PASS;
+- worker-return fast gate and reviewer-fast 62/62 PASS before closure edits;
+- one reviewer repair corrects T0 base-anchor provenance without changing any
+  tranche disposition, architecture decision, public disposition, or reopen
+  condition;
+- final reviewer decision: `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR`;
+- T6B remains `T6B_NOT_RELEASED`; and
+- completion review:
+  `docs/reviews/CVF_MAO_OA_T7_FINAL_ROADMAP_CLOSURE_COMPLETION_REVIEW_2026-07-17.md`.
+
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
@@ -409,11 +425,34 @@ not authorized.
 
 ## Next Allowed Move
 
-Execute exactly
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md`
-as a no-commit documentation worker. T6B is not released. SOT3-APP-T1 and other
-absorption, unscoped generated-state or runtime git/session mutation, UI/queue
-action, public-sync, and push remain parked.
+The MAO-OA roadmap is closed bounded. The next allowed material move is fresh,
+source-verified GC-018 and work-order authoring for SOT3-APP-T1 after checking
+its current roadmap dependency and reopen conditions. T6B remains not released.
+Unscoped generated-state or runtime git/session mutation, UI/queue action,
+public-sync, and push remain parked.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | T7 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR`; checklist resolved | PASS |
+| Completion or reviewer artifact | T7 final completion review | reviewer decision and Closure Diff Gate | PASS |
+| Roadmap state | `docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Registry JSON | existing GC-051 registry | aggregate drift and coverage checks pass; no new source/test path | PASS |
+| Registry Markdown | GC-051 registry documentation contract | unchanged; registry checks pass | PASS |
+| External evidence digest | N/A with reason: CVF-governed repository evidence only | no external evidence | N/A with reason: no digest required |
+| System loop interlock | T0-T7 trace and residual reopen conditions | every tranche terminally reconciled | PASS |
+| Session continuity | active session front door/state/handoff | separate protected-path batch | N/A with reason: follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| T0-T7 terminal trace | every tranche reconciled | all eight roadmap rows terminal | PASS |
+| worker commit boundary | unchanged HEAD and nothing staged | `778f4d8ad`; nothing staged | PASS |
+| F1/F2 focused verification | all focused tests pass | 22/22 PASS | PASS |
+| T6A live score/result | independent recomputation required | sanitized candidate absent | NOT_ACCEPTED |
+| T6B release | accepted threshold evidence | absent | T6B_NOT_RELEASED |
 
 ## Claim Boundary
 
@@ -426,8 +465,9 @@ reviewer-accepted bounded T5 typed operator-readout projection. T5 does not
 prove actual operator UX, state mutation, independent agents, or provider
 execution. T6A implementation is accepted, but its live score/result is not
 accepted because the sanitized candidate was not persisted for independent
-recomputation. The T7 critique worker is next. The roadmap
-defines a future governed path toward operational adoption but does not claim
+recomputation. T7 is independently accepted with one provenance-label repair,
+and this roadmap is closed bounded. The roadmap defines a governed local
+foundation path toward operational adoption but does not claim
 distributed concurrency, real provider launch,
 liveness, provider control,
 automatic review, automatic commit, public readiness, production readiness,

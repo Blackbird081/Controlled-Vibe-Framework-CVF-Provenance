@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 
-Status: REVIEWER_ACCEPTED_IMPLEMENTATION_LIVE_RESULT_NOT_ACCEPTED
+Status: CLOSED_PASS_BOUNDED_IMPLEMENTATION_LIVE_RESULT_NOT_ACCEPTED
 
 Batch ID: MAO-OA-T6A
 
@@ -116,13 +116,25 @@ diff/status evidence are required.
 
 ## Machine Closure Package
 
-| Field | Value |
-|---|---|
-| closeableState | COMPLETE_PENDING_REVIEW |
-| requiredDecision | reviewer independently recomputes score, defects, call count, secret safety, and T6B release |
-| generatedAggregateDisposition | GC-051 source entry plus generated aggregate required |
-| sessionStateDisposition | N/A with reason: worker may not mutate protected continuity |
-| commitDisposition | N/A with reason: WORKER_MUST_NOT_COMMIT |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | T6A work order | `CLOSED_PASS_BOUNDED_IMPLEMENTATION_LIVE_RESULT_NOT_ACCEPTED` | PASS |
+| Completion or reviewer artifact | T6A completion review | implementation accepted bounded; live result not accepted | PASS |
+| Roadmap state | MAO-OA roadmap | T6A terminal bounded status | PASS |
+| Registry JSON | GC-051 source entry and generated aggregate | accepted and drift-free | PASS |
+| Registry Markdown | GC-051 registry documentation contract | unchanged; registry checks pass | PASS |
+| External evidence digest | N/A with reason: no external evidence | T6A evidence JSON is an internal governed receipt | N/A with reason: no external digest required |
+| System loop interlock | T6A reviewer decision | `T6B_NOT_RELEASED` | PASS |
+| Session continuity | active session | protected-path closure batch completed separately | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| call count | exactly one | one | PASS |
+| retry count | zero | zero | PASS |
+| sanitized candidate | present for independent rescoring | absent | NOT_ACCEPTED |
+| T6B release | accepted threshold evidence | absent | T6B_NOT_RELEASED |
 
 ## Checker Source Read-Ahead Block
 
