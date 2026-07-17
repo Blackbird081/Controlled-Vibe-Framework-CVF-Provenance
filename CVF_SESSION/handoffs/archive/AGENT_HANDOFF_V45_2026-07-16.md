@@ -2,7 +2,10 @@
 
 Memory class: active-agent-handoff
 
-Status: ACTIVE
+Status: ARCHIVED
+
+Text Encoding Exception: this archived historical handoff retains an existing
+operator-language quote unchanged as provenance evidence.
 
 Supersedes:
 `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V44_2026-07-15.md`

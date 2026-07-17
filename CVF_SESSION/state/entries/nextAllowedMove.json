@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1882,
+  "stateOrder": 1884,
   "stateKey": "nextAllowedMove",
-  "value": "Execute exactly docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md as a WORKER_MUST_NOT_COMMIT documentation worker from clean dispatch commit 4c0a03fc8. Return exactly two new review paths as COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Do not edit the roadmap, source, tests, registries, protected continuity, public-sync, or run any provider call. T6B remains not released. SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped application/server/browser/public-sync/push/Catalog/GAP/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "MAO-OA is closed bounded at material commit fef756a14. Read docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md, verify the SOT3-APP-T1 dependency and reopen state against accepted T0B and MAO-OA closure, then author one fresh source-verified SOT3-APP-T1 GC-018 baseline and work order. Do not dispatch implementation until dependency-release evidence and pre-dispatch gates pass. T6B remains not released. SCLP-X-T3 and unscoped provider/runtime/UI/queue/external-root/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
 }

@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V45_2026-07-16.md`
+4. `AGENT_HANDOFF_V46_2026-07-17.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Active handoff | `AGENT_HANDOFF_V46_2026-07-17.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_oa_t7_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V45_2026-07-16.md; next allowed move=execute the exact MAO-OA-T7 two-path no-commit critique work order; parked checkpoint=MAO-OA-T6B not released, T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all unscoped external-root/public work.
+Startup acknowledged: current mode=`mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=verify SOT3-APP-T1 dependency/reopen state and author a fresh source-verified GC-018 baseline and work order; parked checkpoint=MAO-OA-T6B not released, SCLP-X-T3, and unscoped provider/runtime/UI/queue/external-root/public-sync/push work.
 
 ## Current Mode
 
-Current mode marker: `mao_oa_t7_dispatched_worker_next`
+Current mode marker: `mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`
 
-Current mode: `mao_oa_t7_dispatched_worker_next`
+Current mode: `mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`
 
-`mao_oa_t7_dispatched_worker_next`
+`mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`
 
 Previous mode:
 
-`mao_oa_t6a_closed_t7_packet_authoring_next`
+`mao_oa_t7_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -71,13 +71,16 @@ material commit `084878796` and is independently accepted and closed at
 worker-return evidence correction. Standing sequence authority then released
 the source-verified T4 packet at material commit `0c7eb2a04`. T4 is independently
 accepted and closed at `ede430587` after one reviewer-owned closer-cardinality
-repair. Fresh T5 packet authoring is next; T6-T7 remain parked until their
-preceding tranche is accepted.
+repair. T5 closed bounded, T6A closed with implementation accepted and live
+result not accepted, and T7 closed the roadmap bounded at `fef756a14`. T6B
+remains not released. SOT3-APP-T1 packet authoring is next after dependency and
+reopen verification.
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-OA final T7 critique and roadmap closure | `fef756a14` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; exact two-path no-commit worker; F1/F2 independently confirmed 22/22; T6A live result remains not accepted; T6B not released; public disposition DEFERRED_PRIVATE_ONLY. |
 | MAO-OA-T7 final independent critique dispatch | `4c0a03fc8` | DISPATCHED after author-fast, pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS; exact two-path documentation-only no-commit worker; final roadmap closure remains reviewer-owned. |
 | MAO-OA-T6A harder-candidate closure | `908bb4fe2` | Implementation and one-call/no-retry receipt accepted; live score/result not accepted because sanitized candidate was absent; reviewer repaired future runner shape, added ADIF-0040, and recorded `T6B_NOT_RELEASED`; T7 packet authoring next. |
 | MAO-OA-T6A harder-candidate direct baseline calibration dispatch | `7640a7ed8` | DISPATCHED after author-fast, pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS; one direct call, zero retries, exact seven-path no-commit return; T6B held for independent score/defect review. |
@@ -262,17 +265,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_oa_t7_dispatched_worker_next`
+Mode: `mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`
 
-Execute exactly
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md`
-from clean commit `4c0a03fc8` as a two-path `WORKER_MUST_NOT_COMMIT`
-documentation worker. T6B is not released. T1 and later SOT3-APP work,
-every other high-value-folder absorption, SCLP-X-T3, real provider/network/
-process/queue action, and unscoped external-root/live/public work remain
-parked. T5 closure proves only a pure local read model, not state mutation, UI,
-queue, actual independent-agent execution, provider execution, production,
-scale, certification, shipment, or user value.
+Read
+`docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md`, verify
+the SOT3-APP-T1 dependency and reopen state against accepted T0B and MAO-OA
+closure, then author one fresh source-verified SOT3-APP-T1 GC-018 baseline and
+work order. Do not dispatch implementation until dependency-release evidence
+and pre-dispatch gates pass. T6B, SCLP-X-T3, unscoped provider/runtime/UI/queue,
+external-root, public-sync, and push work remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
