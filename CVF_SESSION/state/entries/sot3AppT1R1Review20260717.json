@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1891,
+  "stateKey": "sot3AppT1R1Review20260717",
+  "value": {
+    "status": "REVIEWED_NOT_ACCEPTED_R2_REQUIRED",
+    "date": "2026-07-17",
+    "materialCommit": "1300c3505",
+    "executionBaseHead": "ff0ba7eca",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T1_R1_COMPLETION_REVIEW_2026-07-17.md",
+    "rootCauseCount": 2,
+    "reviewFinding": "The 80-file grouped reconciliation contains four offsetting count errors and the 14-file literal set is not a caller-closed consumer denominator.",
+    "nextAllowedMove": "Author one fresh T1-R2 exact-membership and caller-closure correction packet; T2 remains parked.",
+    "claimBoundary": "Adapter/hash/continuation corrections are retained, but T1 inventory completeness is not accepted."
+  }
+}

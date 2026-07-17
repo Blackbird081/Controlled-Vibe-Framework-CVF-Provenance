@@ -30,10 +30,10 @@ action is active.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_app_t1_r1_dispatched_worker_next`;
+current mode=`sot3_app_t1_r1_reviewed_r2_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=execute the committed SOT3-APP-T1-R1 work order from
-`cfd414955` under WORKER_MUST_NOT_COMMIT with exactly two review outputs;
+next allowed move=author and validate one fresh SOT3-APP-T1-R2 documentation
+correction packet for exact membership and caller closure;
 parked checkpoint=T2 and later, MAO-OA-T6B, SCLP-X-T3, unscoped provider,
 runtime/live, UI/queue, public-sync, and push work.
 
@@ -50,9 +50,9 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_app_t1_r1_dispatched_worker_next`
+`sot3_app_t1_r1_reviewed_r2_packet_authoring_next`
 
-Previous mode: `sot3_app_t1_reviewed_r1_packet_authoring_next`.
+Previous mode: `sot3_app_t1_r1_dispatched_worker_next`.
 
 ## MAO-OA Final Closure Continuity - 2026-07-17
 
@@ -82,11 +82,9 @@ Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 
 ## Next Allowed Move
 
-Execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R1_CONTRACT_RATIFICATION_COMPLETENESS_AND_BINDING_CORRECTION_2026-07-17.md`
-from clean committed execution base `cfd414955` under
-`WORKER_MUST_NOT_COMMIT`. Create exactly the two review outputs in its
-fulfillment manifest. T2 and later remain parked until accepted T1-R1 closure.
+Author and validate one fresh `SOT3-APP-T1-R2` documentation correction packet
+for exact per-file inventory membership and two-stage caller closure. T2 and
+later remain parked until accepted contract-inventory closure.
 
 ## Agent Operation Trace Block - MAO-OA Final Closure Session Sync
 
@@ -267,6 +265,33 @@ Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 Rollback boundary: revert this seven-path protected continuity set together.
 No roadmap, baseline, work order, review, source, registry, or public artifact
 changes belong to this sync.
+
+## SOT3-APP-T1-R1 Independent Review - 2026-07-17
+
+Material review commit: `1300c3505`.
+
+Current mode: `sot3_app_t1_r1_reviewed_r2_packet_authoring_next`.
+
+Independent recomputation retained the adapter, identity/hash, continuation,
+and no-commit repairs but rejected inventory completeness. The 80-file grouped
+table has four offsetting count defects, and the 14-file literal set is not a
+caller-closed consumer denominator. Next allowed move is fresh T1-R2 packet
+authoring only; T2 remains parked.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T1-R1 Review Sync
+
+Authorized protected scope: bounded continuity synchronization after material
+review commit `1300c3505`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT1R1Review20260717.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No material, source, registry, or public artifact changes belong to this sync.
 
 ## SOT3-APP-T1-R1 Dispatch Continuity - 2026-07-17
 
