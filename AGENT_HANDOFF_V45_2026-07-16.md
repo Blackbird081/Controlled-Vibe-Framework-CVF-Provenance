@@ -83,6 +83,39 @@ predeclared material defect. T7 and later lanes remain parked.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
+## GC-020 Marker - MAO-OA-T6A Dispatch Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`762feb49e`. Because the current content-addressed SHA cannot be known before
+commit creation, the active-session checker may accept this parent SHA for the
+handoff-sync-only child commit.
+
+This marker changes no mode, next move, material decision, or authority. It
+does not authorize worker commit, retry, T6B, T7, public-sync, or push.
+
+## Agent Operation Trace Block - MAO-OA-T6A Dispatch GC-020 Handoff Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | handoff-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T6A dispatch GC-020 bridge, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | active-handoff edit, handoff-sync commit stewardship, git |
+| Target paths | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Allowed scope source | GC-020 in-place HEAD rule after session-sync commit `762feb49e` |
+| Before status evidence | clean worktree at session-sync HEAD `762feb49e` |
+| After status evidence | parent SHA recorded for root-handoff-only child commit |
+| Diff evidence | one-path staged diff and committed-range active-session check |
+| Approval boundary | handoff bookkeeping only; no material or state change |
+| Claim boundary | no mode, next-move, worker execution, live result, T6B, public, or push claim |
+| Agent type | handoff-sync steward |
+| Invocation ID | `mao-oa-t6a-dispatch-gc020-handoff-sync-2026-07-17` |
+| Expected manifest | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Actual changed set | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Latest Work / Changes
 
 Material commit `eead77edf` closes MAO-OA-T3 after independent review and one
