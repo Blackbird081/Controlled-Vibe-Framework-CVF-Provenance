@@ -5503,6 +5503,43 @@
         "worker or provider launch authority"
       ],
       "nextScanRecommendation": "Re-scan when a later authorized MAO operational-adoption tranche changes this durable run-store surface."
+    },
+    {
+      "id": "mao-oa-t3-operational-worker-launcher-surfaces",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MAO-OA-T3 operational worker launcher surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/operational.worker.launcher.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/index.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.operational.worker.launcher.test.ts"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "scanWave": "MAO-OA-T3",
+      "scanDate": "2026-07-17",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MAO_OA_T3_WORKER_RETURN_2026-07-17.md",
+      "completionReviewPath": "docs/reviews/CVF_MAO_OA_T3_COMPLETION_REVIEW_2026-07-17.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MAO_OA_T3_OPERATIONAL_WORKER_LAUNCHER_AND_LIVENESS_WIRING_2026-07-17.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "MAO_OPERATIONAL_WORKER_LAUNCHER",
+        "MAO_OPERATIONAL_WORKER_LAUNCHER_TESTS",
+        "MAO_LOCAL_BARREL_EXPORT_SURFACE"
+      ],
+      "priorAbsorption": "MAO-OA-T3 adds one bounded local operational-worker-launcher composition owner that resumes the existing MAO-OA-T2 durable run store, calls the existing MAO-T3 fake/local delegation adapter exactly once per launch idempotency key, and uses the existing MAO-T6 lifecycle controller for heartbeat/timeout/cancellation. It does not establish a second durable store, adapter, or lifecycle owner, does not import the control-plane provider router, and makes no real provider/network/process/queue call.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "real provider or network invocation",
+        "control-plane router import",
+        "durable heartbeat across restart"
+      ],
+      "nextScanRecommendation": "Re-scan when a later authorized MAO operational-adoption tranche (MAO-OA-T4 or later) changes this launcher composition surface."
     }
   ]
 }

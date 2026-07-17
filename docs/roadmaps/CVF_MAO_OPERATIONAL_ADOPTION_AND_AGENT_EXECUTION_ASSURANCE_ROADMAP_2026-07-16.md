@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T3_DISPATCHED_WORKER_NEXT
+Status: MAO_OA_T3_PASS_BOUNDED_OPERATOR_CHECKPOINT_NEXT
 
 Roadmap ID: MAO-OA
 
@@ -24,7 +24,7 @@ source-verified packet. SOT3-APP-T0B closed at material commit `577237cba`.
 The earlier MAO foundation closed at `29c55ca36`, and its bounded live value
 pilot closed `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` at `75f5c0b90`.
 
-Decision: `MAO_OA_T3_DISPATCHED_WORKER_NEXT`.
+Decision: `MAO_OA_T3_PASS_BOUNDED_OPERATOR_CHECKPOINT_NEXT`.
 
 T0 remains accepted as a documentation/evidence closure. MAO-OA-T1 is
 independently accepted after one reviewer-owned GC-051 registry repair. The
@@ -32,10 +32,12 @@ operator checkpoint on 2026-07-16 released one source-verified MAO-OA-T2
 dispatch for a bounded execution-plane durable run store, deterministic replay,
 fail-closed recovery, and idempotent resume. T2 is independently accepted after
 two reviewer-owned malformed-snapshot fail-closed guards and matching tests.
-The operator checkpoint on 2026-07-17 releases one source-verified MAO-OA-T3
+The operator checkpoint on 2026-07-17 released one source-verified MAO-OA-T3
 dispatch for a bounded execution-plane launcher composing the accepted durable
 store, fake/local provider-neutral adapter, and deterministic lifecycle
-controller. MAO-OA-T4 through T7 remain parked.
+controller. T3 is independently accepted after one reviewer-owned negative-test
+repair and one worker-return evidence correction. MAO-OA-T4 through T7 remain
+parked pending an explicit operator checkpoint.
 
 ## Scope / Target / Owner Boundary
 
@@ -126,7 +128,7 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 | MAO-OA-T0 | current owner, entrypoint, caller, durable-state, liveness, evidence, reviewer, closer, and operator-route audit | dependencies above | PASS_BOUNDED_WITH_REVIEWER_REPAIRS |
 | MAO-OA-T1 | root/package adoption seam and orchestrator contract | accepted T0 owner/gap matrix plus fresh GC-018 and work order | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T2 | durable run store, replay, recovery, and idempotent resume | accepted T1 contract `1bb5ff7f3`, operator checkpoint, canonical execution-plane append-only storage authority, and independent T2 completion review | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
-| MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 closure `042abf44b`, explicit operator checkpoint, and current-source verification | DISPATCHED_WORKER_NEXT |
+| MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 closure `042abf44b`, explicit operator checkpoint, and independent T3 completion review | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 | HOLD |
 | MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 | HOLD |
 | MAO-OA-T6 | materially harder representative agent-project proof with predeclared value hypothesis | accepted T5 plus explicit live/provider authority | HOLD |
@@ -241,6 +243,23 @@ it does not establish runtime, provider, live, or public behavior.
 - completion review:
   `docs/reviews/CVF_MAO_OA_T1_COMPLETION_REVIEW_2026-07-16.md`.
 
+## MAO-OA-T3 Closure Evidence
+
+- one local `MaoOperationalWorkerLauncher` composes the accepted durable store,
+  fake/local adapter, lifecycle controller, and ledger without a control-plane
+  provider-router import;
+- launch persists planned, admitted, running, and succeeded milestones and
+  prevents a repeated launch key from calling the adapter twice;
+- heartbeat is liveness-only, timeout writes only above the strict ceiling,
+  and cancellation acceptance persists one terminal cancelled milestone;
+- reviewer repair adds direct real-adapter rejection coverage for admission,
+  authority-role, and capability failures;
+- reviewer reruns passed 22/22 focused tests, TypeScript check, 67 files and
+  1711 package tests, GC-051 generation/coverage, and worker-return fast gate
+  with reviewer-fast 62/62; and
+- completion review:
+  `docs/reviews/CVF_MAO_OA_T3_COMPLETION_REVIEW_2026-07-17.md`.
+
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
@@ -282,20 +301,18 @@ not authorized.
 
 ## Next Allowed Move
 
-Execute only
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T3_OPERATIONAL_WORKER_LAUNCHER_AND_LIVENESS_WIRING_2026-07-17.md`
-under `WORKER_MUST_NOT_COMMIT`. MAO-OA-T4 through T7, SOT3-APP-T1, other
-absorption, real provider/network/process/queue execution, reviewer/closer
-execution, operator projection, live expansion, public-sync, and push remain
-parked.
+Await an explicit operator checkpoint before authoring or dispatching
+MAO-OA-T4. T4 through T7, SOT3-APP-T1, other absorption, real
+provider/network/process/queue execution, operator projection, live expansion,
+public-sync, and push remain parked.
 
 ## Claim Boundary
 
 This roadmap records a reviewer-accepted documentation-only T0 owner/gap audit,
 a reviewer-accepted bounded T1 package-root and pure-composition seam, and a
-reviewer-accepted bounded T2 local durable-store and replay component, and one
-dispatched T3 fake/local operational-launcher packet. Dispatch is not
-implementation or provider proof and does not release T4 or later. The roadmap
+reviewer-accepted bounded T2 local durable-store and replay component, and a
+reviewer-accepted bounded T3 fake/local operational-launcher component. T3 does
+not prove provider execution or release T4 or later. The roadmap
 defines a future governed path toward operational adoption but does not claim
 distributed concurrency, real provider launch,
 liveness, provider control,

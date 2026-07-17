@@ -291,3 +291,30 @@ export type {
 } from "./durable.run.store";
 
 export { MAO_DURABLE_RUN_SNAPSHOT_SCHEMA_VERSION, MaoFileRunStore } from "./durable.run.store";
+
+// --- MAO-OA-T3 operational worker launcher and liveness wiring ---
+
+export type {
+  MaoOperationalAdapterPort,
+  MaoOperationalLaunchRequest,
+  MaoOperationalLaunchFailureReason,
+  MaoOperationalLaunchFailure,
+  MaoOperationalLaunchSuccess,
+  MaoOperationalLaunchResult,
+  MaoOperationalHeartbeatFailure,
+  MaoOperationalHeartbeatSuccess,
+  MaoOperationalHeartbeatResult,
+  MaoOperationalTimeoutFailureReason,
+  MaoOperationalTimeoutFailure,
+  MaoOperationalTimeoutNotYetResult,
+  MaoOperationalTimeoutDetectedResult,
+  MaoOperationalTimeoutResult,
+  MaoOperationalCancelFailureReason,
+  MaoOperationalCancelFailure,
+  MaoOperationalCancelRequestSuccess,
+  MaoOperationalCancelAcceptSuccess,
+  MaoOperationalCancelRequestResult,
+  MaoOperationalCancelAcceptResult,
+} from "./operational.worker.launcher";
+
+export { MaoOperationalWorkerLauncher } from "./operational.worker.launcher";

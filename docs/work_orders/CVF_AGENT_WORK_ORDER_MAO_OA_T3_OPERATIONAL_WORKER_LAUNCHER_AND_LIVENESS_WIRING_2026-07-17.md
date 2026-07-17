@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 Date: 2026-07-17
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Work Order ID: MAO-OA-T3
 
@@ -185,7 +185,7 @@ Returned defects: NONE_RETURNED
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_changed_corpus_registry_coverage.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Role:; Canonical packet:; Commit mode:; executionBaseHead; Dependency Release Evidence; ADIF Defect Registry Disclosure; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Required Artifact Manifest; Worker Return Packet Shape Contract; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Epistemic Process Block; Execution Plan; Verification Commands; Acceptance Criteria; Closure Diff Gate; Machine Closure Package; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; Dispatch Prompt Envelope; Role:; Canonical packet:; Commit mode:; executionBaseHead; Dependency Release Evidence; ADIF Defect Registry Disclosure; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Required Artifact Manifest; Worker Return Packet Shape Contract; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Epistemic Process Block; Execution Plan; Verification Commands; Acceptance Criteria; Closure Diff Gate; Machine Closure Package; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm exact source-backed T3 dispatch and worker return contract before material commit |
 | claimBoundary | checker conformance does not prove launcher correctness, provider behavior, production liveness, or value |
 
@@ -336,8 +336,8 @@ Worker may change exactly:
 | behavioral proof | worker | focused deterministic test file and package checks | RELEASED |
 | corpus accountability | worker | per-entry GC-051 source plus generated aggregate | RELEASED |
 | no-commit evidence | worker | full worker return at the exact governed path | RELEASED |
-| independent acceptance | reviewer/closer | completion review and material closure commit | PENDING_REVIEW |
-| continuity | session-sync steward | separate protected sync following material decision | PENDING_REVIEW |
+| independent acceptance | reviewer/closer | completion review and material closure commit | PASS |
+| continuity | session-sync steward | separate protected sync following material decision | N/A with reason: follows material commit |
 
 ## Required Artifact Manifest
 
@@ -577,29 +577,32 @@ must be PASS, N/A with reason, or BLOCKED with return action.
 
 ## Reviewer Closure Decision
 
-N/A with reason: pending worker implementation and independent review. This
-dispatch packet makes no acceptance or closure decision.
+`REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR`.
+
+The worker implementation is accepted after independent recomputation, one
+reviewer-owned real-adapter rejection test expansion, and one worker-return
+fast-gate evidence correction. T4-T7 remain parked.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | planned T3 completion review | reviewer-owned following worker return | N/A with reason |
-| Roadmap state | governing MAO-OA roadmap | T3 dispatched; T4-T7 held | PASS |
-| Registry JSON | planned T3 source entry and generated aggregate | worker generator plus reviewer checks | N/A with reason |
-| Registry Markdown | N/A with reason: GC-051 uses JSON source and aggregate | no Markdown registry owner at dispatch | N/A with reason |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | T3 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR` | PASS |
+| Roadmap state | governing MAO-OA roadmap | `Status: MAO_OA_T3_PASS_BOUNDED_OPERATOR_CHECKPOINT_NEXT` | PASS |
+| Registry JSON | T3 source entry and generated aggregate | generator check and zero coverage violations | PASS |
+| Registry Markdown | GC-051 JSON source and aggregate; no separate Markdown owner | generator and coverage checks | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | none | N/A with reason |
 | System loop interlock | N/A with reason: no repository governance loop/process launcher mutation | none | N/A with reason |
-| Session continuity | protected sync following dispatch material commit | worker forbidden | N/A with reason |
+| Session continuity | protected active state, front door, and handoff | separate session-sync commit follows material closure | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Required evidence | Dispatch state |
 |---|---|---|
-| local launcher behavior | focused fake/local temp-directory tests | PENDING_WORKER |
+| local launcher behavior | 22/22 focused fake/local temp-directory tests | PASS |
 | provider acceptance | N/A with reason: provider invocation forbidden | N/A_WITH_REASON |
-| reviewer acceptance | independent completion review | PENDING_REVIEW |
+| reviewer acceptance | independent completion review | PASS |
 | public acceptance | N/A with reason: public action forbidden | N/A_WITH_REASON |
 
 ## Return-To-Orchestrator Conditions
