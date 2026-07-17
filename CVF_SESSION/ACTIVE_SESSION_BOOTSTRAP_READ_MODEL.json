@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_app_t1_r3_dispatched_worker_next",
+  "currentMode": "sot3_app_t1_closed_t2_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
-  "nextAllowedMove": "SOT3-APP-T1-R3 is dispatched at material commit 585af5140. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md under WORKER_MUST_NOT_COMMIT from the clean committed post-dispatch HEAD. Create exactly its two review outputs and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-APP-T1 is independently closed at material commit f193bf2e9 after R3 source recomputation and bounded reviewer repairs. Author and validate only a fresh source-verified SOT3-APP-T2 GC-018 baseline and work order. T2 execution and all later tranches, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked until fresh dispatch. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

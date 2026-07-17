@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t1_r3_dispatched_worker_next",
-  "previousMode": "sot3_app_t1_r2_reviewed_r3_packet_authoring_next",
+  "currentMode": "sot3_app_t1_closed_t2_packet_authoring_next",
+  "previousMode": "sot3_app_t1_r3_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12919,5 +12919,18 @@
     "verification": "Pre-dispatch autorun 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
     "claimBoundary": "Documentation-only direct invocation and caller-result correction; no source/runtime/live/public action or T2 release."
   },
-  "nextAllowedMove": "SOT3-APP-T1-R3 is dispatched at material commit 585af5140. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md under WORKER_MUST_NOT_COMMIT from the clean committed post-dispatch HEAD. Create exactly its two review outputs and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3AppT1Closure20260717": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",
+    "date": "2026-07-17",
+    "materialCommit": "f193bf2e9",
+    "executionBaseHead": "91f0c1ba9",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T1_R3_COMPLETION_REVIEW_2026-07-17.md",
+    "evidence": "37 raw direct-call matches reconcile to 29 terminal invocations plus 8 exclusions; zero unresolved; all caller-result dispositions independently source-read.",
+    "reviewRoundCount": 4,
+    "workerRepairTurnCount": 3,
+    "reviewerRepairs": "Corrected false 30/7 packet denominator to 29/8, removed one duplicate excluded placeholder, and normalized eleven producer labels.",
+    "nextAllowedMove": "Author and validate only a fresh source-verified SOT3-APP-T2 GC-018 baseline and work order; execution remains parked until fresh dispatch.",
+    "claimBoundary": "Documentation-only T1 closure; no T2 execution, downstream source mutation, runtime/live/public action, or push."
+  },
+  "nextAllowedMove": "SOT3-APP-T1 is independently closed at material commit f193bf2e9 after R3 source recomputation and bounded reviewer repairs. Author and validate only a fresh source-verified SOT3-APP-T2 GC-018 baseline and work order. T2 execution and all later tranches, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked until fresh dispatch. LHW24 remains latest closed numbered LHW wave."
 }
