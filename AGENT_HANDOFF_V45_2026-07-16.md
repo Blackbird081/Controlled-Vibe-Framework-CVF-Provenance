@@ -9,7 +9,7 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after MAO-OA-T4 governed dispatch. V44 was rotated at
+Carry compact continuity after MAO-OA-T4 governed closure. V44 was rotated at
 1,080 lines under the
 Governed File Size Guard; its history remains in the archive and canonical
 detail remains in the active state registry and governed artifacts.
@@ -17,19 +17,19 @@ detail remains in the active state registry and governed artifacts.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`0c7eb2a04` owns the T4 dispatch packet; `eead77edf` owns the accepted T3
-source/test closure and bounded reviewer repair. No T5+, real
+`ede430587` owns the accepted T4 source/test closure and bounded reviewer
+repair; `0c7eb2a04` owns the T4 dispatch packet. No T5 implementation, real
 provider/network/process/queue action, live, public, or push authority is
 granted here.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`mao_oa_t4_dispatched_worker_next`;
+current mode=`mao_oa_t4_closed_t5_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V45_2026-07-16.md`;
-next allowed move=execute the exact committed MAO-OA-T4 no-commit work order
-and return six unstaged paths for independent review;
-parked checkpoint=MAO-OA-T5 through T7, SOT3-APP-T1 and later absorption, real
+next allowed move=author and validate one fresh source-verified MAO-OA-T5
+no-commit packet only;
+parked checkpoint=MAO-OA-T6 through T7, SOT3-APP-T1 and later absorption, real
 provider/network/process/queue action, unscoped runtime/live/public work, and
 push.
 
@@ -46,9 +46,9 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`mao_oa_t4_dispatched_worker_next`
+`mao_oa_t4_closed_t5_packet_authoring_next`
 
-Previous mode: `mao_oa_t3_closed_operator_checkpoint_next`.
+Previous mode: `mao_oa_t4_dispatched_worker_next`.
 
 ## Latest Work / Changes
 
@@ -177,7 +177,7 @@ MAO-OA-T4.
 
 Remain parked:
 
-- MAO-OA-T4 through T7;
+- MAO-OA-T6 through T7 and T5 implementation before packet dispatch;
 - real provider/network/process/queue launch, review/closer execution, CLI/MCP,
   UI, and operator projection;
 - SOT3-APP-T1 and later SOT3-APP work;
@@ -189,12 +189,13 @@ Remain parked:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize T4 material dispatch
-`0c7eb2a04` and park T5-T7 pending preceding-tranche acceptance.
+Authorized guard-maintenance scope: synchronize T4 material closure
+`ede430587`, release fresh T5 packet authoring, and park T6-T7 pending
+preceding-tranche acceptance.
 
 Operator authorization: standing sequence authority releases the next
 source-verified packet after each accepted tranche; the handoff contract and
-GC-020 require protected continuity synchronization after material dispatch.
+GC-020 require protected continuity synchronization after material closure.
 
 Protected paths:
 
@@ -204,10 +205,11 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/maoOaT4Dispatch20260717.json`
+- `CVF_SESSION/state/entries/maoOaT4Closure20260717.json`
 
 Rollback boundary: revert only this protected continuity batch; retain T4
-material dispatch `0c7eb2a04` and the T0-T3 material closures.
+material closure `ede430587`, T4 dispatch `0c7eb2a04`, and the T0-T3 material
+closures.
 
 ## Public Export Disposition
 
@@ -248,6 +250,53 @@ or push.
 | Actual changed set | `AGENT_HANDOFF_V45_2026-07-16.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## MAO-OA-T4 Closure Continuity - 2026-07-17
+
+Material closure commit: `ede430587`.
+
+Current mode: `mao_oa_t4_closed_t5_packet_authoring_next`.
+
+The no-commit worker boundary was honored at `a5951f420` with exactly six
+pending paths and nothing staged. Independent review replaced a scalar closer
+request with `designatedCloserIds`, added zero, blank-one, and multiple-entry
+negative cases, and accepted the bounded convergence owner after 27/27 focused
+tests, typecheck, 1,738 package tests, GC-051 alignment, reviewer-fast 62/62,
+and pre-commit 83/83 passed.
+
+Next allowed move: author and validate one fresh source-verified MAO-OA-T5
+GC-018 baseline and `WORKER_MUST_NOT_COMMIT` work order only. T5 implementation
+and T6-T7 remain parked until their applicable release points.
+
+## Agent Operation Trace Block - MAO-OA-T4 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | independent reviewer/closer and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T4 closure continuity sync, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, apply_patch, git |
+| Target paths | seven protected session paths |
+| Allowed scope source | material closure `ede430587`, Reviewer Closure Conversion, standing sequence authority, and GC-020 continuity |
+| Before status evidence | clean material worktree at closure HEAD `ede430587` |
+| After status evidence | V45 active; continuity records T4 closed, T5 packet authoring next, and T6-T7 parked |
+| Diff evidence | protected session-only diff, generated-state drift check, and session-sync preflight |
+| Approval boundary | continuity synchronization after bounded T4 closure only |
+| Claim boundary | no T5 implementation, T6-T7, actual independent-agent execution, git/session runtime action, real provider/live/public/push action |
+| Agent type | independent reviewer/closer and session-sync steward |
+| Invocation ID | `mao-oa-t4-closure-session-sync-2026-07-17` |
+| Expected manifest | seven protected session paths |
+| Actual changed set | seven protected session paths |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Claim Boundary - MAO-OA-T4 Closure
+
+This handoff records bounded T4 closure continuity. It does not prove actual
+independent-agent execution, git/session mutation by runtime code, real
+provider/network/process/queue execution, live governance, public readiness,
+production readiness, scale, shipment, or user value.
 
 ## Agent Operation Trace Block
 
