@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: SOT3_APP_T4_CLOSED_T5_PACKET_AUTHORING_NEXT
+Status: SOT3_APP_T5_DISPATCHED_WORKER_NEXT
 
 docType: roadmap
 
@@ -73,9 +73,9 @@ owners before modifying the sibling source.
 
 | Control | Decision |
 |---|---|
-| current active tranche | T2-R1 application-boundary fail-closed implementation worker |
-| committed packet | prior paired T0 GC-018 and work order are held and must not be executed |
-| scheduling release | exact repaired T2-R1 no-commit worker only; T3 and later remain parked pending independent T2 closure |
+| current active tranche | T5 operational live-provider proof worker |
+| committed packet | T5 GC-018 and work order release one no-commit worker execution |
+| scheduling release | exact T5 no-commit worker only; later lanes remain parked pending independent T5 closure |
 | source mutation | forbidden until a later source-verified implementation work order passes pre-dispatch |
 | hidden-clone coupling | T0A enumerates every declaration; T0B retains terminal sever/govern/block decisions |
 | runtime/live | separately authorized only in tranches whose acceptance requires it |
@@ -317,6 +317,17 @@ T1 review closure.
 | final commands | vertical-slice PASS; focused e2e 1/1 PASS; root test 30 files and 45 tests PASS; root typecheck PASS; root build PASS; doctor `healthy: true` |
 | next route | T5 packet authoring only; provider/live/browser/UI/public-sync/push/production remain parked until a fresh source-verified packet releases them |
 
+## T5 Dispatch Packet
+
+| Field | Evidence |
+|---|---|
+| GC-018 | `docs/baselines/CVF_GC018_SOT3_APP_T5_OPERATIONAL_LIVE_PROVIDER_PROOF_2026-07-18.md` |
+| work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T5_OPERATIONAL_LIVE_PROVIDER_PROOF_2026-07-18.md` |
+| dependency release | accepted T4 closure material commit `1f815d7f5`; session-sync `1bd039a07`; operator live/key authorization on 2026-07-18 |
+| exact external scope | sibling live adapter, barrel export, focused e2e fake-fetch test, one-call runner, evidence JSON, and worker return |
+| execution boundary | one attempted provider call maximum, zero retries, root keys via process environment only, no browser/UI/public-sync/push/production |
+| next route | execute exact T5 no-commit worker and return for independent review; later lanes remain parked |
+
 ## Reverse Architecture Projection Matrix
 
 | Accepted value group | Catalog/GAP owner check | Disposition before closure | Target source | Claim class | Evidence |
@@ -447,7 +458,7 @@ authoring and completion is the only next roadmap lane.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | Status: SOT3_APP_T4_CLOSED_T5_PACKET_AUTHORING_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; T1 Dispatch Packet; T1-R1 Dispatch Packet; T1-R2 Dispatch Packet; T1-R3 Dispatch Packet; T2 Dispatch Packet; T3 Dispatch Packet; T3 Blocked Return Review; T3-R1 Dispatch Packet; T3 Closure; T4 Dispatch Packet; T4 Closure; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; Public Export Disposition; Machine Closure Package; Claim Boundary |
+| literalTokensReviewed | Status: SOT3_APP_T5_DISPATCHED_WORKER_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; T1 Dispatch Packet; T1-R1 Dispatch Packet; T1-R2 Dispatch Packet; T1-R3 Dispatch Packet; T2 Dispatch Packet; T3 Dispatch Packet; T3 Blocked Return Review; T3-R1 Dispatch Packet; T3 Closure; T4 Dispatch Packet; T4 Closure; T5 Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; Public Export Disposition; Machine Closure Package; Claim Boundary |
 | gateRunPurpose | confirm T0B reviewer closure structure after independent semantic and objective recomputation |
 | claimBoundary | structural confirmation only; no source, runtime, or product proof |
 
@@ -473,11 +484,11 @@ public-safe artifact set exists.
 | Worker ledger | `docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS`; semantic_terminal=336; declaration_terminal=13 | PASS_WITH_REPAIR |
 | Worker return | `docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
 | Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T0B_COMPLETION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
-| Roadmap state | this artifact | `Status: SOT3_APP_T4_CLOSED_T5_PACKET_AUTHORING_NEXT` | PASS |
+| Roadmap state | this artifact | `Status: SOT3_APP_T5_DISPATCHED_WORKER_NEXT` | PASS |
 | Registry JSON | N/A with reason: no registry JSON is required or changed | no generated registry mutation | PASS |
 | Registry Markdown | N/A with reason: no registry Markdown is required or changed | no registry mutation | PASS |
 | External evidence digest | accepted T0B ledger | 336 files; 238522 bytes; sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; declaration inventory | PASS |
-| System loop interlock | T0B -> MAO-OA -> T1 -> T2 bounded closure -> T3 blocked review -> T3-R1 dispatch -> T3 closure -> T4 closure | T5 packet authoring next; T5 execution and later lanes remain parked | PASS |
+| System loop interlock | T0B -> MAO-OA -> T1 -> T2 bounded closure -> T3 blocked review -> T3-R1 dispatch -> T3 closure -> T4 closure -> T5 dispatch | T5 worker execution next; later lanes remain parked | PASS |
 | Session continuity | active session front door, state, and handoff | separate sync after material commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
@@ -492,9 +503,9 @@ public-safe artifact set exists.
 
 This roadmap records an operator-authorized sequence, a completed and
 independently accepted two-phase full-corpus T0 route, MAO-OA dependency
-closure, T1 documentation dispatch, and an independent T1 review that requires
-one consolidated R1 correction. It accepts static semantic/provenance evidence
-and selected useful T1 findings only; the final contract ratification remains
-unaccepted. It does not authorize source mutation or T2, prove
-build/runtime/live behavior, promote the application into CVF Core, or claim
-public or production readiness.
+closure, T1 documentation dispatch, subsequent bounded implementation closures,
+T4 local proof closure, and T5 live-provider proof dispatch. It accepts static
+semantic/provenance evidence and bounded tranche evidence only. It authorizes
+only the exact T5 no-commit worker described in the paired work order and does
+not prove production, public, browser/UI, queue, daemon, or universal SOT3
+behavior.
