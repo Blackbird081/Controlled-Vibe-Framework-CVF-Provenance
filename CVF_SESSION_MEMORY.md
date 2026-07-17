@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t3_r1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute committed SOT3-APP-T3-R1 work order from material dispatch `1a7f4447f`; parked checkpoint=T4 and later, MAO-OA-T6B, SCLP-X-T3, and provider/model/live/browser/UI/public-sync/push/production work.
+Startup acknowledged: current mode=`sot3_app_t3_closed_t4_packet_authoring_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=author fresh source-verified SOT3-APP-T4 GC-018/work order for local Controlled Quotation proof; parked checkpoint=T4 execution and later, MAO-OA-T6B, SCLP-X-T3, and provider/model/live/browser/UI/public-sync/push/production work.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t3_r1_dispatched_worker_next`
+Current mode marker: `sot3_app_t3_closed_t4_packet_authoring_next`
 
-Current mode: `sot3_app_t3_r1_dispatched_worker_next`
+Current mode: `sot3_app_t3_closed_t4_packet_authoring_next`
 
-`sot3_app_t3_r1_dispatched_worker_next`
+`sot3_app_t3_closed_t4_packet_authoring_next`
 
 Previous mode:
 
-`sot3_app_t3_block_accepted_r1_packet_authoring_next`
+`sot3_app_t3_r1_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -274,12 +274,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t3_r1_dispatched_worker_next`
+Mode: `sot3_app_t3_closed_t4_packet_authoring_next`
 
-Execute the committed SOT3-APP-T3-R1 work order from material dispatch
-`1a7f4447f` under `WORKER_MUST_NOT_COMMIT`. Only four external source/test
-outputs and two provenance returns are released. T4 and service lanes remain
-parked.
+T3 is closed at material commit `4bb19d27d` with reviewer-owned
+log-redaction repair. Next allowed move is SOT3-APP-T4 packet authoring only:
+create a fresh source-verified GC-018/work order for local Controlled
+Quotation proof. T4 execution, T5/service lanes, provider/model/live/browser,
+UI/public-sync/push/production remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

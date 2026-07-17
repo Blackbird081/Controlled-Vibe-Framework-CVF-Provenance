@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1913,
+  "stateKey": "sot3AppT3Closure20260717",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR",
+    "materialCommit": "4bb19d27d",
+    "closureBaseHead": "4f513f324",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T3_COMPLETION_REVIEW_2026-07-17.md",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "workerReturn": "docs/reviews/CVF_SOT3_APP_T3_R1_WORKER_RETURN_2026-07-17.md",
+    "reviewerRepair": "Centralized safe error sanitization for application log and response boundary after raw sentinel appeared in pre-repair logs.",
+    "verification": "Worker-return fast gate PASS; reviewer-fast 62/62 PASS; commit steward PASS; pre-commit 83/83 PASS; isolated/root typecheck-build-test-doctor PASS.",
+    "nextAllowedMove": "T4 packet authoring only; T4 execution and later lanes remain parked.",
+    "claimBoundary": "Deterministic local T3 closure only; no provider/live/browser/public/push/production or T4 execution claim."
+  }
+}

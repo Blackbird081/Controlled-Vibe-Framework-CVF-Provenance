@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_app_t3_r1_dispatched_worker_next",
+  "currentMode": "sot3_app_t3_closed_t4_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
-  "nextAllowedMove": "SOT3-APP-T3-R1 is dispatched at material commit 1a7f4447f. Execute the exact no-commit work order for four external source/test outputs and two provenance returns. T4+, provider/model/live/browser/UI/public-sync/push/production remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-APP-T3 is closed at material commit 4bb19d27d with reviewer-owned log-redaction repair. Next allowed move is T4 packet authoring only: create a fresh source-verified GC-018/work order for local Controlled Quotation proof. T4 execution, T5/service, provider/model/live/browser/UI/public-sync/push/production remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
