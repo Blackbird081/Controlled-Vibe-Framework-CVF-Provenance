@@ -85,8 +85,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mao_oa_t6a_closed_t7_packet_authoring_next",
-  "previousMode": "mao_oa_t6a_dispatched_worker_next",
+  "currentMode": "mao_oa_t7_dispatched_worker_next",
+  "previousMode": "mao_oa_t6a_closed_t7_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12785,5 +12785,19 @@
     "nextAllowedMove": "Author and validate one fresh source-verified MAO-OA-T7 closure packet.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
   },
-  "nextAllowedMove": "Author and validate one fresh source-verified MAO-OA-T7 GC-018 baseline and work order for independent critique, closure diff, architecture/public disposition, and roadmap closure, derived from T6A material commit 908bb4fe2. T6B is not released because the worker score and defect result lacked persisted sanitized candidate input for independent recomputation. Do not run another provider call. SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped application/server/browser/public-sync/push/Catalog/GAP/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "maoOaT7Dispatch20260717": {
+    "status": "DISPATCHED",
+    "date": "2026-07-17",
+    "materialCommit": "4c0a03fc8",
+    "dispatchBaseHead": "43c916a50",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md",
+    "workerRoute": "WORKER_MUST_NOT_COMMIT with exactly two new review paths",
+    "boundary": "Documentation-only independent critique; no roadmap, source, registry, state, provider, live, public, or push mutation.",
+    "verification": "Dispatch-author fast gate PASS; pre-dispatch 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "nextAllowedMove": "Execute the exact T7 no-commit work order and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+  },
+  "nextAllowedMove": "Execute exactly docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md as a WORKER_MUST_NOT_COMMIT documentation worker from clean dispatch commit 4c0a03fc8. Return exactly two new review paths as COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Do not edit the roadmap, source, tests, registries, protected continuity, public-sync, or run any provider call. T6B remains not released. SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped application/server/browser/public-sync/push/Catalog/GAP/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
 }
