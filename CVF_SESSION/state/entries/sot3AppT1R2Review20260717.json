@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1895,
+  "stateKey": "sot3AppT1R2Review20260717",
+  "value": {
+    "status": "REVIEWED_NOT_ACCEPTED_R3_REQUIRED",
+    "date": "2026-07-17",
+    "materialCommit": "49ab5350c",
+    "executionBaseHead": "3a54fae91",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T1_R2_COMPLETION_REVIEW_2026-07-17.md",
+    "acceptedFacts": "Exact 80-file seed set and 14-file LITERAL_MATCH_SET reconcile with zero path difference.",
+    "blockingFindings": "Six direct test invocations were collapsed into constructor-only rows; EvidenceAdapter.recordFreeze result use was described contrary to source.",
+    "reviewRoundCount": 3,
+    "stopDisposition": "CONTINUE_NEW_CRITICAL_EVIDENCE",
+    "nextMove": "Author one narrow R3 caller-edge correction packet; T2 remains parked.",
+    "claimBoundary": "No T1 closure, T2 release, source/runtime/live/public action, or push."
+  }
+}

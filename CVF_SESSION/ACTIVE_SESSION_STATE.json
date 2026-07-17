@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t1_r2_dispatched_worker_next",
-  "previousMode": "sot3_app_t1_r1_reviewed_r2_packet_authoring_next",
+  "currentMode": "sot3_app_t1_r2_reviewed_r3_packet_authoring_next",
+  "previousMode": "sot3_app_t1_r2_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12891,5 +12891,18 @@
     "verification": "Dispatch author fast PASS; pre-dispatch autorun 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
     "claimBoundary": "Documentation-only exact membership and caller closure; no source/runtime/live/public action or T2 release."
   },
-  "nextAllowedMove": "SOT3-APP-T1-R2 is dispatched at material commit e7b91284c. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R2_EXACT_INVENTORY_MEMBERSHIP_AND_CALLER_CLOSURE_CORRECTION_2026-07-17.md under WORKER_MUST_NOT_COMMIT from clean execution base e7b91284c. Create exactly the two review outputs in its fulfillment manifest and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3AppT1R2Review20260717": {
+    "status": "REVIEWED_NOT_ACCEPTED_R3_REQUIRED",
+    "date": "2026-07-17",
+    "materialCommit": "49ab5350c",
+    "executionBaseHead": "3a54fae91",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T1_R2_COMPLETION_REVIEW_2026-07-17.md",
+    "acceptedFacts": "Exact 80-file seed set and 14-file LITERAL_MATCH_SET reconcile with zero path difference.",
+    "blockingFindings": "Six direct test invocations were collapsed into constructor-only rows; EvidenceAdapter.recordFreeze result use was described contrary to source.",
+    "reviewRoundCount": 3,
+    "stopDisposition": "CONTINUE_NEW_CRITICAL_EVIDENCE",
+    "nextMove": "Author one narrow R3 caller-edge correction packet; T2 remains parked.",
+    "claimBoundary": "No T1 closure, T2 release, source/runtime/live/public action, or push."
+  },
+  "nextAllowedMove": "SOT3-APP-T1-R2 was independently rejected at material review commit 49ab5350c after exact 80/14 membership passed but six test invocation edges and one false EvidenceAdapter.recordFreeze result-use claim remained. Author and validate one fresh narrow SOT3-APP-T1-R3 critical caller-edge correction packet. Do not dispatch T2. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
 }
