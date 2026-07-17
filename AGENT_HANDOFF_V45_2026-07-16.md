@@ -484,6 +484,40 @@ public-sync, or push.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
+## GC-020 Marker - MAO-OA-T3 Dispatch Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`c3917c8c6`. Because the current content-addressed SHA cannot be known before
+commit creation, the active-session checker may accept this parent SHA for the
+handoff-sync-only child commit.
+
+This marker changes no mode, next move, material decision, or authority. It
+does not authorize worker implementation, MAO-OA-T4 through T7, real
+provider/network/process/queue action, live work, public-sync, or push.
+
+## Agent Operation Trace Block - MAO-OA-T3 Dispatch GC-020 Handoff Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | handoff-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T3 dispatch GC-020 handoff bridge, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | active-handoff edit, handoff-sync commit stewardship, git |
+| Target paths | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Allowed scope source | GC-020 in-place HEAD rule after session-sync commit `c3917c8c6` |
+| Before status evidence | clean worktree at session-sync HEAD `c3917c8c6` |
+| After status evidence | parent SHA recorded for a dedicated root-handoff-only child commit |
+| Diff evidence | one-path staged diff and committed-range active-session check |
+| Approval boundary | handoff bookkeeping only; no material or session-state change |
+| Claim boundary | no mode, next-move, worker implementation, T4-T7, real provider/network/process/queue action, live, public, or push claim |
+| Agent type | handoff-sync steward |
+| Invocation ID | `mao-oa-t3-dispatch-gc020-handoff-sync-2026-07-17` |
+| Expected manifest | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Actual changed set | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Claim Boundary
 
 This handoff records bounded T3 dispatch continuity. It does not prove worker
