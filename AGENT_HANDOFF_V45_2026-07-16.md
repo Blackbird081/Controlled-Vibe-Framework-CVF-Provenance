@@ -9,7 +9,7 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after MAO-OA-T5 governed dispatch. V44 was rotated at
+Carry compact continuity after MAO-OA-T5 governed closure. V44 was rotated at
 1,080 lines under the
 Governed File Size Guard; its history remains in the archive and canonical
 detail remains in the active state registry and governed artifacts.
@@ -17,18 +17,18 @@ detail remains in the active state registry and governed artifacts.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`3f975a1d4` owns the T5 dispatch packet; `ede430587` owns the accepted T4
-source/test closure and bounded reviewer repair. No T6+, real
+`3e259039a` owns the accepted T5 source/test closure; `3f975a1d4` owns the T5
+dispatch packet. No T6 implementation, real
 provider/network/process/queue action, live, public, or push authority is
 granted here.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`mao_oa_t5_dispatched_worker_next`;
+current mode=`mao_oa_t5_closed_t6_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V45_2026-07-16.md`;
-next allowed move=execute the exact committed MAO-OA-T5 no-commit work order
-and return six unstaged paths for independent review;
+next allowed move=author and validate one fresh source-verified MAO-OA-T6
+no-commit packet only;
 parked checkpoint=MAO-OA-T6 through T7, SOT3-APP-T1 and later absorption, real
 provider/network/process/queue action, unscoped runtime/live/public work, and
 push.
@@ -46,9 +46,9 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`mao_oa_t5_dispatched_worker_next`
+`mao_oa_t5_closed_t6_packet_authoring_next`
 
-Previous mode: `mao_oa_t4_closed_t5_packet_authoring_next`.
+Previous mode: `mao_oa_t5_dispatched_worker_next`.
 
 ## Latest Work / Changes
 
@@ -177,7 +177,7 @@ MAO-OA-T4.
 
 Remain parked:
 
-- MAO-OA-T6 through T7;
+- MAO-OA-T7 and T6 execution before packet dispatch;
 - real provider/network/process/queue launch, review/closer execution, CLI/MCP,
   UI, and operator projection;
 - SOT3-APP-T1 and later SOT3-APP work;
@@ -189,12 +189,12 @@ Remain parked:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize T5 material dispatch
-`3f975a1d4` and park T6-T7 pending preceding-tranche acceptance.
+Authorized guard-maintenance scope: synchronize T5 material closure
+`3e259039a`, release fresh T6 packet authoring, and park T7.
 
 Operator authorization: standing sequence authority releases the next
 source-verified packet after each accepted tranche; the handoff contract and
-GC-020 require protected continuity synchronization after material dispatch.
+GC-020 require protected continuity synchronization after material closure.
 
 Protected paths:
 
@@ -204,11 +204,11 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/maoOaT5Dispatch20260717.json`
+- `CVF_SESSION/state/entries/maoOaT5Closure20260717.json`
 
 Rollback boundary: revert only this protected continuity batch; retain T5
-material dispatch `3f975a1d4`, T4 material closure `ede430587`, and the T0-T3
-material closures.
+material closure `3e259039a`, T5 dispatch `3f975a1d4`, and prior material
+closures.
 
 ## Public Export Disposition
 
@@ -247,6 +247,44 @@ or push.
 | Invocation ID | `mao-oa-t0-gc020-handoff-sync-2026-07-16` |
 | Expected manifest | `AGENT_HANDOFF_V45_2026-07-16.md` |
 | Actual changed set | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## MAO-OA-T5 Closure Continuity - 2026-07-17
+
+Material closure commit: `3e259039a`.
+
+Current mode: `mao_oa_t5_closed_t6_packet_authoring_next`.
+
+The no-commit worker boundary was honored at `3e9ba67e6` with exactly six
+pending paths and nothing staged. Independent review required no source repair;
+22/22 focused tests, typecheck, 1,760 package tests, GC-051 alignment,
+reviewer-fast 62/62, and pre-commit 83/83 passed.
+
+Next allowed move: author and validate one fresh source-verified MAO-OA-T6
+GC-018 baseline and `WORKER_MUST_NOT_COMMIT` work order only. T6 execution and
+T7 remain parked until their applicable release points.
+
+## Agent Operation Trace Block - MAO-OA-T5 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | independent reviewer/closer and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T5 closure continuity sync, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, apply_patch, git |
+| Target paths | seven protected session paths |
+| Allowed scope source | material closure `3e259039a`, Reviewer Closure Conversion, standing sequence authority, and GC-020 continuity |
+| Before status evidence | clean material worktree at closure HEAD `3e259039a` |
+| After status evidence | V45 active; continuity records T5 closed, T6 packet authoring next, and T7 parked |
+| Diff evidence | protected session-only diff, generated-state drift check, and session-sync preflight |
+| Approval boundary | continuity synchronization after bounded T5 closure only |
+| Claim boundary | no T6 implementation, T7, state/UI/queue action, provider/live/public/push action |
+| Agent type | independent reviewer/closer and session-sync steward |
+| Invocation ID | `mao-oa-t5-closure-session-sync-2026-07-17` |
+| Expected manifest | seven protected session paths |
+| Actual changed set | seven protected session paths |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
