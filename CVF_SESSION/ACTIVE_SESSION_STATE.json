@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t1_reviewed_r1_packet_authoring_next",
-  "previousMode": "sot3_app_t1_dispatched_worker_next",
+  "currentMode": "sot3_app_t1_r1_dispatched_worker_next",
+  "previousMode": "sot3_app_t1_reviewed_r1_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12847,5 +12847,23 @@
     "nextAllowedMove": "Author and validate one fresh T1-R1 correction packet; T2 remains parked.",
     "claimBoundary": "T1 contract ratification is not accepted and no application source/runtime compatibility is proven."
   },
-  "nextAllowedMove": "SOT3-APP-T1 was independently reviewed and not accepted at material commit ef9b09648. Author and validate one fresh SOT3-APP-T1-R1 documentation correction packet that resolves the six consolidated findings. Do not execute or release T2. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3AppT1R1Dispatch20260717": {
+    "status": "DISPATCHED",
+    "date": "2026-07-17",
+    "materialCommit": "cfd414955",
+    "dispatchBaseHead": "3cf20ecce",
+    "reviewDependencyCommit": "ef9b09648",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_APP_T1_R1_CONTRACT_RATIFICATION_COMPLETENESS_AND_BINDING_CORRECTION_2026-07-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R1_CONTRACT_RATIFICATION_COMPLETENESS_AND_BINDING_CORRECTION_2026-07-17.md",
+    "workerOutputs": [
+      "docs/reviews/CVF_SOT3_APP_T1_R1_CONTRACT_RATIFICATION_COMPLETENESS_AND_BINDING_CORRECTION_2026-07-17.md",
+      "docs/reviews/CVF_SOT3_APP_T1_R1_WORKER_RETURN_2026-07-17.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": "Dispatch author fast gate PASS; pre-dispatch autorun 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "claimBoundary": "Documentation-only T1 correction; no copied-folder/CVF source mutation, runtime/live/public claim, or T2 release.",
+    "nextAllowedMove": "Execute the committed T1-R1 work order with exactly two uncommitted review outputs, then return for independent review."
+  },
+  "nextAllowedMove": "SOT3-APP-T1-R1 is dispatched at material commit cfd414955. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R1_CONTRACT_RATIFICATION_COMPLETENESS_AND_BINDING_CORRECTION_2026-07-17.md under WORKER_MUST_NOT_COMMIT from clean execution base cfd414955. Create exactly the two review outputs in its fulfillment manifest and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Independent reviewer/closer owns recomputation and any later T2 release. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
 }

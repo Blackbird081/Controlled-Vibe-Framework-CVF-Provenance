@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t1_reviewed_r1_packet_authoring_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=author and validate one fresh SOT3-APP-T1-R1 documentation correction packet; parked checkpoint=T2 and later, MAO-OA-T6B, SCLP-X-T3, and unscoped provider/runtime/live/UI/queue/public-sync/push work.
+Startup acknowledged: current mode=`sot3_app_t1_r1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute the committed SOT3-APP-T1-R1 work order from `cfd414955` under WORKER_MUST_NOT_COMMIT with exactly two review outputs; parked checkpoint=T2 and later, MAO-OA-T6B, SCLP-X-T3, and unscoped provider/runtime/live/UI/queue/public-sync/push work.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t1_reviewed_r1_packet_authoring_next`
+Current mode marker: `sot3_app_t1_r1_dispatched_worker_next`
 
-Current mode: `sot3_app_t1_reviewed_r1_packet_authoring_next`
+Current mode: `sot3_app_t1_r1_dispatched_worker_next`
 
-`sot3_app_t1_reviewed_r1_packet_authoring_next`
+`sot3_app_t1_r1_dispatched_worker_next`
 
 Previous mode:
 
-`sot3_app_t1_dispatched_worker_next`
+`sot3_app_t1_reviewed_r1_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -267,12 +267,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t1_reviewed_r1_packet_authoring_next`
+Mode: `sot3_app_t1_r1_dispatched_worker_next`
 
-Author and validate one fresh `SOT3-APP-T1-R1` documentation correction packet
-for the six consolidated findings recorded in
-`docs/reviews/CVF_SOT3_APP_T1_COMPLETION_REVIEW_2026-07-17.md` at material
-commit `ef9b09648`. T2 and later, T6B, SCLP-X-T3,
+Execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R1_CONTRACT_RATIFICATION_COMPLETENESS_AND_BINDING_CORRECTION_2026-07-17.md`
+from clean committed execution base `cfd414955` under
+`WORKER_MUST_NOT_COMMIT`. Create exactly the two review paths in its
+fulfillment manifest and return `COMPLETE_PENDING_REVIEW` or
+`BLOCKED_WITH_REASON`. T2 and later, T6B, SCLP-X-T3,
 provider/runtime/live/UI/queue, public-sync, and push work remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
