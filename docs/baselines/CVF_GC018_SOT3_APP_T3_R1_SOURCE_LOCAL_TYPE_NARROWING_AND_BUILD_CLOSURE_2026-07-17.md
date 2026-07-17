@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Batch ID: SOT3-APP-T3-R1
 
@@ -108,7 +108,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_machine_closure_package.py`; `governance/compat/check_public_export_disposition.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dependency Release Evidence; Source Verification Block; Roadmap-To-Work-Order Trace Matrix; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Machine Closure Package; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; Dependency Release Evidence; Source Verification Block; Roadmap-To-Work-Order Trace Matrix; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Machine Closure Package; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm source-verified evidence supporting narrow T3-R1 dispatch; gates are not first discovery |
 | claimBoundary | structural confirmation does not prove build, typecheck, or test success |
 
@@ -128,14 +128,14 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 status | this file | `Status: DISPATCH_READY` | PASS |
-| Work order status | paired T3-R1 work order | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T3_R1_DISPATCHED_WORKER_NEXT` | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Work order status | paired T3-R1 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T3_CLOSED_T4_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 aggregate | no new provenance source path | PASS |
 | Registry Markdown | existing registry documentation | unchanged | PASS |
-| Completion or reviewer artifact | future completion review | N/A with reason: worker has not executed |
-| External evidence digest | accepted T3 blocked-return review | commit `30dbcae4a` | PASS |
-| System loop interlock | T3 block -> T3-R1 worker -> independent review | T4+ parked | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T3_COMPLETION_REVIEW_2026-07-17.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| External evidence digest | final four-path external SHA-256 manifest plus accepted T3 blocked-return review commit `30dbcae4a` | `7A49558F9AE2DFC044DC000C4CDE0C69C8AC0A6BB4766D364EDD646D2EA6E38D`; `2A99B6CD895ED2DDD48D4006C9E94EDD972F076937A622CB32A99CFF512AAE22`; `03F3736A5D63D2237900835E9373387399C1FD672994DBE9D5E4E93F71E96F1B`; `A8B33B6F4C99BAB26EC89A453C1BD012736573E3ECC1DEFBB0DDE7AAC61E70F3` | PASS |
+| System loop interlock | T3 block -> T3-R1 worker -> independent review -> T3 closure | T4 packet authoring released; T4 execution and later lanes parked | PASS |
 | Session continuity | protected sync after dispatch | reviewer/session-sync steward-owned | N/A with reason |
 
 ## Public Export Disposition

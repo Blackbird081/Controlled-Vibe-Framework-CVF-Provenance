@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Batch ID: SOT3-APP-T3-R1
 
@@ -377,7 +377,7 @@ No-Commit Statement as real sections.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_machine_closure_package.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; Machine Closure Package; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; Dispatch Prompt Envelope; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; Machine Closure Package; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm independently established source and dependency evidence before dispatch; gates are not first discovery |
 | claimBoundary | structural confirmation does not prove compiler or test success |
 
@@ -429,18 +429,28 @@ No-Commit Statement as real sections.
 | claimLanguage | T3-R1 ready for bounded worker execution only |
 | forbiddenExpansion | compiler weakening, provider/live/browser/public/T4/unlisted source |
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| isolated API/web typecheck and build | final reviewer recomputation PASS | PASS |
+| root typecheck/build/test | final reviewer recomputation PASS; 30 files and 45 tests | PASS |
+| focused API/web regression tests | final reviewer recomputation PASS; 2 files and 10 tests | PASS |
+| doctor structural health | final reviewer recomputation `healthy: true` | PASS |
+| receipt/query acceptance closure | N/A with reason: no runtime acceptance query or provider receipt was authorized | N/A_WITH_REASON |
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| GC-018 status | paired baseline | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T3_R1_DISPATCHED_WORKER_NEXT` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| GC-018 status | paired baseline | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T3_CLOSED_T4_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 aggregate | no new provenance source path | PASS |
 | Registry Markdown | existing registry docs | unchanged | PASS |
-| Completion or reviewer artifact | future completion review | N/A with reason: worker has not executed |
-| External evidence digest | accepted T3 blocked-return review | commit `30dbcae4a` | PASS |
-| System loop interlock | T3 block -> T3-R1 worker -> independent review | T4+ parked | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T3_COMPLETION_REVIEW_2026-07-17.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| External evidence digest | final four-path external SHA-256 manifest plus accepted T3 blocked-return review commit `30dbcae4a` | `7A49558F9AE2DFC044DC000C4CDE0C69C8AC0A6BB4766D364EDD646D2EA6E38D`; `2A99B6CD895ED2DDD48D4006C9E94EDD972F076937A622CB32A99CFF512AAE22`; `03F3736A5D63D2237900835E9373387399C1FD672994DBE9D5E4E93F71E96F1B`; `A8B33B6F4C99BAB26EC89A453C1BD012736573E3ECC1DEFBB0DDE7AAC61E70F3` | PASS |
+| System loop interlock | T3 block -> T3-R1 worker -> independent review -> T3 closure | T4 packet authoring released; T4 execution and later lanes parked | PASS |
 | Session continuity | protected sync after dispatch | reviewer/session-sync steward-owned | N/A with reason |
 
 ## Public Export Disposition
