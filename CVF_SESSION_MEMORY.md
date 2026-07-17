@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_oa_t3_closed_operator_checkpoint_next`; active handoff=AGENT_HANDOFF_V45_2026-07-16.md; next allowed move=await an explicit operator checkpoint before MAO-OA-T4 packet authoring or dispatch; parked checkpoint=MAO-OA-T4 through T7, T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all real-provider/unscoped external-root/live/public work.
+Startup acknowledged: current mode=`mao_oa_t4_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V45_2026-07-16.md; next allowed move=execute the exact committed MAO-OA-T4 no-commit work order and return unstaged evidence; parked checkpoint=MAO-OA-T5 through T7, T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all real-provider/unscoped external-root/live/public work.
 
 ## Current Mode
 
-Current mode marker: `mao_oa_t3_closed_operator_checkpoint_next`
+Current mode marker: `mao_oa_t4_dispatched_worker_next`
 
-Current mode: `mao_oa_t3_closed_operator_checkpoint_next`
+Current mode: `mao_oa_t4_dispatched_worker_next`
 
-`mao_oa_t3_closed_operator_checkpoint_next`
+`mao_oa_t4_dispatched_worker_next`
 
 Previous mode:
 
-`mao_oa_t3_dispatched_worker_next`
+`mao_oa_t3_closed_operator_checkpoint_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -65,16 +65,18 @@ The MAO adoption roadmap T0 audit is independently accepted and closed at
 `1bb5ff7f3` after one reviewer-owned GC-051 repair. MAO-OA-T2 is independently
 accepted and closed at material commit `042abf44b` after bounded reviewer
 fail-closed repair and registry reconciliation. T3-T7 and all other absorption
-lanes were parked until the 2026-07-17 checkpoint. MAO-OA-T3 was dispatched at
-material commit `084878796` and is independently accepted and closed at material commit
+lanes were parked until the 2026-07-17 release. MAO-OA-T3 was dispatched at
+material commit `084878796` and is independently accepted and closed at
 `eead77edf` after one reviewer-owned three-case rejection test repair and one
-worker-return evidence correction. T4-T7 remain parked pending an explicit
-operator checkpoint.
+worker-return evidence correction. Standing sequence authority then released
+the source-verified T4 packet at material commit `0c7eb2a04`; T5-T7 remain
+parked until their preceding tranche is accepted.
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-OA-T4 operational review convergence dispatch | `0c7eb2a04` | DISPATCH_READY after dispatch-author fast 5/5, pre-dispatch 75/75, pre-commit 83/83, and commit-steward PASS; exact six-path no-commit worker manifest composes existing reviewer isolation, dissent/revision, and closer interlock owners; no actual agent, git/session, provider/live/public/push action. |
 | MAO-OA-T3 operational launcher/liveness closure | `eead77edf` | REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR; worker no-commit honored; reviewer added three real-adapter rejection cases and corrected stale fast-gate evidence; focused 22/22, typecheck, package 1711, GC-051, reviewer-fast 62/62, and pre-commit 83/83 PASS; T4-T7 parked pending operator checkpoint. |
 | MAO-OA-T3 operational launcher/liveness dispatch | `084878796` | DISPATCH_READY after dispatch-author fast 5/5, pre-dispatch 75/75, pre-commit 83/83, and commit-steward PASS; exact six-path no-commit worker manifest composes existing durable store, fake/local adapter, lifecycle controller, and ledger; no real provider/network/process/queue/live/public/push action. |
 | MAO-OA-T2 durable run-store closure | `042abf44b` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; worker no-commit honored; reviewer added malformed nested authority/event fail-closed guards and two tests; focused 21/21, typecheck, package 1689, GC-051, reviewer-fast 62/62, and pre-commit 83/83 PASS; T3-T7 parked pending operator checkpoint. |
@@ -252,14 +254,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_oa_t3_closed_operator_checkpoint_next`
+Mode: `mao_oa_t4_dispatched_worker_next`
 
-Await an explicit operator checkpoint before authoring or dispatching
-MAO-OA-T4. T4 through T7, T1 and later SOT3-APP work, every other
-high-value-folder absorption, SCLP-X-T3, real provider/network/process/queue
-action, and unscoped external-root/live/public work remain parked. T3 closure
-proves only a bounded local fake-adapter launcher, not provider execution,
-universal E2E, production, scale, certification, shipment, or user value.
+Execute only the committed T4 work order at material dispatch `0c7eb2a04`
+under `WORKER_MUST_NOT_COMMIT`; return exactly six allowed paths unstaged and
+uncommitted for independent review. T5 through T7, T1 and later SOT3-APP work,
+every other high-value-folder absorption, SCLP-X-T3, real provider/network/
+process/queue action, and unscoped external-root/live/public work remain
+parked. T4 dispatch proves only a source-verified packet, not implementation,
+actual independent-agent execution, git/session action, provider execution,
+production, scale, certification, shipment, or user value.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

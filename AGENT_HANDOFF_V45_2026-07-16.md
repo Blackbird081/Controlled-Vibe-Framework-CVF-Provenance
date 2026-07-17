@@ -9,7 +9,7 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after MAO-OA-T3 independent closure. V44 was rotated at
+Carry compact continuity after MAO-OA-T4 governed dispatch. V44 was rotated at
 1,080 lines under the
 Governed File Size Guard; its history remains in the archive and canonical
 detail remains in the active state registry and governed artifacts.
@@ -17,19 +17,19 @@ detail remains in the active state registry and governed artifacts.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`eead77edf` owns the accepted T3 source/test closure and bounded reviewer
-repair; `084878796` owns the historical T3 dispatch packet. No T4+, real
+`0c7eb2a04` owns the T4 dispatch packet; `eead77edf` owns the accepted T3
+source/test closure and bounded reviewer repair. No T5+, real
 provider/network/process/queue action, live, public, or push authority is
 granted here.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`mao_oa_t3_closed_operator_checkpoint_next`;
+current mode=`mao_oa_t4_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V45_2026-07-16.md`;
-next allowed move=await an explicit operator checkpoint before MAO-OA-T4 packet
-authoring or dispatch;
-parked checkpoint=MAO-OA-T4 through T7, SOT3-APP-T1 and later absorption, real
+next allowed move=execute the exact committed MAO-OA-T4 no-commit work order
+and return six unstaged paths for independent review;
+parked checkpoint=MAO-OA-T5 through T7, SOT3-APP-T1 and later absorption, real
 provider/network/process/queue action, unscoped runtime/live/public work, and
 push.
 
@@ -46,9 +46,9 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`mao_oa_t3_closed_operator_checkpoint_next`
+`mao_oa_t4_dispatched_worker_next`
 
-Previous mode: `mao_oa_t3_dispatched_worker_next`.
+Previous mode: `mao_oa_t3_closed_operator_checkpoint_next`.
 
 ## Latest Work / Changes
 
@@ -189,12 +189,12 @@ Remain parked:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize T3 material closure
-`eead77edf` and park T4-T7 pending an explicit operator checkpoint.
+Authorized guard-maintenance scope: synchronize T4 material dispatch
+`0c7eb2a04` and park T5-T7 pending preceding-tranche acceptance.
 
-Operator authorization: the operator returned `COMPLETE_PENDING_REVIEW`,
-releasing independent T3 review/closure; the handoff contract and GC-020
-require protected continuity synchronization after material closure.
+Operator authorization: standing sequence authority releases the next
+source-verified packet after each accepted tranche; the handoff contract and
+GC-020 require protected continuity synchronization after material dispatch.
 
 Protected paths:
 
@@ -204,10 +204,10 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/maoOaT3Closure20260717.json`
+- `CVF_SESSION/state/entries/maoOaT4Dispatch20260717.json`
 
-Rollback boundary: revert only this protected continuity batch; retain T3
-material closure `eead77edf` and the T0-T2 material closures.
+Rollback boundary: revert only this protected continuity batch; retain T4
+material dispatch `0c7eb2a04` and the T0-T3 material closures.
 
 ## Public Export Disposition
 
@@ -597,3 +597,49 @@ action, live work, public-sync, or push.
 This handoff records bounded T3 closure continuity. It does not prove real
 provider/network/process/queue execution, distributed concurrency, live
 governance, public readiness, production readiness, or user value.
+
+## MAO-OA-T4 Dispatch Continuity - 2026-07-17
+
+Material dispatch commit: `0c7eb2a04`.
+
+Current mode: `mao_oa_t4_dispatched_worker_next`.
+
+Next allowed move: execute only
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T4_OPERATIONAL_REVIEW_CONVERGENCE_AND_COMMIT_SESSION_INTERLOCK_2026-07-17.md`
+under `WORKER_MUST_NOT_COMMIT`. Return exactly the six authorized paths
+unstaged and uncommitted for independent reviewer/closer recomputation.
+
+MAO-OA-T5 through T7 remain parked until the preceding tranche is accepted.
+The operator's standing sequence authority permits fresh source-verified
+packet authoring after each accepted tranche; it does not authorize worker
+self-commit, real-provider/live proof, public-sync, or push.
+
+## Agent Operation Trace Block - MAO-OA-T4 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T4 dispatch continuity sync, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, apply_patch, git |
+| Target paths | seven protected session paths |
+| Allowed scope source | standing operator sequence authority, material dispatch `0c7eb2a04`, Agent Handoff Contract Control Block, and GC-020 continuity |
+| Before status evidence | clean material worktree at dispatch HEAD `0c7eb2a04` |
+| After status evidence | V45 active; continuity records T4 dispatched and T5-T7 parked |
+| Diff evidence | protected session-only diff, generated-state drift check, and session-sync preflight |
+| Approval boundary | continuity synchronization after bounded T4 dispatch only |
+| Claim boundary | no worker implementation, T5-T7, actual independent-agent execution, git/session runtime action, real provider/live/public/push action |
+| Agent type | dispatcher and session-sync steward |
+| Invocation ID | `mao-oa-t4-dispatch-session-sync-2026-07-17` |
+| Expected manifest | seven protected session paths |
+| Actual changed set | seven protected session paths |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Claim Boundary - MAO-OA-T4 Dispatch
+
+This handoff records a source-verified T4 dispatch packet. It does not prove
+worker implementation, actual reviewer-agent independence, git/session
+mutation, real provider execution, live governance, public readiness,
+production readiness, scale, shipment, or user value.
