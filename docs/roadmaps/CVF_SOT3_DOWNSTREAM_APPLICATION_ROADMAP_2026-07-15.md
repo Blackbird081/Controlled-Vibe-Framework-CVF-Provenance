@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: SOT3_APP_T3_CLOSED_T4_PACKET_AUTHORING_NEXT
+Status: SOT3_APP_T4_DISPATCHED_WORKER_NEXT
 
 docType: roadmap
 
@@ -296,6 +296,16 @@ T1 review closure.
 | final commands | isolated API/web typecheck/build PASS; root typecheck/build PASS; root tests 30 files and 45 tests PASS; focused tests 2 files and 10 tests PASS; doctor `healthy: true` |
 | next route | T4 packet authoring is released; T4 execution, T5/service, provider/live/browser/public-sync/push/production remain parked |
 
+## T4 Dispatch Packet
+
+| Field | Evidence |
+|---|---|
+| GC-018 | `docs/baselines/CVF_GC018_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md` |
+| work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md` |
+| dependency release | accepted T3 closure material commit `4bb19d27d`; session-sync `dfd77f881` |
+| exact external scope | `scripts/run-controlled-quotation.ts`; `tests/e2e/controlled-quotation.e2e.test.ts` |
+| execution boundary | deterministic local in-process services and receipt verification only; T5/service/provider/live/public lanes parked |
+
 ## Reverse Architecture Projection Matrix
 
 | Accepted value group | Catalog/GAP owner check | Disposition before closure | Target source | Claim class | Evidence |
@@ -426,7 +436,7 @@ authoring and completion is the only next roadmap lane.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | Status: SOT3_APP_T3_CLOSED_T4_PACKET_AUTHORING_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; T1 Dispatch Packet; T1-R1 Dispatch Packet; T1-R2 Dispatch Packet; T1-R3 Dispatch Packet; T2 Dispatch Packet; T3 Dispatch Packet; T3 Blocked Return Review; T3-R1 Dispatch Packet; T3 Closure; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; Public Export Disposition; Machine Closure Package; Claim Boundary |
+| literalTokensReviewed | Status: SOT3_APP_T4_DISPATCHED_WORKER_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; T1 Dispatch Packet; T1-R1 Dispatch Packet; T1-R2 Dispatch Packet; T1-R3 Dispatch Packet; T2 Dispatch Packet; T3 Dispatch Packet; T3 Blocked Return Review; T3-R1 Dispatch Packet; T3 Closure; T4 Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; Public Export Disposition; Machine Closure Package; Claim Boundary |
 | gateRunPurpose | confirm T0B reviewer closure structure after independent semantic and objective recomputation |
 | claimBoundary | structural confirmation only; no source, runtime, or product proof |
 
@@ -452,11 +462,11 @@ public-safe artifact set exists.
 | Worker ledger | `docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS`; semantic_terminal=336; declaration_terminal=13 | PASS_WITH_REPAIR |
 | Worker return | `docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
 | Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T0B_COMPLETION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
-| Roadmap state | this artifact | `Status: SOT3_APP_T3_CLOSED_T4_PACKET_AUTHORING_NEXT` | PASS |
+| Roadmap state | this artifact | `Status: SOT3_APP_T4_DISPATCHED_WORKER_NEXT` | PASS |
 | Registry JSON | N/A with reason: no registry JSON is required or changed | no generated registry mutation | PASS |
 | Registry Markdown | N/A with reason: no registry Markdown is required or changed | no registry mutation | PASS |
 | External evidence digest | accepted T0B ledger | 336 files; 238522 bytes; sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; declaration inventory | PASS |
-| System loop interlock | T0B -> MAO-OA -> T1 -> T2 bounded closure -> T3 blocked review -> T3-R1 dispatch -> T3 closure | T4 packet authoring next; T4 execution and later lanes remain parked | PASS |
+| System loop interlock | T0B -> MAO-OA -> T1 -> T2 bounded closure -> T3 blocked review -> T3-R1 dispatch -> T3 closure -> T4 dispatch | T4 worker next; T5/service and later lanes remain parked | PASS |
 | Session continuity | active session front door, state, and handoff | separate sync after material commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
