@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 Batch ID: SOT3-APP-T1-R3
 
@@ -67,20 +67,20 @@ root `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application`.
 | independent T1-R2 verdict | `docs/reviews/CVF_SOT3_APP_T1_R2_COMPLETION_REVIEW_2026-07-17.md`; material commit `49ab5350c`; `REVIEWED_NOT_ACCEPTED_R3_REQUIRED` | SATISFIED |
 | round-three continuation authority | review telemetry `stopDisposition=CONTINUE_NEW_CRITICAL_EVIDENCE` | SATISFIED |
 | clean packet-authoring base | session-sync commit `a73a452ee` | SATISFIED |
-| T2 release | accepted T1 closure does not exist | HOLD |
+| T2 packet authoring release | accepted T1 closure at `docs/reviews/CVF_SOT3_APP_T1_R3_COMPLETION_REVIEW_2026-07-17.md` | SATISFIED |
 
 ## Source Verification Block
 
 | Claimed item | Fact class | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|---|
 | six missing test invocations and false result-use claim | VALUE_SET | `docs/reviews/CVF_SOT3_APP_T1_R2_COMPLETION_REVIEW_2026-07-17.md` | F1; F2 | `SOT3-APP-T1-R3` correction set | independent reviewer | ACCEPT |
-| Flow test invokes route | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\truth-flow-binding.test.ts` | line 12 | `adapter.route` | `TruthFlowAdapter.route` | ACCEPT |
-| Kernel test invokes reference assertion | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\truth-kernel-binding.test.ts` | line 10 | `adapter.assertReferences` | `TruthKernelAdapter.assertReferences` | ACCEPT |
-| context test invokes build | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\sot-to-context.test.ts` | line 14 | `service.build` | `ContextBuilderService.build` | ACCEPT |
-| freeze test invokes freeze | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\review-freeze.test.ts` | line 19 | `service.freeze` | `ReviewFreezeService.freeze` | ACCEPT |
-| Refinery test invokes submit | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\refinery-binding.test.ts` | line 6 | `submitSource` | `RefineryAdapter.submitSource` | ACCEPT |
-| phase test invokes freeze gate | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\phase-governance-binding.test.ts` | line 11 | `adapter.assertFreezeAllowed` | `PhaseGovernanceAdapter.assertFreezeAllowed` | ACCEPT |
-| recordFreeze return discarded after record construction | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\application\src\services\review-freeze.service.ts` | lines 31-34 | `this.evidence.recordFreeze` | `ReviewFreezeService.freeze` | ACCEPT |
+| Flow test invokes route | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 1 | `adapter.route` | `TruthFlowAdapter.route` | ACCEPT |
+| Kernel test invokes reference assertion | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 2 | `adapter.assertReferences` | `TruthKernelAdapter.assertReferences` | ACCEPT |
+| context test invokes build | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 3 | `service.build` | `ContextBuilderService.build` | ACCEPT |
+| freeze test invokes freeze | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 4 | `service.freeze` | `ReviewFreezeService.freeze` | ACCEPT |
+| Refinery test invokes submit | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 5 | `submitSource` | `RefineryAdapter.submitSource` | ACCEPT |
+| phase test invokes freeze gate | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 6 | `adapter.assertFreezeAllowed` | `PhaseGovernanceAdapter.assertFreezeAllowed` | ACCEPT |
+| recordFreeze return discarded after record construction | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 20 | `this.evidence.recordFreeze` | `ReviewFreezeService.freeze` | ACCEPT |
 
 ## New Doc-Only Fields
 
@@ -149,13 +149,14 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "downs
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 status | this artifact | `Status: DISPATCH_READY` | PASS |
-| Work order status | paired R3 work order | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T1_R3_DISPATCHED_WORKER_NEXT` | PASS |
-| Registry JSON | existing GC-051 aggregate | no registry mutation authorized | N/A with reason |
-| Registry Markdown | existing registry documentation | no new governed source path | N/A with reason |
-| Completion or reviewer artifact | future R3 completion review | reviewer-owned after worker return | N/A with reason |
-| System loop interlock | R2 rejection -> R3 worker -> independent review | T2 parked | PASS |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | paired R3 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T1_CLOSED_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | existing GC-051 aggregate | aggregate drift check passes; no changed governed source path requires a new entry | PASS |
+| Registry Markdown | existing registry documentation | checked unchanged; no new governed source path requires a new entry | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T1_R3_COMPLETION_REVIEW_2026-07-17.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| External evidence digest | accepted T0B external corpus digest plus R3 direct-invocation ledger | 336-file aggregate sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; R3 scope is static read-only evidence | PASS |
+| System loop interlock | R2 rejection -> R3 worker -> independent review | T1 closed; T2 packet authoring next | PASS |
 | Session continuity | protected sync after material dispatch commit | separate commit | N/A with reason |
 
 ## Public Export Disposition

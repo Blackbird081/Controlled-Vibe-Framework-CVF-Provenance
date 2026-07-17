@@ -2,7 +2,7 @@
 
 Memory class: governed-agent-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 Batch ID: SOT3-APP-T1-R3
 
@@ -130,20 +130,20 @@ column and must not determine caller-result disposition.
 | T1-R2 independent review | `docs/reviews/CVF_SOT3_APP_T1_R2_COMPLETION_REVIEW_2026-07-17.md`; `49ab5350c` | `REVIEWED_NOT_ACCEPTED_R3_REQUIRED` | `49ab5350c` |
 | round-three continuation | review telemetry | `CONTINUE_NEW_CRITICAL_EVIDENCE` | `49ab5350c` |
 | packet-authoring continuity | session sync | R3 packet authoring next | `a73a452ee` |
-| T2 release | no accepted T1 closure | HOLD | not released |
+| T2 packet authoring release | accepted T1 closure at `docs/reviews/CVF_SOT3_APP_T1_R3_COMPLETION_REVIEW_2026-07-17.md` | SATISFIED | execution remains separately gated |
 
 ## Source Verification Block
 
 | Claimed item | Fact class | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|---|
 | R3 critical correction set | VALUE_SET | `docs/reviews/CVF_SOT3_APP_T1_R2_COMPLETION_REVIEW_2026-07-17.md` | F1; F2; F3 | `DIRECT_INVOCATION_SET` | independent reviewer | ACCEPT |
-| route test call | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\truth-flow-binding.test.ts` | line 12 | `adapter.route` | `TruthFlowAdapter.route` | ACCEPT |
-| Kernel reference test call | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\truth-kernel-binding.test.ts` | line 10 | `adapter.assertReferences` | `TruthKernelAdapter.assertReferences` | ACCEPT |
-| context build test call | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\sot-to-context.test.ts` | line 14 | `service.build` | `ContextBuilderService.build` | ACCEPT |
-| freeze test call | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\review-freeze.test.ts` | line 19 | `service.freeze` | `ReviewFreezeService.freeze` | ACCEPT |
-| unavailable Refinery test call | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\refinery-binding.test.ts` | line 6 | `submitSource` | `RefineryAdapter.submitSource` | ACCEPT |
-| phase rejection test call | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\tests\integration\phase-governance-binding.test.ts` | line 11 | `adapter.assertFreezeAllowed` | `PhaseGovernanceAdapter.assertFreezeAllowed` | ACCEPT |
-| Evidence result discarded | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\application\src\services\review-freeze.service.ts` | lines 31-34 | `this.evidence.recordFreeze` | `ReviewFreezeService.freeze` | ACCEPT |
+| route test call | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 1 | `adapter.route` | `TruthFlowAdapter.route` | ACCEPT |
+| Kernel reference test call | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 2 | `adapter.assertReferences` | `TruthKernelAdapter.assertReferences` | ACCEPT |
+| context build test call | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 3 | `service.build` | `ContextBuilderService.build` | ACCEPT |
+| freeze test call | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 4 | `service.freeze` | `ReviewFreezeService.freeze` | ACCEPT |
+| unavailable Refinery test call | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 5 | `submitSource` | `RefineryAdapter.submitSource` | ACCEPT |
+| phase rejection test call | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 6 | `adapter.assertFreezeAllowed` | `PhaseGovernanceAdapter.assertFreezeAllowed` | ACCEPT |
+| Evidence result discarded | RUNTIME_BEHAVIOR | `docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md` | Direct Invocation And Caller Result Ledger row 20 | `this.evidence.recordFreeze` | `ReviewFreezeService.freeze` | ACCEPT |
 | exact 80 and 14 memberships accepted | VALUE_SET | `docs/reviews/CVF_SOT3_APP_T1_R2_COMPLETION_REVIEW_2026-07-17.md` | Findings / Position; Closure Diff Gate | `80; 14` | T1-R2 reviewer recomputation | ACCEPT |
 
 ## New Doc-Only Fields
@@ -413,7 +413,7 @@ Processing ledger artifact or inline ledger: R3 invocation and exclusion ledgers
 
 Allowed terminal statuses: READ; SKIPPED_WITH_REASON; DEFERRED; BLOCKED_UNREADABLE.
 
-- Reconciliation: manifest=37; ledger_terminal=30; exclusions=7; unresolved=0.
+- Reconciliation: manifest=37; ledger_terminal=29; exclusions=8; unresolved=0.
 
 Unresolved files: 0.
 
@@ -553,13 +553,14 @@ git rev-parse --short HEAD
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| GC-018 status | paired R3 baseline | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T1_R3_DISPATCHED_WORKER_NEXT` | PASS |
-| Registry JSON | existing GC-051 aggregate | no new governed source path | N/A with reason |
-| Registry Markdown | existing registry documentation | unchanged | N/A with reason |
-| Completion or reviewer artifact | future R3 completion review | independent reviewer-owned | N/A with reason |
-| System loop interlock | R2 rejection -> R3 worker -> independent review | T2 parked | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| GC-018 status | paired R3 baseline | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T1_CLOSED_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | existing GC-051 aggregate | aggregate drift check passes; no changed governed source path requires a new entry | PASS |
+| Registry Markdown | existing registry documentation | checked unchanged; no new governed source path requires a new entry | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T1_R3_COMPLETION_REVIEW_2026-07-17.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| External evidence digest | accepted T0B external corpus digest plus R3 direct-invocation ledger | 336-file aggregate sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; R3 scope is static read-only evidence | PASS |
+| System loop interlock | R2 rejection -> R3 worker -> independent review | T1 closed; T2 packet authoring next | PASS |
 | Session continuity | separate protected sync after material dispatch | reviewer/session steward-owned | N/A with reason |
 
 ## Public Export Disposition
