@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T2_PASS_BOUNDED_OPERATOR_CHECKPOINT_NEXT
+Status: MAO_OA_T3_DISPATCHED_WORKER_NEXT
 
 Roadmap ID: MAO-OA
 
@@ -24,7 +24,7 @@ source-verified packet. SOT3-APP-T0B closed at material commit `577237cba`.
 The earlier MAO foundation closed at `29c55ca36`, and its bounded live value
 pilot closed `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` at `75f5c0b90`.
 
-Decision: `MAO_OA_T2_PASS_BOUNDED_OPERATOR_CHECKPOINT_NEXT`.
+Decision: `MAO_OA_T3_DISPATCHED_WORKER_NEXT`.
 
 T0 remains accepted as a documentation/evidence closure. MAO-OA-T1 is
 independently accepted after one reviewer-owned GC-051 registry repair. The
@@ -32,7 +32,10 @@ operator checkpoint on 2026-07-16 released one source-verified MAO-OA-T2
 dispatch for a bounded execution-plane durable run store, deterministic replay,
 fail-closed recovery, and idempotent resume. T2 is independently accepted after
 two reviewer-owned malformed-snapshot fail-closed guards and matching tests.
-MAO-OA-T3 through T7 remain parked.
+The operator checkpoint on 2026-07-17 releases one source-verified MAO-OA-T3
+dispatch for a bounded execution-plane launcher composing the accepted durable
+store, fake/local provider-neutral adapter, and deterministic lifecycle
+controller. MAO-OA-T4 through T7 remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -123,7 +126,7 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 | MAO-OA-T0 | current owner, entrypoint, caller, durable-state, liveness, evidence, reviewer, closer, and operator-route audit | dependencies above | PASS_BOUNDED_WITH_REVIEWER_REPAIRS |
 | MAO-OA-T1 | root/package adoption seam and orchestrator contract | accepted T0 owner/gap matrix plus fresh GC-018 and work order | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T2 | durable run store, replay, recovery, and idempotent resume | accepted T1 contract `1bb5ff7f3`, operator checkpoint, canonical execution-plane append-only storage authority, and independent T2 completion review | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
-| MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 | HOLD |
+| MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 closure `042abf44b`, explicit operator checkpoint, and current-source verification | DISPATCHED_WORKER_NEXT |
 | MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 | HOLD |
 | MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 | HOLD |
 | MAO-OA-T6 | materially harder representative agent-project proof with predeclared value hypothesis | accepted T5 plus explicit live/provider authority | HOLD |
@@ -279,19 +282,22 @@ not authorized.
 
 ## Next Allowed Move
 
-Await an explicit operator checkpoint before authoring or dispatching
-MAO-OA-T3. MAO-OA-T3 through T7, SOT3-APP-T1, other absorption,
-worker/provider launch, lifecycle execution, reviewer/closer execution,
-operator projection, live expansion, public-sync, and push remain parked.
+Execute only
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T3_OPERATIONAL_WORKER_LAUNCHER_AND_LIVENESS_WIRING_2026-07-17.md`
+under `WORKER_MUST_NOT_COMMIT`. MAO-OA-T4 through T7, SOT3-APP-T1, other
+absorption, real provider/network/process/queue execution, reviewer/closer
+execution, operator projection, live expansion, public-sync, and push remain
+parked.
 
 ## Claim Boundary
 
 This roadmap records a reviewer-accepted documentation-only T0 owner/gap audit,
 a reviewer-accepted bounded T1 package-root and pure-composition seam, and a
-reviewer-accepted bounded T2 local durable-store and replay component. T2 does
-not release T3 or any later implementation. It defines a future governed path
-toward operational adoption but does not claim durable scheduling,
-distributed concurrency, worker launch,
+reviewer-accepted bounded T2 local durable-store and replay component, and one
+dispatched T3 fake/local operational-launcher packet. Dispatch is not
+implementation or provider proof and does not release T4 or later. The roadmap
+defines a future governed path toward operational adoption but does not claim
+distributed concurrency, real provider launch,
 liveness, provider control,
 automatic review, automatic commit, public readiness, production readiness,
 scale, certification, shipment, or demonstrated user value.
