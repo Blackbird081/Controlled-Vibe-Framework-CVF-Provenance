@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t1_r1_reviewed_r2_packet_authoring_next",
-  "previousMode": "sot3_app_t1_r1_dispatched_worker_next",
+  "currentMode": "sot3_app_t1_r2_dispatched_worker_next",
+  "previousMode": "sot3_app_t1_r1_reviewed_r2_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12876,5 +12876,20 @@
     "nextAllowedMove": "Author one fresh T1-R2 exact-membership and caller-closure correction packet; T2 remains parked.",
     "claimBoundary": "Adapter/hash/continuation corrections are retained, but T1 inventory completeness is not accepted."
   },
-  "nextAllowedMove": "SOT3-APP-T1-R1 was independently reviewed and not accepted at material commit 1300c3505. Author and validate one fresh SOT3-APP-T1-R2 documentation correction packet for exact per-file inventory membership and two-stage caller closure. Do not release T2. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3AppT1R2Dispatch20260717": {
+    "status": "DISPATCHED",
+    "date": "2026-07-17",
+    "materialCommit": "e7b91284c",
+    "dispatchBaseHead": "20a4be366",
+    "reviewDependencyCommit": "1300c3505",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R2_EXACT_INVENTORY_MEMBERSHIP_AND_CALLER_CLOSURE_CORRECTION_2026-07-17.md",
+    "workerOutputs": [
+      "docs/reviews/CVF_SOT3_APP_T1_R2_EXACT_INVENTORY_MEMBERSHIP_AND_CALLER_CLOSURE_CORRECTION_2026-07-17.md",
+      "docs/reviews/CVF_SOT3_APP_T1_R2_WORKER_RETURN_2026-07-17.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": "Dispatch author fast PASS; pre-dispatch autorun 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "claimBoundary": "Documentation-only exact membership and caller closure; no source/runtime/live/public action or T2 release."
+  },
+  "nextAllowedMove": "SOT3-APP-T1-R2 is dispatched at material commit e7b91284c. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R2_EXACT_INVENTORY_MEMBERSHIP_AND_CALLER_CLOSURE_CORRECTION_2026-07-17.md under WORKER_MUST_NOT_COMMIT from clean execution base e7b91284c. Create exactly the two review outputs in its fulfillment manifest and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
 }

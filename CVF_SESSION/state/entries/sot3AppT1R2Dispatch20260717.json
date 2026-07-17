@@ -1,0 +1,19 @@
+{
+  "stateOrder": 1893,
+  "stateKey": "sot3AppT1R2Dispatch20260717",
+  "value": {
+    "status": "DISPATCHED",
+    "date": "2026-07-17",
+    "materialCommit": "e7b91284c",
+    "dispatchBaseHead": "20a4be366",
+    "reviewDependencyCommit": "1300c3505",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R2_EXACT_INVENTORY_MEMBERSHIP_AND_CALLER_CLOSURE_CORRECTION_2026-07-17.md",
+    "workerOutputs": [
+      "docs/reviews/CVF_SOT3_APP_T1_R2_EXACT_INVENTORY_MEMBERSHIP_AND_CALLER_CLOSURE_CORRECTION_2026-07-17.md",
+      "docs/reviews/CVF_SOT3_APP_T1_R2_WORKER_RETURN_2026-07-17.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": "Dispatch author fast PASS; pre-dispatch autorun 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "claimBoundary": "Documentation-only exact membership and caller closure; no source/runtime/live/public action or T2 release."
+  }
+}

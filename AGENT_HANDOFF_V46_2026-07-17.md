@@ -30,10 +30,10 @@ action is active.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_app_t1_r1_reviewed_r2_packet_authoring_next`;
+current mode=`sot3_app_t1_r2_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=author and validate one fresh SOT3-APP-T1-R2 documentation
-correction packet for exact membership and caller closure;
+next allowed move=execute the committed SOT3-APP-T1-R2 work order from
+`e7b91284c` under WORKER_MUST_NOT_COMMIT with exactly two review outputs;
 parked checkpoint=T2 and later, MAO-OA-T6B, SCLP-X-T3, unscoped provider,
 runtime/live, UI/queue, public-sync, and push work.
 
@@ -50,9 +50,9 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`sot3_app_t1_r1_reviewed_r2_packet_authoring_next`
+`sot3_app_t1_r2_dispatched_worker_next`
 
-Previous mode: `sot3_app_t1_r1_dispatched_worker_next`.
+Previous mode: `sot3_app_t1_r1_reviewed_r2_packet_authoring_next`.
 
 ## MAO-OA Final Closure Continuity - 2026-07-17
 
@@ -82,9 +82,8 @@ Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 
 ## Next Allowed Move
 
-Author and validate one fresh `SOT3-APP-T1-R2` documentation correction packet
-for exact per-file inventory membership and two-stage caller closure. T2 and
-later remain parked until accepted contract-inventory closure.
+Execute the committed T1-R2 exact inventory membership and caller-closure work
+order from `e7b91284c` under `WORKER_MUST_NOT_COMMIT`. T2 remains parked.
 
 ## Agent Operation Trace Block - MAO-OA Final Closure Session Sync
 
@@ -286,6 +285,31 @@ review commit `1300c3505`.
 Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
 `CVF_SESSION/state/entries/sot3AppT1R1Review20260717.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No material, source, registry, or public artifact changes belong to this sync.
+
+## SOT3-APP-T1-R2 Dispatch Continuity - 2026-07-17
+
+Material dispatch commit: `e7b91284c`.
+
+Current mode: `sot3_app_t1_r2_dispatched_worker_next`.
+
+Next allowed move: execute the committed T1-R2 work order with exactly the two
+review outputs in its fulfillment manifest, then return for independent review.
+T2 remains parked.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T1-R2 Dispatch Sync
+
+Authorized protected scope: bounded continuity synchronization after material
+dispatch `e7b91284c`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT1R2Dispatch20260717.json`;
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
 `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_app_t1_r1_reviewed_r2_packet_authoring_next",
+  "currentMode": "sot3_app_t1_r2_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
-  "nextAllowedMove": "SOT3-APP-T1-R1 was independently reviewed and not accepted at material commit 1300c3505. Author and validate one fresh SOT3-APP-T1-R2 documentation correction packet for exact per-file inventory membership and two-stage caller closure. Do not release T2. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-APP-T1-R2 is dispatched at material commit e7b91284c. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R2_EXACT_INVENTORY_MEMBERSHIP_AND_CALLER_CLOSURE_CORRECTION_2026-07-17.md under WORKER_MUST_NOT_COMMIT from clean execution base e7b91284c. Create exactly the two review outputs in its fulfillment manifest and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
