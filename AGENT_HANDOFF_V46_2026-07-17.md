@@ -131,6 +131,40 @@ Rollback boundary: restore the prior protected continuity set and `AGENTS.md`
 pointer only together with a full rollback of the V45-to-V46 handoff rotation.
 No other AGENTS instruction or governance checker is changed.
 
+## GC-020 Marker - MAO-OA Final Closure Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`42123b71a`. Because the current content-addressed SHA cannot be known before
+commit creation, the active-session checker may accept this parent SHA for the
+handoff-sync-only child commit.
+
+This marker changes no mode, next move, material decision, or authority. It
+does not authorize SOT3-APP-T1 dispatch/implementation, T6B, provider/runtime,
+public-sync, or push.
+
+## Agent Operation Trace Block - MAO-OA Final Closure GC-020 Handoff Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | handoff-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA final closure GC-020 handoff bridge, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | active-handoff edit, handoff-sync commit stewardship, git |
+| Target paths | `AGENT_HANDOFF_V46_2026-07-17.md` |
+| Allowed scope source | GC-020 in-place HEAD rule after session-sync commit `42123b71a` |
+| Before status evidence | clean worktree at session-sync HEAD `42123b71a` |
+| After status evidence | parent SHA recorded for a dedicated root-handoff-only child commit |
+| Diff evidence | one-path staged diff and active-session compatibility check |
+| Approval boundary | handoff bookkeeping only; no material or session-state change |
+| Claim boundary | no mode, next move, SOT3-APP-T1 implementation, T6B, provider/runtime/public/push claim |
+| Agent type | handoff-sync steward |
+| Invocation ID | `mao-oa-final-closure-gc020-handoff-sync-2026-07-17` |
+| Expected manifest | `AGENT_HANDOFF_V46_2026-07-17.md` |
+| Actual changed set | `AGENT_HANDOFF_V46_2026-07-17.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Claim Boundary
 
 This handoff records bounded MAO-OA roadmap closure and the next packet-authoring
