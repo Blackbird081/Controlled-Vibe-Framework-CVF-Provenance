@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T4_PASS_BOUNDED_T5_PACKET_AUTHORING_NEXT
+Status: MAO_OA_T5_DISPATCHED_WORKER_NEXT
 
 Roadmap ID: MAO-OA
 
@@ -24,7 +24,7 @@ source-verified packet. SOT3-APP-T0B closed at material commit `577237cba`.
 The earlier MAO foundation closed at `29c55ca36`, and its bounded live value
 pilot closed `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` at `75f5c0b90`.
 
-Decision: `MAO_OA_T4_PASS_BOUNDED_T5_PACKET_AUTHORING_NEXT`.
+Decision: `MAO_OA_T5_DISPATCHED_WORKER_NEXT`.
 
 T0 remains accepted as a documentation/evidence closure. MAO-OA-T1 is
 independently accepted after one reviewer-owned GC-051 registry repair. The
@@ -135,7 +135,7 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 | MAO-OA-T2 | durable run store, replay, recovery, and idempotent resume | accepted T1 contract `1bb5ff7f3`, explicit human release, canonical execution-plane append-only storage authority, and independent T2 completion review | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 closure `042abf44b`, explicit human release, and independent T3 completion review | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 closure `eead77edf`, standing operator continuation authority, and current-source verification | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
-| MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 plus fresh GC-018 and source-verified work order | PACKET_AUTHORING_NEXT |
+| MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 `ede430587` plus fresh GC-018 and source-verified work order | DISPATCHED_WORKER_NEXT |
 | MAO-OA-T6 | materially harder representative agent-project proof with predeclared value hypothesis | accepted T5 plus explicit live/provider authority | HOLD |
 | MAO-OA-T7 | independent critique, closure diff, architecture/public disposition, and roadmap closure | accepted T6 | HOLD |
 
@@ -296,6 +296,21 @@ it does not establish runtime, provider, live, or public behavior.
 - completion review:
   `docs/reviews/CVF_MAO_OA_T4_COMPLETION_REVIEW_2026-07-17.md`.
 
+## MAO-OA-T5 Dispatch Evidence
+
+- paired baseline:
+  `docs/baselines/CVF_GC018_MAO_OA_T5_OPERATIONAL_OPERATOR_READOUT_AND_WORKSPACE_SESSION_PROJECTION_2026-07-17.md`;
+- canonical work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T5_OPERATIONAL_OPERATOR_READOUT_AND_WORKSPACE_SESSION_PROJECTION_2026-07-17.md`;
+- route: `WORKER_MUST_NOT_COMMIT` implementation worker followed by independent
+  reviewer/closer and separate session-sync steward;
+- implementation boundary: one pure execution-plane composition owner reusing
+  evidence readout, freshness, milestone projection, lane taxonomy, and
+  optional session projection values; and
+- forbidden boundary: no generated state mutation, UI/dashboard, queue,
+  CLI/MCP, provider/network/process, git/session action, T6-T7, live, public,
+  or push action.
+
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
@@ -337,11 +352,12 @@ not authorized.
 
 ## Next Allowed Move
 
-Author and validate one fresh MAO-OA-T5 GC-018 baseline and source-verified
-work order for operator readout plus bounded workspace/session projection.
-MAO-OA-T6 through T7, SOT3-APP-T1, other absorption, actual runtime git/session
-mutation, real provider/network/process/queue execution, live expansion,
-public-sync, and push remain parked.
+Execute only
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T5_OPERATIONAL_OPERATOR_READOUT_AND_WORKSPACE_SESSION_PROJECTION_2026-07-17.md`
+under `WORKER_MUST_NOT_COMMIT`. MAO-OA-T6 through T7, SOT3-APP-T1, other
+absorption, generated-state or runtime git/session mutation, UI/queue action,
+real provider/network/process execution, live expansion, public-sync, and push
+remain parked.
 
 ## Claim Boundary
 
@@ -351,7 +367,7 @@ reviewer-accepted bounded T2 local durable-store and replay component, and a
 reviewer-accepted bounded T3 fake/local operational-launcher component, and a
 reviewer-accepted bounded T4 local review-convergence component. T4 does not
 prove actual independent agents, git/session mutation, or provider execution;
-only fresh T5 packet authoring is released. The roadmap
+one source-verified T5 typed operator-readout packet is dispatched. The roadmap
 defines a future governed path toward operational adoption but does not claim
 distributed concurrency, real provider launch,
 liveness, provider control,
