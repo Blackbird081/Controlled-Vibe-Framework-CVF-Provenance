@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t2_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute the committed SOT3-APP-T2 work order from material dispatch `608746eb4` under WORKER_MUST_NOT_COMMIT with nine external paths and exactly two provenance outputs; parked checkpoint=T3 and later, MAO-OA-T6B, SCLP-X-T3, and unscoped provider/network/live/browser/UI/public-sync/push work.
+Startup acknowledged: current mode=`sot3_app_t2_r1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute the repaired SOT3-APP-T2-R1 packet from material commit `4be38018f` under WORKER_MUST_NOT_COMMIT with nine external paths and exactly two R1 provenance outputs; parked checkpoint=T3 and later, MAO-OA-T6B, SCLP-X-T3, and unscoped provider/network/live/browser/UI/public-sync/push work.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t2_dispatched_worker_next`
+Current mode marker: `sot3_app_t2_r1_dispatched_worker_next`
 
-Current mode: `sot3_app_t2_dispatched_worker_next`
+Current mode: `sot3_app_t2_r1_dispatched_worker_next`
 
-`sot3_app_t2_dispatched_worker_next`
+`sot3_app_t2_r1_dispatched_worker_next`
 
 Previous mode:
 
-`sot3_app_t1_closed_t2_packet_authoring_next`
+`sot3_app_t2_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-APP-T2-R1 packet repair and redispatch | `4be38018f` | Original stop-before-edit block independently accepted; dispatcher repaired the worker-return contract, preserved the blocked return, and released a fresh R1 output route after automation-assist, worker-fast 62/62, pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS. |
 | SOT3-APP-T2 application boundary fail-closed dispatch | `608746eb4` | DISPATCH_READY after pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS; nine exact external paths plus two no-commit provenance outputs; T3 and external service lanes parked. |
 | SOT3-APP-T1 downstream contract inventory closure | `f193bf2e9` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS; 37 raw call matches reconcile to 29 terminal invocations plus 8 exclusions, zero unresolved, all dispositions source-read; T2 packet authoring only next. |
 | SOT3-APP-T1 downstream contract ratification dispatch | `471941558` | DISPATCHED after author-fast, pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS; exact two-output documentation-only no-commit worker; T2 remains parked pending independent T1 closure. |
@@ -269,11 +270,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t2_dispatched_worker_next`
+Mode: `sot3_app_t2_r1_dispatched_worker_next`
 
-Execute the committed SOT3-APP-T2 work order at material dispatch `608746eb4`
+Execute the repaired SOT3-APP-T2-R1 work order at material commit `4be38018f`
 under `WORKER_MUST_NOT_COMMIT`: nine exact external sibling paths and exactly
-two provenance review outputs. T3 and all external service lanes remain parked.
+two R1 provenance review outputs. T3 and all external service lanes remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

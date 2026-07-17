@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1902,
+  "stateOrder": 1904,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3-APP-T2 is dispatched at material commit 608746eb4. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T2_APPLICATION_BOUNDARY_FAIL_CLOSED_HARDENING_2026-07-17.md under WORKER_MUST_NOT_COMMIT from the clean post-dispatch HEAD. Modify only its nine external sibling paths and create exactly its two provenance review outputs. T3 and later, T6B, SCLP-X-T3, provider/network/live/browser/UI/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "The original SOT3-APP-T2 worker block was independently accepted and the repaired T2-R1 packet was committed at material commit 4be38018f. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T2_APPLICATION_BOUNDARY_FAIL_CLOSED_HARDENING_2026-07-17.md under WORKER_MUST_NOT_COMMIT from the clean post-dispatch HEAD. Modify only its nine external sibling paths and create exactly the two R1 provenance outputs declared by the packet. T3 and later, T6B, SCLP-X-T3, provider/network/live/browser/UI/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
 }
