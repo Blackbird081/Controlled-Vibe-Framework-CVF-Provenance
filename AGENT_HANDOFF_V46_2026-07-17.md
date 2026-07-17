@@ -22,21 +22,47 @@ work, public-sync, or push.
 
 ## Active Boundary
 
-Active work is limited to fresh SOT3-APP-T3 packet authoring after bounded T2
-closure. No T3 execution, T4+, T6B, provider,
+Active work is limited to the exact committed SOT3-APP-T3 no-commit worker.
+No T4+, T6B, provider/model/live,
 network/live, browser/UI, public-sync, push, or production action is active.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_app_t2_closed_t3_packet_authoring_next`;
+current mode=`sot3_app_t3_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=author a fresh source-verified SOT3-APP-T3 packet after T2
-closure material commit `8ee6c0030`;
-parked checkpoint=T3 execution, T4 and later, MAO-OA-T6B, SCLP-X-T3, unscoped provider,
+next allowed move=execute the committed SOT3-APP-T3 work order from material
+dispatch `263b7c39c` under WORKER_MUST_NOT_COMMIT;
+parked checkpoint=T4 and later, MAO-OA-T6B, SCLP-X-T3, provider/model/live,
 runtime/live, UI/queue, public-sync, and push work.
 
 Latest closed numbered LHW wave remains `LHW24`.
+
+## SOT3-APP-T3 Dispatch Continuity - 2026-07-17
+
+Material dispatch commit: `263b7c39c`.
+
+Current mode: `sot3_app_t3_dispatched_worker_next`.
+
+The exact T3 worker may create a lockfile, resolve manifest-declared packages,
+and run deterministic install/build/typecheck/test/doctor commands. It must not
+commit. T4+, provider/model/live/browser/public/push/production remain parked.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T3 Dispatch Sync
+
+Authorized protected scope: continuity synchronization after material dispatch
+commit `263b7c39c`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT3Dispatch20260717.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No material, external source, dependency, registry, or public artifact belongs
+to this sync.
 
 ## SOT3-APP-T2 Closure Continuity - 2026-07-17
 
@@ -213,7 +239,7 @@ No material, source, registry, or public artifact changes belong to this sync.
 
 ## Current Mode
 
-`sot3_app_t2_closed_t3_packet_authoring_next`
+`sot3_app_t3_dispatched_worker_next`
 
 Previous mode: `sot3_app_t1_closed_t2_packet_authoring_next`.
 

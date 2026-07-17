@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_app_t2_closed_t3_packet_authoring_next",
+  "currentMode": "sot3_app_t3_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
-  "nextAllowedMove": "SOT3-APP-T2 is closed bounded with one reviewer redaction repair at material commit 8ee6c0030. Author a fresh source-verified SOT3-APP-T3 reproducible build and real-test packet, preserving dependency installation, provider/network/live/browser/UI/public-sync/push, and T4+ execution boundaries until that packet explicitly releases only the deterministic local T3 scope. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-APP-T3 is dispatched at material commit 263b7c39c. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T3_REPRODUCIBLE_BUILD_AND_REAL_TEST_HARDENING_2026-07-17.md under WORKER_MUST_NOT_COMMIT from the clean post-dispatch HEAD. Package-registry access is limited to manifest-declared dependency resolution; provider/model/live/browser/UI/public-sync/push/production and T4+ remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
