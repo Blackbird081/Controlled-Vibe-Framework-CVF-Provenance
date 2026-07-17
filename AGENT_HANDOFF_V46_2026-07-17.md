@@ -22,22 +22,48 @@ work, public-sync, or push.
 
 ## Active Boundary
 
-Active work is limited to authoring and validating the fresh source-verified
-SOT3-APP-T2 GC-018 baseline and work order after T1 closure. No T2 execution,
-later tranche, T6B, provider/runtime/live, UI/queue, public-sync, push, or
-production action is active.
+Active work is limited to the exact SOT3-APP-T2 no-commit worker: nine external
+sibling paths plus two private provenance outputs. No T3, T6B, provider,
+network/live, browser/UI, public-sync, push, or production action is active.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_app_t1_closed_t2_packet_authoring_next`;
+current mode=`sot3_app_t2_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=author and validate only the fresh source-verified SOT3-APP-T2
-GC-018 baseline and work order after T1 closure commit `f193bf2e9`;
-parked checkpoint=T2 execution and later, MAO-OA-T6B, SCLP-X-T3, unscoped provider,
+next allowed move=execute the committed SOT3-APP-T2 work order from material
+dispatch `608746eb4` under WORKER_MUST_NOT_COMMIT with its exact manifest;
+parked checkpoint=T3 and later, MAO-OA-T6B, SCLP-X-T3, unscoped provider,
 runtime/live, UI/queue, public-sync, and push work.
 
 Latest closed numbered LHW wave remains `LHW24`.
+
+## SOT3-APP-T2 Dispatch Continuity - 2026-07-17
+
+Material dispatch commit: `608746eb4`.
+
+Current mode: `sot3_app_t2_dispatched_worker_next`.
+
+Next allowed move: execute the exact T2 work order under
+`WORKER_MUST_NOT_COMMIT`. The worker may modify only nine named external
+sibling paths and create exactly two provenance review outputs. Deterministic
+tests, typecheck, hashes, and zero-action counters are required. T3 and all
+provider/network/live/browser/public lanes remain parked.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T2 Dispatch Sync
+
+Authorized protected scope: continuity synchronization after material dispatch
+commit `608746eb4`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT2Dispatch20260717.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No material, source, registry, or public artifact belongs to this sync.
 
 ## SOT3-APP-T1 Closure Continuity - 2026-07-17
 
@@ -133,9 +159,9 @@ No material, source, registry, or public artifact changes belong to this sync.
 
 ## Current Mode
 
-`sot3_app_t1_closed_t2_packet_authoring_next`
+`sot3_app_t2_dispatched_worker_next`
 
-Previous mode: `sot3_app_t1_r3_dispatched_worker_next`.
+Previous mode: `sot3_app_t1_closed_t2_packet_authoring_next`.
 
 ## MAO-OA Final Closure Continuity - 2026-07-17
 
