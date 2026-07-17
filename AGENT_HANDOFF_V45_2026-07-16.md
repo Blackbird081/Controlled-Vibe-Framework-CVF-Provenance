@@ -250,6 +250,41 @@ or push.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
+## GC-020 Marker - MAO-OA-T5 Dispatch Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`a2abb282c`. Because the current content-addressed SHA cannot be known before
+commit creation, the active-session checker may accept this parent SHA for the
+handoff-sync-only child commit.
+
+This marker changes no mode, next move, material decision, or authority. It
+does not authorize worker self-commit, MAO-OA-T6 through T7, state mutation,
+UI, queue, actual independent-agent execution, real-provider/live work,
+public-sync, or push.
+
+## Agent Operation Trace Block - MAO-OA-T5 Dispatch GC-020 Handoff Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | handoff-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T5 dispatch GC-020 handoff bridge, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | active-handoff edit, handoff-sync commit stewardship, git |
+| Target paths | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Allowed scope source | GC-020 in-place HEAD rule after session-sync commit `a2abb282c` |
+| Before status evidence | clean worktree at session-sync HEAD `a2abb282c` |
+| After status evidence | parent SHA recorded for a dedicated root-handoff-only child commit |
+| Diff evidence | one-path staged diff and committed-range active-session check |
+| Approval boundary | handoff bookkeeping only; no material or session-state change |
+| Claim boundary | no mode, next-move, worker implementation, T6-T7, state/UI/queue, real-provider/live/public/push claim |
+| Agent type | handoff-sync steward |
+| Invocation ID | `mao-oa-t5-dispatch-gc020-handoff-sync-2026-07-17` |
+| Expected manifest | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Actual changed set | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## MAO-OA-T5 Dispatch Continuity - 2026-07-17
 
 Material dispatch commit: `3f975a1d4`.
