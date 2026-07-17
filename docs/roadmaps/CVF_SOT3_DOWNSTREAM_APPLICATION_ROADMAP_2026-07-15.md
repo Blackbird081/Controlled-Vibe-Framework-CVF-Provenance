@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: SOT3_APP_T1_DISPATCHED_WORKER_NEXT
+Status: SOT3_APP_T1_REVIEWED_R1_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -73,9 +73,9 @@ owners before modifying the sibling source.
 
 | Control | Decision |
 |---|---|
-| current active tranche | SOT3-APP-T1 documentation worker dispatched; independent review remains required |
+| current active tranche | T1 worker reviewed but not accepted; fresh T1-R1 correction packet authoring only |
 | committed packet | prior paired T0 GC-018 and work order are held and must not be executed |
-| scheduling release | MAO-OA closure `fef756a14` releases T1 only; T2 and later remain parked |
+| scheduling release | T1-R1 correction only; T2 and later remain parked until accepted T1 closure |
 | source mutation | forbidden until a later source-verified implementation work order passes pre-dispatch |
 | hidden-clone coupling | T0A enumerates every declaration; T0B retains terminal sever/govern/block decisions |
 | runtime/live | separately authorized only in tranches whose acceptance requires it |
@@ -195,6 +195,7 @@ T1 review closure.
 | worker outputs | exact contract-ratification matrix and worker return under `docs/reviews/` |
 | commit mode | `WORKER_MUST_NOT_COMMIT` |
 | execution boundary | documentation/source verification only; copied folder and CVF source remain read-only; T2 parked |
+| completion review | `docs/reviews/CVF_SOT3_APP_T1_COMPLETION_REVIEW_2026-07-17.md`; `REVIEWED_NOT_ACCEPTED_R1_REQUIRED`; six consolidated findings |
 | commit mode | `WORKER_MUST_NOT_COMMIT` |
 | execution boundary | 336 semantic rows and 13 provenance rows only; no source/runtime/test/build/live/public mutation |
 
@@ -328,7 +329,7 @@ authoring and completion is the only next roadmap lane.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | Status: SOT3_APP_T1_DISPATCHED_WORKER_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; T1 Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; Public Export Disposition; Machine Closure Package; Claim Boundary |
+| literalTokensReviewed | Status: SOT3_APP_T1_REVIEWED_R1_PACKET_AUTHORING_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; T1 Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; Public Export Disposition; Machine Closure Package; Claim Boundary |
 | gateRunPurpose | confirm T0B reviewer closure structure after independent semantic and objective recomputation |
 | claimBoundary | structural confirmation only; no source, runtime, or product proof |
 
@@ -354,11 +355,11 @@ public-safe artifact set exists.
 | Worker ledger | `docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS`; semantic_terminal=336; declaration_terminal=13 | PASS_WITH_REPAIR |
 | Worker return | `docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
 | Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T0B_COMPLETION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
-| Roadmap state | this artifact | `Status: SOT3_APP_T1_DISPATCHED_WORKER_NEXT` | PASS |
+| Roadmap state | this artifact | `Status: SOT3_APP_T1_REVIEWED_R1_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | N/A with reason: no registry JSON is required or changed | no generated registry mutation | PASS |
 | Registry Markdown | N/A with reason: no registry Markdown is required or changed | no registry mutation | PASS |
 | External evidence digest | accepted T0B ledger | 336 files; 238522 bytes; sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; declaration inventory | PASS |
-| System loop interlock | T0B accepted output -> MAO-OA closure -> T1 dispatch | T2 and later remain parked until T1 review closure | PASS |
+| System loop interlock | T0B -> MAO-OA -> T1 review -> T1-R1 packet | T2 and later remain parked until accepted T1 closure | BLOCKED |
 | Session continuity | active session front door, state, and handoff | separate sync after material commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
@@ -373,8 +374,9 @@ public-safe artifact set exists.
 
 This roadmap records an operator-authorized sequence, a completed and
 independently accepted two-phase full-corpus T0 route, MAO-OA dependency
-closure, and T1 documentation dispatch. It accepts static semantic/provenance
-evidence only until the T1 reviewer accepts direct-source contract evidence.
-It does not ratify application contracts in advance, authorize source mutation
-or T2, prove build/runtime/live behavior, promote the application into CVF
-Core, or claim public or production readiness.
+closure, T1 documentation dispatch, and an independent T1 review that requires
+one consolidated R1 correction. It accepts static semantic/provenance evidence
+and selected useful T1 findings only; the final contract ratification remains
+unaccepted. It does not authorize source mutation or T2, prove
+build/runtime/live behavior, promote the application into CVF Core, or claim
+public or production readiness.

@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCHED
+Status: REVIEWED_R1_REQUIRED
 
 Batch ID: SOT3-APP-T1
 
@@ -126,13 +126,13 @@ no-commit proof.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired T1 work order | `Status: DISPATCHED` | PASS |
-| Completion or reviewer artifact | N/A with reason: completion review is reviewer-owned after worker return | dispatch creates no completion artifact | N/A with reason |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T1_DISPATCHED_WORKER_NEXT` | PASS |
+| Work order status | paired T1 work order | `Status: REVIEWED_R1_REQUIRED` | BLOCKED |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T1_COMPLETION_REVIEW_2026-07-17.md` | `Status: REVIEWED_NOT_ACCEPTED_R1_REQUIRED` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T1_REVIEWED_R1_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 corpus registry | aggregate drift and registry checks pass; T1 adds no source/test path | PASS |
 | Registry Markdown | existing GC-051 registry documentation contract | unchanged; registry checks pass | PASS |
 | External evidence digest | accepted T0B ledger sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee` plus direct T1 anchors | accepted snapshot retained; no new full-corpus completeness claim | PASS |
-| System loop interlock | T1 review must precede T2 packet authoring | T2 remains parked | PASS |
+| System loop interlock | T1 review -> fresh T1-R1 packet | T2 remains parked | BLOCKED |
 | Session continuity | N/A with reason: protected continuity follows in a separate batch after packet commit | no session mutation in material packet | N/A with reason |
 
 ## Public Export Disposition
