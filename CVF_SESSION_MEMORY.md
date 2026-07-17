@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_oa_t5_closed_t6_packet_authoring_next`; active handoff=AGENT_HANDOFF_V45_2026-07-16.md; next allowed move=author and validate one fresh source-verified MAO-OA-T6 no-commit packet; parked checkpoint=MAO-OA-T7, T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all unscoped external-root/public work.
+Startup acknowledged: current mode=`mao_oa_t6a_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V45_2026-07-16.md; next allowed move=execute the exact MAO-OA-T6A one-call no-commit calibration work order; parked checkpoint=MAO-OA-T6B, MAO-OA-T7, T1 and later SOT3-APP work, every other high-value-folder absorption, SCLP-X-T3, and all unscoped external-root/public work.
 
 ## Current Mode
 
-Current mode marker: `mao_oa_t5_closed_t6_packet_authoring_next`
+Current mode marker: `mao_oa_t6a_dispatched_worker_next`
 
-Current mode: `mao_oa_t5_closed_t6_packet_authoring_next`
+Current mode: `mao_oa_t6a_dispatched_worker_next`
 
-`mao_oa_t5_closed_t6_packet_authoring_next`
+`mao_oa_t6a_dispatched_worker_next`
 
 Previous mode:
 
-`mao_oa_t5_dispatched_worker_next`
+`mao_oa_t5_closed_t6_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -78,6 +78,7 @@ preceding tranche is accepted.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| MAO-OA-T6A harder-candidate direct baseline calibration dispatch | `7640a7ed8` | DISPATCHED after author-fast, pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS; one direct call, zero retries, exact seven-path no-commit return; T6B held for independent score/defect review. |
 | MAO-OA-T5 operational operator readout closure | `3e259039a` | REVIEWER_ACCEPTED_BOUNDED; worker no-commit honored; no source repair required; focused 22/22, typecheck, package 1760, GC-051, reviewer-fast 62/62, and pre-commit 83/83 PASS; fresh T6 packet authoring next. |
 | MAO-OA-T5 operational operator readout and workspace/session projection dispatch | `3f975a1d4` | DISPATCH_READY after dispatch-author fast 5/5, pre-dispatch 75/75, pre-commit 83/83, and commit-steward PASS; exact six-path no-commit worker manifest composes existing evidence readout, freshness, milestone, lane, guard, and optional session projection owners; no state mutation, UI, queue, actual agent, provider/live/public/push action. |
 | MAO-OA-T4 operational review convergence closure | `ede430587` | REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR; worker no-commit honored; reviewer enforced exactly-one designated closer with zero, blank-one, and multiple-entry negatives; focused 27/27, typecheck, package 1738, GC-051, reviewer-fast 62/62, and pre-commit 83/83 PASS; fresh T5 packet authoring next. |
@@ -259,11 +260,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_oa_t5_closed_t6_packet_authoring_next`
+Mode: `mao_oa_t6a_dispatched_worker_next`
 
-Author and validate one fresh source-verified T6 GC-018 baseline and
-`WORKER_MUST_NOT_COMMIT` work order derived from accepted T5 closure
-`3e259039a`; do not execute T6 in the dispatcher session. T7, T1 and later SOT3-APP work,
+Execute exactly
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md`
+from clean commit `7640a7ed8` as a `WORKER_MUST_NOT_COMMIT` worker. Attempt one
+direct call, do not retry, do not run T6B, and return exactly seven paths. T6B,
+T7, T1 and later SOT3-APP work,
 every other high-value-folder absorption, SCLP-X-T3, real provider/network/
 process/queue action, and unscoped external-root/live/public work remain
 parked. T5 closure proves only a pure local read model, not state mutation, UI,

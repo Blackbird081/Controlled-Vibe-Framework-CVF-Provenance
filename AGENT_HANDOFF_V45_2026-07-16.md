@@ -9,7 +9,7 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after MAO-OA-T5 governed closure. V44 was rotated at
+Carry compact continuity after MAO-OA-T6A governed dispatch. V44 was rotated at
 1,080 lines under the
 Governed File Size Guard; its history remains in the archive and canonical
 detail remains in the active state registry and governed artifacts.
@@ -17,21 +17,18 @@ detail remains in the active state registry and governed artifacts.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`3e259039a` owns the accepted T5 source/test closure; `3f975a1d4` owns the T5
-dispatch packet. No T6 implementation, real
-provider/network/process/queue action, live, public, or push authority is
-granted here.
+`7640a7ed8` owns the T6A dispatch packet and `3e259039a` owns accepted T5
+closure. Only the exact one-call no-commit T6A worker scope is authorized.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`mao_oa_t5_closed_t6_packet_authoring_next`;
+current mode=`mao_oa_t6a_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V45_2026-07-16.md`;
-next allowed move=author and validate one fresh source-verified MAO-OA-T6
-no-commit packet only;
-parked checkpoint=MAO-OA-T6 through T7, SOT3-APP-T1 and later absorption, real
-provider/network/process/queue action, unscoped runtime/live/public work, and
-push.
+next allowed move=execute the exact MAO-OA-T6A one-call no-commit calibration
+work order;
+parked checkpoint=MAO-OA-T6B through T7, SOT3-APP-T1 and later absorption,
+unscoped provider/network/process/queue action, public work, and push.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -46,9 +43,45 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`mao_oa_t5_closed_t6_packet_authoring_next`
+`mao_oa_t6a_dispatched_worker_next`
 
-Previous mode: `mao_oa_t5_dispatched_worker_next`.
+Previous mode: `mao_oa_t5_closed_t6_packet_authoring_next`.
+
+## MAO-OA-T6A Dispatch Continuity - 2026-07-17
+
+Material dispatch commit: `7640a7ed8`.
+
+Execute only
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md`
+under `WORKER_MUST_NOT_COMMIT`. The worker owns exactly seven paths, may attempt
+one Alibaba/DashScope-compatible direct call, must not retry, and must not run
+the MAO comparison. Return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+
+T6B releases only after independent review accepts score <=80/100 or a
+predeclared material defect. T7 and later lanes remain parked.
+
+## Agent Operation Trace Block - MAO-OA-T6A Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T6A dispatch continuity sync, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, apply_patch, git |
+| Target paths | seven protected session paths |
+| Allowed scope source | material dispatch `7640a7ed8`, Agent Handoff Contract Control Block, and GC-020 continuity |
+| Before status evidence | clean material worktree at dispatch HEAD `7640a7ed8` |
+| After status evidence | V45 active; T6A dispatched; T6B-T7 parked |
+| Diff evidence | protected session-only diff, generated-state drift check, and session-sync preflight |
+| Approval boundary | continuity synchronization after bounded T6A dispatch only |
+| Claim boundary | no worker implementation, provider call, score, defect, T6B, public, or push claim |
+| Agent type | dispatcher and session-sync steward |
+| Invocation ID | `mao-oa-t6a-dispatch-session-sync-2026-07-17` |
+| Expected manifest | seven protected session paths |
+| Actual changed set | seven protected session paths |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
 
 ## Latest Work / Changes
 
@@ -189,12 +222,12 @@ Remain parked:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize T5 material closure
-`3e259039a`, release fresh T6 packet authoring, and park T7.
+Authorized guard-maintenance scope: synchronize T6A material dispatch
+`7640a7ed8`, release its exact no-commit worker execution, and park T6B-T7.
 
 Operator authorization: standing sequence authority releases the next
 source-verified packet after each accepted tranche; the handoff contract and
-GC-020 require protected continuity synchronization after material closure.
+GC-020 require protected continuity synchronization after material dispatch.
 
 Protected paths:
 
@@ -204,11 +237,10 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/maoOaT5Closure20260717.json`
+- `CVF_SESSION/state/entries/maoOaT6aDispatch20260717.json`
 
-Rollback boundary: revert only this protected continuity batch; retain T5
-material closure `3e259039a`, T5 dispatch `3f975a1d4`, and prior material
-closures.
+Rollback boundary: revert only this protected continuity batch; retain T6A
+dispatch `7640a7ed8`, T5 closure `3e259039a`, and prior material closures.
 
 ## Public Export Disposition
 

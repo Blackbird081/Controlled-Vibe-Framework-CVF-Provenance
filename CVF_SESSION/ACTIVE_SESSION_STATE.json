@@ -85,8 +85,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mao_oa_t5_closed_t6_packet_authoring_next",
-  "previousMode": "mao_oa_t5_dispatched_worker_next",
+  "currentMode": "mao_oa_t6a_dispatched_worker_next",
+  "previousMode": "mao_oa_t5_closed_t6_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12750,5 +12750,21 @@
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "claimBoundary": "Pure local operator read-model composition only; no state mutation, UI, queue, actual agents, provider/live, public, production, or user-value proof."
   },
-  "nextAllowedMove": "Author and validate one fresh source-verified MAO-OA-T6 GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for one materially harder representative agent-project proof with a predeclared value hypothesis and explicit bounded live-provider controls, derived from accepted T5 closure 3e259039a and the operator standing instruction to continue tranche-by-tranche until roadmap completion. Do not execute T6 in the dispatcher session. MAO-OA-T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped application/server/browser/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "maoOaT6aDispatch20260717": {
+    "status": "DISPATCHED",
+    "date": "2026-07-17",
+    "materialCommit": "7640a7ed8",
+    "dispatchBaseHead": "95fb21377",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md",
+    "workerRoute": "WORKER_MUST_NOT_COMMIT with exactly seven allowed paths",
+    "liveBoundary": "One Alibaba/DashScope-compatible direct call, zero retries, secret-safe evidence, no MAO comparison in T6A.",
+    "releaseRule": "Independent reviewer releases T6B only if direct score is at most 80/100 or a predeclared material defect exists.",
+    "verification": "Dispatch-author fast gate PASS; pre-dispatch 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "nextAllowedMove": "Execute the exact T6A no-commit work order and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "heldNextTranche": "T6B and T7 remain parked until independent T6A review.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+  },
+  "nextAllowedMove": "Execute exactly docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md as a WORKER_MUST_NOT_COMMIT worker from clean dispatch commit 7640a7ed8. The worker may attempt one Alibaba/DashScope-compatible direct call, must not retry, must not run the MAO comparison, and must return exactly seven authorized paths as COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T6B releases only after independent review accepts score <=80/100 or a predeclared material defect. MAO-OA-T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped application/server/browser/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
 }
