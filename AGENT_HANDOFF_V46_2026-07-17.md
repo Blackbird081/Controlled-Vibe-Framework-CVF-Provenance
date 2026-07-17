@@ -26,25 +26,25 @@ persistence, or raw provider payload persistence.
 
 ## Active Boundary
 
-SOT3-CVF-PROJ-T0 is independently accepted at material commit `9d8305942`.
-The next allowed move is authoring a fresh CVF-WEB-INHERITANCE-T0 audit packet.
-Projection T1-T4 and all Web implementation remain parked, as do runtime/
-provider/live work, public-sync, push, production, browser/UI, queue/daemon,
-MAO-OA-T6B, and SCLP-X-T3.
+CVF-WEB-INHERITANCE-T0 is dispatched at material commit `277b979a7`. The next
+allowed move is the exact 12-family no-commit audit and two-output return. Web
+T1-T5, SOT3-CVF-PROJ-T1-T4, Web/source/test/package/README mutation, browser/
+build/typecheck/provider/live work, public-sync, push, production, MAO-OA-T6B,
+and SCLP-X-T3 remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next`;
+current mode=`cvf_web_inheritance_t0_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=author the fresh CVF-WEB-INHERITANCE-T0 audit packet;
+next allowed move=execute only the committed CVF-WEB-INHERITANCE-T0 audit;
 parked checkpoint=later lanes, MAO-OA-T6B, SCLP-X-T3, browser/UI, public-sync,
 push, production, session-state mutation, extra provider calls, retries, raw
 key persistence, and raw provider payload persistence.
 
 ## Current Mode
 
-`sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next`
+`cvf_web_inheritance_t0_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -644,6 +644,38 @@ Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 Rollback boundary: revert this seven-path protected continuity set together.
 No roadmap, baseline, work order, review, source, registry, or public artifact
 changes belong to this sync.
+
+## CVF-WEB-INHERITANCE-T0 Dispatch Continuity - 2026-07-18
+
+Material dispatch commit: `277b979a7`.
+
+Current mode: `cvf_web_inheritance_t0_dispatched_worker_next`.
+
+The committed packet releases exactly one read-only audit of 12 capability
+families across cvf-web dependencies, backend wiring, runtime-module registry,
+operator pages, documentation, SOT3, MAO, sibling Controlled Quotation, and
+Four-Surface projection. The worker may create only the named ledger and
+worker return under `WORKER_MUST_NOT_COMMIT`.
+
+Web T1-T5 and projection T1-T4 remain parked. No Web/source/test/package/
+README mutation, build/typecheck/browser/provider/live action, sibling edit,
+public-sync, push, or production action is authorized.
+
+## Core Guard Self-Protection Authorization - Web Inheritance T0 Dispatch Sync
+
+Authorized protected scope: bounded continuity synchronization after material
+dispatch commit `277b979a7`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/cvfWebInheritanceT0Dispatch20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No material, source, registry, Web, sibling, or public artifact changes belong
+to this sync.
 
 ## SOT3-APP-T1 Dispatch Continuity - 2026-07-17
 

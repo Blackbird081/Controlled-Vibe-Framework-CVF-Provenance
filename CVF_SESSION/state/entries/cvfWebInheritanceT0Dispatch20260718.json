@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1926,
+  "stateKey": "cvfWebInheritanceT0Dispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "277b979a7",
+    "dispatchBaseHead": "36041a985",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T0_CAPABILITY_TO_WEB_AUDIT_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T0_CAPABILITY_TO_WEB_AUDIT_2026-07-18.md",
+    "workerOutputs": [
+      "docs/reviews/CVF_WEB_INHERITANCE_T0_CAPABILITY_TO_WEB_LEDGER_2026-07-18.md",
+      "docs/reviews/CVF_WEB_INHERITANCE_T0_WORKER_RETURN_2026-07-18.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "seedCapabilityCount": 12,
+    "verification": "dispatch-author fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact T0 no-commit audit and return for independent review.",
+    "heldNextTranche": "Web T1-T5 and SOT3-CVF-PROJ-T1-T4 remain parked.",
+    "claimBoundary": "Read-only Web inheritance audit dispatch; no Web/source/test/package/README mutation, browser/build/typecheck/provider/live work, sibling edit, public-sync, push, or production action."
+  }
+}

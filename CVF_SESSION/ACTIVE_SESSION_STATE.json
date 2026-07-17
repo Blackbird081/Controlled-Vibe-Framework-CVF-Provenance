@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next",
-  "previousMode": "sot3_cvf_proj_t0_dispatched_worker_next",
+  "currentMode": "cvf_web_inheritance_t0_dispatched_worker_next",
+  "previousMode": "sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13124,7 +13124,6 @@
     "heldNextTranche": "T1-T4 and all architecture/catalog/README edits remain parked pending independent T0 acceptance.",
     "claimBoundary": "Documentation-only authority-surface audit dispatch; no architecture/catalog/README mutation, runtime/test/provider/live action, public-sync, push, production, browser/UI, queue/daemon, generated aggregate mutation, registry mutation, or session mutation by the worker."
   },
-  "nextAllowedMove": "Author a fresh source-verified CVF-WEB-INHERITANCE-T0 capability-to-Web audit GC-018 and no-commit work order from material closure commit 9d8305942. Audit SOT3, MAO, Controlled Quotation, freeze/recall, package dependencies, runtime-module registry freshness, operator visibility, and README/version drift before any Web implementation. SOT3-CVF-PROJ-T1 through T4, Web implementation, browser/live/provider work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave.",
   "sot3CvfProjT0Closure20260718": {
     "status": "REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS",
     "materialCommit": "9d8305942",
@@ -13141,5 +13140,24 @@
     "nextAllowedMove": "Author CVF-WEB-INHERITANCE-T0 audit packet before releasing any projection implementation tranche.",
     "heldNextTranche": "SOT3-CVF-PROJ-T1 through T4 and all Web implementation remain parked.",
     "claimBoundary": "Bounded documentation inventory closure only; no authority-surface edit, Web implementation, runtime/provider/live action, public-sync, push, or production claim."
+  },
+  "nextAllowedMove": "Execute only the committed CVF-WEB-INHERITANCE-T0 work order at material commit 277b979a7 under WORKER_MUST_NOT_COMMIT. Create exactly the capability-to-Web ledger and worker return, preserve the execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Web T1-T5, SOT3-CVF-PROJ-T1-T4, Web/source/test/package/README mutation, browser/build/typecheck/provider/live work, sibling edits, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "cvfWebInheritanceT0Dispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "277b979a7",
+    "dispatchBaseHead": "36041a985",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T0_CAPABILITY_TO_WEB_AUDIT_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T0_CAPABILITY_TO_WEB_AUDIT_2026-07-18.md",
+    "workerOutputs": [
+      "docs/reviews/CVF_WEB_INHERITANCE_T0_CAPABILITY_TO_WEB_LEDGER_2026-07-18.md",
+      "docs/reviews/CVF_WEB_INHERITANCE_T0_WORKER_RETURN_2026-07-18.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "seedCapabilityCount": 12,
+    "verification": "dispatch-author fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact T0 no-commit audit and return for independent review.",
+    "heldNextTranche": "Web T1-T5 and SOT3-CVF-PROJ-T1-T4 remain parked.",
+    "claimBoundary": "Read-only Web inheritance audit dispatch; no Web/source/test/package/README mutation, browser/build/typecheck/provider/live work, sibling edit, public-sync, push, or production action."
   }
 }

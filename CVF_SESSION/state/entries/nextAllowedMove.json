@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1923,
+  "stateOrder": 1925,
   "stateKey": "nextAllowedMove",
-  "value": "Author a fresh source-verified CVF-WEB-INHERITANCE-T0 capability-to-Web audit GC-018 and no-commit work order from material closure commit 9d8305942. Audit SOT3, MAO, Controlled Quotation, freeze/recall, package dependencies, runtime-module registry freshness, operator visibility, and README/version drift before any Web implementation. SOT3-CVF-PROJ-T1 through T4, Web implementation, browser/live/provider work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Execute only the committed CVF-WEB-INHERITANCE-T0 work order at material commit 277b979a7 under WORKER_MUST_NOT_COMMIT. Create exactly the capability-to-Web ledger and worker return, preserve the execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Web T1-T5, SOT3-CVF-PROJ-T1-T4, Web/source/test/package/README mutation, browser/build/typecheck/provider/live work, sibling edits, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave."
 }
