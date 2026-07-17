@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY_R1
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Batch ID: SOT3-APP-T2
 
@@ -190,7 +190,7 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "downs
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY_R1; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm evidence supporting a source-verified T2 dispatch packet |
 | claimBoundary | structural confirmation only; no implementation, test, or runtime proof |
 
@@ -198,14 +198,14 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "downs
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 status | this artifact | `Status: DISPATCH_READY_R1` | PASS |
-| Work order status | paired T2 work order | `Status: DISPATCH_READY_R1` | PASS |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T2_R1_DISPATCHED_WORKER_NEXT` | PASS |
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Work order status | paired T2 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T2_CLOSED_T3_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 aggregate | no new provenance source path until worker outputs exist | PASS |
 | Registry Markdown | existing registry documentation | unchanged at dispatch | PASS |
-| Completion or reviewer artifact | future T2 completion review | reviewer-owned following worker return | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T2_COMPLETION_REVIEW_2026-07-17.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
 | External evidence digest | accepted T0B external corpus digest | 336-file aggregate sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; worker must refresh allowed-path hashes | PASS |
-| System loop interlock | T1 closure -> T2 worker -> independent review | T3 and later parked | PASS |
+| System loop interlock | T1 closure -> T2-R1 worker -> independent review -> bounded T2 closure | T3 packet authoring released; T3 execution requires a fresh dispatch | PASS |
 | Session continuity | protected sync after material dispatch commit | separate commit | N/A with reason |
 
 ## Public Export Disposition

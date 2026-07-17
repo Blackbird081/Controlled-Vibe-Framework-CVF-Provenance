@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY_R1
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Batch ID: SOT3-APP-T2
 
@@ -219,18 +219,18 @@ Return `BLOCKED_WITH_REASON` if any of these occurs:
 
 ## Acceptance Criteria
 
-- [ ] All nine external paths are terminally accounted for by before/after hash.
-- [ ] Exactly two provenance outputs exist and no other provenance path changes.
-- [ ] BLOCK and expired contexts fail before execution.
-- [ ] WARN, ESCALATE, and REVIEW_REQUIRED fail before execution.
-- [ ] ALLOW invokes execution exactly once.
-- [ ] Review and phase rejection produce zero evidence writes.
-- [ ] Output API uses an injected boundary and no static success echo.
-- [ ] Identity/phase failures are single terminal replies.
-- [ ] Raw internal sentinel text is absent from API errors.
-- [ ] Focused tests and typecheck pass or a classified blocker is returned.
-- [ ] Worker-return fast gate passes.
-- [ ] Provenance HEAD is unchanged; nothing is staged; worker made no commit.
+- [x] All nine external paths are terminally accounted for by before/after hash.
+- [x] Exactly two provenance outputs exist and no other provenance path changes.
+- [x] BLOCK and expired contexts fail before execution.
+- [x] WARN, ESCALATE, and REVIEW_REQUIRED fail before execution.
+- [x] ALLOW invokes execution exactly once.
+- [x] Review and phase rejection produce zero evidence writes.
+- [x] Output API uses an injected boundary and no static success echo.
+- [x] Identity/phase failures are single terminal replies.
+- [x] Raw internal sentinel text is absent from API errors after reviewer repair.
+- [x] Focused tests and typecheck remain classified `DEPENDENCY_NOT_INSTALLED`; T3 owns reproducible dependency and command proof.
+- [x] Worker-return fast gate passes.
+- [x] Provenance HEAD is unchanged; nothing is staged; worker made no commit.
 
 ## Review Gate
 
@@ -241,13 +241,13 @@ leakage, extra path, or unsupported runtime claim.
 
 ## Closure Checklist
 
-- [ ] Roadmap requirements reconcile to the final artifacts.
-- [ ] Nine external paths and two provenance outputs are terminally accounted.
-- [ ] Every negative action counter is zero.
-- [ ] ALLOW execution count is exactly one.
-- [ ] Test/typecheck evidence is current.
-- [ ] Public export remains deferred private-only.
-- [ ] Reviewer owns material commit and protected sync.
+- [x] Roadmap requirements reconcile to the final artifacts.
+- [x] Nine external paths and two provenance outputs are terminally accounted.
+- [x] Every negative action counter is zero by direct trace; execution remains pending T3 dependency restoration.
+- [x] ALLOW execution count is exactly one by direct trace; execution remains pending T3 dependency restoration.
+- [x] Test/typecheck evidence is terminally classified `DEPENDENCY_NOT_INSTALLED` and routed to T3.
+- [x] Public export remains deferred private-only.
+- [x] Reviewer owns material commit and protected sync.
 
 ## Return-To-Orchestrator Conditions
 
@@ -421,7 +421,7 @@ syntax inside a checklist.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY_R1; Dispatch Prompt Envelope; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; Dispatch Prompt Envelope; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm evidence supporting a source-verified, exact-manifest no-commit implementation dispatch |
 | claimBoundary | structural confirmation does not prove implementation, tests, or downstream runtime behavior |
 
@@ -476,15 +476,23 @@ syntax inside a checklist.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY_R1` | PASS |
-| GC-018 status | paired T2 baseline | `Status: DISPATCH_READY_R1` | PASS |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T2_R1_DISPATCHED_WORKER_NEXT` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| GC-018 status | paired T2 baseline | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T2_CLOSED_T3_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 aggregate | no new provenance output exists at dispatch | PASS |
 | Registry Markdown | existing registry documentation | unchanged at dispatch | PASS |
-| Completion or reviewer artifact | future T2 completion review | reviewer-owned | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T2_COMPLETION_REVIEW_2026-07-17.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
 | External evidence digest | accepted T0B external corpus digest | 336-file aggregate sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; worker refreshes exact allowed-path hashes | PASS |
-| System loop interlock | T1 closure -> T2 worker -> independent review | T3 and later parked | PASS |
+| System loop interlock | T1 closure -> T2-R1 worker -> independent review -> bounded T2 closure | T3 packet authoring released; T3 execution awaits fresh dispatch | PASS |
 | Session continuity | protected sync after material dispatch commit | reviewer/session steward-owned | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| T2-Q1 | final external hash manifest | N/A with reason: Markdown table | nine terminal paths | nine hashes recomputed by reviewer | PASS |
+| T2-Q2 | provenance Git status | N/A with reason: command output | exact two worker outputs | exact two before closure edits | PASS |
+| T2-Q3 | verification command evidence | N/A with reason: command transcript | truthful result | `DEPENDENCY_NOT_INSTALLED`; no test PASS claimed | N/A_WITH_REASON |
 
 ## Public Export Disposition
 
