@@ -237,3 +237,37 @@ documentation dispatch. It does not accept the rejected T6A score/result,
 release T6B or T2, prove contract compatibility or application behavior,
 modify either source tree, or authorize provider, runtime, live, public, or
 push action.
+
+## GC-020 Marker - SOT3-APP-T1 Dispatch Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`f1b7437bf`. Because the current content-addressed SHA cannot be known before
+commit creation, the active-session checker may accept this parent SHA for the
+handoff-sync-only child commit.
+
+This marker changes no mode, next move, material decision, or authority. It
+does not execute T1, release T2/T6B, or authorize source, provider/runtime/live,
+public-sync, or push action.
+
+## Agent Operation Trace Block - SOT3-APP-T1 GC-020 Handoff Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | handoff-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | SOT3-APP-T1 GC-020 handoff bridge, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | active-handoff edit, handoff-sync commit stewardship, git |
+| Target paths | `AGENT_HANDOFF_V46_2026-07-17.md` |
+| Allowed scope source | GC-020 in-place HEAD rule after session-sync commit `f1b7437bf` |
+| Before status evidence | clean worktree at session-sync HEAD `f1b7437bf` |
+| After status evidence | parent SHA recorded for a dedicated root-handoff-only child commit |
+| Diff evidence | one-path staged diff and active-session compatibility check |
+| Approval boundary | handoff bookkeeping only; no material or session-state change |
+| Claim boundary | no worker result, T2/T6B, source, provider/runtime/live/public/push claim |
+| Agent type | handoff-sync steward |
+| Invocation ID | `sot3-app-t1-gc020-handoff-sync-2026-07-17` |
+| Expected manifest | `AGENT_HANDOFF_V46_2026-07-17.md` |
+| Actual changed set | `AGENT_HANDOFF_V46_2026-07-17.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
