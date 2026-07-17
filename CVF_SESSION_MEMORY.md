@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_closed_bounded_live_proof_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=fresh roadmap or work-order authoring only if the operator chooses a new expansion lane; parked checkpoint=MAO-OA-T6B, SCLP-X-T3, browser/UI, queue/daemon, public-sync, push, production, extra provider calls, retries, raw key persistence, and raw provider payload persistence.
+Startup acknowledged: current mode=`sot3_cvf_proj_t0_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute only the committed SOT3-CVF-PROJ-T0 no-commit authority-surface audit; parked checkpoint=T1-T4, architecture/catalog/README mutation, runtime/test/provider/live work, browser/UI, queue/daemon, public-sync, push, production, generated aggregate/registry/session mutation, MAO-OA-T6B, and SCLP-X-T3.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_closed_bounded_live_proof_next`
+Current mode marker: `sot3_cvf_proj_t0_dispatched_worker_next`
 
-Current mode: `sot3_app_closed_bounded_live_proof_next`
+Current mode: `sot3_cvf_proj_t0_dispatched_worker_next`
 
-`sot3_app_closed_bounded_live_proof_next`
+`sot3_cvf_proj_t0_dispatched_worker_next`
 
 Previous mode:
 
-`sot3_app_t5_dispatched_worker_next`
+`sot3_app_closed_bounded_live_proof_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -278,15 +278,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_closed_bounded_live_proof_next`
+Mode: `sot3_cvf_proj_t0_dispatched_worker_next`
 
-SOT3-APP is closed bounded at material commit `c408c7116` after accepted T5
-one-call live-provider proof. Next allowed move is fresh roadmap or work-order
-authoring only if the operator chooses a new productization, public-sync,
-production, browser/UI, queue/daemon, or user-value expansion lane. No existing
-SOT3-APP tranche remains released. MAO-OA-T6B, SCLP-X-T3, public-sync, push,
-production use, additional provider calls, retries, raw key persistence, and
-raw provider payload persistence remain parked.
+SOT3-CVF-PROJ-T0 is dispatched at material commit `69cf579f4`. Next allowed
+move is execution of the exact no-commit authority-surface audit. The worker
+may create only the named ledger and worker return, then return for independent
+review. T1-T4 and all architecture/catalog/README edits remain parked, as do
+runtime/test/provider/live work, public-sync, push, production, browser/UI,
+queue/daemon, generated aggregate/registry/session mutation, MAO-OA-T6B, and
+SCLP-X-T3.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

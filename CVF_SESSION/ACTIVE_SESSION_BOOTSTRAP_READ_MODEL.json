@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_app_closed_bounded_live_proof_next",
+  "currentMode": "sot3_cvf_proj_t0_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
-  "nextAllowedMove": "SOT3-APP roadmap is closed bounded at material commit c408c7116 after accepted T5 one-call live-provider proof. Next allowed move is fresh roadmap or work-order authoring only if the operator chooses a new productization, public-sync, production, browser/UI, queue/daemon, or user-value expansion lane. No existing SOT3-APP tranche remains released. MAO-OA-T6B, SCLP-X-T3, public-sync, push, production use, additional provider calls, retries, and raw key or raw provider payload persistence remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute only the committed SOT3-CVF-PROJ-T0 authority-surface inventory work order at material commit 69cf579f4 under WORKER_MUST_NOT_COMMIT. The worker may create exactly the two named review outputs, must capture executionBaseHead from the committed dispatch HEAD, and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T1-T4, architecture/catalog/README mutation, runtime/test/provider/live work, public-sync, push, production, browser/UI, queue/daemon, generated aggregate mutation, registry mutation, session mutation, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
