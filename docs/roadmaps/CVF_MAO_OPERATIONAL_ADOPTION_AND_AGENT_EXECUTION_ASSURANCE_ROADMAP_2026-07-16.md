@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T6A_IMPLEMENTATION_ACCEPTED_LIVE_RESULT_NOT_ACCEPTED_T7_PACKET_AUTHORING_NEXT
+Status: MAO_OA_T6A_IMPLEMENTATION_ACCEPTED_LIVE_RESULT_NOT_ACCEPTED_T7_DISPATCHED_WORKER_NEXT
 
 Roadmap ID: MAO-OA
 
@@ -137,7 +137,7 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 | MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 closure `eead77edf`, standing operator continuation authority, and current-source verification | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 `ede430587` plus fresh GC-018 and source-verified work order | PASS_BOUNDED |
 | MAO-OA-T6 | materially harder representative agent-project proof with predeclared value hypothesis | accepted T5 plus explicit live/provider authority | T6A_IMPLEMENTATION_ACCEPTED_LIVE_RESULT_NOT_ACCEPTED_T6B_NOT_RELEASED |
-| MAO-OA-T7 | independent critique, closure diff, architecture/public disposition, and roadmap closure | accepted T6 | HOLD |
+| MAO-OA-T7 | independent critique, closure diff, architecture/public disposition, and roadmap closure | accepted bounded T6A disposition | DISPATCHED_WORKER_NEXT |
 
 ## MAO-OA-T0 Required Output
 
@@ -356,6 +356,18 @@ it does not establish runtime, provider, live, or public behavior.
 - completion review:
   `docs/reviews/CVF_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_COMPLETION_REVIEW_2026-07-17.md`.
 
+## MAO-OA-T7 Dispatch Evidence
+
+- paired baseline:
+  `docs/baselines/CVF_GC018_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md`;
+- canonical work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md`;
+- route: one two-path `WORKER_MUST_NOT_COMMIT` critique worker followed by
+  independent reviewer/closer and separate continuity sync;
+- boundary: documentation-only; no source, registry, roadmap, state, provider,
+  live, public-sync, or push mutation by the worker; and
+- final roadmap closure remains reviewer-owned.
+
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
@@ -397,9 +409,9 @@ not authorized.
 
 ## Next Allowed Move
 
-Author and validate one fresh MAO-OA-T7 GC-018 baseline and source-verified
-work order for independent critique, closure diff, architecture/public
-disposition, and roadmap closure. T6B is not released. SOT3-APP-T1 and other
+Execute exactly
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md`
+as a no-commit documentation worker. T6B is not released. SOT3-APP-T1 and other
 absorption, unscoped generated-state or runtime git/session mutation, UI/queue
 action, public-sync, and push remain parked.
 
@@ -414,7 +426,7 @@ reviewer-accepted bounded T5 typed operator-readout projection. T5 does not
 prove actual operator UX, state mutation, independent agents, or provider
 execution. T6A implementation is accepted, but its live score/result is not
 accepted because the sanitized candidate was not persisted for independent
-recomputation. T7 closure packet authoring is next. The roadmap
+recomputation. The T7 critique worker is next. The roadmap
 defines a future governed path toward operational adoption but does not claim
 distributed concurrency, real provider launch,
 liveness, provider control,
