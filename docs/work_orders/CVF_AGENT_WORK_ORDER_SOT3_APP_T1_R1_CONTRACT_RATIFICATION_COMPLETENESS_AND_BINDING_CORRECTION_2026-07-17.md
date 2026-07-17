@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: REVIEWED_R2_REQUIRED
 
 Batch ID: SOT3-APP-T1-R1
 
@@ -179,7 +179,7 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "downs
 | T1 objective and release rule | EXISTS | `docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md` | Work Plan; Acceptance Criteria | `SOT3-APP-T1-R1` | SOT3-APP roadmap | ACCEPT |
 | consolidated correction findings | VALUE_SET | `docs/reviews/CVF_SOT3_APP_T1_COMPLETION_REVIEW_2026-07-17.md` | Consolidated Findings; Corrective Action | `REVIEWED_NOT_ACCEPTED_R1_REQUIRED` | independent T1 reviewer | ACCEPT |
 | packet identity and hash are distinct | VALUE_SET | `EXTENSIONS/CVF_TRUTH_KERNEL/src/types/refinery-packet.ts` | `RefineryPacketRef` | `refinery_packet_id; content_hash` | Truth Kernel Refinery packet reference | ACCEPT |
-| evaluation identity and hash are distinct | VALUE_SET | `EXTENSIONS/CVF_TRUTH_KERNEL/src/kernel.ts` | `EvaluateInput` | `packetId; packetHash` | Truth Kernel evaluation input | ACCEPT |
+| evaluation identity and hash are distinct | VALUE_SET | `EXTENSIONS/CVF_TRUTH_KERNEL/src/kernel.ts` | `EvaluateInput` | `packetReference; packetHash` | Truth Kernel evaluation input | ACCEPT |
 | local CVF entry adapter | EXISTS | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\cvf-bindings\src\cvf-entry.adapter.ts` | exported adapter class | `CVFEntryAdapter` | downstream local binding | ACCEPT |
 | local Refinery adapter | EXISTS | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\cvf-bindings\src\refinery.adapter.ts` | exported adapter class | `RefineryAdapter` | downstream local binding | ACCEPT |
 | local Kernel adapter | EXISTS | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\cvf-bindings\src\truth-kernel.adapter.ts` | exported adapter class | `TruthKernelAdapter` | downstream local binding | ACCEPT |
@@ -189,7 +189,7 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "downs
 | local governed-execution adapter | EXISTS | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\cvf-bindings\src\governed-execution.adapter.ts` | exported adapter class | `GovernedExecutionAdapter` | downstream local binding | ACCEPT |
 | local evidence adapter | EXISTS | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\cvf-bindings\src\evidence.adapter.ts` | exported adapter class | `EvidenceAdapter` | downstream local binding | ACCEPT |
 | local binding barrel exports eight adapters | VALUE_SET | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\cvf-bindings\src\index.ts` | export statements | `cvf-entry; refinery; truth-kernel; truth-flow; guard-contract; phase-governance; governed-execution; evidence` | downstream binding barrel | ACCEPT |
-| binding-health owner | EXISTS | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\application\src\services\sot-registration.service.ts` | registration and health logic | `SOTRegistrationService` | downstream application service | ACCEPT |
+| binding-health owner | EXISTS | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\cvf-bindings\src\binding-health.ts` | pure binding-health function | `buildBindingHealth` | downstream local binding utility | ACCEPT |
 | Refinery-to-Kernel workflow consumer | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\workflows\src\refinery-to-kernel.workflow.ts` | workflow return | `kernel.evaluatePacket` | downstream workflow | ACCEPT |
 | Kernel-to-SOT workflow consumer | RUNTIME_BEHAVIOR | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\workflows\src\kernel-to-sot.workflow.ts` | workflow invocation | `KernelToSOTWorkflow` | downstream workflow | ACCEPT |
 | five downstream route-decision values | VALUE_SET | N/A with reason: direct read-only external source at `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\contracts\src\types\context-package.ts` | line 16 | `route_decision` | downstream `ContextPackage` | ACCEPT |
@@ -375,7 +375,7 @@ it.
    plus binding-health and principal workflow/service callers against current
    CVF public owners using direct source anchors.
 5. Preserve packet identity and packet hash as separate fields in the T8
-   design: `refinery_packet_id` plus `content_hash`, and `packetId` plus
+   design: `refinery_packet_id` plus `content_hash`, and `packetReference` plus
    `packetHash`; never replace an ID/reference with a hash.
 6. Ratify fail-closed continuation: `ALLOW` maps to `CONTINUE`; `WARN` may map
    to `CONTINUE_WITH_OBLIGATIONS` only with explicit obligations; `ESCALATE`,
@@ -558,13 +558,13 @@ collision, or any required mutation outside the exact two paths.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T1_R1_COMPLETION_REVIEW_2026-07-17.md` | N/A with reason: created only by the independent reviewer after worker return | N/A with reason |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T1_R1_DISPATCHED_WORKER_NEXT` | PASS |
+| Work order status | this file | `Status: REVIEWED_R2_REQUIRED` | BLOCKED |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T1_R1_COMPLETION_REVIEW_2026-07-17.md` | `Status: REVIEWED_NOT_ACCEPTED_R2_REQUIRED` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T1_R1_REVIEWED_R2_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 corpus registry | aggregate drift and registry checks pass; T1 adds no source/test path | PASS |
 | Registry Markdown | existing GC-051 registry documentation contract | unchanged; registry checks pass | PASS |
 | External evidence digest | accepted T0B ledger sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee` plus planned T1 contract inventory | accepted snapshot retained; no new full-corpus claim | PASS |
-| System loop interlock | T1 review -> T1-R1 execution and independent review | T2 parked | PASS |
+| System loop interlock | T1-R1 review -> fresh T1-R2 correction packet | T2 parked | BLOCKED |
 | Session continuity | N/A with reason: separate steward batch follows material commit | no protected continuity mutation in this packet | N/A with reason |
 
 ## Public Export Disposition

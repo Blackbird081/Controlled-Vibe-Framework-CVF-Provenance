@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: SOT3_APP_T1_R1_DISPATCHED_WORKER_NEXT
+Status: SOT3_APP_T1_R1_REVIEWED_R2_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -73,9 +73,9 @@ owners before modifying the sibling source.
 
 | Control | Decision |
 |---|---|
-| current active tranche | T1-R1 documentation correction worker execution from the committed packet |
+| current active tranche | T1-R1 reviewed but not accepted; fresh T1-R2 inventory/caller-closure correction packet authoring only |
 | committed packet | prior paired T0 GC-018 and work order are held and must not be executed |
-| scheduling release | T1-R1 worker only; T2 and later remain parked until accepted T1-R1 closure |
+| scheduling release | T1-R2 correction only; T2 and later remain parked until accepted contract-inventory closure |
 | source mutation | forbidden until a later source-verified implementation work order passes pre-dispatch |
 | hidden-clone coupling | T0A enumerates every declaration; T0B retains terminal sever/govern/block decisions |
 | runtime/live | separately authorized only in tranches whose acceptance requires it |
@@ -342,7 +342,7 @@ authoring and completion is the only next roadmap lane.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | Status: SOT3_APP_T1_R1_DISPATCHED_WORKER_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; T1 Dispatch Packet; T1-R1 Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; Public Export Disposition; Machine Closure Package; Claim Boundary |
+| literalTokensReviewed | Status: SOT3_APP_T1_R1_REVIEWED_R2_PACKET_AUTHORING_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; T1 Dispatch Packet; T1-R1 Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; Public Export Disposition; Machine Closure Package; Claim Boundary |
 | gateRunPurpose | confirm T0B reviewer closure structure after independent semantic and objective recomputation |
 | claimBoundary | structural confirmation only; no source, runtime, or product proof |
 
@@ -368,11 +368,11 @@ public-safe artifact set exists.
 | Worker ledger | `docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS`; semantic_terminal=336; declaration_terminal=13 | PASS_WITH_REPAIR |
 | Worker return | `docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
 | Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T0B_COMPLETION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
-| Roadmap state | this artifact | `Status: SOT3_APP_T1_R1_DISPATCHED_WORKER_NEXT` | PASS |
+| Roadmap state | this artifact | `Status: SOT3_APP_T1_R1_REVIEWED_R2_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | N/A with reason: no registry JSON is required or changed | no generated registry mutation | PASS |
 | Registry Markdown | N/A with reason: no registry Markdown is required or changed | no registry mutation | PASS |
 | External evidence digest | accepted T0B ledger | 336 files; 238522 bytes; sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; declaration inventory | PASS |
-| System loop interlock | T0B -> MAO-OA -> T1 review -> T1-R1 execution and review | T2 and later remain parked until accepted T1-R1 closure | PASS |
+| System loop interlock | T0B -> MAO-OA -> T1 -> T1-R1 review -> T1-R2 packet | T2 and later remain parked until accepted contract-inventory closure | BLOCKED |
 | Session continuity | active session front door, state, and handoff | separate sync after material commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
