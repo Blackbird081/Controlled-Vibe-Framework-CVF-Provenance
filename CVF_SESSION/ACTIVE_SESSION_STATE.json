@@ -85,8 +85,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mao_oa_t2_closed_operator_checkpoint_next",
-  "previousMode": "mao_oa_t2_dispatched_worker_next",
+  "currentMode": "mao_oa_t3_dispatched_worker_next",
+  "previousMode": "mao_oa_t2_closed_operator_checkpoint_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -12646,5 +12646,22 @@
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "claimBoundary": "Local file-backed durable graph/event snapshot and deterministic ledger replay only. No distributed concurrency, crash-proof fsync, worker/provider launch, liveness, live, public, production, or user-value claim."
   },
-  "nextAllowedMove": "MAO-OA-T2 is CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR at material commit 042abf44b. Await an explicit operator checkpoint before authoring or dispatching MAO-OA-T3. MAO-OA-T3 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped external-root mutation, worker/provider launch, lifecycle/reviewer/closer execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "maoOaT3Dispatch20260717": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-17",
+    "materialCommit": "084878796",
+    "dispatchBaseHead": "adff6895b",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T3_OPERATIONAL_WORKER_LAUNCHER_AND_LIVENESS_WIRING_2026-07-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T3_OPERATIONAL_WORKER_LAUNCHER_AND_LIVENESS_WIRING_2026-07-17.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_MAO_OA_T3_WORKER_RETURN_2026-07-17.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerManifest": "exact six paths: operational launcher source, MAO local barrel, focused test, narrow GC-051 source entry, generator-owned corpus aggregate, and worker return",
+    "verification": "dispatch-author fast 5/5 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS; commit steward PASS",
+    "nextAllowedMove": "Execute only the committed MAO-OA-T3 work order and return uncommitted and unstaged evidence for independent review.",
+    "heldNextTranche": "MAO-OA-T4 through T7 remain parked.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Dispatch packet only. Fake/local launcher composition is authorized; no worker implementation, real provider/network/process/queue action, live/public action, production readiness, or user-value claim."
+  },
+  "nextAllowedMove": "MAO-OA-T3 is DISPATCH_READY at material commit 084878796. Execute only docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T3_OPERATIONAL_WORKER_LAUNCHER_AND_LIVENESS_WIRING_2026-07-17.md under WORKER_MUST_NOT_COMMIT. The worker may change exactly six authorized launcher, local-barrel, focused-test, GC-051 source/aggregate, and worker-return paths; must capture executionBaseHead from committed dispatch state; and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit or staging. MAO-OA-T4 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, real provider/network/process/queue execution, reviewer/closer execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
 }

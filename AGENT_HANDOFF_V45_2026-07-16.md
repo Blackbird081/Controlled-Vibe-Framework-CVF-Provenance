@@ -9,27 +9,29 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after MAO-OA-T2 independent closure with bounded
-reviewer repair. V44 was rotated at 1,080 lines under the
+Carry compact continuity after MAO-OA-T3 governed dispatch. V44 was rotated at
+1,080 lines under the
 Governed File Size Guard; its history remains in the archive and canonical
 detail remains in the active state registry and governed artifacts.
 
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`042abf44b` owns the accepted T2 source/test closure and bounded reviewer
-repair; `54a5e3452` owns the historical T2 dispatch packet. No T3+, provider
-launch, live, public, or push authority is granted here.
+`084878796` owns the T3 dispatch packet; `042abf44b` owns the accepted T2
+source/test closure and bounded reviewer repair. No worker implementation,
+T4+, real provider/network/process/queue action, live, public, or push
+authority is granted here.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`mao_oa_t2_closed_operator_checkpoint_next`;
+current mode=`mao_oa_t3_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V45_2026-07-16.md`;
-next allowed move=await an explicit operator checkpoint before MAO-OA-T3 packet
-authoring or dispatch;
-parked checkpoint=MAO-OA-T3 and later, SOT3-APP-T1 and later absorption,
-worker/provider launch, unscoped runtime/live/public work, and push.
+next allowed move=execute only the committed MAO-OA-T3 work order under
+`WORKER_MUST_NOT_COMMIT` and return exactly six uncommitted and unstaged paths;
+parked checkpoint=MAO-OA-T4 through T7, SOT3-APP-T1 and later absorption, real
+provider/network/process/queue action, unscoped runtime/live/public work, and
+push.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -44,11 +46,30 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`mao_oa_t2_closed_operator_checkpoint_next`
+`mao_oa_t3_dispatched_worker_next`
 
-Previous mode: `mao_oa_t2_dispatched_worker_next`.
+Previous mode: `mao_oa_t2_closed_operator_checkpoint_next`.
 
 ## Latest Work / Changes
+
+Material commit `084878796` dispatches MAO-OA-T3 to one no-commit worker.
+
+Dispatch evidence:
+
+- canonical work order is
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T3_OPERATIONAL_WORKER_LAUNCHER_AND_LIVENESS_WIRING_2026-07-17.md`;
+- the bounded launcher composes the existing durable run store, fake/local
+  delegation adapter, lifecycle controller, and event ledger without importing
+  the control-plane provider router;
+- exact worker manifest has six paths: launcher source, existing MAO local
+  barrel, focused test, narrow GC-051 source entry, generator-owned aggregate,
+  and worker return;
+- dispatch-author fast passed 5/5, pre-dispatch passed 75/75, pre-commit passed
+  83/83, and commit-steward preflight passed;
+- worker must capture `executionBaseHead`, leave HEAD unchanged, and return
+  `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; and
+- no worker implementation, real provider/network/process/queue action,
+  provider/live action, public action, or push has occurred.
 
 Material commit `042abf44b` closes MAO-OA-T2 after independent review and one
 bounded source/test repair.
@@ -125,21 +146,24 @@ Accepted evidence:
 
 ## Active Boundary
 
-T0, T1, and T2 are closed. T2 is a bounded local durable-store and replay
-component only. It does not release worker/provider launch or any T3+ owner.
+T0, T1, and T2 are closed. T3 is dispatched for bounded fake/local operational
+launcher composition only. It does not release a real provider, external
+process, distributed queue, or any T4+ owner.
 
 ## Next Allowed Move
 
-Await an explicit operator checkpoint before authoring or dispatching
-MAO-OA-T3.
+Execute only
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T3_OPERATIONAL_WORKER_LAUNCHER_AND_LIVENESS_WIRING_2026-07-17.md`
+under `WORKER_MUST_NOT_COMMIT`. Return exactly six authorized paths uncommitted
+and unstaged for independent reviewer/closer recomputation.
 
 ## Parked Boundary
 
 Remain parked:
 
-- MAO-OA-T3 through T7;
-- worker/provider launch, lifecycle execution, review/closer
-  execution, CLI/MCP, UI, and operator projection;
+- MAO-OA-T4 through T7;
+- real provider/network/process/queue launch, review/closer execution, CLI/MCP,
+  UI, and operator projection;
 - SOT3-APP-T1 and later SOT3-APP work;
 - every other high-value-folder absorption lane and SCLP-X-T3;
 - external-root mutation and application/install/runtime/test/build/typecheck/
@@ -149,12 +173,13 @@ Remain parked:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize material closure `042abf44b`
-and park T3-T7 pending an explicit operator checkpoint.
+Authorized guard-maintenance scope: synchronize T3 material dispatch
+`084878796` and park T4-T7.
 
-Operator authorization: the operator directed independent review and closure
-after the no-commit T2 return; the handoff contract and GC-020 require protected
-continuity synchronization after the material closure.
+Operator authorization: after accepting the T2 closed state, the operator said
+`tiếp`, releasing T3 packet authoring and dispatch only; the handoff contract
+and GC-020 require protected continuity synchronization after material
+dispatch.
 
 Protected paths:
 
@@ -164,11 +189,10 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/maoOaT2Closure20260716.json`
+- `CVF_SESSION/state/entries/maoOaT3Dispatch20260717.json`
 
-Rollback boundary: revert only this protected continuity batch; retain T2
-material closure `042abf44b`, T1 closure `1bb5ff7f3`, and T0 closure
-`2de211da0`.
+Rollback boundary: revert only this protected continuity batch; retain T3
+material dispatch `084878796` and the T0-T2 material closures.
 
 ## Public Export Disposition
 
@@ -437,8 +461,32 @@ public-sync, or push.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
+## Agent Operation Trace Block - MAO-OA-T3 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T3 dispatch continuity sync, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, apply_patch, git |
+| Target paths | seven protected session paths |
+| Allowed scope source | operator `tiếp`, material dispatch `084878796`, Agent Handoff Contract Control Block, and GC-020 continuity |
+| Before status evidence | clean material worktree at dispatch HEAD `084878796` |
+| After status evidence | V45 active; continuity records T3 dispatched and T4-T7 parked |
+| Diff evidence | protected session-only diff, generated-state drift check, and session-sync preflight |
+| Approval boundary | continuity synchronization after bounded T3 dispatch only |
+| Claim boundary | no worker implementation, T4-T7, real provider/network/process/queue action, live, public, or push action |
+| Agent type | dispatcher and session-sync steward |
+| Invocation ID | `mao-oa-t3-dispatch-session-sync-2026-07-17` |
+| Expected manifest | seven protected session paths |
+| Actual changed set | seven protected session paths |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Claim Boundary
 
-This handoff records bounded T2 closure continuity. It does not prove durable
-orchestration, distributed concurrency, worker/provider launch, live
-governance, public readiness, production readiness, or user value.
+This handoff records bounded T3 dispatch continuity. It does not prove worker
+implementation, real provider/network/process/queue execution, distributed
+concurrency, live governance, public readiness, production readiness, or user
+value.

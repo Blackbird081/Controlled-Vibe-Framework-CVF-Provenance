@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mao_oa_t2_closed_operator_checkpoint_next",
+  "currentMode": "mao_oa_t3_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V45_2026-07-16.md",
-  "nextAllowedMove": "MAO-OA-T2 is CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR at material commit 042abf44b. Await an explicit operator checkpoint before authoring or dispatching MAO-OA-T3. MAO-OA-T3 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, unscoped external-root mutation, worker/provider launch, lifecycle/reviewer/closer execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "MAO-OA-T3 is DISPATCH_READY at material commit 084878796. Execute only docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T3_OPERATIONAL_WORKER_LAUNCHER_AND_LIVENESS_WIRING_2026-07-17.md under WORKER_MUST_NOT_COMMIT. The worker may change exactly six authorized launcher, local-barrel, focused-test, GC-051 source/aggregate, and worker-return paths; must capture executionBaseHead from committed dispatch state; and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit or staging. MAO-OA-T4 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, real provider/network/process/queue execution, reviewer/closer execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
