@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1914,
+  "stateOrder": 1916,
   "stateKey": "nextAllowedMove",
-  "value": "SOT3-APP-T3 is closed at material commit 4bb19d27d with reviewer-owned log-redaction repair. Next allowed move is T4 packet authoring only: create a fresh source-verified GC-018/work order for local Controlled Quotation proof. T4 execution, T5/service, provider/model/live/browser/UI/public-sync/push/production remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3-APP-T4 is dispatched at material commit fdc00c96e. Next allowed move is execute the exact no-commit work order docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md, with worker capturing executionBaseHead from current HEAD and returning COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T5/service, provider/model/live/browser/UI/public-sync/push/production remain parked. LHW24 remains latest closed numbered LHW wave."
 }

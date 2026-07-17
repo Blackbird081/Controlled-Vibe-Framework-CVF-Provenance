@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t3_closed_t4_packet_authoring_next",
-  "previousMode": "sot3_app_t3_r1_dispatched_worker_next",
+  "currentMode": "sot3_app_t4_dispatched_worker_next",
+  "previousMode": "sot3_app_t3_closed_t4_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13027,5 +13027,22 @@
     "nextAllowedMove": "T4 packet authoring only; T4 execution and later lanes remain parked.",
     "claimBoundary": "Deterministic local T3 closure only; no provider/live/browser/public/push/production or T4 execution claim."
   },
-  "nextAllowedMove": "SOT3-APP-T3 is closed at material commit 4bb19d27d with reviewer-owned log-redaction repair. Next allowed move is T4 packet authoring only: create a fresh source-verified GC-018/work order for local Controlled Quotation proof. T4 execution, T5/service, provider/model/live/browser/UI/public-sync/push/production remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3AppT4Dispatch20260717": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "fdc00c96e",
+    "dispatchBaseHead": "dfd77f881",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "workerReturnPath": "docs/reviews/CVF_SOT3_APP_T4_WORKER_RETURN_2026-07-17.md",
+    "evidencePath": "docs/reviews/CVF_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_EVIDENCE_2026-07-17.md",
+    "allowedExternalPaths": [
+      "scripts/run-controlled-quotation.ts",
+      "tests/e2e/controlled-quotation.e2e.test.ts"
+    ],
+    "verification": "pre-dispatch autorun 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "nextAllowedMove": "Execute exact T4 no-commit work order; worker must capture executionBaseHead from current HEAD and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "claimBoundary": "Dispatch packet only; no T4 implementation/review closure, T5/service, provider/live/browser/UI/public-sync/push/production claim."
+  },
+  "nextAllowedMove": "SOT3-APP-T4 is dispatched at material commit fdc00c96e. Next allowed move is execute the exact no-commit work order docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md, with worker capturing executionBaseHead from current HEAD and returning COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T5/service, provider/model/live/browser/UI/public-sync/push/production remain parked. LHW24 remains latest closed numbered LHW wave."
 }

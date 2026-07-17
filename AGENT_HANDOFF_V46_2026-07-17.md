@@ -17,28 +17,29 @@ Governed File Size Guard.
 
 This handoff owns protected continuity routing only. Material commit
 `fef756a14` owns T7 acceptance and MAO-OA roadmap closure; material commit
-`4bb19d27d` owns SOT3-APP-T3 closure. It does not release T4 execution, T5,
-T6B, runtime/provider work, public-sync, or push.
+`4bb19d27d` owns SOT3-APP-T3 closure; material commit `fdc00c96e` owns
+SOT3-APP-T4 dispatch. It does not release T5, T6B, runtime/provider work,
+public-sync, or push.
 
 ## Active Boundary
 
-Active work is limited to SOT3-APP-T4 packet authoring. No T4 execution, T5,
-T6B, provider/model/live, network/live, browser/UI, public-sync, push, or
-production action is active.
+Active work is limited to SOT3-APP-T4 no-commit worker execution. No T5, T6B,
+provider/model/live, network/live, browser/UI, public-sync, push, or production
+action is active.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_app_t3_closed_t4_packet_authoring_next`;
+current mode=`sot3_app_t4_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=author a fresh source-verified SOT3-APP-T4 GC-018/work
-order for local Controlled Quotation proof;
-parked checkpoint=T4 execution and later, MAO-OA-T6B, SCLP-X-T3,
-provider/model/live, runtime/live, UI/queue, public-sync, and push work.
+next allowed move=execute the exact no-commit SOT3-APP-T4 work order for local
+Controlled Quotation proof;
+parked checkpoint=T5 and later, MAO-OA-T6B, SCLP-X-T3, provider/model/live,
+runtime/live, UI/queue, public-sync, and push work.
 
 ## Current Mode
 
-`sot3_app_t3_closed_t4_packet_authoring_next`
+`sot3_app_t4_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -101,10 +102,9 @@ final deterministic evidence: isolated/root typecheck/build PASS, root tests
 30 files and 45 tests PASS, focused tests 2 files and 10 tests PASS, and
 doctor `healthy: true`.
 
-Next allowed move: author a fresh source-verified SOT3-APP-T4 GC-018/work
-order for local Controlled Quotation proof only. T4 execution, T5/service,
-MAO-OA-T6B, provider/model/live/browser/UI/public-sync/push/production remain
-parked.
+Next allowed move at that time was T4 packet authoring; it is superseded by
+T4 dispatch commit `fdc00c96e`. T5/service, MAO-OA-T6B,
+provider/model/live/browser/UI/public-sync/push/production remain parked.
 
 ## Core Guard Self-Protection Authorization - SOT3-APP-T3 Closure Sync
 
@@ -121,6 +121,35 @@ Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 Rollback boundary: revert this seven-path protected continuity set together.
 No material, source, registry, provider, public, or T4 execution artifact
 belongs to this sync.
+
+## SOT3-APP-T4 Dispatch Continuity - 2026-07-17
+
+Material dispatch commit: `fdc00c96e`.
+
+Current mode: `sot3_app_t4_dispatched_worker_next`.
+
+The exact no-commit worker may execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md`.
+Allowed outputs are two sibling application source/test paths and two
+provenance return artifacts only. Worker must capture `executionBaseHead` from
+current HEAD, must not stage or commit, and must return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. T5/service,
+provider/model/live/browser/UI/public-sync/push/production remain parked.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T4 Dispatch Sync
+
+Authorized protected scope: continuity synchronization after material dispatch
+commit `fdc00c96e`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT4Dispatch20260717.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No source implementation, registry, provider, or public artifact belongs here.
 
 ## Core Guard Self-Protection Authorization - SOT3-APP-T3 Block Review Sync
 
