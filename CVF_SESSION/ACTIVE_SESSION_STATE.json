@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t4_dispatched_worker_next",
-  "previousMode": "sot3_app_t3_closed_t4_packet_authoring_next",
+  "currentMode": "sot3_app_t4_closed_t5_packet_authoring_next",
+  "previousMode": "sot3_app_t4_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13044,5 +13044,22 @@
     "nextAllowedMove": "Execute exact T4 no-commit work order; worker must capture executionBaseHead from current HEAD and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
     "claimBoundary": "Dispatch packet only; no T4 implementation/review closure, T5/service, provider/live/browser/UI/public-sync/push/production claim."
   },
-  "nextAllowedMove": "SOT3-APP-T4 is dispatched at material commit fdc00c96e. Next allowed move is execute the exact no-commit work order docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md, with worker capturing executionBaseHead from current HEAD and returning COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T5/service, provider/model/live/browser/UI/public-sync/push/production remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3AppT4Closure20260717": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR",
+    "materialCommit": "1f815d7f5",
+    "dispatchCommit": "fdc00c96e",
+    "executionBaseHead": "be5ea7e85",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T4_COMPLETION_REVIEW_2026-07-17.md",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "workerReturn": "docs/reviews/CVF_SOT3_APP_T4_WORKER_RETURN_2026-07-17.md",
+    "evidence": "docs/reviews/CVF_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_EVIDENCE_2026-07-17.md",
+    "reviewerRepair": "Work-order Worker Return Packet Shape Contract literal terms repaired after worker correctly returned BLOCKED_WITH_REASON for forbidden-scope document defect.",
+    "verification": "pre-implementation PASS 77/77 after repair; worker-return fast PASS; reviewer-fast 62/62 PASS; commit steward PASS; pre-commit 83/83 PASS; vertical-slice PASS; focused e2e 1/1 PASS; root test 30 files and 45 tests PASS; root typecheck/build/doctor PASS.",
+    "proofStatus": "LOCAL_CONTROLLED_QUOTATION_REPLAY_PASS",
+    "receiptStatus": "REPLAY_RECEIPT_CHAIN_VERIFIED",
+    "verifiedReceipts": 16,
+    "nextAllowedMove": "T5 packet authoring only; provider/live execution remains parked until a fresh source-verified T5 packet releases the exact boundary.",
+    "claimBoundary": "Deterministic local in-process T4 proof only; no provider/live/browser/UI/public-sync/push/production or T5 execution claim."
+  },
+  "nextAllowedMove": "SOT3-APP-T4 is closed at material commit 1f815d7f5 with reviewer-owned work-order literal repair. Next allowed move is T5 packet authoring only: create a fresh source-verified GC-018/work order for optional operational/live proof and explicitly decide the provider/live boundary. T5 execution, provider/model/live/browser/UI/public-sync/push/production remain parked until that packet is committed. LHW24 remains latest closed numbered LHW wave."
 }

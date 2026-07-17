@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t4_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute exact no-commit SOT3-APP-T4 work order for local Controlled Quotation proof; parked checkpoint=T5/service and later, MAO-OA-T6B, SCLP-X-T3, and provider/model/live/browser/UI/public-sync/push/production work.
+Startup acknowledged: current mode=`sot3_app_t4_closed_t5_packet_authoring_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=author fresh source-verified SOT3-APP-T5 packet for optional operational/live proof boundary decision; parked checkpoint=T5 execution, MAO-OA-T6B, SCLP-X-T3, and provider/model/live/browser/UI/public-sync/push/production work until fresh packet release.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t4_dispatched_worker_next`
+Current mode marker: `sot3_app_t4_closed_t5_packet_authoring_next`
 
-Current mode: `sot3_app_t4_dispatched_worker_next`
+Current mode: `sot3_app_t4_closed_t5_packet_authoring_next`
 
-`sot3_app_t4_dispatched_worker_next`
+`sot3_app_t4_closed_t5_packet_authoring_next`
 
 Previous mode:
 
-`sot3_app_t3_closed_t4_packet_authoring_next`
+`sot3_app_t4_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-APP-T4 local Controlled Quotation proof closure | `1f815d7f5` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; worker correctly returned blocked for work-order literal defect, reviewer repaired it, pre-implementation 77/77 PASS, vertical-slice replay PASS with 16 receipts, focused e2e 1/1, root test 30/45, typecheck/build/doctor PASS; T5 packet authoring next. |
 | SOT3-APP-T4 local Controlled Quotation proof dispatch | `fdc00c96e` | DISPATCH_READY after pre-dispatch 75/75, commit steward, and pre-commit 83/83 PASS; exact two external source/test outputs plus two no-commit provenance outputs; T5/service and provider/live/browser/UI/public-sync/push/production remain parked. |
 | SOT3-APP-T3-R1 source-local type closure dispatch | `1a7f4447f` | DISPATCH_READY after pre-dispatch 75/75, commit steward, and pre-commit 83/83 PASS; exact four external source/test outputs plus two no-commit provenance outputs; compiler weakening and T4+ forbidden. |
 | SOT3-APP-T3 blocked-return review | `30dbcae4a` | REVIEWED_BLOCK_ACCEPTED_R1_REQUIRED; frozen install and 42/42 tests reproduced; build/typecheck remain blocked by exactly two source-local type errors outside original scope; narrow T3-R1 packet authoring next. |
@@ -275,15 +276,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t4_dispatched_worker_next`
+Mode: `sot3_app_t4_closed_t5_packet_authoring_next`
 
-T4 is dispatched at material commit `fdc00c96e`. Next allowed move is execute
-the exact no-commit work order
-`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md`
-for local Controlled Quotation proof. The worker must capture
-`executionBaseHead` from current HEAD and return `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. T5/service lanes, provider/model/live/browser,
-UI/public-sync/push/production remain parked.
+T4 is closed at material commit `1f815d7f5` with reviewer-owned work-order
+literal repair. Next allowed move is T5 packet authoring only: create a fresh
+source-verified GC-018/work order for optional operational/live proof and
+explicitly decide the provider/live boundary. T5 execution,
+provider/model/live/browser/UI/public-sync/push/production remain parked until
+that packet is committed.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

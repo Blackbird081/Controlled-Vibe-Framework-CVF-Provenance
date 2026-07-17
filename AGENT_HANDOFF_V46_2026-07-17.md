@@ -18,28 +18,29 @@ Governed File Size Guard.
 This handoff owns protected continuity routing only. Material commit
 `fef756a14` owns T7 acceptance and MAO-OA roadmap closure; material commit
 `4bb19d27d` owns SOT3-APP-T3 closure; material commit `fdc00c96e` owns
-SOT3-APP-T4 dispatch. It does not release T5, T6B, runtime/provider work,
-public-sync, or push.
+SOT3-APP-T4 dispatch; material commit `1f815d7f5` owns SOT3-APP-T4 closure.
+It does not release T5 execution, T6B, runtime/provider work, public-sync, or
+push.
 
 ## Active Boundary
 
-Active work is limited to SOT3-APP-T4 no-commit worker execution. No T5, T6B,
+Active work is limited to SOT3-APP-T5 packet authoring. No T5 execution, T6B,
 provider/model/live, network/live, browser/UI, public-sync, push, or production
-action is active.
+action is active until a fresh source-verified packet releases it.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_app_t4_dispatched_worker_next`;
+current mode=`sot3_app_t4_closed_t5_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=execute the exact no-commit SOT3-APP-T4 work order for local
-Controlled Quotation proof;
-parked checkpoint=T5 and later, MAO-OA-T6B, SCLP-X-T3, provider/model/live,
-runtime/live, UI/queue, public-sync, and push work.
+next allowed move=author fresh source-verified SOT3-APP-T5 packet for optional
+operational/live proof boundary decision;
+parked checkpoint=T5 execution, MAO-OA-T6B, SCLP-X-T3, provider/model/live,
+runtime/live, UI/queue, public-sync, and push work until fresh packet release.
 
 ## Current Mode
 
-`sot3_app_t4_dispatched_worker_next`
+`sot3_app_t4_closed_t5_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -150,6 +151,40 @@ Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 
 Rollback boundary: revert this seven-path protected continuity set together.
 No source implementation, registry, provider, or public artifact belongs here.
+
+## SOT3-APP-T4 Closure Continuity - 2026-07-17
+
+Material closure commit: `1f815d7f5`.
+
+Current mode: `sot3_app_t4_closed_t5_packet_authoring_next`.
+
+T4 closed as `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR`. The no-commit worker
+implemented the local Controlled Quotation proof and correctly returned
+`BLOCKED_WITH_REASON` for a forbidden-scope work-order literal defect. Reviewer
+repaired the work-order Worker Return Packet Shape Contract, reran
+pre-implementation PASS 77/77, and independently verified vertical-slice PASS,
+focused e2e 1/1 PASS, root test 30 files and 45 tests PASS, typecheck/build
+PASS, and doctor `healthy: true`.
+
+Next allowed move: T5 packet authoring only. T5 execution, provider/model/live,
+browser/UI, public-sync, push, and production remain parked until a fresh
+source-verified packet releases the exact boundary.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T4 Closure Sync
+
+Authorized protected scope: continuity synchronization after material closure
+commit `1f815d7f5`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT4Closure20260717.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No source implementation, registry, provider, public, or T5 packet artifact
+belongs here.
 
 ## Core Guard Self-Protection Authorization - SOT3-APP-T3 Block Review Sync
 
