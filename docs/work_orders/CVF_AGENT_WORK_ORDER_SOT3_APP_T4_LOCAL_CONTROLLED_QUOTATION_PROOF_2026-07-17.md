@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Batch ID: SOT3-APP-T4
 
@@ -368,21 +368,20 @@ individualCheckerSubstitution: FORBIDDEN
 
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
-Required sections: Purpose; Target / Source; Scope / Methodology; Findings /
-Position; Risk / Corrective Action; Checker Source Read-Ahead Block; Agent
-Operation Trace Block; Delta Execution Claim Boundary Control Block; External
-Knowledge Intake Routing; Corpus Completeness And Report Integrity; Rescan
-Intelligence Hardening; Finding-To-Governance Learning Disposition; Epistemic
-Process Block; Machine Closure Package; Public Export Disposition; Claim
-Boundary; git status --short; Changed Files; Command Evidence; No-Commit
-Statement.
+Required sections: Purpose; Target / Source; Scope / Methodology; Findings / Position; Risk / Corrective Action; Checker Source Read-Ahead Block; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; External Knowledge Intake Routing; Corpus Completeness And Report Integrity; Rescan Intelligence Hardening; Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine Closure Package; Public Export Disposition; Claim Boundary; git status --short; Changed Files; Command Evidence; No-Commit Statement.
+
+Required literal fields inside the worker return: executionBaseHead; git status
+--short.
+
+If any listed section or conditional control block is not applicable, the
+worker return must state N/A with reason inside that section.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_machine_closure_package.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Dependency Release Evidence; Source Verification Block; Roadmap-To-Work-Order Trace Matrix; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; Work-Order Fulfillment Manifest; Machine Closure Package; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | closed status token; Dispatch Prompt Envelope; Dependency Release Evidence; Source Verification Block; Roadmap-To-Work-Order Trace Matrix; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; Work-Order Fulfillment Manifest; Machine Closure Package; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm independently established source and dependency evidence before dispatch; gates are not first discovery |
 | claimBoundary | structural dispatch confirmation only; no implementation proof claim |
 
@@ -438,15 +437,30 @@ Statement.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| GC-018 status | paired baseline | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T4_DISPATCHED_WORKER_NEXT` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| GC-018 status | paired baseline | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS_WITH_REPAIR |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T4_CLOSED_T5_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 aggregate | no new provenance source path | PASS |
 | Registry Markdown | existing registry docs | unchanged | PASS |
-| Completion or reviewer artifact | future completion review | N/A with reason: worker has not executed |
-| External evidence digest | current fixture-only T4 baseline | script result `FIXTURE_HARNESS_NOT_GOVERNED_RUNTIME_EVIDENCE`; focused e2e 1/1 PASS | PASS |
-| System loop interlock | T3 closure -> T4 dispatch -> independent review | T4 execution only; later lanes parked | PASS |
-| Session continuity | protected sync after dispatch | reviewer/session-sync steward-owned | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T4_COMPLETION_REVIEW_2026-07-17.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| External evidence digest | local Controlled Quotation proof | `LOCAL_CONTROLLED_QUOTATION_REPLAY_PASS`; `REPLAY_RECEIPT_CHAIN_VERIFIED`; 16 receipts verified; sha256 `3534921E45340E73E24EFFFFC126D0467544782EBCEF5D4CA6B96D6F1C483F25` | PASS |
+| System loop interlock | T3 closure -> T4 dispatch -> T4 closure -> T5 packet authoring | T5/service/provider/live/public lanes parked until fresh packet | PASS |
+| Session continuity | protected sync after material closure | reviewer/session-sync steward-owned | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| `LOCAL_CONTROLLED_QUOTATION_REPLAY_PASS` | vertical-slice reviewer rerun reports exact status | PASS |
+| `REPLAY_RECEIPT_CHAIN_VERIFIED` | vertical-slice reviewer rerun reports exact receipt status | PASS |
+| 16 verified receipts | proof JSON reports `verified_receipts: 16` | PASS |
+
+## External Artifact Hash Manifest
+
+| Path | SHA-256 |
+|---|---|
+| `scripts/run-controlled-quotation.ts` | `3534921E45340E73E24EFFFFC126D0467544782EBCEF5D4CA6B96D6F1C483F25` |
+| `tests/e2e/controlled-quotation.e2e.test.ts` | `6E5AB8EE85049ECB3F52F3DECE73B4F3BFFABDCC82195701BF66B2EBB9A3FC62` |
 
 ## Public Export Disposition
 
@@ -457,7 +471,9 @@ authorized.
 
 ## Claim Boundary
 
-This work order authorizes exactly two external source/test outputs and two
-provenance returns. It authorizes no commit by the worker, no package/dependency
-change, no provider/live/browser/server/database/public/push/production/T5
-action, and no edits outside Allowed Scope.
+This work order is closed after deterministic local T4 proof acceptance with a
+reviewer-owned literal repair to this packet's Worker Return Packet Shape
+Contract. It claims only local in-process proof and receipt replay. It
+authorizes no commit by the worker, no package/dependency change, no
+provider/live/browser/server/database/public/push/production/T5 action, and no
+edits outside Allowed Scope.

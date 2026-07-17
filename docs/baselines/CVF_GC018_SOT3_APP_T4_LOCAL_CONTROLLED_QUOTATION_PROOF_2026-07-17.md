@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Batch ID: SOT3-APP-T4
 
@@ -165,7 +165,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_machine_closure_package.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dependency Release Evidence; Source Verification Block; Roadmap-To-Work-Order Trace Matrix; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Dual Agent Surface Matrix; Machine Closure Package; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | closed status token; Dependency Release Evidence; Source Verification Block; Roadmap-To-Work-Order Trace Matrix; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Dual Agent Surface Matrix; Machine Closure Package; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm independently established T4 dispatch evidence; gates are not first discovery |
 | claimBoundary | structural dispatch confirmation only; no implementation or runtime proof claim |
 
@@ -185,15 +185,30 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 status | this file | `Status: DISPATCH_READY` | PASS |
-| Work order status | paired T4 work order | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T4_DISPATCHED_WORKER_NEXT` | PASS |
+| GC-018 status | this file | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS_WITH_REPAIR |
+| Work order status | paired T4 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T4_CLOSED_T5_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 aggregate | no new provenance source path | PASS |
 | Registry Markdown | existing registry documentation | unchanged | PASS |
-| Completion or reviewer artifact | future completion review | N/A with reason: worker has not executed |
-| External evidence digest | current fixture-only T4 baseline | script result `FIXTURE_HARNESS_NOT_GOVERNED_RUNTIME_EVIDENCE`; focused e2e 1/1 PASS | PASS |
-| System loop interlock | T3 closure -> T4 dispatch -> independent review | T4 execution only; later lanes parked | PASS |
-| Session continuity | protected sync after dispatch | reviewer/session-sync steward-owned | N/A with reason |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T4_COMPLETION_REVIEW_2026-07-17.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| External evidence digest | local Controlled Quotation proof | `LOCAL_CONTROLLED_QUOTATION_REPLAY_PASS`; `REPLAY_RECEIPT_CHAIN_VERIFIED`; 16 receipts verified; sha256 `3534921E45340E73E24EFFFFC126D0467544782EBCEF5D4CA6B96D6F1C483F25` | PASS |
+| System loop interlock | T3 closure -> T4 dispatch -> T4 closure -> T5 packet authoring | T5/service/provider/live/public lanes parked until fresh packet | PASS |
+| Session continuity | protected sync after material closure | reviewer/session-sync steward-owned | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| `LOCAL_CONTROLLED_QUOTATION_REPLAY_PASS` | vertical-slice reviewer rerun reports exact status | PASS |
+| `REPLAY_RECEIPT_CHAIN_VERIFIED` | vertical-slice reviewer rerun reports exact receipt status | PASS |
+| 16 verified receipts | proof JSON reports `verified_receipts: 16` | PASS |
+
+## External Artifact Hash Manifest
+
+| Path | SHA-256 |
+|---|---|
+| `scripts/run-controlled-quotation.ts` | `3534921E45340E73E24EFFFFC126D0467544782EBCEF5D4CA6B96D6F1C483F25` |
+| `tests/e2e/controlled-quotation.e2e.test.ts` | `6E5AB8EE85049ECB3F52F3DECE73B4F3BFFABDCC82195701BF66B2EBB9A3FC62` |
 
 ## Public Export Disposition
 
@@ -203,8 +218,8 @@ Reason: private sibling application proof; no public export is authorized.
 
 ## Claim Boundary
 
-This baseline authorizes only deterministic local T4 worker implementation in
-the two listed external paths plus two provenance returns. It does not claim
-the proof has been implemented, and it authorizes no provider/live/browser,
-server, database, dependency, package, public-sync, push, production, or T5
-action.
+This baseline is closed after deterministic local T4 proof acceptance with a
+reviewer-owned work-order literal repair. It claims only local in-process
+source-to-freeze-impact-recall proof and receipt replay. It authorizes no
+provider/live/browser, server, database, dependency, package, public-sync,
+push, production, or T5 action.
