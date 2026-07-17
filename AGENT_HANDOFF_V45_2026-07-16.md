@@ -9,7 +9,7 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after MAO-OA-T6A governed dispatch. V44 was rotated at
+Carry compact continuity after MAO-OA-T6A governed closure. V44 was rotated at
 1,080 lines under the
 Governed File Size Guard; its history remains in the archive and canonical
 detail remains in the active state registry and governed artifacts.
@@ -17,17 +17,16 @@ detail remains in the active state registry and governed artifacts.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`7640a7ed8` owns the T6A dispatch packet and `3e259039a` owns accepted T5
-closure. Only the exact one-call no-commit T6A worker scope is authorized.
+`908bb4fe2` owns T6A material closure and `7640a7ed8` owns its dispatch.
+T6B is not released; only T7 closure packet authoring is next.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`mao_oa_t6a_dispatched_worker_next`;
+current mode=`mao_oa_t6a_closed_t7_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V45_2026-07-16.md`;
-next allowed move=execute the exact MAO-OA-T6A one-call no-commit calibration
-work order;
-parked checkpoint=MAO-OA-T6B through T7, SOT3-APP-T1 and later absorption,
+next allowed move=author and validate one fresh MAO-OA-T7 closure packet;
+parked checkpoint=MAO-OA-T6B not released, SOT3-APP-T1 and later absorption,
 unscoped provider/network/process/queue action, public work, and push.
 
 Latest closed numbered LHW wave remains `LHW24`.
@@ -43,9 +42,45 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`mao_oa_t6a_dispatched_worker_next`
+`mao_oa_t6a_closed_t7_packet_authoring_next`
 
-Previous mode: `mao_oa_t5_closed_t6_packet_authoring_next`.
+Previous mode: `mao_oa_t6a_dispatched_worker_next`.
+
+## MAO-OA-T6A Closure Continuity - 2026-07-17
+
+Material closure commit: `908bb4fe2`.
+
+The implementation and one-call/no-retry receipt are accepted. The live score,
+zero-defect result, and release-candidate value are not accepted because the
+sanitized candidate required for independent rescoring was not persisted. The
+reviewer repaired future runner evidence shape, added ADIF-0040, made no second
+provider call, and recorded `T6B_NOT_RELEASED`.
+
+Next allowed move: author and validate one fresh source-verified MAO-OA-T7
+closure packet. Later lanes remain parked.
+
+## Agent Operation Trace Block - MAO-OA-T6A Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | reviewer/closer and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T6A closure continuity sync, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, generator, continuity gates, apply_patch, git |
+| Target paths | seven protected session paths |
+| Allowed scope source | material closure `908bb4fe2`, Reviewer Closure Conversion, GC-020 continuity |
+| Before status evidence | clean material worktree at closure HEAD `908bb4fe2` |
+| After status evidence | V45 active; T6A closed bounded; T6B not released; T7 packet authoring next |
+| Diff evidence | protected session-only diff and generated-state checks |
+| Approval boundary | continuity synchronization after T6A closure only |
+| Claim boundary | no accepted live score, second call, T6B, T7 execution, public, or push claim |
+| Agent type | reviewer/closer and session-sync steward |
+| Invocation ID | `mao-oa-t6a-closure-session-sync-2026-07-17` |
+| Expected manifest | seven protected session paths |
+| Actual changed set | seven protected session paths |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
 
 ## MAO-OA-T6A Dispatch Continuity - 2026-07-17
 
@@ -255,12 +290,12 @@ Remain parked:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize T6A material dispatch
-`7640a7ed8`, release its exact no-commit worker execution, and park T6B-T7.
+Authorized guard-maintenance scope: synchronize T6A material closure
+`908bb4fe2`, record T6B not released, and release T7 packet authoring.
 
 Operator authorization: standing sequence authority releases the next
 source-verified packet after each accepted tranche; the handoff contract and
-GC-020 require protected continuity synchronization after material dispatch.
+GC-020 require protected continuity synchronization after material closure.
 
 Protected paths:
 
@@ -270,10 +305,10 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/maoOaT6aDispatch20260717.json`
+- `CVF_SESSION/state/entries/maoOaT6aClosure20260717.json`
 
 Rollback boundary: revert only this protected continuity batch; retain T6A
-dispatch `7640a7ed8`, T5 closure `3e259039a`, and prior material closures.
+closure `908bb4fe2`, dispatch `7640a7ed8`, and prior material closures.
 
 ## Public Export Disposition
 

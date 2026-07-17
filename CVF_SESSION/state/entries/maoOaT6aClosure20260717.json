@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1879,
+  "stateKey": "maoOaT6aClosure20260717",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_IMPLEMENTATION_LIVE_RESULT_NOT_ACCEPTED",
+    "date": "2026-07-17",
+    "materialCommit": "908bb4fe2",
+    "closureBaseHead": "63658c1e6",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md",
+    "workerReturn": "docs/reviews/CVF_MAO_OA_T6A_WORKER_RETURN_2026-07-17.md",
+    "completionReview": "docs/reviews/CVF_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_COMPLETION_REVIEW_2026-07-17.md",
+    "workerCommitBoundary": "WORKER_MUST_NOT_COMMIT honored at 63658c1e6 with exactly seven pending paths and nothing staged",
+    "acceptedEvidence": "Implementation, one provider call, zero retries, secret safety, focused 22/22, TypeScript, package 70 files and 1782 tests, GC-051, and reviewer-fast 62/62.",
+    "rejectedEvidence": "Worker score 100/100, zero defects, and release-candidate value were not independently recomputable because sanitized candidate input was absent.",
+    "reviewerRepair": "Runner now persists sanitizedCandidate in future authorized executions; current evidence records NOT_RECOMPUTABLE_MISSING_SANITIZED_CANDIDATE; no second call.",
+    "learningRecord": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0040.md",
+    "t6bDecision": "T6B_NOT_RELEASED",
+    "nextAllowedMove": "Author and validate one fresh source-verified MAO-OA-T7 closure packet.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+  }
+}
