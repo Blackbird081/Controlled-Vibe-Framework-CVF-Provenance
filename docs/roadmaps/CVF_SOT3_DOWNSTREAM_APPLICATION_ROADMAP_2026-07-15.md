@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T0B_CLOSED_PASS_BOUNDED_MAO_ROADMAP_AUTHORING_NEXT
+Status: SOT3_APP_T1_DISPATCHED_WORKER_NEXT
 
 docType: roadmap
 
@@ -34,10 +34,11 @@ hidden-clone declaration inventory, and exact reviewer-selected 20-file
 semantic calibration sample. T0A is reviewer-accepted with repairs. The fresh
 T0B executed from `6f7393ed0` and is independently accepted with one
 consolidated reviewer repair. The full 336-row semantic ledger and all 13
-terminal provenance decisions are closed as static evidence. SOT3-APP T1 and
-all later absorption/implementation tranches are now parked behind the MAO
-Operational Adoption And Agent Execution Assurance roadmap, which must be
-authored and completed before this roadmap may resume.
+terminal provenance decisions are closed as static evidence. The separately
+required MAO Operational Adoption And Agent Execution Assurance roadmap closed
+at material commit `fef756a14`. Fresh SOT3-APP-T1 GC-018 and work-order
+artifacts now dispatch documentation-only contract ratification; T2 and every
+later implementation/runtime tranche remain parked.
 
 ## Purpose
 
@@ -72,9 +73,9 @@ owners before modifying the sibling source.
 
 | Control | Decision |
 |---|---|
-| current active tranche | T0B closed bounded; no SOT3-APP execution tranche is active |
+| current active tranche | SOT3-APP-T1 documentation worker dispatched; independent review remains required |
 | committed packet | prior paired T0 GC-018 and work order are held and must not be executed |
-| scheduling release | MAO Operational Adoption And Agent Execution Assurance roadmap authoring only; T1 and later SOT3-APP/absorption work remain parked |
+| scheduling release | MAO-OA closure `fef756a14` releases T1 only; T2 and later remain parked |
 | source mutation | forbidden until a later source-verified implementation work order passes pre-dispatch |
 | hidden-clone coupling | T0A enumerates every declaration; T0B retains terminal sever/govern/block decisions |
 | runtime/live | separately authorized only in tranches whose acceptance requires it |
@@ -149,8 +150,11 @@ in `docs/reviews/CVF_SOT3_APP_T0A_COMPLETION_2026-07-16.md`.
 T0B consumed the accepted calibration, all 316 residual semantic obligations,
 all 13 declaration decisions, and the three missing declared targets. The
 independent reviewer accepted the repaired 336-row/13-row evidence with zero
-unresolved identities. T1 and every later SOT3-APP or absorption tranche remain
-held behind completion of the separately governed MAO adoption roadmap.
+unresolved identities. The separately governed MAO adoption roadmap closed at
+material commit `fef756a14`, satisfying the T1 scheduling dependency. T1 is
+dispatched as a documentation-only ratification tranche from clean base
+`d10dfe7bc`. T2 and every later SOT3-APP tranche remain held until independent
+T1 review closure.
 
 ## T0A Dispatch Packet
 
@@ -178,6 +182,19 @@ held behind completion of the separately governed MAO adoption roadmap.
 | accepted ledger | `docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md`; `ACCEPTED_BY_REVIEWER_WITH_REPAIRS` |
 | accepted worker return | `docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md`; `ACCEPTED_BY_REVIEWER_WITH_REPAIRS` |
 | completion review | `docs/reviews/CVF_SOT3_APP_T0B_COMPLETION_2026-07-16.md`; `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` |
+
+## T1 Dispatch Packet
+
+| Field | Value |
+|---|---|
+| dispatchBaseHead | `d10dfe7bc` |
+| accepted predecessor | T0B material commit `577237cba`; `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` |
+| scheduling dependency | MAO-OA roadmap material closure `fef756a14` |
+| GC-018 | `docs/baselines/CVF_GC018_SOT3_APP_T1_DOWNSTREAM_CONTRACT_RATIFICATION_AND_CONTINUATION_MATRIX_2026-07-17.md` |
+| work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_DOWNSTREAM_CONTRACT_RATIFICATION_AND_CONTINUATION_MATRIX_2026-07-17.md` |
+| worker outputs | exact contract-ratification matrix and worker return under `docs/reviews/` |
+| commit mode | `WORKER_MUST_NOT_COMMIT` |
+| execution boundary | documentation/source verification only; copied folder and CVF source remain read-only; T2 parked |
 | commit mode | `WORKER_MUST_NOT_COMMIT` |
 | execution boundary | 336 semantic rows and 13 provenance rows only; no source/runtime/test/build/live/public mutation |
 
@@ -311,7 +328,7 @@ authoring and completion is the only next roadmap lane.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | Status: T0B_CLOSED_PASS_BOUNDED_MAO_ROADMAP_AUTHORING_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; COMPLETE_VERIFIED; Public Export Disposition; Machine Closure Package; Claim Boundary |
+| literalTokensReviewed | Status: SOT3_APP_T1_DISPATCHED_WORKER_NEXT; Authorization / Decision; Purpose; Scope; Non-Goals; Dispatch Boundary; Work Plan; Acceptance Criteria; Verification Evidence; Dependency And Sequence Control; T0A Dispatch Packet; T0B Dispatch Packet; T1 Dispatch Packet; External Repository Absorption Entry Control; Mandatory Blind-Spot Control Block; External Absorption Core; External Absorption Value Conversion Matrix; Overlap And Novelty Classification; External Knowledge Intake Routing; Public Export Disposition; Machine Closure Package; Claim Boundary |
 | gateRunPurpose | confirm T0B reviewer closure structure after independent semantic and objective recomputation |
 | claimBoundary | structural confirmation only; no source, runtime, or product proof |
 
@@ -337,11 +354,11 @@ public-safe artifact set exists.
 | Worker ledger | `docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS`; semantic_terminal=336; declaration_terminal=13 | PASS_WITH_REPAIR |
 | Worker return | `docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS_WITH_REPAIR |
 | Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T0B_COMPLETION_2026-07-16.md` | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
-| Roadmap state | this artifact | `Status: T0B_CLOSED_PASS_BOUNDED_MAO_ROADMAP_AUTHORING_NEXT` | PASS |
+| Roadmap state | this artifact | `Status: SOT3_APP_T1_DISPATCHED_WORKER_NEXT` | PASS |
 | Registry JSON | N/A with reason: no registry JSON is required or changed | no generated registry mutation | PASS |
 | Registry Markdown | N/A with reason: no registry Markdown is required or changed | no registry mutation | PASS |
 | External evidence digest | accepted T0B ledger | 336 files; 238522 bytes; sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee`; declaration inventory | PASS |
-| System loop interlock | T0B accepted output -> MAO roadmap authoring | T1 and later absorption parked until MAO completion | PASS |
+| System loop interlock | T0B accepted output -> MAO-OA closure -> T1 dispatch | T2 and later remain parked until T1 review closure | PASS |
 | Session continuity | active session front door, state, and handoff | separate sync after material commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
@@ -354,10 +371,10 @@ public-safe artifact set exists.
 
 ## Claim Boundary
 
-This roadmap records an operator-authorized sequence and a completed,
-independently accepted two-phase full-corpus T0 route. It accepts static
-semantic/provenance evidence only. It does not ratify application contracts,
-authorize source mutation or T1, prove build/runtime/live behavior, promote the
-application into CVF Core, or claim public or production readiness. MAO roadmap
-authoring and completion is the only next roadmap lane before absorption may
-resume.
+This roadmap records an operator-authorized sequence, a completed and
+independently accepted two-phase full-corpus T0 route, MAO-OA dependency
+closure, and T1 documentation dispatch. It accepts static semantic/provenance
+evidence only until the T1 reviewer accepts direct-source contract evidence.
+It does not ratify application contracts in advance, authorize source mutation
+or T2, prove build/runtime/live behavior, promote the application into CVF
+Core, or claim public or production readiness.
