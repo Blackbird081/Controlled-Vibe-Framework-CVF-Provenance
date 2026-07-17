@@ -2,11 +2,11 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: DISPATCH_READY_R1
 
 Batch ID: SOT3-APP-T2
 
-Dispatch base head: `e023be9f9`
+Dispatch base head: `772774fd1`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -51,7 +51,8 @@ status, unchanged HEAD, and the worker-return fast gate.
 |---|---|---|---|
 | T1 contract inventory closure | `docs/reviews/CVF_SOT3_APP_T1_R3_COMPLETION_REVIEW_2026-07-17.md`; material commit `f193bf2e9`; status closed bounded with reviewer repairs | accepted caller-edge closure with zero unresolved | SATISFIED |
 | roadmap authorization | `docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md`; T2 row and acceptance criteria | T1 closed and fresh source verification completed | SATISFIED |
-| clean packet-authoring base | session-sync commit `e023be9f9` | no unresolved worker changes | SATISFIED |
+| R1 packet-authoring base | session-sync commit `772774fd1` | original worker stopped before external edits; independent blocked-return review accepted packet repair and redispatch | SATISFIED |
+| original T2 blocked return | `docs/reviews/CVF_SOT3_APP_T2_WORKER_RETURN_2026-07-17.md` plus `docs/reviews/CVF_SOT3_APP_T2_BLOCKED_RETURN_REVIEW_AND_R1_REDISPATCH_2026-07-17.md` | zero external-path mutation and dispatcher-owned packet defect | SATISFIED |
 | T3 release | T2 independent closure does not exist | keep later tranche parked | SATISFIED_WITH_HOLD: T3 execution remains parked |
 
 ## Source Verification Block
@@ -97,7 +98,7 @@ Exactly these external source/test paths may be modified or created:
 Exactly two private-provenance worker outputs are allowed:
 
 - `docs/reviews/CVF_SOT3_APP_T2_EXTERNAL_SOURCE_PATCH_AND_TEST_EVIDENCE_2026-07-17.md`
-- `docs/reviews/CVF_SOT3_APP_T2_WORKER_RETURN_2026-07-17.md`
+- `docs/reviews/CVF_SOT3_APP_T2_R1_WORKER_RETURN_2026-07-17.md`
 
 ## Forbidden Scope
 
@@ -156,7 +157,7 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "downs
 | route | SINGLE_AGENT_SINGLE_ROLE |
 | rolePattern | delegated implementation worker followed by independent reviewer/closer |
 | phase | implementation worker return |
-| baseHeadFor(phase) | dispatchBaseHead=`e023be9f9`; executionBaseHead=worker captures committed dispatch HEAD; closureBaseHead=reviewer sets |
+| baseHeadFor(phase) | dispatchBaseHead=`772774fd1`; executionBaseHead=worker captures committed dispatch HEAD; closureBaseHead=reviewer sets |
 | changedSetScope(phase) | nine exact external paths plus two exact provenance review outputs |
 | traceScope(phase, actor) | worker records external hashes, commands, counters, provenance Git boundary, and no-commit evidence |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT; reviewer owns private-provenance material commit |
@@ -189,7 +190,7 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "downs
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: DISPATCH_READY_R1; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; ADIF Defect Registry Disclosure; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm evidence supporting a source-verified T2 dispatch packet |
 | claimBoundary | structural confirmation only; no implementation, test, or runtime proof |
 
@@ -197,9 +198,9 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "downs
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 status | this artifact | `Status: DISPATCH_READY` | PASS |
-| Work order status | paired T2 work order | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T2_DISPATCHED_WORKER_NEXT` | PASS |
+| GC-018 status | this artifact | `Status: DISPATCH_READY_R1` | PASS |
+| Work order status | paired T2 work order | `Status: DISPATCH_READY_R1` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T2_R1_DISPATCHED_WORKER_NEXT` | PASS |
 | Registry JSON | existing GC-051 aggregate | no new provenance source path until worker outputs exist | PASS |
 | Registry Markdown | existing registry documentation | unchanged at dispatch | PASS |
 | Completion or reviewer artifact | future T2 completion review | reviewer-owned following worker return | N/A with reason |

@@ -2,11 +2,11 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: DISPATCH_READY_R1
 
 Batch ID: SOT3-APP-T2
 
-Dispatch base head: `e023be9f9`
+Dispatch base head: `772774fd1`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -14,7 +14,7 @@ Worker: delegated implementation worker
 
 Reviewer/closer: independent reviewer/closer
 
-Worker return path: `docs/reviews/CVF_SOT3_APP_T2_WORKER_RETURN_2026-07-17.md`
+Worker return path: `docs/reviews/CVF_SOT3_APP_T2_R1_WORKER_RETURN_2026-07-17.md`
 
 ## Dispatch Prompt Envelope
 
@@ -87,7 +87,8 @@ Scope. Reviewer owns closure, registry, roadmap, commit, and session surfaces.
 | accepted T1 closure | `docs/reviews/CVF_SOT3_APP_T1_R3_COMPLETION_REVIEW_2026-07-17.md`; commit `f193bf2e9` | zero unresolved direct-invocation/caller edges | SATISFIED |
 | T1 implementation requirements | `docs/reviews/CVF_SOT3_APP_T1_DOWNSTREAM_CONTRACT_RATIFICATION_AND_CONTINUATION_MATRIX_2026-07-17.md`; T2 Implementation Requirements | expiry and negative path routed to T2 | SATISFIED |
 | roadmap trace | `docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md`; T2 row and acceptance criteria | T1 accepted before T2 dispatch | SATISFIED |
-| dispatch base | session-sync `e023be9f9` | clean provenance worktree | SATISFIED |
+| R1 dispatch base | session-sync `772774fd1` | original worker stopped before external edits; reviewer accepted the block and repaired only governed packet surfaces | SATISFIED |
+| original T2 blocked return | `docs/reviews/CVF_SOT3_APP_T2_WORKER_RETURN_2026-07-17.md` plus `docs/reviews/CVF_SOT3_APP_T2_BLOCKED_RETURN_REVIEW_AND_R1_REDISPATCH_2026-07-17.md` | independent review confirmed a packet-shape defect and zero external-path mutation | SATISFIED |
 | later tranche | no T2 independent closure | keep T3 and later parked | SATISFIED_WITH_HOLD: no later execution |
 
 ## Source Verification Block
@@ -133,7 +134,7 @@ Allowed external paths only:
 Allowed provenance outputs only:
 
 - `docs/reviews/CVF_SOT3_APP_T2_EXTERNAL_SOURCE_PATCH_AND_TEST_EVIDENCE_2026-07-17.md`
-- `docs/reviews/CVF_SOT3_APP_T2_WORKER_RETURN_2026-07-17.md`
+- `docs/reviews/CVF_SOT3_APP_T2_R1_WORKER_RETURN_2026-07-17.md`
 
 ## Forbidden Scope
 
@@ -336,7 +337,7 @@ pnpm test
 Run from the private provenance repository:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base e023be9f9 --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 772774fd1 --head HEAD
 python governance/compat/run_worker_return_fast_gate.py
 git status --short
 git rev-parse --short HEAD
@@ -363,7 +364,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | SINGLE_AGENT_SINGLE_ROLE |
 | rolePattern | one implementation worker; one independent reviewer/closer |
 | phase | implementation worker return |
-| baseHeadFor(phase) | dispatchBaseHead=`e023be9f9`; executionBaseHead=captured post-dispatch HEAD; closureBaseHead=reviewer-owned |
+| baseHeadFor(phase) | dispatchBaseHead=`772774fd1`; executionBaseHead=captured post-dispatch HEAD; closureBaseHead=reviewer-owned |
 | changedSetScope(phase) | nine external paths plus two provenance review outputs |
 | traceScope(phase, actor) | hashes, commands, counters, test results, Git status, and no-commit evidence |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT |
@@ -381,7 +382,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 
 ## Worker Return Packet Shape Contract
 
-workerReturnPath: `docs/reviews/CVF_SOT3_APP_T2_WORKER_RETURN_2026-07-17.md`
+workerReturnPath: `docs/reviews/CVF_SOT3_APP_T2_R1_WORKER_RETURN_2026-07-17.md`
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
@@ -391,21 +392,36 @@ individualCheckerSubstitution: FORBIDDEN
 
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
-The worker return must use real sections named Purpose, Scope / Methodology,
+Required scalar: executionBaseHead
+
+Required evidence section: Delta Execution Claim Boundary Control Block
+
+Required conditional section: Rescan Intelligence Hardening
+
+Required conditional section: Corpus Completeness And Report Integrity
+
+Required conditional section: Machine Closure Package
+
+Required disposition section: Public Export Disposition
+
+Required status section: git status --short
+
+Conditional non-applicability instruction: N/A with reason or NOT_APPLICABLE_WITH_REASON.
+
+The worker return must also use real sections named Purpose, Scope / Methodology,
 Findings / Position, Risk / Corrective Action, Checker Source Read-Ahead Block,
-Agent Operation Trace Block, Delta Execution Claim Boundary Control Block,
-External Knowledge Intake Routing, Rescan Intelligence Hardening, Corpus
-Completeness And Report Integrity, Finding-To-Governance Learning Disposition,
-Epistemic Process Block, Public Export Disposition, Claim Boundary, git status
---short, Changed Files, Worker Experience Retrospective, Command Evidence, and
-No-Commit Statement. Do not write heading syntax inside a checklist.
+Agent Operation Trace Block, External Knowledge Intake Routing,
+Finding-To-Governance Learning Disposition, Epistemic Process Block, Public
+Export Disposition, Claim Boundary, Changed Files, Worker Experience
+Retrospective, Command Evidence, and No-Commit Statement. Do not write heading
+syntax inside a checklist.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status: DISPATCH_READY_R1; Dispatch Prompt Envelope; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirm evidence supporting a source-verified, exact-manifest no-commit implementation dispatch |
 | claimBoundary | structural confirmation does not prove implementation, tests, or downstream runtime behavior |
 
@@ -460,9 +476,9 @@ No-Commit Statement. Do not write heading syntax inside a checklist.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `Status: DISPATCH_READY` | PASS |
-| GC-018 status | paired T2 baseline | `Status: DISPATCH_READY` | PASS |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T2_DISPATCHED_WORKER_NEXT` | PASS |
+| Work order status | this file | `Status: DISPATCH_READY_R1` | PASS |
+| GC-018 status | paired T2 baseline | `Status: DISPATCH_READY_R1` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T2_R1_DISPATCHED_WORKER_NEXT` | PASS |
 | Registry JSON | existing GC-051 aggregate | no new provenance output exists at dispatch | PASS |
 | Registry Markdown | existing registry documentation | unchanged at dispatch | PASS |
 | Completion or reviewer artifact | future T2 completion review | reviewer-owned | N/A with reason |
