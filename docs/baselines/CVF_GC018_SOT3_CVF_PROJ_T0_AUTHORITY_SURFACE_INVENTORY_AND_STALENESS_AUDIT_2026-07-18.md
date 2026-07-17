@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 Date: 2026-07-18
 
@@ -116,7 +116,7 @@ Returned defects: NONE_RETURNED
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_markdown_structural_completeness.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Purpose; Proposed Tranche / Decision; Scope / Target / Owner Boundary; Authority Surface Seed Manifest; Source Verification Block; New Doc-Only Fields; Verification / Evidence; Acceptance Criteria; Dual Agent Surface Matrix; ADIF Defect Registry Disclosure; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status; Purpose; Proposed Tranche / Decision; Scope / Target / Owner Boundary; Authority Surface Seed Manifest; Source Verification Block; New Doc-Only Fields; Verification / Evidence; Acceptance Criteria; Dual Agent Surface Matrix; ADIF Defect Registry Disclosure; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirmation and dispatch evidence after checker-source read-ahead, not first discovery |
 | claimBoundary | structural read-ahead only; source truth and ledger semantics remain independently reviewable |
 
@@ -131,6 +131,32 @@ Returned defects: NONE_RETURNED
 | checkerReadAheadConfirmation | applicable checkers are listed in the read-ahead block |
 | docOnlyNewFields | `surfaceClass`; `sot3Freshness`; `targetTranche`; `editDisposition` |
 | claimBoundary | dispatch-authoring provenance only |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | paired SOT3-CVF-PROJ-T0 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T0_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS` | PASS |
+| Ledger | T0 authority-surface ledger | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS |
+| Worker return | T0 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS |
+| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T0_PASS_BOUNDED_WEB_INHERITANCE_T0_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | existing GC-051 source coverage plus aggregate | changed-corpus coverage and aggregate drift checks PASS; no new scope path required | PASS |
+| Registry Markdown | existing GC-051 registry documentation | current registry contract already covers the changed review family | PASS |
+| External evidence digest | N/A with reason: all evidence is repository-local | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate post-material sync commit | N/A with reason |
+
+## Current Runtime Freshness Verification
+
+The reviewer re-read the current runtime owners before closure. `RefineryEngine`
+exists in `EXTENSIONS/CVF_REFINERY/src/pipeline/engine.ts`,
+`TruthKernel.evaluate` exists in `EXTENSIONS/CVF_TRUTH_KERNEL/src/kernel.ts`,
+and `DistributionEngine` exists in
+`EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts`. Therefore
+the stale catalog absence claims remain contradicted by current source; no
+runtime-absence claim from the dispatch packet is carried into closure.
 
 ## Public Export Disposition
 

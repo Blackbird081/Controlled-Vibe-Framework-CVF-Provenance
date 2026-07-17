@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 Date: 2026-07-18
 
@@ -247,14 +247,14 @@ performed. Fast-gate PASS alone is not acceptance.
 
 ## Closure Checklist
 
-- [ ] 15 seed rows independently reconciled;
-- [ ] stale/no-runtime contradiction independently confirmed;
-- [ ] target-tranche routing accepted or repaired;
-- [ ] exact two-path changed set confirmed;
-- [ ] no stage or commit by worker confirmed;
-- [ ] reviewer-fast and commit-steward gates pass;
-- [ ] roadmap T0 state updated only by reviewer if accepted;
-- [ ] session state synchronized separately after material commit.
+- [x] 15 seed rows independently reconciled;
+- [x] stale/no-runtime contradiction independently confirmed;
+- [x] target-tranche routing accepted with bounded reviewer repairs;
+- [x] exact two-path worker changed set confirmed;
+- [x] no stage or commit by worker confirmed;
+- [x] reviewer-fast and commit-steward gates pass before material commit;
+- [x] roadmap T0 state updated only by reviewer after acceptance;
+- [x] session continuity assigned to a separate post-material sync commit.
 
 ## Stop Conditions
 
@@ -389,7 +389,7 @@ git rev-parse --short HEAD
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | Status: DISPATCH_READY; Dispatch Prompt Envelope; Role:; Canonical packet:; Commit mode:; executionBaseHead; Current-time notes:; Do-not-misread notes:; Required first actions:; Return contract:; Authority Chain; Scope / Target / Owner Boundary; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Execution Plan; Evidence Requirements; Planned Worker Fulfillment Manifest; Acceptance Criteria; Review Gate; Closure Checklist; Stop Conditions; Worker Autonomy / No-Question Rule; Dual Agent Surface Matrix; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; COMPLETE_PENDING_REVIEW; BLOCKED_WITH_REASON; WORKER_MUST_NOT_COMMIT; Public Export Disposition; Claim Boundary |
+| literalTokensReviewed | Status; Dispatch Prompt Envelope; Role; Canonical packet; Commit mode; executionBaseHead; Current-time notes; Do-not-misread notes; Required first actions; Return contract; Authority Chain; Scope / Target / Owner Boundary; Dependency Release Evidence; Source Verification Block; New Doc-Only Fields; Roadmap-To-Work-Order Trace Matrix; Execution Plan; Evidence Requirements; Planned Worker Fulfillment Manifest; Acceptance Criteria; Review Gate; Closure Checklist; Stop Conditions; Worker Autonomy / No-Question Rule; Dual Agent Surface Matrix; Agent Handoff Contract Control Block; Reviewer Closure Conversion; Worker Return Packet Shape Contract; COMPLETE_PENDING_REVIEW; BLOCKED_WITH_REASON; WORKER_MUST_NOT_COMMIT; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | confirmation and dispatch evidence after checker-source read-ahead, not first discovery |
 | claimBoundary | structural dispatch and output-shape evidence only; semantic ledger acceptance remains reviewer-owned |
 
@@ -439,6 +439,41 @@ git rev-parse --short HEAD
 | interceptionBoundary | no IDE, shell, filesystem, provider, or agent-action interception claim |
 | claimLanguage | audit, classify, reconcile, and route only |
 | forbiddenExpansion | runtime/source/test mutation, provider/live, public-sync, push, production, browser/UI, queue/daemon, and universal SOT3 claims |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired SOT3-CVF-PROJ-T0 GC-018 | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T0_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS` | PASS |
+| Ledger | T0 authority-surface ledger | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS |
+| Worker return | T0 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS |
+| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T0_PASS_BOUNDED_WEB_INHERITANCE_T0_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | existing GC-051 source coverage plus aggregate | changed-corpus coverage and aggregate drift checks PASS; no new scope path required | PASS |
+| Registry Markdown | existing GC-051 registry documentation | current registry contract already covers the changed review family | PASS |
+| External evidence digest | N/A with reason: all evidence is repository-local | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate post-material sync commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: documentation-only audit | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: no runtime query | N/A_WITH_REASON |
+| Worker-return acceptance | independently recomputed and repaired by reviewer | PASS |
+| Closure claim | bounded inventory evidence only | PASS |
+
+## Current Runtime Freshness Verification
+
+The reviewer re-read the current runtime owners before closure. `RefineryEngine`
+exists in `EXTENSIONS/CVF_REFINERY/src/pipeline/engine.ts`,
+`TruthKernel.evaluate` exists in `EXTENSIONS/CVF_TRUTH_KERNEL/src/kernel.ts`,
+and `DistributionEngine` exists in
+`EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts`. Therefore
+the stale catalog absence claims remain contradicted by current source; no
+runtime-absence claim from the dispatch packet is carried into closure.
 
 ## Public Export Disposition
 
