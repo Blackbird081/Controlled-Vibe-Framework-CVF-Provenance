@@ -26,26 +26,25 @@ persistence, or raw provider payload persistence.
 
 ## Active Boundary
 
-SOT3-CVF-PROJ-T0 is dispatched at material commit `69cf579f4`. The next
-allowed move is execution of the exact no-commit authority-surface audit. The
-worker may create only the named ledger and worker return. T1-T4 and all
-architecture/catalog/README edits remain parked, as do runtime/test/provider/
-live work, public-sync, push, production, browser/UI, queue/daemon, generated
-aggregate/registry/session mutation, MAO-OA-T6B, and SCLP-X-T3.
+SOT3-CVF-PROJ-T0 is independently accepted at material commit `9d8305942`.
+The next allowed move is authoring a fresh CVF-WEB-INHERITANCE-T0 audit packet.
+Projection T1-T4 and all Web implementation remain parked, as do runtime/
+provider/live work, public-sync, push, production, browser/UI, queue/daemon,
+MAO-OA-T6B, and SCLP-X-T3.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_cvf_proj_t0_dispatched_worker_next`;
+current mode=`sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=execute only the committed SOT3-CVF-PROJ-T0 no-commit audit;
+next allowed move=author the fresh CVF-WEB-INHERITANCE-T0 audit packet;
 parked checkpoint=later lanes, MAO-OA-T6B, SCLP-X-T3, browser/UI, public-sync,
 push, production, session-state mutation, extra provider calls, retries, raw
 key persistence, and raw provider payload persistence.
 
 ## Current Mode
 
-`sot3_cvf_proj_t0_dispatched_worker_next`
+`sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -613,6 +612,38 @@ public-sync, or push.
 | Actual changed set | `AGENT_HANDOFF_V46_2026-07-17.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## SOT3-CVF-PROJ-T0 Closure Continuity - 2026-07-18
+
+Material closure commit: `9d8305942`.
+
+Current mode:
+`sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next`.
+
+Independent review accepted 15/15 terminal seed rows after five bounded
+repairs: editable catalog-source ownership, 20-file corpus arithmetic,
+two-row public-risk arithmetic, activation-specific A1-A5 evidence, and exact
+worker read-method wording. Freshness remains 6 stale, 6 missing, and 3
+no-change-with-reason. Projection T1-T4 remain parked.
+
+Next allowed move: author a fresh source-verified CVF-WEB-INHERITANCE-T0
+capability-to-Web audit packet before any Web implementation.
+
+## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T0 Closure Sync
+
+Authorized protected scope: bounded continuity synchronization after material
+closure commit `9d8305942`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3CvfProjT0Closure20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No roadmap, baseline, work order, review, source, registry, or public artifact
+changes belong to this sync.
 
 ## SOT3-APP-T1 Dispatch Continuity - 2026-07-17
 

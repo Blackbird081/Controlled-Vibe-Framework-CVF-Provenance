@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_cvf_proj_t0_dispatched_worker_next",
-  "previousMode": "sot3_app_closed_bounded_live_proof_next",
+  "currentMode": "sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next",
+  "previousMode": "sot3_cvf_proj_t0_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13106,7 +13106,6 @@
     "heldNextTranche": "MAO-OA-T6B, SCLP-X-T3, public-sync, push, production, browser/UI, queue/daemon, additional provider calls, retries, raw key persistence, and raw provider payload persistence remain parked.",
     "claimBoundary": "One private sibling application governed-output path made one real provider call after ALLOW context and preserved secret-safe evidence. No production, public, browser/UI, queue/daemon, scale, certification, or universal SOT3 behavior is claimed."
   },
-  "nextAllowedMove": "Execute only the committed SOT3-CVF-PROJ-T0 authority-surface inventory work order at material commit 69cf579f4 under WORKER_MUST_NOT_COMMIT. The worker may create exactly the two named review outputs, must capture executionBaseHead from the committed dispatch HEAD, and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T1-T4, architecture/catalog/README mutation, runtime/test/provider/live work, public-sync, push, production, browser/UI, queue/daemon, generated aggregate mutation, registry mutation, session mutation, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave.",
   "sot3CvfProjT0Dispatch20260718": {
     "status": "DISPATCH_READY",
     "materialCommit": "69cf579f4",
@@ -13124,5 +13123,23 @@
     "nextAllowedMove": "Execute the exact T0 no-commit worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
     "heldNextTranche": "T1-T4 and all architecture/catalog/README edits remain parked pending independent T0 acceptance.",
     "claimBoundary": "Documentation-only authority-surface audit dispatch; no architecture/catalog/README mutation, runtime/test/provider/live action, public-sync, push, production, browser/UI, queue/daemon, generated aggregate mutation, registry mutation, or session mutation by the worker."
+  },
+  "nextAllowedMove": "Author a fresh source-verified CVF-WEB-INHERITANCE-T0 capability-to-Web audit GC-018 and no-commit work order from material closure commit 9d8305942. Audit SOT3, MAO, Controlled Quotation, freeze/recall, package dependencies, runtime-module registry freshness, operator visibility, and README/version drift before any Web implementation. SOT3-CVF-PROJ-T1 through T4, Web implementation, browser/live/provider work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "sot3CvfProjT0Closure20260718": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS",
+    "materialCommit": "9d8305942",
+    "executionBaseHead": "d187802fc",
+    "roadmap": "docs/roadmaps/CVF_SOT3_CVF_AUTHORITY_SURFACE_AND_MASTER_ARCHITECTURE_PROJECTION_ROADMAP_2026-07-18.md",
+    "completionReview": "docs/reviews/CVF_SOT3_CVF_PROJ_T0_COMPLETION_REVIEW_2026-07-18.md",
+    "seedSurfaceCount": 15,
+    "totalFilesRead": 20,
+    "freshnessCounts": "STALE=6; MISSING=6; NO_CHANGE_WITH_REASON=3",
+    "editDispositionCounts": "UPDATE=5; ADD_POINTER=6; REGENERATE_FROM_SOURCE=1; DEFER_WITH_REASON=3",
+    "targetTrancheCounts": "T1=5; T2=6; T3=2; T4=2",
+    "reviewerRepairs": "catalog source ownership; corpus arithmetic; public-risk arithmetic; activation evidence authority; full-read method wording",
+    "verification": "worker no-commit preserved; reviewer-fast 62/62 PASS; pre-commit 83/83 PASS; corpus integrity PASS; file-size PASS; post-commit pre-closure passed all material checks and required only this separate continuity sync",
+    "nextAllowedMove": "Author CVF-WEB-INHERITANCE-T0 audit packet before releasing any projection implementation tranche.",
+    "heldNextTranche": "SOT3-CVF-PROJ-T1 through T4 and all Web implementation remain parked.",
+    "claimBoundary": "Bounded documentation inventory closure only; no authority-surface edit, Web implementation, runtime/provider/live action, public-sync, push, or production claim."
   }
 }

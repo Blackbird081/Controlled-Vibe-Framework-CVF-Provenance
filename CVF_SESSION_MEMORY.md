@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_cvf_proj_t0_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute only the committed SOT3-CVF-PROJ-T0 no-commit authority-surface audit; parked checkpoint=T1-T4, architecture/catalog/README mutation, runtime/test/provider/live work, browser/UI, queue/daemon, public-sync, push, production, generated aggregate/registry/session mutation, MAO-OA-T6B, and SCLP-X-T3.
+Startup acknowledged: current mode=`sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=author the CVF-WEB-INHERITANCE-T0 audit packet; parked checkpoint=SOT3-CVF-PROJ-T1-T4, Web implementation, runtime/provider/live work, browser/UI, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3.
 
 ## Current Mode
 
-Current mode marker: `sot3_cvf_proj_t0_dispatched_worker_next`
+Current mode marker: `sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next`
 
-Current mode: `sot3_cvf_proj_t0_dispatched_worker_next`
+Current mode: `sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next`
 
-`sot3_cvf_proj_t0_dispatched_worker_next`
+`sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next`
 
 Previous mode:
 
-`sot3_app_closed_bounded_live_proof_next`
+`sot3_cvf_proj_t0_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-CVF-PROJ-T0 authority-surface audit closure | `9d8305942` | REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS; 15/15 seed rows terminal; 20 files read; freshness 6/6/3; edit routing 5/6/1/3; tranche routing 5/6/2/2; catalog ownership, corpus/public-risk arithmetic, activation evidence, and method wording repaired; Web inheritance T0 packet authoring next. |
 | SOT3-APP-T5 operational live-provider proof closure and SOT3-APP roadmap closure | `c408c7116` | CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED; worker honored WORKER_MUST_NOT_COMMIT; one real provider call after ALLOW context, zero retries, sanitized evidence sha256 `FE936B13D3B45B7E533A418030048F1336F50AC4B18FDC687C56C5986E0DDE15`; reviewer reran non-live sibling verification, worker-fast PASS, reviewer-fast 62/62, commit-steward, and pre-commit 83/83 PASS; no next SOT3-APP tranche remains released. |
 | SOT3-APP-T5 operational live-provider proof dispatch | `b21ee86d1` | DISPATCH_READY after pre-dispatch 75/75, dispatch-quality enforce, commit-steward, and pre-commit 83/83 PASS; exact one-call/no-retry no-commit worker may add a minimal sibling live adapter, fake-fetch test, one-call runner, sanitized evidence JSON, and worker return; root keys are process-env only, no raw key/payload persistence; later lanes remain parked. |
 | SOT3-APP-T4 local Controlled Quotation proof closure | `1f815d7f5` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; worker correctly returned blocked for work-order literal defect, reviewer repaired it, pre-implementation 77/77 PASS, vertical-slice replay PASS with 16 receipts, focused e2e 1/1, root test 30/45, typecheck/build/doctor PASS; T5 packet authoring next. |
@@ -278,15 +279,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_cvf_proj_t0_dispatched_worker_next`
+Mode: `sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next`
 
-SOT3-CVF-PROJ-T0 is dispatched at material commit `69cf579f4`. Next allowed
-move is execution of the exact no-commit authority-surface audit. The worker
-may create only the named ledger and worker return, then return for independent
-review. T1-T4 and all architecture/catalog/README edits remain parked, as do
-runtime/test/provider/live work, public-sync, push, production, browser/UI,
-queue/daemon, generated aggregate/registry/session mutation, MAO-OA-T6B, and
-SCLP-X-T3.
+SOT3-CVF-PROJ-T0 is independently accepted at material commit `9d8305942`.
+Next allowed move is authoring a fresh source-verified
+CVF-WEB-INHERITANCE-T0 audit packet. Projection T1-T4 and all Web
+implementation remain parked, as do runtime/provider/live work, public-sync,
+push, production, browser/UI, queue/daemon, MAO-OA-T6B, and SCLP-X-T3.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
