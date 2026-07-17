@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1866,
+  "stateOrder": 1868,
   "stateKey": "nextAllowedMove",
-  "value": "MAO-OA-T3 is DISPATCH_READY at material commit 084878796. Execute only docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T3_OPERATIONAL_WORKER_LAUNCHER_AND_LIVENESS_WIRING_2026-07-17.md under WORKER_MUST_NOT_COMMIT. The worker may change exactly six authorized launcher, local-barrel, focused-test, GC-051 source/aggregate, and worker-return paths; must capture executionBaseHead from committed dispatch state; and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit or staging. MAO-OA-T4 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, real provider/network/process/queue execution, reviewer/closer execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "MAO-OA-T3 is independently accepted and closed at material commit eead77edf with one reviewer-owned three-case real-adapter rejection test repair and one worker-return evidence correction. Await an explicit operator checkpoint before authoring or dispatching MAO-OA-T4. MAO-OA-T4 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, real provider/network/process/queue execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave."
 }
