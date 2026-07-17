@@ -643,3 +643,37 @@ This handoff records a source-verified T4 dispatch packet. It does not prove
 worker implementation, actual reviewer-agent independence, git/session
 mutation, real provider execution, live governance, public readiness,
 production readiness, scale, shipment, or user value.
+
+## GC-020 Marker - MAO-OA-T4 Dispatch Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`c4f37a5b1`. Because the current content-addressed SHA cannot be known before
+commit creation, the active-session checker may accept this parent SHA for the
+handoff-sync-only child commit.
+
+This marker changes no mode, next move, material decision, or authority. It
+does not authorize worker self-commit, MAO-OA-T5 through T7, actual independent
+agent execution, real-provider/live work, public-sync, or push.
+
+## Agent Operation Trace Block - MAO-OA-T4 Dispatch GC-020 Handoff Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | handoff-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MAO-OA-T4 dispatch GC-020 handoff bridge, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | active-handoff edit, handoff-sync commit stewardship, git |
+| Target paths | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Allowed scope source | GC-020 in-place HEAD rule after session-sync commit `c4f37a5b1` |
+| Before status evidence | clean worktree at session-sync HEAD `c4f37a5b1` |
+| After status evidence | parent SHA recorded for a dedicated root-handoff-only child commit |
+| Diff evidence | one-path staged diff and committed-range active-session check |
+| Approval boundary | handoff bookkeeping only; no material or session-state change |
+| Claim boundary | no mode, next-move, worker implementation, T5-T7, real-provider/live/public/push claim |
+| Agent type | handoff-sync steward |
+| Invocation ID | `mao-oa-t4-dispatch-gc020-handoff-sync-2026-07-17` |
+| Expected manifest | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Actual changed set | `AGENT_HANDOFF_V45_2026-07-16.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
