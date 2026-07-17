@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCHED
+Status: REVIEWER_ACCEPTED_IMPLEMENTATION_LIVE_RESULT_NOT_ACCEPTED
 
 Batch ID: MAO-OA-T6A
 
@@ -10,7 +10,7 @@ dispatchBaseHead: `95fb21377`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `63658c1e6`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -377,13 +377,14 @@ git rev-parse --short HEAD
 
 ## Acceptance Criteria
 
-- [ ] exactly one attempted call and zero retries;
-- [ ] task/schema/rubric/defects implemented and tested;
-- [ ] evidence is secret-safe with no raw payload;
-- [ ] score/defects deterministic from sanitized content;
-- [ ] GC-051 source and aggregate synchronized;
-- [ ] exactly seven paths, nothing staged, HEAD unchanged;
-- [ ] terminal worker return present.
+- [x] exactly one attempted call and zero retries;
+- [x] task/schema/rubric/defects implemented and tested;
+- [x] evidence is secret-safe with no raw payload;
+- [x] score/defects deterministic from sanitized content: N/A with reason: the
+  worker omitted the sanitized candidate, so the live score is not accepted;
+- [x] GC-051 source and aggregate synchronized;
+- [x] exactly seven worker paths, nothing staged, HEAD unchanged;
+- [x] terminal worker return present.
 
 ## Review Gate
 
@@ -399,41 +400,47 @@ secrets, or overclaims fail.
 
 ## Closure Checklist
 
-- [ ] dependency evidence current;
-- [ ] exact changed set verified;
-- [ ] call count/no-retry recomputed;
-- [ ] score/defects recomputed;
-- [ ] secrets/diagnostics accepted;
-- [ ] tests and gates pass;
-- [ ] material commit reviewer-owned;
-- [ ] continuity updated separately;
-- [ ] next move exactly T6B dispatch or T7 closure authoring.
+- [x] dependency evidence current;
+- [x] exact changed set verified;
+- [x] call count/no-retry evidence accepted as one call and zero retries;
+- [x] score/defects recomputed: BLOCKED with reason: sanitized candidate was
+  not persisted and raw response cannot be reconstructed from its hash;
+- [x] secrets/diagnostics accepted;
+- [x] tests and gates pass;
+- [x] material commit reviewer-owned;
+- [x] continuity updated separately: N/A with reason: session steward follows
+  the reviewer material commit;
+- [x] next move exactly T7 closure authoring; T6B is not released.
 
 ## Reviewer Closure Decision
 
-OPEN_REVIEWER_TO_DECIDE
+REVIEWER_ACCEPTED_IMPLEMENTATION_LIVE_RESULT_NOT_ACCEPTED
 
-Worker must not edit this section.
+`T6B_NOT_RELEASED`. The implementation and one-call/no-retry receipt are
+accepted. The reported 100/100 score and zero-defect result are not accepted
+because the evidence artifact omitted the sanitized parsed candidate required
+for independent recomputation. A reviewer repair makes future runner output
+persist that field, but no second provider call is authorized or performed.
 
 ## Machine Closure Package
 
 | Field | Value |
 |---|---|
-| workerTerminalState | COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON |
-| requiredReviewerEvidence | score, defects, ledger, secret scan, tests, gates, diff/status |
-| registryMutation | required for exact GC-051 pair only |
+| workerTerminalState | COMPLETE_PENDING_REVIEW reviewed |
+| requiredReviewerEvidence | ledger, secret scan, tests, gates, and diff/status accepted; score/defects blocked by missing candidate |
+| registryMutation | GC-051 source/aggregate accepted |
 | protectedStateMutation | N/A with reason: reviewer/session steward only |
-| materialCommit | N/A with reason: worker commit forbidden |
+| materialCommit | reviewer-owned closure commit |
 | publicMutation | N/A with reason: private provenance only |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Evidence owner | Dispatch state |
 |---|---|---|
-| one call, zero retries | worker and reviewer | NOT_YET_EXECUTED |
-| score/material defects | scorer and reviewer | NOT_YET_EXECUTED |
-| secret safety | worker and reviewer | NOT_YET_EXECUTED |
-| T6B release | reviewer only | NOT_YET_DECIDED |
+| one call, zero retries | worker and reviewer | ACCEPTED_BOUNDED |
+| score/material defects | scorer and reviewer | NOT_ACCEPTED_MISSING_RECOMPUTABLE_INPUT |
+| secret safety | worker and reviewer | ACCEPTED |
+| T6B release | reviewer only | T6B_NOT_RELEASED |
 
 ## Return-To-Orchestrator Conditions
 

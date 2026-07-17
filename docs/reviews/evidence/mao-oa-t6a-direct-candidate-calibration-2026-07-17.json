@@ -1,0 +1,36 @@
+{
+  "run": "mao-oa-t6a-harder-candidate-direct-baseline-calibration",
+  "taskId": "MAO-OA-T6A-HARDER-CANDIDATE",
+  "startedAt": "2026-07-17T05:56:25.641Z",
+  "finishedAt": "2026-07-17T05:57:03.836Z",
+  "providerId": "alibaba",
+  "modelId": "qwen3.7-plus",
+  "endpointHost": "dashscope-intl.aliyuncs.com",
+  "keyAliasUsed": "DASHSCOPE_API_KEY",
+  "traceId": "mao-oa-t6a-direct-1784267785643",
+  "callAttempted": true,
+  "callCount": 1,
+  "retryCount": 0,
+  "latencyMs": 38190,
+  "usage": {
+    "inputTokens": 188,
+    "outputTokens": 2039
+  },
+  "rawResponseHash": "7b35bec7ab846723781694cdefb54616196ba91b708cc09fca12a943b80eb3a3",
+  "rawResponseLength": 1953,
+  "sanitizedCandidate": null,
+  "reviewerEvidenceDisposition": "NOT_RECOMPUTABLE_MISSING_SANITIZED_CANDIDATE",
+  "rubric": {
+    "schemaCompletenessScore": 40,
+    "fixedConstraintScore": 30,
+    "riskVerificationSpecificityScore": 30,
+    "score": 100,
+    "maxScore": 100
+  },
+  "defects": [],
+  "materialDefectFound": false,
+  "releaseCandidateAsWorkerEvidence": false,
+  "releaseDecisionOwner": "reviewer_only",
+  "diagnostic": null,
+  "ok": true
+}

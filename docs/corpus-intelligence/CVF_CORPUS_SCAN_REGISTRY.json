@@ -5614,6 +5614,43 @@
         "provider or queue execution"
       ],
       "nextScanRecommendation": "Re-scan when a later authorized MAO operational-adoption tranche (MAO-OA-T6 or later) changes this operator-projection composition surface."
+    },
+    {
+      "id": "mao-oa-t6a-harder-candidate-calibration-surfaces",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MAO-OA-T6A harder candidate calibration surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/harder.value.candidate.contract.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.harder.value.candidate.contract.test.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/scripts/run-mao-oa-t6a-candidate-calibration.ts"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "scanWave": "MAO-OA-T6A",
+      "scanDate": "2026-07-17",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MAO_OA_T6A_WORKER_RETURN_2026-07-17.md",
+      "completionReviewPath": "docs/reviews/CVF_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_COMPLETION_REVIEW_2026-07-17.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "MAO_HARDER_CANDIDATE_TASK_SCHEMA_RUBRIC",
+        "MAO_HARDER_CANDIDATE_TESTS",
+        "MAO_OA_T6A_ONE_CALL_RUNNER"
+      ],
+      "priorAbsorption": "MAO-OA-T6A adds one fixed harder-candidate task/schema/rubric/defect contract, its focused fake-output tests, and one secret-safe one-call direct-baseline calibration runner that reuses the existing Model Gateway runLiveProof harness for its single live call. It performs exactly one attempted call, zero retries, no MAO worker/reviewer/revision/closer lane, and no comparison verdict; only the independent reviewer may release MAO-OA-T6B.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "second live call or retry",
+        "MAO comparison lane in T6A",
+        "worker-authored T6B release decision"
+      ],
+      "nextScanRecommendation": "Re-scan when a later authorized MAO operational-adoption tranche (MAO-OA-T6B or later) changes this calibration surface."
     }
   ]
 }

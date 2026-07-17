@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T5_PASS_BOUNDED_T6A_DISPATCHED_WORKER_NEXT
+Status: MAO_OA_T6A_IMPLEMENTATION_ACCEPTED_LIVE_RESULT_NOT_ACCEPTED_T7_PACKET_AUTHORING_NEXT
 
 Roadmap ID: MAO-OA
 
@@ -136,7 +136,7 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 | MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 closure `042abf44b`, explicit human release, and independent T3 completion review | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 closure `eead77edf`, standing operator continuation authority, and current-source verification | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 `ede430587` plus fresh GC-018 and source-verified work order | PASS_BOUNDED |
-| MAO-OA-T6 | materially harder representative agent-project proof with predeclared value hypothesis | accepted T5 plus explicit live/provider authority | T6A_DISPATCHED_WORKER_NEXT |
+| MAO-OA-T6 | materially harder representative agent-project proof with predeclared value hypothesis | accepted T5 plus explicit live/provider authority | T6A_IMPLEMENTATION_ACCEPTED_LIVE_RESULT_NOT_ACCEPTED_T6B_NOT_RELEASED |
 | MAO-OA-T7 | independent critique, closure diff, architecture/public disposition, and roadmap closure | accepted T6 | HOLD |
 
 ## MAO-OA-T0 Required Output
@@ -341,6 +341,21 @@ it does not establish runtime, provider, live, or public behavior.
 - release rule: T6B only after independent review accepts score <=80 or a
   predeclared material defect.
 
+## MAO-OA-T6A Closure Evidence
+
+- implementation, focused tests, typecheck, full package regression, GC-051,
+  file-size, secret scan, and reviewer-fast gates passed independently;
+- exactly one provider call and zero retries are evidenced; worker no-commit was
+  honored at `63658c1e6` with exactly seven allowed pending paths;
+- the evidence JSON omitted the sanitized parsed candidate required by the work
+  order, so the worker-reported 100/100 score and zero-defect result cannot be
+  independently recomputed and are not accepted;
+- reviewer repaired the runner so future authorized executions persist the
+  sanitized candidate, without making a second call in T6A;
+- reviewer decision: `T6B_NOT_RELEASED`; and
+- completion review:
+  `docs/reviews/CVF_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_COMPLETION_REVIEW_2026-07-17.md`.
+
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
@@ -382,10 +397,9 @@ not authorized.
 
 ## Next Allowed Move
 
-Execute exactly
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md`
-as a no-commit worker. T6B remains parked until independent review accepts
-score <=80 or a predeclared material defect. T7, SOT3-APP-T1, other
+Author and validate one fresh MAO-OA-T7 GC-018 baseline and source-verified
+work order for independent critique, closure diff, architecture/public
+disposition, and roadmap closure. T6B is not released. SOT3-APP-T1 and other
 absorption, unscoped generated-state or runtime git/session mutation, UI/queue
 action, public-sync, and push remain parked.
 
@@ -398,7 +412,9 @@ reviewer-accepted bounded T3 fake/local operational-launcher component, a
 reviewer-accepted bounded T4 local review-convergence component, and a
 reviewer-accepted bounded T5 typed operator-readout projection. T5 does not
 prove actual operator UX, state mutation, independent agents, or provider
-execution. The source-verified T6A calibration worker is next. The roadmap
+execution. T6A implementation is accepted, but its live score/result is not
+accepted because the sanitized candidate was not persisted for independent
+recomputation. T7 closure packet authoring is next. The roadmap
 defines a future governed path toward operational adoption but does not claim
 distributed concurrency, real provider launch,
 liveness, provider control,
