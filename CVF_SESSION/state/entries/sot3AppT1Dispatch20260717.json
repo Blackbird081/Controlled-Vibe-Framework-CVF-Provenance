@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1885,
+  "stateKey": "sot3AppT1Dispatch20260717",
+  "value": {
+    "status": "DISPATCHED",
+    "date": "2026-07-17",
+    "materialCommit": "471941558",
+    "dispatchBaseHead": "d10dfe7bc",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_APP_T1_DOWNSTREAM_CONTRACT_RATIFICATION_AND_CONTINUATION_MATRIX_2026-07-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_DOWNSTREAM_CONTRACT_RATIFICATION_AND_CONTINUATION_MATRIX_2026-07-17.md",
+    "workerOutputs": [
+      "docs/reviews/CVF_SOT3_APP_T1_DOWNSTREAM_CONTRACT_RATIFICATION_AND_CONTINUATION_MATRIX_2026-07-17.md",
+      "docs/reviews/CVF_SOT3_APP_T1_WORKER_RETURN_2026-07-17.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": "Dispatch author fast gate PASS; pre-dispatch autorun 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "dependencyEvidence": "SOT3-APP-T0B material closure 577237cba and MAO-OA material closure fef756a14 accepted.",
+    "claimBoundary": "Documentation-only contract ratification; no copied-folder/CVF source mutation, test/build/run, provider/live, T2, registry, public-sync, push, or production claim.",
+    "nextAllowedMove": "Execute the committed T1 work order with exactly two uncommitted review outputs, then return for independent review."
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1884,
+  "stateOrder": 1886,
   "stateKey": "nextAllowedMove",
-  "value": "MAO-OA is closed bounded at material commit fef756a14. Read docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md, verify the SOT3-APP-T1 dependency and reopen state against accepted T0B and MAO-OA closure, then author one fresh source-verified SOT3-APP-T1 GC-018 baseline and work order. Do not dispatch implementation until dependency-release evidence and pre-dispatch gates pass. T6B remains not released. SCLP-X-T3 and unscoped provider/runtime/UI/queue/external-root/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3-APP-T1 is dispatched at material commit 471941558. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_DOWNSTREAM_CONTRACT_RATIFICATION_AND_CONTINUATION_MATRIX_2026-07-17.md under WORKER_MUST_NOT_COMMIT from a clean execution base. The worker may create exactly the two review paths in the fulfillment manifest and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Independent reviewer/closer owns recomputation, material commit, T1 completion review, roadmap closure, and any T2 release. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
 }

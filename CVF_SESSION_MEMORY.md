@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=verify SOT3-APP-T1 dependency/reopen state and author a fresh source-verified GC-018 baseline and work order; parked checkpoint=MAO-OA-T6B not released, SCLP-X-T3, and unscoped provider/runtime/UI/queue/external-root/public-sync/push work.
+Startup acknowledged: current mode=`sot3_app_t1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute the committed SOT3-APP-T1 work order under WORKER_MUST_NOT_COMMIT with exactly two review outputs; parked checkpoint=T2 and later, MAO-OA-T6B, SCLP-X-T3, and unscoped provider/runtime/live/UI/queue/public-sync/push work.
 
 ## Current Mode
 
-Current mode marker: `mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`
+Current mode marker: `sot3_app_t1_dispatched_worker_next`
 
-Current mode: `mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`
+Current mode: `sot3_app_t1_dispatched_worker_next`
 
-`mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`
+`sot3_app_t1_dispatched_worker_next`
 
 Previous mode:
 
-`mao_oa_t7_dispatched_worker_next`
+`mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -73,13 +73,15 @@ the source-verified T4 packet at material commit `0c7eb2a04`. T4 is independentl
 accepted and closed at `ede430587` after one reviewer-owned closer-cardinality
 repair. T5 closed bounded, T6A closed with implementation accepted and live
 result not accepted, and T7 closed the roadmap bounded at `fef756a14`. T6B
-remains not released. SOT3-APP-T1 packet authoring is next after dependency and
-reopen verification.
+remains not released. The T1 dependency/reopen check passed and T1 was
+dispatched at material commit `471941558`; exactly two documentation outputs
+are now assigned to the no-commit worker.
 
 ## Latest Material Work
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-APP-T1 downstream contract ratification dispatch | `471941558` | DISPATCHED after author-fast, pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS; exact two-output documentation-only no-commit worker; T2 remains parked pending independent T1 closure. |
 | MAO-OA final T7 critique and roadmap closure | `fef756a14` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; exact two-path no-commit worker; F1/F2 independently confirmed 22/22; T6A live result remains not accepted; T6B not released; public disposition DEFERRED_PRIVATE_ONLY. |
 | MAO-OA-T7 final independent critique dispatch | `4c0a03fc8` | DISPATCHED after author-fast, pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS; exact two-path documentation-only no-commit worker; final roadmap closure remains reviewer-owned. |
 | MAO-OA-T6A harder-candidate closure | `908bb4fe2` | Implementation and one-call/no-retry receipt accepted; live score/result not accepted because sanitized candidate was absent; reviewer repaired future runner shape, added ADIF-0040, and recorded `T6B_NOT_RELEASED`; T7 packet authoring next. |
@@ -265,15 +267,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`
+Mode: `sot3_app_t1_dispatched_worker_next`
 
-Read
-`docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md`, verify
-the SOT3-APP-T1 dependency and reopen state against accepted T0B and MAO-OA
-closure, then author one fresh source-verified SOT3-APP-T1 GC-018 baseline and
-work order. Do not dispatch implementation until dependency-release evidence
-and pre-dispatch gates pass. T6B, SCLP-X-T3, unscoped provider/runtime/UI/queue,
-external-root, public-sync, and push work remain parked.
+Execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_DOWNSTREAM_CONTRACT_RATIFICATION_AND_CONTINUATION_MATRIX_2026-07-17.md`
+under `WORKER_MUST_NOT_COMMIT` from a clean committed base. Create exactly the
+two review paths in its fulfillment manifest and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Independent reviewer/closer
+owns recomputation, material commit, T1 completion review, roadmap closure, and
+any T2 release. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue,
+public-sync, and push work remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

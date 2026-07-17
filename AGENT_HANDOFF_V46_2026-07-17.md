@@ -9,31 +9,33 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after bounded closure of the MAO Operational Adoption
-And Agent Execution Assurance roadmap. V45 was rotated at 1,113 lines under the
+Carry compact continuity after bounded MAO-OA closure and committed
+SOT3-APP-T1 documentation dispatch. V45 was rotated at 1,113 lines under the
 Governed File Size Guard.
 
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`fef756a14` owns T7 acceptance and MAO-OA roadmap closure. It does not release
-T6B, runtime/provider work, public-sync, or push.
+`fef756a14` owns T7 acceptance and MAO-OA roadmap closure; material commit
+`471941558` owns T1 dispatch. It does not release T2, T6B, runtime/provider
+work, public-sync, or push.
 
 ## Active Boundary
 
-Active work is limited to fresh SOT3-APP-T1 packet authoring after dependency
-and reopen verification. No implementation dispatch, T6B, provider/runtime,
-UI/queue, public-sync, push, or production action is active.
+Active work is limited to the SOT3-APP-T1 documentation worker executing the
+committed two-output packet under `WORKER_MUST_NOT_COMMIT`. No source mutation,
+T2, T6B, provider/runtime/live, UI/queue, public-sync, push, or production
+action is active.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`;
+current mode=`sot3_app_t1_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=fresh source-verified SOT3-APP-T1 GC-018 and work-order
-authoring after checking current roadmap dependencies and reopen conditions;
-parked checkpoint=MAO-OA-T6B not released, SCLP-X-T3, unscoped provider,
-runtime, UI/queue, external-root, public-sync, and push work.
+next allowed move=execute the committed SOT3-APP-T1 work order with exactly two
+uncommitted review outputs and return for independent review;
+parked checkpoint=T2 and later, MAO-OA-T6B, SCLP-X-T3, unscoped provider,
+runtime/live, UI/queue, public-sync, and push work.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -48,9 +50,9 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Current Mode
 
-`mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`
+`sot3_app_t1_dispatched_worker_next`
 
-Previous mode: `mao_oa_t7_dispatched_worker_next`.
+Previous mode: `mao_oa_roadmap_closed_sot3_app_t1_packet_authoring_next`.
 
 ## MAO-OA Final Closure Continuity - 2026-07-17
 
@@ -73,18 +75,19 @@ Public Export Disposition: `DEFERRED_PRIVATE_ONLY`.
 ## Latest Work And Changes
 
 - Material closure `fef756a14` accepted T7 and closed MAO-OA bounded.
+- Material dispatch `471941558` released the exact two-output T1 documentation worker.
 - V45 moved to `CVF_SESSION/handoffs/archive/` at 1,113 lines.
-- V46 is the compact active handoff and routes only SOT3-APP-T1 packet
-  authoring next.
+- V46 is the compact active handoff and routes only SOT3-APP-T1 worker
+  execution next.
 
 ## Next Allowed Move
 
-Read the current
-`docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md`, verify
-the T1 dependency/reopen state against the accepted T0B and MAO-OA closure, and
-author one fresh source-verified SOT3-APP-T1 GC-018 baseline and work order.
-Do not dispatch implementation until dependency-release evidence and
-pre-dispatch gates pass.
+Execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_DOWNSTREAM_CONTRACT_RATIFICATION_AND_CONTINUATION_MATRIX_2026-07-17.md`
+from a clean committed base under `WORKER_MUST_NOT_COMMIT`. Create exactly the
+two review paths in its fulfillment manifest and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Independent reviewer/closer
+owns recomputation, material commit, T1 closure, and any T2 release.
 
 ## Agent Operation Trace Block - MAO-OA Final Closure Session Sync
 
@@ -165,9 +168,72 @@ public-sync, or push.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
+## SOT3-APP-T1 Dispatch Continuity - 2026-07-17
+
+Material dispatch commit: `471941558`.
+
+Current mode: `sot3_app_t1_dispatched_worker_next`.
+
+The accepted T0B closure `577237cba` and MAO-OA roadmap closure `fef756a14`
+satisfy the roadmap dependencies. T1 is documentation-only contract
+ratification with exactly two worker outputs and `WORKER_MUST_NOT_COMMIT`.
+
+Canonical packet:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_DOWNSTREAM_CONTRACT_RATIFICATION_AND_CONTINUATION_MATRIX_2026-07-17.md`.
+
+The worker must distinguish the downstream five-value Flow vocabulary from the
+separate Kernel decision vocabulary, map every consumer, compare local adapter
+ports with current CVF public owner exports, and design T8/evidence/freeze
+compatibility without modifying either source tree.
+
+Dispatch evidence: author fast gate PASS; pre-dispatch autorun 75/75 PASS;
+commit steward PASS; pre-commit 83/83 PASS.
+
+T2 and later, T6B, provider/runtime/live, registry mutation, public-sync, and
+push work remain parked.
+
+## Agent Operation Trace Block - SOT3-APP-T1 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | SOT3-APP-T1 dispatch continuity, 2026-07-17 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, handoff/front-door sync, gates, git |
+| Target paths | protected session sources/read models, active handoff, and front door |
+| Allowed scope source | material dispatch `471941558` and mandatory continuity rules |
+| Before status evidence | clean worktree at material HEAD `471941558` |
+| After status evidence | T1 worker execution next from committed packet |
+| Diff evidence | protected session-only diff and generator drift check |
+| Approval boundary | continuity synchronization after T1 dispatch only |
+| Claim boundary | no worker execution/result, T2, source mutation, provider/runtime/live/public/push action |
+| Agent type | dispatcher and session-sync steward |
+| Invocation ID | `sot3-app-t1-dispatch-session-sync-2026-07-17` |
+| Expected manifest | active state sources/aggregate/bootstrap, front door, and V46 handoff |
+| Actual changed set | active state sources/aggregate/bootstrap, front door, and V46 handoff |
+| Manifest delta | MATCH required before commit |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T1 Dispatch Sync
+
+Authorized protected scope: bounded continuity synchronization after material
+dispatch `471941558`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT1Dispatch20260717.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this protected continuity set together. No checker,
+hook, roadmap, work order, source, registry, or public artifact changes.
+
 ## Claim Boundary
 
-This handoff records bounded MAO-OA roadmap closure and the next packet-authoring
-route. It does not accept the rejected T6A score/result, release T6B, prove
-distributed or production execution, or authorize provider, runtime, public,
-or push action.
+This handoff records bounded MAO-OA roadmap closure and committed SOT3-APP-T1
+documentation dispatch. It does not accept the rejected T6A score/result,
+release T6B or T2, prove contract compatibility or application behavior,
+modify either source tree, or authorize provider, runtime, live, public, or
+push action.
