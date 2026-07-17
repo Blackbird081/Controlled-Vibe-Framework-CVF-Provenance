@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mao_oa_t4_closed_t5_packet_authoring_next",
+  "currentMode": "mao_oa_t5_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V45_2026-07-16.md",
-  "nextAllowedMove": "Author and validate one fresh source-verified MAO-OA-T5 GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for bounded operational operator readout and workspace session projection, derived from accepted T4 closure ede430587. Do not implement T5 in the dispatcher session. MAO-OA-T6 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, real provider/network/process/queue execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute only docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T5_OPERATIONAL_OPERATOR_READOUT_AND_WORKSPACE_SESSION_PROJECTION_2026-07-17.md from material dispatch 3f975a1d4 under WORKER_MUST_NOT_COMMIT. Worker may change exactly six paths: operational.operator.projection.ts, the MAO local barrel, the focused T5 test, one narrow GC-051 source entry, the generator-owned corpus aggregate, and the T5 worker return. Return all changes unstaged and uncommitted for independent reviewer/closer recomputation. MAO-OA-T6 through T7, SOT3-APP-T1 and later work, every other high-value-folder absorption, SCLP-X-T3, real provider/network/process/queue execution, application/server/browser/live-provider/public-sync/push/Catalog/GAP/ADIF/checker work remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
