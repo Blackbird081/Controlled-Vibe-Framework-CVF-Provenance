@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: REVIEWED_R3_REQUIRED
 
 Batch ID: SOT3-APP-T1-R2
 
@@ -129,9 +129,9 @@ no-commit proof.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired T1-R2 work order | `Status: DISPATCH_READY` | PASS |
+| Work order status | paired T1-R2 work order | `Status: REVIEWED_R3_REQUIRED` | BLOCKED |
 | Completion or reviewer artifact | `docs/reviews/CVF_SOT3_APP_T1_R2_COMPLETION_REVIEW_2026-07-17.md` | N/A with reason: independent reviewer creates it after worker return | N/A with reason |
-| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T1_R2_DISPATCHED_WORKER_NEXT` | PASS |
+| Roadmap state | SOT3-APP roadmap | `Status: SOT3_APP_T1_R2_REVIEWED_R3_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 corpus registry | aggregate drift and registry checks pass; T1 adds no source/test path | PASS |
 | Registry Markdown | existing GC-051 registry documentation contract | unchanged; registry checks pass | PASS |
 | External evidence digest | accepted T0B ledger sha256 `bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee` plus direct T1 anchors | accepted snapshot retained; no new full-corpus completeness claim | PASS |
