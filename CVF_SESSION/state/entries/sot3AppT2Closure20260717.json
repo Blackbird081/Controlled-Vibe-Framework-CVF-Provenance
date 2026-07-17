@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1905,
+  "stateKey": "sot3AppT2Closure20260717",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR",
+    "date": "2026-07-17",
+    "materialCommit": "8ee6c0030",
+    "executionBaseHead": "6f505bef8",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T2_COMPLETION_REVIEW_2026-07-17.md",
+    "reviewerRepair": "Stable error-token extraction now strips raw suffix content; an adversarial API test source was added.",
+    "testDisposition": "DEPENDENCY_NOT_INSTALLED; no executed test or typecheck PASS claimed; T3 owns reproducible dependency and command proof.",
+    "verification": "Worker-fast 62/62, commit steward PASS, pre-commit 83/83; pre-closure 74/75 before the required protected continuity sync.",
+    "nextAllowedMove": "Author a fresh source-verified T3 packet only.",
+    "claimBoundary": "Bounded source-level application boundary; no executed test, provider/live, public, production, or T3 implementation claim."
+  }
+}

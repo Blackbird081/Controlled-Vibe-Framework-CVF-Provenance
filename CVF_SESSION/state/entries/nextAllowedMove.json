@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1904,
+  "stateOrder": 1906,
   "stateKey": "nextAllowedMove",
-  "value": "The original SOT3-APP-T2 worker block was independently accepted and the repaired T2-R1 packet was committed at material commit 4be38018f. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T2_APPLICATION_BOUNDARY_FAIL_CLOSED_HARDENING_2026-07-17.md under WORKER_MUST_NOT_COMMIT from the clean post-dispatch HEAD. Modify only its nine external sibling paths and create exactly the two R1 provenance outputs declared by the packet. T3 and later, T6B, SCLP-X-T3, provider/network/live/browser/UI/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "SOT3-APP-T2 is closed bounded with one reviewer redaction repair at material commit 8ee6c0030. Author a fresh source-verified SOT3-APP-T3 reproducible build and real-test packet, preserving dependency installation, provider/network/live/browser/UI/public-sync/push, and T4+ execution boundaries until that packet explicitly releases only the deterministic local T3 scope. LHW24 remains latest closed numbered LHW wave."
 }
