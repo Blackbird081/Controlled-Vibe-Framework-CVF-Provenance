@@ -1,0 +1,38 @@
+{
+  "registryOrder": 148,
+  "id": "mao-oa-t4-operational-review-convergence-surfaces",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "MAO-OA-T4 operational review convergence surfaces",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/operational.review.convergence.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/index.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.operational.review.convergence.test.ts"
+  ],
+  "fileCount": 3,
+  "status": "SCANNED",
+  "scanWave": "MAO-OA-T4",
+  "scanDate": "2026-07-17",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MAO_OA_T4_WORKER_RETURN_2026-07-17.md",
+  "completionReviewPath": "docs/reviews/CVF_MAO_OA_T4_COMPLETION_REVIEW_2026-07-17.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_MAO_OA_T4_OPERATIONAL_REVIEW_CONVERGENCE_AND_COMMIT_SESSION_INTERLOCK_2026-07-17.md",
+  "verdicts": {
+    "gc047": "NOT_RUN",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "MAO_OPERATIONAL_REVIEW_CONVERGENCE",
+    "MAO_OPERATIONAL_REVIEW_CONVERGENCE_TESTS",
+    "MAO_LOCAL_BARREL_EXPORT_SURFACE"
+  ],
+  "priorAbsorption": "MAO-OA-T4 adds one bounded local review-convergence composition owner that reuses the existing MAO-T4 reviewer isolation contract, MAO-T4 dissent/revision contract, and MAO-T5 closer interlock contract to run independent review collection, bounded repair, terminal closer convergence, and a commit/session interlock plan. It does not run git, a commit steward, a session-state generator, an actual agent subprocess, or any provider/network/process/queue call; commit authorization and session-sync projections are typed plans only.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "actual git or commit steward invocation",
+    "session-state generator invocation",
+    "real provider or agent subprocess execution"
+  ],
+  "nextScanRecommendation": "Re-scan when a later authorized MAO operational-adoption tranche (MAO-OA-T5 or later) changes this review-convergence composition surface."
+}

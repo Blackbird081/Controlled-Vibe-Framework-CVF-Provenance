@@ -318,3 +318,20 @@ export type {
 } from "./operational.worker.launcher";
 
 export { MaoOperationalWorkerLauncher } from "./operational.worker.launcher";
+
+// --- MAO-OA-T4 operational review convergence and commit/session interlock ---
+
+export type {
+  MaoOperationalReviewRequest,
+  MaoOperationalReviewFailureReason,
+  MaoOperationalReviewFailure,
+  MaoOperationalReviewSuccess,
+  MaoOperationalReviewResult,
+  MaoOperationalClosureRequest,
+  MaoOperationalClosureFailureReason,
+  MaoOperationalClosureFailure,
+  MaoOperationalClosureSuccess,
+  MaoOperationalClosureResult,
+} from "./operational.review.convergence";
+
+export { MaoOperationalReviewConvergence, createMaoOperationalReviewConvergence } from "./operational.review.convergence";

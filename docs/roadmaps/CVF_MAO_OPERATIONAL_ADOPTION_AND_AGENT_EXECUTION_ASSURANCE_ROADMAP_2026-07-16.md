@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T4_DISPATCHED_WORKER_NEXT
+Status: MAO_OA_T4_PASS_BOUNDED_T5_PACKET_AUTHORING_NEXT
 
 Roadmap ID: MAO-OA
 
@@ -24,7 +24,7 @@ source-verified packet. SOT3-APP-T0B closed at material commit `577237cba`.
 The earlier MAO foundation closed at `29c55ca36`, and its bounded live value
 pilot closed `REVIEWER_ACCEPTED_VALUE_NOT_PROVEN` at `75f5c0b90`.
 
-Decision: `MAO_OA_T4_DISPATCHED_WORKER_NEXT`.
+Decision: `MAO_OA_T4_PASS_BOUNDED_T5_PACKET_AUTHORING_NEXT`.
 
 T0 remains accepted as a documentation/evidence closure. MAO-OA-T1 is
 independently accepted after one reviewer-owned GC-051 registry repair. The
@@ -40,7 +40,9 @@ repair and one worker-return evidence correction. MAO-OA-T4 through T7 remain
 parked until the operator's standing 2026-07-17 continuation authority. That
 authority releases one source-verified T4 packet for local independent-evidence,
 dissent/revision, closer convergence, and non-mutating commit/session interlock
-composition. T5-T7 remain parked.
+composition. T4 is independently accepted after one reviewer-owned exact-one-
+closer cardinality repair. Standing continuation authority releases fresh T5
+GC-018 and source-verified work-order authoring; T6-T7 remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -132,8 +134,8 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 | MAO-OA-T1 | root/package adoption seam and orchestrator contract | accepted T0 owner/gap matrix plus fresh GC-018 and work order | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T2 | durable run store, replay, recovery, and idempotent resume | accepted T1 contract `1bb5ff7f3`, explicit human release, canonical execution-plane append-only storage authority, and independent T2 completion review | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 closure `042abf44b`, explicit human release, and independent T3 completion review | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
-| MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 closure `eead77edf`, standing operator continuation authority, and current-source verification | DISPATCHED_WORKER_NEXT |
-| MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 | HOLD |
+| MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 closure `eead77edf`, standing operator continuation authority, and current-source verification | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
+| MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 plus fresh GC-018 and source-verified work order | PACKET_AUTHORING_NEXT |
 | MAO-OA-T6 | materially harder representative agent-project proof with predeclared value hypothesis | accepted T5 plus explicit live/provider authority | HOLD |
 | MAO-OA-T7 | independent critique, closure diff, architecture/public disposition, and roadmap closure | accepted T6 | HOLD |
 
@@ -278,6 +280,22 @@ it does not establish runtime, provider, live, or public behavior.
   provider/network/process/queue, operator projection, T5-T7, live, public, or
   push action.
 
+## MAO-OA-T4 Closure Evidence
+
+- one local `MaoOperationalReviewConvergence` composes the existing reviewer
+  isolation, dissent/revision, closer integration, commit authorization, and
+  session-sync projection owners without modifying them;
+- worker outputs stay excluded from reviewer source authority, self-approval,
+  tainted evidence, empty evidence, non-terminal reviews, and changed-set
+  overlap fail closed;
+- reviewer repair replaces the single closer string with an exact-one list and
+  proves zero, blank-one, multiple, wrong-actor, and worker-as-closer rejection;
+- reviewer reruns passed 27/27 focused tests, TypeScript check, 68 files and
+  1738 package tests, GC-051 generation/coverage, and the worker-return fast
+  gate with reviewer-fast 62/62; and
+- completion review:
+  `docs/reviews/CVF_MAO_OA_T4_COMPLETION_REVIEW_2026-07-17.md`.
+
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
@@ -319,22 +337,21 @@ not authorized.
 
 ## Next Allowed Move
 
-Execute only
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T4_OPERATIONAL_REVIEW_CONVERGENCE_AND_COMMIT_SESSION_INTERLOCK_2026-07-17.md`
-under `WORKER_MUST_NOT_COMMIT`. MAO-OA-T5 through T7, SOT3-APP-T1, other
-absorption, actual git/session mutation, real provider/network/process/queue
-execution, operator projection, live expansion, public-sync, and push remain
-parked.
+Author and validate one fresh MAO-OA-T5 GC-018 baseline and source-verified
+work order for operator readout plus bounded workspace/session projection.
+MAO-OA-T6 through T7, SOT3-APP-T1, other absorption, actual runtime git/session
+mutation, real provider/network/process/queue execution, live expansion,
+public-sync, and push remain parked.
 
 ## Claim Boundary
 
 This roadmap records a reviewer-accepted documentation-only T0 owner/gap audit,
 a reviewer-accepted bounded T1 package-root and pure-composition seam, and a
 reviewer-accepted bounded T2 local durable-store and replay component, and a
-reviewer-accepted bounded T3 fake/local operational-launcher component, and one
-dispatched T4 local review-convergence packet. Dispatch does not prove actual
-independent agents, git/session mutation, provider execution, or release T5 or
-later. The roadmap
+reviewer-accepted bounded T3 fake/local operational-launcher component, and a
+reviewer-accepted bounded T4 local review-convergence component. T4 does not
+prove actual independent agents, git/session mutation, or provider execution;
+only fresh T5 packet authoring is released. The roadmap
 defines a future governed path toward operational adoption but does not claim
 distributed concurrency, real provider launch,
 liveness, provider control,

@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 Date: 2026-07-17
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 GC-018 ID: MAO-OA-T4
 
@@ -31,7 +31,7 @@ mutation.
 
 ## Baseline Decision
 
-`DISPATCH_READY`.
+`CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR`.
 
 The operator has supplied standing authorization to continue automatically
 from each accepted MAO-OA tranche into the next source-verified work order.
@@ -189,22 +189,22 @@ GC-051 source entry, the generated aggregate, and one worker return.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired T4 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | planned T4 completion review | reviewer-owned after worker return | N/A with reason |
-| Roadmap state | governing MAO-OA roadmap | T4 dispatched; T5-T7 held | PASS |
-| Registry JSON | planned T4 source entry and generated aggregate | worker generator plus reviewer checks | N/A with reason |
+| Work order status | paired T4 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | T4 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR` | PASS |
+| Roadmap state | governing MAO-OA roadmap | T4 accepted; T5 packet authoring next; T6-T7 held | PASS |
+| Registry JSON | T4 source entry and generated aggregate | generator check and zero coverage violations | PASS |
 | Registry Markdown | GC-051 JSON source and aggregate; no separate Markdown owner | dispatch has no closure registry mutation | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | none | N/A with reason |
 | System loop interlock | N/A with reason: no repository governance loop or external process launcher mutation | none | N/A with reason |
-| Session continuity | protected sync following dispatch material commit | worker forbidden | N/A with reason |
+| Session continuity | protected active state, front door, and handoff | separate session-sync follows material closure | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Required evidence | Dispatch state |
 |---|---|---|
-| review-convergence behavior | focused deterministic tests | PENDING_WORKER |
+| review-convergence behavior | 27/27 focused tests plus 1738-test package regression | PASS |
 | provider acceptance | N/A with reason: provider invocation forbidden | N/A_WITH_REASON |
-| reviewer acceptance | independent completion review | PENDING_REVIEW |
+| reviewer acceptance | independently accepted after exact-one-closer repair | PASS |
 | public acceptance | N/A with reason: public action forbidden | N/A_WITH_REASON |
 
 ## Checker Source Read-Ahead Block
