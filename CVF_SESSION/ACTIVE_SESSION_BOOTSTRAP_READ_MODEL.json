@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_app_t5_dispatched_worker_next",
+  "currentMode": "sot3_app_closed_bounded_live_proof_next",
   "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
-  "nextAllowedMove": "SOT3-APP-T5 is dispatched at material commit b21ee86d1. Next allowed move is execute only the committed SOT3-APP-T5 work order, using root CVF API keys as process environment only, with one attempted provider call maximum, zero retries, no raw key or raw provider payload persistence, no staging or commit by worker, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Later lanes, browser/UI, public-sync, push, production, and session-state mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-APP roadmap is closed bounded at material commit c408c7116 after accepted T5 one-call live-provider proof. Next allowed move is fresh roadmap or work-order authoring only if the operator chooses a new productization, public-sync, production, browser/UI, queue/daemon, or user-value expansion lane. No existing SOT3-APP tranche remains released. MAO-OA-T6B, SCLP-X-T3, public-sync, push, production use, additional provider calls, retries, and raw key or raw provider payload persistence remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

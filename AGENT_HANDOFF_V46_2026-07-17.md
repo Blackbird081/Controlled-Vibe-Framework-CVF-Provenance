@@ -9,42 +9,82 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after bounded MAO-OA closure and committed
-SOT3-APP-T1 documentation dispatch. V45 was rotated at 1,113 lines under the
-Governed File Size Guard.
+Carry compact continuity after bounded MAO-OA closure and SOT3-APP downstream
+application roadmap closure. V45 was rotated at 1,113 lines under the Governed
+File Size Guard.
 
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
 `fef756a14` owns T7 acceptance and MAO-OA roadmap closure; material commit
-`4bb19d27d` owns SOT3-APP-T3 closure; material commit `fdc00c96e` owns
-SOT3-APP-T4 dispatch; material commit `1f815d7f5` owns SOT3-APP-T4 closure.
-It does not release T5 execution, T6B, runtime/provider work, public-sync, or
-push.
+`4bb19d27d` owns SOT3-APP-T3 closure; material commit `1f815d7f5` owns
+SOT3-APP-T4 closure; material commit `b21ee86d1` owns SOT3-APP-T5 dispatch;
+material commit `c408c7116` owns SOT3-APP-T5 acceptance and SOT3-APP roadmap
+closure. It does not release MAO-OA-T6B, SCLP-X-T3, public-sync, push,
+production, browser/UI, queue/daemon, extra provider calls, retries, raw key
+persistence, or raw provider payload persistence.
 
 ## Active Boundary
 
-Active work is limited to executing the committed SOT3-APP-T5 work order. The
-worker may use root CVF live keys as process environment only, may attempt one
-provider call maximum, must not retry, stage, or commit, and must return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Later lanes, browser/UI,
-public-sync, push, production, and session-state mutation remain parked.
+SOT3-APP is closed bounded after T5 live-provider proof acceptance. No existing
+SOT3-APP tranche remains released. The next allowed move is fresh roadmap or
+work-order authoring only if the operator chooses a new productization,
+public-sync, production, browser/UI, queue/daemon, or user-value expansion
+lane. MAO-OA-T6B, SCLP-X-T3, public-sync, push, production use, additional
+provider calls, retries, raw key persistence, and raw provider payload
+persistence remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_app_t5_dispatched_worker_next`;
+current mode=`sot3_app_closed_bounded_live_proof_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=execute only the committed SOT3-APP-T5 work order and return
-uncommitted and unstaged evidence for independent review;
+next allowed move=fresh roadmap or work-order authoring only if the operator
+chooses a new expansion lane;
 parked checkpoint=later lanes, MAO-OA-T6B, SCLP-X-T3, browser/UI, public-sync,
-push, production, session-state mutation, and any second provider call or retry.
+push, production, session-state mutation, extra provider calls, retries, raw
+key persistence, and raw provider payload persistence.
 
 ## Current Mode
 
-`sot3_app_t5_dispatched_worker_next`
+`sot3_app_closed_bounded_live_proof_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
+
+## SOT3-APP-T5 Closure Continuity - 2026-07-18
+
+Material closure commit: `c408c7116`.
+
+Current mode: `sot3_app_closed_bounded_live_proof_next`.
+
+SOT3-APP-T5 is closed as `CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED`. The worker
+honored `WORKER_MUST_NOT_COMMIT`, added the minimal sibling live-provider
+adapter behind the existing governed execution boundary, and produced sanitized
+evidence for one real provider call after an `ALLOW` context with zero retries.
+Independent review accepted the bounded live proof, reran non-live sibling
+verification, confirmed no raw key or raw provider payload persistence, and
+closed the SOT3-APP roadmap as private bounded evidence.
+
+Next allowed move: fresh roadmap or work-order authoring only if the operator
+chooses a new expansion lane. No SOT3-APP tranche remains released. MAO-OA-T6B,
+SCLP-X-T3, browser/UI, queue/daemon, public-sync, push, production, additional
+provider calls, retries, raw key persistence, and raw provider payload
+persistence remain parked.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T5 Closure Sync
+
+Authorized protected scope: bounded continuity synchronization after material
+closure commit `c408c7116`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT5Closure20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this protected continuity set together. No material,
+source, registry, provider, or public artifact changes belong to this sync.
 
 ## SOT3-APP-T3 Dispatch Continuity - 2026-07-17
 
@@ -607,11 +647,12 @@ hook, roadmap, work order, source, registry, or public artifact changes.
 
 ## Claim Boundary
 
-This handoff records bounded MAO-OA roadmap closure and committed SOT3-APP-T1
-documentation dispatch. It does not accept the rejected T6A score/result,
-release T6B or T2, prove contract compatibility or application behavior,
-modify either source tree, or authorize provider, runtime, live, public, or
-push action.
+This handoff records bounded MAO-OA roadmap closure and SOT3-APP roadmap
+closure through T5. It does not accept the rejected MAO-OA-T6A score/result,
+release MAO-OA-T6B, SCLP-X-T3, or any new SOT3-APP tranche, prove production
+readiness, modify either source tree, or authorize public-sync, push,
+production, browser/UI, queue/daemon, extra provider calls, retries, raw key
+persistence, or raw provider payload persistence.
 
 ## SOT3-APP-T1 Independent Review - 2026-07-17
 

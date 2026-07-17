@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t5_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute only the committed SOT3-APP-T5 work order and return uncommitted evidence; parked checkpoint=later lanes, browser/UI, public-sync, push, production, session-state mutation, and any second provider call or retry.
+Startup acknowledged: current mode=`sot3_app_closed_bounded_live_proof_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=fresh roadmap or work-order authoring only if the operator chooses a new expansion lane; parked checkpoint=MAO-OA-T6B, SCLP-X-T3, browser/UI, queue/daemon, public-sync, push, production, extra provider calls, retries, raw key persistence, and raw provider payload persistence.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t5_dispatched_worker_next`
+Current mode marker: `sot3_app_closed_bounded_live_proof_next`
 
-Current mode: `sot3_app_t5_dispatched_worker_next`
+Current mode: `sot3_app_closed_bounded_live_proof_next`
 
-`sot3_app_t5_dispatched_worker_next`
+`sot3_app_closed_bounded_live_proof_next`
 
 Previous mode:
 
-`sot3_app_t4_closed_t5_packet_authoring_next`
+`sot3_app_t5_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-APP-T5 operational live-provider proof closure and SOT3-APP roadmap closure | `c408c7116` | CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED; worker honored WORKER_MUST_NOT_COMMIT; one real provider call after ALLOW context, zero retries, sanitized evidence sha256 `FE936B13D3B45B7E533A418030048F1336F50AC4B18FDC687C56C5986E0DDE15`; reviewer reran non-live sibling verification, worker-fast PASS, reviewer-fast 62/62, commit-steward, and pre-commit 83/83 PASS; no next SOT3-APP tranche remains released. |
 | SOT3-APP-T5 operational live-provider proof dispatch | `b21ee86d1` | DISPATCH_READY after pre-dispatch 75/75, dispatch-quality enforce, commit-steward, and pre-commit 83/83 PASS; exact one-call/no-retry no-commit worker may add a minimal sibling live adapter, fake-fetch test, one-call runner, sanitized evidence JSON, and worker return; root keys are process-env only, no raw key/payload persistence; later lanes remain parked. |
 | SOT3-APP-T4 local Controlled Quotation proof closure | `1f815d7f5` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; worker correctly returned blocked for work-order literal defect, reviewer repaired it, pre-implementation 77/77 PASS, vertical-slice replay PASS with 16 receipts, focused e2e 1/1, root test 30/45, typecheck/build/doctor PASS; T5 packet authoring next. |
 | SOT3-APP-T4 local Controlled Quotation proof dispatch | `fdc00c96e` | DISPATCH_READY after pre-dispatch 75/75, commit steward, and pre-commit 83/83 PASS; exact two external source/test outputs plus two no-commit provenance outputs; T5/service and provider/live/browser/UI/public-sync/push/production remain parked. |
@@ -277,15 +278,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t5_dispatched_worker_next`
+Mode: `sot3_app_closed_bounded_live_proof_next`
 
-T5 is dispatched at material commit `b21ee86d1`. Next allowed move is execute
-only the committed SOT3-APP-T5 work order, using root CVF API keys as process
-environment only, with one attempted provider call maximum, zero retries, no
-raw key or raw provider payload persistence, no staging or commit by worker,
-and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Later lanes,
-browser/UI, public-sync, push, production, and session-state mutation remain
-parked.
+SOT3-APP is closed bounded at material commit `c408c7116` after accepted T5
+one-call live-provider proof. Next allowed move is fresh roadmap or work-order
+authoring only if the operator chooses a new productization, public-sync,
+production, browser/UI, queue/daemon, or user-value expansion lane. No existing
+SOT3-APP tranche remains released. MAO-OA-T6B, SCLP-X-T3, public-sync, push,
+production use, additional provider calls, retries, raw key persistence, and
+raw provider payload persistence remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1920,
+  "stateKey": "sot3AppT5Closure20260718",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED",
+    "materialCommit": "c408c7116",
+    "dispatchCommit": "b21ee86d1",
+    "executionBaseHead": "01eb3eb31",
+    "workerReturn": "docs/reviews/CVF_SOT3_APP_T5_WORKER_RETURN_2026-07-18.md",
+    "evidence": "docs/reviews/evidence/sot3-app-t5-live-provider-proof-2026-07-18.json",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T5_COMPLETION_REVIEW_2026-07-18.md",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "proofStatus": "SOT3_APP_T5_LIVE_PROOF_PASS",
+    "providerId": "alibaba",
+    "modelId": "qwen3.7-plus",
+    "callCountAttempted": 1,
+    "retryCount": 0,
+    "evidenceSha256": "FE936B13D3B45B7E533A418030048F1336F50AC4B18FDC687C56C5986E0DDE15",
+    "verification": "Worker-return fast PASS; reviewer-fast 62/62 PASS; commit steward PASS; pre-commit 83/83 PASS; sibling focused fake-fetch tests 7/7 PASS; sibling typecheck/build/test PASS; reviewer did not rerun live call.",
+    "nextAllowedMove": "Fresh roadmap or work-order authoring only if the operator chooses a new expansion lane; no SOT3-APP tranche remains released.",
+    "heldNextTranche": "MAO-OA-T6B, SCLP-X-T3, public-sync, push, production, browser/UI, queue/daemon, additional provider calls, retries, raw key persistence, and raw provider payload persistence remain parked.",
+    "claimBoundary": "One private sibling application governed-output path made one real provider call after ALLOW context and preserved secret-safe evidence. No production, public, browser/UI, queue/daemon, scale, certification, or universal SOT3 behavior is claimed."
+  }
+}

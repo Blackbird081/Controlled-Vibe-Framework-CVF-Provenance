@@ -86,8 +86,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_app_t5_dispatched_worker_next",
-  "previousMode": "sot3_app_t4_closed_t5_packet_authoring_next",
+  "currentMode": "sot3_app_closed_bounded_live_proof_next",
+  "previousMode": "sot3_app_t5_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13061,7 +13061,7 @@
     "nextAllowedMove": "T5 packet authoring only; provider/live execution remains parked until a fresh source-verified T5 packet releases the exact boundary.",
     "claimBoundary": "Deterministic local in-process T4 proof only; no provider/live/browser/UI/public-sync/push/production or T5 execution claim."
   },
-  "nextAllowedMove": "SOT3-APP-T5 is dispatched at material commit b21ee86d1. Next allowed move is execute only the committed SOT3-APP-T5 work order, using root CVF API keys as process environment only, with one attempted provider call maximum, zero retries, no raw key or raw provider payload persistence, no staging or commit by worker, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Later lanes, browser/UI, public-sync, push, production, and session-state mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-APP roadmap is closed bounded at material commit c408c7116 after accepted T5 one-call live-provider proof. Next allowed move is fresh roadmap or work-order authoring only if the operator chooses a new productization, public-sync, production, browser/UI, queue/daemon, or user-value expansion lane. No existing SOT3-APP tranche remains released. MAO-OA-T6B, SCLP-X-T3, public-sync, push, production use, additional provider calls, retries, and raw key or raw provider payload persistence remain parked. LHW24 remains latest closed numbered LHW wave.",
   "sot3AppT5Dispatch20260718": {
     "status": "DISPATCH_READY",
     "materialCommit": "b21ee86d1",
@@ -13086,5 +13086,25 @@
     "nextAllowedMove": "Execute only the committed SOT3-APP-T5 work order and return uncommitted and unstaged evidence for independent review.",
     "heldNextTranche": "Later lanes remain parked until T5 acceptance; browser/UI, public-sync, push, production, and session-state mutation remain parked.",
     "claimBoundary": "Dispatch packet only. One bounded sibling application live-provider proof worker is authorized; no completed live proof, production, public, browser/UI, queue/daemon, or universal SOT3 behavior is claimed."
+  },
+  "sot3AppT5Closure20260718": {
+    "status": "CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED",
+    "materialCommit": "c408c7116",
+    "dispatchCommit": "b21ee86d1",
+    "executionBaseHead": "01eb3eb31",
+    "workerReturn": "docs/reviews/CVF_SOT3_APP_T5_WORKER_RETURN_2026-07-18.md",
+    "evidence": "docs/reviews/evidence/sot3-app-t5-live-provider-proof-2026-07-18.json",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T5_COMPLETION_REVIEW_2026-07-18.md",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "proofStatus": "SOT3_APP_T5_LIVE_PROOF_PASS",
+    "providerId": "alibaba",
+    "modelId": "qwen3.7-plus",
+    "callCountAttempted": 1,
+    "retryCount": 0,
+    "evidenceSha256": "FE936B13D3B45B7E533A418030048F1336F50AC4B18FDC687C56C5986E0DDE15",
+    "verification": "Worker-return fast PASS; reviewer-fast 62/62 PASS; commit steward PASS; pre-commit 83/83 PASS; sibling focused fake-fetch tests 7/7 PASS; sibling typecheck/build/test PASS; reviewer did not rerun live call.",
+    "nextAllowedMove": "Fresh roadmap or work-order authoring only if the operator chooses a new expansion lane; no SOT3-APP tranche remains released.",
+    "heldNextTranche": "MAO-OA-T6B, SCLP-X-T3, public-sync, push, production, browser/UI, queue/daemon, additional provider calls, retries, raw key persistence, and raw provider payload persistence remain parked.",
+    "claimBoundary": "One private sibling application governed-output path made one real provider call after ALLOW context and preserved secret-safe evidence. No production, public, browser/UI, queue/daemon, scale, certification, or universal SOT3 behavior is claimed."
   }
 }
