@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_app_t1_r2_reviewed_r3_packet_authoring_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=author one narrow SOT3-APP-T1-R3 critical caller-edge correction packet after review commit `49ab5350c`; parked checkpoint=T2 and later, MAO-OA-T6B, SCLP-X-T3, and unscoped provider/runtime/live/UI/queue/public-sync/push work.
+Startup acknowledged: current mode=`sot3_app_t1_r3_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V46_2026-07-17.md; next allowed move=execute the committed SOT3-APP-T1-R3 work order from material dispatch `585af5140` under WORKER_MUST_NOT_COMMIT with exactly two review outputs; parked checkpoint=T2 and later, MAO-OA-T6B, SCLP-X-T3, and unscoped provider/runtime/live/UI/queue/public-sync/push work.
 
 ## Current Mode
 
-Current mode marker: `sot3_app_t1_r2_reviewed_r3_packet_authoring_next`
+Current mode marker: `sot3_app_t1_r3_dispatched_worker_next`
 
-Current mode: `sot3_app_t1_r2_reviewed_r3_packet_authoring_next`
+Current mode: `sot3_app_t1_r3_dispatched_worker_next`
 
-`sot3_app_t1_r2_reviewed_r3_packet_authoring_next`
+`sot3_app_t1_r3_dispatched_worker_next`
 
 Previous mode:
 
-`sot3_app_t1_r2_dispatched_worker_next`
+`sot3_app_t1_r2_reviewed_r3_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -267,13 +267,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_app_t1_r2_reviewed_r3_packet_authoring_next`
+Mode: `sot3_app_t1_r3_dispatched_worker_next`
 
-T1-R2 was rejected at material review commit `49ab5350c`: exact 80/14
-membership passed, but six test invocation edges were collapsed into
-constructor rows and the `EvidenceAdapter.recordFreeze` result-use statement
-contradicted source. Author and validate one narrow T1-R3 critical caller-edge
-correction packet. T2 and later remain parked.
+Execute
+`docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md`
+from the clean committed post-dispatch HEAD under `WORKER_MUST_NOT_COMMIT`, with
+exactly the two review outputs in its manifest. T2 and later remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

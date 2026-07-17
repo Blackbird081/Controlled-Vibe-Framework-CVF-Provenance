@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_app_t1_r2_reviewed_r3_packet_authoring_next",
+  "currentMode": "sot3_app_t1_r3_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
-  "nextAllowedMove": "SOT3-APP-T1-R2 was independently rejected at material review commit 49ab5350c after exact 80/14 membership passed but six test invocation edges and one false EvidenceAdapter.recordFreeze result-use claim remained. Author and validate one fresh narrow SOT3-APP-T1-R3 critical caller-edge correction packet. Do not dispatch T2. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "SOT3-APP-T1-R3 is dispatched at material commit 585af5140. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md under WORKER_MUST_NOT_COMMIT from the clean committed post-dispatch HEAD. Create exactly its two review outputs and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2 and later, T6B, SCLP-X-T3, provider/runtime/live/UI/queue/public-sync/push work remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

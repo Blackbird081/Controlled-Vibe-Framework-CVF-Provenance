@@ -30,14 +30,41 @@ action is active.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_app_t1_r2_reviewed_r3_packet_authoring_next`;
+current mode=`sot3_app_t1_r3_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V46_2026-07-17.md`;
-next allowed move=author one narrow SOT3-APP-T1-R3 critical caller-edge
-correction packet after material review commit `49ab5350c`;
+next allowed move=execute the committed SOT3-APP-T1-R3 work order from material
+dispatch `585af5140` under WORKER_MUST_NOT_COMMIT with exactly two outputs;
 parked checkpoint=T2 and later, MAO-OA-T6B, SCLP-X-T3, unscoped provider,
 runtime/live, UI/queue, public-sync, and push work.
 
 Latest closed numbered LHW wave remains `LHW24`.
+
+## SOT3-APP-T1-R3 Dispatch Continuity - 2026-07-17
+
+Material dispatch commit: `585af5140`.
+
+Current mode: `sot3_app_t1_r3_dispatched_worker_next`.
+
+Next allowed move: execute the committed R3 direct-invocation and caller-result
+truth correction work order under `WORKER_MUST_NOT_COMMIT` with exactly its two
+review outputs. The packet retains accepted 80/14 membership, requires 37 raw
+call matches to reconcile as 30 terminal calls plus 7 explicit exclusions, and
+keeps T2 parked.
+
+## Core Guard Self-Protection Authorization - SOT3-APP-T1-R3 Dispatch Sync
+
+Authorized protected scope: bounded continuity synchronization after material
+dispatch commit `585af5140`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3AppT1R3Dispatch20260717.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V46_2026-07-17.md`.
+
+Rollback boundary: revert this seven-path protected continuity set together.
+No material, source, registry, or public artifact changes belong to this sync.
 
 ## SOT3-APP-T1-R2 Independent Review - 2026-07-17
 
@@ -78,9 +105,9 @@ No material, source, registry, or public artifact changes belong to this sync.
 
 ## Current Mode
 
-`sot3_app_t1_r2_reviewed_r3_packet_authoring_next`
+`sot3_app_t1_r3_dispatched_worker_next`
 
-Previous mode: `sot3_app_t1_r2_dispatched_worker_next`.
+Previous mode: `sot3_app_t1_r2_reviewed_r3_packet_authoring_next`.
 
 ## MAO-OA Final Closure Continuity - 2026-07-17
 
