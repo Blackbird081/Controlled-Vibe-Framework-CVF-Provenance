@@ -6,7 +6,7 @@ docType: roadmap
 
 Date: 2026-07-16
 
-Status: MAO_OA_T5_DISPATCHED_WORKER_NEXT
+Status: MAO_OA_T5_PASS_BOUNDED_T6_PACKET_AUTHORING_NEXT
 
 Roadmap ID: MAO-OA
 
@@ -135,8 +135,8 @@ preserve `UNRESOLVED_INVOCATION` where a caller edge cannot be proven.
 | MAO-OA-T2 | durable run store, replay, recovery, and idempotent resume | accepted T1 contract `1bb5ff7f3`, explicit human release, canonical execution-plane append-only storage authority, and independent T2 completion review | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T3 | governed worker launcher, heartbeat, timeout, cancellation, and provider-neutral adapter wiring | accepted T2 closure `042abf44b`, explicit human release, and independent T3 completion review | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
 | MAO-OA-T4 | independent evidence collection, review repair, dissent, closer convergence, and commit/session interlock | accepted T3 closure `eead77edf`, standing operator continuation authority, and current-source verification | PASS_BOUNDED_WITH_REVIEWER_REPAIR |
-| MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 `ede430587` plus fresh GC-018 and source-verified work order | DISPATCHED_WORKER_NEXT |
-| MAO-OA-T6 | materially harder representative agent-project proof with predeclared value hypothesis | accepted T5 plus explicit live/provider authority | HOLD |
+| MAO-OA-T5 | operator readout and bounded workspace/session projection | accepted T4 `ede430587` plus fresh GC-018 and source-verified work order | PASS_BOUNDED |
+| MAO-OA-T6 | materially harder representative agent-project proof with predeclared value hypothesis | accepted T5 plus explicit live/provider authority | PACKET_AUTHORING_NEXT |
 | MAO-OA-T7 | independent critique, closure diff, architecture/public disposition, and roadmap closure | accepted T6 | HOLD |
 
 ## MAO-OA-T0 Required Output
@@ -311,6 +311,23 @@ it does not establish runtime, provider, live, or public behavior.
   CLI/MCP, provider/network/process, git/session action, T6-T7, live, public,
   or push action.
 
+## MAO-OA-T5 Closure Evidence
+
+- one local `MaoOperationalOperatorProjection` composes the accepted evidence
+  readout, freshness classification, milestone-only projection, canonical lane
+  taxonomy, guard snapshots, session facts, and optional session projection;
+- deterministic lane counts include every canonical lane, blocked/parked and
+  accepted-material partitions are sorted, and caller arrays remain unchanged;
+- PASS guard snapshots without a non-empty evidence path fail closed while
+  FAIL and BLOCKED snapshots remain visible;
+- the worker preserved `WORKER_MUST_NOT_COMMIT` at `3e9ba67e6` with exactly six
+  pending paths and nothing staged;
+- reviewer reruns passed 22/22 focused tests, TypeScript check, 69 files and
+  1,760 package tests, GC-051 generation/coverage, file-size compliance, and
+  the worker-return fast gate with reviewer-fast 62/62; and
+- completion review:
+  `docs/reviews/CVF_MAO_OA_T5_COMPLETION_REVIEW_2026-07-17.md`.
+
 ## Dual Agent Surface Matrix
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
@@ -352,22 +369,22 @@ not authorized.
 
 ## Next Allowed Move
 
-Execute only
-`docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T5_OPERATIONAL_OPERATOR_READOUT_AND_WORKSPACE_SESSION_PROJECTION_2026-07-17.md`
-under `WORKER_MUST_NOT_COMMIT`. MAO-OA-T6 through T7, SOT3-APP-T1, other
-absorption, generated-state or runtime git/session mutation, UI/queue action,
-real provider/network/process execution, live expansion, public-sync, and push
-remain parked.
+Author one fresh MAO-OA-T6 GC-018 baseline and source-verified work order for a
+materially harder representative agent-project proof with a predeclared value
+hypothesis and explicit bounded live-provider controls. T7, SOT3-APP-T1, other
+absorption, unscoped generated-state or runtime git/session mutation, UI/queue
+action, public-sync, and push remain parked.
 
 ## Claim Boundary
 
 This roadmap records a reviewer-accepted documentation-only T0 owner/gap audit,
 a reviewer-accepted bounded T1 package-root and pure-composition seam, and a
 reviewer-accepted bounded T2 local durable-store and replay component, and a
-reviewer-accepted bounded T3 fake/local operational-launcher component, and a
-reviewer-accepted bounded T4 local review-convergence component. T4 does not
-prove actual independent agents, git/session mutation, or provider execution;
-one source-verified T5 typed operator-readout packet is dispatched. The roadmap
+reviewer-accepted bounded T3 fake/local operational-launcher component, a
+reviewer-accepted bounded T4 local review-convergence component, and a
+reviewer-accepted bounded T5 typed operator-readout projection. T5 does not
+prove actual operator UX, state mutation, independent agents, or provider
+execution. Fresh source-verified T6 packet authoring is next. The roadmap
 defines a future governed path toward operational adoption but does not claim
 distributed concurrency, real provider launch,
 liveness, provider control,

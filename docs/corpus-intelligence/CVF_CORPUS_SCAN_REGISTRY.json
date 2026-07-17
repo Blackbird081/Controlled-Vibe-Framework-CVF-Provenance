@@ -5577,6 +5577,43 @@
         "real provider or agent subprocess execution"
       ],
       "nextScanRecommendation": "Re-scan when a later authorized MAO operational-adoption tranche (MAO-OA-T5 or later) changes this review-convergence composition surface."
+    },
+    {
+      "id": "mao-oa-t5-operational-operator-projection-surfaces",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "MAO-OA-T5 operational operator projection surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/operational.operator.projection.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/index.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.operational.operator.projection.test.ts"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "scanWave": "MAO-OA-T5",
+      "scanDate": "2026-07-17",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MAO_OA_T5_WORKER_RETURN_2026-07-17.md",
+      "completionReviewPath": "docs/reviews/CVF_MAO_OA_T5_COMPLETION_REVIEW_2026-07-17.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MAO_OA_T5_OPERATIONAL_OPERATOR_READOUT_AND_WORKSPACE_SESSION_PROJECTION_2026-07-17.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "MAO_OPERATIONAL_OPERATOR_PROJECTION",
+        "MAO_OPERATIONAL_OPERATOR_PROJECTION_TESTS",
+        "MAO_LOCAL_BARREL_EXPORT_SURFACE"
+      ],
+      "priorAbsorption": "MAO-OA-T5 adds one bounded pure local composition owner that builds a deterministic operator readout from the existing MAO-T7 evidence readout, freshness, and workspace-milestone functions plus explicit caller-supplied session/workspace/guard snapshots. It never reads or writes any filesystem path, generated workspace/session state file, UI, queue, provider, network, process, or git owner; an optional session-sync projection is carried through exactly as supplied and never built or applied.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "workspace or session state file read or write",
+        "UI or dashboard action",
+        "provider or queue execution"
+      ],
+      "nextScanRecommendation": "Re-scan when a later authorized MAO operational-adoption tranche (MAO-OA-T6 or later) changes this operator-projection composition surface."
     }
   ]
 }

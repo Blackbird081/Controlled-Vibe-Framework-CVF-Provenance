@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 Date: 2026-07-17
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 GC-018 ID: MAO-OA-T5
 
@@ -30,10 +30,13 @@ returns a value only and performs no workspace/session/UI/queue/provider action.
 
 ## Baseline Decision
 
-`DISPATCH_READY`.
+`CLOSED_PASS_BOUNDED`.
 
-MAO-OA-T4 is independently accepted at material commit `ede430587`. Standing
-sequence authority releases T5 packet dispatch. T6-T7 remain parked.
+MAO-OA-T5 is independently accepted after exact-scope recomputation, source
+inspection, 22/22 focused tests, TypeScript check, 69 files and 1,760 package
+tests, GC-051 alignment, file-size compliance, and reviewer-fast 62/62. No
+reviewer source or test repair was required. Fresh T6 packet authoring is next;
+T7 remains parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -182,22 +185,22 @@ generated aggregate, and one worker return.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired T5 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | planned T5 completion review | reviewer-owned after worker return | N/A with reason |
-| Roadmap state | governing roadmap | T5 dispatched; T6-T7 held | PASS |
-| Registry JSON | planned T5 entry and aggregate | worker generator plus reviewer checks | N/A with reason |
-| Registry Markdown | N/A with reason: GC-051 is JSON-source owned | none | N/A with reason |
+| Work order status | paired T5 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T5 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Roadmap state | governing roadmap | T5 accepted; T6 packet authoring next; T7 held | PASS |
+| Registry JSON | T5 entry and aggregate | generator check and zero coverage violations | PASS |
+| Registry Markdown | T5 completion review | registry disposition and GC-051 evidence recorded | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | none | N/A with reason |
 | System loop interlock | N/A with reason: no repository loop or external runtime mutation | none | N/A with reason |
-| Session continuity | protected sync follows dispatch commit | worker forbidden | N/A with reason |
+| Session continuity | protected sync follows material closure | separate steward-owned commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Required evidence | Dispatch state |
 |---|---|---|
-| operator projection behavior | focused deterministic tests | PENDING_WORKER |
+| operator projection behavior | 22/22 focused tests and 1,760-test package regression | PASS |
 | UI/provider/action acceptance | N/A with reason: forbidden | N/A_WITH_REASON |
-| reviewer acceptance | independent completion review | PENDING_REVIEW |
+| reviewer acceptance | independent completion review | PASS |
 | public acceptance | N/A with reason: no public action | N/A_WITH_REASON |
 
 ## Checker Source Read-Ahead Block

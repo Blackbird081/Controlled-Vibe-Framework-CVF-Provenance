@@ -335,3 +335,24 @@ export type {
 } from "./operational.review.convergence";
 
 export { MaoOperationalReviewConvergence, createMaoOperationalReviewConvergence } from "./operational.review.convergence";
+
+// --- MAO-OA-T5 operational operator readout and workspace session projection ---
+
+export type {
+  MaoOperationalWorkspaceLane,
+  MaoOperationalWorkspaceItemSnapshot,
+  MaoOperationalGuardStatus,
+  MaoOperationalGuardSnapshot,
+  MaoOperationalOperatorProjectionInput,
+  MaoOperationalOperatorProjectionFailureReason,
+  MaoOperationalOperatorProjectionFailure,
+  MaoOperationalOperatorReadout,
+  MaoOperationalOperatorProjectionSuccess,
+  MaoOperationalOperatorProjectionResult,
+} from "./operational.operator.projection";
+
+export {
+  MAO_OPERATIONAL_CANONICAL_LANES,
+  buildOperationalOperatorProjection,
+  MaoOperationalOperatorProjection,
+} from "./operational.operator.projection";
