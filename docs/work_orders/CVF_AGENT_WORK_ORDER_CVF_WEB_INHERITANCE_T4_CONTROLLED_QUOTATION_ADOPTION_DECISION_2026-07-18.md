@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-WEB-INHERITANCE-T4
 
@@ -95,15 +95,15 @@ forbidden-scope need, or inability to defend one terminal disposition.
 
 | Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|---|
-| sibling package boundary | VALUE_SET | CANONICAL_CONTRACT: external sibling direct-read evidence; `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\package.json` | package fields and scripts | `vertical-slice` | package manifest | ACCEPT |
-| controlled proof function | RUNTIME_BEHAVIOR | CANONICAL_CONTRACT: external sibling direct-read evidence; `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\scripts\run-controlled-quotation.ts` | function declaration | `runControlledQuotationProof` | function | ACCEPT |
-| receipt-chain type | EXISTS | CANONICAL_CONTRACT: external sibling direct-read evidence; `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\scripts\run-controlled-quotation.ts` | interface declaration | `ControlledQuotationReceiptChain` | interface | ACCEPT |
-| service-chain owner | RUNTIME_BEHAVIOR | CANONICAL_CONTRACT: external sibling direct-read evidence; `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\scripts\run-controlled-quotation.ts` | proof body | `GovernedOutputService` | controlled quotation proof | ACCEPT |
-| review/freeze owner | RUNTIME_BEHAVIOR | CANONICAL_CONTRACT: external sibling direct-read evidence; `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\scripts\run-controlled-quotation.ts` | proof body | `ReviewFreezeService` | controlled quotation proof | ACCEPT |
-| impact/recall owner | RUNTIME_BEHAVIOR | CANONICAL_CONTRACT: external sibling direct-read evidence; `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\scripts\run-controlled-quotation.ts` | proof body | `ImpactRecallService` | controlled quotation proof | ACCEPT |
-| freeze-package helper | RUNTIME_BEHAVIOR | CANONICAL_CONTRACT: external sibling direct-read evidence; `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\scripts\run-controlled-quotation.ts` | proof body | `buildFreezePackage` | evidence helper | ACCEPT |
-| live adapter factory | RUNTIME_BEHAVIOR | CANONICAL_CONTRACT: external sibling direct-read evidence; `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\packages\cvf-bindings\src\live-provider-governed-execution.adapter.ts` | factory declaration | `createLiveProviderGovernedExecutionPort` | adapter factory | ACCEPT |
-| explicit live opt-in | LITERAL_INVARIANT | CANONICAL_CONTRACT: external sibling direct-read evidence; `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\SOT-Application\scripts\run-live-governed-output.ts` | main guard | `CVF_PROVIDER_CALLS_ENABLED` | runner | ACCEPT |
+| sibling package boundary | VALUE_SET | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | External Artifact Hash Manifest and Risk / Corrective Action | `vertical-slice` | package manifest | REJECT - corrected boundary is the private pnpm workspace over `apps/*` and `packages/*`; `vertical-slice` is only a script name |
+| controlled proof function | RUNTIME_BEHAVIOR | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | External Artifact Hash Manifest and Independent Evidence | `runControlledQuotationProof` | function | ACCEPT |
+| receipt-chain type | EXISTS | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | External Artifact Hash Manifest | `ControlledQuotationReceiptChain` | interface | ACCEPT |
+| service-chain owner | RUNTIME_BEHAVIOR | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | External Artifact Hash Manifest and Independent Evidence | `GovernedOutputService` | controlled quotation proof | ACCEPT |
+| review/freeze owner | RUNTIME_BEHAVIOR | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | External Artifact Hash Manifest and Independent Evidence | `ReviewFreezeService` | controlled quotation proof | ACCEPT |
+| impact/recall owner | RUNTIME_BEHAVIOR | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | External Artifact Hash Manifest and Independent Evidence | `ImpactRecallService` | controlled quotation proof | ACCEPT |
+| freeze-package helper | RUNTIME_BEHAVIOR | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | External Artifact Hash Manifest and Independent Evidence | `buildFreezePackage` | evidence helper | ACCEPT |
+| live adapter factory | RUNTIME_BEHAVIOR | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | External Artifact Hash Manifest and Independent Evidence | `createLiveProviderGovernedExecutionPort` | adapter factory | ACCEPT |
+| explicit live opt-in | LITERAL_INVARIANT | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | External Artifact Hash Manifest and Independent Evidence | `CVF_PROVIDER_CALLS_ENABLED` | runner | ACCEPT |
 | current Web dependency set | VALUE_SET | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json` | dependencies | `dependencies` | package manifest | ACCEPT |
 | existing Web SOT3 seam | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-knowledge-adapter.ts` | function declaration | `evaluateSot3KnowledgeActivation` | adapter module | ACCEPT |
 | T0 decision requirement | VALUE_SET | `docs/reviews/CVF_WEB_INHERITANCE_T0_CAPABILITY_TO_WEB_LEDGER_2026-07-18.md` | WEB-08 and WEB-09 | `SIBLING_ADOPTION_DECISION_REQUIRED` | T0 ledger | ACCEPT |
@@ -248,14 +248,14 @@ forbidden edits to justify it, or no terminal disposition can be defended.
 
 ## Closure Checklist
 
-- [ ] execution HEAD matches dispatcher instruction;
-- [ ] sibling and cvf-web sources are directly read;
-- [ ] every required dimension is terminal;
-- [ ] exactly one disposition is selected and three alternatives challenged;
-- [ ] next owner/boundary or reopen condition is exact;
-- [ ] exact two-path no-commit boundary holds;
-- [ ] pre-implementation, worker-fast, and file-size gates pass; and
-- [ ] T4 implementation and T5 remain parked.
+- [x] execution HEAD matches dispatcher instruction;
+- [x] sibling and cvf-web sources are directly read;
+- [x] every required dimension is terminal;
+- [x] exactly one disposition is selected and three alternatives challenged;
+- [x] next owner/boundary or reopen condition is exact;
+- [x] exact two-path no-commit boundary holds;
+- [x] pre-implementation, worker-fast, and file-size gates pass; and
+- [x] T4 implementation remains deferred; T5 packet authoring is released by independent review.
 
 ## Agent Handoff Contract Control Block
 
@@ -394,6 +394,27 @@ Returned defects: NONE_RETURNED
 | interceptionBoundary | no adapter, wrapper, route, or runtime enforcement is authorized |
 | claimLanguage | inspect, compare, decide, defer, and route only |
 | forbiddenExpansion | sibling/cvf-web implementation, provider/live, public, push, production |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | final defer disposition and exact changed-set evidence | PASS |
+| Roadmap state | `docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md` | T4 pass and T5 packet authoring next | PASS |
+| Registry JSON | corpus registry generated aggregate | existing documentation scope coverage and drift check | PASS |
+| Registry Markdown | corpus registry read model | existing documentation scope coverage | PASS |
+| External evidence digest | T4 completion review External Artifact Hash Manifest | nine sibling source artifacts; manifest includes `sha256:3534921e45340e73e24effffc126d0467544782ebcef5d4ca6b96d6f1c483f25` and eight additional hashes; no secret values | PASS |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit follows | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| exactly one terminal adoption disposition | `DEFER_WITH_REASON` | PASS |
+| three rejected alternatives challenged | `LINK`, `ADAPT`, and `PORT_BOUNDED` challenged from current source | PASS |
+| no runtime action receipt | documentation-only decision; no action executed | N/A_WITH_REASON |
 
 ## Public Export Disposition
 

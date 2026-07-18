@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-WEB-INHERITANCE-T4
 
@@ -139,6 +139,28 @@ Returned defects: NONE_RETURNED
 | checkerReadAheadConfirmation | checker paths listed above |
 | docOnlyNewFields | adoptionDisposition; sourceSeam; nextOwner; reopenCondition |
 | claimBoundary | dispatch-authoring provenance only |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | T4 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | reviewer-accepted defer decision | PASS |
+| Roadmap state | CVF Web inheritance roadmap | T4 pass and T5 packet authoring next | PASS |
+| Registry JSON | corpus registry generated aggregate | existing documentation scope coverage and drift check | PASS |
+| Registry Markdown | corpus registry read model | existing documentation scope coverage | PASS |
+| External evidence digest | T4 completion review External Artifact Hash Manifest | nine sibling source artifacts; manifest includes `sha256:3534921e45340e73e24effffc126d0467544782ebcef5d4ca6b96d6f1c483f25` and eight additional hashes; no secret values | PASS |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit follows | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| exactly one terminal adoption disposition | `DEFER_WITH_REASON` | PASS |
+| three rejected alternatives challenged | `LINK`, `ADAPT`, and `PORT_BOUNDED` challenged from current source | PASS |
+| no runtime action receipt | documentation-only decision; no action executed | N/A_WITH_REASON |
 
 ## Public Export Disposition
 
