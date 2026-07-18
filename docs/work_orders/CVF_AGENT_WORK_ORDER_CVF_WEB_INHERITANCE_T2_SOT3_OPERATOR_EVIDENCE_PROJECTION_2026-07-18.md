@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-WEB-INHERITANCE-T2
 
@@ -193,6 +193,12 @@ and diagnostics, and provide dedicated empty and unavailable states. It must
 not contain a mutation control. Add a discoverability link to the current
 governance overview with concise English and Vietnamese labels.
 
+## Text Encoding Exception
+
+Bounded non-ASCII Vietnamese user-facing copy is required for the localized
+discoverability label and its exact test assertion. A local exception note is
+required in each affected source file; all other new text remains ASCII.
+
 ## Work-Order Fulfillment Manifest
 
 | Artifact | Required worker action |
@@ -207,8 +213,10 @@ governance overview with concise English and Vietnamese labels.
 
 ## Required Artifact Manifest
 
-Expected worker manifest is exactly the seven Allowed Scope paths. Any eighth
-path, rename, deletion, staged change, or session path is a stop condition.
+| Required artifact set | Expected count | Closure evidence | Disposition |
+|---|---:|---|---|
+| Allowed Scope paths | 7 | exact worker-return manifest and reviewer status evidence | PASS |
+| Extra, renamed, deleted, staged, or session paths | 0 | status, cached diff, and reviewer inspection | PASS |
 
 ## Roadmap-To-Work-Order Trace Matrix
 
@@ -251,14 +259,14 @@ boundary, and all governed gates before acceptance.
 
 ## Closure Checklist
 
-- [ ] execution HEAD matches dispatcher instruction;
-- [ ] exact safe readout allowlist and states implemented;
-- [ ] forbidden raw fields are absent from serialized output;
-- [ ] page and discoverability states are focused-test proven;
-- [ ] typecheck, build, and file-size pass;
-- [ ] exact seven-path changed set and no staging;
-- [ ] worker no-commit boundary honored; and
-- [ ] reviewer closure remains pending.
+- [x] execution HEAD matches dispatcher instruction;
+- [x] exact safe readout allowlist and states implemented;
+- [x] forbidden raw fields are absent from serialized output;
+- [x] page and discoverability states are focused-test proven;
+- [x] typecheck, build, and file-size pass;
+- [x] exact seven-path changed set and no staging;
+- [x] worker no-commit boundary honored; and
+- [x] independent reviewer accepted the bounded result with repairs.
 
 ## Return-To-Orchestrator Conditions
 
@@ -408,6 +416,30 @@ Returned defects: NONE_RETURNED
 At dispatch base `edeec4e94`, the evidence store validates and lists durable
 records, the execute integration supplies the configured local path, and no
 current SOT3 operator readout/page exists. This packet adds only projection.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired T2 GC-018 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T2_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Worker return | T2 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CVF_WEB_INHERITANCE_T2_PASS_T3_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | corpus registry generated aggregate | existing cvf-web `src/` scope coverage and aggregate drift check | PASS |
+| Registry Markdown | corpus registry read model | existing cvf-web `src/` scope coverage | PASS |
+| External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: read-only projection creates no receipt | N/A_WITH_REASON |
+| Query acceptance evidence | safe list read and three report states independently tested | PASS |
+| Worker-return acceptance | independent diff, tests, build, and gates recomputed | PASS |
+| Closure claim | bounded SOT3 evidence projection only | PASS |
 
 ## Public Export Disposition
 

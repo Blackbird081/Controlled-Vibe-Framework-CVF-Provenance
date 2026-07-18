@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CVF_WEB_INHERITANCE_T2_DISPATCH_READY
+Status: CVF_WEB_INHERITANCE_T2_PASS_T3_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -17,8 +17,8 @@ MAO operational adoption, and Four-Surface control-boundary capability while
 cvf-web appears not to inherit or expose much of that value. The operator
 authorized a clean audit and continuation packet after SOT3-CVF-PROJ-T0.
 
-T0 and T1 are independently closed. T2 is source-verified and dispatch-ready;
-T3-T5 remain parked.
+T0 through T2 are independently closed. T3 packet authoring is the next
+allowed move; T4-T5 remain parked.
 
 ## Purpose
 
@@ -131,8 +131,8 @@ operator-supplied key; T0 makes no such claim.
 - SOT3-CVF-PROJ-T0 closed at material commit `9d8305942`.
 - CVF-WEB-INHERITANCE-T0 may now run as a no-commit audit.
 - T0 is independently accepted with reviewer repairs. T1 is independently
-  accepted at material commit `b186df669`. T2 is dispatch-ready at a bounded
-  seven-path read-only evidence projection; T3-T5 remain parked.
+  accepted at material commit `b186df669`. T2 is independently accepted with
+  reviewer repairs; T3 packet authoring is next and T4-T5 remain parked.
 - SOT3-CVF-PROJ-T1 through T4 remain parked while this cross-product audit
   determines overlap and ordering.
 - MAO-OA-T6B and SCLP-X-T3 remain parked under their existing conditions.
@@ -200,8 +200,8 @@ or MAO implementation and do not infer that every capability belongs in Web.
 
 ### Claim Update
 
-T0 audit and the bounded T1 registry correction are accepted. T2 remains a
-fresh source-verification and dispatch task, not an implemented capability.
+T0 audit, the bounded T1 registry correction, and the bounded T2 SOT3 evidence
+projection are accepted. T3 remains a fresh source-verification task.
 
 ## Agent Operation Trace Block
 
@@ -234,21 +234,22 @@ separate public-sync authorization and artifact set.
 
 ## Claim Boundary
 
-This roadmap records accepted T0 inventory and T1 registry correction and
-releases the source-verified T2 worker packet only. It does not itself authorize SOT3/MAO
-execution, sibling-source copying, browser or live proof, public-sync, push,
-production readiness, or universal inheritance claims.
+This roadmap records accepted T0 inventory, T1 registry correction, and T2
+read-only SOT3 evidence projection. It releases T3 packet authoring only. It
+does not itself authorize SOT3 or MAO execution, sibling-source copying,
+browser or live proof, public-sync, push, production readiness, or universal
+inheritance claims.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T2_DISPATCH_READY` | PASS |
-| Baseline status | T2 GC-018 baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | T2 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T1_COMPLETION_REVIEW_2026-07-18.md` | T1 dependency accepted at `b186df669` | PASS |
-| Registry JSON | N/A with reason: no corpus registry mutation | none | N/A with reason |
-| Registry Markdown | N/A with reason: no corpus registry mutation | none | N/A with reason |
+| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T2_PASS_T3_PACKET_AUTHORING_NEXT` | PASS |
+| Baseline status | T2 GC-018 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | T2 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T2_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Registry JSON | corpus registry generated aggregate | existing cvf-web `src/` scope coverage and aggregate drift check | PASS |
+| Registry Markdown | corpus registry read model | existing cvf-web `src/` scope coverage | PASS |
 | External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
 | System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
 | Session continuity | protected session surfaces | separate session-sync commit | N/A with reason |

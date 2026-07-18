@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-WEB-INHERITANCE-T2
 
@@ -164,6 +164,30 @@ Returned defects: NONE_RETURNED
 At dispatch base `edeec4e94`, durable evidence records and verified list reads
 exist, the execute path uses the configured local evidence path, and no current
 operator readout or page owns this evidence. T1 is accepted at `b186df669`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this file | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | paired T2 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T2_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Worker return | T2 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CVF_WEB_INHERITANCE_T2_PASS_T3_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | corpus registry generated aggregate | existing cvf-web `src/` scope coverage and aggregate drift check | PASS |
+| Registry Markdown | corpus registry read model | existing cvf-web `src/` scope coverage | PASS |
+| External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: read-only projection creates no receipt | N/A_WITH_REASON |
+| Query acceptance evidence | safe list read and three report states independently tested | PASS |
+| Worker-return acceptance | independent diff, tests, build, and gates recomputed | PASS |
+| Closure claim | bounded SOT3 evidence projection only | PASS |
 
 ## Public Export Disposition
 
