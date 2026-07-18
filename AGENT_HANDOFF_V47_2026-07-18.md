@@ -214,6 +214,16 @@ child commit.
 
 This marker changes no mode, next move, material decision, or authority.
 
+## GC-020 Marker - T5 Review Prerequisite Maintenance Commit
+
+This handoff-only child records parent governance-maintenance commit
+`565c8cd12` that corrected the stale dispatch-mode pointer and added narrow
+GC-051 coverage for the T5 E2E spec. The current child SHA cannot be known
+before commit creation, so the active-session checker may accept the parent
+SHA for this handoff-only child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## Core Guard Self-Protection Authorization - T0 Closure Sync
 
 Authorized guard-maintenance scope: active-session pointer refresh, generated
