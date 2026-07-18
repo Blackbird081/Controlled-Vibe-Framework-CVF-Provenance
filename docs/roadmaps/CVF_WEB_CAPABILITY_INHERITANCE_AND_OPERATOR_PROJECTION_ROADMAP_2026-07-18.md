@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CVF_WEB_INHERITANCE_T2_PASS_T3_PACKET_AUTHORING_NEXT
+Status: CVF_WEB_INHERITANCE_T3A_DISPATCH_READY
 
 docType: roadmap
 
@@ -17,8 +17,10 @@ MAO operational adoption, and Four-Surface control-boundary capability while
 cvf-web appears not to inherit or expose much of that value. The operator
 authorized a clean audit and continuation packet after SOT3-CVF-PROJ-T0.
 
-T0 through T2 are independently closed. T3 packet authoring is the next
-allowed move; T4-T5 remain parked.
+T0 through T2 are independently closed. Direct T3 implementation is not
+source-safe because the MAO operator projection has no persistent evidence
+or Web caller seam. T3A is dispatch-ready to decide that seam; T3B and T4-T5
+remain parked.
 
 ## Purpose
 
@@ -85,6 +87,8 @@ and error states.
 | CVF-WEB-INHERITANCE-T1 | runtime-module and dependency truth correction | source-backed registry entries and tests for currently inherited capability families | registry matches real dependency/wiring state without runnable overclaim |
 | CVF-WEB-INHERITANCE-T2 | SOT3 operator evidence projection | read-only status/evidence surface for activation mode, outcome, identifiers, and bounded diagnostics | no raw knowledge or secret leakage; focused tests and build pass |
 | CVF-WEB-INHERITANCE-T3 | MAO operator readout projection | read-only run/evidence/milestone/liveness projection from existing MAO owners | no worker launch, provider call, queue, or autonomous mutation |
+| CVF-WEB-INHERITANCE-T3A | MAO Web adoption and source-seam decision | terminal source matrix for dependency, persistence/replay, liveness, milestones, configuration, privacy, and caller ownership | one source-backed T3B route or bounded defer; no guessed adapter or duplicated semantics |
+| CVF-WEB-INHERITANCE-T3B | MAO operator readout implementation | only the implementation boundary released by accepted T3A evidence | T3A accepted with exact source owners, dependency release, and allowed scope |
 | CVF-WEB-INHERITANCE-T4 | Controlled Quotation and sibling-app adoption decision | explicit `LINK`, `ADAPT`, `PORT_BOUNDED`, or `DEFER_WITH_REASON` decision before implementation | source/provenance boundary and duplicate-logic risk resolved |
 | CVF-WEB-INHERITANCE-T5 | Web information, QA, and roadmap closure | README/help/version projection plus typecheck, tests, build, and UI QA for implemented tranches | all accepted claims match tested routes and public disposition is explicit |
 
@@ -132,7 +136,12 @@ operator-supplied key; T0 makes no such claim.
 - CVF-WEB-INHERITANCE-T0 may now run as a no-commit audit.
 - T0 is independently accepted with reviewer repairs. T1 is independently
   accepted at material commit `b186df669`. T2 is independently accepted with
-  reviewer repairs; T3 packet authoring is next and T4-T5 remain parked.
+  reviewer repairs at material commit `609edffbe`. T3A is dispatch-ready;
+  T3B and T4-T5 remain parked.
+- T3A is required because the existing MAO operational projection is a pure,
+  caller-supplied in-memory owner with no CLI, MCP, UI, or runtime caller;
+  the durable run store replays event-ledger state but does not persist or
+  reconstruct the separate evidence ledger required by that projection.
 - SOT3-CVF-PROJ-T1 through T4 remain parked while this cross-product audit
   determines overlap and ordering.
 - MAO-OA-T6B and SCLP-X-T3 remain parked under their existing conditions.
@@ -201,7 +210,8 @@ or MAO implementation and do not infer that every capability belongs in Web.
 ### Claim Update
 
 T0 audit, the bounded T1 registry correction, and the bounded T2 SOT3 evidence
-projection are accepted. T3 remains a fresh source-verification task.
+projection are accepted. T3A must resolve the current MAO caller and evidence
+seam gap before T3B can be authored.
 
 ## Agent Operation Trace Block
 
@@ -235,19 +245,19 @@ separate public-sync authorization and artifact set.
 ## Claim Boundary
 
 This roadmap records accepted T0 inventory, T1 registry correction, and T2
-read-only SOT3 evidence projection. It releases T3 packet authoring only. It
-does not itself authorize SOT3 or MAO execution, sibling-source copying,
-browser or live proof, public-sync, push, production readiness, or universal
-inheritance claims.
+read-only SOT3 evidence projection. It releases the documentation-only T3A
+source-seam decision packet only. It does not authorize T3B implementation,
+SOT3 or MAO execution, sibling-source copying, browser or live proof,
+public-sync, push, production readiness, or universal inheritance claims.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T2_PASS_T3_PACKET_AUTHORING_NEXT` | PASS |
-| Baseline status | T2 GC-018 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
-| Work order status | T2 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T2_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T3A_DISPATCH_READY` | PASS |
+| Baseline status | T3A GC-018 baseline | `Status: DISPATCH_READY` | PASS |
+| Work order status | T3A work order | `Status: DISPATCH_READY` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T2_COMPLETION_REVIEW_2026-07-18.md` | T2 dependency accepted at `609edffbe` | PASS |
 | Registry JSON | corpus registry generated aggregate | existing cvf-web `src/` scope coverage and aggregate drift check | PASS |
 | Registry Markdown | corpus registry read model | existing cvf-web `src/` scope coverage | PASS |
 | External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
