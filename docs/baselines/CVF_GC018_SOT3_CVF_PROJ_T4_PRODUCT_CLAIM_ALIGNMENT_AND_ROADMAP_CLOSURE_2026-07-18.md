@@ -2,11 +2,11 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: DISPATCH_READY_R1
 
 Batch ID: SOT3-CVF-PROJ-T4
 
-Dispatch base head: `ba872f1af`
+Dispatch base head: `426d490cc`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -33,7 +33,7 @@ separate repository-boundary batch after private closure.
 Allowed worker paths: `README.md`;
 `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`;
 `docs/reviews/CVF_SOT3_CVF_PROJ_T4_FINAL_CROSS_SURFACE_AUDIT_2026-07-18.md`;
-`docs/reviews/CVF_SOT3_CVF_PROJ_T4_WORKER_RETURN_2026-07-18.md`.
+`docs/reviews/CVF_SOT3_CVF_PROJ_T4_R1_WORKER_RETURN_2026-07-18.md`.
 All runtime, tests, public-sync clone, session, generated aggregate, provider,
 production, push, and external mutation are forbidden.
 
@@ -43,7 +43,8 @@ production, push, and external mutation are forbidden.
 |---|---|---|---|
 | T3 accepted | `docs/reviews/CVF_SOT3_CVF_PROJ_T3_COMPLETION_REVIEW_2026-07-18.md` | `92dbe2112` | PASS |
 | T4 authoring released | projection roadmap | `92dbe2112` | PASS |
-| clean continuity base | T3 closure sync | `ba872f1af` | PASS |
+| original T4 block accepted | `docs/reviews/CVF_SOT3_CVF_PROJ_T4_BLOCKED_RETURN_REVIEW_AND_R1_REDISPATCH_2026-07-18.md` | reviewer changed set at `426d490cc` | PASS |
+| continuity marker repaired | `AGENT_HANDOFF_V47_2026-07-18.md` | `426d490cc` | PASS |
 
 ## Source Verification Block
 
@@ -115,11 +116,11 @@ Returned defects: NONE_RETURNED
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | this baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | paired T4 work order | `Status: DISPATCH_READY` | PASS |
+| Baseline status | this baseline | `Status: DISPATCH_READY_R1` | PASS |
+| Work order status | paired T4 work order | `Status: DISPATCH_READY_R1` | PASS |
 | Completion or reviewer artifact | T4 completion review | reviewer-owned | N/A with reason |
 | Worker return | T4 worker return | worker-owned uncommitted | N/A with reason |
-| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T4_DISPATCH_READY` | PASS |
+| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T4_R1_DISPATCH_READY` | PASS |
 | Registry JSON | existing GC-051 coverage | reviewer verifies changed-corpus coverage | N/A with reason |
 | Registry Markdown | existing registry front door | no new corpus family | N/A with reason |
 | External evidence digest | repository-local evidence only | none | N/A with reason |

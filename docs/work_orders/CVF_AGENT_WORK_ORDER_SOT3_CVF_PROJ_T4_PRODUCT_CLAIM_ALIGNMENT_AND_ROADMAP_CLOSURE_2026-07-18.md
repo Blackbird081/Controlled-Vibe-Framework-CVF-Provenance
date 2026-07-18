@@ -2,11 +2,11 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: DISPATCH_READY_R1
 
 Batch ID: SOT3-CVF-PROJ-T4
 
-Dispatch base head: `ba872f1af`
+Dispatch base head: `426d490cc`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -14,7 +14,7 @@ Worker: delegated documentation and audit worker
 
 Reviewer/closer: independent reviewer/closer
 
-Worker return path: `docs/reviews/CVF_SOT3_CVF_PROJ_T4_WORKER_RETURN_2026-07-18.md`
+Worker return path: `docs/reviews/CVF_SOT3_CVF_PROJ_T4_R1_WORKER_RETURN_2026-07-18.md`
 
 ## Dispatch Prompt Envelope
 
@@ -26,8 +26,8 @@ Commit mode: WORKER_MUST_NOT_COMMIT.
 
 executionBaseHead: worker captures the committed dispatch/session-sync HEAD.
 
-Current-time notes: T3 closed at `92dbe2112`; clean authoring base is
-`ba872f1af`.
+Current-time notes: T3 closed at `92dbe2112`; the original T4 worker block is
+accepted and the continuity marker is repaired at `426d490cc`.
 
 Do-not-misread notes: provenance README/catalog edits are not public export.
 Do not touch or claim verification of the public-sync clone.
@@ -61,7 +61,7 @@ reviewer accepts/repairs and closes roadmap; session steward syncs continuity.
 1. `README.md`
 2. `docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md`
 3. `docs/reviews/CVF_SOT3_CVF_PROJ_T4_FINAL_CROSS_SURFACE_AUDIT_2026-07-18.md`
-4. `docs/reviews/CVF_SOT3_CVF_PROJ_T4_WORKER_RETURN_2026-07-18.md`
+4. `docs/reviews/CVF_SOT3_CVF_PROJ_T4_R1_WORKER_RETURN_2026-07-18.md`
 
 ### Forbidden scope
 
@@ -81,7 +81,8 @@ roadmap, completion review, material commit, and separate session sync.
 |---|---|---|---|
 | T3 accepted | `docs/reviews/CVF_SOT3_CVF_PROJ_T3_COMPLETION_REVIEW_2026-07-18.md` | `92dbe2112` | PASS |
 | T4 released | projection roadmap | `92dbe2112` | PASS |
-| clean continuity | T3 closure sync | `ba872f1af` | PASS |
+| original T4 block accepted | `docs/reviews/CVF_SOT3_CVF_PROJ_T4_BLOCKED_RETURN_REVIEW_AND_R1_REDISPATCH_2026-07-18.md` | reviewer changed set at `426d490cc` | PASS |
+| continuity marker repaired | `AGENT_HANDOFF_V47_2026-07-18.md` | `426d490cc` | PASS |
 
 ## Required First Reads
 
@@ -234,11 +235,11 @@ Contract source archive-qualified exception:
 | route | `MULTI_AGENT_MULTI_ROLE` |
 | rolePattern | dispatcher commits packet; worker no commit; reviewer closes; session steward syncs |
 | phase | DISPATCH_AUTHORING, EXECUTION, CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatchBaseHead=`ba872f1af`; executionBaseHead=worker captures committed dispatch HEAD; closureBaseHead=reviewer sets |
+| baseHeadFor(phase) | dispatchBaseHead=`426d490cc`; executionBaseHead=worker captures committed R1 dispatch HEAD; closureBaseHead=reviewer sets |
 | changedSetScope(phase) | dispatch three paths; execution four paths; closure packet/accepted outputs; session protected paths |
 | traceScope(phase, actor) | commands, paths, diff, base, public boundary, and commit evidence per actor |
 | commitOwner(phase) | dispatcher, reviewer/closer, session steward; worker forbidden |
-| crossBatchIsolation | Before status evidence: clean worktree at dispatch base `ba872f1af`; foreign change blocks execution |
+| crossBatchIsolation | Before status evidence: clean worktree at dispatch base `426d490cc`; foreign change blocks execution |
 | nextMoveSurfaces | worker forbidden; reviewer/session steward update after accepted evidence |
 
 ## Reviewer Closure Conversion
@@ -252,7 +253,7 @@ Contract source archive-qualified exception:
 
 ## Worker Return Packet Shape Contract
 
-workerReturnPath: `docs/reviews/CVF_SOT3_CVF_PROJ_T4_WORKER_RETURN_2026-07-18.md`
+workerReturnPath: `docs/reviews/CVF_SOT3_CVF_PROJ_T4_R1_WORKER_RETURN_2026-07-18.md`
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
@@ -265,7 +266,7 @@ workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 ## Verification Commands
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base ba872f1af --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 rg -n "SOT3|SOT Three-Layer|Technical Product Catalog" README.md docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md
 python governance/compat/run_worker_return_fast_gate.py
 python governance/compat/check_governed_file_size.py --enforce
@@ -307,7 +308,7 @@ git rev-parse --short HEAD
 | Command or tool surface | source reads, search, scaffold, patch, governance gates |
 | Target paths | roadmap, T4 baseline, T4 work order |
 | Allowed scope source | roadmap and operator standing continuation |
-| Before status evidence | clean worktree at HEAD `ba872f1af`; T3 closed at `92dbe2112` |
+| Before status evidence | clean worktree at HEAD `426d490cc`; T3 closed at `92dbe2112`; original T4 blocked return preserved |
 | After status evidence | exact three-path dispatch pending commit |
 | Diff evidence | Git diff before commit |
 | Approval boundary | T4 private documentation dispatch only |
@@ -341,11 +342,11 @@ relocate, or refactor a durable governance foundation family.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | paired T4 baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | this work order | `Status: DISPATCH_READY` | PASS |
+| Baseline status | paired T4 baseline | `Status: DISPATCH_READY_R1` | PASS |
+| Work order status | this work order | `Status: DISPATCH_READY_R1` | PASS |
 | Completion or reviewer artifact | T4 completion review | reviewer-owned | N/A with reason |
 | Worker return | T4 worker return | worker-owned uncommitted | N/A with reason |
-| Roadmap state | projection roadmap | `Status: SOT3_CVF_PROJ_T4_DISPATCH_READY` | PASS |
+| Roadmap state | projection roadmap | `Status: SOT3_CVF_PROJ_T4_R1_DISPATCH_READY` | PASS |
 | Registry JSON | existing GC-051 coverage | reviewer verifies coverage | N/A with reason |
 | Registry Markdown | existing registry front door | no new corpus family | N/A with reason |
 | External evidence digest | repository-local evidence only | none | N/A with reason |
