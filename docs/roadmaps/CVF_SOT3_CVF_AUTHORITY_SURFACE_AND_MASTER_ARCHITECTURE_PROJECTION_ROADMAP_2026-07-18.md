@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: SOT3_CVF_PROJ_T3_CLOSED_PASS_BOUNDED_T4_PACKET_AUTHORING_NEXT
+Status: SOT3_CVF_PROJ_T4_DISPATCH_READY
 
 Date: 2026-07-18
 
@@ -269,7 +269,7 @@ behavior, production state, or public surfaces. T4 packet authoring is released.
 | Work order status | T3 work order | `Status: CLOSED_PASS_BOUNDED_AFTER_REVIEWER_FRESHNESS_REPAIR` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T3_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_AFTER_FRESHNESS_REPAIR` | PASS |
 | Worker return | T3 worker return | `Status: ACCEPTED_BY_REVIEWER_AFTER_FRESHNESS_REPAIR` | PASS |
-| Roadmap state | this roadmap | `Status: SOT3_CVF_PROJ_T3_CLOSED_PASS_BOUNDED_T4_PACKET_AUTHORING_NEXT` | PASS |
+| Roadmap state | this roadmap | `Status: SOT3_CVF_PROJ_T4_DISPATCH_READY` | PASS |
 | Registry JSON | existing GC-051 registry aggregate | changed-corpus coverage and aggregate drift PASS | PASS |
 | Registry Markdown | existing registry front door | existing family coverage remains sufficient | PASS |
 | External evidence digest | repository-local evidence only | none | N/A with reason |
