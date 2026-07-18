@@ -15,30 +15,30 @@ V46 was rotated at 892 lines under the Governed File Size Guard.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`32813a983` owns the T3P2 evidence/liveness decision closure.
+`a525fbd32` owns the T3B durable-event operator-readout dispatch.
 
 ## Active Boundary
 
-CVF-WEB-INHERITANCE-T3P2 is independently accepted at material commit
-`32813a983`. The next allowed move is bounded T3B packet authoring only.
+CVF-WEB-INHERITANCE-T3B is dispatched at material commit `a525fbd32`. The
+next allowed move is its exact twelve-path no-commit implementation.
 
-Evidence/heartbeat projection, T3B execution, T4-T5, SOT3-CVF-PROJ-T1-T4, sibling
+Evidence/heartbeat projection, T4-T5, SOT3-CVF-PROJ-T1-T4, sibling
 application copying, browser/provider/live work, public-sync, push,
 production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_inheritance_t3p2_closed_t3b_packet_authoring_next`;
+current mode=`cvf_web_inheritance_t3b_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=author only the bounded source-verified T3B packet;
-parked checkpoint=evidence/heartbeat projection, T3B execution, T4-T5, projection T1-T4,
+next allowed move=execute only committed CVF-WEB-INHERITANCE-T3B;
+parked checkpoint=evidence/heartbeat projection, T4-T5, projection T1-T4,
 sibling copy, browser/provider/live, public-sync, push, production,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`cvf_web_inheritance_t3p2_closed_t3b_packet_authoring_next`
+`cvf_web_inheritance_t3b_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -62,6 +62,12 @@ cvf-web source consumes an MAO export; and registry/operator reconciliation
 totals were repaired to match the terminal rows.
 
 ## Latest Work / Changes
+
+- Dispatched T3B at material commit `a525fbd32` after pre-dispatch 75/75,
+  commit-steward, and pre-commit 83/83 PASS.
+- Worker scope is exactly twelve paths for dependency/config, safe server
+  readout/tests, registry truth/tests, page/tests, overview link/tests, and
+  worker return under `WORKER_MUST_NOT_COMMIT`.
 
 - Closed T3P2 at material commit `32813a983` after worker-fast/reviewer-fast
   62/62, direct source recomputation, file-size, and pre-commit 83/83 PASS.
@@ -445,6 +451,23 @@ material closure commit `32813a983`.
 Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
 `CVF_SESSION/state/entries/cvfWebInheritanceT3P2Closure20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing roadmap-continuation instruction.
+
+Rollback boundary: revert this protected sync together; no material source,
+test, public, or provider mutation belongs to it.
+
+## Core Guard Self-Protection Authorization - T3B Dispatch Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after
+material dispatch commit `a525fbd32`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/cvfWebInheritanceT3BDispatch20260718.json`;
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
 `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.

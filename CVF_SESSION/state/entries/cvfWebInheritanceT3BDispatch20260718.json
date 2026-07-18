@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1949,
+  "stateKey": "cvfWebInheritanceT3BDispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "a525fbd32",
+    "dispatchBaseHead": "f16432325",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T3B_MAO_DURABLE_EVENT_OPERATOR_READOUT_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T3B_MAO_DURABLE_EVENT_OPERATOR_READOUT_2026-07-18.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedPaths": 12,
+    "verification": "pre-dispatch 75/75, dispatch steward, and pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact bounded T3B durable-event-only Web readout implementation and return for independent review.",
+    "heldNextTranche": "Evidence/heartbeat projection and T4-T5 remain parked.",
+    "claimBoundary": "Read-only durable run/task/timeout/event-recency projection only; no execution or live action."
+  }
+}

@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_inheritance_t3p2_closed_t3b_packet_authoring_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=author only the bounded source-verified T3B implementation packet; parked checkpoint=evidence/heartbeat projection, T4-T5, provider/live, public-sync, push, production, and external mutation lanes.
+Startup acknowledged: current mode=`cvf_web_inheritance_t3b_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=execute only committed CVF-WEB-INHERITANCE-T3B; parked checkpoint=evidence/heartbeat projection, T4-T5, provider/live, public-sync, push, production, and external mutation lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_inheritance_t3p2_closed_t3b_packet_authoring_next`
+Current mode marker: `cvf_web_inheritance_t3b_dispatched_worker_next`
 
-Current mode: `cvf_web_inheritance_t3p2_closed_t3b_packet_authoring_next`
+Current mode: `cvf_web_inheritance_t3b_dispatched_worker_next`
 
-`cvf_web_inheritance_t3p2_closed_t3b_packet_authoring_next`
+`cvf_web_inheritance_t3b_dispatched_worker_next`
 
 Previous mode:
 
-`cvf_web_inheritance_t3p2_dispatched_worker_next`
+`cvf_web_inheritance_t3p2_closed_t3b_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-WEB-INHERITANCE-T3B MAO durable-event operator readout dispatch | `a525fbd32` | DISPATCH_READY after pre-dispatch 75/75, dispatch steward, and pre-commit 83/83 PASS; exact twelve-path no-commit Web readout; evidence/heartbeat and T4-T5 parked. |
 | CVF-WEB-INHERITANCE-T3P2 evidence/liveness availability decision closure | `32813a983` | REVIEWER_ACCEPTED_WITH_REPAIR; durable event/task/timeout/event-recency route accepted; two process-local source pilots acknowledged; evidence/heartbeat excluded; T3B packet authoring next. |
 | CVF-WEB-INHERITANCE-T3P2 evidence/liveness availability decision dispatch | `497253d8b` | DISPATCH_READY after author-fast 5/5, pre-dispatch 75/75, dispatch steward, and pre-commit 83/83 PASS; exact two-output documentation-only no-commit decision; T3B/T4-T5 parked. |
 | CVF-WEB-INHERITANCE-T3P1 run-discovery prerequisite closure | `c282312b9` | REVIEWER_ACCEPTED_WITH_REPAIR; symlink-following candidate escape removed; focused 32/32, full 1790/1790, TypeScript, reviewer-fast 62/62, file-size, and pre-commit 83/83 PASS; T3P2 decision packet authoring next. |
@@ -291,13 +292,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_inheritance_t3p2_closed_t3b_packet_authoring_next`
+Mode: `cvf_web_inheritance_t3b_dispatched_worker_next`
 
-CVF-WEB-INHERITANCE-T3P2 is independently accepted at material commit
-`32813a983`. Author only a source-verified T3B packet for durable run
-discovery, task state, timeout milestones, and event recency. Evidence and
-heartbeat projection, T4-T5, provider/live, public-sync, push, production,
-and external mutation lanes remain parked.
+CVF-WEB-INHERITANCE-T3B is dispatched at material commit `a525fbd32`.
+Execute only its exact twelve-path no-commit durable-run readout packet and
+return for independent review. Evidence/heartbeat projection, T4-T5,
+provider/live, public-sync, push, production, and external mutation remain
+parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

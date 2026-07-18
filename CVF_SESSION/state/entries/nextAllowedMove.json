@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1948,
+  "stateOrder": 1950,
   "stateKey": "nextAllowedMove",
-  "value": "Author and source-verify only the bounded CVF-WEB-INHERITANCE-T3B implementation packet released by accepted T3P2 closure commit 32813a983. The packet may project durable run discovery, task state, timeout milestones, and event recency only. Evidence records, evidence milestones, evidence recency, heartbeat, worker launch, provider/live work, T4-T5, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Execute only committed CVF-WEB-INHERITANCE-T3B at material commit a525fbd32 under WORKER_MUST_NOT_COMMIT. Modify exactly its twelve allowed paths and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Evidence records/milestones/recency, heartbeat, worker launch, provider/live work, T4-T5, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
