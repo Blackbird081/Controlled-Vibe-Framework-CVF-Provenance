@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_cvf_proj_t3_closed_t4_packet_authoring_next",
-  "previousMode": "sot3_cvf_proj_t3_dispatched_worker_next",
+  "currentMode": "sot3_cvf_proj_t4_dispatched_worker_next",
+  "previousMode": "sot3_cvf_proj_t3_closed_t4_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13445,5 +13445,14 @@
     "nextAllowedMove": "Author and dispatch fresh SOT3-CVF-PROJ-T4 final alignment and closure packet.",
     "claimBoundary": "Private documentation/navigation projection and one governed freshness reconciliation only."
   },
-  "nextAllowedMove": "Author and dispatch a fresh source-verified SOT3-CVF-PROJ-T4 no-commit packet for product/readme claim alignment and final cross-surface roadmap closure. Provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3CvfProjT4Dispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "546926dd5",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_CVF_PROJ_T4_PRODUCT_CLAIM_ALIGNMENT_AND_ROADMAP_CLOSURE_2026-07-18.md",
+    "allowedScope": "README.md; technical product catalog; final 15-row cross-surface audit; worker return",
+    "verification": "pre-dispatch 75/75 PASS, dispatch commit steward PASS, pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the no-commit T4 worker packet from clean executionBaseHead 546926dd5.",
+    "claimBoundary": "Private product/readme claim alignment and cross-surface audit only; reviewer owns final roadmap closure."
+  },
+  "nextAllowedMove": "Execute SOT3-CVF-PROJ-T4 from clean executionBaseHead 546926dd5 under WORKER_MUST_NOT_COMMIT, changing only README.md, the technical product catalog, the final cross-surface audit, and the worker return. Independent reviewer owns acceptance, roadmap closure, commit, and continuity sync. Provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

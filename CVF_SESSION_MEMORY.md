@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_cvf_proj_t3_closed_t4_packet_authoring_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=author and dispatch the fresh SOT3-CVF-PROJ-T4 final claim-alignment and roadmap-closure packet; parked checkpoint=provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation.
+Startup acknowledged: current mode=`sot3_cvf_proj_t4_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=execute the no-commit SOT3-CVF-PROJ-T4 final claim-alignment and roadmap-closure packet from `546926dd5`; parked checkpoint=provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation.
 
 ## Current Mode
 
-Current mode marker: `sot3_cvf_proj_t3_closed_t4_packet_authoring_next`
+Current mode marker: `sot3_cvf_proj_t4_dispatched_worker_next`
 
-Current mode: `sot3_cvf_proj_t3_closed_t4_packet_authoring_next`
+Current mode: `sot3_cvf_proj_t4_dispatched_worker_next`
 
-`sot3_cvf_proj_t3_closed_t4_packet_authoring_next`
+`sot3_cvf_proj_t4_dispatched_worker_next`
 
 Previous mode:
 
-`sot3_cvf_proj_t3_dispatched_worker_next`
+`sot3_cvf_proj_t3_closed_t4_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-CVF-PROJ-T4 product/readme alignment and final cross-surface audit dispatch | `546926dd5` | DISPATCH_READY after pre-dispatch 75/75, dispatch commit-steward, and pre-commit 83/83 PASS; exact four-path no-commit worker; reviewer owns roadmap closure and public-sync remains parked. |
 | SOT3-CVF-PROJ-T2 master architecture and front-door projection dispatch | `56b5b9473` | DISPATCH_READY after pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS; six conditional no-commit paths; T3-T4/public-sync parked. |
 | SOT3-CVF-PROJ-T1 as-built architecture catalog reconciliation closure | `11bfd46a0` | REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR; four modules, 28-entity fresh aggregate, one reviewer provenance-pointer repair; T2 packet authoring released. |
 | SOT3-CVF-PROJ-T1 as-built architecture catalog reconciliation dispatch | `e5695bc9e` | DISPATCH_READY after pre-dispatch 75/75, commit-steward, file-size, and pre-commit 83/83 PASS; exact ten-path no-commit worker; T2-T4 and public-sync remain parked. |
@@ -300,12 +301,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_cvf_proj_t3_closed_t4_packet_authoring_next`
+Mode: `sot3_cvf_proj_t4_dispatched_worker_next`
 
-Author and dispatch a fresh source-verified SOT3-CVF-PROJ-T4 no-commit packet
-for product/readme claim alignment and final cross-surface roadmap closure.
+Execute SOT3-CVF-PROJ-T4 from clean executionBaseHead `546926dd5` under
+`WORKER_MUST_NOT_COMMIT`, changing only README.md, the technical product
+catalog, the final cross-surface audit, and the worker return. Independent
+reviewer owns acceptance, roadmap closure, commit, and continuity sync.
 Provider/live, public-sync, push, production, external mutation, and CVF Web
-T4 implementation remain parked. T3 closed at material commit `92dbe2112`.
+T4 implementation remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
