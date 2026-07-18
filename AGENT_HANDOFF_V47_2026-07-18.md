@@ -219,6 +219,16 @@ child commit.
 
 This marker changes no mode, next move, material decision, or authority.
 
+## GC-020 Marker - Projection Automation T2 Dispatch Handoff Sync
+
+This handoff-only child records parent material dispatch commit `28a4a9a21`
+for `CVF-PROJECTION-AUTO-T2`. The current child SHA cannot be known before
+commit creation, so the active-session checker may accept the parent SHA for
+this handoff-only child commit.
+
+T2 is dispatch-ready for no-commit worker execution. This marker changes no
+material decision, allowed scope, commit authority, or execution boundary.
+
 ## GC-020 Marker - Projection Automation T0 Closure Handoff Sync
 
 This handoff-only child records parent material closure commit `38ec816f9`.
