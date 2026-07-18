@@ -160,6 +160,8 @@ Exact remote SHA must be derived live from git when needed.
 
 External agent memory files: non-canonical convenience only.
 
+Latest durable learning commit: `a3e147685` (`ADIF-0041`).
+
 ## Claim Boundary
 
 This handoff records continuity, completed source/build verification, public
