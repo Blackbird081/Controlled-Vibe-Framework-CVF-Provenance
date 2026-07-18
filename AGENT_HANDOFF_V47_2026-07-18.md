@@ -207,6 +207,15 @@ reviewed roadmap tranches.
 Rollback boundary: revert this seven-path protected set together. No material,
 source, test, registry, public, or provider mutation belongs to this sync.
 
+## GC-020 Marker - T1 Closure Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`746a0f9b6`. The current child SHA cannot be known before commit creation, so
+the active-session checker may accept this parent SHA for the handoff-only
+child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## Claim Boundary
 
 This handoff records protected continuity only. It does not itself authorize
