@@ -247,6 +247,29 @@ commit.
 This marker changes no material decision or authority beyond the recorded
 dispatch continuity.
 
+## Core Guard Self-Protection Authorization - T4 Execution-Routing GC-020 Repair
+
+Authorized guard-maintenance scope: add the missing parent marker for the
+session-sync-only execution-routing commit `bf8368958` so the committed T4
+worker base passes active-session compatibility.
+
+Protected path: `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing automatic roadmap-continuation and reviewer
+repair instruction.
+
+Rollback boundary: revert this handoff-only repair as one unit; no material
+source, test, worker-return, provider/live, public, push, production, or
+external mutation belongs to it.
+
+## GC-020 Marker - T4 Execution-Routing Repair Handoff-Sync-Only Commit
+
+This handoff-only child records parent session-sync commit `bf8368958`. The
+current child SHA cannot be known before commit creation, so the active-session
+checker may accept the parent SHA for this handoff-only child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T2 Closure Sync
 
 Authorized guard-maintenance scope: refresh protected continuity after T2
