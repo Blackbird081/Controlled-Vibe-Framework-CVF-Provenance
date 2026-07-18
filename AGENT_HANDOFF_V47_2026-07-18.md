@@ -431,6 +431,15 @@ Operator authorization: standing roadmap-continuation instruction.
 Rollback boundary: revert this protected sync together; no material source,
 test, public, or provider mutation belongs to it.
 
+## GC-020 Marker - T3P2 Dispatch Handoff-Sync-Only Commit
+
+This handoff-only child records parent session-sync commit `a6f191544` after
+the T3P2 decision-work-order material dispatch. The current child SHA cannot
+be known before commit creation, so the active-session checker may accept the
+parent SHA for this handoff-only child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## Claim Boundary
 
 This handoff records protected continuity only. It does not itself authorize
