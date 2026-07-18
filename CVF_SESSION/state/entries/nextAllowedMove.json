@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1964,
+  "stateOrder": 1966,
   "stateKey": "nextAllowedMove",
-  "value": "Author a fresh source-verified SOT3-CVF-PROJ-T2 GC-018 baseline and no-commit work order for master architecture and the SOT3 front door, using T1 material closure commit 11bfd46a0 as dependency evidence. T3-T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Execute the committed SOT3-CVF-PROJ-T2 no-commit master-architecture work order from a clean execution base and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3-T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

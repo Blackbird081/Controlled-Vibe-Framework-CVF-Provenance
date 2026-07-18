@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_cvf_proj_t1_closed_t2_packet_authoring_next",
+  "currentMode": "sot3_cvf_proj_t2_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V47_2026-07-18.md",
-  "nextAllowedMove": "Author a fresh source-verified SOT3-CVF-PROJ-T2 GC-018 baseline and no-commit work order for master architecture and the SOT3 front door, using T1 material closure commit 11bfd46a0 as dependency evidence. T3-T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute the committed SOT3-CVF-PROJ-T2 no-commit master-architecture work order from a clean execution base and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3-T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

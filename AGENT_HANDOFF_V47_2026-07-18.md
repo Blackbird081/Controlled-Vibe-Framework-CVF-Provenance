@@ -32,16 +32,16 @@ selection, new GC-018, and a source-verified work order.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_cvf_proj_t1_closed_t2_packet_authoring_next`;
+current mode=`sot3_cvf_proj_t2_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=author the fresh source-verified SOT3-CVF-PROJ-T2 packet from T1 material closure `11bfd46a0`;
+next allowed move=execute the committed SOT3-CVF-PROJ-T2 no-commit work order and return for independent review;
 parked checkpoint=projection T3-T4, CVF Web T4 implementation,
 provider/live, public-sync, push, production, external mutation,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`sot3_cvf_proj_t1_closed_t2_packet_authoring_next`
+`sot3_cvf_proj_t2_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -283,6 +283,30 @@ Current mode: `sot3_cvf_proj_t1_closed_t2_packet_authoring_next`.
 
 Next allowed move: fresh T2 packet authoring only. T3-T4 and public-sync remain
 parked.
+
+## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T2 Dispatch Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after T2
+dispatch commit `56b5b9473`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3CvfProjT2Dispatch20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing sequential roadmap-continuation instruction.
+
+Rollback boundary: revert this seven-path sync together; no T2 worker output,
+runtime, provider/live, public, push, production, or external mutation belongs
+to it.
+
+## GC-020 Marker - SOT3-CVF-PROJ-T2 Dispatch Session-Sync Commit
+
+This session-sync-only child records parent dispatch commit `56b5b9473`.
+Current mode is `sot3_cvf_proj_t2_dispatched_worker_next`; T3-T4 and public-sync
+remain parked.
 
 ## GC-020 Marker - T5 And Roadmap Closure Handoff-Sync-Only Commit
 
