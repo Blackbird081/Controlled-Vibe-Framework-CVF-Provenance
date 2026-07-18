@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 docType: work_order
 
@@ -153,7 +153,8 @@ push, production, queue, daemon, worker launch, or sibling application edit.
 |---|---|---|
 | SOT3-CVF-PROJ-T0 acceptance | `docs/reviews/CVF_SOT3_CVF_PROJ_T0_COMPLETION_REVIEW_2026-07-18.md`; material commit `9d8305942` | SATISFIED |
 | current roadmap T0 release | `docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md` | SATISFIED_FOR_T0_ONLY |
-| T1-T5 implementation | independent T0 completion review does not yet exist | HELD |
+| T1 implementation | `docs/reviews/CVF_WEB_INHERITANCE_T0_COMPLETION_REVIEW_2026-07-18.md` | RELEASED_FOR_FRESH_PACKET_AUTHORING |
+| T2-T5 implementation | T1 completion review does not yet exist | HELD |
 
 ## Source Verification Block
 
@@ -261,14 +262,14 @@ and own the material commit. Worker completion is not dependency release.
 
 ## Closure Checklist
 
-- [ ] 12 seed families independently reconciled;
-- [ ] SOT3 backend inheritance independently confirmed;
-- [ ] MAO Web absence boundary independently confirmed;
-- [ ] sibling-app authority boundary preserved;
-- [ ] runtime-module registry routing accepted or repaired;
-- [ ] exact two-path worker changed set confirmed;
-- [ ] worker no-commit boundary confirmed;
-- [ ] session continuity synchronized separately after material closure.
+- [x] 12 seed families independently reconciled;
+- [x] SOT3 backend inheritance independently confirmed;
+- [x] MAO Web absence boundary independently confirmed;
+- [x] sibling-app authority boundary preserved;
+- [x] runtime-module registry routing accepted or repaired;
+- [x] exact two-path worker changed set confirmed;
+- [x] worker no-commit boundary confirmed;
+- [x] session continuity remains a separate protected sync after material closure.
 
 ## Stop Conditions
 
@@ -443,3 +444,25 @@ does not authorize cvf-web implementation, test/build/browser execution,
 package or registry change, SOT3/MAO execution, sibling source copying,
 provider/live work, public-sync, push, production, or universal inheritance
 claims.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired T0 GC-018 | closed with reviewer repairs | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T0_COMPLETION_REVIEW_2026-07-18.md` | accepted bounded review | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CVF_WEB_INHERITANCE_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | current GC-051 coverage and aggregate drift checks pass; no new scope entry required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | current GC-051 coverage check passes; no new scope entry required | PASS |
+| External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: static audit | N/A_WITH_REASON |
+| Worker-return acceptance | independent reviewer acceptance with repairs | PASS |
+| Closure claim | bounded inventory only | PASS |

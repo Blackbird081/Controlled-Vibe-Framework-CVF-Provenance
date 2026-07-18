@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CVF_WEB_INHERITANCE_T0_DISPATCH_READY
+Status: CVF_WEB_INHERITANCE_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -129,7 +129,8 @@ operator-supplied key; T0 makes no such claim.
 
 - SOT3-CVF-PROJ-T0 closed at material commit `9d8305942`.
 - CVF-WEB-INHERITANCE-T0 may now run as a no-commit audit.
-- T1-T5 remain parked until independent T0 acceptance.
+- T0 is independently accepted with reviewer repairs. T1 packet authoring is
+  released; T2-T5 remain parked until accepted T1 closure.
 - SOT3-CVF-PROJ-T1 through T4 remain parked while this cross-product audit
   determines overlap and ordering.
 - MAO-OA-T6B and SCLP-X-T3 remain parked under their existing conditions.
@@ -230,7 +231,21 @@ separate public-sync authorization and artifact set.
 
 ## Claim Boundary
 
-This roadmap releases only CVF-WEB-INHERITANCE-T0. It does not authorize Web
-implementation, SOT3/MAO execution, sibling-source copying, browser or live
-proof, public-sync, push, production readiness, or universal inheritance
-claims.
+This roadmap records accepted T0 inventory and releases fresh T1 packet
+authoring only. It does not itself authorize Web implementation, SOT3/MAO
+execution, sibling-source copying, browser or live proof, public-sync, push,
+production readiness, or universal inheritance claims.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
+| Baseline status | T0 GC-018 baseline | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | T0 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T0_COMPLETION_REVIEW_2026-07-18.md` | reviewer acceptance with repairs | PASS |
+| Registry JSON | N/A with reason: no corpus registry mutation | none | N/A with reason |
+| Registry Markdown | N/A with reason: no corpus registry mutation | none | N/A with reason |
+| External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit | N/A with reason |

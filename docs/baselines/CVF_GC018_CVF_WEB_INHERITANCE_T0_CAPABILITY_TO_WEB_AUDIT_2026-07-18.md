@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 docType: gc018
 
@@ -151,3 +151,31 @@ Reason: private provenance audit packet; no public-sync action authorized.
 This baseline authorizes one two-output read-only audit. It does not authorize
 cvf-web source, test, package, UI, registry, documentation, runtime, provider,
 live, browser, public-sync, push, or production mutation.
+
+## Current Runtime Freshness Verification
+
+Reviewer recomputation at HEAD `2852ae25f` confirmed three SOT3 dependencies,
+real SOT3 backend wiring, zero SOT3 runtime-module entries, no execution-plane
+dependency, and no MAO symbol consumption in current cvf-web source.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this file | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | paired T0 work order | closed with reviewer repairs | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T0_COMPLETION_REVIEW_2026-07-18.md` | accepted bounded review | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CVF_WEB_INHERITANCE_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | current GC-051 coverage and aggregate drift checks pass; no new scope entry required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | current GC-051 coverage check passes; no new scope entry required | PASS |
+| External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: static audit | N/A_WITH_REASON |
+| Worker-return acceptance | independent reviewer acceptance with repairs | PASS |
+| Closure claim | bounded inventory only | PASS |
