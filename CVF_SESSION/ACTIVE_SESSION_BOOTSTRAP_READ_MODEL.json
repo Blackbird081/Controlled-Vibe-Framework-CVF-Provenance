@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_web_inheritance_t3a_closed_t3p1_packet_authoring_next",
+  "currentMode": "cvf_web_inheritance_t3p1_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V47_2026-07-18.md",
-  "nextAllowedMove": "Author and dispatch only CVF-WEB-INHERITANCE-T3P1 for deterministic read-only run discovery over the existing MaoFileRunStore snapshot root. T3P2, T3B, T4-T5, Web implementation, provider/live work, public-sync, push, production, and all external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute only committed CVF-WEB-INHERITANCE-T3P1 at material commit 11f39850b under WORKER_MUST_NOT_COMMIT. Modify exactly its five allowed paths, preserve execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3P2, T3B, T4-T5, Web implementation, provider/live work, public-sync, push, production, and external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

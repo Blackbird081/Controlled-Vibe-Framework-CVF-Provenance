@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t3a_closed_t3p1_packet_authoring_next",
-  "previousMode": "cvf_web_inheritance_t3a_dispatched_worker_next",
+  "currentMode": "cvf_web_inheritance_t3p1_dispatched_worker_next",
+  "previousMode": "cvf_web_inheritance_t3a_closed_t3p1_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13251,5 +13251,19 @@
     "heldNextTranche": "T3P2, T3B, and T4-T5 remain parked; no Web, provider/live, public, push, or production mutation.",
     "claimBoundary": "T3A is a source decision only; no runtime or Web behavior was implemented."
   },
-  "nextAllowedMove": "Author and dispatch only CVF-WEB-INHERITANCE-T3P1 for deterministic read-only run discovery over the existing MaoFileRunStore snapshot root. T3P2, T3B, T4-T5, Web implementation, provider/live work, public-sync, push, production, and all external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebInheritanceT3P1Dispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "11f39850b",
+    "dispatchBaseHead": "0e7904349",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T3P1_MAO_DURABLE_RUN_DISCOVERY_PREREQUISITE_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T3P1_MAO_DURABLE_RUN_DISCOVERY_PREREQUISITE_2026-07-18.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedPaths": 5,
+    "verification": "dispatch-author fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact T3P1 read-only run-discovery prerequisite and return for independent review.",
+    "heldNextTranche": "T3P2, T3B, and T4-T5 remain parked; no Web, provider/live, public, push, or production mutation.",
+    "claimBoundary": "One read-only discovery method, type export, focused tests, and worker return only."
+  },
+  "nextAllowedMove": "Execute only committed CVF-WEB-INHERITANCE-T3P1 at material commit 11f39850b under WORKER_MUST_NOT_COMMIT. Modify exactly its five allowed paths, preserve execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3P2, T3B, T4-T5, Web implementation, provider/live work, public-sync, push, production, and external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave."
 }
