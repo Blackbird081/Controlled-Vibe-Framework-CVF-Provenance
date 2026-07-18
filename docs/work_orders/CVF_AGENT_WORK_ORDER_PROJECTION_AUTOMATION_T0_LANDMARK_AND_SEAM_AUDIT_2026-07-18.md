@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-PROJECTION-AUTO-T0
 
@@ -267,6 +267,29 @@ git status --short
 | interceptionBoundary | no wrapper, provider, IDE, or runtime interception |
 | claimLanguage | inspect, map, classify, and propose only |
 | forbiddenExpansion | tool implementation, apply, commit, push, provider/live, production |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired T0 GC-018 | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T0 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Worker return | T0 worker return | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Roadmap state | automation roadmap | `Status: T0_CLOSED_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | existing GC-051 coverage | aggregate drift checked | PASS |
+| Registry Markdown | existing registry front door | no new family required | PASS |
+| External evidence digest | repository-local evidence only | none | N/A with reason |
+| System loop interlock | no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| worker receipt disposition | independent reviewer acceptance | `ACCEPTED_BY_REVIEWER` | PASS |
+| receipt action boundary | no mapper/apply/public action | documentation-only worker evidence | PASS |
+| dependency release | committed T0 completion artifact | included in reviewer closure set | PASS |
 
 ## Public Export Disposition
 
