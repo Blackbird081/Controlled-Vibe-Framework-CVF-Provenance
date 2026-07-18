@@ -288,6 +288,7 @@ export type {
   MaoDurableRunCreateSuccess,
   MaoDurableRunAppendSuccess,
   MaoDurableRunResumeSuccess,
+  MaoDurableRunListSuccess,
 } from "./durable.run.store";
 
 export { MAO_DURABLE_RUN_SNAPSHOT_SCHEMA_VERSION, MaoFileRunStore } from "./durable.run.store";

@@ -7,9 +7,12 @@
 // coverage of compiler behavior; this file only proves root discoverability
 // and re-confirms the compiler is unchanged by that root export.
 
-import { describe, expect, it } from "vitest";
-import { compileTaskGraph } from "../src/index";
-import type { MaoAuthorityEnvelopeInput, MaoTaskDefinitionInput } from "../src/index";
+import { mkdtemp, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { compileTaskGraph, MaoFileRunStore } from "../src/index";
+import type { MaoAuthorityEnvelopeInput, MaoDurableRunListSuccess, MaoTaskDefinitionInput } from "../src/index";
 
 function authorityInput(overrides: Partial<MaoAuthorityEnvelopeInput> = {}): MaoAuthorityEnvelopeInput {
   return {
@@ -56,5 +59,30 @@ describe("execution package root MAO discoverability", () => {
     if (!result.ok) {
       expect(result.reason).toBe("EMPTY_TASK_SET");
     }
+  });
+
+  describe("MaoFileRunStore.listRunIds package-root discoverability", () => {
+    let root: string;
+
+    beforeEach(async () => {
+      root = await mkdtemp(join(tmpdir(), "mao-package-root-discovery-"));
+    });
+
+    afterEach(async () => {
+      await rm(root, { recursive: true, force: true });
+    });
+
+    it("is callable through the package root and returns the typed list-success shape", async () => {
+      const store = new MaoFileRunStore(root);
+      const graph = compileTaskGraph({ authority: authorityInput(), tasks: [worker("t1")] });
+      if (!graph.ok) throw new Error("test setup failure: package-root compile failed");
+      await store.createRun(graph.graph);
+
+      const result: MaoDurableRunListSuccess | { ok: false } = await store.listRunIds();
+      expect(result.ok).toBe(true);
+      if (result.ok) {
+        expect(result.taskGraphIds).toEqual([graph.graph.taskGraphId]);
+      }
+    });
   });
 });

@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIR
 
 Batch ID: CVF-WEB-INHERITANCE-T3P1
 
@@ -299,16 +299,16 @@ coverage. Reviewer owns any material commit and closure claim.
 
 ## Closure Checklist
 
-- [ ] execution HEAD matches dispatcher instruction;
-- [ ] missing-root behavior is successful, empty, and non-creating;
-- [ ] canonical candidate filtering and filename binding are tested;
-- [ ] every canonical candidate receives full replay validation;
-- [ ] ordering, uniqueness, and repeated-read purity are tested;
-- [ ] local and package-root exports compile and pass;
-- [ ] focused/full tests, TypeScript, file-size, and worker-return gate pass;
-- [ ] exactly five paths change and nothing is staged;
-- [ ] worker no-commit boundary is honored; and
-- [ ] independent reviewer closure remains pending.
+- [x] execution HEAD matches dispatcher instruction;
+- [x] missing-root behavior is successful, empty, and non-creating;
+- [x] canonical candidate filtering and filename binding are tested;
+- [x] every canonical candidate receives full replay validation;
+- [x] ordering, uniqueness, and repeated-read purity are tested;
+- [x] local and package-root exports compile and pass;
+- [x] focused/full tests, TypeScript, file-size, and worker-return gate pass;
+- [x] exactly five worker paths changed and nothing was staged;
+- [x] worker no-commit boundary was honored; and
+- [x] independent reviewer accepted after one source/test repair.
 
 ## Return-To-Orchestrator Conditions
 
@@ -475,3 +475,27 @@ This work order authorizes only the specified read-only run-discovery method,
 type export, focused tests, and no-commit worker return. It does not authorize
 cvf-web changes, evidence or heartbeat persistence, execution, provider/live,
 public, push, release, production, or session mutation.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired T3P1 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | T3P1 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIR` | PASS |
+| Worker return | T3P1 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CVF_WEB_INHERITANCE_T3P1_PASS_T3P2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | corpus registry generated aggregate | existing execution-plane source/test scope coverage; drift check passed | PASS |
+| Registry Markdown | corpus registry read model | existing execution-plane source/test scope coverage | PASS |
+| External evidence digest | N/A with reason: repository-local source and tests | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit follows | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: read-only enumeration creates no receipt | N/A_WITH_REASON |
+| Query acceptance evidence | focused real-filesystem discovery matrix 32/32 | PASS |
+| Worker-return acceptance | exact five paths, unchanged HEAD, no staging, gates passed | PASS |
+| Closure claim | read-only discovery accepted after symlink-boundary repair | PASS |

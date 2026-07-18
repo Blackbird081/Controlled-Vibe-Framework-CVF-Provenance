@@ -9,7 +9,7 @@
 // remains in the repository or the OS temp root longer than the test run.
 
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { mkdtemp, readdir, readFile, rm, stat, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readdir, readFile, rm, stat, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -568,5 +568,153 @@ describe("MaoFileRunStore", () => {
 
     const remainingTempFiles = await listTempArtifacts(root);
     expect(remainingTempFiles).toEqual([]);
+  });
+
+  // --- listRunIds discovery ---
+
+  describe("listRunIds", () => {
+    it("returns a successful empty list for a missing root and never creates it", async () => {
+      const missingRoot = join(root, "does-not-exist-yet");
+      const store = new MaoFileRunStore(missingRoot);
+
+      const result = await store.listRunIds();
+      expect(result.ok).toBe(true);
+      if (result.ok) {
+        expect(result.taskGraphIds).toEqual([]);
+      }
+
+      await expect(stat(missingRoot)).rejects.toThrow();
+    });
+
+    it("returns unique valid task graph IDs in deterministic lexicographic order after full validation", async () => {
+      const store = new MaoFileRunStore(root);
+      const graphB = compileGraph({ workOrderId: "work-order-b" });
+      const graphA = compileGraph({ workOrderId: "work-order-a" });
+      await store.createRun(graphB);
+      await store.createRun(graphA);
+
+      const result = await store.listRunIds();
+      expect(result.ok).toBe(true);
+      if (result.ok) {
+        const expected = [graphA.taskGraphId, graphB.taskGraphId].sort();
+        expect(result.taskGraphIds).toEqual(expected);
+      }
+    });
+
+    it("ignores atomic temp files, canonical directories, symlinks, and unrelated non-canonical entries", async () => {
+      const store = new MaoFileRunStore(root);
+      const graph = compileGraph();
+      await store.createRun(graph);
+
+      // Non-canonical noise the discovery pass must ignore.
+      await writeFile(join(root, "not-a-snapshot.txt"), "noise", "utf8");
+      await writeFile(join(root, "deadbeef.json.tmp-abc123"), "{}", "utf8");
+      await mkdir(join(root, "a-subdirectory"));
+      await mkdir(join(root, `${"b".repeat(64)}.json`));
+
+      const externalSnapshot = join(root, "outside-candidate.json");
+      await writeFile(externalSnapshot, "{}", "utf8");
+      const canonicalSymlink = join(root, `${"c".repeat(64)}.json`);
+      try {
+        await symlink(externalSnapshot, canonicalSymlink, "file");
+      } catch (error) {
+        // Windows without Developer Mode may deny file-symlink creation.
+        // The canonical-directory case still exercises non-file filtering;
+        // source inspection confirms Dirent.isFile() does not follow links.
+        if (!(typeof error === "object" && error !== null && "code" in error && error.code === "EPERM")) throw error;
+      }
+
+      const result = await store.listRunIds();
+      expect(result.ok).toBe(true);
+      if (result.ok) {
+        expect(result.taskGraphIds).toEqual([graph.taskGraphId]);
+      }
+    });
+
+    it("fails closed on a canonical file with invalid JSON rather than silently skipping it", async () => {
+      const store = new MaoFileRunStore(root);
+      const graph = compileGraph();
+      await store.createRun(graph);
+
+      // A second, unrelated canonical-looking (but garbage) snapshot file.
+      const bogusFileName = `${"a".repeat(64)}.json`;
+      await writeFile(join(root, bogusFileName), "{ not valid json ][", "utf8");
+
+      const result = await store.listRunIds();
+      expect(result.ok).toBe(false);
+      if (!result.ok) {
+        expect(result.reason).toBe("INVALID_SNAPSHOT_JSON");
+      }
+    });
+
+    it("fails closed when a canonical filename does not hash-bind to its embedded graph.taskGraphId", async () => {
+      const store = new MaoFileRunStore(root);
+      const graph = compileGraph();
+      await store.createRun(graph);
+
+      const files = await readdir(root);
+      const snapshotFile = files.find((name) => name.endsWith(".json")) as string;
+      const snapshotPath = join(root, snapshotFile);
+      const raw = await readFile(snapshotPath, "utf8");
+      const parsed = JSON.parse(raw);
+      parsed.graph.taskGraphId = "a-different-task-graph-id-than-the-filename-hash";
+      await writeFile(snapshotPath, JSON.stringify(parsed, null, 2), "utf8");
+
+      const result = await store.listRunIds();
+      expect(result.ok).toBe(false);
+      if (!result.ok) {
+        expect(result.reason).toBe("GRAPH_ID_MISMATCH");
+      }
+    });
+
+    it("fails closed when a canonical candidate fails full replay validation", async () => {
+      const store = new MaoFileRunStore(root);
+      const graph = compileGraph();
+      await store.createRun(graph);
+      await store.appendEvent(graph.taskGraphId, {
+        taskGraphId: graph.taskGraphId,
+        taskId: "t1",
+        eventType: "GRAPH_COMPILED",
+        resultingState: "planned",
+        occurredAt: "2026-07-16T00:00:00.000Z",
+      });
+
+      const files = await readdir(root);
+      const snapshotFile = files.find((name) => name.endsWith(".json")) as string;
+      const snapshotPath = join(root, snapshotFile);
+      const raw = await readFile(snapshotPath, "utf8");
+      const parsed = JSON.parse(raw);
+      parsed.events[0].eventId = "tampered-event-id-does-not-match-recomputed-hash";
+      await writeFile(snapshotPath, JSON.stringify(parsed, null, 2), "utf8");
+
+      const result = await store.listRunIds();
+      expect(result.ok).toBe(false);
+      if (!result.ok) {
+        expect(result.reason).toBe("EVENT_REPLAY_REJECTED");
+      }
+    });
+
+    it("returns deeply-equal results across repeated calls and never mutates entry names or bytes", async () => {
+      const store = new MaoFileRunStore(root);
+      const graph = compileGraph();
+      await store.createRun(graph);
+
+      const entriesBefore = (await readdir(root)).sort();
+      const snapshotFile = entriesBefore.find((name) => name.endsWith(".json")) as string;
+      const snapshotPath = join(root, snapshotFile);
+      const bytesBefore = await readFile(snapshotPath, "utf8");
+      const mtimeBefore = (await stat(snapshotPath)).mtimeMs;
+
+      const first = await store.listRunIds();
+      const second = await store.listRunIds();
+      expect(first).toEqual(second);
+
+      const entriesAfter = (await readdir(root)).sort();
+      const bytesAfter = await readFile(snapshotPath, "utf8");
+      const mtimeAfter = (await stat(snapshotPath)).mtimeMs;
+      expect(entriesAfter).toEqual(entriesBefore);
+      expect(bytesAfter).toBe(bytesBefore);
+      expect(mtimeAfter).toBe(mtimeBefore);
+    });
   });
 });

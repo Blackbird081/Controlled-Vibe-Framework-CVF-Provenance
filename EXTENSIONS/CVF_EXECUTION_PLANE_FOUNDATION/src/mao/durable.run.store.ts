@@ -16,7 +16,7 @@
 // environment variables, and does not select a global/user/session/
 // workspace path. Local execution-plane module only; no runtime caller.
 
-import { mkdir, readFile, rename, unlink, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rename, unlink, writeFile } from "node:fs/promises";
 import { createHash, randomBytes } from "node:crypto";
 import { join } from "node:path";
 
@@ -69,6 +69,11 @@ export interface MaoDurableRunResumeSuccess {
   events: readonly MaoEventLedgerEntry[];
 }
 
+export interface MaoDurableRunListSuccess {
+  ok: true;
+  taskGraphIds: readonly string[];
+}
+
 type MaoDurableReplayResult =
   | { ok: true; graph: MaoTaskGraph; events: readonly MaoEventLedgerEntry[]; ledger: MaoEventLedger }
   | MaoDurableRunStoreFailure;
@@ -87,6 +92,14 @@ function snapshotFileNameFor(taskGraphId: string): string {
   const digest = createHash("sha256").update(taskGraphId, "utf8").digest("hex");
   return `${digest}.json`;
 }
+
+/**
+ * Canonical snapshot filename shape: exactly 64 lowercase hex characters
+ * (a SHA-256 digest) followed by `.json`. Any other entry - including the
+ * atomic writer's own `<hash>.json.tmp-<suffix>` temporary files, directories,
+ * or unrelated files - is not a discovery candidate.
+ */
+const CANONICAL_SNAPSHOT_FILENAME_RE = /^[0-9a-f]{64}\.json$/;
 
 /**
  * Bounded local file-backed durable store for one MAO run (immutable task
@@ -200,6 +213,87 @@ export class MaoFileRunStore {
     }
 
     return { ok: true, appendedEntry: appendResult.entry, snapshot: newSnapshot };
+  }
+
+  /**
+   * Deterministic, read-only, fail-closed discovery of every valid run's
+   * taskGraphId under this store's root. Never creates the root, never
+   * writes, never repairs, and never returns a partial result: any canonical
+   * candidate that fails full replay validation (the same
+   * `loadAndReplay` this class already uses for resumeRun/appendEvent) fails
+   * the whole call rather than being silently skipped. Non-canonical entries
+   * (directories, the atomic writer's own `.tmp-` files, or any filename
+   * that is not exactly 64 lowercase hex characters plus `.json`) are
+   * ignored as discovery candidates without being treated as errors.
+   * Returns unique task-graph IDs sorted by ordinary JavaScript
+   * lexicographic (`Array.prototype.sort()`) order. Repeated calls are
+   * deeply equal and never change directory entries, snapshot bytes, or
+   * missing-root existence.
+   */
+  async listRunIds(): Promise<MaoDurableRunListSuccess | MaoDurableRunStoreFailure> {
+    let entries;
+    try {
+      entries = await readdir(this.rootDirectory, { withFileTypes: true });
+    } catch (error) {
+      if (isNodeErrnoException(error) && error.code === "ENOENT") {
+        return { ok: true, taskGraphIds: [] };
+      }
+      return failure("IO_FAILURE", `failed to list run-store root: ${describeError(error)}`);
+    }
+
+    // Dirent.isFile() classifies the directory entry itself without following
+    // symbolic links. A canonical-looking symlink must never escape the
+    // caller-supplied root and become a discovery candidate.
+    const regularCanonicalFileNames = entries
+      .filter((entry) => entry.isFile() && CANONICAL_SNAPSHOT_FILENAME_RE.test(entry.name))
+      .map((entry) => entry.name);
+
+    const discoveredTaskGraphIds = new Set<string>();
+
+    for (const fileName of regularCanonicalFileNames) {
+      const read = await readSnapshotFile(join(this.rootDirectory, fileName));
+      if (read.status === "absent") {
+        return failure("IO_FAILURE", `run-store candidate ${fileName} disappeared during discovery`);
+      }
+      if (read.status === "io_error") {
+        return failure("IO_FAILURE", `failed to read run-store candidate ${fileName}: ${read.detail}`);
+      }
+
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(read.raw);
+      } catch {
+        return failure("INVALID_SNAPSHOT_JSON", `run-store candidate ${fileName} is not valid JSON`);
+      }
+      if (
+        typeof parsed !== "object" ||
+        parsed === null ||
+        !("graph" in parsed) ||
+        !isPersistedGraphShape((parsed as { graph: unknown }).graph)
+      ) {
+        return failure("INVALID_SNAPSHOT_JSON", `run-store candidate ${fileName} is missing a valid graph.taskGraphId`);
+      }
+
+      const candidateTaskGraphId = (parsed as { graph: MaoTaskGraph }).graph.taskGraphId;
+      if (candidateTaskGraphId.trim().length === 0) {
+        return failure("INVALID_SNAPSHOT_JSON", `run-store candidate ${fileName} has an empty graph.taskGraphId`);
+      }
+
+      const expectedFileName = snapshotFileNameFor(candidateTaskGraphId);
+      if (expectedFileName !== fileName) {
+        return failure(
+          "GRAPH_ID_MISMATCH",
+          `run-store candidate ${fileName} does not hash-bind to its embedded graph.taskGraphId`,
+        );
+      }
+
+      const replay = await this.loadAndReplay(candidateTaskGraphId);
+      if (!replay.ok) return replay;
+
+      discoveredTaskGraphIds.add(candidateTaskGraphId);
+    }
+
+    return { ok: true, taskGraphIds: [...discoveredTaskGraphIds].sort() };
   }
 
   /**
