@@ -5,6 +5,13 @@
     "status": "NETLIFY_BUILD_REPAIR_EXPORTED_ROADMAP_QUEUED",
     "provenanceCommit": "ee208c753",
     "publicCommit": "620016275",
+    "truthKernelResolutionFollowup": {
+      "provenanceCommit": "0cae3289f",
+      "publicCommit": "0d3fec3ca",
+      "repair": "cvf-web TypeScript paths resolve cvf-truth-kernel directly to the committed sibling source, avoiding clean-install file-link realpath lookup through an absent sibling node_modules directory",
+      "verification": "Fresh detached public worktree; cvf-web-only npm ci; clean-clone TypeScript PASS; production Next.js build PASS with 121/121 pages; focused regression 1/1 PASS",
+      "externalDeployStatus": "PENDING_NETLIFY_RESULT"
+    },
     "repair": "cvf-web now consumes a bounded Learning Plane web-runtime export instead of the graph-bearing package root; TypeScript is a Learning Plane runtime dependency because the graph parser calls the compiler API",
     "verification": "Netlify-shaped production build PASS with Learning Plane local node_modules unavailable; cvf-web TypeScript PASS; focused 16/16; full cvf-web 3257 pass plus 2 skip; Learning Plane 1832/1832; public-surface and provider receipt-link checks PASS",
     "nextRoadmap": "CVF Continuous Projection Drift Detection And Review-Packet Automation Roadmap",

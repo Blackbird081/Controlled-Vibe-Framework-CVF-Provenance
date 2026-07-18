@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Netlify Truth Kernel clean-install resolution repair | `0cae3289f` provenance; `0d3fec3ca` public | EXPORTED_BUILD_REPAIR; narrow TypeScript path mapping closes file-link realpath resolution through absent sibling dependencies; fresh public worktree plus cvf-web-only `npm ci`, TypeScript, focused regression, and production build 121/121 PASS; external Netlify deploy result remains pending. |
 | Netlify Learning Plane runtime-boundary repair | `ee208c753` provenance; `620016275` public | EXPORTED_BUILD_REPAIR; bounded `web-runtime` subpath prevents cvf-web from bundling the graph-bearing root; TypeScript is a Learning Plane runtime dependency; Netlify-shaped build, TypeScript, focused/full Web tests, Learning Plane tests, public-surface, and receipt-link checks PASS; external Netlify deploy result remains pending. |
 | Projection landmark and inheritance automation roadmap | `5df0c6f77` | CLOSED_PASS_BOUNDED; read-only mapper and disposable three-root proof accepted; continuous drift detection and review-packet automation roadmap authoring is queued next. |
 | SOT3 CVF authority-surface and master-architecture projection roadmap closure | `9f7c92663` | CLOSED_PASS_BOUNDED; 15/15 surfaces terminal; AC-01 through AC-08 PASS; projection-automation packet authoring released. |
@@ -308,8 +309,9 @@ Latest closed numbered LHW wave remains `LHW24`.
 Mode: `continuous_projection_drift_roadmap_authoring_next`
 
 Author the CVF Continuous Projection Drift Detection And Review-Packet
-Automation roadmap from the accepted read-only mapper baseline. T0 pins
-provenance repair commit `ee208c753` and public repair commit `620016275`,
+Automation roadmap from the accepted read-only mapper baseline. T0 pins latest
+provenance repair commit `0cae3289f` and public repair commit `0d3fec3ca`,
+retains predecessor anchors `ee208c753` and `620016275`,
 reconciles the post-public projection baseline, and source-verifies
 CI/manual/scheduled detection seams. Automatic semantic edits, commit, push,
 deployment, provider/live calls, production action, and unattended apply

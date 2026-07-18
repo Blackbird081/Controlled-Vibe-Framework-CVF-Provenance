@@ -16,9 +16,10 @@ rotated after exceeding the Governed File Size Guard soft threshold.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Provenance material commit
-`ee208c753` owns the source repair. Public commit `620016275` owns the exported
-public repair. The external Netlify deploy result remains outside this local
-continuity claim until the deployment reports success.
+`ee208c753` and follow-up `0cae3289f` own the source repairs. Public commits
+`620016275` and `0d3fec3ca` own the exported public repairs. The external
+Netlify deploy result remains outside this local continuity claim until the
+deployment reports success.
 
 ## Active Boundary
 
@@ -53,6 +54,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ### Netlify build repair
 
+- Truth Kernel clean-install resolution follow-up: provenance `0cae3289f`;
+  public `0d3fec3ca`.
+- Added the narrow cvf-web TypeScript path mapping from `cvf-truth-kernel` to
+  committed `CVF_TRUTH_KERNEL` source. This closes file-link realpath lookup
+  through an absent sibling `node_modules` directory without enabling global
+  symlink preservation.
 - Provenance repair commit: `ee208c753`.
 - Public export commit: `620016275`.
 - Added `cvf-learning-plane-foundation/web-runtime`, a bounded export that
@@ -64,6 +71,9 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Verification:
 
+- fresh detached public worktree plus cvf-web-only `npm ci` production build
+  PASS, including TypeScript and 121/121 pages;
+- Truth Kernel resolution regression 1/1 PASS;
 - Netlify-shaped production build PASS while Learning Plane local
   `node_modules` was unavailable;
 - cvf-web TypeScript check PASS;
@@ -90,8 +100,8 @@ Recommended title:
 
 T0 must:
 
-- pin provenance repair commit `ee208c753` and public repair commit
-  `620016275`;
+- pin latest provenance repair commit `0cae3289f` and public repair commit
+  `0d3fec3ca`, retaining `ee208c753` and `620016275` as predecessor evidence;
 - reconcile the post-public provenance/public-sync/cvf-web baseline;
 - source-verify manual, CI, and scheduled drift-detection seams;
 - preserve read-only detection and secret-free receipts.
@@ -103,8 +113,9 @@ provider, or perform unattended apply.
 ## Next Allowed Move
 
 Author the CVF Continuous Projection Drift Detection And Review-Packet
-Automation roadmap from the accepted read-only mapper baseline. T0 pins
-provenance repair commit `ee208c753` and public repair commit `620016275`,
+Automation roadmap from the accepted read-only mapper baseline. T0 pins latest
+provenance repair commit `0cae3289f` and public repair commit `0d3fec3ca`,
+retains predecessor anchors `ee208c753` and `620016275`,
 reconciles the post-public projection baseline, and source-verifies manual,
 CI, and scheduled drift-detection seams. Implementation remains parked.
 
