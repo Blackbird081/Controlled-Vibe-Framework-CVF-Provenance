@@ -219,6 +219,15 @@ child commit.
 
 This marker changes no mode, next move, material decision, or authority.
 
+## GC-020 Marker - Projection Automation T0 Closure Handoff Sync
+
+This handoff-only child records parent material closure commit `38ec816f9`.
+The current child SHA cannot be known before commit creation, so the active
+session checker may accept the parent SHA for this handoff-only child commit.
+
+T0 is closed bounded. T1 packet authoring is the next allowed material move;
+T2 remains held until T1 completion review.
+
 ## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T4-R1 Dispatch Sync
 
 Authorized guard-maintenance scope: refresh protected continuity after the
