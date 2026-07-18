@@ -241,6 +241,19 @@ Next allowed move is on-demand use of the read-only mapper and guide. Any
 apply, real-root mutation, public commit/push, or cvf-web repair requires a
 separate governed batch. No parked operator checkpoint remains.
 
+## GC-020 Remote And Memory Boundary
+
+This handoff-only child records parent pre-push classification commit
+`70f0e97bd`. The current child SHA cannot be known before commit creation, so
+the active-session checker may accept the parent SHA for this handoff-only
+child commit.
+
+Remote tracking branch: `origin/main`.
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
+
 ## GC-020 Marker - Projection Automation T0 Closure Handoff Sync
 
 This handoff-only child records parent material closure commit `38ec816f9`.
