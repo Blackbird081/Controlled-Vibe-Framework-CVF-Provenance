@@ -346,6 +346,17 @@ source, test, public, or provider mutation belongs to this sync.
 
 ## Claim Boundary
 
+## GC-020 Marker - T3A Closure Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`1ed89f2c7`. The current child SHA cannot be known before commit creation, so
+the active-session checker may accept this parent SHA for the handoff-only
+child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
+## Claim Boundary
+
 This handoff records protected continuity only. It does not itself authorize
 T3B implementation, MAO execution, new UI, provider/live work, public-sync,
 release, production readiness, or push.
