@@ -15,30 +15,30 @@ V46 was rotated at 892 lines under the Governed File Size Guard.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`a525fbd32` owns the T3B durable-event operator-readout dispatch.
+`68aea07e5` owns the accepted T3B durable-event operator readout.
 
 ## Active Boundary
 
-CVF-WEB-INHERITANCE-T3B is dispatched at material commit `a525fbd32`. The
-next allowed move is its exact twelve-path no-commit implementation.
+CVF-WEB-INHERITANCE-T3B is accepted at material commit `68aea07e5`. The next
+allowed move is source-verified T4 adoption-decision packet authoring only.
 
-Evidence/heartbeat projection, T4-T5, SOT3-CVF-PROJ-T1-T4, sibling
-application copying, browser/provider/live work, public-sync, push,
+Evidence/heartbeat projection, T4 implementation, T5, SOT3-CVF-PROJ-T1-T4,
+sibling application copying, browser/provider/live work, public-sync, push,
 production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_inheritance_t3b_dispatched_worker_next`;
+current mode=`cvf_web_inheritance_t3b_closed_t4_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=execute only committed CVF-WEB-INHERITANCE-T3B;
-parked checkpoint=evidence/heartbeat projection, T4-T5, projection T1-T4,
+next allowed move=author only source-verified CVF-WEB-INHERITANCE-T4 decision packet;
+parked checkpoint=T4 implementation, T5, evidence/heartbeat, projection T1-T4,
 sibling copy, browser/provider/live, public-sync, push, production,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`cvf_web_inheritance_t3b_dispatched_worker_next`
+`cvf_web_inheritance_t3b_closed_t4_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -62,6 +62,11 @@ cvf-web source consumes an MAO export; and registry/operator reconciliation
 totals were repaired to match the terminal rows.
 
 ## Latest Work / Changes
+
+- Closed T3B at material commit `68aea07e5` after one reviewer-owned
+  Vietnamese localization repair. Focused 21/21, typecheck, build, GC-051,
+  reviewer-fast 62/62, file-size, and pre-commit 83/83 passed. T4
+  adoption-decision packet authoring is next.
 
 - Dispatched T3B at material commit `a525fbd32` after pre-dispatch 75/75,
   commit-steward, and pre-commit 83/83 PASS.
@@ -237,9 +242,9 @@ runtime, source, test, registry, public, or provider change belongs to sync.
 
 ## Next Allowed Move
 
-Execute only committed CVF-WEB-INHERITANCE-T3A under
-`WORKER_MUST_NOT_COMMIT`. Keep T3B, T4-T5, and every external mutation lane
-parked.
+Author only the source-verified CVF-WEB-INHERITANCE-T4 Controlled Quotation
+and sibling-app adoption decision packet. Keep T4 implementation, T5, and
+every external mutation lane parked.
 
 ## Core Guard Self-Protection Authorization - T3A Dispatch Sync
 
@@ -477,6 +482,23 @@ Operator authorization: standing roadmap-continuation instruction.
 Rollback boundary: revert this protected sync together; no material source,
 test, public, or provider mutation belongs to it.
 
+## Core Guard Self-Protection Authorization - T3B Closure Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after
+material closure commit `68aea07e5`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/cvfWebInheritanceT3BClosure20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing roadmap-continuation instruction.
+
+Rollback boundary: revert this protected sync together; no material source,
+test, public, or provider mutation belongs to it.
+
 ## GC-020 Marker - T3P2 Dispatch Handoff-Sync-Only Commit
 
 This handoff-only child records parent session-sync commit `a6f191544` after
@@ -516,5 +538,5 @@ This marker changes no mode, next move, material decision, or authority.
 ## Claim Boundary
 
 This handoff records protected continuity only. It does not itself authorize
-T3B implementation, MAO execution, new UI, provider/live work, public-sync,
-release, production readiness, or push.
+T4 implementation, sibling-source copying, MAO execution, provider/live work,
+public-sync, release, production readiness, or push.

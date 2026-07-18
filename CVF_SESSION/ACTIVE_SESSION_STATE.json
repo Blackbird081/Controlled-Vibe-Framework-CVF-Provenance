@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t3b_dispatched_worker_next",
-  "previousMode": "cvf_web_inheritance_t3p2_closed_t3b_packet_authoring_next",
+  "currentMode": "cvf_web_inheritance_t3b_closed_t4_packet_authoring_next",
+  "previousMode": "cvf_web_inheritance_t3b_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13314,5 +13314,17 @@
     "heldNextTranche": "Evidence/heartbeat projection and T4-T5 remain parked.",
     "claimBoundary": "Read-only durable run/task/timeout/event-recency projection only; no execution or live action."
   },
-  "nextAllowedMove": "Execute only committed CVF-WEB-INHERITANCE-T3B at material commit a525fbd32 under WORKER_MUST_NOT_COMMIT. Modify exactly its twelve allowed paths and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Evidence records/milestones/recency, heartbeat, worker launch, provider/live work, T4-T5, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebInheritanceT3BClosure20260718": {
+    "status": "REVIEWER_ACCEPTED_WITH_REPAIR",
+    "materialCommit": "68aea07e5",
+    "registryMaintenanceCommit": "069c8d441",
+    "executionBaseHead": "5195444ef",
+    "completionReview": "docs/reviews/CVF_WEB_INHERITANCE_T3B_COMPLETION_REVIEW_2026-07-18.md",
+    "reviewerRepair": "Localized the Vietnamese governance-overview label and matching assertion without changing runtime behavior.",
+    "verification": "21 focused tests, TypeScript, production build, worker-fast reviewer bundle 62/62, file-size, GC-051, and pre-commit 83/83 PASS",
+    "nextAllowedMove": "Author the source-verified T4 Controlled Quotation and sibling-app adoption decision packet only.",
+    "heldNextTranche": "T4 implementation, T5, evidence/heartbeat, provider/live, public, push, and production remain parked.",
+    "claimBoundary": "Read-only durable run/task/timeout/event-recency Web projection only; no evidence, heartbeat, liveness, or MAO action authority."
+  },
+  "nextAllowedMove": "Author only the source-verified CVF-WEB-INHERITANCE-T4 Controlled Quotation and sibling-app adoption decision packet after accepted T3B material closure commit 68aea07e5. T4 implementation, T5, evidence/heartbeat projection, MAO execution, provider/live work, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
