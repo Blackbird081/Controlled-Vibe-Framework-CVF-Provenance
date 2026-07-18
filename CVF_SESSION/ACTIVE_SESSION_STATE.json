@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t3p1_closed_t3p2_packet_authoring_next",
-  "previousMode": "cvf_web_inheritance_t3p1_dispatched_worker_next",
+  "currentMode": "cvf_web_inheritance_t3p2_dispatched_worker_next",
+  "previousMode": "cvf_web_inheritance_t3p1_closed_t3p2_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13276,5 +13276,18 @@
     "heldNextTranche": "T3B and T4-T5 remain parked; no Web, provider/live, public, push, or production mutation.",
     "claimBoundary": "T3P1 closes read-only run discovery only."
   },
-  "nextAllowedMove": "Author and dispatch only CVF-WEB-INHERITANCE-T3P2 as a documentation-only evidence and liveness availability decision. T3B, T4-T5, Web implementation, provider/live work, public-sync, push, production, and external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebInheritanceT3P2Dispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "497253d8b",
+    "dispatchBaseHead": "f2e0b7161",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T3P2_EVIDENCE_AND_LIVENESS_AVAILABILITY_DECISION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T3P2_EVIDENCE_AND_LIVENESS_AVAILABILITY_DECISION_2026-07-18.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedPaths": 2,
+    "verification": "dispatch-author fast 5/5; pre-dispatch 75/75; dispatch steward; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact T3P2 documentation-only decision and return for independent review.",
+    "heldNextTranche": "T3B and T4-T5 remain parked.",
+    "claimBoundary": "Evidence/liveness availability decision only; no implementation."
+  },
+  "nextAllowedMove": "Execute only committed CVF-WEB-INHERITANCE-T3P2 at material commit 497253d8b under WORKER_MUST_NOT_COMMIT. Modify exactly its two allowed review outputs, preserve execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3B, T4-T5, Web implementation, provider/live work, public-sync, push, production, and external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave."
 }

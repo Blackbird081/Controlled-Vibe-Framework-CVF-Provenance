@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_web_inheritance_t3p1_closed_t3p2_packet_authoring_next",
+  "currentMode": "cvf_web_inheritance_t3p2_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V47_2026-07-18.md",
-  "nextAllowedMove": "Author and dispatch only CVF-WEB-INHERITANCE-T3P2 as a documentation-only evidence and liveness availability decision. T3B, T4-T5, Web implementation, provider/live work, public-sync, push, production, and external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute only committed CVF-WEB-INHERITANCE-T3P2 at material commit 497253d8b under WORKER_MUST_NOT_COMMIT. Modify exactly its two allowed review outputs, preserve execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3B, T4-T5, Web implementation, provider/live work, public-sync, push, production, and external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

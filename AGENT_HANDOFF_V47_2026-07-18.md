@@ -15,13 +15,12 @@ V46 was rotated at 892 lines under the Governed File Size Guard.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`c282312b9` owns the accepted T3P1 run-discovery prerequisite closure.
+`497253d8b` owns the T3P2 evidence/liveness decision dispatch.
 
 ## Active Boundary
 
-CVF-WEB-INHERITANCE-T3P1 is accepted at material commit `c282312b9`. The next
-allowed move is authoring and dispatching only the documentation-only T3P2
-evidence/liveness availability decision.
+CVF-WEB-INHERITANCE-T3P2 is dispatched at material commit `497253d8b`. The
+next allowed move is executing its exact two-output no-commit decision.
 
 T3P2, T3B, T4-T5, SOT3-CVF-PROJ-T1-T4, Web implementation, sibling
 application copying, browser/provider/live work, public-sync, push,
@@ -30,16 +29,16 @@ production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_inheritance_t3p1_closed_t3p2_packet_authoring_next`;
+current mode=`cvf_web_inheritance_t3p2_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=author and dispatch only CVF-WEB-INHERITANCE-T3P2 decision;
+next allowed move=execute only committed CVF-WEB-INHERITANCE-T3P2;
 parked checkpoint=T3B, T4-T5, projection T1-T4, Web implementation,
 sibling copy, browser/provider/live, public-sync, push, production,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`cvf_web_inheritance_t3p1_closed_t3p2_packet_authoring_next`
+`cvf_web_inheritance_t3p2_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -63,6 +62,11 @@ cvf-web source consumes an MAO export; and registry/operator reconciliation
 totals were repaired to match the terminal rows.
 
 ## Latest Work / Changes
+
+- Dispatched T3P2 at material commit `497253d8b` after author-fast 5/5,
+  pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS.
+- Scope is exactly one evidence/liveness availability decision and one worker
+  return; no persistence or Web implementation.
 
 - Closed T3P1 at material commit `c282312b9` after focused 32/32, full
   1790/1790, TypeScript, reviewer-fast 62/62, file-size, and pre-commit 83/83.
@@ -408,6 +412,23 @@ Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 Operator authorization: standing roadmap-continuation instruction.
 
 Rollback boundary: revert this seven-path sync together; no material source,
+test, public, or provider mutation belongs to it.
+
+## Core Guard Self-Protection Authorization - T3P2 Dispatch Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after
+material dispatch commit `497253d8b`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/cvfWebInheritanceT3P2Dispatch20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing roadmap-continuation instruction.
+
+Rollback boundary: revert this protected sync together; no material source,
 test, public, or provider mutation belongs to it.
 
 ## Claim Boundary
