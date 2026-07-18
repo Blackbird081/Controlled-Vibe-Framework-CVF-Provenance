@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_cvf_proj_t3_dispatched_worker_next",
+  "currentMode": "sot3_cvf_proj_t3_closed_t4_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V47_2026-07-18.md",
-  "nextAllowedMove": "Execute the committed SOT3-CVF-PROJ-T3 no-commit workflow/navigation work order from a clean execution base and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author and dispatch a fresh source-verified SOT3-CVF-PROJ-T4 no-commit packet for product/readme claim alignment and final cross-surface roadmap closure. Provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
