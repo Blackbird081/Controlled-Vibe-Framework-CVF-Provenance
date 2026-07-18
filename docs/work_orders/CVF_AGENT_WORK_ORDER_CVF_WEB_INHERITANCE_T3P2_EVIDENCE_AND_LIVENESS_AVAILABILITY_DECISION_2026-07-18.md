@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIR
 
 Batch ID: CVF-WEB-INHERITANCE-T3P2
 
@@ -243,13 +243,13 @@ roadmap release, material commit, and closure.
 
 ## Closure Checklist
 
-- [ ] execution HEAD matches;
-- [ ] terminal matrix covers every required dimension;
-- [ ] one route and challenged alternative are recorded;
-- [ ] next owner or T3B boundary is exact;
-- [ ] exactly two paths change and nothing is staged;
-- [ ] worker no-commit boundary is honored; and
-- [ ] independent review remains pending.
+- [x] execution HEAD matches;
+- [x] terminal matrix covers every required dimension;
+- [x] one route and challenged alternative are recorded;
+- [x] next owner or T3B boundary is exact;
+- [x] exactly two worker paths changed and nothing was staged;
+- [x] worker no-commit boundary was honored; and
+- [x] independent review accepted the decision with one source-claim repair.
 
 ## Return-To-Orchestrator Conditions
 
@@ -382,6 +382,31 @@ Claim Update Requirement: record confirmed, narrowed, or invalidated route.
 | interceptionBoundary | no IDE, shell, provider, filesystem, or agent-action interception claim |
 | claimLanguage | inspect, distinguish, decide, and report only |
 | forbiddenExpansion | persistence, Web, execution, provider/live, public, push, production |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
+| Baseline | paired T3P2 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | T3P2 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIR` | PASS |
+| Decision artifact | T3P2 availability decision | bounded durable-event-only route | PASS |
+| Worker return | T3P2 worker return | exact two outputs and no commit | PASS |
+| Roadmap state | CVF Web inheritance roadmap | T3P2 pass and T3B packet-authoring-next status | PASS |
+| Registry JSON | corpus registry generated aggregate | existing scope coverage and drift check | PASS |
+| Registry Markdown | corpus registry read model | existing scope coverage | PASS |
+| External evidence digest | N/A with reason: repository-local source review | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt | N/A with reason: documentation-only decision | N/A_WITH_REASON |
+| Source-query acceptance | 11 terminal availability rows independently recomputed | PASS |
+| Worker return | exact two paths, unchanged HEAD, nothing staged | PASS |
+| Reviewer decision | bounded durable-event-only route accepted with caller repair | PASS |
 
 ## Public Export Disposition
 

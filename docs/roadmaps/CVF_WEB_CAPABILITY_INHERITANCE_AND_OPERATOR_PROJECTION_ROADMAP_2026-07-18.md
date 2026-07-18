@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CVF_WEB_INHERITANCE_T3P2_DISPATCH_READY
+Status: CVF_WEB_INHERITANCE_T3P2_PASS_T3B_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -17,10 +17,10 @@ MAO operational adoption, and Four-Surface control-boundary capability while
 cvf-web appears not to inherit or expose much of that value. The operator
 authorized a clean audit and continuation packet after SOT3-CVF-PROJ-T0.
 
-T0 through T2 are independently closed. Direct T3 implementation is not
-source-safe because the MAO operator projection has no persistent evidence
-or Web caller seam. T3A is dispatch-ready to decide that seam; T3B and T4-T5
-remain parked.
+T0 through T2 are independently closed. T3A, T3P1, and T3P2 have now closed
+the prerequisite decision chain. T3P2 releases only a bounded durable-event
+readout route for T3B; evidence milestones and heartbeat remain excluded.
+T3B packet authoring is next and T4-T5 remain parked.
 
 ## Purpose
 
@@ -141,7 +141,8 @@ operator-supplied key; T0 makes no such claim.
   reviewer repairs at material commit `609edffbe`. T3A is independently
   accepted with reviewer repairs at material commit `c0d88ff34`. T3P1 is
   independently accepted after one symlink-boundary repair at material commit
-  `c282312b9`. T3P2 is dispatch-ready; T3B and T4-T5 remain parked.
+  `c282312b9`. T3P2 is independently accepted with one source-claim repair;
+  bounded T3B packet authoring is next and T4-T5 remain parked.
 - T3A is required because the existing MAO operational projection is a pure,
   caller-supplied in-memory owner with no CLI, MCP, UI, or runtime caller;
   the durable run store replays event-ledger state but does not persist or
@@ -215,8 +216,8 @@ or MAO implementation and do not infer that every capability belongs in Web.
 
 T0 audit, the bounded T1 registry correction, the bounded T2 SOT3 evidence
 projection, and the T3A source-seam decision are accepted. T3A requires a
-prerequisite chain: T3P1 closes read-only run discovery first; T3P2 then owns
-the evidence/liveness availability decision before T3B can be authored.
+prerequisite chain is now closed: T3P1 supplies read-only run discovery and
+T3P2 releases only durable event/task/timeout state and event recency to T3B.
 
 ## Agent Operation Trace Block
 
@@ -249,20 +250,20 @@ separate public-sync authorization and artifact set.
 
 ## Claim Boundary
 
-This roadmap records accepted T0 inventory, T1 registry correction, and T2
-read-only SOT3 evidence projection. It releases the documentation-only T3A
-source-seam decision packet only. It does not authorize T3B implementation,
-SOT3 or MAO execution, sibling-source copying, browser or live proof,
-public-sync, push, production readiness, or universal inheritance claims.
+This roadmap records accepted T0 through T3P2 work. It releases authoring of
+a bounded T3B implementation packet only. It does not itself authorize T3B
+execution, evidence or heartbeat projection, MAO worker execution,
+sibling-source copying, browser or live proof, public-sync, push, production
+readiness, or universal inheritance claims.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T3P2_DISPATCH_READY` | PASS |
-| Baseline status | T3P2 GC-018 baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | T3P2 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T3P1_COMPLETION_REVIEW_2026-07-18.md` | T3P1 dependency accepted at `c282312b9` | PASS |
+| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T3P2_PASS_T3B_PACKET_AUTHORING_NEXT` | PASS |
+| Baseline status | T3P2 GC-018 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
+| Work order status | T3P2 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T3P2_COMPLETION_REVIEW_2026-07-18.md` | reviewer accepts bounded durable-event-only route | PASS |
 | Registry JSON | corpus registry generated aggregate | existing cvf-web `src/` scope coverage and aggregate drift check | PASS |
 | Registry Markdown | corpus registry read model | existing cvf-web `src/` scope coverage | PASS |
 | External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |

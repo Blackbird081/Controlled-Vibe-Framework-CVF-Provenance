@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIR
 
 Batch ID: CVF-WEB-INHERITANCE-T3P2
 
@@ -142,6 +142,30 @@ Returned defects: NONE_RETURNED
 | checkerReadAheadConfirmation | checker paths listed above |
 | docOnlyNewFields | four fields listed in New Doc-Only Fields |
 | claimBoundary | dispatch-authoring provenance only |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline state | this file | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
+| Work order status | paired T3P2 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | T3P2 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIR` | PASS |
+| Worker return | T3P2 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIR` | PASS |
+| Roadmap state | CVF Web inheritance roadmap | T3P2 pass and T3B packet-authoring-next status | PASS |
+| Registry JSON | corpus registry generated aggregate | existing scope coverage and drift check | PASS |
+| Registry Markdown | corpus registry read model | existing scope coverage | PASS |
+| External evidence digest | N/A with reason: repository-local source review | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt | N/A with reason: documentation-only decision | N/A_WITH_REASON |
+| Source-query acceptance | 11 terminal availability rows independently recomputed | PASS |
+| Worker return | exact two paths, unchanged HEAD, nothing staged | PASS |
+| Reviewer decision | bounded durable-event-only route accepted with caller repair | PASS |
 
 ## Public Export Disposition
 
