@@ -85,6 +85,14 @@ Verification:
 Claim boundary: local and public source/build readiness only. External Netlify
 deployment success is not yet claimed.
 
+### CVF Web UX clarity audit dispatch head sync
+
+- Material dispatch commit: `56c7ce403`.
+- Artifacts: `docs/baselines/CVF_GC018_CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md`.
+- This entry records the current material HEAD only. The existing projection
+  roadmap queue remains unchanged until the dispatch anchor correction and
+  final session-sync commit are complete.
+
 ### Projection automation closure and public export
 
 The projection landmark and inheritance automation roadmap is
