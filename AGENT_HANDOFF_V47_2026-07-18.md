@@ -273,8 +273,17 @@ child commit.
 
 This marker changes no mode, next move, material decision, or authority.
 
+## GC-020 Marker - T2 Closure Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`49fa03965`. The current child SHA cannot be known before commit creation, so
+the active-session checker may accept this parent SHA for the handoff-only
+child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## Claim Boundary
 
 This handoff records protected continuity only. It does not itself authorize
-T1 implementation, MAO integration, new UI, provider/live work, public-sync,
+T3 implementation, MAO execution, new UI, provider/live work, public-sync,
 release, production readiness, or push.
