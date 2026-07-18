@@ -495,6 +495,15 @@ child commit.
 
 This marker changes no mode, next move, material decision, or authority.
 
+## GC-020 Marker - T3B Dispatch Handoff-Sync-Only Commit
+
+This handoff-only child records parent session-sync commit `0490a6590` after
+the T3B dispatch. The current child SHA cannot be known before commit creation,
+so the active-session checker may accept the parent SHA for this handoff-only
+child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## Claim Boundary
 
 This handoff records protected continuity only. It does not itself authorize
