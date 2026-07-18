@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1958,
+  "stateOrder": 1960,
   "stateKey": "nextAllowedMove",
-  "value": "Execute the committed CVF-WEB-INHERITANCE-T5 work order at material dispatch commit eb7f7df1e under WORKER_MUST_NOT_COMMIT, changing exactly its nine allowed paths, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON for independent reviewer closure. T4 implementation, provider/live calls, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "The CVF Web capability inheritance and operator projection roadmap is CLOSED_PASS_BOUNDED at material commit 64ec0f672. No active tranche remains. The operator may select a fresh high-value lane, which requires a new GC-018 and source-verified work order before implementation. T4 may reopen only after its recorded concrete cvf-web consumer condition is met. Provider/live, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

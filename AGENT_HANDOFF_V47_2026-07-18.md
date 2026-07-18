@@ -15,33 +15,33 @@ V46 was rotated at 892 lines under the Governed File Size Guard.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`eb7f7df1e` owns the dispatched T5 Web information and provider-free QA packet.
+`64ec0f672` owns the accepted T5 implementation and bounded roadmap closure.
 
 ## Active Boundary
 
-CVF-WEB-INHERITANCE-T4 is independently accepted at material commit
-`cf214a243` with `DEFER_WITH_REASON`. CVF-WEB-INHERITANCE-T5 is dispatched at
-material commit `eb7f7df1e`; the next allowed move is its exact nine-path
-no-commit worker execution followed by independent reviewer closure.
+CVF-WEB-INHERITANCE-T4 remains accepted with `DEFER_WITH_REASON` and its
+implementation remains parked. CVF-WEB-INHERITANCE-T5 and the full Web
+inheritance roadmap are independently accepted and closed bounded at material
+commit `64ec0f672`. No active tranche remains.
 
 Evidence/heartbeat projection, T4 implementation, SOT3-CVF-PROJ-T1-T4,
 sibling application copying, provider/live work, public-sync, push, production,
-MAO-OA-T6B, and SCLP-X-T3 remain parked. T5 releases only its one provider-free
-browser command and the other checks named in the committed packet.
+MAO-OA-T6B, and SCLP-X-T3 remain parked. A fresh lane requires operator
+selection, new GC-018, and a source-verified work order.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_inheritance_t5_dispatched_worker_next`;
+current mode=`cvf_web_inheritance_roadmap_closed_operator_selection_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=execute exact nine-path CVF-WEB-INHERITANCE-T5 no-commit worker and return for independent closure;
+next allowed move=operator selects a fresh high-value lane with new GC-018 and source-verified work order;
 parked checkpoint=T4 implementation, evidence/heartbeat, projection T1-T4,
 sibling copy, provider/live, public-sync, push, production,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`cvf_web_inheritance_t5_dispatched_worker_next`
+`cvf_web_inheritance_roadmap_closed_operator_selection_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -65,6 +65,13 @@ cvf-web source consumes an MAO export; and registry/operator reconciliation
 totals were repaired to match the terminal rows.
 
 ## Latest Work / Changes
+
+- Closed T5 and the CVF Web inheritance roadmap at material commit
+  `64ec0f672`. Private version `1.7.0`, README, bilingual Help links, focused
+  33/33, full non-live 3256 pass plus 2 skip, TypeScript, build, and the one
+  worker provider-free 2/2 browser receipt are accepted. Reviewer-owned
+  GC-051 and stale-mode maintenance closed separately. No active tranche
+  remains.
 
 - Dispatched T5 at material commit `eb7f7df1e` after pre-dispatch 75/75,
   dispatch steward, governed file size, and pre-commit 83/83 PASS. Scope is
@@ -638,10 +645,29 @@ This marker changes no mode, next move, material decision, or authority.
 
 ## Claim Boundary
 
-This handoff records protected continuity only. It does not itself authorize
-T4 implementation, sibling-source copying, MAO execution, provider/live work,
-public-sync, release, production readiness, or push. T5 authority is bounded
-to the committed work order at `eb7f7df1e`.
+This handoff records protected continuity only. It does not authorize T4
+implementation, sibling-source copying, MAO execution, provider/live work,
+public-sync, release, production readiness, push, or a new lane. T5 and its
+roadmap are closed bounded at `64ec0f672`.
+
+## Core Guard Self-Protection Authorization - T5 And Roadmap Closure Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after T5 and
+the CVF Web inheritance roadmap closed at material commit `64ec0f672`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/cvfWebInheritanceRoadmapClosure20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing automatic roadmap-continuation and closure
+instruction.
+
+Rollback boundary: revert this seven-path session sync together; no runtime,
+test, provider/live, public, push, production, or external mutation belongs to
+it.
 
 ## Core Guard Self-Protection Authorization - T5 Dispatch Sync
 

@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_inheritance_t5_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=execute the committed nine-path T5 Web information and provider-free QA work order, then return for independent closure; parked checkpoint=T4 implementation, provider/live calls, public-sync, push, production, and external mutation lanes.
+Startup acknowledged: current mode=`cvf_web_inheritance_roadmap_closed_operator_selection_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=operator selects a fresh high-value lane with new GC-018 and source-verified work order; parked checkpoint=T4 implementation until its concrete consumer condition, provider/live calls, public-sync, push, production, and external mutation lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_inheritance_t5_dispatched_worker_next`
+Current mode marker: `cvf_web_inheritance_roadmap_closed_operator_selection_next`
 
-Current mode: `cvf_web_inheritance_t5_dispatched_worker_next`
+Current mode: `cvf_web_inheritance_roadmap_closed_operator_selection_next`
 
-`cvf_web_inheritance_t5_dispatched_worker_next`
+`cvf_web_inheritance_roadmap_closed_operator_selection_next`
 
 Previous mode:
 
-`cvf_web_inheritance_t4_closed_t5_packet_authoring_next`
+`cvf_web_inheritance_t5_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF Web capability inheritance and operator projection roadmap closure | `64ec0f672` | CLOSED_PASS_BOUNDED; T5 accepted at private version 1.7.0 after reviewer-recomputed focused 33/33, full non-live 3256 pass plus 2 skip, TypeScript, build, one worker provider-free 2/2 browser receipt, GC-051 reconciliation, and pre-commit 83/83; no active tranche remains. |
 | CVF-WEB-INHERITANCE-T5 Web information, provider-free QA, and roadmap-closure dispatch | `eb7f7df1e` | DISPATCH_READY after pre-dispatch 75/75, dispatch steward, file-size, and pre-commit 83/83 PASS; exact nine-path no-commit worker; T4 implementation and provider/live/public/production lanes parked. |
 | CVF-WEB-INHERITANCE-T4 Controlled Quotation sibling-adoption decision closure | `cf214a243` | REVIEWER_ACCEPTED_WITH_REPAIRS; `DEFER_WITH_REASON`; corrected false package-boundary ACCEPT, added nine-file external hash manifest and direct retained-design negative search; worker-fast reviewer bundle, file-size, GC-051, and pre-commit 83/83 PASS; T5 packet authoring next. |
 | CVF-WEB-INHERITANCE-T4 Controlled Quotation sibling-adoption decision dispatch | `f6b398b71` | DISPATCH_READY after author-fast 5/5, pre-dispatch 75/75, dispatch steward, and pre-commit 83/83 PASS; exact two-output source decision under no-commit; T4 implementation and T5 parked. |
@@ -296,13 +297,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_inheritance_t5_dispatched_worker_next`
+Mode: `cvf_web_inheritance_roadmap_closed_operator_selection_next`
 
-CVF-WEB-INHERITANCE-T5 is dispatched at material commit `eb7f7df1e`.
-Execute only its exact nine-path no-commit Web information and provider-free
-QA packet, then return for independent reviewer closure. T4 implementation,
-provider/live, public-sync, push, production, and external mutation remain
-parked.
+The CVF Web capability inheritance and operator projection roadmap is closed
+bounded at material commit `64ec0f672`. No active tranche remains. The operator
+may select a fresh high-value lane with a new GC-018 and source-verified work
+order. T4 implementation remains parked until its recorded concrete cvf-web
+consumer condition is met; provider/live, public-sync, push, production, and
+external mutation also remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
