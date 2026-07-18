@@ -7,7 +7,7 @@
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_CVF_PROJ_T4_PRODUCT_CLAIM_ALIGNMENT_AND_ROADMAP_CLOSURE_2026-07-18.md",
     "allowedScope": "README.md; technical product catalog; final 15-row cross-surface audit; worker return",
     "verification": "pre-dispatch 75/75 PASS, dispatch commit steward PASS, pre-commit 83/83 PASS",
-    "nextAllowedMove": "Execute the no-commit T4 worker packet from clean executionBaseHead 546926dd5.",
+    "nextAllowedMove": "Execute the no-commit T4 worker packet and capture the clean committed dispatch/session-sync HEAD as executionBaseHead.",
     "claimBoundary": "Private product/readme claim alignment and cross-surface audit only; reviewer owns final roadmap closure."
   }
 }

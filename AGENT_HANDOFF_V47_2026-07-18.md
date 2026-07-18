@@ -32,7 +32,7 @@ work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 Startup acknowledged:
 current mode=`sot3_cvf_proj_t4_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=execute the no-commit SOT3-CVF-PROJ-T4 packet from clean executionBaseHead `546926dd5`;
+next allowed move=execute the no-commit SOT3-CVF-PROJ-T4 packet and capture the clean committed dispatch/session-sync HEAD as executionBaseHead;
 parked checkpoint=CVF Web T4 implementation,
 provider/live, public-sync, push, production, external mutation,
 MAO-OA-T6B, SCLP-X-T3.

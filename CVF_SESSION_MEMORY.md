@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_cvf_proj_t4_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=execute the no-commit SOT3-CVF-PROJ-T4 final claim-alignment and roadmap-closure packet from `546926dd5`; parked checkpoint=provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation.
+Startup acknowledged: current mode=`sot3_cvf_proj_t4_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=execute the no-commit SOT3-CVF-PROJ-T4 final claim-alignment and roadmap-closure packet and capture the clean committed dispatch/session-sync HEAD; parked checkpoint=provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation.
 
 ## Current Mode
 
@@ -303,8 +303,9 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `sot3_cvf_proj_t4_dispatched_worker_next`
 
-Execute SOT3-CVF-PROJ-T4 from clean executionBaseHead `546926dd5` under
-`WORKER_MUST_NOT_COMMIT`, changing only README.md, the technical product
+Execute SOT3-CVF-PROJ-T4 dispatched at material commit `546926dd5` under
+`WORKER_MUST_NOT_COMMIT`. Capture the clean committed dispatch/session-sync
+HEAD as `executionBaseHead`, then change only README.md, the technical product
 catalog, the final cross-surface audit, and the worker return. Independent
 reviewer owns acceptance, roadmap closure, commit, and continuity sync.
 Provider/live, public-sync, push, production, external mutation, and CVF Web

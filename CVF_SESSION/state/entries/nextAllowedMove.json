@@ -1,5 +1,5 @@
 {
   "stateOrder": 1974,
   "stateKey": "nextAllowedMove",
-  "value": "Execute SOT3-CVF-PROJ-T4 from clean executionBaseHead 546926dd5 under WORKER_MUST_NOT_COMMIT, changing only README.md, the technical product catalog, the final cross-surface audit, and the worker return. Independent reviewer owns acceptance, roadmap closure, commit, and continuity sync. Provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Execute SOT3-CVF-PROJ-T4 dispatched at material commit 546926dd5 under WORKER_MUST_NOT_COMMIT. The worker must capture the clean committed dispatch/session-sync HEAD as executionBaseHead and change only README.md, the technical product catalog, the final cross-surface audit, and the worker return. Independent reviewer owns acceptance, roadmap closure, commit, and continuity sync. Provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
