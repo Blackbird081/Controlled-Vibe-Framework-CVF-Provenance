@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T0_CLOSED_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT
+Status: T0_PASS_BOUNDED_T1_DISPATCH_READY_T2_HELD
 
 Date: 2026-07-18
 
@@ -115,11 +115,11 @@ authorize provider/live behavior, public push, production, or autonomous edits.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | T0 baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Work order status | T0 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Baseline status | T1 baseline | `Status: DISPATCH_READY` | PASS |
+| Work order status | T1 work order | `Status: DISPATCH_READY` | PASS |
 | Completion or reviewer artifact | T0 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
-| Worker return | T0 worker return | `Status: ACCEPTED_BY_REVIEWER` | PASS |
-| Roadmap state | this roadmap | `Status: T0_CLOSED_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
+| Worker return | future T1 worker return | worker-owned | N/A with reason |
+| Roadmap state | this roadmap | `Status: T0_PASS_BOUNDED_T1_DISPATCH_READY_T2_HELD` | PASS |
 | Registry JSON | existing GC-051 registry | aggregate drift checked | PASS |
 | Registry Markdown | existing registry front door | existing coverage | PASS |
 | External evidence digest | local source only | none | N/A with reason |
@@ -131,5 +131,5 @@ authorize provider/live behavior, public push, production, or autonomous edits.
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
 | T0 receipt state | independently accepted documentation evidence | `ACCEPTED_BY_REVIEWER` | PASS |
-| T0 mutation boundary | zero mapper/apply/public mutation | worker and reviewer claim boundaries match | PASS |
-| next tranche release | T1 packet authoring only | `T0_CLOSED_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
+| T1 mutation boundary | dry-run receipt output only; zero target mutation | dispatch contract | PASS |
+| next tranche release | T1 execution only; T2 held | `T0_PASS_BOUNDED_T1_DISPATCH_READY_T2_HELD` | PASS |
