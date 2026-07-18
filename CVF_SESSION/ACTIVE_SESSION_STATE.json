@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_roadmap_closed_operator_selection_next",
-  "previousMode": "cvf_web_inheritance_t5_dispatched_worker_next",
+  "currentMode": "sot3_cvf_proj_t1_dispatched_worker_next",
+  "previousMode": "cvf_web_inheritance_roadmap_closed_operator_selection_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13376,5 +13376,17 @@
     "parkedReopen": "T4 requires a concrete cvf-web consumer plus fresh sibling-source verification before a new implementation packet.",
     "claimBoundary": "Bounded private Web information and provider-free QA closure only; no live/provider, public-sync, push, release, production, T4 implementation, or external mutation."
   },
-  "nextAllowedMove": "The CVF Web capability inheritance and operator projection roadmap is CLOSED_PASS_BOUNDED at material commit 64ec0f672. No active tranche remains. The operator may select a fresh high-value lane, which requires a new GC-018 and source-verified work order before implementation. T4 may reopen only after its recorded concrete cvf-web consumer condition is met. Provider/live, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3CvfProjT1Dispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "e5695bc9e",
+    "roadmap": "docs/roadmaps/CVF_SOT3_CVF_AUTHORITY_SURFACE_AND_MASTER_ARCHITECTURE_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_CVF_PROJ_T1_AS_BUILT_ARCHITECTURE_CATALOG_RECONCILIATION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_CVF_PROJ_T1_AS_BUILT_ARCHITECTURE_CATALOG_RECONCILIATION_2026-07-18.md",
+    "workerReturn": "docs/reviews/CVF_SOT3_CVF_PROJ_T1_WORKER_RETURN_2026-07-18.md",
+    "verification": "pre-dispatch autorun 75/75 PASS, dispatch commit-steward PASS, governed file-size PASS, and pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact ten-path no-commit T1 worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "heldNextTranche": "T2 through T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked.",
+    "claimBoundary": "Private-provenance documentation/catalog reconciliation only; no runtime, GAP, provider/live, public, production, session, commit, or push authority for the worker."
+  },
+  "nextAllowedMove": "Execute the committed SOT3-CVF-PROJ-T1 no-commit catalog reconciliation work order from a clean execution base and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2 through T4 remain parked pending sequential reviewer acceptance. Provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

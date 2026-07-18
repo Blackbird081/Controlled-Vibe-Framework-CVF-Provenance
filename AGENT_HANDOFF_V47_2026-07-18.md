@@ -32,16 +32,16 @@ selection, new GC-018, and a source-verified work order.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_inheritance_roadmap_closed_operator_selection_next`;
+current mode=`sot3_cvf_proj_t1_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=operator selects a fresh high-value lane with new GC-018 and source-verified work order;
-parked checkpoint=T4 implementation, evidence/heartbeat, projection T1-T4,
-sibling copy, provider/live, public-sync, push, production,
+next allowed move=execute the committed SOT3-CVF-PROJ-T1 no-commit work order and return for independent review;
+parked checkpoint=projection T2-T4, CVF Web T4 implementation,
+provider/live, public-sync, push, production, external mutation,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`cvf_web_inheritance_roadmap_closed_operator_selection_next`
+`sot3_cvf_proj_t1_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -220,6 +220,40 @@ the active-session checker may accept this parent SHA for the handoff-only
 child commit.
 
 This marker changes no mode, next move, material decision, or authority.
+
+## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T1 Dispatch Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after the T1
+catalog-reconciliation dispatch at material commit `e5695bc9e`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3CvfProjT1Dispatch20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: instruction to resume the unfinished GitHub/CVF
+information-update roadmap and continue sequentially.
+
+Rollback boundary: revert this seven-path session sync together; no catalog
+implementation, runtime, GAP, provider/live, public, push, production, or
+external mutation belongs to it.
+
+## SOT3-CVF-PROJ-T1 Dispatch State
+
+Material commit: `e5695bc9e`.
+
+Current mode: `sot3_cvf_proj_t1_dispatched_worker_next`.
+
+Next allowed move: execute the exact ten-path no-commit work order and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` for independent closure.
+
+Parked: T2 through T4, provider/live, public-sync, push, production, external
+mutation, and CVF Web T4 implementation.
+
+Claim boundary: private-provenance documentation/catalog dispatch only. The
+worker has no commit authority and this state does not publish to GitHub.
 
 ## GC-020 Marker - T5 And Roadmap Closure Handoff-Sync-Only Commit
 

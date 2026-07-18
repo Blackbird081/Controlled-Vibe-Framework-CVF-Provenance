@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1961,
+  "stateKey": "sot3CvfProjT1Dispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "e5695bc9e",
+    "roadmap": "docs/roadmaps/CVF_SOT3_CVF_AUTHORITY_SURFACE_AND_MASTER_ARCHITECTURE_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_CVF_PROJ_T1_AS_BUILT_ARCHITECTURE_CATALOG_RECONCILIATION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_CVF_PROJ_T1_AS_BUILT_ARCHITECTURE_CATALOG_RECONCILIATION_2026-07-18.md",
+    "workerReturn": "docs/reviews/CVF_SOT3_CVF_PROJ_T1_WORKER_RETURN_2026-07-18.md",
+    "verification": "pre-dispatch autorun 75/75 PASS, dispatch commit-steward PASS, governed file-size PASS, and pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact ten-path no-commit T1 worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "heldNextTranche": "T2 through T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked.",
+    "claimBoundary": "Private-provenance documentation/catalog reconciliation only; no runtime, GAP, provider/live, public, production, session, commit, or push authority for the worker."
+  }
+}
