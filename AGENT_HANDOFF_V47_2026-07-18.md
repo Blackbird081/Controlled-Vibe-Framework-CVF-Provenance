@@ -15,12 +15,13 @@ V46 was rotated at 892 lines under the Governed File Size Guard.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`11f39850b` owns the T3P1 read-only run-discovery prerequisite dispatch.
+`c282312b9` owns the accepted T3P1 run-discovery prerequisite closure.
 
 ## Active Boundary
 
-CVF-WEB-INHERITANCE-T3P1 is dispatched at material commit `11f39850b`. The
-next allowed move is executing its exact five-path no-commit implementation.
+CVF-WEB-INHERITANCE-T3P1 is accepted at material commit `c282312b9`. The next
+allowed move is authoring and dispatching only the documentation-only T3P2
+evidence/liveness availability decision.
 
 T3P2, T3B, T4-T5, SOT3-CVF-PROJ-T1-T4, Web implementation, sibling
 application copying, browser/provider/live work, public-sync, push,
@@ -29,16 +30,16 @@ production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_inheritance_t3p1_dispatched_worker_next`;
+current mode=`cvf_web_inheritance_t3p1_closed_t3p2_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=execute only committed CVF-WEB-INHERITANCE-T3P1;
-parked checkpoint=T3P2, T3B, T4-T5, projection T1-T4, Web implementation,
+next allowed move=author and dispatch only CVF-WEB-INHERITANCE-T3P2 decision;
+parked checkpoint=T3B, T4-T5, projection T1-T4, Web implementation,
 sibling copy, browser/provider/live, public-sync, push, production,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`cvf_web_inheritance_t3p1_dispatched_worker_next`
+`cvf_web_inheritance_t3p1_closed_t3p2_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -62,6 +63,12 @@ cvf-web source consumes an MAO export; and registry/operator reconciliation
 totals were repaired to match the terminal rows.
 
 ## Latest Work / Changes
+
+- Closed T3P1 at material commit `c282312b9` after focused 32/32, full
+  1790/1790, TypeScript, reviewer-fast 62/62, file-size, and pre-commit 83/83.
+- Reviewer replaced symlink-following entry classification with non-following
+  `Dirent.isFile()` classification and expanded regression coverage.
+- Released documentation-only T3P2 decision authoring; T3B/T4-T5 remain parked.
 
 - Dispatched T3P1 at material commit `11f39850b` after author-fast 5/5,
   pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS.
@@ -385,6 +392,23 @@ the active-session checker may accept this parent SHA for the handoff-only
 child commit.
 
 This marker changes no mode, next move, material decision, or authority.
+
+## Core Guard Self-Protection Authorization - T3P1 Closure Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after
+material closure commit `c282312b9`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/cvfWebInheritanceT3P1Closure20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing roadmap-continuation instruction.
+
+Rollback boundary: revert this seven-path sync together; no material source,
+test, public, or provider mutation belongs to it.
 
 ## Claim Boundary
 
