@@ -5696,6 +5696,41 @@
         "MAO mutation control in cvf-web T3B"
       ],
       "nextScanRecommendation": "Reopen these surfaces only for a source-owned scale contract or a later source-verified MAO Web change."
+    },
+    {
+      "id": "cvf-web-inheritance-t5-information-qa",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CVF Web inheritance T5 provider-free information QA proof",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/cvf-web-inheritance-t5-information.spec.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "scanWave": "CVF-WEB-INHERITANCE-T5",
+      "scanDate": "2026-07-18",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_WEB_INHERITANCE_T5_WORKER_RETURN_2026-07-18.md",
+      "completionReviewPath": "docs/reviews/CVF_WEB_INHERITANCE_T5_COMPLETION_REVIEW_2026-07-18.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T5_WEB_INFORMATION_QA_AND_ROADMAP_CLOSURE_2026-07-18.md",
+      "verdicts": {
+        "gc047": "N/A",
+        "gc048": "N/A",
+        "gc050": "N/A"
+      },
+      "semanticRegions": [
+        "CVF_WEB_INHERITANCE",
+        "PROVIDER_FREE_BROWSER_QA",
+        "READ_ONLY_OPERATOR_PROJECTION"
+      ],
+      "priorAbsorption": "T5 adds one bounded provider-free Playwright proof for bilingual Help links to the accepted read-only SOT3 and MAO operator surfaces.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "live provider proof",
+        "business submission",
+        "T4 Controlled Quotation implementation"
+      ],
+      "nextScanRecommendation": "Reopen only when the Help links or accepted read-only SOT3 or MAO route boundaries change."
     }
   ]
 }

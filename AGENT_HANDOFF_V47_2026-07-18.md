@@ -640,6 +640,24 @@ Operator authorization: standing roadmap-continuation instruction.
 Rollback boundary: revert this seven-path sync together; no material source,
 test, public, provider, or production mutation belongs to it.
 
+## Core Guard Self-Protection Authorization - T5 Review Prerequisite Maintenance
+
+Authorized guard-maintenance scope: correct the stale T5 dispatch next-move
+mode in the active session front door and add the single missing GC-051 source
+entry plus generated aggregate coverage for the new T5 E2E spec.
+
+Protected paths: `CVF_SESSION_MEMORY.md`;
+`docs/corpus-intelligence/registry/entries/cvf-web-inheritance-t5-information-qa.json`;
+`docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`;
+`AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing automatic roadmap-continuation and reviewer
+closure instruction.
+
+Rollback boundary: revert these four governance-maintenance paths together;
+no T5 implementation, test logic, provider/live, public, push, production, or
+external mutation belongs to this prerequisite repair.
+
 ## GC-020 Marker - T5 Dispatch Handoff-Sync-Only Commit
 
 This handoff-only child records parent session-sync commit `8c14308a5` after

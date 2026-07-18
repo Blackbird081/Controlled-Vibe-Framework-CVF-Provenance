@@ -296,12 +296,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_inheritance_t4_closed_t5_packet_authoring_next`
+Mode: `cvf_web_inheritance_t5_dispatched_worker_next`
 
-CVF-WEB-INHERITANCE-T4 is dispatched at material commit `f6b398b71`.
-Execute only its exact two-output no-commit source decision and return for
-independent review. T4 implementation, T5, provider/live, public-sync, push,
-production, and external mutation remain parked.
+CVF-WEB-INHERITANCE-T5 is dispatched at material commit `eb7f7df1e`.
+Execute only its exact nine-path no-commit Web information and provider-free
+QA packet, then return for independent reviewer closure. T4 implementation,
+provider/live, public-sync, push, production, and external mutation remain
+parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
