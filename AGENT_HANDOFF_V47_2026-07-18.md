@@ -15,31 +15,33 @@ V46 was rotated at 892 lines under the Governed File Size Guard.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`cf214a243` owns the accepted T4 sibling-adoption decision closure.
+`eb7f7df1e` owns the dispatched T5 Web information and provider-free QA packet.
 
 ## Active Boundary
 
 CVF-WEB-INHERITANCE-T4 is independently accepted at material commit
-`cf214a243` with `DEFER_WITH_REASON`. The next allowed move is authoring and
-source verification of the final T5 packet.
+`cf214a243` with `DEFER_WITH_REASON`. CVF-WEB-INHERITANCE-T5 is dispatched at
+material commit `eb7f7df1e`; the next allowed move is its exact nine-path
+no-commit worker execution followed by independent reviewer closure.
 
-Evidence/heartbeat projection, T4 implementation, T5 execution, SOT3-CVF-PROJ-T1-T4,
-sibling application copying, browser/provider/live work, public-sync, push,
-production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
+Evidence/heartbeat projection, T4 implementation, SOT3-CVF-PROJ-T1-T4,
+sibling application copying, provider/live work, public-sync, push, production,
+MAO-OA-T6B, and SCLP-X-T3 remain parked. T5 releases only its one provider-free
+browser command and the other checks named in the committed packet.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_inheritance_t4_closed_t5_packet_authoring_next`;
+current mode=`cvf_web_inheritance_t5_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=author and source-verify final CVF-WEB-INHERITANCE-T5 packet;
-parked checkpoint=T4 implementation, T5 execution, evidence/heartbeat, projection T1-T4,
-sibling copy, browser/provider/live, public-sync, push, production,
+next allowed move=execute exact nine-path CVF-WEB-INHERITANCE-T5 no-commit worker and return for independent closure;
+parked checkpoint=T4 implementation, evidence/heartbeat, projection T1-T4,
+sibling copy, provider/live, public-sync, push, production,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`cvf_web_inheritance_t4_closed_t5_packet_authoring_next`
+`cvf_web_inheritance_t5_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -63,6 +65,12 @@ cvf-web source consumes an MAO export; and registry/operator reconciliation
 totals were repaired to match the terminal rows.
 
 ## Latest Work / Changes
+
+- Dispatched T5 at material commit `eb7f7df1e` after pre-dispatch 75/75,
+  dispatch steward, governed file size, and pre-commit 83/83 PASS. Scope is
+  exactly nine paths for private version alignment, current README/Help
+  information, focused/full non-live checks, one provider-free Playwright
+  invocation, QA receipt, and worker return under `WORKER_MUST_NOT_COMMIT`.
 
 - Closed T4 at material commit `cf214a243` with `DEFER_WITH_REASON` after
   correcting the false `vertical-slice` package-boundary ACCEPT row, hashing
@@ -612,4 +620,22 @@ This marker changes no mode, next move, material decision, or authority.
 
 This handoff records protected continuity only. It does not itself authorize
 T4 implementation, sibling-source copying, MAO execution, provider/live work,
-public-sync, release, production readiness, or push.
+public-sync, release, production readiness, or push. T5 authority is bounded
+to the committed work order at `eb7f7df1e`.
+
+## Core Guard Self-Protection Authorization - T5 Dispatch Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after
+material dispatch commit `eb7f7df1e`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/cvfWebInheritanceT5Dispatch20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing roadmap-continuation instruction.
+
+Rollback boundary: revert this seven-path sync together; no material source,
+test, public, provider, or production mutation belongs to it.

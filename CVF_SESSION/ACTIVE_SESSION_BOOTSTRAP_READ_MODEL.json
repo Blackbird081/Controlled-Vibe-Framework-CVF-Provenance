@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_web_inheritance_t4_closed_t5_packet_authoring_next",
+  "currentMode": "cvf_web_inheritance_t5_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V47_2026-07-18.md",
-  "nextAllowedMove": "Author and source-verify the final CVF-WEB-INHERITANCE-T5 Web information, QA, and roadmap-closure packet from accepted T1-T4 evidence at material closure commit cf214a243. T4 implementation remains deferred. T5 execution, browser/live/provider work, public-sync, push, production, and external mutation remain parked until a committed T5 work order explicitly releases a bounded subset. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute the committed CVF-WEB-INHERITANCE-T5 work order at material dispatch commit eb7f7df1e under WORKER_MUST_NOT_COMMIT, changing exactly its nine allowed paths, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON for independent reviewer closure. T4 implementation, provider/live calls, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_inheritance_t4_closed_t5_packet_authoring_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=author and source-verify the final T5 Web information, QA, and roadmap-closure packet; parked checkpoint=T4 implementation, T5 execution, browser/live/provider, public-sync, push, production, and external mutation lanes.
+Startup acknowledged: current mode=`cvf_web_inheritance_t5_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=execute the committed nine-path T5 Web information and provider-free QA work order, then return for independent closure; parked checkpoint=T4 implementation, provider/live calls, public-sync, push, production, and external mutation lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_inheritance_t4_closed_t5_packet_authoring_next`
+Current mode marker: `cvf_web_inheritance_t5_dispatched_worker_next`
 
-Current mode: `cvf_web_inheritance_t4_closed_t5_packet_authoring_next`
+Current mode: `cvf_web_inheritance_t5_dispatched_worker_next`
 
-`cvf_web_inheritance_t4_closed_t5_packet_authoring_next`
+`cvf_web_inheritance_t5_dispatched_worker_next`
 
 Previous mode:
 
-`cvf_web_inheritance_t4_dispatched_worker_next`
+`cvf_web_inheritance_t4_closed_t5_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-WEB-INHERITANCE-T5 Web information, provider-free QA, and roadmap-closure dispatch | `eb7f7df1e` | DISPATCH_READY after pre-dispatch 75/75, dispatch steward, file-size, and pre-commit 83/83 PASS; exact nine-path no-commit worker; T4 implementation and provider/live/public/production lanes parked. |
 | CVF-WEB-INHERITANCE-T4 Controlled Quotation sibling-adoption decision closure | `cf214a243` | REVIEWER_ACCEPTED_WITH_REPAIRS; `DEFER_WITH_REASON`; corrected false package-boundary ACCEPT, added nine-file external hash manifest and direct retained-design negative search; worker-fast reviewer bundle, file-size, GC-051, and pre-commit 83/83 PASS; T5 packet authoring next. |
 | CVF-WEB-INHERITANCE-T4 Controlled Quotation sibling-adoption decision dispatch | `f6b398b71` | DISPATCH_READY after author-fast 5/5, pre-dispatch 75/75, dispatch steward, and pre-commit 83/83 PASS; exact two-output source decision under no-commit; T4 implementation and T5 parked. |
 | CVF-WEB-INHERITANCE-T3B MAO durable-event operator readout closure | `68aea07e5` | REVIEWER_ACCEPTED_WITH_REPAIR; bounded read-only run/task/timeout/event-recency projection accepted after Vietnamese localization repair; focused 21/21, typecheck, build, GC-051, reviewer-fast 62/62, file-size, and pre-commit 83/83 PASS; T4 decision-packet authoring next. |

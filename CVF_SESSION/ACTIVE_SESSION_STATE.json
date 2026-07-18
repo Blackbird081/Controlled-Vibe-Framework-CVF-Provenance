@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t4_closed_t5_packet_authoring_next",
-  "previousMode": "cvf_web_inheritance_t4_dispatched_worker_next",
+  "currentMode": "cvf_web_inheritance_t5_dispatched_worker_next",
+  "previousMode": "cvf_web_inheritance_t4_closed_t5_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13351,5 +13351,18 @@
     "heldNextTranche": "T4 implementation remains deferred under its checkable reopen condition; T5 execution remains parked until dispatch.",
     "claimBoundary": "No sibling/cvf-web implementation, provider/live, public-sync, push, release, or production action."
   },
-  "nextAllowedMove": "Author and source-verify the final CVF-WEB-INHERITANCE-T5 Web information, QA, and roadmap-closure packet from accepted T1-T4 evidence at material closure commit cf214a243. T4 implementation remains deferred. T5 execution, browser/live/provider work, public-sync, push, production, and external mutation remain parked until a committed T5 work order explicitly releases a bounded subset. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebInheritanceT5Dispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "eb7f7df1e",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T5_WEB_INFORMATION_QA_AND_ROADMAP_CLOSURE_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T5_WEB_INFORMATION_QA_AND_ROADMAP_CLOSURE_2026-07-18.md",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "workerRoute": "WORKER_MUST_NOT_COMMIT",
+    "allowedPathCount": 9,
+    "verification": "author-fast, pre-dispatch 75/75, dispatch commit steward, governed file size, and pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute exactly the nine-path T5 Web information and provider-free QA worker, then return for independent review and roadmap closure.",
+    "heldNextTranche": "T4 implementation remains deferred; provider/live, public-sync, push, release, production, and external mutation remain parked.",
+    "claimBoundary": "Dispatch authority only; no T5 implementation result, QA result, roadmap closure, release, public, live-provider, or production claim."
+  },
+  "nextAllowedMove": "Execute the committed CVF-WEB-INHERITANCE-T5 work order at material dispatch commit eb7f7df1e under WORKER_MUST_NOT_COMMIT, changing exactly its nine allowed paths, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON for independent reviewer closure. T4 implementation, provider/live calls, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
