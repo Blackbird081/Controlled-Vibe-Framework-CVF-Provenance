@@ -219,6 +219,15 @@ child commit.
 
 This marker changes no mode, next move, material decision, or authority.
 
+## GC-020 Marker - Public CI Self-Containment Handoff-Sync-Only Commit
+
+This handoff-only child records parent SHA `5edc4e8c7` after the public CI
+self-containment repair. The current child SHA cannot be known before commit
+creation, so the active-session checker may accept the parent SHA for this
+handoff-only child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## GC-020 Marker - Public Limitations Header Handoff-Sync-Only Commit
 
 This handoff-only child records parent SHA `ca489d4f2` after the public
