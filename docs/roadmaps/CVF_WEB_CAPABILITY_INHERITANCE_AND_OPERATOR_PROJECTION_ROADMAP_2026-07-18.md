@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CVF_WEB_INHERITANCE_T3A_PASS_T3P1_PACKET_AUTHORING_NEXT
+Status: CVF_WEB_INHERITANCE_T3P1_DISPATCH_READY
 
 docType: roadmap
 
@@ -139,8 +139,8 @@ operator-supplied key; T0 makes no such claim.
 - T0 is independently accepted with reviewer repairs. T1 is independently
   accepted at material commit `b186df669`. T2 is independently accepted with
   reviewer repairs at material commit `609edffbe`. T3A is independently
-  accepted with reviewer repairs; T3P1 packet authoring is next. T3P2, T3B,
-  and T4-T5 remain parked.
+  accepted with reviewer repairs at material commit `c0d88ff34`. T3P1 is
+  dispatch-ready; T3P2, T3B, and T4-T5 remain parked.
 - T3A is required because the existing MAO operational projection is a pure,
   caller-supplied in-memory owner with no CLI, MCP, UI, or runtime caller;
   the durable run store replays event-ledger state but does not persist or
@@ -258,10 +258,10 @@ public-sync, push, production readiness, or universal inheritance claims.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T3A_PASS_T3P1_PACKET_AUTHORING_NEXT` | PASS |
-| Baseline status | T3A GC-018 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
-| Work order status | T3A work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T3A_COMPLETION_REVIEW_2026-07-18.md` | T3A source-seam decision accepted with repairs | PASS |
+| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T3P1_DISPATCH_READY` | PASS |
+| Baseline status | T3P1 GC-018 baseline | `Status: DISPATCH_READY` | PASS |
+| Work order status | T3P1 work order | `Status: DISPATCH_READY` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T3A_COMPLETION_REVIEW_2026-07-18.md` | T3A dependency accepted at `c0d88ff34` | PASS |
 | Registry JSON | corpus registry generated aggregate | existing cvf-web `src/` scope coverage and aggregate drift check | PASS |
 | Registry Markdown | corpus registry read model | existing cvf-web `src/` scope coverage | PASS |
 | External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
