@@ -105,7 +105,7 @@ Controlled-Vibe-Framework-CVF/
 │   ├── governance/
 │   └── ...
 │
-├── EXTENSIONS/                         ← Layer 1-5 (22 legacy + 12 CVF_ECO)
+├── EXTENSIONS/                         ← Layer 1-5 (22 legacy + 12 CVF_ECO + 4 SOT3 bounded)
 │   ├── Legacy Extensions (v1.1.1-v3.0)      ← 22 modules
 │   │   ├── CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/
 │   │   ├── CVF_v1.2_CAPABILITY_EXTENSION/
@@ -131,19 +131,25 @@ Controlled-Vibe-Framework-CVF/
 │   │   ├── ARCHITECTURE_SEPARATION_DIAGRAM.md
 │   │   └── examples/
 │   │
-│   └── CVF_ECO Extensions (Track III)        ← 12 modules, 434 tests ✅
-│       ├── CVF_ECO_v1.0_INTENT_VALIDATION/       ← 41 tests
-│       ├── CVF_ECO_v1.1_NL_POLICY/                ← 46 tests
-│       ├── CVF_ECO_v1.2_LLM_RISK_ENGINE/         ← 37 tests
-│       ├── CVF_ECO_v1.3_DOMAIN_GUARDS/          ← 39 tests
-│       ├── CVF_ECO_v1.4_RAG_PIPELINE/             ← 34 tests
-│       ├── CVF_ECO_v2.0_AGENT_GUARD_SDK/         ← 43 tests
-│       ├── CVF_ECO_v2.1_GOVERNANCE_CANVAS/       ← 30 tests
-│       ├── CVF_ECO_v2.2_GOVERNANCE_CLI/          ← 39 tests
-│       ├── CVF_ECO_v2.3_AGENT_IDENTITY/          ← 39 tests
-│       ├── CVF_ECO_v2.4_GRAPH_GOVERNANCE/         ← 27 tests
-│       ├── CVF_ECO_v3.0_TASK_MARKETPLACE/         ← 29 tests
-│       └── CVF_ECO_v3.1_REPUTATION/              ← 30 tests
+│   ├── CVF_ECO Extensions (Track III)        ← 12 modules, 434 tests ✅
+│   │   ├── CVF_ECO_v1.0_INTENT_VALIDATION/       ← 41 tests
+│   │   ├── CVF_ECO_v1.1_NL_POLICY/                ← 46 tests
+│   │   ├── CVF_ECO_v1.2_LLM_RISK_ENGINE/         ← 37 tests
+│   │   ├── CVF_ECO_v1.3_DOMAIN_GUARDS/          ← 39 tests
+│   │   ├── CVF_ECO_v1.4_RAG_PIPELINE/             ← 34 tests
+│   │   ├── CVF_ECO_v2.0_AGENT_GUARD_SDK/         ← 43 tests
+│   │   ├── CVF_ECO_v2.1_GOVERNANCE_CANVAS/       ← 30 tests
+│   │   ├── CVF_ECO_v2.2_GOVERNANCE_CLI/          ← 39 tests
+│   │   ├── CVF_ECO_v2.3_AGENT_IDENTITY/          ← 39 tests
+│   │   ├── CVF_ECO_v2.4_GRAPH_GOVERNANCE/         ← 27 tests
+│   │   ├── CVF_ECO_v3.0_TASK_MARKETPLACE/         ← 29 tests
+│   │   └── CVF_ECO_v3.1_REPUTATION/              ← 30 tests
+│   │
+│   └── SOT3 Three-Layer Extensions (bounded, LOCAL_READY)
+│       ├── CVF_REFINERY/                    ← deterministic source-bound prepare, no truth authority
+│       ├── CVF_TRUTH_KERNEL/                ← sole decision/receipt/reference authority
+│       ├── CVF_TRUTH_FLOW/                  ← post-Kernel distribution and lifecycle
+│       └── CVF_SOT_THREE_LAYER_SLICE/       ← vertical-slice composition orchestrator
 │
 ├── governance/                         ← Guards, policies, toolkit
 │   ├── toolkit/

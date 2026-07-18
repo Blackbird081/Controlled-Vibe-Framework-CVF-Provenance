@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: SOT3_CVF_PROJ_T2_DISPATCH_READY
+Status: SOT3_CVF_PROJ_T2_CLOSED_PASS_BOUNDED_T3_PACKET_AUTHORING_NEXT
 
 Date: 2026-07-18
 
@@ -257,20 +257,20 @@ export requires a separate public-sync authorization and evidence set.
 
 ## Claim Boundary
 
-T0 and T1 are independently accepted. T1 updates the bounded private
-as-built catalog and reference navigation only; it does not change runtime,
-provider behavior, production state, or public surfaces. T2 packet authoring
-is released. T3 and T4 remain parked behind sequential reviewer acceptance.
+T0 through T2 are independently accepted. T2 projects the bounded SOT3
+knowledge-authority path into master architecture surfaces and changes no
+runtime, provider behavior, production state, or public surface. T3 packet
+authoring is released. T4 remains parked behind sequential reviewer acceptance.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | T1 GC-018 baseline | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
-| Work order status | T1 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T1_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR` | PASS |
-| Worker return | T1 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIR` | PASS |
-| Roadmap state | this roadmap | `Status: SOT3_CVF_PROJ_T2_DISPATCH_READY` | PASS |
+| Baseline status | T2 GC-018 baseline | `Status: CLOSED_PASS_BOUNDED_AFTER_REVIEWER_FRESHNESS_REPAIR` | PASS |
+| Work order status | T2 work order | `Status: CLOSED_PASS_BOUNDED_AFTER_REVIEWER_FRESHNESS_REPAIR` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T2_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_AFTER_FRESHNESS_REPAIR` | PASS |
+| Worker return | T2 worker return | `Status: ACCEPTED_BY_REVIEWER_AFTER_FRESHNESS_REPAIR` | PASS |
+| Roadmap state | this roadmap | `Status: SOT3_CVF_PROJ_T2_CLOSED_PASS_BOUNDED_T3_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 registry aggregate | changed-corpus coverage and aggregate drift PASS | PASS |
 | Registry Markdown | existing registry front door | existing family coverage remains sufficient | PASS |
 | External evidence digest | repository-local evidence only | none | N/A with reason |

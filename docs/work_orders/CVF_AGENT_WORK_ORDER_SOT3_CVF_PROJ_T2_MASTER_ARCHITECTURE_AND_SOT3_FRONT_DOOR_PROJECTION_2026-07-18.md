@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_AFTER_REVIEWER_FRESHNESS_REPAIR
 
 Date: 2026-07-18
 
@@ -384,13 +384,13 @@ git rev-parse --short HEAD
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | paired T2 baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | this work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | T2 completion review | reviewer-owned | N/A with reason |
-| Worker return | T2 worker return | worker-owned uncommitted | N/A with reason |
-| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T2_DISPATCH_READY` | PASS |
-| Registry JSON | existing GC-051 coverage | reviewer verifies coverage | N/A with reason |
-| Registry Markdown | existing registry front door | no mutation authorized | N/A with reason |
+| Baseline status | paired T2 baseline | `Status: CLOSED_PASS_BOUNDED_AFTER_REVIEWER_FRESHNESS_REPAIR` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_AFTER_REVIEWER_FRESHNESS_REPAIR` | PASS |
+| Completion or reviewer artifact | T2 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED_AFTER_FRESHNESS_REPAIR` | PASS |
+| Worker return | T2 worker return | `Status: ACCEPTED_BY_REVIEWER_AFTER_FRESHNESS_REPAIR` | PASS |
+| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T2_CLOSED_PASS_BOUNDED_T3_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | existing GC-051 coverage | changed-corpus coverage gate PASS | PASS |
+| Registry Markdown | existing registry front door | existing family coverage verified | PASS |
 | External evidence digest | repository-local evidence only | none | N/A with reason |
 | System loop interlock | no loop owner changed | none | N/A with reason |
 | Session continuity | protected surfaces | separate sync | N/A with reason |
@@ -400,6 +400,15 @@ git rev-parse --short HEAD
 The current SOT3 source owners and bounded proofs were directly verified. The
 existing `PROVIDER_CAPABILITY_REGISTRY` in Model Gateway is acknowledged and
 unchanged; no provider absence or hardcoding claim is made.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| runtime receipt evidence | N/A with reason: documentation projection creates no runtime receipt | N/A_WITH_REASON |
+| provider query evidence | N/A with reason: no provider call was authorized or needed | N/A_WITH_REASON |
+| architecture projection | independently reviewed against current source and accepted evidence | PASS |
+| freshness interlock | R91 checker reports `CURRENT` after governed reviewer reconciliation | PASS |
 
 ## Public Export Disposition
 
