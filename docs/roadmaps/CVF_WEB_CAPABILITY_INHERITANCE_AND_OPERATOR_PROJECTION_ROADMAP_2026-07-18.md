@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CVF_WEB_INHERITANCE_T5_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -19,7 +19,8 @@ authorized a clean audit and continuation packet after SOT3-CVF-PROJ-T0.
 
 T0 through T4 are independently closed. T4 selected `DEFER_WITH_REASON` for
 the sibling Controlled Quotation capability, so no T4 implementation is
-released. The final T5 information and provider-free QA tranche is dispatched.
+released. The final T5 information and provider-free QA tranche is accepted,
+and this roadmap is closed bounded.
 
 ## Purpose
 
@@ -144,8 +145,10 @@ operator-supplied key; T0 makes no such claim.
   T3B is accepted after one localization repair. T4 is independently accepted
   as `DEFER_WITH_REASON` after reviewer correction of one Source Verification
   row and direct confirmation of the design-reference absence claim. T4
-  implementation remains deferred and T5 is dispatched under an exact
-  nine-path information/test/evidence boundary.
+  implementation remains deferred. T5 is independently accepted under its
+  exact nine-path information/test/evidence boundary after focused 33/33,
+  full non-live 3256 pass plus 2 skip, TypeScript, build, and one provider-free
+  two-spec browser invocation passed. The roadmap is closed bounded.
 - T3A is required because the existing MAO operational projection is a pure,
   caller-supplied in-memory owner with no CLI, MCP, UI, or runtime caller;
   the durable run store replays event-ledger state but does not persist or
@@ -219,8 +222,9 @@ or MAO implementation and do not infer that every capability belongs in Web.
 
 T0 audit, T1 registry correction, T2 SOT3 evidence projection, and the full
 T3A/T3P1/T3P2/T3B MAO chain and the T4 sibling-adoption decision are accepted.
-T4 implementation remains deferred under its checkable reopen condition; T5
-Web information, QA, and roadmap-closure execution is now dispatched.
+T4 implementation remains deferred under its checkable reopen condition. T5
+Web information and provider-free QA are independently accepted, so the
+roadmap is closed bounded with no active tranche.
 
 ## Agent Operation Trace Block
 
@@ -253,22 +257,32 @@ separate public-sync authorization and artifact set.
 
 ## Claim Boundary
 
-This roadmap records accepted T0 through T4 work and dispatches the exact T5
-information and provider-free QA work order. It does not authorize sibling-source copying, T4
-implementation, evidence or
-heartbeat projection, MAO worker execution, browser or live proof,
-public-sync, push, production readiness, or universal inheritance claims.
+This roadmap records accepted T0 through T5 work and closes the bounded Web
+inheritance sequence. It does not authorize sibling-source copying, T4
+implementation, evidence or heartbeat projection, MAO worker execution,
+additional browser or live proof, public-sync, push, production readiness, or
+universal inheritance claims.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T5_DISPATCH_READY` | PASS |
-| Baseline status | T5 GC-018 baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | T5 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | accepted dependency release for T5 | PASS |
-| Registry JSON | corpus registry generated aggregate | existing cvf-web `src/` scope coverage and aggregate drift check | PASS |
-| Registry Markdown | corpus registry read model | existing cvf-web `src/` scope coverage | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Baseline status | T5 GC-018 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_MAINTENANCE` | PASS |
+| Work order status | T5 work order | `Status: CLOSED_PASS_WITH_REVIEWER_MAINTENANCE` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T5_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_WITH_MAINTENANCE` | PASS |
+| Registry JSON | corpus registry generated aggregate | T5 E2E source entry plus aggregate drift check | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | companion rule requires no edit when quick lookup is unchanged | PASS |
 | External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
 | System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
 | Session continuity | protected session surfaces | separate session-sync commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | Required value | Observed value | Status |
+|---|---|---|---|---|
+| WEB-T5-AR-01 | T5 QA receipt | focused tests pass | 33/33 | PASS |
+| WEB-T5-AR-02 | T5 QA receipt and reviewer rerun | full non-live suite passes | 3256 passed; 2 skipped | PASS |
+| WEB-T5-AR-03 | T5 QA receipt and reviewer rerun | TypeScript and build exit 0 | exit 0; one disclosed pre-existing warning | PASS |
+| WEB-T5-AR-04 | T5 QA receipt | one browser invocation, zero retry/provider/business submissions | 1/0/0/0; 2/2 specs | PASS |
+| WEB-T5-AR-05 | T5 worker return | exact nine paths and unchanged worker HEAD | MATCH at `d36c1c191` | PASS |

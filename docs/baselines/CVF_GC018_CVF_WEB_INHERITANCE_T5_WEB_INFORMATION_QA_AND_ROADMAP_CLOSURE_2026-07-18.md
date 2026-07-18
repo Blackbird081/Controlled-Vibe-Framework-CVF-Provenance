@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_MAINTENANCE
 
 Baseline ID: CVF-GC018-CVF-WEB-INHERITANCE-T5
 
@@ -136,8 +136,33 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance T5 dispatch; public-sync remains separately governed.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this file | `Status: CLOSED_PASS_WITH_REVIEWER_MAINTENANCE` | PASS |
+| Work order status | T5 work order | `Status: CLOSED_PASS_WITH_REVIEWER_MAINTENANCE` | PASS |
+| Completion or reviewer artifact | T5 completion review | `Status: REVIEWER_ACCEPTED_WITH_MAINTENANCE` | PASS |
+| Worker return | T5 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_MAINTENANCE` | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | corpus registry aggregate | T5 E2E entry and drift check PASS | PASS |
+| Registry Markdown | corpus registry human companion | no quick-lookup change required under its How to Add a New Entry rule | PASS |
+| External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate post-material session sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| focused test acceptance | 33/33 passed | PASS |
+| full non-live test acceptance | 3256 passed; 2 skipped | PASS |
+| TypeScript and build acceptance | both exit 0; one disclosed pre-existing build warning | PASS |
+| browser ceiling | one invocation; 2/2 specs; zero retry/provider/business submissions | PASS |
+| worker boundary | exact nine paths at unchanged worker HEAD `d36c1c191` | PASS |
+
 ## Claim Boundary
 
-This baseline authorizes only the bounded T5 information and provider-free QA
-worker. It does not itself close the roadmap or authorize live, public, push,
-release, production, session, or external mutation.
+This baseline is fulfilled by the accepted bounded T5 information and
+provider-free QA implementation. It does not authorize live, public, push,
+release, production, or external mutation.

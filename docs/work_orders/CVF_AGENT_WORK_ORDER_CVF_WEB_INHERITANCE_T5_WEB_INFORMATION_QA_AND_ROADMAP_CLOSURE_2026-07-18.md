@@ -2,7 +2,7 @@
 
 Memory class: work-order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_MAINTENANCE
 
 Batch ID: CVF-WEB-INHERITANCE-T5
 
@@ -221,6 +221,15 @@ file-size, and no-commit evidence. Do not claim coverage or live governance.
 | QA receipt | actual commands, totals, warnings, browser ceiling, claim boundary |
 | worker return | exact nine-path diff, unchanged HEAD, no staging/commit |
 
+## Required Artifact Manifest
+
+| Artifact | Required state | Status |
+|---|---|---|
+| seven cvf-web information and test paths | version, README, Help, unit test, and provider-free E2E implementation | PASS |
+| `docs/reviews/CVF_WEB_INHERITANCE_T5_QA_RECEIPT_2026-07-18.md` | command-backed QA evidence accepted by reviewer | PASS |
+| `docs/reviews/CVF_WEB_INHERITANCE_T5_WORKER_RETURN_2026-07-18.md` | exact nine-path no-commit return accepted by reviewer | PASS |
+| `docs/reviews/CVF_WEB_INHERITANCE_T5_COMPLETION_REVIEW_2026-07-18.md` | independent T5 and roadmap closure | PASS |
+
 ## Roadmap-To-Work-Order Trace Matrix
 
 | Roadmap requirement | Work-order owner | Closure evidence |
@@ -292,14 +301,14 @@ or lockfile drift exceeds the two root version fields, or scope must expand.
 
 ## Closure Checklist
 
-- [ ] execution HEAD matches dispatcher instruction;
-- [ ] package and lockfile versions align at `1.7.0`;
-- [ ] README claims are current and bounded;
-- [ ] bilingual Help links and tests pass;
-- [ ] focused/full tests, TypeScript, and build pass;
-- [ ] one provider-free browser invocation passes without retry;
-- [ ] QA receipt and exact nine-path no-commit boundary hold; and
-- [ ] T4 remains deferred and public/live/production lanes remain parked.
+- [x] execution HEAD matches dispatcher instruction;
+- [x] package and lockfile versions align at `1.7.0`;
+- [x] README claims are current and bounded;
+- [x] bilingual Help links and tests pass;
+- [x] focused/full tests, TypeScript, and build pass;
+- [x] one provider-free browser invocation passes without retry;
+- [x] QA receipt and exact nine-path no-commit boundary hold; and
+- [x] T4 remains deferred and public/live/production lanes remain parked.
 
 ## Agent Handoff Contract Control Block
 
@@ -407,7 +416,7 @@ Returned defects: NONE_RETURNED
 | After status evidence | exact three-path dispatch set pending validation and commit |
 | Diff evidence | bounded documentation diff before commit |
 | Approval boundary | final T5 no-commit information and provider-free QA dispatch |
-| Claim boundary | no T5 execution yet; no runtime/live/public/push/production mutation |
+| Claim boundary | T5 accepted after independent review; no runtime/live/public/push/production mutation |
 | Agent type | dispatcher |
 | Invocation ID | `cvf-web-inheritance-t5-dispatch-2026-07-18` |
 | Expected manifest | roadmap; T5 baseline; T5 work order |
@@ -435,9 +444,34 @@ DEFERRED_PRIVATE_ONLY
 Reason: private provenance dispatch. T5 worker must not public-sync or claim a
 public release.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | T5 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_MAINTENANCE` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_WITH_REVIEWER_MAINTENANCE` | PASS |
+| Completion or reviewer artifact | T5 completion review | `Status: REVIEWER_ACCEPTED_WITH_MAINTENANCE` | PASS |
+| Worker return | T5 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_MAINTENANCE` | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | corpus registry aggregate | T5 E2E entry and drift check PASS | PASS |
+| Registry Markdown | corpus registry human companion | no quick-lookup change required under its How to Add a New Entry rule | PASS |
+| External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate post-material session sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| focused test acceptance | 33/33 passed | PASS |
+| full non-live test acceptance | 3256 passed; 2 skipped | PASS |
+| TypeScript and build acceptance | both exit 0; one disclosed pre-existing build warning | PASS |
+| browser ceiling | one invocation; 2/2 specs; zero retry/provider/business submissions | PASS |
+| worker boundary | exact nine paths at unchanged worker HEAD `d36c1c191` | PASS |
+
 ## Claim Boundary
 
-This work order authorizes exactly nine T5 information/test/evidence paths and
-one provider-free browser invocation. It does not authorize runtime semantics,
-T4 implementation, provider/live work, public-sync, push, release, production,
-session mutation, staging, or worker commit.
+This work order is fulfilled by exactly nine T5 information/test/evidence
+paths and one provider-free browser invocation. It does not authorize runtime
+semantics, T4 implementation, provider/live work, public-sync, push, release,
+production, or worker commit.

@@ -1,6 +1,6 @@
 {
   "name": "cvf-agent",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "private": true,
   "scripts": {
     "sync:risk-models": "node scripts/build-risk-models.js",
