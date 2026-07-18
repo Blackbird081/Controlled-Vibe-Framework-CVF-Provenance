@@ -140,6 +140,7 @@ SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 
 Session-sync commit: `6dbde3102`.
+Exposure-classification follow-up commit: `0c3b0c9d5`.
 
 ## Claim Boundary
 
