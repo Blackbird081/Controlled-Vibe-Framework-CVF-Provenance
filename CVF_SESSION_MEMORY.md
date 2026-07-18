@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V47_2026-07-18.md`
+4. `AGENT_HANDOFF_V48_2026-07-18.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V47_2026-07-18.md` |
+| Active handoff | `AGENT_HANDOFF_V48_2026-07-18.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`projection_automation_roadmap_packet_authoring_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=author and dispatch the projection landmark and dry-run automation roadmap packet; parked checkpoint=provider/live, public-sync mutation, push, production, external mutation, and unattended semantic apply.
+Startup acknowledged: current mode=`continuous_projection_drift_roadmap_authoring_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=author the continuous projection drift detection and review-packet automation roadmap; parked checkpoint=automatic semantic edits, commit, push, deployment, provider/live calls, production action, and unattended apply.
 
 ## Current Mode
 
-Current mode marker: `projection_automation_roadmap_packet_authoring_next`
+Current mode marker: `continuous_projection_drift_roadmap_authoring_next`
 
-Current mode: `projection_automation_roadmap_packet_authoring_next`
+Current mode: `continuous_projection_drift_roadmap_authoring_next`
 
-`projection_automation_roadmap_packet_authoring_next`
+`continuous_projection_drift_roadmap_authoring_next`
 
 Previous mode:
 
-`sot3_cvf_proj_t4_r1_dispatched_worker_next`
+`projection_automation_roadmap_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,8 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Netlify Learning Plane runtime-boundary repair | `ee208c753` provenance; `620016275` public | EXPORTED_BUILD_REPAIR; bounded `web-runtime` subpath prevents cvf-web from bundling the graph-bearing root; TypeScript is a Learning Plane runtime dependency; Netlify-shaped build, TypeScript, focused/full Web tests, Learning Plane tests, public-surface, and receipt-link checks PASS; external Netlify deploy result remains pending. |
+| Projection landmark and inheritance automation roadmap | `5df0c6f77` | CLOSED_PASS_BOUNDED; read-only mapper and disposable three-root proof accepted; continuous drift detection and review-packet automation roadmap authoring is queued next. |
 | SOT3 CVF authority-surface and master-architecture projection roadmap closure | `9f7c92663` | CLOSED_PASS_BOUNDED; 15/15 surfaces terminal; AC-01 through AC-08 PASS; projection-automation packet authoring released. |
 | SOT3-CVF-PROJ-T4-R1 blocked-return review and redispatch | `4d469cf94` | REVIEWED_BLOCK_ACCEPTED_R1_REDISPATCHED; continuity defect repaired at `426d490cc`; same four-path scope with fresh R1 return; post-closure projection-automation landmark/mapper lane queued. |
 | SOT3-CVF-PROJ-T4 product/readme alignment and final cross-surface audit dispatch | `546926dd5` | DISPATCH_READY after pre-dispatch 75/75, dispatch commit-steward, and pre-commit 83/83 PASS; exact four-path no-commit worker; reviewer owns roadmap closure and public-sync remains parked. |
@@ -303,14 +305,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `projection_automation_roadmap_packet_authoring_next`
+Mode: `continuous_projection_drift_roadmap_authoring_next`
 
-Author and dispatch the queued projection landmark and automation roadmap
-packet. Its first tranche freezes the 2026-07-18 provenance/public-sync/cvf-web
-baseline and source-verifies mapper seams. The tool must default to read-only
-dry-run, fail closed on dirty or wrong-remote roots, and emit a receipt.
-Automatic push, public-sync mutation, and unattended semantic apply remain
-parked.
+Author the CVF Continuous Projection Drift Detection And Review-Packet
+Automation roadmap from the accepted read-only mapper baseline. T0 pins
+provenance repair commit `ee208c753` and public repair commit `620016275`,
+reconciles the post-public projection baseline, and source-verifies
+CI/manual/scheduled detection seams. Automatic semantic edits, commit, push,
+deployment, provider/live calls, production action, and unattended apply
+remain parked until separately authorized.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

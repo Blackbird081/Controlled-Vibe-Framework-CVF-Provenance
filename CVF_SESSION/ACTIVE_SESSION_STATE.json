@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V47_2026-07-18.md",
+  "activeHandoff": "AGENT_HANDOFF_V48_2026-07-18.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -80,15 +80,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V44_2026-07-15.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V45_2026-07-16.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V46_2026-07-17.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V46_2026-07-17.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V47_2026-07-18.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "projection_automation_roadmap_packet_authoring_next",
-  "previousMode": "sot3_cvf_proj_t4_r1_dispatched_worker_next",
+  "currentMode": "continuous_projection_drift_roadmap_authoring_next",
+  "previousMode": "projection_automation_roadmap_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13472,5 +13473,14 @@
     "nextAllowedMove": "Author and dispatch the projection landmark and dry-run automation roadmap packet.",
     "claimBoundary": "Private projection closure only; no GitHub export, push, provider/live, production, or unattended semantic mapping."
   },
-  "nextAllowedMove": "Author and dispatch the queued CVF projection landmark and automation roadmap packet. The first tranche must freeze the 2026-07-18 provenance/public-sync/cvf-web mapping baseline and source-verify the mapper seams; implementation must default to read-only dry-run, fail closed on dirty or wrong-remote roots, emit a receipt, and never auto-push or perform unattended semantic edits. Provider/live, public-sync mutation, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "nextAllowedMove": "Author the CVF Continuous Projection Drift Detection And Review-Packet Automation roadmap from the accepted read-only mapper baseline. T0 must pin provenance repair commit ee208c753 and public repair commit 620016275, reconcile the post-public projection baseline, and source-verify CI/manual/scheduled detection seams. Later tranches may automate drift receipts and review-packet drafts only; automatic semantic edits, commit, push, deployment, provider/live calls, and unattended apply remain parked until separately authorized. LHW24 remains latest closed numbered LHW wave.",
+  "netlifyLearningRuntimeBoundaryRepairAndProjectionDriftRoadmapQueue20260718": {
+    "status": "NETLIFY_BUILD_REPAIR_EXPORTED_ROADMAP_QUEUED",
+    "provenanceCommit": "ee208c753",
+    "publicCommit": "620016275",
+    "repair": "cvf-web now consumes a bounded Learning Plane web-runtime export instead of the graph-bearing package root; TypeScript is a Learning Plane runtime dependency because the graph parser calls the compiler API",
+    "verification": "Netlify-shaped production build PASS with Learning Plane local node_modules unavailable; cvf-web TypeScript PASS; focused 16/16; full cvf-web 3257 pass plus 2 skip; Learning Plane 1832/1832; public-surface and provider receipt-link checks PASS",
+    "nextRoadmap": "CVF Continuous Projection Drift Detection And Review-Packet Automation Roadmap",
+    "claimBoundary": "Build/dependency-boundary repair and roadmap queue only. Netlify deploy completion is not claimed until the external deploy reports success. No automatic semantic edit, commit, push, provider/live call, production action, or unattended apply is authorized by the queued roadmap."
+  }
 }
