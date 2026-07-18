@@ -67,6 +67,13 @@ T1 is released only for a deterministic dry-run mapper. It may inventory and
 classify candidates and emit a secret-free receipt; it may not apply, copy,
 stage, commit, push, or repair cvf-web registry content.
 
+Post-closure erratum: the ledger's original epistemic comparison incorrectly
+said the three SOT3 registry entries were absent even though its own source
+table listed them. Direct source has `cvf-refinery`, `cvf-truth-kernel`, and
+`cvf-truth-flow`. The ledger is corrected to distinguish that closed historical
+gap from the expected absence of a projection-automation module entry. This
+does not change the T0 disposition or widen T1.
+
 ## Risk / Corrective Action
 
 | Risk | Disposition | Control |

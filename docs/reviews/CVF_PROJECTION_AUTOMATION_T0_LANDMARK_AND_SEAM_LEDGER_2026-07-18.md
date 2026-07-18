@@ -180,7 +180,7 @@ parallel registry.
 | M-03 | Decide whether an allowlisted file's *content* diff (not just presence) is safe to project | `SEMANTIC_REVIEW` | content correctness (e.g., whether a doc still reads truthfully once exported) is not decidable from a file-presence diff alone; requires a human/reviewer read, consistent with the existing `DEFERRED_PRIVATE_ONLY` posture on every closed T4/T5 review cited above |
 | M-04 | Detect `docs/baselines`, `docs/reviews`, `docs/roadmaps`, or `AGENT_HANDOFF*` paths present in a proposed export set | `MECHANICAL` | exact regex match against `$DENY_PATTERNS` lines 144-167; a T1 mapper must fail closed on any such match |
 | M-05 | Detect cvf-web `runtime-modules.ts` entries that reference a package absent from `cvf-web/package.json` dependencies | `MECHANICAL` | deterministic cross-reference of two structured sources (registry array vs. package.json dependency keys); already performed manually in the cited WEB-01 row |
-| M-06 | Decide whether a cvf-web registry gap (e.g., missing SOT3 entries) should be silently auto-repaired by a mapper | `NOT_APPLICABLE_WITH_REASON`: this T0 ledger authorizes no implementation; any repair remains a future source-verified, reviewer-accepted tranche, not an automated mapper action, per the accepted WEB-04 row's own framing ("scoped T1 registry-truth correction, not a new UI build") |
+| M-06 | Decide whether any future cvf-web registry gap should be silently auto-repaired by a mapper | `NOT_APPLICABLE_WITH_REASON`: this T0 ledger authorizes no implementation; any repair remains a future source-verified, reviewer-accepted tranche, not an automated mapper action. The earlier SOT3 gap is already repaired in current source. |
 | M-07 | Validate that the public-sync clone's remote equals the hardcoded `$PUBLIC_REMOTE` before any copy | `MECHANICAL` | exact string comparison, `cvf-public-sync.ps1` lines 241-247 |
 | M-08 | Validate that a target write path stays inside the intended root before any file operation | `MECHANICAL` | reuse of `Assert-PathInsideWorkspace`'s prefix-check logic, `update_cvf_workspace_public_core.ps1` lines 59-66 |
 | M-09 | Decide whether a new capability family (not yet audited) should be added to a future landmark ledger | `SEMANTIC_REVIEW` | requires operator/dispatcher scoping judgment, consistent with every closed roadmap's "fresh GC-018/source-verified work order" boundary cited in the T4 and T5 completion reviews |
@@ -263,8 +263,9 @@ read-only-first automation roadmap" pointer in the T4 completion review, this
 audit expected to find: (a) a working, source-proven public-sync allowlist
 script with dry-run/no-commit/no-push flags already present; (b) a reusable
 path-escape guard already present in the workspace updater; and (c) a cvf-web
-runtime-module registry with a known, source-cited gap (missing SOT3 entries)
-rather than a clean registry.
+runtime-module registry whose earlier SOT3 gap should already be closed by the
+accepted inheritance work, while still having no entry for the new projection-
+automation mapper.
 
 ### Evidence Comparison
 
@@ -272,9 +273,11 @@ Direct reads confirmed all three predictions. `cvf-public-sync.ps1` already
 implements `-DryRun`, `-NoCommit`, and `-NoPush` flags plus a root/remote
 abort check. `update_cvf_workspace_public_core.ps1` already implements
 `Assert-PathInsideWorkspace` as a throwing prefix-check guard.
-`runtime-modules.ts`'s `MODULES` array has zero entries for `cvf-refinery`,
-`cvf-truth-kernel`, or `cvf-truth-flow`, matching the accepted WEB-04 row's
-prior finding exactly. One prediction gap was found during this audit: no
+`runtime-modules.ts`'s `MODULES` array contains `cvf-refinery`,
+`cvf-truth-kernel`, and `cvf-truth-flow`, confirming the earlier WEB-04 gap was
+closed by the accepted inheritance implementation. It contains no projection-
+automation mapper entry, which is expected because T0 authorizes no Web
+surface. One prediction gap was found during this audit: no
 reviewed script currently implements an automated "dirty target" abort check,
 which is recorded as an open negative case above rather than a false
 prediction.
