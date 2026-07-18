@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_inheritance_t1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=execute only committed CVF-WEB-INHERITANCE-T1; parked checkpoint=T2-T5, SOT3-CVF-PROJ-T1-T4, MAO implementation, sibling copying, new UI/navigation, browser/provider/live, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3.
+Startup acknowledged: current mode=`cvf_web_inheritance_t1_closed_t2_packet_authoring_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=author and dispatch only CVF-WEB-INHERITANCE-T2; parked checkpoint=T3-T5, SOT3-CVF-PROJ-T1-T4, MAO implementation, sibling copying, provider/live, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_inheritance_t1_dispatched_worker_next`
+Current mode marker: `cvf_web_inheritance_t1_closed_t2_packet_authoring_next`
 
-Current mode: `cvf_web_inheritance_t1_dispatched_worker_next`
+Current mode: `cvf_web_inheritance_t1_closed_t2_packet_authoring_next`
 
-`cvf_web_inheritance_t1_dispatched_worker_next`
+`cvf_web_inheritance_t1_closed_t2_packet_authoring_next`
 
 Previous mode:
 
-`cvf_web_inheritance_t0_closed_t1_packet_authoring_next`
+`cvf_web_inheritance_t1_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-WEB-INHERITANCE-T1 SOT3 registry truth closure | `b186df669` | REVIEWER_ACCEPTED; three source-backed SOT3 entries are partial inheritance with zero actions; focused 3/3, typecheck, worker-fast/reviewer-fast 62/62, file-size, and pre-commit 83/83 PASS; T2 packet authoring next. |
 | CVF-WEB-INHERITANCE-T1 SOT3 registry truth dispatch | `0b3f0e990` | DISPATCH_READY after author-fast 5/5, pre-dispatch 75/75, dispatch steward, and pre-commit 83/83 PASS; exact source/test/worker-return no-commit boundary; T2-T5 parked. |
 | CVF-WEB-INHERITANCE-T0 capability-to-Web audit closure | `90aa165c6` | REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS; 12/12 terminal; T1/T2/T3/T4/T5/NONE routing=2/2/2/2/2/2; corrected control-plane import count and rejected non-MAO imports as MAO inheritance; T1 registry-truth packet authoring next. |
 | CVF-WEB-INHERITANCE-T0 capability-to-Web audit dispatch | `277b979a7` | DISPATCH_READY after author-fast 5/5, pre-dispatch 75/75, dispatch steward, and pre-commit 83/83 PASS; exact 12-family, two-output no-commit audit; Web T1-T5 parked. |
@@ -282,12 +283,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_inheritance_t1_dispatched_worker_next`
+Mode: `cvf_web_inheritance_t1_closed_t2_packet_authoring_next`
 
-CVF-WEB-INHERITANCE-T1 is dispatched at material commit `0b3f0e990`. Execute
-only its exact three-path no-commit registry/test packet and return for
-independent review. T2-T5, SOT3-CVF-PROJ-T1-T4, MAO implementation, sibling
-copying, new UI/navigation, browser/provider/live work, public-sync, push,
+CVF-WEB-INHERITANCE-T1 is independently accepted at material commit
+`b186df669`. Author and dispatch only the fresh source-verified T2 packet for
+bounded read-only SOT3 operator evidence. T3-T5, SOT3-CVF-PROJ-T1-T4, MAO
+implementation, sibling copying, provider/live work, public-sync, push,
 production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
