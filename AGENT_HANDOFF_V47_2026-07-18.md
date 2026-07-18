@@ -566,6 +566,15 @@ child commit.
 
 This marker changes no mode, next move, material decision, or authority.
 
+## GC-020 Marker - T4 Dispatch Handoff-Sync-Only Commit
+
+This handoff-only child records parent session-sync commit `558bf4e61` after
+the T4 decision-work-order material dispatch. The current child SHA cannot be
+known before commit creation, so the active-session checker may accept the
+parent SHA for this handoff-only child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## Claim Boundary
 
 This handoff records protected continuity only. It does not itself authorize
