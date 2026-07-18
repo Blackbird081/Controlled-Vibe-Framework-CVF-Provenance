@@ -2,9 +2,10 @@
   "stateOrder": 1980,
   "stateKey": "cvfWebUxClarityT0Closure20260719",
   "value": {
-    "status": "REVIEWER_ACCEPTED_BOUNDED_PENDING_FINAL_SYNC",
+    "status": "CLOSED_PASS_BOUNDED",
     "batchId": "CVF-WEB-UX-T0",
     "materialCommit": "9f9d7f6d7",
+    "closureCommit": "93c2663a6",
     "completionReview": "docs/reviews/CVF_WEB_UX_CLARITY_T0_COMPLETION_2026-07-19.md",
     "audit": "docs/reviews/CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md",
     "evidenceRoot": "docs/reviews/evidence/CVF_WEB_UX_T0_R3_LOCALHOST_2026-07-19/",

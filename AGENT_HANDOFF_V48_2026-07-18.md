@@ -99,6 +99,7 @@ deployment success is not yet claimed.
 ### CVF Web UX clarity audit reviewer acceptance
 
 - Material audit commit: `9f9d7f6d7`.
+- Final closure commit: `93c2663a6`.
 - Eight localhost screenshots cover seven required routes and both `/home`
   states.
 - Reviewer repaired repeated overlay/action values, stale source locators,
@@ -214,6 +215,10 @@ Protected paths:
 This handoff records material parent commit `9f9d7f6d7`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
+
+Final closure material parent: `93c2663a6`. The final closure session-sync
+child SHA cannot be known before commit creation, so the active-session checker
+may accept this parent SHA for the protected final sync commit.
 
 Remote tracking branch: `origin/main`.
 
