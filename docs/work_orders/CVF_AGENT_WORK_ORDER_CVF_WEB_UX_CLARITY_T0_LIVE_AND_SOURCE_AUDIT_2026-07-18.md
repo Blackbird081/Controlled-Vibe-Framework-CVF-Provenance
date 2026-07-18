@@ -25,7 +25,8 @@ Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_CLARITY_T0_L
 Commit mode: `WORKER_MUST_NOT_COMMIT`.
 
 executionBaseHead: capture `git rev-parse --short HEAD` before any write and
-require it to equal `7051eb87d`.
+require it to equal the committed dispatch/session-sync HEAD named in the
+operator prompt.
 
 Current-time notes: audit public site state visible on 2026-07-18; record the
 actual observation timestamp and do not claim hosted freshness beyond it.
@@ -75,7 +76,8 @@ Provider-local memory and chat summaries are not claim authority.
 
 ## Pre-Flight Checks
 
-- Confirm HEAD equals `7051eb87d` and capture it as executionBaseHead.
+- Confirm HEAD equals the committed dispatch/session-sync HEAD named in the
+  operator prompt and capture it as executionBaseHead.
 - Confirm the worktree is clean before worker execution.
 - Confirm both allowed output paths do not exist.
 - Run the pre-implementation autorun gate before the first write.
@@ -291,7 +293,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | delegated audit worker; independent reviewer/closer |
 | phase | worker execution, reviewer return, material close, session sync |
-| baseHeadFor(phase) | dispatchBaseHead=7051eb87d; executionBaseHead=worker capture; closureBaseHead=reviewer capture |
+| baseHeadFor(phase) | dispatchBaseHead=7051eb87d; executionBaseHead=committed dispatch/session-sync HEAD from operator prompt; closureBaseHead=reviewer capture |
 | changedSetScope(phase) | worker may create exactly two review outputs; reviewer owns repair/closure only within those paths |
 | traceScope(phase, actor) | worker records live/source audit and no-commit evidence; reviewer recomputes route/source findings |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT; reviewer/closer owns material commit |
@@ -375,7 +377,7 @@ be completed when applicable or marked N/A with reason.
 ## Verification Commands
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 7051eb87d --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 python governance/compat/run_worker_return_fast_gate.py
 python governance/compat/check_governed_file_size.py --enforce
 git diff --name-status
