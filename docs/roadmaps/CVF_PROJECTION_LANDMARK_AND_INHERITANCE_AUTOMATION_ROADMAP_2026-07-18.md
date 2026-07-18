@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T1_PASS_BOUNDED_T2_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-18
 
@@ -67,8 +67,8 @@ tests, worker-fast/reviewer-fast, file-size, and phase-appropriate autorun gates
 
 ## Dependency And Sequence Control
 
-T1 remains held until T0 completion review is committed. T2 remains held until
-T1 closure. Public export is a separate batch after this roadmap closes.
+T0, T1, and T2 dependencies are satisfied. Public export remains a separate,
+explicitly authorized batch and is not released by this closure.
 
 ## Reverse Architecture Projection Matrix
 
@@ -115,11 +115,11 @@ authorize provider/live behavior, public push, production, or autonomous edits.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | T2 baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | T2 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | T1 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
-| Worker return | future T2 worker return | worker-owned | N/A with reason |
-| Roadmap state | this roadmap | `Status: T1_PASS_BOUNDED_T2_DISPATCH_READY` | PASS |
+| Baseline status | T2 baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | T2 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T2 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Worker return | T2 worker return | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | existing GC-051 registry | aggregate drift checked | PASS |
 | Registry Markdown | existing registry front door | existing coverage | PASS |
 | External evidence digest | local source only | none | N/A with reason |
@@ -132,4 +132,10 @@ authorize provider/live behavior, public push, production, or autonomous edits.
 |---|---|---|---|
 | T1 receipt state | independently accepted implementation evidence | all parity `MATCH`; zero errors | PASS |
 | T1 mutation boundary | dry-run receipt output only; zero target mutation | 48-case suite PASS | PASS |
-| next tranche release | T2 execution only | `T1_PASS_BOUNDED_T2_DISPATCH_READY` | PASS |
+| final tranche closure | T2 accepted after reviewer repair | 46/46 temp and 50/50 governed proof PASS | PASS |
+
+## Next Allowed Move
+
+Use the read-only projection mapper and operator guide when a future CVF change
+needs a fresh provenance/public-sync/cvf-web map. Any apply, copy, real-root
+mutation, commit, push, or public export requires a separately authorized batch.

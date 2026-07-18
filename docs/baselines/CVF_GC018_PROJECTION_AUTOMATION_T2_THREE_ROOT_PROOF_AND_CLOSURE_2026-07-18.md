@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-18
 
@@ -123,11 +123,11 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "proje
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | this baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | paired T2 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | future T2 completion review | dependency-held | N/A with reason |
-| Worker return | future T2 return | worker-owned | N/A with reason |
-| Roadmap state | automation roadmap | `Status: T1_PASS_BOUNDED_T2_DISPATCH_READY` | PASS |
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | paired T2 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T2 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Worker return | T2 worker return | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Roadmap state | automation roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | existing GC-051 coverage | aggregate drift checked | PASS |
 | Registry Markdown | existing registry front door | no new family required | PASS |
 | External evidence digest | repository-local evidence only | none | N/A with reason |
