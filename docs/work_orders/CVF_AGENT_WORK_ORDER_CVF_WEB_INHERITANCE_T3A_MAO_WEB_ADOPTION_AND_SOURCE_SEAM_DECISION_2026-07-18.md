@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-WEB-INHERITANCE-T3A
 
@@ -271,14 +271,14 @@ existing field was invented, and own any roadmap release or closure commit.
 
 ## Closure Checklist
 
-- [ ] execution HEAD matches dispatcher instruction;
-- [ ] all 13 source-seam rows are terminal and cited;
-- [ ] event and evidence ledgers are not conflated;
-- [ ] exactly one decision token is selected;
-- [ ] T3B candidate or defer reopen rule is complete;
-- [ ] exactly two paths change and nothing is staged;
-- [ ] worker no-commit boundary is honored; and
-- [ ] independent reviewer closure remains pending.
+- [x] execution HEAD matches dispatcher instruction;
+- [x] all 13 source-seam rows are terminal and cited;
+- [x] event and evidence ledgers are not conflated;
+- [x] exactly one decision token is selected;
+- [x] prerequisite-owner route and bounded T3B hold are complete;
+- [x] exactly two worker paths changed and nothing was staged;
+- [x] worker no-commit boundary was honored; and
+- [x] independent reviewer accepted with bounded semantic repairs.
 
 ## Return-To-Orchestrator Conditions
 
@@ -450,3 +450,27 @@ This work order authorizes exactly two no-commit documentation outputs for a
 terminal source-seam decision. It does not authorize dependency, runtime,
 source, test, UI, provider/live, public, push, release, production, or session
 mutation.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired T3A GC-018 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | T3A completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Worker return | T3A worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CVF_WEB_INHERITANCE_T3A_PASS_T3P1_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | corpus registry generated aggregate | existing governed docs scope coverage; aggregate drift check passed | PASS |
+| Registry Markdown | corpus registry read model | existing governed docs scope coverage | PASS |
+| External evidence digest | N/A with reason: repository-local source audit | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit follows material closure | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: documentation-only source decision | N/A_WITH_REASON |
+| Query acceptance evidence | 13 terminal source-seam rows independently recomputed | PASS |
+| Worker-return acceptance | exact two paths, unchanged HEAD, no staging, gates passed | PASS |
+| Closure claim | split prerequisite owner required, with reviewer repairs | PASS |

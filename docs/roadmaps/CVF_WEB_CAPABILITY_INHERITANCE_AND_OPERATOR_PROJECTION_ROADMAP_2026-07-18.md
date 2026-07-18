@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CVF_WEB_INHERITANCE_T3A_DISPATCH_READY
+Status: CVF_WEB_INHERITANCE_T3A_PASS_T3P1_PACKET_AUTHORING_NEXT
 
 docType: roadmap
 
@@ -88,7 +88,9 @@ and error states.
 | CVF-WEB-INHERITANCE-T2 | SOT3 operator evidence projection | read-only status/evidence surface for activation mode, outcome, identifiers, and bounded diagnostics | no raw knowledge or secret leakage; focused tests and build pass |
 | CVF-WEB-INHERITANCE-T3 | MAO operator readout projection | read-only run/evidence/milestone/liveness projection from existing MAO owners | no worker launch, provider call, queue, or autonomous mutation |
 | CVF-WEB-INHERITANCE-T3A | MAO Web adoption and source-seam decision | terminal source matrix for dependency, persistence/replay, liveness, milestones, configuration, privacy, and caller ownership | one source-backed T3B route or bounded defer; no guessed adapter or duplicated semantics |
-| CVF-WEB-INHERITANCE-T3B | MAO operator readout implementation | only the implementation boundary released by accepted T3A evidence | T3A accepted with exact source owners, dependency release, and allowed scope |
+| CVF-WEB-INHERITANCE-T3P1 | MAO durable run-discovery prerequisite | read-only deterministic discovery over the existing file-backed run snapshots | independent review proves validation, ordering, corrupt-file behavior, and no mutation |
+| CVF-WEB-INHERITANCE-T3P2 | MAO evidence/liveness availability decision or substrate | durable evidence/restart-safe heartbeat read ownership, or an explicit bounded omission contract | T3P1 accepted; exact owner and value boundary separately dispatched |
+| CVF-WEB-INHERITANCE-T3B | MAO operator readout implementation | only the implementation boundary released by accepted prerequisite evidence | T3A, T3P1, and T3P2 accepted with exact source owners, dependency release, and allowed scope |
 | CVF-WEB-INHERITANCE-T4 | Controlled Quotation and sibling-app adoption decision | explicit `LINK`, `ADAPT`, `PORT_BOUNDED`, or `DEFER_WITH_REASON` decision before implementation | source/provenance boundary and duplicate-logic risk resolved |
 | CVF-WEB-INHERITANCE-T5 | Web information, QA, and roadmap closure | README/help/version projection plus typecheck, tests, build, and UI QA for implemented tranches | all accepted claims match tested routes and public disposition is explicit |
 
@@ -136,8 +138,9 @@ operator-supplied key; T0 makes no such claim.
 - CVF-WEB-INHERITANCE-T0 may now run as a no-commit audit.
 - T0 is independently accepted with reviewer repairs. T1 is independently
   accepted at material commit `b186df669`. T2 is independently accepted with
-  reviewer repairs at material commit `609edffbe`. T3A is dispatch-ready;
-  T3B and T4-T5 remain parked.
+  reviewer repairs at material commit `609edffbe`. T3A is independently
+  accepted with reviewer repairs; T3P1 packet authoring is next. T3P2, T3B,
+  and T4-T5 remain parked.
 - T3A is required because the existing MAO operational projection is a pure,
   caller-supplied in-memory owner with no CLI, MCP, UI, or runtime caller;
   the durable run store replays event-ledger state but does not persist or
@@ -209,9 +212,10 @@ or MAO implementation and do not infer that every capability belongs in Web.
 
 ### Claim Update
 
-T0 audit, the bounded T1 registry correction, and the bounded T2 SOT3 evidence
-projection are accepted. T3A must resolve the current MAO caller and evidence
-seam gap before T3B can be authored.
+T0 audit, the bounded T1 registry correction, the bounded T2 SOT3 evidence
+projection, and the T3A source-seam decision are accepted. T3A requires a
+prerequisite chain: T3P1 closes read-only run discovery first; T3P2 then owns
+the evidence/liveness availability decision before T3B can be authored.
 
 ## Agent Operation Trace Block
 
@@ -254,10 +258,10 @@ public-sync, push, production readiness, or universal inheritance claims.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T3A_DISPATCH_READY` | PASS |
-| Baseline status | T3A GC-018 baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | T3A work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T2_COMPLETION_REVIEW_2026-07-18.md` | T2 dependency accepted at `609edffbe` | PASS |
+| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T3A_PASS_T3P1_PACKET_AUTHORING_NEXT` | PASS |
+| Baseline status | T3A GC-018 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | T3A work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T3A_COMPLETION_REVIEW_2026-07-18.md` | T3A source-seam decision accepted with repairs | PASS |
 | Registry JSON | corpus registry generated aggregate | existing cvf-web `src/` scope coverage and aggregate drift check | PASS |
 | Registry Markdown | corpus registry read model | existing cvf-web `src/` scope coverage | PASS |
 | External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |

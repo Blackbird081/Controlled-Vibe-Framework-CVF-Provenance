@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-WEB-INHERITANCE-T3A
 
@@ -201,3 +201,27 @@ Reason: private provenance source-decision dispatch; no public-sync action.
 This baseline authorizes exactly two documentation outputs deciding the MAO
 Web source seam. It does not authorize dependency, runtime, source, test, UI,
 provider/live, public, push, release, production, or session mutation.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this file | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Work order status | paired T3A work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | T3A completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Worker return | T3A worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CVF_WEB_INHERITANCE_T3A_PASS_T3P1_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | corpus registry generated aggregate | existing governed docs scope coverage; aggregate drift check passed | PASS |
+| Registry Markdown | corpus registry read model | existing governed docs scope coverage | PASS |
+| External evidence digest | N/A with reason: repository-local source audit | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit follows material closure | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: documentation-only source decision | N/A_WITH_REASON |
+| Query acceptance evidence | 13 terminal source-seam rows independently recomputed | PASS |
+| Worker-return acceptance | exact two paths, unchanged HEAD, no staging, gates passed | PASS |
+| Closure claim | split prerequisite owner required, with reviewer repairs | PASS |
