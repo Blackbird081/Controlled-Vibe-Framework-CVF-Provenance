@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t0_closed_t1_packet_authoring_next",
-  "previousMode": "cvf_web_inheritance_t0_dispatched_worker_next",
+  "currentMode": "cvf_web_inheritance_t1_dispatched_worker_next",
+  "previousMode": "cvf_web_inheritance_t0_closed_t1_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13173,5 +13173,19 @@
     "heldNextTranche": "T2-T5 and all external mutation lanes remain parked.",
     "claimBoundary": "Bounded T0 inventory closure only; no cvf-web implementation or external mutation."
   },
-  "nextAllowedMove": "Author and dispatch a fresh source-verified CVF-WEB-INHERITANCE-T1 GC-018 and no-commit work order limited to three SOT3 runtime-module registry entries and focused registry tests. T2-T5, SOT3-CVF-PROJ-T1-T4, MAO implementation, sibling source copying, new UI/navigation, browser/provider/live work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebInheritanceT1Dispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "0b3f0e990",
+    "dispatchBaseHead": "884f69849",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T1_SOT3_RUNTIME_MODULE_REGISTRY_TRUTH_CORRECTION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T1_SOT3_RUNTIME_MODULE_REGISTRY_TRUTH_CORRECTION_2026-07-18.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedPaths": 3,
+    "verification": "dispatch-author fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact T1 registry/test work order and return for independent review.",
+    "heldNextTranche": "T2-T5 and all external mutation lanes remain parked.",
+    "claimBoundary": "Three SOT3 registry entries, focused registry test, and worker return only."
+  },
+  "nextAllowedMove": "Execute only the committed CVF-WEB-INHERITANCE-T1 work order at material commit 0b3f0e990 under WORKER_MUST_NOT_COMMIT. Modify exactly runtime-modules.ts, runtime-modules.test.ts, and the named T1 worker return; preserve execution HEAD and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2-T5, SOT3-CVF-PROJ-T1-T4, MAO implementation, sibling copying, new UI/navigation, browser/provider/live work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave."
 }

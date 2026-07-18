@@ -20,10 +20,8 @@ packet must own any later registry/test authorization and worker scope.
 
 ## Active Boundary
 
-CVF-WEB-INHERITANCE-T0 is independently accepted at material commit
-`90aa165c6` with reviewer repairs. The next allowed move is authoring and
-dispatching a fresh CVF-WEB-INHERITANCE-T1 packet limited to three SOT3
-runtime-module registry entries and focused registry tests.
+CVF-WEB-INHERITANCE-T1 is dispatched at material commit `0b3f0e990`. The next
+allowed move is executing its exact three-path no-commit registry/test packet.
 
 T2-T5, SOT3-CVF-PROJ-T1-T4, MAO implementation, sibling application copying,
 browser/provider/live work, public-sync, push, production, MAO-OA-T6B, and
@@ -32,15 +30,15 @@ SCLP-X-T3 remain parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_inheritance_t0_closed_t1_packet_authoring_next`;
+current mode=`cvf_web_inheritance_t1_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=author and dispatch source-verified CVF-WEB-INHERITANCE-T1;
+next allowed move=execute only committed CVF-WEB-INHERITANCE-T1;
 parked checkpoint=T2-T5, projection T1-T4, MAO implementation, sibling copy,
 browser/provider/live, public-sync, push, production, MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`cvf_web_inheritance_t0_closed_t1_packet_authoring_next`
+`cvf_web_inheritance_t1_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -94,6 +92,34 @@ T1 must add registry truth without claiming the SOT3 packages are directly
 operator-runnable. It must not add MAO entries, new pages, navigation, backend
 activation behavior, provider calls, browser proof, or README changes.
 
+## T1 Dispatch Continuity
+
+Material dispatch commit: `0b3f0e990`.
+
+Worker allowed changed set: `runtime-modules.ts`,
+`runtime-modules.test.ts`, and
+`docs/reviews/CVF_WEB_INHERITANCE_T1_WORKER_RETURN_2026-07-18.md` only. The
+worker must leave all changes unstaged and uncommitted.
+
+## Core Guard Self-Protection Authorization - T1 Dispatch Sync
+
+Authorized guard-maintenance scope: refresh protected current-mode,
+next-move, generated state, front-door, and handoff surfaces after material
+dispatch commit `0b3f0e990`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/cvfWebInheritanceT1Dispatch20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing instruction to continue automatically through
+reviewed roadmap tranches.
+
+Rollback boundary: revert this seven-path protected set together. No material,
+source, test, registry, public, or provider mutation belongs to this sync.
+
 ## Core Guard Self-Protection Authorization - T0 Closure Sync
 
 Authorized guard-maintenance scope: active-session pointer refresh, generated
@@ -142,9 +168,9 @@ runtime, source, test, registry, public, or provider change belongs to sync.
 
 ## Next Allowed Move
 
-Author and dispatch a fresh CVF-WEB-INHERITANCE-T1 GC-018 and no-commit work
-order for three SOT3 runtime-module registry entries plus focused registry
-tests. Keep every later tranche and external mutation parked.
+Execute only the committed CVF-WEB-INHERITANCE-T1 no-commit work order and
+return for independent review. Keep every later tranche and external mutation
+parked.
 
 ## Claim Boundary
 
