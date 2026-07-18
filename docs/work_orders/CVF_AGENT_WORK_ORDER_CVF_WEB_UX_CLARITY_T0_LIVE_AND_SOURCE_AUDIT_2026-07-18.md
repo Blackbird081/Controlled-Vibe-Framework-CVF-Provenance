@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-WEB-UX-T0
 
@@ -305,7 +305,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 
 | Field | Value |
 |---|---|
-| completionReviewPath | `docs/reviews/CVF_WEB_UX_CLARITY_T0_COMPLETION_2026-07-18.md` |
+| completionReviewPath | `docs/reviews/CVF_WEB_UX_CLARITY_T0_COMPLETION_2026-07-19.md` |
 | reviewerOwnedClosurePaths | the two worker output paths plus the conventional completion path only if independent closure cannot be recorded safely in the worker return |
 | closureOwner | independent reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
@@ -441,14 +441,38 @@ deployment, or session-state mutation.
 - [x] Worker scope limited to two outputs.
 - [x] Reviewer conversion and commit owner declared.
 - [x] Runtime/provider/public mutation forbidden.
-- [ ] Worker route matrix terminal; return-to-orchestrator action: worker must complete before review.
-- [ ] Reviewer recomputation complete; return-to-orchestrator action: reviewer owns closure decision.
+- [x] Worker route matrix terminal after bounded reviewer repair.
+- [x] Reviewer recomputation complete at material commit `9f9d7f6d7`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED`; no open checklist residue | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_UX_CLARITY_T0_COMPLETION_2026-07-19.md` | reviewer decision `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | no dedicated UX remediation roadmap existed in this audit scope | N/A with reason: standalone audit precedes roadmap authoring | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS; changed-path coverage gate PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | paired registry surface exists; no mutation required by coverage gate | PASS |
+| External evidence digest | no outside-repository artifact | N/A with reason: all eight images are committed repository evidence | N/A with reason |
+| System loop interlock | no system-loop mutation authorized | N/A with reason: documentation-only UX audit | N/A with reason |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V48_2026-07-18.md` | protected sync commit `ed3100f4d` records material parent `9f9d7f6d7` | PASS |
 
 ## Return-To-Orchestrator Conditions
 
 Return `COMPLETE_PENDING_REVIEW` only when the two outputs exist, required gates
 pass, nothing is staged, and HEAD is unchanged. Return `BLOCKED_WITH_REASON`
 for inaccessible live evidence, source contradiction, or forbidden-scope need.
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | seven current route pages and supporting components cited in the accepted audit |
+| Runtime behavior claimed | N/A_WITH_REASON: documentation-only route observation; no product behavior or governance enforcement claim |
+| Missing-state language | BOUNDED: screenshot-visible `/workspace` state only, separated from source availability and presentation findings |
+| Provider/live proof claimed | N/A_WITH_REASON |
+| Public-sync claimed | N/A_WITH_REASON |
+| Freshness disposition | PASS - current route/source ownership was rechecked by the reviewer on 2026-07-19; hosted freshness remains a later remediation item |
 
 ## Operator Checkpoint
 
