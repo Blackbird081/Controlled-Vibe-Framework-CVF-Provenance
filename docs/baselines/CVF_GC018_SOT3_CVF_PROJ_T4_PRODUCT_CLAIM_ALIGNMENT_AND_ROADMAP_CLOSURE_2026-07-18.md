@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY_R1
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: SOT3-CVF-PROJ-T4
 
@@ -116,13 +116,13 @@ Returned defects: NONE_RETURNED
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | this baseline | `Status: DISPATCH_READY_R1` | PASS |
-| Work order status | paired T4 work order | `Status: DISPATCH_READY_R1` | PASS |
-| Completion or reviewer artifact | T4 completion review | reviewer-owned | N/A with reason |
-| Worker return | T4 worker return | worker-owned uncommitted | N/A with reason |
-| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T4_R1_DISPATCH_READY` | PASS |
-| Registry JSON | existing GC-051 coverage | reviewer verifies changed-corpus coverage | N/A with reason |
-| Registry Markdown | existing registry front door | no new corpus family | N/A with reason |
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | paired T4 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T4 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED_ROADMAP_CLOSED` | PASS |
+| Worker return | T4-R1 worker return | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Roadmap state | SOT3-CVF projection roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | existing GC-051 registry aggregate | changed-corpus coverage and aggregate drift PASS | PASS |
+| Registry Markdown | existing GC-051 registry front door | existing family coverage verified | PASS |
 | External evidence digest | repository-local evidence only | none | N/A with reason |
 | System loop interlock | no loop owner changed | none | N/A with reason |
 | Session continuity | protected surfaces | separate sync | N/A with reason |

@@ -3,6 +3,8 @@
 Memory class: POINTER_RECORD
 Status: PHASE-B PUBLIC-CATALOG SOURCE BASELINE
 
+rawMemoryReleased=false
+
 ## Purpose
 
 Provide a public-safe, technically accurate catalog of CVF. The baseline was
@@ -126,6 +128,7 @@ INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE
 | Async workers/subagents | roadmap | sandbox and worker concepts exist; canonical async work-ticket and delegation lifecycle remain future work |
 | Graph/code-intelligence context (Phase 1) | proven - Phase 1 in-memory AST foundation | local schema, AST parser, symbol index, task-query mapper, and advisory `GraphKnowledgeService` exist; `docs/reviews/archive/CVF_AIF_B_GRAPH_KNOWLEDGE_PHASE1_COMPLETION_2026-05-24.md`; durable graph storage, scoring, and live authority are not claimed |
 | Operational Reference Index | proven - agent discoverability lookup table deployed | active routing reference for memory, graph, provider, public-sync, pain-point, and legacy-adjacent work; `docs/reference/archive/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md`; `docs/reviews/archive/CVF_AIF_A_OPERATIONAL_REFERENCE_INDEX_COMPLETION_2026-05-24.md` |
+| SOT Three-Layer knowledge authority (Refinery, Truth Kernel, Truth Flow) | proven bounded in local activation and one downstream application | bounded knowledge-authority architecture (source intake, deterministic prepare, sole trust/decision/receipt authority, post-Kernel distribution); `docs/reference/sot_three_layer/README.md`; `ARCHITECTURE.md` SOT3 Knowledge Authority Path section; `docs/reference/CVF_ARCHITECTURE_MAP.md` SOT3 Bounded Cross-Plane Overlay section; local-ready package owners are not globally activated, a provider boundary, publicly exported, or production-ready; provenance-only completion evidence: private activation and downstream-application acceptance reviews dated 2026-07-13 and 2026-07-18 |
 
 ## B/C Closure Note For Agents
 

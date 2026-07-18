@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: SOT3_CVF_PROJ_T4_R1_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-18
 
@@ -265,11 +265,11 @@ behavior, production state, or public surfaces. T4 packet authoring is released.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | T3 GC-018 baseline | `Status: CLOSED_PASS_BOUNDED_AFTER_REVIEWER_FRESHNESS_REPAIR` | PASS |
-| Work order status | T3 work order | `Status: CLOSED_PASS_BOUNDED_AFTER_REVIEWER_FRESHNESS_REPAIR` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T3_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_AFTER_FRESHNESS_REPAIR` | PASS |
-| Worker return | T3 worker return | `Status: ACCEPTED_BY_REVIEWER_AFTER_FRESHNESS_REPAIR` | PASS |
-| Roadmap state | this roadmap | `Status: SOT3_CVF_PROJ_T4_R1_DISPATCH_READY` | PASS |
+| Baseline status | T4 GC-018 baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | T4 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T4_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_ROADMAP_CLOSED` | PASS |
+| Worker return | T4-R1 worker return | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Registry JSON | existing GC-051 registry aggregate | changed-corpus coverage and aggregate drift PASS | PASS |
 | Registry Markdown | existing registry front door | existing family coverage remains sufficient | PASS |
 | External evidence digest | repository-local evidence only | none | N/A with reason |
