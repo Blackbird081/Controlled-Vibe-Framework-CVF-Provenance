@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t3p2_dispatched_worker_next",
-  "previousMode": "cvf_web_inheritance_t3p1_closed_t3p2_packet_authoring_next",
+  "currentMode": "cvf_web_inheritance_t3p2_closed_t3b_packet_authoring_next",
+  "previousMode": "cvf_web_inheritance_t3p2_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13289,5 +13289,17 @@
     "heldNextTranche": "T3B and T4-T5 remain parked.",
     "claimBoundary": "Evidence/liveness availability decision only; no implementation."
   },
-  "nextAllowedMove": "Execute only committed CVF-WEB-INHERITANCE-T3P2 at material commit 497253d8b under WORKER_MUST_NOT_COMMIT. Modify exactly its two allowed review outputs, preserve execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3B, T4-T5, Web implementation, provider/live work, public-sync, push, production, and external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebInheritanceT3P2Closure20260718": {
+    "status": "REVIEWER_ACCEPTED_WITH_REPAIR",
+    "materialCommit": "32813a983",
+    "executionBaseHead": "a63625bd7",
+    "completionReview": "docs/reviews/CVF_WEB_INHERITANCE_T3P2_COMPLETION_REVIEW_2026-07-18.md",
+    "availabilityDisposition": "BOUNDED_DURABLE_EVENT_ONLY_WEB_ROUTE",
+    "reviewerRepair": "Corrected the false no-non-test-caller claim by acknowledging two process-local source pilots; neither is a cvf-web caller or durable reconstruction owner.",
+    "verification": "worker-fast and reviewer-fast 62/62, direct source recomputation, governed file size, and pre-commit 83/83 PASS",
+    "nextAllowedMove": "Author a bounded source-verified T3B implementation packet only.",
+    "heldNextTranche": "Evidence and heartbeat projection plus T4-T5 remain parked.",
+    "claimBoundary": "No Web implementation, persistence, worker launch, provider/live, public, push, or production mutation occurred in T3P2."
+  },
+  "nextAllowedMove": "Author and source-verify only the bounded CVF-WEB-INHERITANCE-T3B implementation packet released by accepted T3P2 closure commit 32813a983. The packet may project durable run discovery, task state, timeout milestones, and event recency only. Evidence records, evidence milestones, evidence recency, heartbeat, worker launch, provider/live work, T4-T5, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
