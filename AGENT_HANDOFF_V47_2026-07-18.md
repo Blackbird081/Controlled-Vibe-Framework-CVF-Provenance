@@ -21,8 +21,8 @@ freshness reconciliation.
 ## Active Boundary
 
 SOT3-CVF-PROJ-T2 is independently accepted after one reviewer-owned R91
-fingerprint repair at material commit `d510274b2`. T3 workflow/navigation
-packet authoring is next under the standing roadmap-continuation instruction.
+fingerprint repair at material commit `d510274b2`. T3 workflow/navigation is
+dispatched at material commit `d781c9919` for exact two-path no-commit work.
 
 T4, CVF Web T4 implementation, sibling application copying, provider/live
 work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
@@ -30,16 +30,16 @@ work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_cvf_proj_t2_closed_t3_packet_authoring_next`;
+current mode=`sot3_cvf_proj_t3_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=author and dispatch the fresh SOT3-CVF-PROJ-T3 workflow/navigation packet;
+next allowed move=execute the committed SOT3-CVF-PROJ-T3 no-commit workflow/navigation work order and return for independent review;
 parked checkpoint=projection T4, CVF Web T4 implementation,
 provider/live, public-sync, push, production, external mutation,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`sot3_cvf_proj_t2_closed_t3_packet_authoring_next`
+`sot3_cvf_proj_t3_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -247,6 +247,30 @@ child commit.
 
 This marker changes no material decision or authority. It advances continuity
 to T3 packet authoring only.
+
+## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T3 Dispatch Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after T3
+dispatch material commit `d781c9919`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3CvfProjT3Dispatch20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing automatic roadmap-continuation instruction.
+
+Rollback boundary: revert this seven-path sync together; no T3 worker output,
+runtime, test, provider/live, public, push, production, or external mutation
+belongs to it.
+
+## GC-020 Marker - SOT3-CVF-PROJ-T3 Dispatch Handoff-Sync-Only Commit
+
+This handoff-only child records parent material commit `d781c9919`. The current
+child SHA cannot be known before commit creation, so the active-session checker
+may accept the parent SHA for this handoff-only child commit.
 
 ## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T1 Dispatch Sync
 

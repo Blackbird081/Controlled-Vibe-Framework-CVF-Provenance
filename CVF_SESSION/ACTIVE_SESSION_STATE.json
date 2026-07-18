@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_cvf_proj_t2_closed_t3_packet_authoring_next",
-  "previousMode": "sot3_cvf_proj_t2_dispatched_worker_next",
+  "currentMode": "sot3_cvf_proj_t3_dispatched_worker_next",
+  "previousMode": "sot3_cvf_proj_t2_closed_t3_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13424,5 +13424,17 @@
     "heldNextTranche": "T4 and all provider/live/public/push/production/external mutation remain parked.",
     "claimBoundary": "Private documentation/architecture projection and one governed freshness reconciliation only."
   },
-  "nextAllowedMove": "Author and dispatch a fresh source-verified SOT3-CVF-PROJ-T3 no-commit work order for end-to-end workflow and navigation projection. T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3CvfProjT3Dispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "d781c9919",
+    "roadmap": "docs/roadmaps/CVF_SOT3_CVF_AUTHORITY_SURFACE_AND_MASTER_ARCHITECTURE_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_CVF_PROJ_T3_WORKFLOW_AND_NAVIGATION_PROJECTION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_CVF_PROJ_T3_WORKFLOW_AND_NAVIGATION_PROJECTION_2026-07-18.md",
+    "workerReturn": "docs/reviews/CVF_SOT3_CVF_PROJ_T3_WORKER_RETURN_2026-07-18.md",
+    "verification": "pre-dispatch 75/75 PASS, commit-steward PASS, pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute exact two-path no-commit T3 worker and return for independent review.",
+    "heldNextTranche": "T4 and all provider/live/public/push/production/external mutation remain parked.",
+    "claimBoundary": "Private documentation/workflow-navigation projection only."
+  },
+  "nextAllowedMove": "Execute the committed SOT3-CVF-PROJ-T3 no-commit workflow/navigation work order from a clean execution base and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

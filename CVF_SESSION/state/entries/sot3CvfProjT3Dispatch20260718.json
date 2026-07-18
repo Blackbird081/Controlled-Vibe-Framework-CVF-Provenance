@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1969,
+  "stateKey": "sot3CvfProjT3Dispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "d781c9919",
+    "roadmap": "docs/roadmaps/CVF_SOT3_CVF_AUTHORITY_SURFACE_AND_MASTER_ARCHITECTURE_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_CVF_PROJ_T3_WORKFLOW_AND_NAVIGATION_PROJECTION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_CVF_PROJ_T3_WORKFLOW_AND_NAVIGATION_PROJECTION_2026-07-18.md",
+    "workerReturn": "docs/reviews/CVF_SOT3_CVF_PROJ_T3_WORKER_RETURN_2026-07-18.md",
+    "verification": "pre-dispatch 75/75 PASS, commit-steward PASS, pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute exact two-path no-commit T3 worker and return for independent review.",
+    "heldNextTranche": "T4 and all provider/live/public/push/production/external mutation remain parked.",
+    "claimBoundary": "Private documentation/workflow-navigation projection only."
+  }
+}
