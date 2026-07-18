@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIR
 
 Batch ID: CVF-WEB-INHERITANCE-T3B
 
@@ -300,14 +300,14 @@ continuation. Independent reviewer acceptance remains mandatory before T4.
 
 ## Closure Checklist
 
-- [ ] execution HEAD matches dispatcher instruction;
-- [ ] exact twelve-path manifest holds;
-- [ ] dependency and lockfile resolve the execution package;
-- [ ] readout state/failure/allowlist/cap/order matrix passes;
-- [ ] page, link, and registry tests pass;
-- [ ] typecheck, build, file-size, autorun, and worker-fast gates pass;
-- [ ] nothing is staged or committed; and
-- [ ] excluded evidence/heartbeat/mutation dimensions remain absent.
+- [x] execution HEAD matches dispatcher instruction;
+- [x] exact twelve-path manifest holds;
+- [x] dependency and lockfile resolve the execution package;
+- [x] readout state/failure/allowlist/cap/order matrix passes;
+- [x] page, link, and registry tests pass;
+- [x] typecheck, build, file-size, autorun, and worker-fast gates pass;
+- [x] nothing was staged or committed by the worker; and
+- [x] excluded evidence/heartbeat/mutation dimensions remain absent.
 
 ## Foundation Storage Layout Block
 
@@ -442,3 +442,27 @@ This work order authorizes exactly the bounded twelve-path T3B implementation.
 It does not authorize evidence/heartbeat projection, MAO execution, browser or
 live proof, public-sync, push, release, production, session mutation, staging,
 or worker commit.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired T3B baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | T3B completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIR` | PASS |
+| Worker return | T3B worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIR` | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CVF_WEB_INHERITANCE_T3B_PASS_T4_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | corpus registry generated aggregate | existing cvf-web scope coverage; drift check passes | PASS |
+| Registry Markdown | corpus registry read model | existing cvf-web scope coverage | PASS |
+| External evidence digest | N/A with reason: repository-local implementation | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit follows | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: read-only local file projection creates no action receipt | N/A_WITH_REASON |
+| Query acceptance evidence | 21 focused tests, typecheck, and build pass | PASS |
+| Worker-return acceptance | exact twelve paths, unchanged HEAD, no staging | PASS |
+| Closure claim | bounded MAO durable-event Web readout accepted after localization repair | PASS |

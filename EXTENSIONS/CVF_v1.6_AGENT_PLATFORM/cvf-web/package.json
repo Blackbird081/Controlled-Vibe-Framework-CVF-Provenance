@@ -22,6 +22,7 @@
     "better-sqlite3": "^12.6.2",
     "clsx": "^2.1.1",
     "cvf-control-plane-foundation": "file:../../CVF_CONTROL_PLANE_FOUNDATION",
+    "cvf-execution-plane-foundation": "file:../../CVF_EXECUTION_PLANE_FOUNDATION",
     "cvf-guard-contract": "file:../../CVF_GUARD_CONTRACT",
     "cvf-learning-plane-foundation": "file:../../CVF_LEARNING_PLANE_FOUNDATION",
     "cvf-refinery": "file:../../CVF_REFINERY",

@@ -103,10 +103,10 @@ const MODULES: ModuleDefinition[] = [
         name: 'Execution Plane Foundation',
         repoPath: 'EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION',
         runtimeClass: 'RUNNABLE_CLI_ONLY',
-        webExposureState: 'NOT_EXPOSED',
+        webExposureState: 'PARTIAL_INHERITED',
         exposedActions: [],
-        evidenceOwner: 'RC2-B0 module runtime classification audit',
-        notes: 'CLI/package runnable first; Web registry is read-only.',
+        evidenceOwner: 'CVF-WEB-INHERITANCE-T3B MAO durable-event operator readout',
+        notes: 'Only the read-only MAO durable-run projection (/governance/mao-runs) is inherited; no worker launch, timeout mutation, cancel, retry, queue, or provider action is exposed.',
     },
     {
         id: 'governance-expansion-foundation',

@@ -38,4 +38,18 @@ describe('GovernancePage SOT3 evidence discoverability link', () => {
         const link = await screen.findByRole('link', { name: 'Bằng chứng SOT3' });
         expect(link.getAttribute('href')).toBe('/governance/sot3-evidence');
     });
+
+    it('renders the English MAO Durable Runs link pointing at /governance/mao-runs', async () => {
+        renderWithLanguage('en');
+
+        const link = await screen.findByRole('link', { name: 'MAO Durable Runs' });
+        expect(link.getAttribute('href')).toBe('/governance/mao-runs');
+    });
+
+    it('renders the Vietnamese MAO Durable Runs label pointing at /governance/mao-runs', async () => {
+        renderWithLanguage('vi');
+
+        const link = await screen.findByRole('link', { name: 'Lượt chạy MAO bền vững' });
+        expect(link.getAttribute('href')).toBe('/governance/mao-runs');
+    });
 });

@@ -68,8 +68,8 @@ describe('getRuntimeModuleRegistry', () => {
             partial: 0,
             missing: 0,
             webRunnable: 1,
-            readOnlyVisible: 5,
-            notExposed: 7,
+            readOnlyVisible: 6,
+            notExposed: 6,
         });
         expect(report.modules.find((module) => module.id === 'cvf-web')).toMatchObject({
             runtimeClass: 'WEB_RUNNABLE',
@@ -94,6 +94,12 @@ describe('getRuntimeModuleRegistry', () => {
         expect(report.modules.find((module) => module.id === 'cvf-truth-flow')).toMatchObject({
             repoPath: 'EXTENSIONS/CVF_TRUTH_FLOW',
             runtimeClass: 'HAS_RUNTIME_CODE',
+            webExposureState: 'PARTIAL_INHERITED',
+            exposedActions: [],
+        });
+        expect(report.modules.find((module) => module.id === 'execution-plane-foundation')).toMatchObject({
+            repoPath: 'EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION',
+            runtimeClass: 'RUNNABLE_CLI_ONLY',
             webExposureState: 'PARTIAL_INHERITED',
             exposedActions: [],
         });
