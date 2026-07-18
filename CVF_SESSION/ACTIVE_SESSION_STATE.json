@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_cvf_proj_t2_dispatched_worker_next",
-  "previousMode": "sot3_cvf_proj_t1_closed_t2_packet_authoring_next",
+  "currentMode": "sot3_cvf_proj_t2_closed_t3_packet_authoring_next",
+  "previousMode": "sot3_cvf_proj_t2_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13412,5 +13412,17 @@
     "heldNextTranche": "T3-T4 and all provider/live/public/push/production/external mutation remain parked.",
     "claimBoundary": "Private documentation/architecture projection only."
   },
-  "nextAllowedMove": "Execute the committed SOT3-CVF-PROJ-T2 no-commit master-architecture work order from a clean execution base and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3-T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3CvfProjT2Closure20260718": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED_AFTER_FRESHNESS_REPAIR",
+    "materialCommit": "d510274b2",
+    "roadmap": "docs/roadmaps/CVF_SOT3_CVF_AUTHORITY_SURFACE_AND_MASTER_ARCHITECTURE_PROJECTION_ROADMAP_2026-07-18.md",
+    "completionReview": "docs/reviews/CVF_SOT3_CVF_PROJ_T2_COMPLETION_REVIEW_2026-07-18.md",
+    "workerReturn": "docs/reviews/CVF_SOT3_CVF_PROJ_T2_WORKER_RETURN_2026-07-18.md",
+    "freshnessDisposition": "Pre-existing R91 ARCHITECTURE.md fingerprint drift confirmed; reviewer refreshed the final fingerprint and review date without changing lane posture or verdict.",
+    "verification": "worker-fast PASS, reviewer-fast 62/62 PASS, pre-commit 83/83 PASS, system-chain freshness CURRENT, file-size COMPLIANT",
+    "nextAllowedMove": "Author and dispatch fresh SOT3-CVF-PROJ-T3 workflow and navigation projection packet.",
+    "heldNextTranche": "T4 and all provider/live/public/push/production/external mutation remain parked.",
+    "claimBoundary": "Private documentation/architecture projection and one governed freshness reconciliation only."
+  },
+  "nextAllowedMove": "Author and dispatch a fresh source-verified SOT3-CVF-PROJ-T3 no-commit work order for end-to-end workflow and navigation projection. T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

@@ -9,39 +9,37 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after CVF-WEB-INHERITANCE-T0 independent review.
+Carry compact continuity after SOT3-CVF-PROJ-T2 independent review.
 V46 was rotated at 892 lines under the Governed File Size Guard.
 
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`64ec0f672` owns the accepted T5 implementation and bounded roadmap closure.
+`d510274b2` owns the accepted T2 architecture projection and bounded R91
+freshness reconciliation.
 
 ## Active Boundary
 
-CVF-WEB-INHERITANCE-T4 remains accepted with `DEFER_WITH_REASON` and its
-implementation remains parked. CVF-WEB-INHERITANCE-T5 and the full Web
-inheritance roadmap are independently accepted and closed bounded at material
-commit `64ec0f672`. No active tranche remains.
+SOT3-CVF-PROJ-T2 is independently accepted after one reviewer-owned R91
+fingerprint repair at material commit `d510274b2`. T3 workflow/navigation
+packet authoring is next under the standing roadmap-continuation instruction.
 
-Evidence/heartbeat projection, T4 implementation, SOT3-CVF-PROJ-T1-T4,
-sibling application copying, provider/live work, public-sync, push, production,
-MAO-OA-T6B, and SCLP-X-T3 remain parked. A fresh lane requires operator
-selection, new GC-018, and a source-verified work order.
+T4, CVF Web T4 implementation, sibling application copying, provider/live
+work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_cvf_proj_t2_dispatched_worker_next`;
+current mode=`sot3_cvf_proj_t2_closed_t3_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=execute the committed SOT3-CVF-PROJ-T2 no-commit work order and return for independent review;
-parked checkpoint=projection T3-T4, CVF Web T4 implementation,
+next allowed move=author and dispatch the fresh SOT3-CVF-PROJ-T3 workflow/navigation packet;
+parked checkpoint=projection T4, CVF Web T4 implementation,
 provider/live, public-sync, push, production, external mutation,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`sot3_cvf_proj_t2_dispatched_worker_next`
+`sot3_cvf_proj_t2_closed_t3_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -220,6 +218,35 @@ the active-session checker may accept this parent SHA for the handoff-only
 child commit.
 
 This marker changes no mode, next move, material decision, or authority.
+
+## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T2 Closure Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after T2
+closed at material commit `d510274b2` with reviewer-owned R91 freshness
+reconciliation.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3CvfProjT2Closure20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing automatic roadmap-continuation instruction.
+
+Rollback boundary: revert this seven-path session sync together; no material
+architecture, runtime, test, provider/live, public, push, production, or
+external mutation belongs to it.
+
+## GC-020 Marker - SOT3-CVF-PROJ-T2 Closure Handoff-Sync-Only Commit
+
+This handoff-only child records parent material commit `d510274b2` after the
+T2 closure. The current child SHA cannot be known before commit creation, so
+the active-session checker may accept the parent SHA for this handoff-only
+child commit.
+
+This marker changes no material decision or authority. It advances continuity
+to T3 packet authoring only.
 
 ## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T1 Dispatch Sync
 

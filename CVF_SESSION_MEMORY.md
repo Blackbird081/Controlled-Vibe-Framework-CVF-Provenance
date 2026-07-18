@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_cvf_proj_t2_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=execute the committed SOT3-CVF-PROJ-T2 no-commit work order and return for independent review; parked checkpoint=T3-T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation.
+Startup acknowledged: current mode=`sot3_cvf_proj_t2_closed_t3_packet_authoring_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=author and dispatch the fresh SOT3-CVF-PROJ-T3 workflow/navigation packet; parked checkpoint=T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation.
 
 ## Current Mode
 
-Current mode marker: `sot3_cvf_proj_t2_dispatched_worker_next`
+Current mode marker: `sot3_cvf_proj_t2_closed_t3_packet_authoring_next`
 
-Current mode: `sot3_cvf_proj_t2_dispatched_worker_next`
+Current mode: `sot3_cvf_proj_t2_closed_t3_packet_authoring_next`
 
-`sot3_cvf_proj_t2_dispatched_worker_next`
+`sot3_cvf_proj_t2_closed_t3_packet_authoring_next`
 
 Previous mode:
 
-`sot3_cvf_proj_t1_closed_t2_packet_authoring_next`
+`sot3_cvf_proj_t2_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -300,12 +300,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_cvf_proj_t2_dispatched_worker_next`
+Mode: `sot3_cvf_proj_t2_closed_t3_packet_authoring_next`
 
-Execute the committed SOT3-CVF-PROJ-T2 work order from a clean base and return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. T3-T4, provider/live,
+Author and dispatch a fresh source-verified SOT3-CVF-PROJ-T3 no-commit work
+order for end-to-end workflow and navigation projection. T4, provider/live,
 public-sync, push, production, external mutation, and CVF Web T4 implementation
-remain parked.
+remain parked. T2 closed at material commit `d510274b2` after the reviewer
+confirmed and repaired the pre-existing R91 fingerprint drift.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
