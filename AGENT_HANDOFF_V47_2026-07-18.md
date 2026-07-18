@@ -71,6 +71,17 @@ totals were repaired to match the terminal rows.
 - Rotated V46 into the governed handoff archive at 892 lines.
 - Synchronized current mode and next move to T1 packet authoring only.
 
+## GC-020 Marker - V47 Rotation Handoff-Sync-Only Commit
+
+This dedicated root-handoff-only commit records parent session-sync commit
+`083031c29`. Because the current content-addressed SHA cannot be known before
+commit creation, the active-session checker may accept this parent SHA for the
+handoff-sync-only child commit.
+
+This marker changes no mode, next move, material decision, or authority. It
+does not execute or dispatch T1, release T2, or authorize source, provider,
+live, public-sync, push, or production action.
+
 ## T1 Authoring Boundary
 
 T1 may source-verify and dispatch only:
