@@ -124,7 +124,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/netlifyLearningRuntimeBoundaryRepairAndProjectionDriftRoadmapQueue20260718.json`;
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
-- `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION_MEMORY.md`;
+- `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`.
 
 Operator authorization: explicit instruction to record the next roadmap after
 repairing the Netlify deployment blocker.
@@ -137,6 +138,8 @@ revert the material or public repair commits through this session-sync batch.
 This handoff records material parent commit `ee208c753`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
+
+Session-sync commit: `6dbde3102`.
 
 ## Claim Boundary
 
