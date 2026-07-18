@@ -17,6 +17,9 @@ const MODULE_PATHS = [
     'EXTENSIONS/CVF_MODEL_GATEWAY',
     'EXTENSIONS/CVF_POLICY_ENGINE',
     'EXTENSIONS/CVF_TRUST_SANDBOX',
+    'EXTENSIONS/CVF_REFINERY',
+    'EXTENSIONS/CVF_TRUTH_KERNEL',
+    'EXTENSIONS/CVF_TRUTH_FLOW',
 ];
 
 function makeWorkspace(options: { omitPackageFor?: string; omitPathFor?: string } = {}) {
@@ -50,7 +53,7 @@ describe('getRuntimeModuleRegistry', () => {
         }
     });
 
-    it('enumerates all ten core modules with honest exposure state', () => {
+    it('enumerates all thirteen core modules with honest exposure state', () => {
         const repoRoot = makeWorkspace();
 
         const report = getRuntimeModuleRegistry({
@@ -60,12 +63,12 @@ describe('getRuntimeModuleRegistry', () => {
 
         expect(report.generatedAt).toBe('2026-05-08T00:00:00.000Z');
         expect(report.summary).toMatchObject({
-            total: 10,
-            available: 10,
+            total: 13,
+            available: 13,
             partial: 0,
             missing: 0,
             webRunnable: 1,
-            readOnlyVisible: 2,
+            readOnlyVisible: 5,
             notExposed: 7,
         });
         expect(report.modules.find((module) => module.id === 'cvf-web')).toMatchObject({
@@ -75,6 +78,24 @@ describe('getRuntimeModuleRegistry', () => {
         expect(report.modules.find((module) => module.id === 'model-gateway')).toMatchObject({
             runtimeClass: 'HAS_RUNTIME_CODE',
             webExposureState: 'NOT_EXPOSED',
+        });
+        expect(report.modules.find((module) => module.id === 'cvf-refinery')).toMatchObject({
+            repoPath: 'EXTENSIONS/CVF_REFINERY',
+            runtimeClass: 'HAS_RUNTIME_CODE',
+            webExposureState: 'PARTIAL_INHERITED',
+            exposedActions: [],
+        });
+        expect(report.modules.find((module) => module.id === 'cvf-truth-kernel')).toMatchObject({
+            repoPath: 'EXTENSIONS/CVF_TRUTH_KERNEL',
+            runtimeClass: 'HAS_RUNTIME_CODE',
+            webExposureState: 'PARTIAL_INHERITED',
+            exposedActions: [],
+        });
+        expect(report.modules.find((module) => module.id === 'cvf-truth-flow')).toMatchObject({
+            repoPath: 'EXTENSIONS/CVF_TRUTH_FLOW',
+            runtimeClass: 'HAS_RUNTIME_CODE',
+            webExposureState: 'PARTIAL_INHERITED',
+            exposedActions: [],
         });
     });
 

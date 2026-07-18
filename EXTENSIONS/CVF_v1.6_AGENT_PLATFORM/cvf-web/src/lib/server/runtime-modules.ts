@@ -158,6 +158,36 @@ const MODULES: ModuleDefinition[] = [
         evidenceOwner: 'RC2-B0 module runtime classification audit',
         notes: 'Coordination package until a sandbox action is proven.',
     },
+    {
+        id: 'cvf-refinery',
+        name: 'CVF Refinery',
+        repoPath: 'EXTENSIONS/CVF_REFINERY',
+        runtimeClass: 'HAS_RUNTIME_CODE',
+        webExposureState: 'PARTIAL_INHERITED',
+        exposedActions: [],
+        evidenceOwner: 'CVF-WEB-INHERITANCE-T1 SOT3 registry truth correction',
+        notes: 'Web depends on this package; no direct action surface is exposed.',
+    },
+    {
+        id: 'cvf-truth-kernel',
+        name: 'CVF Truth Kernel',
+        repoPath: 'EXTENSIONS/CVF_TRUTH_KERNEL',
+        runtimeClass: 'HAS_RUNTIME_CODE',
+        webExposureState: 'PARTIAL_INHERITED',
+        exposedActions: [],
+        evidenceOwner: 'CVF-WEB-INHERITANCE-T1 SOT3 registry truth correction',
+        notes: 'Web depends on this package; no direct action surface is exposed.',
+    },
+    {
+        id: 'cvf-truth-flow',
+        name: 'CVF Truth Flow',
+        repoPath: 'EXTENSIONS/CVF_TRUTH_FLOW',
+        runtimeClass: 'HAS_RUNTIME_CODE',
+        webExposureState: 'PARTIAL_INHERITED',
+        exposedActions: [],
+        evidenceOwner: 'CVF-WEB-INHERITANCE-T1 SOT3 registry truth correction',
+        notes: 'Web depends on this package; no direct action surface is exposed.',
+    },
 ];
 
 function readPackageJson(path: string): { name?: string; version?: string; scripts?: Record<string, string> } | null {

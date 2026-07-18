@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS
 
 Batch ID: CVF-WEB-INHERITANCE-T1
 
@@ -201,14 +201,14 @@ definition changed, and own any repair, closure, and commit.
 
 ## Closure Checklist
 
-- [ ] execution HEAD matches dispatcher instruction;
-- [ ] three definitions and no others added;
-- [ ] summary and entry assertions pass;
-- [ ] no existing definition changed;
-- [ ] typecheck and file-size gate pass;
-- [ ] exact allowed changed set and no staging;
-- [ ] worker no-commit boundary honored;
-- [ ] reviewer closure remains pending.
+- [x] execution HEAD matches dispatcher instruction;
+- [x] three definitions and no others added;
+- [x] summary and entry assertions pass;
+- [x] no existing definition changed;
+- [x] typecheck and file-size gate pass;
+- [x] exact allowed changed set and no staging;
+- [x] worker no-commit boundary honored;
+- [x] independent reviewer closure accepted.
 
 ## Stop Conditions
 
@@ -380,6 +380,30 @@ At dispatch base `884f69849`, the registry has ten definitions and zero SOT3
 entries; the focused suite expects ten modules. All three SOT3 package roots and
 cvf-web dependency rows exist. This packet authorizes static source/test
 correction only and makes no provider or live-governance proof claim.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired T1 GC-018 baseline | `Status: CLOSED_PASS` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T1_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED` | PASS |
+| Worker return | T1 worker return | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Roadmap state | CVF Web inheritance roadmap | `Status: CVF_WEB_INHERITANCE_T1_PASS_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | corpus registry generated aggregate | existing GC-051 coverage and drift check | PASS |
+| Registry Markdown | corpus registry read model | existing GC-051 coverage; no source mutation needed | PASS |
+| External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
+| System loop interlock | N/A with reason: no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate session-sync commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Runtime receipt evidence | N/A with reason: static registry projection only | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: no runtime query changed | N/A_WITH_REASON |
+| Worker-return acceptance | independently recomputed | PASS |
+| Closure claim | bounded registry truth only | PASS |
 
 ## Public Export Disposition
 
