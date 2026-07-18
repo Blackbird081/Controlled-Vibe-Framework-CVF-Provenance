@@ -504,6 +504,15 @@ child commit.
 
 This marker changes no mode, next move, material decision, or authority.
 
+## GC-020 Marker - T3B Registry Maintenance Handoff-Sync-Only Commit
+
+This handoff-only child records parent registry-maintenance commit `069c8d441`
+that added narrow GC-051 coverage for the T3B cvf-web surfaces. The current
+child SHA cannot be known before commit creation, so the active-session checker
+may accept the parent SHA for this handoff-only child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## Claim Boundary
 
 This handoff records protected continuity only. It does not itself authorize
