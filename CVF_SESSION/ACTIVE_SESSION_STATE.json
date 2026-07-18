@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t3a_dispatched_worker_next",
-  "previousMode": "cvf_web_inheritance_t2_closed_t3_packet_authoring_next",
+  "currentMode": "cvf_web_inheritance_t3a_closed_t3p1_packet_authoring_next",
+  "previousMode": "cvf_web_inheritance_t3a_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13238,5 +13238,18 @@
     "heldNextTranche": "T3B and T4-T5 remain parked; no MAO execution, UI, provider/live, public, push, or production mutation.",
     "claimBoundary": "Direct source audit and terminal seam decision only."
   },
-  "nextAllowedMove": "Execute only the committed CVF-WEB-INHERITANCE-T3A documentation-only source-seam decision at material commit 232a3ffba under WORKER_MUST_NOT_COMMIT. Modify exactly its two allowed review outputs, preserve execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3B, T4-T5, MAO execution or worker launch, and all external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebInheritanceT3AClosure20260718": {
+    "status": "REVIEWER_ACCEPTED_WITH_REPAIRS",
+    "materialCommit": "c0d88ff34",
+    "executionBaseHead": "da62d1e67",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "completionReview": "docs/reviews/CVF_WEB_INHERITANCE_T3A_COMPLETION_REVIEW_2026-07-18.md",
+    "decision": "SPLIT_T3B_PREREQUISITE_OWNER_REQUIRED",
+    "reviewerRepairs": "Corrected direct-versus-transitive dependency wording and acknowledged existing heartbeat/timeout owners while preserving the restart-safe read-seam gap.",
+    "verification": "worker-return fast and reviewer-fast 62/62 PASS; governed file-size PASS; reviewer-return commit steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Author and dispatch the narrow T3P1 durable run-discovery prerequisite only.",
+    "heldNextTranche": "T3P2, T3B, and T4-T5 remain parked; no Web, provider/live, public, push, or production mutation.",
+    "claimBoundary": "T3A is a source decision only; no runtime or Web behavior was implemented."
+  },
+  "nextAllowedMove": "Author and dispatch only CVF-WEB-INHERITANCE-T3P1 for deterministic read-only run discovery over the existing MaoFileRunStore snapshot root. T3P2, T3B, T4-T5, Web implementation, provider/live work, public-sync, push, production, and all external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave."
 }

@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_inheritance_t3a_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=execute only committed CVF-WEB-INHERITANCE-T3A; parked checkpoint=T3B, T4-T5, SOT3-CVF-PROJ-T1-T4, MAO execution or worker launch, sibling copying, provider/live, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3.
+Startup acknowledged: current mode=`cvf_web_inheritance_t3a_closed_t3p1_packet_authoring_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=author and dispatch only CVF-WEB-INHERITANCE-T3P1; parked checkpoint=T3P2, T3B, T4-T5, Web implementation, provider/live, public-sync, push, production, and external mutation lanes.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_inheritance_t3a_dispatched_worker_next`
+Current mode marker: `cvf_web_inheritance_t3a_closed_t3p1_packet_authoring_next`
 
-Current mode: `cvf_web_inheritance_t3a_dispatched_worker_next`
+Current mode: `cvf_web_inheritance_t3a_closed_t3p1_packet_authoring_next`
 
-`cvf_web_inheritance_t3a_dispatched_worker_next`
+`cvf_web_inheritance_t3a_closed_t3p1_packet_authoring_next`
 
 Previous mode:
 
-`cvf_web_inheritance_t2_closed_t3_packet_authoring_next`
+`cvf_web_inheritance_t3a_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-WEB-INHERITANCE-T3A MAO Web adoption/source-seam decision closure | `c0d88ff34` | REVIEWER_ACCEPTED_WITH_REPAIRS; prerequisite split retained after correcting direct/transitive dependency wording and acknowledging heartbeat/timeout owners; worker-fast/reviewer-fast 62/62, file-size, commit-steward, and pre-commit 83/83 PASS; T3P1 packet authoring next. |
 | CVF-WEB-INHERITANCE-T3A MAO Web adoption/source-seam decision dispatch | `232a3ffba` | DISPATCH_READY after author-fast 5/5, pre-dispatch 75/75, dispatch steward, and pre-commit 83/83 PASS; exact two-output documentation-only no-commit audit; T3B and T4-T5 parked. |
 | CVF-WEB-INHERITANCE-T2 SOT3 operator evidence projection closure | `609edffbe` | REVIEWER_ACCEPTED_WITH_REPAIRS; safe readout and read-only page accepted after diagnostic, localization, token, and worker-return format repairs; focused 13/13, typecheck, build, worker-fast/reviewer-fast 62/62, file-size, and pre-commit 83/83 PASS; T3 packet authoring next. |
 | CVF-WEB-INHERITANCE-T2 SOT3 operator evidence projection dispatch | `1c5d5e39b` | DISPATCH_READY after author-fast 5/5, pre-dispatch 75/75, dispatch steward, and pre-commit 83/83 PASS; exact seven-path safe readout/page/test/return boundary; T3-T5 parked. |
@@ -286,13 +287,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_inheritance_t3a_dispatched_worker_next`
+Mode: `cvf_web_inheritance_t3a_closed_t3p1_packet_authoring_next`
 
-CVF-WEB-INHERITANCE-T3A is dispatched at material commit `232a3ffba`.
-Execute only its exact two-output documentation-only source-seam decision and
-return for independent review. T3B, T4-T5, SOT3-CVF-PROJ-T1-T4, MAO execution
-or worker launch, sibling copying, provider/live work, public-sync, push,
-production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
+CVF-WEB-INHERITANCE-T3A is independently accepted with repairs at material
+commit `c0d88ff34`. Author and dispatch only CVF-WEB-INHERITANCE-T3P1 for
+deterministic read-only run discovery over the existing `MaoFileRunStore`
+snapshot root. T3P2, T3B, T4-T5, Web implementation, provider/live work,
+public-sync, push, production, and external mutation lanes remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
