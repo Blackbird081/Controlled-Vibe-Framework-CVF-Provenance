@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`sot3_cvf_proj_t1_dispatched_worker_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=execute the committed SOT3-CVF-PROJ-T1 no-commit work order and return for independent review; parked checkpoint=T2-T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation.
+Startup acknowledged: current mode=`sot3_cvf_proj_t1_closed_t2_packet_authoring_next`; active handoff=AGENT_HANDOFF_V47_2026-07-18.md; next allowed move=author the fresh source-verified SOT3-CVF-PROJ-T2 packet from T1 material closure `11bfd46a0`; parked checkpoint=T3-T4, provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation.
 
 ## Current Mode
 
-Current mode marker: `sot3_cvf_proj_t1_dispatched_worker_next`
+Current mode marker: `sot3_cvf_proj_t1_closed_t2_packet_authoring_next`
 
-Current mode: `sot3_cvf_proj_t1_dispatched_worker_next`
+Current mode: `sot3_cvf_proj_t1_closed_t2_packet_authoring_next`
 
-`sot3_cvf_proj_t1_dispatched_worker_next`
+`sot3_cvf_proj_t1_closed_t2_packet_authoring_next`
 
 Previous mode:
 
-`cvf_web_inheritance_roadmap_closed_operator_selection_next`
+`sot3_cvf_proj_t1_dispatched_worker_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| SOT3-CVF-PROJ-T1 as-built architecture catalog reconciliation closure | `11bfd46a0` | REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR; four modules, 28-entity fresh aggregate, one reviewer provenance-pointer repair; T2 packet authoring released. |
 | SOT3-CVF-PROJ-T1 as-built architecture catalog reconciliation dispatch | `e5695bc9e` | DISPATCH_READY after pre-dispatch 75/75, commit-steward, file-size, and pre-commit 83/83 PASS; exact ten-path no-commit worker; T2-T4 and public-sync remain parked. |
 | CVF Web capability inheritance and operator projection roadmap closure | `64ec0f672` | CLOSED_PASS_BOUNDED; T5 accepted at private version 1.7.0 after reviewer-recomputed focused 33/33, full non-live 3256 pass plus 2 skip, TypeScript, build, one worker provider-free 2/2 browser receipt, GC-051 reconciliation, and pre-commit 83/83; no active tranche remains. |
 | CVF-WEB-INHERITANCE-T5 Web information, provider-free QA, and roadmap-closure dispatch | `eb7f7df1e` | DISPATCH_READY after pre-dispatch 75/75, dispatch steward, file-size, and pre-commit 83/83 PASS; exact nine-path no-commit worker; T4 implementation and provider/live/public/production lanes parked. |
@@ -298,14 +299,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `sot3_cvf_proj_t1_dispatched_worker_next`
+Mode: `sot3_cvf_proj_t1_closed_t2_packet_authoring_next`
 
-Execute the committed SOT3-CVF-PROJ-T1 work order from a clean base. The worker
-must change only its ten allowed paths, must not stage or commit, and must
-return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. T2 through T4 remain
-parked pending sequential reviewer acceptance. Provider/live, public-sync,
-push, production, external mutation, and CVF Web T4 implementation also remain
-parked.
+T1 is reviewer-accepted at material commit `11bfd46a0`. Author a fresh
+source-verified SOT3-CVF-PROJ-T2 GC-018 baseline and no-commit work order for
+master architecture and the SOT3 front door. T3-T4, provider/live,
+public-sync, push, production, external mutation, and CVF Web T4
+implementation remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

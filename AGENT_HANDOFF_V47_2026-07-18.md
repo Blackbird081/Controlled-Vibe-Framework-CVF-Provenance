@@ -32,16 +32,16 @@ selection, new GC-018, and a source-verified work order.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_cvf_proj_t1_dispatched_worker_next`;
+current mode=`sot3_cvf_proj_t1_closed_t2_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=execute the committed SOT3-CVF-PROJ-T1 no-commit work order and return for independent review;
-parked checkpoint=projection T2-T4, CVF Web T4 implementation,
+next allowed move=author the fresh source-verified SOT3-CVF-PROJ-T2 packet from T1 material closure `11bfd46a0`;
+parked checkpoint=projection T3-T4, CVF Web T4 implementation,
 provider/live, public-sync, push, production, external mutation,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`sot3_cvf_proj_t1_dispatched_worker_next`
+`sot3_cvf_proj_t1_closed_t2_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -254,6 +254,35 @@ mutation, and CVF Web T4 implementation.
 
 Claim boundary: private-provenance documentation/catalog dispatch only. The
 worker has no commit authority and this state does not publish to GitHub.
+
+## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T1 Closure Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after T1
+material closure commit `11bfd46a0`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3CvfProjT1Closure20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing sequential roadmap-continuation instruction.
+
+Rollback boundary: revert this seven-path sync together; no T2 packet,
+runtime, provider/live, public, push, production, or external mutation belongs
+to it.
+
+## GC-020 Marker - SOT3-CVF-PROJ-T1 Closure Session-Sync Commit
+
+This handoff-only child records parent material commit `11bfd46a0`. The child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this session-sync-only commit.
+
+Current mode: `sot3_cvf_proj_t1_closed_t2_packet_authoring_next`.
+
+Next allowed move: fresh T2 packet authoring only. T3-T4 and public-sync remain
+parked.
 
 ## GC-020 Marker - T5 And Roadmap Closure Handoff-Sync-Only Commit
 
