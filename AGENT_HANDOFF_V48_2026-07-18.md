@@ -141,6 +141,13 @@ accept the parent SHA for this protected sync commit.
 
 Session-sync commit: `6dbde3102`.
 Exposure-classification follow-up commit: `0c3b0c9d5`.
+Handoff-head sync commit: `121a1a3e6`.
+
+Remote tracking branch: `origin/main`.
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
 
 ## Claim Boundary
 
