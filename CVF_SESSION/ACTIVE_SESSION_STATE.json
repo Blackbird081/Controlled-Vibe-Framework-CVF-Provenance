@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t3b_closed_t4_packet_authoring_next",
-  "previousMode": "cvf_web_inheritance_t3b_dispatched_worker_next",
+  "currentMode": "cvf_web_inheritance_t4_dispatched_worker_next",
+  "previousMode": "cvf_web_inheritance_t3b_closed_t4_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13326,5 +13326,18 @@
     "heldNextTranche": "T4 implementation, T5, evidence/heartbeat, provider/live, public, push, and production remain parked.",
     "claimBoundary": "Read-only durable run/task/timeout/event-recency Web projection only; no evidence, heartbeat, liveness, or MAO action authority."
   },
-  "nextAllowedMove": "Author only the source-verified CVF-WEB-INHERITANCE-T4 Controlled Quotation and sibling-app adoption decision packet after accepted T3B material closure commit 68aea07e5. T4 implementation, T5, evidence/heartbeat projection, MAO execution, provider/live work, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebInheritanceT4Dispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "f6b398b71",
+    "dispatchBaseHead": "fffaaa6fb",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T4_CONTROLLED_QUOTATION_ADOPTION_DECISION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T4_CONTROLLED_QUOTATION_ADOPTION_DECISION_2026-07-18.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedPaths": 2,
+    "verification": "author-fast 5/5, pre-dispatch 75/75, dispatch steward, and pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact two-output T4 source-audit adoption decision and return for independent review.",
+    "heldNextTranche": "T4 implementation and T5 remain parked.",
+    "claimBoundary": "Decision-only; no sibling/cvf-web edit, source copy, provider/live call, public, push, or production action."
+  },
+  "nextAllowedMove": "Execute only committed CVF-WEB-INHERITANCE-T4 at material commit f6b398b71 under WORKER_MUST_NOT_COMMIT. Read the retained sibling and current cvf-web directly, create exactly the two allowed decision outputs, select one terminal adoption disposition, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T4 implementation, T5, provider/live work, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
