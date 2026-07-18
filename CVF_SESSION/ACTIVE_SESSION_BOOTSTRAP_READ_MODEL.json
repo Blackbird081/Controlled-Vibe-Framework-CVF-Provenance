@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_web_inheritance_t0_dispatched_worker_next",
-  "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
-  "nextAllowedMove": "Execute only the committed CVF-WEB-INHERITANCE-T0 work order at material commit 277b979a7 under WORKER_MUST_NOT_COMMIT. Create exactly the capability-to-Web ledger and worker return, preserve the execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Web T1-T5, SOT3-CVF-PROJ-T1-T4, Web/source/test/package/README mutation, browser/build/typecheck/provider/live work, sibling edits, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "currentMode": "cvf_web_inheritance_t0_closed_t1_packet_authoring_next",
+  "activeHandoff": "AGENT_HANDOFF_V47_2026-07-18.md",
+  "nextAllowedMove": "Author and dispatch a fresh source-verified CVF-WEB-INHERITANCE-T1 GC-018 and no-commit work order limited to three SOT3 runtime-module registry entries and focused registry tests. T2-T5, SOT3-CVF-PROJ-T1-T4, MAO implementation, sibling source copying, new UI/navigation, browser/provider/live work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

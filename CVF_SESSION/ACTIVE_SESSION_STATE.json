@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V46_2026-07-17.md",
+  "activeHandoff": "AGENT_HANDOFF_V47_2026-07-18.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -79,15 +79,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V42_2026-07-12.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V43_2026-07-14.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V44_2026-07-15.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V45_2026-07-16.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V45_2026-07-16.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V46_2026-07-17.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t0_dispatched_worker_next",
-  "previousMode": "sot3_cvf_proj_t0_closed_web_inheritance_t0_packet_authoring_next",
+  "currentMode": "cvf_web_inheritance_t0_closed_t1_packet_authoring_next",
+  "previousMode": "cvf_web_inheritance_t0_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13141,7 +13142,6 @@
     "heldNextTranche": "SOT3-CVF-PROJ-T1 through T4 and all Web implementation remain parked.",
     "claimBoundary": "Bounded documentation inventory closure only; no authority-surface edit, Web implementation, runtime/provider/live action, public-sync, push, or production claim."
   },
-  "nextAllowedMove": "Execute only the committed CVF-WEB-INHERITANCE-T0 work order at material commit 277b979a7 under WORKER_MUST_NOT_COMMIT. Create exactly the capability-to-Web ledger and worker return, preserve the execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Web T1-T5, SOT3-CVF-PROJ-T1-T4, Web/source/test/package/README mutation, browser/build/typecheck/provider/live work, sibling edits, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebInheritanceT0Dispatch20260718": {
     "status": "DISPATCH_READY",
     "materialCommit": "277b979a7",
@@ -13159,5 +13159,19 @@
     "nextAllowedMove": "Execute the exact T0 no-commit audit and return for independent review.",
     "heldNextTranche": "Web T1-T5 and SOT3-CVF-PROJ-T1-T4 remain parked.",
     "claimBoundary": "Read-only Web inheritance audit dispatch; no Web/source/test/package/README mutation, browser/build/typecheck/provider/live work, sibling edit, public-sync, push, or production action."
-  }
+  },
+  "cvfWebInheritanceT0Closure20260718": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS",
+    "materialCommit": "90aa165c6",
+    "executionBaseHead": "2852ae25f",
+    "completionReview": "docs/reviews/CVF_WEB_INHERITANCE_T0_COMPLETION_REVIEW_2026-07-18.md",
+    "seedCapabilityCount": 12,
+    "routing": "T1=2; T2=2; T3=2; T4=2; T5=2; NONE_WITH_REASON=2",
+    "reviewerRepairs": "Corrected 14-import overcount to two production plus one live-test importer, rejected package-level use as MAO capability inheritance, and reconciled registry/operator totals.",
+    "verification": "reviewer-fast 62/62 PASS; commit steward PASS; material pre-commit 83/83 PASS",
+    "nextAllowedMove": "Author and dispatch fresh CVF-WEB-INHERITANCE-T1 for SOT3 runtime-module registry truth and focused tests.",
+    "heldNextTranche": "T2-T5 and all external mutation lanes remain parked.",
+    "claimBoundary": "Bounded T0 inventory closure only; no cvf-web implementation or external mutation."
+  },
+  "nextAllowedMove": "Author and dispatch a fresh source-verified CVF-WEB-INHERITANCE-T1 GC-018 and no-commit work order limited to three SOT3 runtime-module registry entries and focused registry tests. T2-T5, SOT3-CVF-PROJ-T1-T4, MAO implementation, sibling source copying, new UI/navigation, browser/provider/live work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave."
 }
