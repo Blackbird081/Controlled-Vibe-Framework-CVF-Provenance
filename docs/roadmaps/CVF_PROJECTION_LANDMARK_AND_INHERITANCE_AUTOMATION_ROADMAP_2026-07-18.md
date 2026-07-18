@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T1_PASS_BOUNDED_T2_PACKET_AUTHORING_NEXT
+Status: T1_PASS_BOUNDED_T2_DISPATCH_READY
 
 Date: 2026-07-18
 
@@ -115,11 +115,11 @@ authorize provider/live behavior, public push, production, or autonomous edits.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | T1 baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Work order status | T1 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Baseline status | T2 baseline | `Status: DISPATCH_READY` | PASS |
+| Work order status | T2 work order | `Status: DISPATCH_READY` | PASS |
 | Completion or reviewer artifact | T1 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
-| Worker return | T1 worker return | `Status: ACCEPTED_BY_REVIEWER` | PASS |
-| Roadmap state | this roadmap | `Status: T1_PASS_BOUNDED_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Worker return | future T2 worker return | worker-owned | N/A with reason |
+| Roadmap state | this roadmap | `Status: T1_PASS_BOUNDED_T2_DISPATCH_READY` | PASS |
 | Registry JSON | existing GC-051 registry | aggregate drift checked | PASS |
 | Registry Markdown | existing registry front door | existing coverage | PASS |
 | External evidence digest | local source only | none | N/A with reason |
@@ -132,4 +132,4 @@ authorize provider/live behavior, public push, production, or autonomous edits.
 |---|---|---|---|
 | T1 receipt state | independently accepted implementation evidence | all parity `MATCH`; zero errors | PASS |
 | T1 mutation boundary | dry-run receipt output only; zero target mutation | 48-case suite PASS | PASS |
-| next tranche release | T2 packet authoring only | `T1_PASS_BOUNDED_T2_PACKET_AUTHORING_NEXT` | PASS |
+| next tranche release | T2 execution only | `T1_PASS_BOUNDED_T2_DISPATCH_READY` | PASS |
