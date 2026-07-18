@@ -229,6 +229,18 @@ this handoff-only child commit.
 T2 is dispatch-ready for no-commit worker execution. This marker changes no
 material decision, allowed scope, commit authority, or execution boundary.
 
+## GC-020 Marker - Projection Automation Roadmap Closure Handoff Sync
+
+This handoff-only child records parent material closure commit `5df0c6f77`
+for accepted `CVF-PROJECTION-AUTO-T2` and roadmap status
+`CLOSED_PASS_BOUNDED`. The current child SHA cannot be known before commit
+creation, so the active-session checker may accept the parent SHA for this
+handoff-only child commit.
+
+Next allowed move is on-demand use of the read-only mapper and guide. Any
+apply, real-root mutation, public commit/push, or cvf-web repair requires a
+separate governed batch. No parked operator checkpoint remains.
+
 ## GC-020 Marker - Projection Automation T0 Closure Handoff Sync
 
 This handoff-only child records parent material closure commit `38ec816f9`.
