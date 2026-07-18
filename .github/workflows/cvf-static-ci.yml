@@ -53,6 +53,12 @@ jobs:
         working-directory: EXTENSIONS/CVF_GUARD_CONTRACT
         run: npm ci
 
+      - name: Install SOT3 package dependencies
+        run: |
+          npm ci --prefix EXTENSIONS/CVF_TRUTH_KERNEL
+          npm ci --prefix EXTENSIONS/CVF_TRUTH_FLOW
+          npm ci --prefix EXTENSIONS/CVF_REFINERY
+
       - name: Install Web dependencies
         working-directory: EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web
         run: npm ci

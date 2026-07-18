@@ -87,6 +87,12 @@ jobs:
         working-directory: EXTENSIONS/CVF_GUARD_CONTRACT
         run: npm ci
 
+      - name: Install SOT3 package dependencies
+        run: |
+          npm ci --prefix ../../CVF_TRUTH_KERNEL
+          npm ci --prefix ../../CVF_TRUTH_FLOW
+          npm ci --prefix ../../CVF_REFINERY
+
       - name: Install MCP Server dependencies
         run: npm ci
 
