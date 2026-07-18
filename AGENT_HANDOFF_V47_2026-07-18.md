@@ -15,30 +15,31 @@ V46 was rotated at 892 lines under the Governed File Size Guard.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`f6b398b71` owns the T4 sibling-adoption decision dispatch.
+`cf214a243` owns the accepted T4 sibling-adoption decision closure.
 
 ## Active Boundary
 
-CVF-WEB-INHERITANCE-T4 is dispatched at material commit `f6b398b71`. The next
-allowed move is its exact two-output no-commit source decision.
+CVF-WEB-INHERITANCE-T4 is independently accepted at material commit
+`cf214a243` with `DEFER_WITH_REASON`. The next allowed move is authoring and
+source verification of the final T5 packet.
 
-Evidence/heartbeat projection, T4 implementation, T5, SOT3-CVF-PROJ-T1-T4,
+Evidence/heartbeat projection, T4 implementation, T5 execution, SOT3-CVF-PROJ-T1-T4,
 sibling application copying, browser/provider/live work, public-sync, push,
 production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_inheritance_t4_dispatched_worker_next`;
+current mode=`cvf_web_inheritance_t4_closed_t5_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=execute only committed CVF-WEB-INHERITANCE-T4 decision packet;
-parked checkpoint=T4 implementation, T5, evidence/heartbeat, projection T1-T4,
+next allowed move=author and source-verify final CVF-WEB-INHERITANCE-T5 packet;
+parked checkpoint=T4 implementation, T5 execution, evidence/heartbeat, projection T1-T4,
 sibling copy, browser/provider/live, public-sync, push, production,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`cvf_web_inheritance_t4_dispatched_worker_next`
+`cvf_web_inheritance_t4_closed_t5_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -62,6 +63,12 @@ cvf-web source consumes an MAO export; and registry/operator reconciliation
 totals were repaired to match the terminal rows.
 
 ## Latest Work / Changes
+
+- Closed T4 at material commit `cf214a243` with `DEFER_WITH_REASON` after
+  correcting the false `vertical-slice` package-boundary ACCEPT row, hashing
+  nine external evidence files, and independently confirming zero retained
+  design demand signal. T4 implementation remains deferred; T5 packet
+  authoring is next.
 
 - Dispatched T4 at material commit `f6b398b71` after author-fast 5/5,
   pre-dispatch 75/75, dispatch steward, and pre-commit 83/83. Scope is exactly
@@ -247,9 +254,9 @@ runtime, source, test, registry, public, or provider change belongs to sync.
 
 ## Next Allowed Move
 
-Execute only committed CVF-WEB-INHERITANCE-T4 under
-`WORKER_MUST_NOT_COMMIT`. Keep T4 implementation, T5, and every external
-mutation lane parked.
+Author and source-verify the final CVF-WEB-INHERITANCE-T5 Web information, QA,
+and roadmap-closure packet. Keep T4 implementation, T5 execution, and every
+external mutation lane parked until committed dispatch.
 
 ## Core Guard Self-Protection Authorization - T3A Dispatch Sync
 
@@ -574,6 +581,23 @@ known before commit creation, so the active-session checker may accept the
 parent SHA for this handoff-only child commit.
 
 This marker changes no mode, next move, material decision, or authority.
+
+## Core Guard Self-Protection Authorization - T4 Closure Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after
+material closure commit `cf214a243`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/cvfWebInheritanceT4Closure20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing roadmap-continuation instruction.
+
+Rollback boundary: revert this seven-path sync together; no material source,
+test, public, or provider mutation belongs to it.
 
 ## Claim Boundary
 

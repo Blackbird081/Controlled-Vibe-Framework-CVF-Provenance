@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1954,
+  "stateOrder": 1956,
   "stateKey": "nextAllowedMove",
-  "value": "Execute only committed CVF-WEB-INHERITANCE-T4 at material commit f6b398b71 under WORKER_MUST_NOT_COMMIT. Read the retained sibling and current cvf-web directly, create exactly the two allowed decision outputs, select one terminal adoption disposition, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T4 implementation, T5, provider/live work, public-sync, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Author and source-verify the final CVF-WEB-INHERITANCE-T5 Web information, QA, and roadmap-closure packet from accepted T1-T4 evidence at material closure commit cf214a243. T4 implementation remains deferred. T5 execution, browser/live/provider work, public-sync, push, production, and external mutation remain parked until a committed T5 work order explicitly releases a bounded subset. LHW24 remains latest closed numbered LHW wave."
 }
