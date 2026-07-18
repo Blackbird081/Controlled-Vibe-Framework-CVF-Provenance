@@ -214,6 +214,16 @@ child commit.
 
 This marker changes no mode, next move, material decision, or authority.
 
+## GC-020 Marker - T5 Corpus Scope Follow-Up Commit
+
+This handoff-only child records parent registry-maintenance commit `0d1e56b12`
+that extended the same T5 GC-051 entry to the README path cited by the worker
+evidence packets. The current child SHA cannot be known before commit creation,
+so the active-session checker may accept the parent SHA for this handoff-only
+child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## GC-020 Marker - T5 Review Prerequisite Maintenance Commit
 
 This handoff-only child records parent governance-maintenance commit
