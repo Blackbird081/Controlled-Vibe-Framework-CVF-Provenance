@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_drift_roadmap_authoring_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=author the continuous projection drift detection and review-packet automation roadmap; parked checkpoint=automatic semantic edits, commit, push, deployment, provider/live calls, production action, and unattended apply.
+Startup acknowledged: current mode=`cvf_web_ux_clarity_t0_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute the source-verified CVF-WEB-UX-T0 live and source audit as a no-commit worker, then return COMPLETE_PENDING_REVIEW; parked checkpoint=all UI implementation, redesign roadmap release, public-sync, deployment, provider/live calls, and the continuous projection drift roadmap.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_drift_roadmap_authoring_next`
+Current mode marker: `cvf_web_ux_clarity_t0_worker_execution_next`
 
-Current mode: `continuous_projection_drift_roadmap_authoring_next`
+Current mode: `cvf_web_ux_clarity_t0_worker_execution_next`
 
-`continuous_projection_drift_roadmap_authoring_next`
+`cvf_web_ux_clarity_t0_worker_execution_next`
 
 Previous mode:
 
-`projection_automation_roadmap_packet_authoring_next`
+`continuous_projection_drift_roadmap_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -306,16 +306,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_drift_roadmap_authoring_next`
+Mode: `cvf_web_ux_clarity_t0_worker_execution_next`
 
-Author the CVF Continuous Projection Drift Detection And Review-Packet
-Automation roadmap from the accepted read-only mapper baseline. T0 pins latest
-provenance repair commit `0cae3289f` and public repair commit `0d3fec3ca`,
-retains predecessor anchors `ee208c753` and `620016275`,
-reconciles the post-public projection baseline, and source-verifies
-CI/manual/scheduled detection seams. Automatic semantic edits, commit, push,
-deployment, provider/live calls, production action, and unattended apply
-remain parked until separately authorized.
+Execute `CVF-WEB-UX-T0` from the committed dispatch/session-sync HEAD using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md`.
+The delegated worker creates exactly the two authorized review outputs, does
+not commit, and returns `COMPLETE_PENDING_REVIEW`. UI implementation, redesign
+roadmap release, public-sync, deployment, provider/live calls, and the
+continuous projection drift roadmap remain parked until independent review.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

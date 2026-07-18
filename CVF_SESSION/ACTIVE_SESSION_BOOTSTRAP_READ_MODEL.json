@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "continuous_projection_drift_roadmap_authoring_next",
+  "currentMode": "cvf_web_ux_clarity_t0_worker_execution_next",
   "activeHandoff": "AGENT_HANDOFF_V48_2026-07-18.md",
-  "nextAllowedMove": "Author the CVF Continuous Projection Drift Detection And Review-Packet Automation roadmap from the accepted read-only mapper baseline. T0 must pin the latest Netlify repair anchors at provenance commit 0cae3289f and public commit 0d3fec3ca, retain the earlier Learning Plane boundary anchors ee208c753 and 620016275 as predecessor evidence, reconcile the post-public projection baseline, and source-verify CI/manual/scheduled detection seams. Later tranches may automate drift receipts and review-packet drafts only; automatic semantic edits, commit, push, deployment, provider/live calls, and unattended apply remain parked until separately authorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute CVF-WEB-UX-T0 from the committed dispatch/session-sync HEAD using docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md. The delegated worker creates exactly docs/reviews/CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md and docs/reviews/CVF_WEB_UX_CLARITY_T0_WORKER_RETURN_2026-07-18.md, does not commit, and returns COMPLETE_PENDING_REVIEW. UI implementation, redesign roadmap release, public-sync, deployment, provider/live calls, and the continuous projection drift roadmap remain parked until independent review. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

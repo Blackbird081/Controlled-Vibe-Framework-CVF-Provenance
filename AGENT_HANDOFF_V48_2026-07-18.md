@@ -24,8 +24,9 @@ deployment reports success.
 ## Active Boundary
 
 The projection landmark and inheritance automation roadmap is closed bounded.
-The operator selected CVF Continuous Projection Drift Detection And
-Review-Packet Automation as the next roadmap. Only roadmap authoring is released.
+The operator prioritized a source-verified CVF Web UX clarity audit after the
+live site showed mixed language, stale read models, and difficult information
+architecture. Only the no-commit CVF-WEB-UX-T0 audit is released.
 
 Automatic semantic edits, real-root apply, commit, push, deployment,
 provider/live calls, production action, and unattended mutation remain parked
@@ -34,19 +35,19 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_drift_roadmap_authoring_next`;
+current mode=`cvf_web_ux_clarity_t0_worker_execution_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=author the continuous projection drift detection and
-review-packet automation roadmap;
-parked checkpoint=automatic semantic edits, commit, push, deployment,
-provider/live calls, production action, and unattended apply.
+next allowed move=execute CVF-WEB-UX-T0 as a no-commit worker and return
+COMPLETE_PENDING_REVIEW;
+parked checkpoint=UI implementation, redesign roadmap release, public-sync,
+deployment, provider/live calls, and the continuous projection drift roadmap.
 
 ## Current Mode
 
-`continuous_projection_drift_roadmap_authoring_next`
+`cvf_web_ux_clarity_t0_worker_execution_next`
 
 Previous mode:
-`projection_automation_roadmap_packet_authoring_next`
+`continuous_projection_drift_roadmap_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -88,6 +89,7 @@ deployment success is not yet claimed.
 ### CVF Web UX clarity audit dispatch head sync
 
 - Material dispatch commit: `56c7ce403`.
+- Corrected execution-anchor material commit: `426c14a05`.
 - Artifacts: `docs/baselines/CVF_GC018_CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md`.
 - This entry records the current material HEAD only. The existing projection
   roadmap queue remains unchanged until the dispatch anchor correction and
@@ -120,12 +122,12 @@ provider, or perform unattended apply.
 
 ## Next Allowed Move
 
-Author the CVF Continuous Projection Drift Detection And Review-Packet
-Automation roadmap from the accepted read-only mapper baseline. T0 pins latest
-provenance repair commit `0cae3289f` and public repair commit `0d3fec3ca`,
-retains predecessor anchors `ee208c753` and `620016275`,
-reconciles the post-public projection baseline, and source-verifies manual,
-CI, and scheduled drift-detection seams. Implementation remains parked.
+Execute the source-verified `CVF-WEB-UX-T0` live and source audit from the
+committed dispatch/session-sync HEAD. The delegated worker creates exactly the
+two authorized review outputs, does not commit, and returns
+`COMPLETE_PENDING_REVIEW`. Independent review follows before any redesign
+roadmap or implementation release. The continuous projection drift roadmap is
+parked behind this operator-prioritized audit.
 
 ## Core Guard Self-Protection Authorization - V48 Rotation And Queue Sync
 
@@ -145,6 +147,22 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
 - `CVF_SESSION_MEMORY.md`;
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`.
+
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T0 Dispatch Session Sync
+
+Authorized guard-maintenance scope: record the accepted no-commit audit
+dispatch, advance the current mode and next move to worker execution, regenerate
+the canonical state read models, and retain all implementation/public/runtime
+boundaries.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/cvfWebUxClarityT0Dispatch20260718.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION_MEMORY.md`.
 
 Operator authorization: explicit instruction to record the next roadmap after
 repairing the Netlify deployment blocker.
