@@ -599,6 +599,15 @@ Operator authorization: standing roadmap-continuation instruction.
 Rollback boundary: revert this seven-path sync together; no material source,
 test, public, or provider mutation belongs to it.
 
+## GC-020 Marker - T4 Closure Handoff-Sync-Only Commit
+
+This handoff-only child records parent session-sync commit `4e29f5ae5` after
+the T4 closure. The current child SHA cannot be known before commit creation,
+so the active-session checker may accept the parent SHA for this handoff-only
+child commit.
+
+This marker changes no mode, next move, material decision, or authority.
+
 ## Claim Boundary
 
 This handoff records protected continuity only. It does not itself authorize
