@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceOfTruth": {
+    "path": "scripts/cvf-public-sync.ps1",
+    "note": "Values below must be kept in parity with this script. This policy file does not execute or dot-source that script."
+  },
+  "expectedRemotes": {
+    "provenanceRemote": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git",
+    "publicRemote": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git"
+  },
+  "allowedTrees": [
+    "EXTENSIONS",
+    "ECOSYSTEM",
+    "governance",
+    "v1.0",
+    "v1.1",
+    "tools",
+    ".github",
+    "App onboarding"
+  ],
+  "allowedRootFiles": [
+    "ARCHITECTURE.md",
+    "CHANGELOG.md",
+    "CODEOWNERS",
+    "CONTRIBUTING.md",
+    "CONTRIBUTORS.md",
+    "COST_AND_QUOTA.md",
+    "GOVERNANCE.md",
+    "LICENSE",
+    "PROVIDERS.md",
+    "PROVENANCE.md",
+    "README.md",
+    "SECURITY.md",
+    "netlify.toml",
+    "package.json",
+    "package-lock.json"
+  ],
+  "allowedScriptFiles": [
+    "scripts/bootstrap_foundations.ps1",
+    "scripts/bootstrap_foundations.sh",
+    "scripts/check_cvf_workspace_agent_enforcement.ps1",
+    "scripts/check_cvf_workspace_new_project_enforcement.ps1",
+    "scripts/ingest_cvf_downstream_knowledge.ps1",
+    "scripts/install_cvf_hooks.ps1",
+    "scripts/install_cvf_workspace.ps1",
+    "scripts/build_cvf_workspace_distribution.ps1",
+    "scripts/get_cvf_workspace_status.ps1",
+    "scripts/repair_cvf_workspace.ps1",
+    "scripts/manage_cvf_workspace.ps1",
+    "scripts/new-cvf-workspace.ps1",
+    "scripts/sync_cvf_workspace_public_profile.ps1",
+    "scripts/update_cvf_workspace_public_core.ps1",
+    "scripts/w114_cp7_multi_sample_downstream_proof.ps1",
+    "scripts/write_cvf_workspace_web_evidence_bridge.ps1"
+  ],
+  "allowedWorkspaceTemplateFiles": [
+    "workspace_templates/CVF_WORKSPACE_MEMORY_TEMPLATE.md",
+    "workspace_templates/AGENT_HANDOFF_TEMPLATE.md"
+  ],
+  "allowedDocsPaths": [
+    "docs/GET_STARTED.md",
+    "docs/CHEAT_SHEET.md",
+    "docs/CVF_ARCHITECTURE_DECISIONS.md",
+    "docs/CVF_CORE_KNOWLEDGE_BASE.md",
+    "docs/EXPORT_MANIFEST.md",
+    "docs/concepts",
+    "docs/guides",
+    "docs/reference",
+    "docs/benchmark"
+  ],
+  "mappedFiles": [
+    {
+      "source": "governance/toolkit/05_OPERATION/CVF_PUBLIC_CORE_AGENTS.md",
+      "destination": "AGENTS.md"
+    },
+    {
+      "source": "governance/toolkit/05_OPERATION/CVF_PUBLIC_CORE_CONTINUATION.md",
+      "destination": "AGENT_HANDOFF.md"
+    },
+    {
+      "source": "scripts/install_cvf_workspace_root_wrappers_public.ps1",
+      "destination": "scripts/install_cvf_workspace_root_wrappers.ps1"
+    }
+  ],
+  "denyPatterns": [
+    "^AGENT_HANDOFF",
+    "^docs[/\\\\]baselines[/\\\\]",
+    "^docs[/\\\\]reviews[/\\\\]",
+    "^docs[/\\\\]roadmaps[/\\\\]",
+    "scripts[/\\\\]cvf-provenance-push\\.ps1$",
+    "scripts[/\\\\]cvf-public-sync\\.ps1$",
+    "\\.env$",
+    "\\.env\\.local$",
+    "\\.env\\.[^e]",
+    "[/\\\\]node_modules[/\\\\]",
+    "[/\\\\]\\.next[/\\\\]",
+    "[/\\\\]\\.next-",
+    "[/\\\\]coverage[/\\\\]",
+    "[/\\\\]test-results[/\\\\]",
+    "[/\\\\]playwright-report[/\\\\]",
+    "[/\\\\]__pycache__[/\\\\]",
+    "[/\\\\]\\.data[/\\\\]",
+    "\\.tsbuildinfo$",
+    "\\.pyc$",
+    "\\.log$",
+    "\\.tmp$"
+  ],
+  "candidateActionEnum": [
+    "COPY_CANDIDATE_ABSENT_TARGET",
+    "FLAG_SEMANTIC_REVIEW_CHANGED",
+    "SKIP_UNCHANGED",
+    "SKIP_DENIED",
+    "SKIP_NOT_ALLOWLISTED"
+  ],
+  "semanticReviewBoundary": {
+    "note": "FLAG_SEMANTIC_REVIEW_CHANGED and COPY_CANDIDATE_ABSENT_TARGET are classification labels only. The mapper never performs the copy itself; a copy/apply action is out of scope for this dry-run tool.",
+    "autoApproveForbidden": true
+  },
+  "cvfWebObservation": {
+    "packageJsonPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+    "runtimeModulesPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/runtime-modules.ts",
+    "expectedSot3RegistryIds": [
+      "cvf-refinery",
+      "cvf-truth-kernel",
+      "cvf-truth-flow"
+    ]
+  }
+}

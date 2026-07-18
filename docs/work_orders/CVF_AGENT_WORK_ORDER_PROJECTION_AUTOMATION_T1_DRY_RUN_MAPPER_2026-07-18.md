@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-PROJECTION-AUTO-T1
 
@@ -229,6 +229,17 @@ operator-specific absolute paths.
 
 Forbidden paths: every path outside the six-path Write Ownership list.
 
+## Required Artifact Manifest
+
+| Artifact | Required disposition | Final evidence |
+|---|---|---|
+| policy JSON | present and source-parity checked | PASS |
+| mapper script | present, dry-run-only, fail closed | PASS |
+| focused test script | present with reviewer-expanded matrix | PASS_48_OF_48 |
+| receipt schema | present and aligned to accepted output | PASS |
+| governed receipt | schema 1.0.0, all parity MATCH, zero errors | PASS |
+| worker return | accepted with reviewer repair addendum | PASS |
+
 ## Evidence Requirements
 
 Record test names/counts, parity results, before/after fixture hashes/status,
@@ -422,11 +433,11 @@ git status --short
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | paired T1 GC-018 | `Status: DISPATCH_READY` | PASS |
-| Work order status | this work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | future T1 review | dependency-held | N/A with reason |
-| Worker return | future T1 return | worker-owned | N/A with reason |
-| Roadmap state | automation roadmap | `Status: T0_PASS_BOUNDED_T1_DISPATCH_READY_T2_HELD` | PASS |
+| Baseline status | paired T1 GC-018 | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T1 completion review | `Status: REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Worker return | T1 worker return | `Status: ACCEPTED_BY_REVIEWER` | PASS |
+| Roadmap state | automation roadmap | `Status: T1_PASS_BOUNDED_T2_PACKET_AUTHORING_NEXT` | PASS |
 | Registry JSON | existing GC-051 coverage | aggregate drift checked | PASS |
 | Registry Markdown | existing registry front door | no new family required | PASS |
 | External evidence digest | repository-local evidence only | none | N/A with reason |
@@ -437,9 +448,9 @@ git status --short
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| deterministic equality | two identical fixture runs byte-identical | worker-owned | N/A with reason |
-| target mutation | zero before/after delta | worker-owned | N/A with reason |
-| negative cases | missing, wrong remote, dirty, and escape fail closed | worker-owned | N/A with reason |
+| deterministic equality | two identical fixture runs byte-identical | reviewer rerun PASS | PASS |
+| target mutation | zero before/after delta | focused status/filesystem tests PASS | PASS |
+| negative cases | missing, wrong remote, dirty, escape, and parity fail closed | reviewer-expanded suite PASS | PASS |
 
 ## Public Export Disposition
 
