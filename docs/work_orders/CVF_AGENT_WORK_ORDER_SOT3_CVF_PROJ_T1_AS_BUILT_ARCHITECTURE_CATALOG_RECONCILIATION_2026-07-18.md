@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Date: 2026-07-18
 
@@ -480,16 +480,25 @@ historical wording may remain only when clearly labeled as superseded history.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | paired T1 GC-018 | `Status: DISPATCH_READY` | PASS |
-| Work order status | this work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T1_COMPLETION_REVIEW_2026-07-18.md` | reviewer-owned after return | N/A with reason |
-| Worker return | T1 worker return | terminal no-commit return | N/A with reason |
-| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T1_DISPATCH_READY` | PASS |
-| Registry JSON | existing GC-051 coverage and aggregate | no mutation authorized; reviewer verifies coverage | N/A with reason |
-| Registry Markdown | existing registry front door | no mutation authorized | N/A with reason |
+| Baseline status | paired T1 GC-018 | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T1_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR` | PASS |
+| Worker return | T1 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIR` | PASS |
+| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T1_CLOSED_PASS_BOUNDED_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | existing GC-051 coverage and aggregate | changed-corpus coverage and aggregate drift PASS; no new scope path needed | PASS |
+| Registry Markdown | existing registry front door | existing family coverage remains sufficient | PASS |
 | External evidence digest | repository-local evidence only | none | N/A with reason |
 | System loop interlock | no loop owner changed | none | N/A with reason |
 | Session continuity | protected session surfaces | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| runtime receipt evidence | N/A with reason: catalog reconciliation creates no runtime receipt | N/A_WITH_REASON |
+| provider query evidence | N/A with reason: no provider call was authorized | N/A_WITH_REASON |
+| worker-return acceptance | independently recomputed with one bounded provenance repair | PASS |
+| closure claim | private-provenance catalog truth only | PASS |
 
 ## Current Runtime Freshness Verification
 
@@ -497,6 +506,12 @@ Runtime source is read-only and was verified at dispatch. The worker must repeat
 the named symbol reads before authoring. Catalog generation and schema
 validation prove document consistency only; they do not prove provider,
 activation, production, or public behavior.
+
+The existing provider registry at
+`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts`, including
+`PROVIDER_CAPABILITY_REGISTRY`, is acknowledged as current source and remains
+outside this tranche. This packet makes no provider-registry absence or
+hardcoding claim and authorizes no edit to that surface.
 
 ## Public Export Disposition
 

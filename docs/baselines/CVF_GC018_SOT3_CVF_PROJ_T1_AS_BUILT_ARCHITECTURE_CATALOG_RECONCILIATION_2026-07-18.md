@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR
 
 Date: 2026-07-18
 
@@ -142,13 +142,13 @@ Returned defects: NONE_RETURNED
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | this baseline | `Status: DISPATCH_READY` | PASS |
-| Work order status | paired SOT3-CVF-PROJ-T1 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T1_COMPLETION_REVIEW_2026-07-18.md` | reviewer-owned after worker return | N/A with reason |
-| Worker return | `docs/reviews/CVF_SOT3_CVF_PROJ_T1_WORKER_RETURN_2026-07-18.md` | worker-owned uncommitted output | N/A with reason |
-| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T1_DISPATCH_READY` | PASS |
-| Registry JSON | existing GC-051 coverage and generated aggregate | no registry mutation authorized; reviewer verifies coverage | N/A with reason |
-| Registry Markdown | existing registry front door | no registry documentation change authorized | N/A with reason |
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Work order status | paired SOT3-CVF-PROJ-T1 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T1_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR` | PASS |
+| Worker return | `docs/reviews/CVF_SOT3_CVF_PROJ_T1_WORKER_RETURN_2026-07-18.md` | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIR` | PASS |
+| Roadmap state | SOT3-CVF projection roadmap | `Status: SOT3_CVF_PROJ_T1_CLOSED_PASS_BOUNDED_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | existing GC-051 coverage and generated aggregate | changed-corpus coverage and aggregate drift PASS; no new scope path needed | PASS |
+| Registry Markdown | existing registry front door | existing family coverage remains sufficient | PASS |
 | External evidence digest | repository-local evidence only | none | N/A with reason |
 | System loop interlock | no loop owner changed | none | N/A with reason |
 | Session continuity | protected session surfaces | separate post-material sync | N/A with reason |

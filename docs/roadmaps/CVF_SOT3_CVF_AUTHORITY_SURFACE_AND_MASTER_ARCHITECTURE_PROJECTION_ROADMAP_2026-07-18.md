@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: SOT3_CVF_PROJ_T1_DISPATCH_READY
+Status: SOT3_CVF_PROJ_T1_CLOSED_PASS_BOUNDED_T2_PACKET_AUTHORING_NEXT
 
 Date: 2026-07-18
 
@@ -257,6 +257,40 @@ export requires a separate public-sync authorization and evidence set.
 
 ## Claim Boundary
 
-This roadmap authorizes T0 audit dispatch only. It does not itself update the
-master architecture, catalogs, README, workflow runtime, provider behavior, or
-public surface. T1 through T4 remain parked until independently released.
+T0 and T1 are independently accepted. T1 updates the bounded private
+as-built catalog and reference navigation only; it does not change runtime,
+provider behavior, production state, or public surfaces. T2 packet authoring
+is released. T3 and T4 remain parked behind sequential reviewer acceptance.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | T1 GC-018 baseline | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Work order status | T1 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_SOT3_CVF_PROJ_T1_COMPLETION_REVIEW_2026-07-18.md` | `Status: REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIR` | PASS |
+| Worker return | T1 worker return | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIR` | PASS |
+| Roadmap state | this roadmap | `Status: SOT3_CVF_PROJ_T1_CLOSED_PASS_BOUNDED_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | existing GC-051 registry aggregate | changed-corpus coverage and aggregate drift PASS | PASS |
+| Registry Markdown | existing registry front door | existing family coverage remains sufficient | PASS |
+| External evidence digest | repository-local evidence only | none | N/A with reason |
+| System loop interlock | no loop owner changed | none | N/A with reason |
+| Session continuity | protected session surfaces | separate successor-dispatch sync | N/A with reason |
+
+## Current Runtime Freshness Verification
+
+Direct source reads confirm the bounded SOT3 runtime owners named by T1. CVF
+also has an existing provider registry at
+`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts`, including
+`PROVIDER_CAPABILITY_REGISTRY`; this roadmap neither denies nor modifies that
+surface. Provider routing remains outside the documentation/catalog projection
+scope, and no absence claim is made about it.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| runtime receipt evidence | N/A with reason: T1 catalog reconciliation creates no runtime receipt | N/A_WITH_REASON |
+| provider query evidence | N/A with reason: no provider call was authorized | N/A_WITH_REASON |
+| T1 worker-return acceptance | independently recomputed with one bounded provenance repair | PASS |
+| T1 closure claim | private-provenance catalog truth only | PASS |

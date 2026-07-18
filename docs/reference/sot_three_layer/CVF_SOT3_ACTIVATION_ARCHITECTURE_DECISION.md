@@ -189,6 +189,33 @@ Disposition: A0_PASS_BOUNDED
 A0 proves an architecture decision only. It does not prove an adapter,
 restart durability, provider consumption, or readiness for real users.
 
+## Current Evidence Pointer (2026-07-18)
+
+EPISTEMIC_PROCESS_NA_WITH_REASON: this section adds a compact citation
+pointer to already-accepted evidence; it does not assert a new empirical
+prediction or perform a fresh evidence comparison itself.
+
+This section adds a compact current-evidence pointer only. It does not
+rewrite or supersede the A0 decision, ladder, or disposition above.
+
+- The A1-A5 proof ladder is accepted bounded and closed at
+  `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md`
+  with claim `LIVE_GOVERNANCE_PROVEN_BOUNDED`.
+- Four bounded catalog module owners now record the underlying Refinery,
+  Truth Kernel, Truth Flow, and vertical-slice runtime as accepted review
+  evidence: `cvf.asc.module.sot3_refinery_runtime.v1`,
+  `cvf.asc.module.sot3_truth_kernel_runtime.v1`,
+  `cvf.asc.module.sot3_truth_flow_runtime.v1`,
+  `cvf.asc.module.sot3_three_layer_slice.v1` under
+  `docs/reference/system_architecture_catalog/entries/`.
+- One downstream application proof exists at
+  `docs/reviews/CVF_SOT3_APP_T5_COMPLETION_REVIEW_2026-07-18.md`. It remains a
+  single bounded product seam and is not a claim of universal SOT3 activation,
+  provider/live guarantee, public export, or production readiness.
+- This pointer does not turn the A0 local-proof rung into downstream
+  application or universal proof; the Claim Ladder table above remains the
+  authority for what each A-state proves.
+
 ## ADIF Defect Registry Disclosure
 
 Query:

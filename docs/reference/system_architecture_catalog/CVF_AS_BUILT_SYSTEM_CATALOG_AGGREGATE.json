@@ -2,7 +2,7 @@
   "schemaVersion": "cvf.as_built_system_catalog.schema.v0",
   "generatedBy": "governance/compat/generate_as_built_system_catalog.py",
   "sourceDir": "docs/reference/system_architecture_catalog/entries/",
-  "entityCount": 24,
+  "entityCount": 28,
   "entities": [
     {
       "stableId": "cvf.asc.authority_source.frozen_layer_model.v1",
@@ -258,17 +258,17 @@
           "evidenceRole": "three-layer architecture decision basis"
         }
       ],
-      "claimBoundary": "CONTRACT_ONLY. Documents eight accepted inter-layer contract types (SourceEnvelope, RefineryPacket, KernelEvaluationRequest, KernelDecision, TruthReceipt, TruthReference, DistributionPackage, FeedbackProposal) spanning the SOT three-layer family (Refinery, Truth Kernel, post-Kernel Truth Flow). This entry does not claim any of the three layers, or the contract chain itself, is implemented as CVF runtime. No Refinery, Kernel, or Flow runtime exists in the active tree.",
+      "claimBoundary": "CONTRACT_ONLY for this entry itself. Documents eight accepted inter-layer contract types (SourceEnvelope, RefineryPacket, KernelEvaluationRequest, KernelDecision, TruthReceipt, TruthReference, DistributionPackage, FeedbackProposal) spanning the SOT three-layer family (Refinery, Truth Kernel, post-Kernel Truth Flow). This entry is the contract authority only and does not itself assert runtime behavior. Bounded local-ready runtime owners for the three layers and their vertical-slice composition are recorded separately as accepted review evidence in cvf.asc.module.sot3_refinery_runtime.v1, cvf.asc.module.sot3_truth_kernel_runtime.v1, cvf.asc.module.sot3_truth_flow_runtime.v1, and cvf.asc.module.sot3_three_layer_slice.v1; none of those module records claims universal activation, provider/live behavior, public export, or production readiness.",
       "freshnessInputs": [
         "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
         "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
       ],
       "lastReviewed": {
-        "date": "2026-07-12",
-        "acceptedArtifact": "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+        "date": "2026-07-18",
+        "acceptedArtifact": "docs/reviews/CVF_SOT3_CVF_PROJ_T1_COMPLETION_REVIEW_2026-07-18.md"
       },
-      "boundaryCaveat": "Does not claim Refinery, Truth Kernel, or post-Kernel Truth Flow runtime exists; does not claim TKG-T1 evidence/obligation field reconciliation is complete (deferred to a future TKG-T2-style tranche per T1 CAP-04).",
-      "priorDisposition": ""
+      "boundaryCaveat": "This contract entry does not itself claim Refinery, Truth Kernel, or post-Kernel Truth Flow runtime exists; bounded local-ready runtime existence is recorded in the four separate module entries named above, not by editing this contract's own runtime posture. Does not claim TKG-T1 evidence/obligation field reconciliation is complete (deferred to a future TKG-T2-style tranche per T1 CAP-04).",
+      "priorDisposition": "CONTRACT_ONLY_NO_RUNTIME_ASSERTED"
     },
     {
       "stableId": "cvf.asc.interface.sot_three_layer_rejected_competing_shapes.v1",
@@ -487,6 +487,158 @@
         "acceptedArtifact": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md"
       },
       "boundaryCaveat": "Broader than the historical protocol; not a one-to-one textual adaptation; does not make /protocols exist; does not inherit frozen status.",
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.module.sot3_refinery_runtime.v1",
+      "entityType": "MODULE",
+      "name": "SOT3 Refinery Runtime Owner",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "LOCAL_READY",
+      "ownerPaths": [
+        "EXTENSIONS/CVF_REFINERY/src/pipeline/engine.ts"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.contract_to_runtime.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "EXTENSIONS/CVF_REFINERY/src/pipeline/engine.ts",
+          "lineOrSection": "lines 23 and 48",
+          "evidenceRole": "REQUIRED_STAGE_CHAIN and RefineryEngine runtime symbol evidence"
+        },
+        {
+          "path": "docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md",
+          "lineOrSection": "Disposition",
+          "evidenceRole": "reviewer-accepted deterministic Refinery Core acceptance"
+        }
+      ],
+      "claimBoundary": "ACCEPTED_REVIEW_EVIDENCE only. RefineryEngine and its REQUIRED_STAGE_CHAIN exist as bounded local-ready package runtime that prepares SourceEnvelope input into a RefineryPacket through a fixed nine-stage deterministic chain. This entry does not claim the Refinery is globally activated, always invoked by any CVF Web or production request path, a provider boundary, publicly exported, or production-ready. Activation into a real product path is governed separately by the SOT3 activation architecture decision and its A1-A5 proof ladder, not by this catalog record.",
+      "freshnessInputs": [
+        "EXTENSIONS/CVF_REFINERY/src/pipeline/engine.ts",
+        "docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-18",
+        "acceptedArtifact": "docs/reviews/CVF_SOT3_T3_COMPLETION_REVIEW_2026-07-12.md"
+      },
+      "boundaryCaveat": "Does not claim universal activation, provider/live behavior, public export, or production readiness. Local-ready package existence only; wiring into any product request path remains governed by the separate SOT3 activation decision and roadmap.",
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.module.sot3_three_layer_slice.v1",
+      "entityType": "MODULE",
+      "name": "SOT3 Three-Layer Vertical Slice Orchestrator",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "LOCAL_READY",
+      "ownerPaths": [
+        "EXTENSIONS/CVF_SOT_THREE_LAYER_SLICE/src/orchestrator.ts"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.contract_to_runtime.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "EXTENSIONS/CVF_SOT_THREE_LAYER_SLICE/src/orchestrator.ts",
+          "lineOrSection": "lines 52 and 136",
+          "evidenceRole": "runThreeLayerScenario runtime behavior evidence"
+        },
+        {
+          "path": "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md",
+          "lineOrSection": "Disposition",
+          "evidenceRole": "reviewer-accepted real composition vertical-slice acceptance"
+        }
+      ],
+      "claimBoundary": "ACCEPTED_REVIEW_EVIDENCE only. runThreeLayerScenario is a thin bounded orchestrator that invokes the real RefineryEngine, TruthKernel, and DistributionEngine instances in sequence using each layer's own public API, proving real cross-package composition through a fixed test scenario lifecycle. This entry does not claim the slice is a product policy owner, globally activated, always invoked by any CVF Web or production request path, a provider boundary, publicly exported, or production-ready. Activation into a real product path is governed separately by the SOT3 activation architecture decision and its A1-A5 proof ladder, not by this catalog record.",
+      "freshnessInputs": [
+        "EXTENSIONS/CVF_SOT_THREE_LAYER_SLICE/src/orchestrator.ts",
+        "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-18",
+        "acceptedArtifact": "docs/reviews/CVF_SOT3_T6_COMPLETION_REVIEW_2026-07-13.md"
+      },
+      "boundaryCaveat": "Does not claim universal activation, provider/live behavior, public export, production readiness, or product-policy ownership. Local-ready scenario-composition existence only; wiring into any product request path remains governed by the separate SOT3 activation decision and roadmap.",
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.module.sot3_truth_flow_runtime.v1",
+      "entityType": "MODULE",
+      "name": "SOT3 Truth Flow Runtime Owner",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "LOCAL_READY",
+      "ownerPaths": [
+        "EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.contract_to_runtime.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts",
+          "lineOrSection": "line 57",
+          "evidenceRole": "DistributionEngine runtime symbol evidence"
+        },
+        {
+          "path": "docs/reviews/CVF_SOT3_T5_COMPLETION_REVIEW_2026-07-13.md",
+          "lineOrSection": "Disposition",
+          "evidenceRole": "reviewer-accepted post-Kernel Truth Flow acceptance"
+        }
+      ],
+      "claimBoundary": "ACCEPTED_REVIEW_EVIDENCE only. DistributionEngine exists as bounded local-ready package runtime that creates and transitions DistributionPackage records strictly post-Kernel, re-resolving bound Kernel authority references at each action time. This entry does not claim the Flow is globally activated, always invoked by any CVF Web or production request path, a provider boundary, publicly exported, or production-ready. Activation into a real product path is governed separately by the SOT3 activation architecture decision and its A1-A5 proof ladder, not by this catalog record.",
+      "freshnessInputs": [
+        "EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts",
+        "docs/reviews/CVF_SOT3_T5_COMPLETION_REVIEW_2026-07-13.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-18",
+        "acceptedArtifact": "docs/reviews/CVF_SOT3_T5_COMPLETION_REVIEW_2026-07-13.md"
+      },
+      "boundaryCaveat": "Does not claim universal activation, provider/live behavior, public export, or production readiness. Local-ready package existence only; wiring into any product request path remains governed by the separate SOT3 activation decision and roadmap.",
+      "priorDisposition": ""
+    },
+    {
+      "stableId": "cvf.asc.module.sot3_truth_kernel_runtime.v1",
+      "entityType": "MODULE",
+      "name": "SOT3 Truth Kernel Runtime Owner",
+      "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+      "maturity": "LOCAL_READY",
+      "ownerPaths": [
+        "EXTENSIONS/CVF_TRUTH_KERNEL/src/kernel.ts"
+      ],
+      "planeMembership": [
+        "cvf.asc.plane.contract_to_runtime.v1"
+      ],
+      "inboundEdgeIds": [],
+      "outboundEdgeIds": [],
+      "citations": [
+        {
+          "path": "EXTENSIONS/CVF_TRUTH_KERNEL/src/kernel.ts",
+          "lineOrSection": "lines 55 and 83",
+          "evidenceRole": "TruthKernel class and evaluate method runtime symbol evidence"
+        },
+        {
+          "path": "docs/reviews/CVF_SOT3_T4_COMPLETION_REVIEW_2026-07-12.md",
+          "lineOrSection": "Disposition",
+          "evidenceRole": "reviewer-accepted Truth Kernel hardening acceptance"
+        }
+      ],
+      "claimBoundary": "ACCEPTED_REVIEW_EVIDENCE only. TruthKernel and its evaluate method exist as bounded local-ready package runtime and are the sole producer of KernelDecision, TruthReceipt, and TruthReference for an evaluated request. This entry does not claim the Kernel is globally activated, always invoked by any CVF Web or production request path, a provider boundary, publicly exported, or production-ready. Activation into a real product path is governed separately by the SOT3 activation architecture decision and its A1-A5 proof ladder, not by this catalog record.",
+      "freshnessInputs": [
+        "EXTENSIONS/CVF_TRUTH_KERNEL/src/kernel.ts",
+        "docs/reviews/CVF_SOT3_T4_COMPLETION_REVIEW_2026-07-12.md"
+      ],
+      "lastReviewed": {
+        "date": "2026-07-18",
+        "acceptedArtifact": "docs/reviews/CVF_SOT3_T4_COMPLETION_REVIEW_2026-07-12.md"
+      },
+      "boundaryCaveat": "Does not claim universal activation, provider/live behavior, public export, or production readiness. Local-ready package existence only; wiring into any product request path remains governed by the separate SOT3 activation decision and roadmap.",
       "priorDisposition": ""
     },
     {

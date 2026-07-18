@@ -46,7 +46,28 @@ surface, or generated aggregate. It does not supersede
 |---|---|
 | `CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md` | Canonical eight-contract chain: producer, consumers, field minimums, status vocabulary, transitions, authority boundary, source provenance, compatibility decision per type |
 | `CVF_SOT_THREE_LAYER_INVARIANTS_AND_NEGATIVE_CASES.md` | Ten fail-closed invariants and fourteen negative cases (twelve originally required plus NC-04A and NC-04B added by bounded repair) with expected fail-closed outcomes |
-| `CVF_SOT3_ACTIVATION_ARCHITECTURE_DECISION.md` | Ratified bounded A0 decision selecting the scoped `/api/execute` knowledge-context seam and the A1-A5 proof ladder toward `LIVE_GOVERNANCE_PROVEN_BOUNDED` |
+| `CVF_SOT3_ACTIVATION_ARCHITECTURE_DECISION.md` | Ratified bounded A0 decision selecting the scoped `/api/execute` knowledge-context seam and the A1-A5 proof ladder toward `LIVE_GOVERNANCE_PROVEN_BOUNDED`, with a current-evidence pointer to the accepted activation roadmap closure |
+
+## Catalog Module Records (Contract, Implementation, Activation, Downstream Application)
+
+This folder documents contracts only. Four separate as-built catalog MODULE
+records under `docs/reference/system_architecture_catalog/entries/` name the
+bounded, `LOCAL_READY`, `ACCEPTED_REVIEW_EVIDENCE` runtime owners that
+implement (not merely contract) the three layers and their vertical-slice
+composition:
+
+| Proof stage | Owner surface | What it proves | What it does not prove |
+|---|---|---|---|
+| Contract | `cvf.asc.interface.sot_three_layer_contract_chain.v1` (this folder) | eight accepted inter-layer contract types and their field/transition authority | that any layer is implemented as runtime |
+| Implementation | `cvf.asc.module.sot3_refinery_runtime.v1`; `cvf.asc.module.sot3_truth_kernel_runtime.v1`; `cvf.asc.module.sot3_truth_flow_runtime.v1`; `cvf.asc.module.sot3_three_layer_slice.v1` | bounded local-ready package runtime exists and real cross-package composition is proven by the vertical slice | global activation, universal invocation, a provider boundary, public export, or production readiness |
+| Activation | `CVF_SOT3_ACTIVATION_ARCHITECTURE_DECISION.md` (this folder) plus `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md` | the ratified A0 product seam and the accepted bounded A1-A5 live-governance proof ladder | that the seam is wired into every CVF Web request or is production-scaled |
+| Downstream application | `docs/reviews/CVF_SOT3_APP_T5_COMPLETION_REVIEW_2026-07-18.md` (SOT3-APP roadmap closure) | one accepted operational live-provider proof at a bounded product seam | universal SOT3 availability across CVF or any other application |
+
+Reading only this README's contract tables is not evidence of implementation;
+reading only the four module records is not evidence of activation; reading
+only the activation decision is not evidence of downstream application. Each
+stage cites its own accepted evidence and does not inherit the claim strength
+of the stage above it.
 
 ## Authority Map
 

@@ -26,15 +26,15 @@
       "evidenceRole": "three-layer architecture decision basis"
     }
   ],
-  "claimBoundary": "CONTRACT_ONLY. Documents eight accepted inter-layer contract types (SourceEnvelope, RefineryPacket, KernelEvaluationRequest, KernelDecision, TruthReceipt, TruthReference, DistributionPackage, FeedbackProposal) spanning the SOT three-layer family (Refinery, Truth Kernel, post-Kernel Truth Flow). This entry does not claim any of the three layers, or the contract chain itself, is implemented as CVF runtime. No Refinery, Kernel, or Flow runtime exists in the active tree.",
+  "claimBoundary": "CONTRACT_ONLY for this entry itself. Documents eight accepted inter-layer contract types (SourceEnvelope, RefineryPacket, KernelEvaluationRequest, KernelDecision, TruthReceipt, TruthReference, DistributionPackage, FeedbackProposal) spanning the SOT three-layer family (Refinery, Truth Kernel, post-Kernel Truth Flow). This entry is the contract authority only and does not itself assert runtime behavior. Bounded local-ready runtime owners for the three layers and their vertical-slice composition are recorded separately as accepted review evidence in cvf.asc.module.sot3_refinery_runtime.v1, cvf.asc.module.sot3_truth_kernel_runtime.v1, cvf.asc.module.sot3_truth_flow_runtime.v1, and cvf.asc.module.sot3_three_layer_slice.v1; none of those module records claims universal activation, provider/live behavior, public export, or production readiness.",
   "freshnessInputs": [
     "docs/reference/sot_three_layer/CVF_SOT_THREE_LAYER_CONTRACT_CHAIN.md",
     "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
   ],
   "lastReviewed": {
-    "date": "2026-07-12",
-    "acceptedArtifact": "docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md"
+    "date": "2026-07-18",
+    "acceptedArtifact": "docs/reviews/CVF_SOT3_CVF_PROJ_T1_COMPLETION_REVIEW_2026-07-18.md"
   },
-  "boundaryCaveat": "Does not claim Refinery, Truth Kernel, or post-Kernel Truth Flow runtime exists; does not claim TKG-T1 evidence/obligation field reconciliation is complete (deferred to a future TKG-T2-style tranche per T1 CAP-04).",
-  "priorDisposition": ""
+  "boundaryCaveat": "This contract entry does not itself claim Refinery, Truth Kernel, or post-Kernel Truth Flow runtime exists; bounded local-ready runtime existence is recorded in the four separate module entries named above, not by editing this contract's own runtime posture. Does not claim TKG-T1 evidence/obligation field reconciliation is complete (deferred to a future TKG-T2-style tranche per T1 CAP-04).",
+  "priorDisposition": "CONTRACT_ONLY_NO_RUNTIME_ASSERTED"
 }
