@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: SOT3_CVF_PROJ_T0_PASS_BOUNDED_WEB_INHERITANCE_T0_PACKET_AUTHORING_NEXT
+Status: SOT3_CVF_PROJ_T1_DISPATCH_READY
 
 Date: 2026-07-18
 
@@ -98,8 +98,10 @@ Out of scope:
 | SOT3-CVF-PROJ-T3 | project end-to-end workflow and navigation | operational reference index, architecture navigation, workflow map | operators and agents can locate the correct owner and lifecycle step |
 | SOT3-CVF-PROJ-T4 | align product/readme claims and close | README, technical product catalog, final cross-surface audit | all updated claims remain bounded and roadmap closes without stale residue |
 
-T1 through T4 remain parked until independent T0 review accepts the exact
-surface ledger and releases the next packet.
+T1 is released by the accepted T0 review, the closed CVF Web inheritance
+roadmap, and the operator resume instruction dated 2026-07-18. T2 through T4
+remain parked until the immediately preceding tranche has committed reviewer
+acceptance and a fresh dispatch base.
 
 ## Work Plan
 
