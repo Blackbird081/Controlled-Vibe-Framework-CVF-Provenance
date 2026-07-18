@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CVF_WEB_INHERITANCE_T3P2_PASS_T3B_PACKET_AUTHORING_NEXT
+Status: CVF_WEB_INHERITANCE_T3B_DISPATCH_READY
 
 docType: roadmap
 
@@ -260,10 +260,10 @@ readiness, or universal inheritance claims.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T3P2_PASS_T3B_PACKET_AUTHORING_NEXT` | PASS |
-| Baseline status | T3P2 GC-018 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
-| Work order status | T3P2 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIR` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T3P2_COMPLETION_REVIEW_2026-07-18.md` | reviewer accepts bounded durable-event-only route | PASS |
+| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T3B_DISPATCH_READY` | PASS |
+| Baseline status | T3B GC-018 baseline | `Status: DISPATCH_READY` | PASS |
+| Work order status | T3B work order | `Status: DISPATCH_READY` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T3P2_COMPLETION_REVIEW_2026-07-18.md` | accepted prerequisite route | PASS |
 | Registry JSON | corpus registry generated aggregate | existing cvf-web `src/` scope coverage and aggregate drift check | PASS |
 | Registry Markdown | corpus registry read model | existing cvf-web `src/` scope coverage | PASS |
 | External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
