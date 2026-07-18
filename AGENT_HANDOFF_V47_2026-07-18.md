@@ -236,6 +236,14 @@ session checker may accept the parent SHA for this handoff-only child commit.
 
 T1 is ready for no-commit worker execution; T2 remains held.
 
+## GC-020 Marker - Projection Automation T1 Closure Handoff Sync
+
+This handoff-only child records parent material closure commit `aa699742b`.
+The current child SHA cannot be known before commit creation, so the active
+session checker may accept the parent SHA for this handoff-only child commit.
+
+T1 is closed bounded after reviewer repair. T2 packet authoring is next.
+
 ## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T4-R1 Dispatch Sync
 
 Authorized guard-maintenance scope: refresh protected continuity after the
