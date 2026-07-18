@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1933,
+  "stateKey": "cvfWebInheritanceT2Dispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "1c5d5e39b",
+    "dispatchBaseHead": "edeec4e94",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T2_SOT3_OPERATOR_EVIDENCE_PROJECTION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T2_SOT3_OPERATOR_EVIDENCE_PROJECTION_2026-07-18.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedPaths": 7,
+    "verification": "dispatch-author fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact T2 safe readout/page work order and return for independent review.",
+    "heldNextTranche": "T3-T5 and all external mutation lanes remain parked.",
+    "claimBoundary": "Safe read model, read-only SOT3 evidence page, discoverability, focused tests, and worker return only."
+  }
+}

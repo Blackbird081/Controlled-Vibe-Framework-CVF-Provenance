@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_web_inheritance_t1_closed_t2_packet_authoring_next",
+  "currentMode": "cvf_web_inheritance_t2_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V47_2026-07-18.md",
-  "nextAllowedMove": "Author and dispatch only CVF-WEB-INHERITANCE-T2 for bounded read-only SOT3 operator evidence projection from current cvf-web source. T3-T5, SOT3-CVF-PROJ-T1-T4, MAO implementation, sibling copying, provider/live work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute only the committed CVF-WEB-INHERITANCE-T2 work order at material commit 1c5d5e39b under WORKER_MUST_NOT_COMMIT. Modify exactly its seven allowed paths, preserve execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3-T5 and all external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

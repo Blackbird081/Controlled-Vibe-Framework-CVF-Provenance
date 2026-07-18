@@ -15,13 +15,12 @@ V46 was rotated at 892 lines under the Governed File Size Guard.
 ## Scope / Target / Owner Boundary
 
 This handoff owns protected continuity routing only. Material commit
-`b186df669` owns accepted T1 registry truth. A fresh T2 dispatch packet must
-own any later read-only SOT3 operator evidence implementation scope.
+`1c5d5e39b` owns the T2 dispatch packet and worker scope.
 
 ## Active Boundary
 
-CVF-WEB-INHERITANCE-T1 is independently accepted at material commit
-`b186df669`. The next allowed move is authoring and dispatching only T2.
+CVF-WEB-INHERITANCE-T2 is dispatched at material commit `1c5d5e39b`. The next
+allowed move is executing its exact seven-path no-commit packet.
 
 T3-T5, SOT3-CVF-PROJ-T1-T4, MAO implementation, sibling application copying,
 browser/provider/live work, public-sync, push, production, MAO-OA-T6B, and
@@ -30,15 +29,15 @@ SCLP-X-T3 remain parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_inheritance_t1_closed_t2_packet_authoring_next`;
+current mode=`cvf_web_inheritance_t2_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=author and dispatch only CVF-WEB-INHERITANCE-T2;
+next allowed move=execute only committed CVF-WEB-INHERITANCE-T2;
 parked checkpoint=T3-T5, projection T1-T4, MAO implementation, sibling copy,
 browser/provider/live, public-sync, push, production, MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`cvf_web_inheritance_t1_closed_t2_packet_authoring_next`
+`cvf_web_inheritance_t2_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -63,6 +62,10 @@ totals were repaired to match the terminal rows.
 
 ## Latest Work / Changes
 
+- Dispatched T2 at material commit `1c5d5e39b` after author-fast 5/5,
+  pre-dispatch 75/75, commit-steward, and pre-commit 83/83 PASS.
+- Worker scope is exactly one safe read model/test, one read-only page/test,
+  governance discoverability/test, and one worker return.
 - Closed T1 at material commit `b186df669` after focused 3/3, TypeScript,
   worker-fast/reviewer-fast 62/62, file-size, commit-steward, and pre-commit
   83/83 PASS.
@@ -184,9 +187,27 @@ runtime, source, test, registry, public, or provider change belongs to sync.
 
 ## Next Allowed Move
 
-Author and dispatch only CVF-WEB-INHERITANCE-T2 for bounded read-only SOT3
-operator evidence projection from current source. Keep T3-T5 and every
-external mutation lane parked.
+Execute only committed CVF-WEB-INHERITANCE-T2 under
+`WORKER_MUST_NOT_COMMIT`. Keep T3-T5 and every external mutation lane parked.
+
+## Core Guard Self-Protection Authorization - T2 Dispatch Sync
+
+Authorized guard-maintenance scope: refresh protected current-mode,
+next-move, generated state, front-door, and handoff surfaces after material
+dispatch commit `1c5d5e39b`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/cvfWebInheritanceT2Dispatch20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing instruction to continue automatically through
+reviewed roadmap tranches.
+
+Rollback boundary: revert this seven-path protected set together. No material,
+source, test, public, or provider mutation belongs to this sync.
 
 ## Core Guard Self-Protection Authorization - T1 Closure Sync
 
