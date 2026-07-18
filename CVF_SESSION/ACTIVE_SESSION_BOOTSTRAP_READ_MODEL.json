@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "sot3_cvf_proj_t4_dispatched_worker_next",
+  "currentMode": "sot3_cvf_proj_t4_r1_dispatched_worker_next",
   "activeHandoff": "AGENT_HANDOFF_V47_2026-07-18.md",
-  "nextAllowedMove": "Execute SOT3-CVF-PROJ-T4 dispatched at material commit 546926dd5 under WORKER_MUST_NOT_COMMIT. The worker must capture the clean committed dispatch/session-sync HEAD as executionBaseHead and change only README.md, the technical product catalog, the final cross-surface audit, and the worker return. Independent reviewer owns acceptance, roadmap closure, commit, and continuity sync. Provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute SOT3-CVF-PROJ-T4-R1 dispatched at material commit 4d469cf94 under WORKER_MUST_NOT_COMMIT. Capture the clean committed dispatch/session-sync HEAD as executionBaseHead and change only README.md, the technical product catalog, the final cross-surface audit, and the fresh R1 worker return. After independent roadmap closure, open the recorded CVF projection automation lane for a baseline landmark plus dry-run mapping across provenance, public-sync, and cvf-web; no automatic push. Provider/live, public-sync mutation, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

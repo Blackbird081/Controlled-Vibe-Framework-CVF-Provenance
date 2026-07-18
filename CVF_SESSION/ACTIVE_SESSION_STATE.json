@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_cvf_proj_t4_dispatched_worker_next",
-  "previousMode": "sot3_cvf_proj_t3_closed_t4_packet_authoring_next",
+  "currentMode": "sot3_cvf_proj_t4_r1_dispatched_worker_next",
+  "previousMode": "sot3_cvf_proj_t4_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13454,5 +13454,14 @@
     "nextAllowedMove": "Execute the no-commit T4 worker packet and capture the clean committed dispatch/session-sync HEAD as executionBaseHead.",
     "claimBoundary": "Private product/readme claim alignment and cross-surface audit only; reviewer owns final roadmap closure."
   },
-  "nextAllowedMove": "Execute SOT3-CVF-PROJ-T4 dispatched at material commit 546926dd5 under WORKER_MUST_NOT_COMMIT. The worker must capture the clean committed dispatch/session-sync HEAD as executionBaseHead and change only README.md, the technical product catalog, the final cross-surface audit, and the worker return. Independent reviewer owns acceptance, roadmap closure, commit, and continuity sync. Provider/live, public-sync, push, production, external mutation, and CVF Web T4 implementation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3CvfProjT4R1DispatchAndProjectionAutomationQueue20260718": {
+    "status": "T4_R1_DISPATCH_READY_AUTOMATION_LANE_QUEUED",
+    "materialCommit": "4d469cf94",
+    "blockedReturnReview": "docs/reviews/CVF_SOT3_CVF_PROJ_T4_BLOCKED_RETURN_REVIEW_AND_R1_REDISPATCH_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_CVF_PROJ_T4_PRODUCT_CLAIM_ALIGNMENT_AND_ROADMAP_CLOSURE_2026-07-18.md",
+    "futureAutomationObjective": "Record the 2026-07-18 provenance/public GitHub/cvf-web projection closures as a landmark and build a fail-closed dry-run mapper that reports required projection updates before any separately authorized apply or push.",
+    "verification": "blocked return accepted; continuity repair 426d490cc; worker-fast PASS; reviewer-fast 62/62 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "claimBoundary": "Automation is queued after T4 roadmap closure; this state does not authorize public-sync mutation, push, or unattended semantic edits."
+  },
+  "nextAllowedMove": "Execute SOT3-CVF-PROJ-T4-R1 dispatched at material commit 4d469cf94 under WORKER_MUST_NOT_COMMIT. Capture the clean committed dispatch/session-sync HEAD as executionBaseHead and change only README.md, the technical product catalog, the final cross-surface audit, and the fresh R1 worker return. After independent roadmap closure, open the recorded CVF projection automation lane for a baseline landmark plus dry-run mapping across provenance, public-sync, and cvf-web; no automatic push. Provider/live, public-sync mutation, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

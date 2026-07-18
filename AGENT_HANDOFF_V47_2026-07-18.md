@@ -30,16 +30,16 @@ work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_cvf_proj_t4_dispatched_worker_next`;
+current mode=`sot3_cvf_proj_t4_r1_dispatched_worker_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=execute the no-commit SOT3-CVF-PROJ-T4 packet and capture the clean committed dispatch/session-sync HEAD as executionBaseHead;
+next allowed move=execute the no-commit SOT3-CVF-PROJ-T4-R1 packet, close the roadmap independently, then open the queued projection-automation lane;
 parked checkpoint=CVF Web T4 implementation,
 provider/live, public-sync, push, production, external mutation,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`sot3_cvf_proj_t4_dispatched_worker_next`
+`sot3_cvf_proj_t4_r1_dispatched_worker_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -218,6 +218,35 @@ the active-session checker may accept this parent SHA for the handoff-only
 child commit.
 
 This marker changes no mode, next move, material decision, or authority.
+
+## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T4-R1 Dispatch Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after the
+blocked-return review and R1 material dispatch commit `4d469cf94`.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3CvfProjT4R1DispatchAndProjectionAutomationQueue20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing automatic roadmap continuation plus the
+2026-07-18 request to retain a projection landmark and automate future maps.
+
+Rollback boundary: revert this seven-path session sync together; no product,
+test, provider/live, public-sync mutation, push, production, or external
+mutation belongs to it.
+
+## GC-020 Marker - SOT3-CVF-PROJ-T4-R1 Dispatch Handoff-Sync-Only Commit
+
+This handoff-only child records parent material dispatch commit `4d469cf94`.
+The current child SHA cannot be known before commit creation, so the
+active-session checker may accept the parent SHA for this handoff-only child
+commit.
+
+This marker changes continuity and queues a post-closure automation lane; it
+does not authorize public-sync mutation, push, or unattended semantic apply.
 
 ## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T4 Dispatch Sync
 
