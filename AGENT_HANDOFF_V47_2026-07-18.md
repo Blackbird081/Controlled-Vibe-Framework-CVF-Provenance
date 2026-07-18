@@ -30,16 +30,16 @@ work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`sot3_cvf_proj_t4_r1_dispatched_worker_next`;
+current mode=`projection_automation_roadmap_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V47_2026-07-18.md`;
-next allowed move=execute the no-commit SOT3-CVF-PROJ-T4-R1 packet, close the roadmap independently, then open the queued projection-automation lane;
+next allowed move=author and dispatch the projection landmark and dry-run automation roadmap packet;
 parked checkpoint=CVF Web T4 implementation,
 provider/live, public-sync, push, production, external mutation,
 MAO-OA-T6B, SCLP-X-T3.
 
 ## Current Mode
 
-`sot3_cvf_proj_t4_r1_dispatched_worker_next`
+`projection_automation_roadmap_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -247,6 +247,30 @@ commit.
 
 This marker changes continuity and queues a post-closure automation lane; it
 does not authorize public-sync mutation, push, or unattended semantic apply.
+
+## Core Guard Self-Protection Authorization - SOT3 CVF Projection Roadmap Closure Sync
+
+Authorized guard-maintenance scope: refresh protected continuity after roadmap
+closure commit `9f7c92663` and release projection-automation packet authoring.
+
+Protected paths: `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/sot3CvfProjectionRoadmapClosureAndAutomationRelease20260718.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V47_2026-07-18.md`.
+
+Operator authorization: standing automatic continuation plus the explicit
+projection-landmark and automation request.
+
+Rollback boundary: revert this seven-path sync together; no tool, public-sync
+mutation, push, provider/live, production, or external mutation belongs to it.
+
+## GC-020 Marker - SOT3 CVF Projection Roadmap Closure Handoff-Sync-Only Commit
+
+This handoff-only child records parent material closure commit `9f7c92663`.
+The current child SHA cannot be known before commit creation, so the checker
+may accept the parent SHA for this handoff-only child commit.
 
 ## Core Guard Self-Protection Authorization - SOT3-CVF-PROJ-T4 Dispatch Sync
 

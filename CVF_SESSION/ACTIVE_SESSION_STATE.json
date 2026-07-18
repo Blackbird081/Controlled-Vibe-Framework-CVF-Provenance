@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "sot3_cvf_proj_t4_r1_dispatched_worker_next",
-  "previousMode": "sot3_cvf_proj_t4_dispatched_worker_next",
+  "currentMode": "projection_automation_roadmap_packet_authoring_next",
+  "previousMode": "sot3_cvf_proj_t4_r1_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13463,5 +13463,14 @@
     "verification": "blocked return accepted; continuity repair 426d490cc; worker-fast PASS; reviewer-fast 62/62 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
     "claimBoundary": "Automation is queued after T4 roadmap closure; this state does not authorize public-sync mutation, push, or unattended semantic edits."
   },
-  "nextAllowedMove": "Execute SOT3-CVF-PROJ-T4-R1 dispatched at material commit 4d469cf94 under WORKER_MUST_NOT_COMMIT. Capture the clean committed dispatch/session-sync HEAD as executionBaseHead and change only README.md, the technical product catalog, the final cross-surface audit, and the fresh R1 worker return. After independent roadmap closure, open the recorded CVF projection automation lane for a baseline landmark plus dry-run mapping across provenance, public-sync, and cvf-web; no automatic push. Provider/live, public-sync mutation, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "sot3CvfProjectionRoadmapClosureAndAutomationRelease20260718": {
+    "status": "CLOSED_PASS_BOUNDED_AUTOMATION_PACKET_AUTHORING_RELEASED",
+    "materialCommit": "9f7c92663",
+    "roadmap": "docs/roadmaps/CVF_SOT3_CVF_AUTHORITY_SURFACE_AND_MASTER_ARCHITECTURE_PROJECTION_ROADMAP_2026-07-18.md",
+    "completionReview": "docs/reviews/CVF_SOT3_CVF_PROJ_T4_COMPLETION_REVIEW_2026-07-18.md",
+    "reconciliation": "15/15 seed surfaces terminal; AC-01 through AC-08 PASS; one reviewer table-shape repair; public export deferred",
+    "nextAllowedMove": "Author and dispatch the projection landmark and dry-run automation roadmap packet.",
+    "claimBoundary": "Private projection closure only; no GitHub export, push, provider/live, production, or unattended semantic mapping."
+  },
+  "nextAllowedMove": "Author and dispatch the queued CVF projection landmark and automation roadmap packet. The first tranche must freeze the 2026-07-18 provenance/public-sync/cvf-web mapping baseline and source-verify the mapper seams; implementation must default to read-only dry-run, fail closed on dirty or wrong-remote roots, emit a receipt, and never auto-push or perform unattended semantic edits. Provider/live, public-sync mutation, push, production, and external mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
