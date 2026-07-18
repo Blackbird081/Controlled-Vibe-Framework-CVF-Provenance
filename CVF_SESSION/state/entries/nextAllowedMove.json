@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1934,
+  "stateOrder": 1936,
   "stateKey": "nextAllowedMove",
-  "value": "Execute only the committed CVF-WEB-INHERITANCE-T2 work order at material commit 1c5d5e39b under WORKER_MUST_NOT_COMMIT. Modify exactly its seven allowed paths, preserve execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3-T5 and all external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Author and dispatch only CVF-WEB-INHERITANCE-T3 for a source-verified, read-only MAO operator run, evidence, milestone, and liveness projection from existing MAO owners. T4-T5, SOT3-CVF-PROJ-T1-T4, MAO execution or worker launch, sibling copying, provider/live work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave."
 }

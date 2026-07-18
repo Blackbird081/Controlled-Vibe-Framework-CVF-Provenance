@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t2_dispatched_worker_next",
-  "previousMode": "cvf_web_inheritance_t1_closed_t2_packet_authoring_next",
+  "currentMode": "cvf_web_inheritance_t2_closed_t3_packet_authoring_next",
+  "previousMode": "cvf_web_inheritance_t2_dispatched_worker_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13212,5 +13212,17 @@
     "heldNextTranche": "T3-T5 and all external mutation lanes remain parked.",
     "claimBoundary": "Safe read model, read-only SOT3 evidence page, discoverability, focused tests, and worker return only."
   },
-  "nextAllowedMove": "Execute only the committed CVF-WEB-INHERITANCE-T2 work order at material commit 1c5d5e39b under WORKER_MUST_NOT_COMMIT. Modify exactly its seven allowed paths, preserve execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3-T5 and all external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebInheritanceT2Closure20260718": {
+    "status": "REVIEWER_ACCEPTED_WITH_REPAIRS",
+    "materialCommit": "609edffbe",
+    "executionBaseHead": "1a350a29f",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "completionReview": "docs/reviews/CVF_WEB_INHERITANCE_T2_COMPLETION_REVIEW_2026-07-18.md",
+    "verification": "focused 13/13 PASS; TypeScript PASS; production build PASS; worker-fast and reviewer-fast 62/62 PASS; file-size PASS; pre-commit 83/83 PASS",
+    "reviewerRepairs": "diagnostic projection, localized label, design-token conformance, and worker-return corpus verdict reason",
+    "nextAllowedMove": "Author and dispatch only the fresh source-verified T3 MAO operator readout packet.",
+    "heldNextTranche": "T4-T5 and all external mutation or execution lanes remain parked.",
+    "claimBoundary": "Read-only SOT3 evidence projection only; no evidence mutation, action, provider/live, public, push, or production claim."
+  },
+  "nextAllowedMove": "Author and dispatch only CVF-WEB-INHERITANCE-T3 for a source-verified, read-only MAO operator run, evidence, milestone, and liveness projection from existing MAO owners. T4-T5, SOT3-CVF-PROJ-T1-T4, MAO execution or worker launch, sibling copying, provider/live work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave."
 }
