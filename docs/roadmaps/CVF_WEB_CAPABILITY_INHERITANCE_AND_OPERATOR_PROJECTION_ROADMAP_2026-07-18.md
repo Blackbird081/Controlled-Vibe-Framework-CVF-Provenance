@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CVF_WEB_INHERITANCE_T4_PASS_T5_PACKET_AUTHORING_NEXT
+Status: CVF_WEB_INHERITANCE_T5_DISPATCH_READY
 
 docType: roadmap
 
@@ -19,7 +19,7 @@ authorized a clean audit and continuation packet after SOT3-CVF-PROJ-T0.
 
 T0 through T4 are independently closed. T4 selected `DEFER_WITH_REASON` for
 the sibling Controlled Quotation capability, so no T4 implementation is
-released. T5 packet authoring is next.
+released. The final T5 information and provider-free QA tranche is dispatched.
 
 ## Purpose
 
@@ -144,7 +144,8 @@ operator-supplied key; T0 makes no such claim.
   T3B is accepted after one localization repair. T4 is independently accepted
   as `DEFER_WITH_REASON` after reviewer correction of one Source Verification
   row and direct confirmation of the design-reference absence claim. T4
-  implementation remains deferred and T5 packet authoring is next.
+  implementation remains deferred and T5 is dispatched under an exact
+  nine-path information/test/evidence boundary.
 - T3A is required because the existing MAO operational projection is a pure,
   caller-supplied in-memory owner with no CLI, MCP, UI, or runtime caller;
   the durable run store replays event-ledger state but does not persist or
@@ -219,7 +220,7 @@ or MAO implementation and do not infer that every capability belongs in Web.
 T0 audit, T1 registry correction, T2 SOT3 evidence projection, and the full
 T3A/T3P1/T3P2/T3B MAO chain and the T4 sibling-adoption decision are accepted.
 T4 implementation remains deferred under its checkable reopen condition; T5
-Web information, QA, and roadmap-closure packet authoring is next.
+Web information, QA, and roadmap-closure execution is now dispatched.
 
 ## Agent Operation Trace Block
 
@@ -252,8 +253,8 @@ separate public-sync authorization and artifact set.
 
 ## Claim Boundary
 
-This roadmap records accepted T0 through T4 work and releases T5 packet
-authoring only. It does not authorize sibling-source copying, T4
+This roadmap records accepted T0 through T4 work and dispatches the exact T5
+information and provider-free QA work order. It does not authorize sibling-source copying, T4
 implementation, evidence or
 heartbeat projection, MAO worker execution, browser or live proof,
 public-sync, push, production readiness, or universal inheritance claims.
@@ -262,10 +263,10 @@ public-sync, push, production readiness, or universal inheritance claims.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T4_PASS_T5_PACKET_AUTHORING_NEXT` | PASS |
-| Baseline status | T4 GC-018 baseline | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
-| Work order status | T4 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | reviewer-accepted defer decision | PASS |
+| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T5_DISPATCH_READY` | PASS |
+| Baseline status | T5 GC-018 baseline | `Status: DISPATCH_READY` | PASS |
+| Work order status | T5 work order | `Status: DISPATCH_READY` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T4_COMPLETION_REVIEW_2026-07-18.md` | accepted dependency release for T5 | PASS |
 | Registry JSON | corpus registry generated aggregate | existing cvf-web `src/` scope coverage and aggregate drift check | PASS |
 | Registry Markdown | corpus registry read model | existing cvf-web `src/` scope coverage | PASS |
 | External evidence digest | N/A with reason: repository-local evidence only | none | N/A with reason |
