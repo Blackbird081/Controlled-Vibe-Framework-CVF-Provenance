@@ -639,3 +639,12 @@ Operator authorization: standing roadmap-continuation instruction.
 
 Rollback boundary: revert this seven-path sync together; no material source,
 test, public, provider, or production mutation belongs to it.
+
+## GC-020 Marker - T5 Dispatch Handoff-Sync-Only Commit
+
+This handoff-only child records parent session-sync commit `8c14308a5` after
+the T5 material dispatch. The current child SHA cannot be known before commit
+creation, so the active-session checker may accept the parent SHA for this
+handoff-only child commit.
+
+This marker changes no mode, next move, material decision, or authority.
