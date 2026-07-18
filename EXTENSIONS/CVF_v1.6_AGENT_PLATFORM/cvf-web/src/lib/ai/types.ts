@@ -29,6 +29,7 @@ export interface ExecutionRequest {
     mode?: 'simple' | 'governance' | 'full';
     cvfPhase?: string;
     cvfRiskLevel?: string;
+    qbsFamily?: string;
     skillPreflightPassed?: boolean;
     skillPreflightDeclaration?: string;
     skillPreflightRecordRef?: string;
