@@ -87,8 +87,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_inheritance_t2_closed_t3_packet_authoring_next",
-  "previousMode": "cvf_web_inheritance_t2_dispatched_worker_next",
+  "currentMode": "cvf_web_inheritance_t3a_dispatched_worker_next",
+  "previousMode": "cvf_web_inheritance_t2_closed_t3_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13224,5 +13224,19 @@
     "heldNextTranche": "T4-T5 and all external mutation or execution lanes remain parked.",
     "claimBoundary": "Read-only SOT3 evidence projection only; no evidence mutation, action, provider/live, public, push, or production claim."
   },
-  "nextAllowedMove": "Author and dispatch only CVF-WEB-INHERITANCE-T3 for a source-verified, read-only MAO operator run, evidence, milestone, and liveness projection from existing MAO owners. T4-T5, SOT3-CVF-PROJ-T1-T4, MAO execution or worker launch, sibling copying, provider/live work, public-sync, push, production, MAO-OA-T6B, and SCLP-X-T3 remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebInheritanceT3ADispatch20260718": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "232a3ffba",
+    "dispatchBaseHead": "296029998",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T3A_MAO_WEB_ADOPTION_AND_SOURCE_SEAM_DECISION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T3A_MAO_WEB_ADOPTION_AND_SOURCE_SEAM_DECISION_2026-07-18.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedPaths": 2,
+    "verification": "dispatch-author fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact T3A documentation-only source-seam decision and return for independent review.",
+    "heldNextTranche": "T3B and T4-T5 remain parked; no MAO execution, UI, provider/live, public, push, or production mutation.",
+    "claimBoundary": "Direct source audit and terminal seam decision only."
+  },
+  "nextAllowedMove": "Execute only the committed CVF-WEB-INHERITANCE-T3A documentation-only source-seam decision at material commit 232a3ffba under WORKER_MUST_NOT_COMMIT. Modify exactly its two allowed review outputs, preserve execution HEAD, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3B, T4-T5, MAO execution or worker launch, and all external mutation lanes remain parked. LHW24 remains latest closed numbered LHW wave."
 }
