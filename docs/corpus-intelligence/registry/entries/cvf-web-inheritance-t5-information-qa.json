@@ -4,9 +4,10 @@
   "corpusType": "PROJECT_SOURCE",
   "displayName": "CVF Web inheritance T5 provider-free information QA proof",
   "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/README.md",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/cvf-web-inheritance-t5-information.spec.ts"
   ],
-  "fileCount": 1,
+  "fileCount": 2,
   "status": "SCANNED",
   "scanWave": "CVF-WEB-INHERITANCE-T5",
   "scanDate": "2026-07-18",
