@@ -152,7 +152,8 @@ function ConvertTo-RelativePath {
 }
 
 function Test-DenyMatch {
-    param([string]$RelPath, [string[]]$DenyPatterns)
+    param([string]$RelPath, [string[]]$DenyPatterns, [string[]]$DenyExceptions = @())
+    if ($RelPath -in $DenyExceptions) { return $false }
     foreach ($pattern in $DenyPatterns) {
         if ($RelPath -match $pattern) { return $true }
     }
@@ -201,7 +202,7 @@ function Get-CandidateRow {
     $targetRel = if ($TargetRelOverride) { $TargetRelOverride } else { $RelPath }
     $targetFull = Join-Path $TargetRoot ($targetRel -replace '/', '\')
 
-    if (Test-DenyMatch -RelPath $RelPath -DenyPatterns $Policy.denyPatterns) {
+    if (Test-DenyMatch -RelPath $RelPath -DenyPatterns $Policy.denyPatterns -DenyExceptions $Policy.denyExceptions) {
         return [pscustomobject]@{
             sourcePath           = $RelPath
             targetPath           = $targetRel
@@ -258,6 +259,7 @@ function Get-PolicyParityReport {
         allowedWorkspaceTemplateFiles = $Policy.allowedWorkspaceTemplateFiles
         allowedDocsPaths              = $Policy.allowedDocsPaths
         denyPatterns                  = $Policy.denyPatterns
+        denyExceptions                = $Policy.denyExceptions
     }
 
     $result = [ordered]@{}
@@ -293,6 +295,7 @@ function Get-PolicyParityReport {
         allowedWorkspaceTemplateFiles = 'ALLOWED_WORKSPACE_TEMPLATE_FILES'
         allowedDocsPaths              = 'ALLOWED_DOCS_PATHS'
         denyPatterns                  = 'DENY_PATTERNS'
+        denyExceptions                = 'DENY_EXCEPTIONS'
     }
 
     foreach ($key in $groups.Keys) {
@@ -491,7 +494,7 @@ try {
         $sourceFull = Join-Path $provenanceRootResolved ($rel -replace '/', '\')
         if (-not (Test-Path -LiteralPath $sourceFull -PathType Leaf)) { continue }
 
-        if (Test-DenyMatch -RelPath $rel -DenyPatterns $policy.denyPatterns) {
+        if (Test-DenyMatch -RelPath $rel -DenyPatterns $policy.denyPatterns -DenyExceptions $policy.denyExceptions) {
             $row = Get-CandidateRow -RelPath $rel -SourceFull $sourceFull -TargetRoot $publicSyncRootResolved -Policy $policy -MatchedRule $null
             $candidates.Add($row)
             $deniedCount++

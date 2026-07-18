@@ -113,6 +113,7 @@ function New-BasePolicyFixture {
             [pscustomobject]@{ source = 'MappedSource.txt'; destination = 'MappedDestination.txt' }
         )
         denyPatterns = @('DENY_ME', '\.env')
+        denyExceptions = @()
         candidateActionEnum = @('COPY_CANDIDATE_ABSENT_TARGET', 'FLAG_SEMANTIC_REVIEW_CHANGED', 'SKIP_UNCHANGED', 'SKIP_DENIED', 'SKIP_NOT_ALLOWLISTED')
         semanticReviewBoundary = [pscustomobject]@{ note = 'fixture'; autoApproveForbidden = $true }
         cvfWebObservation = [pscustomobject]@{
@@ -149,6 +150,7 @@ function Write-SyncScriptFixture {
         "`$ALLOWED_WORKSPACE_TEMPLATE_FILES = $(Format-PsArray $Policy.allowedWorkspaceTemplateFiles)"
         "`$ALLOWED_DOCS_PATHS = $(Format-PsArray $Policy.allowedDocsPaths)"
         "`$DENY_PATTERNS = $(Format-PsArray $Policy.denyPatterns)"
+        "`$DENY_EXCEPTIONS = $(Format-PsArray $Policy.denyExceptions)"
         "`$MAPPED_FILES = @(`r`n$($mappedBlocks -join ",`r`n")`r`n)"
     ) -join "`r`n`r`n"
     [System.IO.File]::WriteAllText((Join-Path $scriptsDir 'cvf-public-sync.ps1'), $content, [System.Text.Encoding]::UTF8)
@@ -197,6 +199,7 @@ try {
         allowedWorkspaceTemplateFiles = 'ALLOWED_WORKSPACE_TEMPLATE_FILES'
         allowedDocsPaths = 'ALLOWED_DOCS_PATHS'
         denyPatterns = 'DENY_PATTERNS'
+        denyExceptions = 'DENY_EXCEPTIONS'
     }
     foreach ($entry in $realGroupMap.GetEnumerator()) {
         $groupMatch = [regex]::Match($syncScriptText, "(?ms)\`$$($entry.Value)\s*=\s*@\((.*?)\r?\n\)")

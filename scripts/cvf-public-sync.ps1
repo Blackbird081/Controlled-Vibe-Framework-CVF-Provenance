@@ -160,16 +160,45 @@ $DENY_PATTERNS = @(
     '[/\\]playwright-report[/\\]',
     '[/\\]__pycache__[/\\]',
     '[/\\]\.data[/\\]',
+    '(^|[/\\])\.cvf[/\\](runtime|config)([/\\]|$)',
+    '\.jsonl$',
+    'RAW',
+    'HANDOFF',
     '\.tsbuildinfo$',
     '\.pyc$',
     '\.log$',
     '\.tmp$'
 )
 
+# Narrow public-safe exceptions for names that intentionally contain a
+# blocked token. Keep this list aligned with the public-surface manifest;
+# runtime state and receipt streams are never exceptions here.
+$DENY_EXCEPTIONS = @(
+    'workspace_templates\AGENT_HANDOFF_TEMPLATE.md',
+    'EXTENSIONS\CVF_GUARD_CONTRACT\src\runtime\agent-handoff.ts',
+    'EXTENSIONS\CVF_GUARD_CONTRACT\src\runtime\agent-handoff.test.ts',
+    'EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\src\lib\agent-handoff-validator.ts',
+    'EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\src\lib\agent-handoff-validator.test.ts',
+    'EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\src\app\api\execute\route.web-build-handoff.alibaba.live.test.ts',
+    'EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\src\lib\spec-export-portable-handoff.ts',
+    'EXTENSIONS\CVF_CONTROL_PLANE_FOUNDATION\src\agent.handoff.contract.ts',
+    'EXTENSIONS\CVF_CONTROL_PLANE_FOUNDATION\tests\agent.handoff.contract.test.ts',
+    'EXTENSIONS\CVF_v1.2.1_EXTERNAL_INTEGRATION\models\external-skill.raw.ts',
+    'EXTENSIONS\CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS\product_ux\claude_design_handoff.skill.md',
+    'governance\compat\check_agent_handoff_guard_compat.py',
+    'governance\compat\test_check_agent_handoff_guard_compat.py',
+    'governance\toolkit\05_OPERATION\CVF_AGENT_HANDOFF_GUARD.md',
+    'governance\toolkit\05_OPERATION\CVF_AGENT_HANDOFF_TRANSITION_GUARD.md',
+    'docs\reference\CVF_AGENT_HANDOFF_TEMPLATE.md',
+    'docs\reference\CVF_ADR_AGENT_HANDOFF_CONTRACT_RELATIONSHIP_2026-05-17.md'
+)
+
 # -----------------------------------------------------------------------
 
 function Test-Denied {
     param([string]$RelPath)
+    $normalized = $RelPath -replace '/', '\'
+    if ($normalized -in $DENY_EXCEPTIONS) { return $false }
     foreach ($pattern in $DENY_PATTERNS) {
         if ($RelPath -match $pattern) { return $true }
     }

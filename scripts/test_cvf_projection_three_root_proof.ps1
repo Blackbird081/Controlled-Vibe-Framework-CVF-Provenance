@@ -302,8 +302,8 @@ const MODULES = [
 
     $parityProps = @($receipt.policyParity.PSObject.Properties)
     $parityAllMatch = ($parityProps.Count -gt 0) -and (@($parityProps | Where-Object { $_.Value -ne 'MATCH' }).Count -eq 0)
-    Assert-True $parityAllMatch 'receipt_all_eight_parity_values_match' ($receipt.policyParity | ConvertTo-Json -Compress)
-    Assert-True ($parityProps.Count -eq 8) 'receipt_parity_has_eight_groups' "found $($parityProps.Count) groups"
+    Assert-True $parityAllMatch 'receipt_all_nine_parity_values_match' ($receipt.policyParity | ConvertTo-Json -Compress)
+    Assert-True ($parityProps.Count -eq 9) 'receipt_parity_has_nine_groups' "found $($parityProps.Count) groups"
 
     Assert-True (@($receipt.errors).Count -eq 0) 'receipt_zero_errors' ($receipt.errors | ConvertTo-Json -Compress)
 

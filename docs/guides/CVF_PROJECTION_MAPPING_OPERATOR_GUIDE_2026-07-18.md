@@ -131,7 +131,7 @@ See `docs/reference/CVF_PROJECTION_MAPPING_RECEIPT_SCHEMA_2026-07-18.md` for
 the full field-by-field contract. In short:
 
 - `errors: []` and a non-null `receiptId` mean the run succeeded.
-- `policyParity` should show `MATCH` for all eight groups; any `MISMATCH`
+- `policyParity` should show `MATCH` for all nine groups; any `MISMATCH`
   value means `scripts/cvf_projection_policy.json` has drifted from
   `scripts/cvf-public-sync.ps1` and the run would have failed closed with
   `POLICY_PARITY_FAILED` (a `MISMATCH` value only appears if you are reading
