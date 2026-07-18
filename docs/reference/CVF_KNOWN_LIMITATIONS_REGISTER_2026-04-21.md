@@ -1,6 +1,6 @@
 # CVF Known Limitations Register
 
-**Date:** 2026-04-21 (updated 2026-04-21 — L-003 + L-008 closed by E2E stabilization wave)  
+**Date:** 2026-04-21 (updated 2026-04-21 - L-003 + L-008 closed by E2E stabilization wave)
 **Scope:** CVF Release Candidate — post-provider-lane closure  
 **Classification:** Permanent boundary / Open gap  
 
