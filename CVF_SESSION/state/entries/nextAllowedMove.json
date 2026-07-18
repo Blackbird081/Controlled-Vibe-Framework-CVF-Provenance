@@ -1,5 +1,5 @@
 {
   "stateOrder": 1978,
   "stateKey": "nextAllowedMove",
-  "value": "Execute CVF-WEB-UX-T0 from the committed dispatch/session-sync HEAD using docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md. The delegated worker creates exactly docs/reviews/CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md and docs/reviews/CVF_WEB_UX_CLARITY_T0_WORKER_RETURN_2026-07-18.md, does not commit, and returns COMPLETE_PENDING_REVIEW. UI implementation, redesign roadmap release, public-sync, deployment, provider/live calls, and the continuous projection drift roadmap remain parked until independent review. LHW24 remains latest closed numbered LHW wave."
+  "value": "Finalize the reviewer-owned CVF-WEB-UX-T0 closure from material commit 9f9d7f6d7, restore the lost parked continuous-projection roadmap as a separate recovery batch, then author the source-verified CVF Web UX remediation roadmap and first GC-018/work order. UX implementation, public-sync, deployment, provider/live calls, and continuous-projection execution remain parked until their own governed release. LHW24 remains latest closed numbered LHW wave."
 }

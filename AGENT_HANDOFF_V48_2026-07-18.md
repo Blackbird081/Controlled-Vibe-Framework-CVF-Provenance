@@ -24,9 +24,10 @@ deployment reports success.
 ## Active Boundary
 
 The projection landmark and inheritance automation roadmap is closed bounded.
-The operator prioritized a source-verified CVF Web UX clarity audit after the
-live site showed mixed language, stale read models, and difficult information
-architecture. Only the no-commit CVF-WEB-UX-T0 audit is released.
+The operator-prioritized CVF Web UX clarity audit is reviewer-accepted bounded
+at material commit `9f9d7f6d7` after eight localhost screenshots and bounded
+reviewer correction. UX remediation roadmap authoring is released; product
+implementation is not.
 
 Automatic semantic edits, real-root apply, commit, push, deployment,
 provider/live calls, production action, and unattended mutation remain parked
@@ -35,19 +36,19 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_ux_clarity_t0_worker_execution_next`;
+current mode=`cvf_web_ux_remediation_roadmap_authoring_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=execute CVF-WEB-UX-T0 as a no-commit worker and return
-COMPLETE_PENDING_REVIEW;
-parked checkpoint=UI implementation, redesign roadmap release, public-sync,
-deployment, provider/live calls, and the continuous projection drift roadmap.
+next allowed move=finalize CVF-WEB-UX-T0 closure, restore the lost parked
+projection roadmap, then author the UX remediation roadmap and first packet;
+parked checkpoint=UX implementation, public-sync, deployment, provider/live
+calls, and continuous-projection execution.
 
 ## Current Mode
 
-`cvf_web_ux_clarity_t0_worker_execution_next`
+`cvf_web_ux_remediation_roadmap_authoring_next`
 
 Previous mode:
-`continuous_projection_drift_roadmap_authoring_next`
+`cvf_web_ux_clarity_t0_worker_execution_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -95,6 +96,17 @@ deployment success is not yet claimed.
   roadmap queue remains unchanged until the dispatch anchor correction and
   final session-sync commit are complete.
 
+### CVF Web UX clarity audit reviewer acceptance
+
+- Material audit commit: `9f9d7f6d7`.
+- Eight localhost screenshots cover seven required routes and both `/home`
+  states.
+- Reviewer repaired repeated overlay/action values, stale source locators,
+  hosted/local conflation, and the `/workspace` truth-packaging-presentation
+  classification before acceptance.
+- Accepted scope is documentation-only. It releases remediation planning, not
+  UI implementation, deployment, public-sync, or a readiness claim.
+
 ### Projection automation closure and public export
 
 The projection landmark and inheritance automation roadmap is
@@ -122,12 +134,12 @@ provider, or perform unattended apply.
 
 ## Next Allowed Move
 
-Execute the source-verified `CVF-WEB-UX-T0` live and source audit from the
-committed dispatch/session-sync HEAD. The delegated worker creates exactly the
-two authorized review outputs, does not commit, and returns
-`COMPLETE_PENDING_REVIEW`. Independent review follows before any redesign
-roadmap or implementation release. The continuous projection drift roadmap is
-parked behind this operator-prioritized audit.
+Finalize the reviewer-owned `CVF-WEB-UX-T0` closure from material commit
+`9f9d7f6d7`, restore the lost parked continuous-projection roadmap as a
+separate recovery batch, then author the source-verified CVF Web UX remediation
+roadmap and first GC-018/work order. UX implementation, public-sync,
+deployment, provider/live calls, and continuous-projection execution remain
+parked until their own governed release.
 
 ## Core Guard Self-Protection Authorization - V48 Rotation And Queue Sync
 
@@ -179,6 +191,29 @@ accept the parent SHA for this protected sync commit.
 Session-sync commit: `6dbde3102`.
 Exposure-classification follow-up commit: `0c3b0c9d5`.
 Handoff-head sync commit: `121a1a3e6`.
+
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T0 Closure Sync
+
+Authorized guard-maintenance scope: record the reviewer-accepted bounded UX
+audit at material commit `9f9d7f6d7`, advance continuity to remediation
+planning, regenerate canonical session read models, and retain all product,
+public, deploy, provider, and projection-execution boundaries.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxClarityT0Closure20260719.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF-WEB-UX-T0 Closure Session Sync
+
+This handoff records material parent commit `9f9d7f6d7`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
 
 Remote tracking branch: `origin/main`.
 

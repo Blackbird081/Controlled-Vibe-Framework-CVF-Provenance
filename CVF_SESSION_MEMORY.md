@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_ux_clarity_t0_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute the source-verified CVF-WEB-UX-T0 live and source audit as a no-commit worker, then return COMPLETE_PENDING_REVIEW; parked checkpoint=all UI implementation, redesign roadmap release, public-sync, deployment, provider/live calls, and the continuous projection drift roadmap.
+Startup acknowledged: current mode=`cvf_web_ux_remediation_roadmap_authoring_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=finalize the reviewer-owned CVF-WEB-UX-T0 closure, restore the lost parked projection roadmap, then author the UX remediation roadmap and first source-verified packet; parked checkpoint=UX implementation, public-sync, deployment, provider/live calls, and continuous-projection execution.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_ux_clarity_t0_worker_execution_next`
+Current mode marker: `cvf_web_ux_remediation_roadmap_authoring_next`
 
-Current mode: `cvf_web_ux_clarity_t0_worker_execution_next`
+Current mode: `cvf_web_ux_remediation_roadmap_authoring_next`
 
-`cvf_web_ux_clarity_t0_worker_execution_next`
+`cvf_web_ux_remediation_roadmap_authoring_next`
 
 Previous mode:
 
-`continuous_projection_drift_roadmap_authoring_next`
+`cvf_web_ux_clarity_t0_worker_execution_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF Web UX clarity T0 audit | `9f9d7f6d7` | REVIEWER_ACCEPTED_BOUNDED_PENDING_FINAL_SYNC; eight localhost screenshots accepted after reviewer correction of route facts, source paths, hosted/local separation, and workspace truth-packaging-presentation classification; remediation planning released, implementation/public/deploy/provider lanes parked. |
 | Netlify Truth Kernel clean-install resolution repair | `0cae3289f` provenance; `0d3fec3ca` public | EXPORTED_BUILD_REPAIR; narrow TypeScript path mapping closes file-link realpath resolution through absent sibling dependencies; fresh public worktree plus cvf-web-only `npm ci`, TypeScript, focused regression, and production build 121/121 PASS; external Netlify deploy result remains pending. |
 | Netlify Learning Plane runtime-boundary repair | `ee208c753` provenance; `620016275` public | EXPORTED_BUILD_REPAIR; bounded `web-runtime` subpath prevents cvf-web from bundling the graph-bearing root; TypeScript is a Learning Plane runtime dependency; Netlify-shaped build, TypeScript, focused/full Web tests, Learning Plane tests, public-surface, and receipt-link checks PASS; external Netlify deploy result remains pending. |
 | Projection landmark and inheritance automation roadmap | `5df0c6f77` | CLOSED_PASS_BOUNDED; read-only mapper and disposable three-root proof accepted; continuous drift detection and review-packet automation roadmap authoring is queued next. |
@@ -306,15 +307,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_ux_clarity_t0_worker_execution_next`
+Mode: `cvf_web_ux_remediation_roadmap_authoring_next`
 
-Execute `CVF-WEB-UX-T0` from the committed dispatch/session-sync HEAD using
-`docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md`.
-The delegated worker creates exactly the two authorized review outputs, does
-not commit, and returns `COMPLETE_PENDING_REVIEW`. UI implementation, redesign
-roadmap release, public-sync, deployment, provider/live calls, and the
-continuous projection drift roadmap remain parked until independent review.
-Latest closed numbered LHW wave remains `LHW24`.
+Finalize the reviewer-owned `CVF-WEB-UX-T0` closure from material commit
+`9f9d7f6d7`, restore the lost parked continuous-projection roadmap as a
+separate recovery batch, then author the source-verified CVF Web UX remediation
+roadmap and first GC-018/work order. UX implementation, public-sync,
+deployment, provider/live calls, and continuous-projection execution remain
+parked until their own governed release. Latest closed numbered LHW wave
+remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
