@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CVF_WEB_INHERITANCE_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT
+Status: CVF_WEB_INHERITANCE_T1_DISPATCH_READY
 
 docType: roadmap
 
@@ -129,8 +129,9 @@ operator-supplied key; T0 makes no such claim.
 
 - SOT3-CVF-PROJ-T0 closed at material commit `9d8305942`.
 - CVF-WEB-INHERITANCE-T0 may now run as a no-commit audit.
-- T0 is independently accepted with reviewer repairs. T1 packet authoring is
-  released; T2-T5 remain parked until accepted T1 closure.
+- T0 is independently accepted with reviewer repairs. T1 is dispatch-ready at
+  the source-verified registry/test boundary; T2-T5 remain parked until
+  accepted T1 closure.
 - SOT3-CVF-PROJ-T1 through T4 remain parked while this cross-product audit
   determines overlap and ordering.
 - MAO-OA-T6B and SCLP-X-T3 remain parked under their existing conditions.
@@ -240,7 +241,7 @@ production readiness, or universal inheritance claims.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T0_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
+| Roadmap state | this roadmap | `Status: CVF_WEB_INHERITANCE_T1_DISPATCH_READY` | PASS |
 | Baseline status | T0 GC-018 baseline | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
 | Work order status | T0 work order | `Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_WEB_INHERITANCE_T0_COMPLETION_REVIEW_2026-07-18.md` | reviewer acceptance with repairs | PASS |
