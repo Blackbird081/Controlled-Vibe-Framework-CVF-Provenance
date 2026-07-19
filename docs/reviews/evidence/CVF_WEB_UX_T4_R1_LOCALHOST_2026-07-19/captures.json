@@ -1,0 +1,421 @@
+[
+  {
+    "Text Encoding Exception": "Vietnamese rendered UI text is retained as browser evidence",
+    "captureId": "desktop-dark-home",
+    "url": "http://localhost:3000/home",
+    "visibleAnchorText": "Kết quả cần tạo",
+    "visibleAnchorSelector": "h1",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/desktop-dark-home.png",
+    "sha256": "63fec5ed16f323a5bd112c7c1fdaf1462db9c18d589eb89369ccbbaecc0119f9",
+    "interactionTrace": {
+      "beforeState": "preferences closed",
+      "action": "click preferences button, check themes, close",
+      "afterState": "preferences closed"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab",
+        "Tab",
+        "Tab",
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "activeElements": [
+        "NEXTJS-PORTAL ",
+        "BUTTON px-3 py-1.5 text-sm font-bold rounded-lg transition-all bg-gray-100 dark:bg-gray-700  text-gray-700 dark:text-gray-200 hover:bg-blue-100 dark:hover:bg-blue-900  hover:text-blue-600 dark:hover:text-blue-400 border border-gray-200 dark:border-gray-600",
+        "BUTTON cvf-control inline-flex items-center gap-2 border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-white/75 dark:hover:bg-white/[0.08] rounded-xl",
+        "BUTTON w-full flex items-center gap-1 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-white/25 hover:text-white/50 transition-colors select-none",
+        "BUTTON w-full flex items-center gap-1 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-white/25 hover:text-white/50 transition-colors select-none",
+        "BUTTON w-full flex items-center gap-1 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-white/25 hover:text-white/50 transition-colors select-none"
+      ]
+    },
+    "dimensions": {
+      "width": 1440,
+      "height": 900
+    },
+    "metrics": {
+      "clientWidth": 1440,
+      "scrollWidth": 1440
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "desktop-dark-workspace",
+    "url": "http://localhost:3000/workspace",
+    "visibleAnchorText": "Source Authority",
+    "visibleAnchorSelector": "h2",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/desktop-dark-workspace.png",
+    "sha256": "fc0e1e66d9f94b6c81e16a648a01bed438f766b1e067a1354e9702a47e1f5067",
+    "interactionTrace": {
+      "beforeState": "N/A",
+      "action": "N/A",
+      "afterState": "N/A"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab",
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON px-3 py-1.5 text-sm font-bold rounded-lg transition-all bg-gray-100 dark:bg-gray-700  text-gray-700 dark:text-gray-200 hover:bg-blue-100 dark:hover:bg-blue-900  hover:text-blue-600 dark:hover:text-blue-400 border border-gray-200 dark:border-gray-600",
+        "BUTTON cvf-control inline-flex items-center gap-2 border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-white/75 dark:hover:bg-white/[0.08] rounded-xl"
+      ]
+    },
+    "dimensions": {
+      "width": 1440,
+      "height": 900
+    },
+    "metrics": {
+      "clientWidth": 1440,
+      "scrollWidth": 1440
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "desktop-dark-workspace-advanced",
+    "url": "http://localhost:3000/workspace",
+    "visibleAnchorText": "Chi tiết kỹ thuật nâng cao (mode, handoff, dispatch, lanes, nguồn)",
+    "visibleAnchorSelector": "summary",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/desktop-dark-workspace-advanced.png",
+    "sha256": "69429a51e9c6c3e94b25ba9df5367a35b2ffff6c5276c0541eb9f5cb79798830",
+    "interactionTrace": {
+      "beforeState": "details closed",
+      "action": "click summary",
+      "afterState": "details open"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab",
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON px-3 py-1.5 text-sm font-bold rounded-lg transition-all bg-gray-100 dark:bg-gray-700  text-gray-700 dark:text-gray-200 hover:bg-blue-100 dark:hover:bg-blue-900  hover:text-blue-600 dark:hover:text-blue-400 border border-gray-200 dark:border-gray-600",
+        "BUTTON cvf-control inline-flex items-center gap-2 border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-white/75 dark:hover:bg-white/[0.08] rounded-xl"
+      ]
+    },
+    "dimensions": {
+      "width": 1440,
+      "height": 900
+    },
+    "metrics": {
+      "clientWidth": 1440,
+      "scrollWidth": 1440
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "tablet-light-home",
+    "url": "http://localhost:3000/home",
+    "visibleAnchorText": "Kết quả cần tạo",
+    "visibleAnchorSelector": "h1",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/tablet-light-home.png",
+    "sha256": "af42f119e70fa872cc4f2e46bfdce11929808ff4e513051c0b56b0c706904fb6",
+    "interactionTrace": {
+      "beforeState": "N/A",
+      "action": "N/A",
+      "afterState": "N/A"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON px-3 py-1.5 text-sm font-bold rounded-lg transition-all bg-gray-100 dark:bg-gray-700  text-gray-700 dark:text-gray-200 hover:bg-blue-100 dark:hover:bg-blue-900  hover:text-blue-600 dark:hover:text-blue-400 border border-gray-200 dark:border-gray-600"
+      ]
+    },
+    "dimensions": {
+      "width": 820,
+      "height": 1180
+    },
+    "metrics": {
+      "clientWidth": 820,
+      "scrollWidth": 820
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "tablet-light-sidebar",
+    "url": "http://localhost:3000/home",
+    "visibleAnchorText": "Trang chủTrang chủLanding PageCông việc AICVF WorkspaceAI AgentMulti-AgentToolsMô phỏngKiến thức & Rà soátKnowledgeNạp kiến thứcGói rà soátChuyển giao công việcKỹ năngSkill SearchHướng dẫnTài liệuVận hành nâng caoLịch sửAnalyticsTheo dõi runtimeMarketplaceQuản trịEnterpriseAI SafetyAccountContextCài đặtSử dụng AI",
+    "visibleAnchorSelector": "nav",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/tablet-light-sidebar.png",
+    "sha256": "8d2e255771f05914676734c5bba5c3b8d9a3ca62f9286ec00b36afdf05cfdd85",
+    "interactionTrace": {
+      "beforeState": "sidebar possibly closed",
+      "action": "click open sidebar",
+      "afterState": "sidebar open"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab",
+        "Tab",
+        "Tab",
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON px-3 py-1.5 text-sm font-bold rounded-lg transition-all bg-gray-100 dark:bg-gray-700  text-gray-700 dark:text-gray-200 hover:bg-blue-100 dark:hover:bg-blue-900  hover:text-blue-600 dark:hover:text-blue-400 border border-gray-200 dark:border-gray-600",
+        "BUTTON cvf-control inline-flex items-center gap-2 border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-white/75 dark:hover:bg-white/[0.08] rounded-xl",
+        "BUTTON w-full flex items-center gap-1 px-2 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-white/25 hover:text-white/50 transition-colors select-none",
+        "BUTTON w-full flex items-center gap-2.5 px-3 py-1.5 rounded-md text-[13px] font-normal transition-colors duration-150 select-none group bg-indigo-500/15 text-indigo-300 font-medium dark:bg-indigo-500/15 dark:text-indigo-300 light:bg-indigo-50 light:text-indigo-700"
+      ]
+    },
+    "dimensions": {
+      "width": 820,
+      "height": 1180
+    },
+    "metrics": {
+      "clientWidth": 820,
+      "scrollWidth": 820
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "tablet-light-journey",
+    "url": "http://localhost:3000/governance/knowledge",
+    "visibleAnchorText": "🛡️ Kiểm duyệt",
+    "visibleAnchorSelector": "h1",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/tablet-light-journey.png",
+    "sha256": "6f9af5aee3b19219b358df2ce9f623d1ecc9827c5871e70aaccebfd84f06fc50",
+    "interactionTrace": {
+      "beforeState": "N/A",
+      "action": "N/A",
+      "afterState": "N/A"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON px-3 py-1.5 text-sm font-bold rounded-lg transition-all bg-gray-100 dark:bg-gray-700  text-gray-700 dark:text-gray-200 hover:bg-blue-100 dark:hover:bg-blue-900  hover:text-blue-600 dark:hover:text-blue-400 border border-gray-200 dark:border-gray-600"
+      ]
+    },
+    "dimensions": {
+      "width": 820,
+      "height": 1180
+    },
+    "metrics": {
+      "clientWidth": 820,
+      "scrollWidth": 820
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "mobile-accent-home",
+    "url": "http://localhost:3000/home",
+    "visibleAnchorText": "Kết quả cần tạo",
+    "visibleAnchorSelector": "h1",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/mobile-accent-home.png",
+    "sha256": "bf32e0af2e1671543192ebd00993b6d8c9bc7fb4b8998190758f2c51676aef7b",
+    "interactionTrace": {
+      "beforeState": "N/A",
+      "action": "N/A",
+      "afterState": "N/A"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+      ]
+    },
+    "dimensions": {
+      "width": 390,
+      "height": 844
+    },
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "mobile-accent-sidebar",
+    "url": "http://localhost:3000/home",
+    "visibleAnchorText": "Trang chủTrang chủLanding PageCông việc AICVF WorkspaceAI AgentMulti-AgentToolsMô phỏngKiến thức & Rà soátKnowledgeNạp kiến thứcGói rà soátChuyển giao công việcKỹ năngSkill SearchHướng dẫnTài liệuVận hành nâng caoLịch sửAnalyticsTheo dõi runtimeMarketplaceQuản trịEnterpriseAI SafetyAccountContextCài đặtSử dụng AI",
+    "visibleAnchorSelector": "nav",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/mobile-accent-sidebar.png",
+    "sha256": "62632e26e91a799a042a5537c67a2a781c177b5d84ef267eb23d373cbe00e42e",
+    "interactionTrace": {
+      "beforeState": "sidebar closed",
+      "action": "click open sidebar",
+      "afterState": "sidebar open"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab",
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700",
+        "A flex items-center gap-2"
+      ]
+    },
+    "dimensions": {
+      "width": 390,
+      "height": 844
+    },
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "mobile-accent-help",
+    "url": "http://localhost:3000/help",
+    "visibleAnchorText": "Trung tâm trợ giúp",
+    "visibleAnchorSelector": "h1",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/mobile-accent-help.png",
+    "sha256": "8f6d1fc3ba5a7468ea3084e50c161ced1fedc5eac2e3c9e8586208f979e63a3b",
+    "interactionTrace": {
+      "beforeState": "N/A",
+      "action": "N/A",
+      "afterState": "N/A"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+      ]
+    },
+    "dimensions": {
+      "width": 390,
+      "height": 844
+    },
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "mobile-accent-intake",
+    "url": "http://localhost:3000/knowledge/intake",
+    "visibleAnchorText": "Đưa kiến thức mới vào hệ thống",
+    "visibleAnchorSelector": "h1",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/mobile-accent-intake.png",
+    "sha256": "dfe24106cb2068d9c6fd006645b9b127e5bb4fbbc7c385da937c72d55347d56d",
+    "interactionTrace": {
+      "beforeState": "N/A",
+      "action": "N/A",
+      "afterState": "N/A"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+      ]
+    },
+    "dimensions": {
+      "width": 390,
+      "height": 844
+    },
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "mobile-accent-artifacts",
+    "url": "http://localhost:3000/artifacts",
+    "visibleAnchorText": "Biến phần đã duyệt thành gói HTML để rà soát",
+    "visibleAnchorSelector": "h1",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/mobile-accent-artifacts.png",
+    "sha256": "ae4b8448d599f6ef200ab2a469f4abda2c1e840f6b5d1effb8ac691c5825cb86",
+    "interactionTrace": {
+      "beforeState": "N/A",
+      "action": "N/A",
+      "afterState": "N/A"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+      ]
+    },
+    "dimensions": {
+      "width": 390,
+      "height": 844
+    },
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "mobile-accent-transfer",
+    "url": "http://localhost:3000/work-transfer",
+    "visibleAnchorText": "Bàn giao công việc cho bước tiếp theo",
+    "visibleAnchorSelector": "h1",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R1_LOCALHOST_2026-07-19/mobile-accent-transfer.png",
+    "sha256": "4fd5d191c1b1a5e1ba148ab4ec1b18aa22c66b95d75d687df807999cbcc3a6f7",
+    "interactionTrace": {
+      "beforeState": "N/A",
+      "action": "N/A",
+      "afterState": "N/A"
+    },
+    "focusTrace": {
+      "keys": [
+        "Tab"
+      ],
+      "activeElements": [
+        "BUTTON inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+      ]
+    },
+    "dimensions": {
+      "width": 390,
+      "height": 844
+    },
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  }
+]
