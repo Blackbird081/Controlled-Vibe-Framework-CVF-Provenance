@@ -28,7 +28,8 @@ The operator-prioritized CVF Web UX clarity audit is reviewer-accepted bounded
 at material commit `9f9d7f6d7`. T1 task-first navigation and workspace audience
 separation is reviewer-accepted with bounded repair at material commit
 `d4e6e48a0`. T1P diagnosis is reviewer-accepted bounded at material commit
-`45d505836`; T2 packet authoring is released and later lanes remain parked.
+`45d505836`. T2 is dispatch-ready at material commit `e3dccd041`; later lanes
+remain parked.
 
 Automatic semantic edits, real-root apply, commit, push, deployment,
 provider/live calls, production action, and unattended mutation remain parked
@@ -37,19 +38,19 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_ux_t2_packet_authoring_next`;
+current mode=`cvf_web_ux_t2_worker_execution_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=author and dispatch CVF-WEB-UX-T2 for Vietnamese-first
-language and the guided knowledge journey;
+next allowed move=execute CVF-WEB-UX-T2 from the final session-sync HEAD with
+durable localhost desktop/mobile evidence;
 parked checkpoint=T3-T4, hosted mutation, deployment, public-sync,
 provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-`cvf_web_ux_t2_packet_authoring_next`
+`cvf_web_ux_t2_worker_execution_next`
 
 Previous mode:
-`cvf_web_ux_t1p_worker_execution_next`
+`cvf_web_ux_t2_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -112,6 +113,17 @@ Latest closed numbered LHW wave remains `LHW24`.
   cache/root selection, and exact packaging mechanism remain insufficient.
 - T2 packet authoring is released. T3-T4 and every hosted mutation, deployment,
   public-sync, provider/live, production, and projection lane remain parked.
+
+### CVF-WEB-UX-T2 dispatch
+
+- Material dispatch commit: `e3dccd041`.
+- Baseline and work order source-verify all five route owners, current API and
+  validator seams, the design contract, and the no-commit browser-evidence path.
+- Pre-dispatch 75/75 and pre-commit 83/83 passed.
+- Worker must run current source on localhost, save desktop/mobile evidence,
+  leave changes uncommitted, and return `COMPLETE_PENDING_REVIEW`.
+- T3-T4 and every hosted mutation, deployment, public-sync, provider/live,
+  production, and projection lane remain parked.
 
 ### Netlify build repair
 
@@ -194,10 +206,12 @@ provider, or perform unattended apply.
 
 ## Next Allowed Move
 
-Author and dispatch `CVF-WEB-UX-T2` for Vietnamese-first outcome language and
-a coherent knowledge-to-review-to-handoff journey across the five roadmap
-routes. T3-T4, hosted mutation, deployment, public-sync, provider/live calls,
-production action, and continuous-projection execution remain parked.
+Execute `CVF-WEB-UX-T2` from the final session-sync HEAD under
+`WORKER_MUST_NOT_COMMIT`. Implement the five-route language and guided
+knowledge journey, capture durable localhost desktop/mobile evidence, and
+return `COMPLETE_PENDING_REVIEW`. T3-T4, hosted mutation, deployment,
+public-sync, provider/live calls, production action, and continuous-projection
+execution remain parked.
 
 ## Core Guard Self-Protection Authorization - V48 Rotation And Queue Sync
 
@@ -437,6 +451,28 @@ Protected paths:
 ## GC-020 Marker - CVF-WEB-UX-T1P Closure Session Sync
 
 This handoff records material parent commit `45d505836`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T2 Dispatch Sync
+
+Authorized guard-maintenance scope: record T2 material dispatch commit
+`e3dccd041`, advance continuity to the no-commit worker, regenerate canonical
+session read models, and retain all later and mutation lanes as parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxT2Dispatch20260719.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF-WEB-UX-T2 Dispatch Session Sync
+
+This handoff records material parent commit `e3dccd041`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 

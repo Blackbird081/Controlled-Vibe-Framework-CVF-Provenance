@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_ux_t2_packet_authoring_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=author and dispatch CVF-WEB-UX-T2 for Vietnamese-first language and the guided knowledge journey; parked checkpoint=T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.
+Startup acknowledged: current mode=`cvf_web_ux_t2_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute CVF-WEB-UX-T2 from the final session-sync HEAD with localhost desktop/mobile evidence; parked checkpoint=T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_ux_t2_packet_authoring_next`
+Current mode marker: `cvf_web_ux_t2_worker_execution_next`
 
-Current mode: `cvf_web_ux_t2_packet_authoring_next`
+Current mode: `cvf_web_ux_t2_worker_execution_next`
 
-`cvf_web_ux_t2_packet_authoring_next`
+`cvf_web_ux_t2_worker_execution_next`
 
 Previous mode:
 
-`cvf_web_ux_t1p_worker_execution_next`
+`cvf_web_ux_t2_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-WEB-UX-T2 language and guided knowledge journey dispatch | `e3dccd041` | DISPATCH_READY after source verification, pre-dispatch 75/75, and pre-commit 83/83; no-commit five-route Web worker with durable localhost evidence; later and mutation lanes parked. |
 | CVF-WEB-UX-T1P hosted packaging and freshness diagnosis closure | `45d505836` | CLOSED_PASS_BOUNDED after independent evidence-locator and causal-boundary repair; visible hosted/current drift accepted, exact hosted build and packaging mechanism insufficient; T2 packet authoring released. |
 | CVF-WEB-UX-T1P hosted packaging and freshness audit-refinement dispatch | `dfa154b5f` | DISPATCH_READY after final anchor correction, pre-dispatch 75/75, and pre-commit 83/83 PASS; exact two-output no-commit worker; hosted mutation, deploy, public-sync, provider/live, production, T2-T4, and projection execution remain parked. |
 | CVF-WEB-UX-T1 task-first navigation and workspace audience separation closure | `d4e6e48a0` | CLOSED_PASS_BOUNDED with two-file reviewer jargon-leak repair, focused 152/152, TypeScript/build PASS, fresh localhost desktop/mobile evidence, and no hosted/deploy/public claim; T1P packet authoring released. |
@@ -313,13 +314,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_ux_t2_packet_authoring_next`
+Mode: `cvf_web_ux_t2_worker_execution_next`
 
-Author and dispatch `CVF-WEB-UX-T2` for Vietnamese-first outcome language and
-a coherent knowledge-to-review-to-handoff journey across the five roadmap
-routes. T3-T4, hosted mutation, deployment, public-sync, provider/live calls,
-production action, and continuous-projection execution remain parked. Latest
-closed numbered LHW wave remains `LHW24`.
+Execute `CVF-WEB-UX-T2` from the final session-sync HEAD under
+`WORKER_MUST_NOT_COMMIT`. Implement the five-route language and guided
+knowledge journey, capture durable localhost desktop/mobile evidence, and
+return `COMPLETE_PENDING_REVIEW`. T3-T4, hosted mutation, deployment,
+public-sync, provider/live calls, production action, and continuous-projection
+execution remain parked. Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1989,
+  "stateKey": "cvfWebUxT2Dispatch20260719",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T2",
+    "materialDispatchCommit": "e3dccd041",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_UX_T2_LANGUAGE_AND_GUIDED_KNOWLEDGE_JOURNEY_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T2_LANGUAGE_AND_GUIDED_KNOWLEDGE_JOURNEY_2026-07-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Execute the bounded T2 current-source Web work from the final session-sync HEAD and return COMPLETE_PENDING_REVIEW without committing.",
+    "parked": "T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; no UI implementation, browser acceptance, hosted freshness, deployment, provider behavior, public export, or production claim."
+  }
+}
