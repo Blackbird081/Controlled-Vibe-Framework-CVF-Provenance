@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_T3_PACKET_AUTHORIZED
+Status: ACTIVE_T3_DISPATCH_READY
 
 Date: 2026-07-19
 
@@ -21,8 +21,8 @@ The operator authorized continued UX remediation after the localhost browser
 audit. CVF-WEB-UX-T0 is closed bounded at completion commit `93c2663a6` with
 final session sync `b9717a7f7`. T1 closed bounded at `d4e6e48a0`. T1P closed
 bounded at `45d505836`, confirming visible hosted/current output drift while
-leaving exact build identity and packaging mechanism unresolved. T2 packet
-authoring is released.
+leaving exact build identity and packaging mechanism unresolved. T2 closed
+bounded at `bb1418554`; the source-verified T3 packet is dispatch-ready.
 
 ## Scope / Target / Owner Boundary
 
@@ -109,12 +109,20 @@ as separate claims and commits.
 
 ### T2 - Language And Guided Knowledge Journey
 
+Disposition: `CLOSED_PASS_BOUNDED` at material commit `bb1418554` after
+reviewer scope, localization, evidence, and test repairs.
+
 Rewrite `/help`, `/governance/knowledge`, `/knowledge/intake`, `/artifacts`, and
 `/work-transfer` around outcomes. Use Vietnamese-first labels on Vietnamese
 surfaces, retain technical terms secondarily, and show the sequence from source
 to review to handoff.
 
 ### T3 - Home, Onboarding, Chrome, And Density
+
+Disposition: `DISPATCH_READY` through
+`docs/baselines/CVF_GC018_CVF_WEB_UX_T3_HOME_ONBOARDING_CHROME_AND_DENSITY_2026-07-19.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T3_HOME_ONBOARDING_CHROME_AND_DENSITY_2026-07-19.md`.
 
 Shorten first-run onboarding, expose the home value proposition immediately,
 move settings/version controls out of primary attention, and reduce repeated
@@ -191,7 +199,7 @@ this roadmap. Web UI tranches do not create a new agent runtime adapter.
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_public_export_disposition.py` |
 | literalTokensReviewed | roadmap headings; status; work plan; acceptance criteria; dual-agent surface tokens; public disposition |
-| gateRunPurpose | confirm roadmap structure and T2 packet authority before packet creation |
+| gateRunPurpose | confirm roadmap structure, T2 closure, and T3 dispatch authority |
 | claimBoundary | machine compliance confirms structure; the accepted UX audit supports remediation decisions |
 
 ## Public Export Disposition
@@ -203,7 +211,7 @@ require separate reviewed batches. This roadmap is private planning authority.
 
 ## Claim Boundary
 
-T1, T1P, and T2 are closed with bounded evidence. This roadmap now authorizes
-T3 packet creation only. It does not itself implement T3 or authorize provider
-calls, deployment, public export, production mutation, or continuous-projection
-execution.
+T1, T1P, and T2 are closed with bounded evidence. This roadmap authorizes one
+no-commit T3 worker execution under the paired packet. T4, provider calls,
+deployment, public export, production mutation, and continuous-projection
+execution remain parked.
