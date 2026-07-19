@@ -1,0 +1,82 @@
+[
+  {
+    "captureId": "tablet-820-persistent-sidebar",
+    "url": "http://localhost:3000/home",
+    "visibleAnchorText": "Trang ch\u1ee7Trang ch\u1ee7Landing PageC\u00f4ng vi\u1ec7c AICVF WorkspaceAI AgentMulti-AgentToolsM\u00f4 ph\u1ecfngKi\u1ebfn th\u1ee9c & R\u00e0 so\u00e1tKnowledgeN\u1ea1p ki\u1ebfn th\u1ee9cG\u00f3i r\u00e0 so\u00e1tChuy\u1ec3n giao c\u00f4ng vi\u1ec7cK\u1ef9 n\u0103ngSkill SearchH\u01b0\u1edbng d\u1eabnT\u00e0i li\u1ec7uV\u1eadn h\u00e0nh n\u00e2ng caoL\u1ecbch s\u1eedAnalyticsTheo d\u00f5i runtimeMarketplaceQu\u1ea3n tr\u1ecbEnterpriseAI SafetyAccountContextC\u00e0i \u0111\u1eb7tS\u1eed d\u1ee5ng AI",
+    "visibleAnchorSelector": "nav",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R2_LOCALHOST_2026-07-20/tablet-820-persistent-sidebar.png",
+    "sha256": "448e163bd5313e939a65e07d5b55774c81bdcd3cca9aed4f2938fd1f65c6d569",
+    "dimensions": {
+      "width": 820,
+      "height": 1180
+    },
+    "metrics": {
+      "clientWidth": 820,
+      "scrollWidth": 820
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "narrow-tablet-767-sidebar-closed",
+    "url": "http://localhost:3000/home",
+    "visibleAnchorText": "K\u1ebft qu\u1ea3 c\u1ea7n t\u1ea1o",
+    "visibleAnchorSelector": "h1",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R2_LOCALHOST_2026-07-20/narrow-tablet-767-sidebar-closed.png",
+    "sha256": "cccd42cd81bdfc5a401ed751e96a53fb6a51be4fc0ec358df1be192f8dbf2e4d",
+    "dimensions": {
+      "width": 767,
+      "height": 1024
+    },
+    "metrics": {
+      "clientWidth": 767,
+      "scrollWidth": 767
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "narrow-tablet-767-sidebar-open",
+    "url": "http://localhost:3000/home",
+    "visibleAnchorText": "Trang ch\u1ee7Trang ch\u1ee7Landing PageC\u00f4ng vi\u1ec7c AICVF WorkspaceAI AgentMulti-AgentToolsM\u00f4 ph\u1ecfngKi\u1ebfn th\u1ee9c & R\u00e0 so\u00e1tKnowledgeN\u1ea1p ki\u1ebfn th\u1ee9cG\u00f3i r\u00e0 so\u00e1tChuy\u1ec3n giao c\u00f4ng vi\u1ec7cK\u1ef9 n\u0103ngSkill SearchH\u01b0\u1edbng d\u1eabnT\u00e0i li\u1ec7uV\u1eadn h\u00e0nh n\u00e2ng caoL\u1ecbch s\u1eedAnalyticsTheo d\u00f5i runtimeMarketplaceQu\u1ea3n tr\u1ecbEnterpriseAI SafetyAccountContextC\u00e0i \u0111\u1eb7tS\u1eed d\u1ee5ng AI",
+    "visibleAnchorSelector": "nav",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R2_LOCALHOST_2026-07-20/narrow-tablet-767-sidebar-open.png",
+    "sha256": "6a8c08b818811bf8da3dcf0218a82f60d60c3daf1a27bbe33b7351eacdb77a7f",
+    "dimensions": {
+      "width": 767,
+      "height": 1024
+    },
+    "metrics": {
+      "clientWidth": 767,
+      "scrollWidth": 767
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  },
+  {
+    "captureId": "desktop-dark-preferences-violet-open",
+    "url": "http://localhost:3000/home",
+    "visibleAnchorText": "NOT_FOUND",
+    "visibleAnchorSelector": "button[aria-label=\"Close preferences\"], [data-testid=\"close-preferences\"]",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R2_LOCALHOST_2026-07-20/desktop-dark-preferences-violet-open.png",
+    "sha256": "630b9b64fd9ff1af7dfc995d095437d80fee4946ed1c8cedd99a2aeed21e0f47",
+    "dimensions": {
+      "width": 1440,
+      "height": 900
+    },
+    "metrics": {
+      "clientWidth": 1440,
+      "scrollWidth": 1440
+    },
+    "diagnostics": [
+      "401 Auth (expected)"
+    ],
+    "status": "PASS"
+  }
+]

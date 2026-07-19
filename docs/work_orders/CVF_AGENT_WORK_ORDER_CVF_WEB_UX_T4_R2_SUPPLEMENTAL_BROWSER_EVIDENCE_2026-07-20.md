@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: REVIEWED_BLOCK_ACCEPTED_R3_REQUIRED
 
 Batch ID: CVF-WEB-UX-T4-R2
 
