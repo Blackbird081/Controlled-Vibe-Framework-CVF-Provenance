@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1993,
+  "stateKey": "cvfWebUxT3Closure20260719",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "batchId": "CVF-WEB-UX-T3",
+    "materialClosureCommit": "114daa54a",
+    "completionReview": "docs/reviews/CVF_WEB_UX_T3_COMPLETION_2026-07-19.md",
+    "verification": "focused 20/20; provider-free 3251 pass plus 2 skip; TypeScript and 119-page production build PASS; six recomputed Home PNGs; widths 390/390 and 1440/1440; pre-commit 83/83 PASS",
+    "reviewerRepairs": "removed unauthorized dependency, root-layout, script, and benchmark-rename deltas; replaced mislabeled Workspace images; repaired clipped preferences owner and regression",
+    "nextAllowedMove": "Author and dispatch the source-verified T4 current-source browser-acceptance audit packet.",
+    "parked": "source mutation in T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Private current-source presentation closure only; no hosted freshness, deployment, provider, public-export, authenticated-runtime, or roadmap-closure claim."
+  }
+}

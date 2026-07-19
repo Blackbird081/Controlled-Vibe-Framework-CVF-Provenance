@@ -551,6 +551,31 @@ accept the parent SHA for this protected sync commit.
 
 ## Claim Boundary
 
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T3 Closure Sync
+
+Authorized guard-maintenance scope: record T3 material closure commit
+`114daa54a`, advance continuity to T4 packet authoring, regenerate canonical
+session read models, and retain T4 source mutation plus every hosted/deploy/
+public/provider/production/projection lane as parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxT3Closure20260719.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF-WEB-UX-T3 Closure Session Sync
+
+This handoff records material parent commit `114daa54a`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Claim Boundary
+
 This handoff records continuity, completed source/build verification, public
 export evidence, and the next roadmap queue. It does not claim successful
 external Netlify deployment and does not authorize roadmap implementation,

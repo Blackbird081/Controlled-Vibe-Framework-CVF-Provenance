@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_web_ux_t3_worker_execution_next",
+  "currentMode": "cvf_web_ux_t4_packet_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V48_2026-07-18.md",
-  "nextAllowedMove": "Execute CVF-WEB-UX-T3 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT, implement the bounded Home, onboarding, chrome, and density changes, capture durable first-run and returning-user localhost evidence, and return COMPLETE_PENDING_REVIEW. T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author and dispatch the source-verified CVF-WEB-UX-T4 browser-acceptance and roadmap-closure audit packet. T4 is current-source localhost audit only; source mutation, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

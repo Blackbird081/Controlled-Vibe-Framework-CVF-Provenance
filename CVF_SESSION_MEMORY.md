@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_ux_t3_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute CVF-WEB-UX-T3 from the final session-sync HEAD with first-run/returning localhost evidence; parked checkpoint=T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.
+Startup acknowledged: current mode=`cvf_web_ux_t4_packet_authoring_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=author and dispatch the source-verified T4 current-source browser-acceptance audit packet; parked checkpoint=T4 source mutation, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_ux_t3_worker_execution_next`
+Current mode marker: `cvf_web_ux_t4_packet_authoring_next`
 
-Current mode: `cvf_web_ux_t3_worker_execution_next`
+Current mode: `cvf_web_ux_t4_packet_authoring_next`
 
-`cvf_web_ux_t3_worker_execution_next`
+`cvf_web_ux_t4_packet_authoring_next`
 
 Previous mode:
 
-`cvf_web_ux_t3_packet_authoring_next`
+`cvf_web_ux_t3_worker_execution_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-WEB-UX-T3 Home, onboarding, chrome, and density closure | `114daa54a` | CLOSED_PASS_BOUNDED after reviewer removed unauthorized manifest/root/script/test-rename deltas, replaced six mislabeled Workspace images with current-source Home evidence, repaired clipped preferences, and recomputed focused 20/20, provider-free 3251 pass plus 2 skip, TypeScript, 119-page build, widths, file-size, and pre-commit 83/83; T4 packet authoring released. |
 | CVF-WEB-UX-T3 Home, onboarding, chrome, and density dispatch | `d2bbe3f43` | DISPATCH_READY after source verification, pre-dispatch 75/75, commit-steward, and pre-commit 83/83; exact no-commit current-source Web worker; T4 and mutation lanes parked. |
 | CVF-WEB-UX-T2 language and guided knowledge journey closure | `bb1418554` | CLOSED_PASS_BOUNDED after reviewer scope, localization, evidence, and test repairs; focused 18/18, provider-free 3245 pass plus 2 skip, TypeScript/build, durable localhost desktop/mobile evidence, file-size, and pre-commit 83/83 PASS; T3 packet authoring released. |
 | CVF-WEB-UX-T2 language and guided knowledge journey dispatch | `e3dccd041` | DISPATCH_READY after source verification, pre-dispatch 75/75, and pre-commit 83/83; no-commit five-route Web worker with durable localhost evidence; later and mutation lanes parked. |
@@ -316,14 +317,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_ux_t3_worker_execution_next`
+Mode: `cvf_web_ux_t4_packet_authoring_next`
 
-Execute `CVF-WEB-UX-T3` from the final session-sync HEAD under
-`WORKER_MUST_NOT_COMMIT`; capture durable first-run, returning-user, and
-secondary-preferences desktop/mobile localhost evidence. T4, hosted mutation,
-deployment, public-sync, provider/live calls, production action, and
-continuous-projection execution remain parked. Latest closed numbered LHW wave
-remains `LHW24`.
+Author and dispatch the source-verified `CVF-WEB-UX-T4` browser-acceptance and
+roadmap-closure audit packet. T4 is current-source localhost audit only; source
+mutation, hosted mutation, deployment, public-sync, provider/live calls,
+production action, and continuous-projection execution remain parked. Latest
+closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_ux_t3_worker_execution_next",
-  "previousMode": "cvf_web_ux_t3_packet_authoring_next",
+  "currentMode": "cvf_web_ux_t4_packet_authoring_next",
+  "previousMode": "cvf_web_ux_t3_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13581,7 +13581,7 @@
     "parked": "T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; no UI implementation, browser acceptance, hosted freshness, deployment, provider behavior, public export, or production claim."
   },
-  "nextAllowedMove": "Execute CVF-WEB-UX-T3 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT, implement the bounded Home, onboarding, chrome, and density changes, capture durable first-run and returning-user localhost evidence, and return COMPLETE_PENDING_REVIEW. T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author and dispatch the source-verified CVF-WEB-UX-T4 browser-acceptance and roadmap-closure audit packet. T4 is current-source localhost audit only; source mutation, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT2Closure20260719": {
     "status": "CLOSED_PASS_BOUNDED",
     "batchId": "CVF-WEB-UX-T2",
@@ -13603,5 +13603,16 @@
     "nextAllowedMove": "Execute bounded T3 current-source Web work from the final session-sync HEAD and return COMPLETE_PENDING_REVIEW without committing.",
     "parked": "T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; no UI acceptance, hosted freshness, deployment, provider behavior, public export, or production claim."
+  },
+  "cvfWebUxT3Closure20260719": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "batchId": "CVF-WEB-UX-T3",
+    "materialClosureCommit": "114daa54a",
+    "completionReview": "docs/reviews/CVF_WEB_UX_T3_COMPLETION_2026-07-19.md",
+    "verification": "focused 20/20; provider-free 3251 pass plus 2 skip; TypeScript and 119-page production build PASS; six recomputed Home PNGs; widths 390/390 and 1440/1440; pre-commit 83/83 PASS",
+    "reviewerRepairs": "removed unauthorized dependency, root-layout, script, and benchmark-rename deltas; replaced mislabeled Workspace images; repaired clipped preferences owner and regression",
+    "nextAllowedMove": "Author and dispatch the source-verified T4 current-source browser-acceptance audit packet.",
+    "parked": "source mutation in T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Private current-source presentation closure only; no hosted freshness, deployment, provider, public-export, authenticated-runtime, or roadmap-closure claim."
   }
 }

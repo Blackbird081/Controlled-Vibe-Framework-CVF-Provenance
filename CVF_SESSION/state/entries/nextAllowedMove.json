@@ -1,5 +1,5 @@
 {
   "stateOrder": 1990,
   "stateKey": "nextAllowedMove",
-  "value": "Execute CVF-WEB-UX-T3 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT, implement the bounded Home, onboarding, chrome, and density changes, capture durable first-run and returning-user localhost evidence, and return COMPLETE_PENDING_REVIEW. T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Author and dispatch the source-verified CVF-WEB-UX-T4 browser-acceptance and roadmap-closure audit packet. T4 is current-source localhost audit only; source mutation, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
 }
