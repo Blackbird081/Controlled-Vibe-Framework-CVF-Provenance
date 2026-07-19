@@ -6,7 +6,7 @@ Status: DISPATCH_READY
 
 Batch ID: CVF-WEB-UX-T1P
 
-Dispatch base head: `0a46eafa0`
+Dispatch base head: `32ec223ad`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -55,7 +55,8 @@ Operator instruction -> T1 UX Roadmap -> T1 completion -> T1P Audit Refinement.
 
 ## Pre-Flight Checks
 
-- confirm clean worktree at HEAD `a8ff0784f`.
+- confirm the worktree is clean, capture `executionBaseHead`, and require it to
+  equal the operator-provided final session-sync HEAD before any edit.
 - confirm target files are present.
 
 ## Write Ownership
@@ -179,7 +180,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | SINGLE_AGENT_SINGLE_ROLE |
 | rolePattern | generic worker to independent reviewer |
 | phase | refinement |
-| baseHeadFor(phase) | dispatchBaseHead=0a46eafa0; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=32ec223ad; executionBaseHead=OPERATOR_PROVIDED_FINAL_SESSION_SYNC_HEAD; closureBaseHead=REVIEWER_TO_SET |
 | changedSetScope(phase) | exactly the two Allowed Scope paths |
 | traceScope(phase, actor) | worker trace |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT |
@@ -213,7 +214,8 @@ workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 ## Verification Commands
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 0a46eafa0 --head HEAD
+$executionBaseHead = git rev-parse --short HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base $executionBaseHead --head HEAD
 python governance/compat/run_worker_return_fast_gate.py
 git status --short
 ```
