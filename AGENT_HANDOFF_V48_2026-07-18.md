@@ -551,6 +551,24 @@ accept the parent SHA for this protected sync commit.
 
 ## Claim Boundary
 
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T4 Mode Reconciliation Anchor Sync
+
+Authorized guard-maintenance scope: record session-only T4 mode reconciliation
+commit `a8df6b90d` as the parent anchor required before the separate T4 blocked
+review and R1 material dispatch batch.
+
+Protected path:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`.
+
+## GC-020 Marker - CVF-WEB-UX-T4 Mode Reconciliation Anchor Sync
+
+This handoff records session-only parent commit `a8df6b90d`. The child SHA
+cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Claim Boundary
+
 ## Core Guard Self-Protection Authorization - CVF-WEB-UX-T4 Dispatch Sync
 
 Authorized guard-maintenance scope: record T4 material dispatch commit
