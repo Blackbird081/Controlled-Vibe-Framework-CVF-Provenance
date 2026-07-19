@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_T4_DISPATCH_READY
+Status: ACTIVE_T4_R1_DISPATCH_READY
 
 Date: 2026-07-19
 
@@ -131,10 +131,13 @@ explanatory cards while retaining warnings at the point of action.
 
 ### T4 - Browser Acceptance And Roadmap Closure
 
-Disposition: `DISPATCH_READY` through
+Disposition: `REVIEWED_BLOCK_ACCEPTED_R1_REQUIRED`. The first audit preserves
+useful render/width evidence but cannot close because one required interaction
+capture duplicates another state and row-level anchor/focus proof is incomplete.
+R1 is dispatch-ready through
 `docs/baselines/CVF_GC018_CVF_WEB_UX_T4_BROWSER_ACCEPTANCE_AND_ROADMAP_CLOSURE_2026-07-19.md`
 and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_BROWSER_ACCEPTANCE_AND_ROADMAP_CLOSURE_2026-07-19.md`.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R1_BROWSER_EVIDENCE_REPAIR_2026-07-19.md`.
 
 Run current source on localhost and inspect desktop, tablet, and mobile in dark,
 light, and a non-default accent. Check navigation, focus, overflow, primary

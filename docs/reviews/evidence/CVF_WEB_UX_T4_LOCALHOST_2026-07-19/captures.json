@@ -1,0 +1,122 @@
+[
+  {
+    "id": "desktop-dark-home",
+    "url": "http://localhost:3000/home",
+    "metrics": {
+      "clientWidth": 1440,
+      "scrollWidth": 1440,
+      "bodyClientWidth": 1440,
+      "bodyScrollWidth": 1440
+    }
+  },
+  {
+    "id": "desktop-dark-workspace",
+    "url": "http://localhost:3000/workspace",
+    "metrics": {
+      "clientWidth": 1440,
+      "scrollWidth": 1440,
+      "bodyClientWidth": 1440,
+      "bodyScrollWidth": 1440
+    }
+  },
+  {
+    "id": "desktop-dark-workspace-advanced",
+    "url": "http://localhost:3000/workspace",
+    "metrics": {
+      "clientWidth": 1440,
+      "scrollWidth": 1440,
+      "bodyClientWidth": 1440,
+      "bodyScrollWidth": 1440
+    }
+  },
+  {
+    "id": "tablet-light-home",
+    "url": "http://localhost:3000/home",
+    "metrics": {
+      "clientWidth": 820,
+      "scrollWidth": 820,
+      "bodyClientWidth": 820,
+      "bodyScrollWidth": 820
+    }
+  },
+  {
+    "id": "tablet-light-sidebar",
+    "url": "http://localhost:3000/home",
+    "metrics": {
+      "clientWidth": 820,
+      "scrollWidth": 820,
+      "bodyClientWidth": 820,
+      "bodyScrollWidth": 820
+    }
+  },
+  {
+    "id": "tablet-light-journey",
+    "url": "http://localhost:3000/governance/knowledge",
+    "metrics": {
+      "clientWidth": 820,
+      "scrollWidth": 820,
+      "bodyClientWidth": 820,
+      "bodyScrollWidth": 820
+    }
+  },
+  {
+    "id": "mobile-accent-home",
+    "url": "http://localhost:3000/home",
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "bodyClientWidth": 390,
+      "bodyScrollWidth": 390
+    }
+  },
+  {
+    "id": "mobile-accent-sidebar",
+    "url": "http://localhost:3000/home",
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "bodyClientWidth": 390,
+      "bodyScrollWidth": 390
+    }
+  },
+  {
+    "id": "mobile-accent-help",
+    "url": "http://localhost:3000/help",
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "bodyClientWidth": 390,
+      "bodyScrollWidth": 390
+    }
+  },
+  {
+    "id": "mobile-accent-intake",
+    "url": "http://localhost:3000/knowledge/intake",
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "bodyClientWidth": 390,
+      "bodyScrollWidth": 390
+    }
+  },
+  {
+    "id": "mobile-accent-artifacts",
+    "url": "http://localhost:3000/artifacts",
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "bodyClientWidth": 390,
+      "bodyScrollWidth": 390
+    }
+  },
+  {
+    "id": "mobile-accent-transfer",
+    "url": "http://localhost:3000/work-transfer",
+    "metrics": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "bodyClientWidth": 390,
+      "bodyScrollWidth": 390
+    }
+  }
+]
