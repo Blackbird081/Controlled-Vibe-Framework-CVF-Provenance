@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Continuous projection drift roadmap recovery | `03b50f111` | RECOVERED_PARKED; durable roadmap restored with public-presentation and external-agent-context learning; execution remains parked until CVF Web UX remediation passes localhost browser acceptance. |
 | CVF Web UX clarity T0 audit | `9f9d7f6d7`; closure `93c2663a6` | CLOSED_PASS_BOUNDED; eight localhost screenshots accepted after reviewer correction of route facts, source paths, hosted/local separation, and workspace truth-packaging-presentation classification; remediation planning released, implementation/public/deploy/provider lanes parked. |
 | Netlify Truth Kernel clean-install resolution repair | `0cae3289f` provenance; `0d3fec3ca` public | EXPORTED_BUILD_REPAIR; narrow TypeScript path mapping closes file-link realpath resolution through absent sibling dependencies; fresh public worktree plus cvf-web-only `npm ci`, TypeScript, focused regression, and production build 121/121 PASS; external Netlify deploy result remains pending. |
 | Netlify Learning Plane runtime-boundary repair | `ee208c753` provenance; `620016275` public | EXPORTED_BUILD_REPAIR; bounded `web-runtime` subpath prevents cvf-web from bundling the graph-bearing root; TypeScript is a Learning Plane runtime dependency; Netlify-shaped build, TypeScript, focused/full Web tests, Learning Plane tests, public-surface, and receipt-link checks PASS; external Netlify deploy result remains pending. |

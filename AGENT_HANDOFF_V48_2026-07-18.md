@@ -54,6 +54,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Latest Work / Changes
 
+### Continuous projection roadmap recovery
+
+- Recovery material commit: `03b50f111`.
+- Restored `docs/roadmaps/CVF_CONTINUOUS_PROJECTION_DRIFT_DETECTION_AND_REVIEW_PACKET_AUTOMATION_ROADMAP_2026-07-19.md` as a durable governed artifact.
+- Status remains parked until CVF Web UX remediation passes localhost browser
+  acceptance; no projection execution is released.
+
 ### Netlify build repair
 
 - Truth Kernel clean-install resolution follow-up: provenance `0cae3289f`;
@@ -219,6 +226,24 @@ accept the parent SHA for this protected sync commit.
 Final closure material parent: `93c2663a6`. The final closure session-sync
 child SHA cannot be known before commit creation, so the active-session checker
 may accept this parent SHA for the protected final sync commit.
+
+## Core Guard Self-Protection Authorization - Projection Roadmap Recovery Sync
+
+Authorized guard-maintenance scope: record recovered parked roadmap material
+commit `03b50f111` and preserve UX-remediation authoring as the next move.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/continuousProjectionRoadmapRecovery20260719.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
+
+## GC-020 Marker - Projection Roadmap Recovery Session Sync
+
+This handoff records material parent commit `03b50f111`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
 
 Remote tracking branch: `origin/main`.
 

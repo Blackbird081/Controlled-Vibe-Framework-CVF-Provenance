@@ -13513,5 +13513,13 @@
     "nextAllowedMove": "Finalize closure, restore the lost parked projection roadmap, and author a fresh UX remediation roadmap plus first source-verified dispatch packet.",
     "parked": "UX implementation, public-sync, deployment, provider/live calls, and continuous-projection execution.",
     "claimBoundary": "Documentation-only UX audit and planning release; no product repair, hosted freshness, responsive-complete proof, public readiness, or deployment claim."
+  },
+  "continuousProjectionRoadmapRecovery20260719": {
+    "status": "RECOVERED_PARKED",
+    "materialCommit": "03b50f111",
+    "roadmap": "docs/roadmaps/CVF_CONTINUOUS_PROJECTION_DRIFT_DETECTION_AND_REVIEW_PACKET_AUTOMATION_ROADMAP_2026-07-19.md",
+    "reopenCondition": "CVF Web UX remediation reaches reviewer-accepted pass with localhost browser evidence for navigation, audience separation, language clarity, and responsive behavior.",
+    "nextAllowedMove": "Author the CVF Web UX remediation roadmap and first T1 GC-018/work order.",
+    "claimBoundary": "Recovery and parked planning only; no projection execution or semantic mutation authority."
   }
 }
