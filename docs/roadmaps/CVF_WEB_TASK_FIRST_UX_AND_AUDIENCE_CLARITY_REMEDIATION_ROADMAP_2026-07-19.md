@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_T1_DISPATCH_AUTHORIZED
+Status: ACTIVE_T2_PACKET_AUTHORIZED
 
 Date: 2026-07-19
 
@@ -19,7 +19,10 @@ truth for developers, agents, reviewers, and operators.
 
 The operator authorized continued UX remediation after the localhost browser
 audit. CVF-WEB-UX-T0 is closed bounded at completion commit `93c2663a6` with
-final session sync `b9717a7f7`. T1 packet authoring is released.
+final session sync `b9717a7f7`. T1 closed bounded at `d4e6e48a0`. T1P closed
+bounded at `45d505836`, confirming visible hosted/current output drift while
+leaving exact build identity and packaging mechanism unresolved. T2 packet
+authoring is released.
 
 ## Scope / Target / Owner Boundary
 
@@ -85,12 +88,19 @@ disclosure. Current screenshots are defect evidence, not a design template.
 
 ### T1 - Navigation And Workspace Audience Separation
 
+Disposition: `CLOSED_PASS_BOUNDED` at material commit `d4e6e48a0`.
+
 Reorganize the sidebar around user jobs while preserving all existing routes.
 Make `/workspace` default to plain-language operational summaries and place raw
 mode, handoff, dispatch, commit, path, and lane detail under an explicit
 advanced section. Add focused component tests. No deployment work.
 
 ### T1P - Hosted Packaging And Freshness Diagnosis
+
+Disposition: `CLOSED_PASS_BOUNDED` at material commit `45d505836`. Visible
+hosted/current output drift is accepted; exact hosted build identity and
+packaging mechanism remain `INSUFFICIENT_EVIDENCE`. Deployment remains a
+separate parked lane.
 
 After T1 source closure, compare current-source build artifacts with hosted
 state loading. Identify build inclusion, repository-root resolution, and
@@ -181,7 +191,7 @@ this roadmap. Web UI tranches do not create a new agent runtime adapter.
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_public_export_disposition.py` |
 | literalTokensReviewed | roadmap headings; status; work plan; acceptance criteria; dual-agent surface tokens; public disposition |
-| gateRunPurpose | confirm roadmap structure and T1 dispatch authority before packet creation |
+| gateRunPurpose | confirm roadmap structure and T2 packet authority before packet creation |
 | claimBoundary | machine compliance confirms structure; the accepted UX audit supports remediation decisions |
 
 ## Public Export Disposition
@@ -193,6 +203,6 @@ require separate reviewed batches. This roadmap is private planning authority.
 
 ## Claim Boundary
 
-This roadmap authorizes T1 packet creation only. It does not itself implement
+This roadmap authorizes T2 packet creation only. It does not itself implement
 UI changes or authorize provider calls, deployment, public export, production
 mutation, or continuous-projection execution.
