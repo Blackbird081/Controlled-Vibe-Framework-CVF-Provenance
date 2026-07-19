@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: PARKED_UNTIL_CVF_WEB_UX_REMEDIATION_PASS
+Status: T0_DISPATCH_READY
 
 Date: 2026-07-19
 
@@ -39,9 +39,10 @@ CVF Web remediation. Execution remains unreleased.
 Target: deterministic, reviewer-controlled drift detection between provenance,
 public-sync, and cvf-web projection surfaces.
 
-Owner boundary: a future dispatcher may author T0 only after the recorded UX
-reopen condition passes. Reviewers own semantic decisions; automation owns only
-read-only comparison and draft evidence preparation.
+Owner boundary: the recorded UX reopen condition passed at material commit
+`d757fe5ac`; T0 documentation audit is dispatch-ready. Reviewers own semantic
+decisions; automation owns only read-only comparison and draft evidence
+preparation.
 
 ## Scope
 
@@ -135,10 +136,11 @@ packet usefulness. Close only if no automatic semantic mutation occurred.
 
 ## Release And Reopen Condition
 
-This roadmap remains parked until the CVF Web UX remediation roadmap reaches a
-reviewer-accepted pass with localhost browser evidence for task-first
+The CVF Web UX remediation roadmap reached reviewer-accepted bounded closure at
+`d757fe5ac` with localhost current-source browser evidence for task-first
 navigation, audience separation, language clarity, and responsive behavior.
-Only then may T0 receive a fresh GC-018 baseline and work order.
+The release condition is satisfied. T0 now has a fresh GC-018 baseline and
+source-verified no-commit work order; T1-T4 remain dependency-held.
 
 ## Learning Carried Forward
 
