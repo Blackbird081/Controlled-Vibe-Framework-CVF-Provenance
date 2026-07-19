@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1983,
+  "stateKey": "cvfWebUxT1Dispatch20260719",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T1",
+    "materialDispatchCommit": "2500bc7f4",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_UX_T1_TASK_FIRST_NAVIGATION_AND_WORKSPACE_AUDIENCE_SEPARATION_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T1_TASK_FIRST_NAVIGATION_AND_WORKSPACE_AUDIENCE_SEPARATION_2026-07-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Execute CVF-WEB-UX-T1 exactly from the dispatched work order and return COMPLETE_PENDING_REVIEW without committing.",
+    "parked": "T1P-T4, public-sync, deployment, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; no UI implementation or reviewer acceptance is claimed."
+  }
+}

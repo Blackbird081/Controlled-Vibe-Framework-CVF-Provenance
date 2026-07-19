@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_web_ux_t1_packet_authoring_next",
+  "currentMode": "cvf_web_ux_t1_worker_execution_next",
   "activeHandoff": "AGENT_HANDOFF_V48_2026-07-18.md",
-  "nextAllowedMove": "Author and dispatch CVF-WEB-UX-T1 from roadmap commit 479e31701 for task-first navigation and workspace audience separation. The delegated worker must not commit. T1P-T4, public-sync, deployment, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute CVF-WEB-UX-T1 from material dispatch commit 2500bc7f4 using the governed work order for task-first navigation and workspace audience separation. The delegated worker must not commit and must return COMPLETE_PENDING_REVIEW. T1P-T4, public-sync, deployment, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
