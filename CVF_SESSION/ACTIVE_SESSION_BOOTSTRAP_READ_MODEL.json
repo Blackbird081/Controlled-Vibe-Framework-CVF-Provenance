@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_web_ux_t4_r2_worker_execution_next",
+  "currentMode": "cvf_web_ux_t4_r3_worker_execution_next",
   "activeHandoff": "AGENT_HANDOFF_V48_2026-07-18.md",
-  "nextAllowedMove": "Execute CVF-WEB-UX-T4-R2 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: run current-source Web on localhost:3000 and capture exactly four supplemental states proving 820px persistent-sidebar behavior, 767px drawer closed/open behavior, and visible violet preference selection, plus the five named keyboard scenarios and terminal console diagnostics. Stop all started processes and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute CVF-WEB-UX-T4-R3 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: start current-source cvf-web on localhost:3000, capture a genuinely open dark-mode preferences panel with violet selected and computed token 139 92 246, and retain five target-bound keyboard traces with before/after state and literal result anchors. Also retain terminal diagnostics, predecessor integrity, focused checks, Ready/stop, and no-listener evidence. Stop all processes and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

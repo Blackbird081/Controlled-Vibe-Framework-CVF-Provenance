@@ -29,8 +29,9 @@ at material commit `9f9d7f6d7`. T1 task-first navigation and workspace audience
 separation is reviewer-accepted with bounded repair at material commit
 `d4e6e48a0`. T1P diagnosis is reviewer-accepted bounded at material commit
 `45d505836`. T2 is reviewer-accepted bounded at material commit `bb1418554`.
-T3 is reviewer-accepted bounded. The original T4 and R1 audits are accepted as
-blocked partial evidence, and T4-R2 is dispatch-ready at `73e64074e`.
+T3 is reviewer-accepted bounded. The original T4, R1, and R2 audits retain
+bounded partial evidence. R2's false preferences/focus acceptance is rejected,
+and T4-R3 is dispatch-ready at `a3a23a783`.
 
 Automatic semantic edits, real-root apply, commit, push, deployment,
 provider/live calls, production action, and unattended mutation remain parked
@@ -39,19 +40,19 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_ux_t4_r2_worker_execution_next`;
+current mode=`cvf_web_ux_t4_r3_worker_execution_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=execute CVF-WEB-UX-T4-R2 from the final session-sync HEAD
-with four source-valid supplemental states and retained focus/console proof;
+next allowed move=execute CVF-WEB-UX-T4-R3 from the final session-sync HEAD
+with a real open preferences state and five target-bound interaction traces;
 parked checkpoint=source repair, hosted mutation, deployment, public-sync,
 provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-`cvf_web_ux_t4_r2_worker_execution_next`
+`cvf_web_ux_t4_r3_worker_execution_next`
 
 Previous mode:
-`cvf_web_ux_t4_r1_worker_execution_next`
+`cvf_web_ux_t4_r2_worker_execution_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -229,11 +230,13 @@ provider, or perform unattended apply.
 
 ## Next Allowed Move
 
-Execute `CVF-WEB-UX-T3` from the final session-sync HEAD under
-`WORKER_MUST_NOT_COMMIT`; capture durable first-run, returning-user, and
-secondary-preferences desktop/mobile localhost evidence. T4, hosted mutation,
-deployment, public-sync, provider/live calls, production action, and
-continuous-projection execution remain parked.
+Execute `CVF-WEB-UX-T4-R3` from the final session-sync HEAD under
+`WORKER_MUST_NOT_COMMIT`; run current-source Web on localhost:3000 and retain a
+genuinely open dark-mode preferences state with violet selected, five
+target-bound keyboard traces, terminal diagnostics, predecessor hashes, and
+Ready/stop/no-listener proof. Source repair, hosted mutation, deployment,
+public-sync, provider/live calls, production action, and continuous-projection
+execution remain parked.
 
 ## Core Guard Self-Protection Authorization - V48 Rotation And Queue Sync
 
@@ -666,6 +669,31 @@ Protected paths:
 ## GC-020 Marker - CVF-WEB-UX-T3 Closure Session Sync
 
 This handoff records material parent commit `114daa54a`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Claim Boundary
+
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T4-R3 Dispatch Sync
+
+Authorized guard-maintenance scope: record R2 blocked review and R3 material
+dispatch commit `a3a23a783`, advance continuity to the no-commit R3 browser
+evidence worker, regenerate session read models, and retain all mutation lanes
+as parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxT4R3Dispatch20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF-WEB-UX-T4-R3 Dispatch Session Sync
+
+This handoff records material parent commit `a3a23a783`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 

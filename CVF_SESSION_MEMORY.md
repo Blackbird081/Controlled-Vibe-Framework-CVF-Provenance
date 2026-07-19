@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_ux_t4_r2_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute the source-verified T4-R2 supplemental browser evidence from the final session-sync HEAD; parked checkpoint=source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.
+Startup acknowledged: current mode=`cvf_web_ux_t4_r3_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute the deterministic T4-R3 interaction-trace repair from the final session-sync HEAD; parked checkpoint=source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_ux_t4_r2_worker_execution_next`
+Current mode marker: `cvf_web_ux_t4_r3_worker_execution_next`
 
-Current mode: `cvf_web_ux_t4_r2_worker_execution_next`
+Current mode: `cvf_web_ux_t4_r3_worker_execution_next`
 
-`cvf_web_ux_t4_r2_worker_execution_next`
+`cvf_web_ux_t4_r3_worker_execution_next`
 
 Previous mode:
 
-`cvf_web_ux_t4_r1_worker_execution_next`
+`cvf_web_ux_t4_r2_worker_execution_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-WEB-UX-T4-R3 semantic interaction evidence dispatch | `a3a23a783` | REVIEWED_BLOCK_ACCEPTED_R3_REQUIRED; R2 retains three responsive images, but its preferences panel is absent, its anchor is `NOT_FOUND`, and its named focus traces do not reach required targets. R3 requires a real open preferences state, five target/state/result traces, terminal diagnostics, predecessor hashes, and teardown proof. |
 | CVF-WEB-UX-T4-R2 supplemental browser-evidence dispatch | `73e64074e` | DISPATCH_READY after R1 review found the 820px drawer expectation conflicts with the source `md` persistent-sidebar breakpoint and retained preferences/focus/console proof remains incomplete. R2 captures exactly four source-valid states plus five named keyboard scenarios; all mutation lanes remain parked. |
 | CVF-WEB-UX-T4-R1 browser-evidence repair dispatch | `f2f8c95e1` | REVIEWED_BLOCK_ACCEPTED_R2_REQUIRED; twelve fresh images and bounded route evidence retained, but 820px is persistent sidebar and required preferences/focus/console evidence is incomplete. |
 | CVF-WEB-UX-T4 browser acceptance and roadmap-closure audit dispatch | `8135d00f8` | REVIEWED_BLOCK_ACCEPTED_R1_REQUIRED; useful route/theme/viewport evidence retained, but the evidence defects prevent browser-acceptance and roadmap-closure claims. |
@@ -320,14 +321,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_ux_t4_r2_worker_execution_next`
+Mode: `cvf_web_ux_t4_r3_worker_execution_next`
 
-Execute `CVF-WEB-UX-T4-R2` from the final session-sync HEAD under
-`WORKER_MUST_NOT_COMMIT`: run current-source Web on localhost:3000 and capture
-exactly four supplemental states proving 820px persistent sidebar, 767px drawer
-closed/open, and visible violet preference selection. Retain five named
-keyboard scenarios plus terminal console diagnostics, stop all started
-processes, and return a terminal worker result. Source repair, hosted mutation,
+Execute `CVF-WEB-UX-T4-R3` from the final session-sync HEAD under
+`WORKER_MUST_NOT_COMMIT`: run current-source Web on localhost:3000, capture a
+genuinely open dark-mode preferences panel with violet selected and computed
+token `139 92 246`, then retain five target-bound keyboard traces with explicit
+before/after state and literal result anchors. Retain terminal diagnostics,
+predecessor hashes, focused checks, Ready/stop, and no-listener evidence; stop
+all started processes and return a terminal worker result. Source repair, hosted mutation,
 deployment, public-sync, provider/live calls, production action, and
 continuous-projection execution remain parked. Latest closed numbered LHW wave
 remains `LHW24`.
