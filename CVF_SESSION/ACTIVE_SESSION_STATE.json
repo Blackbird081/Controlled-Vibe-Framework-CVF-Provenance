@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_ux_t1_worker_execution_next",
-  "previousMode": "cvf_web_ux_t1_packet_authoring_next",
+  "currentMode": "cvf_web_ux_t1p_packet_authoring_next",
+  "previousMode": "cvf_web_ux_t1_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13473,7 +13473,7 @@
     "nextAllowedMove": "Author and dispatch the projection landmark and dry-run automation roadmap packet.",
     "claimBoundary": "Private projection closure only; no GitHub export, push, provider/live, production, or unattended semantic mapping."
   },
-  "nextAllowedMove": "Execute CVF-WEB-UX-T1 from material dispatch commit 2500bc7f4 using the governed work order for task-first navigation and workspace audience separation. The delegated worker must not commit and must return COMPLETE_PENDING_REVIEW. T1P-T4, public-sync, deployment, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author and dispatch CVF-WEB-UX-T1P from accepted T1 material commit d4e6e48a0 for read-only hosted packaging and freshness diagnosis. T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxClarityT0Dispatch20260718": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T0",
@@ -13540,5 +13540,14 @@
     "nextAllowedMove": "Execute CVF-WEB-UX-T1 exactly from the dispatched work order and return COMPLETE_PENDING_REVIEW without committing.",
     "parked": "T1P-T4, public-sync, deployment, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; no UI implementation or reviewer acceptance is claimed."
+  },
+  "cvfWebUxT1Closure20260719": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "batchId": "CVF-WEB-UX-T1",
+    "materialCommit": "d4e6e48a0",
+    "completionReview": "docs/reviews/CVF_WEB_UX_T1_COMPLETION_2026-07-19.md",
+    "nextAllowedMove": "Author and dispatch CVF-WEB-UX-T1P for read-only hosted packaging and freshness diagnosis.",
+    "parked": "T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Private current-source navigation and workspace audience separation only; no hosted freshness or deployment claim."
   }
 }

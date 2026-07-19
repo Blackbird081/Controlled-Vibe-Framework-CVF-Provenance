@@ -25,9 +25,9 @@ deployment reports success.
 
 The projection landmark and inheritance automation roadmap is closed bounded.
 The operator-prioritized CVF Web UX clarity audit is reviewer-accepted bounded
-at material commit `9f9d7f6d7` after eight localhost screenshots and bounded
-reviewer correction. The UX remediation roadmap is active and T1 is dispatched
-at material commit `2500bc7f4`; later implementation lanes remain parked.
+at material commit `9f9d7f6d7`. T1 task-first navigation and workspace audience
+separation is reviewer-accepted with bounded repair at material commit
+`d4e6e48a0`. T1P packet authoring is released; later lanes remain parked.
 
 Automatic semantic edits, real-root apply, commit, push, deployment,
 provider/live calls, production action, and unattended mutation remain parked
@@ -36,19 +36,19 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_ux_t1_worker_execution_next`;
+current mode=`cvf_web_ux_t1p_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=execute CVF-WEB-UX-T1 from material dispatch commit
-2500bc7f4 and return COMPLETE_PENDING_REVIEW without committing;
-parked checkpoint=T1P-T4, public-sync, deployment, provider/live calls,
-production action, and continuous-projection execution.
+next allowed move=author and dispatch CVF-WEB-UX-T1P for read-only hosted
+packaging and freshness diagnosis;
+parked checkpoint=T2-T4, hosted mutation, deployment, public-sync,
+provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-`cvf_web_ux_t1_worker_execution_next`
+`cvf_web_ux_t1p_packet_authoring_next`
 
 Previous mode:
-`cvf_web_ux_t1_packet_authoring_next`
+`cvf_web_ux_t1_worker_execution_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -79,6 +79,17 @@ Latest closed numbered LHW wave remains `LHW24`.
   browser evidence.
 - T1P-T4, public-sync, deployment, provider/live calls, production action, and
   continuous-projection execution remain parked.
+
+### CVF-WEB-UX-T1 reviewer closure
+
+- Material closure commit: `d4e6e48a0`.
+- Disposition: `CLOSED_PASS_BOUNDED` with a bounded reviewer repair that keeps
+  raw execution vocabulary out of the ordinary summary while retaining exact
+  technical truth inside the advanced disclosure.
+- Focused tests 152/152, TypeScript, production build, reviewer-fast 62/62,
+  pre-commit 83/83, and fresh localhost desktop/mobile images passed.
+- T1P packet authoring is released. Hosted mutation, deployment, public-sync,
+  provider/live, production, and continuous-projection execution remain parked.
 
 ### Netlify build repair
 
@@ -161,11 +172,10 @@ provider, or perform unattended apply.
 
 ## Next Allowed Move
 
-Execute `CVF-WEB-UX-T1` from material dispatch commit `2500bc7f4` using the
-governed work order for task-first navigation and workspace audience
-separation. The delegated worker must not commit and must return
-`COMPLETE_PENDING_REVIEW`. T1P-T4, public-sync, deployment, provider/live
-calls, production action, and continuous-projection execution remain parked.
+Author and dispatch `CVF-WEB-UX-T1P` from accepted T1 material commit
+`d4e6e48a0` for read-only hosted packaging and freshness diagnosis. T2-T4,
+hosted mutation, deployment, public-sync, provider/live calls, production
+action, and continuous-projection execution remain parked.
 
 ## Core Guard Self-Protection Authorization - V48 Rotation And Queue Sync
 
@@ -303,6 +313,28 @@ Protected paths:
 ## GC-020 Marker - CVF-WEB-UX-T1 Dispatch Session Sync
 
 This handoff records material parent commit `2500bc7f4`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T1 Closure Sync
+
+Authorized guard-maintenance scope: record material closure commit
+`d4e6e48a0`, advance continuity to T1P packet authoring, regenerate canonical
+session read models, and retain all hosted mutation and later lanes as parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxT1Closure20260719.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF-WEB-UX-T1 Closure Session Sync
+
+This handoff records material parent commit `d4e6e48a0`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 
