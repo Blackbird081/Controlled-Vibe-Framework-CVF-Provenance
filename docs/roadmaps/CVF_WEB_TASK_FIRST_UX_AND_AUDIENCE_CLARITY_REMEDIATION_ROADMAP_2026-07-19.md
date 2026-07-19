@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_T4_PACKET_AUTHORIZED
+Status: ACTIVE_T4_DISPATCH_READY
 
 Date: 2026-07-19
 
@@ -131,6 +131,11 @@ explanatory cards while retaining warnings at the point of action.
 
 ### T4 - Browser Acceptance And Roadmap Closure
 
+Disposition: `DISPATCH_READY` through
+`docs/baselines/CVF_GC018_CVF_WEB_UX_T4_BROWSER_ACCEPTANCE_AND_ROADMAP_CLOSURE_2026-07-19.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_BROWSER_ACCEPTANCE_AND_ROADMAP_CLOSURE_2026-07-19.md`.
+
 Run current source on localhost and inspect desktop, tablet, and mobile in dark,
 light, and a non-default accent. Check navigation, focus, overflow, primary
 actions, loading/empty/error states, and audience disclosure. Hosted deploy and
@@ -213,6 +218,6 @@ require separate reviewed batches. This roadmap is private planning authority.
 ## Claim Boundary
 
 T1, T1P, T2, and T3 are closed with bounded evidence. This roadmap authorizes
-T4 browser-acceptance packet authoring only. Provider calls, deployment,
-public export, production mutation, and continuous-projection execution remain
-parked.
+one no-commit T4 current-source browser-audit execution under the paired
+packet. Source repair, provider calls, deployment, public export, production
+mutation, and continuous-projection execution remain parked.
