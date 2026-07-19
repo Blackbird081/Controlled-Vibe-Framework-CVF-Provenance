@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_ux_t4_worker_execution_next",
-  "previousMode": "cvf_web_ux_t4_packet_authoring_next",
+  "currentMode": "cvf_web_ux_t4_r1_worker_execution_next",
+  "previousMode": "cvf_web_ux_t4_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13581,7 +13581,6 @@
     "parked": "T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; no UI implementation, browser acceptance, hosted freshness, deployment, provider behavior, public export, or production claim."
   },
-  "nextAllowedMove": "Execute CVF-WEB-UX-T4 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: run current-source Web on localhost:3000, complete the desktop/tablet/mobile dark/light/non-default-accent browser matrix with exact URL and visible route anchor per image, stop all started processes, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT2Closure20260719": {
     "status": "CLOSED_PASS_BOUNDED",
     "batchId": "CVF-WEB-UX-T2",
@@ -13625,5 +13624,17 @@
     "nextAllowedMove": "Run current-source localhost browser acceptance and return terminal audit evidence without source mutation or commit.",
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; no browser acceptance, hosted freshness, roadmap closure, deployment, provider, public-export, or production claim."
-  }
+  },
+  "cvfWebUxT4R1Dispatch20260719": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T4-R1",
+    "materialDispatchCommit": "f2f8c95e1",
+    "blockedReview": "docs/reviews/CVF_WEB_UX_T4_BLOCKED_RETURN_REVIEW_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R1_BROWSER_EVIDENCE_REPAIR_2026-07-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Recapture the full current-source localhost matrix with row-level visible anchors, screenshot paths, hashes, interaction traces, and keyboard focus traces.",
+    "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; original T4 browser acceptance and roadmap closure remain blocked pending independent R1 review."
+  },
+  "nextAllowedMove": "Execute CVF-WEB-UX-T4-R1 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: run current-source Web on localhost:3000, recapture all 12 browser states into the fresh R1 evidence directory, and retain per-row literal visible text, selector, screenshot path, SHA-256, interaction trace, and keyboard focus trace. Stop all started processes and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
 }

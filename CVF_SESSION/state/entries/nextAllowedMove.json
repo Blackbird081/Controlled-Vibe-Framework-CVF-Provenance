@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1990,
+  "stateOrder": 1996,
   "stateKey": "nextAllowedMove",
-  "value": "Execute CVF-WEB-UX-T4 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: run current-source Web on localhost:3000, complete the desktop/tablet/mobile dark/light/non-default-accent browser matrix with exact URL and visible route anchor per image, stop all started processes, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Execute CVF-WEB-UX-T4-R1 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: run current-source Web on localhost:3000, recapture all 12 browser states into the fresh R1 evidence directory, and retain per-row literal visible text, selector, screenshot path, SHA-256, interaction trace, and keyboard focus trace. Stop all started processes and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
 }
