@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_web_ux_t4_r3_worker_execution_next",
+  "currentMode": "cvf_web_ux_t4_r4_worker_execution_next",
   "activeHandoff": "AGENT_HANDOFF_V48_2026-07-18.md",
-  "nextAllowedMove": "Execute CVF-WEB-UX-T4-R3 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: start current-source cvf-web on localhost:3000, capture a genuinely open dark-mode preferences panel with violet selected and computed token 139 92 246, and retain five target-bound keyboard traces with before/after state and literal result anchors. Also retain terminal diagnostics, predecessor integrity, focused checks, Ready/stop, and no-listener evidence. Stop all processes and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute CVF-WEB-UX-T4-R4 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: start current-source cvf-web on localhost:3000 and capture exactly the corrected Home DynamicForm result, Workspace false-true-false disclosure transition, and exact Knowledge compile action with visible result or Unauthorized error. Retain exactly three PNG and five JSON files, terminal non-live focused tests, file-size, final worker-fast, predecessor hashes, Ready/stop, zero-listener, no-scratch, exact-scope evidence. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

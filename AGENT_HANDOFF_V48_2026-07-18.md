@@ -29,9 +29,10 @@ at material commit `9f9d7f6d7`. T1 task-first navigation and workspace audience
 separation is reviewer-accepted with bounded repair at material commit
 `d4e6e48a0`. T1P diagnosis is reviewer-accepted bounded at material commit
 `45d505836`. T2 is reviewer-accepted bounded at material commit `bb1418554`.
-T3 is reviewer-accepted bounded. The original T4, R1, and R2 audits retain
-bounded partial evidence. R2's false preferences/focus acceptance is rejected,
-and T4-R3 is dispatch-ready at `a3a23a783`.
+T3 is reviewer-accepted bounded. T4 through R3 retain bounded partial evidence.
+R3 Preferences/violet and drawer proof is accepted, while Home, Workspace,
+Knowledge, command, and teardown proof remain open. T4-R4 is dispatch-ready at
+`650b26578`.
 
 Automatic semantic edits, real-root apply, commit, push, deployment,
 provider/live calls, production action, and unattended mutation remain parked
@@ -40,19 +41,19 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_ux_t4_r3_worker_execution_next`;
+current mode=`cvf_web_ux_t4_r4_worker_execution_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=execute CVF-WEB-UX-T4-R3 from the final session-sync HEAD
-with a real open preferences state and five target-bound interaction traces;
+next allowed move=execute CVF-WEB-UX-T4-R4 from the final session-sync HEAD
+with exactly three corrected interactions and terminal command proof;
 parked checkpoint=source repair, hosted mutation, deployment, public-sync,
 provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-`cvf_web_ux_t4_r3_worker_execution_next`
+`cvf_web_ux_t4_r4_worker_execution_next`
 
 Previous mode:
-`cvf_web_ux_t4_r2_worker_execution_next`
+`cvf_web_ux_t4_r3_worker_execution_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -230,11 +231,10 @@ provider, or perform unattended apply.
 
 ## Next Allowed Move
 
-Execute `CVF-WEB-UX-T4-R3` from the final session-sync HEAD under
-`WORKER_MUST_NOT_COMMIT`; run current-source Web on localhost:3000 and retain a
-genuinely open dark-mode preferences state with violet selected, five
-target-bound keyboard traces, terminal diagnostics, predecessor hashes, and
-Ready/stop/no-listener proof. Source repair, hosted mutation, deployment,
+Execute `CVF-WEB-UX-T4-R4` from the final session-sync HEAD under
+`WORKER_MUST_NOT_COMMIT`; retain exactly the corrected Home form result,
+Workspace false-true-false transition, Knowledge exact action/result, and
+terminal non-live test/gate/teardown evidence. Source repair, hosted mutation, deployment,
 public-sync, provider/live calls, production action, and continuous-projection
 execution remain parked.
 
@@ -694,6 +694,31 @@ Protected paths:
 ## GC-020 Marker - CVF-WEB-UX-T4-R3 Dispatch Session Sync
 
 This handoff records material parent commit `a3a23a783`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Claim Boundary
+
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T4-R4 Dispatch Sync
+
+Authorized guard-maintenance scope: record R3 blocked review and R4 material
+dispatch commit `650b26578`, advance continuity to the no-commit R4 browser
+evidence worker, regenerate session read models, and retain all mutation lanes
+as parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxT4R4Dispatch20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF-WEB-UX-T4-R4 Dispatch Session Sync
+
+This handoff records material parent commit `650b26578`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 

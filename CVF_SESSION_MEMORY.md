@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_ux_t4_r3_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute the deterministic T4-R3 interaction-trace repair from the final session-sync HEAD; parked checkpoint=source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.
+Startup acknowledged: current mode=`cvf_web_ux_t4_r4_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute the final T4-R4 interaction and command proof from the final session-sync HEAD; parked checkpoint=source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_ux_t4_r3_worker_execution_next`
+Current mode marker: `cvf_web_ux_t4_r4_worker_execution_next`
 
-Current mode: `cvf_web_ux_t4_r3_worker_execution_next`
+Current mode: `cvf_web_ux_t4_r4_worker_execution_next`
 
-`cvf_web_ux_t4_r3_worker_execution_next`
+`cvf_web_ux_t4_r4_worker_execution_next`
 
 Previous mode:
 
-`cvf_web_ux_t4_r2_worker_execution_next`
+`cvf_web_ux_t4_r3_worker_execution_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-WEB-UX-T4-R4 final interaction and command proof dispatch | `650b26578` | REVIEWED_BLOCK_ACCEPTED_R4_REQUIRED; R3 Preferences/violet and drawer evidence retained, but Home used onboarding as result anchor, Workspace omitted final close, Knowledge targeted a step tab, commands were non-terminal, and reviewer removed two worker scratch files. R4 is exactly three interactions plus terminal command/teardown proof. |
 | CVF-WEB-UX-T4-R3 semantic interaction evidence dispatch | `a3a23a783` | REVIEWED_BLOCK_ACCEPTED_R3_REQUIRED; R2 retains three responsive images, but its preferences panel is absent, its anchor is `NOT_FOUND`, and its named focus traces do not reach required targets. R3 requires a real open preferences state, five target/state/result traces, terminal diagnostics, predecessor hashes, and teardown proof. |
 | CVF-WEB-UX-T4-R2 supplemental browser-evidence dispatch | `73e64074e` | DISPATCH_READY after R1 review found the 820px drawer expectation conflicts with the source `md` persistent-sidebar breakpoint and retained preferences/focus/console proof remains incomplete. R2 captures exactly four source-valid states plus five named keyboard scenarios; all mutation lanes remain parked. |
 | CVF-WEB-UX-T4-R1 browser-evidence repair dispatch | `f2f8c95e1` | REVIEWED_BLOCK_ACCEPTED_R2_REQUIRED; twelve fresh images and bounded route evidence retained, but 820px is persistent sidebar and required preferences/focus/console evidence is incomplete. |
@@ -321,15 +322,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_ux_t4_r3_worker_execution_next`
+Mode: `cvf_web_ux_t4_r4_worker_execution_next`
 
-Execute `CVF-WEB-UX-T4-R3` from the final session-sync HEAD under
-`WORKER_MUST_NOT_COMMIT`: run current-source Web on localhost:3000, capture a
-genuinely open dark-mode preferences panel with violet selected and computed
-token `139 92 246`, then retain five target-bound keyboard traces with explicit
-before/after state and literal result anchors. Retain terminal diagnostics,
-predecessor hashes, focused checks, Ready/stop, and no-listener evidence; stop
-all started processes and return a terminal worker result. Source repair, hosted mutation,
+Execute `CVF-WEB-UX-T4-R4` from the final session-sync HEAD under
+`WORKER_MUST_NOT_COMMIT`: run current-source Web on localhost:3000 and capture
+exactly the corrected Home DynamicForm result, Workspace false-true-false
+disclosure transition, and exact Knowledge compile action with its visible
+result or Unauthorized error. Retain exactly three PNG and five JSON files,
+terminal non-live tests, file-size, final worker-fast, predecessor hashes,
+Ready/stop, zero-listener, no-scratch, and exact-scope evidence. Source repair, hosted mutation,
 deployment, public-sync, provider/live calls, production action, and
 continuous-projection execution remain parked. Latest closed numbered LHW wave
 remains `LHW24`.

@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_ux_t4_r3_worker_execution_next",
-  "previousMode": "cvf_web_ux_t4_r2_worker_execution_next",
+  "currentMode": "cvf_web_ux_t4_r4_worker_execution_next",
+  "previousMode": "cvf_web_ux_t4_r3_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13659,5 +13659,17 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Execute CVF-WEB-UX-T4-R3 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: start current-source cvf-web on localhost:3000, capture a genuinely open dark-mode preferences panel with violet selected and computed token 139 92 246, and retain five target-bound keyboard traces with before/after state and literal result anchors. Also retain terminal diagnostics, predecessor integrity, focused checks, Ready/stop, and no-listener evidence. Stop all processes and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebUxT4R4Dispatch20260720": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T4-R4",
+    "materialDispatchCommit": "650b26578",
+    "blockedReview": "docs/reviews/CVF_WEB_UX_T4_R3_BLOCKED_RETURN_REVIEW_2026-07-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R4_FINAL_INTERACTION_AND_COMMAND_PROOF_2026-07-20.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "retainedEvidence": "R3 Preferences/violet and drawer accepted bounded; Home, Workspace, Knowledge, command, and teardown evidence require R4",
+    "nextAllowedMove": "Capture exactly three corrected interaction results plus terminal command and teardown evidence.",
+    "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
+  },
+  "nextAllowedMove": "Execute CVF-WEB-UX-T4-R4 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: start current-source cvf-web on localhost:3000 and capture exactly the corrected Home DynamicForm result, Workspace false-true-false disclosure transition, and exact Knowledge compile action with visible result or Unauthorized error. Retain exactly three PNG and five JSON files, terminal non-live focused tests, file-size, final worker-fast, predecessor hashes, Ready/stop, zero-listener, no-scratch, exact-scope evidence. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
 }
