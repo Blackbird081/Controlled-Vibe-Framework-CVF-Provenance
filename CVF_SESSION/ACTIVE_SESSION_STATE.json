@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_ux_t4_r4_worker_execution_next",
-  "previousMode": "cvf_web_ux_t4_r3_worker_execution_next",
+  "currentMode": "cvf_web_ux_t4_r5_worker_execution_next",
+  "previousMode": "cvf_web_ux_t4_r4_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13671,5 +13671,17 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Execute CVF-WEB-UX-T4-R4 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: start current-source cvf-web on localhost:3000 and capture exactly the corrected Home DynamicForm result, Workspace false-true-false disclosure transition, and exact Knowledge compile action with visible result or Unauthorized error. Retain exactly three PNG and five JSON files, terminal non-live focused tests, file-size, final worker-fast, predecessor hashes, Ready/stop, zero-listener, no-scratch, exact-scope evidence. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
+  "nextAllowedMove": "Execute CVF-WEB-UX-T4-R5 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: start current-source cvf-web on localhost:3000 in one persistent visible browser context, dismiss onboarding, and capture exactly three target-bound PNGs for Home DynamicForm, open Workspace advanced detail, and Knowledge Unauthorized result. Retain exactly three PNG and four JSON files; bind each saved image to post-write SHA256, onboarding storage true, overlay count zero, and visual reopen PASS; then prove predecessor integrity, Ready/stop, zero listener, file-size, final worker-fast, no scratch, and exact scope. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "cvfWebUxT4R5Dispatch20260720": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T4-R5",
+    "materialDispatchCommit": "9cc653684",
+    "blockedReview": "docs/reviews/CVF_WEB_UX_T4_R4_BLOCKED_RETURN_REVIEW_2026-07-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R5_SCREENSHOT_STATE_BINDING_REPAIR_2026-07-20.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "retainedEvidence": "R4 command, trace, predecessor, and diagnostic subsets accepted bounded; all three R4 PNGs rejected because onboarding obscures their claimed terminal anchors.",
+    "nextAllowedMove": "Capture exactly three overlay-free, pixel-bound screenshots with post-write hashes and visual reopen proof.",
+    "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
+  }
 }

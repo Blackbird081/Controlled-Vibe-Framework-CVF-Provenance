@@ -41,19 +41,19 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_ux_t4_r4_worker_execution_next`;
+current mode=`cvf_web_ux_t4_r5_worker_execution_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=execute CVF-WEB-UX-T4-R4 from the final session-sync HEAD
-with exactly three corrected interactions and terminal command proof;
+next allowed move=execute CVF-WEB-UX-T4-R5 from the final session-sync HEAD
+with exactly three overlay-free, hash-bound screenshots and visual reopen proof;
 parked checkpoint=source repair, hosted mutation, deployment, public-sync,
 provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-`cvf_web_ux_t4_r4_worker_execution_next`
+`cvf_web_ux_t4_r5_worker_execution_next`
 
 Previous mode:
-`cvf_web_ux_t4_r3_worker_execution_next`
+`cvf_web_ux_t4_r4_worker_execution_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -231,12 +231,12 @@ provider, or perform unattended apply.
 
 ## Next Allowed Move
 
-Execute `CVF-WEB-UX-T4-R4` from the final session-sync HEAD under
-`WORKER_MUST_NOT_COMMIT`; retain exactly the corrected Home form result,
-Workspace false-true-false transition, Knowledge exact action/result, and
-terminal non-live test/gate/teardown evidence. Source repair, hosted mutation, deployment,
-public-sync, provider/live calls, production action, and continuous-projection
-execution remain parked.
+Execute `CVF-WEB-UX-T4-R5` from the final session-sync HEAD under
+`WORKER_MUST_NOT_COMMIT`; use one persistent visible browser context, dismiss
+onboarding, and retain exactly three overlay-free target-state PNGs plus four
+JSON records with post-write hashes and visual reopen proof. Source repair,
+hosted mutation, deployment, public-sync, provider/live calls, production
+action, and continuous-projection execution remain parked.
 
 ## Core Guard Self-Protection Authorization - V48 Rotation And Queue Sync
 
@@ -719,6 +719,29 @@ Protected paths:
 ## GC-020 Marker - CVF-WEB-UX-T4-R4 Dispatch Session Sync
 
 This handoff records material parent commit `650b26578`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T4-R5 Dispatch Sync
+
+Authorized guard-maintenance scope: record R4 blocked review and R5 material
+dispatch commit `9cc653684`, advance continuity to the no-commit R5 screenshot
+state-binding worker, regenerate session read models, and retain all mutation
+lanes as parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxT4R5Dispatch20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF-WEB-UX-T4-R5 Dispatch Session Sync
+
+This handoff records material parent commit `9cc653684`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 

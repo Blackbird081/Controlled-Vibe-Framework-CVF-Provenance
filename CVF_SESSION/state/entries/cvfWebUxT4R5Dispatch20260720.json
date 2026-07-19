@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2003,
+  "stateKey": "cvfWebUxT4R5Dispatch20260720",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T4-R5",
+    "materialDispatchCommit": "9cc653684",
+    "blockedReview": "docs/reviews/CVF_WEB_UX_T4_R4_BLOCKED_RETURN_REVIEW_2026-07-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R5_SCREENSHOT_STATE_BINDING_REPAIR_2026-07-20.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "retainedEvidence": "R4 command, trace, predecessor, and diagnostic subsets accepted bounded; all three R4 PNGs rejected because onboarding obscures their claimed terminal anchors.",
+    "nextAllowedMove": "Capture exactly three overlay-free, pixel-bound screenshots with post-write hashes and visual reopen proof.",
+    "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
+  }
+}
