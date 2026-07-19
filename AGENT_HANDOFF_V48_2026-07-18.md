@@ -29,8 +29,8 @@ at material commit `9f9d7f6d7`. T1 task-first navigation and workspace audience
 separation is reviewer-accepted with bounded repair at material commit
 `d4e6e48a0`. T1P diagnosis is reviewer-accepted bounded at material commit
 `45d505836`. T2 is reviewer-accepted bounded at material commit `bb1418554`.
-T3 is reviewer-accepted bounded. The original T4 browser audit is accepted as
-blocked, and T4-R1 is dispatch-ready at material commit `f2f8c95e1`.
+T3 is reviewer-accepted bounded. The original T4 and R1 audits are accepted as
+blocked partial evidence, and T4-R2 is dispatch-ready at `73e64074e`.
 
 Automatic semantic edits, real-root apply, commit, push, deployment,
 provider/live calls, production action, and unattended mutation remain parked
@@ -39,19 +39,19 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_ux_t4_r1_worker_execution_next`;
+current mode=`cvf_web_ux_t4_r2_worker_execution_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=execute CVF-WEB-UX-T4-R1 from the final session-sync HEAD
-with 12 fresh localhost captures and retained row-level interaction/focus proof;
+next allowed move=execute CVF-WEB-UX-T4-R2 from the final session-sync HEAD
+with four source-valid supplemental states and retained focus/console proof;
 parked checkpoint=source repair, hosted mutation, deployment, public-sync,
 provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-`cvf_web_ux_t4_r1_worker_execution_next`
+`cvf_web_ux_t4_r2_worker_execution_next`
 
 Previous mode:
-`cvf_web_ux_t4_worker_execution_next`
+`cvf_web_ux_t4_r1_worker_execution_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -547,6 +547,31 @@ Protected paths:
 ## GC-020 Marker - CVF-WEB-UX-T3 Dispatch Session Sync
 
 This handoff records material parent commit `d2bbe3f43`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Claim Boundary
+
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T4-R2 Dispatch Sync
+
+Authorized guard-maintenance scope: record R1 blocked review and R2 material
+dispatch commit `73e64074e`, advance continuity to the no-commit R2 browser
+evidence worker, regenerate session read models, and retain all mutation lanes
+as parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxT4R2Dispatch20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF-WEB-UX-T4-R2 Dispatch Session Sync
+
+This handoff records material parent commit `73e64074e`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 

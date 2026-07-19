@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_ux_t4_r1_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute the source-verified T4-R1 current-source browser-evidence repair from the final session-sync HEAD; parked checkpoint=source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.
+Startup acknowledged: current mode=`cvf_web_ux_t4_r2_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute the source-verified T4-R2 supplemental browser evidence from the final session-sync HEAD; parked checkpoint=source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_ux_t4_r1_worker_execution_next`
+Current mode marker: `cvf_web_ux_t4_r2_worker_execution_next`
 
-Current mode: `cvf_web_ux_t4_r1_worker_execution_next`
+Current mode: `cvf_web_ux_t4_r2_worker_execution_next`
 
-`cvf_web_ux_t4_r1_worker_execution_next`
+`cvf_web_ux_t4_r2_worker_execution_next`
 
 Previous mode:
 
-`cvf_web_ux_t4_worker_execution_next`
+`cvf_web_ux_t4_r1_worker_execution_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,7 +81,8 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
-| CVF-WEB-UX-T4-R1 browser-evidence repair dispatch | `f2f8c95e1` | DISPATCH_READY after accepting the original T4 return as blocked: tablet sidebar evidence duplicated the tablet home image, row-level screenshot locators and literal anchors were absent, and focus claims lacked retained traces. R1 requires 12 fresh localhost captures plus per-row hashes, interaction traces, and keyboard focus traces; all mutation lanes remain parked. |
+| CVF-WEB-UX-T4-R2 supplemental browser-evidence dispatch | `73e64074e` | DISPATCH_READY after R1 review found the 820px drawer expectation conflicts with the source `md` persistent-sidebar breakpoint and retained preferences/focus/console proof remains incomplete. R2 captures exactly four source-valid states plus five named keyboard scenarios; all mutation lanes remain parked. |
+| CVF-WEB-UX-T4-R1 browser-evidence repair dispatch | `f2f8c95e1` | REVIEWED_BLOCK_ACCEPTED_R2_REQUIRED; twelve fresh images and bounded route evidence retained, but 820px is persistent sidebar and required preferences/focus/console evidence is incomplete. |
 | CVF-WEB-UX-T4 browser acceptance and roadmap-closure audit dispatch | `8135d00f8` | REVIEWED_BLOCK_ACCEPTED_R1_REQUIRED; useful route/theme/viewport evidence retained, but the evidence defects prevent browser-acceptance and roadmap-closure claims. |
 | CVF-WEB-UX-T3 Home, onboarding, chrome, and density closure | `114daa54a` | CLOSED_PASS_BOUNDED after reviewer removed unauthorized manifest/root/script/test-rename deltas, replaced six mislabeled Workspace images with current-source Home evidence, repaired clipped preferences, and recomputed focused 20/20, provider-free 3251 pass plus 2 skip, TypeScript, 119-page build, widths, file-size, and pre-commit 83/83; T4 packet authoring released. |
 | CVF-WEB-UX-T3 Home, onboarding, chrome, and density dispatch | `d2bbe3f43` | DISPATCH_READY after source verification, pre-dispatch 75/75, commit-steward, and pre-commit 83/83; exact no-commit current-source Web worker; T4 and mutation lanes parked. |
@@ -319,16 +320,17 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_ux_t4_r1_worker_execution_next`
+Mode: `cvf_web_ux_t4_r2_worker_execution_next`
 
-Execute `CVF-WEB-UX-T4-R1` from the final session-sync HEAD under
-`WORKER_MUST_NOT_COMMIT`: run current-source Web on localhost:3000, recapture
-all 12 states into the fresh R1 evidence directory, and retain each row's
-literal visible text, selector, screenshot path, SHA-256, interaction trace,
-and keyboard focus trace. Stop all started processes and return a terminal
-worker result. Source repair, hosted mutation, deployment, public-sync,
-provider/live calls, production action, and continuous-projection execution
-remain parked. Latest closed numbered LHW wave remains `LHW24`.
+Execute `CVF-WEB-UX-T4-R2` from the final session-sync HEAD under
+`WORKER_MUST_NOT_COMMIT`: run current-source Web on localhost:3000 and capture
+exactly four supplemental states proving 820px persistent sidebar, 767px drawer
+closed/open, and visible violet preference selection. Retain five named
+keyboard scenarios plus terminal console diagnostics, stop all started
+processes, and return a terminal worker result. Source repair, hosted mutation,
+deployment, public-sync, provider/live calls, production action, and
+continuous-projection execution remain parked. Latest closed numbered LHW wave
+remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
