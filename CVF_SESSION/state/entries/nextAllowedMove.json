@@ -1,5 +1,5 @@
 {
-  "stateOrder": 1978,
+  "stateOrder": 1986,
   "stateKey": "nextAllowedMove",
-  "value": "Author and dispatch CVF-WEB-UX-T1P from accepted T1 material commit d4e6e48a0 for read-only hosted packaging and freshness diagnosis. T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Execute CVF-WEB-UX-T1P from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT, refine only the hosted packaging and freshness audit, create its worker return, and return COMPLETE_PENDING_REVIEW. T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
 }

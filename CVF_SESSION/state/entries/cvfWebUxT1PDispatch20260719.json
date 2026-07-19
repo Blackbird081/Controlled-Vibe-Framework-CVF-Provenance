@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1985,
+  "stateKey": "cvfWebUxT1PDispatch20260719",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T1P",
+    "materialDispatchCommit": "32ec223ad",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_UX_T1P_HOSTED_PACKAGING_AND_FRESHNESS_AUDIT_REFINEMENT_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T1P_AUDIT_REFINEMENT_2026-07-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Execute the bounded read-only T1P audit refinement from the final session-sync HEAD and return COMPLETE_PENDING_REVIEW without committing.",
+    "parked": "T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Audit-refinement dispatch only; no hosted freshness conclusion, source mutation, deployment, public export, provider/live execution, or production action is claimed."
+  }
+}

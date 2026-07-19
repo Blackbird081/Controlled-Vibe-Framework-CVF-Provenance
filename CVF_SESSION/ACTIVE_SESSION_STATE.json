@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_ux_t1p_packet_authoring_next",
-  "previousMode": "cvf_web_ux_t1_worker_execution_next",
+  "currentMode": "cvf_web_ux_t1p_worker_execution_next",
+  "previousMode": "cvf_web_ux_t1p_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13473,7 +13473,6 @@
     "nextAllowedMove": "Author and dispatch the projection landmark and dry-run automation roadmap packet.",
     "claimBoundary": "Private projection closure only; no GitHub export, push, provider/live, production, or unattended semantic mapping."
   },
-  "nextAllowedMove": "Author and dispatch CVF-WEB-UX-T1P from accepted T1 material commit d4e6e48a0 for read-only hosted packaging and freshness diagnosis. T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxClarityT0Dispatch20260718": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T0",
@@ -13549,5 +13548,17 @@
     "nextAllowedMove": "Author and dispatch CVF-WEB-UX-T1P for read-only hosted packaging and freshness diagnosis.",
     "parked": "T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Private current-source navigation and workspace audience separation only; no hosted freshness or deployment claim."
-  }
+  },
+  "cvfWebUxT1PDispatch20260719": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T1P",
+    "materialDispatchCommit": "32ec223ad",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_UX_T1P_HOSTED_PACKAGING_AND_FRESHNESS_AUDIT_REFINEMENT_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T1P_AUDIT_REFINEMENT_2026-07-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Execute the bounded read-only T1P audit refinement from the final session-sync HEAD and return COMPLETE_PENDING_REVIEW without committing.",
+    "parked": "T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Audit-refinement dispatch only; no hosted freshness conclusion, source mutation, deployment, public export, provider/live execution, or production action is claimed."
+  },
+  "nextAllowedMove": "Execute CVF-WEB-UX-T1P from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT, refine only the hosted packaging and freshness audit, create its worker return, and return COMPLETE_PENDING_REVIEW. T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
 }
