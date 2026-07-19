@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_ux_t1p_worker_execution_next",
-  "previousMode": "cvf_web_ux_t1p_packet_authoring_next",
+  "currentMode": "cvf_web_ux_t2_packet_authoring_next",
+  "previousMode": "cvf_web_ux_t1p_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13560,5 +13560,15 @@
     "parked": "T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Audit-refinement dispatch only; no hosted freshness conclusion, source mutation, deployment, public export, provider/live execution, or production action is claimed."
   },
-  "nextAllowedMove": "Execute CVF-WEB-UX-T1P from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT, refine only the hosted packaging and freshness audit, create its worker return, and return COMPLETE_PENDING_REVIEW. T2-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
+  "cvfWebUxT1PClosure20260719": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "batchId": "CVF-WEB-UX-T1P",
+    "materialCommit": "45d505836",
+    "completionReview": "docs/reviews/CVF_WEB_UX_T1P_COMPLETION_2026-07-19.md",
+    "disposition": "Visible hosted/current output drift accepted; exact hosted build identity and packaging mechanism remain insufficient evidence.",
+    "nextAllowedMove": "Author and dispatch CVF-WEB-UX-T2 for language and guided knowledge journey remediation.",
+    "parked": "T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Read-only private diagnosis only; no hosted repair, deploy, public export, provider behavior, or production claim."
+  },
+  "nextAllowedMove": "Author and dispatch CVF-WEB-UX-T2 for Vietnamese-first outcome language and a coherent knowledge-to-review-to-handoff journey across the five roadmap routes. T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
 }
