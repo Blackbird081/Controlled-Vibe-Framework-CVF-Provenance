@@ -27,8 +27,8 @@ The projection landmark and inheritance automation roadmap is closed bounded.
 The operator-prioritized CVF Web UX clarity audit is reviewer-accepted bounded
 at material commit `9f9d7f6d7`. T1 task-first navigation and workspace audience
 separation is reviewer-accepted with bounded repair at material commit
-`d4e6e48a0`. T1P audit refinement is dispatch-ready at material commit
-`32ec223ad`; later lanes remain parked.
+`d4e6e48a0`. T1P audit refinement is dispatch-ready at final material commit
+`dfa154b5f`; later lanes remain parked.
 
 Automatic semantic edits, real-root apply, commit, push, deployment,
 provider/live calls, production action, and unattended mutation remain parked
@@ -94,7 +94,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ### CVF-WEB-UX-T1P audit-refinement dispatch
 
-- Material dispatch commit: `32ec223ad`.
+- Final material dispatch commit: `dfa154b5f` after execution-anchor repair.
 - Baseline: `docs/baselines/CVF_GC018_CVF_WEB_UX_T1P_HOSTED_PACKAGING_AND_FRESHNESS_AUDIT_REFINEMENT_2026-07-19.md`.
 - Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T1P_AUDIT_REFINEMENT_2026-07-19.md`.
 - Pre-dispatch 75/75 and pre-commit 83/83 passed after adding the missing ADIF
@@ -385,6 +385,27 @@ Protected paths:
 ## GC-020 Marker - CVF-WEB-UX-T1P Dispatch Session Sync
 
 This handoff records material parent commit `32ec223ad`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T1P Final Anchor Sync
+
+Authorized guard-maintenance scope: record final T1P dispatch commit
+`dfa154b5f` after removing stale worker pre-flight and verification anchors,
+regenerate canonical session read models, and preserve the existing no-commit
+worker route and parked boundaries.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/cvfWebUxT1PDispatch20260719.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF-WEB-UX-T1P Final Anchor Session Sync
+
+This handoff records material parent commit `dfa154b5f`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 

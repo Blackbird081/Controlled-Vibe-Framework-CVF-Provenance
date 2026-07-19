@@ -13552,7 +13552,7 @@
   "cvfWebUxT1PDispatch20260719": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T1P",
-    "materialDispatchCommit": "32ec223ad",
+    "materialDispatchCommit": "dfa154b5f",
     "baseline": "docs/baselines/CVF_GC018_CVF_WEB_UX_T1P_HOSTED_PACKAGING_AND_FRESHNESS_AUDIT_REFINEMENT_2026-07-19.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T1P_AUDIT_REFINEMENT_2026-07-19.md",
     "workerCommitMode": "WORKER_MUST_NOT_COMMIT",

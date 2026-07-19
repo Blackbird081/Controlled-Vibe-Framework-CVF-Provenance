@@ -81,7 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
-| CVF-WEB-UX-T1P hosted packaging and freshness audit-refinement dispatch | `32ec223ad` | DISPATCH_READY after pre-dispatch 75/75 and pre-commit 83/83 PASS; exact two-output no-commit worker; hosted mutation, deploy, public-sync, provider/live, production, T2-T4, and projection execution remain parked. |
+| CVF-WEB-UX-T1P hosted packaging and freshness audit-refinement dispatch | `dfa154b5f` | DISPATCH_READY after final anchor correction, pre-dispatch 75/75, and pre-commit 83/83 PASS; exact two-output no-commit worker; hosted mutation, deploy, public-sync, provider/live, production, T2-T4, and projection execution remain parked. |
 | CVF-WEB-UX-T1 task-first navigation and workspace audience separation closure | `d4e6e48a0` | CLOSED_PASS_BOUNDED with two-file reviewer jargon-leak repair, focused 152/152, TypeScript/build PASS, fresh localhost desktop/mobile evidence, and no hosted/deploy/public claim; T1P packet authoring released. |
 | CVF-WEB-UX-T1 task-first navigation and workspace audience separation dispatch | `2500bc7f4` | DISPATCH_READY; exact eight-path no-commit worker; localhost desktop/mobile evidence required; T1P-T4 and public/deploy/provider/projection lanes parked. |
 | CVF Web task-first UX remediation roadmap | `479e31701` | ACTIVE_T1_DISPATCH_AUTHORIZED; T1 navigation/workspace packet authoring released; T1P-T4 and public/deploy/provider/projection lanes parked. |
