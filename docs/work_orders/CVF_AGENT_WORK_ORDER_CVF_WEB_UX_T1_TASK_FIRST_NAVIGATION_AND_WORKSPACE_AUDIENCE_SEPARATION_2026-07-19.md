@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-WEB-UX-T1
 
@@ -201,6 +201,19 @@ All other paths, especially workspace read-model source/tests, APIs, auth,
 permissions, providers, package dependencies, deployment config, public-sync,
 session state, generated aggregates, governance checkers, and Git history.
 
+## Required Artifact Manifest
+
+| Path | Required at handoff | Purpose |
+|---|---|---|
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/Sidebar.tsx` | Yes | task-first navigation implementation |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/Sidebar.test.tsx` | Yes | route, group, and permission preservation proof |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/i18n/vi.json` | Yes | Vietnamese group labels |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/i18n/en.json` | Yes | English group labels |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/workspace/page.tsx` | Yes | ordinary and advanced audience separation |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/workspace/page.test.tsx` | Yes | audience and jargon-leak regression proof |
+| `docs/reviews/CVF_WEB_UX_T1_WORKER_RETURN_2026-07-19.md` | Yes | worker and R1 evidence return |
+| `docs/reviews/evidence/CVF_WEB_UX_T1_R1_LOCALHOST_2026-07-19` | Yes | durable desktop/mobile localhost images |
+
 ## Work-Order Fulfillment Manifest
 
 | Artifact | Required worker action |
@@ -362,14 +375,14 @@ the hosted site. Pure UI structure proof needs no provider call.
 
 ## Acceptance Criteria
 
-- [ ] exactly the Allowed Scope changed set;
-- [ ] every existing route target remains represented;
-- [ ] new groups have both Vietnamese and English labels;
-- [ ] `/workspace` ordinary summary appears before internal detail;
-- [ ] advanced disclosure retains exact technical values;
-- [ ] focused tests, TypeScript, build, file-size, and worker-return gates pass;
-- [ ] localhost desktop and mobile evidence is recorded;
-- [ ] nothing staged and worker HEAD unchanged.
+- [x] exactly the Allowed Scope changed set;
+- [x] every existing route target remains represented;
+- [x] new groups have both Vietnamese and English labels;
+- [x] `/workspace` ordinary summary appears before internal detail;
+- [x] advanced disclosure retains exact technical values;
+- [x] focused tests, TypeScript, build, file-size, and worker-return gates pass;
+- [x] localhost desktop and mobile evidence is recorded;
+- [x] nothing staged and worker HEAD unchanged.
 
 ## Evidence Requirements
 
@@ -387,12 +400,45 @@ run reviewer-fast plus pre-closure gates before acceptance.
 
 ## Closure Checklist
 
-- [ ] All roadmap trace rows are satisfied or blocked explicitly.
-- [ ] Allowed changed set is exact; no forbidden path changed.
-- [ ] Route and permission preservation evidence passes.
-- [ ] Ordinary summary and advanced exact detail both pass.
-- [ ] Focused tests, TypeScript, build, browser proof, and governed gates pass.
-- [ ] Worker made no commit and reviewer owns closure.
+- [x] All roadmap trace rows are satisfied or blocked explicitly.
+- [x] Allowed changed set is exact; no forbidden path changed.
+- [x] Route and permission preservation evidence passes.
+- [x] Ordinary summary and advanced exact detail both pass.
+- [x] Focused tests, TypeScript, build, browser proof, and governed gates pass.
+- [x] Worker made no commit and reviewer owns closure.
+
+## Closure Diff Gate
+
+| Requirement | Final evidence | Disposition |
+|---|---|---|
+| navigation regroup | five task-first groups with route/permission tests | PASS |
+| audience separation | plain-language summary plus exact advanced disclosure | PASS |
+| responsive proof | durable desktop/mobile localhost images | PASS |
+| source quality | focused tests 152/152, TypeScript, production build | PASS |
+| scope boundary | exact material set; temporary helper removed | PASS |
+| public/deploy boundary | no hosted, provider, deploy, or public mutation | PASS |
+
+## Closure Decision
+
+`CLOSED_PASS_BOUNDED`
+
+Accepted by the independent reviewer/closer with a bounded two-file reviewer
+repair and fresh R1 localhost evidence. T1P packet authoring is released;
+later implementation, deployment, public, provider, and projection lanes
+remain parked.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | top status and checked acceptance/closure lists | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_UX_T1_COMPLETION_2026-07-19.md` | reviewer decision `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_WEB_TASK_FIRST_UX_AND_AUDIENCE_CLARITY_REMEDIATION_ROADMAP_2026-07-19.md` | T1 accepted; T1P is the next separately governed move | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | changed-path coverage and aggregate drift checks pass | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | paired registry surface exists; no mutation required by the coverage gate | PASS |
+| External evidence digest | repository-local R1 evidence | N/A with reason: evidence is committed inside this repository | N/A with reason |
+| System loop interlock | no system-loop mutation authorized | N/A with reason: presentation-only Web tranche | N/A with reason |
+| Session continuity | active session front door and handoff | N/A with reason: protected session-sync follows material commit | N/A with reason |
 
 ## Return-To-Orchestrator Conditions
 
