@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_t0_packet_authoring_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=author the fresh GC-018 baseline and source-verified T0 work order for continuous projection; parked checkpoint=implementation, automatic semantic edits, real-root apply, commit, push, deployment, public-sync, provider/live calls, production action, and unattended mutation.
+Startup acknowledged: current mode=`continuous_projection_t0_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute CVF-CONTINUOUS-PROJECTION-T0 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT; parked checkpoint=T1-T4 implementation, automatic semantic edits, real-root apply, commit, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_t0_packet_authoring_next`
+Current mode marker: `continuous_projection_t0_worker_execution_next`
 
-Current mode: `continuous_projection_t0_packet_authoring_next`
+Current mode: `continuous_projection_t0_worker_execution_next`
 
-`continuous_projection_t0_packet_authoring_next`
+`continuous_projection_t0_worker_execution_next`
 
 Previous mode:
 
-`cvf_web_ux_t4_r5_worker_execution_next`
+`continuous_projection_t0_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Continuous projection T0 three-root contract dispatch | `ebc0242fd` | DISPATCH_READY. Exactly two no-commit review outputs; read-only provenance/public-sync/cvf-web inspection; T1-T4 and all mutation lanes remain parked. |
 | CVF Web task-first UX roadmap closure | `d757fe5ac` | CLOSED_PASS_BOUNDED. T4 accepted with R5 overlay-free, hash-bound, independently reopened terminal screenshots; ADIF-0042 records the metadata-versus-pixel evidence defect. Continuous-projection T0 packet authoring is released, while implementation and mutation lanes remain parked. |
 | CVF-WEB-UX-T4-R5 screenshot-state binding repair dispatch | `9cc653684` | REVIEWED_BLOCK_ACCEPTED_R5_REQUIRED; all three R4 PNGs visibly retain onboarding and contradict their claimed terminal anchors, while R4 command, trace, predecessor, and diagnostic subsets remain accepted bounded. R5 changes no source and requires one persistent visible browser context, overlay absence, post-write hashes, and visual reopen proof. |
 | CVF-WEB-UX-T4-R4 final interaction and command proof dispatch | `650b26578` | REVIEWED_BLOCK_ACCEPTED_R4_REQUIRED; R3 Preferences/violet and drawer evidence retained, but Home used onboarding as result anchor, Workspace omitted final close, Knowledge targeted a step tab, commands were non-terminal, and reviewer removed two worker scratch files. R4 is exactly three interactions plus terminal command/teardown proof. |
@@ -324,15 +325,18 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_t0_packet_authoring_next`
+Mode: `continuous_projection_t0_worker_execution_next`
 
-Author the fresh GC-018 baseline and source-verified T0 work order for
-`docs/roadmaps/CVF_CONTINUOUS_PROJECTION_DRIFT_DETECTION_AND_REVIEW_PACKET_AUTOMATION_ROADMAP_2026-07-19.md`
-from Web UX closure commit `d757fe5ac`. T0 packet authoring may reconcile the
-three-root evidence contract and release only a read-only audit worker.
-Implementation, automatic semantic edits, real-root apply, commit, push,
-deployment, public-sync, provider/live calls, production action, and unattended
-mutation remain parked. Latest closed numbered LHW wave remains `LHW24`.
+Execute `CVF-CONTINUOUS-PROJECTION-T0` from the final session-sync HEAD under
+`WORKER_MUST_NOT_COMMIT` using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T0_THREE_ROOT_DRIFT_CONTRACT_FOR_CLAUDE_2026-07-20.md`.
+Create exactly the terminal three-root drift-contract ledger and worker return,
+inspect provenance/public-sync/cvf-web read-only, run pre-implementation before
+edits, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. T1-T4
+implementation, automatic semantic edits, real-root apply, commit, push,
+deployment, public-sync mutation, provider/live calls, production action, and
+unattended mutation remain parked. Latest closed numbered LHW wave remains
+`LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

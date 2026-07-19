@@ -42,20 +42,20 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t0_packet_authoring_next`;
+current mode=`continuous_projection_t0_worker_execution_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=author the fresh GC-018 baseline and source-verified T0 work
-order for continuous projection from Web UX closure commit `d757fe5ac`;
-parked checkpoint=implementation, automatic semantic edits, real-root apply,
-commit, push, deployment, public-sync, provider/live calls, production action,
-and unattended mutation.
+next allowed move=execute CVF-CONTINUOUS-PROJECTION-T0 from the final
+session-sync HEAD under WORKER_MUST_NOT_COMMIT with exactly two review outputs;
+parked checkpoint=T1-T4 implementation, automatic semantic edits, real-root
+apply, commit, push, deployment, public-sync mutation, provider/live calls,
+production action, and unattended mutation.
 
 ## Current Mode
 
-`continuous_projection_t0_packet_authoring_next`
+`continuous_projection_t0_worker_execution_next`
 
 Previous mode:
-`cvf_web_ux_t4_r5_worker_execution_next`
+`continuous_projection_t0_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -769,6 +769,31 @@ Protected paths:
 ## GC-020 Marker - CVF Web UX Roadmap Closure Session Sync
 
 This handoff records material parent commit `d757fe5ac`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Claim Boundary
+
+## Core Guard Self-Protection Authorization - Continuous Projection T0 Dispatch Sync
+
+Authorized guard-maintenance scope: record material dispatch commit
+`ebc0242fd`, advance continuity to the no-commit T0 source-audit worker,
+regenerate session read models, and retain T1-T4 plus all mutation lanes as
+parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT0Dispatch20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - Continuous Projection T0 Dispatch Session Sync
+
+This handoff records material parent commit `ebc0242fd`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 

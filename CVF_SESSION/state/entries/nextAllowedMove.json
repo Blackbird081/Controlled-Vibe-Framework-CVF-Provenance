@@ -1,5 +1,5 @@
 {
   "stateOrder": 2002,
   "stateKey": "nextAllowedMove",
-  "value": "Author the fresh GC-018 baseline and source-verified T0 work order for the Continuous Projection Drift Detection And Review-Packet Automation roadmap from material closure commit d757fe5ac. T0 packet authoring may reconcile the three-root evidence contract and release only a read-only audit worker; implementation, automatic semantic edits, real-root apply, commit, push, deployment, public-sync, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Execute CVF-CONTINUOUS-PROJECTION-T0 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT using docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T0_THREE_ROOT_DRIFT_CONTRACT_FOR_CLAUDE_2026-07-20.md. Create exactly the terminal three-root drift-contract ledger and worker return, inspect provenance/public-sync/cvf-web read-only, run pre-implementation before edits, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T1-T4 implementation, automatic semantic edits, real-root apply, commit, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
