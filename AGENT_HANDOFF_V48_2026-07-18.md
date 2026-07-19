@@ -38,7 +38,7 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_ux_t3_worker_execution_next`;
+current mode=`cvf_web_ux_t4_worker_execution_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
 next allowed move=execute CVF-WEB-UX-T3 from the final session-sync HEAD with
 durable first-run and returning-user localhost evidence;
@@ -47,10 +47,10 @@ provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-`cvf_web_ux_t3_worker_execution_next`
+`cvf_web_ux_t4_worker_execution_next`
 
 Previous mode:
-`cvf_web_ux_t3_packet_authoring_next`
+`cvf_web_ux_t4_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
