@@ -24,9 +24,9 @@ Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T1P_AUDIT_RE
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`.
 
-executionBaseHead: require the exact committed dispatch HEAD `0a46eafa0` before any edit.
+executionBaseHead: require the operator-provided committed packet-repair/session-sync HEAD before any edit.
 
-Current-time notes: packet authored 2026-07-19 from current source at dispatch HEAD `0a46eafa0`.
+Current-time notes: packet source base is `0a46eafa0`; worker execution begins only from the later committed packet-repair/session-sync HEAD supplied by the dispatcher.
 
 Do-not-misread notes: Do not create a new audit from scratch. Modify the existing `docs/reviews/CVF_WEB_UX_T1P_HOSTED_PACKAGING_AND_FRESHNESS_AUDIT_2026-07-19.md`.
 
