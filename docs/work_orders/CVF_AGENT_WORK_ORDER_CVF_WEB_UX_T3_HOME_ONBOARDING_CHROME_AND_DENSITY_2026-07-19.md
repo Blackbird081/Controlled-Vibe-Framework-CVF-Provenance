@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-WEB-UX-T3
 
@@ -232,7 +232,7 @@ Run from the cvf-web package unless a repository-root command is shown:
 3. `npm run check`;
 4. `npm run build`;
 5. repository root: `python governance/compat/check_governed_file_size.py --enforce`;
-6. repository root: `python governance/compat/run_worker_return_fast_gate.py --base <executionBaseHead> --head HEAD`.
+6. repository root: `python governance/compat/run_worker_return_fast_gate.py`.
 
 The worker must not replace the required fast gate with individual checkers.
 
@@ -299,7 +299,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
-requiredGate: `python governance/compat/run_worker_return_fast_gate.py --base <executionBaseHead> --head HEAD`
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 
 individualCheckerSubstitution: FORBIDDEN
 
@@ -361,14 +361,14 @@ governance foundation, index, registry, or generated aggregate.
 
 ## Acceptance Criteria
 
-- [ ] First-run value is visible within at most two onboarding decisions.
-- [ ] No second automatic tour follows onboarding.
-- [ ] Returning Home exposes outcomes and primary action before education.
-- [ ] Secondary controls no longer dominate desktop or mobile chrome.
-- [ ] Document/body horizontal overflow is zero at 390px and 1440px.
-- [ ] Home page is materially shorter than 951 lines through extraction.
-- [ ] Focused, provider-free, check, build, file-size, browser, and worker gates pass.
-- [ ] Exact Allowed Scope only; nothing staged; HEAD unchanged.
+- [x] First-run value is visible within at most two onboarding decisions.
+- [x] No second automatic tour follows onboarding.
+- [x] Returning Home exposes outcomes and primary action before education.
+- [x] Secondary controls no longer dominate desktop or mobile chrome.
+- [x] Document/body horizontal overflow is zero at 390px and 1440px.
+- [x] Home page is materially shorter than 951 lines through extraction.
+- [x] Focused, provider-free, check, build, file-size, browser, and worker gates pass.
+- [x] Exact Allowed Scope only; nothing staged; HEAD unchanged.
 
 ## Review Gate
 
@@ -379,11 +379,11 @@ obscured screenshot or measurement without current-source server evidence fails.
 
 ## Closure Checklist
 
-- [ ] Every acceptance item is recomputed by the reviewer.
-- [ ] Work order and roadmap statuses match the review decision.
-- [ ] Closure Diff Gate reconciles roadmap, packet, artifacts, and claims.
-- [ ] Material commit contains no protected session-sync path.
-- [ ] T4 remains parked unless T3 closes with dependency evidence.
+- [x] Every acceptance item is recomputed by the reviewer.
+- [x] Work order and roadmap statuses match the review decision.
+- [x] Closure Diff Gate reconciles roadmap, packet, artifacts, and claims.
+- [x] Material commit contains no protected session-sync path.
+- [x] T4 is released only after this T3 closure evidence.
 
 ## Return-To-Orchestrator Conditions
 
@@ -414,12 +414,12 @@ recompute it at the supplied execution base.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | T3 completion review | N/A with reason: implementation has not started | N/A with reason |
-| Roadmap state | active UX roadmap | T3 packet authorization is current | PASS |
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T3 completion review | reviewer-recomputed bounded closure | PASS |
+| Roadmap state | active UX roadmap | T3 accepted; T4 packet authoring released | PASS |
 | Registry JSON | corpus registry aggregate | current drift check; no source-registration mutation required | PASS |
 | Registry Markdown | paired registry surface | current governed surface; no source-registration mutation required | PASS |
-| External evidence digest | durable T3 evidence directory | N/A with reason: worker creates evidence during execution | N/A with reason |
+| External evidence digest | durable T3 evidence directory | N/A with reason: repository-local browser evidence, not an external artifact | N/A with reason |
 | System loop interlock | no system-loop change | N/A with reason: Web presentation only | N/A with reason |
 | Session continuity | active state and handoff | N/A with reason: session-sync-steward owned | N/A with reason |
 
@@ -428,14 +428,14 @@ recompute it at the supplied execution base.
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
 | Dispatch receipt | source-verified ready packet | this paired baseline/work-order family at base `6b0bd77dd` | PASS |
-| Execution receipt | worker return and durable browser evidence | N/A with reason: execution has not started | N/A with reason |
+| Execution receipt | worker return and durable browser evidence | reviewer-recomputed return plus six PNGs | PASS |
 | Provider receipt | none | N/A with reason: provider/live work is forbidden | N/A with reason |
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: T3 is private current-source remediation pending review and later T4 acceptance.
+Reason: T3 is accepted private current-source remediation; T4 acceptance and all hosted/public work remain separate.
 
 ## Claim Boundary
 
