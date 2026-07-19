@@ -36,19 +36,19 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_ux_remediation_roadmap_authoring_next`;
+current mode=`cvf_web_ux_t1_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=finalize CVF-WEB-UX-T0 closure, restore the lost parked
-projection roadmap, then author the UX remediation roadmap and first packet;
-parked checkpoint=UX implementation, public-sync, deployment, provider/live
-calls, and continuous-projection execution.
+next allowed move=author and dispatch CVF-WEB-UX-T1 for task-first navigation
+and workspace audience separation;
+parked checkpoint=T1P-T4, public-sync, deployment, provider/live calls,
+production action, and continuous-projection execution.
 
 ## Current Mode
 
-`cvf_web_ux_remediation_roadmap_authoring_next`
+`cvf_web_ux_t1_packet_authoring_next`
 
 Previous mode:
-`cvf_web_ux_clarity_t0_worker_execution_next`
+`cvf_web_ux_remediation_roadmap_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -60,6 +60,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 - Restored `docs/roadmaps/CVF_CONTINUOUS_PROJECTION_DRIFT_DETECTION_AND_REVIEW_PACKET_AUTOMATION_ROADMAP_2026-07-19.md` as a durable governed artifact.
 - Status remains parked until CVF Web UX remediation passes localhost browser
   acceptance; no projection execution is released.
+
+### CVF Web UX remediation roadmap
+
+- Material roadmap commit: `479e31701`.
+- T1 packet authoring is released for task-first navigation and workspace
+  audience separation.
+- T1P-T4, public-sync, deploy, provider/live, production, and continuous
+  projection execution remain parked.
 
 ### Netlify build repair
 
@@ -142,12 +150,10 @@ provider, or perform unattended apply.
 
 ## Next Allowed Move
 
-Finalize the reviewer-owned `CVF-WEB-UX-T0` closure from material commit
-`9f9d7f6d7`, restore the lost parked continuous-projection roadmap as a
-separate recovery batch, then author the source-verified CVF Web UX remediation
-roadmap and first GC-018/work order. UX implementation, public-sync,
-deployment, provider/live calls, and continuous-projection execution remain
-parked until their own governed release.
+Author and dispatch `CVF-WEB-UX-T1` from roadmap commit `479e31701` for
+task-first navigation and workspace audience separation. The delegated worker
+must not commit. T1P-T4, public-sync, deployment, provider/live calls,
+production action, and continuous-projection execution remain parked.
 
 ## Core Guard Self-Protection Authorization - V48 Rotation And Queue Sync
 
@@ -242,6 +248,27 @@ Protected paths:
 ## GC-020 Marker - Projection Roadmap Recovery Session Sync
 
 This handoff records material parent commit `03b50f111`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Core Guard Self-Protection Authorization - CVF Web UX Roadmap Sync
+
+Authorized guard-maintenance scope: record roadmap material commit
+`479e31701`, advance mode to T1 packet authoring, and preserve all later lanes.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxRemediationRoadmap20260719.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF Web UX Roadmap Session Sync
+
+This handoff records material parent commit `479e31701`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 

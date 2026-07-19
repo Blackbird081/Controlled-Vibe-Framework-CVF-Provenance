@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_web_ux_remediation_roadmap_authoring_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=finalize the reviewer-owned CVF-WEB-UX-T0 closure, restore the lost parked projection roadmap, then author the UX remediation roadmap and first source-verified packet; parked checkpoint=UX implementation, public-sync, deployment, provider/live calls, and continuous-projection execution.
+Startup acknowledged: current mode=`cvf_web_ux_t1_packet_authoring_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=author and dispatch CVF-WEB-UX-T1 for task-first navigation and workspace audience separation; parked checkpoint=T1P-T4, public-sync, deployment, provider/live calls, production action, and continuous-projection execution.
 
 ## Current Mode
 
-Current mode marker: `cvf_web_ux_remediation_roadmap_authoring_next`
+Current mode marker: `cvf_web_ux_t1_packet_authoring_next`
 
-Current mode: `cvf_web_ux_remediation_roadmap_authoring_next`
+Current mode: `cvf_web_ux_t1_packet_authoring_next`
 
-`cvf_web_ux_remediation_roadmap_authoring_next`
+`cvf_web_ux_t1_packet_authoring_next`
 
 Previous mode:
 
-`cvf_web_ux_clarity_t0_worker_execution_next`
+`cvf_web_ux_remediation_roadmap_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF Web task-first UX remediation roadmap | `479e31701` | ACTIVE_T1_DISPATCH_AUTHORIZED; T1 navigation/workspace packet authoring released; T1P-T4 and public/deploy/provider/projection lanes parked. |
 | Continuous projection drift roadmap recovery | `03b50f111` | RECOVERED_PARKED; durable roadmap restored with public-presentation and external-agent-context learning; execution remains parked until CVF Web UX remediation passes localhost browser acceptance. |
 | CVF Web UX clarity T0 audit | `9f9d7f6d7`; closure `93c2663a6` | CLOSED_PASS_BOUNDED; eight localhost screenshots accepted after reviewer correction of route facts, source paths, hosted/local separation, and workspace truth-packaging-presentation classification; remediation planning released, implementation/public/deploy/provider lanes parked. |
 | Netlify Truth Kernel clean-install resolution repair | `0cae3289f` provenance; `0d3fec3ca` public | EXPORTED_BUILD_REPAIR; narrow TypeScript path mapping closes file-link realpath resolution through absent sibling dependencies; fresh public worktree plus cvf-web-only `npm ci`, TypeScript, focused regression, and production build 121/121 PASS; external Netlify deploy result remains pending. |
@@ -308,15 +309,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `cvf_web_ux_remediation_roadmap_authoring_next`
+Mode: `cvf_web_ux_t1_packet_authoring_next`
 
-Finalize the reviewer-owned `CVF-WEB-UX-T0` closure from material commit
-`9f9d7f6d7`, restore the lost parked continuous-projection roadmap as a
-separate recovery batch, then author the source-verified CVF Web UX remediation
-roadmap and first GC-018/work order. UX implementation, public-sync,
-deployment, provider/live calls, and continuous-projection execution remain
-parked until their own governed release. Latest closed numbered LHW wave
-remains `LHW24`.
+Author and dispatch `CVF-WEB-UX-T1` from roadmap commit `479e31701` for
+task-first navigation and workspace audience separation. The delegated worker
+must not commit. T1P-T4, public-sync, deployment, provider/live calls,
+production action, and continuous-projection execution remain parked. Latest
+closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
