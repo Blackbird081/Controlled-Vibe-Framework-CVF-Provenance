@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_ux_t2_worker_execution_next",
-  "previousMode": "cvf_web_ux_t2_packet_authoring_next",
+  "currentMode": "cvf_web_ux_t3_packet_authoring_next",
+  "previousMode": "cvf_web_ux_t2_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13581,5 +13581,16 @@
     "parked": "T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; no UI implementation, browser acceptance, hosted freshness, deployment, provider behavior, public export, or production claim."
   },
-  "nextAllowedMove": "Execute CVF-WEB-UX-T2 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT, implement the five-route language and guided knowledge journey, capture durable localhost desktop/mobile evidence, and return COMPLETE_PENDING_REVIEW. T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave."
+  "nextAllowedMove": "Author the bounded CVF-WEB-UX-T3 GC-018 baseline and source-verified work order for Home, onboarding, global chrome, and density only. T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "cvfWebUxT2Closure20260719": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "batchId": "CVF-WEB-UX-T2",
+    "materialClosureCommit": "bb1418554",
+    "completionReview": "docs/reviews/CVF_WEB_UX_T2_COMPLETION_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T2_LANGUAGE_AND_GUIDED_KNOWLEDGE_JOURNEY_2026-07-19.md",
+    "verification": "Focused 18/18, provider-free 3245 passed plus 2 skipped, TypeScript, production build, durable localhost desktop/mobile evidence, file-size, and pre-commit 83/83 passed.",
+    "nextAllowedMove": "Author the bounded T3 baseline and source-verified work order only.",
+    "parked": "T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Current-source localhost language and guided-journey acceptance only; no hosted freshness, deployment, provider behavior, public export, or production claim."
+  }
 }
