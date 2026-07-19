@@ -29,10 +29,11 @@ at material commit `9f9d7f6d7`. T1 task-first navigation and workspace audience
 separation is reviewer-accepted with bounded repair at material commit
 `d4e6e48a0`. T1P diagnosis is reviewer-accepted bounded at material commit
 `45d505836`. T2 is reviewer-accepted bounded at material commit `bb1418554`.
-T3 is reviewer-accepted bounded. T4 through R3 retain bounded partial evidence.
-R3 Preferences/violet and drawer proof is accepted, while Home, Workspace,
-Knowledge, command, and teardown proof remain open. T4-R4 is dispatch-ready at
-`650b26578`.
+T3 is reviewer-accepted bounded. T4 and the Web UX roadmap are closed bounded
+at material commit `d757fe5ac`; R5 supplies independently reopened,
+overlay-free, hash-bound Home, Workspace, and Knowledge terminal screenshots.
+The Web UX release condition for continuous-projection T0 packet authoring is
+satisfied.
 
 Automatic semantic edits, real-root apply, commit, push, deployment,
 provider/live calls, production action, and unattended mutation remain parked
@@ -41,19 +42,20 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`cvf_web_ux_t4_r5_worker_execution_next`;
+current mode=`continuous_projection_t0_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=execute CVF-WEB-UX-T4-R5 from the final session-sync HEAD
-with exactly three overlay-free, hash-bound screenshots and visual reopen proof;
-parked checkpoint=source repair, hosted mutation, deployment, public-sync,
-provider/live calls, production action, and continuous-projection execution.
+next allowed move=author the fresh GC-018 baseline and source-verified T0 work
+order for continuous projection from Web UX closure commit `d757fe5ac`;
+parked checkpoint=implementation, automatic semantic edits, real-root apply,
+commit, push, deployment, public-sync, provider/live calls, production action,
+and unattended mutation.
 
 ## Current Mode
 
-`cvf_web_ux_t4_r5_worker_execution_next`
+`continuous_projection_t0_packet_authoring_next`
 
 Previous mode:
-`cvf_web_ux_t4_r4_worker_execution_next`
+`cvf_web_ux_t4_r5_worker_execution_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -742,6 +744,31 @@ Protected paths:
 ## GC-020 Marker - CVF-WEB-UX-T4-R5 Dispatch Session Sync
 
 This handoff records material parent commit `9cc653684`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Claim Boundary
+
+## Core Guard Self-Protection Authorization - CVF Web UX Roadmap Closure Sync
+
+Authorized guard-maintenance scope: record Web UX material closure commit
+`d757fe5ac`, release only continuous-projection T0 baseline/work-order
+authoring, regenerate session read models, and retain implementation plus every
+mutation lane as parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxRoadmapClosure20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF Web UX Roadmap Closure Session Sync
+
+This handoff records material parent commit `d757fe5ac`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 
