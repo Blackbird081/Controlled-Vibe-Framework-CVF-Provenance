@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-WEB-UX-T1P
 
@@ -264,10 +264,10 @@ git status --short
 
 ## Acceptance Criteria
 
-- [ ] Existing audit is edited in-place
-- [ ] Hypotheses correctly classified (CONFIRMED/REJECTED/INSUFFICIENT_EVIDENCE)
-- [ ] No deployment proposed as part of T1P
-- [ ] Only two files output (audit and worker return)
+- [x] Existing audit is edited in-place
+- [x] Hypotheses correctly classified (CONFIRMED/REJECTED/INSUFFICIENT_EVIDENCE)
+- [x] No deployment proposed as part of T1P
+- [x] Only two worker-output files produced (audit and worker return)
 
 ## Evidence Requirements
 
@@ -281,16 +281,30 @@ Reviewer must verify the edited audit file matches the expected vocabulary and c
 
 ## Closure Checklist
 
-- [ ] Audit correctly verified
-- [ ] Rules strictly adhered to
+- [x] Audit correctly verified
+- [x] Rules strictly adhered to
 
 ## Return-To-Orchestrator Conditions
 
-Return `COMPLETE_PENDING_REVIEW` when done.
+Fulfilled: worker returned `COMPLETE_PENDING_REVIEW`; independent reviewer
+closed the bounded audit with source-locator and causal-boundary repairs.
 
 ## Operator Checkpoint
 
-T1P dispatch is authorized for audit refinement only. Production deployment remains parked until explicit unparking.
+T1P audit refinement is complete. Production deployment remains parked until explicit unparking.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | status `CLOSED_PASS_BOUNDED`; acceptance and closure checklists resolved | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_UX_T1P_COMPLETION_2026-07-19.md` | independent reviewer decision | PASS |
+| Roadmap state | `docs/roadmaps/CVF_WEB_TASK_FIRST_UX_AND_AUDIENCE_CLARITY_REMEDIATION_ROADMAP_2026-07-19.md` | T1P accepted; T2 packet authoring next | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate and changed-path coverage gates | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | paired registry surface exists | PASS |
+| External evidence digest | accepted T0 hosted observations | N/A with reason: no new external artifact promoted | N/A with reason |
+| System loop interlock | no system-loop mutation authorized | N/A with reason: documentation-only audit closure | N/A with reason |
+| Session continuity | active session front door and handoff | N/A with reason: protected session-sync follows material closure | N/A with reason |
 
 ## Claim Boundary
 
@@ -300,4 +314,4 @@ Authorizes the refinement of the T1P audit document. Hosted mutation, deploy, pu
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: Internal review stage.
+Reason: closed private diagnosis; no public export or deployment was authorized.
