@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_T4_R3_DISPATCH_READY
+Status: ACTIVE_T4_R4_DISPATCH_READY
 
 Date: 2026-07-19
 
@@ -131,15 +131,18 @@ explanatory cards while retaining warnings at the point of action.
 
 ### T4 - Browser Acceptance And Roadmap Closure
 
-Disposition: `REVIEWED_BLOCK_ACCEPTED_R3_REQUIRED`. The first audit, R1, and R2
+Disposition: `REVIEWED_BLOCK_ACCEPTED_R4_REQUIRED`. The first audit, R1, and R2
 preserve useful render/width evidence but cannot close. R2 correctly captured
 820px persistent-sidebar behavior and a 767px drawer pair, but its claimed
 preferences-open image contains no open panel, its own anchor is `NOT_FOUND`,
-and named focus scenarios do not identify or reach the required targets. R3 is
+and named focus scenarios do not identify or reach the required targets. R3
+adds valid Preferences, accent, drawer, and partial Home evidence, but its Home
+anchor belongs to onboarding, Workspace omits the closing transition, Knowledge
+targets a step tab, and command evidence remains non-terminal. R4 is
 dispatch-ready through
 `docs/baselines/CVF_GC018_CVF_WEB_UX_T4_BROWSER_ACCEPTANCE_AND_ROADMAP_CLOSURE_2026-07-19.md`
 and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R3_INTERACTION_TRACE_REPAIR_2026-07-20.md`.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R4_FINAL_INTERACTION_AND_COMMAND_PROOF_2026-07-20.md`.
 
 Run current source on localhost and inspect desktop, tablet, and mobile in dark,
 light, and a non-default accent. Check navigation, focus, overflow, primary
@@ -224,5 +227,5 @@ require separate reviewed batches. This roadmap is private planning authority.
 
 T1, T1P, T2, and T3 are closed with bounded evidence. This roadmap authorizes
 one no-commit T4 current-source browser-evidence repair under the paired
-R3 packet. Source repair, provider calls, deployment, public export, production
+R4 packet. Source repair, provider calls, deployment, public export, production
 mutation, and continuous-projection execution remain parked.

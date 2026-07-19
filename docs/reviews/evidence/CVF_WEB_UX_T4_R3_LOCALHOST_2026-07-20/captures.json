@@ -1,0 +1,11 @@
+[
+  {
+    "captureId": "desktop-dark-preferences-violet-open",
+    "viewport": "1440x900",
+    "route": "http://localhost:3000/home",
+    "screenshotPath": "docs\\reviews\\evidence\\CVF_WEB_UX_T4_R3_LOCALHOST_2026-07-20\\desktop-dark-preferences-violet-open.png",
+    "visibleAnchorText": "violet",
+    "computedAccentRgb": "139 92 246",
+    "verdict": "PASS"
+  }
+]
