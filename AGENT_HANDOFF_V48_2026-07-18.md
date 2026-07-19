@@ -338,6 +338,20 @@ This handoff records material parent commit `d4e6e48a0`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
 
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T1P Packet Sync
+
+Authorized guard-maintenance scope: record T1P packet material commit
+`52e916e20` while retaining packet repair as the next move before worker
+execution.
+
+Protected path: `AGENT_HANDOFF_V48_2026-07-18.md`.
+
+## GC-020 Marker - CVF-WEB-UX-T1P Packet Session Sync
+
+This handoff records material parent commit `52e916e20`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
 Remote tracking branch: `origin/main`.
 
 Exact remote SHA must be derived live from git when needed.
