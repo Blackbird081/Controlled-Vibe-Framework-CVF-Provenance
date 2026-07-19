@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_ux_t3_packet_authoring_next",
-  "previousMode": "cvf_web_ux_t2_worker_execution_next",
+  "currentMode": "cvf_web_ux_t3_worker_execution_next",
+  "previousMode": "cvf_web_ux_t3_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13581,7 +13581,7 @@
     "parked": "T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; no UI implementation, browser acceptance, hosted freshness, deployment, provider behavior, public export, or production claim."
   },
-  "nextAllowedMove": "Author the bounded CVF-WEB-UX-T3 GC-018 baseline and source-verified work order for Home, onboarding, global chrome, and density only. T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute CVF-WEB-UX-T3 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT, implement the bounded Home, onboarding, chrome, and density changes, capture durable first-run and returning-user localhost evidence, and return COMPLETE_PENDING_REVIEW. T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT2Closure20260719": {
     "status": "CLOSED_PASS_BOUNDED",
     "batchId": "CVF-WEB-UX-T2",
@@ -13592,5 +13592,16 @@
     "nextAllowedMove": "Author the bounded T3 baseline and source-verified work order only.",
     "parked": "T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Current-source localhost language and guided-journey acceptance only; no hosted freshness, deployment, provider behavior, public export, or production claim."
+  },
+  "cvfWebUxT3Dispatch20260719": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T3",
+    "materialDispatchCommit": "d2bbe3f43",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_UX_T3_HOME_ONBOARDING_CHROME_AND_DENSITY_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T3_HOME_ONBOARDING_CHROME_AND_DENSITY_2026-07-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Execute bounded T3 current-source Web work from the final session-sync HEAD and return COMPLETE_PENDING_REVIEW without committing.",
+    "parked": "T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; no UI acceptance, hosted freshness, deployment, provider behavior, public export, or production claim."
   }
 }
