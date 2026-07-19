@@ -551,6 +551,31 @@ accept the parent SHA for this protected sync commit.
 
 ## Claim Boundary
 
+## Core Guard Self-Protection Authorization - CVF-WEB-UX-T4 Dispatch Sync
+
+Authorized guard-maintenance scope: record T4 material dispatch commit
+`8135d00f8`, advance continuity to the no-commit browser-audit worker,
+regenerate canonical session read models, and retain source repair plus every
+hosted/deploy/public/provider/production/projection lane as parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/cvfWebUxT4Dispatch20260719.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+## GC-020 Marker - CVF-WEB-UX-T4 Dispatch Session Sync
+
+This handoff records material parent commit `8135d00f8`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept the parent SHA for this protected sync commit.
+
+## Claim Boundary
+
 ## Core Guard Self-Protection Authorization - CVF-WEB-UX-T3 Closure Sync
 
 Authorized guard-maintenance scope: record T3 material closure commit

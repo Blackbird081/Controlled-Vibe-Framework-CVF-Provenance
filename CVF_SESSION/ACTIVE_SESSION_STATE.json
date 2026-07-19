@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_web_ux_t4_packet_authoring_next",
-  "previousMode": "cvf_web_ux_t3_worker_execution_next",
+  "currentMode": "cvf_web_ux_t4_worker_execution_next",
+  "previousMode": "cvf_web_ux_t4_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13581,7 +13581,7 @@
     "parked": "T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; no UI implementation, browser acceptance, hosted freshness, deployment, provider behavior, public export, or production claim."
   },
-  "nextAllowedMove": "Author and dispatch the source-verified CVF-WEB-UX-T4 browser-acceptance and roadmap-closure audit packet. T4 is current-source localhost audit only; source mutation, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute CVF-WEB-UX-T4 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT: run current-source Web on localhost:3000, complete the desktop/tablet/mobile dark/light/non-default-accent browser matrix with exact URL and visible route anchor per image, stop all started processes, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT2Closure20260719": {
     "status": "CLOSED_PASS_BOUNDED",
     "batchId": "CVF-WEB-UX-T2",
@@ -13614,5 +13614,16 @@
     "nextAllowedMove": "Author and dispatch the source-verified T4 current-source browser-acceptance audit packet.",
     "parked": "source mutation in T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Private current-source presentation closure only; no hosted freshness, deployment, provider, public-export, authenticated-runtime, or roadmap-closure claim."
+  },
+  "cvfWebUxT4Dispatch20260719": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T4",
+    "materialDispatchCommit": "8135d00f8",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_UX_T4_BROWSER_ACCEPTANCE_AND_ROADMAP_CLOSURE_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_BROWSER_ACCEPTANCE_AND_ROADMAP_CLOSURE_2026-07-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Run current-source localhost browser acceptance and return terminal audit evidence without source mutation or commit.",
+    "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; no browser acceptance, hosted freshness, roadmap closure, deployment, provider, public-export, or production claim."
   }
 }
