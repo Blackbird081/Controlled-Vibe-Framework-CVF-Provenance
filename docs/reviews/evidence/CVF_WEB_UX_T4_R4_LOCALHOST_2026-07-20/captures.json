@@ -1,0 +1,26 @@
+[
+  {
+    "captureId": "home-tao-prd-form-result",
+    "viewport": "1440x900",
+    "route": "http://localhost:3000/home",
+    "screenshotPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\docs\\reviews\\evidence\\CVF_WEB_UX_T4_R4_LOCALHOST_2026-07-20\\home-tao-prd-form-result.png",
+    "visibleAnchorText": "\ud83d\udce6\ud83d\udce6 T\u1ea1o \u1ee8ng d\u1ee5ng Ho\u00e0n ch\u1ec9nh | label: 1. T\u00ean app / s\u1ea3n ph\u1ea9m*",
+    "verdict": "PASS"
+  },
+  {
+    "captureId": "workspace-advanced-open",
+    "viewport": "1440x900",
+    "route": "http://localhost:3000/workspace",
+    "screenshotPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\docs\\reviews\\evidence\\CVF_WEB_UX_T4_R4_LOCALHOST_2026-07-20\\workspace-advanced-open.png",
+    "visibleAnchorText": "Chi ti\u1ebft k\u1ef9 thu\u1eadt n\u00e2ng cao (mode, handoff, dispatch, lanes, ",
+    "verdict": "PASS"
+  },
+  {
+    "captureId": "knowledge-compile-terminal",
+    "viewport": "1440x900",
+    "route": "http://localhost:3000/governance/knowledge",
+    "screenshotPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\docs\\reviews\\evidence\\CVF_WEB_UX_T4_R4_LOCALHOST_2026-07-20\\knowledge-compile-terminal.png",
+    "visibleAnchorText": "Unauthorized: please login.",
+    "verdict": "PASS"
+  }
+]

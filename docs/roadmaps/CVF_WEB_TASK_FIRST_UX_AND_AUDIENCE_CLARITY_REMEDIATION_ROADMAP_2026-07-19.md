@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_T4_R4_DISPATCH_READY
+Status: ACTIVE_T4_R5_DISPATCH_READY
 
 Date: 2026-07-19
 
@@ -131,7 +131,7 @@ explanatory cards while retaining warnings at the point of action.
 
 ### T4 - Browser Acceptance And Roadmap Closure
 
-Disposition: `REVIEWED_BLOCK_ACCEPTED_R4_REQUIRED`. The first audit, R1, and R2
+Disposition: `REVIEWED_BLOCK_ACCEPTED_R5_REQUIRED`. The first audit, R1, and R2
 preserve useful render/width evidence but cannot close. R2 correctly captured
 820px persistent-sidebar behavior and a 767px drawer pair, but its claimed
 preferences-open image contains no open panel, its own anchor is `NOT_FOUND`,
@@ -143,6 +143,11 @@ dispatch-ready through
 `docs/baselines/CVF_GC018_CVF_WEB_UX_T4_BROWSER_ACCEPTANCE_AND_ROADMAP_CLOSURE_2026-07-19.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R4_FINAL_INTERACTION_AND_COMMAND_PROOF_2026-07-20.md`.
+R4 supplies terminal JSON and command records, but all three submitted terminal
+PNGs visibly retain the onboarding overlay and therefore contradict their
+claimed result anchors. The narrow screenshot-state binding repair is released
+through
+`docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R5_SCREENSHOT_STATE_BINDING_REPAIR_2026-07-20.md`.
 
 Run current source on localhost and inspect desktop, tablet, and mobile in dark,
 light, and a non-default accent. Check navigation, focus, overflow, primary
