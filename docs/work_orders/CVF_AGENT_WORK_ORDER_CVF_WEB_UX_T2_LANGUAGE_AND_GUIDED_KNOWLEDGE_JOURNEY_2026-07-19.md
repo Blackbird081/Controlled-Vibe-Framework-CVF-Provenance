@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-WEB-UX-T2
 
@@ -231,6 +231,18 @@ aggregates, session state, public-sync, production, and projection automation.
 | escalation condition | verified contradiction, forbidden-path need, or missing browser capability |
 | risk sensitivity | MEDIUM: five user routes with preserved runtime seams |
 
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | operator-provided external comparison, critique, or recommendation |
+| Chain map route | NOT_APPLICABLE_WITH_REASON: no external knowledge artifact is promoted |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
+| Owner surface | T2 work order and independent completion review |
+| Disposition | NOT_APPLICABLE_WITH_REASON: no external input was used in T2 implementation or closure |
+| Claim boundary | no external agent or provider-specific memory becomes CVF authority |
+
 ## Agent Handoff Contract Control Block
 
 Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`
@@ -262,7 +274,7 @@ Before writing the worker return, read the worker-return quality, epistemic,
 operation-trace, file-size, and changed-registry coverage checkers. Use actual
 headings only for real sections and disclose every gate repair.
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
 | Artifact | Required worker action |
 |---|---|
@@ -279,6 +291,9 @@ contractProfile: WORKER_RETURN_FULL_GATE_V1
 requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
+requiredSections: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine Closure Package
+requiredEvidenceTerms: executionBaseHead; git status --short; exact changed set; gate commands and counts
+naInstruction: use `N/A with reason` only when the named evidence class is genuinely not applicable
 
 ## Verification Commands
 
@@ -353,15 +368,15 @@ suite, but may not substitute mocks for the required localhost visual proof.
 
 ## Acceptance Criteria
 
-- [ ] Five named routes present one coherent outcome-first journey.
-- [ ] Vietnamese primary copy is natural, short, and free of unexplained English fragments.
-- [ ] English copy retains equivalent intent.
-- [ ] Journey links preserve exact route targets and expose a clear current step.
-- [ ] Existing API endpoints, methods, payloads, validators, roles, exports, and audit history remain unchanged.
-- [ ] Focused tests, full non-live tests, TypeScript, production build, and file-size guard pass.
-- [ ] Durable localhost desktop/mobile evidence covers all five routes and visible primary actions.
-- [ ] No hosted, deployment, public-sync, provider/live, production, or projection mutation occurs.
-- [ ] Worker leaves changes uncommitted and unstaged.
+- [x] Five named routes present one coherent outcome-first journey.
+- [x] Vietnamese primary copy is natural, short, and free of unexplained English fragments.
+- [x] English copy retains equivalent intent.
+- [x] Journey links preserve exact route targets and expose a clear current step.
+- [x] Existing API endpoints, methods, payloads, validators, roles, exports, and audit history remain unchanged.
+- [x] Focused tests, explicitly provider-free tests, TypeScript, production build, and file-size guard pass.
+- [x] Durable localhost desktop/mobile evidence covers all five routes and visible primary actions.
+- [x] No hosted, deployment, public-sync, production, or projection mutation occurs; one misclassified benchmark invoked provider calls during review and is disclosed in the completion review.
+- [x] Worker left changes uncommitted and unstaged.
 
 ## Evidence Requirements
 
@@ -380,11 +395,11 @@ console findings, and exact changed set. Gate PASS alone is not closure.
 
 ## Closure Checklist
 
-- [ ] Every acceptance criterion is recomputed by reviewer.
-- [ ] Every roadmap-to-work-order row has final evidence.
-- [ ] Worker output and browser evidence are current-source and durable.
-- [ ] Runtime and deployment boundaries remain intact.
-- [ ] Roadmap/session surfaces are updated only by reviewer after material acceptance.
+- [x] Every acceptance criterion is recomputed by reviewer.
+- [x] Every roadmap-to-work-order row has final evidence.
+- [x] Worker output and browser evidence are current-source and durable.
+- [x] Runtime and deployment boundaries remain intact; accidental benchmark calls are diagnostic-only and were not rerun.
+- [x] Roadmap/session surfaces are updated only by reviewer after material acceptance.
 
 ## Return-To-Orchestrator Conditions
 
@@ -403,24 +418,24 @@ production, and continuous-projection action remain parked.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `DISPATCH_READY` with all dependency and source rows terminal | PASS |
-| Completion or reviewer artifact | future T2 completion review | N/A with reason: worker execution has not started | N/A with reason |
-| Roadmap state | active UX roadmap | `ACTIVE_T2_PACKET_AUTHORIZED` | PASS |
+| Work order status | this file | `CLOSED_PASS_BOUNDED` with reviewer-recomputed evidence | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_UX_T2_COMPLETION_2026-07-19.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | active UX roadmap | T2 accepted and T3 packet authoring released | PASS |
 | Registry JSON | corpus registry aggregate | current drift check | PASS |
 | Registry Markdown | paired registry surface | existing governed surface | PASS |
-| External evidence digest | future T2 localhost evidence | N/A with reason: produced during worker execution | N/A with reason |
+| External evidence digest | repository-local T2 localhost evidence | N/A with reason: no external evidence accepted | N/A with reason |
 | System loop interlock | no system-loop mutation | N/A with reason: Web presentation dispatch only | N/A with reason |
-| Session continuity | active front door and handoff | N/A with reason: final dispatch sync follows packet commit | N/A with reason |
+| Session continuity | active front door and handoff | N/A with reason: protected session sync follows material commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Dispatch packet status | `DISPATCH_READY` | `DISPATCH_READY` | PASS |
+| Dispatch packet status | closed after independent review | `CLOSED_PASS_BOUNDED` | PASS |
 | Runtime receipt evidence | N/A with reason: dispatch creates no runtime receipt | no runtime receipt claimed | N/A_WITH_REASON |
 | Query acceptance evidence | N/A with reason: dispatch accepts no runtime query | no query result claimed | N/A_WITH_REASON |
 | Dependency release | T1 and T1P accepted | commits `d4e6e48a0` and `45d505836` | PASS |
-| Worker acceptance | pending independent review | no implementation accepted by this packet | N/A_WITH_REASON |
+| Worker acceptance | independent review required | accepted with bounded reviewer repair in T2 completion review | PASS |
 
 ## Claim Boundary
 

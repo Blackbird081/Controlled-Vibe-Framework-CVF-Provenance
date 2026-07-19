@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_T2_PACKET_AUTHORIZED
+Status: ACTIVE_T3_PACKET_AUTHORIZED
 
 Date: 2026-07-19
 
@@ -203,6 +203,7 @@ require separate reviewed batches. This roadmap is private planning authority.
 
 ## Claim Boundary
 
-This roadmap authorizes T2 packet creation only. It does not itself implement
-UI changes or authorize provider calls, deployment, public export, production
-mutation, or continuous-projection execution.
+T1, T1P, and T2 are closed with bounded evidence. This roadmap now authorizes
+T3 packet creation only. It does not itself implement T3 or authorize provider
+calls, deployment, public export, production mutation, or continuous-projection
+execution.
