@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_T4_R5_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-07-19
 
@@ -131,7 +131,7 @@ explanatory cards while retaining warnings at the point of action.
 
 ### T4 - Browser Acceptance And Roadmap Closure
 
-Disposition: `REVIEWED_BLOCK_ACCEPTED_R5_REQUIRED`. The first audit, R1, and R2
+Disposition: `CLOSED_PASS_BOUNDED`. The first audit, R1, and R2
 preserve useful render/width evidence but cannot close. R2 correctly captured
 820px persistent-sidebar behavior and a 767px drawer pair, but its claimed
 preferences-open image contains no open panel, its own anchor is `NOT_FOUND`,
@@ -148,6 +148,10 @@ PNGs visibly retain the onboarding overlay and therefore contradict their
 claimed result anchors. The narrow screenshot-state binding repair is released
 through
 `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R5_SCREENSHOT_STATE_BINDING_REPAIR_2026-07-20.md`.
+R5 closes the final visual contradiction with three reviewer-opened,
+overlay-free PNGs whose post-write SHA256 values recompute exactly. Final T4
+acceptance and the cross-tranche closure diff are recorded in
+`docs/reviews/CVF_WEB_UX_T4_COMPLETION_2026-07-20.md`.
 
 Run current source on localhost and inspect desktop, tablet, and mobile in dark,
 light, and a non-default accent. Check navigation, focus, overflow, primary
@@ -156,18 +160,18 @@ public export remain separate later batches.
 
 ## Acceptance Criteria
 
-- [ ] A first-time user can identify the product value and next action without
+- [x] A first-time user can identify the product value and next action without
   understanding SOT3, MAO, handoff, or commit vocabulary.
-- [ ] All current routes remain reachable.
-- [ ] Exact governance and continuity detail remains available to the advanced
+- [x] All current routes remain reachable.
+- [x] Exact governance and continuity detail remains available to the advanced
   audience without dominating ordinary-user views.
-- [ ] Vietnamese surfaces avoid unexplained English fragments.
-- [ ] Primary actions appear before repeated explanatory prose.
-- [ ] Local browser evidence covers desktop, tablet, mobile, dark, light, and a
+- [x] Vietnamese surfaces avoid unexplained English fragments.
+- [x] Primary actions appear before repeated explanatory prose.
+- [x] Local browser evidence covers desktop, tablet, mobile, dark, light, and a
   non-default accent.
-- [ ] Focus and navigation are keyboard-usable.
-- [ ] Hosted freshness is not inferred from local UI success.
-- [ ] No runtime/provider/public/deployment claim is made without its own packet.
+- [x] Focus and navigation are keyboard-usable.
+- [x] Hosted freshness is not inferred from local UI success.
+- [x] No runtime/provider/public/deployment claim is made without its own packet.
 
 ## Verification / Evidence
 
@@ -179,6 +183,16 @@ public export remain separate later batches.
 - reviewer recomputation of visible labels, primary actions, responsive
   behavior, and advanced-detail access;
 - exact `git diff --name-status`, no staged residue, and unchanged worker HEAD.
+
+## Current Runtime Freshness Verification
+
+| Runtime fact | Source | Disposition |
+|---|---|---|
+| current-source Web rendered the accepted task-first routes | R1-R5 localhost evidence and T1-T3 focused test/build completions | source-visible and browser-observed bounded |
+| Workspace advanced disclosure remains reachable | R5 Workspace PNG and current Workspace page source | source-visible and browser-observed bounded |
+| Knowledge unauthenticated compile response remains visible | R5 Knowledge PNG and current compile route source | source-visible and browser-observed bounded |
+| hosted build identity is not established by localhost proof | T1P completion and this roadmap claim boundary | separate hosted packet required |
+| continuous projection runtime is outside this roadmap | continuous-projection roadmap and this roadmap Non-Goals | packet authoring only may resume after closure |
 
 ## Dual Agent Surface Matrix
 
@@ -225,12 +239,37 @@ this roadmap. Web UI tranches do not create a new agent runtime adapter.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: implementation, browser acceptance, hosted deployment, and public-sync
-require separate reviewed batches. This roadmap is private planning authority.
+Reason: the closed roadmap proves only private current-source localhost UX.
+Hosted deployment, public-sync, and public presentation remain separate work.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | R5 canonical order | status CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_UX_T4_COMPLETION_2026-07-20.md` | reviewer decision CLOSED_PASS_BOUNDED | PASS |
+| Roadmap state | this roadmap | top Status equals CLOSED_PASS_BOUNDED | PASS |
+| T1 closure | `docs/reviews/CVF_WEB_UX_T1_COMPLETION_2026-07-19.md` | material commit `d4e6e48a0` | PASS |
+| T1P closure | `docs/reviews/CVF_WEB_UX_T1P_COMPLETION_2026-07-19.md` | material commit `45d505836` | PASS_BOUNDED |
+| T2 closure | `docs/reviews/CVF_WEB_UX_T2_COMPLETION_2026-07-19.md` | material commit `bb1418554` | PASS_BOUNDED |
+| T3 closure | `docs/reviews/CVF_WEB_UX_T3_COMPLETION_2026-07-19.md` | accepted source, tests, build, and browser evidence | PASS_BOUNDED |
+| T4 closure | `docs/reviews/CVF_WEB_UX_T4_COMPLETION_2026-07-20.md` | R1-R5 accepted evidence chain | PASS |
+| Registry JSON | corpus registry aggregate | generated aggregate drift and changed-path coverage checks PASS | PASS |
+| Registry Markdown | corpus registry source/front door | registry checks PASS; no source entry mutation required | PASS |
+| External evidence digest | R5 evidence root | SHA256 `78b68c72d25edf2f69b59ea7160cd7991ca34eabf87b8c91a33cb7c2e9c77a54`; `9ea9972c8fc3adaaf97f1377df5d6a1864d390761e8fe06d3286fde56533e68a`; `3a7d9bf71d165c182542e37be168979ff417ef5a37f7d029f460ab07ef1bcfb5` | PASS |
+| System loop interlock | no system-loop mutation | UX-only roadmap | N/A with reason |
+| Session continuity | active session surfaces | separate session-sync follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| T4-R5-HOME | `docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/captures.json` | `$[0].verdict` | `PASS` | `PASS` | PASS |
+| T4-R5-WORKSPACE | `docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/captures.json` | `$[1].verdict` | `PASS` | `PASS` | PASS |
+| T4-R5-KNOWLEDGE | `docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/captures.json` | `$[2].verdict` | `PASS` | `PASS` | PASS |
 
 ## Claim Boundary
 
-T1, T1P, T2, and T3 are closed with bounded evidence. This roadmap authorizes
-one no-commit T4 current-source browser-evidence repair under the paired
-R4 packet. Source repair, provider calls, deployment, public export, production
-mutation, and continuous-projection execution remain parked.
+T1, T1P, T2, T3, and T4 are closed with bounded current-source evidence. This
+roadmap makes no hosted freshness, deployment, public export, provider/live,
+production-readiness, or continuous-projection execution claim.

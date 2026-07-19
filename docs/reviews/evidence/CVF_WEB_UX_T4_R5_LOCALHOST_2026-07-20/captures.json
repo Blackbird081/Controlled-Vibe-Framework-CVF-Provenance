@@ -1,0 +1,41 @@
+[
+  {
+    "captureId": "home-tao-prd-form-result",
+    "viewport": "1440x900",
+    "route": "http://localhost:3000/home",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/home-tao-prd-form-result.png",
+    "visibleAnchorText": "\ud83d\udce6\ud83d\udce6 T\u1ea1o \u1ee8ng d\u1ee5ng Ho\u00e0n ch\u1ec9nh | label: 1. T\u00ean app / s\u1ea3n ph\u1ea9m*",
+    "onboardingStorageValue": true,
+    "overlayCount": 0,
+    "postWriteSha256": "78b68c72d25edf2f69b59ea7160cd7991ca34eabf87b8c91a33cb7c2e9c77a54",
+    "fileSizeBytes": 101431,
+    "visualReopenVerdict": "PASS",
+    "verdict": "PASS"
+  },
+  {
+    "captureId": "workspace-advanced-open",
+    "viewport": "1440x900",
+    "route": "http://localhost:3000/workspace",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/workspace-advanced-open.png",
+    "visibleAnchorText": "Chi ti\u1ebft k\u1ef9 thu\u1eadt n\u00e2ng cao (mode, handoff, dispatch, lanes, ",
+    "onboardingStorageValue": true,
+    "overlayCount": 0,
+    "postWriteSha256": "9ea9972c8fc3adaaf97f1377df5d6a1864d390761e8fe06d3286fde56533e68a",
+    "fileSizeBytes": 122619,
+    "visualReopenVerdict": "PASS",
+    "verdict": "PASS"
+  },
+  {
+    "captureId": "knowledge-compile-terminal",
+    "viewport": "1440x900",
+    "route": "http://localhost:3000/governance/knowledge",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/knowledge-compile-terminal.png",
+    "visibleAnchorText": "Unauthorized: please login.",
+    "onboardingStorageValue": true,
+    "overlayCount": 0,
+    "postWriteSha256": "3a7d9bf71d165c182542e37be168979ff417ef5a37f7d029f460ab07ef1bcfb5",
+    "fileSizeBytes": 89752,
+    "visualReopenVerdict": "PASS",
+    "verdict": "PASS"
+  }
+]

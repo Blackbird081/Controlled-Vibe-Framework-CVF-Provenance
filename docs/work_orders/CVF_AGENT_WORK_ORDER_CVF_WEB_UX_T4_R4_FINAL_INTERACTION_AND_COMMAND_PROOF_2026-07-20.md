@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWED_BLOCK_ACCEPTED_R5_REQUIRED
+Status: CLOSED_REVIEWED_BLOCK_SUPERSEDED_R5
 
 Batch ID: CVF-WEB-UX-T4-R4
 
@@ -126,7 +126,7 @@ Returned defects: NONE_RETURNED
 | Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|---|
 | Home outcome action uses accessible title | LITERAL_INVARIANT | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/OutcomeQuickActions.tsx` | lines 100-111 | `aria-label` | `OutcomeQuickActions` | ACCEPT |
-| selected Home outcome renders DynamicForm | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app` | child `(dashboard)/home/page.tsx`, lines 284-290 and 582-589 | `handleOutcomeQuickAction` | `HomePage` | ACCEPT |
+| selected Home outcome renders DynamicForm | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app` | dashboard route-group Home page module, lines 284-290 and 582-589 | `handleOutcomeQuickAction` | `HomePage` | ACCEPT |
 | DynamicForm has a form-specific h1 | LITERAL_INVARIANT | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/DynamicForm.tsx` | lines 116-165 | `localizedTemplate` | `DynamicForm` | ACCEPT |
 | Workspace details uses native open state | LITERAL_INVARIANT | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app` | child `(dashboard)/workspace/page.tsx`, lines 167-176 | `advanced-detail` | `WorkspacePage` | ACCEPT |
 | compile action exact text is `Bien soan` | VALUE_SET | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app` | child `(dashboard)/governance/knowledge/page.tsx`, lines 47-59 and 256-258 | `compile` | `KnowledgeGovernancePage` | ACCEPT |
@@ -396,15 +396,15 @@ registry, runtime store, or generated aggregate is created.
 
 ## Acceptance Criteria
 
-- [ ] Home result is bound to DynamicForm h1 and a form label after onboarding dismissal.
-- [ ] Workspace records false-to-true-to-false on the same summary target.
-- [ ] Knowledge uses exact action text and retains its exact response plus visible result/error.
-- [ ] Three screenshots and five JSON files exist with matching hashes.
-- [ ] Diagnostics are terminal and truthfully classified.
-- [ ] R1-R3 hashes are unchanged.
-- [ ] Focused `test:run`, file-size, and final worker-fast pass with no pending row.
-- [ ] Server Ready and post-stop zero-listener evidence are retained.
-- [ ] Only exact R4 scope is present; no scratch, staged change, or HEAD movement.
+- [x] BLOCKED then superseded by R5: Home pixels did not show the claimed form state.
+- [x] BLOCKED then superseded by R5: Workspace pixels did not show the claimed open state.
+- [x] BLOCKED then superseded by R5: Knowledge pixels did not show the claimed error state.
+- [x] Three screenshots and five JSON files exist; visual truth was rejected by review.
+- [x] Diagnostics are terminal and truthfully classified.
+- [x] R1-R3 hashes are unchanged.
+- [x] Focused `test:run`, file-size, and final worker-fast pass with no pending row.
+- [x] Server Ready and post-stop zero-listener evidence are retained.
+- [x] Only exact R4 scope is present; no scratch, staged change, or HEAD movement.
 
 ## Review Gate
 
@@ -414,11 +414,44 @@ and reruns reviewer/pre-closure gates before T4 and roadmap closure.
 
 ## Closure Checklist
 
-- [ ] Three interaction rows terminal.
-- [ ] Diagnostics and commands terminal.
-- [ ] Predecessor integrity and exact scope terminal.
-- [ ] Reviewer decision recorded.
-- [ ] T4 and roadmap closure reconciled only if all acceptance criteria pass.
+- [x] Three interaction rows terminal, with screenshot contradiction recorded by reviewer.
+- [x] Diagnostics and commands terminal.
+- [x] Predecessor integrity and exact scope terminal.
+- [x] Reviewer decision recorded in the R4 blocked-return review.
+- [x] T4 and roadmap closure reconciled only through accepted R5 replacement evidence.
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| R4-HOME-PIXELS | `docs/reviews/evidence/CVF_WEB_UX_T4_R4_LOCALHOST_2026-07-20/captures.json` | `$[0].verdict` plus saved pixels | terminal form visible | onboarding overlay visible | BLOCKED |
+| R4-WORKSPACE-PIXELS | `docs/reviews/evidence/CVF_WEB_UX_T4_R4_LOCALHOST_2026-07-20/captures.json` | `$[1].verdict` plus saved pixels | advanced detail visible | onboarding overlay visible | BLOCKED |
+| R4-KNOWLEDGE-PIXELS | `docs/reviews/evidence/CVF_WEB_UX_T4_R4_LOCALHOST_2026-07-20/captures.json` | `$[2].verdict` plus saved pixels | unauthorized error visible | onboarding overlay visible | BLOCKED |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | CLOSED_REVIEWED_BLOCK_SUPERSEDED_R5 | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_UX_T4_R4_BLOCKED_RETURN_REVIEW_2026-07-20.md` | REVIEWED_BLOCK_ACCEPTED_R5_REQUIRED | PASS |
+| Roadmap state | active UX roadmap | final closure uses R5 evidence, not rejected R4 pixels | PASS |
+| Registry JSON | corpus registry aggregate | generated aggregate drift and changed-path coverage checks PASS | PASS |
+| Registry Markdown | corpus registry source/front door | registry checks PASS; no source entry mutation required | PASS |
+| External evidence digest | R4 evidence root | SHA256 `76f6f3f0740e58e6c65f9721815fab17231389640417b536be68607e81949419`; `da0cc08f0e83c067f4f2d35c3a03ff6714d85ef5ff4d964de68ca5310d562a0b`; `640000727f4a63b8743e77fd6637913f13c490be462b4172813b74aa694f1fea` | PASS |
+| System loop interlock | no system-loop mutation | evidence-only work order | N/A with reason |
+| Session continuity | active session surfaces | R5 session sync already owns continuation | N/A with reason |
+
+## External Evidence Digest
+
+All evidence used by this closed reviewed-block packet is stored under the
+repo-local root
+`docs/reviews/evidence/CVF_WEB_UX_T4_R4_LOCALHOST_2026-07-20/`.
+
+| Artifact | SHA256 | Reviewer disposition |
+|---|---|---|
+| `home-tao-prd-form-result.png` | `76f6f3f0740e58e6c65f9721815fab17231389640417b536be68607e81949419` | rejected visual anchor; superseded by R5 |
+| `workspace-advanced-open.png` | `da0cc08f0e83c067f4f2d35c3a03ff6714d85ef5ff4d964de68ca5310d562a0b` | rejected visual anchor; superseded by R5 |
+| `knowledge-compile-terminal.png` | `640000727f4a63b8743e77fd6637913f13c490be462b4172813b74aa694f1fea` | rejected visual anchor; superseded by R5 |
 
 ## Return-To-Orchestrator Conditions
 

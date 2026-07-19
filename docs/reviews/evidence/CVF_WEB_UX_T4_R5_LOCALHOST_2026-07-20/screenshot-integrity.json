@@ -1,0 +1,29 @@
+[
+  {
+    "captureId": "home-tao-prd-form-result",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/home-tao-prd-form-result.png",
+    "fileSizeBytes": 101431,
+    "sha256": "78b68c72d25edf2f69b59ea7160cd7991ca34eabf87b8c91a33cb7c2e9c77a54",
+    "overlayCount": 0,
+    "onboardingStorageValue": true,
+    "visualReopenVerdict": "PASS"
+  },
+  {
+    "captureId": "workspace-advanced-open",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/workspace-advanced-open.png",
+    "fileSizeBytes": 122619,
+    "sha256": "9ea9972c8fc3adaaf97f1377df5d6a1864d390761e8fe06d3286fde56533e68a",
+    "overlayCount": 0,
+    "onboardingStorageValue": true,
+    "visualReopenVerdict": "PASS"
+  },
+  {
+    "captureId": "knowledge-compile-terminal",
+    "screenshotPath": "docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/knowledge-compile-terminal.png",
+    "fileSizeBytes": 89752,
+    "sha256": "3a7d9bf71d165c182542e37be168979ff417ef5a37f7d029f460ab07ef1bcfb5",
+    "overlayCount": 0,
+    "onboardingStorageValue": true,
+    "visualReopenVerdict": "PASS"
+  }
+]

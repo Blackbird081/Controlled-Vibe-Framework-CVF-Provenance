@@ -3,7 +3,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-WEB-UX-T4-R5
 
@@ -248,15 +248,15 @@ Required worker-return command:
 
 ## Acceptance Criteria
 
-- [ ] Home PNG visibly shows the DynamicForm heading and a form label with no overlay.
-- [ ] Workspace PNG visibly shows expanded advanced detail with no overlay.
-- [ ] Knowledge PNG visibly shows the exact unauthorized result with no overlay.
-- [ ] Each final PNG has matching post-write hashes in both JSON records.
-- [ ] Each saved PNG was visually reopened and truthfully classified.
-- [ ] R1-R4 evidence is unchanged and Web source is untouched.
-- [ ] Web is stopped, port 3000 has no listener, and temp automation is deleted.
-- [ ] Worker-fast and file-size pass with actual terminal results.
-- [ ] HEAD is unchanged, nothing is staged, and changed set equals Allowed Scope.
+- [x] Home PNG visibly shows the DynamicForm heading and a form label with no overlay.
+- [x] Workspace PNG visibly shows expanded advanced detail with no overlay.
+- [x] Knowledge PNG visibly shows the exact unauthorized result with no overlay.
+- [x] Each final PNG has matching post-write hashes in both JSON records.
+- [x] Each saved PNG was visually reopened and truthfully classified.
+- [x] R1-R4 evidence is unchanged and Web source is untouched.
+- [x] Web is stopped, port 3000 has no listener, and temp automation is deleted.
+- [x] Worker-fast and file-size pass with actual terminal results.
+- [x] HEAD is unchanged, nothing is staged, and changed set equals Allowed Scope.
 
 ## Review Gate
 
@@ -267,14 +267,14 @@ overlay is absent. JSON agreement without matching pixels fails review.
 
 ## Closure Checklist
 
-- [ ] Exact R5 manifest contains one matrix, one return, three PNGs, and four JSON files.
-- [ ] All three image hashes recompute exactly.
-- [ ] All three saved images visibly show their route-specific terminal state.
-- [ ] No onboarding heading, wizard, blur, or blocking overlay appears in any PNG.
-- [ ] Predecessor evidence and Web source remain unchanged.
-- [ ] File-size and worker-fast are terminal PASS.
-- [ ] Web is stopped, port 3000 is clear, and no scratch automation remains.
-- [ ] Reviewer either closes T4 bounded or issues a truthful blocked disposition.
+- [x] Exact R5 manifest contains one matrix, one return, three PNGs, and four JSON files.
+- [x] All three image hashes recompute exactly.
+- [x] All three saved images visibly show their route-specific terminal state.
+- [x] No onboarding heading, wizard, blur, or blocking overlay appears in any PNG.
+- [x] Predecessor evidence and Web source remain unchanged.
+- [x] File-size and worker-fast are terminal PASS.
+- [x] Web is stopped, port 3000 is clear, and no scratch automation remains.
+- [x] Reviewer closes T4 bounded through the required completion review.
 
 ## Return-To-Orchestrator Conditions
 
@@ -430,6 +430,27 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: R5 is private localhost acceptance evidence. Hosted, deploy, and public
 lanes remain outside this packet.
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| R5-HOME | `docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/captures.json` | `$[0].overlayCount` | `0` | `0` | PASS |
+| R5-WORKSPACE | `docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/captures.json` | `$[1].overlayCount` | `0` | `0` | PASS |
+| R5-KNOWLEDGE | `docs/reviews/evidence/CVF_WEB_UX_T4_R5_LOCALHOST_2026-07-20/captures.json` | `$[2].overlayCount` | `0` | `0` | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | Status CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_WEB_UX_T4_COMPLETION_2026-07-20.md` | reviewer decision CLOSED_PASS_BOUNDED | PASS |
+| Roadmap state | active UX roadmap | Status CLOSED_PASS_BOUNDED | PASS |
+| Registry JSON | corpus registry aggregate | generated aggregate drift check PASS; no entry mutation required | PASS |
+| Registry Markdown | corpus registry source/front door | changed-path coverage and registry checks PASS; no entry mutation required | PASS |
+| External evidence digest | R5 evidence root | SHA256 `78b68c72d25edf2f69b59ea7160cd7991ca34eabf87b8c91a33cb7c2e9c77a54`; `9ea9972c8fc3adaaf97f1377df5d6a1864d390761e8fe06d3286fde56533e68a`; `3a7d9bf71d165c182542e37be168979ff417ef5a37f7d029f460ab07ef1bcfb5` | PASS |
+| System loop interlock | no system-loop mutation | evidence-only work order | N/A with reason |
+| Session continuity | active session surfaces | separate session-sync follows material commit | N/A with reason |
 
 ## Claim Boundary
 
