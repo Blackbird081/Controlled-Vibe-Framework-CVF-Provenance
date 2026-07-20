@@ -1,0 +1,45 @@
+{
+  "registryOrder": 153,
+  "id": "agent-cli-mcp-invocation-control-reassessment",
+  "corpusType": "POLICY_DOCUMENT",
+  "displayName": "CVF external-agent CLI/MCP invocation-control system-chain reassessment",
+  "scopePaths": [
+    "docs/audits/CVF_AGENT_CLI_MCP_INVOCATION_CONTROL_SYSTEM_CHAIN_REASSESSMENT_2026-07-20.md",
+    "docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md",
+    "docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json",
+    "docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/operational.worker.launcher.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mcp.invocation.contract.ts",
+    "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.ts",
+    "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/generic-agent-adapter.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/quota-ledger.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-execution-bridge.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/fallback-policy.ts"
+  ],
+  "fileCount": 11,
+  "status": "SCANNED_WITH_FINDINGS",
+  "findings": [
+    {
+      "id": "external-agent-cli-lifecycle-owner-missing",
+      "summary": "No inspected CVF runtime owner controls an external agent CLI from admission through streaming usage, hard stop, process-tree termination, and receipt reconciliation.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Continue read-only caller and ownership reassessment under the global roadmap execution moratorium; require explicit operator approval before any implementation or live test.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "CVF checker CLI as external-agent control proof",
+    "one shell command as one model response",
+    "receipt contract as runtime enforcement",
+    "child-only kill as process-tree termination",
+    "subscription reset as execution authorization"
+  ],
+  "nextScanRecommendation": "Read-only exhaustive launch-owner and control-sequence inventory",
+  "scanWave": "CLI-MCP-INVOCATION-CONTROL-REASSESSMENT",
+  "scanDate": "2026-07-20",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/audits/CVF_AGENT_CLI_MCP_INVOCATION_CONTROL_SYSTEM_CHAIN_REASSESSMENT_2026-07-20.md",
+  "notes": "Opening audit and global execution moratorium; no external agent, MCP live tool, provider, API key, subscription, public-sync, or production action."
+}

@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_R1_BOUNDED_WORKER_REDISPATCH_REQUIRED
+Status: PARKED_BY_GLOBAL_CLI_MCP_INVOCATION_CONTROL_REASSESSMENT
 
 Date: 2026-07-20
 
@@ -45,6 +45,20 @@ worker attempt reached a subscription-session limit without producing output,
 so only a fresh T0 R1 worker invocation under the bounded profile below is now
 released. T1-T5, credential use, provider calls, fallback, public action, and
 deployment remain parked.
+
+## Global Invocation-Control Reassessment Override - 2026-07-20
+
+The operator revoked the T0 R1 rerun authorization and parked every roadmap
+after the first delegated-agent experiment exhausted the five-hour Claude
+session quota. The interim bounded profile below remains incident evidence; it
+is not executable authority.
+
+This roadmap is superseded for execution by
+`docs/audits/CVF_AGENT_CLI_MCP_INVOCATION_CONTROL_SYSTEM_CHAIN_REASSESSMENT_2026-07-20.md`.
+No subscription reset, available model, account subscription, API key, old
+dispatch packet, or roadmap-local next step may restart T0 or any later tranche.
+Only a fresh explicit operator decision after the read-only reassessment can
+lift the global moratorium.
 
 ## Operator Usage Baseline Snapshot
 
