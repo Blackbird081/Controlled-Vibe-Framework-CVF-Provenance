@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "operator_approved_provider_model_assignment_roadmap_proposed_operator_review",
+  "currentMode": "operator_provider_model_t0_packet_authoring_claude",
   "activeHandoff": "AGENT_HANDOFF_V49_2026-07-20.md",
-  "nextAllowedMove": "Operator reviews docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md and either accepts it for T0 source-map packet authoring, returns bounded repairs, or parks it. Until operator acceptance, do not author GC-018/work-order packets, implement schemas or routing, use credentials, call a provider, or reopen Continuous Projection T3-T4. The T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Claude authors only the fresh T0 GC-018 and source-verified no-commit work order for CVF-OPM-AIR T0, then returns COMPLETE_PENDING_REVIEW without commit. The reviewer repairs and accepts or blocks the packet before implementation dispatch. T0 implementation, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -31,10 +31,10 @@ mutation, public, provider-call, and production lanes are parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`operator_approved_provider_model_assignment_roadmap_proposed_operator_review`;
+current mode=`operator_provider_model_t0_packet_authoring_claude`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=operator reviews the proposed provider-neutral provider/model assignment and invocation-receipt roadmap;
-parked checkpoint=GC-018/work-order authoring, roadmap implementation,
+next allowed move=Claude authors only the paired T0 GC-018 and source-verified no-commit work order;
+parked checkpoint=T0 implementation, credentials,
 provider calls, T3-T4, real-root receipt scan, apply/copy, public-sync mutation,
 push/deployment, production, and unattended action.
 
@@ -64,15 +64,13 @@ provider-neutral roadmap-authoring checkpoint only.
 
 ## Current Mode
 
-`operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
+`operator_provider_model_t0_packet_authoring_claude`
 
 ## Next Allowed Move
 
-Operator reviews the proposed provider-neutral provider/model assignment and
-invocation-receipt roadmap and accepts it for T0 packet authoring, returns
-bounded repairs, or parks it. Do not author its GC-018/work order, implement
-routing, use credentials, call a provider, or reopen Continuous Projection
-T3-T4 without operator acceptance.
+Claude authors only the paired T0 GC-018 and source-verified no-commit work
+order and returns for independent reviewer repair/acceptance. Do not implement
+T0, use credentials, call a provider, or reopen Continuous Projection T3-T4.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -387,5 +385,41 @@ revert roadmap material commit `bd9850373` through session sync.
 ## GC-020 Marker - Provider/Model Roadmap Session Sync
 
 This handoff records material parent commit `bd9850373`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## CVF-OPM-AIR T0 Packet Authoring Authorization
+
+- Roadmap authorization commit: `252e0aed8`.
+- Operator sequence: Codex roadmap owner; Claude packet author; Codex reviewer;
+  Claude no-commit worker; Codex reviewer/closer.
+- Usage baseline: operator UI snapshot shows current session 21 percent used,
+  weekly all-models 41 percent used, usage credits off, and USD 0.00 spent.
+- Claude is authorized to create only the paired T0 GC-018 and work order and
+  must return without commit.
+- T0 implementation and all credentials/provider/live/public/production lanes
+  remain parked until reviewer-accepted committed dispatch.
+
+## Core Guard Self-Protection Authorization - CVF-OPM-AIR T0 Packet Sync
+
+Authorized guard-maintenance scope: record `252e0aed8`, advance only to Claude
+packet authoring, regenerate active state, and keep implementation parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/operatorProviderModelT0PacketAuthorization20260720.json`.
+
+Rollback boundary: revert this protected packet-sync batch together. Do not
+revert roadmap authorization commit `252e0aed8` through session sync.
+
+## GC-020 Marker - CVF-OPM-AIR T0 Packet Session Sync
+
+This handoff records material parent commit `252e0aed8`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.

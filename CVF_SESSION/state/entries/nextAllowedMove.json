@@ -1,5 +1,5 @@
 {
   "stateOrder": 2002,
   "stateKey": "nextAllowedMove",
-  "value": "Operator reviews docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md and either accepts it for T0 source-map packet authoring, returns bounded repairs, or parks it. Until operator acceptance, do not author GC-018/work-order packets, implement schemas or routing, use credentials, call a provider, or reopen Continuous Projection T3-T4. The T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Claude authors only the fresh T0 GC-018 and source-verified no-commit work order for CVF-OPM-AIR T0, then returns COMPLETE_PENDING_REVIEW without commit. The reviewer repairs and accepts or blocks the packet before implementation dispatch. T0 implementation, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

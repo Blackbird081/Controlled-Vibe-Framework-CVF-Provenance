@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`operator_approved_provider_model_assignment_roadmap_proposed_operator_review`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=operator reviews the proposed provider-neutral provider/model assignment and invocation-receipt roadmap and accepts, repairs, or parks it; parked checkpoint=GC-018/work-order authoring, implementation, credentials, provider calls, Continuous Projection T3-T4, real-root receipt scan, mutation, public-sync, push/deployment, production, and unattended action.
+Startup acknowledged: current mode=`operator_provider_model_t0_packet_authoring_claude`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=Claude authors only the paired T0 GC-018 and source-verified no-commit work order, then returns for reviewer repair/acceptance; parked checkpoint=T0 implementation, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push/deployment, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
+Current mode marker: `operator_provider_model_t0_packet_authoring_claude`
 
-Current mode: `operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
+Current mode: `operator_provider_model_t0_packet_authoring_claude`
 
-`operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
+`operator_provider_model_t0_packet_authoring_claude`
 
 Previous mode:
 
-`operator_approved_provider_model_assignment_roadmap_authoring_next`
+`operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-OPM-AIR T0 packet-authoring authorization | `252e0aed8` | Operator started T0 with Claude packet author, Codex reviewer, Claude no-commit worker, and Codex closer; implementation remains parked until committed reviewer acceptance. |
 | Operator-approved provider/model assignment and invocation-receipt roadmap | `bd9850373` | PROPOSED_OPERATOR_REVIEW_REQUIRED. Provider-neutral approval, assignment, invocation, reconciliation, secret-safe credential, fallback, and diagnostic program reuses existing Model Gateway owners; no GC-018, implementation, credential use, or provider call. |
 | Continuous projection T2 governed review-packet drafting closure | `f08eb304e` | REVIEWER_ACCEPTED_WITH_REPAIRS after ordinal enum validation, strict JSON boolean typing, independent duplicate-surface cardinality rejection, 91/91 focused proof, reviewer-fast 62/62 PASS, and pre-commit 83/83 PASS. Task-specific Sonnet 5/high assignment reconciled exactly; no provider default created. |
 | Continuous projection T2 governed review-packet drafting dispatch | `88723d3b4` | REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS after authority, route, stdout-only persistence, ordered schema, action mapping, source-verification, and negative-case repairs; exactly three Claude no-commit worker outputs. |
@@ -332,14 +333,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
+Mode: `operator_provider_model_t0_packet_authoring_claude`
 
-Operator reviews
-`docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md`
-and accepts it for T0 packet authoring, returns bounded repairs, or parks it.
-Until operator acceptance, do not author GC-018/work-order packets, implement
-routing, use credentials, call a provider, or reopen Continuous Projection
-T3-T4.
+Claude authors only the fresh T0 GC-018 and source-verified no-commit work
+order, then returns `COMPLETE_PENDING_REVIEW`. The reviewer repairs and accepts
+or blocks the packet before any implementation dispatch.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
