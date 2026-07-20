@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2012,
+  "stateKey": "continuousProjectionT2Closure20260720",
+  "value": {
+    "status": "CLOSED_PASS_WITH_REVIEWER_REPAIRS",
+    "batchId": "CVF-CONTINUOUS-PROJECTION-T2",
+    "executionBaseHead": "7bf7a6c94",
+    "implementationCommit": "f350b925a",
+    "closureCommit": "f08eb304e",
+    "completionReview": "docs/reviews/CVF_CONTINUOUS_PROJECTION_T2_COMPLETION_REVIEW_2026-07-20.md",
+    "proof": "91/91 focused assertions, reviewer-fast 62/62 PASS, material pre-commit 83/83 PASS, implementation committed-range pre-closure 75/75 PASS",
+    "reviewRepairs": "ordinal enum validation, strict JSON boolean typing, and independently reachable duplicate-surface cardinality rejection",
+    "providerModelEvidence": "task-specific operator assignment claude-sonnet-5 with high effort reconciled MATCH against secret-safe model metadata; no fallback; no CVF default created",
+    "nextAllowedMove": "Author only the provider-neutral operator-approved provider/model assignment and invocation-receipt roadmap.",
+    "parked": "Roadmap implementation, GC-018/work-order authoring, provider calls, Continuous Projection T3-T4, T4 real-root scan, mutation, public-sync, push, deployment, production action, and unattended mutation.",
+    "claimBoundary": "T2 fixture-proven read-only review-packet drafting closure only; no real-root freshness or provider-orchestrator implementation claim."
+  }
+}

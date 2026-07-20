@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_t2_material_committed_pending_closure`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=reviewer/closer completes the four-path T2 closure conversion from implementation commit `f350b925a`, then performs final session sync; parked checkpoint=Continuous Projection T3-T4, real-root receipt scan, mutation, public-sync, push/deployment, unapproved provider/model use, production, and unattended action.
+Startup acknowledged: current mode=`operator_approved_provider_model_assignment_roadmap_authoring_next`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=author only the provider-neutral operator-approved provider/model assignment and invocation-receipt roadmap; parked checkpoint=roadmap implementation, GC-018/work-order authoring, provider calls, Continuous Projection T3-T4, real-root receipt scan, mutation, public-sync, push/deployment, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_t2_material_committed_pending_closure`
+Current mode marker: `operator_approved_provider_model_assignment_roadmap_authoring_next`
 
-Current mode: `continuous_projection_t2_material_committed_pending_closure`
+Current mode: `operator_approved_provider_model_assignment_roadmap_authoring_next`
 
-`continuous_projection_t2_material_committed_pending_closure`
+`operator_approved_provider_model_assignment_roadmap_authoring_next`
 
 Previous mode:
 
-`continuous_projection_t2_no_commit_worker_dispatched`
+`continuous_projection_t2_material_committed_pending_closure`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Continuous projection T2 governed review-packet drafting closure | `f08eb304e` | REVIEWER_ACCEPTED_WITH_REPAIRS after ordinal enum validation, strict JSON boolean typing, independent duplicate-surface cardinality rejection, 91/91 focused proof, reviewer-fast 62/62 PASS, and pre-commit 83/83 PASS. Task-specific Sonnet 5/high assignment reconciled exactly; no provider default created. |
 | Continuous projection T2 governed review-packet drafting dispatch | `88723d3b4` | REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS after authority, route, stdout-only persistence, ordered schema, action mapping, source-verification, and negative-case repairs; exactly three Claude no-commit worker outputs. |
 | Continuous projection T1 read-only receipt closure | `e44f207f6` | REVIEWER_ACCEPTED_WITH_REPAIRS after bounded schema, ordering, git-ignore, mapped-handoff, and mapper-signal repairs; 53/53 disposable-fixture assertions and pre-commit 83/83 PASS; T2 packet authoring only is next. |
 | Continuous projection T1 read-only receipt implementation | `a394d635c` | IMPLEMENTED_REVIEWER_CLOSURE_PENDING after bounded reviewer repairs; no real-root or public mutation. |
@@ -330,14 +331,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_t2_material_committed_pending_closure`
+Mode: `operator_approved_provider_model_assignment_roadmap_authoring_next`
 
-Claude executes exactly the reviewer-repaired three-output T2 no-commit work
-order and returns `COMPLETE_PENDING_REVIEW`. The implementation uses the frozen
-`-ReceiptPath` to ordered-JSON-stdout contract and records the three reviewer
-findings. T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation,
-push, deployment, provider/live calls, production action, and unattended
-mutation remain parked.
+Author only the provider-neutral
+`CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP`.
+It must define operator approval envelopes, secret-safe credential references,
+task assignment receipts, actual invocation receipts, assigned-versus-actual
+provider/model reconciliation, bounded fallback policy, and failure diagnostics.
+Do not author its GC-018/work order, implement routing, call a provider, or
+reopen Continuous Projection T3-T4 without fresh operator authorization.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

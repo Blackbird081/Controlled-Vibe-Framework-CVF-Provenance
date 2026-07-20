@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "continuous_projection_t2_material_committed_pending_closure",
-  "previousMode": "continuous_projection_t2_no_commit_worker_dispatched",
+  "currentMode": "operator_approved_provider_model_assignment_roadmap_authoring_next",
+  "previousMode": "continuous_projection_t2_material_committed_pending_closure",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13672,7 +13672,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Independent reviewer/closer completes only the Continuous Projection T2 closure conversion from implementation commit f350b925a: update the paired baseline, work order, continuous-projection roadmap, and required completion review; run committed-range closure gates; then perform a separate final session sync. After T2 closure, author the provider-neutral CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP only. Continuous Projection T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, unapproved provider/model use, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author only the provider-neutral CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP. It must define operator approval envelopes, secret-safe credential references, task assignment receipts, actual invocation receipts, assigned-versus-actual provider/model reconciliation, bounded fallback policy, and quota/timeout/authentication diagnostics. Do not author its GC-018 or work order, implement routing, call a provider, or reopen Continuous Projection T3-T4 without fresh operator authorization. The T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13777,5 +13777,19 @@
     "nextAllowedMove": "Independent reviewer/closer completes the four-path T2 closure conversion, committed-range gates, and final session sync.",
     "parked": "Continuous Projection T3-T4, T4 real-root scan, mutation, public-sync, push, deployment, unapproved provider/model use, production action, and unattended mutation.",
     "claimBoundary": "Committed T2 read-only receipt-to-draft implementation and fixture proof only; reviewer closure is pending."
+  },
+  "continuousProjectionT2Closure20260720": {
+    "status": "CLOSED_PASS_WITH_REVIEWER_REPAIRS",
+    "batchId": "CVF-CONTINUOUS-PROJECTION-T2",
+    "executionBaseHead": "7bf7a6c94",
+    "implementationCommit": "f350b925a",
+    "closureCommit": "f08eb304e",
+    "completionReview": "docs/reviews/CVF_CONTINUOUS_PROJECTION_T2_COMPLETION_REVIEW_2026-07-20.md",
+    "proof": "91/91 focused assertions, reviewer-fast 62/62 PASS, material pre-commit 83/83 PASS, implementation committed-range pre-closure 75/75 PASS",
+    "reviewRepairs": "ordinal enum validation, strict JSON boolean typing, and independently reachable duplicate-surface cardinality rejection",
+    "providerModelEvidence": "task-specific operator assignment claude-sonnet-5 with high effort reconciled MATCH against secret-safe model metadata; no fallback; no CVF default created",
+    "nextAllowedMove": "Author only the provider-neutral operator-approved provider/model assignment and invocation-receipt roadmap.",
+    "parked": "Roadmap implementation, GC-018/work-order authoring, provider calls, Continuous Projection T3-T4, T4 real-root scan, mutation, public-sync, push, deployment, production action, and unattended mutation.",
+    "claimBoundary": "T2 fixture-proven read-only review-packet drafting closure only; no real-root freshness or provider-orchestrator implementation claim."
   }
 }

@@ -9,33 +9,34 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity after the Continuous Projection T1 implementation
-commit and before independent closure finalization. V48 was rotated before its
-next update would cross the governed handoff maintainability threshold.
+Carry compact continuity through the completed Continuous Projection T2
+closure and route the operator-selected provider-neutral provider/model
+assignment roadmap authoring next. V48 was rotated before its next update
+would cross the governed handoff maintainability threshold.
 
 ## Scope / Target / Owner Boundary
 
-This handoff owns protected continuity routing for the T1 implementation and
-reviewer-closure transition. Material scripts and review artifacts remain owned
-by their implementation and closure commits; public-sync and cvf-web remain
-read-only and outside this session-sync batch.
+This handoff owns protected continuity routing after T2 closure. Material
+scripts and review artifacts remain owned by their implementation and closure
+commits; public-sync and cvf-web remain read-only and outside this session-sync
+batch.
 
 ## Active Boundary
 
-T1 implementation is committed but not yet closed. Only independent closure
-finalization and its later protected sync may proceed. T2 implementation,
-T3-T4, real-root scanning, mutation, public, provider, and production lanes are
-parked.
+T2 is closed with reviewer repairs. Only authoring of the provider-neutral
+operator-approved provider/model assignment and invocation-receipt roadmap may
+proceed. Its implementation, Continuous Projection T3-T4, real-root scanning,
+mutation, public, provider-call, and production lanes are parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t2_material_committed_pending_closure`;
+current mode=`operator_approved_provider_model_assignment_roadmap_authoring_next`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=Claude executes exactly the reviewer-repaired three-output T2 no-commit work order;
-parked checkpoint=T3-T4, real-root receipt scan, apply/copy,
-public-sync mutation, push/deployment, provider/live, production, and unattended
-action.
+next allowed move=author only the provider-neutral operator-approved provider/model assignment and invocation-receipt roadmap;
+parked checkpoint=roadmap implementation, GC-018/work-order authoring,
+provider calls, T3-T4, real-root receipt scan, apply/copy, public-sync mutation,
+push/deployment, production, and unattended action.
 
 ## Current State
 
@@ -52,23 +53,25 @@ action.
 - T1 final disposition: `REVIEWER_ACCEPTED_WITH_REPAIRS`.
 - T2 packet is reviewer-accepted with repairs at `88723d3b4`; the exact Claude
   no-commit implementation assignment is released after this session sync.
+- T2 implementation committed at `f350b925a`; closure committed at
+  `f08eb304e`; final disposition is `REVIEWER_ACCEPTED_WITH_REPAIRS`.
 
 ## Latest Work / Changes
 
-Material commit `a394d635c` added the read-only receipt wrapper, its focused
-fixture suite, and the repaired worker return. This protected batch archives
-V48, opens V49, and advances session routing to reviewer closure pending.
+Material commit `f08eb304e` closes T2 after the 91/91 focused proof and three
+fail-closed repairs. This protected batch advances session routing to the
+provider-neutral roadmap-authoring checkpoint only.
 
 ## Current Mode
 
-`continuous_projection_t2_material_committed_pending_closure`
+`operator_approved_provider_model_assignment_roadmap_authoring_next`
 
 ## Next Allowed Move
 
-Claude executes exactly the three Allowed T2 no-commit outputs under the
-reviewer-repaired packet and returns `COMPLETE_PENDING_REVIEW`. T3-T4, the T4
-real-root scan, and every mutation, public, provider, or production lane remain
-parked.
+Author only the provider-neutral operator-approved provider/model assignment
+and invocation-receipt roadmap. Do not author its GC-018/work order, implement
+routing, call a provider, or reopen Continuous Projection T3-T4 without fresh
+operator authorization.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -292,5 +295,52 @@ Do not revert material implementation commit `f350b925a` through session sync.
 ## GC-020 Marker - T2 Implementation Session Sync
 
 This handoff records material parent commit `f350b925a`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## Continuous Projection T2 Closure
+
+- Material closure commit: `f08eb304e`.
+- Implementation commit: `f350b925a`; executionBaseHead `7bf7a6c94`.
+- Disposition: `REVIEWER_ACCEPTED_WITH_REPAIRS`.
+- Final proof: 91/91 focused assertions, reviewer-fast 62/62 PASS, material
+  pre-commit 83/83 PASS, and implementation committed-range pre-closure 75/75
+  PASS.
+- Reviewer repairs: ordinal enum validation, strict JSON boolean typing, and an
+  independently reachable duplicate-surface cardinality rejection.
+- Provider/model evidence: task-specific operator assignment
+  `claude-sonnet-5`, effort `high`, exact assigned-versus-actual MATCH from
+  secret-safe model metadata, no fallback, and no CVF provider/model default.
+- Next: author only the provider-neutral operator-approved provider/model
+  assignment and invocation-receipt roadmap. Its implementation and Continuous
+  Projection T3-T4 remain parked.
+
+## Core Guard Self-Protection Authorization - T2 Closure Sync
+
+Authorized guard-maintenance scope: record closure commit `f08eb304e`, advance
+mode and next-move routing to provider-neutral roadmap authoring only,
+regenerate active state, and keep all implementation, provider-call,
+real-root, mutation, public, and production lanes parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT2Closure20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: the operator accepted continuation after the repaired
+Sonnet 5/high worker result and selected the provider-neutral assignment and
+invocation-receipt roadmap as the next planning lane.
+
+Rollback boundary: revert this protected closure-sync batch together. Do not
+revert material closure commit `f08eb304e` through session sync.
+
+## GC-020 Marker - T2 Closure Session Sync
+
+This handoff records material parent commit `f08eb304e`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.

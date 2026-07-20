@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "continuous_projection_t2_material_committed_pending_closure",
+  "currentMode": "operator_approved_provider_model_assignment_roadmap_authoring_next",
   "activeHandoff": "AGENT_HANDOFF_V49_2026-07-20.md",
-  "nextAllowedMove": "Independent reviewer/closer completes only the Continuous Projection T2 closure conversion from implementation commit f350b925a: update the paired baseline, work order, continuous-projection roadmap, and required completion review; run committed-range closure gates; then perform a separate final session sync. After T2 closure, author the provider-neutral CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP only. Continuous Projection T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, unapproved provider/model use, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author only the provider-neutral CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP. It must define operator approval envelopes, secret-safe credential references, task assignment receipts, actual invocation receipts, assigned-versus-actual provider/model reconciliation, bounded fallback policy, and quota/timeout/authentication diagnostics. Do not author its GC-018 or work order, implement routing, call a provider, or reopen Continuous Projection T3-T4 without fresh operator authorization. The T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
