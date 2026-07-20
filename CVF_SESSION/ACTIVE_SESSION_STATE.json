@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "operator_provider_model_t0_r1_waiting_subscription_reset",
-  "previousMode": "operator_provider_model_t0_no_commit_worker_dispatched",
+  "currentMode": "global_roadmap_execution_parked_cli_mcp_invocation_control_audit",
+  "previousMode": "operator_provider_model_t0_r1_waiting_subscription_reset",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13672,7 +13672,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "After the Claude subscription session resets, start one fresh T0 R1 no-commit worker session under the committed Interim Bounded Invocation Profile at 4f3968cd5. Do not resume the enlarged packet-author or failed-worker sessions. Enforce safe mode, the four-tool allowlist, 10-minute/24-response/3000000-cache-read/40000-output ceilings, complete process-tree termination, and no retry or fallback. Codex owns review, repair, material commit, closure, and reporting. T1-T5, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Continue only the local read-only external-agent CLI/MCP invocation-control system-chain reassessment recorded at material commit 8b34ec5cb. Every roadmap execution lane is globally parked, including the revoked Claude T0 R1 rerun. Do not author or dispatch a work order, invoke an agent CLI, call an MCP live tool or provider, use an API key or account subscription, retry, fallback, run live proof, public-sync, push, deploy, perform production action, or start unattended mutation. A fresh explicit operator decision after an evidence-backed control architecture is required to lift the moratorium. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13841,5 +13841,16 @@
     "interimCaps": "new safe-mode session; Read/Write/Edit/Bash only; 10 minutes; 24 responses; 3000000 cache-read; 40000 output; one gate and one repair pass",
     "nextAllowedMove": "After subscription reset, one fresh bounded T0 R1 worker attempt only; no resume, retry, or fallback.",
     "parked": "T1-T5, credentials, provider calls, live proof, public-sync, push, deployment, production, and unattended mutation."
+  },
+  "globalRoadmapExecutionMoratoriumCliMcpAudit20260720": {
+    "status": "ACTIVE_AUDIT_ONLY_GLOBAL_ROADMAP_EXECUTION_MORATORIUM",
+    "materialCommit": "8b34ec5cb",
+    "audit": "docs/audits/CVF_AGENT_CLI_MCP_INVOCATION_CONTROL_SYSTEM_CHAIN_REASSESSMENT_2026-07-20.md",
+    "openingVerdict": "CONTROL_NOT_EFFECTIVE_FOR_EXTERNAL_AGENT_CLI",
+    "revokedAuthorization": "CVF-OPM-AIR T0 R1 Claude worker rerun after subscription reset",
+    "effectiveScope": "every roadmap execution lane; historical roadmap records remain unchanged unless they are the current directly superseded lane",
+    "allowed": "local read-only source inspection and local non-provider static checks for the invocation-control reassessment",
+    "forbidden": "work-order authoring or dispatch; agent CLI; MCP live tool; provider or API-key call; account subscription use; retry; fallback; live proof; public-sync; push; deployment; production action; unattended mutation",
+    "liftCondition": "fresh explicit operator decision after an evidence-backed provider-neutral control architecture and bounded proof plan"
   }
 }

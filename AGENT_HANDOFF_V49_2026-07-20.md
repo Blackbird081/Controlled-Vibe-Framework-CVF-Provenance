@@ -31,12 +31,12 @@ mutation, public, provider-call, and production lanes are parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`operator_provider_model_t0_r1_waiting_subscription_reset`;
+current mode=`global_roadmap_execution_parked_cli_mcp_invocation_control_audit`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=after reset, one fresh bounded T0 R1 no-commit Claude worker session under hard caller caps;
-parked checkpoint=T1-T5, credentials,
-provider calls, T3-T4, real-root receipt scan, apply/copy, public-sync mutation,
-push/deployment, production, and unattended action.
+next allowed move=local read-only source audit of external-agent CLI/MCP invocation control only;
+parked checkpoint=every roadmap execution lane, work-order authoring/dispatch,
+all agent/provider/MCP-live/API-key/subscription calls, retry, fallback, live
+proof, public-sync, push/deployment, production, and unattended action.
 
 ## Current State
 
@@ -64,15 +64,17 @@ provider-neutral roadmap-authoring checkpoint only.
 
 ## Current Mode
 
-`operator_provider_model_t0_r1_waiting_subscription_reset`
+`global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
 
 ## Next Allowed Move
 
-After the Claude subscription session resets, start one fresh T0 R1 worker
-session under the committed bounded-invocation profile. Do not resume either
-enlarged T0 session. Codex owns review, repair, material commit, closure, and
-reporting. Do not start T1-T5, use credentials, call a provider, retry, or
-fallback.
+Continue only the local read-only external-agent CLI/MCP invocation-control
+system-chain reassessment at material commit `8b34ec5cb`. Every roadmap
+execution lane is parked, including the revoked Claude T0 R1 rerun. Do not
+author or dispatch a work order, invoke an agent CLI or MCP live tool, call a
+provider, use an API key or account subscription, retry, fallback, run live
+proof, public-sync, push, deploy, act in production, or start unattended
+mutation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -506,5 +508,51 @@ material control commit `4f3968cd5` through session sync.
 ## GC-020 Marker - T0 Cost-Control Session Sync
 
 This handoff records material parent commit `4f3968cd5`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## Global Roadmap Execution Moratorium And CLI/MCP Control Audit
+
+- Material audit/parking commit: `8b34ec5cb`.
+- Operator decision: park every roadmap and reassess all system-chain,
+  workflow, and plane surfaces related to invoking another agent through CLI
+  or MCP.
+- Opening verdict: `CONTROL_NOT_EFFECTIVE_FOR_EXTERNAL_AGENT_CLI`.
+- The previously released Claude T0 R1 rerun is revoked even after the
+  subscription resets.
+- Existing inspected surfaces are contract-only, evidence-only, advisory,
+  static-command-only, provider-request-only, or lack a production caller;
+  no end-to-end external-agent CLI lifecycle owner was found.
+- Allowed next move: local read-only source inspection and local non-provider
+  static checks for the audit only.
+- Forbidden: new work order, dispatch, agent CLI, MCP live tool, provider,
+  API-key/account-subscription use, retry, fallback, live proof, public-sync,
+  push, deployment, production action, and unattended mutation.
+
+## Core Guard Self-Protection Authorization - Global Moratorium Sync
+
+Authorized guard-maintenance scope: record material commit `8b34ec5cb`, move
+the canonical mode to the global execution moratorium, replace the stale T0 R1
+next move, add the moratorium state entry, and regenerate active state.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/globalRoadmapExecutionMoratoriumCliMcpAudit20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: direct instruction to park every roadmap and focus on
+the ineffective CLI/MCP delegated-agent control chain.
+
+Rollback boundary: revert this protected sync batch together. Do not revert
+material audit/parking commit `8b34ec5cb` through session sync.
+
+## GC-020 Marker - Global Moratorium Session Sync
+
+This handoff records material parent commit `8b34ec5cb`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.

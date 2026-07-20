@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`operator_provider_model_t0_r1_waiting_subscription_reset`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=after reset, one fresh bounded T0 R1 no-commit Claude worker session with hard caller caps; parked checkpoint=T1-T5, credentials, provider calls, fallback, live proof, Continuous Projection T3-T4, public-sync, push/deployment, production, and unattended action.
+Startup acknowledged: current mode=`global_roadmap_execution_parked_cli_mcp_invocation_control_audit`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=local read-only source audit of external-agent CLI/MCP invocation control only; parked checkpoint=every roadmap execution lane, work-order authoring/dispatch, all agent/provider/MCP-live/API-key/subscription calls, retries, fallback, live proof, public-sync, push/deployment, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `operator_provider_model_t0_r1_waiting_subscription_reset`
+Current mode marker: `global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
 
-Current mode: `operator_provider_model_t0_r1_waiting_subscription_reset`
+Current mode: `global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
 
-`operator_provider_model_t0_r1_waiting_subscription_reset`
+`global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
 
 Previous mode:
 
-`operator_provider_model_t0_no_commit_worker_dispatched`
+`operator_provider_model_t0_r1_waiting_subscription_reset`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -334,12 +334,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `operator_provider_model_t0_r1_waiting_subscription_reset`
+Mode: `global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
 
-After the Claude subscription session resets, start one fresh T0 R1 no-commit
-worker session under the committed bounded-invocation profile. Do not resume
-either enlarged T0 session. Codex owns review, repair, material commit,
-closure, and tranche reporting.
+Continue only the local read-only external-agent CLI/MCP invocation-control
+system-chain reassessment at material commit `8b34ec5cb`. Every roadmap
+execution lane is parked, including the revoked Claude T0 R1 rerun. No work
+order, dispatch, agent CLI, MCP live tool, provider/API-key/subscription call,
+retry, fallback, live proof, public-sync, push, deployment, production action,
+or unattended mutation is authorized.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
