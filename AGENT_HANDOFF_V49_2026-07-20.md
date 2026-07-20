@@ -30,10 +30,10 @@ parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t2_packet_authoring_next`;
+current mode=`continuous_projection_t2_no_commit_worker_dispatched`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=author only a fresh T2 GC-018 and source-verified no-commit work order;
-parked checkpoint=T2 implementation, T3-T4, real-root receipt scan, apply/copy,
+next allowed move=Claude executes exactly the reviewer-repaired three-output T2 no-commit work order;
+parked checkpoint=T3-T4, real-root receipt scan, apply/copy,
 public-sync mutation, push/deployment, provider/live, production, and unattended
 action.
 
@@ -50,7 +50,8 @@ action.
   commit; no public-sync mutation occurred.
 - T1 closure material commit: `e44f207f6`.
 - T1 final disposition: `REVIEWER_ACCEPTED_WITH_REPAIRS`.
-- T2 packet authoring only is released; implementation remains parked.
+- T2 packet is reviewer-accepted with repairs at `88723d3b4`; the exact Claude
+  no-commit implementation assignment is released after this session sync.
 
 ## Latest Work / Changes
 
@@ -60,13 +61,14 @@ V48, opens V49, and advances session routing to reviewer closure pending.
 
 ## Current Mode
 
-`continuous_projection_t2_packet_authoring_next`
+`continuous_projection_t2_no_commit_worker_dispatched`
 
 ## Next Allowed Move
 
-Author only a fresh GC-018 and source-verified no-commit work order for T2
-governed review-packet drafting. T2 implementation, T3-T4, the T4 real-root
-scan, and every mutation, public, provider, or production lane remain parked.
+Claude executes exactly the three Allowed T2 no-commit outputs under the
+reviewer-repaired packet and returns `COMPLETE_PENDING_REVIEW`. T3-T4, the T4
+real-root scan, and every mutation, public, provider, or production lane remain
+parked.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -199,7 +201,52 @@ accept this parent SHA for the dedicated handoff-only continuity commit.
 
 ## Claim Boundary
 
-This handoff records private continuity only. It does not close T1, execute the
-T4 real-root scan, authorize T2 implementation, mutate public-sync or cvf-web,
-push, deploy, call a provider, or claim tree-scale freshness, semantic
+This handoff records private continuity and authorizes only the exact
+reviewer-repaired T2 no-commit worker assignment described below. It does not
+close T2, execute the T4 real-root scan, authorize T3-T4, mutate public-sync or
+cvf-web, push, deploy, call a provider, or claim tree-scale freshness, semantic
 equivalence, hosted freshness, or public readiness.
+
+## Continuous Projection T2 Dispatch
+
+- Dispatch material commit: `88723d3b4`.
+- Disposition: `REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS`.
+- Worker: Claude under `WORKER_MUST_NOT_COMMIT`.
+- Allowed outputs: review-packet drafter, focused proof suite, and worker return.
+- Reviewer findings carried into the packet: missing fresh implementation
+  authority, route-token mismatch, and ambiguous persistence/schema/action
+  mapping.
+- Frozen repair: required `-ReceiptPath`, ordered JSON stdout only, exact five
+  content groups, disposition-to-action map, fail-closed validation, and no
+  fourth persistent draft output.
+- T3-T4 and every real-root/mutation/public/provider/production lane remain
+  parked.
+
+## Core Guard Self-Protection Authorization - T2 Dispatch Sync
+
+Authorized guard-maintenance scope: record dispatch material commit
+`88723d3b4`, advance mode and next-move routing to the exact Claude no-commit
+worker assignment, regenerate active state, and keep all later or mutating lanes
+parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT2Dispatch20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: the operator instructed the reviewer to repair the
+packet findings and transfer the repaired T2 assignment to Claude.
+
+Rollback boundary: revert this protected dispatch-sync batch together. Do not
+revert material dispatch commit `88723d3b4` through session sync.
+
+## GC-020 Marker - T2 Dispatch Session Sync
+
+This handoff records material parent commit `88723d3b4`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.

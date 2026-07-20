@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2010,
+  "stateKey": "continuousProjectionT2Dispatch20260720",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS",
+    "batchId": "CVF-CONTINUOUS-PROJECTION-T2",
+    "dispatchCommit": "88723d3b4",
+    "baseline": "docs/baselines/CVF_GC018_CONTINUOUS_PROJECTION_T2_GOVERNED_REVIEW_PACKET_DRAFTING_2026-07-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T2_GOVERNED_REVIEW_PACKET_DRAFTING_2026-07-20.md",
+    "worker": "Claude no-commit implementation worker",
+    "reviewerRepairs": "fresh implementation authority, MULTI_AGENT_SINGLE_ROLE route alignment, and frozen stdout-only ordered JSON schema/action mapping",
+    "nextAllowedMove": "Claude creates exactly the three Allowed T2 outputs and returns COMPLETE_PENDING_REVIEW without commit.",
+    "parked": "T3-T4, T4 real-root scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation.",
+    "claimBoundary": "Private read-only receipt-to-draft implementation dispatch only; no real-root freshness, mutation, public, provider/live, or production claim."
+  }
+}

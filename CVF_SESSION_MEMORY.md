@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_t2_packet_authoring_next`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=author only a fresh T2 GC-018 and source-verified no-commit work order; parked checkpoint=T2 implementation, T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push/deployment, provider/live, production, and unattended action.
+Startup acknowledged: current mode=`continuous_projection_t2_no_commit_worker_dispatched`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=Claude executes exactly the reviewer-repaired three-output T2 no-commit work order and returns COMPLETE_PENDING_REVIEW; parked checkpoint=T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push/deployment, provider/live, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_t2_packet_authoring_next`
+Current mode marker: `continuous_projection_t2_no_commit_worker_dispatched`
 
-Current mode: `continuous_projection_t2_packet_authoring_next`
+Current mode: `continuous_projection_t2_no_commit_worker_dispatched`
 
-`continuous_projection_t2_packet_authoring_next`
+`continuous_projection_t2_no_commit_worker_dispatched`
 
 Previous mode:
 
-`continuous_projection_t1_reviewer_closure_pending`
+`continuous_projection_t2_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Continuous projection T2 governed review-packet drafting dispatch | `88723d3b4` | REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS after authority, route, stdout-only persistence, ordered schema, action mapping, source-verification, and negative-case repairs; exactly three Claude no-commit worker outputs. |
 | Continuous projection T1 read-only receipt closure | `e44f207f6` | REVIEWER_ACCEPTED_WITH_REPAIRS after bounded schema, ordering, git-ignore, mapped-handoff, and mapper-signal repairs; 53/53 disposable-fixture assertions and pre-commit 83/83 PASS; T2 packet authoring only is next. |
 | Continuous projection T1 read-only receipt implementation | `a394d635c` | IMPLEMENTED_REVIEWER_CLOSURE_PENDING after bounded reviewer repairs; no real-root or public mutation. |
 | Continuous projection T1 read-only receipt dispatch | `b3bf00de8` | DISPATCH_READY after reviewer repairs to the 16-row input seam, mapper child-process boundary, tracked/ignored fields, fail-closed timeout semantics, lifecycle anchors, and role routing; exactly three no-commit worker outputs. |
@@ -329,12 +330,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_t2_packet_authoring_next`
+Mode: `continuous_projection_t2_no_commit_worker_dispatched`
 
-Author only a fresh T2 GC-018 and source-verified no-commit work order for
-governed review-packet drafting. T2 implementation, T3-T4, the T4 real-root
-receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live
-calls, production action, and unattended mutation remain parked.
+Claude executes exactly the reviewer-repaired three-output T2 no-commit work
+order and returns `COMPLETE_PENDING_REVIEW`. The implementation uses the frozen
+`-ReceiptPath` to ordered-JSON-stdout contract and records the three reviewer
+findings. T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation,
+push, deployment, provider/live calls, production action, and unattended
+mutation remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

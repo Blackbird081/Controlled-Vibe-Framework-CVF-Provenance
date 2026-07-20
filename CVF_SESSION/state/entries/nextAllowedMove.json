@@ -1,5 +1,5 @@
 {
   "stateOrder": 2002,
   "stateKey": "nextAllowedMove",
-  "value": "Author only a fresh GC-018 and source-verified no-commit work order for CVF Continuous Projection T2 governed review-packet drafting. The packet must keep generated output review-required and uncommitted and define source facts, affected projections, reviewer actions, public/provenance boundary, and evidence. T2 implementation, T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Claude executes only the reviewer-repaired Continuous Projection T2 no-commit work order at the final dispatch/session-sync HEAD. Claude creates exactly scripts/get_cvf_projection_review_packet.ps1, scripts/test_cvf_projection_review_packet.ps1, and docs/reviews/CVF_CONTINUOUS_PROJECTION_T2_WORKER_RETURN_2026-07-20.md; implements the frozen ReceiptPath-to-stdout ordered JSON contract; records the three reviewer findings; and returns COMPLETE_PENDING_REVIEW without commit. T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
