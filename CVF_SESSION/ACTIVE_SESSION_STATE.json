@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "continuous_projection_t1_reviewer_closure_pending",
-  "previousMode": "continuous_projection_t1_worker_execution_next",
+  "currentMode": "continuous_projection_t2_packet_authoring_next",
+  "previousMode": "continuous_projection_t1_reviewer_closure_pending",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13672,7 +13672,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Finalize independent CVF-CONTINUOUS-PROJECTION-T1 closure from implementation commit a394d635c using the paired baseline, work order, roadmap, and completion review. Run committed-range pre-closure from caf594ff0, commit closure material, then perform a separate protected session sync. If accepted, release only fresh T2 GC-018 and work-order authoring. T2 implementation, T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author only a fresh GC-018 and source-verified no-commit work order for CVF Continuous Projection T2 governed review-packet drafting. The packet must keep generated output review-required and uncommitted and define source facts, affected projections, reviewer actions, public/provenance boundary, and evidence. T2 implementation, T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13740,5 +13740,16 @@
     "nextAllowedMove": "Independent reviewer finalizes and commits the T1 closure packet, then performs a separate session sync.",
     "parked": "T2 implementation, T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation.",
     "claimBoundary": "Private read-only mechanism implementation and disposable-fixture proof only; no real-root freshness or public claim."
+  },
+  "continuousProjectionT1Closure20260720": {
+    "status": "REVIEWER_ACCEPTED_WITH_REPAIRS",
+    "batchId": "CVF-CONTINUOUS-PROJECTION-T1",
+    "implementationCommit": "a394d635c",
+    "closureCommit": "e44f207f6",
+    "proof": "53/53 disposable-fixture assertions and pre-commit 83/83 PASS",
+    "completionReview": "docs/reviews/CVF_CONTINUOUS_PROJECTION_T1_COMPLETION_REVIEW_2026-07-20.md",
+    "nextAllowedMove": "Author only a fresh GC-018 and source-verified no-commit work order for T2 governed review-packet drafting.",
+    "parked": "T2 implementation, T3-T4, T4 real-root scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation.",
+    "claimBoundary": "Private fixture-proven read-only receipt mechanism; no real-root freshness, semantic-equivalence, hosted, or public-readiness claim."
   }
 }

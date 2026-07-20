@@ -30,10 +30,9 @@ parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t1_reviewer_closure_pending`;
+current mode=`continuous_projection_t2_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=finalize independent T1 closure from material implementation
-commit `a394d635c` and then session-sync the accepted result;
+next allowed move=author only a fresh T2 GC-018 and source-verified no-commit work order;
 parked checkpoint=T2 implementation, T3-T4, real-root receipt scan, apply/copy,
 public-sync mutation, push/deployment, provider/live, production, and unattended
 action.
@@ -49,7 +48,9 @@ action.
 - T1 implementation material commit: `a394d635c`.
 - The private provenance and sibling public-sync roots were clean after that
   commit; no public-sync mutation occurred.
-- T1 closure packet is reviewer-owned and pending final committed-range gates.
+- T1 closure material commit: `e44f207f6`.
+- T1 final disposition: `REVIEWER_ACCEPTED_WITH_REPAIRS`.
+- T2 packet authoring only is released; implementation remains parked.
 
 ## Latest Work / Changes
 
@@ -59,15 +60,13 @@ V48, opens V49, and advances session routing to reviewer closure pending.
 
 ## Current Mode
 
-`continuous_projection_t1_reviewer_closure_pending`
+`continuous_projection_t2_packet_authoring_next`
 
 ## Next Allowed Move
 
-Finalize the T1 paired baseline, work order, roadmap state, and independent
-completion review. Run pre-closure over the non-empty range from `caf594ff0`,
-commit closure material, then perform a separate protected session sync. If T1
-closes, release only fresh T2 GC-018 and work-order authoring. T2 implementation,
-T3-T4, and every mutation or live lane remain parked.
+Author only a fresh GC-018 and source-verified no-commit work order for T2
+governed review-packet drafting. T2 implementation, T3-T4, the T4 real-root
+scan, and every mutation, public, provider, or production lane remain parked.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -99,6 +98,46 @@ closer ownership of material review, commit stewardship, and session sync.
 ## GC-020 Marker - T1 Implementation Session Sync
 
 This handoff records material parent commit `a394d635c`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+Current committed session-sync HEAD before T1 closure material: `a171a6ee5`.
+
+## Continuous Projection T1 Closure
+
+- Implementation commit: `a394d635c`.
+- Implementation session sync: `a171a6ee5`.
+- Closure material commit: `e44f207f6`.
+- Disposition: `REVIEWER_ACCEPTED_WITH_REPAIRS`.
+- Evidence: 53/53 disposable-fixture assertions and pre-commit 83/83 PASS.
+- Claim boundary: no T4 real-root scan, public-sync mutation, provider/live
+  call, push, deployment, or tree-scale freshness claim.
+
+## Core Guard Self-Protection Authorization - T1 Closure Sync
+
+Authorized guard-maintenance scope: record T1 closure commit `e44f207f6`,
+advance continuity to T2 packet authoring only, regenerate active session read
+models, and keep T2 implementation plus all later/mutation lanes parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT1Closure20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: the T1 work order assigns independent reviewer/closer
+ownership of closure conversion and protected session sync.
+
+Rollback boundary: revert this protected closure-sync batch together. Do not
+revert closure material commit `e44f207f6` through session sync.
+
+## GC-020 Marker - T1 Closure Session Sync
+
+This handoff records material parent commit `e44f207f6`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.
 

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2002,
   "stateKey": "nextAllowedMove",
-  "value": "Finalize independent CVF-CONTINUOUS-PROJECTION-T1 closure from implementation commit a394d635c using the paired baseline, work order, roadmap, and completion review. Run committed-range pre-closure from caf594ff0, commit closure material, then perform a separate protected session sync. If accepted, release only fresh T2 GC-018 and work-order authoring. T2 implementation, T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Author only a fresh GC-018 and source-verified no-commit work order for CVF Continuous Projection T2 governed review-packet drafting. The packet must keep generated output review-required and uncommitted and define source facts, affected projections, reviewer actions, public/provenance boundary, and evidence. T2 implementation, T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }
