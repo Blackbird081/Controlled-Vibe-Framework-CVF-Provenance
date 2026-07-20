@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: PROPOSED_OPERATOR_REVIEW_REQUIRED
+Status: T0_PACKET_AUTHORING_AUTHORIZED
 
 Date: 2026-07-20
 
@@ -35,11 +35,31 @@ not a default, recommendation, provider preference, or runtime foundation.
 
 ## Authorization / Decision
 
-The operator authorized recording this provider-neutral roadmap as the next
-roadmap after Continuous Projection T2 closure. Authorization is limited to
-roadmap authoring and operator review. No GC-018, work order, implementation,
-credential use, provider call, fallback, public action, or deployment is
-released.
+The operator authorized this provider-neutral roadmap after Continuous
+Projection T2 closure and, on 2026-07-20, explicitly started T0 with this
+sequence: reviewer/orchestrator opens the roadmap; Claude authors the work-order
+packet; reviewer repairs and accepts it; Claude executes as no-commit worker;
+reviewer repairs, closes, and reports tranche findings and learning candidates
+to the operator. Current authorization releases only Claude authoring of the
+fresh T0 GC-018 and source-verified work order. T0 implementation, credential
+use, provider calls, fallback, public action, and deployment remain parked
+until the reviewer accepts and commits that dispatch packet.
+
+## Operator Usage Baseline Snapshot
+
+The operator supplied a Claude plan-usage screenshot immediately before T0:
+
+| UI measure | Observed value | Evidence boundary |
+|---|---:|---|
+| current session | 21 percent used; reset shown in 4 hours 13 minutes | operator-provided UI snapshot; not an API quota receipt |
+| weekly all-models | 41 percent used; reset shown Tuesday 10:00 PM | operator-provided UI snapshot; plan limits were shown as temporarily boosted |
+| usage credits | off | no paid overage authorization |
+| usage-credit spend | USD 0.00; reset shown August 1 | UI snapshot only |
+
+T0 must preserve this as `OPERATOR_UI_SNAPSHOT` evidence and pair it with
+deduplicated Claude CLI JSONL usage by unique `message.id`. UI percentages,
+token counters, billed API cost, and subscription quota are distinct
+measurement classes and must never be silently converted into one another.
 
 ## Authority And Existing Foundation
 
@@ -382,15 +402,19 @@ mutation.
 
 ## Next Allowed Move
 
-Operator reviews this roadmap and either accepts it for T0 packet authoring,
-returns bounded repairs, or parks it. Until operator acceptance, do not author
-GC-018/work-order packets, implement any schema or routing seam, use a
-credential, call a provider, or start a live proof.
+Claude authors only a fresh T0 GC-018 and source-verified no-commit work order
+for the Source Map And Contract Gap Baseline. The packet must include the
+operator usage snapshot measurement boundary, exact CLI usage extraction and
+deduplication requirements, the five-stage role sequence, and after-tranche
+finding/learning reporting. The reviewer owns acceptance and dispatch commits.
+Do not implement T0, use a credential, call a provider, or start live proof
+until the packet is reviewer-accepted and committed.
 
 ## Claim Boundary
 
-This roadmap proposes a provider-neutral approval, assignment, invocation, and
-reconciliation program over existing CVF Model Gateway foundations. It does not
-establish a default provider/model, certify account-subscription integration,
-implement orchestration, authorize fallback, store credentials, call a
-provider, prove production behavior, mutate public-sync, push, or deploy.
+This roadmap authorizes only T0 packet authoring for a provider-neutral
+approval, assignment, invocation, and reconciliation program over existing CVF
+Model Gateway foundations. It does not dispatch T0 implementation, establish a
+default provider/model, certify account-subscription integration, implement
+orchestration, authorize fallback, store credentials, call a provider, prove
+production behavior, mutate public-sync, push, or deploy.
