@@ -10,30 +10,30 @@ Supersedes:
 ## Purpose
 
 Carry compact continuity through the completed Continuous Projection T3
-closure and route Continuous Projection T4 R1 manual redispatch next. V48 was rotated before its next update
+closure and route Continuous Projection T4 R2 manual redispatch next. V48 was rotated before its next update
 would cross the governed handoff maintainability threshold.
 
 ## Scope / Target / Owner Boundary
 
-This handoff owns protected continuity routing for T3 closure and T4 R1 redispatch.
+This handoff owns protected continuity routing for T3 closure and T4 R2 redispatch.
 Material scripts and review artifacts remain owned by their implementation and
 closure commits; public-sync and cvf-web remain read-only and outside this
 session-sync batch.
 
 ## Active Boundary
 
-T3 is closed with reviewer repairs at `e21199dfa`. T4 R1 is redispatch-ready at
-`1bbd4729a` through operator manual copy/paste only. Automated agent
+T3 is closed with reviewer repairs at `e21199dfa`. T4 R2 is redispatch-ready at
+`539bf01cc` through operator manual copy/paste only. Automated agent
 invocation, mutation, public, provider-call, browser/network, and production
 lanes remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t4_r1_waiting_manual_no_commit_worker_return`;
+current mode=`continuous_projection_t4_r2_waiting_manual_no_commit_worker_return`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=operator manual copy/paste of the repaired T4 R1 work order
-at `1bbd4729a` with the post-sync HEAD, then wait for four no-commit outputs or
+next allowed move=operator manual copy/paste of the repaired T4 R2 work order
+at `539bf01cc` with the post-sync HEAD, then wait for four no-commit outputs or
 a blocked return;
 parked checkpoint=all agent CLI/MCP/provider/browser/network use, all other roadmap execution, automated
 agent/provider/MCP-live/API-key/subscription calls, browser/live proof,
@@ -65,13 +65,14 @@ batch advances session routing only to T4 packet authoring.
 
 ## Current Mode
 
-`continuous_projection_t4_r1_waiting_manual_no_commit_worker_return`
+`continuous_projection_t4_r2_waiting_manual_no_commit_worker_return`
 
 ## Next Allowed Move
 
-Operator manually copy/pastes the repaired T4 R1 work order at `1bbd4729a`
+Operator manually copy/pastes the repaired T4 R2 work order at `539bf01cc`
 with the post-sync HEAD, then waits for four unstaged outputs or
-`BLOCKED_WITH_REASON`. The accepted R0 block consumed zero real-root scans.
+`BLOCKED_WITH_REASON`. R1 consumed one PATH_ESCAPE invocation without retry;
+R2 uses stdout-only receipt capture and one fresh no-retry scan ceiling.
 Do not invoke Codex/Claude or
 another agent by CLI, use MCP, call a provider, use an API key/account
 subscription, run browser/network proof, public-sync, push, deploy, act in
@@ -778,5 +779,45 @@ Protected paths:
 ## GC-020 Marker - Continuous Projection T4 R1 Redispatch Sync
 
 This handoff records material parent commit `1bbd4729a`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## Continuous Projection T4 R2 Stdout-Only Redispatch
+
+- Material redispatch commit: `539bf01cc`.
+- Prior blocked executionBaseHead: `5b929dad9`.
+- Prior disposition: `ACCEPTED_BLOCKED_RETURN`.
+- R1 evidence: pre-implementation PASS; fixtures `53/53`, `91/91`, `144/144`;
+  one PATH_ESCAPE invocation consumed; no retry; no receipt produced.
+- R2 repair: omit `-ReceiptOutputPath`, capture the documented stdout-only
+  receipt in memory, reuse fixture evidence only after an empty script diff,
+  and release one fresh no-retry real-root scan.
+- Learning: ADIF-0043 records the process-CWD/output-path contract trap.
+- Validation: automation-assist clean; pre-dispatch 75/75; worker-return fast
+  including reviewer-fast 62/62; file-size compliant; pre-commit 83/83.
+- Mode: `continuous_projection_t4_r2_waiting_manual_no_commit_worker_return`.
+- Handoff remains operator manual copy/paste only.
+- Hard prohibition remains unchanged: no Codex/Claude/agent CLI, MCP,
+  provider/API/account use, browser, network service, public-sync mutation,
+  worker commit, push, deployment, production, or unattended action.
+
+## Core Guard Self-Protection Authorization - T4 R2 Redispatch Sync
+
+Authorized scope: record material commit `539bf01cc`, accepted R1 blocked
+return, one consumed PATH_ESCAPE attempt, stdout-only R2 repair, exact next
+move, and the operator's zero-CLI/MCP/provider boundary.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT4Dispatch20260720.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION_MEMORY.md`.
+
+## GC-020 Marker - Continuous Projection T4 R2 Redispatch Sync
+
+This handoff records material parent commit `539bf01cc`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.
