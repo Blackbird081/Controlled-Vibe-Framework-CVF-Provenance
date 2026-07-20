@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "continuous_projection_t1_packet_authoring_next",
+  "currentMode": "continuous_projection_t1_worker_execution_next",
   "activeHandoff": "AGENT_HANDOFF_V48_2026-07-18.md",
-  "nextAllowedMove": "Author a fresh GC-018 baseline and source-verified work order for CVF-CONTINUOUS-PROJECTION-T1 read-only receipt implementation from T0 material closure commit d1cb8cba9. The packet must resolve bounded timeout semantics, classify the six target-only allowed root files, and keep four tracked deny-patterned public review files separate from ignored clone residue. T1 implementation, T2-T4, automatic semantic edits, real-root apply, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute CVF-CONTINUOUS-PROJECTION-T1 from the final dispatch/session-sync HEAD under WORKER_MUST_NOT_COMMIT using docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T1_READ_ONLY_DRIFT_RECEIPT_2026-07-20.md. Create exactly the new read-only receipt wrapper, its focused disposable-fixture proof suite, and the worker return; run pre-implementation from the captured executionBaseHead before edits; return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2-T4, apply/copy, real-root or public-sync mutation, commit by worker, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

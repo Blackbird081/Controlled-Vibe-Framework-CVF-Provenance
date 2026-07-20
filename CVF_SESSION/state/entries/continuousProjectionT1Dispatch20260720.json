@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2007,
+  "stateKey": "continuousProjectionT1Dispatch20260720",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-CONTINUOUS-PROJECTION-T1",
+    "materialDispatchCommit": "b3bf00de8",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T1_READ_ONLY_DRIFT_RECEIPT_2026-07-20.md",
+    "baseline": "docs/baselines/CVF_GC018_CONTINUOUS_PROJECTION_T1_READ_ONLY_DRIFT_RECEIPT_2026-07-20.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewerRepairs": "Bound the exact 16-row source-local contract, child-process mapper input seam, tracked-versus-ignored receipt fields, fail-closed timeout behavior, lifecycle anchors, and role routing.",
+    "nextAllowedMove": "Designated worker creates exactly three T1 outputs and returns pending independent review.",
+    "parked": "T2-T4, apply/copy, real-root or public-sync mutation, worker commit, push, deployment, provider/live calls, production action, and unattended mutation.",
+    "claimBoundary": "Read-only receipt implementation in three create-only paths; no real-root run or mutation authority."
+  }
+}

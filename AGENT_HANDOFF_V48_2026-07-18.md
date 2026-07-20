@@ -42,20 +42,19 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t1_packet_authoring_next`;
+current mode=`continuous_projection_t1_worker_execution_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=author the fresh T1 GC-018 and source-verified work order from
-T0 material closure commit `d1cb8cba9`;
-parked checkpoint=T1 implementation, T2-T4, automatic semantic edits,
-real-root apply, push, deployment, public-sync mutation, provider/live calls,
-production action, and unattended mutation.
+next allowed move=execute the reviewer-accepted T1 work order from the final
+session-sync HEAD under WORKER_MUST_NOT_COMMIT with exactly three outputs;
+parked checkpoint=T2-T4, apply/copy, real-root or public-sync mutation, worker
+commit, push/deployment, provider/live, production, and unattended action.
 
 ## Current Mode
 
-`continuous_projection_t1_packet_authoring_next`
+`continuous_projection_t1_worker_execution_next`
 
 Previous mode:
-`continuous_projection_t0_worker_execution_next`
+`continuous_projection_t1_packet_authoring_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -233,13 +232,11 @@ provider, or perform unattended apply.
 
 ## Next Allowed Move
 
-Author a fresh GC-018 baseline and source-verified work order for
-CVF-CONTINUOUS-PROJECTION-T1 read-only receipt implementation from T0 material
-closure commit `d1cb8cba9`. Resolve bounded timeout semantics, classify six
-target-only public root files, and keep four tracked forbidden review files
-separate from ignored clone residue. T1 implementation, T2-T4, automatic
-semantic edits, real-root apply, push, deployment, public-sync mutation,
-provider/live calls, production action, and unattended mutation remain parked.
+Execute the reviewer-accepted CVF-CONTINUOUS-PROJECTION-T1 work order from the
+final session-sync HEAD under `WORKER_MUST_NOT_COMMIT`. Create exactly the
+receipt wrapper, disposable-fixture proof suite, and worker return. T2-T4,
+apply/copy, real-root or public-sync mutation, worker commit, push/deployment,
+provider/live, production, and unattended action remain parked.
 
 ## Core Guard Self-Protection Authorization - V48 Rotation And Queue Sync
 
@@ -840,6 +837,42 @@ revert material closure commit `d1cb8cba9` through session sync.
 ## GC-020 Marker - Continuous Projection T0 Closure Session Sync
 
 This handoff records material parent commit `d1cb8cba9`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## Claim Boundary
+
+## Continuous Projection T1 Dispatch
+
+- Material dispatch commit: `b3bf00de8`.
+- Disposition: `DISPATCH_READY` after independent reviewer repair.
+- Exactly three create-only worker paths: receipt wrapper, disposable-fixture
+  proof suite, and worker return.
+- Worker commit mode: `WORKER_MUST_NOT_COMMIT`.
+- T2-T4 and every mutation, public, provider, and production lane remain parked.
+
+## Core Guard Self-Protection Authorization - Continuous Projection T1 Dispatch Sync
+
+Authorized guard-maintenance scope: record T1 material dispatch commit
+`b3bf00de8`, advance continuity to worker execution, regenerate active session
+read models, and retain all later and mutation lanes as parked.
+
+Protected paths: `AGENT_HANDOFF_V48_2026-07-18.md`;
+`CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/continuousProjectionT1Dispatch20260720.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: the 2026-07-20 operator instruction assigns the
+designated worker step after independent packet review.
+
+Rollback boundary: revert this protected continuity batch together. Do not
+revert material dispatch commit `b3bf00de8` through session sync.
+
+## GC-020 Marker - Continuous Projection T1 Dispatch Session Sync
+
+This handoff records material parent commit `b3bf00de8`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.
 

@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_t1_packet_authoring_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=author the fresh T1 GC-018 and source-verified work order from T0 closure commit `d1cb8cba9`; parked checkpoint=T1 implementation, T2-T4, automatic semantic edits, real-root apply, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation.
+Startup acknowledged: current mode=`continuous_projection_t1_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute the reviewer-accepted T1 packet from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT with exactly three outputs; parked checkpoint=T2-T4, apply/copy, real-root or public-sync mutation, worker commit, push/deployment, provider/live, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_t1_packet_authoring_next`
+Current mode marker: `continuous_projection_t1_worker_execution_next`
 
-Current mode: `continuous_projection_t1_packet_authoring_next`
+Current mode: `continuous_projection_t1_worker_execution_next`
 
-`continuous_projection_t1_packet_authoring_next`
+`continuous_projection_t1_worker_execution_next`
 
 Previous mode:
 
-`continuous_projection_t0_worker_execution_next`
+`continuous_projection_t1_packet_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Continuous projection T1 read-only receipt dispatch | `b3bf00de8` | DISPATCH_READY after reviewer repairs to the 16-row input seam, mapper child-process boundary, tracked/ignored fields, fail-closed timeout semantics, lifecycle anchors, and role routing; exactly three no-commit worker outputs. |
 | Continuous projection T0 three-root contract closure | `d1cb8cba9` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS. Four tracked forbidden review files are separated from ignored local residue; three mapped-file pairs are hash-current; six target-only public root files are source-authority blocked; T1 packet authoring is next while implementation and mutation lanes remain parked. |
 | Continuous projection T0 three-root contract dispatch | `ebc0242fd` | DISPATCH_READY. Exactly two no-commit review outputs; read-only provenance/public-sync/cvf-web inspection; T1-T4 and all mutation lanes remain parked. |
 | CVF Web task-first UX roadmap closure | `d757fe5ac` | CLOSED_PASS_BOUNDED. T4 accepted with R5 overlay-free, hash-bound, independently reopened terminal screenshots; ADIF-0042 records the metadata-versus-pixel evidence defect. Continuous-projection T0 packet authoring is released, while implementation and mutation lanes remain parked. |
@@ -326,15 +327,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_t1_packet_authoring_next`
+Mode: `continuous_projection_t1_worker_execution_next`
 
-Author a fresh GC-018 baseline and source-verified work order for
-CVF-CONTINUOUS-PROJECTION-T1 read-only receipt implementation from T0 material
-closure commit `d1cb8cba9`. Resolve bounded timeout semantics, classify six
-target-only public root files, and keep four tracked forbidden review files
-separate from ignored clone residue. T1 implementation, T2-T4, automatic
-semantic edits, real-root apply, push, deployment, public-sync mutation,
-provider/live calls, production action, and unattended mutation remain parked.
+Execute CVF-CONTINUOUS-PROJECTION-T1 from the final dispatch/session-sync HEAD
+under `WORKER_MUST_NOT_COMMIT` using the reviewer-accepted T1 work order.
+Create exactly the receipt wrapper, focused disposable-fixture proof suite, and
+worker return. T2-T4, apply/copy, real-root or public-sync mutation, worker
+commit, push, deployment, provider/live calls, production action, and
+unattended mutation remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

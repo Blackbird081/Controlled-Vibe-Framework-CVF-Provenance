@@ -88,8 +88,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "continuous_projection_t1_packet_authoring_next",
-  "previousMode": "continuous_projection_t0_worker_execution_next",
+  "currentMode": "continuous_projection_t1_worker_execution_next",
+  "previousMode": "continuous_projection_t1_packet_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13671,7 +13671,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Author a fresh GC-018 baseline and source-verified work order for CVF-CONTINUOUS-PROJECTION-T1 read-only receipt implementation from T0 material closure commit d1cb8cba9. The packet must resolve bounded timeout semantics, classify the six target-only allowed root files, and keep four tracked deny-patterned public review files separate from ignored clone residue. T1 implementation, T2-T4, automatic semantic edits, real-root apply, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute CVF-CONTINUOUS-PROJECTION-T1 from the final dispatch/session-sync HEAD under WORKER_MUST_NOT_COMMIT using docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T1_READ_ONLY_DRIFT_RECEIPT_2026-07-20.md. Create exactly the new read-only receipt wrapper, its focused disposable-fixture proof suite, and the worker return; run pre-implementation from the captured executionBaseHead before edits; return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2-T4, apply/copy, real-root or public-sync mutation, commit by worker, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13717,5 +13717,17 @@
     "parked": "T1 implementation, T2-T4, automatic semantic edits, real-root apply, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "claimBoundary": "Private T0 documentation closure only; no tree-scale freshness receipt, public mutation, provider/live proof, or production claim."
+  },
+  "continuousProjectionT1Dispatch20260720": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-CONTINUOUS-PROJECTION-T1",
+    "materialDispatchCommit": "b3bf00de8",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T1_READ_ONLY_DRIFT_RECEIPT_2026-07-20.md",
+    "baseline": "docs/baselines/CVF_GC018_CONTINUOUS_PROJECTION_T1_READ_ONLY_DRIFT_RECEIPT_2026-07-20.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewerRepairs": "Bound the exact 16-row source-local contract, child-process mapper input seam, tracked-versus-ignored receipt fields, fail-closed timeout behavior, lifecycle anchors, and role routing.",
+    "nextAllowedMove": "Designated worker creates exactly three T1 outputs and returns pending independent review.",
+    "parked": "T2-T4, apply/copy, real-root or public-sync mutation, worker commit, push, deployment, provider/live calls, production action, and unattended mutation.",
+    "claimBoundary": "Read-only receipt implementation in three create-only paths; no real-root run or mutation authority."
   }
 }
