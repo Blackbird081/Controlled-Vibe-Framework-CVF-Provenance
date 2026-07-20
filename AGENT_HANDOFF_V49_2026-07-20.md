@@ -16,27 +16,28 @@ would cross the governed handoff maintainability threshold.
 
 ## Scope / Target / Owner Boundary
 
-This handoff owns protected continuity routing after T2 closure. Material
-scripts and review artifacts remain owned by their implementation and closure
-commits; public-sync and cvf-web remain read-only and outside this session-sync
-batch.
+This handoff owns protected continuity routing for the manual T3 dispatch.
+Material scripts and review artifacts remain owned by their implementation and
+closure commits; public-sync and cvf-web remain read-only and outside this
+session-sync batch.
 
 ## Active Boundary
 
-T2 is closed with reviewer repairs. Only authoring of the provider-neutral
-operator-approved provider/model assignment and invocation-receipt roadmap may
-proceed. Its implementation, Continuous Projection T3-T4, real-root scanning,
-mutation, public, provider-call, and production lanes are parked.
+T2 is closed with reviewer repairs. T3 is released through manual copy/paste
+under material commit `d68a132e7`; exactly three no-commit worker outputs are
+allowed. T4, real-root scanning, automated agent invocation, mutation, public,
+provider-call, browser/live, and production lanes remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`global_roadmap_execution_parked_cli_mcp_invocation_control_audit`;
+current mode=`continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=local read-only source audit of external-agent CLI/MCP invocation control only;
-parked checkpoint=every roadmap execution lane, work-order authoring/dispatch,
-all agent/provider/MCP-live/API-key/subscription calls, retry, fallback, live
-proof, public-sync, push/deployment, production, and unattended action.
+next allowed move=manual copy/paste handoff of the committed T3 packet and wait
+for exactly three no-commit worker outputs;
+parked checkpoint=T4 until T3 PASS, all other roadmap execution, automated
+agent/provider/MCP-live/API-key/subscription calls, browser/live proof,
+public-sync, push/deployment, production, and unattended action.
 
 ## Current State
 
@@ -58,23 +59,22 @@ proof, public-sync, push/deployment, production, and unattended action.
 
 ## Latest Work / Changes
 
-Material commit `f08eb304e` closes T2 after the 91/91 focused proof and three
-fail-closed repairs. This protected batch advances session routing to the
-provider-neutral roadmap-authoring checkpoint only.
+Material commit `d68a132e7` dispatches the frozen T3 evidence gate after 75/75
+pre-dispatch and 83/83 pre-commit checks. This protected batch advances session
+routing only to the manual no-commit worker-return checkpoint.
 
 ## Current Mode
 
-`global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
+`continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
 
 ## Next Allowed Move
 
-Continue only the local read-only external-agent CLI/MCP invocation-control
-system-chain reassessment at material commit `8b34ec5cb`. Every roadmap
-execution lane is parked, including the revoked Claude T0 R1 rerun. Do not
-author or dispatch a work order, invoke an agent CLI or MCP live tool, call a
-provider, use an API key or account subscription, retry, fallback, run live
-proof, public-sync, push, deploy, act in production, or start unattended
-mutation.
+Manually copy/paste the T3 work order committed at `d68a132e7`, then wait for
+exactly the two new scripts and worker-return packet named by that order. T4
+remains held until independent T3 closure. Do not invoke an agent CLI or MCP
+live tool, call a provider, use an API key or account subscription, run browser
+or live proof, public-sync, push, deploy, act in production, or start
+unattended mutation.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -619,3 +619,47 @@ change the private-push authorization or lift any parked execution lane.
 This handoff records accepted parent commit `a68cc254a`. The handoff-only sync
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this protected sync commit.
+
+## Continuous Projection T3 Manual Dispatch Exception
+
+- Material dispatch commit: `d68a132e7`.
+- Operator authority: direct instruction on 2026-07-20 to finish Continuous
+  Projection T3 and T4 before returning to the CLI/MCP control roadmap.
+- Current release: T3 manual copy/paste no-commit worker handoff only.
+- Worker scope: exactly two new read-only PowerShell scripts plus
+  `docs/reviews/CVF_CONTINUOUS_PROJECTION_T3_WORKER_RETURN_2026-07-20.md`.
+- T4 status: `HOLD_UNTIL_T3_PASS`.
+- The global CLI/MCP control moratorium remains active outside this manual T3
+  exception. Automated agent invocation, provider/API use, browser/live proof,
+  real-root scan, public-sync, push, deployment, and unattended mutation remain
+  parked.
+
+## Core Guard Self-Protection Authorization - T3 Dispatch Session Sync
+
+Authorized guard-maintenance scope: record material commit `d68a132e7`, set
+the T3 waiting mode and next move, add the T3 state entry, narrow the global
+moratorium with the operator-approved manual exception, and regenerate active
+state.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/globalRoadmapExecutionMoratoriumCliMcpAudit20260720.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT3Dispatch20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: direct instruction to process Continuous Projection T3
+and T4, with the current governed dependency discipline releasing T3 first.
+
+Rollback boundary: revert this protected session-sync batch together. Do not
+revert material dispatch commit `d68a132e7` through session sync.
+
+## GC-020 Marker - Continuous Projection T3 Dispatch Sync
+
+This handoff records material parent commit `d68a132e7`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.

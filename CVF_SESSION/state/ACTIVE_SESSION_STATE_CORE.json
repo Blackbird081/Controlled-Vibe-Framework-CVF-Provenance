@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "global_roadmap_execution_parked_cli_mcp_invocation_control_audit",
-  "previousMode": "operator_provider_model_t0_r1_waiting_subscription_reset",
+  "currentMode": "continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff",
+  "previousMode": "global_roadmap_execution_parked_cli_mcp_invocation_control_audit",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

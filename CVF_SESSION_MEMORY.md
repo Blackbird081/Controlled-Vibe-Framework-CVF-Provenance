@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`global_roadmap_execution_parked_cli_mcp_invocation_control_audit`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=local read-only source audit of external-agent CLI/MCP invocation control only; parked checkpoint=every roadmap execution lane, work-order authoring/dispatch, all agent/provider/MCP-live/API-key/subscription calls, retries, fallback, live proof, public-sync, push/deployment, production, and unattended action.
+Startup acknowledged: current mode=`continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=manual copy/paste handoff of the committed Continuous Projection T3 packet and wait for exactly three no-commit worker outputs; parked checkpoint=T4 until T3 PASS, all other roadmap execution, automated agent CLI/MCP, provider/API-key/subscription use, browser/live proof, public-sync, push/deployment, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
+Current mode marker: `continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
 
-Current mode: `global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
+Current mode: `continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
 
-`global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
+`continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
 
 Previous mode:
 
-`operator_provider_model_t0_r1_waiting_subscription_reset`
+`global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Continuous Projection T3 audience and presentation gate dispatch | `d68a132e7` | DISPATCH_READY through manual copy/paste only; exactly two new read-only scripts plus one no-commit worker return; T4 held; no real-root, browser, provider, CLI/MCP, public-sync, or mutation authority. |
 | CVF-OPM-AIR T0 source-map dispatch | `d3ec1e79b` | REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS; exact three no-commit documentation outputs, JSONL operational-evidence boundary, and packet-author timeout diagnostic; 75/75 pre-dispatch PASS. |
 | CVF-OPM-AIR T0 packet-authoring authorization | `252e0aed8` | Operator started T0 with Claude packet author, Codex reviewer, Claude no-commit worker, and Codex closer; implementation remains parked until committed reviewer acceptance. |
 | Operator-approved provider/model assignment and invocation-receipt roadmap | `bd9850373` | PROPOSED_OPERATOR_REVIEW_REQUIRED. Provider-neutral approval, assignment, invocation, reconciliation, secret-safe credential, fallback, and diagnostic program reuses existing Model Gateway owners; no GC-018, implementation, credential use, or provider call. |
@@ -334,14 +335,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
+Mode: `continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
 
-Continue only the local read-only external-agent CLI/MCP invocation-control
-system-chain reassessment at material commit `8b34ec5cb`. Every roadmap
-execution lane is parked, including the revoked Claude T0 R1 rerun. No work
-order, dispatch, agent CLI, MCP live tool, provider/API-key/subscription call,
-retry, fallback, live proof, public-sync, push, deployment, production action,
-or unattended mutation is authorized.
+Manually copy/paste the committed T3 work order at material commit
+`d68a132e7`, then wait for exactly three no-commit worker outputs. T4 remains
+held until independent T3 closure. All other roadmap execution, automated
+agent CLI/MCP, provider/API-key/subscription use, browser/live proof,
+public-sync, push, deployment, production action, and unattended mutation
+remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

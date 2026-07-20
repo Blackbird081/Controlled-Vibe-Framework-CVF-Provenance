@@ -2,14 +2,14 @@
   "stateOrder": 2017,
   "stateKey": "globalRoadmapExecutionMoratoriumCliMcpAudit20260720",
   "value": {
-    "status": "ACTIVE_AUDIT_ONLY_GLOBAL_ROADMAP_EXECUTION_MORATORIUM",
+    "status": "ACTIVE_WITH_OPERATOR_APPROVED_CONTINUOUS_PROJECTION_T3_MANUAL_EXCEPTION",
     "materialCommit": "8b34ec5cb",
     "audit": "docs/audits/CVF_AGENT_CLI_MCP_INVOCATION_CONTROL_SYSTEM_CHAIN_REASSESSMENT_2026-07-20.md",
     "openingVerdict": "CONTROL_NOT_EFFECTIVE_FOR_EXTERNAL_AGENT_CLI",
     "revokedAuthorization": "CVF-OPM-AIR T0 R1 Claude worker rerun after subscription reset",
-    "effectiveScope": "every roadmap execution lane; historical roadmap records remain unchanged unless they are the current directly superseded lane",
-    "allowed": "local read-only source inspection and local non-provider static checks for the invocation-control reassessment",
-    "forbidden": "work-order authoring or dispatch; agent CLI; MCP live tool; provider or API-key call; account subscription use; retry; fallback; live proof; public-sync; push; deployment; production action; unattended mutation",
+    "effectiveScope": "every roadmap execution lane except the operator-approved Continuous Projection T3 manual copy/paste no-commit worker batch at material commit d68a132e7",
+    "allowed": "local read-only source inspection and local non-provider static checks for the invocation-control reassessment; manual copy/paste T3 worker handoff limited to the three work-order paths",
+    "forbidden": "all other work-order authoring or dispatch; automated agent CLI; MCP live tool; provider or API-key call; account subscription use; retry; fallback; browser/live proof; public-sync; push; deployment; production action; unattended mutation; Continuous Projection T4 before T3 closure",
     "liftCondition": "fresh explicit operator decision after an evidence-backed provider-neutral control architecture and bounded proof plan"
   }
 }
