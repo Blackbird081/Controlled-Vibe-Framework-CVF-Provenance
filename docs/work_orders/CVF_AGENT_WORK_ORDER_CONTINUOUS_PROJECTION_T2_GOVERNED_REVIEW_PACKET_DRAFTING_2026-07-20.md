@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-CONTINUOUS-PROJECTION-T2
 
@@ -120,13 +120,18 @@ Allowed scope:
 - create a paired focused deterministic proof suite under `scripts/`
 - create the paired worker return under `docs/reviews/`
 - read the accepted drift receipt, accepted mapper, policy, existing tests, and roots read-only
+- reviewer closure conversion only: update `docs/baselines/CVF_GC018_CONTINUOUS_PROJECTION_T2_GOVERNED_REVIEW_PACKET_DRAFTING_2026-07-20.md`
+- reviewer closure conversion only: update this work order
+- reviewer closure conversion only: update `docs/roadmaps/CVF_CONTINUOUS_PROJECTION_DRIFT_DETECTION_AND_REVIEW_PACKET_AUTOMATION_ROADMAP_2026-07-19.md`
+- reviewer closure conversion only: create `docs/reviews/CVF_CONTINUOUS_PROJECTION_T2_COMPLETION_REVIEW_2026-07-20.md`
+- reviewer session continuity only: update session continuity paths in a separate commit
 
 Forbidden scope:
 
 - editing `scripts/get_cvf_projection_drift_receipt.ps1`, `scripts/test_cvf_projection_drift_receipt.ps1`, `scripts/get_cvf_projection_map.ps1`, `scripts/cvf_projection_policy.json`, `scripts/test_get_cvf_projection_map.ps1`, `scripts/test_cvf_projection_three_root_proof.ps1`, or `scripts/cvf-public-sync.ps1`
 - adding any apply, copy, or auto-approve mode to any script
 - running the real-root three-root scan (that is T4-owned) or committing any drafted packet
-- mutating the sibling public-sync clone, cvf-web, either repository root beyond the allowed new paths, the roadmap, registries, or session files
+- worker mutation of the sibling public-sync clone, cvf-web, either repository root beyond the three worker paths, the roadmap, registries, or session files; reviewer-owned closure and session-sync paths above are the only exceptions
 - commit, push, deployment, public-sync mutation, provider/live calls, or production action
 
 Risk ceiling:
@@ -356,14 +361,25 @@ python governance/compat/check_machine_closure_package.py --base 0ea461553 --hea
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T2_GOVERNED_REVIEW_PACKET_DRAFTING_2026-07-20.md` | closed-equivalent status set by the reviewer/closer; no stale residue | N/A with reason: reviewer/closer owns closure conversion |
-| Completion or reviewer artifact | `docs/reviews/CVF_CONTINUOUS_PROJECTION_T2_COMPLETION_REVIEW_2026-07-20.md` | reviewer decision, changed-file evidence, claim boundary, gate evidence | N/A with reason: authored by independent reviewer/closer at closure |
-| Roadmap state | `docs/roadmaps/CVF_CONTINUOUS_PROJECTION_DRIFT_DETECTION_AND_REVIEW_PACKET_AUTOMATION_ROADMAP_2026-07-19.md` | T2 tranche final status set by the reviewer/closer | N/A with reason: reviewer-owned closure edit |
-| Registry JSON | N/A with reason: no corpus registry state changes | no registry mutation | N/A with reason |
-| Registry Markdown | N/A with reason: no corpus registry state changes | no registry mutation | N/A with reason |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T2_GOVERNED_REVIEW_PACKET_DRAFTING_2026-07-20.md` | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CONTINUOUS_PROJECTION_T2_COMPLETION_REVIEW_2026-07-20.md` | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_CONTINUOUS_PROJECTION_DRIFT_DETECTION_AND_REVIEW_PACKET_AUTOMATION_ROADMAP_2026-07-19.md` | `Status: T2_CLOSED_PASS_WITH_REVIEWER_REPAIRS_PROVIDER_MODEL_ROADMAP_NEXT` | PASS |
+| Implementation evidence | three worker outputs | private commit `f350b925a`; 91/91 disposable-fixture proof | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check remains clean; no entry change required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing human registry remains unchanged; T2 adds no corpus record | PASS |
 | External evidence digest | N/A with reason: repository-local roots and reused receipts only | no imported evidence bundle | N/A with reason |
 | System loop interlock | N/A with reason: no interlock owner changed | no interlock mutation | N/A with reason |
 | Session continuity | protected continuity surfaces | separate post-material session sync | N/A with reason: reviewer/closer owns session sync |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| T2-DRAFT-STATUS | disposable-fixture review draft | `draftStatus` | `REVIEW_REQUIRED_UNCOMMITTED` | `REVIEW_REQUIRED_UNCOMMITTED` | PASS |
+| T2-NO-DECISION | disposable-fixture review draft | `authorizesDecision` | `false` boolean | `false` boolean | PASS |
+| T2-ENUM-CASE | malformed fixture diagnostic | `errors[0].code` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | PASS |
+| T2-BOOLEAN-TYPE | malformed fixture diagnostic | `errors[0].code` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | PASS |
+| T2-CARDINALITY | duplicate-surface fixture diagnostic | `errors[0].code` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | PASS |
 
 ## 6G. Work-Order Fulfillment Manifest
 
@@ -541,20 +557,20 @@ Base-anchor evidence:
 
 ## 10. Acceptance Criteria
 
-- [ ] A new read-only review-packet drafter script exists under `scripts/` and adds no apply/copy mode.
-- [ ] A paired focused proof suite exists and passes deterministically on disposable fixtures and reused receipts.
-- [ ] The draft lists source facts, affected projections, recommended reviewer actions, public/provenance boundary, and evidence.
-- [ ] The draft carries an explicit review-required `draftStatus` and states it authorizes no reviewer decision.
-- [ ] The drafter never re-runs the real-root scan and never writes into any real root.
-- [ ] The draft is deterministic across repeated runs over the same receipt.
-- [ ] No forbidden path changed; nothing staged or committed by the worker.
+- [x] A new read-only review-packet drafter script exists under `scripts/` and adds no apply/copy mode.
+- [x] A paired focused proof suite exists and passes deterministically on disposable fixtures and reused receipts.
+- [x] The draft lists source facts, affected projections, recommended reviewer actions, public/provenance boundary, and evidence.
+- [x] The draft carries an explicit review-required `draftStatus` and states it authorizes no reviewer decision.
+- [x] The drafter never re-runs the real-root scan and never writes into any real root.
+- [x] The draft is deterministic across repeated runs over the same receipt.
+- [x] No forbidden path changed; nothing was staged or committed by the worker; the reviewer later committed the accepted outputs at `f350b925a`.
 
 Fail conditions:
 
-- [ ] Any apply, copy, or auto-approve mode is added to any script.
-- [ ] Any forbidden path is modified, the real-root scan is run, or any draft is committed.
-- [ ] The draft omits any of the five required content groups or the review-required status.
-- [ ] Any commit, push, public-sync, provider/live, or production claim appears.
+- [x] N/A with reason: no apply, copy, or auto-approve mode was added.
+- [x] N/A with reason: no forbidden path changed, no real-root scan ran, and no generated review draft was committed.
+- [x] N/A with reason: all five required content groups and the review-required status are present.
+- [x] N/A with reason: no push, public-sync, live-provider governance proof, or production claim occurred; the reviewer-owned material commit is recorded separately.
 
 Closure is blocked if any fail condition is present.
 
@@ -638,21 +654,21 @@ git status --short
 
 ## 12. Closure Checklist
 
-- [ ] All acceptance criteria satisfied or explicitly marked N/A with reason
-- [ ] Required focused tests run with pass counts recorded
-- [ ] Autorun `pre-closure` gate passed once the reviewer commit lands
-- [ ] Commit mode recorded as `WORKER_MUST_NOT_COMMIT`
-- [ ] `dispatchBaseHead` and `executionBaseHead` recorded without treating a stale anchor as current worker proof
-- [ ] For `WORKER_MUST_NOT_COMMIT`, pending handoff used a non-closed status and recorded actual `git status --short`
-- [ ] Worker-return fast gate result recorded with focused pytest/proof targets
-- [ ] Agent Operation Trace Block present and complete
-- [ ] Closure gate used a non-empty committed diff range, not a single-commit self-range
-- [ ] Changed-file set is inside Allowed scope
-- [ ] Roadmap-to-work-order trace matrix final statuses are PASS or N/A with reason
-- [ ] No open checkbox residue remains after closure
-- [ ] Public catalog updated or explicitly N/A with reason
-- [ ] GC-020 handoff updated with current HEAD after commit
-- [ ] Active session front door and state registry updated if state changed
+- [x] All acceptance criteria are satisfied.
+- [x] Required focused tests passed 91/91.
+- [x] Autorun `pre-closure` passed on committed implementation range `7bf7a6c94..f350b925a`.
+- [x] Commit mode is recorded as `WORKER_MUST_NOT_COMMIT`.
+- [x] `dispatchBaseHead` and `executionBaseHead` are recorded without treating a stale anchor as current worker proof.
+- [x] The pending worker handoff used a non-closed status and recorded actual `git status --short`.
+- [x] Worker-return fast gate passed with focused proof targets.
+- [x] Agent Operation Trace Block is present and complete.
+- [x] Closure gate used the non-empty committed implementation range `7bf7a6c94..f350b925a`.
+- [x] The worker changed-file set stayed inside Allowed scope.
+- [x] Roadmap-to-work-order trace matrix final statuses are PASS or N/A with reason.
+- [x] No open checkbox residue remains after closure.
+- [x] N/A with reason: no public catalog export is authorized for this private tranche.
+- [x] N/A with reason: the active handoff is updated in a separate final session-sync commit after material closure.
+- [x] N/A with reason: the active session front door and registry are updated in that separate final session-sync commit.
 
 ## 13. Return-To-Orchestrator Conditions
 
@@ -707,12 +723,10 @@ mutated.
 
 ## Claim Boundary
 
-This reviewer-repaired work order authorizes a bounded read-only review-packet
-drafting implementation under `WORKER_MUST_NOT_COMMIT`, to be executed by
-Claude after dispatch/session-sync commit and reviewed by the
-independent reviewer. It does not authorize apply/copy modes, the real-root
-scan, a committed draft, real-root mutation, semantic decisions, commit,
-push, deployment, public-sync mutation, provider/live calls, production
-action, or unattended mutation. Implementation itself remains parked until
-the independent reviewer accepts this packet and the operator records a fresh
-implementation authorization.
+This work order closes the bounded read-only review-packet drafting
+implementation after independent review, reviewer repairs, 91/91 focused
+proof, and private implementation commit `f350b925a`. It does not authorize
+apply/copy modes, the real-root scan, a committed generated draft, real-root
+mutation, semantic decisions, push, deployment, public-sync mutation,
+provider/live governance proof, production action, or unattended mutation.
+Continuous Projection T3-T4 remain parked.

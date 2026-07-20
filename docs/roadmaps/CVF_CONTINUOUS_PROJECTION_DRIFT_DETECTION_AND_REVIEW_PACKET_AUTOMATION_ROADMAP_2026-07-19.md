@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T1_CLOSED_PASS_WITH_REVIEWER_REPAIRS_T2_PACKET_AUTHORING_NEXT
+Status: T2_CLOSED_PASS_WITH_REVIEWER_REPAIRS_PROVIDER_MODEL_ROADMAP_NEXT
 
 Date: 2026-07-19
 
@@ -30,9 +30,11 @@ unfit for a public reader or an external agent.
 
 ## Authorization / Decision
 
-Roadmap restoration and parked planning are authorized by the operator's
-instruction to preserve the projection-automation lesson while prioritizing
-CVF Web remediation. T2-T4 implementation remains unreleased.
+Roadmap restoration and bounded T0-T2 execution were authorized by the
+operator. T2 is now closed with reviewer repairs. Continuous Projection T3-T4
+remain unreleased; the operator-selected next planning lane is a separate,
+provider-neutral roadmap for operator-approved provider/model assignment and
+invocation receipts.
 
 ## Scope / Target / Owner Boundary
 
@@ -120,6 +122,13 @@ Generate a draft packet that lists source facts, affected projections,
 recommended reviewer actions, public/provenance boundary, and evidence. The
 packet must remain review-required and uncommitted.
 
+Disposition: `CLOSED_PASS_WITH_REVIEWER_REPAIRS`. The accepted implementation
+at `f350b925a` emits a deterministic stdout-only draft, validates frozen enums
+ordinally and booleans by JSON type, detects duplicate affected-surface
+identity independently, and passes 91/91 disposable-fixture assertions. The
+reviewer consolidated and repaired three fail-closed gaps before closure. No
+generated review draft, real-root scan, or public mutation occurred.
+
 ### T3 - Audience And Presentation Gate
 
 Require public README and Web projections to pass progressive-disclosure,
@@ -158,9 +167,12 @@ navigation, audience separation, language clarity, and responsive behavior.
 The release condition is satisfied. T0 is closed bounded through its fresh
 GC-018, source-verified no-commit work order, corrected ledger, worker return,
 and independent completion review. T1 is closed with reviewer repairs through
-its paired dispatch packet, implementation commit `a394d635c`, 53/53
-disposable-fixture proof, and independent completion review. T2 packet
-authoring is next; T2 implementation and T3-T4 remain dependency-held.
+implementation commit `a394d635c` and 53/53 disposable-fixture proof. T2 is
+closed with reviewer repairs through implementation commit `f350b925a`, 91/91
+disposable-fixture proof, and independent completion review. The next allowed
+move is to author only the separate provider-neutral operator-approved
+provider/model assignment and invocation-receipt roadmap. Continuous
+Projection T3-T4 remain parked.
 
 ## Learning Carried Forward
 
@@ -198,9 +210,10 @@ authoring is next; T2 implementation and T3-T4 remain dependency-held.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | T1 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
-| Completion or reviewer artifact | T1 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
-| Roadmap state | this roadmap | `Status: T1_CLOSED_PASS_WITH_REVIEWER_REPAIRS_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Work order status | T2 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | T2 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Roadmap state | this roadmap | `Status: T2_CLOSED_PASS_WITH_REVIEWER_REPAIRS_PROVIDER_MODEL_ROADMAP_NEXT` | PASS |
+| Implementation evidence | T2 scripts plus worker return | private commit `f350b925a`; 91/91 disposable-fixture proof | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check remains clean; no entry change required | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing human registry remains unchanged; T1 adds no corpus record | PASS |
 | External evidence digest | N/A with reason: repository-local roots only | no imported bundle | N/A with reason |
@@ -212,26 +225,33 @@ authoring is next; T2 implementation and T3-T4 remain dependency-held.
 | Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
 |---|---|---|---|---|---|
 | T0-REAL-ROOT-RECEIPT | T0 ledger evidence-gap section | N/A with reason: no receipt JSON was emitted | no real-root freshness receipt accepted in T0 | no receipt produced | PASS |
+| T2-DRAFT-STATUS | disposable-fixture review draft | `draftStatus` | `REVIEW_REQUIRED_UNCOMMITTED` | `REVIEW_REQUIRED_UNCOMMITTED` | PASS |
+| T2-NO-DECISION | disposable-fixture review draft | `authorizesDecision` | `false` boolean | `false` boolean | PASS |
+| T2-ENUM-CASE | malformed fixture diagnostic | `errors[0].code` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | PASS |
+| T2-BOOLEAN-TYPE | malformed fixture diagnostic | `errors[0].code` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | PASS |
+| T2-CARDINALITY | duplicate-surface fixture diagnostic | `errors[0].code` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | PASS |
 
 ## Current Runtime Freshness Verification
 
-T1 closure re-read the current mapper and policy sources, reviewed the new
-wrapper, and ran 53/53 disposable-fixture assertions. The T4-owned real-root
-recursive invocation was not run, so this roadmap does not claim tree-scale
-freshness or runtime completion. T2 packet authoring only is released.
-Disposition: PASS_BOUNDED.
+T2 closure re-read the receipt-to-draft implementation and focused proof,
+then independently reran 91/91 disposable-fixture assertions. The T4-owned
+real-root recursive invocation was not run, so this roadmap does not claim
+tree-scale freshness or runtime completion. Continuous Projection T3-T4 remain
+parked. Disposition: PASS_BOUNDED.
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: T1 closure is private provenance evidence. A later reviewed public
+Reason: T2 closure is private provenance evidence. A later reviewed public
 projection may export only public-safe artifacts through the sibling
 public-sync repository.
 
 ## Claim Boundary
 
-This roadmap closes T1 with reviewer repairs and releases T2 packet authoring
-only. It does not authorize T2 implementation, the T4 real-root scan,
-real-root apply, semantic edits, push, deployment, provider/live use,
-public-sync mutation, or unattended mutation.
+This roadmap closes T2 with reviewer repairs. It releases only authoring of a
+separate provider-neutral roadmap for operator-approved provider/model
+assignment and invocation receipts. It does not authorize that roadmap's
+implementation, Continuous Projection T3-T4, the T4 real-root scan, real-root
+apply, semantic edits, push, deployment, provider/live use, public-sync
+mutation, or unattended mutation.

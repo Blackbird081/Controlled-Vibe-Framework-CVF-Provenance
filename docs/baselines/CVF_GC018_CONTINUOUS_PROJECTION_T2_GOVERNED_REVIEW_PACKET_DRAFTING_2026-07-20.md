@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-CONTINUOUS-PROJECTION-T2
 
@@ -212,6 +212,38 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "conti
 | literalTokensReviewed | Status; Dependency Release Evidence; Source Verification Block; ADIF Defect Registry Disclosure; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | validate T2 baseline dispatch shape and source evidence before authoring the paired work order |
 | claimBoundary | checker compliance confirms packet structure only |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired T2 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CONTINUOUS_PROJECTION_T2_COMPLETION_REVIEW_2026-07-20.md` | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Roadmap state | continuous-projection roadmap | `Status: T2_CLOSED_PASS_WITH_REVIEWER_REPAIRS_PROVIDER_MODEL_ROADMAP_NEXT` | PASS |
+| Implementation evidence | two scripts plus worker return | private commit `f350b925a`; 91/91 disposable-fixture proof | PASS |
+| Registry JSON | N/A with reason: no corpus registry state changes | no registry mutation | N/A with reason |
+| Registry Markdown | N/A with reason: no corpus registry state changes | no registry mutation | N/A with reason |
+| External evidence digest | N/A with reason: repository-local source and fixtures only | no imported evidence bundle | N/A with reason |
+| System loop interlock | N/A with reason: no interlock owner changed | no interlock mutation | N/A with reason |
+| Session continuity | protected continuity surfaces | separate post-material session sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| T2-DRAFT-STATUS | disposable-fixture review draft | `draftStatus` | `REVIEW_REQUIRED_UNCOMMITTED` | `REVIEW_REQUIRED_UNCOMMITTED` | PASS |
+| T2-NO-DECISION | disposable-fixture review draft | `authorizesDecision` | `false` boolean | `false` boolean | PASS |
+| T2-ENUM-CASE | malformed fixture diagnostic | `errors[0].code` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | PASS |
+| T2-BOOLEAN-TYPE | malformed fixture diagnostic | `errors[0].code` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | PASS |
+| T2-CARDINALITY | duplicate-surface fixture diagnostic | `errors[0].code` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | `UNSUPPORTED_OR_INVALID_DRIFT_RECEIPT` | PASS |
+
+## Current Runtime Freshness Verification
+
+The reviewer re-read the committed T2 drafter and focused proof at
+`f350b925a` and independently reran 91/91 disposable-fixture assertions. The
+T4-owned real-root recursive receipt was not run, so this baseline does not
+claim tree-scale freshness, runtime interception, or production behavior.
+Disposition: PASS_BOUNDED.
 
 ## Public Export Disposition
 
