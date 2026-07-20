@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2006,
+  "stateKey": "continuousProjectionT0Closure20260720",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",
+    "batchId": "CVF-CONTINUOUS-PROJECTION-T0",
+    "materialCommit": "d1cb8cba9",
+    "completionReview": "docs/reviews/CVF_CONTINUOUS_PROJECTION_T0_COMPLETION_REVIEW_2026-07-20.md",
+    "ledger": "docs/reviews/CVF_CONTINUOUS_PROJECTION_T0_THREE_ROOT_DRIFT_CONTRACT_LEDGER_2026-07-20.md",
+    "decision": "AUTHOR_T1_GC018_AND_SOURCE_VERIFIED_WORK_ORDER",
+    "nextAllowedMove": "Author the T1 read-only receipt implementation packet; implementation remains parked.",
+    "reviewerCorrections": "Separated four tracked deny-patterned review files from ignored local residue, reduced terminal rows to the frozen disposition enum, verified three mapped-file pairs by SHA-256, and classified six target-only public root files as source-authority blocked.",
+    "parked": "T1 implementation, T2-T4, automatic semantic edits, real-root apply, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Private T0 documentation closure only; no tree-scale freshness receipt, public mutation, provider/live proof, or production claim."
+  }
+}

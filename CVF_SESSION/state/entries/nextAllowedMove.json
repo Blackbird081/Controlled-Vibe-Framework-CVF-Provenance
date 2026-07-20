@@ -1,5 +1,5 @@
 {
   "stateOrder": 2002,
   "stateKey": "nextAllowedMove",
-  "value": "Execute CVF-CONTINUOUS-PROJECTION-T0 from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT using docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T0_THREE_ROOT_DRIFT_CONTRACT_FOR_CLAUDE_2026-07-20.md. Create exactly the terminal three-root drift-contract ledger and worker return, inspect provenance/public-sync/cvf-web read-only, run pre-implementation before edits, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T1-T4 implementation, automatic semantic edits, real-root apply, commit, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Author a fresh GC-018 baseline and source-verified work order for CVF-CONTINUOUS-PROJECTION-T1 read-only receipt implementation from T0 material closure commit d1cb8cba9. The packet must resolve bounded timeout semantics, classify the six target-only allowed root files, and keep four tracked deny-patterned public review files separate from ignored clone residue. T1 implementation, T2-T4, automatic semantic edits, real-root apply, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

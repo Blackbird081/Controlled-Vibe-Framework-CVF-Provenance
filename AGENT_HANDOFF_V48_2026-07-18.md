@@ -42,20 +42,20 @@ until separately authorized.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t0_worker_execution_next`;
+current mode=`continuous_projection_t1_packet_authoring_next`;
 active handoff=`AGENT_HANDOFF_V48_2026-07-18.md`;
-next allowed move=execute CVF-CONTINUOUS-PROJECTION-T0 from the final
-session-sync HEAD under WORKER_MUST_NOT_COMMIT with exactly two review outputs;
-parked checkpoint=T1-T4 implementation, automatic semantic edits, real-root
-apply, commit, push, deployment, public-sync mutation, provider/live calls,
+next allowed move=author the fresh T1 GC-018 and source-verified work order from
+T0 material closure commit `d1cb8cba9`;
+parked checkpoint=T1 implementation, T2-T4, automatic semantic edits,
+real-root apply, push, deployment, public-sync mutation, provider/live calls,
 production action, and unattended mutation.
 
 ## Current Mode
 
-`continuous_projection_t0_worker_execution_next`
+`continuous_projection_t1_packet_authoring_next`
 
 Previous mode:
-`continuous_projection_t0_packet_authoring_next`
+`continuous_projection_t0_worker_execution_next`
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -233,12 +233,13 @@ provider, or perform unattended apply.
 
 ## Next Allowed Move
 
-Execute `CVF-WEB-UX-T4-R5` from the final session-sync HEAD under
-`WORKER_MUST_NOT_COMMIT`; use one persistent visible browser context, dismiss
-onboarding, and retain exactly three overlay-free target-state PNGs plus four
-JSON records with post-write hashes and visual reopen proof. Source repair,
-hosted mutation, deployment, public-sync, provider/live calls, production
-action, and continuous-projection execution remain parked.
+Author a fresh GC-018 baseline and source-verified work order for
+CVF-CONTINUOUS-PROJECTION-T1 read-only receipt implementation from T0 material
+closure commit `d1cb8cba9`. Resolve bounded timeout semantics, classify six
+target-only public root files, and keep four tracked forbidden review files
+separate from ignored clone residue. T1 implementation, T2-T4, automatic
+semantic edits, real-root apply, push, deployment, public-sync mutation,
+provider/live calls, production action, and unattended mutation remain parked.
 
 ## Core Guard Self-Protection Authorization - V48 Rotation And Queue Sync
 
@@ -796,6 +797,51 @@ Protected paths:
 This handoff records material parent commit `ebc0242fd`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept the parent SHA for this protected sync commit.
+
+## Claim Boundary
+
+## Continuous Projection T0 Reviewer Closure
+
+- Material closure commit: `d1cb8cba9`.
+- Disposition: `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS`.
+- Reviewer corrected the worker's tracked-versus-ignored conflation: public-sync
+  contains four tracked deny-patterned review files; the other reported
+  baseline, roadmap, review, and dated-handoff files are ignored local residue.
+- All three mapped-file pairs are SHA-256 current.
+- Six target-only allowed public root files remain
+  `SOURCE_AUTHORITY_BLOCKED` until a later packet identifies their owner or
+  classifies them as curated public-only files.
+- No tree-scale real-root receipt was accepted. T1 packet authoring is released;
+  T1 implementation and every mutation lane remain parked.
+
+## Core Guard Self-Protection Authorization - Continuous Projection T0 Closure Sync
+
+Authorized guard-maintenance scope: record T0 material closure commit
+`d1cb8cba9`, advance continuity to T1 packet authoring, regenerate active
+session read models, and retain all implementation and mutation lanes as
+parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V48_2026-07-18.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT0Closure20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: the T0 work order assigns independent reviewer/closer
+ownership of material closure, roadmap release, and session sync.
+
+Rollback boundary: revert this protected continuity batch together. Do not
+revert material closure commit `d1cb8cba9` through session sync.
+
+## GC-020 Marker - Continuous Projection T0 Closure Session Sync
+
+This handoff records material parent commit `d1cb8cba9`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
 
 ## Claim Boundary
 
