@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_t4_waiting_manual_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=operator manually copy/pastes T4 work order commit `248d799f3` and waits for four no-commit outputs or fail-closed return; parked checkpoint=all agent CLI/MCP, provider/API/account use, retry, browser/network, public-sync, push/deployment, production, unattended action, and unrelated roadmap execution.
+Startup acknowledged: current mode=`continuous_projection_t4_r1_waiting_manual_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=operator manually copy/pastes repaired T4 R1 work order commit `1bbd4729a` with the post-sync HEAD and waits for four no-commit outputs or fail-closed return; parked checkpoint=all agent CLI/MCP, provider/API/account use, retry, browser/network, public-sync, push/deployment, production, unattended action, and unrelated roadmap execution.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_t4_waiting_manual_no_commit_worker_return`
+Current mode marker: `continuous_projection_t4_r1_waiting_manual_no_commit_worker_return`
 
-Current mode: `continuous_projection_t4_waiting_manual_no_commit_worker_return`
+Current mode: `continuous_projection_t4_r1_waiting_manual_no_commit_worker_return`
 
-`continuous_projection_t4_waiting_manual_no_commit_worker_return`
+`continuous_projection_t4_r1_waiting_manual_no_commit_worker_return`
 
 Previous mode:
 
-`continuous_projection_t4_packet_authoring_authorized_t3_closed`
+`continuous_projection_t4_waiting_manual_no_commit_worker_return`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,7 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
-| Continuous Projection T4 bounded pilot dispatch | `248d799f3` | DISPATCH_READY manual copy/paste only; three fixture suites, one real-root read-only scan ceiling, four no-commit outputs, zero CLI/MCP/provider/browser/network calls. |
+| Continuous Projection T4 R1 redispatch after accepted pre-flight block | `1bbd4729a` | REDISPATCH_READY_R1 manual copy/paste only; R0 blocked correctly at `a6de5976c`, consumed zero real-root scans and zero provider calls; literal packet defects repaired; one real-root read-only scan ceiling remains available. |
 | Continuous Projection T3 audience and presentation gate closure | `e21199dfa` | REVIEWER_ACCEPTED_WITH_REPAIRS; complete T1/T2 source-boundary validation, 144/144 fixture proof, zero provider calls; T4 packet authoring only is next. |
 | Continuous Projection T3 audience and presentation gate dispatch | `d68a132e7` | DISPATCH_READY through manual copy/paste only; exactly two new read-only scripts plus one no-commit worker return; T4 held; no real-root, browser, provider, CLI/MCP, public-sync, or mutation authority. |
 | CVF-OPM-AIR T0 source-map dispatch | `d3ec1e79b` | REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS; exact three no-commit documentation outputs, JSONL operational-evidence boundary, and packet-author timeout diagnostic; 75/75 pre-dispatch PASS. |
@@ -337,10 +337,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_t4_waiting_manual_no_commit_worker_return`
+Mode: `continuous_projection_t4_r1_waiting_manual_no_commit_worker_return`
 
-Operator manually copy/pastes the T4 work order committed at `248d799f3` and
-waits for exactly four no-commit outputs or `BLOCKED_WITH_REASON`. Do not use
+Operator manually copy/pastes the repaired T4 R1 work order committed at
+`1bbd4729a`, supplies the post-sync HEAD as executionBaseHead, and waits for
+exactly four no-commit outputs or `BLOCKED_WITH_REASON`. The accepted R0 block
+consumed zero real-root scans. Do not use
 Codex/Claude CLI, any agent CLI, MCP, provider/API/account subscription,
 browser/network service, retry, or unattended execution. All other roadmap execution,
 agent CLI/MCP, provider/API-key/subscription use, browser/live proof,

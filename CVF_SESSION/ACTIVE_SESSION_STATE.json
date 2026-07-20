@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "continuous_projection_t4_waiting_manual_no_commit_worker_return",
-  "previousMode": "continuous_projection_t4_packet_authoring_authorized_t3_closed",
+  "currentMode": "continuous_projection_t4_r1_waiting_manual_no_commit_worker_return",
+  "previousMode": "continuous_projection_t4_waiting_manual_no_commit_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13672,7 +13672,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Operator manually copy/pastes the committed Continuous Projection T4 work order at material commit 248d799f3 to the worker, then waits for exactly four unstaged no-commit outputs or a fail-closed BLOCKED_WITH_REASON return. No Codex or Claude CLI, MCP tool, provider/API-key/account subscription, browser, network service, public-sync mutation, retry, push, deployment, production action, or unattended execution is authorized. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Operator manually copy/pastes the repaired Continuous Projection T4 R1 work order at material commit 1bbd4729a to the worker, supplies the post-sync committed HEAD as executionBaseHead, then waits for exactly four unstaged no-commit outputs or a fail-closed BLOCKED_WITH_REASON return. The accepted R0 block consumed zero real-root scans, so the one-scan ceiling remains available. No Codex or Claude CLI, MCP tool, provider/API-key/account subscription, browser, network service, public-sync mutation, retry, push, deployment, production action, or unattended execution is authorized. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13884,9 +13884,14 @@
     "claimBoundary": "No T4 execution, real-root scan, provider call, browser proof, public-sync, push, deployment, or production claim."
   },
   "continuousProjectionT4Dispatch20260720": {
-    "status": "DISPATCH_READY_WAITING_MANUAL_NO_COMMIT_WORKER_RETURN",
-    "date": "2026-07-20",
-    "materialCommit": "248d799f3",
+    "status": "REDISPATCH_READY_R1_WAITING_MANUAL_NO_COMMIT_WORKER_RETURN",
+    "date": "2026-07-21",
+    "materialCommit": "1bbd4729a",
+    "priorDispatchCommit": "248d799f3",
+    "priorBlockedExecutionBaseHead": "a6de5976c",
+    "priorBlockedDisposition": "ACCEPTED_BLOCKED_RETURN",
+    "priorRealRootScanInvocationCount": 0,
+    "revision": "R1",
     "dependencyCommit": "e21199dfa",
     "baseline": "docs/baselines/CVF_GC018_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_AND_CLOSURE_2026-07-20.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_AND_CLOSURE_2026-07-20.md",
