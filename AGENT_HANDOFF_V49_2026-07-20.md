@@ -31,10 +31,10 @@ mutation, public, provider-call, and production lanes are parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`operator_provider_model_t0_packet_authoring_claude`;
+current mode=`operator_provider_model_t0_no_commit_worker_dispatched`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=Claude authors only the paired T0 GC-018 and source-verified no-commit work order;
-parked checkpoint=T0 implementation, credentials,
+next allowed move=Claude executes exactly three T0 documentation/source-inspection outputs under WORKER_MUST_NOT_COMMIT;
+parked checkpoint=T1-T5, credentials,
 provider calls, T3-T4, real-root receipt scan, apply/copy, public-sync mutation,
 push/deployment, production, and unattended action.
 
@@ -64,13 +64,13 @@ provider-neutral roadmap-authoring checkpoint only.
 
 ## Current Mode
 
-`operator_provider_model_t0_packet_authoring_claude`
+`operator_provider_model_t0_no_commit_worker_dispatched`
 
 ## Next Allowed Move
 
-Claude authors only the paired T0 GC-018 and source-verified no-commit work
-order and returns for independent reviewer repair/acceptance. Do not implement
-T0, use credentials, call a provider, or reopen Continuous Projection T3-T4.
+Claude executes exactly the three T0 documentation/source-inspection outputs
+and returns no-commit. Codex owns review, repair, material commit, closure, and
+reporting. Do not start T1-T5, use credentials, or call a provider.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -421,5 +421,43 @@ revert roadmap authorization commit `252e0aed8` through session sync.
 ## GC-020 Marker - CVF-OPM-AIR T0 Packet Session Sync
 
 This handoff records material parent commit `252e0aed8`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## CVF-OPM-AIR T0 Worker Dispatch
+
+- Dispatch material commit: `d3ec1e79b`.
+- Disposition: `REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS`.
+- Packet gates: dispatch-fast 5/5, pre-dispatch 75/75, pre-commit 83/83 PASS.
+- Worker: Claude under `WORKER_MUST_NOT_COMMIT`; exactly three dated review
+  outputs.
+- Reviewer repair carry-forward: JSONL is `NOT_CVF_SOURCE`; execution begins
+  only from clean committed sync HEAD; completion review is mandatory; measure
+  exact T2 and packet-author session basenames; record caller-timeout child
+  continuation without retry.
+- T1-T5 and all credential/provider/live/public/production lanes remain parked.
+
+## Core Guard Self-Protection Authorization - CVF-OPM-AIR T0 Dispatch Sync
+
+Authorized guard-maintenance scope: record dispatch `d3ec1e79b`, advance only
+to the exact no-commit worker assignment, regenerate active state, and keep
+later lanes parked.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/operatorProviderModelT0Dispatch20260720.json`.
+
+Rollback boundary: revert this protected dispatch-sync batch together. Do not
+revert dispatch material commit `d3ec1e79b` through session sync.
+
+## GC-020 Marker - CVF-OPM-AIR T0 Dispatch Session Sync
+
+This handoff records material parent commit `d3ec1e79b`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.

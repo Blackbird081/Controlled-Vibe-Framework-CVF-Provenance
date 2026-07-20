@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "operator_provider_model_t0_packet_authoring_claude",
-  "previousMode": "operator_approved_provider_model_assignment_roadmap_proposed_operator_review",
+  "currentMode": "operator_provider_model_t0_no_commit_worker_dispatched",
+  "previousMode": "operator_provider_model_t0_packet_authoring_claude",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13672,7 +13672,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Claude authors only the fresh T0 GC-018 and source-verified no-commit work order for CVF-OPM-AIR T0, then returns COMPLETE_PENDING_REVIEW without commit. The reviewer repairs and accepts or blocks the packet before implementation dispatch. T0 implementation, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Claude executes exactly the three-output CVF-OPM-AIR T0 documentation/source-inspection work order under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW. It measures only exact pre-existing session basenames, never prompt/response/credential content, and records reviewer findings and learning candidates. Codex owns review, repair, material commit, closure, and reporting. T1-T5, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13816,5 +13816,18 @@
     "usageBaseline": "operator UI snapshot: current session 21 percent; weekly all-models 41 percent; usage credits off; USD 0.00 spent",
     "nextAllowedMove": "Claude authors only the paired T0 GC-018 and work order and returns no-commit for review.",
     "parked": "T0 implementation and every credential, provider-call, live, public, push, deployment, or production action."
+  },
+  "operatorProviderModelT0Dispatch20260720": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS",
+    "batchId": "OPM-AIR-T0",
+    "dispatchCommit": "d3ec1e79b",
+    "dispatchBaseHead": "683543e49",
+    "worker": "Claude",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "outputs": "source-map ledger; usage-measurement baseline; worker return",
+    "reviewerRepairs": "missing control blocks; JSONL NOT_CVF_SOURCE boundary; clean execution-base contract; exact completion review; caller-timeout child-survival diagnostic",
+    "packetGates": "dispatch-fast 5/5 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Claude executes exactly three outputs and returns no-commit for Codex review.",
+    "parked": "T1-T5, credentials, provider calls, live proof, public-sync, push, deployment, and production action."
   }
 }

@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`operator_provider_model_t0_packet_authoring_claude`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=Claude authors only the paired T0 GC-018 and source-verified no-commit work order, then returns for reviewer repair/acceptance; parked checkpoint=T0 implementation, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push/deployment, production, and unattended action.
+Startup acknowledged: current mode=`operator_provider_model_t0_no_commit_worker_dispatched`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=Claude executes exactly three T0 documentation/source-inspection outputs under WORKER_MUST_NOT_COMMIT and returns for Codex review; parked checkpoint=T1-T5, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push/deployment, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `operator_provider_model_t0_packet_authoring_claude`
+Current mode marker: `operator_provider_model_t0_no_commit_worker_dispatched`
 
-Current mode: `operator_provider_model_t0_packet_authoring_claude`
+Current mode: `operator_provider_model_t0_no_commit_worker_dispatched`
 
-`operator_provider_model_t0_packet_authoring_claude`
+`operator_provider_model_t0_no_commit_worker_dispatched`
 
 Previous mode:
 
-`operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
+`operator_provider_model_t0_packet_authoring_claude`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-OPM-AIR T0 source-map dispatch | `d3ec1e79b` | REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS; exact three no-commit documentation outputs, JSONL operational-evidence boundary, and packet-author timeout diagnostic; 75/75 pre-dispatch PASS. |
 | CVF-OPM-AIR T0 packet-authoring authorization | `252e0aed8` | Operator started T0 with Claude packet author, Codex reviewer, Claude no-commit worker, and Codex closer; implementation remains parked until committed reviewer acceptance. |
 | Operator-approved provider/model assignment and invocation-receipt roadmap | `bd9850373` | PROPOSED_OPERATOR_REVIEW_REQUIRED. Provider-neutral approval, assignment, invocation, reconciliation, secret-safe credential, fallback, and diagnostic program reuses existing Model Gateway owners; no GC-018, implementation, credential use, or provider call. |
 | Continuous projection T2 governed review-packet drafting closure | `f08eb304e` | REVIEWER_ACCEPTED_WITH_REPAIRS after ordinal enum validation, strict JSON boolean typing, independent duplicate-surface cardinality rejection, 91/91 focused proof, reviewer-fast 62/62 PASS, and pre-commit 83/83 PASS. Task-specific Sonnet 5/high assignment reconciled exactly; no provider default created. |
@@ -333,11 +334,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `operator_provider_model_t0_packet_authoring_claude`
+Mode: `operator_provider_model_t0_no_commit_worker_dispatched`
 
-Claude authors only the fresh T0 GC-018 and source-verified no-commit work
-order, then returns `COMPLETE_PENDING_REVIEW`. The reviewer repairs and accepts
-or blocks the packet before any implementation dispatch.
+Claude executes exactly the three T0 documentation/source-inspection outputs
+under `WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW`. Codex owns
+review, repair, material commit, closure, and tranche reporting.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

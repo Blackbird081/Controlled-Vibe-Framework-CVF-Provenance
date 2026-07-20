@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "operator_provider_model_t0_packet_authoring_claude",
+  "currentMode": "operator_provider_model_t0_no_commit_worker_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V49_2026-07-20.md",
-  "nextAllowedMove": "Claude authors only the fresh T0 GC-018 and source-verified no-commit work order for CVF-OPM-AIR T0, then returns COMPLETE_PENDING_REVIEW without commit. The reviewer repairs and accepts or blocks the packet before implementation dispatch. T0 implementation, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Claude executes exactly the three-output CVF-OPM-AIR T0 documentation/source-inspection work order under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW. It measures only exact pre-existing session basenames, never prompt/response/credential content, and records reviewer findings and learning candidates. Codex owns review, repair, material commit, closure, and reporting. T1-T5, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
