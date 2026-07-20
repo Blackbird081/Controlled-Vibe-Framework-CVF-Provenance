@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff",
-  "previousMode": "global_roadmap_execution_parked_cli_mcp_invocation_control_audit",
+  "currentMode": "continuous_projection_t4_packet_authoring_authorized_t3_closed",
+  "previousMode": "continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13672,7 +13672,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Wait for the no-commit Continuous Projection T3 worker return under the committed GC-018 and work order at material commit d68a132e7. Handoff is manual copy/paste only. The worker may create exactly scripts/get_cvf_projection_audience_gate.ps1, scripts/test_cvf_projection_audience_gate.ps1, and docs/reviews/CVF_CONTINUOUS_PROJECTION_T3_WORKER_RETURN_2026-07-20.md, then return COMPLETE_PENDING_REVIEW without staging or committing. T4 remains held until independent T3 closure. All other roadmap execution, external-agent CLI/MCP invocation, provider/API-key/subscription use, browser/live proof, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Author only the Continuous Projection T4 GC-018 baseline and source-verified no-commit work order using T3 closure commit e21199dfa as dependency-release evidence. Do not execute T4 until that packet passes independent dispatch review and is committed. All automated external-agent CLI/MCP invocation, provider/API-key/subscription use, browser/live proof, public-sync, push, deployment, production action, unattended mutation, and unrelated roadmap execution remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13843,14 +13843,14 @@
     "parked": "T1-T5, credentials, provider calls, live proof, public-sync, push, deployment, production, and unattended mutation."
   },
   "globalRoadmapExecutionMoratoriumCliMcpAudit20260720": {
-    "status": "ACTIVE_WITH_OPERATOR_APPROVED_CONTINUOUS_PROJECTION_T3_MANUAL_EXCEPTION",
+    "status": "ACTIVE_WITH_OPERATOR_APPROVED_CONTINUOUS_PROJECTION_T4_PACKET_AUTHORING_EXCEPTION",
     "materialCommit": "8b34ec5cb",
     "audit": "docs/audits/CVF_AGENT_CLI_MCP_INVOCATION_CONTROL_SYSTEM_CHAIN_REASSESSMENT_2026-07-20.md",
     "openingVerdict": "CONTROL_NOT_EFFECTIVE_FOR_EXTERNAL_AGENT_CLI",
     "revokedAuthorization": "CVF-OPM-AIR T0 R1 Claude worker rerun after subscription reset",
-    "effectiveScope": "every roadmap execution lane except the operator-approved Continuous Projection T3 manual copy/paste no-commit worker batch at material commit d68a132e7",
-    "allowed": "local read-only source inspection and local non-provider static checks for the invocation-control reassessment; manual copy/paste T3 worker handoff limited to the three work-order paths",
-    "forbidden": "all other work-order authoring or dispatch; automated agent CLI; MCP live tool; provider or API-key call; account subscription use; retry; fallback; browser/live proof; public-sync; push; deployment; production action; unattended mutation; Continuous Projection T4 before T3 closure",
+    "effectiveScope": "every roadmap execution lane except operator-approved Continuous Projection T4 packet authoring after T3 closure commit e21199dfa",
+    "allowed": "local read-only source inspection, local non-provider static checks, and T4 GC-018 plus work-order packet authoring only",
+    "forbidden": "T4 execution before committed dispatch acceptance; all other work-order authoring or dispatch; automated agent CLI; MCP live tool; provider or API-key call; account subscription use; retry; fallback; browser/live proof; public-sync; push; deployment; production action; unattended mutation",
     "liftCondition": "fresh explicit operator decision after an evidence-backed provider-neutral control architecture and bounded proof plan"
   },
   "continuousProjectionT3Dispatch20260720": {
@@ -13870,5 +13870,17 @@
     ],
     "t4Disposition": "HOLD_UNTIL_T3_PASS",
     "claimBoundary": "No automated agent CLI/MCP/provider call, browser/live proof, real-root scan, public-sync, worker commit, push, deployment, or unattended mutation."
+  },
+  "continuousProjectionT3Closure20260720": {
+    "status": "REVIEWER_ACCEPTED_WITH_REPAIRS",
+    "date": "2026-07-20",
+    "materialCommit": "e21199dfa",
+    "completionReview": "docs/reviews/CVF_CONTINUOUS_PROJECTION_T3_COMPLETION_REVIEW_2026-07-20.md",
+    "focusedProof": "144/144",
+    "providerCallCount": 0,
+    "finding": "Incomplete T1/T2 source-boundary validation allowed fabricated or contract-incomplete upstream inputs.",
+    "repair": "Exact schema identity, 16-row receipt, no-write literal, T2 source facts, strict types, and false mutation authority are now fail closed.",
+    "nextMove": "T4 GC-018 and work-order packet authoring only",
+    "claimBoundary": "No T4 execution, real-root scan, provider call, browser proof, public-sync, push, deployment, or production claim."
   }
 }

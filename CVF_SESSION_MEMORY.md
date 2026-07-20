@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=manual copy/paste handoff of the committed Continuous Projection T3 packet and wait for exactly three no-commit worker outputs; parked checkpoint=T4 until T3 PASS, all other roadmap execution, automated agent CLI/MCP, provider/API-key/subscription use, browser/live proof, public-sync, push/deployment, production, and unattended action.
+Startup acknowledged: current mode=`continuous_projection_t4_packet_authoring_authorized_t3_closed`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=author only the T4 GC-018 baseline and source-verified no-commit work order from committed T3 closure evidence; parked checkpoint=T4 execution until its dispatch packet is independently accepted and committed, plus all automated agent CLI/MCP, provider/API-key/subscription use, browser/live proof, public-sync, push/deployment, production, unattended action, and unrelated roadmap execution.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
+Current mode marker: `continuous_projection_t4_packet_authoring_authorized_t3_closed`
 
-Current mode: `continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
+Current mode: `continuous_projection_t4_packet_authoring_authorized_t3_closed`
 
-`continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
+`continuous_projection_t4_packet_authoring_authorized_t3_closed`
 
 Previous mode:
 
-`global_roadmap_execution_parked_cli_mcp_invocation_control_audit`
+`continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Continuous Projection T3 audience and presentation gate closure | `e21199dfa` | REVIEWER_ACCEPTED_WITH_REPAIRS; complete T1/T2 source-boundary validation, 144/144 fixture proof, zero provider calls; T4 packet authoring only is next. |
 | Continuous Projection T3 audience and presentation gate dispatch | `d68a132e7` | DISPATCH_READY through manual copy/paste only; exactly two new read-only scripts plus one no-commit worker return; T4 held; no real-root, browser, provider, CLI/MCP, public-sync, or mutation authority. |
 | CVF-OPM-AIR T0 source-map dispatch | `d3ec1e79b` | REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS; exact three no-commit documentation outputs, JSONL operational-evidence boundary, and packet-author timeout diagnostic; 75/75 pre-dispatch PASS. |
 | CVF-OPM-AIR T0 packet-authoring authorization | `252e0aed8` | Operator started T0 with Claude packet author, Codex reviewer, Claude no-commit worker, and Codex closer; implementation remains parked until committed reviewer acceptance. |
@@ -335,11 +336,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
+Mode: `continuous_projection_t4_packet_authoring_authorized_t3_closed`
 
-Manually copy/paste the committed T3 work order at material commit
-`d68a132e7`, then wait for exactly three no-commit worker outputs. T4 remains
-held until independent T3 closure. All other roadmap execution, automated
+Author only the T4 GC-018 baseline and source-verified no-commit work order
+using T3 closure commit `e21199dfa` as dependency-release evidence. Do not
+execute T4 before committed dispatch acceptance. All other roadmap execution, automated
 agent CLI/MCP, provider/API-key/subscription use, browser/live proof,
 public-sync, push, deployment, production action, and unattended mutation
 remain parked.

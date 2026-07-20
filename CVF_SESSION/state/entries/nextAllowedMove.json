@@ -1,5 +1,5 @@
 {
   "stateOrder": 2002,
   "stateKey": "nextAllowedMove",
-  "value": "Wait for the no-commit Continuous Projection T3 worker return under the committed GC-018 and work order at material commit d68a132e7. Handoff is manual copy/paste only. The worker may create exactly scripts/get_cvf_projection_audience_gate.ps1, scripts/test_cvf_projection_audience_gate.ps1, and docs/reviews/CVF_CONTINUOUS_PROJECTION_T3_WORKER_RETURN_2026-07-20.md, then return COMPLETE_PENDING_REVIEW without staging or committing. T4 remains held until independent T3 closure. All other roadmap execution, external-agent CLI/MCP invocation, provider/API-key/subscription use, browser/live proof, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Author only the Continuous Projection T4 GC-018 baseline and source-verified no-commit work order using T3 closure commit e21199dfa as dependency-release evidence. Do not execute T4 until that packet passes independent dispatch review and is committed. All automated external-agent CLI/MCP invocation, provider/API-key/subscription use, browser/live proof, public-sync, push, deployment, production action, unattended mutation, and unrelated roadmap execution remain parked. LHW24 remains latest closed numbered LHW wave."
 }

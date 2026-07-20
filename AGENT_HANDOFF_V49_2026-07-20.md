@@ -9,33 +9,32 @@ Supersedes:
 
 ## Purpose
 
-Carry compact continuity through the completed Continuous Projection T2
-closure and route the operator-selected provider-neutral provider/model
-assignment roadmap authoring next. V48 was rotated before its next update
+Carry compact continuity through the completed Continuous Projection T3
+closure and route Continuous Projection T4 packet authoring next. V48 was rotated before its next update
 would cross the governed handoff maintainability threshold.
 
 ## Scope / Target / Owner Boundary
 
-This handoff owns protected continuity routing for the manual T3 dispatch.
+This handoff owns protected continuity routing for T3 closure and T4 packet authoring.
 Material scripts and review artifacts remain owned by their implementation and
 closure commits; public-sync and cvf-web remain read-only and outside this
 session-sync batch.
 
 ## Active Boundary
 
-T2 is closed with reviewer repairs. T3 is released through manual copy/paste
-under material commit `d68a132e7`; exactly three no-commit worker outputs are
-allowed. T4, real-root scanning, automated agent invocation, mutation, public,
-provider-call, browser/live, and production lanes remain parked.
+T3 is closed with reviewer repairs at material commit `e21199dfa`. T4 GC-018
+and work-order authoring is released. T4 execution, real-root scanning,
+automated agent invocation, mutation, public, provider-call, browser/live, and
+production lanes remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`;
+current mode=`continuous_projection_t4_packet_authoring_authorized_t3_closed`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=manual copy/paste handoff of the committed T3 packet and wait
-for exactly three no-commit worker outputs;
-parked checkpoint=T4 until T3 PASS, all other roadmap execution, automated
+next allowed move=author only the T4 GC-018 baseline and source-verified
+no-commit work order from T3 closure commit `e21199dfa`;
+parked checkpoint=T4 execution until committed dispatch acceptance, all other roadmap execution, automated
 agent/provider/MCP-live/API-key/subscription calls, browser/live proof,
 public-sync, push/deployment, production, and unattended action.
 
@@ -59,19 +58,19 @@ public-sync, push/deployment, production, and unattended action.
 
 ## Latest Work / Changes
 
-Material commit `d68a132e7` dispatches the frozen T3 evidence gate after 75/75
-pre-dispatch and 83/83 pre-commit checks. This protected batch advances session
-routing only to the manual no-commit worker-return checkpoint.
+Material commit `e21199dfa` closes the frozen T3 evidence gate after reviewer
+repair, 144/144 focused proof, and 83/83 pre-commit checks. This protected
+batch advances session routing only to T4 packet authoring.
 
 ## Current Mode
 
-`continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff`
+`continuous_projection_t4_packet_authoring_authorized_t3_closed`
 
 ## Next Allowed Move
 
-Manually copy/paste the T3 work order committed at `d68a132e7`, then wait for
-exactly the two new scripts and worker-return packet named by that order. T4
-remains held until independent T3 closure. Do not invoke an agent CLI or MCP
+Author only the T4 GC-018 baseline and source-verified no-commit work order
+using T3 closure commit `e21199dfa` as dependency-release evidence. Do not
+execute T4 or invoke an agent CLI or MCP
 live tool, call a provider, use an API key or account subscription, run browser
 or live proof, public-sync, push, deploy, act in production, or start
 unattended mutation.
@@ -669,3 +668,38 @@ accept this parent SHA for the protected sync commit.
 This handoff records accepted session-sync parent commit `312238c3d`. The
 handoff-only child SHA cannot be known before commit creation, so the
 active-session checker may accept this parent SHA for the final dispatch sync.
+
+## Continuous Projection T3 Closure And T4 Packet Release
+
+- T3 material closure commit: `e21199dfa`.
+- Disposition: `REVIEWER_ACCEPTED_WITH_REPAIRS`.
+- Reviewer repair: exact T1/T2 schema identity, frozen 16-row receipt,
+  no-write literal, T2 source facts, strict scalar types, and false mutation
+  authority are now fail closed.
+- Focused proof: 144/144; provider and external-agent call count: 0.
+- Next allowed move: author only the T4 GC-018 baseline and source-verified
+  no-commit work order using `e21199dfa` as dependency-release evidence.
+- T4 execution and all automated CLI/MCP, provider, browser, public-sync,
+  push, deployment, production, and unattended lanes remain parked.
+
+## Core Guard Self-Protection Authorization - T3 Closure Session Sync
+
+Authorized scope: update generated session state, front door, and active
+handoff to record T3 closure commit `e21199dfa` and release T4 packet authoring
+only. This does not authorize T4 execution or any provider/CLI/MCP action.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT3Closure20260720.json`;
+- `CVF_SESSION/state/entries/globalRoadmapExecutionMoratoriumCliMcpAudit20260720.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION_MEMORY.md`.
+
+## GC-020 Marker - Continuous Projection T3 Closure Sync
+
+This handoff records material parent commit `e21199dfa`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
