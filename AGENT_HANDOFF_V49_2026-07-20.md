@@ -663,3 +663,9 @@ revert material dispatch commit `d68a132e7` through session sync.
 This handoff records material parent commit `d68a132e7`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.
+
+## GC-020 Marker - T3 Dispatch Final Handoff Sync
+
+This handoff records accepted session-sync parent commit `312238c3d`. The
+handoff-only child SHA cannot be known before commit creation, so the
+active-session checker may accept this parent SHA for the final dispatch sync.
