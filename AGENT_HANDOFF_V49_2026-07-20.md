@@ -31,10 +31,10 @@ mutation, public, provider-call, and production lanes are parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`operator_approved_provider_model_assignment_roadmap_authoring_next`;
+current mode=`operator_approved_provider_model_assignment_roadmap_proposed_operator_review`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=author only the provider-neutral operator-approved provider/model assignment and invocation-receipt roadmap;
-parked checkpoint=roadmap implementation, GC-018/work-order authoring,
+next allowed move=operator reviews the proposed provider-neutral provider/model assignment and invocation-receipt roadmap;
+parked checkpoint=GC-018/work-order authoring, roadmap implementation,
 provider calls, T3-T4, real-root receipt scan, apply/copy, public-sync mutation,
 push/deployment, production, and unattended action.
 
@@ -64,14 +64,15 @@ provider-neutral roadmap-authoring checkpoint only.
 
 ## Current Mode
 
-`operator_approved_provider_model_assignment_roadmap_authoring_next`
+`operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
 
 ## Next Allowed Move
 
-Author only the provider-neutral operator-approved provider/model assignment
-and invocation-receipt roadmap. Do not author its GC-018/work order, implement
-routing, call a provider, or reopen Continuous Projection T3-T4 without fresh
-operator authorization.
+Operator reviews the proposed provider-neutral provider/model assignment and
+invocation-receipt roadmap and accepts it for T0 packet authoring, returns
+bounded repairs, or parks it. Do not author its GC-018/work order, implement
+routing, use credentials, call a provider, or reopen Continuous Projection
+T3-T4 without operator acceptance.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -342,5 +343,49 @@ revert material closure commit `f08eb304e` through session sync.
 ## GC-020 Marker - T2 Closure Session Sync
 
 This handoff records material parent commit `f08eb304e`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## Operator-Approved Provider/Model Roadmap Proposal
+
+- Roadmap material commit: `bd9850373`.
+- Roadmap status: `PROPOSED_OPERATOR_REVIEW_REQUIRED`.
+- Provider-neutral contract groups: operator approval envelope, task assignment
+  receipt, invocation receipt, and reviewer reconciliation decision.
+- Existing owners reused: provider registry, `PROVIDER_CAPABILITY_REGISTRY`,
+  dynamic model registry, gateway receipt, credential boundary, fallback
+  policy, provider execution bridge, and live diagnostic standard.
+- Tranches: T0 source map; T1 approval/assignment; T2 invocation
+  reconciliation; T3 orchestrator seam; T4 negative fixtures; T5 separately
+  authorized live pilot.
+- No provider/model default, GC-018, work order, runtime edit, credential use,
+  provider call, public action, push, or deployment occurred.
+
+## Core Guard Self-Protection Authorization - Provider/Model Roadmap Sync
+
+Authorized guard-maintenance scope: record roadmap commit `bd9850373`, advance
+mode to operator review, regenerate active state, and park every later packet,
+implementation, credential, provider-call, public, and production lane.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/operatorApprovedProviderModelRoadmap20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: the operator instructed CVF to record this as the next
+roadmap and required provider neutrality with operator-supplied API keys or
+account subscriptions.
+
+Rollback boundary: revert this protected roadmap-sync batch together. Do not
+revert roadmap material commit `bd9850373` through session sync.
+
+## GC-020 Marker - Provider/Model Roadmap Session Sync
+
+This handoff records material parent commit `bd9850373`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.

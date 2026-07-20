@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`operator_approved_provider_model_assignment_roadmap_authoring_next`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=author only the provider-neutral operator-approved provider/model assignment and invocation-receipt roadmap; parked checkpoint=roadmap implementation, GC-018/work-order authoring, provider calls, Continuous Projection T3-T4, real-root receipt scan, mutation, public-sync, push/deployment, production, and unattended action.
+Startup acknowledged: current mode=`operator_approved_provider_model_assignment_roadmap_proposed_operator_review`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=operator reviews the proposed provider-neutral provider/model assignment and invocation-receipt roadmap and accepts, repairs, or parks it; parked checkpoint=GC-018/work-order authoring, implementation, credentials, provider calls, Continuous Projection T3-T4, real-root receipt scan, mutation, public-sync, push/deployment, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `operator_approved_provider_model_assignment_roadmap_authoring_next`
+Current mode marker: `operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
 
-Current mode: `operator_approved_provider_model_assignment_roadmap_authoring_next`
+Current mode: `operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
 
-`operator_approved_provider_model_assignment_roadmap_authoring_next`
+`operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
 
 Previous mode:
 
-`continuous_projection_t2_material_committed_pending_closure`
+`operator_approved_provider_model_assignment_roadmap_authoring_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Operator-approved provider/model assignment and invocation-receipt roadmap | `bd9850373` | PROPOSED_OPERATOR_REVIEW_REQUIRED. Provider-neutral approval, assignment, invocation, reconciliation, secret-safe credential, fallback, and diagnostic program reuses existing Model Gateway owners; no GC-018, implementation, credential use, or provider call. |
 | Continuous projection T2 governed review-packet drafting closure | `f08eb304e` | REVIEWER_ACCEPTED_WITH_REPAIRS after ordinal enum validation, strict JSON boolean typing, independent duplicate-surface cardinality rejection, 91/91 focused proof, reviewer-fast 62/62 PASS, and pre-commit 83/83 PASS. Task-specific Sonnet 5/high assignment reconciled exactly; no provider default created. |
 | Continuous projection T2 governed review-packet drafting dispatch | `88723d3b4` | REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS after authority, route, stdout-only persistence, ordered schema, action mapping, source-verification, and negative-case repairs; exactly three Claude no-commit worker outputs. |
 | Continuous projection T1 read-only receipt closure | `e44f207f6` | REVIEWER_ACCEPTED_WITH_REPAIRS after bounded schema, ordering, git-ignore, mapped-handoff, and mapper-signal repairs; 53/53 disposable-fixture assertions and pre-commit 83/83 PASS; T2 packet authoring only is next. |
@@ -331,15 +332,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `operator_approved_provider_model_assignment_roadmap_authoring_next`
+Mode: `operator_approved_provider_model_assignment_roadmap_proposed_operator_review`
 
-Author only the provider-neutral
-`CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP`.
-It must define operator approval envelopes, secret-safe credential references,
-task assignment receipts, actual invocation receipts, assigned-versus-actual
-provider/model reconciliation, bounded fallback policy, and failure diagnostics.
-Do not author its GC-018/work order, implement routing, call a provider, or
-reopen Continuous Projection T3-T4 without fresh operator authorization.
+Operator reviews
+`docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md`
+and accepts it for T0 packet authoring, returns bounded repairs, or parks it.
+Until operator acceptance, do not author GC-018/work-order packets, implement
+routing, use credentials, call a provider, or reopen Continuous Projection
+T3-T4.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

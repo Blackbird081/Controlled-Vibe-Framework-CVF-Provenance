@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "operator_approved_provider_model_assignment_roadmap_authoring_next",
-  "previousMode": "continuous_projection_t2_material_committed_pending_closure",
+  "currentMode": "operator_approved_provider_model_assignment_roadmap_proposed_operator_review",
+  "previousMode": "operator_approved_provider_model_assignment_roadmap_authoring_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13672,7 +13672,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Author only the provider-neutral CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP. It must define operator approval envelopes, secret-safe credential references, task assignment receipts, actual invocation receipts, assigned-versus-actual provider/model reconciliation, bounded fallback policy, and quota/timeout/authentication diagnostics. Do not author its GC-018 or work order, implement routing, call a provider, or reopen Continuous Projection T3-T4 without fresh operator authorization. The T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Operator reviews docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md and either accepts it for T0 source-map packet authoring, returns bounded repairs, or parks it. Until operator acceptance, do not author GC-018/work-order packets, implement schemas or routing, use credentials, call a provider, or reopen Continuous Projection T3-T4. The T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13791,5 +13791,18 @@
     "nextAllowedMove": "Author only the provider-neutral operator-approved provider/model assignment and invocation-receipt roadmap.",
     "parked": "Roadmap implementation, GC-018/work-order authoring, provider calls, Continuous Projection T3-T4, T4 real-root scan, mutation, public-sync, push, deployment, production action, and unattended mutation.",
     "claimBoundary": "T2 fixture-proven read-only review-packet drafting closure only; no real-root freshness or provider-orchestrator implementation claim."
+  },
+  "operatorApprovedProviderModelRoadmap20260720": {
+    "status": "PROPOSED_OPERATOR_REVIEW_REQUIRED",
+    "roadmapId": "CVF-OPM-AIR",
+    "roadmap": "docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md",
+    "materialCommit": "bd9850373",
+    "providerNeutral": true,
+    "reusedFoundations": "provider registry, provider capability registry, dynamic model registry, gateway receipt, credential boundary, fallback policy, provider execution bridge, and live diagnostic standard",
+    "contractGroups": "operator approval envelope, task assignment receipt, invocation receipt, and reviewer reconciliation decision",
+    "tranches": "T0 source map; T1 approval/assignment; T2 invocation reconciliation; T3 orchestrator seam; T4 negative fixtures; T5 separately authorized live pilot",
+    "nextAllowedMove": "Operator reviews the proposed roadmap and accepts, repairs, or parks it.",
+    "parked": "GC-018/work order, implementation, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, and production action.",
+    "claimBoundary": "Proposed documentation-only provider-neutral roadmap; no provider/model default or runtime behavior is established."
   }
 }
