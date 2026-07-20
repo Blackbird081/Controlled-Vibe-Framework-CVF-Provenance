@@ -45,6 +45,12 @@ Return contract: produce exactly four Allowed outputs after one successful
 scan, leave all unstaged and uncommitted, and return
 `COMPLETE_PENDING_REVIEW`; on a stop condition return `BLOCKED_WITH_REASON`.
 
+Revision: R1 reviewer repair after accepted pre-flight blocked return
+
+Prior blocked executionBaseHead: `a6de5976c`
+
+Prior real-root scan invocation count: `0`
+
 ## 1. Mission
 
 Execute the final bounded Continuous Projection pilot without mutation: rerun
@@ -213,14 +219,16 @@ remote, failed fixture suite, timeout, real scan error, malformed receipt,
 forbidden-path need, or any request for CLI/MCP/provider/browser/network use.
 Do not retry the real scan and do not ask the operator to waive the stop.
 
-## 7. Required Artifact Manifest
+## Required Artifact Manifest
 
 Allowed paths, exactly:
 
-- `docs/reviews/evidence/CVF_CONTINUOUS_PROJECTION_T4_REAL_ROOT_RECEIPT_2026-07-20.json`
-- `docs/reviews/evidence/CVF_CONTINUOUS_PROJECTION_T4_REAL_ROOT_REVIEW_DRAFT_2026-07-20.json`
-- `docs/reviews/CVF_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_LEDGER_2026-07-20.md`
-- `docs/reviews/CVF_CONTINUOUS_PROJECTION_T4_WORKER_RETURN_2026-07-20.md`
+| Required artifact | Path | Success-run disposition | Blocked-run disposition |
+|---|---|---|---|
+| Real-root receipt | `docs/reviews/evidence/CVF_CONTINUOUS_PROJECTION_T4_REAL_ROOT_RECEIPT_2026-07-20.json` | REQUIRED | OMIT |
+| Review draft | `docs/reviews/evidence/CVF_CONTINUOUS_PROJECTION_T4_REAL_ROOT_REVIEW_DRAFT_2026-07-20.json` | REQUIRED | OMIT |
+| Pilot ledger | `docs/reviews/CVF_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_LEDGER_2026-07-20.md` | REQUIRED | REQUIRED |
+| Worker return | `docs/reviews/CVF_CONTINUOUS_PROJECTION_T4_WORKER_RETURN_2026-07-20.md` | REQUIRED | REQUIRED |
 
 Work-Order Fulfillment Manifest: four required artifacts; every other path is
 forbidden. On a blocked real scan, the two JSON success artifacts must be
@@ -402,34 +410,38 @@ individualCheckerSubstitution: FORBIDDEN
 
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
-The worker return must include Purpose, Target / Source, Scope / Methodology,
-Findings / Position, Risk / Corrective Action, Claim Boundary, Checker Source
-Read-Ahead Block, Agent Operation Trace Block, Delta Execution Claim Boundary
-Control Block, Public Export Disposition, External Knowledge Intake Routing,
+The worker return must include Purpose, Scope / Methodology, Findings / Position,
+Risk / Corrective Action, Claim Boundary, Agent Operation Trace Block,
+Delta Execution Claim Boundary Control Block, Public Export Disposition,
+executionBaseHead, and git status --short.
+
+Conditional sections must include External Knowledge Intake Routing,
 Rescan Intelligence Hardening, Corpus Completeness And Report Integrity,
-Finding-To-Governance Learning Disposition, Epistemic Process Block, actual
-git status, Changed Files, Command Evidence, and No-Commit Statement.
+Finding-To-Governance Learning Disposition, Epistemic Process Block, and
+Machine Closure Package, or an explicit N/A with reason / NOT_APPLICABLE_WITH_REASON.
+
+Also include Changed Files, Command Evidence, and No-Commit Statement.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex dispatch author |
+| Actor | Codex reviewer and redispatch author |
 | Provider or surface | local private provenance workspace |
-| Session or invocation | T4 packet authoring, 2026-07-20 |
+| Session or invocation | T4 R1 blocked-return review and packet repair, 2026-07-21 |
 | Working directory | repository root |
 | Command or tool surface | governed reads; apply_patch; local Python checkers and gates; Git status |
-| Target paths | paired T4 baseline/work order and continuous-projection roadmap |
-| Allowed scope source | operator instruction plus T3 closure commit `e21199dfa` |
-| Before status evidence | clean worktree at HEAD `5f5c28b85` |
-| After status evidence | exactly three dispatch-authoring paths pending before commit |
+| Target paths | T4 work order, roadmap, blocked pilot ledger, and blocked worker return |
+| Allowed scope source | operator instruction plus accepted T4 blocked return at `a6de5976c` |
+| Before status evidence | clean worktree at HEAD `a6de5976c` before the worker authored its two blocked-return outputs |
+| After status evidence | exactly four R1 reviewer-repair paths pending before commit |
 | Diff evidence | `git status --short` and exact staged manifest before commit |
-| Approval boundary | T4 manual copy/paste dispatch packet only |
-| Claim boundary | no T4 execution, provider, CLI/MCP, mutation, or public claim |
-| Agent type | dispatcher |
-| Invocation ID | `cvf-continuous-projection-t4-dispatch-2026-07-20` |
-| Expected manifest | paired T4 baseline/work order plus roadmap |
-| Actual changed set | same three dispatch paths |
+| Approval boundary | accept blocked return, repair packet, and prepare manual copy/paste redispatch only |
+| Claim boundary | pre-flight block only; zero real-root scans and no provider, CLI/MCP, mutation, or public claim |
+| Agent type | reviewer and dispatcher |
+| Invocation ID | `cvf-continuous-projection-t4-r1-redispatch-2026-07-21` |
+| Expected manifest | T4 work order, roadmap, blocked pilot ledger, and blocked worker return |
+| Actual changed set | same four R1 reviewer-repair paths |
 | Manifest delta | MATCH |
 
 ## Delta Execution Claim Boundary Control Block

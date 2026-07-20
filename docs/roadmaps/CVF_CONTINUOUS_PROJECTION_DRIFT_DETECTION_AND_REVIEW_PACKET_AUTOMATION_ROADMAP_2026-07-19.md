@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T4_DISPATCH_READY_MANUAL_COPY_PASTE_ONLY
+Status: T4_REDISPATCH_READY_R1_MANUAL_COPY_PASTE_ONLY
 
 Date: 2026-07-19
 
@@ -154,6 +154,12 @@ audience evidence or run the real-root T3 gate. Automated agent CLI/MCP,
 provider/API, retry, browser, mutation, public-sync, commit, push, deployment,
 and unattended execution remain forbidden.
 
+R0 blocked before fixture execution because the work order's scoped Worker
+Return Packet Shape Contract omitted literal terms required by the mandatory
+pre-implementation helper. The worker correctly stopped; real-root scan count
+remains zero. Reviewer repair adds the exact literals and releases manual R1
+redispatch without changing the one-scan ceiling or any CLI/MCP prohibition.
+
 ## Acceptance Criteria
 
 - [x] Roadmap authority and recovery reason are explicit.
@@ -231,7 +237,7 @@ Provider/model and CLI/MCP roadmap implementation remains parked.
 |---|---|---|---|
 | Work order status | T4 work order | `Status: DISPATCH_READY` | PASS |
 | Completion or reviewer artifact | T3 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS`; T4 completion pending | PASS |
-| Roadmap state | this roadmap | `Status: T4_DISPATCH_READY_MANUAL_COPY_PASTE_ONLY` | PASS |
+| Roadmap state | this roadmap | `Status: T4_REDISPATCH_READY_R1_MANUAL_COPY_PASTE_ONLY` | PASS |
 | Implementation evidence | T4 paired baseline/work order | execution pending; no scan result claimed | N/A with reason |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check remains clean; no entry change required | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing human registry remains unchanged; T1 adds no corpus record | PASS |
