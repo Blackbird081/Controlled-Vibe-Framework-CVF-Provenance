@@ -164,6 +164,39 @@ accept this parent SHA for the protected sync commit.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | `AGENT_HANDOFF_V48_2026-07-18.md` moved to `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V48_2026-07-18.md` under the governed handoff rotation rule; content preserved |
 
+## Single-Pass Review Latency SOP Closure
+
+- Material commit: `fe49a77cb`.
+- Disposition: `REVIEWER_ACCEPTED_BOUNDED`.
+- Canonical owner:
+  `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`.
+- Focused review-cost checker suite: 29/29 PASS.
+- Pre-implementation bundle and material pre-commit hook: PASS.
+- Current mode and next allowed move remain unchanged: Continuous Projection T2
+  packet authoring only.
+
+## Core Guard Self-Protection Authorization - Review Latency SOP Handoff Sync
+
+Authorized guard-maintenance scope: record material SOP commit `fe49a77cb` in
+the active handoff without changing mode, next-move authority, or any material,
+generated-state, public, runtime, provider, or production surface.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`.
+
+Operator authorization: the operator explicitly requested the common CVF SOP;
+GC-020 requires the active handoff to record the resulting material HEAD.
+
+Rollback boundary: revert only this handoff-sync commit. Do not revert material
+SOP commit `fe49a77cb` through continuity sync.
+
+## GC-020 Marker - Review Latency SOP Handoff Sync
+
+This handoff records material parent commit `fe49a77cb`. The handoff-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated handoff-only continuity commit.
+
 ## Claim Boundary
 
 This handoff records private continuity only. It does not close T1, execute the
