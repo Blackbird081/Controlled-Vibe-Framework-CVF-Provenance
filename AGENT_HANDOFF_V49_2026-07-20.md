@@ -582,3 +582,23 @@ accept this parent SHA for the protected sync commit.
 This handoff records current accepted parent HEAD `e6a4968cd`. The handoff-only
 sync SHA cannot be known before commit creation, so the active-session checker
 may accept this parent SHA for this protected sync commit.
+
+## Active Handoff Exposure Repair And Private Push Boundary
+
+- Material repair commit: `add5f9ed5`.
+- `AGENT_HANDOFF_V49_2026-07-20.md` is classified `INTERNAL_ONLY` in the
+  root-file exposure registry.
+- The targeted pre-public readiness check passed after the repair.
+- Historical mixed-range debt remains accepted only under the operator
+  authorization recorded above; no history rewrite or squash is authorized.
+- Push authority is limited to `origin/main` of the verified private
+  provenance repository.
+- The global roadmap moratorium remains in force. Public-sync, runtime,
+  provider, MCP live, API-key, subscription, deployment, and production
+  actions remain parked.
+
+## GC-020 Marker - Active Handoff Exposure Repair
+
+This handoff records material parent commit `add5f9ed5`. The handoff-only sync
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this protected sync commit.
