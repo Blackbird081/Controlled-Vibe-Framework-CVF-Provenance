@@ -45,16 +45,20 @@ Return contract: produce exactly four Allowed outputs after one successful
 scan, leave all unstaged and uncommitted, and return
 `COMPLETE_PENDING_REVIEW`; on a stop condition return `BLOCKED_WITH_REASON`.
 
-Revision: R1 reviewer repair after accepted pre-flight blocked return
+Revision: R2 reviewer repair after accepted PATH_ESCAPE blocked return
 
-Prior blocked executionBaseHead: `a6de5976c`
+Prior blocked executionBaseHead: `5b929dad9`
 
-Prior real-root scan invocation count: `0`
+Prior real-root scan invocation count: `1` in R1; consumed and not retried
+
+R2 real-root scan invocation ceiling: `1` fresh invocation
+
+R1 fixture evidence reused: `53/53`; `91/91`; `144/144`
 
 ## 1. Mission
 
-Execute the final bounded Continuous Projection pilot without mutation: rerun
-the accepted T1/T2/T3 disposable-fixture suites, perform exactly one T1 scan
+Execute the final bounded Continuous Projection pilot without mutation: reuse
+the accepted R1 T1/T2/T3 disposable-fixture evidence, perform exactly one T1 scan
 over the real three-root state, generate one T2 review draft, measure the
 receipt's review value and suspected errors, and return evidence for Codex
 reviewer-owned audience assessment and closure.
@@ -120,7 +124,7 @@ Forbidden actions:
 - modifying scripts, policy, tests, source, session state, roadmap, baseline,
   work order, public-sync, or cvf-web.
 
-Risk ceiling: R1 read-only bounded scan with fail-closed stop.
+Risk ceiling: R2 read-only bounded scan with fail-closed stop.
 
 ## Scope / Target / Owner Boundary
 
@@ -136,14 +140,16 @@ commit are forbidden.
 
 ## ADIF Defect Registry Disclosure
 
-Resolver query: taskClass=`continuous projection T4 bounded pilot and closure`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
+Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`, maxResults=`100`
 
-Returned defects: NONE_RETURNED
+Returned defects: ADIF-0001; ADIF-0002; ADIF-0006; ADIF-0007; ADIF-0014; ADIF-0015; ADIF-0016; ADIF-0017; ADIF-0020; ADIF-0021; ADIF-0024; ADIF-0028; ADIF-0029; ADIF-0031; ADIF-0033; ADIF-0039; ADIF-0043
 
 ## 5. Required First Reads
 
 - paired T4 GC-018 baseline;
 - T3 completion review;
+- R1 blocked pilot ledger and worker return;
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0043.md`;
 - T1, T2, and T3 scripts plus their three focused test scripts;
 - `scripts/cvf_projection_policy.json`;
 - T1 synopsis and timeout branch for the local timeout diagnostic shape;
@@ -176,6 +182,8 @@ return `BLOCKED_WITH_REASON` without scanning.
 |---|---|---|---|---|---|
 | T4 dependency is released | `docs/reviews/CVF_CONTINUOUS_PROJECTION_T3_COMPLETION_REVIEW_2026-07-20.md` | Decision and Next Allowed Move | T4 packet authoring | T3 reviewer closure | ACCEPT |
 | T1 accepts four roots/policy inputs plus optional receipt path and timeout | `scripts/get_cvf_projection_drift_receipt.ps1` | parameter block and synopsis | ProvenanceRoot; PublicSyncRoot; CvfWebRoot; PolicyPath; ReceiptOutputPath; ScanTimeoutSeconds | script parameter interface | ACCEPT |
+| T1 emits receipt JSON to stdout when ReceiptOutputPath is omitted | `scripts/get_cvf_projection_drift_receipt.ps1` | ReceiptOutputPath parameter documentation and receipt output branch | ReceiptOutputPath | script output interface | ACCEPT |
+| T1 requires a supplied receipt path to be contained under process CWD and outside every read-only root | `scripts/get_cvf_projection_drift_receipt.ps1` | lines 612-619 containment branch | Assert-PathContainment; Test-PathContained | receipt output containment | ACCEPT |
 | T1 timeout maximum is 3600 seconds | `scripts/get_cvf_projection_drift_receipt.ps1` | ScanTimeoutSeconds parameter and timeout branch | ScanTimeoutSeconds | T1 child-process wrapper | ACCEPT |
 | T1 success schema is 1.0.0 with 16 rows and no-write confirmation | `scripts/get_cvf_projection_drift_receipt.ps1` | success receipt construction | schemaVersion; rows; noTargetWriteConfirmation | T1 receipt schema | ACCEPT |
 | T2 consumes ReceiptPath and emits stdout-only draft | `scripts/get_cvf_projection_review_packet.ps1` | synopsis and parameter block | ReceiptPath | T2 drafter interface | ACCEPT |
@@ -241,40 +249,39 @@ absent and only the ledger plus worker return may exist.
 Execute Phases A through D below in order. A failed phase blocks every later
 phase. Phase B has a one-invocation ceiling and no retry.
 
-### Phase A - Disposable Fixture Pilot
+### Phase A - Reuse R1 Disposable Fixture Pilot
 
-Run once each, in order:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test_cvf_projection_drift_receipt.ps1
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test_cvf_projection_review_packet.ps1
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test_cvf_projection_audience_gate.ps1
-```
-
-Record exact totals. Any failure blocks Phase B.
+Do not rerun the three fixture suites. Reuse the committed R1 blocked-return
+evidence because no T1/T2/T3 script or test source changed after that run:
+`53/53`, `91/91`, and `144/144`, all with zero failures. Verify with
+`git diff --name-only 5b929dad9..HEAD -- scripts/` that the range is empty.
+Any script-path delta blocks Phase B and returns `BLOCKED_WITH_REASON`.
 
 ### Phase B - Single Real-Root Receipt
 
-Create a unique temporary directory outside all three target roots. Do not
+Do not supply `-ReceiptOutputPath`; R1 proved that a `%TEMP%` value contradicts
+the script's process-CWD containment rule. Capture stdout in memory and do not
 create governed outputs before this command finishes. Invoke T1 exactly once:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/get_cvf_projection_drift_receipt.ps1 `
+$receiptJson = & powershell -NoProfile -ExecutionPolicy Bypass -File scripts/get_cvf_projection_drift_receipt.ps1 `
   -ProvenanceRoot (Resolve-Path .) `
   -PublicSyncRoot (Resolve-Path ..\Controlled-Vibe-Framework-CVF-public-sync) `
   -CvfWebRoot (Resolve-Path EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web) `
   -PolicyPath (Resolve-Path scripts\cvf_projection_policy.json) `
-  -ReceiptOutputPath <outside-root-temp-receipt-path> `
   -ScanTimeoutSeconds 3600
+$scanExitCode = $LASTEXITCODE
 ```
 
-Do not rerun. Classify any failure with stage, class, retryability, user
-action, elapsed time, exit code, diagnostic code, and safe message.
+Do not rerun. A nonzero `$scanExitCode` blocks Phase C. Classify any failure
+with stage, class, retryability, user action, elapsed time, exit code,
+diagnostic code, and safe message. On success, parse `$receiptJson` in memory
+before any write and require schema `1.0.0`, 16 rows, and empty errors.
 
 ### Phase C - Persist And Draft
 
-Only after success, write the exact receipt bytes to the first Allowed JSON
-path. Run T2 once against that path and persist stdout exactly to the second
+Only after success, join the captured stdout lines with the platform newline
+and write UTF-8 without BOM to the first Allowed JSON path. Run T2 once against that path and persist stdout exactly to the second
 Allowed JSON path. Validate JSON parsing, identity linkage, 16 rows,
 reconciliation, empty errors, and all no-authority fields.
 
@@ -305,7 +312,7 @@ facts from section 9. Narrative confidence is not a substitute.
 
 ## Acceptance Criteria
 
-- Fixture suites pass before Phase B.
+- Committed R1 fixture totals are reused only if `5b929dad9..HEAD` contains no script-path delta.
 - Real-root T1 invocation count equals one.
 - Receipt and draft satisfy accepted schemas and identities.
 - All 16 rows receive a bounded worker cross-check without semantic verdict.
@@ -360,7 +367,7 @@ Changed Files, Command Evidence, and No-Commit Statement.
 |---|---|
 | intake summary | final read-only fixture and real-root evidence pilot |
 | scope classification | local bounded execution evidence |
-| risk sensitivity | R1; one scan; fail closed; zero external services |
+| risk sensitivity | R2; one fresh scan; fail closed; zero external services |
 | escalation condition | any stop condition or need outside Allowed scope |
 | selected role route | no-commit worker -> independent reviewer/closer |
 | mode | `MULTI_AGENT_MULTI_ROLE` |
@@ -428,20 +435,20 @@ Also include Changed Files, Command Evidence, and No-Commit Statement.
 |---|---|
 | Actor | Codex reviewer and redispatch author |
 | Provider or surface | local private provenance workspace |
-| Session or invocation | T4 R1 blocked-return review and packet repair, 2026-07-21 |
+| Session or invocation | T4 R2 PATH_ESCAPE review and packet repair, 2026-07-21 |
 | Working directory | repository root |
 | Command or tool surface | governed reads; apply_patch; local Python checkers and gates; Git status |
-| Target paths | T4 work order, roadmap, blocked pilot ledger, and blocked worker return |
-| Allowed scope source | operator instruction plus accepted T4 blocked return at `a6de5976c` |
-| Before status evidence | clean worktree at HEAD `a6de5976c` before the worker authored its two blocked-return outputs |
-| After status evidence | exactly four R1 reviewer-repair paths pending before commit |
+| Target paths | T4 work order, roadmap, R1 pilot ledger, R1 worker return, ADIF-0043, and ADIF entries README |
+| Allowed scope source | operator instruction plus accepted T4 R1 blocked return at `5b929dad9` |
+| Before status evidence | clean worktree at HEAD `5b929dad9` before the worker updated its two blocked-return outputs |
+| After status evidence | exactly six R2 reviewer-repair and learning paths pending before commit |
 | Diff evidence | `git status --short` and exact staged manifest before commit |
-| Approval boundary | accept blocked return, repair packet, and prepare manual copy/paste redispatch only |
-| Claim boundary | pre-flight block only; zero real-root scans and no provider, CLI/MCP, mutation, or public claim |
+| Approval boundary | accept R1 blocked return, repair packet, record reusable learning, and prepare manual copy/paste R2 redispatch only |
+| Claim boundary | one failed R1 path precheck invocation; no successful scan, provider, CLI/MCP, target mutation, or public claim |
 | Agent type | reviewer and dispatcher |
-| Invocation ID | `cvf-continuous-projection-t4-r1-redispatch-2026-07-21` |
-| Expected manifest | T4 work order, roadmap, blocked pilot ledger, and blocked worker return |
-| Actual changed set | same four R1 reviewer-repair paths |
+| Invocation ID | `cvf-continuous-projection-t4-r2-redispatch-2026-07-21` |
+| Expected manifest | T4 work order, roadmap, R1 pilot ledger, R1 worker return, ADIF-0043, and ADIF entries README |
+| Actual changed set | same six R2 reviewer-repair and learning paths |
 | Manifest delta | MATCH |
 
 ## Delta Execution Claim Boundary Control Block
@@ -478,7 +485,7 @@ committed work order to the worker.
 ## Closure Checklist
 
 - [ ] Exact execution base and clean roots verified.
-- [ ] Three fixture suites pass before the scan.
+- [ ] R1 fixture totals are reused only after an empty script-path delta check.
 - [ ] Exactly one real-root scan completes or blocks with diagnostic.
 - [ ] Receipt and draft integrity are proven.
 - [ ] Row-level metrics are recorded without semantic overclaim.

@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T4_REDISPATCH_READY_R1_MANUAL_COPY_PASTE_ONLY
+Status: T4_REDISPATCH_READY_R2_MANUAL_COPY_PASTE_ONLY
 
 Date: 2026-07-19
 
@@ -160,6 +160,14 @@ pre-implementation helper. The worker correctly stopped; real-root scan count
 remains zero. Reviewer repair adds the exact literals and releases manual R1
 redispatch without changing the one-scan ceiling or any CLI/MCP prohibition.
 
+R1 passed pre-implementation and all three fixture suites (`53/53`, `91/91`,
+`144/144`) but consumed its single invocation on `PATH_ESCAPE` before the
+read-only scan because the prescribed `%TEMP%` receipt path was outside the
+script's process CWD. The reviewer accepted the stop, recorded ADIF-0043,
+repaired R2 to omit `-ReceiptOutputPath` and use documented stdout-only output,
+reused the unchanged-source fixture proof, and released one fresh no-retry
+scan. All CLI/MCP/provider/browser/network prohibitions remain unchanged.
+
 ## Acceptance Criteria
 
 - [x] Roadmap authority and recovery reason are explicit.
@@ -237,7 +245,7 @@ Provider/model and CLI/MCP roadmap implementation remains parked.
 |---|---|---|---|
 | Work order status | T4 work order | `Status: DISPATCH_READY` | PASS |
 | Completion or reviewer artifact | T3 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS`; T4 completion pending | PASS |
-| Roadmap state | this roadmap | `Status: T4_REDISPATCH_READY_R1_MANUAL_COPY_PASTE_ONLY` | PASS |
+| Roadmap state | this roadmap | `Status: T4_REDISPATCH_READY_R2_MANUAL_COPY_PASTE_ONLY` | PASS |
 | Implementation evidence | T4 paired baseline/work order | execution pending; no scan result claimed | N/A with reason |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check remains clean; no entry change required | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing human registry remains unchanged; T1 adds no corpus record | PASS |
