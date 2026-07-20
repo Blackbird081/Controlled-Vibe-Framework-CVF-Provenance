@@ -2,17 +2,18 @@
   "stateOrder": 2020,
   "stateKey": "continuousProjectionT4Dispatch20260720",
   "value": {
-    "status": "REDISPATCH_READY_R2_WAITING_MANUAL_NO_COMMIT_WORKER_RETURN",
+    "status": "REDISPATCH_READY_R3_WAITING_MANUAL_NO_COMMIT_WORKER_RETURN",
     "date": "2026-07-21",
-    "materialCommit": "539bf01cc",
+    "materialCommit": "8468102c5",
     "priorDispatchCommit": "248d799f3",
-    "priorBlockedExecutionBaseHead": "5b929dad9",
+    "priorBlockedExecutionBaseHead": "7dbdf3488",
     "priorBlockedDisposition": "ACCEPTED_BLOCKED_RETURN",
     "priorRealRootScanInvocationCount": 1,
-    "priorBlockedDiagnosticCode": "PATH_ESCAPE",
+    "priorBlockedDiagnosticCode": "OUTER_HARNESS_TIMEOUT_BEFORE_CHILD_TIMEOUT",
     "r1FixtureEvidence": "53/53; 91/91; 144/144",
-    "r2ReceiptMode": "STDOUT_ONLY_NO_RECEIPT_OUTPUT_PATH",
-    "revision": "R2",
+    "r2ReceiptMode": "STDOUT_ONLY_NO_RECEIPT_OUTPUT_PATH_INTERRUPTED_BY_PARENT_HARNESS",
+    "r3ExecutionEnvelope": "ONE_HIDDEN_LOCAL_PROCESS_ONE_PERSISTED_PID_SHORT_MANUAL_POLLS_NO_RELAUNCH",
+    "revision": "R3",
     "dependencyCommit": "e21199dfa",
     "baseline": "docs/baselines/CVF_GC018_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_AND_CLOSURE_2026-07-20.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_AND_CLOSURE_2026-07-20.md",
@@ -21,6 +22,6 @@
     "realRootScanCeiling": 1,
     "allowedOutputCount": 4,
     "cliMcpProviderCallCeiling": 0,
-    "claimBoundary": "No agent CLI/MCP, provider/API/account use, retry, browser, network service, mutation, public-sync, worker commit, push, deployment, production, or unattended execution."
+    "claimBoundary": "No agent CLI/MCP, provider/API/account use, retry or relaunch, browser, network service, mutation, public-sync, worker commit, push, deployment, production, or unattended execution. R3 permits only one continuously supervised hidden local process and short manual polls of its persisted PID."
   }
 }

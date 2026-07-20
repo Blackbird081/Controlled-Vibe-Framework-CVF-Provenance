@@ -30,10 +30,10 @@ lanes remain parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t4_r2_waiting_manual_no_commit_worker_return`;
+current mode=`continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=operator manual copy/paste of the repaired T4 R2 work order
-at `539bf01cc` with the post-sync HEAD, then wait for four no-commit outputs or
+next allowed move=operator manual copy/paste of the repaired T4 R3 work order
+at `8468102c5` with the post-sync HEAD, then wait for four no-commit outputs or
 a blocked return;
 parked checkpoint=all agent CLI/MCP/provider/browser/network use, all other roadmap execution, automated
 agent/provider/MCP-live/API-key/subscription calls, browser/live proof,
@@ -65,14 +65,15 @@ batch advances session routing only to T4 packet authoring.
 
 ## Current Mode
 
-`continuous_projection_t4_r2_waiting_manual_no_commit_worker_return`
+`continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`
 
 ## Next Allowed Move
 
-Operator manually copy/pastes the repaired T4 R2 work order at `539bf01cc`
+Operator manually copy/pastes the repaired T4 R3 work order at `8468102c5`
 with the post-sync HEAD, then waits for four unstaged outputs or
-`BLOCKED_WITH_REASON`. R1 consumed one PATH_ESCAPE invocation without retry;
-R2 uses stdout-only receipt capture and one fresh no-retry scan ceiling.
+`BLOCKED_WITH_REASON`. R2 consumed one scan when the outer harness terminated
+before the child timeout; R3 uses one hidden local process, one persisted PID,
+short manual polls, and no relaunch.
 Do not invoke Codex/Claude or
 another agent by CLI, use MCP, call a provider, use an API key/account
 subscription, run browser/network proof, public-sync, push, deploy, act in
@@ -819,5 +820,51 @@ Protected paths:
 ## GC-020 Marker - Continuous Projection T4 R2 Redispatch Sync
 
 This handoff records material parent commit `539bf01cc`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## Continuous Projection T4 R3 Supervised-Process Redispatch
+
+- Material redispatch commit: `8468102c5`.
+- Prior blocked executionBaseHead: `7dbdf3488`.
+- Prior disposition: `ACCEPTED_BLOCKED_RETURN`.
+- R2 evidence: pre-implementation PASS; unchanged fixture proof reused; one
+  stdout-only invocation terminated by the outer worker harness near 180
+  seconds before the script's 3600-second ceiling; no output, retry, orphaned
+  process, or root mutation.
+- R3 repair: exactly one hidden local process, one persisted PID, stdout/stderr
+  paths outside all target roots, and short manual polls under continuous
+  same-worker supervision. Relaunch and replacement PID are forbidden.
+- Learning: ADIF-0044 records the parent-ceiling versus child-timeout defect.
+- Validation: automation assist clean; pre-dispatch PASS; worker-return fast
+  including reviewer-fast 62/62; file-size compliant; pre-commit 83/83.
+- Mode: `continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`.
+- R3 is the final bounded recovery attempt; a further execution-envelope
+  failure returns for bounded closure rather than R4.
+- Handoff remains operator manual copy/paste only.
+- Hard prohibition remains unchanged: no Codex/Claude/agent CLI, MCP,
+  provider/API/account use, browser, network service, public-sync mutation,
+  retry/relaunch, worker commit, push, deployment, production, scheduled job,
+  or unattended action.
+
+## Core Guard Self-Protection Authorization - T4 R3 Redispatch Sync
+
+Authorized scope: record material commit `8468102c5`, accepted R2 blocked
+return, one consumed outer-harness-timeout invocation, supervised-process R3
+repair, exact next move, and the operator's zero-CLI/MCP/provider boundary.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT4Dispatch20260720.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION_MEMORY.md`;
+- `AGENT_HANDOFF_V49_2026-07-20.md`.
+
+## GC-020 Marker - Continuous Projection T4 R3 Redispatch Sync
+
+This handoff records material parent commit `8468102c5`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.
