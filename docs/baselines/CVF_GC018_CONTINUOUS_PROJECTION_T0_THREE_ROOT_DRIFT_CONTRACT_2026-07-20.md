@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-CONTINUOUS-PROJECTION-T0
 
@@ -83,6 +83,33 @@ Query: `python governance/compat/run_adif_defect_resolver.py --task-class "conti
 | literalTokensReviewed | Status; Dependency Release Evidence; Source Verification Block; ADIF Defect Registry Disclosure; Public Export Disposition; Claim Boundary |
 | gateRunPurpose | validate T0 baseline dispatch shape and evidence |
 | claimBoundary | checker compliance confirms packet structure only |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired T0 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T0 completion review | reviewer-accepted bounded with repairs | PASS |
+| Roadmap state | continuous-projection roadmap | T0 closed bounded; T1 packet authoring next | PASS |
+| Registry JSON | N/A with reason: no registry state changed | no mutation | N/A with reason |
+| Registry Markdown | N/A with reason: no registry state changed | no mutation | N/A with reason |
+| External evidence digest | N/A with reason: repository-local roots only | no imported bundle | N/A with reason |
+| System loop interlock | N/A with reason: no interlock owner changed | no mutation | N/A with reason |
+| Session continuity | protected continuity surfaces | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| T0-REAL-ROOT-RECEIPT | T0 ledger evidence-gap section | N/A with reason: no receipt JSON was emitted | no real-root freshness receipt accepted in T0 | no receipt produced | PASS |
+
+## Current Runtime Freshness Verification
+
+This documentation-only baseline makes no runtime implementation claim. Current
+mapper and policy source were re-read at closure, and the reviewer recorded the
+incomplete real-root invocation as no accepted receipt rather than runtime
+success or failure. Commands: `rg -n "Get-AllowGroupMatch|Get-CandidateRow|Get-PolicyParityReport" scripts/get_cvf_projection_map.ps1` and direct
+`Get-Content` of `scripts/cvf_projection_policy.json`. Disposition: PASS.
 
 ## Public Export Disposition
 

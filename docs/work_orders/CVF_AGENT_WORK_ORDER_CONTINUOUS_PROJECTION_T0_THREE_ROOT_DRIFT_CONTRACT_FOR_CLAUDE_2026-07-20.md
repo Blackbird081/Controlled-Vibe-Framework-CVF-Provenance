@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-CONTINUOUS-PROJECTION-T0
 
@@ -36,7 +36,7 @@ policy, focused tests, prior T2 closure, and cited checkers. Run the mandatory
 pre-implementation autorun gate before either output is written.
 
 Return contract: leave exactly two outputs uncommitted and return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+`ACCEPTED_BY_REVIEWER_WITH_REPAIRS` after independent closure recomputation.
 
 ## Purpose
 
@@ -235,11 +235,11 @@ implementation packet may be authored.
 
 ## Closure Checklist
 
-- [ ] Exactly two worker outputs exist.
-- [ ] Every contract row is terminal and reconciled.
-- [ ] Root identity and no-mutation evidence are command-backed.
-- [ ] Worker-fast and file-size pass.
-- [ ] Nothing is staged or committed by the worker.
+- [x] Exactly two worker outputs exist.
+- [x] Every contract row is terminal and reconciled after reviewer repair.
+- [x] Root identity and no-mutation evidence are command-backed.
+- [x] Worker-fast and file-size pass.
+- [x] Nothing was staged or committed by the worker.
 
 ## Agent Handoff Contract Control Block
 
@@ -327,6 +327,34 @@ git diff --name-status
 git diff --cached --name-status
 git status --short
 ```
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T0 completion review | reviewer-accepted bounded with repairs | PASS |
+| Roadmap state | continuous-projection roadmap | T0 closed bounded; T1 packet authoring next | PASS |
+| Registry JSON | existing GC-051 aggregate | generator drift check passed; no source entry change required | PASS |
+| Registry Markdown | existing GC-051 front door | reviewer-fast corpus coverage check passed; no entry change required | PASS |
+| External evidence digest | N/A with reason: repository-local roots only | no imported bundle | N/A with reason |
+| System loop interlock | N/A with reason: no interlock owner changed | no mutation | N/A with reason |
+| Session continuity | protected continuity surfaces | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| T0-REAL-ROOT-RECEIPT | T0 ledger evidence-gap section | N/A with reason: no receipt JSON was emitted | no real-root freshness receipt accepted in T0 | no receipt produced | PASS |
+
+## Current Runtime Freshness Verification
+
+Current mapper source, policy source, mapped-file pairs, public-sync tracked
+state, ignored residue, and cvf-web SOT3 identifiers were recomputed during
+closure. Commands include `rg -n "Get-AllowGroupMatch|Get-CandidateRow|Get-PolicyParityReport" scripts/get_cvf_projection_map.ps1`, direct policy
+read, `git ls-files`, `git check-ignore -v`, `Get-FileHash -Algorithm SHA256`,
+and direct package/registry searches. No runtime implementation or completed
+real-root receipt is claimed. Disposition: PASS_BOUNDED.
 
 ## Agent Operation Trace Block
 

@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_DISPATCH_READY
+Status: T0_CLOSED_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT
 
 Date: 2026-07-19
 
@@ -92,6 +92,12 @@ Reconcile provenance, public-sync, and cvf-web roots. Define semantic owner,
 projection target, evidence class, audience, and drift disposition for every
 mapped surface. Pin the repair commits above and record secret-free hashes.
 
+Disposition: `CLOSED_PASS_BOUNDED`. Independent review corrected tracked
+public content versus ignored local residue, reduced every terminal row to the
+seven-token contract vocabulary, confirmed all three mapped-file pairs by
+SHA-256, and identified six target-only allowed root files whose semantic
+source remains blocked. T1 packet authoring is released; implementation is not.
+
 ### T1 - Read-Only Drift Receipt
 
 Extend the accepted mapper with deterministic receipts for changed owner,
@@ -139,8 +145,10 @@ packet usefulness. Close only if no automatic semantic mutation occurred.
 The CVF Web UX remediation roadmap reached reviewer-accepted bounded closure at
 `d757fe5ac` with localhost current-source browser evidence for task-first
 navigation, audience separation, language clarity, and responsive behavior.
-The release condition is satisfied. T0 now has a fresh GC-018 baseline and
-source-verified no-commit work order; T1-T4 remain dependency-held.
+The release condition is satisfied. T0 is closed bounded through its fresh
+GC-018, source-verified no-commit work order, corrected ledger, worker return,
+and independent completion review. T1 packet authoring is next; T1
+implementation and T2-T4 remain dependency-held.
 
 ## Learning Carried Forward
 
@@ -174,16 +182,43 @@ source-verified no-commit work order; T1-T4 remain dependency-held.
 | Disposition | NOT_APPLICABLE_WITH_REASON |
 | Claim boundary | the external-agent audience is a product consumer class, not an external authority source |
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | T0 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T0 completion review | reviewer-accepted bounded with repairs | PASS |
+| Roadmap state | this roadmap | `Status: T0_CLOSED_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | N/A with reason: no registry state changed | no mutation | N/A with reason |
+| Registry Markdown | N/A with reason: no registry state changed | no mutation | N/A with reason |
+| External evidence digest | N/A with reason: repository-local roots only | no imported bundle | N/A with reason |
+| System loop interlock | N/A with reason: no interlock owner changed | no mutation | N/A with reason |
+| Session continuity | protected continuity surfaces | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| T0-REAL-ROOT-RECEIPT | T0 ledger evidence-gap section | N/A with reason: no receipt JSON was emitted | no real-root freshness receipt accepted in T0 | no receipt produced | PASS |
+
+## Current Runtime Freshness Verification
+
+T0 closure re-read the current mapper and policy sources, recomputed mapped
+file hashes, and inspected current public-sync tracked and ignored state. The
+real-root recursive invocation did not produce a receipt, so this roadmap does
+not claim tree-scale freshness or runtime completion. T1 implementation remains
+unreleased. Disposition: PASS_BOUNDED.
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: roadmap execution is parked behind CVF Web UX remediation. A later
-reviewed public projection may export only public-safe artifacts through the
-sibling public-sync repository.
+Reason: T0 closure is private provenance evidence. A later reviewed public
+projection may export only public-safe artifacts through the sibling
+public-sync repository.
 
 ## Claim Boundary
 
-This roadmap restores and governs future planning only. It does not authorize
-implementation, real-root apply, semantic edits, commit, push, deployment,
-provider/live use, or unattended mutation.
+This roadmap closes T0 bounded and releases T1 packet authoring only. It does
+not authorize implementation, real-root apply, semantic edits, push,
+deployment, provider/live use, public-sync mutation, or unattended mutation.
