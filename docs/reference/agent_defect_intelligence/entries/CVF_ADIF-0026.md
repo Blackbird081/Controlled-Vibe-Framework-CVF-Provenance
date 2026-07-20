@@ -17,9 +17,9 @@ roles: reviewer; closer
 lifecyclePhases: pre-closure
 surfaceSelectors: documentation contracts, schemas, authority chains, receipts, hash profiles, worker returns, completion reviews
 detectionSignals: predictable downstream findings are discovered one repair round at a time; repeated worker turns consume quota and time without a new source event or independent root cause
-enforcementLevel: GUIDANCE_ONLY
-checkerBindings: NOT_APPLICABLE_WITH_REASON: semantic dependency closure and incremental value require reviewer judgment
-promotionState: RULE_EXISTS
+enforcementLevel: PARTIAL_CHECK
+checkerBindings: governance/compat/check_review_cost_control.py
+promotionState: CHECKER_EXISTS
 supersedes: NONE
 lastVerifiedCommit: 8e318cc92
 roadmapSeedId: NONE
@@ -87,6 +87,19 @@ Mandatory stop control:
 5. Stop control never waives a critical defect; it changes the route to one
    consolidated repair, blocked review, or operator checkpoint.
 
+Single-pass latency control added after Continuous Projection T1:
+
+1. Finish semantic inspection and the contract/schema/path/authority/test/
+   range/commit-plan matrix before the first material commit.
+2. For bounded local reviews with no long-running or external dependency, use
+   10 elapsed minutes as the fast-path target and disclose any overrun.
+3. Default to one material commit and at most one continuity commit.
+4. Classify sequential finding, premature commit, range recomputation, gate
+   discovery, and worktree churn as avoidable delay rather than normal review
+   cost.
+5. The checker enforces declaration shape and controlled vocabulary; semantic
+   audit completeness and fast-path eligibility remain reviewer judgment.
+
 ## Epistemic Process Block
 
 ### Expected Result / Prediction
@@ -101,11 +114,14 @@ graph.
 ### Contradiction Or Gap Disposition
 
 The findings were valid; late sequential discovery was the process defect.
+Continuous Projection T1 added evidence that premature commits, range
+recomputation, and worktree churn can compound the same latency pattern.
 
 ### Claim Update
 
-First-return completeness, cost telemetry, and round-three escalation are now
-shared reviewer obligations.
+First-return completeness, cost telemetry, single-pass audit evidence, commit
+budget, latency disposition, and round-three escalation are now shared
+reviewer obligations.
 
 ## Agent Operation Trace Block
 
@@ -113,20 +129,20 @@ shared reviewer obligations.
 |---|---|
 | Actor | reviewer/closer |
 | Provider or surface | local private provenance workspace |
-| Session or invocation | SOT3-T2 reviewer-cost learning, 2026-07-12 |
+| Session or invocation | shared single-pass review latency SOP hardening, 2026-07-20 |
 | Working directory | repository root |
-| Command or tool surface | governed reads, rg, apply_patch, ADIF integrity and resolver checks |
-| Target paths | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `docs/reference/guard_orientation/README.md` |
-| Allowed scope source | operator instruction to make review-cost control mandatory |
-| Before status evidence | SOT3-T2 repeated repairs had no general cost telemetry or stop threshold |
-| After status evidence | ADIF-0026 records matrix, telemetry, and stop thresholds |
-| Diff evidence | new entry and bounded guidance changes; `git diff --name-status` before commit |
-| Approval boundary | reviewer guidance only; no checker, runtime, public-sync, or T2 acceptance |
-| Claim boundary | agent-enforced guidance; no machine-proof claim |
+| Command or tool surface | governed reads, rg, apply_patch, focused unit tests, review-cost and ADIF checks |
+| Target paths | review-cost standard/checker/tests; this ADIF entry; guard orientation; commit steward standard; completion review |
+| Allowed scope source | operator instruction to make the latency repair the common CVF SOP for all future agents |
+| Before status evidence | cost telemetry existed, but pre-repair audit, latency target, avoidable-delay class, and commit budget were not required |
+| After status evidence | ADIF-0026 and the review-cost checker require provider-neutral single-pass audit, latency, delay, and commit-plan evidence shapes |
+| Diff evidence | exact seven-path `git diff --name-status` before material commit |
+| Approval boundary | review workflow governance only; no Continuous Projection T2, runtime, public-sync, or provider/live authorization |
+| Claim boundary | machine-checks evidence shape only; semantic audit completeness and fast-path eligibility remain reviewer judgment |
 | Agent type | reviewer/closer |
-| Invocation ID | `sot3-review-cost-adif-2026-07-12` |
-| Expected manifest | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `docs/reference/guard_orientation/README.md` |
-| Actual changed set | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `docs/reference/guard_orientation/README.md` |
+| Invocation ID | `cvf-single-pass-review-latency-sop-2026-07-20` |
+| Expected manifest | seven SOP owner, checker, test, orientation, ADIF, commit-steward, and completion-review paths |
+| Actual changed set | same seven paths |
 | Manifest delta | MATCH |
 
 ## Public Export Disposition
