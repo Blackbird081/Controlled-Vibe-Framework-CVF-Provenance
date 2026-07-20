@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T3_CLOSED_PASS_WITH_REVIEWER_REPAIRS_T4_PACKET_AUTHORING_AUTHORIZED
+Status: T4_DISPATCH_READY_MANUAL_COPY_PASTE_ONLY
 
 Date: 2026-07-19
 
@@ -147,6 +147,13 @@ Run on a disposable three-root fixture, then one reviewer-authorized real-root
 read-only scan. Measure false positives, missed drift, reviewer effort, and
 packet usefulness. Close only if no automatic semantic mutation occurred.
 
+Disposition: `DISPATCH_READY_MANUAL_COPY_PASTE_ONLY`. The fresh GC-018 and
+source-verified work order authorize three existing fixture suites and exactly
+one real-root read-only receipt scan. The worker cannot create reviewer-owned
+audience evidence or run the real-root T3 gate. Automated agent CLI/MCP,
+provider/API, retry, browser, mutation, public-sync, commit, push, deployment,
+and unattended execution remain forbidden.
+
 ## Acceptance Criteria
 
 - [x] Roadmap authority and recovery reason are explicit.
@@ -222,10 +229,10 @@ Provider/model and CLI/MCP roadmap implementation remains parked.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | T3 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
-| Completion or reviewer artifact | T3 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
-| Roadmap state | this roadmap | `Status: T3_CLOSED_PASS_WITH_REVIEWER_REPAIRS_T4_PACKET_AUTHORING_AUTHORIZED` | PASS |
-| Implementation evidence | T3 scripts and worker return | 144/144 fixture proof after reviewer repair | PASS |
+| Work order status | T4 work order | `Status: DISPATCH_READY` | PASS |
+| Completion or reviewer artifact | T3 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS`; T4 completion pending | PASS |
+| Roadmap state | this roadmap | `Status: T4_DISPATCH_READY_MANUAL_COPY_PASTE_ONLY` | PASS |
+| Implementation evidence | T4 paired baseline/work order | execution pending; no scan result claimed | N/A with reason |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check remains clean; no entry change required | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing human registry remains unchanged; T1 adds no corpus record | PASS |
 | External evidence digest | N/A with reason: repository-local roots only | no imported bundle | N/A with reason |
@@ -247,8 +254,8 @@ Provider/model and CLI/MCP roadmap implementation remains parked.
 
 T3 closure re-read the complete receipt-to-draft-to-audience chain and
 independently reran 144/144 disposable-fixture assertions after repair. The
-T4-owned real-root recursive invocation was not run, so this roadmap does not
-claim tree-scale freshness or runtime completion. T4 packet authoring is next.
+T4 real-root invocation has not run, so this roadmap does not claim tree-scale
+freshness or runtime completion. T4 manual copy/paste dispatch is next.
 Disposition: PASS_BOUNDED.
 
 ## Public Export Disposition
@@ -261,8 +268,8 @@ public-sync repository.
 
 ## Claim Boundary
 
-This roadmap closes T3 with reviewer repairs and releases only T4 packet
-authoring after committed dependency evidence. It does not authorize T4
-execution, real-root apply, semantic edits, push, deployment,
-browser/provider/live use, public-sync mutation, CLI/MCP invocation, or
-unattended mutation.
+This roadmap closes T3 with reviewer repairs and releases only the bounded T4
+manual copy/paste no-commit worker packet. It authorizes exactly one read-only
+real-root receipt scan but no real-root apply, semantic edit, push, deployment,
+browser/provider use, public-sync mutation, CLI/MCP invocation, retry, or
+unattended action.
