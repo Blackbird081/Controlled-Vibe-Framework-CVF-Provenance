@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`operator_provider_model_t0_no_commit_worker_dispatched`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=Claude executes exactly three T0 documentation/source-inspection outputs under WORKER_MUST_NOT_COMMIT and returns for Codex review; parked checkpoint=T1-T5, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push/deployment, production, and unattended action.
+Startup acknowledged: current mode=`operator_provider_model_t0_r1_waiting_subscription_reset`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=after reset, one fresh bounded T0 R1 no-commit Claude worker session with hard caller caps; parked checkpoint=T1-T5, credentials, provider calls, fallback, live proof, Continuous Projection T3-T4, public-sync, push/deployment, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `operator_provider_model_t0_no_commit_worker_dispatched`
+Current mode marker: `operator_provider_model_t0_r1_waiting_subscription_reset`
 
-Current mode: `operator_provider_model_t0_no_commit_worker_dispatched`
+Current mode: `operator_provider_model_t0_r1_waiting_subscription_reset`
 
-`operator_provider_model_t0_no_commit_worker_dispatched`
+`operator_provider_model_t0_r1_waiting_subscription_reset`
 
 Previous mode:
 
-`operator_provider_model_t0_packet_authoring_claude`
+`operator_provider_model_t0_no_commit_worker_dispatched`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -334,11 +334,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `operator_provider_model_t0_no_commit_worker_dispatched`
+Mode: `operator_provider_model_t0_r1_waiting_subscription_reset`
 
-Claude executes exactly the three T0 documentation/source-inspection outputs
-under `WORKER_MUST_NOT_COMMIT` and returns `COMPLETE_PENDING_REVIEW`. Codex owns
-review, repair, material commit, closure, and tranche reporting.
+After the Claude subscription session resets, start one fresh T0 R1 no-commit
+worker session under the committed bounded-invocation profile. Do not resume
+either enlarged T0 session. Codex owns review, repair, material commit,
+closure, and tranche reporting.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

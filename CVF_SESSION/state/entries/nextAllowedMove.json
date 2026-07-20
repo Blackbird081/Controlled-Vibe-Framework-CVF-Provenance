@@ -1,5 +1,5 @@
 {
   "stateOrder": 2002,
   "stateKey": "nextAllowedMove",
-  "value": "Claude executes exactly the three-output CVF-OPM-AIR T0 documentation/source-inspection work order under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW. It measures only exact pre-existing session basenames, never prompt/response/credential content, and records reviewer findings and learning candidates. Codex owns review, repair, material commit, closure, and reporting. T1-T5, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "After the Claude subscription session resets, start one fresh T0 R1 no-commit worker session under the committed Interim Bounded Invocation Profile at 4f3968cd5. Do not resume the enlarged packet-author or failed-worker sessions. Enforce safe mode, the four-tool allowlist, 10-minute/24-response/3000000-cache-read/40000-output ceilings, complete process-tree termination, and no retry or fallback. Codex owns review, repair, material commit, closure, and reporting. T1-T5, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

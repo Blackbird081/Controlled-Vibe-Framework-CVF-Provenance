@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "operator_provider_model_t0_no_commit_worker_dispatched",
-  "previousMode": "operator_provider_model_t0_packet_authoring_claude",
+  "currentMode": "operator_provider_model_t0_r1_waiting_subscription_reset",
+  "previousMode": "operator_provider_model_t0_no_commit_worker_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13672,7 +13672,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Claude executes exactly the three-output CVF-OPM-AIR T0 documentation/source-inspection work order under WORKER_MUST_NOT_COMMIT and returns COMPLETE_PENDING_REVIEW. It measures only exact pre-existing session basenames, never prompt/response/credential content, and records reviewer findings and learning candidates. Codex owns review, repair, material commit, closure, and reporting. T1-T5, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "After the Claude subscription session resets, start one fresh T0 R1 no-commit worker session under the committed Interim Bounded Invocation Profile at 4f3968cd5. Do not resume the enlarged packet-author or failed-worker sessions. Enforce safe mode, the four-tool allowlist, 10-minute/24-response/3000000-cache-read/40000-output ceilings, complete process-tree termination, and no retry or fallback. Codex owns review, repair, material commit, closure, and reporting. T1-T5, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13829,5 +13829,17 @@
     "packetGates": "dispatch-fast 5/5 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
     "nextAllowedMove": "Claude executes exactly three outputs and returns no-commit for Codex review.",
     "parked": "T1-T5, credentials, provider calls, live proof, public-sync, push, deployment, and production action."
+  },
+  "operatorProviderModelT0InvocationCostIncident20260720": {
+    "status": "T0_R1_BOUNDED_WORKER_REDISPATCH_REQUIRED",
+    "materialCommit": "4f3968cd5",
+    "failedWorkerSession": "62571339-7d3f-4865-9141-7e59dd67776b.jsonl",
+    "diagnostic": "SUBSCRIPTION_SESSION_LIMIT",
+    "failedAttemptUsage": "11 responses; 20 input; 196127 cache-create; 1154709 cache-read; 5622 output; 87.5 seconds",
+    "packetAuthorUsage": "147 responses; 47856327 cache-read; 131666 output; 73 Bash; 57 Read; 21 Edit",
+    "operatorUiSnapshot": "current session 100 percent; weekly all-models 45 percent; usage credits off; USD 0.00 spent",
+    "interimCaps": "new safe-mode session; Read/Write/Edit/Bash only; 10 minutes; 24 responses; 3000000 cache-read; 40000 output; one gate and one repair pass",
+    "nextAllowedMove": "After subscription reset, one fresh bounded T0 R1 worker attempt only; no resume, retry, or fallback.",
+    "parked": "T1-T5, credentials, provider calls, live proof, public-sync, push, deployment, production, and unattended mutation."
   }
 }

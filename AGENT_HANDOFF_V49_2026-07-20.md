@@ -31,9 +31,9 @@ mutation, public, provider-call, and production lanes are parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`operator_provider_model_t0_no_commit_worker_dispatched`;
+current mode=`operator_provider_model_t0_r1_waiting_subscription_reset`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=Claude executes exactly three T0 documentation/source-inspection outputs under WORKER_MUST_NOT_COMMIT;
+next allowed move=after reset, one fresh bounded T0 R1 no-commit Claude worker session under hard caller caps;
 parked checkpoint=T1-T5, credentials,
 provider calls, T3-T4, real-root receipt scan, apply/copy, public-sync mutation,
 push/deployment, production, and unattended action.
@@ -64,13 +64,15 @@ provider-neutral roadmap-authoring checkpoint only.
 
 ## Current Mode
 
-`operator_provider_model_t0_no_commit_worker_dispatched`
+`operator_provider_model_t0_r1_waiting_subscription_reset`
 
 ## Next Allowed Move
 
-Claude executes exactly the three T0 documentation/source-inspection outputs
-and returns no-commit. Codex owns review, repair, material commit, closure, and
-reporting. Do not start T1-T5, use credentials, or call a provider.
+After the Claude subscription session resets, start one fresh T0 R1 worker
+session under the committed bounded-invocation profile. Do not resume either
+enlarged T0 session. Codex owns review, repair, material commit, closure, and
+reporting. Do not start T1-T5, use credentials, call a provider, retry, or
+fallback.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -459,5 +461,50 @@ revert dispatch material commit `d3ec1e79b` through session sync.
 ## GC-020 Marker - CVF-OPM-AIR T0 Dispatch Session Sync
 
 This handoff records material parent commit `d3ec1e79b`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## CVF-OPM-AIR T0 Invocation-Cost Incident And R1 Control
+
+- Material control commit: `4f3968cd5`.
+- Failed worker session: `62571339-7d3f-4865-9141-7e59dd67776b.jsonl`.
+- Diagnostic: `SUBSCRIPTION_SESSION_LIMIT`; no artifact, stage, commit, retry,
+  or fallback resulted.
+- Failed-attempt usage: 11 unique responses, 1154709 cache-read tokens, 5622
+  output tokens, and 87.5 seconds.
+- Dominant preceding packet-author usage: 147 unique responses, 47856327
+  cache-read tokens, 131666 output tokens, 73 Bash calls, 57 Read calls, and 21
+  Edit calls.
+- Operator UI follow-up: current session 100 percent and weekly all-models 45
+  percent; this is snapshot evidence, not a token/dollar conversion.
+- R1 control: new safe-mode session only; four built-in tools; 10-minute,
+  24-response, 3000000-cache-read, and 40000-output ceilings; complete
+  process-tree termination; no resume, retry, or fallback.
+
+## Core Guard Self-Protection Authorization - T0 Cost-Control Sync
+
+Authorized guard-maintenance scope: record material control commit
+`4f3968cd5`, advance mode to the subscription-reset wait checkpoint, add the
+incident state entry, regenerate active state, and preserve all parked lanes.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/operatorProviderModelT0InvocationCostIncident20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: the operator rejected the observed invocation cost as
+unacceptable and required an immediate solution.
+
+Rollback boundary: revert this protected sync batch together. Do not revert
+material control commit `4f3968cd5` through session sync.
+
+## GC-020 Marker - T0 Cost-Control Session Sync
+
+This handoff records material parent commit `4f3968cd5`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.
