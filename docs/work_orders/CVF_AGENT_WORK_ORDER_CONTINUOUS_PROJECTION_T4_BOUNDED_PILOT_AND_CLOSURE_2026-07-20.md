@@ -45,13 +45,13 @@ Return contract: produce exactly four Allowed outputs after one successful
 scan, leave all unstaged and uncommitted, and return
 `COMPLETE_PENDING_REVIEW`; on a stop condition return `BLOCKED_WITH_REASON`.
 
-Revision: R2 reviewer repair after accepted PATH_ESCAPE blocked return
+Revision: R3 reviewer repair after accepted outer-harness-timeout blocked return
 
-Prior blocked executionBaseHead: `5b929dad9`
+Prior blocked executionBaseHead: `7dbdf3488`
 
-Prior real-root scan invocation count: `1` in R1; consumed and not retried
+Prior real-root scan invocation count: `1` in R2; consumed and not retried
 
-R2 real-root scan invocation ceiling: `1` fresh invocation
+R3 real-root scan invocation ceiling: `1` fresh invocation
 
 R1 fixture evidence reused: `53/53`; `91/91`; `144/144`
 
@@ -107,7 +107,8 @@ Allowed actions:
 - local read-only source inspection;
 - local Git status, remote, hash, and diff commands;
 - the three existing disposable-fixture proof suites;
-- exactly one real-root invocation of the accepted T1 receipt script;
+- exactly one supervised local-process invocation of the accepted T1 receipt
+  script, launched once and observed through short manual polls of the same PID;
 - one T2 draft invocation over the successful real receipt;
 - writing exactly four Allowed outputs after the real scan completes;
 - local Python governance gates.
@@ -116,15 +117,19 @@ Forbidden actions:
 
 - Claude CLI, Codex CLI, any agent CLI, MCP tool/server, provider/API call,
   API key, account subscription, network request, browser, or fallback;
-- a second real-root scan, including retry after timeout or failure;
+- a second real-root scan, including retry, relaunch, replacement PID, or a
+  second process after timeout or failure;
 - worker-authored `reviewerOwned=true` audience evidence;
 - real-root T3 gate execution by the worker;
 - apply/copy into public-sync, semantic edit, deletion, cleanup, commit, push,
-  deploy, production action, scheduled job, or unattended loop;
+  deploy, production action, scheduled job, or unattended loop; the R3 local
+  process must remain under continuous same-worker supervision;
 - modifying scripts, policy, tests, source, session state, roadmap, baseline,
   work order, public-sync, or cvf-web.
 
-Risk ceiling: R2 read-only bounded scan with fail-closed stop.
+Risk ceiling: R3 read-only bounded scan with one supervised PID and fail-closed
+stop. R3 is the final bounded recovery attempt; a further execution-envelope
+failure returns to the reviewer without self-redispatch.
 
 ## Scope / Target / Owner Boundary
 
@@ -142,14 +147,15 @@ commit are forbidden.
 
 Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`, maxResults=`100`
 
-Returned defects: ADIF-0001; ADIF-0002; ADIF-0006; ADIF-0007; ADIF-0014; ADIF-0015; ADIF-0016; ADIF-0017; ADIF-0020; ADIF-0021; ADIF-0024; ADIF-0028; ADIF-0029; ADIF-0031; ADIF-0033; ADIF-0039; ADIF-0043
+Returned defects: ADIF-0001; ADIF-0002; ADIF-0006; ADIF-0007; ADIF-0014; ADIF-0015; ADIF-0016; ADIF-0017; ADIF-0020; ADIF-0021; ADIF-0024; ADIF-0028; ADIF-0029; ADIF-0031; ADIF-0033; ADIF-0039; ADIF-0043; ADIF-0044
 
 ## 5. Required First Reads
 
 - paired T4 GC-018 baseline;
 - T3 completion review;
-- R1 blocked pilot ledger and worker return;
+- R2 blocked pilot ledger and worker return;
 - `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0043.md`;
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0044.md`;
 - T1, T2, and T3 scripts plus their three focused test scripts;
 - `scripts/cvf_projection_policy.json`;
 - T1 synopsis and timeout branch for the local timeout diagnostic shape;
@@ -257,26 +263,49 @@ evidence because no T1/T2/T3 script or test source changed after that run:
 `git diff --name-only 5b929dad9..HEAD -- scripts/` that the range is empty.
 Any script-path delta blocks Phase B and returns `BLOCKED_WITH_REASON`.
 
-### Phase B - Single Real-Root Receipt
+### Phase B - Single Supervised Real-Root Receipt Process
 
-Do not supply `-ReceiptOutputPath`; R1 proved that a `%TEMP%` value contradicts
-the script's process-CWD containment rule. Capture stdout in memory and do not
-create governed outputs before this command finishes. Invoke T1 exactly once:
+R2 proved that a synchronous worker tool call is not a valid execution
+envelope: its outer command ceiling terminated the scan near 180 seconds,
+before the script's 3600-second bound. R3 therefore launches exactly one hidden
+local `powershell.exe` process and manually polls that same PID through separate
+short tool calls. This is supervised local execution, not a scheduled job,
+unattended loop, agent CLI/MCP call, provider call, or retry.
 
-```powershell
-$receiptJson = & powershell -NoProfile -ExecutionPolicy Bypass -File scripts/get_cvf_projection_drift_receipt.ps1 `
-  -ProvenanceRoot (Resolve-Path .) `
-  -PublicSyncRoot (Resolve-Path ..\Controlled-Vibe-Framework-CVF-public-sync) `
-  -CvfWebRoot (Resolve-Path EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web) `
-  -PolicyPath (Resolve-Path scripts\cvf_projection_policy.json) `
-  -ScanTimeoutSeconds 3600
-$scanExitCode = $LASTEXITCODE
-```
+Before launch, create one unique disposable directory under `%TEMP%`, outside
+all three target roots. Reserve four paths there: stdout, stderr, PID metadata,
+and a launch sentinel. Do not supply `-ReceiptOutputPath`; redirect process
+stdout and stderr to their two reserved files. Resolve the script and all four
+input paths to absolute paths before launch.
 
-Do not rerun. A nonzero `$scanExitCode` blocks Phase C. Classify any failure
-with stage, class, retryability, user action, elapsed time, exit code,
-diagnostic code, and safe message. On success, parse `$receiptJson` in memory
-before any write and require schema `1.0.0`, 16 rows, and empty errors.
+Launch once with PowerShell `Start-Process -WindowStyle Hidden -PassThru`, set
+the working directory to the provenance root, and pass the same T1 arguments
+as R2, including `-ScanTimeoutSeconds 3600`. Persist the returned PID, process
+start time, absolute command target, stdout path, stderr path, and
+`scanInvocationCount=1` to the metadata path, then create the launch sentinel.
+The launch call must return immediately; it must not synchronously wait for the
+scan.
+
+Poll only the persisted PID. Each poll must be a separate bounded local command
+that returns within 60 seconds and records elapsed time plus one of `RUNNING` or
+`EXITED`. Do not launch another process if metadata or the sentinel already
+exists. Do not use a scheduled task, job, daemon, watcher, autonomous retry, or
+sleep longer than 45 seconds. The worker must remain present and supervise the
+same process until it exits or until the worker can no longer continue safely.
+
+When the process exits, read stdout and stderr once. A valid schema `1.0.0`
+receipt with 16 rows and empty errors is the only success condition. Because a
+detached Windows process exit code is not durable across separate worker shell
+calls, the exit-code diagnostic may be `NOT_AVAILABLE_WITH_REASON` if the
+process has already left the process table; receipt structure and errors remain
+authoritative. Empty, malformed, or error-bearing stdout blocks Phase C.
+
+If supervision cannot continue, enumerate descendants of the persisted PID,
+stop only that exact process tree with native PowerShell process controls,
+verify no matching process remains, and return `BLOCKED_WITH_REASON`. Never
+relaunch. In every failure case classify stage, class, retryability, user
+action, elapsed time, exit-code availability, diagnostic code, and safe
+message. R3 is the final bounded recovery attempt; do not propose or execute R4.
 
 ### Phase C - Persist And Draft
 
@@ -313,7 +342,9 @@ facts from section 9. Narrative confidence is not a substitute.
 ## Acceptance Criteria
 
 - Committed R1 fixture totals are reused only if `5b929dad9..HEAD` contains no script-path delta.
-- Real-root T1 invocation count equals one.
+- Real-root T1 launch count equals one, with one persisted PID and no relaunch.
+- Every poll targets that PID and returns within 60 seconds; the scan remains
+  supervised by the same worker until success or fail-closed teardown.
 - Receipt and draft satisfy accepted schemas and identities.
 - All 16 rows receive a bounded worker cross-check without semantic verdict.
 - Provider, agent CLI, MCP, browser, network, mutation, stage, and commit
@@ -367,7 +398,7 @@ Changed Files, Command Evidence, and No-Commit Statement.
 |---|---|
 | intake summary | final read-only fixture and real-root evidence pilot |
 | scope classification | local bounded execution evidence |
-| risk sensitivity | R2; one fresh scan; fail closed; zero external services |
+| risk sensitivity | R3; one fresh supervised PID; fail closed; zero external services |
 | escalation condition | any stop condition or need outside Allowed scope |
 | selected role route | no-commit worker -> independent reviewer/closer |
 | mode | `MULTI_AGENT_MULTI_ROLE` |
@@ -435,20 +466,20 @@ Also include Changed Files, Command Evidence, and No-Commit Statement.
 |---|---|
 | Actor | Codex reviewer and redispatch author |
 | Provider or surface | local private provenance workspace |
-| Session or invocation | T4 R2 PATH_ESCAPE review and packet repair, 2026-07-21 |
+| Session or invocation | T4 R3 outer-harness-timeout review and packet repair, 2026-07-21 |
 | Working directory | repository root |
 | Command or tool surface | governed reads; apply_patch; local Python checkers and gates; Git status |
-| Target paths | T4 work order, roadmap, R1 pilot ledger, R1 worker return, ADIF-0043, and ADIF entries README |
-| Allowed scope source | operator instruction plus accepted T4 R1 blocked return at `5b929dad9` |
-| Before status evidence | clean worktree at HEAD `5b929dad9` before the worker updated its two blocked-return outputs |
-| After status evidence | exactly six R2 reviewer-repair and learning paths pending before commit |
+| Target paths | T4 work order, roadmap, R2 pilot ledger, R2 worker return, ADIF-0044, and ADIF entries README |
+| Allowed scope source | operator instruction plus accepted T4 R2 blocked return at `7dbdf3488` |
+| Before status evidence | clean worktree at HEAD `7dbdf3488` before the worker updated its two blocked-return outputs |
+| After status evidence | exactly six R3 reviewer-repair and learning paths pending before commit |
 | Diff evidence | `git status --short` and exact staged manifest before commit |
-| Approval boundary | accept R1 blocked return, repair packet, record reusable learning, and prepare manual copy/paste R2 redispatch only |
-| Claim boundary | one failed R1 path precheck invocation; no successful scan, provider, CLI/MCP, target mutation, or public claim |
+| Approval boundary | accept R2 blocked return, repair the execution envelope, record reusable learning, and prepare manual copy/paste R3 redispatch only |
+| Claim boundary | one R2 invocation interrupted by its parent harness; no successful scan, provider, CLI/MCP, target mutation, or public claim |
 | Agent type | reviewer and dispatcher |
-| Invocation ID | `cvf-continuous-projection-t4-r2-redispatch-2026-07-21` |
-| Expected manifest | T4 work order, roadmap, R1 pilot ledger, R1 worker return, ADIF-0043, and ADIF entries README |
-| Actual changed set | same six R2 reviewer-repair and learning paths |
+| Invocation ID | `cvf-continuous-projection-t4-r3-redispatch-2026-07-21` |
+| Expected manifest | T4 work order, roadmap, R2 pilot ledger, R2 worker return, ADIF-0044, and ADIF entries README |
+| Actual changed set | same six R3 reviewer-repair and learning paths |
 | Manifest delta | MATCH |
 
 ## Delta Execution Claim Boundary Control Block
@@ -486,7 +517,8 @@ committed work order to the worker.
 
 - [ ] Exact execution base and clean roots verified.
 - [ ] R1 fixture totals are reused only after an empty script-path delta check.
-- [ ] Exactly one real-root scan completes or blocks with diagnostic.
+- [ ] Exactly one real-root PID is launched and no replacement PID appears.
+- [ ] Short polls supervise that PID until completion or exact-tree teardown.
 - [ ] Receipt and draft integrity are proven.
 - [ ] Row-level metrics are recorded without semantic overclaim.
 - [ ] No worker-owned audience evidence or real-root T3 run occurs.
