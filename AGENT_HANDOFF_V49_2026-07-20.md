@@ -907,3 +907,25 @@ Protected paths:
 This handoff records material parent commit `5885cf32f`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.
+
+## Core Guard Self-Protection Authorization - T4 Reopen Trigger Sync
+
+Authorized scope: convert the T4 real-root pilot reopen text in
+`nextAllowedMove` into a concrete checkable `DEFERRED_AND_REVISIT_ON_EVIDENCE`
+trigger per the Value-Parked Lane Reopen Discipline Standard, and regenerate the
+two derived active state read models. This does not authorize any new roadmap
+implementation, R4, or real-root invocation; it only records under what
+verifiable condition T4 may later be re-proposed.
+
+Protected paths:
+
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: the operator instructed that the T4 reopen condition be
+recorded into the roadmap governance surface so the lane is value-parked rather
+than lost.
+
+Rollback boundary: revert this reopen-trigger sync commit together. Do not
+revert the T4 closure material at `5885cf32f`.
