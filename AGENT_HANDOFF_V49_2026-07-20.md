@@ -556,3 +556,29 @@ material audit/parking commit `8b34ec5cb` through session sync.
 This handoff records material parent commit `8b34ec5cb`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.
+
+## Operator-Authorized Historical Push-Debt Cleanup
+
+- Current accepted material HEAD: `e6a4968cd`.
+- Private provenance upstream base: `7051eb87d`.
+- Push debt: 77 accepted commits, zero remote-only commits, and a clean
+  worktree before cleanup.
+- Operator authorization: direct instruction `dọn đi` after confirming
+  `CVF 17.05` is retained legacy corpus and `CVF_SOT 10.07` requires clean
+  source-mirror reconstruction before later absorption.
+- Full-range pre-push is blocked by historical material/session range mixing;
+  historical single-commit replay is also inconclusive because current V49
+  continuity cannot exist at the old commit boundary.
+- Disposition: follow the established R32 precedent for an
+  operator-authorized historical stack push, repair current source-checkable
+  blockers, do not squash or rewrite accepted provenance, and push only to the
+  verified private provenance remote.
+- Claim boundary: this authorization clears push continuity debt only. It does
+  not lift the global roadmap moratorium or authorize public-sync, runtime,
+  provider, MCP live, API-key, subscription, deployment, or production action.
+
+## GC-020 Marker - Historical Push-Debt Cleanup Authorization
+
+This handoff records current accepted parent HEAD `e6a4968cd`. The handoff-only
+sync SHA cannot be known before commit creation, so the active-session checker
+may accept this parent SHA for this protected sync commit.
