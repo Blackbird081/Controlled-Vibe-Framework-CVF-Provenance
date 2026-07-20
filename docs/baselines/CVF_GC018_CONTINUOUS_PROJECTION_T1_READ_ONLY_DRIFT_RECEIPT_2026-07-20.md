@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-CONTINUOUS-PROJECTION-T1
 
@@ -96,7 +96,7 @@ The T0 completion review's Next Allowed Move requires the T1 packet to:
 ## Evidence / Verification
 
 Worker evidence must include direct source locations, current
-root/remote/status observations, receipt determinism proof (byte-identical
+root/remote/status observations, receipt determinism proof (byte-stable
 repeated runs and stable receipt id), the tracked-versus-ignored separation,
 the six target-only file classification, timeout-bounded behavior, exact
 diff, staged state, unchanged HEAD, worker-return fast gate, and file-size
@@ -127,12 +127,33 @@ Reason: this is a private provenance dispatch baseline; T1 authorizes no
 public-sync export and the drift receipt itself is a private read-only
 artifact until a later reviewer decision.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired T1 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | paired T1 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Roadmap state | continuous-projection roadmap | `Status: T1_CLOSED_PASS_WITH_REVIEWER_REPAIRS_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check remains clean; no entry change required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing human registry remains unchanged; T1 adds no corpus record | PASS |
+| External evidence digest | N/A with reason: repository-local sources and fixtures only | no imported evidence bundle | N/A with reason |
+| System loop interlock | N/A with reason: no interlock owner changed | no mutation | N/A with reason |
+| Session continuity | protected continuity surfaces | separate post-material closure sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| T1-ROW-COUNT | disposable-fixture receipt | `summary.rowCount` | `16` | `16` | PASS |
+| T1-RECONCILIATION | disposable-fixture receipt | `summary.reconciliationMatch` | `true` | `true` | PASS |
+| T1-SOURCE-BLOCK | disposable-fixture receipt | `rows[allowedRootFiles:target-only-six].driftDisposition` | `SOURCE_AUTHORITY_BLOCKED` | `SOURCE_AUTHORITY_BLOCKED` | PASS |
+| T1-TIMEOUT | slow-mapper fixture error | `errors[0].code` | `RECEIPT_TIMEOUT_INCONCLUSIVE` | `RECEIPT_TIMEOUT_INCONCLUSIVE` | PASS |
+| T1-PUBLIC-SPLIT | tracked/ignored fixture receipt | `publicTargetState` | distinct tracked and ignored arrays | 1 tracked and 1 git-confirmed ignored fixture path | PASS |
+
 ## Claim Boundary
 
-This baseline releases a bounded read-only drift-receipt implementation
-tranche under `WORKER_MUST_NOT_COMMIT`. It does not authorize apply/copy
-implementation, semantic edits, real-root mutation, commit, push,
-deployment, public-sync mutation, provider/live use, production action, or
-unattended work. The worker implements read-only comparison and receipt
-emission only; the reviewer/closer owns evidence recomputation and any
-material commit.
+This baseline is closed after the bounded read-only drift-receipt
+implementation and independent review. It does not authorize apply/copy,
+semantic edits, real-root mutation, push, deployment, public-sync mutation,
+provider/live use, production action, or unattended work. The accepted result
+is private fixture-proven receipt generation only.

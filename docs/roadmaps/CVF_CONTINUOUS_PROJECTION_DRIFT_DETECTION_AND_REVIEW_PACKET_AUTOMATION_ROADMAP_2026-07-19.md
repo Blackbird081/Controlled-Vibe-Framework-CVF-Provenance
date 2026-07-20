@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_CLOSED_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT
+Status: T1_CLOSED_PASS_WITH_REVIEWER_REPAIRS_T2_PACKET_AUTHORING_NEXT
 
 Date: 2026-07-19
 
@@ -32,7 +32,7 @@ unfit for a public reader or an external agent.
 
 Roadmap restoration and parked planning are authorized by the operator's
 instruction to preserve the projection-automation lesson while prioritizing
-CVF Web remediation. Execution remains unreleased.
+CVF Web remediation. T2-T4 implementation remains unreleased.
 
 ## Scope / Target / Owner Boundary
 
@@ -104,6 +104,16 @@ Extend the accepted mapper with deterministic receipts for changed owner,
 missing target, stale target, and audience-presentation risk. Provide manual,
 CI, and scheduled invocation seams. No apply mode is allowed.
 
+Disposition: `CLOSED_PASS_WITH_REVIEWER_REPAIRS`. The accepted implementation
+at `a394d635c` emits the frozen 16-surface schema, consumes mapper candidate
+signals for `MISSING_TARGET`, `STALE_TARGET`, and `CURRENT`, preserves the six
+target-only `SOURCE_AUTHORITY_BLOCKED` decision, separates tracked denied files
+from git-confirmed ignored residue, and fails closed on bounded mapper timeout.
+The reviewer repaired schema fidelity, mapped-handoff exclusion, git-ignore
+classification, and live-signal consumption before the 53/53 fixture suite
+passed. T2 packet authoring is released; T2 implementation and T3-T4 remain
+parked.
+
 ### T2 - Governed Review-Packet Drafting
 
 Generate a draft packet that lists source facts, affected projections,
@@ -147,8 +157,10 @@ The CVF Web UX remediation roadmap reached reviewer-accepted bounded closure at
 navigation, audience separation, language clarity, and responsive behavior.
 The release condition is satisfied. T0 is closed bounded through its fresh
 GC-018, source-verified no-commit work order, corrected ledger, worker return,
-and independent completion review. T1 packet authoring is next; T1
-implementation and T2-T4 remain dependency-held.
+and independent completion review. T1 is closed with reviewer repairs through
+its paired dispatch packet, implementation commit `a394d635c`, 53/53
+disposable-fixture proof, and independent completion review. T2 packet
+authoring is next; T2 implementation and T3-T4 remain dependency-held.
 
 ## Learning Carried Forward
 
@@ -186,11 +198,11 @@ implementation and T2-T4 remain dependency-held.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | T0 work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
-| Completion or reviewer artifact | T0 completion review | reviewer-accepted bounded with repairs | PASS |
-| Roadmap state | this roadmap | `Status: T0_CLOSED_PASS_BOUNDED_T1_PACKET_AUTHORING_NEXT` | PASS |
-| Registry JSON | N/A with reason: no registry state changed | no mutation | N/A with reason |
-| Registry Markdown | N/A with reason: no registry state changed | no mutation | N/A with reason |
+| Work order status | T1 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | T1 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Roadmap state | this roadmap | `Status: T1_CLOSED_PASS_WITH_REVIEWER_REPAIRS_T2_PACKET_AUTHORING_NEXT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check remains clean; no entry change required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing human registry remains unchanged; T1 adds no corpus record | PASS |
 | External evidence digest | N/A with reason: repository-local roots only | no imported bundle | N/A with reason |
 | System loop interlock | N/A with reason: no interlock owner changed | no mutation | N/A with reason |
 | Session continuity | protected continuity surfaces | separate post-material sync | N/A with reason |
@@ -203,22 +215,23 @@ implementation and T2-T4 remain dependency-held.
 
 ## Current Runtime Freshness Verification
 
-T0 closure re-read the current mapper and policy sources, recomputed mapped
-file hashes, and inspected current public-sync tracked and ignored state. The
-real-root recursive invocation did not produce a receipt, so this roadmap does
-not claim tree-scale freshness or runtime completion. T1 implementation remains
-unreleased. Disposition: PASS_BOUNDED.
+T1 closure re-read the current mapper and policy sources, reviewed the new
+wrapper, and ran 53/53 disposable-fixture assertions. The T4-owned real-root
+recursive invocation was not run, so this roadmap does not claim tree-scale
+freshness or runtime completion. T2 packet authoring only is released.
+Disposition: PASS_BOUNDED.
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: T0 closure is private provenance evidence. A later reviewed public
+Reason: T1 closure is private provenance evidence. A later reviewed public
 projection may export only public-safe artifacts through the sibling
 public-sync repository.
 
 ## Claim Boundary
 
-This roadmap closes T0 bounded and releases T1 packet authoring only. It does
-not authorize implementation, real-root apply, semantic edits, push,
-deployment, provider/live use, public-sync mutation, or unattended mutation.
+This roadmap closes T1 with reviewer repairs and releases T2 packet authoring
+only. It does not authorize T2 implementation, the T4 real-root scan,
+real-root apply, semantic edits, push, deployment, provider/live use,
+public-sync mutation, or unattended mutation.
