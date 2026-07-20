@@ -14,9 +14,10 @@
     "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/generic-agent-adapter.ts",
     "EXTENSIONS/CVF_MODEL_GATEWAY/src/quota-ledger.ts",
     "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-execution-bridge.ts",
-    "EXTENSIONS/CVF_MODEL_GATEWAY/src/fallback-policy.ts"
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/fallback-policy.ts",
+    ".private_reference/legacy/CVF_MCP 20.07/De_xuat_xay_dung_CVF_MCP.md"
   ],
-  "fileCount": 11,
+  "fileCount": 12,
   "status": "SCANNED_WITH_FINDINGS",
   "findings": [
     {
@@ -41,5 +42,5 @@
   "manifestHash": null,
   "manifestPath": null,
   "packetPath": "docs/audits/CVF_AGENT_CLI_MCP_INVOCATION_CONTROL_SYSTEM_CHAIN_REASSESSMENT_2026-07-20.md",
-  "notes": "Opening audit and global execution moratorium; no external agent, MCP live tool, provider, API key, subscription, public-sync, or production action."
+  "notes": "Opening audit and global execution moratorium. The external MCP/CLI proposal is selectively absorbed as NOT_CVF_SOURCE design input; no external agent, MCP live tool, provider, API key, subscription, public-sync, or production action."
 }
