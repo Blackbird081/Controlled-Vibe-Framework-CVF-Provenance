@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "continuous_projection_t2_no_commit_worker_dispatched",
-  "previousMode": "continuous_projection_t2_packet_authoring_next",
+  "currentMode": "continuous_projection_t2_material_committed_pending_closure",
+  "previousMode": "continuous_projection_t2_no_commit_worker_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13672,7 +13672,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Claude executes only the reviewer-repaired Continuous Projection T2 no-commit work order at the final dispatch/session-sync HEAD. Claude creates exactly scripts/get_cvf_projection_review_packet.ps1, scripts/test_cvf_projection_review_packet.ps1, and docs/reviews/CVF_CONTINUOUS_PROJECTION_T2_WORKER_RETURN_2026-07-20.md; implements the frozen ReceiptPath-to-stdout ordered JSON contract; records the three reviewer findings; and returns COMPLETE_PENDING_REVIEW without commit. T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Independent reviewer/closer completes only the Continuous Projection T2 closure conversion from implementation commit f350b925a: update the paired baseline, work order, continuous-projection roadmap, and required completion review; run committed-range closure gates; then perform a separate final session sync. After T2 closure, author the provider-neutral CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP only. Continuous Projection T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, unapproved provider/model use, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13763,5 +13763,19 @@
     "nextAllowedMove": "Claude creates exactly the three Allowed T2 outputs and returns COMPLETE_PENDING_REVIEW without commit.",
     "parked": "T3-T4, T4 real-root scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation.",
     "claimBoundary": "Private read-only receipt-to-draft implementation dispatch only; no real-root freshness, mutation, public, provider/live, or production claim."
+  },
+  "continuousProjectionT2Implementation20260720": {
+    "status": "MATERIAL_COMMITTED_PENDING_REVIEWER_CLOSURE",
+    "batchId": "CVF-CONTINUOUS-PROJECTION-T2",
+    "implementationCommit": "f350b925a",
+    "executionBaseHead": "7bf7a6c94",
+    "workerReturn": "docs/reviews/CVF_CONTINUOUS_PROJECTION_T2_WORKER_RETURN_2026-07-20.md",
+    "drafter": "scripts/get_cvf_projection_review_packet.ps1",
+    "proofSuite": "scripts/test_cvf_projection_review_packet.ps1",
+    "proof": "91/91 focused assertions and pre-commit governance hook 83/83 PASS",
+    "providerModelEvidence": "operator-assigned claude-sonnet-5 with high effort; reviewer session-record reconciliation MATCH; no fallback",
+    "nextAllowedMove": "Independent reviewer/closer completes the four-path T2 closure conversion, committed-range gates, and final session sync.",
+    "parked": "Continuous Projection T3-T4, T4 real-root scan, mutation, public-sync, push, deployment, unapproved provider/model use, production action, and unattended mutation.",
+    "claimBoundary": "Committed T2 read-only receipt-to-draft implementation and fixture proof only; reviewer closure is pending."
   }
 }

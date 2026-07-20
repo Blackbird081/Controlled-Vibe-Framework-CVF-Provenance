@@ -30,7 +30,7 @@ parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t2_no_commit_worker_dispatched`;
+current mode=`continuous_projection_t2_material_committed_pending_closure`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
 next allowed move=Claude executes exactly the reviewer-repaired three-output T2 no-commit work order;
 parked checkpoint=T3-T4, real-root receipt scan, apply/copy,
@@ -61,7 +61,7 @@ V48, opens V49, and advances session routing to reviewer closure pending.
 
 ## Current Mode
 
-`continuous_projection_t2_no_commit_worker_dispatched`
+`continuous_projection_t2_material_committed_pending_closure`
 
 ## Next Allowed Move
 
@@ -248,5 +248,49 @@ revert material dispatch commit `88723d3b4` through session sync.
 ## GC-020 Marker - T2 Dispatch Session Sync
 
 This handoff records material parent commit `88723d3b4`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## Continuous Projection T2 Implementation Commit
+
+- Material implementation commit: `f350b925a`.
+- executionBaseHead: `7bf7a6c94`.
+- Exact material manifest: review-packet drafter, focused proof suite, and
+  worker return.
+- Reviewer-recomputed proof: 91/91 PASS.
+- Provider/model assignment: operator-approved Claude account subscription,
+  exact `claude-sonnet-5`, high effort, no fallback; reviewer session-record
+  reconciliation MATCH.
+- Current state: material committed; four-path reviewer closure conversion is
+  next.
+- After T2 closure, author only the provider-neutral operator-approved
+  provider/model assignment and invocation-receipt roadmap. Continuous
+  Projection T3-T4 remain parked.
+
+## Core Guard Self-Protection Authorization - T2 Implementation Sync
+
+Authorized guard-maintenance scope: record implementation commit `f350b925a`,
+advance mode to T2 material committed pending closure, regenerate active state,
+and route only the reviewer-owned closure conversion next.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V49_2026-07-20.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT2Implementation20260720.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: the operator accepted the independently verified T2
+repair result and authorized continuation to closure.
+
+Rollback boundary: revert this protected implementation-sync batch together.
+Do not revert material implementation commit `f350b925a` through session sync.
+
+## GC-020 Marker - T2 Implementation Session Sync
+
+This handoff records material parent commit `f350b925a`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.

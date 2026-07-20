@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_t2_no_commit_worker_dispatched`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=Claude executes exactly the reviewer-repaired three-output T2 no-commit work order and returns COMPLETE_PENDING_REVIEW; parked checkpoint=T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push/deployment, provider/live, production, and unattended action.
+Startup acknowledged: current mode=`continuous_projection_t2_material_committed_pending_closure`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=reviewer/closer completes the four-path T2 closure conversion from implementation commit `f350b925a`, then performs final session sync; parked checkpoint=Continuous Projection T3-T4, real-root receipt scan, mutation, public-sync, push/deployment, unapproved provider/model use, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_t2_no_commit_worker_dispatched`
+Current mode marker: `continuous_projection_t2_material_committed_pending_closure`
 
-Current mode: `continuous_projection_t2_no_commit_worker_dispatched`
+Current mode: `continuous_projection_t2_material_committed_pending_closure`
 
-`continuous_projection_t2_no_commit_worker_dispatched`
+`continuous_projection_t2_material_committed_pending_closure`
 
 Previous mode:
 
-`continuous_projection_t2_packet_authoring_next`
+`continuous_projection_t2_no_commit_worker_dispatched`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -330,7 +330,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_t2_no_commit_worker_dispatched`
+Mode: `continuous_projection_t2_material_committed_pending_closure`
 
 Claude executes exactly the reviewer-repaired three-output T2 no-commit work
 order and returns `COMPLETE_PENDING_REVIEW`. The implementation uses the frozen

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "continuous_projection_t2_no_commit_worker_dispatched",
+  "currentMode": "continuous_projection_t2_material_committed_pending_closure",
   "activeHandoff": "AGENT_HANDOFF_V49_2026-07-20.md",
-  "nextAllowedMove": "Claude executes only the reviewer-repaired Continuous Projection T2 no-commit work order at the final dispatch/session-sync HEAD. Claude creates exactly scripts/get_cvf_projection_review_packet.ps1, scripts/test_cvf_projection_review_packet.ps1, and docs/reviews/CVF_CONTINUOUS_PROJECTION_T2_WORKER_RETURN_2026-07-20.md; implements the frozen ReceiptPath-to-stdout ordered JSON contract; records the three reviewer findings; and returns COMPLETE_PENDING_REVIEW without commit. T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Independent reviewer/closer completes only the Continuous Projection T2 closure conversion from implementation commit f350b925a: update the paired baseline, work order, continuous-projection roadmap, and required completion review; run committed-range closure gates; then perform a separate final session sync. After T2 closure, author the provider-neutral CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP only. Continuous Projection T3-T4, the T4 real-root receipt scan, apply/copy, public-sync mutation, push, deployment, unapproved provider/model use, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
