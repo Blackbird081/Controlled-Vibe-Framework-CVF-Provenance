@@ -293,6 +293,13 @@ must carry diagnostic
 124.6 seconds, the child continued, no duplicate retry was launched, and the
 reviewer later stopped the exact Claude/MCP process pair under the cost guard.
 
+T0 R1 also measures
+`62571339-7d3f-4865-9141-7e59dd67776b.jsonl`, the first T0 worker attempt that
+ended with `SUBSCRIPTION_SESSION_LIMIT` before producing an artifact. The
+worker must preserve this session as a separate failed-attempt row rather than
+adding it to either earlier session or treating the three sessions as one
+invocation.
+
 A future usage-measurement worker output must deduplicate by unique
 `message.id` before reporting any total. For each unique `message.id`, record:
 
@@ -307,6 +314,29 @@ A future usage-measurement worker output must deduplicate by unique
 - model identity as recorded in the JSONL entry;
 - safe absence/presence of any cost field in the JSONL entry, without
   inferring a dollar amount when the field is absent.
+
+## Interim Bounded Invocation Profile
+
+The first worker attempt proved that a caller command is not a provider-call
+cardinality boundary. Any R1 invocation is permitted only when the caller
+enforces all of these caps:
+
+| Control | Required value |
+|---|---|
+| session posture | new session; no resume of packet-author or failed-worker context |
+| customization posture | Claude `--safe-mode`; no MCP, plugin, browser, subagent, TaskCreate, TaskUpdate, or ToolSearch surface |
+| built-in tool allowlist | `Read`, `Write`, `Edit`, `Bash` |
+| wall-clock ceiling | 10 minutes |
+| unique-response ceiling | 24 deduplicated `message.id` values |
+| cumulative cache-read ceiling | 3000000 tokens |
+| cumulative output ceiling | 40000 tokens |
+| gate/repair ceiling | one focused gate pass and one allowed-scope repair pass |
+| threshold action | terminate the complete invocation process tree; emit `INVOCATION_BUDGET_EXCEEDED`; do not retry |
+| provider/model posture | exact operator assignment retained; fallback forbidden without fresh approval |
+
+These are temporary caller controls, not a runtime implementation or a
+provider-specific default. T1 owns provider-neutral schema ratification and a
+later implementation tranche owns a reusable monitored launcher.
 
 ## Measurement Classes
 

@@ -31,6 +31,9 @@ and requires an exact match before the first edit.
 
 Current-time notes: artifact date is 2026-07-20; the dispatch base head is
 `683543e49`; the worker must re-verify the worktree is clean before starting.
+The first worker attempt ended `SUBSCRIPTION_SESSION_LIMIT` with no artifact.
+R1 must use a new `--safe-mode` session under the Interim Bounded Invocation
+Profile below; neither prior T0 session may be resumed.
 
 Do-not-misread notes: this work order does not authorize T1-T5 implementation
 of any roadmap contract field, does not authorize any credential use or
@@ -39,15 +42,39 @@ not authorize the worker to commit. The worker inspects current source and
 existing secret-safe session metadata only; it must not expose prompts,
 responses, credentials, or provider-private payloads in any output.
 
-Required first actions: read `CVF_SESSION_MEMORY.md`,
-`CVF_SESSION/ACTIVE_SESSION_STATE.json`, the active handoff, guard
-orientation, the literal-format gotchas reference, this work order, the
-paired GC-018 baseline in full, and every checker source listed in the
-Checker Source Read-Ahead Block below before writing any output artifact.
+Required first actions: read `CVF_SESSION_MEMORY.md`, the compact bootstrap
+read model, this Dispatch Prompt Envelope, the paired GC-018 `Deduplicated
+Claude CLI JSONL Measurement Requirement` and `Interim Bounded Invocation
+Profile`, then the exact execution/evidence/output sections of this work order.
+The reviewer already completed checker-source read-ahead; the worker must not
+repeat broad checker-source discovery before drafting.
 
 Return contract: create exactly the three authorized output artifacts, run
-the required gates, leave all changes uncommitted, and return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+the required focused gate once, leave all changes uncommitted, and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. A caller cap or subscription
+limit returns the matching diagnostic without retry or fallback.
+
+## Interim Bounded Invocation Profile
+
+This profile is mandatory for T0 R1 and is enforced by the caller, not by
+prompt compliance alone.
+
+| Control | Required value |
+|---|---|
+| session | new session; do not resume `3788ceeb-8aac-415b-a2c9-6e7dc1b01edf` or `62571339-7d3f-4865-9141-7e59dd67776b` |
+| Claude startup | `--safe-mode`; exact operator-assigned model and effort |
+| available tools | `Read`, `Write`, `Edit`, `Bash` only |
+| unavailable surfaces | MCP, plugins, browser, subagents, TaskCreate, TaskUpdate, ToolSearch |
+| wall-clock ceiling | 10 minutes |
+| unique-response ceiling | 24 deduplicated `message.id` values |
+| cumulative cache-read ceiling | 3000000 tokens |
+| cumulative output ceiling | 40000 tokens |
+| gate/repair ceiling | one focused gate pass; one allowed-scope repair pass |
+| caller stop action | terminate the entire invocation process tree and record `INVOCATION_BUDGET_EXCEEDED` |
+| retry/fallback action | forbidden until the failure is classified and the operator approves a new assignment |
+
+`--max-budget-usd` is not accepted as the sole guard because this dispatch uses
+an account subscription and the observed JSONL contains no cost field.
 
 ## Purpose
 
@@ -383,7 +410,7 @@ result after any repair, before returning the artifact.
 | --- | --- | --- | --- |
 | Work order status | this work order | closed-equivalent status only after reviewer/closer closure; no stale residue | N/A with reason: `REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS` is dispatch state, not closure |
 | Completion or reviewer artifact | worker output 3 (worker return) | final disposition, changed-file evidence, claim boundary, gate evidence | PENDING_WORKER_EXECUTION |
-| Roadmap state | `docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md` | tranche row final status; roadmap Status remains `T0_PACKET_AUTHORING_AUTHORIZED` until reviewer/closer updates it after commit | N/A with reason: roadmap status update is reviewer/closer-owned after commit |
+| Roadmap state | `docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md` | roadmap Status is `T0_R1_BOUNDED_WORKER_REDISPATCH_REQUIRED` after the subscription-limit incident | R1 dispatch amendment is reviewer-owned; final tranche state remains reviewer/closer-owned after worker return |
 | Registry JSON | N/A with reason: T0 performs no corpus scan and touches no registry | N/A | N/A with reason |
 | Registry Markdown | N/A with reason: T0 performs no corpus scan and touches no registry | N/A | N/A with reason |
 | External evidence digest | worker output 2 (usage measurement baseline) | deduplicated CLI JSONL record count, measurement class, generated time, privacy boundary | PENDING_WORKER_EXECUTION |
@@ -664,6 +691,29 @@ Shape-list rule: when listing required worker-output sections, section names
 are written without the heading prefix. Reserve actual markdown heading
 syntax for real sections so structural checkers do not treat this checklist
 as the artifact section body.
+
+Required worker-return terms and sections:
+
+- Purpose
+- Scope / Methodology
+- Findings / Position
+- Risk / Corrective Action
+- Claim Boundary
+- Agent Operation Trace Block
+- Delta Execution Claim Boundary Control Block
+- Public Export Disposition
+- executionBaseHead
+- `git status --short`
+- External Knowledge Intake Routing
+- Rescan Intelligence Hardening
+- Corpus Completeness And Report Integrity
+- Finding-To-Governance Learning Disposition
+- Epistemic Process Block
+- Machine Closure Package
+
+Any conditional section that does not apply must state `N/A with reason` and
+name the concrete non-applicability reason. Omission is not an acceptable
+substitute.
 
 ## Worker Output Checker Read-Ahead Mandate
 

@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_PACKET_AUTHORING_AUTHORIZED
+Status: T0_R1_BOUNDED_WORKER_REDISPATCH_REQUIRED
 
 Date: 2026-07-20
 
@@ -40,10 +40,11 @@ Projection T2 closure and, on 2026-07-20, explicitly started T0 with this
 sequence: reviewer/orchestrator opens the roadmap; Claude authors the work-order
 packet; reviewer repairs and accepts it; Claude executes as no-commit worker;
 reviewer repairs, closes, and reports tranche findings and learning candidates
-to the operator. Current authorization releases only Claude authoring of the
-fresh T0 GC-018 and source-verified work order. T0 implementation, credential
-use, provider calls, fallback, public action, and deployment remain parked
-until the reviewer accepts and commits that dispatch packet.
+to the operator. The packet is reviewer-accepted and committed. The first
+worker attempt reached a subscription-session limit without producing output,
+so only a fresh T0 R1 worker invocation under the bounded profile below is now
+released. T1-T5, credential use, provider calls, fallback, public action, and
+deployment remain parked.
 
 ## Operator Usage Baseline Snapshot
 
@@ -60,6 +61,49 @@ T0 must preserve this as `OPERATOR_UI_SNAPSHOT` evidence and pair it with
 deduplicated Claude CLI JSONL usage by unique `message.id`. UI percentages,
 token counters, billed API cost, and subscription quota are distinct
 measurement classes and must never be silently converted into one another.
+
+## T0 Invocation-Cost Incident And Immediate Control
+
+The first T0 worker invocation ended before creating any artifact because the
+Claude subscription reported a session limit. The operator supplied a second
+UI snapshot showing current-session usage at 100 percent and weekly all-models
+usage at 45 percent. This is `OPERATOR_UI_SNAPSHOT` evidence only; the change
+from the earlier 21/41 snapshot must not be converted into tokens, dollars, or
+per-invocation attribution.
+
+The exact failed worker session basename is
+`62571339-7d3f-4865-9141-7e59dd67776b.jsonl`. Secret-safe deduplication by
+unique `message.id` produced 11 responses, 20 input tokens, 196127 cache-create
+tokens, 1154709 cache-read tokens, 5622 output tokens, and 87.5 seconds elapsed.
+The final diagnostic was `SUBSCRIPTION_SESSION_LIMIT`; no cost field was
+present. No output file, staged change, commit, retry, or fallback resulted.
+
+The preceding packet-author session produced 147 unique responses, 47856327
+cache-read tokens, 131666 output tokens, 73 Bash calls, 57 Read calls, and 21
+Edit calls. A single CLI command therefore cannot be treated as one provider
+response or as a bounded-cost unit.
+
+Before any T0 R1 worker redispatch, the caller must enforce this interim
+bounded-invocation profile:
+
+- start a new session; do not resume either enlarged T0 session;
+- retain the operator-assigned model and effort, but use Claude `--safe-mode`;
+- expose only `Read`, `Write`, `Edit`, and `Bash`; disable MCP, plugins,
+  TaskCreate, TaskUpdate, ToolSearch, browser, and subagent surfaces;
+- allow one focused gate pass and one allowed-scope repair pass only;
+- stop at 10 elapsed minutes, 24 unique model responses, 3000000 cumulative
+  cache-read tokens, or 40000 cumulative output tokens, whichever occurs first;
+- terminate the caller and its child process tree when a limit is crossed;
+- classify the result `INVOCATION_BUDGET_EXCEEDED` or
+  `SUBSCRIPTION_SESSION_LIMIT` before any later attempt; and
+- never retry, resume, change model/provider, or use fallback without a fresh
+  operator-approved assignment.
+
+This interim profile prevents another uncontrolled call. T1 must ratify the
+provider-neutral budget fields, while a later source-verified implementation
+tranche owns a reusable launcher and tests. The profile is not a claim that
+Claude subscription quota can be converted to API dollars or that
+`--max-budget-usd` governs account-subscription usage.
 
 ## Authority And Existing Foundation
 
@@ -402,19 +446,19 @@ mutation.
 
 ## Next Allowed Move
 
-Claude authors only a fresh T0 GC-018 and source-verified no-commit work order
-for the Source Map And Contract Gap Baseline. The packet must include the
-operator usage snapshot measurement boundary, exact CLI usage extraction and
-deduplication requirements, the five-stage role sequence, and after-tranche
-finding/learning reporting. The reviewer owns acceptance and dispatch commits.
-Do not implement T0, use a credential, call a provider, or start live proof
-until the packet is reviewer-accepted and committed.
+After the Claude subscription session resets, start one fresh T0 R1 no-commit
+worker session under the Interim Bounded Invocation Profile. Do not resume the
+packet-author or failed-worker context. The caller must stop the complete
+process tree at the first budget threshold and must not retry or fallback.
+Codex remains reviewer/closer. T1-T5, credentials, provider calls, live proof,
+public-sync, push, deployment, and production action remain parked.
 
 ## Claim Boundary
 
-This roadmap authorizes only T0 packet authoring for a provider-neutral
-approval, assignment, invocation, and reconciliation program over existing CVF
-Model Gateway foundations. It does not dispatch T0 implementation, establish a
-default provider/model, certify account-subscription integration, implement
-orchestration, authorize fallback, store credentials, call a provider, prove
-production behavior, mutate public-sync, push, or deploy.
+This roadmap authorizes only the bounded T0 R1 documentation/source-inspection
+worker for a provider-neutral approval, assignment, invocation, and
+reconciliation program over existing CVF Model Gateway foundations. It does
+not establish a default provider/model, certify account-subscription
+integration, implement orchestration or the reusable cost governor, authorize
+fallback, store credentials, call a provider, prove production behavior,
+mutate public-sync, push, or deploy.
