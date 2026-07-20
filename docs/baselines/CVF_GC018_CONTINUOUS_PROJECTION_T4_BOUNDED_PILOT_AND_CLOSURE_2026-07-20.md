@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Batch ID: CVF-CONTINUOUS-PROJECTION-T4
 
@@ -159,6 +159,13 @@ the real receipt/draft/evidence triplet; measures review effort and usefulness;
 repairs allowed-scope defects; and decides T4 and roadmap closure. A T3 gate
 PASS proves evidence completeness, not presentation quality by itself.
 
+## Current Runtime Freshness Verification
+
+Reviewer closure re-read the current T1 script interface and R3 stderr at HEAD
+`8824cb8c7`. The two success-only JSON paths are absent because the detached
+child stopped at argument parsing; this is direct current-workspace evidence,
+not a stale runtime inference. No CLI/MCP adapter or provider path is authorized.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
@@ -192,6 +199,36 @@ reviewer evidence blocks closure. It must not be converted to CURRENT or PASS.
 
 T4 may close only from one successful read-only scan plus independent reviewer
 assessment. It never authorizes automatic semantic mutation.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this file | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | paired T4 work order | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | T4 completion review | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Worker return | T4 worker return | `Status: REVIEWER_ACCEPTED_BLOCKED_FINAL` | PASS |
+| Roadmap state | Continuous Projection roadmap | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Registry JSON | N/A with reason: closure changes no JSON registry | no registry owner applies | N/A with reason |
+| Registry Markdown | ADIF entries README | ADIF-0045 row present | PASS |
+| External evidence digest | N/A with reason: repository-local evidence only | no external input | N/A with reason |
+| System loop interlock | T4 ledger and completion review | blocked result retained; no PASS promotion | PASS |
+| Session continuity | active session surfaces | separate sync after material commit | N/A with reason |
+| Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+|---|---|---|---|
+| pre-implementation gate | PASS | PASS | PASS |
+| fixture proof | `53/53`; `91/91`; `144/144` | reused after empty script diff | PASS |
+| real-root process launches | 1 | 1 | PASS |
+| replacement PID/retry | 0 | 0 | PASS |
+| target script executes | yes | no; argument split before script | BLOCKED |
+| receipt rows | 16 | 0 | BLOCKED |
+| review draft | valid T2 JSON | absent | BLOCKED |
+| provider/CLI/MCP/browser/network calls | 0 | 0 | PASS |
+| public or target mutation | 0 | 0 | PASS |
 
 ## Public Export Disposition
 

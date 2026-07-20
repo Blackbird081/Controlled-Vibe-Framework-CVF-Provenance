@@ -2,15 +2,15 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Batch ID: CVF-CONTINUOUS-PROJECTION-T4
 
 dispatchBaseHead: `5f5c28b85`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `8824cb8c7`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `8824cb8c7`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -207,7 +207,7 @@ return `BLOCKED_WITH_REASON` without scanning.
 | preparationMinutes | T4 ledger | local worker effort telemetry |
 | packetUsefulnessDisposition | T4 ledger | provisional evidence utility assessment |
 
-### Current Runtime Freshness Verification
+## Current Runtime Freshness Verification
 
 The dispatch author re-read all three current script interfaces, the policy,
 and T3 closure at HEAD `5f5c28b85`. No proposed runtime field is represented
@@ -349,7 +349,8 @@ facts from section 9. Narrative confidence is not a substitute.
 - All 16 rows receive a bounded worker cross-check without semantic verdict.
 - Provider, agent CLI, MCP, browser, network, mutation, stage, and commit
   counters remain zero.
-- Final pending manifest equals the four Allowed paths.
+- Final blocked-run manifest equals the ledger and worker return only; both
+  success-only JSON paths remain absent.
 
 ## Verification Commands
 
@@ -420,7 +421,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | `MULTI_AGENT_MULTI_ROLE` |
 | rolePattern | dispatcher -> no-commit worker -> reviewer/closer -> session-sync steward |
 | phase | DISPATCH_AUTHORING; EXECUTION; CLOSURE; SESSION_SYNC |
-| baseHeadFor(phase) | dispatchBaseHead=`5f5c28b85`; executionBaseHead=`WORKER_MUST_CAPTURE_AT_START`; closureBaseHead=`REVIEWER_TO_SET` |
+| baseHeadFor(phase) | dispatchBaseHead=`5f5c28b85`; executionBaseHead=`8824cb8c7`; closureBaseHead=`8824cb8c7` |
 | changedSetScope(phase) | two dispatch paths; exactly four worker paths; reviewer-owned closure paths; continuity separately |
 | traceScope(phase, actor) | each actor reports only its commands and evidence |
 | commitOwner(phase) | worker=`WORKER_MUST_NOT_COMMIT`; reviewer owns material; session steward owns continuity |
@@ -464,22 +465,22 @@ Also include Changed Files, Command Evidence, and No-Commit Statement.
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex reviewer and redispatch author |
+| Actor | Codex reviewer/closer |
 | Provider or surface | local private provenance workspace |
-| Session or invocation | T4 R3 outer-harness-timeout review and packet repair, 2026-07-21 |
+| Session or invocation | T4 R3 final blocked-return closure, 2026-07-21 |
 | Working directory | repository root |
 | Command or tool surface | governed reads; apply_patch; local Python checkers and gates; Git status |
-| Target paths | T4 work order, roadmap, R2 pilot ledger, R2 worker return, ADIF-0044, and ADIF entries README |
-| Allowed scope source | operator instruction plus accepted T4 R2 blocked return at `7dbdf3488` |
-| Before status evidence | clean worktree at HEAD `7dbdf3488` before the worker updated its two blocked-return outputs |
-| After status evidence | exactly six R3 reviewer-repair and learning paths pending before commit |
-| Diff evidence | `git status --short` and exact staged manifest before commit |
-| Approval boundary | accept R2 blocked return, repair the execution envelope, record reusable learning, and prepare manual copy/paste R3 redispatch only |
-| Claim boundary | one R2 invocation interrupted by its parent harness; no successful scan, provider, CLI/MCP, target mutation, or public claim |
+| Target paths | T4 baseline, work order, roadmap, R3 pilot ledger, R3 worker return, completion review, ADIF-0045, and ADIF entries README |
+| Allowed scope source | Reviewer Closure Conversion plus accepted final R3 blocked return at `8824cb8c7` |
+| Before status evidence | two unstaged worker review paths at HEAD `8824cb8c7`; public-sync clean |
+| After status evidence | exactly eight material closure and learning paths |
+| Diff evidence | `git status --short`, `git diff --name-status`, and exact staged manifest before commit |
+| Approval boundary | accept R3 blocked return, record reusable learning, and close T4/roadmap blocked bounded without R4 |
+| Claim boundary | target script never executed; no successful scan, provider, CLI/MCP, target mutation, or public claim |
 | Agent type | reviewer and dispatcher |
-| Invocation ID | `cvf-continuous-projection-t4-r3-redispatch-2026-07-21` |
-| Expected manifest | T4 work order, roadmap, R2 pilot ledger, R2 worker return, ADIF-0044, and ADIF entries README |
-| Actual changed set | same six R3 reviewer-repair and learning paths |
+| Invocation ID | `cvf-continuous-projection-t4-r3-blocked-closure-2026-07-21` |
+| Expected manifest | T4 baseline, work order, roadmap, R3 pilot ledger, R3 worker return, completion review, ADIF-0045, and ADIF entries README |
+| Actual changed set | same eight material closure and learning paths |
 | Manifest delta | MATCH |
 
 ## Delta Execution Claim Boundary Control Block
@@ -488,11 +489,11 @@ Also include Changed Files, Command Evidence, and No-Commit Statement.
 |---|---|
 | claimScope | bounded local fixture and one real-root read-only scan |
 | claimDisposition | CLAIM_REJECTED: no execution-control or interception claim |
-| receiptEvidence | `CLAIM_REJECTED_NO_RECEIPT`: pending worker receipt; no result claimed at dispatch |
-| actionEvidence | CLAIM_REJECTED_NO_ACTION: dispatch author ran no T4 scan or mutation |
-| invocationBoundary | future manual local script invocation only |
+| receiptEvidence | `CLAIM_REJECTED_NO_RECEIPT`: R3 produced no receipt because argument splitting prevented script execution |
+| actionEvidence | CLAIM_REJECTED_NO_ACTION: reviewer ran no T4 scan or mutation |
+| invocationBoundary | closed local evidence sequence; no future invocation authorized |
 | interceptionBoundary | no wrapper/proxy control over Claude, CLI, MCP, or provider |
-| claimLanguage | dispatch-ready means packet accepted, not pilot passed |
+| claimLanguage | closed blocked bounded means the recovery sequence stopped without pilot proof |
 | forbiddenExpansion | agent CLI/MCP, provider, browser, mutation, public-sync, push, deployment, production |
 
 ## External Knowledge Intake Routing
@@ -515,24 +516,58 @@ committed work order to the worker.
 
 ## Closure Checklist
 
-- [ ] Exact execution base and clean roots verified.
-- [ ] R1 fixture totals are reused only after an empty script-path delta check.
-- [ ] Exactly one real-root PID is launched and no replacement PID appears.
-- [ ] Short polls supervise that PID until completion or exact-tree teardown.
-- [ ] Receipt and draft integrity are proven.
-- [ ] Row-level metrics are recorded without semantic overclaim.
-- [ ] No worker-owned audience evidence or real-root T3 run occurs.
-- [ ] No CLI/MCP/provider/browser/network/mutation action occurs.
-- [ ] Exactly four outputs remain unstaged and HEAD unchanged.
+- [x] Exact execution base and clean roots verified.
+- [x] R1 fixture totals reused only after an empty script-path delta check.
+- [x] Exactly one real-root PID launched and no replacement PID appeared.
+- [x] One short poll observed that PID had already exited; no orphan remained.
+- [x] Receipt and draft integrity are N/A with reason: neither artifact exists
+  because argument splitting prevented the target script from executing.
+- [x] Row-level metrics are N/A with reason: no receipt rows exist.
+- [x] No worker-owned audience evidence or real-root T3 run occurred.
+- [x] No CLI/MCP/provider/browser/network/mutation action occurred.
+- [x] Blocked-run manifest equals the two review outputs; HEAD remained
+  unchanged through worker return.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_dispatch_scaffold_provenance.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_markdown_structural_completeness.py` |
-| literalTokensReviewed | DISPATCH_READY; ACCEPT; source columns; exact ADIF query; handoff fields; worker-return markers; Allowed manifest |
+| literalTokensReviewed | CLOSED_BLOCKED_BOUNDED; ACCEPT; source columns; exact ADIF query; handoff fields; worker-return markers; Allowed manifest |
 | gateRunPurpose | confirm T4 packet compliance as dispatch evidence, not discover requirements |
 | claimBoundary | structural checks do not prove a real-root scan or semantic quality |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | paired T4 GC-018 | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | this file | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | T4 completion review | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Worker return | T4 worker return | `Status: REVIEWER_ACCEPTED_BLOCKED_FINAL` | PASS |
+| Roadmap state | Continuous Projection roadmap | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Receipt and draft | two success-only JSON paths | absent because target script did not execute | N/A with reason |
+| ADIF learning | ADIF-0045 and entries README | active guidance record | PASS |
+| Registry JSON | GC-051 corpus registry | BLOCKED with reason: T4 produced no eligible corpus registry record | BLOCKED with reason |
+| Registry Markdown | ADIF entries README | ADIF-0045 row present | PASS |
+| External evidence digest | N/A with reason: repository-local evidence only | no external input | N/A with reason |
+| System loop interlock | T4 ledger and completion review | blocked result retained; no PASS promotion | PASS |
+| Session continuity | active session surfaces | separate sync after material commit | N/A with reason |
+| Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required | Observed | Status |
+|---|---|---|---|
+| pre-implementation gate | PASS | PASS | PASS |
+| fixture proof | `53/53`; `91/91`; `144/144` | reused after empty script diff | PASS |
+| real-root process launches | 1 | 1 | PASS |
+| replacement PID/retry | 0 | 0 | PASS |
+| target script executes | yes | no; argument split before script | BLOCKED |
+| receipt rows | 16 | 0 | BLOCKED |
+| review draft | valid T2 JSON | absent | BLOCKED |
+| provider/CLI/MCP/browser/network calls | 0 | 0 | PASS |
+| public or target mutation | 0 | 0 | PASS |
 
 ## Public Export Disposition
 

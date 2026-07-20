@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T4_REDISPATCH_READY_R3_MANUAL_COPY_PASTE_ONLY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Date: 2026-07-19
 
@@ -33,8 +33,8 @@ unfit for a public reader or an external agent.
 Roadmap restoration and bounded T0-T2 execution were authorized by the
 operator. T2 is closed with reviewer repairs. On 2026-07-20 the operator
 explicitly reopened T3 and T4 after parking the provider/model and CLI/MCP
-lane. T3 is dispatch-ready through manual copy/paste only. T4 remains held
-until independent T3 closure releases its dependency.
+lane. T3 later closed accepted; T4 now closes blocked bounded after its final
+recovery attempt. No other roadmap is released by this artifact.
 
 ## Scope / Target / Owner Boundary
 
@@ -147,12 +147,11 @@ Run on a disposable three-root fixture, then one reviewer-authorized real-root
 read-only scan. Measure false positives, missed drift, reviewer effort, and
 packet usefulness. Close only if no automatic semantic mutation occurred.
 
-Disposition: `DISPATCH_READY_MANUAL_COPY_PASTE_ONLY`. The fresh GC-018 and
-source-verified work order authorize three existing fixture suites and exactly
-one real-root read-only receipt scan. The worker cannot create reviewer-owned
-audience evidence or run the real-root T3 gate. Automated agent CLI/MCP,
-provider/API, retry, browser, mutation, public-sync, commit, push, deployment,
-and unattended execution remain forbidden.
+Disposition: `CLOSED_BLOCKED_BOUNDED`. The T4 sequence retained its fixture
+proof but did not complete a real-root receipt scan. The worker created no
+reviewer-owned audience evidence and ran no real-root T3 gate. Automated agent
+CLI/MCP, provider/API, retry, browser, mutation, public-sync, commit, push,
+deployment, and unattended execution remain forbidden.
 
 R0 blocked before fixture execution because the work order's scoped Worker
 Return Packet Shape Contract omitted literal terms required by the mandatory
@@ -176,6 +175,15 @@ launch exactly one hidden local process, persist one PID, and supervise it with
 short manual polls. R3 is the final bounded recovery attempt; relaunch, R4,
 unattended execution, and all CLI/MCP/provider/browser/network actions remain
 forbidden.
+
+R3 passed pre-implementation, reused valid fixture evidence, and launched
+exactly one supervised hidden process. The child exited before its first poll
+because `Start-Process -ArgumentList` truncated the space-bearing absolute
+script path to `D:\UNG`; the T1 script never executed. The worker did not
+relaunch, left no orphan, and kept both roots clean. T4 and this roadmap are
+therefore `CLOSED_BLOCKED_BOUNDED`: T1-T3 remain accepted, but the real-root
+pilot and its receipt/draft measurements were not achieved. ADIF-0045 records
+the missing launch-mechanics preflight. No R4 is authorized.
 
 ## Acceptance Criteria
 
@@ -252,10 +260,10 @@ Provider/model and CLI/MCP roadmap implementation remains parked.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | T4 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | T3 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS`; T4 completion pending | PASS |
-| Roadmap state | this roadmap | `Status: T4_REDISPATCH_READY_R3_MANUAL_COPY_PASTE_ONLY` | PASS |
-| Implementation evidence | T4 paired baseline/work order | execution pending; no scan result claimed | N/A with reason |
+| Work order status | T4 work order | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | T4 completion review | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Implementation evidence | T4 ledger and worker return | three fail-closed attempts after R0 packet block; no completed real-root scan | PASS for bounded blocker closure |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check remains clean; no entry change required | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing human registry remains unchanged; T1 adds no corpus record | PASS |
 | External evidence digest | N/A with reason: repository-local roots only | no imported bundle | N/A with reason |
@@ -277,8 +285,10 @@ Provider/model and CLI/MCP roadmap implementation remains parked.
 
 T3 closure re-read the complete receipt-to-draft-to-audience chain and
 independently reran 144/144 disposable-fixture assertions after repair. The
-T4 real-root invocation has not run, so this roadmap does not claim tree-scale
-freshness or runtime completion. T4 manual copy/paste dispatch is next.
+T4 real-root scan did not complete, so this roadmap does not claim tree-scale
+freshness or runtime completion. No next T4 dispatch is authorized. Reopen
+requires fresh operator authority plus disposable proof of the exact detached
+launch mechanism with space-bearing paths before any real-root invocation.
 Disposition: PASS_BOUNDED.
 
 ## Public Export Disposition
