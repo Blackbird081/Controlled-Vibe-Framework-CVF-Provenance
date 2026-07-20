@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T3_DISPATCH_READY_MANUAL_COPY_PASTE_ONLY
+Status: T3_CLOSED_PASS_WITH_REVIEWER_REPAIRS_T4_PACKET_AUTHORING_AUTHORIZED
 
 Date: 2026-07-19
 
@@ -136,11 +136,10 @@ language, navigation, and external-agent-context checks in addition to source
 freshness. Reuse accepted UX-remediation evidence rather than inventing a new
 visual doctrine.
 
-Disposition: `DISPATCH_READY_MANUAL_COPY_PASTE_ONLY`. The fresh GC-018 and
-source-verified no-commit work order freeze a read-only reviewer-evidence gate,
-seven ordered audience assessments, fail-closed receipt/draft validation, and
-disposable-fixture proof. No real-root, browser, provider, public mutation, or
-worker commit is released.
+Disposition: `CLOSED_PASS_WITH_REVIEWER_REPAIRS`. The read-only gate now
+validates the complete accepted T1/T2 source boundary and seven ordered
+audience assessments. Independent proof passes 144/144. No real-root,
+browser, provider, public mutation, or worker commit occurred.
 
 ### T4 - Bounded Pilot And Closure
 
@@ -175,11 +174,10 @@ GC-018, source-verified no-commit work order, corrected ledger, worker return,
 and independent completion review. T1 is closed with reviewer repairs through
 implementation commit `a394d635c` and 53/53 disposable-fixture proof. T2 is
 closed with reviewer repairs through implementation commit `f350b925a`, 91/91
-disposable-fixture proof, and independent completion review. The next allowed
-move is to author only the separate provider-neutral operator-approved
-provider/model assignment and invocation-receipt roadmap. Continuous
-Projection T3 is dispatch-ready through manual copy/paste. T4 remains held
-until the T3 completion review and material commit are available.
+disposable-fixture proof, and independent completion review. T3 is accepted
+with reviewer repairs and 144/144 disposable-fixture proof. The next allowed
+move is T4 GC-018 and work-order packet authoring after the T3 material commit.
+Provider/model and CLI/MCP roadmap implementation remains parked.
 
 ## Dual Agent Surface Matrix
 
@@ -224,10 +222,10 @@ until the T3 completion review and material commit are available.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | T3 work order | `Status: DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | T2 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS`; T3 completion not yet executed | PASS |
-| Roadmap state | this roadmap | `Status: T3_DISPATCH_READY_MANUAL_COPY_PASTE_ONLY` | PASS |
-| Implementation evidence | T3 paired baseline/work order | implementation not yet executed; no runtime claim | N/A with reason |
+| Work order status | T3 work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | T3 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Roadmap state | this roadmap | `Status: T3_CLOSED_PASS_WITH_REVIEWER_REPAIRS_T4_PACKET_AUTHORING_AUTHORIZED` | PASS |
+| Implementation evidence | T3 scripts and worker return | 144/144 fixture proof after reviewer repair | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check remains clean; no entry change required | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing human registry remains unchanged; T1 adds no corpus record | PASS |
 | External evidence digest | N/A with reason: repository-local roots only | no imported bundle | N/A with reason |
@@ -247,11 +245,10 @@ until the T3 completion review and material commit are available.
 
 ## Current Runtime Freshness Verification
 
-T2 closure re-read the receipt-to-draft implementation and focused proof,
-then independently reran 91/91 disposable-fixture assertions. The T4-owned
-real-root recursive invocation was not run, so this roadmap does not claim
-tree-scale freshness or runtime completion. T3 dispatch authorizes only local
-fixture implementation through manual copy/paste; T4 remains held.
+T3 closure re-read the complete receipt-to-draft-to-audience chain and
+independently reran 144/144 disposable-fixture assertions after repair. The
+T4-owned real-root recursive invocation was not run, so this roadmap does not
+claim tree-scale freshness or runtime completion. T4 packet authoring is next.
 Disposition: PASS_BOUNDED.
 
 ## Public Export Disposition
@@ -264,8 +261,8 @@ public-sync repository.
 
 ## Claim Boundary
 
-This roadmap closes T2 with reviewer repairs and releases only the bounded T3
-manual-copy/paste no-commit implementation packet. It does not authorize T4,
-the T4 real-root scan, real-root apply, semantic edits, push, deployment,
+This roadmap closes T3 with reviewer repairs and releases only T4 packet
+authoring after committed dependency evidence. It does not authorize T4
+execution, real-root apply, semantic edits, push, deployment,
 browser/provider/live use, public-sync mutation, CLI/MCP invocation, or
 unattended mutation.

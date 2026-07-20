@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-CONTINUOUS-PROJECTION-T3
 
@@ -193,20 +193,32 @@ created under a disposable temporary directory.
 
 ## Machine Closure Package
 
-| Closure item | Required artifact/path | Dispatch state |
-| --- | --- | --- |
-| Work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T3_AUDIENCE_PRESENTATION_GATE_2026-07-20.md` | DISPATCH_READY |
-| Worker return | `docs/reviews/CVF_CONTINUOUS_PROJECTION_T3_WORKER_RETURN_2026-07-20.md` | worker-owned pending output |
-| Completion review | `docs/reviews/CVF_CONTINUOUS_PROJECTION_T3_COMPLETION_REVIEW_2026-07-20.md` | reviewer-owned after worker return |
-| Roadmap | continuous-projection roadmap | T3 dispatch-ready; T4 held |
-| Registry JSON/Markdown | N/A with reason: T3 does not classify corpus state | no change |
-| Session continuity | protected continuity surfaces | reviewer/session-sync steward after material dispatch commit |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T3_AUDIENCE_PRESENTATION_GATE_2026-07-20.md` | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CONTINUOUS_PROJECTION_T3_COMPLETION_REVIEW_2026-07-20.md` | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Roadmap state | continuous-projection roadmap | T3 closed; T4 packet authoring next | PASS |
+| Implementation evidence | two scripts plus worker return | 144/144 focused proof | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate check unchanged and clean | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no entry change required; registry unchanged | PASS |
+| External evidence digest | N/A with reason: repository-local fixture proof | no external bundle | N/A with reason |
+| System loop interlock | N/A with reason: no interlock owner changed | no mutation | N/A with reason |
+| Session continuity | protected continuity surfaces | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+| --- | --- | --- | --- | --- | --- |
+| T3-SCHEMA | fixture gate output | `schemaVersion` | frozen T3 version | exact | PASS |
+| T3-ROWS | fixture gate output | `summary.rowCount` | 7 | 7 | PASS |
+| T3-NO-MUTATION | fixture gate output | `authorizesMutation` | Boolean false | Boolean false | PASS |
+| T1-SOURCE-ROWS | fixture T1 receipt | `summary.rowCount` and `rows` | 16 and 16 | 16 and 16 | PASS |
 
 ## Current Runtime Freshness Verification
 
-T3 dispatch relies on accepted T1/T2 disposable-fixture mechanisms and bounded
-UX evidence. No T3 implementation, real-root scan, browser run, provider call,
-or public mutation has occurred at dispatch.
+T3 closure independently recomputed 144/144 disposable-fixture assertions
+after reviewer repair of the upstream source-freshness boundary. No real-root
+scan, browser run, provider call, or public mutation occurred.
 
 ## Public Export Disposition
 
@@ -217,8 +229,8 @@ public-sync mutation or public claim.
 
 ## Claim Boundary
 
-This baseline releases only T3 read-only evidence-gate implementation and
-focused disposable-fixture proof. It does not release T4, real-root scanning,
+This baseline closes only T3 read-only evidence-gate implementation and
+focused disposable-fixture proof. It does not release T4 execution, real-root scanning,
 semantic adjudication, README/Web edits, public-sync, copy/apply, commit by the
 worker, push, deployment, browser automation, provider/API use, MCP/CLI calls,
 or production readiness.

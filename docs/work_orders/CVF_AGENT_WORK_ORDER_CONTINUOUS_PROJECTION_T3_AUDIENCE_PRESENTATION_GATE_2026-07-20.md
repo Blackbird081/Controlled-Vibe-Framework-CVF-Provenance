@@ -2,15 +2,15 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS
 
 Batch ID: CVF-CONTINUOUS-PROJECTION-T3
 
 dispatchBaseHead: `c060fc7a5`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `c8f1b7716`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `c8f1b7716`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -371,14 +371,14 @@ worker is forbidden to use any provider or external-agent CLI/MCP surface.
 
 ## Acceptance Criteria
 
-- [ ] Exactly three allowed paths are pending and nothing is staged.
-- [ ] Both scripts parse.
-- [ ] The exact input/output contracts and seven ordered rows are implemented.
-- [ ] Positive, FAIL, REVIEW_REQUIRED, identity, cardinality, order, enum,
+- [x] Exactly three allowed paths were returned and nothing was staged.
+- [x] Both scripts parse.
+- [x] The exact input/output contracts and seven ordered rows are implemented.
+- [x] Positive, FAIL, REVIEW_REQUIRED, identity, cardinality, order, enum,
   Boolean, empty-evidence, and no-mutation cases are proven.
-- [ ] No existing source or real root was modified or scanned.
-- [ ] Worker-return fast gate passes.
-- [ ] Worker returns `COMPLETE_PENDING_REVIEW` without committing.
+- [x] No existing source or real root was modified or scanned by the worker.
+- [x] Worker-return fast gate passes after reviewer-owned packet correction.
+- [x] Worker returned `COMPLETE_PENDING_REVIEW` without committing.
 
 ## Review Gate
 
@@ -411,7 +411,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | `MULTI_AGENT_MULTI_ROLE` |
 | rolePattern | dispatcher -> no-commit implementation worker -> reviewer/closer -> session-sync steward |
 | phase | DISPATCH_AUTHORING; EXECUTION; CLOSURE; SESSION_SYNC |
-| baseHeadFor(phase) | dispatchBaseHead=`c060fc7a5`; executionBaseHead=`WORKER_MUST_CAPTURE_AT_START`; closureBaseHead=`REVIEWER_TO_SET` |
+| baseHeadFor(phase) | dispatchBaseHead=`c060fc7a5`; executionBaseHead=`c8f1b7716`; closureBaseHead=`c8f1b7716` |
 | changedSetScope(phase) | dispatch packet paths; exactly three worker paths; reviewer-owned closure paths; protected continuity paths separately |
 | traceScope(phase, actor) | each actor records only commands, changed set, and evidence from its own phase |
 | commitOwner(phase) | worker=`WORKER_MUST_NOT_COMMIT`; reviewer/closer owns material commit; session-sync steward owns continuity commit |
@@ -462,12 +462,35 @@ inventing an unsupported substitution; record the exact outcome.
 
 ## Closure Checklist
 
-- [ ] Reviewer verifies actual changed set and no staged files.
-- [ ] Reviewer reads both scripts before test execution.
-- [ ] Reviewer recomputes focused proof and fast gate.
-- [ ] Every finding is repaired, rejected with evidence, or blocks closure.
-- [ ] Material commit remains reviewer-owned.
-- [ ] T4 is released only from committed T3 completion evidence.
+- [x] Reviewer verified actual changed set and no staged files.
+- [x] Reviewer read both scripts before test execution.
+- [x] Reviewer recomputed 144/144 focused proof and the fast gate.
+- [x] Every finding was repaired or dispositioned with evidence.
+- [x] Material commit remains reviewer-owned.
+- [x] T4 execution remains held until committed T3 completion evidence exists.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | T3 completion review | `Status: REVIEWER_ACCEPTED_WITH_REPAIRS` | PASS |
+| Roadmap state | continuous-projection roadmap | `Status: T3_CLOSED_PASS_WITH_REVIEWER_REPAIRS_T4_PACKET_AUTHORING_AUTHORIZED` | PASS |
+| Implementation evidence | two scripts plus worker return | 144/144 focused proof | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate check unchanged and clean | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no entry change required; registry unchanged | PASS |
+| External evidence digest | N/A with reason: repository-local fixture proof | no imported bundle | N/A with reason |
+| System loop interlock | N/A with reason: no interlock owner changed | no mutation | N/A with reason |
+| Session continuity | protected continuity surfaces | separate post-material sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+| --- | --- | --- | --- | --- | --- |
+| T3-SCHEMA | fixture gate output | `schemaVersion` | frozen T3 version | exact | PASS |
+| T3-ROWS | fixture gate output | `summary.rowCount` | 7 | 7 | PASS |
+| T3-NO-MUTATION | fixture gate output | `authorizesMutation` | Boolean false | Boolean false | PASS |
+| T1-SOURCE-ROWS | fixture T1 receipt | `summary.rowCount` and `rows` | 16 and 16 | 16 and 16 | PASS |
 
 ## Return-To-Orchestrator Conditions
 
@@ -500,8 +523,9 @@ required schema change beyond the paired baseline.
 
 ## Operator Checkpoint
 
-The operator authorized T3/T4 continuation. This packet consumes that authority
-only for T3 implementation through manual copy/paste. T4 requires T3 closure.
+The operator authorized T3/T4 continuation. T3 is reviewer-accepted with
+repairs. T4 packet authoring may begin only after the T3 material commit;
+T4 execution still requires its own fresh dispatch packet.
 
 ## Public Export Disposition
 
@@ -512,7 +536,7 @@ is authorized.
 
 ## Claim Boundary
 
-This work order authorizes exactly two new read-only PowerShell scripts and one
-no-commit worker-return packet for T3. It does not authorize T4, real-root
+This work order closed exactly two new read-only PowerShell scripts and one
+no-commit worker-return packet for T3. It does not authorize T4 execution, real-root
 scanning, semantic decisions, README/Web edits, public-sync, browser activity,
 provider/API/Claude CLI/MCP use, commit, push, deployment, or production claims.
