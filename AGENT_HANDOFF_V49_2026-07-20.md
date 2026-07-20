@@ -30,11 +30,10 @@ lanes remain parked.
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`;
+current mode=`continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=operator manual copy/paste of the repaired T4 R3 work order
-at `8468102c5` with the post-sync HEAD, then wait for four no-commit outputs or
-a blocked return;
+next allowed move=operator reviews T4 closure commit `5885cf32f` and selects
+the next knowledge-absorption or system-chain audit step; no R4 or retry;
 parked checkpoint=all agent CLI/MCP/provider/browser/network use, all other roadmap execution, automated
 agent/provider/MCP-live/API-key/subscription calls, browser/live proof,
 public-sync, push/deployment, production, and unattended action.
@@ -65,15 +64,15 @@ batch advances session routing only to T4 packet authoring.
 
 ## Current Mode
 
-`continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`
+`continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
 
 ## Next Allowed Move
 
-Operator manually copy/pastes the repaired T4 R3 work order at `8468102c5`
-with the post-sync HEAD, then waits for four unstaged outputs or
-`BLOCKED_WITH_REASON`. R2 consumed one scan when the outer harness terminated
-before the child timeout; R3 uses one hidden local process, one persisted PID,
-short manual polls, and no relaunch.
+Operator reviews T4 closure commit `5885cf32f` and selects the next
+knowledge-absorption or system-chain audit step. T4 and the roadmap are
+`CLOSED_BLOCKED_BOUNDED`; no R4 or retry is authorized. Reopen requires fresh
+operator authority and disposable exact-shape launch proof with space-bearing
+paths before any new real-root invocation.
 Do not invoke Codex/Claude or
 another agent by CLI, use MCP, call a provider, use an API key/account
 subscription, run browser/network proof, public-sync, push, deploy, act in
@@ -866,5 +865,45 @@ Protected paths:
 ## GC-020 Marker - Continuous Projection T4 R3 Redispatch Sync
 
 This handoff records material parent commit `8468102c5`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## Continuous Projection T4 And Roadmap Bounded Closure
+
+- Material closure commit: `5885cf32f`.
+- Final disposition: `CLOSED_BLOCKED_BOUNDED`.
+- T1-T3 remain accepted; T4 produced no real-root receipt or review draft.
+- R3 launched exactly one PID, which exited before its first poll because the
+  space-bearing absolute script path was split to `D:\UNG`; the target script
+  never executed.
+- No retry, replacement PID, R4, orphan process, root mutation, provider,
+  CLI/MCP, browser, network, public-sync, push, deploy, or production action.
+- ADIF-0045 records the missing detached-launch exact-shape preflight.
+- Reopen requires fresh operator authority and disposable proof of the exact
+  executable, working directory, launch API, quoting strategy, and
+  space-bearing argument shape before any new real-root invocation budget.
+- Pre-commit 83/83 passed; committed-range pre-closure becomes fully current
+  through this continuity sync.
+
+## Core Guard Self-Protection Authorization - T4 Closure Session Sync
+
+Authorized scope: record material closure `5885cf32f`, set T4 and the roadmap
+to closed blocked bounded, park R4/retry, publish the checkable reopen
+condition, and align the generated session state, front door, and active
+handoff. This does not authorize any new roadmap implementation.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT4Dispatch20260720.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION_MEMORY.md`;
+- `AGENT_HANDOFF_V49_2026-07-20.md`.
+
+## GC-020 Marker - Continuous Projection T4 Closure Sync
+
+This handoff records material parent commit `5885cf32f`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.

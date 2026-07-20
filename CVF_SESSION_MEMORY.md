@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=operator manually copy/pastes repaired T4 R3 work order commit `8468102c5` with the post-sync HEAD and waits for four no-commit outputs or fail-closed return; parked checkpoint=all agent CLI/MCP, provider/API/account use, retry or replacement PID, browser/network, public-sync, push/deployment, production, unattended action, and unrelated roadmap execution.
+Startup acknowledged: current mode=`continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=operator reviews T4 closure commit `5885cf32f` and selects the next knowledge-absorption or system-chain audit step; parked checkpoint=T4 R4/retry, all agent CLI/MCP, provider/API/account use, browser/network, public-sync, push/deployment, production, unattended action, and unrelated roadmap implementation.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`
+Current mode marker: `continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
 
-Current mode: `continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`
+Current mode: `continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
 
-`continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`
+`continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
 
 Previous mode:
 
-`continuous_projection_t4_r2_waiting_manual_no_commit_worker_return`
+`continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Continuous Projection T4 and roadmap bounded closure | `5885cf32f` | CLOSED_BLOCKED_BOUNDED; T1-T3 retained, R3 target script did not execute due spaced-path argument splitting, ADIF-0045 recorded, no R4 or retry authorized; zero provider/CLI/MCP/browser/network calls. |
 | Continuous Projection T4 R3 supervised-process redispatch | `8468102c5` | REDISPATCH_READY_R3 manual copy/paste only; R2 outer-harness timeout accepted, ADIF-0044 recorded, and exactly one hidden local process with one persisted PID plus short manual polls released; zero provider/CLI/MCP/browser/network calls. |
 | Continuous Projection T4 R2 stdout-only redispatch | `539bf01cc` | REDISPATCH_READY_R2 manual copy/paste only; R1 PATH_ESCAPE block accepted, fixture proof `53/53`, `91/91`, `144/144` reused, ADIF-0043 recorded, ReceiptOutputPath omitted, and one fresh no-retry scan released; zero provider/CLI/MCP/browser/network calls. |
 | Continuous Projection T3 audience and presentation gate closure | `e21199dfa` | REVIEWER_ACCEPTED_WITH_REPAIRS; complete T1/T2 source-boundary validation, 144/144 fixture proof, zero provider calls; T4 packet authoring only is next. |
@@ -338,13 +339,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`
+Mode: `continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
 
-Operator manually copy/pastes the repaired T4 R3 work order committed at
-`8468102c5`, supplies the post-sync HEAD as executionBaseHead, and waits for
-exactly four no-commit outputs or `BLOCKED_WITH_REASON`. R2 consumed one scan
-when the outer harness terminated before the child timeout; R3 uses one hidden
-local process, one persisted PID, short manual polls, and no relaunch. Do not use
+Operator reviews T4 closure commit `5885cf32f` and selects the next
+knowledge-absorption or system-chain audit step. T4 and the roadmap are
+`CLOSED_BLOCKED_BOUNDED`; no R4 or retry is authorized. Reopen requires fresh
+operator authority and disposable proof of the exact detached launch mechanism
+with space-bearing paths before any new real-root invocation. Do not use
 Codex/Claude CLI, any agent CLI, MCP, provider/API/account subscription,
 browser/network service, retry, or unattended execution. All other roadmap execution,
 agent CLI/MCP, provider/API-key/subscription use, browser/live proof,
