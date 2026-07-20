@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V48_2026-07-18.md`
+4. `AGENT_HANDOFF_V49_2026-07-20.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V48_2026-07-18.md` |
+| Active handoff | `AGENT_HANDOFF_V49_2026-07-20.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_t1_worker_execution_next`; active handoff=AGENT_HANDOFF_V48_2026-07-18.md; next allowed move=execute the reviewer-accepted T1 packet from the final session-sync HEAD under WORKER_MUST_NOT_COMMIT with exactly three outputs; parked checkpoint=T2-T4, apply/copy, real-root or public-sync mutation, worker commit, push/deployment, provider/live, production, and unattended action.
+Startup acknowledged: current mode=`continuous_projection_t1_reviewer_closure_pending`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=finalize independent T1 closure from implementation commit a394d635c and then session-sync the accepted result; parked checkpoint=T2 implementation, T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push/deployment, provider/live, production, and unattended action.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_t1_worker_execution_next`
+Current mode marker: `continuous_projection_t1_reviewer_closure_pending`
 
-Current mode: `continuous_projection_t1_worker_execution_next`
+Current mode: `continuous_projection_t1_reviewer_closure_pending`
 
-`continuous_projection_t1_worker_execution_next`
+`continuous_projection_t1_reviewer_closure_pending`
 
 Previous mode:
 
-`continuous_projection_t1_packet_authoring_next`
+`continuous_projection_t1_worker_execution_next`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Continuous projection T1 read-only receipt implementation | `a394d635c` | IMPLEMENTED_REVIEWER_CLOSURE_PENDING after bounded reviewer schema, ordering, git-ignore, mapped-handoff, and mapper-signal repairs; 53/53 disposable-fixture assertions PASS; no real-root or public mutation. |
 | Continuous projection T1 read-only receipt dispatch | `b3bf00de8` | DISPATCH_READY after reviewer repairs to the 16-row input seam, mapper child-process boundary, tracked/ignored fields, fail-closed timeout semantics, lifecycle anchors, and role routing; exactly three no-commit worker outputs. |
 | Continuous projection T0 three-root contract closure | `d1cb8cba9` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS. Four tracked forbidden review files are separated from ignored local residue; three mapped-file pairs are hash-current; six target-only public root files are source-authority blocked; T1 packet authoring is next while implementation and mutation lanes remain parked. |
 | Continuous projection T0 three-root contract dispatch | `ebc0242fd` | DISPATCH_READY. Exactly two no-commit review outputs; read-only provenance/public-sync/cvf-web inspection; T1-T4 and all mutation lanes remain parked. |
@@ -327,14 +328,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_t1_worker_execution_next`
+Mode: `continuous_projection_t1_reviewer_closure_pending`
 
-Execute CVF-CONTINUOUS-PROJECTION-T1 from the final dispatch/session-sync HEAD
-under `WORKER_MUST_NOT_COMMIT` using the reviewer-accepted T1 work order.
-Create exactly the receipt wrapper, focused disposable-fixture proof suite, and
-worker return. T2-T4, apply/copy, real-root or public-sync mutation, worker
-commit, push, deployment, provider/live calls, production action, and
-unattended mutation remain parked.
+Finalize independent T1 closure from implementation commit `a394d635c`, run
+committed-range closure gates from `caf594ff0`, commit the paired closure, and
+then session-sync. If accepted, release only T2 packet authoring. T2
+implementation, T3-T4, real-root receipt scan, apply/copy, public-sync mutation,
+push, deployment, provider/live calls, production action, and unattended
+mutation remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

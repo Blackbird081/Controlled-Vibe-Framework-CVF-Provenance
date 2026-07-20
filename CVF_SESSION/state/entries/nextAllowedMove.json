@@ -1,5 +1,5 @@
 {
   "stateOrder": 2002,
   "stateKey": "nextAllowedMove",
-  "value": "Execute CVF-CONTINUOUS-PROJECTION-T1 from the final dispatch/session-sync HEAD under WORKER_MUST_NOT_COMMIT using docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T1_READ_ONLY_DRIFT_RECEIPT_2026-07-20.md. Create exactly the new read-only receipt wrapper, its focused disposable-fixture proof suite, and the worker return; run pre-implementation from the captured executionBaseHead before edits; return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2-T4, apply/copy, real-root or public-sync mutation, commit by worker, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "Finalize independent CVF-CONTINUOUS-PROJECTION-T1 closure from implementation commit a394d635c using the paired baseline, work order, roadmap, and completion review. Run committed-range pre-closure from caf594ff0, commit closure material, then perform a separate protected session sync. If accepted, release only fresh T2 GC-018 and work-order authoring. T2 implementation, T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave."
 }

@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V48_2026-07-18.md",
+  "activeHandoff": "AGENT_HANDOFF_V49_2026-07-20.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -81,15 +81,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V44_2026-07-15.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V45_2026-07-16.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V46_2026-07-17.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V47_2026-07-18.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V47_2026-07-18.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V48_2026-07-18.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "continuous_projection_t1_worker_execution_next",
-  "previousMode": "continuous_projection_t1_packet_authoring_next",
+  "currentMode": "continuous_projection_t1_reviewer_closure_pending",
+  "previousMode": "continuous_projection_t1_worker_execution_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13671,7 +13672,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Execute CVF-CONTINUOUS-PROJECTION-T1 from the final dispatch/session-sync HEAD under WORKER_MUST_NOT_COMMIT using docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T1_READ_ONLY_DRIFT_RECEIPT_2026-07-20.md. Create exactly the new read-only receipt wrapper, its focused disposable-fixture proof suite, and the worker return; run pre-implementation from the captured executionBaseHead before edits; return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T2-T4, apply/copy, real-root or public-sync mutation, commit by worker, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Finalize independent CVF-CONTINUOUS-PROJECTION-T1 closure from implementation commit a394d635c using the paired baseline, work order, roadmap, and completion review. Run committed-range pre-closure from caf594ff0, commit closure material, then perform a separate protected session sync. If accepted, release only fresh T2 GC-018 and work-order authoring. T2 implementation, T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13729,5 +13730,15 @@
     "nextAllowedMove": "Designated worker creates exactly three T1 outputs and returns pending independent review.",
     "parked": "T2-T4, apply/copy, real-root or public-sync mutation, worker commit, push, deployment, provider/live calls, production action, and unattended mutation.",
     "claimBoundary": "Read-only receipt implementation in three create-only paths; no real-root run or mutation authority."
+  },
+  "continuousProjectionT1Implementation20260720": {
+    "status": "IMPLEMENTED_REVIEWER_CLOSURE_PENDING",
+    "batchId": "CVF-CONTINUOUS-PROJECTION-T1",
+    "implementationCommit": "a394d635c",
+    "proof": "53/53 disposable-fixture assertions PASS after bounded reviewer repairs",
+    "reviewerRepairs": "Exact T0 schema fields and ordering, provider-memory authority removal, git-confirmed ignored classification, mapped AGENT_HANDOFF.md exclusion, and mapper candidate freshness consumption.",
+    "nextAllowedMove": "Independent reviewer finalizes and commits the T1 closure packet, then performs a separate session sync.",
+    "parked": "T2 implementation, T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation.",
+    "claimBoundary": "Private read-only mechanism implementation and disposable-fixture proof only; no real-root freshness or public claim."
   }
 }
