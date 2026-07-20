@@ -89,8 +89,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "continuous_projection_t4_packet_authoring_authorized_t3_closed",
-  "previousMode": "continuous_projection_t3_waiting_no_commit_worker_return_manual_handoff",
+  "currentMode": "continuous_projection_t4_waiting_manual_no_commit_worker_return",
+  "previousMode": "continuous_projection_t4_packet_authoring_authorized_t3_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

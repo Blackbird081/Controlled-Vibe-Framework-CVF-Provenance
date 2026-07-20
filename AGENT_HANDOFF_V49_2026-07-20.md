@@ -22,19 +22,19 @@ session-sync batch.
 
 ## Active Boundary
 
-T3 is closed with reviewer repairs at material commit `e21199dfa`. T4 GC-018
-and work-order authoring is released. T4 execution, real-root scanning,
-automated agent invocation, mutation, public, provider-call, browser/live, and
-production lanes remain parked.
+T3 is closed with reviewer repairs at `e21199dfa`. T4 is dispatch-ready at
+`248d799f3` through operator manual copy/paste only. Automated agent
+invocation, mutation, public, provider-call, browser/network, and production
+lanes remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged:
-current mode=`continuous_projection_t4_packet_authoring_authorized_t3_closed`;
+current mode=`continuous_projection_t4_waiting_manual_no_commit_worker_return`;
 active handoff=`AGENT_HANDOFF_V49_2026-07-20.md`;
-next allowed move=author only the T4 GC-018 baseline and source-verified
-no-commit work order from T3 closure commit `e21199dfa`;
-parked checkpoint=T4 execution until committed dispatch acceptance, all other roadmap execution, automated
+next allowed move=operator manual copy/paste of the T4 work order at
+`248d799f3`, then wait for four no-commit outputs or a blocked return;
+parked checkpoint=all agent CLI/MCP/provider/browser/network use, all other roadmap execution, automated
 agent/provider/MCP-live/API-key/subscription calls, browser/live proof,
 public-sync, push/deployment, production, and unattended action.
 
@@ -64,16 +64,15 @@ batch advances session routing only to T4 packet authoring.
 
 ## Current Mode
 
-`continuous_projection_t4_packet_authoring_authorized_t3_closed`
+`continuous_projection_t4_waiting_manual_no_commit_worker_return`
 
 ## Next Allowed Move
 
-Author only the T4 GC-018 baseline and source-verified no-commit work order
-using T3 closure commit `e21199dfa` as dependency-release evidence. Do not
-execute T4 or invoke an agent CLI or MCP
-live tool, call a provider, use an API key or account subscription, run browser
-or live proof, public-sync, push, deploy, act in production, or start
-unattended mutation.
+Operator manually copy/pastes the T4 work order at `248d799f3`, then waits for
+four unstaged outputs or `BLOCKED_WITH_REASON`. Do not invoke Codex/Claude or
+another agent by CLI, use MCP, call a provider, use an API key/account
+subscription, run browser/network proof, public-sync, push, deploy, act in
+production, retry the real scan, or start unattended execution.
 
 Latest closed numbered LHW wave remains `LHW24`.
 
@@ -701,5 +700,39 @@ Protected paths:
 ## GC-020 Marker - Continuous Projection T3 Closure Sync
 
 This handoff records material parent commit `e21199dfa`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the protected sync commit.
+
+## Continuous Projection T4 Manual Dispatch
+
+- Material dispatch commit: `248d799f3`.
+- Mode: `continuous_projection_t4_waiting_manual_no_commit_worker_return`.
+- Handoff: operator manual copy/paste only.
+- Worker scope: three existing fixture suites, exactly one real-root read-only
+  receipt scan, and four exact unstaged outputs.
+- Hard prohibition: no Codex/Claude/agent CLI, MCP, provider/API/account use,
+  retry, browser, network service, public-sync mutation, worker commit, push,
+  deployment, production action, or unattended execution.
+- Reviewer owns audience evidence, real T3 gate run, semantic decision, and
+  closure.
+
+## Core Guard Self-Protection Authorization - T4 Dispatch Session Sync
+
+Authorized scope: record T4 dispatch commit `248d799f3`, manual handoff mode,
+exact next move, and the operator's zero-CLI/MCP/provider boundary.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/continuousProjectionT4Dispatch20260720.json`;
+- `CVF_SESSION/state/entries/globalRoadmapExecutionMoratoriumCliMcpAudit20260720.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION_MEMORY.md`.
+
+## GC-020 Marker - Continuous Projection T4 Dispatch Sync
+
+This handoff records material parent commit `248d799f3`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the protected sync commit.

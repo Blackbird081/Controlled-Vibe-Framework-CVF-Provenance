@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "continuous_projection_t4_packet_authoring_authorized_t3_closed",
+  "currentMode": "continuous_projection_t4_waiting_manual_no_commit_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V49_2026-07-20.md",
-  "nextAllowedMove": "Author only the Continuous Projection T4 GC-018 baseline and source-verified no-commit work order using T3 closure commit e21199dfa as dependency-release evidence. Do not execute T4 until that packet passes independent dispatch review and is committed. All automated external-agent CLI/MCP invocation, provider/API-key/subscription use, browser/live proof, public-sync, push, deployment, production action, unattended mutation, and unrelated roadmap execution remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Operator manually copy/pastes the committed Continuous Projection T4 work order at material commit 248d799f3 to the worker, then waits for exactly four unstaged no-commit outputs or a fail-closed BLOCKED_WITH_REASON return. No Codex or Claude CLI, MCP tool, provider/API-key/account subscription, browser, network service, public-sync mutation, retry, push, deployment, production action, or unattended execution is authorized. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

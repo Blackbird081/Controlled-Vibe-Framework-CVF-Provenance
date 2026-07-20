@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2020,
+  "stateKey": "continuousProjectionT4Dispatch20260720",
+  "value": {
+    "status": "DISPATCH_READY_WAITING_MANUAL_NO_COMMIT_WORKER_RETURN",
+    "date": "2026-07-20",
+    "materialCommit": "248d799f3",
+    "dependencyCommit": "e21199dfa",
+    "baseline": "docs/baselines/CVF_GC018_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_AND_CLOSURE_2026-07-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_AND_CLOSURE_2026-07-20.md",
+    "handoffMode": "MANUAL_COPY_PASTE_ONLY",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "realRootScanCeiling": 1,
+    "allowedOutputCount": 4,
+    "cliMcpProviderCallCeiling": 0,
+    "claimBoundary": "No agent CLI/MCP, provider/API/account use, retry, browser, network service, mutation, public-sync, worker commit, push, deployment, production, or unattended execution."
+  }
+}
