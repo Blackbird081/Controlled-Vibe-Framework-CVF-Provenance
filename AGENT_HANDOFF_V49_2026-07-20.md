@@ -602,3 +602,20 @@ may accept this parent SHA for this protected sync commit.
 This handoff records material parent commit `add5f9ed5`. The handoff-only sync
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this protected sync commit.
+
+## GC-020 Remote And Memory Boundary Repair
+
+Remote tracking branch: `origin/main`.
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
+
+This metadata repair records accepted parent commit `a68cc254a`. It does not
+change the private-push authorization or lift any parked execution lane.
+
+## GC-020 Marker - Remote And Memory Boundary Repair
+
+This handoff records accepted parent commit `a68cc254a`. The handoff-only sync
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this protected sync commit.
