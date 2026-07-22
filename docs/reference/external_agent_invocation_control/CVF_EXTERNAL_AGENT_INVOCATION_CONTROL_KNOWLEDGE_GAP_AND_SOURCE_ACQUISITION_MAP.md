@@ -37,7 +37,7 @@ parent roadmap and a fresh operator decision.
 
 ## Findings / Position
 
-Position: `READY_FOR_OPERATOR_SOURCE_SELECTION`.
+Position: `PARKED_KNOWLEDGE_GAP`.
 
 Every one of the nine roadmap domains has one terminal authority disposition
 below, every non-owned row carries an exact unresolved question, required
@@ -46,6 +46,35 @@ domain required treating an external proposal or provider-local memory as
 CVF authority. The predecessor audit's `CONTROL_NOT_EFFECTIVE_FOR_EXTERNAL_AGENT_CLI`
 position and `GLOBAL_ROADMAP_EXECUTION_MORATORIUM_ACTIVE` decision remain
 unchanged and are reconfirmed by this map, not superseded by it.
+
+### Agent Internal Autonomy Boundary
+
+Provider-native internal reasoning, exploration helpers, context management,
+task decomposition, and internal subagents inside one already-authorized
+parent session are not separately governed external invocations. CVF controls
+the parent assignment, separately dispatched sessions, external CLI/MCP and
+provider boundaries, aggregate resource envelope, durable mutations, and
+reviewable outcomes. It must not permission each internal reasoning step.
+
+The internal activity crosses the invocation perimeter only if it independently
+starts another process or session, changes provider/account or credential use,
+uses an external service, expands scope or authority, performs an unauthorized
+durable action, or otherwise leaves the parent envelope.
+
+### Knowledge Sufficiency Disposition
+
+Current knowledge is insufficient for architecture ratification or
+implementation. Critical missing and opaque rows remain parked rather than
+being filled by inference. External knowledge may be absorbed later through a
+fresh operator-approved, source-bounded intake. Until accepted sources resolve
+the relevant gaps, the correct result is `PARKED_KNOWLEDGE_GAP`.
+
+### Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| `INTERNAL_AGENT` | authorized parent agent session | provider-native reasoning, exploration, decomposition, and context management remain autonomous inside parent scope | corrected canonical autonomy and delegation standards | internal helpers inherit the parent envelope | `CONTRACT_ONLY` |
+| `EXTERNAL_AGENT_CLI_MCP` | no current end-to-end owner | no separately dispatched or perimeter-crossing invocation is authorized | predecessor audit and this nine-domain map | future adapter owner remains parked behind accepted knowledge | `DEFERRED_WITH_REASON` |
 
 ### Authority Ledger
 
@@ -122,14 +151,14 @@ the path before use.
 
 ## Bounded Recommendation
 
-`READY_FOR_OPERATOR_SOURCE_SELECTION`
+`PARKED_KNOWLEDGE_GAP`
 
 Every critical-priority gap (launch admission, process identity, cumulative
 budget, unknown usage) has a precise acquisition question and a named
-primary-source class above. This recommendation does not authorize T1,
-external research, architecture ratification, or implementation. It confirms
-only that the operator now has enough bounded, source-backed acquisition
-rows to select which primary sources to approve next.
+primary-source class above, but critical knowledge is still missing. This
+recommendation does not authorize T1, external research, architecture
+ratification, or implementation. It records a bounded acquisition menu for a
+future operator decision while keeping the lane parked.
 
 ## Source Verification Block
 
@@ -167,7 +196,7 @@ labels for this reference artifact only.
 | Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
 | Owner surface | this reference family and the predecessor audit |
 | Disposition | NOT_APPLICABLE_WITH_REASON |
-| Claim boundary | later primary-source intake requires a fresh operator-approved T1 tranche and a separate packet |
+| Claim boundary | later primary-source intake requires a fresh operator-approved T1 tranche and a separate packet; no intake is forced while the lane is parked |
 
 ## Epistemic Process Block
 
@@ -205,9 +234,11 @@ standard's archive-only physical location versus its still-active internal
 
 The predecessor audit's general
 `CONTROL_NOT_EFFECTIVE_FOR_EXTERNAL_AGENT_CLI` position is narrowed here into
-a per-domain terminal-state matrix with acquisition priorities. This map does
-not change the audit's decision, does not lift the moratorium, and does not
-claim the two path refinements invalidate any audit finding.
+a per-domain terminal-state matrix with acquisition priorities. The operator
+correction also distinguishes agent-native internal orchestration from a
+separately governed invocation. This map remains parked for insufficient
+knowledge, does not change the audit's decision, does not lift the moratorium,
+and does not claim the two path refinements invalidate any audit finding.
 
 ## Claim Boundary
 

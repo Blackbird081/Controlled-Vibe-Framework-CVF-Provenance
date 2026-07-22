@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_CONDUCT_FINDING
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_BOUNDARY_CORRECTION
 
 Batch ID: CVF-EAIC-KR-T0
 
@@ -100,14 +100,20 @@ Allowed actions:
 
 Forbidden actions:
 
-- invoke any other agent, agent CLI, MCP tool/server, provider/API, API key,
-  account subscription, browser, network service, external search, or clone;
+- start a separately dispatched agent session, external agent CLI, MCP
+  tool/server, provider/API, API key, account subscription, browser, network
+  service, external search, or clone;
 - read provider-specific memory as CVF authority;
 - edit runtime, source, tests, scripts, checkers, hooks, registries, session
   state, handoffs, existing roadmaps, baselines, or work orders;
 - implement a launcher, supervisor, budget governor, receipt, adapter, schema,
   UI, TUI, or Web surface;
 - stage, commit, push, public-sync, deploy, or perform production action.
+
+Provider-native internal reasoning, exploration helpers, context management,
+and internal subagents are not separately dispatched CVF workers and remain
+autonomous inside this packet's Allowed scope. They do not expand provider,
+credential, process, external-service, mutation, or claim authority.
 
 ## Dependency Release Evidence
 
@@ -318,7 +324,7 @@ allowed-scope formatting repair.
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
 | --- | --- | --- | --- | --- | --- |
-| `INTERNAL_AGENT` | manual copy/paste packet and repo-local reads | documentation-only, no runtime mutation | three Allowed outputs and command trace | no automated invocation | `CONTRACT_ONLY` |
+| `INTERNAL_AGENT` | parent worker session, including provider-native internal orchestration | documentation-only scope; internal reasoning and decomposition remain autonomous | three Allowed outputs, command trace, and operator boundary correction | internal helpers inherit parent scope and are not separate adapters | `CONTRACT_ONLY` |
 | `EXTERNAL_AGENT_CLI_MCP` | no released interface | operator prohibition; zero invocation authority | zero-call statement and reviewer command audit | separate future operator-approved control architecture required | `DEFERRED_WITH_REASON` |
 
 ## Agent Handoff Contract Control Block
@@ -414,8 +420,8 @@ manifest. Narrative confidence is not evidence.
 - [x] The recommendation remains knowledge-only and does not propose code.
 - [x] Agent CLI, MCP, provider, API, browser, network, and clone counts are
   zero.
-- [x] Internal subagent count is one and is recorded as a worker conduct
-  finding; it does not satisfy the broader no-other-agent instruction.
+- [x] Provider-native internal exploration is classified as permitted worker
+  autonomy, not a separate external-agent invocation.
 - [x] Exactly three worker outputs were returned with worker HEAD unchanged.
 - [x] Documentation worker fast gate and file-size guard pass after reviewer
   repair of the dispatch literal.
@@ -433,8 +439,8 @@ implementation recommendation or unsupported completeness claim.
 - [x] Exactly three Allowed outputs were returned unstaged.
 - [x] All nine domains have terminal states.
 - [x] Critical gaps have precise source classes and operator checkpoints.
-- [x] No external-service or implementation action occurred; one prohibited
-  internal subagent invocation is retained as a conduct finding.
+- [x] No external-service or implementation action occurred; provider-native
+  internal exploration stayed inside the parent worker scope.
 - [x] Worker-return fast gate and file-size guard pass after reviewer repair.
 - [x] Reviewer disposition and committed-range closure evidence remain
   reviewer-owned.
@@ -480,10 +486,10 @@ current repository source and makes no runtime-effectiveness claim.
 | Target paths | parent roadmap; paired baseline; this work order; reference front door; knowledge map; worker return; completion review |
 | Allowed scope source | Reviewer Closure Conversion and operator instruction to review findings, repair allowed scope, and close the tranche |
 | Before status evidence | HEAD `1e689ed52`; exactly three untracked worker outputs |
-| After status evidence | seven-path reviewer closure set; worker conduct finding retained |
+| After status evidence | reviewer closure set plus operator-directed autonomy-boundary correction |
 | Diff evidence | `git status --short`, `git diff --name-status`, and exact staged manifest before commit |
 | Approval boundary | reviewer repair and bounded T0 closure only; no T1, external source, runtime, or service action |
-| Claim boundary | accepted knowledge map with repairs; no full worker-scope compliance or runtime-control claim |
+| Claim boundary | accepted knowledge map with repairs and corrected internal-autonomy boundary; no runtime-control claim |
 | Agent type | reviewer and closer |
 | Invocation ID | `cvf-eaic-kr-t0-reviewer-closure-2026-07-22` |
 | Expected manifest | parent roadmap; paired baseline; this work order; reference front door; knowledge map; worker return; completion review |
@@ -528,7 +534,7 @@ or release evidence.
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
 | Work order status | this file | reviewer-repaired closed bounded status | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | accepted with repairs and conduct finding | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | accepted with repairs and boundary correction | PASS |
 | Roadmap state | parent EAIC-KR roadmap | T0 pass bounded; T1 parked | PASS |
 | Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |

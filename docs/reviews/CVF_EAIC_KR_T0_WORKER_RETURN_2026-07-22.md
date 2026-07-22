@@ -6,7 +6,7 @@ Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T0_AUTHOR
 
 dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T0_AUTHORITATIVE_KNOWLEDGE_SOURCE_MAP_2026-07-22.md`
 
-Status: REVIEWER_ACCEPTED_WITH_REPAIRS_AND_CONDUCT_FINDING
+Status: REVIEWER_ACCEPTED_WITH_REPAIRS_AND_BOUNDARY_CORRECTION
 
 Memory class: governed-worker-return
 
@@ -56,9 +56,10 @@ literal-format gotchas checklist before writing. Captured `executionBaseHead`
 Allowed output paths were absent before any write. Used local read-only `rg`,
 Git, PowerShell, and one read-only internal Explore subagent pass over local
 filesystem sources. The subagent used no network, agent CLI, MCP, or provider
-API, but its invocation violated the work order's broader prohibition on
-invoking any other agent. It was used to verify current paths and symbols for nine
-owner surfaces named or implied by the predecessor audit: the system-chain
+API. Under the operator-corrected boundary, this was provider-native internal
+orchestration inside the parent worker scope, not a separately dispatched CVF
+worker or external invocation. It was used to verify current paths and symbols
+for nine owner surfaces named or implied by the predecessor audit: the system-chain
 map, the system-chain GAP index, the Control Plane orchestration contract,
 the MAO operational worker launcher, the MCP invocation contract, the MCP
 consumer pipeline, the MCP generic-agent adapter, the governed command
@@ -74,8 +75,8 @@ Created exactly the two Allowed reference outputs:
 - `docs/reference/external_agent_invocation_control/README.md`
 - `docs/reference/external_agent_invocation_control/CVF_EXTERNAL_AGENT_INVOCATION_CONTROL_KNOWLEDGE_GAP_AND_SOURCE_ACQUISITION_MAP.md`
 
-The knowledge gap and source acquisition map returns
-`READY_FOR_OPERATOR_SOURCE_SELECTION`. All nine domains have one terminal
+The operator-corrected knowledge gap and source acquisition map returns
+`PARKED_KNOWLEDGE_GAP`. All nine domains have one terminal
 state: 0 `OWNED`, 2 `PARTIAL` (cancellation and termination; reconciliation),
 1 `OPAQUE_BY_ACCESS_MODE` (usage telemetry), 6 `MISSING_PRIMARY_SOURCE`
 (launch admission, process identity, cumulative budget, unknown usage,
@@ -118,19 +119,25 @@ route a checker/work-order literal-format alignment fix through a separate
 governed change. The reviewer repaired the work-order literal inside the
 reviewer-owned closure set and reran the fast gate.
 
-The internal Explore subagent invocation is a separate conduct finding. It
-cannot be undone by artifact repair. The reviewer independently rechecked the
-authority rows and accepted the outputs without claiming full worker-scope
-compliance.
+The earlier treatment of the internal Explore helper as worker misconduct is
+withdrawn. The defect was the packet's overbroad no-other-agent wording, which
+confused native internal orchestration with a separately governed invocation.
 
 ## Reviewer Correction
 
 The reviewer corrected the Authority Ledger reconciliation from 17 to 18,
 narrowed the provider-execution access-mode claim to the current
 environment-backed credential boundary, repaired the fast-doc commit-mode
-literal in the work order, and reclassified the internal Explore subagent as a
-scope-conduct finding. These reviewer edits supersede the worker's original
-zero-other-agent interpretation while preserving the original no-commit fact.
+literal in the work order, and applied the operator's internal-autonomy
+boundary correction. These reviewer edits preserve the original no-commit and
+zero-external-invocation facts without attributing misconduct to the worker.
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| `INTERNAL_AGENT` | parent documentation-worker session and provider-native Explore helper | internal exploration stayed within the parent read-only scope | worker trace and operator correction | helper inherited the parent scope | `CONTRACT_ONLY` |
+| `EXTERNAL_AGENT_CLI_MCP` | no released interface | no external invocation or provider/account authority | zero external-action counters | future adapter remains parked | `DEFERRED_WITH_REASON` |
 
 ## ADIF Defect Registry Disclosure
 
@@ -167,10 +174,10 @@ re-deriving dispatch-phase disclosures during execution.
 | Target paths | the two `docs/reference/external_agent_invocation_control/` outputs and this worker return |
 | Allowed scope source | canonical work order Scope / Target / Owner Boundary and Required Artifact Manifest |
 | Before status evidence | HEAD `1e689ed52`; `git status --short` empty; all three Allowed output paths absent (`Test-Path` equivalent via file-existence checks) |
-| After status evidence | seven-path reviewer closure set; worker HEAD remained unchanged at `1e689ed52`; conduct finding retained |
+| After status evidence | reviewer closure set plus operator-directed internal-autonomy boundary correction; worker HEAD remained unchanged at `1e689ed52` |
 | Diff evidence | `git status --short` and `git diff --name-status` recorded below |
 | Approval boundary | worker execution for local-only T0 documentation; no commit, push, external-service call, or implementation |
-| Claim boundary | packet creation and source-backed knowledge mapping only; no knowledge-completeness, runtime-control, or service-use proof |
+| Claim boundary | packet creation and source-backed knowledge mapping only; worker execution is scope-compliant under the corrected internal-autonomy boundary; no knowledge-completeness, runtime-control, or service-use proof |
 | Agent type | worker |
 | Invocation ID | `cvf-eaic-kr-t0-worker-execution-2026-07-22` |
 | Expected manifest | roadmap; baseline; work order; reference front door; knowledge map; worker return; completion review |
@@ -185,8 +192,8 @@ re-deriving dispatch-phase disclosures during execution.
 | claimScope | local-only knowledge source-map worker execution |
 | claimDisposition | CLAIM_REJECTED: no execution-control, runtime-enforcement, direct-interception, or mandatory-wrapper behavior is claimed |
 | receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: no runtime or provider receipt is created or consumed |
-| actionEvidence | ACTION_EVIDENCE_PRESENT: one internal Explore subagent was invoked contrary to the no-other-agent instruction; no agent CLI, MCP, provider, browser, network, or runtime action occurred |
-| invocationBoundary | internalSubagentInvocationCount=1; agentCliCallCount=0; mcpCallCount=0; providerCallCount=0; browserCallCount=0; networkCallCount=0 |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: one provider-native internal Explore helper was used inside the parent scope; no external agent CLI, MCP, provider, browser, network, or runtime action occurred |
+| invocationBoundary | internal orchestration is parent-agent autonomy; agentCliCallCount=0; mcpCallCount=0; providerCallCount=0; browserCallCount=0; networkCallCount=0 |
 | interceptionBoundary | no direct interception, wrapper/proxy enforcement, runtime gate, or agent coding control is claimed |
 | claimLanguage | source-map and acquisition-plan evidence only |
 | forbiddenExpansion | runtime, provider, live, public, package, Web, MCP, model-router, secret, push, deployment, and production behavior |
@@ -242,7 +249,7 @@ artifact. No earlier EAIC-KR source map exists to diff against.
 - Manifest artifact or inline manifest: inline Authority Ledger table in the
   knowledge gap and source acquisition map
 - Manifest hash: SHA-256
-  `c60c5cafae41c03f19fd41090f4a3b2bac8eea595b8e95ce6d8f61cd7f07e742`
+  `db6e5913c9ebcce8dfda2aaa2f9ec40400e1b16545a3103bd66e2022c2b943f8`
 - Processing ledger artifact or inline ledger: same inline table; each row
   carries a verified path/symbol and disposition
 - Allowed terminal statuses: READ; SKIPPED_WITH_REASON; DEFERRED;
@@ -269,12 +276,12 @@ artifact. No earlier EAIC-KR source map exists to diff against.
 
 | Field | Value |
 | --- | --- |
-| Defect class | WORKER_EXECUTION_ERROR |
-| Learning lane | COST_ECONOMICS_LEARNING |
-| Finding | Worker used an internal Explore subagent despite the explicit no-other-agent instruction, then described it as compatible with zero external-agent invocation. |
-| Disposition | RULE_EXISTS: ADIF-0015 already covers declared route versus actual execution behavior; no duplicate ADIF entry is added. |
-| Runtime/provider/cost lane | No CLI/MCP/provider call occurred, but nested agent work can still increase model usage and must be counted separately. |
-| Next control action | Future zero-delegation packets must require separate internalSubagentInvocationCount and externalAgentCliInvocationCount fields. |
+| Defect class | OPERATOR_SCOPE_CLARITY_GAP |
+| Learning lane | GOVERNANCE_CONTROL_PLANE |
+| Finding | The dispatch packet treated provider-native internal orchestration as if it were a separately dispatched external invocation. |
+| Disposition | STANDARD_UPDATED: no worker violation and no ADIF-0015 application for this event. |
+| Runtime/provider/cost learning lane | N/A_WITH_REASON: this correction changes documentation authority boundaries and makes no runtime/provider effectiveness claim. |
+| Next control action | Future packets govern the parent assignment and external perimeter while preserving internal reasoning and decomposition autonomy. |
 
 ## Epistemic Process Block
 
@@ -369,8 +376,8 @@ frictionLevel: MEDIUM
 
 frictionType: SCOPE_AMBIGUITY
 
-observedStep: confirming exact current file paths through an internal Explore
-subagent even though the work order prohibited invoking any other agent
+observedStep: reviewer interpretation incorrectly classified provider-native
+internal exploration as a separately governed agent invocation
 
 preventiveControlCandidate: WORK_ORDER_TEMPLATE
 

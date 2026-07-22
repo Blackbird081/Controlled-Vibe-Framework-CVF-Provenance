@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_CONDUCT_FINDING
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_BOUNDARY_CORRECTION
 
 docType: review
 
@@ -18,8 +18,9 @@ Responds to work order:
 ## Purpose
 
 Review the no-commit EAIC-KR-T0 return, independently verify the nine-domain
-knowledge map, repair allowed-scope source and gate defects, record worker
-conduct accurately, and decide whether T0 can close without releasing T1.
+knowledge map, repair allowed-scope source and gate defects, apply the
+operator-directed agent-autonomy boundary correction, and decide whether T0
+can close without releasing T1.
 
 ## Target / Source
 
@@ -41,19 +42,19 @@ was used by the reviewer.
 
 ## Findings / Position
 
-Decision: `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_CONDUCT_FINDING`.
+Decision: `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_BOUNDARY_CORRECTION`.
 
 The T0 product output is accepted. It provides exactly nine terminal domain
 states, separates opaque subscription evidence from API/provider-request
 evidence, keeps the invocation moratorium active, and gives the operator four
 CRITICAL acquisition rows to select from before any T1 packet is authored.
 
-The worker execution is not accepted as fully scope-compliant. The worker
-disclosed one internal Explore subagent pass despite the work order's explicit
-prohibition on invoking any other agent. No agent CLI, MCP, provider/API,
-browser, network, or external clone occurred, but internal subagent use still
-consumes agent capacity and violated the selected route. The content is retained
-because the reviewer independently reverified the material authority claims.
+The worker execution is accepted as scope-compliant under the corrected
+boundary. Its internal Explore helper was provider-native orchestration inside
+the parent worker scope. It did not start a separately dispatched agent
+session, external agent CLI, MCP, provider/API, browser, network action, or
+external clone. CVF governs the parent assignment and external perimeter, not
+the worker's internal reasoning decomposition.
 
 ## Reviewer Repair Ledger
 
@@ -62,7 +63,7 @@ because the reviewer independently reverified the material authority claims.
 | fast-doc gate could not match backtick-wrapped commit-mode literal | MEDIUM | normalized the work-order commit-mode literal and reran the fast gate | REPAIRED |
 | Authority Ledger has 18 rows while worker return claimed 17 | HIGH | corrected corpus reconciliation to 18/18/18 | REPAIRED |
 | provider-execution row implied current account-subscription support | HIGH | narrowed access mode to the current environment-backed credential boundary | REPAIRED |
-| worker used an internal Explore subagent under a no-other-agent packet | HIGH | corrected all invocation evidence, retained ADIF-0015 route-mismatch learning, and denied full worker-scope compliance | CONDUCT_FINDING_RETAINED |
+| packet wording classified all internal helpers as forbidden agents | HIGH | narrowed the boundary to separately dispatched or perimeter-crossing invocation and withdrew the worker conduct finding | GOVERNANCE_BOUNDARY_CORRECTED |
 
 ## Independent Source Verification
 
@@ -77,6 +78,22 @@ because the reviewer independently reverified the material authority claims.
 | governed command launcher kills only the child in shown timeout path | current `spawn`, `detached: false`, and `child.kill()` lines | PASS |
 | current credential metadata source is environment-only | current `CredentialMetadata.source` literal | PASS |
 | Authority Ledger cardinality | 18 Markdown data rows recomputed | PASS |
+
+## Operator Boundary Correction Evidence
+
+| Source | Canonical point | Correction applied |
+| --- | --- | --- |
+| `README.md`, What CVF Is and Core Value | governance owns approval, risk, scope, provider boundary, and evidence while provider choice remains user-owned | correction preserves governance without deep interference in agent reasoning |
+| `docs/reference/CVF_WORKER_AUTONOMY_DISPATCH_PROMPT_STANDARD_2026-06-01.md` | routine non-destructive execution inside Allowed scope is autonomous | internal exploration and decomposition require no per-step approval |
+| `docs/reference/CVF_AGENT_DELEGATION_AND_SUBAGENT_BOUNDARY_STANDARD_2026-05-19.md` | CVF delegation is bounded execution, not authority transfer | only separately dispatched or perimeter-crossing actors are separate CVF workers |
+| `docs/reference/CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md` | internal and external consumer surfaces must remain distinct | provider-native internal helpers inherit the parent internal-agent envelope |
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| `INTERNAL_AGENT` | parent worker session with provider-native internal orchestration | internal reasoning remains autonomous inside approved scope; no independent authority expansion | corrected worker trace and canonical autonomy standards | internal helper is not a separate adapter | `CONTRACT_ONLY` |
+| `EXTERNAL_AGENT_CLI_MCP` | no released invocation interface | moratorium remains active; no external session, provider/account, or runtime authority | predecessor audit and zero external-action evidence | future adapter remains parked behind knowledge readiness | `DEFERRED_WITH_REASON` |
 
 ## Nine-Domain Review Matrix
 
@@ -94,26 +111,27 @@ because the reviewer independently reverified the material authority claims.
 
 ## Risk / Corrective Action
 
-The invocation moratorium remains active. T1 remains parked. The next
-operator decision is source selection only: choose which primary-source classes
-may be acquired for launch admission, process identity, cumulative budget, and
-unknown-usage fail-closed semantics.
+The invocation moratorium remains active. T1 remains parked because the
+critical knowledge foundation is not yet sufficient for architecture or
+implementation. Future external knowledge may be absorbed only through an
+operator-approved, source-bounded intake packet. No tranche should force a
+design conclusion while a critical row remains missing or opaque.
 
-Future zero-delegation packets must report internal subagent invocations
-separately from agent CLI/MCP/provider calls. ADIF-0015 already owns the broader
-declared-route-versus-actual-behavior pattern, so a duplicate entry is not
-created.
+Future packets must preserve provider-native internal orchestration autonomy.
+They govern separately dispatched sessions, external boundaries, aggregate
+resource envelopes, mutations, and outcome evidence instead of permissioning
+each internal helper or reasoning step.
 
 ## Finding-To-Governance Learning Disposition
 
 | Field | Value |
 | --- | --- |
-| Defect class | WORKER_EXECUTION_ERROR |
-| Learning lane | COST_ECONOMICS_LEARNING |
-| Finding | internal subagent use was treated as compatible with a no-other-agent route |
-| Disposition | RULE_EXISTS: ADIF-0015 covers declared route versus actual execution behavior |
-| Runtime/provider/cost lane | internalSubagentInvocationCount=1; agentCliCallCount=0; mcpCallCount=0; providerCallCount=0 |
-| Next control action | carry separate invocation counters into future zero-delegation packet templates |
+| Defect class | OPERATOR_SCOPE_CLARITY_GAP |
+| Learning lane | GOVERNANCE_CONTROL_PLANE |
+| Finding | packet and reviewer interpretation confused provider-native internal orchestration with a separately governed invocation |
+| Disposition | STANDARD_UPDATED: worker conduct finding withdrawn; ADIF-0015 does not apply to this event |
+| Runtime/provider/cost learning lane | N/A_WITH_REASON: this correction changes documentation authority boundaries and makes no runtime/provider effectiveness claim |
+| Next control action | preserve internal autonomy and enforce only scope, perimeter, aggregate envelope, mutation, and evidence boundaries |
 
 ## Review Cost And Latency Telemetry
 
@@ -129,7 +147,7 @@ created.
 
 - no missing domain state;
 - no invented current account-subscription support;
-- no worker-scope-compliance overclaim;
+- no internal-orchestration conduct overclaim;
 - no new external source promoted to authority;
 - no external-service, runtime, public, deployment, or production action;
 - no automatic T1 release;
@@ -144,7 +162,7 @@ created.
 | acquisition plan | Phase C | non-owned rows with question, class, priority, checkpoint | PASS |
 | no external service | forbidden scope | invocation counters and trace | PASS |
 | no implementation | Phase D and claim boundaries | source map only | PASS |
-| no other agent | forbidden scope | internal subagent disclosed | CONDUCT_FINDING; no full worker-compliance claim |
+| no separately dispatched or external agent | forbidden scope | provider-native internal helper only; no perimeter crossing | PASS |
 
 ## Checker Source Read-Ahead Block
 
@@ -182,9 +200,9 @@ overstatement. Both were repairable without changing the bounded conclusion.
 
 ### Contradiction Or Gap Disposition
 
-The internal subagent call contradicts the selected execution route but does
-not invalidate the independently reverified knowledge map. It remains a conduct
-finding and prevents a full worker-scope-compliance claim.
+The original no-other-agent clause was broader than CVF's proper control
+perimeter. The operator correction resolves the contradiction in favor of
+agent internal autonomy; no worker conduct defect remains.
 
 ### Claim Update
 
@@ -221,8 +239,8 @@ parked until the operator selects allowed primary-source classes.
 | claimScope | reviewer verification and documentation-only T0 closure |
 | claimDisposition | CLAIM_REJECTED: no runtime enforcement, interception, or external-agent control is claimed |
 | receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: no runtime/provider receipt exists |
-| actionEvidence | ACTION_EVIDENCE_PRESENT: worker internal subagent count one; reviewer external-service counts zero |
-| invocationBoundary | internalSubagentInvocationCount=1 in worker phase; all CLI/MCP/provider/browser/network counts zero |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: provider-native internal exploration stayed inside the worker scope; reviewer external-service counts zero |
+| invocationBoundary | internal orchestration belongs to parent-agent autonomy; all external CLI/MCP/provider/browser/network counts zero |
 | interceptionBoundary | no wrapper, proxy, process supervisor, or kill control is implemented or proven |
 | claimLanguage | knowledge-readiness evidence and acquisition choices only |
 | forbiddenExpansion | T1, external research, runtime, provider, public, deployment, production, and moratorium lift |
@@ -248,7 +266,7 @@ parked until the operator selects allowed primary-source classes.
 | Authority Ledger rows | exact current count | 18 | PASS |
 | critical acquisition rows | 4 | 4 | PASS |
 | current credential source | environment-backed only | environment-backed only after repair | PASS |
-| internal subagent count | disclosed accurately | 1 | PASS |
+| internal orchestration posture | permitted inside parent scope | provider-native Explore helper stayed inside parent scope | PASS |
 | agent CLI/MCP/provider/browser/network count | 0 each | 0 each | PASS |
 | T1 release | parked | parked | PASS |
 
@@ -259,10 +277,30 @@ DEFERRED_PRIVATE_ONLY
 Reason: private knowledge-readiness evidence with no public implementation or
 release claim.
 
+## Core Guard Self-Protection Authorization - Internal Autonomy Correction
+
+Authorized guard-maintenance scope: add the still-canonical delegation and
+subagent boundary standard plus the dual-agent surface accounting standard to
+the binding-reference active-window registry so generic archive hygiene does
+not classify their operator-directed amendments as stale disposable history.
+
+Protected path:
+
+- `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`.
+
+Operator authorization: the operator directed CVF to preserve agent internal
+autonomy as a core value, clarify the boundary canonically, and park work when
+knowledge is insufficient.
+
+Rollback boundary: revert the registry addition together with this autonomy
+correction only if the delegation standard is superseded through a reviewed
+authority-routing change. Do not remove unrelated active-window entries.
+
 ## Claim Boundary
 
 This review accepts a bounded repository-local knowledge map after reviewer
-repairs. It does not certify worker route compliance, authorize T1 or external
+repairs and an operator boundary correction. It preserves agent internal
+autonomy, parks T1 for insufficient knowledge, and does not authorize external
 research, invoke or control an agent, lift the moratorium, change runtime,
 public-sync, push, deploy, or establish production, security, cost, or provider
 readiness.

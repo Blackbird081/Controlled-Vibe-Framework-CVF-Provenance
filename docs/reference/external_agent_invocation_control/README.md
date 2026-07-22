@@ -67,7 +67,18 @@ implementation, or live proof, read the knowledge gap and source acquisition
 map in this folder together with the predecessor audit's Decision /
 Recommendation. Do not treat a `PARTIAL` or `OWNED` domain row as sufficient
 to lift the global execution moratorium; only a fresh explicit operator
-decision after primary-source intake can do that.
+decision after sufficient primary-source intake can do that.
+
+Provider-native internal reasoning, exploration, task decomposition, context
+management, and internal subagents inside one authorized parent session are
+not external invocation surfaces. CVF governs the parent scope, separately
+dispatched sessions, external boundaries, aggregate envelope, mutations, and
+outcome evidence without approving each internal step.
+
+If the knowledge map still contains a critical missing or opaque domain, keep
+the roadmap parked. Do not force architecture or implementation merely to
+advance a tranche. A later operator-approved intake may absorb bounded external
+knowledge through the canonical external-knowledge chain.
 
 ## External Knowledge Intake Routing
 
@@ -79,7 +90,7 @@ decision after primary-source intake can do that.
 | Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
 | Owner surface | this folder and the paired T0 knowledge gap map |
 | Disposition | NOT_APPLICABLE_WITH_REASON |
-| Claim boundary | later primary-source intake requires a fresh operator-approved T1 tranche |
+| Claim boundary | later primary-source intake requires a fresh operator-approved T1 tranche; until then the lane remains parked for insufficient knowledge |
 
 ## Claim Boundary
 

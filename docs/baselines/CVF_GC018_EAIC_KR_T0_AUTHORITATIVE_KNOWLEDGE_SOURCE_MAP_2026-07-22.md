@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_CONDUCT_FINDING
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_BOUNDARY_CORRECTION
 
 Batch ID: CVF-EAIC-KR-T0
 
@@ -101,10 +101,13 @@ Both remain unstaged and uncommitted. HEAD remains unchanged.
 
 ## CLI/MCP And External-Service Prohibition
 
-The worker must not invoke another agent, agent CLI, MCP tool/server, provider
-API, API key, account subscription, browser, network service, external search,
-or external-repository clone. Local Git, PowerShell, Python governance checks,
-filesystem reads, and repository searches are allowed.
+The worker must not start a separately dispatched agent session, external
+agent CLI, MCP tool/server, provider API, API key, account subscription,
+browser, network service, external search, or external-repository clone.
+Provider-native internal reasoning, exploration, context management, and
+internal subagents remain autonomous inside the parent worker's approved
+scope. Local Git, PowerShell, Python governance checks, filesystem reads, and
+repository searches are allowed.
 
 ## Acceptance Criteria
 
@@ -125,6 +128,13 @@ Evidence is the exact source ledger, nine-domain terminal-state matrix,
 acquisition rows, bounded search commands, actual changed manifest, zero-call
 statement, worker-return fast gate, and file-size guard. The reviewer
 recomputes representative paths, classifications, and coverage.
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| `INTERNAL_AGENT` | parent worker session and provider-native internal orchestration | internal reasoning and task decomposition remain autonomous inside Allowed scope | worker-autonomy and delegation-boundary standards after operator correction | internal helpers inherit the parent envelope | `CONTRACT_ONLY` |
+| `EXTERNAL_AGENT_CLI_MCP` | no released interface | separately dispatched and perimeter-crossing actions remain prohibited | invocation-control audit and zero external-action evidence | future source-verified adapter owner remains parked | `DEFERRED_WITH_REASON` |
 
 ## Checker Source Read-Ahead Block
 
@@ -190,7 +200,7 @@ Reason: private control-gap and knowledge-readiness evidence only.
 | --- | --- | --- | --- |
 | Baseline status | this file | reviewer-repaired closed bounded status | PASS |
 | Work order status | paired EAIC-KR-T0 work order | reviewer-repaired closed bounded status | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | accepted output plus conduct finding | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | accepted output plus operator boundary correction | PASS |
 | Roadmap state | parent EAIC-KR roadmap | T0 pass bounded; T1 parked | PASS |
 | Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |

@@ -32,6 +32,12 @@ Authors must evaluate both consumer classes:
 2. `EXTERNAL_AGENT_CLI_MCP` - external agents consuming CVF through governed
    CLI, MCP, adapter-contract, proposal, receipt, or readout boundaries.
 
+Provider-native internal helpers, exploration modes, and subagents operating
+inside one already-authorized agent session do not create a third consumer
+class and do not require per-helper permission rows. They inherit the parent
+`INTERNAL_AGENT` scope unless they independently cross an external CLI/MCP,
+provider/account, credential, process, durable-action, or authority boundary.
+
 Accounting does not automatically authorize implementation. Each consumer row
 must use exactly one disposition:
 
@@ -146,6 +152,7 @@ applicable autorun phase gate.
 | Date | Change | Reason |
 |---|---|---|
 | 2026-06-23 | Hardened the matrix into a six-column required shape with explicit adapter boundary and machine-check candidate | operator finding that roadmap, work order, and closure artifacts must not leave external-agent disposition implicit |
+| 2026-07-22 | Clarified that provider-native internal orchestration inherits the parent internal-agent envelope | preserve agent autonomy and avoid confusing internal reasoning support with a separately governed external invocation |
 
 ## Finding-To-Governance Learning Disposition
 
