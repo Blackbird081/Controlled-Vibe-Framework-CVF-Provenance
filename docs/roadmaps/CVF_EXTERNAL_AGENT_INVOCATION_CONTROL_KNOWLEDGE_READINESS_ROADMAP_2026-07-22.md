@@ -1,0 +1,202 @@
+# CVF External Agent Invocation Control Knowledge Readiness Roadmap
+
+Memory class: FULL_RECORD
+
+Status: ACTIVE_T0_DISPATCH_READY
+
+docType: roadmap
+
+Date: 2026-07-22
+
+Roadmap ID: CVF-EAIC-KR
+
+## Purpose
+
+Establish the authoritative knowledge and provider-neutral control architecture
+required before CVF attempts another external-agent CLI/MCP invocation. This
+roadmap is knowledge-first. It does not authorize an agent launch, provider
+call, runtime implementation, live proof, or moratorium lift.
+
+## Authorization / Decision
+
+Operator authorization on 2026-07-22 selects priority 1 and releases T0 packet
+authoring and manual dispatch only. T1-T5 remain held by their release rules.
+
+## Operator Decision And Priority Register
+
+The operator accepted the following order on 2026-07-22. Completion of one row
+does not automatically release the next row.
+
+| Priority | Lane | Current disposition | Release condition |
+| --- | --- | --- | --- |
+| 1 | External-agent invocation control knowledge readiness | ACTIVE through T0 only | T0 source map is independently reviewed; every critical knowledge gap has an acquisition owner and evidence class |
+| 2 | Governance-load reduction under MSEA-R72 | PARKED_ORDERED_NEXT | Fresh operator selection after priority 1 reaches a bounded decision point |
+| 3 | Operator-approved provider/model assignment and invocation receipts | SUBORDINATE_TO_PRIORITY_1 | Reconcile it as one component of the accepted invocation-control architecture; do not run independently |
+| 4 | MAO live/provider value pilot | VALUE_PARKED | Existing measurable reopen conditions and fresh operator authorization are satisfied |
+| 5 | Continuous Projection T4 retry | CLOSED_BLOCKED_BOUNDED_NO_RETRY | Existing evidence-based reopen condition and fresh operator authorization are satisfied |
+
+## Current Evidence
+
+- The active invocation-control audit records no effective lifecycle owner for
+  an external-agent process and its internal loop.
+- Existing Model Gateway owners cover provider/model records, request-level
+  receipts, credentials, fallback, and provider execution, but not the whole
+  external-agent process tree or cumulative assignment budget.
+- The provider/model assignment roadmap is parked by the global reassessment.
+- The MAO live pilot closed with value not proven.
+- Continuous Projection T4 closed blocked bounded and has no retry authority.
+
+## Scope / Methodology
+
+In scope:
+
+- repo-local authoritative-source inventory and gap classification;
+- evidence-class separation for API-key spend, subscription quota, token
+  telemetry, estimates, and unknown usage;
+- knowledge needs for admission, process identity, descendant termination,
+  cancellation, monitoring, cumulative budgets, retry/fallback, reconciliation,
+  bypass analysis, and fail-closed behavior;
+- an operator-reviewable acquisition manifest for missing primary knowledge;
+- later architecture and build-readiness decisions after knowledge intake.
+
+Out of scope:
+
+- agent CLI or MCP invocation;
+- provider/API/account-subscription use;
+- browser, network, Web research, or external-repository cloning;
+- runtime, checker, hook, script, source, test, or session-state implementation;
+- secrets, live proof, public-sync, push, deployment, or production action;
+- treating provider-local memory or chat history as CVF authority.
+
+## Non-Goals
+
+- no immediate MCP server, external-agent launcher, or supervisor build;
+- no provider or model ranking;
+- no claim that subscription quota equals API spend;
+- no precise token-saving or cost-saving multiplier;
+- no automatic transition from knowledge mapping to implementation.
+
+## Design Control Gate
+
+| Control | Disposition |
+| --- | --- |
+| knowledge before architecture | PASS - T0 and T1 precede contract or owner selection |
+| architecture before implementation | PASS - T2-T4 precede any separate build roadmap |
+| provider neutrality | PASS - access modes are evidence classes, not preferred providers |
+| fail-closed unknown usage | REQUIRED_FOR_T2 - no implementation may proceed without a ratified disposition |
+| external-service authority | DENIED - requires a later explicit operator checkpoint |
+
+## Work Plan
+
+| Tranche | Objective | Status |
+| --- | --- | --- |
+| T0 | Inventory repo-local authority, classify gaps, and produce an authoritative-source acquisition map | DISPATCH_READY |
+| T1 | Absorb operator-approved primary sources into a reconciled knowledge ledger | HOLD_UNTIL_T0_PASS_AND_OPERATOR_SOURCE_APPROVAL |
+| T2 | Ratify provider-neutral budget, telemetry, stop, retry/fallback, and receipt semantics | HOLD_UNTIL_T1_PASS |
+| T3 | Select one admission-monitor-stop-reconcile owner architecture and threat model | HOLD_UNTIL_T2_PASS |
+| T4 | Produce a build-readiness decision and negative-proof plan | HOLD_UNTIL_T3_PASS |
+| T5 | Open a separate implementation roadmap if and only if the operator lifts the moratorium | HOLD_UNTIL_FRESH_OPERATOR_AUTHORIZATION |
+
+## T0 Bounded Objective
+
+T0 reads only current repository-controlled sources. It must distinguish:
+
+1. existing CVF authority;
+2. evidence-only or advisory material;
+3. selectively absorbed external hypotheses already recorded by CVF;
+4. missing primary knowledge requiring later operator-approved acquisition;
+5. topics that cannot be normalized across access modes.
+
+T0 must not fetch the missing sources or propose executable implementation.
+
+## Knowledge Domain Matrix
+
+| Domain | T0 question | Required terminal disposition |
+| --- | --- | --- |
+| launch admission | Which CVF owner can approve or deny an external-agent launch? | OWNED, PARTIAL, or MISSING_PRIMARY_SOURCE |
+| process identity | How are caller, process, descendants, task assignment, and receipt bound? | OWNED, PARTIAL, or MISSING_PRIMARY_SOURCE |
+| cancellation and termination | What semantics apply to graceful cancel, timeout, and full tree termination? | OWNED, PARTIAL, or MISSING_PRIMARY_SOURCE |
+| usage telemetry | Which token, turn, tool, quota, spend, and latency signals are observable by access mode? | OWNED, PARTIAL, OPAQUE_BY_ACCESS_MODE, or MISSING_PRIMARY_SOURCE |
+| cumulative budget | Which owner enforces one envelope across retry, resume, fallback, and subagents? | OWNED, PARTIAL, or MISSING_PRIMARY_SOURCE |
+| unknown usage | What must fail closed when usage cannot be measured reliably? | OWNED, PARTIAL, or MISSING_PRIMARY_SOURCE |
+| bypass and threat surface | Which shell, IDE, browser, plugin, subprocess, and provider-native paths evade mediation? | OWNED, PARTIAL, or MISSING_PRIMARY_SOURCE |
+| cost-aware task compilation | Which work can be compiled and checked locally before a paid agent loop? | OWNED, PARTIAL, or MISSING_PRIMARY_SOURCE |
+| reconciliation | How do approval, assignment, actual identity, usage, stop reason, and result reconcile? | OWNED, PARTIAL, or MISSING_PRIMARY_SOURCE |
+
+## Source Verification Block
+
+| Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+| --- | --- | --- | --- | --- | --- | --- |
+| external-agent lifecycle owner is not currently effective | RUNTIME_BEHAVIOR | `docs/audits/CVF_AGENT_CLI_MCP_INVOCATION_CONTROL_SYSTEM_CHAIN_REASSESSMENT_2026-07-20.md` | Findings / Position; Source ownership map | External agent CLI | invocation-control audit | ACCEPT |
+| cumulative budget and in-flight stop are unresolved | RUNTIME_BEHAVIOR | `docs/audits/CVF_AGENT_CLI_MCP_INVOCATION_CONTROL_SYSTEM_CHAIN_REASSESSMENT_2026-07-20.md` | Quality Findings F-03 and control matrix | F-03 | invocation-control audit | ACCEPT |
+| provider/model roadmap is parked | VALUE_SET | `docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md` | top-level Status | Status | provider/model roadmap | ACCEPT |
+| MAO live value is not proven | VALUE_SET | `docs/roadmaps/CVF_MAO_LIVE_PROVIDER_ADAPTER_VALUE_PILOT_ROADMAP_2026-07-12.md` | top-level Status; Next Allowed Move | Status | MAO value pilot roadmap | ACCEPT |
+| Continuous Projection T4 is closed blocked bounded | VALUE_SET | `docs/roadmaps/CVF_CONTINUOUS_PROJECTION_DRIFT_DETECTION_AND_REVIEW_PACKET_AUTOMATION_ROADMAP_2026-07-19.md` | top-level Status | Status | Continuous Projection roadmap | ACCEPT |
+
+## Roadmap Release Rules
+
+- T0 is documentation and evidence only.
+- T1 requires independent T0 acceptance plus operator approval of every source
+  root, network action, or source-mirror action.
+- T2 cannot ratify fields unsupported by accepted primary knowledge.
+- T3 cannot choose a runtime owner until T2 defines enforcement semantics.
+- T4 must return NOT_READY if any critical domain remains PARTIAL,
+  OPAQUE_BY_ACCESS_MODE without a fail-closed policy, or missing authority.
+- T5 requires a new roadmap, fresh GC-018, source-verified work order, and an
+  explicit operator decision lifting the invocation moratorium.
+
+## Acceptance Criteria
+
+- [x] Priority order and parked dependencies are recorded.
+- [x] T0 is bounded to repository-local knowledge mapping.
+- [x] CLI/MCP/provider/API/browser/network use is forbidden.
+- [x] Provider/model assignment is treated as a subordinate component.
+- [x] No implementation or live-proof authority is implied.
+- [x] Every later tranche has a checkable release condition.
+
+## Verification / Evidence
+
+T0 dispatch evidence consists of current source paths and status lines, the
+paired GC-018 and work order, exact changed manifest, ASCII/file-size checks,
+and the pre-dispatch autorun result. These prove dispatch shape only.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+| --- | --- |
+| applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_agent_handoff_boundary.py` |
+| literalTokensReviewed | Status; Purpose; Scope / Methodology; Source Verification Block; Acceptance Criteria; Public Export Disposition; Claim Boundary |
+| gateRunPurpose | confirm roadmap and paired-dispatch structure after checker read-ahead |
+| claimBoundary | checker compliance proves document shape only, not knowledge completeness or runtime control |
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+| --- | --- |
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | operator-provided external comparison, critique, or recommendation |
+| Chain map route | NOT_APPLICABLE_WITH_REASON: T0 maps existing CVF authority and missing-source classes; it does not ingest new external material |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
+| Owner surface | this roadmap and the T0 source-acquisition map |
+| Disposition | NOT_APPLICABLE_WITH_REASON |
+| Claim boundary | T1 source intake requires fresh operator approval and a separate packet |
+
+## Next Allowed Move
+
+Dispatch only EAIC-KR-T0 through manual copy/paste after its paired GC-018 and
+work order pass the pre-dispatch gate. Every later tranche and every external
+service remains parked.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private knowledge-readiness planning with no public implementation or
+release evidence.
+
+## Claim Boundary
+
+This roadmap orders knowledge and control-design work before implementation. It
+does not control an external agent, measure subscription quota, terminate a
+process, authorize a provider/model, lift the global moratorium, or establish
+runtime, public, security, cost, or production readiness.
