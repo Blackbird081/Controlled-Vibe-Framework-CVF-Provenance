@@ -90,8 +90,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "project_bootstrap_continuity_committed_local_push_parked",
-  "previousMode": "project_bootstrap_continuity_commit_authorized",
+  "currentMode": "portable_clone_continuity_published_verified",
+  "previousMode": "project_bootstrap_continuity_committed_local_push_parked",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13673,7 +13673,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Project bootstrap continuity is committed locally at provenance material commit 03764e224 and public-sync commit f05e3dcd2; the workspace hidden core is clean and fast-forwarded to f05e3dcd2. No remote push is authorized until the operator explicitly requests it. Future project creation or backfill should run New-CVF-Governed-Project.ps1 and require the workspace doctor to validate the seven-step phase model, provider-neutral roles, continuity front doors, state-to-handoff pointer, JSON truth surfaces, and preservation behavior. Provider/API use, browser, deployment, production action, Continuous Projection T4 retry, and unrelated roadmap implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Portable clone continuity is published and verified: public CVF core c1076dc4b, downstream project f451e2af, and provenance material 4442f4b24. A fresh GitHub clone of shift-operations-workspace resolved its relative manifest, cloned the pinned sibling CVF core with Windows long-path support, created an ignored local binding, resolved the active handoff, and passed the workspace doctor 24/24. Future downstream projects inherit the same initializer through new-cvf-workspace.ps1. The next move is a fresh operator-selected governed tranche; in shift-operations-workspace the tracked active handoff permits exactly one INTAKE lane among remaining P2-A incidents/handovers with migration first, P2-B authentication, or P2-C frontend UI. Provider/API use, browser, deployment, production action, Continuous Projection T4 retry, and unrelated roadmap implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13909,5 +13909,20 @@
     "allowedOutputCount": 4,
     "cliMcpProviderCallCeiling": 0,
     "claimBoundary": "T1-T3 remain accepted. T4 and the roadmap are CLOSED_BLOCKED_BOUNDED because R3 argument splitting prevented the target script from executing. No R4, agent CLI/MCP, provider/API/account use, retry or relaunch, browser, network service, mutation, public-sync, push, deployment, production, or unattended execution is authorized."
+  },
+  "portableCloneContinuityClosure20260722": {
+    "status": "CLOSED_PASS_PUBLISHED_VERIFIED",
+    "date": "2026-07-22",
+    "provenanceMaterialCommit": "4442f4b24",
+    "publicCoreCommit": "c1076dc4b",
+    "downstreamProjectCommit": "f451e2af",
+    "downstreamRepository": "CVF-Ecosystem/shift-operations-workspace",
+    "workspaceDoctor": "24/24 PASS",
+    "freshCloneResult": "REMOTE_FRESH_CLONE_ACCEPTANCE_PASS",
+    "windowsLongPathRepair": "git clone uses core.longpaths=true and persists the local setting",
+    "continuityResult": "relative manifest resolved; ignored local binding created; public core pin reachable; active handoff exists; public repository continuity ready",
+    "publicExportDisposition": "EXPORTED",
+    "liveProofDisposition": "N/A with reason: Git/filesystem continuity only; no AI governance runtime or provider behavior claim",
+    "claimBoundary": "Portable repository continuity only. No hidden cross-chat memory, provider/API, browser, deployment, production, or live PostgreSQL claim."
   }
 }

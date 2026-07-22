@@ -77,16 +77,16 @@ boundary.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`project_bootstrap_continuity_committed_local_push_parked`;
-active handoff=AGENT_HANDOFF_V50_2026-07-22.md; next allowed move=retain the
-committed local bootstrap capability and push only after explicit operator
-instruction; parked checkpoint=remote push, provider/API use,
-browser, deployment, production, Continuous Projection T4 retry, and unrelated
-roadmap implementation.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
+active handoff=AGENT_HANDOFF_V50_2026-07-22.md; next allowed move=fresh
+operator-selected governed tranche, while the downstream project may select
+exactly one recorded INTAKE lane; parked checkpoint=provider/API use, browser,
+deployment, production, Continuous Projection T4 retry, and unrelated roadmap
+implementation.
 
 ## Current Mode
 
-`project_bootstrap_continuity_committed_local_push_parked`
+`portable_clone_continuity_published_verified`
 
 ## Current State
 
@@ -216,3 +216,70 @@ the material commits implicitly.
 This handoff records material parent commit `03764e224`. The session-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this protected sync commit.
+
+## Portable Clone Continuity Authorization
+
+Operator authorization: on 2026-07-22 the operator instructed the agent to
+apply portable clone continuity to `CVF-Ecosystem/shift-operations-workspace`
+and then promote it into CVF foundation for future downstream, public-core,
+and private-provenance clones.
+
+Authorized scope:
+
+- relative-path downstream manifest plus git-ignored machine-local binding;
+- self-contained downstream and CVF-repository clone initializers;
+- public-remote reachability and freshness checks;
+- Windows long-path checkout repair discovered by disposable clone proof;
+- public-core, downstream-project, and provenance commit/push;
+- canonical continuity synchronization after verified publication.
+
+Provider/API, browser, deployment, production, and unrelated roadmap work are
+not authorized by this tranche.
+
+## GC-020 Marker - Portable Clone Material Parent
+
+The portable-clone provenance material batch starts from current parent HEAD
+`edda02e8e`. This active handoff remains unstaged while the isolated material
+files are committed. The downstream project is published at `f451e2af` and
+the public CVF core is published at `c1076dc4b`.
+
+## Portable Clone Material Completion
+
+- Private provenance material commit: `4442f4b24`.
+- Public CVF core: `c1076dc4b`, pushed to `origin/main`.
+- Downstream project: `f451e2af`, pushed to `origin/main`.
+- Workspace hidden core: clean at `c1076dc4b`.
+- Disposable GitHub clone: `REMOTE_FRESH_CLONE_ACCEPTANCE_PASS`.
+- Workspace doctor: 24/24 PASS.
+- Project suite: 156 PASS; project session-state and file-size guards PASS.
+- Public surface scan and provenance 83-check pre-commit hook PASS.
+- Provider/API, browser, deployment, production, and live PostgreSQL: not run.
+
+The first disposable clone failed during public-core checkout because Windows
+path length handling was not enabled. Diagnostic: stage=`public-core
+checkout`; class=`WINDOWS_PATH_LENGTH`; retryable=`yes`; operator action=`none
+after repair`; provider/HTTP=`N/A`. The initializer now clones with
+`core.longpaths=true`, persists the local setting, and the second disposable
+clone passed.
+
+## GC-020 Marker - Portable Clone Completion Sync
+
+This handoff records material parent commit `4442f4b24`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this protected sync commit.
+
+## Core Guard Self-Protection Authorization - Portable Clone Completion Sync
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V50_2026-07-22.md`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/portableCloneContinuityClosure20260722.json`;
+- `CVF_SESSION_MEMORY.md`.
+
+Operator authorization is the portable-clone foundation and publication
+request recorded above. Rollback boundary: revert this completion session-sync
+set together; do not remove only the generated aggregate or only its sources.

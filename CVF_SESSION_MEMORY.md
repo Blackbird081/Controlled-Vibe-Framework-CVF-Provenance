@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`project_bootstrap_continuity_committed_local_push_parked`; active handoff=AGENT_HANDOFF_V50_2026-07-22.md; next allowed move=retain the committed local bootstrap capability and push only after explicit operator instruction; parked checkpoint=remote push, provider/API use, browser, deployment, production, Continuous Projection T4 retry, and unrelated roadmap implementation.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V50_2026-07-22.md; next allowed move=fresh operator-selected governed tranche, while the downstream project may select exactly one recorded INTAKE lane; parked checkpoint=provider/API use, browser, deployment, production, Continuous Projection T4 retry, and unrelated roadmap implementation.
 
 ## Current Mode
 
-Current mode marker: `project_bootstrap_continuity_committed_local_push_parked`
+Current mode marker: `portable_clone_continuity_published_verified`
 
-Current mode: `project_bootstrap_continuity_committed_local_push_parked`
+Current mode: `portable_clone_continuity_published_verified`
 
-`project_bootstrap_continuity_committed_local_push_parked`
+`portable_clone_continuity_published_verified`
 
 Previous mode:
 
@@ -339,18 +339,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `project_bootstrap_continuity_committed_local_push_parked`
+Mode: `portable_clone_continuity_published_verified`
 
-Operator reviews T4 closure commit `5885cf32f` and selects the next
-knowledge-absorption or system-chain audit step. T4 and the roadmap are
-`CLOSED_BLOCKED_BOUNDED`; no R4 or retry is authorized. Reopen requires fresh
-operator authority and disposable proof of the exact detached launch mechanism
-with space-bearing paths before any new real-root invocation. Do not use
-Codex/Claude CLI, any agent CLI, MCP, provider/API/account subscription,
-browser/network service, retry, or unattended execution. All other roadmap execution,
-agent CLI/MCP, provider/API-key/subscription use, browser/live proof,
-public-sync, push, deployment, production action, and unattended mutation
-remain parked.
+Portable clone continuity is published and verified for CVF public core,
+private provenance, and `CVF-Ecosystem/shift-operations-workspace`. A future
+CVF tranche requires fresh operator selection. In the downstream project, its
+tracked active handoff permits exactly one new INTAKE lane: remaining P2-A
+incidents/handovers with migration first, P2-B authentication, or P2-C
+frontend UI. Provider/API use, browser, deployment, production, Continuous
+Projection T4 retry, and unrelated roadmap implementation remain parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
