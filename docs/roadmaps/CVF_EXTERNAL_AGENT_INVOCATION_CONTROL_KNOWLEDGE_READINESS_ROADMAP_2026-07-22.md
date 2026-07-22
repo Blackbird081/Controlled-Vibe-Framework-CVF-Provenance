@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE_T0_DISPATCH_READY
+Status: T0_PASS_BOUNDED_T1_PARKED_OPERATOR_SOURCE_SELECTION
 
 docType: roadmap
 
@@ -29,7 +29,7 @@ does not automatically release the next row.
 
 | Priority | Lane | Current disposition | Release condition |
 | --- | --- | --- | --- |
-| 1 | External-agent invocation control knowledge readiness | ACTIVE through T0 only | T0 source map is independently reviewed; every critical knowledge gap has an acquisition owner and evidence class |
+| 1 | External-agent invocation control knowledge readiness | T0 CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_CONDUCT_FINDING | Operator selects primary-source classes before any T1 packet authoring |
 | 2 | Governance-load reduction under MSEA-R72 | PARKED_ORDERED_NEXT | Fresh operator selection after priority 1 reaches a bounded decision point |
 | 3 | Operator-approved provider/model assignment and invocation receipts | SUBORDINATE_TO_PRIORITY_1 | Reconcile it as one component of the accepted invocation-control architecture; do not run independently |
 | 4 | MAO live/provider value pilot | VALUE_PARKED | Existing measurable reopen conditions and fresh operator authorization are satisfied |
@@ -90,7 +90,7 @@ Out of scope:
 
 | Tranche | Objective | Status |
 | --- | --- | --- |
-| T0 | Inventory repo-local authority, classify gaps, and produce an authoritative-source acquisition map | DISPATCH_READY |
+| T0 | Inventory repo-local authority, classify gaps, and produce an authoritative-source acquisition map | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_CONDUCT_FINDING |
 | T1 | Absorb operator-approved primary sources into a reconciled knowledge ledger | HOLD_UNTIL_T0_PASS_AND_OPERATOR_SOURCE_APPROVAL |
 | T2 | Ratify provider-neutral budget, telemetry, stop, retry/fallback, and receipt semantics | HOLD_UNTIL_T1_PASS |
 | T3 | Select one admission-monitor-stop-reconcile owner architecture and threat model | HOLD_UNTIL_T2_PASS |
@@ -160,6 +160,14 @@ T0 dispatch evidence consists of current source paths and status lines, the
 paired GC-018 and work order, exact changed manifest, ASCII/file-size checks,
 and the pre-dispatch autorun result. These prove dispatch shape only.
 
+## Current Runtime Freshness Verification
+
+Reviewer closure re-read the current system-chain map, GC-009/GC-010 gap
+entry, orchestration contract, MAO launcher, MCP contracts/adapters, governed
+command launcher, and Model Gateway credential/execution owners at closure
+base `1e689ed52`. The nine-domain states remain current repository evidence;
+no runtime was invoked or changed.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
@@ -183,9 +191,9 @@ and the pre-dispatch autorun result. These prove dispatch shape only.
 
 ## Next Allowed Move
 
-Dispatch only EAIC-KR-T0 through manual copy/paste after its paired GC-018 and
-work order pass the pre-dispatch gate. Every later tranche and every external
-service remains parked.
+Operator reviews the four CRITICAL acquisition rows and selects which primary
+source classes may enter a future T1 packet. T1 authoring, every later tranche,
+and every external service remain parked until that explicit selection.
 
 ## Public Export Disposition
 
@@ -193,6 +201,29 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private knowledge-readiness planning with no public implementation or
 release evidence.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired EAIC-KR-T0 work order | closed bounded reviewer-repair status | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | reviewer decision and conduct finding | PASS |
+| Roadmap state | this file | T0 PASS bounded; T1 parked for operator source selection | PASS |
+| Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
+| Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
+| External evidence digest | N/A with reason: T0 ingests no new external source | repository-local evidence only | N/A with reason |
+| System loop interlock | T0 knowledge map to future operator source selection | no automatic T1 release | PASS |
+| Session continuity | active handoff sync after material commit | reviewer/closer owned | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| T0 domains | 9 terminal rows | 9 terminal rows | PASS |
+| critical source-selection rows | 4 | 4 | PASS |
+| T1 state | parked | parked | PASS |
+| external service use | zero | zero | PASS |
+| worker route compliance | no other agent | one internal subagent | BLOCKED |
 
 ## Claim Boundary
 

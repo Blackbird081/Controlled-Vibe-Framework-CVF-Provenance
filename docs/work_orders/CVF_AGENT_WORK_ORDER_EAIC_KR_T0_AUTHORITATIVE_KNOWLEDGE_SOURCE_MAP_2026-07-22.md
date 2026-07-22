@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_CONDUCT_FINDING
 
 Batch ID: CVF-EAIC-KR-T0
 
@@ -12,7 +12,7 @@ executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
 closureBaseHead: `REVIEWER_TO_SET`
 
-Commit mode: `WORKER_MUST_NOT_COMMIT`
+Commit mode: WORKER_MUST_NOT_COMMIT
 
 Worker: delegated documentation worker through manual copy/paste
 
@@ -27,7 +27,7 @@ Role: delegated no-commit documentation and evidence worker for
 
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T0_AUTHORITATIVE_KNOWLEDGE_SOURCE_MAP_2026-07-22.md`.
 
-Commit mode: `WORKER_MUST_NOT_COMMIT`.
+Commit mode: WORKER_MUST_NOT_COMMIT.
 
 executionBaseHead: capture current committed HEAD before any edit and require
 it to equal the exact value supplied by the operator at dispatch.
@@ -43,9 +43,9 @@ Required first actions: read the session front doors, guard orientation,
 literal gotchas, paired baseline, parent roadmap, invocation-control audit,
 and checker sources named below; then capture HEAD and status before writing.
 
-Return contract: create exactly three Allowed outputs, run the documentation
-worker fast gate, leave all three unstaged and uncommitted, and return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+Return contract: the worker created exactly three Allowed outputs and returned
+them unstaged for review. Reviewer closure now owns the final disposition;
+`BLOCKED_WITH_REASON` remains the historical stop token.
 
 ## Purpose
 
@@ -114,7 +114,7 @@ Forbidden actions:
 | Dependency | Current evidence | Release rule | Disposition |
 | --- | --- | --- | --- |
 | operator selection | direct operator instruction on 2026-07-22 | exact priority 1 T0 only | ACCEPT |
-| parent roadmap | `docs/roadmaps/CVF_EXTERNAL_AGENT_INVOCATION_CONTROL_KNOWLEDGE_READINESS_ROADMAP_2026-07-22.md`, T0 row | T0 is DISPATCH_READY and later rows remain HOLD | ACCEPT |
+| parent roadmap | `docs/roadmaps/CVF_EXTERNAL_AGENT_INVOCATION_CONTROL_KNOWLEDGE_READINESS_ROADMAP_2026-07-22.md`, T0 row | T0 is reviewer-accepted bounded and later rows remain parked | ACCEPT |
 | GC-018 | `docs/baselines/CVF_GC018_EAIC_KR_T0_AUTHORITATIVE_KNOWLEDGE_SOURCE_MAP_2026-07-22.md` | paired baseline matches scope and base | ACCEPT |
 | dispatch anchor | HEAD `969acaa32`; clean worktree before dispatch authoring | worker must receive the later exact committed dispatch HEAD from operator | ACCEPT |
 
@@ -405,17 +405,20 @@ manifest. Narrative confidence is not evidence.
 
 ## Acceptance Criteria
 
-- [ ] Exactly nine domain rows have one terminal authority disposition each.
-- [ ] Every supported claim cites a current source path and section or symbol.
-- [ ] Every non-owned domain has a precise acquisition question and source
+- [x] Exactly nine domain rows have one terminal authority disposition each.
+- [x] Every supported claim cites a current source path and section or symbol.
+- [x] Every non-owned domain has a precise acquisition question and source
   class without an invented URL.
-- [ ] Evidence classes remain separated by access mode.
-- [ ] Existing owners and adjacent roadmaps are reconciled without duplication.
-- [ ] The recommendation remains knowledge-only and does not propose code.
-- [ ] External-agent, MCP, provider, API, browser, network, and clone counts are
+- [x] Evidence classes remain separated by access mode after reviewer repair.
+- [x] Existing owners and adjacent roadmaps are reconciled without duplication.
+- [x] The recommendation remains knowledge-only and does not propose code.
+- [x] Agent CLI, MCP, provider, API, browser, network, and clone counts are
   zero.
-- [ ] Exactly three Allowed outputs remain unstaged; HEAD is unchanged.
-- [ ] Documentation worker fast gate and file-size guard pass.
+- [x] Internal subagent count is one and is recorded as a worker conduct
+  finding; it does not satisfy the broader no-other-agent instruction.
+- [x] Exactly three worker outputs were returned with worker HEAD unchanged.
+- [x] Documentation worker fast gate and file-size guard pass after reviewer
+  repair of the dispatch literal.
 
 ## Review Gate
 
@@ -426,13 +429,14 @@ implementation recommendation or unsupported completeness claim.
 
 ## Closure Checklist
 
-- [ ] Worker start HEAD and clean status verified.
-- [ ] Exactly three Allowed outputs exist and remain unstaged.
-- [ ] All nine domains have terminal states.
-- [ ] Critical gaps have precise source classes and operator checkpoints.
-- [ ] No external-service or implementation action occurred.
-- [ ] Worker-return fast gate and file-size guard pass.
-- [ ] Reviewer disposition and committed-range closure evidence remain
+- [x] Worker start HEAD and clean status verified.
+- [x] Exactly three Allowed outputs were returned unstaged.
+- [x] All nine domains have terminal states.
+- [x] Critical gaps have precise source classes and operator checkpoints.
+- [x] No external-service or implementation action occurred; one prohibited
+  internal subagent invocation is retained as a conduct finding.
+- [x] Worker-return fast gate and file-size guard pass after reviewer repair.
+- [x] Reviewer disposition and committed-range closure evidence remain
   reviewer-owned.
 
 ## Operator Checkpoint
@@ -453,30 +457,37 @@ fetch, invoke, retry, or widen scope.
 | Field | Value |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_worker_return_quality_gate.py` |
-| literalTokensReviewed | DISPATCH_READY; ACCEPT; source columns; exact ADIF query; handoff fields; fast-doc return fields; Allowed manifest; public disposition |
+| literalTokensReviewed | closed bounded status; ACCEPT; source columns; exact ADIF query; handoff fields; fast-doc return fields; Allowed manifest; public disposition |
 | gateRunPurpose | confirm dispatch compliance after source and checker read-ahead, not discover requirements during worker execution |
 | claimBoundary | structural checks do not prove knowledge completeness, external-agent control, or implementation readiness |
+
+## Current Runtime Freshness Verification
+
+Reviewer closure re-read the current sources cited by the knowledge map at
+closure base `1e689ed52`, including the environment-only credential metadata
+literal and the child-only timeout kill path. The repaired output matches
+current repository source and makes no runtime-effectiveness claim.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Codex dispatch author |
+| Actor | Codex reviewer/closer |
 | Provider or surface | local private provenance repository only |
-| Session or invocation | EAIC-KR-T0 dispatch authoring, 2026-07-22 |
+| Session or invocation | EAIC-KR-T0 reviewer closure, 2026-07-22 |
 | Working directory | repository root |
 | Command or tool surface | local read-only PowerShell, Git, rg, Python governance helpers, and apply_patch |
-| Target paths | parent roadmap, paired GC-018 baseline, and this work order |
-| Allowed scope source | operator instruction on 2026-07-22 to record the priority order and issue priority 1 work order |
-| Before status evidence | HEAD `969acaa32`; git status --short empty; clean worktree |
-| After status evidence | exactly three untracked dispatch artifacts; no existing path modified |
-| Diff evidence | `git status --short`, `git diff --name-status`, and untracked manifest |
-| Approval boundary | dispatch authoring for local-only T0; no worker execution or external action |
-| Claim boundary | packet creation only; no knowledge-completeness, runtime-control, or service-use proof |
-| Agent type | dispatcher |
-| Invocation ID | `cvf-eaic-kr-t0-dispatch-authoring-2026-07-22` |
-| Expected manifest | parent roadmap; paired GC-018 baseline; this work order |
-| Actual changed set | same three dispatch artifacts |
+| Target paths | parent roadmap; paired baseline; this work order; reference front door; knowledge map; worker return; completion review |
+| Allowed scope source | Reviewer Closure Conversion and operator instruction to review findings, repair allowed scope, and close the tranche |
+| Before status evidence | HEAD `1e689ed52`; exactly three untracked worker outputs |
+| After status evidence | seven-path reviewer closure set; worker conduct finding retained |
+| Diff evidence | `git status --short`, `git diff --name-status`, and exact staged manifest before commit |
+| Approval boundary | reviewer repair and bounded T0 closure only; no T1, external source, runtime, or service action |
+| Claim boundary | accepted knowledge map with repairs; no full worker-scope compliance or runtime-control claim |
+| Agent type | reviewer and closer |
+| Invocation ID | `cvf-eaic-kr-t0-reviewer-closure-2026-07-22` |
+| Expected manifest | parent roadmap; paired baseline; this work order; reference front door; knowledge map; worker return; completion review |
+| Actual changed set | same seven closure paths |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
@@ -511,6 +522,29 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private knowledge-readiness dispatch with no public-safe implementation
 or release evidence.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | reviewer-repaired closed bounded status | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | accepted with repairs and conduct finding | PASS |
+| Roadmap state | parent EAIC-KR roadmap | T0 pass bounded; T1 parked | PASS |
+| Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
+| Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
+| External evidence digest | N/A with reason: no new external source intake | repository-local evidence only | N/A with reason |
+| System loop interlock | knowledge map to operator source-selection checkpoint | no automatic downstream release | PASS |
+| Session continuity | active handoff sync after material commit | reviewer/closer owned | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| worker outputs | 3 | 3 | PASS |
+| domain cardinality | 9 | 9 | PASS |
+| Authority Ledger rows | exact current count | 18 | PASS |
+| reviewer-fast | PASS after allowed repair | 62/62 PASS | PASS |
+| T1 release | parked | parked | PASS |
 
 ## Claim Boundary
 

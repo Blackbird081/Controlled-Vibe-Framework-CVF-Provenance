@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_CONDUCT_FINDING
 
 Batch ID: CVF-EAIC-KR-T0
 
@@ -131,9 +131,16 @@ recomputes representative paths, classifications, and coverage.
 | Field | Value |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_public_export_disposition.py` |
-| literalTokensReviewed | DISPATCH_READY; ACCEPT; Source Verification Block columns; exact ADIF query; Target / Source; Scope / Methodology; Claim Boundary |
+| literalTokensReviewed | closed bounded status; ACCEPT; Source Verification Block columns; exact ADIF query; Target / Source; Scope / Methodology; Claim Boundary |
 | gateRunPurpose | confirm baseline shape and source-backed release evidence before manual dispatch |
 | claimBoundary | structural compliance does not establish external-agent runtime control or source completeness |
+
+## Current Runtime Freshness Verification
+
+Reviewer closure re-read every critical owner surface named by the T0 map at
+closure base `1e689ed52`. Current source confirms request-level and advisory
+controls but no effective end-to-end external-agent lifecycle owner. No
+runtime, provider, or external service was invoked.
 
 ## Epistemic Process Block
 
@@ -176,6 +183,20 @@ until later operator-approved primary-source intake is reviewed.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private control-gap and knowledge-readiness evidence only.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Baseline status | this file | reviewer-repaired closed bounded status | PASS |
+| Work order status | paired EAIC-KR-T0 work order | reviewer-repaired closed bounded status | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | accepted output plus conduct finding | PASS |
+| Roadmap state | parent EAIC-KR roadmap | T0 pass bounded; T1 parked | PASS |
+| Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
+| Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
+| External evidence digest | N/A with reason: no new external source intake | repository-local evidence only | N/A with reason |
+| System loop interlock | stable knowledge map and operator source-selection gate | no T1 auto-release | PASS |
+| Session continuity | active handoff sync after material commit | reviewer/closer owned | PASS |
 
 ## Claim Boundary
 
