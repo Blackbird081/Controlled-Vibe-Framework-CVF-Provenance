@@ -179,3 +179,18 @@ This handoff records material closure parent commit `e26ae7e97`. The
 continuity child SHA cannot be known before commit creation, so the active-
 session checker may accept this parent SHA for this dedicated session-sync-
 only commit.
+
+## Remote Continuity Markers
+
+Remote tracking branch: `origin/main`
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
+
+## GC-020 Marker - Pre-Push Classification Repair Sync
+
+This handoff records root-exposure classification repair parent commit
+`b563f02b5`. The handoff-sync child SHA cannot be known before commit creation,
+so the active-session checker may accept this parent SHA for this dedicated
+handoff-sync-only commit.
