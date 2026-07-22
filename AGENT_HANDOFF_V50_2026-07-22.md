@@ -415,3 +415,46 @@ claim independently.
 This handoff records material parent commit `77d75ef93`. The handoff-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated handoff sync.
+
+## MSEA-R72-R84-T0 Evidence Audit Closure - 2026-07-22
+
+Material closure commit: `fab359da6`.
+
+The reviewer recomputed 118 post-R92 worker returns and resolved all 118 to
+their dispatch authority. Exactly one dispatch selected
+`WORKER_RETURN_FAST_DOC_V1`; 117 returns were not compact-eligible and zero
+compact-eligible returns used the full profile. There is therefore no valid
+compact-versus-full comparison pair and no evidence-backed token, quota,
+latency, or repair-cost improvement claim.
+
+The worker return is accepted only after bounded reviewer repairs: replace
+shape-sample inference with per-dispatch classification, add all 118 terminal
+ledger rows, restore the compact return shape, disclose the initial
+pre-implementation `VIOLATION` separately from the repaired 77/77 PASS, and
+add the required dedicated completion review path. The last item is a dispatch
+packet defect, not a Claude worker defect.
+
+Terminal recommendation: `PARK_INSUFFICIENT_EVIDENCE`. R84 remains
+`DEFERRED_AND_REVISIT_ON_EVIDENCE` under the existing checkable reopen
+condition in `CVF_SESSION_MEMORY.md`. Do not create synthetic provider runs or
+re-propose a governance refactor merely to obtain comparison samples.
+
+Invocation counters for the Codex review are:
+`internalSubagentInvocationCount=0`; `agentCliCallCount=0`; `mcpCallCount=0`;
+`providerCallCount=0`; `browserCallCount=0`; `networkCallCount=0`.
+
+## Core Guard Self-Protection Authorization - MSEA-R72-R84-T0 Sync
+
+Authorized guard-maintenance scope: record material commit `fab359da6`, the
+bounded evidence conclusion, and the unchanged parked R84 checkpoint in the
+active handoff. Operator authority is the instruction to review, repair
+findings, record learning, and close the returned tranche.
+
+Rollback boundary: revert only this closure marker if material commit
+`fab359da6` is reverted.
+
+## GC-020 Marker - MSEA-R72-R84-T0 Closure Sync
+
+This handoff records material parent commit `fab359da6`. The handoff-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
