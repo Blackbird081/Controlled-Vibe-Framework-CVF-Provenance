@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V50_2026-07-22.md",
+  "activeHandoff": "AGENT_HANDOFF_V51_2026-07-22.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -83,7 +83,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V46_2026-07-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V47_2026-07-18.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V48_2026-07-18.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V49_2026-07-20.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V49_2026-07-20.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V50_2026-07-22.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
@@ -13673,7 +13674,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Portable clone continuity is published and verified: public CVF core c1076dc4b, downstream project f451e2af, and provenance material 4442f4b24. A fresh GitHub clone of shift-operations-workspace resolved its relative manifest, cloned the pinned sibling CVF core with Windows long-path support, created an ignored local binding, resolved the active handoff, and passed the workspace doctor 24/24. Future downstream projects inherit the same initializer through new-cvf-workspace.ps1. The next move is a fresh operator-selected governed tranche; in shift-operations-workspace the tracked active handoff permits exactly one INTAKE lane among remaining P2-A incidents/handovers with migration first, P2-B authentication, or P2-C frontend UI. Provider/API use, browser, deployment, production action, Continuous Projection T4 retry, and unrelated roadmap implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "EAIC-KR T1 is dispatch-ready at material commit 431c58ee0. The next move is manual copy/paste dispatch of docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_2026-07-22.md. The worker may retrieve public pages only from the allowlisted official roots and must create exactly two uncommitted outputs. Agent CLI/MCP, provider/API/account use, process testing, implementation, T2-T5, public-sync, push, deployment, and production remain parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",

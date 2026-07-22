@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V50_2026-07-22.md`
+4. `AGENT_HANDOFF_V51_2026-07-22.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V50_2026-07-22.md` |
+| Active handoff | `AGENT_HANDOFF_V51_2026-07-22.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V50_2026-07-22.md; next allowed move=fresh operator-selected governed tranche, while the downstream project may select exactly one recorded INTAKE lane; parked checkpoint=provider/API use, browser, deployment, production, Continuous Projection T4 retry, and unrelated roadmap implementation.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=manual copy/paste dispatch of the committed EAIC-KR T1 primary-source intake work order; parked checkpoint=agent CLI/MCP, provider/API/account use, process testing, implementation, T2-T5, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -341,14 +341,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `portable_clone_continuity_published_verified`
 
-Portable clone continuity is published and verified for CVF public core,
-private provenance, and `CVF-Ecosystem/shift-operations-workspace`. A future
-CVF tranche requires fresh operator selection. In the downstream project, its
-tracked active handoff permits exactly one new INTAKE lane: remaining P2-A
-incidents/handovers with migration first, P2-B authentication, or P2-C
-frontend UI. Provider/API use, browser, deployment, production, Continuous
-Projection T4 retry, and unrelated roadmap implementation remain parked.
-Latest closed numbered LHW wave remains `LHW24`.
+EAIC-KR T1 is dispatch-ready at material commit `431c58ee0`. The next move is
+manual copy/paste dispatch of
+`docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_2026-07-22.md`.
+The worker may retrieve public pages only from the allowlisted official roots
+and must create exactly two uncommitted outputs. Agent CLI/MCP,
+provider/API/account use, process testing, implementation, T2-T5, public-sync,
+push, deployment, and production remain parked. Latest closed numbered LHW
+wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
