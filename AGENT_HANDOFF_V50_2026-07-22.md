@@ -26,6 +26,18 @@ deployment, production action, and unrelated roadmap work are inactive.
 
 Tracked remote branch: `origin/main`
 
+Remote tracking branch: `origin/main`
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
+
+## GC-020 Marker - V50 Continuity Marker Sync
+
+This dedicated handoff-sync change records current parent HEAD `edd5073f9`.
+The child SHA cannot be known before commit creation, so the active-session
+checker may accept this parent marker for this handoff-only commit.
+
 External memory and provider-local memory are non-canonical execution aids;
 CVF-governed session state and this active handoff remain the continuity
 authority.
