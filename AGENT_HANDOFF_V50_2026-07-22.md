@@ -38,6 +38,24 @@ This dedicated handoff-sync change records current parent HEAD `edd5073f9`.
 The child SHA cannot be known before commit creation, so the active-session
 checker may accept this parent marker for this handoff-only commit.
 
+## GC-020 Marker - Continuity Rehydration Material Parent
+
+The continuity-rehydration material batch starts from current parent HEAD
+`ee63b864f`. The active handoff is intentionally left unstaged while the three
+material bootstrap files commit as an isolated batch.
+
+## Continuity Rehydration Material Completion
+
+- Private provenance material commit: `65065f96e`.
+- Downstream project commits: customer repair `0429c4a`, bootstrap
+  `acc5d09`, and final session sync `db11269`.
+- Remote push: not performed.
+
+## GC-020 Marker - Continuity Rehydration Completion Sync
+
+This dedicated handoff-sync change records current material parent HEAD
+`65065f96e`. The child SHA cannot be known before commit creation.
+
 External memory and provider-local memory are non-canonical execution aids;
 CVF-governed session state and this active handoff remain the continuity
 authority.
