@@ -13925,5 +13925,6 @@
     "publicExportDisposition": "EXPORTED",
     "liveProofDisposition": "N/A with reason: Git/filesystem continuity only; no AI governance runtime or provider behavior claim",
     "claimBoundary": "Portable repository continuity only. No hidden cross-chat memory, provider/API, browser, deployment, production, or live PostgreSQL claim."
-  }
+  },
+  "publicSevenStepProviderClaimReconciliationClosure20260723": "CLOSED_PASS_BOUNDED at provenance material commit e26ae7e97. Public documentation repair commit 6ce1cf00c was pushed to https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git and left the public-sync clone clean with HEAD equal to origin/main. README and Architecture now preserve INTAKE -> DESIGN -> SPEC -> WORK ORDER -> BUILD -> REVIEW -> FREEZE with user-facing stage semantics. Public provider claims are reconciled to Alibaba qwen-turbo and DeepSeek deepseek-chat as the two unambiguous CERTIFIED lanes; OpenAI gpt-4o-mini remains EXPERIMENTAL with historical receipt evidence and no badge/promotion authority. Public static CI PASS 8/8; provenance pre-commit PASS 83/83. ADIF-0046 records the recurring broad-projection semantic regression as a machine-check candidate. No agent CLI/MCP, provider/API call, live proof, Web/UI mutation, deployment, or production claim occurred. EAIC-KR T2 remains parked behind its existing four reopen conditions."
 }

@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Public seven-step and provider-claim reconciliation | `e26ae7e97` | CLOSED_PASS_BOUNDED. Public commit `6ce1cf00c` exported the exact seven-step loop and restored the R65/L-007 two-certified-lane boundary; OpenAI remains EXPERIMENTAL, public static CI passed 8/8, ADIF-0046 records projection-regression learning, and EAIC-KR T2 remains parked. |
 | Continuous Projection T4 and roadmap bounded closure | `5885cf32f` | CLOSED_BLOCKED_BOUNDED; T1-T3 retained, R3 target script did not execute due spaced-path argument splitting, ADIF-0045 recorded, no R4 or retry authorized; zero provider/CLI/MCP/browser/network calls. |
 | Continuous Projection T4 R3 supervised-process redispatch | `8468102c5` | REDISPATCH_READY_R3 manual copy/paste only; R2 outer-harness timeout accepted, ADIF-0044 recorded, and exactly one hidden local process with one persisted PID plus short manual polls released; zero provider/CLI/MCP/browser/network calls. |
 | Continuous Projection T4 R2 stdout-only redispatch | `539bf01cc` | REDISPATCH_READY_R2 manual copy/paste only; R1 PATH_ESCAPE block accepted, fixture proof `53/53`, `91/91`, `144/144` reused, ADIF-0043 recorded, ReceiptOutputPath omitted, and one fresh no-retry scan released; zero provider/CLI/MCP/browser/network calls. |

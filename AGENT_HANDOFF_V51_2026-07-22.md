@@ -39,6 +39,15 @@ production.
 
 ## Latest Work / Changes
 
+- Direct operator-authorized public documentation reconciliation closed at
+  provenance material commit `e26ae7e97` and public commit `6ce1cf00c`.
+- Public README and Architecture now preserve the exact seven-step loop:
+  `INTAKE -> DESIGN -> SPEC -> WORK ORDER -> BUILD -> REVIEW -> FREEZE`.
+- Provider claim drift is repaired: Alibaba and DeepSeek remain the two
+  unambiguous public `CERTIFIED` lanes; OpenAI remains `EXPERIMENTAL` pending
+  a fresh governed promotion. Public static CI passed 8/8.
+- ADIF-0046 records the recurring broad-projection semantic regression. This
+  closure does not reopen EAIC-KR T2 or authorize CLI/MCP/provider work.
 - MSEA-R72/R84 evidence audit closed at material commit `fab359da6` with
   continuity commit `6ce93ecd2`; R84 remains parked for insufficient evidence.
 - EAIC-KR T1 dispatch packet committed at `431c58ee0`.
@@ -140,6 +149,33 @@ handoff-sync-only commit.
 ## GC-020 Marker - EAIC-KR T1 Closure Continuity Sync
 
 This handoff records material closure parent commit `b4d236965`. The
+continuity child SHA cannot be known before commit creation, so the active-
+session checker may accept this parent SHA for this dedicated session-sync-
+only commit.
+
+## Core Guard Self-Protection Authorization - Public Documentation Reconciliation Sync
+
+Authorized continuity scope: record material closure commit `e26ae7e97`,
+public export commit `6ce1cf00c`, preserved EAIC-KR next-move posture, and
+ADIF-0046 learning without changing mode or releasing any parked lane.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/publicSevenStepProviderClaimReconciliationClosure20260723.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator explicitly requested review, synchronized
+public/provenance documentation, and push to both GitHub repositories.
+
+Rollback boundary: revert this four-path continuity record together if
+material commit `e26ae7e97` or public commit `6ce1cf00c` is reverted. Do not
+change the pre-existing EAIC-KR T2 reopen conditions in a partial rollback.
+
+## GC-020 Marker - Public Documentation Reconciliation Continuity Sync
+
+This handoff records material closure parent commit `e26ae7e97`. The
 continuity child SHA cannot be known before commit creation, so the active-
 session checker may accept this parent SHA for this dedicated session-sync-
 only commit.
