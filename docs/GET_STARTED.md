@@ -1,5 +1,8 @@
 # CVF - Bắt Đầu Trong 5 Phút
 
+Text Encoding Exception: this existing user-facing guide intentionally uses
+Vietnamese text.
+
 [🇬🇧 English guides](guides/) | 🇻🇳 Tiếng Việt
 
 > **🎯 Mục tiêu:** Giúp bạn hiểu và chạy được CVF project đầu tiên trong 5 phút
@@ -67,6 +70,28 @@ powershell -ExecutionPolicy Bypass -File .\scripts\update_cvf_workspace_public_c
 Doctor kiểm tra enforcement artifacts, public bootstrap kit, đúng public
 remote và freshness so với `origin/main`. Live governance proof vẫn là gate
 riêng.
+
+### Tiếp tục sau khi clone sang máy khác
+
+Với chính repo CVF, chạy lệnh sau ngay sau fresh clone, trước khi agent bắt đầu
+công việc:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\initialize_cvf_repository_clone.ps1
+```
+
+Với project downstream đã được CVF bootstrap, chạy initializer nằm trong chính
+project:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\initialize_cvf_clone.ps1
+```
+
+Initializer sẽ dựng hoặc kiểm tra CVF core sibling từ public Git remote, kiểm
+tra commit pin có thể truy xuất từ `origin/main`, tạo local binding bị Git
+ignore, rồi chạy workspace doctor. Vì vậy Git chỉ lưu repository URL, commit và
+đường dẫn tương đối; đường dẫn tuyệt đối của từng máy không trở thành source of
+truth.
 
 Mốc W113 đã chứng minh luồng project downstream thật đầu tiên với live API-backed governance evidence: [W113-T1 First Downstream Project Proof](roadmaps/CVF_W113_T1_FIRST_DOWNSTREAM_PROJECT_PROOF_ROADMAP_2026-04-22.md).
 

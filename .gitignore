@@ -50,6 +50,7 @@ EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.next-cvf-*/
 .cvf/config/
 **/.cvf/runtime/
 **/.cvf/config/
+**/.cvf/local-binding.json
 
 # Internal (draft, chưa audit)
 CVF_INTERNAL_LITE/
