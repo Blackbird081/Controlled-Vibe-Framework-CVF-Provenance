@@ -320,3 +320,49 @@ Authorized protected paths:
 Operator authorization is the portable-clone foundation and publication
 request recorded above. Rollback boundary: revert this completion session-sync
 set together; do not remove only the generated aggregate or only its sources.
+
+## EAIC-KR T0 Reviewer Closure - 2026-07-22
+
+EAIC-KR T0 is closed as
+`CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_CONDUCT_FINDING` in private
+provenance material commit `403d2f8ec`.
+
+The reviewer accepted the nine-domain knowledge-readiness map after direct
+local source re-verification and repaired the manifest count, credential
+boundary wording, corpus receipt literals, completion-review linkage, and
+closure state. The worker's use of one internal Explore subagent contrary to
+the no-other-agent instruction remains disclosed as a conduct finding covered
+by existing `CVF_ADIF-0015`; it was not hidden or converted into a clean-scope
+claim.
+
+Invocation counters for this closure are:
+`internalSubagentInvocationCount=1`; `agentCliCallCount=0`; `mcpCallCount=0`;
+`providerCallCount=0`; `browserCallCount=0`; `networkCallCount=0`.
+
+T1 remains parked. The next allowed move is an operator decision selecting
+which primary-source classes may be acquired for the four CRITICAL knowledge
+rows: launch admission, process identity, cumulative budget, and unknown usage.
+No external source acquisition, agent invocation, CLI/MCP use, provider/API
+call, browser/network use, implementation, public-sync, push, or deployment is
+authorized by this closure.
+
+## Core Guard Self-Protection Authorization - EAIC-KR T0 Closure Sync
+
+Authorized guard-maintenance scope: record the reviewed EAIC-KR T0 material
+commit and the parked operator checkpoint in the active handoff.
+
+Protected path:
+
+- `AGENT_HANDOFF_V50_2026-07-22.md`.
+
+Operator authorization: the operator requested reviewer closure after the T0
+worker returned `COMPLETE_PENDING_REVIEW`.
+
+Rollback boundary: revert only this EAIC-KR T0 closure handoff marker; do not
+implicitly revert the seven-path material closure.
+
+## GC-020 Marker - EAIC-KR T0 Closure Sync
+
+This handoff records material parent commit `403d2f8ec`. The handoff-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated handoff sync.
