@@ -127,3 +127,10 @@ This handoff releases only manual copy/paste dispatch of a bounded public-source
 research worker. It does not prove source correctness, knowledge sufficiency,
 runtime control, provider behavior, cost savings, public readiness, or
 production readiness.
+
+## GC-020 Marker - V51 Post-Rotation Handoff Sync
+
+This handoff records session-rotation parent commit `a5afa48eb`. The
+handoff-sync child SHA cannot be known before commit creation, so the
+active-session checker may accept this parent SHA for this dedicated
+handoff-sync-only commit.
