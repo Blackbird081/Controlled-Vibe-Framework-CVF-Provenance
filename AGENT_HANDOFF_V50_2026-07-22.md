@@ -26,16 +26,16 @@ deployment, production action, and unrelated roadmap work are inactive.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`project_bootstrap_continuity_commit_authorized`;
-active handoff=AGENT_HANDOFF_V50_2026-07-22.md; next allowed move=commit the
-verified bootstrap continuity changes in provenance and public-sync, then align
-the workspace hidden core; parked checkpoint=remote push, provider/API use,
+Startup acknowledged: current mode=`project_bootstrap_continuity_committed_local_push_parked`;
+active handoff=AGENT_HANDOFF_V50_2026-07-22.md; next allowed move=retain the
+committed local bootstrap capability and push only after explicit operator
+instruction; parked checkpoint=remote push, provider/API use,
 browser, deployment, production, Continuous Projection T4 retry, and unrelated
 roadmap implementation.
 
 ## Current Mode
 
-`project_bootstrap_continuity_commit_authorized`
+`project_bootstrap_continuity_committed_local_push_parked`
 
 ## Current State
 
@@ -129,3 +129,39 @@ Rollback boundary: revert only this post-rotation handoff marker.
 This handoff records current session rotation commit `a0192d4ba`. The
 handoff-sync child SHA cannot be known before commit creation, so the active
 session checker may accept this parent SHA for this dedicated handoff sync.
+
+## Project Bootstrap Continuity Local Commit Completion
+
+- Private provenance material commit: `03764e224`.
+- Public-sync material commit: `f05e3dcd2`.
+- Workspace hidden core: fast-forwarded from `a78b35c9` to `f05e3dcd2` and
+  clean; no independent hidden-core commit was created.
+- Provenance pre-commit hook: 83/83 PASS.
+- Public-sync PowerShell parsing and diff hygiene: PASS.
+- Remote push: NOT PERFORMED.
+
+## Core Guard Self-Protection Authorization - Bootstrap Completion Sync
+
+Authorized guard-maintenance scope: record the completed local commits and
+park remote push until explicit operator instruction.
+
+Protected paths:
+
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION_MEMORY.md`;
+- `AGENT_HANDOFF_V50_2026-07-22.md`.
+
+Operator authorization: the operator explicitly requested the completed
+bootstrap changes be committed.
+
+Rollback boundary: revert this completion session sync together; do not revert
+the material commits implicitly.
+
+## GC-020 Marker - Bootstrap Completion Session Sync
+
+This handoff records material parent commit `03764e224`. The session-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this protected sync commit.

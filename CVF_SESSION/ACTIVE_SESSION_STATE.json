@@ -90,8 +90,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "project_bootstrap_continuity_commit_authorized",
-  "previousMode": "continuous_projection_t4_closed_blocked_bounded_roadmaps_parked",
+  "currentMode": "project_bootstrap_continuity_committed_local_push_parked",
+  "previousMode": "project_bootstrap_continuity_commit_authorized",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13673,7 +13673,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Commit the operator-authorized governed project bootstrap continuity changes in private provenance and public-sync, then fast-forward the workspace hidden core to the exact public-sync commit. Verify the seven-step phase model, provider-neutral role contract, generated continuity front doors, state-to-handoff pointer, JSON truth surfaces, and idempotent preservation behavior before reporting completion. No remote push, provider/API use, browser, deployment, production action, or unrelated roadmap implementation is authorized. Continuous Projection T4 remains DEFERRED_AND_REVISIT_ON_EVIDENCE under its recorded reopen triggers. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Project bootstrap continuity is committed locally at provenance material commit 03764e224 and public-sync commit f05e3dcd2; the workspace hidden core is clean and fast-forwarded to f05e3dcd2. No remote push is authorized until the operator explicitly requests it. Future project creation or backfill should run New-CVF-Governed-Project.ps1 and require the workspace doctor to validate the seven-step phase model, provider-neutral roles, continuity front doors, state-to-handoff pointer, JSON truth surfaces, and preservation behavior. Provider/API use, browser, deployment, production action, Continuous Projection T4 retry, and unrelated roadmap implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",

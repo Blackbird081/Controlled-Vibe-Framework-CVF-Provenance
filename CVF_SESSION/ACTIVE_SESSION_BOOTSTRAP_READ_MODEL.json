@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "project_bootstrap_continuity_commit_authorized",
+  "currentMode": "project_bootstrap_continuity_committed_local_push_parked",
   "activeHandoff": "AGENT_HANDOFF_V50_2026-07-22.md",
-  "nextAllowedMove": "Commit the operator-authorized governed project bootstrap continuity changes in private provenance and public-sync, then fast-forward the workspace hidden core to the exact public-sync commit. Verify the seven-step phase model, provider-neutral role contract, generated continuity front doors, state-to-handoff pointer, JSON truth surfaces, and idempotent preservation behavior before reporting completion. No remote push, provider/API use, browser, deployment, production action, or unrelated roadmap implementation is authorized. Continuous Projection T4 remains DEFERRED_AND_REVISIT_ON_EVIDENCE under its recorded reopen triggers. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Project bootstrap continuity is committed locally at provenance material commit 03764e224 and public-sync commit f05e3dcd2; the workspace hidden core is clean and fast-forwarded to f05e3dcd2. No remote push is authorized until the operator explicitly requests it. Future project creation or backfill should run New-CVF-Governed-Project.ps1 and require the workspace doctor to validate the seven-step phase model, provider-neutral roles, continuity front doors, state-to-handoff pointer, JSON truth surfaces, and preservation behavior. Provider/API use, browser, deployment, production action, Continuous Projection T4 retry, and unrelated roadmap implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

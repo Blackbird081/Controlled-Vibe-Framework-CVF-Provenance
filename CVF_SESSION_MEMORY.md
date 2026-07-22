@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`project_bootstrap_continuity_commit_authorized`; active handoff=AGENT_HANDOFF_V50_2026-07-22.md; next allowed move=commit the governed project bootstrap continuity changes in provenance and public-sync, then align the workspace hidden core; parked checkpoint=remote push, provider/API use, browser, deployment, production, Continuous Projection T4 retry, and unrelated roadmap implementation.
+Startup acknowledged: current mode=`project_bootstrap_continuity_committed_local_push_parked`; active handoff=AGENT_HANDOFF_V50_2026-07-22.md; next allowed move=retain the committed local bootstrap capability and push only after explicit operator instruction; parked checkpoint=remote push, provider/API use, browser, deployment, production, Continuous Projection T4 retry, and unrelated roadmap implementation.
 
 ## Current Mode
 
-Current mode marker: `project_bootstrap_continuity_commit_authorized`
+Current mode marker: `project_bootstrap_continuity_committed_local_push_parked`
 
-Current mode: `project_bootstrap_continuity_commit_authorized`
+Current mode: `project_bootstrap_continuity_committed_local_push_parked`
 
-`project_bootstrap_continuity_commit_authorized`
+`project_bootstrap_continuity_committed_local_push_parked`
 
 Previous mode:
 
-`continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
+`project_bootstrap_continuity_commit_authorized`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -339,7 +339,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `project_bootstrap_continuity_commit_authorized`
+Mode: `project_bootstrap_continuity_committed_local_push_parked`
 
 Operator reviews T4 closure commit `5885cf32f` and selects the next
 knowledge-absorption or system-chain audit step. T4 and the roadmap are
