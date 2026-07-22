@@ -58,7 +58,7 @@ and terminate the exact process tree if supervision cannot continue.
   and timeout branch.
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_AND_CLOSURE_2026-07-20.md`, Phase B.
 - `docs/reviews/CVF_CONTINUOUS_PROJECTION_T4_WORKER_RETURN_2026-07-20.md`, R2 outer-harness interruption diagnosis.
-- `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`, bounded
+- `docs/reference/archive/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`, bounded
   failure diagnosis and no-unclear-rerun discipline.
 
 ## Remediation

@@ -56,7 +56,7 @@ changing quoting, working directory, executable, or argument construction.
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_AND_CLOSURE_2026-07-20.md`, R3 Phase B.
 - `docs/reviews/CVF_CONTINUOUS_PROJECTION_T4_WORKER_RETURN_2026-07-20.md`, R3 launch failure.
 - `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0044.md`, parent-child timeout reconciliation.
-- `docs/reference/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`, diagnose-before-rerun discipline.
+- `docs/reference/archive/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md`, diagnose-before-rerun discipline.
 
 ## Remediation
 
