@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP
 
 docType: baseline
 
@@ -158,10 +158,10 @@ overall T1 recommendation without releasing T2 automatically.
 
 ## Baseline Decision
 
-`DISPATCH_READY`
+`CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP`
 
-The T0 dependency and source-class checkpoint are satisfied. This decision
-releases only manual dispatch of the paired no-commit T1 research worker.
+T1 completed bounded source intake and independent review. T2 remains parked
+behind the four explicit reopen conditions in the completion review.
 
 ## Verification / Evidence
 
@@ -177,6 +177,34 @@ This baseline authorizes a bounded public-source intake and two uncommitted
 documentation outputs. It does not authorize agent invocation, provider use,
 account access, implementation, architecture ratification, live proof,
 public-sync, or a lift of the invocation moratorium.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP` | PASS |
+| Work order status | paired T1 work order | `Status: CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP` | PASS |
+| Completion or reviewer artifact | T1 completion review | `Status: REVIEWER_ACCEPTED_PARKED_KNOWLEDGE_GAP` | PASS |
+| Roadmap state | EAIC-KR roadmap | `Status: T1_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP` | PASS |
+| Registry JSON | existing generated corpus registry | GC-051 aggregate drift PASS; public web pages are not local corpus candidates | PASS |
+| Registry Markdown | existing corpus registry source layout | changed-corpus coverage PASS; no new local corpus root exists | PASS |
+| External evidence digest | N/A with reason: official pages are represented by the repo-local source manifest, not a detached external artifact | none | N/A with reason |
+| System loop interlock | N/A with reason: no runtime loop changed | none | N/A with reason |
+| Session continuity | active state and V51 handoff | separate continuity commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+| --- | --- | --- | --- | --- | --- |
+| T1-SOURCE-COUNT | stable T1 source-intake ledger | N/A with reason: Markdown ledger | 15 reconciled source IDs | 15 | PASS |
+| T1-DOMAIN-COUNT | stable T1 source-intake ledger | N/A with reason: Markdown ledger | four terminal CRITICAL domains | four | PASS |
+
+## Current Runtime Freshness Verification
+
+At closure base `d000aa35b`, `git diff --name-status` shows documentation-only
+T1 changes. No runtime, source, test, checker, hook, package, or generated
+runtime state path changed. The completion review independently refreshed the
+official source claims; no runtime-effectiveness claim is made.
 
 ## Public Export Disposition
 

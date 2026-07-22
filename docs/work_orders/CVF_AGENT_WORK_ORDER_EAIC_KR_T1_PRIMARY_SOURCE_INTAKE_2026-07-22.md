@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP
 
 docType: work_order
 
@@ -115,6 +115,16 @@ Allowed scope:
 - write only the two worker-owned paths;
 - run local read-only verification and governance gates.
 
+Reviewer/closer-only closeout paths (these do not expand worker authority):
+
+- `docs/baselines/CVF_GC018_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_2026-07-22.md`;
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_2026-07-22.md`;
+- `docs/roadmaps/CVF_EXTERNAL_AGENT_INVOCATION_CONTROL_KNOWLEDGE_READINESS_ROADMAP_2026-07-22.md`;
+- `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER.md`;
+- `docs/reviews/CVF_EAIC_KR_T1_WORKER_RETURN_2026-07-22.md`;
+- `docs/reviews/CVF_EAIC_KR_T1_COMPLETION_REVIEW_2026-07-22.md`;
+- separately authorized session continuity surfaces.
+
 Forbidden scope:
 
 - agent CLI/MCP use, separate agent dispatch, provider/model/API request,
@@ -133,7 +143,7 @@ Reviewer closure Allowed scope:
 - `docs/baselines/CVF_GC018_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_2026-07-22.md`;
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_2026-07-22.md`;
 - `docs/roadmaps/CVF_EXTERNAL_AGENT_INVOCATION_CONTROL_KNOWLEDGE_READINESS_ROADMAP_2026-07-22.md`;
-- `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER_2026-07-22.md`;
+- `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER.md`;
 - `docs/reviews/CVF_EAIC_KR_T1_WORKER_RETURN_2026-07-22.md`;
 - `docs/reviews/CVF_EAIC_KR_T1_COMPLETION_REVIEW_2026-07-22.md`;
 - separately authorized session continuity surfaces.
@@ -204,7 +214,7 @@ Before any source retrieval or file edit, run:
 ```powershell
 git rev-parse --short HEAD
 git status --short --untracked-files=all
-Test-Path docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER_2026-07-22.md
+Test-Path docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER.md
 Test-Path docs/reviews/CVF_EAIC_KR_T1_WORKER_RETURN_2026-07-22.md
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 ```
@@ -293,7 +303,7 @@ Source intake decision packet: REQUIRED
 | Core disposition | ADAPT official-source evidence into the bounded T1 ledger |
 | Value conversion requirement | classify doctrine, later runtime candidate, later checker candidate, or no runtime value without implementation |
 | Overlap classification requirement | use confirmed, enriched, new-gap, rejected-direct-import, no-new-value, or owner-missing disposition |
-| Worker output path | `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER_2026-07-22.md` |
+| Worker output path | `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER.md` |
 | Forbidden scope | login, paid access, agent/provider execution, source import, runtime/checker build, policy ratification, or public release |
 | Claim boundary | knowledge intake and readiness recommendation only |
 
@@ -376,11 +386,11 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | closureOwner | independent reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
 | Artifact | Required worker action |
 | --- | --- |
-| `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER_2026-07-22.md` | create reconciled manifest, per-source ledger, domain matrix, gaps, and recommendation |
+| `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER.md` | create reconciled manifest, per-source ledger, domain matrix, gaps, and recommendation |
 | `docs/reviews/CVF_EAIC_KR_T1_WORKER_RETURN_2026-07-22.md` | create no-commit evidence and gate return packet |
 
 Every other path is read-only or forbidden for writes.
@@ -389,7 +399,7 @@ Every other path is read-only or forbidden for writes.
 
 Worker-owned create-only paths:
 
-- `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER_2026-07-22.md`;
+- `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER.md`;
 - `docs/reviews/CVF_EAIC_KR_T1_WORKER_RETURN_2026-07-22.md`.
 
 Write mode: create-only, unstaged, uncommitted.
@@ -399,7 +409,7 @@ Write mode: create-only, unstaged, uncommitted.
 | Field | Disposition |
 | --- | --- |
 | durable owner family | `docs/reference/external_agent_invocation_control/` |
-| new durable artifact | `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER_2026-07-22.md` |
+| new durable artifact | `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_LEDGER.md` |
 | owner front door | `docs/reference/external_agent_invocation_control/README.md` remains the stable family front door and is read-only in this worker tranche |
 | storage class | governed evidence ledger, not runtime state, raw web archive, cache, queue, or provider memory |
 | index/update disposition | reviewer decides whether the existing front door needs a later closure update; worker must not modify it |
@@ -531,15 +541,15 @@ git status --short --untracked-files=all
 
 ## Acceptance Criteria
 
-- [ ] exactly two worker-owned output paths exist and no other path changed;
-- [ ] every accepted source is official, public, allowlisted, and metadata-complete;
-- [ ] every retrieval query has a terminal result, including no-result rows;
-- [ ] all four CRITICAL domains have exactly one terminal readiness disposition;
-- [ ] provider, access-mode, protocol, OS, and runtime semantics remain distinct;
-- [ ] no implementation, policy ratification, or provider preference is inferred;
-- [ ] overall recommendation is exactly one allowed token;
-- [ ] worker-return fast gate and listed checks pass after final edits;
-- [ ] changes remain unstaged and uncommitted.
+- [x] exactly two worker-owned output paths existed at worker return; reviewer closure repairs are separately accounted;
+- [x] every accepted source is official, public, allowlisted, and metadata-complete;
+- [x] every retrieval query has a terminal result, including reviewer-refreshed rows;
+- [x] all four CRITICAL domains have exactly one terminal readiness disposition;
+- [x] provider, access-mode, protocol, OS, and runtime semantics remain distinct;
+- [x] no implementation, policy ratification, or provider preference is inferred;
+- [x] overall recommendation is exactly one allowed token;
+- [x] worker-return fast gate and listed checks pass after reviewer final edits;
+- [x] worker changes remained unstaged and uncommitted at return.
 
 Fail conditions:
 
@@ -615,14 +625,14 @@ implementation, provider use, or public action.
 
 ## Closure Checklist
 
-- [ ] worker outputs are exactly the two owned paths;
-- [ ] all accepted sources and no-result queries have terminal rows;
-- [ ] all four CRITICAL domains have terminal readiness dispositions;
-- [ ] reviewer checks semantic accuracy and provider-neutral boundaries;
-- [ ] worker-return and source-intake gates pass after final edits;
-- [ ] reviewer converts every item to checked, N/A with reason, or BLOCKED;
-- [ ] material and continuity commits remain separate;
-- [ ] committed-range pre-closure gates pass before final closure.
+- [x] worker outputs were exactly the two owned paths at handoff;
+- [x] all accepted sources and no-result queries have terminal rows;
+- [x] all four CRITICAL domains have terminal readiness dispositions;
+- [x] reviewer checked semantic accuracy and provider-neutral boundaries;
+- [x] worker-return and source-intake gates pass after final edits;
+- [x] reviewer converted every item to checked, N/A with reason, or BLOCKED;
+- [x] material and continuity commits are assigned to separate lanes;
+- [x] committed-range pre-closure gate is required before the final closure report.
 
 ## Return-To-Orchestrator Conditions
 
@@ -637,6 +647,34 @@ This work order authorizes one no-commit official-source intake and two worker
 outputs. It neither selects nor invokes a provider or agent host, and it does
 not ratify architecture, budget, telemetry, fail-closed behavior, runtime,
 security, public, cost, or production claims.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Baseline status | paired T1 baseline | `Status: CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP` | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP` | PASS |
+| Completion or reviewer artifact | T1 completion review | `Status: REVIEWER_ACCEPTED_PARKED_KNOWLEDGE_GAP` | PASS |
+| Roadmap state | EAIC-KR roadmap | `Status: T1_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP` | PASS |
+| Registry JSON | existing generated corpus registry | GC-051 aggregate drift PASS; public web pages are not local corpus candidates | PASS |
+| Registry Markdown | existing corpus registry source layout | changed-corpus coverage PASS; no new local corpus root exists | PASS |
+| External evidence digest | N/A with reason: official pages are represented by the repo-local source manifest, not a detached external artifact | none | N/A with reason |
+| System loop interlock | N/A with reason: no runtime loop changed | none | N/A with reason |
+| Session continuity | active state and V51 handoff | separate continuity commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+| --- | --- | --- | --- | --- | --- |
+| T1-SOURCE-COUNT | stable T1 source-intake ledger | N/A with reason: Markdown ledger | 15 reconciled source IDs | 15 | PASS |
+| T1-DOMAIN-COUNT | stable T1 source-intake ledger | N/A with reason: Markdown ledger | four terminal CRITICAL domains | four | PASS |
+
+## Current Runtime Freshness Verification
+
+At closure base `d000aa35b`, `git diff --name-status` shows documentation-only
+T1 changes. No runtime, source, test, checker, hook, package, or generated
+runtime state path changed. The completion review independently refreshed the
+official source claims; no runtime-effectiveness claim is made.
 
 ## Public Export Disposition
 

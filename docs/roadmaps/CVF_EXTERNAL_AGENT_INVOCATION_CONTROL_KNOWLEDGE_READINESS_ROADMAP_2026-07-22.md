@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T0_PASS_BOUNDED_T1_DISPATCH_READY_OPERATOR_APPROVED_SOURCE_INTAKE
+Status: T1_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP
 
 docType: roadmap
 
@@ -31,7 +31,7 @@ does not automatically release the next row.
 
 | Priority | Lane | Current disposition | Release condition |
 | --- | --- | --- | --- |
-| 1 | External-agent invocation control knowledge readiness | T1 DISPATCH_READY_OPERATOR_APPROVED_SOURCE_INTAKE | Manual copy/paste dispatch of the bounded T1 packet; no automatic T2 release |
+| 1 | External-agent invocation control knowledge readiness | T1 PASS_BOUNDED_PARKED_KNOWLEDGE_GAP | T2 remains parked; no automatic release |
 | 2 | Governance-load reduction under MSEA-R72 | PARKED_ORDERED_NEXT | Fresh operator selection after priority 1 reaches a bounded decision point |
 | 3 | Operator-approved provider/model assignment and invocation receipts | SUBORDINATE_TO_PRIORITY_1 | Reconcile it as one component of the accepted invocation-control architecture; do not run independently |
 | 4 | MAO live/provider value pilot | VALUE_PARKED | Existing measurable reopen conditions and fresh operator authorization are satisfied |
@@ -125,8 +125,8 @@ insufficient.
 | Tranche | Objective | Status |
 | --- | --- | --- |
 | T0 | Inventory repo-local authority, classify gaps, and produce an authoritative-source acquisition map | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_BOUNDARY_CORRECTION |
-| T1 | Absorb operator-approved primary sources into a reconciled knowledge ledger | DISPATCH_READY_OPERATOR_APPROVED_SOURCE_INTAKE |
-| T2 | Ratify provider-neutral budget, telemetry, stop, retry/fallback, and receipt semantics | HOLD_UNTIL_T1_PASS |
+| T1 | Absorb operator-approved primary sources into a reconciled knowledge ledger | CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP |
+| T2 | Ratify provider-neutral budget, telemetry, stop, retry/fallback, and receipt semantics | HOLD_KNOWLEDGE_GAP |
 | T3 | Select one admission-monitor-stop-reconcile owner architecture and threat model | HOLD_UNTIL_T2_PASS |
 | T4 | Produce a build-readiness decision and negative-proof plan | HOLD_UNTIL_T3_PASS |
 | T5 | Open a separate implementation roadmap if and only if the operator lifts the moratorium | HOLD_UNTIL_FRESH_OPERATOR_AUTHORIZATION |
@@ -225,12 +225,13 @@ no runtime was invoked or changed.
 
 ## Next Allowed Move
 
-The operator manually dispatches
-`docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_2026-07-22.md`
-through copy/paste. T1 may retrieve public pages only from the allowlisted
-official roots and must return two uncommitted evidence artifacts. Agent
-CLI/MCP, provider/API/account use, process testing, implementation, public-sync,
-and every later tranche remain parked.
+T1 is closed bounded with `PARKED_KNOWLEDGE_GAP`. T2 may be proposed only
+after fresh accepted evidence or an explicit operator policy supplies all of
+the following reopen conditions: a pre-launch admission decision boundary, a
+task/receipt-to-process identity model, provider-neutral cumulative-envelope
+semantics, and fail-closed behavior for unavailable usage. Agent CLI/MCP,
+provider/API/account use, process testing, implementation, public-sync, and
+every later tranche remain parked.
 
 ## Public Export Disposition
 
