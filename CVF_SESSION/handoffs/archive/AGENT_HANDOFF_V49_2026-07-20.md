@@ -2,7 +2,11 @@
 
 Memory class: active-agent-handoff
 
-Status: ACTIVE
+Status: ARCHIVED
+
+Text Encoding Exception: this archived historical handoff preserves existing
+Unicode evidence exactly as previously committed; rotation does not normalize
+or reinterpret that evidence.
 
 Supersedes:
 `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V48_2026-07-18.md`

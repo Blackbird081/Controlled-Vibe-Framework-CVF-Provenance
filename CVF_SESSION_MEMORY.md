@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V49_2026-07-20.md`
+4. `AGENT_HANDOFF_V50_2026-07-22.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V49_2026-07-20.md` |
+| Active handoff | `AGENT_HANDOFF_V50_2026-07-22.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`; active handoff=AGENT_HANDOFF_V49_2026-07-20.md; next allowed move=operator reviews T4 closure commit `5885cf32f` and selects the next knowledge-absorption or system-chain audit step; parked checkpoint=T4 R4/retry, all agent CLI/MCP, provider/API/account use, browser/network, public-sync, push/deployment, production, unattended action, and unrelated roadmap implementation.
+Startup acknowledged: current mode=`project_bootstrap_continuity_commit_authorized`; active handoff=AGENT_HANDOFF_V50_2026-07-22.md; next allowed move=commit the governed project bootstrap continuity changes in provenance and public-sync, then align the workspace hidden core; parked checkpoint=remote push, provider/API use, browser, deployment, production, Continuous Projection T4 retry, and unrelated roadmap implementation.
 
 ## Current Mode
 
-Current mode marker: `continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
+Current mode marker: `project_bootstrap_continuity_commit_authorized`
 
-Current mode: `continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
+Current mode: `project_bootstrap_continuity_commit_authorized`
 
-`continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
+`project_bootstrap_continuity_commit_authorized`
 
 Previous mode:
 
-`continuous_projection_t4_r3_waiting_manual_no_commit_worker_return`
+`continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -339,7 +339,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `continuous_projection_t4_closed_blocked_bounded_roadmaps_parked`
+Mode: `project_bootstrap_continuity_commit_authorized`
 
 Operator reviews T4 closure commit `5885cf32f` and selects the next
 knowledge-absorption or system-chain audit step. T4 and the roadmap are

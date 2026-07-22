@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V49_2026-07-20.md",
+  "activeHandoff": "AGENT_HANDOFF_V50_2026-07-22.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -82,15 +82,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V45_2026-07-16.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V46_2026-07-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V47_2026-07-18.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V48_2026-07-18.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V48_2026-07-18.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V49_2026-07-20.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "continuous_projection_t4_closed_blocked_bounded_roadmaps_parked",
-  "previousMode": "continuous_projection_t4_r3_waiting_manual_no_commit_worker_return",
+  "currentMode": "project_bootstrap_continuity_commit_authorized",
+  "previousMode": "continuous_projection_t4_closed_blocked_bounded_roadmaps_parked",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13672,7 +13673,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Operator reviews the Continuous Projection T4 CLOSED_BLOCKED_BOUNDED closure at material commit 5885cf32f and selects the next knowledge-absorption or system-chain audit step. T4 real-root pilot is DEFERRED_AND_REVISIT_ON_EVIDENCE (declined for low value, not blocked): T1-T3 are accepted and fixture-proven at 53/53; 91/91; 144/144, so the only unproven claim is that continuous projection also runs under a real detached launch, which fixture proof does not gate. No T4 R4 or real-root retry is authorized until a reopen trigger is met. Reopen trigger (any one, checkable): (a) an operator-named RC/GA milestone or external deliverable explicitly requires a real-root continuous-projection receipt that fixture proof cannot satisfy; or (b) continuous projection is scheduled for a real production/live run where a space-bearing-path launch failure would be a production defect. When a trigger is met, reopen requires ALL of: fresh explicit operator authority; a new source-verified GC-018 packet (not an R4 continuation); a disposable preflight per ADIF-0045 that proves the exact executable, working directory, launch API, quoting strategy, and space-bearing argument shape against a harmless echo target BEFORE any real invocation; parent/child timeout proof; and a new bounded real-root invocation budget granted only after that preflight passes. Do not re-propose T4 without first citing which trigger is met. All agent CLI/MCP, provider/API-key/account subscription, browser, network service, public-sync mutation, retry, push, deployment, production action, unattended execution, and unrelated roadmap implementation remain parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "Commit the operator-authorized governed project bootstrap continuity changes in private provenance and public-sync, then fast-forward the workspace hidden core to the exact public-sync commit. Verify the seven-step phase model, provider-neutral role contract, generated continuity front doors, state-to-handoff pointer, JSON truth surfaces, and idempotent preservation behavior before reporting completion. No remote push, provider/API use, browser, deployment, production action, or unrelated roadmap implementation is authorized. Continuous Projection T4 remains DEFERRED_AND_REVISIT_ON_EVIDENCE under its recorded reopen triggers. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
