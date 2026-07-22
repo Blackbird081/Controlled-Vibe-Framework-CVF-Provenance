@@ -366,3 +366,52 @@ implicitly revert the seven-path material closure.
 This handoff records material parent commit `403d2f8ec`. The handoff-sync child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated handoff sync.
+
+## EAIC-KR T0 Internal Autonomy Boundary Correction - 2026-07-22
+
+Material correction commit `77d75ef93` supersedes only the earlier worker
+conduct interpretation. Provider-native Explore helpers, internal subagents,
+reasoning decomposition, exploration, and context management inside one
+already-authorized parent agent session are agent autonomy, not separately
+dispatched CVF workers and not external invocation violations.
+
+CVF continues to govern the parent assignment, separately dispatched sessions,
+external CLI/MCP and provider/account boundaries, aggregate measurable
+resource envelope, scope and authority expansion, durable mutations, and
+reviewable outcome evidence. It must not permission each internal step or
+reduce agent intelligence through unnecessary deep interference.
+
+The prior conduct finding and its application of `CVF_ADIF-0015` to the
+provider-native Explore event are withdrawn. The T0 product remains accepted
+with reviewer repairs and the operator boundary correction.
+
+EAIC-KR T1 is `PARKED_KNOWLEDGE_GAP`. No T1 work order, architecture decision,
+implementation, external source acquisition, network action, provider action,
+agent CLI/MCP invocation, or moratorium lift is authorized. A later bounded
+external-knowledge intake is allowed only after the operator approves exact
+source classes, roots, and any network or source-mirror action. Parking remains
+the correct outcome while critical knowledge is missing or opaque.
+
+## Core Guard Self-Protection Authorization - EAIC-KR Autonomy Sync
+
+Authorized guard-maintenance scope: record material correction commit
+`77d75ef93`, withdraw the stale conduct interpretation, and preserve the
+knowledge-gap checkpoint in the active handoff.
+
+Protected path:
+
+- `AGENT_HANDOFF_V50_2026-07-22.md`.
+
+Operator authorization: the operator directed CVF to preserve its original
+core value, avoid deep interference with agent intelligence and latency, and
+park the roadmap when knowledge is insufficient.
+
+Rollback boundary: revert only this autonomy-correction handoff marker if the
+material correction is reverted; do not restore the withdrawn worker-blame
+claim independently.
+
+## GC-020 Marker - EAIC-KR Autonomy Correction Sync
+
+This handoff records material parent commit `77d75ef93`. The handoff-sync child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated handoff sync.
