@@ -109,3 +109,23 @@ session checker may accept this parent SHA for this protected sync commit.
 This handoff authorizes local commits and hidden-core alignment only. It does
 not claim remote publication, universal agent auto-load, runtime interception,
 provider behavior, deployment, or production readiness.
+
+## Core Guard Self-Protection Authorization - V50 Post-Rotation Handoff Sync
+
+Authorized guard-maintenance scope: record the completed V50 rotation commit
+before the isolated material bootstrap commit.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V50_2026-07-22.md`.
+
+Operator authorization: the operator requested the bootstrap implementation be
+committed, which requires a current active-handoff HEAD marker.
+
+Rollback boundary: revert only this post-rotation handoff marker.
+
+## GC-020 Marker - V50 Post-Rotation Handoff Sync
+
+This handoff records current session rotation commit `a0192d4ba`. The
+handoff-sync child SHA cannot be known before commit creation, so the active
+session checker may accept this parent SHA for this dedicated handoff sync.
