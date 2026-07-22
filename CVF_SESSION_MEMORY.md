@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=manual copy/paste dispatch of the committed EAIC-KR T1 primary-source intake work order; parked checkpoint=agent CLI/MCP, provider/API/account use, process testing, implementation, T2-T5, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=EAIC-KR T1 is closed bounded and T2 is parked behind four explicit knowledge/policy reopen conditions; parked checkpoint=agent CLI/MCP, provider/API/account use, process testing, implementation, T2-T5 execution, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -341,14 +341,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `portable_clone_continuity_published_verified`
 
-EAIC-KR T1 is dispatch-ready at material commit `431c58ee0`. The next move is
-manual copy/paste dispatch of
-`docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_2026-07-22.md`.
-The worker may retrieve public pages only from the allowlisted official roots
-and must create exactly two uncommitted outputs. Agent CLI/MCP,
-provider/API/account use, process testing, implementation, T2-T5, public-sync,
-push, deployment, and production remain parked. Latest closed numbered LHW
-wave remains `LHW24`.
+EAIC-KR T1 closed bounded at material commit `b4d236965` with
+`PARKED_KNOWLEDGE_GAP`. T2 may be proposed only after fresh accepted evidence
+or explicit operator policy supplies all four reopen conditions: a pre-launch
+admission boundary; task/receipt-to-session-and-process identity; a provider-
+neutral cumulative envelope across retry, resume, fallback, and internal-agent
+use; and fail-closed behavior when reliable usage is unavailable. Agent
+CLI/MCP, provider/API/account use, process testing, implementation, T2-T5
+execution, public-sync, push, deployment, and production remain parked. Latest
+closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.

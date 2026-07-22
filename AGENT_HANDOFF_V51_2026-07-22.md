@@ -1,4 +1,4 @@
-# CVF Agent Handoff V51 - EAIC-KR T1 Primary Source Intake Dispatch
+# CVF Agent Handoff V51 - EAIC-KR T1 Bounded Closure
 
 Memory class: active-handoff
 
@@ -6,13 +6,13 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the operator-approved EAIC-KR T1 official-primary-source intake from its
-committed dispatch packet through manual worker handoff and independent review.
+Carry the reviewed EAIC-KR T1 bounded closure and its explicit knowledge-gap
+reopen conditions into the next operator decision.
 
 ## Scope / Target / Owner Boundary
 
-Target: one manually dispatched, no-commit source-intake worker that creates
-the T1 evidence ledger and worker return named by the work order.
+Target: preserve the accepted T1 ledger, completion review, parked T2 state,
+and invocation moratorium.
 
 Owner boundary: the worker may retrieve only public pages under the allowlisted
 official roots. The reviewer owns semantic acceptance, closure conversion, and
@@ -20,17 +20,18 @@ any later continuity update. T2 is not released by this handoff.
 
 ## Active Boundary
 
-Manual copy/paste worker dispatch and allowlisted public-source retrieval are
-active. Every invocation, executable-test, implementation, later-tranche,
-public, deployment, and production action named below remains inactive.
+T1 is closed bounded. No external invocation, executable test, implementation,
+later-tranche execution, public action, deployment, or production action is
+active.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
-active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator
-manually copy/pastes the committed EAIC-KR T1 work order to one worker; parked
-checkpoint=agent CLI/MCP, provider/API/account use, process testing,
-implementation, T2-T5, public-sync, push, deployment, and production.
+active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=T1 is closed
+bounded and T2 remains parked behind four explicit knowledge/policy reopen
+conditions; parked checkpoint=agent CLI/MCP, provider/API/account use, process
+testing, implementation, T2-T5 execution, public-sync, push, deployment, and
+production.
 
 ## Current Mode
 
@@ -42,6 +43,10 @@ implementation, T2-T5, public-sync, push, deployment, and production.
   continuity commit `6ce93ecd2`; R84 remains parked for insufficient evidence.
 - EAIC-KR T1 dispatch packet committed at `431c58ee0`.
 - The packet passed pre-dispatch 75/75 and pre-commit 83/83.
+- EAIC-KR T1 closed bounded at material commit `b4d236965` with 15/15 source
+  IDs, four terminal CRITICAL domains, and `PARKED_KNOWLEDGE_GAP`.
+- Reviewer repairs removed one unsupported source claim, refreshed current
+  Codex session/usage evidence, and aligned storage/gate shape.
 - The approved source classes are current agent-host official documentation,
   the MCP specification, Windows process-control documentation, Node process
   documentation, and POSIX process semantics.
@@ -50,13 +55,10 @@ implementation, T2-T5, public-sync, push, deployment, and production.
 
 ## Next Allowed Move
 
-The operator manually dispatches:
-
-`docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_2026-07-22.md`
-
-The worker must use the operator-supplied current clean HEAD as
-`executionBaseHead`, create exactly two untracked outputs, avoid staging or
-commit, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+T2 may be proposed only after fresh accepted evidence or explicit operator
+policy supplies: pre-launch admission; task/receipt-to-session-and-process
+identity; provider-neutral cumulative envelope semantics; and fail-closed
+behavior when reliable usage is unavailable.
 
 ## Parked Operator Checkpoint
 
@@ -134,3 +136,10 @@ This handoff records session-rotation parent commit `a5afa48eb`. The
 handoff-sync child SHA cannot be known before commit creation, so the
 active-session checker may accept this parent SHA for this dedicated
 handoff-sync-only commit.
+
+## GC-020 Marker - EAIC-KR T1 Closure Continuity Sync
+
+This handoff records material closure parent commit `b4d236965`. The
+continuity child SHA cannot be known before commit creation, so the active-
+session checker may accept this parent SHA for this dedicated session-sync-
+only commit.

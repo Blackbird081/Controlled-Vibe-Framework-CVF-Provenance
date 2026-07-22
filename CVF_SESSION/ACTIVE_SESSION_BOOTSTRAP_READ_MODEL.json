@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "portable_clone_continuity_published_verified",
   "activeHandoff": "AGENT_HANDOFF_V51_2026-07-22.md",
-  "nextAllowedMove": "EAIC-KR T1 is dispatch-ready at material commit 431c58ee0. The next move is manual copy/paste dispatch of docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T1_PRIMARY_SOURCE_INTAKE_2026-07-22.md. The worker may retrieve public pages only from the allowlisted official roots and must create exactly two uncommitted outputs. Agent CLI/MCP, provider/API/account use, process testing, implementation, T2-T5, public-sync, push, deployment, and production remain parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "EAIC-KR T1 closed bounded at material commit b4d236965 with PARKED_KNOWLEDGE_GAP. T2 may be proposed only after fresh accepted evidence or explicit operator policy supplies all four reopen conditions: pre-launch admission boundary; task/receipt-to-session-and-process identity; provider-neutral cumulative envelope across retry, resume, fallback, and internal-agent use; fail-closed behavior when reliable usage is unavailable. Agent CLI/MCP, provider/API/account use, process testing, implementation, T2-T5 execution, public-sync, push, deployment, and production remain parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
