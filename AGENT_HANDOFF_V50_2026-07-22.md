@@ -137,10 +137,14 @@ CLI/MCP, provider/API/account use, browser, network research, external cloning,
 runtime implementation, public-sync, push, deployment, production action, and
 the later EAIC-KR tranches remain parked.
 
+Handoff-sync parent: `573047913`.
+
 Next allowed move: operator manually dispatches
-`docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T0_AUTHORITATIVE_KNOWLEDGE_SOURCE_MAP_2026-07-22.md`
-with execution base `06dd5eed2`; the worker must return no-commit evidence for
-independent review.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T0_AUTHORITATIVE_KNOWLEDGE_SOURCE_MAP_2026-07-22.md`.
+The operator supplies the current clean HEAD at dispatch as the execution base;
+`06dd5eed2` remains the material packet commit and must not be mistaken for the
+post-sync execution base. The worker returns no-commit evidence for independent
+review.
 
 ## Core Guard Self-Protection Authorization - EAIC-KR T0 Handoff Sync
 
