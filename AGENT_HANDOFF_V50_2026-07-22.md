@@ -126,6 +126,39 @@ implementation.
 - Continuous Projection T4 retains its existing evidence-based reopen rule.
 - LHW24 remains the latest closed numbered LHW wave.
 
+## EAIC-KR T0 Dispatch Handoff Sync - 2026-07-22
+
+Material dispatch commit: `06dd5eed2`.
+
+The operator selected priority 1, External-Agent Invocation Control Knowledge
+Readiness, and authorized T0 packet authoring. The committed roadmap, GC-018,
+and work order release only one manual copy/paste documentation worker. Agent
+CLI/MCP, provider/API/account use, browser, network research, external cloning,
+runtime implementation, public-sync, push, deployment, production action, and
+the later EAIC-KR tranches remain parked.
+
+Next allowed move: operator manually dispatches
+`docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T0_AUTHORITATIVE_KNOWLEDGE_SOURCE_MAP_2026-07-22.md`
+with execution base `06dd5eed2`; the worker must return no-commit evidence for
+independent review.
+
+## Core Guard Self-Protection Authorization - EAIC-KR T0 Handoff Sync
+
+Authorized guard-maintenance scope: record the exact EAIC-KR T0 material
+dispatch parent in the active handoff after the material commit.
+
+Operator authorization: the 2026-07-22 instruction to record the accepted
+priority order and issue the priority 1 work order authorizes its bounded
+handoff continuity record.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V50_2026-07-22.md`
+
+Rollback boundary: revert this handoff-only sync section as one unit; do not
+modify the committed EAIC-KR roadmap, GC-018, or work order through rollback of
+this continuity record.
+
 ## Core Guard Self-Protection Authorization - V50 Rotation
 
 Authorized guard-maintenance scope: rotate the active handoff and synchronize
