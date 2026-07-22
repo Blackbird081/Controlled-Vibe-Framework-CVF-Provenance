@@ -24,6 +24,27 @@ role transitions and evidence. No remote push is authorized.
 Local commit preparation is active. Remote push, provider execution, browser,
 deployment, production action, and unrelated roadmap work are inactive.
 
+Tracked remote branch: `origin/main`
+
+External memory and provider-local memory are non-canonical execution aids;
+CVF-governed session state and this active handoff remain the continuity
+authority.
+
+## Core Guard Self-Protection Authorization - Continuity Rehydration Follow-Up
+
+Operator authorization: on 2026-07-22 the operator instructed the agent to
+make new-session and new-tranche continuity rehydration mandatory, commit all
+resulting work, and leave the worktree clean.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V50_2026-07-22.md`;
+- `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`.
+
+Rollback boundary: revert this guard-maintenance pair together; it only makes
+the current handoff machine-classifiable and records its remote/memory
+boundary.
+
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`project_bootstrap_continuity_committed_local_push_parked`;
