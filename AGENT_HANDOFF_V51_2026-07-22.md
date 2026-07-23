@@ -194,3 +194,10 @@ This handoff records root-exposure classification repair parent commit
 `b563f02b5`. The handoff-sync child SHA cannot be known before commit creation,
 so the active-session checker may accept this parent SHA for this dedicated
 handoff-sync-only commit.
+
+## GC-020 Marker - EAIC-KR-R1 Intake Material Preparation
+
+This handoff records current parent HEAD `f817094ac` before the reviewed
+EAIC-KR-R1 intake material commit. The material child SHA cannot be known
+before commit creation. This marker does not release R1B or T2 and does not
+change the existing invocation moratorium.
