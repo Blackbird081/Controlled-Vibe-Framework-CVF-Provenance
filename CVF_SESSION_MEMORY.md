@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=manual copy/paste of the committed R1C final absorption work order to one no-commit documentation worker; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator selection of a new external repository/corpus for governed intake or one exact conditional candidate whose reopen condition is satisfied; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF 23.07 final owner-surface absorption reconciliation closure | `ef2c3479b` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS. All 231 rows reconciled: 108 existing-owner, 4 bounded doctrine, 115 conditional candidates across eight R1C index rows, and 4 zero-byte no-value closures. Reviewer corrected the worker subtotal, preserved seven worked examples as fixture candidates, and split one vague 50-row product condition into four checkable owner-specific rows. No T5/runtime/provider/process/public authority released. |
 | CVF 23.07 final owner-surface absorption reconciliation dispatch | `372d1e262` | DISPATCH_READY_DOCUMENTATION_ONLY. One manual-copy/paste no-commit worker owns exactly three outputs: final decision, conditional reopen index update, and worker return. The 231-row snapshot must reach complete bounded value disposition without runtime/T5/CLI-MCP/provider/process/public action. |
 | EAIC result-admission semantic ratification | `328372888` | CLOSED_PASS_BOUNDED_RESULT_ADMISSION_SEMANTIC_RATIFIED_T5_NOT_OPENED. An external result without correlated launch or admission evidence cannot become a CVF-accepted result; this does not claim literal arbitrary-launch detection. Final CVF 23.07 owner-surface absorption reconciliation packet authoring is next. |
 | EAIC-KR NP-03 launch-interception architecture-completion review | `a8e30c264` | REVIEWER_ACCEPTED_NO_VIABLE_BOUNDED_PATTERN_WITH_BOUNDARY_REPAIR. Literal arbitrary-launch detection has no viable bounded CVF pattern; result-admission quarantine is a narrower viable component only. Operator semantic and authority decision is next; reviewer recommends the narrower result-admission rule. T5 and all invocation/provider/process/runtime/public authority remain parked. |
@@ -356,17 +357,19 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `portable_clone_continuity_published_verified`
 
-The CVF 23.07 final owner-surface absorption reconciliation dispatch is
-committed at material commit `372d1e262`. The next allowed move is operator
-manual copy/paste of the committed R1C work order to one no-commit
-documentation worker. The worker may create the final absorption decision,
-modify the conditional reopen index, create the worker return, and return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-Runtime/checker/package/UI implementation, T5, agent invocation through
-CLI/MCP, provider/API/account/network/browser use, external-agent or
-studied-process activity, public-sync, push, deploy, and
-invocation-moratorium lift remain parked. Conversation provenance remains a
-secondary-input boundary.
+The CVF 23.07 final owner-surface absorption reconciliation is independently
+closed at material commit `ef2c3479b`. All 231 rows have a bounded final route:
+108 existing-owner, 4 bounded doctrine, 115 conditional candidates across
+eight R1C index rows, and 4 zero-byte no-value closures.
+
+The next allowed move is an operator checkpoint to select a new external
+repository/corpus for governed intake or separately authorize one exact
+conditional candidate whose recorded reopen condition is satisfied. No
+candidate, runtime/checker/package/UI implementation, T5, agent invocation
+through CLI/MCP, provider/API/account/network/browser use, external-agent or
+studied-process activity, public-sync, push, deploy, or
+invocation-moratorium lift is automatically released. Conversation provenance
+remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

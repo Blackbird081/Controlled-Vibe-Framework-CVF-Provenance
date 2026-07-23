@@ -639,3 +639,36 @@ provider, process, runtime, public, or production authority.
 This handoff records material parent commit `372d1e262`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - CVF 23.07 R1C Closure Continuity
+
+Authorized continuity scope: record R1C closure material commit `ef2c3479b`,
+record complete bounded disposition of all 231 accepted rows, and route the
+next move to an operator choice of a new external corpus or one exact
+conditional candidate whose recorded reopen condition is satisfied.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator instructed the reviewer to continue the
+absorption to completion. This authorizes independent review, bounded repairs,
+material commit, and continuity sync. It does not open T5, authorize
+runtime/checker/package/UI implementation, permit agent invocation through
+CLI/MCP, authorize provider or process activity, authorize public-sync, or
+lift the invocation moratorium.
+
+Rollback boundary: revert this five-path continuity set together if material
+commit `ef2c3479b` is reverted. Do not partially release a conditional
+candidate, T5, invocation, provider, process, runtime, public, or production
+authority.
+
+## GC-020 Marker - CVF 23.07 R1C Closure Continuity Sync
+
+This handoff records material parent commit `ef2c3479b`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
