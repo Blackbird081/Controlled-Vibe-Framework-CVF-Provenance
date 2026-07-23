@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 docType: audit
 
-Status: REVIEWED_REPAIRS_RESOLVED_ABSORPTION_PLAN_READY
+Status: CLOSED_COMPLETE_BOUNDED_ABSORPTION_RECONCILED
 
 Date: 2026-07-23
 
@@ -270,12 +270,14 @@ copy into canonical surfaces. Its best use is to sharpen existing CVF owners.
 | 4 | R1D - product projection lane | evaluate UI, accessibility, adapters, renderers, fixtures, and integration material | EAIC T2/T3 semantics and architecture are stable and operator sees product value | separate product roadmap with thin proof | do not mix product visualization with invocation-control closure |
 | 5 | R1E - runtime/checker candidates | consider lifecycle supervisor and semantic guard implementation | operator later authorizes implementation after policy/architecture closure | fresh GC-018, source-verified work order, tests, and live proof where behavior is claimed | moratorium remains until explicitly lifted; no CLI/MCP/provider execution by implication |
 
-Recommended immediate move: accept this scan, then create only R1B as a
-documentation evidence supplement for the operator. The Brainless portion of
-R1A is complete; Conversation provenance can remain parked unless direct
-source/schema use becomes necessary. R1C-R1E remain parked. This ordering
-extracts decision value without importing a foreign architecture or spending
-provider quota.
+Final plan disposition: R1A and R1B completed their bounded evidence roles.
+R1C then reconciled all 231 ledger rows: 108 to existing owners, 4 to bounded
+CVF-owned doctrine, 115 to checkable conditional candidate rows, and 4
+zero-byte placeholders to no-new-value closure. The former R1D and R1E value
+is preserved in the conditional reopen index rather than left as vague parked
+tranches. No product, package, checker, runtime, T5, or provider lane is
+released. Conversation provenance remains parked unless direct source/schema
+use becomes necessary.
 
 ## Checker Source Read-Ahead Block
 
@@ -367,12 +369,36 @@ before any package, checker, runtime, or public change.
 
 ## Decision / Disposition
 
-`SELECTIVE_ABSORPTION_PLAN_READY_T2_REMAINS_HELD`
+`CLOSED_COMPLETE_BOUNDED_ABSORPTION_RECONCILED`
 
-The two sources should be retained. Their useful concepts should be rewritten
-into current CVF owners, not copied wholesale. The immediate high-value action
-is R1B, a bounded T2 decision-evidence supplement. Direct schema/runtime import,
-new-plane creation, and all execution lanes remain blocked.
+The two sources remain retained. Their accepted value is now reconciled by the
+R1C final decision and conditional reopen index without wholesale copy or a
+duplicate plane. Direct schema/runtime import, new-plane creation, and all
+execution lanes remain blocked unless a separately authorized reopen
+condition is satisfied.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | R1C work order | closed bounded with reviewer repairs | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_R1C_CVF_23_07_FINAL_OWNER_SURFACE_ABSORPTION_COMPLETION_REVIEW_2026-07-23.md` | independent closure | PASS |
+| Roadmap state | R1 intake plan | R1A-R1C reconciled; R1D/R1E value indexed conditionally | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | existing EAIC-KR-R1 entry retained | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing EAIC-KR-R1 registry surface retained | PASS |
+| External evidence digest | accepted R1 manifest | sha256:5799cc627491e466379878a8542c26740a167032de1afa92237d998a5aa49ad5 | PASS |
+| System loop interlock | implementation and T5 parked | no autonomous release | PASS |
+| Session continuity | active state and handoff | separate protected continuity commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| accepted corpus | 231 ledger rows | 231 | PASS |
+| final route total | 231 | 108+4+115+4=231 | PASS |
+| retained value | indexed with concrete conditions | 115 candidate rows across eight R1C index rows | PASS |
+| no-value closure | source-backed | four zero-byte placeholders | PASS |
+| forbidden authority | unchanged | implementation and external lanes parked | PASS |
 
 ## Public Export Disposition
 

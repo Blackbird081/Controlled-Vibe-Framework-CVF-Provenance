@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY_DOCUMENTATION_ONLY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 docType: baseline
 
@@ -232,11 +232,13 @@ Additional closure-semantic query returned: ADIF-0019
 
 ## Baseline Decision
 
-`DISPATCH_READY_DOCUMENTATION_ONLY`
+`CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS`
 
-The accepted corpus evidence and operator authority are sufficient for one
-manual-copy/paste no-commit documentation worker. This decision does not
-release implementation, T5, or any external-action lane.
+The no-commit documentation worker completed the authorized scope and the
+independent reviewer accepted it after repairing the candidate subtotal,
+reclassifying seven worked examples as fixture candidates, and replacing one
+overbroad product reopen row with checkable owner-specific rows. This closure
+does not release implementation, T5, or any external-action lane.
 
 ## Verification / Evidence
 
@@ -244,6 +246,29 @@ Dispatch requires a clean committed base, exact source paths, accepted
 231-row manifest and ledger evidence, both ADIF disclosures, reviewer-fast and
 pre-dispatch autorun PASS, exact two-packet commit evidence, and a separate
 continuity sync before worker execution.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired R1C work order | closed bounded with reviewer repairs | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_R1C_CVF_23_07_FINAL_OWNER_SURFACE_ABSORPTION_COMPLETION_REVIEW_2026-07-23.md` | independent closure | PASS |
+| Roadmap state | no active roadmap changed | T5 remains parked | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | existing EAIC-KR-R1 entry retained | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing EAIC-KR-R1 registry surface retained | PASS |
+| External evidence digest | accepted R1 manifest | sha256:5799cc627491e466379878a8542c26740a167032de1afa92237d998a5aa49ad5 | PASS |
+| System loop interlock | implementation and T5 parked | no autonomous release | PASS |
+| Session continuity | active state and handoff | separate protected continuity commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| executionBaseHead | committed dispatch HEAD | `35ad18551` | PASS |
+| source totals | 18, 213, 231 | 18, 213, 231 | PASS |
+| final route total | 231 | 108+4+115+4=231 | PASS |
+| candidate index | every retained candidate has a checkable condition | eight R1C rows cover 115 candidates | PASS |
+| forbidden authority | unchanged | T5, runtime, provider, process, and public lanes parked | PASS |
 
 ## Public Export Disposition
 

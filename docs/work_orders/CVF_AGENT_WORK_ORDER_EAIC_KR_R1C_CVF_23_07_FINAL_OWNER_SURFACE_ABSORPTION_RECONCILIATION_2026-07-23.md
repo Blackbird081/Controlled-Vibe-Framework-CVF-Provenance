@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY_DOCUMENTATION_ONLY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 docType: work_order
 
@@ -78,7 +78,7 @@ no-new-value groups without discarding latent value.
 | --- | --- | --- |
 | operator instruction | continue the absorption to completion | ACCEPT |
 | semantic boundary | material commit `328372888` | ACCEPT; narrow result admission ratified, no T5 |
-| paired baseline | `docs/baselines/CVF_GC018_EAIC_KR_R1C_CVF_23_07_FINAL_OWNER_SURFACE_ABSORPTION_RECONCILIATION_2026-07-23.md` | DISPATCH_READY_DOCUMENTATION_ONLY |
+| paired baseline | `docs/baselines/CVF_GC018_EAIC_KR_R1C_CVF_23_07_FINAL_OWNER_SURFACE_ABSORPTION_RECONCILIATION_2026-07-23.md` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS |
 | intake authority | accepted R1 intake audit, manifest, and two ledgers | ACCEPT for bounded snapshot evidence |
 | upstream authority | pinned Brainless mirror only for upstream/UI facts | ACCEPT_BOUNDED |
 | Conversation source | operator-provided secondary input without upstream/authorship/license proof | SECONDARY_INPUT_ONLY |
@@ -300,7 +300,7 @@ reviewer semantic audit of deferred, rejected, or no-new-value groups.
 
 | Coverage item | Evidence | Disposition |
 | --- | --- | --- |
-| CVF 23.07 copied source families | `docs/audits/CVF_EAIC_KR_R1_CVF_23_07_EXTERNAL_REPOSITORY_INTAKE_AUDIT_2026-07-23.md` and its registered manifest/ledgers | ACTIVE_R1C_RECONCILIATION |
+| CVF 23.07 copied source families | `docs/audits/CVF_EAIC_KR_R1_CVF_23_07_EXTERNAL_REPOSITORY_INTAKE_AUDIT_2026-07-23.md` and its registered manifest/ledgers | CLOSED_COMPLETE_BOUNDED_RECONCILIATION |
 | legacy coverage index | `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` | NOT_APPLICABLE_WITH_REASON: R1 registered these roots through the corpus scan registry and source-mirror controls; R1C must not create a competing legacy coverage owner |
 
 ## External Absorption Core
@@ -593,6 +593,29 @@ provider use, external-agent invocation, process control, or moratorium lift.
 | interceptionBoundary | no IDE, shell, filesystem, provider, process, or user-activity interception claim |
 | claimLanguage | dispatch readiness and bounded absorption evidence only |
 | forbiddenExpansion | runtime, checker, package activation, T5, provider/model, public, production, or moratorium-lift authority |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | closed bounded with reviewer repairs | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_R1C_CVF_23_07_FINAL_OWNER_SURFACE_ABSORPTION_COMPLETION_REVIEW_2026-07-23.md` | independent closure | PASS |
+| Roadmap state | no active roadmap changed | T5 remains parked | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | existing EAIC-KR-R1 entry retained | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing EAIC-KR-R1 registry surface retained | PASS |
+| External evidence digest | accepted R1 manifest | sha256:5799cc627491e466379878a8542c26740a167032de1afa92237d998a5aa49ad5 | PASS |
+| System loop interlock | implementation and T5 parked | no autonomous release | PASS |
+| Session continuity | active state and handoff | separate protected continuity commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| executionBaseHead | committed dispatch HEAD | `35ad18551` | PASS |
+| worker output manifest | exactly three | exactly three | PASS |
+| source totals | 18, 213, 231 | 18, 213, 231 | PASS |
+| final route total | 231 | 108+4+115+4=231 | PASS |
+| forbidden authority | unchanged | T5, runtime, provider, process, and public lanes parked | PASS |
 
 ## Public Export Disposition
 
