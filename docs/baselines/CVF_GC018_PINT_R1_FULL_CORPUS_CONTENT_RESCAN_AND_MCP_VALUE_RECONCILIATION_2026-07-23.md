@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 docType: baseline
 
@@ -329,3 +329,23 @@ value reconciliation. It does not authorize runtime construction, CLI/MCP
 invocation, provider/API/account use, network access, process control, checker
 implementation, package activation, public sync, or a claim that the knowledge
 gap is closed.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PINT_R1_FULL_CORPUS_CONTENT_RESCAN_AND_MCP_VALUE_RECONCILIATION_2026-07-23.md` | closed with reviewer repairs | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PINT_R1_FULL_CORPUS_CONTENT_RESCAN_COMPLETION_2026-07-23.md` | reviewer closure matrix | PASS |
+| Roadmap state | `docs/roadmaps/CVF_PINT_T0_PROVIDER_INTELLIGENCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md` | current status `CLOSED_PASS_BOUNDED`; unchanged | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generator drift check | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | PINT-R1 quick-lookup row | PASS |
+| External evidence digest | `docs/audits/CVF_PINT_R1_FULL_CORPUS_CONTENT_RESCAN_AND_MCP_VALUE_RECONCILIATION_2026-07-23.md` | `f76e62ab30ba48997fa8d7cb517247ce2afaa1406c51f0e4c0e97edc9369ed85` | PASS |
+| System loop interlock | `docs/reference/external_agent_invocation_control/CVF_EXTERNAL_AGENT_INVOCATION_CONTROL_KNOWLEDGE_GAP_AND_SOURCE_ACQUISITION_MAP.md` | invocation moratorium retained | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | separate post-material sync required | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| corpus receipt | 50 terminal rows | 50 terminal rows | PASS |
+| digest receipt | canonical content digest | `f76e62ab30ba48997fa8d7cb517247ce2afaa1406c51f0e4c0e97edc9369ed85` | PASS |

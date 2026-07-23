@@ -5883,6 +5883,74 @@
         "runtime implementation authority"
       ],
       "nextScanRecommendation": "Re-scan only if a later operator-authorized EAIC roadmap changes these source contracts or claims them as implementation evidence."
+    },
+    {
+      "id": "pint-r1-provider-intelligence-full-content-rescan",
+      "corpusType": "LEGACY_FOLDER",
+      "displayName": "PINT-R1 Provider Intelligence full corpus content rescan",
+      "scopePaths": [
+        ".private_reference/legacy/CVF_PROVIDER_INTELLIGENCE",
+        "EXTENSIONS/CVF_PROVIDER_INTELLIGENCE",
+        "EXTENSIONS/docs-reference"
+      ],
+      "fileCount": 50,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "PINT-R1",
+      "scanDate": "2026-07-23",
+      "manifestHash": "f76e62ab30ba48997fa8d7cb517247ce2afaa1406c51f0e4c0e97edc9369ed85",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output",
+      "manifestPath": "docs/audits/CVF_PINT_R1_FULL_CORPUS_CONTENT_RESCAN_AND_MCP_VALUE_RECONCILIATION_2026-07-23.md",
+      "packetPath": "docs/audits/CVF_PINT_R1_FULL_CORPUS_CONTENT_RESCAN_AND_MCP_VALUE_RECONCILIATION_2026-07-23.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_PINT_R1_FULL_CORPUS_CONTENT_RESCAN_AND_MCP_VALUE_RECONCILIATION_2026-07-23.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_VERIFIED",
+        "gc050": "N/A"
+      },
+      "semanticRegions": [
+        "PROVIDER_INTELLIGENCE_DOCTRINE",
+        "OPENROUTER_ABSORPTION_DOCS",
+        "RECEIPT_SCHEMA_SAMPLES",
+        "PROTOTYPE_CLAIM_BOUNDARY_CHECKERS",
+        "GENERATED_BYTECODE_ARTIFACTS"
+      ],
+      "priorAbsorption": "PINT-T0 through PINT-T3 (2026-06-28) already closed a representative-scan absorption of this same retained folder: T0 audited and relocated it, T1 mapped concepts to Model Gateway/provider-lane owner surfaces, T2 promoted a CVF-owned claim-boundary and receipt-advisory reference, and T3 closed the static-checker lane with no checker now. PINT-R1 is a full 50-file individual-content rescan of the same corpus that recovers additional doctrine-level candidates (fail-closed unavailability menu, granular weighting tiers, concrete task-type/capability vocabulary, receipt proves/does-not-prove split, probe-only-insufficient-for-freeze sentence, five additional risk rows) without reopening T0-T3's closed decisions or the EAIC knowledge-gap map's PARKED_KNOWLEDGE_GAP position.",
+      "findings": [
+        {
+          "id": "pint-r1-doctrine-enrichment-candidates",
+          "summary": "Ten source-backed candidate rows were independently reviewed: six were retained as advisory knowledge in the governed audit, two were deferred pending current-owner source verification, and two were closed as no-new-value variants.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "No automatic owner edit. Reopen the two source-verification candidates only under the concrete conditions in the Reviewer Semantic Value Decision table; other accepted advisory knowledge remains discoverable in the audit.",
+          "defectClass": "DOCUMENTATION_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        },
+        {
+          "id": "pint-r1-eaic-gap-reconfirmed-not-advanced",
+          "summary": "All EAIC-adjacent doctrine in this corpus (dev-MCP boundary, fail-closed language, risk register) was individually tested against the EAIC knowledge-gap map's nine-domain matrix and confirmed to supply no primary-source class the map does not already list as missing.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "None. The EAIC map's PARKED_KNOWLEDGE_GAP position and acquisition-priority table remain unchanged.",
+          "defectClass": "N/A",
+          "learningLane": "N/A"
+        },
+        {
+          "id": "pint-r1-digest-recipe-implementation-risk",
+          "summary": "An earlier worker pass on this tranche independently re-implemented the manifest content-hash recipe and produced a digest that did not match the GC-018 baseline, even though its enumeration and path-sort logic were verified correct; only running the GC-018's own embedded canonical script reproduced the baseline value.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Future digest-bearing GC-018/work-order packets should embed a directly runnable canonical hashing script (as this GC-018 now does) rather than only a prose recipe description, so independent re-implementations cannot silently diverge.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "external package as CVF authority",
+        "actual session-wide token or quota evidence in sample receipts",
+        "EAIC gap closed by this corpus",
+        "MCP/CLI control runtime sufficiency claim",
+        "direct package or checker import reopened"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED. This corpus has now received both a representative absorption (PINT-T0-T3) and a full 50-file content rescan (PINT-R1). Any future PINT work should start from a fresh operator-approved GC-018 addressing a named enrichment candidate, not a repeat rescan of this same corpus.",
+      "notes": "Full individual-file content rescan of the retained Provider Intelligence legacy folder, recovering bounded doctrine-enrichment candidates and reconfirming (not advancing) the EAIC knowledge-gap map's parked position. Digest reconciliation: the earlier BLOCKED_WITH_REASON digest mismatch was resolved by rerunning the GC-018's canonical script verbatim, which reproduced the exact recorded path and content manifest digests."
     }
   ]
 }

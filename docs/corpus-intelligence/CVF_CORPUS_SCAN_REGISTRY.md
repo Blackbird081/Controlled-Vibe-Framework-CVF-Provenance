@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-06-12 (EXA-T2 scan route decision contracts closure)
+Last updated: 2026-07-23 (PINT-R1 full-content rescan closure)
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -76,6 +76,7 @@ prior scan here before starting new work.
 
 | Corpus | Type | Status | Wave | Files | Key findings |
 | --- | --- | --- | --- | --- | --- |
+| `CVF_PROVIDER_INTELLIGENCE` retained legacy corpus | EXTERNAL_SOURCE | SCANNED_WITH_FINDINGS | PINT-R1 | 50 | Full-content ledger and canonical digests reconciled; six advisory doctrine groups retained, two owner-source checks deferred, two variants closed as no-new-value; EAIC runtime knowledge gap remains parked |
 | `MLW-RT1 durable memory runtime proof` | RUNTIME_PROOF | SCANNED_WITH_FINDINGS | MLW-RT1 | 9 | Existing file-backed `/api/execute` durable-memory write/read continuity proved; backend migration/public readiness deferred |
 | `CVF_Important/Knowledge Base_Graphify/` | LEGACY | SCANNED_WITH_FINDINGS | CI1-T2 | 5 | G-GM-* guard absent; CLI absent; KGR1 partial |
 | `CVF ADD/code-review-graph/` | LEGACY | SCANNED_WITH_FINDINGS | CI1-T3 | 7 | graph governance signals deferred; command/MCP surface deferred; performance claims bounded |
