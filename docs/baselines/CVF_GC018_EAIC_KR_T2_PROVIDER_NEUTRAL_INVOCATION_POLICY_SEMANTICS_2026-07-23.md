@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: REVIEWER_ACCEPTED_WITH_REPAIRS
 
 docType: baseline
 

@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_WITH_REPAIRS
 
 docType: work-order
 
@@ -562,15 +562,15 @@ push, deployment, or live proof is authorized.
 
 - [x] operator resolved EAIC-T2-D1 through EAIC-T2-D4;
 - [x] dispatcher refreshed decision rows, status, and base heads;
-- [ ] worker outputs match the two-path manifest;
-- [ ] reviewer checked semantic accuracy and provider-neutral boundaries;
-- [ ] all acceptance and fail conditions are terminal;
-- [ ] pending work was not described as clean closure;
-- [ ] committed-range pre-closure and continuity sync are reviewer-owned;
-- [ ] public export remains deferred unless separately authorized.
+- [x] worker outputs match the two-path manifest;
+- [x] reviewer checked semantic accuracy and provider-neutral boundaries;
+- [x] all acceptance and fail conditions are terminal;
+- [x] pending work was not described as clean closure;
+- [x] committed-range pre-closure and continuity sync are reviewer-owned;
+- [x] public export remains deferred unless separately authorized.
 
-Unchecked rows are worker-execution and independent-review evidence. They must
-not be converted to checked rows before actual execution and review.
+Reviewer closure resolved every row after actual execution and independent
+semantic review.
 
 ## Return-To-Orchestrator Conditions
 
