@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_WITH_REPAIRS_OPERATOR_SELECTION_PENDING
 
 docType: work-order
 
@@ -394,7 +394,7 @@ workerReturnPath:
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
 requiredGate:
-`python governance/compat/run_worker_return_fast_gate.py --path docs/reviews/CVF_EAIC_KR_T3_OWNER_ARCHITECTURE_AND_THREAT_MODEL_WORKER_RETURN_2026-07-23.md`
+`python governance/compat/run_worker_return_fast_gate.py`
 
 individualCheckerSubstitution: FORBIDDEN
 
@@ -503,7 +503,7 @@ Run from repository root:
 ```powershell
 git diff --name-status
 git status --short --untracked-files=all
-python governance/compat/run_worker_return_fast_gate.py --path docs/reviews/CVF_EAIC_KR_T3_OWNER_ARCHITECTURE_AND_THREAT_MODEL_WORKER_RETURN_2026-07-23.md
+python governance/compat/run_worker_return_fast_gate.py
 python governance/compat/check_governed_file_size.py --enforce
 ```
 

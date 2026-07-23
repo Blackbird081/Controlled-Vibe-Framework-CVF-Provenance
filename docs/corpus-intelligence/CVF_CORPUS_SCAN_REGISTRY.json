@@ -5847,6 +5847,42 @@
         "no process-tree enforcement proof in either copied pack"
       ],
       "nextScanRecommendation": "Accept the selective absorption plan, then author only an EAIC-KR T2 documentation evidence supplement; Brainless upstream verification is complete for UI-pattern facts, while Conversation provenance and all product, runtime, checker, CLI, MCP, and provider lanes remain parked until separately authorized."
+    },
+    {
+      "id": "eaic-kr-t3-control-plane-source-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "EAIC-KR-T3 Control Plane architecture evidence surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/agent.governed.session.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/provider.router.contract.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "EAIC-KR-T3",
+      "scanDate": "2026-07-23",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T3_OWNER_ARCHITECTURE_AND_THREAT_MODEL_DECISION_PACKET.md",
+      "completionReviewPath": "docs/reviews/CVF_EAIC_KR_T3_OWNER_ARCHITECTURE_AND_THREAT_MODEL_COMPLETION_REVIEW_2026-07-23.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_EAIC_KR_T3_OWNER_ARCHITECTURE_AND_THREAT_MODEL_2026-07-23.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "AGENT_GOVERNED_SESSION_POLICY_AND_RECEIPT",
+        "PROVIDER_ROUTER_SELECTION_CONTRACT",
+        "EAIC_ARCHITECTURE_CANDIDATE_EVIDENCE"
+      ],
+      "priorAbsorption": "EAIC-KR-T3 reads these current Control Plane contracts as bounded architecture evidence. The session contract provides policy, task/session identity, and receipt primitives; the provider router provides bounded provider-selection evidence. Neither is promoted to a universal external-agent invocation owner.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "universal EAIC owner",
+        "external process-tree control",
+        "runtime implementation authority"
+      ],
+      "nextScanRecommendation": "Re-scan only if a later operator-authorized EAIC roadmap changes these source contracts or claims them as implementation evidence."
     }
   ]
 }

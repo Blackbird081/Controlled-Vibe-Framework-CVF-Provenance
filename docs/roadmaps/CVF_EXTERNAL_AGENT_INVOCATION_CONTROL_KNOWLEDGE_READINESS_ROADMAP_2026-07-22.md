@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T2_POLICY_SEMANTICS_CLOSED_PASS_T3_PARKED
+Status: T3_EVIDENCE_ACCEPTED_PENDING_OPERATOR_SELECTION
 
 docType: roadmap
 
@@ -24,7 +24,10 @@ manual dispatch. After accepted T0 closure and the governance-load evidence
 audit, the operator approved a bounded T1 official-primary-source intake.
 On 2026-07-23, after accepted R1B decision evidence, the operator ratified the
 four T2 policy directions and released documentation-only T2 manual dispatch.
-T3-T5 remain held by their release rules.
+The operator then authorized documentation-only T3 execution. Independent
+review accepted the CANDIDATE-D recommendation as decision support with
+repairs. Final owner selection, T4-T5, implementation, and every external
+action remain held.
 
 ## Operator Decision And Priority Register
 
@@ -33,7 +36,7 @@ does not automatically release the next row.
 
 | Priority | Lane | Current disposition | Release condition |
 | --- | --- | --- | --- |
-| 1 | External-agent invocation control knowledge readiness | T2 CLOSED_PASS; T3 PARKED | T2 closed with reviewer repairs; T3 requires fresh operator authorization |
+| 1 | External-agent invocation control knowledge readiness | T3 EVIDENCE_ACCEPTED; OPERATOR_SELECTION_PENDING | operator accepts, rejects, or parks CANDIDATE-D; no automatic T4 release |
 | 2 | Governance-load reduction under MSEA-R72 | PARKED_ORDERED_NEXT | Fresh operator selection after priority 1 reaches a bounded decision point |
 | 3 | Operator-approved provider/model assignment and invocation receipts | SUBORDINATE_TO_PRIORITY_1 | Reconcile it as one component of the accepted invocation-control architecture; do not run independently |
 | 4 | MAO live/provider value pilot | VALUE_PARKED | Existing measurable reopen conditions and fresh operator authorization are satisfied |
@@ -146,7 +149,7 @@ insufficient.
 | T0 | Inventory repo-local authority, classify gaps, and produce an authoritative-source acquisition map | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_BOUNDARY_CORRECTION |
 | T1 | Absorb operator-approved primary sources into a reconciled knowledge ledger | CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP |
 | T2 | Ratify provider-neutral budget, telemetry, stop, retry/fallback, and receipt semantics | CLOSED_PASS_WITH_REVIEWER_REPAIRS |
-| T3 | Select one admission-monitor-stop-reconcile owner architecture and threat model | HOLD_PENDING_OPERATOR_AUTHORIZATION |
+| T3 | Select one admission-monitor-stop-reconcile owner architecture and threat model | EVIDENCE_ACCEPTED_PENDING_OPERATOR_SELECTION |
 | T4 | Produce a build-readiness decision and negative-proof plan | HOLD_UNTIL_T3_PASS |
 | T5 | Open a separate implementation roadmap if and only if the operator lifts the moratorium | HOLD_UNTIL_FRESH_OPERATOR_AUTHORIZATION |
 
@@ -247,9 +250,9 @@ no runtime was invoked or changed.
 
 ## Next Allowed Move
 
-T2 is closed with reviewer repairs. The next bounded move is operator review
-of whether to authorize a documentation-only T3 architecture and threat-model
-packet. No T3 dispatch is implied by T2 closure. Agent CLI/MCP,
+The next bounded move is explicit operator selection, rejection, or parking
+of the reviewer-accepted CANDIDATE-D composed EAIC coordinator architecture.
+Reviewer acceptance does not ratify the owner or release T4. Agent CLI/MCP,
 provider/API/account use, process testing, implementation, public-sync, and
 every later tranche remain parked.
 
@@ -267,7 +270,7 @@ unchanged.
 | --- | --- | --- | --- |
 | Work order status | paired EAIC-KR-T0 work order | closed bounded reviewer-repair status | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | reviewer decision and operator boundary correction | PASS |
-| Roadmap state | this file | `Status: T2_POLICY_SEMANTICS_CLOSED_PASS_T3_PARKED`; T3-T5 held | PASS |
+| Roadmap state | this file | `Status: T3_EVIDENCE_ACCEPTED_PENDING_OPERATOR_SELECTION`; operator selection and T4-T5 held | PASS |
 | Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | External evidence digest | N/A with reason: T0 ingests no new external source | repository-local evidence only | N/A with reason |

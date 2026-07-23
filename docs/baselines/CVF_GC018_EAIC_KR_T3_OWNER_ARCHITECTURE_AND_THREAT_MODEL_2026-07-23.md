@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_WITH_REPAIRS_OPERATOR_SELECTION_PENDING
 
 docType: baseline
 
@@ -189,10 +189,12 @@ coverage. Never manufacture a runtime capability to keep T3 moving.
 
 ## Baseline Decision
 
-`REVIEWER_ACCEPTED_DISPATCH_READY`
+`REVIEWER_ACCEPTED_WITH_REPAIRS_OPERATOR_SELECTION_PENDING`
 
-The next action is manual copy/paste dispatch of the paired work order to one
-no-commit documentation worker after the dispatcher commits this packet.
+The documentation worker return is independently accepted after bounded
+source, proof-verdict, and command-signature repairs. The next action is
+explicit operator selection, rejection, or parking of CANDIDATE-D. T4 and all
+external/runtime action remain held.
 
 ## Verification / Evidence
 
