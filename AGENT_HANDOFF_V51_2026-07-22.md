@@ -543,3 +543,36 @@ provider, process, runtime, public, or production authority.
 This handoff records material parent commit `8d8093f36`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - EAIC-KR NP-03 Review Continuity
+
+Authorized continuity scope: record NP-03 review material commit `a8e30c264`,
+close literal arbitrary-launch detection as having no viable bounded CVF
+pattern, preserve result-admission quarantine as a narrower component only,
+and route the unresolved semantic and authority choice to the operator. T5 and
+every invocation, provider, process, runtime, public, and production checkpoint
+remain parked.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator instructed the reviewer to continue
+completion. This authorizes independent review, closure, commit, and continuity
+sync. It does not select a replacement semantic, authorize host-wide evidence,
+release T5, permit agent invocation through CLI/MCP, authorize provider use or
+external-agent or studied-process activity, or lift the invocation moratorium.
+
+Rollback boundary: revert this five-path continuity set together if material
+commit `a8e30c264` is reverted. Do not partially release T5, invocation,
+provider, process, runtime, public, or production authority.
+
+## GC-020 Marker - EAIC-KR NP-03 Review Continuity Sync
+
+This handoff records material parent commit `a8e30c264`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
