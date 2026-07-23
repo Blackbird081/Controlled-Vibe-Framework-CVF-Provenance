@@ -706,3 +706,29 @@ authority.
 This handoff records material parent commit `ef2c3479b`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - Golden Downstream Mapper Repair Sync
+
+Authorized continuity scope: record material mapper-repair commit
+`af7a05c9c`, which adds the missing `WorkspaceKitOnly` projection coverage
+and the BSL-R7 mapper-completeness regression discovered during the
+public-first recovery.
+
+Protected path:
+
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator instructed the reviewer to classify and
+synchronize the misplaced public-first bootstrap learning according to CVF
+rules. This authorizes the bounded mapper repair and continuity receipt. It
+does not authorize provider/API use, agent invocation through CLI/MCP,
+runtime deployment, branch-history rewrite, or force push.
+
+Rollback boundary: revert this handoff marker if material commit `af7a05c9c`
+is reverted. Do not alter unrelated continuity records.
+
+## GC-020 Marker - Golden Downstream Mapper Repair Continuity
+
+This handoff records material parent commit `af7a05c9c`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
