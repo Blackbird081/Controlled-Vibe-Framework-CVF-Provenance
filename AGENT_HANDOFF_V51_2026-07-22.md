@@ -27,11 +27,11 @@ active.
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
-active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=T1 is closed
-bounded and T2 remains parked behind four explicit knowledge/policy reopen
-conditions; parked checkpoint=agent CLI/MCP, provider/API/account use, process
-testing, implementation, T2-T5 execution, public-sync, push, deployment, and
-production.
+active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=author and
+manually dispatch the documentation-only EAIC-KR-R1B T2 decision-evidence
+supplement; parked checkpoint=T2 release, operator decisions, agent CLI/MCP,
+provider/API/account use, process testing, implementation, public-sync, push,
+deployment, and production.
 
 ## Current Mode
 
@@ -39,6 +39,12 @@ production.
 
 ## Latest Work / Changes
 
+- EAIC-KR-R1 external intake and adversarial review closed at material commit
+  `50d74822a` with 231/231 terminal classifications and repaired deterministic
+  manifest evidence.
+- The pinned Brainless source supports UI/capture patterns only. The
+  operator-authored Interaction Projection remains proposal evidence rather
+  than external authority. Conversation provenance remains parked.
 - Direct operator-authorized public documentation reconciliation closed at
   provenance material commit `e26ae7e97` and public commit `6ce1cf00c`.
 - Public README and Architecture now preserve the exact seven-step loop:
@@ -64,10 +70,9 @@ production.
 
 ## Next Allowed Move
 
-T2 may be proposed only after fresh accepted evidence or explicit operator
-policy supplies: pre-launch admission; task/receipt-to-session-and-process
-identity; provider-neutral cumulative envelope semantics; and fail-closed
-behavior when reliable usage is unavailable.
+Author and manually dispatch R1B as a documentation-only supplement that maps
+accepted R1 evidence to the four T2 operator decisions. R1B must not decide the
+rows, change T2 HOLD, or release implementation or invocation.
 
 ## Parked Operator Checkpoint
 
@@ -201,3 +206,31 @@ This handoff records current parent HEAD `f817094ac` before the reviewed
 EAIC-KR-R1 intake material commit. The material child SHA cannot be known
 before commit creation. This marker does not release R1B or T2 and does not
 change the existing invocation moratorium.
+
+## Core Guard Self-Protection Authorization - EAIC-KR-R1 Material Continuity
+
+Authorized continuity scope: record reviewed R1 material commit `50d74822a`,
+release only R1B documentation packet authoring, and preserve every T2 and
+invocation checkpoint.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator approved proceeding after Codex and
+Claude adversarial review, with Codex as reviewer and Claude as manual
+copy/paste worker.
+
+Rollback boundary: revert this five-path continuity set together if material
+commit `50d74822a` is reverted. Do not partially release T2, invocation, public,
+runtime, or operator-decision authority.
+
+## GC-020 Marker - EAIC-KR-R1 Material Continuity Sync
+
+This handoff records material parent commit `50d74822a`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.

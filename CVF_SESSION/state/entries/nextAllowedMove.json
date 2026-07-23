@@ -1,5 +1,5 @@
 {
   "stateOrder": 2002,
   "stateKey": "nextAllowedMove",
-  "value": "EAIC-KR T1 closed bounded at material commit b4d236965 with PARKED_KNOWLEDGE_GAP. T2 may be proposed only after fresh accepted evidence or explicit operator policy supplies all four reopen conditions: pre-launch admission boundary; task/receipt-to-session-and-process identity; provider-neutral cumulative envelope across retry, resume, fallback, and internal-agent use; fail-closed behavior when reliable usage is unavailable. Agent CLI/MCP, provider/API/account use, process testing, implementation, T2-T5 execution, public-sync, push, deployment, and production remain parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "EAIC-KR-R1 intake and adversarial review closed at material commit 50d74822a. Next allowed move is author and dispatch R1B as a documentation-only T2 decision-evidence supplement through manual copy/paste. R1B may not change the T2 HOLD, infer operator decisions, invoke CLI/MCP/provider/API/account services, run external source or process tests, implement runtime/checker/package/UI changes, public-sync, push, deploy, or lift the invocation moratorium. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave."
 }
