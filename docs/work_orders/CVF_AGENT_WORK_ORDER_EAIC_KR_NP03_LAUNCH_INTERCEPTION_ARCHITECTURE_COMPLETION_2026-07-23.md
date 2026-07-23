@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_DOCUMENTATION_ONLY
+Status: REVIEWER_ACCEPTED_NO_VIABLE_BOUNDED_PATTERN
 
 docType: work_order
 
@@ -318,12 +318,12 @@ Every other path is read-only or forbidden for worker writes.
 
 | Required output | Path or evidence | Owner | Status |
 | --- | --- | --- | --- |
-| NP-03 architecture decision | stable reference path in Required Artifact Manifest | worker | PENDING_WORKER_RETURN |
-| Worker return | dated review path in Required Artifact Manifest | worker | PENDING_WORKER_RETURN |
-| Independent completion review | Reviewer Closure Conversion path | reviewer/closer | NOT_EXECUTED_YET |
-| Material closure commit | accepted output and reviewer artifacts | reviewer/closer | NOT_EXECUTED_YET |
+| NP-03 architecture decision | stable reference path in Required Artifact Manifest | worker | ACCEPTED_WITH_BOUNDARY_REPAIR |
+| Worker return | dated review path in Required Artifact Manifest | worker | ACCEPTED_AS_WORKER_EVIDENCE |
+| Independent completion review | Reviewer Closure Conversion path | reviewer/closer | ACCEPTED |
+| Material closure commit | accepted output and reviewer artifacts | reviewer/closer | PENDING_COMMIT |
 | T5 release decision | explicit post-review operator decision | operator | PARKED_NOT_READY |
-| Session sync | only after reviewer acceptance changes next move | session-sync steward | NOT_EXECUTED_YET |
+| Session sync | only after reviewer acceptance changes next move | session-sync steward | PENDING_COMMIT |
 
 ## Write Ownership
 
@@ -556,11 +556,15 @@ result.
 
 ## Operator Checkpoint
 
-Checkpoint state: `T5_PARKED_PENDING_NP03_INDEPENDENT_REVIEW_AND_OPERATOR_DECISION`.
+Checkpoint state: `NP03_NO_VIABLE_LITERAL_PATTERN_OPERATOR_SEMANTIC_OR_AUTHORITY_DECISION_PENDING`.
 
-Even `READY_FOR_T5_AUTHORING` is advisory. It does not open T5 or authorize
-implementation. Any later T5 roadmap requires fresh operator approval, GC-018,
-and a separate source-verified work order.
+Independent review accepts `NO_VIABLE_BOUNDED_PATTERN` for literal launch
+detection. The operator may retain that requirement, authorize separately
+governed host-wide evidence, or ratify narrower result-admission quarantine
+semantics. The reviewer recommends the narrower result-admission option because
+it stays inside CVF's authority boundary. No option is selected automatically.
+T5 remains parked and any later roadmap still requires fresh operator approval,
+GC-018, and a separate source-verified work order.
 
 ## Agent Operation Trace Block
 

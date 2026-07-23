@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: NP03_ARCHITECTURE_COMPLETION_DISPATCH_READY_T5_PARKED
+Status: NP03_CLOSED_NO_VIABLE_BOUNDED_PATTERN_T5_PARKED
 
 docType: roadmap
 
@@ -43,7 +43,7 @@ does not automatically release the next row.
 
 | Priority | Lane | Current disposition | Release condition |
 | --- | --- | --- | --- |
-| 1 | External-agent invocation control knowledge readiness | NP-03 ARCHITECTURE COMPLETION DISPATCH READY; IMPLEMENTATION NOT_READY; T5 AUTHORING NOT_READY | independent NP-03 review followed by a fresh operator decision |
+| 1 | External-agent invocation control knowledge readiness | NP-03 CLOSED NO VIABLE BOUNDED LAUNCH-DETECTION PATTERN; IMPLEMENTATION NOT_READY; T5 AUTHORING NOT_READY | operator chooses whether to retain literal NP-03, authorize host-wide evidence, or ratify narrower result-admission quarantine semantics |
 | 2 | Governance-load reduction under MSEA-R72 | PARKED_ORDERED_NEXT | Fresh operator selection after priority 1 reaches a bounded decision point |
 | 3 | Operator-approved provider/model assignment and invocation receipts | SUBORDINATE_TO_PRIORITY_1 | Reconcile it as one component of the accepted invocation-control architecture; do not run independently |
 | 4 | MAO live/provider value pilot | VALUE_PARKED | Existing measurable reopen conditions and fresh operator authorization are satisfied |
@@ -158,7 +158,7 @@ insufficient.
 | T2 | Ratify provider-neutral budget, telemetry, stop, retry/fallback, and receipt semantics | CLOSED_PASS_WITH_REVIEWER_REPAIRS |
 | T3 | Select one admission-monitor-stop-reconcile owner architecture and threat model | CLOSED_PASS_BOUNDED_CANDIDATE_D_ACCEPTED |
 | T4 | Produce a build-readiness decision and negative-proof plan | CLOSED_PASS_BOUNDED_BOTH_READINESS_AXES_NOT_READY |
-| NP-03 | Decide a bounded launch-interception owner, covered surfaces, platform boundary, smallest build slice, and deterministic proof seam | DISPATCH_READY_DOCUMENTATION_ONLY |
+| NP-03 | Decide a bounded launch-interception owner, covered surfaces, platform boundary, smallest build slice, and deterministic proof seam | CLOSED_NO_VIABLE_BOUNDED_PATTERN_WITH_PARTIAL_QUARANTINE_COMPONENT |
 | T5 | Open a separate implementation roadmap if and only if the operator lifts the moratorium | PARKED_NOT_READY |
 
 ## T0 Bounded Objective
@@ -258,12 +258,17 @@ no runtime was invoked or changed.
 
 ## Next Allowed Move
 
-The documentation-only NP-03 architecture-completion packet is dispatch ready.
-The next allowed move is manual operator copy/paste of the committed work order
-to one no-commit documentation worker. The worker may create exactly the
-decision packet and worker return named by that work order. Implementation and
-T5 roadmap authoring remain `NOT_READY` until independent review and a fresh
-operator decision. Agent CLI/MCP, provider/API/account use, process activity,
+NP-03 architecture completion is closed with
+`NO_VIABLE_BOUNDED_PATTERN` for literal out-of-band launch detection. A real,
+narrower result-admission quarantine component exists, but it does not observe
+or prevent the underlying process. The next allowed move is an operator
+decision among retaining the literal requirement, authorizing a separately
+governed host-wide evidence lane, or ratifying narrower semantics that prevent
+an uncorrelated external result from becoming a CVF-accepted result. The
+reviewer recommends the narrower result-admission option because it stays
+inside CVF's authority boundary and avoids host-wide surveillance. No option is
+selected automatically. Implementation and T5 roadmap authoring remain
+`NOT_READY`. Agent CLI/MCP, provider/API/account use, process activity,
 implementation, public-sync, T5, and every external-action tranche remain
 parked.
 
@@ -281,7 +286,7 @@ unchanged.
 | --- | --- | --- | --- |
 | Work order status | paired EAIC-KR-T0 work order | closed bounded reviewer-repair status | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | reviewer decision and operator boundary correction | PASS |
-| Roadmap state | this file | `Status: NP03_ARCHITECTURE_COMPLETION_DISPATCH_READY_T5_PARKED`; NP-03 documentation-only manual dispatch released; T5 and implementation held | PASS |
+| Roadmap state | this file | `Status: NP03_CLOSED_NO_VIABLE_BOUNDED_PATTERN_T5_PARKED`; operator semantic/authority checkpoint pending; T5 and implementation held | PASS |
 | Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | External evidence digest | N/A with reason: T0 ingests no new external source | repository-local evidence only | N/A with reason |
