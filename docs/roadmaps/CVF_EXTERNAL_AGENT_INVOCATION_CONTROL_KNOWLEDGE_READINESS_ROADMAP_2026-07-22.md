@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T4_PASS_BOUNDED_BOTH_READINESS_AXES_NOT_READY_T5_PARKED
+Status: NP03_ARCHITECTURE_COMPLETION_DISPATCH_READY_T5_PARKED
 
 docType: roadmap
 
@@ -30,7 +30,11 @@ repairs, and the operator accepted CANDIDATE-D as the architecture direction
 on 2026-07-23. On the same date, the operator authorized documentation-only
 T4 packet authoring and manual dispatch so build readiness can be decided from
 evidence rather than predicted. T5, implementation, and every external action
-remain held.
+remain held. After independent T4 review isolated NP-03 as the only pre-T5
+architecture gap, the operator instructed the dispatcher to continue
+completing that recorded next move on 2026-07-23. This releases one
+documentation-only NP-03 architecture-completion decision and no external or
+runtime action.
 
 ## Operator Decision And Priority Register
 
@@ -39,7 +43,7 @@ does not automatically release the next row.
 
 | Priority | Lane | Current disposition | Release condition |
 | --- | --- | --- | --- |
-| 1 | External-agent invocation control knowledge readiness | T4 CLOSED_PASS_BOUNDED; IMPLEMENTATION NOT_READY; T5 AUTHORING NOT_READY | reopen only for a separately authorized NP-03 architecture-completion decision |
+| 1 | External-agent invocation control knowledge readiness | NP-03 ARCHITECTURE COMPLETION DISPATCH READY; IMPLEMENTATION NOT_READY; T5 AUTHORING NOT_READY | independent NP-03 review followed by a fresh operator decision |
 | 2 | Governance-load reduction under MSEA-R72 | PARKED_ORDERED_NEXT | Fresh operator selection after priority 1 reaches a bounded decision point |
 | 3 | Operator-approved provider/model assignment and invocation receipts | SUBORDINATE_TO_PRIORITY_1 | Reconcile it as one component of the accepted invocation-control architecture; do not run independently |
 | 4 | MAO live/provider value pilot | VALUE_PARKED | Existing measurable reopen conditions and fresh operator authorization are satisfied |
@@ -154,6 +158,7 @@ insufficient.
 | T2 | Ratify provider-neutral budget, telemetry, stop, retry/fallback, and receipt semantics | CLOSED_PASS_WITH_REVIEWER_REPAIRS |
 | T3 | Select one admission-monitor-stop-reconcile owner architecture and threat model | CLOSED_PASS_BOUNDED_CANDIDATE_D_ACCEPTED |
 | T4 | Produce a build-readiness decision and negative-proof plan | CLOSED_PASS_BOUNDED_BOTH_READINESS_AXES_NOT_READY |
+| NP-03 | Decide a bounded launch-interception owner, covered surfaces, platform boundary, smallest build slice, and deterministic proof seam | DISPATCH_READY_DOCUMENTATION_ONLY |
 | T5 | Open a separate implementation roadmap if and only if the operator lifts the moratorium | PARKED_NOT_READY |
 
 ## T0 Bounded Objective
@@ -253,12 +258,12 @@ no runtime was invoked or changed.
 
 ## Next Allowed Move
 
-The EAIC-KR knowledge-readiness roadmap is closed bounded. Implementation and
-T5 roadmap authoring are both `NOT_READY`. A future reopen requires explicit
-operator authorization for one documentation-only NP-03 architecture-
-completion decision that names a launch-interception owner, target launch
-surfaces, platform boundary, smallest build slice, and deterministic proof
-seam. Agent CLI/MCP, provider/API/account use, process testing,
+The documentation-only NP-03 architecture-completion packet is dispatch ready.
+The next allowed move is manual operator copy/paste of the committed work order
+to one no-commit documentation worker. The worker may create exactly the
+decision packet and worker return named by that work order. Implementation and
+T5 roadmap authoring remain `NOT_READY` until independent review and a fresh
+operator decision. Agent CLI/MCP, provider/API/account use, process activity,
 implementation, public-sync, T5, and every external-action tranche remain
 parked.
 
@@ -276,7 +281,7 @@ unchanged.
 | --- | --- | --- | --- |
 | Work order status | paired EAIC-KR-T0 work order | closed bounded reviewer-repair status | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | reviewer decision and operator boundary correction | PASS |
-| Roadmap state | this file | `Status: T4_PASS_BOUNDED_BOTH_READINESS_AXES_NOT_READY_T5_PARKED`; NP-03 architecture completion, T5, and implementation held | PASS |
+| Roadmap state | this file | `Status: NP03_ARCHITECTURE_COMPLETION_DISPATCH_READY_T5_PARKED`; NP-03 documentation-only manual dispatch released; T5 and implementation held | PASS |
 | Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | External evidence digest | N/A with reason: T0 ingests no new external source | repository-local evidence only | N/A with reason |
