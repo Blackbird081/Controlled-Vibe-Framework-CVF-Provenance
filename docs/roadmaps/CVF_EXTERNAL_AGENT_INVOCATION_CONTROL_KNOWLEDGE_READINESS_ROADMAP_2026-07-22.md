@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: NP03_CLOSED_NO_VIABLE_BOUNDED_PATTERN_T5_PARKED
+Status: CLOSED_PASS_BOUNDED_RESULT_ADMISSION_SEMANTIC_RATIFIED_T5_NOT_OPENED
 
 docType: roadmap
 
@@ -34,7 +34,11 @@ remain held. After independent T4 review isolated NP-03 as the only pre-T5
 architecture gap, the operator instructed the dispatcher to continue
 completing that recorded next move on 2026-07-23. This releases one
 documentation-only NP-03 architecture-completion decision and no external or
-runtime action.
+runtime action. After independent review, the operator accepted the recommended
+narrower semantic on 2026-07-23: an external result without correlated launch
+or admission evidence cannot become a CVF-accepted result. This closes the
+knowledge-readiness decision boundary without claiming arbitrary host-launch
+detection and without opening T5.
 
 ## Operator Decision And Priority Register
 
@@ -43,7 +47,7 @@ does not automatically release the next row.
 
 | Priority | Lane | Current disposition | Release condition |
 | --- | --- | --- | --- |
-| 1 | External-agent invocation control knowledge readiness | NP-03 CLOSED NO VIABLE BOUNDED LAUNCH-DETECTION PATTERN; IMPLEMENTATION NOT_READY; T5 AUTHORING NOT_READY | operator chooses whether to retain literal NP-03, authorize host-wide evidence, or ratify narrower result-admission quarantine semantics |
+| 1 | External-agent invocation control knowledge readiness | CLOSED PASS BOUNDED; narrow result-admission semantic operator-ratified; no literal arbitrary-launch detection claim; T5 not opened | fresh operator authorization plus a new roadmap is required for any implementation, host-wide evidence, or moratorium change |
 | 2 | Governance-load reduction under MSEA-R72 | PARKED_ORDERED_NEXT | Fresh operator selection after priority 1 reaches a bounded decision point |
 | 3 | Operator-approved provider/model assignment and invocation receipts | SUBORDINATE_TO_PRIORITY_1 | Reconcile it as one component of the accepted invocation-control architecture; do not run independently |
 | 4 | MAO live/provider value pilot | VALUE_PARKED | Existing measurable reopen conditions and fresh operator authorization are satisfied |
@@ -159,7 +163,7 @@ insufficient.
 | T3 | Select one admission-monitor-stop-reconcile owner architecture and threat model | CLOSED_PASS_BOUNDED_CANDIDATE_D_ACCEPTED |
 | T4 | Produce a build-readiness decision and negative-proof plan | CLOSED_PASS_BOUNDED_BOTH_READINESS_AXES_NOT_READY |
 | NP-03 | Decide a bounded launch-interception owner, covered surfaces, platform boundary, smallest build slice, and deterministic proof seam | CLOSED_NO_VIABLE_BOUNDED_PATTERN_WITH_PARTIAL_QUARANTINE_COMPONENT |
-| T5 | Open a separate implementation roadmap if and only if the operator lifts the moratorium | PARKED_NOT_READY |
+| T5 | Open a separate implementation roadmap if and only if the operator lifts the moratorium | NOT_OPENED_NO_IMPLEMENTATION_AUTHORITY |
 
 ## T0 Bounded Objective
 
@@ -259,18 +263,15 @@ no runtime was invoked or changed.
 ## Next Allowed Move
 
 NP-03 architecture completion is closed with
-`NO_VIABLE_BOUNDED_PATTERN` for literal out-of-band launch detection. A real,
-narrower result-admission quarantine component exists, but it does not observe
-or prevent the underlying process. The next allowed move is an operator
-decision among retaining the literal requirement, authorizing a separately
-governed host-wide evidence lane, or ratifying narrower semantics that prevent
-an uncorrelated external result from becoming a CVF-accepted result. The
-reviewer recommends the narrower result-admission option because it stays
-inside CVF's authority boundary and avoids host-wide surveillance. No option is
-selected automatically. Implementation and T5 roadmap authoring remain
-`NOT_READY`. Agent CLI/MCP, provider/API/account use, process activity,
-implementation, public-sync, T5, and every external-action tranche remain
-parked.
+`NO_VIABLE_BOUNDED_PATTERN` for literal out-of-band launch detection. The
+operator ratified the narrower result-admission semantic on 2026-07-23: an
+external result without correlated launch or admission evidence cannot become
+a CVF-accepted result. This does not observe or prevent the underlying process.
+The next allowed move is documentation-only completion of the remaining CVF
+23.07 owner-surface absorption dispositions. Implementation and T5 are not
+opened. Agent CLI/MCP, provider/API/account use, external-agent or
+studied-process activity, implementation, public-sync, T5, and every
+external-action tranche remain parked.
 
 ## Public Export Disposition
 
@@ -286,7 +287,7 @@ unchanged.
 | --- | --- | --- | --- |
 | Work order status | paired EAIC-KR-T0 work order | closed bounded reviewer-repair status | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | reviewer decision and operator boundary correction | PASS |
-| Roadmap state | this file | `Status: NP03_CLOSED_NO_VIABLE_BOUNDED_PATTERN_T5_PARKED`; operator semantic/authority checkpoint pending; T5 and implementation held | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED_RESULT_ADMISSION_SEMANTIC_RATIFIED_T5_NOT_OPENED`; bounded semantic recorded; T5 and implementation not opened | PASS |
 | Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | External evidence digest | N/A with reason: T0 ingests no new external source | repository-local evidence only | N/A with reason |

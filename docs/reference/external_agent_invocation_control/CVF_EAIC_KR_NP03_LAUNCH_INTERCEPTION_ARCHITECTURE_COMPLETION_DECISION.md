@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 docType: reference
 
-Status: REVIEWER_ACCEPTED_NO_VIABLE_BOUNDED_PATTERN_WITH_BOUNDARY_REPAIR
+Status: OPERATOR_RATIFIED_NARROW_RESULT_ADMISSION_NO_LITERAL_LAUNCH_DETECTION
 
 Date: 2026-07-23
 
@@ -252,14 +252,13 @@ targets only an externally-initiated CLI/MCP agent process boundary.
 
 ## T5 Authoring Consequence
 
-This verdict is advisory only. `np03ArchitectureReadiness:
-NO_VIABLE_BOUNDED_PATTERN` does not open, authorize, or imply readiness for
-T5 roadmap authoring, implementation, or any external action. Per the T4
-completion review's Pre-T5 Architecture Completion Requirement, if no
-viable, provider-neutral, non-invasive pattern can be source-backed for
-NP-03, the lane remains parked rather than opening an implementation
-roadmap that cannot reach its own final acceptance condition. That
-condition is met here: NP-03 remains parked.
+The operator ratified the narrower result-admission semantic on 2026-07-23:
+an external result without correlated launch or admission evidence cannot
+become a CVF-accepted result. This is a policy boundary, not literal
+launch-detection coverage. `np03ArchitectureReadiness:
+NO_VIABLE_BOUNDED_PATTERN` remains the correct verdict for the original
+literal requirement. T5 is not opened, and no implementation or external
+action is authorized.
 
 ## Minimal Unblock Condition
 
@@ -280,9 +279,10 @@ packet's authority, not a build task this packet can size:
    CVF-appropriate, non-invasive launch-observation mechanism this packet's
    fresh search did not find.
 
-Absent one of these three operator-owned decisions, no future
-documentation-only packet can change this verdict by re-analysis alone,
-because the blocking fact is source absence, not analysis depth.
+The operator selected option 2 on 2026-07-23 for CVF's bounded policy purpose.
+This does not change the evidence verdict for literal launch detection. It
+closes the semantic checkpoint by treating result admission as the controlled
+boundary and rejecting host-wide surveillance as the default CVF scope.
 
 ## Epistemic Process Block
 
@@ -328,7 +328,7 @@ pattern (PAT-06) might narrowly qualify, and this packet's own evidence
 review is what narrowed that expectation once the receipt consumer's exact
 scope (opt-in, result-only, no launch-identity field) was directly read
 rather than assumed from its name. T5, implementation, and the invocation
-moratorium remain unaffected and parked.
+moratorium remain unaffected.
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -346,16 +346,15 @@ moratorium remain unaffected and parked.
 ## NP-03 Architecture Completion Boundary Statement
 
 This packet is
-`REVIEWER_ACCEPTED_NO_VIABLE_BOUNDED_PATTERN_WITH_BOUNDARY_REPAIR`. It
+`OPERATOR_RATIFIED_NARROW_RESULT_ADMISSION_NO_LITERAL_LAUNCH_DETECTION`. It
 does not implement, launch, enumerate, observe, intercept, or control any
 external-agent process or process under study. It does not claim that CVF can detect an arbitrary out-of-band
 external-agent launch today. It preserves the one narrower, real,
-source-backed governed-result-quarantine component (PAT-05) as future
-reference evidence without claiming it satisfies NP-03. The global
-external-agent CLI/MCP invocation moratorium remains fully in force. T5
-and all runtime/external-action lanes remain parked pending a fresh,
-separate, explicit operator decision among the three Minimal Unblock
-Condition options above.
+source-backed governed-result-quarantine component (PAT-05) and records the
+operator-ratified policy that an uncorrelated external result cannot become a
+CVF-accepted result. The global external-agent CLI/MCP invocation moratorium
+remains fully in force. T5 is not opened; all runtime/external-action lanes
+still require fresh, separate operator authorization.
 
 ## Public Export Disposition
 

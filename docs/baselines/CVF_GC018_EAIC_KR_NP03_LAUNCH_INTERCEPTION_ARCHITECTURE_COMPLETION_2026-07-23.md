@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_NO_VIABLE_BOUNDED_PATTERN
+Status: REVIEWER_ACCEPTED_NARROW_RESULT_ADMISSION_SEMANTIC_OPERATOR_RATIFIED
 
 docType: baseline
 
@@ -245,3 +245,11 @@ This baseline authorizes a repository-local architecture decision only. It does
 not establish that CVF can observe arbitrary launches, control a host, prevent
 processes, intercept an IDE or shell, or safely invoke another agent. Any future
 build or proof requires a new operator-approved roadmap and work order.
+
+## Operator Semantic Decision
+
+On 2026-07-23, the operator accepted the narrower result-admission semantic:
+an external result without correlated launch or admission evidence cannot
+become a CVF-accepted result. This records an acceptance boundary, not literal
+process-launch detection, and does not authorize T5, implementation, or any
+external/runtime action.

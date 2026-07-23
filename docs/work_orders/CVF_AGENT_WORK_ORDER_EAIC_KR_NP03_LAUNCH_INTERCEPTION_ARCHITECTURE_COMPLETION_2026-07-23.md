@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_NO_VIABLE_BOUNDED_PATTERN
+Status: REVIEWER_ACCEPTED_NARROW_RESULT_ADMISSION_SEMANTIC_OPERATOR_RATIFIED
 
 docType: work_order
 
@@ -556,15 +556,15 @@ result.
 
 ## Operator Checkpoint
 
-Checkpoint state: `NP03_NO_VIABLE_LITERAL_PATTERN_OPERATOR_SEMANTIC_OR_AUTHORITY_DECISION_PENDING`.
+Checkpoint state: `NP03_NARROW_RESULT_ADMISSION_SEMANTIC_OPERATOR_RATIFIED`.
 
 Independent review accepts `NO_VIABLE_BOUNDED_PATTERN` for literal launch
-detection. The operator may retain that requirement, authorize separately
-governed host-wide evidence, or ratify narrower result-admission quarantine
-semantics. The reviewer recommends the narrower result-admission option because
-it stays inside CVF's authority boundary. No option is selected automatically.
-T5 remains parked and any later roadmap still requires fresh operator approval,
-GC-018, and a separate source-verified work order.
+detection. On 2026-07-23, the operator accepted the reviewer's recommended
+narrower semantic: an external result without correlated launch or admission
+evidence cannot become a CVF-accepted result. This is an admission rule, not a
+claim that CVF detects or controls arbitrary host process launches. T5 is not
+opened, and any later implementation roadmap still requires fresh operator
+approval, GC-018, and a separate source-verified work order.
 
 ## Agent Operation Trace Block
 

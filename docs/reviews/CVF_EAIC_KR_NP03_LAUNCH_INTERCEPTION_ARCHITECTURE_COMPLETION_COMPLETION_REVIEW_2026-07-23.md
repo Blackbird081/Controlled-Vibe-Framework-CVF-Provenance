@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_NO_VIABLE_BOUNDED_PATTERN_WITH_BOUNDARY_REPAIR
+Status: CLOSED_PASS_BOUNDED_OPERATOR_RATIFIED_NARROW_RESULT_ADMISSION
 
 docType: completion_review
 
@@ -49,29 +49,29 @@ The reviewer:
 | process-action wording exceeded the actual evidence boundary | LOW | local Git, search, and governance tools ran while prose said no process was launched | ACCEPT_REPAIRED to no external-agent process or process under study |
 | internal helper autonomy was preserved | LOW POSITIVE | helpers stayed inside the parent session and crossed no separate external perimeter | ACCEPT |
 
-Position: the worker's main verdict is evidence-backed under NP-03's current
-literal meaning. A mandatory result-admission gate could prevent an
-uncorrelated output from becoming a CVF-accepted result, but treating that as
-launch detection would narrow NP-03 semantics. That change belongs to the
-operator, not the reviewer.
+Position: the worker's main verdict is evidence-backed under NP-03's original
+literal meaning. On 2026-07-23, the operator accepted the reviewer's narrower
+result-admission recommendation. An uncorrelated external result therefore
+cannot become a CVF-accepted result, without claiming that CVF detected or
+controlled the underlying launch.
 
 ## Decision / Disposition
 
-`CLOSED_PASS_BOUNDED_NO_VIABLE_LITERAL_PATTERN_WITH_PARTIAL_QUARANTINE_VALUE`
+`CLOSED_PASS_BOUNDED_OPERATOR_RATIFIED_NARROW_RESULT_ADMISSION`
 
 - `np03ArchitectureReadiness=NO_VIABLE_BOUNDED_PATTERN` is accepted;
 - the current receipt-consumer family is retained as a narrower
   result-quarantine component;
 - no smallest build slice is authorized for literal launch detection;
-- T5 roadmap authoring and implementation remain `NOT_READY`;
-- the next checkpoint is an operator semantic/authority decision;
+- T5 roadmap authoring and implementation are not opened or authorized;
+- the operator ratified result admission as the bounded CVF control semantic;
 - no CLI/MCP invocation, provider action, process proof, runtime change, or
   public action is authorized.
 
 Reviewer recommendation: prefer ratifying a bounded result-admission rule -
 an external result without correlated launch/admission evidence cannot become a
 CVF-accepted result - instead of authorizing host-wide process surveillance.
-This recommendation is non-ratifying.
+The operator accepted this recommendation on 2026-07-23.
 
 ## Risk / Corrective Action
 
@@ -134,14 +134,15 @@ forces every result through itself.
 ### Contradiction Or Gap Disposition
 
 No contradiction blocks acceptance. The semantic gap between literal launch
-detection and result-admission quarantine is retained explicitly for operator
-decision rather than collapsed by reviewer interpretation.
+detection and result admission remains explicit: the operator selected result
+admission as CVF's bounded acceptance rule without reclassifying it as launch
+detection.
 
 ### Claim Update
 
 Literal NP-03 has no viable bounded pattern under current authority and source.
-Narrower result-admission quarantine remains valuable but unratified as an
-NP-03 substitute. T5 remains not ready.
+Narrower result-admission quarantine is operator-ratified as CVF's bounded
+acceptance semantic, not as literal launch detection. T5 remains unopened.
 
 ## Finding-To-Governance Learning Disposition
 
@@ -168,8 +169,8 @@ Owner: reviewer/closer
 Evidence: the work order's Delta Execution Claim Boundary Control Block and
 this completion review's repaired worker outputs.
 
-Next action: no new rule or ADIF entry; operator decides NP-03 semantics or
-authority scope.
+Next action: no new rule or ADIF entry. Complete the remaining CVF 23.07
+owner-surface absorption reconciliation without opening runtime or T5.
 
 Runtime learning lane: N/A_WITH_REASON: no runtime action or proof occurred.
 
@@ -192,11 +193,11 @@ Runtime learning lane: N/A_WITH_REASON: no runtime action or proof occurred.
 | --- | --- | --- | --- |
 | Work order status | paired NP-03 work order | reviewer-accepted no-viable status | PASS |
 | Completion or reviewer artifact | this file | independent decision and repair | PASS |
-| Roadmap state | EAIC-KR roadmap | NP-03 closed; operator checkpoint; T5 parked | PASS |
+| Roadmap state | EAIC-KR roadmap | bounded semantic ratified; T5 not opened | PASS |
 | Registry JSON | no corpus or readiness registry mutation authorized | N/A with reason | BLOCKED with reason |
 | Registry Markdown | no corpus registry mutation authorized | N/A with reason | BLOCKED with reason |
 | External evidence digest | no new external intake | repository-local evidence only | N/A with reason |
-| System loop interlock | NP-03 decision to operator semantic/authority checkpoint | no autonomous T5 mutation | PASS |
+| System loop interlock | operator-ratified result-admission boundary | no autonomous T5 mutation | PASS |
 | Session continuity | active state and handoff after material commit | session-sync steward owned | N/A with reason: separate protected commit |
 
 ## Acceptance Receipt Assertion Matrix
@@ -280,7 +281,7 @@ avoidableDelayClass: NONE
 | invocationBoundary | no agent CLI/MCP, provider, browser, network, external-agent process, or live invocation |
 | interceptionBoundary | no IDE, shell, Git, filesystem, provider, process-under-study, or user-activity interception claim |
 | claimLanguage | no viable bounded literal launch-detection pattern; narrower result quarantine retained |
-| forbiddenExpansion | NP-03 semantic ratification, T5 release, implementation, runtime proof, host surveillance, provider/model selection, public/production claim, or moratorium lift |
+| forbiddenExpansion | T5 release, implementation, runtime proof, host surveillance, provider/model selection, public/production claim, or moratorium lift |
 
 ## Public Export Disposition
 
@@ -292,9 +293,8 @@ authorization.
 ## Claim Boundary
 
 This review closes the NP-03 documentation tranche with
-`NO_VIABLE_BOUNDED_PATTERN` for literal launch detection and preserves a
-narrower result-quarantine component for operator consideration. It does not
-ratify narrower semantics, authorize host-wide observation, open T5, implement
-runtime, invoke another agent, use a provider/account, perform process proof,
-lift the invocation moratorium, or establish public, security, cost,
-production, or live-governance readiness.
+`NO_VIABLE_BOUNDED_PATTERN` for literal launch detection and records operator
+ratification of the narrower result-admission semantic. It does not authorize
+host-wide observation, open T5, implement runtime, invoke another agent, use a
+provider/account, perform process proof, lift the invocation moratorium, or
+establish public, security, cost, production, or live-governance readiness.
