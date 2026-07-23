@@ -28,7 +28,8 @@ active.
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator
-review of the accepted EAIC-KR-R1B D1-D4 recommendations; parked checkpoint=T2 release, operator decisions,
+manual copy/paste of the committed EAIC-KR-T2 documentation work order to one
+no-commit worker; parked checkpoint=T3,
 agent CLI/MCP, provider/API/account/network/browser use, process testing,
 implementation, public-sync, push, deployment, and production.
 
@@ -38,6 +39,12 @@ implementation, public-sync, push, deployment, and production.
 
 ## Latest Work / Changes
 
+- EAIC-KR-T2 documentation-only policy semantics is dispatched at material
+  commit `d4ab02d1b`; author-fast 5/5, pre-dispatch 75/75, and pre-commit 83/83
+  PASS.
+- The operator ratified D1-D4. T2 must preserve implementation/mechanism gaps,
+  internal-agent autonomy, and approved-versus-observed provider/model
+  reconciliation. No provider/model is selected.
 - EAIC-KR-R1B is independently accepted with reviewer repairs at material
   commit `1843c5123`; T2 HOLD and the invocation moratorium are unchanged.
 - D1 recommends `INSUFFICIENT_EVIDENCE`; D2-D4 recommend retaining the
@@ -79,9 +86,10 @@ implementation, public-sync, push, deployment, and production.
 
 ## Next Allowed Move
 
-Operator reviews the accepted R1B recommendations and explicitly accepts,
-replaces, or rejects D1-D4. R1B does not decide the rows. T2 remains HOLD and
-no implementation or invocation is released.
+Operator manually copy/pastes the committed EAIC-KR-T2 work order to one
+no-commit documentation worker. The worker creates exactly the T2 reference
+specification and worker return. T3, implementation, and every CLI/MCP,
+provider, process, public, and live action remain parked.
 
 ## Parked Operator Checkpoint
 
@@ -295,5 +303,32 @@ public, runtime, or operator-decision authority.
 ## GC-020 Marker - EAIC-KR-R1B Closure Continuity Sync
 
 This handoff records material parent commit `1843c5123`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - EAIC-KR-T2 Dispatch Continuity
+
+Authorized continuity scope: record T2 documentation dispatch material commit
+`d4ab02d1b`, release manual copy/paste to one no-commit worker, and retain T3
+plus every invocation, provider, runtime, public, and production checkpoint.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator accepted the D1-D4 proposal and requested
+the worker order.
+
+Rollback boundary: revert this five-path continuity set together if material
+commit `d4ab02d1b` is reverted. Do not partially release T3, invocation,
+provider, runtime, public, or production authority.
+
+## GC-020 Marker - EAIC-KR-T2 Dispatch Continuity Sync
+
+This handoff records material parent commit `d4ab02d1b`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.

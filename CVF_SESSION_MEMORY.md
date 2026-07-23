@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator review of the accepted EAIC-KR-R1B D1-D4 recommendations; parked checkpoint=T2 release, operator decisions, agent CLI/MCP, provider/API/account/network/browser use, process testing, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=manual operator copy/paste of the committed EAIC-KR-T2 documentation work order to one no-commit worker; parked checkpoint=T3, agent CLI/MCP, provider/API/account/network/browser use, process testing, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| EAIC-KR-T2 provider-neutral invocation policy-semantics dispatch | `d4ab02d1b` | DISPATCH_READY documentation-only after operator ratified D1-D4; provider/model assignment reconciliation added; author-fast 5/5, pre-dispatch 75/75, and pre-commit 83/83 PASS; manual copy/paste only, exact two no-commit outputs, T3 and invocation moratorium retained. |
 | EAIC-KR-R1B T2 decision-evidence supplement closure | `1843c5123` | REVIEWER_ACCEPTED_WITH_REPAIRS_T2_HOLD_UNCHANGED. D1 is INSUFFICIENT_EVIDENCE; D2-D4 retain proposed defaults as non-ratifying recommendations. Reviewer repaired stale manifest evidence, corpus scope trace, and provider-backed host accounting; ADIF-0047 records the reusable cost-evidence learning. |
 | EAIC-KR-R1B T2 decision-evidence supplement dispatch | `c57ebd5df` | DISPATCH_READY after 75/75 pre-dispatch and 83/83 pre-commit PASS; manual copy/paste only, exact two no-commit documentation outputs, T2 HOLD and invocation moratorium retained. |
 | EAIC-KR-R1 CVF 23.07 external repository intake and adversarial review | `50d74822a` | COMPLETE_VERIFIED intake with 231/231 terminal file classifications, pinned Brainless evidence boundary, repaired deterministic manifest hash, and Claude adversarial review APPROVE_WITH_REPAIRS resolved; R1B decision-evidence supplement authoring is next while T2 and invocation remain parked. |
@@ -345,14 +346,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `portable_clone_continuity_published_verified`
 
-EAIC-KR-R1B is independently accepted with reviewer repairs at material commit
-`1843c5123`. The next allowed move is operator review of D1-D4: D1 recommends
-`INSUFFICIENT_EVIDENCE`; D2-D4 recommend retaining the proposed defaults.
-These are decision support only. T2 remains HOLD until the operator explicitly
-accepts, replaces, or rejects each row. No agent invocation through CLI/MCP,
-provider/API/account/network/browser use, external process test,
-runtime/checker/package/UI implementation, public-sync, push, deploy, or
-invocation-moratorium lift is released. Conversation provenance remains parked.
+EAIC-KR-T2 documentation-only policy semantics is dispatched at material
+commit `d4ab02d1b`. The next allowed move is manual operator copy/paste of the
+committed work order to one no-commit worker. The worker may create exactly the
+T2 reference specification and worker return, then return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. T3, agent invocation
+through CLI/MCP, provider/API/account/network/browser use, external process
+testing, runtime/checker/package/UI implementation, public-sync, push, deploy,
+and invocation-moratorium lift remain parked. Conversation provenance remains
+parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
