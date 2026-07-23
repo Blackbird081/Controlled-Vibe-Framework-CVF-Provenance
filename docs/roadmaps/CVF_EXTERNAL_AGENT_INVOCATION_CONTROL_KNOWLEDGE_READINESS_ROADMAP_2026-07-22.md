@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T4_DISPATCH_READY_DOCUMENTATION_ONLY_T5_PARKED
+Status: T4_PASS_BOUNDED_BOTH_READINESS_AXES_NOT_READY_T5_PARKED
 
 docType: roadmap
 
@@ -39,7 +39,7 @@ does not automatically release the next row.
 
 | Priority | Lane | Current disposition | Release condition |
 | --- | --- | --- | --- |
-| 1 | External-agent invocation control knowledge readiness | T3 CLOSED_PASS_BOUNDED; CANDIDATE-D ACCEPTED; T4 DISPATCH_READY_DOCUMENTATION_ONLY | manual copy/paste to one no-commit worker; no automatic T5 release |
+| 1 | External-agent invocation control knowledge readiness | T4 CLOSED_PASS_BOUNDED; IMPLEMENTATION NOT_READY; T5 AUTHORING NOT_READY | reopen only for a separately authorized NP-03 architecture-completion decision |
 | 2 | Governance-load reduction under MSEA-R72 | PARKED_ORDERED_NEXT | Fresh operator selection after priority 1 reaches a bounded decision point |
 | 3 | Operator-approved provider/model assignment and invocation receipts | SUBORDINATE_TO_PRIORITY_1 | Reconcile it as one component of the accepted invocation-control architecture; do not run independently |
 | 4 | MAO live/provider value pilot | VALUE_PARKED | Existing measurable reopen conditions and fresh operator authorization are satisfied |
@@ -153,8 +153,8 @@ insufficient.
 | T1 | Absorb operator-approved primary sources into a reconciled knowledge ledger | CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP |
 | T2 | Ratify provider-neutral budget, telemetry, stop, retry/fallback, and receipt semantics | CLOSED_PASS_WITH_REVIEWER_REPAIRS |
 | T3 | Select one admission-monitor-stop-reconcile owner architecture and threat model | CLOSED_PASS_BOUNDED_CANDIDATE_D_ACCEPTED |
-| T4 | Produce a build-readiness decision and negative-proof plan | DISPATCH_READY_DOCUMENTATION_ONLY |
-| T5 | Open a separate implementation roadmap if and only if the operator lifts the moratorium | HOLD_UNTIL_FRESH_OPERATOR_AUTHORIZATION |
+| T4 | Produce a build-readiness decision and negative-proof plan | CLOSED_PASS_BOUNDED_BOTH_READINESS_AXES_NOT_READY |
+| T5 | Open a separate implementation roadmap if and only if the operator lifts the moratorium | PARKED_NOT_READY |
 
 ## T0 Bounded Objective
 
@@ -253,13 +253,14 @@ no runtime was invoked or changed.
 
 ## Next Allowed Move
 
-The next bounded move is manual operator copy/paste of the committed T4 work
-order to one no-commit documentation worker. The worker must decide
-implementation readiness and T5-roadmap-authoring readiness from current
-source, map every open gap to a build slice and proof seam, and return exactly
-the required decision packet and worker return. Agent CLI/MCP,
-provider/API/account use, process testing, implementation, public-sync, T5,
-and every external-action tranche remain parked.
+The EAIC-KR knowledge-readiness roadmap is closed bounded. Implementation and
+T5 roadmap authoring are both `NOT_READY`. A future reopen requires explicit
+operator authorization for one documentation-only NP-03 architecture-
+completion decision that names a launch-interception owner, target launch
+surfaces, platform boundary, smallest build slice, and deterministic proof
+seam. Agent CLI/MCP, provider/API/account use, process testing,
+implementation, public-sync, T5, and every external-action tranche remain
+parked.
 
 ## Public Export Disposition
 
@@ -275,7 +276,7 @@ unchanged.
 | --- | --- | --- | --- |
 | Work order status | paired EAIC-KR-T0 work order | closed bounded reviewer-repair status | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | reviewer decision and operator boundary correction | PASS |
-| Roadmap state | this file | `Status: T4_DISPATCH_READY_DOCUMENTATION_ONLY_T5_PARKED`; T5 and implementation held | PASS |
+| Roadmap state | this file | `Status: T4_PASS_BOUNDED_BOTH_READINESS_AXES_NOT_READY_T5_PARKED`; NP-03 architecture completion, T5, and implementation held | PASS |
 | Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | External evidence digest | N/A with reason: T0 ingests no new external source | repository-local evidence only | N/A with reason |

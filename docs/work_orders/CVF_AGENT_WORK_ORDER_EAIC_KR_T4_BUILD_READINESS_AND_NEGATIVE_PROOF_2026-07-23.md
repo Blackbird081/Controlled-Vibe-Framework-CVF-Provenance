@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_DOCUMENTATION_ONLY
+Status: REVIEWER_ACCEPTED_WITH_REPAIR_BOTH_READINESS_AXES_NOT_READY
 
 docType: work_order
 
@@ -308,12 +308,12 @@ Every other path is read-only or forbidden for worker writes.
 
 | Required output | Path or evidence | Owner | Status |
 | --- | --- | --- | --- |
-| T4 decision packet | stable reference path in Required Artifact Manifest | worker | PENDING_WORKER |
-| Worker return | dated review path in Required Artifact Manifest | worker | PENDING_WORKER |
-| Independent completion review | Reviewer Closure Conversion path | reviewer/closer | PENDING_REVIEW |
-| Material closure commit | accepted output and reviewer artifacts | reviewer/closer | PENDING_REVIEW |
-| T5 release decision | explicit post-T4 operator decision | operator | PARKED |
-| Session sync | only if an accepted material result changes next move | session-sync steward | PENDING_REVIEW |
+| T4 decision packet | stable reference path in Required Artifact Manifest | worker | ACCEPTED_WITH_REVIEWER_REPAIR |
+| Worker return | dated review path in Required Artifact Manifest | worker | ACCEPTED_AS_WORKER_EVIDENCE |
+| Independent completion review | Reviewer Closure Conversion path | reviewer/closer | ACCEPTED |
+| Material closure commit | accepted output and reviewer artifacts | reviewer/closer | PENDING_COMMIT |
+| T5 release decision | explicit post-T4 operator decision | operator | PARKED_NOT_READY |
+| Session sync | only if an accepted material result changes next move | session-sync steward | PENDING_COMMIT |
 
 ## Write Ownership
 
@@ -504,9 +504,10 @@ commit an accepted result.
 
 Checkpoint state: `T5_PARKED_PENDING_T4_REVIEW_AND_FRESH_OPERATOR_DECISION`.
 
-Neither readiness field authorizes T5, implementation, CLI/MCP, provider use,
-or moratorium lift. After independent T4 review, the operator may authorize,
-reject, narrow, or continue parking a separate T5 roadmap.
+Independent review sets both readiness fields to `NOT_READY`. T5 remains
+parked until a separately authorized architecture-completion decision resolves
+NP-03 with an owner, build slice, and proof seam. Neither readiness field
+authorizes T5, implementation, CLI/MCP, provider use, or moratorium lift.
 
 ## Agent Operation Trace Block
 

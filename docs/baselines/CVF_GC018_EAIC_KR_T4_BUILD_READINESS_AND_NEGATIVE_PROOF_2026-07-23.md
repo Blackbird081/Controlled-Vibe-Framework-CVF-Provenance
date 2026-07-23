@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY_DOCUMENTATION_ONLY
+Status: REVIEWER_ACCEPTED_WITH_REPAIR_BOTH_READINESS_AXES_NOT_READY
 
 docType: baseline
 
@@ -183,11 +183,13 @@ source-backed reason for each.
 
 ## Baseline Decision
 
-`DISPATCH_READY_DOCUMENTATION_ONLY`
+`REVIEWER_ACCEPTED_WITH_REPAIR_BOTH_READINESS_AXES_NOT_READY`
 
-T3 and the operator decision release one documentation-only T4 assessment.
-This baseline does not release implementation, proof execution, T5, or any
-external action.
+The worker evidence is accepted after reviewer repair of the aggregate
+T5-roadmap-authoring decision. Implementation and T5 authoring are both
+`NOT_READY`; NP-03 requires a separately authorized architecture-completion
+decision before any T5 roadmap. This baseline does not release implementation,
+proof execution, T5, or any external action.
 
 ## Verification / Evidence
 
