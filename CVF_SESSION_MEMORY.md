@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator review of whether to authorize one documentation-only NP-03 architecture-completion packet; parked checkpoint=that packet, T5, agent CLI/MCP, provider/API/account/network/browser use, process testing, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=manual operator copy/paste of the committed NP-03 architecture-completion work order to one no-commit documentation worker; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, process activity, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| EAIC-KR NP-03 launch-interception architecture-completion dispatch | `8d8093f36` | DISPATCH_READY_DOCUMENTATION_ONLY. One manual-copy/paste no-commit worker must compare bounded mediation, containment, observation, surface integration, result quarantine, and composed patterns; exactly two outputs; no CLI/MCP/provider/process/runtime/T5 action. |
 | EAIC-KR-T4 build-readiness and negative-proof closure | `5a598bef6` | REVIEWER_ACCEPTED_WITH_REPAIR_T5_NOT_READY. Both implementation and T5 roadmap authoring are NOT_READY because NP-03 lacks a source-backed launch-interception owner, smallest build slice, and deterministic proof seam; ADIF-0028 already governs the aggregate-overreach pattern. A documentation-only NP-03 architecture-completion packet is an operator checkpoint, not an authorized next tranche. |
 | EAIC-KR-T4 build-readiness and negative-proof dispatch | `7d033d943` | DISPATCH_READY_DOCUMENTATION_ONLY. Worker must issue separate implementation and T5-roadmap-authoring readiness decisions, map GAP-01 through GAP-09 to build slices and proof seams, and assess NP-01 through NP-09 feasibility; manual copy/paste, exactly two no-commit outputs, and no CLI/MCP/provider/process/runtime/public action. |
 | EAIC-KR-T3 operator architecture acceptance | `97a805b5b` | CLOSED_PASS_BOUNDED_CANDIDATE_D_ACCEPTED_T4_PARKED. The operator accepted CANDIDATE-D as architecture direction only; no runtime owner was instantiated, all nine gaps remain open, and T4 plus every invocation/runtime/public lane requires separate explicit authorization. |
@@ -352,14 +353,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `portable_clone_continuity_published_verified`
 
-EAIC-KR-T4 is independently reviewed and closed bounded at material commit
-`5a598bef6`. Both `implementationReadiness` and
-`t5RoadmapAuthoringReadiness` are `NOT_READY` because NP-03 has no
-source-backed launch-interception owner, smallest build slice, or deterministic
-proof seam. The next allowed move is operator review of whether to authorize
-one documentation-only NP-03 architecture-completion packet; no such packet is
-authorized yet. T5, agent invocation through CLI/MCP,
-provider/API/account/network/browser use, external process testing,
+EAIC-KR NP-03 documentation-only architecture-completion dispatch is committed
+at material commit `8d8093f36`. The next allowed move is manual operator
+copy/paste of the committed work order to one no-commit documentation worker.
+The worker may create exactly the named decision packet and worker return, then
+return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. T5, agent invocation
+through CLI/MCP, provider/API/account/network/browser use, process launch,
+enumeration, observation, interception, or control,
 runtime/checker/package/UI implementation, public-sync, push, deploy, and
 invocation-moratorium lift remain parked. Conversation provenance remains
 parked.
