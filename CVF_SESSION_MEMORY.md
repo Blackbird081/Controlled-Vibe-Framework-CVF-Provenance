@@ -357,19 +357,25 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `portable_clone_continuity_published_verified`
 
-The CVF 23.07 final owner-surface absorption reconciliation is independently
-closed at material commit `ef2c3479b`. All 231 rows have a bounded final route:
-108 existing-owner, 4 bounded doctrine, 115 conditional candidates across
-eight R1C index rows, and 4 zero-byte no-value closures.
+The golden downstream bootstrap public-first incident is closed at provenance
+review commit `ec362af35` and public corrective commit `27137db4d`.
+Provenance is restored as authority, the public-safe kit passes 69/69 in both
+clones, and five internal evidence files were removed from public by a normal
+forward commit. The public-projection gate-profile gap is parked for a
+separate authorized tranche.
+
+The CVF 23.07 final owner-surface absorption reconciliation remains
+independently closed at material commit `ef2c3479b`.
 
 The next allowed move is an operator checkpoint to select a new external
 repository/corpus for governed intake or separately authorize one exact
 conditional candidate whose recorded reopen condition is satisfied. No
-candidate, runtime/checker/package/UI implementation, T5, agent invocation
-through CLI/MCP, provider/API/account/network/browser use, external-agent or
-studied-process activity, public-sync, push, deploy, or
-invocation-moratorium lift is automatically released. Conversation provenance
-remains a secondary-input boundary.
+candidate, public-gate-profile implementation, runtime/checker/package/UI
+implementation, T5, agent invocation through CLI/MCP,
+provider/API/account/network/browser use, external-agent or studied-process
+activity, additional public-sync, deploy, or invocation-moratorium lift is
+automatically released. Conversation provenance remains a secondary-input
+boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

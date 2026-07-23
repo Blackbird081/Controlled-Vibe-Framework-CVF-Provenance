@@ -86,10 +86,18 @@ implementation, public-sync, push, deployment, and production.
 
 ## Next Allowed Move
 
-Operator manually copy/pastes the committed EAIC-KR-T2 work order to one
-no-commit documentation worker. The worker creates exactly the T2 reference
-specification and worker return. T3, implementation, and every CLI/MCP,
-provider, process, public, and live action remain parked.
+The golden downstream bootstrap public-first incident is closed at provenance
+review commit `ec362af35` and public corrective commit `27137db4d`.
+Provenance is restored as authority, the public-safe kit passes 69/69 in both
+clones, and five internal evidence files were removed from public through a
+normal forward commit. The public-projection gate-profile gap remains parked.
+
+The next allowed move is an operator checkpoint to select a new external
+repository/corpus for governed intake or separately authorize one exact
+conditional candidate whose recorded reopen condition is satisfied. T5,
+public-gate-profile implementation, runtime/checker/package/UI implementation,
+and every CLI/MCP, provider, process, additional public, and live action remain
+parked.
 
 ## Parked Operator Checkpoint
 
@@ -756,5 +764,36 @@ is reverted. Do not alter unrelated continuity records.
 ## GC-020 Marker - Public Boundary Test Continuity
 
 This handoff records material parent commit `d82127d76`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - Bootstrap Recovery Closure Sync
+
+Authorized continuity scope: record final recovery review commit `ec362af35`,
+public corrective commit `27137db4d`, the 69/69 dual-clone result, the
+five-file public removal, and the parked public-projection gate-profile gap.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/goldenDownstreamPublicFirstRecoveryClosure20260723.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator instructed the reviewer to classify and
+synchronize the misplaced public-first bootstrap learning according to CVF
+rules. This authorizes the final receipt and continuity sync. It does not
+authorize provider/API use, agent invocation through CLI/MCP, runtime
+deployment, branch-history rewrite, force push, or the parked public gate
+profile.
+
+Rollback boundary: revert this six-path continuity set together if closure
+commit `ec362af35` is reverted. Do not alter unrelated continuity records.
+
+## GC-020 Marker - Bootstrap Recovery Closure Continuity
+
+This handoff records material parent commit `ec362af35`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
