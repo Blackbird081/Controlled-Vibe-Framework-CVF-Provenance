@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2024,
+  "stateKey": "pintR1ProviderIntelligenceFullContentRescanClosure20260723",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",
+    "date": "2026-07-23",
+    "materialCommit": "9b26de3dc",
+    "completionReview": "docs/reviews/CVF_PINT_R1_FULL_CORPUS_CONTENT_RESCAN_COMPLETION_2026-07-23.md",
+    "corpusFiles": 50,
+    "manifestDigest": "f76e62ab30ba48997fa8d7cb517247ce2afaa1406c51f0e4c0e97edc9369ed85",
+    "semanticDisposition": "six advisory groups retained; two owner-source checks deferred; two variants closed as no-new-value",
+    "reviewerRepairs": "43 mislabeled quantitative values reconciled with authoritative byte sizes; Group B corrected from 9 to 10; all ten semantic candidates terminally routed; logical EXTENSIONS paths added to GC-051 coverage",
+    "eaicPosition": "PARKED_KNOWLEDGE_GAP unchanged",
+    "nextAllowedMove": "operator checkpoint to select a new governed intake or explicitly authorize one deferred PINT owner-source comparison",
+    "claimBoundary": "Documentation-only absorption closure. No CLI/MCP invocation, provider/API/account/network/browser use, process action, runtime/checker/package/UI implementation, public sync, or invocation-moratorium lift."
+  }
+}

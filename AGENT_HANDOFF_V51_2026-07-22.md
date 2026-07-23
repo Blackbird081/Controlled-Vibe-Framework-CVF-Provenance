@@ -849,3 +849,33 @@ Rollback boundary: revert this handoff marker if digest-repair commit
 This handoff records material parent commit `8c3f2351a`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - PINT-R1 Closure Sync
+
+Authorized continuity scope: record PINT-R1 material closure commit
+`9b26de3dc`, its bounded reviewer repairs, the 50-file reconciliation, and the
+unchanged EAIC parked boundary.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/pintR1ProviderIntelligenceFullContentRescanClosure20260723.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator assigned independent reviewer acceptance
+and closure after the no-commit worker return. This continuity sync records the
+accepted documentation-only absorption closure. It does not authorize
+CLI/MCP invocation, provider/network/process action, runtime/checker/package/UI
+implementation, public sync, or lifting the invocation moratorium.
+
+Rollback boundary: revert this six-path continuity set together if material
+commit `9b26de3dc` is reverted. Do not alter unrelated continuity records.
+
+## GC-020 Marker - PINT-R1 Closure Continuity
+
+This handoff records material parent commit `9b26de3dc`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.

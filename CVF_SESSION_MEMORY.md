@@ -367,9 +367,15 @@ separate authorized tranche.
 The CVF 23.07 final owner-surface absorption reconciliation remains
 independently closed at material commit `ef2c3479b`.
 
+PINT-R1 is independently closed with reviewer repairs at material commit
+`9b26de3dc`: the 50-file corpus and canonical digests reconcile; six advisory
+doctrine groups are retained, two owner-source checks are deferred, and two
+variants are closed as no-new-value. The EAIC MCP/CLI runtime knowledge gap
+and invocation moratorium remain parked.
+
 The next allowed move is an operator checkpoint to select a new external
-repository/corpus for governed intake or separately authorize one exact
-conditional candidate whose recorded reopen condition is satisfied. No
+repository/corpus for governed intake or explicitly authorize one deferred
+PINT owner-source comparison. No
 candidate, public-gate-profile implementation, runtime/checker/package/UI
 implementation, T5, agent invocation through CLI/MCP,
 provider/API/account/network/browser use, external-agent or studied-process
