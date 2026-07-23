@@ -2,7 +2,7 @@
 
 Memory class: EVIDENCE_RECORD
 
-Status: RECOVERY_IN_PROGRESS
+Status: CLOSED_PASS_BOUNDED
 
 docType: audit
 
@@ -38,7 +38,7 @@ history rewrite, or force push is authorized.
 | Secret-safe scan | no obvious raw credential or API key found in the imported range |
 | Provenance import method | four sequential no-commit cherry-picks; no history rewrite |
 | Initial provenance test | failed because a public-authored harness assumed the current checkout was public `main` |
-| Corrected provenance test | golden downstream harness PASS before mapper regression; final rerun pending |
+| Corrected provenance test | golden downstream harness PASS, 69/69 assertions |
 
 ## Findings
 
@@ -99,6 +99,18 @@ the mapper exists in provenance and records `N/A_WITH_REASON` on the
 intentionally mapper-free public surface. The public harness still runs the
 remaining bootstrap and completeness assertions.
 
+### F7 - Provenance autorun has no bounded public-projection profile
+
+Running the full provenance pre-implementation bundle inside the public clone
+reported 24 failures dominated by intentionally absent private session,
+review, corpus, and control-plane surfaces. This is not evidence that the
+public bootstrap kit failed; its dedicated harness passed 69/69 in that clone.
+
+Disposition: `PARKED_KNOWLEDGE_GAP`. A future governance tranche may define a
+public-projection gate profile. This recovery does not export private surfaces
+or weaken provenance gates merely to make the full private bundle pass in the
+public clone.
+
 ## Public Projection Classification
 
 | Path class | Provenance disposition | Public disposition |
@@ -150,7 +162,7 @@ protection configuration, or history rewriting.
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/check_adif_entry_integrity.py` |
-| literalTokensReviewed | `Core Guard Self-Protection Authorization`; `Protected paths`; `## Scope / Methodology`; `## Risk / Corrective Action`; `## External Knowledge Intake Routing`; `## Finding-To-Governance Learning Disposition`; `## Agent Operation Trace Block`; `## Public Export Disposition` |
+| literalTokensReviewed | `Core Guard Self-Protection Authorization`; `Protected paths`; `Scope / Methodology`; `Risk / Corrective Action`; `External Knowledge Intake Routing`; `Finding-To-Governance Learning Disposition`; `Agent Operation Trace Block`; `Public Export Disposition` |
 | gateRunPurpose | confirm the final repaired artifact shape after bounded checker diagnostics; not first discovery for the final gate run |
 | claimBoundary | checker-shape evidence only; no runtime, provider, CLI/MCP, deployment, or automatic prevention claim |
 
@@ -184,6 +196,7 @@ runtime call occurred.
 | Imported Markdown missed current structural literals | ORCHESTRATOR_PACKET_GAP | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | Retain imported-history headers and use the existing literal-format checklist |
 | `WorkspaceKitOnly` mapper omitted the new kit | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Retain the BSL-R7 mapper-completeness regression |
 | Mapper regression assumed a private control-plane file existed in public | RULE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Preserve provenance-only enforcement and explicit public N/A boundary |
+| Full provenance gate bundle is not projection-aware | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | PARKED_KNOWLEDGE_GAP | Design a bounded public-projection gate profile in a separate authorized tranche |
 | Runtime/provider/cost applicability | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | N/A_WITH_REASON | No runtime, provider, quota, token, or cost behavior was exercised |
 
 ## Verification
@@ -194,16 +207,52 @@ runtime call occurred.
 | `scripts/test_cvf_golden_downstream_bootstrap.ps1` | PASS, 69/69 |
 | governed file size | PASS |
 | Markdown structural completeness | PASS after provenance repair |
-| full pre-closure / pre-push | pending committed-range execution |
-| provenance remote receipt | pending |
-| public corrective commit receipt | pending |
+| provenance committed-range pre-closure / pre-push | PASS for each material and continuity range |
+| provenance remote receipt | `29346790b`, equal to `origin/main` after push |
+| public dedicated harness | PASS, 69/69 |
+| public full provenance autorun | `N/A_WITH_REASON`: 24 projection-profile failures from intentionally absent private surfaces |
+| public diff hygiene | PASS |
+| public corrective commit receipt | `27137db4d`, equal to public `origin/main` after push |
 
 ## Decision
 
-The implementation has bounded value and is eligible for provenance
-acceptance after the committed-range gates pass. The original public-first
-publication is rejected as a valid CVF synchronization route. Public history
-will be corrected forward, not rewritten.
+The implementation is accepted with bounded claims. Provenance is restored as
+the authority, the public-safe kit is projected from it, and the five internal
+evidence records are removed through a normal forward public commit. The
+original public-first publication is rejected as a valid CVF synchronization
+route. No public history was rewritten.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | N/A with reason: operator-authorized incident recovery, not a dispatched work order | recovery scope and authority recorded in this review | N/A with reason |
+| Worker return | N/A with reason: reviewer/closer performed the bounded repository recovery directly | Git and harness receipts recorded below | N/A with reason |
+| Completion review | `docs/reviews/CVF_PUBLIC_FIRST_GOLDEN_DOWNSTREAM_BOOTSTRAP_RECOVERY_2026-07-23.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PUBLIC_FIRST_GOLDEN_DOWNSTREAM_BOOTSTRAP_RECOVERY_2026-07-23.md` | reviewer/closer decision and receipts present | PASS |
+| Provenance material | provenance commits through `d82127d76` | committed-range pre-closure and pre-push PASS | PASS |
+| Provenance continuity | provenance commit `29346790b` | equals provenance `origin/main` after push | PASS |
+| Public correction | public commit `27137db4d` | equals public `origin/main` after push | PASS |
+| Public private-evidence removal | five named bootstrap execution-evidence files | deletion set in public commit `27137db4d` | PASS |
+| Dedicated public validation | `scripts/test_cvf_golden_downstream_bootstrap.ps1` | 69/69 assertions PASS in public clone | PASS |
+| Full public governance bundle | N/A with reason: private provenance bundle has no bounded public-projection profile | 24 projection-profile failures classified as F7 | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged generated aggregate; corpus registry gate PASS | PASS |
+| Registry Markdown | `docs/reference/agent_defect_intelligence/README.md` | ADIF-0050 index row committed in initial recovery material | PASS |
+| External evidence digest | N/A with reason: no external evidence digest was created or consumed | repository and local test evidence only | N/A with reason |
+| System loop interlock | N/A with reason: no system loop interlock changed | repository projection recovery only | N/A with reason |
+| Roadmap state | N/A with reason: no roadmap opened or closed | incident recovery only | N/A with reason |
+| Session continuity | active session front door/state/handoff after this material closure | dedicated session-sync follows this closure commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Provenance acceptance | reviewed material and continuity at `29346790b` | PASS |
+| Public projection acceptance | corrective public commit `27137db4d` | PASS |
+| Bootstrap behavior | 69/69 assertions PASS in both provenance and public clones | PASS |
+| Private evidence boundary | five internal records absent from public and retained in provenance | PASS |
+| Runtime receipt evidence | N/A with reason: no provider or governed runtime was invoked | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: no query contract was exercised | N/A_WITH_REASON |
 
 ## Agent Operation Trace Block
 
@@ -217,15 +266,15 @@ will be corrected forward, not rewritten.
 | Target paths | imported 22-path tranche, this audit, ADIF-0050, and public corrective projection |
 | Allowed scope source | operator instruction to classify and synchronize the misplaced public-first learning tranche |
 | Before status evidence | provenance `e26253e25`; public `571cb21b7`; 17 missing and 5 divergent paths |
-| After status evidence | pending final provenance and public commit receipts |
+| After status evidence | provenance `29346790b`; public `27137db4d`; both matched their `origin/main` after push |
 | Diff evidence | staged provenance changed set and later committed public correction |
 | Approval boundary | recovery and synchronization only; no force push, provider, runtime, deployment, or external-agent invocation |
 | Claim boundary | repository recovery and local bootstrap evidence only |
 | Agent type | reviewer/closer and session-sync steward |
 | Invocation ID | `public-first-bootstrap-recovery-20260723` |
 | Expected manifest | imported tranche, recovery audit, ADIF entry/index, later continuity receipt |
-| Actual changed set | pending final committed-range reconciliation |
-| Manifest delta | pending final closure |
+| Actual changed set | provenance recovery/material/continuity commits `a47f3d71f`, `ede6633f1`, `af7a05c9c`, `8184e83ec`, `d82127d76`, `29346790b`; public 16-path corrective commit `27137db4d` |
+| Manifest delta | five private evidence files removed only from public; public-safe durable references, guard, scripts, harness, and mapped front doors retained |
 | Deletion or rename disposition | public-only deletion of five private evidence records; no provenance deletion |
 
 ## Public Export Disposition
@@ -237,6 +286,6 @@ surfaces are projected separately after provenance acceptance.
 
 ## Claim Boundary
 
-This audit does not claim that the recovery is closed until both remote commit
-receipts and their required gates are recorded. It does not prove hosted or
-provider behavior and does not authorize any CLI/MCP agent invocation.
+This audit closes only the repository recovery and public projection boundary.
+It does not prove hosted or provider behavior and does not authorize any
+CLI/MCP agent invocation.
