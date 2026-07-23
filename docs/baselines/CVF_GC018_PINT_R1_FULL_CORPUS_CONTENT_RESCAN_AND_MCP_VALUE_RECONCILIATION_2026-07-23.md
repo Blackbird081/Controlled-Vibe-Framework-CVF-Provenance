@@ -73,6 +73,52 @@ adds bounded doctrine or sharper knowledge-gap evidence.
 | Content digest recipe | lowercase SHA-256, two spaces, corpus-relative forward-slash path; rows ordinal/code-point sorted, UTF-8 without BOM, LF-separated, one trailing LF, SHA-256 |
 | Required ledger | one row per file; no folder-level substitute |
 
+## Digest Reconciliation Repair
+
+Reviewer recomputation on 2026-07-23 reproduced the recorded canonical values
+from the current 50-file corpus:
+
+- path manifest digest:
+  `f94f8debf9f05021e7898e1e7065f534dcf7e6dfdd2ceb604fb8ff9dc9ae16f7`;
+- content manifest digest:
+  `f76e62ab30ba48997fa8d7cb517247ce2afaa1406c51f0e4c0e97edc9369ed85`.
+
+A second implementation using PowerShell `Sort-Object` without an explicit
+ordinal comparer produced different path and content digests because its
+default ordering is culture-sensitive. That result is non-canonical for this
+packet and is not corpus-drift evidence.
+
+The canonical executable recipe is:
+
+```powershell
+@'
+import hashlib
+from pathlib import Path
+
+root = Path(".private_reference/legacy/CVF_PROVIDER_INTELLIGENCE")
+files = sorted(
+    (path for path in root.rglob("*") if path.is_file()),
+    key=lambda path: path.relative_to(root).as_posix(),
+)
+relative_paths = [path.relative_to(root).as_posix() for path in files]
+content_rows = [
+    f"{hashlib.sha256(path.read_bytes()).hexdigest()}  "
+    f"{path.relative_to(root).as_posix()}"
+    for path in files
+]
+path_payload = ("\n".join(relative_paths) + "\n").encode("utf-8")
+content_payload = ("\n".join(content_rows) + "\n").encode("utf-8")
+print(f"count={len(files)}")
+print(f"pathManifestSha256={hashlib.sha256(path_payload).hexdigest()}")
+print(f"contentManifestSha256={hashlib.sha256(content_payload).hexdigest()}")
+'@ | python -
+```
+
+The script hashes raw file bytes, uses corpus-relative forward-slash paths,
+sorts by Python Unicode code-point order, writes LF separators with one
+trailing LF, and hashes UTF-8 payloads without a BOM. The worker must use this
+script or prove byte-for-byte equivalent ordering and serialization.
+
 ## Source Verification Block
 
 | Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |

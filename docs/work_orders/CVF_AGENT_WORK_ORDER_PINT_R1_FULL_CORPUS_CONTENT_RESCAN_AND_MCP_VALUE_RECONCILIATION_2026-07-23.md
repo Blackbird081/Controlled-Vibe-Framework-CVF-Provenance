@@ -131,6 +131,28 @@ The worktree must be clean at worker start and corpus count must be 50. If the
 operator supplies a later committed execution head, use it for the unchanged
 HEAD assertion while preserving `23f4e1657` as the dispatch-authoring base.
 
+## Digest Reconciliation Repair
+
+The independent reviewer reproduced the dispatch digests from the current
+corpus using the canonical Python ordinal/code-point recipe in the paired
+GC-018. No canonical digest drift was detected.
+
+Do not use culture-sensitive PowerShell `Sort-Object` as a substitute for the
+canonical sort. That default implementation produces a different ordering and
+therefore different digests even when file bytes are unchanged. Before any
+worker output, run the exact script in the paired GC-018 and require:
+
+```text
+count=50
+pathManifestSha256=f94f8debf9f05021e7898e1e7065f534dcf7e6dfdd2ceb604fb8ff9dc9ae16f7
+contentManifestSha256=f76e62ab30ba48997fa8d7cb517247ce2afaa1406c51f0e4c0e97edc9369ed85
+```
+
+If these values match, the earlier digest discrepancy is
+`RECIPE_IMPLEMENTATION_MISMATCH_RESOLVED`, not corpus drift. If they do not
+match, return `BLOCKED_WITH_REASON` with the exact count and both computed
+digests.
+
 ## Write Ownership
 
 Exactly these four Allowed Outputs:
