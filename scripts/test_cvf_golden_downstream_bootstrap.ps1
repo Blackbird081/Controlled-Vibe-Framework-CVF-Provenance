@@ -495,6 +495,11 @@ try {
     Add-Result "BSL-R7" "Public-core reconciler completeness list includes every new catalog/helper/schema/guard surface" `
         ($missingFromReconciler.Count -eq 0) ($missingFromReconciler -join ", ")
 
+    $publicMapperText = Get-Content -LiteralPath (Join-Path $repoRoot "scripts\cvf-public-sync.ps1") -Raw
+    $missingFromPublicMapper = @($newCoreHelperPaths | Where-Object { -not $publicMapperText.Contains($_) })
+    Add-Result "BSL-R7" "WorkspaceKitOnly public mapper includes every new catalog/helper/schema/guard surface" `
+        ($missingFromPublicMapper.Count -eq 0) ($missingFromPublicMapper -join ", ")
+
     $bootstrapListText = Get-Content -LiteralPath $bootstrapScript -Raw
     $doctorListText = Get-Content -LiteralPath (Join-Path $repoRoot "scripts\check_cvf_workspace_agent_enforcement.ps1") -Raw
     $missingFromBootstrapList = @($newCoreHelperPaths | Where-Object { -not $bootstrapListText.Contains($_) })

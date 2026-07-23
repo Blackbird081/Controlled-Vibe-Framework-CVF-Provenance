@@ -79,7 +79,15 @@ $ALLOWED_SCRIPT_FILES = @(
     'scripts\repair_cvf_workspace.ps1',
     'scripts\manage_cvf_workspace.ps1',
     'scripts\new-cvf-workspace.ps1',
+    'scripts\lib\downstream_catalog\CvfDownstreamBootstrapContent.ps1',
+    'scripts\lib\downstream_catalog\CvfDownstreamCatalogLib.ps1',
+    'scripts\lib\downstream_catalog\CvfGoldenHarnessSupport.ps1',
+    'scripts\lib\downstream_catalog\CvfWorkspaceDoctorLiveReadiness.ps1',
+    'scripts\lib\downstream_catalog\manage_cvf_downstream_catalog.ps1',
+    'scripts\lib\downstream_catalog\schemas\ARTIFACT_REGISTRY.schema.json',
+    'scripts\lib\downstream_catalog\schemas\MODULE_REGISTRY.schema.json',
     'scripts\sync_cvf_workspace_public_profile.ps1',
+    'scripts\test_cvf_golden_downstream_bootstrap.ps1',
     'scripts\update_cvf_workspace_public_core.ps1',
     'scripts\w114_cp7_multi_sample_downstream_proof.ps1',
     'scripts\write_cvf_workspace_web_evidence_bridge.ps1'
@@ -110,6 +118,9 @@ $MAPPED_FILES = @(
 $WORKSPACE_KIT_FILES = @(
     'docs\GET_STARTED.md',
     'docs\guides\CVF_WORKSPACE_CLASSIFICATION_AND_USAGE_GUIDE.md',
+    'docs\reference\CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_DESIGN_2026-07-23.md',
+    'docs\reference\CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_LEARNING_INTAKE_2026-07-23.md',
+    'docs\reference\CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_SPEC_2026-07-23.md',
     'docs\reference\CVF_NEW_MACHINE_SETUP_CHECKLIST.md',
     'docs\reference\CVF_W114_PUBLIC_EVIDENCE_PACKET_2026-04-23.md',
     'docs\reference\CVF_WORKSPACE_RULES.md',
@@ -123,7 +134,8 @@ $WORKSPACE_KIT_FILES = @(
     'governance\toolkit\05_OPERATION\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md',
     'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_AGENTS.md',
     'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_CONTINUATION.md',
-    'governance\toolkit\05_OPERATION\CVF_WORKSPACE_ISOLATION_GUARD.md'
+    'governance\toolkit\05_OPERATION\CVF_WORKSPACE_ISOLATION_GUARD.md',
+    'governance\toolkit\05_OPERATION\downstream_catalog\CVF_DOWNSTREAM_CATALOG_GUARD.md'
 ) + $ALLOWED_WORKSPACE_TEMPLATE_FILES + $ALLOWED_SCRIPT_FILES
 
 # Allowlist: docs/ sub-paths that may be synced

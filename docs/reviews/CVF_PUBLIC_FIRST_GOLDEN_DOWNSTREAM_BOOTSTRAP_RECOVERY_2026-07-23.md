@@ -38,7 +38,7 @@ history rewrite, or force push is authorized.
 | Secret-safe scan | no obvious raw credential or API key found in the imported range |
 | Provenance import method | four sequential no-commit cherry-picks; no history rewrite |
 | Initial provenance test | failed because a public-authored harness assumed the current checkout was public `main` |
-| Corrected provenance test | golden downstream harness PASS, 68/68 assertions |
+| Corrected provenance test | golden downstream harness PASS before mapper regression; final rerun pending |
 
 ## Findings
 
@@ -78,6 +78,17 @@ Disposition: `REPAIRED_IN_PROVENANCE`. Imported execution records are marked
 historical and non-dispatching; the durable references and guard now expose
 purpose, scope, status, and claim boundaries.
 
+### F5 - Canonical workspace mapper omitted the new kit
+
+After the first provenance commit, a `WorkspaceKitOnly` dry run listed only
+the pre-existing kit. It omitted the new catalog helpers, schemas, harness,
+guard, learning intake, design, and specification. The direct public-first
+push masked this gap because those files already existed in the public clone.
+
+Disposition: `REPAIRED_IN_PROVENANCE`. The explicit workspace-kit allowlist
+now includes every public-safe surface in the tranche, and BSL-R7 checks that
+the mapper retains every new catalog/helper/schema/guard surface.
+
 ## Public Projection Classification
 
 | Path class | Provenance disposition | Public disposition |
@@ -95,7 +106,7 @@ purpose, scope, status, and claim boundaries.
 1. Import the four public commits into provenance without committing their
    public-only assumptions unchanged.
 2. Repair the hermetic harness at the provenance/public mapping seam.
-3. Run the dedicated 68-assertion bootstrap harness and governed gates.
+3. Run the dedicated 69-assertion bootstrap harness and governed gates.
 4. Commit and push provenance first.
 5. Apply a normal forward corrective commit in the sibling public-sync clone:
    remove the five private evidence files and copy only reviewed public-safe
@@ -161,6 +172,7 @@ runtime call occurred.
 | Public-authored harness assumed mapped aliases existed in provenance | RULE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | Retain sibling-aware hermetic bootstrap regression |
 | Five internal execution-evidence files were published | RULE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Remove them through a forward public corrective commit |
 | Imported Markdown missed current structural literals | ORCHESTRATOR_PACKET_GAP | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | Retain imported-history headers and use the existing literal-format checklist |
+| `WorkspaceKitOnly` mapper omitted the new kit | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Retain the BSL-R7 mapper-completeness regression |
 | Runtime/provider/cost applicability | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | N/A_WITH_REASON | No runtime, provider, quota, token, or cost behavior was exercised |
 
 ## Verification
@@ -168,7 +180,7 @@ runtime call occurred.
 | Check | Result |
 |---|---|
 | `git diff --cached --check` | PASS |
-| `scripts/test_cvf_golden_downstream_bootstrap.ps1` | PASS, 68/68 |
+| `scripts/test_cvf_golden_downstream_bootstrap.ps1` | PASS, 69/69 |
 | governed file size | PASS |
 | Markdown structural completeness | PASS after provenance repair |
 | full pre-closure / pre-push | pending committed-range execution |
