@@ -797,3 +797,29 @@ commit `ec362af35` is reverted. Do not alter unrelated continuity records.
 This handoff records material parent commit `ec362af35`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - PINT-R1 Dispatch Sync
+
+Authorized continuity scope: record PINT-R1 dispatch material commit
+`42dea03c0`, which adds the bounded full-content Provider Intelligence rescan
+baseline and no-commit worker work order.
+
+Protected path:
+
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator requested a full file-content rescan of
+the retained Provider Intelligence corpus and a governed prompt for the
+documentation worker. This sync records the accepted dispatch commit only. It
+does not authorize external agent invocation through CLI/MCP, provider or
+network use, runtime construction, process control, checker implementation,
+public-sync, or lifting the invocation moratorium.
+
+Rollback boundary: revert this handoff marker if material dispatch commit
+`42dea03c0` is reverted. Do not alter unrelated continuity records.
+
+## GC-020 Marker - PINT-R1 Dispatch Continuity
+
+This handoff records material parent commit `42dea03c0`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
