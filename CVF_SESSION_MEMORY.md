@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=documentation-only CVF 23.07 final owner-surface absorption reconciliation packet authoring and manual dispatch; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=manual copy/paste of the committed R1C final absorption work order to one no-commit documentation worker; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF 23.07 final owner-surface absorption reconciliation dispatch | `372d1e262` | DISPATCH_READY_DOCUMENTATION_ONLY. One manual-copy/paste no-commit worker owns exactly three outputs: final decision, conditional reopen index update, and worker return. The 231-row snapshot must reach complete bounded value disposition without runtime/T5/CLI-MCP/provider/process/public action. |
 | EAIC result-admission semantic ratification | `328372888` | CLOSED_PASS_BOUNDED_RESULT_ADMISSION_SEMANTIC_RATIFIED_T5_NOT_OPENED. An external result without correlated launch or admission evidence cannot become a CVF-accepted result; this does not claim literal arbitrary-launch detection. Final CVF 23.07 owner-surface absorption reconciliation packet authoring is next. |
 | EAIC-KR NP-03 launch-interception architecture-completion review | `a8e30c264` | REVIEWER_ACCEPTED_NO_VIABLE_BOUNDED_PATTERN_WITH_BOUNDARY_REPAIR. Literal arbitrary-launch detection has no viable bounded CVF pattern; result-admission quarantine is a narrower viable component only. Operator semantic and authority decision is next; reviewer recommends the narrower result-admission rule. T5 and all invocation/provider/process/runtime/public authority remain parked. |
 | EAIC-KR NP-03 launch-interception architecture-completion dispatch | `8d8093f36` | DISPATCH_READY_DOCUMENTATION_ONLY. One manual-copy/paste no-commit worker must compare bounded mediation, containment, observation, surface integration, result quarantine, and composed patterns; exactly two outputs; no CLI/MCP/provider/process/runtime/T5 action. |
@@ -355,15 +356,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `portable_clone_continuity_published_verified`
 
-The operator-ratified EAIC result-admission boundary is committed at material
-commit `328372888`: an external result without correlated launch or admission
-evidence cannot become a CVF-accepted result, without any literal
-arbitrary-launch detection claim. EAIC-KR is closed bounded and T5 is not
-opened. The next allowed move is documentation-only authoring and manual
-copy/paste dispatch of the CVF 23.07 final owner-surface absorption
-reconciliation packet. Runtime/checker/package/UI implementation, T5, agent
-invocation through CLI/MCP, provider/API/account/network/browser use,
-external-agent or studied-process activity, public-sync, push, deploy, and
+The CVF 23.07 final owner-surface absorption reconciliation dispatch is
+committed at material commit `372d1e262`. The next allowed move is operator
+manual copy/paste of the committed R1C work order to one no-commit
+documentation worker. The worker may create the final absorption decision,
+modify the conditional reopen index, create the worker return, and return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+Runtime/checker/package/UI implementation, T5, agent invocation through
+CLI/MCP, provider/API/account/network/browser use, external-agent or
+studied-process activity, public-sync, push, deploy, and
 invocation-moratorium lift remain parked. Conversation provenance remains a
 secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.

@@ -608,3 +608,34 @@ provider, process, runtime, public, or production authority.
 This handoff records material parent commit `328372888`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - CVF 23.07 R1C Dispatch Continuity
+
+Authorized continuity scope: record R1C dispatch material commit `372d1e262`
+and release operator manual copy/paste to one no-commit documentation worker
+for exactly the final absorption decision, conditional reopen index update, and
+worker return.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator instructed the reviewer to continue the
+absorption to completion. This authorizes documentation-only manual dispatch.
+It does not open T5, authorize runtime/checker/package/UI implementation,
+permit agent invocation through CLI/MCP, authorize provider or process
+activity, authorize public-sync, or lift the invocation moratorium.
+
+Rollback boundary: revert this five-path continuity set together if material
+commit `372d1e262` is reverted. Do not partially release T5, invocation,
+provider, process, runtime, public, or production authority.
+
+## GC-020 Marker - CVF 23.07 R1C Dispatch Continuity Sync
+
+This handoff records material parent commit `372d1e262`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
