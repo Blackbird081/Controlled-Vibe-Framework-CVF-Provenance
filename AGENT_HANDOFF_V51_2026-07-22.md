@@ -450,3 +450,33 @@ provider, runtime, public, or production authority.
 This handoff records material parent commit `97a805b5b`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - EAIC-KR-T4 Dispatch Continuity
+
+Authorized continuity scope: record T4 documentation dispatch material commit
+`7d033d943`, release manual copy/paste to one no-commit readiness worker, and
+retain T5 plus every invocation, provider, runtime, public, and production
+checkpoint.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator explicitly authorized T4 to obtain an
+evidence-based readiness decision. This authorizes documentation-only manual
+dispatch and does not authorize agent invocation through CLI/MCP, T5,
+implementation, provider use, or moratorium lift.
+
+Rollback boundary: revert this five-path continuity set together if material
+commit `7d033d943` is reverted. Do not partially release T5, invocation,
+provider, runtime, public, or production authority.
+
+## GC-020 Marker - EAIC-KR-T4 Dispatch Continuity Sync
+
+This handoff records material parent commit `7d033d943`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
