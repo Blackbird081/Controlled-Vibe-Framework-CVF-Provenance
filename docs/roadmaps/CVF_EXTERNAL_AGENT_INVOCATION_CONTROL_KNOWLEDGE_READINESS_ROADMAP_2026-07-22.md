@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: T1_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP
+Status: T2_POLICY_SEMANTICS_DISPATCH_READY
 
 docType: roadmap
 
@@ -22,7 +22,9 @@ call, runtime implementation, live proof, or moratorium lift.
 Operator authorization on 2026-07-22 first released T0 packet authoring and
 manual dispatch. After accepted T0 closure and the governance-load evidence
 audit, the operator approved a bounded T1 official-primary-source intake.
-T2-T5 remain held by their release rules.
+On 2026-07-23, after accepted R1B decision evidence, the operator ratified the
+four T2 policy directions and released documentation-only T2 manual dispatch.
+T3-T5 remain held by their release rules.
 
 ## Operator Decision And Priority Register
 
@@ -31,7 +33,7 @@ does not automatically release the next row.
 
 | Priority | Lane | Current disposition | Release condition |
 | --- | --- | --- | --- |
-| 1 | External-agent invocation control knowledge readiness | T1 PASS_BOUNDED_PARKED_KNOWLEDGE_GAP | T2 remains parked; no automatic release |
+| 1 | External-agent invocation control knowledge readiness | T2 POLICY_SEMANTICS_DISPATCH_READY | Operator ratified D1-D4; documentation-only T2 is manually released |
 | 2 | Governance-load reduction under MSEA-R72 | PARKED_ORDERED_NEXT | Fresh operator selection after priority 1 reaches a bounded decision point |
 | 3 | Operator-approved provider/model assignment and invocation receipts | SUBORDINATE_TO_PRIORITY_1 | Reconcile it as one component of the accepted invocation-control architecture; do not run independently |
 | 4 | MAO live/provider value pilot | VALUE_PARKED | Existing measurable reopen conditions and fresh operator authorization are satisfied |
@@ -85,7 +87,7 @@ Out of scope:
 | knowledge before architecture | PASS - T0 and T1 precede contract or owner selection |
 | architecture before implementation | PASS - T2-T4 precede any separate build roadmap |
 | provider neutrality | PASS - access modes are evidence classes, not preferred providers |
-| fail-closed unknown usage | REQUIRED_FOR_T2 - no implementation may proceed without a ratified disposition |
+| fail-closed unknown usage | RATIFIED_FOR_T2_DOCUMENTATION - automatic or unattended launch fails closed; implementation remains unauthorized |
 | external-service authority | DENIED - requires a later explicit operator checkpoint |
 
 ## Agent Internal Autonomy And Invocation Perimeter
@@ -99,6 +101,23 @@ context-management choice inside an already-authorized agent session.
 An internal helper becomes a separately governed invocation only when it
 independently crosses a process, external service, provider/account,
 credential, durable-action, scope, or authority boundary.
+
+## Operator-Ratified T2 Policy Direction
+
+The operator approved the following documentation-level policy direction on
+2026-07-23 after reviewing the accepted R1B decision supplement:
+
+| Decision | Operator disposition | Ratified policy direction | Evidence boundary |
+| --- | --- | --- | --- |
+| EAIC-T2-D1 | REPLACE | deny an automatic external launch unless an approved assignment, cumulative envelope, identity plan, stop conditions, and receipt target exist before launch | operator safety policy with an explicit admission-owner and implementation gap |
+| EAIC-T2-D2 | ACCEPT | issue CVF task and invocation IDs before launch, then bind provider session, conversation, and root-process identity when observable; absence stays explicit | no current cross-layer runtime binding is claimed |
+| EAIC-T2-D3 | ACCEPT | account retry, resume, fallback, and separately dispatched external children at the parent assignment; provider-native internal helpers remain autonomous and observable aggregate usage is charged to the parent | no current provider-neutral envelope owner or enforcement is claimed |
+| EAIC-T2-D4 | ACCEPT | fail closed for automatic or unattended launch when reliable admission-time usage is unavailable; a manual exception requires separate bounded operator authorization | no host is claimed to expose reliable usage universally |
+
+T2 must also separate operator-approved provider/model assignment from the
+provider/model observed at execution. A mismatch is explicit, and an
+unavailable observation remains unknown. This reconciliation requirement does
+not select or hard-code any provider or model.
 
 ## Knowledge Sufficiency Stop Rule
 
@@ -126,7 +145,7 @@ insufficient.
 | --- | --- | --- |
 | T0 | Inventory repo-local authority, classify gaps, and produce an authoritative-source acquisition map | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS_AND_BOUNDARY_CORRECTION |
 | T1 | Absorb operator-approved primary sources into a reconciled knowledge ledger | CLOSED_PASS_BOUNDED_PARKED_KNOWLEDGE_GAP |
-| T2 | Ratify provider-neutral budget, telemetry, stop, retry/fallback, and receipt semantics | HOLD_KNOWLEDGE_GAP |
+| T2 | Ratify provider-neutral budget, telemetry, stop, retry/fallback, and receipt semantics | DISPATCH_READY_DOCUMENTATION_ONLY |
 | T3 | Select one admission-monitor-stop-reconcile owner architecture and threat model | HOLD_UNTIL_T2_PASS |
 | T4 | Produce a build-readiness decision and negative-proof plan | HOLD_UNTIL_T3_PASS |
 | T5 | Open a separate implementation roadmap if and only if the operator lifts the moratorium | HOLD_UNTIL_FRESH_OPERATOR_AUTHORIZATION |
@@ -172,7 +191,10 @@ T0 must not fetch the missing sources or propose executable implementation.
 - T0 is documentation and evidence only.
 - T1 requires independent T0 acceptance plus operator approval of every source
   root, network action, or source-mirror action.
-- T2 cannot ratify fields unsupported by accepted primary knowledge.
+- T2 may record an explicit operator-owned normative safety policy where
+  external evidence is insufficient, but it must label the evidence gap and
+  must not convert policy into a runtime, implementation, or host-capability
+  claim.
 - T3 cannot choose a runtime owner until T2 defines enforcement semantics.
 - T4 must return NOT_READY if any critical domain remains PARTIAL,
   OPAQUE_BY_ACCESS_MODE without a fail-closed policy, or missing authority.
@@ -225,13 +247,11 @@ no runtime was invoked or changed.
 
 ## Next Allowed Move
 
-T1 is closed bounded with `PARKED_KNOWLEDGE_GAP`. T2 may be proposed only
-after fresh accepted evidence or an explicit operator policy supplies all of
-the following reopen conditions: a pre-launch admission decision boundary, a
-task/receipt-to-process identity model, provider-neutral cumulative-envelope
-semantics, and fail-closed behavior for unavailable usage. Agent CLI/MCP,
-provider/API/account use, process testing, implementation, public-sync, and
-every later tranche remain parked.
+T2 documentation-only policy-semantics work is released through manual
+operator copy/paste of the committed paired GC-018 and work order. The worker
+may create only the T2 reference specification and no-commit worker return.
+T3, agent CLI/MCP, provider/API/account use, process testing, implementation,
+public-sync, and every later tranche remain parked.
 
 ## Public Export Disposition
 
@@ -246,7 +266,7 @@ release evidence.
 | --- | --- | --- | --- |
 | Work order status | paired EAIC-KR-T0 work order | closed bounded reviewer-repair status | PASS |
 | Completion or reviewer artifact | `docs/reviews/CVF_EAIC_KR_T0_COMPLETION_2026-07-22.md` | reviewer decision and operator boundary correction | PASS |
-| Roadmap state | this file | T0 PASS bounded; T1 manual dispatch ready; T2-T5 held | PASS |
+| Roadmap state | this file | `Status: T2_POLICY_SEMANTICS_DISPATCH_READY`; T3-T5 held | PASS |
 | Registry JSON | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | Registry Markdown | corpus registry remains outside this T0 closure scope | no registry mutation authorized | BLOCKED with reason |
 | External evidence digest | N/A with reason: T0 ingests no new external source | repository-local evidence only | N/A with reason |
@@ -265,7 +285,8 @@ release evidence.
 
 ## Claim Boundary
 
-This roadmap orders knowledge and control-design work before implementation. It
+This roadmap orders knowledge and control-design work before implementation.
+Its T2 release authorizes only provider-neutral documentation semantics. It
 does not control an external agent, measure subscription quota, terminate a
-process, authorize a provider/model, lift the global moratorium, or establish
-runtime, public, security, cost, or production readiness.
+process, select a provider/model, lift the global invocation moratorium, or
+establish runtime, public, security, cost, or production readiness.
