@@ -89,6 +89,16 @@ Disposition: `REPAIRED_IN_PROVENANCE`. The explicit workspace-kit allowlist
 now includes every public-safe surface in the tranche, and BSL-R7 checks that
 the mapper retains every new catalog/helper/schema/guard surface.
 
+### F6 - Mapper regression crossed the public control-plane boundary
+
+The first BSL-R7 mapper assertion assumed the private projection script also
+existed in the public clone. That script is intentionally not exported.
+
+Disposition: `REPAIRED_IN_PROVENANCE`. The assertion remains mandatory when
+the mapper exists in provenance and records `N/A_WITH_REASON` on the
+intentionally mapper-free public surface. The public harness still runs the
+remaining bootstrap and completeness assertions.
+
 ## Public Projection Classification
 
 | Path class | Provenance disposition | Public disposition |
@@ -173,6 +183,7 @@ runtime call occurred.
 | Five internal execution-evidence files were published | RULE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Remove them through a forward public corrective commit |
 | Imported Markdown missed current structural literals | ORCHESTRATOR_PACKET_GAP | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | Retain imported-history headers and use the existing literal-format checklist |
 | `WorkspaceKitOnly` mapper omitted the new kit | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Retain the BSL-R7 mapper-completeness regression |
+| Mapper regression assumed a private control-plane file existed in public | RULE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | Preserve provenance-only enforcement and explicit public N/A boundary |
 | Runtime/provider/cost applicability | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | N/A_WITH_REASON | No runtime, provider, quota, token, or cost behavior was exercised |
 
 ## Verification
