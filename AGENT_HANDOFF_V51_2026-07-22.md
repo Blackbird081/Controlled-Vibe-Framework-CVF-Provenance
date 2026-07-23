@@ -732,3 +732,29 @@ is reverted. Do not alter unrelated continuity records.
 This handoff records material parent commit `af7a05c9c`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - Public Boundary Test Sync
+
+Authorized continuity scope: record material public-boundary test commit
+`d82127d76`, which keeps mapper completeness mandatory in provenance while
+recognizing that the private projection script is intentionally absent from
+the public clone.
+
+Protected path:
+
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator instructed the reviewer to synchronize
+the misplaced public-first bootstrap learning according to CVF rules. This
+authorizes the bounded test-boundary repair and continuity receipt. It does
+not authorize provider/API use, agent invocation through CLI/MCP, runtime
+deployment, branch-history rewrite, or force push.
+
+Rollback boundary: revert this handoff marker if material commit `d82127d76`
+is reverted. Do not alter unrelated continuity records.
+
+## GC-020 Marker - Public Boundary Test Continuity
+
+This handoff records material parent commit `d82127d76`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
