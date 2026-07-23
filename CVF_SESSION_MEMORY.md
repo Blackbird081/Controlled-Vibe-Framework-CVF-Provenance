@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator semantic and authority decision after NP-03 closed with no viable bounded literal launch-detection pattern; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=documentation-only CVF 23.07 final owner-surface absorption reconciliation packet authoring and manual dispatch; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| EAIC result-admission semantic ratification | `328372888` | CLOSED_PASS_BOUNDED_RESULT_ADMISSION_SEMANTIC_RATIFIED_T5_NOT_OPENED. An external result without correlated launch or admission evidence cannot become a CVF-accepted result; this does not claim literal arbitrary-launch detection. Final CVF 23.07 owner-surface absorption reconciliation packet authoring is next. |
 | EAIC-KR NP-03 launch-interception architecture-completion review | `a8e30c264` | REVIEWER_ACCEPTED_NO_VIABLE_BOUNDED_PATTERN_WITH_BOUNDARY_REPAIR. Literal arbitrary-launch detection has no viable bounded CVF pattern; result-admission quarantine is a narrower viable component only. Operator semantic and authority decision is next; reviewer recommends the narrower result-admission rule. T5 and all invocation/provider/process/runtime/public authority remain parked. |
 | EAIC-KR NP-03 launch-interception architecture-completion dispatch | `8d8093f36` | DISPATCH_READY_DOCUMENTATION_ONLY. One manual-copy/paste no-commit worker must compare bounded mediation, containment, observation, surface integration, result quarantine, and composed patterns; exactly two outputs; no CLI/MCP/provider/process/runtime/T5 action. |
 | EAIC-KR-T4 build-readiness and negative-proof closure | `5a598bef6` | REVIEWER_ACCEPTED_WITH_REPAIR_T5_NOT_READY. Both implementation and T5 roadmap authoring are NOT_READY because NP-03 lacks a source-backed launch-interception owner, smallest build slice, and deterministic proof seam; ADIF-0028 already governs the aggregate-overreach pattern. A documentation-only NP-03 architecture-completion packet is an operator checkpoint, not an authorized next tranche. |
@@ -354,19 +355,17 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `portable_clone_continuity_published_verified`
 
-EAIC-KR NP-03 is independently reviewed and closed at material commit
-`a8e30c264` with `NO_VIABLE_BOUNDED_PATTERN` for literal arbitrary-launch
-detection. Result-admission quarantine remains a narrower viable component,
-not launch detection. The next allowed move is an operator semantic and
-authority decision: retain the literal requirement, authorize a separately
-governed host-wide evidence lane, or ratify the narrower rule that an
-uncorrelated external result cannot become a CVF-accepted result. Reviewer
-recommendation is the narrower result-admission rule; no option is selected
-automatically. T5, agent invocation through CLI/MCP,
-provider/API/account/network/browser use, external-agent or studied-process
-activity, runtime/checker/package/UI implementation, public-sync, push, deploy,
-and invocation-moratorium lift remain parked. Conversation provenance remains
-parked.
+The operator-ratified EAIC result-admission boundary is committed at material
+commit `328372888`: an external result without correlated launch or admission
+evidence cannot become a CVF-accepted result, without any literal
+arbitrary-launch detection claim. EAIC-KR is closed bounded and T5 is not
+opened. The next allowed move is documentation-only authoring and manual
+copy/paste dispatch of the CVF 23.07 final owner-surface absorption
+reconciliation packet. Runtime/checker/package/UI implementation, T5, agent
+invocation through CLI/MCP, provider/API/account/network/browser use,
+external-agent or studied-process activity, public-sync, push, deploy, and
+invocation-moratorium lift remain parked. Conversation provenance remains a
+secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

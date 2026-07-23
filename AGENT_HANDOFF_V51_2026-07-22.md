@@ -576,3 +576,35 @@ provider, process, runtime, public, or production authority.
 This handoff records material parent commit `a8e30c264`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - EAIC Result-Admission Ratification Continuity
+
+Authorized continuity scope: record material commit `328372888`, record the
+operator-ratified bounded result-admission semantic, close EAIC-KR without
+opening T5, and route the next move to documentation-only CVF 23.07 final
+owner-surface absorption reconciliation packet authoring.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator accepted the recommendation and instructed
+the reviewer to continue the absorption to completion. This authorizes semantic
+ratification continuity and documentation packet authoring only. It does not
+open T5, authorize runtime/checker/package/UI implementation, permit agent
+invocation through CLI/MCP, authorize provider or process activity, authorize
+public-sync, or lift the invocation moratorium.
+
+Rollback boundary: revert this five-path continuity set together if material
+commit `328372888` is reverted. Do not partially release T5, invocation,
+provider, process, runtime, public, or production authority.
+
+## GC-020 Marker - EAIC Result-Admission Ratification Continuity Sync
+
+This handoff records material parent commit `328372888`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
