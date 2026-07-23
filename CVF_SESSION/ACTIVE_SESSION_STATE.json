@@ -13674,7 +13674,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "EAIC-KR-R1 intake and adversarial review closed at material commit 50d74822a. Next allowed move is author and dispatch R1B as a documentation-only T2 decision-evidence supplement through manual copy/paste. R1B may not change the T2 HOLD, infer operator decisions, invoke CLI/MCP/provider/API/account services, run external source or process tests, implement runtime/checker/package/UI changes, public-sync, push, deploy, or lift the invocation moratorium. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "EAIC-KR-R1B documentation-only T2 decision-evidence supplement dispatched at material commit c57ebd5df. Next allowed move is operator manual copy/paste to the assigned Claude worker, followed by independent reviewer audit and closure. The worker may create exactly the two allowed outputs and must not commit. R1B may not change the T2 HOLD, infer operator decisions, invoke another agent through CLI/MCP, use provider/API/account/network/browser surfaces, run external source or process tests, implement runtime/checker/package/UI changes, public-sync, push, deploy, or lift the invocation moratorium. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",

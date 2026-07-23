@@ -27,11 +27,11 @@ active.
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
-active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=author and
-manually dispatch the documentation-only EAIC-KR-R1B T2 decision-evidence
-supplement; parked checkpoint=T2 release, operator decisions, agent CLI/MCP,
-provider/API/account use, process testing, implementation, public-sync, push,
-deployment, and production.
+active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator
+manual copy/paste of the committed EAIC-KR-R1B packet to Claude, then
+independent review/closure; parked checkpoint=T2 release, operator decisions,
+agent CLI/MCP, provider/API/account/network/browser use, process testing,
+implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -39,6 +39,10 @@ deployment, and production.
 
 ## Latest Work / Changes
 
+- EAIC-KR-R1B dispatched at material commit `c57ebd5df` after 75/75
+  pre-dispatch and 83/83 pre-commit PASS.
+- The worker owns exactly one reference supplement and one no-commit return.
+  Manual operator copy/paste is the only released dispatch surface.
 - EAIC-KR-R1 external intake and adversarial review closed at material commit
   `50d74822a` with 231/231 terminal classifications and repaired deterministic
   manifest evidence.
@@ -70,9 +74,10 @@ deployment, and production.
 
 ## Next Allowed Move
 
-Author and manually dispatch R1B as a documentation-only supplement that maps
-accepted R1 evidence to the four T2 operator decisions. R1B must not decide the
-rows, change T2 HOLD, or release implementation or invocation.
+Operator manually copy/pastes the committed R1B packet to the assigned Claude
+worker. The reviewer then audits and closes or blocks the two-output return.
+R1B must not decide the rows, change T2 HOLD, or release implementation or
+invocation.
 
 ## Parked Operator Checkpoint
 
@@ -232,5 +237,32 @@ runtime, or operator-decision authority.
 ## GC-020 Marker - EAIC-KR-R1 Material Continuity Sync
 
 This handoff records material parent commit `50d74822a`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - EAIC-KR-R1B Dispatch Continuity
+
+Authorized continuity scope: record R1B dispatch material commit `c57ebd5df`,
+release manual copy/paste worker execution, and retain all T2 and invocation
+checkpoints.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator approved proceeding with Codex as
+reviewer and Claude as manual worker, without CLI/MCP invocation.
+
+Rollback boundary: revert this five-path continuity set together if dispatch
+commit `c57ebd5df` is reverted. Do not partially release T2, invocation,
+public, runtime, or operator-decision authority.
+
+## GC-020 Marker - EAIC-KR-R1B Dispatch Continuity Sync
+
+This handoff records material parent commit `c57ebd5df`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.

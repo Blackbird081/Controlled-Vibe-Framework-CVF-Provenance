@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=author and manually dispatch the documentation-only EAIC-KR-R1B T2 decision-evidence supplement; parked checkpoint=T2 release, operator decisions, agent CLI/MCP, provider/API/account use, process testing, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator manual copy/paste of the committed EAIC-KR-R1B packet to Claude, then independent review/closure; parked checkpoint=T2 release, operator decisions, agent CLI/MCP, provider/API/account/network/browser use, process testing, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| EAIC-KR-R1B T2 decision-evidence supplement dispatch | `c57ebd5df` | DISPATCH_READY after 75/75 pre-dispatch and 83/83 pre-commit PASS; manual copy/paste only, exact two no-commit documentation outputs, T2 HOLD and invocation moratorium retained. |
 | EAIC-KR-R1 CVF 23.07 external repository intake and adversarial review | `50d74822a` | COMPLETE_VERIFIED intake with 231/231 terminal file classifications, pinned Brainless evidence boundary, repaired deterministic manifest hash, and Claude adversarial review APPROVE_WITH_REPAIRS resolved; R1B decision-evidence supplement authoring is next while T2 and invocation remain parked. |
 | Public seven-step and provider-claim reconciliation | `e26ae7e97` | CLOSED_PASS_BOUNDED. Public commit `6ce1cf00c` exported the exact seven-step loop and restored the R65/L-007 two-certified-lane boundary; OpenAI remains EXPERIMENTAL, public static CI passed 8/8, ADIF-0046 records projection-regression learning, and EAIC-KR T2 remains parked. |
 | Continuous Projection T4 and roadmap bounded closure | `5885cf32f` | CLOSED_BLOCKED_BOUNDED; T1-T3 retained, R3 target script did not execute due spaced-path argument splitting, ADIF-0045 recorded, no R4 or retry authorized; zero provider/CLI/MCP/browser/network calls. |
@@ -343,14 +344,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `portable_clone_continuity_published_verified`
 
-EAIC-KR-R1 intake and adversarial review closed at material commit
-`50d74822a`. The next allowed move is author and manually dispatch R1B as a
-documentation-only T2 decision-evidence supplement. R1B may not change the T2
-HOLD, infer operator decisions, invoke CLI/MCP/provider/API/account services,
-run external source or process tests, implement runtime/checker/package/UI
-changes, public-sync, push, deploy, or lift the invocation moratorium.
-Conversation provenance remains parked. Latest closed numbered LHW wave
-remains `LHW24`.
+EAIC-KR-R1B dispatched at material commit `c57ebd5df`. The next allowed move
+is operator manual copy/paste to the assigned Claude worker, followed by
+independent reviewer audit and closure. The worker may create exactly two
+allowed outputs and must not commit. R1B may not change the T2 HOLD, infer
+operator decisions, invoke another agent through CLI/MCP, use
+provider/API/account/network/browser surfaces, run external source or process
+tests, implement runtime/checker/package/UI changes, public-sync, push, deploy,
+or lift the invocation moratorium. Conversation provenance remains parked.
+Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the
 next implementation task.
