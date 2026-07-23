@@ -13686,7 +13686,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "EAIC-KR-T2 provider-neutral policy semantics is independently closed with reviewer repairs at material commit 9322829fb. Next allowed move is operator review of whether to authorize a documentation-only T3 architecture and threat-model packet; no T3 dispatch is implied. Agent invocation through CLI/MCP, provider/API/account/network/browser use, external process testing, runtime/checker/package/UI implementation, public-sync, push, deploy, and invocation-moratorium lift remain parked. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "EAIC-KR-T3 documentation-only owner-architecture and threat-model decision-support packet is committed at material commit 48d0971e4. Next allowed move is manual copy/paste execution by one no-commit worker from that exact clean execution base, followed by independent reviewer closure. Final owner selection remains operator-owned. Agent invocation through CLI/MCP, provider/API/account/network/browser use, external process testing, runtime/checker/package/UI implementation, T4-T5, public-sync, push, deploy, and invocation-moratorium lift remain parked. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
