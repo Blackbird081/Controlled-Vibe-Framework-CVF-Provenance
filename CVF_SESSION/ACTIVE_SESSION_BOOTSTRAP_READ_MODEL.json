@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "portable_clone_continuity_published_verified",
   "activeHandoff": "AGENT_HANDOFF_V51_2026-07-22.md",
-  "nextAllowedMove": "EAIC-KR-T3 architecture decision-support evidence is independently accepted with reviewer repairs at material commit 733a7a984. CANDIDATE-D, a new provider-neutral EAIC coordinator composing existing bounded primitives, is recommended but not ratified. Next allowed move is explicit operator acceptance, rejection, or parking of CANDIDATE-D. T4-T5, agent invocation through CLI/MCP, provider/API/account/network/browser use, external process testing, runtime/checker/package/UI implementation, public-sync, push, deploy, and invocation-moratorium lift remain parked. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "EAIC-KR-T3 is closed bounded at material commit 97a805b5b. The operator accepted CANDIDATE-D as the architecture direction only; no runtime owner is instantiated. Next allowed move is operator review of whether to authorize documentation-only T4 build-readiness and negative-proof packet authoring. T4-T5, agent invocation through CLI/MCP, provider/API/account/network/browser use, external process testing, runtime/checker/package/UI implementation, public-sync, push, deploy, and invocation-moratorium lift remain parked. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

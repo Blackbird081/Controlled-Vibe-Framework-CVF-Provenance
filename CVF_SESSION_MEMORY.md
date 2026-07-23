@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator accepts, rejects, or parks the reviewer-accepted EAIC-KR-T3 CANDIDATE-D recommendation; parked checkpoint=T4-T5, agent CLI/MCP, provider/API/account/network/browser use, process testing, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator reviews whether to authorize documentation-only EAIC-KR-T4 packet authoring; parked checkpoint=T4-T5 execution, agent CLI/MCP, provider/API/account/network/browser use, process testing, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| EAIC-KR-T3 operator architecture acceptance | `97a805b5b` | CLOSED_PASS_BOUNDED_CANDIDATE_D_ACCEPTED_T4_PARKED. The operator accepted CANDIDATE-D as architecture direction only; no runtime owner was instantiated, all nine gaps remain open, and T4 plus every invocation/runtime/public lane requires separate explicit authorization. |
 | EAIC-KR-T3 owner architecture and threat-model review | `733a7a984` | REVIEWER_ACCEPTED_WITH_REPAIRS_OPERATOR_SELECTION_PENDING. CANDIDATE-D composed coordinator recommended as the least-overreaching pattern; all nine runtime gaps remain open; source, bypass-verdict, fast-gate-signature, and corpus-registration defects repaired; ADIF-0049 added; reviewer-fast 62/62, pre-commit 83/83, and material changed set accepted. |
 | EAIC-KR-T3 owner architecture and threat-model dispatch | `48d0971e4` | DISPATCH_READY documentation-only after source-backed comparison of four owner patterns was required; final selection remains `PENDING_OPERATOR_SELECTION`; pre-dispatch 75/75 and pre-commit 83/83 PASS; manual copy/paste only, exactly two no-commit outputs, and no CLI/MCP/provider/network/process/runtime/public action. |
 | EAIC-KR-T2 provider-neutral invocation policy-semantics closure | `9322829fb` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS. D1-D4 exact, D5/D6 bounded, nine gaps retained; reviewer narrowed false repository-wide ID/receipt absence claims, corrected GAP-06 lineage and T3 classification, reconciled later-session provenance, and added ADIF-0048. T3 remains parked pending explicit operator authorization; no CLI/MCP/provider/network/process/public action. |
@@ -349,14 +350,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `portable_clone_continuity_published_verified`
 
-EAIC-KR-T2 documentation-only policy semantics is dispatched at material
-commit `d4ab02d1b`. The next allowed move is manual operator copy/paste of the
-committed work order to one no-commit worker. The worker may create exactly the
-T2 reference specification and worker return, then return
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. T3, agent invocation
-through CLI/MCP, provider/API/account/network/browser use, external process
-testing, runtime/checker/package/UI implementation, public-sync, push, deploy,
-and invocation-moratorium lift remain parked. Conversation provenance remains
+EAIC-KR-T3 is closed bounded at material commit `97a805b5b`. The operator
+accepted CANDIDATE-D as the architecture direction only; no runtime owner is
+instantiated. The next allowed move is operator review of whether to authorize
+documentation-only T4 build-readiness and negative-proof packet authoring.
+T4-T5 execution, agent invocation through CLI/MCP,
+provider/API/account/network/browser use, external process testing,
+runtime/checker/package/UI implementation, public-sync, push, deploy, and
+invocation-moratorium lift remain parked. Conversation provenance remains
 parked.
 Latest closed numbered LHW wave remains `LHW24`.
 
