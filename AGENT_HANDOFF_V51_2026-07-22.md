@@ -823,3 +823,29 @@ Rollback boundary: revert this handoff marker if material dispatch commit
 This handoff records material parent commit `42dea03c0`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - PINT-R1 Digest Repair Sync
+
+Authorized continuity scope: record PINT-R1 digest-reconciliation material
+commit `8c3f2351a`, which adds the canonical executable hashing script and
+distinguishes ordinal code-point ordering from culture-sensitive PowerShell
+ordering.
+
+Protected path:
+
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator requested reviewer resolution of the
+worker's digest blocker. This sync records the bounded dispatch repair only.
+It does not authorize external CLI/MCP invocation, provider or network use,
+runtime construction, process control, checker implementation, public-sync,
+or lifting the invocation moratorium.
+
+Rollback boundary: revert this handoff marker if digest-repair commit
+`8c3f2351a` is reverted. Do not alter unrelated continuity records.
+
+## GC-020 Marker - PINT-R1 Digest Repair Continuity
+
+This handoff records material parent commit `8c3f2351a`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
