@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 docType: reference
 
-Status: ARCHITECTURE_DECISION_SUPPORT_PENDING_OPERATOR_SELECTION
+Status: ARCHITECTURE_DIRECTION_OPERATOR_ACCEPTED_NO_BUILD_AUTHORITY
 
 Date: 2026-07-23
 
@@ -26,8 +26,9 @@ network, browser, process control, or moratorium lift.
 Applies only to architecture-comparison decision support for the T3 tranche
 of the CVF-EAIC-KR roadmap. Does not apply to runtime implementation, final
 owner ratification, provider/model selection, T4/T5 release, or any external
-action. `operatorSelectionState` for the recommendation below is
-`PENDING_OPERATOR_SELECTION`.
+action. The operator accepted CANDIDATE-D on 2026-07-23.
+`operatorSelectionState` is `ACCEPTED`; this selection does not authorize T4,
+implementation, or any external action.
 
 ## Bounded Recommendation
 
@@ -250,18 +251,18 @@ the roadmap's Roadmap Release Rules for T4.
 | --- | --- |
 | candidateId | CANDIDATE-D |
 | accountableOwnerPattern | new EAIC coordinator composing existing launcher, session-contract, receipt/execution-store, and Model-Gateway primitives |
-| operatorSelectionState | `PENDING_OPERATOR_SELECTION` |
+| operatorSelectionState | `ACCEPTED` |
+| operatorDecisionDate | `2026-07-23` |
+| operatorDecisionSource | explicit operator response `ok, accept` following independent T3 review |
 | reviewer authority | reviewer may accept this packet as adequate evidence for operator review; reviewer acceptance does not itself ratify the owner |
-| operator authority | operator may accept, reject, or park CANDIDATE-D, or select a different candidate, at their sole discretion |
+| operator authority | operator accepted CANDIDATE-D as the architecture direction; this does not release T4 or implementation |
 
 ## Authorization Boundary Statement
 
-This recommendation does not authorize build, invocation, provider use, or
-moratorium lift. It is decision support only. Ratifying CANDIDATE-D, any
-other candidate, or `PARKED_KNOWLEDGE_GAP`/`NOT_READY` instead, remains an
-explicit, separate operator decision. T4 and every implementation or
-external-action lane remain held pending that decision and, separately,
-pending fresh operator authorization and a fresh source-verified work order.
+Operator acceptance of CANDIDATE-D does not authorize build, invocation,
+provider use, or moratorium lift. It selects the architecture direction only.
+T4 and every implementation or external-action lane remain held pending fresh
+operator authorization and a fresh source-verified work order.
 
 ## Overlap And Novelty Classification
 
@@ -358,7 +359,7 @@ production, exactly as the paired work order's Purpose defines T3.
 
 ## T3 Runtime Boundary Statement
 
-This packet is `ARCHITECTURE_DECISION_SUPPORT_PENDING_OPERATOR_SELECTION`.
+This packet is `ARCHITECTURE_DIRECTION_OPERATOR_ACCEPTED_NO_BUILD_AUTHORITY`.
 It does not implement, prove, or claim: an admission mechanism, an identity
 binder, a cumulative-envelope enforcer, a usage meter, a stop-state
 supervisor, a receipt store, or a provider/model observation mechanism for
@@ -376,10 +377,11 @@ public implementation or release evidence.
 ## Claim Boundary
 
 This packet proves a source-traceable comparison of four candidate owner
-architectures against one common rubric, a threat model with named
-mitigations and owners, and a T4 negative-proof plan. It does not prove
+architectures against one common rubric, records operator acceptance of
+CANDIDATE-D, and defines a threat model with named mitigations, owners, and a
+T4 negative-proof plan. It does not prove
 architecture readiness, runtime enforcement capability, provider behavior,
-or that any proposed mechanism exists. It does not select or ratify an
+or that any proposed mechanism exists. It does not instantiate an
 implementation owner, authorize CLI/MCP/provider/API/account/network/
 browser use, authorize source execution or process testing, lift the
 invocation moratorium, or authorize public-sync, push, deployment, or

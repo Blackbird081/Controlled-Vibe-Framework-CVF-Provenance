@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_WITH_REPAIRS_OPERATOR_SELECTION_PENDING
+Status: REVIEWER_ACCEPTED_WITH_REPAIRS_OPERATOR_SELECTION_ACCEPTED_T4_PARKED
 
 docType: work-order
 
@@ -351,7 +351,7 @@ Every other path is read-only or forbidden for worker writes.
 | Worker return | dated review path in Required Artifact Manifest | worker | REQUIRED |
 | Independent completion review | Reviewer Closure Conversion path | reviewer/closer | PENDING_REVIEW |
 | Material closure commit | accepted outputs and reviewer artifacts | reviewer/closer | PENDING_REVIEW |
-| Operator selection | explicit decision over reviewer-accepted recommendation | operator | PENDING_OPERATOR_SELECTION |
+| Operator selection | explicit decision over reviewer-accepted recommendation | operator | ACCEPTED_CANDIDATE_D |
 | Session sync | required only when accepted closure changes next allowed move | session-sync steward | PENDING_REVIEW |
 
 ## Write Ownership
@@ -537,12 +537,12 @@ ratify the recommended owner.
 
 ## Operator Checkpoint
 
-Checkpoint state: `PENDING_OPERATOR_SELECTION`.
+Checkpoint state: `ACCEPTED_CANDIDATE_D`.
 
-The reviewer may accept the decision packet as adequate evidence, but only the
-operator may accept, reject, or park the recommended accountable-owner
-pattern. Until that explicit decision, T4 and every implementation or
-external-action lane remain held.
+The reviewer accepted the decision packet as adequate evidence, and the
+operator accepted CANDIDATE-D as the architecture direction on 2026-07-23.
+That selection is not execution authorization. T4 and every implementation or
+external-action lane remain held pending separate explicit authorization.
 
 ## Agent Operation Trace Block
 

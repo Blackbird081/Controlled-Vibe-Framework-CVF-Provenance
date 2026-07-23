@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_WITH_REPAIRS_OPERATOR_SELECTION_PENDING
+Status: REVIEWER_ACCEPTED_WITH_REPAIRS_OPERATOR_ACCEPTED_T4_PARKED
 
 docType: completion_review
 
@@ -145,11 +145,11 @@ live enforcement has been implemented or proved.
 
 ## Decision / Disposition
 
-The T3 decision-support evidence is accepted with reviewer repairs and is fit
-for an explicit operator selection. The reviewer recommends CANDIDATE-D.
-`operatorSelectionState` remains `PENDING_OPERATOR_SELECTION`; therefore T3
-is not finally ratified, T4 remains held, and the invocation moratorium is
-unchanged.
+The T3 decision-support evidence is accepted with reviewer repairs. The
+operator accepted the reviewer's CANDIDATE-D recommendation as the architecture
+direction on 2026-07-23. `operatorSelectionState` is `ACCEPTED`. This closes T3
+as bounded architecture selection only: T4 remains held and the invocation
+moratorium is unchanged.
 
 ## Risk / Corrective Action
 
@@ -234,12 +234,12 @@ disposition.
 | --- | --- | --- | --- |
 | Baseline | `docs/baselines/CVF_GC018_EAIC_KR_T3_OWNER_ARCHITECTURE_AND_THREAT_MODEL_2026-07-23.md` | reviewer-accepted evidence status | PASS |
 | Work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAIC_KR_T3_OWNER_ARCHITECTURE_AND_THREAT_MODEL_2026-07-23.md` | exact manifest and corrected fast-gate command | PASS |
-| Decision packet | `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T3_OWNER_ARCHITECTURE_AND_THREAT_MODEL_DECISION_PACKET.md` | CANDIDATE-D recommendation; operator selection pending | PASS |
+| Decision packet | `docs/reference/external_agent_invocation_control/CVF_EAIC_KR_T3_OWNER_ARCHITECTURE_AND_THREAT_MODEL_DECISION_PACKET.md` | CANDIDATE-D recommendation accepted as architecture direction | PASS |
 | Worker return | `docs/reviews/CVF_EAIC_KR_T3_OWNER_ARCHITECTURE_AND_THREAT_MODEL_WORKER_RETURN_2026-07-23.md` | `COMPLETE_PENDING_REVIEW`; exact no-commit evidence | PASS |
 | Completion review | this file | independent repairs and disposition | PASS |
 | ADIF learning | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0049.md` | active guidance entry | PASS |
 | Corpus registry | `docs/corpus-intelligence/registry/entries/eaic-kr-t3-control-plane-source-surfaces.json`; generated aggregate | two Control Plane evidence files covered | PASS |
-| Roadmap state | EAIC-KR roadmap | T3 evidence accepted; operator selection and T4 held | PASS |
+| Roadmap state | EAIC-KR roadmap | T3 architecture accepted; T4 held | PASS |
 | Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Acceptance Receipt Assertion Matrix
@@ -251,7 +251,7 @@ disposition.
 | gap coverage | GAP-01 through GAP-09, all open | nine mapped and open | PASS |
 | threat coverage | minimum thirteen named threats | THREAT-01 through THREAT-13 | PASS |
 | negative proof | deterministic NP-01 through NP-09 | explicit verdict rules after repair | PASS |
-| operator selection | pending | `PENDING_OPERATOR_SELECTION` | PASS |
+| operator selection | CANDIDATE-D accepted | `ACCEPTED` | PASS |
 | worker manifest | exactly two files, no commit/stage | exact | PASS |
 | external action | zero | zero | PASS |
 
@@ -310,9 +310,9 @@ explicit.
 
 ### Claim Update
 
-T3 evidence is adequate for operator selection of an architecture pattern.
-It is not evidence of build readiness, runtime control, or moratorium-lift
-readiness.
+T3 evidence is adequate, and CANDIDATE-D is operator-accepted as the
+architecture direction. This is not evidence of build readiness, runtime
+control, or moratorium-lift readiness.
 
 ## Agent Operation Trace Block
 
@@ -328,8 +328,8 @@ readiness.
 | Before status evidence | HEAD `b84055f59`; exactly two untracked worker outputs; empty index and tracked diff |
 | After status evidence | reviewer repair set and completion review ready for closure gates |
 | Diff evidence | `git diff --name-status`; `git status --short --untracked-files=all`; closure gate output |
-| Approval boundary | documentation review and closure only; final owner selection and all external/runtime actions held |
-| Claim boundary | accepted decision support with repairs; no runtime or owner-ratification claim |
+| Approval boundary | architecture direction acceptance only; T4 and all external/runtime actions held |
+| Claim boundary | accepted CANDIDATE-D direction with repairs; no runtime or build claim |
 | Agent type | reviewer/closer |
 | Invocation ID | `eaic-kr-t3-review-2026-07-23` |
 | Expected manifest | ten material paths listed in Target paths |
@@ -347,7 +347,7 @@ readiness.
 | actionEvidence | ACTION_EVIDENCE_PRESENT through local source inspection, exact diff, and governance gate output |
 | invocationBoundary | no agent CLI/MCP, provider, browser, network, or external process invocation |
 | interceptionBoundary | no claim that an external launch path is intercepted |
-| claimLanguage | reviewer-accepted decision support, recommended pattern, open gaps, and pending operator selection |
+| claimLanguage | operator-accepted architecture direction, open gaps, and parked T4 |
 | forbiddenExpansion | owner ratification, T4 release, implementation, runtime enforcement, provider/model selection, cost claim, public claim, or moratorium lift |
 
 ## Public Export Disposition
@@ -359,9 +359,9 @@ implementation or release evidence.
 
 ## Claim Boundary
 
-This review accepts the T3 decision-support evidence after bounded repairs and
-recommends CANDIDATE-D for operator selection. It does not ratify that owner,
-close any GAP-01 through GAP-09 mechanism, authorize T4/T5, invoke an agent,
-control a process, measure live usage, select a provider/model, implement
-runtime, lift the moratorium, or establish public, security, cost, production,
-or live-governance readiness.
+This review records CANDIDATE-D as the operator-accepted architecture
+direction after bounded reviewer repairs. It does not instantiate a runtime
+owner, close any GAP-01 through GAP-09 mechanism, authorize T4/T5, invoke an
+agent, control a process, measure live usage, select a provider/model,
+implement runtime, lift the moratorium, or establish public, security, cost,
+production, or live-governance readiness.
