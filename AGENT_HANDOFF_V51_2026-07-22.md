@@ -252,6 +252,40 @@ This handoff records material parent commit `50d74822a`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
 
+## GC-020 Marker - Golden Downstream Public-First Recovery Continuity
+
+This handoff records material recovery parent commit `a47f3d71f`. The
+continuity child SHA cannot be known before commit creation, so the
+active-session checker may accept this parent SHA for this dedicated
+session-sync-only commit.
+
+The material commit absorbs the four misplaced public-first bootstrap commits
+into provenance, repairs the provenance/public mapped-filename test seam,
+records ADIF-0050, and preserves the incident review. Dedicated local harness
+evidence is PASS 68/68. Public corrective projection and both remote receipts
+remain pending; this marker does not claim final recovery closure.
+
+## Core Guard Self-Protection Authorization - Golden Downstream Recovery Sync
+
+Authorized continuity scope: record material recovery commit `a47f3d71f` and
+retain the current operator-selected next-move posture until the public
+corrective projection and final receipt sync are complete.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V51_2026-07-22.md`
+
+Operator authorization: the operator explicitly instructed the reviewer on
+2026-07-23 to classify, recover, and synchronize the misplaced bootstrap
+learning according to CVF rules.
+
+Rollback boundary: revert only this continuity marker if the recovery commit
+is rejected. Do not rewrite public history or revert unrelated prior
+continuity.
+
+Scope boundary: no provider/API, CLI/MCP agent invocation, runtime,
+deployment, branch-protection change, force push, or new roadmap is released.
+
 ## Core Guard Self-Protection Authorization - EAIC-KR-R1B Dispatch Continuity
 
 Authorized continuity scope: record R1B dispatch material commit `c57ebd5df`,
