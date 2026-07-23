@@ -13674,7 +13674,6 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "EAIC-KR-T2 documentation-only policy semantics is dispatched at material commit d4ab02d1b. Next allowed move is manual operator copy/paste of the committed work order to one no-commit worker. The worker may create exactly the T2 reference specification and worker return, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3, agent invocation through CLI/MCP, provider/API/account/network/browser use, external process testing, runtime/checker/package/UI implementation, public-sync, push, deploy, and invocation-moratorium lift remain parked. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxT4R5Dispatch20260720": {
     "status": "DISPATCH_READY",
     "batchId": "CVF-WEB-UX-T4-R5",
@@ -13687,6 +13686,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
+  "nextAllowedMove": "EAIC-KR-T2 provider-neutral policy semantics is independently closed with reviewer repairs at material commit 9322829fb. Next allowed move is operator review of whether to authorize a documentation-only T3 architecture and threat-model packet; no T3 dispatch is implied. Agent invocation through CLI/MCP, provider/API/account/network/browser use, external process testing, runtime/checker/package/UI implementation, public-sync, push, deploy, and invocation-moratorium lift remain parked. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",

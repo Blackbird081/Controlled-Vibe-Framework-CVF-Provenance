@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=manual operator copy/paste of the committed EAIC-KR-T2 documentation work order to one no-commit worker; parked checkpoint=T3, agent CLI/MCP, provider/API/account/network/browser use, process testing, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator review of whether to authorize a documentation-only EAIC-KR-T3 architecture and threat-model packet; parked checkpoint=T3 dispatch, agent CLI/MCP, provider/API/account/network/browser use, process testing, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| EAIC-KR-T2 provider-neutral invocation policy-semantics closure | `9322829fb` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS. D1-D4 exact, D5/D6 bounded, nine gaps retained; reviewer narrowed false repository-wide ID/receipt absence claims, corrected GAP-06 lineage and T3 classification, reconciled later-session provenance, and added ADIF-0048. T3 remains parked pending explicit operator authorization; no CLI/MCP/provider/network/process/public action. |
 | EAIC-KR-T2 provider-neutral invocation policy-semantics dispatch | `d4ab02d1b` | DISPATCH_READY documentation-only after operator ratified D1-D4; provider/model assignment reconciliation added; author-fast 5/5, pre-dispatch 75/75, and pre-commit 83/83 PASS; manual copy/paste only, exact two no-commit outputs, T3 and invocation moratorium retained. |
 | EAIC-KR-R1B T2 decision-evidence supplement closure | `1843c5123` | REVIEWER_ACCEPTED_WITH_REPAIRS_T2_HOLD_UNCHANGED. D1 is INSUFFICIENT_EVIDENCE; D2-D4 retain proposed defaults as non-ratifying recommendations. Reviewer repaired stale manifest evidence, corpus scope trace, and provider-backed host accounting; ADIF-0047 records the reusable cost-evidence learning. |
 | EAIC-KR-R1B T2 decision-evidence supplement dispatch | `c57ebd5df` | DISPATCH_READY after 75/75 pre-dispatch and 83/83 pre-commit PASS; manual copy/paste only, exact two no-commit documentation outputs, T2 HOLD and invocation moratorium retained. |

@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2002,
+  "stateOrder": 2003,
   "stateKey": "nextAllowedMove",
-  "value": "EAIC-KR-T2 documentation-only policy semantics is dispatched at material commit d4ab02d1b. Next allowed move is manual operator copy/paste of the committed work order to one no-commit worker. The worker may create exactly the T2 reference specification and worker return, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T3, agent invocation through CLI/MCP, provider/API/account/network/browser use, external process testing, runtime/checker/package/UI implementation, public-sync, push, deploy, and invocation-moratorium lift remain parked. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave."
+  "value": "EAIC-KR-T2 provider-neutral policy semantics is independently closed with reviewer repairs at material commit 9322829fb. Next allowed move is operator review of whether to authorize a documentation-only T3 architecture and threat-model packet; no T3 dispatch is implied. Agent invocation through CLI/MCP, provider/API/account/network/browser use, external process testing, runtime/checker/package/UI implementation, public-sync, push, deploy, and invocation-moratorium lift remain parked. Conversation provenance remains parked. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave."
 }

@@ -332,3 +332,32 @@ provider, runtime, public, or production authority.
 This handoff records material parent commit `d4ab02d1b`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - EAIC-KR-T2 Closure Continuity
+
+Authorized continuity scope: record T2 material closure commit `9322829fb`,
+route the next move to operator review of a documentation-only T3 architecture
+and threat-model packet, and retain every invocation, provider, runtime,
+public, and production checkpoint.
+
+Protected paths:
+
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `AGENT_HANDOFF_V51_2026-07-22.md`.
+
+Operator authorization: the operator assigned Codex as independent
+reviewer/closer, requested finding repair and reusable learning capture, and
+did not authorize CLI/MCP invocation.
+
+Rollback boundary: revert this five-path continuity set together if material
+commit `9322829fb` is reverted. Do not partially release T3, invocation,
+provider, runtime, public, or production authority.
+
+## GC-020 Marker - EAIC-KR-T2 Closure Continuity Sync
+
+This handoff records material parent commit `9322829fb`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
