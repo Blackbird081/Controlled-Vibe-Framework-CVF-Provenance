@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_WITH_REPAIRS
 
 Batch ID: EAIC-KR-R1B
 
@@ -63,7 +63,7 @@ revised, or treated as insufficiently supported.
 | --- | --- | --- |
 | operator instruction | proceed with reviewer-dispatched manual worker execution | ACCEPT |
 | active session | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | ACCEPT |
-| paired baseline | `docs/baselines/CVF_GC018_EAIC_KR_R1B_T2_DECISION_EVIDENCE_SUPPLEMENT_2026-07-23.md` | DISPATCH_READY |
+| paired baseline | `docs/baselines/CVF_GC018_EAIC_KR_R1B_T2_DECISION_EVIDENCE_SUPPLEMENT_2026-07-23.md` | REVIEWER_ACCEPTED_WITH_REPAIRS |
 | source intake | `docs/audits/CVF_EAIC_KR_R1_CVF_23_07_EXTERNAL_REPOSITORY_INTAKE_AUDIT_2026-07-23.md` | ACCEPT |
 | adversarial review | `docs/audits/CVF_EAIC_KR_R1_ADVERSARIAL_REVIEW_2026-07-23.md` | REPAIRS_ACCEPTED |
 | held policy owner | EAIC-KR T2 baseline and work order | RETAINED_HOLD |
