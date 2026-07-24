@@ -92,3 +92,8 @@ accept this parent SHA for this dedicated session-sync-only commit.
 
 This handoff records documentation closure and session routing only. It makes
 no runtime, provider, process, public, package, checker, or CLI/MCP claim.
+
+## GC-020 Marker - PINT-R2 Rotation Child
+
+This handoff records continuity commit `fcd2361b8`. The next commit is limited
+to this handoff marker so the checker may accept its parent SHA.
