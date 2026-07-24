@@ -367,21 +367,19 @@ separate authorized tranche.
 The CVF 23.07 final owner-surface absorption reconciliation remains
 independently closed at material commit `ef2c3479b`.
 
-PINT-R1 is independently closed with reviewer repairs at material commit
-`9b26de3dc`: the 50-file corpus and canonical digests reconcile; six advisory
-doctrine groups are retained, two owner-source checks are deferred, and two
-variants are closed as no-new-value. The EAIC MCP/CLI runtime knowledge gap
-and invocation moratorium remain parked.
+PINT-R2 owner-source comparison is reviewer-accepted and dispatch-ready at
+material commit `15dcf624c`. PINT-R1 remains independently closed at material
+commit `9b26de3dc`.
 
-The next allowed move is an operator checkpoint to select a new external
-repository/corpus for governed intake or explicitly authorize one deferred
-PINT owner-source comparison. No
-candidate, public-gate-profile implementation, runtime/checker/package/UI
-implementation, T5, agent invocation through CLI/MCP,
-provider/API/account/network/browser use, external-agent or studied-process
-activity, additional public-sync, deploy, or invocation-moratorium lift is
-automatically released. Conversation provenance remains a secondary-input
-boundary.
+The next allowed move is operator manual copy/paste of the committed PINT-R2
+work order to one no-commit worker. The exact scope is two semantic candidates,
+three retained PINT files, eleven named owner source/test files, and two
+allowed review outputs. Candidate lane tokens are taxonomy-only and
+`NOT_RELEASED`. No T5, runtime/checker/package/UI implementation, agent
+invocation through CLI/MCP, provider/API/account/network/browser use,
+external-agent or studied-process activity, public-sync, deploy, or
+invocation-moratorium lift is authorized. Conversation provenance remains a
+secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

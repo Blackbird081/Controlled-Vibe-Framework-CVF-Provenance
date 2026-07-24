@@ -13686,7 +13686,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "PINT-R1 is independently closed with reviewer repairs at material commit 9b26de3dc: all 50 files and canonical digests reconcile; six advisory doctrine groups are retained, two owner-source checks are deferred, and two variants are closed as no-new-value. The EAIC MCP/CLI runtime knowledge gap and invocation moratorium remain parked. The golden downstream bootstrap public-first incident remains closed at provenance review commit ec362af35 and public corrective commit 27137db4d; the public-projection gate-profile gap remains parked. The CVF 23.07 final owner-surface absorption reconciliation remains closed at material commit ef2c3479b. The next allowed move is an operator checkpoint to select a new external repository/corpus for governed intake or explicitly authorize one deferred PINT owner-source comparison. No candidate, T5, public-gate-profile implementation, runtime/checker/package/UI implementation, agent invocation through CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, additional public-sync, deploy, or invocation-moratorium lift is automatically released. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "PINT-R2 owner-source comparison is reviewer-accepted and dispatch-ready at material commit 15dcf624c. The next allowed move is operator manual copy/paste of the committed PINT-R2 work order to one no-commit worker. The worker may compare only the exact three-file retained subset against the eleven named owner source/test files and author only the two allowed review outputs. PINT-R1 remains independently closed at material commit 9b26de3dc. The EAIC MCP/CLI runtime knowledge gap and invocation moratorium remain parked. No candidate lane is released; PACKAGE_CANDIDATE, RUNTIME_CANDIDATE, and CHECKER_CANDIDATE are taxonomy-only in this dispatch. No T5, runtime/checker/package/UI implementation, agent invocation through CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, public-sync, deploy, or invocation-moratorium lift is authorized. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13954,5 +13954,16 @@
     "eaicPosition": "PARKED_KNOWLEDGE_GAP unchanged",
     "nextAllowedMove": "operator checkpoint to select a new governed intake or explicitly authorize one deferred PINT owner-source comparison",
     "claimBoundary": "Documentation-only absorption closure. No CLI/MCP invocation, provider/API/account/network/browser use, process action, runtime/checker/package/UI implementation, public sync, or invocation-moratorium lift."
+  },
+  "pintR2ProviderHealthCapabilityOwnerSourceComparisonDispatch20260725": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS",
+    "date": "2026-07-25",
+    "materialCommit": "15dcf624c",
+    "baseline": "docs/baselines/CVF_GC018_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_2026-07-25.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_2026-07-25.md",
+    "scope": "two semantic candidates covering three retained PINT files compared against eleven named owner source/test files",
+    "reviewerRepairs": "corrected provider-health state and test inventory, corpus cardinality, unresolved counts, role routing, legacy coverage disposition, lane-release framing, and neutralized premature semantic hints",
+    "nextAllowedMove": "operator manual copy/paste to one no-commit worker at the committed execution base head",
+    "claimBoundary": "Documentation-only comparison dispatch. Candidate lanes remain NOT_RELEASED taxonomy coverage. No CLI/MCP invocation, provider/API/account/network/browser use, process action, runtime/checker/package/UI implementation, public sync, or invocation-moratorium lift."
   }
 }

@@ -879,3 +879,16 @@ commit `9b26de3dc` is reverted. Do not alter unrelated continuity records.
 This handoff records material parent commit `9b26de3dc`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - PINT-R2 Dispatch Sync
+
+Authorized scope: record reviewer-accepted dispatch commit `15dcf624c`.
+Protected paths:
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/pintR2ProviderHealthCapabilityOwnerSourceComparisonDispatch20260725.json`;
+- `CVF_SESSION_MEMORY.md`.
+Operator authorization: reviewer closure and manual Claude handoff only.
+No CLI/MCP, provider/network/process, implementation, or public action.
+GC-020 marker: parent `15dcf624c`; revert this set if the parent is reverted.
