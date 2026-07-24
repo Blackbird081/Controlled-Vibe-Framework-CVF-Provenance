@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2026,
+  "stateKey": "pintR2ProviderHealthCapabilityOwnerSourceComparisonClosure20260725",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",
+    "date": "2026-07-25",
+    "materialCommit": "f48ba95f2",
+    "audit": "docs/audits/CVF_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_2026-07-25.md",
+    "workerReturn": "docs/reviews/CVF_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_WORKER_RETURN_2026-07-25.md",
+    "corpusRegistryEntry": "docs/corpus-intelligence/registry/entries/pint-r2-provider-owner-source-comparison.json",
+    "scope": "three retained PINT files compared with eight named owner source/test files and one corroborating owner test",
+    "candidateA": "ENRICH_EXISTING documentation value; no runtime or enum release",
+    "candidateB": "DEFER_PENDING_OWNER_SOURCE_VERIFICATION; NO_NEW_VALUE rejected because advisory value remains",
+    "reviewerRepairs": "restored three-file corpus cardinality, finalized candidate dispositions, corrected learning classification, and added required GC-051 coverage",
+    "nextAllowedMove": "operator checkpoint for a new governed intake or explicit Candidate A documentation enrichment",
+    "claimBoundary": "No CLI/MCP invocation, provider/network/process action, runtime/checker/package/UI implementation, public sync, or invocation-moratorium lift."
+  }
+}

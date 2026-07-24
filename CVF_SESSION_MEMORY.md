@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V51_2026-07-22.md`
+4. `AGENT_HANDOFF_V52_2026-07-25.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V51_2026-07-22.md` |
+| Active handoff | `AGENT_HANDOFF_V52_2026-07-25.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V51_2026-07-22.md; next allowed move=operator selection of a new external repository/corpus for governed intake or one exact conditional candidate whose reopen condition is satisfied; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator checkpoint after PINT-R2 bounded closure; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -367,19 +367,18 @@ separate authorized tranche.
 The CVF 23.07 final owner-surface absorption reconciliation remains
 independently closed at material commit `ef2c3479b`.
 
-PINT-R2 owner-source comparison is reviewer-accepted and dispatch-ready at
-material commit `15dcf624c`. PINT-R1 remains independently closed at material
-commit `9b26de3dc`.
+PINT-R2 is independently closed bounded with reviewer repairs at material
+commit `f48ba95f2`. Three retained files and nine owner source/test files were
+reconciled. Candidate A is retained as `ENRICH_EXISTING` documentation value;
+Candidate B is `DEFER_PENDING_OWNER_SOURCE_VERIFICATION`.
 
-The next allowed move is operator manual copy/paste of the committed PINT-R2
-work order to one no-commit worker. The exact scope is two semantic candidates,
-three retained PINT files, eleven named owner source/test files, and two
-allowed review outputs. Candidate lane tokens are taxonomy-only and
-`NOT_RELEASED`. No T5, runtime/checker/package/UI implementation, agent
-invocation through CLI/MCP, provider/API/account/network/browser use,
-external-agent or studied-process activity, public-sync, deploy, or
-invocation-moratorium lift is authorized. Conversation provenance remains a
-secondary-input boundary.
+The next allowed move is an operator checkpoint to select a new external
+repository/corpus or explicitly authorize a bounded documentation enrichment
+for Candidate A. No candidate lane, T5, runtime/checker/package/UI
+implementation, agent invocation through CLI/MCP,
+provider/API/account/network/browser use, external-agent or studied-process
+activity, public-sync, deploy, or invocation-moratorium lift is authorized.
+Conversation provenance remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 
 `Policy_Local` remains a closed workspace enforcement proof target, not the

@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V51_2026-07-22.md",
+  "activeHandoff": "AGENT_HANDOFF_V52_2026-07-25.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -84,7 +84,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V47_2026-07-18.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V48_2026-07-18.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V49_2026-07-20.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V50_2026-07-22.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V50_2026-07-22.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V51_2026-07-22.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
@@ -13686,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "PINT-R2 owner-source comparison is reviewer-accepted and dispatch-ready at material commit 15dcf624c. The next allowed move is operator manual copy/paste of the committed PINT-R2 work order to one no-commit worker. The worker may compare only the exact three-file retained subset against the eleven named owner source/test files and author only the two allowed review outputs. PINT-R1 remains independently closed at material commit 9b26de3dc. The EAIC MCP/CLI runtime knowledge gap and invocation moratorium remain parked. No candidate lane is released; PACKAGE_CANDIDATE, RUNTIME_CANDIDATE, and CHECKER_CANDIDATE are taxonomy-only in this dispatch. No T5, runtime/checker/package/UI implementation, agent invocation through CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, public-sync, deploy, or invocation-moratorium lift is authorized. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "PINT-R2 is independently closed bounded with reviewer repairs at material commit f48ba95f2. Three retained files and nine owner source/test files reconcile. Candidate A is retained as ENRICH_EXISTING documentation value; Candidate B is DEFER_PENDING_OWNER_SOURCE_VERIFICATION because no task-classification owner exists. The next allowed move is an operator checkpoint to select a new external repository/corpus or explicitly authorize a bounded documentation enrichment for Candidate A. The EAIC MCP/CLI runtime knowledge gap and invocation moratorium remain parked. No candidate lane, T5, runtime/checker/package/UI implementation, agent invocation through CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, public-sync, deploy, or invocation-moratorium lift is authorized. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13965,5 +13966,19 @@
     "reviewerRepairs": "corrected provider-health state and test inventory, corpus cardinality, unresolved counts, role routing, legacy coverage disposition, lane-release framing, and neutralized premature semantic hints",
     "nextAllowedMove": "operator manual copy/paste to one no-commit worker at the committed execution base head",
     "claimBoundary": "Documentation-only comparison dispatch. Candidate lanes remain NOT_RELEASED taxonomy coverage. No CLI/MCP invocation, provider/API/account/network/browser use, process action, runtime/checker/package/UI implementation, public sync, or invocation-moratorium lift."
+  },
+  "pintR2ProviderHealthCapabilityOwnerSourceComparisonClosure20260725": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",
+    "date": "2026-07-25",
+    "materialCommit": "f48ba95f2",
+    "audit": "docs/audits/CVF_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_2026-07-25.md",
+    "workerReturn": "docs/reviews/CVF_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_WORKER_RETURN_2026-07-25.md",
+    "corpusRegistryEntry": "docs/corpus-intelligence/registry/entries/pint-r2-provider-owner-source-comparison.json",
+    "scope": "three retained PINT files compared with eight named owner source/test files and one corroborating owner test",
+    "candidateA": "ENRICH_EXISTING documentation value; no runtime or enum release",
+    "candidateB": "DEFER_PENDING_OWNER_SOURCE_VERIFICATION; NO_NEW_VALUE rejected because advisory value remains",
+    "reviewerRepairs": "restored three-file corpus cardinality, finalized candidate dispositions, corrected learning classification, and added required GC-051 coverage",
+    "nextAllowedMove": "operator checkpoint for a new governed intake or explicit Candidate A documentation enrichment",
+    "claimBoundary": "No CLI/MCP invocation, provider/network/process action, runtime/checker/package/UI implementation, public sync, or invocation-moratorium lift."
   }
 }
