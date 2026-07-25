@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_BOUNDED_NOT_READY_INTERFACE_CHANGE_T1_T4_HOLD
+Status: T0_PASS_T0A_PASS_BOUNDED_NOT_READY_INTERFACE_CHANGE_T1I_DISPATCH_READY_T1_T4_HOLD
 
 ## Dispatch Prompt Envelope
 
@@ -26,7 +26,11 @@ Decision: T0 closed not-ready at commit `09cf1634a`. T0A then closed with
 `NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE`: the preferred future
 GC-009 owner is identifiable, but the current gateway interface cannot
 preserve the Web context and durable evidence boundary without a separately
-authorized interface change. Keep T1-T4 in `HOLD_*`.
+authorized interface change. The operator then authorized a fresh
+source-verified T1-Interface design packet (Batch ID
+`GC009-GC010-PCALLER-T1I`) to specify exactly that interface change and its
+receipt/audit adapter, without releasing any T1 runtime composition. T1
+runtime composition, T2, T3, and T4 remain in `HOLD_*`.
 
 ## Known Gap
 
@@ -91,7 +95,8 @@ released by its own fresh GC-018 and work order per the tranche table.
 |---|---|---|
 | T0 | Source-verified caller ownership and architecture decision (documentation only; no runtime mutation) | CLOSED_PASS_BOUNDED with `NOT_READY_MISSING_SOURCE_VERIFIED_OWNER` |
 | T0A | Define exact future GC-009 owner contract and explicit GC-010 lane disposition (documentation only) | CLOSED_PASS_BOUNDED with `NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` |
-| T1 | Minimal production composition (smallest changed set wiring an accepted owner contract) | HOLD_UNTIL_T0A_INDEPENDENT_CLOSURE_AND_FRESH_OPERATOR_AUTHORITY |
+| T1I | Source-verify the exact context-preserving gateway interface method and receipt/audit adapter shape T0A found missing (documentation only; no runtime mutation) | DISPATCH_READY (Batch ID `GC009-GC010-PCALLER-T1I`) |
+| T1 | Minimal production composition (smallest changed set wiring an accepted owner contract and the T1I-specified interface) | HOLD_UNTIL_T1I_INDEPENDENT_CLOSURE_AND_FRESH_OPERATOR_AUTHORITY |
 | T2 | Positive and fail-closed negative invocation proof for the T1 composition | HOLD_UNTIL_T1_INDEPENDENT_CLOSURE |
 | T3 | Projection of T2-proven evidence through an existing operator surface (existing CLI readout or existing Web operator page; no new surface) | HOLD_UNTIL_T2_INDEPENDENT_CLOSURE |
 | T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | HOLD_UNTIL_T3_INDEPENDENT_CLOSURE |
@@ -120,17 +125,34 @@ resolves duplicate-evaluation handling, and assigns GC-010 to the same future
 T1, a separate packet, or a concrete parked condition. T0A may recommend a
 future packet but cannot release T1.
 
+### T1I - Interface And Receipt-Adapter Design (DISPATCH_READY)
+
+Documentation-only. Released after T0A's independent not-ready closure by a
+fresh operator authorization citing the interface-change gap. A no-commit
+worker source-verifies the exact context-preserving `MandatoryGateway`
+method signature (accepting an already-built `GuardRequestContext` verbatim,
+preserving `requestId`), the exact duplicate-evaluation prevention
+mechanism, the exact bypass-configuration requirement, and the exact
+receipt/audit adapter field projection into the existing Web receipt/audit
+seams. T1I does not implement any of these; it only specifies them so a
+later, separately authorized T1 packet has an unambiguous, non-lossy
+contract to build against. Full detail in
+`docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md`.
+
 ### T1 - Minimal Production Composition (HOLD)
 
-Scope, once released by an accepted T0A ready/partial owner-contract decision
-plus fresh operator authority and a fresh GC-018/work order: implement the
+Scope, once released by an accepted T1I interface-spec-ready decision plus
+fresh operator authority and a fresh GC-018/work order: implement the
 smallest changed set that lets the selected caller construct `MandatoryGateway` (via
-`createMandatoryGateway`) and/or `AgentExecutionRuntime`, and invoke
+`createMandatoryGateway`) and/or `AgentExecutionRuntime`, using the
+context-preserving method and receipt/audit adapter T1I specifies, and invoke
 `.check()`/`.assertAllowed()` or `.run()` on a real (non-test) request path.
 T1 does not add package exports, barrel exports, or CLI/MCP surfaces beyond
-what T0A identifies as required for the chosen seam. T1 remains `HOLD_*` until
-a dedicated GC-018 releases it with T0A's accepted decision
-cited by path and commit.
+what T0A and T1I identify as required for the chosen seam. T1 remains
+`HOLD_*` until a dedicated GC-018 releases it with T0A's and T1I's accepted
+decisions cited by path and commit.
 
 ### T2 - Positive And Fail-Closed Negative Invocation Proof (HOLD)
 
@@ -413,6 +435,9 @@ batch is authorized by this artifact.
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md`
 - `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md`
+- `docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_COMPLETION_2026-07-25.md`
+- `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md`
 - `docs/reference/system_chain/gaps/entries/gc009_gc010_no_production_caller.json`
 - `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T2_CALLER_VERIFICATION_COMPLETION_2026-07-15.md`
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
@@ -421,9 +446,11 @@ batch is authorized by this artifact.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md` | `Status: CLOSED_PASS_BOUNDED_NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_COMPLETION_2026-07-25.md` | independent bounded not-ready closure | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_BOUNDED_NOT_READY_INTERFACE_CHANGE_T1_T4_HOLD` | PASS |
+| Work order status (T0A) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md` | `Status: CLOSED_PASS_BOUNDED_NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` | PASS |
+| Completion or reviewer artifact (T0A) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_COMPLETION_2026-07-25.md` | independent bounded not-ready closure | PASS |
+| Work order status (T1I) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
+| Completion or reviewer artifact (T1I) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_COMPLETION_2026-07-25.md` | does not exist yet | N/A with reason: pending T1I dispatch, execution, and closure |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_BOUNDED_NOT_READY_INTERFACE_CHANGE_T1I_DISPATCH_READY_T1_T4_HOLD` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
