@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_REDISPATCH_READY_WITH_REPAIRS
+Status: CLOSED_PASS_BOUNDED_NOT_READY_MISSING_SOURCE_VERIFIED_OWNER
 
 Batch ID: GC009-GC010-PCALLER-T0
 
@@ -10,9 +10,9 @@ Date: 2026-07-25
 
 dispatchBaseHead: `62cafd46d`
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+executionBaseHead: `eefe1e1e2`
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: `eefe1e1e2`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -31,9 +31,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT.
 Current-time notes: packet originally authored 2026-07-25 at base `4569a301d`
 and redispatched from repair base `62cafd46d`. No live
 provider key authorization exists or is needed for this tranche. This work
-order is reviewer-accepted and redispatch-ready after the heading-depth
-repair. The first worker attempt stopped at `BLOCKED_WITH_REASON` before
-candidate-owner comparison; T0 substantive execution remains incomplete.
+order is independently closed after the repaired redispatch. The first worker
+attempt stopped at `BLOCKED_WITH_REASON`; the resumed worker completed the
+candidate-owner comparison and the reviewer accepted the not-ready result.
 
 Do-not-misread notes: this is a source-comparison and architecture-decision
 tranche only. It does not authorize wiring, exporting, invoking, or changing
@@ -42,12 +42,12 @@ acceptable and expected terminal disposition; the worker must not force
 `READY_FOR_T1_MINIMAL_PRODUCTION_COMPOSITION` if the evidence does not support
 it.
 
-Required first actions: capture `executionBaseHead` and `git status --short`,
+Required first actions (satisfied): capture `executionBaseHead` and `git status --short`,
 complete every item in `## Required First Reads`, run the ADIF resolver query
 below and compare its output against this packet's disclosure, run
 `pre-implementation`, then perform the seam comparison.
 
-Return contract: leave both output files uncommitted and return
+Return contract (satisfied): leave both output files uncommitted and return
 `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`, each with
 `executionBaseHead`, actual `git status --short`, and the required evidence
 listed in `## Evidence Requirements`.
@@ -113,6 +113,12 @@ Allowed scope:
 - run the listed read-only governance gates and record their results;
 - repair allowed-scope formatting/structural defects in the worker's own two
   output files and rerun the failed gate.
+- reviewer/closer closure conversion additionally owns
+  `docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md`,
+  `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_WORKER_RETURN_2026-07-25.md`,
+  `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_COMPLETION_2026-07-25.md`,
+  and
+  `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md`.
 
 Forbidden scope:
 
@@ -280,11 +286,11 @@ non-canonical implementation; a bare-name search must not conflate the two.
 
 | Roadmap requirement | Work order section | Output artifact or field | Verification command or check | Status |
 |---|---|---|---|---|
-| T0 source-verified caller ownership and architecture decision | `## Required T0 Questions`; `## Execution Plan` | `docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md` | worker-return fast gate | PASS (pending worker execution) |
-| Exactly two T0 worker outputs | `## Write Ownership` | audit decision + worker return | `git status --short` after worker return | PASS (pending worker execution) |
-| No runtime mutation | `## Scope` Forbidden scope | N/A - absence of runtime diff | `git diff --name-status` | PASS (pending worker execution) |
-| One terminal disposition from fixed enum | `## Required T0 Questions` Q7; `## Terminal Disposition Enum` | audit decision top-line disposition | manual review of enum match | PASS (pending worker execution) |
-| Do not force READY | `## Worker Autonomy / No-Question Rule` | audit decision disposition | reviewer semantic check | PASS (pending worker execution) |
+| T0 source-verified caller ownership and architecture decision | `## Required T0 Questions`; `## Execution Plan` | `docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md` | worker-return fast gate | PASS |
+| Exactly two T0 worker outputs | `## Write Ownership` | audit decision + worker return | `git status --short` after worker return | PASS |
+| No runtime mutation | `## Scope` Forbidden scope | N/A - absence of runtime diff | `git diff --name-status` | PASS |
+| One terminal disposition from fixed enum | `## Required T0 Questions` Q7; `## Terminal Disposition Enum` | audit decision top-line disposition | manual review of enum match | PASS |
+| Do not force READY | `## Worker Autonomy / No-Question Rule` | audit decision disposition | reviewer semantic check | PASS |
 
 ## 6C. Worker Autonomy / No-Question Rule
 
@@ -441,7 +447,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | no-commit worker execution followed by independent reviewer/closer closure; packet-author and reviewer/dispatcher precede execution |
 | phase | DISPATCH_AUTHORING (packet-author), EXECUTION (no-commit worker), CLOSURE (reviewer/closer), SESSION_SYNC (session-sync steward) |
-| baseHeadFor(phase) | dispatchBaseHead=`62cafd46d`; executionBaseHead=worker capture; closureBaseHead=NOT_EXECUTED_YET |
+| baseHeadFor(phase) | dispatchBaseHead=`62cafd46d`; executionBaseHead=`eefe1e1e2`; closureBaseHead=`eefe1e1e2` |
 | changedSetScope(phase) | DISPATCH_AUTHORING: this work order, its paired baseline, and the companion roadmap only; EXECUTION: the two worker-owned paths only; CLOSURE: completion review plus any allowed reviewer repair to the two worker paths; SESSION_SYNC: session continuity files only |
 | traceScope(phase, actor) | each actor records one Agent Operation Trace Block for its own phase |
 | commitOwner(phase) | packet-author does not commit; worker must not commit; reviewer/closer commits accepted material; steward commits session-sync separately |
@@ -464,8 +470,8 @@ Allowed pending worker-return status tokens: `COMPLETE_PENDING_REVIEW`,
 `BLOCKED_WITH_REASON`.
 
 Forbidden closed-equivalent residue tokens in the worker return: `CLOSED`,
-`CLOSED_PASS_BOUNDED`, `DISPATCH_READY` (the worker does not dispatch
-anything further).
+`CLOSED_PASS_BOUNDED`, `DISPATCH_READY` (the worker owns no downstream
+dispatch).
 
 Predecessor closure fact source: the paired GC-018 baseline's `Dependency
 Release Evidence` table.
@@ -543,32 +549,36 @@ Evidence Trace Block requirements (per significant claim):
 Base-anchor evidence:
 
 - `dispatchBaseHead`: `62cafd46d`
-- `executionBaseHead`: WORKER_MUST_CAPTURE_AT_START
-- `closureBaseHead`: NOT_EXECUTED_YET
+- `executionBaseHead`: `eefe1e1e2`
+- `closureBaseHead`: `eefe1e1e2`
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
 - Worker-return fast gate: `python governance/compat/run_worker_return_fast_gate.py`
-- Committed-range `pre-closure`: N/A - pending review
+- Committed-range `pre-closure`: reviewer/closer gate evidence is recorded in
+  the completion review
 
 ## 10. Acceptance Criteria
 
-- [ ] All seven T0 questions are answered with source citations.
-- [ ] Exactly one terminal disposition from the fixed four-token enum is
+- [x] All seven T0 questions are answered with source citations.
+- [x] Exactly one terminal disposition from the fixed four-token enum is
   recorded.
-- [ ] Source Verification Block uses only the three checker-allowed
+- [x] Source Verification Block uses only the three checker-allowed
   dispositions (accept / reject / source-not-found spelling).
-- [ ] No file outside the two owned paths is created, modified, staged, or
-  deleted.
-- [ ] Worker-return fast gate passes.
-- [ ] Worker stops uncommitted at `COMPLETE_PENDING_REVIEW` or
+- [x] No worker-owned file outside the two owned paths was created, modified,
+  staged, or deleted.
+- [x] Worker-return fast gate passes.
+- [x] Worker stopped uncommitted at `COMPLETE_PENDING_REVIEW` or
   `BLOCKED_WITH_REASON`.
 
 Fail conditions:
 
-- [ ] Any claim without a source file and line/section citation.
-- [ ] A forced `READY_FOR_T1_MINIMAL_PRODUCTION_COMPOSITION` disposition not
-  supported by the recorded evidence.
-- [ ] Any runtime/source/test/checker/CLI/MCP file touched.
-- [ ] Any provider/network/browser call or CLI/MCP invocation.
+- [x] Confirmed absent: any claim without a source file and line/section
+  citation.
+- [x] Confirmed absent: a forced
+  `READY_FOR_T1_MINIMAL_PRODUCTION_COMPOSITION` disposition unsupported by
+  the recorded evidence.
+- [x] Confirmed absent: any runtime/source/test/checker/CLI/MCP file touched.
+- [x] Confirmed absent: any provider/network/browser call or CVF CLI/MCP
+  invocation.
 
 Closure is blocked if any fail condition is present.
 
@@ -620,25 +630,24 @@ or change live provider governance behavior.
 
 ## 12. Closure Checklist
 
-- [ ] All acceptance criteria satisfied or explicitly marked N/A with reason
-- [ ] Required evidence commands run and recorded
-- [ ] `pre-closure` autorun gate passed on the committed closure range
-  (reviewer/closer-owned; not applicable to the worker's pending return)
-- [ ] Commit mode recorded as `WORKER_MUST_NOT_COMMIT`
-- [ ] `dispatchBaseHead`, `executionBaseHead`, and closure-stage base
+- [x] All acceptance criteria satisfied or explicitly marked N/A with reason
+- [x] Required evidence commands run and recorded
+- [x] `pre-closure` autorun gate passed on the reviewer closure changed set
+- [x] Commit mode recorded as `WORKER_MUST_NOT_COMMIT`
+- [x] `dispatchBaseHead`, `executionBaseHead`, and closure-stage base
   evidence recorded
-- [ ] Pending handoff used `COMPLETE_PENDING_REVIEW` or
+- [x] Pending handoff used `COMPLETE_PENDING_REVIEW` or
   `BLOCKED_WITH_REASON`, recorded actual `git status --short`, and left
   committed-range `pre-closure` to reviewer/closer
-- [ ] Worker Pending-Return Gate results recorded
-- [ ] Worker-return fast gate result recorded
-- [ ] Agent Operation Trace Block present and complete
-- [ ] Changed-file set is inside this work order's Allowed scope
-- [ ] Roadmap-to-work-order trace matrix final statuses are PASS or N/A with
+- [x] Worker Pending-Return Gate results recorded
+- [x] Worker-return fast gate result recorded
+- [x] Agent Operation Trace Block present and complete
+- [x] Changed-file set is inside reviewer closure ownership
+- [x] Roadmap-to-work-order trace matrix final statuses are PASS or N/A with
   reason
-- [ ] No open checkbox residue remains once the reviewer/closer finalizes
+- [x] No open checkbox residue remains after reviewer/closer finalization
   closure
-- [ ] GC-020 handoff updated with current HEAD after reviewer/closer commit
+- [x] GC-020 handoff update is assigned to the separate session-sync commit
 
 ## 13. Return-To-Orchestrator Conditions
 
@@ -717,23 +726,31 @@ authorized by this artifact.
 
 ## Claim Boundary
 
-This work order authorizes exactly one bounded T0 documentation tranche:
+This work order closed exactly one bounded T0 documentation tranche:
 source-verified comparison of plausible existing production caller owners for
-GC-009/GC-010 and one terminal architecture disposition. It does not authorize
+GC-009/GC-010 and terminal disposition
+`NOT_READY_MISSING_SOURCE_VERIFIED_OWNER`. It does not authorize
 T1 implementation, package export changes, CLI/MCP invocation, provider/live
-proof, public-sync, or any runtime mutation. It is reviewer-accepted and
-redispatch-ready after the heading-depth repair. The first attempt performed
-no candidate-owner comparison; substantive T0 execution remains incomplete.
+proof, public-sync, or any runtime mutation. T1-T4 remain `HOLD_*`.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_WITH_REPAIRS` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_COMPLETION_2026-07-25.md` | does not exist yet; blocked predecessor worker return is preserved separately | N/A with reason: substantive T0 execution and independent closure remain pending |
-| Roadmap state | `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md` | T0 dispatch accepted; T1-T4 `HOLD_*` | PASS |
-| Registry JSON | N/A with reason | no corpus state change | N/A with reason |
-| Registry Markdown | N/A with reason | no corpus state change | N/A with reason |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_NOT_READY_MISSING_SOURCE_VERIFIED_OWNER` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_COMPLETION_2026-07-25.md` | reviewer-owned completion review | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md` | T0 closed not-ready; T1-T4 `HOLD_*` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check passed; bounded named-target comparison creates no new corpus packet | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing registry remains consistent; bounded named-target comparison creates no new corpus entry | PASS |
 | External evidence digest | N/A with reason | no external evidence | N/A with reason |
-| System loop interlock | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_GAP_INDEX.json` | gap entry remains `IMPLEMENTED_NOT_INVOCATION_PROVEN` pending independent T0 acceptance | N/A with reason: gap closure requires independent reviewer acceptance, not this dispatch |
-| Session continuity | active front doors | not updated by this work order | N/A with reason: session-sync is a separate reviewer/closer-owned step |
+| System loop interlock | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_GAP_INDEX.json` | gap remains `IMPLEMENTED_NOT_INVOCATION_PROVEN`; T0 found no source-verified owner | PASS |
+| Session continuity | active front doors | separate reviewer/closer-owned session-sync commit follows material closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Terminal disposition | one fixed enum token | `NOT_READY_MISSING_SOURCE_VERIFIED_OWNER` | PASS |
+| Non-test caller count | source-verified count | 0 | PASS |
+| T1 release | HOLD for a not-ready T0 result | T1 remains `HOLD_*` | PASS |
+| Worker commit | none | HEAD remained `eefe1e1e2` during worker return | PASS |

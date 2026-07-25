@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: REVIEWER_ACCEPTED_T0_DISPATCH_READY_WITH_REPAIRS_T1_T4_HOLD
+Status: T0_PASS_BOUNDED_NOT_READY_T1_T4_HOLD
 
 ## Dispatch Prompt Envelope
 
@@ -89,7 +89,7 @@ released by its own fresh GC-018 and work order per the tranche table.
 
 | Tranche | Scope | Predecessor gate |
 |---|---|---|
-| T0 | Source-verified caller ownership and architecture decision (documentation only; no runtime mutation) | None (this roadmap authorizes T0 dispatch) |
+| T0 | Source-verified caller ownership and architecture decision (documentation only; no runtime mutation) | CLOSED_PASS_BOUNDED with `NOT_READY_MISSING_SOURCE_VERIFIED_OWNER` |
 | T1 | Minimal production composition (smallest changed set wiring the chosen caller to MandatoryGateway/AgentExecutionRuntime) | HOLD_UNTIL_T0_INDEPENDENT_CLOSURE |
 | T2 | Positive and fail-closed negative invocation proof for the T1 composition | HOLD_UNTIL_T1_INDEPENDENT_CLOSURE |
 | T3 | Projection of T2-proven evidence through an existing operator surface (existing CLI readout or existing Web operator page; no new surface) | HOLD_UNTIL_T2_INDEPENDENT_CLOSURE |
@@ -164,13 +164,13 @@ GC-018 releases it with T3's accepted closure evidence.
 
 ## Acceptance Criteria
 
-- [ ] T0 answers all seven required questions with source citations and
+- [x] T0 answers all seven required questions with source citations and
   reaches exactly one terminal disposition from the fixed four-token enum
   (full criteria owned by the companion T0 work order's `## 10. Acceptance
   Criteria`).
-- [ ] No T1-T4 tranche proceeds without independent predecessor closure
+- [x] No T1-T4 tranche proceeds without independent predecessor closure
   evidence cited by path and commit.
-- [ ] No roadmap tranche releases provider/live proof, public-sync,
+- [x] No roadmap tranche releases provider/live proof, public-sync,
   deployment, or arbitrary external-agent invocation.
 
 ## Verification
@@ -387,3 +387,16 @@ batch is authorized by this artifact.
 - `docs/reference/system_chain/gaps/entries/gc009_gc010_no_production_caller.json`
 - `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T2_CALLER_VERIFICATION_COMPLETION_2026-07-15.md`
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md` | T0 closed bounded not-ready | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_COMPLETION_2026-07-25.md` | independent reviewer completion | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_BOUNDED_NOT_READY_T1_T4_HOLD` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
+| System loop interlock | GC-009/GC-010 gap entry | remains `IMPLEMENTED_NOT_INVOCATION_PROVEN` | PASS |
+| Session continuity | separate session-sync commit | follows material closure | PASS |
