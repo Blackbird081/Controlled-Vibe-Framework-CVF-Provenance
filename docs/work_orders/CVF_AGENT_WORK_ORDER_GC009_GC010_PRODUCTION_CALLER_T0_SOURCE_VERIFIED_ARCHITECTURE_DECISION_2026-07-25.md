@@ -2,13 +2,13 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS
+Status: REVIEWER_ACCEPTED_REDISPATCH_READY_WITH_REPAIRS
 
 Batch ID: GC009-GC010-PCALLER-T0
 
 Date: 2026-07-25
 
-dispatchBaseHead: `4569a301d`
+dispatchBaseHead: `62cafd46d`
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
@@ -28,10 +28,12 @@ Paired baseline: `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T0_SOUR
 
 Commit mode: WORKER_MUST_NOT_COMMIT.
 
-Current-time notes: packet authored 2026-07-25 at base `4569a301d`. No live
+Current-time notes: packet originally authored 2026-07-25 at base `4569a301d`
+and redispatched from repair base `62cafd46d`. No live
 provider key authorization exists or is needed for this tranche. This work
-order is reviewer-accepted and dispatch-ready after bounded source-fidelity
-and role-routing repairs. T0 has not been executed.
+order is reviewer-accepted and redispatch-ready after the heading-depth
+repair. The first worker attempt stopped at `BLOCKED_WITH_REASON` before
+candidate-owner comparison; T0 substantive execution remains incomplete.
 
 Do-not-misread notes: this is a source-comparison and architecture-decision
 tranche only. It does not authorize wiring, exporting, invoking, or changing
@@ -213,12 +215,12 @@ Before editing files, read:
 git rev-parse --short HEAD
 git status --short
 python governance/compat/run_adif_defect_resolver.py --task-class "Work-order authoring / dispatch" --role worker --lifecycle-phase pre-implementation --json --max-results 50
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 4569a301d --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 62cafd46d --head HEAD
 ```
 
 Expected results:
 
-- `git rev-parse --short HEAD` matches `4569a301d` (or a later HEAD if a
+- `git rev-parse --short HEAD` matches the committed redispatch HEAD (or a later HEAD if a
   session-sync-only commit landed since dispatch; if HEAD differs for any
   other reason, stop and return `BLOCKED_WITH_REASON`).
 - `git status --short` shows only this work order, its paired baseline, and
@@ -355,7 +357,7 @@ outcome if the evidence supports it.
 
 ## 7. Write Ownership
 
-Owned files (create-only; both are new files):
+Owned files (create-only; both canonical outputs are absent at redispatch):
 
 - `docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md`
 - `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_WORKER_RETURN_2026-07-25.md`
@@ -368,16 +370,26 @@ listed above.
 Write mode: create-only. No file outside this ownership may be created,
 modified, staged, or deleted.
 
+## Reviewer Redispatch Conversion
+
+The first worker attempt stopped before candidate-owner comparison because
+the required manifest headings were nested at `###` depth. The reviewer
+preserves that diagnostic at
+`docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_R0_BLOCKED_WORKER_RETURN_2026-07-25.md`.
+The canonical audit and worker-return outputs remain absent. The next worker
+resumes T0 only after a passing `pre-implementation` gate and creates both
+canonical outputs.
+
 ## 6G. Work-Order Fulfillment Manifest
 
-### Required Artifact Manifest
+## Required Artifact Manifest
 
 | Path | Required at handoff | Purpose |
 |---|---|---|
 | `docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md` | Yes | source-verified architecture decision answering all seven T0 questions |
-| `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_WORKER_RETURN_2026-07-25.md` | Yes | full-profile no-commit worker return |
+| `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_WORKER_RETURN_2026-07-25.md` | Yes | full-profile no-commit worker return for the resumed execution |
 
-### Forbidden Path Manifest
+## Forbidden Path Manifest
 
 | Path or glob | Reason |
 |---|---|
@@ -386,20 +398,20 @@ modified, staged, or deleted.
 | `CVF_SESSION/**`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF*.md` | protected session/handoff paths; no authorization block is carried by this work order because no change to these paths is authorized |
 | `docs/roadmaps/**`; `docs/baselines/**`; `docs/work_orders/**` other than this file | worker must not edit the packet-author's own dispatch artifacts |
 
-### Forbidden Filesystem State At Dispatch
+## Forbidden Filesystem State At Dispatch
 
 | Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
 |---|---|---|---|
 | `docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md` | ABSENT | ABSENT (confirmed via `git status --short` at packet-authoring time; no such file exists yet) | N/A |
-| `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_WORKER_RETURN_2026-07-25.md` | ABSENT | ABSENT (confirmed via `git status --short` at packet-authoring time; no such file exists yet) | N/A |
+| `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_WORKER_RETURN_2026-07-25.md` | ABSENT | ABSENT after reviewer preservation of the first-attempt diagnostic at the separate `R0_BLOCKED` path | N/A |
 
-### Required Proof Manifest
+## Required Proof Manifest
 
 | Proof | Path | Required literal | Required at handoff |
 |---|---|---|---|
-| Terminal disposition present | audit decision | one of the four enum tokens in `## Terminal Disposition Enum`, on its own top-line disposition statement | Yes |
-| Negative-search evidence present | audit decision | exact `rg` command(s) and result counts | Yes |
-| No-commit statement present | worker return | `git status --short` showing both files untracked | Yes |
+| Terminal disposition present | `docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md` | N/A with reason: exactly one of four alternative enum tokens requires semantic reviewer validation | No |
+| Negative-search evidence present | `docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md` | `rg` | Yes |
+| No-commit statement present | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_WORKER_RETURN_2026-07-25.md` | `git status --short` | Yes |
 
 ## External Knowledge Intake Routing
 
@@ -429,7 +441,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | no-commit worker execution followed by independent reviewer/closer closure; packet-author and reviewer/dispatcher precede execution |
 | phase | DISPATCH_AUTHORING (packet-author), EXECUTION (no-commit worker), CLOSURE (reviewer/closer), SESSION_SYNC (session-sync steward) |
-| baseHeadFor(phase) | dispatchBaseHead=`4569a301d`; executionBaseHead=worker capture; closureBaseHead=NOT_EXECUTED_YET |
+| baseHeadFor(phase) | dispatchBaseHead=`62cafd46d`; executionBaseHead=worker capture; closureBaseHead=NOT_EXECUTED_YET |
 | changedSetScope(phase) | DISPATCH_AUTHORING: this work order, its paired baseline, and the companion roadmap only; EXECUTION: the two worker-owned paths only; CLOSURE: completion review plus any allowed reviewer repair to the two worker paths; SESSION_SYNC: session continuity files only |
 | traceScope(phase, actor) | each actor records one Agent Operation Trace Block for its own phase |
 | commitOwner(phase) | packet-author does not commit; worker must not commit; reviewer/closer commits accepted material; steward commits session-sync separately |
@@ -463,7 +475,7 @@ Release Evidence` table.
 1. Capture `executionBaseHead` via `git rev-parse --short HEAD` and record
    `git status --short`. Input: repository state. Output: recorded values in
    the eventual worker return. Validation: values match or explain any
-   drift from `4569a301d`. Stop condition: unexplained HEAD drift.
+   drift from the committed redispatch HEAD. Stop condition: unexplained HEAD drift.
 2. Complete all items in `## Required First Reads`. Input: listed paths.
    Output: internal understanding (no artifact yet). Validation: worker can
    cite each source by path and line when answering the T0 questions. Stop
@@ -502,9 +514,9 @@ Release Evidence` table.
    be answered from source (record as an unresolved fact, not a fabricated
    claim).
 7. Draft `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_WORKER_RETURN_2026-07-25.md`
-   using the full-gate worker-return contract. Input: completed audit
-   decision. Output: worker return file. Validation: worker-return fast gate
-   passes. Stop condition: gate fails outside allowed scope.
+   using the full-gate worker-return contract. Input: completed audit decision.
+   Output: worker return file. Validation: worker-return fast gate passes.
+   Stop condition: gate fails outside allowed scope.
 8. Run final verification commands, record results, and stop at
    `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` without committing.
 
@@ -530,7 +542,7 @@ Evidence Trace Block requirements (per significant claim):
 
 Base-anchor evidence:
 
-- `dispatchBaseHead`: `4569a301d`
+- `dispatchBaseHead`: `62cafd46d`
 - `executionBaseHead`: WORKER_MUST_CAPTURE_AT_START
 - `closureBaseHead`: NOT_EXECUTED_YET
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
@@ -597,7 +609,7 @@ conditionalDispositionRule: include each conditional section with evidence when 
 git rev-parse --short HEAD
 git status --short
 rg -n "new MandatoryGateway|createMandatoryGateway\(|new AgentExecutionRuntime" EXTENSIONS --glob "!**/node_modules/**" --glob "!**/dist/**" --glob "!**/coverage/**"
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 4569a301d --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 62cafd46d --head HEAD
 python governance/compat/run_worker_return_fast_gate.py
 git diff --check
 git status --short
@@ -710,15 +722,15 @@ source-verified comparison of plausible existing production caller owners for
 GC-009/GC-010 and one terminal architecture disposition. It does not authorize
 T1 implementation, package export changes, CLI/MCP invocation, provider/live
 proof, public-sync, or any runtime mutation. It is reviewer-accepted and
-dispatch-ready after bounded repairs. T0 remains unexecuted until the
-no-commit worker begins.
+redispatch-ready after the heading-depth repair. The first attempt performed
+no candidate-owner comparison; substantive T0 execution remains incomplete.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_COMPLETION_2026-07-25.md` | does not exist yet | N/A with reason: T0 not yet executed |
+| Work order status | this work order | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_WITH_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_COMPLETION_2026-07-25.md` | does not exist yet; blocked predecessor worker return is preserved separately | N/A with reason: substantive T0 execution and independent closure remain pending |
 | Roadmap state | `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md` | T0 dispatch accepted; T1-T4 `HOLD_*` | PASS |
 | Registry JSON | N/A with reason | no corpus state change | N/A with reason |
 | Registry Markdown | N/A with reason | no corpus state change | N/A with reason |
