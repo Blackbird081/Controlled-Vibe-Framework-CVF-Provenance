@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T0A is dispatch-ready at material commit a5a782a31 after explicit operator authorization. The source-verified documentation packet defines nine owner-contract questions, four fixed terminal dispositions, exact create-only audit and worker-return paths, and separates proposed future owner/test paths as DOC_ONLY_NEW rather than existing source. Pre-dispatch passed all 75 commands, dispatch commit steward passed, and pre-commit passed 83/83. The next allowed move is operator manual copy/paste of docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md to one no-commit documentation worker. Both canonical T0A output paths are absent. T1-T4 remain HOLD_*; no runtime/source/test/checker/package/public mutation, provider/API/account/network/browser use, CVF CLI/MCP invocation, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T0A is independently closed at material commit 0e97a0ace with NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE. The preferred documentation-only GC-009 owner is the proposed cvf-web mandatory-gateway singleton sibling, but current MandatoryGateway.check cannot losslessly preserve the Web request context or durable receipt/audit boundary and would double-evaluate if added after the current route evaluation. GC-010 is SEPARATE_FRESH_PACKET with a concrete owner/provider/receipt release condition. The next allowed move is an operator checkpoint to park the lane or explicitly authorize a fresh source-verified interface-change design/work-order packet. T1-T4 remain HOLD_*; no runtime/source/test/checker/package/public mutation, provider/API/account/network/browser use, CVF CLI/MCP invocation, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14067,5 +14067,23 @@
     "nextAllowedMove": "operator manual copy/paste of the committed T0A work order to one no-commit documentation worker",
     "laterTranches": "T1-T4 remain HOLD_*; T0A can recommend only a future packet checkpoint",
     "claimBoundary": "T0A documentation dispatch only. No production owner exists by virtue of this packet; no runtime/source/test/checker/package/public mutation, provider/live proof, CLI/MCP invocation, deployment, or T1-T4 release."
+  },
+  "gc009Gc010ProductionOwnerDesignT0AClosure20260725": {
+    "status": "CLOSED_PASS_BOUNDED_NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE",
+    "date": "2026-07-25",
+    "materialCommit": "0e97a0ace",
+    "executionBaseHead": "4b6c57d11",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md",
+    "auditDecision": "docs/audits/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md",
+    "workerReturn": "docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_WORKER_RETURN_2026-07-25.md",
+    "completionReview": "docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_COMPLETION_2026-07-25.md",
+    "terminalDisposition": "NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE",
+    "gc010LaneDisposition": "SEPARATE_FRESH_PACKET",
+    "finding": "the proposed cvf-web mandatory-gateway singleton sibling is a credible future owner, but current MandatoryGateway.check cannot losslessly preserve the Web request context or durable receipt/audit boundary and would double-evaluate if composed after current direct route evaluation",
+    "reviewerRepair": "N/A with reason: independent source checks confirmed the worker result; closure-only literal-format repairs were applied to reviewer-owned work-order, roadmap, worker-return, and completion surfaces",
+    "verification": "worker pre-implementation 77/77 PASS; worker-return fast gate PASS; reviewer-fast 62/62 PASS; pre-commit 83/83 PASS; committed-range pre-closure substantive checks PASS pending this GC-020 continuity sync",
+    "nextAllowedMove": "operator checkpoint to park the lane or explicitly authorize a fresh source-verified interface-change design/work-order packet",
+    "laterTranches": "T1-T4 remain HOLD_*; no T1 release follows from the not-ready T0A disposition",
+    "claimBoundary": "documentation-only T0A closure. No runtime/source/test/checker/package/public mutation, provider/live proof, CLI/MCP invocation, deployment, or production-caller claim."
   }
 }
