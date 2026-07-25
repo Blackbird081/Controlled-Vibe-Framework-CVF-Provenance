@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
 Date: 2026-07-25
 
@@ -24,9 +24,9 @@ Role: no-commit worker for PPMCP-R1 pinned-upstream-plus-legacy re-intake of
 Canonical packet:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md`.
 
-This packet is `DISPATCH_READY` after independent reviewer validation and bounded
-repairs. It authorizes only the no-commit documentation worker tranche
-defined below.
+This packet is closed after independent reviewer validation, bounded worker
+execution, and reviewer repairs. Its historical authorization covered only
+the no-commit documentation worker tranche defined below.
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`.
 
@@ -147,7 +147,7 @@ Authority boundary:
 | Role | Owner | Responsibility |
 |---|---|---|
 | Packet author / dispatcher | packet-author agent | author source-verified draft packet; does not self-declare dispatch-ready |
-| Independent reviewer | reviewer role | review this packet; decide `DISPATCH_READY` disposition or return corrections |
+| Independent reviewer | reviewer role | review this packet; decide execution readiness or return corrections |
 | Worker | no-commit worker role (once dispatched) | produce the audit, registry entry, and worker return without committing |
 | Reviewer/closer | reviewer/closer role | review returned artifacts, repair allowed-scope defects, and commit if accepted |
 | Session-sync steward | session-sync steward after material acceptance | update active continuity only after accepted material commit if next move changes |
@@ -724,7 +724,7 @@ rerun it. A failure requiring any forbidden path or action returns
 | Chain map route | external repo or copied folder -> pinned source mirror plus secondary legacy folder -> external absorption core -> full manifest and processing ledger -> value conversion matrix -> overlap and novelty classification against existing owner surfaces -> CVF owner-surface delta -> future package/runtime/checker work order only if separately authorized |
 | Matching local-view guard | `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_source_mirror_migration.py` |
 | Owner surface | `docs/audits/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md`; `docs/reviews/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_WORKER_RETURN_2026-07-25.md` |
-| Disposition | DISPATCH_READY bounded pinned-upstream-plus-legacy re-intake work order |
+| Disposition | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS |
 | Claim boundary | dispatch and future worker audit only; no runtime, package activation, checker wiring, provider/live proof, public-sync, MCP transport, or production-readiness claim |
 
 ## External Absorption Value Conversion Matrix
@@ -744,7 +744,7 @@ rerun it. A failure requiring any forbidden path or action returns
 | Source item or group | Existing CVF owner surface checked | Overlap disposition | Novelty / delta | Action |
 |---|---|---|---|---|
 | Legacy `mcp-business-risk-classifier.ts`, `mcp-business-transport-policy.ts`, `mcp-business-execution-receipt.ts` proposals | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mcp.business.adapter.contract.ts` (`MCPBusinessRiskClass`, `MCPBusinessTransport`, `MCPBusinessExecutionReceipt`) | CONFIRMED_EXISTING | Field names and enum values in the current contract closely match the legacy proposal's risk/transport/receipt shapes at dispatch-authoring inspection; worker must verify field-by-field rather than accept this dispatch-authoring observation as final. | worker confirms or narrows this disposition with a field-level table in the audit |
-| Legacy `mcp-business-approval-gate.ts` approval-reference proposal | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mcp.business.adapter.contract.ts` (`MCPBusinessApprovalGateResult`, `approvalReference`); `governance/contracts/tool-action-taxonomy.ts` (`ToolActionApprovalState`, `runtimeExecutionAuthorized`) | ENRICH_EXISTING | Two existing owner surfaces cover overlapping but not identical approval semantics; whether current runtime treats `approvalReference` as authoritative evidence versus advisory is unverified. | worker checks whether approval-reference authoritativeness is a real enrichment delta or already fully covered |
+| Legacy `mcp-business-approval-gate.ts` approval-reference proposal | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mcp.business.adapter.contract.ts` (`MCPBusinessApprovalGateResult`, `approvalReference`); `governance/contracts/tool-action-taxonomy.ts` (`ToolActionApprovalState`, `runtimeExecutionAuthorized`) | ENRICH_EXISTING | `ADAPTED_WITH_REASON`: two existing owner surfaces cover overlapping but distinct approval semantics; the worker directly checked whether `approvalReference` is authoritative evidence or advisory. | completed comparison is recorded in the audit and completion review |
 | Upstream `src/shared/schemas.ts`, `src/shared/response-projection.ts`, `src/shared/compact-masks.ts` | OWNER_SURFACE_NOT_FOUND: no current CVF owner surface identified for compact response projection or context-budget masking in the MCP adapter plane | OWNER_SURFACE_NOT_FOUND | Upstream-only material with no legacy-folder analog; genuinely unexamined before this dispatch. | worker performs full read and records ABSORB/ADAPT/DEFER/REJECT/NO_NEW_VALUE with owner-surface recommendation |
 | Upstream `tests/replay/`, `tests/fixtures/orders-delete/` | OWNER_SURFACE_NOT_FOUND: no current CVF owner surface identified for replay-fixture or negative-mutation-test patterns in this plane | OWNER_SURFACE_NOT_FOUND | Upstream-only material; potential checker/fixture candidate value is unverified. | worker performs full read and records disposition with reopen condition if value is real but not immediately actionable |
 | Prior LHW16-T2 `pancake-pos-mcp` LH1 closure scope (MCP approval proof advisory only) | `docs/reference/archive/CVF_LHW16_T2_MCP_APPROVAL_PROOF_ADVISORY_CONNECTOR_SPEC_2026-05-30.md` | CONFIRMED_EXISTING | The narrow MCP-approval-proof-advisory reopen condition from LH1 line 141 remains closed; this work order does not reopen it. | worker cites this closure and does not re-litigate the approval-proof-advisory scope |
@@ -790,9 +790,9 @@ session-state edits, destructive actions, or scope expansion.
 | activeHandoff | `AGENT_HANDOFF_V52_2026-07-25.md` |
 | route | `MULTI_AGENT_SINGLE_ROLE` |
 | rolePattern | packet-author -> independent reviewer -> worker -> reviewer/closer -> session-sync steward |
-| phase | DISPATCH_AUTHORING (current); INDEPENDENT_REVIEW; EXECUTION; REVIEWER_CLOSURE; SESSION_SYNC |
+| phase | REVIEWER_CLOSURE complete; SESSION_SYNC remains separate |
 | baseHeadFor(phase) | dispatchBaseHead=`58e9799a9`; reviewBaseHead=reviewer captures at review start; executionBaseHead=worker captures with `git rev-parse --short HEAD`; closureBaseHead=reviewer captures before material commit |
-| changedSetScope(phase) | worker may change only the four planned output files named in the Mission section |
+| changedSetScope(phase) | worker changed only the four planned outputs; reviewer additionally owns work-order closure status, completion review, and conditional reopen index |
 | traceScope(phase, actor) | worker return must include Agent Operation Trace Block with expected and actual manifest |
 | commitOwner(phase) | worker must not commit; reviewer/closer owns material commit if accepted; session-sync steward owns separate session-sync commit if needed |
 | crossBatchIsolation | worker material artifacts must not be mixed with session/handoff sync or runtime/package/checker work |
@@ -814,6 +814,29 @@ session-state edits, destructive actions, or scope expansion.
 |---|---|
 | completionReviewPath | `docs/reviews/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_COMPLETION_2026-07-25.md` |
 | reviewerOwnedClosurePaths | completion review; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` only if a worker-verified candidate survives; accepted worker audit, registry entry, regenerated aggregate, and worker return; session-sync paths remain separate |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_COMPLETION_2026-07-25.md` | closure diff and acceptance matrix | PASS |
+| Roadmap state | N/A with reason: standalone external re-intake | no roadmap mutation | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check | PASS |
+| Registry Markdown | N/A with reason: this registry family uses per-entry JSON and a generated JSON aggregate | no Markdown aggregate required | PASS |
+| External evidence digest | PPMCP-R1 audit | `7deb1ef3b1e31b5770a88039126b0a91d93b3de6c3b40bb4aac7424374f83696` | PASS |
+| System loop interlock | completion review claim boundary | runtime and external invocation remain parked | PASS |
+| Session continuity | active session state | separate session-sync follows the material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| pinned mirror | expected upstream commit | `41979fdac4fdf9a8a6f956889c33f19fa3389215` | PASS |
+| corpus manifest | 98 upstream plus 9 legacy files | 107 exact file tuples | PASS |
+| aggregate digest | baseline digest | `7deb1ef3b1e31b5770a88039126b0a91d93b3de6c3b40bb4aac7424374f83696` | PASS |
+| conditional value routing | every retained row has a concrete reopen condition | five parked rows; keyword heuristic rejected | PASS_WITH_REPAIR |
+| implementation boundary | no runtime, package, checker, provider, or public release | no release | PASS |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -838,14 +861,12 @@ authorization from the sibling public-sync clone.
 
 ## Independent Reviewer Disposition
 
-Disposition: DISPATCH_READY
+Disposition: CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS
 
-The independent reviewer verified the 98-file pinned upstream mirror, the 9-file
-legacy folder, the 107-row aggregate digest, current owner symbols, and exact
-three-path packet-author changed set. Reviewer repairs corrected the truncated
-manifest digest, display-ID resolver source location, conditional-reopen index
-ownership, completion-review separation, regenerated aggregate closure
-ownership, and the source mirror index's legacy-folder description.
+The independent reviewer verified the 98-file pinned upstream mirror, the
+9-file legacy folder, the 107-row aggregate digest, current owner symbols, and
+the exact worker and closure changed sets. The completion review records both
+dispatch-time repairs and post-worker semantic repairs.
 
 ## Claim Boundary
 

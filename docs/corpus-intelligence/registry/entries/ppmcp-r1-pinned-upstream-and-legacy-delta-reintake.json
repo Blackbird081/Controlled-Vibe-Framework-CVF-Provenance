@@ -1,0 +1,104 @@
+{
+  "registryOrder": 158,
+  "id": "ppmcp-r1-pinned-upstream-and-legacy-delta-reintake",
+  "corpusType": "EXTERNAL_SOURCE",
+  "displayName": "PPMCP-R1 pinned upstream pancake-pos-mcp and legacy delta re-intake",
+  "scopePaths": [
+    ".private_reference/source_mirrors/nguyennguyenit__pancake-pos-mcp/",
+    ".private_reference/legacy/CVF 16.5/pancake-pos-mcp/",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mcp.business.adapter.contract.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mcp.business.adapter.contract.test.ts"
+  ],
+  "fileCount": 107,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "PPMCP-R1",
+  "scanDate": "2026-07-25",
+  "manifestHash": "7deb1ef3b1e31b5770a88039126b0a91d93b3de6c3b40bb4aac7424374f83696",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/audits/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
+  "packetPath": "docs/audits/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
+  "completionReviewPath": "docs/reviews/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_COMPLETION_2026-07-25.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "mcp-tool-contract-and-registry",
+    "risk-classification-and-approval-gate",
+    "transport-policy-and-multi-surface-deployment",
+    "execution-receipt-and-audit",
+    "response-projection-and-compact-masks",
+    "display-id-resolution-and-safe-mutation-targeting",
+    "replay-regression-and-negative-mutation-fixtures"
+  ],
+  "priorAbsorption": "pancake-pos-mcp already had a prior partial disposition trail before this wave: W3 tool-action taxonomy absorbed business tool registry, approval gate, and action-risk concepts (docs/reference/archive/CVF_LEGACY_HARVEST_CLOSEOUT_LEDGER_2026-05-25.md line 141, PARTIALLY_ABSORBED); LHW16-T2 closed a narrow MCP-approval-proof-advisory reopen condition doc-only (docs/reference/archive/CVF_LHW16_T2_MCP_APPROVAL_PROOF_ADVISORY_CONNECTOR_SPEC_2026-05-30.md); a legacy-spec-absorption registry row marked the generic MCP business adapter as runtime-owned absorbed with the Pancake-specific profile deferred (docs/reference/archive/CVF_LEGACY_SPEC_ABSORPTION_REGISTRY_2026-05-23.md line 120). None of these prior dispositions used a pinned upstream source mirror or a full 107-file comparison; PPMCP-R1 supersedes them with a file-level comparison against the current EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mcp.business.adapter.contract.ts and governance/contracts/tool-action-taxonomy.ts owner surfaces.",
+  "findings": [
+    {
+      "id": "PPMCP-R1-F01",
+      "summary": "Legacy mcp-business-transport-policy.ts couples transport choice to risk level; the current mcp.business.adapter.contract.ts evaluateTransport() only checks the allowedTransports allowlist, with no risk-aware transport gating.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Reviewer/operator decides whether to open a fresh runtime work order to add risk-aware transport gating.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "RUNTIME_BEHAVIOR_LEARNING"
+    },
+    {
+      "id": "PPMCP-R1-F02",
+      "summary": "Upstream per-tool discriminated action schemas perform runtime parsing of action-specific input variants; the current CVF MCP business contract carries opaque inputSchema and outputSchema records without a runtime validation call.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Park a provider-neutral action-schema validation candidate; reopen only after a concrete invalid-input or schema-drift problem and fresh runtime authorization.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "RUNTIME_BEHAVIOR_LEARNING"
+    },
+    {
+      "id": "PPMCP-R1-F03",
+      "summary": "Upstream compact response projection (json-mask-based, measured 26.8%-63.1% byte reduction in tests/replay/report.md) has no current CVF owner surface for MCP response-size or context-budget shaping.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Reviewer decides on conditional reopen index entry for a future value probe.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "RUNTIME_BEHAVIOR_LEARNING"
+    },
+    {
+      "id": "PPMCP-R1-F04",
+      "summary": "Upstream orders-tool.ts resolveOrderDisplayId implements a two-stage safe display-ID-to-internal-ID resolver with structured error codes before a destructive mutation; no CVF owner surface addresses safe entity targeting before destructive action.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Reviewer decides on conditional reopen index entry pending a concrete CVF-native need.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "RUNTIME_BEHAVIOR_LEARNING"
+    },
+    {
+      "id": "PPMCP-R1-F05",
+      "summary": "Upstream tests/replay/ and tests/fixtures/orders-delete/ implement production-trace replay regression and negative-mutation-fixture testing patterns with no CVF equivalent for MCP-adjacent adapter tests.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Reviewer decides on conditional reopen index entry as a checker candidate, parked until a concrete repeated defect is demonstrated.",
+      "defectClass": "MACHINE_GATE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    },
+    {
+      "id": "PPMCP-R1-F06",
+      "summary": "CVF's current stableStringify-based key-sorted receipt hashing and deterministic receiptId are already more rigorous than both the legacy proposal's and the upstream repository's plain JSON.stringify-based hashing; no delta to absorb, CVF surface is ahead.",
+      "disposition": "ACCEPT_NO_ACTION",
+      "nextAction": "None; recorded for completeness so the comparison is not silently one-directional.",
+      "defectClass": "N/A",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    },
+    {
+      "id": "PPMCP-R1-F07",
+      "summary": "Direct import of all 24 upstream tool implementations, transport entry points, HTTP client, and resource registry is rejected; CVF has no live MCP execution runtime to consume Pancake-specific business logic.",
+      "disposition": "REJECT",
+      "nextAction": "None; direct import remains rejected without fresh CVF authorization.",
+      "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "no CVF owner surface performs runtime schema validation of MCP tool inputs (Zod discriminated unions)",
+    "no CVF owner surface addresses MCP response-size or context-budget shaping",
+    "no CVF owner surface addresses safe display-ID-to-internal-ID resolution before destructive mutation",
+    "no CVF owner surface has an equivalent replay-regression or negative-mutation-fixture pattern",
+    "no live secret value found in any .env* file or fixture JSON across the full 107-file corpus"
+  ],
+  "nextScanRecommendation": "No further scan of this corpus is needed; the 107-file bounded comparison is complete. Five conditional-reopen rows (one retained legacy runtime delta and four upstream pattern findings) are proposed pending independent reviewer acceptance; the keyword-based classifier and direct import of the 24-tool business surface are rejected as CVF runtime value."
+}
