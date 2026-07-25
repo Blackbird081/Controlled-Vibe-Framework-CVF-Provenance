@@ -2,31 +2,31 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_BOUNDED_NOT_READY_T1_T4_HOLD
+Status: T0_PASS_T0A_DISPATCH_READY_T1_T4_HOLD
 
 ## Dispatch Prompt Envelope
 
-N/A with reason: this is a roadmap artifact, not a delegated or role-switching
-dispatch-ready work order. The dispatch prompt envelope applies to the T0 work
-order (`docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md`),
-which carries its own envelope.
+N/A with reason: this is a roadmap artifact, not the delegated work order.
+The active envelope is in
+`docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md`.
 
 ## Purpose
 
-Define a bounded, documentation-first roadmap to close the known GC-009/GC-010
+Define a bounded, documentation-first roadmap to address the known GC-009/GC-010
 production-caller gap (`cvf.asc.gap.gc009_gc010_no_production_caller.v1`)
-through a source-verified architecture decision followed by a minimal,
+through source-verified architecture decisions followed, only when released,
+by a minimal,
 proof-bounded end-to-end runtime chain, without releasing implementation,
 provider/live proof, public-sync, deployment, or CLI/MCP invocation ahead of
 their own gated tranches.
 
 ## Decision
 
-Decision: dispatch T0 (documentation-only source-verified architecture
-decision) now, and keep T1-T4 in `HOLD_*` until each predecessor tranche has
-independent closure evidence. This is the smallest safe next step given the
-gap entry's `actionOwner: PARKED_WITH_REASON` disposition, which requires a
-fresh source-verified work packet before any runtime caller may be proposed.
+Decision: T0 closed not-ready at commit `09cf1634a`. After an explicit
+operator checkpoint, dispatch T0A to define or reject an exact future owner
+contract. Keep T1-T4 in `HOLD_*`; a T0A ready/partial design result still
+requires a fresh operator-authorized T1 packet and never self-releases
+implementation.
 
 ## Known Gap
 
@@ -80,8 +80,8 @@ touched, narrowed, or reopened by any tranche in this roadmap.
 
 ## Scope
 
-This roadmap's active scope is bounded to authoring and dispatching T0 (a
-documentation-only architecture decision). T1-T4 are described below for
+This roadmap's active scope is bounded to dispatching T0A, a
+documentation-only production-owner contract decision. T1-T4 are described below for
 sequencing clarity but are not in active scope until each is separately
 released by its own fresh GC-018 and work order per the tranche table.
 
@@ -90,7 +90,8 @@ released by its own fresh GC-018 and work order per the tranche table.
 | Tranche | Scope | Predecessor gate |
 |---|---|---|
 | T0 | Source-verified caller ownership and architecture decision (documentation only; no runtime mutation) | CLOSED_PASS_BOUNDED with `NOT_READY_MISSING_SOURCE_VERIFIED_OWNER` |
-| T1 | Minimal production composition (smallest changed set wiring the chosen caller to MandatoryGateway/AgentExecutionRuntime) | HOLD_UNTIL_T0_INDEPENDENT_CLOSURE |
+| T0A | Define exact future GC-009 owner contract and explicit GC-010 lane disposition (documentation only) | DISPATCH_READY after T0 commit `09cf1634a` and operator authorization |
+| T1 | Minimal production composition (smallest changed set wiring an accepted owner contract) | HOLD_UNTIL_T0A_INDEPENDENT_CLOSURE_AND_FRESH_OPERATOR_AUTHORITY |
 | T2 | Positive and fail-closed negative invocation proof for the T1 composition | HOLD_UNTIL_T1_INDEPENDENT_CLOSURE |
 | T3 | Projection of T2-proven evidence through an existing operator surface (existing CLI readout or existing Web operator page; no new surface) | HOLD_UNTIL_T2_INDEPENDENT_CLOSURE |
 | T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | HOLD_UNTIL_T3_INDEPENDENT_CLOSURE |
@@ -111,16 +112,24 @@ or `NO_CURRENT_VALUE_WITH_REOPEN_CONDITION`). No runtime, test, or checker
 file is touched. Full detail in the companion GC-018 baseline and T0 work
 order.
 
+### T0A - Production Owner Contract Design
+
+Documentation-only. A no-commit worker selects or rejects an exact future
+GC-009 owner boundary, maps package and route integration requirements,
+resolves duplicate-evaluation handling, and assigns GC-010 to the same future
+T1, a separate packet, or a concrete parked condition. T0A may recommend a
+future packet but cannot release T1.
+
 ### T1 - Minimal Production Composition (HOLD)
 
-Scope, once released by an accepted T0 `READY_FOR_T1_MINIMAL_PRODUCTION_COMPOSITION`
-or `PARTIAL_READY_REQUIRES_GAP_SPLIT` decision: implement the smallest changed
-set that lets the T0-selected caller construct `MandatoryGateway` (via
+Scope, once released by an accepted T0A ready/partial owner-contract decision
+plus fresh operator authority and a fresh GC-018/work order: implement the
+smallest changed set that lets the selected caller construct `MandatoryGateway` (via
 `createMandatoryGateway`) and/or `AgentExecutionRuntime`, and invoke
 `.check()`/`.assertAllowed()` or `.run()` on a real (non-test) request path.
 T1 does not add package exports, barrel exports, or CLI/MCP surfaces beyond
-what T0 identifies as required for the chosen seam. T1 remains `HOLD_*` until
-this roadmap or a dedicated GC-018 releases it with T0's accepted decision
+what T0A identifies as required for the chosen seam. T1 remains `HOLD_*` until
+a dedicated GC-018 releases it with T0A's accepted decision
 cited by path and commit.
 
 ### T2 - Positive And Fail-Closed Negative Invocation Proof (HOLD)
@@ -153,14 +162,14 @@ GC-018 releases it with T3's accepted closure evidence.
 
 | Design control | Handling in this roadmap | Verdict |
 |---|---|---|
-| Scope boundary | Bounded to a documentation-only T0 tranche now; T1-T4 remain `HOLD_*` behind independent predecessor closure | PASS |
+| Scope boundary | Bounded to a documentation-only T0A tranche now; T1-T4 remain `HOLD_*` behind independent predecessor closure and fresh authority | PASS |
 | Non-goals | Explicit `## Non-Goals` section below; no implementation, live proof, public-sync, or arbitrary external-agent claim released | PASS |
 | Lane split | Single lane: GC-009/GC-010 production-caller closure only; PPMCP and skill-absorption lanes explicitly excluded | PASS |
 | Dependency/source-verification plan | `## Source Verification Block` below; every architecture claim cites a repo file and line/section | PASS |
-| Claim boundary | `## Claim Boundary` section below; T0-only claim, no T1-T4 implementation claim | PASS |
-| Acceptance criteria | Companion T0 work order `## 10. Acceptance Criteria` | PASS |
-| Verification/evidence | `## Checker Source Read-Ahead Block` and `## Source Verification Block` below; companion work order's `## 9. Evidence Requirements` | PASS |
-| Dispatch-readiness decision | Independent reviewer accepted T0 dispatch after bounded repairs; T1-T4 remain `HOLD_*` | PASS |
+| Claim boundary | `## Claim Boundary` section below; T0A design only, no T1-T4 implementation claim | PASS |
+| Acceptance criteria | Companion T0A work order `## Acceptance Criteria` | PASS |
+| Verification/evidence | `## Checker Source Read-Ahead Block` and `## Source Verification Block` below; companion T0A work order evidence requirements | PASS |
+| Dispatch-readiness decision | T0A is reviewer-accepted for documentation execution; T1-T4 remain `HOLD_*` | PASS |
 
 ## Acceptance Criteria
 
@@ -168,6 +177,8 @@ GC-018 releases it with T3's accepted closure evidence.
   reaches exactly one terminal disposition from the fixed four-token enum
   (full criteria owned by the companion T0 work order's `## 10. Acceptance
   Criteria`).
+- [ ] T0A defines or rejects an exact future owner contract and assigns an
+  explicit GC-010 lane without changing runtime.
 - [x] No T1-T4 tranche proceeds without independent predecessor closure
   evidence cited by path and commit.
 - [x] No roadmap tranche releases provider/live proof, public-sync,
@@ -175,30 +186,24 @@ GC-018 releases it with T3's accepted closure evidence.
 
 ## Verification
 
-Companion T0 work order `## 9. Evidence Requirements` and `## 11. Review
-Gate` own the concrete verification commands and gate sequence for T0. Each
+Companion T0A work order `## Evidence Requirements` and `## Review Gate` own
+the concrete verification commands and gate sequence for T0A. Each
 later tranche's own work order owns its verification commands when released.
 
 ## Work Plan
 
-1. Packet-author authors this roadmap, the paired GC-018 baseline, and the T0
-   work order for independent review.
-2. Independent reviewer/dispatcher reviews all three artifacts, repairs any
-   allowed-scope defect, and marks the T0 work order dispatch-ready or returns
-   it for correction. This review is accepted with bounded repairs.
-3. No-commit worker executes T0 per the work order, producing exactly
-   the two allowed outputs, and returns `COMPLETE_PENDING_REVIEW` or
-   `BLOCKED_WITH_REASON` without committing.
-4. Independent reviewer/closer reviews the T0 worker return, may repair
-   allowed-scope defects, commits accepted material, and authors the
-   completion review.
-5. Operator or session-sync steward decides whether to authorize T1
-   based on T0's terminal disposition; T1-T4 each require their own fresh
-   GC-018 and work order per this roadmap's `HOLD_*` gates.
+1. T0 packet, worker execution, and independent not-ready closure are complete.
+2. Operator authorized a fresh source-verified T0A design packet.
+3. Dispatcher authors, reviews, gates, and commits the T0A baseline, work
+   order, and this roadmap update.
+4. No-commit worker produces exactly the T0A audit and worker return.
+5. Independent reviewer/closer accepts or rejects T0A and commits closure.
+6. T1 remains held unless a ready/partial T0A result is followed by a separate
+   operator authorization, fresh GC-018, and fresh source-verified work order.
 
 ## Non-Goals
 
-- No implementation release in this roadmap document; only T0 (documentation)
+- No implementation release in this roadmap document; only T0A documentation
   is released. T1-T4 remain `HOLD_*`.
 - No provider/live proof release. Any live-proof claim requires a separate,
   explicitly authorized live-proof GC-018 per
@@ -251,11 +256,10 @@ later tranche's own work order owns its verification commands when released.
 
 ## Claim Boundary
 
-This roadmap states a bounded target architecture and a tranche sequence with
-explicit HOLD gates. It does not claim the target architecture is already
-built, does not claim MandatoryGateway or AgentExecutionRuntime currently has
-a production caller, and does not claim any T1-T4 tranche is authorized to
-proceed until its named predecessor gate is independently satisfied.
+This roadmap releases T0A design documentation and preserves explicit HOLD
+gates. It does not claim the target architecture is built, does not claim
+MandatoryGateway or AgentExecutionRuntime currently has a production caller,
+and does not claim any T1-T4 tranche is authorized.
 
 ## ADIF Defect Registry Disclosure
 
@@ -306,7 +310,7 @@ Returned defects:
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_docs_governance_compat.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_active_session_state.py`; `governance/compat/check_external_knowledge_intake_routing.py` |
-| literalTokensReviewed | `ROLE_ROUTING_MODES` tokens (`SINGLE_AGENT_SINGLE_ROLE`, `SINGLE_AGENT_MULTI_ROLE`, `MULTI_AGENT_SINGLE_ROLE`, `MULTI_AGENT_MULTI_ROLE`) in `check_work_order_dispatch_quality.py`; `## Dual Agent Surface Matrix` row-label and disposition vocabulary (`IMPLEMENTED`, `CONTRACT_ONLY`, `DEFERRED_WITH_REASON`, `N/A_WITH_REASON`); `HOLD_*` status-token rule (no `CLOSED` substring in a `HOLD_*`/`DRAFT`/`PROPOSED` status); roadmap structural heading set (`## Purpose`, `## Scope`, `## Boundaries / Non-Goals`, `## Tranches`, `## Verification`) in `check_markdown_structural_completeness.py`; seven required row labels in `check_external_knowledge_intake_routing.py` |
+| literalTokensReviewed | route tokens; Dual Agent Surface Matrix consumer/disposition vocabulary; `HOLD_*` status rule; roadmap structural headings; Source Verification columns; `T0_PASS_T0A_DISPATCH_READY_T1_T4_HOLD` |
 | gateRunPurpose | confirmation/evidence that this roadmap's structure, status tokens, and disclosure sections match already-read checker requirements before the first gate run, not first discovery of requirements via failure |
 | claimBoundary | this block records checker-source read-ahead only; it does not itself certify gate PASS. Gate results are recorded in the companion T0 work order's evidence section |
 
@@ -342,9 +346,9 @@ batch is authorized by this artifact.
 
 | Finding | Defect class | Learning lane | Disposition | Next control action |
 |---|---|---|---|---|
-| GC-009/GC-010 helpers were implemented and unit-tested but never wired to any current execution channel, and the package surface actively omits them from both `exports`/`files` and the barrel | `RULE_GAP` | GOVERNANCE_CONTROL_PLANE | `DESIGN_REVIEW_REQUIRED` | T0 architecture decision must select and source-verify a caller before any T1 implementation is authorized; this roadmap records the HOLD gate as the control action |
+| GC-009/GC-010 helpers were implemented and unit-tested but never wired to any current execution channel, and the package surface omits them from `exports`/`files` and the barrel | `RULE_GAP` | GOVERNANCE_CONTROL_PLANE | `DESIGN_REVIEW_REQUIRED` | T0A must define or reject an exact future owner contract before any T1 packet can be considered |
 
-## Agent Operation Trace Block
+## Historical T0 Packet Author Trace
 
 | Field | Evidence |
 |---|---|
@@ -367,23 +371,48 @@ batch is authorized by this artifact.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex dispatcher/reviewer |
+| Provider or surface | local workspace |
+| Session or invocation | GC009-GC010-PCALLER-T0A dispatch authoring, 2026-07-25 |
+| Working directory | repository root |
+| Command or tool surface | source reads; `rg`; `Test-Path`; ADIF resolver; scaffold helper; `apply_patch`; dispatch gates |
+| Target paths | this roadmap; T0A baseline; T0A work order |
+| Allowed scope source | operator authorization after T0 not-ready closure |
+| Before status evidence | HEAD `3fe0954a9`; clean worktree |
+| After status evidence | three-path dispatch packet pending commit |
+| Diff evidence | `git diff --name-status`; pre-dispatch and commit-steward output |
+| Approval boundary | T0A documentation dispatch only; T1-T4 remain HOLD |
+| Claim boundary | repo-local trace; no OS/user attribution |
+| Agent type | dispatcher/reviewer |
+| Invocation ID | `gc009-gc010-production-owner-design-t0a-roadmap-dispatch-2026-07-25` |
+| Expected manifest | this roadmap; T0A baseline; T0A work order |
+| Actual changed set | this roadmap; T0A baseline; T0A work order |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Delta Execution Claim Boundary Control Block
 
 | Field | Disposition |
 |---|---|
-| claimScope | bounded roadmap authoring for a GC-009/GC-010 production-caller architecture decision and a four-tranche HOLD-gated implementation sequence |
+| claimScope | bounded roadmap update releasing T0A owner-contract design while preserving the T1-T4 HOLD-gated sequence |
 | claimDisposition | N/A with reason: no Delta execution behavior is implemented by this roadmap |
 | receiptEvidence | N/A with reason: no runtime receipt is created by this roadmap |
 | actionEvidence | N/A with reason: documentation/architecture artifact only |
 | invocationBoundary | governed local document authoring; no broader claim |
 | interceptionBoundary | no IDE/shell/git/filesystem/provider interception claim |
-| claimLanguage | this roadmap states a target architecture and a HOLD-gated tranche sequence; it does not claim any tranche beyond T0 is implemented |
+| claimLanguage | this roadmap releases T0A documentation and does not claim any production owner or T1-T4 implementation exists |
 | forbiddenExpansion | no runtime mutation, provider/live proof, public-sync, deployment, production claim, external CLI/MCP invocation, or arbitrary-external-agent-control claim |
 
 ## Related Artifacts
 
 - `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md`
+- `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md`
 - `docs/reference/system_chain/gaps/entries/gc009_gc010_no_production_caller.json`
 - `docs/reviews/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T2_CALLER_VERIFICATION_COMPLETION_2026-07-15.md`
 - `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md`
@@ -392,11 +421,11 @@ batch is authorized by this artifact.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md` | T0 closed bounded not-ready | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_COMPLETION_2026-07-25.md` | independent reviewer completion | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_BOUNDED_NOT_READY_T1_T4_HOLD` | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
+| Completion or reviewer artifact | N/A with reason: T0A worker execution has not started | canonical T0A audit and worker-return paths remain absent | N/A with reason |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_DISPATCH_READY_T1_T4_HOLD` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
-| System loop interlock | GC-009/GC-010 gap entry | remains `IMPLEMENTED_NOT_INVOCATION_PROVEN` | PASS |
-| Session continuity | separate session-sync commit | follows material closure | PASS |
+| System loop interlock | GC-009/GC-010 gap entry | remains `IMPLEMENTED_NOT_INVOCATION_PROVEN`; T0A is design-only | PASS |
+| Session continuity | separate session-sync commit | follows material dispatch commit | PASS |
