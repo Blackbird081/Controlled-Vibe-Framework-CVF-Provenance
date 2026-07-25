@@ -315,3 +315,30 @@ Rollback boundary: revert only this continuity set if material commit
 This handoff records material parent commit `0e97a0ace`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T1I Dispatch Sync
+
+Authorized guard-maintenance scope: record T1I material dispatch commit
+`ca538479e` and route the next move to one no-commit documentation worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009Gc010ProductionCallerT1InterfaceDesignDispatch20260725.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: independent dispatch review, bounded packet repair,
+material dispatch commit, worker routing, and mandatory continuity
+maintenance.
+
+Rollback boundary: revert only this continuity set if material commit
+`ca538479e` is reverted.
+
+## GC-020 Marker - GC009-GC010 T1I Dispatch Continuity
+
+This handoff records material parent commit `ca538479e`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.

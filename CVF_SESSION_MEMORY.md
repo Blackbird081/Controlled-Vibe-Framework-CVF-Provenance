@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator checkpoint to park GC009-GC010-PCALLER or authorize a fresh source-verified interface-change design/work-order packet; parked checkpoint=T1-T4, runtime/source/test/checker/package/public mutation, agent CLI/MCP, provider/API/account/network/browser use, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=dispatch the committed GC009-GC010-PCALLER-T1I work order to one no-commit documentation worker; parked checkpoint=T1 runtime composition, T2-T4, runtime/source/test/checker/package/public mutation, agent CLI/MCP, provider/API/account/network/browser use, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC009-GC010-PCALLER-T1I interface-design dispatch | `ca538479e` | REVIEWER_ACCEPTED_DISPATCH_READY after repairs to closure-anchor, GC-023, nested gateway-evidence, receipt-builder, and changed-set claims. One no-commit documentation worker owns exactly the audit and worker-return outputs. T1 runtime composition and T2-T4 remain HOLD. |
 | GC009-GC010-PCALLER-T0A production-owner design closure | `0e97a0ace` | CLOSED_PASS_BOUNDED_NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE. Preferred future GC-009 owner is a documentation-only cvf-web singleton sibling, but the current gateway interface cannot preserve the Web context or durable receipt/audit boundary without a fresh interface-change packet. GC-010 is a separate fresh-packet lane; T1-T4 remain HOLD. |
 | PPMCP-R1 pinned upstream and legacy delta re-intake closure | `539e453a7` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS. All 107 manifest tuples independently match; keyword-heuristic risk classification was rejected as unsafe value; five provider-neutral patterns are parked behind concrete reopen conditions. No runtime, checker, package, provider, process, CLI/MCP, or public authority released. |
 | CVF 23.07 final owner-surface absorption reconciliation closure | `ef2c3479b` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS. All 231 rows reconciled: 108 existing-owner, 4 bounded doctrine, 115 conditional candidates across eight R1C index rows, and 4 zero-byte no-value closures. Reviewer corrected the worker subtotal, preserved seven worked examples as fixture candidates, and split one vague 50-row product condition into four checkable owner-specific rows. No T5/runtime/provider/process/public authority released. |
@@ -373,16 +374,15 @@ PPMCP-R1 is independently closed with reviewer repairs at material commit
 `539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
 are parked behind concrete reopen conditions.
 
-GC009-GC010-PCALLER-T0A is independently closed at material commit
-`0e97a0ace` with `NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE`.
-The preferred documentation-only owner is a cvf-web gateway-singleton sibling,
-but current source cannot preserve the Web context and durable receipt/audit
-boundary without a fresh interface-change packet. GC-010 is
-`SEPARATE_FRESH_PACKET`. The next allowed move is an operator checkpoint to
-park the lane or authorize a fresh source-verified interface-change
-design/work-order packet. T1-T4 remain `HOLD_*`; no runtime/source/test/checker/
-package/public mutation, provider/API/account/network/browser use, CVF CLI/MCP
-invocation, deployment, or production claim is authorized.
+GC009-GC010-PCALLER-T1I is reviewer-accepted and dispatch-ready at material
+commit `ca538479e`. One no-commit documentation worker must specify or reject
+the context-preserving gateway method, exactly-once evaluation mechanism,
+no-bypass execute configuration, and receipt/audit projection shape. Both
+canonical worker outputs remain absent. The next allowed move is dispatch of
+the committed T1I work order to that worker. T1 runtime composition and T2-T4
+remain `HOLD_*`; no runtime/source/test/checker/package/public mutation,
+provider/API/account/network/browser use, CVF CLI/MCP invocation, deployment,
+or production claim is authorized.
 Conversation provenance remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 

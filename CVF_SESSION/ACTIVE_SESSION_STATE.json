@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T0A is independently closed at material commit 0e97a0ace with NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE. The preferred documentation-only GC-009 owner is the proposed cvf-web mandatory-gateway singleton sibling, but current MandatoryGateway.check cannot losslessly preserve the Web request context or durable receipt/audit boundary and would double-evaluate if added after the current route evaluation. GC-010 is SEPARATE_FRESH_PACKET with a concrete owner/provider/receipt release condition. The next allowed move is an operator checkpoint to park the lane or explicitly authorize a fresh source-verified interface-change design/work-order packet. T1-T4 remain HOLD_*; no runtime/source/test/checker/package/public mutation, provider/API/account/network/browser use, CVF CLI/MCP invocation, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T1I is reviewer-accepted and dispatch-ready at material commit ca538479e. The documentation-only packet asks one no-commit worker to source-verify the exact context-preserving MandatoryGateway method, duplicate-evaluation prevention, no-bypass execute configuration, and receipt/audit projection shape. Reviewer repairs corrected the T0A material-versus-continuity anchor, the GC-023 active-owner versus resolved-tombstone distinction, nested GatewayResult.evidence fields, and packet-author changed-set trace. Pre-dispatch passed 75/75, dispatch commit steward passed, and pre-commit passed 83/83. The next allowed move is dispatch of docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md to one WORKER_MUST_NOT_COMMIT documentation worker. Both canonical worker outputs are absent. T1 runtime composition and T2-T4 remain HOLD_*; no runtime/source/test/checker/package/public mutation, provider/API/account/network/browser use, CVF CLI/MCP invocation, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14085,5 +14085,21 @@
     "nextAllowedMove": "operator checkpoint to park the lane or explicitly authorize a fresh source-verified interface-change design/work-order packet",
     "laterTranches": "T1-T4 remain HOLD_*; no T1 release follows from the not-ready T0A disposition",
     "claimBoundary": "documentation-only T0A closure. No runtime/source/test/checker/package/public mutation, provider/live proof, CLI/MCP invocation, deployment, or production-caller claim."
+  },
+  "gc009Gc010ProductionCallerT1InterfaceDesignDispatch20260725": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-25",
+    "materialCommit": "ca538479e",
+    "dispatchBaseHead": "c6ca6428c",
+    "baseline": "docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md",
+    "roadmap": "docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md",
+    "workerAudit": "docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md",
+    "workerReturn": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_WORKER_RETURN_2026-07-25.md",
+    "reviewerRepairs": "corrected T0A material-versus-continuity commit evidence, GC-023 active-owner versus resolved-tombstone evidence, nested GatewayResult.evidence fields, governance receipt-builder wording, and packet-author changed-set trace",
+    "verification": "pre-dispatch 75/75 PASS; dispatch commit steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "dispatch the committed T1I work order to one WORKER_MUST_NOT_COMMIT documentation worker",
+    "laterTranches": "T1 runtime composition and T2-T4 remain HOLD_*; a ready T1I result authorizes only a future packet checkpoint",
+    "claimBoundary": "T1I documentation dispatch only. No interface, adapter, singleton, production caller, runtime/source/test/checker/package/public mutation, provider/live proof, CLI/MCP invocation, deployment, or later-tranche release."
   }
 }
