@@ -1,4 +1,4 @@
-# CVF Agent Handoff V52 - GC009/GC010 T0 Not-Ready Closure
+# CVF Agent Handoff V52 - GC009/GC010 T0A Owner Design Dispatch
 
 Memory class: active-handoff
 
@@ -6,30 +6,30 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the independently accepted GC009/GC010 T0 not-ready decision and
-unchanged invocation moratorium into the next operator checkpoint.
+Carry the reviewer-accepted T0A owner-design packet and unchanged invocation
+moratorium into one no-commit documentation worker execution.
 
 ## Scope / Target / Owner Boundary
 
-Target: preserve the pinned 107-file PPMCP-R1 corpus, reviewer repairs, exact
-worker scope, and unchanged invocation moratorium.
+Target: preserve the source-verified T0A packet, exact two-output worker
+scope, T1-T4 HOLD gates, and unchanged invocation moratorium.
 
-Owner boundary: PPMCP-R1 worker execution and independent closure are complete.
-The operator owns selection of the next governed intake or any fresh
-condition-backed GC-018.
+Owner boundary: one no-commit documentation worker executes T0A; the
+independent reviewer/closer owns acceptance and material closure.
 
 ## Active Boundary
 
-GC009-GC010-PCALLER-T0 is independently closed at material commit
-`09cf1634a` with `NOT_READY_MISSING_SOURCE_VERIFIED_OWNER`. T1-T4,
-implementation, provider/live proof, and external invocation remain parked.
+GC009-GC010-PCALLER-T0A is dispatch-ready at material commit `a5a782a31`.
+Both canonical outputs are absent. T1-T4, implementation, provider/live proof,
+and external invocation remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator
-checkpoint to keep GC009/GC010 parked or authorize a fresh source-verified
-architecture/design packet defining a production owner; parked checkpoint=T1-T4, worker dispatch, CLI/MCP invocation,
+manual copy/paste of the committed T0A work order to one no-commit
+documentation worker; parked checkpoint=T1-T4, runtime/source/test/package
+implementation, CLI/MCP invocation,
 provider/network/process action, runtime/source/test/checker/package/session/
 public mutation, deploy, and moratorium lift.
 
@@ -39,6 +39,12 @@ public mutation, deploy, and moratorium lift.
 
 ## Latest Work / Changes
 
+- GC009-GC010-PCALLER-T0A dispatch commit `a5a782a31` adds the source-verified
+  GC-018, no-commit work order, and roadmap T0A tranche.
+- The packet defines nine owner-contract questions, four terminal tokens, and
+  separates proposed future source paths as `DOC_ONLY_NEW`.
+- Pre-dispatch passed 75/75, dispatch commit steward passed, and pre-commit
+  passed 83/83. Both worker-owned outputs remain absent.
 - GC009-GC010-PCALLER-T0 material closure commit `09cf1634a` accepts terminal
   disposition `NOT_READY_MISSING_SOURCE_VERIFIED_OWNER`.
 - Independent review confirms zero non-test callers, repairs the GC-023
@@ -75,11 +81,11 @@ public mutation, deploy, and moratorium lift.
 
 ## Next Allowed Move
 
-Operator checkpoint: keep the GC009/GC010 lane parked or explicitly authorize
-a fresh source-verified architecture/design packet that defines a production
-owner before any implementation work order.
+Operator manual copy/paste of
+`docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md`
+to one no-commit documentation worker.
 
-No worker dispatch is authorized. T1-T4, dependency install, package, runtime, source,
+Only that documentation worker is authorized. T1-T4, dependency install, package, runtime, source,
 test, checker, session/public mutation, provider, process, CLI/MCP agent
 invocation, public-sync, deploy, or production lane is released. The EAIC
 knowledge gap and invocation moratorium remain parked.
@@ -254,5 +260,31 @@ Rollback boundary: revert only this continuity set if material commit
 ## GC-020 Marker - GC009-GC010 T0 Closure Continuity
 
 This handoff records material parent commit `09cf1634a`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T0A Dispatch Sync
+
+Authorized guard-maintenance scope: record T0A material dispatch commit
+`a5a782a31` and route the next move to its no-commit documentation worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009Gc010ProductionOwnerDesignT0ADispatch20260725.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: explicit T0A packet authorization plus mandatory
+continuity maintenance.
+
+Rollback boundary: revert only this continuity set if material commit
+`a5a782a31` is reverted.
+
+## GC-020 Marker - GC009-GC010 T0A Dispatch Continuity
+
+This handoff records material parent commit `a5a782a31`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.

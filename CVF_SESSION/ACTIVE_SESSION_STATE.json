@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T0 is independently closed at material commit 09cf1634a with terminal disposition NOT_READY_MISSING_SOURCE_VERIFIED_OWNER. The reviewer confirmed zero non-test callers for MandatoryGateway, createMandatoryGateway, or AgentExecutionRuntime and repaired the GC-023 source-fidelity wording without changing the disposition. The existing gap remains IMPLEMENTED_NOT_INVOCATION_PROVEN. T1-T4 remain HOLD_*; T1 cannot release from this not-ready result. The next allowed move is an operator checkpoint: either keep the lane parked or explicitly authorize a fresh source-verified architecture/design packet to define a production owner before any implementation work order. No worker dispatch, runtime/source/test/checker/package/public mutation, CLI/MCP invocation, provider/API/account/network/browser use, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T0A is dispatch-ready at material commit a5a782a31 after explicit operator authorization. The source-verified documentation packet defines nine owner-contract questions, four fixed terminal dispositions, exact create-only audit and worker-return paths, and separates proposed future owner/test paths as DOC_ONLY_NEW rather than existing source. Pre-dispatch passed all 75 commands, dispatch commit steward passed, and pre-commit passed 83/83. The next allowed move is operator manual copy/paste of docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md to one no-commit documentation worker. Both canonical T0A output paths are absent. T1-T4 remain HOLD_*; no runtime/source/test/checker/package/public mutation, provider/API/account/network/browser use, CVF CLI/MCP invocation, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14052,5 +14052,20 @@
     "nextAllowedMove": "operator checkpoint to park the lane or explicitly authorize a fresh source-verified architecture/design packet that defines a production owner",
     "laterTranches": "T1-T4 remain HOLD_*; no T1 release follows from the not-ready T0 disposition",
     "claimBoundary": "documentation-only T0 closure. No runtime/source/test/checker/package/public mutation, provider/live proof, CLI/MCP invocation, deployment, or production-caller claim."
+  },
+  "gc009Gc010ProductionOwnerDesignT0ADispatch20260725": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-25",
+    "materialCommit": "a5a782a31",
+    "dispatchBaseHead": "3fe0954a9",
+    "baseline": "docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md",
+    "roadmap": "docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md",
+    "workerAudit": "docs/audits/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md",
+    "workerReturn": "docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_WORKER_RETURN_2026-07-25.md",
+    "verification": "pre-dispatch 75/75 PASS; dispatch commit steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "operator manual copy/paste of the committed T0A work order to one no-commit documentation worker",
+    "laterTranches": "T1-T4 remain HOLD_*; T0A can recommend only a future packet checkpoint",
+    "claimBoundary": "T0A documentation dispatch only. No production owner exists by virtue of this packet; no runtime/source/test/checker/package/public mutation, provider/live proof, CLI/MCP invocation, deployment, or T1-T4 release."
   }
 }
