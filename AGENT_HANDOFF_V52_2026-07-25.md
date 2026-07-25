@@ -1,4 +1,4 @@
-# CVF Agent Handoff V52 - PPMCP-R1 Dispatch
+# CVF Agent Handoff V52 - GC009/GC010 T0 Not-Ready Closure
 
 Memory class: active-handoff
 
@@ -6,8 +6,8 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the reviewer-accepted PPMCP-R1 dispatch and unchanged invocation
-moratorium into no-commit worker execution.
+Carry the independently accepted GC009/GC010 T0 not-ready decision and
+unchanged invocation moratorium into the next operator checkpoint.
 
 ## Scope / Target / Owner Boundary
 
@@ -20,17 +20,16 @@ condition-backed GC-018.
 
 ## Active Boundary
 
-GC009-GC010-PCALLER-T0 is redispatch-ready with reviewer repairs at material
-commit `1fce46aee`. The R0 attempt stopped before candidate-owner comparison
-and is preserved as a blocked diagnostic. T1-T4, implementation, provider/live
-proof, and external invocation remain parked.
+GC009-GC010-PCALLER-T0 is independently closed at material commit
+`09cf1634a` with `NOT_READY_MISSING_SOURCE_VERIFIED_OWNER`. T1-T4,
+implementation, provider/live proof, and external invocation remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator
-manual copy/paste of the committed GC009-GC010-PCALLER-T0 work order to one
-no-commit documentation worker for actual candidate-owner comparison; parked checkpoint=T1-T4, CLI/MCP invocation,
+checkpoint to keep GC009/GC010 parked or authorize a fresh source-verified
+architecture/design packet defining a production owner; parked checkpoint=T1-T4, worker dispatch, CLI/MCP invocation,
 provider/network/process action, runtime/source/test/checker/package/session/
 public mutation, deploy, and moratorium lift.
 
@@ -40,15 +39,15 @@ public mutation, deploy, and moratorium lift.
 
 ## Latest Work / Changes
 
-- GC009-GC010-PCALLER-T0 redispatch commit `1fce46aee` repairs the manifest
-  heading depth and atomic proof literals, preserves the R0 blocked diagnostic,
-  and passes pre-implementation before actual candidate-owner comparison.
+- GC009-GC010-PCALLER-T0 material closure commit `09cf1634a` accepts terminal
+  disposition `NOT_READY_MISSING_SOURCE_VERIFIED_OWNER`.
+- Independent review confirms zero non-test callers, repairs the GC-023
+  active-owner versus resolved-tombstone wording, and leaves the runtime gap
+  `IMPLEMENTED_NOT_INVOCATION_PROVEN`.
 - GC009-GC010-PCALLER-T0 material dispatch commit `7a6bdd9e3` independently
   accepts the three-artifact packet after reviewer repairs.
-- T0 owns exactly one audit and one pending worker-return file, must not commit,
-  and must stop at `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- No T0 output exists yet. T1-T4 remain `HOLD_*` behind independent
-  predecessor closure and fresh tranche authority.
+- T0 audit, worker return, and completion review are committed. T1-T4 remain
+  `HOLD_*`; T1 cannot release from the accepted not-ready disposition.
 - PPMCP-R1 material closure commit `539e453a7` independently verifies all 107
   manifest tuples, rejects keyword-heuristic risk classification as CVF
   value, and parks five provider-neutral patterns behind concrete conditions.
@@ -76,11 +75,11 @@ public mutation, deploy, and moratorium lift.
 
 ## Next Allowed Move
 
-Operator manual copy/paste of the redispatch-committed GC009-GC010-PCALLER-T0
-work order to one no-commit documentation worker for actual candidate-owner
-comparison.
+Operator checkpoint: keep the GC009/GC010 lane parked or explicitly authorize
+a fresh source-verified architecture/design packet that defines a production
+owner before any implementation work order.
 
-No T0 output exists yet. T1-T4, dependency install, package, runtime, source,
+No worker dispatch is authorized. T1-T4, dependency install, package, runtime, source,
 test, checker, session/public mutation, provider, process, CLI/MCP agent
 invocation, public-sync, deploy, or production lane is released. The EAIC
 knowledge gap and invocation moratorium remain parked.
@@ -228,5 +227,32 @@ Rollback boundary: revert only this continuity set if material commit
 ## GC-020 Marker - GC009-GC010 T0 Redispatch Continuity
 
 This handoff records material parent commit `1fce46aee`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T0 Closure Sync
+
+Authorized guard-maintenance scope: record GC009-GC010-PCALLER-T0 material
+closure commit `09cf1634a` and route the next move to an operator checkpoint
+without releasing T1-T4.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009Gc010ProductionCallerT0Closure20260725.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: reviewer/closer acceptance, material closure commit,
+and mandatory continuity maintenance.
+
+Rollback boundary: revert only this continuity set if material commit
+`09cf1634a` is reverted.
+
+## GC-020 Marker - GC009-GC010 T0 Closure Continuity
+
+This handoff records material parent commit `09cf1634a`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.

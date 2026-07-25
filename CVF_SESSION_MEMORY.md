@@ -372,18 +372,18 @@ PPMCP-R1 is independently closed with reviewer repairs at material commit
 `539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
 are parked behind concrete reopen conditions.
 
-GC009-GC010-PCALLER-T0 is redispatch-ready with reviewer repairs at material
-commit `1fce46aee`. The first worker attempt stopped before candidate-owner
-comparison; its diagnostic is preserved at the governed `R0_BLOCKED` review
-path. Manifest heading-depth and atomic-proof defects are repaired, and
-pre-implementation passed on the repair range. The next allowed move is
-operator manual copy/paste of the committed T0 work order to one no-commit
-documentation worker for the actual candidate-owner comparison. Both
-canonical output paths remain absent. T1-T4 remain `HOLD_*`
-behind independent predecessor closure and fresh tranche authority. No
-runtime/source/test/checker/package/session/public mutation, CLI/MCP
-invocation, provider/API/account/network/browser use, deployment, or
-production claim is authorized.
+GC009-GC010-PCALLER-T0 is independently closed at material commit
+`09cf1634a` with terminal disposition
+`NOT_READY_MISSING_SOURCE_VERIFIED_OWNER`. The reviewer confirmed zero
+non-test callers for either helper and repaired the GC-023 source-fidelity
+wording without changing the result. The existing gap remains
+`IMPLEMENTED_NOT_INVOCATION_PROVEN`. T1-T4 remain `HOLD_*`; T1 cannot release
+from this not-ready result. The next allowed move is an operator checkpoint:
+keep the lane parked or explicitly authorize a fresh source-verified
+architecture/design packet to define a production owner. No worker dispatch,
+runtime/source/test/checker/package/public mutation, CLI/MCP invocation,
+provider/API/account/network/browser use, deployment, or production claim is
+authorized.
 Conversation provenance remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 
