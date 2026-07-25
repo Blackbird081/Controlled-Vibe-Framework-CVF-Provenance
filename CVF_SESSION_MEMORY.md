@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator manual copy/paste of committed PPMCP-R1 to one no-commit documentation worker; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator checkpoint for a new governed external intake or one condition-backed PPMCP GC-018; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| PPMCP-R1 pinned upstream and legacy delta re-intake closure | `539e453a7` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS. All 107 manifest tuples independently match; keyword-heuristic risk classification was rejected as unsafe value; five provider-neutral patterns are parked behind concrete reopen conditions. No runtime, checker, package, provider, process, CLI/MCP, or public authority released. |
 | CVF 23.07 final owner-surface absorption reconciliation closure | `ef2c3479b` | CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS. All 231 rows reconciled: 108 existing-owner, 4 bounded doctrine, 115 conditional candidates across eight R1C index rows, and 4 zero-byte no-value closures. Reviewer corrected the worker subtotal, preserved seven worked examples as fixture candidates, and split one vague 50-row product condition into four checkable owner-specific rows. No T5/runtime/provider/process/public authority released. |
 | CVF 23.07 final owner-surface absorption reconciliation dispatch | `372d1e262` | DISPATCH_READY_DOCUMENTATION_ONLY. One manual-copy/paste no-commit worker owns exactly three outputs: final decision, conditional reopen index update, and worker return. The 231-row snapshot must reach complete bounded value disposition without runtime/T5/CLI-MCP/provider/process/public action. |
 | EAIC result-admission semantic ratification | `328372888` | CLOSED_PASS_BOUNDED_RESULT_ADMISSION_SEMANTIC_RATIFIED_T5_NOT_OPENED. An external result without correlated launch or admission evidence cannot become a CVF-accepted result; this does not claim literal arbitrary-launch detection. Final CVF 23.07 owner-surface absorption reconciliation packet authoring is next. |
@@ -367,16 +368,18 @@ separate authorized tranche.
 The CVF 23.07 final owner-surface absorption reconciliation remains
 independently closed at material commit `ef2c3479b`.
 
-PPMCP-R1 is reviewer-accepted and dispatch-ready at material commit
-`f3f22f2d8`. Its bounded corpus is 98 pinned upstream files plus 9 retained
-legacy interpretation files.
+PPMCP-R1 is independently closed with reviewer repairs at material commit
+`539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
+are parked behind concrete reopen conditions.
 
-The next allowed move is operator manual copy/paste of the committed PPMCP-R1
-work order to one no-commit documentation worker. No dependency install,
-upstream test/server/Worker/hook execution, candidate implementation, T5,
-runtime/checker/package/UI implementation, agent invocation through CLI/MCP,
-provider/API/account/network/browser use, external-agent or studied-process
-activity, public-sync, deploy, or invocation-moratorium lift is authorized.
+The next allowed move is an operator checkpoint: select a new governed
+external intake, or explicitly authorize a fresh GC-018 for one PPMCP
+candidate only after its recorded reopen condition is evidenced. No dependency
+install, upstream test/server/Worker/hook execution, candidate implementation,
+T5, runtime/checker/package/UI implementation, agent invocation through
+CLI/MCP, provider/API/account/network/browser use, external-agent or
+studied-process activity, public-sync, deploy, or invocation-moratorium lift
+is authorized.
 Conversation provenance remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 

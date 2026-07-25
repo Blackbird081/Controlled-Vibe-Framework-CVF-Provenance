@@ -14,22 +14,23 @@ moratorium into no-commit worker execution.
 Target: preserve the pinned 107-file PPMCP-R1 corpus, reviewer repairs, exact
 worker scope, and unchanged invocation moratorium.
 
-Owner boundary: the operator manually copies the committed work order to one
-no-commit documentation worker. Reviewer/closer owns acceptance and commit.
+Owner boundary: PPMCP-R1 worker execution and independent closure are complete.
+The operator owns selection of the next governed intake or any fresh
+condition-backed GC-018.
 
 ## Active Boundary
 
-PPMCP-R1 is dispatch-ready at material commit `f3f22f2d8`. Only its static
-documentation worker lane is active; implementation and external invocation
-remain parked.
+PPMCP-R1 is independently closed at material commit `539e453a7`. Five
+provider-neutral patterns are conditionally parked; implementation and
+external invocation remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator
-manual copy/paste of committed PPMCP-R1 to one no-commit documentation
-worker; parked checkpoint=CLI/MCP invocation, provider/network/process
-action, implementation, public-sync, deploy, and moratorium lift.
+checkpoint for a new governed external intake or one condition-backed PPMCP
+GC-018; parked checkpoint=CLI/MCP invocation, provider/network/process action,
+implementation, public-sync, deploy, and moratorium lift.
 
 ## Current Mode
 
@@ -37,6 +38,9 @@ action, implementation, public-sync, deploy, and moratorium lift.
 
 ## Latest Work / Changes
 
+- PPMCP-R1 material closure commit `539e453a7` independently verifies all 107
+  manifest tuples, rejects keyword-heuristic risk classification as CVF
+  value, and parks five provider-neutral patterns behind concrete conditions.
 - PPMCP-R1 dispatch material commit `f3f22f2d8` passed pre-dispatch and the
   83-check pre-commit hook.
 - The pinned upstream mirror is
@@ -61,8 +65,9 @@ action, implementation, public-sync, deploy, and moratorium lift.
 
 ## Next Allowed Move
 
-Operator manual copy/paste of the committed PPMCP-R1 work order to one
-no-commit documentation worker.
+Operator checkpoint: select a new governed external intake, or explicitly
+authorize a fresh GC-018 for one PPMCP candidate only after its recorded
+reopen condition is evidenced.
 
 No dependency install, upstream execution, package, runtime, checker, UI,
 provider, process, CLI/MCP agent invocation, public-sync, deploy, or production
@@ -134,3 +139,29 @@ no runtime, provider, process, public, package, checker, or CLI/MCP claim.
 
 This handoff records continuity commit `fcd2361b8`. The next commit is limited
 to this handoff marker so the checker may accept its parent SHA.
+
+## Core Guard Self-Protection Authorization - PPMCP-R1 Closure Sync
+
+Authorized guard-maintenance scope: record PPMCP-R1 material closure commit
+`539e453a7` and route the next allowed move to an operator checkpoint.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/ppmcpR1PinnedUpstreamLegacyDeltaReintakeClosure20260725.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: continue the governed absorption sequence through
+independent reviewer closure and continuity maintenance.
+
+Rollback boundary: revert only this continuity set if material commit
+`539e453a7` is reverted.
+
+## GC-020 Marker - PPMCP-R1 Closure Continuity
+
+This handoff records material parent commit `539e453a7`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
