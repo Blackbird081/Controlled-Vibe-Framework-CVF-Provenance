@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE
 
 Batch ID: GC009-GC010-PCALLER-T0A
 
@@ -12,7 +12,7 @@ dispatchBaseHead: `3fe0954a9`
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: `4b6c57d11`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -116,6 +116,11 @@ Allowed scope:
 - create
   `docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_WORKER_RETURN_2026-07-25.md`;
 - repair structural defects inside those two paths and rerun gates.
+- reviewer/closer closure conversion additionally owns the two worker outputs,
+  this work order,
+  `docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_COMPLETION_2026-07-25.md`,
+  and
+  `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md`.
 
 Forbidden scope:
 
@@ -286,10 +291,10 @@ below.
 
 | Proof | Path | Atomic literal | Required |
 |---|---|---|---|
-| Terminal disposition present | audit path | N/A with reason: semantic validation must confirm exactly one enum token | No |
-| Exact owner/module/test paths recorded | audit path | `proposedOwnerModule` | Yes |
-| Negative caller search recorded | audit path | `rg` | Yes |
-| No-commit state recorded | worker-return path | `git status --short` | Yes |
+| Terminal disposition present | `docs/audits/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md` | N/A with reason: semantic validation must confirm exactly one enum token | No |
+| Exact owner/module/test paths recorded | `docs/audits/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md` | `proposedOwnerModule` | Yes |
+| Negative caller search recorded | `docs/audits/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md` | `rg` | Yes |
+| No-commit state recorded | `docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_WORKER_RETURN_2026-07-25.md` | `git status --short` | Yes |
 
 Required Proof Manifest Atomic Literal Discipline: every Required=Yes row
 uses one contiguous literal that can be checked in the named artifact.
@@ -384,21 +389,24 @@ confirmed, narrowed, rejected, or parked.
 
 ## Acceptance Criteria
 
-- [ ] All nine design questions have source-backed answers.
-- [ ] Exactly one terminal token is recorded.
-- [ ] Existing facts and proposed doc-only items are not conflated.
-- [ ] GC-009 owner, imports/exports, evaluation, evidence, tests, and rollback
+- [x] All nine design questions have source-backed answers.
+- [x] Exactly one terminal token is recorded.
+- [x] Existing facts and proposed doc-only items are not conflated.
+- [x] GC-009 owner, imports/exports, evaluation, evidence, tests, and rollback
   are explicit or the packet returns not-ready.
-- [ ] GC-010 has a separate explicit lane disposition.
-- [ ] Exactly two worker paths changed and the worker did not commit.
+- [x] GC-010 has a separate explicit lane disposition.
+- [x] Exactly two worker paths changed and the worker did not commit.
 
 Fail conditions:
 
-- [ ] Proposed path claimed as existing source.
-- [ ] Duplicate guard evaluation left ambiguous in a ready/partial result.
-- [ ] T1 release or runtime/package/test mutation claimed.
-- [ ] Missing concrete reopen condition for a parked/value-declined lane.
-- [ ] Provider, network, browser, CVF CLI/MCP, public, or deployment action.
+- [x] Confirmed absent: proposed path claimed as existing source.
+- [x] Confirmed absent: duplicate guard evaluation left ambiguous in a
+  ready/partial result.
+- [x] Confirmed absent: T1 release or runtime/package/test mutation claimed.
+- [x] Confirmed absent: missing concrete reopen condition for a
+  parked/value-declined lane.
+- [x] Confirmed absent: provider, network, browser, CVF CLI/MCP, public, or
+  deployment action.
 
 Closure is blocked if any fail condition is present.
 
@@ -450,14 +458,14 @@ git status --short --untracked-files=all
 
 ## Closure Checklist
 
-- [ ] Acceptance criteria resolved.
-- [ ] Required commands and source evidence recorded.
-- [ ] Worker pending-return and fast gates passed.
-- [ ] Worker remained `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
-- [ ] Reviewer closure diff and committed-range pre-closure passed.
-- [ ] T1-T4 remain HOLD unless a later operator-authorized packet releases one.
-- [ ] No open checkbox residue remains at closure.
-- [ ] GC-020 continuity sync follows material commit.
+- [x] Acceptance criteria resolved.
+- [x] Required commands and source evidence recorded.
+- [x] Worker pending-return and fast gates passed.
+- [x] Worker remained `COMPLETE_PENDING_REVIEW`.
+- [x] Reviewer closure diff and committed-range pre-closure passed.
+- [x] T1-T4 remain HOLD.
+- [x] No open checkbox residue remains at closure.
+- [x] GC-020 continuity sync follows material commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -536,7 +544,31 @@ Reason: private provenance work order; no public-sync authorization.
 
 ## Claim Boundary
 
-This work order releases only a no-commit documentation worker to define or
-reject a future owner contract. It does not create or prove a production
-caller, and T1-T4 remain HOLD pending a later independent closure and explicit
-operator-authorized implementation packet.
+This work order closed one no-commit documentation design tranche with
+`NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE`. It does not create or
+prove a production caller. GC-010 requires a separate fresh packet, and T1-T4
+remain HOLD.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_COMPLETION_2026-07-25.md` | reviewer-owned completion review | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md` | T0A pass bounded not-ready; T1-T4 `HOLD_*` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check passes; no new corpus packet | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-source design | PASS |
+| External evidence digest | N/A with reason | no external evidence | N/A with reason |
+| System loop interlock | `docs/reference/system_chain/gaps/entries/gc009_gc010_no_production_caller.json` | gap remains `IMPLEMENTED_NOT_INVOCATION_PROVEN` | PASS |
+| Session continuity | active front doors | separate reviewer/closer-owned session-sync commit follows material closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Terminal disposition | one fixed enum token | `NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` | PASS |
+| Preferred owner status | documentation-only and absent | proposed sibling is `DOC_ONLY_NEW` | PASS |
+| Non-test caller count | source-verified count | 0 | PASS |
+| GC-010 lane | explicit separate or parked result | `SEPARATE_FRESH_PACKET` with release condition | PASS |
+| T1 release | HOLD after not-ready T0A | T1-T4 remain `HOLD_*` | PASS |
+| Worker commit | none | HEAD remained `4b6c57d11` | PASS |
