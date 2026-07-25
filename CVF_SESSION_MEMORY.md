@@ -372,12 +372,14 @@ PPMCP-R1 is independently closed with reviewer repairs at material commit
 `539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
 are parked behind concrete reopen conditions.
 
-GC009-GC010-PCALLER-T0 is independently reviewed, repaired, and dispatch-ready
-at material commit `7a6bdd9e3`. The next allowed move is operator manual
-copy/paste of the committed T0 work order to one no-commit documentation
-worker. T0 must create exactly its two owned audit/worker-return files and stop
-at `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` without committing. T0
-has not yet executed; both output paths remain absent. T1-T4 remain `HOLD_*`
+GC009-GC010-PCALLER-T0 is redispatch-ready with reviewer repairs at material
+commit `1fce46aee`. The first worker attempt stopped before candidate-owner
+comparison; its diagnostic is preserved at the governed `R0_BLOCKED` review
+path. Manifest heading-depth and atomic-proof defects are repaired, and
+pre-implementation passed on the repair range. The next allowed move is
+operator manual copy/paste of the committed T0 work order to one no-commit
+documentation worker for the actual candidate-owner comparison. Both
+canonical output paths remain absent. T1-T4 remain `HOLD_*`
 behind independent predecessor closure and fresh tranche authority. No
 runtime/source/test/checker/package/session/public mutation, CLI/MCP
 invocation, provider/API/account/network/browser use, deployment, or

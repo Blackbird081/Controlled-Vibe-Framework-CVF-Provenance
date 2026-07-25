@@ -20,16 +20,17 @@ condition-backed GC-018.
 
 ## Active Boundary
 
-GC009-GC010-PCALLER-T0 is independently reviewed, repaired, and dispatch-ready
-at material commit `7a6bdd9e3`. T0 has not executed. T1-T4, implementation,
-provider/live proof, and external invocation remain parked.
+GC009-GC010-PCALLER-T0 is redispatch-ready with reviewer repairs at material
+commit `1fce46aee`. The R0 attempt stopped before candidate-owner comparison
+and is preserved as a blocked diagnostic. T1-T4, implementation, provider/live
+proof, and external invocation remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator
 manual copy/paste of the committed GC009-GC010-PCALLER-T0 work order to one
-no-commit documentation worker; parked checkpoint=T1-T4, CLI/MCP invocation,
+no-commit documentation worker for actual candidate-owner comparison; parked checkpoint=T1-T4, CLI/MCP invocation,
 provider/network/process action, runtime/source/test/checker/package/session/
 public mutation, deploy, and moratorium lift.
 
@@ -39,6 +40,9 @@ public mutation, deploy, and moratorium lift.
 
 ## Latest Work / Changes
 
+- GC009-GC010-PCALLER-T0 redispatch commit `1fce46aee` repairs the manifest
+  heading depth and atomic proof literals, preserves the R0 blocked diagnostic,
+  and passes pre-implementation before actual candidate-owner comparison.
 - GC009-GC010-PCALLER-T0 material dispatch commit `7a6bdd9e3` independently
   accepts the three-artifact packet after reviewer repairs.
 - T0 owns exactly one audit and one pending worker-return file, must not commit,
@@ -72,8 +76,9 @@ public mutation, deploy, and moratorium lift.
 
 ## Next Allowed Move
 
-Operator manual copy/paste of the committed GC009-GC010-PCALLER-T0 work order
-to one no-commit documentation worker.
+Operator manual copy/paste of the redispatch-committed GC009-GC010-PCALLER-T0
+work order to one no-commit documentation worker for actual candidate-owner
+comparison.
 
 No T0 output exists yet. T1-T4, dependency install, package, runtime, source,
 test, checker, session/public mutation, provider, process, CLI/MCP agent
@@ -196,5 +201,32 @@ Rollback boundary: revert only this continuity set if material commit
 ## GC-020 Marker - GC009-GC010 T0 Dispatch Continuity
 
 This handoff records material parent commit `7a6bdd9e3`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T0 Redispatch Sync
+
+Authorized guard-maintenance scope: record GC009-GC010-PCALLER-T0 redispatch
+commit `1fce46aee` and route the next allowed move to actual no-commit worker
+execution.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009Gc010ProductionCallerT0Redispatch20260725.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: reviewer/closer-owned repair, verification, bounded
+redispatch, and mandatory continuity maintenance.
+
+Rollback boundary: revert only this continuity set if material commit
+`1fce46aee` is reverted.
+
+## GC-020 Marker - GC009-GC010 T0 Redispatch Continuity
+
+This handoff records material parent commit `1fce46aee`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
