@@ -1,0 +1,20 @@
+{
+  "stateOrder": 2029,
+  "stateKey": "gc009Gc010ProductionCallerT0Dispatch20260725",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS",
+    "date": "2026-07-25",
+    "materialCommit": "7a6bdd9e3",
+    "roadmap": "docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md",
+    "baseline": "docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md",
+    "workerOutputs": [
+      "docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T0_SOURCE_VERIFIED_ARCHITECTURE_DECISION_2026-07-25.md",
+      "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T0_WORKER_RETURN_2026-07-25.md"
+    ],
+    "reviewerRepairs": "refreshed predecessor commits, corrected source-verification line and fact-type literals, made future routing role-neutral, added intake role routing and external-intake N/A accounting, separated worker and reviewer completion ownership, and completed the full worker-return shape contract",
+    "nextAllowedMove": "operator manual copy/paste of the committed T0 work order to one no-commit documentation worker",
+    "laterTranches": "T1-T4 remain HOLD_* behind independent predecessor closure and fresh tranche authority",
+    "claimBoundary": "T0 documentation dispatch only. No T0 execution yet, no runtime/source/test/checker/package/session/public mutation, no provider/live proof, no CLI/MCP invocation, and no T1-T4 release."
+  }
+}

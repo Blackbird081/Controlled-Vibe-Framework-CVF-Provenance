@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator checkpoint for a new governed external intake or one condition-backed PPMCP GC-018; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator manual copy/paste of the committed GC009-GC010-PCALLER-T0 work order to one no-commit documentation worker; parked checkpoint=T1-T4, runtime/source/test/checker/package/session/public mutation, agent CLI/MCP, provider/API/account/network/browser use, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -372,14 +372,16 @@ PPMCP-R1 is independently closed with reviewer repairs at material commit
 `539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
 are parked behind concrete reopen conditions.
 
-The next allowed move is an operator checkpoint: select a new governed
-external intake, or explicitly authorize a fresh GC-018 for one PPMCP
-candidate only after its recorded reopen condition is evidenced. No dependency
-install, upstream test/server/Worker/hook execution, candidate implementation,
-T5, runtime/checker/package/UI implementation, agent invocation through
-CLI/MCP, provider/API/account/network/browser use, external-agent or
-studied-process activity, public-sync, deploy, or invocation-moratorium lift
-is authorized.
+GC009-GC010-PCALLER-T0 is independently reviewed, repaired, and dispatch-ready
+at material commit `7a6bdd9e3`. The next allowed move is operator manual
+copy/paste of the committed T0 work order to one no-commit documentation
+worker. T0 must create exactly its two owned audit/worker-return files and stop
+at `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` without committing. T0
+has not yet executed; both output paths remain absent. T1-T4 remain `HOLD_*`
+behind independent predecessor closure and fresh tranche authority. No
+runtime/source/test/checker/package/session/public mutation, CLI/MCP
+invocation, provider/API/account/network/browser use, deployment, or
+production claim is authorized.
 Conversation provenance remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 

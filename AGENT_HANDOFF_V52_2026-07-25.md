@@ -20,17 +20,18 @@ condition-backed GC-018.
 
 ## Active Boundary
 
-PPMCP-R1 is independently closed at material commit `539e453a7`. Five
-provider-neutral patterns are conditionally parked; implementation and
-external invocation remain parked.
+GC009-GC010-PCALLER-T0 is independently reviewed, repaired, and dispatch-ready
+at material commit `7a6bdd9e3`. T0 has not executed. T1-T4, implementation,
+provider/live proof, and external invocation remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator
-checkpoint for a new governed external intake or one condition-backed PPMCP
-GC-018; parked checkpoint=CLI/MCP invocation, provider/network/process action,
-implementation, public-sync, deploy, and moratorium lift.
+manual copy/paste of the committed GC009-GC010-PCALLER-T0 work order to one
+no-commit documentation worker; parked checkpoint=T1-T4, CLI/MCP invocation,
+provider/network/process action, runtime/source/test/checker/package/session/
+public mutation, deploy, and moratorium lift.
 
 ## Current Mode
 
@@ -38,6 +39,12 @@ implementation, public-sync, deploy, and moratorium lift.
 
 ## Latest Work / Changes
 
+- GC009-GC010-PCALLER-T0 material dispatch commit `7a6bdd9e3` independently
+  accepts the three-artifact packet after reviewer repairs.
+- T0 owns exactly one audit and one pending worker-return file, must not commit,
+  and must stop at `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+- No T0 output exists yet. T1-T4 remain `HOLD_*` behind independent
+  predecessor closure and fresh tranche authority.
 - PPMCP-R1 material closure commit `539e453a7` independently verifies all 107
   manifest tuples, rejects keyword-heuristic risk classification as CVF
   value, and parks five provider-neutral patterns behind concrete conditions.
@@ -65,14 +72,13 @@ implementation, public-sync, deploy, and moratorium lift.
 
 ## Next Allowed Move
 
-Operator checkpoint: select a new governed external intake, or explicitly
-authorize a fresh GC-018 for one PPMCP candidate only after its recorded
-reopen condition is evidenced.
+Operator manual copy/paste of the committed GC009-GC010-PCALLER-T0 work order
+to one no-commit documentation worker.
 
-No dependency install, upstream execution, package, runtime, checker, UI,
-provider, process, CLI/MCP agent invocation, public-sync, deploy, or production
-lane is released. The EAIC knowledge gap and invocation moratorium remain
-parked.
+No T0 output exists yet. T1-T4, dependency install, package, runtime, source,
+test, checker, session/public mutation, provider, process, CLI/MCP agent
+invocation, public-sync, deploy, or production lane is released. The EAIC
+knowledge gap and invocation moratorium remain parked.
 
 ## Core Guard Self-Protection Authorization - PPMCP-R1 Dispatch Sync
 
@@ -163,5 +169,32 @@ Rollback boundary: revert only this continuity set if material commit
 ## GC-020 Marker - PPMCP-R1 Closure Continuity
 
 This handoff records material parent commit `539e453a7`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T0 Dispatch Sync
+
+Authorized guard-maintenance scope: record GC009-GC010-PCALLER-T0 material
+dispatch commit `7a6bdd9e3` and route the next allowed move to its no-commit
+documentation worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009Gc010ProductionCallerT0Dispatch20260725.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: independent review, bounded dispatch release, and
+mandatory continuity maintenance for the operator-confirmed T0 packet.
+
+Rollback boundary: revert only this continuity set if material commit
+`7a6bdd9e3` is reverted.
+
+## GC-020 Marker - GC009-GC010 T0 Dispatch Continuity
+
+This handoff records material parent commit `7a6bdd9e3`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
