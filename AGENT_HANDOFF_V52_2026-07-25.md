@@ -1,4 +1,4 @@
-# CVF Agent Handoff V52 - PINT-R2 Bounded Closure
+# CVF Agent Handoff V52 - PPMCP-R1 Dispatch
 
 Memory class: active-handoff
 
@@ -6,28 +6,29 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry PINT-R2 reviewer closure and its remaining parked boundaries into the
-next operator checkpoint.
+Carry the reviewer-accepted PPMCP-R1 dispatch and unchanged invocation
+moratorium into no-commit worker execution.
 
 ## Scope / Target / Owner Boundary
 
-Target: preserve PINT-R2 documentation dispositions, reviewer repairs, and
-the unchanged invocation moratorium.
+Target: preserve the pinned 107-file PPMCP-R1 corpus, reviewer repairs, exact
+worker scope, and unchanged invocation moratorium.
 
-Owner boundary: the operator selects the next governed intake or explicitly
-authorizes later Candidate A documentation work. No worker lane is active.
+Owner boundary: the operator manually copies the committed work order to one
+no-commit documentation worker. Reviewer/closer owns acceptance and commit.
 
 ## Active Boundary
 
-PINT-R2 is closed bounded. Only operator selection of the next governed task
-is active; implementation and external invocation remain parked.
+PPMCP-R1 is dispatch-ready at material commit `f3f22f2d8`. Only its static
+documentation worker lane is active; implementation and external invocation
+remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator
-checkpoint for a new governed intake or explicit Candidate A documentation
-enrichment; parked checkpoint=CLI/MCP invocation, provider/network/process
+manual copy/paste of committed PPMCP-R1 to one no-commit documentation
+worker; parked checkpoint=CLI/MCP invocation, provider/network/process
 action, implementation, public-sync, deploy, and moratorium lift.
 
 ## Current Mode
@@ -36,6 +37,16 @@ action, implementation, public-sync, deploy, and moratorium lift.
 
 ## Latest Work / Changes
 
+- PPMCP-R1 dispatch material commit `f3f22f2d8` passed pre-dispatch and the
+  83-check pre-commit hook.
+- The pinned upstream mirror is
+  `.private_reference/source_mirrors/nguyennguyenit__pancake-pos-mcp/` at
+  `41979fdac4fdf9a8a6f956889c33f19fa3389215`.
+- Worker scope is exactly 98 upstream tracked files plus 9 legacy
+  interpretation files and four no-commit outputs.
+- Reviewer corrected the aggregate digest to
+  `7deb1ef3b1e31b5770a88039126b0a91d93b3de6c3b40bb4aac7424374f83696`
+  and repaired source location, role, closure, and literal-shape defects.
 - PINT-R2 material commit `f48ba95f2` is independently accepted with repairs.
 - The exact comparison covered three retained PINT files, eight named owner
   source/test files, and one corroborating owner test discovered by search.
@@ -50,13 +61,39 @@ action, implementation, public-sync, deploy, and moratorium lift.
 
 ## Next Allowed Move
 
-Operator checkpoint: select a new external repository/corpus for governed
-intake or explicitly authorize a bounded documentation enrichment for
-Candidate A.
+Operator manual copy/paste of the committed PPMCP-R1 work order to one
+no-commit documentation worker.
 
-No package, runtime, checker, UI, provider, process, CLI/MCP, public-sync,
-deploy, or production lane is automatically released. The EAIC knowledge gap
-and invocation moratorium remain parked.
+No dependency install, upstream execution, package, runtime, checker, UI,
+provider, process, CLI/MCP agent invocation, public-sync, deploy, or production
+lane is released. The EAIC knowledge gap and invocation moratorium remain
+parked.
+
+## Core Guard Self-Protection Authorization - PPMCP-R1 Dispatch Sync
+
+Authorized guard-maintenance scope: record PPMCP-R1 material commit
+`f3f22f2d8` and route the next allowed move to its no-commit worker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/ppmcpR1PinnedUpstreamLegacyDeltaReintakeDispatch20260725.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: continue the governed external-repository absorption
+sequence after reviewer acceptance.
+
+Rollback boundary: revert only this continuity set if material commit
+`f3f22f2d8` is reverted. Do not alter prior PINT-R2 closure records.
+
+## GC-020 Marker - PPMCP-R1 Dispatch Continuity
+
+This handoff records material parent commit `f3f22f2d8`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
 
 ## Core Guard Self-Protection Authorization - PINT-R2 Closure Sync
 

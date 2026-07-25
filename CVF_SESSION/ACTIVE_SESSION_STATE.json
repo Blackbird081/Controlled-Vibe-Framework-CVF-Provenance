@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "PINT-R2 is independently closed bounded with reviewer repairs at material commit f48ba95f2. Three retained files and nine owner source/test files reconcile. Candidate A is retained as ENRICH_EXISTING documentation value; Candidate B is DEFER_PENDING_OWNER_SOURCE_VERIFICATION because no task-classification owner exists. The next allowed move is an operator checkpoint to select a new external repository/corpus or explicitly authorize a bounded documentation enrichment for Candidate A. The EAIC MCP/CLI runtime knowledge gap and invocation moratorium remain parked. No candidate lane, T5, runtime/checker/package/UI implementation, agent invocation through CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, public-sync, deploy, or invocation-moratorium lift is authorized. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "PPMCP-R1 pinned-upstream-plus-legacy delta re-intake is reviewer-accepted and dispatch-ready at material commit f3f22f2d8. The next allowed move is operator manual copy/paste of the committed PPMCP-R1 work order to one no-commit documentation worker. The worker may read and statically disposition exactly 98 pinned upstream files plus 9 retained legacy interpretation files and write only the four named audit/registry/aggregate/worker-return outputs. The EAIC MCP/CLI runtime knowledge gap and invocation moratorium remain parked. No dependency install, upstream test/server/Worker/hook execution, candidate implementation, T5, runtime/checker/package/UI implementation, agent invocation through CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, public-sync, deploy, or invocation-moratorium lift is authorized. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13980,5 +13980,18 @@
     "reviewerRepairs": "restored three-file corpus cardinality, finalized candidate dispositions, corrected learning classification, and added required GC-051 coverage",
     "nextAllowedMove": "operator checkpoint for a new governed intake or explicit Candidate A documentation enrichment",
     "claimBoundary": "No CLI/MCP invocation, provider/network/process action, runtime/checker/package/UI implementation, public sync, or invocation-moratorium lift."
+  },
+  "ppmcpR1PinnedUpstreamLegacyDeltaReintakeDispatch20260725": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS",
+    "date": "2026-07-25",
+    "materialCommit": "f3f22f2d8",
+    "baseline": "docs/baselines/CVF_GC018_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
+    "sourceMirror": ".private_reference/source_mirrors/nguyennguyenit__pancake-pos-mcp/",
+    "pinnedCommit": "41979fdac4fdf9a8a6f956889c33f19fa3389215",
+    "scope": "98 upstream tracked files plus 9 retained legacy interpretation files; 107-file static documentation-only re-intake",
+    "reviewerRepairs": "corrected truncated aggregate digest, display-ID resolver source location, conditional-reopen ownership, completion-review separation, aggregate closure ownership, provider-neutral role routing, source-mirror description, and staged literal-shape defects",
+    "nextAllowedMove": "operator manual copy/paste of the committed PPMCP-R1 work order to one no-commit documentation worker",
+    "claimBoundary": "No dependency install, upstream execution, CLI/MCP agent invocation, provider/network/process action, runtime/checker/package implementation, public sync, or invocation-moratorium lift."
   }
 }

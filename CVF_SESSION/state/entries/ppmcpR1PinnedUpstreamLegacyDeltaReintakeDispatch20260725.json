@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2027,
+  "stateKey": "ppmcpR1PinnedUpstreamLegacyDeltaReintakeDispatch20260725",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS",
+    "date": "2026-07-25",
+    "materialCommit": "f3f22f2d8",
+    "baseline": "docs/baselines/CVF_GC018_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
+    "sourceMirror": ".private_reference/source_mirrors/nguyennguyenit__pancake-pos-mcp/",
+    "pinnedCommit": "41979fdac4fdf9a8a6f956889c33f19fa3389215",
+    "scope": "98 upstream tracked files plus 9 retained legacy interpretation files; 107-file static documentation-only re-intake",
+    "reviewerRepairs": "corrected truncated aggregate digest, display-ID resolver source location, conditional-reopen ownership, completion-review separation, aggregate closure ownership, provider-neutral role routing, source-mirror description, and staged literal-shape defects",
+    "nextAllowedMove": "operator manual copy/paste of the committed PPMCP-R1 work order to one no-commit documentation worker",
+    "claimBoundary": "No dependency install, upstream execution, CLI/MCP agent invocation, provider/network/process action, runtime/checker/package implementation, public sync, or invocation-moratorium lift."
+  }
+}

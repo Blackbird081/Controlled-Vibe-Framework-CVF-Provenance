@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator checkpoint after PINT-R2 bounded closure; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator manual copy/paste of committed PPMCP-R1 to one no-commit documentation worker; parked checkpoint=T5, agent CLI/MCP, provider/API/account/network/browser use, external-agent or studied-process activity, implementation, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -367,15 +367,14 @@ separate authorized tranche.
 The CVF 23.07 final owner-surface absorption reconciliation remains
 independently closed at material commit `ef2c3479b`.
 
-PINT-R2 is independently closed bounded with reviewer repairs at material
-commit `f48ba95f2`. Three retained files and nine owner source/test files were
-reconciled. Candidate A is retained as `ENRICH_EXISTING` documentation value;
-Candidate B is `DEFER_PENDING_OWNER_SOURCE_VERIFICATION`.
+PPMCP-R1 is reviewer-accepted and dispatch-ready at material commit
+`f3f22f2d8`. Its bounded corpus is 98 pinned upstream files plus 9 retained
+legacy interpretation files.
 
-The next allowed move is an operator checkpoint to select a new external
-repository/corpus or explicitly authorize a bounded documentation enrichment
-for Candidate A. No candidate lane, T5, runtime/checker/package/UI
-implementation, agent invocation through CLI/MCP,
+The next allowed move is operator manual copy/paste of the committed PPMCP-R1
+work order to one no-commit documentation worker. No dependency install,
+upstream test/server/Worker/hook execution, candidate implementation, T5,
+runtime/checker/package/UI implementation, agent invocation through CLI/MCP,
 provider/API/account/network/browser use, external-agent or studied-process
 activity, public-sync, deploy, or invocation-moratorium lift is authorized.
 Conversation provenance remains a secondary-input boundary.
