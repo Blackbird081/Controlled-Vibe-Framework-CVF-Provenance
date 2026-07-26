@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T1I is reviewer-accepted and dispatch-ready at material commit ca538479e. The documentation-only packet asks one no-commit worker to source-verify the exact context-preserving MandatoryGateway method, duplicate-evaluation prevention, no-bypass execute configuration, and receipt/audit projection shape. Reviewer repairs corrected the T0A material-versus-continuity anchor, the GC-023 active-owner versus resolved-tombstone distinction, nested GatewayResult.evidence fields, and packet-author changed-set trace. Pre-dispatch passed 75/75, dispatch commit steward passed, and pre-commit passed 83/83. The next allowed move is dispatch of docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md to one WORKER_MUST_NOT_COMMIT documentation worker. Both canonical worker outputs are absent. T1 runtime composition and T2-T4 remain HOLD_*; no runtime/source/test/checker/package/public mutation, provider/API/account/network/browser use, CVF CLI/MCP invocation, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T1I is independently closed at material commit 7b3cdc23a with CLOSED_PASS_BOUNDED_INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET. The accepted documentation design specifies GuardRequestContext preservation through MandatoryGateway.checkContext, exactly-one gateway evaluation, no-bypass execute configuration, and receipt/audit projection through GatewayResult.evidence plus WebGovernanceEnvelope.auditEventIds. Reviewer repairs corrected the GuardRequestContext field count from 12 to 14 and normalized one corpus N/A verdict. Worker pre-implementation passed 77/77, worker-return fast gate passed, reviewer-fast passed 62/62, and pre-commit passed 83/83. The next allowed move is an operator checkpoint to park the lane or explicitly authorize a fresh source-verified T1 runtime GC-018/work-order packet. T1 runtime composition and T2-T4 remain HOLD_*; no runtime/source/test/checker/package/public mutation, provider/API/account/network/browser use, CVF CLI/MCP invocation, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14101,5 +14101,22 @@
     "nextAllowedMove": "dispatch the committed T1I work order to one WORKER_MUST_NOT_COMMIT documentation worker",
     "laterTranches": "T1 runtime composition and T2-T4 remain HOLD_*; a ready T1I result authorizes only a future packet checkpoint",
     "claimBoundary": "T1I documentation dispatch only. No interface, adapter, singleton, production caller, runtime/source/test/checker/package/public mutation, provider/live proof, CLI/MCP invocation, deployment, or later-tranche release."
+  },
+  "gc009Gc010ProductionCallerT1InterfaceDesignClosure20260726": {
+    "status": "CLOSED_PASS_BOUNDED_INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET",
+    "date": "2026-07-26",
+    "materialCommit": "7b3cdc23a",
+    "executionBaseHead": "2956af3e4",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md",
+    "auditDecision": "docs/audits/CVF_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md",
+    "workerReturn": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_WORKER_RETURN_2026-07-25.md",
+    "completionReview": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_COMPLETION_2026-07-25.md",
+    "terminalDisposition": "INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET",
+    "designDecision": "add MandatoryGateway.checkContext(context: GuardRequestContext): GatewayResult, preserve the full 14-field Web context, evaluate the gateway exactly once, retain bypassActions as an empty list with fail-closed execute configuration, and project gateway evidence plus appendAuditEvent linkage into the Web governance envelope",
+    "reviewerRepair": "corrected the GuardRequestContext field count from 12 to 14 and normalized the worker-return corpus N/A verdict required by the literal checker",
+    "verification": "worker pre-implementation 77/77 PASS; worker-return fast gate PASS; reviewer-fast 62/62 PASS; reviewer-return commit steward PASS; pre-commit 83/83 PASS; committed-range pre-closure substantive checks pending this GC-020 continuity sync",
+    "nextAllowedMove": "operator checkpoint to park the lane or explicitly authorize a fresh source-verified T1 runtime GC-018/work-order packet",
+    "laterTranches": "T1 runtime composition and T2-T4 remain HOLD_*; interface readiness is not implementation release",
+    "claimBoundary": "documentation-only T1I closure. No interface, adapter, singleton, production caller, runtime/source/test/checker/package/public mutation, provider/live proof, CLI/MCP invocation, deployment, or production claim."
   }
 }
