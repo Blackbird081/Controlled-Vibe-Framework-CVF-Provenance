@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_GC010_T1_PASS_BOUNDED_DESIGN_READY_CALLER_UNRESOLVED_GC010_T2_CALLER_DECISION_DISPATCH_READY
+Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_GC010_T1_PASS_BOUNDED_DESIGN_READY_CALLER_UNRESOLVED_GC010_T2_PASS_BOUNDED_VALUE_PARKED
 
 ## Dispatch Prompt Envelope
 
@@ -115,7 +115,7 @@ separate GC-010 lane remain outside active scope.
 | T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN |
 | GC010-T0 | Source-verified `AgentExecutionRuntime` owner, provider, receipt, and proof decision | CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN |
 | GC010-T1 | Exact package-native owner interface, export, receipt, proof, failure, and rollback design | CLOSED_PASS_BOUNDED_DESIGN_SPEC_READY_FOUNDATION_ONLY_CALLER_UNRESOLVED |
-| GC010-T2 | Exact non-test caller ownership and caller-level invocation-boundary decision | REVIEWER_ACCEPTED_DISPATCH_READY |
+| GC010-T2 | Exact non-test caller ownership and caller-level invocation-boundary decision | CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION |
 
 Every later tranche remains `HOLD_*` until its predecessor has independent
 (reviewer/closer-accepted) closure evidence recorded in a completion review or
@@ -306,7 +306,7 @@ only if it explicitly rejects any production-caller or GC-010 closure claim.
 A caller-inclusive packet instead requires fresh source verification of the
 exact caller, ownership, and invocation boundary.
 
-### GC010-T2 - Non-Test Caller Ownership And Invocation Boundary Decision (DISPATCH READY)
+### GC010-T2 - Non-Test Caller Ownership And Invocation Boundary Decision (CLOSED PASS BOUNDED VALUE PARKED)
 
 Released by:
 
@@ -324,6 +324,18 @@ caller remains doc-only. The worker creates exactly one audit and one worker
 return under `WORKER_MUST_NOT_COMMIT`; no runtime, tests, package, export,
 provider, Web, execution-plane, CLI/MCP, public, or deployment action is
 released.
+
+Independent review accepts the R1-repaired decision. No candidate is
+`EXISTING_SOURCE_COMPATIBLE`: package-internal and execution-plane candidates
+have no current owner; cvf-web and governed CLI/MCP own incompatible existing
+pipelines; the proposed-new candidate remains doc-only. GC-010 stays open and
+no T3 is released.
+
+The lane may reopen only when current source proves all four facts together:
+a non-test `AgentExecutionRuntime` construction/import, a concrete registered
+production trigger, real engine/provider wiring, and a durable receipt or
+audit consumer on that path. A new work order or bare export alone does not
+satisfy the condition.
 
 ## Design Control Gate
 
@@ -607,10 +619,12 @@ batch is authorized by this artifact.
 | Work order status (GC010-T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_DESIGN_SPEC_READY_FOUNDATION_ONLY_CALLER_UNRESOLVED` | PASS |
 | Completion or reviewer artifact (GC010-T1) | `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_COMPLETION_2026-07-26.md` | independent bounded R1 design acceptance; caller unresolved | PASS |
 | Baseline status (GC010-T2) | `docs/baselines/CVF_GC018_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Work order status (GC010-T2) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_GC010_T1_PASS_BOUNDED_DESIGN_READY_CALLER_UNRESOLVED_GC010_T2_CALLER_DECISION_DISPATCH_READY` | PASS |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
-| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
+| Work order status (GC010-T2) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION` | PASS |
+| Completion or reviewer artifact (GC010-T2) | `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_COMPLETION_2026-07-26.md` | independent bounded value-parked R1 acceptance | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_GC010_T1_PASS_BOUNDED_DESIGN_READY_CALLER_UNRESOLVED_GC010_T2_PASS_BOUNDED_VALUE_PARKED` | PASS |
+| Corpus registry source | `docs/corpus-intelligence/registry/entries/gc010-aer-t2-execution-plane-candidate-source.json` | bounded named execution-plane candidate file registered after full pre-commit coverage check | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | regenerated from per-entry sources | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no Markdown registry edit required for generated JSON coverage | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
 | System loop interlock | GC-009/GC-010 gap entry | GC-009 composition recorded; paired status remains `IMPLEMENTED_NOT_INVOCATION_PROVEN` because T2 and GC-010 remain open | PASS |
 | Session continuity | separate session-sync commit | follows material closure commit | PASS |

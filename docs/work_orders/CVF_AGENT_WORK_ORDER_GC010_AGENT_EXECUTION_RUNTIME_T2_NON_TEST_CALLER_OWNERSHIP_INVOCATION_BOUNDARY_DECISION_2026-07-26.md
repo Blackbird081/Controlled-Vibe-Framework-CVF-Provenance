@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION
 
 Batch ID: GC010-AER-T2
 
@@ -121,6 +121,18 @@ Allowed:
    and proof field is supported.
 7. Define a checkable reopen condition when no current candidate is viable.
 8. Select exactly one terminal caller-readiness token.
+9. Reviewer closure may accept the two worker outputs and update exactly:
+   `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_COMPLETION_2026-07-26.md`;
+   `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_2026-07-26.md`;
+   `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md`;
+   `docs/reference/system_chain/gaps/entries/gc009_gc010_no_production_caller.json`;
+   `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json`;
+   `docs/corpus-intelligence/registry/entries/gc010-aer-t2-execution-plane-candidate-source.json`;
+   `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`.
+   The accepted worker paths are
+   `docs/audits/CVF_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_2026-07-26.md`
+   and
+   `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_WORKER_RETURN_2026-07-26.md`.
 
 Forbidden:
 
@@ -421,14 +433,14 @@ benchmarks, or release bundles.
 
 ## Acceptance Criteria
 
-- [ ] exact two worker outputs;
-- [ ] all sixteen questions answered;
-- [ ] all five candidate families compared;
-- [ ] current facts separated from doc-only proposals;
-- [ ] exactly one terminal caller-readiness token;
-- [ ] concrete reopen condition if no existing caller is accepted;
-- [ ] no forbidden path or action;
-- [ ] gates pass; worker HEAD unchanged; nothing staged.
+- [x] exact two worker outputs;
+- [x] all sixteen questions answered;
+- [x] all five candidate families compared;
+- [x] current facts separated from doc-only proposals;
+- [x] exactly one terminal caller-readiness token;
+- [x] concrete reopen condition if no existing caller is accepted;
+- [x] no forbidden path or action;
+- [x] gates pass; worker HEAD unchanged; nothing staged.
 
 ## Execution Plan
 
@@ -450,13 +462,13 @@ enough value and authority.
 
 ## Closure Checklist
 
-- [ ] worker started clean;
-- [ ] exact two outputs;
-- [ ] sixteen questions and five candidates;
-- [ ] one terminal token;
-- [ ] no forbidden action;
-- [ ] worker-return fast gate passes;
-- [ ] no staging or worker commit.
+- [x] worker started clean;
+- [x] exact two outputs;
+- [x] sixteen questions and five candidates;
+- [x] one terminal token;
+- [x] no forbidden action;
+- [x] worker-return fast gate passes;
+- [x] no staging or worker commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -577,11 +589,34 @@ Reason: private provenance decision packet only.
 
 ## Machine Closure Package
 
-NOT_APPLICABLE_WITH_REASON: dispatch-ready work order; reviewer owns closure.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_COMPLETION_2026-07-26.md` | independent R1 acceptance and bounded value-parked closure | PASS |
+| Roadmap state | companion production-caller roadmap | GC010-T2 passed bounded and value-parked | PASS |
+| Registry JSON | paired system-chain gap entry | four-fact reopen condition and completion citation recorded | PASS |
+| Registry Markdown | generated system-chain gap index | regenerated from changed gap entry | PASS |
+| Corpus registry source | `docs/corpus-intelligence/registry/entries/gc010-aer-t2-execution-plane-candidate-source.json` | named execution-plane comparison source registered | PASS |
+| Corpus registry aggregate | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | regenerated from per-entry sources | PASS |
+| External evidence digest | none | repository-local evidence only | N/A with reason: no external evidence consumed |
+| System loop interlock | paired GC-009/GC-010 gap | GC-010 remains open | PASS |
+| Session continuity | active state, bootstrap, memory, and handoff | dedicated reviewer sync follows material closure | BLOCKED with reason: continuity child commit follows closure |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| worker route | two paths and no commit | exact two paths at unchanged HEAD | PASS |
+| candidate comparison | five required families | 5/5 | PASS |
+| decision questions | all sixteen | 16/16 | PASS |
+| terminal token | exactly one | value-parked token | PASS |
+| reopen condition | concrete source fact | four facts required together | PASS |
+| caller boundary | no inferred existing owner | no viable current caller | PASS |
 
 ## Claim Boundary
 
-This work order authorizes exactly two documentation outputs. It does not
-authorize implementation, caller creation, exports, tests, provider or process
-use, GC-010 or paired-gap closure, public-sync, push, deployment, or production
+This work order is closed bounded with no viable current caller and a
+four-fact source-verifiable reopen condition. It does not authorize
+implementation, caller creation, exports, tests, provider or process use,
+GC-010 or paired-gap closure, public-sync, push, deployment, or production
 readiness.

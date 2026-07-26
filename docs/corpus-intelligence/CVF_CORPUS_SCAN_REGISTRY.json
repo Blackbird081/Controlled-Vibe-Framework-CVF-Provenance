@@ -6117,6 +6117,40 @@
         "no live secret value found in any .env* file or fixture JSON across the full 107-file corpus"
       ],
       "nextScanRecommendation": "No further scan of this corpus is needed; the 107-file bounded comparison is complete. Five conditional-reopen rows (one retained legacy runtime delta and four upstream pattern findings) are proposed pending independent reviewer acceptance; the keyword-based classifier and direct import of the 24-tool business surface are rejected as CVF runtime value."
+    },
+    {
+      "id": "gc010-aer-t2-execution-plane-candidate-source",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "GC010-AER-T2 execution-plane caller candidate source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/command.runtime.contract.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "scanWave": "GC010-AER-T2",
+      "scanDate": "2026-07-26",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/audits/CVF_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_2026-07-26.md",
+      "completionReviewPath": "docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_COMPLETION_2026-07-26.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_2026-07-26.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "GC010_CALLER_CANDIDATE_COMPARISON",
+        "EXECUTION_PLANE_COMMAND_RUNTIME"
+      ],
+      "priorAbsorption": "GC010-AER-T2 read this named execution-plane command runtime as one bounded caller candidate. Independent review accepts NO_CURRENT_OWNER for AgentExecutionRuntime on this surface; no execution-plane, runtime, provider, or package behavior changed.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "AgentExecutionRuntime",
+        "GuardRuntimeEngine",
+        "ExecutionProvider"
+      ],
+      "nextScanRecommendation": "Re-scan only when current source satisfies the accepted four-fact GC010 reopen condition or this exact command runtime changes its guard-contract ownership."
     }
   ]
 }
