@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_DISPATCH_READY
+Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN
 
 ## Dispatch Prompt Envelope
 
@@ -112,7 +112,7 @@ separate GC-010 lane remain outside active scope.
 | T1 | Minimal production composition (smallest changed set wiring an accepted owner contract and the T1I-specified interface) | CLOSED_PASS_BOUNDED_GC009_COMPOSED |
 | T2 | Positive and fail-closed negative invocation proof for the T1 composition | CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN |
 | T3 | Projection of T2-proven evidence through existing `/admin/audit-log`; component, focused test, and worker return only | CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION |
-| T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | REVIEWER_ACCEPTED_DISPATCH_READY |
+| T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN |
 
 Every later tranche remains `HOLD_*` until its predecessor has independent
 (reviewer/closer-accepted) closure evidence recorded in a completion review or
@@ -235,7 +235,7 @@ component cases, TypeScript PASS, GC-023 PASS, worker-return fast PASS, and
 pre-implementation 77/77. T4 is released for documentation-only assessment;
 GC-010 remains held as a separate lane.
 
-### T4 - Value, Latency, Failure, Rollback, And Closure Assessment (DISPATCH READY)
+### T4 - Value, Latency, Failure, Rollback, And Closure Assessment (CLOSED PASS BOUNDED)
 
 Released by:
 
@@ -247,7 +247,12 @@ value, added latency, failure modes, and rollback boundary, and record the
 roadmap's overall closure disposition. T3 dependency evidence is material
 commit `76fcd6b0e` and continuity commit `f1e7a1738`. T4 is documentation-only:
 no runtime/test edit, live proof, benchmark, rollback action, public-sync, or
-GC-010 implementation is released.
+GC-010 implementation is released. Independent T4 closure accepts the
+source-bounded operator value and rollback assessment, retains production
+latency as `NOT_MEASURED_NO_LIVE_AUTHORITY`, and corrects one worker claim:
+guard exceptions reach the route-level HTTP 500 catch but bypass the
+gateway-specific response and audit event. The T1-T4 GC-009 sequence is
+closed bounded; GC-010 and the paired gap remain open.
 
 ## Design Control Gate
 
@@ -525,7 +530,7 @@ batch is authorized by this artifact.
 | Baseline status (T1) | `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
 | Work order status (T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_GC009_COMPOSED` | PASS |
 | Completion or reviewer artifact (T1) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md` | independent bounded closure with reviewer repairs | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_DISPATCH_READY` | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |

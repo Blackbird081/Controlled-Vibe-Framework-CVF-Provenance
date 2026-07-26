@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN
 
 Batch ID: GC009-GC010-PCALLER-T4
 
@@ -458,16 +458,16 @@ roadmap or promote GC-009/GC-010, latency, production, or live-proof claims.
 
 ## Acceptance Criteria
 
-- [ ] Exactly two worker-owned files are added.
-- [ ] Assessment includes value, latency, failure, rollback, and roadmap
+- [x] Exactly two worker-owned files are added.
+- [x] Assessment includes value, latency, failure, rollback, and roadmap
   recommendation sections with required matrices.
-- [ ] Every material claim has an evidence classification and source.
-- [ ] Production latency is explicitly `NOT_MEASURED_NO_LIVE_AUTHORITY`.
-- [ ] GC-009 and GC-010 are separated.
-- [ ] No runtime, test, roadmap, governance, session, or public path changes.
-- [ ] No live call, benchmark, runtime test, rollback, stage, or commit occurs.
-- [ ] Worker return fast gate, file-size guard, and `git diff --check` pass.
-- [ ] HEAD is unchanged and the exact changed set is recorded.
+- [x] Every material claim has an evidence classification and source.
+- [x] Production latency is explicitly `NOT_MEASURED_NO_LIVE_AUTHORITY`.
+- [x] GC-009 and GC-010 are separated.
+- [x] No runtime, test, roadmap, governance, session, or public path changes.
+- [x] No live call, benchmark, runtime test, rollback, stage, or commit occurs.
+- [x] Worker return fast gate, file-size guard, and `git diff --check` pass.
+- [x] HEAD is unchanged and the exact changed set is recorded.
 
 ## Review Gate
 
@@ -527,17 +527,17 @@ latency benchmarks in this tranche.
 
 ## Closure Checklist
 
-- [ ] execution base captured and clean;
-- [ ] pre-implementation PASS;
-- [ ] exact source and commit evidence inspected;
-- [ ] both artifacts complete;
-- [ ] assessment matrices complete;
-- [ ] one recommendation selected;
-- [ ] production latency remains explicitly unmeasured;
-- [ ] exact two-path changed set;
-- [ ] all required gates PASS;
-- [ ] no stage or commit;
-- [ ] terminal disposition returned.
+- [x] execution base captured and clean;
+- [x] pre-implementation PASS;
+- [x] exact source and commit evidence inspected;
+- [x] both artifacts complete;
+- [x] assessment matrices complete;
+- [x] one recommendation selected;
+- [x] production latency remains explicitly unmeasured;
+- [x] exact two-path changed set;
+- [x] all required gates PASS;
+- [x] no stage or commit;
+- [x] terminal disposition returned.
 
 ## Return-To-Orchestrator Conditions
 
@@ -615,9 +615,16 @@ public-sync evidence or authorization is included.
 
 ## Machine Closure Package
 
-NOT_APPLICABLE_WITH_REASON: this is a dispatch-ready work order. Codex owns the
-closed-equivalent completion review and machine closure package after
-independent acceptance.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T4_VALUE_LATENCY_FAILURE_ROLLBACK_ASSESSMENT_COMPLETION_2026-07-26.md` | independent Codex review with one claim correction | PASS |
+| Roadmap state | companion roadmap | top status ends in `T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN` | PASS |
+| Registry JSON | existing system-chain gap entry | GC-009 accepted and GC-010 remains open | PASS |
+| Registry Markdown | existing system-chain gap README | GC-009 accepted and GC-010 remains open | PASS |
+| External evidence digest | none | repository-local evidence only | N/A with reason: no external evidence consumed |
+| System loop interlock | current system-chain guard | unchanged semantics remain fresh | PASS |
+| Session continuity | active state, bootstrap, memory, and handoff | reviewer sync follows material commit | BLOCKED with reason: continuity child commit follows closure |
 
 ## Acceptance Receipt Assertion Matrix
 

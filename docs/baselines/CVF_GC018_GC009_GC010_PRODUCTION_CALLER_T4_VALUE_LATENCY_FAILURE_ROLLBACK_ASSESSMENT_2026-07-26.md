@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN
 
 Batch ID: GC009-GC010-PCALLER-T4
 
@@ -212,16 +212,16 @@ artifact or authorization is included.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | companion T4 work order | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | BLOCKED with reason: worker execution and reviewer closure are pending |
-| Completion or reviewer artifact | T4 completion review path named in work order | path is reserved but absent at dispatch | BLOCKED with reason: Codex creates it after independent review |
-| Roadmap state | `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md` | top status ends in `T4_DISPATCH_READY` | BLOCKED with reason: final T4 disposition is pending |
-| Registry JSON | applicable system-chain registry JSON | no registry change authorized at dispatch | BLOCKED with reason: reviewer decides after assessment |
-| Registry Markdown | applicable system-chain registry Markdown | no registry change authorized at dispatch | BLOCKED with reason: reviewer decides after assessment |
+| Work order status | companion T4 work order | `Status: CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN` | PASS |
+| Completion or reviewer artifact | T4 completion review path named in work order | independent Codex review with one claim correction | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md` | top status ends in `T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN` | PASS |
+| Registry JSON | existing system-chain gap entry | GC-009 accepted; GC-010 remains open | PASS |
+| Registry Markdown | existing system-chain gap README | GC-009 accepted; GC-010 remains open | PASS |
 | External evidence digest | none | repository-local evidence only | N/A with reason: no external evidence is consumed |
-| System loop interlock | current system-loop guard | no interlock change authorized | N/A with reason: documentation assessment only |
-| Session continuity | active session state, bootstrap, memory, and handoff | current continuity commit `f1e7a1738` | BLOCKED with reason: Codex refreshes continuity after T4 decision |
+| System loop interlock | current system-loop guard | no semantic change required | PASS |
+| Session continuity | active session state, bootstrap, memory, and handoff | reviewer sync follows material closure | BLOCKED with reason: continuity child commit follows closure |
 
-This package records dispatch-time non-finality. It does not claim T4 closure.
+This package records bounded T4 closure only. GC-010 remains open.
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -229,8 +229,8 @@ This package records dispatch-time non-finality. It does not claim T4 closure.
 |---|---|---|---|
 | T3 dependency | accepted completion and material commit | completion review plus `76fcd6b0e` | PASS |
 | T4 packet | baseline, work order, and roadmap release | exact three-path packet-author set | PASS |
-| Worker evidence | assessment and full-gate return | absent at dispatch | BLOCKED |
-| Reviewer decision | independent completion review | absent at dispatch | BLOCKED |
+| Worker evidence | assessment and full-gate return | exact two-path no-commit worker set | PASS |
+| Reviewer decision | independent completion review | accepted with one source-claim repair | PASS |
 
 ## Claim Boundary
 
