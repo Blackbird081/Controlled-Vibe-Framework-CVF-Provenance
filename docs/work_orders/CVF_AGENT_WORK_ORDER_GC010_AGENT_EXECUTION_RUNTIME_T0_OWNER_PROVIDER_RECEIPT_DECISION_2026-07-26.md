@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN
 
 Batch ID: GC010-AER-T0
 
@@ -336,6 +336,11 @@ Contract source: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_
 
 ## Evidence Reuse And Encoding Plan
 
+verificationMode: RECOMPUTE_REQUIRED
+
+recomputeReason: caller ownership, export presence, and receipt compatibility
+are current-source facts that can drift after predecessor reviews.
+
 | Field | Value |
 |---|---|
 | prior evidence | T0/T0A/T4 accepted docs |
@@ -396,14 +401,14 @@ implement, close, or invoke GC-010.
 
 ## Acceptance Criteria
 
-- [ ] exactly two worker files;
-- [ ] all twelve questions answered;
-- [ ] all five candidate families compared;
-- [ ] current caller/export searches recorded;
-- [ ] provider, approval, receipt, proof, failure, and rollback mapped;
-- [ ] exactly one readiness token;
-- [ ] no runtime/test/package/governance/session change or execution;
-- [ ] gates pass and HEAD remains unchanged.
+- [x] exactly two worker files;
+- [x] all twelve questions answered;
+- [x] all five candidate families compared;
+- [x] current caller/export searches recorded;
+- [x] provider, approval, receipt, proof, failure, and rollback mapped;
+- [x] exactly one readiness token;
+- [x] no runtime/test/package/governance/session change or execution;
+- [x] gates pass and worker HEAD remains unchanged.
 
 ## Review Gate
 
@@ -459,15 +464,15 @@ benchmarks, or release bundles.
 
 ## Closure Checklist
 
-- [ ] clean base and pre-implementation;
-- [ ] searches reproduced;
-- [ ] candidates and contracts mapped;
-- [ ] audit and return complete;
-- [ ] one readiness token;
-- [ ] exact two-path set;
-- [ ] all gates pass;
-- [ ] no staging or commit;
-- [ ] terminal worker disposition returned.
+- [x] clean base and pre-implementation;
+- [x] searches reproduced;
+- [x] candidates and contracts mapped;
+- [x] audit and return complete;
+- [x] one readiness token;
+- [x] exact two-path set;
+- [x] all gates pass;
+- [x] no worker staging or commit;
+- [x] terminal worker disposition returned.
 
 ## Return-To-Orchestrator Conditions
 
@@ -542,7 +547,16 @@ Reason: private provenance decision packet only.
 
 ## Machine Closure Package
 
-NOT_APPLICABLE_WITH_REASON: dispatch-ready work order; reviewer owns closure.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN` | PASS |
+| Completion or reviewer artifact | companion completion review | independent Codex acceptance with reviewer correction ledger | PASS |
+| Roadmap state | companion roadmap | GC010-T0 bounded partial-ready marker | PASS |
+| Registry JSON | existing paired gap entry | GC-010 remains open; accepted design prerequisite recorded | PASS |
+| Registry Markdown | existing system-chain gap index | stableId and index structure remain valid; no Markdown registry edit required | PASS |
+| External evidence digest | none | repository-local source only | N/A with reason: no external evidence |
+| System loop interlock | current system-chain guard | paired gap remains open and current decision is cited | PASS |
+| Session continuity | active session surfaces | reviewer sync follows material closure | BLOCKED with reason: dedicated continuity child commit follows material closure |
 
 ## Acceptance Receipt Assertion Matrix
 

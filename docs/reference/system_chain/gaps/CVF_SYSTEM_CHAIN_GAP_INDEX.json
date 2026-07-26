@@ -62,6 +62,11 @@
           "path": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_COMPLETION_2026-07-26.md",
           "lineOrSection": "Findings / Position and Claim Boundary",
           "evidenceRole": "reviewer-accepted bounded local GC-009 actual-route invocation proof; GC-010 remains held"
+        },
+        {
+          "path": "docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_COMPLETION_2026-07-26.md",
+          "lineOrSection": "Findings / Position and Successor Boundary",
+          "evidenceRole": "reviewer-accepted GC-010 source decision: no current owner/export; package-native direction is partial-ready only after a separate interface/export/receipt design"
         }
       ],
       "impact": "The original paired no-caller gap is further reduced: GC-009 has a bounded cvf-web production composition, package surface, durable audit linkage, and accepted local actual-route invocation proof. Every GC-010 caller/export edge remains unaccepted, so this is not whole-entry closure, production-readiness proof, or live governance proof.",
@@ -73,7 +78,7 @@
         "conditionKind": "PATTERN_OBSERVED_ON_NAMED_SURFACE",
         "conditionText": "Reopen this entry, or any successor closure of it, if a future review finds the current non-test production caller or the current export/barrel surface removed or regressed on either EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts or EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts after a later closure has been accepted."
       },
-      "actionOwner": "PARKED_WITH_REASON: GC-009 bounded local invocation proof is accepted. GC-010 AgentExecutionRuntime composition requires its own fresh source-verified packet before this paired entry can close.",
+      "actionOwner": "GC010_DESIGN_PACKET_REQUIRED: GC-009 bounded local invocation proof is accepted. Before any GC-010 implementation dispatch, a separate documentation-only packet must accept the exact future package-native owner API, canonical engine and provider selection, durable requestId-correlated receipt adapter, export manifest, deterministic proof plan, failure behavior, and rollback boundary.",
       "freshnessInputs": [
         "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts",
         "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts",
@@ -83,7 +88,7 @@
       ],
       "lastReviewed": {
         "date": "2026-07-26",
-        "acceptedArtifact": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_COMPLETION_2026-07-26.md"
+        "acceptedArtifact": "docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_COMPLETION_2026-07-26.md"
       }
     },
     {

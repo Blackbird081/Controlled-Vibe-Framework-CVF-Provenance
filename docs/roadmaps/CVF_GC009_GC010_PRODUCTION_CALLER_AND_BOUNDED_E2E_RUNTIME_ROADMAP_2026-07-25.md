@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_DISPATCH_READY
+Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_EXPORT_RECEIPT_DESIGN_REQUIRED
 
 ## Dispatch Prompt Envelope
 
@@ -113,7 +113,7 @@ separate GC-010 lane remain outside active scope.
 | T2 | Positive and fail-closed negative invocation proof for the T1 composition | CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN |
 | T3 | Projection of T2-proven evidence through existing `/admin/audit-log`; component, focused test, and worker return only | CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION |
 | T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN |
-| GC010-T0 | Source-verified `AgentExecutionRuntime` owner, provider, receipt, and proof decision | REVIEWER_ACCEPTED_DISPATCH_READY |
+| GC010-T0 | Source-verified `AgentExecutionRuntime` owner, provider, receipt, and proof decision | CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN |
 
 Every later tranche remains `HOLD_*` until its predecessor has independent
 (reviewer/closer-accepted) closure evidence recorded in a completion review or
@@ -255,7 +255,7 @@ guard exceptions reach the route-level HTTP 500 catch but bypass the
 gateway-specific response and audit event. The T1-T4 GC-009 sequence is
 closed bounded; GC-010 and the paired gap remain open.
 
-### GC010-T0 - AgentExecutionRuntime Owner, Provider, Receipt, And Proof Decision (DISPATCH READY)
+### GC010-T0 - AgentExecutionRuntime Owner, Provider, Receipt, And Proof Decision (CLOSED BOUNDED PARTIAL READY)
 
 Released by:
 
@@ -268,6 +268,17 @@ engine, provider/config ownership, durable receipt/audit seam, exactly-one
 evaluation proof, changed set, failure behavior, and rollback. It does not
 authorize exports, construction, tests, provider execution, public action,
 deployment, or GC-010 closure.
+
+Independent review accepts `PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN`.
+Current source has no non-test caller and no package export. A package-native
+owner family is the preferred future design direction, while cvf-web, the
+governed CLI/MCP launcher, and execution-plane/MAO are rejected as direct
+owners on current evidence. The next valuable move is a separate
+documentation-only interface/export/receipt design packet. That packet must
+define the exact future owner path and API, canonical-engine and provider
+selection, durable `requestId` correlation, export manifest, deterministic
+proof plan, failure behavior, and rollback boundary before any implementation
+packet can become dispatch-ready.
 
 ## Design Control Gate
 
@@ -545,7 +556,9 @@ batch is authorized by this artifact.
 | Baseline status (T1) | `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
 | Work order status (T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_GC009_COMPOSED` | PASS |
 | Completion or reviewer artifact (T1) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md` | independent bounded closure with reviewer repairs | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_DISPATCH_READY` | PASS |
+| Work order status (GC010-T0) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN` | PASS |
+| Completion or reviewer artifact (GC010-T0) | `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_COMPLETION_2026-07-26.md` | independent bounded partial-ready closure | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_EXPORT_RECEIPT_DESIGN_REQUIRED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
