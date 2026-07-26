@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator checkpoint to select T4 assessment, separate GC-010, or park; parked checkpoint=T4, GC-010 AgentExecutionRuntime, browser E2E, live provider/API/account/network use, new operator surface, agent CLI/MCP, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=send the committed T4 work order to Claude under `WORKER_MUST_NOT_COMMIT`, then Codex reviews; parked checkpoint=runtime/test execution, latency benchmark, rollback, GC-010, live provider/API/account/network use, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC009-GC010-PCALLER-T4 value/latency/failure/rollback assessment dispatch | `8eb2a47d0` | REVIEWER_ACCEPTED_DISPATCH_READY. One Claude documentation worker owns exactly the assessment and worker return under `WORKER_MUST_NOT_COMMIT`; Codex independently reviews. No runtime/test execution, benchmark, rollback, GC-010, live, public, or deployment authority. |
 | GC009-GC010-PCALLER-T3 existing audit-readout projection closure | `76fcd6b0e` | CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION. Existing `/admin/audit-log` now projects only decision, request ID, and optional blocker; focused 5/5, TypeScript, GC-023, worker-return fast, and pre-commit gates pass. T4 and GC-010 remain HOLD. |
 | GC009-GC010-PCALLER-T2 deterministic invocation proof closure | `2e4412c88` | CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN. Actual POST plus real shared gateway/engine proves ALLOW reaches the mocked provider seam once and authority BLOCK reaches it zero times. T3-T4 and GC-010 remain HOLD. |
 | GC009-GC010-PCALLER-T2 R2 execution-range redispatch | `aa6fd8e86` | REVIEWER_ACCEPTED_REDISPATCH_READY_R2_EXECUTION_RANGE_REPAIR. Pre-implementation now uses the captured current execution base instead of the historical dispatch base. Same two-path no-commit scope. |
@@ -384,16 +385,14 @@ PPMCP-R1 is independently closed with reviewer repairs at material commit
 `539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
 are parked behind concrete reopen conditions.
 
-GC009-GC010-PCALLER-T3 is
-`CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION` at material commit
-`76fcd6b0e`. Independent results are focused 5/5, TypeScript PASS, GC-023 PASS,
-worker-return fast 62/62, pre-implementation 77/77, and pre-commit 83/83. The
-next allowed move is an operator checkpoint to select a fresh T4
-value/latency/failure/rollback assessment, a separate GC-010
-AgentExecutionRuntime packet, or park the lane. T4 and GC-010 remain `HOLD_*`;
-no browser E2E, live provider/API/account/network use, new operator surface,
-CVF CLI/MCP invocation, public-sync, push, deployment, production-readiness,
-or whole paired-gap closure claim is authorized.
+GC009-GC010-PCALLER-T4 is `REVIEWER_ACCEPTED_DISPATCH_READY` at material
+commit `8eb2a47d0`. Send the complete committed T4 work order to one Claude
+documentation worker under `WORKER_MUST_NOT_COMMIT`. Claude may create exactly
+the assessment and worker return; Codex then independently reviews and decides
+closure. No runtime/test edit or execution, latency benchmark, rollback,
+GC-010 implementation, live provider/API/account/network use, roadmap closure,
+public-sync, push, deployment, production-readiness, or whole paired-gap
+closure claim is authorized.
 Conversation provenance remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 

@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2108,
+  "stateKey": "gc009Gc010ProductionCallerT4AssessmentDispatch20260726",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-26",
+    "materialCommit": "8eb2a47d0",
+    "dispatchBaseHead": "f1e7a1738",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T4_VALUE_LATENCY_FAILURE_ROLLBACK_ASSESSMENT_2026-07-26.md",
+    "baseline": "docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T4_VALUE_LATENCY_FAILURE_ROLLBACK_ASSESSMENT_2026-07-26.md",
+    "workerRoute": "one Claude documentation worker; WORKER_MUST_NOT_COMMIT; exactly assessment plus worker return",
+    "verification": "automation assist PASS; pre-dispatch 75/75; commit steward PASS; pre-commit 83/83",
+    "nextAllowedMove": "send the complete committed T4 work order to Claude; Claude creates exactly the assessment and worker return without staging or commit; Codex then independently reviews and decides closure",
+    "claimBoundary": "No runtime/test edit or execution, live provider/API/network use, latency benchmark, rollback action, GC-010 implementation, roadmap closure, public export, push, deployment, or production-readiness claim."
+  }
+}

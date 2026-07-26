@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T3 is CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION at material commit 76fcd6b0e. Independent evidence is focused 5/5, TypeScript PASS, GC-023 PASS, worker-return fast 62/62, pre-implementation 77/77, and pre-commit 83/83. The exact next move is an operator checkpoint to select a fresh source-verified T4 value/latency/failure/rollback assessment, a separate GC-010 AgentExecutionRuntime packet, or park the lane. T4 and GC-010 remain HOLD_*; no browser E2E, live provider/API/account/network use, new operator surface, CVF CLI/MCP invocation, public-sync, push, deployment, production-readiness, or whole paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T4 is REVIEWER_ACCEPTED_DISPATCH_READY at material commit 8eb2a47d0. The exact next move is to send the complete committed T4 work order to one Claude documentation worker under WORKER_MUST_NOT_COMMIT. Claude may create exactly the T4 assessment and worker return, then Codex independently reviews and decides closure. No runtime/test edit or execution, live provider/API/account/network use, latency benchmark, rollback action, GC-010 implementation, roadmap closure, public-sync, push, deployment, production-readiness, or whole paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14243,5 +14243,17 @@
     "nextAllowedMove": "operator checkpoint to select fresh T4 value/latency/failure/rollback assessment, separate GC-010 AgentExecutionRuntime packet, or park",
     "laterTranches": "T4 and GC-010 remain HOLD_* pending fresh source-verified authority",
     "claimBoundary": "No browser E2E, live provider, new operator surface, GC-010, whole paired-gap closure, public export, push, deployment, or production-readiness claim."
+  },
+  "gc009Gc010ProductionCallerT4AssessmentDispatch20260726": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-26",
+    "materialCommit": "8eb2a47d0",
+    "dispatchBaseHead": "f1e7a1738",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T4_VALUE_LATENCY_FAILURE_ROLLBACK_ASSESSMENT_2026-07-26.md",
+    "baseline": "docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T4_VALUE_LATENCY_FAILURE_ROLLBACK_ASSESSMENT_2026-07-26.md",
+    "workerRoute": "one Claude documentation worker; WORKER_MUST_NOT_COMMIT; exactly assessment plus worker return",
+    "verification": "automation assist PASS; pre-dispatch 75/75; commit steward PASS; pre-commit 83/83",
+    "nextAllowedMove": "send the complete committed T4 work order to Claude; Claude creates exactly the assessment and worker return without staging or commit; Codex then independently reviews and decides closure",
+    "claimBoundary": "No runtime/test edit or execution, live provider/API/network use, latency benchmark, rollback action, GC-010 implementation, roadmap closure, public export, push, deployment, or production-readiness claim."
   }
 }
