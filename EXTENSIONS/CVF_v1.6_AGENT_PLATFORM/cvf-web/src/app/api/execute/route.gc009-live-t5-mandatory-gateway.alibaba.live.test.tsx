@@ -123,7 +123,7 @@ describe.skipIf(!ALIBABA_API_KEY)(
         const inputs = {
           topic: 'GC009 Live T5 bounded operator acceptance proof',
           context: 'CVF proves the accepted GC-009 Web caller with one real Alibaba call.',
-          options: '1. Confirm ALLOW decision\n2. Verify durable event correlation\n3. Verify no raw secret leakage',
+          options: '1. Confirm ALLOW decision\n2. Verify durable event correlation\n3. Verify no credential value leakage',
           constraints: 'Governance evidence only. No provider routing or policy behavior change.',
           priority: 'Governance evidence',
         };

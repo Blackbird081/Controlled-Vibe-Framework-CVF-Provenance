@@ -2,13 +2,19 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED
+Status: REVIEWER_ACCEPTED_R1_PARTIAL_LIVE_PROOF_R2_AUTHORIZED
 
 Date: 2026-07-26
 
 Batch ID: GC009-LIVE-T5
 
 Reviewer: Codex
+
+Current reviewer disposition:
+`R1_PARTIAL_LIVE_PROOF_ACCEPTED_BLOCKED_BEFORE_BLOCK_AND_PROJECTION`.
+
+The original first-attempt review below remains historical evidence. The
+independent R1 review addendum at the end supersedes its next-move decision.
 
 executionBaseHead: `f8b5a66b0`
 
@@ -227,3 +233,77 @@ denominator. It does not accept live ALLOW, authority BLOCK, gateway-event,
 audit-projection, latency, production, release, public, or deployment proof.
 R1 authority is limited to a corrected fixture, offline safety preflight, and
 one new focused run with no rerun.
+
+## R1 Independent Review Addendum
+
+### R1 Evidence Correction
+
+R1 executed exactly one focused run and failed at:
+
+`expect(allowSerialized).not.toContain(inputs.topic);`
+
+The source-ordered assertions immediately before that failure prove all of the
+following for the same response:
+
+1. HTTP status 200;
+2. `success=true`;
+3. provider `alibaba`;
+4. receipt decision `ALLOW`;
+5. nonempty string output;
+6. receipt runtime telemetry exists;
+7. `providerLatencyMs` is numeric;
+8. `routeElapsedMs` is numeric;
+9. telemetry claim boundary is
+   `summary_only_no_raw_prompt_output_key_or_provider_payload`;
+10. the serialized response and telemetry do not contain the Alibaba key.
+
+Therefore R1 `liveCallCount=1` is confirmed, not inferred from duration alone.
+The exact numeric telemetry values were not retained in the worker documents,
+so R1 supports existence and type claims but not quoted latency measurements.
+
+### R1 Remaining Block
+
+The topic and context are ordinary model inputs. A useful provider response is
+expected to refer to them. Forbidding those strings throughout the serialized
+response incorrectly treats expected output relevance as credential leakage.
+
+The failure occurred before provider aliases were removed and before the BLOCK
+request began. Consequently:
+
+- R1 `blockRequestCount=0`;
+- the two-event durable correlation was not evaluated;
+- event payload minimization was not evaluated;
+- the admin projection was not evaluated;
+- full live acceptance remains blocked.
+
+### R1 Reviewer Verification
+
+| Check | Result |
+|---|---|
+| Assertion-order source review | PASS: ALLOW and telemetry assertions precede the failing topic assertion |
+| Worker-return fast gate | PASS: reviewer-fast 62/62 |
+| Non-live focused regressions | PASS: 7/7 |
+| cvf-web TypeScript | PASS |
+| Reviewer provider calls | 0 |
+| R1 provider calls accepted | 1 confirmed |
+| R1 BLOCK requests accepted | 0 |
+
+### R2 Decision
+
+`REVIEWER_ACCEPTED_REDISPATCH_READY_R2_RESPONSE_LEAKAGE_SCOPE_ONE_RUN_NO_RERUN`
+
+The operator explicitly authorized continuation after being told that R1's
+one-run allowance was exhausted and that R2 required fresh authority. R2 may
+delete only the two response-level topic/context exclusions, retain API-key
+non-leakage, retain event-level raw-input exclusions, run the offline safety
+preflight, and execute exactly one focused live run. No R2 rerun is authorized.
+
+### R2 Claim Boundary
+
+R1 proves one real Alibaba ALLOW result with receipt telemetry shape and
+credential non-leakage. It does not prove the keyless authority BLOCK, durable
+event correlation, event minimization, or admin projection. R2 is authorized
+only to complete those bounded proof surfaces. It does not authorize runtime
+mutation, broad release proof, production percentile or SLO claims,
+public-sync, push, deployment, rollback, GC-010 work, or another live run after
+the single R2 command.

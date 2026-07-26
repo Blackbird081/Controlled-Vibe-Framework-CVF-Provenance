@@ -16,7 +16,9 @@ Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOU
 
 dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md`
 
-executionBaseHead: `f8b5a66b0`
+executionBaseHead (first attempt): `f8b5a66b0`
+
+executionBaseHead (R1): `7825c02e5`
 
 rawMemoryReleased=false
 
@@ -162,7 +164,7 @@ metadata, lockfile, `.env.local`, governance checker, session state, or
 public-sync/deployment path was edited. No third live run, broader live
 suite, or `scripts/run_cvf_release_gate_bundle.py` was executed.
 
-## Findings / Position
+## Findings / Position (First Attempt, Historical)
 
 The GC009-LIVE-T5 live-proof audit is complete at
 `docs/audits/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md`
@@ -201,6 +203,105 @@ between this tranche's own new test-fixture prose and the pre-existing,
 correctly functioning safety filter -- and the safety filter is behaving
 exactly as designed, not defectively.
 
+**Reviewer correction (preserved as historical record, not restated as
+accepted fact):** the independent completion review at
+`docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md`
+rejected finding 3 above. Adding diagnostic logging is a logging-only
+change and does not satisfy the separate result-changing-action condition
+the work order's rerun rule required; the reviewer accepted the
+source-backed diagnosis and the zero-provider-call denominator but rejected
+the claim of full rerun-contract compliance. This worker return does not
+restate finding 3 as accepted; it is retained above only as the literal
+historical record of what the first attempt originally claimed.
+
+## R1 Redispatch: Scope / Methodology
+
+Per the R1 work order's `## R1 Redispatch Override` section, this redispatch
+superseded the initial two-run/one-diagnostic-rerun contract with: exactly
+one corrected fixture edit, a mandatory offline safety preflight before any
+provider use, exactly one new focused live run, and zero reruns under every
+outcome (logging, fixture, configuration, credential, or provider-state
+changes do not release a second run).
+
+Captured `git rev-parse HEAD` (`7825c02e586db6343128d1364f993dc6a54a304d`)
+and confirmed `git status --short` was empty before this worker began R1.
+Confirmed all three worker-owned paths existed at current HEAD (the focused
+test, the audit, and this worker return, all from the accepted first
+attempt). Ran `python governance/compat/run_agent_autorun_workflow_gate.py
+--phase pre-implementation --base 7825c02e5 --head HEAD`: PASS. Verified at
+least one accepted Alibaba key alias
+(`ALIBABA_API_KEY`/`DASHSCOPE_API_KEY`) is present in `.env.local` via a
+presence-only grep that never printed a value.
+
+Applied the exact R1 fixture correction: in
+`route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx`'s
+`inputs.options` field, replaced `Verify no raw secret leakage` with
+`Verify no credential value leakage`, and no other line.
+
+Ran the mandatory offline safety preflight before any provider use: built
+the complete generated ALLOW intent and the complete built execution
+prompt using the real `getTemplateById`/`generateIntent`/
+`buildExecutionPrompt` functions against the corrected `inputs`, then ran
+the real `applySafetyFilters` function against both strings in a disposable
+Vitest file with no route invocation, network call, or provider credential
+use. Result: `NO_MATCH` on both (`intentBlocked: false`,
+`promptBlocked: false`). Deleted the disposable preflight file immediately
+after capturing this result, before any live run; it was never one of the
+three worker-owned paths and consumed no live-call budget.
+
+Executed exactly one focused live run per R1 step 3-4 (see Live Run
+Diagnostic below for the result). Per R1 step 4, no rerun was attempted
+under any circumstance, including after the failure.
+
+No runtime source, existing test, provider adapter, UI component, package
+metadata, lockfile, `.env.local`, governance checker, session state, or
+public-sync/deployment path was edited. No second R1 run, broader live
+suite, or `scripts/run_cvf_release_gate_bundle.py` was executed.
+
+## R1 Findings / Position
+
+The paired audit's R1 section records the corrected fixture, the `NO_MATCH`
+offline preflight result, and the single R1 live-run result. Key findings:
+
+1. **The R1 run's elapsed time (13.45s test-body duration, 18.46s total)
+   is consistent with a completed real Alibaba provider round trip**,
+   unlike both first-attempt runs, which failed in under 600ms at the
+   pre-gateway safety filter. This is indirect but source-grounded evidence
+   that the ALLOW request likely reached and completed against the real
+   provider.
+2. **The immediately-prior `not.toContain(ALIBABA_API_KEY)` assertion
+   passed** before the failing `not.toContain(inputs.topic)` assertion,
+   confirming no credential leak occurred in the response body up to that
+   point.
+3. **The failure is this tranche's own test-assertion design defect, not a
+   provider, gateway, or secret-hygiene defect**: the real Alibaba model's
+   output naturally referenced the supplied topic text as part of an
+   on-topic analysis, which the test's own overly broad
+   `not.toContain(inputs.topic)` assertion (intended to catch *raw secret*
+   leakage, not ordinary non-secret fixture-text echoes) incorrectly
+   treated as a failure.
+4. **The test failed before reading `allowResponse.status`,
+   `allowData.success`, `allowReceipt.decision`, `allowReceipt.receiptId`,
+   or `allowReceipt.envelopeId` into evidence**, and before reaching the
+   BLOCK-request section, the durable-event-correlation assertions, or the
+   `AdminAuditLogBody` projection render. This worker return therefore does
+   not claim a confirmed ALLOW result, BLOCK proof, event correlation, or
+   projection proof, even though a real provider call very likely occurred.
+5. **Zero reruns were attempted**, per R1's explicit zero-rerun rule. This
+   worker did not add diagnostic logging and rerun, did not adjust the
+   fixture further and rerun, and did not inspect the isolated temporary
+   event-store directory after the fact (which R1's cleanup lifecycle would
+   have already removed by the time such inspection could occur, and which
+   in any case would not constitute an authorized rerun).
+
+No source contradiction was found in the accepted T1-T4 chain, the
+mandatory gateway, the route-guard-gateway adapter, the control-plane event
+store, the Alibaba provider adapter, or the R1-corrected fixture text
+itself (confirmed `NO_MATCH` by the offline preflight). The contradiction
+is entirely within this tranche's own test assertion design, which
+conflated "no raw secret leakage" with "no echo of any fixture string
+whatsoever," a stricter and incorrect standard for a real LLM response.
+
 ## Risk / Corrective Action
 
 | Residual risk | Corrective action |
@@ -209,6 +310,9 @@ exactly as designed, not defectively.
 | This tranche consumed its full two-run ceiling without ever exercising the mandatory gateway, guard engine, event store, or Alibaba provider adapter, so the packet's core objective (real ALLOW, fail-closed BLOCK, durable correlation, projection) remains unproven this tranche | the accepted T1-T4 GC-009 mocked-provider-seam evidence remains the current bounded acceptance evidence; this tranche neither confirms nor weakens it |
 | A future worker or reviewer could interpret "test file created, gates pass" as partial live-proof progress | this worker return and the paired audit both explicitly record `liveCallCount: 0` and `BLOCKED_WITH_REASON`/`LIVE_ACCEPTANCE_BLOCKED_WITH_DIAGNOSTIC` to prevent that misreading |
 | Redispatch risk: a naive redispatch might simply rerun the identical fixture and reproduce the identical block, wasting another two-run ceiling | the audit's Risk / Corrective Action table and this return both name the exact one-word fix required before any redispatch |
+| R1's focused test still contains an unrepaired topic-echo assertion defect (`not.toContain(inputs.topic)`) that will reproduce this exact failure on any future run, even against a real provider response, because a real LLM naturally references its input topic | a future authorized redispatch must first repair this assertion (for example scope the no-leakage check to the API key only, or to a distinct never-echoed sentinel string, rather than the ordinary topic text) before attempting another live run |
+| R1 could not confirm whether the ALLOW request's `governanceEvidenceReceipt`, decision, or durable events were actually produced, because the test failed before reading them and R1 forbids any further inspection via rerun | this worker return and the paired audit explicitly record this as unconfirmed rather than assumed-passing, and do not claim `LIVE_ACCEPTANCE_PASS_BOUNDED` |
+| A future reviewer could read the 13.45s elapsed time as sufficient proof of a passed ALLOW result | this worker return and the audit both frame the timing as indirect, not confirmed, evidence, and explicitly list every response field that was never read into evidence |
 
 ## Checker Source Read-Ahead Block
 
@@ -330,30 +434,46 @@ reviewer/closer after independent review of this blocked disposition.
 
 ## Claim Boundary
 
-This return records the creation of exactly three worker-owned artifacts:
-the focused live test, the live-proof audit, and this worker return. It
-does not claim a real Alibaba ALLOW result, a fail-closed authority-gate
-BLOCK proof, durable event correlation, admin-component projection, or any
-latency observation; `liveCallCount` is 0. It does not authorize a third
-focused live run, runtime mutation, broad release proof, production
-readiness, public export, push, deployment, rollback, or GC-010 work. The
-blocked disposition and root-cause diagnosis are advisory only; Codex
-reviewer/closer owns the final decision, including whether to authorize a
+This return records modification (in place) of exactly the three
+worker-owned artifacts: the focused live test (one fixture-string
+correction), the live-proof audit (R1 section appended), and this worker
+return (R1 sections appended), across two dispatches (first attempt: two
+runs, zero live calls reached; R1: one run, apparent real-provider round
+trip but unconfirmed result). It does not claim a confirmed real Alibaba
+ALLOW result, a fail-closed authority-gate BLOCK proof, durable event
+correlation, or admin-component projection, because the R1 run's own test
+assertion failed before those facts were read into evidence. It does not
+authorize any further rerun under R1's zero-rerun rule, runtime mutation,
+broad release proof, production readiness, public export, push,
+deployment, rollback, or GC-010 work. The blocked disposition and
+root-cause diagnosis (both the first attempt's fixture-word defect and
+R1's topic-echo assertion defect) are advisory only; Codex reviewer/closer
+owns the final decision, including whether to authorize a further
 corrected redispatch.
 
 ## git status --short
 
+R1 final state (`git rev-parse --short HEAD` = `7825c02e5`, unchanged
+throughout R1):
+
 ```text
-?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx
-?? docs/audits/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md
-?? docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_WORKER_RETURN_2026-07-26.md
+ M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx
+ M docs/audits/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md
+ M docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_WORKER_RETURN_2026-07-26.md
 ```
+
+Unlike the first attempt (which showed `??` untracked, because the three
+paths did not yet exist at that dispatch's base), R1's Write Ownership is
+modify-only against the already-accepted first-attempt paths, so `git
+status --short` correctly shows `M` (modified, unstaged) for all three.
 
 ## Changed Files
 
-`git diff --name-status` reports no tracked-file modifications.
-`git status --short --untracked-files=all` reports exactly the three
-worker-owned paths, matching the Required Artifact Manifest.
+`git diff --name-status` reports no *other* tracked-file modifications
+beyond the three worker-owned paths. `git status --short` reports exactly
+the three worker-owned paths as modified and unstaged, matching R1's
+Write Ownership (modify-only paths). No path was created, deleted, or
+renamed in R1.
 
 ## Worker Experience Retrospective
 
@@ -363,31 +483,55 @@ frictionLevel: MEDIUM
 
 frictionType: KEYWORD_TRAP
 
-observedStep: initial focused live run
+observedStep: initial focused live run (first attempt); R1 focused live
+run, ALLOW-side leakage assertion (R1)
 
 preventiveControlCandidate: WORK_ORDER_TEMPLATE
 
-workerFrictionObserved: the focused test's own ALLOW-request fixture prose,
-written to describe the test's secret-hygiene assertion goal ("Verify no
-raw secret leakage"), itself contained the word "secret" that the
-pre-existing `PII_PATTERNS` safety filter correctly flags, consuming one of
-two permitted live-call attempts on a self-inflicted fixture defect rather
-than the intended provider-boundary proof.
+workerFrictionObserved: first attempt -- the focused test's own
+ALLOW-request fixture prose, written to describe the test's
+secret-hygiene assertion goal ("Verify no raw secret leakage"), itself
+contained the word "secret" that the pre-existing `PII_PATTERNS` safety
+filter correctly flags, consuming one of two permitted live-call attempts
+on a self-inflicted fixture defect rather than the intended
+provider-boundary proof. R1 -- after correcting that fixture word and
+confirming `NO_MATCH` via the mandatory offline preflight, R1's single
+permitted run still failed, this time on the test's own
+`not.toContain(inputs.topic)` assertion, because a real Alibaba model
+response naturally referenced the supplied topic text. The offline safety
+preflight correctly validated the request side against
+`INJECTION_PATTERNS`/`PII_PATTERNS`, but nothing in R1's process validated
+the test's own response-side leakage assertions against the likely
+behavior of a real, non-deterministic LLM response before the single
+permitted run consumed its one attempt.
 
-workerRepairWithinScope: captured a secret-safe diagnostic before the one
-permitted rerun per the live diagnostic standard, identified the exact root
-cause via source reading and a standalone regex reproduction (no live call
-consumed for the reproduction), and stopped at the two-run ceiling without
-attempting a forbidden third run, returning `BLOCKED_WITH_REASON` with the
-exact fix named for a future redispatch.
+workerRepairWithinScope: first attempt -- captured a secret-safe
+diagnostic before the one permitted rerun per the live diagnostic
+standard, identified the exact root cause via source reading and a
+standalone regex reproduction (no live call consumed for the
+reproduction), and stopped at the two-run ceiling without attempting a
+forbidden third run. R1 -- recorded the required secret-safe diagnostic
+immediately on failure, did not attempt any rerun under any justification
+per R1's explicit zero-rerun rule, and extracted only safe summary facts
+(pass/fail count, duration) from the failure output before deleting it,
+rather than inspecting or displaying the full response body that likely
+contained real (non-secret) model output text. Both attempts returned
+`BLOCKED_WITH_REASON` with the exact defect named for a future redispatch.
 
-futurePacketImprovement: a live-test-authoring checklist item (or a
-reusable fixture-string helper) could warn authors to avoid words matched
-by `INJECTION_PATTERNS`/`PII_PATTERNS` (`ignore previous instructions`,
-`system: you are`, `<script`, code fences, SSN/card-number shapes,
-`passport`/`cmnd`/`can cuoc`, and the standalone words `secret` or
-`api key`/`api_key`) in ALLOW-path fixture prose, since a live-call-budget
-tranche has no room to discover this the slow way.
+futurePacketImprovement: first attempt -- a live-test-authoring checklist
+item (or a reusable fixture-string helper) could warn authors to avoid
+words matched by `INJECTION_PATTERNS`/`PII_PATTERNS`
+(`ignore previous instructions`, `system: you are`, `<script`, code
+fences, SSN/card-number shapes, `passport`/`cmnd`/`can cuoc`, and the
+standalone words `secret` or `api key`/`api_key`) in ALLOW-path fixture
+prose. R1 -- the same checklist could extend beyond the request-side
+offline preflight (already required by R1) to also require reviewing any
+post-response `not.toContain(...)` assertions for strings a real LLM is
+likely to legitimately echo (topic names, context phrases, non-secret
+fixture prose), reserving such assertions for genuinely secret values
+(API keys, credential material) rather than arbitrary input strings. This
+is a distinct lesson from the first attempt's request-side keyword trap;
+a live-call-budget tranche has no room to discover either the slow way.
 
 retrospectiveDisposition: `MACHINE_CHECK_CANDIDATE`
 
@@ -410,13 +554,34 @@ retrospectiveDisposition: `MACHINE_CHECK_CANDIDATE`
 | `git diff --name-status` | PASS: empty (no tracked file modified) |
 | `git status --short` (final) | PASS: exactly three `??` entries for the worker-owned paths |
 | `git rev-parse --short HEAD` (final) | PASS: `f8b5a66b0`, unchanged |
-| `liveCallCount` | 0 (recorded; neither run reached the Alibaba provider) |
-| `blockRequestCount` | 0 (recorded; the BLOCK section of the test case was unreachable after the ALLOW-side assertion failed) |
+| `liveCallCount` (first attempt) | 0 (recorded; neither run reached the Alibaba provider) |
+| `blockRequestCount` (first attempt) | 0 (recorded; the BLOCK section of the test case was unreachable after the ALLOW-side assertion failed) |
+| `git rev-parse --short HEAD` (R1 initial) | PASS: `7825c02e5`, unchanged throughout R1 |
+| `git status --short` (R1 initial) | PASS: empty |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 7825c02e5 --head HEAD` (R1, before edit) | PASS |
+| Alibaba key alias presence check (R1, `.env.local` grep, no value printed) | PASS: `ALIBABA_API_KEY` and `DASHSCOPE_API_KEY` both present |
+| R1 fixture correction (`Verify no raw secret leakage` -> `Verify no credential value leakage`) | PASS: exact single-string replacement applied, no other line changed |
+| R1 offline safety preflight (disposable Vitest file, no route/network/provider call) | PASS: `NO_MATCH` on both the generated intent and the built execution prompt; disposable file deleted immediately after |
+| `npm exec vitest -- run src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx --reporter=verbose` (R1, exactly one run, ZERO RERUN CEILING) | FAIL: `not.toContain(inputs.topic)` assertion failure after an apparently completed real Alibaba round trip (18.46s total, 13.45s test-body duration); the immediately prior `not.toContain(ALIBABA_API_KEY)` assertion passed; response status/decision/receipt/events were never read into evidence because the test failed first |
+| Safe-summary extraction of the R1 failure output (targeted grep for `Test Files`, `Tests`, and `Duration` lines only; full raw diff never displayed) | PASS: 1 failed (1), Duration 18.46s; raw output file deleted immediately after extraction |
+| `npm exec vitest -- run src/app/api/execute/route.mandatory-gateway-invocation.test.ts src/components/admin/AdminAuditLogBody.test.tsx --reporter=verbose` (R1, non-live regressions) | PASS: 7/7 (2 gateway-invocation cases, 5 AdminAuditLogBody cases) |
+| `npm exec tsc -- --noEmit` (R1) | PASS: no output, no errors |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 7825c02e5 --head HEAD` (R1, after edit) | PASS |
+| `python governance/compat/check_governed_file_size.py --enforce` (R1) | PASS: COMPLIANT; none of the three worker-owned files listed in any exceedance or advisory row |
+| `git diff --check` (R1) | PASS: no output (two LF/CRLF autocrlf informational warnings on the two markdown files, non-blocking) |
+| `git diff --name-status` (R1) | PASS: reports only the three worker-owned modify-only paths |
+| `git status --short` (R1 final) | PASS: exactly three `M` entries for the worker-owned paths |
+| `git rev-parse --short HEAD` (R1 final) | PASS: `7825c02e5`, unchanged |
+| `liveCallCount` (R1) | likely 1 attempted with an apparently completed round trip; not independently confirmed by response-field evidence |
+| `blockRequestCount` (R1) | 0 (the BLOCK section was unreachable after the ALLOW-side topic-echo assertion failed) |
+| final audit line count | PASS: 518 lines |
+| final worker-return line count | PASS: 587 lines |
 
 ## No-Commit Statement
 
-WORKER_MUST_NOT_COMMIT honored: HEAD remains `f8b5a66b0`; no git commit or
-staging action was performed by the worker at any point in this tranche.
+WORKER_MUST_NOT_COMMIT honored: HEAD remains `7825c02e5` throughout R1
+(and was `f8b5a66b0` throughout the first attempt); no git commit or
+staging action was performed by the worker at any point in either attempt.
 Reviewer/closer owns independent review, closure decision (accept the
-blocked disposition, or authorize a corrected redispatch), and any
+blocked disposition, or authorize a further corrected redispatch), and any
 continuity updates.

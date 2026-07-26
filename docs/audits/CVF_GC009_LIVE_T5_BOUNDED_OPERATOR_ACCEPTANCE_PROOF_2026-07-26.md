@@ -10,7 +10,9 @@ Date: 2026-07-26
 
 Batch ID: GC009-LIVE-T5
 
-executionBaseHead: `f8b5a66b0`
+executionBaseHead (first attempt): `f8b5a66b0`
+
+executionBaseHead (R1): `7825c02e5`
 
 Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md`
 
@@ -20,9 +22,17 @@ Create and execute one focused live test proving the accepted GC-009 Web
 caller on the actual route: real Alibaba ALLOW, fail-closed BLOCK before
 provider execution, durable secret-safe gateway events, receipt correlation,
 single-call telemetry, and projection of the persisted events through the
-existing admin audit component. Both permitted focused runs failed before
-reaching the provider boundary due to a self-inflicted test-authoring defect;
-this audit records that finding and the bounded blocked disposition.
+existing admin audit component. The first attempt's two permitted focused
+runs failed before reaching the provider boundary due to a self-inflicted
+test-authoring defect (below, preserved as historical evidence). Codex
+independently reviewed that attempt
+(`docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md`)
+and authorized one R1 redispatch: a corrected fixture, a mandatory offline
+safety preflight, and exactly one new focused run with zero reruns under
+every outcome. This audit's R1 section below records that corrected run,
+which reached the real Alibaba provider but failed on this tranche's own
+over-strict test assertion, and closes with `BLOCKED_WITH_REASON` per R1's
+no-rerun rule.
 
 ## Target / Source
 
@@ -228,7 +238,7 @@ credential value, because the matched word originates from the test
 author's own non-secret prose, not from any environment variable or
 provider payload.
 
-## Terminal Evidence Verdict
+## First-Attempt Terminal Evidence Verdict (Historical, Superseded By R1 Below)
 
 `LIVE_ACCEPTANCE_BLOCKED_WITH_DIAGNOSTIC`
 
@@ -242,6 +252,183 @@ The two-run ceiling is exhausted; a third focused live run is forbidden by
 this packet. A corrected redispatch requires fresh operator/reviewer
 authorization, not worker self-continuation.
 
+Independently reviewed and accepted (with one correction to the worker's
+rerun-compliance claim) at
+`docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md`,
+material commit `6b6cd6ab1`, disposition
+`REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED`. This first-attempt
+verdict is retained here as historical evidence and is superseded by the R1
+section immediately below for the tranche's current status.
+
+## R1 Redispatch Evidence
+
+### R1 Scope And Authorization
+
+Per the work order's `## R1 Redispatch Override` section (superseding the
+initial-dispatch two-run/one-diagnostic-rerun rule), R1 authorized exactly
+one corrected focused live run with these mandatory preconditions: (1)
+replace only the literal fixture text `Verify no raw secret leakage` with
+`Verify no credential value leakage` in the focused test; (2) run an
+offline preflight applying current `INJECTION_PATTERNS`/`PII_PATTERNS`
+behavior to the complete generated ALLOW intent before any provider use,
+requiring `NO_MATCH`; (3) execute exactly one focused live run; (4) zero
+reruns under every outcome, including logging, fixture, configuration,
+credential, or provider-state changes.
+
+### R1 Fixture Correction
+
+Applied the exact literal replacement in
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx`'s
+`inputs.options` field: `Verify no raw secret leakage` ->
+`Verify no credential value leakage`. No other line in the focused test was
+changed for this correction.
+
+### R1 Offline Safety Preflight (No Provider Call)
+
+Before any provider use, constructed the complete generated ALLOW intent
+using the real `getTemplateById`/`generateIntent` functions against the
+corrected `inputs` object, and the complete built execution prompt using
+the real `buildExecutionPrompt` function (the same function `route.ts` line
+274 calls), then ran the real `applySafetyFilters` function (the same
+function `route.ts` line 324 calls) against both strings using a disposable
+Vitest file created and deleted before any live run, containing no route
+invocation, no network call, and no provider credential use.
+
+Result: `NO_MATCH` on both.
+
+```json
+{
+  "intentBlocked": false,
+  "intentDetails": undefined,
+  "promptBlocked": false,
+  "promptDetails": undefined
+}
+```
+
+Per R1 step 2, this cleared the corrected fixture for the single permitted
+live run. The disposable preflight file was deleted immediately after this
+result was captured and before the live run; it is not one of the three
+worker-owned paths and was never a live-call attempt.
+
+### R1 Focused Live Run (Exactly One, Zero Reruns)
+
+Command:
+
+```powershell
+Set-Location EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web
+npm exec vitest -- run src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx --reporter=verbose
+Set-Location ../../../..
+```
+
+Result: FAIL after 18.46s total (13.45s inside the test body -- a duration
+consistent with a completed real network round trip to the Alibaba API,
+not a pre-provider short-circuit).
+
+`AssertionError: expected '{"allowData":...}' not to contain
+'GC009 Live T5 bounded operator accept...'` at the assertion
+`expect(allowSerialized).not.toContain(inputs.topic)`
+(focused test line 186). The immediately preceding assertion at line 185,
+`expect(allowSerialized).not.toContain(ALIBABA_API_KEY)`, did not fail,
+confirming the key-leak check passed before the topic-echo check failed.
+Because the failure is a `not.toContain` assertion on the response body
+rather than a thrown route-level or network-level error, and because the
+elapsed time (13.45s) is consistent with a real provider round trip rather
+than an immediate pre-gateway 400 (both first-attempt runs completed in
+under 600ms), the ALLOW request reached HTTP 200 with `success: true` and a
+real Alibaba `output` string before this assertion executed.
+
+Root cause: the real Alibaba model's response output naturally referenced
+or restated the supplied `inputs.topic` text
+("GC009 Live T5 bounded operator acceptance proof") as part of its
+analysis, which the test's own `expect(...).not.toContain(inputs.topic)`
+assertion (added to prove no *raw secret* leakage) incorrectly also
+rejects, because the topic string is ordinary non-secret fixture text that
+a real language model is expected to reference when producing an on-topic
+analysis. This is a test-assertion design defect in this tranche's own
+focused test, not a secret leak, not a provider defect, and not a defect in
+the mandatory gateway, guard engine, route-guard-gateway adapter, or
+control-plane event store, none of which had executed yet at the point of
+failure (the BLOCK-request section, gateway-event assertions, and
+`AdminAuditLogBody` projection all appear later in the same test body,
+after this failed assertion, and were never reached).
+
+### R1 Secret-Safe Diagnostic
+
+Per R1 step 5 and the live diagnostic standard's mandatory rule, this
+diagnostic is recorded immediately on failure. No rerun follows it.
+
+| Field | Value |
+|---|---|
+| `stage` | `output_validation` (the failure occurred in the test's own post-response content assertion, after a completed provider round trip) |
+| `class` | `output_validation_failed` |
+| `retryable` | `false` under R1 (R1 permits zero reruns regardless of retryability; recorded for completeness only) |
+| `userAction` | `revise_request` (the test's own assertion, not the request, needs revision) |
+| `provider` | `alibaba` |
+| `model` | `qwen-turbo` (the requested model; the response `model` field was not read before the assertion failed, so the provider-echoed model value is not separately confirmed) |
+| `httpStatus` | not read into a variable before the failing assertion; the 200-consistent timing (13.45s, matching a real provider round trip) and the fact that the immediately prior `ALIBABA_API_KEY`-absence assertion passed are the basis for inferring a completed ALLOW response, not a direct `response.status` capture, because the test does not log status before this assertion |
+| `latencyMs` | not captured into a named field before the failing assertion; total test-body duration was 13.45s (test infra timing, not `routeElapsedMs`/`providerLatencyMs` from the receipt, which the test never reached reading) |
+| `receiptId` | not captured; the assertion failed before the test read `allowReceipt.receiptId` |
+| `traceId` | not captured; the assertion failed before the test read `allowReceipt.envelopeId` |
+| `safeMessage` | The real Alibaba provider call appears to have completed (based on elapsed time and the passing key-absence check immediately before the failure), but this tranche's own test assertion incorrectly treated the model's natural reference to the supplied topic text as a leakage failure. No credential value, signed header, or raw model output beyond the already-known non-secret topic string is disclosed by this diagnostic. |
+
+### R1 Denominators (Reported Separately From The First Attempt)
+
+- `liveCallCount` (R1): likely 1 real Alibaba provider call was attempted
+  and its HTTP round trip appears to have completed (13.45s elapsed,
+  consistent with a real network call; the immediately preceding
+  key-absence assertion passed). This audit does not claim a *confirmed*
+  ALLOW result, because the test failed before reading `allowResponse.status`,
+  `allowData.success`, or `allowReceipt.decision` into evidence, and R1's
+  no-rerun rule means this cannot be independently reconfirmed by rerunning.
+- `blockRequestCount` (R1): 0. The keyless authority-gate BLOCK section
+  (test lines 189 onward) was never reached because the ALLOW-side
+  assertion at line 186 threw first.
+- test-case denominator (R1): 1 focused test case, run exactly once, FAIL.
+- event-model denominator (R1): unknown. The test never reached
+  `readAuditEvents()` (line 231), so this audit cannot confirm whether zero,
+  one, or two `MANDATORY_GATEWAY_EVALUATED` events were persisted to the
+  isolated temporary event store before the process's `afterEach` cleanup
+  removed that temporary directory. No further inspection is authorized
+  under R1's zero-rerun rule.
+- combined tranche total (first attempt + R1): 3 focused live-test
+  executions across two dispatches (2 in the first attempt, 1 in R1); 0
+  confirmed-and-evidenced ALLOW results; 0 confirmed BLOCK results; 0
+  confirmed durable event pairs; 0 confirmed admin-projection renders.
+
+n=1 statement (R1): even if the R1 run's ALLOW request did complete
+against the real provider, this audit does not read or report
+`providerLatencyMsObserved` or `routeElapsedMsObserved` from it, because
+the test failed before those fields were read into evidence. No latency,
+percentile, or SLO claim is made from R1.
+
+### R1 Secret Hygiene Statement
+
+No Alibaba/DashScope API key value, signed header, bearer token, or raw
+provider request/response body was printed, copied, hashed, embedded, or
+committed at any point in R1. The vitest failure output containing the
+full serialized response (including the real model's output text) was
+inspected only for safe summary facts (pass/fail count, total duration)
+using targeted extraction, was never displayed in full, and the file
+capturing it was deleted immediately after those safe facts were extracted.
+The only fixture-originated string named in this section
+("GC009 Live T5 bounded operator acceptance proof") is the test author's
+own non-secret topic text, not a credential, prompt secret, or provider
+output.
+
+### R1 Terminal Evidence Verdict
+
+`LIVE_ACCEPTANCE_BLOCKED_WITH_DIAGNOSTIC`
+
+The R1 focused live run failed on the test's own topic-echo assertion after
+an apparently completed real Alibaba provider round trip. Because the test
+failed before reading the response status, decision, receipt, or event
+data into evidence, this audit cannot confirm the required ALLOW proof,
+BLOCK proof, durable-event correlation, or admin-projection proof, even
+though a real provider call very likely occurred. R1 permits zero reruns
+under any outcome; no further live attempt is authorized without a fresh
+operator/reviewer-authorized redispatch that also repairs the topic-echo
+assertion defect identified here.
+
 ## Source Verification Block
 
 | Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
@@ -251,16 +438,23 @@ authorization, not worker self-continuation.
 | Safety filter blocks on the literal word "secret" | LITERAL_INVARIANT | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/safety.ts` | line 12 (`PII_PATTERNS`); line 31 (`blocked: true, reason: 'Safety filter triggered'`) | `applySafetyFilters`; `PII_PATTERNS` | safety filter module | ACCEPT |
 | Focused-test ALLOW fixture contains the word "secret" | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx` | `inputs.options` field, "Verify no raw secret leakage" | `inputs` | this tranche's own focused live test | ACCEPT |
 | T4 records latency as unmeasured | VALUE_SET | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T4_VALUE_LATENCY_FAILURE_ROLLBACK_ASSESSMENT_COMPLETION_2026-07-26.md` | Latency Decision | `NOT_MEASURED_NO_LIVE_AUTHORITY` | T4 completion review | ACCEPT (unchanged; this tranche adds no new latency evidence) |
+| First-attempt review accepted the blocked diagnosis and authorized R1 | VALUE_SET | `docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md` | Decision / Disposition | `REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED` | first-attempt completion review | ACCEPT |
+| R1 override requires zero reruns under every outcome | LITERAL_INVARIANT | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md` | `## R1 Redispatch Override`, item 4 | `No rerun is authorized` | R1 work order section | ACCEPT |
+| Corrected fixture text is present in the focused test | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx` | `inputs.options` field, "Verify no credential value leakage" | `inputs` | this tranche's own focused live test | ACCEPT |
+| Route builds the execution prompt via `buildExecutionPrompt` before the safety filter | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | line 274 (`buildExecutionPrompt`); line 324 (`applySafetyFilters`) | `buildExecutionPrompt`; `applySafetyFilters` | execute route `POST` | ACCEPT |
 
 ## New Doc-Only Fields
 
 | Proposed item | Meaning | Runtime/source status |
 |---|---|---|
-| `liveCallCount` | 0 (recorded this tranche) | DOC_ONLY_NEW |
-| `blockRequestCount` | 0 (recorded this tranche) | DOC_ONLY_NEW |
-| `providerLatencyMsObserved` | not obtained; no provider call occurred | DOC_ONLY_NEW |
-| `routeElapsedMsObserved` | not obtained; no provider call occurred | DOC_ONLY_NEW |
-| `diagnosticDisposition` | `BLOCKED_AFTER_ONE_DIAGNOSTIC_RERUN_SELF_INFLICTED_FIXTURE_DEFECT` | DOC_ONLY_NEW |
+| `liveCallCount` (first attempt) | 0 | DOC_ONLY_NEW |
+| `liveCallCount` (R1) | likely 1 attempted with an apparently completed round trip; not independently confirmed by response-field evidence because the test failed before reading `allowResponse.status`/`allowData.success`/`allowReceipt.decision` | DOC_ONLY_NEW |
+| `blockRequestCount` (first attempt) | 0 | DOC_ONLY_NEW |
+| `blockRequestCount` (R1) | 0 | DOC_ONLY_NEW |
+| `providerLatencyMsObserved` | not obtained in either attempt; R1 failed before reading receipt telemetry | DOC_ONLY_NEW |
+| `routeElapsedMsObserved` | not obtained in either attempt; R1 failed before reading receipt telemetry | DOC_ONLY_NEW |
+| `diagnosticDisposition` (first attempt) | `BLOCKED_AFTER_ONE_DIAGNOSTIC_RERUN_SELF_INFLICTED_FIXTURE_DEFECT` (historical; reviewer rejected the rerun-compliance claim, retained the blocked diagnosis) | DOC_ONLY_NEW |
+| `diagnosticDisposition` (R1) | `BLOCKED_WITH_REASON_ZERO_RERUN_TOPIC_ECHO_ASSERTION_DEFECT` | DOC_ONLY_NEW |
 
 ## Epistemic Process Block
 
@@ -303,13 +497,22 @@ proof attempt.
 
 ## Claim Boundary
 
-This audit records exactly one focused live test authored and two permitted
-focused live runs executed, both of which failed at the `request_validation`
-stage before reaching the mandatory gateway or the Alibaba provider. It does
-not claim a real Alibaba ALLOW result, a fail-closed authority-gate BLOCK
-proof, durable event correlation, admin-component projection, or any
-latency observation. `liveCallCount` is 0. It does not authorize a third
-focused live run, runtime mutation, broad release proof, production
-percentile or SLO claims, public export, push, deployment, rollback,
-GC-010 work, or any claim beyond identifying the exact self-inflicted
-fixture defect that caused both runs to fail before the provider boundary.
+This audit records one focused live test authored and modified in place
+across two dispatches (first attempt: two permitted runs; R1: one corrected
+run with zero reruns), for a combined three focused live-test executions.
+The first attempt's two runs failed at `request_validation` before reaching
+the mandatory gateway or provider; that finding is independently reviewed
+and accepted, and is preserved here as historical evidence. The R1 run
+appears to have reached the real Alibaba provider (based on elapsed-time
+and key-absence-assertion evidence) but failed on this tranche's own
+topic-echo test assertion before the test read the response status,
+decision, receipt, or durable-event data into evidence. This audit does not
+claim a confirmed real Alibaba ALLOW result, a fail-closed authority-gate
+BLOCK proof, durable event correlation, admin-component projection, or any
+latency observation from either attempt. It does not authorize any further
+rerun (R1 permits zero under any outcome), runtime mutation, broad release
+proof, production percentile or SLO claims, public export, push,
+deployment, rollback, GC-010 work, or any claim beyond identifying the
+exact defects (a fixture word in the first attempt; a topic-echo assertion
+in R1) that prevented either attempt from producing accepted live-proof
+evidence.

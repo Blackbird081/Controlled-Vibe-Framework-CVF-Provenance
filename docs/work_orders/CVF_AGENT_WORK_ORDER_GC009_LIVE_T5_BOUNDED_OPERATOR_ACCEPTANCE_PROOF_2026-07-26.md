@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_FIXTURE_PREFLIGHT_ONE_RUN_NO_RERUN
+Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R2_RESPONSE_LEAKAGE_SCOPE_ONE_RUN_NO_RERUN
 
 Batch ID: GC009-LIVE-T5
 
@@ -11,6 +11,8 @@ Dispatch base head: `4249194c4`
 dispatchBaseHead: `4249194c4`
 
 R1 dispatch base head: `59fd54543`
+
+R2 review base head: `7825c02e5`
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
@@ -36,9 +38,14 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`.
 executionBaseHead: capture current committed HEAD before any edit.
 
 Current-time notes: the first T5 execution is independently accepted as
-blocked at material commit `6b6cd6ab1` with `liveCallCount=0`. The operator
-authorized R1 using existing keys. R1 permits one fixture correction, offline
-safety preflight, and exactly one focused live run with no rerun.
+blocked at material commit `6b6cd6ab1` with `liveCallCount=0`. R1 then made
+exactly one real Alibaba ALLOW call. The assertion order directly proves HTTP
+200, `success=true`, provider `alibaba`, decision `ALLOW`, nonempty output,
+numeric receipt telemetry, the required telemetry claim boundary, and API-key
+non-leakage. R1 failed only when the response-level assertion incorrectly
+forbade the real model from echoing its ordinary topic input. The operator
+authorized R2 on 2026-07-26. R2 permits the exact assertion-scope correction,
+offline inspection, and exactly one focused live run with no rerun.
 
 Do-not-misread notes: this is not the broad release bundle, production SLO
 measurement, provider soak, public proof, deployment, rollback, runtime repair,
@@ -50,8 +57,9 @@ T1-T4 completions, all source in the Source Verification Block, and checker
 source before editing. Capture HEAD and clean status, then run
 pre-implementation.
 
-Return contract: modify exactly the three worker-owned artifacts, perform the
-offline preflight and one focused live run, never rerun, run non-live
+Return contract: modify exactly the three worker-owned artifacts, correct the
+R1 evidence underclaim, perform the exact assertion-scope correction and
+offline inspection, execute one focused live run, never rerun, run non-live
 regressions and gates, leave changes unstaged and uncommitted, then return
 `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
@@ -74,6 +82,38 @@ create-only output, two focused runs, or one diagnostic rerun.
    `BLOCKED_WITH_REASON`.
 6. Refresh the existing audit and worker return in place. Preserve the first
    attempt as historical evidence and add clearly labeled R1 evidence.
+
+## R2 Redispatch Override
+
+This section supersedes every earlier execution instruction where it conflicts
+with R2. Earlier attempts remain immutable historical evidence.
+
+1. In the focused test, delete only these two response-level assertions:
+   `expect(allowSerialized).not.toContain(inputs.topic);` and
+   `expect(allowSerialized).not.toContain(inputs.context);`.
+2. Do not add a replacement response-level sentinel assertion. The real model
+   is expected to use ordinary topic and context input in its output. Retain
+   `expect(allowSerialized).not.toContain(ALIBABA_API_KEY);`.
+3. Retain the event-level topic and context exclusions at the
+   `eventsSerialized` boundary. Durable gateway events must contain only the
+   accepted seven-field projection and must not store raw prompt inputs.
+4. Before provider use, inspect the final test diff and confirm the only R2
+   test change is deletion of the two response-level assertions. Re-run the
+   current complete generated-intent safety preflight and require `NO_MATCH`.
+5. Execute exactly one focused live run using the existing key loader. No R2
+   rerun is authorized under any outcome.
+6. Correct the R1 audit and worker-return evidence in place:
+   - `liveCallCount` for R1 is confirmed as 1;
+   - HTTP 200, `success=true`, provider `alibaba`, ALLOW decision, nonempty
+     output, numeric `providerLatencyMs`, numeric `routeElapsedMs`, telemetry
+     claim boundary, and key non-leakage passed before the topic assertion;
+   - exact numeric telemetry values were not retained in the R1 document;
+   - `blockRequestCount` remained 0 and durable-event/projection evidence was
+     not reached.
+7. Append clearly labeled R2 evidence without rewriting the first attempt or
+   R1 as though either were a passing end-to-end run.
+8. On any R2 failure, record one secret-safe diagnostic and return
+   `BLOCKED_WITH_REASON`. Do not inspect or emit raw provider output.
 
 ## Purpose
 
@@ -104,6 +144,8 @@ existing admin audit component.
 | T4 bounded assessment | completion at material commit `cb1f34cee` | measure only bounded live observations left unmeasured | PASS |
 | First T5 blocked review | `docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md`; material commit `6b6cd6ab1` | preserve zero-call evidence and reviewer correction | PASS |
 | Operator R1 authority | explicit instruction on 2026-07-26 to use existing API keys and continue | one corrected focused run; no rerun | PASS |
+| R1 independent evidence review | assertion order in the focused test and R1 failure at the topic assertion | one confirmed real ALLOW call; BLOCK/events/projection not reached | PASS |
+| Operator R2 authority | explicit `duoc, tiep tuc` instruction on 2026-07-26 after the reviewer requested fresh R2 authority | exact assertion-scope correction; one focused run; no rerun | PASS |
 | Packet isolation | clean HEAD `4249194c4` before packet authoring | worker starts only from committed dispatch packet and clean worktree | PASS |
 
 ## Intake Role Routing Decision
@@ -131,7 +173,7 @@ existing admin audit component.
 Allowed worker actions:
 
 1. Modify only the existing focused live test at the owned test path as
-   specified by `## R1 Redispatch Override`.
+   specified by `## R2 Redispatch Override`.
 2. Reuse current authentication, enforcement, and quota mock patterns only to
    isolate the accepted route proof.
 3. Use the actual route `POST`, shared mandatory gateway, guard engine,
@@ -157,7 +199,7 @@ Forbidden:
   event store, final response builder, or Alibaba provider in the ALLOW path;
 - printing, copying, hashing, or embedding raw credential values;
 - running the broad release bundle, any other live spec, provider soak,
-  benchmark loop, or any R1 rerun;
+  benchmark loop, or any R1/R2 rerun;
 - claiming p50, p95, p99, throughput, production SLO, release readiness,
   public readiness, deployment readiness, or GC-010 progress;
 - staging, commit, push, public-sync, deployment, or rollback.
@@ -282,6 +324,12 @@ R1 authorizes no rerun. On any focused-run failure, record the required
 secret-safe diagnostic and return `BLOCKED_WITH_REASON`.
 
 ## Required Artifact Manifest
+
+| Artifact | Required path | R2 disposition |
+|---|---|---|
+| Focused live test | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx` | modify in place |
+| Live proof audit | `docs/audits/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md` | correct R1 evidence and append R2 evidence |
+| Worker return | `docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_WORKER_RETURN_2026-07-26.md` | correct R1 evidence and append R2 return |
 
 ### Focused Live Test
 
@@ -424,6 +472,15 @@ Integrity; Finding-To-Governance Learning Disposition; Epistemic Process
 Block; Machine Closure Package; Claim Boundary; git status --short; Changed
 Files; Worker Experience Retrospective; No-Commit Statement.
 
+| Contract item | Worker-return requirement |
+|---|---|
+| `executionBaseHead` | record the captured committed HEAD from worker startup |
+| `Delta Execution Claim Boundary Control Block` | required real heading and complete fields |
+| `External Knowledge Intake Routing` | required real heading or explicit `N/A with reason` |
+| `Corpus Completeness And Report Integrity` | required real heading or explicit `N/A with reason` |
+| `Epistemic Process Block` | required real heading with prediction, observation, analysis, and adjustment |
+| Non-applicable fields | write `N/A with reason` rather than omit a required field or section |
+
 ## Verification Commands
 
 Before editing:
@@ -434,7 +491,7 @@ git status --short
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base $workerExecutionBaseHead --head HEAD
 ```
 
-Initial focused live run, exactly once:
+R2 focused live run, exactly once:
 
 ```powershell
 Set-Location EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web
@@ -481,9 +538,10 @@ exceed this packet's call and scope ceiling.
 
 1. Complete startup, source, checker, key-presence, and clean-worktree checks.
 2. Apply the exact fixture correction and offline safety preflight.
-3. Execute exactly one R1 focused live run.
+3. Execute exactly one R2 focused live run.
 4. If it fails, record a diagnostic and stop without rerun.
-5. Refresh the audit and worker return with labeled R1 evidence.
+5. Refresh the audit and worker return with corrected R1 evidence and labeled
+   R2 evidence.
 6. Run non-live regression, typecheck, governance, size, and diff checks.
 7. Leave all three paths unstaged and return the terminal disposition.
 
@@ -512,8 +570,8 @@ the exact proof manifest.
 
 ## Operator Checkpoint
 
-No operator checkpoint remains before the single R1 focused call; it is
-explicitly authorized. Any R1 rerun, broader live suite, runtime repair,
+No operator checkpoint remains before the single R2 focused call; it is
+explicitly authorized. Any R2 rerun, broader live suite, runtime repair,
 public action, deployment, rollback, or production claim requires new
 operator authorization.
 
@@ -609,11 +667,11 @@ Reason: private provenance proof only; no public-sync authority or artifact.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_FIXTURE_PREFLIGHT_ONE_RUN_NO_RERUN` | PASS |
+| Work order status | this work order | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R2_RESPONSE_LEAKAGE_SCOPE_ONE_RUN_NO_RERUN` | PASS |
 | Baseline status | companion baseline | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Worker artifacts | exact three-path manifest | blocked diagnostic, zero provider calls | PASS |
-| Completion review | reviewer-owned path | independent blocker acceptance and rerun-policy correction | PASS |
-| Roadmap state | companion roadmap | T5 R1 redispatch-ready | PASS |
+| Worker artifacts | exact three-path manifest | R1 partial live proof and R2 execution target | PASS |
+| Completion review | reviewer-owned path | R1 ALLOW proof correction and R2 authority | PASS |
+| Roadmap state | companion roadmap | T5 R2 redispatch-ready | PASS |
 | Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Acceptance Receipt Assertion Matrix
@@ -630,7 +688,7 @@ Reason: private provenance proof only; no public-sync authority or artifact.
 
 ## Claim Boundary
 
-This R1 work order authorizes one focused private live proof and zero reruns.
+This R2 work order authorizes one focused private live proof and zero reruns.
 It does not authorize runtime mutation, broad release proof,
 production percentile or SLO claims, public export, push, deployment,
 rollback, GC-010 work, CLI/MCP invocation, or arbitrary external-agent action.
