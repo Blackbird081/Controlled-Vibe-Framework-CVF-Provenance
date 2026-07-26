@@ -13688,7 +13688,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC010-AER-T2 is independently closed at material commit b915367db with disposition CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION. Do not re-propose GC010-AER caller implementation or proof work until current source simultaneously proves all four facts: a non-test import or construction of AgentExecutionRuntime; a registered production trigger that reaches that caller; concrete GuardRuntimeEngine and ExecutionProvider wiring; and a durable receipt or audit consumer for the caller result. A work order, export-only change, chat proposal, or provider-local note does not satisfy the condition. If all four facts become source-verifiable, the reviewer may author a fresh GC-018 and work order; otherwise this lane remains value-parked. No runtime/test/package/export/provider/Web/execution-plane/CLI/MCP edit or execution, live provider/API/account/network use, latency benchmark, rollback action, public-sync, push, deployment, GC-010 closure, or production-readiness claim is authorized. GC009 T1-T4 remain closed bounded; production latency remains NOT_MEASURED_NO_LIVE_AUTHORITY; GC-010 and the paired gap remain open. Other parked lanes retain their recorded conditions. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-LIVE-T5 is committed dispatch-ready at material commit 8f091a855. Send the complete work order docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md to one Claude worker under WORKER_MUST_NOT_COMMIT. The worker may create exactly the focused live test, live-proof audit, and worker return named in the work order, consume one initial real Alibaba call, and use at most one diagnostic rerun after a recorded secret-safe diagnosis and concrete result-changing action. No third focused run, broad release bundle, runtime mutation, staging, commit, public-sync, push, deployment, GC-010 work, or production-readiness claim is authorized. Codex independently reviews and decides closure. GC010-AER remains value-parked unless current source simultaneously proves its recorded four-fact reopen condition. Other parked lanes retain their conditions, and LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14340,5 +14340,18 @@
     "reopenCondition": "current source must simultaneously prove a non-test AgentExecutionRuntime import or construction, a registered production trigger, concrete GuardRuntimeEngine and ExecutionProvider wiring, and a durable receipt or audit consumer",
     "nextAllowedMove": "retain the lane as value-parked unless all four source facts become true; only then may the reviewer author a fresh GC-018 and work order",
     "claimBoundary": "GC-010 and the paired gap remain open. No implementation, caller creation, runtime/test/package/export/provider/Web/execution-plane/CLI/MCP action, live proof, public action, deployment, or production-readiness claim."
+  },
+  "gc009LiveT5BoundedOperatorAcceptanceProofDispatch20260726": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-26",
+    "materialCommit": "8f091a855",
+    "dispatchBaseHead": "4249194c4",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md",
+    "baseline": "docs/baselines/CVF_GC018_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md",
+    "workerRoute": "one worker through operator-selected Claude surface; WORKER_MUST_NOT_COMMIT; exactly one focused live test, one audit, and one worker return",
+    "liveAuthority": "one initial real Alibaba call and at most one diagnostic rerun after secret-safe diagnosis and a concrete result-changing action; no third focused run",
+    "verification": "pre-dispatch 75/75; commit steward PASS; pre-commit 83/83; exact three-path dispatcher packet",
+    "nextAllowedMove": "send the complete committed T5 work order to Claude; Claude returns exactly three unstaged outputs; Codex independently reviews and decides closure",
+    "claimBoundary": "Dispatch authorization only. No live result is yet accepted; no runtime mutation, broad release proof, public-sync, push, deployment, GC-010 action, production SLO, or production-readiness claim."
   }
 }
