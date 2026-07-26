@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_ROUTE_TEST_MOCK
+Status: CLOSED_PASS_BOUNDED_GC009_COMPOSED
 
 Batch ID: GC009-GC010-PCALLER-T1
 
@@ -10,9 +10,9 @@ Date: 2026-07-26
 
 Dispatch base head: `7275e9dc8`
 
-Execution base head: `TO_BE_CAPTURED_BY_WORKER`
+Execution base head: `871251726`
 
-Closure base head: `TO_BE_CAPTURED_BY_REVIEWER`
+Closure base head: `5dc647590`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -545,22 +545,22 @@ production readiness.
 
 ## Acceptance Criteria
 
-- [ ] `checkContext` preserves the exact fourteen-field context object.
-- [ ] Gateway engine evaluation is exactly once.
-- [ ] Legacy `check` tests remain passing.
-- [ ] Root and runtime package exports resolve.
-- [ ] Singleton configuration exactly matches the accepted no-bypass values.
-- [ ] Adapter emits and links one durable gateway audit event.
-- [ ] Adapter returns both gateway and pipeline results.
-- [ ] BLOCK, ESCALATE, BYPASS, missing pipeline result, and disallowed outcomes
+- [x] `checkContext` preserves the exact fourteen-field context object.
+- [x] Gateway engine evaluation is exactly once.
+- [x] Legacy `check` tests remain passing.
+- [x] Root and runtime package exports resolve.
+- [x] Singleton configuration exactly matches the accepted no-bypass values.
+- [x] Adapter emits and links one durable gateway audit event.
+- [x] Adapter returns both gateway and pipeline results.
+- [x] BLOCK, ESCALATE, BYPASS, missing pipeline result, and disallowed outcomes
       stop before routing/provider.
-- [ ] Direct gateway-denied response receipt uses the gateway decision.
-- [ ] Route and adapter contain no direct engine evaluation.
-- [ ] Route finishes below 959 lines.
-- [ ] All focused tests, all 31 existing route tests, and both typechecks pass.
-- [ ] Actual changed set stays inside the writable manifest.
-- [ ] Worker did not stage or commit.
-- [ ] T2-T4 remain held.
+- [x] Direct gateway-denied response receipt uses the gateway decision.
+- [x] Route and adapter contain no direct engine evaluation.
+- [x] Route finishes below 959 lines.
+- [x] All focused tests, all 31 existing route tests, and both typechecks pass.
+- [x] Actual worker changed set stayed inside the writable manifest.
+- [x] Worker did not stage or commit.
+- [x] T2-T4 remain held.
 
 ## Review Gate
 
@@ -585,12 +585,17 @@ requiredGate: python governance/compat/run_worker_return_fast_gate.py
 individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 requiredEvidenceTerms: executionBaseHead; git status --short
+requiredSections: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Machine Closure Package
 conditionalDispositionRule: include each conditional section with evidence when applicable, otherwise record N/A with reason
 ```
 
 The worker return must contain:
 
 - `Status: COMPLETE_PENDING_REVIEW` or the selected blocked token;
+- Purpose;
+- Scope / Methodology;
+- Findings / Position;
+- Risk / Corrective Action;
 - execution-base and clean-start evidence;
 - Source Verification refresh;
 - Work-Order Fulfillment Manifest;
@@ -605,6 +610,7 @@ The worker return must contain:
 - Finding-To-Governance Learning Disposition;
 - Agent Operation Trace Block;
 - Delta Execution Claim Boundary Control Block;
+- Machine Closure Package;
 - Public Export Disposition;
 - Claim Boundary;
 - no staging/commit evidence.
@@ -622,7 +628,7 @@ rg -n "guardEngine\.evaluate|getSharedGuardEngine" EXTENSIONS/CVF_v1.6_AGENT_PLA
 Push-Location EXTENSIONS/CVF_GUARD_CONTRACT; npm test -- src/runtime/mandatory-gateway.test.ts; npm run check; Pop-Location
 Push-Location EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web; npm run test:run -- src/lib/mandatory-gateway-singleton.test.ts src/lib/route-guard-gateway.test.ts src/app/api/execute/route.test.ts; npm run check; Pop-Location
 python governance/compat/check_governed_file_size.py --enforce
-python governance/compat/run_worker_return_fast_gate.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md --worker-return docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_WORKER_RETURN_2026-07-26.md
+python governance/compat/run_worker_return_fast_gate.py
 ```
 
 The Vitest command signatures were verified against local `npx vitest --help`;
@@ -630,14 +636,14 @@ the worker must preserve equivalent non-live filters.
 
 ## Closure Checklist
 
-- [ ] Worker return admitted only after independent review.
-- [ ] Every acceptance item resolved PASS, N/A with reason, or BLOCKED.
-- [ ] Roadmap-to-work-order diff reconciled.
-- [ ] No open checkbox remains in a closed artifact.
-- [ ] No stale HOLD release claim exists.
-- [ ] File and no-live claims have command evidence.
-- [ ] Completion review records repairs and test results.
-- [ ] Material and continuity commits remain separate.
+- [x] Worker return admitted only after independent review.
+- [x] Every acceptance item resolved PASS, N/A with reason, or BLOCKED.
+- [x] Roadmap-to-work-order diff reconciled.
+- [x] No open checkbox remains in a closed artifact.
+- [x] No stale HOLD release claim exists.
+- [x] File and no-live claims have command evidence.
+- [x] Completion review records repairs and test results.
+- [x] Material and continuity commits remain separate.
 
 ## Return-To-Orchestrator Conditions
 
@@ -732,17 +738,17 @@ does not release T2-T4.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_ROUTE_TEST_MOCK` | PASS |
-| Completion or reviewer artifact | future T1 completion review | absent before worker execution | N/A with reason: independent closure remains pending |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_GC009_COMPOSED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md` | independent bounded closure with reviewer repairs | PASS |
 | Baseline status | companion baseline | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
 | T1I dependency | T1I completion review | material commit `7b3cdc23a` | PASS |
-| Worker output | canonical worker return | absent before dispatch | PASS |
-| Roadmap state | companion roadmap | T1 dispatch-ready; T2-T4 held | PASS |
+| Worker output | canonical worker return | `Status: COMPLETE_PENDING_REVIEW`; admitted as evidence only | PASS |
+| Roadmap state | companion roadmap | T1 pass bounded; T2-T4 held | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no corpus packet created | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no corpus entry required | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
-| System loop interlock | GC-009/GC-010 gap entry | remains `IMPLEMENTED_NOT_INVOCATION_PROVEN` | PASS |
-| Session continuity | separate session-sync commit | follows material dispatch commit | N/A with reason: not worker-owned |
+| System loop interlock | GC-009/GC-010 gap entry | GC-009 composition recorded; paired status remains `IMPLEMENTED_NOT_INVOCATION_PROVEN` because T2 and GC-010 remain open | PASS |
+| Session continuity | separate session-sync commit | follows material closure commit | N/A with reason: pending material commit hash |
 | Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Acceptance Receipt Assertion Matrix

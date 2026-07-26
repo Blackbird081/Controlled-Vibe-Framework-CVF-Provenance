@@ -23,6 +23,14 @@ export {
   resolveHandoffCheckpoint,
 } from './runtime/agent-handoff';
 
+// Mandatory gateway (T1 runtime composition)
+export type { GatewayConfig, GatewayResult } from './runtime/mandatory-gateway';
+export {
+  MandatoryGateway,
+  createMandatoryGateway,
+  DEFAULT_GATEWAY_CONFIG,
+} from './runtime/mandatory-gateway';
+
 // Multi-agent coordination (W6-T2)
 export {
   AgentCoordinationBus,

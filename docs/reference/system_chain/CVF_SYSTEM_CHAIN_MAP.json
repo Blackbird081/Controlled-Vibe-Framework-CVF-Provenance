@@ -5,7 +5,7 @@
   "sourceAuditEvidence": "docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_EVIDENCE_2026-07-10.json",
   "reviewerCompletion": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md",
   "reviewerCompletionMaterialCommit": "645df8b83",
-  "lastVerifiedDate": "2026-07-23",
+  "lastVerifiedDate": "2026-07-26",
   "maxAgeDays": 30,
   "reminderPolicy": "This machine map and its human companion record reviewer-accepted MSEA-R90 Audit A findings. Source-file drift and review age are detected automatically by governance/compat/check_system_chain_map_freshness.py. Detecting drift or age expiry never rewrites a lane's currentPosture or verdict automatically; only a fresh governed review may change those fields.",
   "lanes": [
@@ -62,16 +62,16 @@
       "currentPosture": "PARTIAL",
       "verdict": "PARTIAL_RUNTIME_CONNECTION_FULL_INVENTORY",
       "implementedBy": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts (GC-001); EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts (GC-009); EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts (GC-011)",
-      "invokedBy": "GC-001 invoked at EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts:122; MSEA-R94-T1B confirms GC-009 and GC-010 have no non-test production caller or active package export; GC-011 invoked at EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts:132",
-      "testedBy": "MSEA-R94-T0 inventoried all 50 rows. MSEA-R94-T1A corrected GC-001, GC-002, GC-003, GC-005, GC-006, and GC-008 to the existing direct contract test owner EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts; focused suite passes 34/34. Twelve invoked rows remain bounded without standalone tests.",
+      "invokedBy": "GC-001 invoked at EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts:122; GC-009 composed by the cvf-web execute route through route-guard-gateway.ts and MandatoryGateway.checkContext, with T2 invocation proof still held; GC-010 has no accepted production caller or package export; GC-011 invoked at EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts:132",
+      "testedBy": "MSEA-R94-T0 inventoried all 50 rows. GC-009 T1 adds 15 mandatory-gateway tests plus cvf-web singleton, adapter, audit-projection, fail-closed, and existing route coverage; the combined local cvf-web suite passes 51/51. Twelve other invoked rows remain bounded without standalone tests.",
       "evidenceOwner": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
       "operatorSurface": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance (Web governance dashboard route, confirmed present)",
-      "knownGaps": "After T1C, GC-012 and GC-013 have direct source/test evidence. GC-009 and GC-010 remain explicitly IMPLEMENTED_NOT_INVOCATION_PROVEN; GC-019 and GC-046 remain contract-only with reason.",
-      "nextReviewAction": "Preserve the bounded GC-009/GC-010 downgrade and GC-019/GC-046 contract-only status unless later authority proves an active owner or changes the human/template boundary.",
+      "knownGaps": "GC-009 has a bounded production composition but no accepted T2 invocation proof. GC-010 remains without a production caller or active package export. Their paired gap remains IMPLEMENTED_NOT_INVOCATION_PROVEN; GC-019 and GC-046 remain contract-only with reason.",
+      "nextReviewAction": "Keep T2 held until a fresh packet cites accepted T1 closure; handle GC-010 through a separate source-verified AgentExecutionRuntime packet. Do not close the paired gap from GC-009-only implementation evidence.",
       "sourceFingerprints": [
         {
           "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
-          "sha256": "fbb57c15bc3f5c1290f259bbc70e2eab064f888837f7b5399448503db84920ad",
+          "sha256": "62f463703d6790e9b1a286d027c0a963e2dc8c265fb874a6743ee9a252e0aca5",
           "evidenceRole": "control matrix rows GC-001, GC-009, GC-011, GC-019"
         },
         {
@@ -81,18 +81,18 @@
         },
         {
           "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
-          "sha256": "c22c04e310acd0816ed6209764d7794427058c1858336fb959cc4aba70e49bf0",
-          "evidenceRole": "GC-001 real production caller (registerGuard)"
+          "sha256": "0f079e611fbb3be305204a1ad3fc9ce15e9c366e3a34613bb8750687c11f1434",
+          "evidenceRole": "GC-001 real production caller (registerGuard) and GC-009 package barrel export"
         },
         {
           "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts",
-          "sha256": "a65840c568df14ab53c03d0dbbfd656841d8d700d0a93079f92e0c91eadf090c",
-          "evidenceRole": "GC-009 cited implementation"
+          "sha256": "12e513c836f1fd258417be2d9ced2424df6926210a10b02bce0e88fb9235c204",
+          "evidenceRole": "GC-009 cited implementation with context-preserving checkContext"
         },
         {
           "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.test.ts",
-          "sha256": "ec8bf4c58e310ef1bc06836218fb5da97d8fbe1490edb96227a152fe6d7715b2",
-          "evidenceRole": "GC-009 cited test, valid source pairing"
+          "sha256": "6f9519ea039500272cb52d08454bc0ed77b8c952315c062b8b7faa3592116201",
+          "evidenceRole": "GC-009 cited test with checkContext coverage, valid source pairing"
         },
         {
           "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts",
@@ -178,7 +178,7 @@
       "sourceFingerprints": [
         {
           "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
-          "sha256": "fbb57c15bc3f5c1290f259bbc70e2eab064f888837f7b5399448503db84920ad",
+          "sha256": "62f463703d6790e9b1a286d027c0a963e2dc8c265fb874a6743ee9a252e0aca5",
           "evidenceRole": "GC-019 corrected archive-qualified citation"
         },
         {
