@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_T4_HOLD
+Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_DISPATCH_READY_T3_T4_HOLD
 
 ## Dispatch Prompt Envelope
 
@@ -93,10 +93,11 @@ touched, narrowed, or reopened by any tranche in this roadmap.
 
 ## Scope
 
-This roadmap's completed active scope is the independently reviewed T1
-runtime packet. T1 closes bounded with deterministic local implementation
-proof only. T2-T4 and the separate GC-010 lane remain outside active scope
-until fresh source-verified authority is granted.
+This roadmap's active scope is the source-verified T2 deterministic
+invocation-proof packet released after independent T1 closure and explicit
+operator selection. T2 is test-and-evidence only. T3-T4 and the separate
+GC-010 lane remain outside active scope until fresh source-verified authority
+is granted.
 
 ## Tranches
 
@@ -106,7 +107,7 @@ until fresh source-verified authority is granted.
 | T0A | Define exact future GC-009 owner contract and explicit GC-010 lane disposition (documentation only) | CLOSED_PASS_BOUNDED with `NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` |
 | T1I | Source-verify the exact context-preserving gateway interface method and receipt/audit adapter shape T0A found missing (documentation only; no runtime mutation) | PASS_BOUNDED with `INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET` |
 | T1 | Minimal production composition (smallest changed set wiring an accepted owner contract and the T1I-specified interface) | CLOSED_PASS_BOUNDED_GC009_COMPOSED |
-| T2 | Positive and fail-closed negative invocation proof for the T1 composition | HOLD_UNTIL_T1_INDEPENDENT_CLOSURE |
+| T2 | Positive and fail-closed negative invocation proof for the T1 composition | REVIEWER_ACCEPTED_DISPATCH_READY |
 | T3 | Projection of T2-proven evidence through an existing operator surface (existing CLI readout or existing Web operator page; no new surface) | HOLD_UNTIL_T2_INDEPENDENT_CLOSURE |
 | T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | HOLD_UNTIL_T3_INDEPENDENT_CLOSURE |
 
@@ -176,15 +177,20 @@ through a shared request helper. The final local proof is 15/15 guard tests,
 51/51 combined cvf-web tests, both typechecks, and GC-023 PASS. This is not
 T2 invocation evidence or live governance proof.
 
-### T2 - Positive And Fail-Closed Negative Invocation Proof (HOLD)
+### T2 - Positive And Fail-Closed Negative Invocation Proof (DISPATCH READY)
 
-Scope, once released: prove the T1 composition with at least one deterministic
-positive case (ALLOW path reaches the caller's existing execution seam) and at
-least one deterministic fail-closed negative case (BLOCK/ESCALATE path does
-not reach execution). No live provider call is authorized by this roadmap; T2
-proof must use existing dry-run/deterministic seams unless a separate,
-explicitly authorized live-proof GC-018 is filed. T2 remains `HOLD_*` until a
-dedicated GC-018 releases it with T1's accepted closure evidence.
+Released by explicit operator selection after T1 material commit `29e7d6956`
+and continuity commit `14434bf58`. The dedicated packet is:
+
+- `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_2026-07-26.md`;
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_2026-07-26.md`.
+
+T2 proves the T1 composition with one deterministic positive case (ALLOW
+reaches the existing mocked provider seam) and one deterministic fail-closed
+negative case (a source-backed gateway BLOCK does not reach that seam). The
+worker may create only one focused route-level test and one pending-review
+worker return. Runtime source, existing tests, live provider calls, GC-010, and
+T3-T4 are excluded.
 
 ### T3 - Projection Through An Existing Operator Surface (HOLD)
 
@@ -478,7 +484,7 @@ batch is authorized by this artifact.
 | Baseline status (T1) | `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
 | Work order status (T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_GC009_COMPOSED` | PASS |
 | Completion or reviewer artifact (T1) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md` | independent bounded closure with reviewer repairs | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_T4_HOLD` | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_DISPATCH_READY_T3_T4_HOLD` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
