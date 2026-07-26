@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_DISPATCH_READY_T4_HOLD
+Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_HOLD
 
 ## Dispatch Prompt Envelope
 
@@ -111,7 +111,7 @@ separate GC-010 lane remain outside active scope.
 | T1I | Source-verify the exact context-preserving gateway interface method and receipt/audit adapter shape T0A found missing (documentation only; no runtime mutation) | PASS_BOUNDED with `INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET` |
 | T1 | Minimal production composition (smallest changed set wiring an accepted owner contract and the T1I-specified interface) | CLOSED_PASS_BOUNDED_GC009_COMPOSED |
 | T2 | Positive and fail-closed negative invocation proof for the T1 composition | CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN |
-| T3 | Projection of T2-proven evidence through existing `/admin/audit-log`; component, focused test, and worker return only | REVIEWER_ACCEPTED_DISPATCH_READY |
+| T3 | Projection of T2-proven evidence through existing `/admin/audit-log`; component, focused test, and worker return only | CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION |
 | T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | HOLD_UNTIL_T3_INDEPENDENT_CLOSURE |
 
 Every later tranche remains `HOLD_*` until its predecessor has independent
@@ -219,7 +219,7 @@ worker may create only one focused route-level test and one pending-review
 worker return. Runtime source, existing tests, live provider calls, GC-010, and
 T3-T4 are excluded.
 
-### T3 - Projection Through Existing Audit Readout (DISPATCH READY)
+### T3 - Projection Through Existing Audit Readout (CLOSED PASS BOUNDED)
 
 Released by:
 
@@ -230,7 +230,9 @@ T3 projects the durable `MANDATORY_GATEWAY_EVALUATED` decision, request ID, and
 optional blocker through the existing `/admin/audit-log` component. It creates
 no new route, API, navigation, CLI binary, or MCP tool and does not alter the
 gateway or audit store. T2 dependency evidence is material commit `2e4412c88`
-and continuity commit `01e74fc5e`.
+and continuity commit `01e74fc5e`. Independent T3 evidence is five focused
+component cases, TypeScript PASS, GC-023 PASS, worker-return fast PASS, and
+pre-implementation 77/77. T4 and GC-010 remain held.
 
 ### T4 - Value, Latency, Failure, Rollback, And Closure Assessment (HOLD)
 
@@ -515,7 +517,7 @@ batch is authorized by this artifact.
 | Baseline status (T1) | `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
 | Work order status (T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_GC009_COMPOSED` | PASS |
 | Completion or reviewer artifact (T1) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md` | independent bounded closure with reviewer repairs | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_DISPATCH_READY_T4_HOLD` | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_HOLD` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |

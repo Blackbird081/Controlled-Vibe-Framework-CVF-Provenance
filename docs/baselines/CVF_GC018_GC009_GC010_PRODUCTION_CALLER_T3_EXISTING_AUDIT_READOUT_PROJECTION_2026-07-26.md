@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION
 
 Batch ID: GC009-GC010-PCALLER-T3
 
@@ -226,12 +226,12 @@ Reason: this private provenance packet has no public-sync artifact or claim.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | this baseline | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Work order status | companion T3 work order | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | T3 completion review | pending independent review | N/A with reason |
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION` | PASS |
+| Work order status | companion T3 work order | same closed bounded status | PASS |
+| Completion or reviewer artifact | T3 completion review | independent reviewer acceptance | PASS |
 | Dependency release | T2 completion review | material `2e4412c88`; continuity `01e74fc5e` | PASS |
 | Roadmap state | companion roadmap | T3 dispatch-ready; T4 held | PASS |
-| Worker outputs | component, focused test, worker return | pending worker execution | PENDING |
+| Worker outputs | component, focused test, worker return | present and independently verified | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no corpus packet created | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no corpus row required | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
@@ -252,7 +252,7 @@ Reason: this private provenance packet has no public-sync artifact or claim.
 
 ## Claim Boundary
 
-This baseline releases only the exact T3 component, test, and worker-return
-manifest. It does not claim projection behavior before independent review and
-does not authorize a new surface, runtime gateway/store changes, live proof,
-GC-010, T4, public export, push, deployment, or production readiness.
+This baseline is closed with bounded existing-surface GC-009 operator
+projection. It does not authorize a new surface, runtime gateway/store
+changes, live proof, GC-010, T4, public export, push, deployment, or production
+readiness.

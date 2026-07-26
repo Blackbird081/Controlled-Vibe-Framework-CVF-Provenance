@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_CONTINUITY_REPAIR
+Status: CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION
 
 Batch ID: GC009-GC010-PCALLER-T3
 
@@ -448,17 +448,17 @@ Worker may claim only local component evidence pending independent review.
 
 ## Acceptance Criteria
 
-- [ ] Worker starts from committed clean dispatch HEAD.
-- [ ] Only three worker-owned paths change.
-- [ ] ALLOW and BLOCK details meet the test contract.
-- [ ] Generic events preserve existing rendering.
-- [ ] Raw/unallowlisted payload sentinel is absent.
-- [ ] Mobile and desktop presentations are covered.
-- [ ] English/Vietnamese and text-only semantics are preserved.
-- [ ] Focused tests and TypeScript pass.
-- [ ] Governed file-size and worker-return gates pass.
-- [ ] HEAD remains unchanged and nothing is staged.
-- [ ] T4 and GC-010 remain held.
+- [x] Worker starts from committed clean dispatch HEAD.
+- [x] Only three worker-owned paths change.
+- [x] ALLOW and BLOCK details meet the test contract.
+- [x] Generic events preserve existing rendering.
+- [x] Raw/unallowlisted payload sentinel is absent.
+- [x] Mobile and desktop presentations are covered.
+- [x] English/Vietnamese and text-only semantics are preserved.
+- [x] Focused tests and TypeScript pass.
+- [x] Governed file-size and worker-return gates pass.
+- [x] HEAD remains unchanged and nothing is staged.
+- [x] T4 and GC-010 remain held.
 
 ## Review Gate
 
@@ -515,13 +515,13 @@ git diff --cached --name-status
 
 ## Closure Checklist
 
-- [ ] Base-head lifecycle and commit ownership remain correct.
-- [ ] Worker changed set matches manifest.
-- [ ] Required proof is complete.
-- [ ] No forbidden path changes.
-- [ ] Worker return says pending review, not closed.
-- [ ] Reviewer independently verifies and creates completion review.
-- [ ] Reviewer commits accepted material and syncs continuity.
+- [x] Base-head lifecycle and commit ownership remain correct.
+- [x] Worker changed set matches manifest.
+- [x] Required proof is complete.
+- [x] No forbidden path changes.
+- [x] Worker return says pending review, not closed.
+- [x] Reviewer independently verifies and creates completion review.
+- [x] Reviewer commits accepted material and syncs continuity.
 
 ## Return-To-Orchestrator Conditions
 
@@ -580,12 +580,12 @@ Returned defects: NONE_RETURNED
 | Field | Value |
 |---|---|
 | claimScope | existing audit-readout projection |
-| claimDisposition | `CLAIM_REJECTED`: dispatch is not UI evidence |
-| receiptEvidence | `CLAIM_REJECTED_NO_RECEIPT`: worker evidence pending |
-| actionEvidence | `CLAIM_REJECTED_NO_ACTION`: implementation pending |
+| claimDisposition | `BOUNDED_CLAIM_WITH_EVIDENCE`: existing audit projection accepted |
+| receiptEvidence | `CVF_RECEIPT_PRESENT`: durable gateway event fields are projected by focused tests |
+| actionEvidence | `ACTION_EVIDENCE_PRESENT`: five independent component cases pass |
 | invocationBoundary | local component render tests only |
 | interceptionBoundary | no external agent, provider, CLI, MCP, proxy, or wrapper |
-| claimLanguage | T3 packet is dispatch-ready |
+| claimLanguage | bounded GC-009 operator projection is proven on the existing audit page |
 | forbiddenExpansion | no new surface, runtime/store change, live proof, GC-010, T4, public, push, deploy |
 
 ## Public Export Disposition
@@ -598,15 +598,17 @@ Reason: private provenance work order with no matching public-sync artifact.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_CONTINUITY_REPAIR` | PASS |
-| Baseline status | companion baseline | same dispatch-ready status | PASS |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION` | PASS |
+| Baseline status | companion baseline | same closed bounded status | PASS |
+| Completion or reviewer artifact | T3 completion review | independent bounded acceptance | PASS |
 | Dependency release | T2 completion review | `2e4412c88`; `01e74fc5e` | PASS |
 | Roadmap state | companion roadmap | T3 dispatch-ready; T4 held | PASS |
-| Worker outputs | component, test, worker return | pending execution | PENDING |
-| Completion review | reviewer-owned path | pending independent review | PENDING |
+| Worker outputs | component, test, worker return | present and independently verified | PASS |
+| Completion review | reviewer-owned path | closed bounded acceptance | PASS |
 | Registry JSON | corpus registry | no corpus change | PASS |
 | Registry Markdown | corpus registry | no corpus change | PASS |
 | External evidence digest | N/A with reason: no external evidence | N/A with reason | N/A with reason |
+| System loop interlock | paired GC-009/GC-010 gap entry | unchanged; T3 does not close paired gap | N/A with reason |
 | Session continuity | reviewer-owned during closure conversion | not worker-owned | N/A with reason |
 | Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
 
@@ -622,9 +624,9 @@ Reason: private provenance work order with no matching public-sync artifact.
 
 ## Claim Boundary
 
-This work order authorizes only the exact component, test, and worker-return
-manifest. It does not claim T3 closure or authorize a new surface, gateway or
-store changes, live proof, GC-010, T4, public export, push, deployment, or
+This work order is closed with the exact component, test, and worker-return
+manifest independently accepted. It does not authorize a new surface, gateway
+or store changes, live proof, GC-010, T4, public export, push, deployment, or
 production readiness.
 
 ## Operator Checkpoint
