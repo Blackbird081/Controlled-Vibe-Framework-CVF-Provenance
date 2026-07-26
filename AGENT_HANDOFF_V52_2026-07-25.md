@@ -595,3 +595,27 @@ Rollback boundary: revert only this continuity set if material closure commit
 This handoff records material parent commit `2e4412c88`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T3 Dispatch Sync
+
+Authorized guard-maintenance scope: record T3 dispatch material commit
+`9a60d5097` so the committed no-commit worker packet can pass its mandatory
+pre-implementation active-session check. This continuity repair does not
+change the three-path implementation manifest or release T4, GC-010, live
+provider, public-sync, push, deployment, or production-readiness work.
+
+Protected path:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`.
+
+Operator authorization: continue while value remains, bounded T3 packet
+dispatch, and mandatory continuity maintenance.
+
+Rollback boundary: revert only this continuity marker if T3 dispatch commit
+`9a60d5097` is reverted.
+
+## GC-020 Marker - GC009-GC010 T3 Dispatch Continuity
+
+This handoff records material parent commit `9a60d5097`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
