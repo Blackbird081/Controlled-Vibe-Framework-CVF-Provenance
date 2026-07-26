@@ -283,3 +283,31 @@ Rollback boundary: revert only this continuity set if material commit
 This handoff records material parent commit `6a5eb8f54`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the dedicated session-sync commit.
+
+## GC-020 Marker - GC009 Live T5 R2 Redispatch Child
+
+This handoff records continuity commit `ef549a84a`. The next commit is limited
+to this handoff marker so the checker may accept its parent SHA.
+
+## Agent Operation Trace Block - GC009 Live T5 R2 Redispatch Child
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex dispatcher/reviewer |
+| Provider or surface | local private provenance repository |
+| Session or invocation | GC009-LIVE-T5 R2 redispatch continuity child |
+| Working directory | repository root |
+| Command or tool surface | governed reads, patch editing, state generator, commit steward, and pre-commit hook |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | operator R2 authorization and mandatory continuity child marker |
+| Before status evidence | HEAD `ef549a84a`; worktree clean |
+| After status evidence | handoff records continuity commit `ef549a84a` |
+| Diff evidence | one modified handoff path |
+| Approval boundary | GC-020 child marker only |
+| Claim boundary | repository-local continuity trace only; no provider call |
+| Agent type | Codex |
+| Invocation ID | `gc009-live-t5-r2-redispatch-continuity-child-2026-07-26` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
