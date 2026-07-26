@@ -2,13 +2,15 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED
+Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_FIXTURE_PREFLIGHT_ONE_RUN_NO_RERUN
 
 Batch ID: GC009-LIVE-T5
 
 Dispatch base head: `4249194c4`
 
 dispatchBaseHead: `4249194c4`
+
+R1 dispatch base head: `59fd54543`
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
@@ -33,9 +35,10 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`.
 
 executionBaseHead: capture current committed HEAD before any edit.
 
-Current-time notes: GC-009 T1-T4 are independently closed. GC-010 is
-value-parked and is not part of this packet. Operator authorization releases
-one focused private Alibaba proof with a maximum of two real provider calls.
+Current-time notes: the first T5 execution is independently accepted as
+blocked at material commit `6b6cd6ab1` with `liveCallCount=0`. The operator
+authorized R1 using existing keys. R1 permits one fixture correction, offline
+safety preflight, and exactly one focused live run with no rerun.
 
 Do-not-misread notes: this is not the broad release bundle, production SLO
 measurement, provider soak, public proof, deployment, rollback, runtime repair,
@@ -47,10 +50,30 @@ T1-T4 completions, all source in the Source Verification Block, and checker
 source before editing. Capture HEAD and clean status, then run
 pre-implementation.
 
-Return contract: create exactly the three worker-owned artifacts, perform one
-initial focused live run, apply the diagnostic rule before any single permitted
-rerun, run non-live regressions and gates, leave all changes unstaged and
-uncommitted, then return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+Return contract: modify exactly the three worker-owned artifacts, perform the
+offline preflight and one focused live run, never rerun, run non-live
+regressions and gates, leave changes unstaged and uncommitted, then return
+`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+
+## R1 Redispatch Override
+
+This section supersedes every initial-dispatch instruction that permitted
+create-only output, two focused runs, or one diagnostic rerun.
+
+1. Replace only `Verify no raw secret leakage` with
+   `Verify no credential value leakage` in the focused test.
+2. Before provider use, run an offline preflight applying current
+   `INJECTION_PATTERNS` and `PII_PATTERNS` behavior to the complete generated
+   ALLOW intent. The result must be `NO_MATCH`; otherwise stop without a live
+   call.
+3. Execute exactly one focused live run.
+4. No rerun is authorized. Logging, extra diagnostics, fixture edits,
+   configuration edits, credential changes, or provider state changes do not
+   release a second run.
+5. On failure, record one secret-safe diagnostic and return
+   `BLOCKED_WITH_REASON`.
+6. Refresh the existing audit and worker return in place. Preserve the first
+   attempt as historical evidence and add clearly labeled R1 evidence.
 
 ## Purpose
 
@@ -79,7 +102,8 @@ existing admin audit component.
 | T2 deterministic invocation | completion at material commit `2e4412c88` | preserve real gateway/engine and ALLOW/BLOCK semantics | PASS |
 | T3 audit projection | completion at material commit `76fcd6b0e` | reuse existing component | PASS |
 | T4 bounded assessment | completion at material commit `cb1f34cee` | measure only bounded live observations left unmeasured | PASS |
-| Operator live authority | explicit acceptance on 2026-07-26 | one focused initial call and at most one diagnostic rerun | PASS |
+| First T5 blocked review | `docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md`; material commit `6b6cd6ab1` | preserve zero-call evidence and reviewer correction | PASS |
+| Operator R1 authority | explicit instruction on 2026-07-26 to use existing API keys and continue | one corrected focused run; no rerun | PASS |
 | Packet isolation | clean HEAD `4249194c4` before packet authoring | worker starts only from committed dispatch packet and clean worktree | PASS |
 
 ## Intake Role Routing Decision
@@ -106,7 +130,8 @@ existing admin audit component.
 
 Allowed worker actions:
 
-1. Create exactly one focused live test at the owned test path.
+1. Modify only the existing focused live test at the owned test path as
+   specified by `## R1 Redispatch Override`.
 2. Reuse current authentication, enforcement, and quota mock patterns only to
    isolate the accepted route proof.
 3. Use the actual route `POST`, shared mandatory gateway, guard engine,
@@ -132,14 +157,14 @@ Forbidden:
   event store, final response builder, or Alibaba provider in the ALLOW path;
 - printing, copying, hashing, or embedding raw credential values;
 - running the broad release bundle, any other live spec, provider soak,
-  benchmark loop, or more than one permitted rerun;
+  benchmark loop, or any R1 rerun;
 - claiming p50, p95, p99, throughput, production SLO, release readiness,
   public readiness, deployment readiness, or GC-010 progress;
 - staging, commit, push, public-sync, deployment, or rollback.
 
 ## Write Ownership
 
-Worker-owned create-only paths:
+Worker-owned modify-only paths:
 
 1. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx`
 2. `docs/audits/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md`
@@ -169,8 +194,8 @@ Everything else is read-only or forbidden to the worker.
 
 1. Capture `$workerExecutionBaseHead = git rev-parse --short HEAD`.
 2. Confirm `git status --short` is empty.
-3. Confirm all three worker-owned output paths are absent.
-4. Confirm baseline and work order are committed and dispatch-ready.
+3. Confirm all three worker-owned output paths exist at current HEAD.
+4. Confirm the R1 work order is committed and redispatch-ready.
 5. Verify that at least one accepted Alibaba key alias is present without
    printing its value. Absence returns `BLOCKED_WITH_REASON`.
 6. Run pre-implementation with the captured execution base before editing.
@@ -253,9 +278,8 @@ On failure, before any rerun record:
 | `traceId` | secret-safe ID when available |
 | `safeMessage` | no key, raw prompt, raw output, or signed header |
 
-Exactly one rerun is allowed only when the diagnostic identifies a concrete
-result-changing action and retry is expected to help. Otherwise return
-`BLOCKED_WITH_REASON`. Never perform a third focused live run.
+R1 authorizes no rerun. On any focused-run failure, record the required
+secret-safe diagnostic and return `BLOCKED_WITH_REASON`.
 
 ## Required Artifact Manifest
 
@@ -275,9 +299,9 @@ result-changing action and retry is expected to help. Otherwise return
 
 | Artifact | Required worker action |
 |---|---|
-| focused test | create, run once live, and retain for reproducible reviewer inspection |
-| live proof audit | record call/request denominators, secret-safe IDs, telemetry, diagnostics, and bounded verdict |
-| worker return | record exact commands, changed set, gates, no-commit evidence, and terminal disposition |
+| focused test | apply the exact fixture correction, offline-preflight it, run once live, and retain |
+| live proof audit | preserve prior attempt and append R1 denominators, IDs, telemetry or diagnostic, and verdict |
+| worker return | preserve prior evidence and append R1 commands, changed set, gates, no-commit evidence, and terminal disposition |
 
 ## Forbidden Path Manifest
 
@@ -297,7 +321,7 @@ public-sync, or deployment paths.
 | latency | numeric provider and route observations with n=1 boundary |
 | secret hygiene | no raw key, prompt, output, signed header, or provider body in documents |
 | denominator clarity | provider calls, block requests, events, and test cases reported separately |
-| bounded rerun | zero reruns on PASS; at most one after diagnostic on failure |
+| bounded rerun | R1 permits zero reruns under every outcome |
 
 ## Evidence Requirements
 
@@ -325,7 +349,7 @@ The audit must include:
 | durable evidence | isolated store and readback | exact event assertions |
 | operator projection | render persisted events through existing component | projection assertions |
 | latency boundary | receipt telemetry, n=1 only | audit observations |
-| quota control | one initial call and at most one diagnostic rerun | call denominator |
+| quota control | one R1 focused run and zero reruns | call denominator |
 | no expansion | exact three-path worker manifest | worker return |
 
 ## Dual Agent Surface Matrix
@@ -456,11 +480,10 @@ exceed this packet's call and scope ceiling.
 ## Execution Plan
 
 1. Complete startup, source, checker, key-presence, and clean-worktree checks.
-2. Create the focused test without editing any existing file.
-3. Execute the initial live run once.
-4. If it fails, record a diagnostic before deciding whether the single rerun
-   is justified.
-5. Create the audit and worker return from secret-safe evidence.
+2. Apply the exact fixture correction and offline safety preflight.
+3. Execute exactly one R1 focused live run.
+4. If it fails, record a diagnostic and stop without rerun.
+5. Refresh the audit and worker return with labeled R1 evidence.
 6. Run non-live regression, typecheck, governance, size, and diff checks.
 7. Leave all three paths unstaged and return the terminal disposition.
 
@@ -489,8 +512,8 @@ the exact proof manifest.
 
 ## Operator Checkpoint
 
-No operator checkpoint remains before the initial focused call; it is
-explicitly authorized. Any third call, broader live suite, runtime repair,
+No operator checkpoint remains before the single R1 focused call; it is
+explicitly authorized. Any R1 rerun, broader live suite, runtime repair,
 public action, deployment, rollback, or production claim requires new
 operator authorization.
 
@@ -559,7 +582,7 @@ Returned defects: NONE_RETURNED
 | claimDisposition | CLAIM_REJECTED: no live action occurs in the dispatch-authoring batch |
 | receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: worker evidence pending |
 | actionEvidence | CLAIM_REJECTED_NO_ACTION: worker invocation pending |
-| invocationBoundary | one focused Vitest command and at most one diagnostic rerun |
+| invocationBoundary | one focused Vitest command and zero reruns |
 | interceptionBoundary | no CLI/MCP, arbitrary process, external-agent, or provider interception |
 | claimLanguage | dispatch authorization only until worker evidence is independently accepted |
 | forbiddenExpansion | no runtime mutation, broad release suite, public-sync, deployment, rollback, GC-010, or production-readiness claim |
@@ -586,11 +609,11 @@ Reason: private provenance proof only; no public-sync authority or artifact.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED` | PASS |
-| Baseline status | companion baseline | same dispatch-ready status | PASS |
+| Work order status | this work order | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_FIXTURE_PREFLIGHT_ONE_RUN_NO_RERUN` | PASS |
+| Baseline status | companion baseline | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
 | Worker artifacts | exact three-path manifest | blocked diagnostic, zero provider calls | PASS |
 | Completion review | reviewer-owned path | independent blocker acceptance and rerun-policy correction | PASS |
-| Roadmap state | companion roadmap | T5 blocked, R1 authorized | PASS |
+| Roadmap state | companion roadmap | T5 R1 redispatch-ready | PASS |
 | Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Acceptance Receipt Assertion Matrix
@@ -607,7 +630,7 @@ Reason: private provenance proof only; no public-sync authority or artifact.
 
 ## Claim Boundary
 
-This work order authorizes one focused private live proof and at most one
-diagnostic rerun. It does not authorize runtime mutation, broad release proof,
+This R1 work order authorizes one focused private live proof and zero reruns.
+It does not authorize runtime mutation, broad release proof,
 production percentile or SLO claims, public export, push, deployment,
 rollback, GC-010 work, CLI/MCP invocation, or arbitrary external-agent action.
