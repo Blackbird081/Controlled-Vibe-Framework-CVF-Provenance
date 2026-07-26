@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED
 
 Batch ID: GC009-LIVE-T5
 
@@ -586,11 +586,11 @@ Reason: private provenance proof only; no public-sync authority or artifact.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
+| Work order status | this work order | `Status: REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED` | PASS |
 | Baseline status | companion baseline | same dispatch-ready status | PASS |
-| Worker artifacts | exact three-path manifest | pending | N/A with reason: dispatch stage |
-| Completion review | reviewer-owned path | pending | N/A with reason: dispatch stage |
-| Roadmap state | companion roadmap | T5 dispatch-ready marker | PASS |
+| Worker artifacts | exact three-path manifest | blocked diagnostic, zero provider calls | PASS |
+| Completion review | reviewer-owned path | independent blocker acceptance and rerun-policy correction | PASS |
+| Roadmap state | companion roadmap | T5 blocked, R1 authorized | PASS |
 | Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
 
 ## Acceptance Receipt Assertion Matrix
