@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T4 is CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN at material commit cb1f34cee. T1-T4 are closed bounded for GC-009; production latency remains NOT_MEASURED_NO_LIVE_AUTHORITY; GC-010 and the paired stable gap remain open. The exact next move is an operator checkpoint to select a separate fresh source-verified GC-010 AgentExecutionRuntime caller/export packet or park the paired-gap lane. Reopen the guard-exception/audit-append reliability lane only after a focused composed-path reproduction proves missing gateway response/audit evidence, or explicit operator authorization for pre-production hardening. No live provider/API/account/network use, latency benchmark, rollback action, public-sync, push, deployment, production-readiness, or whole paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC010-AER-T0 is REVIEWER_ACCEPTED_DISPATCH_READY at material commit f6010788a. The exact next move is to send the complete committed work order to one Claude documentation worker under WORKER_MUST_NOT_COMMIT. Claude may create exactly the specified audit and worker return; Codex independently reviews and decides closure. No runtime/test/package/export/provider/CLI/MCP edit or execution, live provider/API/account/network use, latency benchmark, rollback action, public-sync, push, deployment, or production-readiness claim is authorized. GC009 T1-T4 remain closed bounded; production latency remains NOT_MEASURED_NO_LIVE_AUTHORITY; GC-010 remains open pending this decision lane. Reopen the guard-exception/audit-append reliability lane only after its recorded condition. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14267,5 +14267,17 @@
     "nextAllowedMove": "operator checkpoint to select a separate fresh source-verified GC-010 AgentExecutionRuntime caller/export packet or park the paired-gap lane",
     "parkedReliabilityReopenCondition": "reopen guard-exception or audit-append reliability work only after a focused composed-path reproduction proves missing gateway response/audit evidence, or explicit operator authorization for pre-production hardening",
     "claimBoundary": "GC-010 and the paired stable gap remain open. No production latency, live provider/API/network proof, rollback, public export, push, deployment, or production-readiness claim."
+  },
+  "gc010AgentExecutionRuntimeT0OwnerProviderReceiptDecisionDispatch20260726": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-26",
+    "materialCommit": "f6010788a",
+    "dispatchBaseHead": "53f93910a",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_2026-07-26.md",
+    "baseline": "docs/baselines/CVF_GC018_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_2026-07-26.md",
+    "workerRoute": "one Claude documentation worker; WORKER_MUST_NOT_COMMIT; exactly audit plus worker return",
+    "verification": "automation assist PASS; pre-dispatch 75/75; commit steward PASS; pre-commit 83/83",
+    "nextAllowedMove": "send the complete committed GC010-AER-T0 work order to Claude; Claude creates exactly the audit and worker return without staging or commit; Codex then independently reviews and decides closure",
+    "claimBoundary": "No runtime/test/package/export/provider/CLI/MCP edit or execution, live provider/API/account/network use, latency benchmark, rollback action, public export, push, deployment, or production-readiness claim."
   }
 }

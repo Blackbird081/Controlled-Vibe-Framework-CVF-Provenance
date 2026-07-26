@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator checkpoint to select a separate fresh GC-010 caller/export packet or park; parked checkpoint=guard-exception/audit-append reliability until its concrete reopen condition, production latency, live provider/API/account/network use, rollback, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=send the committed GC010-AER-T0 decision work order to one Claude documentation worker under WORKER_MUST_NOT_COMMIT, then Codex independently reviews; parked checkpoint=runtime implementation, guard-exception/audit-append reliability until its concrete reopen condition, production latency, live provider/API/account/network use, rollback, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC010-AER-T0 owner/provider/receipt decision dispatch | `f6010788a` | REVIEWER_ACCEPTED_DISPATCH_READY. One Claude documentation worker owns exactly the audit and worker return under `WORKER_MUST_NOT_COMMIT`; Codex independently reviews. No runtime/test/package/export/provider/CLI/MCP edit or execution authority. |
 | GC009-GC010-PCALLER-T4 assessment closure | `cb1f34cee` | CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN after one reviewer exception-path correction. T1-T4 close bounded GC-009; production latency remains unmeasured; GC-010 and paired gap remain open. |
 | GC009-GC010-PCALLER-T4 value/latency/failure/rollback assessment dispatch | `8eb2a47d0` | REVIEWER_ACCEPTED_DISPATCH_READY. One Claude documentation worker owns exactly the assessment and worker return under `WORKER_MUST_NOT_COMMIT`; Codex independently reviews. No runtime/test execution, benchmark, rollback, GC-010, live, public, or deployment authority. |
 | GC009-GC010-PCALLER-T3 existing audit-readout projection closure | `76fcd6b0e` | CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION. Existing `/admin/audit-log` now projects only decision, request ID, and optional blocker; focused 5/5, TypeScript, GC-023, worker-return fast, and pre-commit gates pass. T4 and GC-010 remain HOLD. |
@@ -386,17 +387,16 @@ PPMCP-R1 is independently closed with reviewer repairs at material commit
 `539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
 are parked behind concrete reopen conditions.
 
-GC009-GC010-PCALLER-T4 is
-`CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN` at material commit `cb1f34cee`.
-T1-T4 close bounded GC-009; production latency remains
-`NOT_MEASURED_NO_LIVE_AUTHORITY`; GC-010 and the paired stable gap remain open.
-The next move is an operator checkpoint to select a separate fresh
-source-verified GC-010 caller/export packet or park. Reopen the
-guard-exception/audit-append reliability lane only after a focused composed
-reproduction proves missing gateway response/audit evidence, or explicit
-operator authorization for pre-production hardening. No live proof, rollback,
-public-sync, push, deployment, production-readiness, or whole paired-gap
-closure claim is authorized.
+GC010-AER-T0 is `REVIEWER_ACCEPTED_DISPATCH_READY` at material commit
+`f6010788a`. The next move is to send its complete committed work order to one
+Claude documentation worker under `WORKER_MUST_NOT_COMMIT`. Claude may create
+exactly the audit and worker return; Codex then independently reviews and
+decides closure. GC009 T1-T4 remain closed bounded; production latency remains
+`NOT_MEASURED_NO_LIVE_AUTHORITY`; GC-010 remains open pending this decision
+lane. Reopen the guard-exception/audit-append reliability lane only after its
+recorded condition. No runtime/test/package/export/provider/CLI/MCP edit or
+execution, live proof, rollback, public-sync, push, deployment, or
+production-readiness claim is authorized.
 Conversation provenance remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 
