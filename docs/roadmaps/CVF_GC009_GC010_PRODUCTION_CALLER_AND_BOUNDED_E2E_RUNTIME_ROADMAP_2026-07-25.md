@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_T1I_PASS_T1_DISPATCH_READY_T2_T4_HOLD
+Status: T0_PASS_T0A_PASS_T1I_PASS_T1_REDISPATCH_READY_R1_ROUTE_TEST_MOCK_T2_T4_HOLD
 
 ## Dispatch Prompt Envelope
 
@@ -31,9 +31,12 @@ source-verified T1-Interface design packet (Batch ID
 `GC009-GC010-PCALLER-T1I`) to specify exactly that interface change and its
 receipt/audit adapter. T1I independently closed at material commit
 `7b3cdc23a`, and the operator then authorized a fresh source-verified T1
-runtime packet. That packet is reviewer-accepted and dispatch-ready pending
-its material commit. T1 execution has not started; T2, T3, and T4 remain in
-`HOLD_*`.
+runtime packet. Initial T1 execution returned
+`BLOCKED_SCOPE_EXPANSION_REQUIRED` because the existing `route.test.ts`
+audit mock had no resolved event ID. R1 reviewer redispatch replaces the
+unused planned focused-route test path with that existing suite and
+authorizes only its deterministic mock default plus full-suite rerun. T2,
+T3, and T4 remain in `HOLD_*`.
 
 ## Known Gap
 
@@ -99,7 +102,7 @@ remain outside active scope.
 | T0 | Source-verified caller ownership and architecture decision (documentation only; no runtime mutation) | CLOSED_PASS_BOUNDED with `NOT_READY_MISSING_SOURCE_VERIFIED_OWNER` |
 | T0A | Define exact future GC-009 owner contract and explicit GC-010 lane disposition (documentation only) | CLOSED_PASS_BOUNDED with `NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` |
 | T1I | Source-verify the exact context-preserving gateway interface method and receipt/audit adapter shape T0A found missing (documentation only; no runtime mutation) | PASS_BOUNDED with `INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET` |
-| T1 | Minimal production composition (smallest changed set wiring an accepted owner contract and the T1I-specified interface) | REVIEWER_ACCEPTED_DISPATCH_READY; T1I closure `7b3cdc23a` and fresh human authority recorded |
+| T1 | Minimal production composition (smallest changed set wiring an accepted owner contract and the T1I-specified interface) | REVIEWER_ACCEPTED_REDISPATCH_READY_R1_ROUTE_TEST_MOCK; blocked implementation retained; one-for-one test-manifest substitution authorized |
 | T2 | Positive and fail-closed negative invocation proof for the T1 composition | HOLD_UNTIL_T1_INDEPENDENT_CLOSURE |
 | T3 | Projection of T2-proven evidence through an existing operator surface (existing CLI readout or existing Web operator page; no new surface) | HOLD_UNTIL_T2_INDEPENDENT_CLOSURE |
 | T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | HOLD_UNTIL_T3_INDEPENDENT_CLOSURE |
@@ -144,7 +147,7 @@ contract to build against. Full detail in
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md`.
 
-### T1 - Minimal Production Composition (DISPATCH READY)
+### T1 - Minimal Production Composition (REDISPATCH READY R1)
 
 The fresh T1 packet is
 `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md`
@@ -157,6 +160,13 @@ must shrink from its 959-line dispatch-base count. T1 remains unexecuted until
 independent reviewer acceptance, committed dispatch, and worker base capture.
 This tranche does not instantiate `AgentExecutionRuntime`; the paired GC-010
 lane remains for a separate source-verified packet after T1 closure.
+
+Initial execution at `871251726` implemented nine paths but correctly stopped
+blocked after the existing `route.test.ts` suite returned 16 failures caused
+by its unresolved `appendAuditEvent` mock. R1 retains the implementation,
+substitutes `route.test.ts` for the unused planned
+`route.mandatory-gateway.test.ts`, permits only the audit-event mock default,
+and requires all 31 route tests plus the original focused proof to pass.
 
 ### T2 - Positive And Fail-Closed Negative Invocation Proof (HOLD)
 
@@ -458,8 +468,8 @@ batch is authorized by this artifact.
 | Work order status (T1I) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md` | `Status: CLOSED_PASS_BOUNDED_INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET` | PASS |
 | Completion or reviewer artifact (T1I) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_COMPLETION_2026-07-25.md` | independent bounded interface-spec-ready closure | PASS |
 | Baseline status (T1) | `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Work order status (T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_DISPATCH_READY_T2_T4_HOLD` | PASS |
+| Work order status (T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_ROUTE_TEST_MOCK` | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_REDISPATCH_READY_R1_ROUTE_TEST_MOCK_T2_T4_HOLD` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |

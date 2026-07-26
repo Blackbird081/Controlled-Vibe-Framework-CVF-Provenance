@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_ROUTE_TEST_MOCK
 
 Batch ID: GC009-GC010-PCALLER-T1
 
@@ -15,6 +15,8 @@ Execution base head: `TO_BE_CAPTURED_BY_WORKER`
 Closure base head: `TO_BE_CAPTURED_BY_REVIEWER`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
+
+Redispatch R1 original execution base head: `871251726`
 
 ## Dispatch Prompt Envelope
 
@@ -40,6 +42,16 @@ MCP, network, public-sync, push, deployment, or T2-T4 work.
 
 Do not commit. Return the canonical worker-return artifact with exact changed
 set, commands, results, route line-count delta, and one terminal disposition.
+
+R1 continuation authority: retain the exact blocked T1 changed set created
+from original execution base `871251726`. After this redispatch is committed,
+capture the current committed HEAD as `redispatchAuthorityHead`. The retained
+dirty worktree is expected only for the previously declared implementation
+paths and blocked worker return. Replace the unused planned
+`route.mandatory-gateway.test.ts` artifact with the existing `route.test.ts`.
+Add a default resolved audit event to that suite, run all 31 tests, refresh
+the worker return, rerun required gates, and stop without staging or
+committing.
 ```
 
 ## Purpose
@@ -147,7 +159,7 @@ and links a secret-safe gateway audit event into the existing Web envelope.
 7. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.ts`
 8. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.test.ts`
 9. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
-10. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mandatory-gateway.test.ts`
+10. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`
 11. `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_WORKER_RETURN_2026-07-26.md`
 
 ### Reviewer-owned closure paths
@@ -180,7 +192,9 @@ Before editing:
 2. require clean `git status --short --untracked-files=all`;
 3. confirm this work order is committed and dispatch-ready;
 4. recompute the 959-line route baseline;
-5. confirm `checkContext`, new helper files, and worker return do not yet exist;
+5. for initial execution, confirm `checkContext`, new helper files, and worker
+   return do not yet exist; for R1 continuation, confirm the retained changed
+   set exactly matches the blocked worker return;
 6. confirm the route still has one direct `guardEngine.evaluate`;
 7. confirm package exports still omit mandatory gateway;
 8. run pre-implementation autorun using the captured base and current HEAD;
@@ -214,7 +228,7 @@ Before editing:
 | `resetSharedMandatoryGateway` | test reset seam | DOC_ONLY_NEW before implementation |
 | `evaluateRouteMandatoryGateway` | exactly-once gateway and audit adapter | DOC_ONLY_NEW before implementation |
 | `MANDATORY_GATEWAY_EVALUATED` | durable audit event type | DOC_ONLY_NEW before implementation |
-| `route.mandatory-gateway.test.ts` | focused route proof | DOC_ONLY_NEW before implementation |
+| `route.test.ts` mock default | existing route suite becomes the route-level integration proof by returning a deterministic audit event ID | EXISTS; writable only under R1 redispatch |
 
 ## Implementation Contract
 
@@ -348,7 +362,7 @@ path is allowed, all required proof passes, and the worker return is complete.
 | route adapter | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.ts` | worker | new |
 | adapter tests | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.test.ts` | worker | new |
 | route integration | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | worker | modified and smaller |
-| route proof | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mandatory-gateway.test.ts` | worker | new |
+| route proof and regression fix | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts` | worker | modified under R1; default `appendAuditEvent` resolution and all 31 tests PASS |
 | worker return | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_WORKER_RETURN_2026-07-26.md` | worker | new |
 
 ## Forbidden Path Manifest
@@ -367,7 +381,8 @@ path is allowed, all required proof passes, and the worker return is complete.
 
 ## Forbidden Filesystem State At Dispatch
 
-- worker output already present;
+- worker output already present, except the exact R1 retained blocked return
+  declared at original execution base `871251726`;
 - uncommitted packet-author changes;
 - a staged path;
 - a changed path outside the packet-author manifest;
@@ -380,7 +395,7 @@ path is allowed, all required proof passes, and the worker return is complete.
 |---|---|
 | guard focused tests | PASS |
 | guard typecheck | PASS |
-| cvf-web singleton, adapter, and route focused tests | PASS |
+| cvf-web singleton, adapter, and existing route tests | PASS, including 31/31 in `route.test.ts` |
 | cvf-web typecheck | PASS |
 | negative direct-evaluate search | zero `guardEngine.evaluate` in route and new adapter |
 | exactly-one evaluation | one engine call with same context object |
@@ -480,7 +495,10 @@ prose under the repository symbol discipline.
 4. Export the gateway without dependency or lockfile changes.
 5. Implement and test the singleton.
 6. Implement and test the injectable route adapter.
-7. Replace route evaluation and add focused route proof.
+7. Replace route evaluation and use the existing route suite as integration
+   proof. Under R1, add
+   `appendAuditEventMock.mockResolvedValue({ id: 'audit-test-id' })` in its
+   reset/setup path and do not change production code to mask the mock gap.
 8. Run typechecks, focused tests, negative searches, line-count proof, and
    file-size enforcement.
 9. Run worker-return and reviewer-fast preparation gates.
@@ -495,6 +513,7 @@ The worker return must include:
 - before/after route line counts;
 - package export diff;
 - focused test and typecheck commands with counts/results;
+- `route.test.ts` result `31/31 PASS` after the one-line mock default;
 - negative direct-evaluate search;
 - exactly-one and same-object evidence;
 - all fail-closed zero-provider assertions;
@@ -538,7 +557,7 @@ production readiness.
 - [ ] Direct gateway-denied response receipt uses the gateway decision.
 - [ ] Route and adapter contain no direct engine evaluation.
 - [ ] Route finishes below 959 lines.
-- [ ] All focused tests and both typechecks pass.
+- [ ] All focused tests, all 31 existing route tests, and both typechecks pass.
 - [ ] Actual changed set stays inside the writable manifest.
 - [ ] Worker did not stage or commit.
 - [ ] T2-T4 remain held.
@@ -601,7 +620,7 @@ git diff --check
 (Get-Content EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts).Count
 rg -n "guardEngine\.evaluate|getSharedGuardEngine" EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.ts
 Push-Location EXTENSIONS/CVF_GUARD_CONTRACT; npm test -- src/runtime/mandatory-gateway.test.ts; npm run check; Pop-Location
-Push-Location EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web; npm run test:run -- src/lib/mandatory-gateway-singleton.test.ts src/lib/route-guard-gateway.test.ts src/app/api/execute/route.mandatory-gateway.test.ts; npm run check; Pop-Location
+Push-Location EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web; npm run test:run -- src/lib/mandatory-gateway-singleton.test.ts src/lib/route-guard-gateway.test.ts src/app/api/execute/route.test.ts; npm run check; Pop-Location
 python governance/compat/check_governed_file_size.py --enforce
 python governance/compat/run_worker_return_fast_gate.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md --worker-return docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_WORKER_RETURN_2026-07-26.md
 ```
@@ -669,17 +688,17 @@ verified command signatures, and symbol-only source-verification cells.
 | Session or invocation | GC009-GC010-PCALLER-T1 work-order authoring, 2026-07-26 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, `rg`, git checks, ADIF resolver, `apply_patch`, workflow gates |
-| Target paths | baseline, this work order, roadmap |
+| Target paths | this work order; companion roadmap; system-chain map fingerprint refresh for the clean HEAD package barrel |
 | Allowed scope source | explicit human authorization backed by T1I material closure `7b3cdc23a` |
-| Before status evidence | HEAD `7275e9dc8`; clean worktree |
-| After status evidence | exact three-path packet-author set |
+| Before status evidence | reviewer redispatch at HEAD `871251726`; blocked implementation preserved separately while packet gates run on a clean worktree |
+| After status evidence | exact three-path reviewer redispatch and mandatory fingerprint-maintenance set |
 | Diff evidence | `git status --short`; `git diff --name-status`; `git diff --check` |
 | Approval boundary | packet authoring, review, commit, and dispatch only |
 | Claim boundary | no worker implementation or runtime behavior yet |
 | Agent type | reviewer/dispatcher |
 | Invocation ID | `gc009-gc010-production-caller-t1-work-order-2026-07-26` |
-| Expected manifest | baseline; this work order; roadmap |
-| Actual changed set | same three paths |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md`; `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md`; `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md`; `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md`; `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
@@ -713,7 +732,7 @@ does not release T2-T4.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
+| Work order status | this work order | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_ROUTE_TEST_MOCK` | PASS |
 | Completion or reviewer artifact | future T1 completion review | absent before worker execution | N/A with reason: independent closure remains pending |
 | Baseline status | companion baseline | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
 | T1I dependency | T1I completion review | material commit `7b3cdc23a` | PASS |
