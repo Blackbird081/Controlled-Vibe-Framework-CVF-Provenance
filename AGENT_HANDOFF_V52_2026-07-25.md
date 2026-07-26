@@ -26,12 +26,13 @@ deployment, and external invocation remain parked.
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
-active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator
-checkpoint between a bounded-foundation GC-010 packet and fresh
-caller-inclusive source verification; parked checkpoint=all GC-010
-implementation dispatch, caller closure, browser E2E, CLI/MCP invocation,
-provider/network/process action, new operator surface, public mutation,
-deploy, production readiness, and moratorium lift.
+active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=send committed
+GC010-AER-T2 caller-decision work order to one documentation worker through
+the operator-selected Claude surface under WORKER_MUST_NOT_COMMIT, then Codex
+independently reviews; parked checkpoint=all GC-010 implementation dispatch,
+caller closure, browser E2E, CLI/MCP invocation, provider/network/process
+action, new operator surface, public mutation, deploy, production readiness,
+and moratorium lift.
 
 ## Current Mode
 
@@ -39,6 +40,10 @@ deploy, production readiness, and moratorium lift.
 
 ## Latest Work / Changes
 
+- GC010-AER-T2 dispatch material commit `ab673bf42` releases exactly one
+  no-commit caller ownership and invocation-boundary decision. The worker must
+  compare five caller families, answer sixteen questions, and create exactly
+  two documentation outputs; no implementation or execution is released.
 - GC010-AER-T1 material closure commit `48e25c090` accepts the repaired
   interface/export/receipt design as a tested package-native foundation only.
   All six reviewer blockers are resolved; no non-test production caller or
@@ -95,12 +100,12 @@ deploy, production readiness, and moratorium lift.
 
 ## Next Allowed Move
 
-Operator checkpoint to select one of: author a fresh bounded-foundation
-implementation packet that explicitly cannot prove or close the production
-caller gap; first author a fresh caller-inclusive source-verification packet
-naming the exact non-test caller and invocation boundary; or park the lane.
+Send the complete committed GC010-AER-T2 work order to one documentation
+worker through the operator-selected Claude surface under
+`WORKER_MUST_NOT_COMMIT`. The worker creates exactly the caller audit and
+worker return; Codex independently reviews.
 
-No GC-010 implementation dispatch is automatic. Browser E2E, live
+No GC-010 implementation dispatch is authorized. Browser E2E, live
 provider/API/account/network use, new operator surface, CLI/MCP invocation,
 public-sync, push, deployment, production readiness, and whole paired-gap
 closure remain unauthorized. The EAIC knowledge gap and invocation moratorium
@@ -868,5 +873,33 @@ Rollback boundary: revert only this continuity set if material closure commit
 ## GC-020 Marker - GC010 AgentExecutionRuntime T1 Design Closure Continuity
 
 This handoff records material parent commit `48e25c090`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC010 AgentExecutionRuntime T2 Caller Decision Dispatch Sync
+
+Authorized guard-maintenance scope: record GC010-AER-T2 dispatch material
+commit `ab673bf42` and route one documentation worker through the
+operator-selected Claude surface under `WORKER_MUST_NOT_COMMIT`, followed by
+Codex independent review.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc010AgentExecutionRuntimeT2NonTestCallerOwnershipInvocationBoundaryDecisionDispatch20260726.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: detailed Claude assignment request after accepted T1
+closure, material dispatch commit, and mandatory continuity maintenance.
+
+Rollback boundary: revert only this continuity set if dispatch commit
+`ab673bf42` is reverted.
+
+## GC-020 Marker - GC010 AgentExecutionRuntime T2 Caller Decision Dispatch Continuity
+
+This handoff records material parent commit `ab673bf42`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.

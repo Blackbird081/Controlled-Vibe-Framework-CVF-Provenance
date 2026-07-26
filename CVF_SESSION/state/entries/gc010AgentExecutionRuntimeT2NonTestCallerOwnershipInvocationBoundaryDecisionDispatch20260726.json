@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2114,
+  "stateKey": "gc010AgentExecutionRuntimeT2NonTestCallerOwnershipInvocationBoundaryDecisionDispatch20260726",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-26",
+    "materialCommit": "ab673bf42",
+    "dispatchBaseHead": "e23cbb37e",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_2026-07-26.md",
+    "baseline": "docs/baselines/CVF_GC018_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_2026-07-26.md",
+    "workerRoute": "one documentation worker through operator-selected Claude surface; WORKER_MUST_NOT_COMMIT; exactly audit plus worker return",
+    "verification": "automation assist clean; pre-dispatch 75/75; commit steward PASS; pre-commit 83/83",
+    "nextAllowedMove": "send the complete committed GC010-AER-T2 work order to the worker; worker creates exactly two unstaged documentation outputs; Codex independently reviews",
+    "claimBoundary": "No implementation, caller creation, runtime/test/package/export/provider/Web/execution-plane/CLI/MCP action, live proof, public action, deployment, GC-010 closure, or production-readiness claim."
+  }
+}
