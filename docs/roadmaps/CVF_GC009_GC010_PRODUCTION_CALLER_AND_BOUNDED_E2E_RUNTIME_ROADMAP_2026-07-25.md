@@ -2,13 +2,13 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_HOLD
+Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_DISPATCH_READY
 
 ## Dispatch Prompt Envelope
 
 N/A with reason: this is a roadmap artifact, not the delegated work order.
 The active envelope is in
-`docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md`.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T4_VALUE_LATENCY_FAILURE_ROLLBACK_ASSESSMENT_2026-07-26.md`.
 
 ## Purpose
 
@@ -112,7 +112,7 @@ separate GC-010 lane remain outside active scope.
 | T1 | Minimal production composition (smallest changed set wiring an accepted owner contract and the T1I-specified interface) | CLOSED_PASS_BOUNDED_GC009_COMPOSED |
 | T2 | Positive and fail-closed negative invocation proof for the T1 composition | CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN |
 | T3 | Projection of T2-proven evidence through existing `/admin/audit-log`; component, focused test, and worker return only | CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION |
-| T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | HOLD_UNTIL_T3_INDEPENDENT_CLOSURE |
+| T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | REVIEWER_ACCEPTED_DISPATCH_READY |
 
 Every later tranche remains `HOLD_*` until its predecessor has independent
 (reviewer/closer-accepted) closure evidence recorded in a completion review or
@@ -232,27 +232,35 @@ no new route, API, navigation, CLI binary, or MCP tool and does not alter the
 gateway or audit store. T2 dependency evidence is material commit `2e4412c88`
 and continuity commit `01e74fc5e`. Independent T3 evidence is five focused
 component cases, TypeScript PASS, GC-023 PASS, worker-return fast PASS, and
-pre-implementation 77/77. T4 and GC-010 remain held.
+pre-implementation 77/77. T4 is released for documentation-only assessment;
+GC-010 remains held as a separate lane.
 
-### T4 - Value, Latency, Failure, Rollback, And Closure Assessment (HOLD)
+### T4 - Value, Latency, Failure, Rollback, And Closure Assessment (DISPATCH READY)
 
-Scope, once released: assess the bounded chain built in T1-T3 for operator
+Released by:
+
+- `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T4_VALUE_LATENCY_FAILURE_ROLLBACK_ASSESSMENT_2026-07-26.md`;
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T4_VALUE_LATENCY_FAILURE_ROLLBACK_ASSESSMENT_2026-07-26.md`.
+
+Scope: assess the bounded chain built in T1-T3 for operator
 value, added latency, failure modes, and rollback boundary, and record the
-roadmap's overall closure disposition. T4 remains `HOLD_*` until a dedicated
-GC-018 releases it with T3's accepted closure evidence.
+roadmap's overall closure disposition. T3 dependency evidence is material
+commit `76fcd6b0e` and continuity commit `f1e7a1738`. T4 is documentation-only:
+no runtime/test edit, live proof, benchmark, rollback action, public-sync, or
+GC-010 implementation is released.
 
 ## Design Control Gate
 
 | Design control | Handling in this roadmap | Verdict |
 |---|---|---|
-| Scope boundary | Bounded to a documentation-only T0A tranche now; T1-T4 remain `HOLD_*` behind independent predecessor closure and fresh authority | PASS |
+| Scope boundary | T1-T3 are closed bounded; T4 is released for documentation-only assessment; GC-010 remains held behind separate authority | PASS |
 | Non-goals | Explicit `## Non-Goals` section below; no implementation, live proof, public-sync, or arbitrary external-agent claim released | PASS |
 | Lane split | Single lane: GC-009/GC-010 production-caller closure only; PPMCP and skill-absorption lanes explicitly excluded | PASS |
 | Dependency/source-verification plan | `## Source Verification Block` below; every architecture claim cites a repo file and line/section | PASS |
-| Claim boundary | `## Claim Boundary` section below; T0A design only, no T1-T4 implementation claim | PASS |
+| Claim boundary | T4 dispatch authorizes assessment only; no new runtime, live, rollback, GC-010, or public claim | PASS |
 | Acceptance criteria | Companion T0A work order `## Acceptance Criteria` | PASS |
 | Verification/evidence | `## Checker Source Read-Ahead Block` and `## Source Verification Block` below; companion T0A work order evidence requirements | PASS |
-| Dispatch-readiness decision | T0A closed bounded not-ready; T1-T4 remain `HOLD_*` | PASS |
+| Dispatch-readiness decision | T4 has a fresh source-verified baseline and work order after accepted T3 closure | PASS |
 
 ## Acceptance Criteria
 
@@ -517,7 +525,7 @@ batch is authorized by this artifact.
 | Baseline status (T1) | `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
 | Work order status (T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_GC009_COMPOSED` | PASS |
 | Completion or reviewer artifact (T1) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md` | independent bounded closure with reviewer repairs | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_HOLD` | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_DISPATCH_READY` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
