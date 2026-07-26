@@ -27,8 +27,9 @@ deployment, and external invocation remain parked.
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator
-checkpoint for fresh T4 assessment, separate GC-010 AgentExecutionRuntime, or
-park; parked checkpoint=T4, GC-010, browser E2E, CLI/MCP invocation,
+checkpoint between a bounded-foundation GC-010 packet and fresh
+caller-inclusive source verification; parked checkpoint=all GC-010
+implementation dispatch, caller closure, browser E2E, CLI/MCP invocation,
 provider/network/process action, new operator surface, public mutation,
 deploy, production readiness, and moratorium lift.
 
@@ -38,6 +39,11 @@ deploy, production readiness, and moratorium lift.
 
 ## Latest Work / Changes
 
+- GC010-AER-T1 material closure commit `48e25c090` accepts the repaired
+  interface/export/receipt design as a tested package-native foundation only.
+  All six reviewer blockers are resolved; no non-test production caller or
+  caller-level invocation proof exists, so GC-010 and the paired gap remain
+  open.
 - GC009-GC010-PCALLER-T3 material closure commit `76fcd6b0e` accepts bounded
   secret-safe projection through existing `/admin/audit-log`. Independent
   proof is focused 5/5, TypeScript PASS, GC-023 PASS, worker-return fast
@@ -89,14 +95,16 @@ deploy, production readiness, and moratorium lift.
 
 ## Next Allowed Move
 
-Operator checkpoint to select one of: a fresh source-verified T4
-value/latency/failure/rollback assessment, a separate GC-010
-AgentExecutionRuntime packet, or park the lane.
+Operator checkpoint to select one of: author a fresh bounded-foundation
+implementation packet that explicitly cannot prove or close the production
+caller gap; first author a fresh caller-inclusive source-verification packet
+naming the exact non-test caller and invocation boundary; or park the lane.
 
-T4 and GC-010 remain held. Browser E2E, live provider/API/account/network use,
-new operator surface, CLI/MCP invocation, public-sync, push, deployment,
-production readiness, and whole paired-gap closure remain unauthorized. The
-EAIC knowledge gap and invocation moratorium remain parked.
+No GC-010 implementation dispatch is automatic. Browser E2E, live
+provider/API/account/network use, new operator surface, CLI/MCP invocation,
+public-sync, push, deployment, production readiness, and whole paired-gap
+closure remain unauthorized. The EAIC knowledge gap and invocation moratorium
+remain parked.
 
 ## Core Guard Self-Protection Authorization - PPMCP-R1 Dispatch Sync
 
@@ -832,5 +840,33 @@ Rollback boundary: revert only this continuity set if dispatch commit
 ## GC-020 Marker - GC010 AgentExecutionRuntime T1 Design Dispatch Continuity
 
 This handoff records material parent commit `7fc1d7893`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC010 AgentExecutionRuntime T1 Design Closure Sync
+
+Authorized guard-maintenance scope: record GC010-AER-T1 material closure
+commit `48e25c090`, bounded foundation-design acceptance, and the unresolved
+non-test production-caller boundary.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc010AgentExecutionRuntimeT1InterfaceExportReceiptDesignClosure20260726.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: continue while value remains, Claude-worker and
+Codex-reviewer route, independent R1 acceptance, material closure commit, and
+mandatory continuity maintenance.
+
+Rollback boundary: revert only this continuity set if material closure commit
+`48e25c090` is reverted.
+
+## GC-020 Marker - GC010 AgentExecutionRuntime T1 Design Closure Continuity
+
+This handoff records material parent commit `48e25c090`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
