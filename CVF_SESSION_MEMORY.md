@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=resume the same GC009-GC010-PCALLER-T1 no-commit worker under committed R1 route-test-mock authority; parked checkpoint=T2-T4, GC-010 AgentExecutionRuntime, live provider/API/account/network/browser use, agent CLI/MCP, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator checkpoint before any fresh T2 deterministic invocation packet or separate GC-010 AgentExecutionRuntime packet; parked checkpoint=T2-T4, GC-010 AgentExecutionRuntime, live provider/API/account/network/browser use, agent CLI/MCP, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC009-GC010-PCALLER-T1 runtime-composition closure | `29e7d6956` | CLOSED_PASS_BOUNDED_GC009_COMPOSED. Accepted `checkContext`, package export, cvf-web singleton and route adapter, seven-field durable audit projection, fail-closed local proof, route shrink, and reviewer GC-023/test-isolation repairs. T2-T4 and GC-010 remain HOLD; no live invocation or production claim. |
 | GC009-GC010-PCALLER-T1 R1 route-test-mock redispatch | `a71d65877` | REVIEWER_ACCEPTED_REDISPATCH_READY_R1_ROUTE_TEST_MOCK. The existing route suite replaces the unused planned focused-route test path; only a deterministic audit-event mock default, 31/31 rerun, worker-return refresh, and no-commit return are released. |
 | GC009-GC010-PCALLER-T1 runtime-composition dispatch | `851cddc8b` | REVIEWER_ACCEPTED_DISPATCH_READY. Exact no-commit scope covers the accepted gateway method, package export, cvf-web singleton, exactly-once route adapter, durable audit linkage, fail-closed integration, route shrink, and deterministic local tests. T2-T4 and the separate GC-010 lane remain HOLD. |
 | GC009-GC010-PCALLER-T1I interface-design closure | `7b3cdc23a` | CLOSED_PASS_BOUNDED_INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET. Accepted `checkContext` context preservation, exactly-one evaluation, no-bypass execute configuration, and receipt/audit projection after reviewer repair of the context field count. A fresh runtime packet remains an operator checkpoint; T1 runtime and T2-T4 remain HOLD. |

@@ -1,4 +1,4 @@
-# CVF Agent Handoff V52 - GC009/GC010 T0A Owner Design Dispatch
+# CVF Agent Handoff V52 - GC009/GC010 T1 Bounded Closure
 
 Memory class: active-handoff
 
@@ -6,32 +6,31 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the reviewer-accepted T0A owner-design packet and unchanged invocation
-moratorium into one no-commit documentation worker execution.
+Carry the independently accepted bounded T1 GC-009 composition and unchanged
+invocation moratorium to an operator checkpoint.
 
 ## Scope / Target / Owner Boundary
 
-Target: preserve the source-verified T0A packet, exact two-output worker
-scope, T1-T4 HOLD gates, and unchanged invocation moratorium.
+Target: preserve T1 material closure `29e7d6956`, T2-T4 and GC-010 HOLD gates,
+and the unchanged invocation moratorium.
 
-Owner boundary: one no-commit documentation worker executes T0A; the
-independent reviewer/closer owns acceptance and material closure.
+Owner boundary: no successor worker is released. The operator must authorize
+either a fresh T2 packet or separate GC-010 packet.
 
 ## Active Boundary
 
-GC009-GC010-PCALLER-T0A is dispatch-ready at material commit `a5a782a31`.
-Both canonical outputs are absent. T1-T4, implementation, provider/live proof,
-and external invocation remain parked.
+GC009-GC010-PCALLER-T1 is closed bounded at material commit `29e7d6956`.
+T2-T4, GC-010 AgentExecutionRuntime, provider/live proof, public action,
+deployment, and external invocation remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator
-manual copy/paste of the committed T0A work order to one no-commit
-documentation worker; parked checkpoint=T1-T4, runtime/source/test/package
-implementation, CLI/MCP invocation,
-provider/network/process action, runtime/source/test/checker/package/session/
-public mutation, deploy, and moratorium lift.
+checkpoint before any fresh T2 deterministic invocation packet or separate
+GC-010 AgentExecutionRuntime packet; parked checkpoint=T2-T4, GC-010,
+CLI/MCP invocation, provider/network/process action, public mutation, deploy,
+production readiness, and moratorium lift.
 
 ## Current Mode
 
@@ -39,6 +38,10 @@ public mutation, deploy, and moratorium lift.
 
 ## Latest Work / Changes
 
+- GC009-GC010-PCALLER-T1 material closure commit `29e7d6956` accepts bounded
+  GC-009 composition after reviewer repairs to both rate-limit buckets,
+  seven-field audit proof, four fail-closed outcomes, GC-023, and system-chain
+  reconciliation.
 - GC009-GC010-PCALLER-T0A dispatch commit `a5a782a31` adds the source-verified
   GC-018, no-commit work order, and roadmap T0A tranche.
 - The packet defines nine owner-contract questions, four terminal tokens, and
@@ -423,5 +426,33 @@ commit `a71d65877` is reverted.
 ## GC-020 Marker - GC009-GC010 T1 R1 Redispatch Continuity
 
 This handoff records material parent commit `a71d65877`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T1 Closure Sync
+
+Authorized guard-maintenance scope: record T1 material closure commit
+`29e7d6956` and route the next move to an operator checkpoint without
+releasing T2-T4 or the separate GC-010 AgentExecutionRuntime lane.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009Gc010ProductionCallerT1RuntimeCompositionClosure20260726.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: independent reviewer/closer acceptance, bounded
+reviewer repairs, material closure commit, and mandatory continuity
+maintenance.
+
+Rollback boundary: revert only this continuity set if material closure commit
+`29e7d6956` is reverted.
+
+## GC-020 Marker - GC009-GC010 T1 Closure Continuity
+
+This handoff records material parent commit `29e7d6956`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.

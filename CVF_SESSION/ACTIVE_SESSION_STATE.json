@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T1 R1 is reviewer-accepted and redispatch-ready at material commit a71d65877 after the first no-commit execution correctly returned BLOCKED_SCOPE_EXPANSION_REQUIRED. The existing route.test.ts suite exposed 16/31 HTTP 500 regressions because its appendAuditEvent mock returned no event object while the new gateway adapter now awaits and links auditEvent.id. R1 makes a one-for-one manifest substitution: route.test.ts replaces the unused planned route.mandatory-gateway.test.ts path. The worker is authorized only to retain the existing blocked changed set, add appendAuditEventMock.mockResolvedValue({ id: 'audit-test-id' }) in route.test.ts setup, run all 31 route tests plus the original focused proof, refresh the worker return, and stop without staging or committing. Production code must not add a defensive guard that masks the mock defect. Pre-dispatch passed 75/75, dispatch commit steward passed, and pre-commit passed 83/83. The next allowed move is resume the same WORKER_MUST_NOT_COMMIT implementation worker under the committed R1 work order. T2-T4 and the separate GC-010 AgentExecutionRuntime lane remain HOLD_*; no live provider/API/account/network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T1 is independently accepted and closed bounded at material commit 29e7d6956. GC-009 now has a cvf-web execute-route MandatoryGateway composition, package export, durable seven-field audit projection, deterministic fail-closed proof, 15/15 guard tests, 31/31 existing route tests, repeated 51/51 combined cvf-web tests, both typechecks, and GC-023 PASS after reviewer repairs. This is local implementation evidence only, not T2 invocation or live governance proof. The next allowed move is an operator checkpoint before authoring either a fresh source-verified T2 deterministic invocation packet or a separate GC-010 AgentExecutionRuntime packet. T2-T4 and GC-010 remain HOLD_*; no live provider/API/account/network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14148,5 +14148,18 @@
     "nextAllowedMove": "resume the same WORKER_MUST_NOT_COMMIT implementation worker under R1 authority",
     "laterTranches": "T2-T4 and GC-010 AgentExecutionRuntime remain HOLD_*",
     "claimBoundary": "R1 test-manifest repair only. No closure, live proof, CLI/MCP, browser, network, public-sync, push, deployment, or production claim."
+  },
+  "gc009Gc010ProductionCallerT1RuntimeCompositionClosure20260726": {
+    "status": "CLOSED_PASS_BOUNDED_GC009_COMPOSED",
+    "date": "2026-07-26",
+    "materialCommit": "29e7d6956",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md",
+    "completionReview": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md",
+    "roadmap": "docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md",
+    "verification": "15/15 guard tests; 31/31 existing route tests; 51/51 combined cvf-web tests repeated; both typechecks PASS; GC-023 PASS; worker-return fast/reviewer-fast PASS; pre-commit 83/83 PASS",
+    "reviewerRepairs": "isolated both user and provider rate-limit buckets, added all-seven-field audit projection proof, added four-outcome fail-closed zero-provider proof, reduced route.test.ts to 1153 lines, corrected worker-return command signature, and reconciled the partial system-chain gap",
+    "nextAllowedMove": "operator checkpoint before any fresh T2 deterministic invocation packet or separate GC-010 AgentExecutionRuntime packet",
+    "laterTranches": "T2-T4 and GC-010 AgentExecutionRuntime remain HOLD_* pending fresh source-verified authority",
+    "claimBoundary": "Bounded local GC-009 composition only. No T2 invocation, live provider, browser, CLI/MCP, public-sync, push, deployment, production-readiness, GC-010, or paired-gap closure claim."
   }
 }
