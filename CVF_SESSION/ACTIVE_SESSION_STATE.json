@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T1 runtime composition is reviewer-accepted and dispatch-ready at material commit 851cddc8b. The source-verified packet adds the accepted MandatoryGateway.checkContext interface, guard-contract package export, cvf-web gateway singleton, exactly-once route adapter, durable audit linkage, fail-closed route integration, route shrink, and deterministic local tests. Reviewer repairs added the package-export omission, downstream GuardPipelineResult compatibility, exact handoff and worker-return contracts, evidence recomputation, and checker-trigger controls. Pre-dispatch passed 75/75, dispatch commit steward passed, and pre-commit passed 83/83. The next allowed move is dispatch of docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md to one WORKER_MUST_NOT_COMMIT implementation worker. The worker may modify only the exact eleven-path writable manifest and must not stage or commit. T2-T4 remain HOLD_*; no live provider/API/account/network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment, or production claim is authorized. The separate GC-010 AgentExecutionRuntime lane is not released. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T1 R1 is reviewer-accepted and redispatch-ready at material commit a71d65877 after the first no-commit execution correctly returned BLOCKED_SCOPE_EXPANSION_REQUIRED. The existing route.test.ts suite exposed 16/31 HTTP 500 regressions because its appendAuditEvent mock returned no event object while the new gateway adapter now awaits and links auditEvent.id. R1 makes a one-for-one manifest substitution: route.test.ts replaces the unused planned route.mandatory-gateway.test.ts path. The worker is authorized only to retain the existing blocked changed set, add appendAuditEventMock.mockResolvedValue({ id: 'audit-test-id' }) in route.test.ts setup, run all 31 route tests plus the original focused proof, refresh the worker return, and stop without staging or committing. Production code must not add a defensive guard that masks the mock defect. Pre-dispatch passed 75/75, dispatch commit steward passed, and pre-commit passed 83/83. The next allowed move is resume the same WORKER_MUST_NOT_COMMIT implementation worker under the committed R1 work order. T2-T4 and the separate GC-010 AgentExecutionRuntime lane remain HOLD_*; no live provider/API/account/network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment, or production claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14133,5 +14133,20 @@
     "nextAllowedMove": "dispatch the committed T1 runtime work order to one WORKER_MUST_NOT_COMMIT implementation worker",
     "laterTranches": "T2-T4 remain HOLD_*; GC-010 AgentExecutionRuntime remains a separate fresh-packet lane",
     "claimBoundary": "T1 dispatch only. No implementation has executed, no live provider proof exists, and no CLI/MCP, browser, network, public-sync, push, deployment, or production claim is authorized."
+  },
+  "gc009Gc010ProductionCallerT1RuntimeCompositionR1Redispatch20260726": {
+    "status": "REVIEWER_ACCEPTED_REDISPATCH_READY_R1_ROUTE_TEST_MOCK",
+    "date": "2026-07-26",
+    "materialCommit": "a71d65877",
+    "originalExecutionBaseHead": "871251726",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md",
+    "roadmap": "docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md",
+    "workerReturn": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_WORKER_RETURN_2026-07-26.md",
+    "blockedDisposition": "BLOCKED_SCOPE_EXPANSION_REQUIRED",
+    "reviewerDecision": "replace the unused planned route.mandatory-gateway.test.ts path with the existing route.test.ts suite; authorize its deterministic appendAuditEvent mock default and full 31-test rerun",
+    "verification": "author-fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch commit steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "resume the same WORKER_MUST_NOT_COMMIT implementation worker under R1 authority",
+    "laterTranches": "T2-T4 and GC-010 AgentExecutionRuntime remain HOLD_*",
+    "claimBoundary": "R1 test-manifest repair only. No closure, live proof, CLI/MCP, browser, network, public-sync, push, deployment, or production claim."
   }
 }

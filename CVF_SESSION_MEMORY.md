@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=dispatch the committed GC009-GC010-PCALLER-T1 runtime work order to one no-commit implementation worker; parked checkpoint=T2-T4, GC-010 AgentExecutionRuntime, live provider/API/account/network/browser use, agent CLI/MCP, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=resume the same GC009-GC010-PCALLER-T1 no-commit worker under committed R1 route-test-mock authority; parked checkpoint=T2-T4, GC-010 AgentExecutionRuntime, live provider/API/account/network/browser use, agent CLI/MCP, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC009-GC010-PCALLER-T1 R1 route-test-mock redispatch | `a71d65877` | REVIEWER_ACCEPTED_REDISPATCH_READY_R1_ROUTE_TEST_MOCK. The existing route suite replaces the unused planned focused-route test path; only a deterministic audit-event mock default, 31/31 rerun, worker-return refresh, and no-commit return are released. |
 | GC009-GC010-PCALLER-T1 runtime-composition dispatch | `851cddc8b` | REVIEWER_ACCEPTED_DISPATCH_READY. Exact no-commit scope covers the accepted gateway method, package export, cvf-web singleton, exactly-once route adapter, durable audit linkage, fail-closed integration, route shrink, and deterministic local tests. T2-T4 and the separate GC-010 lane remain HOLD. |
 | GC009-GC010-PCALLER-T1I interface-design closure | `7b3cdc23a` | CLOSED_PASS_BOUNDED_INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET. Accepted `checkContext` context preservation, exactly-one evaluation, no-bypass execute configuration, and receipt/audit projection after reviewer repair of the context field count. A fresh runtime packet remains an operator checkpoint; T1 runtime and T2-T4 remain HOLD. |
 | GC009-GC010-PCALLER-T1I interface-design dispatch | `ca538479e` | REVIEWER_ACCEPTED_DISPATCH_READY after repairs to closure-anchor, GC-023, nested gateway-evidence, receipt-builder, and changed-set claims. One no-commit documentation worker owns exactly the audit and worker-return outputs. T1 runtime composition and T2-T4 remain HOLD. |
@@ -376,13 +377,15 @@ PPMCP-R1 is independently closed with reviewer repairs at material commit
 `539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
 are parked behind concrete reopen conditions.
 
-GC009-GC010-PCALLER-T1 runtime composition is reviewer-accepted and
-dispatch-ready at material commit `851cddc8b`. The next allowed move is
-dispatch of the committed T1 work order to one `WORKER_MUST_NOT_COMMIT`
-implementation worker. The worker owns only the exact eleven-path manifest.
-T2-T4 and the separate GC-010 AgentExecutionRuntime lane remain `HOLD_*`; no
-live provider/API/account/network/browser use, CVF CLI/MCP invocation,
-public-sync, push, deployment, or production claim is authorized.
+GC009-GC010-PCALLER-T1 R1 is reviewer-accepted and redispatch-ready at
+material commit `a71d65877`. The next allowed move is resume the same
+`WORKER_MUST_NOT_COMMIT` implementation worker with the retained blocked
+changed set. The worker may add only the deterministic `appendAuditEvent`
+mock default in the existing `route.test.ts`, run all 31 tests, refresh the
+worker return, and stop without commit. T2-T4 and the separate GC-010
+AgentExecutionRuntime lane remain `HOLD_*`; no live provider/API/account/
+network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment,
+or production claim is authorized.
 Conversation provenance remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 
