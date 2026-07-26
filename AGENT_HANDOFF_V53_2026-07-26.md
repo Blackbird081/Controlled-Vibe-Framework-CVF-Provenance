@@ -181,26 +181,31 @@ This handoff records material parent commit `6b6cd6ab1`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the dedicated session-sync commit.
 
+## GC-020 Marker - GC009 Live T5 Blocked Review Child
+
+This handoff records continuity commit `feabdd7b5`. The next commit is limited
+to this handoff marker so the checker may accept its parent SHA.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
 | Actor | Codex dispatcher/reviewer |
 | Provider or surface | local private provenance repository |
-| Session or invocation | GC009-LIVE-T5 blocked-review continuity after material commit `6b6cd6ab1` |
+| Session or invocation | GC009-LIVE-T5 blocked-review continuity child after commit `feabdd7b5` |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, git status/diff, commit steward, and pre-commit hook |
-| Target paths | the six protected paths named in the expected manifest below |
+| Target paths | the one protected handoff path named in the expected manifest below |
 | Allowed scope source | operator acceptance of the GC009 live-proof next step and mandatory dispatch continuity |
-| Before status evidence | HEAD `6b6cd6ab1`; blocked material review committed; worktree clean |
-| After status evidence | state and front doors route to one no-rerun R1 packet |
-| Diff evidence | `git diff --cached --name-status` records five modifications and one new state fragment |
-| Approval boundary | continuity only; live execution requires committed R1 dispatch |
+| Before status evidence | HEAD `feabdd7b5`; six-path continuity committed; worktree clean |
+| After status evidence | handoff records continuity commit `feabdd7b5` |
+| Diff evidence | `git diff --cached --name-status` records one modified handoff |
+| Approval boundary | GC-020 child marker only |
 | Claim boundary | repository-local documentation and state trace only |
 | Agent type | Codex |
-| Invocation ID | `gc009-live-t5-blocked-review-continuity-2026-07-26` |
-| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/gc009LiveT5BlockedReviewR1Authorization20260726.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/gc009LiveT5BlockedReviewR1Authorization20260726.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | `gc009-live-t5-blocked-review-continuity-child-2026-07-26` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this continuity batch |
 
