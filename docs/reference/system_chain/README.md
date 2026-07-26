@@ -109,15 +109,18 @@ tested but have no proven non-test production caller or active package export.
 Their matrix rows now state `IMPLEMENTED_NOT_INVOCATION_PROVEN` instead of
 implying active entrypoints.
 
-R94-T1C confirms direct semantic tests for GC-012 and GC-013. Remaining bounded
-rows stay explicit: GC-009/010 are implemented without proven production
-invocation, while GC-019/046 remain contract-only with reason.
+R94-T1C confirms direct semantic tests for GC-012 and GC-013. GC-009 T1 later
+added the cvf-web execute-route composition, and T2 independently accepted
+bounded local actual-POST invocation proof: ALLOW reaches the mocked provider
+seam once and authority-gate BLOCK reaches it zero times. GC-010 remains
+implemented without a proven production caller or package export, while
+GC-019/046 remain contract-only with reason.
 
 SCLP-UC03-T2 then selected GC-011 and executed one current provider-free proof
 through `CvfSdk.runReferenceGovernedLoop` into `PipelineOrchestrator`. The
 positive and missing-PLAN fail-closed cases passed two of two. Operational
 coverage for this representative route is `PROVEN`; the lane's semantic
-posture remains `PARTIAL`, GC-009/010 remain invocation-unproven, and the
+posture remains `PARTIAL`, GC-010 remains invocation-unproven, and the
 receipt's lost per-case display names are retained as a bounded evidence
 limitation rather than grounds for another proof call.
 

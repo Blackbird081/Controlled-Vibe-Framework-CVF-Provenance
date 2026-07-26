@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R2_EXECUTION_RANGE_REPAIR
+Status: CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN
 
 Batch ID: GC009-GC010-PCALLER-T2
 
@@ -419,7 +419,7 @@ stale.
 | Chain map route | current runtime source verification and deterministic local proof |
 | Matching local-view guard | N/A with reason: no outside artifact |
 | Owner surface | this work order |
-| Disposition | `BLOCKED_UNTIL_CVF_PROOF` for T2 behavior until independent closure |
+| Disposition | `ABSORBED_AFTER_CVF_PROOF` for bounded local T2 behavior |
 | Claim boundary | no external completeness or absorption claim |
 
 ## Agent Handoff Contract Control Block
@@ -540,21 +540,21 @@ Worker may claim only deterministic local evidence pending independent review.
 
 ## Acceptance Criteria
 
-- [ ] Worker starts from the committed dispatch HEAD and clean worktree.
-- [ ] Only the two worker-owned paths change.
-- [ ] New suite uses actual POST, gateway adapter, gateway singleton, and
+- [x] Worker starts from the committed dispatch HEAD and clean worktree.
+- [x] Only the two worker-owned paths change.
+- [x] New suite uses actual POST, gateway adapter, gateway singleton, and
   guard engine.
-- [ ] Positive case proves ALLOW and provider mock count one.
-- [ ] Negative case proves authority-gate BLOCK and provider mock count zero.
-- [ ] Both cases prove gateway audit, request-ID preservation, envelope
+- [x] Positive case proves ALLOW and provider mock count one.
+- [x] Negative case proves authority-gate BLOCK and provider mock count zero.
+- [x] Both cases prove gateway audit, request-ID preservation, envelope
   linkage, and matching evidence-receipt decision.
-- [ ] No live provider or network call occurs.
-- [ ] Focused and regression suites pass.
-- [ ] cvf-web TypeScript check passes.
-- [ ] Governed file-size gate passes.
-- [ ] Worker-return fast gate passes.
-- [ ] HEAD remains unchanged and nothing is staged.
-- [ ] GC-010 and T3-T4 remain held.
+- [x] No live provider or network call occurs.
+- [x] Focused and regression suites pass.
+- [x] cvf-web TypeScript check passes.
+- [x] Governed file-size gate passes.
+- [x] Worker-return fast gate passes.
+- [x] HEAD remains unchanged and nothing is staged.
+- [x] GC-010 and T3-T4 remain held.
 
 ## Review Gate
 
@@ -620,14 +620,14 @@ commands if the execution surface cannot guarantee that ceiling.
 
 ## Closure Checklist
 
-- [ ] Commit mode and all three base-head lifecycle fields are recorded.
-- [ ] Worker changed set matches the required artifact manifest.
-- [ ] Required proof manifest is complete.
-- [ ] No forbidden path changed.
-- [ ] Worker return remains pending review and does not claim closure.
-- [ ] Reviewer independently validates behavior and closure evidence.
-- [ ] Reviewer converts accepted work into a completion review and commits.
-- [ ] Reviewer updates roadmap, system-chain semantics if applicable, session
+- [x] Commit mode and all three base-head lifecycle fields are recorded.
+- [x] Worker changed set matches the required artifact manifest.
+- [x] Required proof manifest is complete.
+- [x] No forbidden path changed.
+- [x] Worker return remains pending review and does not claim closure.
+- [x] Reviewer independently validates behavior and closure evidence.
+- [x] Reviewer converts accepted work into a completion review and commits.
+- [x] Reviewer updates roadmap, system-chain semantics if applicable, session
   state, memory front door, and active handoff.
 
 ## Return-To-Orchestrator Conditions
@@ -696,12 +696,12 @@ Returned defects: `ADIF-0001`, `ADIF-0002`, `ADIF-0014`, `ADIF-0015`,
 | Field | Value |
 |---|---|
 | claimScope | deterministic test of the existing T1 GC-009 composition |
-| claimDisposition | `CLAIM_REJECTED`: dispatch readiness is not invocation evidence |
-| receiptEvidence | `CLAIM_REJECTED_NO_RECEIPT`: none exists at dispatch; worker must assert deterministic local response receipts |
-| actionEvidence | `CLAIM_REJECTED_NO_ACTION`: none exists at dispatch; worker must assert mocked provider seam counts |
+| claimDisposition | `BOUNDED_CLAIM_WITH_EVIDENCE`: independent closure accepts local GC-009 invocation |
+| receiptEvidence | `CVF_RECEIPT_PRESENT`: ALLOW and BLOCK receipts match gateway decisions |
+| actionEvidence | `ACTION_EVIDENCE_PRESENT`: provider seam counts are one and zero |
 | invocationBoundary | local Vitest POST calls only; provider adapter mocked |
 | interceptionBoundary | no external-agent interception, proxy, wrapper, or arbitrary process control |
-| claimLanguage | source-verified T2 packet ready for a no-commit worker |
+| claimLanguage | bounded local GC-009 invocation proven after independent review |
 | forbiddenExpansion | no runtime edit, live provider, GC-010, T3-T4, new operator surface, public-sync, push, deployment, or production-readiness claim |
 
 ## Public Export Disposition
@@ -711,12 +711,36 @@ DEFERRED_PRIVATE_ONLY
 Reason: this is a private provenance work order with no matching public-sync
 artifact.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN` | PASS |
+| Completion or reviewer artifact | T2 completion review | same closed status | PASS |
+| Roadmap state | companion roadmap | T2 pass bounded; T3-T4 held | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no corpus state change | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no corpus row required | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
+| System loop interlock | paired GC-009/GC-010 gap entry and index | GC-009 accepted; GC-010 remains open | PASS |
+| Session continuity | active state, front door, and handoff | separate sync follows material commit | N/A with reason |
+| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| positive gateway decision | ALLOW receipt, audit event, and one provider call | PASS |
+| negative gateway decision | BLOCK receipt, `authority_gate` event, and zero provider calls | PASS |
+| seven-field audit payload | exact key set in both cases | PASS |
+| deterministic audit linkage | event ID appears in both response envelopes | PASS |
+| live provider receipt | N/A with reason: no live call authorized or made | N/A_WITH_REASON |
+
 ## Claim Boundary
 
-This work order authorizes exactly one new deterministic route-level test and
-one pending-review worker return. It does not authorize runtime remediation,
-provider/live proof, GC-010, T3-T4, new surfaces, session mutation, public
-export, push, deployment, production readiness, or paired-gap closure.
+This work order is closed with one accepted deterministic route-level test and
+one reviewed worker return. It does not authorize runtime remediation,
+provider/live proof, GC-010, T3-T4, new surfaces, public export, push,
+deployment, production readiness, or paired-gap closure.
 
 ## Operator Checkpoint
 

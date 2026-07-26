@@ -62,16 +62,16 @@
       "currentPosture": "PARTIAL",
       "verdict": "PARTIAL_RUNTIME_CONNECTION_FULL_INVENTORY",
       "implementedBy": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts (GC-001); EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts (GC-009); EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts (GC-011)",
-      "invokedBy": "GC-001 invoked at EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts:122; GC-009 composed by the cvf-web execute route through route-guard-gateway.ts and MandatoryGateway.checkContext, with T2 invocation proof still held; GC-010 has no accepted production caller or package export; GC-011 invoked at EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts:132",
-      "testedBy": "MSEA-R94-T0 inventoried all 50 rows. GC-009 T1 adds 15 mandatory-gateway tests plus cvf-web singleton, adapter, audit-projection, fail-closed, and existing route coverage; the combined local cvf-web suite passes 51/51. Twelve other invoked rows remain bounded without standalone tests.",
+      "invokedBy": "GC-001 invoked at EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts:122; GC-009 invoked by the cvf-web execute route through route-guard-gateway.ts and MandatoryGateway.checkContext with accepted bounded local T2 proof; GC-010 has no accepted production caller or package export; GC-011 invoked at EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts:132",
+      "testedBy": "MSEA-R94-T0 inventoried all 50 rows. GC-009 T1 adds 15 mandatory-gateway tests plus cvf-web singleton, adapter, audit-projection, fail-closed, and existing route coverage; T2 adds 2/2 actual-POST invocation cases, with 33/33 combined route and 20/20 T1 regression results. Twelve other invoked rows remain bounded without standalone tests.",
       "evidenceOwner": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
       "operatorSurface": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance (Web governance dashboard route, confirmed present)",
-      "knownGaps": "GC-009 has a bounded production composition but no accepted T2 invocation proof. GC-010 remains without a production caller or active package export. Their paired gap remains IMPLEMENTED_NOT_INVOCATION_PROVEN; GC-019 and GC-046 remain contract-only with reason.",
-      "nextReviewAction": "Keep T2 held until a fresh packet cites accepted T1 closure; handle GC-010 through a separate source-verified AgentExecutionRuntime packet. Do not close the paired gap from GC-009-only implementation evidence.",
+      "knownGaps": "GC-009 has accepted bounded local invocation proof but no live-provider or production-readiness proof. GC-010 remains without a production caller or active package export. Their paired gap remains open for GC-010; GC-019 and GC-046 remain contract-only with reason.",
+      "nextReviewAction": "Keep T3-T4 held until fresh authority; handle GC-010 through a separate source-verified AgentExecutionRuntime packet. Do not close the paired gap from GC-009-only invocation evidence.",
       "sourceFingerprints": [
         {
           "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
-          "sha256": "62f463703d6790e9b1a286d027c0a963e2dc8c265fb874a6743ee9a252e0aca5",
+          "sha256": "f0ad0b5899bb5f39c09bc189d87cf129e50a1b6bd4969a7ec1ce30dafed6b612",
           "evidenceRole": "control matrix rows GC-001, GC-009, GC-011, GC-019"
         },
         {
@@ -178,7 +178,7 @@
       "sourceFingerprints": [
         {
           "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
-          "sha256": "62f463703d6790e9b1a286d027c0a963e2dc8c265fb874a6743ee9a252e0aca5",
+          "sha256": "f0ad0b5899bb5f39c09bc189d87cf129e50a1b6bd4969a7ec1ce30dafed6b612",
           "evidenceRole": "GC-019 corrected archive-qualified citation"
         },
         {

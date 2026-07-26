@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN
 
 Batch ID: GC009-GC010-PCALLER-T2
 
@@ -247,16 +247,16 @@ public-sync artifact and makes no public catalog claim.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Baseline status | this baseline | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Work order status | companion T2 work order | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | future T2 completion review | absent before worker execution | N/A with reason: independent closure remains pending |
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN` | PASS |
+| Work order status | companion T2 work order | `Status: CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN` | PASS |
+| Completion or reviewer artifact | T2 completion review | `Status: CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN` | PASS |
 | Dependency release | T1 completion review | material commit `29e7d6956`; continuity commit `14434bf58` | PASS |
-| Roadmap state | companion roadmap | T2 dispatch-ready; T3-T4 held | PASS |
-| Worker outputs | focused test and worker return | absent before dispatch | PASS |
+| Roadmap state | companion roadmap | T2 pass bounded; T3-T4 held | PASS |
+| Worker outputs | focused test and worker return | present and independently verified | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no corpus packet created | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no corpus entry required | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
-| System loop interlock | GC-009/GC-010 gap entry | remains `IMPLEMENTED_NOT_INVOCATION_PROVEN` pending T2 acceptance and GC-010 | PASS |
+| System loop interlock | GC-009/GC-010 gap entry | GC-009 bounded invocation proven; paired entry remains open for GC-010 | PASS |
 | Session continuity | separate session-sync commit | follows material packet commit | N/A with reason: not baseline-owned |
 | Public export | this baseline | `DEFERRED_PRIVATE_ONLY` | PASS |
 
@@ -273,6 +273,6 @@ public-sync artifact and makes no public catalog claim.
 
 ## Claim Boundary
 
-This baseline releases only the exact test-and-evidence T2 work order. It does
-not prove T2, authorize runtime changes or live governance proof, instantiate
-GC-010, release T3-T4, modify session state, or authorize public export.
+This baseline is closed with bounded local GC-009 invocation proof. It does
+not authorize runtime changes or live governance proof, instantiate GC-010,
+release T3-T4, or authorize public export.

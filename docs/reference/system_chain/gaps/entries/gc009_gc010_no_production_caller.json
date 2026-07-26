@@ -5,7 +5,7 @@
   "targetPlaneId": "cvf.asc.plane.contract_to_runtime.v1",
   "sourceOwner": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts; EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts",
   "targetOwner": "PARTIAL_OWNER_CREATED_WITH_BOUNDARY: GC-009 is composed by EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts through EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.ts and the package export; GC-010 remains NONE_WITH_REASON because AgentExecutionRuntime still has no accepted non-test production caller or active package export.",
-  "missingEdge": "GC-009 now has a non-test cvf-web production composition and deterministic local proof, but the separately held T2 invocation tranche has not supplied accepted invocation evidence. GC-010 still has no non-test production caller. The paired edge therefore remains open and must not be falsely closed from GC-009-only implementation evidence.",
+  "missingEdge": "GC-009 now has accepted bounded local actual-route invocation proof through its non-test cvf-web production composition. GC-010 still has no non-test production caller or active package export. The paired edge therefore remains open for GC-010 and must not be falsely closed from GC-009-only evidence.",
   "currentStatus": "IMPLEMENTED_NOT_INVOCATION_PROVEN",
   "proofClass": "IMPLEMENTED_EDGE",
   "citations": [
@@ -43,9 +43,14 @@
       "path": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md",
       "lineOrSection": "Findings / Position and Claim Boundary",
       "evidenceRole": "reviewer-accepted bounded GC-009 production composition; T2 invocation proof and GC-010 remain held"
+    },
+    {
+      "path": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_COMPLETION_2026-07-26.md",
+      "lineOrSection": "Findings / Position and Claim Boundary",
+      "evidenceRole": "reviewer-accepted bounded local GC-009 actual-route invocation proof; GC-010 remains held"
     }
   ],
-  "impact": "The original paired no-caller gap is partially reduced: GC-009 has a bounded cvf-web production composition, package surface, durable audit linkage, and deterministic local tests. GC-009 invocation proof and every GC-010 caller/export edge remain unaccepted, so this is not whole-entry closure, production-readiness proof, or live governance proof.",
+  "impact": "The original paired no-caller gap is further reduced: GC-009 has a bounded cvf-web production composition, package surface, durable audit linkage, and accepted local actual-route invocation proof. Every GC-010 caller/export edge remains unaccepted, so this is not whole-entry closure, production-readiness proof, or live governance proof.",
   "closeCondition": {
     "conditionKind": "NAMED_ARTIFACT_ACCEPTED",
     "conditionText": "OPEN: a governed accepted artifact must prove non-test production caller ownership AND bounded invocation evidence for BOTH MandatoryGateway/createMandatoryGateway (GC-009) and AgentExecutionRuntime (GC-010) to fully close this paired entry. If evidence emerges for only one of the two helpers, that requires a reviewer-authored entry split or targeted update naming the still-open helper -- not a false whole-entry closure recorded against this stableId."
@@ -54,7 +59,7 @@
     "conditionKind": "PATTERN_OBSERVED_ON_NAMED_SURFACE",
     "conditionText": "Reopen this entry, or any successor closure of it, if a future review finds the current non-test production caller or the current export/barrel surface removed or regressed on either EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts or EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts after a later closure has been accepted."
   },
-  "actionOwner": "PARKED_WITH_REASON: GC-009 T2 invocation proof requires a fresh source-verified packet after T1 closure; GC-010 AgentExecutionRuntime composition requires its own fresh source-verified packet. Both evidence branches remain required before this paired entry can close.",
+  "actionOwner": "PARKED_WITH_REASON: GC-009 bounded local invocation proof is accepted. GC-010 AgentExecutionRuntime composition requires its own fresh source-verified packet before this paired entry can close.",
   "freshnessInputs": [
     "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts",
     "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts",
@@ -64,6 +69,6 @@
   ],
   "lastReviewed": {
     "date": "2026-07-26",
-    "acceptedArtifact": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md"
+    "acceptedArtifact": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_COMPLETION_2026-07-26.md"
   }
 }

@@ -69,7 +69,7 @@ this table when entries change.
 
 | gapId | Plane | Owner (source -> target) | Status | Proof class | Entry / Evidence | Next action |
 |---|---|---|---|---|---|---|
-| `cvf.asc.gap.gc009_gc010_no_production_caller.v1` | contract_to_runtime | GC-009 -> cvf-web execute route adapter; GC-010 -> `NONE_WITH_REASON` | `IMPLEMENTED_NOT_INVOCATION_PROVEN` | `IMPLEMENTED_EDGE` | `entries/gc009_gc010_no_production_caller.json`; `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md` | GC-009 T2 invocation proof and a fresh GC-010 caller/export packet remain required before this paired entry can close |
+| `cvf.asc.gap.gc009_gc010_no_production_caller.v1` | contract_to_runtime | GC-009 -> accepted bounded local cvf-web invocation; GC-010 -> `NONE_WITH_REASON` | `IMPLEMENTED_NOT_INVOCATION_PROVEN` | `IMPLEMENTED_EDGE` | `entries/gc009_gc010_no_production_caller.json`; `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_COMPLETION_2026-07-26.md` | A fresh GC-010 caller/export packet remains required before this paired entry can close |
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
@@ -149,12 +149,11 @@ discoverability gap only, bounded to: both helpers exist and are implemented
 and unit-tested, but no non-test production caller connects either to an
 execution channel.
 
-GC009-GC010-PCALLER-T1 partially updated that historical finding on
+GC009-GC010-PCALLER-T1 and T2 partially updated that historical finding on
 2026-07-26. GC-009 now has a bounded cvf-web execute-route composition,
-package export, durable audit linkage, and deterministic local proof.
-GC-009 T2 invocation proof and the complete GC-010 caller/export branch
-remain held, so the paired gap stays open as
-`IMPLEMENTED_NOT_INVOCATION_PROVEN`.
+package export, durable audit linkage, and accepted local actual-POST
+invocation proof. The complete GC-010 caller/export branch remains held, so
+the paired gap stays open as `IMPLEMENTED_NOT_INVOCATION_PROVEN`.
 
 ## Search Examples
 

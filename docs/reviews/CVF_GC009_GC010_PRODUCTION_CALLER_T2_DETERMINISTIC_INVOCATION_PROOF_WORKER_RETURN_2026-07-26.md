@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 docType: review
 
-Status: BLOCKED_WITH_REASON
+Status: COMPLETE_PENDING_REVIEW
 
 Date: 2026-07-26
 
@@ -16,13 +16,13 @@ Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODU
 
 dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_2026-07-26.md`
 
-executionBaseHead: `b1c6a0670`
+executionBaseHead: `df0eaf632`
 
 rawMemoryReleased=false
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
-terminalDisposition: BLOCKED_SCOPE_EXPANSION_REQUIRED
+terminalDisposition: COMPLETE_PENDING_REVIEW
 
 ## Source Inventory
 
@@ -54,81 +54,83 @@ terminalDisposition: BLOCKED_SCOPE_EXPANSION_REQUIRED
 | `governance/compat/check_worker_return_quality_gate.py` | FULL_READ |
 | `governance/compat/check_agent_operation_trace.py` | FULL_READ |
 | `governance/compat/check_agent_packet_authority_and_encoding.py` | FULL_READ |
+| `governance/compat/check_worker_experience_retrospective.py` | FULL_READ |
+| `governance/compat/check_finding_to_governance_learning.py` | PARTIAL_READ |
 
 ## Purpose
 
-Record the mandatory pre-implementation gate result for the committed T2
-packet and return control without widening the exact two-path worker scope.
+Provide deterministic local evidence that the actual execute route reaches the
+mocked provider seam exactly once after a real mandatory-gateway ALLOW and
+does not reach that seam after a real authority-gate BLOCK.
 
 ## Target / Source
 
-The target was the deterministic actual-route invocation proof defined by the
-dispatch work order. The committed packet, T1 closure, current route and
-gateway sources, and named checker sources were read before any edit.
+The focused suite imports the actual `POST` route and uses the production
+route adapter, shared mandatory gateway, shared guard engine, audit linkage,
+and evidence-receipt builders. Only authentication, enforcement, quota,
+durable event persistence, and provider execution boundaries are mocked.
 
 ## Scope / Methodology
 
-The worker captured the clean committed dispatch continuity HEAD, confirmed
-both worker-owned outputs were absent, verified the protected route line
-counts and source symbols, and ran the required pre-implementation command
-before test authoring. The gate failed in committed packet metadata outside
-worker ownership. Per the work order's Return-To-Orchestrator Conditions, the
-worker did not create the focused test or modify runtime, existing tests,
-governance, session, roadmap, work-order, baseline, or closure surfaces.
+The worker started from clean committed R2 continuity HEAD `df0eaf632`, ran
+the variable-based pre-implementation gate before edits, created the one
+focused test, and refreshed this retained return. The suite uses fake
+credentials, resets both rate-limit buckets and both shared singletons for
+each case, and performs no external network or provider call.
 
 ## Findings / Position
 
-The pre-implementation bundle ran 77 commands. Seventy-six passed. The
-`agent automation assist early diagnostics` command failed because the
-committed work order's Worker Return Packet Shape Contract does not enumerate
-the required worker-return section terms, conditional section terms, and the
-N/A-with-reason instruction expected by the automation assist.
+The positive case passed through the real gateway as `ALLOW`, emitted one
+seven-field `MANDATORY_GATEWAY_EVALUATED` event with the supplied request ID,
+linked the deterministic audit ID into the response envelope, returned an
+`ALLOW` evidence receipt, and called mocked `executeAI` exactly once.
 
-This is a dispatch-packet defect outside the two worker-owned writable paths.
-The route source remains 955 lines, the existing route test remains 1153
-lines, both authorized output paths were absent at preflight, and no test or
-runtime edit began.
+The negative case supplied valid `aiCommit` metadata so the real pipeline
+reached the source-backed authority decision. It returned 400 with final
+decision `BLOCK`, emitted one seven-field gateway event identifying
+`authority_gate`, linked the deterministic audit ID, returned a `BLOCK`
+evidence receipt, and called mocked `executeAI` zero times.
 
 ## Decision / Disposition
 
-`BLOCKED_SCOPE_EXPANSION_REQUIRED`
-
-The reviewer/closer must repair and recommit or redispatch the packet before a
-worker may create the focused test. This return does not recommend closure.
+The bounded deterministic proof is complete and ready for independent Codex
+review. It proves only the local GC-009 route composition with a mocked
+provider seam.
 
 ## Risk / Corrective Action
 
-Proceeding after a failed mandatory phase gate would bypass the governed
-dispatch contract. The corrective action is reviewer-owned packet repair:
-make the Worker Return Packet Shape Contract enumerate the full required and
-conditional section vocabulary plus the N/A-with-reason instruction, rerun
-pre-dispatch and pre-implementation over valid ranges, and redispatch from a
-fresh clean committed HEAD.
+The proof is not live provider evidence, deployment evidence, or production
+readiness. GC-010 and T3-T4 remain held. Independent review must inspect the
+mock graph, rerun the same commands, and decide closure.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_work_order_dispatch_quality_tables.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_worker_experience_retrospective.py`; `governance/compat/check_finding_to_governance_learning.py` |
-| literalTokensReviewed | worker-return required headings; self-declaration marker; work-order response markers; `BLOCKED_WITH_REASON`; `WORKER_MUST_NOT_COMMIT honored`; trace labels; Delta evidence tokens; public export enum |
-| gateRunPurpose | confirm worker-return structure after source read-ahead and record the blocking pre-implementation evidence |
-| claimBoundary | checker compliance can make this blocked return reviewable; it cannot prove T2 behavior or cure the committed dispatch defect |
+| literalTokensReviewed | worker-return required headings; self-declaration and work-order response markers; `COMPLETE_PENDING_REVIEW`; `WORKER_MUST_NOT_COMMIT honored`; trace labels; Delta evidence tokens; public export enum |
+| gateRunPurpose | confirm the completed worker return after source review, implementation, and fresh deterministic verification |
+| claimBoundary | checker compliance makes the return reviewable but does not independently accept or close T2 |
 
 ## Gate Evidence
 
 | Command | Result |
 |---|---|
-| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 14434bf58 --head HEAD` | FAIL: 1 of 77 commands failed; 76 passed |
-| `python governance/compat/run_worker_return_fast_gate.py` | PASS final run; first run exposed two worker-return-local shape defects that were repaired before return |
+| variable-based R2 pre-implementation command | PASS: 77/77 before edits and PASS: 77/77 after edits |
+| focused Vitest suite | PASS: 2/2 |
+| focused plus existing route suite | PASS: 33/33 |
+| T1 adapter and singleton regression bundle | PASS: 20/20 |
+| cvf-web TypeScript check | PASS |
+| governed file-size gate | PASS: 0 violations |
+| worker-return fast gate | PASS: corpus drift, epistemic packet, worker-return quality, reviewer-fast 62/62, and diff whitespace checks |
 
-receiptEvidence: CLAIM_REJECTED_NO_RECEIPT - no T2 route receipt exists because implementation stopped before test authoring.
+receiptEvidence: CVF_RECEIPT_PRESENT - both local responses asserted matching
+gateway decisions and deterministic envelope audit linkage.
 
 ## Actual Changed Set
 
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mandatory-gateway-invocation.test.ts`
 - `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md`
-
-The focused test was not created because the mandatory pre-implementation
-gate failed before edits.
 
 ## Agent Operation Trace Block
 
@@ -136,20 +138,20 @@ gate failed before edits.
 |---|---|
 | Actor | delegated documentation-and-test worker |
 | Provider or surface | local Codex workspace |
-| Session or invocation | GC009-GC010-PCALLER-T2 blocked worker execution, 2026-07-26 |
-| Working directory | repository root |
-| Command or tool surface | governed reads, `rg`, git status/log/line-count checks, source inspection, mandatory pre-implementation gate, `apply_patch` |
-| Target paths | designated worker return only; focused test withheld after the blocking gate |
-| Allowed scope source | committed T2 work order at dispatch continuity HEAD `b1c6a0670` |
-| Before status evidence | clean `git status --short --untracked-files=all`; both worker-owned output paths absent; HEAD `b1c6a0670` |
-| After status evidence | one untracked designated worker return; focused test absent; protected sources unchanged |
-| Diff evidence | `git diff --name-status`; `git status --short`; untracked-file enumeration |
-| Approval boundary | record blocker inside the authorized worker-return path only |
-| Claim boundary | pre-implementation diagnostic evidence only; no T2 invocation, runtime, provider, live, GC-010, T3-T4, public, deploy, or production claim |
+| Session or invocation | GC009-GC010-PCALLER-T2 R2 execution, 2026-07-26 |
+| Working directory | repository root and cvf-web package |
+| Command or tool surface | governed reads, git checks, `apply_patch`, Vitest, TypeScript, negative scans, governance gates |
+| Target paths | focused route invocation test and retained worker return |
+| Allowed scope source | committed R2 work order at continuity HEAD `df0eaf632` |
+| Before status evidence | clean worktree and index; focused test absent; retained return committed at `08a965226` |
+| After status evidence | exactly the focused test and retained return differ from execution base |
+| Diff evidence | `git diff --name-status`; `git ls-files --others --exclude-standard`; `git status --short --untracked-files=all` |
+| Approval boundary | exact two-path no-commit worker manifest |
+| Claim boundary | deterministic local GC-009 proof only; no live/provider/deployment/GC-010/T3-T4/public claim |
 | Agent type | worker |
-| Invocation ID | `gc009-gc010-pcaller-t2-worker-2026-07-26` |
-| Expected manifest | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md` |
-| Actual changed set | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md` |
+| Invocation ID | `gc009-gc010-pcaller-t2-r2-worker-2026-07-26` |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mandatory-gateway-invocation.test.ts`; `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mandatory-gateway-invocation.test.ts`; `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename occurred |
 
@@ -157,21 +159,21 @@ gate failed before edits.
 
 | Field | Disposition |
 |---|---|
-| claimScope | mandatory pre-implementation diagnostic and no-commit worker return |
-| claimDisposition | CLAIM_REJECTED: no T2 invocation behavior is claimed |
-| receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: no route proof was executed |
-| actionEvidence | ACTION_EVIDENCE_PRESENT: the required phase gate ran once and returned the recorded packet-shape failure |
-| invocationBoundary | local repository checks and governance gate only |
-| interceptionBoundary | no provider, browser, CLI, MCP, runtime adapter, process-control, or external-agent interception claim |
-| claimLanguage | committed dispatch packet is blocked before test authoring by a mandatory gate defect outside worker scope |
-| forbiddenExpansion | no runtime source, existing test, work order, baseline, roadmap, governance, session, public, GC-010, T3-T4, push, deployment, or production action |
+| claimScope | deterministic local test of the existing T1 route composition |
+| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE: actual POST and real gateway chain produced the asserted ALLOW and BLOCK outcomes |
+| receiptEvidence | CVF_RECEIPT_PRESENT: both response receipts match the real gateway decision and linked audit event |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: mocked provider seam count was one for ALLOW and zero for BLOCK |
+| invocationBoundary | local Vitest POST invocation with provider execution mocked |
+| interceptionBoundary | no browser, CLI, MCP, live provider, external-agent, process-control, or deployment interception claim |
+| claimLanguage | deterministic local GC-009 invocation proof pending independent review |
+| forbiddenExpansion | no runtime source, existing test, GC-010, T3-T4, live provider, public-sync, push, deployment, or production-readiness action |
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance blocked worker return; no public-sync authority or
-matching public artifact exists.
+Reason: private provenance test and worker-return evidence with no public-sync
+authorization or matching public artifact.
 
 ## External Knowledge Intake Routing
 
@@ -183,7 +185,7 @@ matching public artifact exists.
 | Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
 | Owner surface | this worker return |
 | Disposition | NOT_APPLICABLE_WITH_REASON |
-| Claim boundary | repo-governed packet and local gate evidence only |
+| Claim boundary | repo-governed runtime source and deterministic local proof only |
 
 ## Rescan Intelligence Hardening
 
@@ -200,95 +202,90 @@ or source-backed reassessment output.
 
 | Finding | Defect class | Learning lane | Disposition | Next control action |
 |---|---|---|---|---|
-| Committed worker-return shape contract omitted vocabulary required by the pre-implementation automation assist | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | reviewer/closer repairs and redispatches the governed packet; no worker-side rule change |
+| Negative request needed valid `aiCommit` metadata to reach the intended authority-gate blocker | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | future packets should name prerequisite guard metadata when requiring a specific downstream blocker |
 
-Runtime/provider/cost lane: N/A_WITH_REASON - the finding concerns committed
-dispatch packet structure, not runtime behavior, provider output, cost, token,
-or latency evidence.
+Runtime/provider/cost lane: N/A_WITH_REASON - this finding concerns test
+request construction and guard ordering, not provider output, cost, token, or
+latency behavior.
 
 ## Epistemic Process Block
 
 - Epistemic Process Applicability: BOUNDED_GOVERNANCE_IMPLEMENTATION
-- Expected result / prediction: the committed reviewer-accepted dispatch packet would pass pre-implementation and release focused test authoring.
-- Evidence Comparison: 76 of 77 commands passed, but automation assist rejected the committed worker-return shape contract vocabulary.
-- Contradiction or gap disposition: stop before test authoring and return the fixed blocked terminal disposition without scope expansion.
-- Claim update: packet dispatch state is insufficient for worker execution until reviewer-owned repair and fresh gate evidence exist.
+- Expected result / prediction: authorized OPERATOR analysis reaches the mocked provider seam once, while unauthorized governance deletion is blocked before that seam.
+- Evidence Comparison: the positive case matched prediction; the first negative run was blocked earlier by `ai_commit`, and adding valid prerequisite metadata produced the predicted `authority_gate` BLOCK without changing runtime.
+- Contradiction or gap disposition: resolved within the allowed test path by constructing the source-valid negative request.
+- Claim update: local T2 evidence is complete pending independent review; no live or production claim follows.
 
 ## Worker Experience Retrospective
 
 WORKER_EXPERIENCE_RETRO:
 
-frictionLevel: BLOCKING
+frictionLevel: LOW
 
 frictionType: GATE_SURPRISE
 
-observedStep: mandatory pre-implementation gate against the committed dispatch packet
+observedStep: first focused negative-case execution
 
 preventiveControlCandidate: WORK_ORDER_TEMPLATE
 
-workerFrictionObserved: the packet passed pre-dispatch review but its
-worker-return shape contract did not satisfy the pre-implementation automation
-assist.
+workerFrictionObserved: the requested downstream blocker required valid
+metadata for an earlier guard.
 
-workerRepairWithinScope: none; the defect is in a forbidden work-order path.
+workerRepairWithinScope: added deterministic `aiCommit` metadata to the
+negative test request and reran the focused suite.
 
-futurePacketImprovement: run the automation assist against the committed
-packet range before worker dispatch and include the full worker-return section
-vocabulary in the shape contract.
+futurePacketImprovement: specify prerequisite guard metadata whenever a test
+must reach a named downstream guard.
 
 retrospectiveDisposition: `NO_NEW_RULE_REQUIRED`
 
 ## Machine Closure Package
 
-NOT_APPLICABLE_WITH_REASON: this is a blocked worker return, not a
+NOT_APPLICABLE_WITH_REASON: this is a pending-review worker return, not a
 closed-equivalent artifact. Closure packaging remains reviewer/closer owned.
 
 ## Claim Boundary
 
-This return records a mandatory pre-implementation packet-shape failure and
-the worker's fail-closed stop. It does not provide the focused route proof,
-does not modify runtime or existing tests, and does not claim T2 invocation,
-provider/live behavior, GC-010, T3-T4, public export, deployment, production
-readiness, or paired-gap closure.
+This return records deterministic local evidence for the existing GC-009
+execute-route composition. It does not modify runtime or existing tests and
+does not claim live provider behavior, deployed behavior, production
+readiness, GC-010, T3-T4, public export, or paired-gap closure.
 
 ## git status --short
 
 ```text
-?? docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md
+?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mandatory-gateway-invocation.test.ts
+ M docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md
 ```
 
 ## Changed Files
 
-`git diff --name-status` is empty because the only changed path is untracked.
-`git ls-files --others --exclude-standard` reports:
-
-```text
-docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md
-```
+`git diff --name-status` reports the retained worker return as modified.
+`git ls-files --others --exclude-standard` reports the focused test. Together
+they match the exact two-path worker manifest.
 
 ## Command Evidence
 
 | Command | Result |
 |---|---|
-| `git rev-parse --short HEAD` | PASS: `b1c6a0670` |
+| `git rev-parse --short HEAD` | PASS: `df0eaf632` |
 | `git status --short --untracked-files=all` before edits | PASS: empty |
-| protected route line-count check | PASS: `route.ts` 955; `route.test.ts` 1153 |
-| authorized output absence check | PASS: both paths absent before edits |
-| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 14434bf58 --head HEAD` | FAIL: automation assist rejected committed packet shape; remaining 76 commands passed |
-| focused and regression tests | BLOCKED: mandatory pre-implementation failed before test authoring |
-| cvf-web typecheck | BLOCKED: no implementation was released after the phase-gate failure |
-| forbidden-mock negative scan | PASS: zero matches because the focused test was not created after the blocking gate |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base $executionBaseHead --head HEAD` | PASS: 77/77 before edits and PASS: 77/77 after edits |
+| focused Vitest suite, first run | FAIL: negative reached `ai_commit`; no runtime change made |
+| focused Vitest suite, final run | PASS: 2/2 |
+| focused plus existing route suite | PASS: 33/33 |
+| T1 adapter and singleton regression bundle | PASS: 20/20 |
+| `npx tsc --noEmit` | PASS |
+| forbidden mock-declaration scan | PASS: zero matches |
+| forbidden injected-function scan | PASS: zero matches |
 | `python governance/compat/check_governed_file_size.py --enforce` | PASS: 0 violations |
-| `python governance/compat/run_worker_return_fast_gate.py` | PASS final run; first run defects repaired inside this return |
-| `git diff --check` | PASS |
-| `git diff --name-status` | PASS: empty; only authorized untracked worker return exists |
-| `git diff --cached --name-status` | PASS: empty |
-| `git status --short --untracked-files=all` | PASS: exactly the designated untracked worker return |
-| final focused-test line count | N/A with reason: the test was not created after mandatory pre-implementation failed |
-| final worker-return line count | PASS: 294 lines |
+| `python governance/compat/run_worker_return_fast_gate.py` | PASS: all stages, including reviewer-fast 62/62 |
+| `git diff --check`; `git diff --cached --name-status` | PASS: no whitespace errors and empty index |
+| final focused-test and worker-return line counts | PASS: 259 and 291 lines |
+| no-live verification | PASS: fake OpenAI key and mocked `executeAI`; no external call |
 
 ## No-Commit Statement
 
-WORKER_MUST_NOT_COMMIT honored: HEAD remains `b1c6a0670`; no git commit or
-staging action was performed. Reviewer/closer owns any packet repair,
-redispatch, material commit, and continuity update.
+WORKER_MUST_NOT_COMMIT honored: HEAD remains `df0eaf632`; no staging or commit
+was performed. Reviewer/closer owns independent review, closure, material
+commit, and continuity updates.
