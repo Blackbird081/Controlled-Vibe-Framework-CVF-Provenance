@@ -1,4 +1,4 @@
-# CVF Agent Handoff V53 - GC009 Live T5 R1 Redispatch
+# CVF Agent Handoff V53 - GC009 Live T5 R2 Redispatch
 
 Memory class: active-handoff
 
@@ -6,15 +6,16 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the independently accepted blocked GC009-LIVE-T5 attempt and the
-operator-authorized R1 correction while preserving GC010-AER-T2 value parking.
+Carry the independently accepted R1 partial live proof and the
+operator-authorized R2 correction while preserving GC010-AER-T2 value parking.
 
 ## Scope / Target / Owner Boundary
 
-Scope: blocked-review continuity and R1 dispatch preparation.
+Scope: R1 partial-proof review continuity and R2 dispatch preparation.
 
-Target: dispatch material commit `c6e850d11` to the same Claude worker for one
-fixture-only R1 with offline safety preflight, one live run, and no rerun.
+Target: dispatch material commit `6a5eb8f54` to the same Claude worker for the
+exact two-assertion R2 correction, offline safety preflight, one live run, and
+no rerun.
 
 Owner boundary: Claude owns exactly the three worker paths in the work order.
 Codex owns independent review, closure, and session sync. No runtime mutation,
@@ -26,17 +27,20 @@ public, push, deployment, or GC-010 authority is active.
 
 ## Active Boundary
 
-GC009-LIVE-T5 R1 is redispatch-ready at `c6e850d11`. The same Claude worker
-may modify exactly the three worker artifacts, run offline safety preflight,
-and execute one focused live run with existing keys and no rerun.
+GC009-LIVE-T5 R2 is redispatch-ready at `6a5eb8f54`. The same Claude worker
+may modify exactly the three worker artifacts, delete the two response-level
+topic/context exclusions, retain key and event-level exclusions, run offline
+safety preflight, and execute one focused live run with existing keys and no
+rerun.
 GC010-AER-T2 remains value-parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=send the
-committed R1 work order to the same Claude no-commit worker for one fixture
-correction, offline safety preflight, one focused live run, and no rerun;
+committed R2 work order to the same Claude no-commit worker for the exact
+response-assertion correction, offline safety preflight, one focused live run,
+and no rerun;
 parked checkpoint=GC010-AER remains value-parked, and
 runtime mutation, broad release proof, public-sync, push, deployment, and
 production-readiness claims remain forbidden.
@@ -56,6 +60,10 @@ production-readiness claims remain forbidden.
 
 ## Latest Work / Changes
 
+- Committed the six-path R1 review and R2 redispatch packet at `6a5eb8f54`.
+- Accepted one confirmed R1 Alibaba ALLOW call while retaining BLOCK, durable
+  event, and projection as not reached.
+- Pre-dispatch, commit steward, and pre-commit 83/83 passed for R2.
 - Committed the two-path R1 redispatch packet at `c6e850d11`.
 - Pre-dispatch passed 75/75 and pre-commit passed 83/83.
 - Independently accepted the first live attempt as blocked at `6b6cd6ab1`.
@@ -74,10 +82,12 @@ production-readiness claims remain forbidden.
 
 ## Next Allowed Move
 
-Send the complete committed R1 work order to the same Claude worker under
+Send the complete committed R2 work order to the same Claude worker under
 `WORKER_MUST_NOT_COMMIT`. Claude modifies exactly the focused test, audit, and
-worker return; runs offline safety preflight; executes exactly one focused
-live run using existing keys; and performs no rerun.
+worker return; deletes only the two response-level topic/context exclusions;
+retains key and event-level exclusions; corrects the R1 evidence; runs offline
+safety preflight; executes exactly one focused live run using existing keys;
+and performs no rerun.
 
 Do not re-propose GC010-AER caller implementation or proof work until current
 source simultaneously proves all four facts:
@@ -247,3 +257,29 @@ to this handoff marker so the checker may accept its parent SHA.
 This handoff records dispatch and session routing only. It does not claim the
 live proof has executed or passed, and it makes no runtime mutation, public,
 deployment, GC-010, production-SLO, or production-readiness claim.
+
+## Core Guard Self-Protection Authorization - GC009 Live T5 R2 Redispatch
+
+Authorized continuity scope: record R2 material commit `6a5eb8f54` and align
+next-move surfaces with the same Claude no-commit worker route.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009LiveT5R2Redispatch20260726.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: continue with R2 and use existing API keys for the
+single governed live run.
+
+Rollback boundary: revert only this continuity set if material commit
+`6a5eb8f54` is reverted.
+
+## GC-020 Marker - GC009 Live T5 R2 Redispatch
+
+This handoff records material parent commit `6a5eb8f54`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated session-sync commit.

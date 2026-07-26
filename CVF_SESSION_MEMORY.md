@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=send the committed GC009-LIVE-T5 R1 work order to the same Claude worker under WORKER_MUST_NOT_COMMIT for one fixture correction, offline safety preflight, exactly one focused live run, and no rerun; parked checkpoint=GC010-AER remains value-parked, and no runtime mutation, broad release bundle, public-sync, push, deployment, or production-readiness claim is authorized.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=send the committed GC009-LIVE-T5 R2 work order to the same Claude worker under WORKER_MUST_NOT_COMMIT for the exact response-leakage assertion correction, offline safety preflight, exactly one focused live run, and no rerun; parked checkpoint=GC010-AER remains value-parked, and no runtime mutation, broad release bundle, public-sync, push, deployment, or production-readiness claim is authorized.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC009-LIVE-T5 R2 redispatch | `6a5eb8f54` | REVIEWER_ACCEPTED_REDISPATCH_READY_R2_RESPONSE_LEAKAGE_SCOPE_ONE_RUN_NO_RERUN. R1 confirmed one Alibaba ALLOW call but stopped before BLOCK/events/projection. Same Claude worker deletes exactly two response-level topic/context exclusions, preserves event-level minimization checks, corrects R1 evidence, runs one focused live call, and performs no rerun or commit. |
 | GC009-LIVE-T5 R1 redispatch | `c6e850d11` | REVIEWER_ACCEPTED_REDISPATCH_READY_R1_FIXTURE_PREFLIGHT_ONE_RUN_NO_RERUN. Same Claude worker modifies exactly test, audit, and worker return; uses existing keys for one focused run; no rerun or worker commit. |
 | GC009-LIVE-T5 blocked attempt review | `6b6cd6ab1` | REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED. The fixture was blocked before gateway/provider, so liveCallCount=0. Reviewer rejected the logging-only rerun as noncompliant. Operator authorized R1 using existing keys: one fixture correction, offline safety preflight, one focused live run, no rerun. |
 | GC009-LIVE-T5 bounded operator acceptance proof dispatch | `8f091a855` | REVIEWER_ACCEPTED_DISPATCH_READY. One Claude worker may create exactly one focused live test, one audit, and one worker return under `WORKER_MUST_NOT_COMMIT`; one initial Alibaba call and at most one diagnostic rerun are authorized. Codex independently reviews. |
