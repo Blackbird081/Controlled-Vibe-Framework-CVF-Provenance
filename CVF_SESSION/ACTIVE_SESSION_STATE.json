@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T2 initial execution is BLOCKED_SCOPE_EXPANSION_REQUIRED with accepted worker evidence at commit 08a965226. Pre-implementation passed 76/77; the sole failure is a reviewer-owned Worker Return Packet Shape Contract omission, and no focused test or runtime edit occurred. The exact next move is reviewer repair of only that contract, pre-dispatch rerun, committed R1 redispatch, then resume the same WORKER_MUST_NOT_COMMIT worker scope. T3-T4 and GC-010 remain HOLD_*; no live provider/API/account/network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment, production-readiness, or paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T2 R1 packet-contract repair is committed at 05975595b after automation assist CLEAN, dispatch author fast PASS, pre-dispatch 75/75 PASS, dispatch commit steward PASS, and pre-commit 83/83 PASS. Resume the same WORKER_MUST_NOT_COMMIT worker under R1 authority to create only the focused route mandatory-gateway invocation test and refresh the retained worker return accepted at 08a965226. Runtime and existing tests remain out of scope. T3-T4 and GC-010 remain HOLD_*; no live provider/API/account/network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment, production-readiness, or paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14188,5 +14188,19 @@
     "blocker": "committed Worker Return Packet Shape Contract omitted automation-assist required and conditional section terms plus the N/A-with-reason instruction",
     "nextAllowedMove": "reviewer repairs only the T2 Worker Return Packet Shape Contract, reruns pre-dispatch, commits the R1 packet, and redispatches the same no-commit worker scope",
     "claimBoundary": "No focused test or runtime edit occurred. T2 remains pending; T3-T4 and GC-010 remain HOLD_*."
+  },
+  "gc009Gc010ProductionCallerT2R1ContractRepairRedispatch20260726": {
+    "status": "REVIEWER_ACCEPTED_REDISPATCH_READY_R1_WORKER_RETURN_CONTRACT_REPAIR",
+    "date": "2026-07-26",
+    "materialCommit": "05975595b",
+    "originalExecutionBaseHead": "b1c6a0670",
+    "acceptedBlockedReturnCommit": "08a965226",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_2026-07-26.md",
+    "roadmap": "docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md",
+    "workerReturn": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md",
+    "verification": "automation assist CLEAN; dispatch author fast gate PASS; pre-dispatch 75/75 PASS; dispatch commit steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "resume the same WORKER_MUST_NOT_COMMIT worker under R1 authority to create the focused test and refresh the retained worker return",
+    "workerWritablePaths": "one focused route.mandatory-gateway-invocation.test.ts plus the designated retained worker return",
+    "claimBoundary": "Reviewer-owned packet-contract repair only. Runtime and existing tests remain out of scope; T3-T4 and GC-010 remain HOLD_*."
   }
 }
