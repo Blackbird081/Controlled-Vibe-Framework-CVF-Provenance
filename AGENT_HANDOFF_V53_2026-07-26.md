@@ -151,26 +151,31 @@ This handoff records material parent commit `8f091a855`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for the dedicated session-sync commit.
 
+## GC-020 Marker - GC009 Live T5 Dispatch Child
+
+This handoff records continuity commit `062ab32b9`. The next commit is limited
+to this handoff marker so the checker may accept its parent SHA.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
 | Actor | Codex dispatcher/reviewer |
 | Provider or surface | local private provenance repository |
-| Session or invocation | GC009-LIVE-T5 dispatch continuity after material commit `8f091a855` |
+| Session or invocation | GC009-LIVE-T5 dispatch continuity child marker after commit `062ab32b9` |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, git status/diff, commit steward, and pre-commit hook |
-| Target paths | the six protected source and generated paths named in the expected manifest below |
+| Target paths | the one protected handoff path named in the expected manifest below |
 | Allowed scope source | operator acceptance of the GC009 live-proof next step and mandatory dispatch continuity |
-| Before status evidence | HEAD `8f091a855`; exact three-path dispatch packet committed; continuity worktree initially clean |
-| After status evidence | generated state and front doors route exactly one Claude no-commit worker to the T5 work order |
-| Diff evidence | `git diff --cached --name-status` records five modifications and one new state fragment |
-| Approval boundary | dispatch and mandatory session continuity only; live execution belongs to the bounded worker route |
+| Before status evidence | HEAD `062ab32b9`; six-path dispatch continuity committed; worktree clean |
+| After status evidence | handoff records continuity commit `062ab32b9` |
+| Diff evidence | `git diff --cached --name-status` records exactly one modified handoff |
+| Approval boundary | GC-020 child marker only; live execution belongs to the bounded worker route |
 | Claim boundary | repository-local documentation and state trace only |
 | Agent type | Codex |
-| Invocation ID | `gc009-live-t5-dispatch-continuity-2026-07-26` |
-| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/gc009LiveT5BoundedOperatorAcceptanceProofDispatch20260726.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/gc009LiveT5BoundedOperatorAcceptanceProofDispatch20260726.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | `gc009-live-t5-dispatch-continuity-child-2026-07-26` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this continuity batch |
 
