@@ -214,26 +214,31 @@ This handoff records material parent commit `c6e850d11`. The continuity child
 SHA cannot be known before commit creation, so the checker may accept this
 parent SHA for the dedicated session-sync commit.
 
+## GC-020 Marker - GC009 Live T5 R1 Redispatch Child
+
+This handoff records continuity commit `fe784ce9c`. The next commit is limited
+to this handoff marker so the checker may accept its parent SHA.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
 | Actor | Codex dispatcher/reviewer |
 | Provider or surface | local private provenance repository |
-| Session or invocation | GC009-LIVE-T5 R1 redispatch continuity after commit `c6e850d11` |
+| Session or invocation | GC009-LIVE-T5 R1 redispatch continuity child after commit `fe784ce9c` |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, git status/diff, commit steward, and pre-commit hook |
-| Target paths | the six protected paths named in the expected manifest below |
+| Target paths | the one protected handoff path named in the expected manifest below |
 | Allowed scope source | operator acceptance of the GC009 live-proof next step and mandatory dispatch continuity |
-| Before status evidence | HEAD `c6e850d11`; R1 redispatch committed; worktree clean |
-| After status evidence | state and front doors route to the committed R1 |
-| Diff evidence | `git diff --cached --name-status` records five modifications and one new state fragment |
-| Approval boundary | continuity only; Claude owns R1 execution |
+| Before status evidence | HEAD `fe784ce9c`; six-path continuity committed; worktree clean |
+| After status evidence | handoff records continuity commit `fe784ce9c` |
+| Diff evidence | `git diff --cached --name-status` records one modified handoff |
+| Approval boundary | GC-020 child marker only |
 | Claim boundary | repository-local documentation and state trace only |
 | Agent type | Codex |
-| Invocation ID | `gc009-live-t5-r1-redispatch-continuity-2026-07-26` |
-| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/gc009LiveT5R1Redispatch20260726.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/gc009LiveT5R1Redispatch20260726.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | `gc009-live-t5-r1-redispatch-continuity-child-2026-07-26` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this continuity batch |
 
