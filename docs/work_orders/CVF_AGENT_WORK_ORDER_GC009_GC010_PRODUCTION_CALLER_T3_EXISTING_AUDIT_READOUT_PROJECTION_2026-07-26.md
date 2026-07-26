@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_CONTINUITY_REPAIR
 
 Batch ID: GC009-GC010-PCALLER-T3
 
@@ -15,6 +15,16 @@ Worker: one delegated Web component-and-test worker
 Reviewer/closer: Codex
 
 Worker return path: `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T3_EXISTING_AUDIT_READOUT_PROJECTION_WORKER_RETURN_2026-07-26.md`
+
+R1 prior clean execution head: `9a60d5097`
+
+R1 continuation authority: retain the accepted blocked worker return at commit
+`28255260f`. Its sole block was the reviewer-owned active-handoff marker.
+Continuity commits `39f0e53a9` and `b3419716f` repair that marker. No component
+or test edit occurred, and the original three-path worker manifest is
+unchanged. R1 must capture the current clean execution HEAD, rerun
+pre-implementation, implement the same component/test scope, refresh the same
+worker return, and stop without commit.
 
 ## Dispatch Prompt Envelope
 
@@ -167,7 +177,9 @@ generic event rendering, and never dump the raw payload.
 1. Capture `executionBaseHead` from committed dispatch HEAD.
 2. Require empty status including untracked and staged files.
 3. Confirm packet and baseline are committed and dispatch-ready.
-4. Confirm `Test-Path` is false for the new test and worker return.
+4. For R1, confirm the focused test is absent and the retained worker return
+   is the committed `BLOCKED_SCOPE_EXPANSION_REQUIRED` artifact at
+   `28255260f`; refresh that same return during execution.
 5. Confirm `AdminAuditLogBody.tsx` is 158 lines at dispatch.
 6. Confirm the existing page still passes `readAuditEvents()` results directly
    to `AdminAuditLogBody`.
@@ -586,7 +598,7 @@ Reason: private provenance work order with no matching public-sync artifact.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
+| Work order status | this work order | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_CONTINUITY_REPAIR` | PASS |
 | Baseline status | companion baseline | same dispatch-ready status | PASS |
 | Dependency release | T2 completion review | `2e4412c88`; `01e74fc5e` | PASS |
 | Roadmap state | companion roadmap | T3 dispatch-ready; T4 held | PASS |
