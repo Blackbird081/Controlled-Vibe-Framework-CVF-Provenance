@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V52_2026-07-25.md",
+  "activeHandoff": "AGENT_HANDOFF_V53_2026-07-26.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -85,7 +85,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V48_2026-07-18.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V49_2026-07-20.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V50_2026-07-22.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V51_2026-07-22.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V51_2026-07-22.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V52_2026-07-25.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
@@ -13687,7 +13688,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC010-AER-T2 is REVIEWER_ACCEPTED_DISPATCH_READY at material commit ab673bf42. The exact next move is to send the complete committed work order to one documentation worker through the operator-selected Claude surface under WORKER_MUST_NOT_COMMIT. The worker creates exactly the caller-ownership audit and worker return; Codex independently reviews. No implementation dispatch is authorized. No runtime/test/package/export/provider/Web/execution-plane/CLI/MCP edit or execution, live provider/API/account/network use, latency benchmark, rollback action, public-sync, push, deployment, GC-010 closure, or production-readiness claim is authorized. GC009 T1-T4 remain closed bounded; production latency remains NOT_MEASURED_NO_LIVE_AUTHORITY; GC-010 and the paired gap remain open. Other parked lanes retain their recorded conditions. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC010-AER-T2 is independently closed at material commit b915367db with disposition CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION. Do not re-propose GC010-AER caller implementation or proof work until current source simultaneously proves all four facts: a non-test import or construction of AgentExecutionRuntime; a registered production trigger that reaches that caller; concrete GuardRuntimeEngine and ExecutionProvider wiring; and a durable receipt or audit consumer for the caller result. A work order, export-only change, chat proposal, or provider-local note does not satisfy the condition. If all four facts become source-verifiable, the reviewer may author a fresh GC-018 and work order; otherwise this lane remains value-parked. No runtime/test/package/export/provider/Web/execution-plane/CLI/MCP edit or execution, live provider/API/account/network use, latency benchmark, rollback action, public-sync, push, deployment, GC-010 closure, or production-readiness claim is authorized. GC009 T1-T4 remain closed bounded; production latency remains NOT_MEASURED_NO_LIVE_AUTHORITY; GC-010 and the paired gap remain open. Other parked lanes retain their recorded conditions. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14327,5 +14328,17 @@
     "verification": "automation assist clean; pre-dispatch 75/75; commit steward PASS; pre-commit 83/83",
     "nextAllowedMove": "send the complete committed GC010-AER-T2 work order to the worker; worker creates exactly two unstaged documentation outputs; Codex independently reviews",
     "claimBoundary": "No implementation, caller creation, runtime/test/package/export/provider/Web/execution-plane/CLI/MCP action, live proof, public action, deployment, GC-010 closure, or production-readiness claim."
+  },
+  "gc010AgentExecutionRuntimeT2CallerDecisionClosureHandoffRotation20260726": {
+    "status": "CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION",
+    "date": "2026-07-26",
+    "materialCommit": "b915367db",
+    "executionBaseHead": "158fd17ae",
+    "completionReview": "docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_COMPLETION_2026-07-26.md",
+    "activeHandoff": "AGENT_HANDOFF_V53_2026-07-26.md",
+    "verification": "independent R1 semantic review; worker-return fast 62/62; GC-023 PASS; pre-commit 83/83; exact nine-path material closure",
+    "reopenCondition": "current source must simultaneously prove a non-test AgentExecutionRuntime import or construction, a registered production trigger, concrete GuardRuntimeEngine and ExecutionProvider wiring, and a durable receipt or audit consumer",
+    "nextAllowedMove": "retain the lane as value-parked unless all four source facts become true; only then may the reviewer author a fresh GC-018 and work order",
+    "claimBoundary": "GC-010 and the paired gap remain open. No implementation, caller creation, runtime/test/package/export/provider/Web/execution-plane/CLI/MCP action, live proof, public action, deployment, or production-readiness claim."
   }
 }

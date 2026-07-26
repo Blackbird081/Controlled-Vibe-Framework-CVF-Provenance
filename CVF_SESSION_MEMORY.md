@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V52_2026-07-25.md`
+4. `AGENT_HANDOFF_V53_2026-07-26.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V52_2026-07-25.md` |
+| Active handoff | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=send committed GC010-AER-T2 caller-decision work order to one documentation worker through the operator-selected Claude surface under WORKER_MUST_NOT_COMMIT, then Codex independently reviews; parked checkpoint=all GC-010 implementation dispatch, production-caller closure, guard-exception/audit-append reliability until its concrete reopen condition, production latency, live provider/API/account/network use, rollback, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=retain GC010-AER as value-parked unless current source simultaneously proves a non-test AgentExecutionRuntime caller, registered production trigger, real guard/provider wiring, and durable receipt or audit consumer; parked checkpoint=all GC-010 implementation, caller creation, runtime/test/package/export/provider/Web/execution-plane/CLI/MCP action, live proof, public-sync, push, deployment, and production-readiness claims.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC010-AER-T2 non-test caller ownership decision closure | `b915367db` | CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION. No current candidate owns a compatible non-test production caller. Reopen only when source simultaneously proves the non-test caller, registered production trigger, real guard/provider wiring, and durable receipt or audit consumer. |
 | GC010-AER-T2 non-test caller ownership decision dispatch | `ab673bf42` | REVIEWER_ACCEPTED_DISPATCH_READY. One no-commit documentation worker must compare five caller families, answer sixteen source questions, create exactly the audit and worker return, and leave all implementation and execution surfaces unchanged. |
 | GC010-AER-T1 interface/export/receipt design closure | `48e25c090` | CLOSED_PASS_BOUNDED_DESIGN_SPEC_READY_FOUNDATION_ONLY_CALLER_UNRESOLVED. R1 repairs all six reviewer blockers and defines a tested package-native foundation; no non-test production caller or caller-level invocation proof exists. |
 | GC010-AER-T1 interface/export/receipt design dispatch | `7fc1d7893` | REVIEWER_ACCEPTED_DISPATCH_READY. One Claude documentation worker owns exactly the design audit and worker return under `WORKER_MUST_NOT_COMMIT`; Codex independently reviews. |
@@ -391,12 +392,16 @@ PPMCP-R1 is independently closed with reviewer repairs at material commit
 `539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
 are parked behind concrete reopen conditions.
 
-GC010-AER-T2 is `REVIEWER_ACCEPTED_DISPATCH_READY` at material commit
-`ab673bf42`. The next move is to send the complete committed work order to one
-documentation worker through the operator-selected Claude surface under
-`WORKER_MUST_NOT_COMMIT`; Codex then independently reviews. The worker creates
-exactly the caller-ownership audit and worker return. No implementation
-dispatch is authorized.
+GC010-AER-T2 is independently closed at material commit `b915367db` with
+disposition
+`CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION`.
+Do not re-propose caller implementation or proof work until current source
+simultaneously proves a non-test `AgentExecutionRuntime` import or construction,
+a registered production trigger, concrete `GuardRuntimeEngine` and
+`ExecutionProvider` wiring, and a durable receipt or audit consumer. A work
+order, export-only change, chat proposal, or provider-local note is insufficient.
+If all four facts become source-verifiable, the reviewer may author a fresh
+GC-018 and work order. Otherwise the lane remains value-parked.
 GC009 T1-T4 remain closed bounded; production latency remains
 `NOT_MEASURED_NO_LIVE_AUTHORITY`; GC-010 and the paired gap remain open. No
 runtime/test/package/export/provider/Web/execution-plane/CLI/MCP edit or

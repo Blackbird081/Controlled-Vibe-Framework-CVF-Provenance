@@ -1,8 +1,8 @@
 # CVF Agent Handoff V52 - GC009/GC010 T1 Bounded Closure
 
-Memory class: active-handoff
+Memory class: archived-handoff
 
-Status: ACTIVE
+Status: SUPERSEDED
 
 ## Purpose
 
