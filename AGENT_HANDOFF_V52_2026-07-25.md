@@ -539,3 +539,32 @@ commit `05975595b` is reverted.
 This handoff records material parent commit `05975595b`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T2 R2 Redispatch Sync
+
+Authorized guard-maintenance scope: record reviewer-owned T2 R2
+execution-range repair commit `aa6fd8e86` and route the next move to the same
+no-commit worker for the exact focused invocation-proof test and retained
+worker return.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009Gc010ProductionCallerT2R2ExecutionRangeRepairRedispatch20260726.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: original bounded T2 dispatch, accepted packet-scope
+block, reviewer-owned R1 and R2 repairs, redispatch, and mandatory continuity
+maintenance.
+
+Rollback boundary: revert only this continuity set if material R2 redispatch
+commit `aa6fd8e86` is reverted.
+
+## GC-020 Marker - GC009-GC010 T2 R2 Redispatch Continuity
+
+This handoff records material parent commit `aa6fd8e86`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.

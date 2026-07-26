@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=resume the same no-commit T2 worker under committed R1 packet authority; parked checkpoint=T3-T4, GC-010 AgentExecutionRuntime, live provider/API/account/network/browser use, agent CLI/MCP, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=resume the same no-commit T2 worker under committed R2 execution-range authority; parked checkpoint=T3-T4, GC-010 AgentExecutionRuntime, live provider/API/account/network/browser use, agent CLI/MCP, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC009-GC010-PCALLER-T2 R2 execution-range redispatch | `aa6fd8e86` | REVIEWER_ACCEPTED_REDISPATCH_READY_R2_EXECUTION_RANGE_REPAIR. Pre-implementation now uses the captured current execution base instead of the historical dispatch base. Same two-path no-commit scope. |
 | GC009-GC010-PCALLER-T2 R1 contract-repair redispatch | `05975595b` | REVIEWER_ACCEPTED_REDISPATCH_READY_R1_WORKER_RETURN_CONTRACT_REPAIR. The packet now enumerates the full worker-return contract and N/A instruction; all dispatch gates pass. Resume the same no-commit worker for only the focused test and retained return. |
 | GC009-GC010-PCALLER-T2 initial packet-scope block | `08a965226` | BLOCKED_SCOPE_EXPANSION_REQUIRED. Pre-implementation passed 76/77; automation assist found a reviewer-owned worker-return contract omission. No test/runtime edit occurred. Reviewer-only R1 packet repair is next. |
 | GC009-GC010-PCALLER-T2 deterministic invocation proof dispatch | `5fc5ae808` | REVIEWER_ACCEPTED_DISPATCH_READY. One no-commit worker owns exactly a new focused route invocation test and worker return. Actual route/gateway/engine must be used; provider seam remains mocked. T3-T4 and GC-010 remain HOLD. |
@@ -381,13 +382,13 @@ PPMCP-R1 is independently closed with reviewer repairs at material commit
 `539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
 are parked behind concrete reopen conditions.
 
-GC009-GC010-PCALLER-T2 R1 packet-contract repair is committed at `05975595b`.
+GC009-GC010-PCALLER-T2 R2 execution-range repair is committed at `aa6fd8e86`.
 Automation assist is clean; dispatch author fast, pre-dispatch 75/75, commit
 steward, and pre-commit 83/83 all pass. The next allowed move is to resume the
-same `WORKER_MUST_NOT_COMMIT` worker under R1 authority to create only the
-focused route invocation test and refresh the retained worker return accepted
-at `08a965226`. Runtime and existing tests remain out of scope. T3-T4 and the
-separate GC-010
+same `WORKER_MUST_NOT_COMMIT` worker under R2 authority, capture the current
+execution base before edits, create only the focused route invocation test, and
+refresh the retained worker return accepted at `08a965226`. Runtime and
+existing tests remain out of scope. T3-T4 and the separate GC-010
 AgentExecutionRuntime lane remain `HOLD_*`; no live provider/API/account/
 network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment,
 production-readiness, or paired-gap closure claim is authorized.
