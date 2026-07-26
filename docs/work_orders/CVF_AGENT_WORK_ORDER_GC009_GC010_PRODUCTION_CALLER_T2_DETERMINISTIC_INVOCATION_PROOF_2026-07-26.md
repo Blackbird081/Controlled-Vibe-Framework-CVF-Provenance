@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_WORKER_RETURN_CONTRACT_REPAIR
+Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R2_EXECUTION_RANGE_REPAIR
 
 Batch ID: GC009-GC010-PCALLER-T2
 
@@ -23,6 +23,14 @@ R1 continuation authority: retain the accepted blocked worker return at commit
 omission, rerun pre-implementation, create the focused test, refresh the same
 worker return, and stop without commit. No runtime or existing-test scope is
 added.
+
+Redispatch R2 prior clean execution head: `81951a6ed`
+
+R2 continuation authority: R1 pre-implementation passed 76/77 checks but the
+hard-coded historical base made the trace checker compare unrelated committed
+packet and continuity paths against the retained worker return. No worker edit
+occurred. Run pre-implementation against the clean current execution range
+before editing, then perform the same unchanged two-path worker scope.
 
 ## Dispatch Prompt Envelope
 
@@ -199,7 +207,9 @@ Before editing:
 6. confirm `route.ts` calls `runExecuteRouteMandatoryGateway` before
    `executeAI`;
 7. confirm no forbidden gateway/engine mock exists in the new test;
-8. run pre-implementation with the committed dispatch base and current HEAD;
+8. set `$executionBaseHead = git rev-parse --short HEAD`, then run
+   pre-implementation with `--base $executionBaseHead --head HEAD` while the
+   captured current execution worktree is still clean;
 9. stop on stale source or unexpected changed path.
 
 ## Source Verification Block
@@ -590,7 +600,8 @@ prefixes. Use actual heading syntax only for real sections.
 Run from repository root:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 14434bf58 --head HEAD
+$executionBaseHead = git rev-parse --short HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base $executionBaseHead --head HEAD
 Set-Location EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web
 npx vitest run src/app/api/execute/route.mandatory-gateway-invocation.test.ts
 npx vitest run src/app/api/execute/route.mandatory-gateway-invocation.test.ts src/app/api/execute/route.test.ts

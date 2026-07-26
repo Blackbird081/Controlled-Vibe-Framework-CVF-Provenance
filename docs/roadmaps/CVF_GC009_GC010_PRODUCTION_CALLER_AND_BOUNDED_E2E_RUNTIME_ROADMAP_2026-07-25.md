@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_REDISPATCH_READY_R1_CONTRACT_REPAIR_T3_T4_HOLD
+Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_REDISPATCH_READY_R2_EXECUTION_RANGE_REPAIR_T3_T4_HOLD
 
 ## Dispatch Prompt Envelope
 
@@ -107,7 +107,7 @@ is granted.
 | T0A | Define exact future GC-009 owner contract and explicit GC-010 lane disposition (documentation only) | CLOSED_PASS_BOUNDED with `NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` |
 | T1I | Source-verify the exact context-preserving gateway interface method and receipt/audit adapter shape T0A found missing (documentation only; no runtime mutation) | PASS_BOUNDED with `INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET` |
 | T1 | Minimal production composition (smallest changed set wiring an accepted owner contract and the T1I-specified interface) | CLOSED_PASS_BOUNDED_GC009_COMPOSED |
-| T2 | Positive and fail-closed negative invocation proof for the T1 composition | REVIEWER_ACCEPTED_REDISPATCH_READY_R1_WORKER_RETURN_CONTRACT_REPAIR |
+| T2 | Positive and fail-closed negative invocation proof for the T1 composition | REVIEWER_ACCEPTED_REDISPATCH_READY_R2_EXECUTION_RANGE_REPAIR |
 | T3 | Projection of T2-proven evidence through an existing operator surface (existing CLI readout or existing Web operator page; no new surface) | HOLD_UNTIL_T2_INDEPENDENT_CLOSURE |
 | T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | HOLD_UNTIL_T3_INDEPENDENT_CLOSURE |
 
@@ -177,7 +177,7 @@ through a shared request helper. The final local proof is 15/15 guard tests,
 51/51 combined cvf-web tests, both typechecks, and GC-023 PASS. This is not
 T2 invocation evidence or live governance proof.
 
-### T2 - Positive And Fail-Closed Negative Invocation Proof (REDISPATCH READY R1)
+### T2 - Positive And Fail-Closed Negative Invocation Proof (REDISPATCH READY R2)
 
 Initial worker execution at `b1c6a0670` correctly stopped before test authoring
 when pre-implementation passed 76/77 checks and automation assist detected the
@@ -186,6 +186,12 @@ created only the designated blocked return, passed worker-return fast and
 reviewer-fast 62/62, and left HEAD/index unchanged. The blocked return is
 accepted at commit `08a965226`. R1 repairs only that packet contract, retains
 the return for refresh, and re-releases the same test-only scope.
+
+R1 then stopped cleanly with 76/77 checks passing because the work order's
+hard-coded historical pre-implementation base caused the trace checker to
+include unrelated committed packet and continuity paths. No worker edit
+occurred and HEAD/index remained clean at `81951a6ed`. R2 repairs only that
+execution-range command and retains the same two-path no-commit scope.
 
 Released by explicit operator selection after T1 material commit `29e7d6956`
 and continuity commit `14434bf58`. The dedicated packet is:
@@ -492,7 +498,7 @@ batch is authorized by this artifact.
 | Baseline status (T1) | `docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
 | Work order status (T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_GC009_COMPOSED` | PASS |
 | Completion or reviewer artifact (T1) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_COMPLETION_2026-07-26.md` | independent bounded closure with reviewer repairs | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_REDISPATCH_READY_R1_CONTRACT_REPAIR_T3_T4_HOLD` | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_REDISPATCH_READY_R2_EXECUTION_RANGE_REPAIR_T3_T4_HOLD` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
