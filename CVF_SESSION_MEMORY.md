@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=author and independently gate a documentation-only GC-010 interface/export/receipt design packet; parked checkpoint=GC-010 implementation until design acceptance, guard-exception/audit-append reliability until its concrete reopen condition, production latency, live provider/API/account/network use, rollback, public-sync, push, deployment, and production.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=send committed GC010-AER-T1 to one Claude documentation worker under WORKER_MUST_NOT_COMMIT, then Codex independently reviews; parked checkpoint=GC-010 implementation until design acceptance, guard-exception/audit-append reliability until its concrete reopen condition, production latency, live provider/API/account/network use, rollback, public-sync, push, deployment, and production.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC010-AER-T1 interface/export/receipt design dispatch | `7fc1d7893` | REVIEWER_ACCEPTED_DISPATCH_READY. One Claude documentation worker owns exactly the design audit and worker return under `WORKER_MUST_NOT_COMMIT`; Codex independently reviews. |
 | GC010-AER-T0 owner/provider/receipt decision closure | `c9e246553` | CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN. No current non-test owner or export exists; a documentation-only interface/export/receipt design packet is required before implementation dispatch. |
 | GC010-AER-T0 owner/provider/receipt decision dispatch | `f6010788a` | REVIEWER_ACCEPTED_DISPATCH_READY. One Claude documentation worker owns exactly the audit and worker return under `WORKER_MUST_NOT_COMMIT`; Codex independently reviews. No runtime/test/package/export/provider/CLI/MCP edit or execution authority. |
 | GC009-GC010-PCALLER-T4 assessment closure | `cb1f34cee` | CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN after one reviewer exception-path correction. T1-T4 close bounded GC-009; production latency remains unmeasured; GC-010 and paired gap remain open. |
@@ -388,17 +389,15 @@ PPMCP-R1 is independently closed with reviewer repairs at material commit
 `539e453a7`. Its 107-file corpus is complete and five provider-neutral patterns
 are parked behind concrete reopen conditions.
 
-GC010-AER-T0 is
-`CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN` at
-material commit `c9e246553`. Current source has no non-test owner or active
-export. The next move is reviewer-owned authoring and independent gating of a
-documentation-only GC-010 interface/export/receipt design baseline and work
-order. No implementation dispatch is authorized before that design is
-independently accepted. GC009 T1-T4 remain closed bounded; production latency
-remains `NOT_MEASURED_NO_LIVE_AUTHORITY`; GC-010 and the paired gap remain
-open. No runtime/test/package/export/provider/CLI/MCP edit or execution, live
-proof, rollback, public-sync, push, deployment, or production-readiness claim
-is authorized.
+GC010-AER-T1 is `REVIEWER_ACCEPTED_DISPATCH_READY` at material commit
+`7fc1d7893`. The next move is to send the complete work order to one Claude
+documentation worker under `WORKER_MUST_NOT_COMMIT`; Codex then independently
+reviews. No implementation dispatch is authorized before design acceptance.
+GC009 T1-T4 remain closed bounded; production latency remains
+`NOT_MEASURED_NO_LIVE_AUTHORITY`; GC-010 and the paired gap remain open. No
+runtime/test/package/export/provider/CLI/MCP edit or execution, live proof,
+rollback, public-sync, push, deployment, or production-readiness claim is
+authorized.
 Conversation provenance remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 

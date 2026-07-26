@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2112,
+  "stateKey": "gc010AgentExecutionRuntimeT1InterfaceExportReceiptDesignDispatch20260726",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-26",
+    "materialCommit": "7fc1d7893",
+    "dispatchBaseHead": "0b55e74d8",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md",
+    "baseline": "docs/baselines/CVF_GC018_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md",
+    "workerRoute": "one Claude documentation worker; WORKER_MUST_NOT_COMMIT; exactly audit plus worker return",
+    "verification": "automation assist clean; pre-dispatch 75/75; commit steward PASS; pre-commit 83/83",
+    "nextAllowedMove": "send the complete committed GC010-AER-T1 work order to Claude; Claude creates exactly the design audit and worker return without staging or commit; Codex independently reviews",
+    "claimBoundary": "No runtime/test/package/export/provider/CLI/MCP edit or execution, live proof, public action, deployment, GC-010 closure, or production-readiness claim."
+  }
+}

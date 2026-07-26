@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC010-AER-T0 is CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN at material commit c9e246553. Current source has no non-test AgentExecutionRuntime owner or active export. The exact next move is reviewer-owned authoring and independent gating of a separate documentation-only GC-010 interface/export/receipt design baseline and work order. That packet must define the exact future package-native owner API, canonical engine and provider selection, durable requestId-correlated receipt adapter, export manifest, deterministic proof plan, failure behavior, and rollback boundary. No implementation dispatch is authorized until that design is independently accepted. No runtime/test/package/export/provider/CLI/MCP edit or execution, live provider/API/account/network use, latency benchmark, rollback action, public-sync, push, deployment, or production-readiness claim is authorized. GC009 T1-T4 remain closed bounded; production latency remains NOT_MEASURED_NO_LIVE_AUTHORITY; GC-010 and the paired gap remain open. The guard-exception/audit-append reliability lane remains parked behind its recorded condition. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC010-AER-T1 is REVIEWER_ACCEPTED_DISPATCH_READY at material commit 7fc1d7893. The exact next move is to send the complete committed work order to one Claude documentation worker under WORKER_MUST_NOT_COMMIT. Claude creates exactly the design audit and worker return; Codex independently reviews. No implementation dispatch is authorized until this design is independently accepted. No runtime/test/package/export/provider/CLI/MCP edit or execution, live provider/API/account/network use, latency benchmark, rollback action, public-sync, push, deployment, GC-010 closure, or production-readiness claim is authorized. GC009 T1-T4 remain closed bounded; production latency remains NOT_MEASURED_NO_LIVE_AUTHORITY; GC-010 and the paired gap remain open. Other parked lanes retain their recorded conditions. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14291,5 +14291,17 @@
     "verification": "worker-return fast 62/62; pre-commit 83/83; generated gap index current; committed seven-path closure set",
     "nextAllowedMove": "author and independently gate a separate documentation-only GC-010 interface/export/receipt design baseline and work order; no implementation dispatch until that design is independently accepted",
     "claimBoundary": "GC-010 and the paired gap remain open. No runtime/test/package/export/provider/CLI/MCP edit or execution, live proof, public action, deployment, or production-readiness claim."
+  },
+  "gc010AgentExecutionRuntimeT1InterfaceExportReceiptDesignDispatch20260726": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-26",
+    "materialCommit": "7fc1d7893",
+    "dispatchBaseHead": "0b55e74d8",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md",
+    "baseline": "docs/baselines/CVF_GC018_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md",
+    "workerRoute": "one Claude documentation worker; WORKER_MUST_NOT_COMMIT; exactly audit plus worker return",
+    "verification": "automation assist clean; pre-dispatch 75/75; commit steward PASS; pre-commit 83/83",
+    "nextAllowedMove": "send the complete committed GC010-AER-T1 work order to Claude; Claude creates exactly the design audit and worker return without staging or commit; Codex independently reviews",
+    "claimBoundary": "No runtime/test/package/export/provider/CLI/MCP edit or execution, live proof, public action, deployment, GC-010 closure, or production-readiness claim."
   }
 }
