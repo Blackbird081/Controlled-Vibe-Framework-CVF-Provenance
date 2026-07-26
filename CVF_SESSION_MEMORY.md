@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=send the complete committed GC009-LIVE-T5 work order to one Claude worker under WORKER_MUST_NOT_COMMIT, then return the three unstaged outputs to Codex for independent review; parked checkpoint=GC010-AER remains value-parked behind its four-fact source condition, and no runtime mutation, broad release bundle, third live call, public-sync, push, deployment, or production-readiness claim is authorized.
+Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=author and dispatch GC009-LIVE-T5 R1 with one fixture correction, offline safety preflight, exactly one new focused live run, and no rerun; parked checkpoint=GC010-AER remains value-parked, and no runtime mutation, broad release bundle, public-sync, push, deployment, or production-readiness claim is authorized.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC009-LIVE-T5 blocked attempt review | `6b6cd6ab1` | REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED. The fixture was blocked before gateway/provider, so liveCallCount=0. Reviewer rejected the logging-only rerun as noncompliant. Operator authorized R1 using existing keys: one fixture correction, offline safety preflight, one focused live run, no rerun. |
 | GC009-LIVE-T5 bounded operator acceptance proof dispatch | `8f091a855` | REVIEWER_ACCEPTED_DISPATCH_READY. One Claude worker may create exactly one focused live test, one audit, and one worker return under `WORKER_MUST_NOT_COMMIT`; one initial Alibaba call and at most one diagnostic rerun are authorized. Codex independently reviews. |
 | GC010-AER-T2 non-test caller ownership decision closure | `b915367db` | CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION. No current candidate owns a compatible non-test production caller. Reopen only when source simultaneously proves the non-test caller, registered production trigger, real guard/provider wiring, and durable receipt or audit consumer. |
 | GC010-AER-T2 non-test caller ownership decision dispatch | `ab673bf42` | REVIEWER_ACCEPTED_DISPATCH_READY. One no-commit documentation worker must compare five caller families, answer sixteen source questions, create exactly the audit and worker return, and leave all implementation and execution surfaces unchanged. |
