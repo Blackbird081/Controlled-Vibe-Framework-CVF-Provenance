@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_DESIGN_SPEC_READY_FOUNDATION_ONLY_CALLER_UNRESOLVED
 
 Batch ID: GC010-AER-T1
 
@@ -101,6 +101,16 @@ Allowed:
 5. Define exact barrel/package export additions.
 6. Define exact implementation/test manifest and rollback boundary.
 7. Select one design-readiness token.
+8. Reviewer closure may accept the two worker outputs and update exactly:
+   `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_COMPLETION_2026-07-26.md`;
+   `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md`;
+   `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md`;
+   `docs/reference/system_chain/gaps/entries/gc009_gc010_no_production_caller.json`;
+   `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json`.
+   The accepted worker paths are
+   `docs/audits/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md`
+   and
+   `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_WORKER_RETURN_2026-07-26.md`.
 
 Forbidden:
 
@@ -243,11 +253,11 @@ Required Proof manifests together define the complete worker handoff.
 
 | Proof | Path | Atomic literal | Required |
 |---|---|---|---|
-| owner contract | audit | `ownerModulePath` | Yes |
-| receipt contract | audit | `receiptPortContract` | Yes |
-| export design | audit | `exportManifest` | Yes |
-| proof design | audit | `deterministicProofManifest` | Yes |
-| no-commit evidence | worker return | `WORKER_MUST_NOT_COMMIT honored` | Yes |
+| owner contract | `docs/audits/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md` | `ownerModulePath` | Yes |
+| receipt contract | `docs/audits/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md` | `receiptPortContract` | Yes |
+| export design | `docs/audits/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md` | `exportManifest` | Yes |
+| proof design | `docs/audits/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md` | `deterministicProofManifest` | Yes |
+| no-commit evidence | `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_WORKER_RETURN_2026-07-26.md` | `WORKER_MUST_NOT_COMMIT honored` | Yes |
 
 ## Evidence Requirements
 
@@ -289,7 +299,7 @@ Contract source:
 | Field | Value |
 |---|---|
 | completionReviewPath | `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_COMPLETION_2026-07-26.md` |
-| reviewerOwnedClosurePaths | worker outputs, completion, work order, roadmap, applicable gap and continuity surfaces |
+| reviewerOwnedClosurePaths | `docs/audits/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md`; `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_WORKER_RETURN_2026-07-26.md`; `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_COMPLETION_2026-07-26.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md`; `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md`; `docs/reference/system_chain/gaps/entries/gc009_gc010_no_production_caller.json`; `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json`; later continuity-only child commit |
 | closureOwner | Codex |
 | workerCommitPermission | FORBIDDEN |
 
@@ -351,12 +361,12 @@ benchmarks, or release bundles.
 
 ## Acceptance Criteria
 
-- [ ] exact two worker outputs;
-- [ ] all fourteen questions answered;
-- [ ] exact signatures, schemas, manifests, tests, and rollback;
-- [ ] exactly one terminal token;
-- [ ] no forbidden path or action;
-- [ ] gates pass; worker HEAD unchanged; nothing staged.
+- [x] exact two worker outputs;
+- [x] all fourteen questions answered;
+- [x] exact signatures, schemas, manifests, tests, and rollback;
+- [x] exactly one terminal token;
+- [x] no forbidden path or action;
+- [x] gates pass; worker HEAD unchanged; nothing staged.
 
 ## Execution Plan
 
@@ -373,12 +383,12 @@ non-duplication, durable evidence semantics, exact manifests, and gates.
 
 ## Closure Checklist
 
-- [ ] worker started clean;
-- [ ] exact two outputs;
-- [ ] fourteen questions and one design token;
-- [ ] no forbidden action;
-- [ ] worker fast gate passes;
-- [ ] no staging or worker commit.
+- [x] worker started clean;
+- [x] exact two outputs;
+- [x] fourteen questions and one design token;
+- [x] no forbidden action;
+- [x] worker fast gate passes;
+- [x] no staging or worker commit.
 
 ## Return-To-Orchestrator Conditions
 
@@ -497,10 +507,33 @@ Reason: private provenance design packet only.
 
 ## Machine Closure Package
 
-NOT_APPLICABLE_WITH_REASON: dispatch-ready work order; reviewer owns closure.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_DESIGN_SPEC_READY_FOUNDATION_ONLY_CALLER_UNRESOLVED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_COMPLETION_2026-07-26.md` | independent R1 acceptance with bounded successor boundary | PASS |
+| Roadmap state | companion production-caller roadmap | GC010-T1 design passed bounded; caller remains unresolved | PASS |
+| Registry JSON | paired system-chain gap entry | accepted design citation added; GC-010 remains open | PASS |
+| Registry Markdown | generated system-chain gap index | regenerated from the changed gap entry | PASS |
+| External evidence digest | none | repository-local evidence only | N/A with reason: no external evidence consumed |
+| System loop interlock | paired GC-009/GC-010 gap | no production-caller or GC-010 closure claim | PASS |
+| Session continuity | active state, bootstrap, memory, and handoff | dedicated reviewer sync follows the material closure commit | BLOCKED with reason: continuity child commit follows closure |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| worker route | two paths and no commit | exact two paths at unchanged HEAD | PASS |
+| design questions | all fourteen answered | 14/14 | PASS |
+| reviewer blockers | all six repaired | 6/6 | PASS |
+| receipt ordering | admit before action; one terminal finalize | specified by repaired design | PASS |
+| terminal token | exactly one design-readiness token | `DESIGN_SPEC_READY_FOR_FRESH_GC010_IMPLEMENTATION_PACKET` | PASS |
+| caller boundary | no inferred non-test owner | foundation only; caller unresolved | PASS |
 
 ## Claim Boundary
 
-This work order authorizes exactly two documentation outputs. It does not
-authorize implementation, exports, tests, provider use, GC-010 or paired-gap
-closure, public-sync, push, deployment, or production readiness.
+This work order is closed only as an accepted foundation-design specification.
+It does not authorize implementation, exports, tests, provider use, GC-010 or
+paired-gap closure, public-sync, push, deployment, or production readiness. A
+future foundation-only implementation packet must state that it does not prove
+a production caller. A caller-inclusive packet requires fresh source
+verification of the exact non-test caller and its invocation boundary.

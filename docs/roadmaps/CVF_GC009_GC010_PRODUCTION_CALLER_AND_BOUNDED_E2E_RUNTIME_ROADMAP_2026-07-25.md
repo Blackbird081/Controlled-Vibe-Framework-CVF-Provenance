@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_GC010_T1_DESIGN_DISPATCH_READY
+Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_GC010_T1_PASS_BOUNDED_DESIGN_READY_CALLER_UNRESOLVED
 
 ## Dispatch Prompt Envelope
 
@@ -114,7 +114,7 @@ separate GC-010 lane remain outside active scope.
 | T3 | Projection of T2-proven evidence through existing `/admin/audit-log`; component, focused test, and worker return only | CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION |
 | T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN |
 | GC010-T0 | Source-verified `AgentExecutionRuntime` owner, provider, receipt, and proof decision | CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN |
-| GC010-T1 | Exact package-native owner interface, export, receipt, proof, failure, and rollback design | REVIEWER_ACCEPTED_DISPATCH_READY |
+| GC010-T1 | Exact package-native owner interface, export, receipt, proof, failure, and rollback design | CLOSED_PASS_BOUNDED_DESIGN_SPEC_READY_FOUNDATION_ONLY_CALLER_UNRESOLVED |
 
 Every later tranche remains `HOLD_*` until its predecessor has independent
 (reviewer/closer-accepted) closure evidence recorded in a completion review or
@@ -281,7 +281,7 @@ selection, durable `requestId` correlation, export manifest, deterministic
 proof plan, failure behavior, and rollback boundary before any implementation
 packet can become dispatch-ready.
 
-### GC010-T1 - Interface, Export, Receipt, Proof, Failure, And Rollback Design (DISPATCH READY)
+### GC010-T1 - Interface, Export, Receipt, Proof, Failure, And Rollback Design (CLOSED PASS BOUNDED)
 
 Released by:
 
@@ -291,6 +291,19 @@ Released by:
 This documentation-only tranche converts the accepted T0 prerequisite into an
 exact future contract. It does not authorize source, tests, exports, provider
 execution, GC-010 closure, public action, or deployment.
+
+Independent review rejected the first draft and accepted the repaired R1
+design. The accepted contract generates `requestId` before guard evaluation,
+requires a durable admit before runtime or provider action, finalizes exactly
+one terminal outcome, defines a concrete JSON receipt store, receives the
+canonical engine from the caller, and removes the unused reset surface.
+
+The accepted implementation manifest is a tested package-native foundation,
+not a non-test production caller. GC-010 and the paired gap therefore remain
+open. A future bounded-foundation implementation packet may use this design
+only if it explicitly rejects any production-caller or GC-010 closure claim.
+A caller-inclusive packet instead requires fresh source verification of the
+exact caller, ownership, and invocation boundary.
 
 ## Design Control Gate
 
@@ -571,8 +584,9 @@ batch is authorized by this artifact.
 | Work order status (GC010-T0) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN` | PASS |
 | Completion or reviewer artifact (GC010-T0) | `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_COMPLETION_2026-07-26.md` | independent bounded partial-ready closure | PASS |
 | Baseline status (GC010-T1) | `docs/baselines/CVF_GC018_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Work order status (GC010-T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_GC010_T1_DESIGN_DISPATCH_READY` | PASS |
+| Work order status (GC010-T1) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_DESIGN_SPEC_READY_FOUNDATION_ONLY_CALLER_UNRESOLVED` | PASS |
+| Completion or reviewer artifact (GC010-T1) | `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_COMPLETION_2026-07-26.md` | independent bounded R1 design acceptance; caller unresolved | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_GC010_T1_PASS_BOUNDED_DESIGN_READY_CALLER_UNRESOLVED` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |

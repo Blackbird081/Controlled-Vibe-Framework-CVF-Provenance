@@ -53,6 +53,11 @@
       "path": "docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_COMPLETION_2026-07-26.md",
       "lineOrSection": "Findings / Position and Successor Boundary",
       "evidenceRole": "reviewer-accepted GC-010 source decision: no current owner/export; package-native direction is partial-ready only after a separate interface/export/receipt design"
+    },
+    {
+      "path": "docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_COMPLETION_2026-07-26.md",
+      "lineOrSection": "Findings / Position and Successor Boundary",
+      "evidenceRole": "reviewer-accepted bounded package-native foundation design; exact non-test production caller and caller-level invocation proof remain unresolved"
     }
   ],
   "impact": "The original paired no-caller gap is further reduced: GC-009 has a bounded cvf-web production composition, package surface, durable audit linkage, and accepted local actual-route invocation proof. Every GC-010 caller/export edge remains unaccepted, so this is not whole-entry closure, production-readiness proof, or live governance proof.",
@@ -64,7 +69,7 @@
     "conditionKind": "PATTERN_OBSERVED_ON_NAMED_SURFACE",
     "conditionText": "Reopen this entry, or any successor closure of it, if a future review finds the current non-test production caller or the current export/barrel surface removed or regressed on either EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts or EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts after a later closure has been accepted."
   },
-  "actionOwner": "GC010_DESIGN_PACKET_REQUIRED: GC-009 bounded local invocation proof is accepted. Before any GC-010 implementation dispatch, a separate documentation-only packet must accept the exact future package-native owner API, canonical engine and provider selection, durable requestId-correlated receipt adapter, export manifest, deterministic proof plan, failure behavior, and rollback boundary.",
+  "actionOwner": "GC010_FOUNDATION_OR_CALLER_PACKET_DECISION_REQUIRED: the bounded package-native foundation design is accepted, but no exact non-test production caller is selected. A foundation-only implementation packet must reject caller and GC-010 closure claims. A caller-inclusive packet requires fresh source verification of the exact caller, ownership, and invocation boundary.",
   "freshnessInputs": [
     "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts",
     "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts",
@@ -74,6 +79,6 @@
   ],
   "lastReviewed": {
     "date": "2026-07-26",
-    "acceptedArtifact": "docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_COMPLETION_2026-07-26.md"
+    "acceptedArtifact": "docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T1_INTERFACE_EXPORT_RECEIPT_DESIGN_COMPLETION_2026-07-26.md"
   }
 }
