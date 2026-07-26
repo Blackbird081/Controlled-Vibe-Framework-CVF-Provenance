@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_BOUNDED_NOT_READY_INTERFACE_CHANGE_T1I_DISPATCH_READY_T1_T4_HOLD
+Status: T0_PASS_T0A_PASS_BOUNDED_NOT_READY_INTERFACE_CHANGE_T1I_PASS_INTERFACE_SPEC_READY_T1_T4_HOLD
 
 ## Dispatch Prompt Envelope
 
@@ -95,7 +95,7 @@ released by its own fresh GC-018 and work order per the tranche table.
 |---|---|---|
 | T0 | Source-verified caller ownership and architecture decision (documentation only; no runtime mutation) | CLOSED_PASS_BOUNDED with `NOT_READY_MISSING_SOURCE_VERIFIED_OWNER` |
 | T0A | Define exact future GC-009 owner contract and explicit GC-010 lane disposition (documentation only) | CLOSED_PASS_BOUNDED with `NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` |
-| T1I | Source-verify the exact context-preserving gateway interface method and receipt/audit adapter shape T0A found missing (documentation only; no runtime mutation) | DISPATCH_READY (Batch ID `GC009-GC010-PCALLER-T1I`) |
+| T1I | Source-verify the exact context-preserving gateway interface method and receipt/audit adapter shape T0A found missing (documentation only; no runtime mutation) | PASS_BOUNDED with `INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET` |
 | T1 | Minimal production composition (smallest changed set wiring an accepted owner contract and the T1I-specified interface) | HOLD_UNTIL_T1I_INDEPENDENT_CLOSURE_AND_FRESH_OPERATOR_AUTHORITY |
 | T2 | Positive and fail-closed negative invocation proof for the T1 composition | HOLD_UNTIL_T1_INDEPENDENT_CLOSURE |
 | T3 | Projection of T2-proven evidence through an existing operator surface (existing CLI readout or existing Web operator page; no new surface) | HOLD_UNTIL_T2_INDEPENDENT_CLOSURE |
@@ -125,7 +125,7 @@ resolves duplicate-evaluation handling, and assigns GC-010 to the same future
 T1, a separate packet, or a concrete parked condition. T0A may recommend a
 future packet but cannot release T1.
 
-### T1I - Interface And Receipt-Adapter Design (DISPATCH_READY)
+### T1I - Interface And Receipt-Adapter Design (PASS_BOUNDED)
 
 Documentation-only. Released after T0A's independent not-ready closure by a
 fresh operator authorization citing the interface-change gap. A no-commit
@@ -448,9 +448,9 @@ batch is authorized by this artifact.
 |---|---|---|---|
 | Work order status (T0A) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md` | `Status: CLOSED_PASS_BOUNDED_NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` | PASS |
 | Completion or reviewer artifact (T0A) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_COMPLETION_2026-07-25.md` | independent bounded not-ready closure | PASS |
-| Work order status (T1I) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Completion or reviewer artifact (T1I) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_COMPLETION_2026-07-25.md` | does not exist yet | N/A with reason: pending T1I dispatch, execution, and closure |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_BOUNDED_NOT_READY_INTERFACE_CHANGE_T1I_DISPATCH_READY_T1_T4_HOLD` | PASS |
+| Work order status (T1I) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md` | `Status: CLOSED_PASS_BOUNDED_INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET` | PASS |
+| Completion or reviewer artifact (T1I) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_COMPLETION_2026-07-25.md` | independent bounded interface-spec-ready closure | PASS |
+| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_BOUNDED_NOT_READY_INTERFACE_CHANGE_T1I_PASS_INTERFACE_SPEC_READY_T1_T4_HOLD` | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no new corpus packet; aggregate drift check passes | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no new corpus entry required for bounded named-target comparison | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
