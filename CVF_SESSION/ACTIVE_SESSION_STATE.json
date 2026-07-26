@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T4 is REVIEWER_ACCEPTED_DISPATCH_READY at material commit 8eb2a47d0. The exact next move is to send the complete committed T4 work order to one Claude documentation worker under WORKER_MUST_NOT_COMMIT. Claude may create exactly the T4 assessment and worker return, then Codex independently reviews and decides closure. No runtime/test edit or execution, live provider/API/account/network use, latency benchmark, rollback action, GC-010 implementation, roadmap closure, public-sync, push, deployment, production-readiness, or whole paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T4 is CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN at material commit cb1f34cee. T1-T4 are closed bounded for GC-009; production latency remains NOT_MEASURED_NO_LIVE_AUTHORITY; GC-010 and the paired stable gap remain open. The exact next move is an operator checkpoint to select a separate fresh source-verified GC-010 AgentExecutionRuntime caller/export packet or park the paired-gap lane. Reopen the guard-exception/audit-append reliability lane only after a focused composed-path reproduction proves missing gateway response/audit evidence, or explicit operator authorization for pre-production hardening. No live provider/API/account/network use, latency benchmark, rollback action, public-sync, push, deployment, production-readiness, or whole paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14255,5 +14255,17 @@
     "verification": "automation assist PASS; pre-dispatch 75/75; commit steward PASS; pre-commit 83/83",
     "nextAllowedMove": "send the complete committed T4 work order to Claude; Claude creates exactly the assessment and worker return without staging or commit; Codex then independently reviews and decides closure",
     "claimBoundary": "No runtime/test edit or execution, live provider/API/network use, latency benchmark, rollback action, GC-010 implementation, roadmap closure, public export, push, deployment, or production-readiness claim."
+  },
+  "gc009Gc010ProductionCallerT4AssessmentClosure20260726": {
+    "status": "CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN",
+    "date": "2026-07-26",
+    "materialCommit": "cb1f34cee",
+    "executionBaseHead": "bebbc2e0e",
+    "completionReview": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T4_VALUE_LATENCY_FAILURE_ROLLBACK_ASSESSMENT_COMPLETION_2026-07-26.md",
+    "verification": "independent source review; one exception-path claim repaired; worker-return fast 62/62; pre-commit 83/83",
+    "acceptedClaim": "T1-T4 sequence closed bounded for GC-009 operator value, unmeasured latency, failure posture, and rollback assessment",
+    "nextAllowedMove": "operator checkpoint to select a separate fresh source-verified GC-010 AgentExecutionRuntime caller/export packet or park the paired-gap lane",
+    "parkedReliabilityReopenCondition": "reopen guard-exception or audit-append reliability work only after a focused composed-path reproduction proves missing gateway response/audit evidence, or explicit operator authorization for pre-production hardening",
+    "claimBoundary": "GC-010 and the paired stable gap remain open. No production latency, live provider/API/network proof, rollback, public export, push, deployment, or production-readiness claim."
   }
 }

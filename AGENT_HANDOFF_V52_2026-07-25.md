@@ -724,3 +724,31 @@ Rollback boundary: revert only this continuity set if T4 dispatch commit
 This handoff records material parent commit `8eb2a47d0`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T4 Closure Sync
+
+Authorized guard-maintenance scope: record T4 material closure commit
+`cb1f34cee`, the reviewer correction to the exception-path claim, bounded
+GC-009 T1-T4 closure, unmeasured production latency, and GC-010 remaining open.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009Gc010ProductionCallerT4AssessmentClosure20260726.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: Claude-worker and Codex-reviewer route, independent T4
+acceptance with reviewer repair, material closure commit, and mandatory
+continuity maintenance.
+
+Rollback boundary: revert only this continuity set if T4 material closure
+commit `cb1f34cee` is reverted.
+
+## GC-020 Marker - GC009-GC010 T4 Closure Continuity
+
+This handoff records material parent commit `cb1f34cee`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
