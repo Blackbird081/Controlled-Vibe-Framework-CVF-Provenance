@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T2 is CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN at material commit 2e4412c88. Independent evidence is focused 2/2, combined route 33/33, T1 regression 20/20, TypeScript PASS, GC-023 PASS, worker-return fast PASS, pre-implementation 77/77, and pre-commit 83/83. The exact next move is an operator checkpoint to select a fresh source-verified T3 operator-projection packet, a separate GC-010 AgentExecutionRuntime packet, or park the lane. T3-T4 and GC-010 remain HOLD_*; no live provider/API/account/network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment, production-readiness, or whole paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T3 is CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION at material commit 76fcd6b0e. Independent evidence is focused 5/5, TypeScript PASS, GC-023 PASS, worker-return fast 62/62, pre-implementation 77/77, and pre-commit 83/83. The exact next move is an operator checkpoint to select a fresh source-verified T4 value/latency/failure/rollback assessment, a separate GC-010 AgentExecutionRuntime packet, or park the lane. T4 and GC-010 remain HOLD_*; no browser E2E, live provider/API/account/network use, new operator surface, CVF CLI/MCP invocation, public-sync, push, deployment, production-readiness, or whole paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14229,5 +14229,19 @@
     "nextAllowedMove": "operator checkpoint to select a fresh T3 operator-projection packet, a separate GC-010 AgentExecutionRuntime packet, or park the lane",
     "laterTranches": "T3-T4 and GC-010 remain HOLD_* pending fresh source-verified authority",
     "claimBoundary": "No live provider, deployment, production-readiness, public export, GC-010, T3-T4, or whole paired-gap closure claim."
+  },
+  "gc009Gc010ProductionCallerT3ExistingAuditReadoutProjectionClosure20260726": {
+    "status": "CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION",
+    "date": "2026-07-26",
+    "materialCommit": "76fcd6b0e",
+    "executionBaseHead": "64d3edd72",
+    "completionReview": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T3_EXISTING_AUDIT_READOUT_PROJECTION_COMPLETION_2026-07-26.md",
+    "component": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/admin/AdminAuditLogBody.tsx",
+    "focusedTest": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/admin/AdminAuditLogBody.test.tsx",
+    "verification": "focused 5/5; TypeScript PASS; GC-023 PASS; worker-return fast 62/62; pre-implementation 77/77; pre-commit 83/83",
+    "acceptedClaim": "bounded secret-safe GC-009 gateway evidence projection through existing /admin/audit-log",
+    "nextAllowedMove": "operator checkpoint to select fresh T4 value/latency/failure/rollback assessment, separate GC-010 AgentExecutionRuntime packet, or park",
+    "laterTranches": "T4 and GC-010 remain HOLD_* pending fresh source-verified authority",
+    "claimBoundary": "No browser E2E, live provider, new operator surface, GC-010, whole paired-gap closure, public export, push, deployment, or production-readiness claim."
   }
 }

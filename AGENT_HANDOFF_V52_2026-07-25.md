@@ -27,10 +27,10 @@ deployment, and external invocation remain parked.
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
 active handoff=AGENT_HANDOFF_V52_2026-07-25.md; next allowed move=operator
-checkpoint before any fresh T2 deterministic invocation packet or separate
-GC-010 AgentExecutionRuntime packet; parked checkpoint=T2-T4, GC-010,
-CLI/MCP invocation, provider/network/process action, public mutation, deploy,
-production readiness, and moratorium lift.
+checkpoint for fresh T4 assessment, separate GC-010 AgentExecutionRuntime, or
+park; parked checkpoint=T4, GC-010, browser E2E, CLI/MCP invocation,
+provider/network/process action, new operator surface, public mutation,
+deploy, production readiness, and moratorium lift.
 
 ## Current Mode
 
@@ -38,6 +38,11 @@ production readiness, and moratorium lift.
 
 ## Latest Work / Changes
 
+- GC009-GC010-PCALLER-T3 material closure commit `76fcd6b0e` accepts bounded
+  secret-safe projection through existing `/admin/audit-log`. Independent
+  proof is focused 5/5, TypeScript PASS, GC-023 PASS, worker-return fast
+  62/62, pre-implementation 77/77, and pre-commit 83/83. T4 and GC-010 remain
+  held.
 - GC009-GC010-PCALLER-T1 material closure commit `29e7d6956` accepts bounded
   GC-009 composition after reviewer repairs to both rate-limit buckets,
   seven-field audit proof, four fail-closed outcomes, GC-023, and system-chain
@@ -84,14 +89,14 @@ production readiness, and moratorium lift.
 
 ## Next Allowed Move
 
-Operator manual copy/paste of
-`docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md`
-to one no-commit documentation worker.
+Operator checkpoint to select one of: a fresh source-verified T4
+value/latency/failure/rollback assessment, a separate GC-010
+AgentExecutionRuntime packet, or park the lane.
 
-Only that documentation worker is authorized. T1-T4, dependency install, package, runtime, source,
-test, checker, session/public mutation, provider, process, CLI/MCP agent
-invocation, public-sync, deploy, or production lane is released. The EAIC
-knowledge gap and invocation moratorium remain parked.
+T4 and GC-010 remain held. Browser E2E, live provider/API/account/network use,
+new operator surface, CLI/MCP invocation, public-sync, push, deployment,
+production readiness, and whole paired-gap closure remain unauthorized. The
+EAIC knowledge gap and invocation moratorium remain parked.
 
 ## Core Guard Self-Protection Authorization - PPMCP-R1 Dispatch Sync
 
@@ -662,5 +667,32 @@ Rollback boundary: revert only this marker if R1 redispatch commit
 ## GC-020 Marker - GC009-GC010 T3 R1 Packet Continuity
 
 This handoff records material parent commit `454d6212b`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T3 Closure Sync
+
+Authorized guard-maintenance scope: record T3 material closure commit
+`76fcd6b0e` and route the next move to an operator checkpoint without releasing
+T4 or the separate GC-010 AgentExecutionRuntime lane.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009Gc010ProductionCallerT3ExistingAuditReadoutProjectionClosure20260726.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: continue while value remains, independent T3 reviewer
+acceptance, material closure commit, and mandatory continuity maintenance.
+
+Rollback boundary: revert only this continuity set if material closure commit
+`76fcd6b0e` is reverted.
+
+## GC-020 Marker - GC009-GC010 T3 Closure Continuity
+
+This handoff records material parent commit `76fcd6b0e`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
