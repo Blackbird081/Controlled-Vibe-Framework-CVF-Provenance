@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2111,
+  "stateKey": "gc010AgentExecutionRuntimeT0OwnerProviderReceiptDecisionClosure20260726",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN",
+    "date": "2026-07-26",
+    "materialCommit": "c9e246553",
+    "executionBaseHead": "1aa80ec8f",
+    "completionReview": "docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_COMPLETION_2026-07-26.md",
+    "workerRoute": "one Claude documentation worker; WORKER_MUST_NOT_COMMIT; independently reviewed by Codex",
+    "reviewerCorrections": "accepted substantive decision; corrected pre-implementation count, launcher line count, barrel symbol, and non-circular successor boundary",
+    "verification": "worker-return fast 62/62; pre-commit 83/83; generated gap index current; committed seven-path closure set",
+    "nextAllowedMove": "author and independently gate a separate documentation-only GC-010 interface/export/receipt design baseline and work order; no implementation dispatch until that design is independently accepted",
+    "claimBoundary": "GC-010 and the paired gap remain open. No runtime/test/package/export/provider/CLI/MCP edit or execution, live proof, public action, deployment, or production-readiness claim."
+  }
+}

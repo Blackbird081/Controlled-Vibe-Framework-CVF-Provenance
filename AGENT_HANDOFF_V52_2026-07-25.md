@@ -780,3 +780,30 @@ commit `f6010788a` is reverted.
 This handoff records material parent commit `f6010788a`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC010 AgentExecutionRuntime T0 Closure Sync
+
+Authorized guard-maintenance scope: record GC010-AER-T0 material closure
+commit `c9e246553`, bounded partial readiness, the missing current owner/export,
+and the documentation-only interface/export/receipt design prerequisite.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc010AgentExecutionRuntimeT0OwnerProviderReceiptDecisionClosure20260726.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: continue while value remains, independent GC010-AER-T0
+review, bounded closure, material commit, and mandatory continuity maintenance.
+
+Rollback boundary: revert only this continuity set if GC010-AER-T0 material
+closure commit `c9e246553` is reverted.
+
+## GC-020 Marker - GC010 AgentExecutionRuntime T0 Closure Continuity
+
+This handoff records material parent commit `c9e246553`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
