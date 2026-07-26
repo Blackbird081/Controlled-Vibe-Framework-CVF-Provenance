@@ -107,6 +107,11 @@ This handoff records material parent commit `b915367db`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
 
+## GC-020 Marker - GC010 T2 Rotation Child
+
+This handoff records continuity commit `7a15afc8c`. The next commit is limited
+to this handoff marker so the checker may accept its parent SHA.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
