@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_WORKER_RETURN_CONTRACT_REPAIR
 
 Batch ID: GC009-GC010-PCALLER-T2
 
@@ -15,6 +15,14 @@ Worker: one delegated documentation-and-test worker
 Reviewer/closer: Codex
 
 Worker return path: `docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md`
+
+Redispatch R1 original execution base head: `b1c6a0670`
+
+R1 continuation authority: retain the accepted blocked worker return at commit
+`08a965226`, repair only the reviewer-owned Worker Return Packet Shape Contract
+omission, rerun pre-implementation, create the focused test, refresh the same
+worker return, and stop without commit. No runtime or existing-test scope is
+added.
 
 ## Dispatch Prompt Envelope
 
@@ -183,7 +191,10 @@ Before editing:
 1. capture `executionBaseHead` with `git rev-parse --short HEAD`;
 2. require empty `git status --short --untracked-files=all`;
 3. confirm this work order and GC-018 are committed and dispatch-ready;
-4. confirm the focused test and worker return do not exist;
+4. for initial execution, confirm the focused test and worker return do not
+   exist; for R1, confirm the focused test is absent and the retained worker
+   return is the accepted `BLOCKED_SCOPE_EXPANSION_REQUIRED` return committed
+   at `08a965226`;
 5. confirm `route.ts` remains 955 lines and `route.test.ts` remains 1153 lines;
 6. confirm `route.ts` calls `runExecuteRouteMandatoryGateway` before
    `executeAI`;
@@ -565,6 +576,11 @@ requiredEvidenceTerms: executionBaseHead; git status --short; git diff
 --name-status; git diff --cached --name-status; git diff --check; focused
 tests; regression tests; typecheck; governed file size; no live provider; no
 commit.
+
+requiredSections: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine Closure Package
+
+naInstruction: use `N/A with reason` only when the named evidence class is
+genuinely not applicable.
 
 Shape-list rule: list required worker-output section names without heading
 prefixes. Use actual heading syntax only for real sections.
