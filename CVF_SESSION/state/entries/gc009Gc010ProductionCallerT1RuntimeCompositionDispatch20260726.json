@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2090,
+  "stateKey": "gc009Gc010ProductionCallerT1RuntimeCompositionDispatch20260726",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-26",
+    "materialCommit": "851cddc8b",
+    "dispatchBaseHead": "7275e9dc8",
+    "baseline": "docs/baselines/CVF_GC018_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md",
+    "roadmap": "docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md",
+    "workerReturn": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_WORKER_RETURN_2026-07-26.md",
+    "reviewerRepairs": "added the required guard-contract package export, preserved downstream GuardPipelineResult compatibility, required route shrink under GC-023, completed handoff and worker-return contracts, and added evidence-recompute and checker-trigger controls",
+    "verification": "author-fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch commit steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "dispatch the committed T1 runtime work order to one WORKER_MUST_NOT_COMMIT implementation worker",
+    "laterTranches": "T2-T4 remain HOLD_*; GC-010 AgentExecutionRuntime remains a separate fresh-packet lane",
+    "claimBoundary": "T1 dispatch only. No implementation has executed, no live provider proof exists, and no CLI/MCP, browser, network, public-sync, push, deployment, or production claim is authorized."
+  }
+}
