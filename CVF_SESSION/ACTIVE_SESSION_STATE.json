@@ -13687,7 +13687,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-GC010-PCALLER-T2 is reviewer-accepted and dispatch-ready at material commit 5fc5ae808. The exact next move is dispatch the committed T2 work order to one WORKER_MUST_NOT_COMMIT documentation-and-test worker. The worker may create only route.mandatory-gateway-invocation.test.ts and the designated worker return, proving one actual-route ALLOW case reaches mocked executeAI once and one actual gateway BLOCK reaches it zero times. Runtime source and existing tests are forbidden; provider execution remains mocked. T3-T4 and GC-010 remain HOLD_*; no live provider/API/account/network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment, production-readiness, or paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-GC010-PCALLER-T2 initial execution is BLOCKED_SCOPE_EXPANSION_REQUIRED with accepted worker evidence at commit 08a965226. Pre-implementation passed 76/77; the sole failure is a reviewer-owned Worker Return Packet Shape Contract omission, and no focused test or runtime edit occurred. The exact next move is reviewer repair of only that contract, pre-dispatch rerun, committed R1 redispatch, then resume the same WORKER_MUST_NOT_COMMIT worker scope. T3-T4 and GC-010 remain HOLD_*; no live provider/API/account/network/browser use, CVF CLI/MCP invocation, public-sync, push, deployment, production-readiness, or paired-gap closure claim is authorized. The EAIC invocation moratorium remains parked. Conversation provenance remains a secondary-input boundary. R84 effectiveness remains evidence-parked. LHW24 remains latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14176,5 +14176,17 @@
     "workerWritablePaths": "one focused route.mandatory-gateway-invocation.test.ts plus the designated worker return",
     "laterTranches": "T3-T4 and GC-010 AgentExecutionRuntime remain HOLD_* pending fresh source-verified authority",
     "claimBoundary": "T2 dispatch only. No test worker has executed, runtime source mutation is forbidden, provider execution must remain mocked, and no live provider, browser, CLI/MCP, public-sync, push, deployment, production-readiness, GC-010, or paired-gap closure claim is authorized."
+  },
+  "gc009Gc010ProductionCallerT2InitialPacketScopeBlock20260726": {
+    "status": "BLOCKED_SCOPE_EXPANSION_REQUIRED",
+    "date": "2026-07-26",
+    "materialCommit": "08a965226",
+    "executionBaseHead": "b1c6a0670",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_2026-07-26.md",
+    "workerReturn": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md",
+    "verification": "pre-implementation 76/77 PASS; automation assist identified the packet omission; worker-return fast PASS; reviewer-fast 62/62 PASS; GC-023 PASS",
+    "blocker": "committed Worker Return Packet Shape Contract omitted automation-assist required and conditional section terms plus the N/A-with-reason instruction",
+    "nextAllowedMove": "reviewer repairs only the T2 Worker Return Packet Shape Contract, reruns pre-dispatch, commits the R1 packet, and redispatches the same no-commit worker scope",
+    "claimBoundary": "No focused test or runtime edit occurred. T2 remains pending; T3-T4 and GC-010 remain HOLD_*."
   }
 }

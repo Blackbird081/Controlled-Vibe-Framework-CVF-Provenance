@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2103,
+  "stateKey": "gc009Gc010ProductionCallerT2InitialPacketScopeBlock20260726",
+  "value": {
+    "status": "BLOCKED_SCOPE_EXPANSION_REQUIRED",
+    "date": "2026-07-26",
+    "materialCommit": "08a965226",
+    "executionBaseHead": "b1c6a0670",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_2026-07-26.md",
+    "workerReturn": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_WORKER_RETURN_2026-07-26.md",
+    "verification": "pre-implementation 76/77 PASS; automation assist identified the packet omission; worker-return fast PASS; reviewer-fast 62/62 PASS; GC-023 PASS",
+    "blocker": "committed Worker Return Packet Shape Contract omitted automation-assist required and conditional section terms plus the N/A-with-reason instruction",
+    "nextAllowedMove": "reviewer repairs only the T2 Worker Return Packet Shape Contract, reruns pre-dispatch, commits the R1 packet, and redispatches the same no-commit worker scope",
+    "claimBoundary": "No focused test or runtime edit occurred. T2 remains pending; T3-T4 and GC-010 remain HOLD_*."
+  }
+}
