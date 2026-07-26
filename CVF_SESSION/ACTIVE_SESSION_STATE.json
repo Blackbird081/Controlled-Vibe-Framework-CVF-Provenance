@@ -13688,7 +13688,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-LIVE-T5 first execution is independently accepted as blocked at material commit 6b6cd6ab1 with liveCallCount=0 and no gateway/provider evidence. The logging-only diagnostic rerun was reviewer-rejected as noncompliant. The operator authorized continued use of existing API keys. Author and dispatch R1 to the same Claude WORKER_MUST_NOT_COMMIT route: replace only the standalone safety-triggering fixture word, run an offline safety-regex preflight, execute exactly one new focused live run, and do not rerun. Any R1 failure returns immediately with a secret-safe diagnostic. No runtime mutation, existing-test change, provider-adapter change, broad release bundle, staging, worker commit, public-sync, push, deployment, GC-010 work, or production-readiness claim is authorized. Codex independently reviews. GC010-AER remains value-parked behind its four-fact source condition. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009-LIVE-T5 R1 is committed redispatch-ready at material commit c6e850d11. Send the complete work order docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md to the same Claude worker under WORKER_MUST_NOT_COMMIT. Claude may modify exactly the focused test, audit, and worker return; replace only the standalone safety-triggering fixture phrase as specified; run the complete generated ALLOW intent through offline current safety preflight; and use existing keys for exactly one focused live run. No R1 rerun is authorized. Any failure returns immediately with a secret-safe diagnostic. No runtime mutation, existing-test change, provider-adapter change, broad release bundle, staging, worker commit, public-sync, push, deployment, GC-010 work, or production-readiness claim is authorized. Codex independently reviews. GC010-AER remains value-parked, and LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14365,5 +14365,17 @@
     "r1Authority": "existing keys may be used; one fixture correction; offline safety-regex preflight; exactly one new focused live run; no rerun",
     "nextAllowedMove": "author, gate, and commit the R1 redispatch packet, then send it to the same no-commit Claude worker",
     "claimBoundary": "Blocked diagnostic acceptance only. No live ALLOW, authority BLOCK, gateway event, audit projection, latency, production, public, or deployment proof."
+  },
+  "gc009LiveT5R1Redispatch20260726": {
+    "status": "REVIEWER_ACCEPTED_REDISPATCH_READY_R1_FIXTURE_PREFLIGHT_ONE_RUN_NO_RERUN",
+    "date": "2026-07-26",
+    "materialCommit": "c6e850d11",
+    "r1DispatchBaseHead": "59fd54543",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md",
+    "workerRoute": "same Claude worker; WORKER_MUST_NOT_COMMIT; exactly focused test, audit, and worker return",
+    "liveAuthority": "existing keys; offline safety preflight; exactly one focused live run; no rerun",
+    "verification": "pre-dispatch 75/75; commit steward PASS; pre-commit 83/83",
+    "nextAllowedMove": "send the complete committed R1 work order to Claude and return the three unstaged modifications to Codex",
+    "claimBoundary": "Redispatch authority only; no R1 live result is yet accepted."
   }
 }

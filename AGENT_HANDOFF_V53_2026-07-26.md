@@ -1,4 +1,4 @@
-# CVF Agent Handoff V53 - GC009 Live T5 R1 Authorization
+# CVF Agent Handoff V53 - GC009 Live T5 R1 Redispatch
 
 Memory class: active-handoff
 
@@ -13,8 +13,8 @@ operator-authorized R1 correction while preserving GC010-AER-T2 value parking.
 
 Scope: blocked-review continuity and R1 dispatch preparation.
 
-Target: preserve material commit `6b6cd6ab1`, then dispatch one fixture-only
-R1 with offline safety preflight, exactly one focused live run, and no rerun.
+Target: dispatch material commit `c6e850d11` to the same Claude worker for one
+fixture-only R1 with offline safety preflight, one live run, and no rerun.
 
 Owner boundary: Claude owns exactly the three worker paths in the work order.
 Codex owns independent review, closure, and session sync. No runtime mutation,
@@ -26,17 +26,18 @@ public, push, deployment, or GC-010 authority is active.
 
 ## Active Boundary
 
-GC009-LIVE-T5 is blocked at material commit `6b6cd6ab1`: both attempts stopped
-before gateway/provider and `liveCallCount=0`. Reviewer rejected the
-logging-only rerun as noncompliant. The operator authorized a fixture-only R1
-with one new focused live run and no rerun. GC010-AER-T2 remains value-parked.
+GC009-LIVE-T5 R1 is redispatch-ready at `c6e850d11`. The same Claude worker
+may modify exactly the three worker artifacts, run offline safety preflight,
+and execute one focused live run with existing keys and no rerun.
+GC010-AER-T2 remains value-parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
-active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=author and
-dispatch R1 with one fixture correction, offline safety preflight, one focused
-live run, and no rerun; parked checkpoint=GC010-AER remains value-parked, and
+active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=send the
+committed R1 work order to the same Claude no-commit worker for one fixture
+correction, offline safety preflight, one focused live run, and no rerun;
+parked checkpoint=GC010-AER remains value-parked, and
 runtime mutation, broad release proof, public-sync, push, deployment, and
 production-readiness claims remain forbidden.
 
@@ -55,6 +56,8 @@ production-readiness claims remain forbidden.
 
 ## Latest Work / Changes
 
+- Committed the two-path R1 redispatch packet at `c6e850d11`.
+- Pre-dispatch passed 75/75 and pre-commit passed 83/83.
 - Independently accepted the first live attempt as blocked at `6b6cd6ab1`.
 - Confirmed zero provider calls and rejected logging-only rerun compliance.
 - Recorded operator authority for one no-rerun R1 using existing keys.
@@ -71,10 +74,10 @@ production-readiness claims remain forbidden.
 
 ## Next Allowed Move
 
-Author, gate, and commit R1 in the existing work order and roadmap. R1 must
-allow only the one fixture correction, an offline safety-regex preflight,
-exactly one new focused live run, and no rerun. Then send the complete R1 work
-order to the same Claude worker under `WORKER_MUST_NOT_COMMIT`.
+Send the complete committed R1 work order to the same Claude worker under
+`WORKER_MUST_NOT_COMMIT`. Claude modifies exactly the focused test, audit, and
+worker return; runs offline safety preflight; executes exactly one focused
+live run using existing keys; and performs no rerun.
 
 Do not re-propose GC010-AER caller implementation or proof work until current
 source simultaneously proves all four facts:
@@ -186,26 +189,51 @@ accept this parent SHA for the dedicated session-sync commit.
 This handoff records continuity commit `feabdd7b5`. The next commit is limited
 to this handoff marker so the checker may accept its parent SHA.
 
+## Core Guard Self-Protection Authorization - GC009 Live T5 R1 Redispatch
+
+Authorized continuity scope: record R1 material commit `c6e850d11` and align
+next-move surfaces with the same Claude no-commit worker route.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009LiveT5R1Redispatch20260726.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: use existing API keys when needed and continue.
+
+Rollback boundary: revert only this continuity set if R1 material commit
+`c6e850d11` is reverted.
+
+## GC-020 Marker - GC009 Live T5 R1 Redispatch
+
+This handoff records material parent commit `c6e850d11`. The continuity child
+SHA cannot be known before commit creation, so the checker may accept this
+parent SHA for the dedicated session-sync commit.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
 | Actor | Codex dispatcher/reviewer |
 | Provider or surface | local private provenance repository |
-| Session or invocation | GC009-LIVE-T5 blocked-review continuity child after commit `feabdd7b5` |
+| Session or invocation | GC009-LIVE-T5 R1 redispatch continuity after commit `c6e850d11` |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, git status/diff, commit steward, and pre-commit hook |
-| Target paths | the one protected handoff path named in the expected manifest below |
+| Target paths | the six protected paths named in the expected manifest below |
 | Allowed scope source | operator acceptance of the GC009 live-proof next step and mandatory dispatch continuity |
-| Before status evidence | HEAD `feabdd7b5`; six-path continuity committed; worktree clean |
-| After status evidence | handoff records continuity commit `feabdd7b5` |
-| Diff evidence | `git diff --cached --name-status` records one modified handoff |
-| Approval boundary | GC-020 child marker only |
+| Before status evidence | HEAD `c6e850d11`; R1 redispatch committed; worktree clean |
+| After status evidence | state and front doors route to the committed R1 |
+| Diff evidence | `git diff --cached --name-status` records five modifications and one new state fragment |
+| Approval boundary | continuity only; Claude owns R1 execution |
 | Claim boundary | repository-local documentation and state trace only |
 | Agent type | Codex |
-| Invocation ID | `gc009-live-t5-blocked-review-continuity-child-2026-07-26` |
-| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
-| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Invocation ID | `gc009-live-t5-r1-redispatch-continuity-2026-07-26` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/gc009LiveT5R1Redispatch20260726.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/gc009LiveT5R1Redispatch20260726.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this continuity batch |
 
