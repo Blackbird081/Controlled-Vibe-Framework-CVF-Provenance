@@ -642,3 +642,25 @@ Rollback boundary: revert only this marker if blocked-return commit
 This handoff records material parent commit `28255260f`. The continuity child
 SHA cannot be known before commit creation, so the active-session checker may
 accept this parent SHA for this dedicated session-sync-only commit.
+
+## Core Guard Self-Protection Authorization - GC009-GC010 T3 R1 Packet Sync
+
+Authorized guard-maintenance scope: record T3 R1 work-order redispatch commit
+`454d6212b`. R1 retains the original three-path no-commit manifest and may now
+rerun pre-implementation from the clean continuity child.
+
+Protected path:
+
+- `AGENT_HANDOFF_V52_2026-07-25.md`.
+
+Operator authorization: continue while value remains, reviewer-owned packet
+repair, mandatory continuity maintenance, and same-worker redispatch.
+
+Rollback boundary: revert only this marker if R1 redispatch commit
+`454d6212b` is reverted.
+
+## GC-020 Marker - GC009-GC010 T3 R1 Packet Continuity
+
+This handoff records material parent commit `454d6212b`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for this dedicated session-sync-only commit.
