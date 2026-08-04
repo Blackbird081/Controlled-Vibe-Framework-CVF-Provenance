@@ -7,7 +7,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repo state: clean before this handoff-only sync
-- Latest completed commit: `547e412ed governance: retain live-referenced web reviews`
+- Latest completed commit: `3324361ef governance: dispatch public sync projection remediation`
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed
 - External agent memory files: non-canonical convenience only
@@ -312,6 +312,51 @@ to this handoff marker so the checker may accept its parent SHA.
 | Claim boundary | repository-local continuity trace only; no provider call |
 | Agent type | Codex |
 | Invocation ID | `gc009-live-t5-r2-redispatch-continuity-child-2026-07-26` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - Public-Sync R1 Dispatch Sync
+
+Authorized continuity scope: record material dispatch commit `3324361ef` and
+preserve the bounded no-commit implementation route for the public-sync
+projection-regression remediation packet.
+
+Protected path:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`.
+
+Operator authorization: continue after the blocked public-sync attempt while
+keeping the public clone read-only until a later reviewed export decision.
+
+Rollback boundary: revert only this handoff entry if material dispatch commit
+`3324361ef` is reverted.
+
+## GC-020 Marker - Public-Sync R1 Dispatch
+
+This handoff records material parent commit `3324361ef`. The handoff-only child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated handoff-sync commit.
+
+## Agent Operation Trace Block - Public-Sync R1 Dispatch Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex dispatcher/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | PUBLIC-SYNC-R1 dispatch sync, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | dispatch gates, commit steward, pre-commit hook, and handoff-only patch |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | operator `next` instruction after blocked public-sync report |
+| Before status evidence | HEAD `3324361ef`; clean worktree after the two-path material dispatch commit |
+| After status evidence | active handoff records dispatch commit and bounded next implementation route |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | continuity only; public clone remains read-only |
+| Claim boundary | no implementation, provider call, live proof, public mutation, public commit, or push |
+| Agent type | Codex dispatcher/session-sync steward |
+| Invocation ID | `public-sync-r1-dispatch-sync-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
