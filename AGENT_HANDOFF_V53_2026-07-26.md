@@ -6,8 +6,8 @@ Status: ACTIVE
 
 ## Handoff Context
 
-- Repo state: QBS lineage reconciliation implementation is uncommitted and blocked pending operator decision
-- Latest completed commit: `c974ea332 session: record QBS lineage R1 dispatch`
+- Repo state: QBS lineage reconciliation material commit `68b9c9250` accepted pending closure conversion
+- Latest completed commit: `68b9c9250 feat: reconcile QBS runtime lineage`
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed
 - External agent memory files: non-canonical convenience only
@@ -679,6 +679,53 @@ accept this parent SHA for the dedicated handoff-sync commit.
 | Claim boundary | provenance remediation closed; public export and governance-latency L0 remain separately gated |
 | Agent type | Codex reviewer/closer/session-sync steward |
 | Invocation ID | `public-sync-r1-closure-sync-2026-08-05` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - QBS Lineage R1 Material Sync
+
+Authorized continuity scope: record material commit `68b9c9250`, the bounded
+QBS runtime-lineage reconciliation, and the operator-authorized one-call
+Alibaba evidence receipt. The one-call ceiling is consumed; no additional
+provider call is authorized by this entry.
+
+Protected path:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`.
+
+Operator authorization: retain and continue QBS reconciliation; allow one
+targeted Alibaba live test for real evidence. Governance-latency L0 remains
+parked and public export remains separately gated.
+
+Rollback boundary: revert only this handoff entry if material commit
+`68b9c9250` is reverted.
+
+## GC-020 Marker - QBS Lineage R1 Material Commit
+
+This handoff records material parent commit `68b9c9250`. The handoff-only child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated handoff-sync commit.
+
+## Agent Operation Trace Block - QBS Lineage R1 Material Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex reviewer/closer/session-sync steward |
+| Provider or surface | local private provenance repository; one operator-authorized Alibaba call already consumed |
+| Session or invocation | QBS lineage R1 material sync, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | material commit, pre-commit hook, and handoff-only patch |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | GC-020 in-place update rule after material commit `68b9c9250` |
+| Before status evidence | HEAD `68b9c9250`; material batch committed; completion review pending closure conversion |
+| After status evidence | active handoff records material HEAD, consumed one-call ceiling, and next closure move |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | continuity only; no new provider call, public export, downstream edit, deployment, or governance-latency work |
+| Claim boundary | bounded QBS reconciliation evidence only; closure conversion still required |
+| Agent type | Codex reviewer/closer/session-sync steward |
+| Invocation ID | `qbs-lineage-r1-material-sync-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
