@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-QBS-LINEAGE-R1
 
@@ -359,27 +359,38 @@ Claim Update Requirement: worker records confirmed, narrowed, or invalidated.
 | --- | --- |
 | claimScope | local QBS source/test lineage reconciliation |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
-| receiptEvidence | N/A with reason: no live runtime receipt |
-| actionEvidence | ACTION_EVIDENCE_PRESENT: source diff and offline test results only |
+| receiptEvidence | CVF_RECEIPT_PRESENT: operator-authorized Alibaba receipt `rcpt-env-msfan99x-lk8his`; HTTP 200; ALLOW; secret-safe fields only |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: committed source diff, offline tests, and one targeted live receipt |
 | invocationBoundary | local governed commands inside provenance |
 | interceptionBoundary | no IDE, shell, git, provider, or agent interception claim |
 | claimLanguage | reconciliation may prove only the bounded source/test contracts |
-| forbiddenExpansion | no benchmark score, provider/live, public push, downstream edit, governance-latency, or F-1 work |
+| forbiddenExpansion | no additional provider/live call, benchmark score, public push, downstream edit, governance-latency, or F-1 work |
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | the fifteen QBS source/test paths in Allowed changed paths, verified from committed material `68b9c9250` |
+| Runtime behavior claimed | BOUNDED: clarification, declared-risk enforcement, governed stop outputs, family-aware ALLOW contracts, and receipt propagation only |
+| Provider/live proof claimed | BOUNDED: one operator-authorized Alibaba `qwen-turbo` call, HTTP 200, ALLOW, receipt `rcpt-env-msfan99x-lk8his` |
+| Provider registry surfaces | N/A with reason: provider registry was neither changed nor used as an absence or hardcoding claim |
+| Public-sync claimed | N/A with reason: sibling public-sync remained clean at `27137db4d`; export is deferred |
+| Freshness disposition | PASS - source diff, focused tests, typecheck, live receipt, corrected offline manifest, and detached baseline reproduction were recomputed in this tranche |
 
 ## Acceptance Criteria
 
-- [ ] The six focused test files pass offline.
-- [ ] Typecheck passes.
-- [ ] Full non-live cvf-web suite passes or preserves separately evidenced pre-existing failures.
-- [ ] Exact changed set matches the sixteen worker-owned paths.
-- [ ] Public-sync HEAD/status remain unchanged.
-- [ ] Worker return fast gate passes.
+- [x] The six focused test files pass offline.
+- [x] Typecheck passes.
+- [x] Full non-live cvf-web suite preserves the four separately reproduced pre-existing failures at `fa5328c9b`.
+- [x] Exact changed set matches the sixteen worker-owned paths.
+- [x] Public-sync HEAD/status remain unchanged at clean `27137db4d`.
+- [x] Worker return fast gate passes.
 
 Fail conditions:
 
-- [ ] N/A with reason: unresolved until worker return; no provider/live or public mutation may occur.
-- [ ] N/A with reason: unresolved until worker return; no test deletion or weakening may occur.
-- [ ] N/A with reason: unresolved until worker return; any extra path returns to orchestrator.
+- [x] N/A with reason: no unauthorized provider or public mutation remains; the one targeted call had explicit operator authority and its ceiling is consumed.
+- [x] N/A with reason: reviewer inspection found no test deletion or weakening.
+- [x] N/A with reason: worker manifest matched; reviewer-owned completion review was handled outside worker scope as declared.
 
 ## Review Gate
 
@@ -403,12 +414,42 @@ projection/export remains a separate checkpoint following accepted closure.
 
 ## Closure Checklist
 
-- [ ] Worker return is complete and no-commit.
-- [ ] Every focused command passes following the last implementation edit.
-- [ ] Exact worker allowed changed set matches.
-- [ ] Reviewer recomputes evidence from disk; independence is not claimed.
-- [ ] Material pre-closure and commit steward pass on a real changed range.
-- [ ] Public-sync remains clean and unchanged.
+- [x] Worker return is complete and no-commit.
+- [x] Every focused command passes following the last implementation edit.
+- [x] Exact worker allowed changed set matches.
+- [x] Reviewer recomputed evidence from disk; independence is not claimed.
+- [x] Material pre-closure passed 75/75 and commit steward passed on `fa5328c9b..68b9c9250`.
+- [x] Public-sync remains clean and unchanged at `27137db4d`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_QBS_LINEAGE_RECONCILIATION_R1_COMPLETION_2026-08-05.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | standalone GC-018 tranche | no roadmap status change | N/A with reason: standalone tranche |
+| Registry JSON | corpus registry aggregate | generator drift check PASS; no content change | PASS |
+| Registry Markdown | corpus registry Markdown | no content change required; reviewer-fast registry checks PASS | PASS |
+| External evidence digest | secret-safe live receipt summary | N/A with reason: no external artifact file was ingested | N/A with reason: no external artifact hash applies |
+| System loop interlock | current system-loop registry | reviewer-fast gate covers unchanged interlock | N/A with reason: no interlock mutation |
+| Session continuity | `AGENT_HANDOFF_V53_2026-07-26.md` | `c1392c516` records material commit `68b9c9250` | PASS |
+| Material commit | committed QBS source/test and governed artifacts | `68b9c9250` | PASS |
+| Material range | Git committed range | `fa5328c9b..68b9c9250` | PASS |
+| Pre-closure | autorun receipt | 75/75 checks | PASS |
+| Worker return | paired worker-return artifact | sixteen worker-owned paths; no worker commit | PASS |
+| Reviewer independence | paired completion review | `SINGLE_AGENT_MULTI_ROLE`; independence not claimed | PASS_BOUNDED |
+| Public export | sibling public-sync clone | separate tranche required | DEFERRED_PRIVATE_ONLY |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| provider and model | Alibaba; `qwen-turbo` | PASS |
+| HTTP and decision | HTTP 200; ALLOW | PASS |
+| route and policy snapshot | `/api/execute`; `pol-20260804-0001` | PASS |
+| receipt identifier | `rcpt-env-msfan99x-lk8his` | PASS |
+| output presence | true | PASS |
+| provider-call ceiling | exactly one authorized targeted call; consumed | PASS |
 
 ## Return-To-Orchestrator Conditions
 

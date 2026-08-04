@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 docType: review
 
-Status: REVIEW_ACCEPTED_PENDING_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-08-05
 
@@ -45,7 +45,7 @@ claimed.
 | Source | Use |
 |---|---|
 | paired GC-018 baseline | authority, amendment, stop conditions |
-| paired work order | exact scope, receipt contract, closure route |
+| `docs/work_orders/CVF_AGENT_WORK_ORDER_QBS_LINEAGE_RECONCILIATION_R1_2026-08-05.md` | exact scope, receipt contract, closure route |
 | QBS worker return | no-commit implementation and diagnostic evidence |
 | current fifteen source/test paths | reviewer-inspected implementation |
 | commit `fa5328c9b` detached worktree | baseline failure reproduction |
@@ -53,7 +53,7 @@ claimed.
 
 ## Findings / Position
 
-Disposition: `REVIEW_ACCEPTED_PENDING_COMMIT`.
+Disposition: `CLOSED_PASS_BOUNDED`.
 
 - Ambiguous F7 requests now enter clarification instead of guessed routing.
 - Declared risk is honored; bounded R2 requests require approval and bounded R3
@@ -256,23 +256,23 @@ DEFERRED_PRIVATE_ONLY
 Reason: this review accepts provenance material only. A separate reviewed
 public projection/export tranche must inspect the candidate and public tests.
 
-Next action: commit accepted provenance material, convert closure on a real
-range, sync continuity, and push provenance before any public projection.
+Next action: push the closed provenance range before any separately governed
+public projection.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired work order | `DISPATCH_READY` pending committed range | PENDING_COMMIT |
-| Completion or reviewer artifact | this file | `REVIEW_ACCEPTED_PENDING_COMMIT` | PENDING_COMMIT |
+| Work order status | paired work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this file | `CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | standalone GC-018 | no roadmap status change | N/A with reason: standalone tranche |
 | Registry JSON | corpus registry aggregate | drift check passed; no content change | PASS |
 | Registry Markdown | corpus registry Markdown | no content change required | PASS |
-| External evidence digest | live receipt summary in this review | secret-safe receipt fields | PASS |
+| External evidence digest | live receipt summary in this review | N/A with reason: no external artifact file was ingested; only secret-safe receipt fields were recorded | N/A with reason: no external artifact hash applies |
 | System loop interlock | no interlock change | reviewer-fast PASS | N/A with reason: no mutation |
-| Session continuity | active handoff | blocked checkpoint at `fa5328c9b`; material sync follows commit | PENDING_COMMIT |
+| Session continuity | active handoff | material sync commit `c1392c516` records `68b9c9250` | PASS |
 | Worker return | QBS worker return | `COMPLETE_PENDING_REVIEW`; fast gate PASS | PASS |
-| Material changed set | nineteen paths | `git diff --name-status` | MATCH_PENDING_COMMIT |
+| Material changed set | nineteen paths | committed at `68b9c9250`; `git diff --name-status fa5328c9b..68b9c9250` | MATCH |
 | Public export | sibling clone | clean `27137db4d` | N/A with reason: DEFERRED_PRIVATE_ONLY |
 
 ## Acceptance Receipt Assertion Matrix

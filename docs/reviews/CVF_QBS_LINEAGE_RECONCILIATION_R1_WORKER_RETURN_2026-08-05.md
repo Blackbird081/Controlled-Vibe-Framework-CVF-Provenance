@@ -280,7 +280,7 @@ remains unchanged at `27137db4d`.
 | corrected full offline run | 299/302 files and 3332/3338 tests; four failures |
 | detached baseline diagnostic | reproduced the same four failures at `fa5328c9b` |
 | public-sync status | PASS, empty at `27137db4d` |
-| worker-return fast gate | PASS before authority amendment; rerun required after final update |
+| worker-return fast gate | PASS after final evidence update |
 
 ## No-Commit Statement
 
