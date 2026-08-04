@@ -7,7 +7,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repo state: clean before this handoff-only sync
-- Latest completed commit: `c10594d25 governance: classify active handoff exposure`
+- Latest completed commit: `547e412ed governance: retain live-referenced web reviews`
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed
 - External agent memory files: non-canonical convenience only
@@ -312,6 +312,51 @@ to this handoff marker so the checker may accept its parent SHA.
 | Claim boundary | repository-local continuity trace only; no provider call |
 | Agent type | Codex |
 | Invocation ID | `gc009-live-t5-r2-redispatch-continuity-child-2026-07-26` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - Review Retention Push Repair
+
+Authorized continuity scope: record material parent commit `547e412ed` after
+the provenance push-readiness preview surfaced and the registry repair resolved
+four live-referenced historical review retention omissions.
+
+Protected path:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`.
+
+Operator authorization: push the private provenance branch to clear local
+commit debt before continuing.
+
+Rollback boundary: revert only this handoff-only sync if review-retention
+repair commit `547e412ed` is reverted.
+
+## GC-020 Marker - Review Retention Push Repair
+
+This handoff records material parent commit `547e412ed`. The handoff-only child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated handoff-sync commit.
+
+## Agent Operation Trace Block - Review Retention Push Repair
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex push/continuity steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | review-retention push-readiness repair, 2026-08-04 |
+| Working directory | repository root |
+| Command or tool surface | push-readiness preview, retention registry checker, commit steward, handoff-only patch, and pre-commit hook |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | operator instruction to push provenance and clear commit debt |
+| Before status evidence | HEAD `547e412ed`; clean worktree after the one-path retention registry commit |
+| After status evidence | active handoff records material parent commit `547e412ed` |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | GC-020 child marker only; no roadmap reopen, runtime build, downstream edit, provider call, public-sync, or deployment |
+| Claim boundary | repository-local continuity trace only; governance-latency L0 remains parked |
+| Agent type | Codex push/continuity steward |
+| Invocation ID | `review-retention-push-repair-continuity-child-2026-08-04` |
 | Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
