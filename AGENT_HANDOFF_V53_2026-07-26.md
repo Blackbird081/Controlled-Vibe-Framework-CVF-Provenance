@@ -6,8 +6,8 @@ Status: ACTIVE
 
 ## Handoff Context
 
-- Repo state: QBS lineage reconciliation material commit `68b9c9250` accepted pending closure conversion
-- Latest completed commit: `68b9c9250 feat: reconcile QBS runtime lineage`
+- Repo state: QBS lineage reconciliation R1 is `CLOSED_PASS_BOUNDED`; provenance push is the next allowed move
+- Latest completed commit: `78e700186 governance: close QBS lineage reconciliation R1`
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed
 - External agent memory files: non-canonical convenience only
@@ -679,6 +679,51 @@ accept this parent SHA for the dedicated handoff-sync commit.
 | Claim boundary | provenance remediation closed; public export and governance-latency L0 remain separately gated |
 | Agent type | Codex reviewer/closer/session-sync steward |
 | Invocation ID | `public-sync-r1-closure-sync-2026-08-05` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - QBS Lineage R1 Closure Sync
+
+Authorized continuity scope: record closure-conversion commit `78e700186` and
+the bounded QBS reconciliation disposition before provenance push.
+
+Protected path:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`.
+
+Operator authorization: retain and continue the QBS reconciliation; public
+projection remains a separate governed tranche and governance-latency L0
+remains parked.
+
+Rollback boundary: revert only this handoff entry if closure commit
+`78e700186` is reverted.
+
+## GC-020 Marker - QBS Lineage R1 Closure
+
+This handoff records material parent commit `78e700186`. The handoff-only child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated handoff-sync commit.
+
+## Agent Operation Trace Block - QBS Lineage R1 Closure Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex reviewer/closer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | QBS lineage R1 closure sync, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | closure conversion, pre-commit hook, and handoff-only patch |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | GC-020 in-place update rule after closure commit `78e700186` |
+| Before status evidence | HEAD `78e700186`; work order and completion review closed bounded |
+| After status evidence | active handoff records bounded closure and provenance push as next move |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | continuity only; no provider call, public export, downstream edit, deployment, or governance-latency work |
+| Claim boundary | private-provenance QBS reconciliation closed; public export and baseline gateway defects remain separate |
+| Agent type | Codex reviewer/closer/session-sync steward |
+| Invocation ID | `qbs-lineage-r1-closure-sync-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
