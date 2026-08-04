@@ -1,4 +1,4 @@
-# CVF Agent Handoff V53 - GC009 Live T5 R2 Redispatch
+# CVF Agent Handoff V53 - GC009 Roadmap Closure And Parked Governance Latency
 
 Memory class: active-handoff
 
@@ -6,60 +6,57 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the independently accepted R1 partial live proof and the
-operator-authorized R2 correction while preserving GC010-AER-T2 value parking.
+Carry the independently accepted bounded GC009 closure, preserve GC010-AER-T2
+value parking, and keep the governance-latency learning candidate parked.
 
 ## Scope / Target / Owner Boundary
 
-Scope: R1 partial-proof review continuity and R2 dispatch preparation.
+Scope: GC009-LIVE-T5 independent closure and session continuity.
 
-Target: dispatch material commit `6a5eb8f54` to the same Claude worker for the
-exact two-assertion R2 correction, offline safety preflight, one live run, and
-no rerun.
+Target: record material closure commit `b72074578` and stop without R3.
 
-Owner boundary: Claude owns exactly the three worker paths in the work order.
-Codex owns independent review, closure, and session sync. No runtime mutation,
-public, push, deployment, or GC-010 authority is active.
+Owner boundary: the worker execution is complete. Codex owns closure and
+session sync. No runtime mutation, public, push, deployment, GC-010, or
+governance-latency execution authority is active.
 
 ## Current Mode
 
-`portable_clone_continuity_published_verified`
+`gc009_roadmap_closed_governance_latency_l0_parked`
 
 ## Active Boundary
 
-GC009-LIVE-T5 R2 is redispatch-ready at `6a5eb8f54`. The same Claude worker
-may modify exactly the three worker artifacts, delete the two response-level
-topic/context exclusions, retain key and event-level exclusions, run offline
-safety preflight, and execute one focused live run with existing keys and no
-rerun.
-GC010-AER-T2 remains value-parked.
+GC009-LIVE-T5 and the parent roadmap are closed bounded at `b72074578`. No R3
+is authorized. GC010-AER-T2 remains value-parked. CVF-GOVERNANCE-LATENCY-L0 is
+a parked provenance learning candidate and requires a fresh operator-approved
+GC-018/L0 work order before evidence intake begins.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`;
-active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=send the
-committed R2 work order to the same Claude no-commit worker for the exact
-response-assertion correction, offline safety preflight, one focused live run,
-and no rerun;
-parked checkpoint=GC010-AER remains value-parked, and
-runtime mutation, broad release proof, public-sync, push, deployment, and
-production-readiness claims remain forbidden.
+Startup acknowledged: current mode=`gc009_roadmap_closed_governance_latency_l0_parked`;
+active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=operator
+checkpoint before any fresh GC-018 and L0 evidence-intake work order for the
+parked governance-latency candidate; parked checkpoint=GC010-AER and
+CVF-GOVERNANCE-LATENCY-L0 remain parked, with no build, provider, public-sync,
+push, deployment, or production-readiness authority.
 
 ## Latest Material Closure
 
-- Material commit: `b915367db`
-- Execution base: `158fd17ae`
+- Material commit: `b72074578`
+- Execution base: `259076d37`
 - Completion review:
-  `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_COMPLETION_2026-07-26.md`
-- Accepted decision: package-internal consumer and execution-plane command
-  runtime have no current owner; cvf-web and the governed CLI/MCP launcher are
-  structurally incompatible existing pipelines; a new caller remains
-  documentation-only.
-- Verification: worker-return fast 62/62, GC-023 PASS, pre-commit 83/83, and
-  exact nine-path material closure.
+  `docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md`
+- Accepted decision: partial live ALLOW/BLOCK/event evidence composes with T3
+  deterministic projection; no same-run live projection claim and no R3.
+- Verification: focused non-live 7/7, TypeScript PASS, reviewer-fast 62/62,
+  pre-commit 83/83, and exact six-path material closure.
 
 ## Latest Work / Changes
 
+- Closed GC009-LIVE-T5 and the GC009/GC010 roadmap bounded at `b72074578`.
+- Corrected the combined provider denominator to two and preserved every
+  assertion not reached after R2 line 255 as unproved.
+- Parked the governance-latency learning candidate behind a fresh explicit
+  operator checkpoint and provenance-native GC-018/L0 work order.
 - Committed the six-path R1 review and R2 redispatch packet at `6a5eb8f54`.
 - Accepted one confirmed R1 Alibaba ALLOW call while retaining BLOCK, durable
   event, and projection as not reached.
@@ -309,5 +306,56 @@ to this handoff marker so the checker may accept its parent SHA.
 | Invocation ID | `gc009-live-t5-r2-redispatch-continuity-child-2026-07-26` |
 | Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - GC009 Roadmap Closure Sync
+
+Authorized continuity scope: record material commit `b72074578`, align the
+active mode and next-move surfaces, preserve GC010 value parking, and park the
+governance-latency L0 candidate behind a fresh operator checkpoint.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`;
+- `CVF_SESSION_MEMORY.md`;
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- `CVF_SESSION/state/entries/nextAllowedMove.json`;
+- `CVF_SESSION/state/entries/gc009LiveT5AndRoadmapBoundedClosure20260804.json`;
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: finish the dangling roadmap and keep the downstream
+governance-latency learning parked rather than running it in parallel.
+
+Rollback boundary: revert only this continuity set if material commit
+`b72074578` is reverted.
+
+## GC-020 Marker - GC009 Roadmap Closure
+
+This handoff records material parent commit `b72074578`. The continuity child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated session-sync commit.
+
+## Agent Operation Trace Block - GC009 Roadmap Closure Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex reviewer/closer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | GC009-LIVE-T5 and parent-roadmap closure sync, 2026-08-04 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, state-source edits, active-state generator, session-sync steward, and pre-commit hook |
+| Target paths | the seven protected continuity paths listed above |
+| Allowed scope source | operator instruction to finish the dangling roadmap and park governance-latency learning afterward |
+| Before status evidence | HEAD `b72074578`; worktree clean after the six-path material closure |
+| After status evidence | active mode and next move record roadmap closure plus parked governance-latency checkpoint |
+| Diff evidence | generated-state check; exact continuity `git diff --name-status` |
+| Approval boundary | continuity only; no material runtime, downstream, distribution-clone, provider, public-sync, push, or deployment action |
+| Claim boundary | repository-local continuity trace; L0 remains parked and has no execution authority |
+| Agent type | Codex reviewer/closer/session-sync steward |
+| Invocation ID | `gc009-roadmap-closure-session-sync-2026-08-04` |
+| Expected manifest | the seven protected continuity paths listed above |
+| Actual changed set | the seven protected continuity paths listed above |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |

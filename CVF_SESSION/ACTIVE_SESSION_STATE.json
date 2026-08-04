@@ -93,8 +93,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "portable_clone_continuity_published_verified",
-  "previousMode": "project_bootstrap_continuity_committed_local_push_parked",
+  "currentMode": "gc009_roadmap_closed_governance_latency_l0_parked",
+  "previousMode": "portable_clone_continuity_published_verified",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13688,7 +13688,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009-LIVE-T5 R2 is committed redispatch-ready at material commit 6a5eb8f54. Send the complete work order docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md to the same Claude worker under WORKER_MUST_NOT_COMMIT. Claude may modify exactly the focused test, audit, and worker return; delete exactly the two response-level topic/context noncontainment assertions; retain API-key non-leakage and event-level topic/context exclusions; correct the R1 evidence to one confirmed Alibaba ALLOW call; run the complete generated ALLOW intent through offline current safety preflight; and use existing keys for exactly one focused live run. No R2 rerun is authorized. Any failure returns immediately with a secret-safe diagnostic. No runtime mutation, existing-test change, provider-adapter change, broad release bundle, staging, worker commit, public-sync, push, deployment, GC-010 work, or production-readiness claim is authorized. Codex independently reviews. GC010-AER remains value-parked, and LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GC009/GC010 production-caller roadmap is closed bounded at material commit b72074578. GC009-LIVE-T5 accepted two real provider calls across R1/R2, two ALLOW results, one keyless guard BLOCK response, and two correlated durable events; same-run live admin projection, later R2 blocker/payload/minimization assertions, exact latency values, SLOs, and production readiness remain unproved. No R3 is authorized. GC010-AER remains value-parked behind its existing four-fact source condition. CVF-GOVERNANCE-LATENCY-L0 is a parked provenance learning candidate only: reopen requires fresh explicit operator authorization after this continuity closure, a fresh GC-018/L0 evidence-intake work order, and verified checksums for the named read-only downstream evidence. No L1, design, spec, build, downstream edit, hidden distribution clone edit, provider/network call, public-sync, push, or deployment is authorized. LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14391,5 +14391,20 @@
     "verification": "worker-return fast PASS; pre-dispatch PASS; commit steward PASS; pre-commit 83/83",
     "nextAllowedMove": "send the complete committed R2 work order to Claude and return the three unstaged modifications to Codex",
     "claimBoundary": "R2 redispatch authority only; no complete live acceptance is yet claimed."
+  },
+  "gc009LiveT5AndRoadmapBoundedClosure20260804": {
+    "status": "CLOSED_PASS_BOUNDED_GC009_WITH_T5_PARTIAL_LIVE_EVIDENCE_GC010_VALUE_PARKED",
+    "date": "2026-08-04",
+    "materialCommit": "b72074578",
+    "closureBaseHead": "259076d37",
+    "roadmap": "docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md",
+    "completionReview": "docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md",
+    "acceptedEvidence": "four focused executions across three dispatches; two real Alibaba provider calls and ALLOW results across R1/R2; one R2 keyless guard BLOCK response; two correlated durable gateway events; separate accepted T3 deterministic admin projection",
+    "notProved": "same-run live admin projection; later R2 BLOCK payload equality, gatewayBlockedBy, and event-level minimization assertions; exact latency values; percentile, SLO, release, deployment, or production readiness",
+    "verification": "non-live focused regressions 7/7; TypeScript PASS; reviewer-fast 62/62; pre-commit 83/83; committed-range pre-closure content checks PASS with continuity sync pending",
+    "reviewCostDecision": "stop without R3 because the remaining failure is a source-explained test-only payload-shape assertion and another provider run has low incremental value",
+    "governanceLatencyLane": "PARKED_PROVENANCE_LEARNING_CANDIDATE",
+    "governanceLatencyReopenCondition": "fresh explicit operator authorization after this continuity closure plus a fresh GC-018 and L0 evidence-intake work order; downstream evidence remains read-only and checksum-gated",
+    "claimBoundary": "No L1, design, spec, build, downstream mutation, distribution-clone mutation, provider/network call, public-sync, push, deployment, or production-readiness claim is authorized."
   }
 }

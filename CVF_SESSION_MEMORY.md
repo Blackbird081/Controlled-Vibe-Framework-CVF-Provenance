@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`portable_clone_continuity_published_verified`; active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=send the committed GC009-LIVE-T5 R2 work order to the same Claude worker under WORKER_MUST_NOT_COMMIT for the exact response-leakage assertion correction, offline safety preflight, exactly one focused live run, and no rerun; parked checkpoint=GC010-AER remains value-parked, and no runtime mutation, broad release bundle, public-sync, push, deployment, or production-readiness claim is authorized.
+Startup acknowledged: current mode=`gc009_roadmap_closed_governance_latency_l0_parked`; active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=operator checkpoint before any fresh GC-018 and L0 evidence-intake work order for the parked governance-latency learning candidate; parked checkpoint=GC010-AER remains value-parked and CVF-GOVERNANCE-LATENCY-L0 has no execution authority.
 
 ## Current Mode
 
-Current mode marker: `portable_clone_continuity_published_verified`
+Current mode marker: `gc009_roadmap_closed_governance_latency_l0_parked`
 
-Current mode: `portable_clone_continuity_published_verified`
+Current mode: `gc009_roadmap_closed_governance_latency_l0_parked`
 
-`portable_clone_continuity_published_verified`
+`gc009_roadmap_closed_governance_latency_l0_parked`
 
 Previous mode:
 
-`project_bootstrap_continuity_commit_authorized`
+`portable_clone_continuity_published_verified`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GC009-LIVE-T5 and GC009/GC010 roadmap bounded closure | `b72074578` | `CLOSED_PASS_BOUNDED_GC009_WITH_T5_PARTIAL_LIVE_EVIDENCE_GC010_VALUE_PARKED`. Accepted two real provider calls/ALLOW results across R1/R2, one keyless guard BLOCK response, and two correlated events; composed with accepted T3 deterministic projection; no R3, same-run live projection, exact latency, SLO, or production claim. |
 | GC009-LIVE-T5 R2 redispatch | `6a5eb8f54` | REVIEWER_ACCEPTED_REDISPATCH_READY_R2_RESPONSE_LEAKAGE_SCOPE_ONE_RUN_NO_RERUN. R1 confirmed one Alibaba ALLOW call but stopped before BLOCK/events/projection. Same Claude worker deletes exactly two response-level topic/context exclusions, preserves event-level minimization checks, corrects R1 evidence, runs one focused live call, and performs no rerun or commit. |
 | GC009-LIVE-T5 R1 redispatch | `c6e850d11` | REVIEWER_ACCEPTED_REDISPATCH_READY_R1_FIXTURE_PREFLIGHT_ONE_RUN_NO_RERUN. Same Claude worker modifies exactly test, audit, and worker return; uses existing keys for one focused run; no rerun or worker commit. |
 | GC009-LIVE-T5 blocked attempt review | `6b6cd6ab1` | REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED. The fixture was blocked before gateway/provider, so liveCallCount=0. Reviewer rejected the logging-only rerun as noncompliant. Operator authorized R1 using existing keys: one fixture correction, offline safety preflight, one focused live run, no rerun. |
@@ -380,7 +381,21 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `portable_clone_continuity_published_verified`
+Mode: `gc009_roadmap_closed_governance_latency_l0_parked`
+
+The GC009/GC010 production-caller roadmap is closed bounded at material commit
+`b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without
+R3. The accepted evidence and residual boundaries are recorded in
+`docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md`.
+
+`CVF-GOVERNANCE-LATENCY-L0` is parked as a provenance learning candidate. It
+does not reopen automatically from this closure. Reopen requires fresh explicit
+operator authorization, a fresh GC-018 and L0 evidence-intake work order, and
+checksum verification of the named read-only downstream evidence before use.
+The sibling downstream repository and the hidden distribution clone remain
+non-authoritative and must not be edited by that intake. L1, design, spec,
+build, provider/network work, public-sync, push, and deployment remain
+unauthorized.
 
 The golden downstream bootstrap public-first incident is closed at provenance
 review commit `ec362af35` and public corrective commit `27137db4d`.
@@ -406,11 +421,11 @@ a registered production trigger, concrete `GuardRuntimeEngine` and
 order, export-only change, chat proposal, or provider-local note is insufficient.
 If all four facts become source-verifiable, the reviewer may author a fresh
 GC-018 and work order. Otherwise the lane remains value-parked.
-GC009 T1-T4 remain closed bounded; production latency remains
-`NOT_MEASURED_NO_LIVE_AUTHORITY`; GC-010 and the paired gap remain open. No
-runtime/test/package/export/provider/Web/execution-plane/CLI/MCP edit or
-execution, live proof, rollback, public-sync, push, deployment, or
-production-readiness claim is authorized.
+GC009 T1-T5 are closed bounded; T5 proves numeric telemetry shape but retains
+exact latency, percentile, and SLO claims as unproved. GC-010 and the paired gap
+remain open/value-parked. No new runtime/test/package/export/provider/Web/
+execution-plane/CLI/MCP edit or execution, live proof, rollback, public-sync,
+push, deployment, or production-readiness claim is authorized.
 Conversation provenance remains a secondary-input boundary.
 Latest closed numbered LHW wave remains `LHW24`.
 
