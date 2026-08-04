@@ -2,7 +2,11 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_R1_PARTIAL_LIVE_PROOF_R2_AUTHORIZED
+docType: completion_review
+
+Review-Cost Telemetry: REQUIRED
+
+Status: CLOSED_BOUNDED_PARTIAL_LIVE_EVIDENCE_NO_R3
 
 Date: 2026-07-26
 
@@ -11,12 +15,37 @@ Batch ID: GC009-LIVE-T5
 Reviewer: Codex
 
 Current reviewer disposition:
-`R1_PARTIAL_LIVE_PROOF_ACCEPTED_BLOCKED_BEFORE_BLOCK_AND_PROJECTION`.
+`R2_PARTIAL_LIVE_EVIDENCE_ACCEPTED_COMPOSED_WITH_T3_PROJECTION_NO_R3`.
 
 The original first-attempt review below remains historical evidence. The
-independent R1 review addendum at the end supersedes its next-move decision.
+independent R1 review and final R2 review addenda at the end supersede its
+next-move decision.
 
 executionBaseHead: `f8b5a66b0`
+
+closureBaseHead: `259076d37`
+
+## Review-Cost Telemetry
+
+- `reviewRoundCount`: 3
+- `workerRepairTurnCount`: 2
+- `newRootCauseCountThisRound`: 1
+- `dependentFindingCountThisRound`: 4
+- `providerCallCount`: 2
+- `materialCommitCount`: 1
+- `continuityCommitCount`: 1
+- `elapsedReviewMinutes`: NOT_AVAILABLE_WITH_REASON: review spanned multiple resumed sessions and no reliable wall-clock timer was retained
+- `tokenOrQuotaUsage`: NOT_AVAILABLE_WITH_REASON: token usage was not exposed; provider denominator is reported separately
+- `valueDelta`: R2 added direct live ALLOW, keyless BLOCK, and two-event correlation evidence; an R3 would mainly re-execute already source-explained test-only assertions, so its incremental value is below its governance and quota cost
+- `stopDisposition`: REVIEW_COST_ESCALATION_REQUIRED
+- `preRepairAuditDisposition`: COMPLETE_BEFORE_FIRST_REPAIR
+- `commitPlanDisposition`: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
+- `latencyDisposition`: NOT_MEASURED_WITH_REASON: no reliable end-to-end reviewer elapsed-time record exists
+- `avoidableDelayClass`: SEQUENTIAL_FINDING_CASCADE
+
+The round-three escalation is resolved by the operator's instruction to finish
+the existing roadmap and by this independent review's bounded stop decision:
+close without R3 and preserve every unexecuted proof surface explicitly.
 
 ## Purpose
 
@@ -183,12 +212,23 @@ authority or accepted live result.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Worker test | focused live-test path | exact path present | PASS |
-| Worker audit | audit path | `Status: BLOCKED_WITH_REASON` | PASS |
-| Worker return | worker-return path | `terminalDisposition: BLOCKED_WITH_REASON` | PASS |
-| Reviewer completion | this review | reviewer correction and decision token | PASS |
-| Live acceptance | required proof matrix | zero provider calls and zero gateway events | BLOCKED |
-| R1 authority | operator instruction | existing API keys may be used when needed; continue | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md` | `Status: CLOSED_BOUNDED_PARTIAL_LIVE_EVIDENCE_NO_R3` | PASS |
+| Completion or reviewer artifact | this review | `Status: CLOSED_BOUNDED_PARTIAL_LIVE_EVIDENCE_NO_R3` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md` | `Status: CLOSED_PASS_BOUNDED_GC009_WITH_T5_PARTIAL_LIVE_EVIDENCE_GC010_VALUE_PARKED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged aggregate verified by `generate_corpus_scan_registry.py --check` | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged; T5 introduces no registry candidate | PASS |
+| External evidence digest | N/A with reason: no external document is consumed | N/A with reason: provider execution is local runtime evidence, not an external evidence artifact | N/A with reason |
+| System loop interlock | `docs/reference/system_chain/gaps/entries/gc009_gc010_no_production_caller.json` | paired entry remains open for value-parked GC-010; no false whole-entry closure | PASS |
+| Session continuity | separate continuity commit after material closure | active front doors will record roadmap closure and the parked next lane | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| R1 real provider ALLOW receipt | decision `ALLOW`, numeric telemetry shape, API-key non-leakage before the failure point | PASS |
+| R2 real provider ALLOW receipt | decision `ALLOW`, numeric telemetry shape, API-key non-leakage before the failure point | PASS |
+| R2 keyless BLOCK receipt | HTTP 400, `guard-blocked`, receipt decision `BLOCK` before the failure point | PASS |
+| Same-run live admin projection | render assertions occur after the line-255 failure and did not execute | BLOCKED with reason: composed T3 projection evidence is bounded and is not a same-run substitute |
 
 ## Agent Operation Trace Block
 
@@ -307,3 +347,73 @@ only to complete those bounded proof surfaces. It does not authorize runtime
 mutation, broad release proof, production percentile or SLO claims,
 public-sync, push, deployment, rollback, GC-010 work, or another live run after
 the single R2 command.
+
+## Final R2 Independent Review And Closure
+
+### R2 Evidence Accepted
+
+Source-ordered assertion review confirms that R2 executed exactly one focused
+test and, before failing at line 255, proved:
+
+1. one real Alibaba ALLOW response with HTTP 200, decision `ALLOW`, nonempty
+   output, numeric receipt telemetry, and API-key non-leakage;
+2. one keyless guard BLOCK response with HTTP 400, `guard-blocked`, decision
+   `BLOCK`, and API-key non-leakage; and
+3. exactly two persisted `MANDATORY_GATEWAY_EVALUATED` events, correlated by
+   the two fixed request IDs, with ALLOW and BLOCK outcomes.
+
+R1 independently contributes another confirmed real Alibaba ALLOW call.
+Therefore the combined denominator is four focused executions and two real
+provider calls, not one provider call.
+
+### R2 Evidence Not Accepted
+
+The R2 failure occurred at the ALLOW payload key-set equality assertion. The
+following assertions occur later and did not execute: the BLOCK event's exact
+7-key equality, `gatewayBlockedBy === 'authority_gate'`, event-level API-key/
+topic/context exclusions, `AdminAuditLogBody` rendering, and the final safe
+identifier/telemetry log. None is promoted to direct R2 live evidence.
+
+Direct source inspection explains why the ALLOW payload has five serialized
+keys: two optional BLOCK/escalation-only values are `undefined` and disappear
+through JSON serialization. That diagnosis is accepted without another live
+call, but it is not retroactive execution of the skipped assertions.
+
+### Composed Evidence Decision
+
+The accepted T3 completion independently proves deterministic projection of
+gateway decision, request ID, and optional blocker through the existing admin
+component. R2 proves that real ALLOW/BLOCK events are durably produced and
+correlated. Together they support a bounded composed-evidence conclusion, not
+a same-run live UI projection claim.
+
+`CLOSED_BOUNDED_PARTIAL_LIVE_EVIDENCE_NO_R3`
+
+No R3 is authorized. Its main expected value would be to repair and rerun a
+test-only payload-shape assertion whose runtime cause is already source-backed,
+while consuming more provider quota and governance cycles. The roadmap's
+original T1-T4 bounded outcome remains intact; T5 adds partial live evidence
+and a precise residual boundary.
+
+### Final Claim Boundary
+
+Accepted: two real provider calls across R1/R2; two ALLOW results; one keyless
+guard BLOCK response; two correlated durable events; numeric telemetry shape
+at n=1 per live ALLOW run; and separate deterministic T3 projection behavior.
+
+Not accepted: exact telemetry values, percentiles or SLOs, same-run live admin
+projection, R2 blocker-field proof, R2 exact BLOCK payload-key proof, R2
+event-level minimization assertions, production readiness, release readiness,
+public export, deployment, or any GC-010 runtime implementation.
+
+### Final Verification Evidence
+
+| Check | Result |
+|---|---|
+| Focused non-live regressions | PASS: 7/7 across mandatory-gateway invocation and `AdminAuditLogBody` projection tests |
+| cvf-web TypeScript | PASS: local `tsc --noEmit` completed with no output or errors |
+| Reviewer-fast governance | PASS: 62/62 after reviewer repairs |
+| Machine Closure Package | PASS: all three closed-equivalent changed artifacts compliant |
+| Review-cost control | PASS |
+| Roadmap closure freshness | PASS: top status and same-file Machine Closure Package status match |
+| Live/provider rerun during review | N/A with reason: no reviewer live call and no R3; R1/R2 worker evidence was reviewed in place |

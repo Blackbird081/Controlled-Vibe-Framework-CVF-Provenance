@@ -2,12 +2,12 @@
 
 Memory class: POINTER_RECORD
 
-Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_GC010_T1_PASS_BOUNDED_DESIGN_READY_CALLER_UNRESOLVED_GC010_T2_PASS_BOUNDED_VALUE_PARKED_GC009_LIVE_T5_R2_REDISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_GC009_WITH_T5_PARTIAL_LIVE_EVIDENCE_GC010_VALUE_PARKED
 
 ## Dispatch Prompt Envelope
 
-N/A with reason: this is a roadmap artifact, not the delegated work order.
-The active envelope is in
+N/A with reason: this is a closed roadmap artifact, not an active delegated
+work order. The final T5 execution envelope is retained in
 `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md`.
 
 ## Purpose
@@ -15,9 +15,10 @@ The active envelope is in
 Define a bounded, documentation-first roadmap to address the known GC-009/GC-010
 production-caller gap (`cvf.asc.gap.gc009_gc010_no_production_caller.v1`)
 through source-verified architecture decisions followed, only when released,
-by a minimal, proof-bounded end-to-end runtime chain. Provider/live proof is
-released only by the fresh GC009-LIVE-T5 baseline and work order; public-sync,
-deployment, GC-010 implementation, and CLI/MCP invocation remain unreleased.
+by a minimal, proof-bounded end-to-end runtime chain. The focused
+GC009-LIVE-T5 packet is now closed with partial live evidence and no R3;
+public-sync, deployment, GC-010 implementation, and CLI/MCP invocation remain
+unreleased.
 
 ## Decision
 
@@ -43,30 +44,35 @@ commit `01e74fc5e`. The operator authorized continued value-seeking work, and
 a fresh source-verified GC-018 now releases T3 through the existing
 `/admin/audit-log` page. T4 then closed the GC-009 documentation assessment,
 GC010-T2 value-parked the separate runtime lane, and the operator explicitly
-authorized one focused GC009-LIVE-T5 proof. T5 permits one initial Alibaba
-provider call and at most one diagnostic rerun without runtime mutation.
+  authorized one focused GC009-LIVE-T5 proof. Across its bounded dispatches,
+  T5 closed with two confirmed provider calls, a live keyless BLOCK, two
+  correlated durable events, and no same-run admin projection. Reviewer closure
+  composes that evidence with T3's deterministic projection proof and stops
+  without R3.
 
 ## Known Gap
 
 `cvf.asc.gap.gc009_gc010_no_production_caller.v1`
 
-Source-verified accepted state (all confirmed directly against current HEAD
-`4569a301d` during this roadmap's authoring pass; see Source Verification
-Block):
+Historical source-verified authoring baseline (confirmed against HEAD
+`4569a301d`; superseded for GC-009 by the closed T1-T5 evidence below):
 
-- `MandatoryGateway`/`createMandatoryGateway`
+- At that authoring baseline, `MandatoryGateway`/`createMandatoryGateway`
   (`EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts`) and
   `AgentExecutionRuntime`
   (`EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts`)
-  exist and are unit-tested only.
+  existed and were unit-tested only. GC-009 now has
+  an accepted bounded cvf-web caller and invocation evidence; GC-010 remains
+  value-parked without an accepted non-test caller.
 - The accepted T2 repository-wide search
   (`docs/reference/system_chain/CVF_SYSTEM_CHAIN_EXHAUSTIVE_PROOF_T2_CALLER_VERIFICATION.json`)
   found zero non-test, non-type-only production callers for either helper
   across 22,026 enumerated files.
-- `EXTENSIONS/CVF_GUARD_CONTRACT/package.json` `exports`/`files` and
-  `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` omit both
-  `runtime/mandatory-gateway` and `runtime/agent-execution-runtime` entirely.
-- This is `IMPLEMENTED_NOT_INVOCATION_PROVEN`: an architecture-discoverability
+- At that baseline, `EXTENSIONS/CVF_GUARD_CONTRACT/package.json`
+  `exports`/`files` and `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` omitted
+  both runtime modules. Current source exports `mandatory-gateway`; it still
+  omits `agent-execution-runtime`.
+- The paired entry remains `IMPLEMENTED_NOT_INVOCATION_PROVEN`: an architecture-discoverability
   gap, not a runtime defect claim, an enforcement-coverage claim, or an
   invocation-behavior claim.
 - Full closure eventually requires caller ownership and bounded invocation
@@ -98,11 +104,11 @@ touched, narrowed, or reopened by any tranche in this roadmap.
 
 ## Scope
 
-This roadmap's active scope is GC009-LIVE-T5: one new focused live test, one
-live-proof audit, and one worker return. The actual route, shared gateway,
-guard engine, event store, Alibaba provider, receipt telemetry, and accepted
-audit component may be exercised but not modified. GC-010 remains
-value-parked.
+This roadmap is closed. Its final changed scope was GC009-LIVE-T5: one focused
+live test, one live-proof audit, and one worker return, followed by independent
+reviewer closure. The actual route, shared gateway, guard engine, event store,
+Alibaba provider, receipt telemetry, and accepted audit component were
+exercised but not modified. GC-010 remains value-parked.
 
 ## Tranches
 
@@ -115,7 +121,7 @@ value-parked.
 | T2 | Positive and fail-closed negative invocation proof for the T1 composition | CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN |
 | T3 | Projection of T2-proven evidence through existing `/admin/audit-log`; component, focused test, and worker return only | CLOSED_PASS_BOUNDED_GC009_OPERATOR_PROJECTION |
 | T4 | Value, latency, failure, rollback, and closure assessment across T1-T3 | CLOSED_PASS_BOUNDED_GC009_ONLY_GC010_OPEN |
-| GC009-LIVE-T5 | One focused real-provider ALLOW, fail-closed BLOCK, durable event, audit projection, and n=1 latency proof | REVIEWER_ACCEPTED_REDISPATCH_READY_R2_RESPONSE_LEAKAGE_SCOPE_ONE_RUN_NO_RERUN |
+| GC009-LIVE-T5 | One focused real-provider ALLOW, fail-closed BLOCK, durable event, audit projection, and n=1 latency proof | CLOSED_BOUNDED_PARTIAL_LIVE_EVIDENCE_NO_R3 |
 | GC010-T0 | Source-verified `AgentExecutionRuntime` owner, provider, receipt, and proof decision | CLOSED_PASS_BOUNDED_PARTIAL_READY_REQUIRES_EXPORT_OR_RECEIPT_DESIGN |
 | GC010-T1 | Exact package-native owner interface, export, receipt, proof, failure, and rollback design | CLOSED_PASS_BOUNDED_DESIGN_SPEC_READY_FOUNDATION_ONLY_CALLER_UNRESOLVED |
 | GC010-T2 | Exact non-test caller ownership and caller-level invocation-boundary decision | CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION |
@@ -344,14 +350,14 @@ satisfy the condition.
 
 | Design control | Handling in this roadmap | Verdict |
 |---|---|---|
-| Scope boundary | GC-009 T1-T4 are closed bounded; GC010-T2 is value-parked; only focused GC009-LIVE-T5 proof is released | PASS |
+| Scope boundary | GC-009 T1-T5 are closed bounded; GC010-T2 is value-parked; no successor execution is released | PASS |
 | Non-goals | Explicit `## Non-Goals` section below; no runtime mutation, broad release proof, public-sync, or arbitrary external-agent claim released | PASS |
 | Lane split | Single lane: GC-009/GC-010 production-caller closure only; PPMCP and skill-absorption lanes explicitly excluded | PASS |
 | Dependency/source-verification plan | `## Source Verification Block` below; every architecture claim cites a repo file and line/section | PASS |
 | Claim boundary | T5 authorizes one focused provider proof only; no runtime mutation, rollback, GC-010, public, deployment, or production-SLO claim | PASS |
 | Acceptance criteria | Companion T0A work order `## Acceptance Criteria` | PASS |
 | Verification/evidence | `## Checker Source Read-Ahead Block` and `## Source Verification Block` below; companion T0A work order evidence requirements | PASS |
-| Dispatch-readiness decision | GC009-LIVE-T5 has a fresh source-verified baseline and work order after T4 closure and operator authorization | PASS |
+| Dispatch-readiness decision | historical T5 dispatch prerequisites were satisfied; T5 is now closed and no R3 is released | PASS |
 
 ## Acceptance Criteria
 
@@ -377,7 +383,7 @@ later tranche's own work order owns its verification commands when released.
 
 1. GC-009 T1-T4 are independently closed bounded.
 2. GC010-T2 is value-parked behind its four-fact source condition.
-3. Operator authorized one focused GC009-LIVE-T5 proof.
+3. GC009-LIVE-T5 is closed with partial live evidence and no R3.
 4. Dispatcher authors, gates, and commits the T5 baseline, work order, and
    this roadmap update.
 5. One no-commit worker creates exactly the focused test, live audit, and
@@ -606,6 +612,8 @@ batch is authorized by this artifact.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md` | final roadmap work order is `Status: CLOSED_BOUNDED_PARTIAL_LIVE_EVIDENCE_NO_R3` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md` | final independent reviewer closure accepts bounded partial live evidence and no R3 | PASS |
 | Work order status (T0A) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_2026-07-25.md` | `Status: CLOSED_PASS_BOUNDED_NOT_READY_OWNER_CONTRACT_REQUIRES_INTERFACE_CHANGE` | PASS |
 | Completion or reviewer artifact (T0A) | `docs/reviews/CVF_GC009_GC010_PRODUCTION_OWNER_DESIGN_T0A_COMPLETION_2026-07-25.md` | independent bounded not-ready closure | PASS |
 | Work order status (T1I) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_INTERFACE_DESIGN_2026-07-25.md` | `Status: CLOSED_PASS_BOUNDED_INTERFACE_SPEC_READY_FOR_FRESH_T1_RUNTIME_PACKET` | PASS |
@@ -622,12 +630,21 @@ batch is authorized by this artifact.
 | Work order status (GC010-T2) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_2026-07-26.md` | `Status: CLOSED_PASS_BOUNDED_NO_VIABLE_CURRENT_CALLER_VALUE_PARKED_WITH_REOPEN_CONDITION` | PASS |
 | Completion or reviewer artifact (GC010-T2) | `docs/reviews/CVF_GC010_AGENT_EXECUTION_RUNTIME_T2_NON_TEST_CALLER_OWNERSHIP_INVOCATION_BOUNDARY_DECISION_COMPLETION_2026-07-26.md` | independent bounded value-parked R1 acceptance | PASS |
 | Baseline status (GC009-LIVE-T5) | `docs/baselines/CVF_GC018_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Work order status (GC009-LIVE-T5) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md` | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R2_RESPONSE_LEAKAGE_SCOPE_ONE_RUN_NO_RERUN` | PASS |
-| Completion review (GC009-LIVE-T5) | `docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md` | R1 one-call ALLOW proof accepted; BLOCK/events/projection remain blocked; R2 authorized | PASS |
-| Roadmap state | this roadmap | `Status: T0_PASS_T0A_PASS_T1I_PASS_T1_PASS_BOUNDED_GC009_COMPOSED_T2_PASS_BOUNDED_GC009_INVOCATION_PROVEN_T3_PASS_BOUNDED_GC009_OPERATOR_PROJECTION_T4_PASS_BOUNDED_GC009_ONLY_GC010_OPEN_GC010_T0_PASS_BOUNDED_PARTIAL_READY_GC010_T1_PASS_BOUNDED_DESIGN_READY_CALLER_UNRESOLVED_GC010_T2_PASS_BOUNDED_VALUE_PARKED_GC009_LIVE_T5_R2_REDISPATCH_READY` | PASS |
+| Work order status (GC009-LIVE-T5) | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md` | `Status: CLOSED_BOUNDED_PARTIAL_LIVE_EVIDENCE_NO_R3` | PASS |
+| Completion review (GC009-LIVE-T5) | `docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md` | R2 direct ALLOW/BLOCK/event evidence accepted; composed with T3 projection; no same-run live projection claim; no R3 | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED_GC009_WITH_T5_PARTIAL_LIVE_EVIDENCE_GC010_VALUE_PARKED` | PASS |
 | Corpus registry source | `docs/corpus-intelligence/registry/entries/gc010-aer-t2-execution-plane-candidate-source.json` | bounded named execution-plane candidate file registered after full pre-commit coverage check | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | regenerated from per-entry sources | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no Markdown registry edit required for generated JSON coverage | PASS |
 | External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
-| System loop interlock | GC-009/GC-010 gap entry | GC-009 composition recorded; paired status remains `IMPLEMENTED_NOT_INVOCATION_PROVEN` because T2 and GC-010 remain open | PASS |
-| Session continuity | separate session-sync commit | follows material closure commit | PASS |
+| System loop interlock | GC-009/GC-010 gap entry | GC-009 composition and invocation are recorded; paired status remains `IMPLEMENTED_NOT_INVOCATION_PROVEN` because GC-010 remains value-parked and the paired close condition is unsatisfied | PASS |
+| Session continuity | separate session-sync commit | follows material closure commit and preserves the governance-latency lane as parked until this closure is recorded | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| GC-009 bounded invocation evidence | T2 deterministic route proof plus T5 real ALLOW/BLOCK and durable correlation | PASS |
+| Provider receipt evidence | two real ALLOW calls across R1/R2; numeric telemetry shape; exact values not retained | PASS with bounded claim |
+| Same-run live admin projection | T5 render assertions did not execute; T3 separately proves deterministic projection | BLOCKED with reason: no same-run live projection claim |
+| GC-010 caller evidence | no accepted non-test caller satisfies the four-fact reopen condition | BLOCKED with reason: value-parked, not roadmap execution residue |

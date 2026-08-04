@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R2_RESPONSE_LEAKAGE_SCOPE_ONE_RUN_NO_RERUN
+Status: CLOSED_BOUNDED_PARTIAL_LIVE_EVIDENCE_NO_R3
 
 Batch ID: GC009-LIVE-T5
 
@@ -667,12 +667,14 @@ Reason: private provenance proof only; no public-sync authority or artifact.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R2_RESPONSE_LEAKAGE_SCOPE_ONE_RUN_NO_RERUN` | PASS |
-| Baseline status | companion baseline | `Status: REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
-| Worker artifacts | exact three-path manifest | R1 partial live proof and R2 execution target | PASS |
-| Completion review | reviewer-owned path | R1 ALLOW proof correction and R2 authority | PASS |
-| Roadmap state | companion roadmap | T5 R2 redispatch-ready | PASS |
-| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Work order status | this work order | `Status: CLOSED_BOUNDED_PARTIAL_LIVE_EVIDENCE_NO_R3` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md` | independent R2 review accepts partial live evidence and stops without R3 | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md` | `Status: CLOSED_PASS_BOUNDED_GC009_WITH_T5_PARTIAL_LIVE_EVIDENCE_GC010_VALUE_PARKED` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | unchanged aggregate verified by `generate_corpus_scan_registry.py --check` | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged; T5 introduces no registry candidate | PASS |
+| External evidence digest | N/A with reason: no external document is consumed | N/A with reason: local runtime/provider execution evidence only | N/A with reason |
+| System loop interlock | `docs/reference/system_chain/gaps/entries/gc009_gc010_no_production_caller.json` | paired entry remains open for GC-010; no false whole-entry closure | PASS |
+| Session continuity | separate continuity commit after material closure | active front doors will record the accepted bounded stop | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -692,3 +694,8 @@ This R2 work order authorizes one focused private live proof and zero reruns.
 It does not authorize runtime mutation, broad release proof,
 production percentile or SLO claims, public export, push, deployment,
 rollback, GC-010 work, CLI/MCP invocation, or arbitrary external-agent action.
+
+Final reviewer closure: R2 consumed its one-run ceiling and produced partial
+live evidence before a test-only payload-shape assertion failed. No R3 is
+authorized. The accepted completion review owns the precise evidence and
+non-evidence boundary.

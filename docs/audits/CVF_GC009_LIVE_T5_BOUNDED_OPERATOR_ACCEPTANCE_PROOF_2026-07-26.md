@@ -14,6 +14,8 @@ executionBaseHead (first attempt): `f8b5a66b0`
 
 executionBaseHead (R1): `7825c02e5`
 
+executionBaseHead (R2): `259076d37`
+
 Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_2026-07-26.md`
 
 ## Purpose
@@ -33,6 +35,48 @@ every outcome. This audit's R1 section below records that corrected run,
 which reached the real Alibaba provider but failed on this tranche's own
 over-strict test assertion, and closes with `BLOCKED_WITH_REASON` per R1's
 no-rerun rule.
+
+## R2 Correction To The R1 Evidence Underclaim (Read This Before The R1 Section Below)
+
+The R1 section below (as originally written) understated what the R1 focused
+live run actually proved before it failed on the topic-echo assertion. Per
+the operator-authorized R2 redispatch, this correction is recorded here
+rather than by rewriting the R1 prose in place, to preserve the original R1
+section as historical evidence.
+
+`liveCallCount` for R1 is confirmed as 1, not merely "likely." Before the R1
+run's own `expect(allowSerialized).not.toContain(inputs.topic)` assertion
+failed (the assertion R2 has since deleted as over-strict), the same test
+execution had already passed, in order: `expect(allowResponse.status).toBe(200)`,
+`expect(allowData.success).toBe(true)`, `expect(allowData.provider).toBe('alibaba')`,
+`expect(allowReceipt.decision).toBe('ALLOW')`, the nonempty-`output` string
+checks, `expect(typeof allowTelemetry!.providerLatencyMs).toBe('number')`,
+`expect(typeof allowTelemetry!.routeElapsedMs).toBe('number')`, the
+`claimBoundary` equality check, and
+`expect(allowSerialized).not.toContain(ALIBABA_API_KEY)`, because all of
+those assertions execute, in the same order they appear in the test file, on
+lines strictly before the line-186 assertion that actually threw. A thrown
+`expect(...).not.toContain(...)` assertion failure only halts execution at
+its own line; it does not retroactively unprove synchronous assertions on
+earlier lines that already returned without throwing.
+
+`blockRequestCount` for R1 remained 0: the BLOCK-request section (test lines
+189 onward) is textually after the failing line-186 assertion and was never
+reached.
+
+Exact numeric telemetry values (`providerLatencyMs`, `routeElapsedMs`,
+`receiptId`, `envelopeId`) were not retained in the R1 documentation, because
+the R1 worker's process for extracting safe summary facts from the failure
+output used a targeted grep for `Test Files`/`Tests`/`Duration` lines only
+and did not separately capture those receipt-telemetry numeric fields before
+deleting the raw output file. This is a documentation completeness gap in
+how much of the already-passed evidence was extracted and recorded, not a
+gap in what the R1 run itself actually executed.
+
+R1's durable-event correlation and admin-projection proof were correctly
+recorded as not reached: `readAuditEvents()` (test line 231) and the
+`AdminAuditLogBody` render (test line 281 in the pre-R2 file) are both
+textually after line 186, so R1 truly never reached them.
 
 ## Target / Source
 
@@ -429,11 +473,253 @@ under any outcome; no further live attempt is authorized without a fresh
 operator/reviewer-authorized redispatch that also repairs the topic-echo
 assertion defect identified here.
 
+## R2 Redispatch Evidence
+
+### R2 Scope And Authorization
+
+Per the work order's `## R2 Redispatch Override` section, R2 authorized: (1)
+deleting exactly the two response-level assertions
+`expect(allowSerialized).not.toContain(inputs.topic)` and
+`expect(allowSerialized).not.toContain(inputs.context)`, without adding a
+replacement response-level sentinel assertion; (2) retaining
+`expect(allowSerialized).not.toContain(ALIBABA_API_KEY);` and the
+event-level topic/context exclusions against `eventsSerialized`; (3)
+re-running the offline generated-intent safety preflight before provider
+use, requiring `NO_MATCH`; (4) exactly one focused live run with zero
+reruns under any outcome.
+
+### R2 Test Diff Scope Confirmation
+
+Before provider use, `git diff --stat` and `git diff` on the focused test
+path were inspected and confirmed the only change was a two-line deletion
+at the `allowSerialized` assertion block (former lines 186-187), with no
+other line touched:
+
+```text
+ 1 file changed, 2 deletions(-)
+-        expect(allowSerialized).not.toContain(inputs.topic);
+-        expect(allowSerialized).not.toContain(inputs.context);
+```
+
+`expect(allowSerialized).not.toContain(ALIBABA_API_KEY);` (line 185) and the
+event-level exclusions `expect(eventsSerialized).not.toContain(inputs.topic);`
+and `expect(eventsSerialized).not.toContain(inputs.context);` (test lines
+263-264 in the pre-R2 numbering) were confirmed present and unchanged.
+
+### R2 Offline Safety Preflight (No Provider Call)
+
+Before any provider use, built the complete generated ALLOW intent via the
+real `getTemplateById`/`generateIntent` functions and the complete built
+execution prompt via the real `buildExecutionPrompt` function (`route.ts`
+line 274) against the same `inputs` object the corrected focused test uses,
+then ran the real `runSafetyWorkflowChain` and `applySafetyFilters`
+functions (the same functions `route.ts` calls) against both strings in a
+disposable Vitest file with no route invocation, network call, or provider
+credential use.
+
+Result: `NO_MATCH` on both.
+
+```json
+{
+  "intentWorkflowBlocked": false,
+  "intentBlocked": false,
+  "intentDetails": undefined,
+  "promptWorkflowBlocked": false,
+  "promptBlocked": false,
+  "promptDetails": undefined
+}
+```
+
+The disposable preflight file was deleted immediately after this result was
+captured and before the live run; it was never one of the three worker-owned
+paths and consumed no live-call budget.
+
+### R2 Focused Live Run (Exactly One, Zero Reruns)
+
+Command:
+
+```powershell
+Set-Location EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web
+npm exec vitest -- run src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx --reporter=verbose
+Set-Location ../../../..
+```
+
+Result: FAIL after 27.02s total (12.70s inside the test body).
+
+```text
+AssertionError: expected [ 'gatewayAllowed', ...(4) ] to deeply equal [ 'gatewayAllowed', ...(6) ]
+- Expected
++ Received
+  [
+    "gatewayAllowed",
+-   "gatewayBlockedBy",
+    "gatewayBypassed",
+    "gatewayControlMode",
+    "gatewayDecision",
+-   "gatewayEscalatedBy",
+    "gatewayRequestId",
+  ]
+ > expect(allowPayloadKeys).toEqual(expectedKeys);
+```
+
+The failure is at the ALLOW gateway-event payload key-set assertion (test
+line 255 in the R2 file), which is textually far later in the test body than
+R1's line-186 failure. Because this assertion executes only after every
+assertion between it and the start of the test body has already passed
+without throwing, this R2 run's own execution order proves, in sequence,
+strictly more than R1 proved: HTTP 200, `success=true`, provider `alibaba`,
+decision `ALLOW`, nonempty `output`, numeric `providerLatencyMs`, numeric
+`routeElapsedMs`, the `claimBoundary` string, `ALIBABA_API_KEY`
+non-leakage in the ALLOW response, the keyless-authority BLOCK request
+reaching HTTP 400 with `model: 'guard-blocked'` and `guardResult.finalDecision
+: 'BLOCK'` and `governanceEvidenceReceipt.decision: 'BLOCK'`,
+`ALIBABA_API_KEY` non-leakage in the BLOCK response, exactly two
+`MANDATORY_GATEWAY_EVALUATED` events read back from the isolated durable
+store, both `allowEvent` and `blockEvent` found and correlated by
+`gatewayRequestId`, `allowEvent!.outcome === 'ALLOW'`, and
+`blockEvent!.outcome === 'BLOCK'`. All of those assertions are on lines
+strictly before line 255 in the corrected test file and all returned without
+throwing.
+
+### R2 Root Cause (Source-Verified, No Rerun Performed To Confirm)
+
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.ts`
+(`evaluateRouteMandatoryGateway`, lines 58-66) always constructs the event
+payload object with all seven literal keys, including
+`gatewayBlockedBy: gatewayResult.evidence?.blockedBy` and
+`gatewayEscalatedBy: gatewayResult.evidence?.escalatedBy`. On a real ALLOW
+decision, `gatewayResult.evidence?.blockedBy` and
+`gatewayResult.evidence?.escalatedBy` are both `undefined` (these fields are
+only populated on a BLOCK/escalation path). The event store's persistence
+path serializes event payloads with `JSON.stringify`
+(`control-plane-events.ts`), and per standard JavaScript/JSON semantics,
+`JSON.stringify` omits object keys whose value is `undefined`. The ALLOW
+event therefore legitimately round-trips through the durable store with only
+5 payload keys (`gatewayAllowed`, `gatewayBypassed`, `gatewayControlMode`,
+`gatewayDecision`, `gatewayRequestId`), while the BLOCK event round-trips
+with all 7. The test's own `expectedKeys` constant asserts the same 7-key
+array against both `allowPayloadKeys` and `blockPayloadKeys`
+(`expect(allowPayloadKeys).toEqual(expectedKeys)`), which is correct for the
+BLOCK event but incorrect for the ALLOW event. This is a test-assertion
+design defect in this tranche's own focused test (an expectation that does
+not account for `JSON.stringify`'s `undefined`-key-omission behavior on the
+ALLOW path), not a defect in the mandatory gateway, guard engine,
+route-guard-gateway adapter, control-plane event store, final response
+builder, or Alibaba provider adapter. This root cause is established by
+direct source reading of the already-executed code paths and standard
+JSON.stringify semantics, not by any further live call, rerun, or
+inspection of provider output.
+
+### R2 Secret-Safe Diagnostic
+
+Per R2 rule 8 and the live diagnostic standard's mandatory rule, this
+diagnostic is recorded immediately on failure. No rerun follows it.
+
+| Field | Value |
+|---|---|
+| `stage` | `output_validation` (the failure occurred in the test's own post-response event-payload-shape assertion, after a completed provider round trip, a completed BLOCK round trip, and completed durable-event readback) |
+| `class` | `output_validation_failed` |
+| `retryable` | `false` under R2 (R2 permits zero reruns regardless of retryability; recorded for completeness only) |
+| `userAction` | `revise_request` (the test's own `expectedKeys` assertion, not the request, needs revision to expect a 5-key ALLOW payload and a 7-key BLOCK payload separately) |
+| `provider` | `alibaba` |
+| `model` | `qwen-turbo` (requested model only; the exact response model value was not asserted or separately logged) |
+| `httpStatus` | 200 for the ALLOW request and 400 for the BLOCK request, both proven by the corresponding `expect(...).toBe(200)`/`expect(...).toBe(400)` assertions passing before line 255 |
+| `latencyMs` | total test-body duration 12.70s (test infra timing, consistent with two completed HTTP round trips); the receipt's own numeric `providerLatencyMs`/`routeElapsedMs` values were proven numeric by `typeof ... === 'number'` assertions but the exact numeric values were not separately logged before the later failure |
+| `receiptId` | not captured into this diagnostic; `allowReceipt.receiptId` was not read into a logged variable before the line-255 failure, even though `allowReceipt.decision` (a sibling field on the same object) was already proven equal to `'ALLOW'` |
+| `traceId` | not captured into this diagnostic for the same reason |
+| `safeMessage` | The real Alibaba ALLOW call and the keyless-authority BLOCK call both completed successfully through the actual route, and both were durably persisted and correlated by request ID. This tranche's own test asserted an identical 7-key payload shape for both the ALLOW and BLOCK gateway events, but the ALLOW event legitimately serializes with only 5 keys because `JSON.stringify` omits its two `undefined`-valued fields (`gatewayBlockedBy`, `gatewayEscalatedBy`), which are only populated on a BLOCK/escalation path. No credential value, signed header, or raw model output is disclosed by this diagnostic. |
+
+### R2 Denominators (Reported Separately From The First Attempt And R1)
+
+- `liveCallCount` (R2): 1 confirmed real Alibaba provider ALLOW call. HTTP
+  200, `success=true`, provider `alibaba`, decision `ALLOW`, nonempty
+  `output`, numeric `providerLatencyMs`, numeric `routeElapsedMs`, the
+  `claimBoundary` string, and `ALIBABA_API_KEY` non-leakage in the ALLOW
+  response are all confirmed passed assertions from this run.
+- `blockRequestCount` (R2): 1 confirmed keyless authority-gate BLOCK
+  request. HTTP 400, `success=false`, `model: 'guard-blocked'`,
+  `guardResult.finalDecision: 'BLOCK'`,
+  `governanceEvidenceReceipt.decision: 'BLOCK'`, and `ALIBABA_API_KEY`
+  non-leakage in the BLOCK response are all confirmed passed assertions.
+- durable event correlation (R2): 2 `MANDATORY_GATEWAY_EVALUATED` events
+  confirmed read back from the isolated store; `allowEvent` and `blockEvent`
+  both found and correlated by `gatewayRequestId`; `allowEvent!.outcome ===
+  'ALLOW'` and `blockEvent!.outcome === 'BLOCK'` both confirmed passed.
+- event payload shape (R2): the ALLOW event's observed 5-key set was the exact
+  point of assertion failure. The BLOCK 7-key equality assertion, the
+  `gatewayBlockedBy` assertion, and all event-level serialization exclusions
+  are textually later and did not execute. Direct source reading explains the
+  ALLOW shape, but this run does not prove the later BLOCK-shape, blocker-field,
+  or event-minimization assertions.
+- projection (R2): not reached. The `AdminAuditLogBody` render and its
+  screen-text assertions are textually after line 255 and were never
+  executed.
+- identifiers (R2): `allowRequestId = 'gc009-live-t5-allow-request'` and
+  `blockRequestId = 'gc009-live-t5-block-request'` are the fixed literal
+  request IDs the test itself defines (not live-generated secrets); the
+  live-generated `allowReceipt.receiptId`, `allowReceipt.envelopeId`,
+  `allowEvent!.id`, and `blockEvent!.id` values were not captured into this
+  diagnostic or audit, because the test's own final `console.log` block
+  (test lines 297-313) that would have emitted them is textually after line
+  255 and was never reached.
+- telemetry (R2): `providerLatencyMs` and `routeElapsedMs` are confirmed
+  numeric (via `typeof` assertions) but their exact numeric values are not
+  retained in this audit, for the same reason.
+- test-case denominator (R2): 1 focused test case, run exactly once, FAIL.
+- combined tranche total (first attempt + R1 + R2): 4 focused live-test
+  executions across three dispatches (2 in the first attempt, 1 in R1, 1 in
+  R2); 2 confirmed real Alibaba provider calls (1 in R1 and 1 in R2); 2
+  confirmed ALLOW results (1 in R1 and 1 in R2); 1 confirmed keyless guard
+  BLOCK result (R2); 1 confirmed
+  two-event durable correlation (R2); 0 confirmed admin-projection renders
+  (not reached in any attempt).
+
+n=1 statement (R2): this audit confirms `providerLatencyMs` and
+`routeElapsedMs` are numeric from exactly one real ALLOW observation. No
+exact numeric value, percentile, throughput, or SLO inference is made or
+inferrable from this single observation.
+
+### R2 Secret Hygiene Statement
+
+No Alibaba/DashScope API key value, signed header, bearer token, or raw
+provider request/response body was printed, copied, hashed, embedded, or
+committed at any point in R2. The vitest failure output was inspected only
+for the safe summary facts recorded above (assertion path, pass/fail
+sequence, total duration, the diff of the two payload key arrays, which
+contain only literal field-name strings and no secret or model-output
+content) using targeted extraction; the raw output file was deleted
+immediately after those safe facts were extracted. The disposable offline
+preflight file was deleted immediately after its `NO_MATCH` result was
+captured, before the live run.
+
+### R2 Terminal Evidence Verdict
+
+`LIVE_ACCEPTANCE_BLOCKED_WITH_DIAGNOSTIC`
+
+The R2 focused live run confirmed, via passed assertions strictly preceding
+the point of failure, a real Alibaba ALLOW result, a fail-closed
+keyless-authority BLOCK result, and two-event durable correlation with
+correct outcome/request-ID linkage -- substantially more of the work order's
+required proof manifest than either prior attempt reached. It failed on the
+test's own over-strict payload-key-set assertion, which incorrectly expects
+the ALLOW event's `JSON.stringify`-serialized payload to contain the same 7
+keys as the BLOCK event's payload, when the ALLOW event legitimately
+contains only 5 (the 2 BLOCK/escalation-only fields are `undefined` and
+omitted by standard JSON serialization). Admin-projection proof was not
+reached. R2 permits zero reruns under any outcome; no further live attempt
+is authorized without a fresh operator/reviewer-authorized redispatch that
+also repairs the payload-key-set assertion defect identified here (for
+example, asserting the ALLOW event's actual 5-key subset separately from the
+BLOCK event's 7-key set, or filtering `expectedKeys` to only the keys with
+defined values per event before comparison).
+
 ## Source Verification Block
 
 | Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|---|
 | Route invokes gateway before provider | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | line 577 (`runExecuteRouteMandatoryGateway`); line 777 (`executeAI`) | `runExecuteRouteMandatoryGateway`; `executeAI` | execute route `POST` | ACCEPT (re-verified fresh, unchanged from dispatch-base freshness statement) |
+| Gateway event payload always includes both BLOCK-only fields as literal keys | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.ts` | lines 58-66 (`gatewayBlockedBy: gatewayResult.evidence?.blockedBy`; `gatewayEscalatedBy: gatewayResult.evidence?.escalatedBy`) | `evaluateRouteMandatoryGateway` | route-guard-gateway adapter | ACCEPT |
+| Event store persists payloads via `JSON.stringify`, which omits `undefined`-valued keys | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts` | line 86 (`JSON.stringify(event.payload ?? {})`, CSV path); `writeEvents`/`_eventAdapter.writeAll` (lines 102-104) for the JSON durable-store write path | `writeEvents`; `_eventAdapter.writeAll` | control-plane event store | ACCEPT |
 | Safety filter runs before the mandatory gateway | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | line 324 (`applySafetyFilters(saf1Result.sanitized)`) | `applySafetyFilters` | execute route `POST` | ACCEPT |
 | Safety filter blocks on the literal word "secret" | LITERAL_INVARIANT | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/safety.ts` | line 12 (`PII_PATTERNS`); line 31 (`blocked: true, reason: 'Safety filter triggered'`) | `applySafetyFilters`; `PII_PATTERNS` | safety filter module | ACCEPT |
 | Focused-test ALLOW fixture contains the word "secret" | EXISTS | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.gc009-live-t5-mandatory-gateway.alibaba.live.test.tsx` | `inputs.options` field, "Verify no raw secret leakage" | `inputs` | this tranche's own focused live test | ACCEPT |
@@ -448,13 +734,16 @@ assertion defect identified here.
 | Proposed item | Meaning | Runtime/source status |
 |---|---|---|
 | `liveCallCount` (first attempt) | 0 | DOC_ONLY_NEW |
-| `liveCallCount` (R1) | likely 1 attempted with an apparently completed round trip; not independently confirmed by response-field evidence because the test failed before reading `allowResponse.status`/`allowData.success`/`allowReceipt.decision` | DOC_ONLY_NEW |
+| `liveCallCount` (R1, corrected by R2) | confirmed 1 real Alibaba ALLOW call reached and passed HTTP 200/success/decision/provider/output/telemetry/key-non-leakage assertions before the topic-echo assertion failed; exact numeric telemetry values were not retained in the R1 document | DOC_ONLY_NEW |
 | `blockRequestCount` (first attempt) | 0 | DOC_ONLY_NEW |
-| `blockRequestCount` (R1) | 0 | DOC_ONLY_NEW |
-| `providerLatencyMsObserved` | not obtained in either attempt; R1 failed before reading receipt telemetry | DOC_ONLY_NEW |
-| `routeElapsedMsObserved` | not obtained in either attempt; R1 failed before reading receipt telemetry | DOC_ONLY_NEW |
+| `blockRequestCount` (R1) | 0 (BLOCK section never reached; confirmed unchanged by R2 correction) | DOC_ONLY_NEW |
+| `liveCallCount` (R2) | 1 confirmed real Alibaba ALLOW call, same denominator meaning as R1's corrected value | DOC_ONLY_NEW |
+| `blockRequestCount` (R2) | 1 confirmed keyless guard BLOCK request, reaching HTTP 400/`guard-blocked`/BLOCK decision; the later `gatewayBlockedBy === 'authority_gate'` assertion did not execute | DOC_ONLY_NEW |
+| `providerLatencyMsObserved` | confirmed numeric in R2 (via `typeof` assertion) but exact value not retained in this audit; not obtained in the first attempt or R1 | DOC_ONLY_NEW |
+| `routeElapsedMsObserved` | confirmed numeric in R2 (via `typeof` assertion) but exact value not retained in this audit; not obtained in the first attempt or R1 | DOC_ONLY_NEW |
 | `diagnosticDisposition` (first attempt) | `BLOCKED_AFTER_ONE_DIAGNOSTIC_RERUN_SELF_INFLICTED_FIXTURE_DEFECT` (historical; reviewer rejected the rerun-compliance claim, retained the blocked diagnosis) | DOC_ONLY_NEW |
 | `diagnosticDisposition` (R1) | `BLOCKED_WITH_REASON_ZERO_RERUN_TOPIC_ECHO_ASSERTION_DEFECT` | DOC_ONLY_NEW |
+| `diagnosticDisposition` (R2) | `BLOCKED_WITH_REASON_ZERO_RERUN_ALLOW_EVENT_PAYLOAD_KEYSET_ASSERTION_DEFECT` | DOC_ONLY_NEW |
 
 ## Epistemic Process Block
 
@@ -478,6 +767,35 @@ assertion defect identified here.
   future authorized redispatch must correct before attempting the live
   proof again.
 
+### R2 Epistemic Process Addendum
+
+- Expected result / prediction (R2): given the exact two-assertion deletion
+  authorized by the R2 override and a passing offline preflight, the R2 run
+  was expected to reach at least the ALLOW proof, BLOCK proof, and
+  durable-event correlation targets, and possibly complete the full test.
+- Evidence Comparison: the prediction was partially confirmed. The R2 run
+  did confirm real Alibaba ALLOW, fail-closed BLOCK, and two-event durable
+  correlation with correct outcome/request-ID linkage, all via assertions
+  that executed and passed before the failure point. It did not complete,
+  failing on a previously undiscovered assertion (the ALLOW/BLOCK
+  event-payload key-set equality check) that neither the first attempt nor
+  R1 ever reached.
+- Contradiction or gap disposition: no contradiction was found in the
+  accepted T1-T4 chain, the mandatory gateway, the route-guard-gateway
+  adapter, the control-plane event store, or the Alibaba provider adapter;
+  the gap is fully contained in and explained by this tranche's own test
+  assertion not accounting for `JSON.stringify`'s standard
+  `undefined`-key-omission behavior on the ALLOW-only payload subset,
+  confirmed by direct source reading of `route-guard-gateway.ts` and
+  `control-plane-events.ts`.
+- Claim update: this tranche now confirms, for the first time across all
+  three dispatches, a real Alibaba ALLOW result and a fail-closed keyless
+  guard BLOCK result with durable two-event correlation. It still
+  does not confirm admin-component projection, exact numeric telemetry
+  values, or full test-case PASS. It does not extend or weaken the accepted
+  GC-009 T1-T4 chain. R2 permits zero reruns; final reviewer closure stops
+  without a further live attempt.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
@@ -485,7 +803,7 @@ assertion defect identified here.
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_machine_closure_package.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_equivalence_claim_evidence.py`; `governance/compat/check_governed_file_size.py` |
 | literalTokensReviewed | review structural heading families (target/source, scope/methodology, findings/position, risk/corrective action, decision/disposition); Delta block Field/Disposition table shape; Machine Closure Package required column set; equivalence-claim trigger words paired with adjacent evidence commands or disposition tokens; ASCII prose discipline; `BLOCKED_WITH_REASON` status token spelling |
 | gateRunPurpose | confirm this audit's required shape and literal-format compliance before the worker-return fast gate runs; gates are confirmation evidence, not first discovery |
-| claimBoundary | checker compliance is gate-shape evidence only; it does not substitute for the missing live provider call this audit explicitly records as not obtained |
+| claimBoundary | checker compliance is gate-shape evidence only; direct live evidence is limited to the assertions reached in R1/R2 and excludes later R2 payload, minimization, and projection assertions |
 
 ## Public Export Disposition
 
@@ -498,21 +816,32 @@ proof attempt.
 ## Claim Boundary
 
 This audit records one focused live test authored and modified in place
-across two dispatches (first attempt: two permitted runs; R1: one corrected
-run with zero reruns), for a combined three focused live-test executions.
-The first attempt's two runs failed at `request_validation` before reaching
-the mandatory gateway or provider; that finding is independently reviewed
-and accepted, and is preserved here as historical evidence. The R1 run
-appears to have reached the real Alibaba provider (based on elapsed-time
-and key-absence-assertion evidence) but failed on this tranche's own
-topic-echo test assertion before the test read the response status,
-decision, receipt, or durable-event data into evidence. This audit does not
-claim a confirmed real Alibaba ALLOW result, a fail-closed authority-gate
-BLOCK proof, durable event correlation, admin-component projection, or any
-latency observation from either attempt. It does not authorize any further
-rerun (R1 permits zero under any outcome), runtime mutation, broad release
-proof, production percentile or SLO claims, public export, push,
-deployment, rollback, GC-010 work, or any claim beyond identifying the
-exact defects (a fixture word in the first attempt; a topic-echo assertion
-in R1) that prevented either attempt from producing accepted live-proof
-evidence.
+across three dispatches (first attempt: two permitted runs; R1: one
+corrected run with zero reruns; R2: one further corrected run with zero
+reruns), for a combined four focused live-test executions. The first
+attempt's two runs failed at `request_validation` before reaching the
+mandatory gateway or provider; that finding is independently reviewed and
+accepted, and is preserved here as historical evidence. The R1 run reached
+the real Alibaba provider and passed every assertion up to and including
+`ALIBABA_API_KEY` non-leakage, then failed on this tranche's own
+over-strict topic-echo assertion, as corrected and confirmed by R2's
+execution order. The R2 run, after the R2-authorized deletion of that
+  topic-echo assertion pair, confirmed a real Alibaba ALLOW result, a
+  fail-closed keyless guard BLOCK result, and two-event durable correlation
+with correct outcome/request-ID linkage -- all via assertions that executed
+and passed before the run's own failure point -- then failed on a
+previously unreached assertion comparing the ALLOW and BLOCK gateway
+events' payload key sets, which does not account for `JSON.stringify`
+omitting the two `undefined`-valued BLOCK-only fields from the ALLOW
+event's persisted payload. This audit does not claim a completed PASS,
+admin-component projection, or exact numeric telemetry values from any
+attempt. It does not authorize any further rerun (R2 permits zero under any
+outcome), runtime mutation, broad release proof, production percentile or
+SLO claims, public export, push, deployment, rollback, GC-010 work, or any
+claim beyond identifying the exact defects (a fixture word in the first
+attempt; a topic-echo assertion in R1; an ALLOW/BLOCK payload-key-set
+equality assertion in R2) that prevented any attempt from producing a fully
+  accepted end-to-end live-proof result. Across R1 and R2, the provider-call
+  denominator is 2, not 1. The R2 failure also means the later BLOCK payload
+  equality, blocker-field, event-level exclusion, and UI projection assertions
+  remain unexecuted.

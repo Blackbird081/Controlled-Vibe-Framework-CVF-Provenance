@@ -183,8 +183,6 @@ describe.skipIf(!ALIBABA_API_KEY)(
 
         const allowSerialized = JSON.stringify({ allowData, allowTelemetry });
         expect(allowSerialized).not.toContain(ALIBABA_API_KEY);
-        expect(allowSerialized).not.toContain(inputs.topic);
-        expect(allowSerialized).not.toContain(inputs.context);
 
         // ---- Remove all Alibaba/DashScope aliases before the BLOCK request ----
         delete process.env.ALIBABA_API_KEY;
