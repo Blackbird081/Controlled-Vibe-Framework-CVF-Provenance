@@ -7,7 +7,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repo state: clean before this handoff-only sync
-- Latest completed commit: `3324361ef governance: dispatch public sync projection remediation`
+- Latest completed commit: `822b03ebc fix: harden public projection exclusions`
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed
 - External agent memory files: non-canonical convenience only
@@ -500,5 +500,49 @@ accept this parent SHA for the dedicated session-sync commit.
 | Invocation ID | `gc009-roadmap-closure-session-sync-2026-08-04` |
 | Expected manifest | the seven protected continuity paths listed above |
 | Actual changed set | the seven protected continuity paths listed above |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - Public-Sync R1 Material Sync
+
+Authorized continuity scope: record material commit `822b03ebc`, which contains
+the bounded projection repair, worker return, and pending-commit review packet.
+
+Protected path:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`.
+
+Operator authorization: continue the public-sync remediation while keeping the
+public clone read-only and the governance-latency L0 lane parked.
+
+Rollback boundary: revert only this handoff entry if material commit
+`822b03ebc` is reverted.
+
+## GC-020 Marker - Public-Sync R1 Material Commit
+
+This handoff records material parent commit `822b03ebc`. The handoff-only child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated handoff-sync commit.
+
+## Agent Operation Trace Block - Public-Sync R1 Material Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex reviewer/closer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | PUBLIC-SYNC-R1 material sync, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | committed-range pre-closure diagnostic and handoff-only patch |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | GC-020 in-place update rule after material commit `822b03ebc` |
+| Before status evidence | HEAD `822b03ebc`; clean worktree; pre-closure passed 74/75 with only handoff freshness blocked |
+| After status evidence | active handoff records material HEAD and pending closure conversion |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | continuity only; no public mutation or export |
+| Claim boundary | no provider/live, downstream, runtime, deployment, public commit, or public push claim |
+| Agent type | Codex reviewer/closer/session-sync steward |
+| Invocation ID | `public-sync-r1-material-sync-2026-08-05` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
