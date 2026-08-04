@@ -6,8 +6,8 @@ Status: ACTIVE
 
 ## Handoff Context
 
-- Repo state: QBS lineage reconciliation implementation is uncommitted and in progress
-- Latest completed commit: `f811ca5d4 governance: dispatch QBS lineage reconciliation R1`
+- Repo state: QBS lineage reconciliation implementation is uncommitted and blocked pending operator decision
+- Latest completed commit: `c974ea332 session: record QBS lineage R1 dispatch`
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed
 - External agent memory files: non-canonical convenience only
@@ -19,13 +19,15 @@ value parking, and keep the governance-latency learning candidate parked.
 
 ## Scope / Target / Owner Boundary
 
-Scope: GC009-LIVE-T5 independent closure and session continuity.
+Scope: blocked QBS lineage reconciliation checkpoint while completed roadmap
+state and parked lanes remain unchanged.
 
-Target: record material closure commit `b72074578` and stop without R3.
+Target: preserve the uncommitted implementation and secret-safe diagnostic
+until the operator chooses retain-and-review or revert.
 
-Owner boundary: the worker execution is complete. Codex owns closure and
-session sync. No runtime mutation, public, push, deployment, GC-010, or
-governance-latency execution authority is active.
+Owner boundary: worker return is blocked. No provider rerun, material commit,
+closure, public mutation, push, downstream edit, or governance-latency work is
+authorized before the operator checkpoint.
 
 ## Current Mode
 
@@ -34,17 +36,19 @@ governance-latency execution authority is active.
 ## Active Boundary
 
 GC009-LIVE-T5 and its parent roadmap remain closed bounded. QBS lineage
-reconciliation R1 is active under dispatch commit `f811ca5d4`; public history
-is read-only evidence and public export remains separate. GC010-AER-T2 and
+reconciliation R1 is `BLOCKED_WITH_REASON` after a broad-test exclusion defect
+admitted one credential-backed Alibaba live TSX test. Implementation remains
+uncommitted; public export is separate. GC010-AER-T2 and
 CVF-GOVERNANCE-LATENCY-L0 remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`gc009_roadmap_closed_governance_latency_l0_parked`;
-active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=complete the
-bounded offline QBS source/test reconciliation and reviewer closure; parked
-checkpoint=GC010-AER and CVF-GOVERNANCE-LATENCY-L0 remain parked, while live
-benchmark, provider use, public export, and downstream mutation are forbidden.
+active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=operator
+decision on retain-and-review versus revert for the blocked QBS
+lineage implementation; parked checkpoint=GC010-AER and
+CVF-GOVERNANCE-LATENCY-L0 remain parked, while provider rerun, public export,
+and downstream mutation are forbidden.
 
 ## Latest Material Closure
 
@@ -311,6 +315,51 @@ to this handoff marker so the checker may accept its parent SHA.
 | Claim boundary | repository-local continuity trace only; no provider call |
 | Agent type | Codex |
 | Invocation ID | `gc009-live-t5-r2-redispatch-continuity-child-2026-07-26` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - QBS Lineage R1 Blocked Sync
+
+Authorized continuity scope: record the `BLOCKED_WITH_REASON` worker return and
+park the uncommitted implementation at an operator checkpoint.
+
+Protected path:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`.
+
+Operator authorization: the prior explicit confirmation authorized the bounded
+tranche; the work-order stop condition requires this continuity update after
+the unauthorized live-test inclusion was classified.
+
+Rollback boundary: revert only this handoff update if the blocked checkpoint is
+superseded by a fresh operator decision.
+
+## GC-020 Marker - QBS Lineage R1 Blocked Checkpoint
+
+This handoff records parent commit `c974ea332`. The handoff-only child SHA
+cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated session-sync commit.
+
+## Agent Operation Trace Block - QBS Lineage R1 Blocked Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex worker/session-sync steward |
+| Provider or surface | private provenance continuity; no new provider action in this sync |
+| Session or invocation | QBS lineage R1 blocked sync, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | blocked worker return, secret-safe diagnostic, and handoff-only patch |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | GC-020 in-place update and work-order stop condition |
+| Before status evidence | HEAD `c974ea332`; implementation and blocked worker return uncommitted |
+| After status evidence | active handoff requires operator retain-or-revert decision |
+| Diff evidence | `git diff --name-status` for one protected handoff path during isolated commit |
+| Approval boundary | continuity only; no provider rerun, material commit, closure, public mutation, or push |
+| Claim boundary | blocked checkpoint only |
+| Agent type | Codex worker/session-sync steward |
+| Invocation ID | `qbs-lineage-r1-blocked-sync-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
