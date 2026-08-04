@@ -28,9 +28,17 @@ live proof, downstream mutation, governance-latency work, or public export.
 
 ## Scope / Applies To
 
-Allowed provenance paths are the thirteen source/test paths named in the paired
+Allowed provenance paths are the fifteen source/test paths named in the paired
 work order plus its worker-return artifact. The sibling public-sync clone stays
 read-only throughout implementation and review.
+
+## Operator Authority Amendment - Alibaba Live Evidence
+
+On 2026-08-05 the operator explicitly authorized Alibaba API-key live testing
+to obtain real evidence. This supersedes the earlier no-live boundary only for
+one targeted QBS ALLOW proof with a one-call ceiling, secret-safe diagnostics,
+and no benchmark rerun. It does not authorize public mutation, downstream
+mutation, broad live suites, or provider comparison.
 
 ## Authority Chain
 
@@ -96,12 +104,12 @@ Disclosure count: 20
 | Family mapping remains bounded | mapper unit tests cover accepted family values, mappings, and null fallback |
 | No unrelated regression | full non-live cvf-web suite passes or any pre-existing failure is separately evidenced |
 | Public clone remains unchanged | public HEAD `27137db4d` and clean status |
-| No provider use | provider key variables cleared; no live command |
+| Bounded provider evidence | one targeted Alibaba call at most; HTTP/result and receipt summary recorded without raw key or raw output |
 
 ## Stop Conditions
 
 - Any required change outside the paired work order's explicit manifest.
-- Any provider key, network call, live proof, or QBS benchmark rerun.
+- Any second provider call, non-Alibaba provider, broad live suite, or QBS benchmark rerun.
 - Any deletion or weakening of the retained public-history tests to obtain green.
 - Any public mutation, downstream mutation, governance-latency work, or F-1 reopening.
 - Any historical hunk that conflicts with a newer provenance contract and cannot

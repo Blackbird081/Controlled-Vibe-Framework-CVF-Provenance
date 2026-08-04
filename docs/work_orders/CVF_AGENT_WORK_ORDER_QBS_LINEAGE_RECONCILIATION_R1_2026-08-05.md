@@ -28,8 +28,9 @@ executionBaseHead: worker captures current HEAD before edits.
 
 Current-time notes: 2026-08-05 bounded provenance reconciliation only.
 
-Do-not-misread notes: no provider/live proof, benchmark rerun, public mutation,
-downstream edit, governance-latency work, or F-1 reopening.
+Do-not-misread notes: one targeted Alibaba live proof is authorized by the
+2026-08-05 operator amendment; no benchmark rerun, public mutation, downstream
+edit, governance-latency work, or F-1 reopening.
 
 Required first actions: read startup surfaces, guard orientation, literal
 gotchas, paired baseline, current source, and historical public diffs.
@@ -90,7 +91,7 @@ historical behavior to current interfaces and proving it with offline tests.
 
 ## Write Ownership
 
-The worker owns only the fourteen paths in Scope / Applies To and must not
+The worker owns only the sixteen paths in Scope / Applies To and must not
 commit. The reviewer owns material closure. The session-sync steward owns
 protected continuity paths in a separate commit.
 
@@ -116,12 +117,32 @@ Allowed changed paths:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/qbs/front-door-clarification/route.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/qbs/front-door-clarification/route.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-governed-stop-output.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.qbs-hard-gates.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.qbs-lineage.alibaba.live.test.ts`
 - `docs/reviews/CVF_QBS_LINEAGE_RECONCILIATION_R1_WORKER_RETURN_2026-08-05.md`
 
 Forbidden scope: every other implementation path, public-sync mutation,
-downstream mutation, provider/network call, live test, QBS benchmark rerun,
-governance-latency L0, and F-1 tuning.
+downstream mutation, any provider call beyond the one targeted Alibaba proof,
+QBS benchmark rerun, governance-latency L0, and F-1 tuning.
+
+## Operator Authority Amendment - Alibaba Live Evidence
+
+Operator instruction: allow Alibaba API-key live testing and obtain real
+evidence.
+
+Live-call ceiling: exactly one new Alibaba provider call after this amendment.
+
+Authorized proof path:
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.qbs-lineage.alibaba.live.test.ts`.
+
+Required evidence: request provider/model, HTTP status, success disposition,
+receipt id, decision, policy snapshot id, route id, and secret-safe diagnostic.
+Raw key, raw prompt, raw provider payload, and full generated output are
+forbidden in logs and artifacts.
+
+Stop conditions: a missing key, second call requirement, unclear failure,
+non-Alibaba route, or any need to broaden the proof.
 
 ## Source Verification Block
 
@@ -135,6 +156,8 @@ governance-latency L0, and F-1 tuning.
 | Intent routing owner | RUNTIME_BEHAVIOR | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-router.ts` | exported router | `routeIntent` | intent router | ACCEPT |
 | Clarification helpers exist | RUNTIME_BEHAVIOR | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/intent-router-clarification.ts` | exported helpers | `startClarification` | clarification helper | ACCEPT |
 | Execute response owner | RUNTIME_BEHAVIOR | RUNTIME_BEHAVIOR | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts` | route handler | `POST` | execute API route | ACCEPT |
+| Governed stop-output helper is new provenance source | DOC_ONLY_NEW | DOC_ONLY_NEW | `docs/baselines/CVF_GC018_QBS_LINEAGE_RECONCILIATION_R1_2026-08-05.md` | Scope / Applies To | `buildGovernedStopOutput` | new execute-route helper | ACCEPT |
+| Targeted Alibaba live proof is new provenance test | DOC_ONLY_NEW | DOC_ONLY_NEW | `docs/baselines/CVF_GC018_QBS_LINEAGE_RECONCILIATION_R1_2026-08-05.md` | Operator Authority Amendment - Alibaba Live Evidence | `route.qbs-lineage.alibaba.live.test.ts` | new bounded live test | ACCEPT |
 | Front-door API is new provenance source | DOC_ONLY_NEW | DOC_ONLY_NEW | `docs/baselines/CVF_GC018_QBS_LINEAGE_RECONCILIATION_R1_2026-08-05.md` | Scope / Applies To | `POST` | new bounded route | ACCEPT |
 
 ## ADIF Defect Registry Disclosure
@@ -167,7 +190,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | rolePattern | worker returns no-commit evidence; reviewer/closer decides acceptance |
 | phase | pre-implementation through reviewer closure |
 | baseHeadFor(phase) | dispatchBaseHead=4494d6cce; executionBaseHead=worker capture; closureBaseHead=reviewer capture |
-| changedSetScope(phase) | exactly fourteen allowed paths including worker return |
+| changedSetScope(phase) | exactly sixteen allowed paths including worker return |
 | traceScope(phase, actor) | worker return records commands, status, and exact diff |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT; reviewer/closer owns commit |
 | crossBatchIsolation | clean worktree confirmed at provenance `4494d6cce` and public `27137db4d`; public export, downstream, governance-latency L0, live benchmark, and F-1 remain separate |
@@ -213,6 +236,14 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | family metadata and prompt contract | resolve bounded family metadata and append ALLOW-only output requirements |
 | tests | restore the paired historical contract tests in provenance and keep negative controls |
 | worker return | record lineage adaptation, commands, exact diff, failures, and no-commit status |
+
+## Required Artifact Manifest
+
+| Required artifact | Disposition |
+| --- | --- |
+| Fifteen source/test paths in Scope / Applies To | ACCEPT_AUTHORIZED |
+| Worker return path in Scope / Applies To | ACCEPT_AUTHORIZED |
+| Completion review path in Reviewer Closure Conversion | REVIEWER_OWNED |
 
 ## Execution Plan
 
@@ -340,7 +371,7 @@ Claim Update Requirement: worker records confirmed, narrowed, or invalidated.
 - [ ] The six focused test files pass offline.
 - [ ] Typecheck passes.
 - [ ] Full non-live cvf-web suite passes or preserves separately evidenced pre-existing failures.
-- [ ] Exact changed set matches the fourteen worker-owned paths.
+- [ ] Exact changed set matches the sixteen worker-owned paths.
 - [ ] Public-sync HEAD/status remain unchanged.
 - [ ] Worker return fast gate passes.
 
