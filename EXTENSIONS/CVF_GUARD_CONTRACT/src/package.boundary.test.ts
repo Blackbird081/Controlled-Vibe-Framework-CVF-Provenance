@@ -21,6 +21,7 @@ describe('package boundary', () => {
       './guards/*': './src/guards/*.ts',
       './runtime/agent-handoff': './src/runtime/agent-handoff.ts',
       './runtime/agent-coordination': './src/runtime/agent-coordination.ts',
+      './runtime/mandatory-gateway': './src/runtime/mandatory-gateway.ts',
     });
   });
 
@@ -37,6 +38,7 @@ describe('package boundary', () => {
       'src/enterprise',
       'src/runtime/agent-handoff.ts',
       'src/runtime/agent-coordination.ts',
+      'src/runtime/mandatory-gateway.ts',
     ]);
   });
 });

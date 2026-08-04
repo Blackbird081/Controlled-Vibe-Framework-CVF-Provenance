@@ -158,6 +158,11 @@ $DENY_PATTERNS = @(
     '^docs[/\\]baselines[/\\]',
     '^docs[/\\]reviews[/\\]',
     '^docs[/\\]roadmaps[/\\]',
+    '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_BUILD_EVIDENCE_2026-07-23\.md$',
+    '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_INDEPENDENT_REVIEW_2026-07-23\.md$',
+    '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_INDEPENDENT_REVIEW_FINDINGS_2026-07-23\.md$',
+    '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_WORK_ORDER_2026-07-23\.md$',
+    '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_WORK_ORDER_AMENDMENT_1_2026-07-23\.md$',
     # Internal operation scripts - provenance repo only
     'scripts[/\\]cvf-provenance-push\.ps1$',
     'scripts[/\\]cvf-public-sync\.ps1$',

@@ -28,6 +28,18 @@ $script:passCount = 0
 $script:failCount = 0
 $script:results = [System.Collections.Generic.List[string]]::new()
 
+$privateEvidencePaths = @(
+    'docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_BUILD_EVIDENCE_2026-07-23.md',
+    'docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_INDEPENDENT_REVIEW_2026-07-23.md',
+    'docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_INDEPENDENT_REVIEW_FINDINGS_2026-07-23.md',
+    'docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_WORK_ORDER_2026-07-23.md',
+    'docs/reference/CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_WORK_ORDER_AMENDMENT_1_2026-07-23.md'
+)
+
+$privateEvidenceDenyPatterns = @($privateEvidencePaths | ForEach-Object {
+    '^' + [regex]::Escape($_).Replace('/', '[/\\]') + '$'
+})
+
 function Assert-True {
     param([bool]$Condition, [string]$CaseName, [string]$Detail = '')
     if ($Condition) {
@@ -108,11 +120,11 @@ function New-BasePolicyFixture {
         allowedRootFiles = @('README.md', 'ALLOWED_ROOT.txt')
         allowedScriptFiles = @()
         allowedWorkspaceTemplateFiles = @()
-        allowedDocsPaths = @()
+        allowedDocsPaths = @('docs/reference')
         mappedFiles = @(
             [pscustomobject]@{ source = 'MappedSource.txt'; destination = 'MappedDestination.txt' }
         )
-        denyPatterns = @('DENY_ME', '\.env')
+        denyPatterns = @('DENY_ME', '\.env') + @($privateEvidenceDenyPatterns)
         denyExceptions = @()
         candidateActionEnum = @('COPY_CANDIDATE_ABSENT_TARGET', 'FLAG_SEMANTIC_REVIEW_CHANGED', 'SKIP_UNCHANGED', 'SKIP_DENIED', 'SKIP_NOT_ALLOWLISTED')
         semanticReviewBoundary = [pscustomobject]@{ note = 'fixture'; autoApproveForbidden = $true }
@@ -375,6 +387,10 @@ const MODULES = [
     'tree file content' | Out-File -FilePath (Join-Path $provRoot 'AllowedTree\inner.txt') -Encoding utf8
     'denied content' | Out-File -FilePath (Join-Path $provRoot 'DENY_ME_file.txt') -Encoding utf8
     'unlisted content' | Out-File -FilePath (Join-Path $provRoot 'UNLISTED_ROOT_FILE.txt') -Encoding utf8
+    New-Item -ItemType Directory -Path (Join-Path $provRoot 'docs\reference') -Force | Out-Null
+    foreach ($privateEvidencePath in $privateEvidencePaths) {
+        'private evidence fixture' | Out-File -FilePath (Join-Path $provRoot $privateEvidencePath) -Encoding utf8
+    }
     & git -C $provRoot add -A 2>&1 | Out-Null
     & git -C $provRoot commit -q -m 'add classification fixtures' 2>&1 | Out-Null
 
@@ -422,6 +438,11 @@ const MODULES = [
     # -----------------------------------------------------------------
     $denyRow = $rPositive.Json.candidates | Where-Object { $_.sourcePath -eq 'DENY_ME_file.txt' }
     Assert-True ($null -ne $denyRow -and $denyRow.candidateAction -eq 'SKIP_DENIED') 'deny_disposition' ($rPositive.StdoutText)
+    foreach ($privateEvidencePath in $privateEvidencePaths) {
+        $privateEvidenceRow = $rPositive.Json.candidates | Where-Object { $_.sourcePath -eq $privateEvidencePath }
+        $caseSuffix = [System.IO.Path]::GetFileNameWithoutExtension($privateEvidencePath).ToLowerInvariant()
+        Assert-True ($null -ne $privateEvidenceRow -and $privateEvidenceRow.candidateAction -eq 'SKIP_DENIED') "private_evidence_deny_$caseSuffix" ($rPositive.StdoutText)
+    }
     $notAllowRow = $rPositive.Json.candidates | Where-Object { $_.sourcePath -eq 'UNLISTED_ROOT_FILE.txt' }
     Assert-True ($null -ne $notAllowRow -and $notAllowRow.candidateAction -eq 'SKIP_NOT_ALLOWLISTED') 'not_allowlisted_disposition' ($rPositive.StdoutText)
 
