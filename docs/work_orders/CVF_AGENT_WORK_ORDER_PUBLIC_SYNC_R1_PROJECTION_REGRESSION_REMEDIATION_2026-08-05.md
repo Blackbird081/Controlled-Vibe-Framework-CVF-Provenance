@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: PUBLIC-SYNC-R1
 
@@ -140,7 +140,7 @@ Disclosure count: 20
 | Field | Value |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py` |
-| literalTokensReviewed | DISPATCH_READY, Source Verification Block, ADIF Defect Registry Disclosure, Agent Handoff Contract Control Block, Reviewer Closure Conversion, Public Export Disposition |
+| literalTokensReviewed | dispatch lifecycle status, Source Verification Block, ADIF Defect Registry Disclosure, Agent Handoff Contract Control Block, Reviewer Closure Conversion, Public Export Disposition |
 | gateRunPurpose | Confirm packet shape before worker implementation. |
 | claimBoundary | Read-ahead evidence only; no repair or export claim. |
 
@@ -329,18 +329,20 @@ Claim Update Requirement: worker records confirmed, narrowed, or invalidated.
 
 ## Acceptance Criteria
 
-- [ ] All five paths classify as denied.
-- [ ] Script/policy parity is MATCH.
-- [ ] Mapper focused test passes.
-- [ ] Package-boundary focused test and typecheck pass offline.
-- [ ] Exact changed set contains only the five allowed paths.
-- [ ] Public-sync HEAD and worktree remain unchanged.
+- [x] All five paths classify as denied.
+- [x] Script/policy parity is MATCH.
+- [x] Mapper focused test passes.
+- [x] Package-boundary focused test and typecheck pass offline.
+- [x] Exact worker changed set contains only the five allowed paths.
+- [x] Public-sync HEAD and worktree remain unchanged.
 
 Fail conditions:
 
-- [ ] Any provider/live execution or public mutation occurs.
-- [ ] Any one of the 19 cvf-web failures is repaired here.
-- [ ] Any additional source path is required.
+- [x] N/A with reason: no provider/live execution or public mutation occurred.
+- [x] N/A with reason: none of the 19 cvf-web failures was repaired here.
+- [x] N/A with reason: no extra implementation path was required; the
+  pre-authorized completion review and work-order closure conversion are
+  reviewer-owned artifacts.
 
 ## Evidence Requirements
 
@@ -353,8 +355,10 @@ Fail conditions:
 ## Review Gate
 
 Implementation requires this work order plus a passing pre-dispatch autorun
-gate. Closure requires independent reviewer acceptance, a passing committed
-material-range pre-closure gate, and a separate continuity sync.
+gate. Closure requires reviewer acceptance under the selected
+`SINGLE_AGENT_MULTI_ROLE` route, a passing committed material-range
+pre-closure gate, and a separate continuity sync. Independent review is not
+claimed.
 
 ## Operator Checkpoint
 
@@ -364,13 +368,52 @@ deferred/private artifact and its required tests pass.
 
 ## Closure Checklist
 
-- [ ] Worker return is complete and no-commit.
-- [ ] Every focused command passes after the last edit.
-- [ ] Exact allowed changed set matches.
-- [ ] Reviewer independently recomputes evidence.
-- [ ] Material pre-closure and commit steward pass on a non-empty range.
-- [ ] Session continuity is updated separately.
-- [ ] Public-sync remains clean and unchanged.
+- [x] Worker return is complete and no-commit.
+- [x] Every focused command passes after the last implementation edit.
+- [x] Exact worker allowed changed set matches.
+- [x] Reviewer recomputed evidence from disk; independence is not claimed.
+- [x] Material pre-closure passed on committed range
+  `f645f19c8..822b03ebc`; commit steward passed before commit.
+- [x] N/A with reason: final closure continuity is owned by the required
+  separate handoff-sync commit after this closure conversion.
+- [x] Public-sync remains clean and unchanged at `27137db4d`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PUBLIC_SYNC_R1_PROJECTION_REGRESSION_REMEDIATION_COMPLETION_2026-08-05.md` | reviewer recomputation plus split material pre-closure 75/75 | PASS |
+| Roadmap state | no active roadmap; standalone paired GC-018 remediation | no roadmap status changed | N/A with reason: standalone work order |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check passed; no registry content change required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | corpus registry gates passed; no registry content change required | PASS |
+| External evidence digest | no external evidence absorbed | repository-local source and public-clone status only | N/A with reason: no external evidence digest |
+| System loop interlock | no system-loop registry change | system loop interlock gate passed in material pre-closure | N/A with reason: no interlock mutation |
+| Session continuity | active handoff | material sync commit `a4246f2f2`; closure sync follows separately | N/A with reason: final sync is separate |
+| Implementation | four authorized source/test paths | material commit `822b03ebc` | PASS |
+| Worker return | `docs/reviews/CVF_PUBLIC_SYNC_R1_PROJECTION_REGRESSION_REMEDIATION_WORKER_RETURN_2026-08-05.md` | `COMPLETE_PENDING_REVIEW`; worker fast gate PASS | PASS |
+| Public export | sibling public-sync clone | clean unchanged SHA `27137db4d`; no public commit | N/A with reason: DEFERRED_PRIVATE_ONLY |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| five private paths classify `SKIP_DENIED` | five named assertions passed | PASS |
+| all projection policy groups match source script | 52/52 focused mapper suite passed | PASS |
+| public clone remains unchanged | empty status at `27137db4d` | PASS |
+| live/provider receipt | no live/provider action authorized or performed | N/A with reason: local static remediation only |
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | `scripts/cvf-public-sync.ps1`; `scripts/cvf_projection_policy.json`; `scripts/get_cvf_projection_map.ps1`; `EXTENSIONS/CVF_GUARD_CONTRACT/package.json` |
+| Runtime behavior claimed | N/A_WITH_REASON: projection policy and focused local test consistency only |
+| Helper/checker implementation claimed | BOUNDED: exact deny enforcement and regression assertions only |
+| Provider/live proof claimed | N/A_WITH_REASON |
+| Provider registry surfaces | N/A_WITH_REASON: no provider registry, provider selection, or live-governance claim |
+| Public-sync claimed | N/A_WITH_REASON: public clone stayed unchanged |
+| Freshness disposition | PASS - current source and package manifest were read directly; no absent, hardcoded, or unimplemented runtime claim is made |
 
 ## Return-To-Orchestrator Conditions
 

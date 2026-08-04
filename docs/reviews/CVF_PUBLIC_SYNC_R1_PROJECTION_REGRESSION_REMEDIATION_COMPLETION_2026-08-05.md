@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 docType: review
 
-Status: REVIEW_ACCEPTED_PENDING_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-08-05
 
@@ -47,7 +47,7 @@ role-separated recomputation and reviewer-owned commit decisions.
 
 ## Findings / Position
 
-Disposition: `REVIEW_ACCEPTED_PENDING_COMMIT`.
+Disposition: `CLOSED_PASS_BOUNDED`.
 
 - All five known private evidence paths classify as `SKIP_DENIED`.
 - Script and JSON policy deny arrays match.
@@ -131,6 +131,7 @@ cleared in the command process.
 | `git diff --check` | PASS |
 | public-sync `git status --short` | PASS, empty |
 | public-sync `git rev-parse HEAD` | `27137db4d9aa2aea931ddd2507185d5c24943080` |
+| `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base f645f19c8 --head 822b03ebc` | PASS, 75/75 on split material range |
 
 ## Reviewer Independence And Claim Control
 
@@ -259,12 +260,27 @@ separate public-export tranche only if its candidate and required tests pass.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| GC-018 authority | `docs/baselines/CVF_GC018_PUBLIC_SYNC_R1_PROJECTION_REGRESSION_REMEDIATION_2026-08-05.md` | committed dispatch packet `3324361ef` | SATISFIED |
-| Work-order authority | `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_SYNC_R1_PROJECTION_REGRESSION_REMEDIATION_2026-08-05.md` | committed dispatch packet `3324361ef` | SATISFIED |
-| Worker return | `docs/reviews/CVF_PUBLIC_SYNC_R1_PROJECTION_REGRESSION_REMEDIATION_WORKER_RETURN_2026-08-05.md` | status `COMPLETE_PENDING_REVIEW`; fast gate PASS | ACCEPTED |
-| Completion review | this file | status `REVIEW_ACCEPTED_PENDING_COMMIT` | PENDING_COMMITTED_RANGE |
-| Material changed set | four source/test paths plus worker return and completion review | `git diff --name-status`; Agent Operation Trace manifest | MATCH |
-| Public export | sibling public-sync clone | clean SHA `27137db4d`; no public candidate/commit/push | DEFERRED_PRIVATE_ONLY |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_SYNC_R1_PROJECTION_REGRESSION_REMEDIATION_2026-08-05.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this file | material commit `822b03ebc`; split material pre-closure 75/75 | PASS |
+| Roadmap state | no active roadmap; standalone paired GC-018 remediation | no roadmap status changed | N/A with reason: standalone work order |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check passed; no registry content change required | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | corpus registry gates passed; no registry content change required | PASS |
+| External evidence digest | no external evidence absorbed | repository-local source and public-clone status only | N/A with reason: no external evidence digest |
+| System loop interlock | no system-loop registry change | system loop interlock gate passed in material pre-closure | N/A with reason: no interlock mutation |
+| Session continuity | active handoff | material sync commit `a4246f2f2`; closure sync follows separately | N/A with reason: final sync is separate |
+| Worker return | `docs/reviews/CVF_PUBLIC_SYNC_R1_PROJECTION_REGRESSION_REMEDIATION_WORKER_RETURN_2026-08-05.md` | status `COMPLETE_PENDING_REVIEW`; fast gate PASS | PASS |
+| Material changed set | four source/test paths plus worker return and completion review | `git diff --name-status f645f19c8..822b03ebc` | PASS |
+| Public export | sibling public-sync clone | clean SHA `27137db4d`; no public candidate/commit/push | N/A with reason: DEFERRED_PRIVATE_ONLY |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| five private paths classify `SKIP_DENIED` | five named assertions passed | PASS |
+| all projection policy groups match source script | 52/52 focused mapper suite passed | PASS |
+| package boundary matches current manifest | 2/2 focused assertions and TypeScript passed | PASS |
+| public clone remains unchanged | empty status at `27137db4d` | PASS |
+| live/provider receipt | no live/provider action authorized or performed | N/A with reason: local static remediation only |
 
 ## Claim Boundary
 
