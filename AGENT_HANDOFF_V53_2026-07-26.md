@@ -4,6 +4,14 @@ Memory class: active-handoff
 
 Status: ACTIVE
 
+## Handoff Context
+
+- Repo state: clean before this handoff-only sync
+- Latest completed commit: `c10594d25 governance: classify active handoff exposure`
+- Remote tracking branch: `origin/main`
+- Exact remote SHA must be derived live from git when needed
+- External agent memory files: non-canonical convenience only
+
 ## Purpose
 
 Carry the independently accepted bounded GC009 closure, preserve GC010-AER-T2
@@ -304,6 +312,51 @@ to this handoff marker so the checker may accept its parent SHA.
 | Claim boundary | repository-local continuity trace only; no provider call |
 | Agent type | Codex |
 | Invocation ID | `gc009-live-t5-r2-redispatch-continuity-child-2026-07-26` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - Push Readiness Handoff Repair
+
+Authorized continuity scope: add the canonical remote/memory-boundary markers
+required by the pre-push handoff compatibility guard and record material parent
+commit `c10594d25`.
+
+Protected path:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`.
+
+Operator authorization: push the private provenance branch to clear local
+commit debt before continuing.
+
+Rollback boundary: revert only this handoff-only sync if exposure-classification
+commit `c10594d25` is reverted.
+
+## GC-020 Marker - Push Readiness Handoff Repair
+
+This handoff records material parent commit `c10594d25`. The handoff-only child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated handoff-sync commit.
+
+## Agent Operation Trace Block - Push Readiness Handoff Repair
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex push/continuity steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | provenance push-readiness handoff repair, 2026-08-04 |
+| Working directory | repository root |
+| Command or tool surface | repository-boundary read, pre-push diagnostics, exposure registry check, handoff-only patch, handoff-sync steward, and pre-commit hook |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | operator instruction to push provenance and clear commit debt |
+| Before status evidence | HEAD `c10594d25`; clean worktree after the one-path exposure registry commit |
+| After status evidence | active handoff carries the canonical remote branch, live-SHA derivation, and external-memory boundary markers |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | handoff-only push-readiness metadata repair |
+| Claim boundary | no public-sync, runtime, downstream, distribution-clone, provider, deployment, or roadmap execution action |
+| Agent type | Codex push/continuity steward |
+| Invocation ID | `provenance-push-readiness-handoff-repair-2026-08-04` |
 | Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
