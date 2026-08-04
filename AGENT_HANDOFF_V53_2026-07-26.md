@@ -6,8 +6,8 @@ Status: ACTIVE
 
 ## Handoff Context
 
-- Repo state: clean before this handoff-only sync
-- Latest completed commit: `ee23ddaee governance: close public projection remediation`
+- Repo state: QBS lineage reconciliation implementation is uncommitted and in progress
+- Latest completed commit: `f811ca5d4 governance: dispatch QBS lineage reconciliation R1`
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed
 - External agent memory files: non-canonical convenience only
@@ -33,19 +33,18 @@ governance-latency execution authority is active.
 
 ## Active Boundary
 
-GC009-LIVE-T5 and the parent roadmap are closed bounded at `b72074578`. No R3
-is authorized. GC010-AER-T2 remains value-parked. CVF-GOVERNANCE-LATENCY-L0 is
-a parked provenance learning candidate and requires a fresh operator-approved
-GC-018/L0 work order before evidence intake begins.
+GC009-LIVE-T5 and its parent roadmap remain closed bounded. QBS lineage
+reconciliation R1 is active under dispatch commit `f811ca5d4`; public history
+is read-only evidence and public export remains separate. GC010-AER-T2 and
+CVF-GOVERNANCE-LATENCY-L0 remain parked.
 
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`gc009_roadmap_closed_governance_latency_l0_parked`;
-active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=operator
-checkpoint before any fresh GC-018 and L0 evidence-intake work order for the
-parked governance-latency candidate; parked checkpoint=GC010-AER and
-CVF-GOVERNANCE-LATENCY-L0 remain parked, with no build, provider, public-sync,
-push, deployment, or production-readiness authority.
+active handoff=AGENT_HANDOFF_V53_2026-07-26.md; next allowed move=complete the
+bounded offline QBS source/test reconciliation and reviewer closure; parked
+checkpoint=GC010-AER and CVF-GOVERNANCE-LATENCY-L0 remain parked, while live
+benchmark, provider use, public export, and downstream mutation are forbidden.
 
 ## Latest Material Closure
 
@@ -312,6 +311,50 @@ to this handoff marker so the checker may accept its parent SHA.
 | Claim boundary | repository-local continuity trace only; no provider call |
 | Agent type | Codex |
 | Invocation ID | `gc009-live-t5-r2-redispatch-continuity-child-2026-07-26` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - QBS Lineage R1 Dispatch Sync
+
+Authorized continuity scope: record dispatch commit `f811ca5d4` and the active
+bounded QBS lineage reconciliation mode.
+
+Protected path:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`.
+
+Operator authorization: explicit confirmation on 2026-08-05 for provenance
+QBS lineage reconciliation; public export remains separately gated.
+
+Rollback boundary: revert only this handoff update if dispatch commit
+`f811ca5d4` is reverted.
+
+## GC-020 Marker - QBS Lineage R1 Dispatch
+
+This handoff records material parent commit `f811ca5d4`. The handoff-only child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated session-sync commit.
+
+## Agent Operation Trace Block - QBS Lineage R1 Dispatch Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex dispatcher/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | QBS lineage R1 dispatch sync, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | accepted dispatch commit and handoff-only patch |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | GC-020 in-place update rule after dispatch commit `f811ca5d4` |
+| Before status evidence | HEAD `f811ca5d4`; bounded implementation changes are uncommitted |
+| After status evidence | active handoff records QBS implementation mode and parked lanes |
+| Diff evidence | one protected handoff path |
+| Approval boundary | continuity only; no provider, live, public, or downstream action |
+| Claim boundary | dispatch continuity only; no implementation or closure claim |
+| Agent type | Codex dispatcher/session-sync steward |
+| Invocation ID | `qbs-lineage-r1-dispatch-sync-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
