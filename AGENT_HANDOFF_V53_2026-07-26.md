@@ -861,3 +861,38 @@ may accept this parent SHA for the dedicated session-sync commit.
 | Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## 2026-08-05 - Governance Latency L0 Dispatch Contract Correction
+
+Material correction commit `d734dff54` resolves every worker-return packet
+shape diagnostic raised by the first pre-implementation pass. The next allowed
+move is one clean pre-implementation PASS followed by blind-classification
+artifact creation and immutable freeze before replay intake.
+
+## GC-020 Marker - Governance Latency L0 Contract Correction
+
+This handoff records material parent commit `d734dff54`; the dedicated
+session-sync child may use that parent anchor.
+
+## Agent Operation Trace Block - Governance Latency L0 Contract Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | L0 contract correction sync, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | diagnostic, packet repair, pre-dispatch, commit, handoff-only patch |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | GC-020 after material correction `d734dff54` |
+| Before status evidence | HEAD `d734dff54`; clean worktree |
+| After status evidence | handoff records corrected contract and blind-freeze next move |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | continuity only; no replay read or L1+ expansion |
+| Claim boundary | contract correction only; no L0 result |
+| Agent type | dispatcher/session-sync steward |
+| Invocation ID | `governance-latency-l0-contract-sync-2026-08-05` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
