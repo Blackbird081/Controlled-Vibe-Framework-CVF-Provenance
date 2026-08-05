@@ -2,11 +2,11 @@
   "stateOrder": 2004,
   "stateKey": "workspaceGovernanceLearningPropagationRoadmap20260805",
   "value": {
-    "status": "GLP_T2R1_REVIEWER_ACCEPTED_ALIGNMENT_IMPLEMENTED_BOUNDED",
+    "status": "GLP_T3_REVIEWER_ACCEPTED_PROPAGATION_PROVEN_BOUNDED",
     "date": "2026-08-05",
-    "materialCommit": "2cd8e4a85",
+    "materialCommit": "eae28c785",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
-    "decision": "CARRIER_DESIGN_ACCEPTED",
+    "decision": "PROPAGATION_PROVEN_BOUNDED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
     "audit": "docs/audits/CVF_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -37,9 +37,15 @@
     "t2r1ReviewDisposition": "CLOSED_PASS_BOUNDED",
     "t3Baseline": "docs/baselines/CVF_GC018_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_BASELINE_2026-08-05.md",
     "t3WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_2026-08-05.md",
-    "t3PacketStatus": "DISPATCH_READY_WORKER_DISPATCHED",
+    "t3PacketStatus": "CLOSED_PASS_BOUNDED",
     "t3PacketAuthoringGate": "PASS_75_OF_75",
-    "nextAllowedMove": "One Claude-routed no-commit worker runs the exact one-call/two-output GLP-T3 proof and returns for independent review.",
-    "claimBoundary": "GLP-T2R1 proves bounded local byte-preserving carrier projection. GLP-T3 is only a held proof packet; no harness execution, evidence output, persistent generated workspace/downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized."
+    "t3Audit": "docs/audits/CVF_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_2026-08-05.md",
+    "t3WorkerReturn": "docs/reviews/CVF_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_WORKER_RETURN_2026-08-05.md",
+    "t3CompletionReview": "docs/reviews/CVF_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_COMPLETION_2026-08-05.md",
+    "t3FocusedEvidence": "PASS_79_OF_79",
+    "t3ReviewDisposition": "CLOSED_PASS_BOUNDED",
+    "t3ProviderDenominators": "proof_subject_0_worker_orchestration_1_session",
+    "nextAllowedMove": "Author a fresh source-verified GLP-T4 closure/adoption-boundary packet only; execution, operator-guide mutation, adoption, public export, provider/network calls, push, and deployment remain held.",
+    "claimBoundary": "GLP-T3 proves bounded local propagation in disposable fixtures only. It does not prove real downstream adoption, production behavior, causal latency reduction, public export, deployment, or runtime governance enforcement. No Claude CLI call is authorized; any future Claude handoff must be prepared for manual operator copy."
   }
 }

@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - GLP T3 Worker Dispatched
+# CVF Agent Handoff V55 - GLP T3 Closed, T4 Packet Authoring Ready
 
 Memory class: active-handoff
 
@@ -8,44 +8,41 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `2cd8e4a85 governance: release GLP T3 propagation proof`
-- Active mode: `workspace_governance_learning_propagation_t3_worker_dispatched`
+- Latest material commit: `eae28c785 governance: close GLP T3 propagation proof`
+- Active mode: `workspace_governance_learning_propagation_t3_closed_t4_packet_authoring_ready`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
 ## Purpose
 
-Carry the independently accepted GLP-T2R1 closure and release only bounded
-source-verified GLP-T3 packet authoring while preserving all parked lanes.
+Carry the independently accepted GLP-T3 bounded propagation proof into
+source-verified GLP-T4 packet authoring while preserving all parked lanes.
 
 ## Scope / Target / Owner Boundary
 
-Scope: bounded GLP-T2 carrier implementation under the released GC-018 and
-work order.
+Scope: GLP-T3 independent closure continuity and GLP-T4 packet authoring only.
 
-Target: one no-commit worker implements exactly the downstream AGENTS template,
-the focused golden downstream bootstrap harness, and the worker return.
+Target: source-verify and draft only the GLP-T4 closure/adoption-boundary packet.
 
-Owner boundary: worker may edit only the three authorized paths and must not
-commit. An independent reviewer/closer owns acceptance, repairs, closure, and
-commit decisions.
+Owner boundary: no GLP-T4 execution, operator-guide mutation, adoption,
+public-sync/export, provider/network call, push, or deployment is released.
 
 ## Active Boundary
 
-GLP-T2R1 is complete. GLP-T3 packet release and the bounded proof may proceed.
-Execution, generated workspace, downstream repository, public-sync,
-provider/network, push, deployment, and broader implementation remain excluded.
+GLP-T3 is independently accepted as `PROPAGATION_PROVEN_BOUNDED` at
+`eae28c785`. It proves local disposable-fixture propagation only. GLP-T4
+packet authoring is allowed; execution and external-effect lanes remain held.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t3_worker_dispatched`
+`workspace_governance_learning_propagation_t3_closed_t4_packet_authoring_ready`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_worker_dispatched`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one
-Claude-routed no-commit worker executes the exact one-call/two-output proof; parked
-checkpoint=WS2 and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_closed_t4_packet_authoring_ready`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=source-verified
+GLP-T4 packet authoring only; parked checkpoint=GLP-T4 execution/adoption/public
+export, WS2, and GC010-AER remain parked.
 
 ## Released Packet
 
@@ -72,10 +69,10 @@ checkpoint=WS2 and GC010-AER remain parked.
 
 ## Next Allowed Move
 
-One Claude-routed no-commit worker executes the released GLP-T3 packet at
-`2cd8e4a85`: one existing local harness call and exactly the audit plus worker
-return. Independent reviewer/closer owns acceptance and commits. Every external
-lane remains held.
+Author a fresh source-verified GLP-T4 closure/adoption-boundary packet only.
+Do not execute GLP-T4 or mutate operator guides, adoption surfaces, public-sync,
+provider/network, push, or deployment surfaces. Do not call Claude CLI; prepare
+any future Claude handoff as a prompt for manual operator copy.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 
@@ -164,6 +161,37 @@ creation and may be accepted under the GC-020 parent rule.
 | Invocation ID | `glp-t2-v55-exact-anchor-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V55_2026-08-05.md` |
 | Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - GLP-T3 Closure Continuity
+
+Material commit `eae28c785` independently closes GLP-T3 as
+`PROPAGATION_PROVEN_BOUNDED`. This continuity batch updates only active session
+front doors, source fragments, generated state views, and this handoff. It
+releases GLP-T4 packet authoring only and grants no execution or external-effect
+authority.
+
+## Agent Operation Trace Block - GLP-T3 Closure Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | GLP-T3 closure continuity, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, generated-state refresh, continuity gates, Git commit |
+| Target paths | active handoff, compact front door, state source fragments, generated state views |
+| Allowed scope source | GC-020 after material closure commit `eae28c785` |
+| Before status evidence | HEAD `eae28c785`; clean worktree |
+| After status evidence | GLP-T3 closed and GLP-T4 packet authoring only is next |
+| Diff evidence | continuity-only path set |
+| Approval boundary | session synchronization only |
+| Claim boundary | no GLP-T4 execution, Claude CLI call, operator-guide mutation, adoption, public-sync/export, provider/network call, push, or deployment |
+| Agent type | session-sync steward |
+| Invocation ID | `glp-t3-closure-continuity-2026-08-05` |
+| Expected manifest | active handoff; compact front door; state source fragments; generated state views |
+| Actual changed set | same continuity-only paths |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
