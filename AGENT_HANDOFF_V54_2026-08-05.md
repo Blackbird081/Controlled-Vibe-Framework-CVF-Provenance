@@ -157,6 +157,41 @@ Rollback boundary: revert only this continuity update if dispatch commit
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## 2026-08-05 - WS2-T0 Dispatch Continuity Anchor
+
+Continuity commit `1e8a3d49b` records the active mode, exact next move, and
+generated active-session state for material dispatch commit `9296e05ac`.
+This handoff-only child anchors that continuity commit; it adds no execution,
+implementation, live-provider, downstream, public-sync, or push authority.
+
+## GC-020 Marker - WS2-T0 Dispatch Continuity Anchor
+
+This handoff-only update records continuity parent commit `1e8a3d49b` and is
+restricted to `AGENT_HANDOFF_V54_2026-08-05.md`.
+
+## Agent Operation Trace Block - WS2-T0 Dispatch Continuity Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | WS2-T0 handoff anchor, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | handoff-only continuity anchor |
+| Target paths | `AGENT_HANDOFF_V54_2026-08-05.md` |
+| Allowed scope source | GC-020 after continuity commit `1e8a3d49b` |
+| Before status evidence | HEAD `1e8a3d49b`; clean worktree |
+| After status evidence | handoff names material and continuity commit anchors |
+| Diff evidence | one handoff file only |
+| Approval boundary | continuity anchoring only |
+| Claim boundary | no worker execution or expanded authority |
+| Agent type | session-sync steward |
+| Invocation ID | `governance-latency-ws2-t0-continuity-anchor-2026-08-05` |
+| Expected manifest | active handoff only |
+| Actual changed set | active handoff only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Boundaries
 
 - No L1, design, specification, build, live test, provider/network call,
