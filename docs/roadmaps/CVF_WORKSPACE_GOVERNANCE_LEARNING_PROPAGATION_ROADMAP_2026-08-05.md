@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: GLP_T2_BLOCKED_IMPLEMENTATION_EVIDENCE
+Status: GLP_T2R1_REVIEWER_ACCEPTED_ALIGNMENT_IMPLEMENTED_BOUNDED
 
 docType: roadmap
 
@@ -120,6 +120,13 @@ required outside-block byte-identity proof. The partial template/harness diff
 was rejected. GLP-T3 remains held. The next bounded planning move is a fresh
 source-verified packet for CP1 byte-preserving merge repair; implementation of
 that repair requires explicit operator authority.
+
+GLP-T2R1 subsequently repaired the CP1 hand-edited merge path under fresh
+operator authority. Independent review confirmed outside-block byte identity
+on insertion and refresh, fail-closed zero-mutation behavior for duplicate,
+reversed, and unterminated markers, one complete public-safe carrier, zero
+private sentinel hits, cleanup PASS, and 79/79 focused assertions. Decision:
+`ALIGNMENT_IMPLEMENTED_BOUNDED`. GLP-T3 remains held for a fresh proof packet.
 
 ## GLP-T0 Outcome - 2026-08-05
 

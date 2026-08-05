@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -299,7 +299,7 @@ Each step consumes the prior step's files/evidence. A forbidden-path need,
 private leakage, unresolved byte drift, or unclear failing test is a stop
 condition.
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
 | Artifact | Required worker action |
 |---|---|
@@ -346,17 +346,17 @@ Evidence Trace Block requirements for each decision-driving claim:
 
 ## Acceptance Criteria
 
-- [ ] CP1 preserves project-owned outside-block bytes on insertion and refresh;
-- [ ] malformed marker structures fail closed without file mutation;
-- [ ] CVF-generated refresh behavior remains unchanged;
-- [ ] exactly one public-safe carrier subsection is added adjacent to Risk Classification;
-- [ ] all five accepted semantics are present and no excluded evidence is present;
-- [ ] fresh generated project proof passes hermetically;
-- [ ] generated-project second refresh is idempotent and retains one carrier;
-- [ ] hand-edited project receives one merge block and retains outside-block bytes;
-- [ ] only the three source/test paths and worker return are pending;
-- [ ] golden harness, file-size guard, worker-return fast gate, and diff hygiene pass;
-- [ ] worker records actual execution base/status and makes no commit.
+- [x] CP1 preserves project-owned outside-block bytes on insertion and refresh;
+- [x] malformed marker structures fail closed without file mutation;
+- [x] CVF-generated refresh behavior remains unchanged;
+- [x] exactly one public-safe carrier subsection is added adjacent to Risk Classification;
+- [x] all five accepted semantics are present and no excluded evidence is present;
+- [x] fresh generated project proof passes hermetically;
+- [x] generated-project second refresh is idempotent and retains one carrier;
+- [x] hand-edited project receives one merge block and retains outside-block bytes;
+- [x] only the three source/test paths and worker return are pending;
+- [x] golden harness, file-size guard, worker-return fast gate, and diff hygiene pass;
+- [x] worker records actual execution base/status and makes no commit.
 
 Fail conditions:
 
@@ -371,11 +371,11 @@ Fail conditions:
 
 | Roadmap requirement | Work-order instruction | Closure evidence | Status |
 |---|---|---|---|
-| align provenance template surface | Template carrier | template diff | PENDING_IMPLEMENTATION_AUTHORITY |
-| focused template tests | Golden harness | hermetic harness result | PENDING_IMPLEMENTATION_AUTHORITY |
-| private leakage exclusion | Golden harness negatives | exact sentinel assertions | PENDING_IMPLEMENTATION_AUTHORITY |
-| bounded CP1 repair | CP1 byte-preserving merge repair | source diff and byte/malformed-marker evidence | PENDING_IMPLEMENTATION_AUTHORITY |
-| independent review | no-commit route | reviewer disposition | PENDING_IMPLEMENTATION_AUTHORITY |
+| align provenance template surface | Template carrier | accepted template diff | PASS |
+| focused template tests | Golden harness | reviewer-recomputed 79/79 | PASS |
+| private leakage exclusion | Golden harness negatives | zero sentinel hits | PASS |
+| bounded CP1 repair | CP1 byte-preserving merge repair | insertion/refresh `MATCH`; malformed markers fail closed | PASS |
+| independent review | no-commit route | reviewer acceptance after recomputation | PASS |
 
 ## Design Control Carry-Forward
 
@@ -585,15 +585,65 @@ unchanged.
 
 ## Closure Checklist
 
-- [ ] operator implementation authority recorded and dependency released;
-- [ ] pre-dispatch gate passed on a non-empty committed release range;
-- [ ] worker captured execution base and clean status;
-- [ ] acceptance criteria resolved without forbidden-path widening;
-- [ ] focused harness and all required guards passed or blocker preserved;
-- [ ] independent reviewer disposition recorded;
-- [ ] worker made no commit;
-- [ ] material and session-sync closure ranges remain separate;
-- [ ] public export remains deferred unless separately authorized.
+- [x] operator implementation authority recorded and dependency released;
+- [x] pre-dispatch gate passed on a non-empty committed release range;
+- [x] worker captured execution base and clean status;
+- [x] acceptance criteria resolved without forbidden-path widening;
+- [x] focused harness and all required guards passed;
+- [x] independent reviewer disposition recorded;
+- [x] worker made no commit;
+- [x] material and session-sync closure ranges remain separate;
+- [x] public export remains deferred unless separately authorized.
+
+## Closure Diff Gate
+
+| Check | Evidence | Disposition |
+|---|---|---|
+| roadmap requirement coverage | Roadmap-To-Work-Order Trace Matrix | PASS |
+| exact worker manifest | three modified source/test paths plus worker return | PASS |
+| CP1 byte ownership | insertion and refresh outside bytes return `MATCH` | PASS |
+| malformed marker safety | duplicate, reversed, and unterminated cases fail closed with zero AGENTS mutation | PASS |
+| carrier semantics and leakage | exactly one five-rule carrier; zero private sentinel hits | PASS |
+| focused regression | independent reviewer rerun passed 79/79 with cleanup PASS | PASS |
+| forbidden external effects | no persistent downstream, provider/network, public-sync, push, or deployment action | PASS |
+
+## Reviewer Disposition
+
+Reviewer verdict: `CLOSED_PASS_BOUNDED`.
+
+The independent reviewer inspected the byte-slice algorithm and reran the full
+golden harness. ISO-8859-1 is used only as a one-character-per-byte marker
+inspection view; project-owned prefix/suffix bytes are written directly from
+the original byte array. No decode/re-encode occurs for preserved bytes.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this file, Reviewer Disposition | `Reviewer verdict: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | GLP roadmap | `Status: GLP_T2R1_REVIEWER_ACCEPTED_ALIGNMENT_IMPLEMENTED_BOUNDED` | PASS |
+| Registry JSON | N/A with reason | no registry mutation is required or authorized | BLOCKED with reason |
+| Registry Markdown | N/A with reason | no registry mutation is required or authorized | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external evidence was imported | N/A with reason |
+| System loop interlock | this work order | T2R1 closes alignment only and keeps GLP-T3 held | PASS |
+| Baseline | paired GLP-T2R1 baseline | dispatch evidence remains `REVIEWER_ACCEPTED_DISPATCH_READY` | PASS |
+| Worker return | GLP-T2R1 worker return | `Status: COMPLETE_PENDING_REVIEW`; reviewer disposition recorded | PASS |
+| CP1 repair | `scripts/new-cvf-workspace.ps1` | bounded byte-slice merge path | PASS |
+| Carrier | downstream AGENTS template | one public-safe five-rule section | PASS |
+| Focused proof | golden harness | reviewer-recomputed 79/79 | PASS |
+| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Session continuity | separate session-sync batch | N/A with reason: commit split required | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| provider/runtime receipt absent for this local tranche | no provider or runtime receipt created | PASS |
+| outside-byte comparison | `MATCH` after insertion and refresh | PASS |
+| malformed-marker behavior | duplicate, reversed, and unterminated cases fail closed with zero AGENTS mutation | PASS |
+| focused assertion result | reviewer-recomputed 79/79 with cleanup PASS | PASS |
+| worker commit boundary | HEAD remained `f3f8ca69e`; no worker commit | PASS |
 
 ## Return-To-Orchestrator Conditions
 
