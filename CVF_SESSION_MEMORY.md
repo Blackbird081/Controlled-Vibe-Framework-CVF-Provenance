@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`governance_latency_ws2_t1_closed_demand_not_source_identifiable`; active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=reopen WS2 only after source proves an actual role consumer and required profile set; parked checkpoint=none, because technical zero-network, DESIGN, SPEC, BUILD, provider/network use, and GC010-AER are condition-parked rather than awaiting a repeated operator confirmation.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t0_packet_authoring`; active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=author fresh GLP-T0 GC-018 and source-verified work order for a documentation-only local propagation audit; parked checkpoint=none, while WS2 and GC010-AER remain condition/value-parked.
 
 ## Current Mode
 
-Current mode marker: `governance_latency_ws2_t1_closed_demand_not_source_identifiable`
+Current mode marker: `workspace_governance_learning_propagation_t0_packet_authoring`
 
-Current mode: `governance_latency_ws2_t1_closed_demand_not_source_identifiable`
+Current mode: `workspace_governance_learning_propagation_t0_packet_authoring`
 
-`governance_latency_ws2_t1_closed_demand_not_source_identifiable`
+`workspace_governance_learning_propagation_t0_packet_authoring`
 
 Previous mode:
 
-`governance_latency_ws2_t1_dispatched`
+`governance_latency_ws2_t1_closed_demand_not_source_identifiable`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF Workspace Governance Learning Propagation roadmap | `3b8781b3b` | `ROADMAP_READY_FOR_T0_GC018_AUTHORING`; source audit found a bounded catalog/profile/project-carrier gap; only documentation-only local GLP-T0 packet authoring is released. |
 | CVF-GOVERNANCE-LATENCY-WS2-T1 command/proof-boundary closure | `428321eab` | `REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS`; decision `COMMAND_DEMAND_NOT_SOURCE_IDENTIFIABLE`; technical zero-network, design, build, provider/network, downstream, and public lanes remain condition-parked. |
 | CVF-GOVERNANCE-LATENCY-WS2-T0 owner/feasibility closure | `0f2fc9c9d` | `CLOSED_PASS_BOUNDED`; `ACCEPT_WITH_REVIEWER_CORRECTIONS`; `OWNER_FOUND_NEEDS_FOUNDATION` for fixed-profile admission only. Technical zero-network isolation remains unproven and parked. |
 | CVF-GOVERNANCE-LATENCY-WS2-T0 owner/feasibility dispatch | `9296e05ac` | `DISPATCH_READY`; exactly one no-commit documentation audit and worker return; no implementation, bypass execution, provider/network, downstream, or public authority. |
@@ -385,16 +386,17 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `governance_latency_ws2_t1_closed_demand_not_source_identifiable`
+Mode: `workspace_governance_learning_propagation_t0_packet_authoring`
 
-`CVF-GOVERNANCE-LATENCY-WS2-T1` is independently accepted bounded at material
-commit `428321eab`. The decision is `COMMAND_DEMAND_NOT_SOURCE_IDENTIFIABLE`:
-the fixed-profile surface exists, but no governed WS2 role contract or
-independent non-test consumer proves actual profile demand. Reopen WS2 only
-when current source proves that consumer and required profile set; any technical
-zero-network proposal must also identify a cheap source-backed enforcement
-owner. No design, specification, build, bypass execution, provider/network use,
-downstream/public mutation, push, or deployment is released.
+`CVF-WORKSPACE-GOVERNANCE-LEARNING-PROPAGATION-R0` is open at material commit
+`3b8781b3b`. The next move is fresh GLP-T0 GC-018 and source-verified work-order
+authoring for a documentation-only local propagation audit. T0 must reproduce
+the provenance-to-catalog-to-profile-to-workspace-to-project chain and return
+`PROCEED_BOOTSTRAP_ALIGNMENT`, `PROCEED_DOC_ONLY`, or
+`STOP_ALREADY_PROPAGATED`. No bootstrap/catalog/template implementation,
+generated workspace or downstream mutation, public-sync, provider/network use,
+push, or deployment is released. WS2 and GC010-AER remain parked behind their
+existing source conditions.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without

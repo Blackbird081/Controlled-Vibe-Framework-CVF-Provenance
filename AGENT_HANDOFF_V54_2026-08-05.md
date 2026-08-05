@@ -1,4 +1,4 @@
-# CVF Agent Handoff V54 - Governance Latency WS2 T1 Closed And Parked
+# CVF Agent Handoff V54 - Workspace Governance Learning Propagation T0 Packet Authoring
 
 Memory class: active-handoff
 
@@ -8,58 +8,54 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `428321eab governance: accept latency WS2 T1 boundary audit`
-- Active mode: `governance_latency_ws2_t1_closed_demand_not_source_identifiable`
+- Latest material commit: `3b8781b3b governance: open workspace learning propagation roadmap`
+- Active mode: `workspace_governance_learning_propagation_t0_packet_authoring`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
 ## Purpose
 
-Carry the independently reviewed L0 and WS2-T1 evidence closure, preserve the
-bounded unknowns, and keep WS2 condition-parked until source proves actual role
-demand and a required profile set.
+Carry the accepted governance-latency learning into a bounded provenance-to-
+workspace propagation audit while preserving the parked WS2 boundary.
 
 ## Scope / Target / Owner Boundary
 
-Scope: continuity after documentation-only WS2-T1 acceptance.
+Scope: continuity after GLP-R0 roadmap authoring.
 
-Target: preserve the accepted command/effect inventory, reviewer corrections,
-and exact `COMMAND_DEMAND_NOT_SOURCE_IDENTIFIABLE` decision.
+Target: author fresh GLP-T0 GC-018 and source-verified work order for a local,
+documentation-only propagation audit.
 
-Owner boundary: a future orchestrator may reopen WS2 only when current source
-proves an actual role consumer and required profile set. No agent may infer
-implementation authority from Gate A or fixed-profile availability.
+Owner boundary: the dispatcher may author GLP-T0 packets but may not implement
+bootstrap, catalog, profile, template, workspace, or project changes.
 
 ## Current Mode
 
-`governance_latency_ws2_t1_closed_demand_not_source_identifiable`
+`workspace_governance_learning_propagation_t0_packet_authoring`
 
 ## Active Boundary
 
-WS2-T1 is independently accepted bounded at `428321eab`. Current source proves
-fixed-profile availability but not actual WS2 role demand. Technical
-zero-network isolation is not proven and remains parked. GC010-AER remains
-value-parked. Runtime, downstream, provider, network, package, and public-sync
-surfaces remain outside the active write boundary.
+GLP-R0 is committed at `3b8781b3b`. Current source shows that operator-local
+projects receive a curated catalog/profile projection, while three accepted
+latency-learning owners are absent from that catalog and the downstream agent
+template lacks the same-scope wait boundary. GLP-T0 must independently
+reproduce or invalidate that gap. WS2, GC010-AER, runtime, provider, network,
+public-sync, generated workspace, and project mutation remain outside scope.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`governance_latency_ws2_t1_closed_demand_not_source_identifiable`;
-active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=reopen WS2
-only after source proves an actual role consumer and required profile set;
-parked checkpoint=none, because technical zero-network, DESIGN, SPEC, BUILD,
-provider/network use, and GC010-AER are condition-parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t0_packet_authoring`;
+active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=author fresh
+GLP-T0 GC-018 and source-verified work order; parked checkpoint=none, while WS2
+and GC010-AER remain condition/value-parked.
 
-## Latest Material Closure
+## Latest Material Work
 
-- Batch: `CVF-GOVERNANCE-LATENCY-WS2-T1`
-- Material commit: `428321eab`
-- Independent disposition: `REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS`
-- Decision: `COMMAND_DEMAND_NOT_SOURCE_IDENTIFIABLE`
-- Completion:
-  `docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T1_COMPLETION_2026-08-05.md`
-- Audit:
-  `docs/audits/CVF_GOVERNANCE_LATENCY_WS2_T1_COMMAND_PROOF_BOUNDARY_AUDIT_2026-08-05.md`
+- Batch: `CVF-WORKSPACE-GOVERNANCE-LEARNING-PROPAGATION-R0`
+- Material commit: `3b8781b3b`
+- Status: `ROADMAP_READY_FOR_T0_GC018_AUTHORING`
+- Decision: `OPEN_BOUNDED_PROPAGATION_AUDIT`
+- Roadmap:
+  `docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md`
 
 ## Latest Work / Changes
 
@@ -92,16 +88,61 @@ provider/network use, and GC010-AER are condition-parked.
 
 ## Next Allowed Move
 
-WS2-T1 is closed bounded. Reopen it only when current governed source proves an
-actual WS2 role contract or independent non-test consumer selecting the
-required profile set. Any technical zero-network proposal must additionally
-identify a cheap source-backed enforcement owner. Do not infer demand or
-isolation from fixed-profile availability.
+Author fresh GLP-T0 GC-018 and source-verified work order only. T0 is a local,
+documentation-only audit that must reproduce the catalog/profile/project
+carrier evidence and return one of the three roadmap decision tokens. No
+bootstrap/catalog/template implementation, generated workspace or downstream
+mutation, provider/network use, public-sync, push, or deployment is authorized.
+WS2 and GC010-AER remain parked behind their existing source conditions.
 
-GC010-AER remains value-parked behind its existing four-fact source condition.
-No provider/API call is authorized by this handoff. The earlier operator
-permission for Alibaba live proof belonged to a different QBS tranche and is
-not transferable.
+## GC-020 Marker - GLP-R0 Roadmap Continuity
+
+This continuity update records material parent commit `3b8781b3b` and releases
+only GLP-T0 packet authoring. It does not release worker execution or T1+.
+
+## Core Guard Self-Protection Authorization - GLP-R0 Roadmap Continuity
+
+Authorized guard-maintenance scope: synchronize the active mode, next move,
+roadmap state entry, generated session aggregates, front door, and active
+handoff after material roadmap commit `3b8781b3b`.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/workspaceGovernanceLearningPropagationRoadmap20260805.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator accepted the recommended next roadmap;
+GC-020 requires continuity alignment after the material roadmap commit.
+
+Rollback boundary: revert only this GLP-R0 continuity batch if material commit
+`3b8781b3b` is reverted. Do not alter earlier governance-latency closures.
+
+## Agent Operation Trace Block - GLP-R0 Roadmap Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | GLP-R0 roadmap continuity, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, apply_patch |
+| Target paths | active handoff, front door, state source fragments, generated state views |
+| Allowed scope source | GC-020 after material commit `3b8781b3b` |
+| Before status evidence | HEAD `3b8781b3b`; clean worktree |
+| After status evidence | GLP-T0 packet authoring is the exact next move |
+| Diff evidence | continuity-only changed set from `git diff --name-status` |
+| Approval boundary | session routing only |
+| Claim boundary | no worker execution, implementation, generated workspace mutation, downstream edit, provider use, public action, or push |
+| Agent type | session-sync steward |
+| Invocation ID | `glp-r0-roadmap-continuity-2026-08-05` |
+| Expected manifest | active handoff; front door; state source fragments; generated active-state views |
+| Actual changed set | active handoff; front door; state source fragments; generated active-state views |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## 2026-08-05 - Governance Latency WS2-T0 Closure
 
