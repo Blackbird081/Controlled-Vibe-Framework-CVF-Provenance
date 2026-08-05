@@ -2,11 +2,11 @@
   "stateOrder": 2004,
   "stateKey": "workspaceGovernanceLearningPropagationRoadmap20260805",
   "value": {
-    "status": "GLP_T1_R1_REDISPATCH_READY_CONSUMER_CHAIN_REPAIR",
+    "status": "GLP_T1_REVIEWER_ACCEPTED_CARRIER_DESIGN_ACCEPTED",
     "date": "2026-08-05",
-    "materialCommit": "5bd73529b",
+    "materialCommit": "87febcba9",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
-    "decision": "PROCEED_DOC_ONLY",
+    "decision": "CARRIER_DESIGN_ACCEPTED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
     "audit": "docs/audits/CVF_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -14,8 +14,13 @@
     "reviewDisposition": "ACCEPT_WITH_REVIEWER_CORRECTIONS",
     "t1Baseline": "docs/baselines/CVF_GC018_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_2026-08-05.md",
     "t1WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_2026-08-05.md",
-    "t1ReviewDisposition": "REVIEW_CHANGES_REQUIRED_R1",
-    "nextAllowedMove": "The same no-commit documentation design worker revises only the existing GLP-T1 audit and worker return for the focused consumer-chain repair.",
-    "claimBoundary": "No bootstrap/catalog/template implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released."
+    "t1ReviewDisposition": "ACCEPT_WITH_REVIEWER_CORRECTIONS",
+    "t1Carrier": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+    "t2DesignedPaths": [
+      "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "scripts/test_cvf_golden_downstream_bootstrap.ps1"
+    ],
+    "nextAllowedMove": "Author a fresh source-verified GC-018 baseline and work order for bounded GLP-T2; implementation remains held.",
+    "claimBoundary": "No template/test implementation, bootstrap mutation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released."
   }
 }

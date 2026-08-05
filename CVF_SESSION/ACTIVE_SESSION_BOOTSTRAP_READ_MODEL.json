@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_governance_learning_propagation_t1_r1_worker_redispatched",
+  "currentMode": "workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready",
   "activeHandoff": "AGENT_HANDOFF_V54_2026-08-05.md",
-  "nextAllowedMove": "GLP-T1 R1 consumer-chain repair is redispatched at material commit 5bd73529b under WORKER_MUST_NOT_COMMIT. The same documentation design worker must revise only the existing audit and worker return, separate workspace copy from mandatory project consumption, correct the CVF_RULE_PACKS path and Markdown threshold, re-score downstream AGENTS as an in-scope carrier, and retain reviewer disagreement. No new artifact, carrier/catalog/profile/template/bootstrap implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. GLP-T2+, governance-latency WS2, and GC010-AER remain held or parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-T1 is independently accepted with corrections at material commit 87febcba9 with decision CARRIER_DESIGN_ACCEPTED and carrier governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md. The next allowed move is fresh GC-018 baseline and work-order packet authoring for bounded GLP-T2 only, using the exact two-path design manifest: the downstream template and scripts/test_cvf_golden_downstream_bootstrap.ps1. GLP-T2 implementation remains held pending a fresh source-verified packet, successful dispatch gates, and explicit implementation authority. No template/test implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
