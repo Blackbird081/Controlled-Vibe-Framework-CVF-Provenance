@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: GLP_T2R1_REVIEWER_ACCEPTED_ALIGNMENT_IMPLEMENTED_BOUNDED
+Status: GLP_T3_REVIEWER_ACCEPTED_PROPAGATION_PROVEN_BOUNDED
 
 docType: roadmap
 
@@ -127,6 +127,16 @@ on insertion and refresh, fail-closed zero-mutation behavior for duplicate,
 reversed, and unterminated markers, one complete public-safe carrier, zero
 private sentinel hits, cleanup PASS, and 79/79 focused assertions. Decision:
 `ALIGNMENT_IMPLEMENTED_BOUNDED`. GLP-T3 remains held for a fresh proof packet.
+
+GLP-T3 subsequently ran one existing local golden harness call through the
+released no-commit worker route. Independent review accepted 79/79 assertions,
+14/14 expected generated surfaces, the generated manifest contract, exactly
+one complete five-semantic carrier, zero hits across 27 private-sentinel
+checks, and zero cleanup residue. Decision: `PROPAGATION_PROVEN_BOUNDED`.
+The proof-subject provider/network count was zero; the previously completed
+Claude worker orchestration was separately disclosed as one session, 49 turns,
+572.670 seconds, and USD 2.9589262. GLP-T4 packet authoring only is next;
+adoption, public export, and GLP-T4 execution remain held.
 
 ## GLP-T0 Outcome - 2026-08-05
 

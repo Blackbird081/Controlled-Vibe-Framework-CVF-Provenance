@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -14,7 +14,7 @@ dispatchBaseHead: `34dfbdb0c`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `fa39ce60d`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -269,16 +269,16 @@ implementation or exploratory rerun loop is authorized.
 
 ## Acceptance Criteria
 
-- [ ] exactly one harness call exits zero and reports all assertions passing;
-- [ ] generated manifest is parsed and required catalog/script entries are present;
-- [ ] every AC-01 required surface is accounted for with missing count zero;
-- [ ] generated `AGENTS.md` contains exactly one carrier and all five semantics;
-- [ ] exact private-sentinel scan scope is named and hit count is zero;
-- [ ] disposable cleanup residue count is zero;
-- [ ] no source/test/template/session/downstream/public path changes;
-- [ ] audit reports elapsed time, command count, harness-call count, provider/network count, mutation scope, and review expectation;
-- [ ] worker recommends `PROPAGATION_PROVEN_BOUNDED` or `PROPAGATION_PROOF_FAILED` without adoption/causality overclaim;
-- [ ] worker leaves artifacts uncommitted for independent review.
+- [x] exactly one harness call exits zero and reports all assertions passing;
+- [x] generated manifest is parsed and required catalog/script entries are present;
+- [x] every AC-01 required surface is accounted for with missing count zero;
+- [x] generated `AGENTS.md` contains exactly one carrier and all five semantics;
+- [x] exact private-sentinel scan scope is named and hit count is zero;
+- [x] disposable cleanup residue count is zero;
+- [x] no source/test/template/session/downstream/public path changes;
+- [x] audit reports elapsed time, command count, harness-call count, proof-subject and orchestration provider counts, mutation scope, and review expectation;
+- [x] worker recommends `PROPAGATION_PROVEN_BOUNDED` without adoption/causality overclaim;
+- [x] worker leaves artifacts uncommitted for independent review.
 
 ## Evidence Requirements
 
@@ -289,17 +289,17 @@ elapsed time when available, changed-set evidence, and bounded recommendation.
 
 ## Closure Checklist
 
-- [ ] operator execution authority recorded;
-- [ ] dependency and anchors refreshed before dispatch;
-- [ ] pre-dispatch passes on the committed packet range;
-- [ ] worker captures clean execution base;
-- [ ] exactly one harness call is accounted for;
-- [ ] every acceptance criterion is terminal;
-- [ ] exact two-output worker manifest is preserved;
-- [ ] independent reviewer disposition is recorded;
-- [ ] worker makes no commit;
-- [ ] material closure and continuity remain separate;
-- [ ] public export remains deferred unless separately authorized.
+- [x] operator execution authority recorded;
+- [x] dependency and anchors refreshed before dispatch;
+- [x] pre-dispatch passes on the committed packet range;
+- [x] worker captures clean execution base;
+- [x] exactly one harness call is accounted for;
+- [x] every acceptance criterion is terminal;
+- [x] exact two-output worker manifest is preserved;
+- [x] independent reviewer disposition is recorded;
+- [x] worker makes no commit;
+- [x] material closure and continuity remain separate;
+- [x] public export remains deferred unless separately authorized.
 
 ## Operator Checkpoint
 
@@ -344,7 +344,8 @@ The audit must report:
 - packet-reading and execution command count;
 - harness call count and assertion denominator;
 - elapsed wall time when available;
-- provider/network call count, expected zero;
+- proof-subject provider/network count, expected zero, and worker-orchestration
+  provider count/cost reported separately;
 - disposable filesystem and Git mutation scope;
 - number of repair/rerun loops;
 - expected independent-review work.
@@ -355,6 +356,72 @@ Independent review must recompute the complete manifest/artifact/guidance/
 leakage/cleanup matrix before the first repair. The reviewer preserves any
 disagreement and stops at repair round three unless a genuinely independent new
 root cause exists.
+
+## Closure Diff Gate
+
+| Check | Evidence | Disposition |
+|---|---|---|
+| roadmap trace | six Roadmap-To-Work-Order rows mapped to audit evidence | PASS |
+| exact worker manifest | audit plus worker return only | PASS |
+| call-level proof | one call, exit 0, 79/79 | PASS |
+| generated surfaces | 14/14 present; missing count zero | PASS |
+| manifest contract | marker and both requiredDocs entries present | PASS |
+| guidance carrier | one heading and all five semantics | PASS |
+| leakage and cleanup | 0/27 hits; zero residue | PASS |
+| provider denominator correction | proof subject 0; orchestration 1 session disclosed | PASS |
+| forbidden effects | no implementation, persistent downstream, public-sync, push, or deployment | PASS |
+
+## Reviewer Disposition
+
+Reviewer verdict: `CLOSED_PASS_BOUNDED`.
+
+The independent reviewer accepted `PROPAGATION_PROVEN_BOUNDED` without a
+second harness run. The first run was complete and interpretable; rerunning
+would add cost without resolving a contradiction. Reviewer correction keeps
+proof-subject provider count (zero) separate from the completed Claude worker
+orchestration (one session).
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | GLP-T3 completion review | `Reviewer verdict: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | GLP roadmap | `Status: GLP_T3_REVIEWER_ACCEPTED_PROPAGATION_PROVEN_BOUNDED` | PASS |
+| Baseline | paired GLP-T3 baseline | released proof contract | PASS |
+| Worker audit | GLP-T3 proof audit | 79/79 and dimension ledgers | PASS |
+| Worker return | GLP-T3 worker return | `COMPLETE_PENDING_REVIEW`; reviewer correction recorded | PASS |
+| Registry JSON | N/A with reason | no registry mutation required or authorized | BLOCKED with reason |
+| Registry Markdown | N/A with reason | no registry mutation required or authorized | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external evidence intake in GLP-T3 | N/A with reason |
+| System loop interlock | GLP roadmap and this work order | GLP-T4 packet authoring only; adoption, execution, and public export remain held | PASS |
+| Public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Session continuity | separate session-sync batch | N/A with reason: commit split required | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| harness call count | 1 | PASS |
+| assertion result | 79/79 | PASS |
+| expected surfaces | 14/14; missing zero | PASS |
+| leakage | 0/27 hits | PASS |
+| cleanup | zero residue | PASS |
+| proof-subject provider count | 0 | PASS |
+| worker-orchestration provider count | 1 completed session, separately disclosed | PASS |
+| worker commit boundary | HEAD unchanged during worker execution | PASS |
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | `scripts/test_cvf_golden_downstream_bootstrap.ps1`; generated disposable-workspace artifacts recorded in the audit |
+| Runtime behavior claimed | N/A_WITH_REASON: local disposable bootstrap propagation only; no product runtime or governance enforcement behavior is claimed |
+| Helper/checker implementation claimed | N/A_WITH_REASON: the existing harness was invoked once and was not modified |
+| Provider/live proof claimed | N/A_WITH_REASON: the proof subject made zero provider/network calls; worker orchestration is separately disclosed as cost evidence |
+| Provider registry surfaces | N/A_WITH_REASON: no provider selection, routing, registry, or live-governance claim |
+| Public-sync claimed | N/A_WITH_REASON: private provenance closure only |
+| Freshness disposition | PASS - current harness result and generated disposable artifacts were directly inspected; no absent runtime feature is claimed |
 
 ## Return-To-Orchestrator Conditions
 
