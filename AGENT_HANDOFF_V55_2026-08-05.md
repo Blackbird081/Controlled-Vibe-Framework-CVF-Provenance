@@ -141,3 +141,32 @@ authority.
 This handoff proves packet release and dispatch continuity only. It does not
 claim worker completion, reviewer acceptance, downstream propagation, public
 export, provider behavior, deployment, or broader governance effectiveness.
+
+## GC-020 Marker - V55 Dispatch Continuity Commit Anchor
+
+The completed GLP-T2 dispatch continuity commit is `7d7e66f3d`. This dedicated
+handoff-only child records that exact parent; its own SHA cannot be known before
+creation and may be accepted under the GC-020 parent rule.
+
+## Agent Operation Trace Block - V55 Commit Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | V55 exact dispatch-continuity anchor, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | handoff-only patch and commit |
+| Target paths | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Allowed scope source | GC-020 after continuity commit `7d7e66f3d` |
+| Before status evidence | HEAD `7d7e66f3d`; clean worktree; worker blocked before edits |
+| After status evidence | active handoff contains the exact continuity parent SHA |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | continuity repair only |
+| Claim boundary | no worker implementation, downstream/public/provider/network/push/deployment authority |
+| Agent type | session-sync steward |
+| Invocation ID | `glp-t2-v55-exact-anchor-2026-08-05` |
+| Expected manifest | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
