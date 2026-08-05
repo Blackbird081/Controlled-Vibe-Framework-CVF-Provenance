@@ -2,9 +2,9 @@
   "stateOrder": 2004,
   "stateKey": "workspaceGovernanceLearningPropagationRoadmap20260805",
   "value": {
-    "status": "GLP_T2_WORKER_DISPATCHED",
+    "status": "GLP_T2_BLOCKED_IMPLEMENTATION_EVIDENCE",
     "date": "2026-08-05",
-    "materialCommit": "0fdf767c8",
+    "materialCommit": "071866e7b",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "CARRIER_DESIGN_ACCEPTED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -22,9 +22,12 @@
     ],
     "t2Baseline": "docs/baselines/CVF_GC018_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_BASELINE_2026-08-05.md",
     "t2WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_2026-08-05.md",
-    "t2PacketStatus": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "t2PacketStatus": "BLOCKED_IMPLEMENTATION_EVIDENCE",
     "t2PreDispatch": "PASS_75_OF_75",
-    "nextAllowedMove": "One independent no-commit worker executes the exact three-path GLP-T2 manifest and returns for independent review.",
-    "claimBoundary": "Only the template, focused golden harness, and worker return are released. No generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized."
+    "t2WorkerReturn": "docs/reviews/CVF_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_WORKER_RETURN_2026-08-05.md",
+    "t2CompletionReview": "docs/reviews/CVF_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_COMPLETION_2026-08-05.md",
+    "t2ReviewDisposition": "BLOCKED_IMPLEMENTATION_EVIDENCE",
+    "nextAllowedMove": "Author a fresh documentation-only source-verified packet for bounded CP1 byte-preserving merge repair; hold implementation for explicit operator authority.",
+    "claimBoundary": "No partial carrier implementation was accepted. Bootstrap repair, GLP-T3, generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation remains held."
   }
 }

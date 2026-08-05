@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `0fdf767c8 governance: release GLP T2 bounded implementation`
-- Active mode: `workspace_governance_learning_propagation_t2_worker_dispatched`
+- Latest material commit: `071866e7b governance: record blocked GLP T2 implementation evidence`
+- Active mode: `workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -38,14 +38,14 @@ public-sync, provider/network, push, and deployment changes remain excluded.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t2_worker_dispatched`
+`workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2_worker_dispatched`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit
-worker executes the released GLP-T2 work order and returns
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; parked checkpoint=WS2 and
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=author a fresh
+documentation-only CP1 byte-preserving merge-repair packet; parked
+checkpoint=bootstrap implementation authority, while GLP-T3, WS2, and
 GC010-AER remain parked.
 
 ## Released Packet
@@ -73,13 +73,12 @@ GC010-AER remain parked.
 
 ## Next Allowed Move
 
-Dispatch one independent no-commit worker against release commit `0fdf767c8`.
-The worker runs startup and pre-implementation controls, changes only the exact
-three-path manifest, runs the required focused evidence, and returns without a
-commit. Reviewer execution begins only after that return.
-
-No generated workspace or downstream mutation, public sync, provider/network
-use, push, deployment, or broader governance implementation is authorized.
+Author a fresh documentation-only, source-verified packet for bounded CP1
+byte-preserving merge repair. The failed GLP-T2 implementation is recorded at
+`071866e7b`; no partial template or harness diff was accepted. Bootstrap
+implementation, GLP-T3, generated workspace/downstream mutation, public sync,
+provider/network use, push, deployment, and broader governance implementation
+remain held for explicit operator authority.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 

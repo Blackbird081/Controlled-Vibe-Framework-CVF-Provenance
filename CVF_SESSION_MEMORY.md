@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2_worker_dispatched`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit worker executes the exact GLP-T2 three-path manifest and returns for independent review; parked checkpoint=WS2 and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=author a fresh documentation-only CP1 byte-preserving merge-repair packet; parked checkpoint=bootstrap implementation authority, while GLP-T3, WS2, and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_t2_worker_dispatched`
+Current mode marker: `workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
 
-Current mode: `workspace_governance_learning_propagation_t2_worker_dispatched`
+Current mode: `workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
 
-`workspace_governance_learning_propagation_t2_worker_dispatched`
+`workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
+`workspace_governance_learning_propagation_t2_worker_dispatched`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,7 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
-| GLP-T2 implementation release | `0fdf767c8` | `REVIEWER_ACCEPTED_DISPATCH_READY`; source-verified packet passes pre-dispatch 75/75. One no-commit worker owns the exact template, golden harness, and worker-return manifest. |
+| GLP-T2 blocked implementation review | `071866e7b` | `BLOCKED_IMPLEMENTATION_EVIDENCE`; CP1 whole-file rewrite failed outside-block byte identity. Partial template/test diff rejected; fresh bootstrap-repair packet authoring is next. |
 | GLP-T1 carrier design acceptance | `87febcba9` | `REVIEWER_ACCEPTED_WITH_CORRECTIONS`; decision `CARRIER_DESIGN_ACCEPTED`; downstream AGENTS template selected with the existing golden bootstrap harness as focused test owner. GLP-T2 packet authoring only is next. |
 | GLP-T1 R1 consumer-chain repair redispatch | `5bd73529b` | `REVIEW_CHANGES_REQUIRED_R1`; copied rule-pack guidance was incorrectly treated as mandatory project consumption. Same worker revises only the existing audit and return; no implementation or external action. |
 | GLP-T1 smallest-safe-carrier design dispatch | `cc5c51ee7` | `DISPATCH_READY`; one independent no-commit documentation worker compares three distributed existing owners with one compact carrier candidate; no carrier/catalog/profile/template/bootstrap implementation or external effect. |
@@ -392,12 +392,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_t2_worker_dispatched`
+Mode: `workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
 
-GLP-T2 baseline and work order are released at `0fdf767c8` after pre-dispatch
-75/75. The next move is one independent no-commit worker executing exactly the
-downstream AGENTS template, focused golden bootstrap harness, and worker return.
-An independent reviewer/closer owns acceptance and commit decisions. No
+GLP-T2 is independently reviewed and `BLOCKED_IMPLEMENTATION_EVIDENCE` at
+`071866e7b`. CP1 rewrites the complete hand-edited `AGENTS.md`, so the required
+outside-block byte identity failed. The partial template/test diff was rejected
+and removed. The next move is documentation-only authoring of a fresh bounded,
+source-verified CP1 byte-preserving merge-repair packet. Bootstrap
+implementation and GLP-T3 remain held for explicit operator authority. No
 generated workspace or downstream mutation, public sync, provider/network use,
 push, deployment, or broader governance implementation is authorized. WS2 and
 GC010-AER remain parked.
