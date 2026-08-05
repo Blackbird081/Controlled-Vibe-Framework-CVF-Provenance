@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_governance_learning_propagation_t2r1_worker_dispatched",
+  "currentMode": "workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready",
   "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
-  "nextAllowedMove": "The GLP-T2R1 CP1 byte-preserving merge-repair packet was explicitly released and committed at 9cc29037c after pre-dispatch PASS_75_OF_75. The next allowed move is one independent no-commit worker executing exactly CP1 bootstrap, downstream AGENTS template, golden harness, and worker return, then returning COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. An independent reviewer/closer owns acceptance and commits. No GLP-T3, generated persistent workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-T2R1 is independently closed CLOSED_PASS_BOUNDED at material commit f59457b9a after focused harness PASS_79_OF_79 and committed-range pre-closure implementation checks. The next allowed move is source-verified GLP-T3 packet authoring only: fresh GC-018 baseline, work order, reviewer-independence route, acceptance criteria, and stop conditions. GLP-T3 execution remains held until that packet passes pre-dispatch and receives the authority required by its own status. No persistent generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

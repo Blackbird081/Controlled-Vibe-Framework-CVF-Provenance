@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2r1_worker_dispatched`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit worker executes the exact GLP-T2R1 four-path manifest and returns for independent review; parked checkpoint=GLP-T3, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=source-verified GLP-T3 packet authoring only; parked checkpoint=GLP-T3 execution, WS2, and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_t2r1_worker_dispatched`
+Current mode marker: `workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
 
-Current mode: `workspace_governance_learning_propagation_t2r1_worker_dispatched`
+Current mode: `workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
 
-`workspace_governance_learning_propagation_t2r1_worker_dispatched`
+`workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`
+`workspace_governance_learning_propagation_t2r1_worker_dispatched`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,7 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
-| GLP-T2R1 merge-repair release | `9cc29037c` | `REVIEWER_ACCEPTED_DISPATCH_READY`; exact four-path no-commit scope passes pre-dispatch 75/75. One independent worker is next. |
+| GLP-T2R1 merge-repair closure | `f59457b9a` | `CLOSED_PASS_BOUNDED`; byte-preserving insertion/refresh, malformed-marker fail-close, compact five-rule carrier, focused harness 79/79. GLP-T3 packet authoring only is next. |
 | GLP-T1 carrier design acceptance | `87febcba9` | `REVIEWER_ACCEPTED_WITH_CORRECTIONS`; decision `CARRIER_DESIGN_ACCEPTED`; downstream AGENTS template selected with the existing golden bootstrap harness as focused test owner. GLP-T2 packet authoring only is next. |
 | GLP-T1 R1 consumer-chain repair redispatch | `5bd73529b` | `REVIEW_CHANGES_REQUIRED_R1`; copied rule-pack guidance was incorrectly treated as mandatory project consumption. Same worker revises only the existing audit and return; no implementation or external action. |
 | GLP-T1 smallest-safe-carrier design dispatch | `cc5c51ee7` | `DISPATCH_READY`; one independent no-commit documentation worker compares three distributed existing owners with one compact carrier candidate; no carrier/catalog/profile/template/bootstrap implementation or external effect. |
@@ -392,15 +392,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_t2r1_worker_dispatched`
+Mode: `workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
 
-The GLP-T2R1 CP1 byte-preserving merge-repair packet is explicitly released at
-`9cc29037c` after pre-dispatch 75/75. One independent no-commit worker now owns
-exactly CP1 bootstrap, downstream AGENTS template, golden harness, and worker
-return. The reviewer/closer owns acceptance and commits. GLP-T3, persistent
-generated workspace/downstream mutation, public sync, provider/network use,
-push, deployment, and broader governance implementation remain unauthorized.
-WS2 and GC010-AER remain parked.
+GLP-T2R1 is independently closed bounded at `f59457b9a`; the focused harness
+passes 79/79 and the completion review preserves the local-only claim boundary.
+The next move is source-verified GLP-T3 GC-018/work-order packet authoring only.
+GLP-T3 execution, persistent workspace/downstream mutation, public sync,
+provider/network use, push, deployment, WS2, and GC010-AER remain parked.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without

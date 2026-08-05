@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - GLP T2 Worker Dispatched
+# CVF Agent Handoff V55 - GLP T2R1 Closed
 
 Memory class: active-handoff
 
@@ -8,15 +8,15 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `9cc29037c governance: release GLP T2R1 merge repair`
-- Active mode: `workspace_governance_learning_propagation_t2r1_worker_dispatched`
+- Latest material commit: `f59457b9a governance: close GLP T2R1 merge repair`
+- Active mode: `workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
 ## Purpose
 
-Carry the operator-released GLP-T2 packet into one bounded no-commit worker
-execution while preserving independent reviewer closure and all parked lanes.
+Carry the independently accepted GLP-T2R1 closure and release only bounded
+source-verified GLP-T3 packet authoring while preserving all parked lanes.
 
 ## Scope / Target / Owner Boundary
 
@@ -32,20 +32,20 @@ commit decisions.
 
 ## Active Boundary
 
-Only the three-path worker manifest in this handoff is active. Bootstrap helper,
-catalog, profile, checker, session, generated workspace, downstream repository,
-public-sync, provider/network, push, and deployment changes remain excluded.
+GLP-T2R1 is closed. Only GLP-T3 GC-018/work-order packet authoring may proceed.
+Execution, generated workspace, downstream repository, public-sync,
+provider/network, push, deployment, and broader implementation remain excluded.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t2r1_worker_dispatched`
+`workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2r1_worker_dispatched`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit
-worker executes the exact four-path GLP-T2R1 manifest and returns for
-independent review; parked checkpoint=GLP-T3, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=source-verified
+GLP-T3 packet authoring only; parked checkpoint=GLP-T3 execution, WS2, and
+GC010-AER remain parked.
 
 ## Released Packet
 
@@ -72,9 +72,9 @@ independent review; parked checkpoint=GLP-T3, WS2, and GC010-AER remain parked.
 
 ## Next Allowed Move
 
-Dispatch one independent no-commit worker against material release commit
-`9cc29037c`. Exact scope is CP1 bootstrap, downstream AGENTS template, golden
-harness, and worker return. GLP-T3 and every external lane remain held.
+Author a fresh source-verified GLP-T3 GC-018 baseline and work order only.
+Execution remains held until the packet passes pre-dispatch and its own recorded
+authority releases it. Every external lane remains held.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 

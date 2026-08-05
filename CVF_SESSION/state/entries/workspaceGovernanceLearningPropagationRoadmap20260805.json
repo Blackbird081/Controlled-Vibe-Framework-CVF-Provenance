@@ -2,9 +2,9 @@
   "stateOrder": 2004,
   "stateKey": "workspaceGovernanceLearningPropagationRoadmap20260805",
   "value": {
-    "status": "GLP_T2R1_WORKER_DISPATCHED",
+    "status": "GLP_T2R1_REVIEWER_ACCEPTED_ALIGNMENT_IMPLEMENTED_BOUNDED",
     "date": "2026-08-05",
-    "materialCommit": "9cc29037c",
+    "materialCommit": "f59457b9a",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "CARRIER_DESIGN_ACCEPTED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -29,9 +29,13 @@
     "t2ReviewDisposition": "BLOCKED_IMPLEMENTATION_EVIDENCE",
     "t2r1Baseline": "docs/baselines/CVF_GC018_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_BASELINE_2026-08-05.md",
     "t2r1WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_2026-08-05.md",
-    "t2r1PacketStatus": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "t2r1PacketStatus": "CLOSED_PASS_BOUNDED",
     "t2r1PreDispatch": "PASS_75_OF_75",
-    "nextAllowedMove": "One independent no-commit worker executes the exact four-path GLP-T2R1 manifest and returns for independent review.",
-    "claimBoundary": "Only the bounded CP1/template/harness/worker-return manifest is released. GLP-T3, persistent generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation remains held."
+    "t2r1WorkerReturn": "docs/reviews/CVF_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_WORKER_RETURN_2026-08-05.md",
+    "t2r1CompletionReview": "docs/reviews/CVF_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_COMPLETION_2026-08-05.md",
+    "t2r1FocusedEvidence": "PASS_79_OF_79",
+    "t2r1ReviewDisposition": "CLOSED_PASS_BOUNDED",
+    "nextAllowedMove": "Author the fresh source-verified GLP-T3 GC-018 and work-order packet only; execution remains held pending packet gates and its recorded authority.",
+    "claimBoundary": "GLP-T2R1 proves bounded local byte-preserving carrier projection and hermetic regression behavior only. It does not prove downstream adoption or authorize persistent generated workspace/downstream mutation, GLP-T3 execution, public-sync, provider/network use, push, deployment, or broader governance implementation."
   }
 }

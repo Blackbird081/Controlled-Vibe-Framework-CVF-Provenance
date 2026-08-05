@@ -95,8 +95,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "workspace_governance_learning_propagation_t2r1_worker_dispatched",
-  "previousMode": "workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority",
+  "currentMode": "workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready",
+  "previousMode": "workspace_governance_learning_propagation_t2r1_worker_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "The GLP-T2R1 CP1 byte-preserving merge-repair packet was explicitly released and committed at 9cc29037c after pre-dispatch PASS_75_OF_75. The next allowed move is one independent no-commit worker executing exactly CP1 bootstrap, downstream AGENTS template, golden harness, and worker return, then returning COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. An independent reviewer/closer owns acceptance and commits. No GLP-T3, generated persistent workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-T2R1 is independently closed CLOSED_PASS_BOUNDED at material commit f59457b9a after focused harness PASS_79_OF_79 and committed-range pre-closure implementation checks. The next allowed move is source-verified GLP-T3 packet authoring only: fresh GC-018 baseline, work order, reviewer-independence route, acceptance criteria, and stop conditions. GLP-T3 execution remains held until that packet passes pre-dispatch and receives the authority required by its own status. No persistent generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13702,9 +13702,9 @@
     "claimBoundary": "Current-source localhost browser acceptance only; no hosted freshness, deployment, provider, public, or production claim."
   },
   "workspaceGovernanceLearningPropagationRoadmap20260805": {
-    "status": "GLP_T2R1_WORKER_DISPATCHED",
+    "status": "GLP_T2R1_REVIEWER_ACCEPTED_ALIGNMENT_IMPLEMENTED_BOUNDED",
     "date": "2026-08-05",
-    "materialCommit": "9cc29037c",
+    "materialCommit": "f59457b9a",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "CARRIER_DESIGN_ACCEPTED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -13729,10 +13729,14 @@
     "t2ReviewDisposition": "BLOCKED_IMPLEMENTATION_EVIDENCE",
     "t2r1Baseline": "docs/baselines/CVF_GC018_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_BASELINE_2026-08-05.md",
     "t2r1WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_2026-08-05.md",
-    "t2r1PacketStatus": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "t2r1PacketStatus": "CLOSED_PASS_BOUNDED",
     "t2r1PreDispatch": "PASS_75_OF_75",
-    "nextAllowedMove": "One independent no-commit worker executes the exact four-path GLP-T2R1 manifest and returns for independent review.",
-    "claimBoundary": "Only the bounded CP1/template/harness/worker-return manifest is released. GLP-T3, persistent generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation remains held."
+    "t2r1WorkerReturn": "docs/reviews/CVF_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_WORKER_RETURN_2026-08-05.md",
+    "t2r1CompletionReview": "docs/reviews/CVF_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_COMPLETION_2026-08-05.md",
+    "t2r1FocusedEvidence": "PASS_79_OF_79",
+    "t2r1ReviewDisposition": "CLOSED_PASS_BOUNDED",
+    "nextAllowedMove": "Author the fresh source-verified GLP-T3 GC-018 and work-order packet only; execution remains held pending packet gates and its recorded authority.",
+    "claimBoundary": "GLP-T2R1 proves bounded local byte-preserving carrier projection and hermetic regression behavior only. It does not prove downstream adoption or authorize persistent generated workspace/downstream mutation, GLP-T3 execution, public-sync, provider/network use, push, deployment, or broader governance implementation."
   },
   "continuousProjectionT0Dispatch20260720": {
     "status": "DISPATCH_READY",
