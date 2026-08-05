@@ -303,11 +303,26 @@ individualCheckerSubstitution: FORBIDDEN
 
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
-Required review headings include Purpose, Target / Source, Scope /
-Methodology, Findings / Position, Risk / Corrective Action, Decision /
-Recommendation, External Knowledge Intake Routing, Epistemic Process Block,
-Agent Operation Trace Block, Delta Execution Claim Boundary Control Block,
-Public Export Disposition, and Claim Boundary.
+executionBaseHead: REQUIRED_FROM_COMMITTED_DISPATCH_HEAD
+
+requiredStatusCommand: `git status --short`
+
+Required review headings include Purpose, Target / Source, Scope / Methodology,
+Findings / Position, Risk / Corrective Action, Decision / Recommendation,
+External Knowledge Intake Routing, Epistemic Process Block, Agent Operation
+Trace Block, Delta Execution Claim Boundary Control Block, Public Export
+Disposition, and Claim Boundary.
+
+requiredHeading: Agent Operation Trace Block
+
+requiredHeading: Public Export Disposition
+
+Conditional headings are `Rescan Intelligence Hardening`, `Corpus Completeness
+And Report Integrity`, `Finding-To-Governance Learning Disposition`, and
+`Machine Closure Package`. Include each when triggered; otherwise record
+`N/A with reason` explicitly in the worker return.
+
+conditionalHeading: Corpus Completeness And Report Integrity
 
 ## Foundation Storage Layout Block
 
