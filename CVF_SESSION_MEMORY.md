@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=author a fresh documentation-only CP1 byte-preserving merge-repair packet; parked checkpoint=bootstrap implementation authority, while GLP-T3, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator reviews and explicitly releases or rejects bounded GLP-T2R1 implementation; parked checkpoint=GLP-T2R1 bootstrap implementation authority, while GLP-T3, WS2, and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
+Current mode marker: `workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`
 
-Current mode: `workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
+Current mode: `workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`
 
-`workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
+`workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t2_worker_dispatched`
+`workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,7 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
-| GLP-T2 blocked implementation review | `071866e7b` | `BLOCKED_IMPLEMENTATION_EVIDENCE`; CP1 whole-file rewrite failed outside-block byte identity. Partial template/test diff rejected; fresh bootstrap-repair packet authoring is next. |
+| GLP-T2R1 held merge-repair packet | `7dd304223` | `HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY`; exact four-path no-commit scope passes pre-dispatch 75/75. No implementation released. |
 | GLP-T1 carrier design acceptance | `87febcba9` | `REVIEWER_ACCEPTED_WITH_CORRECTIONS`; decision `CARRIER_DESIGN_ACCEPTED`; downstream AGENTS template selected with the existing golden bootstrap harness as focused test owner. GLP-T2 packet authoring only is next. |
 | GLP-T1 R1 consumer-chain repair redispatch | `5bd73529b` | `REVIEW_CHANGES_REQUIRED_R1`; copied rule-pack guidance was incorrectly treated as mandatory project consumption. Same worker revises only the existing audit and return; no implementation or external action. |
 | GLP-T1 smallest-safe-carrier design dispatch | `cc5c51ee7` | `DISPATCH_READY`; one independent no-commit documentation worker compares three distributed existing owners with one compact carrier candidate; no carrier/catalog/profile/template/bootstrap implementation or external effect. |
@@ -392,17 +392,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
+Mode: `workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`
 
-GLP-T2 is independently reviewed and `BLOCKED_IMPLEMENTATION_EVIDENCE` at
-`071866e7b`. CP1 rewrites the complete hand-edited `AGENTS.md`, so the required
-outside-block byte identity failed. The partial template/test diff was rejected
-and removed. The next move is documentation-only authoring of a fresh bounded,
-source-verified CP1 byte-preserving merge-repair packet. Bootstrap
-implementation and GLP-T3 remain held for explicit operator authority. No
-generated workspace or downstream mutation, public sync, provider/network use,
-push, deployment, or broader governance implementation is authorized. WS2 and
-GC010-AER remain parked.
+The source-verified GLP-T2R1 CP1 byte-preserving merge-repair packet is
+committed at `7dd304223` and passes pre-dispatch 75/75, but remains
+`HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY`. The operator now reviews and
+explicitly releases or rejects the bounded four-path no-commit worker scope.
+No implementation, GLP-T3, generated workspace or downstream mutation, public
+sync, provider/network use, push, deployment, or broader governance
+implementation is authorized. WS2 and GC010-AER remain parked.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without

@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `071866e7b governance: record blocked GLP T2 implementation evidence`
-- Active mode: `workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
+- Latest material commit: `7dd304223 governance: prepare held GLP T2R1 merge repair packet`
+- Active mode: `workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -38,15 +38,15 @@ public-sync, provider/network, push, and deployment changes remain excluded.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`
+`workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2_blocked_bootstrap_repair_packet_ready`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=author a fresh
-documentation-only CP1 byte-preserving merge-repair packet; parked
-checkpoint=bootstrap implementation authority, while GLP-T3, WS2, and
-GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator
+reviews and explicitly releases or rejects bounded GLP-T2R1 implementation;
+parked checkpoint=GLP-T2R1 bootstrap implementation authority, while GLP-T3,
+WS2, and GC010-AER remain parked.
 
 ## Released Packet
 
@@ -73,12 +73,10 @@ GC010-AER remain parked.
 
 ## Next Allowed Move
 
-Author a fresh documentation-only, source-verified packet for bounded CP1
-byte-preserving merge repair. The failed GLP-T2 implementation is recorded at
-`071866e7b`; no partial template or harness diff was accepted. Bootstrap
-implementation, GLP-T3, generated workspace/downstream mutation, public sync,
-provider/network use, push, deployment, and broader governance implementation
-remain held for explicit operator authority.
+Operator reviews and explicitly releases or rejects the source-verified
+GLP-T2R1 packet committed at `7dd304223`. Its exact future worker scope is CP1
+bootstrap, downstream AGENTS template, golden harness, and worker return under
+`WORKER_MUST_NOT_COMMIT`. GLP-T3 and every external lane remain held.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 

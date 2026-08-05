@@ -2,9 +2,9 @@
   "stateOrder": 2004,
   "stateKey": "workspaceGovernanceLearningPropagationRoadmap20260805",
   "value": {
-    "status": "GLP_T2_BLOCKED_IMPLEMENTATION_EVIDENCE",
+    "status": "GLP_T2R1_PACKET_READY_HELD_OPERATOR_IMPLEMENTATION_AUTHORITY",
     "date": "2026-08-05",
-    "materialCommit": "071866e7b",
+    "materialCommit": "7dd304223",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "CARRIER_DESIGN_ACCEPTED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -27,7 +27,11 @@
     "t2WorkerReturn": "docs/reviews/CVF_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_WORKER_RETURN_2026-08-05.md",
     "t2CompletionReview": "docs/reviews/CVF_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_COMPLETION_2026-08-05.md",
     "t2ReviewDisposition": "BLOCKED_IMPLEMENTATION_EVIDENCE",
-    "nextAllowedMove": "Author a fresh documentation-only source-verified packet for bounded CP1 byte-preserving merge repair; hold implementation for explicit operator authority.",
-    "claimBoundary": "No partial carrier implementation was accepted. Bootstrap repair, GLP-T3, generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation remains held."
+    "t2r1Baseline": "docs/baselines/CVF_GC018_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_BASELINE_2026-08-05.md",
+    "t2r1WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_2026-08-05.md",
+    "t2r1PacketStatus": "HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY",
+    "t2r1PreDispatch": "PASS_75_OF_75",
+    "nextAllowedMove": "Operator reviews and explicitly releases or rejects bounded GLP-T2R1 implementation.",
+    "claimBoundary": "No partial GLP-T2 implementation was accepted. GLP-T2R1 bootstrap repair, GLP-T3, generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation remains held."
   }
 }
