@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `052e548bc governance: align latency WS2 T0 closure continuity`
-- Active mode: `governance_latency_ws2_t0_closed_foundation_parked`
+- Latest material commit: `91a4279ff governance: dispatch latency WS2 T1 boundary audit`
+- Active mode: `governance_latency_ws2_t1_dispatched`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -31,24 +31,24 @@ operator checkpoint. No agent may infer implementation authority from Gate A.
 
 ## Current Mode
 
-`governance_latency_ws2_t0_closed_foundation_parked`
+`governance_latency_ws2_t1_dispatched`
 
 ## Active Boundary
 
-WS2-T0 is closed bounded. The governed launcher is accepted only as an owner
-for fixed-profile command admission. Technical zero-network isolation is not
-proven and remains parked. GC010-AER remains value-parked. Runtime, downstream,
-provider, network, package, and public-sync surfaces remain outside the active
-write boundary.
+WS2-T1 is dispatched for documentation and source verification only. The
+worker owns exactly the command/proof-boundary audit and worker return without
+commit. Technical zero-network isolation is not proven and remains parked.
+GC010-AER remains value-parked. Runtime, downstream, provider, network,
+package, and public-sync surfaces remain outside the active write boundary.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`governance_latency_ws2_t0_closed_foundation_parked`;
-active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=operator
-checkpoint before any WS2 continuation; parked checkpoint=technical
-zero-network isolation and GC010-AER remain value-parked, and no design,
-specification, build, live, provider, downstream, public, push, or deployment
-action is authorized.
+Startup acknowledged: current mode=`governance_latency_ws2_t1_dispatched`;
+active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=one no-commit
+documentation worker creates exactly the WS2-T1 audit and worker return for
+independent review; parked checkpoint=technical zero-network isolation,
+DESIGN, SPEC, BUILD, adversarial execution, provider/network use, and GC010-AER
+remain parked.
 
 ## Latest Material Closure
 
@@ -95,10 +95,10 @@ action is authorized.
 
 ## Next Allowed Move
 
-Stop at the operator checkpoint. Any WS2 continuation requires fresh authority
-and a new source-verified packet for an exact command contract plus an
-environment/effect/network/transitive-child enforcement and proof boundary.
-Do not infer technical zero-network isolation from fixed-profile admission.
+Execute only the committed WS2-T1 documentation packet. The worker creates
+exactly the command/proof-boundary audit and worker return, does not commit,
+and returns for independent review. Do not infer technical zero-network
+isolation from fixed-profile admission.
 
 GC010-AER remains value-parked behind its existing four-fact source condition.
 No provider/API call is authorized by this handoff. The earlier operator
@@ -157,6 +157,48 @@ Rollback boundary: revert only this continuity update if material commit
 | Claim boundary | no design, implementation, live/provider, downstream, public, or push authority |
 | Agent type | reviewer/closer and session-sync steward |
 | Invocation ID | `governance-latency-ws2-t0-closure-sync-2026-08-05` |
+| Expected manifest | active handoff, front door, state source and generated views |
+| Actual changed set | same after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## 2026-08-05 - Governance Latency WS2-T1 Dispatch
+
+Material commit `91a4279ff` dispatches a documentation-only command-demand and
+enforcement-proof-boundary audit. The worker owns exactly two outputs under
+`WORKER_MUST_NOT_COMMIT`. No DESIGN, SPEC, BUILD, adversarial execution,
+provider/network use, downstream/public mutation, push, or deployment is
+released.
+
+## GC-020 Marker - Governance Latency WS2-T1 Dispatch
+
+This handoff records material parent commit `91a4279ff`. A dedicated
+continuity child may use that parent anchor.
+
+## Core Guard Self-Protection Authorization - WS2-T1 Dispatch Continuity
+
+Authorized scope: synchronize current mode and next-move routing after the
+committed WS2-T1 dispatch and regenerate active-session aggregates from source
+fragments. No material or execution authority is added.
+
+## Agent Operation Trace Block - WS2-T1 Dispatch Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | WS2-T1 dispatch sync, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | material commit, state generator, continuity patch |
+| Target paths | active handoff, front door, state source and generated views |
+| Allowed scope source | GC-020 after material commit `91a4279ff` |
+| Before status evidence | HEAD `91a4279ff`; clean worktree |
+| After status evidence | WS2-T1 documentation worker is the only next move |
+| Diff evidence | continuity-only changed set and generated-state check |
+| Approval boundary | session routing only |
+| Claim boundary | no design, build, execution, provider, downstream, public, or push authority |
+| Agent type | dispatcher and session-sync steward |
+| Invocation ID | `governance-latency-ws2-t1-dispatch-sync-2026-08-05` |
 | Expected manifest | active handoff, front door, state source and generated views |
 | Actual changed set | same after generator |
 | Manifest delta | MATCH |
