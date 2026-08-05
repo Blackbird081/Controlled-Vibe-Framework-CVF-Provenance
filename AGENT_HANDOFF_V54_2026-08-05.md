@@ -1,4 +1,4 @@
-# CVF Agent Handoff V54 - Workspace Governance Learning Propagation T1 Dispatch
+# CVF Agent Handoff V54 - Workspace Governance Learning Propagation T1 R1 Redispatch
 
 Memory class: active-handoff
 
@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `cc5c51ee7 governance: dispatch workspace learning carrier design T1`
-- Active mode: `workspace_governance_learning_propagation_t1_worker_dispatched`
+- Latest material commit: `5bd73529b governance: require GLP T1 consumer-chain repair`
+- Active mode: `workspace_governance_learning_propagation_t1_r1_worker_redispatched`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -20,38 +20,38 @@ workspace propagation audit while preserving the parked WS2 boundary.
 
 ## Scope / Target / Owner Boundary
 
-Scope: continuity after GLP-T1 carrier-design dispatch.
+Scope: continuity after GLP-T1 independent review required one focused R1.
 
-Target: one independent no-commit documentation design worker compares carrier
-candidates and returns exactly two governed artifacts.
+Target: the same no-commit worker revises only the existing audit and worker
+return for consumer-chain fidelity.
 
-Owner boundary: worker owns only the design audit and worker return. Independent
-reviewer/closer owns acceptance; implementation remains held.
+Owner boundary: worker owns only R1 revisions to the same two artifacts.
+Independent reviewer/closer owns acceptance; implementation remains held.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t1_worker_dispatched`
+`workspace_governance_learning_propagation_t1_r1_worker_redispatched`
 
 ## Active Boundary
 
-GLP-T1 is dispatched at `cc5c51ee7`. The worker compares guard orientation,
-governance control matrix, downstream AGENTS template, and one compact public-
-safe carrier candidate under a single rubric. GLP-T2+, WS2, GC010-AER,
-runtime, provider, network, public-sync, generated workspace, and project
-mutation remain outside scope.
+GLP-T1 R1 is redispatched at `5bd73529b`. Independent review found that the
+first return equated workspace rule-pack copy with mandatory project
+consumption, used the wrong generated path, and incorrectly excluded the
+downstream project audience. The same worker must repair only those design
+artifacts. GLP-T2+ and all implementation/external lanes remain outside scope.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t1_worker_dispatched`;
-active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=one independent
-no-commit documentation design worker executes GLP-T1; parked checkpoint=none,
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t1_r1_worker_redispatched`;
+active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=the same no-
+commit design worker performs focused GLP-T1 R1 repair; parked checkpoint=none,
 while GLP-T2+, WS2, and GC010-AER remain held or parked.
 
 ## Latest Material Work
 
-- Batch: `GLP-T1`
-- Material commit: `cc5c51ee7`
-- Status: `DISPATCH_READY`
+- Batch: `GLP-T1-R1`
+- Material commit: `5bd73529b`
+- Status: `REVIEWER_ACCEPTED_REDISPATCH_READY_R1_CONSUMER_CHAIN_REPAIR`
 - Baseline:
   `docs/baselines/CVF_GC018_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_2026-08-05.md`
 - Work order:
@@ -88,11 +88,51 @@ while GLP-T2+, WS2, and GC010-AER remain held or parked.
 
 ## Next Allowed Move
 
-One independent documentation design worker executes GLP-T1 under
-`WORKER_MUST_NOT_COMMIT`, creates exactly the design audit and worker return,
-and recommends `CARRIER_DESIGN_ACCEPTED` or `STOP_NO_SAFE_CARRIER`. No carrier,
-catalog, profile, template, bootstrap, generated workspace, downstream,
-provider/network, public-sync, push, or deployment mutation is authorized.
+The same documentation design worker revises only the existing GLP-T1 audit
+and worker return under `WORKER_MUST_NOT_COMMIT`. It must separate copy from
+mandatory consumption, correct the generated path and threshold, re-score the
+downstream template, and preserve disagreement. No implementation or external
+effect is authorized.
+
+## GC-020 Marker - GLP-T1 R1 Redispatch Continuity
+
+This continuity update records material review commit `5bd73529b` and routes
+only the focused R1 no-commit worker repair.
+
+## Core Guard Self-Protection Authorization - GLP-T1 R1 Continuity
+
+Authorized guard-maintenance scope: synchronize active mode, next move, GLP
+state, generated session aggregates, front door, and active handoff after
+material review commit `5bd73529b`.
+
+Operator authorization: same-scope review correction under the accepted GLP
+roadmap and no-question rule; no new authority is introduced.
+
+Rollback boundary: revert only this continuity batch if material commit
+`5bd73529b` is reverted.
+
+## Agent Operation Trace Block - GLP-T1 R1 Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | independent reviewer and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | GLP-T1 R1 continuity, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | independent source review, reviewer addendum, commit, state generators, continuity gates |
+| Target paths | active handoff, front door, GLP state fragments, generated active-session views |
+| Allowed scope source | GC-020 after material review commit `5bd73529b` |
+| Before status evidence | HEAD `5bd73529b`; clean worktree |
+| After status evidence | same no-commit worker R1 repair is the exact next move |
+| Diff evidence | continuity-only changed set from `git diff --name-status` |
+| Approval boundary | R1 routing only |
+| Claim boundary | no carrier implementation, downstream/public mutation, provider use, push, or deployment |
+| Agent type | reviewer/session-sync steward |
+| Invocation ID | `glp-t1-r1-continuity-2026-08-05` |
+| Expected manifest | active handoff; front door; GLP state fragments; generated active-session views |
+| Actual changed set | active handoff; front door; GLP state fragments; generated active-session views |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## GC-020 Marker - GLP-T1 Dispatch Continuity
 

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_governance_learning_propagation_t1_worker_dispatched",
+  "currentMode": "workspace_governance_learning_propagation_t1_r1_worker_redispatched",
   "activeHandoff": "AGENT_HANDOFF_V54_2026-08-05.md",
-  "nextAllowedMove": "GLP-T1 carrier-design work is dispatched at material commit cc5c51ee7 under WORKER_MUST_NOT_COMMIT. The next move is one independent documentation design worker creating exactly the design audit and worker return named by the work order, then returning CARRIER_DESIGN_ACCEPTED or STOP_NO_SAFE_CARRIER for independent review. No carrier/catalog/profile/template/bootstrap implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. GLP-T2+, governance-latency WS2, and GC010-AER remain held or condition/value-parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-T1 R1 consumer-chain repair is redispatched at material commit 5bd73529b under WORKER_MUST_NOT_COMMIT. The same documentation design worker must revise only the existing audit and worker return, separate workspace copy from mandatory project consumption, correct the CVF_RULE_PACKS path and Markdown threshold, re-score downstream AGENTS as an in-scope carrier, and retain reviewer disagreement. No new artifact, carrier/catalog/profile/template/bootstrap implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. GLP-T2+, governance-latency WS2, and GC010-AER remain held or parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

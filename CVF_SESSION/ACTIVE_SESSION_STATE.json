@@ -94,8 +94,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "workspace_governance_learning_propagation_t1_worker_dispatched",
-  "previousMode": "workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring",
+  "currentMode": "workspace_governance_learning_propagation_t1_r1_worker_redispatched",
+  "previousMode": "workspace_governance_learning_propagation_t1_worker_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13689,7 +13689,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GLP-T1 carrier-design work is dispatched at material commit cc5c51ee7 under WORKER_MUST_NOT_COMMIT. The next move is one independent documentation design worker creating exactly the design audit and worker return named by the work order, then returning CARRIER_DESIGN_ACCEPTED or STOP_NO_SAFE_CARRIER for independent review. No carrier/catalog/profile/template/bootstrap implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. GLP-T2+, governance-latency WS2, and GC010-AER remain held or condition/value-parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-T1 R1 consumer-chain repair is redispatched at material commit 5bd73529b under WORKER_MUST_NOT_COMMIT. The same documentation design worker must revise only the existing audit and worker return, separate workspace copy from mandatory project consumption, correct the CVF_RULE_PACKS path and Markdown threshold, re-score downstream AGENTS as an in-scope carrier, and retain reviewer disagreement. No new artifact, carrier/catalog/profile/template/bootstrap implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. GLP-T2+, governance-latency WS2, and GC010-AER remain held or parked; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13701,9 +13701,9 @@
     "claimBoundary": "Current-source localhost browser acceptance only; no hosted freshness, deployment, provider, public, or production claim."
   },
   "workspaceGovernanceLearningPropagationRoadmap20260805": {
-    "status": "GLP_T1_DISPATCH_READY",
+    "status": "GLP_T1_R1_REDISPATCH_READY_CONSUMER_CHAIN_REPAIR",
     "date": "2026-08-05",
-    "materialCommit": "cc5c51ee7",
+    "materialCommit": "5bd73529b",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "PROCEED_DOC_ONLY",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -13713,7 +13713,8 @@
     "reviewDisposition": "ACCEPT_WITH_REVIEWER_CORRECTIONS",
     "t1Baseline": "docs/baselines/CVF_GC018_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_2026-08-05.md",
     "t1WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_2026-08-05.md",
-    "nextAllowedMove": "One independent no-commit documentation design worker executes GLP-T1 and returns exactly the design audit and worker-return artifacts named by the work order.",
+    "t1ReviewDisposition": "REVIEW_CHANGES_REQUIRED_R1",
+    "nextAllowedMove": "The same no-commit documentation design worker revises only the existing GLP-T1 audit and worker return for the focused consumer-chain repair.",
     "claimBoundary": "No bootstrap/catalog/template implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released."
   },
   "continuousProjectionT0Dispatch20260720": {
