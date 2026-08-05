@@ -194,3 +194,32 @@ known before creation and may be accepted under the GC-020 parent rule.
 | Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - GLP-T3 Operator Release Continuity Anchor
+
+The completed GLP-T3 operator-release continuity commit is `86804d9fb`. This
+dedicated continuity child records that exact parent under the GC-020
+self-reference exception.
+
+## Agent Operation Trace Block - GLP-T3 Release Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | GLP-T3 operator-release continuity anchor, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | lifecycle false-positive repair and handoff anchor patch |
+| Target paths | active handoff and compact session front door |
+| Allowed scope source | GC-020 and operator-released GLP-T3 dispatch |
+| Before status evidence | HEAD `86804d9fb`; material worker dispatch not yet committed |
+| After status evidence | active handoff contains the exact continuity parent SHA and stale nearby closure wording is removed |
+| Diff evidence | two continuity paths only |
+| Approval boundary | continuity and dispatch-lifecycle repair only |
+| Claim boundary | no worker execution or external action |
+| Agent type | session-sync steward |
+| Invocation ID | `glp-t3-release-anchor-2026-08-05` |
+| Expected manifest | active handoff; compact session front door |
+| Actual changed set | active handoff; compact session front door |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |

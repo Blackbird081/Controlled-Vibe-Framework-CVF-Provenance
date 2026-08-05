@@ -82,7 +82,7 @@ are now assigned to the no-commit worker.
 | Work | Commit | Disposition |
 |---|---|---|
 | GLP-T3 disposable propagation-proof packet | `5744b7c10` | `HOLD_PENDING_OPERATOR_AUTHORITY`; exact two-output, one-harness-call, zero-network proof packet passed authoring pre-dispatch 75/75. Execution requires explicit release. |
-| GLP-T2R1 merge-repair closure | `f59457b9a` | `CLOSED_PASS_BOUNDED`; byte-preserving insertion/refresh, malformed-marker fail-close, compact five-rule carrier, focused harness 79/79. GLP-T3 packet authoring only is next. |
+| GLP-T2R1 merge-repair closure | `f59457b9a` | `CLOSED_PASS_BOUNDED`; byte-preserving insertion/refresh, malformed-marker fail-close, compact five-rule carrier, focused harness 79/79. |
 | GLP-T1 carrier design acceptance | `87febcba9` | `REVIEWER_ACCEPTED_WITH_CORRECTIONS`; decision `CARRIER_DESIGN_ACCEPTED`; downstream AGENTS template selected with the existing golden bootstrap harness as focused test owner. GLP-T2 packet authoring only is next. |
 | GLP-T1 R1 consumer-chain repair redispatch | `5bd73529b` | `REVIEW_CHANGES_REQUIRED_R1`; copied rule-pack guidance was incorrectly treated as mandatory project consumption. Same worker revises only the existing audit and return; no implementation or external action. |
 | GLP-T1 smallest-safe-carrier design dispatch | `cc5c51ee7` | `DISPATCH_READY`; one independent no-commit documentation worker compares three distributed existing owners with one compact carrier candidate; no carrier/catalog/profile/template/bootstrap implementation or external effect. |
