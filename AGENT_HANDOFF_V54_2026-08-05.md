@@ -1,4 +1,4 @@
-# CVF Agent Handoff V54 - Workspace Governance Learning Propagation T0 Packet Authoring
+# CVF Agent Handoff V54 - Workspace Governance Learning Propagation T0 Dispatch
 
 Memory class: active-handoff
 
@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `3b8781b3b governance: open workspace learning propagation roadmap`
-- Active mode: `workspace_governance_learning_propagation_t0_packet_authoring`
+- Latest material commit: `8df7c7616 governance: dispatch workspace learning propagation T0`
+- Active mode: `workspace_governance_learning_propagation_t0_worker_dispatched`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -20,42 +20,44 @@ workspace propagation audit while preserving the parked WS2 boundary.
 
 ## Scope / Target / Owner Boundary
 
-Scope: continuity after GLP-R0 roadmap authoring.
+Scope: continuity after GLP-T0 governed dispatch.
 
-Target: author fresh GLP-T0 GC-018 and source-verified work order for a local,
-documentation-only propagation audit.
+Target: one independent no-commit documentation worker executes the local,
+read-only GLP-T0 propagation audit and returns exactly two governed artifacts.
 
-Owner boundary: the dispatcher may author GLP-T0 packets but may not implement
-bootstrap, catalog, profile, template, workspace, or project changes.
+Owner boundary: the worker may create only the audit and worker return named in
+the work order. The independent reviewer/closer owns acceptance and closure.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t0_packet_authoring`
+`workspace_governance_learning_propagation_t0_worker_dispatched`
 
 ## Active Boundary
 
-GLP-R0 is committed at `3b8781b3b`. Current source shows that operator-local
+GLP-T0 is dispatched at `8df7c7616`. Current source shows that operator-local
 projects receive a curated catalog/profile projection, while three accepted
 latency-learning owners are absent from that catalog and the downstream agent
-template lacks the same-scope wait boundary. GLP-T0 must independently
-reproduce or invalidate that gap. WS2, GC010-AER, runtime, provider, network,
-public-sync, generated workspace, and project mutation remain outside scope.
+template lacks the same-scope wait boundary. The no-commit worker must
+independently reproduce or invalidate that gap. WS2, GC010-AER, runtime,
+provider, network, public-sync, generated workspace, and project mutation
+remain outside scope.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t0_packet_authoring`;
-active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=author fresh
-GLP-T0 GC-018 and source-verified work order; parked checkpoint=none, while WS2
-and GC010-AER remain condition/value-parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t0_worker_dispatched`;
+active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=one independent
+no-commit documentation worker executes GLP-T0; parked checkpoint=none, while
+WS2 and GC010-AER remain condition/value-parked.
 
 ## Latest Material Work
 
-- Batch: `CVF-WORKSPACE-GOVERNANCE-LEARNING-PROPAGATION-R0`
-- Material commit: `3b8781b3b`
-- Status: `ROADMAP_READY_FOR_T0_GC018_AUTHORING`
-- Decision: `OPEN_BOUNDED_PROPAGATION_AUDIT`
-- Roadmap:
-  `docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md`
+- Batch: `GLP-T0`
+- Material commit: `8df7c7616`
+- Status: `DISPATCH_READY`
+- Baseline:
+  `docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md`
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md`
 
 ## Latest Work / Changes
 
@@ -88,12 +90,54 @@ and GC010-AER remain condition/value-parked.
 
 ## Next Allowed Move
 
-Author fresh GLP-T0 GC-018 and source-verified work order only. T0 is a local,
-documentation-only audit that must reproduce the catalog/profile/project
-carrier evidence and return one of the three roadmap decision tokens. No
+One independent documentation worker executes GLP-T0 under
+`WORKER_MUST_NOT_COMMIT`, creates exactly the audit and worker return named in
+the work order, and returns one of the three roadmap decision tokens. The
+reviewer/closer must independently recompute catalog/profile membership. No
 bootstrap/catalog/template implementation, generated workspace or downstream
 mutation, provider/network use, public-sync, push, or deployment is authorized.
 WS2 and GC010-AER remain parked behind their existing source conditions.
+
+## GC-020 Marker - GLP-T0 Dispatch Continuity
+
+This continuity update records material dispatch commit `8df7c7616` and routes
+only the independent no-commit documentation worker. It does not authorize the
+dispatcher to self-review, any implementation, or T1+.
+
+## Core Guard Self-Protection Authorization - GLP-T0 Dispatch Continuity
+
+Authorized guard-maintenance scope: synchronize active mode, next move, GLP
+state, generated session aggregates, front door, and active handoff after
+material dispatch commit `8df7c7616`.
+
+Operator authorization: the operator approved continuation of the accepted
+roadmap; the dispatch packet passed pre-dispatch and commit-steward gates.
+
+Rollback boundary: revert only this continuity batch if dispatch commit
+`8df7c7616` is reverted.
+
+## Agent Operation Trace Block - GLP-T0 Dispatch Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | GLP-T0 dispatch continuity, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | packet gates, commit, state-source edits, generators, continuity gates |
+| Target paths | active handoff, front door, GLP state fragments, generated active-session views |
+| Allowed scope source | GC-020 after material dispatch commit `8df7c7616` |
+| Before status evidence | HEAD `8df7c7616`; clean worktree |
+| After status evidence | independent no-commit GLP-T0 worker execution is the exact next move |
+| Diff evidence | continuity-only changed set from `git diff --name-status` |
+| Approval boundary | dispatch routing only |
+| Claim boundary | no worker execution, implementation, downstream/public mutation, provider use, push, or deployment |
+| Agent type | dispatcher/session-sync steward |
+| Invocation ID | `glp-t0-dispatch-continuity-2026-08-05` |
+| Expected manifest | active handoff; front door; GLP state fragments; generated active-session views |
+| Actual changed set | active handoff; front door; GLP state fragments; generated active-session views |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## GC-020 Marker - GLP-R0 Roadmap Continuity
 

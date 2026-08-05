@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_governance_learning_propagation_t0_packet_authoring",
+  "currentMode": "workspace_governance_learning_propagation_t0_worker_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V54_2026-08-05.md",
-  "nextAllowedMove": "CVF-WORKSPACE-GOVERNANCE-LEARNING-PROPAGATION-R0 is open at material commit 3b8781b3b. The next move is fresh GLP-T0 GC-018 and source-verified work-order authoring for a documentation-only, local, read-only propagation audit. T0 must reproduce the provenance-to-catalog-to-profile-to-workspace-to-project chain and return PROCEED_BOOTSTRAP_ALIGNMENT, PROCEED_DOC_ONLY, or STOP_ALREADY_PROPAGATED. No bootstrap/catalog/template implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. Governance-latency WS2 and GC010-AER remain condition/value-parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-T0 is dispatched at material commit 8df7c7616 under WORKER_MUST_NOT_COMMIT. The next move is one independent documentation worker executing the source audit and creating exactly the governed audit plus worker-return paths named in the work order. The worker must reproduce the provenance-to-catalog-to-profile-to-workspace-to-project chain and return PROCEED_BOOTSTRAP_ALIGNMENT, PROCEED_DOC_ONLY, or STOP_ALREADY_PROPAGATED. Reviewer/closer remains separate. No bootstrap/catalog/template implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. Governance-latency WS2 and GC010-AER remain condition/value-parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
