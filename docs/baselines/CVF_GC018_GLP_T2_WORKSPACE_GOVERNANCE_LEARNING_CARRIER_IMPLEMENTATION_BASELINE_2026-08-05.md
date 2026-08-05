@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY
+Status: REVIEWER_ACCEPTED_DISPATCH_READY
 
 docType: baseline
 
@@ -10,7 +10,7 @@ Date: 2026-08-05
 
 Batch ID: GLP-T2
 
-dispatchBaseHead: `2e540b429`
+dispatchBaseHead: `c5a6ba25d`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -37,10 +37,10 @@ packet review only until the operator explicitly releases implementation.
 
 ## Baseline Decision
 
-Decision: `HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY`.
+Decision: `RELEASE_GLP_T2_BOUNDED_IMPLEMENTATION`.
 
-The technical design is source-backed and bounded, but packet authoring does
-not itself release the R2 implementation worker.
+The technical design is source-backed, bounded, and explicitly released for
+one no-commit implementation worker.
 
 ## Authorization / Dependency Gate
 
@@ -49,11 +49,11 @@ not itself release the R2 implementation worker.
 | GLP-T1 carrier decision | `docs/reviews/CVF_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_WORKER_RETURN_2026-08-05.md`; material commit `87febcba9`; decision `CARRIER_DESIGN_ACCEPTED` | ACCEPT |
 | canonical carrier | `governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md` | ACCEPT |
 | focused test owner | `scripts/test_cvf_golden_downstream_bootstrap.ps1` | ACCEPT |
-| implementation authority | current next-move surfaces release packet authoring only | HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY |
+| implementation authority | operator confirmation on 2026-08-05, responding to the explicit GLP-T2 release checkpoint | ACCEPT |
 
-This baseline must not be changed to a ready or dispatched status until the
-operator explicitly releases GLP-T2 implementation and the pre-dispatch gate
-passes on the released packet range.
+The operator explicitly released GLP-T2 implementation. Dispatch remains
+bounded by the exact path, risk, external-effect, and commit-owner controls in
+this baseline and the paired work order.
 
 ## Scope / Target / Owner Boundary
 
@@ -218,11 +218,11 @@ narrowed, or blocked; gate success alone is not semantic proof.
 | Working directory | repository root |
 | Command or tool surface | startup reads, source verification, scaffold helper, ADIF resolver, apply_patch, dispatch gates |
 | Target paths | this baseline and paired work order |
-| Allowed scope source | accepted GLP roadmap; T1 material commit `87febcba9`; next-move surfaces at `2e540b429` |
-| Before status evidence | HEAD `2e540b429`; clean worktree |
-| After status evidence | paired packet remains held for operator implementation authority |
+| Allowed scope source | accepted GLP roadmap; T1 material commit `87febcba9`; operator GLP-T2 release confirmation on 2026-08-05 |
+| Before status evidence | HEAD `c5a6ba25d`; clean worktree before release edit |
+| After status evidence | paired packet is ready for one bounded no-commit worker |
 | Diff evidence | `git diff --name-status` limited to paired packet paths |
-| Approval boundary | packet authoring only |
+| Approval boundary | bounded GLP-T2 implementation dispatch only |
 | Claim boundary | no implementation, external effect, public sync, provider/network use, push, or deployment |
 | Agent type | dispatcher |
 | Invocation ID | `glp-t2-packet-authoring-2026-08-05` |
@@ -253,7 +253,7 @@ this private provenance packet neither edits them nor authorizes public sync.
 
 ## Claim Boundary
 
-This baseline establishes a source-verified, held GLP-T2 implementation
-contract. It does not release the worker, implement the carrier, mutate a
+This baseline establishes and releases one source-verified GLP-T2 implementation
+contract. It does not itself implement the carrier, mutate a
 workspace/project, prove propagation, publish, call a provider, use the
 network, push, or deploy.

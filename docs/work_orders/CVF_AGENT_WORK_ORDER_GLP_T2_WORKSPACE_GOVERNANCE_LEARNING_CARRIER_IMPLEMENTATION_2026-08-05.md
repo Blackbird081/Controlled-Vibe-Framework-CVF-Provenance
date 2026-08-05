@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY
+Status: REVIEWER_ACCEPTED_DISPATCH_READY
 
 docType: work_order
 
@@ -10,7 +10,7 @@ Date: 2026-08-05
 
 Batch ID: GLP-T2
 
-dispatchBaseHead: `2e540b429`
+dispatchBaseHead: `c5a6ba25d`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
@@ -26,12 +26,13 @@ Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T2_WORKSPACE_GOVERN
 
 Paired baseline: `docs/baselines/CVF_GC018_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_BASELINE_2026-08-05.md`
 
-Current-time notes: authored from clean provenance HEAD `2e540b429` after
-GLP-T1 acceptance at `87febcba9`.
+Current-time notes: authored from clean provenance HEAD `2e540b429`, then
+released from clean HEAD `c5a6ba25d` after operator confirmation; GLP-T1 was
+accepted at `87febcba9`.
 
-Do-not-misread notes: status is held. This packet is not an implementation
-dispatch until operator authority is recorded, dependency evidence is
-refreshed, and the pre-dispatch gate passes.
+Do-not-misread notes: this is one bounded implementation dispatch. It does not
+authorize bootstrap/helper edits, public sync, provider/network use, worker
+commit, or any path beyond the exact manifest.
 
 Required first actions after release: complete startup acknowledgment; capture
 HEAD and `git status --short`; read this packet, baseline, accepted T1 audit,
@@ -53,19 +54,43 @@ editing the bootstrap mechanism.
 
 | Authority layer | Evidence | Disposition |
 |---|---|---|
-| operator roadmap authority | accepted GLP roadmap and current next-move surfaces | packet authoring only |
+| operator roadmap authority | accepted GLP roadmap plus explicit GLP-T2 release confirmation | bounded implementation dispatch |
 | design authority | GLP-T1 accepted at `87febcba9` | ACCEPT |
-| implementation authority | explicit operator release | HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY |
+| implementation authority | operator confirmation on 2026-08-05 at the explicit GLP-T2 release checkpoint | ACCEPT |
 | review/commit authority | independent reviewer/closer after worker return | ACCEPT |
 
 ## Agent Roles
 
 | Role | Ownership |
 |---|---|
-| dispatcher | authors, validates, and commits the held packet |
+| dispatcher | authors, validates, releases, and commits the packet |
 | worker | after release, edits exactly two implementation paths and creates one no-commit return |
 | independent reviewer/closer | performs semantic review, bounded repairs, and material closure commit |
 | session-sync steward | updates canonical continuity in a separate commit/range |
+
+## Intake Role Routing Decision
+
+| Field | Value |
+|---|---|
+| intakeRole | dispatcher |
+| executionRole | bounded implementation worker |
+| reviewRole | independent reviewer/closer |
+| Route | `MULTI_AGENT_MULTI_ROLE` |
+| canonical route mode | `MULTI_AGENT_MULTI_ROLE` |
+| selected role route | dispatcher -> no-commit worker -> independent reviewer/closer -> session-sync steward |
+| routingReason | source, test owner, risk ceiling, and exact changed set are already fixed by accepted T1 design and operator T2 release |
+| workerSelfSelection | FORBIDDEN |
+| escalation condition | objective, allowed path/artifact class, R2 ceiling, external-effect class, secrets/quota, public/provider action, destructive action, or commit-owner change |
+| claimBoundary | role routing only; no provider or model is selected |
+
+## Worker Autonomy / No-Question Rule
+
+Proceed without operator confirmation for every allowed-scope source/test edit,
+assertion repair, diagnostic classification, worker-return repair, and required
+gate rerun. Escalate only for a real change in objective, allowed path/artifact
+class, R2 ceiling, external-effect class, secrets/quota, public/provider action,
+or commit owner. A failing byte-preservation assertion that requires bootstrap
+edits is a blocked return, not a preference question.
 
 ## Required First Reads
 
@@ -105,10 +130,10 @@ continuity. `WORKER_MUST_NOT_COMMIT` is binding.
 |---|---|---|
 | GLP-T1 acceptance | `docs/reviews/CVF_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_WORKER_RETURN_2026-08-05.md`; commit `87febcba9`; `CARRIER_DESIGN_ACCEPTED` | ACCEPT |
 | exact carrier/test manifest | paired GC-018 Source Verification and Hermetic Proof Matrix | ACCEPT |
-| clean dispatch anchor | HEAD `2e540b429`; `git status --short` empty before packet authoring | ACCEPT |
-| operator implementation authority | not yet recorded | HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY |
+| clean dispatch anchor | HEAD `c5a6ba25d`; `git status --short` empty before release edit | ACCEPT |
+| operator implementation authority | operator confirmation on 2026-08-05 | ACCEPT |
 
-No worker may execute while the last row remains held.
+All dependency rows are source-backed and released for this bounded dispatch.
 
 ## Scope / Allowed Paths
 
@@ -144,7 +169,7 @@ No other path is allowed.
 | manualEditsAfterScaffold | added authority hold, dependency evidence, exact implementation contract, source verification, public/private boundary, focused proof matrix, role routing, and no-commit return contract |
 | checkerReadAheadConfirmation | dispatch-quality, ADIF disclosure, handoff-boundary, AOT, worker-return, public-export, file-size, and roadmap-freshness controls |
 | docOnlyNewFields | carrierSection; carrierRuleIds; privateEvidenceSentinels; hermeticProofMatrix |
-| claimBoundary | held implementation packet only; no behavior is implemented or released by this document |
+| claimBoundary | bounded implementation dispatch packet; no behavior is implemented by this document |
 
 ## Source Verification Block
 
@@ -235,7 +260,7 @@ record the evidence and stop. Editing the bootstrap is not allowed.
 ## Execution Plan
 
 1. Capture execution HEAD/status, complete required reads, and run the
-   pre-implementation gate. Stop if authority is still held or state is dirty.
+   pre-implementation gate. Stop if release evidence is missing or state is dirty.
 2. Add the compact carrier subsection to the template. Validate exact included
    semantics and excluded evidence before changing tests.
 3. Extend the existing golden harness with fresh, refresh, merge, byte, and
@@ -331,7 +356,7 @@ Fail conditions:
 | public/private boundary | roadmap protected controls | exact included/excluded semantics and sentinel tests | PASS |
 | project ownership | roadmap protected controls | generated project `AGENTS.md` remains the consumer | PASS |
 | latency control | roadmap protected controls | five-rule carrier; no repeated worker checkpoints | PASS |
-| no implicit implementation | T1 closure and current next move | held status pending operator authority | PASS |
+| explicit implementation release | operator confirmation on 2026-08-05 | bounded worker dispatch only | PASS |
 
 ## Dual Agent Surface Matrix
 
@@ -351,6 +376,16 @@ Fail conditions:
 | indexOrRegistryChange | N/A with reason: no index, catalog, profile, or registry change is authorized |
 | datePolicy | N/A with reason: no new stable reference family is created |
 
+## Legacy Absorption Coverage Index Disposition
+
+| Field | Value |
+|---|---|
+| coverageIndex | `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` |
+| disposition | NOT_APPLICABLE_WITH_REASON |
+| reason | GLP-T2 changes an existing downstream template and its existing hermetic harness; it does not absorb, rescan, migrate, or reclassify a legacy source family |
+| registryOrIndexMutation | N/A with reason: no legacy coverage or corpus registry change is authorized |
+| claimBoundary | no legacy completeness or absorption claim |
+
 ## Agent Handoff Contract Control Block
 
 Contract source: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`
@@ -360,7 +395,7 @@ Contract source: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | dispatcher -> no-commit implementation worker -> independent reviewer/closer -> session-sync steward |
 | phase | DISPATCH_AUTHORING, EXECUTION, CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatchBaseHead=2e540b429; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=c5a6ba25d; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
 | changedSetScope(phase) | dispatch=paired packets; execution=two implementation paths plus worker return; closure=accepted worker paths and bounded reviewer repairs; session sync=canonical continuity only |
 | traceScope(phase, actor) | each actor records phase-local trace and exact changed set |
 | commitOwner(phase) | dispatcher commits packets; worker must not commit; reviewer commits accepted material; steward commits continuity |
@@ -413,7 +448,7 @@ No-Commit Statement. Conditional non-applicable sections must use explicit
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_roadmap_closure_freshness.py` |
 | literalTokensReviewed | exact source dispositions and claim types; handoff route fields; worker-return contract terms; trace labels; public-export tokens; checklist residue; split material/session closure ranges |
-| gateRunPurpose | confirmation evidence for held packet fidelity before authority release; not first discovery of worker requirements |
+| gateRunPurpose | confirmation evidence for released packet fidelity before worker dispatch; not first discovery of worker requirements |
 | claimBoundary | packet/readiness structure only; semantic implementation still requires worker evidence and independent review |
 
 ## Agent Operation Trace Block
@@ -426,11 +461,11 @@ No-Commit Statement. Conditional non-applicable sections must use explicit
 | Working directory | repository root |
 | Command or tool surface | startup reads, source verification, scaffold helper, ADIF resolver, apply_patch, dispatch gates |
 | Target paths | paired GLP-T2 baseline and work order |
-| Allowed scope source | accepted GLP roadmap; T1 material commit `87febcba9`; next-move surfaces at `2e540b429` |
-| Before status evidence | HEAD `2e540b429`; clean worktree |
-| After status evidence | held paired packet pending operator implementation authority |
+| Allowed scope source | accepted GLP roadmap; T1 material commit `87febcba9`; operator GLP-T2 release confirmation on 2026-08-05 |
+| Before status evidence | HEAD `c5a6ba25d`; clean worktree before release edit |
+| After status evidence | paired packet ready for one bounded no-commit worker |
 | Diff evidence | `git diff --name-status` limited to paired packet paths |
-| Approval boundary | packet authoring only |
+| Approval boundary | bounded GLP-T2 implementation dispatch only |
 | Claim boundary | no implementation, workspace/project mutation, public sync, provider/network use, push, or deployment |
 | Agent type | dispatcher |
 | Invocation ID | `glp-t2-work-order-authoring-2026-08-05` |
@@ -444,7 +479,7 @@ No-Commit Statement. Conditional non-applicable sections must use explicit
 | Field | Disposition |
 |---|---|
 | claimScope | future bounded template and hermetic-test implementation |
-| claimDisposition | N/A with reason: held work order has not executed |
+| claimDisposition | N/A with reason: dispatch-ready work order has not executed |
 | receiptEvidence | N/A with reason: no runtime receipt is created |
 | actionEvidence | N/A with reason: no implementation action has occurred |
 | invocationBoundary | future local source/test edits and hermetic temp fixture only |
@@ -512,9 +547,8 @@ clean worktree.
 
 ## Operator Checkpoint
 
-One checkpoint is parked at implementation release. The operator must
-explicitly authorize GLP-T2 implementation after reviewing this held packet.
-After release, no repeated confirmation is required for same-scope repairs
+The operator explicitly authorized GLP-T2 implementation on 2026-08-05.
+No repeated confirmation is required for same-scope repairs
 that preserve objective, allowed paths, R2 ceiling, external-effect class, and
 commit owner. A new checkpoint is required only for a real boundary change.
 
@@ -538,6 +572,6 @@ network/provider need, or any scope beyond the three worker-owned paths.
 
 ## Claim Boundary
 
-This held work order precisely specifies GLP-T2. It does not dispatch a worker,
-authorize implementation, mutate a workspace or project, prove real-world
-adoption, publish, call a provider, use the network, push, or deploy.
+This work order dispatches one bounded no-commit GLP-T2 worker. It does not
+authorize any broader workspace/project mutation, prove real-world adoption,
+publish, call a provider, use the network, push, or deploy.
