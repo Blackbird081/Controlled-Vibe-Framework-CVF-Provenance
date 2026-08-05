@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - GLP T3 Operator Released
+# CVF Agent Handoff V55 - GLP T3 Worker Dispatched
 
 Memory class: active-handoff
 
@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `5744b7c10 governance: author held GLP T3 propagation proof packet`
-- Active mode: `workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
+- Latest material commit: `2cd8e4a85 governance: release GLP T3 propagation proof`
+- Active mode: `workspace_governance_learning_propagation_t3_worker_dispatched`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -38,13 +38,13 @@ provider/network, push, deployment, and broader implementation remain excluded.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
+`workspace_governance_learning_propagation_t3_worker_dispatched`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=complete
-same-scope packet release and dispatch one no-commit proof worker; parked
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_worker_dispatched`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one
+Claude-routed no-commit worker executes the exact one-call/two-output proof; parked
 checkpoint=WS2 and GC010-AER remain parked.
 
 ## Released Packet
@@ -72,9 +72,10 @@ checkpoint=WS2 and GC010-AER remain parked.
 
 ## Next Allowed Move
 
-Complete the GLP-T3 dependency/base refresh, set the packet ready, pass
-pre-dispatch, commit the material release, and dispatch one independent
-no-commit proof worker. Every external lane remains held.
+One Claude-routed no-commit worker executes the released GLP-T3 packet at
+`2cd8e4a85`: one existing local harness call and exactly the audit plus worker
+return. Independent reviewer/closer owns acceptance and commits. Every external
+lane remains held.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 

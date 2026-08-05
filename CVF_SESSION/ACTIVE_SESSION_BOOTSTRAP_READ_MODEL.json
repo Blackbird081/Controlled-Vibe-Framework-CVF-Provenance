@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress",
+  "currentMode": "workspace_governance_learning_propagation_t3_worker_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
-  "nextAllowedMove": "The operator explicitly released GLP-T3 execution and selected the worker route on 2026-08-05. The next allowed move is same-scope packet release completion only: refresh the dependency/base anchors, set the paired packet ready, pass pre-dispatch on the release range, commit it, then dispatch one independent no-commit proof worker. No worker execution begins before that material release commit. The worker may run exactly one existing local harness call and create exactly the audit and worker return. No implementation edit, persistent generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-T3 is released at material commit 2cd8e4a85 after pre-dispatch PASS_75_OF_75. The next allowed move is one Claude-routed no-commit worker executing the exact work order: run one existing local golden harness call and create exactly the audit plus worker return, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. The independent reviewer/closer owns acceptance and commits. No implementation edit, persistent generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

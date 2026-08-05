@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=complete same-scope GLP-T3 packet release and dispatch one no-commit proof worker; parked checkpoint=WS2 and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_worker_dispatched`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one Claude-routed no-commit worker executes the exact one-call/two-output GLP-T3 proof; parked checkpoint=WS2 and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
+Current mode marker: `workspace_governance_learning_propagation_t3_worker_dispatched`
 
-Current mode: `workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
+Current mode: `workspace_governance_learning_propagation_t3_worker_dispatched`
 
-`workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
+`workspace_governance_learning_propagation_t3_worker_dispatched`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
+`workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GLP-T3 propagation-proof dispatch | `2cd8e4a85` | `DISPATCH_READY`; pre-dispatch 75/75; one Claude-routed no-commit worker owns exactly one local harness call and two evidence outputs. |
 | GLP-T3 disposable propagation-proof packet | `5744b7c10` | `HOLD_PENDING_OPERATOR_AUTHORITY`; exact two-output, one-harness-call, zero-network proof packet passed authoring pre-dispatch 75/75. Execution requires explicit release. |
 | GLP-T2R1 merge-repair closure | `f59457b9a` | `CLOSED_PASS_BOUNDED`; byte-preserving insertion/refresh, malformed-marker fail-close, compact five-rule carrier, focused harness 79/79. |
 | GLP-T1 carrier design acceptance | `87febcba9` | `REVIEWER_ACCEPTED_WITH_CORRECTIONS`; decision `CARRIER_DESIGN_ACCEPTED`; downstream AGENTS template selected with the existing golden bootstrap harness as focused test owner. GLP-T2 packet authoring only is next. |
@@ -393,12 +394,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
+Mode: `workspace_governance_learning_propagation_t3_worker_dispatched`
 
-The operator explicitly released GLP-T3 execution on 2026-08-05. Complete the
-same-scope packet anchor/status refresh, pass pre-dispatch, commit the release,
-then dispatch one independent no-commit proof worker. The worker gets one local
-harness call and exactly two evidence outputs. Implementation edits, persistent
+GLP-T3 is released at `2cd8e4a85` after pre-dispatch 75/75. One Claude-routed
+no-commit worker gets one local harness call and exactly two evidence outputs,
+then returns for independent review. Implementation edits, persistent
 workspace/downstream mutation, public sync, provider/network use, push,
 deployment, WS2, and GC010-AER remain parked.
 

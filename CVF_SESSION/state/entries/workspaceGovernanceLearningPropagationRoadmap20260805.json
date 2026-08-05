@@ -4,7 +4,7 @@
   "value": {
     "status": "GLP_T2R1_REVIEWER_ACCEPTED_ALIGNMENT_IMPLEMENTED_BOUNDED",
     "date": "2026-08-05",
-    "materialCommit": "5744b7c10",
+    "materialCommit": "2cd8e4a85",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "CARRIER_DESIGN_ACCEPTED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -37,9 +37,9 @@
     "t2r1ReviewDisposition": "CLOSED_PASS_BOUNDED",
     "t3Baseline": "docs/baselines/CVF_GC018_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_BASELINE_2026-08-05.md",
     "t3WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_2026-08-05.md",
-    "t3PacketStatus": "OPERATOR_RELEASED_PACKET_RELEASE_IN_PROGRESS",
+    "t3PacketStatus": "DISPATCH_READY_WORKER_DISPATCHED",
     "t3PacketAuthoringGate": "PASS_75_OF_75",
-    "nextAllowedMove": "Complete same-scope GLP-T3 packet release gates and commit, then dispatch one independent no-commit proof worker.",
+    "nextAllowedMove": "One Claude-routed no-commit worker runs the exact one-call/two-output GLP-T3 proof and returns for independent review.",
     "claimBoundary": "GLP-T2R1 proves bounded local byte-preserving carrier projection. GLP-T3 is only a held proof packet; no harness execution, evidence output, persistent generated workspace/downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized."
   }
 }

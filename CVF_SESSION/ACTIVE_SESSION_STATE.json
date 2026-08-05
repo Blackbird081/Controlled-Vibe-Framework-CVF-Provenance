@@ -95,8 +95,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress",
-  "previousMode": "workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority",
+  "currentMode": "workspace_governance_learning_propagation_t3_worker_dispatched",
+  "previousMode": "workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "The operator explicitly released GLP-T3 execution and selected the worker route on 2026-08-05. The next allowed move is same-scope packet release completion only: refresh the dependency/base anchors, set the paired packet ready, pass pre-dispatch on the release range, commit it, then dispatch one independent no-commit proof worker. No worker execution begins before that material release commit. The worker may run exactly one existing local harness call and create exactly the audit and worker return. No implementation edit, persistent generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-T3 is released at material commit 2cd8e4a85 after pre-dispatch PASS_75_OF_75. The next allowed move is one Claude-routed no-commit worker executing the exact work order: run one existing local golden harness call and create exactly the audit plus worker return, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. The independent reviewer/closer owns acceptance and commits. No implementation edit, persistent generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13704,7 +13704,7 @@
   "workspaceGovernanceLearningPropagationRoadmap20260805": {
     "status": "GLP_T2R1_REVIEWER_ACCEPTED_ALIGNMENT_IMPLEMENTED_BOUNDED",
     "date": "2026-08-05",
-    "materialCommit": "5744b7c10",
+    "materialCommit": "2cd8e4a85",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "CARRIER_DESIGN_ACCEPTED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -13737,9 +13737,9 @@
     "t2r1ReviewDisposition": "CLOSED_PASS_BOUNDED",
     "t3Baseline": "docs/baselines/CVF_GC018_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_BASELINE_2026-08-05.md",
     "t3WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_2026-08-05.md",
-    "t3PacketStatus": "OPERATOR_RELEASED_PACKET_RELEASE_IN_PROGRESS",
+    "t3PacketStatus": "DISPATCH_READY_WORKER_DISPATCHED",
     "t3PacketAuthoringGate": "PASS_75_OF_75",
-    "nextAllowedMove": "Complete same-scope GLP-T3 packet release gates and commit, then dispatch one independent no-commit proof worker.",
+    "nextAllowedMove": "One Claude-routed no-commit worker runs the exact one-call/two-output GLP-T3 proof and returns for independent review.",
     "claimBoundary": "GLP-T2R1 proves bounded local byte-preserving carrier projection. GLP-T3 is only a held proof packet; no harness execution, evidence output, persistent generated workspace/downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized."
   },
   "continuousProjectionT0Dispatch20260720": {
