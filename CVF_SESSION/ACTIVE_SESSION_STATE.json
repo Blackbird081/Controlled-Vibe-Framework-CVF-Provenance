@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V53_2026-07-26.md",
+  "activeHandoff": "AGENT_HANDOFF_V54_2026-08-05.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -86,14 +86,15 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V49_2026-07-20.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V50_2026-07-22.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V51_2026-07-22.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V52_2026-07-25.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V52_2026-07-25.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V53_2026-07-26.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc009_roadmap_closed_governance_latency_l0_parked",
+  "currentMode": "governance_latency_l0_closed_ws2_candidate_parked",
   "previousMode": "portable_clone_continuity_published_verified",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -13688,7 +13689,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GC009/GC010 production-caller roadmap is closed bounded at material commit b72074578. GC009-LIVE-T5 accepted two real provider calls across R1/R2, two ALLOW results, one keyless guard BLOCK response, and two correlated durable events; same-run live admin projection, later R2 blocker/payload/minimization assertions, exact latency values, SLOs, and production readiness remain unproved. No R3 is authorized. GC010-AER remains value-parked behind its existing four-fact source condition. CVF-GOVERNANCE-LATENCY-L0 is a parked provenance learning candidate only: reopen requires fresh explicit operator authorization after this continuity closure, a fresh GC-018/L0 evidence-intake work order, and verified checksums for the named read-only downstream evidence. No L1, design, spec, build, downstream edit, hidden distribution clone edit, provider/network call, public-sync, push, or deployment is authorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "CVF-GOVERNANCE-LATENCY-L0 is closed bounded at material commit daf7dba04 with independent disposition ACCEPT_WITH_REVIEWER_CORRECTIONS and Gate A recommendation PROCEED_WS2_ONLY. That recommendation parks only a bounded capability-restriction candidate; it does not release L1, design, specification, build, live test, provider/network use, downstream edit, hidden distribution clone edit, public-sync, push, or deployment. Any WS2 continuation requires a fresh explicit operator checkpoint, fresh GC-018 and work order, source verification, and independent review routing. The learning-curve null remains unresolved, the runner remains REVIEW_CHANGES_REQUIRED and rejected for import, and cheap alternatives retain priority. GC010-AER remains value-parked behind its existing four-fact source condition. LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",

@@ -2,7 +2,7 @@
 
 Memory class: active-handoff
 
-Status: ACTIVE
+Status: ARCHIVED
 
 ## Handoff Context
 
