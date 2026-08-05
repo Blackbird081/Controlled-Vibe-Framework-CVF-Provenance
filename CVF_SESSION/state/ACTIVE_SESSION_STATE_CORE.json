@@ -94,7 +94,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "governance_latency_l0_closed_ws2_candidate_parked",
+  "currentMode": "governance_latency_ws2_t0_dispatched",
   "previousMode": "portable_clone_continuity_published_verified",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

@@ -94,7 +94,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "governance_latency_l0_closed_ws2_candidate_parked",
+  "currentMode": "governance_latency_ws2_t0_dispatched",
   "previousMode": "portable_clone_continuity_published_verified",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -13689,7 +13689,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "CVF-GOVERNANCE-LATENCY-L0 is closed bounded at material commit daf7dba04 with independent disposition ACCEPT_WITH_REVIEWER_CORRECTIONS and Gate A recommendation PROCEED_WS2_ONLY. That recommendation parks only a bounded capability-restriction candidate; it does not release L1, design, specification, build, live test, provider/network use, downstream edit, hidden distribution clone edit, public-sync, push, or deployment. Any WS2 continuation requires a fresh explicit operator checkpoint, fresh GC-018 and work order, source verification, and independent review routing. The learning-curve null remains unresolved, the runner remains REVIEW_CHANGES_REQUIRED and rejected for import, and cheap alternatives retain priority. GC010-AER remains value-parked behind its existing four-fact source condition. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "CVF-GOVERNANCE-LATENCY-WS2-T0 is dispatched at material commit 9296e05ac. The next allowed move is one no-commit documentation worker producing exactly the owner/feasibility audit and worker return named by the committed work order, followed by independent review. T0 may inspect local provenance source only; it may not implement or execute capability enforcement, run bypass probes, call providers or networks, use package managers, mutate downstream/public clones, or start design/build. After T0 review, stop for a fresh operator decision. The learning-curve null remains unresolved, the downstream runner remains rejected for import, GC010-AER remains value-parked, and LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",

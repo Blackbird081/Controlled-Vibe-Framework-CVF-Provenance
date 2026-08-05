@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `daf7dba04 governance: close latency L0 evidence intake`
-- Active mode: `governance_latency_l0_closed_ws2_candidate_parked`
+- Latest material commit: `9296e05ac governance: dispatch latency WS2 capability audit`
+- Active mode: `governance_latency_ws2_t0_dispatched`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -31,23 +31,22 @@ operator checkpoint. No agent may infer implementation authority from Gate A.
 
 ## Current Mode
 
-`governance_latency_l0_closed_ws2_candidate_parked`
+`governance_latency_ws2_t0_dispatched`
 
 ## Active Boundary
 
-L0 evidence intake is closed bounded. Gate A parks WS2 capability restriction
-as the only governance-latency continuation candidate, but no continuation is
-released. GC010-AER remains value-parked. Provenance is authoritative;
-downstream and public-sync surfaces remain outside the active write boundary.
+L0 evidence intake is closed bounded. WS2-T0 is dispatched only as a local
+source-read-only owner/feasibility audit. GC010-AER remains value-parked.
+Provenance is authoritative; runtime, downstream, provider, network, package,
+and public-sync surfaces remain outside the active write boundary.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`governance_latency_l0_closed_ws2_candidate_parked`;
-active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=operator
-checkpoint before any fresh GC-018/work order for the bounded WS2
-capability-restriction candidate; parked checkpoint=GC010-AER remains
-value-parked and no L1+, design, specification, build, live, provider,
-downstream, public, push, or deployment action is authorized.
+Startup acknowledged: current mode=`governance_latency_ws2_t0_dispatched`;
+active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=one no-commit
+WS2-T0 owner/feasibility audit worker followed by independent review; parked
+checkpoint=GC010-AER remains value-parked and no design, specification, build,
+live, provider, downstream, public, push, or deployment action is authorized.
 
 ## Latest Material Closure
 
@@ -94,15 +93,69 @@ downstream, public, push, or deployment action is authorized.
 
 ## Next Allowed Move
 
-Stop at the operator checkpoint. If the operator explicitly releases WS2, the
-next material action is a fresh GC-018 plus a separate source-verified work
-order for a minimal capability-restriction examination, with independent
-review and cheap-alternative comparison. Gate A alone does not release it.
+Execute the committed WS2-T0 work order with one no-commit documentation worker.
+The worker creates exactly the audit and worker return, uses only local
+read-only source inspection, and stops for independent review. It must not run
+bypass probes or implement any enforcement.
 
 GC010-AER remains value-parked behind its existing four-fact source condition.
 No provider/API call is authorized by this handoff. The earlier operator
 permission for Alibaba live proof belonged to a different QBS tranche and is
 not transferable.
+
+## 2026-08-05 - Governance Latency WS2-T0 Dispatch
+
+Material commit `9296e05ac` opens only the documentation and source-verification
+owner/feasibility audit. Pre-dispatch passed 75/75 and pre-commit passed 83/83.
+Current source confirms an injectable task executor and deterministic stub but
+does not establish technical zero-network isolation. The worker must not commit.
+
+## GC-020 Marker - Governance Latency WS2-T0 Dispatch
+
+This handoff records material parent commit `9296e05ac`. A dedicated
+continuity child may use that parent anchor.
+
+## Core Guard Self-Protection Authorization - WS2-T0 Dispatch Continuity
+
+Authorized guard-maintenance scope: update current mode and next-move routing
+after the accepted WS2-T0 dispatch commit and regenerate active-session JSON.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator instructed continuation, and the committed
+packet bounds that continuation to WS2-T0 documentation execution.
+
+Rollback boundary: revert only this continuity update if dispatch commit
+`9296e05ac` is reverted.
+
+## Agent Operation Trace Block - WS2-T0 Dispatch Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | WS2-T0 dispatch sync, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | dispatch gates, material commit, state generator, continuity patch |
+| Target paths | active handoff, front door, state source and generated views |
+| Allowed scope source | GC-020 after material commit `9296e05ac` |
+| Before status evidence | HEAD `9296e05ac`; clean worktree |
+| After status evidence | WS2-T0 worker execution is the exact next move |
+| Diff evidence | continuity-only changed set and generated-state check |
+| Approval boundary | session routing only |
+| Claim boundary | no implementation, provider, downstream, public, or runtime proof |
+| Agent type | dispatcher/session-sync steward |
+| Invocation ID | `governance-latency-ws2-t0-dispatch-sync-2026-08-05` |
+| Expected manifest | active handoff, front door, state source and generated views |
+| Actual changed set | same after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Boundaries
 
