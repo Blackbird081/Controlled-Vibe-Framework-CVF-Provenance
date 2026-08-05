@@ -95,8 +95,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "workspace_governance_learning_propagation_t3_closed_t4_packet_authoring_ready",
-  "previousMode": "workspace_governance_learning_propagation_t3_worker_dispatched",
+  "currentMode": "workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority",
+  "previousMode": "workspace_governance_learning_propagation_t3_closed_t4_packet_authoring_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GLP-T3 is independently accepted and closed at material commit eae28c785 with PROPAGATION_PROVEN_BOUNDED: one harness call passed 79/79, all 14 expected surfaces were present, private leakage and cleanup residue were zero, and proof-subject provider/network count was zero. The completed worker orchestration is separately disclosed as one provider session, 49 turns, 572.670 seconds, and USD 2.9589262. The next allowed move is source-verified GLP-T4 packet authoring only. GLP-T4 execution, operator-guide mutation, adoption, public-sync/export, provider/network calls, push, deployment, WS2, and GC010-AER remain held. Do not call Claude CLI; if a future Claude handoff is required, prepare a prompt for manual operator copy. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "The paired GLP-T4 adoption-boundary audit packet is committed at 141cc0acd in HOLD_PENDING_OPERATOR_AUTHORITY after author-fast 5/5 and pre-dispatch PASS_75_OF_75. The next allowed move is one explicit operator release of the exact two-output local read-only audit; if Claude is selected, provide the committed work order through manual operator copy only and do not call Claude CLI. No guide/template/script/test/roadmap/session mutation by the worker, no network/provider call by the proof subject, no public-sync mutation, push, deployment, or adoption/public-readiness claim is authorized. Independent reviewer/closer owns acceptance and commits. WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13702,9 +13702,9 @@
     "claimBoundary": "Current-source localhost browser acceptance only; no hosted freshness, deployment, provider, public, or production claim."
   },
   "workspaceGovernanceLearningPropagationRoadmap20260805": {
-    "status": "GLP_T3_REVIEWER_ACCEPTED_PROPAGATION_PROVEN_BOUNDED",
+    "status": "GLP_T4_PACKET_HELD_PENDING_OPERATOR_AUTHORITY",
     "date": "2026-08-05",
-    "materialCommit": "eae28c785",
+    "materialCommit": "141cc0acd",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "PROPAGATION_PROVEN_BOUNDED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -13745,8 +13745,13 @@
     "t3FocusedEvidence": "PASS_79_OF_79",
     "t3ReviewDisposition": "CLOSED_PASS_BOUNDED",
     "t3ProviderDenominators": "proof_subject_0_worker_orchestration_1_session",
-    "nextAllowedMove": "Author a fresh source-verified GLP-T4 closure/adoption-boundary packet only; execution, operator-guide mutation, adoption, public export, provider/network calls, push, and deployment remain held.",
-    "claimBoundary": "GLP-T3 proves bounded local propagation in disposable fixtures only. It does not prove real downstream adoption, production behavior, causal latency reduction, public export, deployment, or runtime governance enforcement. No Claude CLI call is authorized; any future Claude handoff must be prepared for manual operator copy."
+    "t3MaterialCommit": "eae28c785",
+    "t4Baseline": "docs/baselines/CVF_GC018_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_BASELINE_2026-08-05.md",
+    "t4WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_2026-08-05.md",
+    "t4PacketStatus": "HOLD_PENDING_OPERATOR_AUTHORITY",
+    "t4PacketAuthoringGate": "PASS_75_OF_75",
+    "nextAllowedMove": "Operator may release one exact two-output GLP-T4 local read-only audit. If Claude is selected, the operator copies the committed work order manually; Claude CLI remains forbidden.",
+    "claimBoundary": "GLP-T4 packet authoring does not execute the audit, edit any guide/template/script/test/roadmap/session surface, mutate public-sync, call a provider/network from the proof subject, push, deploy, or prove adoption/public readiness."
   },
   "continuousProjectionT0Dispatch20260720": {
     "status": "DISPATCH_READY",

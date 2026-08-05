@@ -2,9 +2,9 @@
   "stateOrder": 2004,
   "stateKey": "workspaceGovernanceLearningPropagationRoadmap20260805",
   "value": {
-    "status": "GLP_T3_REVIEWER_ACCEPTED_PROPAGATION_PROVEN_BOUNDED",
+    "status": "GLP_T4_PACKET_HELD_PENDING_OPERATOR_AUTHORITY",
     "date": "2026-08-05",
-    "materialCommit": "eae28c785",
+    "materialCommit": "141cc0acd",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "PROPAGATION_PROVEN_BOUNDED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -45,7 +45,12 @@
     "t3FocusedEvidence": "PASS_79_OF_79",
     "t3ReviewDisposition": "CLOSED_PASS_BOUNDED",
     "t3ProviderDenominators": "proof_subject_0_worker_orchestration_1_session",
-    "nextAllowedMove": "Author a fresh source-verified GLP-T4 closure/adoption-boundary packet only; execution, operator-guide mutation, adoption, public export, provider/network calls, push, and deployment remain held.",
-    "claimBoundary": "GLP-T3 proves bounded local propagation in disposable fixtures only. It does not prove real downstream adoption, production behavior, causal latency reduction, public export, deployment, or runtime governance enforcement. No Claude CLI call is authorized; any future Claude handoff must be prepared for manual operator copy."
+    "t3MaterialCommit": "eae28c785",
+    "t4Baseline": "docs/baselines/CVF_GC018_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_BASELINE_2026-08-05.md",
+    "t4WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_2026-08-05.md",
+    "t4PacketStatus": "HOLD_PENDING_OPERATOR_AUTHORITY",
+    "t4PacketAuthoringGate": "PASS_75_OF_75",
+    "nextAllowedMove": "Operator may release one exact two-output GLP-T4 local read-only audit. If Claude is selected, the operator copies the committed work order manually; Claude CLI remains forbidden.",
+    "claimBoundary": "GLP-T4 packet authoring does not execute the audit, edit any guide/template/script/test/roadmap/session surface, mutate public-sync, call a provider/network from the proof subject, push, deploy, or prove adoption/public readiness."
   }
 }

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_governance_learning_propagation_t3_closed_t4_packet_authoring_ready",
+  "currentMode": "workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority",
   "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
-  "nextAllowedMove": "GLP-T3 is independently accepted and closed at material commit eae28c785 with PROPAGATION_PROVEN_BOUNDED: one harness call passed 79/79, all 14 expected surfaces were present, private leakage and cleanup residue were zero, and proof-subject provider/network count was zero. The completed worker orchestration is separately disclosed as one provider session, 49 turns, 572.670 seconds, and USD 2.9589262. The next allowed move is source-verified GLP-T4 packet authoring only. GLP-T4 execution, operator-guide mutation, adoption, public-sync/export, provider/network calls, push, deployment, WS2, and GC010-AER remain held. Do not call Claude CLI; if a future Claude handoff is required, prepare a prompt for manual operator copy. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "The paired GLP-T4 adoption-boundary audit packet is committed at 141cc0acd in HOLD_PENDING_OPERATOR_AUTHORITY after author-fast 5/5 and pre-dispatch PASS_75_OF_75. The next allowed move is one explicit operator release of the exact two-output local read-only audit; if Claude is selected, provide the committed work order through manual operator copy only and do not call Claude CLI. No guide/template/script/test/roadmap/session mutation by the worker, no network/provider call by the proof subject, no public-sync mutation, push, deployment, or adoption/public-readiness claim is authorized. Independent reviewer/closer owns acceptance and commits. WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
