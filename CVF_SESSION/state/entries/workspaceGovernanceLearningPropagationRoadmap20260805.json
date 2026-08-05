@@ -2,11 +2,11 @@
   "stateOrder": 2004,
   "stateKey": "workspaceGovernanceLearningPropagationRoadmap20260805",
   "value": {
-    "status": "GLP_T4_PACKET_HELD_PENDING_OPERATOR_AUTHORITY",
-    "date": "2026-08-05",
-    "materialCommit": "141cc0acd",
+    "status": "CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY",
+    "date": "2026-08-06",
+    "materialCommit": "37d241d60",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
-    "decision": "PROPAGATION_PROVEN_BOUNDED",
+    "decision": "DEFERRED_PRIVATE_ONLY",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
     "audit": "docs/audits/CVF_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -48,9 +48,17 @@
     "t3MaterialCommit": "eae28c785",
     "t4Baseline": "docs/baselines/CVF_GC018_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_BASELINE_2026-08-05.md",
     "t4WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_2026-08-05.md",
-    "t4PacketStatus": "HOLD_PENDING_OPERATOR_AUTHORITY",
+    "t4PacketStatus": "CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY",
     "t4PacketAuthoringGate": "PASS_75_OF_75",
-    "nextAllowedMove": "Operator may release one exact two-output GLP-T4 local read-only audit. If Claude is selected, the operator copies the committed work order manually; Claude CLI remains forbidden.",
-    "claimBoundary": "GLP-T4 packet authoring does not execute the audit, edit any guide/template/script/test/roadmap/session surface, mutate public-sync, call a provider/network from the proof subject, push, deploy, or prove adoption/public readiness."
+    "t4Audit": "docs/audits/CVF_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_AUDIT_2026-08-05.md",
+    "t4WorkerReturn": "docs/reviews/CVF_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_WORKER_RETURN_2026-08-05.md",
+    "t4CompletionReview": "docs/reviews/CVF_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_COMPLETION_2026-08-05.md",
+    "t4ReviewDisposition": "ACCEPT_WITH_REVIEWER_CORRECTION",
+    "guideValueDecision": "NO_UPDATE_NEEDED",
+    "publicSyncCloneHead": "a307da84a",
+    "publicCarrierReadout": "PARTIAL_PRESENCE_WITH_DATED_DRIFT",
+    "providerDenominators": "proof_subject_outbound_0_worker_claude_cli_0_host_provider_model_session_UNKNOWN_NOT_EXPOSED",
+    "nextAllowedMove": "No active GLP tranche remains. Reopen public carrier refresh only through an operator-selected separate public-sync packet after confirming the five-semantic block is still absent.",
+    "claimBoundary": "GLP closes bounded in private provenance. No guide mutation, public-sync mutation, provider/network proof call, push, deployment, adoption-complete claim, or public-readiness claim is made."
   }
 }

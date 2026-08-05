@@ -1,5 +1,5 @@
 {
   "stateOrder": 2003,
   "stateKey": "nextAllowedMove",
-  "value": "The paired GLP-T4 adoption-boundary audit packet is committed at 141cc0acd in HOLD_PENDING_OPERATOR_AUTHORITY after author-fast 5/5 and pre-dispatch PASS_75_OF_75. The next allowed move is one explicit operator release of the exact two-output local read-only audit; if Claude is selected, provide the committed work order through manual operator copy only and do not call Claude CLI. No guide/template/script/test/roadmap/session mutation by the worker, no network/provider call by the proof subject, no public-sync mutation, push, deployment, or adoption/public-readiness claim is authorized. Independent reviewer/closer owns acceptance and commits. WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave."
+  "value": "GLP-T4 and the workspace governance learning propagation roadmap are closed bounded at material commit 37d241d60 with DEFERRED_PRIVATE_ONLY. No active GLP tranche remains. The public carrier refresh is value-parked and may reopen only if the operator explicitly selects a separate public-sync refresh packet and the current public carrier still lacks the five-semantic governance-latency block. The operator guide remains NO_UPDATE_NEEDED. WS2 and GC010-AER remain parked and require fresh authority; LHW24 remains the latest closed numbered LHW wave."
 }

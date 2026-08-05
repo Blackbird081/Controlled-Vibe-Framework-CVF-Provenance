@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one operator release of the exact two-output local read-only GLP-T4 audit, with manual copy only if Claude is selected; parked checkpoint=guide/public mutation, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator selection of a fresh high-value lane; parked checkpoint=public carrier refresh, WS2, and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority`
+Current mode marker: `workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
 
-Current mode: `workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority`
+Current mode: `workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
 
-`workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority`
+`workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t3_closed_t4_packet_authoring_ready`
+`workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -396,13 +396,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority`
+Mode: `workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
 
-The GLP-T4 paired audit packet is held at `141cc0acd` after pre-dispatch 75/75.
-One operator release covers the exact two-output local read-only audit. If
-Claude is selected, use manual operator copy only; do not call Claude CLI.
-Guide/public mutation, network/provider proof-subject calls, push, deployment,
-WS2, and GC010-AER remain parked.
+GLP-T4 and the workspace governance learning propagation roadmap are closed
+bounded at material commit `37d241d60` with `DEFERRED_PRIVATE_ONLY`. The guide
+decision is `NO_UPDATE_NEEDED`; the public carrier remains
+`PARTIAL_PRESENCE_WITH_DATED_DRIFT`. No active GLP tranche remains. Reopen the
+public carrier only through an operator-selected separate public-sync packet
+after confirming that the five-semantic block is still absent. WS2 and
+GC010-AER remain parked.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without

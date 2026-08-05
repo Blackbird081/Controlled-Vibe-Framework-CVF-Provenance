@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - GLP T4 Packet Held
+# CVF Agent Handoff V55 - GLP Roadmap Closed Private
 
 Memory class: active-handoff
 
@@ -8,42 +8,43 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `141cc0acd governance: prepare held GLP T4 adoption audit`
-- Active mode: `workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority`
+- Latest material commit: `37d241d60 governance: close GLP T4 adoption boundary`
+- Active mode: `workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
 ## Purpose
 
-Hold the source-verified GLP-T4 local read-only audit packet for one operator
-release while preserving all mutation and external-effect boundaries.
+Record bounded GLP-T4 and roadmap closure while keeping the separate public
+carrier refresh and all unrelated lanes parked.
 
 ## Scope / Target / Owner Boundary
 
-Scope: GLP-T4 held packet and its exact two-output read-only audit boundary.
+Scope: GLP-T4 reviewer closure and terminal GLP roadmap continuity.
 
-Target: one audit and one worker return after explicit release.
+Target: closed private-provenance learning propagation evidence.
 
-Owner boundary: no GLP-T4 execution, operator-guide mutation, adoption,
-public-sync/export, provider/network call, push, or deployment is released.
+Owner boundary: no operator-guide mutation, public-sync/export,
+provider/network proof call, push, deployment, or further GLP execution is
+released.
 
 ## Active Boundary
 
-GLP-T3 is closed at `eae28c785`. The GLP-T4 packet is committed at
-`141cc0acd`, passed pre-dispatch 75/75, and remains held. Execution and all
-mutation/external-effect lanes remain excluded until operator release.
+GLP-T4 and the roadmap are closed bounded at `37d241d60` with
+`DEFERRED_PRIVATE_ONLY`. The guide decision is `NO_UPDATE_NEEDED`; public
+carrier drift remains parked for a separate operator-selected public-sync
+packet.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority`
+`workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one operator
-release of the exact two-output local read-only GLP-T4 audit, using manual copy
-only if Claude is selected; parked checkpoint=guide/public mutation, WS2, and
-GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator
+selection of a fresh high-value lane; parked checkpoint=public carrier refresh,
+WS2, and GC010-AER remain parked.
 
 ## Released Packet
 
@@ -70,10 +71,10 @@ GC010-AER remain parked.
 
 ## Next Allowed Move
 
-Operator may release the committed GLP-T4 packet at `141cc0acd` for exactly one
-local read-only audit and worker return. If Claude is selected, the operator
-copies the work order manually. Do not call Claude CLI or mutate guides,
-public-sync, provider/network, push, or deployment surfaces.
+No active GLP tranche remains. A public carrier refresh may reopen only if the
+operator selects a separate public-sync packet and the current public carrier
+still lacks the five-semantic governance-latency block. WS2 and GC010-AER
+remain parked behind fresh authority.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 
@@ -254,30 +255,30 @@ self-reference exception.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
-## GC-020 Marker - GLP-T4 Held Packet Continuity
+## GC-020 Marker - GLP-T4 And Roadmap Closure Continuity
 
-Material commit `141cc0acd` contains only the paired held GLP-T4 baseline and
-work order. This continuity batch records pre-dispatch 75/75, the single future
-operator checkpoint, and the operator prohibition on Claude CLI.
+Material commit `37d241d60` closes GLP-T4 and the GLP roadmap bounded with
+`DEFERRED_PRIVATE_ONLY`. This continuity batch records the private closure and
+parks the separate public carrier refresh behind a checkable reopen condition.
 
-## Agent Operation Trace Block - GLP-T4 Held Packet Continuity
+## Agent Operation Trace Block - GLP-T4 Roadmap Closure Continuity
 
 | Field | Evidence |
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | GLP-T4 held-packet continuity, 2026-08-05 |
+| Session or invocation | GLP-T4 roadmap closure continuity, 2026-08-06 |
 | Working directory | repository root |
 | Command or tool surface | state-source edit, generator, continuity gates, Git commit |
 | Target paths | active handoff, front door, state source fragments, generated views |
-| Allowed scope source | GC-020 after material packet commit `141cc0acd` |
-| Before status evidence | HEAD `141cc0acd`; clean worktree |
-| After status evidence | T4 packet held pending one operator release |
+| Allowed scope source | GC-020 after material closure commit `37d241d60` |
+| Before status evidence | HEAD `37d241d60`; material closure committed |
+| After status evidence | GLP roadmap closed private; public refresh value-parked |
 | Diff evidence | continuity-only path set |
-| Approval boundary | continuity only |
-| Claim boundary | no worker execution, Claude CLI, guide/public mutation, provider/network call, push, or deployment |
+| Approval boundary | closure continuity only |
+| Claim boundary | no Claude CLI, guide/public mutation, provider/network proof call, push, deployment, or adoption/public-readiness claim |
 | Agent type | session-sync steward |
-| Invocation ID | `glp-t4-held-packet-continuity-2026-08-05` |
+| Invocation ID | `glp-t4-roadmap-closure-continuity-2026-08-06` |
 | Expected manifest | active handoff; front door; state source fragments; generated views |
 | Actual changed set | same continuity-only paths |
 | Manifest delta | MATCH |

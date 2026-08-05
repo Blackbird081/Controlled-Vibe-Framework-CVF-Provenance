@@ -95,8 +95,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority",
-  "previousMode": "workspace_governance_learning_propagation_t3_closed_t4_packet_authoring_ready",
+  "currentMode": "workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked",
+  "previousMode": "workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "The paired GLP-T4 adoption-boundary audit packet is committed at 141cc0acd in HOLD_PENDING_OPERATOR_AUTHORITY after author-fast 5/5 and pre-dispatch PASS_75_OF_75. The next allowed move is one explicit operator release of the exact two-output local read-only audit; if Claude is selected, provide the committed work order through manual operator copy only and do not call Claude CLI. No guide/template/script/test/roadmap/session mutation by the worker, no network/provider call by the proof subject, no public-sync mutation, push, deployment, or adoption/public-readiness claim is authorized. Independent reviewer/closer owns acceptance and commits. WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-T4 and the workspace governance learning propagation roadmap are closed bounded at material commit 37d241d60 with DEFERRED_PRIVATE_ONLY. No active GLP tranche remains. The public carrier refresh is value-parked and may reopen only if the operator explicitly selects a separate public-sync refresh packet and the current public carrier still lacks the five-semantic governance-latency block. The operator guide remains NO_UPDATE_NEEDED. WS2 and GC010-AER remain parked and require fresh authority; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13702,11 +13702,11 @@
     "claimBoundary": "Current-source localhost browser acceptance only; no hosted freshness, deployment, provider, public, or production claim."
   },
   "workspaceGovernanceLearningPropagationRoadmap20260805": {
-    "status": "GLP_T4_PACKET_HELD_PENDING_OPERATOR_AUTHORITY",
-    "date": "2026-08-05",
-    "materialCommit": "141cc0acd",
+    "status": "CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY",
+    "date": "2026-08-06",
+    "materialCommit": "37d241d60",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
-    "decision": "PROPAGATION_PROVEN_BOUNDED",
+    "decision": "DEFERRED_PRIVATE_ONLY",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
     "audit": "docs/audits/CVF_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -13748,10 +13748,18 @@
     "t3MaterialCommit": "eae28c785",
     "t4Baseline": "docs/baselines/CVF_GC018_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_BASELINE_2026-08-05.md",
     "t4WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_2026-08-05.md",
-    "t4PacketStatus": "HOLD_PENDING_OPERATOR_AUTHORITY",
+    "t4PacketStatus": "CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY",
     "t4PacketAuthoringGate": "PASS_75_OF_75",
-    "nextAllowedMove": "Operator may release one exact two-output GLP-T4 local read-only audit. If Claude is selected, the operator copies the committed work order manually; Claude CLI remains forbidden.",
-    "claimBoundary": "GLP-T4 packet authoring does not execute the audit, edit any guide/template/script/test/roadmap/session surface, mutate public-sync, call a provider/network from the proof subject, push, deploy, or prove adoption/public readiness."
+    "t4Audit": "docs/audits/CVF_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_AUDIT_2026-08-05.md",
+    "t4WorkerReturn": "docs/reviews/CVF_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_WORKER_RETURN_2026-08-05.md",
+    "t4CompletionReview": "docs/reviews/CVF_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_COMPLETION_2026-08-05.md",
+    "t4ReviewDisposition": "ACCEPT_WITH_REVIEWER_CORRECTION",
+    "guideValueDecision": "NO_UPDATE_NEEDED",
+    "publicSyncCloneHead": "a307da84a",
+    "publicCarrierReadout": "PARTIAL_PRESENCE_WITH_DATED_DRIFT",
+    "providerDenominators": "proof_subject_outbound_0_worker_claude_cli_0_host_provider_model_session_UNKNOWN_NOT_EXPOSED",
+    "nextAllowedMove": "No active GLP tranche remains. Reopen public carrier refresh only through an operator-selected separate public-sync packet after confirming the five-semantic block is still absent.",
+    "claimBoundary": "GLP closes bounded in private provenance. No guide mutation, public-sync mutation, provider/network proof call, push, deployment, adoption-complete claim, or public-readiness claim is made."
   },
   "continuousProjectionT0Dispatch20260720": {
     "status": "DISPATCH_READY",
