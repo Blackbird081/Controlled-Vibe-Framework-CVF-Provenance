@@ -8,7 +8,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `0f2fc9c9d governance: close latency WS2 T0 owner audit`
+- Latest material commit: `052e548bc governance: align latency WS2 T0 closure continuity`
 - Active mode: `governance_latency_ws2_t0_closed_foundation_parked`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
@@ -159,6 +159,41 @@ Rollback boundary: revert only this continuity update if material commit
 | Invocation ID | `governance-latency-ws2-t0-closure-sync-2026-08-05` |
 | Expected manifest | active handoff, front door, state source and generated views |
 | Actual changed set | same after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## 2026-08-05 - WS2-T0 Final Closure Anchor
+
+Material correction commit `052e548bc` replaces three stale draft phrases in
+the completion review with the accepted bounded closure and continuity facts.
+It changes no decision, source evidence, registry content, runtime, or
+authority boundary.
+
+## GC-020 Marker - WS2-T0 Final Closure Anchor
+
+This handoff-only update records material parent commit `052e548bc` and is
+restricted to `AGENT_HANDOFF_V54_2026-08-05.md`.
+
+## Agent Operation Trace Block - WS2-T0 Final Closure Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | WS2-T0 final closure anchor, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | handoff-only continuity anchor |
+| Target paths | `AGENT_HANDOFF_V54_2026-08-05.md` |
+| Allowed scope source | GC-020 after material correction commit `052e548bc` |
+| Before status evidence | HEAD `052e548bc`; clean worktree |
+| After status evidence | active handoff contains the final material correction SHA |
+| Diff evidence | one handoff file only |
+| Approval boundary | continuity anchoring only |
+| Claim boundary | no expanded authority or execution |
+| Agent type | session-sync steward |
+| Invocation ID | `governance-latency-ws2-t0-final-closure-anchor-2026-08-05` |
+| Expected manifest | active handoff only |
+| Actual changed set | active handoff only |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
