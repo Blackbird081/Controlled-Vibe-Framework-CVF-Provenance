@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready`; active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=author a fresh source-verified GC-018 baseline and work order for bounded GLP-T2 only; parked checkpoint=GLP-T2 implementation requires explicit authority after packet review, while WS2 and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`; active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=operator reviews and explicitly releases or rejects bounded GLP-T2 implementation; parked checkpoint=GLP-T2 implementation authority, while WS2 and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready`
+Current mode marker: `workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
 
-Current mode: `workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready`
+Current mode: `workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
 
-`workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready`
+`workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t1_r1_worker_redispatched`
+`workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GLP-T2 held implementation packet | `28318bdf8` | `HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY`; source-verified baseline/work order pass pre-dispatch 75/75. Exact future worker scope is template, golden harness, and worker return; no implementation released. |
 | GLP-T1 carrier design acceptance | `87febcba9` | `REVIEWER_ACCEPTED_WITH_CORRECTIONS`; decision `CARRIER_DESIGN_ACCEPTED`; downstream AGENTS template selected with the existing golden bootstrap harness as focused test owner. GLP-T2 packet authoring only is next. |
 | GLP-T1 R1 consumer-chain repair redispatch | `5bd73529b` | `REVIEW_CHANGES_REQUIRED_R1`; copied rule-pack guidance was incorrectly treated as mandatory project consumption. Same worker revises only the existing audit and return; no implementation or external action. |
 | GLP-T1 smallest-safe-carrier design dispatch | `cc5c51ee7` | `DISPATCH_READY`; one independent no-commit documentation worker compares three distributed existing owners with one compact carrier candidate; no carrier/catalog/profile/template/bootstrap implementation or external effect. |
@@ -391,15 +392,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready`
+Mode: `workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
 
-GLP-T1 is independently accepted with corrections at material commit
-`87febcba9`, decision `CARRIER_DESIGN_ACCEPTED`. Author a fresh source-verified
-GC-018 baseline and work order for bounded GLP-T2 using only the downstream
-AGENTS template and the existing golden downstream bootstrap harness as the
-designed implementation/test manifest. GLP-T2 implementation remains held
-until that packet passes dispatch review and explicit implementation authority
-is recorded. WS2 and GC010-AER remain parked.
+GLP-T2 baseline and work order are committed at `28318bdf8` and pass
+pre-dispatch 75/75, but remain `HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY`. The
+operator now reviews and explicitly releases or rejects bounded implementation.
+No worker execution, template/test edit, disposable workspace run, public sync,
+provider/network use, push, or deployment is released. WS2 and GC010-AER
+remain parked.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without

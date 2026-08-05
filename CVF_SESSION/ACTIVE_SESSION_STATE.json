@@ -94,8 +94,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready",
-  "previousMode": "workspace_governance_learning_propagation_t1_r1_worker_redispatched",
+  "currentMode": "workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority",
+  "previousMode": "workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13689,7 +13689,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GLP-T1 is independently accepted with corrections at material commit 87febcba9 with decision CARRIER_DESIGN_ACCEPTED and carrier governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md. The next allowed move is fresh GC-018 baseline and work-order packet authoring for bounded GLP-T2 only, using the exact two-path design manifest: the downstream template and scripts/test_cvf_golden_downstream_bootstrap.ps1. GLP-T2 implementation remains held pending a fresh source-verified packet, successful dispatch gates, and explicit implementation authority. No template/test implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "The source-verified GLP-T2 GC-018 baseline and work order are committed at 28318bdf8 and pass the full pre-dispatch gate, but remain HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY. The next allowed move is operator review and explicit release or rejection of bounded GLP-T2 implementation. If released, refresh the dependency row and dispatch base, rerun pre-dispatch on the release range, then assign one no-commit worker to exactly the downstream AGENTS template, golden downstream bootstrap harness, and worker return. No implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is currently released. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13701,9 +13701,9 @@
     "claimBoundary": "Current-source localhost browser acceptance only; no hosted freshness, deployment, provider, public, or production claim."
   },
   "workspaceGovernanceLearningPropagationRoadmap20260805": {
-    "status": "GLP_T1_REVIEWER_ACCEPTED_CARRIER_DESIGN_ACCEPTED",
+    "status": "GLP_T2_PACKET_READY_HELD_OPERATOR_IMPLEMENTATION_AUTHORITY",
     "date": "2026-08-05",
-    "materialCommit": "87febcba9",
+    "materialCommit": "28318bdf8",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "CARRIER_DESIGN_ACCEPTED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -13719,7 +13719,11 @@
       "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
       "scripts/test_cvf_golden_downstream_bootstrap.ps1"
     ],
-    "nextAllowedMove": "Author a fresh source-verified GC-018 baseline and work order for bounded GLP-T2; implementation remains held.",
+    "t2Baseline": "docs/baselines/CVF_GC018_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_BASELINE_2026-08-05.md",
+    "t2WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_2026-08-05.md",
+    "t2PacketStatus": "HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY",
+    "t2PreDispatch": "PASS_75_OF_75",
+    "nextAllowedMove": "Operator reviews and explicitly releases or rejects bounded GLP-T2 implementation.",
     "claimBoundary": "No template/test implementation, bootstrap mutation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released."
   },
   "continuousProjectionT0Dispatch20260720": {

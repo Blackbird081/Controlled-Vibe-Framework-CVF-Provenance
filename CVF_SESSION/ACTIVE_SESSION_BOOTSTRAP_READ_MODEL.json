@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready",
+  "currentMode": "workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority",
   "activeHandoff": "AGENT_HANDOFF_V54_2026-08-05.md",
-  "nextAllowedMove": "GLP-T1 is independently accepted with corrections at material commit 87febcba9 with decision CARRIER_DESIGN_ACCEPTED and carrier governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md. The next allowed move is fresh GC-018 baseline and work-order packet authoring for bounded GLP-T2 only, using the exact two-path design manifest: the downstream template and scripts/test_cvf_golden_downstream_bootstrap.ps1. GLP-T2 implementation remains held pending a fresh source-verified packet, successful dispatch gates, and explicit implementation authority. No template/test implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "The source-verified GLP-T2 GC-018 baseline and work order are committed at 28318bdf8 and pass the full pre-dispatch gate, but remain HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY. The next allowed move is operator review and explicit release or rejection of bounded GLP-T2 implementation. If released, refresh the dependency row and dispatch base, rerun pre-dispatch on the release range, then assign one no-commit worker to exactly the downstream AGENTS template, golden downstream bootstrap harness, and worker return. No implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is currently released. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

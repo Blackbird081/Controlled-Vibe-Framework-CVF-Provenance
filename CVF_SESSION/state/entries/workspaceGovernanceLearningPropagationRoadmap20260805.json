@@ -2,9 +2,9 @@
   "stateOrder": 2004,
   "stateKey": "workspaceGovernanceLearningPropagationRoadmap20260805",
   "value": {
-    "status": "GLP_T1_REVIEWER_ACCEPTED_CARRIER_DESIGN_ACCEPTED",
+    "status": "GLP_T2_PACKET_READY_HELD_OPERATOR_IMPLEMENTATION_AUTHORITY",
     "date": "2026-08-05",
-    "materialCommit": "87febcba9",
+    "materialCommit": "28318bdf8",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "CARRIER_DESIGN_ACCEPTED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -20,7 +20,11 @@
       "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
       "scripts/test_cvf_golden_downstream_bootstrap.ps1"
     ],
-    "nextAllowedMove": "Author a fresh source-verified GC-018 baseline and work order for bounded GLP-T2; implementation remains held.",
+    "t2Baseline": "docs/baselines/CVF_GC018_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_BASELINE_2026-08-05.md",
+    "t2WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_2026-08-05.md",
+    "t2PacketStatus": "HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY",
+    "t2PreDispatch": "PASS_75_OF_75",
+    "nextAllowedMove": "Operator reviews and explicitly releases or rejects bounded GLP-T2 implementation.",
     "claimBoundary": "No template/test implementation, bootstrap mutation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released."
   }
 }

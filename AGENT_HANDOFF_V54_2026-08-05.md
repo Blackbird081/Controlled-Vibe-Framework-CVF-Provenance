@@ -1,4 +1,4 @@
-# CVF Agent Handoff V54 - GLP T1 Accepted, T2 Packet Authoring Ready
+# CVF Agent Handoff V54 - GLP T2 Packet Ready, Implementation Held
 
 Memory class: active-handoff
 
@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `87febcba9 governance: accept GLP T1 carrier design`
-- Active mode: `workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready`
+- Latest material commit: `28318bdf8 governance: prepare held GLP T2 implementation packet`
+- Active mode: `workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -20,43 +20,42 @@ workspace propagation audit while preserving the parked WS2 boundary.
 
 ## Scope / Target / Owner Boundary
 
-Scope: continuity after GLP-T1 R1 independent acceptance with corrections.
+Scope: continuity after source-verified GLP-T2 packet authoring.
 
-Target: fresh GC-018 baseline and work-order packet authoring for bounded
-GLP-T2 only.
+Target: operator review and explicit release or rejection of bounded GLP-T2
+implementation.
 
-Owner boundary: orchestrator may author the T2 packet; template/test
-implementation remains held pending explicit authority and dispatch review.
+Owner boundary: operator owns implementation release. No worker is dispatched
+while the packet remains held.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready`
+`workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
 
 ## Active Boundary
 
-GLP-T1 is independently accepted at `87febcba9` with decision
-`CARRIER_DESIGN_ACCEPTED`. The selected carrier is the downstream AGENTS
-template; the existing golden downstream bootstrap harness is the focused test
-owner. Only T2 packet authoring is released. GLP-T2 implementation and all
-external lanes remain outside current scope.
+GLP-T2 baseline and work order are committed at `28318bdf8` and pass the full
+pre-dispatch gate. They remain `HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY`. The
+future worker scope is exactly the downstream AGENTS template, golden bootstrap
+harness, and worker return; implementation and all external lanes remain held.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready`;
-active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=author the
-fresh source-verified GLP-T2 baseline and work order only; parked checkpoint=
-GLP-T2 implementation requires explicit authority after packet review, while
-WS2 and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`;
+active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=operator
+reviews and explicitly releases or rejects bounded GLP-T2 implementation;
+parked checkpoint=GLP-T2 implementation authority, while WS2 and GC010-AER
+remain parked.
 
 ## Latest Material Work
 
-- Batch: `GLP-T1`
-- Material commit: `87febcba9`
-- Status: `REVIEWER_ACCEPTED_WITH_CORRECTIONS`
+- Batch: `GLP-T2`
+- Material commit: `28318bdf8`
+- Status: `HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY`
 - Baseline:
-  `docs/baselines/CVF_GC018_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_2026-08-05.md`
+  `docs/baselines/CVF_GC018_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_BASELINE_2026-08-05.md`
 - Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_2026-08-05.md`
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_2026-08-05.md`
 
 ## Latest Work / Changes
 
@@ -89,11 +88,51 @@ WS2 and GC010-AER remain parked.
 
 ## Next Allowed Move
 
-Author a fresh source-verified GC-018 baseline and work order for bounded
-GLP-T2 only. The designed changed set is the downstream AGENTS template plus
-the existing golden downstream bootstrap harness. Implementation, generated
-workspace or project mutation, public sync, provider/network use, push, and
-deployment remain unauthorized.
+Operator reviews and explicitly releases or rejects the held GLP-T2 packet.
+If released, the dispatcher refreshes dependency/base evidence and reruns
+pre-dispatch before assigning one no-commit worker. No implementation,
+generated workspace/project mutation, public sync, provider/network use, push,
+or deployment is currently authorized.
+
+## GC-020 Marker - GLP-T2 Held Packet Continuity
+
+This continuity update records material packet commit `28318bdf8` and routes
+only operator implementation-release review.
+
+## Core Guard Self-Protection Authorization - GLP-T2 Held Packet Continuity
+
+Authorized guard-maintenance scope: synchronize active mode, next move, GLP
+state, generated session aggregates, front door, and active handoff after
+material packet commit `28318bdf8`.
+
+Operator authorization: packet-authoring continuation under the accepted GLP
+roadmap; no implementation authority is introduced.
+
+Rollback boundary: revert only this continuity batch if material commit
+`28318bdf8` is reverted.
+
+## Agent Operation Trace Block - GLP-T2 Held Packet Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | GLP-T2 held packet continuity, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | packet authoring, pre-dispatch gate, material commit, state generation, continuity gates |
+| Target paths | active handoff, front door, GLP state fragments, generated active-session views |
+| Allowed scope source | GC-020 after material packet commit `28318bdf8` |
+| Before status evidence | HEAD `28318bdf8`; clean worktree |
+| After status evidence | operator implementation-release review is the exact next move |
+| Diff evidence | continuity-only changed set from `git diff --name-status` |
+| Approval boundary | operator release review only; no worker dispatch |
+| Claim boundary | no implementation, downstream/public mutation, provider use, push, or deployment |
+| Agent type | dispatcher/session-sync steward |
+| Invocation ID | `glp-t2-held-packet-continuity-2026-08-05` |
+| Expected manifest | active handoff; front door; GLP state fragments; generated active-session views |
+| Actual changed set | active handoff; front door; GLP state fragments; generated active-session views |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## GC-020 Marker - GLP-T1 Acceptance Continuity
 
