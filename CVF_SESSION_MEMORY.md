@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=source-verified GLP-T3 packet authoring only; parked checkpoint=GLP-T3 execution, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=explicit operator release of the held GLP-T3 execution packet; parked checkpoint=GLP-T3 execution, WS2, and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
+Current mode marker: `workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
 
-Current mode: `workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
+Current mode: `workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
 
-`workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
+`workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t2r1_worker_dispatched`
+`workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GLP-T3 disposable propagation-proof packet | `5744b7c10` | `HOLD_PENDING_OPERATOR_AUTHORITY`; exact two-output, one-harness-call, zero-network proof packet passed authoring pre-dispatch 75/75. Execution requires explicit release. |
 | GLP-T2R1 merge-repair closure | `f59457b9a` | `CLOSED_PASS_BOUNDED`; byte-preserving insertion/refresh, malformed-marker fail-close, compact five-rule carrier, focused harness 79/79. GLP-T3 packet authoring only is next. |
 | GLP-T1 carrier design acceptance | `87febcba9` | `REVIEWER_ACCEPTED_WITH_CORRECTIONS`; decision `CARRIER_DESIGN_ACCEPTED`; downstream AGENTS template selected with the existing golden bootstrap harness as focused test owner. GLP-T2 packet authoring only is next. |
 | GLP-T1 R1 consumer-chain repair redispatch | `5bd73529b` | `REVIEW_CHANGES_REQUIRED_R1`; copied rule-pack guidance was incorrectly treated as mandatory project consumption. Same worker revises only the existing audit and return; no implementation or external action. |
@@ -392,13 +393,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
+Mode: `workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
 
-GLP-T2R1 is independently closed bounded at `f59457b9a`; the focused harness
-passes 79/79 and the completion review preserves the local-only claim boundary.
-The next move is source-verified GLP-T3 GC-018/work-order packet authoring only.
-GLP-T3 execution, persistent workspace/downstream mutation, public sync,
-provider/network use, push, deployment, WS2, and GC010-AER remain parked.
+The GLP-T3 proof packet is committed at `5744b7c10` with authoring pre-dispatch
+75/75 and remains `HOLD_PENDING_OPERATOR_AUTHORITY`. The next move requires an
+explicit operator release before anchors/status are refreshed and one
+independent no-commit proof worker is dispatched. Harness execution, persistent
+workspace/downstream mutation, public sync, provider/network use, push,
+deployment, WS2, and GC010-AER remain parked.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without
