@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY
+Status: REVIEWER_ACCEPTED_DISPATCH_READY
 
 docType: baseline
 
@@ -10,7 +10,7 @@ Date: 2026-08-05
 
 Batch ID: GLP-T2R1
 
-dispatchBaseHead: `7cdc72393`
+dispatchBaseHead: `ff27d9904`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -24,8 +24,7 @@ Worker target: bounded CP1 merge-repair implementation worker
 
 Define the exact R2 repair boundary after GLP-T2 proved that CP1 rewrites the
 complete hand-edited `AGENTS.md` and cannot preserve outside-block bytes. This
-baseline authorizes packet review only until the operator explicitly releases
-implementation.
+baseline now records the operator release for one bounded no-commit worker.
 
 ## Source / Predecessor Evidence
 
@@ -38,10 +37,10 @@ implementation.
 
 ## Baseline Decision
 
-Decision: `HOLD_GLP_T2R1_OPERATOR_IMPLEMENTATION_AUTHORITY`.
+Decision: `RELEASE_GLP_T2R1_BOUNDED_IMPLEMENTATION`.
 
-The repair candidate is source-backed and bounded. No implementation is
-released until the operator explicitly confirms this new bootstrap scope.
+The repair candidate is source-backed, bounded, and explicitly released for
+one no-commit implementation worker.
 
 ## Authorization / Dependency Gate
 
@@ -51,11 +50,10 @@ released until the operator explicitly confirms this new bootstrap scope.
 | canonical carrier | `governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md` | ACCEPT |
 | focused test owner | `scripts/test_cvf_golden_downstream_bootstrap.ps1` | ACCEPT |
 | CP1 repair owner | `scripts/new-cvf-workspace.ps1` lines 342-388 | ACCEPT |
-| implementation authority | no operator confirmation for expanded bootstrap scope | REQUIRED |
+| implementation authority | operator confirmation on 2026-08-05 for the explicit GLP-T2R1 release checkpoint | ACCEPT |
 
-Packet authoring is released by current continuity. Worker dispatch remains
-held until the authority row becomes `ACCEPT`, the base is refreshed, and the
-full pre-dispatch gate passes on that release range.
+Worker dispatch is bounded by the exact paths, byte contract, R2 ceiling,
+external-effect class, and commit-owner controls in this packet.
 
 ## Scope / Target / Owner Boundary
 
@@ -102,7 +100,7 @@ No live/provider proof is required.
 | manualEditsAfterScaffold | adapted the accepted GLP-T2 packet to the source-proven CP1 contradiction, exact three-source implementation manifest, authority hold, byte contract, and hermetic proof contract |
 | checkerReadAheadConfirmation | dispatch-quality, ADIF disclosure, handoff-boundary, worker-return, public-disposition, trace, dual-surface, file-size, and roadmap-freshness checkers/standards |
 | docOnlyNewFields | bytePreservingMergeContract; carrierSection; privateEvidenceSentinels; hermeticProofMatrix |
-| claimBoundary | held dispatch baseline only; no template, test, bootstrap, workspace, project, public-sync, provider, network, or runtime mutation |
+| claimBoundary | released dispatch baseline only; no implementation has yet occurred and no workspace, project, public-sync, provider, network, or runtime mutation is claimed |
 
 ## Source Verification Block
 
@@ -238,9 +236,9 @@ narrowed, or blocked; gate success alone is not semantic proof.
 | Target paths | this baseline and paired work order |
 | Allowed scope source | GLP roadmap plus blocked T2 review at `071866e7b`; current continuity authorizes documentation-only repair packet authoring |
 | Before status evidence | HEAD `7cdc72393`; clean worktree |
-| After status evidence | paired packet remains held for operator implementation authority |
+| After status evidence | paired packet is ready for one bounded no-commit worker |
 | Diff evidence | `git diff --name-status` limited to paired packet paths |
-| Approval boundary | packet authoring only; no GLP-T2R1 implementation dispatch |
+| Approval boundary | bounded GLP-T2R1 implementation dispatch only |
 | Claim boundary | no implementation, external effect, public sync, provider/network use, push, or deployment |
 | Agent type | dispatcher |
 | Invocation ID | `glp-t2r1-repair-packet-authoring-2026-08-05` |
@@ -253,7 +251,7 @@ narrowed, or blocked; gate success alone is not semantic proof.
 
 | Field | Disposition |
 |---|---|
-| claimScope | held packet definition for CP1 byte-preserving merge repair, carrier, and hermetic proof |
+| claimScope | released packet definition for CP1 byte-preserving merge repair, carrier, and hermetic proof |
 | claimDisposition | N/A with reason: no implementation or runtime execution in this baseline |
 | receiptEvidence | N/A with reason: no runtime receipt is created |
 | actionEvidence | N/A with reason: no implementation action is executed |
@@ -271,6 +269,6 @@ this private provenance packet neither edits them nor authorizes public sync.
 
 ## Claim Boundary
 
-This baseline establishes one held, source-verified GLP-T2R1 repair contract.
-It does not release or implement the repair, mutate a workspace/project, prove
+This baseline establishes and releases one source-verified GLP-T2R1 repair
+contract. It does not itself implement the repair, mutate a workspace/project, prove
 propagation, publish, call a provider, use the network, push, or deploy.

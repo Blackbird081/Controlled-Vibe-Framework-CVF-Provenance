@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY
+Status: REVIEWER_ACCEPTED_DISPATCH_READY
 
 docType: work_order
 
@@ -10,7 +10,7 @@ Date: 2026-08-05
 
 Batch ID: GLP-T2R1
 
-dispatchBaseHead: `7cdc72393`
+dispatchBaseHead: `ff27d9904`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
@@ -29,8 +29,8 @@ Paired baseline: `docs/baselines/CVF_GC018_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_RE
 Current-time notes: authored from clean provenance HEAD `7cdc72393` after
 GLP-T2 was independently blocked at material commit `071866e7b`.
 
-Do-not-misread notes: this is a held repair packet, not an implementation
-dispatch. After explicit release it permits only the exact CP1/template/harness
+Do-not-misread notes: this is one bounded implementation dispatch. It permits
+only the exact CP1/template/harness
 manifest; public sync, provider/network use, and worker commit remain forbidden.
 
 Required first actions after release: complete startup acknowledgment; capture
@@ -53,9 +53,9 @@ carrier and prove the full projection chain hermetically.
 
 | Authority layer | Evidence | Disposition |
 |---|---|---|
-| operator roadmap authority | accepted GLP roadmap and continuity next move | packet authoring only |
+| operator roadmap authority | accepted GLP roadmap and explicit GLP-T2R1 release confirmation | bounded implementation dispatch |
 | repair evidence | GLP-T2 blocked review at `071866e7b` | ACCEPT |
-| implementation authority | operator has not authorized expanded CP1 bootstrap scope | REQUIRED |
+| implementation authority | operator confirmation on 2026-08-05 for the explicit GLP-T2R1 checkpoint | ACCEPT |
 | review/commit authority | independent reviewer/closer after worker return | ACCEPT |
 
 ## Agent Roles
@@ -130,9 +130,9 @@ continuity. `WORKER_MUST_NOT_COMMIT` is binding.
 | GLP-T2 blocked review | `docs/reviews/CVF_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_COMPLETION_2026-08-05.md`; commit `071866e7b`; `BLOCKED_IMPLEMENTATION_EVIDENCE` | ACCEPT |
 | exact repair/carrier/test manifest | paired GC-018 Source Verification and Hermetic Proof Matrix | ACCEPT |
 | clean packet anchor | HEAD `7cdc72393`; `git status --short` empty | ACCEPT |
-| operator implementation authority | expanded CP1 bootstrap scope not yet confirmed | REQUIRED |
+| operator implementation authority | operator confirmation on 2026-08-05 for expanded CP1 bootstrap scope | ACCEPT |
 
-The evidence rows are source-backed. The authority row keeps dispatch held.
+All dependency rows are source-backed and released for this bounded dispatch.
 
 ## Scope / Allowed Paths
 
@@ -385,7 +385,7 @@ Fail conditions:
 | public/private boundary | roadmap protected controls | exact included/excluded semantics and sentinel tests | PASS |
 | project ownership | roadmap protected controls | generated project `AGENTS.md` remains the consumer | PASS |
 | latency control | roadmap protected controls | five-rule carrier; no repeated worker checkpoints | PASS |
-| explicit implementation release | new CP1 scope requires fresh operator confirmation | held authority row | HOLD |
+| explicit implementation release | operator confirmation on 2026-08-05 | bounded worker dispatch only | PASS |
 
 ## Dual Agent Surface Matrix
 
@@ -424,7 +424,7 @@ Contract source: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | dispatcher -> no-commit implementation worker -> independent reviewer/closer -> session-sync steward |
 | phase | DISPATCH_AUTHORING, EXECUTION, CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatchBaseHead=7cdc72393; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=ff27d9904; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
 | changedSetScope(phase) | dispatch=paired packets; execution=three source/test paths plus worker return; closure=accepted worker paths and bounded reviewer repairs; session sync=canonical continuity only |
 | traceScope(phase, actor) | each actor records phase-local trace and exact changed set |
 | commitOwner(phase) | dispatcher commits packets; worker must not commit; reviewer commits accepted material; steward commits continuity |
@@ -477,7 +477,7 @@ No-Commit Statement. Conditional non-applicable sections must use explicit
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_roadmap_closure_freshness.py` |
 | literalTokensReviewed | exact source dispositions and claim types; handoff route fields; worker-return contract terms; trace labels; public-export tokens; checklist residue; split material/session closure ranges |
-| gateRunPurpose | confirmation evidence for held packet fidelity before operator review; not first discovery of worker requirements |
+| gateRunPurpose | confirmation evidence for released packet fidelity before worker dispatch; not first discovery of worker requirements |
 | claimBoundary | packet/readiness structure only; semantic implementation still requires worker evidence and independent review |
 
 ## Agent Operation Trace Block
@@ -492,9 +492,9 @@ No-Commit Statement. Conditional non-applicable sections must use explicit
 | Target paths | paired GLP-T2R1 baseline and work order |
 | Allowed scope source | GLP roadmap and blocked T2 review at `071866e7b`; continuity authorizes documentation-only repair packet authoring |
 | Before status evidence | HEAD `7cdc72393`; clean worktree |
-| After status evidence | paired packet held for explicit operator implementation authority |
+| After status evidence | paired packet ready for one bounded no-commit worker |
 | Diff evidence | `git diff --name-status` limited to paired packet paths |
-| Approval boundary | packet authoring only; no GLP-T2R1 implementation dispatch |
+| Approval boundary | bounded GLP-T2R1 implementation dispatch only |
 | Claim boundary | no implementation, workspace/project mutation, public sync, provider/network use, push, or deployment |
 | Agent type | dispatcher |
 | Invocation ID | `glp-t2r1-work-order-authoring-2026-08-05` |
@@ -508,7 +508,7 @@ No-Commit Statement. Conditional non-applicable sections must use explicit
 | Field | Disposition |
 |---|---|
 | claimScope | future bounded CP1 repair, carrier, and hermetic-test implementation |
-| claimDisposition | N/A with reason: held work order has not executed |
+| claimDisposition | N/A with reason: dispatch-ready work order has not executed |
 | receiptEvidence | N/A with reason: no runtime receipt is created |
 | actionEvidence | N/A with reason: no implementation action has occurred |
 | invocationBoundary | future local source/test edits and hermetic temp fixture only |
@@ -578,11 +578,10 @@ clean worktree.
 
 ## Operator Checkpoint
 
-The prior GLP-T2 confirmation did not authorize bootstrap mutation. GLP-T2R1
-therefore remains held until the operator explicitly releases the expanded CP1
-scope. After that release, dependent same-scope repairs require no repeated
-confirmation while objective, paths, R2 ceiling, external-effect class, and
-commit owner remain unchanged.
+The operator explicitly authorized the expanded GLP-T2R1 CP1 scope on
+2026-08-05. Dependent same-scope repairs require no repeated confirmation while
+objective, paths, R2 ceiling, external-effect class, and commit owner remain
+unchanged.
 
 ## Closure Checklist
 
@@ -604,7 +603,7 @@ network/provider need, or any scope beyond the four worker-owned paths.
 
 ## Claim Boundary
 
-This work order defines but does not dispatch one bounded no-commit GLP-T2R1
-worker. It does not release bootstrap implementation, authorize broader
+This work order dispatches one bounded no-commit GLP-T2R1 worker. It does not
+authorize broader
 workspace/project mutation, prove real-world adoption, publish, call a
 provider, use the network, push, or deploy.
