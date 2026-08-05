@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V54_2026-08-05.md",
+  "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
@@ -87,15 +87,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V50_2026-07-22.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V51_2026-07-22.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V52_2026-07-25.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V53_2026-07-26.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V53_2026-07-26.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V54_2026-08-05.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority",
-  "previousMode": "workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready",
+  "currentMode": "workspace_governance_learning_propagation_t2_worker_dispatched",
+  "previousMode": "workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13689,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "The source-verified GLP-T2 GC-018 baseline and work order are committed at 28318bdf8 and pass the full pre-dispatch gate, but remain HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY. The next allowed move is operator review and explicit release or rejection of bounded GLP-T2 implementation. If released, refresh the dependency row and dispatch base, rerun pre-dispatch on the release range, then assign one no-commit worker to exactly the downstream AGENTS template, golden downstream bootstrap harness, and worker return. No implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is currently released. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "The source-verified GLP-T2 GC-018 baseline and work order were released and committed at 0fdf767c8 after pre-dispatch PASS_75_OF_75. The next allowed move is one independent no-commit worker executing exactly the downstream AGENTS template, golden downstream bootstrap harness, and worker return, then returning COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. An independent reviewer/closer owns acceptance and commit decisions. No generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13701,9 +13702,9 @@
     "claimBoundary": "Current-source localhost browser acceptance only; no hosted freshness, deployment, provider, public, or production claim."
   },
   "workspaceGovernanceLearningPropagationRoadmap20260805": {
-    "status": "GLP_T2_PACKET_READY_HELD_OPERATOR_IMPLEMENTATION_AUTHORITY",
+    "status": "GLP_T2_WORKER_DISPATCHED",
     "date": "2026-08-05",
-    "materialCommit": "28318bdf8",
+    "materialCommit": "0fdf767c8",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
     "decision": "CARRIER_DESIGN_ACCEPTED",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
@@ -13721,10 +13722,10 @@
     ],
     "t2Baseline": "docs/baselines/CVF_GC018_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_BASELINE_2026-08-05.md",
     "t2WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_2026-08-05.md",
-    "t2PacketStatus": "HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY",
+    "t2PacketStatus": "REVIEWER_ACCEPTED_DISPATCH_READY",
     "t2PreDispatch": "PASS_75_OF_75",
-    "nextAllowedMove": "Operator reviews and explicitly releases or rejects bounded GLP-T2 implementation.",
-    "claimBoundary": "No template/test implementation, bootstrap mutation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released."
+    "nextAllowedMove": "One independent no-commit worker executes the exact three-path GLP-T2 manifest and returns for independent review.",
+    "claimBoundary": "Only the template, focused golden harness, and worker return are released. No generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized."
   },
   "continuousProjectionT0Dispatch20260720": {
     "status": "DISPATCH_READY",

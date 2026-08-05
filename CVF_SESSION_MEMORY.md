@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V54_2026-08-05.md`
+4. `AGENT_HANDOFF_V55_2026-08-05.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V54_2026-08-05.md` |
+| Active handoff | `AGENT_HANDOFF_V55_2026-08-05.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`; active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=operator reviews and explicitly releases or rejects bounded GLP-T2 implementation; parked checkpoint=GLP-T2 implementation authority, while WS2 and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2_worker_dispatched`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit worker executes the exact GLP-T2 three-path manifest and returns for independent review; parked checkpoint=WS2 and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
+Current mode marker: `workspace_governance_learning_propagation_t2_worker_dispatched`
 
-Current mode: `workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
+Current mode: `workspace_governance_learning_propagation_t2_worker_dispatched`
 
-`workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
+`workspace_governance_learning_propagation_t2_worker_dispatched`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t1_closed_t2_packet_authoring_ready`
+`workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,7 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
-| GLP-T2 held implementation packet | `28318bdf8` | `HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY`; source-verified baseline/work order pass pre-dispatch 75/75. Exact future worker scope is template, golden harness, and worker return; no implementation released. |
+| GLP-T2 implementation release | `0fdf767c8` | `REVIEWER_ACCEPTED_DISPATCH_READY`; source-verified packet passes pre-dispatch 75/75. One no-commit worker owns the exact template, golden harness, and worker-return manifest. |
 | GLP-T1 carrier design acceptance | `87febcba9` | `REVIEWER_ACCEPTED_WITH_CORRECTIONS`; decision `CARRIER_DESIGN_ACCEPTED`; downstream AGENTS template selected with the existing golden bootstrap harness as focused test owner. GLP-T2 packet authoring only is next. |
 | GLP-T1 R1 consumer-chain repair redispatch | `5bd73529b` | `REVIEW_CHANGES_REQUIRED_R1`; copied rule-pack guidance was incorrectly treated as mandatory project consumption. Same worker revises only the existing audit and return; no implementation or external action. |
 | GLP-T1 smallest-safe-carrier design dispatch | `cc5c51ee7` | `DISPATCH_READY`; one independent no-commit documentation worker compares three distributed existing owners with one compact carrier candidate; no carrier/catalog/profile/template/bootstrap implementation or external effect. |
@@ -392,14 +392,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_t2_packet_ready_held_operator_authority`
+Mode: `workspace_governance_learning_propagation_t2_worker_dispatched`
 
-GLP-T2 baseline and work order are committed at `28318bdf8` and pass
-pre-dispatch 75/75, but remain `HOLD_OPERATOR_IMPLEMENTATION_AUTHORITY`. The
-operator now reviews and explicitly releases or rejects bounded implementation.
-No worker execution, template/test edit, disposable workspace run, public sync,
-provider/network use, push, or deployment is released. WS2 and GC010-AER
-remain parked.
+GLP-T2 baseline and work order are released at `0fdf767c8` after pre-dispatch
+75/75. The next move is one independent no-commit worker executing exactly the
+downstream AGENTS template, focused golden bootstrap harness, and worker return.
+An independent reviewer/closer owns acceptance and commit decisions. No
+generated workspace or downstream mutation, public sync, provider/network use,
+push, deployment, or broader governance implementation is authorized. WS2 and
+GC010-AER remain parked.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without
