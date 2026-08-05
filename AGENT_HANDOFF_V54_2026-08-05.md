@@ -1,4 +1,4 @@
-# CVF Agent Handoff V54 - Workspace Governance Learning Propagation T0 Dispatch
+# CVF Agent Handoff V54 - Workspace Governance Learning Propagation T0 Acceptance
 
 Memory class: active-handoff
 
@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `8df7c7616 governance: dispatch workspace learning propagation T0`
-- Active mode: `workspace_governance_learning_propagation_t0_worker_dispatched`
+- Latest material commit: `60884f5c0 governance: accept workspace learning propagation T0`
+- Active mode: `workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -20,44 +20,44 @@ workspace propagation audit while preserving the parked WS2 boundary.
 
 ## Scope / Target / Owner Boundary
 
-Scope: continuity after GLP-T0 governed dispatch.
+Scope: continuity after independent GLP-T0 acceptance.
 
-Target: one independent no-commit documentation worker executes the local,
-read-only GLP-T0 propagation audit and returns exactly two governed artifacts.
+Target: author fresh GLP-T1 GC-018 and source-verified design work order for the
+smallest safe carrier and ownership boundary.
 
-Owner boundary: the worker may create only the audit and worker return named in
-the work order. The independent reviewer/closer owns acceptance and closure.
+Owner boundary: packet authoring only. GLP-T1 execution, implementation, and
+all external-effect lanes remain held.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t0_worker_dispatched`
+`workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`
 
 ## Active Boundary
 
-GLP-T0 is dispatched at `8df7c7616`. Current source shows that operator-local
-projects receive a curated catalog/profile projection, while three accepted
-latency-learning owners are absent from that catalog and the downstream agent
-template lacks the same-scope wait boundary. The no-commit worker must
-independently reproduce or invalidate that gap. WS2, GC010-AER, runtime,
-provider, network, public-sync, generated workspace, and project mutation
-remain outside scope.
+GLP-T0 is independently accepted at `60884f5c0` with decision
+`PROCEED_DOC_ONLY`. Independent recomputation confirms 34 catalog artifacts,
+15 profiles, operator-local 7 tags/28 artifacts, and zero membership for the
+three learning carriers. GLP-T1 packet authoring is next; execution, WS2,
+GC010-AER, runtime, provider, network, public-sync, generated workspace, and
+project mutation remain outside scope.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t0_worker_dispatched`;
-active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=one independent
-no-commit documentation worker executes GLP-T0; parked checkpoint=none, while
-WS2 and GC010-AER remain condition/value-parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`;
+active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=author fresh
+GLP-T1 GC-018 and source-verified design work order only; parked checkpoint=none,
+while GLP-T1 execution, WS2, and GC010-AER remain held or parked.
 
 ## Latest Material Work
 
 - Batch: `GLP-T0`
-- Material commit: `8df7c7616`
-- Status: `DISPATCH_READY`
-- Baseline:
-  `docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md`
-- Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md`
+- Material commit: `60884f5c0`
+- Status: `REVIEWER_ACCEPTED_WITH_CORRECTIONS`
+- Decision: `PROCEED_DOC_ONLY`
+- Audit:
+  `docs/audits/CVF_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md`
+- Reviewer return:
+  `docs/reviews/CVF_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_WORKER_RETURN_2026-08-05.md`
 
 ## Latest Work / Changes
 
@@ -90,13 +90,52 @@ WS2 and GC010-AER remain condition/value-parked.
 
 ## Next Allowed Move
 
-One independent documentation worker executes GLP-T0 under
-`WORKER_MUST_NOT_COMMIT`, creates exactly the audit and worker return named in
-the work order, and returns one of the three roadmap decision tokens. The
-reviewer/closer must independently recompute catalog/profile membership. No
-bootstrap/catalog/template implementation, generated workspace or downstream
-mutation, provider/network use, public-sync, push, or deployment is authorized.
-WS2 and GC010-AER remain parked behind their existing source conditions.
+Author fresh GLP-T1 GC-018 and source-verified design work order only. The
+packet must choose the smallest safe carrier and ownership boundary without
+preauthorizing implementation. No bootstrap/catalog/template implementation,
+generated workspace or downstream mutation, provider/network use, public-sync,
+push, or deployment is authorized. WS2 and GC010-AER remain parked behind
+their existing source conditions.
+
+## GC-020 Marker - GLP-T0 Acceptance Continuity
+
+This continuity update records accepted material commit `60884f5c0` and routes
+only GLP-T1 packet authoring. It does not authorize GLP-T1 execution or T2+.
+
+## Core Guard Self-Protection Authorization - GLP-T0 Acceptance Continuity
+
+Authorized guard-maintenance scope: synchronize active mode, next move, GLP
+state, generated session aggregates, front door, and active handoff after
+accepted material commit `60884f5c0`.
+
+Operator authorization: the operator authorized roadmap continuation; GLP-T0
+independent review accepted the bounded `PROCEED_DOC_ONLY` decision.
+
+Rollback boundary: revert only this continuity batch if material commit
+`60884f5c0` is reverted.
+
+## Agent Operation Trace Block - GLP-T0 Acceptance Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | independent reviewer/closer and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | GLP-T0 acceptance continuity, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | independent PowerShell recomputation, reviewer corrections, governance gates, material commit, state generators |
+| Target paths | active handoff, front door, GLP state fragments, generated active-session views |
+| Allowed scope source | GC-020 after accepted material commit `60884f5c0` |
+| Before status evidence | HEAD `60884f5c0`; clean worktree |
+| After status evidence | fresh GLP-T1 packet authoring is the exact next move |
+| Diff evidence | continuity-only changed set from `git diff --name-status` |
+| Approval boundary | continuity and packet routing only |
+| Claim boundary | no T1 execution, implementation, downstream/public mutation, provider use, push, or deployment |
+| Agent type | reviewer/closer/session-sync steward |
+| Invocation ID | `glp-t0-acceptance-continuity-2026-08-05` |
+| Expected manifest | active handoff; front door; GLP state fragments; generated active-session views |
+| Actual changed set | active handoff; front door; GLP state fragments; generated active-session views |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## GC-020 Marker - GLP-T0 Dispatch Continuity
 

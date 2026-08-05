@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_governance_learning_propagation_t0_worker_dispatched",
+  "currentMode": "workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring",
   "activeHandoff": "AGENT_HANDOFF_V54_2026-08-05.md",
-  "nextAllowedMove": "GLP-T0 is dispatched at material commit 8df7c7616 under WORKER_MUST_NOT_COMMIT. The next move is one independent documentation worker executing the source audit and creating exactly the governed audit plus worker-return paths named in the work order. The worker must reproduce the provenance-to-catalog-to-profile-to-workspace-to-project chain and return PROCEED_BOOTSTRAP_ALIGNMENT, PROCEED_DOC_ONLY, or STOP_ALREADY_PROPAGATED. Reviewer/closer remains separate. No bootstrap/catalog/template implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. Governance-latency WS2 and GC010-AER remain condition/value-parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-T0 is independently accepted with reviewer corrections at material commit 60884f5c0; decision PROCEED_DOC_ONLY. The next move is fresh GLP-T1 GC-018 and source-verified design work-order authoring for the smallest safe carrier and ownership boundary. GLP-T1 execution and GLP-T2+ remain held. No bootstrap/catalog/profile/template implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. Governance-latency WS2 and GC010-AER remain condition/value-parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

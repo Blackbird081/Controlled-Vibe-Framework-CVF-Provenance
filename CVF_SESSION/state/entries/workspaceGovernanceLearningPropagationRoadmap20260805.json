@@ -2,14 +2,17 @@
   "stateOrder": 2004,
   "stateKey": "workspaceGovernanceLearningPropagationRoadmap20260805",
   "value": {
-    "status": "GLP_T0_DISPATCH_READY",
+    "status": "GLP_T0_REVIEWER_ACCEPTED_PROCEED_DOC_ONLY",
     "date": "2026-08-05",
-    "materialCommit": "8df7c7616",
+    "materialCommit": "60884f5c0",
     "roadmap": "docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md",
-    "decision": "OPEN_BOUNDED_PROPAGATION_AUDIT",
+    "decision": "PROCEED_DOC_ONLY",
     "baseline": "docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
-    "nextAllowedMove": "One independent no-commit documentation worker executes GLP-T0 and returns exactly the audit and worker-return artifacts named by the work order.",
+    "audit": "docs/audits/CVF_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md",
+    "workerReturn": "docs/reviews/CVF_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_WORKER_RETURN_2026-08-05.md",
+    "reviewDisposition": "ACCEPT_WITH_REVIEWER_CORRECTIONS",
+    "nextAllowedMove": "Author fresh GLP-T1 GC-018 and source-verified design work order for the smallest safe carrier and ownership boundary; do not execute T1 yet.",
     "claimBoundary": "No bootstrap/catalog/template implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released."
   }
 }
