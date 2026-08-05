@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`; active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=author fresh GLP-T1 GC-018 and source-verified design work order only; parked checkpoint=none, while GLP-T1 execution, WS2, and GC010-AER remain held or condition/value-parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t1_worker_dispatched`; active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=one independent no-commit documentation design worker executes GLP-T1 and returns the exact design audit plus worker return; parked checkpoint=none, while GLP-T2+, WS2, and GC010-AER remain held or condition/value-parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`
+Current mode marker: `workspace_governance_learning_propagation_t1_worker_dispatched`
 
-Current mode: `workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`
+Current mode: `workspace_governance_learning_propagation_t1_worker_dispatched`
 
-`workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`
+`workspace_governance_learning_propagation_t1_worker_dispatched`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t0_worker_dispatched`
+`workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GLP-T1 smallest-safe-carrier design dispatch | `cc5c51ee7` | `DISPATCH_READY`; one independent no-commit documentation worker compares three distributed existing owners with one compact carrier candidate; no carrier/catalog/profile/template/bootstrap implementation or external effect. |
 | GLP-T0 propagation source-audit acceptance | `60884f5c0` | `REVIEWER_ACCEPTED_WITH_CORRECTIONS`; decision `PROCEED_DOC_ONLY`; independent recomputation confirmed 34 catalog artifacts, 15 profiles, operator-local 7 tags/28 artifacts, and zero membership for the three learning carriers. GLP-T1 packet authoring only is next. |
 | GLP-T0 propagation source-audit dispatch | `8df7c7616` | `DISPATCH_READY`; one independent documentation worker owns exactly the audit and worker return under `WORKER_MUST_NOT_COMMIT`; no implementation, generated workspace/downstream mutation, provider/network, public-sync, push, or deployment authority. |
 | CVF Workspace Governance Learning Propagation roadmap | `3b8781b3b` | `ROADMAP_READY_FOR_T0_GC018_AUTHORING`; source audit found a bounded catalog/profile/project-carrier gap; only documentation-only local GLP-T0 packet authoring is released. |
@@ -388,15 +389,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`
+Mode: `workspace_governance_learning_propagation_t1_worker_dispatched`
 
-GLP-T0 is independently accepted with reviewer corrections at material commit
-`60884f5c0`; decision is `PROCEED_DOC_ONLY`. The next move is fresh GLP-T1
-GC-018 and source-verified design work-order authoring for the smallest safe
-carrier and ownership boundary. GLP-T1 execution and GLP-T2+ remain held. No
-bootstrap, catalog, profile, template, generated workspace, downstream,
-public-sync, provider/network, push, or deployment mutation is released. WS2
-and GC010-AER remain parked behind their existing source conditions.
+GLP-T1 is dispatched at material commit `cc5c51ee7` under
+`WORKER_MUST_NOT_COMMIT`. The next move is one independent documentation design
+worker creating exactly the design audit and worker return named by the work
+order and returning `CARRIER_DESIGN_ACCEPTED` or `STOP_NO_SAFE_CARRIER` for
+independent review. No carrier, catalog, profile, template, bootstrap,
+generated workspace, downstream, public-sync, provider/network, push, or
+deployment mutation is released. GLP-T2+, WS2, and GC010-AER remain held or
+parked behind their existing conditions.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without

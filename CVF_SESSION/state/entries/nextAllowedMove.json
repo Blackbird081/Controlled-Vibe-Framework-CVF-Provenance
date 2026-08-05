@@ -1,5 +1,5 @@
 {
   "stateOrder": 2003,
   "stateKey": "nextAllowedMove",
-  "value": "GLP-T0 is independently accepted with reviewer corrections at material commit 60884f5c0; decision PROCEED_DOC_ONLY. The next move is fresh GLP-T1 GC-018 and source-verified design work-order authoring for the smallest safe carrier and ownership boundary. GLP-T1 execution and GLP-T2+ remain held. No bootstrap/catalog/profile/template implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. Governance-latency WS2 and GC010-AER remain condition/value-parked; LHW24 remains the latest closed numbered LHW wave."
+  "value": "GLP-T1 carrier-design work is dispatched at material commit cc5c51ee7 under WORKER_MUST_NOT_COMMIT. The next move is one independent documentation design worker creating exactly the design audit and worker return named by the work order, then returning CARRIER_DESIGN_ACCEPTED or STOP_NO_SAFE_CARRIER for independent review. No carrier/catalog/profile/template/bootstrap implementation, generated workspace or downstream mutation, public-sync, provider/network use, push, or deployment is released. GLP-T2+, governance-latency WS2, and GC010-AER remain held or condition/value-parked; LHW24 remains the latest closed numbered LHW wave."
 }

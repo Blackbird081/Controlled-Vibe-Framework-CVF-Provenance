@@ -1,4 +1,4 @@
-# CVF Agent Handoff V54 - Workspace Governance Learning Propagation T0 Acceptance
+# CVF Agent Handoff V54 - Workspace Governance Learning Propagation T1 Dispatch
 
 Memory class: active-handoff
 
@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `60884f5c0 governance: accept workspace learning propagation T0`
-- Active mode: `workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`
+- Latest material commit: `cc5c51ee7 governance: dispatch workspace learning carrier design T1`
+- Active mode: `workspace_governance_learning_propagation_t1_worker_dispatched`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -20,44 +20,42 @@ workspace propagation audit while preserving the parked WS2 boundary.
 
 ## Scope / Target / Owner Boundary
 
-Scope: continuity after independent GLP-T0 acceptance.
+Scope: continuity after GLP-T1 carrier-design dispatch.
 
-Target: author fresh GLP-T1 GC-018 and source-verified design work order for the
-smallest safe carrier and ownership boundary.
+Target: one independent no-commit documentation design worker compares carrier
+candidates and returns exactly two governed artifacts.
 
-Owner boundary: packet authoring only. GLP-T1 execution, implementation, and
-all external-effect lanes remain held.
+Owner boundary: worker owns only the design audit and worker return. Independent
+reviewer/closer owns acceptance; implementation remains held.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`
+`workspace_governance_learning_propagation_t1_worker_dispatched`
 
 ## Active Boundary
 
-GLP-T0 is independently accepted at `60884f5c0` with decision
-`PROCEED_DOC_ONLY`. Independent recomputation confirms 34 catalog artifacts,
-15 profiles, operator-local 7 tags/28 artifacts, and zero membership for the
-three learning carriers. GLP-T1 packet authoring is next; execution, WS2,
-GC010-AER, runtime, provider, network, public-sync, generated workspace, and
-project mutation remain outside scope.
+GLP-T1 is dispatched at `cc5c51ee7`. The worker compares guard orientation,
+governance control matrix, downstream AGENTS template, and one compact public-
+safe carrier candidate under a single rubric. GLP-T2+, WS2, GC010-AER,
+runtime, provider, network, public-sync, generated workspace, and project
+mutation remain outside scope.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t0_accepted_t1_packet_authoring`;
-active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=author fresh
-GLP-T1 GC-018 and source-verified design work order only; parked checkpoint=none,
-while GLP-T1 execution, WS2, and GC010-AER remain held or parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t1_worker_dispatched`;
+active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=one independent
+no-commit documentation design worker executes GLP-T1; parked checkpoint=none,
+while GLP-T2+, WS2, and GC010-AER remain held or parked.
 
 ## Latest Material Work
 
-- Batch: `GLP-T0`
-- Material commit: `60884f5c0`
-- Status: `REVIEWER_ACCEPTED_WITH_CORRECTIONS`
-- Decision: `PROCEED_DOC_ONLY`
-- Audit:
-  `docs/audits/CVF_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_2026-08-05.md`
-- Reviewer return:
-  `docs/reviews/CVF_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_AUDIT_WORKER_RETURN_2026-08-05.md`
+- Batch: `GLP-T1`
+- Material commit: `cc5c51ee7`
+- Status: `DISPATCH_READY`
+- Baseline:
+  `docs/baselines/CVF_GC018_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_2026-08-05.md`
+- Work order:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T1_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_DESIGN_2026-08-05.md`
 
 ## Latest Work / Changes
 
@@ -90,12 +88,52 @@ while GLP-T1 execution, WS2, and GC010-AER remain held or parked.
 
 ## Next Allowed Move
 
-Author fresh GLP-T1 GC-018 and source-verified design work order only. The
-packet must choose the smallest safe carrier and ownership boundary without
-preauthorizing implementation. No bootstrap/catalog/template implementation,
-generated workspace or downstream mutation, provider/network use, public-sync,
-push, or deployment is authorized. WS2 and GC010-AER remain parked behind
-their existing source conditions.
+One independent documentation design worker executes GLP-T1 under
+`WORKER_MUST_NOT_COMMIT`, creates exactly the design audit and worker return,
+and recommends `CARRIER_DESIGN_ACCEPTED` or `STOP_NO_SAFE_CARRIER`. No carrier,
+catalog, profile, template, bootstrap, generated workspace, downstream,
+provider/network, public-sync, push, or deployment mutation is authorized.
+
+## GC-020 Marker - GLP-T1 Dispatch Continuity
+
+This continuity update records material dispatch commit `cc5c51ee7` and routes
+only the independent no-commit documentation design worker. It does not
+authorize GLP-T2 or any implementation.
+
+## Core Guard Self-Protection Authorization - GLP-T1 Dispatch Continuity
+
+Authorized guard-maintenance scope: synchronize active mode, next move, GLP
+state, generated session aggregates, front door, and active handoff after
+material dispatch commit `cc5c51ee7`.
+
+Operator authorization: continued roadmap execution plus accepted T0
+`PROCEED_DOC_ONLY`; the T1 packet passed pre-dispatch and commit-steward gates.
+
+Rollback boundary: revert only this continuity batch if dispatch commit
+`cc5c51ee7` is reverted.
+
+## Agent Operation Trace Block - GLP-T1 Dispatch Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | GLP-T1 dispatch continuity, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | packet gates, commit, state-source edits, generators, continuity gates |
+| Target paths | active handoff, front door, GLP state fragments, generated active-session views |
+| Allowed scope source | GC-020 after material dispatch commit `cc5c51ee7` |
+| Before status evidence | HEAD `cc5c51ee7`; clean worktree |
+| After status evidence | independent no-commit GLP-T1 worker execution is the exact next move |
+| Diff evidence | continuity-only changed set from `git diff --name-status` |
+| Approval boundary | dispatch routing only |
+| Claim boundary | no design execution by dispatcher, implementation, downstream/public mutation, provider use, push, or deployment |
+| Agent type | dispatcher/session-sync steward |
+| Invocation ID | `glp-t1-dispatch-continuity-2026-08-05` |
+| Expected manifest | active handoff; front door; GLP state fragments; generated active-session views |
+| Actual changed set | active handoff; front door; GLP state fragments; generated active-session views |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## GC-020 Marker - GLP-T0 Acceptance Continuity
 
