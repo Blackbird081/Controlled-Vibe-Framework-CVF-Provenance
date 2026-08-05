@@ -160,6 +160,12 @@ Rollback boundary: revert only this continuity update if material commit
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## GC-020 Marker - Same-Scope Authority Latency Learning
+
+Material commit `02b840778` updates ADIF-0026 and the review-cost standard with
+same-scope authority continuity and `AVOIDABLE_OPERATOR_WAIT`. This handoff-only
+anchor changes no mode, next move, runtime, provider, public, or WS2 authority.
+
 ## 2026-08-05 - Governance Latency WS2-T1 Closure
 
 Material commit `428321eab` independently accepts the documentation and
