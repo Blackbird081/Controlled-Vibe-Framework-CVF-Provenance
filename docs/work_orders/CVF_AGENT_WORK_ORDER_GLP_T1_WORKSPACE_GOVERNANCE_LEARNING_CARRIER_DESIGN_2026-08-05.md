@@ -31,7 +31,7 @@ uncommitted, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_CONSUMER_CHAIN_REPAIR
 
 docType: work_order
 
@@ -323,6 +323,45 @@ deployment, or a real expansion of objective, risk, path class, or ownership.
 Return `BLOCKED_WITH_REASON` for unsafe content, missing canonical owner,
 unexpected worktree state, forbidden path need, external effect, or authority
 above R1 design evidence.
+
+## R1 Focused Redispatch - Consumer Chain Repair
+
+Reviewer decision: `REVIEW_CHANGES_REQUIRED_R1`.
+
+The same no-commit worker must revise only the existing design audit and worker
+return. Do not create another artifact and do not edit any implementation path.
+
+Required corrections:
+
+1. Replace the false generated path `.cvf-rule-pack/...` with the source-backed
+   default `CVF_RULE_PACKS/<profile>/source/...` path.
+2. Separate `copiedToWorkspaceRulePack` from `mandatoryProjectConsumer`.
+   `docs/reference/CVF_WORKSPACE_RULES.md` states that rule packs do not replace
+   project `AGENTS.md`, manifests, policies, or handoffs; the generated project
+   manifest's `requiredDocs` list does not include guard orientation.
+3. Re-score all four candidates against the roadmap's full terminal chain:
+   `workspace guidance -> project bootstrap/adoption`. The originating operator
+   finding was a downstream project repeating governance-latency behavior, so
+   downstream project agents are an in-scope audience, not a wrong audience.
+4. Treat broad project reach as a safety question to classify, not as automatic
+   disqualification. Determine whether the five provider-neutral operational
+   rules are public-safe; absence of a Public Export Disposition in a candidate
+   is not safety proof.
+5. Correct active-Markdown maintainability evidence to advisory `> 900` and
+   hard `> 1200` lines.
+6. Select one canonical carrier only if the consumer chain is mandatory and
+   source-backed. If the downstream AGENTS template is selected, specify the
+   exact public-safe subsection, existing-project refresh behavior, T2 path/test
+   manifest, negative private-leakage assertions, and rollback. If no single
+   owner can satisfy both workspace and project consumption without duplication,
+   return `STOP_NO_SAFE_CARRIER`.
+7. Preserve the original guard-orientation recommendation and every reviewer
+   disagreement in the audit and return; do not rewrite history as first-pass
+   agreement.
+
+R1 remains documentation-only and `WORKER_MUST_NOT_COMMIT`. The worker runs the
+pre-implementation gate from current HEAD before edits and the worker-return
+fast gate once after the consolidated correction.
 
 ## Verification Commands
 
