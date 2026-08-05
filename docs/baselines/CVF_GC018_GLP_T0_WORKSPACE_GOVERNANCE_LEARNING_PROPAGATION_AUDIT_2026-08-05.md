@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED
 
 docType: baseline
 

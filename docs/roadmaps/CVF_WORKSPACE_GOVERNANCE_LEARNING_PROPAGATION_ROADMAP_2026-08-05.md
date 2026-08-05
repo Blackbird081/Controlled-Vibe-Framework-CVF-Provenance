@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ROADMAP_READY_FOR_T0_GC018_AUTHORING
+Status: GLP_T0_REVIEWER_ACCEPTED_PROCEED_DOC_ONLY
 
 docType: roadmap
 
@@ -108,8 +108,25 @@ or weakens a protected control.
 | GLP-T3 | Prove propagation in a disposable fresh workspace | generated manifest, expected-artifact assertions, negative private-leakage checks, project guidance readout | `PROPAGATION_PROVEN_BOUNDED` or `PROPAGATION_PROOF_FAILED` |
 | GLP-T4 | Close and publish the adoption boundary | closure review, operator guide update if needed, public-export disposition | `CLOSED_PASS_BOUNDED`, `DEFERRED_PRIVATE_ONLY`, or `BLOCKED_MISSING_PUBLIC_ARTIFACTS` |
 
-Only GLP-T0 is released by this roadmap. GLP-T1 and later remain held until the
-preceding accepted evidence and a fresh source-verified packet exist.
+GLP-T0 is independently accepted bounded with decision `PROCEED_DOC_ONLY`.
+GLP-T1 packet authoring is the next allowed move. GLP-T1 execution and every
+later tranche remain held until a fresh source-verified packet passes dispatch
+review; no implementation authority is implied.
+
+## GLP-T0 Outcome - 2026-08-05
+
+The independent reviewer reproduced 34 catalog artifacts and all 15 profile
+files. `operator-local` resolves seven tags and selects 28 artifacts. Exact
+membership remains zero for ADIF-0026, the review-cost standard, and the R72C
+carrier; the downstream template also contains none of the enumerated
+same-scope, avoidable-wait, review-cost, diminishing-return, or Fast Lane
+vocabulary. The evidence therefore supports `PROCEED_DOC_ONLY`, not bootstrap
+alignment and not no-change.
+
+Reviewer corrections were bounded to profile/file counts, line citations, the
+worker-return literal contract, and the historical execution-base defect. No
+bootstrap, catalog, profile, template, generated workspace, downstream,
+provider/network, public-sync, push, or deployment action occurred.
 
 ## Governance Cost Budget
 

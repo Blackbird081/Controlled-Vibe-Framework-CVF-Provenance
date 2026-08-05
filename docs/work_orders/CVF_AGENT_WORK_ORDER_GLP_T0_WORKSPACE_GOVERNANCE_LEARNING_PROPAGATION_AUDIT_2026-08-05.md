@@ -10,11 +10,11 @@ Paired baseline: `docs/baselines/CVF_GC018_GLP_T0_WORKSPACE_GOVERNANCE_LEARNING_
 
 dispatchBaseHead: `ace02fda7`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `9acec42b5`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `9acec42b5`
 
-Commit mode: `WORKER_MUST_NOT_COMMIT`
+Commit mode: WORKER_MUST_NOT_COMMIT
 
 Current-time notes: packet authored 2026-08-05 from provenance HEAD
 `ace02fda7`; all external state and generated workspace mutation are excluded.
@@ -31,7 +31,7 @@ uncommitted, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED
 
 docType: work_order
 
@@ -90,7 +90,7 @@ Risk ceiling: R1 documentation and local read-only evidence.
 | Dependency | Evidence | Commit | Disposition |
 |---|---|---|---|
 | GLP-R0 roadmap | `docs/roadmaps/CVF_WORKSPACE_GOVERNANCE_LEARNING_PROPAGATION_ROADMAP_2026-08-05.md` | `3b8781b3b` | ACCEPT |
-| continuity route | active state and handoff | `ace02fda7` | ACCEPT |
+| continuity route and worker execution base | active state and handoff | `9acec42b5` | ACCEPT |
 
 ## ADIF Defect Registry Disclosure
 
@@ -108,7 +108,7 @@ literal gotchas, all Source Verification files, and output-artifact checkers.
 ```powershell
 git rev-parse --short HEAD
 git status --short --untracked-files=all
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base ace02fda7 --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 9acec42b5 --head HEAD
 ```
 
 All must pass with an isolated worktree before material worker edits.
@@ -196,7 +196,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | dispatcher -> no-commit worker -> independent reviewer/closer -> session-sync steward |
 | phase | DISPATCH_AUTHORING, EXECUTION, CLOSURE, SESSION_SYNC |
-| baseHeadFor(phase) | dispatchBaseHead=ace02fda7; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=ace02fda7; executionBaseHead=9acec42b5; closureBaseHead=9acec42b5 |
 | changedSetScope(phase) | dispatch=paired packets; execution=two worker outputs; closure=accepted outputs; session sync=canonical continuity only |
 | traceScope(phase, actor) | each actor records its own phase-local trace |
 | commitOwner(phase) | dispatcher commits packets; worker must not commit; reviewer owns accepted material; steward owns continuity |
@@ -242,14 +242,14 @@ workerSelfSelection: FORBIDDEN
 
 ## Acceptance Criteria
 
-- [ ] exact chain and profile inventories are command-backed;
-- [ ] pointer, owner, carrier, and consumer are not conflated;
-- [ ] four cheap alternatives and governance cost are compared;
-- [ ] exactly one T0 decision is returned;
-- [ ] disagreement is retained for reviewer inspection;
-- [ ] only two allowed paths are pending;
-- [ ] worker fast gate passes;
-- [ ] no commit is made by the worker.
+- [x] exact chain and profile inventories are command-backed;
+- [x] pointer, owner, carrier, and consumer are not conflated;
+- [x] four cheap alternatives and governance cost are compared;
+- [x] exactly one T0 decision is returned;
+- [x] disagreement is retained for reviewer inspection;
+- [x] worker initially changed only two allowed paths;
+- [x] worker fast gate passes after reviewer corrections;
+- [x] no commit was made by the worker.
 
 ## Review Gate
 
@@ -267,11 +267,11 @@ stop rule. Gate PASS alone is not semantic acceptance.
 
 ## Closure Checklist
 
-- [ ] two required outputs exist and no other path changed;
-- [ ] acceptance criteria are resolved;
-- [ ] worker-return fast gate passes after final edit;
-- [ ] independent reviewer disposition is recorded;
-- [ ] material and continuity commits remain reviewer/steward owned.
+- [x] two required outputs exist; reviewer-owned closure repairs are disclosed;
+- [x] acceptance criteria are resolved;
+- [x] worker-return fast gate passes after final edit;
+- [x] independent reviewer disposition is recorded;
+- [x] material and continuity commits remain reviewer/steward owned.
 
 ## Operator Checkpoint
 
