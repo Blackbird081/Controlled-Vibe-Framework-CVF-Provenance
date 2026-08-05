@@ -58,7 +58,12 @@
     "publicSyncCloneHead": "a307da84a",
     "publicCarrierReadout": "PARTIAL_PRESENCE_WITH_DATED_DRIFT",
     "providerDenominators": "proof_subject_outbound_0_worker_claude_cli_0_host_provider_model_session_UNKNOWN_NOT_EXPOSED",
-    "nextAllowedMove": "No active GLP tranche remains. Reopen public carrier refresh only through an operator-selected separate public-sync packet after confirming the five-semantic block is still absent.",
+    "publicRefreshStatus": "DISPATCH_READY",
+    "publicRefreshDispatchCommit": "8feffa976",
+    "publicRefreshBaseline": "docs/baselines/CVF_GC018_GLP_PUBLIC_R1_GOVERNANCE_LATENCY_CARRIER_REFRESH_2026-08-06.md",
+    "publicRefreshWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_PUBLIC_R1_GOVERNANCE_LATENCY_CARRIER_REFRESH_2026-08-06.md",
+    "publicRefreshTarget": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+    "nextAllowedMove": "Execute the one-path public carrier refresh and push to the explicitly selected public repository, then record private closure.",
     "claimBoundary": "GLP closes bounded in private provenance. No guide mutation, public-sync mutation, provider/network proof call, push, deployment, adoption-complete claim, or public-readiness claim is made."
   }
 }

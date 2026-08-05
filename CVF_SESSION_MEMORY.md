@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator selection of a fresh high-value lane; parked checkpoint=public carrier refresh, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_dispatched`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=execute and push the exact one-path public carrier refresh; parked checkpoint=WS2 and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
+Current mode marker: `workspace_governance_learning_public_carrier_refresh_dispatched`
 
-Current mode: `workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
+Current mode: `workspace_governance_learning_public_carrier_refresh_dispatched`
 
-`workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
+`workspace_governance_learning_public_carrier_refresh_dispatched`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority`
+`workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -396,15 +396,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
+Mode: `workspace_governance_learning_public_carrier_refresh_dispatched`
 
-GLP-T4 and the workspace governance learning propagation roadmap are closed
-bounded at material commit `37d241d60` with `DEFERRED_PRIVATE_ONLY`. The guide
-decision is `NO_UPDATE_NEEDED`; the public carrier remains
-`PARTIAL_PRESENCE_WITH_DATED_DRIFT`. No active GLP tranche remains. Reopen the
-public carrier only through an operator-selected separate public-sync packet
-after confirming that the five-semantic block is still absent. WS2 and
-GC010-AER remain parked.
+GLP-PUBLIC-R1 is dispatched at `8feffa976` after the operator selected the
+exact public GitHub repository. The next move is the one-path public carrier
+refresh, focused golden bootstrap proof, leakage scan, public commit/push, and
+private closure. Private GLP packets, downstream mutation, provider/live,
+runtime, WS2, and GC010-AER remain excluded.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without

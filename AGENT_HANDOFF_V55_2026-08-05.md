@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - GLP Roadmap Closed Private
+# CVF Agent Handoff V55 - GLP Public Carrier Refresh
 
 Memory class: active-handoff
 
@@ -8,15 +8,15 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `37d241d60 governance: close GLP T4 adoption boundary`
-- Active mode: `workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
+- Latest material commit: `8feffa976 governance: authorize GLP public carrier refresh`
+- Active mode: `workspace_governance_learning_public_carrier_refresh_dispatched`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
 ## Purpose
 
-Record bounded GLP-T4 and roadmap closure while keeping the separate public
-carrier refresh and all unrelated lanes parked.
+Execute the operator-selected one-path public carrier refresh while keeping
+private evidence and unrelated lanes excluded.
 
 ## Scope / Target / Owner Boundary
 
@@ -37,14 +37,14 @@ packet.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
+`workspace_governance_learning_public_carrier_refresh_dispatched`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator
-selection of a fresh high-value lane; parked checkpoint=public carrier refresh,
-WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_dispatched`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=execute and
+push the exact one-path public carrier refresh; parked checkpoint=WS2 and
+GC010-AER remain parked.
 
 ## Released Packet
 
@@ -71,10 +71,10 @@ WS2, and GC010-AER remain parked.
 
 ## Next Allowed Move
 
-No active GLP tranche remains. A public carrier refresh may reopen only if the
-operator selects a separate public-sync packet and the current public carrier
-still lacks the five-semantic governance-latency block. WS2 and GC010-AER
-remain parked behind fresh authority.
+Execute GLP-PUBLIC-R1 from dispatch commit `8feffa976`: update exactly the
+public downstream-agent carrier, run focused bootstrap and leakage evidence,
+commit and push public `main`, then record private closure. WS2 and GC010-AER
+remain parked.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 
@@ -165,6 +165,12 @@ creation and may be accepted under the GC-020 parent rule.
 | Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - GLP-PUBLIC-R1 Dispatch Continuity
+
+Material commit `8feffa976` contains the private source-verified dispatch
+packet for one public carrier refresh. Operator authority names the exact
+public repository; private GLP packets and all unrelated lanes remain excluded.
 
 ## GC-020 Marker - GLP-T3 Closure Continuity
 

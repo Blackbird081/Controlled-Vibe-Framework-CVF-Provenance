@@ -95,8 +95,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked",
-  "previousMode": "workspace_governance_learning_propagation_t4_packet_held_pending_operator_authority",
+  "currentMode": "workspace_governance_learning_public_carrier_refresh_dispatched",
+  "previousMode": "workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "GLP-T4 and the workspace governance learning propagation roadmap are closed bounded at material commit 37d241d60 with DEFERRED_PRIVATE_ONLY. No active GLP tranche remains. The public carrier refresh is value-parked and may reopen only if the operator explicitly selects a separate public-sync refresh packet and the current public carrier still lacks the five-semantic governance-latency block. The operator guide remains NO_UPDATE_NEEDED. WS2 and GC010-AER remain parked and require fresh authority; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "GLP-PUBLIC-R1 is operator-selected and dispatched at 8feffa976 for exactly one public carrier path. Execute the five-semantic carrier refresh in the sibling public-sync clone, run the focused golden bootstrap proof and leakage scan, commit and push main to Blackbird081/Controlled-Vibe-Framework-CVF.git, then record private closure. No private GLP packet export, downstream mutation, provider/live call, runtime work, WS2, or GC010-AER is authorized; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13758,7 +13758,12 @@
     "publicSyncCloneHead": "a307da84a",
     "publicCarrierReadout": "PARTIAL_PRESENCE_WITH_DATED_DRIFT",
     "providerDenominators": "proof_subject_outbound_0_worker_claude_cli_0_host_provider_model_session_UNKNOWN_NOT_EXPOSED",
-    "nextAllowedMove": "No active GLP tranche remains. Reopen public carrier refresh only through an operator-selected separate public-sync packet after confirming the five-semantic block is still absent.",
+    "publicRefreshStatus": "DISPATCH_READY",
+    "publicRefreshDispatchCommit": "8feffa976",
+    "publicRefreshBaseline": "docs/baselines/CVF_GC018_GLP_PUBLIC_R1_GOVERNANCE_LATENCY_CARRIER_REFRESH_2026-08-06.md",
+    "publicRefreshWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_PUBLIC_R1_GOVERNANCE_LATENCY_CARRIER_REFRESH_2026-08-06.md",
+    "publicRefreshTarget": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+    "nextAllowedMove": "Execute the one-path public carrier refresh and push to the explicitly selected public repository, then record private closure.",
     "claimBoundary": "GLP closes bounded in private provenance. No guide mutation, public-sync mutation, provider/network proof call, push, deployment, adoption-complete claim, or public-readiness claim is made."
   },
   "continuousProjectionT0Dispatch20260720": {
