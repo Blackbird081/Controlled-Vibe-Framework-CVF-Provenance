@@ -13,15 +13,15 @@ defectRole: NOT_APPLICABLE_WITH_REASON: general reviewer method defect, not one 
 severity: HIGH
 lifecycleState: ACTIVE
 taskClasses: Reviewer-return review; Closure
-roles: reviewer; closer
-lifecyclePhases: pre-closure
-surfaceSelectors: documentation contracts, schemas, authority chains, receipts, hash profiles, worker returns, completion reviews
-detectionSignals: predictable downstream findings are discovered one repair round at a time; repeated worker turns consume quota and time without a new source event or independent root cause
+roles: dispatcher; reviewer; closer
+lifecyclePhases: pre-implementation; pre-closure
+surfaceSelectors: documentation contracts, schemas, authority chains, receipts, hash profiles, worker returns, completion reviews, operator-escalation routing
+detectionSignals: predictable downstream findings are discovered one repair round at a time; repeated worker turns or repeated operator-confirmation requests consume quota and time without a new source event, independent root cause, changed objective, changed path class, or increased risk
 enforcementLevel: PARTIAL_CHECK
 checkerBindings: governance/compat/check_review_cost_control.py
 promotionState: CHECKER_EXISTS
 supersedes: NONE
-lastVerifiedCommit: 8e318cc92
+lastVerifiedCommit: af1853cf4
 roadmapSeedId: NONE
 ```
 
@@ -29,6 +29,8 @@ roadmapSeedId: NONE
 
 Prevent local, sequential review of one connected dependency graph. The defect
 creates avoidable repair rounds, quota cost, latency, and operator overhead.
+It also prevents an agent from converting one operator instruction to continue
+or finish a bounded task into a self-invented one-repair-turn authorization.
 
 ## Scope / Applies To
 
@@ -40,12 +42,18 @@ reason rather than converted into later contract findings.
 
 > Vocabulary, state, receipt fields, authority links, and hash canonicalization
 > are checked in separate rounds although all belong to the original graph.
+> After each dependent finding in the same acceptance item, the agent asks the
+> operator to authorize another correction even though objective, paths, risk,
+> external effects, and commit ownership have not changed.
 
 ## Good Example
 
 > Before the first repair, the reviewer builds one record/edge matrix covering
 > ownership, state, identity, integrity, cross-record equality, missing/empty
 > behavior, negative cases, and reproducibility; all blockers return together.
+> When the operator says to continue or finish after an escalation, the agent
+> retains that authority for dependent same-scope corrections until acceptance
+> or a real authority boundary changes.
 
 ## Canonical Sources
 
@@ -53,6 +61,8 @@ reason rather than converted into later contract findings.
 - `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md` (learning closure rule)
 - `docs/reference/CVF_VALUE_PARKED_LANE_REOPEN_DISCIPLINE_STANDARD_2026-06-25.md` (low-value parking)
 - `docs/reviews/CVF_SOT3_T2_COMPLETION_REVIEW_2026-07-12.md` (sequential-review evidence)
+- `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md` (same-scope authority continuity)
+- `docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T1_COMPLETION_2026-08-05.md` (repeated micro-checkpoint evidence and final bounded closure)
 
 ## Remediation
 
@@ -100,6 +110,25 @@ Single-pass latency control added after Continuous Projection T1:
 5. The checker enforces declaration shape and controlled vocabulary; semantic
    audit completeness and fast-path eligibility remain reviewer judgment.
 
+Same-scope authority continuity added after Governance Latency WS2-T1:
+
+1. Do not infer a one-repair-turn cap from an operator instruction such as
+   continue, handle, or finish unless the operator or controlling packet states
+   that cap explicitly.
+2. Once the operator clears a round-three escalation, the authority remains
+   valid for consolidated dependent repairs while objective, allowed path and
+   artifact classes, risk ceiling, external-effect class, and commit owner stay
+   unchanged.
+3. A reviewer that narrows an already-open acceptance item to another
+   source-backed sub-effect has not created a new task or scope by that fact
+   alone. Repair it in the same bounded batch and re-review once.
+4. Ask the operator again only for a real boundary change: new objective or
+   artifact class, new protected or out-of-scope path, increased risk, live or
+   provider use, destructive/public/external action, secrets/quota, changed
+   commit authority, or an explicit operator-set budget that has been reached.
+5. Repeated confirmation requests with none of those changes are
+   `AVOIDABLE_OPERATOR_WAIT`, not governance safety.
+
 ## Epistemic Process Block
 
 ### Expected Result / Prediction
@@ -120,8 +149,48 @@ recomputation, and worktree churn can compound the same latency pattern.
 ### Claim Update
 
 First-return completeness, cost telemetry, single-pass audit evidence, commit
-budget, latency disposition, and round-three escalation are now shared
-reviewer obligations.
+budget, latency disposition, round-three escalation, and same-scope authority
+continuity are now shared reviewer obligations. The same-scope semantic remains
+guidance and is not claimed as machine-enforced by the existing checker.
+
+## Governance Latency WS2-T1 Learning Addendum - 2026-08-05
+
+The WS2-T1 correction sequence repeatedly returned to the operator for another
+confirmation while the objective, two worker-owned paths, documentation-only
+risk ceiling, forbidden external effects, and reviewer commit ownership stayed
+unchanged. The dependent findings were valid, but treating each as a new
+authority event reproduced the governance latency being investigated.
+
+The retained learning is provider-neutral: consolidate the dependency graph,
+carry same-scope authority through dependent repairs, and escalate only a real
+boundary change. This addendum does not weaken a stop rule or authorize scope
+expansion; it prevents agents from inventing narrower authority than the
+operator or controlling packet actually imposed.
+
+rawMemoryReleased=false. This addendum records governed defect guidance only;
+it releases no raw memory, provider-local memory, or reinjection payload.
+
+### Learning Addendum Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | dispatcher/reviewer/closer and governance maintainer |
+| Provider or surface | local private provenance workspace |
+| Session or invocation | governance-latency WS2-T1 learning promotion, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, ADIF de-dup search, apply_patch, ADIF and review-cost checks |
+| Target paths | this ADIF entry and review-cost standard |
+| Allowed scope source | operator instruction to retain the observed latency finding as shared learning |
+| Before status evidence | ADIF-0026 covered sequential findings but not repeated same-scope operator confirmation |
+| After status evidence | ADIF-0026 and the review-cost standard define same-scope authority continuity and real escalation boundaries |
+| Diff evidence | exact two-path material changed set before commit |
+| Approval boundary | reviewer workflow guidance only; no runtime, checker, provider, public, or external action |
+| Claim boundary | shared semantic learning; no automatic authority inference or machine-enforcement claim |
+| Agent type | dispatcher/reviewer/closer and governance maintainer |
+| Invocation ID | `governance-latency-ws2-t1-micro-checkpoint-learning-2026-08-05` |
+| Expected manifest | ADIF-0026 and review-cost standard |
+| Actual changed set | same two paths |
+| Manifest delta | MATCH |
 
 ## Agent Operation Trace Block
 

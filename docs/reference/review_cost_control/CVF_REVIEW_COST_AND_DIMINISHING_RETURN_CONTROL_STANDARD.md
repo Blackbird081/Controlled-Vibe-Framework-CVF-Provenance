@@ -110,6 +110,38 @@ Use this order:
 6. Create one material commit; run committed-range closure on its exact range.
 7. Create one continuity commit only when mode or next-move state changed.
 
+## Same-Scope Authority Continuity And Micro-Checkpoint Prevention
+
+An operator instruction to continue, handle, or finish a bounded task after an
+escalation remains effective for dependent corrections within that same task.
+An agent must not silently reinterpret it as authority for exactly one repair
+turn unless the operator or controlling packet explicitly states that limit.
+
+Continue without another operator checkpoint only while all of these remain
+unchanged:
+
+- objective and acceptance item;
+- allowed path and artifact classes;
+- risk and authority ceiling;
+- external-effect class, including provider, network, public, destructive,
+  secrets, and quota posture; and
+- role routing and commit ownership.
+
+A reviewer finding that narrows an already-open acceptance item to another
+source-backed dependent detail is not by itself a new scope event. Consolidate
+and repair the full dependency once, then perform one independent re-review.
+
+Return to the operator only when at least one boundary above changes, an
+operator-set budget is actually exhausted, or the evidence reveals a new
+independent critical authority, fail-open, integrity, or irreversible-action
+root cause. Without such a change, another confirmation request is
+`AVOIDABLE_OPERATOR_WAIT`; it adds latency without adding governance value.
+
+This rule preserves fail-closed behavior. It does not let an agent widen scope,
+ignore an explicit numerical cap, perform a forbidden action, or self-authorize
+live/provider/public/destructive work. The current checker does not infer these
+semantic facts; reviewers and closers must apply them from evidence.
+
 ## Audit, Commit, Latency, And Delay Vocabularies
 
 `preRepairAuditDisposition` must be exactly one of:
