@@ -37,9 +37,9 @@
     "t2r1ReviewDisposition": "CLOSED_PASS_BOUNDED",
     "t3Baseline": "docs/baselines/CVF_GC018_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_BASELINE_2026-08-05.md",
     "t3WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_2026-08-05.md",
-    "t3PacketStatus": "HOLD_PENDING_OPERATOR_AUTHORITY",
+    "t3PacketStatus": "OPERATOR_RELEASED_PACKET_RELEASE_IN_PROGRESS",
     "t3PacketAuthoringGate": "PASS_75_OF_75",
-    "nextAllowedMove": "Await explicit operator release of GLP-T3 execution, then refresh the held packet to ready and dispatch one independent no-commit proof worker.",
+    "nextAllowedMove": "Complete same-scope GLP-T3 packet release gates and commit, then dispatch one independent no-commit proof worker.",
     "claimBoundary": "GLP-T2R1 proves bounded local byte-preserving carrier projection. GLP-T3 is only a held proof packet; no harness execution, evidence output, persistent generated workspace/downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized."
   }
 }

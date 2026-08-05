@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=explicit operator release of the held GLP-T3 execution packet; parked checkpoint=GLP-T3 execution, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=complete same-scope GLP-T3 packet release and dispatch one no-commit proof worker; parked checkpoint=WS2 and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
+Current mode marker: `workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
 
-Current mode: `workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
+Current mode: `workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
 
-`workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
+`workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_t2r1_closed_t3_packet_authoring_ready`
+`workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -393,12 +393,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
+Mode: `workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
 
-The GLP-T3 proof packet is committed at `5744b7c10` with authoring pre-dispatch
-75/75 and remains `HOLD_PENDING_OPERATOR_AUTHORITY`. The next move requires an
-explicit operator release before anchors/status are refreshed and one
-independent no-commit proof worker is dispatched. Harness execution, persistent
+The operator explicitly released GLP-T3 execution on 2026-08-05. Complete the
+same-scope packet anchor/status refresh, pass pre-dispatch, commit the release,
+then dispatch one independent no-commit proof worker. The worker gets one local
+harness call and exactly two evidence outputs. Implementation edits, persistent
 workspace/downstream mutation, public sync, provider/network use, push,
 deployment, WS2, and GC010-AER remain parked.
 

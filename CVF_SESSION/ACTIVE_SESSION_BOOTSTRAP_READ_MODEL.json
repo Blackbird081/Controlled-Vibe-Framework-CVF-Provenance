@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority",
+  "currentMode": "workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress",
   "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
-  "nextAllowedMove": "The source-verified GLP-T3 disposable fresh-workspace propagation-proof packet is committed at 5744b7c10 with packet-authoring pre-dispatch PASS_75_OF_75. Its status remains HOLD_PENDING_OPERATOR_AUTHORITY. The next allowed move requires explicit operator release: refresh dependency evidence and base anchors, change the packet to a ready/dispatch-equivalent state, rerun pre-dispatch on the committed release range, then assign one independent no-commit proof worker. Until release, no harness execution or evidence-output authoring is authorized. No implementation edit, persistent generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "The operator explicitly released GLP-T3 execution and selected the worker route on 2026-08-05. The next allowed move is same-scope packet release completion only: refresh the dependency/base anchors, set the paired packet ready, pass pre-dispatch on the release range, commit it, then dispatch one independent no-commit proof worker. No worker execution begins before that material release commit. The worker may run exactly one existing local harness call and create exactly the audit and worker return. No implementation edit, persistent generated workspace or downstream mutation, public-sync, provider/network use, push, deployment, or broader governance implementation is authorized. Governance-latency WS2 and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

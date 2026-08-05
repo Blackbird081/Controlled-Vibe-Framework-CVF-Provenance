@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - GLP T3 Packet Held
+# CVF Agent Handoff V55 - GLP T3 Operator Released
 
 Memory class: active-handoff
 
@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Latest material commit: `5744b7c10 governance: author held GLP T3 propagation proof packet`
-- Active mode: `workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
+- Active mode: `workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -32,20 +32,20 @@ commit decisions.
 
 ## Active Boundary
 
-GLP-T2R1 is closed. Only GLP-T3 GC-018/work-order packet authoring may proceed.
+GLP-T2R1 is complete. GLP-T3 packet release and the bounded proof may proceed.
 Execution, generated workspace, downstream repository, public-sync,
 provider/network, push, deployment, and broader implementation remain excluded.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`
+`workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_packet_authored_held_operator_authority`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=explicit
-operator release of the held GLP-T3 execution packet; parked checkpoint=GLP-T3
-execution, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t3_operator_released_packet_release_in_progress`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=complete
+same-scope packet release and dispatch one no-commit proof worker; parked
+checkpoint=WS2 and GC010-AER remain parked.
 
 ## Released Packet
 
@@ -72,10 +72,9 @@ execution, WS2, and GC010-AER remain parked.
 
 ## Next Allowed Move
 
-Await explicit operator release of GLP-T3 execution. After release, refresh the
-dependency and base anchors, change the packet to ready, rerun pre-dispatch on
-the committed range, and dispatch one independent no-commit proof worker.
-Every external lane remains held.
+Complete the GLP-T3 dependency/base refresh, set the packet ready, pass
+pre-dispatch, commit the material release, and dispatch one independent
+no-commit proof worker. Every external lane remains held.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 
