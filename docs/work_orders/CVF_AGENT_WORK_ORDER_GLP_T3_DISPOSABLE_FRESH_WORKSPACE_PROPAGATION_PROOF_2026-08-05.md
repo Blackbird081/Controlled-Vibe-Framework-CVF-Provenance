@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_PENDING_OPERATOR_AUTHORITY
+Status: DISPATCH_READY
 
 docType: work_order
 
@@ -10,7 +10,7 @@ Date: 2026-08-05
 
 Batch ID: GLP-T3
 
-dispatchBaseHead: `10319c7dc`
+dispatchBaseHead: `34dfbdb0c`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
@@ -22,20 +22,24 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 Role: bounded local propagation-proof worker.
 
+Commit mode: `WORKER_MUST_NOT_COMMIT`
+
+executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_2026-08-05.md`
 
 Paired baseline: `docs/baselines/CVF_GC018_GLP_T3_DISPOSABLE_FRESH_WORKSPACE_PROPAGATION_PROOF_BASELINE_2026-08-05.md`
 
-Current-time notes: authored from clean provenance HEAD `10319c7dc` after
-GLP-T2R1 independently closed at material commit `f59457b9a`.
+Current-time notes: released from clean provenance HEAD `34dfbdb0c` after
+GLP-T2R1 independently closed at material commit `f59457b9a`; operator release
+is recorded on 2026-08-05.
 
-Do-not-misread notes: this packet is held. It authorizes no execution until an
-operator release is recorded, the status/anchors are refreshed, and a committed
-non-empty packet range passes pre-dispatch. It never authorizes source edits,
-persistent downstream mutation, provider/network use, public sync, or worker
-commit.
+Do-not-misread notes: this packet releases one no-commit proof worker only after
+the committed non-empty release range passes pre-dispatch. It never authorizes
+source edits, persistent downstream mutation, provider/network use, public
+sync, or worker commit.
 
-Required first actions after release: complete startup acknowledgment; capture
+Required first actions: after release, complete startup acknowledgment; capture
 HEAD and clean status; read this packet, baseline, roadmap, T2R1 completion,
 harness, template, helper support source, guard orientation, literal gotchas,
 and checker sources; run pre-implementation from the captured base.
@@ -80,7 +84,7 @@ update continuity. The reviewer/closer owns accepted closure conversion.
 | roadmap authority | GLP roadmap T3 row | proof tranche defined |
 | predecessor release | T2R1 completion at `f59457b9a` | ACCEPT |
 | packet-authoring authority | active session next move | ACCEPT |
-| proof-execution authority | not yet recorded | HOLD_PENDING_OPERATOR_AUTHORITY |
+| proof-execution authority | explicit operator release recorded on 2026-08-05 | ACCEPT |
 | review/commit authority | independent reviewer/closer after worker return | ACCEPT |
 
 ## Agent Roles
@@ -90,7 +94,7 @@ update continuity. The reviewer/closer owns accepted closure conversion.
 | dispatcher | authors and validates the held packet |
 | worker | after release, runs one local proof and authors two uncommitted evidence artifacts |
 | independent reviewer/closer | recomputes claims, records disagreement, and owns closure commit |
-| session-sync steward | updates continuity separately after accepted closure |
+| session-sync steward | updates continuity separately using accepted material evidence |
 
 ## Intake Role Routing Decision
 
@@ -105,6 +109,13 @@ update continuity. The reviewer/closer owns accepted closure conversion.
 | routingReason | worker and reviewer must not collapse proof production and acceptance into one role |
 | workerSelfSelection | FORBIDDEN |
 | escalation condition | source contradiction, additional path, source edit, persistent mutation, cleanup failure, provider/network/public action, risk change, or commit-owner change |
+
+## Worker Autonomy / No-Question Rule
+
+The worker resolves same-scope evidence-shape defects without requesting
+operator confirmation. Return to the orchestrator only for a source
+contradiction, forbidden-path need, changed risk/external-effect/commit-owner
+boundary, unsafe cleanup, or missing authority that makes completion impossible.
 
 ## Scaffold Provenance Block
 
@@ -177,7 +188,7 @@ Returned defects: NONE_RETURNED
 | Dependency | Artifact | Commit / decision | Disposition |
 |---|---|---|---|
 | GLP-T2R1 | `docs/reviews/CVF_GLP_T2R1_CP1_BYTE_PRESERVING_MERGE_REPAIR_COMPLETION_2026-08-05.md` | `f59457b9a`; `CLOSED_PASS_BOUNDED` | ACCEPT |
-| GLP-T3 execution | this held packet | no operator release recorded | HOLD_PENDING_OPERATOR_AUTHORITY |
+| GLP-T3 execution | this packet | explicit operator release on 2026-08-05 | ACCEPT |
 
 ## Agent Handoff Contract Control Block
 
@@ -187,13 +198,13 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 |---|---|
 | route | `MULTI_AGENT_MULTI_ROLE` |
 | rolePattern | dispatcher -> no-commit proof worker -> independent reviewer/closer -> session-sync steward |
-| phase | held pre-dispatch authoring |
-| baseHeadFor(phase) | dispatchBaseHead=`10319c7dc`; executionBaseHead=`WORKER_MUST_CAPTURE_AT_START`; closureBaseHead=`REVIEWER_TO_SET` |
+| phase | released pre-dispatch |
+| baseHeadFor(phase) | dispatchBaseHead=`34dfbdb0c`; executionBaseHead=`WORKER_MUST_CAPTURE_AT_START`; closureBaseHead=`REVIEWER_TO_SET` |
 | changedSetScope(phase) | worker may create only the audit and worker return after release |
 | traceScope(phase, actor) | each actor records its own command, path, changed-set, and claim boundary |
 | commitOwner(phase) | worker forbidden; reviewer/closer owns accepted material commit |
 | crossBatchIsolation | no unrelated worktree path may be present or absorbed |
-| nextMoveSurfaces | session-sync steward updates canonical state only after accepted closure |
+| nextMoveSurfaces | session-sync steward updates canonical state using accepted material evidence |
 
 ## Reviewer Closure Conversion
 
@@ -223,6 +234,8 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | bounded decision | recommend one T3 exit token | worker return | unsupported or expanded claim |
 
 ## Required Artifact Manifest
+
+Work-Order Fulfillment Manifest: exactly the two rows below.
 
 | Artifact | Required worker action |
 |---|---|
@@ -290,10 +303,11 @@ elapsed time when available, changed-set evidence, and bounded recommendation.
 
 ## Operator Checkpoint
 
-Current checkpoint: `HOLD_PENDING_OPERATOR_AUTHORITY` for GLP-T3 execution.
-Packet authoring and same-scope gate repair do not imply that authority. Once
-released, no repeated confirmation is needed unless objective, allowed artifact
-class, R1 ceiling, external-effect class, or commit owner changes.
+Checkpoint disposition: operator released GLP-T3 execution on 2026-08-05 and
+selected the worker through the execution routing layer. No repeated
+confirmation is needed unless objective,
+allowed artifact class, R1 ceiling, external-effect class, or commit owner
+changes.
 
 ## Worker Output Checker Read-Ahead Mandate
 
@@ -355,15 +369,15 @@ failure, or changed commit ownership.
 |---|---|
 | Actor | dispatch author |
 | Provider or surface | local private provenance repository |
-| Session or invocation | GLP-T3 held packet authoring, 2026-08-05 |
+| Session or invocation | GLP-T3 packet release, 2026-08-05 |
 | Working directory | repository root |
 | Command or tool surface | startup reads, source verification, scaffold helper, ADIF resolver, apply_patch, dispatch gates |
 | Target paths | paired baseline and this work order |
 | Allowed scope source | canonical next move permits packet authoring only |
 | Before status evidence | HEAD `10319c7dc`; clean worktree |
-| After status evidence | exact paired packet remains held before execution |
+| After status evidence | exact paired packet is dispatch-ready for one no-commit worker |
 | Diff evidence | `git diff --name-status` limited to paired packet paths |
-| Approval boundary | packet authoring only |
+| Approval boundary | one bounded GLP-T3 proof execution only |
 | Claim boundary | no proof execution, source edit, downstream/public/provider/network/push/deployment action |
 | Agent type | dispatcher |
 | Invocation ID | `glp-t3-held-packet-authoring-2026-08-05` |
@@ -376,7 +390,7 @@ failure, or changed commit ownership.
 
 | Field | Value |
 |---|---|
-| claimScope | held local disposable-workspace proof dispatch |
+| claimScope | released local disposable-workspace proof dispatch |
 | claimDisposition | CLAIM_REJECTED: no completed propagation or runtime enforcement is claimed |
 | receiptEvidence | N/A with reason: no provider/runtime receipt applies |
 | actionEvidence | ACTION_EVIDENCE_PRESENT: packet source verification only |
@@ -418,7 +432,6 @@ Reason: this private provenance work order authorizes no public-sync action.
 
 ## Claim Boundary
 
-This held work order defines one bounded no-commit GLP-T3 proof. It authorizes
-no execution until release, and never authorizes implementation edits,
+This work order releases one bounded no-commit GLP-T3 proof. It never authorizes implementation edits,
 persistent downstream mutation, adoption claims, provider/network use, public
 sync, push, or deployment.

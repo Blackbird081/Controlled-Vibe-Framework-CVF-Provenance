@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: HOLD_PENDING_OPERATOR_AUTHORITY
+Status: REVIEWER_ACCEPTED_DISPATCH_READY
 
 docType: baseline
 
@@ -10,7 +10,7 @@ Date: 2026-08-05
 
 Batch ID: GLP-T3
 
-dispatchBaseHead: `10319c7dc`
+dispatchBaseHead: `34dfbdb0c`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -37,11 +37,11 @@ clean every disposable path without changing implementation source.
 
 ## Baseline Decision
 
-Decision: `PACKET_AUTHORED_EXECUTION_HELD`.
+Decision: `RELEASE_GLP_T3_BOUNDED_PROOF`.
 
-The source owner and proof boundary are identifiable. Execution remains held
-until explicit operator authority releases this packet and a non-empty
-committed packet range passes the pre-dispatch gate.
+The source owner and proof boundary are identifiable. The operator explicitly
+released this bounded execution on 2026-08-05. Dispatch still requires a
+non-empty committed release range and a passing pre-dispatch gate.
 
 ## Authorization / Dependency Gate
 
@@ -51,7 +51,7 @@ committed packet range passes the pre-dispatch gate.
 | GLP-T3 roadmap scope | roadmap Work Plan row and T2R1 outcome | ACCEPT |
 | local disposable proof owner | golden harness setup, assertions, and cleanup | ACCEPT |
 | implementation change need | current harness already covers the required generated surfaces and carrier | N/A with reason: proof-only execution |
-| execution authority | no explicit GLP-T3 execution release recorded | HOLD_PENDING_OPERATOR_AUTHORITY |
+| execution authority | explicit operator release recorded on 2026-08-05 | ACCEPT |
 
 ## Scope / Target / Owner Boundary
 
@@ -243,8 +243,15 @@ DEFERRED_PRIVATE_ONLY
 Reason: this provenance packet neither changes public artifacts nor authorizes
 public sync.
 
+## Operator Release
+
+The operator explicitly released GLP-T3 execution on 2026-08-05. Worker routing
+is execution-layer metadata and does not alter the role-neutral evidence
+contract, independent-review boundary, one-call ceiling, zero-network rule, or
+no-commit requirement.
+
 ## Claim Boundary
 
-This baseline defines a held GLP-T3 proof packet. It does not execute the
+This baseline releases a bounded GLP-T3 proof packet. It does not execute the
 harness, mutate a real workspace, prove adoption, call a provider, use the
 network, publish, push, or deploy.
