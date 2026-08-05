@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: BLOCKED_IMPLEMENTATION_EVIDENCE
 
 docType: work_order
 
@@ -246,8 +246,9 @@ Extend the existing harness rather than creating another test file:
 - after existing AC-06 second bootstrap, assert exactly one subsection, all
   five semantics, and no tracked drift;
 - give the existing legacy/mixed fixture a hand-edited ASCII `AGENTS.md`, save
-  its pre-bootstrap bytes, then assert exactly one merge block, carrier content
-  inside that block, and byte-identical pre-existing content outside it;
+   its pre-bootstrap bytes, then assert exactly one merge block, carrier content
+   inside that block, and byte-identical pre-existing content outside it;
+   equivalence disposition: `MATCH` is required from direct byte comparison;
 - scan the template plus generated/refreshed/merge-path `AGENTS.md` files for
   exact private sentinels including `SOT3-T2`, `WS2-T1`, private provenance
   path fragments, raw dissent exemplars, operator/session identifiers, and

@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: GLP_T1_REVIEWER_ACCEPTED_CARRIER_DESIGN_ACCEPTED
+Status: GLP_T2_BLOCKED_IMPLEMENTATION_EVIDENCE
 
 docType: roadmap
 
@@ -113,6 +113,13 @@ GLP-T1 is independently accepted with corrections and decision
 GLP-T2 execution and every later tranche remain held until a fresh
 source-verified packet passes dispatch review and the implementation authority
 required by that packet is explicit; no implementation authority is implied.
+
+GLP-T2 returned `BLOCKED_IMPLEMENTATION_EVIDENCE` on 2026-08-05. The existing
+CP1 hand-edited merge branch rewrites the complete `AGENTS.md` and failed the
+required outside-block byte-identity proof. The partial template/harness diff
+was rejected. GLP-T3 remains held. The next bounded planning move is a fresh
+source-verified packet for CP1 byte-preserving merge repair; implementation of
+that repair requires explicit operator authority.
 
 ## GLP-T0 Outcome - 2026-08-05
 
