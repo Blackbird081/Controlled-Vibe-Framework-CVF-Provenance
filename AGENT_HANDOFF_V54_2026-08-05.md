@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `9296e05ac governance: dispatch latency WS2 capability audit`
-- Active mode: `governance_latency_ws2_t0_dispatched`
+- Latest material commit: `0f2fc9c9d governance: close latency WS2 T0 owner audit`
+- Active mode: `governance_latency_ws2_t0_closed_foundation_parked`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -31,22 +31,24 @@ operator checkpoint. No agent may infer implementation authority from Gate A.
 
 ## Current Mode
 
-`governance_latency_ws2_t0_dispatched`
+`governance_latency_ws2_t0_closed_foundation_parked`
 
 ## Active Boundary
 
-L0 evidence intake is closed bounded. WS2-T0 is dispatched only as a local
-source-read-only owner/feasibility audit. GC010-AER remains value-parked.
-Provenance is authoritative; runtime, downstream, provider, network, package,
-and public-sync surfaces remain outside the active write boundary.
+WS2-T0 is closed bounded. The governed launcher is accepted only as an owner
+for fixed-profile command admission. Technical zero-network isolation is not
+proven and remains parked. GC010-AER remains value-parked. Runtime, downstream,
+provider, network, package, and public-sync surfaces remain outside the active
+write boundary.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`governance_latency_ws2_t0_dispatched`;
-active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=one no-commit
-WS2-T0 owner/feasibility audit worker followed by independent review; parked
-checkpoint=GC010-AER remains value-parked and no design, specification, build,
-live, provider, downstream, public, push, or deployment action is authorized.
+Startup acknowledged: current mode=`governance_latency_ws2_t0_closed_foundation_parked`;
+active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=operator
+checkpoint before any WS2 continuation; parked checkpoint=technical
+zero-network isolation and GC010-AER remain value-parked, and no design,
+specification, build, live, provider, downstream, public, push, or deployment
+action is authorized.
 
 ## Latest Material Closure
 
@@ -93,15 +95,72 @@ live, provider, downstream, public, push, or deployment action is authorized.
 
 ## Next Allowed Move
 
-Execute the committed WS2-T0 work order with one no-commit documentation worker.
-The worker creates exactly the audit and worker return, uses only local
-read-only source inspection, and stops for independent review. It must not run
-bypass probes or implement any enforcement.
+Stop at the operator checkpoint. Any WS2 continuation requires fresh authority
+and a new source-verified packet for an exact command contract plus an
+environment/effect/network/transitive-child enforcement and proof boundary.
+Do not infer technical zero-network isolation from fixed-profile admission.
 
 GC010-AER remains value-parked behind its existing four-fact source condition.
 No provider/API call is authorized by this handoff. The earlier operator
 permission for Alibaba live proof belonged to a different QBS tranche and is
 not transferable.
+
+## 2026-08-05 - Governance Latency WS2-T0 Closure
+
+Material commit `0f2fc9c9d` closes the owner/feasibility audit bounded after
+independent F1-F5 correction and operator-authorized GC-051 registry-only
+remediation. Disposition is `ACCEPT_WITH_REVIEWER_CORRECTIONS`; decision is
+`OWNER_FOUND_NEEDS_FOUNDATION` for fixed-profile admission only. The commit
+passed 83/83 pre-commit checks. No tests, bypass probes, providers, networks,
+runtime implementation, downstream, public-sync, or push action occurred.
+
+## GC-020 Marker - Governance Latency WS2-T0 Closure
+
+This handoff records material parent commit `0f2fc9c9d`. A dedicated
+continuity child may use that parent anchor.
+
+## Core Guard Self-Protection Authorization - WS2-T0 Closure Continuity
+
+Authorized guard-maintenance scope: update current mode and next-move routing
+after accepted WS2-T0 material commit `0f2fc9c9d` and regenerate active-session
+JSON.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator authorized the bounded F1-F5 correction
+and registry-only remediation that produced the accepted closure.
+
+Rollback boundary: revert only this continuity update if material commit
+`0f2fc9c9d` is reverted.
+
+## Agent Operation Trace Block - WS2-T0 Closure Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | reviewer/closer and session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | WS2-T0 closure sync, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | closure gates, material commit, state generator, continuity patch |
+| Target paths | active handoff, front door, state source and generated views |
+| Allowed scope source | GC-020 after material commit `0f2fc9c9d` |
+| Before status evidence | HEAD `0f2fc9c9d`; clean worktree |
+| After status evidence | WS2-T0 closed and foundation parked at operator checkpoint |
+| Diff evidence | continuity-only changed set and generated-state check |
+| Approval boundary | session routing only |
+| Claim boundary | no design, implementation, live/provider, downstream, public, or push authority |
+| Agent type | reviewer/closer and session-sync steward |
+| Invocation ID | `governance-latency-ws2-t0-closure-sync-2026-08-05` |
+| Expected manifest | active handoff, front door, state source and generated views |
+| Actual changed set | same after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## 2026-08-05 - Governance Latency WS2-T0 Dispatch
 

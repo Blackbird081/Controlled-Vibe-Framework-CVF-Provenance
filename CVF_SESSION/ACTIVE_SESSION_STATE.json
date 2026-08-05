@@ -94,8 +94,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "governance_latency_ws2_t0_dispatched",
-  "previousMode": "portable_clone_continuity_published_verified",
+  "currentMode": "governance_latency_ws2_t0_closed_foundation_parked",
+  "previousMode": "governance_latency_ws2_t0_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13689,7 +13689,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "CVF-GOVERNANCE-LATENCY-WS2-T0 is dispatched at material commit 9296e05ac. The next allowed move is one no-commit documentation worker producing exactly the owner/feasibility audit and worker return named by the committed work order, followed by independent review. T0 may inspect local provenance source only; it may not implement or execute capability enforcement, run bypass probes, call providers or networks, use package managers, mutate downstream/public clones, or start design/build. After T0 review, stop for a fresh operator decision. The learning-curve null remains unresolved, the downstream runner remains rejected for import, GC010-AER remains value-parked, and LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "CVF-GOVERNANCE-LATENCY-WS2-T0 is closed bounded at material commit 0f2fc9c9d with independent disposition ACCEPT_WITH_REVIEWER_CORRECTIONS and decision OWNER_FOUND_NEEDS_FOUNDATION. The governed launcher is accepted only as an existing owner for fixed-profile command admission; technical zero-network isolation is unproven. The missing foundation is an exact command contract plus a source-backed environment, effect, network, and transitive-child enforcement/proof boundary. Stop at an operator checkpoint. No design, specification, build, bypass probe, provider/network use, downstream/public mutation, push, or deployment is released. GC010-AER remains value-parked, and LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",

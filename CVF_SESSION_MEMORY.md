@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`governance_latency_ws2_t0_dispatched`; active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=one no-commit WS2-T0 owner/feasibility audit worker followed by independent review; parked checkpoint=GC010-AER remains value-parked and no design, build, live, provider, downstream, or public action is authorized.
+Startup acknowledged: current mode=`governance_latency_ws2_t0_closed_foundation_parked`; active handoff=AGENT_HANDOFF_V54_2026-08-05.md; next allowed move=operator checkpoint before any continuation from the bounded WS2-T0 decision; parked checkpoint=technical zero-network isolation and GC010-AER remain value-parked, with no design, build, live, provider, downstream, or public action authorized.
 
 ## Current Mode
 
-Current mode marker: `governance_latency_ws2_t0_dispatched`
+Current mode marker: `governance_latency_ws2_t0_closed_foundation_parked`
 
-Current mode: `governance_latency_ws2_t0_dispatched`
+Current mode: `governance_latency_ws2_t0_closed_foundation_parked`
 
-`governance_latency_ws2_t0_dispatched`
+`governance_latency_ws2_t0_closed_foundation_parked`
 
 Previous mode:
 
-`portable_clone_continuity_published_verified`
+`governance_latency_ws2_t0_dispatched`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| CVF-GOVERNANCE-LATENCY-WS2-T0 owner/feasibility closure | `0f2fc9c9d` | `CLOSED_PASS_BOUNDED`; `ACCEPT_WITH_REVIEWER_CORRECTIONS`; `OWNER_FOUND_NEEDS_FOUNDATION` for fixed-profile admission only. Technical zero-network isolation remains unproven and parked. |
 | CVF-GOVERNANCE-LATENCY-WS2-T0 owner/feasibility dispatch | `9296e05ac` | `DISPATCH_READY`; exactly one no-commit documentation audit and worker return; no implementation, bypass execution, provider/network, downstream, or public authority. |
 | CVF-GOVERNANCE-LATENCY-L0 evidence intake and Gate A | `daf7dba04` | `CLOSED_PASS_BOUNDED`; independent `ACCEPT_WITH_REVIEWER_CORRECTIONS`; Gate A `PROCEED_WS2_ONLY`. WS2 remains parked behind fresh operator authority and governance packets. |
 | GC009-LIVE-T5 and GC009/GC010 roadmap bounded closure | `b72074578` | `CLOSED_PASS_BOUNDED_GC009_WITH_T5_PARTIAL_LIVE_EVIDENCE_GC010_VALUE_PARKED`. Accepted two real provider calls/ALLOW results across R1/R2, one keyless guard BLOCK response, and two correlated events; composed with accepted T3 deterministic projection; no R3, same-run live projection, exact latency, SLO, or production claim. |
@@ -383,15 +384,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `governance_latency_ws2_t0_dispatched`
+Mode: `governance_latency_ws2_t0_closed_foundation_parked`
 
-`CVF-GOVERNANCE-LATENCY-WS2-T0` is dispatched at material commit
-`9296e05ac`. The next allowed move is one no-commit documentation worker that
-creates exactly the owner/feasibility audit and worker return in the committed
-work order, followed by independent review. T0 is local and source-read-only:
-no implementation, bypass execution, provider/network/package-manager use,
-downstream/public mutation, design, or build. After independent T0 review, stop
-for a fresh operator decision.
+`CVF-GOVERNANCE-LATENCY-WS2-T0` is closed bounded at material commit
+`0f2fc9c9d`. Stop at an operator checkpoint. The governed launcher is accepted
+only for fixed-profile command admission; technical zero-network isolation is
+unproven. Any continuation needs a fresh packet for an exact command contract
+and source-backed environment/effect/network/transitive-child enforcement and
+proof boundary. No design, build, bypass execution, provider/network use,
+downstream/public mutation, push, or deployment is released.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without
