@@ -218,17 +218,17 @@ public export remains separate.
 | Field | Evidence |
 |---|---|
 | Actor | Codex reviewer/closer |
-| Provider or surface | private provenance plus one authorized Alibaba proof |
+| Provider or surface | private provenance, one authorized Alibaba proof, and sibling public-sync export |
 | Session or invocation | QBS lineage R1 reviewer recomputation, 2026-08-05 |
 | Working directory | repository root and cvf-web subdirectory |
 | Command or tool surface | source inspection, focused Vitest, TypeScript, targeted live Vitest, offline manifest, broad offline Vitest, detached baseline diagnostic, gates, git diff/status |
 | Target paths | fifteen source/test paths, worker return, amendment docs, and this completion review |
 | Allowed scope source | committed dispatch plus explicit operator retain/live amendments |
 | Before status evidence | HEAD `fa5328c9b`; uncommitted no-commit worker return; public clean at `27137db4d` |
-| After status evidence | nineteen-path material candidate pending commit; public unchanged |
+| After status evidence | provenance closed at `78e700186`; public projection pushed at `a307da84a` |
 | Diff evidence | `git diff --name-status`; `git status --short --untracked-files=all`; command outputs |
-| Approval boundary | provenance reviewer acceptance and material commit only |
-| Claim boundary | no independent review, public export, downstream edit, benchmark score, deployment, or production claim |
+| Approval boundary | provenance reviewer acceptance plus the operator-requested bounded public projection |
+| Claim boundary | no independent review, downstream edit, benchmark score, release-quality deployment, or production claim |
 | Agent type | reviewer/closer |
 | Invocation ID | `qbs-lineage-r1-reviewer-2026-08-05` |
 | Expected manifest | fifteen source/test paths, baseline/work-order amendment, worker return, and this review |
@@ -251,13 +251,15 @@ public export remains separate.
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: this review accepts provenance material only. A separate reviewed
-public projection/export tranche must inspect the candidate and public tests.
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
 
-Next action: push the closed provenance range before any separately governed
-public projection.
+Public commit: `a307da84a`.
+
+Exported artifact paths: the seven public-safe source/test paths in public
+commit `a307da84a`; private baseline, work order, worker return, completion
+review, handoff, receipt payload, and live-test file were not exported.
 
 ## Machine Closure Package
 
@@ -273,7 +275,7 @@ public projection.
 | Session continuity | active handoff | material sync commit `c1392c516` records `68b9c9250` | PASS |
 | Worker return | QBS worker return | `COMPLETE_PENDING_REVIEW`; fast gate PASS | PASS |
 | Material changed set | nineteen paths | committed at `68b9c9250`; `git diff --name-status fa5328c9b..68b9c9250` | MATCH |
-| Public export | sibling clone | clean `27137db4d` | N/A with reason: DEFERRED_PRIVATE_ONLY |
+| Public export | sibling clone | `27137db4d..a307da84a`; origin/main verified; worktree clean | EXPORTED |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -285,7 +287,7 @@ public projection.
 | receipt route/policy | `/api/execute`; `pol-20260804-0001` | PASS |
 | no live test in offline manifest | zero matches across 3336 tests | PASS |
 | residual failure ownership | four reproduced at `fa5328c9b` | PASS_BOUNDED |
-| public isolation | empty status at `27137db4d` | PASS |
+| public export | pushed and verified at `a307da84a`; seven public-safe paths | PASS |
 
 ## Claim Boundary
 

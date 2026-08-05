@@ -438,7 +438,7 @@ projection/export remains a separate checkpoint following accepted closure.
 | Pre-closure | autorun receipt | 75/75 checks | PASS |
 | Worker return | paired worker-return artifact | sixteen worker-owned paths; no worker commit | PASS |
 | Reviewer independence | paired completion review | `SINGLE_AGENT_MULTI_ROLE`; independence not claimed | PASS_BOUNDED |
-| Public export | sibling public-sync clone | separate tranche required | DEFERRED_PRIVATE_ONLY |
+| Public export | sibling public-sync clone | `27137db4d..a307da84a`; seven public-safe paths; origin/main verified | EXPORTED |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -466,7 +466,12 @@ offline verification. It does not authorize public export.
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: a separate reviewed projection/export tranche must follow provenance
-closure.
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+
+Public commit: `a307da84a`.
+
+Exported artifact paths: seven public-safe source/test paths. Private governed
+artifacts, continuity, receipt payloads, and the provenance-only live-test file
+remain excluded.
