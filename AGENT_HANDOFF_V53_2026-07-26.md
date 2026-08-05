@@ -6,8 +6,8 @@ Status: ACTIVE
 
 ## Handoff Context
 
-- Repo state: QBS lineage reconciliation R1 is `CLOSED_PASS_BOUNDED`; provenance push is the next allowed move
-- Latest completed commit: `78e700186 governance: close QBS lineage reconciliation R1`
+- Repo state: QBS lineage reconciliation R1 is `CLOSED_PASS_BOUNDED` and public export is verified at `a307da84a`
+- Latest completed commit: `9b4372317 governance: record QBS public export`
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed
 - External agent memory files: non-canonical convenience only
@@ -679,6 +679,50 @@ accept this parent SHA for the dedicated handoff-sync commit.
 | Claim boundary | provenance remediation closed; public export and governance-latency L0 remain separately gated |
 | Agent type | Codex reviewer/closer/session-sync steward |
 | Invocation ID | `public-sync-r1-closure-sync-2026-08-05` |
+| Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - QBS R1 Public Export Sync
+
+Authorized continuity scope: record provenance export-disposition commit
+`9b4372317` and verified public commit `a307da84a`.
+
+Protected path:
+
+- `AGENT_HANDOFF_V53_2026-07-26.md`.
+
+Operator authorization: push the bounded public-safe QBS projection to
+`Blackbird081/Controlled-Vibe-Framework-CVF.git` and keep private evidence out.
+
+Rollback boundary: revert only this handoff entry if provenance disposition
+commit `9b4372317` or public commit `a307da84a` is reverted.
+
+## GC-020 Marker - QBS R1 Public Export
+
+This handoff records material parent commit `9b4372317`. The handoff-only child
+SHA cannot be known before commit creation, so the active-session checker may
+accept this parent SHA for the dedicated handoff-sync commit.
+
+## Agent Operation Trace Block - QBS R1 Public Export Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex reviewer/closer/session-sync steward |
+| Provider or surface | private provenance and sibling public-sync repository |
+| Session or invocation | QBS R1 public export sync, 2026-08-05 |
+| Working directory | provenance root and sibling public-sync root |
+| Command or tool surface | public startup reads, bounded projection, offline Vitest, TypeScript, git commit/push/fetch, provenance disposition update |
+| Target paths | `AGENT_HANDOFF_V53_2026-07-26.md` |
+| Allowed scope source | operator instruction to continue push to `Blackbird081/Controlled-Vibe-Framework-CVF.git` |
+| Before status evidence | public HEAD `27137db4d`; provenance QBS closure `78e700186` |
+| After status evidence | public origin/main `a307da84a`; provenance export record `9b4372317` |
+| Diff evidence | public seven-path commit plus two-path provenance disposition commit |
+| Approval boundary | bounded public-safe projection only; no new provider call or private artifact export |
+| Claim boundary | offline-verified public projection; no release-quality, deployment, production, or universal parity claim |
+| Agent type | Codex reviewer/closer/session-sync steward |
+| Invocation ID | `qbs-r1-public-export-sync-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Actual changed set | `AGENT_HANDOFF_V53_2026-07-26.md` |
 | Manifest delta | MATCH |
