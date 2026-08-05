@@ -171,7 +171,7 @@ isolation stays parked behind a fresh operator checkpoint and governance packet.
 | System loop interlock | N/A with reason | no system-loop interlock changed or claimed | N/A with reason: no system-loop interlock changed |
 | Runtime/provider/live proof | N/A with reason | forbidden and not claimed in T0 | PASS |
 | Public Export Disposition | `DEFERRED_PRIVATE_ONLY` | private provenance only | PASS |
-| Session continuity | N/A with reason | no accepted closure or mode transition | PASS |
+| Session continuity | active state, front door, and V54 | closure mode and operator checkpoint recorded at continuity commit `17c84c23d` | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -262,7 +262,7 @@ Returned defects: NONE_RETURNED
 | applicableCheckersRead | `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_closure_packaging_preflight.py`; `governance/compat/check_machine_closure_package.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_review_cost_control.py` |
 | literalTokensReviewed | review status, Machine Closure Package, Public Export Disposition, finding disposition, AOT, epistemic block, exact decision token |
 | gateRunPurpose | confirmation/evidence after source-first review, not first discovery |
-| claimBoundary | reviewer disposition only; no accepted closure or implementation authority |
+| claimBoundary | bounded T0 closure only; no implementation authority |
 
 ## Agent Operation Trace Block
 
@@ -279,7 +279,7 @@ Returned defects: NONE_RETURNED
 | After status evidence | F1-F5 corrected and GC-051 registry coverage generated |
 | Diff evidence | `git status --short --untracked-files=all`; worker fast gate |
 | Approval boundary | independent T0 semantic review only |
-| Claim boundary | no accepted closure, implementation, live/provider, downstream, public, or push authority |
+| Claim boundary | bounded T0 closure; no implementation, live/provider, downstream, public, or push authority |
 | Agent type | independent reviewer/closer |
 | Invocation ID | `governance-latency-ws2-t0-independent-review-2026-08-05` |
 | Expected manifest | audit, worker return, completion, one registry entry source, and generated aggregate |
