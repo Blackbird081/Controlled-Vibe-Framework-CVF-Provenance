@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: HOLD_PENDING_OPERATOR_AUTHORITY
+Status: CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY
 
 Date: 2026-08-05
 
@@ -10,9 +10,9 @@ Batch ID: GLP-T4
 
 dispatchBaseHead: `72f0249bb`
 
-executionBaseHead: `PENDING_OPERATOR_RELEASE`
+executionBaseHead: `87327cb68`
 
-closureBaseHead: `PENDING_REVIEWER`
+closureBaseHead: `87327cb68`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -89,7 +89,7 @@ All other paths are read-only.
 | roadmap requirement | GLP-T4 row and T3 outcome in the GLP roadmap | ACCEPT |
 | prerequisite | T3 completion review and `eae28c785` | SATISFIED |
 | packet authoring | active next move at `72f0249bb` | ACCEPT |
-| worker execution | explicit operator release required | HOLD_PENDING_OPERATOR_AUTHORITY |
+| worker execution | operator manually routed the committed packet and returned the exact worker result | SATISFIED |
 
 ## Agent Roles
 
@@ -174,7 +174,7 @@ Returned defects: NONE_RETURNED
 | Dependency | Current evidence | Release rule | Disposition |
 |---|---|---|---|
 | GLP-T3 | completion review `CLOSED_PASS_BOUNDED`; material commit `eae28c785` | T3 must accept `PROPAGATION_PROVEN_BOUNDED` | SATISFIED |
-| GLP-T4 worker authority | held baseline and this work order | explicit operator release after packet gates | HOLD_PENDING_OPERATOR_AUTHORITY |
+| GLP-T4 worker authority | operator-mediated manual routing and returned result at execution base `87327cb68` | explicit operator release after packet gates | SATISFIED |
 
 ## Agent Handoff Contract Control Block
 
@@ -253,14 +253,14 @@ Any third changed path is a stop condition.
 
 ## Acceptance Criteria
 
-- [ ] exact two-output manifest and unchanged HEAD;
-- [ ] current carrier-to-guide discovery chain is source-cited;
-- [ ] `guideValueDecision` is evidence-backed;
-- [ ] local public-clone evidence is reported or N/A with a concrete reason;
-- [ ] exactly one public-export disposition and T4 recommendation is returned;
-- [ ] proof-subject and worker-orchestration provider/cost denominators are separate;
-- [ ] no Claude CLI, network, provider, guide/public mutation, push, or deployment;
-- [ ] worker fast gate passes.
+- [x] exact two-output manifest and unchanged HEAD;
+- [x] current carrier-to-guide discovery chain is source-cited;
+- [x] `guideValueDecision` is evidence-backed;
+- [x] local public-clone evidence is reported with direct local Git evidence;
+- [x] exactly one public-export disposition and T4 recommendation is returned;
+- [x] proof-subject calls are separated from unknown host-session usage by reviewer correction;
+- [x] no Claude CLI, proof-subject network/provider call, guide/public mutation, push, or deployment;
+- [x] worker fast gate passes.
 
 ## Evidence Requirements
 
@@ -271,10 +271,10 @@ disagreement with the packet prediction.
 
 ## Operator Checkpoint
 
-Required release token: `AUTHORIZE_GLP_T4_BOUNDED_AUDIT` or equivalent explicit
-instruction. This is one checkpoint for the whole two-output audit. Same-scope
-repairs and reviewer closure do not require repeated operator questions unless
-authority must expand.
+Checkpoint disposition: SATISFIED. The operator manually routed the committed
+packet and returned the exact two-output worker result. Same-scope reviewer
+repair and private closure require no repeated checkpoint; any public-sync
+mutation remains a separate future authority boundary.
 
 ## Worker Output Checker Read-Ahead Mandate
 
@@ -325,14 +325,63 @@ is complete and interpretable.
 
 ## Closure Checklist
 
-- [ ] worker return status is `COMPLETE_PENDING_REVIEW` or reason-bearing block;
-- [ ] exact two worker-owned paths and unchanged worker HEAD are proven;
-- [ ] every roadmap T4 requirement maps to evidence;
-- [ ] guide decision and public disposition are independently supported;
-- [ ] proof-subject and orchestration costs are separated;
-- [ ] no forbidden action occurred;
-- [ ] reviewer-owned closure diff and committed-range gates pass;
-- [ ] session continuity is updated separately if next move changes.
+- [x] worker return status is `COMPLETE_PENDING_REVIEW`;
+- [x] exact two worker-owned paths and unchanged worker HEAD are proven;
+- [x] every roadmap T4 requirement maps to evidence;
+- [x] guide decision and public disposition are independently supported;
+- [x] proof-subject zero calls and unknown host usage are separated;
+- [x] no forbidden action occurred;
+- [x] reviewer-owned closure diff and committed-range gates pass;
+- [x] session continuity is updated separately because next move changes.
+
+## Closure Diff Gate
+
+| Check | Evidence | Disposition |
+|---|---|---|
+| roadmap T4 closure review | independent completion review | PASS |
+| operator-guide update if needed | `guideValueDecision=NO_UPDATE_NEEDED`; existing GET_STARTED to bootstrap to generated AGENTS chain | PASS |
+| public-export disposition | local public clone has stale carrier owner content; no matching public commit | `DEFERRED_PRIVATE_ONLY` |
+| exact worker manifest | two new untracked outputs; worker HEAD unchanged | PASS |
+| cost denominator | proof subject 0; host usage `UNKNOWN_NOT_EXPOSED` | PASS_WITH_REVIEWER_CORRECTION |
+| forbidden effects | no guide/public mutation, fetch, provider proof-subject call, push, or deployment | PASS |
+
+## Reviewer Disposition
+
+Reviewer verdict: `CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY`.
+
+The guide-value and local public-drift findings are independently accepted.
+Reviewer correction applies `ADIF-0047`: proof-subject outbound calls are zero,
+while operator-mediated host provider/session/quota/cost telemetry remains
+`UNKNOWN_NOT_EXPOSED`. No evidence rerun was necessary.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY` | PASS |
+| Completion or reviewer artifact | GLP-T4 completion review | `Reviewer verdict: CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY` | PASS |
+| Roadmap state | GLP roadmap | `Status: CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY` | PASS |
+| Baseline | GLP-T4 baseline | held packet source and release boundary | PASS |
+| Worker audit | GLP-T4 audit | `REVIEWER_ACCEPTED_BOUNDED` | PASS |
+| Worker return | GLP-T4 worker return | `COMPLETE_PENDING_REVIEW`; reviewer correction recorded | PASS |
+| Registry JSON | N/A with reason | no corpus registry mutation required | BLOCKED with reason |
+| Registry Markdown | N/A with reason | no corpus registry mutation required | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external knowledge intake; sibling public clone is a governed public surface | N/A with reason |
+| System loop interlock | GLP roadmap and completion review | private roadmap closes; public refresh remains separate and unselected | PASS |
+| Public export | this file and completion review | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Session continuity | separate session-sync batch | N/A with reason: commit split required | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| worker changed paths | exact audit and worker return | PASS |
+| worker HEAD | unchanged at `87327cb68` | PASS |
+| guide decision | `NO_UPDATE_NEEDED` | PASS |
+| public clone readout | `PARTIAL_PRESENCE_WITH_DATED_DRIFT` at `a307da84a` | PASS |
+| T4 exit | `DEFERRED_PRIVATE_ONLY` | PASS |
+| proof-subject calls | 0 | PASS |
+| host usage | `UNKNOWN_NOT_EXPOSED` | PASS_WITH_REVIEWER_CORRECTION |
 
 ## Current Runtime Freshness Verification
 
@@ -387,6 +436,18 @@ network/provider/Claude CLI need, unclear public remote, or commit-owner change.
 | interceptionBoundary | no runtime interception or enforcement claim |
 | claimLanguage | proposed read-only audit only |
 | forbiddenExpansion | no guide/template/script/test/runtime/public-sync/provider/network/Claude CLI/push/deployment action |
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | external-agent returned output |
+| Chain map route | NOT_APPLICABLE_WITH_REASON: no external knowledge source was absorbed by GLP-T4 |
+| Matching local-view guard | N/A with reason: no external source comparison was adopted |
+| Owner surface | GLP-T4 audit and completion review |
+| Disposition | NOT_APPLICABLE_WITH_REASON: reviewer reverified accepted facts against current governed sources |
+| Claim boundary | no external-source authority or absorption claim |
 
 ## Epistemic Process Block
 

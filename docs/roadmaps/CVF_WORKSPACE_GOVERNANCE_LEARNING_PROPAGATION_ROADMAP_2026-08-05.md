@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: GLP_T3_REVIEWER_ACCEPTED_PROPAGATION_PROVEN_BOUNDED
+Status: CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY
 
 docType: roadmap
 
@@ -138,6 +138,14 @@ Claude worker orchestration was separately disclosed as one session, 49 turns,
 572.670 seconds, and USD 2.9589262. GLP-T4 packet authoring only is next;
 adoption, public export, and GLP-T4 execution remain held.
 
+GLP-T4 subsequently completed one local read-only adoption-boundary audit.
+Independent review accepted `guideValueDecision=NO_UPDATE_NEEDED`: GET_STARTED
+already routes operators through the bootstrap script to the generated project
+AGENTS carrier. The sibling public clone at `a307da84a` contains the carrier
+owner and bootstrap mechanism, but its carrier content predates the accepted
+five-semantic GLP update. Final T4 decision: `DEFERRED_PRIVATE_ONLY`. Public
+refresh remains a separate future packet, not an automatic next tranche.
+
 ## GLP-T0 Outcome - 2026-08-05
 
 The independent reviewer reproduced 34 catalog artifacts and all 15 profile
@@ -243,6 +251,18 @@ runtime or provider-behavior claim.
 No new ADIF entry is opened by this roadmap. The observed latency behavior is
 already owned by ADIF-0026; GLP-T0 tests distribution, not defect novelty.
 
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | external-agent returned output |
+| Chain map route | NOT_APPLICABLE_WITH_REASON: no external knowledge source was absorbed into this roadmap closure |
+| Matching local-view guard | N/A with reason: no external source comparison or recommendation was adopted |
+| Owner surface | GLP roadmap and completion review |
+| Disposition | NOT_APPLICABLE_WITH_REASON: independent review reverified every accepted fact against governed local sources |
+| Claim boundary | no external-source authority or absorption claim |
+
 ## Epistemic Process Block
 
 Epistemic Process Applicability: HIGH_EVIDENCE
@@ -269,7 +289,7 @@ claim and must not treat pointer presence as content propagation.
 | applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py` |
 | literalTokensReviewed | roadmap authorization, purpose, scope, non-goals, design control, work plan, acceptance, verification, finding-learning, epistemic-process, trace, and public-export section labels; `ROADMAP_READY_FOR_T0_GC018_AUTHORING`; `DEFERRED_PRIVATE_ONLY` |
 | gateRunPurpose | confirm the roadmap shape and bounded authority after source audit, not discover requirements through repeated failures |
-| claimBoundary | roadmap and T0 release only; no bootstrap implementation, generated workspace mutation, downstream edit, or public action |
+| claimBoundary | bounded private roadmap closure; no public-sync mutation, downstream adoption, production, provider/live, push, or deployment claim |
 
 ## Agent Operation Trace Block
 
@@ -299,14 +319,32 @@ claim and must not treat pointer presence as content propagation.
 DEFERRED_PRIVATE_ONLY
 
 Reason: this roadmap contains private provenance distribution analysis and does
-not authorize public-sync mutation. A later public-safe carrier requires its own
-classification, evidence, and repository-boundary verification.
+not authorize public-sync mutation. Local read-only evidence shows the public
+carrier owner exists but lacks the accepted five-semantic content. A later
+public refresh requires a separate packet and operator authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | GLP-T4 work order | `Status: CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY` | PASS |
+| Completion or reviewer artifact | GLP-T4 completion review | `Reviewer verdict: CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY` | PASS |
+| Roadmap state | this file | `Status: CLOSED_PASS_BOUNDED_DEFERRED_PRIVATE_ONLY` | PASS |
+| Baseline | GLP-T4 baseline | bounded local read-only audit packet | PASS |
+| Worker audit | GLP-T4 audit | `guideValueDecision=NO_UPDATE_NEEDED`; public drift readout | PASS |
+| Worker return | GLP-T4 worker return | exact two-output no-commit return | PASS |
+| Registry JSON | N/A with reason | no corpus registry mutation required | BLOCKED with reason |
+| Registry Markdown | N/A with reason | no corpus registry mutation required | BLOCKED with reason |
+| External evidence digest | N/A with reason | no external knowledge intake | N/A with reason |
+| System loop interlock | this roadmap | public refresh is separate and unselected | PASS |
+| Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Session continuity | separate session-sync batch | N/A with reason: commit split required | N/A with reason |
 
 ## Claim Boundary
 
-This roadmap proves only that current provenance source contains a bounded
-workspace-learning propagation risk worth independent T0 audit. It releases
-GLP-T0 documentation and local read-only evidence work only. It does not prove
-that every generated workspace is stale, authorize a carrier implementation,
-change any profile, mutate a workspace or project, publish artifacts, call a
-provider, use the network, push, deploy, or claim production readiness.
+This roadmap closes bounded private-provenance learning propagation through
+carrier design, implementation, disposable propagation proof, and adoption-
+boundary audit. It proves neither real downstream adoption nor causal latency
+reduction. It does not export the updated carrier content, authorize public
+refresh, mutate downstream projects, call a provider for proof, push, deploy,
+or claim production readiness.
