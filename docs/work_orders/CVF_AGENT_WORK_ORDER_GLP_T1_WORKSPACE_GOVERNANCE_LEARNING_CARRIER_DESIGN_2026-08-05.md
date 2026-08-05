@@ -31,7 +31,7 @@ uncommitted, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
 Memory class: FULL_RECORD
 
-Status: REVIEWER_ACCEPTED_REDISPATCH_READY_R1_CONSUMER_CHAIN_REPAIR
+Status: REVIEWER_ACCEPTED_WITH_CORRECTIONS
 
 docType: work_order
 
@@ -280,15 +280,15 @@ add the three full conditional headings unless evidence makes one applicable.
 
 ## Acceptance Criteria
 
-- [ ] current membership and profile reach are command-backed;
-- [ ] all four candidates receive the same decision rubric;
-- [ ] selected owner and semantic fit are exact;
-- [ ] included and excluded content boundaries are explicit;
-- [ ] T2 paths, tests, leakage negatives, drift owner, and rollback are bounded;
-- [ ] exactly one T1 exit recommendation is returned;
-- [ ] only two worker paths are pending;
-- [ ] worker-return fast gate passes;
-- [ ] worker makes no commit.
+- [x] current membership and profile reach are command-backed;
+- [x] all four candidates receive the same decision rubric;
+- [x] selected owner and semantic fit are exact;
+- [x] included and excluded content boundaries are explicit;
+- [x] T2 paths, tests, leakage negatives, drift owner, and rollback are bounded;
+- [x] exactly one T1 exit recommendation is returned;
+- [x] only two worker paths were pending at worker return;
+- [x] worker-return fast gate passes;
+- [x] worker makes no commit.
 
 ## Review Gate
 
@@ -306,11 +306,11 @@ consolidated repair batch. Gate PASS alone is not semantic acceptance.
 
 ## Closure Checklist
 
-- [ ] two required outputs exist and no other worker path changed;
-- [ ] acceptance criteria are resolved;
-- [ ] worker-return fast gate passes after final worker edit;
-- [ ] independent reviewer disposition is recorded;
-- [ ] material and continuity commits remain reviewer/steward owned.
+- [x] two required outputs exist and no other worker path changed;
+- [x] acceptance criteria are resolved;
+- [x] worker-return fast gate passes after final worker edit;
+- [x] independent reviewer disposition is recorded;
+- [x] material and continuity commits remain reviewer/steward owned.
 
 ## Operator Checkpoint
 

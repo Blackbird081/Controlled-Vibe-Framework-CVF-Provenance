@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: GLP_T0_REVIEWER_ACCEPTED_PROCEED_DOC_ONLY
+Status: GLP_T1_REVIEWER_ACCEPTED_CARRIER_DESIGN_ACCEPTED
 
 docType: roadmap
 
@@ -108,10 +108,11 @@ or weakens a protected control.
 | GLP-T3 | Prove propagation in a disposable fresh workspace | generated manifest, expected-artifact assertions, negative private-leakage checks, project guidance readout | `PROPAGATION_PROVEN_BOUNDED` or `PROPAGATION_PROOF_FAILED` |
 | GLP-T4 | Close and publish the adoption boundary | closure review, operator guide update if needed, public-export disposition | `CLOSED_PASS_BOUNDED`, `DEFERRED_PRIVATE_ONLY`, or `BLOCKED_MISSING_PUBLIC_ARTIFACTS` |
 
-GLP-T0 is independently accepted bounded with decision `PROCEED_DOC_ONLY`.
-GLP-T1 packet authoring is the next allowed move. GLP-T1 execution and every
-later tranche remain held until a fresh source-verified packet passes dispatch
-review; no implementation authority is implied.
+GLP-T1 is independently accepted with corrections and decision
+`CARRIER_DESIGN_ACCEPTED`. GLP-T2 packet authoring is the next allowed move.
+GLP-T2 execution and every later tranche remain held until a fresh
+source-verified packet passes dispatch review and the implementation authority
+required by that packet is explicit; no implementation authority is implied.
 
 ## GLP-T0 Outcome - 2026-08-05
 
@@ -127,6 +128,22 @@ Reviewer corrections were bounded to profile/file counts, line citations, the
 worker-return literal contract, and the historical execution-base defect. No
 bootstrap, catalog, profile, template, generated workspace, downstream,
 provider/network, public-sync, push, or deployment action occurred.
+
+## GLP-T1 Outcome - 2026-08-05
+
+Independent review accepts
+`governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md` as the
+smallest safe carrier because `scripts/new-cvf-workspace.ps1` unconditionally
+projects it into new and refreshed downstream project `AGENTS.md` files. The
+first-pass guard-orientation recommendation remains preserved with the R1
+consumer-chain disagreement.
+
+The bounded GLP-T2 design manifest contains exactly the downstream template
+and `scripts/test_cvf_golden_downstream_bootstrap.ps1`. The existing hermetic
+harness must prove fresh delivery, refresh idempotency, hand-edited merge-block
+delivery, byte preservation, and exact private-evidence exclusion. No template,
+test, bootstrap, workspace, project, provider/network, public-sync, push, or
+deployment action occurred in GLP-T1.
 
 ## Governance Cost Budget
 
