@@ -182,3 +182,32 @@ continuity/state changes if material commit `daf7dba04` is reverted.
 
 This handoff records closure state only. It does not convert
 `PROCEED_WS2_ONLY` into execution authority.
+
+## GC-020 Marker - V54 Continuity Commit Anchor
+
+The completed rotation/state continuity commit is `4825ea766`. This dedicated
+handoff-only child records that exact parent; its own SHA cannot be known before
+creation and may be accepted under the GC-020 parent rule.
+
+## Agent Operation Trace Block - V54 Commit Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | V54 exact continuity anchor, 2026-08-05 |
+| Working directory | repository root |
+| Command or tool surface | handoff-only patch and commit |
+| Target paths | `AGENT_HANDOFF_V54_2026-08-05.md` |
+| Allowed scope source | GC-020 after continuity commit `4825ea766` |
+| Before status evidence | HEAD `4825ea766`; clean worktree |
+| After status evidence | active handoff contains the exact continuity parent SHA |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | continuity only |
+| Claim boundary | no WS2, provider, downstream, public, or material authority |
+| Agent type | session-sync steward |
+| Invocation ID | `governance-latency-v54-exact-anchor-2026-08-05` |
+| Expected manifest | `AGENT_HANDOFF_V54_2026-08-05.md` |
+| Actual changed set | `AGENT_HANDOFF_V54_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
