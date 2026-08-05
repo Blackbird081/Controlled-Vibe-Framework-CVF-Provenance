@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `7dd304223 governance: prepare held GLP T2R1 merge repair packet`
-- Active mode: `workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`
+- Latest material commit: `9cc29037c governance: release GLP T2R1 merge repair`
+- Active mode: `workspace_governance_learning_propagation_t2r1_worker_dispatched`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 
@@ -38,15 +38,14 @@ public-sync, provider/network, push, and deployment changes remain excluded.
 
 ## Current Mode
 
-`workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`
+`workspace_governance_learning_propagation_t2r1_worker_dispatched`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2r1_packet_ready_held_operator_authority`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator
-reviews and explicitly releases or rejects bounded GLP-T2R1 implementation;
-parked checkpoint=GLP-T2R1 bootstrap implementation authority, while GLP-T3,
-WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_propagation_t2r1_worker_dispatched`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit
+worker executes the exact four-path GLP-T2R1 manifest and returns for
+independent review; parked checkpoint=GLP-T3, WS2, and GC010-AER remain parked.
 
 ## Released Packet
 
@@ -73,10 +72,9 @@ WS2, and GC010-AER remain parked.
 
 ## Next Allowed Move
 
-Operator reviews and explicitly releases or rejects the source-verified
-GLP-T2R1 packet committed at `7dd304223`. Its exact future worker scope is CP1
-bootstrap, downstream AGENTS template, golden harness, and worker return under
-`WORKER_MUST_NOT_COMMIT`. GLP-T3 and every external lane remain held.
+Dispatch one independent no-commit worker against material release commit
+`9cc29037c`. Exact scope is CP1 bootstrap, downstream AGENTS template, golden
+harness, and worker return. GLP-T3 and every external lane remain held.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 
