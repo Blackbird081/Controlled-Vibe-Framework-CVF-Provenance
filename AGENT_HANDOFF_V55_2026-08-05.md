@@ -166,6 +166,12 @@ creation and may be accepted under the GC-020 parent rule.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## GC-020 Marker - Public Projection Pre-Push T0 Dispatch Anchor
+
+Dispatch commit `1c0fd94ad` authorizes the bounded no-commit T0 evidence audit.
+The R2 worker return is under independent reviewer closure; this marker repairs
+the dispatch-commit continuity anchor only and does not claim closure.
+
 ## GC-020 Marker - GLP-PUBLIC-R1 Export Closure Continuity
 
 Material commit `2377a8ddc` closes the private export packet. Public commit
