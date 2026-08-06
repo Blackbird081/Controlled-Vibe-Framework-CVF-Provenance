@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "workspace_governance_learning_public_carrier_refresh_dispatched",
+  "currentMode": "workspace_governance_learning_public_carrier_refresh_closed_exported",
   "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
   "nextAllowedMove": "GLP-PUBLIC-R1 is operator-selected and dispatched at 8feffa976 for exactly one public carrier path. Execute the five-semantic carrier refresh in the sibling public-sync clone, run the focused golden bootstrap proof and leakage scan, commit and push main to Blackbird081/Controlled-Vibe-Framework-CVF.git, then record private closure. No private GLP packet export, downstream mutation, provider/live call, runtime work, WS2, or GC010-AER is authorized; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",

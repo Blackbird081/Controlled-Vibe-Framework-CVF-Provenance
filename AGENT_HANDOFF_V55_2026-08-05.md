@@ -8,43 +8,45 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `8feffa976 governance: authorize GLP public carrier refresh`
-- Active mode: `workspace_governance_learning_public_carrier_refresh_dispatched`
+- Latest material commit: `2377a8ddc governance: close exported GLP public carrier refresh`
+- Active mode: `workspace_governance_learning_public_carrier_refresh_closed_exported`
 - Latest closed numbered LHW wave: `LHW24`
-- Public export: `DEFERRED_PRIVATE_ONLY`
+- Public export: `EXPORTED` at public commit `9b039ea6b`
+- Remote tracking branch: origin/main
+- Exact remote SHA must be derived live from git when needed.
+- External agent memory files: non-canonical convenience only.
 
 ## Purpose
 
-Execute the operator-selected one-path public carrier refresh while keeping
-private evidence and unrelated lanes excluded.
+Record the completed one-path public carrier export while keeping private
+evidence, adoption claims, and unrelated lanes excluded.
 
 ## Scope / Target / Owner Boundary
 
-Scope: GLP-T4 reviewer closure and terminal GLP roadmap continuity.
+Scope: GLP-PUBLIC-R1 private closure and public export continuity.
 
-Target: closed private-provenance learning propagation evidence.
+Target: synchronized private closure and one public carrier commit.
 
-Owner boundary: no operator-guide mutation, public-sync/export,
-provider/network proof call, push, deployment, or further GLP execution is
-released.
+Owner boundary: public export is complete; no downstream mutation, adoption
+claim, provider proof call, deployment, or further GLP execution is released.
 
 ## Active Boundary
 
-GLP-T4 and the roadmap are closed bounded at `37d241d60` with
-`DEFERRED_PRIVATE_ONLY`. The guide decision is `NO_UPDATE_NEEDED`; public
-carrier drift remains parked for a separate operator-selected public-sync
-packet.
+GLP-T4 and the roadmap remain closed bounded at `37d241d60`. GLP-PUBLIC-R1 is
+closed at `2377a8ddc`; the public carrier is pushed and synchronized at
+`9b039ea6b`. Distribution is proven, but downstream adoption and measured
+latency effect are not.
 
 ## Current Mode
 
-`workspace_governance_learning_public_carrier_refresh_dispatched`
+`workspace_governance_learning_public_carrier_refresh_closed_exported`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_dispatched`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=execute and
-push the exact one-path public carrier refresh; parked checkpoint=WS2 and
-GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_closed_exported`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator
+selects the next high-value lane; parked checkpoint=WS2 and GC010-AER remain
+parked.
 
 ## Released Packet
 
@@ -71,10 +73,8 @@ GC010-AER remain parked.
 
 ## Next Allowed Move
 
-Execute GLP-PUBLIC-R1 from dispatch commit `8feffa976`: update exactly the
-public downstream-agent carrier, run focused bootstrap and leakage evidence,
-commit and push public `main`, then record private closure. WS2 and GC010-AER
-remain parked.
+No active GLP tranche remains. The operator may select the next high-value
+lane. WS2 and GC010-AER remain parked behind their recorded reopen conditions.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 
@@ -163,6 +163,36 @@ creation and may be accepted under the GC-020 parent rule.
 | Invocation ID | `glp-t2-v55-exact-anchor-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V55_2026-08-05.md` |
 | Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - GLP-PUBLIC-R1 Export Closure Continuity
+
+Material commit `2377a8ddc` closes the private export packet. Public commit
+`9b039ea6b` changes exactly the downstream-agent carrier and is synchronized
+with public `origin/main`. The golden bootstrap passed 69/69 and the provenance
+pre-push chain passed 99/99. This continuity batch opens no further tranche.
+
+## Agent Operation Trace Block - GLP-PUBLIC-R1 Export Closure Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | private provenance and public Git refs |
+| Session or invocation | GLP-PUBLIC-R1 closure continuity, 2026-08-06 |
+| Working directory | provenance repository root |
+| Command or tool surface | state-source edits, generator, continuity gates, Git status and refs |
+| Target paths | active handoff, compact front door, state source fragments, generated state views |
+| Allowed scope source | GC-020 after material closure commit `2377a8ddc` |
+| Before status evidence | HEAD `2377a8ddc`; material closure committed |
+| After status evidence | GLP-PUBLIC-R1 closed exported; no active GLP tranche |
+| Diff evidence | continuity-only path set |
+| Approval boundary | closure continuity only |
+| Claim boundary | no downstream adoption, runtime/provider proof, measured latency effect, deployment, or further GLP execution claim |
+| Agent type | session-sync steward |
+| Invocation ID | `glp-public-r1-export-closure-continuity-2026-08-06` |
+| Expected manifest | active handoff; compact front door; state source fragments; generated state views |
+| Actual changed set | same continuity-only paths |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

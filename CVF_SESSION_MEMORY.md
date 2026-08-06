@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_dispatched`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=execute and push the exact one-path public carrier refresh; parked checkpoint=WS2 and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_closed_exported`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator selects the next high-value lane; parked checkpoint=WS2 and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_public_carrier_refresh_dispatched`
+Current mode marker: `workspace_governance_learning_public_carrier_refresh_closed_exported`
 
-Current mode: `workspace_governance_learning_public_carrier_refresh_dispatched`
+Current mode: `workspace_governance_learning_public_carrier_refresh_closed_exported`
 
-`workspace_governance_learning_public_carrier_refresh_dispatched`
+`workspace_governance_learning_public_carrier_refresh_closed_exported`
 
 Previous mode:
 
-`workspace_governance_learning_propagation_roadmap_closed_private_public_refresh_parked`
+`workspace_governance_learning_public_carrier_refresh_dispatched`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| GLP-PUBLIC-R1 public carrier refresh closure | `2377a8ddc` | `CLOSED_PASS_BOUNDED_EXPORTED`; public commit `9b039ea6b` is pushed and synchronized, golden bootstrap passed 69/69, provenance pre-push passed 99/99, and both worktrees are clean after continuity sync. |
 | GLP-T4 adoption-boundary audit packet | `141cc0acd` | `HOLD_PENDING_OPERATOR_AUTHORITY`; author-fast 5/5 and pre-dispatch 75/75. One future worker may create exactly the local read-only audit and return; Claude CLI, guide/public mutation, network, push, and deployment are excluded. |
 | GLP-T3 propagation-proof closure | `eae28c785` | `CLOSED_PASS_BOUNDED`; one harness call passed 79/79, 14/14 generated surfaces were present, private leakage and cleanup residue were zero, and proof-subject provider/network count was zero. Worker orchestration is separately disclosed as one provider session, 49 turns, 572.670 seconds, and USD 2.9589262. |
 | GLP-T3 propagation-proof dispatch | `2cd8e4a85` | `DISPATCH_READY`; pre-dispatch 75/75; one Claude-routed no-commit worker owns exactly one local harness call and two evidence outputs. |
@@ -396,13 +397,13 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_public_carrier_refresh_dispatched`
+Mode: `workspace_governance_learning_public_carrier_refresh_closed_exported`
 
-GLP-PUBLIC-R1 is dispatched at `8feffa976` after the operator selected the
-exact public GitHub repository. The next move is the one-path public carrier
-refresh, focused golden bootstrap proof, leakage scan, public commit/push, and
-private closure. Private GLP packets, downstream mutation, provider/live,
-runtime, WS2, and GC010-AER remain excluded.
+GLP-PUBLIC-R1 is closed at private material commit `2377a8ddc`; the one-path
+public carrier is exported and synchronized at public commit `9b039ea6b`.
+There is no active GLP tranche. The operator may select the next high-value
+lane. WS2 and GC010-AER remain parked behind their recorded reopen conditions;
+downstream adoption and measured latency effect remain unproved.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without

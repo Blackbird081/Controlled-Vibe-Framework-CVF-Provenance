@@ -55,15 +55,21 @@
     "t4CompletionReview": "docs/reviews/CVF_GLP_T4_ADOPTION_BOUNDARY_CLOSURE_COMPLETION_2026-08-05.md",
     "t4ReviewDisposition": "ACCEPT_WITH_REVIEWER_CORRECTION",
     "guideValueDecision": "NO_UPDATE_NEEDED",
-    "publicSyncCloneHead": "a307da84a",
+    "publicSyncCloneHead": "9b039ea6b",
     "publicCarrierReadout": "PARTIAL_PRESENCE_WITH_DATED_DRIFT",
     "providerDenominators": "proof_subject_outbound_0_worker_claude_cli_0_host_provider_model_session_UNKNOWN_NOT_EXPOSED",
-    "publicRefreshStatus": "DISPATCH_READY",
+    "publicRefreshStatus": "CLOSED_PASS_BOUNDED_EXPORTED",
     "publicRefreshDispatchCommit": "8feffa976",
     "publicRefreshBaseline": "docs/baselines/CVF_GC018_GLP_PUBLIC_R1_GOVERNANCE_LATENCY_CARRIER_REFRESH_2026-08-06.md",
     "publicRefreshWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_PUBLIC_R1_GOVERNANCE_LATENCY_CARRIER_REFRESH_2026-08-06.md",
+    "publicRefreshCompletion": "docs/reviews/CVF_GLP_PUBLIC_R1_GOVERNANCE_LATENCY_CARRIER_REFRESH_COMPLETION_2026-08-06.md",
+    "publicRefreshMaterialCommit": "2377a8ddc",
+    "publicRefreshPublicCommit": "9b039ea6b",
+    "publicRefreshRemote": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "publicRefreshGoldenEvidence": "PASS_69_OF_69",
+    "publicRefreshPrePushEvidence": "PASS_99_OF_99",
     "publicRefreshTarget": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
-    "nextAllowedMove": "Execute the one-path public carrier refresh and push to the explicitly selected public repository, then record private closure.",
-    "claimBoundary": "GLP closes bounded in private provenance. No guide mutation, public-sync mutation, provider/network proof call, push, deployment, adoption-complete claim, or public-readiness claim is made."
+    "nextAllowedMove": "No active GLP tranche. Operator may select the next high-value lane; WS2 and GC010-AER remain parked behind their recorded reopen conditions.",
+    "claimBoundary": "GLP is closed bounded and its public-safe carrier is exported. This proves distribution only, not downstream adoption, measured latency reduction, runtime enforcement, provider behavior, production readiness, or universal control."
   }
 }
