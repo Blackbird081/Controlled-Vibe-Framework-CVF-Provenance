@@ -1,8 +1,8 @@
 # CVF GC-018 Baseline - GLP Public R1 Governance Latency Carrier Refresh
 
-Memory class: governed-dispatch-baseline
+Memory class: SUMMARY_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_EXPORTED
 
 Batch ID: GLP-PUBLIC-R1
 
@@ -114,11 +114,41 @@ Required evidence is the exact no-index carrier diff, one-path public
 name-status, byte-equivalent five-semantic block, focused golden bootstrap test,
 private-token scan, public commit/push receipt, and clean synchronized status.
 
+## Pre-Push Continuity Repair Evidence
+
+The first range-aware pre-push run exposed two pre-existing V55 continuity
+omissions: missing canonical remote/memory markers and missing root-file
+exposure classification. This batch authorizes only the direct repair in
+`AGENT_HANDOFF_V55_2026-08-05.md` and
+`governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`. The focused handoff,
+repository-exposure, and pre-public readiness guards must pass before push.
+
 ## Claim Boundary
 
 This baseline authorizes a one-path documentation/template public refresh and
 push. It does not claim downstream adoption, latency reduction, runtime
 enforcement, provider behavior, production readiness, or universal control.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired GLP-PUBLIC-R1 work order | `Status: CLOSED_PASS_BOUNDED_EXPORTED` | PASS |
+| Completion or reviewer artifact | GLP-PUBLIC-R1 completion review | `Reviewer verdict: CLOSED_PASS_BOUNDED_EXPORTED` | PASS |
+| Roadmap state | N/A with reason: standalone public refresh after GLP roadmap closure | no roadmap mutation | N/A with reason |
+| Registry JSON | root exposure registry | V55 classified `INTERNAL_ONLY` | PASS |
+| Registry Markdown | root boundary standard | confirms JSON-owned root exposure classification; no GC-051 corpus registry applies | PASS |
+| External evidence digest | N/A with reason: no external evidence intake | no digest required | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop owner changed | no interlock mutation | N/A with reason |
+| Session continuity | protected continuity surfaces | separate post-material session sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Criterion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| public path count | one | one | PASS |
+| bootstrap harness | `69/69` | `69/69` | PASS |
+| public remote equality | HEAD equals origin/main | `9b039ea6b` equals `9b039ea6b` | PASS |
 
 ## Public Export Disposition
 

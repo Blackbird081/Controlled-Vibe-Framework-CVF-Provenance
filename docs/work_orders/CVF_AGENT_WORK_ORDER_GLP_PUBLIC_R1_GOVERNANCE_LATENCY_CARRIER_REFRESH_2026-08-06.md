@@ -2,15 +2,15 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_EXPORTED
 
 Batch ID: GLP-PUBLIC-R1
 
 dispatchBaseHead: `744a02bdc`
 
-executionBaseHead: `744a02bdc`
+executionBaseHead: `4d1041c56`
 
-closureBaseHead: `744a02bdc`
+closureBaseHead: `4d1041c56`
 
 Commit mode: WORKER_MAY_COMMIT
 
@@ -148,7 +148,7 @@ Contract source archive-qualified exception:
 | route | SINGLE_AGENT_MULTI_ROLE |
 | rolePattern | one bounded executor/reviewer under explicit operator public authority |
 | phase | public refresh through closure |
-| baseHeadFor(phase) | provenance `744a02bdc`; public `a307da84a` |
+| baseHeadFor(phase) | dispatch `744a02bdc`; execution/closure `4d1041c56`; public base `a307da84a` |
 | changedSetScope(phase) | one public carrier plus private packet/closure artifacts |
 | traceScope(phase, actor) | exact Git diff, focused test, commit, push, and clean status |
 | commitOwner(phase) | Codex owns public commit; provenance commits remain separate |
@@ -203,15 +203,15 @@ git status -sb
 | Target paths | exact fulfillment manifest |
 | Allowed scope source | operator instruction and paired GC-018 |
 | Before status evidence | clean worktree in provenance at `744a02bdc` and public-sync at `a307da84a` |
-| After status evidence | pending execution |
+| After status evidence | public `HEAD=origin/main=9b039ea6b`; provenance completion pending this closure commit |
 | Diff evidence | exact Git name-status and content diff |
 | Approval boundary | one public carrier refresh and push |
 | Claim boundary | no private packet export, downstream adoption, runtime, provider, or production claim |
 | Agent type | single-agent bounded executor/reviewer |
 | Invocation ID | `glp-public-r1-2026-08-06` |
 | Expected manifest | two private dispatch paths, one public carrier, one later private completion |
-| Actual changed set | pending execution |
-| Manifest delta | pending execution |
+| Actual changed set | one public carrier; private baseline/work order/completion and V55 exposure classification |
+| Manifest delta | MATCH_WITH_PRE_PUSH_CONTINUITY_REPAIR: V55 registry classification added after the gate exposed the omission |
 
 Before status evidence: both worktrees were clean; provenance HEAD
 `744a02bdc`; public HEAD and `origin/main` `a307da84a`.
@@ -231,12 +231,12 @@ Before status evidence: both worktrees were clean; provenance HEAD
 
 ## Acceptance Criteria
 
-- [ ] Exact one-path public diff.
-- [ ] Five-semantic carrier block matches provenance.
-- [ ] Focused golden bootstrap test passes.
-- [ ] Private leakage scan passes.
-- [ ] Public commit is pushed to the authorized remote.
-- [ ] Both worktrees are clean.
+- [x] Exact one-path public diff.
+- [x] Five-semantic carrier block matches provenance.
+- [x] Focused golden bootstrap test passes.
+- [x] Private leakage scan passes.
+- [x] Public commit is pushed to the authorized remote.
+- [x] Both worktrees are clean after the private closure/session-sync sequence.
 
 ## Evidence Requirements
 
@@ -253,11 +253,11 @@ path or private leakage rejects the public commit before push.
 
 ## Closure Checklist
 
-- [ ] Resolve every acceptance criterion with command-backed evidence.
-- [ ] Record public commit, remote, branch, and artifact path.
-- [ ] Mark the private baseline/work order closed without exporting them.
-- [ ] Record `EXPORTED` only for the public carrier.
-- [ ] Leave both worktrees clean.
+- [x] Resolve every acceptance criterion with command-backed evidence.
+- [x] Record public commit, remote, branch, and artifact path.
+- [x] Mark the private baseline/work order closed without exporting them.
+- [x] Record `EXPORTED` only for the public carrier.
+- [x] Leave both worktrees clean after the private closure/session-sync sequence.
 
 ## Return-To-Orchestrator Conditions
 
@@ -307,6 +307,38 @@ remote, rejected push, or required runtime/provider/downstream change.
 Authorize only the public-safe carrier refresh and its Git/test evidence. Do
 not infer adoption, measured latency reduction, runtime enforcement, provider
 behavior, production readiness, or universal control.
+
+## Closure Diff Gate
+
+| Requirement | Final evidence | Disposition |
+| --- | --- | --- |
+| one public path | public commit `9b039ea6b` changes only the carrier | PASS |
+| exact carrier | normalized line sequence equals provenance | PASS |
+| bootstrap proof | golden harness `69/69` | PASS |
+| leakage boundary | private path/token scan | PASS |
+| public push | `a307da84a..9b039ea6b main -> main` | PASS |
+| remote sync | public `HEAD=origin/main=9b039ea6b` | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED_EXPORTED` | PASS |
+| Completion or reviewer artifact | GLP-PUBLIC-R1 completion review | `Reviewer verdict: CLOSED_PASS_BOUNDED_EXPORTED` | PASS |
+| Roadmap state | N/A with reason: standalone public refresh after GLP roadmap closure | no roadmap mutation | N/A with reason |
+| Registry JSON | root exposure registry | V55 classified `INTERNAL_ONLY` | PASS |
+| Registry Markdown | root boundary standard | confirms JSON-owned root exposure classification; no GC-051 corpus registry applies | PASS |
+| External evidence digest | N/A with reason: no external evidence intake | no digest required | N/A with reason |
+| System loop interlock | N/A with reason: no system-loop owner changed | no interlock mutation | N/A with reason |
+| Session continuity | protected continuity surfaces | separate post-material session sync | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Criterion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| public path count | one | one | PASS |
+| bootstrap harness | `69/69` | `69/69` | PASS |
+| public remote equality | HEAD equals origin/main | `9b039ea6b` equals `9b039ea6b` | PASS |
 
 ## Public Export Disposition
 
