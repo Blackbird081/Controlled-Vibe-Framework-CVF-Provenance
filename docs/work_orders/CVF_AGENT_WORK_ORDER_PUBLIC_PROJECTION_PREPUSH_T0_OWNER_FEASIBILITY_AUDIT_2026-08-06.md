@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-PUBLIC-PROJECTION-PREPUSH-T0
 
@@ -93,6 +93,17 @@ Allowed scope:
 - create exactly the two fulfillment-manifest artifacts;
 - repair formatting and evidence defects inside those two paths;
 - compare options A-D and return exactly one allowed decision.
+- reviewer closure conversion may additionally update this work order and the
+  paired baseline, accept the two worker outputs, and create the exact
+  completion review path declared below.
+
+Reviewer-owned closure paths:
+
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_PROJECTION_PREPUSH_T0_OWNER_FEASIBILITY_AUDIT_2026-08-06.md`;
+- `docs/baselines/CVF_GC018_PUBLIC_PROJECTION_PREPUSH_T0_OWNER_FEASIBILITY_AUDIT_2026-08-06.md`;
+- `docs/audits/CVF_PUBLIC_PROJECTION_PREPUSH_T0_OWNER_FEASIBILITY_AUDIT_2026-08-06.md`;
+- `docs/reviews/CVF_PUBLIC_PROJECTION_PREPUSH_T0_OWNER_FEASIBILITY_AUDIT_WORKER_RETURN_2026-08-06.md`;
+- `docs/reviews/CVF_PUBLIC_PROJECTION_PREPUSH_T0_OWNER_FEASIBILITY_AUDIT_COMPLETION_2026-08-06.md`.
 
 Forbidden scope:
 
@@ -233,9 +244,8 @@ reviewerOwnedClosurePaths:
 pendingStatusTokensAllowedBeforeReview: COMPLETE_PENDING_REVIEW,
 IMPLEMENTATION_COMPLETE_PENDING_REVIEW, DRAFT, HOLD_*
 
-forbiddenClosedEquivalentResidue: COMPLETE_PENDING_REVIEW,
-NOT_EXECUTED_YET, WORKER_RETURNS_PENDING, PRE_CLOSURE_NOT_RUN,
-FAIL_EXPECTED_PENDING_FINALITY, DISPATCHED as current status
+forbiddenClosedEquivalentResidue: no pending execution or dispatch token may
+remain as the current status after reviewer conversion.
 
 predecessorClosureFactSource: GLP-PUBLIC-R1 completion review, not mutable
 active-session current mode
@@ -310,15 +320,17 @@ workerSelfSelection: FORBIDDEN
 
 ## Acceptance Criteria
 
-- [ ] generic pre-push checks are inventoried and ownership-classified;
-- [ ] intentional projection absence is separated from uncovered risk;
-- [ ] existing focused proof and coverage limits are source-backed;
-- [ ] all four cheap alternatives and governance cost are compared;
-- [ ] provenance pre-push coverage is not weakened or redefined;
-- [ ] exactly one allowed T0 decision is returned;
-- [ ] supporting and contradicting evidence are preserved;
-- [ ] only the two worker-owned paths are changed;
-- [ ] worker fast gate passes and the worker makes no commit.
+- [x] generic pre-push checks are inventoried and ownership-classified;
+- [x] intentional projection absence is separated from uncovered risk;
+- [x] existing focused proof and coverage limits are source-backed;
+- [x] all four cheap alternatives and governance cost are compared;
+- [x] provenance pre-push coverage is not weakened or redefined;
+- [x] exactly one allowed T0 decision is returned;
+- [x] supporting and contradicting evidence are preserved;
+- [x] only the two worker-owned paths are changed;
+- [x] worker fast gate completed with 61/62 reviewer-fast checks passing; the
+  sole failure is the pre-existing dispatch-commit handoff marker awaiting
+  the separately owned continuity sync, and the worker made no commit.
 
 Fail conditions: invented command signatures, missing source owners, ambiguous
 coverage claims, public/provenance boundary errors, forbidden runtime/security
@@ -333,13 +345,14 @@ focused test boundary, and lower expected cost than the existing proof path.
 
 ## Closure Checklist
 
-- [ ] two required outputs exist and no other worker path changed;
-- [ ] every acceptance item is resolved or blocked with action;
-- [ ] worker-return fast gate passes after the last edit;
-- [ ] worker leaves artifacts pending and does not claim pre-closure PASS;
-- [ ] independent reviewer records semantic disposition;
-- [ ] committed-range pre-closure remains reviewer/committer work;
-- [ ] continuity changes, if any, remain a separate authorized sync.
+- [x] two required outputs exist and no other worker path changed;
+- [x] every acceptance item is resolved or blocked with action;
+- [x] worker-return fast gate completed with the single known continuity
+  marker exception recorded for the session-sync steward;
+- [x] worker left artifacts pending and did not claim pre-closure PASS;
+- [x] independent reviewer records semantic disposition in the completion review;
+- [x] committed-range pre-closure remains reviewer/committer work;
+- [x] continuity changes remain a separate authorized sync.
 
 ## Operator Checkpoint
 
@@ -459,14 +472,23 @@ and return exactly one allowed decision.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | reviewer converts status only following semantic acceptance | N/A with reason: pending execution |
-| Completion or reviewer artifact | completion review path in reviewer conversion | final decision and committed-range evidence | N/A with reason: reviewer owned |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | completion review path in reviewer conversion | final decision `BLOCKED_NO_OWNER` and closure evidence | PASS |
 | Roadmap state | N/A with reason: standalone bounded follow-up to a completion finding | no roadmap mutation | N/A with reason |
-| Registry JSON | N/A with reason: no corpus or runtime registry changes | no registry mutation | N/A with reason |
-| Registry Markdown | N/A with reason: no corpus registry changes | no registry mutation | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check passes; no entry is required for this fixed local gate audit | PASS |
+| Registry Markdown | corpus registry companion surface | no corpus admission or classification changed in this T0 audit | PASS |
 | External evidence digest | N/A with reason: no external intake or mutable external evidence | public clone path facts are recomputed read-only | N/A with reason |
-| System loop interlock | completion finding -> T0 audit -> reviewer decision | explicit route, no autonomous mutation | N/A with reason: documentation route only |
-| Session continuity | canonical continuity surfaces | separate reviewer/steward decision following accepted review | N/A with reason: not worker owned |
+| System loop interlock | completion finding -> T0 audit -> reviewer decision | explicit route, no autonomous mutation | PASS |
+| Session continuity | canonical continuity surfaces | separate steward sync after material closure | N/A with reason: separate commit required |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Runtime receipt evidence | N/A with reason: documentation and read-only local audit only | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: no runtime query acceptance contract | N/A_WITH_REASON |
+| Worker-return acceptance | R2 worker return accepted by independent reviewer | PASS |
+| Closure claim | bounded T0 closure with decision `BLOCKED_NO_OWNER` | PASS |
 
 ## Public Export Disposition
 

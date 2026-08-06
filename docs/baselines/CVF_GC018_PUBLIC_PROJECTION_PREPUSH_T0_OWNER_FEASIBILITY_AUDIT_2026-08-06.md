@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: APPROVED_FOR_T0_AUDIT
+Status: T0_AUDIT_COMPLETE
 
 docType: baseline
 
