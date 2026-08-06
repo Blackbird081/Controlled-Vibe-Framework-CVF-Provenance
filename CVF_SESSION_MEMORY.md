@@ -34,7 +34,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_closed_exported`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator selects the next high-value lane; parked checkpoint=WS2 and GC010-AER remain parked.
+Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_closed_exported`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator selects another high-value lane; parked checkpoint=Public Projection Pre-Push T0, WS2, and GC010-AER remain parked behind recorded reopen conditions.
 
 ## Current Mode
 
@@ -81,6 +81,7 @@ are now assigned to the no-commit worker.
 
 | Work | Commit | Disposition |
 |---|---|---|
+| Public Projection Pre-Push T0 owner feasibility closure | `8e624a5f6` | `CLOSED_PASS_BOUNDED`; decision `BLOCKED_NO_OWNER`. Four public-relevant defects are confirmed but no stable profile/taxonomy/policy owner is source-backed. Reopen only when owner role/path, policy ownership, and refreshed four-defect evidence are all present; no repeated Options B/C checkpoint before then. |
 | GLP-PUBLIC-R1 public carrier refresh closure | `2377a8ddc` | `CLOSED_PASS_BOUNDED_EXPORTED`; public commit `9b039ea6b` is pushed and synchronized, golden bootstrap passed 69/69, provenance pre-push passed 99/99, and both worktrees are clean after continuity sync. |
 | GLP-T4 adoption-boundary audit packet | `141cc0acd` | `HOLD_PENDING_OPERATOR_AUTHORITY`; author-fast 5/5 and pre-dispatch 75/75. One future worker may create exactly the local read-only audit and return; Claude CLI, guide/public mutation, network, push, and deployment are excluded. |
 | GLP-T3 propagation-proof closure | `eae28c785` | `CLOSED_PASS_BOUNDED`; one harness call passed 79/79, 14/14 generated surfaces were present, private leakage and cleanup residue were zero, and proof-subject provider/network count was zero. Worker orchestration is separately disclosed as one provider session, 49 turns, 572.670 seconds, and USD 2.9589262. |

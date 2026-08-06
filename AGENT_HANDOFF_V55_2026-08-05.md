@@ -8,7 +8,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `2377a8ddc governance: close exported GLP public carrier refresh`
+- Latest material commit: `8e624a5f6 docs(governance): close public projection prepush audit`
 - Active mode: `workspace_governance_learning_public_carrier_refresh_closed_exported`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `EXPORTED` at public commit `9b039ea6b`
@@ -45,8 +45,8 @@ latency effect are not.
 
 Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_closed_exported`;
 active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator
-selects the next high-value lane; parked checkpoint=WS2 and GC010-AER remain
-parked.
+selects another high-value lane; parked checkpoint=Public Projection Pre-Push
+T0, WS2, and GC010-AER remain parked behind recorded reopen conditions.
 
 ## Released Packet
 
@@ -75,6 +75,20 @@ parked.
 
 No active GLP tranche remains. The operator may select the next high-value
 lane. WS2 and GC010-AER remain parked behind their recorded reopen conditions.
+
+Public Projection Pre-Push T0 is also parked at material commit `8e624a5f6`
+with decision `BLOCKED_NO_OWNER`. Reopen only when one governed packet names
+the stable owner role and path, assigns ownership of the taxonomy and
+gate-versus-report policy, and refreshes the four confirmed public-relevant
+defects against the then-current public commit. Until then, do not re-propose a
+profile or repeatedly ask the operator to select Option B or C.
+
+## GC-020 Marker - Public Projection Pre-Push T0 Closure Continuity
+
+Material commit `8e624a5f6` accepts the R2 audit and closes T0 bounded with
+decision `BLOCKED_NO_OWNER`. This continuity batch parks the lane behind its
+checkable reopen predicate and opens no implementation or external-effect
+authority.
 
 ## GC-020 Marker - GLP-T2 Dispatch Continuity
 
