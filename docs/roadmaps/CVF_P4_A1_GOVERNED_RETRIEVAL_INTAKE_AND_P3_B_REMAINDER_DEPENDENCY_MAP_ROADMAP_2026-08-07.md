@@ -112,6 +112,38 @@ label, the later packet must reconcile the conflict before dispatch.
 | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | local deterministic filter-first and keyword-ranked Policy_Local search with acceptance receipts | domain-specific pilot; no provider, LLM, vector, or production claim | `REUSE_AS_LOCAL_DETERMINISTIC_INPUT` |
 | `docs/reviews/CVF_KGR1_KNOWLEDGE_GRAPH_RETRIEVAL_LOCAL_REVIEW_2026-06-02.md` | local KGR store, builder, policy integration, and focused tests; separate bounded live proof exists | no production readiness, vector persistence, web-route graph integration, or prompt reinjection | `REUSE_AS_PARTIAL_GRAPH_INPUT` |
 | `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md` | storage and index discipline for long-lived governance foundation artifacts | governs file layout and discovery, not retrieval-data persistence | `DO_NOT_MISCLASSIFY_AS_PERSISTENCE_AUTHORITY` |
+| `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/retrieval.contract.ts` | current `RetrievalContract` wraps the legacy `RAGPipeline` and exposes filtered retrieval chunks | the underlying retriever uses deterministic term/domain/tag scoring and an in-memory `DocumentStore`; the RAG name is not vector or embedding proof | `REUSE_AS_CONTROL_PLANE_RUNTIME_INPUT` |
+| `EXTENSIONS/CVF_PLANE_FACADES/src/knowledge.facade.ts` | `KnowledgeFacade.retrieveContext()` delegates to `RetrievalContract`; `prepareIntake()` and `consume()` expose existing consumer paths | facade existence does not select it as the owner for a new cross-plane composition | `REUSE_AS_EXISTING_CONSUMER_INPUT` |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-retrieval.ts` | scoped lexical chunk retrieval and formatting for the Web knowledge surface | local token matching only; no vector or embedding behavior | `REUSE_AS_WEB_RETRIEVAL_INPUT` |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` | current Web owner has in-process and file-backed JSON knowledge-store implementations | existing persistence is real but P4-A1 has no authority to change, standardize, or promote it as cross-plane persistence | `RECORD_EXISTING_PERSISTENCE_NO_CHANGE_AUTHORITY` |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-knowledge-context.ts` | execute-route helper calls scoped knowledge retrieval, emits scope-filter audit, and prepares context before provider execution by its caller | current route composition is a distinct Web owner, not a universal governed-retrieval owner | `REUSE_AS_ROUTE_COMPOSITION_INPUT` |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts` | route calls deterministic LPCI retrieval, emits receipts, and contains an optional provider-call branch | provider code existence does not authorize invocation or quality claims in P4-A1 | `RECORD_PROVIDER_SURFACE_NO_INVOCATION_AUTHORITY` |
+| `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-runtime-workflow-chain.ts` | memory runtime workflow calls `evaluateRetrievalRequest()` and packages summary-only context | composition is memory-specific and retains false raw-release/reinjection flags | `REUSE_AS_MEMORY_RUNTIME_INPUT` |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts` | authenticated POST route calls `buildMemoryRuntimeReadout()` and returns summary-only projection flags | the route does not inject graph options; no cross-plane composition is established | `REUSE_AS_EXISTING_ROUTE_INPUT` |
+
+## P4-A1 Source-Level Refinement Record - 2026-08-07
+
+Direct current-source inspection narrows the initial roadmap in five material
+ways:
+
+1. CVF already has multiple real retrieval consumers. The open question is
+   ownership for any future cross-plane composition, not whether a consumer
+   exists at all.
+2. The Control Plane source uses a class named `RAGPipeline`, but its current
+   retriever is deterministic term/domain/tag scoring over an in-memory
+   `DocumentStore`. This is not evidence of vector or embedding behavior.
+3. The Web knowledge surface already has file-backed JSON persistence and is
+   route-composed into execution context preparation. P4-A1 may inventory this
+   source but may not redesign or promote it.
+4. The LPCI query route contains a provider-call branch after deterministic
+   retrieval. Source existence is recorded; no call, credential use, or live
+   proof is authorized.
+5. Exact non-test reference search finds the MEMCON retrieval-pack helper and
+   DSCP receipt builder only at their definitions. Their accepted unwired
+   boundaries remain current.
+
+The refinement changes the dependency description, not the gate. The design
+gate remains `HOLD_BEFORE_DESIGN`.
 
 ## P3-B Remainder Dependency Map
 
@@ -124,12 +156,12 @@ design or imply that every dependency must be implemented.
 | `P3-B-02` | safe candidate eligibility and summary release | MEMCON-T4 filters ineligible summaries; MPI-T3 prevents raw release in its mapped route | no cross-owner integration proof joins the two surfaces | `UNWIRED_DEPENDENCY` | separately authorized design packet proves whether integration is needed and names the owner without changing runtime |
 | `P3-B-03` | receipt and attribution | DSCP-T4 deterministic receipt helper; LPCI1-T4 receipt specification | no generic end-to-end receipt owner or accepted cross-domain composition proof | `PARTIAL_MULTI_OWNER` | current owner audit identifies one source-backed receipt authority and conflict policy |
 | `P3-B-04` | filter, freshness, conflict, and abstention semantics | LPCI1-T4 specification; LPCI2-T9 deterministic domain pilot | semantics are not proven domain-agnostic or integrated with memory readout | `DOMAIN_BOUNDED` | intake evidence identifies required domains and demonstrates whether reuse or a new owner is justified |
-| `P3-B-05` | graph-assisted retrieval | KGR1 local implementation and bounded proof | no production route integration or durable graph persistence authority | `PARKED_NO_CURRENT_AUTHORITY` | explicit operator authority plus fresh owner, route, persistence, and negative-proof evidence |
+| `P3-B-05` | graph-assisted retrieval | KGR1 local implementation; `memory-retrieval-policy.ts` accepts injected `kgrStore` or `graphKnowledgeService` | the Web memory route supplies no graph options, so its `graph_search` path defers when no service is injected; durable graph persistence authority is also absent | `PARTIAL_IMPLEMENTATION_ROUTE_UNWIRED` | explicit operator authority plus fresh owner, route-injection, persistence-boundary, and negative-proof evidence |
 | `P3-B-06` | caller authentication and access policy | MPI-T3 cites current service-token/session route behavior | P4-A1 has no authority to design credentials, roles, tenancy, or access enforcement | `PARKED_SECURITY_DESIGN_REQUIRED` | separate security/design authority and current source verification exist |
-| `P3-B-07` | persistence and durable store | no P4-A1 persistence authority; foundation storage standard is not runtime persistence authority | storage engine, retention, mutation, rollback, tenancy, and durability decisions are absent | `PARKED_NO_AUTHORITY` | operator explicitly authorizes persistence DESIGN and a source-backed owner packet defines the decision boundary |
-| `P3-B-08` | vector, embedding, semantic retrieval, or RAG | MPI roadmap and domain closures explicitly exclude these claims | no need, value, threat, cost, or owner decision has been accepted for this lane | `PARKED_NO_AUTHORITY` | operator explicitly authorizes a separate decision intake after concrete value and owner evidence exists |
-| `P3-B-09` | provider-backed answer generation or quality proof | existing retrieval surfaces are primarily contract/local deterministic; historical bounded proofs do not release this lane | no current provider, model, quota, diagnostic, or live-proof authority | `PARKED_NO_AUTHORITY` | fresh operator checkpoint names the exact governance behavior claim and live-proof boundary |
-| `P3-B-10` | adapter or consumer integration | MPI-T3 is contract-only and existing helpers retain their local owner boundaries | no accepted consumer, adapter, or composition owner is selected | `PARKED_BEFORE_DESIGN` | current source evidence identifies a real consumer and the operator authorizes design of that one boundary |
+| `P3-B-07` | persistence and durable store | Web `knowledge-store.ts` already implements file-backed JSON persistence; foundation storage standard is not runtime persistence authority | no authority or evidence selects this store for cross-plane use, and retention, rollback, tenancy, durability, and failure policy remain unresolved for any new boundary | `EXISTING_LOCAL_OWNER_PARKED_NO_CHANGE_AUTHORITY` | operator explicitly authorizes persistence DESIGN and a source-backed owner packet defines whether existing local persistence is reused, isolated, or rejected |
+| `P3-B-08` | vector, embedding, semantic retrieval, or RAG | Control Plane `RetrievalContract` wraps a legacy class named `RAGPipeline`, but current retriever source is lexical scoring over an in-memory store; MPI and domain closures exclude vector claims | no vector/embedding behavior proof, accepted need, value, threat, cost, or owner decision exists for this lane | `PARKED_NO_AUTHORITY_NAME_NOT_PROOF` | operator explicitly authorizes a separate decision intake after concrete value and owner evidence exists |
+| `P3-B-09` | provider-backed answer generation or quality proof | the LPCI query route contains an optional provider-call branch; historical bounded proofs do not release P4-A1 | no current provider, model, quota, diagnostic, or live-proof authority for this intake | `SOURCE_EXISTS_INVOCATION_PARKED` | fresh operator checkpoint names the exact governance behavior claim and live-proof boundary |
+| `P3-B-10` | adapter or consumer integration | real consumers exist in `KnowledgeFacade`, Web execute knowledge context, LPCI query, and memory readout; MPI-T3 remains contract-only | no one consumer is selected as the owner for a new integrated boundary, and no accepted value gap justifies composition | `MULTI_CONSUMER_PARKED_BEFORE_DESIGN` | operator selects one bounded consumer/value question and authorizes design of that boundary |
 | `P3-B-11` | public or deployment surface | this roadmap is private provenance planning | no public artifact, export packet, deployment target, or readiness evidence | `DEFERRED_PRIVATE_ONLY` | separate public-safe or deployment packet receives explicit authority |
 
 ## Dependency Ordering Constraints
@@ -245,6 +277,13 @@ This roadmap does not:
 | Local deterministic search | `docs/reviews/CVF_LPCI2_T9_SEARCH_RUNTIME_COMPLETION_2026-06-07.md` | filter-first/keyword-rank domain pilot; provider/LLM/vector excluded |
 | Graph retrieval boundary | `docs/reviews/CVF_KGR1_KNOWLEDGE_GRAPH_RETRIEVAL_LOCAL_REVIEW_2026-06-02.md` | local bounded capability; production route and persistence excluded |
 | Foundation file-layout boundary | `docs/reference/foundation_storage/CVF_FOUNDATION_FILE_STORAGE_AND_INDEX_STANDARD.md` | governs foundation artifact storage/index layout, not retrieval-data persistence |
+| Control Plane retrieval source | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/retrieval.contract.ts`; `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/retriever.ts`; `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/document.store.ts` | wrapper exists; current scoring is lexical/domain/tag based and store is in-memory |
+| Existing Control Plane consumer | `EXTENSIONS/CVF_PLANE_FACADES/src/knowledge.facade.ts` | `retrieveContext()` delegates to `RetrievalContract`; intake and consume paths also exist |
+| Web retrieval and persistence | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-retrieval.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/knowledge-store.ts` | scoped lexical retrieval uses an existing file-backed JSON store outside tests |
+| Web route composition | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-knowledge-context.ts` | execute context helper calls scoped retrieval and records scope-filter audit before caller provider execution |
+| Memory route composition | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-runtime-workflow-chain.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/memory-runtime-readout.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts` | summary-only route is wired; route call supplies no graph options |
+| LPCI provider surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts` | deterministic retrieval precedes an optional provider-call branch; source inspected only and no invocation performed |
+| Helper negative-reference search | exact symbol search across non-test TypeScript under `EXTENSIONS` for `buildMemconRetrievalPackBoundary` and `buildGovernedRetrievalReceipt` | each helper appears only at its definition outside tests; no cross-owner caller found |
 
 ## Epistemic Process Block
 
@@ -253,17 +292,22 @@ retrieval-related owners but no single source-backed integrated
 governed-retrieval product authority.
 
 Evidence Comparison: the current sources show contract-only memory read
-mapping, deterministic filtering and receipt helpers, a domain-specific local
-search pilot, and bounded graph retrieval. Their accepted boundaries retain
-unwired, domain-specific, no-persistence, no-vector, or no-production limits.
+mapping, deterministic filtering and receipt helpers, real Control Plane and
+Web consumers, a file-backed Web knowledge store, a domain-specific local
+search pipeline with a provider-capable route, and bounded graph retrieval.
+The class named `RAGPipeline` currently performs lexical scoring over an
+in-memory store rather than vector or embedding retrieval.
 
-Contradiction Or Gap Disposition: no contradiction requires reopening a closed
-lane. The material gap is cross-owner integration and consumer authority, which
-this intake records without solving.
+Contradiction Or Gap Disposition: the initial intake was too broad when it
+described persistence and consumers only as missing future dependencies.
+Current source proves local persistence and multiple consumers already exist.
+The corrected gap is selection and authority for any new cross-owner boundary,
+not basic source existence. No closed lane is reopened.
 
-Claim Update: open P4-A1 INTAKE and retain the P3-B remainder as a dependency
-map. Do not advance to DESIGN unless the operator later selects one bounded
-decision question and grants that phase authority.
+Claim Update: keep P4-A1 INTAKE open, correct the P3-B remainder map to account
+for existing local persistence and consumers, and retain
+`HOLD_BEFORE_DESIGN`. Do not advance unless the operator later selects one
+bounded decision question and grants that phase authority.
 
 ## Public Export Disposition
 
