@@ -173,6 +173,48 @@ Reviewer decision: the corrections improve source fidelity but do not satisfy
 or release the design gate. Status remains
 `P4_A1_INTAKE_OPEN_P3_B_DEPENDENCY_MAP_ONLY`.
 
+## Bounded Intake Recommendation - 2026-08-07
+
+Three independent read-only value-gap audits were reviewed against current
+source and canonical closure evidence.
+
+Cross-owner disposition: `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
+
+Current evidence does not identify an accepted cross-owner product failure,
+runtime adoption gap, or safety requirement that requires a unified retrieval
+owner. Existing capabilities remain useful but owner-local. Capability overlap
+alone is not value evidence for composition.
+
+One narrower current-owner question is source-backed:
+
+`AUTHORIZE_FRESH_LPCI_DEFECT_INTAKE_DOCUMENTATION_ONLY?`
+
+The proposed intake would decide whether LPCI must require evidence-text
+grounding and actor-bound sensitivity clearance before any later LPCI DESIGN,
+BUILD, or provider work. It would not authorize those later phases.
+
+| LPCI candidate finding | Current source evidence | Reviewer classification | Current boundary |
+|---|---|---|---|
+| answer prompt grounding | `buildAnswerBoundaryPrompt()` maps matched records to path, status, and effective date while `LpciIndexRecord` also carries `contentSnippet` | `SOURCE_LEVEL_DEFECT_CANDIDATE` | no provider call was made; a separate intake must decide the required evidence boundary |
+| sensitivity-clearance authority | route copies client `filters` into `appliedFilters`; filter pipeline treats `sensitivityClearance=true` as sufficient without binding it to `routeAuth` identity | `SOURCE_LEVEL_SECURITY_DEFECT_CANDIDATE` | current dashboard sends empty filters and current pilot evidence is public; no exploitation or classified-data release is claimed |
+| negative provider response | `NO_PROVIDER_CONFIGURED` returns the phase-2 retrieval receipt whose matched records retain the index-record shape | `SOURCE_LEVEL_DISCLOSURE_REVIEW_CANDIDATE` | authorization exists at the route; later intake must assess response minimization and actor-bound clearance together |
+
+Reviewer checkpoint recommendation:
+
+1. accept `NO_CROSS_OWNER_DESIGN_JUSTIFIED` and keep the P3-B cross-owner lane
+   value-parked;
+2. optionally authorize only a fresh documentation-only LPCI current-owner
+   defect intake for the two linked requirements above;
+3. keep DESIGN, SPEC, WORK ORDER, BUILD, provider/live, persistence,
+   vector/RAG, public-sync, and deployment unauthorized.
+
+Cross-owner DESIGN may reopen only when one committed CVF-governed evidence
+packet identifies an exact non-test consumer and owner, an observed blocked or
+unsafe behavior, why existing owner-local behavior cannot satisfy it, and one
+bounded deterministic positive and fail-closed negative case. A later phase
+also requires explicit operator authority, fresh GC-018, and source
+verification.
+
 ## Negative Search And Collision Discipline
 
 - Search roots: `EXTENSIONS` with package exclusions stated per row.
@@ -203,10 +245,10 @@ design or imply that every dependency must be implemented.
 | `P3-B-03` | receipt and attribution | DSCP-T4 deterministic receipt helper; LPCI1-T4 receipt specification | no generic end-to-end receipt owner or accepted cross-domain composition proof | `PARTIAL_MULTI_OWNER` | current owner audit identifies one source-backed receipt authority and conflict policy |
 | `P3-B-04` | filter, freshness, conflict, and abstention semantics | LPCI1-T4 specification; LPCI2-T9 deterministic domain pilot | semantics are not proven domain-agnostic or integrated with memory readout | `DOMAIN_BOUNDED` | intake evidence identifies required domains and demonstrates whether reuse or a new owner is justified |
 | `P3-B-05` | graph-assisted retrieval | KGR1 local implementation; `memory-retrieval-policy.ts` accepts injected `kgrStore` or `graphKnowledgeService`; SQLite graph storage source exists | the Web memory route exposes no retrieval method and defaults to keyword; direct graph callers need injected dependencies; non-test graph composition and persistence owners were not found | `PARTIAL_IMPLEMENTATION_ROUTE_UNWIRED` | explicit operator authority plus fresh owner, route-selection/injection, persistence-boundary, confidentiality/scope metadata, and negative-proof evidence |
-| `P3-B-06` | caller authentication and access policy | MPI-T3 cites current service-token/session route behavior | P4-A1 has no authority to design credentials, roles, tenancy, or access enforcement | `PARKED_SECURITY_DESIGN_REQUIRED` | separate security/design authority and current source verification exist |
+| `P3-B-06` | caller authentication and access policy | MPI-T3 cites current service-token/session behavior; LPCI query route has route-governance authorization | LPCI sensitivity clearance is client-filter supplied rather than actor-bound; P4-A1 has no authority to design credentials, roles, tenancy, or access enforcement | `PARKED_SECURITY_DESIGN_REQUIRED` | operator may first authorize the bounded LPCI documentation-only defect intake; any security DESIGN still requires separate authority and current source verification |
 | `P3-B-07` | persistence and durable store | Web `knowledge-store.ts` file-persists collection/chunk `_store` mutations; graph SQLite storage source also exists | ephemeral ingest and audit log are process-local; graph storage has test-only composition; no authority selects either owner for cross-plane use or resolves retention, rollback, tenancy, failure, and durability policy | `EXISTING_LOCAL_OWNER_PARKED_NO_CHANGE_AUTHORITY` | operator explicitly authorizes persistence DESIGN and a source-backed owner packet defines whether existing local persistence is reused, isolated, or rejected |
 | `P3-B-08` | vector, embedding, semantic retrieval, or RAG | Control Plane `RAGPipeline` is lexical over an in-memory store; memory `semantic` uses the same substring matcher as `keyword`; MPI and domain closures exclude vector claims | no vector/embedding behavior proof, accepted need, value, threat, cost, or owner decision exists for this lane | `PARKED_NO_AUTHORITY_NAME_NOT_PROOF` | operator explicitly authorizes a separate decision intake after concrete value and owner evidence exists |
-| `P3-B-09` | provider-backed answer generation or quality proof | the LPCI query route contains an optional provider-call branch; historical bounded proofs do not release P4-A1 | no current provider, model, quota, diagnostic, or live-proof authority for this intake | `SOURCE_EXISTS_INVOCATION_PARKED` | fresh operator checkpoint names the exact governance behavior claim and live-proof boundary |
+| `P3-B-09` | provider-backed answer generation or quality proof | the LPCI query route contains an optional provider-call branch; its current prompt lists source metadata but not `contentSnippet`; historical proofs do not release P4-A1 | no current provider, model, quota, diagnostic, or live-proof authority; evidence-text grounding is a current-owner defect candidate, not a provider-call authorization | `SOURCE_EXISTS_INVOCATION_PARKED` | operator may authorize a documentation-only LPCI defect intake; any provider proof requires a later checkpoint naming the exact claim and live-proof boundary |
 | `P3-B-10` | adapter or consumer integration | Web execute, LPCI query, and memory readout are route consumers; Control Plane has internal composition and exported facade entrypoints; MPI-T3 remains contract-only | `KnowledgeFacade` has no external non-test caller found, no one consumer is selected for a new integrated boundary, and no accepted value gap justifies composition | `MULTI_CONSUMER_PARKED_BEFORE_DESIGN` | operator selects one bounded consumer/value question and authorizes design of that boundary |
 | `P3-B-11` | public or deployment surface | this roadmap is private provenance planning | no public artifact, export packet, deployment target, or readiness evidence | `DEFERRED_PRIVATE_ONLY` | separate public-safe or deployment packet receives explicit authority |
 
@@ -232,7 +274,8 @@ Gate status: `HOLD_BEFORE_DESIGN`.
 |---|---|---|
 | Does operator authority cover lifecycle DESIGN? | No | no architecture, schema, interface, or technology choice may be made |
 | Is one integrated governed-retrieval owner source-backed? | No | preserve multi-owner boundaries and record overlap only |
-| Is a concrete consumer/value gap accepted? | Not yet | no composition or runtime route may be proposed as ready |
+| Is a concrete cross-owner consumer/value gap accepted? | No | retain `NO_CROSS_OWNER_DESIGN_JUSTIFIED`; no composition may be proposed as ready |
+| Is one current-owner defect intake question source-backed? | Yes, bounded LPCI documentation-only checkpoint | operator may authorize that intake without releasing DESIGN or BUILD |
 | Is persistence authorized? | No | no durable-store or retention decision |
 | Is vector/RAG authorized? | No | no embedding, semantic-search, vector-store, or RAG decision |
 | Is provider/live work authorized? | No | no model, credential, quota, network, or live proof |
@@ -307,6 +350,17 @@ This roadmap does not:
 | `AC-06` | no work order, runtime mutation, live proof, public mutation, or deployment is released | `PASS_REQUIRED` |
 | `AC-07` | further continuation is limited to read-only intake correction or a new operator authority decision | `PASS_REQUIRED` |
 
+## Current Runtime Freshness Verification
+
+| Freshness item | Current verification | Disposition |
+|---|---|---|
+| Verification date and base | 2026-08-07 at repository base `5bbb75147` before this recommendation edit | current for this intake pass |
+| LPCI route behavior | direct read of `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts` covering route authorization, request filters, negative receipts, answer prompt construction, and optional provider branch | source-level behavior claim accepted; no provider invocation claim |
+| LPCI filter and record shape | direct read of `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/filter-pipeline.ts`, `retrieval.ts`, and `types.ts` | client clearance input and retained `matched_records` shape accepted as current source facts |
+| LPCI dashboard caller | direct read of `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/lpci/page.tsx` | current UI sends an empty filter object; this does not prove every caller behaves the same |
+| Provider registry context | current provider registry remains `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts`; P4-A1 neither changes nor makes an absence claim about it | provider selection and invocation remain parked |
+| Freshness boundary | exact searches and direct reads cover current repository source, not deployed state or external callers | repeat against the then-current base before any later packet relies on these facts |
+
 ## Verification / Evidence
 
 | Evidence item | Command or artifact | Observed result |
@@ -330,6 +384,9 @@ This roadmap does not:
 | Memory route composition | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-runtime-workflow-chain.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/memory-runtime-readout.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts` | summary-only route is wired and defaults to keyword; route exposes neither graph selection nor graph dependencies; semantic uses substring matching |
 | Graph implementation boundary | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/index/symbol-index.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/knowledge/graph/storage/graph-sqlite-store.ts` | traversal and SQLite source exist, but exact non-test composition search found only definitions/exports outside tests |
 | LPCI provider surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts` | deterministic retrieval precedes an optional provider-call branch; source inspected only and no invocation performed |
+| LPCI prompt grounding candidate | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/types.ts` | prompt maps path/status/date but index records also carry `contentSnippet`; requirement decision remains documentation-only |
+| LPCI clearance candidate | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/filter-pipeline.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/lpci/page.tsx` | client filter controls sensitivity clearance; dashboard sends empty filters; no actor-bound clearance proof or classified-release claim |
+| Prior runtime-candidate value decision | `docs/baselines/CVF_GC018_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_2026-06-22.md`; `docs/reviews/CVF_MPI_T6_RUNTIME_CANDIDATE_DECISION_PACKET_COMPLETION_2026-06-22.md` | prior lane deferred speculative expansion absent an explicit product need, repeated missing-capability findings, or integration-partner requirement |
 | Helper negative-reference search | exact symbol search across non-test TypeScript under `EXTENSIONS` for `buildMemconRetrievalPackBoundary` and `buildGovernedRetrievalReceipt` | each helper appears only at its definition outside tests; no cross-owner caller found |
 
 ## Epistemic Process Block
@@ -355,9 +412,11 @@ for any new cross-owner boundary, not basic source existence. No closed lane is
 reopened.
 
 Claim Update: keep P4-A1 INTAKE open, correct the P3-B remainder map to account
-for existing local persistence and consumers, and retain
-`HOLD_BEFORE_DESIGN`. Do not advance unless the operator later selects one
-bounded decision question and grants that phase authority.
+for existing local persistence and consumers, accept
+`NO_CROSS_OWNER_DESIGN_JUSTIFIED`, and retain `HOLD_BEFORE_DESIGN`. The only
+source-backed next question is whether to authorize a fresh documentation-only
+LPCI current-owner defect intake. Do not infer later phase authority from that
+recommendation.
 
 ## Public Export Disposition
 
