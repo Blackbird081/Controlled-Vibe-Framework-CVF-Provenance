@@ -2,10 +2,10 @@
   "stateOrder": 2007,
   "stateKey": "lpci1WebGroundingClearanceConformanceDesign20260808",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "DESIGN_ACCEPTED_BOUNDED_CONDITIONAL_ON_SPEC_RECONCILIATION",
     "date": "2026-08-08",
     "batchId": "LPCI1-WEB-D1",
-    "materialCommit": "bd22ca0a4",
+    "materialCommit": "e0ee8a000",
     "operatorAuthority": "LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN",
     "roadmap": "docs/roadmaps/CVF_LPCI_CURRENT_OWNER_GROUNDING_AND_CLEARANCE_DEFECT_INTAKE_ROADMAP_2026-08-08.md",
     "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN_2026-08-08.md",
@@ -14,10 +14,14 @@
     "workerOutputCount": 2,
     "preDispatchEvidence": "PASS",
     "preCommitEvidence": "PASS_83_OF_83",
+    "reviewerFastEvidence": "PASS_62_OF_62",
+    "independentReviewEvidence": "FINAL_PASS_AFTER_CONSOLIDATED_REPAIR",
+    "designAudit": "docs/audits/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN_2026-08-08.md",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN_WORKER_RETURN_2026-08-08.md",
     "ownerBoundary": "LPCI1_T5_CVF_WEB_CURRENT_OWNER",
     "crossOwnerDesignDisposition": "NO_CROSS_OWNER_DESIGN_JUSTIFIED",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
-    "nextAllowedMove": "Dispatch one no-commit design worker for exactly the audit and worker-return paths, then perform independent reviewer closure or one consolidated repair.",
+    "nextAllowedMove": "Fresh explicit SPEC authorization, then a fresh GC-018, current source verification, and a separate source-verified work order. No SPEC or BUILD is currently authorized.",
     "claimBoundary": "Documentation-only DESIGN. No SPEC, BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness claim."
   }
 }

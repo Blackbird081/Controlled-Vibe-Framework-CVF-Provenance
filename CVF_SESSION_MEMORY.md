@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_conformance_design_dispatch_ready`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=send committed LPCI1-WEB-D1 to one no-commit design worker and independently review the exact two outputs; parked checkpoint=SPEC, BUILD, runtime/test mutation or execution, provider/model/live, persistence, vector/RAG, corpus mutation, public-sync, and deployment remain unauthorized, while Public Projection Pre-Push T0, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`lpci1_web_conformance_design_accepted_hold_before_spec`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=fresh explicit SPEC authorization followed by fresh GC-018, current source verification, and a separate work order; parked checkpoint=SPEC, BUILD, runtime/test mutation or execution, provider/model/live, persistence, vector/RAG, corpus mutation, public-sync, and deployment remain unauthorized, while Public Projection Pre-Push T0, WS2, and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_conformance_design_dispatch_ready`
+Current mode marker: `lpci1_web_conformance_design_accepted_hold_before_spec`
 
-Current mode: `lpci1_web_conformance_design_dispatch_ready`
+Current mode: `lpci1_web_conformance_design_accepted_hold_before_spec`
 
-`lpci1_web_conformance_design_dispatch_ready`
+`lpci1_web_conformance_design_accepted_hold_before_spec`
 
 Previous mode:
 
-`lpci1_web_defect_intake_reviewed_hold_before_design`
+`lpci1_web_conformance_design_dispatch_ready`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -80,7 +80,7 @@ are now assigned to the no-commit worker.
 ## Latest Material Work
 | Work | Commit | Disposition |
 |---|---|---|
-| LPCI1-WEB-D1 conformance design dispatch | `bd22ca0a4` | `DISPATCH_READY`; fresh GC-018 and source-verified no-commit work order release exactly two documentation outputs; no later lifecycle authority. |
+| LPCI1-WEB-D1 conformance design acceptance | `e0ee8a000` | `DESIGN_ACCEPTED_BOUNDED_CONDITIONAL_ON_SPEC_RECONCILIATION`; independent review passed after one consolidated reviewer repair; no later lifecycle authority. |
 | GLP-PUBLIC-R1 public carrier refresh closure | `2377a8ddc` | `CLOSED_PASS_BOUNDED_EXPORTED`; public commit `9b039ea6b` is pushed and synchronized, golden bootstrap passed 69/69, provenance pre-push passed 99/99, and both worktrees are clean after continuity sync. |
 | GLP-T4 adoption-boundary audit packet | `141cc0acd` | `HOLD_PENDING_OPERATOR_AUTHORITY`; author-fast 5/5 and pre-dispatch 75/75. One future worker may create exactly the local read-only audit and return; Claude CLI, guide/public mutation, network, push, and deployment are excluded. |
 | GLP-T3 propagation-proof closure | `eae28c785` | `CLOSED_PASS_BOUNDED`; one harness call passed 79/79, 14/14 generated surfaces were present, private leakage and cleanup residue were zero, and proof-subject provider/network count was zero. Worker orchestration is separately disclosed as one provider session, 49 turns, 572.670 seconds, and USD 2.9589262. |
@@ -397,14 +397,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_conformance_design_dispatch_ready`
+Mode: `lpci1_web_conformance_design_accepted_hold_before_spec`
 
-LPCI1-WEB-D1 is dispatch-ready at `bd22ca0a4`. The next allowed move is to send
-the committed packet to one no-commit design worker and independently review
-the exact two outputs. No repeated checkpoint applies inside that bounded
-scope. SPEC, BUILD, runtime/test mutation or execution, provider/model/live,
-persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment,
-and readiness claims remain unauthorized.
+LPCI1-WEB-D1 documentation-only DESIGN is reviewer-accepted with corrections at
+`e0ee8a000`, conditional on T3/T4 SPEC reconciliation. The next allowed move is
+a fresh explicit SPEC authorization followed by fresh GC-018, current source
+verification, and a separate source-verified work order. No SPEC, BUILD,
+runtime/test mutation or execution, provider/model/live, persistence,
+vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness
+claim is currently authorized.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`. Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
 conditions.

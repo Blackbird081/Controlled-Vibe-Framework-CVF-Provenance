@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `bd22ca0a4 docs(dispatch): release LPCI conformance design`
-- Active mode: `lpci1_web_conformance_design_dispatch_ready`
+- Latest material commit: `e0ee8a000 docs(review): accept bounded LPCI conformance design`
+- Active mode: `lpci1_web_conformance_design_accepted_hold_before_spec`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `EXPORTED` at public commit `9b039ea6b`
 - Remote tracking branch: origin/main
@@ -18,35 +18,36 @@ Status: ACTIVE
 
 ## Purpose
 
-Record LPCI1-WEB-D1 documentation design dispatch while keeping SPEC, BUILD,
+Record LPCI1-WEB-D1 bounded documentation design acceptance while keeping SPEC, BUILD,
 runtime/test, provider/live, persistence, vector/RAG, public, and deployment
 authority excluded.
 
 ## Scope / Target / Owner Boundary
 
-Scope: documentation-only LPCI1-Web current-owner conformance design dispatch.
+Scope: documentation-only LPCI1-Web current-owner conformance design acceptance.
 
-Target: the committed GC-018 and no-commit work order at `bd22ca0a4`.
+Target: the accepted design audit and corrected worker return at `e0ee8a000`.
 
 Owner boundary: existing LPCI1-T5 cvf-web route/library/UI/test family only;
 no cross-owner governed-retrieval composition is justified or released.
 
 ## Active Boundary
 
-The design worker may create exactly one audit and one worker return. The
-primary agent remains independent reviewer/closer. No source/test edit or
-execution, sensitive fixture, provider call, or implementation is released.
+The design worker created exactly one audit and one worker return. Independent
+review passed after one consolidated reviewer correction. No source/test edit
+or execution, sensitive fixture, provider call, SPEC, or implementation is
+released.
 
 ## Current Mode
 
-`lpci1_web_conformance_design_dispatch_ready`
+`lpci1_web_conformance_design_accepted_hold_before_spec`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_conformance_design_dispatch_ready`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=send committed
-LPCI1-WEB-D1 to one no-commit design worker and independently review the exact
-two outputs; parked checkpoint=SPEC, BUILD, runtime/test mutation or execution,
+Startup acknowledged: current mode=`lpci1_web_conformance_design_accepted_hold_before_spec`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=fresh explicit
+SPEC authorization followed by fresh GC-018, current source verification, and a
+separate work order; parked checkpoint=SPEC, BUILD, runtime/test mutation or execution,
 provider/model/live, persistence, vector/RAG, corpus mutation, public-sync, and
 deployment remain unauthorized.
 
@@ -75,10 +76,9 @@ deployment remain unauthorized.
 
 ## Next Allowed Move
 
-LPCI1-WEB-D1 is dispatch-ready at material commit `bd22ca0a4`. The next allowed
-move is to send the committed work order to one no-commit design worker and
-independently review the exact audit and worker return. No repeated operator
-checkpoint applies inside the bounded design scope. No SPEC, BUILD,
+LPCI1-WEB-D1 is reviewer-accepted with corrections at material commit
+`e0ee8a000`, conditional on T3/T4 SPEC reconciliation. The next allowed move is
+a fresh explicit SPEC authorization followed by fresh governed packet authoring. No SPEC, BUILD,
 runtime/test mutation or execution, provider/model/live action, persistence,
 vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness
 claim is authorized.
@@ -184,6 +184,35 @@ creation and may be accepted under the GC-020 parent rule.
 | Invocation ID | `glp-t2-v55-exact-anchor-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V55_2026-08-05.md` |
 | Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - LPCI1-Web D1 Design Acceptance Continuity
+
+Material commit `e0ee8a000` records the reviewer-accepted bounded D1 design,
+corrected worker return, and roadmap `HOLD_BEFORE_SPEC` status. The next move
+requires fresh explicit SPEC authority; no later phase is released.
+
+## Agent Operation Trace Block - LPCI1-Web D1 Design Acceptance Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | LPCI1-Web D1 acceptance continuity, 2026-08-08 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, and Git commit |
+| Target paths | active handoff, compact front door, bootstrap read model, state source fragments, and generated active-state registry |
+| Allowed scope source | GC-020 after reviewer-owned material commit `e0ee8a000` |
+| Before status evidence | HEAD `e0ee8a000`; accepted material committed and pre-commit hook passed 83/83 |
+| After status evidence | active mode holds before fresh SPEC authorization |
+| Diff evidence | continuity-only changed set from `git diff --name-status` |
+| Approval boundary | session continuity only |
+| Claim boundary | no SPEC, BUILD, runtime/test, provider/live, persistence, vector/RAG, public-sync, push, deployment, or readiness authority |
+| Agent type | session-sync steward |
+| Invocation ID | `lpci1-web-d1-acceptance-continuity-2026-08-08` |
+| Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; LPCI1-Web D1 state entry; generated active-state registry |
+| Actual changed set | same continuity-only paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

@@ -95,8 +95,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_conformance_design_dispatch_ready",
-  "previousMode": "lpci1_web_defect_intake_reviewed_hold_before_design",
+  "currentMode": "lpci1_web_conformance_design_accepted_hold_before_spec",
+  "previousMode": "lpci1_web_conformance_design_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "LPCI1-WEB-D1 documentation-only conformance DESIGN is dispatch-ready at material commit bd22ca0a4. The next allowed move is to send the committed work order to one no-commit design worker; the primary agent independently reviews and closes or returns one consolidated repair. No repeated operator checkpoint is required inside the exact two-output design scope. SPEC, BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, and readiness claims remain unauthorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "LPCI1-WEB-D1 documentation-only conformance DESIGN is reviewer-accepted with corrections at material commit e0ee8a000 and is conditional on T3/T4 SPEC reconciliation. The next allowed move is a fresh explicit SPEC authorization, followed by a fresh GC-018, current source verification, and a separate source-verified work order. No SPEC, BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness claim is currently authorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13853,10 +13853,10 @@
     "claimBoundary": "Read-only receipt implementation in three create-only paths; no real-root run or mutation authority."
   },
   "lpci1WebGroundingClearanceConformanceDesign20260808": {
-    "status": "DISPATCH_READY",
+    "status": "DESIGN_ACCEPTED_BOUNDED_CONDITIONAL_ON_SPEC_RECONCILIATION",
     "date": "2026-08-08",
     "batchId": "LPCI1-WEB-D1",
-    "materialCommit": "bd22ca0a4",
+    "materialCommit": "e0ee8a000",
     "operatorAuthority": "LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN",
     "roadmap": "docs/roadmaps/CVF_LPCI_CURRENT_OWNER_GROUNDING_AND_CLEARANCE_DEFECT_INTAKE_ROADMAP_2026-08-08.md",
     "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN_2026-08-08.md",
@@ -13865,10 +13865,14 @@
     "workerOutputCount": 2,
     "preDispatchEvidence": "PASS",
     "preCommitEvidence": "PASS_83_OF_83",
+    "reviewerFastEvidence": "PASS_62_OF_62",
+    "independentReviewEvidence": "FINAL_PASS_AFTER_CONSOLIDATED_REPAIR",
+    "designAudit": "docs/audits/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN_2026-08-08.md",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN_WORKER_RETURN_2026-08-08.md",
     "ownerBoundary": "LPCI1_T5_CVF_WEB_CURRENT_OWNER",
     "crossOwnerDesignDisposition": "NO_CROSS_OWNER_DESIGN_JUSTIFIED",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
-    "nextAllowedMove": "Dispatch one no-commit design worker for exactly the audit and worker-return paths, then perform independent reviewer closure or one consolidated repair.",
+    "nextAllowedMove": "Fresh explicit SPEC authorization, then a fresh GC-018, current source verification, and a separate source-verified work order. No SPEC or BUILD is currently authorized.",
     "claimBoundary": "Documentation-only DESIGN. No SPEC, BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness claim."
   },
   "continuousProjectionT1Implementation20260720": {
