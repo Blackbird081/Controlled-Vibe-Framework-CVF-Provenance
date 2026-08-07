@@ -4,10 +4,13 @@
   "value": {
     "status": "P4_A1_INTAKE_OPEN_P3_B_DEPENDENCY_MAP_ONLY",
     "date": "2026-08-07",
-    "materialCommit": "09b155bc1",
+    "materialCommit": "127d2410e",
     "initialIntakeCommit": "5ee1ed25d",
     "sourceRefinementCommit": "2885e0a1e",
     "independentReviewerCommit": "09b155bc1",
+    "valueCheckpointCommit": "127d2410e",
+    "crossOwnerDesignDisposition": "NO_CROSS_OWNER_DESIGN_JUSTIFIED",
+    "operatorCheckpoint": "AUTHORIZE_FRESH_LPCI_DEFECT_INTAKE_DOCUMENTATION_ONLY",
     "roadmap": "docs/roadmaps/CVF_P4_A1_GOVERNED_RETRIEVAL_INTAKE_AND_P3_B_REMAINDER_DEPENDENCY_MAP_ROADMAP_2026-08-07.md",
     "operatorLabels": [
       "P4-A1",
@@ -20,7 +23,7 @@
     "preCommitEvidence": "PASS_83_OF_83",
     "sourceRefinement": "Independent worker audits accepted by the reviewer distinguish real Web route consumers from exported or internal entrypoints, narrow durable Web state to collection and chunk storage, record soft Control Plane domain and tag fallback, and confirm that semantic and RAG labels do not prove vector behavior.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
-    "nextAllowedMove": "Read-only intake correction or evidence refinement within the roadmap, or a new explicit operator decision selecting one bounded later lifecycle phase.",
+    "nextAllowedMove": "Operator may authorize a fresh documentation-only LPCI current-owner defect intake for evidence-text grounding and actor-bound sensitivity clearance, or permit further read-only P4-A1 correction. Cross-owner DESIGN is not justified on current evidence.",
     "claimBoundary": "Intake and dependency mapping only. No DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or durable-store decision, vector/embedding/RAG decision, runtime integration, public-sync, deployment, or readiness claim."
   }
 }

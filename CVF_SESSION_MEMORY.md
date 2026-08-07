@@ -400,10 +400,10 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
 
-P4-A1 INTAKE and reviewer-corrected P3-B map are open at `09b155bc1`; source distinguishes route consumers, entrypoints, narrow persistence, and labels.
-The next allowed move is read-only intake
-correction or evidence refinement within that roadmap, or a new explicit
-operator decision selecting one bounded later lifecycle phase. DESIGN, SPEC,
+P4-A1 recommends `NO_CROSS_OWNER_DESIGN_JUSTIFIED` at `127d2410e`.
+The next allowed move is an operator decision on a documentation-only LPCI
+defect intake for grounding and actor-bound clearance, or read-only correction.
+DESIGN, SPEC,
 WORK ORDER, BUILD, provider/model/live action, persistence or durable-store
 decision, vector/embedding/RAG decision, runtime integration, public-sync,
 deployment, and readiness claims remain unauthorized. Public Projection
