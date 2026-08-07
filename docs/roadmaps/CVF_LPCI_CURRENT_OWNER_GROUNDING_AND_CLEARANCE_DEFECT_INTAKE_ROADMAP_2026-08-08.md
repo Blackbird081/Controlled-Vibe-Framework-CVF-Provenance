@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI_DEFECT_INTAKE_REVIEWED_DESIGN_AUTHORIZED
+Status: LPCI_CONFORMANCE_DESIGN_ACCEPTED_BOUNDED_HOLD_BEFORE_SPEC
 
 docType: roadmap
 
@@ -166,16 +166,16 @@ Reviewer disposition:
 | Decision question | Current evidence | Intake posture |
 |---|---|---|
 | Is model-bound retrieved evidence required? | T4 already requires the retrieval receipt as context and grounded summaries/guidance | `PREVIOUSLY_DECIDED_REQUIREMENT` |
-| What bounded projection safely honors that requirement? | T4 says full receipt; T3 makes snippets display hints; current clearance/minimization conflict makes blind full-receipt reuse unsafe to assume | `UNRESOLVED_BEFORE_DESIGN` |
-| May any full retrieval receipt reach a provider or no-provider client? | current provider branch uses a metadata projection; no-provider branch returns full records | `MINIMIZATION_DECISION_REQUIRED` |
+| What bounded projection safely honors that requirement? | D1 selects a minimized public-only snippet projection candidate plus metadata-only abstention; T3/T4 conflict remains | `CONDITIONAL_ON_SPEC_RECONCILIATION` |
+| May any full retrieval receipt reach a provider or no-provider client? | D1 excludes full receipts from both surfaces and retains only minimized projections | `DESIGN_DECIDED_SPEC_REQUIRED` |
 | Who owns actor-to-sensitivity and actor-to-corpus grants? | authentication identity exists; no current LPCI entitlement owner is source-backed | `OWNER_NOT_SELECTED` |
 | Where is restricted-corpus retrieval authorization stored and read? | T3 refers to GC-051-time authorization; current registry presence is not entitlement proof | `SOURCE_OWNER_REQUIRED` |
-| How are service-token and impersonated-session actors treated? | identity/proof surfaces exist; clearance semantics do not | `POLICY_DECISION_REQUIRED` |
-| What proof is required later? | current tests cover filtering mechanics and auth proof separately | `POSITIVE_GROUNDING_AND_FAIL_CLOSED_CASES_REQUIRED` |
+| How are service-token and impersonated-session actors treated? | D1 treats identity as non-authoritative and keeps every actor public-only until a grant owner exists | `PUBLIC_ONLY_FAIL_CLOSED` |
+| What proof is required later? | D1 defines positive grounding, minimization, forged-clearance, mixed-record, missing-evidence, and injection cases | `SYNTHETIC_PROOF_MATRIX_DEFINED_NO_EXECUTION` |
 
 ## Design Control Gate
 
-Gate status: `RELEASED_TO_FRESH_GC018_DESIGN`.
+Gate status: `DESIGN_ACCEPTED_BOUNDED_HOLD_BEFORE_SPEC`.
 
 Operator release received on 2026-08-08:
 
@@ -188,23 +188,24 @@ and readiness authority remain withheld.
 
 | Gate question | Current answer | Effect |
 |---|---|---|
-| Are the two primary defect boundaries source-backed? | Yes, bounded | intake may record them only |
-| Is the safe evidence projection selected? | No | no prompt, receipt, or field design |
+| Are the two primary defect boundaries source-backed? | Yes, bounded | accepted as current-owner conformance design inputs |
+| Is the safe evidence projection selected? | Conditionally | minimized public-only snippet projection is a SPEC candidate; T3/T4 reconciliation is still required |
 | Is an entitlement owner selected? | No | no authorization interface or schema design |
-| Is DESIGN authorized? | Yes, documentation-only | fresh GC-018 and source-verified work order required before worker dispatch |
-| Is SPEC or WORK ORDER authorized? | No | no new contract/schema or dispatch packet |
+| Is DESIGN authorized? | Completed and reviewer-accepted, bounded | design audit and corrected worker return are the accepted outputs |
+| Is SPEC or implementation WORK ORDER authorized? | No | no new contract/schema or implementation dispatch packet |
 | Is BUILD or test execution authorized? | No | no source/test mutation or execution |
 | Is provider/live work authorized? | No | no key, model, endpoint, call, or proof |
 
-The operator decision releases only the bounded design question named by this
-intake. The paired fresh GC-018 and source-verified work order own dispatch;
-intake completion or defect confirmation alone does not release later phases.
+The operator decision released only the bounded design question named by this
+intake. The paired fresh GC-018 and source-verified work order governed that
+dispatch. Reviewer acceptance does not release later phases.
 
 ## Dispatch Boundary
 
 The operator authorized three read-only evidence workers for this intake. They
 had no file-edit, commit, test, provider, network, design, or implementation
-authority. The reviewer owns integration and closeout of intake evidence.
+authority. A later no-commit design worker operated only under the paired D1
+GC-018 and work order; the primary reviewer owns integration and closeout.
 
 No implementation worker is dispatched. No child GC-018, specification, work
 order, runtime edit, test run, provider call, public action, or deployment is
@@ -229,7 +230,7 @@ authorized by this roadmap.
 | `AC-04` | actor-bound clearance mismatch covers all canonical sensitivity levels | `PASS_REQUIRED` |
 | `AC-05` | current public-only pilot prevents actual sensitive-release overclaim | `PASS_REQUIRED` |
 | `AC-06` | T5/T6 historical evidence is narrowed without wholesale reopening | `PASS_REQUIRED` |
-| `AC-07` | DESIGN and every later lifecycle or external-effect lane remain blocked | `PASS_REQUIRED` |
+| `AC-07` | accepted DESIGN remains bounded and every later lifecycle or external-effect lane remains blocked | `PASS_REQUIRED` |
 
 ## Negative Search And Collision Discipline
 
@@ -288,14 +289,18 @@ clearance behavior directly conflicts with canonical multi-level authorization
 rules. Historical live output is retained as observed output, not evidence that
 retrieved text was supplied to the model.
 
-Claim Update: complete reviewer intake, record both requirements as previously
-decided LPCI1 conformance defects, retain linked minimization and proof
-questions, and stop at `HOLD_BEFORE_DESIGN`.
+Claim Update: the documentation-only D1 design is reviewer-accepted with
+corrections as `DESIGN_ACCEPTED_BOUNDED_CONDITIONAL_ON_SPEC_RECONCILIATION`.
+The selected current-owner direction is public-only Stage 1 admission, a
+minimized snippet projection candidate, metadata-only abstention fallback,
+minimized no-provider response, and response-local audit correlation. This is
+not runtime conformance or BUILD readiness.
 
-The next operator checkpoint is to authorize or decline one fresh bounded
-`LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`. Authorization must be
-explicit. If authorized, fresh GC-018 and then-current source verification are
-still required before DESIGN work begins.
+The next operator checkpoint is a fresh explicit SPEC authorization. Any SPEC
+must reconcile T3 display-hint semantics with T4 full-receipt context wording,
+define the minimized evidence/response/audit contract, and preserve public-only
+fail-closed behavior. Fresh GC-018, current source verification, and a separate
+work order remain required. BUILD and all external-effect lanes stay withheld.
 
 ## Public Export Disposition
 
