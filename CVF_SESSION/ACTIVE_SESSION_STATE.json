@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "P4-A1 governed-retrieval INTAKE and the P3-B remainder dependency map are open at material commit 5ee1ed25d. The next allowed move is read-only intake correction or evidence refinement within that roadmap, or a new explicit operator decision selecting one bounded later lifecycle phase. No DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or durable-store decision, vector/embedding/RAG decision, runtime integration, public-sync, deployment, or readiness claim is authorized. Public Projection Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen conditions; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "P4-A1 governed-retrieval INTAKE and the corrected P3-B remainder dependency map are open at material commit 2885e0a1e. Current source proves multiple retrieval consumers and existing Web file-backed JSON persistence, while the legacy RAGPipeline name does not prove vector or embedding behavior. The next allowed move is read-only intake correction or evidence refinement within that roadmap, or a new explicit operator decision selecting one bounded later lifecycle phase. No DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or durable-store decision, vector/embedding/RAG decision, runtime integration, public-sync, deployment, or readiness claim is authorized. Public Projection Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen conditions; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13786,7 +13786,9 @@
   "p4A1GovernedRetrievalIntakeP3BRemainderDependencyMap20260807": {
     "status": "P4_A1_INTAKE_OPEN_P3_B_DEPENDENCY_MAP_ONLY",
     "date": "2026-08-07",
-    "materialCommit": "5ee1ed25d",
+    "materialCommit": "2885e0a1e",
+    "initialIntakeCommit": "5ee1ed25d",
+    "sourceRefinementCommit": "2885e0a1e",
     "roadmap": "docs/roadmaps/CVF_P4_A1_GOVERNED_RETRIEVAL_INTAKE_AND_P3_B_REMAINDER_DEPENDENCY_MAP_ROADMAP_2026-08-07.md",
     "operatorLabels": [
       "P4-A1",
@@ -13797,6 +13799,7 @@
     "p3BRemainderRows": 11,
     "preDispatchEvidence": "PASS",
     "preCommitEvidence": "PASS_83_OF_83",
+    "sourceRefinement": "Current source proves multiple retrieval consumers and existing Web file-backed JSON persistence; the legacy RAGPipeline name does not prove vector or embedding behavior.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "nextAllowedMove": "Read-only intake correction or evidence refinement within the roadmap, or a new explicit operator decision selecting one bounded later lifecycle phase.",
     "claimBoundary": "Intake and dependency mapping only. No DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or durable-store decision, vector/embedding/RAG decision, runtime integration, public-sync, deployment, or readiness claim."

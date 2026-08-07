@@ -8,7 +8,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `5ee1ed25d docs(roadmap): open P4-A1 governed retrieval intake`
+- Latest material commit: `2885e0a1e docs(roadmap): refine P4-A1 retrieval source map`
 - Active mode: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `EXPORTED` at public commit `9b039ea6b`
@@ -77,8 +77,11 @@ Projection Pre-Push T0, WS2, and GC010-AER remain parked.
 
 ## Next Allowed Move
 
-P4-A1 governed-retrieval INTAKE and the P3-B remainder dependency map are open
-at material commit `5ee1ed25d`. The next allowed move is read-only intake
+P4-A1 governed-retrieval INTAKE and the corrected P3-B remainder dependency map
+are open at material commit `2885e0a1e`. Current source proves multiple real
+retrieval consumers and existing Web file-backed JSON persistence; the legacy
+`RAGPipeline` name does not prove vector or embedding behavior. The next
+allowed move is read-only intake
 correction or evidence refinement within the roadmap, or a new explicit
 operator decision selecting one bounded later lifecycle phase. No DESIGN,
 SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or
@@ -381,20 +384,19 @@ any parked lane.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
-## GC-020 Marker - P4-A1 Intake Roadmap Continuity
+## GC-020 Marker - P4-A1 Intake Source Refinement Continuity
 
-Material commit `5ee1ed25d` opens the P4-A1 governed-retrieval INTAKE and the
-P3-B remainder dependency map. The roadmap gate is `HOLD_BEFORE_DESIGN` and no
-worker dispatch is released. This continuity batch updates only active session
-front doors, state source fragments, the generated state registry, and this
-active handoff.
+Initial material commit `5ee1ed25d` opened the P4-A1 governed-retrieval INTAKE.
+Material commit `2885e0a1e` corrects the source map for existing consumers,
+Web file-backed persistence, and the non-vector legacy `RAGPipeline` name. The
+roadmap gate remains `HOLD_BEFORE_DESIGN`; no worker dispatch is released.
 
 ## Core Guard Self-Protection Authorization - P4-A1 Intake Roadmap Continuity
 
 Authorized guard-maintenance scope: synchronize the active mode, next allowed
 move, material roadmap entry, bootstrap read model, compact session front door,
 generated active-state registry, and active handoff after material commit
-`5ee1ed25d`.
+`2885e0a1e`.
 
 Protected paths:
 
@@ -410,31 +412,31 @@ P3-B remainder while withholding DESIGN, BUILD, provider, persistence, and
 vector/RAG authority.
 
 Rollback boundary: revert only this continuity batch if material roadmap
-commit `5ee1ed25d` is reverted. Do not revert earlier GLP, public projection,
+commit `2885e0a1e` is reverted. Do not revert earlier GLP, public projection,
 workspace overlay, or parked-lane continuity.
 
 Not authorized: no DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live,
 persistence, durable store, vector/embedding/RAG, runtime integration,
 public-sync, deployment, or readiness action.
 
-## Agent Operation Trace Block - P4-A1 Intake Roadmap Continuity
+## Agent Operation Trace Block - P4-A1 Intake Source Refinement Continuity
 
 | Field | Evidence |
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | P4-A1 intake roadmap continuity, 2026-08-07 |
+| Session or invocation | P4-A1 intake source refinement continuity, 2026-08-07 |
 | Working directory | repository root |
 | Command or tool surface | state-source edits, active-state generator, continuity gates, and Git commit |
 | Target paths | active handoff, compact front door, bootstrap read model, state source fragments, and generated active-state registry |
-| Allowed scope source | GC-020 after operator-authorized material roadmap commit `5ee1ed25d` |
-| Before status evidence | HEAD `5ee1ed25d`; material roadmap committed and pre-commit hook passed 83/83 |
+| Allowed scope source | GC-020 after operator-authorized material roadmap commit `2885e0a1e` |
+| Before status evidence | HEAD `2885e0a1e`; refined material roadmap committed and pre-commit hook passed 83/83 |
 | After status evidence | active mode and next-move surfaces route only P4-A1 intake correction/evidence refinement or a new explicit operator phase decision |
 | Diff evidence | continuity-only changed set from `git diff --name-status` |
 | Approval boundary | session continuity only |
 | Claim boundary | no DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live, persistence, vector/RAG, runtime integration, public-sync, deployment, or readiness authority |
 | Agent type | session-sync steward |
-| Invocation ID | `p4-a1-intake-roadmap-continuity-2026-08-07` |
+| Invocation ID | `p4-a1-intake-source-refinement-continuity-2026-08-07` |
 | Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; P4-A1 state entry; generated active-state registry |
 | Actual changed set | same continuity-only paths after generator |
 | Manifest delta | MATCH |
