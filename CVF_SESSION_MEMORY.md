@@ -400,8 +400,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 Mode: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
 
-P4-A1 governed-retrieval INTAKE and corrected P3-B map are open at `2885e0a1e`.
-Source proves real consumers and Web file persistence, but no vector behavior.
+P4-A1 INTAKE and reviewer-corrected P3-B map are open at `09b155bc1`; source distinguishes route consumers, entrypoints, narrow persistence, and labels.
 The next allowed move is read-only intake
 correction or evidence refinement within that roadmap, or a new explicit
 operator decision selecting one bounded later lifecycle phase. DESIGN, SPEC,
