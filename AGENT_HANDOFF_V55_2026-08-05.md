@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - LPCI1-Web Defect Intake
+# CVF Agent Handoff V55 - LPCI1-Web Conformance Design
 
 Memory class: active-handoff
 
@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `38a3a21df docs(roadmap): open LPCI defect intake`
-- Active mode: `lpci1_web_defect_intake_reviewed_hold_before_design`
+- Latest material commit: `bd22ca0a4 docs(dispatch): release LPCI conformance design`
+- Active mode: `lpci1_web_conformance_design_dispatch_ready`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `EXPORTED` at public commit `9b039ea6b`
 - Remote tracking branch: origin/main
@@ -18,38 +18,37 @@ Status: ACTIVE
 
 ## Purpose
 
-Record the reviewer-accepted LPCI1-Web current-owner grounding and clearance
-defect intake while keeping DESIGN and every later lifecycle phase excluded.
+Record LPCI1-WEB-D1 documentation design dispatch while keeping SPEC, BUILD,
+runtime/test, provider/live, persistence, vector/RAG, public, and deployment
+authority excluded.
 
 ## Scope / Target / Owner Boundary
 
-Scope: documentation-only LPCI1-Web current-owner defect intake continuity.
+Scope: documentation-only LPCI1-Web current-owner conformance design dispatch.
 
-Target: the accepted intake roadmap at material commit `38a3a21df`.
+Target: the committed GC-018 and no-commit work order at `bd22ca0a4`.
 
 Owner boundary: existing LPCI1-T5 cvf-web route/library/UI/test family only;
 no cross-owner governed-retrieval composition is justified or released.
 
 ## Active Boundary
 
-The intake confirms two previously decided requirements with current-source
-conformance conflicts: model-bound evidence grounding and actor/corpus-bound
-sensitivity clearance. The only current pilot corpus is synthetic and
-public-only, so no actual sensitive release is claimed.
+The design worker may create exactly one audit and one worker return. The
+primary agent remains independent reviewer/closer. No source/test edit or
+execution, sensitive fixture, provider call, or implementation is released.
 
 ## Current Mode
 
-`lpci1_web_defect_intake_reviewed_hold_before_design`
+`lpci1_web_conformance_design_dispatch_ready`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_defect_intake_reviewed_hold_before_design`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=explicitly
-authorize or decline `LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`, or
-request read-only intake correction; parked checkpoint=DESIGN requires fresh
-authority plus GC-018/source verification, while SPEC, WORK ORDER, BUILD,
-provider/model/live, persistence, vector/RAG, runtime integration, public-sync,
-and deployment remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_conformance_design_dispatch_ready`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=send committed
+LPCI1-WEB-D1 to one no-commit design worker and independently review the exact
+two outputs; parked checkpoint=SPEC, BUILD, runtime/test mutation or execution,
+provider/model/live, persistence, vector/RAG, corpus mutation, public-sync, and
+deployment remain unauthorized.
 
 ## Released Packet
 
@@ -76,14 +75,13 @@ and deployment remain unauthorized.
 
 ## Next Allowed Move
 
-The LPCI1-Web defect intake is reviewer-accepted at material commit
-`38a3a21df` and remains `HOLD_BEFORE_DESIGN`. The next allowed move is an
-explicit operator decision to authorize or decline
-`LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`, or further read-only
-intake correction. Any later DESIGN requires fresh GC-018 and source
-verification. No SPEC, WORK ORDER, BUILD, provider/model/live action,
-persistence or durable-store decision, vector/embedding/RAG decision, runtime
-integration, public-sync, deployment, or readiness claim is authorized.
+LPCI1-WEB-D1 is dispatch-ready at material commit `bd22ca0a4`. The next allowed
+move is to send the committed work order to one no-commit design worker and
+independently review the exact audit and worker return. No repeated operator
+checkpoint applies inside the bounded design scope. No SPEC, BUILD,
+runtime/test mutation or execution, provider/model/live action, persistence,
+vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness
+claim is authorized.
 
 Public Projection Pre-Push T0 is also parked at material commit `8e624a5f6`
 with decision `BLOCKED_NO_OWNER`. Reopen only when one governed packet names
@@ -381,18 +379,18 @@ any parked lane.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
-## GC-020 Marker - LPCI1-Web Defect Intake Continuity
+## GC-020 Marker - LPCI1-Web Conformance Design Dispatch Continuity
 
-Material commit `38a3a21df` records the reviewer-accepted documentation-only
-LPCI1-Web grounding and clearance defect intake. P4-A1 remains
-`NO_CROSS_OWNER_DESIGN_JUSTIFIED`; the new intake remains `HOLD_BEFORE_DESIGN`.
+Material commit `bd22ca0a4` records operator release, the fresh GC-018, and the
+source-verified no-commit LPCI1-WEB-D1 work order. P4-A1 remains
+`NO_CROSS_OWNER_DESIGN_JUSTIFIED`; later phases remain parked.
 
-## Core Guard Self-Protection Authorization - LPCI1-Web Intake Continuity
+## Core Guard Self-Protection Authorization - LPCI1-Web D1 Dispatch Continuity
 
 Authorized guard-maintenance scope: synchronize the active mode, next allowed
 move, material roadmap entry, bootstrap read model, compact session front door,
 generated active-state registry, and active handoff after material commit
-`38a3a21df`.
+`bd22ca0a4`.
 
 Protected paths:
 
@@ -400,38 +398,38 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/lpci1WebGroundingClearanceDefectIntake20260808.json`
+- `CVF_SESSION/state/entries/lpci1WebGroundingClearanceConformanceDesign20260808.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: `AUTHORIZE_FRESH_LPCI_DEFECT_INTAKE_DOCUMENTATION_ONLY`.
+Operator authorization: `LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`.
 
 Rollback boundary: revert only this continuity batch if material roadmap
-commit `38a3a21df` is reverted. Do not revert earlier P4-A1, GLP, public projection,
+commit `bd22ca0a4` is reverted. Do not revert earlier intake, P4-A1, GLP, public projection,
 workspace overlay, or parked-lane continuity.
 
 Not authorized: no DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live,
 persistence, durable store, vector/embedding/RAG, runtime integration,
 public-sync, deployment, or readiness action.
 
-## Agent Operation Trace Block - LPCI1-Web Defect Intake Continuity
+## Agent Operation Trace Block - LPCI1-Web D1 Dispatch Continuity
 
 | Field | Evidence |
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | LPCI1-Web defect-intake continuity, 2026-08-08 |
+| Session or invocation | LPCI1-Web D1 dispatch continuity, 2026-08-08 |
 | Working directory | repository root |
 | Command or tool surface | state-source edits, active-state generator, continuity gates, and Git commit |
 | Target paths | active handoff, compact front door, bootstrap read model, state source fragments, and generated active-state registry |
-| Allowed scope source | GC-020 after operator-authorized reviewer material commit `38a3a21df` |
-| Before status evidence | HEAD `38a3a21df`; defect intake committed and pre-commit hook passed 83/83 |
-| After status evidence | next move is an explicit LPCI1-Web conformance DESIGN decision or read-only intake correction; DESIGN remains unauthorized |
+| Allowed scope source | GC-020 after operator-authorized dispatch commit `bd22ca0a4` |
+| Before status evidence | HEAD `bd22ca0a4`; design dispatch committed and pre-commit hook passed 83/83 |
+| After status evidence | next move is one no-commit design worker followed by independent reviewer closure |
 | Diff evidence | continuity-only changed set from `git diff --name-status` |
 | Approval boundary | session continuity only |
 | Claim boundary | no DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live, persistence, vector/RAG, runtime integration, public-sync, deployment, or readiness authority |
 | Agent type | session-sync steward |
-| Invocation ID | `lpci1-web-defect-intake-continuity-2026-08-08` |
-| Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; LPCI1-Web intake state entry; generated active-state registry |
+| Invocation ID | `lpci1-web-d1-dispatch-continuity-2026-08-08` |
+| Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; LPCI1-Web D1 state entry; generated active-state registry |
 | Actual changed set | same continuity-only paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |

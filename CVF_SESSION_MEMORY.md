@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_defect_intake_reviewed_hold_before_design`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=explicitly authorize or decline `LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`, or request read-only intake correction; parked checkpoint=DESIGN still requires fresh authority plus GC-018/source verification, and SPEC, WORK ORDER, BUILD, provider/model/live, persistence, vector/RAG, runtime integration, public-sync, and deployment remain unauthorized, while Public Projection Pre-Push T0, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`lpci1_web_conformance_design_dispatch_ready`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=send committed LPCI1-WEB-D1 to one no-commit design worker and independently review the exact two outputs; parked checkpoint=SPEC, BUILD, runtime/test mutation or execution, provider/model/live, persistence, vector/RAG, corpus mutation, public-sync, and deployment remain unauthorized, while Public Projection Pre-Push T0, WS2, and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_defect_intake_reviewed_hold_before_design`
+Current mode marker: `lpci1_web_conformance_design_dispatch_ready`
 
-Current mode: `lpci1_web_defect_intake_reviewed_hold_before_design`
+Current mode: `lpci1_web_conformance_design_dispatch_ready`
 
-`lpci1_web_defect_intake_reviewed_hold_before_design`
+`lpci1_web_conformance_design_dispatch_ready`
 
 Previous mode:
 
-`p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
+`lpci1_web_defect_intake_reviewed_hold_before_design`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -80,7 +80,7 @@ are now assigned to the no-commit worker.
 ## Latest Material Work
 | Work | Commit | Disposition |
 |---|---|---|
-| LPCI1-Web grounding and clearance defect intake | `38a3a21df` | `LPCI_DEFECT_INTAKE_REVIEWED_HOLD_BEFORE_DESIGN`; two current-owner conformance conflicts confirmed, no current sensitive-release claim, no cross-owner design justification, and no later lifecycle authority. |
+| LPCI1-WEB-D1 conformance design dispatch | `bd22ca0a4` | `DISPATCH_READY`; fresh GC-018 and source-verified no-commit work order release exactly two documentation outputs; no later lifecycle authority. |
 | GLP-PUBLIC-R1 public carrier refresh closure | `2377a8ddc` | `CLOSED_PASS_BOUNDED_EXPORTED`; public commit `9b039ea6b` is pushed and synchronized, golden bootstrap passed 69/69, provenance pre-push passed 99/99, and both worktrees are clean after continuity sync. |
 | GLP-T4 adoption-boundary audit packet | `141cc0acd` | `HOLD_PENDING_OPERATOR_AUTHORITY`; author-fast 5/5 and pre-dispatch 75/75. One future worker may create exactly the local read-only audit and return; Claude CLI, guide/public mutation, network, push, and deployment are excluded. |
 | GLP-T3 propagation-proof closure | `eae28c785` | `CLOSED_PASS_BOUNDED`; one harness call passed 79/79, 14/14 generated surfaces were present, private leakage and cleanup residue were zero, and proof-subject provider/network count was zero. Worker orchestration is separately disclosed as one provider session, 49 turns, 572.670 seconds, and USD 2.9589262. |
@@ -397,15 +397,14 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_defect_intake_reviewed_hold_before_design`
+Mode: `lpci1_web_conformance_design_dispatch_ready`
 
-The LPCI1-Web defect intake is reviewer-accepted at `38a3a21df` and remains
-`HOLD_BEFORE_DESIGN`. The next allowed move is an explicit operator decision
-to authorize or decline `LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`,
-or further read-only intake correction. Any later DESIGN requires fresh GC-018
-and source verification. SPEC, WORK ORDER, BUILD, provider/model/live action,
-persistence or durable-store decision, vector/embedding/RAG decision, runtime
-integration, public-sync, deployment, and readiness claims remain unauthorized.
+LPCI1-WEB-D1 is dispatch-ready at `bd22ca0a4`. The next allowed move is to send
+the committed packet to one no-commit design worker and independently review
+the exact two outputs. No repeated checkpoint applies inside that bounded
+scope. SPEC, BUILD, runtime/test mutation or execution, provider/model/live,
+persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment,
+and readiness claims remain unauthorized.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`. Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
 conditions.

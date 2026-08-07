@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_defect_intake_reviewed_hold_before_design",
+  "currentMode": "lpci1_web_conformance_design_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
-  "nextAllowedMove": "The fresh documentation-only LPCI1-Web grounding and clearance defect intake is reviewer-accepted at material commit 38a3a21df with status LPCI_DEFECT_INTAKE_REVIEWED_HOLD_BEFORE_DESIGN. The next allowed move is an explicit operator decision to authorize or decline LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN, or further read-only intake correction. Any later DESIGN requires fresh GC-018 and source verification. No SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or durable-store decision, vector/embedding/RAG decision, runtime integration, public-sync, deployment, or readiness claim is authorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "LPCI1-WEB-D1 documentation-only conformance DESIGN is dispatch-ready at material commit bd22ca0a4. The next allowed move is to send the committed work order to one no-commit design worker; the primary agent independently reviews and closes or returns one consolidated repair. No repeated operator checkpoint is required inside the exact two-output design scope. SPEC, BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, and readiness claims remain unauthorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
