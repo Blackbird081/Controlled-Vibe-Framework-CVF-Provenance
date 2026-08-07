@@ -95,8 +95,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only",
-  "previousMode": "workspace_governance_learning_public_carrier_refresh_closed_exported",
+  "currentMode": "lpci1_web_defect_intake_reviewed_hold_before_design",
+  "previousMode": "p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "P4-A1 reviewer recommendation is recorded at material commit 127d2410e: NO_CROSS_OWNER_DESIGN_JUSTIFIED. The next allowed move is an explicit operator decision on AUTHORIZE_FRESH_LPCI_DEFECT_INTAKE_DOCUMENTATION_ONLY for evidence-text grounding and actor-bound sensitivity clearance, or further read-only P4-A1 correction. This checkpoint does not authorize DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or durable-store decisions, vector/embedding/RAG decisions, runtime integration, public-sync, deployment, or readiness claims. Public Projection Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen conditions; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "The fresh documentation-only LPCI1-Web grounding and clearance defect intake is reviewer-accepted at material commit 38a3a21df with status LPCI_DEFECT_INTAKE_REVIEWED_HOLD_BEFORE_DESIGN. The next allowed move is an explicit operator decision to authorize or decline LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN, or further read-only intake correction. Any later DESIGN requires fresh GC-018 and source verification. No SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or durable-store decision, vector/embedding/RAG decision, runtime integration, public-sync, deployment, or readiness claim is authorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13820,6 +13820,25 @@
     "parked": "T1 implementation, T2-T4, automatic semantic edits, real-root apply, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation.",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "claimBoundary": "Private T0 documentation closure only; no tree-scale freshness receipt, public mutation, provider/live proof, or production claim."
+  },
+  "lpci1WebGroundingClearanceDefectIntake20260808": {
+    "status": "LPCI_DEFECT_INTAKE_REVIEWED_HOLD_BEFORE_DESIGN",
+    "date": "2026-08-08",
+    "materialCommit": "38a3a21df",
+    "roadmap": "docs/roadmaps/CVF_LPCI_CURRENT_OWNER_GROUNDING_AND_CLEARANCE_DEFECT_INTAKE_ROADMAP_2026-08-08.md",
+    "operatorAuthority": "AUTHORIZE_FRESH_LPCI_DEFECT_INTAKE_DOCUMENTATION_ONLY",
+    "owner": "LPCI1_T5_CVF_WEB_CURRENT_OWNER",
+    "groundingDisposition": "PREVIOUSLY_DECIDED_REQUIREMENT_WITH_T5_CONFORMANCE_CONFLICT",
+    "clearanceDisposition": "PREVIOUSLY_DECIDED_AUTHORIZATION_REQUIREMENT_WITH_RUNTIME_AND_RECEIPT_GAP",
+    "crossOwnerDesignDisposition": "NO_CROSS_OWNER_DESIGN_JUSTIFIED",
+    "designGate": "HOLD_BEFORE_DESIGN",
+    "nextOperatorCheckpoint": "LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN",
+    "currentCorpusBoundary": "Synthetic four-record pilot with all rows public; no current sensitive release is claimed.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "preDispatchEvidence": "PASS",
+    "preCommitEvidence": "PASS_83_OF_83",
+    "nextAllowedMove": "Operator may explicitly authorize or decline the bounded LPCI1-Web conformance DESIGN checkpoint, or request further read-only intake correction. Any DESIGN requires fresh GC-018 and source verification.",
+    "claimBoundary": "Documentation-only intake. No DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live action, persistence, vector/embedding/RAG decision, runtime or test mutation/execution, public-sync, deployment, or readiness claim."
   },
   "continuousProjectionT1Dispatch20260720": {
     "status": "DISPATCH_READY",

@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - P4-A1 Governed Retrieval Intake
+# CVF Agent Handoff V55 - LPCI1-Web Defect Intake
 
 Memory class: active-handoff
 
@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `127d2410e docs(roadmap): recommend P4-A1 value checkpoint`
-- Active mode: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
+- Latest material commit: `38a3a21df docs(roadmap): open LPCI defect intake`
+- Active mode: `lpci1_web_defect_intake_reviewed_hold_before_design`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `EXPORTED` at public commit `9b039ea6b`
 - Remote tracking branch: origin/main
@@ -18,39 +18,38 @@ Status: ACTIVE
 
 ## Purpose
 
-Record the open P4-A1 governed-retrieval intake and P3-B remainder dependency
-map while keeping lifecycle DESIGN, BUILD, provider, persistence, vector/RAG,
-runtime integration, public, and deployment authority excluded.
+Record the reviewer-accepted LPCI1-Web current-owner grounding and clearance
+defect intake while keeping DESIGN and every later lifecycle phase excluded.
 
 ## Scope / Target / Owner Boundary
 
-Scope: GLP-PUBLIC-R1 private closure and public export continuity.
+Scope: documentation-only LPCI1-Web current-owner defect intake continuity.
 
-Target: synchronized private closure and one public carrier commit.
+Target: the accepted intake roadmap at material commit `38a3a21df`.
 
-Owner boundary: public export is complete; no downstream mutation, adoption
-claim, provider proof call, deployment, or further GLP execution is released.
+Owner boundary: existing LPCI1-T5 cvf-web route/library/UI/test family only;
+no cross-owner governed-retrieval composition is justified or released.
 
 ## Active Boundary
 
-GLP-T4 and the roadmap remain closed bounded at `37d241d60`. GLP-PUBLIC-R1 is
-closed at `2377a8ddc`; the public carrier is pushed and synchronized at
-`9b039ea6b`. Distribution is proven, but downstream adoption and measured
-latency effect are not.
+The intake confirms two previously decided requirements with current-source
+conformance conflicts: model-bound evidence grounding and actor/corpus-bound
+sensitivity clearance. The only current pilot corpus is synthetic and
+public-only, so no actual sensitive release is claimed.
 
 ## Current Mode
 
-`p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
+`lpci1_web_defect_intake_reviewed_hold_before_design`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=read-only
-P4-A1 intake correction/evidence refinement or a new explicit operator
-decision for one bounded later lifecycle phase; parked checkpoint=DESIGN, SPEC,
-WORK ORDER, BUILD, provider/model/live, persistence, vector/RAG, runtime
-integration, public-sync, and deployment remain unauthorized, while Public
-Projection Pre-Push T0, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`lpci1_web_defect_intake_reviewed_hold_before_design`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=explicitly
+authorize or decline `LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`, or
+request read-only intake correction; parked checkpoint=DESIGN requires fresh
+authority plus GC-018/source verification, while SPEC, WORK ORDER, BUILD,
+provider/model/live, persistence, vector/RAG, runtime integration, public-sync,
+and deployment remain unauthorized.
 
 ## Released Packet
 
@@ -77,14 +76,14 @@ Projection Pre-Push T0, WS2, and GC010-AER remain parked.
 
 ## Next Allowed Move
 
-P4-A1 reviewer recommendation `NO_CROSS_OWNER_DESIGN_JUSTIFIED` is recorded at
-material commit `127d2410e`. The next allowed move is an explicit operator
-decision on `AUTHORIZE_FRESH_LPCI_DEFECT_INTAKE_DOCUMENTATION_ONLY` for
-evidence-text grounding and actor-bound sensitivity clearance, or further
-read-only P4-A1 correction. No DESIGN,
-SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or
-durable-store decision, vector/embedding/RAG decision, runtime integration,
-public-sync, deployment, or readiness claim is authorized.
+The LPCI1-Web defect intake is reviewer-accepted at material commit
+`38a3a21df` and remains `HOLD_BEFORE_DESIGN`. The next allowed move is an
+explicit operator decision to authorize or decline
+`LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`, or further read-only
+intake correction. Any later DESIGN requires fresh GC-018 and source
+verification. No SPEC, WORK ORDER, BUILD, provider/model/live action,
+persistence or durable-store decision, vector/embedding/RAG decision, runtime
+integration, public-sync, deployment, or readiness claim is authorized.
 
 Public Projection Pre-Push T0 is also parked at material commit `8e624a5f6`
 with decision `BLOCKED_NO_OWNER`. Reopen only when one governed packet names
@@ -382,19 +381,18 @@ any parked lane.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
-## GC-020 Marker - P4-A1 Intake Source Refinement Continuity
+## GC-020 Marker - LPCI1-Web Defect Intake Continuity
 
-Initial commit `5ee1ed25d` opened P4-A1; `2885e0a1e` refined its source map;
-`09b155bc1` accepted three read-only audits. Reviewer commit `127d2410e`
-records no cross-owner design justification and one optional documentation-only
-LPCI defect-intake checkpoint. The gate remains `HOLD_BEFORE_DESIGN`.
+Material commit `38a3a21df` records the reviewer-accepted documentation-only
+LPCI1-Web grounding and clearance defect intake. P4-A1 remains
+`NO_CROSS_OWNER_DESIGN_JUSTIFIED`; the new intake remains `HOLD_BEFORE_DESIGN`.
 
-## Core Guard Self-Protection Authorization - P4-A1 Intake Roadmap Continuity
+## Core Guard Self-Protection Authorization - LPCI1-Web Intake Continuity
 
 Authorized guard-maintenance scope: synchronize the active mode, next allowed
 move, material roadmap entry, bootstrap read model, compact session front door,
 generated active-state registry, and active handoff after material commit
-`127d2410e`.
+`38a3a21df`.
 
 Protected paths:
 
@@ -402,40 +400,38 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/p4A1GovernedRetrievalIntakeP3BRemainderDependencyMap20260807.json`
+- `CVF_SESSION/state/entries/lpci1WebGroundingClearanceDefectIntake20260808.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: open fresh P4-A1 governed-retrieval INTAKE and map the
-P3-B remainder while withholding DESIGN, BUILD, provider, persistence, and
-vector/RAG authority.
+Operator authorization: `AUTHORIZE_FRESH_LPCI_DEFECT_INTAKE_DOCUMENTATION_ONLY`.
 
 Rollback boundary: revert only this continuity batch if material roadmap
-commit `127d2410e` is reverted. Do not revert earlier GLP, public projection,
+commit `38a3a21df` is reverted. Do not revert earlier P4-A1, GLP, public projection,
 workspace overlay, or parked-lane continuity.
 
 Not authorized: no DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live,
 persistence, durable store, vector/embedding/RAG, runtime integration,
 public-sync, deployment, or readiness action.
 
-## Agent Operation Trace Block - P4-A1 Intake Source Refinement Continuity
+## Agent Operation Trace Block - LPCI1-Web Defect Intake Continuity
 
 | Field | Evidence |
 |---|---|
 | Actor | session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | P4-A1 value-checkpoint continuity, 2026-08-07 |
+| Session or invocation | LPCI1-Web defect-intake continuity, 2026-08-08 |
 | Working directory | repository root |
 | Command or tool surface | state-source edits, active-state generator, continuity gates, and Git commit |
 | Target paths | active handoff, compact front door, bootstrap read model, state source fragments, and generated active-state registry |
-| Allowed scope source | GC-020 after operator-authorized reviewer material commit `127d2410e` |
-| Before status evidence | HEAD `127d2410e`; value recommendation committed and pre-commit hook passed 83/83 |
-| After status evidence | next move is the bounded LPCI documentation-only intake checkpoint or read-only P4-A1 correction; cross-owner DESIGN is not justified |
+| Allowed scope source | GC-020 after operator-authorized reviewer material commit `38a3a21df` |
+| Before status evidence | HEAD `38a3a21df`; defect intake committed and pre-commit hook passed 83/83 |
+| After status evidence | next move is an explicit LPCI1-Web conformance DESIGN decision or read-only intake correction; DESIGN remains unauthorized |
 | Diff evidence | continuity-only changed set from `git diff --name-status` |
 | Approval boundary | session continuity only |
 | Claim boundary | no DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live, persistence, vector/RAG, runtime integration, public-sync, deployment, or readiness authority |
 | Agent type | session-sync steward |
-| Invocation ID | `p4-a1-value-checkpoint-continuity-2026-08-07` |
-| Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; P4-A1 state entry; generated active-state registry |
+| Invocation ID | `lpci1-web-defect-intake-continuity-2026-08-08` |
+| Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; LPCI1-Web intake state entry; generated active-state registry |
 | Actual changed set | same continuity-only paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |

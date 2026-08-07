@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=read-only P4-A1 intake correction/evidence refinement or a new explicit operator decision for one bounded later lifecycle phase; parked checkpoint=DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live, persistence, vector/RAG, runtime integration, public-sync, and deployment remain unauthorized, while Public Projection Pre-Push T0, WS2, and GC010-AER remain parked behind recorded reopen conditions.
+Startup acknowledged: current mode=`lpci1_web_defect_intake_reviewed_hold_before_design`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=explicitly authorize or decline `LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`, or request read-only intake correction; parked checkpoint=DESIGN still requires fresh authority plus GC-018/source verification, and SPEC, WORK ORDER, BUILD, provider/model/live, persistence, vector/RAG, runtime integration, public-sync, and deployment remain unauthorized, while Public Projection Pre-Push T0, WS2, and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
+Current mode marker: `lpci1_web_defect_intake_reviewed_hold_before_design`
 
-Current mode: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
+Current mode: `lpci1_web_defect_intake_reviewed_hold_before_design`
 
-`p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
+`lpci1_web_defect_intake_reviewed_hold_before_design`
 
 Previous mode:
 
-`workspace_governance_learning_public_carrier_refresh_closed_exported`
+`p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -78,10 +78,9 @@ dispatched at material commit `471941558`; exactly two documentation outputs
 are now assigned to the no-commit worker.
 
 ## Latest Material Work
-
 | Work | Commit | Disposition |
 |---|---|---|
-| Public Projection Pre-Push T0 owner feasibility closure | `8e624a5f6` | `CLOSED_PASS_BOUNDED`; decision `BLOCKED_NO_OWNER`. Four public-relevant defects are confirmed but no stable profile/taxonomy/policy owner is source-backed. Reopen only when owner role/path, policy ownership, and refreshed four-defect evidence are all present; no repeated Options B/C checkpoint before then. |
+| LPCI1-Web grounding and clearance defect intake | `38a3a21df` | `LPCI_DEFECT_INTAKE_REVIEWED_HOLD_BEFORE_DESIGN`; two current-owner conformance conflicts confirmed, no current sensitive-release claim, no cross-owner design justification, and no later lifecycle authority. |
 | GLP-PUBLIC-R1 public carrier refresh closure | `2377a8ddc` | `CLOSED_PASS_BOUNDED_EXPORTED`; public commit `9b039ea6b` is pushed and synchronized, golden bootstrap passed 69/69, provenance pre-push passed 99/99, and both worktrees are clean after continuity sync. |
 | GLP-T4 adoption-boundary audit packet | `141cc0acd` | `HOLD_PENDING_OPERATOR_AUTHORITY`; author-fast 5/5 and pre-dispatch 75/75. One future worker may create exactly the local read-only audit and return; Claude CLI, guide/public mutation, network, push, and deployment are excluded. |
 | GLP-T3 propagation-proof closure | `eae28c785` | `CLOSED_PASS_BOUNDED`; one harness call passed 79/79, 14/14 generated surfaces were present, private leakage and cleanup residue were zero, and proof-subject provider/network count was zero. Worker orchestration is separately disclosed as one provider session, 49 turns, 572.670 seconds, and USD 2.9589262. |
@@ -398,15 +397,16 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
+Mode: `lpci1_web_defect_intake_reviewed_hold_before_design`
 
-P4-A1 recommends `NO_CROSS_OWNER_DESIGN_JUSTIFIED` at `127d2410e`.
-The next allowed move is an operator decision on a documentation-only LPCI
-defect intake for grounding and actor-bound clearance, or read-only correction.
-DESIGN, SPEC,
-WORK ORDER, BUILD, provider/model/live action, persistence or durable-store
-decision, vector/embedding/RAG decision, runtime integration, public-sync,
-deployment, and readiness claims remain unauthorized. Public Projection
+The LPCI1-Web defect intake is reviewer-accepted at `38a3a21df` and remains
+`HOLD_BEFORE_DESIGN`. The next allowed move is an explicit operator decision
+to authorize or decline `LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`,
+or further read-only intake correction. Any later DESIGN requires fresh GC-018
+and source verification. SPEC, WORK ORDER, BUILD, provider/model/live action,
+persistence or durable-store decision, vector/embedding/RAG decision, runtime
+integration, public-sync, deployment, and readiness claims remain unauthorized.
+P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`. Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
 conditions.
 

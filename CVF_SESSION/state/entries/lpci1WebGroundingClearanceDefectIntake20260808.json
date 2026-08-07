@@ -1,0 +1,23 @@
+{
+  "stateOrder": 2006,
+  "stateKey": "lpci1WebGroundingClearanceDefectIntake20260808",
+  "value": {
+    "status": "LPCI_DEFECT_INTAKE_REVIEWED_HOLD_BEFORE_DESIGN",
+    "date": "2026-08-08",
+    "materialCommit": "38a3a21df",
+    "roadmap": "docs/roadmaps/CVF_LPCI_CURRENT_OWNER_GROUNDING_AND_CLEARANCE_DEFECT_INTAKE_ROADMAP_2026-08-08.md",
+    "operatorAuthority": "AUTHORIZE_FRESH_LPCI_DEFECT_INTAKE_DOCUMENTATION_ONLY",
+    "owner": "LPCI1_T5_CVF_WEB_CURRENT_OWNER",
+    "groundingDisposition": "PREVIOUSLY_DECIDED_REQUIREMENT_WITH_T5_CONFORMANCE_CONFLICT",
+    "clearanceDisposition": "PREVIOUSLY_DECIDED_AUTHORIZATION_REQUIREMENT_WITH_RUNTIME_AND_RECEIPT_GAP",
+    "crossOwnerDesignDisposition": "NO_CROSS_OWNER_DESIGN_JUSTIFIED",
+    "designGate": "HOLD_BEFORE_DESIGN",
+    "nextOperatorCheckpoint": "LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN",
+    "currentCorpusBoundary": "Synthetic four-record pilot with all rows public; no current sensitive release is claimed.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "preDispatchEvidence": "PASS",
+    "preCommitEvidence": "PASS_83_OF_83",
+    "nextAllowedMove": "Operator may explicitly authorize or decline the bounded LPCI1-Web conformance DESIGN checkpoint, or request further read-only intake correction. Any DESIGN requires fresh GC-018 and source verification.",
+    "claimBoundary": "Documentation-only intake. No DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live action, persistence, vector/embedding/RAG decision, runtime or test mutation/execution, public-sync, deployment, or readiness claim."
+  }
+}
