@@ -339,3 +339,35 @@ parks the separate public carrier refresh behind a checkable reopen condition.
 | Actual changed set | same continuity-only paths |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - Workspace Overlay Source Refresh Anchor
+
+Current repository HEAD `e5bf6902d` refreshed only
+`workspace_overlay_catalog.json` after the prior session continuity commit.
+This in-place marker records that exact child commit so the active handoff
+remains current before the next operator-selected material lane begins. It
+does not release workspace implementation, public mutation, provider work, or
+any parked lane.
+
+## Agent Operation Trace Block - Workspace Overlay Source Refresh Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | workspace overlay source refresh anchor repair, 2026-08-07 |
+| Working directory | repository root |
+| Command or tool surface | current HEAD inspection, active-session compatibility gate, and handoff-only patch |
+| Target paths | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Allowed scope source | GC-020 in-place continuity repair for current HEAD `e5bf6902d` |
+| Before status evidence | HEAD `e5bf6902d`; active-session compatibility reported the missing handoff anchor |
+| After status evidence | active handoff contains the exact current material HEAD |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | session continuity repair only |
+| Claim boundary | no roadmap material, runtime, provider, persistence, vector/RAG, public-sync, push, or deployment authority |
+| Agent type | session-sync steward |
+| Invocation ID | `workspace-overlay-source-refresh-anchor-2026-08-07` |
+| Expected manifest | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
