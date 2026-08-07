@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI_DEFECT_INTAKE_REVIEWED_HOLD_BEFORE_DESIGN
+Status: LPCI_DEFECT_INTAKE_REVIEWED_DESIGN_AUTHORIZED
 
 docType: roadmap
 
@@ -175,22 +175,30 @@ Reviewer disposition:
 
 ## Design Control Gate
 
-Gate status: `HOLD_BEFORE_DESIGN`.
+Gate status: `RELEASED_TO_FRESH_GC018_DESIGN`.
+
+Operator release received on 2026-08-08:
+
+`LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`
+
+The release is bounded to documentation-only DESIGN under a fresh GC-018 and
+source-verified work order. SPEC, BUILD, runtime/test mutation or execution,
+provider/model/live action, persistence, vector/RAG, public-sync, deployment,
+and readiness authority remain withheld.
 
 | Gate question | Current answer | Effect |
 |---|---|---|
 | Are the two primary defect boundaries source-backed? | Yes, bounded | intake may record them only |
 | Is the safe evidence projection selected? | No | no prompt, receipt, or field design |
 | Is an entitlement owner selected? | No | no authorization interface or schema design |
-| Is DESIGN authorized? | No | no design packet or architecture decision |
+| Is DESIGN authorized? | Yes, documentation-only | fresh GC-018 and source-verified work order required before worker dispatch |
 | Is SPEC or WORK ORDER authorized? | No | no new contract/schema or dispatch packet |
 | Is BUILD or test execution authorized? | No | no source/test mutation or execution |
 | Is provider/live work authorized? | No | no key, model, endpoint, call, or proof |
 
-Design-gate exit requires a fresh explicit operator decision after this intake
-names one bounded design question. Any later DESIGN must begin with fresh
-GC-018 and then-current source verification. Intake completion or defect
-confirmation cannot release the gate by itself.
+The operator decision releases only the bounded design question named by this
+intake. The paired fresh GC-018 and source-verified work order own dispatch;
+intake completion or defect confirmation alone does not release later phases.
 
 ## Dispatch Boundary
 
