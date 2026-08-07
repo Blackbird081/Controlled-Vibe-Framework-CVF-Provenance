@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - GLP Public Carrier Refresh
+# CVF Agent Handoff V55 - P4-A1 Governed Retrieval Intake
 
 Memory class: active-handoff
 
@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `8e624a5f6 docs(governance): close public projection prepush audit`
-- Active mode: `workspace_governance_learning_public_carrier_refresh_closed_exported`
+- Latest material commit: `5ee1ed25d docs(roadmap): open P4-A1 governed retrieval intake`
+- Active mode: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `EXPORTED` at public commit `9b039ea6b`
 - Remote tracking branch: origin/main
@@ -18,8 +18,9 @@ Status: ACTIVE
 
 ## Purpose
 
-Record the completed one-path public carrier export while keeping private
-evidence, adoption claims, and unrelated lanes excluded.
+Record the open P4-A1 governed-retrieval intake and P3-B remainder dependency
+map while keeping lifecycle DESIGN, BUILD, provider, persistence, vector/RAG,
+runtime integration, public, and deployment authority excluded.
 
 ## Scope / Target / Owner Boundary
 
@@ -39,14 +40,17 @@ latency effect are not.
 
 ## Current Mode
 
-`workspace_governance_learning_public_carrier_refresh_closed_exported`
+`p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_closed_exported`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator
-selects another high-value lane; parked checkpoint=Public Projection Pre-Push
-T0, WS2, and GC010-AER remain parked behind recorded reopen conditions.
+Startup acknowledged: current mode=`p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=read-only
+P4-A1 intake correction/evidence refinement or a new explicit operator
+decision for one bounded later lifecycle phase; parked checkpoint=DESIGN, SPEC,
+WORK ORDER, BUILD, provider/model/live, persistence, vector/RAG, runtime
+integration, public-sync, and deployment remain unauthorized, while Public
+Projection Pre-Push T0, WS2, and GC010-AER remain parked.
 
 ## Released Packet
 
@@ -73,8 +77,13 @@ T0, WS2, and GC010-AER remain parked behind recorded reopen conditions.
 
 ## Next Allowed Move
 
-No active GLP tranche remains. The operator may select the next high-value
-lane. WS2 and GC010-AER remain parked behind their recorded reopen conditions.
+P4-A1 governed-retrieval INTAKE and the P3-B remainder dependency map are open
+at material commit `5ee1ed25d`. The next allowed move is read-only intake
+correction or evidence refinement within the roadmap, or a new explicit
+operator decision selecting one bounded later lifecycle phase. No DESIGN,
+SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or
+durable-store decision, vector/embedding/RAG decision, runtime integration,
+public-sync, deployment, or readiness claim is authorized.
 
 Public Projection Pre-Push T0 is also parked at material commit `8e624a5f6`
 with decision `BLOCKED_NO_OWNER`. Reopen only when one governed packet names
@@ -369,5 +378,64 @@ any parked lane.
 | Invocation ID | `workspace-overlay-source-refresh-anchor-2026-08-07` |
 | Expected manifest | `AGENT_HANDOFF_V55_2026-08-05.md` |
 | Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - P4-A1 Intake Roadmap Continuity
+
+Material commit `5ee1ed25d` opens the P4-A1 governed-retrieval INTAKE and the
+P3-B remainder dependency map. The roadmap gate is `HOLD_BEFORE_DESIGN` and no
+worker dispatch is released. This continuity batch updates only active session
+front doors, state source fragments, the generated state registry, and this
+active handoff.
+
+## Core Guard Self-Protection Authorization - P4-A1 Intake Roadmap Continuity
+
+Authorized guard-maintenance scope: synchronize the active mode, next allowed
+move, material roadmap entry, bootstrap read model, compact session front door,
+generated active-state registry, and active handoff after material commit
+`5ee1ed25d`.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/p4A1GovernedRetrievalIntakeP3BRemainderDependencyMap20260807.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: open fresh P4-A1 governed-retrieval INTAKE and map the
+P3-B remainder while withholding DESIGN, BUILD, provider, persistence, and
+vector/RAG authority.
+
+Rollback boundary: revert only this continuity batch if material roadmap
+commit `5ee1ed25d` is reverted. Do not revert earlier GLP, public projection,
+workspace overlay, or parked-lane continuity.
+
+Not authorized: no DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live,
+persistence, durable store, vector/embedding/RAG, runtime integration,
+public-sync, deployment, or readiness action.
+
+## Agent Operation Trace Block - P4-A1 Intake Roadmap Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | P4-A1 intake roadmap continuity, 2026-08-07 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, and Git commit |
+| Target paths | active handoff, compact front door, bootstrap read model, state source fragments, and generated active-state registry |
+| Allowed scope source | GC-020 after operator-authorized material roadmap commit `5ee1ed25d` |
+| Before status evidence | HEAD `5ee1ed25d`; material roadmap committed and pre-commit hook passed 83/83 |
+| After status evidence | active mode and next-move surfaces route only P4-A1 intake correction/evidence refinement or a new explicit operator phase decision |
+| Diff evidence | continuity-only changed set from `git diff --name-status` |
+| Approval boundary | session continuity only |
+| Claim boundary | no DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live, persistence, vector/RAG, runtime integration, public-sync, deployment, or readiness authority |
+| Agent type | session-sync steward |
+| Invocation ID | `p4-a1-intake-roadmap-continuity-2026-08-07` |
+| Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; P4-A1 state entry; generated active-state registry |
+| Actual changed set | same continuity-only paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |

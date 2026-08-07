@@ -95,8 +95,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "workspace_governance_learning_public_carrier_refresh_closed_exported",
-  "previousMode": "workspace_governance_learning_public_carrier_refresh_dispatched",
+  "currentMode": "p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only",
+  "previousMode": "workspace_governance_learning_public_carrier_refresh_closed_exported",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Public Projection Pre-Push T0 is closed at 8e624a5f6 with decision BLOCKED_NO_OWNER and is value-parked. Do not reopen or ask the operator to choose Options B/C until a governed packet names a stable owner role and path, owns the taxonomy and gate-versus-report policy, and refreshes the four public-relevant defects against the then-current public commit. No profile/checker implementation, public mutation/push, provider/live call, WS2, or GC010-AER is authorized; the operator may select another high-value lane and LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "P4-A1 governed-retrieval INTAKE and the P3-B remainder dependency map are open at material commit 5ee1ed25d. The next allowed move is read-only intake correction or evidence refinement within that roadmap, or a new explicit operator decision selecting one bounded later lifecycle phase. No DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or durable-store decision, vector/embedding/RAG decision, runtime integration, public-sync, deployment, or readiness claim is authorized. Public Projection Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen conditions; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13782,6 +13782,24 @@
     "nextAllowedMove": "Create exactly two T0 review outputs from read-only three-root inspection.",
     "parked": "T1-T4 implementation, automatic semantic edits, apply, commit, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation.",
     "claimBoundary": "Dispatch authority for a documentation audit only."
+  },
+  "p4A1GovernedRetrievalIntakeP3BRemainderDependencyMap20260807": {
+    "status": "P4_A1_INTAKE_OPEN_P3_B_DEPENDENCY_MAP_ONLY",
+    "date": "2026-08-07",
+    "materialCommit": "5ee1ed25d",
+    "roadmap": "docs/roadmaps/CVF_P4_A1_GOVERNED_RETRIEVAL_INTAKE_AND_P3_B_REMAINDER_DEPENDENCY_MAP_ROADMAP_2026-08-07.md",
+    "operatorLabels": [
+      "P4-A1",
+      "P3-B"
+    ],
+    "labelClassification": "DOC_ONLY_NEW",
+    "designGate": "HOLD_BEFORE_DESIGN",
+    "p3BRemainderRows": 11,
+    "preDispatchEvidence": "PASS",
+    "preCommitEvidence": "PASS_83_OF_83",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Read-only intake correction or evidence refinement within the roadmap, or a new explicit operator decision selecting one bounded later lifecycle phase.",
+    "claimBoundary": "Intake and dependency mapping only. No DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or durable-store decision, vector/embedding/RAG decision, runtime integration, public-sync, deployment, or readiness claim."
   },
   "continuousProjectionT0Closure20260720": {
     "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",

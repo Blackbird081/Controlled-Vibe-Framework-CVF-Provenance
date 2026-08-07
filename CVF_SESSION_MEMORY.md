@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`workspace_governance_learning_public_carrier_refresh_closed_exported`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=operator selects another high-value lane; parked checkpoint=Public Projection Pre-Push T0, WS2, and GC010-AER remain parked behind recorded reopen conditions.
+Startup acknowledged: current mode=`p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=read-only P4-A1 intake correction/evidence refinement or a new explicit operator decision for one bounded later lifecycle phase; parked checkpoint=DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live, persistence, vector/RAG, runtime integration, public-sync, and deployment remain unauthorized, while Public Projection Pre-Push T0, WS2, and GC010-AER remain parked behind recorded reopen conditions.
 
 ## Current Mode
 
-Current mode marker: `workspace_governance_learning_public_carrier_refresh_closed_exported`
+Current mode marker: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
 
-Current mode: `workspace_governance_learning_public_carrier_refresh_closed_exported`
+Current mode: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
 
-`workspace_governance_learning_public_carrier_refresh_closed_exported`
+`p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
 
 Previous mode:
 
-`workspace_governance_learning_public_carrier_refresh_dispatched`
+`workspace_governance_learning_public_carrier_refresh_closed_exported`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -398,13 +398,17 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `workspace_governance_learning_public_carrier_refresh_closed_exported`
+Mode: `p4_a1_governed_retrieval_intake_open_p3_b_dependency_map_only`
 
-GLP-PUBLIC-R1 is closed at private material commit `2377a8ddc`; the one-path
-public carrier is exported and synchronized at public commit `9b039ea6b`.
-There is no active GLP tranche. The operator may select the next high-value
-lane. WS2 and GC010-AER remain parked behind their recorded reopen conditions;
-downstream adoption and measured latency effect remain unproved.
+P4-A1 governed-retrieval INTAKE and the P3-B remainder dependency map are open
+at material commit `5ee1ed25d`. The next allowed move is read-only intake
+correction or evidence refinement within that roadmap, or a new explicit
+operator decision selecting one bounded later lifecycle phase. DESIGN, SPEC,
+WORK ORDER, BUILD, provider/model/live action, persistence or durable-store
+decision, vector/embedding/RAG decision, runtime integration, public-sync,
+deployment, and readiness claims remain unauthorized. Public Projection
+Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
+conditions.
 
 The GC009/GC010 production-caller roadmap is closed bounded at material commit
 `b72074578`. GC009-LIVE-T5 contributes partial live evidence and stops without

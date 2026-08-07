@@ -1,0 +1,22 @@
+{
+  "stateOrder": 2005,
+  "stateKey": "p4A1GovernedRetrievalIntakeP3BRemainderDependencyMap20260807",
+  "value": {
+    "status": "P4_A1_INTAKE_OPEN_P3_B_DEPENDENCY_MAP_ONLY",
+    "date": "2026-08-07",
+    "materialCommit": "5ee1ed25d",
+    "roadmap": "docs/roadmaps/CVF_P4_A1_GOVERNED_RETRIEVAL_INTAKE_AND_P3_B_REMAINDER_DEPENDENCY_MAP_ROADMAP_2026-08-07.md",
+    "operatorLabels": [
+      "P4-A1",
+      "P3-B"
+    ],
+    "labelClassification": "DOC_ONLY_NEW",
+    "designGate": "HOLD_BEFORE_DESIGN",
+    "p3BRemainderRows": 11,
+    "preDispatchEvidence": "PASS",
+    "preCommitEvidence": "PASS_83_OF_83",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Read-only intake correction or evidence refinement within the roadmap, or a new explicit operator decision selecting one bounded later lifecycle phase.",
+    "claimBoundary": "Intake and dependency mapping only. No DESIGN, SPEC, WORK ORDER, BUILD, provider/model/live action, persistence or durable-store decision, vector/embedding/RAG decision, runtime integration, public-sync, deployment, or readiness claim."
+  }
+}
