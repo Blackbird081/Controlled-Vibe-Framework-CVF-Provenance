@@ -1,0 +1,21 @@
+{
+  "stateOrder": 2008,
+  "stateKey": "lpci1WebGroundingClearanceConformanceSpec20260808",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-08-08",
+    "batchId": "LPCI1-WEB-S1",
+    "materialCommit": "9fe39992c",
+    "operatorAuthority": "AUTHORIZE_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_DOCUMENTATION_ONLY",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_2026-08-08.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_2026-08-08.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerOutputCount": 2,
+    "preDispatchEvidence": "PASS",
+    "preCommitEvidence": "PASS_83_OF_83",
+    "ownerBoundary": "LPCI1_T5_CVF_WEB_CURRENT_OWNER",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Execute one no-commit specification worker for exactly the reference SPEC and worker-return paths, then perform independent reviewer closure or one consolidated repair.",
+    "claimBoundary": "Documentation-only SPEC. No BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness claim."
+  }
+}

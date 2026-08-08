@@ -95,8 +95,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_conformance_design_accepted_hold_before_spec",
-  "previousMode": "lpci1_web_conformance_design_dispatch_ready",
+  "currentMode": "lpci1_web_conformance_spec_dispatch_ready",
+  "previousMode": "lpci1_web_conformance_design_accepted_hold_before_spec",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "LPCI1-WEB-D1 documentation-only conformance DESIGN is reviewer-accepted with corrections at material commit e0ee8a000 and is conditional on T3/T4 SPEC reconciliation. The next allowed move is a fresh explicit SPEC authorization, followed by a fresh GC-018, current source verification, and a separate source-verified work order. No SPEC, BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness claim is currently authorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "LPCI1-WEB-S1 documentation-only SPEC is dispatch-ready at material commit 9fe39992c. The next allowed move is one no-commit specification worker creating exactly the reference SPEC and worker return, followed by independent reviewer closure or one consolidated repair. No BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness claim is authorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13884,6 +13884,23 @@
     "nextAllowedMove": "Independent reviewer finalizes and commits the T1 closure packet, then performs a separate session sync.",
     "parked": "T2 implementation, T3-T4, real-root receipt scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation.",
     "claimBoundary": "Private read-only mechanism implementation and disposable-fixture proof only; no real-root freshness or public claim."
+  },
+  "lpci1WebGroundingClearanceConformanceSpec20260808": {
+    "status": "DISPATCH_READY",
+    "date": "2026-08-08",
+    "batchId": "LPCI1-WEB-S1",
+    "materialCommit": "9fe39992c",
+    "operatorAuthority": "AUTHORIZE_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_DOCUMENTATION_ONLY",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_2026-08-08.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_2026-08-08.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerOutputCount": 2,
+    "preDispatchEvidence": "PASS",
+    "preCommitEvidence": "PASS_83_OF_83",
+    "ownerBoundary": "LPCI1_T5_CVF_WEB_CURRENT_OWNER",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Execute one no-commit specification worker for exactly the reference SPEC and worker-return paths, then perform independent reviewer closure or one consolidated repair.",
+    "claimBoundary": "Documentation-only SPEC. No BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness claim."
   },
   "continuousProjectionT1Closure20260720": {
     "status": "REVIEWER_ACCEPTED_WITH_REPAIRS",
