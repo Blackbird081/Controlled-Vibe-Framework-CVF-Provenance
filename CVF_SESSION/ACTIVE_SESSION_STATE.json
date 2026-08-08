@@ -95,7 +95,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_conformance_spec_dispatch_ready",
+  "currentMode": "lpci1_web_conformance_spec_accepted_hold_before_build",
   "previousMode": "lpci1_web_conformance_design_accepted_hold_before_spec",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "LPCI1-WEB-S1 documentation-only SPEC is dispatch-ready at material commit 9fe39992c. The next allowed move is one no-commit specification worker creating exactly the reference SPEC and worker return, followed by independent reviewer closure or one consolidated repair. No BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness claim is authorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "LPCI1-WEB-S1 documentation-only SPEC is reviewer-accepted and closed bounded at material commit 3733cedd0. Next allowed move is HOLD_BEFORE_BUILD. Any BUILD requires fresh explicit operator authority, GC-018, current source verification, a separate implementation work order, deterministic tests, and lifecycle gates. Runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, non-public grants, corpus mutation, public-sync, deployment, and readiness remain unauthorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13886,10 +13886,10 @@
     "claimBoundary": "Private read-only mechanism implementation and disposable-fixture proof only; no real-root freshness or public claim."
   },
   "lpci1WebGroundingClearanceConformanceSpec20260808": {
-    "status": "DISPATCH_READY",
+    "status": "CLOSED_PASS_BOUNDED",
     "date": "2026-08-08",
     "batchId": "LPCI1-WEB-S1",
-    "materialCommit": "9fe39992c",
+    "materialCommit": "3733cedd0",
     "operatorAuthority": "AUTHORIZE_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_DOCUMENTATION_ONLY",
     "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_2026-08-08.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_2026-08-08.md",
@@ -13899,8 +13899,11 @@
     "preCommitEvidence": "PASS_83_OF_83",
     "ownerBoundary": "LPCI1_T5_CVF_WEB_CURRENT_OWNER",
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
-    "nextAllowedMove": "Execute one no-commit specification worker for exactly the reference SPEC and worker-return paths, then perform independent reviewer closure or one consolidated repair.",
-    "claimBoundary": "Documentation-only SPEC. No BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness claim."
+    "preClosureEvidence": "PASS_74_OF_75_PENDING_SESSION_SYNC_ONLY",
+    "reviewerVerdict": "FINAL_PASS",
+    "completionReview": "docs/reviews/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_COMPLETION_2026-08-08.md",
+    "nextAllowedMove": "HOLD_BEFORE_BUILD. A later BUILD requires fresh explicit operator authority, GC-018, source verification, a separate implementation work order, deterministic tests, and lifecycle gates.",
+    "claimBoundary": "Accepted documentation-only SPEC. No current runtime conformance, BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, non-public grants, corpus mutation, public-sync, deployment, or readiness claim."
   },
   "continuousProjectionT1Closure20260720": {
     "status": "REVIEWER_ACCEPTED_WITH_REPAIRS",

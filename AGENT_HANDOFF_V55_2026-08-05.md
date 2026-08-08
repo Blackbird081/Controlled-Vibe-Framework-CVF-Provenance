@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `9fe39992c docs(dispatch): release LPCI conformance spec`
-- Active mode: `lpci1_web_conformance_spec_dispatch_ready`
+- Latest material commit: `3733cedd0 docs(review): accept LPCI conformance spec`
+- Active mode: `lpci1_web_conformance_spec_accepted_hold_before_build`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `EXPORTED` at public commit `9b039ea6b`
 - Remote tracking branch: origin/main
@@ -18,7 +18,7 @@ Status: ACTIVE
 
 ## Purpose
 
-Record LPCI1-WEB-S1 documentation SPEC dispatch while keeping BUILD,
+Record LPCI1-WEB-S1 documentation SPEC acceptance while keeping BUILD,
 runtime/test, provider/live, persistence, vector/RAG, public, and deployment
 authority excluded.
 
@@ -26,26 +26,25 @@ authority excluded.
 
 Scope: documentation-only LPCI1-Web current-owner conformance specification.
 
-Target: the committed S1 GC-018 and no-commit work order at `9fe39992c`.
+Target: the accepted S1 SPEC and completion at `3733cedd0`.
 
 Owner boundary: existing LPCI1-T5 cvf-web route/library/UI/test family only;
 no cross-owner governed-retrieval composition is justified or released.
 
 ## Active Boundary
 
-The specification worker may create exactly one reference SPEC and one worker
-return. The primary agent remains reviewer/closer. No source/test edit or
+The specification and reviewer completion are accepted. No source/test edit or
 execution, sensitive fixture, provider call, BUILD, or implementation is released.
 
 ## Current Mode
 
-`lpci1_web_conformance_spec_dispatch_ready`
+`lpci1_web_conformance_spec_accepted_hold_before_build`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_conformance_spec_dispatch_ready`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit
-LPCI1-WEB-S1 specification worker followed by independent review; parked checkpoint=BUILD, runtime/test mutation or execution,
+Startup acknowledged: current mode=`lpci1_web_conformance_spec_accepted_hold_before_build`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=HOLD_BEFORE_BUILD
+pending fresh explicit authority and a new governed packet; parked checkpoint=BUILD, runtime/test mutation or execution,
 provider/model/live, persistence, vector/RAG, corpus mutation, public-sync, and
 deployment remain unauthorized.
 
@@ -74,9 +73,9 @@ deployment remain unauthorized.
 
 ## Next Allowed Move
 
-LPCI1-WEB-S1 is dispatch-ready at material commit `9fe39992c`. The next allowed
-move is one no-commit specification worker followed by independent reviewer
-closure or one consolidated repair. No BUILD,
+LPCI1-WEB-S1 is reviewer-accepted and closed bounded at material commit
+`3733cedd0`. The next allowed move is `HOLD_BEFORE_BUILD`; fresh explicit
+operator authority and a new governed packet are required. No BUILD,
 runtime/test mutation or execution, provider/model/live action, persistence,
 vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness
 claim is authorized.
@@ -182,6 +181,62 @@ creation and may be accepted under the GC-020 parent rule.
 | Invocation ID | `glp-t2-v55-exact-anchor-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V55_2026-08-05.md` |
 | Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - LPCI1-Web S1 Specification Closure Continuity
+
+Material commit `3733cedd0` accepts and closes the documentation-only
+LPCI1-WEB-S1 specification after independent semantic FINAL PASS. The roadmap
+is now `LPCI_CONFORMANCE_SPEC_ACCEPTED_BOUNDED_HOLD_BEFORE_BUILD`.
+
+## Core Guard Self-Protection Authorization - LPCI1-Web S1 Closure Continuity
+
+Authorized guard-maintenance scope: synchronize current mode, next allowed
+move, bootstrap read model, compact front door, generated active-state
+registry, S1 state entry, and active handoff after material commit
+`3733cedd0`.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/lpci1WebGroundingClearanceConformanceSpec20260808.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization:
+`AUTHORIZE_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_DOCUMENTATION_ONLY`.
+
+Rollback boundary: revert only this continuity batch if material closure
+commit `3733cedd0` is reverted. Do not revert the accepted D1 design, S1
+dispatch, or earlier continuity.
+
+Not authorized: no BUILD, runtime/test source mutation or execution,
+provider/model/live, persistence, durable audit, vector/embedding/RAG/graph,
+non-public grants, corpus mutation, public-sync, deployment, or readiness.
+
+## Agent Operation Trace Block - LPCI1-Web S1 Closure Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | LPCI1-Web S1 closure continuity, 2026-08-08 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, and Git commit |
+| Target paths | active handoff, compact front door, bootstrap read model, state source fragments, and generated active-state registry |
+| Allowed scope source | GC-020 after material closure commit `3733cedd0` |
+| Before status evidence | HEAD `3733cedd0`; material closure committed; pre-closure PASS 74/75 with only session continuity pending |
+| After status evidence | current mode and next move agree on HOLD_BEFORE_BUILD |
+| Diff evidence | continuity-only changed set from Git status and committed diff |
+| Approval boundary | session continuity after documentation-only SPEC closure |
+| Claim boundary | no BUILD/runtime/test/provider/live/persistence/vector-RAG/non-public-grant/public/deployment/readiness authority |
+| Agent type | session-sync steward |
+| Invocation ID | `lpci1-web-s1-closure-continuity-2026-08-08` |
+| Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; LPCI1-Web S1 state entry; generated active-state registry |
+| Actual changed set | same continuity-only paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

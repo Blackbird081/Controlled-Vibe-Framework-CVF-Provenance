@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_conformance_spec_dispatch_ready",
+  "currentMode": "lpci1_web_conformance_spec_accepted_hold_before_build",
   "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
-  "nextAllowedMove": "LPCI1-WEB-S1 documentation-only SPEC is dispatch-ready at material commit 9fe39992c. The next allowed move is one no-commit specification worker creating exactly the reference SPEC and worker return, followed by independent reviewer closure or one consolidated repair. No BUILD, runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness claim is authorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "LPCI1-WEB-S1 documentation-only SPEC is reviewer-accepted and closed bounded at material commit 3733cedd0. Next allowed move is HOLD_BEFORE_BUILD. Any BUILD requires fresh explicit operator authority, GC-018, current source verification, a separate implementation work order, deterministic tests, and lifecycle gates. Runtime/test mutation or execution, provider/model/live action, persistence, vector/embedding/RAG, non-public grants, corpus mutation, public-sync, deployment, and readiness remain unauthorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
