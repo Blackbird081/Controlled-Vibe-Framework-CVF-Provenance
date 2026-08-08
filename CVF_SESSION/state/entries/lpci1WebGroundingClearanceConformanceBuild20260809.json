@@ -1,0 +1,21 @@
+{
+  "stateOrder": 2009,
+  "stateKey": "lpci1WebGroundingClearanceConformanceBuild20260809",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-B1",
+    "materialCommit": "9ab3068fe",
+    "operatorAuthority": "AUTHORIZE_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_BUILD",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_BUILD_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_BUILD_2026-08-09.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerWritablePathCount": 14,
+    "preDispatchEvidence": "PASS",
+    "preCommitEvidence": "PASS_83_OF_83",
+    "ownerBoundary": "LPCI1_T5_CVF_WEB_CURRENT_OWNER",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Execute one no-commit LPCI1-WEB-B1 implementation worker for the exact fourteen-path manifest, then independent reviewer closure or consolidated repair.",
+    "claimBoundary": "Bounded local BUILD and deterministic non-live tests only. No real provider/live/network, persistence, vector/embedding/RAG, non-public grants, corpus mutation, public-sync, deployment, or readiness claim."
+  }
+}

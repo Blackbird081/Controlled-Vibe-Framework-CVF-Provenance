@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `3733cedd0 docs(review): accept LPCI conformance spec`
-- Active mode: `lpci1_web_conformance_spec_accepted_hold_before_build`
+- Latest material commit: `9ab3068fe docs(dispatch): release LPCI conformance build`
+- Active mode: `lpci1_web_conformance_build_dispatch_ready`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `EXPORTED` at public commit `9b039ea6b`
 - Remote tracking branch: origin/main
@@ -18,35 +18,36 @@ Status: ACTIVE
 
 ## Purpose
 
-Record LPCI1-WEB-S1 documentation SPEC acceptance while keeping BUILD,
-runtime/test, provider/live, persistence, vector/RAG, public, and deployment
-authority excluded.
+Record LPCI1-WEB-B1 bounded BUILD dispatch while keeping real provider/live,
+persistence, vector/RAG, non-public grants, corpus mutation, public, and
+deployment authority excluded.
 
 ## Scope / Target / Owner Boundary
 
 Scope: documentation-only LPCI1-Web current-owner conformance specification.
 
-Target: the accepted S1 SPEC and completion at `3733cedd0`.
+Target: the committed B1 GC-018 and work order at `9ab3068fe`.
 
 Owner boundary: existing LPCI1-T5 cvf-web route/library/UI/test family only;
 no cross-owner governed-retrieval composition is justified or released.
 
 ## Active Boundary
 
-The specification and reviewer completion are accepted. No source/test edit or
-execution, sensitive fixture, provider call, BUILD, or implementation is released.
+One no-commit implementation worker may modify exactly the fourteen writable
+paths in the B1 work order and run deterministic zero-network tests. No real
+provider/live call or external-effect action is released.
 
 ## Current Mode
 
-`lpci1_web_conformance_spec_accepted_hold_before_build`
+`lpci1_web_conformance_build_dispatch_ready`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_conformance_spec_accepted_hold_before_build`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=HOLD_BEFORE_BUILD
-pending fresh explicit authority and a new governed packet; parked checkpoint=BUILD, runtime/test mutation or execution,
-provider/model/live, persistence, vector/RAG, corpus mutation, public-sync, and
-deployment remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_conformance_build_dispatch_ready`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit
+LPCI1-WEB-B1 implementation worker followed by independent review; parked
+checkpoint=real provider/live/network, persistence, vector/RAG, non-public
+grants, corpus mutation, public-sync, deployment, and readiness remain unauthorized.
 
 ## Released Packet
 
@@ -73,12 +74,11 @@ deployment remain unauthorized.
 
 ## Next Allowed Move
 
-LPCI1-WEB-S1 is reviewer-accepted and closed bounded at material commit
-`3733cedd0`. The next allowed move is `HOLD_BEFORE_BUILD`; fresh explicit
-operator authority and a new governed packet are required. No BUILD,
-runtime/test mutation or execution, provider/model/live action, persistence,
-vector/embedding/RAG, corpus mutation, public-sync, deployment, or readiness
-claim is authorized.
+LPCI1-WEB-B1 is dispatch-ready at material commit `9ab3068fe`. The next allowed
+move is one no-commit implementation worker for the exact fourteen-path
+manifest, followed by independent reviewer closure or consolidated repair.
+No real provider/live/network, persistence, vector/embedding/RAG, non-public
+grant, corpus mutation, public-sync, deployment, or readiness claim is authorized.
 
 Public Projection Pre-Push T0 is also parked at material commit `8e624a5f6`
 with decision `BLOCKED_NO_OWNER`. Reopen only when one governed packet names
@@ -181,6 +181,61 @@ creation and may be accepted under the GC-020 parent rule.
 | Invocation ID | `glp-t2-v55-exact-anchor-2026-08-05` |
 | Expected manifest | `AGENT_HANDOFF_V55_2026-08-05.md` |
 | Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - LPCI1-Web B1 Build Dispatch Continuity
+
+Material commit `9ab3068fe` records the fresh BUILD authority, GC-018, and
+source-verified no-commit LPCI1-WEB-B1 work order. Execution is bounded to the
+exact fourteen-path worker manifest and deterministic zero-network tests.
+
+## Core Guard Self-Protection Authorization - LPCI1-Web B1 Dispatch Continuity
+
+Authorized guard-maintenance scope: synchronize current mode, next allowed
+move, bootstrap read model, compact front door, generated active-state
+registry, B1 state entry, and active handoff after dispatch commit
+`9ab3068fe`.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/lpci1WebGroundingClearanceConformanceBuild20260809.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization:
+`AUTHORIZE_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_BUILD`.
+
+Rollback boundary: revert only this continuity batch if dispatch commit
+`9ab3068fe` is reverted. Do not revert S1, D1, or earlier continuity.
+
+Not authorized: no real provider/live/network, persistence, durable store,
+vector/embedding/RAG/graph, non-public grants, corpus mutation, public-sync,
+deployment, or readiness.
+
+## Agent Operation Trace Block - LPCI1-Web B1 Dispatch Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | LPCI1-Web B1 dispatch continuity, 2026-08-09 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, and Git commit |
+| Target paths | active handoff, compact front door, bootstrap read model, state source fragments, and generated active-state registry |
+| Allowed scope source | GC-020 after BUILD dispatch commit `9ab3068fe` |
+| Before status evidence | HEAD `9ab3068fe`; packet committed; pre-dispatch and pre-commit gates passed |
+| After status evidence | one no-commit B1 implementation worker is the exact next move |
+| Diff evidence | continuity-only changed set from Git status and committed diff |
+| Approval boundary | session continuity after bounded BUILD dispatch |
+| Claim boundary | no real provider/live/network/persistence/vector-RAG/non-public-grant/corpus/public/deployment/readiness authority |
+| Agent type | session-sync steward |
+| Invocation ID | `lpci1-web-b1-dispatch-continuity-2026-08-09` |
+| Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; LPCI1-Web B1 state entry; generated active-state registry |
+| Actual changed set | same continuity-only paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_conformance_spec_accepted_hold_before_build`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=HOLD_BEFORE_BUILD pending fresh explicit authority and a new governed packet; parked checkpoint=BUILD, runtime/test mutation or execution, provider/model/live, persistence, vector/RAG, non-public grants, corpus mutation, public-sync, and deployment remain unauthorized, while Public Projection Pre-Push T0, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`lpci1_web_conformance_build_dispatch_ready`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit LPCI1-WEB-B1 implementation worker followed by independent review; parked checkpoint=real provider/live/network, persistence, vector/RAG, non-public grants, corpus mutation, public-sync, deployment, and readiness remain unauthorized, while Public Projection Pre-Push T0, WS2, and GC010-AER remain parked.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_conformance_spec_accepted_hold_before_build`
+Current mode marker: `lpci1_web_conformance_build_dispatch_ready`
 
-Current mode: `lpci1_web_conformance_spec_accepted_hold_before_build`
+Current mode: `lpci1_web_conformance_build_dispatch_ready`
 
-`lpci1_web_conformance_spec_accepted_hold_before_build`
+`lpci1_web_conformance_build_dispatch_ready`
 
 Previous mode:
 
@@ -80,6 +80,7 @@ are now assigned to the no-commit worker.
 ## Latest Material Work
 | Work | Commit | Disposition |
 |---|---|---|
+| LPCI1-WEB-B1 conformance BUILD dispatch | `9ab3068fe` | `DISPATCH_READY`; exact fourteen-path no-commit implementation manifest; P1-P8/F1-F16; deterministic zero-network tests; no real provider/live authority. |
 | LPCI1-WEB-S1 conformance SPEC closure | `3733cedd0` | `CLOSED_PASS_BOUNDED`; independent semantic FINAL PASS after consolidated repairs; roadmap exits `HOLD_BEFORE_BUILD`; no runtime/test/provider/live proof. |
 | LPCI1-WEB-S1 conformance SPEC dispatch | `9fe39992c` | `DISPATCH_READY`; fresh GC-018 and source-verified no-commit work order release exactly two documentation outputs; no BUILD authority. |
 | LPCI1-WEB-D1 conformance design acceptance | `e0ee8a000` | `DESIGN_ACCEPTED_BOUNDED_CONDITIONAL_ON_SPEC_RECONCILIATION`; independently accepted as S1 input. |
@@ -399,13 +400,12 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_conformance_spec_accepted_hold_before_build`
+Mode: `lpci1_web_conformance_build_dispatch_ready`
 
-LPCI1-WEB-S1 documentation-only SPEC is reviewer-accepted and closed bounded at
-`3733cedd0`. The next allowed move is `HOLD_BEFORE_BUILD`. Any BUILD requires
-fresh explicit operator authority, GC-018, current source verification, a
-separate implementation work order, deterministic tests, and lifecycle gates.
-Runtime/test mutation or execution, provider/model/live, persistence,
+LPCI1-WEB-B1 bounded BUILD is dispatch-ready at `9ab3068fe`. The next allowed
+move is one no-commit implementation worker modifying exactly the fourteen
+writable paths in the committed work order, followed by independent reviewer
+closure or consolidated repair. Real provider/live/network, persistence,
 vector/embedding/RAG, non-public grants, corpus mutation, public-sync,
 deployment, and readiness remain unauthorized.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`. Public Projection

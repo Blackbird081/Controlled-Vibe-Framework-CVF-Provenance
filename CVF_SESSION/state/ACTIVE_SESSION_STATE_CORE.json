@@ -95,7 +95,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_conformance_spec_accepted_hold_before_build",
+  "currentMode": "lpci1_web_conformance_build_dispatch_ready",
   "previousMode": "lpci1_web_conformance_design_accepted_hold_before_spec",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
