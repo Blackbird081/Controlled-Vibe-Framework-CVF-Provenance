@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI_CONFORMANCE_DESIGN_ACCEPTED_BOUNDED_HOLD_BEFORE_SPEC
+Status: LPCI_CONFORMANCE_SPEC_ACCEPTED_BOUNDED_HOLD_BEFORE_BUILD
 
 docType: roadmap
 
@@ -175,14 +175,17 @@ Reviewer disposition:
 
 ## Design Control Gate
 
-Gate status: `DESIGN_ACCEPTED_BOUNDED_HOLD_BEFORE_SPEC`.
+Gate status: `SPEC_ACCEPTED_BOUNDED_HOLD_BEFORE_BUILD`.
 
 Operator release received on 2026-08-08:
 
 `LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_DESIGN`
 
-The release is bounded to documentation-only DESIGN under a fresh GC-018 and
-source-verified work order. SPEC, BUILD, runtime/test mutation or execution,
+The DESIGN release was bounded to documentation-only DESIGN under its fresh
+GC-018 and source-verified work order. The later operator token
+`AUTHORIZE_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_DOCUMENTATION_ONLY`
+released a separate documentation-only SPEC packet. That SPEC is now
+reviewer-accepted. BUILD, runtime/test mutation or execution,
 provider/model/live action, persistence, vector/RAG, public-sync, deployment,
 and readiness authority remain withheld.
 
@@ -192,13 +195,15 @@ and readiness authority remain withheld.
 | Is the safe evidence projection selected? | Conditionally | minimized public-only snippet projection is a SPEC candidate; T3/T4 reconciliation is still required |
 | Is an entitlement owner selected? | No | no authorization interface or schema design |
 | Is DESIGN authorized? | Completed and reviewer-accepted, bounded | design audit and corrected worker return are the accepted outputs |
-| Is SPEC or implementation WORK ORDER authorized? | No | no new contract/schema or implementation dispatch packet |
+| Is SPEC authorized? | Completed and reviewer-accepted, bounded | reference SPEC and completion review are the accepted outputs |
+| Is an implementation WORK ORDER authorized? | No | no BUILD dispatch packet |
 | Is BUILD or test execution authorized? | No | no source/test mutation or execution |
 | Is provider/live work authorized? | No | no key, model, endpoint, call, or proof |
 
-The operator decision released only the bounded design question named by this
-intake. The paired fresh GC-018 and source-verified work order governed that
-dispatch. Reviewer acceptance does not release later phases.
+The operator decisions released only the bounded DESIGN and later bounded SPEC
+questions named by this intake. Each used its own paired fresh GC-018 and
+source-verified work order. Reviewer acceptance does not release BUILD or any
+external-effect phase.
 
 ## Dispatch Boundary
 
@@ -207,9 +212,10 @@ had no file-edit, commit, test, provider, network, design, or implementation
 authority. A later no-commit design worker operated only under the paired D1
 GC-018 and work order; the primary reviewer owns integration and closeout.
 
-No implementation worker is dispatched. No child GC-018, specification, work
-order, runtime edit, test run, provider call, public action, or deployment is
-authorized by this roadmap.
+No implementation worker is dispatched. The accepted child specification is
+`docs/reference/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_2026-08-08.md`.
+No BUILD GC-018/work order, runtime edit, test run, provider call, public
+action, or deployment is authorized by this roadmap.
 
 ## Work Plan
 
@@ -289,18 +295,18 @@ clearance behavior directly conflicts with canonical multi-level authorization
 rules. Historical live output is retained as observed output, not evidence that
 retrieved text was supplied to the model.
 
-Claim Update: the documentation-only D1 design is reviewer-accepted with
-corrections as `DESIGN_ACCEPTED_BOUNDED_CONDITIONAL_ON_SPEC_RECONCILIATION`.
-The selected current-owner direction is public-only Stage 1 admission, a
-minimized snippet projection candidate, metadata-only abstention fallback,
-minimized no-provider response, and response-local audit correlation. This is
-not runtime conformance or BUILD readiness.
+Claim Update: the documentation-only S1 specification is reviewer-accepted as
+`SPEC_ACCEPTED_BOUNDED_HOLD_BEFORE_BUILD`. It reconciles T3/T4 narrowly,
+defines public-only Stage 1 admission, a deterministic minimized evidence
+projection, fail-closed evidence limits, minimized response variants, and
+response-local audit correlation. This is not current runtime conformance or
+BUILD readiness.
 
-The next operator checkpoint is a fresh explicit SPEC authorization. Any SPEC
-must reconcile T3 display-hint semantics with T4 full-receipt context wording,
-define the minimized evidence/response/audit contract, and preserve public-only
-fail-closed behavior. Fresh GC-018, current source verification, and a separate
-work order remain required. BUILD and all external-effect lanes stay withheld.
+The next operator checkpoint is fresh explicit BUILD authority. Any BUILD must
+use a fresh GC-018, current source verification, a separate implementation work
+order, deterministic tests, and the normal lifecycle gates. Provider/live,
+persistence, vector/RAG, non-public grant ownership, public-sync, deployment,
+and readiness remain separately withheld.
 
 ## Public Export Disposition
 

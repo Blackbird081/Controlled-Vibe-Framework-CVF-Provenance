@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: LPCI1-WEB-S1
 
@@ -494,15 +494,43 @@ boundary. Worker completion is `COMPLETE_PENDING_REVIEW`, not closure.
 
 ## Closure Checklist
 
-- [ ] execution base captured before worker edits
-- [ ] exact worker ADIF query rerun and disclosed
-- [ ] only two manifest paths changed
-- [ ] normative SPEC resolves every required decision
-- [ ] Source Verification and doc-only fields remain separated
-- [ ] worker-return fast gate passes
-- [ ] runtime/test/provider/live execution remains N/A with reason
-- [ ] worker did not stage or commit
-- [ ] independent reviewer records acceptance or bounded return
+- [x] execution base captured before worker edits
+- [x] exact worker ADIF query rerun and disclosed
+- [x] only two worker-manifest paths changed during worker execution
+- [x] normative SPEC resolves every required decision
+- [x] Source Verification and doc-only fields remain separated
+- [x] worker-return fast gate passes
+- [x] runtime/test/provider/live execution remains N/A with reason
+- [x] worker did not stage or commit
+- [x] independent reviewer records final acceptance
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_COMPLETION_2026-08-08.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI_CURRENT_OWNER_GROUNDING_AND_CLEARANCE_DEFECT_INTAKE_ROADMAP_2026-08-08.md` | `Status: LPCI_CONFORMANCE_SPEC_ACCEPTED_BOUNDED_HOLD_BEFORE_BUILD` | PASS |
+| Reference SPEC | `docs/reference/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_SPEC_2026-08-08.md` | accepted documentation contract | PASS |
+| Worker return | required worker-return path | `COMPLETE_PENDING_REVIEW`; reviewer accepted after repair | PASS |
+| Registry JSON | N/A path because registry mutation was forbidden | no registry authority | BLOCKED with reason |
+| Registry Markdown | N/A path because registry mutation was forbidden | no registry authority | BLOCKED with reason |
+| External evidence digest | N/A with reason: repository-local source packet only | no external artifact consumed | N/A with reason |
+| System loop interlock | intake roadmap | BUILD remains parked | PASS |
+| Session continuity | separate post-material session-sync | protected paths excluded | N/A with reason |
+| Public export | private completion | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| exact worker output count | 2 | PASS |
+| execution base | `88a3e6b2a` | PASS |
+| worker commit permission | `WORKER_MUST_NOT_COMMIT` | PASS |
+| reviewer-fast checks | 62 PASS | PASS |
+| independent verdict | `FINAL PASS` | PASS |
+| runtime/provider calls | 0 | PASS |
+| next lifecycle | HOLD_BEFORE_BUILD | PASS |
 
 ## Return-To-Orchestrator Conditions
 
@@ -540,7 +568,7 @@ not duplicate the LPCI product defects as agent-defect intelligence.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_work_order_dispatch_quality_tables.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_dispatch_scaffold_provenance.py` |
-| literalTokensReviewed | Dispatch Prompt Envelope ordering; DISPATCH_READY; Dependency Release Evidence; Source Verification columns and claim types; New Doc-Only Fields; exact ADIF query; manifest sibling headings; Agent Handoff Contract Control Block; Reviewer Closure Conversion; WORKER_MUST_NOT_COMMIT; Fast Doc literals; trace fields; ASCII encoding; public disposition; stop tokens |
+| literalTokensReviewed | Dispatch Prompt Envelope ordering; closed lifecycle status; Dependency Release Evidence; Source Verification columns and claim types; New Doc-Only Fields; exact ADIF query; manifest sibling headings; Agent Handoff Contract Control Block; Reviewer Closure Conversion; WORKER_MUST_NOT_COMMIT; Fast Doc literals; trace fields; ASCII encoding; public disposition; stop tokens |
 | gateRunPurpose | confirm complete source-backed packet after checker-source discovery; gates are not first discovery |
 | claimBoundary | LPCI1-WEB-S1 no-commit private documentation SPEC work order |
 
