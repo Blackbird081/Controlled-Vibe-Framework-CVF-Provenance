@@ -172,3 +172,42 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - UC-02 Closure Material Anchor
+
+Authorized guard-maintenance scope: update only active V57 with the exact
+UC-02 discovery closure material HEAD required by GC-020 before final
+pre-closure verification.
+
+Protected path:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+
+Continuity HEAD: `729452197`.
+
+Operator authorization is the exact UC-02 discovery-only token. Rollback
+boundary: revert only this one-path anchor if closure material commit
+`729452197` is reverted; do not revert the dispatch or discovery evidence.
+
+## Agent Operation Trace Block - UC-02 Closure Material Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc02-closure-material-anchor-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | active handoff update, session compatibility gate, Git |
+| Target paths | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Allowed scope source | reviewer closure material commit `729452197` and GC-020 |
+| Before status evidence | clean material HEAD `729452197`; pre-closure passed 74/75 with only continuity failure |
+| After status evidence | V57 contains the exact closure material parent SHA |
+| Diff evidence | exact one-path handoff diff |
+| Approval boundary | continuity repair only |
+| Claim boundary | no source/corpus/runtime mutation, private/credential read, provider/live, public, deploy, or production claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc02-closure-material-anchor-2026-08-10` |
+| Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
