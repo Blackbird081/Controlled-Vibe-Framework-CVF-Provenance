@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design",
-  "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
-  "nextAllowedMove": "LPCI1-WEB context-to-LLM intake R3 is CLOSED_PASS_BOUNDED at reviewer closure commit 09afcd9d2 after bounded implementation commit a59e8649e. The public-safe checker/test subset and authorization receipt are exported at public commit 2103a38f; private intake artifacts remain provenance-only. The next allowed move is HOLD until fresh explicit DESIGN-only authority opens UC-01. That complete DESIGN must include UC-04's source-verified Model Gateway reuse-or-composition binding and documented configuration contract, then receive independent acceptance before any separate fresh provider/live authority. No DESIGN, LPCI runtime, provider/live, persistence, vector/RAG, non-public grant, deployment, or readiness work is authorized now. LHW24 remains the latest closed numbered LHW wave.",
+  "currentMode": "lpci1_web_uc01_provider_binding_design_dispatched_pending_worker",
+  "activeHandoff": "AGENT_HANDOFF_V56_2026-08-09.md",
+  "nextAllowedMove": "The fresh UC-01 DESIGN-only dispatch packet is committed at e2ebbc984. The next allowed move is exactly one no-commit documentation-design worker execution followed by independent primary-reviewer acceptance or return. The DESIGN must include UC-04 Model Gateway reuse-or-composition binding and the documented configuration contract. SPEC, BUILD, runtime/config/package mutation, provider/live, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

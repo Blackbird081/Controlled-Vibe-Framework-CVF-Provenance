@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V55_2026-08-05.md`
+4. `AGENT_HANDOFF_V56_2026-08-09.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Active handoff | `AGENT_HANDOFF_V56_2026-08-09.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=HOLD until fresh explicit DESIGN-only authority opens UC-01 with UC-04 Model Gateway binding/configuration included and later independently accepted; parked checkpoint=DESIGN, LPCI runtime, provider/live, persistence, vector/RAG, non-public grants, deployment, and readiness remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=one no-commit documentation-design worker executes the committed UC-01 packet, then the primary reviewer independently accepts or returns it; parked checkpoint=SPEC, BUILD, runtime/config/package mutation, provider/live, public-sync, deployment, and readiness remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
+Current mode marker: `lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
 
-Current mode: `lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
+Current mode: `lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
 
-`lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
+`lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
 
 Previous mode:
 
-`lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
+`lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -400,18 +400,19 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
+Mode: `lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
 The public-safe checker/test subset and authorization receipt are exported at
 public commit `2103a38f`; private intake artifacts remain provenance-only.
-The next allowed move is HOLD until fresh explicit DESIGN-only authority opens
-UC-01. That complete DESIGN must include UC-04's source-verified Model Gateway
-reuse-or-composition binding and documented configuration contract, then
-receive independent acceptance before any separate fresh provider/live
-authority. No DESIGN, LPCI runtime, provider/live, persistence, vector/RAG,
-non-public grant, deployment, or readiness work is authorized now.
+Fresh DESIGN-only authority opened UC-01 and the source-verified dispatch packet
+is committed at `e2ebbc984`. The next allowed move is exactly one no-commit
+documentation-design worker execution, followed by independent primary-reviewer
+acceptance or return. The DESIGN must include UC-04's Model Gateway
+reuse-or-composition binding and documented configuration contract. SPEC,
+BUILD, runtime/config/package mutation, provider/live, persistence, vector/RAG,
+non-public grant, public-sync, deployment, and readiness remain unauthorized.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
