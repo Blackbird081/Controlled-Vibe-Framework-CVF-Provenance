@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=delegated worker executes the one-attempt no-commit live-proof packet; parked checkpoint=deployment, production readiness, public-sync, persistence, vector/RAG, other providers/models, and later roadmap lanes remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=STOP and await a fresh explicit operator checkpoint; parked checkpoint=additional provider calls, full-route/release proof, deployment, production readiness, public-sync, persistence, vector/RAG, other providers/models, and later roadmap lanes remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
+Current mode marker: `lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`
 
-Current mode: `lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
+Current mode: `lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`
 
-`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
+`lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`
 
 Previous mode:
 
-`lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
+`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -400,7 +400,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
+Mode: `lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
@@ -416,7 +416,7 @@ reviews the sanitized receipt. Raw secret output, source/config/session/public
 mutation, deployment, production readiness, persistence, vector/RAG, other
 providers/models, and later roadmap lanes remain unauthorized.
 Current mode:
-`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`.
+`lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen

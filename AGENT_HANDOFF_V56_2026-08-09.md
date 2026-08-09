@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Latest material commit: `5c86f6d77 feat(lpci): bind UC-01 through Model Gateway`
-- Active mode: `lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
+- Active mode: `lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: N/A with reason: this BUILD dispatch is private provenance work
 - Remote tracking branch: origin/main
@@ -17,20 +17,21 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`;
-active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=delegated
-worker executes the one-attempt no-commit live-proof packet; parked checkpoint=deployment,
-production readiness, public-sync, persistence, vector/RAG, other
-providers/models, and later roadmap lanes remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`;
+active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=STOP and await
+a fresh explicit operator checkpoint; parked checkpoint=additional provider
+calls, full-route/release proof, deployment, production readiness, public-sync,
+persistence, vector/RAG, other providers/models, and later roadmap lanes remain
+unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
+`lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`
 
 ## Purpose
 
-Record the operator-authorized UC-01 provider-live-proof dispatch while
-preserving every broader hold and independent reviewer boundary.
+Record the independently accepted bounded UC-01 provider live proof while
+preserving every broader hold and the stop before any continuation.
 
 ## Scope / Target / Owner Boundary
 
@@ -651,5 +652,62 @@ Rollback boundary: revert only this handoff-only anchor if material commit
 | Invocation ID | `lpci1-web-uc01-live-material-anchor-2026-08-09` |
 | Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
 | Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## LPCI1 UC-01 Provider Live Proof Final Continuity
+
+Material closure: `1c808fd39`.
+
+Material anchor: `f41ca36a4`.
+
+Pre-closure: PASS 75/75 on committed range `52d8b393c..1c808fd39`.
+
+Current mode:
+`lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`.
+
+Next allowed move: STOP and await a fresh explicit operator checkpoint. No
+automatic roadmap continuation follows.
+
+## Core Guard Self-Protection Authorization - LPCI1 Live Final Sync
+
+Authorized guard-maintenance scope: synchronize only the active session
+front doors, generated state sources/aggregate, and active handoff to the
+accepted bounded closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01ProviderLiveProofClosure20260809.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization is the accepted proof-only closure. Rollback boundary:
+revert only this seven-path final session-sync commit if material closure
+`1c808fd39` is reverted.
+
+## Agent Operation Trace Block - LPCI1 Live Final Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-live-final-sync-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | generated state fragments, generator, gates, Git |
+| Target paths | seven canonical continuity paths including generated aggregate |
+| Allowed scope source | accepted material closure `1c808fd39` and pre-closure PASS 75/75 |
+| Before status evidence | clean handoff-anchor HEAD `f41ca36a4` |
+| After status evidence | closed bounded mode and stop-before-continuation next move aligned |
+| Diff evidence | exact protected session-sync manifest |
+| Approval boundary | final continuity only; no additional provider call or roadmap continuation |
+| Claim boundary | one accepted binding call only; no full-route/release, public, deployment, production, or later-lane claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-live-final-sync-2026-08-09` |
+| Expected manifest | active handoff, front door, bootstrap, generated state, core fragment, next-move fragment, closure entry |
+| Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |

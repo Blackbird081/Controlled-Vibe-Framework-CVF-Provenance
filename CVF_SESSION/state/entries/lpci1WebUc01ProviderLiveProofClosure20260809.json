@@ -1,0 +1,21 @@
+{
+  "stateOrder": 2016,
+  "stateKey": "lpci1WebUc01ProviderLiveProofClosure20260809",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-LIVE",
+    "materialCommit": "1c808fd39",
+    "materialAnchorCommit": "f41ca36a4",
+    "completionReview": "docs/reviews/CVF_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_COMPLETION_2026-08-09.md",
+    "evidenceReceipt": "docs/reviews/evidence/lpci1-web-uc01-provider-live-proof-2026-08-09.json",
+    "roadmapStatus": "LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ACCEPTED_BOUNDED_NO_RELEASE_OR_CONTINUATION",
+    "preClosureEvidence": "PASS_75_OF_75",
+    "providerCallCount": 1,
+    "retryCount": 0,
+    "httpStatus": 200,
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Stop and await a fresh explicit operator checkpoint; no automatic roadmap continuation.",
+    "claimBoundary": "One local provider-binding call only; no full-route, release, production, deployment, public, generalized provider/model, or later roadmap claim."
+  }
+}

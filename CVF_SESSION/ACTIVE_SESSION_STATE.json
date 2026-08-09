@@ -96,8 +96,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_uc01_provider_live_proof_dispatched_pending_worker",
-  "previousMode": "lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority",
+  "currentMode": "lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation",
+  "previousMode": "lpci1_web_uc01_provider_live_proof_dispatched_pending_worker",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13691,7 +13691,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Operator token AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY released one evidence-only worker at dispatch commit 5f202caa0. The next allowed move is worker execution of the paired UC-01 live-proof work order with at most one OpenAI request, zero retries, two review outputs, no source/config/session/public mutation, and no commit. The primary agent then independently reviews the sanitized receipt. Deployment, production readiness, public-sync, persistence, vector/RAG, other providers/models, and later roadmap lanes remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "UC-01 provider live proof is independently accepted at material commit 1c808fd39: one local openai/gpt-4o binding call, one fetch entry, zero retries, HTTP 200, and sanitized length/digest evidence only. The next allowed move is STOP and await a fresh explicit operator checkpoint; no automatic roadmap continuation follows. Additional provider calls, full-route/release proof, deployment, production readiness, public-sync, persistence, vector/RAG, other providers/models, and later roadmap lanes remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14142,6 +14142,23 @@
     "packetGates": "dispatch-fast 5/5 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
     "nextAllowedMove": "Claude executes exactly three outputs and returns no-commit for Codex review.",
     "parked": "T1-T5, credentials, provider calls, live proof, public-sync, push, deployment, and production action."
+  },
+  "lpci1WebUc01ProviderLiveProofClosure20260809": {
+    "status": "CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-LIVE",
+    "materialCommit": "1c808fd39",
+    "materialAnchorCommit": "f41ca36a4",
+    "completionReview": "docs/reviews/CVF_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_COMPLETION_2026-08-09.md",
+    "evidenceReceipt": "docs/reviews/evidence/lpci1-web-uc01-provider-live-proof-2026-08-09.json",
+    "roadmapStatus": "LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ACCEPTED_BOUNDED_NO_RELEASE_OR_CONTINUATION",
+    "preClosureEvidence": "PASS_75_OF_75",
+    "providerCallCount": 1,
+    "retryCount": 0,
+    "httpStatus": 200,
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Stop and await a fresh explicit operator checkpoint; no automatic roadmap continuation.",
+    "claimBoundary": "One local provider-binding call only; no full-route, release, production, deployment, public, generalized provider/model, or later roadmap claim."
   },
   "operatorProviderModelT0InvocationCostIncident20260720": {
     "status": "T0_R1_BOUNDED_WORKER_REDISPATCH_REQUIRED",

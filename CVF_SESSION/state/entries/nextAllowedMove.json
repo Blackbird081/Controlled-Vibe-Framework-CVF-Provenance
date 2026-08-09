@@ -1,5 +1,5 @@
 {
   "stateOrder": 2003,
   "stateKey": "nextAllowedMove",
-  "value": "Operator token AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY released one evidence-only worker at dispatch commit 5f202caa0. The next allowed move is worker execution of the paired UC-01 live-proof work order with at most one OpenAI request, zero retries, two review outputs, no source/config/session/public mutation, and no commit. The primary agent then independently reviews the sanitized receipt. Deployment, production readiness, public-sync, persistence, vector/RAG, other providers/models, and later roadmap lanes remain unauthorized. LHW24 remains the latest closed numbered LHW wave."
+  "value": "UC-01 provider live proof is independently accepted at material commit 1c808fd39: one local openai/gpt-4o binding call, one fetch entry, zero retries, HTTP 200, and sanitized length/digest evidence only. The next allowed move is STOP and await a fresh explicit operator checkpoint; no automatic roadmap continuation follows. Additional provider calls, full-route/release proof, deployment, production readiness, public-sync, persistence, vector/RAG, other providers/models, and later roadmap lanes remain unauthorized. LHW24 remains the latest closed numbered LHW wave."
 }
