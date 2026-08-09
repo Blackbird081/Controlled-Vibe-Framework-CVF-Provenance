@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - LPCI1-Web Build Closure
+# CVF Agent Handoff V55 - LPCI1-Web Context-To-LLM Intake Closure
 
 Memory class: active-handoff
 
@@ -8,10 +8,10 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `ab74e14a5 docs(governance): repair LPCI closure packet evidence`
-- Active mode: `lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
+- Latest material commit: `09afcd9d2 docs(review): close LPCI context intake R3`
+- Active mode: `lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
 - Latest closed numbered LHW wave: `LHW24`
-- Public export: `EXPORTED` at public commit `9b039ea6b`
+- Public export: bounded public-safe subset `EXPORTED` at public commit `2103a38f`
 - Remote tracking branch: origin/main
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
@@ -41,11 +41,11 @@ provider/live call, or external-effect action is released.
 
 ## Current Mode
 
-`lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
+`lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_build_closed_pass_bounded_hold_before_next_intake`;
+Startup acknowledged: current mode=`lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`;
 active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=HOLD until
 explicit fresh authority opens one documentation-only context-to-LLM/API-key
 use-case intake/roadmap with source verification; parked checkpoint=DESIGN,
@@ -835,5 +835,57 @@ public-sync, deployment, or readiness action.
 | Invocation ID | `lpci1-web-d1-dispatch-continuity-2026-08-08` |
 | Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; LPCI1-Web D1 state entry; generated active-state registry |
 | Actual changed set | same continuity-only paths after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## LPCI1-Web Context-To-LLM Intake R3 Closure Continuity
+
+LPCI1-Web context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
+closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
+The public-safe checker/test subset plus authorization receipt was pushed to
+the public repository at `2103a38f`; private intake artifacts remain only in
+provenance. The next move is `HOLD_BEFORE_FRESH_DESIGN_AUTHORITY`.
+
+A future UC-01 DESIGN requires fresh explicit DESIGN-only authority. The
+complete DESIGN must include UC-04's source-verified Model Gateway
+reuse-or-composition binding and documented configuration contract and must be
+independently accepted before any separate fresh provider/live authority.
+
+## Core Guard Self-Protection Authorization - LPCI1 R3 Closure Continuity
+
+Authorized protected paths:
+
+- `AGENT_HANDOFF_V55_2026-08-05.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/lpci1WebContextToLlmIntakeR320260809.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authority is the explicit instruction to clean the worktree and push
+both GitHub repositories before continuing the roadmap. Rollback boundary:
+revert only this continuity batch if closure commit `09afcd9d2` is reverted.
+
+## Agent Operation Trace Block - LPCI1 R3 Closure Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-r3-closure-continuity-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, Git commit and authorized provenance push |
+| Target paths | exact seven protected session-sync paths |
+| Allowed scope source | GC-020 plus operator cleanup/two-repository push authority after closure commit `09afcd9d2` |
+| Before status evidence | HEAD `09afcd9d2`; material closure committed; public commit `2103a38f` pushed |
+| After status evidence | mode and next move agree on hold before fresh DESIGN-only authority |
+| Diff evidence | continuity-only changed set, generator drift check, governance gates, and push receipts |
+| Approval boundary | session continuity and authorized provenance synchronization only |
+| Claim boundary | no DESIGN, LPCI runtime, provider/live, persistence, vector/RAG, non-public grant, deployment, or readiness authority |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-r3-closure-continuity-2026-08-09` |
+| Expected manifest | active handoff; compact front door; bootstrap read model; state core; next-move source; R3 state entry; generated active-state registry |
+| Actual changed set | same seven continuity-only paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |

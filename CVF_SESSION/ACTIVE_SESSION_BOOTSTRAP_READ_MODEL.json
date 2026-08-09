@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_build_closed_pass_bounded_hold_before_next_intake",
+  "currentMode": "lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design",
   "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
-  "nextAllowedMove": "LPCI1-WEB-B1 and BR1 are CLOSED_PASS_BOUNDED at final material repair commit ab74e14a5, with implementation/closure material at db580830f. The next allowed move is HOLD until explicit fresh authority opens one governed documentation-only intake/roadmap for concrete context-to-LLM/API-key use cases with current source verification. This does not authorize DESIGN, BUILD, provider/live, persistence, vector/RAG, non-public grants, public-sync, deployment, or readiness. Historical BR1 system-chain and as-built catalog waiver executions remain WAIVED_BOUNDED, NON-COMPLIANT, and not PASS and are not retroactively rewritten. At current HEAD ab74e14a5, direct system-chain freshness and as-built catalog checks are CURRENT with 0 violations; those historical drifts are not active reconciliation blockers. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "LPCI1-WEB context-to-LLM intake R3 is CLOSED_PASS_BOUNDED at reviewer closure commit 09afcd9d2 after bounded implementation commit a59e8649e. The public-safe checker/test subset and authorization receipt are exported at public commit 2103a38f; private intake artifacts remain provenance-only. The next allowed move is HOLD until fresh explicit DESIGN-only authority opens UC-01. That complete DESIGN must include UC-04's source-verified Model Gateway reuse-or-composition binding and documented configuration contract, then receive independent acceptance before any separate fresh provider/live authority. No DESIGN, LPCI runtime, provider/live, persistence, vector/RAG, non-public grant, deployment, or readiness work is authorized now. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

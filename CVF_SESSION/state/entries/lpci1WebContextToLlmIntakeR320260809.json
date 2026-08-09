@@ -1,0 +1,36 @@
+{
+  "stateOrder": 2010,
+  "stateKey": "lpci1WebContextToLlmIntakeR320260809",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-CONTEXT-TO-LLM-INTAKE-R3-PATH-RE-REPAIR",
+    "materialCommit": "a59e8649e",
+    "reviewerClosureCommit": "09afcd9d2",
+    "handoffAnchorCommit": "cfe6cc9ac",
+    "publicExportCommit": "2103a38f",
+    "operatorAuthorities": [
+      "AUTHORIZE_FRESH_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_INTAKE_ROADMAP_DOCUMENTATION_ONLY",
+      "AUTHORIZE_LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_R3_PATH_RE_REPAIR",
+      "operator cleanup and two-repository push authority"
+    ],
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_R3_PATH_RE_REPAIR_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_R3_PATH_RE_REPAIR_2026-08-09.md",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_2026-08-09.md",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_INTAKE_WORKER_RETURN_2026-08-09.md",
+    "completionReview": "docs/reviews/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_INTAKE_R3_PATH_RE_REPAIR_COMPLETION_2026-08-09.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "focusedEvidence": "11 of 11 tests PASS",
+    "preCommitEvidence": "PASS_83_OF_83",
+    "publicExportDisposition": "EXPORTED_BOUNDED_PUBLIC_SAFE_SUBSET",
+    "publicRemote": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "publicPaths": [
+      "governance/compat/check_work_order_dispatch_quality_source.py",
+      "governance/compat/test_check_work_order_dispatch_quality_source.py",
+      "AGENT_HANDOFF.md"
+    ],
+    "providerLiveNetworkActionCount": 0,
+    "nextAllowedMove": "HOLD before fresh explicit DESIGN-only authority for UC-01; complete DESIGN must include UC-04 Model Gateway binding and documented configuration contract, then be independently accepted before a separate fresh provider/live authority.",
+    "claimBoundary": "Accepted intake and bounded parenthesized-path checker repair only; no LPCI runtime, DESIGN, provider/live, persistence, vector/RAG, non-public grant, deployment, or readiness claim."
+  }
+}

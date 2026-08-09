@@ -95,8 +95,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_build_closed_pass_bounded_hold_before_next_intake",
-  "previousMode": "lpci1_web_conformance_build_dispatch_ready",
+  "currentMode": "lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design",
+  "previousMode": "lpci1_web_build_closed_pass_bounded_hold_before_next_intake",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13690,7 +13690,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "LPCI1-WEB-B1 and BR1 are CLOSED_PASS_BOUNDED at final material repair commit ab74e14a5, with implementation/closure material at db580830f. The next allowed move is HOLD until explicit fresh authority opens one governed documentation-only intake/roadmap for concrete context-to-LLM/API-key use cases with current source verification. This does not authorize DESIGN, BUILD, provider/live, persistence, vector/RAG, non-public grants, public-sync, deployment, or readiness. Historical BR1 system-chain and as-built catalog waiver executions remain WAIVED_BOUNDED, NON-COMPLIANT, and not PASS and are not retroactively rewritten. At current HEAD ab74e14a5, direct system-chain freshness and as-built catalog checks are CURRENT with 0 violations; those historical drifts are not active reconciliation blockers. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "LPCI1-WEB context-to-LLM intake R3 is CLOSED_PASS_BOUNDED at reviewer closure commit 09afcd9d2 after bounded implementation commit a59e8649e. The public-safe checker/test subset and authorization receipt are exported at public commit 2103a38f; private intake artifacts remain provenance-only. The next allowed move is HOLD until fresh explicit DESIGN-only authority opens UC-01. That complete DESIGN must include UC-04's source-verified Model Gateway reuse-or-composition binding and documented configuration contract, then receive independent acceptance before any separate fresh provider/live authority. No DESIGN, LPCI runtime, provider/live, persistence, vector/RAG, non-public grant, deployment, or readiness work is authorized now. LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -13957,6 +13957,38 @@
     "nextAllowedMove": "Claude creates exactly the three Allowed T2 outputs and returns COMPLETE_PENDING_REVIEW without commit.",
     "parked": "T3-T4, T4 real-root scan, apply/copy, public-sync mutation, push, deployment, provider/live calls, production action, and unattended mutation.",
     "claimBoundary": "Private read-only receipt-to-draft implementation dispatch only; no real-root freshness, mutation, public, provider/live, or production claim."
+  },
+  "lpci1WebContextToLlmIntakeR320260809": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-CONTEXT-TO-LLM-INTAKE-R3-PATH-RE-REPAIR",
+    "materialCommit": "a59e8649e",
+    "reviewerClosureCommit": "09afcd9d2",
+    "handoffAnchorCommit": "cfe6cc9ac",
+    "publicExportCommit": "2103a38f",
+    "operatorAuthorities": [
+      "AUTHORIZE_FRESH_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_INTAKE_ROADMAP_DOCUMENTATION_ONLY",
+      "AUTHORIZE_LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_R3_PATH_RE_REPAIR",
+      "operator cleanup and two-repository push authority"
+    ],
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_R3_PATH_RE_REPAIR_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_R3_PATH_RE_REPAIR_2026-08-09.md",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_2026-08-09.md",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_INTAKE_WORKER_RETURN_2026-08-09.md",
+    "completionReview": "docs/reviews/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_INTAKE_R3_PATH_RE_REPAIR_COMPLETION_2026-08-09.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "focusedEvidence": "11 of 11 tests PASS",
+    "preCommitEvidence": "PASS_83_OF_83",
+    "publicExportDisposition": "EXPORTED_BOUNDED_PUBLIC_SAFE_SUBSET",
+    "publicRemote": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "publicPaths": [
+      "governance/compat/check_work_order_dispatch_quality_source.py",
+      "governance/compat/test_check_work_order_dispatch_quality_source.py",
+      "AGENT_HANDOFF.md"
+    ],
+    "providerLiveNetworkActionCount": 0,
+    "nextAllowedMove": "HOLD before fresh explicit DESIGN-only authority for UC-01; complete DESIGN must include UC-04 Model Gateway binding and documented configuration contract, then be independently accepted before a separate fresh provider/live authority.",
+    "claimBoundary": "Accepted intake and bounded parenthesized-path checker repair only; no LPCI runtime, DESIGN, provider/live, persistence, vector/RAG, non-public grant, deployment, or readiness claim."
   },
   "continuousProjectionT2Implementation20260720": {
     "status": "MATERIAL_COMMITTED_PENDING_REVIEWER_CLOSURE",

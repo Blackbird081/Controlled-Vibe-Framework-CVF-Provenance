@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_build_closed_pass_bounded_hold_before_next_intake`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=HOLD until explicit fresh authority opens one documentation-only intake/roadmap for concrete context-to-LLM/API-key use cases with current source verification; parked checkpoint=DESIGN, BUILD, provider/live, persistence, vector/RAG, non-public grants, public-sync, deployment, and readiness remain unauthorized. Historical BR1 system-chain/as-built waiver executions remain non-PASS evidence, but current direct checks at `ab74e14a5` are `CURRENT` with 0 violations and create no active reconciliation blocker.
+Startup acknowledged: current mode=`lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=HOLD until fresh explicit DESIGN-only authority opens UC-01 with UC-04 Model Gateway binding/configuration included and later independently accepted; parked checkpoint=DESIGN, LPCI runtime, provider/live, persistence, vector/RAG, non-public grants, deployment, and readiness remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
+Current mode marker: `lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
 
-Current mode: `lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
+Current mode: `lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
 
-`lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
+`lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
 
 Previous mode:
 
-`lpci1_web_conformance_build_dispatch_ready`
+`lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -400,19 +400,18 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
+Mode: `lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
 
-LPCI1-WEB-B1 and BR1 are `CLOSED_PASS_BOUNDED` at final material repair commit
-`ab74e14a5`, with implementation/closure material at `db580830f`. The next
-allowed move is HOLD until explicit fresh authority opens one governed
-documentation-only intake/roadmap for concrete context-to-LLM/API-key use
-cases with current source verification. No DESIGN, BUILD, provider/live,
-persistence, vector/RAG, non-public grants, public-sync, deployment, or
-readiness work is authorized now. Historical BR1 system-chain and as-built
-catalog waiver executions remain `WAIVED_BOUNDED`, `NON-COMPLIANT`, and not
-PASS and are not retroactively rewritten. At current HEAD `ab74e14a5`, direct
-system-chain freshness and as-built catalog checks are `CURRENT` with 0
-violations; those historical drifts are not active reconciliation blockers.
+LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
+closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
+The public-safe checker/test subset and authorization receipt are exported at
+public commit `2103a38f`; private intake artifacts remain provenance-only.
+The next allowed move is HOLD until fresh explicit DESIGN-only authority opens
+UC-01. That complete DESIGN must include UC-04's source-verified Model Gateway
+reuse-or-composition binding and documented configuration contract, then
+receive independent acceptance before any separate fresh provider/live
+authority. No DESIGN, LPCI runtime, provider/live, persistence, vector/RAG,
+non-public grant, deployment, or readiness work is authorized now.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
