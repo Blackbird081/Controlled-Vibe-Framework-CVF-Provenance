@@ -603,3 +603,53 @@ Rollback boundary: revert only this handoff-only anchor if repair commit
 | Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## LPCI1 UC-01 Provider Live Proof Material Closure Anchor
+
+Accepted material commit: `1c808fd39`.
+
+Reviewer disposition:
+`LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_PASS` with status
+`CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED`.
+
+The accepted evidence proves one local `openai/gpt-4o` provider-binding call,
+one fetch entry, zero retries, HTTP 200, and a nonempty response represented
+only by length/digest. It does not prove the full route, release readiness,
+production, deployment, public export, provider availability/quality, other
+providers/models, or later roadmap lanes.
+
+## Core Guard Self-Protection Authorization - LPCI1 Live Material Anchor
+
+Authorized guard-maintenance scope: update only the active handoff with the
+accepted material closure HEAD before final pre-closure and session sync.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+
+Operator authorization is the committed proof-only reviewer closure.
+Rollback boundary: revert only this handoff-only anchor if material commit
+`1c808fd39` is reverted.
+
+## Agent Operation Trace Block - LPCI1 Live Material Closure Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-live-material-anchor-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | active-state compatibility diagnosis, handoff patch, gates, Git |
+| Target paths | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Allowed scope source | reviewer-owned GC-020 continuity after material closure `1c808fd39` |
+| Before status evidence | clean HEAD `1c808fd39`; material closure hook passed 83 of 83 |
+| After status evidence | active handoff contains the exact accepted material HEAD |
+| Diff evidence | exact one-path handoff diff and session compatibility gate |
+| Approval boundary | handoff continuity only |
+| Claim boundary | no additional provider call, receipt mutation, source/config/package mutation, public-sync, deployment, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-live-material-anchor-2026-08-09` |
+| Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
