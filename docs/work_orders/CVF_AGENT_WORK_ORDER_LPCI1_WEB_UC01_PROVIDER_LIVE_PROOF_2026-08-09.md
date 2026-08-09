@@ -438,7 +438,7 @@ Claim Update Requirement: reviewer alone may record the pass or blocked token.
 ## Verification Commands
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 102fcc890 --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 python governance/compat/check_governed_file_size.py --enforce
 python governance/compat/run_worker_return_fast_gate.py
 git diff --check
@@ -451,6 +451,13 @@ git rev-parse --short HEAD
 The worker may use a secret-safe process-local Node loader and temporary inline
 invocation. Command evidence must redact the loader implementation if printing
 it would expose secret-handling details. It must never contain the credential.
+
+Reviewer dispatch repair, 2026-08-09: the original verification command used
+the pre-dispatch base `102fcc890`, which incorrectly combined dispatch and
+protected session-sync commits into a `split` pre-implementation range. The
+correct base is the clean committed `executionBaseHead` captured immediately
+before worker action. This repair changes no call budget, credential boundary,
+worker manifest, runtime source, or provider authority.
 
 ## Acceptance Criteria
 
