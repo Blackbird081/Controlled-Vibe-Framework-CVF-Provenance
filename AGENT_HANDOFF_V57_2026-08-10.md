@@ -298,6 +298,44 @@ token. Rollback boundary: revert only this seven-path sync if dispatch commit
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## Core Guard Self-Protection Authorization - UC-01 Hardening Closure Material Anchor
+
+Authorized guard-maintenance scope: update only active V57 with the exact
+design/spec closure material HEAD required by GC-020 before pre-closure.
+
+Protected path:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+
+Continuity HEAD: `1038f65aa`.
+
+Operator authority is the recorded DESIGN/SPEC-only approval. Rollback
+boundary: revert only this one-path anchor if material closure `1038f65aa` is
+reverted.
+
+## Agent Operation Trace Block - UC-01 Hardening Closure Material Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-hardening-closure-anchor-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | active handoff edit, continuity gate, Git |
+| Target paths | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Allowed scope source | reviewer closure material commit `1038f65aa` and GC-020 |
+| Before status evidence | clean material HEAD `1038f65aa`; pre-commit 83/83 |
+| After status evidence | V57 contains exact material closure SHA |
+| Diff evidence | exact one-path handoff diff |
+| Approval boundary | continuity anchor only |
+| Claim boundary | no BUILD, runtime, secret/live/deploy/public action |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-hardening-closure-anchor-2026-08-10` |
+| Expected manifest | active V57 only |
+| Actual changed set | active V57 only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Core Guard Self-Protection Authorization - UC-01 Hardening Dispatch Sync
 
 Authorized guard-maintenance scope: synchronize only active V57, front door,
