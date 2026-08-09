@@ -558,3 +558,48 @@ commit if dispatch commit `5f202caa0` is reverted.
 | Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## LPCI1 Live Dispatch Repair Anchor
+
+Reviewer-owned packet repair commit: `0d671a3ab`.
+
+The repair replaces the stale pre-dispatch base in the mandatory
+pre-implementation command with the worker-captured clean
+`executionBaseHead`. It changes no authority, call/retry budget, credential
+boundary, output manifest, source/config surface, or public disposition.
+
+## Core Guard Self-Protection Authorization - LPCI1 Live Repair Anchor
+
+Authorized guard-maintenance scope: update only the active handoff with the
+committed dispatch-repair HEAD required by GC-020.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+
+Operator authorization is inherited from the exact provider-live-proof token.
+Rollback boundary: revert only this handoff-only anchor if repair commit
+`0d671a3ab` is reverted.
+
+## Agent Operation Trace Block - LPCI1 Live Repair Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-live-dispatch-repair-anchor-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | failed-gate diagnosis, packet repair, gates, Git |
+| Target paths | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Allowed scope source | reviewer-owned GC-020 continuity after repair commit `0d671a3ab` |
+| Before status evidence | clean HEAD `0d671a3ab`; dispatch repair hook passed 83 of 83 |
+| After status evidence | active handoff contains the exact dispatch-repair parent HEAD |
+| Diff evidence | exact one-path handoff diff and session compatibility gate |
+| Approval boundary | handoff continuity repair only |
+| Claim boundary | no credential load, network call, source/config mutation, public-sync, deployment, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-live-dispatch-repair-anchor-2026-08-09` |
+| Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
