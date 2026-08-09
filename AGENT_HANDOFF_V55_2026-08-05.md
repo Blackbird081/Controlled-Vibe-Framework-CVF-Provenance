@@ -1,4 +1,4 @@
-# CVF Agent Handoff V55 - LPCI1-Web Conformance Design
+# CVF Agent Handoff V55 - LPCI1-Web Build Closure
 
 Memory class: active-handoff
 
@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `9ab3068fe docs(dispatch): release LPCI conformance build`
-- Active mode: `lpci1_web_conformance_build_dispatch_ready`
+- Latest material commit: `ab74e14a5 docs(governance): repair LPCI closure packet evidence`
+- Active mode: `lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `EXPORTED` at public commit `9b039ea6b`
 - Remote tracking branch: origin/main
@@ -18,67 +18,86 @@ Status: ACTIVE
 
 ## Purpose
 
-Record LPCI1-WEB-B1 bounded BUILD dispatch while keeping real provider/live,
-persistence, vector/RAG, non-public grants, corpus mutation, public, and
+Record LPCI1-WEB-B1 and BR1 bounded closure while keeping later lifecycle,
+provider/live, persistence, vector/RAG, non-public grants, public, and
 deployment authority excluded.
 
 ## Scope / Target / Owner Boundary
 
-Scope: documentation-only LPCI1-Web current-owner conformance specification.
+Scope: accepted LPCI1-Web B1 grounding/clearance implementation, BR1 external
+baseline repair, reviewer closure, and the bounded session synchronization that
+records those outcomes.
 
-Target: the committed B1 GC-018 and work order at `9ab3068fe`.
+Target: accepted B1/BR1 completion artifacts at final material repair commit
+`ab74e14a5`, with implementation/closure material at `db580830f`.
 
 Owner boundary: existing LPCI1-T5 cvf-web route/library/UI/test family only;
 no cross-owner governed-retrieval composition is justified or released.
 
 ## Active Boundary
 
-One no-commit implementation worker may modify exactly the fourteen writable
-paths in the B1 work order and run deterministic zero-network tests. No real
-provider/live call or external-effect action is released.
+The B1/BR1 material work is closed bounded. No new intake, DESIGN, BUILD,
+provider/live call, or external-effect action is released.
 
 ## Current Mode
 
-`lpci1_web_conformance_build_dispatch_ready`
+`lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_conformance_build_dispatch_ready`;
-active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit
-LPCI1-WEB-B1 implementation worker followed by independent review; parked
-checkpoint=real provider/live/network, persistence, vector/RAG, non-public
-grants, corpus mutation, public-sync, deployment, and readiness remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_build_closed_pass_bounded_hold_before_next_intake`;
+active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=HOLD until
+explicit fresh authority opens one documentation-only context-to-LLM/API-key
+use-case intake/roadmap with source verification; parked checkpoint=DESIGN,
+BUILD, provider/live, persistence, vector/RAG, non-public grants, public-sync,
+deployment, and readiness remain unauthorized. Historical BR1 waiver
+executions are preserved as non-PASS evidence, while current direct
+system-chain freshness and as-built catalog checks at `ab74e14a5` are
+`CURRENT` with 0 violations and create no active reconciliation blocker.
 
-## Released Packet
+## Accepted Closure Packet
 
-- Baseline:
-  `docs/baselines/CVF_GC018_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_BASELINE_2026-08-05.md`
-- Work order:
-  `docs/work_orders/CVF_AGENT_WORK_ORDER_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_2026-08-05.md`
-- Release commit: `0fdf767c8`
-- Release gate: pre-dispatch `PASS_75_OF_75`
-- Commit posture: `WORKER_MUST_NOT_COMMIT`
+- B1 completion:
+  `docs/reviews/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_BUILD_COMPLETION_2026-08-09.md`
+- BR1 completion:
+  `docs/reviews/CVF_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_COMPLETION_2026-08-09.md`
+- Final material repair commit: `ab74e14a5`
+- Implementation/closure material commit: `db580830f`
+- Closure disposition: `CLOSED_PASS_BOUNDED`
+- Provider/live call count: 0
 
 ## Latest Work / Changes
 
-- Operator released bounded GLP-T2 implementation on 2026-08-05.
-- The dependency and dispatch anchors were refreshed to `c5a6ba25d`.
-- Pre-dispatch passed 75/75 and the packet was committed at `0fdf767c8`.
-- V54 was rotated because it reached the governed maintainability threshold.
+- Reviewer accepted the B1 14-path implementation and the BR1 10-file repair
+  plus worker return through the two completion artifacts above.
+- Combined deterministic validation passed LPCI 7 files/99 tests, execute 3
+  files/5 tests, check, scoped lint, full non-live tests, and GC023; full lint
+  reported 0 errors and 21 warnings.
+- Final packet-evidence repair is materialized at `ab74e14a5`; no source/test
+  edit, provider/live call, or lifecycle expansion is part of this session sync.
 
-## Exact Worker Changed Set
+## Accepted B1/BR1 Changed-Set Boundary
 
-1. `governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md`
-2. `scripts/test_cvf_golden_downstream_bootstrap.ps1`
-3. `docs/reviews/CVF_GLP_T2_WORKSPACE_GOVERNANCE_LEARNING_CARRIER_IMPLEMENTATION_WORKER_RETURN_2026-08-05.md`
+- B1 accepted manifest: exact 14-path source/test/worker-return set recorded in
+  the B1 completion artifact; `retrieval.ts` remained unchanged.
+- BR1 accepted manifest: exact 10 repair files plus its worker return, recorded
+  in the BR1 completion artifact.
+- Current session-sync manifest: exactly the seven active continuity paths
+  named in the operation trace below; no B1/BR1 source or test is reopened.
 
 ## Next Allowed Move
 
-LPCI1-WEB-B1 is dispatch-ready at material commit `9ab3068fe`. The next allowed
-move is one no-commit implementation worker for the exact fourteen-path
-manifest, followed by independent reviewer closure or consolidated repair.
-No real provider/live/network, persistence, vector/embedding/RAG, non-public
-grant, corpus mutation, public-sync, deployment, or readiness claim is authorized.
+LPCI1-WEB-B1 and BR1 are `CLOSED_PASS_BOUNDED` at final material repair commit
+`ab74e14a5`, with implementation/closure material at `db580830f`. The next
+allowed move is HOLD until explicit fresh authority opens one governed
+documentation-only intake/roadmap for concrete context-to-LLM/API-key use
+cases with current source verification. This handoff does not authorize
+DESIGN, BUILD, provider/live, persistence, vector/RAG, non-public grants,
+public-sync, deployment, or readiness. Historical BR1 system-chain and as-built
+catalog waiver executions remain `WAIVED_BOUNDED`, `NON-COMPLIANT`, and not
+PASS and are not retroactively rewritten. At current HEAD `ab74e14a5`, direct
+system-chain freshness and as-built catalog checks are `CURRENT` with 0
+violations; those historical drifts are not active reconciliation blockers.
 
 Public Projection Pre-Push T0 is also parked at material commit `8e624a5f6`
 with decision `BLOCKED_NO_OWNER`. Reopen only when one governed packet names
@@ -184,17 +203,92 @@ creation and may be accepted under the GC-020 parent rule.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
-## GC-020 Marker - LPCI1-Web BR1 Dispatch Continuity
+## GC-020 Marker - LPCI1-Web B1 And BR1 Closure Continuity
+
+Final material repair commit `ab74e14a5` carries the accepted B1/BR1 closure
+packet after implementation/closure material commit `db580830f`. Accepted
+completion artifacts are:
+
+- `docs/reviews/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_BUILD_COMPLETION_2026-08-09.md`
+- `docs/reviews/CVF_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_COMPLETION_2026-08-09.md`
+
+Combined deterministic evidence records LPCI 7 files/99 tests PASS, execute 3
+files/5 tests PASS, check PASS, scoped lint PASS, full lint with 0 errors and
+21 warnings, full non-live 304 files with 3397 passed and 2 skipped, and GC023
+with 0 violations. Provider/live call count is zero.
+
+Historical BR1 system-chain and as-built catalog waiver executions remain
+`WAIVED_BOUNDED`, `NON-COMPLIANT`, and not PASS and are not retroactively
+rewritten. Current direct checks at `ab74e14a5` report system-chain freshness
+`CURRENT` with 0 violations and as-built catalog `CURRENT` with 0 violations;
+there is no active reconciliation blocker from those historical drifts. No
+later lifecycle is opened by this continuity update.
+
+## Core Guard Self-Protection Authorization - LPCI1-Web B1 And BR1 Closure Continuity
+
+Authorized guard-maintenance scope: synchronize the established seven active
+session/handoff paths after material repair commit `ab74e14a5`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V55_2026-08-05.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebGroundingClearanceConformanceBuild20260809.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authorization: reviewer-owned final session synchronization after
+accepted B1/BR1 material closure and repair commit `ab74e14a5`.
+
+Rollback boundary: revert only this seven-path continuity batch if material
+repair commit `ab74e14a5` is reverted. Do not revert B1/BR1 material, earlier
+LPCI design/spec history, or unrelated parked-lane continuity.
+
+Not authorized: no intake creation, DESIGN, BUILD, provider/live/network,
+persistence, vector/RAG, non-public grants, public-sync, release, deployment,
+readiness, or mutation of system-chain/as-built catalog governance surfaces.
+The current direct checker state is already `CURRENT` with 0 violations for
+both surfaces; this authorization does not convert that fact into mutation or
+phase-expansion authority.
+
+## Agent Operation Trace Block - LPCI1-Web B1 And BR1 Closure Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | LPCI1-Web B1/BR1 final session sync, 2026-08-09 |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, focused continuity gates, and Git evidence |
+| Target paths | exact seven established session-sync paths |
+| Allowed scope source | reviewer-owned session sync after material repair commit `ab74e14a5` |
+| Before status evidence | clean HEAD `ab74e14a5`; prior mode still advertised B1 dispatch |
+| After status evidence | mode records bounded closure and HOLD before any fresh context-to-LLM/API-key intake |
+| Diff evidence | `git diff --name-status`; `git status --short`; generator check |
+| Approval boundary | session/handoff continuity only |
+| Claim boundary | no material source/test edit, intake creation, DESIGN, BUILD, provider/live, public, release, deployment, or readiness claim |
+| Agent type | session-sync steward |
+| Invocation ID | `lpci1-web-b1-br1-final-session-sync-2026-08-09` |
+| Expected manifest | `AGENT_HANDOFF_V55_2026-08-05.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/lpci1WebGroundingClearanceConformanceBuild20260809.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
+| Actual changed set | same seven session-sync paths after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Historical GC-020 Marker - LPCI1-Web BR1 Dispatch Continuity
 
 The reviewer-owned BR1 dispatch commit is `fa75aeea4`, with parent
-`d9497c5db`. Status is `DISPATCH_READY` under both bounded operator waivers:
+`d9497c5db`. At that historical dispatch point, status was `DISPATCH_READY`
+under both bounded operator waivers:
 `AUTHORIZE_BOUNDED_WAIVER_SYSTEM_CHAIN_FRESHNESS_FOR_LPCI_BR1` and
-`AUTHORIZE_BOUNDED_WAIVER_AS_BUILT_CATALOG_DRIFT_FOR_LPCI_BR1`. Both waived
-gates remain `WAIVED_BOUNDED`, `NON-COMPLIANT`, and not PASS. Cross-platform
-system-chain fingerprint/MSEA-R90 semantic reconciliation and as-built
-catalog/gap-index reconciliation remain parked as separate governed work.
+`AUTHORIZE_BOUNDED_WAIVER_AS_BUILT_CATALOG_DRIFT_FOR_LPCI_BR1`. Both historical
+waiver executions remain `WAIVED_BOUNDED`, `NON-COMPLIANT`, and not PASS and
+are not retroactively rewritten. This is historical receipt evidence, not the
+current checker state: at `ab74e14a5`, both direct checks are `CURRENT` with 0
+violations and neither historical drift is an active reconciliation blocker.
 
-The next allowed move is one `WORKER_MUST_NOT_COMMIT` execution at exact
+The historical next allowed move was one `WORKER_MUST_NOT_COMMIT` execution at exact
 execution base `c44d0f68f`, whose parent chain contains dispatch commit
 `fa75aeea4`, limited to these 11 paths:
 
@@ -215,7 +309,7 @@ later integration, closure, session synchronization, and local commits. No
 provider, live, network, release, public-sync, persistence, grant, vector, or
 RAG action is authorized.
 
-## Core Guard Self-Protection Authorization - LPCI1-Web BR1 Dispatch Continuity
+## Historical Core Guard Self-Protection Authorization - LPCI1-Web BR1 Dispatch Continuity
 
 Authorized guard-maintenance scope: add this minimal reviewer-owned continuity
 anchor and correct the committed BR1 work order's worker-return packet-shape
@@ -229,15 +323,17 @@ Operator authorization: `AUTHORIZE_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR`,
 `AUTHORIZE_BOUNDED_WAIVER_SYSTEM_CHAIN_FRESHNESS_FOR_LPCI_BR1`, and
 `AUTHORIZE_BOUNDED_WAIVER_AS_BUILT_CATALOG_DRIFT_FOR_LPCI_BR1`.
 
-Rollback boundary: revert only this continuity anchor and the paired work-order
-packet-shape correction if the BR1 dispatch commit is reverted. Do not alter
-the parked system-chain or as-built catalog reconciliation lanes.
+Historical rollback boundary: revert only this continuity anchor and the paired
+work-order packet-shape correction if the BR1 dispatch commit is reverted. At
+that execution point, system-chain and as-built catalog reconciliation were
+separate lanes; current direct checks at `ab74e14a5` are `CURRENT` with 0
+violations and those historical drifts are no longer active blockers.
 
 Not authorized: implementation beyond the exact 11-path worker manifest,
 worker commits, provider/model/live/network execution, persistence, grants,
 vector/RAG, release, deployment, or public-sync.
 
-## Agent Operation Trace Block - LPCI1-Web BR1 Dispatch Continuity
+## Historical Agent Operation Trace Block - LPCI1-Web BR1 Dispatch Continuity
 
 | Field | Evidence |
 |---|---|

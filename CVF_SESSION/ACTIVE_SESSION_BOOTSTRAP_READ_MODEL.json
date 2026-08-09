@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_conformance_build_dispatch_ready",
+  "currentMode": "lpci1_web_build_closed_pass_bounded_hold_before_next_intake",
   "activeHandoff": "AGENT_HANDOFF_V55_2026-08-05.md",
-  "nextAllowedMove": "LPCI1-WEB-B1 bounded BUILD is dispatch-ready at material commit 9ab3068fe. The next allowed move is one no-commit implementation worker modifying exactly the fourteen writable paths in the committed work order, followed by independent reviewer closure or consolidated repair. Real provider/live/network action, persistence, vector/embedding/RAG, non-public grants, corpus mutation, public-sync, deployment, and readiness remain unauthorized. P4-A1 remains NO_CROSS_OWNER_DESIGN_JUSTIFIED; Public Projection Pre-Push T0, WS2, and GC010-AER remain parked; LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "LPCI1-WEB-B1 and BR1 are CLOSED_PASS_BOUNDED at final material repair commit ab74e14a5, with implementation/closure material at db580830f. The next allowed move is HOLD until explicit fresh authority opens one governed documentation-only intake/roadmap for concrete context-to-LLM/API-key use cases with current source verification. This does not authorize DESIGN, BUILD, provider/live, persistence, vector/RAG, non-public grants, public-sync, deployment, or readiness. Historical BR1 system-chain and as-built catalog waiver executions remain WAIVED_BOUNDED, NON-COMPLIANT, and not PASS and are not retroactively rewritten. At current HEAD ab74e14a5, direct system-chain freshness and as-built catalog checks are CURRENT with 0 violations; those historical drifts are not active reconciliation blockers. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

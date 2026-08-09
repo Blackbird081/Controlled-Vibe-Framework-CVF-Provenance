@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_conformance_build_dispatch_ready`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=one no-commit LPCI1-WEB-B1 implementation worker followed by independent review; parked checkpoint=real provider/live/network, persistence, vector/RAG, non-public grants, corpus mutation, public-sync, deployment, and readiness remain unauthorized, while Public Projection Pre-Push T0, WS2, and GC010-AER remain parked.
+Startup acknowledged: current mode=`lpci1_web_build_closed_pass_bounded_hold_before_next_intake`; active handoff=AGENT_HANDOFF_V55_2026-08-05.md; next allowed move=HOLD until explicit fresh authority opens one documentation-only intake/roadmap for concrete context-to-LLM/API-key use cases with current source verification; parked checkpoint=DESIGN, BUILD, provider/live, persistence, vector/RAG, non-public grants, public-sync, deployment, and readiness remain unauthorized. Historical BR1 system-chain/as-built waiver executions remain non-PASS evidence, but current direct checks at `ab74e14a5` are `CURRENT` with 0 violations and create no active reconciliation blocker.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_conformance_build_dispatch_ready`
+Current mode marker: `lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
 
-Current mode: `lpci1_web_conformance_build_dispatch_ready`
+Current mode: `lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
 
-`lpci1_web_conformance_build_dispatch_ready`
+`lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
 
 Previous mode:
 
-`lpci1_web_conformance_design_accepted_hold_before_spec`
+`lpci1_web_conformance_build_dispatch_ready`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -80,7 +80,7 @@ are now assigned to the no-commit worker.
 ## Latest Material Work
 | Work | Commit | Disposition |
 |---|---|---|
-| LPCI1-WEB-B1 conformance BUILD dispatch | `9ab3068fe` | `DISPATCH_READY`; exact fourteen-path no-commit implementation manifest; P1-P8/F1-F16; deterministic zero-network tests; no real provider/live authority. |
+| LPCI1-WEB-B1 and BR1 bounded closure | `ab74e14a5` | `CLOSED_PASS_BOUNDED`; implementation/closure material `db580830f`; B1 and BR1 completion reviews accepted; LPCI 7 files/99 tests and execute 3 files/5 tests PASS; full non-live 304 files with 3397 passed/2 skipped; zero provider/live calls; current system-chain freshness and as-built catalog checks both `CURRENT` with 0 violations. |
 | LPCI1-WEB-S1 conformance SPEC closure | `3733cedd0` | `CLOSED_PASS_BOUNDED`; independent semantic FINAL PASS after consolidated repairs; roadmap exits `HOLD_BEFORE_BUILD`; no runtime/test/provider/live proof. |
 | LPCI1-WEB-S1 conformance SPEC dispatch | `9fe39992c` | `DISPATCH_READY`; fresh GC-018 and source-verified no-commit work order release exactly two documentation outputs; no BUILD authority. |
 | LPCI1-WEB-D1 conformance design acceptance | `e0ee8a000` | `DESIGN_ACCEPTED_BOUNDED_CONDITIONAL_ON_SPEC_RECONCILIATION`; independently accepted as S1 input. |
@@ -400,15 +400,21 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_conformance_build_dispatch_ready`
+Mode: `lpci1_web_build_closed_pass_bounded_hold_before_next_intake`
 
-LPCI1-WEB-B1 bounded BUILD is dispatch-ready at `9ab3068fe`. The next allowed
-move is one no-commit implementation worker modifying exactly the fourteen
-writable paths in the committed work order, followed by independent reviewer
-closure or consolidated repair. Real provider/live/network, persistence,
-vector/embedding/RAG, non-public grants, corpus mutation, public-sync,
-deployment, and readiness remain unauthorized.
-P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`. Public Projection
+LPCI1-WEB-B1 and BR1 are `CLOSED_PASS_BOUNDED` at final material repair commit
+`ab74e14a5`, with implementation/closure material at `db580830f`. The next
+allowed move is HOLD until explicit fresh authority opens one governed
+documentation-only intake/roadmap for concrete context-to-LLM/API-key use
+cases with current source verification. No DESIGN, BUILD, provider/live,
+persistence, vector/RAG, non-public grants, public-sync, deployment, or
+readiness work is authorized now. Historical BR1 system-chain and as-built
+catalog waiver executions remain `WAIVED_BOUNDED`, `NON-COMPLIANT`, and not
+PASS and are not retroactively rewritten. At current HEAD `ab74e14a5`, direct
+system-chain freshness and as-built catalog checks are `CURRENT` with 0
+violations; those historical drifts are not active reconciliation blockers.
+P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
+Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
 conditions.
 
