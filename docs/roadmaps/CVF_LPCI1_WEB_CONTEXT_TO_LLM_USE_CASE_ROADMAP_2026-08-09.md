@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ACCEPTED_BOUNDED_NO_RELEASE_OR_CONTINUATION
+Status: LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ACCEPTED_BOUNDED_NO_RELEASE_OR_CONTINUATION
 
 docType: roadmap
 
@@ -304,11 +304,12 @@ review; this roadmap did not itself grant them:
    grant provider/live-proof scope. DESIGN or BUILD authority never grants a
    provider call or live proof.
 
-Current continuation: the complete UC-01 DESIGN and bounded B2 BUILD are
-independently accepted. The runtime binding and documented atomic config now
-satisfy the UC-04 reopen condition with deterministic network-free evidence.
-The next checkpoint is a separate fresh provider/live authority; no provider
-call, live proof, deployment, or readiness step is released by this status.
+Current continuation: the complete UC-01 DESIGN, bounded B2 BUILD, one
+provider-binding proof, and one signed synthetic-public full-route proof are
+independently accepted. The last proof recorded one route invocation, one
+provider call, zero retries, HTTP 200, `ANSWER_EMITTED`, `PUBLIC_ONLY`, and
+required audit correlations. No retry, release, hosted, deployment,
+production, public, or later-roadmap authority follows.
 
 ## Explicit Parked Lanes
 
@@ -317,10 +318,11 @@ call, live proof, deployment, or readiness step is released by this status.
   route-compatible public index are simultaneously verified for LPCI1.
 - `UC-03`: `PARKED_MISSING_ENTITLEMENT_OWNER` - no non-public grant/entitlement
   owner exists in current source.
-- `UC-04`: `RUNTIME_BINDING_ACCEPTED_LIVE_PARKED` - the accepted B2 BUILD
+- `UC-04`: `RUNTIME_BINDING_AND_BOUNDED_FULL_ROUTE_PROOF_ACCEPTED` - the accepted B2 BUILD
   composes LPCI with the existing Model Gateway, documents the atomic
   three-variable contract, and proves fail-closed behavior network-free. Live
-  invocation remains parked until a later fresh provider/live grant is issued.
+  invocation and one separately authorized full-route proof are accepted. Any
+  additional call or broader proof requires another fresh operator grant.
 - `UC-05`: `NO_CURRENT_VALUE_WITH_REOPEN_CONDITION` - no non-test, non-dashboard
   caller exists.
 - `UC-06`: `REJECT_DUPLICATE_OWNER` - the existing route already owns this
@@ -341,7 +343,8 @@ call, live proof, deployment, or readiness step is released by this status.
 | `UC-05` | a real non-test, non-dashboard caller of `/api/lpci/query` is source-verified to exist |
 | `UC-01` (DESIGN-only eligibility) | SATISFIED: later D1 authority produced an independently accepted complete DESIGN including UC-04 |
 | `UC-01` (BUILD eligibility) | SATISFIED: B2 implemented and independently accepted the source-verified Model Gateway/cvf-web binding with deterministic network-free proof |
-| `UC-01` (live-proof eligibility) | SATISFIED_AND_CONSUMED: exact operator token released one attempt; reviewer accepted a sanitized one-call success receipt. No retry, release, production, deployment, public, or later-lane authority follows. |
+| `UC-01` (provider-binding live-proof eligibility) | SATISFIED_AND_CONSUMED: exact operator token released one binding attempt; reviewer accepted its sanitized receipt. |
+| `UC-01` (full-route live-proof eligibility) | SATISFIED_AND_CONSUMED: exact full-route token released one signed synthetic-public attempt; reviewer accepted route 1/provider 1/retry 0 and the sanitized correlated receipt. No retry, release, production, deployment, public, or later-lane authority follows. |
 
 ## Acceptance Case Planning For A Future Tranche (Not Executed)
 
@@ -371,18 +374,19 @@ Gate status: `DESIGN_ACCEPTED_BOUNDED_NO_BUILD_OR_LIVE_RELEASED`.
 | Is a provider-lane owner selected for `LPCI_LLM_API_KEY`/`LPCI_LLM_ENDPOINT`/`LPCI_LLM_MODEL`? | Yes at DESIGN level: thin composition over existing Model Gateway | runtime binding/config evidence remains a BUILD prerequisite |
 | Is a non-public entitlement owner selected? | No | `UC-03` remains parked; not required for `UC-01` |
 | Is DESIGN authorized by this roadmap? | No; later operator authority opened and independent review accepted D1 | no authority inheritance to later phases |
-| Is BUILD, provider, or live-proof authorized by this roadmap? | No authority originates here; later packets separately authorized and completed B2 BUILD and one provider-binding live proof | no release, deployment, production, public, or roadmap continuation follows |
+| Is BUILD, provider, or live-proof authorized by this roadmap? | No authority originates here; later packets separately authorized and completed B2 BUILD, one provider-binding proof, and one full-route proof | no retry, release, deployment, production, public, or roadmap continuation follows |
 
 ## Dispatch Boundary
 
-The later D1 DESIGN and B2 BUILD were independently accepted. The exact
-operator token `AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY` then opened
-one separate evidence-only packet. That packet produced one successful local
-`openai/gpt-4o` binding call, HTTP 200, one fetch entry, and zero retries; the
-reviewer accepted only the sanitized receipt. No full-route/release proof,
-additional provider call, implementation, persistence, vector/RAG, non-public
-grant, public-sync, deployment, production readiness, or later roadmap
-continuation is authorized.
+The later D1 DESIGN and B2 BUILD were independently accepted. Separate exact
+operator tokens then opened one provider-binding proof and one signed
+synthetic-public full-route proof. The latter produced route HTTP 200,
+provider HTTP 200, `ANSWER_EMITTED`, `PUBLIC_ONLY`, one route invocation, one
+provider call, zero retries, and all required audit correlations; the reviewer
+accepted only sanitized metadata. No retry, release/hosted proof, additional
+provider call, implementation, persistence, vector/RAG, non-public grant,
+public-sync, deployment, production readiness, or later roadmap continuation
+is authorized.
 
 ## Work Plan
 
@@ -431,7 +435,7 @@ continuation is authorized.
 ## Machine Closure Package
 
 N/A with reason: this roadmap's top status is
-`LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ACCEPTED_BOUNDED_NO_RELEASE_OR_CONTINUATION`,
+`LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ACCEPTED_BOUNDED_NO_RELEASE_OR_CONTINUATION`,
 an accepted bounded continuation state rather than a closed-equivalent token.
 Intake closure remains recorded in the R3 completion; D1 and B2 acceptance are
 recorded in their separate completion reviews.

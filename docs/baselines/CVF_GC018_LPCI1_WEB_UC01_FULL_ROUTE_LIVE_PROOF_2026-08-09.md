@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED
 
 Batch ID: LPCI1-WEB-UC01-ROUTE-LIVE
 
@@ -156,6 +156,45 @@ Evidence must record route/provider call counts, retry count, HTTP/outcome,
 route governance decision/auth mode/risk class, public-only authorization,
 evidence outcome, audit correlation, matched-source count, latency, and answer
 length/digest only. Failure requires the full secret-safe diagnostic object.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| authorization | exact full-route-proof-only token | exact token | PASS |
+| route/provider attempts | one / one maximum | 1 / 1 | PASS |
+| retries | zero | 0 | PASS |
+| route/provider HTTP | successful bounded result | 200 / 200 | PASS |
+| result | public evidence answer emitted | `ANSWER_EMITTED`; `PUBLIC_ONLY` | PASS |
+| route proof | signed allowed R2 service-token request | `ALLOW`; `service_token`; `R2` | PASS |
+| audit correlation | all required correlations true | all true; matched source count 1 | PASS |
+| persistence boundary | sanitized metadata only | length/digest only; no secret/body/query/answer | PASS |
+| worker commit | forbidden | HEAD unchanged; staging empty | PASS |
+
+## Closure Checklist
+
+- [x] Exact operator authority and accepted prerequisites verified.
+- [x] Pre-implementation passed before credential load and network action.
+- [x] Exactly one route and provider attempt with zero retries verified.
+- [x] Receipt and worker return independently reviewed.
+- [x] Secret and raw-content persistence boundaries verified.
+- [x] Focused tests and reviewer gates passed.
+- [x] Broader release, deployment, public, and continuation lanes remain parked.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired work order | `CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_COMPLETION_2026-08-09.md` | reviewer token and bounded disposition | PASS |
+| Worker return | named worker return | `COMPLETE_PENDING_REVIEW`; accepted by completion | PASS |
+| Evidence JSON | named receipt | route 1; provider 1; retry 0; HTTP 200 | PASS |
+| Roadmap state | LPCI1 roadmap | `LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ACCEPTED_BOUNDED_NO_RELEASE_OR_CONTINUATION` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | existing corpus owner; no registry mutation | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing lookup guidance; no registry mutation | PASS |
+| External evidence digest | sanitized JSON receipt | sha256 `0298701A1332BDC2C5A88702F92425F8FB97DEF18B9F70F9CD5E99B5358E3634` | PASS |
+| System loop interlock | binding proof -> full-route proof -> stop | broader lanes parked | PASS |
+| Session continuity | protected session state and handoff | separate sync after material commit | N/A with reason |
 
 ## Public Export Disposition
 

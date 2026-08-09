@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED
 
 Batch ID: LPCI1-WEB-UC01-ROUTE-LIVE
 
@@ -491,16 +491,30 @@ allowed route/provider attempt, return classified evidence and never retry.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: DISPATCHED` | OPEN |
-| Worker return | named path | terminal worker token | OPEN |
-| Evidence JSON | named path | sanitized route receipt | OPEN |
-| Completion or reviewer artifact | reviewer-owned completion | independent disposition | OPEN |
-| Roadmap state | LPCI1 roadmap | reviewer updates only if warranted | OPEN |
-| Registry JSON | N/A with reason: no registry mutation authorized | checker evidence only | N/A with reason |
-| Registry Markdown | N/A with reason: no registry mutation authorized | reviewer confirms | N/A with reason |
-| External evidence digest | pending sanitized receipt | reviewer computes if accepted | OPEN |
-| System loop interlock | provider-binding proof -> full-route proof -> stop | pending | OPEN |
-| Session continuity | protected reviewer update | follows material closure | OPEN |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED` | PASS |
+| Worker return | named path | `COMPLETE_PENDING_REVIEW`; accepted by completion | PASS |
+| Evidence JSON | named path | route 1; provider 1; retry 0; HTTP 200 | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_COMPLETION_2026-08-09.md` | independent bounded acceptance | PASS |
+| Roadmap state | LPCI1 roadmap | `LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ACCEPTED_BOUNDED_NO_RELEASE_OR_CONTINUATION` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | existing corpus owner; no registry mutation | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing lookup guidance; no registry mutation | PASS |
+| External evidence digest | sanitized JSON receipt | sha256 `0298701A1332BDC2C5A88702F92425F8FB97DEF18B9F70F9CD5E99B5358E3634` | PASS |
+| System loop interlock | provider-binding proof -> full-route proof -> stop | broader lanes parked | PASS |
+| Session continuity | protected reviewer update | separate sync after material closure | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| authorization | exact full-route-proof-only token | exact token | PASS |
+| route/provider attempts | one / one maximum | 1 / 1 | PASS |
+| retries | zero | 0 | PASS |
+| route/provider HTTP | successful bounded result | 200 / 200 | PASS |
+| result | public evidence answer emitted | `ANSWER_EMITTED`; `PUBLIC_ONLY` | PASS |
+| route proof | signed allowed R2 service-token request | `ALLOW`; `service_token`; `R2` | PASS |
+| audit correlation | all required correlations true | all true; matched source count 1 | PASS |
+| persistence boundary | sanitized metadata only | length/digest only; no secret/body/query/answer | PASS |
+| worker commit | forbidden | HEAD unchanged; staging empty | PASS |
 
 ## Public Export Disposition
 
