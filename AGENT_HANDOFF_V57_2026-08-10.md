@@ -8,36 +8,42 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `944fdfc56 docs(lpci): close UC-01 readiness discovery`
-- Active mode: `lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`
+- Latest material commit: `9c3308bf8 docs(lpci): dispatch UC-01 release hardening design spec`
+- Active mode: `lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless
-operator separately authorizes UC-01 release-hardening DESIGN/SPEC only;
-parked checkpoint=remediation, BUILD, mutation, secret/private access,
+Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=delegate one
+no-commit worker for exactly the authorized DESIGN, SPEC, and worker return;
+parked checkpoint=BUILD, mutation, secret/private access,
 browser/server/provider/network/live, hosted execution, deployment, rollback,
 public sync, push, production, and readiness claims remain unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`
+`lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`
 
 ## Purpose
 
-Preserve the independently accepted UC-01 readiness-gap discovery and its
-fresh DESIGN/SPEC-only operator checkpoint without releasing implementation.
+Route the authorized UC-01 release-hardening DESIGN/SPEC packet to one
+no-commit worker while keeping implementation and operations parked.
 
 ## Scope / Target / Owner Boundary
 
-The paired packet, worker outputs, roadmap update, and reviewer completion are
-closed at material commit `944fdfc56`. Only protected continuity sync remains.
+The dispatch packet is committed at `9c3308bf8`. Worker outputs and reviewer
+acceptance do not yet exist.
 
 ## Latest Work / Changes
+
+- Operator approved the immediately preceding exact DESIGN/SPEC-only proposal.
+- GC-018 and source-verified work order passed pre-dispatch and were committed
+  at `9c3308bf8`.
+- Worker owns exactly one design audit, one normative spec, and one return under
+  `WORKER_MUST_NOT_COMMIT`; primary retains review, commit, and continuity.
 
 - Reviewer accepted `UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION`.
 - Matrix: route authorization PRESENT; three PARTIAL; three GAP; public export
@@ -94,6 +100,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01ReleaseHardeningDesignSpecDispatch20260810.json`
 - `CVF_SESSION/state/entries/lpci1WebUc02ReopenDiscoveryDispatch20260810.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
@@ -290,6 +297,48 @@ token. Rollback boundary: revert only this seven-path sync if dispatch commit
 | Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - UC-01 Hardening Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize only active V57, front door,
+bootstrap, generated active state, state core, next move, and one new dispatch
+entry to material dispatch `9c3308bf8`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01ReleaseHardeningDesignSpecDispatch20260810.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authority is the recorded DESIGN/SPEC-only approval. Rollback boundary:
+revert only this seven-path sync if dispatch `9c3308bf8` is reverted.
+
+## Agent Operation Trace Block - UC-01 Hardening Dispatch Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-hardening-dispatch-sync-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | protected source edits, generator, governance gates, Git |
+| Target paths | exact seven-path protected continuity manifest |
+| Allowed scope source | operator DESIGN/SPEC-only approval and dispatch `9c3308bf8` |
+| Before status evidence | clean material HEAD `9c3308bf8`; mode still parked before authority |
+| After status evidence | mode routes exactly one no-commit documentation worker |
+| Diff evidence | protected manifest and generated-state drift check |
+| Approval boundary | dispatch continuity only |
+| Claim boundary | no worker output, acceptance, BUILD, secret/live/deploy/public action |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-hardening-dispatch-sync-2026-08-10` |
+| Expected manifest | active handoff, front door, bootstrap, aggregate, core, next move, dispatch entry |
+| Actual changed set | same seven paths after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
 
 ## Core Guard Self-Protection Authorization - UC-02 Final Closure Sync
 
