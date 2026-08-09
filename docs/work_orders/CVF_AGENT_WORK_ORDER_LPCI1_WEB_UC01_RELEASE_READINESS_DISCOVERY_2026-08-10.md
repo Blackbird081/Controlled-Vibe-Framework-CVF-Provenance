@@ -2,15 +2,15 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED_READINESS_GAPS_REQUIRE_REMEDIATION
 
 Batch ID: LPCI1-WEB-UC01-RELEASE-READINESS-DISCOVERY
 
 dispatchBaseHead: `d309a60c5`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `332962e4a`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `332962e4a`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -212,7 +212,7 @@ Contract source: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | primary dispatcher/reviewer/closer delegates one no-commit discovery worker; primary closer converts accepted return |
 | phase | DISPATCH_AUTHORING; EXECUTION; CLOSURE; SESSION_SYNC |
-| baseHeadFor(phase) | dispatchBaseHead=d309a60c5; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=d309a60c5; executionBaseHead=332962e4a; closureBaseHead=332962e4a |
 | changedSetScope(phase) | worker owns only audit and return; reviewer owns completion/status/roadmap decision; session steward owns protected continuity |
 | traceScope(phase, actor) | every actor records phase-local AOT and exact manifest |
 | commitOwner(phase) | worker commit forbidden; reviewer owns material commit; session steward owns separate sync |
@@ -459,13 +459,41 @@ all commits and continuity changes.
 
 ## Closure Checklist
 
-- [ ] Worker outputs reviewed against current source.
-- [ ] One disposition and eight dimensions independently verified.
-- [ ] Generic-owner versus direct-binding distinction preserved.
-- [ ] Exact manifest and empty staging verified.
-- [ ] Reviewer commit steward and material-range pre-closure passed.
-- [ ] Session continuity synchronized separately after acceptance.
-- [ ] Public export remains deferred private-only.
+- [x] Worker outputs reviewed against current source.
+- [x] One disposition and eight dimensions independently verified.
+- [x] Generic-owner versus direct-binding distinction preserved.
+- [x] Exact manifest and empty staging verified.
+- [x] Reviewer commit steward and material-range pre-closure required.
+- [x] Session continuity reserved for a separate accepted-closure sync.
+- [x] Public export remains deferred private-only.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| one canonical discovery disposition | `UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION` | PASS |
+| route authorization | PRESENT | PASS |
+| auth/RBAC, secret/config, health/failure | PARTIAL | PASS |
+| rate limits, audit/observability, deploy/rollback | GAP | PASS |
+| public export | NOT_APPLICABLE and `DEFERRED_PRIVATE_ONLY` | PASS |
+| minimum safe next tranche | `UC01_RELEASE_HARDENING_DESIGN_SPEC_ONLY` | PASS |
+| worker commit | forbidden; HEAD unchanged and staging empty | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED_READINESS_GAPS_REQUIRE_REMEDIATION` | PASS |
+| Completion review | `docs/reviews/CVF_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_COMPLETION_2026-08-10.md` | independent bounded acceptance | PASS |
+| Completion or reviewer artifact | same completion review | `Status: CLOSED_PASS_BOUNDED_READINESS_GAPS_REQUIRE_REMEDIATION` | PASS |
+| Worker return | named return | `COMPLETE_PENDING_REVIEW`; accepted by completion | PASS |
+| Discovery audit | named audit | eight-dimension matrix and canonical disposition | PASS |
+| Roadmap state | LPCI use-case roadmap | gaps parked pending fresh design/spec authority | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no registry mutation | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence used | N/A with reason |
+| System loop interlock | discovery -> gaps -> checkpoint | no BUILD/deploy release | PASS |
+| Session continuity | active V57 and generated state | separate sync after material commit | N/A with reason |
 
 ## Return-To-Orchestrator Conditions
 

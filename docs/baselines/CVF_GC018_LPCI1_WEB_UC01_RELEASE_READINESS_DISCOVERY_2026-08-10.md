@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED_READINESS_GAPS_REQUIRE_REMEDIATION
 
 Batch ID: LPCI1-WEB-UC01-RELEASE-READINESS-DISCOVERY
 
@@ -154,6 +154,16 @@ execution, public sync, push, stage, or worker commit.
 - Exactly one discovery disposition and one minimum safe next tranche are named.
 - Worker creates exactly two uncommitted outputs and leaves staging empty.
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| one canonical discovery disposition | `UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION` | PASS |
+| eight dimensions | 1 PRESENT, 3 PARTIAL, 3 GAP, 1 NOT_APPLICABLE | PASS |
+| generic owner versus direct route binding | separated in audit matrix and negative searches | PASS |
+| minimum safe next tranche | `UC01_RELEASE_HARDENING_DESIGN_SPEC_ONLY` | PASS |
+| forbidden actions | none occurred | PASS |
+
 ## Evidence / Verification
 
 Dispatch evidence is the direct Source Verification table, bounded negative
@@ -163,6 +173,22 @@ matrix, exact search commands, final worker-return fast gate, file-size check,
 aggregate drift check, diff hygiene, exact manifest, empty staging, and
 unchanged HEAD. No runtime, provider, hosted, deployment, or cloud receipt is
 expected or authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired work order | `CLOSED_PASS_BOUNDED_READINESS_GAPS_REQUIRE_REMEDIATION` | PASS |
+| Completion review | `docs/reviews/CVF_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_COMPLETION_2026-08-10.md` | independent bounded acceptance | PASS |
+| Completion or reviewer artifact | same completion review | `Status: CLOSED_PASS_BOUNDED_READINESS_GAPS_REQUIRE_REMEDIATION` | PASS |
+| Worker return | named return | `COMPLETE_PENDING_REVIEW`; accepted by completion | PASS |
+| Discovery audit | named audit | canonical gaps disposition and eight statuses | PASS |
+| Roadmap state | LPCI use-case roadmap | readiness gaps parked pending fresh design/spec authority | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no registry mutation | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence used | N/A with reason |
+| System loop interlock | discovery -> gaps -> design/spec checkpoint | no BUILD or deploy release | PASS |
+| Session continuity | active V57 and generated state | separate sync after material commit | N/A with reason |
 
 ## Public Export Disposition
 

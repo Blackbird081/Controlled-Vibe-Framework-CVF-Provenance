@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_UC02_REOPEN_DISCOVERY_NOT_MET_PARKED_NO_CONTINUATION
+Status: LPCI1_WEB_UC01_RELEASE_READINESS_GAPS_PARKED_PENDING_FRESH_DESIGN_SPEC_AUTHORITY
 
 docType: roadmap
 
@@ -317,6 +317,15 @@ consumer, no real UC-02 route-compatible public index, and no corresponding
 consumer-to-corpus-to-route binding. UC-02 remains parked; discovery creates no
 DESIGN, BUILD, mutation, or live authority.
 
+The separately authorized UC-01 release-readiness discovery is independently
+accepted as `UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION`. Route
+authorization is PRESENT; auth/RBAC, secret/config, and health/failure are
+PARTIAL; rate limits/quotas, durable audit/observability, and deploy/rollback
+are GAP; public export is NOT_APPLICABLE and `DEFERRED_PRIVATE_ONLY`. The lane
+is parked pending fresh authority for
+`UC01_RELEASE_HARDENING_DESIGN_SPEC_ONLY`; discovery grants no remediation,
+BUILD, hosted action, deployment, production, or public authority.
+
 ## Explicit Parked Lanes
 
 - `UC-02`: `PARKED_REOPEN_CONDITION_NOT_MET` - accepted discovery found A/B/C
@@ -334,6 +343,10 @@ DESIGN, BUILD, mutation, or live authority.
   caller exists.
 - `UC-06`: `REJECT_DUPLICATE_OWNER` - the existing route already owns this
   responsibility.
+- `UC-01 release readiness`: `GAPS_REQUIRE_REMEDIATION` - direct operational
+  gaps remain in route rate limiting, durable minimized audit/telemetry, role
+  policy, timeout/health coverage, and deploy/rollback controls. Only a fresh
+  documentation-only design/spec packet may continue this lane.
 - DESIGN and BUILD were opened by later operator GC-018 packets and are
   independently accepted; this roadmap did not itself grant them. SPEC,
   provider/live, persistence, vector/RAG, non-public grants, public-sync,
@@ -352,6 +365,7 @@ DESIGN, BUILD, mutation, or live authority.
 | `UC-01` (BUILD eligibility) | SATISFIED: B2 implemented and independently accepted the source-verified Model Gateway/cvf-web binding with deterministic network-free proof |
 | `UC-01` (provider-binding live-proof eligibility) | SATISFIED_AND_CONSUMED: exact operator token released one binding attempt; reviewer accepted its sanitized receipt. |
 | `UC-01` (full-route live-proof eligibility) | SATISFIED_AND_CONSUMED: exact full-route token released one signed synthetic-public attempt; reviewer accepted route 1/provider 1/retry 0 and the sanitized correlated receipt. No retry, release, production, deployment, public, or later-lane authority follows. |
+| `UC-01` (release-hardening eligibility) | DISCOVERY_SATISFIED_AND_CONSUMED: accepted discovery identified operational gaps. Reopen only with fresh authority for documentation-only design/spec defining source-verified ownership and acceptance contracts before BUILD. |
 
 ## Acceptance Case Planning For A Future Tranche (Not Executed)
 
@@ -442,7 +456,7 @@ is authorized.
 ## Machine Closure Package
 
 N/A with reason: this roadmap's top status is
-`LPCI1_WEB_UC02_REOPEN_DISCOVERY_NOT_MET_PARKED_NO_CONTINUATION`,
+`LPCI1_WEB_UC01_RELEASE_READINESS_GAPS_PARKED_PENDING_FRESH_DESIGN_SPEC_AUTHORITY`,
 an accepted bounded continuation state rather than a closed-equivalent token.
 Intake closure remains recorded in the R3 completion; D1 and B2 acceptance are
 recorded in their separate completion reviews.
