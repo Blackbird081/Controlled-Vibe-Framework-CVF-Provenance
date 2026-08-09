@@ -1,0 +1,21 @@
+{
+  "stateOrder": 2020,
+  "stateKey": "lpci1WebUc02ReopenDiscoveryClosure20260810",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_DISCOVERY_NOT_MET",
+    "date": "2026-08-10",
+    "batchId": "LPCI1-WEB-UC02-REOPEN-DISCOVERY",
+    "authorityToken": "AUTHORIZE_LPCI1_WEB_UC02_REOPEN_DISCOVERY_ONLY",
+    "executionBaseHead": "da0d139cb",
+    "materialCommit": "729452197",
+    "completionReview": "docs/reviews/CVF_LPCI1_WEB_UC02_REOPEN_DISCOVERY_COMPLETION_2026-08-10.md",
+    "disposition": "UC02_REOPEN_CONDITION_NOT_MET",
+    "conditionA": "NOT_MET",
+    "conditionB": "NOT_MET",
+    "conditionC": "NOT_MET",
+    "preClosureEvidence": "PASS_75_OF_75",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Stop and keep UC-02 value-parked until current governed source plausibly changes at least one condition; all three conditions and fresh authority remain required before reopening.",
+    "claimBoundary": "Discovery closure only; no DESIGN, BUILD, consumer/corpus/index/registry/source/runtime mutation, private-data/credential access, provider/live, deploy, public-sync, push, or continuation."
+  }
+}

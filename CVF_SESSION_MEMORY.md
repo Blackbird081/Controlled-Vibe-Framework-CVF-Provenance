@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=delegated worker executes the two-output UC-02 discovery packet; parked checkpoint=DESIGN, BUILD, consumer/corpus/index/registry/source/runtime mutation, private-data/credential access, provider/live, deployment, public-sync, and worker commit remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop and keep UC-02 value-parked until current source plausibly changes a named reopen fact; parked checkpoint=DESIGN, BUILD, consumer/corpus/index/registry/source/runtime mutation, private-data/credential access, provider/live, deployment, public-sync, push, and continuation remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
+Current mode marker: `lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation`
 
-Current mode: `lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
+Current mode: `lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation`
 
-`lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
+`lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation`
 
 Previous mode:
 
-`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
+`lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -80,7 +80,7 @@ are now assigned to the no-commit worker.
 ## Latest Material Work
 | Work | Commit | Disposition |
 |---|---|---|
-| LPCI1-WEB UC-02 reopen discovery dispatch | `e22c5d1bc` | `DISPATCHED`; exact two-output no-commit current-source audit of named consumer, route-compatible public index, and consumer-route binding; pre-dispatch 75/75; no implementation or live authority. |
+| LPCI1-WEB UC-02 reopen discovery closure | `729452197` | `CLOSED_PASS_BOUNDED_DISCOVERY_NOT_MET`; A/B/C each `NOT_MET`; lane remains value-parked; material-range pre-closure 75/75; no implementation, private-data, live, deploy, public-sync, push, or continuation authority. |
 | LPCI1-WEB UC-01 full-route live proof | `b3f405b91` | `CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED`; one signed synthetic-public route invocation, one provider call, zero retries, route/provider HTTP 200, `ANSWER_EMITTED`, `PUBLIC_ONLY`, required audit correlations true; pre-closure 75/75; no retry, hosted/release, public, deployment, production, or continuation authority. |
 | LPCI1-WEB-B1 and BR1 bounded closure | `ab74e14a5` | `CLOSED_PASS_BOUNDED`; implementation/closure material `db580830f`; B1 and BR1 completion reviews accepted; LPCI 7 files/99 tests and execute 3 files/5 tests PASS; full non-live 304 files with 3397 passed/2 skipped; zero provider/live calls; current system-chain freshness and as-built catalog checks both `CURRENT` with 0 violations. |
 | LPCI1-WEB-S1 conformance SPEC closure | `3733cedd0` | `CLOSED_PASS_BOUNDED`; independent semantic FINAL PASS after consolidated repairs; roadmap exits `HOLD_BEFORE_BUILD`; no runtime/test/provider/live proof. |
@@ -402,22 +402,24 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
+Mode: `lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
 The public-safe checker/test subset and authorization receipt are exported at
 public commit `2103a38f`; private intake artifacts remain provenance-only.
 UC-01 remains independently closed bounded at material commit `b3f405b91`.
-Exact operator token `AUTHORIZE_LPCI1_WEB_UC02_REOPEN_DISCOVERY_ONLY` released
-one documentation-only worker at dispatch commit `e22c5d1bc`. The next allowed
-move is execution of the paired three-condition source-discovery work order,
-creating exactly the audit and worker return without commit. DESIGN, BUILD,
-consumer/corpus/index/registry/source/runtime mutation, private-data or
-credential access, provider/live, deploy, public sync, and later roadmap work
-remain unauthorized.
+UC-02 reopen discovery is independently closed at material commit `729452197`
+with disposition `UC02_REOPEN_CONDITION_NOT_MET`: named real consumer,
+compatible current public index, and direct consumer-route binding are each
+`NOT_MET`. Stop and keep the lane value-parked. Do not rerun discovery until
+current governed source plausibly changes at least one named fact; reopening
+still requires all three facts simultaneously, fresh operator authority, and a
+fresh governed packet. DESIGN, BUILD, consumer/corpus/index/registry/source/
+runtime mutation, private-data or credential access, provider/live, deploy,
+public sync, push, and continuation remain unauthorized.
 Current mode:
-`lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`.
+`lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen

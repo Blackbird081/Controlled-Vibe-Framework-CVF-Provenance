@@ -8,51 +8,51 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `e22c5d1bc docs(dispatch): authorize LPCI UC-02 reopen discovery`
-- Active mode: `lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
+- Latest material commit: `729452197 docs(lpci): close UC-02 reopen discovery`
+- Active mode: `lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=delegated
-worker executes the exact two-output UC-02 discovery packet; parked
-checkpoint=DESIGN, BUILD, consumer/corpus/index/registry/source/runtime
-mutation, private-data/credential access, provider/live, deploy, public sync,
-and worker commit remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop and
+retain the UC-02 lane as value-parked until current source plausibly changes a
+named reopen fact; parked checkpoint=DESIGN, BUILD, consumer/corpus/index/
+registry/source/runtime mutation, private-data/credential access,
+provider/live, deploy, public sync, push, and continuation remain unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
+`lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation`
 
 ## Purpose
 
-Route the operator-authorized current-source audit of the three UC-02 reopen
-conditions to one no-commit worker and preserve independent reviewer closure.
+Preserve the independently accepted UC-02 discovery result: all three reopen
+conditions are not met, so the lane remains value-parked with no continuation.
 
 ## Scope / Target / Owner Boundary
 
-Target is the paired UC-02 discovery packet and exactly two worker outputs.
-The worker owns the audit and return only; the primary reviewer owns acceptance,
-material commit, roadmap disposition, and closure; the session-sync steward
-owns protected continuity. No implementation owner is released.
+Target was the paired UC-02 discovery packet, two worker outputs, and independent
+reviewer closure. Material closure is complete at `729452197`; only protected
+continuity synchronization remains. No implementation owner is released.
 
 ## Latest Work / Changes
 
-- Dispatch packet committed at `e22c5d1bc` after pre-dispatch 75/75 and
-  pre-commit 83/83.
-- V56 rotated intact to the archive at 866 lines; compact V57 becomes active.
-- No worker result, source/runtime mutation, provider/live action, or public
-  export has occurred.
+- Discovery closure committed at `729452197` with disposition
+  `UC02_REOPEN_CONDITION_NOT_MET` after independent review.
+- Conditions A, B, and C are each `NOT_MET`; material-range pre-closure passed
+  75/75 after the dedicated continuity anchor.
+- No source/runtime mutation, private/credential access, provider/live action,
+  public export, deploy, or push occurred.
 
 ## Active Boundary
 
-The discovery may inspect current governed source and create exactly the audit
-and worker return. It may conclude that the condition remains unmet. It must
-not create a consumer, index, registry entry, binding, design, implementation,
-provider proof, deployment, or public artifact.
+UC-02 is value-parked. Do not repeat discovery until current governed source
+plausibly changes at least one named fact. Reopen still requires a named real
+consumer, a compatible current public index, and a direct consumer-route
+binding simultaneously, plus fresh operator authority and a fresh packet.
 
 ## Canonical Packet
 
@@ -64,10 +64,10 @@ provider proof, deployment, or public artifact.
 
 ## Next Allowed Move
 
-Delegated worker executes the source-discovery work order from this clean
-session-sync base, runs pre-implementation before writing, creates exactly two
-uncommitted review outputs, and returns `COMPLETE_PENDING_REVIEW` or
-`BLOCKED_WITH_REASON`. The primary agent then reviews independently.
+Stop. Do not rerun UC-02 discovery until current governed source plausibly
+changes at least one of conditions A, B, or C. Any reopen, DESIGN, BUILD,
+mutation, provider/live proof, deploy, public sync, or push requires fresh
+operator authority and its own governed packet.
 
 ## Parked Checkpoints
 
@@ -170,6 +170,50 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Invocation ID | `lpci1-web-uc02-rotation-sync-anchor-2026-08-10` |
 | Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
 | Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - UC-02 Final Closure Sync
+
+Authorized guard-maintenance scope: synchronize only the active handoff,
+front door, bootstrap, generated active state, state core, next move, and one
+new closure entry to material closure `729452197` and the accepted parked mode.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc02ReopenDiscoveryClosure20260810.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization is the exact UC-02 discovery-only token. This sync
+records reviewer closure and does not broaden that authority. Rollback
+boundary: revert only this seven-path continuity commit if material closure
+`729452197` is reverted.
+
+## Agent Operation Trace Block - UC-02 Final Closure Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc02-final-closure-sync-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | session source edits, generated aggregate, governance gates, Git |
+| Target paths | exact seven-path protected continuity manifest |
+| Allowed scope source | reviewer closure `729452197`, dedicated anchor `b1d2039dc`, and GC-020 |
+| Before status evidence | material-range pre-closure PASS 75/75; mode still dispatched pending worker |
+| After status evidence | mode is parked no continuation; all next-move surfaces require the three-condition reopen discipline |
+| Diff evidence | exact protected session-sync manifest and generated-state drift check |
+| Approval boundary | closure continuity only |
+| Claim boundary | no source/corpus/runtime mutation, private/credential read, provider/live, public, deploy, push, or production claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc02-final-closure-sync-2026-08-10` |
+| Expected manifest | active handoff, front door, bootstrap, aggregate, core, next move, new closure entry |
+| Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
