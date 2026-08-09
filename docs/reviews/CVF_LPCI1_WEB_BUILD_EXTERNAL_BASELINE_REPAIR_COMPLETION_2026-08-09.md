@@ -197,6 +197,15 @@ the observed pattern. No new repeated ADIF defect is established here.
 | crossBatchIsolation | implementation diff preserved byte-for-byte during closure documentation authoring |
 | nextMoveSurfaces | separate session-sync after accepted material commit |
 
+## Checker Source Read-Ahead Block
+
+| Field | Evidence |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_closure_packaging_preflight.py`; `governance/compat/check_machine_closure_package.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_file_size.py` |
+| literalTokensReviewed | `CLOSED_PASS_BOUNDED`; `CLAIM_REJECTED_NO_RECEIPT`; `ACTION_EVIDENCE_PRESENT`; `Machine Closure Package`; `Public Export Disposition`; `DEFERRED_PRIVATE_ONLY`; AOT field labels |
+| gateRunPurpose | confirmation and evidence after reviewer closure authoring; not first discovery of checker requirements |
+| claimBoundary | bounded BR1 local repair closure only; checker compliance is not provider/live, public, release, deployment, or readiness proof |
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -226,8 +235,8 @@ the observed pattern. No new repeated ADIF defect is established here.
 |---|---|
 | claimScope | bounded BR1 repair closure and integrated deterministic B1 evidence |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
-| receiptEvidence | local command and Git receipts only; no live receipt |
-| actionEvidence | committed BR1 diff and combined deterministic validation present |
+| receiptEvidence | `CLAIM_REJECTED_NO_RECEIPT`: synthetic local tests and Git evidence are not a CVF live receipt |
+| actionEvidence | `ACTION_EVIDENCE_PRESENT`: committed BR1 edits and deterministic local tests are recorded |
 | invocationBoundary | repository-local tests/checks only |
 | interceptionBoundary | no provider or live interception claim |
 | claimLanguage | exact BR1 repair is independently accepted for bounded B1 integration |

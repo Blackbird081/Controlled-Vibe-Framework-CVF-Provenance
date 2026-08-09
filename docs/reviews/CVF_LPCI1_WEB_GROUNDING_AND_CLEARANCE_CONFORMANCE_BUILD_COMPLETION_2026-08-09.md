@@ -232,6 +232,15 @@ defect is established by this closure.
 | crossBatchIsolation | BR1 committed repair is dependency evidence; B1 working diff remains exact |
 | nextMoveSurfaces | separate session-sync after accepted material commit |
 
+## Checker Source Read-Ahead Block
+
+| Field | Evidence |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_closure_packaging_preflight.py`; `governance/compat/check_machine_closure_package.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_file_size.py` |
+| literalTokensReviewed | `CLOSED_PASS_BOUNDED`; `CLAIM_REJECTED_NO_RECEIPT`; `ACTION_EVIDENCE_PRESENT`; `Machine Closure Package`; `Public Export Disposition`; `DEFERRED_PRIVATE_ONLY`; AOT field labels |
+| gateRunPurpose | confirmation and evidence after reviewer closure authoring; not first discovery of checker requirements |
+| claimBoundary | bounded B1 deterministic local conformance closure only; checker compliance is not provider/live, public, release, deployment, or readiness proof |
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -261,8 +270,8 @@ defect is established by this closure.
 |---|---|
 | claimScope | bounded LPCI1-Web S1 conformance implementation and deterministic local evidence |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
-| receiptEvidence | synthetic local test receipts only; no live receipt |
-| actionEvidence | exact source/test diff and combined validation present |
+| receiptEvidence | `CLAIM_REJECTED_NO_RECEIPT`: synthetic local tests are not a CVF live receipt |
+| actionEvidence | `ACTION_EVIDENCE_PRESENT`: exact local source/test edits and combined deterministic validation are recorded |
 | invocationBoundary | package-local tests and checks only |
 | interceptionBoundary | no provider or live interception claim |
 | claimLanguage | accepted public-only conformance implementation at current source state |

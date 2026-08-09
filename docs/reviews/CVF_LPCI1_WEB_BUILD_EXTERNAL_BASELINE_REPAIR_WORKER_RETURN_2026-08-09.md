@@ -223,7 +223,23 @@ COMPLETE_PENDING_REVIEW
 
 ## Corpus Completeness And Report Integrity
 
-N/A with reason: no corpus was created, consumed, rescanned, or claimed complete by this test/lint repair.
+- Corpus task class: N/A with reason: BR1 is a bounded test/lint repair, not a corpus task.
+- Corpus root: N/A with reason: no corpus root was selected or consumed.
+- Snapshot time: N/A with reason: no corpus snapshot was created.
+- Enumeration command: N/A with reason: no corpus enumeration was applicable.
+- Manifest artifact or inline manifest: N/A with reason: no corpus manifest exists for this repair.
+- Manifest hash: N/A with reason: no corpus manifest was hashed.
+- Processing ledger artifact or inline ledger: N/A with reason: no corpus processing ledger exists.
+- Allowed terminal statuses: READ | SKIPPED_WITH_REASON | DEFERRED | BLOCKED_UNREADABLE
+- Reconciliation: N/A with reason: manifest=N/A; ledger_terminal=N/A; exclusions=0; unresolved=0.
+- Unresolved files: 0
+- Declared exclusions: N/A with reason: no corpus scope was declared.
+- Unreadable or unsupported files: N/A with reason: no corpus files were enumerated.
+- Aggregation check: N/A with reason: no corpus aggregation was produced.
+- Drift check: N/A with reason: no corpus snapshot or aggregate was created.
+- Output traceability: N/A with reason: BR1 output traces only the exact repair manifest and local checks.
+- Adversarial verification: N/A with reason: no corpus completeness claim required adversarial sampling.
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason: no corpus was created, consumed, rescanned, or claimed complete by this test/lint repair.
 
 ## Finding-To-Governance Learning Disposition
 

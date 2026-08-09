@@ -811,7 +811,7 @@ Contract source archive-qualified checker exception:
 |---|---|
 | claimScope | bounded LPCI1-WEB-BR1 accepted repair and reviewer closure |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
-| receiptEvidence | repository-local Git and deterministic command evidence; no live receipt |
+| receiptEvidence | `CLAIM_REJECTED_NO_RECEIPT`: repository-local Git and deterministic commands are not a CVF live receipt |
 | actionEvidence | ACTION_EVIDENCE_PRESENT - ten-file repair and accepted worker return integrated at `5072f553b` |
 | invocationBoundary | repository-local isolated worker and reviewer integration workflow |
 | interceptionBoundary | no provider, browser, live, network, or runtime interception claim |
