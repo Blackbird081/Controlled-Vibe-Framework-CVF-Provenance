@@ -184,3 +184,49 @@ only this handoff-only anchor if commit `8c810d0e2` is reverted.
 | Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## UC-01 D1 Material Closure Anchor
+
+Latest material commit:
+`2e770480c docs(review): accept LPCI UC-01 provider binding design`.
+
+The accepted DESIGN selects thin LPCI composition over the existing Model
+Gateway, records the atomic three-variable config contract, and holds before
+fresh BUILD-only authority. Provider/live remains a later checkpoint after
+accepted BUILD evidence.
+
+## Core Guard Self-Protection Authorization - D1 Material Closure Anchor
+
+Authorized guard-maintenance scope: update only the active handoff with the
+accepted D1 material HEAD before pre-closure and final session synchronization.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+
+Operator authorization is the committed reviewer closure conversion under the
+existing DESIGN-only authority. Rollback boundary: revert only this handoff-
+only anchor if material commit `2e770480c` is reverted.
+
+## Agent Operation Trace Block - D1 Material Closure Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-d1-material-anchor-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | active-state compatibility diagnosis, handoff-only patch, gates, and Git commit |
+| Target paths | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Allowed scope source | reviewer-owned GC-020 continuity after material closure `2e770480c` |
+| Before status evidence | clean HEAD `2e770480c`; material closure hook passed 83 of 83 |
+| After status evidence | active handoff contains the exact current material HEAD |
+| Diff evidence | exact one-path handoff diff and compatibility gate |
+| Approval boundary | handoff continuity repair only |
+| Claim boundary | no BUILD, runtime/test/config/package mutation, provider/live, public-sync, deployment, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-d1-material-anchor-2026-08-09` |
+| Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
