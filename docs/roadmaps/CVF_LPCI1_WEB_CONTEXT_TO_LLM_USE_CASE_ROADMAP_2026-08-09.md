@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_ACCEPTED_HOLD_BEFORE_FRESH_BUILD_AUTHORITY
+Status: LPCI1_WEB_UC01_RELEASE_HARDENING_BUILD_ACCEPTED_HOLD_BEFORE_FRESH_HOSTED_LIVE_DEPLOY_AUTHORITY
 
 docType: roadmap
 
@@ -323,13 +323,15 @@ authorization is PRESENT; auth/RBAC, secret/config, and health/failure are
 PARTIAL; rate limits/quotas, durable audit/observability, and deploy/rollback
 are GAP; public export is NOT_APPLICABLE and `DEFERRED_PRIVATE_ONLY`. The lane
 then received a fresh DESIGN/SPEC-only authority. The release-hardening design
-and normative spec are independently accepted with R1 corrections: route-local
-composition reuses existing owners; the future BUILD manifest has 24 paths;
-static health makes no external-liveness claim; timeout must propagate one
-AbortSignal to the actual fetch; and secret-derived rotation metadata remains
-excluded while opaque non-secret bundle correlation is allowed. A fresh BUILD
-packet is still mandatory. No BUILD, hosted action, deployment, production, or
-public authority follows from design/spec acceptance.
+and normative spec are independently accepted with R1 corrections. A later
+fresh BUILD-only packet implemented and independently proved the exact 24-path
+composition: route policy, atomic config, two quotas, minimized durable audit,
+static health, one AbortSignal reaching the actual fetch, zero automatic retry,
+and the private operations runbook. Deterministic reviewer reruns passed 28/28
+Model Gateway tests and 143/143 cvf-web tests with both typechecks and scoped
+lint. This acceptance proves source/test behavior only. No hosted action,
+external liveness, deployment, rollback execution, production, readiness, or
+public authority follows.
 
 ## Explicit Parked Lanes
 
@@ -348,9 +350,10 @@ public authority follows from design/spec acceptance.
   caller exists.
 - `UC-06`: `REJECT_DUPLICATE_OWNER` - the existing route already owns this
   responsibility.
-- `UC-01 release readiness`: `DESIGN_SPEC_ACCEPTED_HOLD_BEFORE_FRESH_BUILD` -
-  owners and finite acceptance contracts are accepted, but every operational
-  control remains unimplemented and release readiness remains unproven.
+- `UC-01 release readiness`: `BUILD_ACCEPTED_HOLD_BEFORE_FRESH_HOSTED_LIVE_DEPLOY` -
+  deterministic controls are implemented and independently accepted, while
+  hosted configuration/store liveness, deployment, rollback execution,
+  production operation, and release readiness remain unproven.
 - DESIGN and BUILD were opened by later operator GC-018 packets and are
   independently accepted; this roadmap did not itself grant them. SPEC,
   provider/live, persistence, vector/RAG, non-public grants, public-sync,
@@ -369,7 +372,7 @@ public authority follows from design/spec acceptance.
 | `UC-01` (BUILD eligibility) | SATISFIED: B2 implemented and independently accepted the source-verified Model Gateway/cvf-web binding with deterministic network-free proof |
 | `UC-01` (provider-binding live-proof eligibility) | SATISFIED_AND_CONSUMED: exact operator token released one binding attempt; reviewer accepted its sanitized receipt. |
 | `UC-01` (full-route live-proof eligibility) | SATISFIED_AND_CONSUMED: exact full-route token released one signed synthetic-public attempt; reviewer accepted route 1/provider 1/retry 0 and the sanitized correlated receipt. No retry, release, production, deployment, public, or later-lane authority follows. |
-| `UC-01` (release-hardening eligibility) | DESIGN_SPEC_SATISFIED_AND_CONSUMED: accepted design/spec defines source-verified ownership, exact 24-path future BUILD manifest, and deterministic contracts. Continue only with fresh BUILD authority; no hosted/live/deploy authority is inherited. |
+| `UC-01` (release-hardening eligibility) | BUILD_SATISFIED_AND_CONSUMED: accepted design/spec and fresh BUILD authority produced the exact 24-path deterministic implementation and independent review. Continue only with fresh hosted/live/deploy authority; no such authority is inherited. |
 
 ## Acceptance Case Planning For A Future Tranche (Not Executed)
 
@@ -391,7 +394,7 @@ future DESIGN/SPEC tranche must still cover for a context-to-LLM use case.
 
 ## Design Control Gate
 
-Gate status: `DESIGN_ACCEPTED_BOUNDED_NO_BUILD_OR_LIVE_RELEASED`.
+Gate status: `BUILD_ACCEPTED_BOUNDED_NO_HOSTED_LIVE_DEPLOY_RELEASED`.
 
 | Gate question | Current answer | Effect |
 |---|---|---|
@@ -460,10 +463,10 @@ is authorized.
 ## Machine Closure Package
 
 N/A with reason: this roadmap's top status is
-`LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_ACCEPTED_HOLD_BEFORE_FRESH_BUILD_AUTHORITY`,
+`LPCI1_WEB_UC01_RELEASE_HARDENING_BUILD_ACCEPTED_HOLD_BEFORE_FRESH_HOSTED_LIVE_DEPLOY_AUTHORITY`,
 an accepted bounded continuation state rather than a closed-equivalent token.
-Intake closure remains recorded in the R3 completion; D1 and B2 acceptance are
-recorded in their separate completion reviews.
+Intake, D1, B2, and release-hardening BUILD acceptance remain recorded in their
+separate completion reviews.
 
 ## ADIF Defect Registry Disclosure
 

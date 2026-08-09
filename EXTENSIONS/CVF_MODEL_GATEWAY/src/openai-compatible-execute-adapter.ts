@@ -12,6 +12,7 @@ export type OpenAiCompatibleFetch = (
     method: "POST";
     headers: Record<string, string>;
     body: string;
+    signal?: AbortSignal;
   },
 ) => Promise<{
   ok: boolean;
@@ -65,6 +66,7 @@ export function createOpenAiCompatibleExecuteAdapter(
             { role: "user", content: input.prompt },
           ],
         }),
+        signal: input.signal,
       });
       if (!response.ok) {
         throw new Error("OpenAI-compatible provider request failed");

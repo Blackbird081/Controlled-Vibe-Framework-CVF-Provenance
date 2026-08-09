@@ -50,6 +50,29 @@ describe("OpenAI-compatible execute adapter", () => {
     expect(JSON.stringify(result)).not.toContain("fake-test-secret");
   });
 
+  it("forwards the adapter AbortSignal to the actual fetch entry", async () => {
+    const fetchImpl = successFetch();
+    const adapter = createOpenAiCompatibleExecuteAdapter({
+      providerId: "openai",
+      modelId: "gpt-4o",
+      endpoint: "https://api.openai.com/v1/chat/completions",
+      secret: "fake-test-secret",
+      fetchImpl,
+    });
+    const controller = new AbortController();
+    await adapter.execute({
+      traceId: "trace-signal",
+      providerId: "openai",
+      modelId: "gpt-4o",
+      prompt: "question",
+      signal: controller.signal,
+    });
+    expect(fetchImpl).toHaveBeenCalledWith(
+      "https://api.openai.com/v1/chat/completions",
+      expect.objectContaining({ signal: controller.signal }),
+    );
+  });
+
   it("fails identity mismatch before the injected fetch", async () => {
     const fetchImpl = successFetch();
     const adapter = createOpenAiCompatibleExecuteAdapter({

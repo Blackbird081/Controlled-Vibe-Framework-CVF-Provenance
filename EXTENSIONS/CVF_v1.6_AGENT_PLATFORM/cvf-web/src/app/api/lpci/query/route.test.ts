@@ -4,16 +4,45 @@ import { NextRequest } from 'next/server';
 const fsMocks = vi.hoisted(() => ({ existsSync: vi.fn(), readFileSync: vi.fn() }));
 const verifySessionCookieMock = vi.hoisted(() => vi.fn());
 const executeLpciProviderBindingMock = vi.hoisted(() => vi.fn());
+const appendLpciTerminalAuditMock = vi.hoisted(() => vi.fn());
+const consumeQueryMock = vi.hoisted(() => vi.fn());
+const consumeProviderAttemptMock = vi.hoisted(() => vi.fn());
 
 vi.mock('node:fs', () => ({ ...fsMocks, default: fsMocks }));
 vi.mock('@/lib/middleware-auth', () => ({ verifySessionCookie: verifySessionCookieMock }));
 vi.mock('@/lib/lpci/provider-binding', () => ({
   executeLpciProviderBinding: executeLpciProviderBindingMock,
 }));
+vi.mock('@/lib/lpci/release-audit', () => ({
+  appendLpciTerminalAudit: appendLpciTerminalAuditMock,
+}));
+vi.mock('@/lib/rate-limit', () => ({
+  getRateLimiter: () => ({
+    backendStatus: () => ({
+      schemaVersion: 'cvf.rateLimitBackend.v1', configuredStore: 'redis',
+      activeStore: 'redis', distributed: true, configurationStatus: 'ACTIVE_REDIS_REST',
+      claimBoundary: 'test_static_capability',
+    }),
+    consumeQuery: consumeQueryMock,
+    consumeProviderAttempt: consumeProviderAttemptMock,
+  }),
+}));
+vi.mock('@/lib/control-plane-events', () => ({
+  getControlPlaneEventStoreCapability: () => ({
+    schemaVersion: 'cvf.eventListCapability.v1', adapterType: 'redis',
+    implementationStatus: 'ACTIVE_DISTRIBUTED', distributed: true,
+    atomicAppend: true, retentionSeconds: 2_592_000, livenessChecked: false,
+    claimBoundary: 'test_static_capability',
+  }),
+}));
 
 import { sha256Hex } from '@/lib/lpci/audit-receipt';
 import { serializeExactJson } from '@/lib/lpci/query-conformance';
-import { deriveServiceTokenIdentity } from '@/lib/service-token-auth';
+import {
+  computeServiceRequestSignature,
+  deriveServiceTokenIdentity,
+} from '@/lib/service-token-auth';
+import { digestReleaseIdentity } from '@/lib/lpci/release-policy';
 import { POST } from './route';
 
 const corpusId = 'TEST_CORPUS';
@@ -29,10 +58,21 @@ const baseRecord = (overrides: Record<string, unknown> = {}) => ({
 });
 
 function request(body: unknown) {
+  const bodyText = typeof body === 'string' ? body : JSON.stringify(body);
+  const timestamp = String(Date.now());
   return new NextRequest('http://localhost/api/lpci/query', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'x-cvf-service-token': 'fake-service-token' },
-    body: typeof body === 'string' ? body : JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+      'x-cvf-service-token': 'fake-service-token',
+      'x-cvf-service-timestamp': timestamp,
+      'x-cvf-service-signature': computeServiceRequestSignature(
+        'fake-service-token',
+        timestamp,
+        bodyText,
+      ),
+    },
+    body: bodyText,
   });
 }
 
@@ -68,9 +108,20 @@ describe('POST /api/lpci/query conformance', () => {
     registered = true;
     indexValue = [baseRecord()];
     process.env.CVF_SERVICE_TOKEN = 'fake-service-token';
-    delete process.env.LPCI_LLM_API_KEY;
-    delete process.env.LPCI_LLM_MODEL;
-    delete process.env.LPCI_LLM_ENDPOINT;
+    process.env.LPCI_QUERY_SERVICE_ACTOR_ALLOWLIST = digestReleaseIdentity(
+      'service',
+      deriveServiceTokenIdentity('fake-service-token'),
+    );
+    process.env.LPCI_LLM_CONFIG_BUNDLE_VERSION = 'test-bundle-v1';
+    process.env.LPCI_LLM_API_KEY = 'fake-lpci-test-secret';
+    process.env.LPCI_LLM_MODEL = 'openai/gpt-4o';
+    process.env.LPCI_LLM_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
+    appendLpciTerminalAuditMock.mockReset();
+    appendLpciTerminalAuditMock.mockResolvedValue({ id: 'durable-test-event' });
+    consumeQueryMock.mockReset();
+    consumeQueryMock.mockResolvedValue({ allowed: true, retryAfterSeconds: 0 });
+    consumeProviderAttemptMock.mockReset();
+    consumeProviderAttemptMock.mockResolvedValue({ allowed: true, retryAfterSeconds: 0 });
     executeLpciProviderBindingMock.mockReset();
     executeLpciProviderBindingMock.mockResolvedValue({ outcome: 'NO_PROVIDER_CONFIGURED' });
     verifySessionCookieMock.mockReset();
@@ -92,6 +143,8 @@ describe('POST /api/lpci/query conformance', () => {
     delete process.env.LPCI_LLM_API_KEY;
     delete process.env.LPCI_LLM_MODEL;
     delete process.env.LPCI_LLM_ENDPOINT;
+    delete process.env.LPCI_LLM_CONFIG_BUNDLE_VERSION;
+    delete process.env.LPCI_QUERY_SERVICE_ACTOR_ALLOWLIST;
     delete process.env.CVF_SERVICE_TOKEN;
     vi.unstubAllGlobals();
   });
@@ -268,7 +321,56 @@ describe('POST /api/lpci/query conformance', () => {
     ];
     expect((await post()).data.outcome).toBe('ABSTAINED');
     expect(executeLpciProviderBindingMock).not.toHaveBeenCalled();
+    expect(consumeProviderAttemptMock).not.toHaveBeenCalled();
     expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it('DS-07 denies exhausted query quota before corpus and provider work', async () => {
+    consumeQueryMock.mockResolvedValueOnce({ allowed: false, retryAfterSeconds: 12 });
+    const { response, data } = await post();
+    expect(response.status).toBe(429);
+    expect(data.outcome).toBe('RATE_LIMITED');
+    expect(data.retryAfterSeconds).toBe(12);
+    expect(fsMocks.readFileSync).not.toHaveBeenCalled();
+    expect(consumeProviderAttemptMock).not.toHaveBeenCalled();
+    expect(executeLpciProviderBindingMock).not.toHaveBeenCalled();
+    expect(appendLpciTerminalAuditMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('DS-08 denies exhausted provider quota without entering the binding', async () => {
+    consumeProviderAttemptMock.mockResolvedValueOnce({ allowed: false, retryAfterSeconds: 61 });
+    const { response, data } = await post();
+    expect(response.status).toBe(429);
+    expect(data.outcome).toBe('RATE_LIMITED');
+    expect(executeLpciProviderBindingMock).not.toHaveBeenCalled();
+    expect(appendLpciTerminalAuditMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('DS-02 denies an unregistered service actor before parse and quota', async () => {
+    process.env.LPCI_QUERY_SERVICE_ACTOR_ALLOWLIST = '';
+    const { response, data } = await post();
+    expect(response.status).toBe(403);
+    expect(data.outcome).toBe('SERVICE_IDENTITY_NOT_ALLOWED');
+    expect(consumeQueryMock).not.toHaveBeenCalled();
+    expect(fsMocks.readFileSync).not.toHaveBeenCalled();
+    expect(executeLpciProviderBindingMock).not.toHaveBeenCalled();
+    expect(appendLpciTerminalAuditMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('DS-02 denies an unsigned service actor even in deterministic test mode', async () => {
+    const bodyText = JSON.stringify({ query: 'leave policy', corpusId, filters: {} });
+    const response = await POST(new NextRequest('http://localhost/api/lpci/query', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-cvf-service-token': 'fake-service-token',
+      },
+      body: bodyText,
+    }));
+    expect(response.status).toBe(403);
+    expect((await response.json()).outcome).toBe('SERVICE_IDENTITY_NOT_ALLOWED');
+    expect(consumeQueryMock).not.toHaveBeenCalled();
+    expect(executeLpciProviderBindingMock).not.toHaveBeenCalled();
   });
 
   it('returns minimized no-provider response and audit-path count source', async () => {
@@ -340,6 +442,39 @@ describe('POST /api/lpci/query conformance', () => {
     });
     expect(data.auditReceipt.model_response_hash).toBe(sha256Hex(expected));
     expectAuditedCorrelation(data, 'PROVIDER_FAILED', ['public/leave.pdf']);
+  });
+
+  it('DS-12 maps one provider timeout to a safe 504 without retry', async () => {
+    executeLpciProviderBindingMock.mockResolvedValueOnce({
+      outcome: 'PROVIDER_TIMEOUT', diagnosticCode: 'PROVIDER_TIMEOUT',
+    });
+    const { response, data } = await post();
+    expect(response.status).toBe(504);
+    expect(data.outcome).toBe('PROVIDER_TIMEOUT');
+    expect(data.message).toBe('The answer provider is temporarily unavailable.');
+    expect(executeLpciProviderBindingMock).toHaveBeenCalledTimes(1);
+    expect(appendLpciTerminalAuditMock).toHaveBeenCalledTimes(1);
+    expect(appendLpciTerminalAuditMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        providerAttemptCount: 1, timeoutFlag: true, diagnosticCode: 'PROVIDER_TIMEOUT',
+      }),
+    );
+  });
+
+  it('DS-11 withholds a pending answer when durable append rejects', async () => {
+    executeLpciProviderBindingMock.mockResolvedValueOnce({
+      outcome: 'ANSWER_EMITTED', response: 'Based on retrieved documents only. Pending answer.',
+    });
+    appendLpciTerminalAuditMock.mockRejectedValueOnce(new Error('test append failure'));
+    const { response, data } = await post();
+    expect(response.status).toBe(503);
+    expect(data).toEqual({
+      outcome: 'AUDIT_UNAVAILABLE',
+      message: 'The LPCI audit service is temporarily unavailable.',
+    });
+    expect(JSON.stringify(data)).not.toContain('Pending answer');
+    expect(executeLpciProviderBindingMock).toHaveBeenCalledTimes(1);
+    expect(appendLpciTerminalAuditMock).toHaveBeenCalledTimes(1);
   });
 
   it('enforces exact response allowlists and correlation for every audited variant', async () => {

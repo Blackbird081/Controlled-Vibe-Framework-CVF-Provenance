@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: LPCI1-WEB-UC01-RELEASE-HARDENING-BUILD
 
@@ -287,6 +287,13 @@ static health boundaries, and runbook invariants.
 
 ## Required Artifact Manifest
 
+| Artifact | Path or owner | Required status |
+| --- | --- | --- |
+| Model Gateway timeout seam | paths 21 through 24 below | implemented; exact tests and typecheck pass |
+| cvf-web release composition | paths 1 through 19 below | implemented; exact tests, typecheck, and lint pass |
+| private operations runbook | path 20 below | deterministic lifecycle boundaries recorded |
+| worker return | path 25 below | COMPLETE_PENDING_REVIEW without acceptance claim |
+
 1. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts`
 2. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.test.ts`
 3. `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/provider-binding.ts`
@@ -502,14 +509,14 @@ Chain map: `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTI
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this work order | Status line | DISPATCH_READY |
-| Completion or reviewer artifact | completion path in Reviewer Closure Conversion | reviewer disposition | PENDING_REVIEW |
-| Roadmap state | `docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_2026-08-09.md` | BUILD lifecycle row | PENDING_REVIEW |
-| Registry JSON | N/A with reason: no registry mutation authorized. | drift gate | NOT_APPLICABLE_WITH_REASON |
-| Registry Markdown | N/A with reason: no registry mutation authorized. | corpus registry gate | NOT_APPLICABLE_WITH_REASON |
-| External evidence digest | N/A with reason: no external evidence admitted. | zero external input | NOT_APPLICABLE_WITH_REASON |
-| System loop interlock | accepted design/spec plus deterministic tests | reviewer comparison | PENDING_REVIEW |
-| Session continuity | active state fragments, aggregate, memory, handoff | reviewer-owned sync | PENDING_REVIEW |
+| Work order status | this work order | Status line | PASS |
+| Completion or reviewer artifact | completion path in Reviewer Closure Conversion | reviewer disposition | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_2026-08-09.md` | BUILD lifecycle row | PASS |
+| Registry JSON | corpus registry aggregate | unchanged drift check | PASS |
+| Registry Markdown | registry owner set | unchanged corpus registry gate | PASS |
+| External evidence digest | N/A with reason: no external epistemic evidence admitted. | zero external input | N/A with reason |
+| System loop interlock | accepted design/spec plus deterministic tests | reviewer comparison | PASS |
+| Session continuity | N/A with reason: dedicated GC-020 sync follows the material commit. | separate sync range | N/A with reason |
 
 ## Public Export Disposition
 

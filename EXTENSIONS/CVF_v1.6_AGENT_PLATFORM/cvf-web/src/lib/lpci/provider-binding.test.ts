@@ -10,6 +10,7 @@ import {
 } from 'cvf-model-gateway';
 import {
   executeLpciProviderBinding,
+  LPCI_PROVIDER_ATTEMPT_TIMEOUT_MS,
   resolveLpciProviderBindingConfig,
 } from './provider-binding';
 
@@ -157,7 +158,7 @@ describe('LPCI Model Gateway provider binding', () => {
     }));
     expect(await executeLpciProviderBinding(bindingInput, {
       env: validEnv, bridge: { execute }, traceId: () => 'sp-06',
-    })).toEqual({ outcome: 'PROVIDER_ERROR' });
+    })).toEqual({ outcome: 'PROVIDER_ERROR', diagnosticCode: 'PROVIDER_ERROR' });
   });
 
   it('SP-07 maps bridge credential failure without provider execution detail', async () => {
@@ -171,7 +172,7 @@ describe('LPCI Model Gateway provider binding', () => {
     const result = await executeLpciProviderBinding(bindingInput, {
       env: validEnv, bridge: { execute }, traceId: () => 'sp-07',
     });
-    expect(result).toEqual({ outcome: 'PROVIDER_ERROR' });
+    expect(result).toEqual({ outcome: 'PROVIDER_ERROR', diagnosticCode: 'PROVIDER_ERROR' });
     expect(JSON.stringify(result)).not.toContain('credential detail');
   });
 
@@ -180,7 +181,7 @@ describe('LPCI Model Gateway provider binding', () => {
     const result = await executeLpciProviderBinding(bindingInput, {
       env: validEnv, bridge: { execute }, traceId: () => 'sp-08',
     });
-    expect(result).toEqual({ outcome: 'PROVIDER_ERROR' });
+    expect(result).toEqual({ outcome: 'PROVIDER_ERROR', diagnosticCode: 'PROVIDER_ERROR' });
     expect(JSON.stringify(result)).not.toContain('sensitive provider diagnostic');
   });
 
@@ -195,7 +196,7 @@ describe('LPCI Model Gateway provider binding', () => {
     const execute = vi.fn(async (request: GatewayExecuteRequest) => makeResult(request.traceId));
     expect(await executeLpciProviderBinding(bindingInput, {
       env: validEnv, bridge: { execute }, traceId: () => 'sp-09',
-    })).toEqual({ outcome: 'PROVIDER_ERROR' });
+    })).toEqual({ outcome: 'PROVIDER_ERROR', diagnosticCode: 'EXACT_PAIR_MISMATCH' });
   });
 
   it('SP-11 constrains the request to one provider with exact model and capability', async () => {
@@ -220,6 +221,39 @@ describe('LPCI Model Gateway provider binding', () => {
     expect(request.policy.allowedProviderIds).not.toContain('alibaba');
   });
 
+  it('DS-12 forwards one signal, aborts at the fixed deadline, and does not retry', async () => {
+    const controller = new AbortController();
+    const abortSpy = vi.spyOn(controller, 'abort');
+    const clearTimeoutImpl = vi.fn();
+    const execute = vi.fn(async (
+      request: GatewayExecuteRequest,
+      options?: { signal?: AbortSignal },
+    ) => {
+      expect(options?.signal).toBe(controller.signal);
+      return bridgeResult(request.traceId);
+    });
+    const setTimeoutImpl = vi.fn((callback: () => void, milliseconds: number) => {
+      expect(milliseconds).toBe(LPCI_PROVIDER_ATTEMPT_TIMEOUT_MS);
+      callback();
+      return { callback } as unknown as ReturnType<typeof setTimeout>;
+    });
+    const result = await executeLpciProviderBinding(bindingInput, {
+      env: validEnv,
+      bridge: { execute },
+      traceId: () => 'ds-12',
+      abortController: () => controller,
+      setTimeoutImpl,
+      clearTimeoutImpl,
+    });
+    expect(result).toEqual({
+      outcome: 'PROVIDER_TIMEOUT',
+      diagnosticCode: 'PROVIDER_TIMEOUT',
+    });
+    expect(execute).toHaveBeenCalledTimes(1);
+    expect(abortSpy).toHaveBeenCalledTimes(1);
+    expect(clearTimeoutImpl).toHaveBeenCalledTimes(1);
+  });
+
   it.each([
     ['response provider', { providerId: 'alibaba', modelId: 'gpt-4o' }, 'openai', 'gpt-4o'],
     ['response model', { providerId: 'openai', modelId: 'other' }, 'openai', 'gpt-4o'],
@@ -232,7 +266,7 @@ describe('LPCI Model Gateway provider binding', () => {
     }));
     expect(await executeLpciProviderBinding(bindingInput, {
       env: validEnv, bridge: { execute }, traceId: () => 'sp-12',
-    })).toEqual({ outcome: 'PROVIDER_ERROR' });
+    })).toEqual({ outcome: 'PROVIDER_ERROR', diagnosticCode: 'EXACT_PAIR_MISMATCH' });
   });
 
   it('keeps package and route ownership source-backed', () => {

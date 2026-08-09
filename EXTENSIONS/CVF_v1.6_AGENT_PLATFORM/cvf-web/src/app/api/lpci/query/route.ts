@@ -1,6 +1,8 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { createHash, randomUUID } from 'node:crypto';
 import { NextRequest, NextResponse } from 'next/server';
+import { CredentialBoundary } from 'cvf-model-gateway';
 
 import { buildAuditReceipt } from '@/lib/lpci/audit-receipt';
 import {
@@ -11,6 +13,16 @@ import {
 } from '@/lib/lpci/query-conformance';
 import { runRetrievalPipeline } from '@/lib/lpci/retrieval';
 import { executeLpciProviderBinding } from '@/lib/lpci/provider-binding';
+import {
+  LPCI_RELEASE_POLICY_VERSION,
+  evaluateReleaseRolePolicy,
+  parseLpciServiceActorAllowlist,
+  resolveHostedConfigLifecycle,
+} from '@/lib/lpci/release-policy';
+import { evaluateLpciReleaseHealth } from '@/lib/lpci/release-health';
+import { appendLpciTerminalAudit, type LpciTerminalAuditInput } from '@/lib/lpci/release-audit';
+import { getRateLimiter } from '@/lib/rate-limit';
+import { getControlPlaneEventStoreCapability } from '@/lib/control-plane-events';
 import type {
   AuditReceipt,
   EvidenceOutcome,
@@ -29,6 +41,47 @@ const PROVIDER_ERROR_MESSAGE = 'The answer provider is temporarily unavailable.'
 const INVALID_REQUEST_MESSAGE = 'The LPCI query request is invalid.';
 const AUTHORIZATION_MESSAGE = 'Authorization is required for this LPCI query.';
 const ABSTENTION_TEXT = 'Based on retrieved documents only. This query cannot be answered directly - the source documents require operator escalation or abstention.';
+const RELEASE_ROUTE_VERSION = 'cvf.lpciQueryRoute.releaseHardened.v1' as const;
+const AUDIT_UNAVAILABLE_MESSAGE = 'The LPCI audit service is temporarily unavailable.';
+
+type TerminalAuditContext = Omit<LpciTerminalAuditInput,
+  'outcome' | 'httpStatus' | 'providerAttemptCount' | 'timeoutFlag'> & {
+    providerAttemptCount?: 0 | 1;
+    timeoutFlag?: boolean;
+  };
+
+async function terminalResponse(
+  body: Record<string, unknown>,
+  status: number,
+  context: TerminalAuditContext,
+): Promise<NextResponse> {
+  try {
+    await appendLpciTerminalAudit({
+      ...context,
+      outcome: String(body.outcome ?? 'UNKNOWN'),
+      httpStatus: status,
+      providerAttemptCount: context.providerAttemptCount ?? 0,
+      timeoutFlag: context.timeoutFlag ?? false,
+    });
+  } catch {
+    return NextResponse.json({
+      outcome: 'AUDIT_UNAVAILABLE',
+      message: AUDIT_UNAVAILABLE_MESSAGE,
+    }, { status: 503 });
+  }
+  return NextResponse.json(body, { status });
+}
+
+function corpusRef(corpusId: string): string {
+  return createHash('sha256').update(`cvf:lpci:corpus:v1\0${corpusId}`).digest('hex');
+}
+
+function retryBucket(seconds: number): 'NONE' | 'LT_10S' | 'LT_60S' | 'GE_60S' {
+  if (seconds <= 0) return 'NONE';
+  if (seconds < 10) return 'LT_10S';
+  if (seconds < 60) return 'LT_60S';
+  return 'GE_60S';
+}
 
 function loadCorpusIndexText(corpusId: string): { ok: true; text: string } | { ok: false } {
   const indexPath = join(process.cwd(), '..', '..', '..', 'docs', 'corpus-intelligence', `${corpusId}-index.json`);
@@ -111,6 +164,7 @@ function phase1EvidenceOutcome(receiptType: Phase1NegativeReceipt['receiptType']
 }
 
 export async function POST(request: NextRequest) {
+  const invocationId = randomUUID();
   const bodyText = await request.text();
   const routeAuth = await authorizeRouteGovernanceProof(
     request,
@@ -123,8 +177,49 @@ export async function POST(request: NextRequest) {
       message: AUTHORIZATION_MESSAGE,
       routeGovernanceProof: routeAuth.proof,
     } satisfies LpciQueryResponse;
-    return NextResponse.json(body, { status: 401 });
+    return terminalResponse(body, 401, {
+      invocationId,
+      authMode: 'unknown',
+      roleClass: 'unknown',
+    });
   }
+
+  const roleDecision = routeAuth.proof.authMode === 'session'
+    ? evaluateReleaseRolePolicy({
+        authMode: 'session',
+        actorId: routeAuth.proof.actorId,
+        effectiveRole: routeAuth.session?.role,
+      })
+    : evaluateReleaseRolePolicy({
+        authMode: 'service_token',
+        actorId: routeAuth.proof.serviceSignaturePresented
+          ? routeAuth.proof.actorId
+          : null,
+        purpose: 'lpci-query',
+        allowedActorRefs: parseLpciServiceActorAllowlist(
+          process.env.LPCI_QUERY_SERVICE_ACTOR_ALLOWLIST,
+        ),
+      });
+  if (!roleDecision.allowed) {
+    return terminalResponse({
+      outcome: roleDecision.code,
+      message: AUTHORIZATION_MESSAGE,
+      routeGovernanceProof: routeAuth.proof,
+    }, 403, {
+      invocationId,
+      authMode: routeAuth.proof.authMode === 'session' ? 'session' : 'service',
+      roleClass: 'unknown',
+      diagnosticCode: roleDecision.code,
+    });
+  }
+
+  const baseTerminalContext: TerminalAuditContext = {
+    invocationId,
+    authMode: roleDecision.identityKind,
+    roleClass: roleDecision.roleClass,
+    actorRef: roleDecision.identityHash,
+    latencyBucket: 'LT_1S',
+  };
 
   let rawBody: unknown;
   try {
@@ -135,7 +230,10 @@ export async function POST(request: NextRequest) {
       message: INVALID_REQUEST_MESSAGE,
       routeGovernanceProof: routeAuth.proof,
     } satisfies LpciQueryResponse;
-    return NextResponse.json(body, { status: 400 });
+    return terminalResponse(body, 400, {
+      ...baseTerminalContext,
+      diagnosticCode: 'INVALID_REQUEST',
+    });
   }
   const validated = validateQueryRequest(rawBody);
   if (!validated.ok) {
@@ -144,10 +242,34 @@ export async function POST(request: NextRequest) {
       message: INVALID_REQUEST_MESSAGE,
       routeGovernanceProof: routeAuth.proof,
     } satisfies LpciQueryResponse;
-    return NextResponse.json(body, { status: 400 });
+    return terminalResponse(body, 400, {
+      ...baseTerminalContext,
+      diagnosticCode: 'INVALID_REQUEST',
+    });
   }
 
   const { query, corpusId, effectiveServerFilters } = validated.value;
+  const limiter = getRateLimiter();
+  const queryQuota = await limiter.consumeQuery(
+    roleDecision.identityKind,
+    roleDecision.identityHash,
+  );
+  if (!queryQuota.allowed) {
+    return terminalResponse({
+      outcome: 'RATE_LIMITED',
+      message: 'The LPCI query rate limit has been reached.',
+      retryAfterSeconds: queryQuota.retryAfterSeconds,
+      routeGovernanceProof: routeAuth.proof,
+    }, 429, {
+      ...baseTerminalContext,
+      corpusRef: corpusRef(corpusId),
+      queryQuota: {
+        decision: 'DENY',
+        retryAfterBucket: retryBucket(queryQuota.retryAfterSeconds),
+      },
+      diagnosticCode: 'QUERY_RATE_LIMITED',
+    });
+  }
   const queryTimestamp = new Date().toISOString();
 
   const makeAudit = (input: {
@@ -179,10 +301,17 @@ export async function POST(request: NextRequest) {
       auditId: auditReceipt.auditId, authorizationDecision: AUTHORIZATION_DECISION,
       evidenceOutcome: 'NOT_EVALUATED', auditReceipt, routeGovernanceProof: routeAuth.proof,
     } satisfies LpciQueryResponse;
-    return NextResponse.json(body, { status: 403 });
+    return terminalResponse(body, 403, {
+      ...baseTerminalContext,
+      auditId: auditReceipt.auditId,
+      corpusRef: corpusRef(corpusId),
+      responseBoundaryClass: 'NEGATIVE_RECEIPT',
+      queryQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+      diagnosticCode: 'CORPUS_NOT_REGISTERED',
+    });
   }
 
-  const groundingResponse = (sensitivityApplied: boolean, retrieval?: RetrievalReceipt) => {
+  const groundingResponse = async (sensitivityApplied: boolean, retrieval?: RetrievalReceipt) => {
     const hashPayload = serializeExactJson({
       outcome: 'GROUNDING_EVIDENCE_UNAVAILABLE', query, corpusId,
       authorizationDecision: AUTHORIZATION_DECISION, evidenceOutcome: 'UNAVAILABLE', message: GROUNDING_MESSAGE,
@@ -198,7 +327,14 @@ export async function POST(request: NextRequest) {
       auditId: auditReceipt.auditId, authorizationDecision: AUTHORIZATION_DECISION,
       evidenceOutcome: 'UNAVAILABLE', auditReceipt, routeGovernanceProof: routeAuth.proof,
     } satisfies LpciQueryResponse;
-    return NextResponse.json(body);
+    return terminalResponse(body, 200, {
+      ...baseTerminalContext,
+      auditId: auditReceipt.auditId,
+      corpusRef: corpusRef(corpusId),
+      responseBoundaryClass: 'NEGATIVE_RECEIPT',
+      queryQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+      diagnosticCode: 'GROUNDING_EVIDENCE_UNAVAILABLE',
+    });
   };
 
   const loaded = loadCorpusIndexText(corpusId);
@@ -206,7 +342,7 @@ export async function POST(request: NextRequest) {
   const admission = parseAndAdmitPublicIndex(loaded.text);
   if (!admission.ok) return groundingResponse(admission.sensitivityPreFilterApplied);
 
-  const phase1Response = (negative: Phase1NegativeReceipt, sensitivityApplied: boolean) => {
+  const phase1Response = async (negative: Phase1NegativeReceipt, sensitivityApplied: boolean) => {
     const evidenceOutcome = phase1EvidenceOutcome(negative.receiptType);
     const hashObject = negative.reason === undefined
       ? {
@@ -227,7 +363,14 @@ export async function POST(request: NextRequest) {
       corpusId, auditId: auditReceipt.auditId, authorizationDecision: AUTHORIZATION_DECISION,
       evidenceOutcome, auditReceipt, routeGovernanceProof: routeAuth.proof,
     } satisfies LpciQueryResponse;
-    return NextResponse.json(body);
+    return terminalResponse(body, 200, {
+      ...baseTerminalContext,
+      auditId: auditReceipt.auditId,
+      corpusRef: corpusRef(corpusId),
+      responseBoundaryClass: 'NEGATIVE_RECEIPT',
+      queryQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+      diagnosticCode: `PHASE1_${negative.receiptType}`,
+    });
   };
 
   if (admission.filteredOut) {
@@ -255,11 +398,104 @@ export async function POST(request: NextRequest) {
       authorizationDecision: AUTHORIZATION_DECISION, evidenceOutcome,
       auditReceipt, routeGovernanceProof: routeAuth.proof,
     } satisfies LpciQueryResponse;
-    return NextResponse.json(body);
+    return terminalResponse(body, 200, {
+      ...baseTerminalContext,
+      auditId: auditReceipt.auditId,
+      corpusRef: corpusRef(corpusId),
+      responseBoundaryClass: 'ABSTAINED',
+      queryQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+      diagnosticCode: 'ABSTAINED',
+    });
   }
 
   const projection = buildModelEvidenceProjection(receipt.matched_records);
   if (!projection.ok) return groundingResponse(true, receipt);
+
+  const credential = new CredentialBoundary(process.env);
+  const credentialMetadata = credential.resolveMetadata({
+    providerId: 'openai',
+    keyId: 'lpci-openai',
+    envNames: ['LPCI_LLM_API_KEY'],
+  });
+  const hostedConfig = resolveHostedConfigLifecycle({
+    apiKeyAvailable: credentialMetadata.available,
+    model: process.env.LPCI_LLM_MODEL,
+    endpoint: process.env.LPCI_LLM_ENDPOINT,
+    bundleVersion: process.env.LPCI_LLM_CONFIG_BUNDLE_VERSION,
+  });
+  const auditCapability = getControlPlaneEventStoreCapability();
+  const releaseHealth = evaluateLpciReleaseHealth({
+    authPolicy: {
+      actualVersion: LPCI_RELEASE_POLICY_VERSION,
+      acceptedVersion: LPCI_RELEASE_POLICY_VERSION,
+    },
+    config: hostedConfig,
+    limiter: {
+      backend: limiter.backendStatus(),
+      implementationCapable: true,
+    },
+    audit: {
+      configured: auditCapability.implementationStatus !== 'BLOCKED_CONFIGURATION',
+      distributed: auditCapability.distributed,
+      atomicAppend: auditCapability.atomicAppend,
+      retentionDays: auditCapability.retentionSeconds === null
+        ? 0
+        : auditCapability.retentionSeconds / 86_400,
+    },
+    routeComposition: {
+      actualVersion: RELEASE_ROUTE_VERSION,
+      acceptedVersion: RELEASE_ROUTE_VERSION,
+    },
+    providerCapability: {
+      exactPairRegistered: true,
+      executableAdapterRegistered: true,
+    },
+  });
+  if (releaseHealth.state !== 'STATIC_READY') {
+    const hashPayload = serializeExactJson({
+      outcome: 'NO_PROVIDER_CONFIGURED', query, corpusId,
+      authorizationDecision: AUTHORIZATION_DECISION, evidenceOutcome: 'ELIGIBLE_NOT_SENT', message: NO_PROVIDER_MESSAGE,
+    });
+    const auditReceipt = makeAudit({
+      responseText: hashPayload, responseBoundaryClass: 'NEGATIVE_RECEIPT', sensitivityApplied: true, retrieval: receipt,
+    });
+    const body = {
+      outcome: 'NO_PROVIDER_CONFIGURED', message: NO_PROVIDER_MESSAGE, query, corpusId,
+      auditId: auditReceipt.auditId, authorizationDecision: AUTHORIZATION_DECISION,
+      evidenceOutcome: 'ELIGIBLE_NOT_SENT', auditReceipt, routeGovernanceProof: routeAuth.proof,
+    } satisfies LpciQueryResponse;
+    return terminalResponse(body, 503, {
+      ...baseTerminalContext,
+      auditId: auditReceipt.auditId,
+      corpusRef: corpusRef(corpusId),
+      responseBoundaryClass: 'NEGATIVE_RECEIPT',
+      queryQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+      diagnosticCode: releaseHealth.state,
+    });
+  }
+
+  const providerQuota = await limiter.consumeProviderAttempt(
+    roleDecision.identityKind,
+    roleDecision.identityHash,
+    'openai/gpt-4o',
+  );
+  if (!providerQuota.allowed) {
+    return terminalResponse({
+      outcome: 'RATE_LIMITED',
+      message: 'The LPCI provider-attempt rate limit has been reached.',
+      retryAfterSeconds: providerQuota.retryAfterSeconds,
+      routeGovernanceProof: routeAuth.proof,
+    }, 429, {
+      ...baseTerminalContext,
+      corpusRef: corpusRef(corpusId),
+      queryQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+      providerQuota: {
+        decision: 'DENY',
+        retryAfterBucket: retryBucket(providerQuota.retryAfterSeconds),
+      },
+      diagnosticCode: 'PROVIDER_RATE_LIMITED',
+    });
+  }
 
   const systemPrompt = buildAnswerBoundaryPrompt({
     answerClass: receipt.answer_class,
@@ -285,23 +521,49 @@ export async function POST(request: NextRequest) {
       auditId: auditReceipt.auditId, authorizationDecision: AUTHORIZATION_DECISION,
       evidenceOutcome: 'ELIGIBLE_NOT_SENT', auditReceipt, routeGovernanceProof: routeAuth.proof,
     } satisfies LpciQueryResponse;
-    return NextResponse.json(body);
+    return terminalResponse(body, 503, {
+      ...baseTerminalContext,
+      auditId: auditReceipt.auditId,
+      corpusRef: corpusRef(corpusId),
+      responseBoundaryClass: 'NEGATIVE_RECEIPT',
+      providerId: 'openai',
+      modelId: 'gpt-4o',
+      queryQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+      providerQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+      providerAttemptCount: 0,
+      diagnosticCode: 'NO_PROVIDER_CONFIGURED',
+    });
   }
 
-  if (providerResult.outcome === 'PROVIDER_ERROR') {
+  if (providerResult.outcome === 'PROVIDER_ERROR' || providerResult.outcome === 'PROVIDER_TIMEOUT') {
+    const timedOut = providerResult.outcome === 'PROVIDER_TIMEOUT';
     const hashPayload = serializeExactJson({
-      outcome: 'PROVIDER_ERROR', query, corpusId,
+      outcome: timedOut ? 'PROVIDER_TIMEOUT' : 'PROVIDER_ERROR', query, corpusId,
       authorizationDecision: AUTHORIZATION_DECISION, evidenceOutcome: 'PROVIDER_FAILED', message: PROVIDER_ERROR_MESSAGE,
     });
     const auditReceipt = makeAudit({
       responseText: hashPayload, responseBoundaryClass: 'NEGATIVE_RECEIPT', sensitivityApplied: true, retrieval: receipt,
     });
     const body = {
-      outcome: 'PROVIDER_ERROR', message: PROVIDER_ERROR_MESSAGE, query, corpusId,
+      outcome: timedOut ? 'PROVIDER_TIMEOUT' : 'PROVIDER_ERROR', message: PROVIDER_ERROR_MESSAGE, query, corpusId,
       auditId: auditReceipt.auditId, authorizationDecision: AUTHORIZATION_DECISION,
       evidenceOutcome: 'PROVIDER_FAILED', auditReceipt, routeGovernanceProof: routeAuth.proof,
-    } satisfies LpciQueryResponse;
-    return NextResponse.json(body, { status: 502 });
+    };
+    return terminalResponse(body, timedOut ? 504 : 502, {
+      ...baseTerminalContext,
+      auditId: auditReceipt.auditId,
+      corpusRef: corpusRef(corpusId),
+      responseBoundaryClass: 'NEGATIVE_RECEIPT',
+      providerId: 'openai',
+      modelId: 'gpt-4o',
+      queryQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+      providerQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+      providerAttemptCount: 1,
+      timeoutFlag: timedOut,
+      diagnosticCode: timedOut
+        ? 'PROVIDER_TIMEOUT'
+        : providerResult.diagnosticCode ?? 'PROVIDER_ERROR',
+    });
   }
 
   const auditReceipt = makeAudit({
@@ -314,5 +576,15 @@ export async function POST(request: NextRequest) {
     auditId: auditReceipt.auditId, authorizationDecision: AUTHORIZATION_DECISION,
     evidenceOutcome: 'ANSWER_EMITTED', auditReceipt, routeGovernanceProof: routeAuth.proof,
   } satisfies LpciQueryResponse;
-  return NextResponse.json(body);
+  return terminalResponse(body, 200, {
+    ...baseTerminalContext,
+    auditId: auditReceipt.auditId,
+    corpusRef: corpusRef(corpusId),
+    responseBoundaryClass: 'ANSWER_EMITTED',
+    providerId: 'openai',
+    modelId: 'gpt-4o',
+    queryQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+    providerQuota: { decision: 'ALLOW', retryAfterBucket: 'NONE' },
+    providerAttemptCount: 1,
+  });
 }

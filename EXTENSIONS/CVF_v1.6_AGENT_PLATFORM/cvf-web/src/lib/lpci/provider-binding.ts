@@ -21,6 +21,7 @@ const OPENAI_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
 const COMPLETE_CAPABILITY = 'complete' as const;
 
 export const LPCI_PROVIDER_BINDING_VERSION = 'cvf.lpciProviderBinding.b2.v1' as const;
+export const LPCI_PROVIDER_ATTEMPT_TIMEOUT_MS = 30_000 as const;
 
 export interface LpciProviderBindingConfig {
   providerId: string;
@@ -31,7 +32,8 @@ export interface LpciProviderBindingConfig {
 export type LpciProviderBindingResult =
   | { outcome: 'ANSWER_EMITTED'; response: string }
   | { outcome: 'NO_PROVIDER_CONFIGURED' }
-  | { outcome: 'PROVIDER_ERROR' };
+  | { outcome: 'PROVIDER_ERROR'; diagnosticCode?: 'PROVIDER_ERROR' | 'EXACT_PAIR_MISMATCH' }
+  | { outcome: 'PROVIDER_TIMEOUT'; diagnosticCode: 'PROVIDER_TIMEOUT' };
 
 export interface LpciProviderBindingInput {
   prompt: string;
@@ -39,7 +41,10 @@ export interface LpciProviderBindingInput {
 }
 
 interface BridgeLike {
-  execute(request: GatewayExecuteRequest): Promise<ProviderExecutionBridgeResult>;
+  execute(
+    request: GatewayExecuteRequest,
+    options?: { signal?: AbortSignal },
+  ): Promise<ProviderExecutionBridgeResult>;
 }
 
 export interface LpciProviderBindingDependencies {
@@ -48,6 +53,9 @@ export interface LpciProviderBindingDependencies {
   fetchImpl?: OpenAiCompatibleFetch;
   bridge?: BridgeLike;
   traceId?: () => string;
+  abortController?: () => AbortController;
+  setTimeoutImpl?: (callback: () => void, milliseconds: number) => ReturnType<typeof setTimeout>;
+  clearTimeoutImpl?: (timer: ReturnType<typeof setTimeout>) => void;
 }
 
 type ConfigResolution =
@@ -140,13 +148,30 @@ export async function executeLpciProviderBinding(
       fetchImpl: dependencies.fetchImpl
         ?? (globalThis.fetch as unknown as OpenAiCompatibleFetch),
     });
-    const result = await bridge.execute(request);
+    const controller = dependencies.abortController?.() ?? new AbortController();
+    const schedule = dependencies.setTimeoutImpl ?? setTimeout;
+    const cancel = dependencies.clearTimeoutImpl ?? clearTimeout;
+    const timer = schedule(() => controller.abort(), LPCI_PROVIDER_ATTEMPT_TIMEOUT_MS);
+    let result: ProviderExecutionBridgeResult;
+    try {
+      result = await bridge.execute(request, { signal: controller.signal });
+    } finally {
+      cancel(timer);
+    }
+    if (controller.signal.aborted) {
+      return { outcome: 'PROVIDER_TIMEOUT', diagnosticCode: 'PROVIDER_TIMEOUT' };
+    }
     if (!isValidExactPairResult(result, traceId, resolved.config)) {
-      return { outcome: 'PROVIDER_ERROR' };
+      return { outcome: 'PROVIDER_ERROR', diagnosticCode: result.response
+        ? 'EXACT_PAIR_MISMATCH'
+        : 'PROVIDER_ERROR' };
     }
     return { outcome: 'ANSWER_EMITTED', response: result.response.text };
-  } catch {
-    return { outcome: 'PROVIDER_ERROR' };
+  } catch (caught: unknown) {
+    if (caught instanceof Error && caught.name === 'AbortError') {
+      return { outcome: 'PROVIDER_TIMEOUT', diagnosticCode: 'PROVIDER_TIMEOUT' };
+    }
+    return { outcome: 'PROVIDER_ERROR', diagnosticCode: 'PROVIDER_ERROR' };
   }
 }
 

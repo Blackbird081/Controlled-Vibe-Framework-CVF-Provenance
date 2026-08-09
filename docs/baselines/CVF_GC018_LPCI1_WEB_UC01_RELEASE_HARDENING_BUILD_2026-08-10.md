@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: LPCI1-WEB-UC01-RELEASE-HARDENING-BUILD
 
@@ -124,8 +124,22 @@ pass before commit and delegation.
 
 ## Decision / Disposition
 
-DISPATCH_READY. The worker must not commit. Reviewer acceptance and any later
-hosted/live/deploy action require separate evidence and authority.
+CLOSED_PASS_BOUNDED. The worker did not commit. Independent review accepted the
+deterministic BUILD; any hosted/live/deploy action still requires separate
+evidence and fresh authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired BUILD work order | top Status line | PASS |
+| Completion or reviewer artifact | BUILD completion review | reviewer disposition | PASS |
+| Roadmap state | LPCI1 Web use-case roadmap | top status and release-hardening row | PASS |
+| Registry JSON | corpus registry aggregate | unchanged aggregate drift check | PASS |
+| Registry Markdown | registry owner set | unchanged registry gate | PASS |
+| External evidence digest | N/A with reason: no external epistemic evidence admitted. | no digest | N/A with reason |
+| System loop interlock | DESIGN/SPEC, BUILD, tests, completion | closure diff gate | PASS |
+| Session continuity | N/A with reason: dedicated GC-020 sync follows the material commit. | separate sync range | N/A with reason |
 
 ## Public Export Disposition
 
