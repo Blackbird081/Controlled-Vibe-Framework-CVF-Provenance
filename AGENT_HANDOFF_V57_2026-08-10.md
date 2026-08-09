@@ -8,50 +8,48 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `f187fc0af docs(dispatch): audit LPCI UC-01 release readiness`
-- Active mode: `lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`
+- Latest material commit: `944fdfc56 docs(lpci): close UC-01 readiness discovery`
+- Active mode: `lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=delegated
-worker executes the exact two-output current-source readiness audit; parked
-checkpoint=remediation, mutation, secret/private access, browser/server/
-provider/network/live, deployment, rollback execution, public sync, push, and
-worker commit remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless
+operator separately authorizes UC-01 release-hardening DESIGN/SPEC only;
+parked checkpoint=remediation, BUILD, mutation, secret/private access,
+browser/server/provider/network/live, hosted execution, deployment, rollback,
+public sync, push, production, and readiness claims remain unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`
+`lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`
 
 ## Purpose
 
-Route the operator-authorized UC-01 release-readiness discovery to one
-no-commit worker and preserve independent reviewer closure.
+Preserve the independently accepted UC-01 readiness-gap discovery and its
+fresh DESIGN/SPEC-only operator checkpoint without releasing implementation.
 
 ## Scope / Target / Owner Boundary
 
-Target is the paired UC-01 readiness discovery packet and exactly two worker
-outputs. Worker owns audit/return only; reviewer owns acceptance and commits;
-session steward owns protected continuity. No remediation owner is released.
+The paired packet, worker outputs, roadmap update, and reviewer completion are
+closed at material commit `944fdfc56`. Only protected continuity sync remains.
 
 ## Latest Work / Changes
 
-- Discovery packet committed at `f187fc0af` after pre-dispatch 75/75 and
-  pre-commit 83/83.
-- Scope is current repository evidence across eight operational dimensions and
-  exactly two no-commit worker outputs.
-- No readiness result, remediation, runtime mutation, secret/private access,
-  provider/live action, public export, deploy, or push has occurred.
+- Reviewer accepted `UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION`.
+- Matrix: route authorization PRESENT; three PARTIAL; three GAP; public export
+  NOT_APPLICABLE and `DEFERRED_PRIVATE_ONLY`.
+- Material-range pre-closure passed 75/75. No remediation, runtime mutation,
+  secret/private access, provider/live, public export, deploy, or push occurred.
 
 ## Active Boundary
 
-Worker may inspect current governed source, safe example config, deployment
-config/docs, and existing tests. It must not mutate them, inspect secret values,
-run browser/server/provider/network/live/cloud actions, deploy, or public-sync.
+The lane is parked. Discovery found route-specific gaps in role policy,
+limiting, durable audit/telemetry, timeout/health, and deploy/rollback controls.
+Generic owners do not count as direct UC-01 bindings.
 
 ## Canonical Packet
 
@@ -63,10 +61,10 @@ run browser/server/provider/network/live/cloud actions, deploy, or public-sync.
 
 ## Next Allowed Move
 
-Delegated worker executes the source-verified work order from the clean
-session-sync base, creates exactly the audit and worker return, and returns
-`COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Primary reviewer then
-recomputes key evidence and closes independently.
+Stop unless the operator issues fresh explicit authority for
+`UC01_RELEASE_HARDENING_DESIGN_SPEC_ONLY`. That tranche remains documentation
+only and must precede any BUILD, hosted action, deploy, public sync, or
+production claim.
 
 ## Parked Checkpoints
 
@@ -169,6 +167,49 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Invocation ID | `lpci1-web-uc02-rotation-sync-anchor-2026-08-10` |
 | Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
 | Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - UC-01 Readiness Final Closure Sync
+
+Authorized guard-maintenance scope: synchronize active V57, front door,
+bootstrap, generated state, state core, next move, and one new closure entry to
+material closure `944fdfc56` and the parked DESIGN/SPEC checkpoint.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01ReleaseReadinessDiscoveryClosure20260810.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization is the exact discovery-only token; this sync does not
+broaden it. Rollback boundary: revert only this seven-path continuity commit if
+material closure `944fdfc56` is reverted.
+
+## Agent Operation Trace Block - UC-01 Readiness Final Closure Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-readiness-final-closure-sync-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | session source edits, generated aggregate, governance gates, Git |
+| Target paths | exact seven-path protected continuity manifest |
+| Allowed scope source | reviewer closure `944fdfc56`, anchor `6bf43ce59`, and GC-020 |
+| Before status evidence | material-range pre-closure PASS 75/75; mode still dispatched pending worker |
+| After status evidence | mode parked pending fresh DESIGN/SPEC-only authority |
+| Diff evidence | exact protected manifest and generated-state drift check |
+| Approval boundary | closure continuity only |
+| Claim boundary | no remediation, secret/private, runtime, provider/live, public, deploy, production, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-readiness-final-closure-sync-2026-08-10` |
+| Expected manifest | active handoff, front door, bootstrap, aggregate, core, next move, closure entry |
+| Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

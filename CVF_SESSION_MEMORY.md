@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=delegated worker executes the exact two-output UC-01 readiness discovery; parked checkpoint=remediation, mutation, secret/private access, browser/server/provider/network/live, deployment, rollback execution, public-sync, push, and worker commit remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless operator separately authorizes UC01 release-hardening DESIGN/SPEC only; parked checkpoint=remediation, BUILD, mutation, secret/private access, browser/server/provider/network/live, hosted execution, deployment, rollback execution, public-sync, push, production, and readiness claims remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`
+Current mode marker: `lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`
 
-Current mode: `lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`
+Current mode: `lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`
 
-`lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`
+`lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`
 
 Previous mode:
 
-`lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation`
+`lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -80,7 +80,7 @@ are now assigned to the no-commit worker.
 ## Latest Material Work
 | Work | Commit | Disposition |
 |---|---|---|
-| LPCI1-WEB UC-01 release-readiness discovery dispatch | `f187fc0af` | `DISPATCHED`; exact two-output no-commit current-source audit across eight operational dimensions; pre-dispatch 75/75; no remediation, live, deploy, public, or readiness authority. |
+| LPCI1-WEB UC-01 release-readiness discovery closure | `944fdfc56` | `CLOSED_PASS_BOUNDED_READINESS_GAPS_REQUIRE_REMEDIATION`; 1 PRESENT, 3 PARTIAL, 3 GAP, 1 NOT_APPLICABLE; pre-closure 75/75; minimum next tranche is fresh DESIGN/SPEC-only authority. |
 | LPCI1-WEB UC-02 reopen discovery closure | `729452197` | `CLOSED_PASS_BOUNDED_DISCOVERY_NOT_MET`; A/B/C each `NOT_MET`; lane remains value-parked; material-range pre-closure 75/75; no implementation, private-data, live, deploy, public-sync, push, or continuation authority. |
 | LPCI1-WEB UC-01 full-route live proof | `b3f405b91` | `CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED`; one signed synthetic-public route invocation, one provider call, zero retries, route/provider HTTP 200, `ANSWER_EMITTED`, `PUBLIC_ONLY`, required audit correlations true; pre-closure 75/75; no retry, hosted/release, public, deployment, production, or continuation authority. |
 | LPCI1-WEB-B1 and BR1 bounded closure | `ab74e14a5` | `CLOSED_PASS_BOUNDED`; implementation/closure material `db580830f`; B1 and BR1 completion reviews accepted; LPCI 7 files/99 tests and execute 3 files/5 tests PASS; full non-live 304 files with 3397 passed/2 skipped; zero provider/live calls; current system-chain freshness and as-built catalog checks both `CURRENT` with 0 violations. |
@@ -403,7 +403,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`
+Mode: `lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
@@ -411,16 +411,18 @@ The public-safe checker/test subset and authorization receipt are exported at
 public commit `2103a38f`; private intake artifacts remain provenance-only.
 UC-01 remains independently closed bounded at material commit `b3f405b91`.
 UC-02 remains independently closed and value-parked at material commit
-`729452197`. Exact token
-`AUTHORIZE_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_ONLY` released one
-documentation-only worker at dispatch commit `f187fc0af`. The next allowed
-move is the paired eight-dimension current-source readiness audit producing
-exactly the audit and worker return without commit. Remediation, source/test/
-config/UI mutation, secret/private access, browser/server/provider/network/live,
-release, deployment, rollback execution, public sync, push, and later roadmap
-work remain unauthorized.
+`729452197`. UC-01 release-readiness discovery is independently closed at
+material commit `944fdfc56` with disposition
+`UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION`. Stop unless the operator
+issues fresh explicit authority for `UC01_RELEASE_HARDENING_DESIGN_SPEC_ONLY`.
+That documentation-only tranche must define source-verified role/config,
+limiter, audit/telemetry, timeout/health, and deploy/rollback ownership and
+acceptance contracts before BUILD. Remediation, source/test/config/UI mutation,
+secret/private access, browser/server/provider/network/live, hosted execution,
+deployment, rollback execution, public sync, push, production, and readiness
+claims remain unauthorized.
 Current mode:
-`lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`.
+`lpci1_web_uc01_release_readiness_gaps_parked_pending_fresh_design_spec_authority`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
