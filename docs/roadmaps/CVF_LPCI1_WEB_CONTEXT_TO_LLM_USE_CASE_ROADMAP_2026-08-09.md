@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_ACCEPTED_BOUNDED_HOLD_BEFORE_DESIGN
+Status: LPCI1_WEB_UC01_DESIGN_ACCEPTED_BOUNDED_HOLD_BEFORE_FRESH_BUILD
 
 docType: roadmap
 
@@ -285,7 +285,9 @@ owner and the one currently route-loadable synthetic index
 with the query `nghi phep nam`. It requires no new consumer, no new
 entitlement owner, and no corpus registration work.
 
-`UC-01` follows exactly one lifecycle chain, with no alternate branch:
+`UC-01` follows exactly one lifecycle chain, with no alternate branch. Steps 1
+and 2 were completed by the later operator-authorized D1 packet and independent
+review; this roadmap did not itself grant them:
 
 1. **Fresh DESIGN-only authority** may open a DESIGN tranche for `UC-01`.
    That DESIGN must include the `UC-04` decision: reuse or compose the existing
@@ -294,12 +296,17 @@ entitlement owner, and no corpus registration work.
 2. **The complete DESIGN, including the `UC-04` binding decision, must be
    independently accepted.** DESIGN completion or acceptance cannot be
    inferred from this intake and cannot be bypassed by provider readiness.
-3. **Only after step 2** may a separate, fresh operator authority explicitly
-   grant provider/live-proof scope. DESIGN-only authority never grants a
+3. **Only after step 2** may a separate, fresh operator authority open a
+   source-verified BUILD tranche. BUILD must implement the accepted UC-04
+   composition/config contract, including Model Gateway-owned trim-empty
+   credential hardening, with deterministic network-free proof.
+4. **Only after accepted BUILD evidence** may another separate fresh authority
+   grant provider/live-proof scope. DESIGN or BUILD authority never grants a
    provider call or live proof.
 
-This roadmap records `UC-01` as the only candidate eligible for the first step
-of this single lifecycle; it releases none of those steps.
+Current continuation: the complete UC-01 DESIGN is independently accepted
+bounded. The next checkpoint is fresh BUILD-only authority; no BUILD or
+provider/live step is released by this status update.
 
 ## Explicit Parked Lanes
 
@@ -308,19 +315,17 @@ of this single lifecycle; it releases none of those steps.
   route-compatible public index are simultaneously verified for LPCI1.
 - `UC-03`: `PARKED_MISSING_ENTITLEMENT_OWNER` - no non-public grant/entitlement
   owner exists in current source.
-- `UC-04`: `PARKED_PROVIDER_OR_LIVE_AUTHORITY` - a cross-cutting dependency,
-  not a use case; the LPCI-specific integration/binding of `LPCI_LLM_API_KEY`,
-  `LPCI_LLM_ENDPOINT`, and `LPCI_LLM_MODEL` to a documented CVF provider-lane
-  owner is not source-verified. This does not block a fresh DESIGN-only
-  authority, but live provider invocation stays parked until the complete
-  DESIGN including `UC-04` is independently accepted and a separate fresh
-  provider/live authority is issued.
+- `UC-04`: `DESIGN_ACCEPTED_RUNTIME_BINDING_PARKED` - the accepted D1 DESIGN
+  selects thin LPCI composition over the existing Model Gateway and defines
+  the atomic three-variable config contract. Runtime/package/config binding is
+  still absent. Live invocation remains parked until separately authorized
+  BUILD evidence is accepted and a later fresh provider/live grant is issued.
 - `UC-05`: `NO_CURRENT_VALUE_WITH_REOPEN_CONDITION` - no non-test, non-dashboard
   caller exists.
 - `UC-06`: `REJECT_DUPLICATE_OWNER` - the existing route already owns this
   responsibility.
-- DESIGN eligibility is recorded above for `UC-01` only as an operator
-  checkpoint; this roadmap does not itself open DESIGN. SPEC, BUILD,
+- DESIGN was opened by a later operator GC-018 and is independently accepted;
+  this roadmap did not itself grant it. SPEC, BUILD,
   provider/live, persistence, vector/RAG, non-public grants, public-sync,
   deployment, and readiness remain parked for every candidate in this roadmap
   regardless of rank.
@@ -333,8 +338,9 @@ of this single lifecycle; it releases none of those steps.
 | `UC-03` | a governed entitlement/grant-store owner is source-verified to exist and is named with a file path and symbol |
 | `UC-04` | both simultaneously: (a) the LPCI-specific binding of `LPCI_LLM_API_KEY`, `LPCI_LLM_ENDPOINT`, and `LPCI_LLM_MODEL` to the existing Model Gateway owner is source-verified in runtime code (reuse/compose, not a new parallel owner); and (b) a documented config contract for that binding exists. `.env.example` naming alone, without source-verified Model Gateway integration, is insufficient. Live-proof authority additionally requires a fresh separate operator grant. |
 | `UC-05` | a real non-test, non-dashboard caller of `/api/lpci/query` is source-verified to exist |
-| `UC-01` (DESIGN-only eligibility) | already eligible now; DESIGN-only authorization may open via a fresh GC-018 naming `UC-01` explicitly |
-| `UC-01` (live-proof eligibility) | requires the complete DESIGN, including the `UC-04` owner/binding decision and documented config contract, to be independently accepted; only after that acceptance may a separate fresh operator authority explicitly grant provider/live-proof scope |
+| `UC-01` (DESIGN-only eligibility) | SATISFIED: later D1 authority produced an independently accepted complete DESIGN including UC-04 |
+| `UC-01` (BUILD eligibility) | fresh BUILD-only GC-018 must source-verify the accepted D1 manifest and exact current Model Gateway/cvf-web seams; no authority exists yet |
+| `UC-01` (live-proof eligibility) | requires accepted runtime binding plus documented config evidence from BUILD, then a separate fresh operator provider/live grant |
 
 ## Acceptance Case Planning For A Future Tranche (Not Executed)
 
@@ -356,22 +362,22 @@ future DESIGN/SPEC tranche must still cover for a context-to-LLM use case.
 
 ## Design Control Gate
 
-Gate status: `NO_DESIGN_RELEASED`.
+Gate status: `DESIGN_ACCEPTED_BOUNDED_NO_BUILD_OR_LIVE_RELEASED`.
 
 | Gate question | Current answer | Effect |
 |---|---|---|
 | Is a concrete use case identified with a named consumer, source, and governance stages? | Yes, `UC-01` | eligible for a future fresh DESIGN authorization |
-| Is a provider-lane owner selected for `LPCI_LLM_API_KEY`/`LPCI_LLM_ENDPOINT`/`LPCI_LLM_MODEL`? | No | blocks any live-proof authority; does not block DESIGN-only planning |
+| Is a provider-lane owner selected for `LPCI_LLM_API_KEY`/`LPCI_LLM_ENDPOINT`/`LPCI_LLM_MODEL`? | Yes at DESIGN level: thin composition over existing Model Gateway | runtime binding/config evidence remains a BUILD prerequisite |
 | Is a non-public entitlement owner selected? | No | `UC-03` remains parked; not required for `UC-01` |
-| Is DESIGN authorized by this roadmap? | No | operator must issue a fresh GC-018 naming `UC-01` explicitly |
+| Is DESIGN authorized by this roadmap? | No; later operator authority opened and independent review accepted D1 | no authority inheritance to later phases |
 | Is BUILD, provider, or live-proof authorized by this roadmap? | No | remains a separate future operator checkpoint |
 
 ## Dispatch Boundary
 
-No worker beyond this documentation-only intake author is authorized by this
-roadmap. A future DESIGN worker may operate only under a fresh GC-018 and
-source-verified work order naming `UC-01` (or another candidate the operator
-selects) explicitly. No implementation, provider, network, persistence,
+The later D1 worker completed and the primary reviewer accepted its bounded
+DESIGN. A future BUILD worker may operate only under a new GC-018 and
+source-verified work order that consumes the accepted D1 conditions. No
+implementation, provider, network, persistence,
 vector/RAG, non-public grant, public-sync, or deployment authority exists here.
 
 ## Work Plan
@@ -421,10 +427,10 @@ vector/RAG, non-public grant, public-sync, or deployment authority exists here.
 ## Machine Closure Package
 
 N/A with reason: this roadmap's top status is
-`LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_ACCEPTED_BOUNDED_HOLD_BEFORE_DESIGN`, an
-accepted bounded intake state rather than a closed-equivalent token. Reviewer
-closure is recorded in
-`docs/reviews/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_INTAKE_R3_PATH_RE_REPAIR_COMPLETION_2026-08-09.md`.
+`LPCI1_WEB_UC01_DESIGN_ACCEPTED_BOUNDED_HOLD_BEFORE_FRESH_BUILD`, an accepted
+bounded continuation state rather than a closed-equivalent token. Intake
+closure remains recorded in the R3 completion; D1 acceptance is recorded in
+`docs/reviews/CVF_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_DESIGN_COMPLETION_2026-08-09.md`.
 
 ## ADIF Defect Registry Disclosure
 

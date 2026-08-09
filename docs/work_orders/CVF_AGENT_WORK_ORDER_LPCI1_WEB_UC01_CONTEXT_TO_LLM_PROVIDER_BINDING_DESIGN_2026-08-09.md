@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -339,20 +339,45 @@ set, HEAD preservation, and zero provider/live/network count.
 
 ## Review Gate
 
-Worker status remains `COMPLETE_PENDING_REVIEW`. Reviewer must independently
-verify current-source fidelity, the UC-04 AND rule, no parallel owner, finite
-fail-closed behavior, exact manifest, and gate evidence before acceptance.
+Worker returned `COMPLETE_PENDING_REVIEW_R1`. The primary reviewer independently
+verified current-source fidelity, the UC-04 AND rule, no parallel owner,
+fail-closed behavior, exact manifest, and gate evidence, then recorded bounded
+acceptance in the completion review.
 
 ## Closure Checklist
 
-- [ ] exact two worker outputs returned
-- [ ] current/future source facts separated
-- [ ] Model Gateway composition selected
-- [ ] all three LPCI configuration inputs covered
-- [ ] provider/live/network count is zero
-- [ ] worker staging empty and HEAD unchanged
-- [ ] worker-return fast gate passes
-- [ ] independent reviewer disposition recorded
+- [x] exact two worker outputs returned
+- [x] current/future source facts separated
+- [x] Model Gateway composition selected
+- [x] all three LPCI configuration inputs covered
+- [x] provider/live/network count is zero
+- [x] worker staging empty and HEAD unchanged
+- [x] worker-return fast gate passes
+- [x] independent reviewer disposition recorded
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_DESIGN_COMPLETION_2026-08-09.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_2026-08-09.md` | `Status: LPCI1_WEB_UC01_DESIGN_ACCEPTED_BOUNDED_HOLD_BEFORE_FRESH_BUILD` | PASS |
+| Registry JSON | N/A with reason: no corpus classification or registry change | no mutation | BLOCKED with reason: outside DESIGN scope |
+| Registry Markdown | N/A with reason: no corpus classification or registry change | no mutation | BLOCKED with reason: outside DESIGN scope |
+| External evidence digest | N/A with reason: repository-local evidence only | no external intake | N/A with reason |
+| System loop interlock | roadmap and completion review | HOLD before fresh BUILD-only authority | PASS |
+| Session continuity | generated state and active handoff | separate reviewer-owned sync after material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| selected provider owner | existing Model Gateway through thin LPCI composition | PASS |
+| exact pair enforcement | singleton allowed provider, requested model, and required completion capability | PASS |
+| Gateway result ownership | `ProviderExecutionBridgeResult` owns response/error/receipt | PASS |
+| secret availability gap | current whitespace behavior recorded; Model Gateway hardening required | PASS |
+| S1 projection and audit boundary | preserved without provider receipt exposure | PASS |
+| runtime/provider/live action count | 0 | PASS |
 
 ## Operator Checkpoint
 
