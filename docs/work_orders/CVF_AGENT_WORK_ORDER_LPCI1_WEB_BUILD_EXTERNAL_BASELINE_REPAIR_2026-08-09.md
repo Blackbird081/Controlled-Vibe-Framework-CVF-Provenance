@@ -585,15 +585,24 @@ requiredGate: python governance/compat/run_worker_return_fast_gate.py
 individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 requiredEvidenceTerms: executionBaseHead; git status --short
-requiredSections: Summary; Authority And Base; Source Verification Refresh; Exact Changed Manifest; Repair Evidence; Verification Commands And Results; Negative Scope Proof; B1 Isolation Statement; Agent Operation Trace Block; External Knowledge Intake Routing; Closure Checklist State; Claim Boundary; Terminal Disposition
-conditionalDispositionRule: include each conditional section with evidence when applicable, otherwise record N/A with reason
+requiredSections: Summary; Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Authority And Base; Source Verification Refresh; Exact Changed Manifest; Repair Evidence; Verification Commands And Results; Negative Scope Proof; B1 Isolation Statement; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; External Knowledge Intake Routing; Closure Checklist State; Claim Boundary; Public Export Disposition; Terminal Disposition; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine Closure Package
+conditionalDispositionRule: Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; and Machine Closure Package must each contain applicable evidence or N/A with reason
 ```
 
-Required headings: Summary; Authority And Base; Source Verification Refresh;
-Exact Changed Manifest; Repair Evidence; Verification Commands And Results;
-Negative Scope Proof; B1 Isolation Statement; Agent Operation Trace Block;
-External Knowledge Intake Routing; Closure Checklist State; Claim Boundary;
-Terminal Disposition.
+Required headings: Summary; Purpose; Scope / Methodology; Findings / Position;
+Risk / Corrective Action; Authority And Base; Source Verification Refresh; Exact
+Changed Manifest; Repair Evidence; Verification Commands And Results; Negative
+Scope Proof; B1 Isolation Statement; Agent Operation Trace Block; Delta Execution
+Claim Boundary Control Block; External Knowledge Intake Routing; Closure Checklist
+State; Claim Boundary; Public Export Disposition; Terminal Disposition; Rescan
+Intelligence Hardening; Corpus Completeness And Report Integrity;
+Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine
+Closure Package.
+
+The conditional sections Rescan Intelligence Hardening, Corpus Completeness And
+Report Integrity, Finding-To-Governance Learning Disposition, Epistemic Process
+Block, and Machine Closure Package must each contain applicable evidence or the
+literal `N/A with reason`.
 
 ## Verification Commands
 
@@ -779,20 +788,20 @@ Contract source archive-qualified checker exception:
 |---|---|
 | Actor | dispatch author/reviewer |
 | Provider or surface | local governed workspace |
-| Session or invocation | LPCI1-WEB-BR1 work-order authoring, 2026-08-09 |
+| Session or invocation | LPCI1-WEB-BR1 worker-return packet-shape and continuity repair, 2026-08-09 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\CVF-LPCI-BR1` |
-| Command or tool surface | governed reads, source search, local non-live reproduction, ADIF resolver, `apply_patch`, dispatch gates, Git evidence |
-| Target paths | paired BR1 baseline and work order |
-| Allowed scope source | operator authority `AUTHORIZE_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR` |
-| Before status evidence | HEAD `d9497c5db`; branch `codex/lpci1-web-br1`; worktree clean; packet paths absent |
-| After status evidence | exact paired packet untracked, unstaged, and uncommitted |
-| Diff evidence | `git status --short --untracked-files=all`; `git diff --check`; no-index new-file diffs |
-| Approval boundary | packet authoring only in this return; reviewer has active local commit authority under both waivers; worker may not commit |
-| Claim boundary | packet is DISPATCH_READY pending reviewer packet commit and exact committed-HEAD handoff; no repair accepted yet |
-| Agent type | dispatcher/reviewer |
-| Invocation ID | `lpci1-web-br1-work-order-author-2026-08-09` |
-| Expected manifest | `docs/baselines/CVF_GC018_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_2026-08-09.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_2026-08-09.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_2026-08-09.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_2026-08-09.md` |
+| Command or tool surface | governed reads, `apply_patch`, local governance checkers, and Git evidence |
+| Target paths | BR1 work order packet-shape contract only; active handoff continuity is committed separately by the session-sync steward |
+| Allowed scope source | reviewer repair instruction after dispatch commit `fa75aeea4` under the two bounded operator waivers |
+| Before status evidence | HEAD `fa75aeea4`; branch `codex/lpci1-web-br1`; clean worktree; packet-shape and active-continuity blockers reported |
+| After status evidence | work-order packet-shape repair is checker-clean; active handoff continuity remains a separately owned session-sync change |
+| Diff evidence | `git status --short`; `git diff --name-status`; `git diff --check` |
+| Approval boundary | worker-return packet-shape correction only in this material commit; worker may not commit |
+| Claim boundary | no implementation, generated-state edit, provider/live/network action, release, deployment, or public-sync claim |
+| Agent type | reviewer and session-sync steward |
+| Invocation ID | `lpci1-web-br1-packet-shape-continuity-2026-08-09` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_2026-08-09.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_2026-08-09.md` |
 | Manifest delta | MATCH |
 
 ## Delta Execution Claim Boundary Control Block
