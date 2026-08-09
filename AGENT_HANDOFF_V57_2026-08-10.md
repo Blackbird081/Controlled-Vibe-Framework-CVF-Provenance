@@ -8,36 +8,43 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `9c3308bf8 docs(lpci): dispatch UC-01 release hardening design spec`
-- Active mode: `lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`
+- Latest material commit: `1038f65aa docs(lpci): accept UC-01 release hardening design spec`
+- Active mode: `lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=delegate one
-no-commit worker for exactly the authorized DESIGN, SPEC, and worker return;
+Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless
+operator separately authorizes a fresh source-verified UC-01 hardening BUILD-only packet;
 parked checkpoint=BUILD, mutation, secret/private access,
 browser/server/provider/network/live, hosted execution, deployment, rollback,
 public sync, push, production, and readiness claims remain unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`
+`lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
 
 ## Purpose
 
-Route the authorized UC-01 release-hardening DESIGN/SPEC packet to one
-no-commit worker while keeping implementation and operations parked.
+Preserve independently accepted UC-01 release-hardening DESIGN/SPEC and park
+implementation until a fresh source-verified BUILD-only authority.
 
 ## Scope / Target / Owner Boundary
 
-The dispatch packet is committed at `9c3308bf8`. Worker outputs and reviewer
-acceptance do not yet exist.
+The repaired DESIGN/SPEC closure is accepted at material commit `1038f65aa`.
+No BUILD, hosted/live/deploy, public, or readiness authority follows.
 
 ## Latest Work / Changes
+
+- Reviewer accepted `UC01_RELEASE_HARDENING_DESIGN_SPEC_ACCEPTED_BOUNDED` after
+  R1 corrected timeout owner scope, static-health epistemics, and bundle
+  correlation wording.
+- Future BUILD manifest is 24 paths and must be source-refreshed in a new
+  packet; actual controls remain unimplemented.
+- Material pre-closure passed on range `282a63c37..1038f65aa`.
 
 - Operator approved the immediately preceding exact DESIGN/SPEC-only proposal.
 - GC-018 and source-verified work order passed pre-dispatch and were committed
@@ -100,6 +107,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01ReleaseHardeningDesignSpecClosure20260810.json`
 - `CVF_SESSION/state/entries/lpci1WebUc01ReleaseHardeningDesignSpecDispatch20260810.json`
 - `CVF_SESSION/state/entries/lpci1WebUc02ReopenDiscoveryDispatch20260810.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
@@ -297,6 +305,49 @@ token. Rollback boundary: revert only this seven-path sync if dispatch commit
 | Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - UC-01 Hardening Final Closure Sync
+
+Authorized guard-maintenance scope: synchronize only active V57, front door,
+bootstrap, generated active state, state core, next move, and one new closure
+entry to material closure `1038f65aa` and the parked fresh-BUILD checkpoint.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01ReleaseHardeningDesignSpecClosure20260810.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authority is the recorded DESIGN/SPEC-only approval; this sync closes
+that authority and does not release BUILD. Rollback boundary: revert only this
+seven-path continuity commit if material closure `1038f65aa` is reverted.
+
+## Agent Operation Trace Block - UC-01 Hardening Final Closure Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-hardening-final-sync-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | protected source edits, state generator, gates, Git |
+| Target paths | exact seven-path protected continuity manifest |
+| Allowed scope source | accepted material closure `1038f65aa`, anchor `adf109ac9`, and GC-020 |
+| Before status evidence | material pre-closure PASS; mode still dispatched pending worker |
+| After status evidence | mode parked pending fresh BUILD-only authority |
+| Diff evidence | exact protected manifest and generated-state drift check |
+| Approval boundary | final closure continuity only |
+| Claim boundary | no BUILD, runtime, secret/live/deploy/public action |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-hardening-final-sync-2026-08-10` |
+| Expected manifest | active handoff, front door, bootstrap, aggregate, core, next move, closure entry |
+| Actual changed set | same seven paths after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
 
 ## Core Guard Self-Protection Authorization - UC-01 Hardening Closure Material Anchor
 

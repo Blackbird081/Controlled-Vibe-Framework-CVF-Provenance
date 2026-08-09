@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker",
+  "currentMode": "lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority",
   "activeHandoff": "AGENT_HANDOFF_V57_2026-08-10.md",
-  "nextAllowedMove": "Delegate one no-commit documentation worker from synchronized dispatch base after material commit 9c3308bf8. The worker may create exactly docs/audits/CVF_LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_2026-08-10.md, docs/reference/CVF_LPCI1_WEB_UC01_RELEASE_HARDENING_SPEC_2026-08-10.md, and docs/reviews/CVF_LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_WORKER_RETURN_2026-08-10.md, then return COMPLETE_PENDING_REVIEW. Primary independently reviews and owns all commits. BUILD, runtime/test/config/UI mutation, secret/private access, browser/server/provider/network/live action, hosted execution, deployment, rollback execution, public-sync, push, production, and readiness claims remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "UC-01 release-hardening DESIGN/SPEC is independently accepted bounded at material commit 1038f65aa after R1 source corrections. Stop unless the operator separately authorizes a fresh source-verified UC-01 release-hardening BUILD-only GC-018/work order. That future packet must refresh the accepted 24-path manifest and preserve the lifecycle interlock. No BUILD, runtime/test/config/UI mutation, secret/private access, browser/server/provider/network/live action, hosted execution, deployment, rollback execution, public-sync, push, production, or readiness claim is authorized by this closure. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

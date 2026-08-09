@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=delegate one no-commit worker for exactly the authorized UC-01 DESIGN, SPEC, and worker return; parked checkpoint=BUILD, mutation, secret/private access, browser/server/provider/network/live, hosted execution, deployment, rollback execution, public-sync, push, production, and readiness claims remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless operator separately authorizes a fresh source-verified UC-01 hardening BUILD-only packet; parked checkpoint=BUILD, mutation, secret/private access, browser/server/provider/network/live, hosted execution, deployment, rollback execution, public-sync, push, production, and readiness claims remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`
+Current mode marker: `lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
 
-Current mode: `lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`
+Current mode: `lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
 
-`lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`
+`lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
 
 Previous mode:
 
@@ -403,7 +403,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`
+Mode: `lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
@@ -422,7 +422,7 @@ secret/private access, browser/server/provider/network/live, hosted execution,
 deployment, rollback execution, public sync, push, production, and readiness
 claims remain unauthorized.
 Current mode:
-`lpci1_web_uc01_release_hardening_design_spec_dispatched_pending_worker`.
+`lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
