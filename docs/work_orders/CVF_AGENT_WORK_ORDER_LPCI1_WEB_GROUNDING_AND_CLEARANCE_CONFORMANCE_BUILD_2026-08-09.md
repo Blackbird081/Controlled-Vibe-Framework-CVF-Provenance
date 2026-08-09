@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: LPCI1-WEB-B1
 
@@ -525,27 +525,27 @@ production readiness, public export, or deployment.
 
 ## Acceptance Criteria
 
-- [ ] Full S1 MUST/MUST NOT rules and P1-P8/F1-F16 are mapped and pass.
-- [ ] Aggregate case ledger assigns every ID to applicable suite owners; helper owns only applicable pure cases.
-- [ ] Query/filter strings reject unpaired surrogates before trim/byte count.
-- [ ] Index container/sensitivity/admitted-public validation follows exact order.
-- [ ] Only exact public rows reach search, audit paths, projection, or provider.
-- [ ] Client clearance, identity, role, or grant-shaped input never elevates.
-- [ ] Existing most-restrictive primitive is retained and production retrieval is unchanged.
-- [ ] Mixed direct/escalate abstains with zero fetch calls.
-- [ ] Every projection-driving value is validated and every field serialized safely.
-- [ ] Four-record/16384-byte limits pass and five-record/16385-byte cases fail closed without truncation.
-- [ ] All response variants use `outcome` and exact S1 field allowlists.
-- [ ] No-provider response contains no retrieval receipt and UI count uses audit paths.
-- [ ] Provider failure exposes only the exact fixed safe message.
-- [ ] AuditReceipt canonical fields, effective filters, hash, and correlation invariants hold.
-- [ ] `model_response_hash` is retained; only source/evidence hashes outside canonical AuditReceipt are forbidden.
-- [ ] Auth denial and invalid body have route proof, no LPCI audit, and zero fetch.
-- [ ] Direct POST, helper, filter, retrieval, audit, route-governance, and UI tests pass.
-- [ ] Synthetic process-local `LPCI_LLM_API_KEY` placeholder and mocked fetch use zero network and are restored after tests.
-- [ ] Check, lint, package-owned full non-live tests with TSX exclusion, GC-023, worker-fast, and diff checks pass.
-- [ ] Actual changed set is exact; retrieval source, package, lockfiles, and every forbidden path are unchanged.
-- [ ] Worker returns unstaged and uncommitted.
+- [x] Full S1 MUST/MUST NOT rules and P1-P8/F1-F16 are mapped and pass.
+- [x] Aggregate case ledger assigns every ID to applicable suite owners; helper owns only applicable pure cases.
+- [x] Query/filter strings reject unpaired surrogates before trim/byte count.
+- [x] Index container/sensitivity/admitted-public validation follows exact order.
+- [x] Only exact public rows reach search, audit paths, projection, or provider.
+- [x] Client clearance, identity, role, or grant-shaped input never elevates.
+- [x] Existing most-restrictive primitive is retained and production retrieval is unchanged.
+- [x] Mixed direct/escalate abstains with zero fetch calls.
+- [x] Every projection-driving value is validated and every field serialized safely.
+- [x] Four-record/16384-byte limits pass and five-record/16385-byte cases fail closed without truncation.
+- [x] All response variants use `outcome` and exact S1 field allowlists.
+- [x] No-provider response contains no retrieval receipt and UI count uses audit paths.
+- [x] Provider failure exposes only the exact fixed safe message.
+- [x] AuditReceipt canonical fields, effective filters, hash, and correlation invariants hold.
+- [x] `model_response_hash` is retained; only source/evidence hashes outside canonical AuditReceipt are forbidden.
+- [x] Auth denial and invalid body have route proof, no LPCI audit, and zero fetch.
+- [x] Direct POST, helper, filter, retrieval, audit, route-governance, and UI tests pass.
+- [x] Synthetic process-local `LPCI_LLM_API_KEY` placeholder and mocked fetch use zero network and are restored after tests.
+- [x] Check, lint, package-owned full non-live tests with TSX exclusion, GC-023, worker-fast, and diff checks pass.
+- [x] Actual changed set is exact; retrieval source, package, lockfiles, and every forbidden path are unchanged.
+- [x] Worker returned unstaged and uncommitted.
 
 ## Review Gate
 
@@ -569,14 +569,14 @@ Before closure, compare:
 
 ## Closure Checklist
 
-- [ ] Worker return admitted only after independent review.
-- [ ] Every acceptance item resolved PASS, N/A with reason, or BLOCKED.
-- [ ] Roadmap-to-work-order and SPEC-to-test matrices reconciled.
-- [ ] Exact changed set and forbidden-path evidence recorded.
-- [ ] Runtime/test results and no-live claims are command-backed.
-- [ ] Completion review records repairs and final bounded claim.
-- [ ] Material and continuity commits remain separate.
-- [ ] No open checkbox remains if the artifact is converted to closed status.
+- [x] Worker return admitted only after independent review.
+- [x] Every acceptance item resolved PASS, N/A with reason, or BLOCKED.
+- [x] Roadmap-to-work-order and SPEC-to-test matrices reconciled.
+- [x] Exact changed set and forbidden-path evidence recorded.
+- [x] Runtime/test results and no-live claims are command-backed.
+- [x] Completion review records repairs and final bounded claim.
+- [x] Material and continuity commits remain separate.
+- [x] No open checkbox remains after conversion to closed status.
 
 ## Return-To-Orchestrator Conditions
 
@@ -618,8 +618,8 @@ requiredGate: python governance/compat/run_worker_return_fast_gate.py
 individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 requiredEvidenceTerms: executionBaseHead; git status --short
-requiredSections: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Machine Closure Package
-conditionalDispositionRule: include each conditional section with evidence when applicable, otherwise record N/A with reason
+requiredSections: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Delta Execution Claim Boundary Control Block; Machine Closure Package
+conditionalDispositionRule: Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; and Epistemic Process Block must each contain evidence when applicable, otherwise record N/A with reason
 ```
 
 The return must also contain Source Verification refresh, Work-Order
@@ -746,7 +746,7 @@ Contract source archive-qualified checker exception:
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_work_order_dispatch_quality_tables.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/run_agent_autorun_workflow_gate.py` |
-| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; Source Verification columns; New Doc-Only Fields; Required Artifact Manifest; Forbidden Path Manifest; completionReviewPath; reviewerOwnedClosurePaths; exact AOT manifests; ASCII prose |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; WORKER_MUST_NOT_COMMIT; Source Verification columns; New Doc-Only Fields; Required Artifact Manifest; Forbidden Path Manifest; completionReviewPath; reviewerOwnedClosurePaths; exact AOT manifests; ASCII prose |
 | gateRunPurpose | confirmation evidence after checker-source read-ahead and packet review; not first discovery |
 | claimBoundary | gate compliance does not prove implementation or conformance |
 
@@ -790,17 +790,24 @@ Contract source archive-qualified checker exception:
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| dispatch baseline | paired B1 baseline | `Status: DISPATCH_READY` | READY |
-| work order | this file | `Status: DISPATCH_READY` | READY |
-| implementation outputs | Required Artifact Manifest | future worker evidence | PENDING_EXECUTION |
-| worker return | exact worker-return path | future `COMPLETE_PENDING_REVIEW` or blocked disposition | PENDING_EXECUTION |
-| completion review | reviewer-owned completion path | future independent decision | PENDING_REVIEW |
-| runtime/test proof | deterministic commands only | future local receipts | PENDING_EXECUTION |
-| provider/live proof | N/A with reason: forbidden B1 scope | no real call or key | N/A with reason |
-| public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_GROUNDING_AND_CLEARANCE_CONFORMANCE_BUILD_COMPLETION_2026-08-09.md` | independent source review, exact manifest, and validation evidence | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI_CURRENT_OWNER_GROUNDING_AND_CLEARANCE_DEFECT_INTAKE_ROADMAP_2026-08-08.md` | `Status: LPCI_CONFORMANCE_BUILD_CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | corpus registry mutation is outside B1 authority | no registry state changed; any reconciliation requires separate authority | BLOCKED with reason |
+| Registry Markdown | catalog mutation is outside B1 authority | no catalog state changed; follow-up remains parked | BLOCKED with reason |
+| External evidence digest | repository-local source, Git, and command evidence only | no external artifact admitted | N/A with reason |
+| System loop interlock | B1 and BR1 completions | both global drift gates remain `WAIVED_BOUNDED`, `NON-COMPLIANT`, and not PASS | BLOCKED with reason |
+| Session continuity | separate session-sync after reviewer material commit | continuity paths excluded from this closure batch | N/A with reason |
 
-This dispatch-state package is not a closure verdict. It contains no claim that
-pending worker or reviewer artifacts exist.
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| exact B1 manifest | 10 modified and 4 new paths | PASS |
+| focused conformance | 7 files, 99 tests | PASS |
+| full non-live regression | 304 files; 3397 passed, 2 skipped | PASS |
+| production retrieval source | unchanged | PASS |
+| provider/live calls | zero; forbidden scope | PASS |
 
 ## Public Export Disposition
 
@@ -816,9 +823,12 @@ the orchestrator under a distinct future authority decision.
 
 ## Claim Boundary
 
-This work order authorizes one no-commit worker to implement and deterministically
-test the exact accepted public-only LPCI1-Web conformance contract inside the
-fourteen-path manifest. It does not itself prove implementation or acceptance
-and does not authorize provider/live/release proof, keys or configuration,
-persistence, grants, vector/RAG, corpus mutation, public export, deployment,
-push, production use, or readiness.
+`CLOSED_PASS_BOUNDED` accepts the exact fourteen-path LPCI1-Web conformance
+implementation after independent source review and combined validation at
+HEAD `5072f553b`. The reviewer completion converts the historical worker
+`BLOCKED_WITH_REASON` status after the separately governed BR1 repair removed
+the unrelated package baseline failures; the historical return is not
+rewritten. Production `retrieval.ts` remains unchanged. No provider/live/
+release proof, real key or configuration, persistence, grants, vector/RAG,
+corpus mutation, public export, deployment, push, production use, or readiness
+claim is authorized.
