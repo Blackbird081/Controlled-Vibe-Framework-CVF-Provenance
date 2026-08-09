@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build",
+  "currentMode": "lpci1_web_uc01_provider_binding_build_dispatched_pending_worker",
   "activeHandoff": "AGENT_HANDOFF_V56_2026-08-09.md",
-  "nextAllowedMove": "UC-01 DESIGN is independently accepted bounded at material commit 2e770480c after R1 source-fidelity repair. It selects thin LPCI composition over the existing Model Gateway and records the atomic three-variable config contract plus the Model Gateway-owned trim-empty credential prerequisite. The next allowed move is HOLD before fresh BUILD-only authority consuming the accepted D1 conditions. Provider/live remains a later separate checkpoint after accepted BUILD evidence. SPEC, BUILD, runtime/config/package mutation, provider/live, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "UC-01 B2 BUILD-only packet is committed at e37dfbff9 after pre-dispatch PASS 75/75. The next allowed move is one no-commit implementation worker executing the exact fifteen-path manifest, deterministic network-free proofs, and worker return, followed by independent reviewer disposition. Raw secret access outside the Model Gateway credential owner, ignored local environment reads, real provider/network/live proof, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

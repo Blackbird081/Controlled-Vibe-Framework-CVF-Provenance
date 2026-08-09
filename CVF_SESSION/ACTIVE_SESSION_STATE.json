@@ -96,8 +96,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build",
-  "previousMode": "lpci1_web_uc01_provider_binding_design_dispatched_pending_worker",
+  "currentMode": "lpci1_web_uc01_provider_binding_build_dispatched_pending_worker",
+  "previousMode": "lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13691,7 +13691,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "UC-01 DESIGN is independently accepted bounded at material commit 2e770480c after R1 source-fidelity repair. It selects thin LPCI composition over the existing Model Gateway and records the atomic three-variable config contract plus the Model Gateway-owned trim-empty credential prerequisite. The next allowed move is HOLD before fresh BUILD-only authority consuming the accepted D1 conditions. Provider/live remains a later separate checkpoint after accepted BUILD evidence. SPEC, BUILD, runtime/config/package mutation, provider/live, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "UC-01 B2 BUILD-only packet is committed at e37dfbff9 after pre-dispatch PASS 75/75. The next allowed move is one no-commit implementation worker executing the exact fifteen-path manifest, deterministic network-free proofs, and worker return, followed by independent reviewer disposition. Raw secret access outside the Model Gateway credential owner, ignored local environment reads, real provider/network/live proof, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14057,6 +14057,21 @@
     "providerLiveNetworkActionCount": 0,
     "nextAllowedMove": "HOLD before fresh BUILD-only authority consuming accepted D1 conditions; provider/live remains later after accepted BUILD evidence.",
     "claimBoundary": "Accepted documentation DESIGN only; no BUILD, runtime/config/package mutation, provider/live, public-sync, deployment, or readiness claim."
+  },
+  "lpci1WebUc01ProviderBindingBuildDispatch20260809": {
+    "status": "DISPATCHED_PENDING_WORKER",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-B2",
+    "dispatchCommit": "e37dfbff9",
+    "operatorAuthority": "AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_BINDING_BUILD_ONLY",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_2026-08-09.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerManifestCount": 15,
+    "preDispatchEvidence": "PASS_75_OF_75",
+    "providerLiveNetworkActionCount": 0,
+    "nextAllowedMove": "One no-commit implementation worker executes the committed B2 packet, then the primary reviewer independently accepts, repairs, or returns it.",
+    "claimBoundary": "BUILD dispatch only; no implementation acceptance, provider/live proof, public-sync, deployment, or readiness claim."
   },
   "operatorApprovedProviderModelRoadmap20260720": {
     "status": "PROPOSED_OPERATOR_REVIEW_REQUIRED",
