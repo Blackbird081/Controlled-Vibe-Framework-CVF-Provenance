@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED
 
 Batch ID: LPCI1-WEB-UC01-LIVE
 
@@ -157,6 +157,34 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: this is private provenance live evidence and public sync is not
 authorized by the operator token.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this baseline | `Status: CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED` | PASS |
+| Work order status | paired live-proof work order | matching closed status | PASS |
+| Worker return | `docs/reviews/CVF_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_WORKER_RETURN_2026-08-09.md` | `COMPLETE_PENDING_REVIEW`; independently accepted | PASS |
+| Evidence JSON | `docs/reviews/evidence/lpci1-web-uc01-provider-live-proof-2026-08-09.json` | one call; zero retries; success; HTTP 200 | PASS |
+| Completion review | `docs/reviews/CVF_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_COMPLETION_2026-08-09.md` | reviewer token `LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_PASS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_COMPLETION_2026-08-09.md` | `Status: CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED` | PASS |
+| Roadmap state | LPCI1 context-to-LLM roadmap | bounded live proof accepted; broader lanes parked | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check PASS; no coverage owner changed | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing lookup guidance reviewed; no lookup/index/recommendation change | PASS |
+| External evidence digest | sanitized JSON receipt | sha256 `C399D534AC902435C54F2772AF8EE4CF8760F6D1477F9569419DC1D79DBB1652` | PASS |
+| System loop interlock | D1 -> B2 -> one live proof -> stop | no broader lane released | PASS |
+| Session continuity | protected reviewer/session-steward update | follows accepted material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| exact proof-only authority | exact operator token recorded | PASS |
+| provider/model exact pair | `openai` / `gpt-4o` | PASS |
+| call count maximum one | 1 | PASS |
+| retry count zero | 0 | PASS |
+| nonempty provider result | success; HTTP 200; response length 31 | PASS |
+| secret-safe evidence only | presence, length, digest, status, latency | PASS |
 
 ## Claim Boundary
 

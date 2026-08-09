@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED
 
 Batch ID: LPCI1-WEB-UC01-LIVE
 
@@ -524,14 +524,28 @@ evidence and do not retry for any reason.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `Status: DISPATCHED` | OPEN |
-| Worker return | named worker-return path | terminal worker token | OPEN |
-| Evidence JSON | named evidence path | sanitized receipt contract | OPEN |
-| Completion review | reviewer-owned path | independent disposition | OPEN |
-| Roadmap state | LPCI1 roadmap | reviewer updates only if proof warrants | OPEN |
-| Registry JSON | N/A with reason: no registry mutation authorized | checker evidence only | N/A with reason |
-| Registry Markdown | N/A with reason: no registry mutation authorized | reviewer confirms | N/A with reason |
-| Session continuity | protected reviewer/session-steward update | follows material closure | OPEN |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED_LIVE_PROOF_ACCEPTED` | PASS |
+| Worker return | named worker-return path | `COMPLETE_PENDING_REVIEW`; reviewer accepted | PASS |
+| Evidence JSON | named evidence path | one call; zero retries; success; HTTP 200 | PASS |
+| Completion review | reviewer-owned path | `LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_PASS` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_COMPLETION_2026-08-09.md` | closed bounded reviewer disposition | PASS |
+| Roadmap state | LPCI1 roadmap | bounded live proof accepted; broader lanes parked | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check PASS; no coverage owner changed | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing lookup guidance reviewed; no lookup/index/recommendation change | PASS |
+| External evidence digest | sanitized JSON receipt | sha256 `C399D534AC902435C54F2772AF8EE4CF8760F6D1477F9569419DC1D79DBB1652` | PASS |
+| System loop interlock | D1 -> B2 -> one live proof -> stop | no broader lane released | PASS |
+| Session continuity | protected reviewer/session-steward update | follows material closure | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| exact authority token | `AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY` | PASS |
+| exact provider/model | `openai` / `gpt-4o` | PASS |
+| call count maximum one | 1 | PASS |
+| retry count zero | 0 | PASS |
+| nonempty success | HTTP 200; response length 31 | PASS |
+| secret-safe persistence | presence, length, digest, status, latency only | PASS |
 
 ## Public Export Disposition
 
