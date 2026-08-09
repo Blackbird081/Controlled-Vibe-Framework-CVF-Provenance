@@ -192,6 +192,44 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## Core Guard Self-Protection Authorization - UC-01 Hardening BUILD Material Anchor
+
+Authorized guard-maintenance scope: update only active V57 with the exact
+accepted BUILD material HEAD required by GC-020 before committed-range
+pre-closure verification.
+
+Protected path:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+
+Continuity HEAD: `e82ab11dc0c3b7af46b330c6eedf10049231d7de`.
+
+Rollback boundary: revert only this one-path anchor if material commit
+`e82ab11dc` is reverted.
+
+## Agent Operation Trace Block - UC-01 Hardening BUILD Material Anchor
+
+| Field | Evidence |
+| --- | --- |
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-release-hardening-build-material-anchor-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | active handoff update, session compatibility gate, Git |
+| Target paths | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Allowed scope source | accepted BUILD material commit `e82ab11dc` and GC-020 |
+| Before status evidence | clean material HEAD; pre-closure 74/75 with continuity-only failure |
+| After status evidence | V57 contains the exact accepted material SHA |
+| Diff evidence | exact one-path handoff diff |
+| Approval boundary | continuity repair only |
+| Claim boundary | no source/test/config/roadmap mutation, secret/provider/live/public/deploy/push action, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-release-hardening-build-material-anchor-2026-08-10` |
+| Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Core Guard Self-Protection Authorization - UC-01 Hardening BUILD Dispatch Sync
 
 Authorized guard-maintenance scope: synchronize only the active continuity
