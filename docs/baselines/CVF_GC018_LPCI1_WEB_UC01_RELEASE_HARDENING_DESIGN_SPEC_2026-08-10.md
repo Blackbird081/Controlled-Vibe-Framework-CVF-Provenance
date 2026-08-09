@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-08-10
 
@@ -154,3 +154,16 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: this private architecture packet contains repository-specific evidence;
 no public artifact or public-sync authority exists.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_2026-08-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_COMPLETION_2026-08-10.md` | reviewer accepted with R1 corrections | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_2026-08-09.md` | accepted hold before fresh BUILD authority | PASS |
+| Registry JSON | N/A with reason: no classification work | no mutation authorized | BLOCKED with reason: outside design/spec scope |
+| Registry Markdown | N/A with reason: no classification work | no mutation authorized | BLOCKED with reason: outside design/spec scope |
+| External evidence digest | N/A with reason: repository-local sources only | no intake | N/A with reason |
+| System loop interlock | completion and roadmap | fresh BUILD authority required | PASS |
+| Session continuity | protected session surfaces | separate reviewer sync after material commit | N/A with reason |

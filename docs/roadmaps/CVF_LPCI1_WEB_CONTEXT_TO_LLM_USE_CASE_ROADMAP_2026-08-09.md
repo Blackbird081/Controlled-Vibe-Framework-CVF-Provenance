@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_UC01_RELEASE_READINESS_GAPS_PARKED_PENDING_FRESH_DESIGN_SPEC_AUTHORITY
+Status: LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_ACCEPTED_HOLD_BEFORE_FRESH_BUILD_AUTHORITY
 
 docType: roadmap
 
@@ -322,9 +322,14 @@ accepted as `UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION`. Route
 authorization is PRESENT; auth/RBAC, secret/config, and health/failure are
 PARTIAL; rate limits/quotas, durable audit/observability, and deploy/rollback
 are GAP; public export is NOT_APPLICABLE and `DEFERRED_PRIVATE_ONLY`. The lane
-is parked pending fresh authority for
-`UC01_RELEASE_HARDENING_DESIGN_SPEC_ONLY`; discovery grants no remediation,
-BUILD, hosted action, deployment, production, or public authority.
+then received a fresh DESIGN/SPEC-only authority. The release-hardening design
+and normative spec are independently accepted with R1 corrections: route-local
+composition reuses existing owners; the future BUILD manifest has 24 paths;
+static health makes no external-liveness claim; timeout must propagate one
+AbortSignal to the actual fetch; and secret-derived rotation metadata remains
+excluded while opaque non-secret bundle correlation is allowed. A fresh BUILD
+packet is still mandatory. No BUILD, hosted action, deployment, production, or
+public authority follows from design/spec acceptance.
 
 ## Explicit Parked Lanes
 
@@ -343,10 +348,9 @@ BUILD, hosted action, deployment, production, or public authority.
   caller exists.
 - `UC-06`: `REJECT_DUPLICATE_OWNER` - the existing route already owns this
   responsibility.
-- `UC-01 release readiness`: `GAPS_REQUIRE_REMEDIATION` - direct operational
-  gaps remain in route rate limiting, durable minimized audit/telemetry, role
-  policy, timeout/health coverage, and deploy/rollback controls. Only a fresh
-  documentation-only design/spec packet may continue this lane.
+- `UC-01 release readiness`: `DESIGN_SPEC_ACCEPTED_HOLD_BEFORE_FRESH_BUILD` -
+  owners and finite acceptance contracts are accepted, but every operational
+  control remains unimplemented and release readiness remains unproven.
 - DESIGN and BUILD were opened by later operator GC-018 packets and are
   independently accepted; this roadmap did not itself grant them. SPEC,
   provider/live, persistence, vector/RAG, non-public grants, public-sync,
@@ -365,7 +369,7 @@ BUILD, hosted action, deployment, production, or public authority.
 | `UC-01` (BUILD eligibility) | SATISFIED: B2 implemented and independently accepted the source-verified Model Gateway/cvf-web binding with deterministic network-free proof |
 | `UC-01` (provider-binding live-proof eligibility) | SATISFIED_AND_CONSUMED: exact operator token released one binding attempt; reviewer accepted its sanitized receipt. |
 | `UC-01` (full-route live-proof eligibility) | SATISFIED_AND_CONSUMED: exact full-route token released one signed synthetic-public attempt; reviewer accepted route 1/provider 1/retry 0 and the sanitized correlated receipt. No retry, release, production, deployment, public, or later-lane authority follows. |
-| `UC-01` (release-hardening eligibility) | DISCOVERY_SATISFIED_AND_CONSUMED: accepted discovery identified operational gaps. Reopen only with fresh authority for documentation-only design/spec defining source-verified ownership and acceptance contracts before BUILD. |
+| `UC-01` (release-hardening eligibility) | DESIGN_SPEC_SATISFIED_AND_CONSUMED: accepted design/spec defines source-verified ownership, exact 24-path future BUILD manifest, and deterministic contracts. Continue only with fresh BUILD authority; no hosted/live/deploy authority is inherited. |
 
 ## Acceptance Case Planning For A Future Tranche (Not Executed)
 
@@ -456,7 +460,7 @@ is authorized.
 ## Machine Closure Package
 
 N/A with reason: this roadmap's top status is
-`LPCI1_WEB_UC01_RELEASE_READINESS_GAPS_PARKED_PENDING_FRESH_DESIGN_SPEC_AUTHORITY`,
+`LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_ACCEPTED_HOLD_BEFORE_FRESH_BUILD_AUTHORITY`,
 an accepted bounded continuation state rather than a closed-equivalent token.
 Intake closure remains recorded in the R3 completion; D1 and B2 acceptance are
 recorded in their separate completion reviews.

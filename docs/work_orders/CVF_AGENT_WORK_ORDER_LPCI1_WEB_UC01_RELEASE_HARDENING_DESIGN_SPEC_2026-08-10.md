@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-08-10
 
@@ -317,6 +317,41 @@ command results, epistemic comparison, finding-to-governance disposition,
 external-input status, corpus/value N/A reasons, staging, unchanged HEAD,
 zero forbidden actions, and `COMPLETE_PENDING_REVIEW`.
 
+Required packet-shape term: Purpose
+Required packet-shape term: Scope / Methodology
+Required packet-shape term: Findings / Position
+Required packet-shape term: Risk / Corrective Action
+Required packet-shape term: Claim Boundary
+Required packet-shape term: Agent Operation Trace Block
+Required packet-shape term: Delta Execution Claim Boundary Control Block
+Required packet-shape term: Public Export Disposition
+Required packet-shape term: executionBaseHead
+Required packet-shape term: `git status --short`
+
+Conditional packet-shape term: External Knowledge Intake Routing
+Conditional packet-shape term: Rescan Intelligence Hardening
+Conditional packet-shape term: Corpus Completeness And Report Integrity
+Conditional packet-shape term: Finding-To-Governance Learning Disposition
+Conditional packet-shape term: Epistemic Process Block
+Conditional packet-shape term: Machine Closure Package
+
+N/A with reason instruction: every inapplicable conditional term must use an
+explicit checker-safe disposition rather than omission.
+
+## External Knowledge Intake Routing
+
+Chain map: `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`.
+
+| Field | Value |
+|---|---|
+| Chain map | reviewed; no absorption route applies |
+| Input type | operator-provided external comparison, critique, or recommendation |
+| Chain map route | NOT_TRIGGERED |
+| Matching local-view guard | N/A with reason: no external source is absorbed |
+| Owner surface | current governed LPCI/cvf-web and Model Gateway sources |
+| Disposition | NOT_APPLICABLE_WITH_REASON |
+| Claim boundary | repository-local design/spec only; no external absorption claim |
+
 ## Verification Commands
 
 ```powershell
@@ -363,25 +398,40 @@ operator authority.
 
 ## Closure Checklist
 
-- [ ] exact three worker outputs returned
-- [ ] current and future contract names separated
-- [ ] all eight dimensions have owners and observable acceptance
-- [ ] zero runtime/secret/live/deploy/public action
-- [ ] worker staging empty and HEAD unchanged
-- [ ] full fast gate passes
-- [ ] independent reviewer verdict recorded
+- [x] exact three worker outputs returned
+- [x] current and future contract names separated
+- [x] all eight dimensions have owners and observable acceptance
+- [x] zero runtime/secret/live/deploy/public action
+- [x] worker staging empty and HEAD unchanged
+- [x] full fast gate passes
+- [x] independent reviewer verdict recorded
 
 ## Machine Closure Package
 
-| Closure item | Required artifact/path | Machine-readable evidence | Current status |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order | this file | `Status: DISPATCH_READY` | PASS |
-| Completion review | `docs/reviews/CVF_LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_COMPLETION_2026-08-10.md` | reviewer-owned future artifact | N/A with reason: not yet reviewed |
-| Roadmap state | `docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_2026-08-09.md` | reviewer-owned future closure update | N/A with reason: not yet reviewed |
-| Registry JSON | N/A with reason: no corpus registry mutation | no change | N/A with reason |
-| Registry Markdown | N/A with reason: no corpus registry mutation | no change | N/A with reason |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_COMPLETION_2026-08-10.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_2026-08-09.md` | `Status: LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_ACCEPTED_HOLD_BEFORE_FRESH_BUILD_AUTHORITY` | PASS |
+| Registry JSON | N/A with reason: no classification work | no mutation authorized | BLOCKED with reason: outside design/spec scope |
+| Registry Markdown | N/A with reason: no classification work | no mutation authorized | BLOCKED with reason: outside design/spec scope |
 | External evidence digest | N/A with reason: repository-local sources only | no intake | N/A with reason |
+| System loop interlock | completion and roadmap | fresh BUILD authority required | PASS |
 | Session continuity | protected session surfaces | separate reviewer sync | N/A with reason: after material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| design/spec worker manifest | exactly three documentation outputs | PASS |
+| worker execution base | `282a63c37` | PASS |
+| pre-implementation | 77/77 | PASS |
+| worker/reviewer fast gate | PASS including reviewer-fast 62/62 | PASS |
+| future BUILD manifest | 24 paths after R1 source correction | PASS |
+| timeout propagation | bridge input through adapter to actual fetch signal | PASS design contract |
+| static health boundary | no external liveness/writability claim | PASS |
+| worker staging and commit | empty staging; unchanged HEAD; no commit | PASS |
+| external/runtime actions | zero | PASS |
 
 ## Agent Operation Trace Block
 
