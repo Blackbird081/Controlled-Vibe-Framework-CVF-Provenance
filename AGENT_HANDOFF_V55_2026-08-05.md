@@ -184,6 +184,82 @@ creation and may be accepted under the GC-020 parent rule.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## GC-020 Marker - LPCI1-Web BR1 Dispatch Continuity
+
+The reviewer-owned BR1 dispatch commit is `fa75aeea4`, with parent
+`d9497c5db`. Status is `DISPATCH_READY` under both bounded operator waivers:
+`AUTHORIZE_BOUNDED_WAIVER_SYSTEM_CHAIN_FRESHNESS_FOR_LPCI_BR1` and
+`AUTHORIZE_BOUNDED_WAIVER_AS_BUILT_CATALOG_DRIFT_FOR_LPCI_BR1`. Both waived
+gates remain `WAIVED_BOUNDED`, `NON-COMPLIANT`, and not PASS. Cross-platform
+system-chain fingerprint/MSEA-R90 semantic reconciliation and as-built
+catalog/gap-index reconciliation remain parked as separate governed work.
+
+The next allowed move is one `WORKER_MUST_NOT_COMMIT` execution at exact
+execution base `c44d0f68f`, whose parent chain contains dispatch commit
+`fa75aeea4`, limited to these 11 paths:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.diagnostics.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.governance-trace.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.vi5-t1-language-state.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/artifacts/page.test.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance/knowledge/page.test.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/help/page.test.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/knowledge/intake/page.test.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/home/HomeBrowseExperience.test.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/home/HomeBrowseExperience.tsx`
+- `docs/reviews/CVF_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_WORKER_RETURN_2026-08-09.md`
+
+The worker may not modify any other path and may not commit. The reviewer owns
+later integration, closure, session synchronization, and local commits. No
+provider, live, network, release, public-sync, persistence, grant, vector, or
+RAG action is authorized.
+
+## Core Guard Self-Protection Authorization - LPCI1-Web BR1 Dispatch Continuity
+
+Authorized guard-maintenance scope: add this minimal reviewer-owned continuity
+anchor and correct the committed BR1 work order's worker-return packet-shape
+contract after dispatch commit `fa75aeea4`.
+
+Protected path:
+
+- `AGENT_HANDOFF_V55_2026-08-05.md`
+
+Operator authorization: `AUTHORIZE_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR`,
+`AUTHORIZE_BOUNDED_WAIVER_SYSTEM_CHAIN_FRESHNESS_FOR_LPCI_BR1`, and
+`AUTHORIZE_BOUNDED_WAIVER_AS_BUILT_CATALOG_DRIFT_FOR_LPCI_BR1`.
+
+Rollback boundary: revert only this continuity anchor and the paired work-order
+packet-shape correction if the BR1 dispatch commit is reverted. Do not alter
+the parked system-chain or as-built catalog reconciliation lanes.
+
+Not authorized: implementation beyond the exact 11-path worker manifest,
+worker commits, provider/model/live/network execution, persistence, grants,
+vector/RAG, release, deployment, or public-sync.
+
+## Agent Operation Trace Block - LPCI1-Web BR1 Dispatch Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | reviewer and session-sync steward |
+| Provider or surface | isolated local private provenance worktree |
+| Session or invocation | LPCI1-Web BR1 packet-shape and dispatch continuity repair, 2026-08-09 |
+| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\CVF-LPCI-BR1` |
+| Command or tool surface | bounded markdown edits and local read-only governance checkers |
+| Target paths | BR1 work order and active handoff only |
+| Allowed scope source | reviewer repair instruction after dispatch commit `fa75aeea4` and the two bounded operator waivers |
+| Before status evidence | HEAD `fa75aeea4`, parent `d9497c5db`; BR1 packet committed but worker-return packet shape and active continuity anchor required repair |
+| After status evidence | `DISPATCH_READY`; next move is exact 11-path no-commit worker execution at parent commit `c44d0f68f` after this handoff-sync commit |
+| Diff evidence | `git diff --name-status` and `git status --short` limited to the two expected documentation paths |
+| Approval boundary | work-order packet-shape correction and reviewer-owned active-handoff continuity only |
+| Claim boundary | no implementation, generated-state edit, provider/live/network action, release, deployment, or public-sync claim |
+| Agent type | reviewer and session-sync steward |
+| Invocation ID | `lpci1-web-br1-packet-shape-continuity-2026-08-09` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_2026-08-09.md`; `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_BUILD_EXTERNAL_BASELINE_REPAIR_2026-08-09.md`; `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## GC-020 Marker - LPCI1-Web B1 Build Dispatch Continuity
 
 Material commit `9ab3068fe` records the fresh BUILD authority, GC-018, and
