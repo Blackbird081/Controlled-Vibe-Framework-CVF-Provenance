@@ -173,6 +173,51 @@ only this handoff-only anchor if commit `8c810d0e2` is reverted.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## UC-01 B2 Material Closure Anchor
+
+Latest accepted material commit:
+`5c86f6d77 feat(lpci): bind UC-01 through Model Gateway`.
+
+The exact twenty-path material closure passed the commit hook 83 of 83 after
+independent reviewer acceptance and R1 correction. The accepted claim is
+bounded local BUILD with deterministic network-free evidence. Provider/live,
+public-sync, deployment, and readiness remain parked.
+
+## Core Guard Self-Protection Authorization - B2 Material Closure
+
+Authorized guard-maintenance scope: update only the active handoff with the
+accepted material HEAD required by GC-020 before material-range pre-closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+
+Rollback boundary: revert only this handoff anchor if material commit
+`5c86f6d77` is reverted.
+
+## Agent Operation Trace Block - B2 Material Closure
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-b2-material-closure-anchor-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | material review, commit receipt, handoff-only patch, compatibility gate, and Git commit |
+| Target paths | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Allowed scope source | reviewer-owned GC-020 continuity after accepted B2 material closure |
+| Before status evidence | clean material HEAD `5c86f6d77`; material hook passed 83 of 83 |
+| After status evidence | active handoff contains the exact accepted material HEAD |
+| Diff evidence | exact one-path handoff diff and handoff-sync steward |
+| Approval boundary | handoff continuity only |
+| Claim boundary | accepted local network-free BUILD; no provider/live/public/deployment/readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-b2-material-closure-anchor-2026-08-09` |
+| Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## UC-01 B2 Dispatch-Repair Continuity Anchor
 
 Latest reviewer-owned dispatch repair commit:
