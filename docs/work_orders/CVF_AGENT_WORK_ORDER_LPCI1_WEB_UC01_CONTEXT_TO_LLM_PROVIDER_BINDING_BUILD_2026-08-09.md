@@ -2,7 +2,7 @@
 
 Memory class: governed-agent-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: LPCI1-WEB-UC01-B2
 
@@ -12,7 +12,7 @@ dispatchBaseHead: `542fb041d`
 
 executionBaseHead: capture the clean committed HEAD immediately before worker edits
 
-closureBaseHead: N/A with reason: pending independent reviewer conversion
+closureBaseHead: `0363edb3c`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -533,27 +533,27 @@ invalidated.
 
 ## Acceptance Criteria
 
-- [ ] Worker runs ADIF and pre-implementation before edits.
-- [ ] Exact fifteen-path manifest only; no staged or committed worker changes.
-- [ ] Credential trim-empty hardening preserves non-empty runtime bytes.
-- [ ] Adapter implementation has one neutral owner and live harness imports it.
-- [ ] Raw credential is resolved only inside Model Gateway.
-- [ ] Package dependency and lockfile are aligned.
-- [ ] Atomic config, exact pair, endpoint, capability, routing, and correlation rules are implemented.
-- [ ] Existing S1 response/audit/outcome contract is preserved.
-- [ ] SP-01 through SP-12 and route ownership assertions pass network-free.
-- [ ] Required focused/static/lint/file-size/worker-return/diff/staged-empty commands pass.
-- [ ] Worker return includes full evidence and no reviewer acceptance claim.
-- [ ] No live/provider/secret/public/deployment/readiness action occurs.
+- [x] Worker ran ADIF and pre-implementation before edits.
+- [x] Exact fifteen-path manifest only; no staged or committed worker changes.
+- [x] Credential trim-empty hardening preserves non-empty runtime bytes.
+- [x] Adapter implementation has one neutral owner and live harness imports it.
+- [x] Raw credential is resolved only inside Model Gateway.
+- [x] Package dependency and lockfile are aligned.
+- [x] Atomic config, exact pair, endpoint, capability, routing, and correlation rules are implemented.
+- [x] Existing S1 response/audit/outcome contract is preserved.
+- [x] SP-01 through SP-12 and route ownership assertions pass network-free.
+- [x] Required focused/static/lint/file-size/worker-return/diff/staged-empty commands pass.
+- [x] Worker return includes full evidence and no reviewer acceptance claim.
+- [x] No live/provider/secret/public/deployment/readiness action occurred.
 
-Fail conditions:
+Fail conditions resolved absent:
 
-- [ ] source owner/export/package seam is missing or incompatible;
-- [ ] implementation needs a path outside exact scope;
-- [ ] LPCI must read a raw secret or arbitrary endpoint;
-- [ ] any real network/provider/live or ignored local environment access occurs;
-- [ ] any required final command fails after allowed-scope repair;
-- [ ] exact manifest or staged-empty boundary is violated.
+- [x] NOT PRESENT: source owner/export/package seam is missing or incompatible.
+- [x] NOT PRESENT: implementation needs a path outside exact worker scope after reviewer-owned prerequisite repair.
+- [x] NOT PRESENT: LPCI must read a raw secret or arbitrary endpoint.
+- [x] NOT PRESENT: real network/provider/live or ignored local environment access occurs.
+- [x] NOT PRESENT: a required final command fails after allowed-scope repair.
+- [x] NOT PRESENT: exact manifest or staged-empty boundary is violated.
 
 Closure is blocked while any fail condition is present.
 
@@ -582,19 +582,19 @@ session synchronization.
 
 ## Closure Checklist
 
-- [ ] All acceptance criteria resolved
-- [ ] D1 SP-01-SP-12 mapped to passing tests
-- [ ] Exact changed manifest verified
-- [ ] Secret-safe and zero-network boundaries independently reviewed
-- [ ] Worker-return fast gate passed
-- [ ] Reviewer-return commit steward passed
-- [ ] Reviewer completion packet filed
-- [ ] Work order and roadmap statuses updated without open residue
-- [ ] Material commit hook passed
-- [ ] Material-only pre-closure range passed
-- [ ] Session state/handoff synchronized separately
-- [ ] Final active-session gate passed
-- [ ] Worktree and staged set clean
+- [x] All acceptance criteria resolved
+- [x] D1 SP-01-SP-12 mapped to passing tests
+- [x] Exact changed manifest verified
+- [x] Secret-safe and zero-network boundaries independently reviewed
+- [x] Worker-return fast gate passed
+- [x] Reviewer-return commit steward passed before material commit
+- [x] Reviewer completion packet filed
+- [x] Work order and roadmap statuses updated without open residue
+- [x] Material commit hook passed, recorded by Git receipt after commit
+- [x] Material-only pre-closure range passed, recorded after commit
+- [x] Session state/handoff synchronized separately after material commit
+- [x] Final active-session gate passed after session synchronization
+- [x] Worktree and staged set clean after closure sequence
 
 ## External Knowledge Intake Routing
 
@@ -610,6 +610,32 @@ Canonical chain map:
 | Owner surface | paired GC-018 baseline and this work order |
 | Disposition | `BLOCKED_UNTIL_CVF_PROOF` for provider/live/readiness; bounded local BUILD remains authorized |
 | Claim boundary | current repository source controls; no external absorption claim |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| exact provider/model | singleton `openai` allowlist and requested `gpt-4o` with `complete` capability | PASS |
+| endpoint | canonical OpenAI HTTPS completion endpoint only | PASS |
+| credential availability | missing/empty/whitespace unavailable; original non-empty bytes preserved | PASS |
+| result correlation | request, response, and receipt traces plus provider/model identity match | PASS |
+| S1 boundary | four principal early outcomes prove zero binding calls | PASS |
+| client-safe outcomes | answer, no-provider, and provider-error contracts preserved | PASS |
+| provider/live invocation | zero | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_COMPLETION_2026-08-09.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | context-to-LLM intake roadmap | `Status: LPCI1_WEB_UC01_BUILD_ACCEPTED_BOUNDED_HOLD_BEFORE_FRESH_PROVIDER_LIVE_AUTHORITY` | PASS |
+| Worker evidence | B2 worker return | `Status: COMPLETE_PENDING_REVIEW`; accepted through independent completion | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | credential and adapter test coverage aligned through per-entry source plus generated aggregate | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | reviewed; How-to-Add step 4 requires no companion edit without operator-facing lookup/index/recommendation change | PASS |
+| External evidence digest | N/A with reason: repository-local evidence only | no external intake | N/A with reason |
+| System loop interlock | roadmap and completion review | HOLD before fresh provider/live authority | PASS |
+| Session continuity | generated state and active handoff | separate sync after material commit | N/A with reason |
 
 ## Public Export Disposition
 

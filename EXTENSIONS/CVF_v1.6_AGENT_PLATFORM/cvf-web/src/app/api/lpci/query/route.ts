@@ -10,6 +10,7 @@ import {
   validateQueryRequest,
 } from '@/lib/lpci/query-conformance';
 import { runRetrievalPipeline } from '@/lib/lpci/retrieval';
+import { executeLpciProviderBinding } from '@/lib/lpci/provider-binding';
 import type {
   AuditReceipt,
   EvidenceOutcome,
@@ -260,8 +261,18 @@ export async function POST(request: NextRequest) {
   const projection = buildModelEvidenceProjection(receipt.matched_records);
   if (!projection.ok) return groundingResponse(true, receipt);
 
-  const llmApiKey = process.env.LPCI_LLM_API_KEY;
-  if (!llmApiKey) {
+  const systemPrompt = buildAnswerBoundaryPrompt({
+    answerClass: receipt.answer_class,
+    freshnessFlag: receipt.freshness_flag,
+    conflictFlag: receipt.conflict_flag,
+    serializedProjection: projection.serialized,
+  });
+  const providerResult = await executeLpciProviderBinding({
+    prompt: query,
+    systemPrompt,
+  });
+
+  if (providerResult.outcome === 'NO_PROVIDER_CONFIGURED') {
     const hashPayload = serializeExactJson({
       outcome: 'NO_PROVIDER_CONFIGURED', query, corpusId,
       authorizationDecision: AUTHORIZATION_DECISION, evidenceOutcome: 'ELIGIBLE_NOT_SENT', message: NO_PROVIDER_MESSAGE,
@@ -277,33 +288,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(body);
   }
 
-  const systemPrompt = buildAnswerBoundaryPrompt({
-    answerClass: receipt.answer_class,
-    freshnessFlag: receipt.freshness_flag,
-    conflictFlag: receipt.conflict_flag,
-    serializedProjection: projection.serialized,
-  });
-  const llmEndpoint = process.env.LPCI_LLM_ENDPOINT ?? 'https://api.openai.com/v1/chat/completions';
-  const llmModel = process.env.LPCI_LLM_MODEL ?? 'gpt-4o-mini';
-
-  let llmResponseText: string;
-  try {
-    const response = await fetch(llmEndpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${llmApiKey}` },
-      body: JSON.stringify({
-        model: llmModel,
-        messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: query }],
-        max_tokens: 1024,
-        temperature: 0,
-      }),
-    });
-    if (!response.ok) throw new Error('provider request failed');
-    const data = await response.json() as { choices?: Array<{ message?: { content?: unknown } }> };
-    const content = data.choices?.[0]?.message?.content;
-    if (typeof content !== 'string' || !content) throw new Error('provider response unavailable');
-    llmResponseText = content;
-  } catch {
+  if (providerResult.outcome === 'PROVIDER_ERROR') {
     const hashPayload = serializeExactJson({
       outcome: 'PROVIDER_ERROR', query, corpusId,
       authorizationDecision: AUTHORIZATION_DECISION, evidenceOutcome: 'PROVIDER_FAILED', message: PROVIDER_ERROR_MESSAGE,
@@ -320,10 +305,10 @@ export async function POST(request: NextRequest) {
   }
 
   const auditReceipt = makeAudit({
-    responseText: llmResponseText, responseBoundaryClass: 'ANSWER_EMITTED', sensitivityApplied: true, retrieval: receipt,
+    responseText: providerResult.response, responseBoundaryClass: 'ANSWER_EMITTED', sensitivityApplied: true, retrieval: receipt,
   });
   const body = {
-    outcome: 'ANSWER_EMITTED', response: llmResponseText, query, corpusId,
+    outcome: 'ANSWER_EMITTED', response: providerResult.response, query, corpusId,
     answerClass: receipt.answer_class, matchedSources: receipt.matched_paths,
     freshnessFlag: receipt.freshness_flag, conflictFlag: receipt.conflict_flag,
     auditId: auditReceipt.auditId, authorizationDecision: AUTHORIZATION_DECISION,

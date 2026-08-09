@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_UC01_DESIGN_ACCEPTED_BOUNDED_HOLD_BEFORE_FRESH_BUILD
+Status: LPCI1_WEB_UC01_BUILD_ACCEPTED_BOUNDED_HOLD_BEFORE_FRESH_PROVIDER_LIVE_AUTHORITY
 
 docType: roadmap
 
@@ -304,9 +304,11 @@ review; this roadmap did not itself grant them:
    grant provider/live-proof scope. DESIGN or BUILD authority never grants a
    provider call or live proof.
 
-Current continuation: the complete UC-01 DESIGN is independently accepted
-bounded. The next checkpoint is fresh BUILD-only authority; no BUILD or
-provider/live step is released by this status update.
+Current continuation: the complete UC-01 DESIGN and bounded B2 BUILD are
+independently accepted. The runtime binding and documented atomic config now
+satisfy the UC-04 reopen condition with deterministic network-free evidence.
+The next checkpoint is a separate fresh provider/live authority; no provider
+call, live proof, deployment, or readiness step is released by this status.
 
 ## Explicit Parked Lanes
 
@@ -315,17 +317,16 @@ provider/live step is released by this status update.
   route-compatible public index are simultaneously verified for LPCI1.
 - `UC-03`: `PARKED_MISSING_ENTITLEMENT_OWNER` - no non-public grant/entitlement
   owner exists in current source.
-- `UC-04`: `DESIGN_ACCEPTED_RUNTIME_BINDING_PARKED` - the accepted D1 DESIGN
-  selects thin LPCI composition over the existing Model Gateway and defines
-  the atomic three-variable config contract. Runtime/package/config binding is
-  still absent. Live invocation remains parked until separately authorized
-  BUILD evidence is accepted and a later fresh provider/live grant is issued.
+- `UC-04`: `RUNTIME_BINDING_ACCEPTED_LIVE_PARKED` - the accepted B2 BUILD
+  composes LPCI with the existing Model Gateway, documents the atomic
+  three-variable contract, and proves fail-closed behavior network-free. Live
+  invocation remains parked until a later fresh provider/live grant is issued.
 - `UC-05`: `NO_CURRENT_VALUE_WITH_REOPEN_CONDITION` - no non-test, non-dashboard
   caller exists.
 - `UC-06`: `REJECT_DUPLICATE_OWNER` - the existing route already owns this
   responsibility.
-- DESIGN was opened by a later operator GC-018 and is independently accepted;
-  this roadmap did not itself grant it. SPEC, BUILD,
+- DESIGN and BUILD were opened by later operator GC-018 packets and are
+  independently accepted; this roadmap did not itself grant them. SPEC,
   provider/live, persistence, vector/RAG, non-public grants, public-sync,
   deployment, and readiness remain parked for every candidate in this roadmap
   regardless of rank.
@@ -339,8 +340,8 @@ provider/live step is released by this status update.
 | `UC-04` | both simultaneously: (a) the LPCI-specific binding of `LPCI_LLM_API_KEY`, `LPCI_LLM_ENDPOINT`, and `LPCI_LLM_MODEL` to the existing Model Gateway owner is source-verified in runtime code (reuse/compose, not a new parallel owner); and (b) a documented config contract for that binding exists. `.env.example` naming alone, without source-verified Model Gateway integration, is insufficient. Live-proof authority additionally requires a fresh separate operator grant. |
 | `UC-05` | a real non-test, non-dashboard caller of `/api/lpci/query` is source-verified to exist |
 | `UC-01` (DESIGN-only eligibility) | SATISFIED: later D1 authority produced an independently accepted complete DESIGN including UC-04 |
-| `UC-01` (BUILD eligibility) | fresh BUILD-only GC-018 must source-verify the accepted D1 manifest and exact current Model Gateway/cvf-web seams; no authority exists yet |
-| `UC-01` (live-proof eligibility) | requires accepted runtime binding plus documented config evidence from BUILD, then a separate fresh operator provider/live grant |
+| `UC-01` (BUILD eligibility) | SATISFIED: B2 implemented and independently accepted the source-verified Model Gateway/cvf-web binding with deterministic network-free proof |
+| `UC-01` (live-proof eligibility) | runtime binding plus documented config evidence are SATISFIED; a separate fresh operator provider/live grant is still REQUIRED |
 
 ## Acceptance Case Planning For A Future Tranche (Not Executed)
 
@@ -427,10 +428,10 @@ vector/RAG, non-public grant, public-sync, or deployment authority exists here.
 ## Machine Closure Package
 
 N/A with reason: this roadmap's top status is
-`LPCI1_WEB_UC01_DESIGN_ACCEPTED_BOUNDED_HOLD_BEFORE_FRESH_BUILD`, an accepted
-bounded continuation state rather than a closed-equivalent token. Intake
-closure remains recorded in the R3 completion; D1 acceptance is recorded in
-`docs/reviews/CVF_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_DESIGN_COMPLETION_2026-08-09.md`.
+`LPCI1_WEB_UC01_BUILD_ACCEPTED_BOUNDED_HOLD_BEFORE_FRESH_PROVIDER_LIVE_AUTHORITY`,
+an accepted bounded continuation state rather than a closed-equivalent token.
+Intake closure remains recorded in the R3 completion; D1 and B2 acceptance are
+recorded in their separate completion reviews.
 
 ## ADIF Defect Registry Disclosure
 
@@ -457,10 +458,11 @@ absorption occurs, recorded for completeness).
 
 ## Verification/Evidence
 
-No runtime, test, or provider command was executed by this roadmap. Evidence is
-limited to direct file reads (`Read`), pattern search (`Grep`), one JSON
-registry parse via a local read-only Python one-liner, one `git check-ignore
--v` call, and one ADIF resolver invocation, all listed above.
+The original intake authoring executed no runtime, test, or provider command.
+The later B2 closure independently ran 70 deterministic focused tests,
+TypeScript checks, scoped lint, and local governance gates; those receipts are
+recorded in the B2 completion review. Provider/network/live execution count
+remains zero.
 
 ## Agent Operation Trace Block
 
@@ -534,11 +536,10 @@ public-safe export packet or public-sync authority exists for this roadmap.
 
 ## Claim Boundary
 
-This roadmap records one documentation-only context-to-LLM use-case intake. It
-identifies candidate consumers, distinguishes source-present from configured
-provider ownership, ranks candidates by value/risk, and recommends at most one
-next-tranche candidate. It does not select a final design, implement or
-execute any code, call a provider, use an API key, open non-public access,
-claim public-sync/deployment/readiness, or authorize any later lifecycle
-phase. Any DESIGN, SPEC, BUILD, or live-proof work requires a fresh explicit
-operator authority and a new governed packet.
+This roadmap began as a documentation-only context-to-LLM use-case intake and
+now records later independently accepted D1 DESIGN and B2 BUILD evidence.
+Those later packets implemented a bounded local provider-binding seam and
+deterministic tests; they did not call a provider, read a real credential,
+open non-public access, public-sync, deploy, or establish readiness. Any live
+proof still requires fresh explicit operator authority and a new governed
+packet.

@@ -3,9 +3,13 @@ import { NextRequest } from 'next/server';
 
 const fsMocks = vi.hoisted(() => ({ existsSync: vi.fn(), readFileSync: vi.fn() }));
 const verifySessionCookieMock = vi.hoisted(() => vi.fn());
+const executeLpciProviderBindingMock = vi.hoisted(() => vi.fn());
 
 vi.mock('node:fs', () => ({ ...fsMocks, default: fsMocks }));
 vi.mock('@/lib/middleware-auth', () => ({ verifySessionCookie: verifySessionCookieMock }));
+vi.mock('@/lib/lpci/provider-binding', () => ({
+  executeLpciProviderBinding: executeLpciProviderBindingMock,
+}));
 
 import { sha256Hex } from '@/lib/lpci/audit-receipt';
 import { serializeExactJson } from '@/lib/lpci/query-conformance';
@@ -65,6 +69,10 @@ describe('POST /api/lpci/query conformance', () => {
     indexValue = [baseRecord()];
     process.env.CVF_SERVICE_TOKEN = 'fake-service-token';
     delete process.env.LPCI_LLM_API_KEY;
+    delete process.env.LPCI_LLM_MODEL;
+    delete process.env.LPCI_LLM_ENDPOINT;
+    executeLpciProviderBindingMock.mockReset();
+    executeLpciProviderBindingMock.mockResolvedValue({ outcome: 'NO_PROVIDER_CONFIGURED' });
     verifySessionCookieMock.mockReset();
     verifySessionCookieMock.mockResolvedValue(null);
     fsMocks.existsSync.mockReset();
@@ -82,6 +90,8 @@ describe('POST /api/lpci/query conformance', () => {
 
   afterEach(() => {
     delete process.env.LPCI_LLM_API_KEY;
+    delete process.env.LPCI_LLM_MODEL;
+    delete process.env.LPCI_LLM_ENDPOINT;
     delete process.env.CVF_SERVICE_TOKEN;
     vi.unstubAllGlobals();
   });
@@ -238,6 +248,29 @@ describe('POST /api/lpci/query conformance', () => {
     expect(fetch).not.toHaveBeenCalled();
   });
 
+  it('SP-10 keeps non-provider S1 outcomes outside the binding', async () => {
+    registered = false;
+    expect((await post()).data.outcome).toBe('CORPUS_NOT_REGISTERED');
+    expect(executeLpciProviderBindingMock).not.toHaveBeenCalled();
+
+    registered = true;
+    indexValue = '{}';
+    expect((await post()).data.outcome).toBe('GROUNDING_EVIDENCE_UNAVAILABLE');
+    expect(executeLpciProviderBindingMock).not.toHaveBeenCalled();
+
+    indexValue = [baseRecord({ contentSnippet: 'other topic', titleSnippet: 'other topic' })];
+    expect((await post()).data.outcome).toBe('PHASE1_NEGATIVE');
+    expect(executeLpciProviderBindingMock).not.toHaveBeenCalled();
+
+    indexValue = [
+      baseRecord(),
+      baseRecord({ normalizedPath: 'public/escalate.pdf', answerClass: 'ESCALATE_OR_ABSTAIN' }),
+    ];
+    expect((await post()).data.outcome).toBe('ABSTAINED');
+    expect(executeLpciProviderBindingMock).not.toHaveBeenCalled();
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
   it('returns minimized no-provider response and audit-path count source', async () => {
     const { data } = await post();
     expect(data.outcome).toBe('NO_PROVIDER_CONFIGURED');
@@ -250,23 +283,24 @@ describe('POST /api/lpci/query conformance', () => {
     expect(fetch).not.toHaveBeenCalled();
   });
 
-  it('sends one allowlisted JSON evidence object and emits correlated answer', async () => {
-    process.env.LPCI_LLM_API_KEY = 'fixed-fake-test-key';
-    vi.mocked(fetch).mockResolvedValue(new Response(JSON.stringify({
-      choices: [{ message: { content: 'Based on retrieved documents only. Answer.' } }],
-    }), { status: 200, headers: { 'Content-Type': 'application/json' } }));
+  it('sends one allowlisted JSON evidence object to the binding and emits correlated answer', async () => {
+    executeLpciProviderBindingMock.mockResolvedValueOnce({
+      outcome: 'ANSWER_EMITTED',
+      response: 'Based on retrieved documents only. Answer.',
+    });
     const { data } = await post();
-    expect(fetch).toHaveBeenCalledTimes(1);
-    const call = vi.mocked(fetch).mock.calls[0];
-    const providerBody = JSON.parse(String((call[1] as RequestInit).body));
-    const prompt = providerBody.messages[0].content as string;
+    expect(executeLpciProviderBindingMock).toHaveBeenCalledTimes(1);
+    const bindingInput = executeLpciProviderBindingMock.mock.calls[0][0];
+    const prompt = bindingInput.systemPrompt as string;
     expect(prompt.match(/"schemaVersion"/g)).toHaveLength(1);
     expect(prompt).toContain('leave policy public evidence');
     expect(prompt).not.toContain('must-not-leak');
+    expect(bindingInput.prompt).toBe('leave policy');
     expect(data.outcome).toBe('ANSWER_EMITTED');
     expect(data.matchedSources).toEqual(data.auditReceipt.matched_paths);
     expect(data.auditReceipt.model_response_hash).toBe(sha256Hex(data.response));
     expectAuditedCorrelation(data);
+    expect(fetch).not.toHaveBeenCalled();
   });
 
   it('sends four valid boundary records in exactly one mocked provider call', async () => {
@@ -274,26 +308,26 @@ describe('POST /api/lpci/query conformance', () => {
       normalizedPath: `public/${index}.pdf`,
       contentSnippet: `${'x'.repeat(499)} leave policy`,
     }));
-    process.env.LPCI_LLM_API_KEY = 'fixed-fake-test-key';
-    vi.mocked(fetch).mockResolvedValue(new Response(JSON.stringify({
-      choices: [{ message: { content: 'Based on retrieved documents only. Four records.' } }],
-    }), { status: 200, headers: { 'Content-Type': 'application/json' } }));
+    executeLpciProviderBindingMock.mockResolvedValueOnce({
+      outcome: 'ANSWER_EMITTED',
+      response: 'Based on retrieved documents only. Four records.',
+    });
 
     const { data } = await post();
 
     expect(data.outcome).toBe('ANSWER_EMITTED');
     expect(data.auditReceipt.matched_paths).toHaveLength(4);
-    expect(fetch).toHaveBeenCalledTimes(1);
-    const providerBody = JSON.parse(String((vi.mocked(fetch).mock.calls[0][1] as RequestInit).body));
-    const prompt = providerBody.messages[0].content as string;
+    expect(executeLpciProviderBindingMock).toHaveBeenCalledTimes(1);
+    const prompt = executeLpciProviderBindingMock.mock.calls[0][0].systemPrompt as string;
     expect((prompt.match(/"normalizedPath"/g) ?? [])).toHaveLength(4);
+    expect(fetch).not.toHaveBeenCalled();
   });
 
-  it('returns fixed safe provider error after exactly one mocked fetch', async () => {
-    process.env.LPCI_LLM_API_KEY = 'fixed-fake-test-key';
-    vi.mocked(fetch).mockResolvedValue(new Response('sensitive provider body', { status: 500 }));
+  it('returns fixed safe provider error after exactly one binding call', async () => {
+    executeLpciProviderBindingMock.mockResolvedValueOnce({ outcome: 'PROVIDER_ERROR' });
     const { response, data } = await post();
-    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(executeLpciProviderBindingMock).toHaveBeenCalledTimes(1);
+    expect(fetch).not.toHaveBeenCalled();
     expect(response.status).toBe(502);
     expect(data.outcome).toBe('PROVIDER_ERROR');
     expect(data.message).toBe('The answer provider is temporarily unavailable.');
@@ -342,22 +376,22 @@ describe('POST /api/lpci/query conformance', () => {
     expectExactKeys(result, [...common, 'message']);
     expectAuditedCorrelation(result, 'ELIGIBLE_NOT_SENT', ['public/leave.pdf']);
 
-    process.env.LPCI_LLM_API_KEY = 'fixed-fake-test-key';
-    vi.mocked(fetch).mockResolvedValueOnce(new Response('private provider diagnostic', { status: 500 }));
+    executeLpciProviderBindingMock.mockResolvedValueOnce({ outcome: 'PROVIDER_ERROR' });
     result = (await post()).data;
     expectExactKeys(result, [...common, 'message']);
     expectAuditedCorrelation(result, 'PROVIDER_FAILED', ['public/leave.pdf']);
 
-    vi.mocked(fetch).mockResolvedValueOnce(new Response(JSON.stringify({
-      choices: [{ message: { content: 'Based on retrieved documents only. Answer.' } }],
-    }), { status: 200, headers: { 'Content-Type': 'application/json' } }));
+    executeLpciProviderBindingMock.mockResolvedValueOnce({
+      outcome: 'ANSWER_EMITTED', response: 'Based on retrieved documents only. Answer.',
+    });
     result = (await post()).data;
     expectExactKeys(result, [
       ...common, 'response', 'answerClass', 'matchedSources', 'freshnessFlag', 'conflictFlag',
     ]);
     expectAuditedCorrelation(result, 'ANSWER_EMITTED', ['public/leave.pdf']);
     expect(result.matchedSources).toEqual((result.auditReceipt as { matched_paths: string[] }).matched_paths);
-    expect(fetch).toHaveBeenCalledTimes(2);
+    expect(executeLpciProviderBindingMock).toHaveBeenCalledTimes(3);
+    expect(fetch).not.toHaveBeenCalled();
   });
 
   it('fails record and aggregate evidence limits with zero fetches', async () => {
