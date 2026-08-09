@@ -1,5 +1,5 @@
 {
   "stateOrder": 2003,
   "stateKey": "nextAllowedMove",
-  "value": "The fresh UC-01 DESIGN-only dispatch packet is committed at e2ebbc984. The next allowed move is exactly one no-commit documentation-design worker execution followed by independent primary-reviewer acceptance or return. The DESIGN must include UC-04 Model Gateway reuse-or-composition binding and the documented configuration contract. SPEC, BUILD, runtime/config/package mutation, provider/live, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave."
+  "value": "UC-01 DESIGN is independently accepted bounded at material commit 2e770480c after R1 source-fidelity repair. It selects thin LPCI composition over the existing Model Gateway and records the atomic three-variable config contract plus the Model Gateway-owned trim-empty credential prerequisite. The next allowed move is HOLD before fresh BUILD-only authority consuming the accepted D1 conditions. Provider/live remains a later separate checkpoint after accepted BUILD evidence. SPEC, BUILD, runtime/config/package mutation, provider/live, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave."
 }

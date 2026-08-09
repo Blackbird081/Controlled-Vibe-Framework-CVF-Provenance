@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=one no-commit documentation-design worker executes the committed UC-01 packet, then the primary reviewer independently accepts or returns it; parked checkpoint=SPEC, BUILD, runtime/config/package mutation, provider/live, public-sync, deployment, and readiness remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=HOLD before fresh BUILD-only authority consuming the accepted D1 conditions; parked checkpoint=SPEC, BUILD, runtime/config/package mutation, provider/live, public-sync, deployment, and readiness remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
+Current mode marker: `lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build`
 
-Current mode: `lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
+Current mode: `lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build`
 
-`lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
+`lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build`
 
 Previous mode:
 
-`lpci1_web_context_to_llm_intake_closed_pass_bounded_hold_before_fresh_design`
+`lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -400,19 +400,19 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
+Mode: `lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
 The public-safe checker/test subset and authorization receipt are exported at
 public commit `2103a38f`; private intake artifacts remain provenance-only.
-Fresh DESIGN-only authority opened UC-01 and the source-verified dispatch packet
-is committed at `e2ebbc984`. The next allowed move is exactly one no-commit
-documentation-design worker execution, followed by independent primary-reviewer
-acceptance or return. The DESIGN must include UC-04's Model Gateway
-reuse-or-composition binding and documented configuration contract. SPEC,
-BUILD, runtime/config/package mutation, provider/live, persistence, vector/RAG,
-non-public grant, public-sync, deployment, and readiness remain unauthorized.
+UC-01 DESIGN is independently accepted bounded at material commit `2e770480c`.
+It selects thin LPCI composition over the existing Model Gateway and records
+the atomic three-variable config contract plus the Model Gateway-owned
+trim-empty credential prerequisite. The next allowed move is HOLD before fresh
+BUILD-only authority. SPEC, BUILD, runtime/config/package mutation,
+provider/live, persistence, vector/RAG, non-public grant, public-sync,
+deployment, and readiness remain unauthorized.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen

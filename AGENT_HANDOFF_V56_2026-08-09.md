@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `e2ebbc984 docs(dispatch): authorize LPCI UC-01 provider binding design`
-- Active mode: `lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
+- Latest material commit: `2e770480c docs(review): accept LPCI UC-01 provider binding design`
+- Active mode: `lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: N/A with reason: this DESIGN dispatch is private provenance work
 - Remote tracking branch: origin/main
@@ -17,16 +17,15 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`;
-active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=one
-no-commit documentation-design worker executes the committed UC-01 packet,
-then the primary reviewer independently accepts or returns it; parked
+Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build`;
+active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=HOLD before
+fresh BUILD-only authority consuming the accepted D1 conditions; parked
 checkpoint=SPEC, BUILD, runtime/config/package mutation, provider/live,
 public-sync, deployment, and readiness remain unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_provider_binding_design_dispatched_pending_worker`
+`lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build`
 
 ## Purpose
 
@@ -75,17 +74,12 @@ acceptance, runtime behavior, provider execution, deployment, or readiness.
 
 ## Next Allowed Move
 
-Dispatch the existing no-commit documentation-design worker from clean HEAD
-after this continuity commit. The worker must capture its execution base, read
-the packet and verified sources, create exactly the two allowed outputs, run
-the required worker-return gate, and return `COMPLETE_PENDING_REVIEW` or a
-specific governed blocker.
-
-The primary reviewer then independently checks source fidelity, option
-comparison, Model Gateway ownership, the three-variable config contract,
-fail-closed behavior, UI implications, future build manifest, synthetic proof
-plan, exact manifest, gates, and claim boundaries before accepting or returning
-the DESIGN.
+HOLD before fresh BUILD-only authority. A future packet must source-verify the
+current cvf-web and Model Gateway seams, consume the accepted D1 conditions,
+include Model Gateway-owned trim-empty credential hardening, implement the thin
+LPCI composition and atomic config documentation, and require deterministic
+network-free proof. Provider/live remains a later separate checkpoint after
+accepted BUILD evidence.
 
 ## Parked Checkpoints
 
@@ -182,6 +176,57 @@ only this handoff-only anchor if commit `8c810d0e2` is reverted.
 | Invocation ID | `lpci1-web-uc01-gc020-dispatch-anchor-2026-08-09` |
 | Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
 | Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## UC-01 D1 Closure Continuity
+
+The D1 DESIGN is `CLOSED_PASS_BOUNDED` at material commit `2e770480c`; material
+range pre-closure passed 75 of 75. R1 corrected bridge-result ownership,
+exact-pair routing enforcement, and the current whitespace-credential gap. The
+next move is HOLD before fresh BUILD-only authority. Provider/live remains a
+later checkpoint after accepted BUILD evidence.
+
+## Core Guard Self-Protection Authorization - D1 Closure Continuity
+
+Authorized guard-maintenance scope: synchronize current mode, next allowed
+move, generated active state, compact front door, D1 closure state entry, and
+active handoff after accepted material closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01ProviderBindingDesignClosure20260809.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authorization is reviewer-owned final session synchronization under
+the existing DESIGN-only authority. Rollback boundary: revert only this seven-
+path continuity batch if material commit `2e770480c` is reverted.
+
+## Agent Operation Trace Block - D1 Closure Continuity
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-d1-closure-continuity-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | state-source edits, active-state generator, continuity gates, and Git commit |
+| Target paths | exact seven protected continuity paths |
+| Allowed scope source | reviewer-owned final sync after material closure `2e770480c` and pre-closure PASS |
+| Before status evidence | clean HEAD `faf7ac110`; material range pre-closure passed 75 of 75 |
+| After status evidence | mode and next move agree on hold before fresh BUILD-only authority |
+| Diff evidence | continuity-only name-status, generator drift check, gates, and commit receipt |
+| Approval boundary | final session continuity only |
+| Claim boundary | no BUILD, runtime/test/config/package mutation, provider/live, public-sync, deployment, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-d1-closure-continuity-2026-08-09` |
+| Expected manifest | exact seven protected continuity paths listed above |
+| Actual changed set | same seven paths after state generation |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
