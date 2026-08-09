@@ -203,6 +203,46 @@ creation and may be accepted under the GC-020 parent rule.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## GC-020 Marker - LPCI1 R3 Material Commit Anchor
+
+Current repository HEAD `a59e8649e` contains the reviewer-owned bounded
+parenthesized-path checker/test repair and the four-path R3 provenance packet.
+This in-place handoff-only marker records that exact material commit before the
+reviewer closure conversion. It does not alter current mode or release DESIGN,
+LPCI runtime, provider/live, persistence, public roadmap artifacts, deployment,
+or readiness work.
+
+## Core Guard Self-Protection Authorization - LPCI1 R3 Material Anchor
+
+Authorized protected path: `AGENT_HANDOFF_V55_2026-08-05.md`.
+
+Operator authority is the explicit instruction to clean the worktree and push
+both GitHub repositories before continuing the roadmap. Rollback boundary:
+revert only this handoff-only anchor if material commit `a59e8649e` is reverted.
+
+## Agent Operation Trace Block - LPCI1 R3 Material Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-r3-material-anchor-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | active-session compatibility diagnosis, handoff-only patch, continuity gates, Git commit |
+| Target paths | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Allowed scope source | GC-020 plus operator cleanup/two-repository push authority after commit `a59e8649e` |
+| Before status evidence | clean HEAD `a59e8649e`; closure edits stored reversibly outside the worktree |
+| After status evidence | active handoff contains the exact current material HEAD |
+| Diff evidence | one modified active handoff path |
+| Approval boundary | continuity repair only |
+| Claim boundary | no closure conversion, DESIGN, LPCI runtime, provider/live, persistence, deployment, or readiness authority |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-r3-material-anchor-2026-08-09` |
+| Expected manifest | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Actual changed set | `AGENT_HANDOFF_V55_2026-08-05.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## GC-020 Marker - LPCI1-Web B1 And BR1 Closure Continuity
 
 Final material repair commit `ab74e14a5` carries the accepted B1/BR1 closure
