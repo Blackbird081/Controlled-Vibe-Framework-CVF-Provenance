@@ -275,3 +275,51 @@ only anchor if material commit `2e770480c` is reverted.
 | Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Active-Handoff Exposure Classification Repair Anchor
+
+Latest bounded governance repair commit:
+`339cc78d4 fix(governance): classify active handoff exposure`.
+
+The root-file exposure registry now classifies the active V56 handoff as
+`INTERNAL_ONLY` in place of the archived V55 root filename. This repair exists
+only to clear the source-verified pre-push P3 blocker; it does not change the
+accepted D1 result or release BUILD, provider/live, or public-sync work.
+
+Exact remote SHA must be derived live from git when needed.
+
+## Core Guard Self-Protection Authorization - Exposure Repair Anchor
+
+Authorized guard-maintenance scope: update only the active handoff with the
+committed exposure-classification repair HEAD required by GC-020.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+
+Operator authorization is inherited from the operator-requested clean GitHub
+sync before roadmap continuation. Rollback boundary: revert only this
+handoff-only anchor if repair commit `339cc78d4` is reverted.
+
+## Agent Operation Trace Block - Exposure Repair Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-exposure-repair-anchor-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | pre-push diagnosis, bounded registry repair, handoff-only patch, gates, and Git commit |
+| Target paths | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Allowed scope source | operator-requested clean GitHub sync and GC-020 continuity after repair commit `339cc78d4` |
+| Before status evidence | clean HEAD `339cc78d4`; classification repair hook passed 83 of 83 |
+| After status evidence | active handoff contains the exact exposure-repair parent HEAD |
+| Diff evidence | exact one-path handoff diff, active-session compatibility, and handoff-sync steward |
+| Approval boundary | handoff continuity repair only |
+| Claim boundary | no BUILD, runtime/test/config/package mutation, provider/live, public-sync, deployment, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-exposure-repair-anchor-2026-08-09` |
+| Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
