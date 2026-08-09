@@ -1,0 +1,26 @@
+{
+  "stateOrder": 2018,
+  "stateKey": "lpci1WebUc01FullRouteLiveProofClosure20260809",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-ROUTE-LIVE",
+    "authorityToken": "AUTHORIZE_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ONLY",
+    "executionBaseHead": "823d9bffd",
+    "materialCommit": "b3f405b91",
+    "materialAnchorCommit": "1d6237c72",
+    "completionReview": "docs/reviews/CVF_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_COMPLETION_2026-08-09.md",
+    "evidenceReceipt": "docs/reviews/evidence/lpci1-web-uc01-full-route-live-proof-2026-08-09.json",
+    "preClosureEvidence": "PASS_75_OF_75",
+    "routeInvocationCount": 1,
+    "providerCallCount": 1,
+    "retryCount": 0,
+    "routeHttpStatus": 200,
+    "providerHttpStatus": 200,
+    "outcome": "ANSWER_EMITTED",
+    "authorizationDecision": "PUBLIC_ONLY",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "STOP and await a fresh explicit operator checkpoint; no automatic continuation.",
+    "claimBoundary": "One direct local signed synthetic-public full-route proof only; no retry, hosted/release, production, deployment, public, generalized corpus/provider, or later-roadmap claim."
+  }
+}

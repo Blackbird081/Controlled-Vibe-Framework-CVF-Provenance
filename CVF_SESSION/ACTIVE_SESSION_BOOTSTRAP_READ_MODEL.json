@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker",
+  "currentMode": "lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation",
   "activeHandoff": "AGENT_HANDOFF_V56_2026-08-09.md",
-  "nextAllowedMove": "Operator token AUTHORIZE_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ONLY released one evidence-only worker at dispatch commit 9aead6b4c. The next allowed move is worker execution of the paired signed synthetic-public full-route work order with one route invocation, at most one provider fetch, zero retries, two review outputs, no source/config/session/public mutation, and no commit. The primary agent then independently reviews the sanitized receipt. Release/hosted proof, deployment, production readiness, public-sync, other corpora/providers/models, and later roadmap lanes remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "STOP after accepted bounded UC-01 full-route proof at material commit b3f405b91 and pre-closure PASS 75/75. The accepted receipt records one signed synthetic-public route invocation, one provider call, zero retries, route/provider HTTP 200, ANSWER_EMITTED, PUBLIC_ONLY, and required audit correlations. No retry, additional provider call, hosted/release proof, deployment, production readiness, public-sync, other corpora/providers/models, or later roadmap lane is authorized. Any continuation requires a fresh explicit operator checkpoint and governed packet. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

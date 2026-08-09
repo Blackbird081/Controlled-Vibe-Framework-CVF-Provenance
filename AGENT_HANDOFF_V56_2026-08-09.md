@@ -8,47 +8,107 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `5c86f6d77 feat(lpci): bind UC-01 through Model Gateway`
-- Active mode: `lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`
+- Latest material commit: `b3f405b91 test(lpci): accept UC-01 full-route live proof`
+- Active mode: `lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
 - Latest closed numbered LHW wave: `LHW24`
-- Public export: N/A with reason: this BUILD dispatch is private provenance work
+- Public export: DEFERRED_PRIVATE_ONLY; full-route proof is private provenance evidence
 - Remote tracking branch: origin/main
 - External agent memory files: non-canonical convenience only
 
+## LPCI1 UC-01 Full Route Live Proof Final Continuity
+
+Material closure: `b3f405b91`.
+
+Material anchor: `1d6237c72`.
+
+Pre-closure: PASS 75/75 on committed range `823d9bffd..b3f405b91`.
+
+Current mode:
+`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`.
+
+Next allowed move: STOP and await a fresh explicit operator checkpoint. No
+retry, additional provider call, hosted/release proof, deployment, production,
+public sync, other corpus/provider/model, or automatic roadmap continuation
+follows.
+
+## Core Guard Self-Protection Authorization - LPCI1 Full Route Final Sync
+
+Authorized guard-maintenance scope: synchronize only the active session front
+doors, generated state sources/aggregate, and active handoff to the accepted
+bounded full-route closure.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01FullRouteLiveProofClosure20260809.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization is the accepted proof-only closure. Rollback boundary:
+revert only this seven-path final session-sync commit if material closure
+`b3f405b91` is reverted.
+
+## Agent Operation Trace Block - LPCI1 Full Route Final Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-full-route-final-sync-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | generated state fragments, generator, gates, Git |
+| Target paths | seven canonical continuity paths including generated aggregate |
+| Allowed scope source | accepted material closure `b3f405b91` and pre-closure PASS 75/75 |
+| Before status evidence | clean handoff-anchor HEAD `1d6237c72` |
+| After status evidence | closed bounded mode and stop-before-continuation next move aligned |
+| Diff evidence | exact protected session-sync manifest |
+| Approval boundary | final continuity only; no additional route/provider call or roadmap continuation |
+| Claim boundary | one accepted local signed synthetic-public full-route call only; no retry, hosted/release, public, deployment, production, or later-lane claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-full-route-final-sync-2026-08-09` |
+| Expected manifest | active handoff, front door, bootstrap, generated state, core fragment, next-move fragment, closure entry |
+| Actual changed set | same seven paths after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`;
-active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=delegated
-worker executes one signed synthetic-public full-route attempt; parked
-checkpoint=retry, release/hosted proof, deployment, production readiness,
+Startup acknowledged: current mode=`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`;
+active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=STOP and
+await fresh explicit operator authority; parked checkpoint=retry, additional
+provider call, release/hosted proof, deployment, production readiness,
 public-sync, other corpora/providers/models, and later roadmap lanes remain
 unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`
+`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
 
 ## Purpose
 
-Record the operator-authorized UC-01 full-route live-proof dispatch while
-preserving every broader hold and independent review boundary.
+Record accepted bounded UC-01 full-route proof and preserve every broader hold.
 
 ## Scope / Target / Owner Boundary
 
-Scope is the accepted bounded provider-binding implementation, its deterministic
-evidence, reviewer closure, and continuity. No provider/live authority follows.
+Scope is the accepted provider-binding implementation, one provider-binding
+proof, one signed synthetic-public full-route proof, reviewer closure, and
+continuity. No additional provider/live authority follows.
 
 ## Active Boundary
 
-The accepted B2 BUILD composes LPCI with current Model Gateway owners, enforces
-fail-closed exact-pair behavior, and preserves S1/audit boundaries. Seventy
-focused tests and material-range pre-closure passed. Provider/live, public-sync,
-deployment, and readiness remain separate operator checkpoints.
+The accepted full-route receipt records route 1, provider 1, retry 0,
+route/provider HTTP 200, `ANSWER_EMITTED`, `PUBLIC_ONLY`, and required audit
+correlations. Material-range pre-closure passed 75/75. Retry, additional live
+work, public sync, deployment, and readiness remain separate checkpoints.
 
 ## Claim Boundary
 
-This handoff records accepted local deterministic BUILD and continuity. It does
-not prove provider execution, credential validity, deployment, or readiness.
+This handoff records one accepted local signed synthetic-public full-route
+attempt and continuity. It does not prove hosted behavior, release readiness,
+ongoing availability, deployment, production, or public availability.
 
 ## Canonical Packet
 
@@ -69,13 +129,13 @@ not prove provider execution, credential validity, deployment, or readiness.
 
 ## Next Allowed Move
 
-HOLD until a fresh explicit operator authority opens a provider/live-proof
-packet. No provider call, ignored environment-file read, public-sync,
-deployment, or readiness action is authorized by B2 closure.
+STOP and await a fresh explicit operator checkpoint. No retry, additional
+provider call, hosted/release proof, public sync, deployment, production
+readiness, other corpus/provider/model, or later roadmap lane is authorized.
 
 ## Parked Checkpoints
 
-- provider, API-key, network, and live proof
+- retry, additional provider/API-key/network/live proof
 - persistence, vector/RAG, and non-public grants
 - public-sync, deployment, and readiness claims
 

@@ -96,8 +96,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker",
-  "previousMode": "lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation",
+  "currentMode": "lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation",
+  "previousMode": "lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13691,7 +13691,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "Operator token AUTHORIZE_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ONLY released one evidence-only worker at dispatch commit 9aead6b4c. The next allowed move is worker execution of the paired signed synthetic-public full-route work order with one route invocation, at most one provider fetch, zero retries, two review outputs, no source/config/session/public mutation, and no commit. The primary agent then independently reviews the sanitized receipt. Release/hosted proof, deployment, production readiness, public-sync, other corpora/providers/models, and later roadmap lanes remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "STOP after accepted bounded UC-01 full-route proof at material commit b3f405b91 and pre-closure PASS 75/75. The accepted receipt records one signed synthetic-public route invocation, one provider call, zero retries, route/provider HTTP 200, ANSWER_EMITTED, PUBLIC_ONLY, and required audit correlations. No retry, additional provider call, hosted/release proof, deployment, production readiness, public-sync, other corpora/providers/models, or later roadmap lane is authorized. Any continuation requires a fresh explicit operator checkpoint and governed packet. LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14217,6 +14217,28 @@
     ],
     "t4Disposition": "HOLD_UNTIL_T3_PASS",
     "claimBoundary": "No automated agent CLI/MCP/provider call, browser/live proof, real-root scan, public-sync, worker commit, push, deployment, or unattended mutation."
+  },
+  "lpci1WebUc01FullRouteLiveProofClosure20260809": {
+    "status": "CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-ROUTE-LIVE",
+    "authorityToken": "AUTHORIZE_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ONLY",
+    "executionBaseHead": "823d9bffd",
+    "materialCommit": "b3f405b91",
+    "materialAnchorCommit": "1d6237c72",
+    "completionReview": "docs/reviews/CVF_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_COMPLETION_2026-08-09.md",
+    "evidenceReceipt": "docs/reviews/evidence/lpci1-web-uc01-full-route-live-proof-2026-08-09.json",
+    "preClosureEvidence": "PASS_75_OF_75",
+    "routeInvocationCount": 1,
+    "providerCallCount": 1,
+    "retryCount": 0,
+    "routeHttpStatus": 200,
+    "providerHttpStatus": 200,
+    "outcome": "ANSWER_EMITTED",
+    "authorizationDecision": "PUBLIC_ONLY",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "STOP and await a fresh explicit operator checkpoint; no automatic continuation.",
+    "claimBoundary": "One direct local signed synthetic-public full-route proof only; no retry, hosted/release, production, deployment, public, generalized corpus/provider, or later-roadmap claim."
   },
   "continuousProjectionT3Closure20260720": {
     "status": "REVIEWER_ACCEPTED_WITH_REPAIRS",

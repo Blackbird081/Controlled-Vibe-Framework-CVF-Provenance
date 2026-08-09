@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=delegated worker executes one signed synthetic-public full-route attempt; parked checkpoint=retry, release/hosted proof, deployment, production readiness, public-sync, other corpora/providers/models, and later roadmap lanes remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=STOP and await fresh explicit operator authority; parked checkpoint=retry, additional provider call, release/hosted proof, deployment, production readiness, public-sync, other corpora/providers/models, and later roadmap lanes remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`
+Current mode marker: `lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
 
-Current mode: `lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`
+Current mode: `lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
 
-`lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`
+`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
 
 Previous mode:
 
-`lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`
+`lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -80,6 +80,7 @@ are now assigned to the no-commit worker.
 ## Latest Material Work
 | Work | Commit | Disposition |
 |---|---|---|
+| LPCI1-WEB UC-01 full-route live proof | `b3f405b91` | `CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED`; one signed synthetic-public route invocation, one provider call, zero retries, route/provider HTTP 200, `ANSWER_EMITTED`, `PUBLIC_ONLY`, required audit correlations true; pre-closure 75/75; no retry, hosted/release, public, deployment, production, or continuation authority. |
 | LPCI1-WEB-B1 and BR1 bounded closure | `ab74e14a5` | `CLOSED_PASS_BOUNDED`; implementation/closure material `db580830f`; B1 and BR1 completion reviews accepted; LPCI 7 files/99 tests and execute 3 files/5 tests PASS; full non-live 304 files with 3397 passed/2 skipped; zero provider/live calls; current system-chain freshness and as-built catalog checks both `CURRENT` with 0 violations. |
 | LPCI1-WEB-S1 conformance SPEC closure | `3733cedd0` | `CLOSED_PASS_BOUNDED`; independent semantic FINAL PASS after consolidated repairs; roadmap exits `HOLD_BEFORE_BUILD`; no runtime/test/provider/live proof. |
 | LPCI1-WEB-S1 conformance SPEC dispatch | `9fe39992c` | `DISPATCH_READY`; fresh GC-018 and source-verified no-commit work order release exactly two documentation outputs; no BUILD authority. |
@@ -400,23 +401,22 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`
+Mode: `lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
 The public-safe checker/test subset and authorization receipt are exported at
 public commit `2103a38f`; private intake artifacts remain provenance-only.
-UC-01 B2 provider-binding BUILD is independently accepted at material commit
-`5c86f6d77`. Operator token
-`AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY` released one evidence-only
-worker at dispatch commit `5f202caa0`. The next allowed move is execution of
-that paired work order with at most one OpenAI request, zero retries, exactly
-two review outputs, and no worker commit. The primary agent independently
-reviews the sanitized receipt. Raw secret output, source/config/session/public
+UC-01 B2, the binding-only live proof, and the signed synthetic-public
+full-route proof are independently accepted. Material closure `b3f405b91`
+records route 1, provider 1, retry 0, route/provider HTTP 200,
+`ANSWER_EMITTED`, `PUBLIC_ONLY`, and required audit correlations; material
+pre-closure passed 75/75. STOP and await a fresh explicit operator checkpoint.
+No retry, additional provider call, hosted/release proof, source/config/public
 mutation, deployment, production readiness, persistence, vector/RAG, other
-providers/models, and later roadmap lanes remain unauthorized.
+corpora/providers/models, or later roadmap lane is authorized.
 Current mode:
-`lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`.
+`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
