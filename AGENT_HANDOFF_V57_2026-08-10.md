@@ -172,6 +172,41 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## Core Guard Self-Protection Authorization - UC-01 Readiness Closure Material Anchor
+
+Authorized guard-maintenance scope: update only active V57 with material
+closure HEAD `944fdfc56` so GC-020 can validate the split material range.
+
+Protected path:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+
+Operator authorization is the exact discovery-only token. Rollback boundary:
+revert only this one-path anchor if material closure `944fdfc56` is reverted.
+
+## Agent Operation Trace Block - UC-01 Readiness Closure Material Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-readiness-closure-anchor-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | active handoff update, compatibility gate, Git |
+| Target paths | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Allowed scope source | reviewer material closure `944fdfc56` and GC-020 |
+| Before status evidence | clean material HEAD; pre-closure 74/75 with only continuity failure |
+| After status evidence | V57 contains exact material parent SHA |
+| Diff evidence | exact one-path handoff diff |
+| Approval boundary | continuity repair only |
+| Claim boundary | no remediation, secret/private, runtime, provider/live, public, deploy, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-readiness-closure-anchor-2026-08-10` |
+| Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Core Guard Self-Protection Authorization - UC-01 Readiness Discovery Dispatch Sync
 
 Authorized guard-maintenance scope: synchronize only active V57, session front
