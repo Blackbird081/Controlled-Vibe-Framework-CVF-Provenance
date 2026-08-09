@@ -173,6 +173,51 @@ only this handoff-only anchor if commit `8c810d0e2` is reverted.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## UC-01 B2 Dispatch-Repair Continuity Anchor
+
+Latest reviewer-owned dispatch repair commit:
+`1ceaaf2ff fix(dispatch): repair LPCI B2 final gate prerequisites`.
+
+The repair corrects the worker-return pytest target and registers the required
+new adapter test under GC-051. It passed pre-dispatch 75 of 75 and the commit
+hook 83 of 83. It does not accept the pending implementation.
+
+## Core Guard Self-Protection Authorization - B2 Dispatch Repair
+
+Authorized guard-maintenance scope: update only the active handoff with the
+committed repair HEAD required for resumed worker compatibility.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+
+Operator authorization is inherited from the authorized B2 continuation and
+reviewer-owned repair of the worker's governed blockers. Rollback boundary:
+revert only this handoff anchor if repair commit `1ceaaf2ff` is reverted.
+
+## Agent Operation Trace Block - B2 Dispatch Repair
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-b2-dispatch-repair-anchor-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | blocker verification, bounded packet/registry repair, pre-dispatch gate, and handoff-only continuity commit |
+| Target paths | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Allowed scope source | reviewer-owned blocker repair after worker return |
+| Before status evidence | repair commit `1ceaaf2ff`; pre-dispatch passed 75 of 75; hook passed 83 of 83 |
+| After status evidence | active handoff contains exact repair HEAD for GC-020 compatibility |
+| Diff evidence | exact one-path handoff diff and handoff-sync steward |
+| Approval boundary | handoff continuity repair only |
+| Claim boundary | no implementation acceptance, provider/live, public-sync, deployment, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-b2-dispatch-repair-anchor-2026-08-09` |
+| Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## UC-01 B2 BUILD Dispatch Continuity
 
 Latest material dispatch commit:
