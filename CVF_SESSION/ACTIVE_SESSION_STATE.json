@@ -96,8 +96,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation",
-  "previousMode": "lpci1_web_uc01_provider_live_proof_dispatched_pending_worker",
+  "currentMode": "lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker",
+  "previousMode": "lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13691,7 +13691,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "UC-01 provider live proof is independently accepted at material commit 1c808fd39: one local openai/gpt-4o binding call, one fetch entry, zero retries, HTTP 200, and sanitized length/digest evidence only. The next allowed move is STOP and await a fresh explicit operator checkpoint; no automatic roadmap continuation follows. Additional provider calls, full-route/release proof, deployment, production readiness, public-sync, persistence, vector/RAG, other providers/models, and later roadmap lanes remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "Operator token AUTHORIZE_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ONLY released one evidence-only worker at dispatch commit 9aead6b4c. The next allowed move is worker execution of the paired signed synthetic-public full-route work order with one route invocation, at most one provider fetch, zero retries, two review outputs, no source/config/session/public mutation, and no commit. The primary agent then independently reviews the sanitized receipt. Release/hosted proof, deployment, production readiness, public-sync, other corpora/providers/models, and later roadmap lanes remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14182,6 +14182,23 @@
     "allowed": "manual copy/paste handoff; local fixture suites; exactly one read-only real-root receipt scan; four no-commit worker outputs; local static governance checks",
     "forbidden": "Codex or Claude CLI; any agent CLI; MCP tool/server; provider or API-key call; account subscription use; second real-root scan or retry; fallback; browser; network service; public-sync mutation; push; deployment; production action; unattended execution; unrelated roadmap work",
     "liftCondition": "fresh explicit operator decision after an evidence-backed provider-neutral control architecture and bounded proof plan"
+  },
+  "lpci1WebUc01FullRouteLiveProofDispatch20260809": {
+    "status": "DISPATCHED_PENDING_WORKER",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-ROUTE-LIVE",
+    "authorityToken": "AUTHORIZE_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ONLY",
+    "dispatchCommit": "9aead6b4c",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_2026-08-09.md",
+    "preDispatchEvidence": "PASS_75_OF_75",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "routeInvocationBudget": 1,
+    "providerFetchBudget": 1,
+    "retryBudget": 0,
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Delegated worker executes the exact evidence-only signed route packet and returns two sanitized outputs for independent review.",
+    "claimBoundary": "Full-route live proof only; no source/config/session/public mutation, hosted/release proof, deployment, production, other corpus/pair, or later roadmap authority."
   },
   "continuousProjectionT3Dispatch20260720": {
     "status": "DISPATCH_READY_WAITING_NO_COMMIT_WORKER_RETURN",

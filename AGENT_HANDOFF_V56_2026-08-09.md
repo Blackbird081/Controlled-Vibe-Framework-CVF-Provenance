@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Latest material commit: `5c86f6d77 feat(lpci): bind UC-01 through Model Gateway`
-- Active mode: `lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`
+- Active mode: `lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: N/A with reason: this BUILD dispatch is private provenance work
 - Remote tracking branch: origin/main
@@ -17,21 +17,21 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`;
-active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=STOP and await
-a fresh explicit operator checkpoint; parked checkpoint=additional provider
-calls, full-route/release proof, deployment, production readiness, public-sync,
-persistence, vector/RAG, other providers/models, and later roadmap lanes remain
+Startup acknowledged: current mode=`lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`;
+active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=delegated
+worker executes one signed synthetic-public full-route attempt; parked
+checkpoint=retry, release/hosted proof, deployment, production readiness,
+public-sync, other corpora/providers/models, and later roadmap lanes remain
 unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_provider_live_proof_closed_pass_bounded_no_release_or_continuation`
+`lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`
 
 ## Purpose
 
-Record the independently accepted bounded UC-01 provider live proof while
-preserving every broader hold and the stop before any continuation.
+Record the operator-authorized UC-01 full-route live-proof dispatch while
+preserving every broader hold and independent review boundary.
 
 ## Scope / Target / Owner Boundary
 
@@ -708,6 +708,60 @@ revert only this seven-path final session-sync commit if material closure
 | Agent type | primary reviewer/session-sync steward |
 | Invocation ID | `lpci1-web-uc01-live-final-sync-2026-08-09` |
 | Expected manifest | active handoff, front door, bootstrap, generated state, core fragment, next-move fragment, closure entry |
+| Actual changed set | same seven paths after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## LPCI1 UC-01 Full Route Live Proof Dispatch
+
+Operator token: `AUTHORIZE_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ONLY`.
+
+Dispatch commit: `9aead6b4c`.
+
+Current mode: `lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`.
+
+Next allowed move: delegated no-commit worker executes the paired full-route
+work order with one signed synthetic-public route invocation, at most one
+provider fetch, zero retries, and exactly two sanitized outputs.
+
+## Core Guard Self-Protection Authorization - LPCI1 Full Route Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize only active session front
+doors, generated state sources/aggregate, and active handoff to dispatch commit
+`9aead6b4c`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01FullRouteLiveProofDispatch20260809.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization is the exact full-route-proof-only token. Rollback
+boundary: revert only this seven-path sync if dispatch `9aead6b4c` is reverted.
+
+## Agent Operation Trace Block - LPCI1 Full Route Dispatch Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-full-route-dispatch-sync-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | state fragments, generator, gates, Git |
+| Target paths | seven canonical continuity paths |
+| Allowed scope source | exact operator token and dispatch `9aead6b4c` |
+| Before status evidence | clean worktree at dispatch HEAD `9aead6b4c` |
+| After status evidence | active mode/next move point to no-commit route worker |
+| Diff evidence | exact protected session-sync manifest |
+| Approval boundary | dispatch continuity only; no credential load or route/provider call |
+| Claim boundary | no live result, release/hosted/public/deployment/production claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-full-route-dispatch-sync-2026-08-09` |
+| Expected manifest | active handoff, front door, bootstrap, generated state, core, next move, dispatch entry |
 | Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
