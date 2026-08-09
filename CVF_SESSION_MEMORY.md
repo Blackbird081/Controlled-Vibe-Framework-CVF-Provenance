@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless operator separately authorizes a fresh source-verified UC-01 hardening BUILD-only packet; parked checkpoint=BUILD, mutation, secret/private access, browser/server/provider/network/live, hosted execution, deployment, rollback execution, public-sync, push, production, and readiness claims remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=execute the committed exact-manifest no-commit deterministic BUILD worker; parked checkpoint=secret/private access, provider/network/live, hosted deploy/rollback execution, public-sync, push, production, and readiness remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
+Current mode marker: `lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`
 
-Current mode: `lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
+Current mode: `lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`
 
-`lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
+`lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`
 
 Previous mode:
 
@@ -403,7 +403,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
+Mode: `lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
@@ -413,16 +413,14 @@ UC-01 remains independently closed bounded at material commit `b3f405b91`.
 UC-02 remains independently closed and value-parked at material commit
 `729452197`. UC-01 release-readiness discovery is independently closed at
 material commit `944fdfc56` with disposition
-`UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION`. Stop unless the operator
-issues fresh explicit authority for `UC01_RELEASE_HARDENING_DESIGN_SPEC_ONLY`.
-That documentation-only tranche must define source-verified role/config,
-limiter, audit/telemetry, timeout/health, and deploy/rollback ownership and
-acceptance contracts before BUILD. Remediation, source/test/config/UI mutation,
-secret/private access, browser/server/provider/network/live, hosted execution,
-deployment, rollback execution, public sync, push, production, and readiness
-claims remain unauthorized.
+`UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION`. DESIGN/SPEC is accepted at
+`1038f65aa`; deterministic BUILD is dispatched at `79d135bbe`. Execute only the
+committed exact-manifest no-commit work order, then return for independent
+review. Secret/private access, provider/network/live, hosted deploy/rollback
+execution, public sync, push, production, and readiness claims remain
+unauthorized.
 Current mode:
-`lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`.
+`lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen

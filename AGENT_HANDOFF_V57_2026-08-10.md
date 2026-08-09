@@ -8,36 +8,43 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `1038f65aa docs(lpci): accept UC-01 release hardening design spec`
-- Active mode: `lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
+- Latest material commit: `79d135bbe docs: dispatch UC01 release hardening build`
+- Active mode: `lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless
-operator separately authorizes a fresh source-verified UC-01 hardening BUILD-only packet;
-parked checkpoint=BUILD, mutation, secret/private access,
-browser/server/provider/network/live, hosted execution, deployment, rollback,
-public sync, push, production, and readiness claims remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=execute the
+committed exact-manifest no-commit deterministic BUILD worker; parked
+checkpoint=secret/private access, provider/network/live, hosted deploy/rollback
+execution, public sync, push, production, and readiness remain unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_release_hardening_design_spec_accepted_parked_pending_fresh_build_authority`
+`lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`
 
 ## Purpose
 
-Preserve independently accepted UC-01 release-hardening DESIGN/SPEC and park
-implementation until a fresh source-verified BUILD-only authority.
+Dispatch the accepted UC-01 release-hardening deterministic BUILD to one
+no-commit worker while retaining independent reviewer and continuity ownership.
 
 ## Scope / Target / Owner Boundary
 
-The repaired DESIGN/SPEC closure is accepted at material commit `1038f65aa`.
-No BUILD, hosted/live/deploy, public, or readiness authority follows.
+The repaired DESIGN/SPEC closure is accepted at `1038f65aa`; the fresh BUILD
+packet is committed at `79d135bbe`. Hosted/live/deploy, public, and readiness
+authority remain excluded.
 
 ## Latest Work / Changes
+
+- Operator phrase `dong y, next` was recorded as the immediately preceding
+  canonical `AUTHORIZE_LPCI1_WEB_UC01_RELEASE_HARDENING_BUILD_ONLY` proposal.
+- Fresh GC-018 and source-verified work order passed pre-dispatch 75/75 and
+  commit-steward preflight, then committed at `79d135bbe`.
+- Worker owns exactly 24 BUILD paths plus one worker return and must not commit.
+- Primary owns independent review, repairs, closure, commit, and final sync.
 
 - Reviewer accepted `UC01_RELEASE_HARDENING_DESIGN_SPEC_ACCEPTED_BOUNDED` after
   R1 corrected timeout owner scope, static-health epistemics, and bundle
@@ -182,6 +189,48 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Invocation ID | `lpci1-web-uc02-rotation-sync-anchor-2026-08-10` |
 | Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
 | Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - UC-01 Hardening BUILD Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize only the active continuity
+surfaces after committed BUILD dispatch `79d135bbe` so the delegated worker can
+start from a clean GC-020-compatible execution base.
+
+Protected paths are the active handoff, session memory front door, bootstrap
+read model, generated active-state aggregate, core source, next-move source,
+and new dispatch state entry. Rollback boundary: revert only this dedicated
+session-sync commit if dispatch `79d135bbe` is reverted.
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01ReleaseHardeningBuildDispatch20260810.json`
+
+## Agent Operation Trace Block - UC-01 Hardening BUILD Dispatch Sync
+
+| Field | Evidence |
+| --- | --- |
+| Actor | primary dispatcher/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-release-hardening-build-dispatch-sync-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | session source edits, generated aggregate, governance gates, Git |
+| Target paths | exact seven-path protected continuity manifest |
+| Allowed scope source | operator BUILD-only authority, committed dispatch `79d135bbe`, and GC-020 |
+| Before status evidence | clean committed dispatch HEAD `79d135bbe`; staging empty |
+| After status evidence | mode dispatches one exact no-commit worker and all next-move surfaces agree |
+| Diff evidence | exact protected session-sync manifest and generated-state drift check |
+| Approval boundary | dispatch continuity only |
+| Claim boundary | no implementation, secret/private access, external action, public sync, deploy, push, or readiness claim |
+| Agent type | primary dispatcher/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-release-hardening-build-dispatch-sync-2026-08-10` |
+| Expected manifest | active handoff, front door, bootstrap, aggregate, core, next move, new dispatch entry |
+| Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 

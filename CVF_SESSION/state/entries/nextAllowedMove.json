@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2124,
+  "stateOrder": 2126,
   "stateKey": "nextAllowedMove",
-  "value": "UC-01 release-hardening DESIGN/SPEC is independently accepted bounded at material commit 1038f65aa after R1 source corrections. Stop unless the operator separately authorizes a fresh source-verified UC-01 release-hardening BUILD-only GC-018/work order. That future packet must refresh the accepted 24-path manifest and preserve the lifecycle interlock. No BUILD, runtime/test/config/UI mutation, secret/private access, browser/server/provider/network/live action, hosted execution, deployment, rollback execution, public-sync, push, production, or readiness claim is authorized by this closure. LHW24 remains the latest closed numbered LHW wave."
+  "value": "Execute the committed UC-01 release-hardening BUILD work order with one delegated no-commit worker from the clean session-sync HEAD. The worker may change exactly the accepted 24 implementation/test/doc paths plus the worker return and must use deterministic network-free tests. Primary owns independent review, repair, material commit, closure, and final continuity. Secret/private access, provider/network/live action, hosted deploy/rollback execution, public-sync, push, production, and readiness claims remain forbidden. LHW24 remains the latest closed numbered LHW wave."
 }
