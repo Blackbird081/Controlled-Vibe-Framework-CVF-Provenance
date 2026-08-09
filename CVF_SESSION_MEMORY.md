@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=hold until a fresh explicit operator authority opens a provider/live-proof packet; parked checkpoint=real provider/network/live proof, ignored local environment reads, public-sync, deployment, and readiness remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=delegated worker executes the one-attempt no-commit live-proof packet; parked checkpoint=deployment, production readiness, public-sync, persistence, vector/RAG, other providers/models, and later roadmap lanes remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
+Current mode marker: `lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
 
-Current mode: `lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
+Current mode: `lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
 
-`lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
+`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
 
 Previous mode:
 
-`lpci1_web_uc01_provider_binding_design_closed_pass_bounded_hold_before_fresh_build`
+`lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -400,18 +400,23 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
+Mode: `lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
 The public-safe checker/test subset and authorization receipt are exported at
 public commit `2103a38f`; private intake artifacts remain provenance-only.
 UC-01 B2 provider-binding BUILD is independently accepted at material commit
-`5c86f6d77` with 70 focused tests, hook 83/83, and material-range pre-closure
-75/75. The next allowed move is HOLD until a fresh explicit operator authority
-opens a provider/live-proof packet. Raw secret output, ignored local
-environment reads, real provider/network/live proof, persistence, vector/RAG,
-non-public grant, public-sync, deployment, and readiness remain unauthorized.
+`5c86f6d77`. Operator token
+`AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY` released one evidence-only
+worker at dispatch commit `5f202caa0`. The next allowed move is execution of
+that paired work order with at most one OpenAI request, zero retries, exactly
+two review outputs, and no worker commit. The primary agent independently
+reviews the sanitized receipt. Raw secret output, source/config/session/public
+mutation, deployment, production readiness, persistence, vector/RAG, other
+providers/models, and later roadmap lanes remain unauthorized.
+Current mode:
+`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen

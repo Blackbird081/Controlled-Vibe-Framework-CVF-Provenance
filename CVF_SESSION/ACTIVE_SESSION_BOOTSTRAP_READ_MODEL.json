@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority",
+  "currentMode": "lpci1_web_uc01_provider_live_proof_dispatched_pending_worker",
   "activeHandoff": "AGENT_HANDOFF_V56_2026-08-09.md",
-  "nextAllowedMove": "UC-01 B2 provider-binding BUILD is independently accepted at material commit 5c86f6d77 with deterministic network-free proof and pre-closure PASS 75/75. The next allowed move is HOLD until a fresh explicit operator authority opens a provider/live-proof packet. Raw secret output, ignored local environment reads, provider/network/live execution, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "Operator token AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY released one evidence-only worker at dispatch commit 5f202caa0. The next allowed move is worker execution of the paired UC-01 live-proof work order with at most one OpenAI request, zero retries, two review outputs, no source/config/session/public mutation, and no commit. The primary agent then independently reviews the sanitized receipt. Deployment, production readiness, public-sync, persistence, vector/RAG, other providers/models, and later roadmap lanes remain unauthorized. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

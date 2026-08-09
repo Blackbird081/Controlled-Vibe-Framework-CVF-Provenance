@@ -1,5 +1,5 @@
 {
   "stateOrder": 2003,
   "stateKey": "nextAllowedMove",
-  "value": "UC-01 B2 provider-binding BUILD is independently accepted at material commit 5c86f6d77 with deterministic network-free proof and pre-closure PASS 75/75. The next allowed move is HOLD until a fresh explicit operator authority opens a provider/live-proof packet. Raw secret output, ignored local environment reads, provider/network/live execution, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave."
+  "value": "Operator token AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY released one evidence-only worker at dispatch commit 5f202caa0. The next allowed move is worker execution of the paired UC-01 live-proof work order with at most one OpenAI request, zero retries, two review outputs, no source/config/session/public mutation, and no commit. The primary agent then independently reviews the sanitized receipt. Deployment, production readiness, public-sync, persistence, vector/RAG, other providers/models, and later roadmap lanes remain unauthorized. LHW24 remains the latest closed numbered LHW wave."
 }

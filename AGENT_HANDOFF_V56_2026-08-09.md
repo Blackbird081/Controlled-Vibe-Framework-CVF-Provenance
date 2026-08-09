@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Latest material commit: `5c86f6d77 feat(lpci): bind UC-01 through Model Gateway`
-- Active mode: `lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
+- Active mode: `lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: N/A with reason: this BUILD dispatch is private provenance work
 - Remote tracking branch: origin/main
@@ -17,20 +17,20 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`;
-active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=hold until a
-fresh explicit operator authority opens a provider/live-proof packet; parked checkpoint=real provider/network/live proof,
-ignored local environment reads, public-sync, deployment, and readiness remain
-unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`;
+active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=delegated
+worker executes the one-attempt no-commit live-proof packet; parked checkpoint=deployment,
+production readiness, public-sync, persistence, vector/RAG, other
+providers/models, and later roadmap lanes remain unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
+`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`
 
 ## Purpose
 
-Record the independently accepted UC-01 B2 provider-binding BUILD and preserve
-the hold before any fresh provider/live authority.
+Record the operator-authorized UC-01 provider-live-proof dispatch while
+preserving every broader hold and independent reviewer boundary.
 
 ## Scope / Target / Owner Boundary
 
@@ -496,5 +496,65 @@ handoff-only anchor if repair commit `339cc78d4` is reverted.
 | Invocation ID | `lpci1-web-uc01-exposure-repair-anchor-2026-08-09` |
 | Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
 | Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## LPCI1 Web UC-01 Provider Live Proof Dispatch Anchor
+
+Operator authority token:
+`AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY`.
+
+Dispatch commit: `5f202caa0`.
+
+Current mode:
+`lpci1_web_uc01_provider_live_proof_dispatched_pending_worker`.
+
+The next allowed move is the delegated no-commit worker execution of
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_2026-08-09.md`.
+The packet allows at most one OpenAI request, zero retries, and exactly two
+sanitized review outputs. Source/config/package/session/public mutation,
+deployment, production readiness, other providers/models, and later roadmap
+lanes remain unauthorized.
+
+## Core Guard Self-Protection Authorization - LPCI1 Live Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize only the active session
+front doors, generated state sources/aggregate, and active handoff to dispatch
+commit `5f202caa0`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01ProviderLiveProofDispatch20260809.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization is the exact provider-live-proof token recorded in the
+dispatch packet. Rollback boundary: revert only this seven-path session-sync
+commit if dispatch commit `5f202caa0` is reverted.
+
+## Agent Operation Trace Block - LPCI1 UC-01 Live Dispatch Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-live-dispatch-sync-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | generated state fragments, generator, gates, Git |
+| Target paths | seven canonical continuity paths including generated aggregate |
+| Allowed scope source | operator token and dispatch commit `5f202caa0` |
+| Before status evidence | clean worktree at committed dispatch HEAD `5f202caa0` |
+| After status evidence | active mode and next move point to the no-commit live-proof worker |
+| Diff evidence | exact protected session-sync manifest |
+| Approval boundary | dispatch continuity only; no credential load or provider call |
+| Claim boundary | no live result, source/config mutation, public-sync, deployment, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-live-dispatch-sync-2026-08-09` |
+| Expected manifest | active handoff, front door, bootstrap, generated state, core fragment, next-move fragment, dispatch entry |
+| Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
