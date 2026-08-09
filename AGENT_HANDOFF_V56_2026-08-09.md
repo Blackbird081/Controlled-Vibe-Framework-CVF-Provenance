@@ -166,6 +166,45 @@ only this handoff-only anchor if commit `8c810d0e2` is reverted.
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## Core Guard Self-Protection Authorization - LPCI1 Full Route Material Anchor
+
+Authorized guard-maintenance scope: update only the active handoff with the
+accepted full-route material closure HEAD required by GC-020 before final
+pre-closure and session synchronization.
+
+Protected path:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+
+Material closure: `b3f405b91`.
+
+Operator authority is the exact full-route-proof-only token and accepted
+reviewer closure. Rollback boundary: revert only this one-path handoff anchor
+if material closure `b3f405b91` is reverted.
+
+## Agent Operation Trace Block - LPCI1 Full Route Material Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-full-route-material-anchor-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | active handoff update, Core Guard, Git |
+| Target paths | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Allowed scope source | accepted material closure `b3f405b91` |
+| Before status evidence | clean material HEAD `b3f405b91`; material commit hook passed 83/83 |
+| After status evidence | active handoff contains the accepted material HEAD |
+| Diff evidence | exact one-path handoff diff and session compatibility gate |
+| Approval boundary | handoff continuity only |
+| Claim boundary | no additional route/provider call, receipt/source/config/package mutation, public sync, deployment, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-full-route-material-anchor-2026-08-09` |
+| Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## UC-01 B2 Final Session Synchronization
 
 Accepted material commit: `5c86f6d77`.
