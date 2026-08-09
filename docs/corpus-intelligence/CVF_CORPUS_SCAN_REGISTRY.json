@@ -6215,6 +6215,30 @@
         "execution-plane wiring to sandbox adapters - bounded rg import search returned no integration into the Execution Plane foundation"
       ],
       "nextScanRecommendation": "Re-scan only after a fresh operator-authorized continuation identifies an exact WS2 command contract or a new technical enforcement owner changes these source surfaces."
+    },
+    {
+      "id": "lpci1-web-uc01-b2-provider-binding-adapter-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "LPCI1 Web UC-01 B2 Model Gateway provider-binding adapter tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/openai-compatible-execute-adapter.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "real provider request",
+        "real credential",
+        "ignored local environment file access",
+        "arbitrary production endpoint"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "LPCI1-WEB-UC01-B2",
+      "scanDate": "2026-08-09",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_WORKER_RETURN_2026-08-09.md",
+      "notes": "Deterministic network-free tests for the neutral OpenAI-compatible execute adapter extracted into the Model Gateway. Uses injected fetch doubles and synthetic credentials only; no real provider, credential, network, ignored environment file, public-sync, or deployment action."
     }
   ]
 }

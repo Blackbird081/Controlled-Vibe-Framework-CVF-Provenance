@@ -348,7 +348,32 @@ public-sync, or Git history.
 | roadmap/work-order closure state | primary reviewer | updated only after accepted material evidence |
 | session/front door/handoff | session-sync steward | separate continuity commit only |
 
+## Required Artifact Manifest
+
+| Artifact | Path or owner | Required status |
+|---|---|---|
+| Model Gateway credential, adapter, export, harness, and tests | exact paths 1 through 7 in the paired baseline writable manifest | implemented and deterministic tests pass |
+| cvf-web package seam and example config | exact paths 8 through 10 in the paired baseline writable manifest | aligned and static check passes |
+| LPCI binding, route, and tests | exact paths 11 through 14 in the paired baseline writable manifest | implemented and focused tests pass |
+| worker return | `docs/reviews/CVF_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_WORKER_RETURN_2026-08-09.md` | complete pending review or governed blocker |
+| reviewer dispatch repair | three reviewer-owned paths recorded under Verification Commands | committed before worker final-gate resume |
+
 ## Verification Commands
+
+Reviewer-owned dispatch repair, 2026-08-09:
+
+- The originally dispatched worker-return pytest target omitted the canonical
+  `_gate` suffix. The corrected source-verified target is used in command 8.
+- The required new adapter test exposed a GC-051 coverage prerequisite. The
+  primary reviewer owns the separate registry source entry and regenerated
+  aggregate; these governance paths are not added to the worker's fifteen-path
+  implementation manifest.
+- Repair paths:
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_2026-08-09.md`,
+  `docs/corpus-intelligence/registry/entries/lpci1-web-uc01-b2-provider-binding-adapter-tests.json`,
+  and `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`.
+- The worker may resume final verification only after this repair is committed
+  and the dispatcher reruns the applicable pre-dispatch gate.
 
 Run from repository root unless a command explicitly changes working directory:
 
@@ -359,7 +384,7 @@ Run from repository root unless a command explicitly changes working directory:
 5. `npm run check` from cvf-web
 6. `npx eslint src/lib/lpci/provider-binding.ts src/lib/lpci/provider-binding.test.ts src/app/api/lpci/query/route.ts src/app/api/lpci/query/route.test.ts` from cvf-web
 7. `python governance/compat/check_governed_file_size.py --enforce`
-8. `python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_check_worker_return_quality.py`
+8. `python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_check_worker_return_quality_gate.py`
 9. `git diff --check`
 10. `git status --short --untracked-files=all`
 11. `git diff --cached --name-only`
