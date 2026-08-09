@@ -2,15 +2,15 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED_DISCOVERY_NOT_MET
 
 Batch ID: LPCI1-WEB-UC02-REOPEN-DISCOVERY
 
 dispatchBaseHead: `24a0d6dbd`
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+executionBaseHead: `da0d139cb`
 
-closureBaseHead: REVIEWER_TO_SET
+closureBaseHead: `da0d139cb`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -171,9 +171,9 @@ These fields do not exist in runtime and must not be presented as source facts.
 | Check | Evidence | Disposition |
 |---|---|---|
 | artifact paths | baseline, work order, audit, and return did not exist before authoring | ACCEPT_NO_COLLISION |
-| non-test caller roots | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src`; exclude test/spec files | REQUIRED_REFRESH |
-| index enumeration | `docs/corpus-intelligence/*-index.json` through filesystem enumeration | REQUIRED_REFRESH |
-| registry/corpus distinction | generated registry plus per-entry sources and literal index existence | REQUIRED_REFRESH |
+| non-test caller roots | refreshed under cvf-web source excluding test/spec files; only dashboard caller | REFRESHED_PASS |
+| index enumeration | filesystem refresh found exactly the synthetic pilot index | REFRESHED_PASS |
+| registry/corpus distinction | registry and literal index existence refreshed independently | REFRESHED_PASS |
 | collision decision | no artifact collision; worker must refresh source facts at execution base | ACCEPT |
 
 ## Intake Role Routing Decision
@@ -233,7 +233,7 @@ Contract source: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | primary dispatcher/reviewer/closer delegates one no-commit discovery worker; primary closer converts accepted return |
 | phase | DISPATCH_AUTHORING; EXECUTION; CLOSURE; SESSION_SYNC |
-| baseHeadFor(phase) | dispatchBaseHead=24a0d6dbd; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=24a0d6dbd; executionBaseHead=da0d139cb; closureBaseHead=da0d139cb |
 | changedSetScope(phase) | worker owns only audit and return; reviewer owns closure/status/roadmap; session steward owns protected continuity |
 | traceScope(phase, actor) | each actor records phase-local AOT evidence and exact manifest |
 | commitOwner(phase) | worker commit forbidden; primary reviewer/closer owns material commit; session steward owns separate sync |
@@ -244,7 +244,7 @@ Contract source: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_
 
 | Field | Value |
 |---|---|
-| completionReviewPath | `docs/reviews/CVF_LPCI1_WEB_UC02_REOPEN_DISCOVERY_COMPLETION_2026-08-09.md` |
+| completionReviewPath | `docs/reviews/CVF_LPCI1_WEB_UC02_REOPEN_DISCOVERY_COMPLETION_2026-08-10.md` |
 | reviewerOwnedClosurePaths | completion review; paired baseline/work order status; LPCI use-case roadmap if disposition changes; protected continuity in a separate commit |
 | closureOwner | primary reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
@@ -288,6 +288,16 @@ workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 4. Verify whether a named consumer selects/binds a candidate corpus to the
    route. A generic caller plus unrelated registry entry is not a binding.
 5. Select one disposition and record missing facts precisely.
+
+## Current Runtime Freshness Verification
+
+| Field | Value |
+|---|---|
+| runtimeClaimPresent | YES; bounded current-source caller/index/binding claims only |
+| runtimeMutationAuthorized | NO |
+| freshnessVerificationMode | worker and reviewer direct source reads, targeted non-test caller search, filesystem index enumeration, and exact path check |
+| verifiedBase | `da0d139cb` |
+| staleEvidenceRule | dispatch source rows cannot substitute for execution-base refresh and independent closure review |
 
 ## Pre-Flight Checks
 
@@ -448,14 +458,14 @@ return the bounded disposition, then own status/roadmap/continuity changes.
 
 ## Closure Checklist
 
-- [ ] Worker outputs reviewed against current source.
-- [ ] Exactly one disposition and three condition rows verified.
-- [ ] PolicyLocal counterexample boundary preserved.
-- [ ] Exact two-path worker manifest and empty staging verified.
-- [ ] Reviewer-return steward passes before material commit.
-- [ ] Material committed-range pre-closure passes.
-- [ ] Session continuity is synchronized separately if disposition is accepted.
-- [ ] Public export remains deferred private-only.
+- [x] Worker outputs reviewed against current source.
+- [x] Exactly one disposition and three condition rows verified.
+- [x] PolicyLocal counterexample boundary preserved.
+- [x] Exact two-path worker manifest and empty staging verified.
+- [x] Reviewer-return steward is required before material commit.
+- [x] Material committed-range pre-closure is required and reviewer-owned.
+- [x] Session continuity will be synchronized separately after material acceptance.
+- [x] Public export remains deferred private-only.
 
 ## Return-To-Orchestrator Conditions
 
@@ -473,9 +483,29 @@ expansion requires another fresh explicit operator authorization.
 
 ## Machine Closure Package
 
-NOT_APPLICABLE_WITH_REASON: this work order is dispatched, not closed.
-Reviewer/closer owns the completion artifact, material commit, committed-range
-pre-closure, and separate continuity synchronization.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED_DISCOVERY_NOT_MET` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_UC02_REOPEN_DISCOVERY_COMPLETION_2026-08-10.md` | independent bounded acceptance | PASS |
+| Worker return | named return | `COMPLETE_PENDING_REVIEW`; accepted by completion | PASS |
+| Discovery audit | named audit | `UC02_REOPEN_CONDITION_NOT_MET`; A/B/C NOT_MET | PASS |
+| Roadmap state | LPCI use-case roadmap | `LPCI1_WEB_UC02_REOPEN_DISCOVERY_NOT_MET_PARKED_NO_CONTINUATION` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no registry mutation | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence artifact was used | N/A with reason |
+| System loop interlock | UC-02 discovery -> not met -> park | no implementation release | PASS |
+| Session continuity | active V57 and generated state | separate sync after material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| one canonical discovery disposition | `UC02_REOPEN_CONDITION_NOT_MET` | PASS |
+| condition A | no named real UC-02 consumer | NOT_MET |
+| condition B | no real UC-02 route-compatible public index | NOT_MET |
+| condition C | no real UC-02 consumer-to-corpus-to-route binding | NOT_MET |
+| exact worker manifest | audit and worker return only | PASS |
+| worker commit | forbidden; HEAD unchanged and staging empty | PASS |
 
 ## Public Export Disposition
 

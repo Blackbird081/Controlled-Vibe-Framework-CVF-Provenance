@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCHED
+Status: CLOSED_PASS_BOUNDED_DISCOVERY_NOT_MET
 
 Batch ID: LPCI1-WEB-UC02-REOPEN-DISCOVERY
 
@@ -130,6 +130,16 @@ filesystem/token searches, and create exactly:
 - `docs/reviews/CVF_LPCI1_WEB_UC02_REOPEN_DISCOVERY_AUDIT_2026-08-09.md`
 - `docs/reviews/CVF_LPCI1_WEB_UC02_REOPEN_DISCOVERY_WORKER_RETURN_2026-08-09.md`
 
+## Current Runtime Freshness Verification
+
+| Field | Value |
+|---|---|
+| runtimeClaimPresent | YES; bounded current-source absence/selection claims only |
+| runtimeMutationAuthorized | NO |
+| freshnessVerificationMode | direct source reads, non-test caller search, filesystem index enumeration, and exact PolicyLocal path check |
+| verifiedBase | `da0d139cb` |
+| staleEvidenceRule | dispatch-time search alone cannot close the audit; worker and reviewer refreshed the same facts at execution/closure |
+
 ## Forbidden Scope
 
 All source/test/config/package changes; corpus/index/registry creation or edit;
@@ -153,6 +163,32 @@ deployment; stage; commit; push.
 Dispatch evidence consists of the source-verification table, bounded negative
 searches, exact two-path worker manifest, ADIF disclosure, pre-dispatch gate,
 and later worker command evidence. No runtime or provider receipt is expected.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| one canonical discovery disposition | `UC02_REOPEN_CONDITION_NOT_MET` | PASS |
+| condition A | no named real UC-02 consumer | NOT_MET |
+| condition B | no real UC-02 route-compatible public index | NOT_MET |
+| condition C | no real UC-02 consumer-to-corpus-to-route binding | NOT_MET |
+| exact worker manifest | audit and worker return only | PASS |
+| forbidden actions | none occurred | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired work order | `CLOSED_PASS_BOUNDED_DISCOVERY_NOT_MET` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_UC02_REOPEN_DISCOVERY_COMPLETION_2026-08-10.md` | independent bounded acceptance | PASS |
+| Worker return | named return | `COMPLETE_PENDING_REVIEW`; accepted by completion | PASS |
+| Discovery audit | named audit | `UC02_REOPEN_CONDITION_NOT_MET`; A/B/C NOT_MET | PASS |
+| Roadmap state | LPCI use-case roadmap | `LPCI1_WEB_UC02_REOPEN_DISCOVERY_NOT_MET_PARKED_NO_CONTINUATION` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift PASS | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | no registry owner mutation | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence artifact was used | N/A with reason |
+| System loop interlock | UC-02 discovery -> not met -> park | no implementation release | PASS |
+| Session continuity | active V57 and generated state | separate sync after material commit | N/A with reason |
 
 ## Public Export Disposition
 

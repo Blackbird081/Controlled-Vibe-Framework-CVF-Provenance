@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ACCEPTED_BOUNDED_NO_RELEASE_OR_CONTINUATION
+Status: LPCI1_WEB_UC02_REOPEN_DISCOVERY_NOT_MET_PARKED_NO_CONTINUATION
 
 docType: roadmap
 
@@ -179,7 +179,7 @@ use case that reaches `ANSWER_EMITTED` shares the same unresolved dependency).
 | ID | Named consumer | User question shape | Context source | Governance/filter stages already applied | Output destination | Existing owner | Provider requirement | Security/privacy risk | Deterministic proof seam | Live-proof requirement | Dependency | Reopen condition | Disposition |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | `UC-01` | LPCI dashboard operator/pilot user (existing `/lpci` page) | runnable synthetic query `nghi phep nam` (Vietnamese, "annual leave"): the current `applySearch` matcher in `filter-pipeline.ts` lowercases the whole query string and does a substring match against each record's `titleSnippet`/`contentSnippet`; `nghi phep nam` is verified present (case-insensitive substring) in 2 of the 4 fixture rows' `titleSnippet`/`contentSnippet` fields, so this exact string is runnable against the current matcher today - a schema/governance demonstration query against the synthetic fixture, not a legal-correctness, current-law, legal-advice, or production-corpus proof | the one route-loadable index file `GOVERNANCE_PILOT_NO_LEGAL_CORPUS-index.json` (synthetic, public-only, 4 fixture rows; not a real legal/policy/decree corpus) | S1 public-only admission, filter pipeline, retrieval boundary, `modelEvidenceProjection`, safe serialization, audit receipt | existing `/lpci` dashboard response panel | existing LPCI1-T5 cvf-web owner; no new owner needed | yes; the shared `UC-04` provider-integration dependency below applies | LOW: fixture data is synthetic/public-only and explicitly not legal advice; B1 fail-closes non-public | B1's 99 focused/7-file test suite plus P1-P8/F1-F16 synthetic matrix | yes, before any real user-facing answer claim; zero calls proven so far | none beyond existing B1/BR1 closure and the `UC-04` dependency | already eligible for DESIGN-only authorization now; see `## Recommended Next Tranche` for the single-chain lifecycle | `READY_FOR_FRESH_DESIGN_AUTHORITY` |
-| `UC-02` | future organization/internal-policy user needing a real (non-synthetic) corpus | "What does our internal SOP/company policy say about Y?" | unspecified - no current corpus is claimed as the future UC-02 corpus. The PolicyLocal production corpus registry entry (`policylocal-production-corpus-dropzone`, `DEEP_CLASSIFIED`, LPCI2-owned) is cited only as a counterexample that demonstrates registry membership does not imply LPCI1 route-compatible index availability: it exists in the registry but has no `<corpusId>-index.json` file this route (LPCI1) can load, and it is not proposed as UC-02's corpus (it is a separate LPCI2-owned corpus for different laws/documents, not internal SOP/company-policy content) | none yet for LPCI1; S1/B1 apply only once a route-compatible index is admitted for whatever future corpus is eventually selected | future org-internal consumer, undetermined | no source-verified current owner binds a real consumer to `/api/lpci/query` for a production corpus | yes; the shared `UC-04` dependency applies once reachable | MEDIUM: real organizational content, would still be public-only-admitted under S1 | same B1 seam once a route-compatible index is available | yes | (a) a named, source-verified non-test consumer; (b) a route-compatible `<corpusId>-index.json` public index; and (c) verified selection/binding of that consumer to `/api/lpci/query` - registry membership alone is insufficient, as the PolicyLocal counterexample demonstrates | reopen only when all three of (a), (b), and (c) are simultaneously source-verified | `PARKED_MISSING_CONSUMER` |
+| `UC-02` | future organization/internal-policy user needing a real (non-synthetic) corpus | "What does our internal SOP/company policy say about Y?" | unspecified - no current corpus is claimed as the future UC-02 corpus. The PolicyLocal production corpus registry entry (`policylocal-production-corpus-dropzone`, `DEEP_CLASSIFIED`, LPCI2-owned) remains counterexample-only: it has no matching LPCI1 `<corpusId>-index.json` and represents different LPCI2-owned laws/documents | none yet for LPCI1; S1/B1 apply only once a route-compatible index is admitted for a selected future corpus | future org-internal consumer, undetermined | accepted discovery found only the dashboard-to-synthetic-pilot caller; no named real UC-02 consumer | yes; the accepted UC-04 binding applies only once UC-02 is reachable | MEDIUM: real organizational content; current source exposes none through UC-02 | same B1 seam once a route-compatible index is available | yes | all simultaneously: named real non-test consumer; matching route-compatible public index; direct consumer-to-corpus-to-route selection/binding | accepted discovery found A/B/C all NOT_MET; reopen only when all three become direct current-source facts | `PARKED_REOPEN_CONDITION_NOT_MET` |
 | `UC-03` | any consumer needing non-public (restricted/confidential/classified) corpus answers | "What does this confidential/internal-only document say?" | any corpus with non-public `sensitivityLevel` rows | S1 explicitly fails these closed at Stage 1; B1 proves fail-close (P4/P5/F2/F11) | none; route returns `FILTERED_OUT` or admits nothing | no entitlement/grant owner exists anywhere in current source | yes, plus an unresolved entitlement owner | HIGH if ever built without a grant owner; currently zero exposure because fail-closed | existing fail-closed tests already prove the negative case | yes, but blocked on entitlement owner first | a source-verified non-public entitlement/grant-store owner, not present today | reopen only when a governed entitlement/grant owner is source-verified to exist | `PARKED_MISSING_ENTITLEMENT_OWNER` |
 | `UC-05` | a hypothetical second LPCI-like corpus-to-LLM consumer outside cvf-web (e.g. a CLI or MCP tool) | any query shape routed through a non-cvf-web caller | any admitted corpus | none observed; no such caller exists in current source | undetermined | no source-verified non-test, non-dashboard caller of `/api/lpci/query` exists | undetermined | undetermined; no current evidence to assess | none; no caller to test | undetermined | a source-verified new caller with a registered production trigger | reopen only when a real non-test, non-dashboard caller is source-verified to exist and call this route | `NO_CURRENT_VALUE_WITH_REOPEN_CONDITION` |
 | `UC-06` | duplicate/second cvf-web LPCI query owner (a parallel route doing the same job) | any | any | N/A | N/A | the existing single route already owns this responsibility | N/A | N/A | N/A | N/A | N/A | `N/A - permanently rejected duplicate owner` | `REJECT_DUPLICATE_OWNER` |
@@ -311,11 +311,18 @@ provider call, zero retries, HTTP 200, `ANSWER_EMITTED`, `PUBLIC_ONLY`, and
 required audit correlations. No retry, release, hosted, deployment,
 production, public, or later-roadmap authority follows.
 
+The separately authorized UC-02 reopen discovery is independently accepted as
+`UC02_REOPEN_CONDITION_NOT_MET`. Current source has no named real UC-02
+consumer, no real UC-02 route-compatible public index, and no corresponding
+consumer-to-corpus-to-route binding. UC-02 remains parked; discovery creates no
+DESIGN, BUILD, mutation, or live authority.
+
 ## Explicit Parked Lanes
 
-- `UC-02`: `PARKED_MISSING_CONSUMER` - a production corpus registry entry
-  exists (PolicyLocal), but no named source-verified non-test consumer and no
-  route-compatible public index are simultaneously verified for LPCI1.
+- `UC-02`: `PARKED_REOPEN_CONDITION_NOT_MET` - accepted discovery found A/B/C
+  all NOT_MET: no named real consumer, no matching real public index, and no
+  direct consumer-to-corpus-to-route binding. PolicyLocal remains an LPCI2
+  registry counterexample only.
 - `UC-03`: `PARKED_MISSING_ENTITLEMENT_OWNER` - no non-public grant/entitlement
   owner exists in current source.
 - `UC-04`: `RUNTIME_BINDING_AND_BOUNDED_FULL_ROUTE_PROOF_ACCEPTED` - the accepted B2 BUILD
@@ -337,7 +344,7 @@ production, public, or later-roadmap authority follows.
 
 | Lane | Concrete reopen condition |
 |---|---|
-| `UC-02` | simultaneously: (a) a named, source-verified non-test consumer; (b) a route-compatible `<corpusId>-index.json` public index; and (c) verified selection/binding of that consumer to `/api/lpci/query`. Corpus registry membership alone is insufficient. |
+| `UC-02` | NOT_MET at accepted 2026-08-10 discovery. Reopen only when simultaneously: (a) a named, source-verified real organization/internal-policy non-test consumer; (b) a matching route-compatible `<corpusId>-index.json` whose admitted rows are public; and (c) direct source proving that consumer selects that corpus and calls `/api/lpci/query`. Registry membership, the synthetic pilot, or any single/paired condition is insufficient. |
 | `UC-03` | a governed entitlement/grant-store owner is source-verified to exist and is named with a file path and symbol |
 | `UC-04` | both simultaneously: (a) the LPCI-specific binding of `LPCI_LLM_API_KEY`, `LPCI_LLM_ENDPOINT`, and `LPCI_LLM_MODEL` to the existing Model Gateway owner is source-verified in runtime code (reuse/compose, not a new parallel owner); and (b) a documented config contract for that binding exists. `.env.example` naming alone, without source-verified Model Gateway integration, is insufficient. Live-proof authority additionally requires a fresh separate operator grant. |
 | `UC-05` | a real non-test, non-dashboard caller of `/api/lpci/query` is source-verified to exist |
@@ -435,7 +442,7 @@ is authorized.
 ## Machine Closure Package
 
 N/A with reason: this roadmap's top status is
-`LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ACCEPTED_BOUNDED_NO_RELEASE_OR_CONTINUATION`,
+`LPCI1_WEB_UC02_REOPEN_DISCOVERY_NOT_MET_PARKED_NO_CONTINUATION`,
 an accepted bounded continuation state rather than a closed-equivalent token.
 Intake closure remains recorded in the R3 completion; D1 and B2 acceptance are
 recorded in their separate completion reviews.
