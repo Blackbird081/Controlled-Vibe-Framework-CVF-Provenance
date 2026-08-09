@@ -1,5 +1,5 @@
 {
   "stateOrder": 2003,
   "stateKey": "nextAllowedMove",
-  "value": "UC-01 B2 BUILD-only packet is committed at e37dfbff9 after pre-dispatch PASS 75/75. The next allowed move is one no-commit implementation worker executing the exact fifteen-path manifest, deterministic network-free proofs, and worker return, followed by independent reviewer disposition. Raw secret access outside the Model Gateway credential owner, ignored local environment reads, real provider/network/live proof, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave."
+  "value": "UC-01 B2 provider-binding BUILD is independently accepted at material commit 5c86f6d77 with deterministic network-free proof and pre-closure PASS 75/75. The next allowed move is HOLD until a fresh explicit operator authority opens a provider/live-proof packet. Raw secret output, ignored local environment reads, provider/network/live execution, persistence, vector/RAG, non-public grant, public-sync, deployment, and readiness remain unauthorized. LHW24 remains the latest closed numbered LHW wave."
 }

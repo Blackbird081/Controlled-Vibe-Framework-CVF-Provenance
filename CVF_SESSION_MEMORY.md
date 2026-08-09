@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_build_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=one no-commit B2 implementation worker executes the exact committed packet, followed by independent review; parked checkpoint=real provider/network/live proof, ignored local environment reads, public-sync, deployment, and readiness remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=hold until a fresh explicit operator authority opens a provider/live-proof packet; parked checkpoint=real provider/network/live proof, ignored local environment reads, public-sync, deployment, and readiness remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_provider_binding_build_dispatched_pending_worker`
+Current mode marker: `lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
 
-Current mode: `lpci1_web_uc01_provider_binding_build_dispatched_pending_worker`
+Current mode: `lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
 
-`lpci1_web_uc01_provider_binding_build_dispatched_pending_worker`
+`lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
 
 Previous mode:
 
@@ -400,19 +400,18 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_provider_binding_build_dispatched_pending_worker`
+Mode: `lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
 The public-safe checker/test subset and authorization receipt are exported at
 public commit `2103a38f`; private intake artifacts remain provenance-only.
-UC-01 B2 BUILD-only packet is committed at `e37dfbff9` after pre-dispatch
-PASS 75/75. The next allowed move is one no-commit implementation worker using
-the exact fifteen-path manifest and deterministic network-free proof contract,
-followed by independent reviewer disposition. Raw secret access outside the
-Model Gateway credential owner, ignored local environment reads, real
-provider/network/live proof, persistence, vector/RAG, non-public grant,
-public-sync, deployment, and readiness remain unauthorized.
+UC-01 B2 provider-binding BUILD is independently accepted at material commit
+`5c86f6d77` with 70 focused tests, hook 83/83, and material-range pre-closure
+75/75. The next allowed move is HOLD until a fresh explicit operator authority
+opens a provider/live-proof packet. Raw secret output, ignored local
+environment reads, real provider/network/live proof, persistence, vector/RAG,
+non-public grant, public-sync, deployment, and readiness remain unauthorized.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen

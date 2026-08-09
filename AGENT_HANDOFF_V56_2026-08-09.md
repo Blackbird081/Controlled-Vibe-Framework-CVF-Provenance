@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `e37dfbff9 docs(dispatch): authorize LPCI UC-01 provider binding build`
-- Active mode: `lpci1_web_uc01_provider_binding_build_dispatched_pending_worker`
+- Latest material commit: `5c86f6d77 feat(lpci): bind UC-01 through Model Gateway`
+- Active mode: `lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: N/A with reason: this BUILD dispatch is private provenance work
 - Remote tracking branch: origin/main
@@ -17,44 +17,37 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_build_dispatched_pending_worker`;
-active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=one no-commit
-B2 implementation worker executes the committed exact manifest, followed by
-independent review; parked checkpoint=real provider/network/live proof,
+Startup acknowledged: current mode=`lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`;
+active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=hold until a
+fresh explicit operator authority opens a provider/live-proof packet; parked checkpoint=real provider/network/live proof,
 ignored local environment reads, public-sync, deployment, and readiness remain
 unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_provider_binding_build_dispatched_pending_worker`
+`lpci1_web_uc01_provider_binding_build_closed_pass_bounded_hold_before_fresh_provider_live_authority`
 
 ## Purpose
 
-Carry the committed UC-01 B2 BUILD-only packet from clean dispatch through one
-no-commit worker execution and independent primary-reviewer disposition.
+Record the independently accepted UC-01 B2 provider-binding BUILD and preserve
+the hold before any fresh provider/live authority.
 
 ## Scope / Target / Owner Boundary
 
-Scope is the bounded provider-binding implementation authorized by the B2
-packet. Target is the exact fifteen-path worker manifest named by that packet.
-The worker owns those pending changes; the primary agent owns review, closure,
-commits, and protected continuity surfaces.
+Scope is the accepted bounded provider-binding implementation, its deterministic
+evidence, reviewer closure, and continuity. No provider/live authority follows.
 
 ## Active Boundary
 
-Accepted DESIGN evidence opened the bounded B2 BUILD checkpoint. The committed
-packet requires source-verified Model Gateway composition, fail-closed exact
-provider/model binding, deterministic network-free proof, and a worker return.
-The worker owns exactly the fifteen-path manifest and must not commit.
-
-The primary agent remains dispatcher, independent reviewer, closer, and commit
-owner. DESIGN acceptance is not inherited from dispatch. No later lifecycle or
-external-effect authority is implied.
+The accepted B2 BUILD composes LPCI with current Model Gateway owners, enforces
+fail-closed exact-pair behavior, and preserves S1/audit boundaries. Seventy
+focused tests and material-range pre-closure passed. Provider/live, public-sync,
+deployment, and readiness remain separate operator checkpoints.
 
 ## Claim Boundary
 
-This handoff proves only BUILD dispatch and continuity. It does not prove
-implementation acceptance, provider execution, deployment, or readiness.
+This handoff records accepted local deterministic BUILD and continuity. It does
+not prove provider execution, credential validity, deployment, or readiness.
 
 ## Canonical Packet
 
@@ -75,10 +68,9 @@ implementation acceptance, provider execution, deployment, or readiness.
 
 ## Next Allowed Move
 
-One no-commit implementation worker executes the committed B2 packet at
-`e37dfbff9`, changes only the exact fifteen-path manifest, runs deterministic
-network-free proof, and returns for independent review. Provider/live remains a
-later separate checkpoint after accepted BUILD evidence.
+HOLD until a fresh explicit operator authority opens a provider/live-proof
+packet. No provider call, ignored environment-file read, public-sync,
+deployment, or readiness action is authorized by B2 closure.
 
 ## Parked Checkpoints
 
@@ -170,6 +162,54 @@ only this handoff-only anchor if commit `8c810d0e2` is reverted.
 | Invocation ID | `lpci1-web-uc01-gc020-dispatch-anchor-2026-08-09` |
 | Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
 | Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## UC-01 B2 Final Session Synchronization
+
+Accepted material commit: `5c86f6d77`.
+Material continuity anchor: `145f9a5bc`.
+Material-range pre-closure: PASS 75 of 75 for
+`0363edb3c..5c86f6d77`.
+
+## Core Guard Self-Protection Authorization - B2 Final Session Sync
+
+Authorized guard-maintenance scope: synchronize only the seven protected
+continuity paths below to the accepted B2 state and provider/live hold.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01ProviderBindingBuildClosure20260809.json`
+
+Rollback boundary: revert only this seven-path session-sync batch if accepted
+material commit `5c86f6d77` is reverted.
+
+## Agent Operation Trace Block - B2 Final Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-b2-final-session-sync-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | session source patch, generated state, compatibility gates, session-sync steward, and Git commit |
+| Target paths | exact seven protected continuity paths listed above |
+| Allowed scope source | accepted B2 material closure and GC-020 continuity |
+| Before status evidence | clean HEAD `145f9a5bc`; material pre-closure passed 75 of 75 |
+| After status evidence | generated state and front doors record BUILD closed bounded and provider/live hold |
+| Diff evidence | exact seven-path name-status, state drift check, compatibility gates, and commit receipt |
+| Approval boundary | session synchronization only |
+| Claim boundary | accepted local deterministic BUILD; no provider/live/public/deployment/readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-b2-final-session-sync-2026-08-09` |
+| Expected manifest | exact seven protected continuity paths listed above |
+| Actual changed set | same seven paths after state generation |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
