@@ -140,3 +140,47 @@ continuity batch if dispatch commit `e2ebbc984` is reverted.
 | Actual changed set | same nine paths after state generation |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | V55 moved intact to governed archive; V56 opened as active successor |
+
+## GC-020 Dispatch Continuity Anchor
+
+Dedicated session-sync parent: `8c810d0e2 chore(session): dispatch LPCI UC-01 design`.
+
+This in-place handoff-only anchor records the committed continuity HEAD required
+before worker pre-implementation. It does not change dispatch scope or release
+any parked checkpoint.
+
+## Core Guard Self-Protection Authorization - GC-020 Dispatch Anchor
+
+Authorized guard-maintenance scope: update only the active handoff with the
+committed continuity parent required by GC-020.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V56_2026-08-09.md`
+
+Operator authorization is inherited only for reviewer-owned continuity needed
+to execute the already committed DESIGN dispatch. Rollback boundary: revert
+only this handoff-only anchor if commit `8c810d0e2` is reverted.
+
+## Agent Operation Trace Block - GC-020 Dispatch Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-gc020-dispatch-anchor-2026-08-09` |
+| Working directory | repository root |
+| Command or tool surface | active-state compatibility diagnosis, handoff-only patch, gates, and Git commit |
+| Target paths | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Allowed scope source | worker's governed pre-implementation blocker after continuity commit `8c810d0e2` |
+| Before status evidence | clean HEAD `8c810d0e2`; worker created no output and changed nothing |
+| After status evidence | active handoff contains the dedicated session-sync parent required by GC-020 |
+| Diff evidence | exact one-path handoff diff and compatibility gate |
+| Approval boundary | handoff continuity repair only |
+| Claim boundary | no DESIGN acceptance, SPEC, BUILD, runtime/config/package mutation, provider/live, public-sync, deployment, or readiness claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-gc020-dispatch-anchor-2026-08-09` |
+| Expected manifest | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Actual changed set | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
