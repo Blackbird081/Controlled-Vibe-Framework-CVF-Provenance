@@ -6,12 +6,12 @@ import { render, screen } from '@testing-library/react';
 import { HomeBrowseExperience } from './HomeBrowseExperience';
 
 vi.mock('@/components', () => ({
-    SurfaceTopBar: ({ title }: any) => <div data-testid="surface-top-bar">{title}</div>,
+    SurfaceTopBar: ({ title }: { title: string }) => <div data-testid="surface-top-bar">{title}</div>,
     OutcomeQuickActions: () => <div data-testid="outcome-quick-actions" />,
     IntentEntry: () => <div data-testid="intent-entry" />,
     CategoryTabs: () => <div data-testid="category-tabs" />,
-    TemplateCard: ({ template }: any) => <div data-testid="template-card">{template.name}</div>,
-    SurfaceStatCard: ({ label }: any) => <div data-testid="stat-card">{label}</div>,
+    TemplateCard: ({ template }: { template: { name: string } }) => <div data-testid="template-card">{template.name}</div>,
+    SurfaceStatCard: ({ label }: { label: string }) => <div data-testid="stat-card">{label}</div>,
 }));
 
 vi.mock('@/components/OutcomeQuickActions', () => ({

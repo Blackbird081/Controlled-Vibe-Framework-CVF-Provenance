@@ -7,13 +7,13 @@ import HelpPage from './page';
 
 // Mock SurfaceTopBar and KnowledgeJourneyNav
 vi.mock('@/components', () => ({
-    SurfaceTopBar: ({ title, subtitle }: any) => (
+    SurfaceTopBar: ({ title, subtitle }: { title: string; subtitle: string }) => (
         <div data-testid="surface-top-bar">
             <h1>{title}</h1>
             <p>{subtitle}</p>
         </div>
     ),
-    KnowledgeJourneyNav: ({ currentStep }: any) => (
+    KnowledgeJourneyNav: ({ currentStep }: { currentStep: number }) => (
         <div data-testid="knowledge-journey-nav">Step {currentStep}</div>
     ),
 }));

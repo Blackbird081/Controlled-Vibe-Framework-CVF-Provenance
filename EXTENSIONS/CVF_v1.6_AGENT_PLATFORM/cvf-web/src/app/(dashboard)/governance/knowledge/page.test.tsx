@@ -6,7 +6,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import KnowledgeGovernancePage from './page';
 
 vi.mock('@/components', () => ({
-    KnowledgeJourneyNav: ({ currentStep }: any) => (
+    KnowledgeJourneyNav: ({ currentStep }: { currentStep: number }) => (
         <div data-testid="knowledge-journey-nav">Step {currentStep}</div>
     ),
 }));

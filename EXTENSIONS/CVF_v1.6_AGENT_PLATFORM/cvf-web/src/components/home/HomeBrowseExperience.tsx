@@ -4,6 +4,7 @@
 import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { BookOpenCheck, FileOutput, Sparkles } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Template } from '@/types';
 import { GovernanceEvidenceReceipt } from '@/lib/ai';
 import { IntentRouteResult } from '@/lib/intent-router';
@@ -37,7 +38,7 @@ interface HomeBrowseExperienceProps {
     statCards: Array<{
         label: string;
         value: string;
-        icon: any;
+        icon: LucideIcon;
         tone: 'accent' | 'emerald' | 'amber' | 'violet';
     }>;
     isIntentFirstEnabled: () => boolean;
