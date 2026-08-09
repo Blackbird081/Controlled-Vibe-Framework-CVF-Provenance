@@ -13,7 +13,7 @@ Read before governed material work:
 1. `CVF_SESSION_MEMORY.md`
 2. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 3. `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-4. `AGENT_HANDOFF_V56_2026-08-09.md`
+4. `AGENT_HANDOFF_V57_2026-08-10.md`
 5. `docs/reference/guard_orientation/README.md`
 6. `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
 
@@ -25,7 +25,7 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V56_2026-08-09.md` |
+| Active handoff | `AGENT_HANDOFF_V57_2026-08-10.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`; active handoff=AGENT_HANDOFF_V56_2026-08-09.md; next allowed move=STOP and await fresh explicit operator authority; parked checkpoint=retry, additional provider call, release/hosted proof, deployment, production readiness, public-sync, other corpora/providers/models, and later roadmap lanes remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=delegated worker executes the two-output UC-02 discovery packet; parked checkpoint=DESIGN, BUILD, consumer/corpus/index/registry/source/runtime mutation, private-data/credential access, provider/live, deployment, public-sync, and worker commit remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
+Current mode marker: `lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
 
-Current mode: `lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
+Current mode: `lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
 
-`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
+`lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
 
 Previous mode:
 
-`lpci1_web_uc01_full_route_live_proof_dispatched_pending_worker`
+`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -80,6 +80,7 @@ are now assigned to the no-commit worker.
 ## Latest Material Work
 | Work | Commit | Disposition |
 |---|---|---|
+| LPCI1-WEB UC-02 reopen discovery dispatch | `e22c5d1bc` | `DISPATCHED`; exact two-output no-commit current-source audit of named consumer, route-compatible public index, and consumer-route binding; pre-dispatch 75/75; no implementation or live authority. |
 | LPCI1-WEB UC-01 full-route live proof | `b3f405b91` | `CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED`; one signed synthetic-public route invocation, one provider call, zero retries, route/provider HTTP 200, `ANSWER_EMITTED`, `PUBLIC_ONLY`, required audit correlations true; pre-closure 75/75; no retry, hosted/release, public, deployment, production, or continuation authority. |
 | LPCI1-WEB-B1 and BR1 bounded closure | `ab74e14a5` | `CLOSED_PASS_BOUNDED`; implementation/closure material `db580830f`; B1 and BR1 completion reviews accepted; LPCI 7 files/99 tests and execute 3 files/5 tests PASS; full non-live 304 files with 3397 passed/2 skipped; zero provider/live calls; current system-chain freshness and as-built catalog checks both `CURRENT` with 0 violations. |
 | LPCI1-WEB-S1 conformance SPEC closure | `3733cedd0` | `CLOSED_PASS_BOUNDED`; independent semantic FINAL PASS after consolidated repairs; roadmap exits `HOLD_BEFORE_BUILD`; no runtime/test/provider/live proof. |
@@ -401,22 +402,22 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`
+Mode: `lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
 The public-safe checker/test subset and authorization receipt are exported at
 public commit `2103a38f`; private intake artifacts remain provenance-only.
-UC-01 B2, the binding-only live proof, and the signed synthetic-public
-full-route proof are independently accepted. Material closure `b3f405b91`
-records route 1, provider 1, retry 0, route/provider HTTP 200,
-`ANSWER_EMITTED`, `PUBLIC_ONLY`, and required audit correlations; material
-pre-closure passed 75/75. STOP and await a fresh explicit operator checkpoint.
-No retry, additional provider call, hosted/release proof, source/config/public
-mutation, deployment, production readiness, persistence, vector/RAG, other
-corpora/providers/models, or later roadmap lane is authorized.
+UC-01 remains independently closed bounded at material commit `b3f405b91`.
+Exact operator token `AUTHORIZE_LPCI1_WEB_UC02_REOPEN_DISCOVERY_ONLY` released
+one documentation-only worker at dispatch commit `e22c5d1bc`. The next allowed
+move is execution of the paired three-condition source-discovery work order,
+creating exactly the audit and worker return without commit. DESIGN, BUILD,
+consumer/corpus/index/registry/source/runtime mutation, private-data or
+credential access, provider/live, deploy, public sync, and later roadmap work
+remain unauthorized.
 Current mode:
-`lpci1_web_uc01_full_route_live_proof_closed_pass_bounded_no_release_or_continuation`.
+`lpci1_web_uc02_reopen_discovery_dispatched_pending_worker`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
