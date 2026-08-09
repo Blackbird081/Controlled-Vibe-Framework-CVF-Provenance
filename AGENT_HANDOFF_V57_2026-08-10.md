@@ -134,3 +134,41 @@ dispatch `e22c5d1bc` is reverted; do not revert accepted UC-01 material.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance discovery dispatch; no public-sync authority.
+
+## Core Guard Self-Protection Authorization - UC-02 Rotation Sync Anchor
+
+Authorized guard-maintenance scope: update only active V57 with the exact
+rotation/session-sync HEAD required by GC-020 before resumed worker execution.
+
+Protected path:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+
+Continuity HEAD: `945078654`.
+
+Operator authorization is the exact UC-02 discovery-only token. Rollback
+boundary: revert only this one-path anchor if rotation/session-sync commit
+`945078654` is reverted; do not revert dispatch or accepted UC-01 material.
+
+## Agent Operation Trace Block - UC-02 Rotation Sync Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc02-rotation-sync-anchor-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | active handoff update, session compatibility gate, Git |
+| Target paths | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Allowed scope source | worker GC-020 return and rotation/session-sync commit `945078654` |
+| Before status evidence | clean HEAD `945078654`; worker created no outputs |
+| After status evidence | V57 contains the exact clean resumed-base parent SHA |
+| Diff evidence | exact one-path handoff diff |
+| Approval boundary | continuity repair only |
+| Claim boundary | no worker output, source/corpus/runtime mutation, private/credential read, provider/live, public, deploy, or production claim |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc02-rotation-sync-anchor-2026-08-10` |
+| Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
