@@ -97,8 +97,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation",
-  "previousMode": "lpci1_web_uc02_reopen_discovery_dispatched_pending_worker",
+  "currentMode": "lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker",
+  "previousMode": "lpci1_web_uc02_reopen_discovery_not_met_parked_no_continuation",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -13692,7 +13692,7 @@
     "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
     "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
   },
-  "nextAllowedMove": "UC-02 reopen discovery is independently closed at material commit 729452197 with disposition UC02_REOPEN_CONDITION_NOT_MET: named real consumer, compatible current public index, and direct consumer-route binding are all NOT_MET. Stop and keep the lane value-parked. Do not rerun discovery until current governed source plausibly changes at least one of those three facts; reopening still requires all three simultaneously plus fresh operator authority and a fresh governed packet. No DESIGN, BUILD, consumer/corpus/index/registry/source/runtime mutation, private-data or credential access, provider/live call, deploy, public-sync, push, or continuation is authorized. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "Operator token AUTHORIZE_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_ONLY released one documentation-only no-commit worker at dispatch commit f187fc0af. The next allowed move is execution of the exact two-output UC-01 current-source readiness audit across auth/RBAC, route authorization, secret/config, rate limits, audit/observability, health/failure, deploy/rollback, and public-export boundaries. No remediation, source/test/config/UI mutation, secret/private access, browser/server/provider/network/live action, deployment, rollback execution, public-sync, push, stage, or worker commit is authorized. The primary reviewer then independently accepts or returns the result. LHW24 remains the latest closed numbered LHW wave.",
   "cvfWebUxRoadmapClosure20260720": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialClosureCommit": "d757fe5ac",
@@ -14311,6 +14311,22 @@
     "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
     "nextAllowedMove": "Stop and keep UC-02 value-parked until current governed source plausibly changes at least one condition; all three conditions and fresh authority remain required before reopening.",
     "claimBoundary": "Discovery closure only; no DESIGN, BUILD, consumer/corpus/index/registry/source/runtime mutation, private-data/credential access, provider/live, deploy, public-sync, push, or continuation."
+  },
+  "lpci1WebUc01ReleaseReadinessDiscoveryDispatch20260810": {
+    "status": "DISPATCHED_PENDING_WORKER",
+    "date": "2026-08-10",
+    "batchId": "LPCI1-WEB-UC01-RELEASE-READINESS-DISCOVERY",
+    "authorityToken": "AUTHORIZE_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_ONLY",
+    "dispatchBaseHead": "d309a60c5",
+    "dispatchCommit": "f187fc0af",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_2026-08-10.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_2026-08-10.md",
+    "preDispatchEvidence": "PASS_75_OF_75",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerOutputCount": 2,
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Delegated worker executes the exact repository-local readiness discovery and returns two uncommitted review outputs.",
+    "claimBoundary": "Discovery only; no remediation, mutation, secret/private access, browser/server/provider/network/live, release, deploy, rollback execution, public-sync, push, or worker commit."
   },
   "portableCloneContinuityClosure20260722": {
     "status": "CLOSED_PASS_PUBLISHED_VERIFIED",
