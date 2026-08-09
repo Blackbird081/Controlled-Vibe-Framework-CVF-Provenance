@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED_OPERATOR_REVIEW_REQUIRED
+Status: LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_ACCEPTED_BOUNDED_HOLD_BEFORE_DESIGN
 
 docType: roadmap
 
@@ -42,10 +42,12 @@ selection, provider invocation, live proof, persistence, vector/RAG, runtime
 mutation, test execution, non-public grants, public-sync, deployment, or
 readiness authority.
 
-Decision: `PROPOSED_OPERATOR_REVIEW_REQUIRED`. This roadmap records source-backed
+Decision: `LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_ACCEPTED_BOUNDED_HOLD_BEFORE_DESIGN`.
+Independent reviewer closure accepts the source-backed
 candidate use cases, an owner/consumer/dependency map, a value/risk ranking, and
-one recommended next-tranche candidate. It selects no candidate as authorized
-and opens no later lifecycle phase.
+one recommended next-tranche candidate. It selects UC-01 only as the candidate
+for a possible future DESIGN tranche; it does not authorize that tranche or
+open any later lifecycle phase.
 
 ## Purpose
 
@@ -418,9 +420,11 @@ vector/RAG, non-public grant, public-sync, or deployment authority exists here.
 
 ## Machine Closure Package
 
-N/A with reason: this roadmap's top status is `PROPOSED_OPERATOR_REVIEW_REQUIRED`,
-not a closed-equivalent token, so no Machine Closure Package section is
-required by `check_machine_closure_package.py`'s closed-status trigger.
+N/A with reason: this roadmap's top status is
+`LPCI1_WEB_CONTEXT_TO_LLM_INTAKE_ACCEPTED_BOUNDED_HOLD_BEFORE_DESIGN`, an
+accepted bounded intake state rather than a closed-equivalent token. Reviewer
+closure is recorded in
+`docs/reviews/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_INTAKE_R3_PATH_RE_REPAIR_COMPLETION_2026-08-09.md`.
 
 ## ADIF Defect Registry Disclosure
 
