@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2137,
+  "stateOrder": 2139,
   "stateKey": "nextAllowedMove",
-  "value": "Complete the separately reviewed T1 Amendment 1 authority commit and its dedicated session-sync release, then dispatch only the exact-eight no-commit repair. System-chain freshness is source-verified CURRENT in the primary checkout; no system-chain file edit is authorized. T2/T3, provider/network/live, downstream mutation, public-sync, push, deployment, and production remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "Execute only the independently reviewed T1 Amendment 1 exact-eight no-commit repair from the current dedicated S2 release HEAD. Preserve the repairInputBaseHead c6bef41ccb2e2543c93480f4e97ac13ff444046e and capture the current S2 HEAD as executionBaseHead before the first worker edit. Return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED. T2/T3, system-chain edits, provider/network/live, downstream mutation, public-sync, push, deployment, and production remain parked. LHW24 remains the latest closed numbered LHW wave."
 }

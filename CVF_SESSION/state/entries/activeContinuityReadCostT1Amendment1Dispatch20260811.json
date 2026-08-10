@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2138,
+  "stateKey": "activeContinuityReadCostT1Amendment1Dispatch20260811",
+  "value": "S2 releases the dependency-held T1 Amendment 1 exact-eight no-commit repair after authority commit fb46e3c3204545e22cee0663f6254a4f9b6bc30e, Amendment SHA-256 8aa4403cc0960735ae19eaa9cc1d7326bb3f2b76742059aea6d9a3db126fe1f6, authorization-review SHA-256 0cff24042121468c7161bfcdc15a4be12dfa6f7512ce697aa0717351b1da93d9, independent PASS, and pre-dispatch autorun 75/75 PASS. The worker captures this committed S2 release HEAD as executionBaseHead before editing, preserves repairInputBaseHead c6bef41ccb2e2543c93480f4e97ac13ff444046e, changes only the exact-eight manifest, does not commit, and returns COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED. System-chain is VERIFIED_CURRENT_NO_EDIT; T2/T3 and all external-effect lanes remain parked."
+}
