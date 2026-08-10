@@ -2,7 +2,7 @@
 
 Memory class: ACTIVE_ROADMAP
 
-Status: APPROVED_FOR_T1_WORK_ORDER_AUTHORING
+Status: T1_PASS_T2A_DISPATCH_PACKET_AUTHORIZED
 
 Date: 2026-08-10
 
@@ -16,9 +16,10 @@ default and moving historical detail behind targeted archive/state lookups.
 ## Authorization
 
 The operator authorized this roadmap on 2026-08-10 after observing excessive
-worker startup time caused by long active continuity surfaces. T1 is released
-only through its independently reviewed Work Order; T2 and T3 require their
-own release packets.
+worker startup time caused by long active continuity surfaces. T1 closed at
+material commit `f5c2aabf1`. On 2026-08-11 the operator selected the next move,
+authorizing T2 packet authoring. T2A and T2B require separate exact-scope Work
+Orders; T3 remains parked.
 
 ## Scope
 
@@ -167,7 +168,7 @@ T1 does not compact current Core or downstream continuity content. Enforcement
 must support an explicit migration disposition so existing debt is measured
 without silently declaring it compliant.
 
-### T2 - CVF Core compaction and handoff rotation
+### T2A - CVF Core active-surface compaction and handoff rotation
 
 After T1 acceptance:
 
@@ -177,8 +178,30 @@ After T1 acceptance:
 - retain historical state sources outside default startup reads; and
 - prove the new budgets and existing session-state invariants.
 
-T2 must edit generated state sources and regenerate aggregates; no direct
-aggregate-only edit is allowed.
+T2A must edit generated state sources and regenerate aggregates; no direct
+aggregate-only edit is allowed. T2A may update the `AGENTS.md` active-handoff
+pointer only; broad root-instruction compaction belongs to T2B.
+
+### T2B - Core and inherited agent-instruction carrier compaction
+
+After T2A acceptance, compact the instruction carriers that agents may load
+before task routing:
+
+- reduce root `AGENTS.md` to a compact mandatory router plus machine-required
+  binding markers;
+- reduce provider-local `CLAUDE.md` to provider guidance and canonical CVF
+  pointers, without promoting it to source authority;
+- compact the downstream AGENTS template so newly initialized hidden-CVF
+  workspaces inherit progressive disclosure;
+- preserve every still-binding rule through a canonical owner or a new compact
+  rule-routing index; and
+- archive the superseded full carriers without treating archives as active
+  authority.
+
+T2B requires a source/binding matrix for every current `AGENTS.md` heading and
+every checker that reads `AGENTS.md` or `CLAUDE.md`. It must not begin inside
+T2A and must not weaken live-proof, repository-boundary, source-verification,
+closure, handoff, corpus, or public-export controls.
 
 ### T3 - shift-operations-workspace application
 
@@ -200,9 +223,9 @@ provider, API/UI, RAG, audit, persistence, or any deeper project capability.
 
 ## Work Plan
 
-Execute T1, T2, and T3 in order under the tranche boundaries above. A later
-tranche may start only after the preceding tranche is accepted and its entry
-condition is freshly verified.
+Execute T1, T2A, T2B, and T3 in order under the tranche boundaries above. A
+later tranche may start only after the preceding tranche is accepted and its
+entry condition is freshly verified.
 
 ## Acceptance Criteria
 
@@ -222,8 +245,10 @@ condition is freshly verified.
 
 - Stop T1 if the checker requires changing current continuity content before a
   migration disposition exists.
-- Stop T2 on generated-state drift, handoff ambiguity, or missing archive
+- Stop T2A on generated-state drift, handoff ambiguity, or missing archive
   evidence.
+- Stop T2B if any active mandatory rule lacks a canonical owner, any checker
+  binding would be lost, or a compact carrier would exceed its approved budget.
 - Stop T3 if the P4-A1 worker/reviewer is still active or protected hashes are
   not freshly released.
 - No tranche may delete historical evidence; it may only move it to governed
@@ -231,10 +256,12 @@ condition is freshly verified.
 
 ## Verification
 
-T1 verification is defined by its Work Order and must include focused checker
-tests, active-session enforcement, file-size and encoding gates, exact-scope
-evidence, staged-zero evidence at worker return, and the full sanitized
-non-live Python suite after focused checks pass.
+T1 verification is recorded in its completion review. T2A verification is
+defined by its Work Order and must include archive byte/hash evidence, focused
+generator and active-session tests, generated-state drift checks, read-budget
+enforcement, exact-scope evidence, staged-zero evidence, and sanitized local
+governance gates. T2B requires a separately reviewed binding/source matrix
+before any instruction-carrier rewrite.
 
 ## Checker Source Read-Ahead Block
 
