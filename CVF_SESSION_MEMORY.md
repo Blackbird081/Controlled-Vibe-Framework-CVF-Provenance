@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=execute the committed exact-manifest no-commit deterministic BUILD worker; parked checkpoint=secret/private access, provider/network/live, hosted deploy/rollback execution, public-sync, push, production, and readiness remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_build_accepted_parked_pending_fresh_hosted_live_deploy_authority`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless fresh exact hosted/live/deploy authority is issued; parked checkpoint=secret/private access, provider/network/live, hosted deploy/rollback execution, public-sync, push, production, and readiness remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`
+Current mode marker: `lpci1_web_uc01_release_hardening_build_accepted_parked_pending_fresh_hosted_live_deploy_authority`
 
-Current mode: `lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`
+Current mode: `lpci1_web_uc01_release_hardening_build_accepted_parked_pending_fresh_hosted_live_deploy_authority`
 
-`lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`
+`lpci1_web_uc01_release_hardening_build_accepted_parked_pending_fresh_hosted_live_deploy_authority`
 
 Previous mode:
 
@@ -80,6 +80,7 @@ are now assigned to the no-commit worker.
 ## Latest Material Work
 | Work | Commit | Disposition |
 |---|---|---|
+| LPCI1-WEB UC-01 release-hardening deterministic BUILD closure | `e82ab11dc` | `REVIEWER_ACCEPTED_BOUNDED_WITH_TOOLING_INCIDENT_DISCLOSED`; Model Gateway 28/28 plus typecheck and cvf-web 143/143 plus typecheck/scoped ESLint PASS; material pre-closure 75/75; hosted/live/deploy and readiness remain parked. |
 | LPCI1-WEB UC-01 release-readiness discovery closure | `944fdfc56` | `CLOSED_PASS_BOUNDED_READINESS_GAPS_REQUIRE_REMEDIATION`; 1 PRESENT, 3 PARTIAL, 3 GAP, 1 NOT_APPLICABLE; pre-closure 75/75; minimum next tranche is fresh DESIGN/SPEC-only authority. |
 | LPCI1-WEB UC-02 reopen discovery closure | `729452197` | `CLOSED_PASS_BOUNDED_DISCOVERY_NOT_MET`; A/B/C each `NOT_MET`; lane remains value-parked; material-range pre-closure 75/75; no implementation, private-data, live, deploy, public-sync, push, or continuation authority. |
 | LPCI1-WEB UC-01 full-route live proof | `b3f405b91` | `CLOSED_PASS_BOUNDED_FULL_ROUTE_LIVE_PROOF_ACCEPTED`; one signed synthetic-public route invocation, one provider call, zero retries, route/provider HTTP 200, `ANSWER_EMITTED`, `PUBLIC_ONLY`, required audit correlations true; pre-closure 75/75; no retry, hosted/release, public, deployment, production, or continuation authority. |
@@ -403,7 +404,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`
+Mode: `lpci1_web_uc01_release_hardening_build_accepted_parked_pending_fresh_hosted_live_deploy_authority`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
@@ -414,13 +415,13 @@ UC-02 remains independently closed and value-parked at material commit
 `729452197`. UC-01 release-readiness discovery is independently closed at
 material commit `944fdfc56` with disposition
 `UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION`. DESIGN/SPEC is accepted at
-`1038f65aa`; deterministic BUILD is dispatched at `79d135bbe`. Execute only the
-committed exact-manifest no-commit work order, then return for independent
-review. Secret/private access, provider/network/live, hosted deploy/rollback
-execution, public sync, push, production, and readiness claims remain
-unauthorized.
+`1038f65aa`; deterministic BUILD is independently accepted at material commit
+`e82ab11dc`. Stop unless the operator issues fresh exact authority for a
+separately governed hosted/live/deploy tranche. Secret/private access,
+provider/network/live, hosted deploy/rollback execution, public sync, push,
+production, and readiness claims remain unauthorized.
 Current mode:
-`lpci1_web_uc01_release_hardening_build_dispatched_pending_worker`.
+`lpci1_web_uc01_release_hardening_build_accepted_parked_pending_fresh_hosted_live_deploy_authority`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen

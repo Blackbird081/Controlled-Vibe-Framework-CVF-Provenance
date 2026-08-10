@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2126,
+  "stateOrder": 2128,
   "stateKey": "nextAllowedMove",
-  "value": "Execute the committed UC-01 release-hardening BUILD work order with one delegated no-commit worker from the clean session-sync HEAD. The worker may change exactly the accepted 24 implementation/test/doc paths plus the worker return and must use deterministic network-free tests. Primary owns independent review, repair, material commit, closure, and final continuity. Secret/private access, provider/network/live action, hosted deploy/rollback execution, public-sync, push, production, and readiness claims remain forbidden. LHW24 remains the latest closed numbered LHW wave."
+  "value": "Stop after the independently accepted deterministic UC-01 release-hardening BUILD at material commit e82ab11dc. Continue only under fresh exact authority for a separately governed hosted/live/deploy tranche. Secret/private access, provider/network/live action, hosted deploy/rollback execution, public-sync, push, production, and readiness claims remain forbidden. LHW24 remains the latest closed numbered LHW wave."
 }
