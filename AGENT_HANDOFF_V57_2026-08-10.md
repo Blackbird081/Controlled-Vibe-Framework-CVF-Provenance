@@ -1,4 +1,4 @@
-# CVF Agent Handoff V57 - LPCI1 Web UC-01 Hosted Readiness Discovery Closure
+# CVF Agent Handoff V57 - Active Continuity T1 Amendment Release
 
 Memory class: active-handoff
 
@@ -8,36 +8,37 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `dde159d23 docs: close UC01 hosted operations remediation`
-- Active mode: `lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
+- Latest material commit: `c6bef41ccb2e2543c93480f4e97ac13ff444046e docs(continuity): authorize active read-cost T1`
+- Active mode: `active_continuity_read_cost_t1_amendment_1_authorized_pending_exact8_dispatch_release`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless
-fresh exact target-specific hosted-smoke role-assignment intake authority is issued;
-parked checkpoint=secret/private access,
-browser/server/runtime, provider/network/cloud/live, hosted smoke,
-deploy/rollback, public sync, push, production, and readiness remain
-unauthorized.
+Startup acknowledged: current mode=`active_continuity_read_cost_t1_amendment_1_authorized_pending_exact8_dispatch_release`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=commit the
+reviewed T1 Amendment 1 authority, perform its dedicated session-sync release,
+then dispatch only the exact-eight no-commit repair; parked checkpoint=T2/T3,
+provider/network/live, downstream mutation, public sync, push, deployment, and
+production remain unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
+`active_continuity_read_cost_t1_amendment_1_authorized_pending_exact8_dispatch_release`
 
 ## Purpose
 
-Record independent bounded acceptance of the UC-01 hosted release-readiness
-discovery and park all continuation before documentation remediation authority.
+Record operator-authorized release repair for the reviewed active-continuity
+T1 Amendment 1 while preserving the exact-seven worker input and keeping T2/T3
+and external effects parked.
 
 ## Scope / Target / Owner Boundary
 
-The deterministic BUILD is accepted at `e82ab11dc`; the discovery packet is at
-`c48d52b93`; and repository-only discovery closure is accepted at `622f682e0`.
-Secret/external/live/deploy, public, and readiness authority remain excluded.
+The release-repair scope owns continuity synchronization and Amendment
+authority integration only. The exact-eight implementation remains a separate
+no-commit worker phase. System-chain files are read-only because the canonical
+primary-checkout gate is `CURRENT` with zero violations.
 
 ## Latest Work / Changes
 
@@ -92,39 +93,41 @@ Secret/external/live/deploy, public, and readiness authority remain excluded.
 
 ## Active Boundary
 
-Discovery is closed bounded. No secret-bearing file, external system,
-provider, cloud, browser, server, hosted smoke, deployment, rollback,
-production, public sync, or push is authorized.
+Only the reviewed T1 exact-eight repair may follow the dedicated authority and
+session-sync commits. No T2/T3, secret-bearing file, external system, provider,
+network, live, downstream mutation, deployment, production, public sync, or
+push action is authorized.
 
 ## Canonical Packet
 
-- Baseline: `docs/baselines/CVF_GC018_LPCI1_WEB_UC01_HOSTED_RELEASE_READINESS_DISCOVERY_2026-08-10.md`
-- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_HOSTED_RELEASE_READINESS_DISCOVERY_2026-08-10.md`
-- Dispatch commit: `c48d52b93`
-- Material closure commit: `622f682e0`
+- Roadmap: `docs/roadmaps/CVF_ACTIVE_CONTINUITY_READ_COST_REDUCTION_ROADMAP_2026-08-10.md`
+- Parent Work Order: `docs/work_orders/CVF_ACTIVE_CONTINUITY_READ_COST_T1_WORK_ORDER_2026-08-10.md`
+- Amendment: `docs/work_orders/CVF_ACTIVE_CONTINUITY_READ_COST_T1_AMENDMENT_1_2026-08-10.md`
+- Amendment authorization review: `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T1_AMENDMENT_1_AUTHORIZATION_REVIEW_2026-08-11.md`
+- Material authority commit before release repair: `c6bef41ccb2e2543c93480f4e97ac13ff444046e`
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
-- Worker outcome: exact audit and worker return accepted bounded
+- Worker outcome: exact-eight repair worker has not started and remains pending dispatch
 
 ## Next Allowed Move
 
-Stop unless fresh exact authority releases a target-specific hosted-smoke
-role-assignment intake and source-verification packet. No secret or external
-action, hosted smoke execution, deploy, rollback, public sync, push,
-production, or readiness claim is authorized.
+Complete the separately reviewed T1 Amendment 1 authority commit and its
+dedicated session-sync release, then dispatch only the exact-eight no-commit
+repair. System-chain freshness is `CURRENT`; no system-chain edit is released.
+`LHW24` remains the latest closed numbered LHW wave.
 
 ## Parked Checkpoints
 
-- further DESIGN, SPEC, BUILD, source/test/UI/corpus/index/registry mutation
+- T2 Core continuity compaction and T3 downstream migration
 - private/non-public data and credential/environment inspection
-- provider/network/live proof, retry, hosted/release proof
-- persistence, vector/RAG, CLI/MCP implementation
+- provider/network/live proof or retry
+- downstream source/test/UI/corpus/index/registry mutation
 - public sync, deployment, production readiness, worker commit, push
 
 ## Claim Boundary
 
-This handoff records deterministic BUILD acceptance and continuity only. It
-does not prove hosted configuration, provider/live behavior, deployment,
-rollback execution, production readiness, or public availability.
+This handoff records release authority and continuity only. It does not claim
+exact-eight completion, clean final closure, provider/live behavior,
+deployment, downstream migration, production readiness, or public availability.
 
 ## Core Guard Self-Protection Authorization - V57 Rotation And UC-02 Dispatch Sync
 
@@ -216,6 +219,59 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
 | Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
 | Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - T1 Pre-Dispatch Release Repair
+
+Authorized scope: synchronize the active continuity surfaces to material
+authority commit `c6bef41ccb2e2543c93480f4e97ac13ff444046e`, record the
+reviewed exact-eight Amendment release sequence, and preserve all worker-owned
+exact-seven bytes in the primary checkout.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/activeContinuityReadCostT1AmendmentRelease20260811.json`
+
+Operator authorization:
+`AUTHORIZE_CVF_T1_PRE_DISPATCH_RELEASE_REPAIR_V57_SYSTEM_CHAIN`.
+
+System-chain disposition: `VERIFIED_CURRENT_NO_EDIT`. The canonical primary
+checkout returned `CURRENT` with zero violations. Detached-worktree hash
+failures were raw-EOL projection artifacts; they do not authorize rewriting
+the system-chain map, source fingerprints, checker, standard, or source files.
+
+Rollback boundary: revert only this exact seven-path session-sync commit if the
+T1 release repair is rejected. Do not revert material authority `c6bef41...`,
+the dirty exact-seven worker input, accepted LPCI1 history, or any system-chain
+owner.
+
+## Agent Operation Trace Block - T1 Pre-Dispatch Release Repair
+
+| Field | Evidence |
+|---|---|
+| Actor | primary orchestrator/session-sync steward |
+| Provider or surface | isolated local CVF Core session-sync worktree |
+| Session or invocation | `active-continuity-t1-pre-dispatch-release-repair-2026-08-11` |
+| Working directory | isolated session-sync worktree at `c6bef41...` |
+| Command or tool surface | canonical continuity source edits, generated state, local gates, Git |
+| Target paths | exact seven-path continuity manifest above |
+| Allowed scope source | exact operator token `AUTHORIZE_CVF_T1_PRE_DISPATCH_RELEASE_REPAIR_V57_SYSTEM_CHAIN` |
+| Before status evidence | clean isolated worktree at `c6bef41...`; primary staged zero with exact-seven dirty input preserved |
+| After status evidence | active mode and next move route only to reviewed exact-eight authority integration and repair |
+| Diff evidence | generated-state drift check, exact seven-path name-status, system-chain `CURRENT` zero-violation readout |
+| Approval boundary | continuity release repair only; no system-chain edit |
+| Claim boundary | no exact-eight implementation, T2/T3, provider/network/live, downstream, public, deploy, push, or production action |
+| Agent type | session-sync steward |
+| Invocation ID | `active-continuity-t1-release-sync-s1-20260811` |
+| Expected manifest | active handoff, front door, bootstrap, aggregate, core source, next-move source, new release entry |
+| Actual changed set | same seven paths after generator |
+| Manifest delta | MATCH required before commit |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Core Guard Self-Protection Authorization - UC-01 Hosted Operations Remediation Final Closure Sync

@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless fresh exact target-specific hosted-smoke role-assignment intake authority is issued; parked checkpoint=secret/private access, browser/server/runtime, provider/network/cloud/live, hosted smoke execution, deploy/rollback, public-sync, push, production, and readiness remain unauthorized.
+Startup acknowledged: current mode=`active_continuity_read_cost_t1_amendment_1_authorized_pending_exact8_dispatch_release`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=commit the reviewed T1 Amendment 1 authority, perform its dedicated session-sync release, then dispatch only the exact-eight no-commit repair; parked checkpoint=T2/T3, provider/network/live, downstream mutation, public-sync, push, deployment, and production remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
+Current mode marker: `active_continuity_read_cost_t1_amendment_1_authorized_pending_exact8_dispatch_release`
 
-Current mode: `lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
+Current mode: `active_continuity_read_cost_t1_amendment_1_authorized_pending_exact8_dispatch_release`
 
-`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
+`active_continuity_read_cost_t1_amendment_1_authorized_pending_exact8_dispatch_release`
 
 Previous mode:
 
-`lpci1_web_uc01_release_readiness_discovery_dispatched_pending_worker`
+`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -406,7 +406,15 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
+Mode: `active_continuity_read_cost_t1_amendment_1_authorized_pending_exact8_dispatch_release`
+
+Complete the separately reviewed T1 Amendment 1 authority commit and its
+dedicated session-sync release, then dispatch only the exact-eight no-commit
+repair. System-chain freshness is source-verified `CURRENT` with zero
+violations in the primary checkout; no system-chain source, map, or checker
+edit is authorized. T2/T3, provider/network/live, downstream mutation,
+public-sync, push, deployment, and production remain parked. `LHW24` remains
+the latest closed numbered LHW wave.
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
@@ -425,8 +433,9 @@ contract remediation packet at `ea558df32`; one no-commit worker owns exactly
 two normative contracts and one return. Secret/private access,
 browser/server, provider/network/cloud/live, hosted smoke, deploy/rollback,
 public sync, push, production, and readiness claims remain unauthorized.
-Current mode:
-`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`.
+Prior LPCI1 hosted-readiness state remains closed bounded and parked; it is not
+the active execution lane. Current mode:
+`active_continuity_read_cost_t1_amendment_1_authorized_pending_exact8_dispatch_release`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
