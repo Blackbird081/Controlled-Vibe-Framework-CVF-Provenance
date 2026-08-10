@@ -1,4 +1,4 @@
-# CVF Agent Handoff V57 - LPCI1 Web UC-01 Release Hardening Build Closure
+# CVF Agent Handoff V57 - LPCI1 Web UC-01 Hosted Readiness Discovery Dispatch
 
 Memory class: active-handoff
 
@@ -8,37 +8,44 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `e82ab11dc feat(lpci): harden UC01 release path`
-- Active mode: `lpci1_web_uc01_release_hardening_build_accepted_parked_pending_fresh_hosted_live_deploy_authority`
+- Latest material commit: `c48d52b93 docs: dispatch UC01 hosted readiness discovery`
+- Active mode: `lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_release_hardening_build_accepted_parked_pending_fresh_hosted_live_deploy_authority`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless
-fresh exact hosted/live/deploy authority is issued; parked
-checkpoint=secret/private access, provider/network/live, hosted deploy/rollback
-execution, public sync, push, production, and readiness remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=execute only
+the committed exact-two-output no-commit repository-local discovery; parked
+checkpoint=secret/private access, browser/server/runtime, provider/network/
+cloud/live, deploy/rollback, public sync, push, production, and readiness
+remain unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_release_hardening_build_accepted_parked_pending_fresh_hosted_live_deploy_authority`
+`lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`
 
 ## Purpose
 
-Record independent bounded acceptance of the UC-01 release-hardening
-deterministic BUILD and park all hosted/live/deploy continuation.
+Dispatch the exact repository-local UC-01 hosted release-readiness discovery to
+one no-commit worker while primary retains independent closure ownership.
 
 ## Scope / Target / Owner Boundary
 
-The repaired DESIGN/SPEC closure is accepted at `1038f65aa`; the BUILD packet
-is committed at `79d135bbe`; and the independently accepted implementation and
-closure are committed at `e82ab11dc`. Hosted/live/deploy, public, and readiness
-authority remain excluded.
+The deterministic BUILD is accepted at `e82ab11dc`. Fresh exact discovery-only
+authority produced the packet at `c48d52b93`. Secret/external/live/deploy,
+public, and readiness authority remain excluded.
 
 ## Latest Work / Changes
+
+- Exact operator token
+  `AUTHORIZE_LPCI1_WEB_UC01_HOSTED_RELEASE_READINESS_DISCOVERY_ONLY` was
+  converted into a fresh GC-018 and source-verified no-commit work order.
+- Pre-dispatch passed 75/75; material packet committed at `c48d52b93`.
+- Worker owns exactly two documentation outputs. Primary owns independent
+  review, closure, material commit, and continuity.
 
 - Reviewer accepted the deterministic BUILD at `e82ab11dc` with disposition
   `REVIEWER_ACCEPTED_BOUNDED_WITH_TOOLING_INCIDENT_DISCLOSED`.
@@ -77,26 +84,23 @@ authority remain excluded.
 
 ## Active Boundary
 
-The deterministic BUILD is accepted and the lane is parked. No hosted
-deployment, live proof, rollback execution, production readiness, public sync,
-or push is authorized by this closure.
+Discovery is active, but only against checked-in repository evidence. No
+secret-bearing file, external system, provider, cloud, browser, server,
+deployment, rollback, production, public sync, or push is authorized.
 
 ## Canonical Packet
 
-- Baseline: `docs/baselines/CVF_GC018_LPCI1_WEB_UC01_RELEASE_HARDENING_BUILD_2026-08-10.md`
-- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_RELEASE_HARDENING_BUILD_2026-08-10.md`
-- Completion: `docs/reviews/CVF_LPCI1_WEB_UC01_RELEASE_HARDENING_BUILD_COMPLETION_2026-08-10.md`
-- Dispatch commit: `79d135bbe`
-- Material closure commit: `e82ab11dc`
+- Baseline: `docs/baselines/CVF_GC018_LPCI1_WEB_UC01_HOSTED_RELEASE_READINESS_DISCOVERY_2026-08-10.md`
+- Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_HOSTED_RELEASE_READINESS_DISCOVERY_2026-08-10.md`
+- Dispatch commit: `c48d52b93`
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
-- Worker outcome: exact 24 BUILD paths plus worker return accepted bounded
+- Required worker outputs: exact audit and worker return named by the packet
 
 ## Next Allowed Move
 
-Stop unless the operator issues fresh exact authority for a separately
-governed hosted/live/deploy tranche. This closure does not authorize secret or
-private access, provider/network/live action, deploy/rollback execution,
-public sync, push, production, or readiness claims.
+Execute only the committed exact-two-output no-commit discovery and return for
+independent review. Do not inspect secrets or external systems and do not run
+browser/server/provider/network/cloud/live/deploy/rollback/public/push actions.
 
 ## Parked Checkpoints
 
@@ -203,6 +207,50 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - UC-01 Hosted Readiness Discovery Dispatch Sync
+
+Authorized guard-maintenance scope: synchronize only the active handoff,
+front door, bootstrap, generated active state, state core, next move, and one
+new dispatch entry to material dispatch `c48d52b93`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01HostedReleaseReadinessDiscoveryDispatch20260810.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization is the exact hosted release-readiness discovery-only
+token. This sync releases only the committed no-commit worker packet. Rollback
+boundary: revert only this seven-path continuity commit if dispatch
+`c48d52b93` is reverted.
+
+## Agent Operation Trace Block - UC-01 Hosted Readiness Discovery Dispatch Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary dispatcher/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-hosted-readiness-discovery-dispatch-sync-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | state source edits, generator, governance gates, Git |
+| Target paths | exact seven-path protected continuity manifest |
+| Allowed scope source | exact operator token, dispatch commit `c48d52b93`, and GC-020 |
+| Before status evidence | clean material HEAD `c48d52b93`; worktree clean |
+| After status evidence | mode and next move release only the exact no-commit discovery worker |
+| Diff evidence | exact protected session-sync manifest and generated-state drift check |
+| Approval boundary | dispatch continuity only |
+| Claim boundary | no source/runtime mutation, secret/private read, external/live/deploy/public/push/readiness action |
+| Agent type | dispatcher/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-hosted-readiness-discovery-dispatch-sync-2026-08-10` |
+| Expected manifest | active handoff, front door, bootstrap, aggregate, core, next move, new dispatch entry |
+| Actual changed set | same seven paths after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
 
 ## Core Guard Self-Protection Authorization - UC-01 Release Hardening Build Final Sync
 

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_uc01_release_hardening_build_accepted_parked_pending_fresh_hosted_live_deploy_authority",
+  "currentMode": "lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker",
   "activeHandoff": "AGENT_HANDOFF_V57_2026-08-10.md",
-  "nextAllowedMove": "Stop after the independently accepted deterministic UC-01 release-hardening BUILD at material commit e82ab11dc. Continue only under fresh exact authority for a separately governed hosted/live/deploy tranche. Secret/private access, provider/network/live action, hosted deploy/rollback execution, public-sync, push, production, and readiness claims remain forbidden. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute only the committed UC-01 hosted release-readiness discovery work order with one delegated no-commit worker from the clean session-sync HEAD. Worker owns exactly the audit and worker return and may use repository-local read-only evidence only. Secret/private access, browser/server/runtime, provider/network/cloud/live action, deployment/rollback execution, public-sync, push, production, and readiness claims remain forbidden. Primary retains independent review, material commit, closure, and final continuity. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
