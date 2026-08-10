@@ -343,6 +343,15 @@ operations ownership and evidence-contract remediation. No secret read,
 external probe, hosted smoke, deployment, rollback, production, or readiness
 authority follows.
 
+The separately authorized documentation remediation is independently accepted
+bounded. It defines four logical environment classes, ten accountable role
+classes, a nine-dimension custody matrix, separation of duties, and minimized
+`cvf.lpci.hostedSmokeReceipt.v1` semantics with exact budgets, zero retry,
+freshness, invalidation, and independent review. These contracts do not
+instantiate a real target or actual role assignments. Hosted smoke remains
+parked until a fresh target-specific packet source-verifies the target, role
+assignment ledger, executable method, receipt sink, and exact authority.
+
 ## Explicit Parked Lanes
 
 - `UC-02`: `PARKED_REOPEN_CONDITION_NOT_MET` - accepted discovery found A/B/C
@@ -360,10 +369,11 @@ authority follows.
   caller exists.
 - `UC-06`: `REJECT_DUPLICATE_OWNER` - the existing route already owns this
   responsibility.
-- `UC-01 release readiness`: `HOSTED_DISCOVERY_ACCEPTED_REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE` -
-  deterministic controls remain accepted; discovery found missing
-  environment-specific ownership and hosted evidence custody. Documentation
-  remediation must be independently accepted before any hosted-smoke packet.
+- `UC-01 release readiness`: `DOCUMENTATION_REMEDIATION_ACCEPTED_HOSTED_SMOKE_STILL_PARKED` -
+  deterministic controls and logical ownership/evidence contracts are
+  accepted. No actual target or environment-specific role assignment has been
+  established; hosted smoke requires a fresh source-verified packet and exact
+  operator authority.
 - DESIGN and BUILD were opened by later operator GC-018 packets and are
   independently accepted; this roadmap did not itself grant them. SPEC,
   provider/live, persistence, vector/RAG, non-public grants, public-sync,
