@@ -34,19 +34,19 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`active_continuity_read_cost_t1_amendment_1_exact8_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=execute only the exact-eight no-commit repair from the current S2 release HEAD; parked checkpoint=T2/T3, system-chain edits, provider/network/live, downstream mutation, public-sync, push, deployment, and production remain unauthorized.
+Startup acknowledged: current mode=`active_continuity_read_cost_t1_closed_parked`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=no active T1/T2/T3 execution; parked checkpoint=T2/T3, provider/network/live, downstream mutation, public-sync, push, deployment, and production remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `active_continuity_read_cost_t1_amendment_1_exact8_dispatched_pending_worker`
+Current mode marker: `active_continuity_read_cost_t1_closed_parked`
 
-Current mode: `active_continuity_read_cost_t1_amendment_1_exact8_dispatched_pending_worker`
+Current mode: `active_continuity_read_cost_t1_closed_parked`
 
-`active_continuity_read_cost_t1_amendment_1_exact8_dispatched_pending_worker`
+`active_continuity_read_cost_t1_closed_parked`
 
 Previous mode:
 
-`active_continuity_read_cost_t1_amendment_1_authorized_pending_exact8_dispatch_release`
+`active_continuity_read_cost_t1_amendment_1_exact8_dispatched_pending_worker`
 
 ## Operator Sequence Lock - 2026-07-16
 
@@ -406,13 +406,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `active_continuity_read_cost_t1_amendment_1_exact8_dispatched_pending_worker`
+Mode: `active_continuity_read_cost_t1_closed_parked`
 
-Execute only the independently reviewed T1 Amendment 1 exact-eight no-commit
-repair from the current S2 release HEAD. Preserve `c6bef41...` as
-`repairInputBaseHead`, capture current HEAD as `executionBaseHead`, and return
-`COMPLETE_PENDING_INDEPENDENT_REVIEW` or `BLOCKED`. System-chain remains
-`CURRENT` and read-only. T2/T3, provider/network/live, downstream mutation,
+T1 is `CLOSED_PASS_BOUNDED` at material commit `f5c2aabf1`. No T1/T2/T3
+execution is active. Reopen only through fresh operator authority and a
+source-verified packet. Provider/network/live, downstream mutation,
 public-sync, push, deployment, and production remain parked. `LHW24` remains
 the latest closed numbered LHW wave.
 
@@ -435,7 +433,7 @@ browser/server, provider/network/cloud/live, hosted smoke, deploy/rollback,
 public sync, push, production, and readiness claims remain unauthorized.
 Prior LPCI1 hosted-readiness state remains closed bounded and parked; it is not
 the active execution lane. Current mode:
-`active_continuity_read_cost_t1_amendment_1_exact8_dispatched_pending_worker`.
+`active_continuity_read_cost_t1_closed_parked`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen

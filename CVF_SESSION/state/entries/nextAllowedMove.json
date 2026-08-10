@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2139,
+  "stateOrder": 2141,
   "stateKey": "nextAllowedMove",
-  "value": "Execute only the independently reviewed T1 Amendment 1 exact-eight no-commit repair from the current dedicated S2 release HEAD. Preserve the repairInputBaseHead c6bef41ccb2e2543c93480f4e97ac13ff444046e and capture the current S2 HEAD as executionBaseHead before the first worker edit. Return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED. T2/T3, system-chain edits, provider/network/live, downstream mutation, public-sync, push, deployment, and production remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "No active T1, T2, or T3 execution is released. T1 is CLOSED_PASS_BOUNDED at material commit f5c2aabf1a2271dbeab82e68bc541a1bc37b3900. Park this active-continuity lane. Reopen only through fresh operator authority and a source-verified packet. T2/T3, provider/network/live, downstream mutation, public-sync, push, deployment, and production remain parked. LHW24 remains the latest closed numbered LHW wave."
 }

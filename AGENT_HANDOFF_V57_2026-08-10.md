@@ -1,4 +1,4 @@
-# CVF Agent Handoff V57 - Active Continuity T1 Amendment Release
+# CVF Agent Handoff V57 - Active Continuity T1 Closed And Parked
 
 Memory class: active-handoff
 
@@ -8,37 +8,39 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `fb46e3c3204545e22cee0663f6254a4f9b6bc30e docs(governance): authorize T1 exact8 release repair`
-- Active mode: `active_continuity_read_cost_t1_amendment_1_exact8_dispatched_pending_worker`
+- Latest material commit: `f5c2aabf1a2271dbeab82e68bc541a1bc37b3900 Close active continuity read-cost T1`
+- Active mode: `active_continuity_read_cost_t1_closed_parked`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`active_continuity_read_cost_t1_amendment_1_exact8_dispatched_pending_worker`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=execute only
-the exact-eight no-commit repair from this dedicated S2 release HEAD; parked checkpoint=T2/T3,
-provider/network/live, downstream mutation, public sync, push, deployment, and
-production remain unauthorized.
+Startup acknowledged: current mode=`active_continuity_read_cost_t1_closed_parked`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=no active
+T1/T2/T3 execution; parked checkpoint=T2/T3, provider/network/live, downstream
+mutation, public sync, push, deployment, and production remain unauthorized.
 
 ## Current Mode
 
-`active_continuity_read_cost_t1_amendment_1_exact8_dispatched_pending_worker`
+`active_continuity_read_cost_t1_closed_parked`
 
 ## Purpose
 
-Release the independently reviewed active-continuity T1 Amendment 1 exact-eight
-repair while preserving the exact-seven worker input and keeping T2/T3 and
-external effects parked.
+Record independent acceptance of the active-continuity T1 exact-eight repair,
+its material closure, and the parked boundary for T2/T3 and external effects.
 
 ## Scope / Target / Owner Boundary
 
-S2 owns continuity release only. The exact-eight implementation belongs to a
-separate no-commit worker. System-chain files remain read-only because the
-canonical primary-checkout gate is `CURRENT` with zero violations.
+T1 is closed at material commit `f5c2aabf1`. This handoff owns only the
+post-material continuity sync. System-chain files remain read-only and T2/T3
+require fresh authority.
 
 ## Latest Work / Changes
+
+- T1 exact-eight implementation and completion review are accepted at `f5c2aabf1`.
+- Focused tests passed 54/54; fast/steward/pre-commit gates and final review passed.
+- No provider/live, downstream, public-sync, push, deployment, or production action occurred.
 
 - Reviewer accepted `REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE` at material
   commit `622f682e0` after independent source review and gate reruns.
@@ -91,10 +93,9 @@ canonical primary-checkout gate is `CURRENT` with zero violations.
 
 ## Active Boundary
 
-Only the reviewed T1 exact-eight repair may execute from this dedicated S2
-session release. No T2/T3, secret-bearing file, external system, provider,
-network, live, downstream mutation, deployment, production, public sync, or
-push action is authorized.
+No T1/T2/T3 execution is active. T2/T3, secret-bearing file access, external
+systems, provider/network/live, downstream mutation, deployment, production,
+public sync, and push remain unauthorized.
 
 ## Canonical Packet
 
@@ -102,20 +103,20 @@ push action is authorized.
 - Parent Work Order: `docs/work_orders/CVF_ACTIVE_CONTINUITY_READ_COST_T1_WORK_ORDER_2026-08-10.md`
 - Amendment: `docs/work_orders/CVF_ACTIVE_CONTINUITY_READ_COST_T1_AMENDMENT_1_2026-08-10.md`
 - Amendment authorization review: `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T1_AMENDMENT_1_AUTHORIZATION_REVIEW_2026-08-11.md`
+- Completion review: `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T1_COMPLETION_REVIEW_2026-08-10.md`
 - Repair input base HEAD: `c6bef41ccb2e2543c93480f4e97ac13ff444046e`
 - Amendment authority commit: `fb46e3c3204545e22cee0663f6254a4f9b6bc30e`
 - Amendment SHA-256: `8aa4403cc0960735ae19eaa9cc1d7326bb3f2b76742059aea6d9a3db126fe1f6`
 - Authorization-review SHA-256: `0cff24042121468c7161bfcdc15a4be12dfa6f7512ce697aa0717351b1da93d9`
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
-- Worker outcome: exact-eight repair is dispatched and pending worker return
+- Worker outcome: exact-eight repair independently accepted and closed
+- Material closure: `f5c2aabf1a2271dbeab82e68bc541a1bc37b3900`
 
 ## Next Allowed Move
 
-Execute only the exact-eight no-commit repair from this committed S2 release
-HEAD. Capture current HEAD as `executionBaseHead`; retain `c6bef41...` only as
-`repairInputBaseHead`. Return `COMPLETE_PENDING_INDEPENDENT_REVIEW` or
-`BLOCKED`. System-chain remains `CURRENT` and read-only. `LHW24` remains the
-latest closed numbered LHW wave.
+No active execution. Park this lane. Reopen only through fresh operator
+authority and a source-verified packet. System-chain remains read-only and
+`LHW24` remains the latest closed numbered LHW wave.
 
 ## Parked Checkpoints
 
@@ -127,9 +128,9 @@ latest closed numbered LHW wave.
 
 ## Claim Boundary
 
-This handoff records release authority and continuity only. It does not claim
-exact-eight completion, clean final closure, provider/live behavior,
-deployment, downstream migration, production readiness, or public availability.
+This handoff records bounded T1 closure and continuity only. It does not claim
+T2/T3 execution, provider/live behavior, deployment, downstream migration,
+production readiness, or public availability.
 
 ## Core Guard Self-Protection Authorization - V57 Rotation And UC-02 Dispatch Sync
 
@@ -223,11 +224,10 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
-## Core Guard Self-Protection Authorization - T1 S1/S2 Release Chain
+## Core Guard Self-Protection Authorization - T1 Final Closure Sync
 
-Authorized scope: preserve S1 and synchronize S2 to Amendment authority commit
-`fb46e3c3204545e22cee0663f6254a4f9b6bc30e`, releasing only the independently
-reviewed exact-eight no-commit repair while preserving the primary exact-seven.
+Authorized guard-maintenance scope: synchronize the active continuity surfaces
+and exact no-growth migration pins to accepted material closure `f5c2aabf1`.
 
 Protected paths:
 
@@ -237,41 +237,41 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/activeContinuityReadCostT1Amendment1Dispatch20260811.json`
+- `CVF_SESSION/state/entries/activeContinuityReadCostT1Closure20260811.json`
+- `governance/compat/CVF_ACTIVE_CONTINUITY_READ_BUDGET_MIGRATION.json`
 
-Operator authorization:
-`AUTHORIZE_CVF_T1_PRE_DISPATCH_RELEASE_REPAIR_V57_SYSTEM_CHAIN`.
+Operator authorization: the accepted T1 exact-eight authority and the operator
+direction to complete bounded reviewer repairs directly. This sync records
+closure only and grants no T2/T3 execution.
 
-System-chain disposition: `VERIFIED_CURRENT_NO_EDIT`. The canonical primary
-checkout returned `CURRENT` with zero violations. Detached-worktree hash
-failures were raw-EOL projection artifacts; they do not authorize rewriting
-the system-chain map, source fingerprints, checker, standard, or source files.
+Migration disposition: both debt rows must match the post-sync raw bytes and
+must not exceed their accepted T1 facts. Growth is forbidden.
 
-Rollback boundary: revert only S2 if dispatch is rejected. Do not revert S1,
-authority `fb46e3c32`, repair input `c6bef41...`, the dirty exact-seven, accepted
-LPCI1 history, or any system-chain owner.
+Rollback boundary: revert only this final continuity commit if material closure
+`f5c2aabf1` is reverted. Do not alter T1 material, T2/T3, downstream, public,
+provider, or system-chain owners.
 
-## Agent Operation Trace Block - T1 S2 Exact8 Dispatch Release
+## Agent Operation Trace Block - T1 Final Closure Sync
 
 | Field | Evidence |
 |---|---|
-| Actor | primary orchestrator/session-sync steward |
-| Provider or surface | isolated local CVF Core session-sync worktree |
-| Session or invocation | `active-continuity-t1-s2-exact8-dispatch-release-2026-08-11` |
-| Working directory | isolated session-sync worktree at `fb46e3c32` |
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local CVF provenance workspace |
+| Session or invocation | `active-continuity-t1-final-closure-sync-2026-08-11` |
+| Working directory | repository root at material closure `f5c2aabf1` |
 | Command or tool surface | canonical continuity source edits, generated state, local gates, Git |
-| Target paths | exact seven-path continuity manifest above |
-| Allowed scope source | exact operator token `AUTHORIZE_CVF_T1_PRE_DISPATCH_RELEASE_REPAIR_V57_SYSTEM_CHAIN` |
-| Before status evidence | clean authority HEAD `fb46e3c32`; S1 and pre-dispatch 75/75 PASS; primary staged zero with exact-seven dirty input preserved |
-| After status evidence | active mode and next move dispatch only the reviewed exact-eight no-commit repair |
-| Diff evidence | generated-state drift check, exact seven-path name-status, authority hashes, and system-chain `CURRENT` zero-violation readout |
-| Approval boundary | S2 continuity dispatch release only; no implementation or system-chain edit |
-| Claim boundary | no exact-eight implementation, T2/T3, provider/network/live, downstream, public, deploy, push, or production action |
+| Target paths | exact eight-path closure-sync manifest above |
+| Allowed scope source | accepted T1 material closure and operator direct-repair instruction |
+| Before status evidence | clean material HEAD `f5c2aabf1`; pre-closure 74/75 with continuity as the only failure |
+| After status evidence | closed/parked mode, exact no-growth debt pins, and no active execution |
+| Diff evidence | generated-state drift check, exact eight-path name-status, raw hashes, and local gates |
+| Approval boundary | final T1 continuity closure only; no T2/T3 execution |
+| Claim boundary | no provider/network/live, downstream, public, deploy, push, or production action |
 | Agent type | session-sync steward |
-| Invocation ID | `active-continuity-t1-release-sync-s2-20260811` |
-| Expected manifest | active handoff, front door, bootstrap, aggregate, core source, next-move source, new dispatch entry |
-| Actual changed set | same seven paths after generator |
-| Manifest delta | MATCH required before commit |
+| Invocation ID | `active-continuity-t1-final-closure-sync-20260811` |
+| Expected manifest | active handoff, front door, bootstrap, aggregate, core source, next-move source, closure entry, migration registry |
+| Actual changed set | same eight paths after generator |
+| Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Core Guard Self-Protection Authorization - UC-01 Hosted Operations Remediation Final Closure Sync
