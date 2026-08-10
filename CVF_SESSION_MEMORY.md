@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_hosted_operations_ownership_evidence_contract_remediation_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=one no-commit documentation worker creates exactly two normative contracts and one worker return from the clean dedicated session-sync base; parked checkpoint=secret/private access, browser/server/runtime, provider/network/cloud/live, hosted smoke, deploy/rollback, public-sync, push, production, and readiness remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless fresh exact target-specific hosted-smoke role-assignment intake authority is issued; parked checkpoint=secret/private access, browser/server/runtime, provider/network/cloud/live, hosted smoke execution, deploy/rollback, public-sync, push, production, and readiness remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_hosted_operations_ownership_evidence_contract_remediation_dispatched_pending_worker`
+Current mode marker: `lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
 
-Current mode: `lpci1_web_uc01_hosted_operations_ownership_evidence_contract_remediation_dispatched_pending_worker`
+Current mode: `lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
 
-`lpci1_web_uc01_hosted_operations_ownership_evidence_contract_remediation_dispatched_pending_worker`
+`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
 
 Previous mode:
 
@@ -406,7 +406,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_hosted_operations_ownership_evidence_contract_remediation_dispatched_pending_worker`
+Mode: `lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
@@ -426,7 +426,7 @@ two normative contracts and one return. Secret/private access,
 browser/server, provider/network/cloud/live, hosted smoke, deploy/rollback,
 public sync, push, production, and readiness claims remain unauthorized.
 Current mode:
-`lpci1_web_uc01_hosted_operations_ownership_evidence_contract_remediation_dispatched_pending_worker`.
+`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen

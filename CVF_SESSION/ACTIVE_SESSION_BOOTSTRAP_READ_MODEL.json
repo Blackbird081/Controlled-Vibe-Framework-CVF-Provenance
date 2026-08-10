@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_uc01_hosted_operations_ownership_evidence_contract_remediation_dispatched_pending_worker",
+  "currentMode": "lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority",
   "activeHandoff": "AGENT_HANDOFF_V57_2026-08-10.md",
-  "nextAllowedMove": "Execute exactly one no-commit documentation worker from the clean dedicated session-sync base for the UC-01 hosted operations ownership and evidence-contract remediation packet committed at ea558df32. Worker creates exactly two normative contracts and one worker return. Primary independently reviews and closes. Secret/private access, browser/server/runtime, provider/network/cloud/live action, hosted smoke, deployment/rollback execution, public-sync, push, production, and readiness claims remain forbidden. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "Stop after bounded acceptance of the UC-01 hosted operations ownership and smoke-evidence contracts at material commit dde159d23. Continue only under fresh exact authority for a target-specific hosted-smoke role-assignment intake and source verification. No hosted smoke execution is released. Secret/private access, browser/server/runtime, provider/network/cloud/live action, deployment/rollback execution, public-sync, push, production, and readiness claims remain forbidden. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -8,17 +8,17 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `ea558df32 docs: dispatch UC01 hosted operations remediation`
-- Active mode: `lpci1_web_uc01_hosted_operations_ownership_evidence_contract_remediation_dispatched_pending_worker`
+- Latest material commit: `dde159d23 docs: close UC01 hosted operations remediation`
+- Active mode: `lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_hosted_operations_ownership_evidence_contract_remediation_dispatched_pending_worker`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=one no-commit
-documentation worker creates exactly two normative contracts and one return;
+Startup acknowledged: current mode=`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless
+fresh exact target-specific hosted-smoke role-assignment intake authority is issued;
 parked checkpoint=secret/private access,
 browser/server/runtime, provider/network/cloud/live, hosted smoke,
 deploy/rollback, public sync, push, production, and readiness remain
@@ -26,7 +26,7 @@ unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_hosted_operations_ownership_evidence_contract_remediation_dispatched_pending_worker`
+`lpci1_web_uc01_hosted_operations_remediation_accepted_hosted_smoke_parked_pending_target_role_authority`
 
 ## Purpose
 
@@ -107,10 +107,10 @@ production, public sync, or push is authorized.
 
 ## Next Allowed Move
 
-Execute exactly one no-commit documentation worker from the clean dedicated
-session-sync base. The worker creates exactly two normative contracts and one
-return. No secret or external action, hosted smoke, deploy, rollback, public
-sync, push, production, or readiness claim is authorized.
+Stop unless fresh exact authority releases a target-specific hosted-smoke
+role-assignment intake and source-verification packet. No secret or external
+action, hosted smoke execution, deploy, rollback, public sync, push,
+production, or readiness claim is authorized.
 
 ## Parked Checkpoints
 
@@ -215,6 +215,48 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Invocation ID | `lpci1-web-uc02-rotation-sync-anchor-2026-08-10` |
 | Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
 | Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - UC-01 Hosted Operations Remediation Final Closure Sync
+
+Authorized guard-maintenance scope: synchronize only the active handoff,
+front door, bootstrap, generated active state, state core, next move, and one
+new closure entry to material closure `dde159d23`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01HostedOperationsOwnershipEvidenceContractRemediationClosure20260810.json`
+
+Operator authority is the exact documentation-remediation token. This sync
+records reviewer closure only and does not authorize hosted smoke.
+
+## Agent Operation Trace Block - UC-01 Hosted Operations Remediation Final Closure Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-hosted-operations-remediation-final-sync-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | protected source edits, generated aggregate, governance gates, Git |
+| Target paths | exact seven-path protected continuity manifest |
+| Allowed scope source | reviewer closure `dde159d23`, dedicated anchor `f23567dd9`, and GC-020 |
+| Before status evidence | material pre-closure PASS 75/75; mode still dispatched pending worker |
+| After status evidence | contracts accepted bounded; hosted smoke parked pending target-role authority |
+| Diff evidence | exact protected session-sync manifest and generated-state drift check |
+| Approval boundary | closure continuity only |
+| Claim boundary | no secret/private/runtime/live/deploy/public action |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-hosted-operations-remediation-final-sync-2026-08-10` |
+| Expected manifest | active handoff, front door, bootstrap, aggregate, core, next move, new closure entry |
+| Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
