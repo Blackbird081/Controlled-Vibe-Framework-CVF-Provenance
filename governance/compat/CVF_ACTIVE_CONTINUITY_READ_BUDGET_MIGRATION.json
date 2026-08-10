@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "status": "ACTIVE_MIGRATION_DEBT",
+  "expiresOn": "2026-08-17",
+  "removalAction": "REMOVE_ROW_IN_T2_AFTER_SURFACE_COMPACTION",
+  "entries": [
+    {
+      "path": "CVF_SESSION_MEMORY.md",
+      "sha256": "5ffed19e10301ca27e905373aa950968bf42569837bb31a4b51528f974d189c5",
+      "lineCount": 531,
+      "byteCount": 98018,
+      "approvedMaxLines": 531,
+      "approvedMaxBytes": 98018,
+      "targetMaxLines": 120,
+      "targetMaxBytes": 20480,
+      "enabled": true
+    },
+    {
+      "path": "AGENT_HANDOFF_V57_2026-08-10.md",
+      "sha256": "163233bd80dba337c6c674bbf2040467a291a5810943ed752cde60e0619a398d",
+      "lineCount": 978,
+      "byteCount": 51536,
+      "approvedMaxLines": 978,
+      "approvedMaxBytes": 51536,
+      "targetMaxLines": 220,
+      "targetMaxBytes": 32768,
+      "enabled": true
+    }
+  ]
+}

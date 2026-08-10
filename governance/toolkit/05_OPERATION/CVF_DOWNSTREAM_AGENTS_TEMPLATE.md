@@ -42,14 +42,24 @@ Before performing ANY action on this project, you MUST:
    - `liveGovernanceEvidenceRequired` — must be `true`
    - `mockAllowedOnlyForUi` — must be `true`
 
-4. Read each document listed in `requiredDocs`.
+4. Treat `requiredDocs` and state history as targeted authority inputs for the
+   current task, not an unconditional full read of every listed document.
 
-5. Resolve project continuity in this order:
-   - `CVF_SESSION_MEMORY.md`
-   - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-   - the active handoff named by the state file
-   - `IMPLEMENTATION_STATUS.json`
-   - `docs/INDEX.md`
+5. Resolve project continuity progressively:
+   - if `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` exists, read it
+     first for compact current-mode/active-handoff/next-allowed-move facts;
+   - if it does not exist yet, extract only `currentMode`, `activeHandoff`,
+     `nextAllowedMove`, `parkedCheckpoint`, and current-authority fields
+     directly from `CVF_SESSION/ACTIVE_SESSION_STATE.json` and record
+     `BOOTSTRAP_MIGRATION_PENDING` as a non-blocking migration note; do not
+     treat a missing bootstrap as a reason to stop or as license to read the
+     full state/history by default;
+   - `CVF_SESSION_MEMORY.md`;
+   - the active handoff named by the state file;
+   - `IMPLEMENTATION_STATUS.json`;
+   - `docs/INDEX.md`;
+   - perform a targeted full-state or historical-handoff lookup only when a
+     current fact above is missing or contradictory.
 
 6. Declare your operating context before your first substantive action:
 
