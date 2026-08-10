@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`active_continuity_read_cost_t1_closed_parked`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=no active T1/T2/T3 execution; parked checkpoint=T2/T3, provider/network/live, downstream mutation, public-sync, push, deployment, and production remain unauthorized.
+Startup acknowledged: current mode=`active_continuity_read_cost_t2a_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=exact-17 T2A at `f26c5d84a`; parked checkpoint=T2B/T3 and all external effects.
 
 ## Current Mode
 
-Current mode marker: `active_continuity_read_cost_t1_closed_parked`
+Current mode marker: `active_continuity_read_cost_t2a_dispatched_pending_worker`
 
-Current mode: `active_continuity_read_cost_t1_closed_parked`
+Current mode: `active_continuity_read_cost_t2a_dispatched_pending_worker`
 
-`active_continuity_read_cost_t1_closed_parked`
+`active_continuity_read_cost_t2a_dispatched_pending_worker`
 
 Previous mode:
 
@@ -406,13 +406,11 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `active_continuity_read_cost_t1_closed_parked`
+Mode: `active_continuity_read_cost_t2a_dispatched_pending_worker`
 
-T1 is `CLOSED_PASS_BOUNDED` at material commit `f5c2aabf1`. No T1/T2/T3
-execution is active. Reopen only through fresh operator authority and a
-source-verified packet. Provider/network/live, downstream mutation,
-public-sync, push, deployment, and production remain parked. `LHW24` remains
-the latest closed numbered LHW wave.
+T1 closed at `f5c2aabf1`. Execute only exact-17 T2A at `f26c5d84a`; worker
+must not commit and returns for independent review. T2B/T3 and all external
+effects remain parked. Latest closed numbered wave: `LHW24`.
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
@@ -433,7 +431,7 @@ browser/server, provider/network/cloud/live, hosted smoke, deploy/rollback,
 public sync, push, production, and readiness claims remain unauthorized.
 Prior LPCI1 hosted-readiness state remains closed bounded and parked; it is not
 the active execution lane. Current mode:
-`active_continuity_read_cost_t1_closed_parked`.
+`active_continuity_read_cost_t2a_dispatched_pending_worker`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen

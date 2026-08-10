@@ -6,22 +6,22 @@
   "entries": [
     {
       "path": "CVF_SESSION_MEMORY.md",
-      "sha256": "a7bcf90faae2b2595c93be2d9911f05b32e75adca69c5f0dd17588c6786ba27b",
-      "lineCount": 529,
-      "byteCount": 97062,
-      "approvedMaxLines": 529,
-      "approvedMaxBytes": 97062,
+      "sha256": "cd147fa660cffd391b8d490c007b32003512735bfde0df6bf8d5fce62c40a73d",
+      "lineCount": 527,
+      "byteCount": 96940,
+      "approvedMaxLines": 527,
+      "approvedMaxBytes": 96940,
       "targetMaxLines": 120,
       "targetMaxBytes": 20480,
       "enabled": true
     },
     {
       "path": "AGENT_HANDOFF_V57_2026-08-10.md",
-      "sha256": "fabeb1de6d32ab97b3ce450d584261dc1cf94116c510a2cef4f0276746077e5a",
-      "lineCount": 978,
-      "byteCount": 50173,
-      "approvedMaxLines": 978,
-      "approvedMaxBytes": 50173,
+      "sha256": "0effedfdf60df0126d39ea9ed041eb781049c0cadb061fa94e475a1191d59f93",
+      "lineCount": 969,
+      "byteCount": 49365,
+      "approvedMaxLines": 969,
+      "approvedMaxBytes": 49365,
       "targetMaxLines": 220,
       "targetMaxBytes": 32768,
       "enabled": true

@@ -1,4 +1,4 @@
-# CVF Agent Handoff V57 - Active Continuity T1 Closed And Parked
+# CVF Agent Handoff V57 - Active Continuity T2A Dispatched
 
 Memory class: active-handoff
 
@@ -8,33 +8,32 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest closure sync: `350772416`
-- Active mode: `active_continuity_read_cost_t1_closed_parked`
+- Latest dispatch: `f26c5d84a`
+- Active mode: `active_continuity_read_cost_t2a_dispatched_pending_worker`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`active_continuity_read_cost_t1_closed_parked`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=no active
-T1/T2/T3 execution; parked checkpoint=T2/T3, provider/network/live, downstream
-mutation, public sync, push, deployment, and production remain unauthorized.
+Startup acknowledged: current mode=`active_continuity_read_cost_t2a_dispatched_pending_worker`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=execute only
+exact-17 T2A; parked checkpoint=T2B/T3, provider/network/live, downstream
+mutation, public sync, push, deployment, and production.
 
 ## Current Mode
 
-`active_continuity_read_cost_t1_closed_parked`
+`active_continuity_read_cost_t2a_dispatched_pending_worker`
 
 ## Purpose
 
-Record independent acceptance of the active-continuity T1 exact-eight repair,
-its material closure, and the parked boundary for T2/T3 and external effects.
+Route one no-commit worker to the source-verified T2A exact-17 packet while
+keeping T2B/T3 and all external effects parked.
 
 ## Scope / Target / Owner Boundary
 
-T1 is closed at material commit `f5c2aabf1`. This handoff owns only the
-post-material continuity sync. System-chain files remain read-only and T2/T3
-require fresh authority.
+T1 is closed at material commit `f5c2aabf1`. T2A is dispatched at
+`f26c5d84a`. The worker owns exact-17 only and returns for independent review.
 
 ## Latest Work / Changes
 
@@ -93,34 +92,30 @@ require fresh authority.
 
 ## Active Boundary
 
-No T1/T2/T3 execution is active. T2/T3, secret-bearing file access, external
-systems, provider/network/live, downstream mutation, deployment, production,
-public sync, and push remain unauthorized.
+Only exact-17 T2A execution is active. T2B/T3, secret-bearing file access,
+external systems, provider/network/live, downstream mutation, deployment,
+production, public sync, and push remain unauthorized.
 
 ## Canonical Packet
 
 - Roadmap: `docs/roadmaps/CVF_ACTIVE_CONTINUITY_READ_COST_REDUCTION_ROADMAP_2026-08-10.md`
-- Parent Work Order: `docs/work_orders/CVF_ACTIVE_CONTINUITY_READ_COST_T1_WORK_ORDER_2026-08-10.md`
-- Amendment: `docs/work_orders/CVF_ACTIVE_CONTINUITY_READ_COST_T1_AMENDMENT_1_2026-08-10.md`
-- Amendment authorization review: `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T1_AMENDMENT_1_AUTHORIZATION_REVIEW_2026-08-11.md`
-- Completion review: `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T1_COMPLETION_REVIEW_2026-08-10.md`
-- Repair input base HEAD: `c6bef41ccb2e2543c93480f4e97ac13ff444046e`
-- Amendment authority commit: `fb46e3c3204545e22cee0663f6254a4f9b6bc30e`
-- Amendment SHA-256: `8aa4403cc0960735ae19eaa9cc1d7326bb3f2b76742059aea6d9a3db126fe1f6`
-- Authorization-review SHA-256: `0cff24042121468c7161bfcdc15a4be12dfa6f7512ce697aa0717351b1da93d9`
+- GC-018: `docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T2A_CORE_SURFACE_COMPACTION_2026-08-11.md`
+- Work Order: `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T2A_CORE_SURFACE_COMPACTION_2026-08-11.md`
+- Dispatch commit: `f26c5d84a864004a76c8fabcd057fc10e3e0a67f`
+- GC-018 SHA-256: `bfe630379886f3a7f4abfd7f9f79caa6749a70d44fe46bd7c4d0064ec4296cf1`
+- Work Order SHA-256: `3786355ea00f3ebd6b4d8d08c42ffb19ca5283a55880728b4ee34689ee94c630`
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
-- Worker outcome: exact-eight repair independently accepted and closed
-- Material closure: `f5c2aabf1a2271dbeab82e68bc541a1bc37b3900`
+- Worker outcome: pending
 
 ## Next Allowed Move
 
-No active execution. Park this lane. Reopen only through fresh operator
-authority and a source-verified packet. System-chain remains read-only and
-`LHW24` remains the latest closed numbered LHW wave.
+Execute only the exact-17 T2A Work Order. Return
+`COMPLETE_PENDING_INDEPENDENT_REVIEW` or `BLOCKED`; do not commit. System-chain
+remains read-only and `LHW24` remains the latest closed numbered LHW wave.
 
 ## Parked Checkpoints
 
-- T2 Core continuity compaction and T3 downstream migration
+- T2B instruction-carrier compaction and T3 downstream migration
 - private/non-public data and credential/environment inspection
 - provider/network/live proof or retry
 - downstream source/test/UI/corpus/index/registry mutation
@@ -128,34 +123,30 @@ authority and a source-verified packet. System-chain remains read-only and
 
 ## Claim Boundary
 
-This handoff records bounded T1 closure and continuity only. It does not claim
-T2/T3 execution, provider/live behavior, deployment, downstream migration,
-production readiness, or public availability.
+This handoff releases only repository-local T2A exact-17 implementation. It
+does not claim T2B/T3, provider/live behavior, deployment, downstream
+migration, production readiness, or public availability.
 
-## Core Guard Self-Protection Authorization - V57 Rotation And UC-02 Dispatch Sync
+## Core Guard Self-Protection Authorization - T2A Dispatch Sync
 
-Authorized guard-maintenance scope: archive near-threshold V56, open compact
-V57, and synchronize only canonical session front doors and generated state to
-dispatch commit `e22c5d1bc`.
+Authorized guard-maintenance scope: synchronize the existing V57/front door,
+generated session state, exact migration pins, and one dispatch entry to T2A
+dispatch commit `f26c5d84a`.
 
 Protected paths:
 
-- `AGENTS.md`
 - `AGENT_HANDOFF_V57_2026-08-10.md`
-- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/lpci1WebUc01ReleaseHardeningDesignSpecClosure20260810.json`
-- `CVF_SESSION/state/entries/lpci1WebUc01ReleaseHardeningDesignSpecDispatch20260810.json`
-- `CVF_SESSION/state/entries/lpci1WebUc02ReopenDiscoveryDispatch20260810.json`
+- `CVF_SESSION/state/entries/activeContinuityReadCostT2ADispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
+- `governance/compat/CVF_ACTIVE_CONTINUITY_READ_BUDGET_MIGRATION.json`
 
-Operator authorization is the exact UC-02 discovery-only token. Rotation is
-required by the governed file maintainability rule because V56 reached 866
-lines. Rollback boundary: revert only this nine-path continuity commit if
-dispatch `e22c5d1bc` is reverted; do not revert accepted UC-01 material.
+Operator authorization is the 2026-08-11 `next` selection following accepted
+T1 review. Rollback boundary: revert only this eight-path dispatch sync if T2A
+dispatch `f26c5d84a` is reverted; do not revert accepted T1 material.
 
 ## Agent Operation Trace Block
 
@@ -163,22 +154,22 @@ dispatch `e22c5d1bc` is reverted; do not revert accepted UC-01 material.
 |---|---|
 | Actor | primary reviewer/session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | `lpci1-web-uc02-dispatch-sync-2026-08-10` |
+| Session or invocation | `active-continuity-t2a-dispatch-sync-2026-08-11` |
 | Working directory | repository root |
-| Command or tool surface | explicit handoff rotation, state source edits, generator, governance gates, Git |
-| Target paths | exact nine-path continuity/rotation manifest |
-| Allowed scope source | exact operator token, dispatch `e22c5d1bc`, and governed handoff maintainability rule |
-| Before status evidence | clean material HEAD `e22c5d1bc`; V56 had 866 lines |
-| After status evidence | compact V57 active; mode and next move point to no-commit worker |
-| Diff evidence | exact protected session-sync manifest and generator check |
+| Command or tool surface | bounded active-pointer edits, state generator, governance gates, Git |
+| Target paths | exact eight-path continuity sync manifest |
+| Allowed scope source | operator `next`, T2A packet, and dispatch `f26c5d84a` |
+| Before status evidence | clean dispatch HEAD `f26c5d84a`; staged zero |
+| After status evidence | V57/front door/state route only the no-commit T2A worker |
+| Diff evidence | exact eight-path session-sync manifest and generator check |
 | Approval boundary | continuity and handoff rotation only |
-| Claim boundary | no worker discovery result, source/corpus/runtime mutation, provider/live, public, deploy, or production claim |
+| Claim boundary | no worker result, runtime/provider/live, downstream, public, deploy, or production claim |
 | Agent type | primary reviewer/session-sync steward |
-| Invocation ID | `lpci1-web-uc02-dispatch-sync-2026-08-10` |
-| Expected manifest | AGENTS, new active handoff, archived V56, front door, bootstrap, aggregate, core, next move, dispatch entry |
-| Actual changed set | same nine paths after generator |
+| Invocation ID | `active-continuity-read-cost-t2a-dispatch-sync-2026-08-11` |
+| Expected manifest | V57, front door, bootstrap, aggregate, core, next move, dispatch entry, migration registry |
+| Actual changed set | same eight paths after generator |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | V56 moved intact to archive and replaced by compact V57; no content deletion |
+| Deletion or rename disposition | N/A with reason: this sync deletes or renames nothing |
 
 ## Public Export Disposition
 

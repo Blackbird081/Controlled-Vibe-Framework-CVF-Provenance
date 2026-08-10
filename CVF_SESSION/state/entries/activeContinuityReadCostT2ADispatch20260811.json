@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2142,
+  "stateKey": "activeContinuityReadCostT2ADispatch20260811",
+  "value": "T2A Core active-surface compaction is DISPATCH_READY at commit f26c5d84a864004a76c8fabcd057fc10e3e0a67f. The source-verified exact-17 Work Order and paired GC-018 passed pre-dispatch 75/75 and commit-hook 83/83. One no-commit worker may preserve the current front door and V57 as byte-identical archives, open compact current surfaces, refresh generated state/bootstrap routing, bind current authority paths and hashes, and retire the two exact migration-debt rows. T2B instruction-carrier compaction and T3 downstream migration remain parked."
+}
