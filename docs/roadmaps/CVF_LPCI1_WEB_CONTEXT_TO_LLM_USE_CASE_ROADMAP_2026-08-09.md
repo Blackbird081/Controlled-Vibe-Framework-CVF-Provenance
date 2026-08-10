@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_UC01_RELEASE_HARDENING_BUILD_ACCEPTED_HOLD_BEFORE_FRESH_HOSTED_LIVE_DEPLOY_AUTHORITY
+Status: LPCI1_WEB_UC01_HOSTED_READINESS_DISCOVERY_ACCEPTED_REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE
 
 docType: roadmap
 
@@ -333,6 +333,16 @@ lint. This acceptance proves source/test behavior only. No hosted action,
 external liveness, deployment, rollback execution, production, readiness, or
 public authority follows.
 
+The separately authorized hosted release-readiness discovery is independently
+accepted with disposition `REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE`. Current
+source defines deterministic capability and generic lifecycle roles, but it
+does not name environment-specific accountable ownership, hosted store and
+monitor custody, immutable promotion evidence, or a complete secret-safe smoke
+receipt contract. The minimum safe next tranche is documentation-only hosted
+operations ownership and evidence-contract remediation. No secret read,
+external probe, hosted smoke, deployment, rollback, production, or readiness
+authority follows.
+
 ## Explicit Parked Lanes
 
 - `UC-02`: `PARKED_REOPEN_CONDITION_NOT_MET` - accepted discovery found A/B/C
@@ -350,10 +360,10 @@ public authority follows.
   caller exists.
 - `UC-06`: `REJECT_DUPLICATE_OWNER` - the existing route already owns this
   responsibility.
-- `UC-01 release readiness`: `BUILD_ACCEPTED_HOLD_BEFORE_FRESH_HOSTED_LIVE_DEPLOY` -
-  deterministic controls are implemented and independently accepted, while
-  hosted configuration/store liveness, deployment, rollback execution,
-  production operation, and release readiness remain unproven.
+- `UC-01 release readiness`: `HOSTED_DISCOVERY_ACCEPTED_REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE` -
+  deterministic controls remain accepted; discovery found missing
+  environment-specific ownership and hosted evidence custody. Documentation
+  remediation must be independently accepted before any hosted-smoke packet.
 - DESIGN and BUILD were opened by later operator GC-018 packets and are
   independently accepted; this roadmap did not itself grant them. SPEC,
   provider/live, persistence, vector/RAG, non-public grants, public-sync,
@@ -463,7 +473,7 @@ is authorized.
 ## Machine Closure Package
 
 N/A with reason: this roadmap's top status is
-`LPCI1_WEB_UC01_RELEASE_HARDENING_BUILD_ACCEPTED_HOLD_BEFORE_FRESH_HOSTED_LIVE_DEPLOY_AUTHORITY`,
+`LPCI1_WEB_UC01_HOSTED_READINESS_DISCOVERY_ACCEPTED_REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE`,
 an accepted bounded continuation state rather than a closed-equivalent token.
 Intake, D1, B2, and release-hardening BUILD acceptance remain recorded in their
 separate completion reviews.

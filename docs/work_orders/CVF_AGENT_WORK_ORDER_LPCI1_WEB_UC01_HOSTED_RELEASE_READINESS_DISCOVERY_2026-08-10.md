@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE
 
 Batch ID: LPCI1-WEB-UC01-HOSTED-RELEASE-READINESS-DISCOVERY
 
@@ -407,13 +407,13 @@ pre-closure gate, and reject any hosted/deployment/readiness overclaim.
 
 ## Closure Checklist
 
-- [ ] Exact two-path worker manifest is confirmed.
-- [ ] All nine dimensions have evidence level, owner, gap, and disposition.
-- [ ] Secret/private/external/live/deploy action counts are zero.
-- [ ] One canonical disposition and one minimum next tranche are accepted.
-- [ ] Worker-return fast gate and governed file-size check pass.
-- [ ] Staging is empty and worker HEAD is unchanged.
-- [ ] Reviewer closure diff resolves each item as checked, N/A with reason, or BLOCKED.
+- [x] Exact two-path worker manifest is confirmed.
+- [x] All nine dimensions have evidence level, owner, gap, and disposition.
+- [x] Secret/private/external/live/deploy action counts are zero.
+- [x] One canonical disposition and one minimum next tranche are accepted.
+- [x] Worker-return fast gate and governed file-size check pass.
+- [x] Staging is empty and worker HEAD is unchanged.
+- [x] Reviewer closure diff resolves each item as checked, N/A with reason, or BLOCKED.
 
 ## Return-To-Orchestrator Conditions
 
@@ -457,6 +457,31 @@ explicit operator authority after independent closure.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance discovery; no public artifact or sync is authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | closed bounded status | PASS |
+| Completion or reviewer artifact | hosted readiness discovery completion | reviewer disposition | PASS |
+| Worker return | named return | exact two paths and no-commit evidence | PASS |
+| Roadmap state | LPCI use-case roadmap | remediation-before-smoke state | PASS |
+| Registry JSON | corpus registry aggregate | unchanged drift PASS | PASS |
+| Registry Markdown | corpus registry owner | unchanged and corpus registry gate PASS | PASS |
+| External evidence digest | N/A with reason: no external evidence admitted | repository-only boundary | N/A with reason |
+| System loop interlock | minimum documentation-only remediation tranche | hosted smoke remains parked | PASS |
+| Session continuity | active V57 and generated state | N/A with reason: separate sync follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| one canonical discovery disposition | `REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE` | PASS |
+| hosted evidence dimensions | nine dimensions classified | PASS |
+| source capability versus hosted evidence | separated across all rows | PASS |
+| minimum safe next tranche | documentation-only hosted operations ownership and evidence-contract remediation | PASS |
+| forbidden action counts | zero secret/private/external/live/deploy/public/push actions | PASS |
+| worker commit | forbidden; HEAD unchanged and staging empty | PASS |
 
 ## Claim Boundary
 

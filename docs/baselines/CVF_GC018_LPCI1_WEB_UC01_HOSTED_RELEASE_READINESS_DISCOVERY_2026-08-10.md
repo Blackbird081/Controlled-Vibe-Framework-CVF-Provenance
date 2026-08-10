@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED_REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE
 
 Batch ID: LPCI1-WEB-UC01-HOSTED-RELEASE-READINESS-DISCOVERY
 
@@ -167,6 +167,21 @@ staging, and unchanged HEAD.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance discovery; public sync is outside authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired work order | closed bounded status | PASS |
+| Completion or reviewer artifact | hosted readiness discovery completion | reviewer acceptance and disposition | PASS |
+| Worker return | named return | `COMPLETE_PENDING_REVIEW`; independently accepted | PASS |
+| Discovery audit | named audit | nine dimensions and minimum tranche | PASS |
+| Roadmap state | LPCI use-case roadmap | remediation-before-smoke parked state | PASS |
+| Registry JSON | corpus registry aggregate | aggregate drift PASS and unchanged | PASS |
+| Registry Markdown | corpus registry owner | unchanged and corpus registry gate PASS | PASS |
+| External evidence digest | N/A with reason: no external evidence admitted | repository-only evidence boundary | N/A with reason |
+| System loop interlock | BUILD -> discovery -> documentation remediation checkpoint | no hosted smoke release | PASS |
+| Session continuity | active V57 and generated state | N/A with reason: separate sync follows material commit | N/A with reason |
 
 ## Claim Boundary
 
