@@ -252,6 +252,45 @@ boundary: revert only this seven-path continuity commit if dispatch
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
+## Core Guard Self-Protection Authorization - UC-01 Hosted Readiness Discovery Closure Anchor
+
+Authorized guard-maintenance scope: update only active V57 with the exact
+hosted-readiness discovery material HEAD required by GC-020 before final
+pre-closure verification.
+
+Protected path:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+
+Continuity HEAD: `622f682e0dfa51e27a7a9431ec7c8fe7dca8abfc`.
+
+Operator authorization is the exact hosted release-readiness discovery-only
+token. Rollback boundary: revert only this one-path anchor if material closure
+`622f682e0` is reverted.
+
+## Agent Operation Trace Block - UC-01 Hosted Readiness Discovery Closure Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-hosted-readiness-discovery-closure-anchor-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | active handoff update, session compatibility gate, Git |
+| Target paths | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Allowed scope source | accepted material commit `622f682e0` and GC-020 |
+| Before status evidence | clean material HEAD `622f682e0`; pre-closure PASS 74/75 with only continuity failure |
+| After status evidence | V57 contains exact closure material SHA |
+| Diff evidence | exact one-path handoff diff |
+| Approval boundary | continuity repair only |
+| Claim boundary | no source/runtime mutation, secret/private read, external/live/deploy/public/push/readiness action |
+| Agent type | reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-hosted-readiness-discovery-closure-anchor-2026-08-10` |
+| Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Core Guard Self-Protection Authorization - UC-01 Release Hardening Build Final Sync
 
 Authorized guard-maintenance scope: synchronize only the active handoff,
