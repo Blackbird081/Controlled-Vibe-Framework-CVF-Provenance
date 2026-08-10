@@ -17,11 +17,11 @@
     },
     {
       "path": "AGENT_HANDOFF_V57_2026-08-10.md",
-      "sha256": "81f1ce2387dc82c3bdcbdeb2fcf9dc315c564a9f0688e6c2e8cfd992d882eb17",
+      "sha256": "e7550cbae418a1f5f415eb691f20dca61df00b829f69b5e3fd0d6f3ca1b36766",
       "lineCount": 978,
-      "byteCount": 50244,
+      "byteCount": 50173,
       "approvedMaxLines": 978,
-      "approvedMaxBytes": 50244,
+      "approvedMaxBytes": 50173,
       "targetMaxLines": 220,
       "targetMaxBytes": 32768,
       "enabled": true

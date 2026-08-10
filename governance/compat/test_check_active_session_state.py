@@ -383,6 +383,11 @@ class ActiveSessionStateTests(unittest.TestCase):
     def test_generated_active_state_sources_are_session_sync_paths(self) -> None:
         self.assertTrue(
             MODULE._is_session_sync_path(
+                "governance/compat/CVF_ACTIVE_CONTINUITY_READ_BUDGET_MIGRATION.json"
+            )
+        )
+        self.assertTrue(
+            MODULE._is_session_sync_path(
                 "CVF_SESSION/state/entries/exampleStateMarker.json"
             )
         )

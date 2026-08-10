@@ -8,7 +8,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `f5c2aabf1a2271dbeab82e68bc541a1bc37b3900 Close active continuity read-cost T1`
+- Latest closure sync: `83a80c318`
 - Active mode: `active_continuity_read_cost_t1_closed_parked`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
