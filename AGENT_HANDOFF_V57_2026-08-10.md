@@ -218,6 +218,44 @@ boundary: revert only this one-path anchor if rotation/session-sync commit
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
+## Core Guard Self-Protection Authorization - UC-01 Hosted Operations Remediation Closure Anchor
+
+Authorized guard-maintenance scope: update only the active handoff with the
+exact material closure HEAD required by GC-020 before final pre-closure.
+
+Protected path:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+
+Continuity HEAD: `dde159d238a7301d1800592729408a2d040d8e17`.
+
+Operator authority is the exact documentation-remediation token. This anchor
+does not broaden it. Rollback boundary: revert only this one-path anchor if the
+material closure is reverted.
+
+## Agent Operation Trace Block - UC-01 Hosted Operations Remediation Closure Anchor
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-hosted-operations-remediation-closure-anchor-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | active handoff update, session compatibility gate, Git |
+| Target paths | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Allowed scope source | reviewer closure material commit `dde159d23` and GC-020 |
+| Before status evidence | clean material HEAD `dde159d23`; pre-closure passed 74/75 with only continuity failure |
+| After status evidence | V57 contains the exact closure material parent SHA |
+| Diff evidence | exact one-path handoff diff |
+| Approval boundary | continuity repair only |
+| Claim boundary | no source/runtime/secret/live/deploy/public action |
+| Agent type | primary reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-hosted-operations-remediation-closure-anchor-2026-08-10` |
+| Expected manifest | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Actual changed set | `AGENT_HANDOFF_V57_2026-08-10.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
 ## Core Guard Self-Protection Authorization - UC-01 Hosted Operations Remediation Dispatch Sync
 
 Authorized guard-maintenance scope: synchronize only the active handoff,
