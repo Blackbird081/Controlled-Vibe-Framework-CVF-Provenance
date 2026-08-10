@@ -1,4 +1,4 @@
-# CVF Agent Handoff V57 - LPCI1 Web UC-01 Hosted Readiness Discovery Dispatch
+# CVF Agent Handoff V57 - LPCI1 Web UC-01 Hosted Readiness Discovery Closure
 
 Memory class: active-handoff
 
@@ -8,37 +8,45 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Latest material commit: `c48d52b93 docs: dispatch UC01 hosted readiness discovery`
-- Active mode: `lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`
+- Latest material commit: `622f682e0 docs: close UC01 hosted readiness discovery`
+- Active mode: `lpci1_web_uc01_hosted_readiness_discovery_accepted_parked_pending_documentation_remediation_authority`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`;
-active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=execute only
-the committed exact-two-output no-commit repository-local discovery; parked
-checkpoint=secret/private access, browser/server/runtime, provider/network/
-cloud/live, deploy/rollback, public sync, push, production, and readiness
-remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_hosted_readiness_discovery_accepted_parked_pending_documentation_remediation_authority`;
+active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless
+fresh exact documentation-only hosted operations ownership/evidence-contract
+remediation authority is issued; parked checkpoint=secret/private access,
+browser/server/runtime, provider/network/cloud/live, hosted smoke,
+deploy/rollback, public sync, push, production, and readiness remain
+unauthorized.
 
 ## Current Mode
 
-`lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`
+`lpci1_web_uc01_hosted_readiness_discovery_accepted_parked_pending_documentation_remediation_authority`
 
 ## Purpose
 
-Dispatch the exact repository-local UC-01 hosted release-readiness discovery to
-one no-commit worker while primary retains independent closure ownership.
+Record independent bounded acceptance of the UC-01 hosted release-readiness
+discovery and park all continuation before documentation remediation authority.
 
 ## Scope / Target / Owner Boundary
 
-The deterministic BUILD is accepted at `e82ab11dc`. Fresh exact discovery-only
-authority produced the packet at `c48d52b93`. Secret/external/live/deploy,
-public, and readiness authority remain excluded.
+The deterministic BUILD is accepted at `e82ab11dc`; the discovery packet is at
+`c48d52b93`; and repository-only discovery closure is accepted at `622f682e0`.
+Secret/external/live/deploy, public, and readiness authority remain excluded.
 
 ## Latest Work / Changes
+
+- Reviewer accepted `REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE` at material
+  commit `622f682e0` after independent source review and gate reruns.
+- Worker pre-implementation passed 77/77, reviewer-fast passed 62/62, and the
+  committed material range passed pre-closure 75/75.
+- Minimum next tranche is documentation-only hosted operations ownership and
+  evidence-contract remediation; hosted smoke remains parked.
 
 - Exact operator token
   `AUTHORIZE_LPCI1_WEB_UC01_HOSTED_RELEASE_READINESS_DISCOVERY_ONLY` was
@@ -84,23 +92,25 @@ public, and readiness authority remain excluded.
 
 ## Active Boundary
 
-Discovery is active, but only against checked-in repository evidence. No
-secret-bearing file, external system, provider, cloud, browser, server,
-deployment, rollback, production, public sync, or push is authorized.
+Discovery is closed bounded. No secret-bearing file, external system,
+provider, cloud, browser, server, hosted smoke, deployment, rollback,
+production, public sync, or push is authorized.
 
 ## Canonical Packet
 
 - Baseline: `docs/baselines/CVF_GC018_LPCI1_WEB_UC01_HOSTED_RELEASE_READINESS_DISCOVERY_2026-08-10.md`
 - Work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_HOSTED_RELEASE_READINESS_DISCOVERY_2026-08-10.md`
 - Dispatch commit: `c48d52b93`
+- Material closure commit: `622f682e0`
 - Commit mode: `WORKER_MUST_NOT_COMMIT`
-- Required worker outputs: exact audit and worker return named by the packet
+- Worker outcome: exact audit and worker return accepted bounded
 
 ## Next Allowed Move
 
-Execute only the committed exact-two-output no-commit discovery and return for
-independent review. Do not inspect secrets or external systems and do not run
-browser/server/provider/network/cloud/live/deploy/rollback/public/push actions.
+Stop unless the operator issues fresh exact authority for documentation-only
+hosted operations ownership and evidence-contract remediation. No secret or
+external action, hosted smoke, deploy, rollback, public sync, push, production,
+or readiness claim is authorized.
 
 ## Parked Checkpoints
 
@@ -248,6 +258,49 @@ boundary: revert only this seven-path continuity commit if dispatch
 | Agent type | dispatcher/session-sync steward |
 | Invocation ID | `lpci1-web-uc01-hosted-readiness-discovery-dispatch-sync-2026-08-10` |
 | Expected manifest | active handoff, front door, bootstrap, aggregate, core, next move, new dispatch entry |
+| Actual changed set | same seven paths after generator |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Core Guard Self-Protection Authorization - UC-01 Hosted Readiness Discovery Final Sync
+
+Authorized guard-maintenance scope: synchronize only the active handoff,
+front door, bootstrap, generated active state, state core, next move, and one
+new closure entry to accepted material commit `622f682e0` and the parked mode.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V57_2026-08-10.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1WebUc01HostedReleaseReadinessDiscoveryClosure20260810.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authority is the exact hosted readiness discovery-only token. This
+sync records closure and does not broaden it. Rollback boundary: revert only
+this seven-path continuity commit if material closure `622f682e0` is reverted.
+
+## Agent Operation Trace Block - UC-01 Hosted Readiness Discovery Final Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | primary reviewer/session-sync steward |
+| Provider or surface | local private provenance repository |
+| Session or invocation | `lpci1-web-uc01-hosted-readiness-discovery-final-sync-2026-08-10` |
+| Working directory | repository root |
+| Command or tool surface | state source edits, generator, governance gates, Git |
+| Target paths | exact seven-path protected continuity manifest |
+| Allowed scope source | accepted material `622f682e0`, anchor `ca7cffe77`, and GC-020 |
+| Before status evidence | material pre-closure PASS 75/75; mode still dispatched pending worker |
+| After status evidence | accepted discovery parked pending documentation remediation authority |
+| Diff evidence | exact protected session-sync manifest and generated-state drift check |
+| Approval boundary | closure continuity only |
+| Claim boundary | no source/runtime mutation, secret/private read, external/live/hosted-smoke/deploy/public/push/readiness action |
+| Agent type | reviewer/session-sync steward |
+| Invocation ID | `lpci1-web-uc01-hosted-readiness-discovery-final-sync-2026-08-10` |
+| Expected manifest | active handoff, front door, bootstrap, aggregate, core, next move, new closure entry |
 | Actual changed set | same seven paths after generator |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |

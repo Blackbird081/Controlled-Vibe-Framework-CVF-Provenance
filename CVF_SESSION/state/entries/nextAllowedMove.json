@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2130,
+  "stateOrder": 2132,
   "stateKey": "nextAllowedMove",
-  "value": "Execute only the committed UC-01 hosted release-readiness discovery work order with one delegated no-commit worker from the clean session-sync HEAD. Worker owns exactly the audit and worker return and may use repository-local read-only evidence only. Secret/private access, browser/server/runtime, provider/network/cloud/live action, deployment/rollback execution, public-sync, push, production, and readiness claims remain forbidden. Primary retains independent review, material commit, closure, and final continuity. LHW24 remains the latest closed numbered LHW wave."
+  "value": "Stop after the independently accepted UC-01 hosted readiness discovery at material commit 622f682e0. Continue only under fresh exact authority for a documentation-only hosted operations ownership and evidence-contract remediation packet. Secret/private access, browser/server/runtime, provider/network/cloud/live action, hosted smoke, deployment/rollback execution, public-sync, push, production, and readiness claims remain forbidden. LHW24 remains the latest closed numbered LHW wave."
 }

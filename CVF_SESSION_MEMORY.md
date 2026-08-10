@@ -34,15 +34,15 @@ Read `DESIGN.md` only when touching Web, UI, or dashboard work.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=execute only the committed exact-two-output no-commit hosted readiness discovery; parked checkpoint=secret/private access, browser/server/runtime, provider/network/cloud/live, deploy/rollback, public-sync, push, production, and readiness remain unauthorized.
+Startup acknowledged: current mode=`lpci1_web_uc01_hosted_readiness_discovery_accepted_parked_pending_documentation_remediation_authority`; active handoff=AGENT_HANDOFF_V57_2026-08-10.md; next allowed move=stop unless fresh exact documentation-only hosted operations ownership/evidence-contract remediation authority is issued; parked checkpoint=secret/private access, browser/server/runtime, provider/network/cloud/live, hosted smoke, deploy/rollback, public-sync, push, production, and readiness remain unauthorized.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`
+Current mode marker: `lpci1_web_uc01_hosted_readiness_discovery_accepted_parked_pending_documentation_remediation_authority`
 
-Current mode: `lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`
+Current mode: `lpci1_web_uc01_hosted_readiness_discovery_accepted_parked_pending_documentation_remediation_authority`
 
-`lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`
+`lpci1_web_uc01_hosted_readiness_discovery_accepted_parked_pending_documentation_remediation_authority`
 
 Previous mode:
 
@@ -80,6 +80,7 @@ are now assigned to the no-commit worker.
 ## Latest Material Work
 | Work | Commit | Disposition |
 |---|---|---|
+| LPCI1-WEB UC-01 hosted release-readiness discovery closure | `622f682e0` | `REVIEWER_ACCEPTED_BOUNDED_REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE`; repository-only evidence; pre-closure 75/75; minimum next tranche is documentation-only ownership/evidence-contract remediation. |
 | LPCI1-WEB UC-01 hosted release-readiness discovery dispatch | `c48d52b93` | `DISPATCH_READY`; exact two-output no-commit repository-local discovery; pre-dispatch 75/75; no secret/external/live/deploy/readiness authority. |
 | LPCI1-WEB UC-01 release-hardening deterministic BUILD closure | `e82ab11dc` | `REVIEWER_ACCEPTED_BOUNDED_WITH_TOOLING_INCIDENT_DISCLOSED`; Model Gateway 28/28 plus typecheck and cvf-web 143/143 plus typecheck/scoped ESLint PASS; material pre-closure 75/75; hosted/live/deploy and readiness remain parked. |
 | LPCI1-WEB UC-01 release-readiness discovery closure | `944fdfc56` | `CLOSED_PASS_BOUNDED_READINESS_GAPS_REQUIRE_REMEDIATION`; 1 PRESENT, 3 PARTIAL, 3 GAP, 1 NOT_APPLICABLE; pre-closure 75/75; minimum next tranche is fresh DESIGN/SPEC-only authority. |
@@ -405,7 +406,7 @@ Latest closed numbered LHW wave remains `LHW24`.
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`
+Mode: `lpci1_web_uc01_hosted_readiness_discovery_accepted_parked_pending_documentation_remediation_authority`
 
 LPCI1-WEB context-to-LLM intake R3 is `CLOSED_PASS_BOUNDED` at reviewer
 closure commit `09afcd9d2` after bounded implementation commit `a59e8649e`.
@@ -417,13 +418,14 @@ UC-02 remains independently closed and value-parked at material commit
 material commit `944fdfc56` with disposition
 `UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION`. DESIGN/SPEC is accepted at
 `1038f65aa`; deterministic BUILD is independently accepted at material commit
-`e82ab11dc`. The exact hosted release-readiness discovery token is consumed by
-dispatch commit `c48d52b93`. Execute only the committed exact-two-output
-no-commit repository-local discovery. Secret/private access, browser/server,
-provider/network/cloud/live, deploy/rollback execution, public sync, push,
-production, and readiness claims remain unauthorized.
+`e82ab11dc`. Hosted release-readiness discovery is independently accepted at
+`622f682e0` with remediation required before hosted smoke. Stop unless fresh
+exact authority releases the documentation-only hosted operations ownership
+and evidence-contract remediation packet. Secret/private access,
+browser/server, provider/network/cloud/live, hosted smoke, deploy/rollback,
+public sync, push, production, and readiness claims remain unauthorized.
 Current mode:
-`lpci1_web_uc01_hosted_release_readiness_discovery_dispatched_pending_worker`.
+`lpci1_web_uc01_hosted_readiness_discovery_accepted_parked_pending_documentation_remediation_authority`.
 P4-A1 remains `NO_CROSS_OWNER_DESIGN_JUSTIFIED`.
 Public Projection
 Pre-Push T0, WS2, and GC010-AER remain parked behind their recorded reopen
