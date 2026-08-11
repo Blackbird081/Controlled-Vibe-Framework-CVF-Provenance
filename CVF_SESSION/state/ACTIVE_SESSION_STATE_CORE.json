@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return",
-  "previousMode": "lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2",
+  "currentMode": "lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority",
+  "previousMode": "lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

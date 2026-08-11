@@ -45,32 +45,33 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed source-first one-path Amendment 2; parked checkpoint=worker commit, runtime widening, network fetch, push, deploy, hosted/provider/store, secrets, production, and public `main`.
+Startup acknowledged: current mode=`lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=prepare the separately governed public push and Netlify branch-deploy proof tranche from public commit `021f8b852`; parked checkpoint=push, deploy, hosted/provider/store, secrets, production promotion, and public `main`.
 
 ## Current Mode
 
-`lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return`
+`lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority`
 
-Current mode marker: `lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return`
-Current mode: `lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return`
-Previous mode: `lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`
+Current mode marker: `lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority`
+Current mode: `lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority`
+Previous mode: `lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return`
 
 ## Next Allowed Move
 
-Mode: `lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return`
+Mode: `lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority`
 
-Execute Amendment 2 authority `e2868dd4614145884a5c276578e5512f42af72a1`.
-Repair only private `route.governance.test.ts`, mirror identical bytes to its
-public union-41 path, and run complete offline checks. Worker commit, runtime
-widening, network fetch, push, deploy, hosted/provider/store, secrets,
-production, and public `main` remain parked pending independent review.
+Prepare a separately governed public push and Netlify branch-deploy proof
+tranche from clean `lpci1-ref-staging@021f8b852`. Verify repository boundary,
+remote, branch protection, deploy context, and secret-safe environment needs
+before external-action authority. Push, deploy, hosted/provider/store, secrets,
+production promotion, and public `main` remain parked.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-LPCI1-REF-T1A Amendment 2 worker return is the active checkpoint. Worker
-commit, runtime widening, network fetch, public push, Netlify deployment, hosted smoke,
-provider/store, secrets, production, and public `main` remain parked.
+LPCI1-REF-T1A Amendment 2 is accepted at private commit `492e11eab` and public
+candidate commit `021f8b852`. Public push, Netlify branch deployment, hosted
+smoke, provider/store, secrets, production promotion, and public `main` remain
+parked pending the next controlled tranche.
 
 ## Targeted Lookup Rules
 

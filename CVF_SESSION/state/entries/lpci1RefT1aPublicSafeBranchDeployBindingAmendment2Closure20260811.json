@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2163,
+  "stateKey": "lpci1RefT1aPublicSafeBranchDeployBindingAmendment2Closure20260811",
+  "value": "LPCI1-REF-T1A Amendment 2 is independently accepted and locally committed. Private Core material commit 492e11eab477559bb6ab9e68459b745124a44273 contains the exact three-path closure; public candidate commit 021f8b852afc245a6383177dd69bf56caf488b02 contains the exact inherited union 41 on lpci1-ref-staging. The repaired test SHA-256 is 4b3226b935cb8d57cfb8ec00aa8be5f519196a7945ddfee4975ede84ae3082fa in both repositories. Focused tests, types, lint, production build, worker-return fast gate and Core pre-commit 84/84 all pass. Both worktrees are clean. No push, Netlify deploy, hosted receipt, secret, provider/store, production or public-main action occurred."
+}

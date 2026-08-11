@@ -1,5 +1,5 @@
 {
   "stateOrder": 2141,
   "stateKey": "nextAllowedMove",
-  "value": "Execute LPCI1-REF-T1A Amendment 2 from committed authority e2868dd4614145884a5c276578e5512f42af72a1. Repair only the private route.governance.test.ts test setup, mirror identical bytes to the same public union-41 path, and run complete offline deterministic verification. WORKER_MUST_NOT_COMMIT. Runtime policy changes, widening, network fetch, push, deploy, provider/store, hosted smoke, secrets, production and public main remain forbidden pending independent review. Latest closed numbered LHW wave remains LHW24."
+  "value": "Prepare the separately governed public push and Netlify branch-deploy proof tranche from clean lpci1-ref-staging commit 021f8b852afc245a6383177dd69bf56caf488b02. First verify repository boundary, remote, branch protection, deploy context and secret-safe environment requirements; then obtain or record explicit external-action authority before push or deploy. Public main, production promotion, secret disclosure and unrelated source changes remain forbidden. Latest closed numbered LHW wave remains LHW24."
 }
