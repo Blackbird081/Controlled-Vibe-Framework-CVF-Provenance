@@ -142,6 +142,21 @@ workspace-doctor entrypoint.
 9. `SESSION/handoffs/CORE_PIN_RECONCILIATION_2026-08-11.md`
 10. `docs/decisions/SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_WORKER_RETURN_2026-08-11.md`
 
+## Required Artifact Manifest
+
+| Required output | Path | Required at worker handoff | Dispatch state |
+|---|---|---|---|
+| Core pin carrier | `.cvf/manifest.json` | yes | MODIFY |
+| Agent instruction carrier | `AGENTS.md` | yes | MODIFY |
+| Project Knowledge source pins | `knowledge/manifest.json` | yes | MODIFY |
+| Implementation status | `IMPLEMENTATION_STATUS.json` | yes | MODIFY |
+| Canonical session state | `SESSION/ACTIVE_SESSION_STATE.json` | yes | MODIFY |
+| Compatibility session mirror | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | yes | MODIFY |
+| Bootstrap read model | `SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | yes | MODIFY |
+| Session memory | `SESSION/SESSION_MEMORY.md` | yes | MODIFY |
+| Active handoff | `SESSION/handoffs/CORE_PIN_RECONCILIATION_2026-08-11.md` | yes | CREATE |
+| Worker return | `docs/decisions/SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_WORKER_RETURN_2026-08-11.md` | yes | CREATE |
+
 ## Fresh Preimage Authority
 
 | Path | Required SHA-256 |
@@ -202,6 +217,10 @@ Core dispatcher-owned packet paths, not worker execution paths:
 - `docs/reviews/CVF_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_SOURCE_VERIFICATION_2026-08-11.md`
 - `docs/baselines/CVF_GC018_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_2026-08-11.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_2026-08-11.md`
+- `AGENT_HANDOFF_V59_2026-08-11.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 
 Target worker-owned exact-10 paths:
 
@@ -217,8 +236,8 @@ Target worker-owned exact-10 paths:
 - `docs/decisions/SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_WORKER_RETURN_2026-08-11.md`
 
 Forbidden paths: every other target path, all hidden-Core paths, workspace-root
-files, Core repository paths, product/runtime paths and external-effect
-surfaces.
+files, every other Core repository path, product/runtime paths and
+external-effect surfaces.
 
 Operator authorization: continuation on 2026-08-11 under explicit delegated
 orchestrator/reviewer authority.
@@ -311,6 +330,52 @@ individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
 Core reviewer gate: `python governance/compat/run_worker_return_fast_gate.py`
+
+The worker return must include these always-required sections or terms:
+
+- Purpose
+- Scope / Methodology
+- Findings / Position
+- Risk / Corrective Action
+- Claim Boundary
+- Agent Operation Trace Block
+- Delta Execution Claim Boundary Control Block
+- Public Export Disposition
+- actual `executionBaseHead`
+- actual `git status --short`
+
+The worker return must include or explicitly mark `N/A with reason` or
+`NOT_APPLICABLE_WITH_REASON` for these conditional gate sections:
+
+- External Knowledge Intake Routing
+- Rescan Intelligence Hardening
+- Corpus Completeness And Report Integrity
+- Finding-To-Governance Learning Disposition
+- Epistemic Process Block
+- Machine Closure Package
+
+Omission of this contract or any required term is a blocking worker-return
+defect.
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+
+Atomicity reason: the corrected worker-return contract changes this Work Order's
+raw SHA-256, while active session authority pins that hash and must remain
+exactly aligned in the same commit.
+
+Rollback boundary: revert the exact five-path correction commit as one unit;
+do not retain either the corrected Work Order or its session hash projections
+alone.
+
+Exact changed manifest:
+
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_2026-08-11.md`
+- `AGENT_HANDOFF_V59_2026-08-11.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 
 ## Agent Handoff Contract Control Block
 

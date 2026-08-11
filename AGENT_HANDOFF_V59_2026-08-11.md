@@ -48,7 +48,7 @@ and stop at an uncommitted exact-10 worker return for independent review.
 | baselinePath | `docs/baselines/CVF_GC018_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_2026-08-11.md` |
 | baselineSha256 | `d703e80c027afcd2317af5189730b05819099c34e13d76403223409e372a1cde` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_2026-08-11.md` |
-| workOrderSha256 | `9960b49dc2e373ced94b82e43cc2e5561efb0a7fc88247b95138dab43f97b813` |
+| workOrderSha256 | `49bdecee84085bcba9b14f5055076780fd0242da1555913b11ac204e2d4c492a` |
 | targetExecutionBaseHead | `0b835be3ff1ac1fbd1c95e365471887202d718b5` |
 | targetClosureCommit | `0b835be3ff1ac1fbd1c95e365471887202d718b5` |
 | hiddenPublicCoreTarget | `2103a38fda01ee827e9fc6c3be38a824fa5d54ad` |
