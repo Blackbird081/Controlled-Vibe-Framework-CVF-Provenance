@@ -9,6 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Material closure: `fd4d61e73`
+- Closure/session-sync commit: `e95fc658f`
 - Active mode: `active_continuity_read_cost_t2a_closed_parked`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
