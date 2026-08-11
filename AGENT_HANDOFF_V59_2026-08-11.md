@@ -9,6 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Dispatch commit: `7e5c2b04f`
+- Session-sync commit: `2f02d8735`
 - Active mode: `active_continuity_read_cost_t2b_build_authorized`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
