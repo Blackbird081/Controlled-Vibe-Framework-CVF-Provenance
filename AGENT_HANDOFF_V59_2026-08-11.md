@@ -12,6 +12,8 @@ Status: ACTIVE
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
 - SOPR-CP1 dispatch authority commit:
   `3a032e40bb83eeda1da8c40b817d70f75c7a094d`
+- Handoff-sync parent commit:
+  `f3b5c405c7f8a703d9c76b99265886ea224aee9f`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
