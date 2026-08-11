@@ -2,7 +2,7 @@
 
 Memory class: ACTIVE_ROADMAP
 
-Status: T1_T2A_T2B_PASS_T3_DISPATCH_READY
+Status: T1_T2A_T2B_T3_PASS
 
 Date: 2026-08-10
 
@@ -210,7 +210,8 @@ and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T2B_INSTRUCTION_CARRIER_COMPACTION_V2_2026-08-11.md`.
 Completion evidence:
 `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2B_COMPLETION_REVIEW_2026-08-11.md`.
-T3 remains parked.
+T3 remained parked until its fresh dispatch authority was committed; it is now
+closed as recorded in the T3 section below.
 
 After T2A acceptance, compact the instruction carriers that agents may load
 before task routing:
@@ -233,13 +234,15 @@ closure, handoff, corpus, or public-export controls.
 
 ### T3 - shift-operations-workspace application
 
-Status: `DISPATCH_READY` under
+Status: `CLOSED_PASS_BOUNDED` after independent review on 2026-08-11 under
 `docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md`
 and
 `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md`.
 Target execution base:
-`b62271d42150da68d4fb80983cd56260ee11cee1`. Worker commit permission is
-forbidden; independent review is required before any closure or target commit.
+`b62271d42150da68d4fb80983cd56260ee11cee1`. The worker made no commit; the
+independent reviewer accepted and committed the bounded exact-15 closure at
+`0b835be3ff1ac1fbd1c95e365471887202d718b5`. Core evidence:
+`docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md`.
 
 Entry condition: the active P4-A1 Repair 4 worker and its independent review
 have stopped, and fresh authority releases the protected continuity paths.

@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-08-11
 
@@ -191,12 +191,49 @@ Independent reviewer must recompute hashes, archive equality, changed set,
 budgets, read counts, mirror/bootstrap projections, Knowledge pins, and every
 command result before accepting or committing.
 
+Review completed on 2026-08-11. The reviewer accepted the bounded continuity
+migration at downstream commit
+`0b835be3ff1ac1fbd1c95e365471887202d718b5`, after correcting the post-T3
+closure mode and reconciling all three transitively affected Project Knowledge
+pins. The repo-local evidence digest is
+`docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md`.
+
 ## Required Evidence
 
 First-run and final-run gate outputs; `git status --short`; `git diff
 --name-status`; preimage and archive hashes; byte sizes; read counts; focused
 test counts; zero provider/live/network-after-doctor/secret/public/push calls;
 and no-commit evidence.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| GC-018 status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Work Order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | target `docs/decisions/ACTIVE_CONTINUITY_READ_COST_T3_WORKER_RETURN_2026-08-11.md` | SHA-256 `b4bfb93418b7179ef7db98b85aef077101309077f850fc77ff71d15daf5e971f`; independently accepted | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md` | `Status: REVIEWER_ACCEPTED` | PASS |
+| Target material commit | sibling private target | `0b835be3ff1ac1fbd1c95e365471887202d718b5` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ACTIVE_CONTINUITY_READ_COST_REDUCTION_ROADMAP_2026-08-10.md` | `Status: T1_T2A_T2B_T3_PASS` | PASS |
+| Registry JSON | no corpus registry source edit required | N/A | BLOCKED with reason: no corpus scan or registry mutation authorized |
+| Registry Markdown | no corpus registry Markdown edit required | N/A | BLOCKED with reason: no corpus scan or registry mutation authorized |
+| External evidence digest | `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md` | SHA-256 `10da21b1fd1dcb98ea638650f79a78913e38b20eba27b83b55482bd7949cdee7`; target evidence normalized without promoting target authority | PASS |
+| System loop interlock | no system-loop registry mutation in scope | `governance/compat/check_system_loop_interlock.py` via autorun | PASS |
+| Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
+| Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
+| Session continuity | active Core front door/state/handoff | separate session-sync follows material closure | N/A with reason |
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | external-agent returned output |
+| Chain map route | returned output -> raw target capture -> normalized Core completion review -> baseline closure |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; target-local deterministic verification |
+| Owner surface | `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md` |
+| Disposition | ADAPT as bounded execution evidence; retain Core-governed authority |
+| Claim boundary | sibling target artifacts are evidence only; no external or provider-local source is promoted |
 
 ## Scaffold Provenance Block
 

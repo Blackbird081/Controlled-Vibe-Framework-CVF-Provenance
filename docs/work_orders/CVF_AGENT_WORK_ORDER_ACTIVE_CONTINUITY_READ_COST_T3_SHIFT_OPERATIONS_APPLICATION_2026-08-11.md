@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-08-11
 
@@ -249,23 +249,34 @@ completion decision, staging, target commit, and subsequent Core closure sync.
 
 ## Scope Firewall Authorization
 
-Protected-path authority is limited to the exact-14. The worker may make
-content repairs within these paths without asking again, including formatting,
-JSON ordering, checker literals, and focused test adjustments. Adding another
-path, changing commit mode, changing target base, or crossing an external-
-effect boundary requires return to orchestrator.
+Downstream worker protected-path authority is limited to the exact-14. The
+worker may make content repairs within those target paths without asking again,
+including formatting, JSON ordering, checker literals, and focused test
+adjustments. Adding another downstream path, changing commit mode, changing
+target base, or crossing an external-effect boundary requires return to the
+orchestrator. The Core reviewer/closer additionally owns the exact repository-
+local closure paths listed below under the packet's Reviewer Closure Conversion
+and the operator's delegated authority.
 
 Allowed paths:
 
 - `docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md`
 - `docs/roadmaps/CVF_ACTIVE_CONTINUITY_READ_COST_REDUCTION_ROADMAP_2026-08-10.md`
+- `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md`
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0052.md`
+- `docs/reference/agent_defect_intelligence/entries/README.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V59_2026-08-11.md`
 
 Forbidden paths:
 
 - `AGENTS.md`
 - `CLAUDE.md`
-- `CVF_SESSION/`
+- unlisted `CVF_SESSION/` paths
 - `governance/compat/`
 
 Every other unlisted Core path and every unlisted target path is also
@@ -277,6 +288,27 @@ orchestrator/reviewer decision authority.
 
 Rollback boundary: discard only the uncommitted exact-14 worker diff; preserve
 accepted P4-A1 commits and all other downstream/Core history.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: perform the separately committed Core
+session/front-door synchronization required after accepted ACRC-T3 material
+closure; update no guard implementation or policy.
+
+Protected paths:
+
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V59_2026-08-11.md`
+
+Operator authorization: 2026-08-11 operator delegated full orchestrator and
+reviewer closure authority and instructed continuation after the worker return.
+
+Rollback boundary: revert only the ACRC-T3 Core material closure and its
+immediately following session-sync commit; preserve target commit `0b835be3f`
+and every unrelated Core/downstream history entry.
 
 ## Near-Threshold Maintainability Plan
 
@@ -346,17 +378,18 @@ criterion and decides repair, acceptance, target commit, and Core closure sync.
 
 ## Closure Checklist
 
-- [ ] Exact base, clean status, and preimages verified.
-- [ ] Archives are byte-identical and retained.
-- [ ] Bootstrap/memory/read budgets pass.
-- [ ] Progressive routing and current-authority consistency pass.
-- [ ] Mirror and Project Knowledge pin are atomic and exact.
-- [ ] Exact-14, staged-zero, no-commit, and zero-disallowed-call evidence pass.
-- [ ] All required local gates pass.
-- [ ] Worker return is complete for independent review.
+- [x] Exact base, clean status, and preimages verified.
+- [x] Archives are byte-identical and retained.
+- [x] Bootstrap/memory/read budgets pass.
+- [x] Progressive routing and current-authority consistency pass.
+- [x] Mirror and all transitively affected Project Knowledge pins are atomic
+  and exact after bounded reviewer reconciliation.
+- [x] Worker exact-14, staged-zero, no-commit, and zero-disallowed-call evidence
+  pass; reviewer closure is an independently recorded exact-15.
+- [x] All required local gates pass.
+- [x] Worker return is complete and independently reviewed.
 
-Unchecked items are intentional while the packet is dispatch-ready and must be
-resolved in the worker return; they are not closure claims.
+All items were recomputed by the independent reviewer before the target commit.
 
 ## Worker Return Packet Shape Contract
 
@@ -572,6 +605,42 @@ Return exactly one of:
 - `BLOCKED_ARCHIVE_OR_AUTHORITY_MISMATCH`
 - `BLOCKED_FORBIDDEN_SCOPE_REQUIRED`
 - `BLOCKED_WITH_REASON`
+
+Final worker disposition: `COMPLETE_PENDING_INDEPENDENT_REVIEW`.
+Final reviewer disposition: `REVIEWER_ACCEPTED`.
+
+## Closure Record
+
+- Target closure commit:
+  `0b835be3ff1ac1fbd1c95e365471887202d718b5`.
+- Target worker return SHA-256:
+  `b4bfb93418b7179ef7db98b85aef077101309077f850fc77ff71d15daf5e971f`.
+- Target completion review SHA-256:
+  `fb55e9ee55f225e68cd40b33afc8b7205a99ab561022bc25f20720e9c23dd85c`.
+- Core evidence digest:
+  `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md`.
+- Reviewer findings: the dispatched exact scope omitted two transitively
+  affected Project Knowledge pins, and AC-07 named a new mode without pinning
+  its required post-T3 literal. Both were repaired under the packet's
+  Reviewer Closure Conversion authority and recorded as ADIF-0052.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work Order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Paired baseline status | `docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | target `docs/decisions/ACTIVE_CONTINUITY_READ_COST_T3_WORKER_RETURN_2026-08-11.md` | SHA-256 `b4bfb93418b7179ef7db98b85aef077101309077f850fc77ff71d15daf5e971f`; worker made no commit | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md` | `Status: REVIEWER_ACCEPTED` | PASS |
+| Target material commit | sibling private target | `0b835be3ff1ac1fbd1c95e365471887202d718b5` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ACTIVE_CONTINUITY_READ_COST_REDUCTION_ROADMAP_2026-08-10.md` | `Status: T1_T2A_T2B_T3_PASS` | PASS |
+| Registry JSON | no corpus registry source edit required | N/A | BLOCKED with reason: no corpus scan or registry mutation authorized |
+| Registry Markdown | no corpus registry Markdown edit required | N/A | BLOCKED with reason: no corpus scan or registry mutation authorized |
+| External evidence digest | `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md` | SHA-256 `10da21b1fd1dcb98ea638650f79a78913e38b20eba27b83b55482bd7949cdee7`; target evidence normalized without promoting target authority | PASS |
+| System loop interlock | no system-loop registry mutation in scope | `governance/compat/check_system_loop_interlock.py` via autorun | PASS |
+| Runtime/provider/live evidence | N/A | no runtime/provider/live behavior authorized | N/A with reason |
+| Public-sync evidence | N/A | no public-sync authorized | N/A with reason |
+| Session continuity | active Core front door/state/handoff | separate session-sync follows material closure | N/A with reason |
 
 ## Return-To-Orchestrator Conditions
 
