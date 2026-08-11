@@ -45,30 +45,32 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`shift_operations_core_pin_reconciliation_closed_bounded_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no downstream target lane until fresh authority; parked checkpoint=SOPR-CP1 plus Amendment 1 accepted at target commit `da8588909`, with every product/runtime lane and external effect parked.
+Startup acknowledged: current mode=`lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed LPCI1-REF-T1A exact local staging preparation; parked checkpoint=push, deploy, hosted/provider/store, secrets, production, and public `main` remain forbidden pending independent review.
 
 ## Current Mode
 
-`shift_operations_core_pin_reconciliation_closed_bounded_parked`
+`lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
 
-Current mode marker: `shift_operations_core_pin_reconciliation_closed_bounded_parked`
-Current mode: `shift_operations_core_pin_reconciliation_closed_bounded_parked`
-Previous mode: `shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
+Current mode marker: `lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
+Current mode: `lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
+Previous mode: `shift_operations_core_pin_reconciliation_closed_bounded_parked`
 
 ## Next Allowed Move
 
-Mode: `shift_operations_core_pin_reconciliation_closed_bounded_parked`
+Mode: `lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
 
-SOPR-CP1 plus Amendment 1 are accepted at target commit `da8588909` after
-independent stress, two consecutive 605-test suites and all required gates.
-No downstream target lane is authorized; wait for fresh governed authority.
+Execute committed authority `61a3cb3bcc07285ca55921d93fbcec588458ec58`.
+The delegated worker may prepare exactly 23 public-safe paths on local branch
+`lpci1-ref-staging` from public base `2103a38f...` and create the exact private
+worker return. The worker must not commit. Push, deploy, hosted/provider/store,
+secrets, production, and public `main` remain parked pending review.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-SOPR-CP1 closure is the active parked checkpoint. Product/runtime lanes,
-provider/live, network refresh, public-sync, push, deployment and production
-work remain parked.
+LPCI1-REF-T1A worker return is the active checkpoint. Public commit/push,
+Netlify branch deployment, hosted smoke, provider/store calls, secrets,
+production, and public `main` remain parked.
 
 ## Targeted Lookup Rules
 

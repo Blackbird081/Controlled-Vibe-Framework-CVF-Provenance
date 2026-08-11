@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Shift Operations Core Pin Reconciliation Closed Bounded
+# CVF Agent Handoff V59 - LPCI1-REF T1A Public-Safe Staging Dispatched
 
 Memory class: active-handoff
 
@@ -22,7 +22,9 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `shift_operations_core_pin_reconciliation_closed_bounded_parked`
+  `lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
+- LPCI1-REF-T1A dispatch authority:
+  `61a3cb3bcc07285ca55921d93fbcec588458ec58`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified):
@@ -30,35 +32,33 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`shift_operations_core_pin_reconciliation_closed_bounded_parked`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no downstream
-target lane until fresh authority; parked checkpoint=SOPR-CP1 plus Amendment 1
-accepted at target commit `da8588909`, with every other lane and external
-effect parked.
+Startup acknowledged: current mode=`lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact
+local staging preparation under authority `61a3cb3bc`; parked checkpoint=push,
+deploy, hosted/provider/store, secrets, production, and public `main` pending
+independent review.
 
 ## Current Mode
 
-`shift_operations_core_pin_reconciliation_closed_bounded_parked`
+`lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
 
 ## Purpose
 
-Record independent acceptance and bounded closure of SOPR-CP1 plus Amendment 1
-at the exact downstream target commit, with all other lanes parked.
+Route committed LPCI1-REF-T1A local staging preparation while preserving the
+accepted SOPR-CP1 closure and keeping every external effect parked.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityCommit | `e468bb7748b53e0d925bfbbad9700703bc89d412` |
-| sourceVerificationPath | `docs/reviews/CVF_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_AMENDMENT_1_SOURCE_VERIFICATION_2026-08-11.md` |
-| sourceVerificationSha256 | `336e17ebd02d4a6a396f8887d461807139ba7aebb0e58b85b9daf2dff1ca5a1d` |
-| baselinePath | `docs/baselines/CVF_GC018_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_AMENDMENT_1_2026-08-11.md` |
-| baselineSha256 | `6f2173a5166981ea170f4799ba360f1cb27bd83d320f5225b95924a9eded9b5a` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_AMENDMENT_1_2026-08-11.md` |
-| workOrderSha256 | `0dc40fbd5b51befc6cfb175088db6d6ba12c3c7dddbac29fdd2bc83b89cef185` |
-| targetExecutionBaseHead | `0b835be3ff1ac1fbd1c95e365471887202d718b5` |
-| targetClosureCommit | `0b835be3ff1ac1fbd1c95e365471887202d718b5` |
-| hiddenPublicCoreTarget | `2103a38fda01ee827e9fc6c3be38a824fa5d54ad` |
+| authorityCommit | `61a3cb3bcc07285ca55921d93fbcec588458ec58` |
+| sourceVerificationPath | `docs/reviews/CVF_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_SOURCE_VERIFICATION_2026-08-11.md` |
+| baselinePath | `docs/baselines/CVF_GC018_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_2026-08-11.md` |
+| baselineSha256 | `78a3a2aede644f41dddc084c012668a1b7a063bb25c0e926f329dfacd1eed4d5` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_2026-08-11.md` |
+| workOrderSha256 | `84600bb99df42e781baf903ab8aaa8e39d7aa96b8f2887b8a7f906e9285908b5` |
+| targetExecutionBaseHead | `2103a38fda01ee827e9fc6c3be38a824fa5d54ad` |
+| acceptedSourceMaterial | `e82ab11dc` |
 
 ## Closure Evidence
 
@@ -91,23 +91,24 @@ at the exact downstream target commit, with all other lanes parked.
 
 ## Next Allowed Move
 
-SOPR-CP1 plus Amendment 1 are closed at downstream commit `da8588909`.
-No downstream project lane may open without fresh authority. Keep every
-product/runtime/provider/live/network/public-sync/push/deploy lane parked.
+Execute LPCI1-REF-T1A under authority `61a3cb3bc`: prepare exact 23 public-safe
+paths on local public-sync branch `lpci1-ref-staging` from `2103a38f...` and
+create the exact private worker return. Worker commit, push, deploy, hosted
+smoke, provider/store calls, secrets, production, and public `main` are parked.
 
 ## Active Boundary
 
-- Product/runtime, P4-A, P4-A2, provider/live, RAG/vector, audit/persistence,
-  API/UI, deployment, public-sync, push, production, and every other lane are
-  parked.
+- Only the exact 23-path local public-sync projection and one private worker
+  return are open. P4-A, P4-A2, unrelated product/runtime, provider/live,
+  RAG/vector, deployment, push, production, and every other lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
 - T3 stays closed and every non-SOPR-CP1 downstream lane remains parked.
 
 ## Worker Return Target
 
-Target repository decision artifact:
-`docs/decisions/SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_WORKER_RETURN_2026-08-11.md`.
+Private Core worker return:
+`docs/reviews/CVF_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_WORKER_RETURN_2026-08-11.md`.
 
 ## Core Guard Self-Protection Authorization
 
@@ -170,11 +171,46 @@ Exact changed manifest:
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: active handoff updated in place; no path deletion or rename |
 
+## Core Guard Self-Protection Authorization - LPCI1-REF-T1A Dispatch Sync
+
+Protected paths:
+
+- `AGENT_HANDOFF_V59_2026-08-11.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1RefT1aPublicSafeBranchDeployBindingDispatch20260811.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: `ok, tien hanh di` after the staging-only proposal on 2026-08-11.
+
+Authorized guard-maintenance scope: record committed authority, mode, next move, target base, and parked external-effect boundary.
+
+Rollback boundary: revert the exact seven-path session-sync manifest together; do not separate generated state from source fragments.
+
+## Mixed Protected-Path Atomicity Authorization - LPCI1-REF-T1A Dispatch Sync
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+
+Atomicity reason: authority, mode, next move, aggregate, bootstrap, front door, and handoff must change together.
+
+Exact changed manifest:
+
+- `AGENT_HANDOFF_V59_2026-08-11.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/lpci1RefT1aPublicSafeBranchDeployBindingDispatch20260811.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance dispatch with no public-sync authority.
+Reason: authority permits local public-sync preparation only; no public commit,
+push, deployment, or exported artifact exists yet.
 
 ## Claim Boundary
 

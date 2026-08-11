@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2160,
+  "stateKey": "lpci1RefT1aPublicSafeBranchDeployBindingDispatch20260811",
+  "value": "LPCI1-REF-T1A dispatch authority committed at 61a3cb3bcc07285ca55921d93fbcec588458ec58. Private accepted source is e82ab11dc; public-sync target is clean main at 2103a38fda01ee827e9fc6c3be38a824fa5d54ad; Netlify additional branch context lpci1-ref-staging was saved by the operator. Worker authority is exact 23-path local projection plus one private return with no commit, push, deploy, hosted/provider/store request, secret read or production mutation."
+}
