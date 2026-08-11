@@ -45,30 +45,29 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`active_continuity_read_cost_t3_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute only exact-14 no-commit ACRC-T3 at target base `b62271d42150da68d4fb80983cd56260ee11cee1`; parked checkpoint=worker return plus independent review, with all other lanes and external effects parked.
+Startup acknowledged: current mode=`active_continuity_read_cost_t3_closed_bounded_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh governed lane selection only; parked checkpoint=ACRC_T3_CLOSED_BOUNDED_NO_DOWNSTREAM_REOPEN_WITHOUT_FRESH_AUTHORITY.
 
 ## Current Mode
 
-`active_continuity_read_cost_t3_dispatched_pending_worker_return`
+`active_continuity_read_cost_t3_closed_bounded_parked`
 
-Current mode marker: `active_continuity_read_cost_t3_dispatched_pending_worker_return`
-Current mode: `active_continuity_read_cost_t3_dispatched_pending_worker_return`
-Previous mode: `active_continuity_read_cost_t2b_closed_t3_parked`
+Current mode marker: `active_continuity_read_cost_t3_closed_bounded_parked`
+Current mode: `active_continuity_read_cost_t3_closed_bounded_parked`
+Previous mode: `active_continuity_read_cost_t3_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `active_continuity_read_cost_t3_dispatched_pending_worker_return`
+Mode: `active_continuity_read_cost_t3_closed_bounded_parked`
 
-Execute only ACRC-T3 in `shift-operations-workspace` under authority commit
-`4f89c0a29`, exact currentAuthority hashes, and target base
-`b62271d42150da68d4fb80983cd56260ee11cee1`. Worker scope is exact-14,
-unstaged, no commit, ending at a worker return for independent review. Latest
-closed numbered LHW wave: `LHW24`.
+ACRC-T3 is closed at target reviewer commit `0b835be3f` and Core material
+closure commit `854cef029`. No downstream lane is open. The next move requires
+fresh governed operator/orchestrator selection. Latest closed numbered LHW
+wave: `LHW24`.
 
 ## Parked Checkpoints
 
-Worker return and independent review are the active checkpoint. Core-pin
-repair, all product/runtime lanes, provider/live, public-sync, push,
+Checkpoint: `ACRC_T3_CLOSED_BOUNDED_NO_DOWNSTREAM_REOPEN_WITHOUT_FRESH_AUTHORITY`.
+Core-pin repair, all product/runtime lanes, provider/live, public-sync, push,
 deployment, and production work remain parked.
 
 ## Targeted Lookup Rules

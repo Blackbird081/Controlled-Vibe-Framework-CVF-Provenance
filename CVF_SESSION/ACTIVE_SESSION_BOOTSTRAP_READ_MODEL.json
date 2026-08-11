@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "active_continuity_read_cost_t3_dispatched_pending_worker_return",
+  "currentMode": "active_continuity_read_cost_t3_closed_bounded_parked",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute only ACRC-T3 in shift-operations-workspace from exact target base b62271d42150da68d4fb80983cd56260ee11cee1 under dispatch commit 4f89c0a29ebf2db0874fa555526e5febd75ae2f5 and the exact currentAuthority hashes. The worker may change only the Work Order exact-14, must not commit, and must return COMPLETE_PENDING_INDEPENDENT_REVIEW or a named blocked disposition. After return, independent reviewer/closer recomputes all evidence before any target commit. Core-pin repair, every product/runtime lane, provider/live, public-sync, push, deployment, production, and all other work remain parked. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "ACRC-T3 is CLOSED_PASS_BOUNDED at target reviewer commit 0b835be3ff1ac1fbd1c95e365471887202d718b5 and Core material closure commit 854cef02933ec663c9b3f5a181bf09b1ef95ebd6. No downstream lane is open. The next allowed move is a fresh operator/orchestrator lane selection backed by new governed authority; until then, core-pin repair, every product/runtime lane, provider/live, public-sync, push, deployment, production, and all other work remain parked. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md",
-    "baselineSha256": "6654e3463d08c1212636e41b949cb62ab7d4791b23a65f9f165e754c0aa8bac6",
+    "baselineSha256": "d6b8b8fac13859f40290b09a9a998a5ceb13dfe71815dbbefcdaa90a7b1066bc",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md",
-    "workOrderSha256": "4cce4f5038a2a5708eb7e15ad562f84b3a9209709c210cffb24f2654ebaf670b"
+    "workOrderSha256": "0e0a055cd99f26ab41da720730513de91e8b43495b1c2a8d4a58675c04e0803d"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

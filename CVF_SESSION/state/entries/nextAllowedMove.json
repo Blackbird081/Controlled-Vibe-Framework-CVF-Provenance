@@ -1,5 +1,5 @@
 {
   "stateOrder": 2141,
   "stateKey": "nextAllowedMove",
-  "value": "Execute only ACRC-T3 in shift-operations-workspace from exact target base b62271d42150da68d4fb80983cd56260ee11cee1 under dispatch commit 4f89c0a29ebf2db0874fa555526e5febd75ae2f5 and the exact currentAuthority hashes. The worker may change only the Work Order exact-14, must not commit, and must return COMPLETE_PENDING_INDEPENDENT_REVIEW or a named blocked disposition. After return, independent reviewer/closer recomputes all evidence before any target commit. Core-pin repair, every product/runtime lane, provider/live, public-sync, push, deployment, production, and all other work remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "ACRC-T3 is CLOSED_PASS_BOUNDED at target reviewer commit 0b835be3ff1ac1fbd1c95e365471887202d718b5 and Core material closure commit 854cef02933ec663c9b3f5a181bf09b1ef95ebd6. No downstream lane is open. The next allowed move is a fresh operator/orchestrator lane selection backed by new governed authority; until then, core-pin repair, every product/runtime lane, provider/live, public-sync, push, deployment, production, and all other work remain parked. LHW24 remains the latest closed numbered LHW wave."
 }
