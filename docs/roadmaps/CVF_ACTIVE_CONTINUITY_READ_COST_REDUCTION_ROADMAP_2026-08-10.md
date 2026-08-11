@@ -2,7 +2,7 @@
 
 Memory class: ACTIVE_ROADMAP
 
-Status: T1_T2A_T2B_PASS_T3_PARKED
+Status: T1_T2A_T2B_PASS_T3_DISPATCH_READY
 
 Date: 2026-08-10
 
@@ -19,7 +19,10 @@ The operator authorized this roadmap on 2026-08-10 after observing excessive
 worker startup time caused by long active continuity surfaces. T1 closed at
 material commit `f5c2aabf1`. On 2026-08-11 the operator selected the next move,
 authorizing T2 packet authoring. T2A and T2B require separate exact-scope Work
-Orders; T3 remains parked.
+Orders. After T2B acceptance, the operator selected continuation on 2026-08-11
+under delegated orchestrator/reviewer authority. The T3 entry condition was
+freshly verified against the stopped and accepted P4-A1 closure, and T3 is now
+dispatch-ready under its exact GC-018 baseline and Work Order.
 
 ## Scope
 
@@ -229,6 +232,14 @@ T2A and must not weaken live-proof, repository-boundary, source-verification,
 closure, handoff, corpus, or public-export controls.
 
 ### T3 - shift-operations-workspace application
+
+Status: `DISPATCH_READY` under
+`docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md`
+and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md`.
+Target execution base:
+`b62271d42150da68d4fb80983cd56260ee11cee1`. Worker commit permission is
+forbidden; independent review is required before any closure or target commit.
 
 Entry condition: the active P4-A1 Repair 4 worker and its independent review
 have stopped, and fresh authority releases the protected continuity paths.
