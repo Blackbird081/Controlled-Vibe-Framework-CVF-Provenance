@@ -467,6 +467,10 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             base,
             head,
         ),
+        GateCommand(
+            "agent instruction carrier compaction",
+            ("python", "governance/compat/check_agent_instruction_carriers.py", "--enforce"),
+        ),
     )
 
 

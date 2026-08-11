@@ -78,6 +78,7 @@ registry edit is required when adding a new entry beyond this table.
 | `CVF_ADIF-0048.md` | ADIF-0048 | SOURCE_FIDELITY | GUIDANCE_ONLY |
 | `CVF_ADIF-0049.md` | ADIF-0049 | SOURCE_FIDELITY | GUIDANCE_ONLY |
 | `CVF_ADIF-0050.md` | ADIF-0050 | AUTHORITY_BOUNDARY | GUIDANCE_ONLY |
+| `CVF_ADIF-0051.md` | ADIF-0051 | SCOPE_AND_OWNERSHIP | PARTIAL_CHECK |
 
 ## Claim Boundary
 

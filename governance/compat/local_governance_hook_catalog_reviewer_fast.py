@@ -256,5 +256,9 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         "dispatch scaffold provenance",
         ["python", "governance/compat/check_dispatch_scaffold_provenance.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
+    (
+        "agent instruction carrier compaction",
+        ["python", "governance/compat/check_agent_instruction_carriers.py", "--enforce"],
+    ),
 ]
 

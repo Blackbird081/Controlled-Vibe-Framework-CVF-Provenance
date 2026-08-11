@@ -347,4 +347,8 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
         "MinerU receipt boundary",
         ["python", "governance/compat/check_mineru_receipt_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
+    (
+        "agent instruction carrier compaction",
+        ["python", "governance/compat/check_agent_instruction_carriers.py", "--enforce"],
+    ),
     ]

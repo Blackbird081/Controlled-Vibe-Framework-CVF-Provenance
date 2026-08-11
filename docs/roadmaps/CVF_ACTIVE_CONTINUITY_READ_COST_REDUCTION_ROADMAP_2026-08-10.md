@@ -2,7 +2,7 @@
 
 Memory class: ACTIVE_ROADMAP
 
-Status: T1_T2A_PASS_T2B_DISPATCH_READY_T3_PARKED
+Status: T1_T2A_T2B_PASS_T3_PARKED
 
 Date: 2026-08-10
 
@@ -198,13 +198,15 @@ pointer only; broad root-instruction compaction belongs to T2B.
 
 ### T2B - Core and inherited agent-instruction carrier compaction
 
-Status: `DISPATCH_READY` after operator selection on 2026-08-11.
+Status: `CLOSED_PASS_BOUNDED` after independent review on 2026-08-11.
 Source map:
-`docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2B_SOURCE_BINDING_MATRIX_2026-08-11.md`.
+`docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2B_SOURCE_BINDING_MATRIX_V2_2026-08-11.md`.
 Authority packet:
 `docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T2B_INSTRUCTION_CARRIER_COMPACTION_2026-08-11.md`
 and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T2B_INSTRUCTION_CARRIER_COMPACTION_2026-08-11.md`.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T2B_INSTRUCTION_CARRIER_COMPACTION_V2_2026-08-11.md`.
+Completion evidence:
+`docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2B_COMPLETION_REVIEW_2026-08-11.md`.
 T3 remains parked.
 
 After T2A acceptance, compact the instruction carriers that agents may load
