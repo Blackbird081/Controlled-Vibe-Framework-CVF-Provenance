@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - LPCI1-REF T1A Amendment 2 Pending
+# CVF Agent Handoff V59 - LPCI1-REF T1A Amendment 2 Dispatched
 
 Memory class: active-handoff
 
@@ -22,38 +22,38 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`
-- LPCI1-REF-T1A Amendment 1 authority:
-  `cfdf07794564d8679ecd6f1d25005701468ee5e8`; blocked review: `7c0a1982b`
+  `lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return`
+- LPCI1-REF-T1A Amendment 2 authority:
+  `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified):
   `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and
-gate source-first one-path Amendment 2; parked checkpoint=worker resume,
-commit, network fetch, push, deploy, hosted/provider/store, and production.
+Startup acknowledged: current mode=`lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute
+source-first one-path Amendment 2; parked checkpoint=worker commit, runtime
+widening, network fetch, push, deploy, hosted/provider/store, and production.
 
 ## Current Mode
 
-`lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`
+`lpci1_ref_t1a_amendment_2_dispatched_pending_source_test_repair_return`
 
 ## Purpose
 
-Record the stale-test blocker and route source-first one-path Amendment 2.
+Route committed source-first one-path Amendment 2.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityCommit | `cfdf07794564d8679ecd6f1d25005701468ee5e8` |
-| sourceVerificationPath | `docs/reviews/CVF_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_1_SOURCE_VERIFICATION_2026-08-11.md` |
-| baselinePath | `docs/baselines/CVF_GC018_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_1_2026-08-11.md` |
-| baselineSha256 | `cd7313ecfc87378ff996e47242d50942ee090bf391f15bca60b6374bedef1a04` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_1_2026-08-11.md` |
-| workOrderSha256 | `9112d2c64c2df34e2979df07ac8d757957605197dbd813b63f879779bc02129e` |
+| authorityCommit | `e2868dd4614145884a5c276578e5512f42af72a1` |
+| sourceVerificationPath | `docs/reviews/CVF_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_2_SOURCE_VERIFICATION_2026-08-11.md` |
+| baselinePath | `docs/baselines/CVF_GC018_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_2_2026-08-11.md` |
+| baselineSha256 | `45139dfa07f412008c3579fdba2d21dac39951819446dbdfb2c8d4e3c2549373` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_2_2026-08-11.md` |
+| workOrderSha256 | `8a990d4279e3dfaf3b649aeb5d4addd460cad5740c60ded544ba64fb10ad1a70` |
 | targetExecutionBaseHead | `2103a38fda01ee827e9fc6c3be38a824fa5d54ad` |
 | acceptedSourceMaterial | `e82ab11dc` |
 
@@ -88,14 +88,14 @@ Record the stale-test blocker and route source-first one-path Amendment 2.
 
 ## Next Allowed Move
 
-Author and gate Amendment 2 after `7c0a1982b`: preserve union 41 and authorize
-source-first repair of only `route.governance.test.ts`, then exact public
-mirroring. Worker resume, commit, network fetch, push, deploy, hosted smoke,
+Execute Amendment 2 `e2868dd46`: repair only private
+`route.governance.test.ts`, mirror it to public union 41, and run offline
+deterministic proof. Worker commit, runtime widening, network fetch, push, deploy, hosted smoke,
 provider/store, secrets, production, and public `main` remain parked.
 
 ## Active Boundary
 
-- Only Amendment 2 authority authoring for one source/test path is open.
+- Only Amendment 2 one-path execution and its private return are open.
   P4-A, P4-A2, unrelated product/runtime, provider/live,
   RAG/vector, deployment, push, production, and every other lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
@@ -105,7 +105,7 @@ provider/store, secrets, production, and public `main` remain parked.
 ## Worker Return Target
 
 Private Core Amendment return after committed dispatch:
-`docs/reviews/CVF_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_1_WORKER_RETURN_2026-08-11.md`.
+`docs/reviews/CVF_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_2_WORKER_RETURN_2026-08-11.md`.
 
 ## Core Guard Self-Protection Authorization
 
@@ -168,7 +168,7 @@ Exact changed manifest:
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: active handoff updated in place; no path deletion or rename |
 
-## Core Guard Self-Protection Authorization - LPCI1-REF-T1A Amendment 1 Dispatch Sync
+## Core Guard Self-Protection Authorization - LPCI1-REF-T1A Amendment 2 Dispatch Sync
 
 Protected paths:
 
@@ -176,17 +176,17 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/lpci1RefT1aPublicSafeBranchDeployBindingAmendment1Dispatch20260811.json`
+- `CVF_SESSION/state/entries/lpci1RefT1aPublicSafeBranchDeployBindingAmendment2Dispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: delegated orchestrator/reviewer authority and `next` on 2026-08-11.
 
-Authorized guard-maintenance scope: record committed Amendment 1 authority, exact union-41 next move, target base, and parked external boundary.
+Authorized guard-maintenance scope: record committed Amendment 2 authority, one-path next move, and parked boundary.
 
 Rollback boundary: revert the exact seven-path session-sync manifest together; do not separate generated state from source fragments.
 
-## Mixed Protected-Path Atomicity Authorization - LPCI1-REF-T1A Amendment 1 Dispatch Sync
+## Mixed Protected-Path Atomicity Authorization - LPCI1-REF-T1A Amendment 2 Dispatch Sync
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
@@ -198,7 +198,7 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/lpci1RefT1aPublicSafeBranchDeployBindingAmendment1Dispatch20260811.json`
+- `CVF_SESSION/state/entries/lpci1RefT1aPublicSafeBranchDeployBindingAmendment2Dispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2141,
   "stateKey": "nextAllowedMove",
-  "value": "Author and gate LPCI1-REF-T1A Amendment 2 after blocked review commit 7c0a1982b. Preserve the exact union-41 public candidate and authorize a source-first repair of only route.governance.test.ts so its service identity is allowlisted consistently with release policy, then mirror the repaired byte and rerun deterministic checks. Worker execution waits for committed authority. Commit, network fetch, push, deploy, provider/store, hosted smoke, secrets, production and public main remain forbidden. Latest closed numbered LHW wave remains LHW24."
+  "value": "Execute LPCI1-REF-T1A Amendment 2 from committed authority e2868dd4614145884a5c276578e5512f42af72a1. Repair only the private route.governance.test.ts test setup, mirror identical bytes to the same public union-41 path, and run complete offline deterministic verification. WORKER_MUST_NOT_COMMIT. Runtime policy changes, widening, network fetch, push, deploy, provider/store, hosted smoke, secrets, production and public main remain forbidden pending independent review. Latest closed numbered LHW wave remains LHW24."
 }
