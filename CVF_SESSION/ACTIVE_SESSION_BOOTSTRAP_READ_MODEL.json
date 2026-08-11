@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "active_continuity_read_cost_t2b_closed_t3_parked",
+  "currentMode": "active_continuity_read_cost_t3_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "No material work is currently authorized. T2B is CLOSED_PASS_BOUNDED at material commit 575f8f991 with reviewer-accepted completion docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2B_COMPLETION_REVIEW_2026-08-11.md. T3 remains parked until a fresh selection is recorded and the roadmap entry condition is source-verified: the shift-operations P4-A1 worker/reviewer must have stopped and protected hashes must be released by fresh authority. Provider/network/live, existing downstream mutation, public-sync, push, deployment, production, and every other lane remain parked. LHW24 remains the latest closed numbered LHW wave.",
+  "nextAllowedMove": "Execute only ACRC-T3 in shift-operations-workspace from exact target base b62271d42150da68d4fb80983cd56260ee11cee1 under dispatch commit 4f89c0a29ebf2db0874fa555526e5febd75ae2f5 and the exact currentAuthority hashes. The worker may change only the Work Order exact-14, must not commit, and must return COMPLETE_PENDING_INDEPENDENT_REVIEW or a named blocked disposition. After return, independent reviewer/closer recomputes all evidence before any target commit. Core-pin repair, every product/runtime lane, provider/live, public-sync, push, deployment, production, and all other work remain parked. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T2B_INSTRUCTION_CARRIER_COMPACTION_2026-08-11.md",
-    "baselineSha256": "4b0ff07df02ea3f972ebb3e5d603247dc6c34efa24f2281950c90f73d5189922",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T2B_INSTRUCTION_CARRIER_COMPACTION_V2_2026-08-11.md",
-    "workOrderSha256": "02ac3079f63a434c43b751fb1d05307c7116a8dc46d9713deec566febb9440b2"
+    "baselinePath": "docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md",
+    "baselineSha256": "6654e3463d08c1212636e41b949cb62ab7d4791b23a65f9f165e754c0aa8bac6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md",
+    "workOrderSha256": "4cce4f5038a2a5708eb7e15ad562f84b3a9209709c210cffb24f2654ebaf670b"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
