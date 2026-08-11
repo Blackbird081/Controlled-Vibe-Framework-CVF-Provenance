@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Shift Operations Core Pin Reconciliation Amendment 1 Dispatched
+# CVF Agent Handoff V59 - Shift Operations Core Pin Reconciliation Closed Bounded
 
 Memory class: active-handoff
 
@@ -15,14 +15,14 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Handoff-sync parent commit:
-  `e468bb7748b53e0d925bfbbad9700703bc89d412`
+  `aefcb63c30f88408a005cfacb4af9712fe405ce3`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
 - Target reviewer closure commit:
-  `0b835be3ff1ac1fbd1c95e365471887202d718b5`
+  `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
+  `shift_operations_core_pin_reconciliation_closed_bounded_parked`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified):
@@ -30,20 +30,20 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute
-exact-2 no-commit SOPR-CP1-A1 repair only while preserving the original exact-10
-outside that repair set; parked checkpoint=repair return plus renewed independent
-review, with every other lane and external effect parked.
+Startup acknowledged: current mode=`shift_operations_core_pin_reconciliation_closed_bounded_parked`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no downstream
+target lane until fresh authority; parked checkpoint=SOPR-CP1 plus Amendment 1
+accepted at target commit `da8588909`, with every other lane and external
+effect parked.
 
 ## Current Mode
 
-`shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
+`shift_operations_core_pin_reconciliation_closed_bounded_parked`
 
 ## Purpose
 
-Route one provider-neutral repair worker to committed SOPR-CP1-A1 authority
-and stop at an uncommitted exact-11 pending set for renewed independent review.
+Record independent acceptance and bounded closure of SOPR-CP1 plus Amendment 1
+at the exact downstream target commit, with all other lanes parked.
 
 ## Current Authority
 
@@ -80,19 +80,20 @@ and stop at an uncommitted exact-11 pending set for renewed independent review.
   were reconciled, and every active projection now carries the explicit
   post-T3 closed/parked mode. ADIF-0052 records the dispatch lesson.
 - Independent SOPR-CP1 review disposition:
-  `REVIEW_REJECTED_REPAIR_REQUIRED`. Isolated stress reproduced a flaky forged
-  token test: changing the final base64url character can alter only unused
-  padding bits and preserve the decoded signature bytes. The runtime verifier
-  was not shown to bypass signature validation.
+  original `REVIEW_REJECTED_REPAIR_REQUIRED`, then Amendment 1
+  `REVIEWER_ACCEPTED / CLOSED_BOUNDED`. The deterministic decoded-byte repair
+  passed authorization 10/10, disclosed ordering test 30/30, two consecutive
+  605-test suites and all required gates. No runtime bypass claim was made.
+- Target completion review SHA-256:
+  `e95f2df56f6e4d3dcad1793d679ea729eac7e4831ed7e712d9cef71780455e44`.
+- Corrected worker return SHA-256:
+  `9014bde67884c4f475b1e0965daf1b08270a5cc02f2f625e31bbd3590e990227`.
 
 ## Next Allowed Move
 
-Execute only SOPR-CP1-A1 in `shift-operations-workspace` at target HEAD
-`0b835be3f`, Amendment 1 authority `e468bb774`, exact currentAuthority hashes,
-and hidden-Core target `2103a38f...`. Preserve the original exact-10 diff
-byte-for-byte outside the exact-2 repair write set. Finish with exact-11,
-staged zero and no commit, updating the existing worker return for renewed
-independent review.
+SOPR-CP1 plus Amendment 1 are closed at downstream commit `da8588909`.
+No downstream project lane may open without fresh authority. Keep every
+product/runtime/provider/live/network/public-sync/push/deploy lane parked.
 
 ## Active Boundary
 
@@ -100,7 +101,7 @@ independent review.
   API/UI, deployment, public-sync, push, production, and every other lane are
   parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
-- Repair worker cannot stage or commit; independent reviewer owns target commit.
+- Worker commit remained forbidden; independent reviewer created target commit.
 - T3 stays closed and every non-SOPR-CP1 downstream lane remains parked.
 
 ## Worker Return Target
@@ -116,16 +117,15 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/shiftOperationsCorePinReconciliationAmendment1Dispatch20260811.json`
+- `CVF_SESSION/state/entries/shiftOperationsCorePinReconciliationClosure20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: continuation on 2026-08-11 under explicit delegation
 of orchestrator/reviewer decision authority.
 
-Authorized guard-maintenance scope: record committed SOPR-CP1-A1 authority,
-review rejection/root cause, current hashes, exact target/hidden-Core bases,
-no-commit repair route and renewed independent-review checkpoint.
+Authorized guard-maintenance scope: record accepted SOPR-CP1-A1 closure,
+exact target/completion hashes, closed mode, parked boundary and next move.
 
 Rollback boundary: revert the exact seven-path session-sync manifest together;
 do not partially separate generated state from source fragments.
@@ -143,7 +143,7 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/shiftOperationsCorePinReconciliationAmendment1Dispatch20260811.json`
+- `CVF_SESSION/state/entries/shiftOperationsCorePinReconciliationClosure20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
@@ -153,18 +153,18 @@ Exact changed manifest:
 |---|---|
 | Actor | orchestrator/work-order author and session-sync steward |
 | Provider or surface | local private CVF Core plus read-only downstream verification |
-| Session or invocation | `shift-operations-core-pin-reconciliation-amendment-1-dispatch-sync-20260811` |
-| Working directory | Core root after Amendment 1 authority `e468bb774` |
+| Session or invocation | `shift-operations-core-pin-reconciliation-closure-sync-20260811` |
+| Working directory | Core root after session parent `aefcb63c3` |
 | Command or tool surface | bounded session edits, state generator, local gates, Git |
-| Target paths | exact seven-path Amendment 1 authority-pointer session-sync manifest |
-| Allowed scope source | operator continuation plus committed SOPR-CP1-A1 authority |
-| Before status evidence | Core and target clean; T3 closed bounded; core-pin debt parked |
-| After status evidence | SOPR-CP1-A1 exact-2 repair route active, final exact-11/no commit; all other lanes parked |
+| Target paths | exact seven-path closure-pointer session-sync manifest |
+| Allowed scope source | operator continuation, committed SOPR-CP1-A1 authority and accepted target closure |
+| Before status evidence | Core clean at `aefcb63c3`; target clean at `da8588909` |
+| After status evidence | SOPR-CP1/A1 closed bounded; no downstream lane authorized |
 | Diff evidence | exact status/name-status, generator, active-session and commit-steward gates |
-| Approval boundary | exact seven-path Amendment 1 dispatch authority-pointer sync only |
+| Approval boundary | exact seven-path closure authority-pointer sync only |
 | Claim boundary | local dispatch sync only; no target mutation/provider/live/network/public/deploy/push action |
 | Agent type | orchestrator and session-sync steward |
-| Invocation ID | `shift-operations-core-pin-reconciliation-amendment-1-dispatch-sync-20260811` |
+| Invocation ID | `shift-operations-core-pin-reconciliation-closure-sync-20260811` |
 | Expected manifest | exact seven paths listed above |
 | Actual changed set | exact seven paths listed above |
 | Manifest delta | MATCH |
@@ -178,7 +178,7 @@ Reason: private provenance dispatch with no public-sync authority.
 
 ## Claim Boundary
 
-This handoff records SOPR-CP1-A1 repair dispatch authority only. It does not
-claim target completion, remote freshness, runtime governance, provider behavior, product
+This handoff records bounded downstream SOPR-CP1/A1 closure only. It does not
+claim remote freshness, runtime governance, provider behavior, product
 capability, public availability, deployment, push, release, or production
 readiness.

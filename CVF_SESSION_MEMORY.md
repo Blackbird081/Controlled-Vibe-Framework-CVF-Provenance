@@ -45,31 +45,30 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact-2 SOPR-CP1-A1 repair only, preserving the original exact-10 outside the repair set; parked checkpoint=repair worker return plus renewed independent review, with every other lane and external effect parked.
+Startup acknowledged: current mode=`shift_operations_core_pin_reconciliation_closed_bounded_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no downstream target lane until fresh authority; parked checkpoint=SOPR-CP1 plus Amendment 1 accepted at target commit `da8588909`, with every product/runtime lane and external effect parked.
 
 ## Current Mode
 
-`shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
+`shift_operations_core_pin_reconciliation_closed_bounded_parked`
 
-Current mode marker: `shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
-Current mode: `shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
-Previous mode: `shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`
+Current mode marker: `shift_operations_core_pin_reconciliation_closed_bounded_parked`
+Current mode: `shift_operations_core_pin_reconciliation_closed_bounded_parked`
+Previous mode: `shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
 
 ## Next Allowed Move
 
-Mode: `shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
+Mode: `shift_operations_core_pin_reconciliation_closed_bounded_parked`
 
-Execute only SOPR-CP1-A1 at target HEAD `0b835be3f` under authority
-`e468bb774`, exact currentAuthority hashes, hidden-Core target `2103a38f...`.
-Preserve the original exact-10 outside the exact-2 repair write set; finish at
-exact-11, unstaged and no commit, then stop for renewed independent review.
+SOPR-CP1 plus Amendment 1 are accepted at target commit `da8588909` after
+independent stress, two consecutive 605-test suites and all required gates.
+No downstream target lane is authorized; wait for fresh governed authority.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-Repair worker return and renewed independent review are the active checkpoint. Product/runtime
-lanes, provider/live, network refresh, public-sync, push, deployment and
-production work remain parked.
+SOPR-CP1 closure is the active parked checkpoint. Product/runtime lanes,
+provider/live, network refresh, public-sync, push, deployment and production
+work remain parked.
 
 ## Targeted Lookup Rules
 
