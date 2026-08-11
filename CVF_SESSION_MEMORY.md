@@ -45,28 +45,29 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact-10 no-commit SOPR-CP1 only; parked checkpoint=worker return plus independent review, with every other lane and external effect parked.
+Startup acknowledged: current mode=`shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact-2 SOPR-CP1-A1 repair only, preserving the original exact-10 outside the repair set; parked checkpoint=repair worker return plus renewed independent review, with every other lane and external effect parked.
 
 ## Current Mode
 
-`shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`
+`shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
 
-Current mode marker: `shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`
-Current mode: `shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`
-Previous mode: `active_continuity_read_cost_t3_closed_bounded_parked`
+Current mode marker: `shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
+Current mode: `shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
+Previous mode: `shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`
+Mode: `shift_operations_core_pin_reconciliation_amendment_1_dispatched_pending_repair_worker_return`
 
-Execute only SOPR-CP1 at target base `0b835be3f` under authority `3a032e40b`,
-exact currentAuthority hashes, hidden-Core target `2103a38f...`, exact-10,
-unstaged and no commit. Stop at the worker return for independent review.
+Execute only SOPR-CP1-A1 at target HEAD `0b835be3f` under authority
+`e468bb774`, exact currentAuthority hashes, hidden-Core target `2103a38f...`.
+Preserve the original exact-10 outside the exact-2 repair write set; finish at
+exact-11, unstaged and no commit, then stop for renewed independent review.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-Worker return and independent review are the active checkpoint. Product/runtime
+Repair worker return and renewed independent review are the active checkpoint. Product/runtime
 lanes, provider/live, network refresh, public-sync, push, deployment and
 production work remain parked.
 

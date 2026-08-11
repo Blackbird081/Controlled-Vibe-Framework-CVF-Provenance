@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2149,
+  "stateKey": "shiftOperationsCorePinReconciliationAmendment1Dispatch20260811",
+  "value": "Independent review rejected SOPR-CP1 pending repair because the forged-token test fixture can preserve decoded JWT signature bytes when it changes only unused base64url padding bits; isolated stress reproduced the failure. SOPR-CP1-A1 is DISPATCH_READY at Core authority commit e468bb7748b53e0d925bfbbad9700703bc89d412. Target HEAD remains 0b835be3ff1ac1fbd1c95e365471887202d718b5 with the original exact-10 unstaged worker diff and staged zero. Repair write scope is exact-2, final pending set exact-11, no stage, no commit; independent review owns any target commit."
+}
