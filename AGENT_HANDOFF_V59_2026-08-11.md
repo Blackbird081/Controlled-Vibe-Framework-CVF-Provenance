@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - LPCI1-REF T1A Amendment 1 Dispatched
+# CVF Agent Handoff V59 - LPCI1-REF T1A Amendment 2 Pending
 
 Memory class: active-handoff
 
@@ -22,28 +22,27 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `lpci1_ref_t1a_amendment_1_dispatched_pending_repair_worker_return`
+  `lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`
 - LPCI1-REF-T1A Amendment 1 authority:
-  `cfdf07794564d8679ecd6f1d25005701468ee5e8`; blocker: `4cb250a9650c10f12d7a7ea794e0197e4f939c72`
+  `cfdf07794564d8679ecd6f1d25005701468ee5e8`; blocked review: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified):
   `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_ref_t1a_amendment_1_dispatched_pending_repair_worker_return`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact
-union-41 Amendment 1; parked checkpoint=worker commit, network fetch, push,
-deploy, hosted/provider/store, secrets, production, and public `main`.
+Startup acknowledged: current mode=`lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and
+gate source-first one-path Amendment 2; parked checkpoint=worker resume,
+commit, network fetch, push, deploy, hosted/provider/store, and production.
 
 ## Current Mode
 
-`lpci1_ref_t1a_amendment_1_dispatched_pending_repair_worker_return`
+`lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`
 
 ## Purpose
 
-Route committed exact prerequisite-lineage Amendment 1 while keeping worker
-commit and every external effect parked.
+Record the stale-test blocker and route source-first one-path Amendment 2.
 
 ## Current Authority
 
@@ -89,14 +88,14 @@ commit and every external effect parked.
 
 ## Next Allowed Move
 
-Execute Amendment 1 authority `cfdf07794`: preserve and verify the exact
-23-path public candidate, add only the exact 18-path delta from `e82ab11dc`,
-and return union 41. Worker commit, network fetch, push, deploy, hosted smoke,
+Author and gate Amendment 2 after `7c0a1982b`: preserve union 41 and authorize
+source-first repair of only `route.governance.test.ts`, then exact public
+mirroring. Worker resume, commit, network fetch, push, deploy, hosted smoke,
 provider/store, secrets, production, and public `main` remain parked.
 
 ## Active Boundary
 
-- Only exact union-41 Amendment 1 execution and its private return are open.
+- Only Amendment 2 authority authoring for one source/test path is open.
   P4-A, P4-A2, unrelated product/runtime, provider/live,
   RAG/vector, deployment, push, production, and every other lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.

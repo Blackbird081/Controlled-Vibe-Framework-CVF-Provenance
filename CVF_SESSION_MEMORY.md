@@ -45,30 +45,30 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_ref_t1a_amendment_1_dispatched_pending_repair_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed exact union-41 Amendment 1; parked checkpoint=worker commit, network fetch, push, deploy, hosted/provider/store, secrets, production, and public `main` remain forbidden pending fresh review.
+Startup acknowledged: current mode=`lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and gate source-first one-path Amendment 2; parked checkpoint=worker resume, commit, network fetch, push, deploy, hosted/provider/store, secrets, production, and public `main`.
 
 ## Current Mode
 
-`lpci1_ref_t1a_amendment_1_dispatched_pending_repair_worker_return`
+`lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`
 
-Current mode marker: `lpci1_ref_t1a_amendment_1_dispatched_pending_repair_worker_return`
-Current mode: `lpci1_ref_t1a_amendment_1_dispatched_pending_repair_worker_return`
-Previous mode: `lpci1_ref_t1a_blocked_pending_prerequisite_lineage_amendment`
+Current mode marker: `lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`
+Current mode: `lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`
+Previous mode: `lpci1_ref_t1a_amendment_1_dispatched_pending_repair_worker_return`
 
 ## Next Allowed Move
 
-Mode: `lpci1_ref_t1a_amendment_1_dispatched_pending_repair_worker_return`
+Mode: `lpci1_ref_t1a_amendment_1_blocked_pending_source_test_repair_amendment_2`
 
-Execute Amendment 1 authority `cfdf07794564d8679ecd6f1d25005701468ee5e8`.
-Preserve and verify the inherited exact 23-path local candidate; add only the
-exact 18-path prerequisite delta from `e82ab11dc` for union 41. Worker commit,
-network fetch, push, deploy, hosted/provider/store, secrets, production, and
-public `main` remain parked pending fresh independent review.
+Author and gate Amendment 2 after blocker `7c0a1982b`. Preserve union 41;
+authorize source-first repair of only `route.governance.test.ts`, mirror its
+repaired byte, then rerun deterministic checks. Worker resume, commit, network
+fetch, push, deploy, hosted/provider/store, secrets, production, and public
+`main` remain parked pending committed authority.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-LPCI1-REF-T1A Amendment 1 worker return is the active checkpoint. Worker
+LPCI1-REF-T1A Amendment 2 dispatch is the active checkpoint. Worker resume,
 commit, network fetch, public push, Netlify deployment, hosted smoke,
 provider/store, secrets, production, and public `main` remain parked.
 
