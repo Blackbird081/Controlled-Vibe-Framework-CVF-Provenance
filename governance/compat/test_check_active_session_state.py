@@ -47,6 +47,11 @@ class ActiveSessionStateTests(unittest.TestCase):
             path = self.repo_root / rel
             path.parent.mkdir(parents=True, exist_ok=True)
 
+        self.authority_baseline_path = "docs/baselines/TEST_FIXTURE_BASELINE.md"
+        self.authority_work_order_path = "docs/work_orders/TEST_FIXTURE_WORK_ORDER.md"
+        self.authority_baseline_sha256 = self._write_authority_fixture(self.authority_baseline_path, "fixture baseline content\n")
+        self.authority_work_order_sha256 = self._write_authority_fixture(self.authority_work_order_path, "fixture work order content\n")
+
         state = {
             "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
             "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
@@ -64,6 +69,10 @@ class ActiveSessionStateTests(unittest.TestCase):
                 "broad_external_knowledge_absorption",
                 "public_claims_of_coherent_governed_capability_runtime",
             ],
+            "currentAuthority": {
+                "baselinePath": self.authority_baseline_path, "baselineSha256": self.authority_baseline_sha256,
+                "workOrderPath": self.authority_work_order_path, "workOrderSha256": self.authority_work_order_sha256,
+            },
         }
         (self.repo_root / "CVF_SESSION/ACTIVE_SESSION_STATE.json").write_text(
             json.dumps(state),
@@ -155,6 +164,12 @@ class ActiveSessionStateTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+
+    def _write_authority_fixture(self, rel_path: str, content: str) -> str:
+        abs_path = self.repo_root / rel_path
+        abs_path.parent.mkdir(parents=True, exist_ok=True)
+        abs_path.write_text(content, encoding="utf-8")
+        return hashlib.sha256(abs_path.read_bytes()).hexdigest()
 
     def _write_migration_registry(self, entries: list[dict], *, expires_on: str = "2099-01-01") -> None:
         (self.repo_root / "governance/compat/CVF_ACTIVE_CONTINUITY_READ_BUDGET_MIGRATION.json").write_text(
@@ -1104,6 +1119,53 @@ class ActiveContinuityReadBudgetTests(unittest.TestCase):
                 self._base._write_migration_registry([row])
                 violations = self._classify()["readBudgetViolations"]
                 self.assertTrue(any(expected_fragment in issue for issue in violations), f"{label}: {violations}")
+
+
+class CurrentAuthorityDeterministicNegativeTests(unittest.TestCase):
+    # Real chmod/symlinks are unreliable cross-platform, so mock Path methods.
+    def setUp(self) -> None:
+        self._base = ActiveSessionStateTests()
+        self._base.setUp()
+        self.repo_root = self._base.repo_root
+        self.baseline_rel = self._base.authority_baseline_path
+        self.valid_authority = {
+            "baselinePath": self.baseline_rel,
+            "baselineSha256": self._base.authority_baseline_sha256,
+            "workOrderPath": self._base.authority_work_order_path,
+            "workOrderSha256": self._base.authority_work_order_sha256,
+        }
+
+    def tearDown(self) -> None:
+        self._base.tearDown()
+
+    def _validate(self, value: dict) -> list[str]:
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
+            return MODULE._validate_current_authority(value)
+
+    def test_read_failure_on_hash_verification_is_typed_violation_not_silent_pass(self) -> None:
+        real_read_bytes = Path.read_bytes
+        baseline_name = Path(self.baseline_rel).name
+        def _raise_for_baseline(path_self: Path, *args, **kwargs):
+            if path_self.name == baseline_name:
+                raise OSError("simulated read failure for deterministic proof")
+            return real_read_bytes(path_self, *args, **kwargs)
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root), \
+                patch.object(Path, "read_bytes", _raise_for_baseline):
+            violations = MODULE._validate_current_authority(self.valid_authority)
+        self.assertTrue(any("baselineSha256 could not be verified" in v and "OSError" in v for v in violations), violations)
+
+    def test_symlink_authority_path_fails_closed_deterministically(self) -> None:
+        baseline_name = Path(self.baseline_rel).name
+        real_is_symlink = Path.is_symlink
+        def _symlink_for_baseline(path_self: Path) -> bool:
+            return True if path_self.name == baseline_name else real_is_symlink(path_self)
+        with patch.object(MODULE, "REPO_ROOT", self.repo_root), \
+                patch.object(Path, "is_symlink", _symlink_for_baseline):
+            violations = MODULE._validate_current_authority(self.valid_authority)
+        self.assertTrue(any("must not be a symlink" in v and self.baseline_rel in v for v in violations), violations)
+
+    def test_valid_authority_fixture_passes_with_zero_violations(self) -> None:
+        self.assertEqual(self._validate(self.valid_authority), [])
 
 
 if __name__ == "__main__":

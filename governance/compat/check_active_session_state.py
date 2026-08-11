@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import re
 import subprocess
@@ -337,9 +338,103 @@ def _as_list(value: Any) -> list[str]:
     return [item for item in value if isinstance(item, str)]
 
 
+CURRENT_AUTHORITY_REQUIRED_FIELDS = (
+    "baselinePath",
+    "baselineSha256",
+    "workOrderPath",
+    "workOrderSha256",
+)
+CURRENT_AUTHORITY_SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
+
+
+def _current_authority_path_violation(field: str, rel_path: str) -> str | None:
+    normalized = rel_path.replace("\\", "/")
+    if not rel_path or rel_path.strip() != rel_path:
+        return f"currentAuthority.{field} must be a non-empty string with no leading/trailing whitespace"
+    if Path(rel_path).is_absolute() or normalized.startswith("/") or re.match(r"^[A-Za-z]:", normalized):
+        return f"currentAuthority.{field} must be repository-relative, not absolute: {rel_path}"
+    parts = normalized.split("/")
+    if ".." in parts or any(part in ("", ".") for part in parts):
+        return f"currentAuthority.{field} must not contain empty, '.', or '..' path segments: {rel_path}"
+    abs_path = (REPO_ROOT / normalized).resolve()
+    try:
+        abs_path.relative_to(REPO_ROOT.resolve())
+    except ValueError:
+        return f"currentAuthority.{field} escapes the repository root: {rel_path}"
+    target = REPO_ROOT / normalized
+    if not target.exists():
+        return f"currentAuthority.{field} does not exist: {rel_path}"
+    if target.is_symlink():
+        return f"currentAuthority.{field} must not be a symlink: {rel_path}"
+    if target.is_dir():
+        return f"currentAuthority.{field} must be a regular file, not a directory: {rel_path}"
+    return None
+
+
+def _validate_current_authority(value: Any) -> list[str]:
+    if not isinstance(value, dict):
+        return ["currentAuthority must be an object with baselinePath, baselineSha256, workOrderPath, workOrderSha256"]
+
+    violations: list[str] = []
+    keys = set(value.keys())
+    required = set(CURRENT_AUTHORITY_REQUIRED_FIELDS)
+    if keys != required:
+        missing = required - keys
+        extra = keys - required
+        if missing:
+            violations.append(f"currentAuthority missing required fields: {sorted(missing)}")
+        if extra:
+            violations.append(f"currentAuthority has unknown extra fields: {sorted(extra)}")
+
+    for field in ("baselinePath", "workOrderPath"):
+        if field not in value:
+            continue
+        raw = value.get(field)
+        if not isinstance(raw, str):
+            violations.append(f"currentAuthority.{field} must be a non-empty string")
+            continue
+        path_violation = _current_authority_path_violation(field, raw)
+        if path_violation:
+            violations.append(path_violation)
+
+    for hash_field, path_field in (
+        ("baselineSha256", "baselinePath"),
+        ("workOrderSha256", "workOrderPath"),
+    ):
+        if hash_field not in value:
+            continue
+        raw_hash = value.get(hash_field)
+        if not isinstance(raw_hash, str) or not CURRENT_AUTHORITY_SHA256_PATTERN.match(raw_hash):
+            violations.append(f"currentAuthority.{hash_field} must be a lowercase 64-character SHA-256 hex string")
+            continue
+        raw_path = value.get(path_field)
+        if not isinstance(raw_path, str):
+            continue
+        target = REPO_ROOT / raw_path.replace("\\", "/")
+        if not target.exists() or target.is_dir() or target.is_symlink():
+            continue
+        try:
+            actual_hash = hashlib.sha256(target.read_bytes()).hexdigest()
+        except OSError as exc:
+            violations.append(
+                f"currentAuthority.{hash_field} could not be verified: "
+                f"failed to read {raw_path}: {exc.__class__.__name__}"
+            )
+            continue
+        if actual_hash != raw_hash:
+            violations.append(
+                f"currentAuthority.{hash_field} does not match current raw bytes of {raw_path}"
+            )
+
+    return violations
+
+
 def _validate_state_fields(state: dict[str, Any]) -> tuple[list[str], dict[str, Any]]:
     violations = list(validate_aggregate_matches_sources())
     fields: dict[str, Any] = {}
+
+    fields["currentAuthority"] = current_authority = state.get("currentAuthority")
+    violations.extend(_validate_current_authority(current_authority))
 
     if state.get("activeSessionFrontDoor") != FRONT_DOOR_PATH:
         violations.append("activeSessionFrontDoor must point to CVF_SESSION_MEMORY.md")
