@@ -11,7 +11,7 @@ Status: ACTIVE
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
 - SOPR-CP1 dispatch authority commit:
-  `08aebb15351fdabae01d97cc6bcb650b32bc60ab`
+  `3a032e40bb83eeda1da8c40b817d70f75c7a094d`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
@@ -44,7 +44,7 @@ and stop at an uncommitted exact-10 worker return for independent review.
 
 | Field | Value |
 |---|---|
-| authorityCommit | `08aebb15351fdabae01d97cc6bcb650b32bc60ab` |
+| authorityCommit | `3a032e40bb83eeda1da8c40b817d70f75c7a094d` |
 | baselinePath | `docs/baselines/CVF_GC018_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_2026-08-11.md` |
 | baselineSha256 | `d703e80c027afcd2317af5189730b05819099c34e13d76403223409e372a1cde` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_2026-08-11.md` |
@@ -101,7 +101,6 @@ Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/shiftOperationsCorePinReconciliationDispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
@@ -113,7 +112,7 @@ Authorized guard-maintenance scope: record committed SOPR-CP1 authority,
 current hashes, exact target/hidden-Core bases, no-commit route and independent
 review checkpoint.
 
-Rollback boundary: revert the exact seven-path session-sync manifest together;
+Rollback boundary: revert the exact six-path session-sync manifest together;
 do not partially separate generated state from source fragments.
 
 ## Mixed Protected-Path Atomicity Authorization
@@ -128,7 +127,6 @@ Exact changed manifest:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/shiftOperationsCorePinReconciliationDispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
@@ -140,19 +138,19 @@ Exact changed manifest:
 | Actor | orchestrator/work-order author and session-sync steward |
 | Provider or surface | local private CVF Core plus read-only downstream verification |
 | Session or invocation | `shift-operations-core-pin-reconciliation-dispatch-sync-20260811` |
-| Working directory | Core root after dispatch authority `08aebb153` |
+| Working directory | Core root after dispatch authority `3a032e40b` |
 | Command or tool surface | bounded session edits, state generator, local gates, Git |
-| Target paths | exact seven-path session-sync manifest |
+| Target paths | exact six-path authority-pointer session-sync manifest |
 | Allowed scope source | operator continuation plus committed SOPR-CP1 authority |
 | Before status evidence | Core and target clean; T3 closed bounded; core-pin debt parked |
 | After status evidence | SOPR-CP1 exact-10 no-commit route active; all other lanes parked |
 | Diff evidence | exact status/name-status, generator, active-session and commit-steward gates |
-| Approval boundary | exact seven-path dispatch continuity sync only |
+| Approval boundary | exact six-path dispatch authority-pointer sync only |
 | Claim boundary | local dispatch sync only; no target mutation/provider/live/network/public/deploy/push action |
 | Agent type | orchestrator and session-sync steward |
 | Invocation ID | `shift-operations-core-pin-reconciliation-dispatch-sync-20260811` |
-| Expected manifest | exact seven paths listed above |
-| Actual changed set | exact seven paths listed above |
+| Expected manifest | exact six paths listed above |
+| Actual changed set | exact six paths listed above |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: active handoff updated in place; no path deletion or rename |
 

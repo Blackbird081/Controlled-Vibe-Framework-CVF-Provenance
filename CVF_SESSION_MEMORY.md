@@ -59,7 +59,7 @@ Previous mode: `active_continuity_read_cost_t3_closed_bounded_parked`
 
 Mode: `shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`
 
-Execute only SOPR-CP1 at target base `0b835be3f` under authority `08aebb153`,
+Execute only SOPR-CP1 at target base `0b835be3f` under authority `3a032e40b`,
 exact currentAuthority hashes, hidden-Core target `2103a38f...`, exact-10,
 unstaged and no commit. Stop at the worker return for independent review.
 Latest closed numbered LHW wave: `LHW24`.
