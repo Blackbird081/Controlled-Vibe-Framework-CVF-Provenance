@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Active Continuity T3 Closed Bounded
+# CVF Agent Handoff V59 - Shift Operations Core Pin Reconciliation Dispatched
 
 Memory class: active-handoff
 
@@ -10,13 +10,15 @@ Status: ACTIVE
 - Branch: `main`
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
+- SOPR-CP1 dispatch authority commit:
+  `08aebb15351fdabae01d97cc6bcb650b32bc60ab`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
-  `b62271d42150da68d4fb80983cd56260ee11cee1`
+  `0b835be3ff1ac1fbd1c95e365471887202d718b5`
 - Target reviewer closure commit:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
 - Active mode:
-  `active_continuity_read_cost_t3_closed_bounded_parked`
+  `shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified):
@@ -24,32 +26,32 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`active_continuity_read_cost_t3_closed_bounded_parked`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh
-governed lane selection only; parked checkpoint=ACRC_T3_CLOSED_BOUNDED_NO_DOWNSTREAM_REOPEN_WITHOUT_FRESH_AUTHORITY.
+Startup acknowledged: current mode=`shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute
+exact-10 no-commit SOPR-CP1 only; parked checkpoint=worker return plus
+independent review, with every other lane and external effect parked.
 
 ## Current Mode
 
-`active_continuity_read_cost_t3_closed_bounded_parked`
+`shift_operations_core_pin_reconciliation_dispatched_pending_worker_return`
 
 ## Purpose
 
-Record the independently accepted downstream T3 continuity migration, the
-reviewer-owned target commit, Core closure evidence, and a fail-closed parked
-boundary for all later work.
+Route one provider-neutral worker to the exact committed SOPR-CP1 authority
+and stop at an uncommitted exact-10 worker return for independent review.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityCommit | `854cef02933ec663c9b3f5a181bf09b1ef95ebd6` |
-| baselinePath | `docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md` |
-| baselineSha256 | `d6b8b8fac13859f40290b09a9a998a5ceb13dfe71815dbbefcdaa90a7b1066bc` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T3_SHIFT_OPERATIONS_APPLICATION_2026-08-11.md` |
-| workOrderSha256 | `0e0a055cd99f26ab41da720730513de91e8b43495b1c2a8d4a58675c04e0803d` |
-| targetExecutionBaseHead | `b62271d42150da68d4fb80983cd56260ee11cee1` |
+| authorityCommit | `08aebb15351fdabae01d97cc6bcb650b32bc60ab` |
+| baselinePath | `docs/baselines/CVF_GC018_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_2026-08-11.md` |
+| baselineSha256 | `d703e80c027afcd2317af5189730b05819099c34e13d76403223409e372a1cde` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_2026-08-11.md` |
+| workOrderSha256 | `9960b49dc2e373ced94b82e43cc2e5561efb0a7fc88247b95138dab43f97b813` |
+| targetExecutionBaseHead | `0b835be3ff1ac1fbd1c95e365471887202d718b5` |
 | targetClosureCommit | `0b835be3ff1ac1fbd1c95e365471887202d718b5` |
-| completionReview | `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md` |
+| hiddenPublicCoreTarget | `2103a38fda01ee827e9fc6c3be38a824fa5d54ad` |
 
 ## Closure Evidence
 
@@ -73,25 +75,24 @@ boundary for all later work.
 
 ## Next Allowed Move
 
-No downstream lane is open. The next allowed move is a fresh governed
-operator/orchestrator lane selection. Until that authority exists, remain at
-checkpoint `ACRC_T3_CLOSED_BOUNDED_NO_DOWNSTREAM_REOPEN_WITHOUT_FRESH_AUTHORITY`.
+Execute only SOPR-CP1 in `shift-operations-workspace` at target base
+`0b835be3f`, exact currentAuthority hashes and hidden-Core target
+`2103a38f...`. Worker exact-10 must remain unstaged and uncommitted, ending at
+`docs/decisions/SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_WORKER_RETURN_2026-08-11.md`.
 
 ## Active Boundary
 
 - Product/runtime, P4-A, P4-A2, provider/live, RAG/vector, audit/persistence,
   API/UI, deployment, public-sync, push, production, and every other lane are
   parked.
-- The stale downstream core pin remains a separate parked lane.
-- T3 may not be reopened from this handoff; fresh authority is mandatory.
+- Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
+- Worker cannot stage or commit; independent reviewer owns target commit.
+- T3 stays closed and every non-SOPR-CP1 downstream lane remains parked.
 
-## Evidence Targets
+## Worker Return Target
 
 Target repository decision artifact:
-`docs/decisions/ACTIVE_CONTINUITY_READ_COST_T3_WORKER_RETURN_2026-08-11.md`.
-
-Core normalized completion evidence:
-`docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T3_COMPLETION_REVIEW_2026-08-11.md`.
+`docs/decisions/SHIFT_OPERATIONS_CORE_PIN_RECONCILIATION_WORKER_RETURN_2026-08-11.md`.
 
 ## Core Guard Self-Protection Authorization
 
@@ -101,16 +102,16 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/activeContinuityReadCostT3Closure20260811.json`
+- `CVF_SESSION/state/entries/shiftOperationsCorePinReconciliationDispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: continuation on 2026-08-11 under explicit delegation
 of orchestrator/reviewer decision authority.
 
-Authorized guard-maintenance scope: record accepted target/Core closure,
-current authority hashes, explicit post-T3 mode, next-move park, and reviewer
-evidence without opening another lane.
+Authorized guard-maintenance scope: record committed SOPR-CP1 authority,
+current hashes, exact target/hidden-Core bases, no-commit route and independent
+review checkpoint.
 
 Rollback boundary: revert the exact seven-path session-sync manifest together;
 do not partially separate generated state from source fragments.
@@ -128,7 +129,7 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/activeContinuityReadCostT3Closure20260811.json`
+- `CVF_SESSION/state/entries/shiftOperationsCorePinReconciliationDispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
@@ -136,20 +137,20 @@ Exact changed manifest:
 
 | Field | Evidence |
 |---|---|
-| Actor | independent reviewer/closer and session-sync steward |
-| Provider or surface | local private CVF Core plus accepted downstream evidence |
-| Session or invocation | `active-continuity-read-cost-t3-closure-sync-2026-08-11` |
-| Working directory | Core root after material closure `854cef029` |
+| Actor | orchestrator/work-order author and session-sync steward |
+| Provider or surface | local private CVF Core plus read-only downstream verification |
+| Session or invocation | `shift-operations-core-pin-reconciliation-dispatch-sync-20260811` |
+| Working directory | Core root after dispatch authority `08aebb153` |
 | Command or tool surface | bounded session edits, state generator, local gates, Git |
 | Target paths | exact seven-path session-sync manifest |
-| Allowed scope source | operator delegation, accepted Work Order reviewer conversion, and committed Core closure |
-| Before status evidence | target clean at reviewer commit `0b835be3f`; Core material committed at `854cef029` |
-| After status evidence | T3 closed bounded; no downstream lane open; all other lanes parked |
+| Allowed scope source | operator continuation plus committed SOPR-CP1 authority |
+| Before status evidence | Core and target clean; T3 closed bounded; core-pin debt parked |
+| After status evidence | SOPR-CP1 exact-10 no-commit route active; all other lanes parked |
 | Diff evidence | exact status/name-status, generator, active-session and commit-steward gates |
 | Approval boundary | exact seven-path dispatch continuity sync only |
-| Claim boundary | local continuity sync only; no provider/live/public/deploy/push action |
-| Agent type | reviewer/closer and session-sync steward |
-| Invocation ID | `active-continuity-read-cost-t3-closure-sync-20260811` |
+| Claim boundary | local dispatch sync only; no target mutation/provider/live/network/public/deploy/push action |
+| Agent type | orchestrator and session-sync steward |
+| Invocation ID | `shift-operations-core-pin-reconciliation-dispatch-sync-20260811` |
 | Expected manifest | exact seven paths listed above |
 | Actual changed set | exact seven paths listed above |
 | Manifest delta | MATCH |
@@ -159,10 +160,11 @@ Exact changed manifest:
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private provenance closure with no public-sync authority.
+Reason: private provenance dispatch with no public-sync authority.
 
 ## Claim Boundary
 
-This handoff records bounded repository-local T3 closure only. It does not
-claim runtime governance, provider behavior, product capability, public
-availability, deployment, push, release, or production readiness.
+This handoff records SOPR-CP1 dispatch authority only. It does not claim target
+completion, remote freshness, runtime governance, provider behavior, product
+capability, public availability, deployment, push, release, or production
+readiness.

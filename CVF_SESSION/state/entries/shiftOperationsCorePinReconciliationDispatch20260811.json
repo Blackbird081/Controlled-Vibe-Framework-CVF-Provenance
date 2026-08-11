@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2148,
+  "stateKey": "shiftOperationsCorePinReconciliationDispatch20260811",
+  "value": "SOPR-CP1 shift-operations core-pin reconciliation is DISPATCH_READY at Core authority commit 08aebb15351fdabae01d97cc6bcb650b32bc60ab. Target execution base is clean 0b835be3ff1ac1fbd1c95e365471887202d718b5; hidden public Core is clean with HEAD equal local origin/main at 2103a38fda01ee827e9fc6c3be38a824fa5d54ad. Exact baseline/work-order SHA-256 values are in currentAuthority. Worker scope is exact-10, no stage, no commit; no reconciler/network/product/runtime/provider/live/public/push/deploy action is authorized. Independent review owns any target commit."
+}
