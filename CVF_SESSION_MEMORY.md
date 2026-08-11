@@ -45,23 +45,24 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`active_continuity_read_cost_t2b_build_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the revalidated exact-15 T2B V2 Work Order without commit; parked checkpoint=T3 and all external effects.
+Startup acknowledged: current mode=`active_continuity_read_cost_t2b_closed_t3_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no material work until fresh T3 selection plus checkpoint-release proof; parked checkpoint=T3 and all external effects.
 
 ## Current Mode
 
-`active_continuity_read_cost_t2b_build_authorized`
+`active_continuity_read_cost_t2b_closed_t3_parked`
 
-Current mode marker: `active_continuity_read_cost_t2b_build_authorized`
-Current mode: `active_continuity_read_cost_t2b_build_authorized`
+Current mode marker: `active_continuity_read_cost_t2b_closed_t3_parked`
+Current mode: `active_continuity_read_cost_t2b_closed_t3_parked`
 
 ## Next Allowed Move
 
-Mode: `active_continuity_read_cost_t2b_build_authorized`
+Mode: `active_continuity_read_cost_t2b_closed_t3_parked`
 
-T2B is build-authorized at re-dispatch commit `a74413a59`. Execute only the
-revalidated exact-15 no-commit V2 Work Order named by current authority, then return
-`COMPLETE_PENDING_INDEPENDENT_REVIEW` or `BLOCKED`. Latest closed numbered LHW
-wave: `LHW24`.
+No material work is currently authorized. T2B is `CLOSED_PASS_BOUNDED` at
+material commit `575f8f991`; its completion review is reviewer-accepted. T3
+may move only after fresh selection and source-verified release of its
+shift-operations P4-A1 worker/reviewer and protected-hash checkpoint. Latest
+closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
