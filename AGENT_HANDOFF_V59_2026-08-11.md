@@ -8,8 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Dispatch commit: `7e5c2b04f`
-- Session-sync commit: `2f02d8735`
+- Re-dispatch material commit: `a74413a59`
+- Session-sync base: `a74413a59`
 - Active mode: `active_continuity_read_cost_t2b_build_authorized`
 - Latest closed numbered LHW wave: `LHW24`
 - Public export: `DEFERRED_PRIVATE_ONLY`
@@ -19,8 +19,8 @@ Status: ACTIVE
 ## Startup Acknowledgment
 
 Startup acknowledged: current mode=`active_continuity_read_cost_t2b_build_authorized`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute
-exact-15 T2B Work Order without commit; parked checkpoint=T3 and all external
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the
+revalidated exact-15 T2B V2 Work Order without commit; parked checkpoint=T3 and all external
 effects.
 
 ## Current Mode
@@ -43,10 +43,10 @@ in the Work Order; independent review and later session closure remain separate.
 |---|---|
 | baselinePath | `docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T2B_INSTRUCTION_CARRIER_COMPACTION_2026-08-11.md` |
 | baselineSha256 | `4b0ff07df02ea3f972ebb3e5d603247dc6c34efa24f2281950c90f73d5189922` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T2B_INSTRUCTION_CARRIER_COMPACTION_2026-08-11.md` |
-| workOrderSha256 | `ccfef1645304b4a508c356d7518b9e3b442b92b3e5e339e8c748b4ba20366ab3` |
-| sourceBindingMatrix | `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2B_SOURCE_BINDING_MATRIX_2026-08-11.md` |
-| sourceBindingMatrixSha256 | `60f5a102710332a3db66303b6f42a135ee40153188680406275f0cb4966497fb` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T2B_INSTRUCTION_CARRIER_COMPACTION_V2_2026-08-11.md` |
+| workOrderSha256 | `02ac3079f63a434c43b751fb1d05307c7116a8dc46d9713deec566febb9440b2` |
+| sourceBindingMatrix | `docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2B_SOURCE_BINDING_MATRIX_V2_2026-08-11.md` |
+| sourceBindingMatrixSha256 | `68a80126f213a5ab1e621e607c3ae5a0abab88de879730da9a68573486906969` |
 
 ## Active Boundary
 
@@ -55,15 +55,19 @@ No T3, downstream migration, provider, live, public, or deployment work is open.
 
 ## Latest Work / Changes
 
-- T2B source map, GC-018, Work Order, and roadmap release are committed at
-  `7e5c2b04f` after pre-dispatch and pre-commit gates passed.
+- The prior worker return is accepted as `BLOCKED` because the V1 AGENTS
+  preimage pin became stale after the V59 rotation.
+- Revalidated Source Matrix V2, Work Order V2, and blocker evidence are
+  committed at `a74413a59` after 75/75 pre-dispatch and commit gates passed.
 - V58 is archived byte-identical and V59 is the sole active root handoff.
-- Current authority now binds the T2B baseline and Work Order exact hashes.
+- Current authority now binds the T2B baseline and V2 Work Order exact hashes.
 
 ## Next Allowed Move
 
-Run the Work Order pre-implementation gate from the clean post-sync HEAD, then
-implement exact-15 only under `WORKER_MUST_NOT_COMMIT`. Return exactly
+Run the V2 Work Order pre-implementation gate from the clean post-sync HEAD,
+confirm the AGENTS preimage `605b32534c7898117f0cbfd7747253243c342cf1619df02e96a4691507573855`, then
+implement exact-15 only under `WORKER_MUST_NOT_COMMIT`. Replace the accepted
+prior blocked return in place and return exactly
 `COMPLETE_PENDING_INDEPENDENT_REVIEW` or `BLOCKED` and stop.
 
 ## Worker Boundary
@@ -87,21 +91,20 @@ implement exact-15 only under `WORKER_MUST_NOT_COMMIT`. Return exactly
 
 Protected paths:
 
-- `AGENTS.md`
-- `AGENT_HANDOFF_V58_2026-08-11.md`
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/activeContinuityReadCostT2BDispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit T2B selection on 2026-08-11.
+Operator authorization: explicit delegation of full orchestrator/reviewer
+decision authority for T2B re-dispatch on 2026-08-11.
 
-Authorized guard-maintenance scope: rotate V58, open compact V59, bind current
-authority, and release only the exact-15 no-commit worker route.
+Authorized guard-maintenance scope: bind the revalidated V2 authority and
+release only the corrected exact-15 no-commit worker route without changing
+`AGENTS.md`.
 
 Rollback boundary: revert the exact session-sync manifest together; do not
 partially separate generated state from its source fragments.
@@ -110,17 +113,14 @@ partially separate generated state from its source fragments.
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: active routing, authority hashes, handoff rotation, source
-fragments, generated aggregate, and bootstrap must change together.
+Atomicity reason: active routing, V2 authority hashes, source fragments,
+generated aggregate, bootstrap, front door, and handoff must change together.
 
 Exact changed manifest:
 
-- `AGENTS.md`
-- `AGENT_HANDOFF_V58_2026-08-11.md`
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/activeContinuityReadCostT2BDispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
@@ -132,22 +132,22 @@ Exact changed manifest:
 |---|---|
 | Actor | dispatcher and session-sync steward |
 | Provider or surface | local private CVF Core workspace |
-| Session or invocation | `active-continuity-read-cost-t2b-dispatch-sync-2026-08-11` |
-| Working directory | repository root after dispatch commit `7e5c2b04f` |
+| Session or invocation | `active-continuity-read-cost-t2b-redispatch-sync-2026-08-11` |
+| Working directory | repository root after re-dispatch material commit `a74413a59` |
 | Command or tool surface | bounded session edits, state generator, local gates, Git |
-| Target paths | exact 10-path session-sync manifest |
-| Allowed scope source | operator T2B selection and accepted dispatch packet |
-| Before status evidence | clean worktree at `7e5c2b04f`; staged zero |
-| After status evidence | T2B build authorized; T3/external lanes parked |
+| Target paths | exact seven-path V2 session-sync manifest |
+| Allowed scope source | operator-delegated orchestrator/reviewer authority and accepted V2 dispatch packet |
+| Before status evidence | clean worktree at `a74413a59`; staged zero |
+| After status evidence | revalidated T2B V2 build authorized; T3/external lanes parked |
 | Diff evidence | exact status/name-status, generator and active-session gates |
 | Approval boundary | exact-15 worker release only |
 | Claim boundary | no implementation, downstream mutation, external call, or push |
 | Agent type | dispatcher and session-sync steward |
-| Invocation ID | `active-continuity-read-cost-t2b-dispatch-sync-2026-08-11` |
-| Expected manifest | exact 10 paths listed above |
-| Actual changed set | same exact 10 paths before commit |
+| Invocation ID | `active-continuity-read-cost-t2b-redispatch-sync-2026-08-11` |
+| Expected manifest | exact seven paths listed above |
+| Actual changed set | same exact seven paths before commit |
 | Manifest delta | MATCH |
-| Deletion or rename disposition | V58 root removal paired with byte-identical archive |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in V2 session sync |
 
 ## Public Export Disposition
 

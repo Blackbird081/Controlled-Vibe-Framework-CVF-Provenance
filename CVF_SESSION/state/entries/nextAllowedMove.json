@@ -1,5 +1,5 @@
 {
   "stateOrder": 2141,
   "stateKey": "nextAllowedMove",
-  "value": "T2B instruction-carrier compaction is BUILD_AUTHORIZED under dispatch commit 7e5c2b04f and the exact-hash current authority. The implementation worker must run pre-implementation from the clean post-sync HEAD, change exact 15 Work Order paths, make no commit, and return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED. T3, provider/network/live, existing downstream mutation, public-sync, push, deployment, production, and every other lane remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "T2B instruction-carrier compaction is BUILD_AUTHORIZED under re-dispatch commit a74413a59 and the exact-hash V2 current authority. The implementation worker must run pre-implementation from the clean post-sync HEAD, confirm AGENTS raw-filesystem SHA-256 605b32534c7898117f0cbfd7747253243c342cf1619df02e96a4691507573855, replace the accepted prior BLOCKED return in place, change exact 15 Work Order paths, make no commit, and return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED. T3, provider/network/live, existing downstream mutation, public-sync, push, deployment, production, and every other lane remain parked. LHW24 remains the latest closed numbered LHW wave."
 }

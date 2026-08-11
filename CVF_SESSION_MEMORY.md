@@ -45,7 +45,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`active_continuity_read_cost_t2b_build_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact-15 T2B Work Order without commit; parked checkpoint=T3 and all external effects.
+Startup acknowledged: current mode=`active_continuity_read_cost_t2b_build_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the revalidated exact-15 T2B V2 Work Order without commit; parked checkpoint=T3 and all external effects.
 
 ## Current Mode
 
@@ -58,8 +58,8 @@ Current mode: `active_continuity_read_cost_t2b_build_authorized`
 
 Mode: `active_continuity_read_cost_t2b_build_authorized`
 
-T2B is build-authorized at dispatch commit `7e5c2b04f`. Execute only the
-exact-15 no-commit Work Order named by current authority, then return
+T2B is build-authorized at re-dispatch commit `a74413a59`. Execute only the
+revalidated exact-15 no-commit V2 Work Order named by current authority, then return
 `COMPLETE_PENDING_INDEPENDENT_REVIEW` or `BLOCKED`. Latest closed numbered LHW
 wave: `LHW24`.
 
