@@ -14,7 +14,7 @@ history/state aggregate is a targeted lookup, not a default startup step:
 1. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` (compact current
    facts: current mode, active handoff, next allowed move)
 2. this front door
-3. `AGENT_HANDOFF_V58_2026-08-11.md`
+3. `AGENT_HANDOFF_V59_2026-08-11.md`
 4. only the current-authority paths those two surfaces name for the task
 5. `CVF_SESSION/ACTIVE_SESSION_STATE.json` only as a targeted lookup, when a
    current fact above is missing, contradictory, or the task explicitly
@@ -34,45 +34,45 @@ artifact.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V58_2026-08-11.md` |
+| Active handoff | `AGENT_HANDOFF_V59_2026-08-11.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
-| Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V57_2026-08-10.md` |
+| Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority (baseline/work order + hashes) | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`active_continuity_read_cost_t2a_closed_parked`; active handoff=AGENT_HANDOFF_V58_2026-08-11.md; next allowed move=no active implementation; parked checkpoint=T2B/T3 and all external effects.
+Startup acknowledged: current mode=`active_continuity_read_cost_t2b_build_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact-15 T2B Work Order without commit; parked checkpoint=T3 and all external effects.
 
 ## Current Mode
 
-`active_continuity_read_cost_t2a_closed_parked`
+`active_continuity_read_cost_t2b_build_authorized`
 
-Current mode marker: `active_continuity_read_cost_t2a_closed_parked`
-Current mode: `active_continuity_read_cost_t2a_closed_parked`
+Current mode marker: `active_continuity_read_cost_t2b_build_authorized`
+Current mode: `active_continuity_read_cost_t2b_build_authorized`
 
 ## Next Allowed Move
 
-Mode: `active_continuity_read_cost_t2a_closed_parked`
+Mode: `active_continuity_read_cost_t2b_build_authorized`
 
-T2A is `CLOSED_PASS_BOUNDED` at `fd4d61e73`. No implementation is active.
-T2B and T3 remain parked and each require fresh operator selection, GC-018,
-and Work Order. Latest closed numbered LHW wave: `LHW24`.
+T2B is build-authorized at dispatch commit `7e5c2b04f`. Execute only the
+exact-15 no-commit Work Order named by current authority, then return
+`COMPLETE_PENDING_INDEPENDENT_REVIEW` or `BLOCKED`. Latest closed numbered LHW
+wave: `LHW24`.
 
 ## Parked Checkpoints
 
-T2B instruction-carrier compaction, T3 downstream migration, and all
-provider/network/live, downstream mutation, public-sync, push, deployment, and
-production work remain parked pending fresh operator authority.
+T3 downstream migration and all provider/network/live, existing downstream
+mutation, public-sync, push, deployment, and production work remain parked.
 
 ## Targeted Lookup Rules
 
 - For complete canonical state, read `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
-- For prior T2A dispatch/authority narrative, read
-  `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V57_2026-08-10.md`; do not
+- For prior T2A closure narrative, read
+  `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`; do not
   restate it here.
 - For pre-2026-08-11 front-door history, read the front-door archive above.
 - For guard/task orientation, read

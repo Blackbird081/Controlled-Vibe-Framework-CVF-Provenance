@@ -1,5 +1,5 @@
 {
   "stateOrder": 2141,
   "stateKey": "nextAllowedMove",
-  "value": "T2A is CLOSED_PASS_BOUNDED at reviewer-owned material commit fd4d61e73 under docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2A_COMPLETION_REVIEW_2026-08-11.md. No implementation lane is active. T2B instruction-carrier compaction and T3 downstream migration remain parked and require fresh operator selection plus their own GC-018 and Work Order. Provider/network/live, downstream mutation, public-sync, push, deployment, production, and every other lane remain parked. LHW24 remains the latest closed numbered LHW wave."
+  "value": "T2B instruction-carrier compaction is BUILD_AUTHORIZED under dispatch commit 7e5c2b04f and the exact-hash current authority. The implementation worker must run pre-implementation from the clean post-sync HEAD, change exact 15 Work Order paths, make no commit, and return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED. T3, provider/network/live, existing downstream mutation, public-sync, push, deployment, production, and every other lane remain parked. LHW24 remains the latest closed numbered LHW wave."
 }
