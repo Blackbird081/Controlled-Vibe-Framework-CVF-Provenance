@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2161,
+  "stateKey": "lpci1RefT1aPublicSafeBranchDeployBindingAmendment1Dispatch20260811",
+  "value": "LPCI1-REF-T1A Amendment 1 authority committed at cfdf07794564d8679ecd6f1d25005701468ee5e8. Preserve the exact inherited 23-path public candidate at branch HEAD 2103a38fda01ee827e9fc6c3be38a824fa5d54ad and project only the exact 18-path prerequisite delta from final source tree e82ab11dc, yielding exact union 41. WORKER_MUST_NOT_COMMIT. Network dependency fetch, push, deploy, provider/store calls, hosted smoke, secrets, production and public main remain forbidden pending fresh independent review."
+}
