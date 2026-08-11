@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return",
+  "currentMode": "lpci1_ref_t1a_blocked_pending_prerequisite_lineage_amendment",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute LPCI1-REF-T1A from committed authority 61a3cb3bcc07285ca55921d93fbcec588458ec58. The delegated worker may prepare exactly 23 public-safe paths on local public-sync branch lpci1-ref-staging from target base 2103a38fda01ee827e9fc6c3be38a824fa5d54ad and create the exact private worker return. WORKER_MUST_NOT_COMMIT. Push, deploy, provider/store calls, hosted smoke, secrets, production and public main remain forbidden pending independent review. Latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and independently gate Amendment 1 for LPCI1-REF-T1A after committed blocker evidence 4cb250a9650c10f12d7a7ea794e0197e4f939c72. Preserve the exact 23-path local public candidate and authorize only the exact 18-path accepted prerequisite delta needed for an exact union-41 candidate. No worker execution resumes until amended authority is committed and session-synced. Commit, push, deploy, provider/store calls, hosted smoke, secrets, production and public main remain forbidden. Latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

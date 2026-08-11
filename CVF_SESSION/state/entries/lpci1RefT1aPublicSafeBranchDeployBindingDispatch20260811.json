@@ -1,5 +1,5 @@
 {
   "stateOrder": 2160,
   "stateKey": "lpci1RefT1aPublicSafeBranchDeployBindingDispatch20260811",
-  "value": "LPCI1-REF-T1A dispatch authority committed at 61a3cb3bcc07285ca55921d93fbcec588458ec58. Private accepted source is e82ab11dc; public-sync target is clean main at 2103a38fda01ee827e9fc6c3be38a824fa5d54ad; Netlify additional branch context lpci1-ref-staging was saved by the operator. Worker authority is exact 23-path local projection plus one private return with no commit, push, deploy, hosted/provider/store request, secret read or production mutation."
+  "value": "LPCI1-REF-T1A original authority 61a3cb3bcc07285ca55921d93fbcec588458ec58 is blocked by committed independent evidence 4cb250a9650c10f12d7a7ea794e0197e4f939c72. The exact 23-path local public candidate remains byte-faithful at branch HEAD 2103a38fda01ee827e9fc6c3be38a824fa5d54ad with staging empty, but mandatory cvf-web tests/typecheck exposed omitted accepted prerequisite lineage. Next authority may preserve those 23 paths and add only the verified 18-path delta for exact union 41. No commit, push, deploy, hosted/provider/store request, secret read or production mutation is authorized."
 }

@@ -45,32 +45,32 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed LPCI1-REF-T1A exact local staging preparation; parked checkpoint=push, deploy, hosted/provider/store, secrets, production, and public `main` remain forbidden pending independent review.
+Startup acknowledged: current mode=`lpci1_ref_t1a_blocked_pending_prerequisite_lineage_amendment`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and gate exact union-41 Amendment 1; parked checkpoint=worker resume, commit, push, deploy, hosted/provider/store, secrets, production, and public `main` remain forbidden pending amended authority.
 
 ## Current Mode
 
-`lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
+`lpci1_ref_t1a_blocked_pending_prerequisite_lineage_amendment`
 
-Current mode marker: `lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
-Current mode: `lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
-Previous mode: `shift_operations_core_pin_reconciliation_closed_bounded_parked`
+Current mode marker: `lpci1_ref_t1a_blocked_pending_prerequisite_lineage_amendment`
+Current mode: `lpci1_ref_t1a_blocked_pending_prerequisite_lineage_amendment`
+Previous mode: `lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
+Mode: `lpci1_ref_t1a_blocked_pending_prerequisite_lineage_amendment`
 
-Execute committed authority `61a3cb3bcc07285ca55921d93fbcec588458ec58`.
-The delegated worker may prepare exactly 23 public-safe paths on local branch
-`lpci1-ref-staging` from public base `2103a38f...` and create the exact private
-worker return. The worker must not commit. Push, deploy, hosted/provider/store,
-secrets, production, and public `main` remain parked pending review.
+Author and gate Amendment 1 from committed blocker `4cb250a9650c10f12d7a7ea794e0197e4f939c72`.
+Preserve the exact 23-path local candidate and authorize only the verified
+18-path prerequisite delta for exact union 41. Worker resume, commit, push,
+deploy, hosted/provider/store, secrets, production, and public `main` remain
+parked until amended authority is committed and session-synced.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-LPCI1-REF-T1A worker return is the active checkpoint. Public commit/push,
-Netlify branch deployment, hosted smoke, provider/store calls, secrets,
-production, and public `main` remain parked.
+LPCI1-REF-T1A Amendment 1 dispatch is the active checkpoint. Worker resume,
+public commit/push, Netlify deployment, hosted smoke, provider/store calls,
+secrets, production, and public `main` remain parked.
 
 ## Targeted Lookup Rules
 

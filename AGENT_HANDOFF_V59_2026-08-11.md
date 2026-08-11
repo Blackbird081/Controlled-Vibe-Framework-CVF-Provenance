@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - LPCI1-REF T1A Public-Safe Staging Dispatched
+# CVF Agent Handoff V59 - LPCI1-REF T1A Blocked Pending Amendment 1
 
 Memory class: active-handoff
 
@@ -22,30 +22,30 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
+  `lpci1_ref_t1a_blocked_pending_prerequisite_lineage_amendment`
 - LPCI1-REF-T1A dispatch authority:
   `61a3cb3bcc07285ca55921d93fbcec588458ec58`
-- Latest closed numbered LHW wave: `LHW24`
-- Public export: `DEFERRED_PRIVATE_ONLY`
+- LPCI1-REF-T1A blocked review commit:
+  `4cb250a9650c10f12d7a7ea794e0197e4f939c72`
+- Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified):
   `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact
-local staging preparation under authority `61a3cb3bc`; parked checkpoint=push,
-deploy, hosted/provider/store, secrets, production, and public `main` pending
-independent review.
+Startup acknowledged: current mode=`lpci1_ref_t1a_blocked_pending_prerequisite_lineage_amendment`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and
+gate exact union-41 Amendment 1; parked checkpoint=worker resume, commit, push,
+deploy, hosted/provider/store, secrets, production, and public `main`.
 
 ## Current Mode
 
-`lpci1_ref_t1a_public_safe_branch_deploy_binding_dispatched_pending_worker_return`
+`lpci1_ref_t1a_blocked_pending_prerequisite_lineage_amendment`
 
 ## Purpose
 
-Route committed LPCI1-REF-T1A local staging preparation while preserving the
-accepted SOPR-CP1 closure and keeping every external effect parked.
+Record the deterministic blocker and route exact prerequisite-lineage
+Amendment 1 while keeping worker execution and every external effect parked.
 
 ## Current Authority
 
@@ -91,15 +91,15 @@ accepted SOPR-CP1 closure and keeping every external effect parked.
 
 ## Next Allowed Move
 
-Execute LPCI1-REF-T1A under authority `61a3cb3bc`: prepare exact 23 public-safe
-paths on local public-sync branch `lpci1-ref-staging` from `2103a38f...` and
-create the exact private worker return. Worker commit, push, deploy, hosted
-smoke, provider/store calls, secrets, production, and public `main` are parked.
+Author and gate Amendment 1 after blocker commit `4cb250a96`: preserve the
+exact 23-path public candidate and authorize only the verified 18-path delta
+for exact union 41. Worker resume, commit, push, deploy, hosted smoke,
+provider/store, secrets, production, and public `main` remain parked.
 
 ## Active Boundary
 
-- Only the exact 23-path local public-sync projection and one private worker
-  return are open. P4-A, P4-A2, unrelated product/runtime, provider/live,
+- Only Amendment 1 authority authoring for the exact union-41 candidate is
+  open. P4-A, P4-A2, unrelated product/runtime, provider/live,
   RAG/vector, deployment, push, production, and every other lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
@@ -107,8 +107,8 @@ smoke, provider/store calls, secrets, production, and public `main` are parked.
 
 ## Worker Return Target
 
-Private Core worker return:
-`docs/reviews/CVF_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_WORKER_RETURN_2026-08-11.md`.
+Private Core Amendment return after committed dispatch:
+`docs/reviews/CVF_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_1_WORKER_RETURN_2026-08-11.md`.
 
 ## Core Guard Self-Protection Authorization
 
