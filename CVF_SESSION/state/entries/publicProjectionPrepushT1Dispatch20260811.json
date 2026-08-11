@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2164,
+  "stateKey": "publicProjectionPrepushT1Dispatch20260811",
+  "value": "PUBLIC-PROJECTION-PREPUSH-T1 authority is committed at dfffaa982f446a6118b5c868eba6df09ba27b7a4. The Public Projection Release Steward owns the new standard, policy registry, runner and focused tests required to reopen T0 BLOCKED_NO_OWNER. Worker owns exactly those four implementation paths plus its return and must not commit. Public candidate 021f8b852 remains clean and read-only. Push, deploy, browser/provider/store, secrets, public main and production remain forbidden pending independent acceptance."
+}

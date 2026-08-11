@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - LPCI1-REF T1A Candidate Committed
+# CVF Agent Handoff V59 - Public Projection Pre-Push T1 Dispatched
 
 Memory class: active-handoff
 
@@ -22,7 +22,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority`
+  `public_projection_prepush_t1_dispatched_pending_worker_return`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -31,19 +31,19 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=prepare
-separately governed public push and Netlify branch-deploy proof; parked
-checkpoint=push, deploy, hosted/provider/store, secrets, production promotion,
-and public `main`.
+Startup acknowledged: current mode=`public_projection_prepush_t1_dispatched_pending_worker_return`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute
+committed public-projection pre-push T1 authority; parked checkpoint=public
+mutation, push, deploy, browser/provider/store, secrets, production, and public
+`main`.
 
 ## Current Mode
 
-`lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority`
+`public_projection_prepush_t1_dispatched_pending_worker_return`
 
 ## Purpose
 
-Route committed source-first one-path Amendment 2.
+Route committed public-projection pre-push owner/profile implementation.
 
 ## Current Authority
 
@@ -57,6 +57,9 @@ Route committed source-first one-path Amendment 2.
 | workOrderSha256 | `8a990d4279e3dfaf3b649aeb5d4addd460cad5740c60ded544ba64fb10ad1a70` |
 | targetExecutionBaseHead | `2103a38fda01ee827e9fc6c3be38a824fa5d54ad` |
 | acceptedSourceMaterial | `e82ab11dc` |
+| T1 authorityCommit | `dfffaa982f446a6118b5c868eba6df09ba27b7a4` |
+| T1 baselinePath | `docs/baselines/CVF_GC018_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_2026-08-11.md` |
+| T1 workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_2026-08-11.md` |
 
 ## Closure Evidence
 
@@ -102,27 +105,26 @@ Route committed source-first one-path Amendment 2.
 
 ## Next Allowed Move
 
-Prepare a separately governed push and Netlify branch-deploy proof tranche
-from clean `lpci1-ref-staging@021f8b852`. Verify repository boundary, remote,
-branch protection, deploy context, and secret-safe environment requirements
-before external-action authority. Public `main`, production promotion, and
-unrelated source changes remain forbidden.
+Execute `PUBLIC-PROJECTION-PREPUSH-T1` from authority `dfffaa982`. Worker owns
+the new standard, policy, runner, focused tests, and return only; public
+candidate `021f8b852` is read-only. WORKER_MUST_NOT_COMMIT. Push, deploy,
+browser/provider/store, secrets, production, and public `main` remain parked.
 
 ## Active Boundary
 
-- Amendment 2 implementation and both local material commits are closed.
-  P4-A, P4-A2, unrelated product/runtime, provider/live, RAG/vector, public
-  push, Netlify deployment, production, and every other lane are parked.
+- T1 local gate implementation is the only open lane. Amendment 2 and both
+  candidate commits remain closed and immutable. Public push, Netlify deploy,
+  production, and every unrelated lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
 - T3 stays closed and every non-SOPR-CP1 downstream lane remains parked.
 
 ## Worker Return Target
 
-Private Core Amendment return after committed dispatch:
-`docs/reviews/CVF_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_2_WORKER_RETURN_2026-08-11.md`.
+Private Core T1 return after committed dispatch:
+`docs/reviews/CVF_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_WORKER_RETURN_2026-08-11.md`.
 
-## Core Guard Self-Protection Authorization - LPCI1-REF-T1A Amendment 2 Closure Sync
+## Core Guard Self-Protection Authorization - Public Projection Pre-Push T1 Dispatch Sync
 
 Protected paths:
 
@@ -130,25 +132,24 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/lpci1RefT1aPublicSafeBranchDeployBindingAmendment2Closure20260811.json`
+- `CVF_SESSION/state/entries/publicProjectionPrepushT1Dispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: delegated orchestrator/reviewer authority and `next`
 on 2026-08-11.
 
-Authorized guard-maintenance scope: record independently accepted Amendment 2,
-the exact private/public local commits, the clean candidate state, and the
-parked external-action boundary.
+Authorized guard-maintenance scope: record committed T1 authority, exact
+worker-owned paths, read-only public candidate, and parked external actions.
 
 Rollback boundary: revert the exact seven-path session-sync manifest together;
 do not separate generated state from source fragments.
 
-## Mixed Protected-Path Atomicity Authorization - LPCI1-REF-T1A Amendment 2 Closure Sync
+## Mixed Protected-Path Atomicity Authorization - Public Projection Pre-Push T1 Dispatch Sync
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: mode, next move, closure entry, generated aggregate,
+Atomicity reason: mode, authority, next move, dispatch entry, generated aggregate,
 bootstrap, front door, and handoff must change together.
 
 Exact changed manifest:
@@ -157,7 +158,7 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/lpci1RefT1aPublicSafeBranchDeployBindingAmendment2Closure20260811.json`
+- `CVF_SESSION/state/entries/publicProjectionPrepushT1Dispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
@@ -167,18 +168,18 @@ Exact changed manifest:
 |---|---|
 | Actor | orchestrator/reviewer and session-sync steward |
 | Provider or surface | local private Core and public-sync clone |
-| Session or invocation | `lpci1-ref-t1a-amendment-2-closure-sync-20260811` |
-| Working directory | Core root after material commit `492e11eab` |
+| Session or invocation | `public-projection-prepush-t1-dispatch-sync-20260811` |
+| Working directory | Core root after authority commit `dfffaa982` |
 | Command or tool surface | bounded session edits, state generator, local gates, Git |
-| Target paths | exact seven-path Amendment 2 closure-sync manifest |
-| Allowed scope source | operator continuation and Amendment 2 reviewer closure conversion |
-| Before status evidence | Core clean at `492e11eab`; public clean at `021f8b852` |
-| After status evidence | local candidate committed; external actions parked |
+| Target paths | exact seven-path T1 dispatch-sync manifest |
+| Allowed scope source | operator continuation and committed T1 authority |
+| Before status evidence | Core clean at `dfffaa982`; public clean at `021f8b852` |
+| After status evidence | T1 dispatched; public candidate remains read-only |
 | Diff evidence | exact status/name-status, generator, active-session and commit-steward gates |
 | Approval boundary | exact seven-path closure pointer sync only |
 | Claim boundary | no provider/live/network/deploy/push/production action |
 | Agent type | orchestrator and session-sync steward |
-| Invocation ID | `lpci1-ref-t1a-amendment-2-closure-sync-20260811` |
+| Invocation ID | `public-projection-prepush-t1-dispatch-sync-20260811` |
 | Expected manifest | exact seven paths listed above |
 | Actual changed set | exact seven paths listed above |
 | Manifest delta | MATCH |
@@ -188,12 +189,12 @@ Exact changed manifest:
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: the public candidate is locally committed on `lpci1-ref-staging`, but
-no remote push, deployment, hosted receipt, or exported artifact exists yet.
+Reason: T1 is private provenance gate work; public candidate remains locally
+committed but unpushed and undeployed.
 
 ## Claim Boundary
 
-This handoff records bounded downstream SOPR-CP1/A1 closure and the locally
-committed LPCI1-REF-T1A candidate. It does not claim remote freshness, hosted
-runtime behavior, provider behavior, public availability, deployment, push,
-release, or production readiness.
+This handoff records committed T1 dispatch authority only. It does not claim
+gate implementation, remote freshness, hosted runtime behavior, provider
+behavior, public availability, deployment, push, release, or production
+readiness.

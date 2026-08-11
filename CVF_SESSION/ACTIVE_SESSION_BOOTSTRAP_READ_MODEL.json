@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority",
+  "currentMode": "public_projection_prepush_t1_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Prepare the separately governed public push and Netlify branch-deploy proof tranche from clean lpci1-ref-staging commit 021f8b852afc245a6383177dd69bf56caf488b02. First verify repository boundary, remote, branch protection, deploy context and secret-safe environment requirements; then obtain or record explicit external-action authority before push or deploy. Public main, production promotion, secret disclosure and unrelated source changes remain forbidden. Latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute committed PUBLIC-PROJECTION-PREPUSH-T1 authority dfffaa982. Implement only the new public pre-push standard, policy JSON, runner, focused tests and worker return; recompute the four T0 public defect families against read-only candidate 021f8b852. WORKER_MUST_NOT_COMMIT. Public mutation, push, deploy, browser/provider/store, secrets, network install, public main and production remain forbidden pending independent review. Latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_2_2026-08-11.md",
-    "baselineSha256": "45139dfa07f412008c3579fdba2d21dac39951819446dbdfb2c8d4e3c2549373",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_REF_T1A_PUBLIC_SAFE_BRANCH_DEPLOY_BINDING_AMENDMENT_2_2026-08-11.md",
-    "workOrderSha256": "8a990d4279e3dfaf3b649aeb5d4addd460cad5740c60ded544ba64fb10ad1a70"
+    "baselinePath": "docs/baselines/CVF_GC018_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_2026-08-11.md",
+    "baselineSha256": "ee587e5a0261e4a91a494239cead951a16c088bf4524e50f4e053a1f9e25b907",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_2026-08-11.md",
+    "workOrderSha256": "139a651226a8b1e3bc10fe06f18fec7d0867cbae6d8fcd802560c128bd966b75"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
