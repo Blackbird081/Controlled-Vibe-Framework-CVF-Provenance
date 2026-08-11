@@ -30,7 +30,7 @@ debt cannot grow and does not license reading full history by default.
 
 The current active handoff in that registry is:
 
-`AGENT_HANDOFF_V57_2026-08-10.md`
+`AGENT_HANDOFF_V58_2026-08-11.md`
 
 Historical handoffs are archived under:
 

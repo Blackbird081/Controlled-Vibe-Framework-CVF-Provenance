@@ -3,28 +3,5 @@
   "status": "ACTIVE_MIGRATION_DEBT",
   "expiresOn": "2026-08-17",
   "removalAction": "REMOVE_ROW_IN_T2_AFTER_SURFACE_COMPACTION",
-  "entries": [
-    {
-      "path": "CVF_SESSION_MEMORY.md",
-      "sha256": "cd147fa660cffd391b8d490c007b32003512735bfde0df6bf8d5fce62c40a73d",
-      "lineCount": 527,
-      "byteCount": 96940,
-      "approvedMaxLines": 527,
-      "approvedMaxBytes": 96940,
-      "targetMaxLines": 120,
-      "targetMaxBytes": 20480,
-      "enabled": true
-    },
-    {
-      "path": "AGENT_HANDOFF_V57_2026-08-10.md",
-      "sha256": "0effedfdf60df0126d39ea9ed041eb781049c0cadb061fa94e475a1191d59f93",
-      "lineCount": 969,
-      "byteCount": 49365,
-      "approvedMaxLines": 969,
-      "approvedMaxBytes": 49365,
-      "targetMaxLines": 220,
-      "targetMaxBytes": 32768,
-      "enabled": true
-    }
-  ]
+  "entries": []
 }

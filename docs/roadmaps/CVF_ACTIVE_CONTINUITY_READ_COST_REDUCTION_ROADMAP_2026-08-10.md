@@ -2,7 +2,7 @@
 
 Memory class: ACTIVE_ROADMAP
 
-Status: T1_PASS_T2A_DISPATCH_PACKET_AUTHORIZED
+Status: T1_T2A_PASS_T2B_T3_PARKED
 
 Date: 2026-08-10
 
@@ -169,6 +169,20 @@ must support an explicit migration disposition so existing debt is measured
 without silently declaring it compliant.
 
 ### T2A - CVF Core active-surface compaction and handoff rotation
+
+Status: `CLOSED_PASS_BOUNDED` at reviewer-owned material commit `fd4d61e73`.
+Completion evidence:
+`docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2A_COMPLETION_REVIEW_2026-08-11.md`.
+The accepted exact-18 includes the operator-authorized legacy test-fixture
+path. T2B and T3 remain parked pending fresh selection.
+
+## Public Export Disposition
+
+`DEFERRED_PRIVATE_ONLY`
+
+Reason: this T2A closure remains private provenance evidence. A later
+public-sync batch requires separate operator authority and repository-boundary
+proof.
 
 After T1 acceptance:
 

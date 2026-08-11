@@ -1,11 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "active_continuity_read_cost_t2a_dispatched_pending_worker",
-  "activeHandoff": "AGENT_HANDOFF_V57_2026-08-10.md",
-  "nextAllowedMove": "Execute only T2A under docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T2A_CORE_SURFACE_COMPACTION_2026-08-11.md at dispatch commit f26c5d84a864004a76c8fabcd057fc10e3e0a67f. The no-commit worker owns exact-17 and must return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED. T2B/T3, provider/network/live, downstream mutation, public-sync, push, deployment, production, and every other lane remain parked. LHW24 remains the latest closed numbered LHW wave.",
+  "currentMode": "active_continuity_read_cost_t2a_closed_parked",
+  "activeHandoff": "AGENT_HANDOFF_V58_2026-08-11.md",
+  "nextAllowedMove": "T2A is CLOSED_PASS_BOUNDED at reviewer-owned material commit fd4d61e73 under docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2A_COMPLETION_REVIEW_2026-08-11.md. No implementation lane is active. T2B instruction-carrier compaction and T3 downstream migration remain parked and require fresh operator selection plus their own GC-018 and Work Order. Provider/network/live, downstream mutation, public-sync, push, deployment, production, and every other lane remain parked. LHW24 remains the latest closed numbered LHW wave.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
+  "currentAuthority": {
+    "baselinePath": "docs/baselines/CVF_GC018_ACTIVE_CONTINUITY_READ_COST_T2A_CORE_SURFACE_COMPACTION_2026-08-11.md",
+    "baselineSha256": "bfe630379886f3a7f4abfd7f9f79caa6749a70d44fe46bd7c4d0064ec4296cf1",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACTIVE_CONTINUITY_READ_COST_T2A_CORE_SURFACE_COMPACTION_2026-08-11.md",
+    "workOrderSha256": "3786355ea00f3ebd6b4d8d08c42ffb19ca5283a55880728b4ee34689ee94c630"
+  },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
