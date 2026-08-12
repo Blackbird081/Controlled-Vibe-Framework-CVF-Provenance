@@ -1,5 +1,5 @@
 {
   "stateOrder": 2141,
   "stateKey": "nextAllowedMove",
-  "value": "PUBLIC-PROJECTION-PREPUSH-T1 Amendment 2 is closed at 0247f734771857527a7066017563a40b088d1d48. Await explicit operator authority for any public push tranche. Before any push, read the critical repository boundary, verify remotes, run push-readiness preview and the canonical pre-push gate against the exact committed range. Public mutation, push, deploy, browser/provider/store, secrets, public main and production remain parked. Latest closed numbered LHW wave remains LHW24."
+  "value": "Public branch lpci1-ref-staging was pushed to GitHub at 021f8b852afc245a6383177dd69bf56caf488b02 after the canonical public-projection gate returned compliant true with zero failures and 7/7 external commands PASS. LPCI1 Web is parked under REUSE_BASELINE_DELTA_ONLY at private material commit 8791b9b23. The next move is operator selection of a new roadmap; Netlify deployment, merge to public main, provider/store/secrets, hosted smoke and production remain parked. Latest closed numbered LHW wave remains LHW24."
 }

@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Public Projection Pre-Push T1 Closed
+# CVF Agent Handoff V59 - Public Projection Staging Branch Pushed
 
 Memory class: active-handoff
 
@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Current Core HEAD marker:
-  `0247f734771857527a7066017563a40b088d1d48`
+  `8791b9b23`
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
 - SOPR-CP1 dispatch authority commit:
@@ -24,7 +24,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `public_projection_prepush_t1_closed_pending_push_authority`
+  `public_projection_staging_branch_pushed_deploy_parked`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -33,15 +33,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`public_projection_prepush_t1_closed_pending_push_authority`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit
-operator authority for any public push tranche; parked checkpoint=public
-mutation, push, deploy, browser/provider/store, secrets, production, and public
-`main`.
+Startup acknowledged: current mode=`public_projection_staging_branch_pushed_deploy_parked`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator
+selection of a new roadmap; parked checkpoint=public `main` merge, deploy,
+browser/provider/store, secrets, hosted smoke, and production.
 
 ## Current Mode
 
-`public_projection_prepush_t1_closed_pending_push_authority`
+`public_projection_staging_branch_pushed_deploy_parked`
 
 ## Purpose
 
@@ -117,17 +116,18 @@ pre-push owner/profile implementation.
 
 ## Next Allowed Move
 
-Await explicit operator authority for any public push tranche. Before a push,
-read the critical repository boundary, verify remotes, run push-readiness
-preview, and run the canonical pre-push gate against the exact committed
-range. Public candidate `021f8b852` remains read-only. Push, deploy,
-browser/provider/store, secrets, production, and public `main` remain parked.
+Operator selection of a new roadmap. Public candidate `021f8b852` is published
+as `origin/lpci1-ref-staging`; no merge to public `main` or deploy occurred.
+LPCI1 Web remains parked under `REUSE_BASELINE_DELTA_ONLY`. Deploy,
+browser/provider/store, secrets, hosted smoke, production, and public `main`
+merge remain parked.
 
 ## Active Boundary
 
-- T1 Amendment 2 is closed at `0247f7347`. LPCI1 Amendment 2 and both
-  candidate commits remain closed and immutable. Public push, Netlify deploy,
-  production, and every unrelated lane are parked.
+- T1 Amendment 2 is closed at `0247f7347`; LPCI1 Web parking baseline is
+  committed at `8791b9b23`. Candidate `021f8b852` is pushed only to
+  `lpci1-ref-staging`. Public `main`, Netlify deploy, production, and every
+  unrelated lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
 - T3 stays closed and every non-SOPR-CP1 downstream lane remains parked.
@@ -137,7 +137,20 @@ browser/provider/store, secrets, production, and public `main` remain parked.
 Private Core T1 return after committed dispatch:
 `docs/reviews/CVF_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_WORKER_RETURN_2026-08-11.md`.
 
-## Core Guard Self-Protection Authorization - Public Projection Pre-Push T1 Dispatch Sync
+Prior pre-push dispatch-sync authorization and operation trace remain preserved
+in Git history through session-sync commit `0b1046dfc`; they are omitted from
+this compact active handoff after the public staging push superseded that mode.
+
+## Public Export Disposition
+
+EXPORTED
+
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+Public commit: `021f8b852afc245a6383177dd69bf56caf488b02`.
+Public artifact path: branch `lpci1-ref-staging`, exact authorized 41-path
+candidate. The private gate and continuity artifacts remain private-only.
+
+## Core Guard Self-Protection Authorization - Public Staging Push Session Sync
 
 Protected paths:
 
@@ -145,75 +158,22 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/publicProjectionPrepushT1Dispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION_MEMORY.md`
-- `governance/compat/run_public_projection_pre_push_gate.py`
-- `governance/compat/test_run_public_projection_pre_push_gate.py`
-
-Operator authorization: delegated orchestrator/reviewer authority and `next`
-on 2026-08-11.
-
-Authorized guard-maintenance scope: record committed T1 Amendment 2 authority
-and execution base, exact seven worker-owned paths, read-only public candidate,
-and parked external actions. The runner and test are listed because the gate
-sees their inherited untracked preimages; this session-sync batch does not edit
-them and grants no implementation authority beyond the committed Amendment 2
-work order.
-
-Rollback boundary: revert the exact seven-path session-sync manifest together;
-do not separate generated state from source fragments.
-
-## Mixed Protected-Path Atomicity Authorization - Public Projection Pre-Push T1 Dispatch Sync
-
-Disposition: AUTHORIZED_EXACT_MANIFEST
-
-Atomicity reason: mode, authority, next move, dispatch entry, generated aggregate,
-bootstrap, front door, and handoff must change together.
-
-Exact changed manifest:
-
-- `AGENT_HANDOFF_V59_2026-08-11.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/publicProjectionPrepushT1Dispatch20260811.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/publicProjectionStagingPush20260812.json`
 - `CVF_SESSION_MEMORY.md`
 
-## Agent Operation Trace Block
+Operator authorization: explicit instruction on 2026-08-12 to commit, clean
+the worktree, and push to GitHub before the next roadmap.
 
-| Field | Evidence |
-|---|---|
-| Actor | orchestrator/reviewer and session-sync steward |
-| Provider or surface | local private Core and public-sync clone |
-| Session or invocation | `public-projection-prepush-t1-dispatch-sync-20260811` |
-| Working directory | Core root after Amendment 2 authority commit `8bbbd8622` |
-| Command or tool surface | bounded session edits, state generator, local gates, Git |
-| Target paths | exact seven-path T1 dispatch-sync manifest |
-| Allowed scope source | operator continuation and committed T1 authority |
-| Before status evidence | Core clean at `dfffaa982`; public clean at `021f8b852` |
-| After status evidence | T1 dispatched; public candidate remains read-only |
-| Diff evidence | exact status/name-status, generator, active-session and commit-steward gates |
-| Approval boundary | exact seven-path closure pointer sync only |
-| Claim boundary | no provider/live/network/deploy/push/production action |
-| Agent type | orchestrator and session-sync steward |
-| Invocation ID | `public-projection-prepush-t1-dispatch-sync-20260811` |
-| Expected manifest | exact seven paths listed above |
-| Actual changed set | exact seven paths listed above |
-| Manifest delta | MATCH |
-| Deletion or rename disposition | N/A with reason: active handoff updated in place; no path deletion or rename |
+Authorized guard-maintenance scope: record the completed staging-branch push,
+set the next move to new-roadmap selection, and regenerate continuity surfaces.
 
-## Public Export Disposition
-
-DEFERRED_PRIVATE_ONLY
-
-Reason: T1 is private provenance gate work; public candidate remains locally
-committed but unpushed and undeployed.
+Rollback boundary: revert this exact session-sync batch together; do not
+separate generated state from its source fragments. Do not revert material
+commit `8791b9b23` or public candidate `021f8b852`.
 
 ## Claim Boundary
 
-This handoff records committed T1 dispatch authority only. It does not claim
-gate implementation, remote freshness, hosted runtime behavior, provider
-behavior, public availability, deployment, push, release, or production
-readiness.
+This handoff records the exact public staging-branch push after a compliant
+canonical gate. It does not claim public `main` merge, hosted runtime behavior,
+provider behavior, deployment, release, availability, or production readiness.

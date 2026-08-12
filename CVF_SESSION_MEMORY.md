@@ -45,34 +45,34 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`public_projection_prepush_t1_closed_pending_push_authority`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit operator authority for any public push tranche after material closure `0247f7347`; parked checkpoint=public mutation, push, deploy, browser/provider/store, secrets, production, and public `main`.
+Startup acknowledged: current mode=`public_projection_staging_branch_pushed_deploy_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selection of a new roadmap; parked checkpoint=public `main` merge, deploy, browser/provider/store, secrets, hosted smoke, and production.
 
 ## Current Mode
 
-`public_projection_prepush_t1_closed_pending_push_authority`
+`public_projection_staging_branch_pushed_deploy_parked`
 
-Current mode marker: `public_projection_prepush_t1_closed_pending_push_authority`
-Current mode: `public_projection_prepush_t1_closed_pending_push_authority`
-Previous mode: `public_projection_prepush_t1_dispatched_pending_worker_return`
+Current mode marker: `public_projection_staging_branch_pushed_deploy_parked`
+Current mode: `public_projection_staging_branch_pushed_deploy_parked`
+Previous mode: `public_projection_prepush_t1_closed_pending_push_authority`
 
 ## Next Allowed Move
 
-Mode: `public_projection_prepush_t1_closed_pending_push_authority`
+Mode: `public_projection_staging_branch_pushed_deploy_parked`
 
-PUBLIC-PROJECTION-PREPUSH-T1 Amendment 2 is independently accepted and
-materially closed at `0247f7347`. Await explicit operator authority for any
-public push tranche. Before any push, read the critical repository boundary,
-verify remotes, run push-readiness preview, and run the canonical pre-push gate
-against the exact committed range. Candidate `021f8b852` remains read-only.
-WORKER_MUST_NOT_COMMIT. Public mutation, push, deploy, provider/store, secrets,
-network install, production, and public `main` remain parked.
+Public candidate `021f8b852` was pushed from the sibling public-sync clone as
+`origin/lpci1-ref-staging` after the canonical public-projection gate returned
+`compliant: true`, zero failures, and 7/7 external commands PASS. LPCI1 Web is
+parked under `REUSE_BASELINE_DELTA_ONLY` at private material commit
+`8791b9b23`. The next move is operator selection of a new roadmap. Public
+`main` merge, deploy, hosted/provider/store, secrets, production, and Netlify
+remain parked.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-PUBLIC-PROJECTION-PREPUSH-T1 closure `0247f7347` is complete. Candidate
-`021f8b852` remains clean and read-only. Public push, Netlify deployment,
-hosted/provider/store, secrets, production, and public `main` remain parked.
+Public staging push is complete at `origin/lpci1-ref-staging@021f8b852`.
+Netlify deployment, hosted/provider/store, secrets, production, and public
+`main` merge remain parked.
 
 ## Targeted Lookup Rules
 
