@@ -6244,14 +6244,14 @@
     {
       "id": "local-retention-artifacts-20260812",
       "corpusType": "LEGACY_FOLDER",
-      "displayName": "Local Retention Artifact ZIP (LRA-T0/T2) - 2026-08-12",
+      "displayName": "Local Retention Artifact ZIP (LRA-T0/T2/SA-T0) - 2026-08-13",
       "scopePaths": [
         "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-Workspace\\_cvf-core-backups\\CVF_LOCAL_RETENTION_20260812.zip"
       ],
       "fileCount": 129,
       "status": "DEEP_CLASSIFIED",
-      "scanWave": "LRA-T2",
-      "scanDate": "2026-08-12",
+      "scanWave": "LRA-SA-T0",
+      "scanDate": "2026-08-13",
       "manifestHash": "e36acc3a2dea6abcafd878564294ec72b65268a5460048020780e7ac771a9fb9",
       "manifestPath": "docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json",
       "packetPath": "docs/audits/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_AUDIT_2026-08-12.md",
@@ -6271,7 +6271,7 @@
         "UNTRACKED_GOVERNANCE_BASELINE_STALE",
         "GENERATED_BYTECODE_CACHE"
       ],
-      "priorAbsorption": "The packages/ lane (84 entries) partially overlaps docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (68 non-cache files, dated 2026-06-27): independent path+hash reconciliation against the V041 archive (75 non-cache + 9 __pycache__ = 84) found 54 SAME_PATH_SAME_HASH, 2 SAME_PATH_CHANGED_HASH (PACKAGE_MANIFEST.json, README.md, terminal ARCHIVE_EVIDENCE_ONLY), 19 ADDED_IN_V041 (18 terminally REJECT_DIRECT_IMPORT_NO_OWNER after T2 remediated search, 1 REJECT_STALE_AUTHORITY self-reported test result), and 12 REMOVED_FROM_V041 relative to the prior scan. No CVF_WORKSPACE_LAYER folder or cvf_workspace Python module exists under current EXTENSIONS/ (NO_CURRENT_EXECUTABLE_OWNER for all 18 added artifacts). Separately, docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md already ABSORB/ADAPT-classifies 16 of the 18 items' underlying concepts (projection-not-authority, proposal-before-execution, dangerous-action denylist vocabulary, event/receipt separation, submit_proposal MCP ingress, MCP/CLI runbooks, production-handoff wording as BLOCKED_UNTIL_CVF_PROOF) -- concept overlap is confirmed for those 16, while the executable/runtime implementation remains unowned pending fresh GC-018. The untracked/MSEA-R90 pair is superseded by the already-closed MSEA-R90 System Chain Audit-A tranche (completion 2026-07-10). The untracked/P3-CP2 pair duplicates W72-T5/T6-W7 tranches already archived under docs/baselines/archive/. All 129 corpus entries now carry a terminal disposition; zero DEFER_REQUIRES_NEW_AUTHORITY rows remain.",
+      "priorAbsorption": "The packages/ lane (84 entries) partially overlaps docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (68 non-cache files, dated 2026-06-27): independent path+hash reconciliation against the V041 archive (75 non-cache + 9 __pycache__ = 84) found 54 SAME_PATH_SAME_HASH, 2 SAME_PATH_CHANGED_HASH (PACKAGE_MANIFEST.json, README.md), 19 ADDED_IN_V041 (18 terminally REJECT_DIRECT_IMPORT_NO_OWNER after T2 remediated search, 1 REJECT_STALE_AUTHORITY self-reported test result), and 12 REMOVED_FROM_V041 relative to the prior scan. No CVF_WORKSPACE_LAYER folder or cvf_workspace Python module exists under current EXTENSIONS/ (NO_CURRENT_EXECUTABLE_OWNER for all 18 added artifacts). docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md already ABSORB/ADAPT-classifies 16 of those 18 items' underlying concepts -- concept overlap is confirmed for those 16, while the executable/runtime implementation remains unowned pending fresh GC-018. LRA-SA-T0 (2026-08-13) then performed exhaustive per-file semantic reading of the remaining 56 ARCHIVE_EVIDENCE_ONLY entries (the two changed-metadata rows plus 54 same-hash rows), producing docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER.md: 20 SUPERSEDED_BY_CURRENT_CVF_OWNER (contracts and design-doc concepts already ABSORB/ADAPT-classified) and 36 NO_NEW_VALUE (reference-implementation source code excluded from raw import, schema field-level shape detail, and self-reported package-author smoke claims), with zero BLOCKED_VALUE_GAP. The untracked/MSEA-R90 pair is superseded by the already-closed MSEA-R90 System Chain Audit-A tranche (completion 2026-07-10). The untracked/P3-CP2 pair duplicates W72-T5/T6-W7 tranches already archived under docs/baselines/archive/. All 129 corpus entries now carry a terminal disposition; zero ARCHIVE_EVIDENCE_ONLY or DEFER_REQUIRES_NEW_AUTHORITY rows remain.",
       "findings": [
         {
           "id": "F1-T2-package-lane-v041-delta-terminally-rejected-concept-overlap-acknowledged",
@@ -6301,13 +6301,23 @@
         },
         {
           "id": "F4-T2-all-129-entries-terminal",
-          "summary": "T2 resolved the last 18 non-terminal rows; all 129 corpus entries now carry a terminal disposition (ARCHIVE_EVIDENCE_ONLY=56, REJECT_DIRECT_IMPORT_NO_OWNER=18, REJECT_STALE_AUTHORITY=16, REJECT_RAW_RUNTIME_STATE=33, SUPERSEDED=6); zero DEFER_REQUIRES_NEW_AUTHORITY rows remain",
+          "summary": "T2 resolved the last 18 non-terminal rows, bringing all 129 corpus entries to a terminal disposition class (ARCHIVE_EVIDENCE_ONLY=56, REJECT_DIRECT_IMPORT_NO_OWNER=18, REJECT_STALE_AUTHORITY=16, REJECT_RAW_RUNTIME_STATE=33, SUPERSEDED=6) with zero DEFER_REQUIRES_NEW_AUTHORITY rows; LRA-SA-T0 (2026-08-13, see F5) subsequently resolved the 56 ARCHIVE_EVIDENCE_ONLY rows into SUPERSEDED_BY_CURRENT_CVF_OWNER (20) and NO_NEW_VALUE (36), leaving zero ARCHIVE_EVIDENCE_ONLY rows",
           "disposition": "ACCEPT_NO_ACTION",
           "nextAction": "None. Independent review accepted T2 and closed T4 with RETAIN_SINGLE_PINNED_ARCHIVE because 56 ARCHIVE_EVIDENCE_ONLY rows depend on the immutable source. DESIGN, BUILD, runtime, provider/live, absorption, deletion, and public-sync remain unauthorized.",
           "defectClass": "N/A",
           "learningLane": "N/A",
           "f2gRef": "docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_COMPLETION_2026-08-12.md#finding-to-governance-learning-disposition",
           "roadmapRef": "docs/roadmaps/CVF_LOCAL_RETENTION_ARTIFACT_DISPOSITION_AND_SELECTIVE_ABSORPTION_ROADMAP_2026-08-12.md"
+        },
+        {
+          "id": "F5-SA-T0-all-56-evidence-only-entries-semantically-terminal",
+          "summary": "LRA-SA-T0 read all 56 ARCHIVE_EVIDENCE_ONLY entries in full (not sampled, not hash-only) and assigned a terminal semantic disposition to each: 20 SUPERSEDED_BY_CURRENT_CVF_OWNER, 36 NO_NEW_VALUE, zero BLOCKED_VALUE_GAP. Every concept found already maps to a row in the existing absorption map or the runtime expansion readiness contract's no-executable-admission boundary; no CVF-uncovered doctrine, package, runtime, or checker concept was found",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "None -- terminal semantic disposition recorded with per-file owner citation in the dated ledger; no new package/runtime/CLI/MCP/checker owner was created; T1 archive-release decision remains a separate parked operator checkpoint",
+          "defectClass": "N/A",
+          "learningLane": "N/A",
+          "f2gRef": "docs/audits/CVF_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md#epistemic-process-block",
+          "roadmapRef": "docs/roadmaps/CVF_LOCAL_RETENTION_EVIDENCE_ONLY_SEMANTIC_ABSORPTION_AND_ARCHIVE_RELEASE_ROADMAP_2026-08-13.md"
         }
       ],
       "negativeSearchTerms": [
@@ -6321,7 +6331,7 @@
         "IDE/MCP client config template equivalents -- rg -il \"IDE.*client.*config|mcp.*client.*config\" across docs/reference, EXTENSIONS returned only false-positive unrelated test-output strings"
       ],
       "conceptOwnerCrossReference": "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md is the governed concept owner for 16 of the 18 REJECT_DIRECT_IMPORT_NO_OWNER rows: projection-not-authority and agents-do-not-write-state-directly (ABSORB), proposal-before-execution and dangerous-action denylist vocabulary (ADAPT), event/receipt separation (ABSORB), submit_proposal as a future MCP ingress (named row), MCP/CLI runbooks under CVF_LOCAL_WORKSPACE_RUNTIME (ADAPT, blocked pending fresh GC-018), local surface server under CVF_WEB_WORKSPACE (ADAPT), the JSON-RPC stdio scaffold (DEFER, superseded in practice by EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER), and production-handoff wording (BLOCKED_UNTIL_CVF_PROOF). Only the two install scripts (install_local_workspace.ps1/.sh) have no direct concept-owner row in the absorption map.",
-      "nextScanRecommendation": "No further scan is required. T2 is independently accepted with all 129 entries terminal, and T4 retains the single hash-pinned ZIP as evidence. Any rescan, deletion, absorption, or implementation requires fresh operator authority.",
+      "nextScanRecommendation": "No further scan is required. LRA-SA-T0 is independently pending review with all 129 entries terminal and zero ARCHIVE_EVIDENCE_ONLY rows remaining. T1 archive-release decision requires independent T0 acceptance plus explicit fresh operator authority; any further rescan, deletion, absorption, or implementation also requires fresh authority.",
       "hashAlgorithm": "sha256",
       "hashInput": "sorted-paths-newline-joined-with-trailing-newline"
     }

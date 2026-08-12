@@ -38,7 +38,8 @@
       "STALE_GOVERNANCE_DISPATCH_MATERIAL": 2
     },
     "dispositionTotals": {
-      "ARCHIVE_EVIDENCE_ONLY": 56,
+      "NO_NEW_VALUE": 36,
+      "SUPERSEDED_BY_CURRENT_CVF_OWNER": 20,
       "REJECT_DIRECT_IMPORT_NO_OWNER": 18,
       "REJECT_STALE_AUTHORITY": 16,
       "REJECT_RAW_RUNTIME_STATE": 33,
@@ -63,11 +64,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_CHANGED",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_CHANGED_HASH vs prior inventory (path 'PACKAGE_MANIFEST.json'); current owner search: N/A -- this file's authority is the package itself, not a CVF Core symbol; comparison is prior-manifest vs V041-manifest content, not a Core-owner search; owner: OWNER_NOT_FOUND (self-reported package metadata only)",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status ('CVF authority: NOT_CVF_SOURCE') | Uncovered delta: None: pure metadata about the archived package itself, not a governance concept.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Capability: Package self-description manifest listing all V041 contents by group, version 0.4.1, generated_at 2026-06-13, status production-handoff scaffold. Changed relative to prior inventory's PACKAGE_MANIFEST.json (version bump, added integration_templates/scripts groups, added files). Overlap: This file supersedes the prior inventory's captured copy of PACKAGE_MANIFEST.json 1:1 in role, but the content differs (new version, new file groups) Missing value: N/A -- self-reported package metadata is not a CVF capability gap by itself; it is evidence that the package changed between the 2026-06-27 scan and this V041 snapshot Authority needed: N/A -- this file is descriptive metadata, not an implementation; no absorption is proposed",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Package file listing and version metadata for the external handoff bundle. Evidence: Already read at LRA-T2 as part of V041-delta reconciliation; content is a file listing and version string only, no governance/runtime concept.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "root"
     },
     {
       "entryIndex": 2,
@@ -78,11 +81,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_CHANGED",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_CHANGED_HASH vs prior inventory (path 'README.md'); current owner search: rg -il \"Local Runnable Additions\" docs governance EXTENSIONS -> no hit outside this corpus manifest; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 1 ('CVF Core remains authority...' -> ABSORB) | Uncovered delta: None: the authority/projection pattern is already ABSORB-classified; the 'local runnable' claim is package self-description, not CVF-verified.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Capability: Package root README. Changed relative to prior inventory: adds a new 'Local Runnable Additions' section describing mcp_stdio_server.py, surface_server.py, demo_end_to_end.py, and three new runbooks, claiming the local runnable layer 'proves the full loop' init->state->registration->proposal->block->evidence->receipt->timeline->surface. Overlap: The underlying files this README section describes (mcp_stdio_server.py, surface_server.py, demo_end_to_end.py) are all SAME_PATH_SAME_HASH relative to the prior 2026-06-27 inventory -- i.e. those files already existed and were already classified `KEEP_AS_NON_CANONICAL_TEST_FIXTURE` / `DEFER` by the prior inventory and external absorption map. The README delta is package-authored narrative claiming those pre-existing files 'prove the full loop', which is a package self-claim, not new CVF-relevant capability Missing value: N/A -- the described capability (mcp_stdio_server, surface_server) is unchanged in-package content already covered by the prior DEFER disposition; only the package's own narrative/marketing framing changed Authority needed: N/A -- no new file-level capability is introduced by this README delta; the underlying files remain DEFER/NON_CANONICAL as already classified",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Package overview, non-goals, package structure, local-runnable additions claim. Evidence: Core-authority/projection principle already recorded as ABSORB in the absorption map Useful Patterns table.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "root"
     },
     {
       "entryIndex": 3,
@@ -93,11 +98,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'contracts/IDE_BRIDGE_CONTRACT.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 3 (proposal-before-execution -> ADAPT); Two-Layer Absorption row 2 (CVF_LOCAL_WORKSPACE_RUNTIME -> ADAPT) | Uncovered delta: None: same proposal/non-bypass vocabulary already ADAPT-classified group-level.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Required IDE agent modes, operating rule (read-check-propose-wait-execute-evidence-receipt), forbidden behaviors, acceptance tests. Evidence: Proposal-before-execution and non-bypass patterns already ADAPT-classified; agent mode taxonomy is elaboration, not new doctrine.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "contracts"
     },
     {
       "entryIndex": 4,
@@ -108,11 +115,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'contracts/STATE_PROJECTION_CONTRACT.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 1-2 (ABSORB) and CVF Mapping table | Uncovered delta: None: projection-not-authority is already the map's lead ABSORB principle.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Rules for CVF Core projecting state into local files: deterministic, minimal, source-referenced, blocking-on-invalid, agent-readable. Evidence: Projection-not-authority principle already ABSORB-classified as the map's first Useful Pattern.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "contracts"
     },
     {
       "entryIndex": 5,
@@ -123,11 +132,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'contracts/WORKSPACE_MCP_CONTRACT.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 4 (dangerous action denylist -> ADAPT); CVF Mapping row submit_proposal | Uncovered delta: None: denylist vocabulary and MCP ingress concept already ADAPT-classified.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Minimum MCP tool list, response envelope, non-bypass rule for dangerous tools, pre/postconditions, acceptance tests. Evidence: Dangerous-action denylist and submit_proposal MCP ingress concept already recorded as ADAPT in the map.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "contracts"
     },
     {
       "entryIndex": 6,
@@ -138,11 +149,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'contracts/WORKSPACE_RUNTIME_CONTRACT.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 2 (agents read not write -> ABSORB); Two-Layer Absorption row 2 (ADAPT, fresh GC-018 required) | Uncovered delta: None: every G1-G8 guarantee maps to an already-classified pattern (ABSORB or ADAPT pending fresh GC-018).",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Runtime guarantees G1-G8 (workspace exists, state projection exists, agent cannot mutate state directly, proposal before execution, CVF Core authorizes, evidence/receipt required, local-first, provider-agnostic), required CLI commands, state machine, blocking conditions. Evidence: All eight runtime guarantees map onto Useful Patterns rows 1-5 and the Two-Layer Absorption CVF_LOCAL_WORKSPACE_RUNTIME row.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "contracts"
     },
     {
       "entryIndex": 7,
@@ -153,11 +166,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'contracts/WORKSPACE_UI_CONTRACT.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 1 (CVF_WEB_WORKSPACE -> ADAPT) | Uncovered delta: None: UI-as-visualization-only is already the map's Two-Layer disposition for this area.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "UI boundary: visualization/control surface only, required views, allowed/forbidden writes, display conditions. Evidence: UI-as-visualization/non-authority boundary already ADAPT-classified under CVF_WEB_WORKSPACE.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "contracts"
     },
     {
       "entryIndex": 8,
@@ -184,11 +199,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/CVF_CORE_BINDING.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 2 (ADAPT, fresh GC-018 required); CVF Mapping table | Uncovered delta: None: binding concept is the same ADAPT-pending-GC-018 runtime item; the Python interface itself is reference code, not doctrine.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Binding model (policy/workflow/evidence/receipt/execution binding points), Python interface stub, fallback conservative mode, forbidden duplication of doctrine. Evidence: Core-remains-authority and conservative-fallback principle already ADAPT-classified; interface shape is implementation detail excluded from doctrine absorption.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 10,
@@ -199,11 +216,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/GOVERNANCE_PROJECTION_ENGINE.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping row 'governance_state.json' -> 'allowed/blocked action projection from CVF references and gates' | Uncovered delta: None: already explicitly mapped in the CVF Mapping table.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Model converting CVF policy into governance_state.json fields (allowed/blocked actions, claim boundary, closure flag). Evidence: governance_state.json concept already has an explicit CVF Mapping row.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 11,
@@ -214,11 +233,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/IDE_BRIDGE_INTEGRATION.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 2 (ADAPT); Useful Patterns rows 2-4 | Uncovered delta: None: multi-provider bridge elaborates the same ADAPT-pending-GC-018 pattern with more per-client detail; no new CVF-uncovered doctrine.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Detailed IDE bridge: supported clients (Claude Code/Codex/Gemini/OpenCode/generic MCP), per-client rules, agent registration schema, operating modes A-D, worktree access rules, CLI fallback, anti-bypass checks, human override. Evidence: Provider-agnostic bridge and proposal/evidence flow already ADAPT-classified; per-client detail is implementation elaboration, not new doctrine.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 12,
@@ -229,11 +250,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/IDE_BRIDGE_RUNTIME.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns rows 1-3 | Uncovered delta: None: compact restatement of already-classified patterns.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Compact runtime flow and boot message for IDE agents (state-first, proposal-before-execution, receipt-backed completion). Evidence: State-first and proposal-before-execution already ABSORB/ADAPT-classified; this file is a condensed restatement.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 13,
@@ -260,11 +283,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/LOCAL_RUNTIME_INTEGRATION.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status; Two-Layer Absorption row 2 | Uncovered delta: None: separation-of-concerns between existing .cvf and a prospective local workspace layer is already implied by the ADAPT-pending-fresh-GC-018 disposition.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "How local runtime integrates with existing CVF install: CLI/MCP/Core/web/worktree targets, .cvf vs .cvf-workspace separation. Evidence: Non-ownership of worktree and separation from existing .cvf config already covered by the runtime ADAPT disposition and readiness contract boundary.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 15,
@@ -275,11 +300,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/MCP_SERVER_ARCHITECTURE.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping row submit_proposal; docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md Runtime queue storage (QUEUE_SKELETON_ONLY) | Uncovered delta: None: transport preference and non-bypass tool boundary are already covered by the MCP ingress mapping and the runtime expansion contract's no-executable-server boundary.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Real MCP server architecture target: stdio transport preferred, required tool list, server responsibilities, must-not-expose list. Evidence: MCP tool boundary already mapped; runtime expansion contract explicitly blocks any executable MCP server pending fresh GC-018.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 16,
@@ -322,11 +349,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/STATE_FILE_DEFINITIONS.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping table (all five files individually mapped); Useful Patterns row 6 | Uncovered delta: None: all five files and the read/write rule are already individually mapped in the CVF Mapping table.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Full field-level spec for the five state files (workspace/workflow/governance/agent/evidence _state.json), global rules R1-R5, read order, invalid-state conditions. Evidence: Each of the five state files already has its own CVF Mapping table row; field-level detail is implementation elaboration.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 19,
@@ -337,11 +366,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/WORKSPACE_BOOTSTRAP_FLOW.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 2 (ADAPT, fresh GC-018 required) | Uncovered delta: None: bootstrap sequencing is implementation detail under the same ADAPT-pending-GC-018 runtime item; no doctrine-level concept absent from the map.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Ten-step bootstrap sequence, metadata file specs, SQLite table list, initial conservative governance defaults, failure modes, repair flow. Evidence: Bootstrap flow is runtime implementation detail already covered by the ADAPT-pending-fresh-GC-018 disposition; no distinct doctrine claim.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 20,
@@ -352,11 +383,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/WORKSPACE_EVENT_MODEL.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 5 (event/receipt separation -> ABSORB) | Uncovered delta: None: event/receipt separation is already ABSORB-classified; the specific 16-event taxonomy is implementation detail.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Event envelope, 16 required event types, routing rules, correlation/causation, event-to-receipt boundary. Evidence: Event/receipt separation already ABSORB-classified as a core workspace principle in the EARC-T3A pilot result.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 21,
@@ -367,11 +400,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/WORKSPACE_MCP_API.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping row submit_proposal/request_transition/receipt; Useful Patterns rows 3-4 | Uncovered delta: None: all five MCP design principles (M1-M5) map onto already-classified patterns; tool I/O schema is implementation detail.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Full MCP tool contract: 9 tools, input/output schemas, error codes, non-bypass rule. Evidence: submit_proposal, request_transition, and receipt concepts already individually mapped in the CVF Mapping table.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 22,
@@ -382,11 +417,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/WORKSPACE_ROLLOUT_PLAN.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption (CVF_WEB_WORKSPACE and CVF_LOCAL_WORKSPACE_RUNTIME rows, both ADAPT) | Uncovered delta: None: rollout staging is a project-management artifact of the same ADAPT-pending-GC-018 item, not a distinct governance concept.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Nine-stage rollout (documentation lock through workspace-centric governance), risks R1-R5, success metrics, MVR scope. Evidence: Rollout staging/risk list is package-internal planning prose with no CVF-owned governance concept beyond the already-classified ADAPT item; not itself a reusable control.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 23,
@@ -397,11 +434,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/WORKSPACE_RUNTIME_TREEVIEW.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns rows 1-4; Two-Layer Absorption row 2 | Uncovered delta: None: P1-P5 design principles are restatements of already-classified ABSORB/ADAPT patterns; directory layout is implementation detail.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Physical directory layout (.cvf-workspace tree), design principles P1-P5, access matrix, lifecycle (creation/execution/shutdown). Evidence: All five design principles map onto Useful Patterns rows already ABSORB/ADAPT-classified; tree layout itself is non-canonical scaffold detail per the prior inventory's ADAPT_TO_FUTURE_DESIGN disposition.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 24,
@@ -412,11 +451,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/WORKSPACE_STORAGE_MODEL.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 2 (ADAPT, fresh GC-018 required) | Uncovered delta: None: storage schema is implementation detail under the same ADAPT-pending-GC-018 runtime item; secrets policy restates existing CVF secret-handling posture, no new CVF-uncovered rule.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Hybrid storage decision (SQLite+JSON+JSONL), full table definitions, secrets policy, backup/recovery rules. Evidence: Storage schema and secrets-not-stored posture are implementation detail already covered by the ADAPT-pending-fresh-GC-018 disposition and existing CVF secret-safety practice.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 25,
@@ -427,11 +468,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/WORKSPACE_SURFACE_ARCHITECTURE.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 1 (CVF_WEB_WORKSPACE -> ADAPT) | Uncovered delta: None: identical disposition to WORKSPACE_UI_CONTRACT.md, already ADAPT-classified.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Local Workspace Surface UI: required views, data sources, allowed/forbidden actions. Evidence: UI-as-visualization-only concept already ADAPT-classified under CVF_WEB_WORKSPACE; duplicate of the UI contract's boundary.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 26,
@@ -442,11 +485,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'implementation/WORKSPACE_WEB_ARCHITECTURE.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 1 (CVF_WEB_WORKSPACE -> ADAPT) | Uncovered delta: None: web workspace concept already ADAPT-classified; local-only-default deployment mode is a minor elaboration with no new CVF-uncovered rule.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "SUPERSEDED_BY_CURRENT_CVF_OWNER",
+      "rationale": "Web Workspace option for cvf-web evolution: panels, deployment modes (local vs remote), non-coder value. Evidence: CVF_WEB_WORKSPACE disposition already ADAPT-classified; local-vs-remote deployment default is package-internal planning detail.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "implementation"
     },
     {
       "entryIndex": 27,
@@ -537,11 +582,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/demo_end_to_end.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status (smoke check NON_CANONICAL_ADVISORY) | Uncovered delta: None: a demo/example script has no independent governance concept beyond what it exercises, which is already classified.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Script demonstrating init->register-agent->safe-proposal->blocked-proposal->evidence->transition->events using a temp directory. Evidence: Demonstration script only; not executed by this worker per forbidden-scope rules, and its content is a usage example of already-classified concepts.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 33,
@@ -552,11 +599,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/README.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status ('Smoke check: local package smoke test passed in temp; not CVF runtime proof') | Uncovered delta: None: the file's own boundary claim matches the map's existing non-canonical-advisory disposition for package smoke evidence.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Describes reference scaffold scope/boundary: what it demonstrates vs. what it explicitly does not implement (real policy engine, real MCP transport, production sandbox). Evidence: Self-disclosed non-production boundary duplicates the map's existing NON_CANONICAL_ADVISORY smoke-check disposition; no reusable control value beyond that.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 34,
@@ -567,11 +616,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/sample_bootstrap.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status (smoke check NON_CANONICAL_ADVISORY) | Uncovered delta: None: duplicate-purpose demo script.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Similar demo script using the current working directory instead of a temp dir. Evidence: Demonstration script only; same disposition rationale as demo_end_to_end.py.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 35,
@@ -582,11 +633,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/workspace_mcp_stub.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 7 (DEFER); package's own reference_implementation/README.md marks this file legacy | Uncovered delta: None: the package's own documentation already marks this file as superseded by cvf_workspace/mcp_like.py; no distinct concept.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Legacy single-file MCP-like stub (superseded by cvf_workspace/mcp_like.py per the package's own README, which labels it 'legacy ... kept for compatibility'). Evidence: The package's own reference_implementation/README.md explicitly labels this a legacy file kept only for compatibility; it is superseded within the source package itself, not merely by CVF.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 36,
@@ -597,11 +650,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/workspace_runtime.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 2; package's own reference_implementation/README.md marks this file legacy | Uncovered delta: None: package's own documentation marks this superseded; no distinct concept beyond the already-classified runtime pattern.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Legacy single-file WorkspaceRuntime scaffold (superseded by cvf_workspace/runtime.py per the package's own README). Evidence: The package's own reference_implementation/README.md explicitly labels this a legacy single-file scaffold kept for compatibility, superseded by cvf_workspace/runtime.py within the source package itself.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 37,
@@ -612,11 +667,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/cvf_workspace/__init__.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: N/A | Uncovered delta: None: no governance or design concept present.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Package version marker docstring only. Evidence: File contains only a module docstring and a version string; no concept to compare against any owner.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 38,
@@ -627,11 +684,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/cvf_workspace/cli.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 2 (ADAPT, fresh GC-018 required); WORKSPACE_RUNTIME_CONTRACT.md 'Required Commands' already cross-referenced there | Uncovered delta: None: executable CLI wrapper for an already-ADAPT-classified command set; raw code import remains rejected.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "argparse-based CLI wrapper exposing init/doctor/state/register-agent/propose/evidence/transition/receipt/events subcommands over WorkspaceRuntime and WorkspaceMCP. Evidence: Executable CLI wrapper implementing the cvf-workspace-init/doctor/state/propose/evidence/transition/receipt command set already covered by the ADAPT-pending-fresh-GC-018 runtime disposition; code-level admission is excluded from doctrine absorption regardless of quality.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 39,
@@ -642,11 +701,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/cvf_workspace/core_binding.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 4 (denylist -> ADAPT); Two-Layer Absorption row 2 | Uncovered delta: None: executable implementation of the already-ADAPT-classified conservative-fallback pattern from CVF_CORE_BINDING.md.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "CVFCoreBinding abstract interface and ConservativeReferenceBinding concrete implementation (blocks DANGEROUS_ACTIONS by default, requires evidence for transitions). Evidence: Executable Python class implementing a pattern already ADAPT-classified via the corresponding contract/implementation docs; raw code import remains rejected.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 40,
@@ -673,11 +734,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/cvf_workspace/mcp_like.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping row submit_proposal; docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md runtimeMode QUEUE_SKELETON_ONLY | Uncovered delta: None: executable MCP-shaped wrapper code; concept already mapped, code itself blocked from admission by the runtime readiness contract.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "WorkspaceMCP class wrapping WorkspaceRuntime with the 9-tool MCP-like interface and ok/err envelope helpers. Evidence: Executable code wrapping an already-mapped tool contract; runtime admission is blocked pending fresh GC-018 regardless of code quality.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 42,
@@ -688,11 +751,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/cvf_workspace/mcp_stdio_server.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 7 ('Dependency-free JSON-RPC stdio scaffold' -> DEFER: production should use official MCP SDK or existing MCP package) | Uncovered delta: None: this exact file is the one the map already names and DEFERs in favor of the existing EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER-class official adapter path.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Dependency-free JSON-RPC stdio server (initialize/tools list/tools call/ping) wrapping WorkspaceMCP. Evidence: This file is explicitly named in the absorption map's Useful Patterns table with disposition DEFER; production CVF MCP already has a preferred official-SDK path, so this scaffold adds no value beyond what is already recorded.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 43,
@@ -703,11 +768,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/cvf_workspace/models.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 4 (denylist -> ADAPT) and row 'Public/simple workflow enum' (-> REJECT_AS_AUTHORITY) | Uncovered delta: None: this is executable code implementing patterns the map already classifies (denylist ADAPT, workflow enum REJECT_AS_AUTHORITY). Raw code import remains rejected regardless.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Dataclass/constants: WORKFLOW_STAGES enum, RISK_LEVELS enum, DANGEROUS_ACTIONS set, ValidationResult dataclass. Evidence: Source code is excluded from CVF import per absorption map raw-import rejection; the underlying vocabulary (denylist, workflow enum) is already classified and this file adds no new concept, only an executable form of it.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 44,
@@ -718,11 +785,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/cvf_workspace/runtime.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 2 (ADAPT, fresh GC-018 required); docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md runtimeMode QUEUE_SKELETON_ONLY | Uncovered delta: None: this is the actual runtime code the readiness contract explicitly blocks from admission (no executable queue/runtime/dispatcher authorized).",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Largest file (25KB): WorkspaceRuntime class implementing init/doctor/state-projection/register_agent/submit_proposal/submit_evidence/write_receipt/request_transition/write_event and SQLite-backed persistence helpers. Evidence: This is executable runtime code implementing the already-ADAPT-classified pattern; the runtime expansion readiness contract explicitly forbids admitting an executable runtime absent fresh GC-018, so no code-level value can be absorbed regardless of quality.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 45,
@@ -733,11 +802,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/cvf_workspace/storage.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 2 (ADAPT, fresh GC-018 required) | Uncovered delta: None: this is executable persistence code; schema-level detail was already excluded from doctrine absorption ('MAP_TO_CVF_STATE_TOPOLOGY_BEFORE_USE' for schemas in the prior inventory).",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "SQLite CREATE TABLE statements for 9 tables (workspace_meta, sessions, agents, proposals, proposal_actions, evidence, receipts, events, locks, state_versions) and init_database(). Evidence: Executable SQL schema is implementation code, not a doctrine concept; raw import remains rejected and no new CVF-owned control is extractable beyond the already-ADAPT-classified storage pattern.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 46,
@@ -748,11 +819,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'reference_implementation/cvf_workspace/surface_server.py'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 1 (CVF_WEB_WORKSPACE -> ADAPT) | Uncovered delta: None: executable visualization server implementing the already-ADAPT-classified CVF_WEB_WORKSPACE pattern; raw import remains rejected.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Minimal stdlib http.server-based local HTTP UI serving /, /api/state, /api/events, /api/doctor with inline HTML/JS. Evidence: Executable local HTTP server code; the visualization-surface concept it implements is already ADAPT-classified, and code-level admission is excluded from doctrine absorption.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "reference_implementation"
     },
     {
       "entryIndex": 47,
@@ -914,11 +987,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'runbooks/LOCAL_RUNNABLE_RUNBOOK.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 2; docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md runtimeMode QUEUE_SKELETON_ONLY | Uncovered delta: None: operational runbook for code that is itself excluded from admission pending fresh GC-018; no distinct governance concept.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Step-by-step commands to bootstrap, register agent, propose, verify block, submit evidence, start surface/stdio servers. Evidence: Runbook operates the reference scaffold's executable code, which the runtime readiness contract blocks from admission; the runbook itself has no standalone governance concept.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "runbooks"
     },
     {
       "entryIndex": 58,
@@ -929,11 +1004,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'runbooks/LOCAL_SURFACE_REFERENCE.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Two-Layer Absorption row 1 (CVF_WEB_WORKSPACE -> ADAPT) | Uncovered delta: None: UI-non-mutation boundary already ADAPT-classified; this is an API reference for code excluded from admission.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Endpoint reference for the local surface server (GET /, /api/state, /api/events, /api/doctor) and forbidden UI actions. Evidence: API reference for a local server that is itself excluded from admission; the UI-non-mutation principle it documents is already ADAPT-classified.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "runbooks"
     },
     {
       "entryIndex": 59,
@@ -944,11 +1021,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'runbooks/MCP_STDIO_REFERENCE.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 7 (DEFER: 'production CVF MCP should use the official MCP SDK or existing MCP package') | Uncovered delta: None: this file's own 'Production Note' matches the map's existing DEFER disposition verbatim in spirit.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "JSON-RPC request/response examples for the dependency-free stdio server; explicit production note to use official MCP SDK. Evidence: This runbook's own Production Note already states production should use the official MCP SDK, matching the absorption map's existing DEFER disposition for the stdio scaffold.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "runbooks"
     },
     {
       "entryIndex": 60,
@@ -975,11 +1054,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'schemas/agent_state.schema.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping table (each of the five state files individually mapped) | Uncovered delta: None: shape detail under an already-mapped state file.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "JSON Schema for agent_state.json (agents array, active_agent_id). Evidence: agent_state.json already has a dedicated CVF Mapping row; this schema is field-level shape detail with no independent doctrine content.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "schemas"
     },
     {
       "entryIndex": 62,
@@ -990,11 +1071,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'schemas/event.schema.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 5 (event/receipt separation -> ABSORB) | Uncovered delta: None: shape detail under an already-ABSORB-classified pattern.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "JSON Schema for the event envelope (event_id, actor, payload, integrity). Evidence: Event envelope shape is field-level detail under the already-ABSORB-classified event/receipt-separation principle.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "schemas"
     },
     {
       "entryIndex": 63,
@@ -1005,11 +1088,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'schemas/evidence_state.schema.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping table (each of the five state files individually mapped) | Uncovered delta: None: shape detail under an already-mapped state file.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "JSON Schema for evidence_state.json. Evidence: evidence_state.json already has a dedicated CVF Mapping row; schema is field-level shape only.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "schemas"
     },
     {
       "entryIndex": 64,
@@ -1020,11 +1105,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'schemas/governance_state.schema.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping table (each of the five state files individually mapped) | Uncovered delta: None: shape detail under an already-mapped state file; risk/claim-boundary vocabulary already exists in CVF governance practice.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "JSON Schema for governance_state.json (risk_level enum R0-R4, claim_boundary enum). Evidence: governance_state.json already has a dedicated CVF Mapping row; the R0-R4 risk enum and claim-boundary enum restate vocabulary already present in CVF governance practice, not a new concept.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "schemas"
     },
     {
       "entryIndex": 65,
@@ -1035,11 +1122,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'schemas/proposal.schema.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping row submit_proposal | Uncovered delta: None: shape detail under an already-mapped MCP ingress concept.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "JSON Schema for a proposal object (status enum, risk_claimed_by_agent enum). Evidence: submit_proposal already has a dedicated CVF Mapping row describing it as a future MCP ingress; this schema is field-level shape only.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "schemas"
     },
     {
       "entryIndex": 66,
@@ -1050,11 +1139,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'schemas/receipt.schema.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping row receipt | Uncovered delta: None: shape detail under an already-mapped concept.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "JSON Schema for a receipt object (receipt_type enum: execution/governance/transition/audit). Evidence: receipt already has a dedicated CVF Mapping row ('CVF receipt or completion evidence reference'); this schema is field-level shape only.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "schemas"
     },
     {
       "entryIndex": 67,
@@ -1065,11 +1156,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'schemas/workflow_state.schema.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns row 'Public/simple workflow enum' -> REJECT_AS_AUTHORITY; EARC-T3A Pilot row INTAKE->...->FREEZE -> REJECT_AS_AUTHORITY | Uncovered delta: None: this exact enum is already explicitly REJECT_AS_AUTHORITY-classified as display vocabulary only, not CVF's real workflow-chain source of truth.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "JSON Schema for workflow_state.json with hard-coded current_stage enum INTAKE..FREEZE. Evidence: The map explicitly classifies this exact INTAKE->DESIGN->SPEC->WORK_ORDER->BUILD->REVIEW->FREEZE enum as REJECT_AS_AUTHORITY display vocabulary in both the Useful Patterns table and the EARC-T3A pilot result.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "schemas"
     },
     {
       "entryIndex": 68,
@@ -1080,11 +1173,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'schemas/workspace_state.schema.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md CVF Mapping table (each of the five state files individually mapped) | Uncovered delta: None: shape detail under an already-mapped state file.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "JSON Schema for workspace_state.json (workspace_status enum, policy profile). Evidence: workspace_state.json already has a dedicated CVF Mapping row describing it as 'workspace identity and active session projection under existing generated workspace state'.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "schemas"
     },
     {
       "entryIndex": 69,
@@ -1159,11 +1254,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'tests/AGENT_IMPLEMENTATION_GUARDRAILS.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns rows 1-5 (ABSORB/ADAPT); docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md readiness-contract fresh-GC-018-required boundary | Uncovered delta: None: every rule restates an already-ABSORB/ADAPT-classified principle (Core authority, projection, proposal-before-execution, evidence/receipt, secrets) or a package-scope constraint (extension-only, no Kanban) that is package-internal project management, not CVF doctrine.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Ten numbered implementation rules (no CVF redesign, extension-only scope, no Kanban clone, offline-first, no direct execution, state-is-projection, proposal-before-execution, evidence/receipt required, no secrets, no renaming), required read order, stop conditions, completion claim rule. Evidence: Cross-checked against the absorption map's Useful Patterns table: authority/projection (rows 1-2), proposal-before-execution (row 3), denylist/evidence (rows 4-5) are already ABSORB/ADAPT-classified; the remaining rules (no Kanban, extension-only, no renaming) are package-internal scope discipline with no CVF governance-concept counterpart to absorb.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "tests"
     },
     {
       "entryIndex": 74,
@@ -1174,11 +1271,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'tests/INTEGRATION_READY_CHECKLIST.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status (raw import REJECTED_WITH_REASON); docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md runtimeMode QUEUE_SKELETON_ONLY | Uncovered delta: None: the file's own 'Not Yet Production' list matches the map's and readiness contract's existing non-admission boundary.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Checklist of documentation/reference-code readiness items and an explicit 'Not Yet Production' list (real CVF Core adapter, real MCP stdio server, real UI surface, production sandbox). Evidence: The checklist's own explicit non-production disclosure duplicates the existing raw-import-rejected and runtime-not-yet-authorized dispositions; no new claim to absorb.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "tests"
     },
     {
       "entryIndex": 75,
@@ -1189,11 +1288,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'tests/INTEGRATION_SMOKE_TEST_RESULT.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status ('Smoke check: local package smoke test passed in temp; not CVF runtime proof') | Uncovered delta: None: this is exactly the self-reported smoke evidence the map already classifies as non-canonical advisory, not CVF runtime proof.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Self-reported JSON smoke-test result (commands_run list, ok:true, package_version 0.2.0) from the package author's own environment. Evidence: Per the work order's semantic coverage rules, a self-claim must not be treated as runtime, package, or production readiness evidence; the absorption map already classifies this class of package smoke result as NON_CANONICAL_ADVISORY.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "tests"
     },
     {
       "entryIndex": 76,
@@ -1204,11 +1305,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'tests/LOCAL_RUNNABLE_SMOKE_TEST_RESULT.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status ('not CVF runtime proof') | Uncovered delta: None: same class of self-reported package evidence as the other smoke-result JSON files.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Self-reported JSON smoke-test result (package_version 0.3.0, stdio_tools_count 9, surface_events_count 5). Evidence: Self-reported smoke result from the package author's own environment; already classified as non-canonical advisory, not CVF proof, per the absorption map and this worker's non-self-claim rule.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "tests"
     },
     {
       "entryIndex": 77,
@@ -1219,11 +1322,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'tests/LOCAL_RUNNABLE_SMOKE_TEST.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status ('not CVF runtime proof') | Uncovered delta: None: test-plan for code excluded from admission; test list itself restates already-covered proposal/evidence/dangerous-action-block concepts.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Ten-item smoke test list (CLI init/doctor/register/propose/evidence, stdio initialize/tools-list/tools-call, surface /api/state) and pass criteria. Evidence: Test plan for the reference scaffold's own smoke coverage; the underlying concepts (proposal, evidence, dangerous-action block) are already ABSORB/ADAPT-classified, and the test plan itself proves nothing about CVF runtime.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "tests"
     },
     {
       "entryIndex": 78,
@@ -1265,11 +1370,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'tests/REFERENCE_EXECUTION_SMOKE_TEST.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status ('not CVF runtime proof'); docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md runtimeMode QUEUE_SKELETON_ONLY | Uncovered delta: None: this worker did not execute any test in this file per forbidden-scope rules; the document itself is a test plan for already-excluded code, proving no CVF runtime behavior.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Eight detailed test cases (bootstrap, doctor, state, register-agent, safe proposal, dangerous-proposal-blocked, evidence, transition) with expected outputs and final pass criteria. Evidence: Test-case document for the reference scaffold; per work-order forbidden scope this worker does not execute archived tests, and the document's own content cannot substitute for CVF runtime/live proof.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "tests"
     },
     {
       "entryIndex": 81,
@@ -1280,11 +1387,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'tests/REFERENCE_IMPLEMENTATION_TEST_PLAN.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status; docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md runtimeMode QUEUE_SKELETON_ONLY | Uncovered delta: None: Test 9 in this very file already states the same non-production boundary this worker independently confirms.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Nine-part test plan (bootstrap, directory tree, state files, SQLite tables, event stream, proposal/evidence/receipt storage, explicit non-production boundary statement). Evidence: The plan's own 'Test 9 - Non-Production Boundary' section explicitly confirms no policy engine, provider routing, MCP server, or security boundary claim is made, matching this worker's independent finding.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "tests"
     },
     {
       "entryIndex": 82,
@@ -1295,11 +1404,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'tests/SMOKE_TEST_RESULT.json'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Source Package Status ('not CVF runtime proof') | Uncovered delta: None: third instance of the same self-reported-smoke-evidence class already classified as non-canonical advisory.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Self-reported JSON smoke-test result (commands_run list matching REFERENCE_EXECUTION_SMOKE_TEST.md steps). Evidence: Self-reported smoke result from the package author's own environment; same disposition rationale as the other two smoke-result JSON files.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "tests"
     },
     {
       "entryIndex": 83,
@@ -1326,11 +1437,13 @@
       "group": "package",
       "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "SAME_PATH_SAME_HASH vs prior inventory docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (path 'tests/WORKSPACE_LAYER_ACCEPTANCE_CHECKLIST.md'); SHA-256 verified identical to the 2026-06-27 scan",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md Useful Patterns table (rows 1-8 collectively); Two-Layer Absorption table (both rows) | Uncovered delta: None: every checklist section restates a concept already ABSORB/ADAPT/DEFER/REJECT_AS_AUTHORITY-classified elsewhere in the package and cross-referenced in the absorption map; the checklist format itself adds no new governance concept.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "ARCHIVE_EVIDENCE_ONLY",
-      "rationale": "Content is byte-identical (verified path+SHA-256 match, not filename-only) to the already-committed CVF reference inventory; duplicate retention of the same package inside a local ZIP has no new evidentiary value beyond the existing reference",
-      "processingStatus": "READ"
+      "disposition": "NO_NEW_VALUE",
+      "rationale": "Nine-section (A-I) acceptance checklist covering package integrity, local runtime, state projection, governance boundary, MCP API, storage, IDE bridge, UI/web, rollout stages, plus final acceptance summary. Evidence: This is the package's own internal acceptance checklist; each of its nine sections (A-I) maps one-to-one onto concepts already classified via the Useful Patterns and Two-Layer Absorption tables (state projection, governance boundary/denylist, MCP API/submit_proposal, IDE bridge, UI/web); no section introduces a concept absent from the existing map.",
+      "processingStatus": "READ",
+      "semanticCoverage": "READ",
+      "t0SemanticGroup": "tests"
     },
     {
       "entryIndex": 85,
@@ -2049,5 +2162,26 @@
     "noCurrentExecutableOwnerCount": 18,
     "conceptOverlapConfirmedCount": 16,
     "noDirectConceptOverlapCount": 2
+  },
+  "t0SemanticAbsorptionSummary": {
+    "tranche": "LRA-SA-T0",
+    "date": "2026-08-13",
+    "scope": "exactly 56 ARCHIVE_EVIDENCE_ONLY entries under packages/CVF_WORKSPACE_LAYER_PRODUCTION_HANDOFF_PACKAGE_V041/EXTENSIONS/CVF_WORKSPACE_LAYER/",
+    "groupCounts": {
+      "root": 2,
+      "contracts": 5,
+      "implementation": 15,
+      "reference_implementation": 14,
+      "runbooks": 3,
+      "schemas": 8,
+      "tests": 9
+    },
+    "semanticDispositionTotals": {
+      "NO_NEW_VALUE": 36,
+      "SUPERSEDED_BY_CURRENT_CVF_OWNER": 20
+    },
+    "blockedValueGapCount": 0,
+    "ledgerArtifact": "docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER.md",
+    "noRawSourceAdmission": true
   }
 }

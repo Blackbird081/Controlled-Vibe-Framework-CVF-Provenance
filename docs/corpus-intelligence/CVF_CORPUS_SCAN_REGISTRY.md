@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-08-12 (LRA-T2 remediation: concept-owner vs executable-owner distinction)
+Last updated: 2026-08-13 (LRA-SA-T0: exhaustive 56-entry per-file semantic absorption of the remaining ARCHIVE_EVIDENCE_ONLY rows)
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -126,7 +126,7 @@ prior scan here before starting new work.
 
 | `CVF Extraction Foundation EXA-T2 scan route decision source` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Deterministic DocumentScanSignals + ScanRouteDecision + decide_scan_route(); maps PASS/NEEDS_TIER2_OCR/OCR_LOW_CONFIDENCE/PARTIAL/EMPTY to four stable dispositions; unsupported source type or language -> BLOCKED_UNSUPPORTED; no OCR, provider, or raw content |
 | `CVF Extraction Foundation EXA-T2 scan route decision tests` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Focused pytest coverage for PASS/local route, OCR-eligible route, OCR_LOW_CONFIDENCE/partial/empty escalation, unsupported language blocking, unsupported source-type blocking, docx support, deterministic repeatability, version+claim-boundary presence, and no raw-content fields |
-| `Local Retention Artifact ZIP (LRA-T0/T2)` | LEGACY_FOLDER | DEEP_CLASSIFIED | LRA-T2 | 129 | All 129 entries are terminal: 63 of 84 packages/ entries (54 non-cache + 9 cache) SHA-256-match the committed CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md (ARCHIVE_EVIDENCE_ONLY); 18 V041-delta package entries are terminally REJECT_DIRECT_IMPORT_NO_OWNER after remediated per-row search -- 16 of 18 have a governed concept owner in CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md (ABSORB/ADAPT/DEFER-classified doctrine) but NO_CURRENT_EXECUTABLE_OWNER; 2 install scripts have no direct concept owner; 39 review-artifacts/ entries are stale/corrupt dot-cvf runtime snapshots (REJECT_RAW_RUNTIME_STATE/REJECT_STALE_AUTHORITY); 6 untracked/ governance artifacts are SUPERSEDED by already-closed Core tranches; zero DEFER_REQUIRES_NEW_AUTHORITY rows remain |
+| `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | LEGACY_FOLDER | DEEP_CLASSIFIED | LRA-SA-T0 | 129 | All 129 entries are terminal with zero ARCHIVE_EVIDENCE_ONLY, unresolved, or DEFER_REQUIRES_NEW_AUTHORITY rows: 56 packages/ entries (54 same-hash + 2 changed-metadata) were exhaustively per-file semantically absorbed by LRA-SA-T0 into SUPERSEDED_BY_CURRENT_CVF_OWNER (20) or NO_NEW_VALUE (36); 18 V041-delta package entries are terminally REJECT_DIRECT_IMPORT_NO_OWNER after remediated per-row search -- 16 of 18 have a governed concept owner in CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md but NO_CURRENT_EXECUTABLE_OWNER; 39 review-artifacts/ entries are stale/corrupt dot-cvf runtime snapshots (REJECT_RAW_RUNTIME_STATE/REJECT_STALE_AUTHORITY); 6 untracked/ governance artifacts are SUPERSEDED by already-closed Core tranches |
 ---
 
 ## Finding Index
@@ -182,10 +182,11 @@ Use this index to find prior findings by domain keyword.
 
 | Finding ID | Corpus | Summary | Disposition |
 | --- | --- | --- | --- |
-| F1-T2-package-lane-v041-delta-terminally-rejected-concept-overlap-acknowledged | `Local Retention Artifact ZIP (LRA-T0/T2)` | T2 remediation corrected a blanket no-overlap claim; 16 of 18 V041-delta entries have a governed concept owner (CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md) but NO_CURRENT_EXECUTABLE_OWNER; all 18 remain REJECT_DIRECT_IMPORT_NO_OWNER | ACCEPT_NO_ACTION |
-| F2-review-artifacts-are-stale-runtime-snapshots | `Local Retention Artifact ZIP (LRA-T0/T2)` | 39 review-artifacts/ entries are frozen 2026-08-11 dot-cvf runtime captures superseded by the live Core runtime owner | ACCEPT_NO_ACTION |
-| F3-untracked-governance-artifacts-superseded | `Local Retention Artifact ZIP (LRA-T0/T2)` | 6 untracked/ governance artifacts are superseded by already-closed/archived Core tranches | ACCEPT_NO_ACTION |
-| F4-T2-all-129-entries-terminal | `Local Retention Artifact ZIP (LRA-T0/T2)` | All 129 corpus entries now carry a terminal disposition; zero DEFER_REQUIRES_NEW_AUTHORITY rows remain | ACCEPT_NO_ACTION |
+| F1-T2-package-lane-v041-delta-terminally-rejected-concept-overlap-acknowledged | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | T2 remediation corrected a blanket no-overlap claim; 16 of 18 V041-delta entries have a governed concept owner (CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md) but NO_CURRENT_EXECUTABLE_OWNER; all 18 remain REJECT_DIRECT_IMPORT_NO_OWNER | ACCEPT_NO_ACTION |
+| F2-review-artifacts-are-stale-runtime-snapshots | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | 39 review-artifacts/ entries are frozen 2026-08-11 dot-cvf runtime captures superseded by the live Core runtime owner | ACCEPT_NO_ACTION |
+| F3-untracked-governance-artifacts-superseded | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | 6 untracked/ governance artifacts are superseded by already-closed/archived Core tranches | ACCEPT_NO_ACTION |
+| F4-T2-all-129-entries-terminal | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | T2 brought all 129 corpus entries to a terminal disposition class with zero DEFER_REQUIRES_NEW_AUTHORITY rows; LRA-SA-T0 (see F5) subsequently resolved the remaining 56 ARCHIVE_EVIDENCE_ONLY rows into fully terminal SUPERSEDED_BY_CURRENT_CVF_OWNER/NO_NEW_VALUE dispositions | ACCEPT_NO_ACTION |
+| F5-SA-T0-all-56-evidence-only-entries-semantically-terminal | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | LRA-SA-T0 read all 56 ARCHIVE_EVIDENCE_ONLY entries in full and assigned terminal semantic dispositions: 20 SUPERSEDED_BY_CURRENT_CVF_OWNER, 36 NO_NEW_VALUE, zero BLOCKED_VALUE_GAP; every concept found already maps to the existing absorption map or runtime expansion readiness contract | ACCEPT_NO_ACTION |
 
 ---
 

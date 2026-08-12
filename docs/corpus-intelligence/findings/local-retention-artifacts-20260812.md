@@ -2,25 +2,29 @@
 
 Memory class: FULL_RECORD
 
-Status: LRA_T2_REVIEWER_ACCEPTED_T4_CLOSED
+Status: LRA_SA_T0_SEMANTIC_ABSORPTION_COMPLETE_PENDING_REVIEW
 
 docType: baseline
 
-Date: 2026-08-12
+Date: 2026-08-13
 
 ## Purpose
 
-Finding disposition packet for the LRA-T0/T2 local retention artifact ZIP
-audit. Records F1-F4 findings and their dispositions for cross-agent
+Finding disposition packet for the LRA-T0/T2/SA-T0 local retention artifact
+ZIP audit. Records F1-F5 findings and their dispositions for cross-agent
 discovery, per GC-051 corpus scan registry routing. T2 resolved the last 18
-non-terminal rows; all 129 corpus entries now carry a terminal disposition.
+non-terminal rows; LRA-SA-T0 (2026-08-13) then resolved the remaining 56
+`ARCHIVE_EVIDENCE_ONLY` rows into fully terminal semantic dispositions. All
+129 corpus entries now carry a terminal disposition with zero
+`ARCHIVE_EVIDENCE_ONLY` remaining.
 
 ## Scope / Target / Owner Boundary
 
 Target: future agents assigned local-retention disposition or Workspace
 Layer / dot-cvf review-artifact / P3-CP2 / MSEA-R90 related tasks. Owner:
-LRA-T0/T2 scan wave, independently accepted on 2026-08-12. T4 closes the
-retention lifecycle by retaining one hash-pinned evidence archive.
+LRA-T0/T2/SA-T0 scan wave. T2 was independently accepted on 2026-08-12; T4
+closed the retention lifecycle by retaining one hash-pinned evidence archive.
+LRA-SA-T0 is pending independent review as of 2026-08-13.
 
 ## Source / Predecessor Evidence
 
@@ -33,35 +37,44 @@ retention lifecycle by retaining one hash-pinned evidence archive.
 - Manifest: `docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json`
 - T0 audit: `docs/audits/CVF_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_2026-08-12.md`
 - T2 audit: `docs/audits/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_AUDIT_2026-08-12.md`
+- SA-T0 roadmap: `docs/roadmaps/CVF_LOCAL_RETENTION_EVIDENCE_ONLY_SEMANTIC_ABSORPTION_AND_ARCHIVE_RELEASE_ROADMAP_2026-08-13.md`
+- SA-T0 GC-018: `docs/baselines/CVF_GC018_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md`
+- SA-T0 work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md`
+- SA-T0 audit: `docs/audits/CVF_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md`
+- SA-T0 semantic ledger: `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER.md`
 - Archive: immutable `CVF_LOCAL_RETENTION_20260812.zip`, SHA-256
   `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A`
 
 ## Decision / Baseline
 
-Findings F1-F4 are terminally dispositioned and independently accepted. T4
-retains the single immutable ZIP because 56 evidence-only rows still depend on
-the source content; no loose source tree or second CVF foundation is retained.
+Findings F1-F5 are terminally dispositioned. F1-F4 are independently
+accepted (T2/T4 closure); F5 is pending independent review as of 2026-08-13.
+T4 retains the single immutable ZIP as the sole evidence copy; no loose
+source tree or second CVF foundation is retained. T1 archive-release
+decision remains a separate, still-parked operator checkpoint requiring
+independent LRA-SA-T0 acceptance first.
 
 ## Evidence / Verification
 
 All 129 entries read (129/129 manifest reconciled, 0 unresolved, 0
-deferred). GC-047 verdict COMPLETE_VERIFIED. GC-048 verdict
-RECONCILED_VERIFIED. GC-050 classification CLASSIFIED_STRUCTURAL_PASS.
-Registry entry:
+deferred, 0 `ARCHIVE_EVIDENCE_ONLY`). GC-047 verdict COMPLETE_VERIFIED.
+GC-048 verdict RECONCILED_VERIFIED. GC-050 classification
+CLASSIFIED_STRUCTURAL_PASS. Registry entry:
 `docs/corpus-intelligence/registry/entries/local-retention-artifacts-20260812.json`.
 
 ## Claim Boundary
 
-Claims: independently accepted finding disposition for the bounded LRA-T0/T2
-local retention artifact ZIP and T4 retention-lifecycle closure. Does not
-claim absorption authority, production readiness, or semantic completeness
-beyond the bounded corpus.
+Claims: finding disposition for the bounded LRA-T0/T2/SA-T0 local retention
+artifact ZIP; F1-F4 independently accepted, F5 pending independent review.
+Does not claim absorption authority beyond documentation-level concept
+mapping, production readiness, archive-release authority, or semantic
+completeness beyond the bounded corpus.
 
 Corpus: `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\_cvf-core-backups\CVF_LOCAL_RETENTION_20260812.zip`
 
-Scan wave: LRA-T2 | Date: 2026-08-12
+Scan wave: LRA-SA-T0 | Date: 2026-08-13
 
-Full evidence: `docs/audits/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_AUDIT_2026-08-12.md`
+Full evidence: `docs/audits/CVF_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md`
 
 ---
 
@@ -73,6 +86,7 @@ Full evidence: `docs/audits/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMI
 | F2 - review artifacts stale runtime | ACCEPT_NO_ACTION | N/A | N/A | None - raw runtime state explicitly out of scope |
 | F3 - untracked governance superseded | ACCEPT_NO_ACTION | N/A | N/A | None - archived tokens must not be revived |
 | F4 - T2 all 129 entries terminal | ACCEPT_NO_ACTION | N/A | N/A | T4 closed: retain the single pinned evidence ZIP; no further scan |
+| F5 - SA-T0 all 56 evidence-only entries semantically terminal | ACCEPT_NO_ACTION | N/A | N/A | None - per-file concept-owner evidence recorded in the dated ledger; no new package/runtime/CLI/MCP/checker owner created |
 
 F2G classification source: pending  --  completion review is reviewer-owned per
 Reviewer Closure Conversion in the governing work order; this worker packet
@@ -275,16 +289,26 @@ withholding terminal closure pending an operator decision on the 18-entry
 V041 delta. The operator explicitly released T2 on 2026-08-12; the delta is
 now terminally resolved and this finding is closed.
 
-**What was found:** All 129 entries have terminal dispositions:
-`ARCHIVE_EVIDENCE_ONLY`=56 (54 same-hash package entries plus 2 changed
-metadata files), `REJECT_DIRECT_IMPORT_NO_OWNER`=18 (the former V041 delta;
-16 of 18 have a governed concept owner in the absorption map but
-`NO_CURRENT_EXECUTABLE_OWNER`, 2 install scripts have no direct concept
-owner and also `NO_CURRENT_EXECUTABLE_OWNER`), `REJECT_STALE_AUTHORITY`=16
-(9 generated bytecode cache entries, 6 corrupt review-artifact copies, 1
-self-reported test result), `REJECT_RAW_RUNTIME_STATE`=33, `SUPERSEDED`=6.
-Zero `DEFER_REQUIRES_NEW_AUTHORITY` rows remain. See the manifest
-`counts.dispositionTotals` field for the machine-readable reconciliation.
+**What was found (as of T2, 2026-08-12):** All 129 entries had terminal
+disposition classes: `ARCHIVE_EVIDENCE_ONLY`=56 (54 same-hash package
+entries plus 2 changed metadata files), `REJECT_DIRECT_IMPORT_NO_OWNER`=18
+(the former V041 delta; 16 of 18 have a governed concept owner in the
+absorption map but `NO_CURRENT_EXECUTABLE_OWNER`, 2 install scripts have no
+direct concept owner and also `NO_CURRENT_EXECUTABLE_OWNER`),
+`REJECT_STALE_AUTHORITY`=16 (9 generated bytecode cache entries, 6 corrupt
+review-artifact copies, 1 self-reported test result),
+`REJECT_RAW_RUNTIME_STATE`=33, `SUPERSEDED`=6. Zero
+`DEFER_REQUIRES_NEW_AUTHORITY` rows remained.
+
+**Update (LRA-SA-T0, 2026-08-13):** the 56 `ARCHIVE_EVIDENCE_ONLY` rows are
+now also fully terminal, per F5 below: `SUPERSEDED_BY_CURRENT_CVF_OWNER`=20,
+`NO_NEW_VALUE`=36. Current `counts.dispositionTotals`:
+`NO_NEW_VALUE`=36, `SUPERSEDED_BY_CURRENT_CVF_OWNER`=20,
+`REJECT_DIRECT_IMPORT_NO_OWNER`=18, `REJECT_STALE_AUTHORITY`=16,
+`REJECT_RAW_RUNTIME_STATE`=33, `SUPERSEDED`=6, summing to 129 with zero
+`ARCHIVE_EVIDENCE_ONLY` or `DEFER_REQUIRES_NEW_AUTHORITY` rows. See the
+manifest `counts.dispositionTotals` field for the machine-readable
+reconciliation.
 
 **Why the worker records this rather than closing the roadmap:** The
 governing T2 work order reserves closure and roadmap-state decisions for
@@ -305,6 +329,42 @@ before re-deriving owner comparisons already established here.
 
 ---
 
+## F5 - SA-T0: All 56 Evidence-Only Entries Are Now Semantically Terminal
+
+**Disposition:** ACCEPT_NO_ACTION | **defectClass:** N/A | **learningLane:** N/A
+
+**What was found:** LRA-SA-T0 (2026-08-13) read all 56 `ARCHIVE_EVIDENCE_ONLY`
+entries in full via the ZIP's structured read API (not a sample, not hash-
+identity alone), recomputed all 56 entry hashes (56/56 matched), and compared
+each file's actual content against
+`docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md`
+and current CVF surfaces. Result: 20 files (contracts and design-doc
+elaborations of already-ABSORB/ADAPT-classified doctrine) are
+`SUPERSEDED_BY_CURRENT_CVF_OWNER`; 36 files (reference-implementation
+executable source excluded from raw import, field-level schema shape detail
+under already-mapped state files, and package-author self-reported smoke
+claims) are `NO_NEW_VALUE`. Zero files required `BLOCKED_VALUE_GAP`. Full
+per-file evidence is recorded in
+`docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER.md`.
+
+**Why no action:** every concept found across the 56 files already has a CVF
+concept owner (the absorption map's Useful Patterns, CVF Mapping, or
+Two-Layer Absorption tables) or is executable code the runtime expansion
+readiness contract explicitly excludes from admission pending a fresh
+GC-018. No new package, runtime, CLI, MCP, IDE, Web, checker, provider, or
+public owner surface was created.
+
+**Cross-reference for future agents:** the concepts behind all 56
+`ARCHIVE_EVIDENCE_ONLY` entries are already governed by the absorption map;
+do not rediscover projection-not-authority, proposal-before-execution,
+denylist vocabulary, event/receipt separation, or the five mapped state
+files as new findings. What remains genuinely absent is an **executable**
+implementation, which still requires a fresh, separately authorized GC-018
+under the Agent Workspace Runtime Expansion Readiness Contract. T1
+archive-release decision is a separate, still-parked operator checkpoint.
+
+---
+
 ## Relationship To LRA Roadmap
 
 | Finding | LRA tranche that addresses it |
@@ -313,3 +373,4 @@ before re-deriving owner comparisons already established here.
 | F2 - review artifacts stale | T0 (this packet) - no T3 candidate found |
 | F3 - untracked superseded | T0 (this packet) - no T1 candidate found |
 | F4 - T2 all 129 entries terminal | T2 independently accepted; T4 closed with `RETAIN_SINGLE_PINNED_ARCHIVE` |
+| F5 - SA-T0 all 56 evidence-only entries semantically terminal | LRA-SA-T0 (this packet); pending independent review; no owner surface created |
