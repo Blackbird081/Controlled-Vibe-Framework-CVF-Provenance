@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_DISPATCH_READY
+Status: T0_REVIEWER_ACCEPTED_T1_PARKED
 
 docType: roadmap
 
@@ -75,7 +75,7 @@ Out of scope:
 
 | Tranche | Mission | Required output | Entry condition | Status |
 |---|---|---|---|---|
-| T0 | audit and semantically absorb the 56 evidence-only entries | 56-row ledger, owner/value matrix, minimal owner-map adaptation, manifest/registry reconciliation | operator release; fresh GC-018/work order | DISPATCH_READY |
+| T0 | audit and semantically absorb the 56 evidence-only entries | 56-row ledger, owner/value matrix, minimal owner-map adaptation, manifest/registry reconciliation | operator release; fresh GC-018/work order | REVIEWER_ACCEPTED at `6e575bf984d8af49eb8a1ab2db026802787a6cc3` |
 | T1 | decide archive release | accepted T0 proves zero evidence-only and zero unresolved semantic gaps; retain/delete recommendation | independent T0 acceptance; explicit operator release | PARKED |
 
 T0 succeeds only if every file is read and classified as
@@ -120,9 +120,10 @@ worker-return fast gate, and `git diff --check`.
 
 ## Next Allowed Move
 
-Execute only LRA-SA-T0 under its fresh baseline and no-commit work order. T1,
-ZIP deletion, source import, DESIGN, BUILD, runtime, provider/live, public-sync,
-deploy, and production remain parked.
+T0 is independently accepted. The operator may explicitly release T1 to
+decide archive retention/deletion, or leave this roadmap parked. T1, ZIP
+deletion, source import, DESIGN, BUILD, runtime, provider/live, public-sync,
+deploy, and production remain unauthorized until that fresh decision.
 
 ## Public Export Disposition
 

@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_REVIEWER_ACCEPTED_T0
 
 Batch ID: LRA-SA-T0
 
@@ -113,6 +113,17 @@ Allowed scope:
 - disposition values `ADAPTED_TO_EXISTING_OWNER`,
   `SUPERSEDED_BY_CURRENT_CVF_OWNER`, `NO_NEW_VALUE`, or
   `BLOCKED_VALUE_GAP`.
+- reviewer-only closure paths: this work order, paired baseline, roadmap,
+  completion review, `AGENT_HANDOFF_V59_2026-08-11.md`,
+  `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+  `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+  `CVF_SESSION/state/entries/nextAllowedMove.json`,
+  `CVF_SESSION/state/entries/localRetentionSemanticAbsorptionT0Closure20260813.json`,
+  and `CVF_SESSION_MEMORY.md`.
+- `docs/baselines/CVF_GC018_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md` (reviewer-only closure).
+- `docs/roadmaps/CVF_LOCAL_RETENTION_EVIDENCE_ONLY_SEMANTIC_ABSORPTION_AND_ARCHIVE_RELEASE_ROADMAP_2026-08-13.md` (reviewer-only closure).
+- `docs/reviews/CVF_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_COMPLETION_2026-08-13.md` (reviewer-only closure).
 
 Forbidden scope:
 
@@ -164,7 +175,7 @@ Risk ceiling: R1.
 | Artifact | Required worker action |
 |---|---|
 | `docs/audits/CVF_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md` | create full 56-row audit and command evidence |
-| `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER_2026-08-13.md` | create CVF-owned per-file semantic ledger |
+| `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER.md` | create CVF-owned per-file semantic ledger; reviewer corrected dispatch naming defect |
 | `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md` | minimally adapt proven missing concepts or record no-change evidence |
 | `docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json` | update exactly 56 dispositions/rationales and totals |
 | `docs/corpus-intelligence/registry/entries/local-retention-artifacts-20260812.json` | update semantic coverage and next action |
@@ -276,7 +287,7 @@ Returned defects: NONE_RETURNED
 | Input root or repository | exact 56 selected entries in immutable ZIP |
 | Enumeration command | structured read-only ZIP enumeration plus `rg --files --hidden --no-ignore` for owner searches |
 | Manifest artifact or inline manifest | `docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json` |
-| Processing ledger artifact or inline ledger | `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER_2026-08-13.md` |
+| Processing ledger artifact or inline ledger | `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER.md` |
 | Ledger terminal statuses | READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE |
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md` |
@@ -310,7 +321,7 @@ Returned defects: NONE_RETURNED
 - Enumeration command: structured read-only ZIP enumeration plus `rg --files --hidden --no-ignore` owner searches
 - Manifest artifact or inline manifest: `docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json`
 - Manifest hash: `4495DF956C9CE68A2F2F2A28A2E2370E254A37D7F48987CC7F57008273635377`
-- Processing ledger artifact or inline ledger: `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER_2026-08-13.md`
+- Processing ledger artifact or inline ledger: `docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER.md`
 - Allowed terminal statuses: READ | SKIPPED_WITH_REASON | DEFERRED | BLOCKED_UNREADABLE
 - Reconciliation: manifest=56; ledger_terminal=56; exclusions=worker semantic classifications; unreadable=0; unresolved=0
 - Unresolved files: 0
@@ -442,14 +453,35 @@ lack per-file evidence.
 
 ## Closure Checklist
 
-- [ ] Worker captured clean execution base.
-- [ ] ZIP digest and 56/56 hashes match.
-- [ ] Every row has semantic/owner/delta/disposition evidence.
-- [ ] Group arithmetic reconciles to 56.
-- [ ] Nine-path changed set matches.
-- [ ] Worker-return fast gate passes.
-- [ ] Worker leaves changes unstaged and uncommitted.
-- [ ] Independent reviewer disposition remains pending.
+- [x] Worker captured clean execution base.
+- [x] ZIP digest and 56/56 hashes match.
+- [x] Every row has semantic/owner/delta/disposition evidence.
+- [x] Group arithmetic reconciles to 56.
+- [x] Nine-path result set matches after reviewer stable-path correction.
+- [x] Worker-return fast gate passes after reviewer correction.
+- [x] Worker left changes unstaged and uncommitted.
+- [x] Independent reviewer accepted T0 at material commit `6e575bf984d8af49eb8a1ab2db026802787a6cc3`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_REVIEWER_ACCEPTED_T0` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_COMPLETION_2026-08-13.md` | reviewer acceptance and material SHA | PASS |
+| Roadmap state | LRA-SA roadmap | T0 accepted; T1 parked | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated entry: 129 total; zero evidence-only | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion reconciled | PASS |
+| External evidence digest | pinned ZIP | SHA-256 `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A` | PASS |
+| System loop interlock | no runtime loop change | N/A with reason: documentation/corpus lane only | N/A with reason |
+| Session continuity | active state/front door/handoff closure batch | T0 accepted; T1 parked | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| corpus terminality | 56 semantic rows; zero blocked/unresolved | 20 superseded + 36 no-new-value; zero blocked/unresolved | PASS |
+| runtime receipt boundary | no runtime receipt accepted as proof | corpus/documentation evidence only | PASS |
+| archive mutation | none | ZIP hash unchanged; no move/delete/extraction | PASS |
 
 ## Operator Checkpoint
 

@@ -45,25 +45,26 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`local_retention_semantic_absorption_t0_dispatched`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute no-commit LRA-SA-T0 semantic coverage of all 56 retained evidence entries; parked checkpoint=T1 archive release/deletion, MAO T1, raw import/execution, DESIGN, BUILD, runtime, provider/live, public `main` merge, deploy, hosted smoke, secrets, store, and production.
+Startup acknowledged: current mode=`local_retention_semantic_absorption_t0_accepted_t1_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator may explicitly release T1 archive decision or leave/close this roadmap; parked checkpoint=T1 archive release/deletion, MAO T1, raw import/execution, DESIGN, BUILD, runtime, provider/live, public `main` merge, deploy, hosted smoke, secrets, store, and production.
 
 ## Current Mode
 
-`local_retention_semantic_absorption_t0_dispatched`
+`local_retention_semantic_absorption_t0_accepted_t1_parked`
 
-Current mode marker: `local_retention_semantic_absorption_t0_dispatched`
-Current mode: `local_retention_semantic_absorption_t0_dispatched`
-Previous mode: `local_retention_artifact_roadmap_closed_next_operator_selection`
+Current mode marker: `local_retention_semantic_absorption_t0_accepted_t1_parked`
+Current mode: `local_retention_semantic_absorption_t0_accepted_t1_parked`
+Previous mode: `local_retention_semantic_absorption_t0_dispatched`
 
 ## Next Allowed Move
 
-Mode: `local_retention_semantic_absorption_t0_dispatched`
+Mode: `local_retention_semantic_absorption_t0_accepted_t1_parked`
 
-Execute LRA-SA-T0 from material dispatch `3c423f28b` in
-`WORKER_MUST_NOT_COMMIT` mode. The worker must read and classify all 56
-retained evidence entries, produce the exact nine-path packet, and return for
-independent review. T1 archive release/deletion, raw source import or
-execution, MAO T1, runtime/provider/public scope remain parked.
+LRA-SA-T0 is independently accepted at material commit `6e575bf984d8af49eb8a1ab2db026802787a6cc3`.
+All 56 retained evidence entries have file-specific semantic dispositions:
+20 superseded by current owners and 36 no-new-value, with zero blocked or
+unresolved rows. The operator may explicitly release T1 archive decision or
+leave/close this roadmap. T1 deletion and all runtime/provider/public scope
+remain parked.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints

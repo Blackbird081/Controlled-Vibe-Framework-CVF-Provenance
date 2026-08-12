@@ -1,5 +1,5 @@
 {
   "stateOrder": 2167,
   "stateKey": "nextAllowedMove",
-  "value": "Execute LRA-SA-T0 at dispatch material commit 3c423f28b using WORKER_MUST_NOT_COMMIT. Read and classify all 56 ARCHIVE_EVIDENCE_ONLY ZIP entries, produce the exact nine-path semantic coverage packet, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T1 archive release/deletion, raw source import or execution, MAO T1, DESIGN, BUILD, runtime, provider/live, public main merge, deploy, hosted smoke, secrets, store, and production remain unauthorized. Latest closed numbered LHW wave remains LHW24."
+  "value": "LRA-SA-T0 is independently accepted at material commit 6e575bf984d8af49eb8a1ab2db026802787a6cc3: 56/56 files read and hash-verified, 20 SUPERSEDED_BY_CURRENT_CVF_OWNER, 36 NO_NEW_VALUE, zero evidence-only, blocked, or unresolved rows. T1 archive release/deletion remains PARKED and requires explicit operator release; the operator may release T1 or leave/close this roadmap. Raw source import/execution, MAO T1, DESIGN, BUILD, runtime, provider/live, public main merge, deploy, hosted smoke, secrets, store, and production remain unauthorized. Latest closed numbered LHW wave remains LHW24."
 }

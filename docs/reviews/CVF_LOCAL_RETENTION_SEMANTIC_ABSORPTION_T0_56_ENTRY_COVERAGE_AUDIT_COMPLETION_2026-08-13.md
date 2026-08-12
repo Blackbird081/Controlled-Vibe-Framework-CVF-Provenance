@@ -2,7 +2,7 @@
 
 Memory class: governed-review
 
-Status: REVIEWER_ACCEPTED_PENDING_MATERIAL_COMMIT
+Status: REVIEWER_ACCEPTED_T0_CLOSED_T1_PARKED
 
 docType: completion_review
 
@@ -192,7 +192,7 @@ and requires explicit operator release.
 - valueDelta: independently verified 56 semantic rows and repaired one dispatch path defect plus one prose count mismatch
 - stopDisposition: COMPLETE_REVIEW
 - preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-- materialCommitCount: 0
+- materialCommitCount: 1
 - continuityCommitCount: 0
 - commitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
 - latencyDisposition: NOT_MEASURED_WITH_REASON: exact elapsed time unavailable
@@ -202,13 +202,13 @@ and requires explicit operator release.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order | committed dispatch authority | remains immutable until post-material closure transition | PENDING_MATERIAL_COMMIT |
-| Completion review | this file | `REVIEWER_ACCEPTED_PENDING_MATERIAL_COMMIT` | PENDING_MATERIAL_COMMIT |
-| Roadmap | LRA-SA roadmap | T0 acceptance and T1 parked update follows material commit | PENDING_MATERIAL_COMMIT |
+| Work order | committed dispatch authority | `Status: CLOSED_REVIEWER_ACCEPTED_T0` | PASS |
+| Completion review | this file | `Status: REVIEWER_ACCEPTED_T0_CLOSED_T1_PARKED` | PASS |
+| Roadmap | LRA-SA roadmap | T0 reviewer-accepted; T1 parked | PASS |
 | Registry JSON/Markdown | GC-051 source and generated views | 129 total; zero evidence-only | PASS |
 | External evidence digest | pinned ZIP | exact SHA-256 and 56/56 hashes | PASS |
 | System loop interlock | no runtime loop mutation | N/A with reason: documentation/corpus lane only | N/A with reason |
-| Session continuity | dedicated post-material sync | protected paths excluded from this material batch | PENDING_MATERIAL_COMMIT |
+| Session continuity | same closure-transition continuity batch, followed by handoff sync if needed | T0 accepted; T1 parked | PASS |
 
 ## Agent Operation Trace Block
 
@@ -254,10 +254,10 @@ Reason: private local-retention evidence; no public artifact or sync authority.
 
 ## Decision / Disposition
 
-`REVIEWER_ACCEPTED_PENDING_MATERIAL_COMMIT`
+`REVIEWER_ACCEPTED_T0_CLOSED_T1_PARKED`
 
-The semantic result is accepted subject only to the material commit and
-post-commit closure/session transition. T1 remains parked and is not released
+Material commit `6e575bf984d8af49eb8a1ab2db026802787a6cc3` preserves the
+accepted semantic result. T0 is closed. T1 remains parked and is not released
 by this decision.
 
 ## Claim Boundary

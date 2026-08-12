@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_REVIEWER_ACCEPTED_T0
 
 Batch ID: LRA-SA-T0
 
@@ -131,6 +131,19 @@ Returned defects: NONE_RETURNED
 | Owner surface | existing Workspace Layer absorption map plus dated per-file semantic ledger |
 | Disposition | ADAPT or NO_NEW_VALUE per file; no direct import |
 | Claim boundary | documentation knowledge only; no executable/package admission |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired LRA-SA-T0 work order | `Status: CLOSED_REVIEWER_ACCEPTED_T0` | PASS |
+| Completion or reviewer artifact | LRA-SA-T0 completion review | material commit `6e575bf984d8af49eb8a1ab2db026802787a6cc3` | PASS |
+| Roadmap state | LRA-SA roadmap | T0 accepted; T1 parked | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | 129 terminal; zero evidence-only | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion reconciled | PASS |
+| External evidence digest | pinned ZIP | SHA-256 `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A` | PASS |
+| System loop interlock | no runtime loop change | N/A with reason: documentation/corpus lane only | N/A with reason |
+| Session continuity | active state/front door/handoff | explicit T1 operator checkpoint | PASS |
 
 ## Public Export Disposition
 
