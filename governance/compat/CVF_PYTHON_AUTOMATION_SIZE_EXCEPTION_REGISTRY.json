@@ -87,7 +87,7 @@
     {
       "path": "governance/compat/run_public_projection_pre_push_gate.py",
       "fileClass": "python_cli_orchestrator",
-      "approvedMaxLines": 1380,
+      "approvedMaxLines": 724,
       "status": "ACTIVE_EXCEPTION",
       "rationale": "Freshly seeds the already-proven untracked PUBLIC-PROJECTION-PREPUSH-T1 runner preimage into the governed commit flow at its exact current physical line count. This bounded admission authorizes no growth and no semantic weakening.",
       "requiredFollowup": "Perform the Amendment 2 structural refactor without semantic change, keep the runner at <= 800 physical lines (target <= 780), and ratchet only approvedMaxLines downward to the exact final physical line count. Do not remove this exception or change any other entry field.",
@@ -96,7 +96,7 @@
     {
       "path": "governance/compat/test_run_public_projection_pre_push_gate.py",
       "fileClass": "python_test",
-      "approvedMaxLines": 1279,
+      "approvedMaxLines": 1191,
       "status": "ACTIVE_EXCEPTION",
       "rationale": "Freshly seeds the already-proven untracked PUBLIC-PROJECTION-PREPUSH-T1 focused-test preimage into the governed commit flow at its exact current physical line count. This bounded admission authorizes no growth and no semantic weakening.",
       "requiredFollowup": "Complete the Amendment 2 structural refactor without weakening coverage, keep this test file at <= 1200 physical lines (target <= 1150), and ratchet only approvedMaxLines downward to the exact final physical line count. Do not remove this exception or change any other entry field.",
