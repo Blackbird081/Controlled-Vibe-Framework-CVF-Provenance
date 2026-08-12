@@ -9,15 +9,17 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Current Core HEAD marker:
-  `c1562e7688ce78bf7fc70691f6136274a26cf921`
+  `0ced06a86eaa4b3f4294eb580de2e2f39beba04d`
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
+- MAO T0 material closure commit:
+  `0ced06a86eaa4b3f4294eb580de2e2f39beba04d`
 - SOPR-CP1 dispatch authority commit:
   `3a032e40bb83eeda1da8c40b817d70f75c7a094d`
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Handoff-sync parent commit:
-  `aefcb63c30f88408a005cfacb4af9712fe405ce3`
+  `0ced06a86eaa4b3f4294eb580de2e2f39beba04d`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
@@ -67,6 +69,9 @@ pre-push owner/profile implementation.
 - The roadmap, GC-018 baseline, and T0 work order are converted to machine
   closure form; the audit, worker return, and completion review form the
   evidence packet.
+- Material closure is committed at
+  `0ced06a86eaa4b3f4294eb580de2e2f39beba04d`; its pre-commit governance
+  chain passed 84 of 84 checks.
 - T1-T7 remain closed. Global mode and next allowed move remain unchanged:
   operator selection of a new roadmap.
 
