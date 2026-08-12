@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Current Core HEAD marker:
-  `21fa13c705fcf906e19a562b912a170b2ad96b8d`
+  `ba83c00913eccd29615e0f00e6da2824be22543a`
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
 - MAO T0 material closure commit:
@@ -19,7 +19,7 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Handoff-sync parent commit:
-  `21fa13c705fcf906e19a562b912a170b2ad96b8d`
+  `ba83c00913eccd29615e0f00e6da2824be22543a`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
