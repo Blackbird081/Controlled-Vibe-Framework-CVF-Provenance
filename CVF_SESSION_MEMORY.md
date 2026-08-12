@@ -73,6 +73,10 @@ Public staging push is complete at `origin/lpci1-ref-staging@021f8b852`.
 MAO T1, DESIGN, BUILD, Netlify deployment, hosted/provider/store, secrets,
 production, and public `main` merge remain parked.
 
+The `broad external knowledge absorption` lane remains outside the current
+release. It is included in the `blocked work classes` unless the operator opens
+a fresh, source-verified governed tranche.
+
 ## Targeted Lookup Rules
 
 - For complete canonical state, read `CVF_SESSION/ACTIVE_SESSION_STATE.json`.

@@ -190,13 +190,17 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: explicit instruction on 2026-08-13 to continue
-semantic absorption of the retained material.
+semantic absorption of the retained material, then commit and push the clean
+private provenance stack; the operator separately approved temporarily
+restoring the private provenance push URL for that bounded push.
 
 Authorized guard-maintenance scope: bind accepted LRA-SA-T0 material commit
 `6e575bf984d8af49eb8a1ab2db026802787a6cc3`, record 56/56 terminal semantic
 coverage, set explicit T1 operator selection as next move, and keep archive
 release/deletion, raw import/execution, runtime/provider/public, and unrelated
-lanes parked.
+lanes parked. The same bounded session-sync scope permits restoring the missing
+GC-043 front-door literals `broad external knowledge absorption` and `blocked
+work classes`; it does not alter their parked disposition.
 
 Rollback boundary: revert this exact session-sync batch together; do not
 separate generated state from its source fragments and do not alter material
