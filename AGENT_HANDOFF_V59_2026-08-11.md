@@ -32,7 +32,7 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Handoff-sync parent commit:
-  `c3d8f289b527f0e90b74c5a0551a14e6b4875506`
+  `c51cc0cdcdada4e8e024d44806227cb8c7068f73`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
