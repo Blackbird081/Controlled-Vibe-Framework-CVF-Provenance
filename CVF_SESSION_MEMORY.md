@@ -45,33 +45,32 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`public_projection_prepush_t1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed public-projection pre-push T1 Amendment 2 authority at `8bbbd8622`; parked checkpoint=public mutation, push, deploy, browser/provider/store, secrets, production, and public `main`.
+Startup acknowledged: current mode=`public_projection_prepush_t1_closed_pending_push_authority`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit operator authority for any public push tranche after material closure `0247f7347`; parked checkpoint=public mutation, push, deploy, browser/provider/store, secrets, production, and public `main`.
 
 ## Current Mode
 
-`public_projection_prepush_t1_dispatched_pending_worker_return`
+`public_projection_prepush_t1_closed_pending_push_authority`
 
-Current mode marker: `public_projection_prepush_t1_dispatched_pending_worker_return`
-Current mode: `public_projection_prepush_t1_dispatched_pending_worker_return`
-Previous mode: `lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_push_authority`
+Current mode marker: `public_projection_prepush_t1_closed_pending_push_authority`
+Current mode: `public_projection_prepush_t1_closed_pending_push_authority`
+Previous mode: `public_projection_prepush_t1_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `public_projection_prepush_t1_dispatched_pending_worker_return`
+Mode: `public_projection_prepush_t1_closed_pending_push_authority`
 
-Execute committed Amendment 2 authority `8bbbd8622` using the later final
-session-sync HEAD supplied by the orchestrator as `executionBaseHead`: perform
-only the exact seven-path structural refactor and the
-`approvedMaxLines`-only downward registry ratchet. Preserve the five pinned
-implementation preimages until worker execution begins. Candidate `021f8b852`
-remains read-only.
+PUBLIC-PROJECTION-PREPUSH-T1 Amendment 2 is independently accepted and
+materially closed at `0247f7347`. Await explicit operator authority for any
+public push tranche. Before any push, read the critical repository boundary,
+verify remotes, run push-readiness preview, and run the canonical pre-push gate
+against the exact committed range. Candidate `021f8b852` remains read-only.
 WORKER_MUST_NOT_COMMIT. Public mutation, push, deploy, provider/store, secrets,
 network install, production, and public `main` remain parked.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-PUBLIC-PROJECTION-PREPUSH-T1 worker return is the active checkpoint. Candidate
+PUBLIC-PROJECTION-PREPUSH-T1 closure `0247f7347` is complete. Candidate
 `021f8b852` remains clean and read-only. Public push, Netlify deployment,
 hosted/provider/store, secrets, production, and public `main` remain parked.
 

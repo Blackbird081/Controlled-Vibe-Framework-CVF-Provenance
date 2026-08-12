@@ -1,5 +1,5 @@
 {
   "stateOrder": 2141,
   "stateKey": "nextAllowedMove",
-  "value": "Execute committed PUBLIC-PROJECTION-PREPUSH-T1 Amendment 2 authority 8bbbd86226880ab952932d9b1aca8ddab20d310c using the later final session-sync HEAD supplied by the orchestrator as executionBaseHead. Perform only the exact seven-path structural refactor and approvedMaxLines-only downward registry ratchet; preserve all five implementation preimages until worker execution begins. WORKER_MUST_NOT_COMMIT. Public candidate 021f8b852 remains read-only; public mutation, push, deploy, browser/provider/store, secrets, network install, public main and production remain forbidden pending independent review. Latest closed numbered LHW wave remains LHW24."
+  "value": "PUBLIC-PROJECTION-PREPUSH-T1 Amendment 2 is closed at 0247f734771857527a7066017563a40b088d1d48. Await explicit operator authority for any public push tranche. Before any push, read the critical repository boundary, verify remotes, run push-readiness preview and the canonical pre-push gate against the exact committed range. Public mutation, push, deploy, browser/provider/store, secrets, public main and production remain parked. Latest closed numbered LHW wave remains LHW24."
 }

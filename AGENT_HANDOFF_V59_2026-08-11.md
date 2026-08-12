@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Public Projection Pre-Push T1 Dispatched
+# CVF Agent Handoff V59 - Public Projection Pre-Push T1 Closed
 
 Memory class: active-handoff
 
@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Current Core HEAD marker:
-  `8bbbd86226880ab952932d9b1aca8ddab20d310c`
+  `0247f734771857527a7066017563a40b088d1d48`
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
 - SOPR-CP1 dispatch authority commit:
@@ -24,7 +24,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `public_projection_prepush_t1_dispatched_pending_worker_return`
+  `public_projection_prepush_t1_closed_pending_push_authority`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -33,19 +33,20 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`public_projection_prepush_t1_dispatched_pending_worker_return`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute
-committed public-projection pre-push T1 authority; parked checkpoint=public
+Startup acknowledged: current mode=`public_projection_prepush_t1_closed_pending_push_authority`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit
+operator authority for any public push tranche; parked checkpoint=public
 mutation, push, deploy, browser/provider/store, secrets, production, and public
 `main`.
 
 ## Current Mode
 
-`public_projection_prepush_t1_dispatched_pending_worker_return`
+`public_projection_prepush_t1_closed_pending_push_authority`
 
 ## Purpose
 
-Route committed public-projection pre-push owner/profile implementation.
+Record independent acceptance and material closure of the public-projection
+pre-push owner/profile implementation.
 
 ## Current Authority
 
@@ -68,6 +69,9 @@ Route committed public-projection pre-push owner/profile implementation.
 | T1 Amendment 2 baselineSha256 | `6b4893f3284442ab8e6a37bb6161e523de2e29000b73b910562bf1a5a5292d52` |
 | T1 Amendment 2 workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_AMENDMENT_2_2026-08-12.md` |
 | T1 Amendment 2 workOrderSha256 | `291009102dd3e82c325b2c7e9b6003b8c2238c2c1a450c10f6acc706c7671ad6` |
+| T1 Amendment 2 materialClosureCommit | `0247f734771857527a7066017563a40b088d1d48` |
+| T1 Amendment 2 completionReviewSha256 | `0f7de24d88946989d1b70dd4062f9251a91ae8b119b450d8501a559916507ded` |
+| T1 Amendment 2 workerReturnSha256 | `c3fa3e1fa12dff9009ac15fbf92367e0b536d6e9b46e464ebf4b83abecad7e8e` |
 
 ## Closure Evidence
 
@@ -113,18 +117,15 @@ Route committed public-projection pre-push owner/profile implementation.
 
 ## Next Allowed Move
 
-Execute `PUBLIC-PROJECTION-PREPUSH-T1-AMENDMENT-2` from authority
-`8bbbd8622`, using the later final session-sync HEAD supplied by the
-orchestrator as `executionBaseHead`. Worker owns exactly seven paths: standard, policy,
-runner, new helper, focused tests, existing return and size-exception registry.
-Registry changes are limited to `approvedMaxLines`-only downward ratchets to
-exact final line counts; no helper exception. Public candidate `021f8b852` is
-read-only. WORKER_MUST_NOT_COMMIT. Push, deploy,
+Await explicit operator authority for any public push tranche. Before a push,
+read the critical repository boundary, verify remotes, run push-readiness
+preview, and run the canonical pre-push gate against the exact committed
+range. Public candidate `021f8b852` remains read-only. Push, deploy,
 browser/provider/store, secrets, production, and public `main` remain parked.
 
 ## Active Boundary
 
-- T1 Amendment 2 structural refactor is the only open lane. LPCI1 Amendment 2 and both
+- T1 Amendment 2 is closed at `0247f7347`. LPCI1 Amendment 2 and both
   candidate commits remain closed and immutable. Public push, Netlify deploy,
   production, and every unrelated lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
