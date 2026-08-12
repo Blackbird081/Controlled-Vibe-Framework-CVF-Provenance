@@ -45,24 +45,24 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`local_retention_artifact_t0_dispatch_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute only LRA-T0; parked checkpoint=LRA T1-T4, archive deletion, MAO T1, DESIGN, BUILD, provider/live, public `main` merge, deploy, hosted smoke, secrets, store, and production.
+Startup acknowledged: current mode=`local_retention_artifact_t0_accepted_t2_candidate_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator disposition of the parked T2 candidate; parked checkpoint=T2 without fresh GC-018, T4, archive deletion, MAO T1, DESIGN, BUILD, provider/live, public `main` merge, deploy, hosted smoke, secrets, store, and production.
 
 ## Current Mode
 
-`local_retention_artifact_t0_dispatch_ready`
+`local_retention_artifact_t0_accepted_t2_candidate_parked`
 
-Current mode marker: `local_retention_artifact_t0_dispatch_ready`
-Current mode: `local_retention_artifact_t0_dispatch_ready`
-Previous mode: `public_projection_staging_branch_pushed_deploy_parked`
+Current mode marker: `local_retention_artifact_t0_accepted_t2_candidate_parked`
+Current mode: `local_retention_artifact_t0_accepted_t2_candidate_parked`
+Previous mode: `local_retention_artifact_t0_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `local_retention_artifact_t0_dispatch_ready`
+Mode: `local_retention_artifact_t0_accepted_t2_candidate_parked`
 
-Execute only LRA-T0 under the committed local-retention GC-018 and work order
-at material dispatch commit `21fa13c70`. Inventory and audit all 129 immutable
-ZIP entries without extraction into Core, absorption, execution, staging, or
-worker commit. LRA T1-T4 and archive deletion remain parked.
+LRA-T0 is reviewer-accepted: all 129 immutable ZIP entries reconcile, 111 are
+terminal, and 18 form a T2 candidate set. The next move is an operator decision
+to release a fresh T2 GC-018 or keep the roadmap parked. T0 acceptance does not
+authorize T2. T1/T3 are N/A; T4 and archive deletion remain parked.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints

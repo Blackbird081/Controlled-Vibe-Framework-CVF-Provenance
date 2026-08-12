@@ -1,5 +1,5 @@
 {
   "stateOrder": 2167,
   "stateKey": "nextAllowedMove",
-  "value": "Execute only LRA-T0 under the committed local-retention GC-018 and work order at material dispatch commit 21fa13c705fcf906e19a562b912a170b2ad96b8d. The worker must inventory and audit all 129 immutable ZIP entries without extraction into Core, absorption, execution, staging, or commit. LRA T1-T4, archive deletion, MAO T1, DESIGN, BUILD, provider/live, public main merge, deploy, hosted smoke, secrets, store, and production remain parked. Latest closed numbered LHW wave remains LHW24."
+  "value": "LRA-T0 is independently reviewer-accepted: 129 immutable ZIP entries reconcile, 111 have terminal dispositions, and 18 DEFER_REQUIRES_NEW_AUTHORITY entries form a T2 candidate set. The next allowed move is operator disposition only: explicitly release a fresh T2 GC-018 or keep the roadmap parked. T2 is not authorized by T0 acceptance. LRA T1/T3 are N/A, T4 and archive deletion remain parked; MAO T1, DESIGN, BUILD, provider/live, public main merge, deploy, hosted smoke, secrets, store, and production remain parked. Latest closed numbered LHW wave remains LHW24."
 }

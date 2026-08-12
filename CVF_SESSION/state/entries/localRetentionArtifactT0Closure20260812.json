@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2168,
+  "stateKey": "localRetentionArtifactT0Closure20260812",
+  "value": "Independent Codex re-review accepted LRA-T0 at private material commit a4c7a0a840643f7d669ec2b91752d4cd9ff7771d after exact archive and version-delta reconciliation plus the 84/84 pre-commit governance chain. The immutable ZIP contains 129 unique entries; 111 are terminal and 18 remain DEFER_REQUIRES_NEW_AUTHORITY. T1 and T3 are N/A from T0 dispositions. T2 is a candidate only and remains parked pending explicit operator release plus a fresh GC-018; T4, archive deletion, absorption, DESIGN, BUILD, provider/live, public-sync, deploy, and production remain unauthorized."
+}
