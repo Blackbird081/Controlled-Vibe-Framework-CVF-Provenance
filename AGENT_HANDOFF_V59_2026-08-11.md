@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Local Retention Roadmap Closed
+# CVF Agent Handoff V59 - Local Retention Semantic Absorption T0 Dispatched
 
 Memory class: active-handoff
 
@@ -8,8 +8,10 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Current Core HEAD marker:
-  `c1e7af8f18da92e33e2af0b582f8d04fd20a528b`
+- Current Core material HEAD marker:
+  `3c423f28b`
+- LRA-SA-T0 dispatch material commit:
+  `3c423f28b`
 - LRA-T2/T4 material closure commit:
   `c1e7af8f18da92e33e2af0b582f8d04fd20a528b`
 - LRA-T2 dispatch material commit:
@@ -32,7 +34,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `local_retention_artifact_roadmap_closed_next_operator_selection`
+  `local_retention_semantic_absorption_t0_dispatched`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -41,51 +43,52 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`local_retention_artifact_roadmap_closed_next_operator_selection`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator
-selects a different roadmap; parked checkpoint=archive deletion, MAO T1,
-DESIGN, BUILD, runtime, provider/live, public `main`, deploy,
+Startup acknowledged: current mode=`local_retention_semantic_absorption_t0_dispatched`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute
+no-commit LRA-SA-T0 for all 56 retained evidence entries; parked checkpoint=T1
+archive release/deletion, raw import/execution, MAO T1, DESIGN, BUILD,
+runtime, provider/live, public `main`, deploy,
 hosted smoke, secrets, store, production.
 
 ## Current Mode
 
-`local_retention_artifact_roadmap_closed_next_operator_selection`
+`local_retention_semantic_absorption_t0_dispatched`
 
 ## Purpose
 
-Record accepted LRA-T2, T4 retention-lifecycle closure, and the closed local
-retention roadmap without admitting archive source or opening runtime authority.
+Record LRA-SA-T0 dispatch for exhaustive semantic coverage of the 56 retained
+evidence entries without admitting archive source or opening runtime authority.
 
 ## Scope / Target / Owner Boundary
 
-- Current bounded target: read/hash/owner/value reconciliation of exactly 18
-  entries currently marked `DEFER_REQUIRES_NEW_AUTHORITY`.
-- Successful T2 worker return must produce 129 terminal and zero deferred rows
-  through the exact seven-path fulfillment manifest.
-- T1 and T3 are N/A. T4 remains parked pending independent T2 acceptance.
-- Archive extraction, absorption, deletion, DESIGN, BUILD, provider/live,
+- Current bounded target: direct semantic reading, hash verification, owner
+  mapping, and value disposition of exactly 56 `ARCHIVE_EVIDENCE_ONLY` entries.
+- Successful T0 worker return must produce 56 terminal semantic rows and the
+  exact nine-path fulfillment manifest with zero evidence-only or blocked gaps.
+- T1 archive release remains parked pending independent T0 acceptance.
+- Raw archive source import/execution, deletion, DESIGN, BUILD, provider/live,
   public synchronization, deployment, merge, and production remain unopened.
 
 ## Latest Work / Changes
 
-- Operator explicitly released terminal-disposition T2.
-- Fresh GC-018, no-commit work order, and roadmap dispatch state were committed
-  at `d0e88c0f4cfba72b8cc22dd71c61202ad1792c48`.
-- Pre-dispatch passed 76/76 and material pre-commit passed 84/84.
-- Archive extraction/import/execution, new owners, runtime/source/test change,
-  T4, ZIP deletion, provider/live, public-sync, and deployment remain closed.
+- Operator explicitly released continued semantic absorption.
+- Fresh LRA-SA roadmap, GC-018, and no-commit T0 work order were committed at
+  `3c423f28b`.
+- Pre-implementation passed 78/78 and material pre-commit passed 84/84.
+- Raw archive import/execution, source/test/package implementation, T1 archive
+  release/deletion, provider/live, public-sync, and deployment remain closed.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | T2 terminal-disposition dispatch ready |
-| baselinePath | `docs/baselines/CVF_GC018_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_2026-08-12.md` |
-| baselineSha256 | `ee3b513646f254c205e44482f689c57697fde54afb1da31af35452b3540f58f7` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_2026-08-12.md` |
-| workOrderSha256 | `9aff035791bfa3129bdfe8e07611918eee0686d657bcf55ef0eeae3b9a14e06d` |
-| workerReturnPath | `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_WORKER_RETURN_2026-08-12.md` |
-| nextAuthorityRequirement | independent T2 review before T4 |
+| authorityState | LRA-SA-T0 semantic absorption dispatch ready |
+| baselinePath | `docs/baselines/CVF_GC018_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md` |
+| baselineSha256 | `83dbed137cc669813ffa906dc90230798b13e32bb5ba7e1c72898af7ec0fc018` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md` |
+| workOrderSha256 | `d8823eb7363820c6cc4a634849361df28eb496115d86e9c8039575241eee3b49` |
+| workerReturnPath | `docs/reviews/CVF_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_WORKER_RETURN_2026-08-13.md` |
+| nextAuthorityRequirement | independent T0 review before T1 archive release decision |
 
 ## Closure Evidence
 
@@ -131,9 +134,9 @@ retention roadmap without admitting archive source or opening runtime authority.
 
 ## Next Allowed Move
 
-No further LRA tranche is authorized. The roadmap is closed with
-`RETAIN_SINGLE_PINNED_ARCHIVE`. The operator may select a different roadmap;
-MAO T1 and archive deletion remain parked pending explicit release.
+Execute LRA-SA-T0 at `3c423f28b` through the no-commit worker. The next
+independent step after the worker return is Codex review; T1 archive release,
+MAO T1, and deletion remain parked pending fresh authority.
 
 ## Active Boundary
 
@@ -149,8 +152,8 @@ MAO T1 and archive deletion remain parked pending explicit release.
 
 ## Worker Return Target
 
-LRA-T2 worker return target:
-`docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_WORKER_RETURN_2026-08-12.md`.
+LRA-SA-T0 worker return target:
+`docs/reviews/CVF_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_WORKER_RETURN_2026-08-13.md`.
 
 Prior pre-push dispatch-sync authorization and operation trace remain preserved
 in Git history through session-sync commit `0b1046dfc`; they are omitted from
@@ -160,11 +163,11 @@ this compact active handoff after the public staging push superseded that mode.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: the LRA-T2/T4 closure and continuity update concern private local
+Reason: the LRA-SA-T0 dispatch and continuity update concern private local
 retention evidence. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - LRA-T2/T4 Closure Session Sync
+## Core Guard Self-Protection Authorization - LRA-SA-T0 Dispatch Session Sync
 
 Protected paths:
 
@@ -173,27 +176,29 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/localRetentionSemanticAbsorptionT0Dispatch20260813.json`
 - `CVF_SESSION/state/entries/localRetentionArtifactT2T4Closure20260812.json`
 - `CVF_SESSION/state/entries/localRetentionArtifactT0Dispatch20260812.json`
 - `CVF_SESSION/state/entries/localRetentionArtifactT0Closure20260812.json`
 - `CVF_SESSION/state/entries/localRetentionArtifactT2Dispatch20260812.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit agreement on 2026-08-12 to process the
-retained material now and make the workspace compact.
+Operator authorization: explicit instruction on 2026-08-13 to continue
+semantic absorption of the retained material.
 
-Authorized guard-maintenance scope: bind accepted T2/T4 closure, record the
-single pinned evidence archive, set operator selection of another roadmap as
-the next move, and keep ZIP deletion, runtime/provider/public, and unrelated
-lanes parked.
+Authorized guard-maintenance scope: bind LRA-SA-T0 material dispatch
+`3c423f28b`, set the no-commit 56-entry semantic audit as next move, and keep
+T1 archive release/deletion, raw import/execution, runtime/provider/public,
+and unrelated lanes parked.
 
 Rollback boundary: revert this exact session-sync batch together; do not
-separate generated state from its source fragments and do not revert LRA-T2/T4
-material closure commit `c1e7af8f18da92e33e2af0b582f8d04fd20a528b`.
+separate generated state from its source fragments and do not alter material
+dispatch commit `3c423f28b` inside this continuity-only batch.
 
 ## Claim Boundary
 
-This handoff records accepted private LRA-T2 and T4 retention closure only. It
-does not authorize archive import/execution, new owners, archive deletion,
-public `main` merge, hosted runtime/provider behavior, deployment, release,
-availability, or production readiness.
+This handoff records private LRA-SA-T0 documentation-only semantic absorption
+dispatch. It does not authorize raw archive import/execution, implementation,
+new runtime owners, archive deletion, public `main` merge, hosted
+runtime/provider behavior, deployment, release, availability, or production
+readiness.

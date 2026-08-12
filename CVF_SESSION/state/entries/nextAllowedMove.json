@@ -1,5 +1,5 @@
 {
   "stateOrder": 2167,
   "stateKey": "nextAllowedMove",
-  "value": "LRA-T2 is reviewer-accepted at c1e7af8f18da92e33e2af0b582f8d04fd20a528b and the local-retention roadmap is closed through T4 with RETAIN_SINGLE_PINNED_ARCHIVE. No further LRA tranche is authorized. The operator may select a different roadmap next; MAO T1 remains parked until explicitly reopened. ZIP deletion, archive import/execution, DESIGN, BUILD, runtime, provider/live, public main merge, deploy, hosted smoke, secrets, store, and production remain unauthorized. Latest closed numbered LHW wave remains LHW24."
+  "value": "Execute LRA-SA-T0 at dispatch material commit 3c423f28b using WORKER_MUST_NOT_COMMIT. Read and classify all 56 ARCHIVE_EVIDENCE_ONLY ZIP entries, produce the exact nine-path semantic coverage packet, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. T1 archive release/deletion, raw source import or execution, MAO T1, DESIGN, BUILD, runtime, provider/live, public main merge, deploy, hosted smoke, secrets, store, and production remain unauthorized. Latest closed numbered LHW wave remains LHW24."
 }
