@@ -8,6 +8,8 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
+- Current Core HEAD marker:
+  `ddd54cbebb550af83db6ac8dbb7d96f5795768aa`
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
 - SOPR-CP1 dispatch authority commit:
