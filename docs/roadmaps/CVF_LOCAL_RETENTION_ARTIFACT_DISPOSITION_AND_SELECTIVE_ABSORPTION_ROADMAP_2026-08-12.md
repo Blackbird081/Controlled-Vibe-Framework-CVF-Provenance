@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_REVIEWER_ACCEPTED_T2_CANDIDATE_PARKED
+Status: T2_DISPATCH_READY_TERMINAL_DISPOSITION
 
 docType: roadmap
 
@@ -17,8 +17,10 @@ CVF roadmap after local workspace cleanup. The source archive is
 `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\_cvf-core-backups\CVF_LOCAL_RETENTION_20260812.zip`,
 SHA-256 `09e0e6f0b9de305b4cc3ce34f7cc2f0ebe0b82aa8e4b98774dd4ff0b2192493a`.
 
-This decision opens T0 inventory and authority audit only. It does not presume
-that any archived item belongs in Core.
+T0 was independently accepted. On 2026-08-12 the operator explicitly released
+fresh T2 authority to finish the 18 deferred V041 dispositions. The release is
+terminal evidence disposition only and does not presume that any archived item
+belongs in Core.
 
 ## Purpose
 
@@ -56,7 +58,7 @@ In scope:
 | Authority boundary | archived files are `NOT_CVF_SOURCE` until matched to current governed owners and explicitly admitted |
 | Lane split | governance artifacts, Workspace Layer package, and runtime/review evidence remain separate lanes |
 | Runtime boundary | T0 is read-only corpus audit; runtime and source implementation are forbidden |
-| Design threshold | DESIGN may open only for a T0 finding with current owner, non-duplicate value, and operator-selected follow-up |
+| Design threshold | T2 must terminally disposition the 18 items without opening DESIGN or a new owner surface |
 | Failure posture | stale authority, duplicate owner, raw runtime state, generated cache, or unverifiable provenance fails closed |
 | Sovereignty/privacy | inspect only artifact content needed for classification; do not promote secrets, private reasoning, or opaque payloads |
 
@@ -83,9 +85,9 @@ committed closure result that explicitly releases it.
 |---|---|---|---|---|
 | T0 | enumerate all 129 entries and decide authority/value posture | manifest, processing ledger, audit, GC-051 entry/aggregate, finding packet, worker return | operator selection and pinned archive hash | REVIEWER_ACCEPTED |
 | T1 | disposition six historical governance artifacts | per-file `ABSORB_CURRENT_EVIDENCE`, `SUPERSEDED`, `ARCHIVE_EVIDENCE_ONLY`, or `REJECT_STALE_AUTHORITY` | accepted T0 evidence | N/A_WITH_REASON: all six are `SUPERSEDED` in accepted T0 |
-| T2 | reconcile Workspace Layer V041 with current workspace owners | owner/overlap matrix and selective candidate list | accepted T0 evidence; at least one non-duplicate candidate; explicit operator release and fresh GC-018 | CANDIDATE_PARKED_PENDING_OPERATOR_RELEASE |
+| T2 | reconcile Workspace Layer V041 with current workspace owners | 18-row owner/value matrix and terminal disposition ledger | accepted T0 evidence; explicit operator release; fresh GC-018 and no-commit work order | DISPATCH_READY_TERMINAL_DISPOSITION |
 | T3 | disposition raw runtime/review artifacts | secret-safe digest or explicit rejection/retention result | accepted T0 evidence; evidence value proven | N/A_WITH_REASON: all 39 have terminal rejection dispositions in accepted T0 |
-| T4 | close retention lifecycle | all 129 entries terminal; ZIP retention/deletion recommendation | T1-T3 terminal or N/A with reason | HOLD_PENDING_T2_OR_OPERATOR_TERMINAL_DECISION |
+| T4 | close retention lifecycle | all 129 entries terminal; ZIP retention/deletion recommendation | T1-T3 terminal or N/A with reason | HOLD_PENDING_ACCEPTED_T2 |
 
 T0 may recommend immediate terminal closure when no item justifies absorption.
 T1-T3 are optional evidence-gated branches, not promised implementation waves.
@@ -125,21 +127,22 @@ External knowledge intake routing: REQUIRED
 
 | Field | Value |
 |---|---|
-| Chain map | `docs/reference/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
 | Input type | corpus scan or extraction intake |
 | Chain map route | immutable local ZIP -> source verification -> complete T0 manifest -> owner/value/authority disposition -> optional separately authorized absorption |
 | Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
-| Owner surface | this roadmap and the paired LRA-T0 GC-018/work order |
+| Owner surface | this roadmap, accepted T0 packet, and fresh LRA-T2 GC-018/work order |
 | Disposition | REJECT_DIRECT_IMPORT; classify every entry before any selective absorption proposal |
 | Claim boundary | Intake routing does not make archived content current CVF authority and does not authorize extraction, execution, or absorption |
 
 ## Next Allowed Move
 
-T0 is accepted. The next move is operator disposition of the parked T2
-candidate: either release a fresh T2 GC-018 for the 18 deferred V041 artifacts
-or retain the roadmap parked. T2 is not yet authorized. T1, T3, T4,
-absorption, DESIGN, BUILD, provider/live, public-sync, ZIP deletion, and
-runtime activation remain closed.
+Execute only LRA-T2 under the fresh GC-018 and no-commit work order. The worker
+must resolve exactly 18 deferred V041 rows to terminal evidence dispositions,
+leave changes unstaged/uncommitted, and return for independent review. T4,
+archive deletion, DESIGN, BUILD, runtime, provider/live, public-sync, deploy,
+and production remain closed until accepted T2 evidence explicitly releases
+the next step.
 
 ## Public Export Disposition
 
@@ -150,6 +153,7 @@ authorize public export.
 
 ## Claim Boundary
 
-This roadmap authorizes staged governance decisions, beginning with read-only
-T0. It does not admit archived content into Core and makes no runtime,
-provider, deployment, public, or production claim.
+This roadmap now authorizes read-only T2 terminal disposition for exactly 18
+archive items. It does not admit archived content into Core, open a new owner,
+delete the ZIP, or make a runtime, provider, deployment, public, or production
+claim.
