@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Current Core material HEAD marker:
-  `6e575bf984d8af49eb8a1ab2db026802787a6cc3`
+  `bdc90248f7359943b23c200852aa8692847be703`
 - LRA-SA-T0 material closure commit:
   `6e575bf984d8af49eb8a1ab2db026802787a6cc3`
 - LRA-SA-T0 dispatch material commit:
