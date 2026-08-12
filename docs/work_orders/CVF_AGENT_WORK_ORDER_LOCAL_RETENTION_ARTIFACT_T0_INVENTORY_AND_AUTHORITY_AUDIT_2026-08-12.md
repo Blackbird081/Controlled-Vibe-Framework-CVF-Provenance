@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_REVIEWER_ACCEPTED_T0
 
 docType: work_order
 
@@ -12,9 +12,9 @@ Batch ID: LRA-T0
 
 Dispatch base head: `5de753e3d73d2a811e1e0ae998763409fc1a0bbd`
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+executionBaseHead: `85ab31c813ae9877aabe522c9eba07725e8ec8f7`
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: `85ab31c813ae9877aabe522c9eba07725e8ec8f7`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -78,9 +78,22 @@ Allowed scope:
 - read the pinned ZIP without executing archived content;
 - enumerate and hash every entry;
 - compare claims and symbols to current tracked Core;
-- author the six outputs named in the fulfillment manifest;
+- author the seven outputs named in the fulfillment manifest;
 - regenerate only the GC-051 JSON/Markdown aggregates from the new source entry;
-- repair allowed-scope documentation and registry gate failures.
+- repair allowed-scope documentation and registry gate failures;
+- `docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json`;
+- `docs/corpus-intelligence/registry/entries/local-retention-artifacts-20260812.json`;
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`;
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`;
+- `docs/corpus-intelligence/findings/local-retention-artifacts-20260812.md`;
+- `docs/audits/CVF_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_2026-08-12.md`;
+- `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_WORKER_RETURN_2026-08-12.md`;
+- reviewer-owned closure paths `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_COMPLETION_2026-08-12.md`, `docs/roadmaps/CVF_LOCAL_RETENTION_ARTIFACT_DISPOSITION_AND_SELECTIVE_ABSORPTION_ROADMAP_2026-08-12.md`, `docs/baselines/CVF_GC018_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_2026-08-12.md`, and this work order;
+- session continuity after reviewer acceptance, including
+  `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`,
+  `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+  `CVF_SESSION/state/entries/nextAllowedMove.json`, and
+  `CVF_SESSION/state/entries/localRetentionArtifactT0Closure20260812.json`.
 
 Forbidden scope:
 
@@ -252,6 +265,20 @@ an exact changed-set reconciliation against them.
 | retention ZIP | immutable T0 input |
 | `Controlled-Vibe-Framework-CVF-public-sync/**` | no public scope |
 
+## Forbidden Filesystem State At Dispatch
+
+The listed locations were pre-existing inputs or governed owners, not worker
+outputs. The dispatch exemption authorized the worker to leave them untouched;
+it did not authorize mutation.
+
+| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
+|---|---|---|---|
+| `EXTENSIONS/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Do not edit, stage, or claim |
+| `CVF_SESSION/**`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V59_2026-08-11.md` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Reviewer/session-sync ownership only |
+| `governance/compat/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Read checkers only; do not edit |
+| retention ZIP | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Immutable audit input; do not mutate |
+| `Controlled-Vibe-Framework-CVF-public-sync/**` | PRESENT_EXEMPTED | PRESENT_EXEMPTED | No public-sync action |
+
 ## Agent Handoff Contract Control Block
 
 Contract source (not session state): archive-reference
@@ -344,24 +371,33 @@ accepted review may release T1, T2, or T3.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | reviewer converts to closed-equivalent | BLOCKED pending review |
-| Completion or reviewer artifact | completion path above | final disposition and gate evidence | BLOCKED pending review |
-| Roadmap state | companion roadmap | T0 terminal row and later-lane decision | BLOCKED pending review |
-| Registry JSON | generated GC-051 aggregate | new entry and manifest hash | BLOCKED pending worker |
-| Registry Markdown | generated GC-051 companion | human lookup and next action | BLOCKED pending worker |
-| External evidence digest | audit plus manifest | ZIP path, hash, count, privacy boundary | BLOCKED pending worker |
-| System loop interlock | finding packet and registry entry | upstream/downstream routing and mutation boundary | BLOCKED pending worker |
-| Session continuity | active handoff/session | next move after reviewer decision | BLOCKED pending review |
+| Work order status | this file | `CLOSED_REVIEWER_ACCEPTED_T0` | PASS |
+| Completion or reviewer artifact | completion path above | reviewer disposition and gate evidence | PASS |
+| Roadmap state | companion roadmap | T0 reviewer-accepted; T2 candidate parked | PASS |
+| Registry JSON | generated GC-051 aggregate | source entry and manifest hash reconcile | PASS |
+| Registry Markdown | generated GC-051 companion | 18-item parked next action | PASS |
+| External evidence digest | audit plus manifest | SHA-256 `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A`; 129 entries | PASS |
+| System loop interlock | finding packet and registry entry | T2 requires operator release plus fresh GC-018 | PASS |
+| Session continuity | active handoff/session | reviewer-owned parked-next-move synchronization | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Archive digest | `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A` | PASS |
+| Archive entry count | 129 unique paths | PASS |
+| Manifest content hash | `e36acc3a2dea6abcafd878564294ec72b65268a5460048020780e7ac771a9fb9` | PASS |
+| Open authority set | 18 `DEFER_REQUIRES_NEW_AUTHORITY` entries | PASS |
 
 ## Closure Checklist
 
-- [ ] Worker captured execution base.
-- [ ] Archive digest and 129-entry manifest verified.
-- [ ] Required artifact manifest complete.
-- [ ] Corpus and registry gates pass.
-- [ ] Worker return is pending, unstaged, and uncommitted.
-- [ ] Independent reviewer disposition recorded.
-- [ ] Roadmap and continuity updated only after acceptance.
+- [x] Worker captured execution base.
+- [x] Archive digest and 129-entry manifest verified.
+- [x] Required artifact manifest complete.
+- [x] Corpus and registry gates pass.
+- [x] Worker returned the packet unstaged and uncommitted for independent review.
+- [x] Independent reviewer disposition recorded.
+- [x] Roadmap and continuity updated only after acceptance.
 
 ## Return-To-Orchestrator Conditions
 

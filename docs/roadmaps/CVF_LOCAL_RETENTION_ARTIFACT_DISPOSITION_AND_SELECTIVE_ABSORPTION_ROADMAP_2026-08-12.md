@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_DISPATCH_READY
+Status: T0_REVIEWER_ACCEPTED_T2_CANDIDATE_PARKED
 
 docType: roadmap
 
@@ -81,11 +81,11 @@ committed closure result that explicitly releases it.
 
 | Tranche | Mission | Required output | Entry condition | Status |
 |---|---|---|---|---|
-| T0 | enumerate all 129 entries and decide authority/value posture | manifest, processing ledger, audit, GC-051 entry/aggregate, finding packet, worker return | operator selection and pinned archive hash | DISPATCH_READY |
-| T1 | disposition six historical governance artifacts | per-file `ABSORB_CURRENT_EVIDENCE`, `SUPERSEDED`, `ARCHIVE_EVIDENCE_ONLY`, or `REJECT_STALE_AUTHORITY` | accepted T0 evidence | HOLD_UNTIL_T0_ACCEPTED |
-| T2 | reconcile Workspace Layer V041 with current workspace owners | owner/overlap matrix and selective candidate list | accepted T0 evidence; at least one non-duplicate candidate | HOLD_UNTIL_T0_ACCEPTED |
-| T3 | disposition raw runtime/review artifacts | secret-safe digest or explicit rejection/retention result | accepted T0 evidence; evidence value proven | HOLD_UNTIL_T0_ACCEPTED |
-| T4 | close retention lifecycle | all 129 entries terminal; ZIP retention/deletion recommendation | T1-T3 terminal or N/A with reason | HOLD_UNTIL_PRIOR_DISPOSITIONS |
+| T0 | enumerate all 129 entries and decide authority/value posture | manifest, processing ledger, audit, GC-051 entry/aggregate, finding packet, worker return | operator selection and pinned archive hash | REVIEWER_ACCEPTED |
+| T1 | disposition six historical governance artifacts | per-file `ABSORB_CURRENT_EVIDENCE`, `SUPERSEDED`, `ARCHIVE_EVIDENCE_ONLY`, or `REJECT_STALE_AUTHORITY` | accepted T0 evidence | N/A_WITH_REASON: all six are `SUPERSEDED` in accepted T0 |
+| T2 | reconcile Workspace Layer V041 with current workspace owners | owner/overlap matrix and selective candidate list | accepted T0 evidence; at least one non-duplicate candidate; explicit operator release and fresh GC-018 | CANDIDATE_PARKED_PENDING_OPERATOR_RELEASE |
+| T3 | disposition raw runtime/review artifacts | secret-safe digest or explicit rejection/retention result | accepted T0 evidence; evidence value proven | N/A_WITH_REASON: all 39 have terminal rejection dispositions in accepted T0 |
+| T4 | close retention lifecycle | all 129 entries terminal; ZIP retention/deletion recommendation | T1-T3 terminal or N/A with reason | HOLD_PENDING_T2_OR_OPERATOR_TERMINAL_DECISION |
 
 T0 may recommend immediate terminal closure when no item justifies absorption.
 T1-T3 are optional evidence-gated branches, not promised implementation waves.
@@ -135,9 +135,11 @@ External knowledge intake routing: REQUIRED
 
 ## Next Allowed Move
 
-Execute only LRA-T0 under the paired GC-018 baseline and work order. T1-T4,
-DESIGN, BUILD, provider/live, public-sync, deletion of the ZIP, and runtime
-activation remain closed.
+T0 is accepted. The next move is operator disposition of the parked T2
+candidate: either release a fresh T2 GC-018 for the 18 deferred V041 artifacts
+or retain the roadmap parked. T2 is not yet authorized. T1, T3, T4,
+absorption, DESIGN, BUILD, provider/live, public-sync, ZIP deletion, and
+runtime activation remain closed.
 
 ## Public Export Disposition
 

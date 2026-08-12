@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_REVIEWER_ACCEPTED_T0
 
 docType: baseline
 
@@ -149,6 +149,19 @@ deploy, session-state edits, and commit.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private local archive audit with no public-sync authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_2026-08-12.md` | reviewer-accepted closed status | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_COMPLETION_2026-08-12.md` | independent disposition | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LOCAL_RETENTION_ARTIFACT_DISPOSITION_AND_SELECTIVE_ABSORPTION_ROADMAP_2026-08-12.md` | T0 accepted; T2 candidate parked | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate matches source entry | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human aggregate records 18 deferred entries | PASS |
+| External evidence digest | `docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json` | SHA-256 `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A`; 129 entries | PASS |
+| System loop interlock | `docs/corpus-intelligence/findings/local-retention-artifacts-20260812.md` | T2 requires operator release and fresh GC-018 | PASS |
+| Session continuity | `AGENT_HANDOFF_V59_2026-08-11.md` | parked next move is reviewer-owned continuity | PASS |
 
 ## Claim Boundary
 

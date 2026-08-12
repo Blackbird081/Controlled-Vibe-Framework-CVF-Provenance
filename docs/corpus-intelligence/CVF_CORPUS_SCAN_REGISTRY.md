@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-07-23 (PINT-R1 full-content rescan closure)
+Last updated: 2026-08-12 (LRA-T0 local retention artifact audit)
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -126,6 +126,7 @@ prior scan here before starting new work.
 
 | `CVF Extraction Foundation EXA-T2 scan route decision source` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Deterministic DocumentScanSignals + ScanRouteDecision + decide_scan_route(); maps PASS/NEEDS_TIER2_OCR/OCR_LOW_CONFIDENCE/PARTIAL/EMPTY to four stable dispositions; unsupported source type or language -> BLOCKED_UNSUPPORTED; no OCR, provider, or raw content |
 | `CVF Extraction Foundation EXA-T2 scan route decision tests` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Focused pytest coverage for PASS/local route, OCR-eligible route, OCR_LOW_CONFIDENCE/partial/empty escalation, unsupported language blocking, unsupported source-type blocking, docx support, deterministic repeatability, version+claim-boundary presence, and no raw-content fields |
+| `Local Retention Artifact ZIP (LRA-T0)` | LEGACY_FOLDER | SCANNED_WITH_FINDINGS | LRA-T0 | 129 | 63 of 84 packages/ entries (54 non-cache + 9 cache) SHA-256-match the already-committed CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md; 21 package entries are a V041 delta (2 changed, 19 added) with OWNER_NOT_FOUND against current Core, mostly unabsorbed CLI/MCP/runtime design; 39 review-artifacts/ entries are stale/corrupt dot-cvf runtime snapshots superseded by the live Core runtime owner; 6 untracked/ governance artifacts are superseded by already-closed/archived Core tranches; T0 does NOT recommend terminal closure while the 21-entry delta is unresolved |
 ---
 
 ## Finding Index
@@ -176,6 +177,15 @@ Use this index to find prior findings by domain keyword.
 | Finding ID | Corpus | Summary | Disposition |
 | --- | --- | --- | --- |
 | DSCP-T1-F1-governance-envelope-wrapper-needed | `DSCP-T1 domain-agnostic owner source surfaces` | ContextPackagerRequest and RAG pipeline types are reusable owner surfaces but need a governance envelope wrapper before cross-domain runtime use | DEFER_WITH_ROADMAP |
+
+### Local Retention Artifact Audit (LRA-T0)
+
+| Finding ID | Corpus | Summary | Disposition |
+| --- | --- | --- | --- |
+| F1-package-lane-partial-duplicate-with-unabsorbed-delta | `Local Retention Artifact ZIP (LRA-T0)` | Only 63 of 84 packages/ entries SHA-256-match the already-committed CVF_WORKSPACE_LAYER_FULL_PACKAGE_ABSORPTION_INVENTORY.md; 21 entries are a V041 delta with OWNER_NOT_FOUND against current Core | BLOCKED_PENDING_DECISION |
+| F2-review-artifacts-are-stale-runtime-snapshots | `Local Retention Artifact ZIP (LRA-T0)` | 39 review-artifacts/ entries are frozen 2026-08-11 dot-cvf runtime captures superseded by the live Core runtime owner | ACCEPT_NO_ACTION |
+| F3-untracked-governance-artifacts-superseded | `Local Retention Artifact ZIP (LRA-T0)` | 6 untracked/ governance artifacts are superseded by already-closed/archived Core tranches | ACCEPT_NO_ACTION |
+| F4-terminal-closure-not-recommended-pending-delta-decision | `Local Retention Artifact ZIP (LRA-T0)` | 18 of 84 package-lane entries remain DEFER_REQUIRES_NEW_AUTHORITY with OWNER_NOT_FOUND; T0 is reviewer-accepted, while T2 remains parked pending explicit operator release and fresh authority | DEFER_WITH_ROADMAP |
 
 ---
 
