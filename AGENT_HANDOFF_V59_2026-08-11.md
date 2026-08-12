@@ -8,6 +8,9 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
+- Remote tracking branch: `origin/main`
+- Exact remote SHA must be derived live from git when needed.
+- External agent memory files: non-canonical convenience only.
 - Current Core material HEAD marker:
   `bdc90248f7359943b23c200852aa8692847be703`
 - LRA-SA-T0 material closure commit:
