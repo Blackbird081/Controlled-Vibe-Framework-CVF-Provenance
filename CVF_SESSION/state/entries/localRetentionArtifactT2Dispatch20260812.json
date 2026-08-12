@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2169,
+  "stateKey": "localRetentionArtifactT2Dispatch20260812",
+  "value": "Operator explicitly released LRA-T2 to finish the retained-artifact roadmap. Fresh GC-018 and a no-commit work order were committed at d0e88c0f4cfba72b8cc22dd71c61202ad1792c48 after pre-dispatch 76/76 and pre-commit 84/84 passed. T2 is bounded to exact read/hash/owner/value reconciliation of the 18 deferred V041 rows and seven evidence/registry outputs. Successful worker return must leave 129 terminal, zero deferred; source import, execution, new owner creation, T4, ZIP deletion, runtime/provider/live/public scope, staging, and worker commit remain forbidden."
+}

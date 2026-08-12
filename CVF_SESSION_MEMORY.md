@@ -45,24 +45,25 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`local_retention_artifact_t0_accepted_t2_candidate_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator disposition of the parked T2 candidate; parked checkpoint=T2 without fresh GC-018, T4, archive deletion, MAO T1, DESIGN, BUILD, provider/live, public `main` merge, deploy, hosted smoke, secrets, store, and production.
+Startup acknowledged: current mode=`local_retention_artifact_t2_terminal_disposition_dispatched`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute only no-commit LRA-T2 on the exact 18 deferred rows; parked checkpoint=T4, archive deletion, MAO T1, DESIGN, BUILD, runtime, provider/live, public `main` merge, deploy, hosted smoke, secrets, store, and production.
 
 ## Current Mode
 
-`local_retention_artifact_t0_accepted_t2_candidate_parked`
+`local_retention_artifact_t2_terminal_disposition_dispatched`
 
-Current mode marker: `local_retention_artifact_t0_accepted_t2_candidate_parked`
-Current mode: `local_retention_artifact_t0_accepted_t2_candidate_parked`
-Previous mode: `local_retention_artifact_t0_dispatch_ready`
+Current mode marker: `local_retention_artifact_t2_terminal_disposition_dispatched`
+Current mode: `local_retention_artifact_t2_terminal_disposition_dispatched`
+Previous mode: `local_retention_artifact_t0_accepted_t2_candidate_parked`
 
 ## Next Allowed Move
 
-Mode: `local_retention_artifact_t0_accepted_t2_candidate_parked`
+Mode: `local_retention_artifact_t2_terminal_disposition_dispatched`
 
-LRA-T0 is reviewer-accepted: all 129 immutable ZIP entries reconcile, 111 are
-terminal, and 18 form a T2 candidate set. The next move is an operator decision
-to release a fresh T2 GC-018 or keep the roadmap parked. T0 acceptance does not
-authorize T2. T1/T3 are N/A; T4 and archive deletion remain parked.
+Execute only LRA-T2 under material dispatch commit `d0e88c0f4`. The no-commit
+worker reads, hashes, owner-checks, and terminally dispositions exactly the 18
+deferred V041 rows through the seven-path manifest. T4 and archive deletion
+remain parked pending independent acceptance; no source/runtime/provider/public
+scope is open.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints

@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Local Retention T0 Accepted, T2 Candidate Parked
+# CVF Agent Handoff V59 - Local Retention T2 Terminal Disposition Dispatched
 
 Memory class: active-handoff
 
@@ -9,7 +9,9 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Current Core HEAD marker:
-  `a4c7a0a840643f7d669ec2b91752d4cd9ff7771d`
+  `d0e88c0f4cfba72b8cc22dd71c61202ad1792c48`
+- LRA-T2 dispatch material commit:
+  `d0e88c0f4cfba72b8cc22dd71c61202ad1792c48`
 - LRA-T0 material closure commit:
   `a4c7a0a840643f7d669ec2b91752d4cd9ff7771d`
 - Core material closure commit:
@@ -21,14 +23,14 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Handoff-sync parent commit:
-  `ba83c00913eccd29615e0f00e6da2824be22543a`
+  `b8acef1a8258e16f0803cb675f21907152b30cca`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `local_retention_artifact_t0_accepted_t2_candidate_parked`
+  `local_retention_artifact_t2_terminal_disposition_dispatched`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -37,55 +39,51 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`local_retention_artifact_t0_accepted_t2_candidate_parked`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator
-disposition of the parked T2 candidate; parked checkpoint=T2 without fresh
-GC-018, T4, archive deletion, MAO T1, DESIGN, BUILD, provider/live, public
-`main`, deploy, hosted smoke, secrets, store, production.
+Startup acknowledged: current mode=`local_retention_artifact_t2_terminal_disposition_dispatched`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute only
+no-commit LRA-T2 on the exact 18 deferred rows; parked checkpoint=T4, archive
+deletion, MAO T1, DESIGN, BUILD, runtime, provider/live, public `main`, deploy,
+hosted smoke, secrets, store, production.
 
 ## Current Mode
 
-`local_retention_artifact_t0_accepted_t2_candidate_parked`
+`local_retention_artifact_t2_terminal_disposition_dispatched`
 
 ## Purpose
 
-Record independent acceptance of LRA-T0 and preserve the 18-item T2 candidate
-set as parked pending a new operator decision and fresh authority.
+Record the fresh LRA-T2 dispatch that terminally resolves the 18 deferred V041
+items without admitting archive source or opening runtime authority.
 
 ## Scope / Target / Owner Boundary
 
-- Completed bounded target: inventory and authority/value-audit all 129 entries
-  in the immutable local retention ZIP.
-- Independent reviewer accepted 111 terminal dispositions and identified 18
-  `DEFER_REQUIRES_NEW_AUTHORITY` entries as a candidate set only.
-- T1 and T3 are N/A from the accepted dispositions. T2 remains parked pending
-  explicit operator release plus a fresh GC-018; T4 remains parked.
+- Current bounded target: read/hash/owner/value reconciliation of exactly 18
+  entries currently marked `DEFER_REQUIRES_NEW_AUTHORITY`.
+- Successful T2 worker return must produce 129 terminal and zero deferred rows
+  through the exact seven-path fulfillment manifest.
+- T1 and T3 are N/A. T4 remains parked pending independent T2 acceptance.
 - Archive extraction, absorption, deletion, DESIGN, BUILD, provider/live,
   public synchronization, deployment, merge, and production remain unopened.
 
 ## Latest Work / Changes
 
-- Independent re-review recomputed the ZIP and manifest evidence: 129 unique
-  paths, zero digest/size mismatches, and matching manifest content hash.
-- Reviewer repair corrected the V041 delta arithmetic: 111 entries are
-  terminal and 18, not 21, remain deferred for missing authority.
-- T0 is accepted. T1/T3 are N/A. T2 is a parked candidate, not released work;
-  it requires explicit operator release and fresh GC-018.
-- No archive extraction, absorption, runtime/source/test change, provider/live
-  activity, public-sync, deployment, or deletion was authorized.
+- Operator explicitly released terminal-disposition T2.
+- Fresh GC-018, no-commit work order, and roadmap dispatch state were committed
+  at `d0e88c0f4cfba72b8cc22dd71c61202ad1792c48`.
+- Pre-dispatch passed 76/76 and material pre-commit passed 84/84.
+- Archive extraction/import/execution, new owners, runtime/source/test change,
+  T4, ZIP deletion, provider/live, public-sync, and deployment remain closed.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | T0 reviewer-accepted; T2 candidate parked |
-| baselinePath | `docs/baselines/CVF_GC018_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_2026-08-12.md` |
-| baselineSha256 | `f12f073c9229902b44123d32933f9c52e10dd87365b701ca7a2ac4d54ff0583b` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_2026-08-12.md` |
-| workOrderSha256 | `17248777ac06a25d600c898cefa2a4dcae1f509c1fd11b305cad2575bacb809c` |
-| completionReviewPath | `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_COMPLETION_2026-08-12.md` |
-| completionReviewSha256 | `e42e7b25e16870a1f64b9824680226ab31d989165f5f0bbdd54211bde3d2f7dd` |
-| nextAuthorityRequirement | explicit operator T2 release plus fresh GC-018 |
+| authorityState | T2 terminal-disposition dispatch ready |
+| baselinePath | `docs/baselines/CVF_GC018_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_2026-08-12.md` |
+| baselineSha256 | `ee3b513646f254c205e44482f689c57697fde54afb1da31af35452b3540f58f7` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_2026-08-12.md` |
+| workOrderSha256 | `9aff035791bfa3129bdfe8e07611918eee0686d657bcf55ef0eeae3b9a14e06d` |
+| workerReturnPath | `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_WORKER_RETURN_2026-08-12.md` |
+| nextAuthorityRequirement | independent T2 review before T4 |
 
 ## Closure Evidence
 
@@ -131,9 +129,10 @@ set as parked pending a new operator decision and fresh authority.
 
 ## Next Allowed Move
 
-Operator disposition only: either explicitly release preparation of a fresh
-T2 GC-018 for the 18 deferred candidates or keep the roadmap parked. T0
-acceptance is not T2 authority. T4 and archive deletion remain parked.
+Execute only no-commit LRA-T2 under dispatch commit `d0e88c0f4`. Process exact
+18 deferred entries into terminal evidence dispositions and return the seven
+worker-owned paths for independent review. T4 and archive deletion remain
+parked.
 
 ## Active Boundary
 
@@ -149,8 +148,8 @@ acceptance is not T2 authority. T4 and archive deletion remain parked.
 
 ## Worker Return Target
 
-Accepted LRA-T0 completion review:
-`docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_COMPLETION_2026-08-12.md`.
+LRA-T2 worker return target:
+`docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_WORKER_RETURN_2026-08-12.md`.
 
 Prior pre-push dispatch-sync authorization and operation trace remain preserved
 in Git history through session-sync commit `0b1046dfc`; they are omitted from
@@ -160,11 +159,11 @@ this compact active handoff after the public staging push superseded that mode.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: the LRA-T0 dispatch and continuity update concern private local
-retention artifacts. Prior public-sync evidence remains preserved at public
+Reason: the LRA-T2 dispatch and continuity update concern private local
+retention evidence. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - LRA-T0 Closure Session Sync
+## Core Guard Self-Protection Authorization - LRA-T2 Dispatch Session Sync
 
 Protected paths:
 
@@ -175,22 +174,23 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/localRetentionArtifactT0Dispatch20260812.json`
 - `CVF_SESSION/state/entries/localRetentionArtifactT0Closure20260812.json`
+- `CVF_SESSION/state/entries/localRetentionArtifactT2Dispatch20260812.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: explicit agreement on 2026-08-12 to process the
 retained material now and make the workspace compact.
 
-Authorized guard-maintenance scope: record reviewer acceptance of LRA-T0,
-refresh the closed baseline/work-order hashes, make operator disposition the
-only next move, and keep T2 parked until explicit release plus fresh GC-018.
+Authorized guard-maintenance scope: bind the committed T2 baseline/work order,
+set exact no-commit T2 execution as the only next move, and keep T4, ZIP
+deletion, runtime/provider/public, and unrelated lanes parked.
 
 Rollback boundary: revert this exact session-sync batch together; do not
-separate generated state from its source fragments and do not revert LRA-T0
-material closure commit `a4c7a0a840643f7d669ec2b91752d4cd9ff7771d`.
+separate generated state from its source fragments and do not revert LRA-T2
+dispatch material commit `d0e88c0f4cfba72b8cc22dd71c61202ad1792c48`.
 
 ## Claim Boundary
 
-This handoff records private LRA-T0 documentation/registry closure and a parked
-T2 candidate only. It does not authorize absorption, archive deletion, public
-`main` merge, hosted runtime behavior, provider behavior, deployment, release,
+This handoff records private LRA-T2 terminal-disposition dispatch only. It does
+not authorize archive import/execution, new owners, T4, archive deletion,
+public `main` merge, hosted runtime/provider behavior, deployment, release,
 availability, or production readiness.
