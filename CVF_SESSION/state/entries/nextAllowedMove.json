@@ -1,5 +1,5 @@
 {
   "stateOrder": 2167,
   "stateKey": "nextAllowedMove",
-  "value": "Execute only LRA-T2 under dispatch material commit d0e88c0f4cfba72b8cc22dd71c61202ad1792c48 and the current GC-018/work order. The no-commit worker must read and hash exactly the 18 deferred V041 archive items, compare current owners, and replace every deferred row with a terminal evidence disposition across the exact seven-path fulfillment manifest. No archive import, execution, new owner, staging, commit, T4 closeout, ZIP deletion, MAO T1, DESIGN, BUILD, runtime, provider/live, public main merge, deploy, hosted smoke, secrets, store, or production is authorized. Latest closed numbered LHW wave remains LHW24."
+  "value": "LRA-T2 is reviewer-accepted at c1e7af8f18da92e33e2af0b582f8d04fd20a528b and the local-retention roadmap is closed through T4 with RETAIN_SINGLE_PINNED_ARCHIVE. No further LRA tranche is authorized. The operator may select a different roadmap next; MAO T1 remains parked until explicitly reopened. ZIP deletion, archive import/execution, DESIGN, BUILD, runtime, provider/live, public main merge, deploy, hosted smoke, secrets, store, and production remain unauthorized. Latest closed numbered LHW wave remains LHW24."
 }

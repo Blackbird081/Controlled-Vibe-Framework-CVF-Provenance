@@ -45,24 +45,24 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`local_retention_artifact_t2_terminal_disposition_dispatched`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute only no-commit LRA-T2 on the exact 18 deferred rows; parked checkpoint=T4, archive deletion, MAO T1, DESIGN, BUILD, runtime, provider/live, public `main` merge, deploy, hosted smoke, secrets, store, and production.
+Startup acknowledged: current mode=`local_retention_artifact_roadmap_closed_next_operator_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selects a different roadmap; parked checkpoint=MAO T1, ZIP deletion, archive import, DESIGN, BUILD, runtime, provider/live, public `main` merge, deploy, hosted smoke, secrets, store, and production.
 
 ## Current Mode
 
-`local_retention_artifact_t2_terminal_disposition_dispatched`
+`local_retention_artifact_roadmap_closed_next_operator_selection`
 
-Current mode marker: `local_retention_artifact_t2_terminal_disposition_dispatched`
-Current mode: `local_retention_artifact_t2_terminal_disposition_dispatched`
-Previous mode: `local_retention_artifact_t0_accepted_t2_candidate_parked`
+Current mode marker: `local_retention_artifact_roadmap_closed_next_operator_selection`
+Current mode: `local_retention_artifact_roadmap_closed_next_operator_selection`
+Previous mode: `local_retention_artifact_t2_terminal_disposition_dispatched`
 
 ## Next Allowed Move
 
-Mode: `local_retention_artifact_t2_terminal_disposition_dispatched`
+Mode: `local_retention_artifact_roadmap_closed_next_operator_selection`
 
-Execute only LRA-T2 under material dispatch commit `d0e88c0f4`. The no-commit
-worker reads, hashes, owner-checks, and terminally dispositions exactly the 18
-deferred V041 rows through the seven-path manifest. T4 and archive deletion
-remain parked pending independent acceptance; no source/runtime/provider/public
+LRA-T2 is accepted and T4 closes the roadmap with
+`RETAIN_SINGLE_PINNED_ARCHIVE`. No further LRA tranche is authorized. The
+operator may select a different roadmap; MAO T1 and archive deletion remain
+parked. No source/runtime/provider/public
 scope is open.
 Latest closed numbered LHW wave: `LHW24`.
 
