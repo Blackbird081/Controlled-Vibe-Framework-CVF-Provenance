@@ -1,5 +1,5 @@
 {
   "stateOrder": 2164,
   "stateKey": "publicProjectionPrepushT1Dispatch20260811",
-  "value": "PUBLIC-PROJECTION-PREPUSH-T1 authority is committed at dfffaa982f446a6118b5c868eba6df09ba27b7a4. The Public Projection Release Steward owns the new standard, policy registry, runner and focused tests required to reopen T0 BLOCKED_NO_OWNER. Worker owns exactly those four implementation paths plus its return and must not commit. Public candidate 021f8b852 remains clean and read-only. Push, deploy, browser/provider/store, secrets, public main and production remain forbidden pending independent acceptance."
+  "value": "PUBLIC-PROJECTION-PREPUSH-T1 Amendment 2 authority repair is committed at 8bbbd86226880ab952932d9b1aca8ddab20d310c. The orchestrator supplies the later final session-sync HEAD as executionBaseHead after continuity sync is committed. Worker owns exactly seven paths: standard, policy, runner, new helper, focused tests, existing worker return and Python size-exception registry. Only the two seeded approvedMaxLines values may ratchet downward to exact final line counts; no other registry field may change and no helper exception is authorized. WORKER_MUST_NOT_COMMIT. Public candidate 021f8b852 remains clean and read-only. Push, deploy, browser/provider/store, secrets, public main and production remain forbidden pending independent acceptance."
 }

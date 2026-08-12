@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_2026-08-11.md",
-    "baselineSha256": "ee587e5a0261e4a91a494239cead951a16c088bf4524e50f4e053a1f9e25b907",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_2026-08-11.md",
-    "workOrderSha256": "139a651226a8b1e3bc10fe06f18fec7d0867cbae6d8fcd802560c128bd966b75"
+    "baselinePath": "docs/baselines/CVF_GC018_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_AMENDMENT_2_2026-08-12.md",
+    "baselineSha256": "6b4893f3284442ab8e6a37bb6161e523de2e29000b73b910562bf1a5a5292d52",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_AMENDMENT_2_2026-08-12.md",
+    "workOrderSha256": "291009102dd3e82c325b2c7e9b6003b8c2238c2c1a450c10f6acc706c7671ad6"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

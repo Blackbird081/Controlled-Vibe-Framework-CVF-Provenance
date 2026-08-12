@@ -45,7 +45,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`public_projection_prepush_t1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed public-projection pre-push T1 owner/profile authority; parked checkpoint=public mutation, push, deploy, browser/provider/store, secrets, production, and public `main`.
+Startup acknowledged: current mode=`public_projection_prepush_t1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed public-projection pre-push T1 Amendment 2 authority at `8bbbd8622`; parked checkpoint=public mutation, push, deploy, browser/provider/store, secrets, production, and public `main`.
 
 ## Current Mode
 
@@ -59,9 +59,12 @@ Previous mode: `lpci1_ref_t1a_public_safe_branch_candidate_committed_pending_pus
 
 Mode: `public_projection_prepush_t1_dispatched_pending_worker_return`
 
-Execute committed authority `dfffaa982`: implement only the new public pre-push
-standard, policy, runner, focused tests, and worker return. Recompute the four
-T0 public defect families against read-only candidate `021f8b852`.
+Execute committed Amendment 2 authority `8bbbd8622` using the later final
+session-sync HEAD supplied by the orchestrator as `executionBaseHead`: perform
+only the exact seven-path structural refactor and the
+`approvedMaxLines`-only downward registry ratchet. Preserve the five pinned
+implementation preimages until worker execution begins. Candidate `021f8b852`
+remains read-only.
 WORKER_MUST_NOT_COMMIT. Public mutation, push, deploy, provider/store, secrets,
 network install, production, and public `main` remain parked.
 Latest closed numbered LHW wave: `LHW24`.

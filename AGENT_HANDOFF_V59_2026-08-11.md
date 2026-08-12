@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Current Core HEAD marker:
-  `ddd54cbebb550af83db6ac8dbb7d96f5795768aa`
+  `8bbbd86226880ab952932d9b1aca8ddab20d310c`
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
 - SOPR-CP1 dispatch authority commit:
@@ -62,6 +62,12 @@ Route committed public-projection pre-push owner/profile implementation.
 | T1 authorityCommit | `dfffaa982f446a6118b5c868eba6df09ba27b7a4` |
 | T1 baselinePath | `docs/baselines/CVF_GC018_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_2026-08-11.md` |
 | T1 workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_2026-08-11.md` |
+| T1 Amendment 2 authorityCommit | `8bbbd86226880ab952932d9b1aca8ddab20d310c` |
+| T1 Amendment 2 executionBaseHead | supplied by orchestrator as the final session-sync HEAD after this continuity commit |
+| T1 Amendment 2 baselinePath | `docs/baselines/CVF_GC018_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_AMENDMENT_2_2026-08-12.md` |
+| T1 Amendment 2 baselineSha256 | `6b4893f3284442ab8e6a37bb6161e523de2e29000b73b910562bf1a5a5292d52` |
+| T1 Amendment 2 workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_AMENDMENT_2_2026-08-12.md` |
+| T1 Amendment 2 workOrderSha256 | `291009102dd3e82c325b2c7e9b6003b8c2238c2c1a450c10f6acc706c7671ad6` |
 
 ## Closure Evidence
 
@@ -107,14 +113,18 @@ Route committed public-projection pre-push owner/profile implementation.
 
 ## Next Allowed Move
 
-Execute `PUBLIC-PROJECTION-PREPUSH-T1` from authority `dfffaa982`. Worker owns
-the new standard, policy, runner, focused tests, and return only; public
-candidate `021f8b852` is read-only. WORKER_MUST_NOT_COMMIT. Push, deploy,
+Execute `PUBLIC-PROJECTION-PREPUSH-T1-AMENDMENT-2` from authority
+`8bbbd8622`, using the later final session-sync HEAD supplied by the
+orchestrator as `executionBaseHead`. Worker owns exactly seven paths: standard, policy,
+runner, new helper, focused tests, existing return and size-exception registry.
+Registry changes are limited to `approvedMaxLines`-only downward ratchets to
+exact final line counts; no helper exception. Public candidate `021f8b852` is
+read-only. WORKER_MUST_NOT_COMMIT. Push, deploy,
 browser/provider/store, secrets, production, and public `main` remain parked.
 
 ## Active Boundary
 
-- T1 local gate implementation is the only open lane. Amendment 2 and both
+- T1 Amendment 2 structural refactor is the only open lane. LPCI1 Amendment 2 and both
   candidate commits remain closed and immutable. Public push, Netlify deploy,
   production, and every unrelated lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
@@ -137,12 +147,18 @@ Protected paths:
 - `CVF_SESSION/state/entries/publicProjectionPrepushT1Dispatch20260811.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
+- `governance/compat/run_public_projection_pre_push_gate.py`
+- `governance/compat/test_run_public_projection_pre_push_gate.py`
 
 Operator authorization: delegated orchestrator/reviewer authority and `next`
 on 2026-08-11.
 
-Authorized guard-maintenance scope: record committed T1 authority, exact
-worker-owned paths, read-only public candidate, and parked external actions.
+Authorized guard-maintenance scope: record committed T1 Amendment 2 authority
+and execution base, exact seven worker-owned paths, read-only public candidate,
+and parked external actions. The runner and test are listed because the gate
+sees their inherited untracked preimages; this session-sync batch does not edit
+them and grants no implementation authority beyond the committed Amendment 2
+work order.
 
 Rollback boundary: revert the exact seven-path session-sync manifest together;
 do not separate generated state from source fragments.
@@ -171,7 +187,7 @@ Exact changed manifest:
 | Actor | orchestrator/reviewer and session-sync steward |
 | Provider or surface | local private Core and public-sync clone |
 | Session or invocation | `public-projection-prepush-t1-dispatch-sync-20260811` |
-| Working directory | Core root after authority commit `dfffaa982` |
+| Working directory | Core root after Amendment 2 authority commit `8bbbd8622` |
 | Command or tool surface | bounded session edits, state generator, local gates, Git |
 | Target paths | exact seven-path T1 dispatch-sync manifest |
 | Allowed scope source | operator continuation and committed T1 authority |
