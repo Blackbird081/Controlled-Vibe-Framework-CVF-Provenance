@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_UC01_HOSTED_READINESS_DISCOVERY_ACCEPTED_REMEDIATION_REQUIRED_BEFORE_HOSTED_SMOKE
+Status: PARKED_OPERATOR_PRIORITY_LPCI1_WEB_REENTRY_BASELINE_ACCEPTED
 
 docType: roadmap
 
@@ -15,7 +15,25 @@ Date: 2026-08-09
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_roadmap_closure_freshness.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_corpus_scan_registry.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_agent_operation_trace.py` |
 | literalTokensReviewed | roadmap heading groups (`## Authorization`/`## Decision`, `## Purpose`/`## Why`, `## Scope`, `## Non-Goals`, `## Design Control Gate`/`## Dispatch Boundary`, `## Work Plan`, `## Acceptance Criteria`, `## Verification`/`## Evidence`); `Status:` line; `PROPOSED_OPERATOR_REVIEW_REQUIRED`; `DEFERRED_PRIVATE_ONLY`; `Verified path or symbol` (real symbol, not filename); ADIF disclosure exact-query requirement |
 | gateRunPurpose | confirm structural and dispatch-quality shape after source-backed authoring; not first discovery of checker requirements |
-| claimBoundary | documentation-only intake/roadmap planning; no DESIGN/SPEC/BUILD/provider/live claim |
+| claimBoundary | accepted bounded UC-01 evidence plus operator-directed roadmap parking; no hosted, deployment, production, non-public, full-document, vector/RAG, or persistence-release claim |
+
+## Current Assessment And Parking Decision
+
+Operator decision on 2026-08-12: record the current evidence-backed assessment
+and park this roadmap because other CVF planes currently have higher value.
+The canonical re-entry baseline is
+`docs/reference/CVF_LPCI1_WEB_CURRENT_ASSESSMENT_AND_PARKED_REENTRY_BASELINE_2026-08-12.md`.
+
+Disposition: `PARKED_OPERATOR_PRIORITY`.
+
+This parking decision preserves all accepted UC-01 evidence. A future return
+MUST NOT repeat the completed broad assessment or reopen already accepted
+DESIGN, BUILD, provider-binding, provider-live, full-route-live,
+release-hardening, or pre-push findings merely to rediscover the same state.
+Re-entry uses the recorded baseline and performs only the bounded delta and
+freshness checks named in that reference. When none of its trigger conditions
+has changed, the next action is direct plane selection and fresh scoped
+authority, not another discovery roadmap.
 
 ## Authorization / Decision
 
@@ -354,6 +372,11 @@ assignment ledger, executable method, receipt sink, and exact authority.
 
 ## Explicit Parked Lanes
 
+- Whole roadmap: `PARKED_OPERATOR_PRIORITY` - the operator selected no next
+  LPCI1 Web plane on 2026-08-12. Existing accepted evidence remains the
+  re-entry baseline; no implementation, live call, hosted action, push,
+  deployment, or production continuation is authorized by parking.
+
 - `UC-02`: `PARKED_REOPEN_CONDITION_NOT_MET` - accepted discovery found A/B/C
   all NOT_MET: no named real consumer, no matching real public index, and no
   direct consumer-to-corpus-to-route binding. PolicyLocal remains an LPCI2
@@ -381,6 +404,13 @@ assignment ledger, executable method, receipt sink, and exact authority.
   regardless of rank.
 
 ## Reopen Conditions
+
+Roadmap-level re-entry does not require another full assessment. Apply the
+bounded re-entry contract in
+`docs/reference/CVF_LPCI1_WEB_CURRENT_ASSESSMENT_AND_PARKED_REENTRY_BASELINE_2026-08-12.md`:
+reuse accepted evidence, check only named source/authority/environment deltas,
+then select one plane. A material delta is routed to the affected row only; it
+does not invalidate unrelated accepted evidence.
 
 | Lane | Concrete reopen condition |
 |---|---|
@@ -592,9 +622,13 @@ public-safe export packet or public-sync authority exists for this roadmap.
 ## Claim Boundary
 
 This roadmap began as a documentation-only context-to-LLM use-case intake and
-now records later independently accepted D1 DESIGN and B2 BUILD evidence.
-Those later packets implemented a bounded local provider-binding seam and
-deterministic tests; they did not call a provider, read a real credential,
-open non-public access, public-sync, deploy, or establish readiness. Any live
-proof still requires fresh explicit operator authority and a new governed
-packet.
+now records independently accepted D1 DESIGN, B2 BUILD, one provider-binding
+live proof, one signed synthetic-public full-route proof, release hardening,
+hosted-operations documentation remediation, and a clean read-only public
+pre-push candidate. It is parked by operator priority. It does not establish
+restricted/confidential access, a real UC-02 corpus path, full-document
+retrieval, semantic/vector RAG, hosted store liveness, deployment, public
+availability, production operation, or production readiness. Re-entry reuses
+the accepted baseline and checks only named deltas; every new implementation,
+live, hosted, push, deploy, or production action still requires fresh scoped
+authority.
