@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PARKED_T0_DISPATCH_PACKET_READY_PENDING_CANONICAL_COMMIT_AND_OPERATOR_COPYPASTE_DISPATCH
+Status: CLOSED_T0_CANCEL_UPLIFT_NO_FACADE_VALUE
 
 docType: roadmap
 
@@ -19,7 +19,7 @@ verdict, and bounded candidate-symbol negative search were re-read.
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_workspace_design.py`; `governance/compat/check_agent_workspace_runtime_boundary.py`; `governance/compat/check_agent_handoff_boundary.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_roadmap_closure_freshness.py`; `governance/compat/check_adif_defect_registry_disclosure.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | roadmap structural heading families; `PARKED_T0_DISPATCH_PACKET_READY_PENDING_CANONICAL_COMMIT_AND_OPERATOR_COPYPASTE_DISPATCH`; `Agent Workspace Design Control Block`; `Runtime Expansion Control Block`; `Workspace Two-Layer Control Block`; `Dual Agent Surface Matrix`; Delta block field labels; AOT field labels; `DEFERRED_PRIVATE_ONLY` |
+| literalTokensReviewed | roadmap structural heading families; `CLOSED_T0_CANCEL_UPLIFT_NO_FACADE_VALUE`; `Agent Workspace Design Control Block`; `Runtime Expansion Control Block`; `Workspace Two-Layer Control Block`; `Dual Agent Surface Matrix`; Delta block field labels; AOT field labels; `DEFERRED_PRIVATE_ONLY` |
 | gateRunPurpose | confirm the parked roadmap and worker-return shape after source-backed authoring; not first discovery of checker requirements |
 | claimBoundary | documentation-only parked roadmap; checker compliance does not prove host execution, external invocation, provider behavior, or readiness |
 
@@ -88,7 +88,7 @@ capability from observed collaboration.
 | LPCI UC-01 provider-binding BUILD | `docs/reviews/CVF_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_COMPLETION_2026-08-09.md`; reviewer material commit `5c86f6d77` | SATISFIED |
 | LPCI whole-roadmap disposition | `docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_2026-08-09.md`; exact status `PARKED_OPERATOR_PRIORITY_LPCI1_WEB_REENTRY_BASELINE_ACCEPTED` at private material commit `8791b9b23`; `docs/reference/CVF_LPCI1_WEB_CURRENT_ASSESSMENT_AND_PARKED_REENTRY_BASELINE_2026-08-12.md` binds re-entry to `REUSE_BASELINE_DELTA_ONLY` | SATISFIED_AS_PREREQUISITE_AND_PARKED_SEPARATELY |
 | clean integration boundary | six documentation artifacts reside at canonical Core paths as untracked/unstaged files; the temporary worktree has been removed | SATISFIED_LOCATION_HOLD_COMMIT |
-| active next-move compatibility | operator directly selected this roadmap on 2026-08-12; continuity surfaces remain unchanged until an authorized material commit and session sync | HOLD_SESSION_SYNC |
+| active next-move compatibility | T0 cancellation returns to the already-current global next move: operator selection of a new roadmap | SATISFIED_NO_SESSION_MODE_CHANGE |
 | independent critique disposition | round-1 critique required repair; R2 re-review returned `REVIEWER_ACCEPTED_PARKED`; both remain external input only | SATISFIED_AS_INPUT_NOT_AUTHORITY |
 | operator roadmap selection and fresh T0 authority | operator selection recorded; GC-018 baseline/work order reviewer-accepted; 76-command pre-dispatch bundle PASS | SATISFIED_SEMANTICALLY_HOLD_COMMIT_AND_BASE_REFRESH |
 
@@ -390,7 +390,7 @@ and independent review. No tranche inherits authority from this roadmap.
 
 | Tranche | Objective | Entry dependency | Stop boundary |
 |---|---|---|---|
-| T0 | inventory all 17 MAO modules; classify every proposed concept `ALREADY_OWNED`, `PARTIALLY_OWNED`, or `GENUINELY_ABSENT`; record exact semantic negative search; compare direct composition versus facade; require at least two materially different consumers | accepted repair re-review, explicit operator selection, and fresh documentation-only authority | may terminate the roadmap; stop before architecture selection |
+| T0 | CLOSED: inventoried 17 MAO modules, classified five proposed operations, repaired the tracked-source three-consumer matrix, and accepted `CANCEL_UPLIFT_NO_FACADE_VALUE` | corrected audit and independent completion review | terminal roadmap state; stopped before architecture selection |
 | T1 | only if T0 proves a genuine gap: thin-facade architecture, `MaoTaskState`-derived status mapping, wait/status coherence, novel `send` semantics, capability discovery decision, sovereignty boundary, and proportional-control budget reusing existing owners | accepted positive T0 plus fresh DESIGN authority | stop before SPEC; reject any second state, receipt, authority, budget, lifecycle, or launcher owner |
 | T2 | provider-neutral contract/spec; freeze send ordering/idempotency, effect-versus-response idempotency, milestone vocabulary, overhead thresholds, and proof-harness design | accepted T1 plus fresh SPEC authority | stop before source/test edits; thresholds cannot be tuned after the seam exists |
 | T3 | local scripted fake-host seam measured by the T2-frozen harness and thresholds | accepted T2 plus fresh BUILD authority | no functional acceptance if latency, receipt, byte, polling/wakeup, or control-round-trip budget is exceeded |
@@ -441,18 +441,18 @@ Author-verifiable now:
   terminal state, and T5/T6 are conditionally unreachable rather than promised;
 - [x] every executed tranche requires fresh authority and independent review.
 
-Reviewer-verifiable after this repair:
+Reviewer-verified at T0 closure:
 
-- [ ] dependency tokens, continuity evidence, and Source Verification anchors
+- [x] dependency tokens, continuity evidence, and Source Verification anchors
   are exact at the integration base;
-- [ ] the 17-file owner matrix and facade-first framing prevent a second state,
+- [x] the 17-file owner matrix and facade-first framing prevent a second state,
   receipt, authority, budget, lifecycle, launcher, store, or handoff owner;
-- [ ] T0's negative-search, consumer, composition, and cancellation criteria are
+- [x] T0's negative-search, consumer, composition, and cancellation criteria are
   sufficient to test whether the facade has value;
-- [ ] `send`, `wait`, `interrupt`, `status`, capability discovery, and overhead
+- [x] `send`, `wait`, `interrupt`, `status`, capability discovery, and overhead
   obligations are complete enough for later T1/T2 authoring;
-- [ ] T2 freezes thresholds and harness design before T3 implementation;
-- [ ] the repaired packet is acceptable while remaining PARKED.
+- [x] T2 would freeze thresholds and harness design before T3 implementation; T2 is not opened;
+- [x] the repaired T0 packet is accepted and terminates the roadmap before DESIGN.
 
 ## Verification / Evidence
 
@@ -516,10 +516,37 @@ value, and product value remain unproven. T0 may close with no DESIGN follow-on.
   complete the 17-file semantic ownership audit, and cancel the facade if
   composition plus a narrow `send` addition is adequate.
 
+## Current Runtime Freshness Verification
+
+| Claim | Current evidence | Disposition |
+|---|---|---|
+| lifecycle facade runtime | no facade source, package export, launcher binding, or runtime receipt was created by T0 | N/A with reason: documentation-only cancellation |
+| current MAO owner semantics | 17-file audit at `c1562e768` independently reproduced state, authority, budget, lifecycle, launcher, store, and read-model owners | PASS_SOURCE_FRESH |
+| provider registry freshness | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts`; current `PROVIDER_CAPABILITY_REGISTRY` exists and remains unchanged/unconsumed by this T0 decision | N/A with reason: no provider-registry mutation or lifecycle binding |
+| provider/live behavior | no provider call or live proof was authorized or executed | N/A with reason: outside T0 authority |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| complete 17-file owner ledger | manifest=17; ledger_terminal=17; unresolved=0 | PASS |
+| source-faithful consumer matrix | control-plane planning, Web durable status, and MAO-LIVE-T1 provider/review shapes independently reproduced | PASS |
+| facade-value threshold | no two materially different consumers benefit from one normalized five-operation interface | PASS |
+| terminal T0 disposition | `CANCEL_UPLIFT_NO_FACADE_VALUE` | PASS |
+| successor authority | T1-T7 remain closed; no DESIGN packet opened | PASS |
+
 ## Machine Closure Package
 
-N/A with reason: top status is PARKED pending independent critique and explicit
-operator release, not a closed-equivalent status, and no tranche has executed.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | T0 work order | `CLOSED_T0_CANCEL_UPLIFT_NO_FACADE_VALUE` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_AGENT_HOST_LIFECYCLE_ADAPTER_T0_OWNER_AND_FACADE_VALUE_AUDIT_COMPLETION_2026-08-12.md` | `REVIEWER_ACCEPTED_CLOSED_T0_CANCEL_UPLIFT_NO_FACADE_VALUE` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_T0_CANCEL_UPLIFT_NO_FACADE_VALUE`; T1-T7 unauthorized | PASS |
+| Registry JSON | GC-051 registry | unchanged | BLOCKED with reason: bounded owner audit does not create a reusable corpus-scan registry entry; no registry mutation authorized |
+| Registry Markdown | GC-051 registry companion | unchanged | BLOCKED with reason: bounded owner audit does not create a reusable corpus-scan registry entry; no registry mutation authorized |
+| External evidence digest | critique and re-review | remains `NOT_CVF_SOURCE`; source facts independently reproduced | N/A with reason: no external evidence promoted |
+| System loop interlock | T0 terminal token | `CANCEL_UPLIFT_NO_FACADE_VALUE`; stop before DESIGN | PASS |
+| Session continuity | active session surfaces | global next move remains operator selection of a new roadmap | N/A with reason: no mode or next-move change |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -566,16 +593,13 @@ no public-sync authority or public-safe artifact exists.
 
 ## Next Allowed Move
 
-Remain
-`PARKED_T0_DISPATCH_PACKET_READY_PENDING_CANONICAL_COMMIT_AND_OPERATOR_COPYPASTE_DISPATCH`.
-Independent re-review accepted the repaired packet as PARKED, the operator
-selected the roadmap on 2026-08-12, and the roadmap/review/T0 draft packet now
-resides at canonical repo-relative paths. Governed reviewer review and the
-76-command pre-dispatch bundle pass. The next allowed actions are canonical
-commit authorization, source/base refresh at the committed dispatch HEAD, and
-operator copy/paste dispatch of T0. The accepted GC-018 baseline and work order
-do not execute T0 until then. No DESIGN, SPEC, BUILD, provider/live, or
-implementation action is released.
+Roadmap terminal state:
+`CLOSED_T0_CANCEL_UPLIFT_NO_FACADE_VALUE`.
+
+The next allowed move returns to operator selection of a new roadmap. This
+roadmap has no T1 follow-on. Any future MAO lifecycle proposal requires new
+consumer evidence and a fresh operator-selected packet. No DESIGN, SPEC,
+BUILD, provider/live, or implementation action is released.
 
 ## Claim Boundary
 

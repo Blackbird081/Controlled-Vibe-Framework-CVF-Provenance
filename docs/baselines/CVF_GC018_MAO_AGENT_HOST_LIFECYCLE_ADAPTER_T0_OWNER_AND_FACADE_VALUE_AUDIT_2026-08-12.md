@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: REVIEWER_ACCEPTED_DISPATCH_READY
+Status: CLOSED_T0_CANCEL_UPLIFT_NO_FACADE_VALUE
 
 Batch ID: MAO-AHLA-T0
 
@@ -94,7 +94,7 @@ are not worker-writable.
 | temporary worktree topology | source packet copied byte-exact to Core; temporary worktree is removable and is not a dependency | TRANSIENT_PATH_NOT_A_DEPENDENCY |
 | packet state | six canonical documentation paths are untracked and unstaged | PASS_FOR_PARKED_DRAFT |
 | source modification | none authorized | PASS |
-| dispatch readiness | canonical integration and gates not complete | HOLD |
+| dispatch readiness | T0 executed at `c1562e768`; corrected return independently accepted | PASS |
 
 ## Negative Search And Collision Discipline
 
@@ -205,7 +205,7 @@ Returned defect count: 22 at canonical Core `4fd1b6177`.
 | actionEvidence | `CLAIM_REJECTED_NO_ACTION`: no provider or runtime action occurs |
 | invocationBoundary | local source inspection and documentation authoring |
 | interceptionBoundary | no CLI/MCP ingress, provider, browser, network, process, or secret access |
-| claimLanguage | draft authority packet pending canonical integration and operator dispatch |
+| claimLanguage | T0 documentation audit accepted; uplift cancelled before DESIGN |
 | forbiddenExpansion | no T0 execution, DESIGN, SPEC, BUILD, live proof, public-sync, deployment, or production claim |
 
 ## Public Export Disposition
@@ -218,14 +218,14 @@ Reason: private provenance draft only.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | companion work order | draft HOLD token | BLOCKED with reason: canonical commit, pre-dispatch, and operator dispatch pending |
-| Completion or reviewer artifact | future reviewer-owned completion | absent | BLOCKED with reason: T0 not executed |
-| Roadmap state | parked roadmap | PARKED status | BLOCKED with reason: T0 not executed |
-| Registry JSON | none selected | no registry update authorized | N/A with reason: decision audit only |
-| Registry Markdown | none selected | no registry update authorized | N/A with reason: decision audit only |
+| Work order status | companion work order | `CLOSED_T0_CANCEL_UPLIFT_NO_FACADE_VALUE` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MAO_AGENT_HOST_LIFECYCLE_ADAPTER_T0_OWNER_AND_FACADE_VALUE_AUDIT_COMPLETION_2026-08-12.md` | independent acceptance of corrected consumer matrix | PASS |
+| Roadmap state | companion roadmap | `CLOSED_T0_CANCEL_UPLIFT_NO_FACADE_VALUE`; T1-T7 unauthorized | PASS |
+| Registry JSON | GC-051 registry | unchanged | BLOCKED with reason: this bounded owner audit does not create a reusable corpus-scan registry entry; no registry mutation was authorized |
+| Registry Markdown | GC-051 registry companion | unchanged | BLOCKED with reason: this bounded owner audit does not create a reusable corpus-scan registry entry; no registry mutation was authorized |
 | External evidence digest | critique and re-review | external input remains `NOT_CVF_SOURCE` | N/A with reason: no external evidence promoted |
-| System loop interlock | roadmap T0 gate | positive T0 cannot open T1 automatically | BLOCKED with reason: operator decision remains required |
-| Session continuity | active session surfaces | unchanged | BLOCKED with reason: no dispatch or closure transition yet |
+| System loop interlock | roadmap T0 gate | `CANCEL_UPLIFT_NO_FACADE_VALUE`; stop before DESIGN | PASS |
+| Session continuity | active session surfaces | global next move remains operator selection of a new roadmap | N/A with reason: no mode or next-move change |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -234,8 +234,8 @@ Reason: private provenance draft only.
 | packet integration | canonical repo-relative paths | six untracked canonical paths | PASS_LOCATION_ONLY |
 | clean dispatch base | packet-authoring base plus committed packet before execution | `4fd1b6177`; packet commit pending | PASS_BASE_HOLD_EXECUTION_UNTIL_COMMIT |
 | pre-dispatch gates | PASS | 76 of 76 at untracked working-tree state | PASS_PENDING_COMMITTED_RERUN |
-| worker evidence | audit and worker return | absent | BLOCKED |
-| reviewer decision | independent governed review | `REVIEWER_ACCEPTED_T0_DOCUMENTATION_ONLY` | PASS |
+| worker evidence | audit and worker return | corrected three-consumer matrix; `COMPLETE_PENDING_RE_REVIEW` | PASS |
+| reviewer decision | independent governed review | `REVIEWER_ACCEPTED_CLOSED_T0_CANCEL_UPLIFT_NO_FACADE_VALUE` | PASS |
 
 ## Reviewer Dispatch Decision
 

@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Current Core HEAD marker:
-  `8791b9b23`
+  `c1562e7688ce78bf7fc70691f6136274a26cf921`
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
 - SOPR-CP1 dispatch authority commit:
@@ -46,6 +46,29 @@ browser/provider/store, secrets, hosted smoke, and production.
 
 Record independent acceptance and material closure of the public-projection
 pre-push owner/profile implementation.
+
+## Scope / Target / Owner Boundary
+
+- Current bounded target: close the MAO agent-host lifecycle-adapter roadmap at
+  T0 after the independent owner-and-facade-value audit.
+- Closure owner: independent reviewer/closer; worker remains non-committing.
+- Authorized repository scope: the six governed MAO T0 packet artifacts and
+  this active handoff freshness record only.
+- Excluded authority: T1-T7, DESIGN, BUILD, provider/live execution, public
+  synchronization, deployment, merge, and production remain unopened.
+
+## Latest Work / Changes
+
+- Independent review accepted the T0 audit with terminal disposition
+  `CANCEL_UPLIFT_NO_FACADE_VALUE`.
+- The proposed lifecycle facade is cancelled because the existing MAO
+  contracts already own the relevant lifecycle, authority, budget, and
+  receipt semantics; no separate facade value was established.
+- The roadmap, GC-018 baseline, and T0 work order are converted to machine
+  closure form; the audit, worker return, and completion review form the
+  evidence packet.
+- T1-T7 remain closed. Global mode and next allowed move remain unchanged:
+  operator selection of a new roadmap.
 
 ## Current Authority
 
