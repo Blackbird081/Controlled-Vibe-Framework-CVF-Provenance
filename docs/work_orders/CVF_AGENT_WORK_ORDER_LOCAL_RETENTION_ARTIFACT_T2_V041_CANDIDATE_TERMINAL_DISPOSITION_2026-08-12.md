@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_REVIEWER_ACCEPTED_T2
 
 Batch ID: LRA-T2
 
@@ -102,6 +102,26 @@ Allowed scope:
 - update exactly the seven paths in the fulfillment manifest;
 - replace all 18 deferred dispositions with terminal source-backed outcomes;
 - regenerate GC-051 aggregate JSON and reconcile the Markdown companion.
+- reviewer closure may update the following exact governed material paths:
+  `docs/audits/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_AUDIT_2026-08-12.md`;
+  `docs/baselines/CVF_GC018_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_2026-08-12.md`;
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`;
+  `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`;
+  `docs/corpus-intelligence/findings/local-retention-artifacts-20260812.md`;
+  `docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json`;
+  `docs/corpus-intelligence/registry/entries/local-retention-artifacts-20260812.json`;
+  `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_COMPLETION_2026-08-12.md`;
+  `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_WORKER_RETURN_2026-08-12.md`;
+  `docs/roadmaps/CVF_LOCAL_RETENTION_ARTIFACT_DISPOSITION_AND_SELECTIVE_ABSORPTION_ROADMAP_2026-08-12.md`;
+  and this work order;
+- reviewer-owned session continuity is updated in a separate post-material
+  commit through `AGENT_HANDOFF_V59_2026-08-11.md`,
+  `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+  `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+  `CVF_SESSION/state/entries/localRetentionArtifactT2T4Closure20260812.json`,
+  `CVF_SESSION/state/entries/nextAllowedMove.json`, and
+  `CVF_SESSION_MEMORY.md`.
 
 Forbidden scope:
 
@@ -474,15 +494,15 @@ claim. Machine gates are necessary but not semantic acceptance.
 
 ## Closure Checklist
 
-- [ ] Worker captured exact execution base and clean starting status.
-- [ ] ZIP digest and all 18 paths/hashes match.
-- [ ] Every item was read and has individual owner/value evidence.
-- [ ] All 18 dispositions are terminal; deferred count is zero.
-- [ ] Required seven-path manifest matches actual changes.
-- [ ] Forbidden paths are unchanged.
-- [ ] Worker-return fast gate passes.
-- [ ] Worker leaves all changes unstaged and uncommitted.
-- [ ] Independent reviewer disposition is pending.
+- [x] Worker captured exact execution base and clean starting status.
+- [x] ZIP digest and all 18 paths/hashes match.
+- [x] Every item was read and has individual owner/value evidence.
+- [x] All 18 dispositions are terminal; deferred count is zero.
+- [x] Required seven-path manifest matches actual changes.
+- [x] Forbidden paths are unchanged.
+- [x] Worker-return fast gate passes.
+- [x] Worker leaves all changes unstaged and uncommitted.
+- [x] Independent reviewer accepted T2 and closed T4.
 
 ## Return-To-Orchestrator Conditions
 
@@ -568,6 +588,28 @@ git status --short
 | interceptionBoundary | no wrapper, proxy, runtime gate, IDE hook, CLI, or MCP interception |
 | claimLanguage | T2 evidence disposition only, pending independent review |
 | forbiddenExpansion | no runtime/provider/live/public/package/Web/MCP/model-router behavior |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_REVIEWER_ACCEPTED_T2` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_COMPLETION_2026-08-12.md` | `Status: REVIEWER_ACCEPTED_T2_T4_CLOSED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LOCAL_RETENTION_ARTIFACT_DISPOSITION_AND_SELECTIVE_ABSORPTION_ROADMAP_2026-08-12.md` | `Status: CLOSED_REVIEWER_ACCEPTED_RETAIN_SINGLE_PINNED_ARCHIVE` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate matches the terminal source entry | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion records 129 terminal entries | PASS |
+| External evidence digest | `docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json` | ZIP SHA-256 `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A`; 129 entries | PASS |
+| System loop interlock | `docs/corpus-intelligence/findings/local-retention-artifacts-20260812.md` | no follow-on tranche; fresh authority required for any expansion | PASS |
+| Session continuity | `AGENT_HANDOFF_V59_2026-08-11.md` | dedicated post-material closure synchronization | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Archive digest | `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A` | PASS |
+| Selected entry hashes | 18/18 match | PASS |
+| Terminal corpus | 129 terminal; zero deferred; zero unresolved | PASS |
+| Retention disposition | `RETAIN_SINGLE_PINNED_ARCHIVE` | PASS |
 
 ## Public Export Disposition
 

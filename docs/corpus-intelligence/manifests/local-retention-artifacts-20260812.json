@@ -28,8 +28,9 @@
     "contentClassTotals": {
       "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_CHANGED": 2,
       "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE": 54,
-      "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041": 19,
+      "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL": 18,
       "GENERATED_BYTECODE_CACHE": 9,
+      "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041": 1,
       "RUNTIME_EVENT_LOG_SNAPSHOT": 1,
       "CORRUPT_RUNTIME_EVENT_LOG_COPY": 6,
       "RUNTIME_POLICY_SNAPSHOT": 32,
@@ -38,7 +39,7 @@
     },
     "dispositionTotals": {
       "ARCHIVE_EVIDENCE_ONLY": 56,
-      "DEFER_REQUIRES_NEW_AUTHORITY": 18,
+      "REJECT_DIRECT_IMPORT_NO_OWNER": 18,
       "REJECT_STALE_AUTHORITY": 16,
       "REJECT_RAW_RUNTIME_STATE": 33,
       "SUPERSEDED": 6
@@ -165,13 +166,14 @@
       "sha256": "f9f5165de3eb4a4b273357b7ad2cf113d022c780fce1a6e6cfc1142195d9ea5b",
       "crc32": 1106728366,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'implementation/CVF_CLI_BINDING.md'); current owner search: rg --files -g \"*CVF_CLI_BINDING*\" docs EXTENSIONS -> no hit; no CVF-owned CLI-binding design doc exists; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md -- Two-Layer Absorption row for WORKSPACE_RUNTIME_CONTRACT/MCP runbooks maps a CLI-adapter-style binding concept to CVF_LOCAL_WORKSPACE_RUNTIME as ADAPT, and 'proposal-before-execution' / 'CVF Core remains authority' are already ABSORB'd governing principles this binding would need to honor. | Executable owner: OWNER_NOT_FOUND. EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/command.registry.ts is CVF's real CLI but uses an entirely different command surface (no `cvf core evaluate-proposal` style subcommands); no cvf_workspace-targeting adapter exists. | Overlap: CONCEPT_OVERLAP_CONFIRMED: the fallback-to-conservative-binding pattern and the six proposed subcommands map onto already-ABSORB'd CVF principles (Core-remains-authority, proposal-before-execution). This is not new doctrine.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Design doc for a real CVFCLIBinding adapter that shells out to a `cvf` executable with fixed subcommands and falls back conservatively. Overlap: Conceptually related to CVF's own CLI (`cvf` command surface) but no CVF-owned document defines an external-package-to-CVF-CLI binding contract Missing value: A CLI binding/fallback contract does not exist anywhere in current Core Authority needed: Fresh GC-018 under the Agent Workspace Runtime Expansion Readiness Contract before this design becomes CVF-owned guidance",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Design doc for a CVFCLIBinding adapter shelling out to a `cvf` executable with fixed subcommands and conservative fallback. Remaining new value: The specific executable subprocess-adapter implementation and its exact subcommand shape are not implemented anywhere in Core. No production/runtime pattern is absorbed by this disposition. Concept owner exists (absorption map ADAPT lane for CLI-adapter/proposal-before-execution vocabulary); NO_CURRENT_EXECUTABLE_OWNER for the specific binding implementation. Direct import of the executable design is rejected; no new CLI/runtime owner is created. Concept overlap is acknowledged, not denied.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 9,
@@ -240,13 +242,14 @@
       "sha256": "2bb5b213bfe43c7019d43c149a74c7fd871b0adc303c808fc1880093700a3ad3",
       "crc32": 2302665916,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'implementation/IDE_CLIENT_CONFIG_TEMPLATES.md'); current owner search: rg --files -g \"*IDE_CLIENT_CONFIG_TEMPLATES*\" docs EXTENSIONS -> no hit; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md, CVF Mapping table row `submit_proposal` -> 'future MCP ingress to create a governed proposal/workspace item, not direct execution approval.' This is a direct, named concept-level owner for the tool-call flow this index describes. | Executable owner: OWNER_NOT_FOUND. rg -il \"IDE.*client.*config|mcp.*client.*config\" docs/reference EXTENSIONS returns only unrelated false-positive test-output strings; no MCP tool named get_workspace_state/submit_proposal/submit_evidence/get_receipt is implemented. | Overlap: CONCEPT_OVERLAP_CONFIRMED and explicit: `submit_proposal` is a named row in the absorption map's CVF Mapping table with a defined future-ingress disposition. This index is not describing an unknown concept.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Index doc listing the 5 integration_templates files and the required MCP agent tool-call flow (get_workspace_state -> submit_proposal -> ... -> get_receipt). Overlap: No CVF-owned index of IDE/MCP client config templates exists Missing value: The get_workspace_state/submit_proposal/submit_evidence/get_receipt tool-call flow is not implemented or documented anywhere in current Core Authority needed: Fresh GC-018 under the Runtime Expansion Readiness Contract; MCP tool surface is explicitly blocked until fresh authorization per that contract's Runtime Expansion Boundary table",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Index doc listing the 5 integration_templates files and the required MCP agent tool-call flow (get_workspace_state -> submit_proposal -> submit_evidence -> get_receipt). Remaining new value: The index itself (which 5 files exist and how they relate) has no independent value beyond the absorbed submit_proposal mapping; no executable MCP tool implementing this future ingress exists yet. Concept owner exists and is explicitly named in the absorption map's CVF Mapping table (`submit_proposal` -> future MCP ingress). NO_CURRENT_EXECUTABLE_OWNER for the actual MCP tool flow. Direct import of this index file is rejected; the underlying `submit_proposal` concept is not new to CVF.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 14,
@@ -285,13 +288,14 @@
       "sha256": "ccd2d89479b53ccd5210e3b3485746b584601a5bbf99eeba624c236855496f3a",
       "crc32": 1380687480,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'implementation/PRODUCTION_HARDENING_PLAN.md'); current owner search: rg -il \"PRODUCTION_HARDENING_PLAN\" docs governance EXTENSIONS -> no hit outside this corpus manifest; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md -- 'Event stream is append-only and separate from receipts' is ABSORB'd; the hash-chain/event-receipt-integrity items in this plan are a hardening elaboration of that already-owned principle, not a new concept. | Executable owner: OWNER_NOT_FOUND. rg -il \"PRODUCTION_HARDENING_PLAN\" docs governance EXTENSIONS returns zero hits outside this corpus manifest and the T0/T2 evidence chain that cites it. | Overlap: CONCEPT_OVERLAP_CONFIRMED for the event/receipt-integrity items (already ABSORB'd as event/receipt separation); no overlap found for the MCP SDK transport, path allowlist, or provider-bridge items, which are net-new relative to any current CVF doctrine.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Punch list of remaining hardening work (real CVF Core adapter, official MCP SDK transport, schema validation, path allowlist, event/receipt hash chains, UI approval path, installer integration) before the package can be called production-complete. Overlap: None -- no CVF-owned hardening plan exists for this package or an equivalent runtime Missing value: The entire punch list (hash-chain integrity, schema validation gate, path allowlist) has no current CVF-governed equivalent Authority needed: N/A as standalone absorption -- this document only has meaning if the underlying runtime is authorized first; blocked pending Runtime Expansion Readiness Contract release",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Punch list of remaining hardening work (real CVF Core adapter, official MCP SDK transport, runtime schema validation, filesystem path allowlist, event hash chain, receipt hash chain, UI approval path, installer integration, provider-specific bridge verification). Remaining new value: The specific hardening punch list (as an ordered plan) has no CVF-owned equivalent, and it only has meaning relative to a runtime that does not exist in Core. Partial concept overlap acknowledged (event/receipt integrity already ABSORB'd); NO_CURRENT_EXECUTABLE_OWNER for the hardening plan as an artifact, since it targets a non-existent runtime. Direct import rejected; no new hardening-plan owner created.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 17,
@@ -300,13 +304,14 @@
       "sha256": "2c532c8951074f95253847d6c13d18baa924ffb3e47d4135dc8176f3636f4f70",
       "crc32": 1136354956,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'implementation/SECURITY_BOUNDARY.md'); current owner search: rg -il \"SECURITY_BOUNDARY\" docs governance EXTENSIONS -> only archived unrelated DELTA-D2 MCP write-tool security boundary from 2026-05-29, a different closed tranche with a different action surface; owner: OWNER_NOT_FOUND (partial conceptual overlap only)",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md, Useful Patterns row 'Dangerous action denylist' -> `contracts/WORKSPACE_MCP_CONTRACT.md`; `reference_implementation/cvf_workspace/models.py` -> disposition ADAPT: 'use as MCP/workspace guard vocabulary, not as complete CVF policy.' EARC-T3A pilot row 'Dangerous action non-bypass rule' -> ADAPT: 'useful guard vocabulary, not a complete policy engine.' | Executable owner: OWNER_NOT_FOUND as a complete policy engine. The one textual hit (docs/reference/archive/CVF_DELTA_D2_MCP_WRITE_TOOLS_SECURITY_BOUNDARY_2026-05-29.md, closed 2026-05-29, and its citation in EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/index.ts:588) is a different, already-closed, narrower-scoped MCP write-tool boundary -- not an owner of this file's full default-deny taxonomy. | Overlap: CONCEPT_OVERLAP_CONFIRMED and explicit: the absorption map has already ADAPT-classified 'dangerous action denylist' vocabulary from this exact package area (WORKSPACE_MCP_CONTRACT.md / models.py) twice (Useful Patterns table and EARC-T3A pilot table), with the express caveat 'not a complete CVF policy' / 'not a complete policy engine.'",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Defines a default-deny action list (shell_exec, delete, deploy, modify_policy, write_anywhere, secret_read, network_exfiltration, credential_access), protected state paths, and a secret-storage prohibition for the Workspace Layer package's own MCP/CLI boundary. Overlap: CVF already has its own dangerous-action denylist concepts (e.g. DELTA-D2 MCP write-tool boundary, closed and archived) but none of it is wired to this package's Workspace MCP/CLI action set Missing value: This exact default-deny action taxonomy for a Workspace Layer runtime does not exist as current CVF-owned policy Authority needed: Fresh GC-018 to adapt this action-denylist vocabulary into a CVF-owned Workspace MCP/CLI security policy",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Default-deny action taxonomy (shell_exec, delete, deploy, modify_policy, write_anywhere, secret_read, network_exfiltration, credential_access), protected state paths, and secret-storage prohibition for this package's own MCP/CLI boundary. Remaining new value: The specific 8-action taxonomy list and protected-path enumeration in this file are more granular than what the absorption map already adapted; whether that granularity should be absorbed as guard vocabulary is a semantic-value judgment reserved for a future, separately-authorized work order, not decided by T2. Concept owner exists and is explicit -- the absorption map already ADAPT-classified this exact vocabulary class from this exact package. NO_CURRENT_EXECUTABLE_OWNER as a complete policy engine (DELTA-D2 is a different, closed, narrower scope). Direct import of this file as CVF policy authority is rejected; concept overlap is acknowledged rather than denied. No new security-policy owner is created by T2.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 18,
@@ -450,13 +455,14 @@
       "sha256": "296c2eec54593400d689d18e70a61747325a36f7e097631f46e26ac9feb8fe27",
       "crc32": 1358735016,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'integration_templates/AGENTS_CVF_WORKSPACE.md'); current owner search: rg --files -g \"*AGENTS_CVF_WORKSPACE*\" docs EXTENSIONS -> no hit; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md -- 'Agents read projected state but do not write it directly' (ABSORB) and 'Proposal before execution for file/tool/policy mutations' (ADAPT) are the exact two principles this instruction file restates as an agent-facing rule. | Executable owner: OWNER_NOT_FOUND. rg --files -g \"*AGENTS_CVF_WORKSPACE*\" docs EXTENSIONS returns zero hits; no MCP tool implements get_workspace_state/submit_proposal/submit_evidence/get_receipt. | Overlap: CONCEPT_OVERLAP_CONFIRMED and direct: both governing principles in this file are already ABSORB'd/ADAPT'd CVF doctrine, word for word in spirit.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Agent-facing instruction file mandating get_workspace_state / allowed_actions / submit_proposal / submit_evidence / receipt flow before any workspace edit. Overlap: CVF's own AGENTS.md governs agent behavior generally, but nothing in Core wires an MCP tool-call sequence for a Workspace Layer runtime Missing value: No CVF-owned agent-instruction file for this MCP tool flow exists Authority needed: Blocked by the same Runtime Expansion Readiness Contract MCP boundary as the config templates above",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Agent-facing instruction file mandating get_workspace_state / allowed_actions / submit_proposal / submit_evidence / receipt flow before any workspace edit. Remaining new value: None at the concept level. The only remaining gap is the executable MCP tool-call flow that would let an agent actually perform get_workspace_state/submit_proposal/submit_evidence/get_receipt against a Local Workspace Runtime -- that tool flow does not exist in Core. Concept owner exists and is a near-exact match to already-absorbed doctrine. NO_CURRENT_EXECUTABLE_OWNER for the described MCP tool flow. Direct import of this specific instruction file is rejected because it is package-authored prose targeting a non-existent tool surface, not because its underlying principles are unknown to CVF.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 28,
@@ -465,13 +471,14 @@
       "sha256": "2cd4824f2da1d4675f7eb0890c6c7dda9ee78970fa1f971bb8c4c7993f34c8d3",
       "crc32": 3908624363,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'integration_templates/claude_desktop_mcp_config.example.json'); current owner search: rg --files -g \"*claude_desktop_mcp_config*\" docs EXTENSIONS -> no hit; no cvf_workspace module exists under EXTENSIONS at all (confirmed by rg --files -g \"*cvf_workspace*\" EXTENSIONS -> zero hits); owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md, Useful Patterns row 'Dependency-free JSON-RPC stdio scaffold' -> `reference_implementation/cvf_workspace/mcp_stdio_server.py` -> disposition DEFER: 'useful test scaffold only; production CVF MCP should use the official MCP SDK or existing MCP package.' This config file is a launcher for exactly that already-classified scaffold. | Executable owner: OWNER_NOT_FOUND. The referenced `cvf_workspace.mcp_stdio_server` module does not exist in Core (rg --files -g \"*cvf_workspace*\" EXTENSIONS -> zero hits); CVF's real MCP server is EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER, a distinct, already-implemented surface using the official approach the absorption map recommended instead of this scaffold. | Overlap: CONCEPT_OVERLAP_CONFIRMED and explicit: this exact scaffold file was already evaluated and DEFER-classified by the absorption map, which also states CVF's production MCP direction (official SDK / existing MCP package) -- a direction CVF has since executed via CVF_ECO_v2.5_MCP_SERVER.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Example Claude Desktop MCP server config launching `python -m cvf_workspace.mcp_stdio_server` for this package. Overlap: None -- CVF has no MCP server config example referencing a cvf_workspace module because that module is not part of Core Missing value: The referenced Python module (`cvf_workspace.mcp_stdio_server`) does not exist in Core, so this config example is not executable against any current CVF surface Authority needed: N/A until the underlying MCP server module itself is authorized (see mcp_stdio_server disposition, which is a SAME_PATH_SAME_HASH prior-DEFER item, still not absorbed)",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Example Claude Desktop MCP server config launching `python -m cvf_workspace.mcp_stdio_server` for this package. Remaining new value: None. The absorption map already reached a disposition (DEFER, then superseded in practice by the real MCP server); this config example targets a scaffold CVF explicitly chose not to productionize. Concept owner exists and has already reached a terminal-style disposition (DEFER, superseded by CVF_ECO_v2.5_MCP_SERVER in practice). NO_CURRENT_EXECUTABLE_OWNER for the specific `cvf_workspace.mcp_stdio_server` module this config launches. Direct import rejected; this is a reaffirmation of the absorption map's own DEFER finding, not a new discovery.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 29,
@@ -480,13 +487,14 @@
       "sha256": "5d1e33e5eecf214d657970f788e52cdd0999457e5dae41ee5e3883a4c511ba2e",
       "crc32": 2624958780,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'integration_templates/codex_cli_instructions.md'); current owner search: rg --files -g \"*codex_cli_instructions*\" docs EXTENSIONS -> no hit; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: Same as AGENTS_CVF_WORKSPACE.md: absorption map's projection-not-authority and proposal-before-execution principles (ABSORB/ADAPT). | Executable owner: OWNER_NOT_FOUND. rg --files -g \"*codex_cli_instructions*\" docs EXTENSIONS returns zero hits. | Overlap: CONCEPT_OVERLAP_CONFIRMED: same underlying principle as AGENTS_CVF_WORKSPACE.md, restated for a specific CLI agent brand.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Two-line instruction telling a Codex CLI agent to read workspace state before editing and keep work proposal-backed and receipt-aware. Overlap: Conceptually adjacent to CVF's own agent-instruction discipline but not wired to any CVF-owned proposal/receipt mechanism for this package Missing value: No CVF-owned Codex-specific workspace instruction exists Authority needed: Same Runtime Expansion Readiness Contract MCP boundary",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Two-line instruction telling a Codex CLI agent to read workspace state before editing and keep work proposal-backed and receipt-aware. Remaining new value: None at the concept level; no CVF-owned Codex-specific workspace instruction or executable tool flow exists. Concept owner exists (already-absorbed doctrine). NO_CURRENT_EXECUTABLE_OWNER for a Codex-specific workspace tool flow. Direct import rejected; the underlying principle is not new, only the client-specific restatement is.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 30,
@@ -495,13 +503,14 @@
       "sha256": "2cd4824f2da1d4675f7eb0890c6c7dda9ee78970fa1f971bb8c4c7993f34c8d3",
       "crc32": 3908624363,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'integration_templates/generic_mcp_client_config.example.json'); current owner search: rg --files -g \"*generic_mcp_client_config*\" docs EXTENSIONS -> no hit; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: Same as claude_desktop_mcp_config.example.json: absorption map's DEFER-classified 'Dependency-free JSON-RPC stdio scaffold' row. | Executable owner: OWNER_NOT_FOUND. Same module-absence finding as the Claude Desktop config. | Overlap: CONCEPT_OVERLAP_CONFIRMED, identical to claude_desktop_mcp_config.example.json.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Generic MCP client config identical in shape to the Claude Desktop example, launching the same `cvf_workspace.mcp_stdio_server` module. Overlap: None -- same non-existent module dependency as the Claude Desktop config Missing value: Same as claude_desktop_mcp_config.example.json Authority needed: Same as claude_desktop_mcp_config.example.json",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Generic MCP client config, byte-identical in shape to the Claude Desktop example, launching the same non-existent `cvf_workspace.mcp_stdio_server` module. Remaining new value: None; same as claude_desktop_mcp_config.example.json. Concept owner exists (absorption map DEFER row, same as the Claude Desktop config). NO_CURRENT_EXECUTABLE_OWNER for the same non-existent module. Direct import rejected.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 31,
@@ -510,13 +519,14 @@
       "sha256": "eac3f9c40bdb861744915cd967f32373bed441f471c4f0e729da70e08fc13fde",
       "crc32": 2429945887,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'integration_templates/vscode_agent_instructions.md'); current owner search: rg --files -g \"*vscode_agent_instructions*\" docs EXTENSIONS -> no hit; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: Same as AGENTS_CVF_WORKSPACE.md/codex_cli_instructions.md: projection-not-authority, proposal-before-execution, and dangerous-action denylist vocabulary are all already ABSORB'd/ADAPT'd. | Executable owner: OWNER_NOT_FOUND. rg --files -g \"*vscode_agent_instructions*\" docs EXTENSIONS returns zero hits. | Overlap: CONCEPT_OVERLAP_CONFIRMED: this file restates three already-absorbed principles (projection, proposal-first, denylist) for a specific IDE client.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: VS Code agent instructions enforcing the state -> allowed actions -> proposal -> evidence -> receipt flow and forbidding direct shell/delete/deploy/policy actions. Overlap: Same MCP tool-flow gap as AGENTS_CVF_WORKSPACE.md and codex_cli_instructions.md Missing value: No CVF-owned VS Code specific workspace instruction exists Authority needed: Same Runtime Expansion Readiness Contract MCP boundary",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: VS Code agent instructions enforcing the state -> allowed actions -> proposal -> evidence -> receipt flow and forbidding direct shell/delete/deploy/policy actions. Remaining new value: None at the concept level; no CVF-owned VS Code specific workspace instruction or executable tool flow exists. Concept owner exists (already-absorbed doctrine, same as the other two agent-instruction files). NO_CURRENT_EXECUTABLE_OWNER for a VS Code specific workspace tool flow. Direct import rejected.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 32,
@@ -645,13 +655,14 @@
       "sha256": "6f6189397922c79ad0eb0d6f7d1c642a6fa7e22666d425aafd2fc33427b5900b",
       "crc32": 3825029217,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'reference_implementation/cvf_workspace/cvf_cli_binding.py'); current owner search: rg --files -g \"*cvf_workspace*\" EXTENSIONS -> zero hits (no cvf_workspace Python package exists anywhere in current Core, tracked or untracked); owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: Same as CVF_CLI_BINDING.md: absorption map ADAPT lane for WORKSPACE_RUNTIME_CONTRACT/MCP runbooks and the already-ABSORB'd proposal-before-execution/Core-remains-authority principles. | Executable owner: OWNER_NOT_FOUND. rg --files -g \"*cvf_workspace*\" EXTENSIONS returns zero hits; no cvf_workspace Python package exists anywhere in current Core. | Overlap: CONCEPT_OVERLAP_CONFIRMED at the design-pattern level (conservative-fallback adapter honoring Core authority); the concrete executable code is new relative to Core.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Executable Python class CVFCLIBinding(CVFCoreBinding) that shells out to a `cvf` executable via subprocess.run with fixed --json subcommands (core evaluate-proposal, evaluate-transition, validate-evidence, create-receipt, project-governance, project-workflow) and falls back to ConservativeReferenceBinding on failure. Overlap: None -- this is executable runtime code with no CVF-owned counterpart; it is also new relative to the prior 2026-06-27 inventory, which never classified a cvf_cli_binding.py file Missing value: An actual subprocess-based CLI adapter with a defined fallback binding does not exist in Core Authority needed: Explicit runtime/provider authorization is required before any executable adapter like this could be absorbed; currently forbidden by both the roadmap non-goals (no runtime/daemon/watcher) and the Runtime Expansion Readiness Contract (`RUNTIME_IMPLEMENTATION_REQUESTED` requires a fresh work order)",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Executable Python class CVFCLIBinding(CVFCoreBinding) using subprocess.run against a `cvf` executable with fixed --json subcommands and conservative fallback. Remaining new value: None beyond the concept already absorbed; the executable module itself has no current owner and is not proven necessary over the existing MCP server / CLI surfaces. Concept owner exists (absorption map). NO_CURRENT_EXECUTABLE_OWNER for this exact Python module. Not executed, not imported. Direct import rejected; no new runtime owner created.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 41,
@@ -885,13 +896,14 @@
       "sha256": "2e77a444361095c63d735a128f3b82480464bca7600e8ae7f36561674739b0f7",
       "crc32": 288636924,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'runbooks/CVF_CORE_ADAPTER_RUNBOOK.md'); current owner search: rg -il \"CVF_CORE_ADAPTER_RUNBOOK\" docs governance EXTENSIONS -> no hit outside this corpus manifest; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md -- 'MCP/CLI runbooks' are explicitly named in the Two-Layer Absorption table as ADAPT into CVF_LOCAL_WORKSPACE_RUNTIME, pending fresh GC-018. | Executable owner: OWNER_NOT_FOUND. rg -il \"CVF_CORE_ADAPTER_RUNBOOK\" docs governance EXTENSIONS returns zero hits outside this corpus manifest; no CVF-owned adapter runbook or implementation of this method surface exists. | Overlap: CONCEPT_OVERLAP_CONFIRMED: this file IS one of the 'MCP/CLI runbooks' the absorption map already named and ADAPT-classified as a runtime-adjacent input, pending fresh GC-018. The absorption map explicitly anticipated this exact artifact class.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Runbook describing how to replace the conservative fallback with a real CVFCoreBinding implementation (evaluate_proposal, evaluate_transition, validate_evidence, create_receipt, project_governance_state, project_workflow_state). Overlap: None -- no CVF-owned adapter runbook exists for this method surface Missing value: The described method surface (evaluate_proposal/evaluate_transition/etc.) has no CVF-owned runbook or implementation Authority needed: Blocked pending fresh runtime authorization as above",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Runbook for implementing the CVFCoreBinding method surface (evaluate_proposal, evaluate_transition, validate_evidence, create_receipt, project_governance_state, project_workflow_state). Remaining new value: None new at the concept level (already ADAPT-classified); the executable proposal/evidence/receipt method implementation itself remains unbuilt and requires fresh GC-018 per the absorption map's own stated condition. Concept owner exists and is explicit (absorption map names 'MCP/CLI runbooks' directly). NO_CURRENT_EXECUTABLE_OWNER for the described method surface. Runbook itself is not absorbed as authority; direct import rejected pending the fresh GC-018 the absorption map already requires.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 57,
@@ -945,13 +957,14 @@
       "sha256": "56cc3d4afe32034ae6f12d3a4f36000ee5de2abe09e4aced8e7e239b2d1a4445",
       "crc32": 2493443379,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'runbooks/PRODUCTION_HANDOFF_RUNBOOK.md'); current owner search: rg -il \"PRODUCTION_HANDOFF_RUNBOOK\" docs governance EXTENSIONS -> no hit outside this corpus manifest; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md, EARC-T3A Pilot Absorption Result table row 'Production handoff wording' -> disposition BLOCKED_UNTIL_CVF_PROOF (implementation requires explicit MCP/runtime authorization and fresh GC-018). This is a directly-named, already-adjudicated concept. | Executable owner: OWNER_NOT_FOUND. rg -il \"PRODUCTION_HANDOFF_RUNBOOK\" docs governance EXTENSIONS returns zero hits outside this corpus manifest; the referenced install/doctor/guardrails steps have no CVF-owned equivalent. | Overlap: CONCEPT_OVERLAP_CONFIRMED: 'production handoff wording' is a named row in the absorption map's own pilot table with an explicit disposition (BLOCKED_UNTIL_CVF_PROOF). The concept was already evaluated and closed, not missed.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Six-step handoff runbook: place package under EXTENSIONS, run install_local_workspace.sh, run CLI doctor, configure IDE/MCP client, replace conservative binding with real CVFCoreBinding, run guardrails test. Overlap: None -- describes installing and running executable scripts (install_local_workspace.sh, CLI doctor) that do not exist as CVF-owned tooling Missing value: None of the six referenced steps map to an existing CVF installer, doctor command, or handoff procedure Authority needed: Blocked pending fresh runtime authorization; also references scripts that are themselves new additions (see scripts/* rows below)",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Six-step handoff runbook: place package under EXTENSIONS, run install_local_workspace.sh, run CLI doctor, configure IDE/MCP client, replace conservative binding with real CVFCoreBinding, run guardrails test. Remaining new value: None. The absorption map already reached a final disposition for this exact concept class; T2 does not discover new value, it confirms the map's prior BLOCKED_UNTIL_CVF_PROOF finding still holds because no fresh GC-018 has authorized implementation. Concept owner exists and has already adjudicated this exact wording class as BLOCKED_UNTIL_CVF_PROOF. NO_CURRENT_EXECUTABLE_OWNER for the six referenced steps. Direct import rejected; this is a reaffirmation of an existing CVF disposition, not a new finding.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 61,
@@ -1080,13 +1093,14 @@
       "sha256": "9ddfe7d3eea9b0a555b70cfb6d1315311a9b324b6c5cc67bf9515494438f3dc3",
       "crc32": 942032988,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'scripts/install_local_workspace.ps1'); current owner search: rg --files -g \"*install_local_workspace*\" EXTENSIONS scripts -> no hit; cvf_workspace.cli module does not exist in Core; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: No direct absorption-map row names an installer/bootstrap concept; the absorption map's scope is the package's runtime/state/MCP doctrine, not its installation tooling. Weak indirect relation only via 'production handoff wording' (BLOCKED_UNTIL_CVF_PROOF). | Executable owner: OWNER_NOT_FOUND. rg --files -g \"*install_local_workspace*\" EXTENSIONS scripts returns zero hits; cvf_workspace.cli module does not exist in Core. CVF has its own unrelated workspace bootstrap script (scripts/new-cvf-workspace.ps1, per CLAUDE.md) for a different purpose (creating a sibling CVF Workspace project directory, not installing this package's Python CLI). | Overlap: NO_DIRECT_CONCEPT_OVERLAP beyond the general BLOCKED_UNTIL_CVF_PROOF posture on production-handoff wording; this is installer/bootstrap tooling, not workspace-runtime doctrine.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: PowerShell installer script that sets PYTHONPATH and invokes `python -m cvf_workspace.cli --root $Root init` then `doctor`. Overlap: None -- CVF has its own install/bootstrap tooling (scripts/new-cvf-workspace.ps1 per CLAUDE.md) but that is an unrelated CVF-workspace-directory bootstrapper, not this package's cvf_workspace Python CLI Missing value: An installer for this specific package's Python CLI does not exist in Core Authority needed: Blocked -- this script executes a non-existent module against the local filesystem; running it is itself forbidden runtime execution under T0's read-only scope",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: PowerShell installer invoking `python -m cvf_workspace.cli --root $Root init` then `doctor`. Remaining new value: None; no CVF-owned installer for this specific package's Python CLI exists, and the script was not executed (forbidden by T2 scope). No specific concept owner beyond the general production-handoff BLOCKED_UNTIL_CVF_PROOF posture. NO_CURRENT_EXECUTABLE_OWNER; script targets a non-existent module and was not executed. Direct import rejected; CVF's own unrelated bootstrap script is not the same owner.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 70,
@@ -1095,13 +1109,14 @@
       "sha256": "ab1a9e97db44cebd28ad885fc6b0852e5a844d6683d1f77ab1ca0f70ac6a5bbe",
       "crc32": 2408867149,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'scripts/install_local_workspace.sh'); current owner search: same as install_local_workspace.ps1; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: Same as install_local_workspace.ps1: no direct absorption-map row; only the general production-handoff BLOCKED_UNTIL_CVF_PROOF posture applies. | Executable owner: OWNER_NOT_FOUND. Same as install_local_workspace.ps1. | Overlap: NO_DIRECT_CONCEPT_OVERLAP beyond the general production-handoff posture.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Bash equivalent of the PowerShell installer above. Overlap: None Missing value: Same as install_local_workspace.ps1 Authority needed: Same as install_local_workspace.ps1",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Bash equivalent of the PowerShell installer above. Remaining new value: None; same as install_local_workspace.ps1. Same reasoning as install_local_workspace.ps1. NO_CURRENT_EXECUTABLE_OWNER; not executed. Direct import rejected.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 71,
@@ -1110,13 +1125,14 @@
       "sha256": "8552dab03a35a8732e682137ecbd96f43d0cb458eda1764613e16eb5ab039e04",
       "crc32": 1906909922,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'scripts/run_mcp_stdio.sh'); current owner search: rg --files -g \"*run_mcp_stdio*\" EXTENSIONS scripts -> no hit; target module does not exist in Core; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: Same absorption map DEFER row for the JSON-RPC stdio scaffold this script launches. | Executable owner: OWNER_NOT_FOUND. rg --files -g \"*run_mcp_stdio*\" EXTENSIONS scripts returns zero hits; target module does not exist. CVF's real MCP server (CVF_ECO_v2.5_MCP_SERVER) has its own distinct startup mechanism. | Overlap: CONCEPT_OVERLAP_CONFIRMED: this script is a launcher for the exact scaffold the absorption map already DEFER-classified and CVF has since bypassed with a real MCP server implementation.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Bash launcher for `python -m cvf_workspace.mcp_stdio_server --root <root>`. Overlap: None Missing value: No CVF-owned MCP stdio launcher exists Authority needed: Blocked by MCP/runtime boundary in the Runtime Expansion Readiness Contract",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Bash launcher for `python -m cvf_workspace.mcp_stdio_server --root <root>`. Remaining new value: None; the launch mechanism itself has no value independent of the already-adjudicated scaffold it launches. Concept owner exists (absorption map DEFER row for the stdio scaffold). NO_CURRENT_EXECUTABLE_OWNER; not executed (forbidden by T2 scope). Direct import rejected.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 72,
@@ -1125,13 +1141,14 @@
       "sha256": "ded82e5a8f393c10d273dfe23f944334e9e82251e407d82919a178e045e2b55a",
       "crc32": 696193307,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'scripts/run_surface.sh'); current owner search: rg --files -g \"*run_surface*\" EXTENSIONS scripts -> no hit; surface_server module does not exist in Core; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md, Two-Layer Absorption row: 'contracts/WORKSPACE_UI_CONTRACT.md; implementation/WORKSPACE_WEB_ARCHITECTURE.md; local surface server' -> CVF_WEB_WORKSPACE -> ADAPT: 'useful operator read-model and display-surface input, but not CVF authority or product implementation.' The local surface server this script launches is explicitly named in that row. | Executable owner: OWNER_NOT_FOUND for this exact server. CVF Web (EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web, a Next.js app) is an unrelated, already-implemented surface serving a different product; it does not launch or implement this script's surface_server module. | Overlap: CONCEPT_OVERLAP_CONFIRMED and explicit: the absorption map directly names 'local surface server' in its Two-Layer Absorption table with an ADAPT disposition tied to CVF_WEB_WORKSPACE.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Bash launcher for `python -m cvf_workspace.surface_server --root <root> --port <port>`, a local HTTP surface server. Overlap: None -- CVF Web (cvf-web Next.js app) is an unrelated, already-implemented surface; this is a different, non-existent local HTTP server Missing value: No CVF-owned local HTTP surface launcher of this kind exists Authority needed: Blocked by the Runtime Expansion Readiness Contract operator-view boundary (`product UI, local web app, dashboard implementation` explicitly blocked until fresh GC-018)",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Bash launcher for `python -m cvf_workspace.surface_server --root <root> --port <port>`, a local HTTP surface server. Remaining new value: None at the concept level (already ADAPT-classified); the executable local HTTP server itself is not implemented and CVF's real Web surface (cvf-web) took a different, already-productionized path. Concept owner exists and is explicitly named (absorption map's CVF_WEB_WORKSPACE row names 'local surface server' directly). NO_CURRENT_EXECUTABLE_OWNER for this specific server; not executed. Direct import rejected; concept overlap is acknowledged rather than denied.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 73,
@@ -1215,13 +1232,14 @@
       "sha256": "e23860fddfa17634749885152f6481f101067ea14209a9c8ec72324f35ae57de",
       "crc32": 1610586112,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'tests/PRODUCTION_HANDOFF_CHECKLIST.md'); current owner search: rg -il \"PRODUCTION_HANDOFF_CHECKLIST\" docs governance EXTENSIONS -> no hit outside this corpus manifest; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: Same EARC-T3A pilot row as PRODUCTION_HANDOFF_RUNBOOK.md (BLOCKED_UNTIL_CVF_PROOF for production-handoff wording); items 'dangerous actions blocked' and 'state is projection' individually map to the absorption map's ABSORB/ADAPT rows for the denylist vocabulary and projection-not-authority principle. | Executable owner: OWNER_NOT_FOUND. rg -il \"PRODUCTION_HANDOFF_CHECKLIST\" docs governance EXTENSIONS returns zero hits outside this corpus manifest. | Overlap: CONCEPT_OVERLAP_CONFIRMED: 2 of 9 checklist items ('dangerous actions blocked', 'state is projection') restate already-ABSORB'd/ADAPT'd CVF principles; the remaining 7 items reference non-existent runtime components (CLI doctor, MCP stdio server, surface server, guardrails test, self-approval block, binding plan).",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Nine-item production-handoff checklist (CLI doctor passes, MCP stdio server starts, surface server starts, guardrails test passes, dangerous actions blocked, agent cannot self-approve, state is projection, real CVF Core binding plan exists). Overlap: None -- every checklist item references a non-existent runtime component Missing value: No CVF-owned equivalent checklist exists Authority needed: Blocked pending the underlying runtime components' own authorization",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Nine-item production-handoff checklist (CLI doctor passes, MCP stdio server starts, surface server starts, guardrails test passes, dangerous actions blocked, agent cannot self-approve, state is projection, real CVF Core binding plan exists). Remaining new value: None as a checklist artifact; the underlying principles are already owned, and the executable checklist items have no current Core target to check against. Concept owner exists for 2/9 items (already-absorbed principles); NO_CURRENT_EXECUTABLE_OWNER for the checklist as a whole because it targets non-existent runtime components. Direct import rejected; the absorbed principles are not re-absorbed a second time under a new owner.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 79,
@@ -1290,13 +1308,14 @@
       "sha256": "1fecab2bf5d70a79d109f64c91483fd9ae9f73ac28c9d69b05e055beecf242f5",
       "crc32": 3536552780,
       "group": "package",
-      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041",
+      "contentClass": "PACKAGE_REFERENCE_DOCUMENT_OR_SOURCE_NEW_IN_V041_TERMINAL",
       "authorityPosture": "NOT_CVF_SOURCE",
-      "currentOwnerComparison": "ADDED_IN_V041, absent from prior 2026-06-27 inventory (path 'tests/test_reference_guardrails.py'); current owner search: rg --files -g \"*test_reference_guardrails*\" EXTENSIONS -> no hit; target cvf_workspace.cli module does not exist in Core; owner: OWNER_NOT_FOUND",
+      "currentOwnerComparison": "Concept owner: docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md -- the safe-vs-dangerous routing assertion this test exercises is a test-level instance of the already-ADAPT'd 'dangerous action denylist' guard vocabulary (Useful Patterns table, EARC-T3A pilot table). | Executable owner: OWNER_NOT_FOUND. rg --files -g \"*test_reference_guardrails*\" EXTENSIONS returns zero hits; target cvf_workspace.cli module does not exist in Core; not executed (T2 forbids archive test execution). | Overlap: CONCEPT_OVERLAP_CONFIRMED at the pattern level: the safe-vs-dangerous-action test pattern exercises the same denylist vocabulary the absorption map already ADAPT'd; the specific test target (the package's own CLI) is not CVF-owned.",
       "privacyPosture": "NO_PRIVACY_RISK_INTERNAL_DESIGN_DOC",
-      "disposition": "DEFER_REQUIRES_NEW_AUTHORITY",
-      "rationale": "Capability: Executable pytest-style script that spins up a temp dir, runs the package's own CLI (init/doctor/register-agent/propose x2/state) via subprocess, and asserts safe-vs-dangerous proposal routing. Overlap: None -- this test targets a module that is not part of CVF; it cannot be run against Core and was not executed by the worker (T0 forbids executing archived code) Missing value: No CVF-owned guardrail test exists for this action-approval boundary Authority needed: Blocked pending both the underlying runtime authorization and a decision on whether this test pattern should inform a future CVF-owned guardrail test",
-      "processingStatus": "READ"
+      "disposition": "REJECT_DIRECT_IMPORT_NO_OWNER",
+      "rationale": "Capability: Executable pytest-style script that spins up a temp dir, runs the package's own CLI (init/doctor/register-agent/propose x2/state) via subprocess, and asserts safe-vs-dangerous proposal routing. Remaining new value: None at the concept level; the guard vocabulary is already owned. The executable test itself targets a non-existent module and cannot run against Core. Concept owner exists (denylist/guard vocabulary already ADAPT'd). NO_CURRENT_EXECUTABLE_OWNER for this exact test, which targets a non-existent module; not executed. Direct import rejected; no new checker/test owner created. This test pattern may inform a future CVF-owned guard test, but that is a separately-authorized decision, not made by T2.",
+      "processingStatus": "READ",
+      "noCurrentExecutableOwner": true
     },
     {
       "entryIndex": 84,
@@ -2013,5 +2032,22 @@
       "templates/generic_mcp_config.example.json",
       "tests/PRODUCTION_HANDOFF_SMOKE_RESULT.json"
     ]
+  },
+  "t2TerminalDispositionSummary": {
+    "tranche": "LRA-T2",
+    "date": "2026-08-12",
+    "rowsProcessed": 18,
+    "rowsRemainingDeferred": 0,
+    "dispositionAssigned": "REJECT_DIRECT_IMPORT_NO_OWNER",
+    "note": "All 18 V041-delta artifacts previously DEFER_REQUIRES_NEW_AUTHORITY resolved to NO_CURRENT_EXECUTABLE_OWNER after re-verified complete Core search; 16 have governed concept overlap and 2 installer scripts have no direct concept overlap; no new executable owner, package, runtime, or checker surface was created."
+  },
+  "t2RemediationSummary": {
+    "tranche": "LRA-T2-REMEDIATION",
+    "date": "2026-08-12",
+    "reviewerFinding": "R-01-T2: blanket OWNER_NOT_FOUND / no-semantic-overlap claim contradicted docs/reference/agent_workspace/CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md, which already ABSORB/ADAPT-classifies multiple concepts present in the 18 items",
+    "correction": "Each of the 18 rows now records a distinct concept owner (where one exists in the absorption map), an executable/source owner search, and an explicit overlap finding. Disposition remains REJECT_DIRECT_IMPORT_NO_OWNER for all 18 because none has a current executable/runtime owner, but 16 of 18 now record CONCEPT_OVERLAP_CONFIRMED (2 -- the two install scripts -- record NO_DIRECT_CONCEPT_OVERLAP beyond the general production-handoff posture) rather than a blanket 'no overlap' denial.",
+    "noCurrentExecutableOwnerCount": 18,
+    "conceptOverlapConfirmedCount": 16,
+    "noDirectConceptOverlapCount": 2
   }
 }

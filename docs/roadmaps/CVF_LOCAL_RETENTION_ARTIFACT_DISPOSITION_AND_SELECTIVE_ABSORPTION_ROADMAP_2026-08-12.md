@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T2_DISPATCH_READY_TERMINAL_DISPOSITION
+Status: CLOSED_REVIEWER_ACCEPTED_RETAIN_SINGLE_PINNED_ARCHIVE
 
 docType: roadmap
 
@@ -17,10 +17,10 @@ CVF roadmap after local workspace cleanup. The source archive is
 `D:\UNG DUNG AI\TOOL AI 2026\CVF-Workspace\_cvf-core-backups\CVF_LOCAL_RETENTION_20260812.zip`,
 SHA-256 `09e0e6f0b9de305b4cc3ce34f7cc2f0ebe0b82aa8e4b98774dd4ff0b2192493a`.
 
-T0 was independently accepted. On 2026-08-12 the operator explicitly released
-fresh T2 authority to finish the 18 deferred V041 dispositions. The release is
-terminal evidence disposition only and does not presume that any archived item
-belongs in Core.
+T0 and T2 were independently accepted on 2026-08-12. All 129 entries now have
+terminal dispositions. T4 closes the retention lifecycle by keeping one
+hash-pinned ZIP as the source evidence for 56 evidence-only rows; no archived
+item is admitted into Core.
 
 ## Purpose
 
@@ -85,9 +85,9 @@ committed closure result that explicitly releases it.
 |---|---|---|---|---|
 | T0 | enumerate all 129 entries and decide authority/value posture | manifest, processing ledger, audit, GC-051 entry/aggregate, finding packet, worker return | operator selection and pinned archive hash | REVIEWER_ACCEPTED |
 | T1 | disposition six historical governance artifacts | per-file `ABSORB_CURRENT_EVIDENCE`, `SUPERSEDED`, `ARCHIVE_EVIDENCE_ONLY`, or `REJECT_STALE_AUTHORITY` | accepted T0 evidence | N/A_WITH_REASON: all six are `SUPERSEDED` in accepted T0 |
-| T2 | reconcile Workspace Layer V041 with current workspace owners | 18-row owner/value matrix and terminal disposition ledger | accepted T0 evidence; explicit operator release; fresh GC-018 and no-commit work order | DISPATCH_READY_TERMINAL_DISPOSITION |
+| T2 | reconcile Workspace Layer V041 with current workspace owners | 18-row owner/value matrix and terminal disposition ledger | accepted T0 evidence; explicit operator release; fresh GC-018 and no-commit work order | REVIEWER_ACCEPTED |
 | T3 | disposition raw runtime/review artifacts | secret-safe digest or explicit rejection/retention result | accepted T0 evidence; evidence value proven | N/A_WITH_REASON: all 39 have terminal rejection dispositions in accepted T0 |
-| T4 | close retention lifecycle | all 129 entries terminal; ZIP retention/deletion recommendation | T1-T3 terminal or N/A with reason | HOLD_PENDING_ACCEPTED_T2 |
+| T4 | close retention lifecycle | all 129 entries terminal; ZIP retention/deletion recommendation | T1-T3 terminal or N/A with reason | COMPLETE_RETAIN_SINGLE_PINNED_ARCHIVE |
 
 T0 may recommend immediate terminal closure when no item justifies absorption.
 T1-T3 are optional evidence-gated branches, not promised implementation waves.
@@ -137,12 +137,24 @@ External knowledge intake routing: REQUIRED
 
 ## Next Allowed Move
 
-Execute only LRA-T2 under the fresh GC-018 and no-commit work order. The worker
-must resolve exactly 18 deferred V041 rows to terminal evidence dispositions,
-leave changes unstaged/uncommitted, and return for independent review. T4,
-archive deletion, DESIGN, BUILD, runtime, provider/live, public-sync, deploy,
-and production remain closed until accepted T2 evidence explicitly releases
-the next step.
+No further move is authorized under this roadmap. T2 is accepted and T4 is
+complete. Retain only the pinned ZIP at its current backup path as immutable
+evidence; do not recreate loose CVF folders from it. Any deletion, absorption,
+DESIGN, BUILD, runtime, provider/live, public-sync, deploy, or production work
+requires fresh operator authority and a separate governed packet.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_2026-08-12.md` | `Status: CLOSED_REVIEWER_ACCEPTED_T2` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_COMPLETION_2026-08-12.md` | `Status: REVIEWER_ACCEPTED_T2_T4_CLOSED` | PASS |
+| Roadmap state | this file | `Status: CLOSED_REVIEWER_ACCEPTED_RETAIN_SINGLE_PINNED_ARCHIVE` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate matches the terminal source entry | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion records 129 terminal entries | PASS |
+| External evidence digest | `docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json` | ZIP SHA-256 `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A`; 129 entries | PASS |
+| System loop interlock | `docs/corpus-intelligence/findings/local-retention-artifacts-20260812.md` | no follow-on tranche; fresh authority required for any expansion | PASS |
+| Session continuity | `AGENT_HANDOFF_V59_2026-08-11.md` | dedicated post-material closure synchronization | PASS |
 
 ## Public Export Disposition
 
@@ -153,7 +165,7 @@ authorize public export.
 
 ## Claim Boundary
 
-This roadmap now authorizes read-only T2 terminal disposition for exactly 18
-archive items. It does not admit archived content into Core, open a new owner,
-delete the ZIP, or make a runtime, provider, deployment, public, or production
-claim.
+This roadmap is closed after terminal disposition of all 129 archive items.
+The single pinned ZIP is retained as evidence only. Closure does not admit
+archived content into Core, open a new owner, authorize deletion, or make a
+runtime, provider, deployment, public, or production claim.

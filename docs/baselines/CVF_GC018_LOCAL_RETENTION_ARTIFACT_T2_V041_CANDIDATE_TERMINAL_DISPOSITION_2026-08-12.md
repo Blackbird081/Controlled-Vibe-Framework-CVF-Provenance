@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_REVIEWER_ACCEPTED_T2
 
 Batch ID: LRA-T2
 
@@ -252,6 +252,28 @@ each row without opening a new owner surface.
 - Output traceability: T2 audit, manifest, registry entry/aggregates, findings, and worker return
 - Adversarial verification: reviewer must recompute all 18 ZIP hashes and audit terminal-value decisions
 - Corpus verdict: PARTIAL - dispatch defines the complete subset but does not claim T2 processing completion
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_2026-08-12.md` | `Status: CLOSED_REVIEWER_ACCEPTED_T2` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T2_V041_CANDIDATE_TERMINAL_DISPOSITION_COMPLETION_2026-08-12.md` | `Status: REVIEWER_ACCEPTED_T2_T4_CLOSED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LOCAL_RETENTION_ARTIFACT_DISPOSITION_AND_SELECTIVE_ABSORPTION_ROADMAP_2026-08-12.md` | `Status: CLOSED_REVIEWER_ACCEPTED_RETAIN_SINGLE_PINNED_ARCHIVE` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate matches the terminal source entry | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | human companion records 129 terminal entries | PASS |
+| External evidence digest | `docs/corpus-intelligence/manifests/local-retention-artifacts-20260812.json` | ZIP SHA-256 `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A`; 129 entries | PASS |
+| System loop interlock | `docs/corpus-intelligence/findings/local-retention-artifacts-20260812.md` | no follow-on tranche; fresh authority required for any expansion | PASS |
+| Session continuity | `AGENT_HANDOFF_V59_2026-08-11.md` | dedicated post-material closure synchronization | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Archive digest | `09E0E6F0B9DE305B4CC3CE34F7CC2F0EBE0B82AA8E4B98774DD4FF0B2192493A` | PASS |
+| Selected entry hashes | 18/18 match | PASS |
+| Terminal corpus | 129 terminal; zero deferred; zero unresolved | PASS |
+| Retention disposition | `RETAIN_SINGLE_PINNED_ARCHIVE` | PASS |
 
 ## Public Export Disposition
 
