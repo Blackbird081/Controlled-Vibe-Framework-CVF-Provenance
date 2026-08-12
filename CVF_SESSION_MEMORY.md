@@ -45,34 +45,31 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`public_projection_staging_branch_pushed_deploy_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selection of a new roadmap; parked checkpoint=public `main` merge, deploy, browser/provider/store, secrets, hosted smoke, and production.
+Startup acknowledged: current mode=`local_retention_artifact_t0_dispatch_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute only LRA-T0; parked checkpoint=LRA T1-T4, archive deletion, MAO T1, DESIGN, BUILD, provider/live, public `main` merge, deploy, hosted smoke, secrets, store, and production.
 
 ## Current Mode
 
-`public_projection_staging_branch_pushed_deploy_parked`
+`local_retention_artifact_t0_dispatch_ready`
 
-Current mode marker: `public_projection_staging_branch_pushed_deploy_parked`
-Current mode: `public_projection_staging_branch_pushed_deploy_parked`
-Previous mode: `public_projection_prepush_t1_closed_pending_push_authority`
+Current mode marker: `local_retention_artifact_t0_dispatch_ready`
+Current mode: `local_retention_artifact_t0_dispatch_ready`
+Previous mode: `public_projection_staging_branch_pushed_deploy_parked`
 
 ## Next Allowed Move
 
-Mode: `public_projection_staging_branch_pushed_deploy_parked`
+Mode: `local_retention_artifact_t0_dispatch_ready`
 
-Public candidate `021f8b852` was pushed from the sibling public-sync clone as
-`origin/lpci1-ref-staging` after the canonical public-projection gate returned
-`compliant: true`, zero failures, and 7/7 external commands PASS. LPCI1 Web is
-parked under `REUSE_BASELINE_DELTA_ONLY` at private material commit
-`8791b9b23`. The next move is operator selection of a new roadmap. Public
-`main` merge, deploy, hosted/provider/store, secrets, production, and Netlify
-remain parked.
+Execute only LRA-T0 under the committed local-retention GC-018 and work order
+at material dispatch commit `21fa13c70`. Inventory and audit all 129 immutable
+ZIP entries without extraction into Core, absorption, execution, staging, or
+worker commit. LRA T1-T4 and archive deletion remain parked.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
 Public staging push is complete at `origin/lpci1-ref-staging@021f8b852`.
-Netlify deployment, hosted/provider/store, secrets, production, and public
-`main` merge remain parked.
+MAO T1, DESIGN, BUILD, Netlify deployment, hosted/provider/store, secrets,
+production, and public `main` merge remain parked.
 
 ## Targeted Lookup Rules
 

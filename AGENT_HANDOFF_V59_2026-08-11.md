@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Public Projection Staging Branch Pushed
+# CVF Agent Handoff V59 - Local Retention Artifact T0 Dispatch Ready
 
 Memory class: active-handoff
 
@@ -9,7 +9,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Current Core HEAD marker:
-  `0ced06a86eaa4b3f4294eb580de2e2f39beba04d`
+  `21fa13c705fcf906e19a562b912a170b2ad96b8d`
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
 - MAO T0 material closure commit:
@@ -19,14 +19,14 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Handoff-sync parent commit:
-  `0ced06a86eaa4b3f4294eb580de2e2f39beba04d`
+  `21fa13c705fcf906e19a562b912a170b2ad96b8d`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `public_projection_staging_branch_pushed_deploy_parked`
+  `local_retention_artifact_t0_dispatch_ready`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -35,27 +35,28 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`public_projection_staging_branch_pushed_deploy_parked`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator
-selection of a new roadmap; parked checkpoint=public `main` merge, deploy,
-browser/provider/store, secrets, hosted smoke, and production.
+Startup acknowledged: current mode=`local_retention_artifact_t0_dispatch_ready`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute only
+LRA-T0; parked checkpoint=LRA T1-T4, archive deletion, MAO T1, DESIGN, BUILD,
+provider/live, public `main`, deploy, hosted smoke, secrets, store, production.
 
 ## Current Mode
 
-`public_projection_staging_branch_pushed_deploy_parked`
+`local_retention_artifact_t0_dispatch_ready`
 
 ## Purpose
 
-Record independent acceptance and material closure of the public-projection
-pre-push owner/profile implementation.
+Record the committed LRA-T0 audit dispatch while preserving prior
+public-projection evidence as closed history.
 
 ## Scope / Target / Owner Boundary
 
-- Current bounded target: close the MAO agent-host lifecycle-adapter roadmap at
-  T0 after the independent owner-and-facade-value audit.
-- Closure owner: independent reviewer/closer; worker remains non-committing.
-- Authorized repository scope: the six governed MAO T0 packet artifacts and
-  this active handoff freshness record only.
+- Current bounded target: inventory and authority/value-audit all 129 entries
+  in the immutable local retention ZIP.
+- Execution owner: no-commit audit worker; independent reviewer/closer owns
+  acceptance and any later commit.
+- Authorized repository scope: the exact LRA-T0 fulfillment manifest; no
+  archive extraction into Core, absorption, execution, or deletion.
 - Excluded authority: T1-T7, DESIGN, BUILD, provider/live execution, public
   synchronization, deployment, merge, and production remain unopened.
 
@@ -144,11 +145,10 @@ pre-push owner/profile implementation.
 
 ## Next Allowed Move
 
-Operator selection of a new roadmap. Public candidate `021f8b852` is published
-as `origin/lpci1-ref-staging`; no merge to public `main` or deploy occurred.
-LPCI1 Web remains parked under `REUSE_BASELINE_DELTA_ONLY`. Deploy,
-browser/provider/store, secrets, hosted smoke, production, and public `main`
-merge remain parked.
+Execute only LRA-T0 under the local-retention roadmap, GC-018, and no-commit
+work order committed at `21fa13c70`. The worker audits all 129 immutable ZIP
+entries without extracting them into Core, absorbing or executing content,
+staging, committing, or deleting the archive. LRA T1-T4 remain parked.
 
 ## Active Boundary
 
@@ -159,11 +159,13 @@ merge remain parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
 - T3 stays closed and every non-SOPR-CP1 downstream lane remains parked.
+- MAO T1, DESIGN, BUILD, provider/live, public `main`, deploy, hosted smoke,
+  secrets, store, production, and archive deletion remain parked.
 
 ## Worker Return Target
 
-Private Core T1 return after committed dispatch:
-`docs/reviews/CVF_PUBLIC_PROJECTION_PREPUSH_T1_PROFILE_OWNER_AND_GATE_WORKER_RETURN_2026-08-11.md`.
+LRA-T0 worker return after committed dispatch:
+`docs/reviews/CVF_LOCAL_RETENTION_ARTIFACT_T0_INVENTORY_AND_AUTHORITY_AUDIT_WORKER_RETURN_2026-08-12.md`.
 
 Prior pre-push dispatch-sync authorization and operation trace remain preserved
 in Git history through session-sync commit `0b1046dfc`; they are omitted from
@@ -171,14 +173,13 @@ this compact active handoff after the public staging push superseded that mode.
 
 ## Public Export Disposition
 
-EXPORTED
+DEFERRED_PRIVATE_ONLY
 
-Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
-Public commit: `021f8b852afc245a6383177dd69bf56caf488b02`.
-Public artifact path: branch `lpci1-ref-staging`, exact authorized 41-path
-candidate. The private gate and continuity artifacts remain private-only.
+Reason: the LRA-T0 dispatch and continuity update concern private local
+retention artifacts. Prior public-sync evidence remains preserved at public
+branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - Public Staging Push Session Sync
+## Core Guard Self-Protection Authorization - LRA-T0 Dispatch Session Sync
 
 Protected paths:
 
@@ -187,18 +188,19 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/publicProjectionStagingPush20260812.json`
+- `CVF_SESSION/state/entries/localRetentionArtifactT0Dispatch20260812.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit instruction on 2026-08-12 to commit, clean
-the worktree, and push to GitHub before the next roadmap.
+Operator authorization: explicit agreement on 2026-08-12 to process the
+retained material now and make the workspace compact.
 
-Authorized guard-maintenance scope: record the completed staging-branch push,
-set the next move to new-roadmap selection, and regenerate continuity surfaces.
+Authorized guard-maintenance scope: set LRA-T0 as the only next move, bind the
+committed GC-018/work order as current authority, and regenerate continuity
+surfaces after material dispatch commit `21fa13c70`.
 
 Rollback boundary: revert this exact session-sync batch together; do not
-separate generated state from its source fragments. Do not revert material
-commit `8791b9b23` or public candidate `021f8b852`.
+separate generated state from its source fragments and do not revert material
+dispatch commit `21fa13c70`.
 
 ## Claim Boundary
 

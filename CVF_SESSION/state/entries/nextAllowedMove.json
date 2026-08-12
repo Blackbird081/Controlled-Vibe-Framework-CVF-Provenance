@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2141,
+  "stateOrder": 2167,
   "stateKey": "nextAllowedMove",
-  "value": "Public branch lpci1-ref-staging was pushed to GitHub at 021f8b852afc245a6383177dd69bf56caf488b02 after the canonical public-projection gate returned compliant true with zero failures and 7/7 external commands PASS. LPCI1 Web is parked under REUSE_BASELINE_DELTA_ONLY at private material commit 8791b9b23. The next move is operator selection of a new roadmap; Netlify deployment, merge to public main, provider/store/secrets, hosted smoke and production remain parked. Latest closed numbered LHW wave remains LHW24."
+  "value": "Execute only LRA-T0 under the committed local-retention GC-018 and work order at material dispatch commit 21fa13c705fcf906e19a562b912a170b2ad96b8d. The worker must inventory and audit all 129 immutable ZIP entries without extraction into Core, absorption, execution, staging, or commit. LRA T1-T4, archive deletion, MAO T1, DESIGN, BUILD, provider/live, public main merge, deploy, hosted smoke, secrets, store, and production remain parked. Latest closed numbered LHW wave remains LHW24."
 }

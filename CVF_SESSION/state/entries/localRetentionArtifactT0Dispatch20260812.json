@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2166,
+  "stateKey": "localRetentionArtifactT0Dispatch20260812",
+  "value": "Operator selected immediate governed disposition of the retained local archive. Roadmap, GC-018 and no-commit LRA-T0 work order were committed at 21fa13c705fcf906e19a562b912a170b2ad96b8d after reviewer-fast 63/63 and pre-commit 84/84 passed. T0 is a read-only complete 129-entry inventory and authority/value audit; direct import, extraction into Core, runtime execution, absorption, archive deletion, provider/live and public-sync remain unauthorized."
+}
