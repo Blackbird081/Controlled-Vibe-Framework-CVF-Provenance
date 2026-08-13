@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
+import {
+  CADP_CONTRACT_VERSION,
+  createDeterministicCadpReceipt,
+  validateCapabilityAdmission,
+  validateCapabilityAssignment,
+  validateCapabilityDistribution,
+  validateCompatibilityEvidence,
+} from './contracts/index';
 
 function loadPackageJson() {
   const packageUrl = new URL('../package.json', import.meta.url);
@@ -10,6 +18,16 @@ function loadPackageJson() {
 }
 
 describe('package boundary', () => {
+  it('exposes the bounded CADP contract through the canonical contracts barrel', () => {
+    expect(CADP_CONTRACT_VERSION).toBe('cvf.cadp.v1');
+    expect([
+      createDeterministicCadpReceipt,
+      validateCapabilityAdmission,
+      validateCapabilityAssignment,
+      validateCapabilityDistribution,
+      validateCompatibilityEvidence,
+    ].every((value) => typeof value === 'function')).toBe(true);
+  });
   it('keeps the public runtime surface limited to the selected helper subpaths', () => {
     const packageJson = loadPackageJson();
 

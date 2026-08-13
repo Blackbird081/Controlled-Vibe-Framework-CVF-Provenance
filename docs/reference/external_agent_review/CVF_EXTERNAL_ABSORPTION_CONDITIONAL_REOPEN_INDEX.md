@@ -80,11 +80,11 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 - Manifest hash: not generated; bounded index seed is path-listed and command-backed in the working session.
 - Processing ledger artifact or inline ledger: inline candidate index table in this file.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE
-- Reconciliation: manifest=12 source artifacts; ledger_terminal=30 indexed candidate rows plus 1 terminal source-family closure; exclusions=0; unresolved=0
+- Reconciliation: manifest=13 source artifacts; ledger_terminal=34 indexed candidate rows plus 1 terminal source-family closure; exclusions=0; unresolved=0
 - Unresolved files: 0
 - Declared exclusions: none
 - Unreadable or unsupported files: none
-- Aggregation check: 30 indexed candidate rows and 1 terminal source-family closure are sourced from 12 governed artifacts listed below.
+- Aggregation check: 34 indexed candidate rows and 1 terminal source-family closure are sourced from 13 governed artifacts listed below.
 - Drift check: future external absorption closeouts must update this file or state `NO_CONDITIONAL_REOPEN_INDEX_ENTRY_WITH_REASON`.
 - Output traceability: each indexed row names the source artifact and owner surface.
 - Adversarial verification: direct-import rejection alone is not accepted as no-value closure when CVF-native package, runtime, or checker value remains.
@@ -106,6 +106,7 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 | `docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md` | Terminal 27-file `Gop y CVF` residual-value reconciliation | READ |
 | `docs/reference/external_agent_review/CVF_EAIC_KR_R1C_CVF_23_07_FINAL_OWNER_SURFACE_ABSORPTION_DECISION.md` | CVF 23.07 final owner-surface absorption reconciliation; source of the four R1C package/runtime/checker candidate rows below | READ |
 | `docs/audits/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md` | Pinned 107-file Pancake POS MCP upstream-plus-legacy re-intake; source of five conditionally parked CVF-native pattern rows | READ |
+| `docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md` | CADP-R1 full finding resolution; source of the four CADP integration rows below | READ |
 
 ## Candidate Index
 
@@ -141,6 +142,10 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 | `PPMCP-R1-compact-response-projection-runtime-candidate` | PPMCP-R1 upstream response projection and replay evidence | `RUNTIME_CANDIDATE` | Selective response shaping may reduce MCP result context cost; the source measured 26.8%-63.1% reduction across five tool/action pairs. | `PARKED_UNTIL_CONDITION` | Reopen only after an operator-authorized CVF MCP response-shaping layer exists and a fresh work order source-verifies a concrete context-budget or quota problem this pattern would solve. | Pending future CVF MCP response-shaping owner | Dependency installation, runtime response mutation, production cost claim |
 | `PPMCP-R1-display-id-resolver-runtime-candidate` | PPMCP-R1 upstream safe entity targeting | `RUNTIME_CANDIDATE` | Two-stage display-ID resolution with structured ambiguity and state errors may reduce destructive mutation against the wrong entity. | `PARKED_UNTIL_CONDITION` | Reopen only after a fresh runtime work order source-verifies a concrete CVF-native destructive-action-targeting need this pattern would address. | Pending future CVF safe-entity-targeting owner | Domain-specific code import, destructive runtime mutation |
 | `PPMCP-R1-replay-regression-checker-candidate` | PPMCP-R1 upstream replay and negative-mutation fixtures | `CHECKER_CANDIDATE` | Replay regression and negative mutation fixtures may harden a future MCP-adjacent adapter test surface. | `PARKED_UNTIL_CONDITION` | Reopen only after a repeated real defect in CVF MCP-adjacent adapter testing demonstrates a gap these patterns would have caught. | Pending future CVF MCP-adjacent test owner | Checker implementation, hook-chain wiring, CI mutation |
+| `CADP-AI-contract-kernel` | CADP-R1 F01-F04, F08, F11, F12 | `PACKAGE_CANDIDATE` | CVF-native admission, assignment, distribution, evidence and deterministic-receipt contract logic. | `T1_ACCEPTED_BOUNDED` | Round-6 independent review accepted the hermetic contract against R01-R28; F11 source authentication remains outside T1. | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.ts` | runtime consumer wiring, authenticated evidence ownership, catalog readiness overclaim |
+| `CADP-AI-work-order-observation-reconciliation` | CADP-R1 F05/F08/F09/F11 | `RUNTIME_CANDIDATE` | Exact owner-bound evidence plus granted-versus-observed work-order reconciliation across version, action, transport, resource, credentials, expiry, invocation and retry limits. | `T2_RELEASE_AUTHORIZED_FRESH_PACKET_REQUIRED` | CADP-AI-T1 was independently accepted and the operator explicitly released T2 on 2026-08-13; implementation begins only from the committed fresh T2 work order. | existing Guard Contract workflow binding plus source-verified execution observation owner | execution observation wiring, persistence, live action, caller-self-attested trust |
+| `CADP-AI-downstream-consumer-adapters` | CADP-R1 F02/F06/F08 | `RUNTIME_CANDIDATE` | Internal execution-plane/model-gateway consumption and bounded SaaS constraint metadata without authority widening. | `PARKED_UNTIL_T2_ACCEPTED` | Reopen as T3 only after T2 acceptance and fresh source verification of each consumer interface. | Guard Contract, execution plane, model gateway | provider calls, credentials, CLI/MCP, SaaS execution |
+| `CADP-AI-negative-fixture-and-drift-checker` | CADP-R1 F09 | `CHECKER_CANDIDATE` | Cross-owner negative fixtures and schema/contract drift detection may machine-enforce accepted CADP invariants. | `PARKED_UNTIL_CONTRACT_ACCEPTANCE_AND_REPEATED_NEED` | Reopen as T4 after the owner contract is accepted and either a repeated real defect or approved high-risk invariant justifies a checker tranche. | owning package tests; future `governance/compat` work order | checker implementation, hook-chain and CI wiring |
 
 ## Terminal Source-Family Closures
 

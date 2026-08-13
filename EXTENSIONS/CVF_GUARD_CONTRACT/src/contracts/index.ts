@@ -252,3 +252,32 @@ export {
   getMetricsByEmissionStatus,
   getMetricsByEmissionPhase,
 } from './operational-metrics.schema';
+
+export type {
+  CadpIssueCode,
+  CadpIssue,
+  CadpValidationResult,
+  CapabilityAdmissionDecision,
+  CapabilityMutationType,
+  CapabilityAdmissionAction,
+  CapabilityAdmissionRecord,
+  CapabilityAssignmentRecord,
+  CapabilityDistributionItem,
+  CapabilityDistributionManifest,
+  CompatibilityEvidenceLevel,
+  CompatibilityArtifactType,
+  CompatibilityEvidenceArtifact,
+  CompatibilityEvidenceRecord,
+  CompatibilityEvidenceIndex,
+  DeterministicCadpReceiptInput,
+  DeterministicCadpReceipt,
+} from './capability-admission-distribution-profile.contract';
+
+export {
+  CADP_CONTRACT_VERSION,
+  validateCapabilityAdmission,
+  validateCapabilityAssignment,
+  validateCapabilityDistribution,
+  validateCompatibilityEvidence,
+  createDeterministicCadpReceipt,
+} from './capability-admission-distribution-profile.contract';

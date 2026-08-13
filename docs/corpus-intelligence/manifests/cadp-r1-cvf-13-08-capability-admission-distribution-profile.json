@@ -1,0 +1,860 @@
+{
+  "schemaVersion": "1.1.0",
+  "corpusId": "cadp-r1-cvf-13-08-capability-admission-distribution-profile",
+  "corpusRoot": ".private_reference/legacy/CVF 13.08/CVF_CAPABILITY_ADMISSION_DISTRIBUTION_PROFILE/",
+  "snapshotTime": "2026-08-13T09:46:26.0913335+07:00",
+  "pathForm": "corpus-root-relative forward-slash paths",
+  "ordering": "ordinal-ignore-case ascending on corpus-root-relative path",
+  "hashInput": "UTF-8 without BOM; LF-separated file paths; one trailing LF",
+  "hashAlgorithm": "sha256",
+  "manifestHash": "4c8e34d426fd4ba6c8c39e972871b68dc95a30ee9adc5c6fa3749f25c74bfe45",
+  "fileCount": 140,
+  "directoryCount": 36,
+  "totalBytes": 230204,
+  "extensionCounts": {
+    ".gitignore": 1,
+    ".json": 1,
+    ".md": 62,
+    ".ps1": 1,
+    ".py": 43,
+    ".sh": 1,
+    ".sha256": 1,
+    ".toml": 1,
+    ".txt": 3,
+    ".yaml": 25,
+    "<none>": 1
+  },
+  "topLevelEntries": [
+    {
+      "name": "config",
+      "type": "directory"
+    },
+    {
+      "name": "docs",
+      "type": "directory"
+    },
+    {
+      "name": "evidence",
+      "type": "directory"
+    },
+    {
+      "name": "examples",
+      "type": "directory"
+    },
+    {
+      "name": "fixtures",
+      "type": "directory"
+    },
+    {
+      "name": "implementation",
+      "type": "directory"
+    },
+    {
+      "name": "phases",
+      "type": "directory"
+    },
+    {
+      "name": "references",
+      "type": "directory"
+    },
+    {
+      "name": "schemas",
+      "type": "directory"
+    },
+    {
+      "name": "scripts",
+      "type": "directory"
+    },
+    {
+      "name": "src",
+      "type": "directory"
+    },
+    {
+      "name": "tests",
+      "type": "directory"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file"
+    },
+    {
+      "name": "cadp.py",
+      "type": "file"
+    },
+    {
+      "name": "Makefile",
+      "type": "file"
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file"
+    },
+    {
+      "name": "README.md",
+      "type": "file"
+    },
+    {
+      "name": "requirements-dev.txt",
+      "type": "file"
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file"
+    },
+    {
+      "name": "TREEVIEW.md",
+      "type": "file"
+    }
+  ],
+  "directories": [
+    "config",
+    "docs",
+    "evidence",
+    "examples",
+    "examples/api",
+    "examples/external-saas",
+    "examples/local-tool",
+    "examples/mcp",
+    "fixtures",
+    "fixtures/negative",
+    "fixtures/positive",
+    "fixtures/positive/bundle",
+    "fixtures/positive/bundle/instructions",
+    "fixtures/positive/bundle/records",
+    "implementation",
+    "phases",
+    "phases/01_INTAKE_DESIGN",
+    "phases/02_SPEC",
+    "phases/03_WORK_ORDER",
+    "phases/04_PRE_IMPLEMENTATION_REVIEW",
+    "phases/05_FREEZE_IMPLEMENTATION_GATE",
+    "phases/06_BUILD_IMPLEMENTATION",
+    "phases/07_IMPLEMENTATION_REVIEW",
+    "phases/08_LOCAL_FREEZE",
+    "references",
+    "schemas",
+    "schemas/internal",
+    "scripts",
+    "src",
+    "src/cvf_cadp",
+    "src/cvf_cadp/adapters",
+    "tests",
+    "tests/cli",
+    "tests/integration",
+    "tests/negative",
+    "tests/unit"
+  ],
+  "previousSnapshot": {
+    "snapshotTime": "2026-08-13T07:35:34.6679812+07:00",
+    "manifestHash": "9ee590764ba772767d34b92c5f4249e246144442b657c141e8f9fce8e1971bf5",
+    "fileCount": 60,
+    "totalBytes": 127619,
+    "deltaReason": "Operator added the complete project folders/files before independent review.",
+    "deltaAdded": 80,
+    "deltaChanged": 4,
+    "deltaRemoved": 0,
+    "deltaUnchanged": 56
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "sizeBytes": 90,
+      "sha256": "906dc97714e23fe8b2f955ba2e5c9a3ed5c532abeda40a3e14998a02ab7c41bd"
+    },
+    {
+      "path": "cadp.py",
+      "sizeBytes": 163,
+      "sha256": "fd6d13d330c6a805a84afad60663c375c13f29dee53e3995422d513049a83af5"
+    },
+    {
+      "path": "config/owner-mappings.yaml",
+      "sizeBytes": 611,
+      "sha256": "47ca8b84c4da5b87112c9819b643cdcdc2caf98f29e799f16021068ba5714ffb"
+    },
+    {
+      "path": "docs/CAPABILITY_ADMISSION_MODEL.md",
+      "sizeBytes": 5164,
+      "sha256": "ed786e20bfcf78785cfc20f6a1bebbb8bc826f21ea0ce9f2f8e5dfca1c507153"
+    },
+    {
+      "path": "docs/CAPABILITY_ASSIGNMENT_MODEL.md",
+      "sizeBytes": 3777,
+      "sha256": "5d1d7eac96982efc58148b55d6f90aea5f068fea03b4f44527abf0c3b0516778"
+    },
+    {
+      "path": "docs/CAPABILITY_DISTRIBUTION_MODEL.md",
+      "sizeBytes": 4143,
+      "sha256": "a52495bed5a4f13ed638ab7c58c061b6b63c8970dff5ade0193578c1f36aebbb"
+    },
+    {
+      "path": "docs/CLI_REFERENCE.md",
+      "sizeBytes": 709,
+      "sha256": "65fe720dbca8452c0e2dae1100bd73990f7c4326fb41c204dc3016a935a5ff39"
+    },
+    {
+      "path": "docs/COMPATIBILITY_EVIDENCE_MODEL.md",
+      "sizeBytes": 3526,
+      "sha256": "73b9fdf99947244e114f86b8b9d35f6e2dd13352a2549495b7e6c6f32dee531e"
+    },
+    {
+      "path": "docs/OPENWORK_PATTERN.md",
+      "sizeBytes": 3157,
+      "sha256": "b8b690714da91c91ea58c77f6f1b34ae47eff4d9c8c39ce0933bef11c2de6f20"
+    },
+    {
+      "path": "docs/OPUSCLIP_PATTERN.md",
+      "sizeBytes": 3142,
+      "sha256": "31dd8a3dd94f037a6fa3972db8700051dc00235b89875e69ace3a78bc0846a97"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "sizeBytes": 5034,
+      "sha256": "9da29fa40c10386f3720b36a562c3ff3bb15a6a98b97d4d30f7a668f8cd9a825"
+    },
+    {
+      "path": "docs/SAAS_ADMISSION_GUIDE.md",
+      "sizeBytes": 4134,
+      "sha256": "407d9e0ec6f63ce853fafbc569296ff1adebe67a8727eda776789a3b5dde54b6"
+    },
+    {
+      "path": "evidence/FILE_INVENTORY.sha256",
+      "sizeBytes": 14173,
+      "sha256": "4679bbd090bfb54db3230b7941295f1a1d1f913d649817433984bd83d765b3d2"
+    },
+    {
+      "path": "evidence/LOCAL_IMPLEMENTATION_EVIDENCE.json",
+      "sizeBytes": 1431,
+      "sha256": "67c961c7686b23e53242f111bd61daed11ee689923c011ab922425251de7a135"
+    },
+    {
+      "path": "evidence/README.md",
+      "sizeBytes": 371,
+      "sha256": "f5ac68460f9f0de3a66e1a9d5d155a57c39c3ee1061351c819520d445d8503c3"
+    },
+    {
+      "path": "examples/api/README.md",
+      "sizeBytes": 221,
+      "sha256": "50a9579f2871c69ed51f830f6cfb80e58cf02f808542a0c28eae433826705bf5"
+    },
+    {
+      "path": "examples/api/remote-api-compatibility-evidence.yaml",
+      "sizeBytes": 1523,
+      "sha256": "08bfc224b423b5251af2b72ee9319ced51c9f0e5e66b49b704995273cf5591fa"
+    },
+    {
+      "path": "examples/external-saas/media-processing-saas-admission.yaml",
+      "sizeBytes": 4116,
+      "sha256": "c1ca6bdd5993a604e2fe027c94f8ac8c9eea925c95389d49ee4db8a30946fc2b"
+    },
+    {
+      "path": "examples/external-saas/media-processing-saas-assignment.yaml",
+      "sizeBytes": 1537,
+      "sha256": "424018366cfb788425054ec655f49c01ce61c1a2c6ee8416c7e078359ded224a"
+    },
+    {
+      "path": "examples/external-saas/README.md",
+      "sizeBytes": 300,
+      "sha256": "df2aa02fa0dcf3a1e737992253cb0002399d43a5b10bbabeb1f4e6e33c89c408"
+    },
+    {
+      "path": "examples/local-tool/local-document-tool-admission.yaml",
+      "sizeBytes": 3319,
+      "sha256": "e40a74d1c847eb65c3c758536d24b61054db82ec37b7fb351d90280292fcb03e"
+    },
+    {
+      "path": "examples/local-tool/local-document-tool-distribution.yaml",
+      "sizeBytes": 1881,
+      "sha256": "466199e8649a62cf408f52bf5031a8ab1b402f6a055c5620b7786e2faabeabfa"
+    },
+    {
+      "path": "examples/local-tool/README.md",
+      "sizeBytes": 211,
+      "sha256": "097e4d6ee6c0f645c5ca48d560dd049cb0eddaca640e3e9847f58770c4ed9fa9"
+    },
+    {
+      "path": "examples/mcp/business-mcp-admission.yaml",
+      "sizeBytes": 2968,
+      "sha256": "759433c8955294c7ef1a8bfb355a5e674269bb91309b6bcb6031c692276fc23a"
+    },
+    {
+      "path": "examples/mcp/README.md",
+      "sizeBytes": 220,
+      "sha256": "b59a29a64bd30b2e62057766a0b5c019c1b3b83ab67e6d2013c75aaf4171cf6d"
+    },
+    {
+      "path": "fixtures/negative/admission-with-secret.yaml",
+      "sizeBytes": 2487,
+      "sha256": "e69fafd5cf56efe3c389ae7eaea1900150d711d42f0965bbc7bb8e7635b7008c"
+    },
+    {
+      "path": "fixtures/negative/assignment-outside-admission.yaml",
+      "sizeBytes": 1439,
+      "sha256": "a9232037673466523121691dc2580b36014e12a58d862fa9b27b7ef609febd87"
+    },
+    {
+      "path": "fixtures/negative/distribution-private-export.yaml",
+      "sizeBytes": 1806,
+      "sha256": "9dc533a0a9aa56245055131779b9dcbb8f8b109c16c0ca2c4c61be7a18c1fe41"
+    },
+    {
+      "path": "fixtures/negative/observation-forbidden-resource.yaml",
+      "sizeBytes": 480,
+      "sha256": "e1af107d093ad3ceddb1f38cc257350cc7f677d2b1e208d848a9f0abfe30193e"
+    },
+    {
+      "path": "fixtures/positive/admission.yaml",
+      "sizeBytes": 2440,
+      "sha256": "9f218b191457bdcf5006d3245f20ab21bf4e812c6e72e1fd3699f4a6a572a543"
+    },
+    {
+      "path": "fixtures/positive/assignment.yaml",
+      "sizeBytes": 1433,
+      "sha256": "0ecfb34b092b3d133a90a58e8127070167c77f8b478846bb10f123b3e9b09898"
+    },
+    {
+      "path": "fixtures/positive/bundle/instructions/README.txt",
+      "sizeBytes": 61,
+      "sha256": "1e56ed9b7ce0a16322376333553b4ad4a21ba46c6cf0544e29c7a48b135c57df"
+    },
+    {
+      "path": "fixtures/positive/bundle/records/admission.yaml",
+      "sizeBytes": 2440,
+      "sha256": "9f218b191457bdcf5006d3245f20ab21bf4e812c6e72e1fd3699f4a6a572a543"
+    },
+    {
+      "path": "fixtures/positive/compatibility.yaml",
+      "sizeBytes": 1453,
+      "sha256": "0dcdb34e93865110783b43e907bdffe8ef3581081c1d8ec0ca0319317e2f1c9b"
+    },
+    {
+      "path": "fixtures/positive/distribution.yaml",
+      "sizeBytes": 1790,
+      "sha256": "215523080f17992332e040b701fc7ce21af9be59420f385b1ddb3b2432a2fea3"
+    },
+    {
+      "path": "fixtures/positive/execution-observation.yaml",
+      "sizeBytes": 476,
+      "sha256": "80af8ef77bd36bbca0411bc482c7722a9286c447becab7616080522e8896cb8a"
+    },
+    {
+      "path": "fixtures/positive/work-order-binding.yaml",
+      "sizeBytes": 804,
+      "sha256": "90aaf2eb06e6ab1d4e5a412436b97425a0e19fb909447634070a29d888bf6acc"
+    },
+    {
+      "path": "implementation/IMPLEMENTATION_CLAIM_BOUNDARY.md",
+      "sizeBytes": 759,
+      "sha256": "ee945d0d4e4794e9d3224f85ea4ca789ecf1b13590c178fbe3f88d2101a65342"
+    },
+    {
+      "path": "implementation/INTEGRATION_POINTS.md",
+      "sizeBytes": 768,
+      "sha256": "897e87e925ce47bb4e0053f5caf958295cf5cffe83236b99b9acc44891377dd1"
+    },
+    {
+      "path": "implementation/README.md",
+      "sizeBytes": 1025,
+      "sha256": "710b3083fa2c71f0852ebc42c7aa4d28f9ab0859589f74d05446895413597699"
+    },
+    {
+      "path": "Makefile",
+      "sizeBytes": 118,
+      "sha256": "ec2c4c9d703278b52f4375a8e0455f1977903ebb017f74e543e9c8a172697899"
+    },
+    {
+      "path": "phases/01_INTAKE_DESIGN/DESIGN_DECISION.md",
+      "sizeBytes": 1964,
+      "sha256": "519ca074431f13631fce5bb76fd239799d193dcb4747967a39253aa56095ebdb"
+    },
+    {
+      "path": "phases/01_INTAKE_DESIGN/INTAKE_RECORD.md",
+      "sizeBytes": 2377,
+      "sha256": "b4cb33a15765591bb4d53790d2d45d85dcd371dc1a0494dce77ce467f388edb8"
+    },
+    {
+      "path": "phases/01_INTAKE_DESIGN/NON_GOALS_AND_REJECTED_ALTERNATIVES.md",
+      "sizeBytes": 1399,
+      "sha256": "3eb8a907bb8e8627e41a4d72462e2623663ea5f27b3f1896ae3d568ceab1574a"
+    },
+    {
+      "path": "phases/01_INTAKE_DESIGN/OWNER_RECONCILIATION_MATRIX.md",
+      "sizeBytes": 1939,
+      "sha256": "b151b05253dff2c4c92a9f9facfadb3f8cedec342f8456ac4acb46e301bc2283"
+    },
+    {
+      "path": "phases/01_INTAKE_DESIGN/README.md",
+      "sizeBytes": 582,
+      "sha256": "6b06032b00e665dfa71b5edd08f10b608fb0644f91f68a99ce12027f68b4da44"
+    },
+    {
+      "path": "phases/02_SPEC/ACCEPTANCE_CRITERIA.md",
+      "sizeBytes": 1444,
+      "sha256": "dde2fc7cd8d16ef37388640347b089b297824ed9091b96a7bff9d4ca1e5c9d92"
+    },
+    {
+      "path": "phases/02_SPEC/CADP_SPEC.md",
+      "sizeBytes": 2956,
+      "sha256": "3f2a0a4fb8c5d862439ffcede2dda6279c7e200cfa0e0621929970cd92db3427"
+    },
+    {
+      "path": "phases/02_SPEC/EVIDENCE_PLAN.md",
+      "sizeBytes": 1047,
+      "sha256": "acd69d7f4b6c99bd56af6ffe235bd61c3f898a03f2ebe91955762aff1e15e0cb"
+    },
+    {
+      "path": "phases/02_SPEC/INVARIANTS_AND_FAIL_CLOSED_RULES.md",
+      "sizeBytes": 1697,
+      "sha256": "b8ed13c87958b6926558e2b79a5c2c53e263cfcd5e59f5007b01a212701e405c"
+    },
+    {
+      "path": "phases/02_SPEC/NEGATIVE_CASES.md",
+      "sizeBytes": 1359,
+      "sha256": "9b4d68d8e08059e8b9a435a5f3df0ad370317f399cd1fcc4e211a33710a34cf7"
+    },
+    {
+      "path": "phases/02_SPEC/README.md",
+      "sizeBytes": 444,
+      "sha256": "578f5acada36588faf1fd9c7506282ead35ef740cf6608275d1cf41c270f1e74"
+    },
+    {
+      "path": "phases/03_WORK_ORDER/ALLOWED_FORBIDDEN_SCOPE.md",
+      "sizeBytes": 1278,
+      "sha256": "67d3ba124be45217b5b6427d5011a94cf791905e486159fd2bb1add65542e580"
+    },
+    {
+      "path": "phases/03_WORK_ORDER/CADP_WORK_ORDER.md",
+      "sizeBytes": 1445,
+      "sha256": "393f7279c9d508c82dede3348b8f572c54bad88bed0b3c6f755549e32063d4b4"
+    },
+    {
+      "path": "phases/03_WORK_ORDER/README.md",
+      "sizeBytes": 487,
+      "sha256": "6dcf5f58221a162e0bbfe3c66c56da6e67cb36f0e0bc70cfd7dd58b7031ff65b"
+    },
+    {
+      "path": "phases/03_WORK_ORDER/REQUIRED_OUTPUTS.md",
+      "sizeBytes": 645,
+      "sha256": "3d5814928fa7dca77d1487a48748891b4d6d6d57e7d69e50f91e6f6667762213"
+    },
+    {
+      "path": "phases/03_WORK_ORDER/ROLE_AND_AUTHORITY_MATRIX.md",
+      "sizeBytes": 1062,
+      "sha256": "af7276c3ef8f773b76f8194a97253458f0ddbbf0c8eee7e34e1f59aca53431c8"
+    },
+    {
+      "path": "phases/03_WORK_ORDER/STOP_ESCALATION_AND_RETURN.md",
+      "sizeBytes": 1009,
+      "sha256": "4b29b5f06f38ad7ebf0e29059eb7f831512f587704a2ed044787e6fcb8e54504"
+    },
+    {
+      "path": "phases/04_PRE_IMPLEMENTATION_REVIEW/DESIGN_REVIEW.md",
+      "sizeBytes": 887,
+      "sha256": "82fcb927c9d85cbc69b92a34717dad57e16649e5f862549cb696e41aef25bcdc"
+    },
+    {
+      "path": "phases/04_PRE_IMPLEMENTATION_REVIEW/DISSENT_AND_RESIDUAL_RISKS.md",
+      "sizeBytes": 1552,
+      "sha256": "6981db8a593d6ec2b10bbb73b73629e325dce745d0d5564e1c95924054f69b29"
+    },
+    {
+      "path": "phases/04_PRE_IMPLEMENTATION_REVIEW/README.md",
+      "sizeBytes": 340,
+      "sha256": "1b34a3d43154802fe87f193ef36a742f5ad65e15b537ae2c9d55cb533004707b"
+    },
+    {
+      "path": "phases/04_PRE_IMPLEMENTATION_REVIEW/REVIEW_DECISION.md",
+      "sizeBytes": 748,
+      "sha256": "b61dc11eb36498d98cd53ba4b2d8ea09d005aeb1c7fd1f19cce05d6df4ce6de1"
+    },
+    {
+      "path": "phases/04_PRE_IMPLEMENTATION_REVIEW/SPEC_REVIEW.md",
+      "sizeBytes": 1120,
+      "sha256": "cc13d40ed4bec26fa9d33c01c193b143d4f896f7e3e6d3e59362a950c507694b"
+    },
+    {
+      "path": "phases/04_PRE_IMPLEMENTATION_REVIEW/TRACEABILITY_MATRIX.md",
+      "sizeBytes": 1272,
+      "sha256": "bbf6bd1d8e032ff2e2cb811c923d08fd6a3f5427e07dc21ef598ec031afb3e41"
+    },
+    {
+      "path": "phases/04_PRE_IMPLEMENTATION_REVIEW/WORK_ORDER_REVIEW.md",
+      "sizeBytes": 859,
+      "sha256": "487159edfc405d147ed8e111448f9bf681433f57c5879a67a481a0ca56474416"
+    },
+    {
+      "path": "phases/05_FREEZE_IMPLEMENTATION_GATE/CLAIM_BOUNDARY.md",
+      "sizeBytes": 739,
+      "sha256": "c8e7b90b3ec8da65a4438c5cd6ad89ba930f1baed5c4d67ce010e47183a80d47"
+    },
+    {
+      "path": "phases/05_FREEZE_IMPLEMENTATION_GATE/FREEZE_RECORD.md",
+      "sizeBytes": 864,
+      "sha256": "bb64a4697a729930ca5ff9a39c30d7183077f73b301870c3d208ae4f1ecaefb8"
+    },
+    {
+      "path": "phases/05_FREEZE_IMPLEMENTATION_GATE/IMPLEMENTATION_READINESS_DECISION.md",
+      "sizeBytes": 863,
+      "sha256": "3382aa874c0a5647a98f466067b76e6c7a09d4eda5f15d716b2db1f554ad8694"
+    },
+    {
+      "path": "phases/05_FREEZE_IMPLEMENTATION_GATE/NEXT_ALLOWED_MOVE.md",
+      "sizeBytes": 608,
+      "sha256": "71d1e589105bf0bbeb2ae2fc0be47df31ddd7d11c81e90c1c01f15e429e7a443"
+    },
+    {
+      "path": "phases/05_FREEZE_IMPLEMENTATION_GATE/README.md",
+      "sizeBytes": 390,
+      "sha256": "c0350fb0042b781aa6819c9c043bc47ece2308605a9155235ecab5abec930891"
+    },
+    {
+      "path": "phases/05_FREEZE_IMPLEMENTATION_GATE/REOPEN_CONDITIONS.md",
+      "sizeBytes": 825,
+      "sha256": "5e1777270b76ab925f82d1c5df65f6c369c39e6c089795dd4c97b727d8ddef3b"
+    },
+    {
+      "path": "phases/06_BUILD_IMPLEMENTATION/BUILD_RETURN.md",
+      "sizeBytes": 484,
+      "sha256": "3b26085cb484be8a6f02daea6a951ae59824adfc3320c97b9aa03c2b9081855a"
+    },
+    {
+      "path": "phases/06_BUILD_IMPLEMENTATION/README.md",
+      "sizeBytes": 594,
+      "sha256": "2f063f1ea8f206c78f105274f0c447f31de4204f5291d6be3f89fdc27ea723d2"
+    },
+    {
+      "path": "phases/07_IMPLEMENTATION_REVIEW/README.md",
+      "sizeBytes": 249,
+      "sha256": "c252bb49e2bbc705ad81df119efd91593df8d78aaadbcef52455a043c5c4ba2e"
+    },
+    {
+      "path": "phases/07_IMPLEMENTATION_REVIEW/REVIEW_CHECKLIST.md",
+      "sizeBytes": 611,
+      "sha256": "19b6595b13eb7d5b4e81e180e9b96e1981b630b2bbe92a35ffe6aa7261a54769"
+    },
+    {
+      "path": "phases/08_LOCAL_FREEZE/FREEZE_RECORD.md",
+      "sizeBytes": 672,
+      "sha256": "56d4dc9271c20ecf4c4824934f3bf127a9e93c9732190b8c341b444f6d56ad16"
+    },
+    {
+      "path": "phases/08_LOCAL_FREEZE/NEXT_ALLOWED_MOVE.md",
+      "sizeBytes": 497,
+      "sha256": "841cfd886aa4c2704cfdd0a03c514f83010919fc508a45bf2be36eef331b90fa"
+    },
+    {
+      "path": "phases/08_LOCAL_FREEZE/README.md",
+      "sizeBytes": 228,
+      "sha256": "6fa8f3105bbe889a5f4d88c57d45478c2464b354cae0fdbca891efbfa48dc728"
+    },
+    {
+      "path": "phases/README.md",
+      "sizeBytes": 2184,
+      "sha256": "39d215e90575f9ed203f1d4cc8a25a05fcf34760e019036497d8151adab15a1f"
+    },
+    {
+      "path": "pyproject.toml",
+      "sizeBytes": 596,
+      "sha256": "26f7e7cc783d91ea6620cfbe51607a34f68348e5eb4d069119d32a58144fd201"
+    },
+    {
+      "path": "README.md",
+      "sizeBytes": 9548,
+      "sha256": "884ab8a01e90710912903b205225baf215f6061fd320b39dc3ee4d2bd06f1c9b"
+    },
+    {
+      "path": "references/mapping-assf.md",
+      "sizeBytes": 2495,
+      "sha256": "e9667d68e64cb51f46d5300a6ac1f862327193ba31cf1b2399e592ad45e4fd5d"
+    },
+    {
+      "path": "references/mapping-execution-plane.md",
+      "sizeBytes": 2302,
+      "sha256": "719ae00eda8d928163b2244e1875db408c49e6d525338db2da567dc7e8d37b82"
+    },
+    {
+      "path": "references/mapping-interaction-projection.md",
+      "sizeBytes": 2834,
+      "sha256": "ec09e6774d664e5e1a4d75dcb8bd1740ea4da53ea29c72b0f5051b4c7125b145"
+    },
+    {
+      "path": "references/mapping-model-gateway.md",
+      "sizeBytes": 2242,
+      "sha256": "02f487504fcffb7b80bee3a1275e473288a38827d2986bfc3c5ff81dedfee71a"
+    },
+    {
+      "path": "references/mapping-work-order.md",
+      "sizeBytes": 2817,
+      "sha256": "98b7cbc6f44b5b77e0c388a7c2c9ce9285c257f5235efcc6a3c3f6664f28867f"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "sizeBytes": 32,
+      "sha256": "0e7d800c45d87cda68e95d462890ae6a7a006b839af6247af7dc55d25aa725dc"
+    },
+    {
+      "path": "requirements.txt",
+      "sizeBytes": 29,
+      "sha256": "a29cce48584ff23d9081f4c255c883d866943107863daed51b5a52d98f1e03c2"
+    },
+    {
+      "path": "schemas/capability-admission.schema.yaml",
+      "sizeBytes": 6197,
+      "sha256": "bcdf81ad2d7a8538234bfb20ed97ea546b8393c1d852096eda618cd38fa407d5"
+    },
+    {
+      "path": "schemas/capability-assignment.schema.yaml",
+      "sizeBytes": 4402,
+      "sha256": "b2d491da8dcc49593cdd9c33d0e950073952313e1c9274dea82db5ac1bf54fc1"
+    },
+    {
+      "path": "schemas/compatibility-evidence.schema.yaml",
+      "sizeBytes": 3955,
+      "sha256": "0f15068c10f2cce03492e51e26b712fbf615422116ca8dc9c01d6ff25815d003"
+    },
+    {
+      "path": "schemas/distribution-manifest.schema.yaml",
+      "sizeBytes": 4246,
+      "sha256": "cfca2dd64fdd51ef1123660bfd0599ed465e3ff2731c05d554809f50400eb054"
+    },
+    {
+      "path": "schemas/internal/cadp-receipt.schema.yaml",
+      "sizeBytes": 1161,
+      "sha256": "af79f9891fba4c36fb57419be63ff813f09f3a0275c88713e32fc17dcc222e15"
+    },
+    {
+      "path": "schemas/internal/execution-observation.schema.yaml",
+      "sizeBytes": 1152,
+      "sha256": "8f6290bd668a5c9d9940a0b6d35b2241b95ba8a9c53bc868ee24607954570699"
+    },
+    {
+      "path": "schemas/internal/work-order-capability-binding.schema.yaml",
+      "sizeBytes": 2070,
+      "sha256": "01fe31195c6d52764848d9cda6fad2b4ddaf3503780997d3169d4d55f3b372b2"
+    },
+    {
+      "path": "scripts/check.ps1",
+      "sizeBytes": 104,
+      "sha256": "14247c3e1ee568e1865167a917a138ffe315e9064dacffe5e9fd7ce1c70c950d"
+    },
+    {
+      "path": "scripts/check.py",
+      "sizeBytes": 1439,
+      "sha256": "edf760e3ece1ea40f8df1c4bec07255f11baab250ee21de56ca8ae29427bf8c6"
+    },
+    {
+      "path": "scripts/check.sh",
+      "sizeBytes": 109,
+      "sha256": "91d12a8bcc48b943a0178e0223b8fe3f39948b2c788a086eb5105620136c0077"
+    },
+    {
+      "path": "scripts/demo_flow.py",
+      "sizeBytes": 872,
+      "sha256": "4a6efb7810dc0f6ecdc38bdf7213470ed849a58910b63d5f62eb4192cdccc694"
+    },
+    {
+      "path": "scripts/package_audit.py",
+      "sizeBytes": 2546,
+      "sha256": "b5cb9821c25ddc311a75948799246ab88b16b9c7706a02980b5b93e80df2a93a"
+    },
+    {
+      "path": "src/cvf_cadp/adapters/projection.py",
+      "sizeBytes": 1410,
+      "sha256": "747f2990fe5ee83e0747ccbb66c4cea4d59a32193f63f4b02acf48c6ec9f995a"
+    },
+    {
+      "path": "src/cvf_cadp/adapters/types.py",
+      "sizeBytes": 448,
+      "sha256": "22f5084e0d1542d5d1bc08404bc993363ea2c9e9f83e097612c4b481a10cab67"
+    },
+    {
+      "path": "src/cvf_cadp/adapters/__init__.py",
+      "sizeBytes": 43,
+      "sha256": "8b889d3e84cd2a0267349a445d1e9f7356318e8cee3d0f06492abd1abc4bfd93"
+    },
+    {
+      "path": "src/cvf_cadp/admission.py",
+      "sizeBytes": 1366,
+      "sha256": "199a44fec12e46cb0a905068bd064b65875b81e04bbf5e9998b27c18bb703762"
+    },
+    {
+      "path": "src/cvf_cadp/assignment.py",
+      "sizeBytes": 2572,
+      "sha256": "bb62976f25c9f217eace0597cb6d2192ba8c0ed19b481e6b054556b99e217be0"
+    },
+    {
+      "path": "src/cvf_cadp/cli.py",
+      "sizeBytes": 4315,
+      "sha256": "1b1f7aa7ec942752b79abca855cb2711a619d095c253f741c15c9ab1df923008"
+    },
+    {
+      "path": "src/cvf_cadp/compatibility.py",
+      "sizeBytes": 617,
+      "sha256": "bf2553384b79457f26a706b81d44f229339c7e16e79d7ed9ec0a094f9791ace4"
+    },
+    {
+      "path": "src/cvf_cadp/constants.py",
+      "sizeBytes": 490,
+      "sha256": "54d3179083387d9c3ce12948d9f97630d77051df7b2e005f58ef873f138ec88f"
+    },
+    {
+      "path": "src/cvf_cadp/distribution.py",
+      "sizeBytes": 1550,
+      "sha256": "8751032d02200e5564b4276ddb35fbf8cd9efc30f1fa49a9b3b22b7c5d6346c2"
+    },
+    {
+      "path": "src/cvf_cadp/doctor.py",
+      "sizeBytes": 696,
+      "sha256": "897668cb8c1a58d1f919f8f8acb5179b507e24f05b3ede594c587872cd54d950"
+    },
+    {
+      "path": "src/cvf_cadp/errors.py",
+      "sizeBytes": 320,
+      "sha256": "e78b303d22952631f02d058c9a7f2d381a9a1ce7c3a7c6a6ff126d4024e92178"
+    },
+    {
+      "path": "src/cvf_cadp/io.py",
+      "sizeBytes": 1037,
+      "sha256": "3ba5d1d6327e37d926d6d1e7ba4fe91d0c95d9dd8e8eebfd7793e116d0c165d7"
+    },
+    {
+      "path": "src/cvf_cadp/paths.py",
+      "sizeBytes": 170,
+      "sha256": "209e1f1b823e9911e34acc3baad62c28b89d1953c71aca07ae06dfd7695a254c"
+    },
+    {
+      "path": "src/cvf_cadp/receipts.py",
+      "sizeBytes": 1112,
+      "sha256": "db1692f642e687ff46056190a4d1b44b38c2e488bad9baec6b0250972accfb53"
+    },
+    {
+      "path": "src/cvf_cadp/reconciliation.py",
+      "sizeBytes": 3072,
+      "sha256": "d4382912f06357802f6df39feaec4278fd62c9bb24bff04c6246bf0f2f3a2a38"
+    },
+    {
+      "path": "src/cvf_cadp/results.py",
+      "sizeBytes": 465,
+      "sha256": "6a33ebc931274486d6c073b7a7c8a72a0764d10b35295eda30ff4e1053ac1161"
+    },
+    {
+      "path": "src/cvf_cadp/schema_registry.py",
+      "sizeBytes": 756,
+      "sha256": "20c9169a3ad902ab28e0a1e2606d931feba4ad327e79a6fb572f82a257797be8"
+    },
+    {
+      "path": "src/cvf_cadp/schema_validation.py",
+      "sizeBytes": 691,
+      "sha256": "db4178c80586dac41571db6dfdeb3239d295115185a9d962c44e834fb6253717"
+    },
+    {
+      "path": "src/cvf_cadp/secret_scan.py",
+      "sizeBytes": 2594,
+      "sha256": "5f6ee41b482be3b98174d4bac98579bffd530e839b0184be881ffd398e47c0dd"
+    },
+    {
+      "path": "src/cvf_cadp/semantic_rules.py",
+      "sizeBytes": 6209,
+      "sha256": "3bf0d629982bf312ecbef9a38b95e5116b3a5d06efa992626a00705eefdc8dcc"
+    },
+    {
+      "path": "src/cvf_cadp/traceability.py",
+      "sizeBytes": 1291,
+      "sha256": "b23f00dccbda853968a94511343c42477a61eaad51f1e298a2048686564842ae"
+    },
+    {
+      "path": "src/cvf_cadp/validator.py",
+      "sizeBytes": 660,
+      "sha256": "b316605258d91932935b8f536d934e7e6fc9b3ef993867fb278b4a167113053a"
+    },
+    {
+      "path": "src/cvf_cadp/work_order.py",
+      "sizeBytes": 2356,
+      "sha256": "b1c6d4e49f506717ffd6a87edd7fdd56fb71a5fd51589535e376e22ef971d280"
+    },
+    {
+      "path": "src/cvf_cadp/__init__.py",
+      "sizeBytes": 205,
+      "sha256": "dc3e26c1d9cce50573e1cac9514c1c7053847831e0c0a582e83c7c76ad242337"
+    },
+    {
+      "path": "src/cvf_cadp/__main__.py",
+      "sizeBytes": 47,
+      "sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4"
+    },
+    {
+      "path": "tests/cli/test_cli.py",
+      "sizeBytes": 534,
+      "sha256": "7c628e6d1416376afdcce6fa67924c0ec37781bac2555427e2fa11cc8e777d7f"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sizeBytes": 700,
+      "sha256": "b203fac39a70f3e0bb93ef2e6118481d6288649077c29abf18053396f3cab5a7"
+    },
+    {
+      "path": "tests/integration/test_end_to_end.py",
+      "sizeBytes": 965,
+      "sha256": "eb95b7a7eb187cb9b533181616994cc1cbd7561977e4184091049bf8a4288fa6"
+    },
+    {
+      "path": "tests/integration/test_examples.py",
+      "sizeBytes": 781,
+      "sha256": "7c9d2c52d500316b58456056fb12a3933171f2b3e9bdcaf72dfe4a3c59e2d511"
+    },
+    {
+      "path": "tests/negative/test_fail_closed.py",
+      "sizeBytes": 918,
+      "sha256": "c376915b2ec58c08753fcd969eea015d9ab881e902161ca58a76947553b30d48"
+    },
+    {
+      "path": "tests/unit/test_adapters.py",
+      "sizeBytes": 734,
+      "sha256": "ca89983d7eb1164af66649da928092541707abf52eced25025ce53a5b43aaecc"
+    },
+    {
+      "path": "tests/unit/test_admission_assignment.py",
+      "sizeBytes": 1122,
+      "sha256": "6a670d1650ffda8e35ef36cf595822ef560e8e0bff13ad573fa2a626ddaa5ba9"
+    },
+    {
+      "path": "tests/unit/test_compatibility.py",
+      "sizeBytes": 797,
+      "sha256": "f3c524270dcdb983446404268a46513b49089c76bf1402478b1d27f33d1d11d6"
+    },
+    {
+      "path": "tests/unit/test_distribution.py",
+      "sizeBytes": 978,
+      "sha256": "407a90236367cff3115ea56c16b7e0070652357ab25a23835cd218de2caa33cf"
+    },
+    {
+      "path": "tests/unit/test_limits.py",
+      "sizeBytes": 772,
+      "sha256": "36389a6f79130a6a777b40aa19b5042e488113727f9b4499fae07dd592862c39"
+    },
+    {
+      "path": "tests/unit/test_reconciliation.py",
+      "sizeBytes": 765,
+      "sha256": "daf2093fa5416264548b7bc0b79aa8cc8d31bcf23ec63b4ddbe094c39d9da294"
+    },
+    {
+      "path": "tests/unit/test_schema_validation.py",
+      "sizeBytes": 956,
+      "sha256": "dd9bc9f6976751dba55b6dac067d144a937a7c4d8c03722b56bd61e05d3cdbbe"
+    },
+    {
+      "path": "tests/unit/test_secret_scan.py",
+      "sizeBytes": 334,
+      "sha256": "54d9e5a9ad040e52c883dce360b55847bcc0e0ef96365c31ca9e573e85e03bea"
+    },
+    {
+      "path": "tests/unit/test_work_order.py",
+      "sizeBytes": 936,
+      "sha256": "646b712e64c870b51b6d183ccb300cee01eeb32a79214d9fca012145a4cb2aa7"
+    },
+    {
+      "path": "TREEVIEW.md",
+      "sizeBytes": 7852,
+      "sha256": "4c6535464b3f1be9e42523926d1c78f2c6f0699dddb76b6a4353a4bcb13dd6ac"
+    }
+  ]
+}
