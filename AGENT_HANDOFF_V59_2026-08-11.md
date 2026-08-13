@@ -12,8 +12,8 @@ Status: ACTIVE
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current Core material HEAD marker:
-  `fa94b7e2d4047b8ef7fe0d8f593564de57465249`
-- CADP-AI-T2A dispatch=`03444a17d`; packet repairs=`cae6d38a7`, `82801b4fd`, `fa94b7e2d`.
+  `a635b49df63b114a49a9c671b50f27da707bc668`
+- CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
 - CADP-AI-T2 dispatch material commit:
@@ -39,7 +39,7 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Handoff-sync parent commit:
-  `fa94b7e2d4047b8ef7fe0d8f593564de57465249`
+  `a635b49df63b114a49a9c671b50f27da707bc668`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
