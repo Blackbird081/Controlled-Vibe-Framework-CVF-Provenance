@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2180,
+  "stateKey": "cadpAiT3AExecutionConsumerClosure20260813",
+  "value": "CADP-AI-T3A was independently accepted CLOSED_PASS_BOUNDED and materially committed at f1dc9a6f7a0fc7824d6ba82cce3db47bbdfd91ac. Independent review reproduced two dependent cross-record defects before commit: caller-selected assignmentId was not compared with committed grant identity, and the committed action was not required in evidence.passingActionIds. One consolidated reviewer repair closed both gaps and added durable regression tests. Evidence: focused T3A/root 20/20, independent reviewer probes 6/6, serialized full Execution Plane 1810/1810 across 72 files, Guard Contract regression 72/72, reviewer-fast 63/63, pre-commit 84/84. Scope is hermetic pre-execution eligibility with executionAuthorized=false only. T3B/provider/live/CLI-MCP/public/deployment/production/trusted-evidence/cross-runtime lanes remain parked. Completion review: docs/reviews/CVF_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_COMPLETION_2026-08-13.md."
+}

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2176,
   "stateKey": "nextAllowedMove",
-  "value": "CADP-AI-T3A dependency refresh is committed at 55d1fd6fd after independently accepted T2A-R1 material commit 944bfe852. The next allowed move is the no-commit T3A worker execution against the refreshed six-path manifest. The worker must replace the historical BLOCKED_AUTHORITY_DRIFT return with fresh current-HEAD evidence and return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON. T3A remains a hermetic non-executing eligibility projection with executionAuthorized=false. T3B, provider/live, CLI/MCP, public sync, deployment, production, trusted-evidence readiness, and cross-runtime determinism remain unauthorized. Latest closed numbered LHW wave remains LHW24."
+  "value": "CADP-AI-T3A is independently accepted CLOSED_PASS_BOUNDED and materially committed at f1dc9a6f7. The accepted scope is only the hermetic Execution Plane pre-execution eligibility consumer with executionAuthorized=false. The next allowed move is to await explicit operator direction for any new tranche. T3B, provider/live, CLI/MCP, public sync, deployment, production, trusted-evidence readiness, and cross-runtime determinism remain parked and unauthorized. Latest closed numbered LHW wave remains LHW24."
 }
