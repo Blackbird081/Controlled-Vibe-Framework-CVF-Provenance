@@ -36,6 +36,9 @@ HOW TO USE CVF FOR/
 # Logs
 *.log
 npm-debug.log*
+/logs/capability-owner/*.db
+/logs/capability-owner/*.db-wal
+/logs/capability-owner/*.db-shm
 EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.data/
 EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/
 
