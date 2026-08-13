@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_T1_ACCEPTED_BOUNDED_T2_RELEASE_AUTHORIZED
+Status: T0_T1_ACCEPTED_BOUNDED_T2_DISPATCH_READY
 
 docType: roadmap
 
@@ -109,7 +109,7 @@ the preceding record, and no distribution or receipt may activate a capability.
 |---|---|---|---|---|---|
 | T0 | resolve all 13 findings and owner seams | this roadmap, finding matrix, reopen routing, fresh GC-018/work order | operator release and completed CADP-R1 worker evidence | every finding has an owner/action/terminal disposition | ACCEPTED_BOUNDED |
 | T1 | implement CVF-native contract kernel | CADP TypeScript contract, deterministic validators/receipt, adversarial tests, barrel export | T0 owner map; no live dependency | typecheck plus focused and hermetic package tests; independent re-review | ACCEPTED_BOUNDED |
-| T2 | bind assignments to governed work orders and observed execution | authenticated evidence owner binding; exact work-order binding contract; expiry/transport/resource/credential/invocation/retry reconciliation; negative fixtures | accepted T1; source-verified owner; explicit operator release | no caller-self-attested trust; no action outside admission/grant; replayable deterministic tests | RELEASE_AUTHORIZED_FRESH_PACKET_REQUIRED |
+| T2 | bind assignments to governed work orders and observed execution | authenticated evidence owner binding; exact work-order binding contract; expiry/transport/resource/credential/invocation/retry reconciliation; negative fixtures | accepted T1; source-verified owner; explicit operator release | no caller-self-attested trust; no action outside admission/grant; replayable deterministic tests | DISPATCH_READY_WORKER_MUST_NOT_COMMIT |
 | T3 | integrate downstream internal consumers | execution-plane and model-gateway adapters, distribution projection, SaaS constraint metadata | accepted T2; fresh owner-specific work order | consumer tests prove no authority widening and no raw secrets | PARKED |
 | T4 | complete machine enforcement | schema fixtures, drift checker, negative corpus suite, package-boundary tests | repeated/accepted invariant need; checker GC-018 | checker detects every named violation without false authority claim | PARKED |
 | T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | PARKED_NOT_AUTHORIZED |
