@@ -45,35 +45,35 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=refresh the already-authorized T3A dependency against the accepted T2A-R1 closure before worker resume; parked checkpoint=T3B, provider/live, CLI/MCP, public sync, deploy, production, trusted-evidence readiness and cross-runtime determinism.
+Startup acknowledged: current mode=`cadp_ai_t3a_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the refreshed six-path T3A no-commit worker packet; parked checkpoint=T3B, provider/live, CLI/MCP, public sync, deploy, production, trusted-evidence readiness and cross-runtime determinism.
 
 ## Current Mode
 
-`cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`
+`cadp_ai_t3a_dispatched_worker_must_not_commit`
 
-Current mode marker: `cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`
-Current mode: `cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`
-Previous mode: `cadp_ai_t2a_closed_pass_bounded`
+Current mode marker: `cadp_ai_t3a_dispatched_worker_must_not_commit`
+Current mode: `cadp_ai_t3a_dispatched_worker_must_not_commit`
+Previous mode: `cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`
+Mode: `cadp_ai_t3a_dispatched_worker_must_not_commit`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
 Completion review:
 `docs/reviews/CVF_CADP_AI_T2A_AUTHORITY_RECONCILIATION_COMPLETION_2026-08-13.md`.
-The next allowed move is a dispatcher-owned T3A dependency refresh before the
-already-authorized no-commit T3A worker resumes. Latest closed numbered LHW
-wave: `LHW24`.
+The T3A dependency refresh is committed at `55d1fd6fd`. The next allowed move
+is the refreshed six-path no-commit T3A worker execution. Latest closed
+numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
 T3B, provider/live, CLI/MCP, public sync, deployment, production,
 trusted-evidence readiness and cross-runtime determinism claims remain parked.
-T3A is authorized only after its dependency packet is refreshed to the T2A-R1
-completion and material commit. Prior unrelated checkpoints remain historical.
+T3A is authorized only for a hermetic projection with
+`executionAuthorized: false`. Prior unrelated checkpoints remain historical.
 
 The `broad external knowledge absorption` lane remains outside the current
 release. It is included in the `blocked work classes` unless the operator opens
