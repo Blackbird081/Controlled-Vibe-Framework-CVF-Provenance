@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_T1_T2_ACCEPTED_BOUNDED_T3A_DISPATCH_READY
+Status: T0_T1_T2_T3A_ACCEPTED_BOUNDED_T3B_PARKED
 
 docType: roadmap
 
@@ -78,10 +78,10 @@ BUILD_LOOP_PROFILE: SELECTED
 | F03 compatibility evidence ladder | ranked evidence plus typed references | Guard Contract CADP contract | ACCEPTED_T1_BOUNDED |
 | F04 admission schema enrichment | source verification, owner and secret boundaries, assignable actions including read-only mutation filtering | Guard Contract CADP contract | ACCEPTED_T1_BOUNDED |
 | F05 work-order capability binding | exact grant, resource, transport, expiry, invocation/retry reconciliation | existing workflow/work-order owners | T2_ACCEPTED_BOUNDED |
-| F06 SaaS/remote side-effect discipline | credentials by reference, quota/cost/rate/retention and side-effect limits | external capability admission + gateway | T3A_EXECUTION_CONSUMER_DISPATCH_READY; T3B_MODEL_GATEWAY_PARKED |
+| F06 SaaS/remote side-effect discipline | credentials by reference, quota/cost/rate/retention and side-effect limits | external capability admission + gateway | T3A_EXECUTION_CONSUMER_ACCEPTED_BOUNDED; T3B_MODEL_GATEWAY_PARKED |
 | F07 direct import/authority | raw project, generated authority, duplicated owner | none | TERMINAL_REJECT |
-| F08 local validator/projection/reconciliation | pure fail-closed validation first, projections remain non-authoritative | Guard Contract then consumer adapters | T1_T2_ACCEPTED_BOUNDED; T3A_DISPATCH_READY |
-| F09 negative-case suite | adversarial T1 validator/receipt tests plus future cross-owner fixtures | owning package test suites | T1_T2_NEGATIVE_SUITES_ACCEPTED_BOUNDED; T3A_PENDING |
+| F08 local validator/projection/reconciliation | pure fail-closed validation first, projections remain non-authoritative | Guard Contract then consumer adapters | T1_T2_T3A_ACCEPTED_BOUNDED |
+| F09 negative-case suite | adversarial T1 validator/receipt tests plus future cross-owner fixtures | owning package test suites | T1_T2_T3A_NEGATIVE_SUITES_ACCEPTED_BOUNDED |
 | F10 source inventory evidence | deterministic manifest, hashes, terminal ledger | corpus intelligence | COMPLETE_ACCEPTED_BOUNDED |
 | F11 evidence authenticity gap | reject opaque refs unless type, integrity, authority and owner match within an owner-verified evidence projection | Guard Contract evidence index | ACCEPTED_BOUNDED_IN_T2A_HERMETIC_SCOPE |
 | F12 non-deterministic receipt | explicit time, ordinal canonical JSON, protected computed fields and SHA-256 identity | Guard Contract receipt helper | ACCEPTED_T1_BOUNDED_SINGLE_RUNTIME_PROOF |
@@ -110,7 +110,7 @@ the preceding record, and no distribution or receipt may activate a capability.
 | T0 | resolve all 13 findings and owner seams | this roadmap, finding matrix, reopen routing, fresh GC-018/work order | operator release and completed CADP-R1 worker evidence | every finding has an owner/action/terminal disposition | ACCEPTED_BOUNDED |
 | T1 | implement CVF-native contract kernel | CADP TypeScript contract, deterministic validators/receipt, adversarial tests, barrel export | T0 owner map; no live dependency | typecheck plus focused and hermetic package tests; independent re-review | ACCEPTED_BOUNDED |
 | T2 | bind assignments to governed work orders and observed execution | authenticated evidence owner binding; exact work-order binding contract; expiry/transport/resource/credential/invocation/retry reconciliation; negative fixtures | accepted T1; source-verified owner; explicit operator release | no caller-self-attested trust; no action outside admission/grant; replayable deterministic tests | ACCEPTED_BOUNDED_VIA_T2A |
-| T3A | integrate the first downstream internal consumer | Execution Plane non-executing eligibility adapter and narrow SQLite-state ignore hygiene | accepted T2A; fresh source-verified work order; operator `next` direction | consumer tests prove no authority widening, invalid-before-valid replay preservation, and no raw secrets | DISPATCH_READY |
+| T3A | integrate the first downstream internal consumer | Execution Plane non-executing eligibility adapter and narrow SQLite-state ignore hygiene | accepted T2A; fresh source-verified work order; operator `next` direction | consumer tests prove no authority widening, invalid-before-valid replay preservation, and no raw secrets | ACCEPTED_BOUNDED |
 | T3B | integrate Model Gateway constraint projection | provider-neutral SaaS constraint metadata only | accepted T3A; fresh Model Gateway source verification and operator release | no secret resolution, provider call, or execution authority | PARKED |
 | T4 | complete machine enforcement | schema fixtures, drift checker, negative corpus suite, package-boundary tests | repeated/accepted invariant need; checker GC-018 | checker detects every named violation without false authority claim | PARKED |
 | T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | PARKED_NOT_AUTHORIZED |
@@ -272,10 +272,10 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 
 ## Next Allowed Move
 
-Dispatch and execute the fresh source-verified CADP-AI-T3A work order. T3A is
-limited to a hermetic, non-executing Execution Plane consumer. T3B, T4-T7,
-provider/live, CLI/MCP, public sync, deployment, production, and cross-runtime
-claims are not implicitly authorized.
+T3A is independently accepted for the hermetic, non-executing Execution Plane
+consumer only. Await operator direction before any new tranche. T3B, T4-T7,
+provider/live, CLI/MCP, public sync, deployment, production, trusted-evidence
+readiness, and cross-runtime claims remain parked and unauthorized.
 
 ## Public Export Disposition
 
@@ -286,8 +286,9 @@ provenance; a later public-safe projection needs explicit public-sync review.
 
 ## Claim Boundary
 
-This roadmap records bounded T0/T1/T2 acceptance and operator release to
-dispatch T3A. F11 is closed only within T2A's accepted hermetic scope. No
-provider compatibility, provider/live execution, T3B, CLI/MCP, SaaS execution,
-deployment, production readiness, cross-runtime determinism, or public export
-is claimed.
+This roadmap records bounded T0/T1/T2/T3A acceptance. T3A proves only a
+hermetic pre-execution eligibility projection with literal
+`executionAuthorized: false`; F11 remains closed only within the accepted
+hermetic scope. No provider compatibility, provider/live execution, T3B,
+CLI/MCP, SaaS execution, deployment, production readiness, trusted-evidence
+readiness, cross-runtime determinism, or public export is claimed.

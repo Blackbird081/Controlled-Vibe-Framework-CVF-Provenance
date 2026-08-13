@@ -1416,3 +1416,19 @@ function buildAuthorizationBoundaryMarkdownSurface(
 
 // MAO-OA-T1 - MAO local barrel root forwarding (package-root discoverability)
 export * from "./mao";
+
+// CADP-AI-T3A - Execution Plane verified capability consumer (pre-execution eligibility)
+export {
+  CADP_CAPABILITY_CONSUMER_CONTRACT_VERSION,
+  CadpCapabilityConsumerContract,
+  createCadpCapabilityConsumerContract,
+  evaluateCadpCapabilityConsumer,
+} from "./cadp.capability.consumer.contract";
+export type {
+  CadpCapabilityConsumerRequest,
+  CadpCapabilityConsumerIssue,
+  CadpCapabilityConsumerIssueCode,
+  CadpCapabilityConsumerDecision,
+  CadpCapabilityEligibilityProjection,
+  CadpCapabilityConsumerResult,
+} from "./cadp.capability.consumer.contract";

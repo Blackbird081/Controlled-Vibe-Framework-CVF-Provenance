@@ -6488,6 +6488,45 @@
         "capabilityGrants projection - rg -n --fixed-strings 'capabilityGrants:' docs/reference returned no results"
       ],
       "nextScanRecommendation": "CADP-R1 and CADP-AI-T1 are accepted with bounded scope. Execute only the separately authorized CADP-AI-T2 owner-binding work order; F11 remains open until T2 is independently accepted. Source execution and direct import remain prohibited."
+    },
+    {
+      "id": "cadp-ai-t3a-execution-plane-consumer-surfaces",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CADP-AI-T3A Execution Plane verified capability consumer surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/cadp.capability.consumer.contract.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/cadp.capability.consumer.contract.test.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/cadp.package.root.exports.test.ts"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED",
+      "scanWave": "CADP-AI-T3A",
+      "scanDate": "2026-08-13",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_WORKER_RETURN_2026-08-13.md",
+      "completionReviewPath": "docs/reviews/CVF_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_COMPLETION_2026-08-13.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_2026-08-13.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "CADP_EXECUTION_PLANE_CONSUMER",
+        "CADP_PRE_EXECUTION_ELIGIBILITY",
+        "CADP_CONSUMER_ADVERSARIAL_TESTS",
+        "EXECUTION_PLANE_PACKAGE_ROOT_EXPORT"
+      ],
+      "priorAbsorption": "CADP-AI-T3A adds one hermetic Execution Plane consumer of the accepted T2A repository-owner seam. It authenticates the opaque owner handle, validates admission, assignment, distribution and evidence before durable observation reconciliation, and returns only a frozen eligibility projection with executionAuthorized false. Independent review repaired two same-root cross-record omissions for committed assignment identity and evidenced action. It adds no provider, network, CLI/MCP, public, deployment or production authority.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "caller-selected assignment identity accepted as committed authority",
+        "committed action absent from evidence passingActionIds",
+        "executionAuthorized true",
+        "provider or network invocation"
+      ],
+      "nextScanRecommendation": "Re-scan only if an authorized later CADP consumer tranche changes these surfaces or opens T3B/provider-facing integration."
     }
   ]
 }
