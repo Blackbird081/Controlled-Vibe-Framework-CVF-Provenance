@@ -303,6 +303,20 @@ Boundary Control Block, External Knowledge Intake Routing, Epistemic Process
 Block, Public Export Disposition, Command Evidence, Changed Files, No-Commit
 Statement and Claim Boundary.
 
+The return must additionally carry these exact diagnostic surfaces:
+
+- `Rescan Intelligence Hardening`
+- `Corpus Completeness And Report Integrity`
+- `Finding-To-Governance Learning Disposition`
+- `Machine Closure Package`
+- the actual `executionBaseHead`
+- the actual `git status --short`
+- a `WORKER_EXPERIENCE_RETRO` block or
+  `WORKER_EXPERIENCE_RETRO_NA_WITH_REASON`
+
+If any listed section is not applicable, retain the section and record
+`N/A with reason` or `NOT_APPLICABLE_WITH_REASON`; omission is forbidden.
+
 ## Scaffold Provenance Block
 
 | Field | Value |
