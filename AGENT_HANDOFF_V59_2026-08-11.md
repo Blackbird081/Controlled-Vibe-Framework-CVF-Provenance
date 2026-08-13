@@ -11,7 +11,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current Core material HEAD marker: `70d49d10baac819e188abfbe526162d1f137d1a0`
+- Current Core material HEAD marker: `8d0680cd0c2f5faca30b3f02242037e21319b8ce`
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
