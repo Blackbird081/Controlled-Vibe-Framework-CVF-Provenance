@@ -45,19 +45,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit operator direction for any new tranche; parked checkpoint=T4-T7, provider/live, credential access, quota mutation, CLI/MCP, public sync, deploy, production, trusted-evidence readiness and cross-runtime determinism.
+Startup acknowledged: current mode=`cadp_ai_t4_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send the committed T4 packet to one no-commit implementation worker; parked checkpoint=T5-T7, production-source edits, hook wiring, provider/live, credential access, CLI/MCP, public sync, deploy, production, trusted-evidence readiness and cross-runtime determinism.
 
 ## Current Mode
 
-`cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`
+`cadp_ai_t4_dispatched_worker_must_not_commit`
 
-Current mode marker: `cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`
-Current mode: `cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`
-Previous mode: `cadp_ai_t3b_dispatched_worker_must_not_commit`
+Current mode marker: `cadp_ai_t4_dispatched_worker_must_not_commit`
+Current mode: `cadp_ai_t4_dispatched_worker_must_not_commit`
+Previous mode: `cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`
+Mode: `cadp_ai_t4_dispatched_worker_must_not_commit`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -65,17 +65,19 @@ remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
 Completion review:
 `docs/reviews/CVF_CADP_AI_T2A_AUTHORITY_RECONCILIATION_COMPLETION_2026-08-13.md`.
 CADP-AI-T3A is independently accepted `CLOSED_PASS_BOUNDED` at `f1dc9a6f7`.
-CADP-AI-T3B is independently accepted `CLOSED_PASS_BOUNDED` and materially
-committed at `9a4920c92`. The next allowed move is to await explicit operator
-direction for any new tranche. Latest closed numbered LHW wave: `LHW24`.
+CADP-AI-T3B is independently accepted `CLOSED_PASS_BOUNDED` at `9a4920c92`.
+CADP-AI-T4 checker-only authority is committed at `1b7ddb140`. The next allowed
+move is to send the exact T4 packet to one `WORKER_MUST_NOT_COMMIT` worker for
+the four-path implementation and pending independent return. Latest closed
+numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-T4-T7, provider/live, credential access, quota mutation, CLI/MCP, public sync,
+T5-T7, production TypeScript edits, existing-guard edits, hook/autorun/CI
+wiring, provider/live, credential access, quota mutation, CLI/MCP, public sync,
 deployment, production, trusted-evidence readiness and cross-runtime
-determinism claims remain parked. T3B is accepted only for a hermetic,
-provider-neutral projection whose four authority flags remain false. Prior
-unrelated checkpoints remain historical.
+determinism claims remain parked. T4 is standalone static checker work only.
+Prior unrelated checkpoints remain historical.
 
 The `broad external knowledge absorption` lane remains outside the current
 release. It is included in the `blocked work classes` unless the operator opens
