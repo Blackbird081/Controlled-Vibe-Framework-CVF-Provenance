@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Local Retention Semantic Absorption T0 Accepted
+# CVF Agent Handoff V59 - CADP T1 Accepted Bounded And T2 Packet Authorized
 
 Memory class: active-handoff
 
@@ -12,7 +12,9 @@ Status: ACTIVE
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current Core material HEAD marker:
-  `bdc90248f7359943b23c200852aa8692847be703`
+  `a17051bcd810e6cc80a069712ce670365c2e7790`
+- CADP-R1/T1 material closure commit:
+  `a17051bcd810e6cc80a069712ce670365c2e7790`
 - LRA-SA-T0 material closure commit:
   `6e575bf984d8af49eb8a1ab2db026802787a6cc3`
 - LRA-SA-T0 dispatch material commit:
@@ -32,14 +34,14 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Handoff-sync parent commit:
-  `c51cc0cdcdada4e8e024d44806227cb8c7068f73`
+  `a17051bcd810e6cc80a069712ce670365c2e7790`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `local_retention_semantic_absorption_t0_accepted_t1_parked`
+  `cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -48,52 +50,49 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`local_retention_semantic_absorption_t0_accepted_t1_parked`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator may
-release T1 archive decision or leave/close this roadmap; parked checkpoint=T1
-archive release/deletion, raw import/execution, MAO T1, DESIGN, BUILD,
-runtime, provider/live, public `main`, deploy,
-hosted smoke, secrets, store, production.
+Startup acknowledged: current mode=`cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`;
+active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author, gate
+and commit a fresh no-commit CADP-AI-T2 owner-binding packet; parked checkpoint=
+F11 acceptance, T2 implementation until committed dispatch, T3+, runtime,
+provider/live, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`local_retention_semantic_absorption_t0_accepted_t1_parked`
+`cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
 
 ## Purpose
 
-Record accepted LRA-SA-T0 exhaustive semantic coverage of the 56 retained
-evidence entries without admitting archive source or opening T1/runtime authority.
+Record bounded CADP-R1/T1 acceptance and the operator's T2 packet-authoring
+release without claiming F11 closure or opening runtime/provider authority.
 
 ## Scope / Target / Owner Boundary
 
-- Accepted result: 56/56 entries read and hash-verified; 20
-  `SUPERSEDED_BY_CURRENT_CVF_OWNER`, 36 `NO_NEW_VALUE`, zero evidence-only,
-  blocked, unreadable, or unresolved rows.
-- T1 archive release remains parked pending independent T0 acceptance.
-- Raw archive source import/execution, deletion, DESIGN, BUILD, provider/live,
-  public synchronization, deployment, merge, and production remain unopened.
+- CADP-R1 and CADP-AI-T1 are accepted only with bounded scope.
+- F11 remains `F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION`; cross-runtime
+  determinism is not proven.
+- T2 implementation begins only after a fresh no-commit packet is committed.
+- T3+, runtime/provider/live, public sync, deploy and production remain unopened.
 
 ## Latest Work / Changes
 
-- Operator explicitly released continued semantic absorption; independent
-  review accepted T0 at `6e575bf984d8af49eb8a1ab2db026802787a6cc3`.
-- Reviewer recomputed the ZIP and all 56 hashes, sampled every semantic group,
-  corrected the stable ledger path and one prose arithmetic mismatch.
-- Final reviewer-fast passed 63/63 and material pre-commit passed 84/84.
-- Raw archive import/execution, source/test/package implementation, T1 archive
-  release/deletion, provider/live, public-sync, and deployment remain closed.
+- Independent review accepted T1 against R01-R28 with bounded scope and kept
+  the reproducible F11 residual explicit.
+- TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64;
+  hermetic package proof passed 474 with 5 skipped.
+- Reviewer-fast passed 63/63 and material pre-commit passed 84/84.
+- Operator instructed `commit, mở T2`; T1 material commit is `a17051bcd`.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | LRA-SA-T0 reviewer accepted; T1 parked |
-| baselinePath | `docs/baselines/CVF_GC018_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md` |
-| baselineSha256 | `749c4ef2631cf7b488c9ded1dfa8838a07a07cbc0a9e2a5889a3ac658ecbbdc5` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_2026-08-13.md` |
-| workOrderSha256 | `8dee1da8fe7a5ee1eb708e67f821f85668599cae4e5384626f0bf01017ea3a35` |
-| workerReturnPath | `docs/reviews/CVF_LOCAL_RETENTION_SEMANTIC_ABSORPTION_T0_56_ENTRY_COVERAGE_AUDIT_WORKER_RETURN_2026-08-13.md` |
-| nextAuthorityRequirement | explicit operator release before T1 archive decision |
+| authorityState | CADP-R1/T1 accepted bounded; T2 packet authoring authorized |
+| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_2026-08-13.md` |
+| baselineSha256 | `1542b9f7afdfc3765635d2bde65b8943f7cbee670d09d5c8d88a3da548612707` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_2026-08-13.md` |
+| workOrderSha256 | `1752edc58692c6a36289d04f77c446275b3fb25484a539586d8e415c973e84ae` |
+| workerReturnPath | `docs/reviews/CVF_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_WORKER_RETURN_2026-08-13.md` |
+| nextAuthorityRequirement | committed fresh T2 no-commit packet before implementation |
 
 ## Closure Evidence
 
@@ -139,9 +138,9 @@ evidence entries without admitting archive source or opening T1/runtime authorit
 
 ## Next Allowed Move
 
-T0 is accepted. The operator may explicitly release T1 to decide archive
-retention/deletion, or leave/close this roadmap. T1 archive release/deletion,
-MAO T1, and all runtime/provider/public lanes remain parked.
+Author, gate and commit a fresh CADP-AI-T2 owner-binding and work-order-
+observation reconciliation packet. Do not implement T2 before that packet.
+F11 acceptance, T3+ and all runtime/provider/public lanes remain parked.
 
 ## Active Boundary
 
@@ -172,7 +171,7 @@ Reason: the LRA-SA-T0 dispatch and continuity update concern private local
 retention evidence. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - LRA-SA-T0 Closure Session Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T1 Closure Session Sync
 
 Protected paths:
 
@@ -181,6 +180,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/cadpAiT1ClosureT2Release20260813.json`
 - `CVF_SESSION/state/entries/localRetentionSemanticAbsorptionT0Closure20260813.json`
 - `CVF_SESSION/state/entries/localRetentionSemanticAbsorptionT0Dispatch20260813.json`
 - `CVF_SESSION/state/entries/localRetentionArtifactT2T4Closure20260812.json`
@@ -189,27 +189,21 @@ Protected paths:
 - `CVF_SESSION/state/entries/localRetentionArtifactT2Dispatch20260812.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit instruction on 2026-08-13 to continue
-semantic absorption of the retained material, then commit and push the clean
-private provenance stack; the operator separately approved temporarily
-restoring the private provenance push URL for that bounded push.
+Operator authorization: explicit `commit, mở T2` instruction on 2026-08-13
+after the independently accepted bounded T1 result.
 
-Authorized guard-maintenance scope: bind accepted LRA-SA-T0 material commit
-`6e575bf984d8af49eb8a1ab2db026802787a6cc3`, record 56/56 terminal semantic
-coverage, set explicit T1 operator selection as next move, and keep archive
-release/deletion, raw import/execution, runtime/provider/public, and unrelated
-lanes parked. The same bounded session-sync scope permits restoring the missing
-GC-043 front-door literals `broad external knowledge absorption` and `blocked
-work classes`; it does not alter their parked disposition.
+Authorized guard-maintenance scope: bind accepted CADP-R1/T1 material commit
+`a17051bcd810e6cc80a069712ce670365c2e7790`, preserve F11 as open, record T2
+packet authoring as the next move, and keep implementation until committed
+dispatch plus T3/runtime/provider/public and unrelated lanes parked.
 
 Rollback boundary: revert this exact session-sync batch together; do not
-separate generated state from its source fragments and do not alter material
-commit `6e575bf984d8af49eb8a1ab2db026802787a6cc3` inside this closure-sync batch.
+separate generated state from source fragments and do not alter material commit
+`a17051bcd810e6cc80a069712ce670365c2e7790` inside this sync batch.
 
 ## Claim Boundary
 
-This handoff records private LRA-SA-T0 documentation-only semantic absorption
-dispatch. It does not authorize raw archive import/execution, implementation,
-new runtime owners, archive deletion, public `main` merge, hosted
-runtime/provider behavior, deployment, release, availability, or production
-readiness.
+This handoff records bounded CADP-R1/T1 acceptance and T2 packet-authoring
+authority only. It does not close F11, prove cross-runtime determinism, or
+authorize T2 implementation before committed dispatch, new runtime owners,
+provider/live behavior, public sync, deployment or production readiness.

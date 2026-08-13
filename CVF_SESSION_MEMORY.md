@@ -45,33 +45,32 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`local_retention_semantic_absorption_t0_accepted_t1_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator may explicitly release T1 archive decision or leave/close this roadmap; parked checkpoint=T1 archive release/deletion, MAO T1, raw import/execution, DESIGN, BUILD, runtime, provider/live, public `main` merge, deploy, hosted smoke, secrets, store, and production.
+Startup acknowledged: current mode=`cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author, gate and commit the fresh no-commit CADP-AI-T2 owner-binding dispatch packet; parked checkpoint=F11 acceptance, T2 implementation until committed packet, T3+, runtime/provider/live, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`local_retention_semantic_absorption_t0_accepted_t1_parked`
+`cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
 
-Current mode marker: `local_retention_semantic_absorption_t0_accepted_t1_parked`
-Current mode: `local_retention_semantic_absorption_t0_accepted_t1_parked`
-Previous mode: `local_retention_semantic_absorption_t0_dispatched`
+Current mode marker: `cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
+Current mode: `cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
+Previous mode: `local_retention_semantic_absorption_t0_accepted_t1_parked`
 
 ## Next Allowed Move
 
-Mode: `local_retention_semantic_absorption_t0_accepted_t1_parked`
+Mode: `cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
 
-LRA-SA-T0 is independently accepted at material commit `6e575bf984d8af49eb8a1ab2db026802787a6cc3`.
-All 56 retained evidence entries have file-specific semantic dispositions:
-20 superseded by current owners and 36 no-new-value, with zero blocked or
-unresolved rows. The operator may explicitly release T1 archive decision or
-leave/close this roadmap. T1 deletion and all runtime/provider/public scope
-remain parked.
+CADP-R1 and CADP-AI-T1 are accepted with bounded scope at material commit
+`a17051bcd810e6cc80a069712ce670365c2e7790`. F11 caller self-attestation remains
+open. The operator released T2 packet authoring; next create, gate and commit a
+fresh no-commit owner-binding/work-order-reconciliation packet. Implementation
+starts only from that committed packet.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-Public staging push is complete at `origin/lpci1-ref-staging@021f8b852`.
-MAO T1, DESIGN, BUILD, Netlify deployment, hosted/provider/store, secrets,
-production, and public `main` merge remain parked.
+F11 acceptance, T2 implementation before committed dispatch, T3+, runtime,
+provider/live, CLI/MCP, public sync, deployment, production and cross-runtime
+determinism claims remain parked. Prior unrelated checkpoints remain historical.
 
 The `broad external knowledge absorption` lane remains outside the current
 release. It is included in the `blocked work classes` unless the operator opens

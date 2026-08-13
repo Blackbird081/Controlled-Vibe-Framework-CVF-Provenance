@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2167,
+  "stateOrder": 2174,
   "stateKey": "nextAllowedMove",
-  "value": "LRA-SA-T0 is independently accepted at material commit 6e575bf984d8af49eb8a1ab2db026802787a6cc3: 56/56 files read and hash-verified, 20 SUPERSEDED_BY_CURRENT_CVF_OWNER, 36 NO_NEW_VALUE, zero evidence-only, blocked, or unresolved rows. T1 archive release/deletion remains PARKED and requires explicit operator release; the operator may release T1 or leave/close this roadmap. Raw source import/execution, MAO T1, DESIGN, BUILD, runtime, provider/live, public main merge, deploy, hosted smoke, secrets, store, and production remain unauthorized. Latest closed numbered LHW wave remains LHW24."
+  "value": "CADP-R1 and CADP-AI-T1 are independently accepted with bounded scope and committed at a17051bcd810e6cc80a069712ce670365c2e7790. F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION remains open and blocks CERTIFIED_BOUNDED, trusted-evidence, deployment-readiness, and production-readiness claims. The operator explicitly authorized opening T2; next allowed move is author, gate, and commit a fresh no-commit T2 owner-binding/work-order-reconciliation dispatch packet. T2 implementation begins only from that committed packet. Runtime/provider/live, T3+, CLI/MCP, public sync, deploy, production, and cross-runtime determinism claims remain unauthorized. Latest closed numbered LHW wave remains LHW24."
 }
