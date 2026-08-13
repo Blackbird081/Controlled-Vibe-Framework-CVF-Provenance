@@ -45,32 +45,31 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author, gate and commit the fresh no-commit CADP-AI-T2 owner-binding dispatch packet; parked checkpoint=F11 acceptance, T2 implementation until committed packet, T3+, runtime/provider/live, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t2_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=implementation worker executes the committed T2 exact-manifest packet and returns uncommitted evidence for independent review; parked checkpoint=F11 acceptance, T3+, runtime/provider/live, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
+`cadp_ai_t2_dispatched_worker_must_not_commit`
 
-Current mode marker: `cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
-Current mode: `cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
-Previous mode: `local_retention_semantic_absorption_t0_accepted_t1_parked`
+Current mode marker: `cadp_ai_t2_dispatched_worker_must_not_commit`
+Current mode: `cadp_ai_t2_dispatched_worker_must_not_commit`
+Previous mode: `cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
+Mode: `cadp_ai_t2_dispatched_worker_must_not_commit`
 
-CADP-R1 and CADP-AI-T1 are accepted with bounded scope at material commit
-`a17051bcd810e6cc80a069712ce670365c2e7790`. F11 caller self-attestation remains
-open. The operator released T2 packet authoring; next create, gate and commit a
-fresh no-commit owner-binding/work-order-reconciliation packet. Implementation
-starts only from that committed packet.
+CADP-AI-T2 is dispatched at `9f08655f3d755873ad15854843dd015c56e8d95d`
+under `WORKER_MUST_NOT_COMMIT`. The worker may execute only the exact 11-path
+maximum manifest, must capture execution base, run hermetic proof, create the
+required return and stop uncommitted for independent review. F11 remains open.
 Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-F11 acceptance, T2 implementation before committed dispatch, T3+, runtime,
-provider/live, CLI/MCP, public sync, deployment, production and cross-runtime
-determinism claims remain parked. Prior unrelated checkpoints remain historical.
+F11 acceptance, T3+, runtime, provider/live, CLI/MCP, public sync, deployment,
+production and cross-runtime determinism claims remain parked. Prior unrelated
+checkpoints remain historical.
 
 The `broad external knowledge absorption` lane remains outside the current
 release. It is included in the `blocked work classes` unless the operator opens

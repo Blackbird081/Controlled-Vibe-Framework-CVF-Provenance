@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2174,
+  "stateOrder": 2176,
   "stateKey": "nextAllowedMove",
-  "value": "CADP-R1 and CADP-AI-T1 are independently accepted with bounded scope and committed at a17051bcd810e6cc80a069712ce670365c2e7790. F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION remains open and blocks CERTIFIED_BOUNDED, trusted-evidence, deployment-readiness, and production-readiness claims. The operator explicitly authorized opening T2; next allowed move is author, gate, and commit a fresh no-commit T2 owner-binding/work-order-reconciliation dispatch packet. T2 implementation begins only from that committed packet. Runtime/provider/live, T3+, CLI/MCP, public sync, deploy, production, and cross-runtime determinism claims remain unauthorized. Latest closed numbered LHW wave remains LHW24."
+  "value": "CADP-AI-T2 owner-bound evidence and work-order reconciliation is dispatched at 9f08655f3d755873ad15854843dd015c56e8d95d under WORKER_MUST_NOT_COMMIT. Next allowed move is one implementation worker executing only the exact 11-path maximum manifest from the committed T2 packet, capturing executionBaseHead at start, producing the required worker return, running all hermetic proof, and stopping uncommitted for independent review. F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION remains open until independent T2 acceptance. Runtime/provider/live, T3+, CLI/MCP, public sync, deploy, production, and cross-runtime determinism claims remain unauthorized. Latest closed numbered LHW wave remains LHW24."
 }

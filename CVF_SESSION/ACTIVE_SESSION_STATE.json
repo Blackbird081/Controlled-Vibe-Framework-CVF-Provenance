@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_2026-08-13.md",
-    "baselineSha256": "1542b9f7afdfc3765635d2bde65b8943f7cbee670d09d5c8d88a3da548612707",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_2026-08-13.md",
-    "workOrderSha256": "1752edc58692c6a36289d04f77c446275b3fb25484a539586d8e415c973e84ae"
+    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_2026-08-13.md",
+    "baselineSha256": "8a7f7f37c5fc2b33b7b0395cea22d6f2782668efce4da3e972a69c3d2b79fb18",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_2026-08-13.md",
+    "workOrderSha256": "77b40cda3eb02a2539cf0a6f69788ed42ab1578a8f1724c02ce11aae7119ab30"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized",
-  "previousMode": "local_retention_semantic_absorption_t0_accepted_t1_parked",
+  "currentMode": "cadp_ai_t2_dispatched_worker_must_not_commit",
+  "previousMode": "cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -14879,5 +14879,6 @@
   "localRetentionSemanticAbsorptionT0Dispatch20260813": "Operator authorized continued absorption on 2026-08-13. LRA-SA-T0 dispatch material commit 3c423f28b authorizes a no-commit worker to read all 56 ARCHIVE_EVIDENCE_ONLY entries from the pinned CVF_LOCAL_RETENTION_20260812.zip, build per-file semantic and owner-delta evidence, adapt only minimal existing CVF documentation, update bounded corpus registry surfaces, and return an exact nine-path packet for independent review. Pre-implementation passed 78/78 and material pre-commit passed 84/84. Raw source import/execution, archive deletion, runtime/package admission, provider/live, public-sync, and unrelated roadmaps remain unauthorized.",
   "localRetentionSemanticAbsorptionT0Closure20260813": "Independent Codex review accepted LRA-SA-T0 at material commit 6e575bf984d8af49eb8a1ab2db026802787a6cc3 after recomputing the ZIP digest and all 56 entry hashes, reading both changed metadata files and one full file from every other group, and confirming 20 SUPERSEDED_BY_CURRENT_CVF_OWNER plus 36 NO_NEW_VALUE with zero blocked or unresolved rows. Reviewer corrected the dispatcher-owned dated stable-reference ledger path to CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER.md and fixed one 13/14 prose mismatch; final worker-return gate passed 63/63 and material pre-commit passed 84/84. T0 is closed; T1 archive release/deletion remains parked pending explicit operator release.",
   "cadpAiT1ClosureT2Release20260813": "CADP-R1 and CADP-AI-T1 closed with independent ACCEPT_WITH_BOUNDED_SCOPE at material commit a17051bcd810e6cc80a069712ce670365c2e7790. TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64; the hermetic Guard Contract package passed 474 tests with 5 skipped; reviewer-fast passed 63/63; pre-commit passed 84/84. F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION remains reproducible, cross-runtime determinism is unproven, and no trusted-evidence, deployment-readiness or production-readiness claim is allowed. The operator explicitly released T2 packet authoring on 2026-08-13; implementation requires a separately committed fresh no-commit work order and later independent review.",
-  "nextAllowedMove": "CADP-R1 and CADP-AI-T1 are independently accepted with bounded scope and committed at a17051bcd810e6cc80a069712ce670365c2e7790. F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION remains open and blocks CERTIFIED_BOUNDED, trusted-evidence, deployment-readiness, and production-readiness claims. The operator explicitly authorized opening T2; next allowed move is author, gate, and commit a fresh no-commit T2 owner-binding/work-order-reconciliation dispatch packet. T2 implementation begins only from that committed packet. Runtime/provider/live, T3+, CLI/MCP, public sync, deploy, production, and cross-runtime determinism claims remain unauthorized. Latest closed numbered LHW wave remains LHW24."
+  "cadpAiT2Dispatch20260813": "CADP-AI-T2 was dispatched at material commit 9f08655f3d755873ad15854843dd015c56e8d95d from session-sync base 1dd6ed07eb517e140acfe2e2ec0c41ea196ab2b4. The committed baseline/work order require module-private runtime-verifiable owner identity, removal of the caller-supplied CompatibilityEvidenceIndex trust path, exact grant-versus-observation reconciliation, adversarial forge/copy/serialization tests, no generic caller mint, explicit evaluatedAt, no side effects, an exact 11-path maximum manifest, WORKER_MUST_NOT_COMMIT, and independent reviewer probes. Pre-dispatch passed 76/76 and pre-commit passed 84/84. F11 remains open until independent T2 acceptance.",
+  "nextAllowedMove": "CADP-AI-T2 owner-bound evidence and work-order reconciliation is dispatched at 9f08655f3d755873ad15854843dd015c56e8d95d under WORKER_MUST_NOT_COMMIT. Next allowed move is one implementation worker executing only the exact 11-path maximum manifest from the committed T2 packet, capturing executionBaseHead at start, producing the required worker return, running all hermetic proof, and stopping uncommitted for independent review. F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION remains open until independent T2 acceptance. Runtime/provider/live, T3+, CLI/MCP, public sync, deploy, production, and cross-runtime determinism claims remain unauthorized. Latest closed numbered LHW wave remains LHW24."
 }
