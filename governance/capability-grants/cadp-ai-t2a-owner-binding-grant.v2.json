@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "cvf.cadp.repositoryGrant.v1",
+  "repositoryId": "CVF_PRIVATE_PROVENANCE",
+  "status": "ACTIVE",
+  "grantId": "cadp-ai-t2a-owner-binding-grant-v2",
+  "owner": "CVF_GOVERNANCE_REPOSITORY",
+  "workOrderId": "CADP-AI-T2A",
+  "workOrderVersion": "2026-08-13.2",
+  "capabilityId": "cvf.cadp.owner-bound-evidence",
+  "capabilityVersion": "v3",
+  "assignmentId": "cadp-ai-t2a-owner-binding",
+  "actionId": "validateCompatibilityEvidence",
+  "transport": "local_git_object_database",
+  "resourceRef": "governance/capability-grants/cadp-ai-t2a-owner-binding-grant.v2.json",
+  "credentialReference": "none:private-provenance-git",
+  "evaluatedAt": "2026-08-13T12:30:00.000Z",
+  "validFrom": "2026-08-13T00:00:00.000Z",
+  "validUntil": "2027-08-13T00:00:00.000Z",
+  "maxInvocations": 1000,
+  "maxRetriesPerInvocation": 2,
+  "boundWorkflowTraceIds": [
+    "cadp-ai-t2-fail-closed-checkpoint-f4b99100e"
+  ],
+  "boundReceiptIds": [
+    "cadp-ai-t2-fail-closed-checkpoint-f4b99100e"
+  ],
+  "artifacts": [
+    {
+      "ref": "docs/reviews/evidence/cadp-ai-t2-fail-closed-checkpoint-receipt-2026-08-13.json",
+      "artifactType": "receipt",
+      "owner": "CVF_GOVERNANCE_REPOSITORY",
+      "sha256": "7cf10680e446c3357ff38c68eae1b1ae76fece9924fdd3cad97757d6d877f4f3"
+    },
+    {
+      "ref": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_2026-08-13.md",
+      "artifactType": "work_order",
+      "owner": "CVF_GOVERNANCE_REPOSITORY",
+      "sha256": "186584c2407ab054704c3cc0697695f6cf2efb5c8d354f45c3c0d1464a67ddb1"
+    },
+    {
+      "ref": "docs/reviews/CVF_CADP_AI_T2_INDEPENDENT_ADVERSARIAL_REVIEW_2026-08-13.md",
+      "artifactType": "review",
+      "owner": "CVF_GOVERNANCE_REPOSITORY",
+      "sha256": "48bf95b900691ab4115fcc846f0d9d17ef52f3743a547f039a8981941a96debd"
+    },
+    {
+      "ref": "docs/baselines/CVF_GC018_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_2026-08-13.md",
+      "artifactType": "freeze",
+      "owner": "CVF_GOVERNANCE_REPOSITORY",
+      "sha256": "b3bf7631bbdfd75ce2e598f69b2dfd6363b6ae8319e635aef12085c3a58ea0ac"
+    }
+  ],
+  "rawSecretsIncluded": false
+}
