@@ -45,19 +45,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t3b_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=T3B no-commit worker execution from the committed dispatch HEAD; parked checkpoint=T4-T7, provider/live, credential access, quota mutation, CLI/MCP, public sync, deploy, production, trusted-evidence readiness and cross-runtime determinism.
+Startup acknowledged: current mode=`cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit operator direction for any new tranche; parked checkpoint=T4-T7, provider/live, credential access, quota mutation, CLI/MCP, public sync, deploy, production, trusted-evidence readiness and cross-runtime determinism.
 
 ## Current Mode
 
-`cadp_ai_t3b_dispatched_worker_must_not_commit`
+`cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`
 
-Current mode marker: `cadp_ai_t3b_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t3b_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t3a_closed_pass_bounded_awaiting_operator_direction`
+Current mode marker: `cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`
+Current mode: `cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`
+Previous mode: `cadp_ai_t3b_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t3b_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t3b_closed_pass_bounded_awaiting_operator_direction`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -65,16 +65,15 @@ remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
 Completion review:
 `docs/reviews/CVF_CADP_AI_T2A_AUTHORITY_RECONCILIATION_COMPLETION_2026-08-13.md`.
 CADP-AI-T3A is independently accepted `CLOSED_PASS_BOUNDED` at `f1dc9a6f7`.
-CADP-AI-T3B is dispatched at `7d897a5d8`. The next allowed move is a no-commit
-worker execution of the current T3B work order from a freshly captured clean
-committed HEAD, followed by independent review. Latest closed numbered LHW
-wave: `LHW24`.
+CADP-AI-T3B is independently accepted `CLOSED_PASS_BOUNDED` and materially
+committed at `9a4920c92`. The next allowed move is to await explicit operator
+direction for any new tranche. Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
 T4-T7, provider/live, credential access, quota mutation, CLI/MCP, public sync,
 deployment, production, trusted-evidence readiness and cross-runtime
-determinism claims remain parked. T3B is authorized only for a hermetic,
+determinism claims remain parked. T3B is accepted only for a hermetic,
 provider-neutral projection whose four authority flags remain false. Prior
 unrelated checkpoints remain historical.
 
