@@ -1,5 +1,5 @@
 {
   "stateOrder": 2176,
   "stateKey": "nextAllowedMove",
-  "value": "CADP-AI-T3A is independently accepted CLOSED_PASS_BOUNDED and materially committed at f1dc9a6f7. The accepted scope is only the hermetic Execution Plane pre-execution eligibility consumer with executionAuthorized=false. The next allowed move is to await explicit operator direction for any new tranche. T3B, provider/live, CLI/MCP, public sync, deployment, production, trusted-evidence readiness, and cross-runtime determinism remain parked and unauthorized. Latest closed numbered LHW wave remains LHW24."
+  "value": "CADP-AI-T3B is DISPATCH_READY at material commit 7d897a5d8. The next allowed move is a no-commit implementation worker executing docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T3B_MODEL_GATEWAY_CONSTRAINT_PROJECTION_2026-08-13.md from a freshly captured clean committed HEAD, then returning COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON. T4-T7, provider/live, credential access, quota mutation, CLI/MCP, public sync, deployment, production, trusted-evidence readiness, and cross-runtime determinism remain parked and unauthorized. Latest closed numbered LHW wave remains LHW24."
 }

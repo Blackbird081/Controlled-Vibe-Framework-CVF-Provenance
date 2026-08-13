@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T3A Dispatched
+# CVF Agent Handoff V59 - CADP-AI-T3B Dispatched
 
 Memory class: active-handoff
 
@@ -11,7 +11,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current Core material HEAD marker: `f1dc9a6f7a0fc7824d6ba82cce3db47bbdfd91ac`
+- Current Core material HEAD marker: `7d897a5d8`
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
@@ -43,7 +43,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t2_dispatched_worker_must_not_commit`
+  `cadp_ai_t3b_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -52,18 +52,17 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t3a_closed_pass_bounded_awaiting_operator_direction`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit operator direction for any new tranche; parked checkpoint=T3B, provider/live, CLI/MCP, public sync,
-deploy, production, trusted-evidence readiness and cross-runtime determinism.
+Startup acknowledged: current mode=`cadp_ai_t3b_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=T3B no-commit worker execution from the committed dispatch HEAD; parked checkpoint=T4-T7, provider/live, credential access, quota mutation, CLI/MCP, public sync, deploy, production, trusted-evidence readiness and cross-runtime determinism.
 
 ## Current Mode
 
-`cadp_ai_t3a_closed_pass_bounded_awaiting_operator_direction`
+`cadp_ai_t3b_dispatched_worker_must_not_commit`
 
 ## Purpose
 
-Record the independently accepted and materially committed CADP-AI-T3A
-Execution Plane consumer closure. T3A is closed only for a hermetic,
-non-executing eligibility projection with `executionAuthorized: false`.
+Record the committed CADP-AI-T3B Model Gateway constraint-projection dispatch.
+T3A remains independently closed bounded; T3B is worker-pending and authorizes
+only hermetic provider-neutral metadata with all authority flags false.
 
 ## Scope / Target / Owner Boundary
 
@@ -72,8 +71,8 @@ non-executing eligibility projection with `executionAuthorized: false`.
 - F11 (`F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION`) is CLOSED_PASS_BOUNDED as
   of CADP-AI-T2A's independent review; cross-runtime determinism is not
   proven.
-- T3+, runtime/provider/live, public sync, deploy and production remain
-  unopened.
+- T3B is dispatched only; T4-T7, runtime/provider/live, public sync, deploy and
+  production remain unopened.
 
 ## Latest Work / Changes
 
@@ -94,12 +93,12 @@ non-executing eligibility projection with `executionAuthorized: false`.
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T3A ACCEPTED_CLOSED_PASS_BOUNDED at `f1dc9a6f7`; T2A-R1 remains bounded predecessor |
-| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_2026-08-13.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_2026-08-13.md` |
-| workerReturnPath | `docs/reviews/CVF_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_WORKER_RETURN_2026-08-13.md` |
-| completionReviewPath | `docs/reviews/CVF_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_COMPLETION_2026-08-13.md` |
-| nextAuthorityRequirement | explicit operator direction plus a fresh governed packet for any new tranche |
+| authorityState | CADP-AI-T3B DISPATCH_READY at `7d897a5d8`; T3A remains ACCEPTED_CLOSED_PASS_BOUNDED |
+| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T3B_MODEL_GATEWAY_CONSTRAINT_PROJECTION_2026-08-13.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T3B_MODEL_GATEWAY_CONSTRAINT_PROJECTION_2026-08-13.md` |
+| workerReturnPath | `docs/reviews/CVF_CADP_AI_T3B_MODEL_GATEWAY_CONSTRAINT_PROJECTION_WORKER_RETURN_2026-08-13.md` |
+| completionReviewPath | `docs/reviews/CVF_CADP_AI_T3B_MODEL_GATEWAY_CONSTRAINT_PROJECTION_COMPLETION_2026-08-13.md` |
+| nextAuthorityRequirement | no-commit worker execution followed by independent review |
 
 ## Closure Evidence
 
@@ -145,9 +144,10 @@ non-executing eligibility projection with `executionAuthorized: false`.
 
 ## Next Allowed Move
 
-CADP-AI-T3A is independently accepted and materially committed at `f1dc9a6f7`.
-Next allowed move is to await explicit operator direction for any new tranche.
-T3B and all provider/live/public/deployment/production lanes remain parked.
+CADP-AI-T3A is independently accepted at `f1dc9a6f7`; CADP-AI-T3B is dispatched
+at `7d897a5d8`. Next allowed move is T3B no-commit worker execution followed by
+independent review. T4-T7 and all provider/live/credential/quota-mutation/
+public/deployment/production lanes remain parked.
 
 ## Active Boundary
 
@@ -157,14 +157,14 @@ T3B and all provider/live/public/deployment/production lanes remain parked.
   unrelated lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
-- T3A is closed bounded; T3B and every unrelated downstream lane remain parked.
+- T3A is closed bounded; T3B is dispatched; every later downstream lane remains parked.
 - MAO T1, DESIGN, BUILD, provider/live, public `main`, deploy, hosted smoke,
   secrets, store, production, and archive deletion remain parked.
 
 ## Worker Return Target
 
-CADP-AI-T3A completion review:
-`docs/reviews/CVF_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_COMPLETION_2026-08-13.md`.
+CADP-AI-T3B worker return:
+`docs/reviews/CVF_CADP_AI_T3B_MODEL_GATEWAY_CONSTRAINT_PROJECTION_WORKER_RETURN_2026-08-13.md`.
 
 Prior pre-push dispatch-sync authorization and operation trace remain preserved
 in Git history through session-sync commit `0b1046dfc`; they are omitted from
@@ -174,11 +174,11 @@ this compact active handoff after the public staging push superseded that mode.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: the T3A closure and continuity update concern private hermetic
+Reason: the T3B dispatch and continuity update concern private hermetic
 evidence. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T3A Closure Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T3B Dispatch Sync
 
 Protected paths:
 
@@ -189,18 +189,17 @@ Protected paths:
 - `CVF_SESSION/state/entries/cadpAiT2AAuthorityReconciliationClosure20260813.json`
 - `CVF_SESSION/state/entries/cadpAiT3ADependencyRefreshDispatch20260813.json`
 - `CVF_SESSION/state/entries/cadpAiT3AExecutionConsumerClosure20260813.json`
+- `CVF_SESSION/state/entries/cadpAiT3BModelGatewayConstraintProjectionDispatch20260813.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator supplied the T3A worker return with
-`COMPLETE_PENDING_INDEPENDENT_REVIEW`; the governing work order assigns
-bounded repair, material commit, and session sync to the independent
-reviewer/closer. This batch performs the separate post-material state sync.
+Operator authorization: the operator directed continuation from the T3A closed
+checkpoint. This batch performs only the separate post-dispatch state sync.
 
-Authorized guard-maintenance scope: bind the CADP-AI-T3A independent bounded
-closure at `f1dc9a6f7`, set the next move to await operator direction, and keep
-T3B/provider/live/CLI-MCP/public/deployment/production/trusted-evidence/
-cross-runtime and unrelated lanes parked.
+Authorized guard-maintenance scope: bind the CADP-AI-T3B dispatch at
+`7d897a5d8`, set the next move to the no-commit worker, and keep T4-T7,
+provider/live/credential/quota-mutation/CLI-MCP/public/deployment/production/
+trusted-evidence/cross-runtime and unrelated lanes parked.
 
 Rollback boundary: revert this exact session-sync batch together with the
 material implementation commit it accompanies; do not separate generated
@@ -208,7 +207,7 @@ state from source fragments.
 
 ## Claim Boundary
 
-This handoff records the independently reviewed and accepted CADP-AI-T3A
-closure for a hermetic pre-execution eligibility projection only. It does not
-prove cross-runtime determinism or trusted-evidence readiness, or authorize
-T3B, provider/live behavior, CLI/MCP, public sync, deployment, or production.
+This handoff records T3B dispatch, not implementation or acceptance. It does
+not prove provider compatibility, live behavior, cross-runtime determinism, or
+trusted-evidence readiness, or authorize credential access, quota mutation,
+T4-T7, CLI/MCP, public sync, deployment, or production.
