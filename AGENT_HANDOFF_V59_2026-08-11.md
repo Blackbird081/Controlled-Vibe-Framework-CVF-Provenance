@@ -12,7 +12,7 @@ Status: ACTIVE
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current Core material HEAD marker:
-  `a635b49df63b114a49a9c671b50f27da707bc668`
+  `c63ede66e36b529913e177c756c46dcf331fc99b`
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
@@ -39,14 +39,14 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Handoff-sync parent commit:
-  `a635b49df63b114a49a9c671b50f27da707bc668`
+  `c63ede66e36b529913e177c756c46dcf331fc99b`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t2a_owner_binding_dispatched_worker_must_not_commit`
+  `cadp_ai_t2_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -55,7 +55,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t2a_owner_binding_dispatched_worker_must_not_commit`;
+Startup acknowledged: current mode=`cadp_ai_t2_dispatched_worker_must_not_commit`;
 active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=implementation
 worker executes the committed T2A owner-binding exact-manifest packet and returns uncommitted
 evidence; parked checkpoint=F11 acceptance, T3+, runtime/provider/live,
@@ -63,7 +63,7 @@ CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t2a_owner_binding_dispatched_worker_must_not_commit`
+`cadp_ai_t2_dispatched_worker_must_not_commit`
 
 ## Purpose
 
