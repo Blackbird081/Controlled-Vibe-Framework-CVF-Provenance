@@ -379,3 +379,25 @@ export const MODEL_GATEWAY_WRAPPER = {
   preservesReleaseEvidencePaths: true,
   enforcesGuardContractBeforeRouting: true,
 } as const;
+
+// CADP-AI-T3B - Model Gateway provider-neutral constraint projection
+export type {
+  CadpConstraintProjectionDecision,
+  CadpConstraintProjectionEligibilityInput,
+  CadpConstraintProjectionIssue,
+  CadpConstraintProjectionIssueCode,
+  CadpConstraintProjectionRequest,
+  CadpConstraintProjectionConstraints,
+  CadpConstraintProjectionResult,
+  CadpConstraintProjection,
+  CadpConstraintRetentionPolicy,
+  CadpConstraintRemoteSideEffectPolicy,
+  CadpConstraintCredentialMode,
+} from "./cadp.constraint.projection.contract";
+export {
+  CADP_CONSTRAINT_PROJECTION_BOUNDS,
+  CADP_CONSTRAINT_PROJECTION_CONTRACT_VERSION,
+  CadpConstraintProjectionContract,
+  createCadpConstraintProjectionContract,
+  evaluateCadpConstraintProjection,
+} from "./cadp.constraint.projection.contract";

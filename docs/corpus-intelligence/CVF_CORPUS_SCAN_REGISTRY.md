@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-08-13 (CADP-R1/T1 bounded acceptance and T2 owner-binding release)
+Last updated: 2026-08-14 (CADP-AI-T3B bounded Model Gateway projection acceptance)
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -127,6 +127,7 @@ prior scan here before starting new work.
 | `CVF Extraction Foundation EXA-T2 scan route decision source` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Deterministic DocumentScanSignals + ScanRouteDecision + decide_scan_route(); maps PASS/NEEDS_TIER2_OCR/OCR_LOW_CONFIDENCE/PARTIAL/EMPTY to four stable dispositions; unsupported source type or language -> BLOCKED_UNSUPPORTED; no OCR, provider, or raw content |
 | `CVF Extraction Foundation EXA-T2 scan route decision tests` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Focused pytest coverage for PASS/local route, OCR-eligible route, OCR_LOW_CONFIDENCE/partial/empty escalation, unsupported language blocking, unsupported source-type blocking, docx support, deterministic repeatability, version+claim-boundary presence, and no raw-content fields |
 | `CADP-R1 capability admission distribution profile` | LEGACY_FOLDER | SCANNED_WITH_FINDINGS | CADP-R1 | 140 | 140/140 terminal ledger rows reconciled; T1 contract accepted bounded after R01-R28 review; F11 caller-self-attested trust remains open and routed to released T2 owner binding |
+| `CADP-AI-T3B Model Gateway constraint projection tests` | TEST_CORPUS | SCANNED | CADP-AI-T3B | 2 | Strict owner/projection/constraint boundary and package-root export coverage; all authorization flags remain false; no provider/live behavior claimed |
 | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | LEGACY_FOLDER | DEEP_CLASSIFIED | LRA-SA-T0 | 129 | All 129 entries are terminal with zero ARCHIVE_EVIDENCE_ONLY, unresolved, or DEFER_REQUIRES_NEW_AUTHORITY rows: 56 packages/ entries (54 same-hash + 2 changed-metadata) were exhaustively per-file semantically absorbed by LRA-SA-T0 into SUPERSEDED_BY_CURRENT_CVF_OWNER (20) or NO_NEW_VALUE (36); 18 V041-delta package entries are terminally REJECT_DIRECT_IMPORT_NO_OWNER after remediated per-row search -- 16 of 18 have a governed concept owner in CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md but NO_CURRENT_EXECUTABLE_OWNER; 39 review-artifacts/ entries are stale/corrupt dot-cvf runtime snapshots (REJECT_RAW_RUNTIME_STATE/REJECT_STALE_AUTHORITY); 6 untracked/ governance artifacts are SUPERSEDED by already-closed Core tranches |
 ---
 
