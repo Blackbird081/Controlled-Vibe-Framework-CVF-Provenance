@@ -305,6 +305,8 @@ Statement and Claim Boundary.
 
 The return must additionally carry these exact diagnostic surfaces:
 
+- `Delta Execution Claim Boundary Control Block`
+- `Epistemic Process Block`
 - `Rescan Intelligence Hardening`
 - `Corpus Completeness And Report Integrity`
 - `Finding-To-Governance Learning Disposition`
