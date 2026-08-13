@@ -21,7 +21,7 @@ Required first actions: capture HEAD/status; read baseline, packet, blocker retu
 Return contract: COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON with exact tests, hashes, status and no commit.
 ```
 
-dispatchBaseHead: `27f5a9c9ce531214d439942dc9e111efd5ced160`
+dispatchBaseHead: `fbe821ab0`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
@@ -39,7 +39,7 @@ fail-closed historical evidence.
 | Role | Responsibility |
 |---|---|
 | dispatcher | commits baseline, work order and grant v2 authority |
-| worker | exact two-path test/return; no commit |
+| worker | exact four-path test/return; no commit |
 | reviewer/closer | fresh adversarial review, finality and accepted commit |
 
 ## Required First Reads
@@ -50,7 +50,7 @@ repository owner source, owner-binding contract and existing owner tests.
 ## Pre-Flight Checks
 
 Capture HEAD/status, confirm v2 is committed, staging is empty, v1 remains
-unchanged, and the two-path worker manifest is exact.
+unchanged, and the four-path worker manifest is exact.
 
 ## Evidence Reuse And Encoding Plan
 
@@ -70,8 +70,8 @@ extractedTextAuthority: current committed Git bytes and executed local proof.
 
 ## Worker Autonomy / No-Question Rule
 
-Proceed inside exact two-path worker scope. Stop if production source, v1,
-provider/live, secrets, or any third path is required.
+Proceed inside exact four-path worker scope. Stop if production source, v1,
+provider/live, secrets, or any fifth path is required.
 
 ## Authority Chain
 
@@ -95,13 +95,13 @@ provider/live, secrets, or any third path is required.
 
 ## Allowed Scope
 
-Worker writes exactly the test and worker return paths in Required Artifact
+Worker writes exactly the three test and worker return paths in Required Artifact
 Manifest. Grant v2, baseline and this packet are dispatcher-owned committed
 inputs. Every other path is forbidden.
 
 ## Write Ownership
 
-Worker owns only the two Required Artifact Manifest paths. Dispatcher owns v2
+Worker owns only the four Required Artifact Manifest paths. Dispatcher owns v2
 and dispatch inputs. Reviewer owns completion, finality and commit.
 
 ## Source Verification Block
@@ -117,6 +117,8 @@ and dispatch inputs. Reviewer owns completion, finality and commit.
 | Path | Required at handoff | Purpose |
 |---|---|---|
 | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/repository-capability-owner.source.test.ts` | REQUIRED | v1/v2 bind, hash, reopen and replay proof |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-owner-binding.contract.test.ts` | REQUIRED | owner binder positive path moves to v2 while preserving v1 negative evidence |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.test.ts` | REQUIRED | certified-evidence positive path moves to v2 |
 | `docs/reviews/CVF_CADP_AI_T2A_AUTHORITY_RECONCILIATION_WORKER_RETURN_2026-08-13.md` | REQUIRED | worker evidence |
 
 ## Execution Plan
@@ -151,7 +153,7 @@ independent acceptance.
 
 ## Review Gate
 
-Independent reviewer reads the complete two-path diff, independently hashes
+Independent reviewer reads the complete four-path diff, independently hashes
 all v2 artifacts, probes v1/v2 from current HEAD and across reopen/replay, and
 reassesses T2/F11 consumability before resuming T3A.
 
@@ -199,10 +201,10 @@ workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
 | Field | Value |
 |---|---|
-| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind generic-worker-dispatch --batch-id CADP-AI-T2A-R1 --title "Authority Reconciliation" --date 2026-08-13 --base 27f5a9c9c --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind generic-worker-dispatch --batch-id CADP-AI-T2A-R1 --title "Authority Reconciliation" --date 2026-08-13 --base fbe821ab0 --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
 | generatedProfile | generic-worker-dispatch plus no-commit worker profile |
 | generatedSkeletonStatus | USED_AS_STARTING_POINT |
-| manualEditsAfterScaffold | two-path manifest, v1/v2 proof and reviewer contract |
+| manualEditsAfterScaffold | four-path manifest, v1/v2 proof and reviewer contract |
 | checkerReadAheadConfirmation | applicable checker sources inspected |
 | docOnlyNewFields | authority reconciliation decision |
 | claimBoundary | scaffold provenance only |
@@ -217,8 +219,8 @@ Contract source archive-qualified exception:
 | route | SINGLE_AGENT_SINGLE_ROLE |
 | rolePattern | worker then independent reviewer/closer |
 | phase | T2A authority reconciliation |
-| baseHeadFor(phase) | dispatch=`27f5a9c9c`; execution=`WORKER_MUST_CAPTURE_AT_START`; closure=`NOT_EXECUTED_YET` |
-| changedSetScope(phase) | exact two worker paths |
+| baseHeadFor(phase) | dispatch=`fbe821ab0`; execution=`WORKER_MUST_CAPTURE_AT_START`; closure=`NOT_EXECUTED_YET` |
+| changedSetScope(phase) | exact four worker paths |
 | traceScope(phase, actor) | hashes, binder, SQLite reopen/replay, tests and gates |
 | commitOwner(phase) | reviewer/closer only |
 | crossBatchIsolation | no T3A/provider/public/deploy/session mixing |
@@ -269,7 +271,7 @@ Dispatch impact: independent proof remains required.
 | Command or tool surface | Git blob hash, source reads, apply_patch |
 | Target paths | baseline, work order, grant v2 |
 | Allowed scope source | operator repair authorization |
-| Before status evidence | clean worktree at HEAD `27f5a9c9c` |
+| Before status evidence | clean worktree at HEAD `fbe821ab0` |
 | After status evidence | pending dispatch inputs |
 | Diff evidence | exact three dispatcher paths |
 | Approval boundary | dispatch only |
