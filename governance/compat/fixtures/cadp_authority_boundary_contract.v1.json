@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "cadp-authority-boundary-contract.v1",
+  "surfaces": [
+    {
+      "surfaceId": "T1_GUARD_CONTRACT",
+      "contractPath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.ts",
+      "packageRootPath": null,
+      "versionSymbol": "CADP_CONTRACT_VERSION",
+      "versionValue": "cvf.cadp.v1",
+      "falseAuthorityFields": [
+        "executionAuthorized",
+        "rawSecretsAllowed",
+        "duplicateCanonicalOwnerRequired",
+        "rawSecretsIncluded",
+        "distributionGrantsAssignment",
+        "distributionGrantsActivation",
+        "distributionGrantsExecution",
+        "rawSecretsRecorded"
+      ],
+      "requiredExportSymbols": [],
+      "requiredExportModule": null,
+      "forbiddenSeamTokens": [
+        "child_process",
+        "node:child_process",
+        "node:net",
+        "node:http",
+        "node:https",
+        "node:fs",
+        "fetch(",
+        "XMLHttpRequest",
+        "process.env"
+      ]
+    },
+    {
+      "surfaceId": "T3A_EXECUTION_PLANE_CONSUMER",
+      "contractPath": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/cadp.capability.consumer.contract.ts",
+      "packageRootPath": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/index.ts",
+      "versionSymbol": "CADP_CAPABILITY_CONSUMER_CONTRACT_VERSION",
+      "versionValue": "cvf.cadp.consumer.v1",
+      "falseAuthorityFields": [
+        "executionAuthorized"
+      ],
+      "requiredExportSymbols": [
+        "CADP_CAPABILITY_CONSUMER_CONTRACT_VERSION",
+        "evaluateCadpCapabilityConsumer"
+      ],
+      "requiredExportModule": "./cadp.capability.consumer.contract",
+      "forbiddenSeamTokens": [
+        "child_process",
+        "node:child_process",
+        "node:net",
+        "node:http",
+        "node:https",
+        "node:fs",
+        "fetch(",
+        "XMLHttpRequest",
+        "process.env"
+      ]
+    },
+    {
+      "surfaceId": "T3B_MODEL_GATEWAY_PROJECTION",
+      "contractPath": "EXTENSIONS/CVF_MODEL_GATEWAY/src/cadp.constraint.projection.contract.ts",
+      "packageRootPath": "EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts",
+      "versionSymbol": "CADP_CONSTRAINT_PROJECTION_CONTRACT_VERSION",
+      "versionValue": "cvf.cadp.constraintProjection.v1",
+      "falseAuthorityFields": [
+        "executionAuthorized",
+        "liveExecutionAuthorized",
+        "providerCallAuthorized",
+        "credentialResolutionAuthorized"
+      ],
+      "requiredExportSymbols": [
+        "CADP_CONSTRAINT_PROJECTION_CONTRACT_VERSION",
+        "evaluateCadpConstraintProjection"
+      ],
+      "requiredExportModule": "./cadp.constraint.projection.contract",
+      "forbiddenSeamTokens": [
+        "child_process",
+        "node:child_process",
+        "node:net",
+        "node:http",
+        "node:https",
+        "node:fs",
+        "fetch(",
+        "XMLHttpRequest",
+        "process.env"
+      ]
+    }
+  ]
+}

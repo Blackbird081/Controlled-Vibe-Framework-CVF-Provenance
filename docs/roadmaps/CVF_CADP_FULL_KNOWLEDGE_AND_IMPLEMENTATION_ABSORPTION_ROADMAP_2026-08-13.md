@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_T1_T2_T3A_T3B_ACCEPTED_BOUNDED_T4_T7_PARKED
+Status: T0_T1_T2_T3A_T3B_T4_ACCEPTED_BOUNDED_T5_T7_PARKED
 
 docType: roadmap
 
@@ -112,7 +112,7 @@ the preceding record, and no distribution or receipt may activate a capability.
 | T2 | bind assignments to governed work orders and observed execution | authenticated evidence owner binding; exact work-order binding contract; expiry/transport/resource/credential/invocation/retry reconciliation; negative fixtures | accepted T1; source-verified owner; explicit operator release | no caller-self-attested trust; no action outside admission/grant; replayable deterministic tests | ACCEPTED_BOUNDED_VIA_T2A |
 | T3A | integrate the first downstream internal consumer | Execution Plane non-executing eligibility adapter and narrow SQLite-state ignore hygiene | accepted T2A; fresh source-verified work order; operator `next` direction | consumer tests prove no authority widening, invalid-before-valid replay preservation, and no raw secrets | ACCEPTED_BOUNDED |
 | T3B | integrate Model Gateway constraint projection | provider-neutral SaaS constraint metadata only | accepted T3A; fresh Model Gateway source verification and operator release | no secret resolution, provider call, or execution authority | ACCEPTED_BOUNDED |
-| T4 | complete machine enforcement | schema fixtures, drift checker, negative corpus suite, package-boundary tests | repeated/accepted invariant need; checker GC-018 | checker detects every named violation without false authority claim | PARKED |
+| T4 | complete machine enforcement | schema fixtures, drift checker, negative corpus suite, package-boundary tests | repeated/accepted invariant need; checker GC-018 | checker detects every named violation without false authority claim | ACCEPTED_BOUNDED_STANDALONE_UNWIRED |
 | T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | PARKED_NOT_AUTHORIZED |
 | T6 | live compatibility proof | bounded real-provider/SaaS tests and receipts | credentials, cost ceiling, sandbox, live diagnostic and release work order | real provider evidence; no mocks for governance claim | PARKED_NOT_AUTHORIZED |
 | T7 | closure and public disposition | independent review, catalog/GAP projections, session sync, public export decision | all selected prior tranches accepted | zero unresolved selected-scope findings and explicit export disposition | PARKED |
@@ -261,23 +261,24 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 
 | Field | Disposition |
 |---|---|
-| claimScope | finding resolution roadmap and T1 local implementation state |
+| claimScope | finding resolution roadmap plus accepted bounded T1-T4 local implementation state |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
 | receiptEvidence | N/A with reason: no runtime receipt claim |
-| actionEvidence | ACTION_EVIDENCE_PRESENT: focused local tests and typecheck are recorded in the T1 worker return |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: T1-T3 package evidence plus T4 41-test static-checker suite and 8 independent probes |
 | invocationBoundary | local repository implementation and verification |
 | interceptionBoundary | no runtime/provider interception claim |
-| claimLanguage | T1 worker-complete pending review; future tranches remain parked |
+| claimLanguage | T1-T4 accepted bounded; T5-T7 remain parked |
 | forbiddenExpansion | no live/provider/adapter/public/deploy/production/commit claim |
 
 ## Next Allowed Move
 
 T3A and T3B are independently accepted for hermetic, non-executing internal
-projections. T3B adds only provider-neutral Model Gateway constraint metadata
-with four literal false authorization flags. Await explicit operator direction
-before any new tranche. T4-T7, provider/live, credential access, quota mutation,
-CLI/MCP, public sync, deployment, production, trusted-evidence readiness, and
-cross-runtime claims remain parked and unauthorized.
+projections. T4 is independently accepted for a standalone, read-only,
+fixture-driven lexical drift checker with no hook/autorun/CI wiring. Await
+explicit operator direction before any new tranche. T5-T7, provider/live,
+credential access, quota mutation, CLI/MCP, public sync, deployment,
+production, trusted-evidence readiness, and cross-runtime claims remain parked
+and unauthorized.
 
 ## Public Export Disposition
 
@@ -288,7 +289,7 @@ provenance; a later public-safe projection needs explicit public-sync review.
 
 ## Claim Boundary
 
-This roadmap records bounded T0/T1/T2/T3A/T3B acceptance.
+This roadmap records bounded T0/T1/T2/T3A/T3B/T4 acceptance.
 T3A proves only a hermetic pre-execution eligibility projection with literal
 `executionAuthorized: false`; F11 remains closed only within the accepted
 hermetic scope. T3B proves only a local provider-neutral constraint projection
