@@ -121,6 +121,7 @@ Allowed paths:
 - `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts`
 - `EXTENSIONS/CVF_GUARD_CONTRACT/src/package.boundary.test.ts`
 - `EXTENSIONS/CVF_GUARD_CONTRACT/package.json`
+- `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json`
 - the exact worker return path named above
 
 Forbidden paths:
@@ -140,7 +141,7 @@ not revert checkpoint commit `f4b99100e` or this dispatch authority.
 
 ## Write Ownership
 
-The worker owns only the eleven implementation/return paths listed under Allowed
+The worker owns only the twelve implementation/return paths listed under Allowed
 Scope. The dispatcher owns the baseline, work order, grant, receipt, roadmap
 and conditional reopen index. The reviewer owns completion/finality and commit.
 
@@ -274,6 +275,7 @@ pnpm --dir EXTENSIONS/CVF_GUARD_CONTRACT exec tsc --noEmit
 pnpm --dir EXTENSIONS/CVF_GUARD_CONTRACT exec vitest run --pool forks src/contracts/repository-capability-owner.source.test.ts src/contracts/capability-owner-binding.contract.test.ts src/contracts/capability-admission-distribution-profile.contract.test.ts src/contracts/contracts.phaseE-workflow-binding.test.ts src/contracts/contracts.phaseE-receipt-binding.test.ts src/package.boundary.test.ts
 pnpm --dir EXTENSIONS/CVF_GUARD_CONTRACT test
 python governance/compat/check_governed_file_size.py --enforce
+python governance/compat/check_system_chain_map_freshness.py
 git diff --check
 python governance/compat/run_worker_return_fast_gate.py
 git status --short --untracked-files=all
@@ -344,7 +346,7 @@ Contract source archive-qualified exception:
 | rolePattern | implementation worker followed by independent reviewer/closer |
 | phase | T2A owner-specific continuation |
 | baseHeadFor(phase) | dispatchBaseHead=`86e06ab84`; executionBaseHead=`WORKER_MUST_CAPTURE_AT_START`; closureBaseHead=`REVIEWER_TO_SET` |
-| changedSetScope(phase) | exact eleven-path maximum implementation manifest |
+| changedSetScope(phase) | exact twelve-path maximum implementation manifest |
 | traceScope(phase, actor) | local reads, patches, Git blob reads, SQLite temp state, compiler/tests, gates and diff evidence |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT; reviewer/closer only |
 | crossBatchIsolation | no T3/provider/public/deploy/session mixing |
