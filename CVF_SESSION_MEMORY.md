@@ -45,31 +45,36 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t2_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=implementation worker executes the committed T2 exact-manifest packet and returns uncommitted evidence for independent review; parked checkpoint=F11 acceptance, T3+, runtime/provider/live, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t2a_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator direction for the next tranche after CADP-AI-T2A/T2/F11 bounded closure; parked checkpoint=T3+, runtime/provider/live, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t2_dispatched_worker_must_not_commit`
+`cadp_ai_t2a_closed_pass_bounded`
 
-Current mode marker: `cadp_ai_t2_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t2_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized`
+Current mode marker: `cadp_ai_t2a_closed_pass_bounded`
+Current mode: `cadp_ai_t2a_closed_pass_bounded`
+Previous mode: `cadp_ai_t2_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t2_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t2a_closed_pass_bounded`
 
-CADP-AI-T2 is dispatched at `9f08655f3d755873ad15854843dd015c56e8d95d`
-under `WORKER_MUST_NOT_COMMIT`. The worker may execute only the exact 11-path
-maximum manifest, must capture execution base, run hermetic proof, create the
-required return and stop uncommitted for independent review. F11 remains open.
-Latest closed numbered LHW wave: `LHW24`.
+CADP-AI-T2A repository-owned capability evidence binding is independently
+reviewed and accepted `CLOSED_PASS_BOUNDED`. F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION
+and T2 are closed for the current hermetic no-provider no-public
+no-deployment scope only. Completion review:
+`docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_COMPLETION_2026-08-13.md`.
+Next allowed move is operator direction for the next tranche. Latest closed
+numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-F11 acceptance, T3+, runtime, provider/live, CLI/MCP, public sync, deployment,
-production and cross-runtime determinism claims remain parked. Prior unrelated
-checkpoints remain historical.
+T3+, runtime, provider/live, CLI/MCP, public sync, deployment, production and
+cross-runtime determinism claims remain parked. Two non-blocking residual
+follow-ups from T2A closure remain open: `logs/` (T2A's new SQLite
+runtime-state directory) has no `.gitignore` entry; the T2A work order lacks
+a Required Artifact Manifest heading. Prior unrelated checkpoints remain
+historical.
 
 The `broad external knowledge absorption` lane remains outside the current
 release. It is included in the `blocked work classes` unless the operator opens

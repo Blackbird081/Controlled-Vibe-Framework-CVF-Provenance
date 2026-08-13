@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP T2 Dispatched No-Commit Worker
+# CVF Agent Handoff V59 - CADP-AI-T2A Closed Pass Bounded
 
 Memory class: active-handoff
 
@@ -11,8 +11,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current Core material HEAD marker:
-  `e4358ff825565a7422899170d7498f45254a35f3`
+- Current Core material HEAD marker: `8a888b100c684ab9d5c313e8bf16da8c8911395f`
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
@@ -38,8 +37,6 @@ Status: ACTIVE
   `3a032e40bb83eeda1da8c40b817d70f75c7a094d`
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
-- Handoff-sync parent commit:
-  `e4358ff825565a7422899170d7498f45254a35f3`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
@@ -55,29 +52,32 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t2_dispatched_worker_must_not_commit`;
-active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=implementation
-worker executes the committed T2A owner-binding exact-manifest packet and returns uncommitted
-evidence; parked checkpoint=F11 acceptance, T3+, runtime/provider/live,
-CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t2a_closed_pass_bounded`; active
+handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator direction
+for the next tranche after CADP-AI-T2A/T2/F11 bounded closure; parked
+checkpoint=T3+, runtime/provider/live, CLI/MCP, public sync, deploy and
+production.
 
 ## Current Mode
 
-`cadp_ai_t2_dispatched_worker_must_not_commit`
+`cadp_ai_t2a_closed_pass_bounded`
 
 ## Purpose
 
-Record the committed CADP-AI-T2A no-commit worker dispatch without claiming F11
-closure, implementation success or runtime/provider authority.
+Record the independently reviewed and accepted CADP-AI-T2A repository-owned
+capability evidence binding closure. F11 and T2 are closed for the current
+hermetic no-provider no-public no-deployment scope only; no runtime/provider,
+public-sync, deployment, or production readiness claim is made.
 
 ## Scope / Target / Owner Boundary
 
-- CADP-R1 and CADP-AI-T1 are accepted only with bounded scope.
-- F11 remains `F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION`; cross-runtime
-  determinism is not proven.
-- T2 packet is committed; one worker may execute its exact manifest and must
-  stop uncommitted for independent review.
-- T3+, runtime/provider/live, public sync, deploy and production remain unopened.
+- CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded
+  scope.
+- F11 (`F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION`) is CLOSED_PASS_BOUNDED as
+  of CADP-AI-T2A's independent review; cross-runtime determinism is not
+  proven.
+- T3+, runtime/provider/live, public sync, deploy and production remain
+  unopened.
 
 ## Latest Work / Changes
 
@@ -89,18 +89,21 @@ closure, implementation success or runtime/provider authority.
 - Operator instructed `commit, mở T2`; T1 material commit is `a17051bcd`.
 - T2 dispatch passed pre-dispatch 76/76 and pre-commit 84/84; material commit
   is `9f08655f3d755873ad15854843dd015c56e8d95d`.
+- CADP-AI-T2A dispatched at `03444a17d`, repaired through `a635b49df`,
+  implemented a repository-owned committed-grant evidence seam, and passed
+  independent review with 38 adversarial probe assertions across 9 mandated
+  categories. Accepted `CLOSED_PASS_BOUNDED` for the current hermetic scope.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T2 dispatched under no-commit worker contract |
-| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_2026-08-13.md` |
-| baselineSha256 | `8a7f7f37c5fc2b33b7b0395cea22d6f2782668efce4da3e972a69c3d2b79fb18` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_2026-08-13.md` |
-| workOrderSha256 | `77b40cda3eb02a2539cf0a6f69788ed42ab1578a8f1724c02ce11aae7119ab30` |
-| workerReturnPath | `docs/reviews/CVF_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_WORKER_RETURN_2026-08-13.md` |
-| nextAuthorityRequirement | worker return plus independent adversarial review; worker must not commit |
+| authorityState | CADP-AI-T2A CLOSED_PASS_BOUNDED; F11 and T2 closed for the current hermetic scope |
+| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_2026-08-13.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_2026-08-13.md` |
+| workerReturnPath | `docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_WORKER_RETURN_2026-08-13.md` |
+| completionReviewPath | `docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_COMPLETION_2026-08-13.md` |
+| nextAuthorityRequirement | operator direction for the next tranche |
 
 ## Closure Evidence
 
@@ -146,10 +149,10 @@ closure, implementation success or runtime/provider authority.
 
 ## Next Allowed Move
 
-Execute the committed CADP-AI-T2 owner-binding packet as the implementation
-worker, change only its exact manifest, produce the required worker return,
-run all hermetic proof and stop uncommitted. F11 acceptance, T3+ and all
-runtime/provider/public lanes remain parked.
+CADP-AI-T2A is independently reviewed and accepted `CLOSED_PASS_BOUNDED`.
+F11 and T2 are closed for the current hermetic no-provider no-public
+no-deployment scope only. Next allowed move is operator direction for the
+next tranche. T3+ and all runtime/provider/public lanes remain parked.
 
 ## Active Boundary
 
@@ -180,7 +183,7 @@ Reason: the LRA-SA-T0 dispatch and continuity update concern private local
 retention evidence. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T2 Dispatch Session Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T2A Independent Review Closure Sync
 
 Protected paths:
 
@@ -188,32 +191,30 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/cadpAiT2ARepositoryOwnerBindingClosure20260813.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/cadpAiT1ClosureT2Release20260813.json`
-- `CVF_SESSION/state/entries/cadpAiT2Dispatch20260813.json`
-- `CVF_SESSION/state/entries/localRetentionSemanticAbsorptionT0Closure20260813.json`
-- `CVF_SESSION/state/entries/localRetentionSemanticAbsorptionT0Dispatch20260813.json`
-- `CVF_SESSION/state/entries/localRetentionArtifactT2T4Closure20260812.json`
-- `CVF_SESSION/state/entries/localRetentionArtifactT0Dispatch20260812.json`
-- `CVF_SESSION/state/entries/localRetentionArtifactT0Closure20260812.json`
-- `CVF_SESSION/state/entries/localRetentionArtifactT2Dispatch20260812.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit `commit, mở T2` instruction on 2026-08-13
-after the independently accepted bounded T1 result.
+Operator authorization: the T2A work order's own Reviewer Closure Conversion
+grants the independent reviewer/closer authority to commit accepted material
+and record closure once the full-diff review and independently authored
+adversarial probes accept F11 closure; this session-sync batch performs the
+Tranche Commit Choreography Standard's Step 3 (Session State Sync Batch),
+which no prior T2A-labeled commit performed.
 
-Authorized guard-maintenance scope: bind T2 dispatch commit
-`9f08655f3d755873ad15854843dd015c56e8d95d`, preserve F11 as open, record the
-no-commit implementation worker as the next move, and keep T3/runtime/provider/
-public and unrelated lanes parked.
+Authorized guard-maintenance scope: bind the CADP-AI-T2A independent review
+and closure, record F11 and T2 as `CLOSED_PASS_BOUNDED` for the current
+hermetic no-provider no-public no-deployment scope only, and keep
+T3/runtime/provider/public and unrelated lanes parked.
 
-Rollback boundary: revert this exact session-sync batch together; do not
-separate generated state from source fragments and do not alter material commit
-`9f08655f3d755873ad15854843dd015c56e8d95d` inside this sync batch.
+Rollback boundary: revert this exact session-sync batch together with the
+material implementation commit it accompanies; do not separate generated
+state from source fragments.
 
 ## Claim Boundary
 
-This handoff records the committed bounded T2 no-commit dispatch only. It does
-not close F11, prove cross-runtime determinism, accept worker output, or
+This handoff records the independently reviewed and accepted CADP-AI-T2A
+closure. F11 and T2 are closed for the current hermetic no-provider no-public
+no-deployment scope only. It does not prove cross-runtime determinism, or
 authorize runtime owners, provider/live behavior, public sync, deployment or
 production readiness.

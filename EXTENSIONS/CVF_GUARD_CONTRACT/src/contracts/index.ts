@@ -284,6 +284,7 @@ export type {
   CapabilityOwnerBindingIssueCode,
   CapabilityOwnerBindingIssue,
   CapabilityOwnerBindingResult,
+  CapabilityOwnerBindData,
   BoundArtifactType,
   CapabilityOwnerHandle,
   BoundArtifactProjection,
@@ -291,15 +292,9 @@ export type {
   CapabilityExecutionObservationInput,
 } from './capability-owner-binding.contract';
 
-// No mint/bind function is re-exported here, because none exists in
-// `capability-owner-binding.contract.ts` at all (round-3 re-review repair,
-// R01/R08/R10/R11): no function anywhere in that module's source, public
-// or private, accepts caller-supplied grant data and returns a trusted
-// handle, and no parallel/test-double implementation exists anywhere in
-// this repository that could substitute for one. See that module's own
-// doc comment for the full reasoning.
 export {
   CAPABILITY_OWNER_BINDING_CONTRACT_VERSION,
+  bindCommittedCapabilityOwnerGrant,
   isBoundCapabilityOwner,
   readBoundArtifact,
   readBoundGrantIdentity,

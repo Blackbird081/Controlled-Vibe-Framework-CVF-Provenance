@@ -12,25 +12,8 @@ import {
   validateCapabilityDistribution,
   validateCompatibilityEvidence,
 } from './capability-admission-distribution-profile.contract';
-import type { CapabilityOwnerHandle } from './capability-owner-binding.contract';
-// Round-2 re-review repair: the production owner-binding module
-// (`capability-owner-binding.contract.ts`) no longer contains any mint
-// function under any name - the independent review's round-2 amendment
-// found that even an unexported-from-the-barrel, `_TEST_ONLY`-suffixed
-// binder was still reachable by a direct module import and still turned
-// caller-supplied grant data into a genuine handle. There is now
-// structurally no way for this file, or any file, to obtain a
-// `CapabilityOwnerHandle` that production's `isBoundCapabilityOwner`
-// accepts: `validateCompatibilityEvidence` therefore fails closed with
-// `EVIDENCE_SOURCE_NOT_FOUND` for every rank>=2 evidence record and every
-// handle-shaped value any caller (including this test file) can construct,
-// unconditionally. This file's own former "genuine handle" fixture
-// (`boundOwnerFixture`, backed by the now-deleted production binder) is
-// removed; tests that used to compare a "real" handle against a forged one
-// now compare two different kinds of unreachable handle instead, since
-// neither production nor this test file has any way left to mint one that
-// satisfies production's `isBoundCapabilityOwner`.
-const UNREACHABLE_HANDLE_SHAPE = { contractVersion: 'cvf.cadp.ownerBinding.v2' } as unknown as CapabilityOwnerHandle;
+import { bindCommittedCapabilityOwnerGrant, type CapabilityOwnerHandle } from './capability-owner-binding.contract';
+const FORGED_HANDLE_SHAPE = { contractVersion: 'cvf.cadp.ownerBinding.v3' } as unknown as CapabilityOwnerHandle;
 
 const admission: CapabilityAdmissionRecord = {
   admissionId: 'admission-1', capabilityId: 'cap-1', capabilityVersion: '1.0.0',
@@ -85,38 +68,42 @@ describe('CVF capability admission/distribution profile', () => {
       .toEqual(expect.arrayContaining(['INVALID_FIELD', 'DUPLICATE_VALUE']));
   });
 
-  it('T2 round-2: rank>=2 evidence with no genuine owner handle fails closed with EVIDENCE_SOURCE_NOT_FOUND (F11)', () => {
+  it('rank>=2 evidence without a repository-bound owner fails closed with EVIDENCE_SOURCE_NOT_FOUND', () => {
     const evidence: CompatibilityEvidenceRecord = {
       capabilityId: 'cap-1', evidenceLevel: 'REVIEWED', receiptRefs: ['receipt-1'],
       workOrderRef: 'wo-1', reviewRef: 'review-1', passingActionIds: ['read'],
       expectedEvidenceOwner: 'CVF_GUARD_CONTRACT', rawSecretsRecorded: false,
     };
-    // `{}` is exactly the shape a real caller would have to supply, since
-    // no public function anywhere in this package can produce a genuine
-    // `CapabilityOwnerHandle` - this is the honest permanently-unreachable
-    // state, not a caller-influenced mismatch.
     const result = validateCompatibilityEvidence(evidence, {} as never);
     expect(result.valid).toBe(false);
     expect(result.issues.some(({ code }) => code === 'EVIDENCE_SOURCE_NOT_FOUND')).toBe(true);
   });
 
-  it('ROUND-2: high-rank evidence can NEVER be accepted through this module, because production has no mint function of any kind (F11 still open)', () => {
-    // Round-1's test at this position asserted the opposite of what this
-    // asserts now: it bound a "genuine" handle through the (since deleted)
-    // production binder and expected `valid: true`. The round-2 independent
-    // review rejected that binder's existence in production source at all,
-    // so there is no longer any handle-shaped value - genuine or forged -
-    // that this contract can accept for rank>=2 evidence. This test proves
-    // the negative permanently: no matter what evidence fields are
-    // supplied, a rank>=2 record always fails closed.
+  it('rejects high-rank evidence paired with a caller-forged handle shape', () => {
     const evidence: CompatibilityEvidenceRecord = {
       capabilityId: 'cap-1', evidenceLevel: 'REVIEWED', receiptRefs: ['receipt-1'],
       workOrderRef: 'wo-1', reviewRef: 'review-1', passingActionIds: ['read'],
       expectedEvidenceOwner: 'CVF_GUARD_CONTRACT', rawSecretsRecorded: false,
     };
-    const result = validateCompatibilityEvidence(evidence, UNREACHABLE_HANDLE_SHAPE);
+    const result = validateCompatibilityEvidence(evidence, FORGED_HANDLE_SHAPE);
     expect(result.valid).toBe(false);
     expect(result.issues.some(({ code }) => code === 'EVIDENCE_SOURCE_NOT_FOUND')).toBe(true);
+  });
+
+  it('T2A accepts certified evidence only through the committed repository owner handle', () => {
+    const binding = bindCommittedCapabilityOwnerGrant('governance/capability-grants/cadp-ai-t2a-owner-binding-grant.v1.json');
+    expect(binding.valid).toBe(true);
+    const evidence: CompatibilityEvidenceRecord = {
+      capabilityId: 'cvf.cadp.owner-bound-evidence', evidenceLevel: 'CERTIFIED_BOUNDED',
+      receiptRefs: ['docs/reviews/evidence/cadp-ai-t2-fail-closed-checkpoint-receipt-2026-08-13.json'],
+      workOrderRef: 'docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_2026-08-13.md',
+      reviewRef: 'docs/reviews/CVF_CADP_AI_T2_INDEPENDENT_ADVERSARIAL_REVIEW_2026-08-13.md',
+      freezeRef: 'docs/baselines/CVF_GC018_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_2026-08-13.md',
+      passingActionIds: ['validateCompatibilityEvidence'],
+      expectedEvidenceOwner: 'CVF_GOVERNANCE_REPOSITORY', rawSecretsRecorded: false,
+    };
+    expect(validateCompatibilityEvidence(evidence, binding.data.handle!).valid).toBe(true);
+    expect(validateCompatibilityEvidence(evidence, { ...binding.data.handle! } as CapabilityOwnerHandle).valid).toBe(false);
   });
 
   it('rejects an invalid evidence level and raw-secret evidence (R02/R05)', () => {
@@ -929,18 +916,18 @@ describe('CVF capability admission/distribution profile', () => {
     expect(validateCompatibilityEvidence(evidence, forgedHandle).valid).toBe(false);
   });
 
-  it('ROUND-2: a spread copy of the unreachable handle shape is rejected the same as the shape itself - no handle-shaped value is ever distinguishable as "more genuine" (F11 still open)', () => {
-    const copiedHandle = { ...UNREACHABLE_HANDLE_SHAPE } as CapabilityOwnerHandle;
+  it('rejects a spread copy of a handle shape', () => {
+    const copiedHandle = { ...FORGED_HANDLE_SHAPE } as CapabilityOwnerHandle;
     const evidence: CompatibilityEvidenceRecord = {
       capabilityId: 'cap-1', evidenceLevel: 'RECEIPT_BACKED', receiptRefs: ['receipt-1'],
       passingActionIds: [], expectedEvidenceOwner: 'CVF_GUARD_CONTRACT', rawSecretsRecorded: false,
     };
-    expect(validateCompatibilityEvidence(evidence, UNREACHABLE_HANDLE_SHAPE).valid).toBe(false);
+    expect(validateCompatibilityEvidence(evidence, FORGED_HANDLE_SHAPE).valid).toBe(false);
     expect(validateCompatibilityEvidence(evidence, copiedHandle).valid).toBe(false);
   });
 
-  it('ROUND-2: a JSON round trip of the unreachable handle shape is rejected the same as the shape itself (F11 still open)', () => {
-    const roundTripped = JSON.parse(JSON.stringify(UNREACHABLE_HANDLE_SHAPE)) as CapabilityOwnerHandle;
+  it('rejects a JSON round trip of a handle shape', () => {
+    const roundTripped = JSON.parse(JSON.stringify(FORGED_HANDLE_SHAPE)) as CapabilityOwnerHandle;
     const evidence: CompatibilityEvidenceRecord = {
       capabilityId: 'cap-1', evidenceLevel: 'RECEIPT_BACKED', receiptRefs: ['receipt-1'],
       passingActionIds: [], expectedEvidenceOwner: 'CVF_GUARD_CONTRACT', rawSecretsRecorded: false,
@@ -948,12 +935,13 @@ describe('CVF capability admission/distribution profile', () => {
     expect(validateCompatibilityEvidence(evidence, roundTripped).valid).toBe(false);
   });
 
-  it('ROUND-2 EXPLOIT PROBE 1 (R01/R08): direct import of the production owner-binding module from this contract-level test file also finds no mint function reachable', () => {
+  it('direct module exports contain no generic caller-data owner binder', () => {
     return import('./capability-owner-binding.contract').then((productionModule) => {
       const moduleExports = productionModule as unknown as Record<string, unknown>;
       expect(moduleExports.bindNamedCapabilityOwner).toBeUndefined();
       expect(moduleExports.bindNamedCapabilityOwner_TEST_ONLY_INTERNAL_BINDER).toBeUndefined();
       expect(moduleExports.bindNamedCapabilityOwnerForTest).toBeUndefined();
+      expect((moduleExports.bindCommittedCapabilityOwnerGrant as (value: unknown) => { valid: boolean })({}).valid).toBe(false);
     });
   });
 });

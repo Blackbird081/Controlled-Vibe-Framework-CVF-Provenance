@@ -86,6 +86,11 @@ export {
   getActiveWorkflowSteps,
 } from './contracts/workflow-binding.contract';
 
+// CADP T2A deliberate root authority API. It accepts only a committed grant
+// path; caller-authored grant objects are not part of the input surface.
+export type { CapabilityOwnerHandle, CapabilityOwnerBindingResult } from './contracts/capability-owner-binding.contract';
+export { bindCommittedCapabilityOwnerGrant } from './contracts/capability-owner-binding.contract';
+
 // Phase E receipt binding contract
 export type {
   ReceiptBindingDisposition,

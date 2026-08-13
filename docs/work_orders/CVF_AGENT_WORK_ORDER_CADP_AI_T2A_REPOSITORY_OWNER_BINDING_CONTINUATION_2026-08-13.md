@@ -1,10 +1,16 @@
 # CVF Agent Work Order - CADP-AI-T2A Repository-Owned Capability Evidence Binding
 
 Memory class: governed-worker-dispatch
-Status: DISPATCH_READY
+Status: CLOSED
 docType: work-order
 Date: 2026-08-13
 Batch ID: CADP-AI-T2A
+
+Closure disposition: CLOSED_PASS_BOUNDED at independent reviewer/closer
+material commit. See
+`docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_COMPLETION_2026-08-13.md`
+for full closure evidence.
+
 ## Dispatch Prompt Envelope
 
 Role: implementation worker for CADP-AI-T2A.
@@ -195,6 +201,24 @@ and conditional reopen index. The reviewer owns completion/finality and commit.
 6. Run all required commands after the final code edit.
 7. Create the exact worker return and stop uncommitted.
 
+## Required Artifact Manifest
+
+| Path | Required at handoff | Present at closure |
+|---|---|---|
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-owner-binding.contract.ts` | yes | yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-owner-binding.contract.test.ts` | yes | yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/repository-capability-owner.source.ts` | yes | yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/repository-capability-owner.source.test.ts` | yes | yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.ts` | yes | yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.test.ts` | yes | yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts` | yes | yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` | yes | yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/package.boundary.test.ts` | yes | yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/package.json` | yes | yes |
+| `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | yes | yes |
+| `docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_WORKER_RETURN_2026-08-13.md` | yes | yes |
+| `docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_COMPLETION_2026-08-13.md` | yes (reviewer-added) | yes |
+
 ## Work-Order Fulfillment Manifest
 
 | Artifact | Required worker action |
@@ -208,24 +232,26 @@ and conditional reopen index. The reviewer owns completion/finality and commit.
 
 ## Acceptance Criteria
 
-- [ ] committed grant binds and produces an opaque handle
-- [ ] caller-created grant data has no accepted input position
-- [ ] wrong/uncommitted/tampered/path-traversal grants fail closed
-- [ ] copied, serialized, forged, proxy and cross-module values fail closed
-- [ ] artifact bytes and SHA-256 pins are verified from `HEAD`
-- [ ] versions and all constraint fields reconcile exactly
-- [ ] trace and receipt linkage are concrete and owner-bound
-- [ ] invocation/retry/duplicate ceilings persist across reopen
-- [ ] raw secret material is rejected and never emitted
-- [ ] focused/full tests, typecheck and governance gates pass
-- [ ] independent reviewer accepts F11 closure before T2 is closed
+- [x] committed grant binds and produces an opaque handle
+- [x] caller-created grant data has no accepted input position
+- [x] wrong/uncommitted/tampered/path-traversal grants fail closed
+- [x] copied, serialized, forged, proxy and cross-module values fail closed
+- [x] artifact bytes and SHA-256 pins are verified from `HEAD`
+- [x] versions and all constraint fields reconcile exactly
+- [x] trace and receipt linkage are concrete and owner-bound
+- [x] invocation/retry/duplicate ceilings persist across reopen
+- [x] raw secret material is rejected and never emitted
+- [x] focused/full tests, typecheck and governance gates pass
+- [x] independent reviewer accepts F11 closure before T2 is closed
 
-Fail conditions:
+Fail conditions (closure disposition: NONE_OCCURRED for every condition below,
+confirmed by the independent completion review's 38 adversarial probe
+results):
 
-- [ ] any API accepts a complete caller-authored grant or artifact index
-- [ ] any test-only authority is imported by production or used as proof
-- [ ] any green gate is described as independent acceptance
-- [ ] any provider, deployment or production claim lacks its required proof
+- CONDITION_DID_NOT_OCCUR: any API accepts a complete caller-authored grant or artifact index
+- CONDITION_DID_NOT_OCCUR: any test-only authority is imported by production or used as proof
+- CONDITION_DID_NOT_OCCUR: any green gate is described as independent acceptance
+- CONDITION_DID_NOT_OCCUR: any provider, deployment or production claim lacks its required proof
 
 ## Evidence Requirements
 
@@ -238,21 +264,49 @@ Fail conditions:
   alternate repository, hash mismatch, forged handles and raw-secret input;
 - no live receipt unless a provider call is actually introduced.
 
+## Acceptance Receipt Assertion Matrix
+
+See the independent completion review's own
+`## Acceptance Receipt Assertion Matrix` for the full required-value,
+observed-value, and status table:
+`docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_COMPLETION_2026-08-13.md`.
+
 ## Review Gate
 
 Closure requires an independent reviewer to inspect the entire material diff,
 author direct-import/alternate-repository/replay-reset probes, and accept F11
 closure. Worker-authored tests and green governance gates are insufficient.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED` above | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_COMPLETION_2026-08-13.md` | full independent review, F11 disposition, adversarial probe results | PASS |
+| Roadmap state | `docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md` | roadmap row for this tranche was already recorded at dispatch time | BLOCKED with reason: roadmap-row edit is outside this closure's twelve-path implementation Allowed Scope |
+| Registry JSON | this tranche introduces no corpus, classification, readiness, or search/filter registry state | this tranche has zero registry JSON files to reference | BLOCKED with reason: not applicable to this implementation's subject matter |
+| Registry Markdown | this tranche introduces zero registry Markdown counterparts | this tranche has zero registry Markdown files to reference | BLOCKED with reason: not applicable to this implementation's subject matter |
+| External evidence digest | all evidence is repository-local | no evidence outside this repository's own tracked paths is cited | N/A with reason: this closure has zero evidence originating outside this repository's own tracked paths |
+| System loop interlock | this closure does not feed a downstream automated loop | terminal governance disposition | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V59_2026-08-11.md` | mode rebound to `cadp_ai_t2a_closed_pass_bounded`; `check_active_session_state.py --enforce` COMPLIANT | PASS |
+
 ## Closure Checklist
 
-- [ ] all acceptance criteria satisfied
-- [ ] exact changed set is within manifest
-- [ ] worker return fast gate passes after final edit
-- [ ] independent reviewer disposition exists
-- [ ] material commit is reviewer-owned
-- [ ] committed-range pre-closure gate passes
-- [ ] roadmap, reopen index and continuity state are reconciled
+- [x] all acceptance criteria satisfied
+- [x] exact changed set is within manifest
+- [x] worker return fast gate passes after final edit
+- [x] independent reviewer disposition exists
+- [x] material commit is reviewer-owned
+- [x] committed-range pre-closure gate passes
+- [x] session continuity state is reconciled (mode, front door, bootstrap
+      read model, and active handoff `currentAuthority` all rebound to
+      T2A closure)
+
+Roadmap-row and conditional-reopen-index refresh disposition:
+BLOCKED_WITH_REASON - outside this closure's twelve-path implementation
+Allowed Scope; deferred to a separately authorized roadmap-hygiene batch;
+see the completion review's Machine Closure Package for the full
+disposition.
 
 ## Return-To-Orchestrator Conditions
 

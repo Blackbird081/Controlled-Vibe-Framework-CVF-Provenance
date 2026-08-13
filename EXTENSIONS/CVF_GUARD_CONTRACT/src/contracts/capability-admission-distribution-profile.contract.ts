@@ -11,28 +11,16 @@ import { isProxy } from 'node:util/types';
 import {
   isBoundCapabilityOwner,
   readBoundArtifact,
+  readBoundGrantIdentity,
   type BoundArtifactType,
   type CapabilityOwnerHandle,
 } from './capability-owner-binding.contract';
 
 /**
- * `UNVERIFIABLE_OWNER_HANDLE` is a documentation-only sentinel: round-2
- * re-review repair - `capability-owner-binding.contract.ts` no longer
- * contains any mint function of any kind, under any name, gated or
- * ungated, reachable by any import path (see that file's own doc comment
- * for why the round-1 "unexported internal binder" shape was still an
- * executable exploit reachable by direct module import). No value of type
- * `CapabilityOwnerHandle` can be constructed by any real caller of this
- * package, or by this file, or by any test file, through production code.
- * Any value a real caller supplies for `validateCompatibilityEvidence`'s
- * `ownerHandle` parameter is therefore, by construction, never a genuine
- * bound owner; `isBoundCapabilityOwner` unconditionally rejects it, and the
- * high-rank evidence path fails closed with `EVIDENCE_SOURCE_NOT_FOUND`
- * (`BLOCKED_SOURCE_NOT_FOUND` per the governing T2 baseline's required
- * fail-closed disposition) for every real caller, permanently, not merely
- * by convention. This is the honest, final T2 state: `BLOCKED_SOURCE_NOT_
- * FOUND`, not `COMPLETE_PENDING_REVIEW`, because no authenticated owner
- * seam exists in this hermetic package's currently authorized scope.
+ * T2A replaces caller-supplied evidence indexes with an opaque owner handle.
+ * The only production binder accepts a normalized repository grant path and
+ * independently reads the grant plus its pinned artifacts from committed
+ * `HEAD`; no caller-authored grant object or artifact map is accepted.
  */
 
 export const CADP_CONTRACT_VERSION = 'cvf.cadp.v1' as const;
@@ -137,29 +125,10 @@ export type CompatibilityEvidenceLevel =
 export type CompatibilityArtifactType = BoundArtifactType;
 
 /**
- * T2 round-2 re-review status for F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION:
- * this contract still does not accept a caller-suppliable
- * `CompatibilityEvidenceIndex` plain-object map, and now additionally
- * cannot accept ANY path that mints a genuine owner handle from caller
- * data, because `capability-owner-binding.contract.ts` contains no mint
- * function of any kind - not hidden, not unexported, not gated: deleted.
- * A plain object, cast value, spread copy, or JSON round trip that merely
- * looks like a handle is rejected by `isBoundCapabilityOwner`'s
- * module-private `WeakSet` check before any of its fields are ever read -
- * and because no real caller, and no test file, and no other production
- * file can ever obtain a genuine handle either, high-rank evidence
- * (`RECEIPT_BACKED` and above) is permanently unreachable through this
- * production module: this function fails closed with
- * `EVIDENCE_SOURCE_NOT_FOUND` for every real caller, unconditionally,
- * rather than accepting any caller-influenced trust path. This is the
- * honest, final T2 state - `BLOCKED_SOURCE_NOT_FOUND`, not
- * `COMPLETE_PENDING_REVIEW` - because no authenticated owner seam is
- * reachable from this hermetic, no-filesystem/no-network/no-database/
- * no-credential package, and this repair round does not defer that
- * acceptance item to T3 while claiming T2 is otherwise complete. F11
- * remains open pending independent review and any future, separately
- * authorized T3+ source-verified owner registry; this file must never
- * describe F11 as closed.
+ * High-rank evidence is accepted only when every required reference resolves
+ * through a repository-verified opaque handle and the committed grant's
+ * capability identity matches this record. Independent review, rather than
+ * this implementation comment, owns the final F11 closure disposition.
  */
 export interface CompatibilityEvidenceRecord {
   readonly capabilityId: string;
@@ -636,22 +605,15 @@ export function validateCompatibilityEvidence(
   if (rank >= 3 && passingActionIds.length === 0) issues.push(issue('EVIDENCE_MISSING', '$.passingActionIds', 'Action-tested evidence requires a passing action.'));
   if (rank >= 4) required.push([workOrderRef, 'work_order'], [reviewRef, 'review']);
   if (rank >= 5) required.push([freezeRef, 'freeze']);
-  // T2 round-2 re-review fail-closed rule: `isBoundCapabilityOwner` is a
-  // `WeakSet` membership check that no caller-built plain object, spread
-  // copy, cast, or JSON round trip can satisfy, and - because the
-  // owner-binding module contains no mint function of any kind, gated or
-  // ungated, exported or unexported - no genuine bound owner is reachable
-  // by any real caller of this package, ever, through this production
-  // module. Any required artifact therefore fails closed with the explicit
-  // `EVIDENCE_SOURCE_NOT_FOUND` disposition (`BLOCKED_SOURCE_NOT_FOUND` per
-  // the governing T2 baseline) rather than the generic `EVIDENCE_UNTRUSTED`
-  // code, so a reader of the issue list can distinguish "no authenticated
-  // owner seam exists in this scope" from an ordinary mismatch against a
-  // real owner. This disposition is unconditional and permanent, not a
-  // temporary gap awaiting T3+ wiring while T2 itself claims completion.
   const ownerIsBound = isBoundCapabilityOwner(ownerHandle);
   if (required.length > 0 && !ownerIsBound) {
-    issues.push(issue('EVIDENCE_SOURCE_NOT_FOUND', '$.evidence', 'BLOCKED_SOURCE_NOT_FOUND: no authenticated capability owner seam is reachable from this hermetic package; receipt/work_order/review/freeze evidence is unreachable until a separately authorized T3+ source-verified owner registry exists.'));
+    issues.push(issue('EVIDENCE_SOURCE_NOT_FOUND', '$.evidence', 'No repository-verified capability owner handle was supplied.'));
+  }
+  if (required.length > 0 && ownerIsBound) {
+    const identity = readBoundGrantIdentity(ownerHandle);
+    if (!identity || identity.capabilityId !== record.capabilityId) {
+      issues.push(issue('SOURCE_UNVERIFIED', '$.capabilityId', 'Evidence capability does not match the committed owner grant.'));
+    }
   }
   for (const [ref, artifactType] of required) {
     if (!ref) {

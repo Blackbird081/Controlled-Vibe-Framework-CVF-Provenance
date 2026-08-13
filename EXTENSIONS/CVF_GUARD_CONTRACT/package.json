@@ -29,7 +29,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "test": "vitest run",
+    "test": "vitest run --pool forks",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "check": "tsc --noEmit"

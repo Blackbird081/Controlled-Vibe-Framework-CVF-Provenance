@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_2026-08-13.md",
-    "baselineSha256": "8a7f7f37c5fc2b33b7b0395cea22d6f2782668efce4da3e972a69c3d2b79fb18",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_2026-08-13.md",
-    "workOrderSha256": "77b40cda3eb02a2539cf0a6f69788ed42ab1578a8f1724c02ce11aae7119ab30"
+    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_2026-08-13.md",
+    "baselineSha256": "b3bf7631bbdfd75ce2e598f69b2dfd6363b6ae8319e635aef12085c3a58ea0ac",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_2026-08-13.md",
+    "workOrderSha256": "f346cc15259d23d53fd1c601eb9c602ca3a2e7b9585e1a9b0bb911c72fe09854"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cadp_ai_t2_dispatched_worker_must_not_commit",
-  "previousMode": "cadp_ai_t1_accepted_bounded_t2_packet_authoring_authorized",
+  "currentMode": "cadp_ai_t2a_closed_pass_bounded",
+  "previousMode": "cadp_ai_t2_dispatched_worker_must_not_commit",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
