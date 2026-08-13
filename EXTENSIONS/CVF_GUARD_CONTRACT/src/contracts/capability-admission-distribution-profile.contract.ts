@@ -8,6 +8,32 @@
 
 import { createHash } from 'node:crypto';
 import { isProxy } from 'node:util/types';
+import {
+  isBoundCapabilityOwner,
+  readBoundArtifact,
+  type BoundArtifactType,
+  type CapabilityOwnerHandle,
+} from './capability-owner-binding.contract';
+
+/**
+ * `UNVERIFIABLE_OWNER_HANDLE` is a documentation-only sentinel: round-2
+ * re-review repair - `capability-owner-binding.contract.ts` no longer
+ * contains any mint function of any kind, under any name, gated or
+ * ungated, reachable by any import path (see that file's own doc comment
+ * for why the round-1 "unexported internal binder" shape was still an
+ * executable exploit reachable by direct module import). No value of type
+ * `CapabilityOwnerHandle` can be constructed by any real caller of this
+ * package, or by this file, or by any test file, through production code.
+ * Any value a real caller supplies for `validateCompatibilityEvidence`'s
+ * `ownerHandle` parameter is therefore, by construction, never a genuine
+ * bound owner; `isBoundCapabilityOwner` unconditionally rejects it, and the
+ * high-rank evidence path fails closed with `EVIDENCE_SOURCE_NOT_FOUND`
+ * (`BLOCKED_SOURCE_NOT_FOUND` per the governing T2 baseline's required
+ * fail-closed disposition) for every real caller, permanently, not merely
+ * by convention. This is the honest, final T2 state: `BLOCKED_SOURCE_NOT_
+ * FOUND`, not `COMPLETE_PENDING_REVIEW`, because no authenticated owner
+ * seam exists in this hermetic package's currently authorized scope.
+ */
 
 export const CADP_CONTRACT_VERSION = 'cvf.cadp.v1' as const;
 
@@ -27,6 +53,7 @@ export type CadpIssueCode =
   | 'EVIDENCE_MISSING'
   | 'EVIDENCE_UNTRUSTED'
   | 'EVIDENCE_OWNER_MISMATCH'
+  | 'EVIDENCE_SOURCE_NOT_FOUND'
   | 'PRIVATE_PROVENANCE_EXPORT'
   | 'MALFORMED_INPUT_SHAPE';
 
@@ -100,16 +127,40 @@ export type CompatibilityEvidenceLevel =
   | 'REVIEWED'
   | 'CERTIFIED_BOUNDED';
 
-export type CompatibilityArtifactType = 'receipt' | 'work_order' | 'review' | 'freeze';
+/**
+ * `CompatibilityArtifactType` re-exports the owner-binding module's closed
+ * artifact-class union so this file's public API keeps a stable name for
+ * consumers, while the actual trust decision for any given `ref` is made
+ * exclusively by `capability-owner-binding.contract.ts`'s
+ * `readBoundArtifact`, never by a caller-suppliable index (see F11 below).
+ */
+export type CompatibilityArtifactType = BoundArtifactType;
 
-export interface CompatibilityEvidenceArtifact {
-  readonly ref: string;
-  readonly artifactType: CompatibilityArtifactType;
-  readonly owner: string;
-  readonly integrityVerified: boolean;
-  readonly authoritative: boolean;
-}
-
+/**
+ * T2 round-2 re-review status for F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION:
+ * this contract still does not accept a caller-suppliable
+ * `CompatibilityEvidenceIndex` plain-object map, and now additionally
+ * cannot accept ANY path that mints a genuine owner handle from caller
+ * data, because `capability-owner-binding.contract.ts` contains no mint
+ * function of any kind - not hidden, not unexported, not gated: deleted.
+ * A plain object, cast value, spread copy, or JSON round trip that merely
+ * looks like a handle is rejected by `isBoundCapabilityOwner`'s
+ * module-private `WeakSet` check before any of its fields are ever read -
+ * and because no real caller, and no test file, and no other production
+ * file can ever obtain a genuine handle either, high-rank evidence
+ * (`RECEIPT_BACKED` and above) is permanently unreachable through this
+ * production module: this function fails closed with
+ * `EVIDENCE_SOURCE_NOT_FOUND` for every real caller, unconditionally,
+ * rather than accepting any caller-influenced trust path. This is the
+ * honest, final T2 state - `BLOCKED_SOURCE_NOT_FOUND`, not
+ * `COMPLETE_PENDING_REVIEW` - because no authenticated owner seam is
+ * reachable from this hermetic, no-filesystem/no-network/no-database/
+ * no-credential package, and this repair round does not defer that
+ * acceptance item to T3 while claiming T2 is otherwise complete. F11
+ * remains open pending independent review and any future, separately
+ * authorized T3+ source-verified owner registry; this file must never
+ * describe F11 as closed.
+ */
 export interface CompatibilityEvidenceRecord {
   readonly capabilityId: string;
   readonly evidenceLevel: CompatibilityEvidenceLevel;
@@ -121,8 +172,6 @@ export interface CompatibilityEvidenceRecord {
   readonly expectedEvidenceOwner: string;
   readonly rawSecretsRecorded: false;
 }
-
-export type CompatibilityEvidenceIndex = Readonly<Record<string, CompatibilityEvidenceArtifact>>;
 
 const EVIDENCE_LEVELS: readonly CompatibilityEvidenceLevel[] = [
   'DECLARED',
@@ -548,39 +597,9 @@ export function validateCapabilityDistribution(
   return { valid: issues.length === 0, issues, data: { activationGranted: false, executionAuthorized: false } };
 }
 
-function readTrustedArtifact(
-  trustedIndex: unknown,
-  ref: string,
-): { readonly ref: string; readonly artifactType: string; readonly owner: string; readonly integrityVerified: boolean; readonly authoritative: boolean } | undefined {
-  const entryField = ownDataField(trustedIndex, ref);
-  if (!entryField.present) return undefined;
-  const artifact = entryField.value;
-  const refField = ownDataField(artifact, 'ref');
-  const artifactTypeField = ownDataField(artifact, 'artifactType');
-  const ownerField = ownDataField(artifact, 'owner');
-  const integrityField = ownDataField(artifact, 'integrityVerified');
-  const authoritativeField = ownDataField(artifact, 'authoritative');
-  if (
-    !refField.present || typeof refField.value !== 'string' ||
-    !artifactTypeField.present || typeof artifactTypeField.value !== 'string' ||
-    !ownerField.present || typeof ownerField.value !== 'string' ||
-    !integrityField.present || typeof integrityField.value !== 'boolean' ||
-    !authoritativeField.present || typeof authoritativeField.value !== 'boolean'
-  ) {
-    return undefined;
-  }
-  return {
-    ref: refField.value,
-    artifactType: artifactTypeField.value,
-    owner: ownerField.value,
-    integrityVerified: integrityField.value,
-    authoritative: authoritativeField.value,
-  };
-}
-
 export function validateCompatibilityEvidence(
   record: CompatibilityEvidenceRecord,
-  trustedIndex: CompatibilityEvidenceIndex,
+  ownerHandle: CapabilityOwnerHandle,
 ): CadpValidationResult<{ readonly evidenceRank: number }> {
   const issues: CadpIssue[] = [];
   requireText(record, 'capabilityId', '$.capabilityId', issues);
@@ -617,14 +636,32 @@ export function validateCompatibilityEvidence(
   if (rank >= 3 && passingActionIds.length === 0) issues.push(issue('EVIDENCE_MISSING', '$.passingActionIds', 'Action-tested evidence requires a passing action.'));
   if (rank >= 4) required.push([workOrderRef, 'work_order'], [reviewRef, 'review']);
   if (rank >= 5) required.push([freezeRef, 'freeze']);
+  // T2 round-2 re-review fail-closed rule: `isBoundCapabilityOwner` is a
+  // `WeakSet` membership check that no caller-built plain object, spread
+  // copy, cast, or JSON round trip can satisfy, and - because the
+  // owner-binding module contains no mint function of any kind, gated or
+  // ungated, exported or unexported - no genuine bound owner is reachable
+  // by any real caller of this package, ever, through this production
+  // module. Any required artifact therefore fails closed with the explicit
+  // `EVIDENCE_SOURCE_NOT_FOUND` disposition (`BLOCKED_SOURCE_NOT_FOUND` per
+  // the governing T2 baseline) rather than the generic `EVIDENCE_UNTRUSTED`
+  // code, so a reader of the issue list can distinguish "no authenticated
+  // owner seam exists in this scope" from an ordinary mismatch against a
+  // real owner. This disposition is unconditional and permanent, not a
+  // temporary gap awaiting T3+ wiring while T2 itself claims completion.
+  const ownerIsBound = isBoundCapabilityOwner(ownerHandle);
+  if (required.length > 0 && !ownerIsBound) {
+    issues.push(issue('EVIDENCE_SOURCE_NOT_FOUND', '$.evidence', 'BLOCKED_SOURCE_NOT_FOUND: no authenticated capability owner seam is reachable from this hermetic package; receipt/work_order/review/freeze evidence is unreachable until a separately authorized T3+ source-verified owner registry exists.'));
+  }
   for (const [ref, artifactType] of required) {
     if (!ref) {
       issues.push(issue('EVIDENCE_MISSING', '$.evidence', `${artifactType} evidence is required.`));
       continue;
     }
-    const artifact = readTrustedArtifact(trustedIndex, ref);
-    if (!artifact || artifact.ref !== ref || artifact.artifactType !== artifactType || !artifact.integrityVerified || !artifact.authoritative) {
-      issues.push(issue('EVIDENCE_UNTRUSTED', '$.evidence', `Evidence reference is not authentic and authoritative: ${ref}`));
+    if (!ownerIsBound) continue;
+    const artifact = readBoundArtifact(ownerHandle, ref);
+    if (!artifact || artifact.ref !== ref || artifact.artifactType !== artifactType) {
+      issues.push(issue('EVIDENCE_UNTRUSTED', '$.evidence', `Evidence reference is not bound by the verified owner: ${ref}`));
     } else if (artifact.owner !== expectedEvidenceOwner) {
       issues.push(issue('EVIDENCE_OWNER_MISMATCH', '$.expectedEvidenceOwner', `Evidence owner mismatch for ${ref}.`));
     }

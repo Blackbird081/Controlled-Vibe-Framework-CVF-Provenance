@@ -7,7 +7,13 @@ import {
   validateCapabilityAssignment,
   validateCapabilityDistribution,
   validateCompatibilityEvidence,
+  CAPABILITY_OWNER_BINDING_CONTRACT_VERSION,
+  isBoundCapabilityOwner,
+  readBoundArtifact,
+  readBoundGrantIdentity,
+  reconcileGrantWithObservation,
 } from './contracts/index';
+import * as contractsBarrel from './contracts/index';
 
 function loadPackageJson() {
   const packageUrl = new URL('../package.json', import.meta.url);
@@ -28,6 +34,85 @@ describe('package boundary', () => {
       validateCompatibilityEvidence,
     ].every((value) => typeof value === 'function')).toBe(true);
   });
+
+  it('exposes the T2 owner-binding consumption surface through the same canonical contracts barrel, never a minting function', () => {
+    expect(CAPABILITY_OWNER_BINDING_CONTRACT_VERSION).toBe('cvf.cadp.ownerBinding.v2');
+    expect([
+      isBoundCapabilityOwner,
+      readBoundArtifact,
+      readBoundGrantIdentity,
+      reconcileGrantWithObservation,
+    ].every((value) => typeof value === 'function')).toBe(true);
+  });
+
+  it('T2 round-2 re-review (R01/R08): the contracts barrel exports NO function anywhere that accepts caller grant data and returns a trusted handle', () => {
+    // This is the corrected version of the round-1 test this same file
+    // used to carry, which incorrectly named `bindNamedCapabilityOwner`
+    // itself as "the one named adapter" without checking whether that
+    // adapter was reachable from a real caller - it was, and an
+    // independent review reproduced the exact caller-created-grant ->
+    // public-binder -> genuine-handle attack against it. The round-2
+    // re-review then found that renaming the binder
+    // `_TEST_ONLY_INTERNAL_BINDER` and omitting it from this barrel was
+    // STILL not sufficient: a direct module import reached it anyway. The
+    // corrected assertion is now doubly structural: enumerate every
+    // exported value from the canonical barrel AND the production module
+    // itself, and confirm none of them is a minting function anywhere.
+    const barrel = contractsBarrel as unknown as Record<string, unknown>;
+    expect(barrel.bindNamedCapabilityOwner).toBeUndefined();
+    expect(barrel.bindNamedCapabilityOwner_TEST_ONLY_INTERNAL_BINDER).toBeUndefined();
+    expect(barrel.bindNamedCapabilityOwnerForTest).toBeUndefined();
+    // Every exported function on the barrel that touches
+    // `CapabilityOwnerHandle` must only ever *consume* an existing handle,
+    // never accept an arbitrary evidence/grant record and return one.
+    const forged = { contractVersion: 'cvf.cadp.ownerBinding.v2' };
+    expect(isBoundCapabilityOwner(forged)).toBe(false);
+    expect(readBoundArtifact(forged as never, 'any-ref')).toBeUndefined();
+    expect(readBoundGrantIdentity(forged as never)).toBeUndefined();
+    expect(reconcileGrantWithObservation(forged as never, {
+      workOrderId: 'x', workOrderVersion: 'x', capabilityId: 'x', capabilityVersion: 'x',
+      assignmentId: 'x', actionId: 'x',
+      transport: 'x', resourceRef: 'x', credentialReference: 'secretref:x',
+      invocationId: 'x', retryOrdinal: 0, evaluatedAt: '2026-08-13T00:00:00Z',
+    }).valid).toBe(false);
+  });
+
+  it('ROUND-2 EXPLOIT PROBE 1 (R01/R08): a direct module import of the production owner-binding module (bypassing the barrel entirely) finds no mint function reachable', async () => {
+    // This is the exact attack shape the round-2 independent review used
+    // to reproduce the residual exploit: import the production module
+    // directly by relative/deep path, exactly as
+    // `EXTENSIONS/CVF_PLANE_FACADES/tsconfig.json`'s `cvf-guard-contract/*`
+    // mapping allows a same-repository consumer to do, skipping the
+    // barrel and package.json exports map entirely. The fix is not that
+    // this import path is blocked (it structurally cannot be, for a
+    // same-repository TypeScript module) - it is that the module reached
+    // this way now contains no mint function under any name to find.
+    const productionModule = await import('./contracts/capability-owner-binding.contract');
+    const moduleExports = productionModule as unknown as Record<string, unknown>;
+    expect(moduleExports.bindNamedCapabilityOwner).toBeUndefined();
+    expect(moduleExports.bindNamedCapabilityOwner_TEST_ONLY_INTERNAL_BINDER).toBeUndefined();
+    expect(moduleExports.bindNamedCapabilityOwnerForTest).toBeUndefined();
+    for (const [exportName, exportValue] of Object.entries(moduleExports)) {
+      if (typeof exportValue !== 'function') continue;
+      let result: unknown;
+      try {
+        result = (exportValue as (...args: unknown[]) => unknown)({}, {}, {});
+      } catch {
+        result = undefined;
+      }
+      expect(
+        isBoundCapabilityOwner(result),
+        `direct-imported export \`${exportName}\` must never mint a value isBoundCapabilityOwner accepts`,
+      ).toBe(false);
+    }
+  });
+
+  it('T2 round-2 (R01): package.json exports map declares no subpath under contracts/, so no deep import can reach the module through the package boundary either', () => {
+    const packageJson = loadPackageJson();
+    const exportKeys = Object.keys(packageJson.exports ?? {});
+    expect(exportKeys.some((key) => key.includes('contracts'))).toBe(false);
+  });
+
   it('keeps the public runtime surface limited to the selected helper subpaths', () => {
     const packageJson = loadPackageJson();
 

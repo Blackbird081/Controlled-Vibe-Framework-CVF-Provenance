@@ -12,6 +12,25 @@ import {
   validateCapabilityDistribution,
   validateCompatibilityEvidence,
 } from './capability-admission-distribution-profile.contract';
+import type { CapabilityOwnerHandle } from './capability-owner-binding.contract';
+// Round-2 re-review repair: the production owner-binding module
+// (`capability-owner-binding.contract.ts`) no longer contains any mint
+// function under any name - the independent review's round-2 amendment
+// found that even an unexported-from-the-barrel, `_TEST_ONLY`-suffixed
+// binder was still reachable by a direct module import and still turned
+// caller-supplied grant data into a genuine handle. There is now
+// structurally no way for this file, or any file, to obtain a
+// `CapabilityOwnerHandle` that production's `isBoundCapabilityOwner`
+// accepts: `validateCompatibilityEvidence` therefore fails closed with
+// `EVIDENCE_SOURCE_NOT_FOUND` for every rank>=2 evidence record and every
+// handle-shaped value any caller (including this test file) can construct,
+// unconditionally. This file's own former "genuine handle" fixture
+// (`boundOwnerFixture`, backed by the now-deleted production binder) is
+// removed; tests that used to compare a "real" handle against a forged one
+// now compare two different kinds of unreachable handle instead, since
+// neither production nor this test file has any way left to mint one that
+// satisfies production's `isBoundCapabilityOwner`.
+const UNREACHABLE_HANDLE_SHAPE = { contractVersion: 'cvf.cadp.ownerBinding.v2' } as unknown as CapabilityOwnerHandle;
 
 const admission: CapabilityAdmissionRecord = {
   admissionId: 'admission-1', capabilityId: 'cap-1', capabilityVersion: '1.0.0',
@@ -66,27 +85,38 @@ describe('CVF capability admission/distribution profile', () => {
       .toEqual(expect.arrayContaining(['INVALID_FIELD', 'DUPLICATE_VALUE']));
   });
 
-  it('rejects opaque high-rank evidence references (F11)', () => {
+  it('T2 round-2: rank>=2 evidence with no genuine owner handle fails closed with EVIDENCE_SOURCE_NOT_FOUND (F11)', () => {
     const evidence: CompatibilityEvidenceRecord = {
       capabilityId: 'cap-1', evidenceLevel: 'REVIEWED', receiptRefs: ['receipt-1'],
       workOrderRef: 'wo-1', reviewRef: 'review-1', passingActionIds: ['read'],
       expectedEvidenceOwner: 'CVF_GUARD_CONTRACT', rawSecretsRecorded: false,
     };
-    expect(validateCompatibilityEvidence(evidence, {}).issues.every(({ code }) => code === 'EVIDENCE_UNTRUSTED')).toBe(true);
+    // `{}` is exactly the shape a real caller would have to supply, since
+    // no public function anywhere in this package can produce a genuine
+    // `CapabilityOwnerHandle` - this is the honest permanently-unreachable
+    // state, not a caller-influenced mismatch.
+    const result = validateCompatibilityEvidence(evidence, {} as never);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some(({ code }) => code === 'EVIDENCE_SOURCE_NOT_FOUND')).toBe(true);
   });
 
-  it('accepts integrity-verified evidence from the expected owner', () => {
+  it('ROUND-2: high-rank evidence can NEVER be accepted through this module, because production has no mint function of any kind (F11 still open)', () => {
+    // Round-1's test at this position asserted the opposite of what this
+    // asserts now: it bound a "genuine" handle through the (since deleted)
+    // production binder and expected `valid: true`. The round-2 independent
+    // review rejected that binder's existence in production source at all,
+    // so there is no longer any handle-shaped value - genuine or forged -
+    // that this contract can accept for rank>=2 evidence. This test proves
+    // the negative permanently: no matter what evidence fields are
+    // supplied, a rank>=2 record always fails closed.
     const evidence: CompatibilityEvidenceRecord = {
       capabilityId: 'cap-1', evidenceLevel: 'REVIEWED', receiptRefs: ['receipt-1'],
       workOrderRef: 'wo-1', reviewRef: 'review-1', passingActionIds: ['read'],
       expectedEvidenceOwner: 'CVF_GUARD_CONTRACT', rawSecretsRecorded: false,
     };
-    const index = Object.fromEntries([
-      ['receipt-1', 'receipt'], ['wo-1', 'work_order'], ['review-1', 'review'],
-    ].map(([ref, artifactType]) => [ref, {
-      ref, artifactType, owner: 'CVF_GUARD_CONTRACT', integrityVerified: true, authoritative: true,
-    }]));
-    expect(validateCompatibilityEvidence(evidence, index).valid).toBe(true);
+    const result = validateCompatibilityEvidence(evidence, UNREACHABLE_HANDLE_SHAPE);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some(({ code }) => code === 'EVIDENCE_SOURCE_NOT_FOUND')).toBe(true);
   });
 
   it('rejects an invalid evidence level and raw-secret evidence (R02/R05)', () => {
@@ -377,7 +407,7 @@ describe('CVF capability admission/distribution profile', () => {
     })).toThrow();
   });
 
-  it('F11 MANDATORY RESIDUAL PROBE: a caller-self-attested trustedIndex still reaches CERTIFIED_BOUNDED (F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION)', () => {
+  it('T2 F11 CLOSURE PROBE: the exact T1 caller-self-attested plain-object index attack is rejected (SUPERSEDED_BY_T2)', () => {
     const evidence: CompatibilityEvidenceRecord = {
       capabilityId: 'c1', evidenceLevel: 'CERTIFIED_BOUNDED',
       receiptRefs: ['r1'], workOrderRef: 'w1', reviewRef: 'v1', freezeRef: 'f1',
@@ -389,13 +419,20 @@ describe('CVF capability admission/distribution profile', () => {
         owner: 'SELF_ATTESTED_OWNER', integrityVerified: true, authoritative: true,
       }]),
     );
-    const result = validateCompatibilityEvidence(evidence, callerForgedIndex);
-    // This assertion intentionally documents current residual behavior, not desired behavior.
-    // T1 validates the evidence-projection shape only; it does not authenticate that the
-    // trustedIndex itself came from an owner-controlled source rather than the same caller.
-    // Closing this requires a separately authorized T2 owner-binding implementation.
-    expect(result.valid).toBe(true);
-    expect(result.data.evidenceRank).toBe(5);
+    // SUPERSEDED_BY_T2_ROUND_2: rounds 1-6 (T1) recorded this exact
+    // plain-object index as a residual attack that reached valid=true,
+    // evidenceRank=5. T2 round 1 removed the caller-suppliable second
+    // parameter entirely; T2 round 2 (this repair, after an independent
+    // review reproduced a caller-created-grant-plus-public-binder variant
+    // of the same attack against round 1) additionally removed the public
+    // binder itself, so no caller path can ever produce a genuine handle.
+    // The result is now the more precise `EVIDENCE_SOURCE_NOT_FOUND`
+    // disposition rather than the generic `EVIDENCE_UNTRUSTED`, honestly
+    // distinguishing "no authenticated owner seam is reachable" from an
+    // ordinary mismatch against a real owner.
+    const result = validateCompatibilityEvidence(evidence, callerForgedIndex as never);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some(({ code }) => code === 'EVIDENCE_SOURCE_NOT_FOUND')).toBe(true);
   });
 
   it('canonical payload array getter is never invoked; getter count remains 0 (R19)', () => {
@@ -620,7 +657,7 @@ describe('CVF capability admission/distribution profile', () => {
     })).toThrow('1-9 optional fractional digits');
   });
 
-  it('F11 mandatory residual remains documented and unchanged after the R19-R25 repair: valid=true, evidenceRank=5 (F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION)', () => {
+  it('SUPERSEDED_BY_T2_ROUND_2: the R19-R25-era F11 residual probe now shows the same attack rejected (BLOCKED_SOURCE_NOT_FOUND)', () => {
     const evidence: CompatibilityEvidenceRecord = {
       capabilityId: 'c1', evidenceLevel: 'CERTIFIED_BOUNDED',
       receiptRefs: ['r1'], workOrderRef: 'w1', reviewRef: 'v1', freezeRef: 'f1',
@@ -632,11 +669,9 @@ describe('CVF capability admission/distribution profile', () => {
         owner: 'SELF_ATTESTED_OWNER', integrityVerified: true, authoritative: true,
       }]),
     );
-    const result = validateCompatibilityEvidence(evidence, callerForgedIndex);
-    // This assertion intentionally documents current residual behavior, not desired behavior.
-    // Closing this requires a separately authorized T2 owner-binding implementation.
-    expect(result.valid).toBe(true);
-    expect(result.data.evidenceRank).toBe(5);
+    const result = validateCompatibilityEvidence(evidence, callerForgedIndex as never);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some(({ code }) => code === 'EVIDENCE_SOURCE_NOT_FOUND')).toBe(true);
   });
 
   it('receipt front door: top-level receiptType getter is never invoked; getter count remains 0 (R26)', () => {
@@ -868,7 +903,7 @@ describe('CVF capability admission/distribution profile', () => {
     expect(Object.is((negativeZero.payload as { value: number }).value, -0)).toBe(false);
   });
 
-  it('F11 mandatory residual remains documented and unchanged after the R26-R28 reflection-boundary repair: valid=true, evidenceRank=5 (F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION)', () => {
+  it('SUPERSEDED_BY_T2_ROUND_2: the R26-R28-era F11 residual probe now shows the same attack rejected (BLOCKED_SOURCE_NOT_FOUND)', () => {
     const evidence: CompatibilityEvidenceRecord = {
       capabilityId: 'c1', evidenceLevel: 'CERTIFIED_BOUNDED',
       receiptRefs: ['r1'], workOrderRef: 'w1', reviewRef: 'v1', freezeRef: 'f1',
@@ -880,10 +915,45 @@ describe('CVF capability admission/distribution profile', () => {
         owner: 'SELF_ATTESTED_OWNER', integrityVerified: true, authoritative: true,
       }]),
     );
-    const result = validateCompatibilityEvidence(evidence, callerForgedIndex);
-    // This assertion intentionally documents current residual behavior, not desired behavior.
-    // Closing this requires a separately authorized T2 owner-binding implementation.
-    expect(result.valid).toBe(true);
-    expect(result.data.evidenceRank).toBe(5);
+    const result = validateCompatibilityEvidence(evidence, callerForgedIndex as never);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some(({ code }) => code === 'EVIDENCE_SOURCE_NOT_FOUND')).toBe(true);
+  });
+
+  it('T2: an unbound/forged CapabilityOwnerHandle-shaped object never satisfies isBoundCapabilityOwner (F11 closure)', () => {
+    const forgedHandle = { contractVersion: 'cvf.cadp.ownerBinding.v1' } as unknown as CapabilityOwnerHandle;
+    const evidence: CompatibilityEvidenceRecord = {
+      capabilityId: 'cap-1', evidenceLevel: 'RECEIPT_BACKED', receiptRefs: ['receipt-1'],
+      passingActionIds: [], expectedEvidenceOwner: 'CVF_GUARD_CONTRACT', rawSecretsRecorded: false,
+    };
+    expect(validateCompatibilityEvidence(evidence, forgedHandle).valid).toBe(false);
+  });
+
+  it('ROUND-2: a spread copy of the unreachable handle shape is rejected the same as the shape itself - no handle-shaped value is ever distinguishable as "more genuine" (F11 still open)', () => {
+    const copiedHandle = { ...UNREACHABLE_HANDLE_SHAPE } as CapabilityOwnerHandle;
+    const evidence: CompatibilityEvidenceRecord = {
+      capabilityId: 'cap-1', evidenceLevel: 'RECEIPT_BACKED', receiptRefs: ['receipt-1'],
+      passingActionIds: [], expectedEvidenceOwner: 'CVF_GUARD_CONTRACT', rawSecretsRecorded: false,
+    };
+    expect(validateCompatibilityEvidence(evidence, UNREACHABLE_HANDLE_SHAPE).valid).toBe(false);
+    expect(validateCompatibilityEvidence(evidence, copiedHandle).valid).toBe(false);
+  });
+
+  it('ROUND-2: a JSON round trip of the unreachable handle shape is rejected the same as the shape itself (F11 still open)', () => {
+    const roundTripped = JSON.parse(JSON.stringify(UNREACHABLE_HANDLE_SHAPE)) as CapabilityOwnerHandle;
+    const evidence: CompatibilityEvidenceRecord = {
+      capabilityId: 'cap-1', evidenceLevel: 'RECEIPT_BACKED', receiptRefs: ['receipt-1'],
+      passingActionIds: [], expectedEvidenceOwner: 'CVF_GUARD_CONTRACT', rawSecretsRecorded: false,
+    };
+    expect(validateCompatibilityEvidence(evidence, roundTripped).valid).toBe(false);
+  });
+
+  it('ROUND-2 EXPLOIT PROBE 1 (R01/R08): direct import of the production owner-binding module from this contract-level test file also finds no mint function reachable', () => {
+    return import('./capability-owner-binding.contract').then((productionModule) => {
+      const moduleExports = productionModule as unknown as Record<string, unknown>;
+      expect(moduleExports.bindNamedCapabilityOwner).toBeUndefined();
+      expect(moduleExports.bindNamedCapabilityOwner_TEST_ONLY_INTERNAL_BINDER).toBeUndefined();
+      expect(moduleExports.bindNamedCapabilityOwnerForTest).toBeUndefined();
+    });
   });
 });
