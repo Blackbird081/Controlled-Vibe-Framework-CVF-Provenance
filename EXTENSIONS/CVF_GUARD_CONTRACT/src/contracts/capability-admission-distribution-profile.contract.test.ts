@@ -91,7 +91,7 @@ describe('CVF capability admission/distribution profile', () => {
   });
 
   it('T2A accepts certified evidence only through the committed repository owner handle', () => {
-    const binding = bindCommittedCapabilityOwnerGrant('governance/capability-grants/cadp-ai-t2a-owner-binding-grant.v1.json');
+    const binding = bindCommittedCapabilityOwnerGrant('governance/capability-grants/cadp-ai-t2a-owner-binding-grant.v2.json');
     expect(binding.valid).toBe(true);
     const evidence: CompatibilityEvidenceRecord = {
       capabilityId: 'cvf.cadp.owner-bound-evidence', evidenceLevel: 'CERTIFIED_BOUNDED',

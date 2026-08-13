@@ -11,14 +11,14 @@ import {
   type CapabilityOwnerHandle,
 } from './capability-owner-binding.contract';
 
-const GRANT_REF = 'governance/capability-grants/cadp-ai-t2a-owner-binding-grant.v1.json';
+const GRANT_REF = 'governance/capability-grants/cadp-ai-t2a-owner-binding-grant.v2.json';
 const TRACE_ID = 'cadp-ai-t2-fail-closed-checkpoint-f4b99100e';
 let handle: CapabilityOwnerHandle;
 const runId = randomUUID();
 
 function observation(invocationId: string, retryOrdinal = 0): CapabilityExecutionObservationInput {
   return {
-    workOrderId: 'CADP-AI-T2A', workOrderVersion: '2026-08-13.1',
+    workOrderId: 'CADP-AI-T2A', workOrderVersion: '2026-08-13.2',
     capabilityId: 'cvf.cadp.owner-bound-evidence', capabilityVersion: 'v3',
     assignmentId: 'cadp-ai-t2a-owner-binding', actionId: 'validateCompatibilityEvidence',
     transport: 'local_git_object_database', resourceRef: GRANT_REF,
