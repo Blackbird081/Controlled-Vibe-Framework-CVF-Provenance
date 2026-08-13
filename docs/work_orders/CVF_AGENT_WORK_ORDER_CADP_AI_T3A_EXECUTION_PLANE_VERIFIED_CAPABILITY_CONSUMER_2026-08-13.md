@@ -21,7 +21,7 @@ Required first actions: capture HEAD/status; read startup surfaces, baseline, th
 Return contract: COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON, with execution base, exact diff, test/gate evidence, residuals, staging empty, and HEAD unchanged.
 ```
 
-dispatchBaseHead: `a2b8c555a`
+dispatchBaseHead: `ac51e39f7`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
@@ -42,10 +42,11 @@ verificationMode: RECOMPUTE_REQUIRED
 recomputeReason: T3A introduces a new downstream consumer and ordering behavior
 that T2A owner-binding evidence did not execute.
 
-priorVerificationArtifact: T2A completion establishes the owner seam only;
-T3A consumer behavior requires fresh worker and reviewer evidence.
+priorVerificationArtifact: the T2A-R1 authority-reconciliation completion
+establishes current-HEAD v2 consumability only; T3A consumer behavior requires
+fresh worker and reviewer evidence.
 
-priorVerificationAnchor: `70d49d10baac819e188abfbe526162d1f137d1a0`
+priorVerificationAnchor: `944bfe852131f2ac0aa403254c33157820ba3ee5`
 
 freshRecomputeRequired: true
 
@@ -77,7 +78,8 @@ deployment, or production scope.
 1. `AGENTS.md`, active startup surfaces, and guard orientation.
 2. `docs/baselines/CVF_GC018_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_2026-08-13.md`.
 3. This work order in full.
-4. T2A completion review and worker return.
+4. T2A-R1 authority-reconciliation completion review and worker return, plus
+   the historical T3A `BLOCKED_AUTHORITY_DRIFT` return.
 5. The three Guard Contract source files named in Source Verification.
 6. Execution Plane index, sample consumer contract, tests, package config, and
    the relevant system-chain map entry.
@@ -87,7 +89,8 @@ deployment, or production scope.
 | Authority | Evidence | Disposition |
 |---|---|---|
 | operator direction | operator message `next` following bounded T2A acceptance | ACCEPT |
-| T2A closure | `docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_COMPLETION_2026-08-13.md` | ACCEPT |
+| T2A-R1 closure | `docs/reviews/CVF_CADP_AI_T2A_AUTHORITY_RECONCILIATION_COMPLETION_2026-08-13.md`; material commit `944bfe852131f2ac0aa403254c33157820ba3ee5` | ACCEPT |
+| prior T3A blocker repaired by T2A-R1 | `docs/reviews/CVF_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_WORKER_RETURN_2026-08-13.md` at `c0e2a8e4b` | ACCEPT |
 | T3A baseline | `docs/baselines/CVF_GC018_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_2026-08-13.md` | ACCEPT |
 | this work order | current committed dispatch packet after dispatcher commit | ACCEPT |
 
@@ -325,7 +328,7 @@ Contract source archive-qualified exception:
 | route | SINGLE_AGENT_SINGLE_ROLE |
 | rolePattern | implementation worker followed by independent reviewer/closer |
 | phase | T3A internal consumer implementation |
-| baseHeadFor(phase) | dispatchBaseHead=`a2b8c555a`; executionBaseHead=`WORKER_MUST_CAPTURE_AT_START`; closureBaseHead=`NOT_EXECUTED_YET` |
+| baseHeadFor(phase) | dispatchBaseHead=`ac51e39f7`; executionBaseHead=`WORKER_MUST_CAPTURE_AT_START`; closureBaseHead=`NOT_EXECUTED_YET` |
 | changedSetScope(phase) | exact six-path Required Artifact Manifest |
 | traceScope(phase, actor) | local source reads, patches, compiler/tests, Git/SQLite owner behavior and gate evidence |
 | commitOwner(phase) | reviewer/closer only |
@@ -480,7 +483,7 @@ bounded closure.
 | Command or tool surface | governed reads, source inspection, repository search, dispatch authoring |
 | Target paths | T3A baseline, work order, roadmap dispatch status |
 | Allowed scope source | operator `next` direction following T2A bounded acceptance |
-| Before status evidence | HEAD `a2b8c555a`; clean worktree after narrow ignore hygiene; runtime DB retained |
+| Before status evidence | amendment base HEAD `ac51e39f7`; clean worktree; runtime DB retained |
 | After status evidence | clean worker-facing status after dispatch commit; runtime DB retained and narrowly ignored |
 | Diff evidence | dispatcher records exact status before commit |
 | Approval boundary | dispatch only; no T3A implementation or provider action |

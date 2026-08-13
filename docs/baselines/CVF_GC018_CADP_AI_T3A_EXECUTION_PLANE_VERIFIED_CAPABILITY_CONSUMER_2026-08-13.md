@@ -10,7 +10,7 @@ Date: 2026-08-13
 
 Batch ID: CADP-AI-T3A
 
-Dispatch base head: `a2b8c555a`
+Dispatch base head: `ac51e39f7`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -61,7 +61,7 @@ receipt schema, deployment, public sync, or production-readiness claim.
 
 | Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
 |---|---|---|---|---|---|---|
-| T2A is independently accepted only for hermetic repository-owned scope | current authority | `docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_COMPLETION_2026-08-13.md` | Reviewer verdict and Claim Boundary | reviewer verdict | T2A independent review | ACCEPT |
+| T2A-R1 is independently accepted only for hermetic repository-owned scope | current authority | `docs/reviews/CVF_CADP_AI_T2A_AUTHORITY_RECONCILIATION_COMPLETION_2026-08-13.md` | Disposition and Claim Boundary | `ACCEPT_CLOSED_PASS_BOUNDED`; material commit `944bfe852131f2ac0aa403254c33157820ba3ee5` | T2A-R1 independent review | ACCEPT |
 | owner authentication is opaque and module-owned | runtime source | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-owner-binding.contract.ts` | owner handle and reconciliation exports | `isBoundCapabilityOwner` | capability owner binding | ACCEPT |
 | observation reconciliation consumes durable replay state | runtime source | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-owner-binding.contract.ts` | reconciliation implementation | `reconcileGrantWithObservation` | capability owner binding | ACCEPT |
 | CADP validators expose non-executing admission, assignment, distribution and evidence decisions | runtime source | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.ts` | public record types and validators | `validateCapabilityAdmission` | CADP contract | ACCEPT |
@@ -95,6 +95,16 @@ it never means execution occurred or is authorized by the adapter itself.
 `DISPATCH_READY` for a hermetic T3A no-commit worker. T3B and every live or
 provider-facing surface remain outside this baseline.
 
+## Authority Reconciliation Amendment
+
+The first T3A worker attempt returned `BLOCKED_AUTHORITY_DRIFT` at commit
+`c0e2a8e4b` because grant v1 no longer matched a pinned T2A work-order blob.
+CADP-AI-T2A-R1 repaired that dependency additively and was independently
+accepted at material commit `944bfe852131f2ac0aa403254c33157820ba3ee5`.
+This amendment refreshes the T3A dispatch anchor to session-sync parent
+`ac51e39f7`; the blocked return remains historical evidence and the worker
+must replace its disposition only through a fresh six-path execution.
+
 ## Evidence / Verification
 
 Evidence requires Execution Plane typecheck, focused adapter tests, full
@@ -104,8 +114,34 @@ independent full-diff review.
 
 ## Machine Closure Package
 
-N/A with reason: this is a dispatch baseline, not a closure artifact; the
-reviewer-owned completion packet carries final closure evidence.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | T3A work order | `Status: DISPATCH_READY`; worker must not commit | N/A with reason: dispatch, not closure |
+| Completion or reviewer artifact | future T3A completion review | reviewer-owned after worker return | N/A with reason: not yet authored |
+| Roadmap state | CADP roadmap state already represented by this bounded packet | T3A only; T3B parked | N/A with reason: no closure transition |
+| Registry JSON | no registry change authorized | N/A | BLOCKED with reason: dispatch does not authorize GC-051 mutation |
+| Registry Markdown | no registry change authorized | N/A | BLOCKED with reason: dispatch does not authorize GC-051 mutation |
+| External evidence digest | T2A-R1 completion at `944bfe852` | SHA-256 `79c8f751e125c2f34a13a8f3b5193e94305e4b4696d4087159297b3f6f240540` | PASS |
+| System loop interlock | no loop registry change authorized | N/A | N/A with reason |
+| Session continuity | active handoff and state sources | T3A dependency refresh is next | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| T2A-R1 predecessor material exists | commit `944bfe852131f2ac0aa403254c33157820ba3ee5` contains the completion and worker material | PASS |
+| T2A-R1 completion digest matches | committed-object SHA-256 `79c8f751e125c2f34a13a8f3b5193e94305e4b4696d4087159297b3f6f240540` | PASS |
+| T3A remains non-executing | required output retains literal `executionAuthorized: false`; provider/live paths remain forbidden | PASS |
+
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | Guard Contract owner-binding/CADP sources; Execution Plane root and existing consumer contracts |
+| Runtime behavior claimed | BOUNDED: future worker may add only a hermetic pre-execution eligibility projection |
+| Provider/live proof claimed | N/A_WITH_REASON: forbidden in T3A |
+| Public-sync claimed | N/A_WITH_REASON: forbidden in T3A |
+| Freshness disposition | PASS - targeted current-source reads confirm the T3A adapter remains a new bounded path and T2A-R1 is its current prerequisite |
 
 ## Negative Search And Collision Discipline
 
