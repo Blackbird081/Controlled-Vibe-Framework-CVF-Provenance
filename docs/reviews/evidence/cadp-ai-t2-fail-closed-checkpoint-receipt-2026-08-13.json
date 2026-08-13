@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "cvf.cadp.checkpointReceipt.v1",
+  "receiptId": "cadp-ai-t2-fail-closed-checkpoint-f4b99100e",
+  "subjectRef": "f4b99100e8d5f84313ebe9b41d410dcbb8df831c",
+  "issuedAt": "2026-08-13T12:30:00.000Z",
+  "owner": "CVF_GOVERNANCE_REPOSITORY",
+  "outcome": "ACCEPTED_BLOCKED_SOURCE_NOT_FOUND",
+  "reviewRef": "docs/reviews/CVF_CADP_AI_T2_INDEPENDENT_ADVERSARIAL_REVIEW_2026-08-13.md",
+  "workerReturnRef": "docs/reviews/CVF_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_WORKER_RETURN_2026-08-13.md",
+  "proof": {
+    "focusedTests": "105/105 PASS",
+    "fullTests": "506 passed; 5 skipped",
+    "independentProbe": "6/6 PASS",
+    "reviewerFast": "63/63 PASS",
+    "preCommit": "84/84 PASS"
+  },
+  "claimBoundary": "Fail-closed checkpoint receipt only; F11 and T2 owner binding remained open at this commit.",
+  "rawSecretsRecorded": false
+}

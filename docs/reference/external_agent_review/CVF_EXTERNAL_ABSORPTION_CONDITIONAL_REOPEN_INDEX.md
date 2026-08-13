@@ -143,7 +143,7 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 | `PPMCP-R1-display-id-resolver-runtime-candidate` | PPMCP-R1 upstream safe entity targeting | `RUNTIME_CANDIDATE` | Two-stage display-ID resolution with structured ambiguity and state errors may reduce destructive mutation against the wrong entity. | `PARKED_UNTIL_CONDITION` | Reopen only after a fresh runtime work order source-verifies a concrete CVF-native destructive-action-targeting need this pattern would address. | Pending future CVF safe-entity-targeting owner | Domain-specific code import, destructive runtime mutation |
 | `PPMCP-R1-replay-regression-checker-candidate` | PPMCP-R1 upstream replay and negative-mutation fixtures | `CHECKER_CANDIDATE` | Replay regression and negative mutation fixtures may harden a future MCP-adjacent adapter test surface. | `PARKED_UNTIL_CONDITION` | Reopen only after a repeated real defect in CVF MCP-adjacent adapter testing demonstrates a gap these patterns would have caught. | Pending future CVF MCP-adjacent test owner | Checker implementation, hook-chain wiring, CI mutation |
 | `CADP-AI-contract-kernel` | CADP-R1 F01-F04, F08, F11, F12 | `PACKAGE_CANDIDATE` | CVF-native admission, assignment, distribution, evidence and deterministic-receipt contract logic. | `T1_ACCEPTED_BOUNDED` | Round-6 independent review accepted the hermetic contract against R01-R28; F11 source authentication remains outside T1. | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.ts` | runtime consumer wiring, authenticated evidence ownership, catalog readiness overclaim |
-| `CADP-AI-work-order-observation-reconciliation` | CADP-R1 F05/F08/F09/F11 | `RUNTIME_CANDIDATE` | Exact owner-bound evidence plus granted-versus-observed work-order reconciliation across version, action, transport, resource, credentials, expiry, invocation and retry limits. | `T2_DISPATCH_READY_WORKER_MUST_NOT_COMMIT` | CADP-AI-T1 was independently accepted and committed at `a17051bcd810e6cc80a069712ce670365c2e7790`; the operator released T2 and a fresh GC-018/work order now controls implementation. | existing Guard Contract workflow binding plus source-verified execution observation owner | execution observation wiring, persistence, live action, caller-self-attested trust |
+| `CADP-AI-work-order-observation-reconciliation` | CADP-R1 F05/F08/F09/F11 | `RUNTIME_CANDIDATE` | Exact owner-bound evidence plus granted-versus-observed work-order reconciliation across version, action, transport, resource, credentials, expiry, invocation and retry limits. | `T2_BLOCKED_CHECKPOINT_ACCEPTED_T2A_DISPATCH_READY` | T2 fail-closed checkpoint is committed at `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`; the operator then authorized completion, and T2A binds authority to committed private-provenance Git blobs with durable local replay state. | Guard Contract repository owner plus committed grant and SQLite replay state | independent F11 acceptance, downstream consumer wiring, provider/live action |
 | `CADP-AI-downstream-consumer-adapters` | CADP-R1 F02/F06/F08 | `RUNTIME_CANDIDATE` | Internal execution-plane/model-gateway consumption and bounded SaaS constraint metadata without authority widening. | `PARKED_UNTIL_T2_ACCEPTED` | Reopen as T3 only after T2 acceptance and fresh source verification of each consumer interface. | Guard Contract, execution plane, model gateway | provider calls, credentials, CLI/MCP, SaaS execution |
 | `CADP-AI-negative-fixture-and-drift-checker` | CADP-R1 F09 | `CHECKER_CANDIDATE` | Cross-owner negative fixtures and schema/contract drift detection may machine-enforce accepted CADP invariants. | `PARKED_UNTIL_CONTRACT_ACCEPTANCE_AND_REPEATED_NEED` | Reopen as T4 after the owner contract is accepted and either a repeated real defect or approved high-risk invariant justifies a checker tranche. | owning package tests; future `governance/compat` work order | checker implementation, hook-chain and CI wiring |
 
@@ -240,20 +240,20 @@ mutation, provider calls, MCP activation, public sync, or production readiness.
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | CADP-AI-T2 dispatch update, 2026-08-13 |
+| Session or invocation | CADP-AI-T2A owner-specific continuation dispatch, 2026-08-13 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | `rg`; `Get-Content`; `apply_patch`; governance gates |
-| Target paths | paired CADP-AI-T2 baseline/work order, CADP roadmap and this conditional reopen index |
-| Allowed scope source | operator commit-and-open-T2 instruction after bounded T1 acceptance |
-| Before status evidence | clean worktree at material commit `a17051bcd`; T2 release required a fresh packet |
-| After status evidence | T2 is dispatch-ready under a no-commit worker packet; F11 remains open pending independent acceptance |
+| Target paths | paired CADP-AI-T2A baseline/work order, committed grant/checkpoint receipt, CADP roadmap and this conditional reopen index |
+| Allowed scope source | operator instruction to complete T2 and allow live proof if required |
+| Before status evidence | clean worktree at accepted blocked checkpoint `f4b99100e` |
+| After status evidence | T2A is dispatch-ready under a no-commit owner-specific packet; F11 remains open pending implementation and independent acceptance |
 | Diff evidence | `git diff --name-status` before material commit |
-| Approval boundary | T2 dispatch records only; no implementation |
+| Approval boundary | T2A dispatch and committed grant records only; no implementation |
 | Claim boundary | no runtime, package activation, checker wiring, provider, public, production or T2 acceptance claim |
 | Agent type | dispatcher/source reviewer |
-| Invocation ID | `cadp-ai-t2-dispatch-2026-08-13` |
-| Expected manifest | `docs/baselines/CVF_GC018_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_2026-08-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_2026-08-13.md`; `docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_2026-08-13.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2_OWNER_BOUND_EVIDENCE_AND_WORK_ORDER_RECONCILIATION_2026-08-13.md`; `docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` |
+| Invocation ID | `cadp-ai-t2a-dispatch-2026-08-13` |
+| Expected manifest | paired T2A baseline/work order, committed grant, checkpoint receipt, CADP roadmap and this conditional reopen index |
+| Actual changed set | reviewer records the exact six-path set before dispatch commit |
 | Manifest delta | MATCH |
 
 ## Public Export Disposition
