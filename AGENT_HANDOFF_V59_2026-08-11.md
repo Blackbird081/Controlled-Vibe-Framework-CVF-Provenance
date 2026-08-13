@@ -12,7 +12,9 @@ Status: ACTIVE
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current Core material HEAD marker:
-  `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
+  `03444a17d6db4a71d0bd7bb8bddf0ebda6560e3c`
+- CADP-AI-T2A owner-binding continuation dispatch commit:
+  `03444a17d6db4a71d0bd7bb8bddf0ebda6560e3c`
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
 - CADP-AI-T2 dispatch material commit:
@@ -38,14 +40,14 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Handoff-sync parent commit:
-  `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
+  `03444a17d6db4a71d0bd7bb8bddf0ebda6560e3c`
 - Target repository: `shift-operations-workspace`
 - Target execution base:
   `0b835be3ff1ac1fbd1c95e365471887202d718b5`
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t2_dispatched_worker_must_not_commit`
+  `cadp_ai_t2a_owner_binding_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -54,19 +56,19 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t2_dispatched_worker_must_not_commit`;
+Startup acknowledged: current mode=`cadp_ai_t2a_owner_binding_dispatched_worker_must_not_commit`;
 active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=implementation
-worker executes the committed T2 exact-manifest packet and returns uncommitted
+worker executes the committed T2A owner-binding exact-manifest packet and returns uncommitted
 evidence; parked checkpoint=F11 acceptance, T3+, runtime/provider/live,
 CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t2_dispatched_worker_must_not_commit`
+`cadp_ai_t2a_owner_binding_dispatched_worker_must_not_commit`
 
 ## Purpose
 
-Record the committed CADP-AI-T2 no-commit worker dispatch without claiming F11
+Record the committed CADP-AI-T2A no-commit worker dispatch without claiming F11
 closure, implementation success or runtime/provider authority.
 
 ## Scope / Target / Owner Boundary
