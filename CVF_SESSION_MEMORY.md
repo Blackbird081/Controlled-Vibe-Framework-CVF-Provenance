@@ -45,36 +45,35 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t2a_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator direction for the next tranche after CADP-AI-T2A/T2/F11 bounded closure; parked checkpoint=T3+, runtime/provider/live, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=refresh the already-authorized T3A dependency against the accepted T2A-R1 closure before worker resume; parked checkpoint=T3B, provider/live, CLI/MCP, public sync, deploy, production, trusted-evidence readiness and cross-runtime determinism.
 
 ## Current Mode
 
-`cadp_ai_t2a_closed_pass_bounded`
+`cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`
 
-Current mode marker: `cadp_ai_t2a_closed_pass_bounded`
-Current mode: `cadp_ai_t2a_closed_pass_bounded`
-Previous mode: `cadp_ai_t2_dispatched_worker_must_not_commit`
+Current mode marker: `cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`
+Current mode: `cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`
+Previous mode: `cadp_ai_t2a_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t2a_closed_pass_bounded`
+Mode: `cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next`
 
-CADP-AI-T2A repository-owned capability evidence binding is independently
-reviewed and accepted `CLOSED_PASS_BOUNDED`. F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION
-and T2 are closed for the current hermetic no-provider no-public
-no-deployment scope only. Completion review:
-`docs/reviews/CVF_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_COMPLETION_2026-08-13.md`.
-Next allowed move is operator direction for the next tranche. Latest closed
-numbered LHW wave: `LHW24`.
+CADP-AI-T2A-R1 authority reconciliation is independently accepted
+`CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
+remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
+Completion review:
+`docs/reviews/CVF_CADP_AI_T2A_AUTHORITY_RECONCILIATION_COMPLETION_2026-08-13.md`.
+The next allowed move is a dispatcher-owned T3A dependency refresh before the
+already-authorized no-commit T3A worker resumes. Latest closed numbered LHW
+wave: `LHW24`.
 
 ## Parked Checkpoints
 
-T3+, runtime, provider/live, CLI/MCP, public sync, deployment, production and
-cross-runtime determinism claims remain parked. Two non-blocking residual
-follow-ups from T2A closure remain open: `logs/` (T2A's new SQLite
-runtime-state directory) has no `.gitignore` entry; the T2A work order lacks
-a Required Artifact Manifest heading. Prior unrelated checkpoints remain
-historical.
+T3B, provider/live, CLI/MCP, public sync, deployment, production,
+trusted-evidence readiness and cross-runtime determinism claims remain parked.
+T3A is authorized only after its dependency packet is refreshed to the T2A-R1
+completion and material commit. Prior unrelated checkpoints remain historical.
 
 The `broad external knowledge absorption` lane remains outside the current
 release. It is included in the `blocked work classes` unless the operator opens

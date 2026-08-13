@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cadp_ai_t2a_closed_pass_bounded",
+  "currentMode": "cadp_ai_t2a_r1_closed_t3a_dependency_refresh_next",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "CADP-AI-T2A repository-owned capability evidence binding is independently reviewed and accepted CLOSED_PASS_BOUNDED. F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION and T2 are closed for the current hermetic no-provider no-public no-deployment scope only. Next allowed move is operator direction for the next tranche. Runtime/provider/live, T3+, CLI/MCP, public sync, deploy, production, and cross-runtime determinism claims remain unauthorized. Two non-blocking residual follow-ups remain open: logs/ (T2A's new SQLite runtime-state directory) has no .gitignore entry; the T2A work order lacks a Required Artifact Manifest heading. Latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "CADP-AI-T2A-R1 authority reconciliation is independently accepted and materially committed at 944bfe852131f2ac0aa403254c33157820ba3ee5. Grant v1 remains fail-closed historical evidence; additive grant v2 is consumable from the reviewed current HEAD. F11 and T2 are re-closed only for the hermetic repository-owned no-provider no-public no-deployment scope. The next allowed move is a dispatcher-owned T3A dependency refresh that cites the R1 completion and material commit before the existing no-commit T3A worker is resumed. T3B, provider/live, CLI/MCP, public sync, deployment, production, trusted-evidence readiness, and cross-runtime determinism remain unauthorized. Latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_2026-08-13.md",
-    "baselineSha256": "b3bf7631bbdfd75ce2e598f69b2dfd6363b6ae8319e635aef12085c3a58ea0ac",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2A_REPOSITORY_OWNER_BINDING_CONTINUATION_2026-08-13.md",
-    "workOrderSha256": "f346cc15259d23d53fd1c601eb9c602ca3a2e7b9585e1a9b0bb911c72fe09854"
+    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T2A_AUTHORITY_RECONCILIATION_2026-08-13.md",
+    "baselineSha256": "30fc06b697bd20c326c72b363bec4ba689a9c02cc2524db46cfb299501e8ad6f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T2A_AUTHORITY_RECONCILIATION_2026-08-13.md",
+    "workOrderSha256": "435bcf5cb036168bb2597759017e5a0073c708a4774568f28d8213ea641e9f3f"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
