@@ -380,15 +380,25 @@ commit's staged batch (see Risk / Corrective Action above).
 
 ## Staging / Commit Disposition
 
-This review stages exactly the twelve work-order Allowed Scope paths plus
-this completion review artifact, plus the required session continuity sync
-files (`CVF_SESSION/ACTIVE_SESSION_STATE.json`,
+This review staged exactly the twelve work-order Allowed Scope paths plus
+this completion review artifact, the worker return artifact, and the
+required session continuity sync files (`CVF_SESSION/ACTIVE_SESSION_STATE.json`,
 `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`,
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+`CVF_SESSION/state/entries/nextAllowedMove.json`,
+`CVF_SESSION/state/entries/cadpAiT2ARepositoryOwnerBindingClosure20260813.json`,
 `AGENT_HANDOFF_V59_2026-08-11.md`) in the same closure commit per Tranche
 Commit Choreography Step 3, since no prior T2A-labeled commit performed that
-sync. `logs/` is explicitly excluded from staging. The material commit SHA
-and post-commit `git status`/`git rev-parse HEAD` are recorded below after
-the commit is created.
+sync. `logs/` was explicitly excluded from staging.
+
+Material closure commit SHA: `70d49d10baac819e188abfbe526162d1f137d1a0`
+(21 files changed, 1713 insertions, 580 deletions; branch `main`).
+Post-commit `git status --short`: only `?? logs/` remains untracked, matching
+the pre-commit exclusion above. Reviewer-fast governance gate passed 63/63
+immediately before the commit; pre-commit governance hook passed 84/84
+during the commit itself. A dedicated GC-020 In-Place Update Rule handoff
+HEAD-sync commit, `46c98f19d` (session-sync-only, 1 file changed), followed
+to update the active handoff's HEAD marker to `70d49d10b`.
 
 ## No-Commit Statement (superseded by reviewer-owned commit)
 
