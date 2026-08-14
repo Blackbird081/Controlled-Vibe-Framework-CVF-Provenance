@@ -12,7 +12,7 @@ Status: ACTIVE
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current dispatch material marker: `a13e162ee`; prior T5D closure marker: `ef84a1f6a`
-- Prior session-sync parent marker: `5cb9aa95d`
+- Current session-sync parent marker: `7bf6b3231`
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
