@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2185,
+  "stateKey": "cadpAiT5ExternalAgentAdapterDecisionDispatch20260814",
+  "value": "CADP-AI-T5D external-agent adapter decision audit is DISPATCH_READY at material commit a09a1cc4f562099e10496c20019926bd29ea925f. Exact authority is baseline SHA-256 07b73ea209a76365922b1c9e7ea443ba7aac0081aa40ccc496b0d9e0ffa209ea and work-order SHA-256 bf1f1ab0000fb6a64fe3b3c6d3f32a137d52ad2cfcf199ad4222ff35b55b809c. Worker scope is exactly two Markdown outputs: a source-backed prerequisite/overlap decision assessment and a full-gate worker return. Terminal recommendation must be IMPLEMENTATION_READY_BOUNDED_READ_ONLY, REJECT_WITH_REASON, or DEFER_WITH_MISSING_AUTHORITY. No adapter implementation, MCP/CLI invocation, external-agent launch, production/test/checker/registry/roadmap/session mutation, provider/live, credential, network, public, deployment, T6, T7, staging, or commit action is authorized."
+}
