@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2187,
+  "stateKey": "cadpAiT7ClosureAndPublicDispositionDecisionDispatch20260814",
+  "value": "CADP-AI-T7D closure-readiness and public-disposition decision audit is DISPATCH_READY at material commit a13e162ee. Exact authority is baseline SHA-256 e5f09dff8f2271ea244d98bee5c1b7ac8d927203c354d2db7f8a963bf116d377 and work-order SHA-256 207ade68861c0cc0a3b8e2d94a242b6b512f65c78d6569b28f201eaa2559ea07. Worker scope is exactly two Markdown outputs: a source-backed closure-readiness assessment and a full-gate worker return. T6 is explicitly not selected and remains parked. No T7 closure mutation, catalog/GAP/index/roadmap/registry/session edit, public export or sync, adapter implementation, MCP/CLI invocation, provider/live, credential, network, deployment, production, staging, or commit action is authorized."
+}

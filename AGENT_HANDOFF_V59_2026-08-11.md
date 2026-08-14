@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T5D Decision Audit Closed Deferred
+# CVF Agent Handoff V59 - CADP-AI-T7D Closure Readiness Audit Dispatched
 
 Memory class: active-handoff
 
@@ -11,8 +11,8 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current accepted material parent marker: `ef84a1f6a`
-- Prior T5D dispatch marker: `a09a1cc4f562099e10496c20019926bd29ea925f`; session-sync parent marker: `5cb9aa95d`
+- Current dispatch material marker: `a13e162ee`; prior T5D closure marker: `ef84a1f6a`
+- Prior session-sync parent marker: `5cb9aa95d`
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
@@ -44,7 +44,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t5d_closed_pass_bounded_deferred_awaiting_operator_direction`
+  `cadp_ai_t7d_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -53,17 +53,17 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5d_closed_pass_bounded_deferred_awaiting_operator_direction`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit operator direction; parked checkpoint=adapter implementation, T6-T7, production source, hook wiring, provider/live, credential access, CLI/MCP invocation, public sync, deploy, production, trusted-evidence readiness and cross-runtime determinism.
+Startup acknowledged: current mode=`cadp_ai_t7d_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send committed T7D decision packet to one no-commit worker; parked checkpoint=T7 closure mutation, T5 implementation, T6 live proof, catalog/GAP/index/roadmap/registry/session mutation, provider/live, credentials, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t5d_closed_pass_bounded_deferred_awaiting_operator_direction`
+`cadp_ai_t7d_dispatched_worker_must_not_commit`
 
 ## Purpose
 
-Record the independently accepted CADP-AI-T5D decision-only closure. The
-assessment and return are accepted bounded with implementation deferred; no
-adapter implementation or runtime action is released.
+Record the committed CADP-AI-T7D closure-readiness decision dispatch. The
+worker may create only the readiness assessment and pending return; no T7
+closure mutation, public action, T6 live proof, or runtime action is released.
 
 ## Scope / Target / Owner Boundary
 
@@ -72,8 +72,8 @@ adapter implementation or runtime action is released.
 - F11 (`F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION`) is CLOSED_PASS_BOUNDED as
   of CADP-AI-T2A's independent review; cross-runtime determinism is not
   proven.
-- T3B and T4 are accepted bounded; T5D is accepted bounded and deferred;
-  implementation, T6-T7, runtime/provider/live, public sync, deploy and
+- T3B and T4 are accepted bounded; T5D is accepted bounded and deferred; T7D
+  is decision-only dispatch-ready; implementation, T6, runtime/provider/live, public sync, deploy and
   production remain unopened.
 
 ## Latest Work / Changes
@@ -95,12 +95,12 @@ adapter implementation or runtime action is released.
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T5D CLOSED_PASS_BOUNDED_DEFERRED_MISSING_AUTHORITY at `ef84a1f6a`; T4 remains accepted bounded predecessor |
-| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T5_EXTERNAL_AGENT_ADAPTER_DECISION_2026-08-14.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_EXTERNAL_AGENT_ADAPTER_DECISION_2026-08-14.md` |
-| workerReturnPath | `docs/reviews/CVF_CADP_AI_T5_EXTERNAL_AGENT_ADAPTER_DECISION_WORKER_RETURN_2026-08-14.md` |
-| completionReviewPath | `docs/reviews/CVF_CADP_AI_T5_EXTERNAL_AGENT_ADAPTER_DECISION_COMPLETION_2026-08-14.md` |
-| nextAuthorityRequirement | all nine missing prerequisites, fresh source verification, GC-018, committed bounded work order, and explicit operator authorization before implementation consideration |
+| authorityState | CADP-AI-T7D DISPATCH_READY at `a13e162ee`; T5D remains accepted bounded deferred predecessor |
+| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_2026-08-14.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_2026-08-14.md` |
+| workerReturnPath | `docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_WORKER_RETURN_2026-08-14.md` |
+| completionReviewPath | reviewer-owned following pending worker return |
+| nextAuthorityRequirement | execute exact two-path no-commit readiness audit; independent review required before any closure projection |
 
 ## Closure Evidence
 
@@ -146,10 +146,10 @@ adapter implementation or runtime action is released.
 
 ## Next Allowed Move
 
-CADP-AI-T4 is independently accepted at `7dfee6e4d`; T5D decision-only closure
-is accepted bounded and deferred at `ef84a1f6a`. Await explicit operator
-direction. Adapter implementation, T6-T7, and all runtime/provider/live/
-credential/public/deployment/production lanes remain parked.
+CADP-AI-T5D is accepted bounded and deferred at `ef84a1f6a`; T7D decision-only
+dispatch is committed at `a13e162ee`. Send the exact packet to one no-commit
+worker. T7 closure mutation, T5 implementation, T6, and all runtime/provider/
+live/credential/public/deployment/production lanes remain parked.
 
 ## Active Boundary
 
@@ -159,18 +159,16 @@ credential/public/deployment/production lanes remain parked.
   unrelated lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
-- T3A, T3B, T4, and T5D are closed bounded; T5D implementation is deferred and
-  every later downstream lane remains parked.
+- T3A, T3B, T4, and T5D are closed bounded; T7D is decision-only dispatched;
+  T5 implementation and T6 remain parked.
 - MAO T1, DESIGN, BUILD, provider/live, public `main`, deploy, hosted smoke,
   secrets, store, production, and archive deletion remain parked.
 
-## Completion Review
+## Completion Review Target
 
-CADP-AI-T5D completion review:
-`docs/reviews/CVF_CADP_AI_T5_EXTERNAL_AGENT_ADAPTER_DECISION_COMPLETION_2026-08-14.md`.
-Material commit: `ef84a1f6a`. Evidence: 12/12 prerequisite rows, nine missing
-conditions, reviewer-fast 63/63, material pre-commit 84/84 PASS. Review SHA-256:
-`4444504d4c045ed3ea53292e89b673b8e310ad676d80f9901240ed344c1bb366`.
+CADP-AI-T7D worker-return target:
+`docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_WORKER_RETURN_2026-08-14.md`.
+Dispatch evidence: pre-dispatch 76/76 and material pre-commit 84/84 PASS.
 
 Prior pre-push dispatch-sync authorization and operation trace remain preserved
 in Git history through session-sync commit `0b1046dfc`; they are omitted from
@@ -180,11 +178,11 @@ this compact active handoff after the public staging push superseded that mode.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: the T5D decision closure and continuity update concern private hermetic
+Reason: the T7D decision dispatch and continuity update concern private hermetic
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T5D Closure Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T7D Dispatch Sync
 
 Protected paths:
 
@@ -192,25 +190,25 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT5ExternalAgentAdapterDecisionClosure20260814.json`
+- `CVF_SESSION/state/entries/cadpAiT7ClosureAndPublicDispositionDecisionDispatch20260814.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator supplied the completed T5D worker
-disposition and requested continuation, authorizing independent review and closure.
+Operator authorization: the operator issued `next` after T5D closure,
+authorizing the bounded T7D decision-only dispatch.
 
-Authorized guard-maintenance scope: record accepted bounded T5D deferral at
-material commit `ef84a1f6a`, await operator direction, and keep implementation,
+Authorized guard-maintenance scope: bind exact T7D authority at material commit
+`a13e162ee`, set the two-path no-commit worker move, and keep T7 closure mutation,
 T6-T7, production, hook wiring, provider/live/credential/CLI-MCP invocation/
 public/deployment/trusted-evidence/cross-runtime and unrelated lanes parked.
 
-Rollback boundary: revert this exact session-sync batch together with closure
-material commit `ef84a1f6a`; do not separate generated state from source
+Rollback boundary: revert this exact session-sync batch together with dispatch
+material commit `a13e162ee`; do not separate generated state from source
 fragments.
 
 ## Claim Boundary
 
-This handoff records bounded T5D decision-audit closure and deferral only. It does not claim or
+This handoff records T7D closure-readiness decision dispatch only. It does not claim or
 authorize an adapter, MCP/CLI invocation, external-agent launch, TypeScript
 semantics, runtime enforcement, provider compatibility, live behavior,
 cross-runtime determinism, trusted-evidence readiness, production source
