@@ -1,0 +1,57 @@
+{
+  "stableId": "cvf.asc.interface.cadp_capability_admission_distribution_profile.v1",
+  "entityType": "INTERFACE",
+  "name": "CADP Capability Admission And Distribution Profile",
+  "interfaceKind": "CONTRACT",
+  "authorityClass": "ACCEPTED_REVIEW_EVIDENCE",
+  "maturity": "LOCAL_READY",
+  "ownerPaths": [
+    "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.ts",
+    "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-owner-binding.contract.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/cadp.capability.consumer.contract.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/cadp.constraint.projection.contract.ts",
+    "governance/compat/check_cadp_authority_boundary_drift.py"
+  ],
+  "citations": [
+    {
+      "path": "docs/reviews/CVF_CADP_AI_T1_INDEPENDENT_ADVERSARIAL_REVIEW_2026-08-13.md",
+      "lineOrSection": "Final Review Disposition",
+      "evidenceRole": "bounded CADP contract-kernel acceptance"
+    },
+    {
+      "path": "docs/reviews/CVF_CADP_AI_T2A_AUTHORITY_RECONCILIATION_COMPLETION_2026-08-13.md",
+      "lineOrSection": "Final Disposition",
+      "evidenceRole": "repository-owned authority binding acceptance"
+    },
+    {
+      "path": "docs/reviews/CVF_CADP_AI_T3A_EXECUTION_PLANE_VERIFIED_CAPABILITY_CONSUMER_COMPLETION_2026-08-13.md",
+      "lineOrSection": "Final Disposition",
+      "evidenceRole": "non-executing Execution Plane consumer acceptance"
+    },
+    {
+      "path": "docs/reviews/CVF_CADP_AI_T3B_MODEL_GATEWAY_CONSTRAINT_PROJECTION_COMPLETION_2026-08-13.md",
+      "lineOrSection": "Final Disposition",
+      "evidenceRole": "provider-neutral Model Gateway projection acceptance"
+    },
+    {
+      "path": "docs/reviews/CVF_CADP_AI_T4_AUTHORITY_BOUNDARY_MACHINE_ENFORCEMENT_COMPLETION_2026-08-14.md",
+      "lineOrSection": "Final Disposition",
+      "evidenceRole": "standalone authority-boundary drift checker acceptance"
+    }
+  ],
+  "claimBoundary": "LOCAL_READY and ACCEPTED_REVIEW_EVIDENCE only for the bounded hermetic CADP contract, repository-owned authority binding, non-executing Execution Plane eligibility consumer, provider-neutral Model Gateway constraint projection, and standalone unwired drift checker. The interface does not authorize execution, resolve credentials, call a provider, activate or certify a capability, expose an external-agent adapter, prove cross-runtime determinism, perform live compatibility proof, or establish public export, deployment, or production readiness.",
+  "freshnessInputs": [
+    "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.ts",
+    "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-owner-binding.contract.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/cadp.capability.consumer.contract.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/cadp.constraint.projection.contract.ts",
+    "governance/compat/check_cadp_authority_boundary_drift.py",
+    "docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md"
+  ],
+  "lastReviewed": {
+    "date": "2026-08-14",
+    "acceptedArtifact": "docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_COMPLETION_2026-08-14.md"
+  },
+  "boundaryCaveat": "T5 external-agent adapter implementation remains deferred for nine missing authority prerequisites. T6 live proof is not selected and remains parked. The T4 checker is standalone and unwired. No provider/live, credential, MCP/CLI invocation, external-agent launch, public-sync, deployment, production, trusted-evidence readiness, or universal runtime-enforcement claim is admitted.",
+  "priorDisposition": "DEFER_PENDING_ACCEPTANCE"
+}

@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_T1_T2_T3A_T3B_T4_ACCEPTED_BOUNDED_T5_DECISION_ACCEPTED_DEFERRED_T6_PARKED_T7D_DISPATCH_READY
+Status: T0_T1_T2_T3A_T3B_T4_ACCEPTED_BOUNDED_T5_DECISION_ACCEPTED_DEFERRED_T6_NOT_SELECTED_PARKED_T7_ACCEPTED_CLOSED_DEFERRED_PRIVATE_ONLY
 
 docType: roadmap
 
@@ -115,7 +115,7 @@ the preceding record, and no distribution or receipt may activate a capability.
 | T4 | complete machine enforcement | schema fixtures, drift checker, negative corpus suite, package-boundary tests | repeated/accepted invariant need; checker GC-018 | checker detects every named violation without false authority claim | ACCEPTED_BOUNDED_STANDALONE_UNWIRED |
 | T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | ACCEPTED_BOUNDED_DEFER_WITH_MISSING_AUTHORITY |
 | T6 | live compatibility proof | bounded real-provider/SaaS tests and receipts | credentials, cost ceiling, sandbox, live diagnostic and release work order | real provider evidence; no mocks for governance claim | PARKED_NOT_AUTHORIZED |
-| T7 | closure and public disposition | independent review, catalog/GAP projections, session sync, public export decision | all selected prior tranches accepted | zero unresolved selected-scope findings and explicit export disposition | DISPATCH_READY_DECISION_ONLY |
+| T7 | closure and public disposition | independent review, catalog/GAP projections, session sync, public export decision | all selected prior tranches accepted | zero unresolved selected-scope findings and explicit export disposition | ACCEPTED_CLOSED_BOUNDED_DEFERRED_PRIVATE_ONLY |
 
 ## T1 Implemented Contract Surface
 
@@ -261,26 +261,27 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 
 | Field | Disposition |
 |---|---|
-| claimScope | finding resolution roadmap plus accepted bounded T1-T4 local implementation state and accepted T5 decision evidence |
+| claimScope | finding resolution roadmap plus accepted bounded T1-T4 local implementation state, accepted T5 decision evidence, and accepted bounded T7 selected-scope closure |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
 | receiptEvidence | N/A with reason: no runtime receipt claim |
 | actionEvidence | ACTION_EVIDENCE_PRESENT: T1-T3 package evidence plus T4 41-test static-checker suite and 8 independent probes |
 | invocationBoundary | local repository implementation and verification |
 | interceptionBoundary | no runtime/provider interception claim |
-| claimLanguage | T1-T4 accepted bounded; T5 decision accepted as deferred with missing authority; T6 parked; T7D decision audit dispatch-ready |
+| claimLanguage | T1-T4 accepted bounded; T5 decision accepted as deferred with missing authority; T6 not selected and parked; T7 selected scope accepted closed with DEFERRED_PRIVATE_ONLY |
 | forbiddenExpansion | no live/provider/adapter/public/deploy/production/commit claim |
 
 ## Next Allowed Move
 
 T3A and T3B are independently accepted for hermetic, non-executing internal
 projections. T4 is independently accepted for a standalone, read-only checker.
-T5 decision evidence is independently accepted with terminal recommendation
-`DEFER_WITH_MISSING_AUTHORITY`; it authorizes no adapter. T7D is released as a
-two-path, no-commit closure-readiness and public-disposition decision audit.
-T6 is not selected and remains parked because its live prerequisites are
-absent. Adapter implementation, provider/live, credential access, quota
-mutation, CLI/MCP invocation, public sync, deployment, production,
-trusted-evidence readiness, and cross-runtime claims remain parked.
+T7 selected hermetic scope is independently accepted closed bounded with
+`DEFERRED_PRIVATE_ONLY`. T5 implementation remains deferred for nine missing
+authority prerequisites. T6 was not selected and remains parked because its
+live prerequisites are absent. Await explicit operator direction; no further
+CADP tranche or public action is auto-released. Adapter implementation,
+provider/live, credential access, quota mutation, CLI/MCP invocation, public
+sync, deployment, production, trusted-evidence readiness, and cross-runtime
+claims remain parked.
 
 ## Public Export Disposition
 
@@ -291,8 +292,10 @@ provenance; a later public-safe projection needs explicit public-sync review.
 
 ## Claim Boundary
 
-This roadmap records bounded T0/T1/T2/T3A/T3B/T4 acceptance and bounded T5
-decision acceptance with implementation deferred for missing authority.
+This roadmap records bounded T0/T1/T2/T3A/T3B/T4 acceptance, bounded T5
+decision acceptance with implementation deferred for missing authority, and
+bounded T7 selected-scope closure with `DEFERRED_PRIVATE_ONLY`; T6 was not
+selected and remains parked.
 T3A proves only a hermetic pre-execution eligibility projection with literal
 `executionAuthorized: false`; F11 remains closed only within the accepted
 hermetic scope. T3B proves only a local provider-neutral constraint projection

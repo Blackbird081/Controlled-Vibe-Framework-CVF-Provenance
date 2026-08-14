@@ -57,6 +57,14 @@ the same tranche to distinguish its own contract-only authority from these
 four bounded implementation owners; see
 `docs/reviews/CVF_SOT3_CVF_PROJ_T1_WORKER_RETURN_2026-07-18.md`.**
 
+**CADP-AI-T7 (2026-08-14) adds one bounded INTERFACE entry,
+`cvf.asc.interface.cadp_capability_admission_distribution_profile.v1`, bringing
+the catalog to 29 entities. It records only the accepted hermetic contract,
+repository authority binding, non-executing internal projections, and
+standalone unwired checker. T5 external-agent implementation remains deferred,
+T6 live proof is not selected, and no provider/live, credential, public-export,
+deployment, production, or universal activation claim is admitted.**
+
 ## As-Built Architecture At A Glance
 
 The five R91 lane planes, in chain order, with their catalog-record IDs:
@@ -145,7 +153,7 @@ the governance control matrix.
 | `CVF_AS_BUILT_SYSTEM_CATALOG_SCHEMA.json` | JSON Schema contract: entity types, fields, enums, conditional constraints | ACTIVE |
 | `CVF_AS_BUILT_SYSTEM_CATALOG_RECONCILIATION_CONTRACT.md` | precedence, conflict, lineage, negative-search, migration table, admission routing | ACTIVE |
 | `CVF_AS_BUILT_SYSTEM_CATALOG_TOPOLOGY_DECISIONS.md` | generated-layout, freshness-ownership, and front-door topology decisions | ACTIVE |
-| `entries/` | compact per-entity JSON sources (editable authority) | ACTIVE, 28 entities |
+| `entries/` | compact per-entity JSON sources (editable authority) | ACTIVE, 29 entities |
 | `CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json` | generated aggregate (rebuild via generator, do not hand-edit) | GENERATED |
 
 ## Relationship To The R91 System-Chain Map Family
