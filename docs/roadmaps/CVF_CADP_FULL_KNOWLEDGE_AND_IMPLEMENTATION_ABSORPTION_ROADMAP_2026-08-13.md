@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_T1_T2_T3A_T3B_T4_ACCEPTED_BOUNDED_T5_DECISION_ACCEPTED_DEFERRED_T6_T7_PARKED
+Status: T0_T1_T2_T3A_T3B_T4_ACCEPTED_BOUNDED_T5_DECISION_ACCEPTED_DEFERRED_T6_PARKED_T7D_DISPATCH_READY
 
 docType: roadmap
 
@@ -115,7 +115,7 @@ the preceding record, and no distribution or receipt may activate a capability.
 | T4 | complete machine enforcement | schema fixtures, drift checker, negative corpus suite, package-boundary tests | repeated/accepted invariant need; checker GC-018 | checker detects every named violation without false authority claim | ACCEPTED_BOUNDED_STANDALONE_UNWIRED |
 | T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | ACCEPTED_BOUNDED_DEFER_WITH_MISSING_AUTHORITY |
 | T6 | live compatibility proof | bounded real-provider/SaaS tests and receipts | credentials, cost ceiling, sandbox, live diagnostic and release work order | real provider evidence; no mocks for governance claim | PARKED_NOT_AUTHORIZED |
-| T7 | closure and public disposition | independent review, catalog/GAP projections, session sync, public export decision | all selected prior tranches accepted | zero unresolved selected-scope findings and explicit export disposition | PARKED |
+| T7 | closure and public disposition | independent review, catalog/GAP projections, session sync, public export decision | all selected prior tranches accepted | zero unresolved selected-scope findings and explicit export disposition | DISPATCH_READY_DECISION_ONLY |
 
 ## T1 Implemented Contract Surface
 
@@ -267,7 +267,7 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 | actionEvidence | ACTION_EVIDENCE_PRESENT: T1-T3 package evidence plus T4 41-test static-checker suite and 8 independent probes |
 | invocationBoundary | local repository implementation and verification |
 | interceptionBoundary | no runtime/provider interception claim |
-| claimLanguage | T1-T4 accepted bounded; T5 decision accepted as deferred with missing authority; T6-T7 remain parked |
+| claimLanguage | T1-T4 accepted bounded; T5 decision accepted as deferred with missing authority; T6 parked; T7D decision audit dispatch-ready |
 | forbiddenExpansion | no live/provider/adapter/public/deploy/production/commit claim |
 
 ## Next Allowed Move
@@ -275,9 +275,11 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 T3A and T3B are independently accepted for hermetic, non-executing internal
 projections. T4 is independently accepted for a standalone, read-only checker.
 T5 decision evidence is independently accepted with terminal recommendation
-`DEFER_WITH_MISSING_AUTHORITY`; it authorizes no adapter. Await explicit
-operator direction. T6-T7, adapter implementation, provider/live, credential
-access, quota mutation, CLI/MCP invocation, public sync, deployment, production,
+`DEFER_WITH_MISSING_AUTHORITY`; it authorizes no adapter. T7D is released as a
+two-path, no-commit closure-readiness and public-disposition decision audit.
+T6 is not selected and remains parked because its live prerequisites are
+absent. Adapter implementation, provider/live, credential access, quota
+mutation, CLI/MCP invocation, public sync, deployment, production,
 trusted-evidence readiness, and cross-runtime claims remain parked.
 
 ## Public Export Disposition
