@@ -45,19 +45,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t7d_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send the committed T7D decision packet to one no-commit worker; parked checkpoint=T7 closure mutation, T5 implementation, T6 live proof, catalog/GAP/index/roadmap/registry/session mutation, provider/live, credentials, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t7_closed_pass_bounded_deferred_private_only_awaiting_operator_direction`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit operator direction after bounded private T7 closure; parked checkpoint=T5 implementation, T6 live proof, provider/live, credentials, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t7d_dispatched_worker_must_not_commit`
+`cadp_ai_t7_closed_pass_bounded_deferred_private_only_awaiting_operator_direction`
 
-Current mode marker: `cadp_ai_t7d_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t7d_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t5d_closed_pass_bounded_deferred_awaiting_operator_direction`
+Current mode marker: `cadp_ai_t7_closed_pass_bounded_deferred_private_only_awaiting_operator_direction`
+Current mode: `cadp_ai_t7_closed_pass_bounded_deferred_private_only_awaiting_operator_direction`
+Previous mode: `cadp_ai_t7d_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t7d_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t7_closed_pass_bounded_deferred_private_only_awaiting_operator_direction`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -67,14 +67,15 @@ Completion review:
 CADP-AI-T3A is independently accepted `CLOSED_PASS_BOUNDED` at `f1dc9a6f7`.
 CADP-AI-T3B is independently accepted `CLOSED_PASS_BOUNDED` at `9a4920c92`.
 CADP-AI-T4 is independently accepted at `7dfee6e4d`. CADP-AI-T5D is accepted
-bounded and deferred at `ef84a1f6a`. T7D decision-only authority is committed
-at `a13e162ee`. Send the exact two-path packet to one
-`WORKER_MUST_NOT_COMMIT` decision worker. T6 is not selected and remains
+bounded and deferred at `ef84a1f6a`. CADP-AI-T7 selected hermetic scope is
+independently accepted `CLOSED_PASS_BOUNDED` at `a49cebd8a` with public export
+`DEFERRED_PRIVATE_ONLY`. Await explicit operator direction. T5 implementation
+remains deferred for 9 missing prerequisites; T6 is not selected and remains
 parked. Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-T7 closure mutation, T5 adapter implementation, T6 live proof, production TypeScript edits, existing-guard
+Any new CADP tranche, T5 adapter implementation, T6 live proof, production TypeScript edits, existing-guard
 edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation,
 CLI/MCP invocation, public sync,
 deployment, production, trusted-evidence readiness and cross-runtime
