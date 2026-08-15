@@ -13,7 +13,8 @@ Status: ACTIVE
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
-- Current T5-R1 selection session-sync: `2ebee4726e6486d72c18fa1dd92093adae9c1ce9`
+- Current T5-R1 dispatch session-sync: `172b013b60b76430e71cde03d91133f1d3a598ec`
+- Current T5-R1 dispatch material commit: `071e39100f8b93b7959505b0e3f22ed31f2b6030`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
@@ -22,16 +23,6 @@ Status: ACTIVE
   `9f08655f3d755873ad15854843dd015c56e8d95d`
 - CADP-R1/T1 material closure commit:
   `a17051bcd810e6cc80a069712ce670365c2e7790`
-- LRA-SA-T0 material closure commit:
-  `6e575bf984d8af49eb8a1ab2db026802787a6cc3`
-- LRA-SA-T0 dispatch material commit:
-  `3c423f28b`
-- LRA-T2/T4 material closure commit:
-  `c1e7af8f18da92e33e2af0b582f8d04fd20a528b`
-- LRA-T2 dispatch material commit:
-  `d0e88c0f4cfba72b8cc22dd71c61202ad1792c48`
-- LRA-T0 material closure commit:
-  `a4c7a0a840643f7d669ec2b91752d4cd9ff7771d`
 - Core material closure commit:
   `854cef02933ec663c9b3f5a181bf09b1ef95ebd6`
 - MAO T0 material closure commit:
@@ -46,7 +37,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t5_r1_external_readout_authority_foundation_dispatch_authoring`
+  `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -55,17 +46,18 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r1_external_readout_authority_foundation_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh T5-R1 foundation GC-018 and no-commit work order; parked checkpoint=adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send the committed exact-six-path T5-R1 work order to Claude; parked checkpoint=adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t5_r1_external_readout_authority_foundation_dispatch_authoring`
+`cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
 
 ## Purpose
 
-Record T6 bounded closure at `2599ff10e` and the TS config fix at `766c86d17`.
-Open only T5-R1 authority-foundation dispatch authoring; adapter implementation
-and every external entry point remain deferred.
+Record T6 bounded closure at `2599ff10e`, the TS config fix at `766c86d17`,
+and the reviewed T5-R1 authority-foundation dispatch at `071e39100`. Open only
+the exact-six-path no-commit worker execution; adapter implementation and every
+external entry point remain deferred.
 
 ## Scope / Target / Owner Boundary
 
@@ -95,17 +87,20 @@ and every external entry point remain deferred.
 - T6 R2 completed one real exact-model SOT3 call; reviewer reconciled mock E2E
   6/6 without another call, retained the original bundle FAIL, and closed the
   bounded compatibility claim at `2599ff10e` after pre-commit 84/84.
+- T5-R1 dispatch was independently reviewed, repaired from three worker-selected
+  names to an exact six-path manifest, passed pre-dispatch and pre-commit 84/84,
+  and was materially committed at `071e39100`.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T6-R2 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `2599ff10e`; one cumulative call |
-| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_2026-08-15.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_2026-08-15.md` |
-| workerReturnPath | `docs/reviews/CVF_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_WORKER_RETURN_2026-08-15.md` |
-| completionReviewPath | `docs/reviews/CVF_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_COMPLETION_2026-08-15.md` |
-| nextAuthorityRequirement | fresh operator-selected governed objective; repeat-live requires new dispatch |
+| authorityState | CADP-AI-T5-R1 `DISPATCH_READY` at `071e39100`; `WORKER_MUST_NOT_COMMIT` |
+| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md` |
+| workerReturnPath | `docs/reviews/CVF_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_WORKER_RETURN_2026-08-15.md` (pending worker) |
+| completionReviewPath | reviewer-owned optional path named by the work order; absent at dispatch |
+| nextAuthorityRequirement | execute only the exact six-path no-commit foundation packet; independent review owns closure |
 
 ## Closure Evidence
 
@@ -151,8 +146,9 @@ and every external entry point remain deferred.
 
 ## Next Allowed Move
 
-QTDM-01 and CADP-AI-T6-R2 are closed bounded. Author a fresh T5-R1 foundation
-GC-018 and no-commit work order. Adapter implementation, repeat-live, public/
+Send the committed T5-R1 work order to one no-commit Claude worker from the
+final clean execution base. The worker must return the exact six-path pending
+set for independent review. Adapter implementation, repeat-live, public/
 deployment/production remain parked.
 
 ## Active Boundary
@@ -186,7 +182,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T5-R1 Selection Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T5-R1 Dispatch Sync
 
 Protected paths:
 
@@ -194,27 +190,25 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT5R1AuthorityFoundationSelection20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT5R1AuthorityFoundationDispatch20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: the operator directed removal of the deprecated model
 and separately permitted a future credentialed T6 test.
 
-Authorized guard-maintenance scope: bind the TS compatibility fix at
-`766c86d17`, select T5-R1 foundation dispatch authoring, and keep adapter
-implementation, repeat-live, hook wiring, CLI-MCP invocation/
-public/deployment/trusted-evidence/cross-runtime and unrelated lanes parked.
+Authorized guard-maintenance scope: bind dispatch commit `071e39100`, move to
+the exact-six-path no-commit worker mode, and keep adapter implementation,
+repeat-live, hook wiring, CLI-MCP invocation, public/deployment/
+trusted-evidence/cross-runtime and unrelated lanes parked.
 
 Rollback boundary: revert this exact session-sync batch together with material
-commit `256fa5485`; do not separate generated state from source
-fragments.
+commit `071e39100`; do not separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records R2 bounded closure and T5-R1 authoring selection. It does not claim or
-authorize adapter implementation, MCP/CLI invocation, external-agent launch,
-runtime enforcement, qwen3.7-flash compatibility, completed live behavior,
-cross-runtime determinism, trusted-evidence readiness, production source
-changes, hook wiring, full release readiness, repeat-live, public sync, deployment, or
-production.
+This handoff records R2 bounded closure and T5-R1 foundation dispatch. It does
+not claim or authorize adapter implementation, MCP/CLI invocation,
+external-agent launch, runtime enforcement, cross-runtime determinism,
+trusted-evidence readiness, production source changes, hook wiring, full
+release readiness, repeat-live, public sync, deployment, or production.
