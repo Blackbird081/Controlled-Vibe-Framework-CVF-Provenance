@@ -287,8 +287,9 @@ python governance/compat/check_adif_defect_registry_disclosure.py --base 576af12
 
 Expected results:
 
-- `git rev-parse --short HEAD` matches `576af12fb` before any edit; record the
-  captured value as `executionBaseHead`
+- `git rev-parse HEAD` exactly matches the clean execution-base SHA supplied
+  in the orchestrator dispatch prompt before any edit; record the captured
+  value as `executionBaseHead`
 - `git status --short` is empty before any edit
 - pre-dispatch and pre-implementation autorun gates PASS
 - dispatch-quality and ADIF disclosure checks PASS
@@ -396,6 +397,13 @@ Any file outside ownership requires an updated work order or operator
 approval. If the closure diff shows files outside Allowed scope or
 ownership, the worker must stop and return to the orchestrator.
 
+## Required Artifact Manifest
+
+| Required output | Path | Required at dispatch | Exists |
+| --- | --- | --- | --- |
+| GC-018 baseline | `docs/baselines/CVF_GC018_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md` | Yes | Yes |
+| Worker work order | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md` | Yes | Yes |
+
 ## Work-Order Fulfillment Manifest
 
 ### Planned Artifact Manifest
@@ -450,10 +458,11 @@ ownership, the worker must stop and return to the orchestrator.
 
 Steps must be sequential unless explicitly marked parallel-safe.
 
-1. Capture `executionBaseHead` with `git rev-parse --short HEAD`; confirm
+1. Capture `executionBaseHead` with `git rev-parse HEAD`; confirm
    `git status --short` is empty. Input: repository state. Output: recorded
-   base head. Validation: matches `576af12fb` prefix. Stop condition: HEAD
-   mismatch or dirty worktree -> return `BLOCKED_WITH_REASON`.
+   base head. Validation: exactly matches the clean execution-base SHA supplied
+   in the orchestrator dispatch prompt. Stop condition: HEAD mismatch or dirty
+   worktree -> return `BLOCKED_WITH_REASON`.
 2. Read every file in Section 5 plus the checker sources in the Checker
    Source Read-Ahead Block. Input: named paths. Output: none (reading only).
    Validation: worker return Source Inventory records each as `READ` or
@@ -674,23 +683,23 @@ to a closed-equivalent value.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | dispatcher/dispatch author (this batch); worker and reviewer/closer roles execute in later turns |
+| Actor | independent dispatch reviewer/repair author; worker and reviewer/closer roles execute in later turns |
 | Provider or surface | local private provenance repository |
-| Session or invocation | CADP-AI-T5-R1 dispatch authoring, 2026-08-15 |
+| Session or invocation | CADP-AI-T5-R1 execution-anchor repair, 2026-08-15 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | governed file reads, `rg`, direct file writes, governance gate commands, `git status`/`git rev-parse` |
-| Target paths | this work order; the paired GC-018 baseline |
+| Target paths | this work order only |
 | Allowed scope source | active session bootstrap read model `nextAllowedMove`; active handoff `AGENT_HANDOFF_V59_2026-08-11.md` |
-| Before status evidence | `git rev-parse HEAD` = `576af12fba91bb6972e1e7646d63fe1d30d7b7d2`; `git status --short` showed a clean worktree (empty output) before this dispatch batch's file writes began |
-| After status evidence | `git status --short` shows exactly the two untracked dispatch artifact paths; HEAD unchanged |
-| Diff evidence | `git diff --name-status` against `576af12fba91bb6972e1e7646d63fe1d30d7b7d2` shows no tracked-file changes; only the two new untracked paths |
-| Approval boundary | dispatch authoring only; no worker implementation, commit, or reviewer closure performed in this batch |
+| Before status evidence | `git rev-parse HEAD` = `2f27887440d8a0eae0ab4ee5d645b88eee005ae9`; `git status --short` showed a clean worktree before this repair began |
+| After status evidence | `git status --short` shows only this repaired work order; worker implementation remains absent |
+| Diff evidence | `git diff --name-status` against `2f27887440d8a0eae0ab4ee5d645b88eee005ae9` shows only this work order modified |
+| Approval boundary | dispatch authority repair only; no worker implementation or reviewer closure performed |
 | Claim boundary | dispatch-shape and source-verification evidence only; no runtime, provider, MCP/CLI, or moratorium-lift claim |
 | Agent type | dispatcher / dispatch author |
 | Invocation ID | `cadp-ai-t5-r1-dispatch-2026-08-15` |
-| Expected manifest | `docs/baselines/CVF_GC018_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md` |
-| Manifest delta | MATCH |
+| Expected manifest | N/A with reason: this is a reviewer correction to an already committed dispatch artifact; the sole repaired path is recorded in Target paths and Diff evidence |
+| Actual changed set | N/A with reason: this is a reviewer correction to an already committed dispatch artifact; the sole repaired path is recorded in Target paths and Diff evidence |
+| Manifest delta | N/A with reason: one in-place work-order repair, with no worker-output manifest yet |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this dispatch batch |
 
 ## Verification Commands
