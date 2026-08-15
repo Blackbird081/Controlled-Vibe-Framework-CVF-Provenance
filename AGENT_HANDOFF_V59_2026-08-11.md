@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Alibaba Quota Refreshed; T6 Dispatch Required
+# CVF Agent Handoff V59 - CADP-AI-T6-R1 Dispatched; Worker Must Not Commit
 
 Memory class: active-handoff
 
@@ -13,7 +13,7 @@ Status: ACTIVE
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current session-sync parent marker: `4bcd9d565`
-- Current HEAD anchor: `2c7c16a247829efd8d02b8cadb9dbec9c426a57b` (SOT3 route targets `qwen3.7-flash`).
+- Current session-sync parent anchor: `876ff39a054260f362b29a0049e79cbc3d592684`; R1 material dispatch: `111ad52cc5096ea2ab8d39c917d412ed960e0109`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
@@ -45,7 +45,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`
+  `cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -54,18 +54,18 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and accept a fresh CADP-AI-T6 qwen3.7-flash live-retry dispatch; parked checkpoint=live execution until dispatch acceptance, T5, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no-commit worker executes the accepted R1 packet from final clean HEAD; parked checkpoint=independent closure, T5, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`
+`cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
 
 ## Purpose
 
-Record the quota refresh at `256fa5485`: T6 now targets `qwen3.7-flash`,
-snapshot `qwen3.7-flash-2026-07-15`, with expiry `2026-10-22`.
-Environment repaired on complete NVM4W Node v22.17.0; npm/npx 10.9.2 resolve. QTDM-01
-dispatch is accepted at `a8d428239`; worker must not commit and live retry is parked.
+Record R1 dispatch at `111ad52cc`: T6 targets `qwen3.7-flash`, snapshot
+`qwen3.7-flash-2026-07-15`, expiry `2026-10-22`. The worker must independently
+verify NVM4W node/npm/npx and official pricing, use keys by reference, create
+only five evidence paths, and leave HEAD unchanged.
 
 ## Scope / Target / Owner Boundary
 
@@ -151,9 +151,9 @@ dispatch is accepted at `a8d428239`; worker must not commit and live retry is pa
 
 ## Next Allowed Move
 
-QTDM-01 remains closed bounded. Author and independently accept a fresh
-CADP-AI-T6 retry dispatch targeting `qwen3.7-flash`; do not run a provider call
-before that packet closes. T5 and public/deployment/production remain parked.
+QTDM-01 remains closed bounded. Execute the accepted CADP-AI-T6-R1 work order
+from the final clean dispatcher HEAD; worker must not commit. T5 and
+public/deployment/production remain parked.
 
 ## Active Boundary
 
@@ -194,7 +194,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/alibabaFreeQuotaModelRefresh20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT6R1LiveCompatibilityRetryDispatch20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
