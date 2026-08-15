@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T5_R3_EXTERNAL_AUTHENTICATION_OWNER_ADOPTION_READINESS_DECISION_2026-08-15.md",
     "baselineSha256": "fea1d2dcaf7e766114906807c1c84df63d1529b2cce4af9d6b446710d7fbd375",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R3_EXTERNAL_AUTHENTICATION_OWNER_ADOPTION_READINESS_DECISION_2026-08-15.md",
-    "workOrderSha256": "57c43926a7e2857e80a45ac27f84602749c1cb96cfa9676f020b4c6f19d1e916"
+    "workOrderSha256": "8c0bb6a890082aa6f067d53d258a479681dce3c4bd19f5c32a3bba5185247dfe"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
