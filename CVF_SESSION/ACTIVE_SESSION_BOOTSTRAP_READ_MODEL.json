@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed",
+  "currentMode": "rspb_ai_t0_dual_corpus_intake_accepted_stop_cost_exceeds_value_repository_transition_ready",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Treat CADP-AI-T8 as independently accepted closed bounded at material commit 3b906862b. CADP selective absorption is terminally reconciled; external runtime remains PARKED_DEMAND_GATED and may reopen only when all six objective conditions are proven in a fresh operator-approved work order. The next safe move is operator selection and governed startup for a different repository. No repository transfer, push, public sync, deployment, production, or CADP runtime expansion is authorized by this closure; latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Treat RSPB-AI-T0 as independently accepted at material commit 42935376a with final decision STOP_COST_EXCEEDS_VALUE. The 764-file dual corpus is fully reconciled; no RSPB runtime/package/checker implementation is authorized. The Capability Environment Snapshot, controlled acquisition runtime, and dependent checker set remain parked until a fresh source-verified work order proves a named current non-test consumer and concrete blocked workflow. The next safe move is operator selection and governed startup for a different repository. No push, public sync, deployment, production, or source-corpus execution is authorized by this closure; latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_2026-08-15.md",
-    "baselineSha256": "6e8eb87a9d8348027c18eb16a3e84bf19e0e86bd9bcd3aec8d1906cc3862c0da",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_2026-08-15.md",
-    "workOrderSha256": "9576a4eb12daa3fd520639e2b90dc3b1a71712008ddd35b9d6df3aa4cdddb89e"
+    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T0_REVERSE_SKILL_CAPABILITY_PREFLIGHT_BOOTSTRAP_DUAL_CORPUS_INTAKE_2026-08-15.md",
+    "baselineSha256": "83dc3a7b1e3a687eaa4771e1e23cdafe668398714b188942b25eb7cd2dd27379",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T0_REVERSE_SKILL_CAPABILITY_PREFLIGHT_BOOTSTRAP_DUAL_CORPUS_INTAKE_2026-08-15.md",
+    "workOrderSha256": "f57e5c02abcaa3ff0a01b2c3ec9df3907f4f733a701378b19fab184923dfcbee"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

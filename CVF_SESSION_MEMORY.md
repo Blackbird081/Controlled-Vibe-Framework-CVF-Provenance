@@ -43,18 +43,18 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selection and governed startup for a different repository; parked checkpoint=CADP runtime expansion and any repository transfer/push/public/deploy/production action.
+Startup acknowledged: current mode=`rspb_ai_t0_dual_corpus_intake_accepted_stop_cost_exceeds_value_repository_transition_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selection and governed startup for a different repository; parked checkpoint=RSPB runtime/package/checker candidates and any push/public/deploy/production action.
 
 ## Current Mode
 
-`cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
-Current mode marker: `cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
-Current mode: `cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
-Previous mode: `cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`
+`rspb_ai_t0_dual_corpus_intake_accepted_stop_cost_exceeds_value_repository_transition_ready`
+Current mode marker: `rspb_ai_t0_dual_corpus_intake_accepted_stop_cost_exceeds_value_repository_transition_ready`
+Current mode: `rspb_ai_t0_dual_corpus_intake_accepted_stop_cost_exceeds_value_repository_transition_ready`
+Previous mode: `cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
+Mode: `rspb_ai_t0_dual_corpus_intake_accepted_stop_cost_exceeds_value_repository_transition_ready`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -93,6 +93,7 @@ authentication-composition owner, not as CADP authorization or durable-receipt o
 with operator-selected Option A, `CADP_FAIL_CLOSED_ON_INVALID_TOKEN`. T5-R5 implementation is independently accepted bounded at `6284e5bd1` after reviewer repair of the Auth.js fail-closed invocation and test-count evidence.
 TypeScript, 34/34 focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84 passed. No CADP route or registry row was added.
 T8 is independently accepted closed bounded at `3b906862b`. Roadmap, finding overlay, and conditional reopen index now agree through T5-R6; the 140-row ledger segment is byte-identical. External CADP runtime is `PARKED_DEMAND_GATED`. The repo is documented cleanly for operator selection of a different repository, but no transfer/push/public/deploy/production action occurred or is authorized. Latest closed wave: `LHW24`.
+RSPB-AI-T0 is independently accepted with repair at `42935376a`: all 764 files reconcile with zero unresolved and final decision `STOP_COST_EXCEEDS_VALUE`. No RSPB T1 is authorized; three retained candidates remain conditionally parked until named consumer and blocked-workflow evidence exists.
 
 ## Parked Checkpoints
 

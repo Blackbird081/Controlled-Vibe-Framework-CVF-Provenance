@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T8 Terminal Reconciliation Accepted
+# CVF Agent Handoff V59 - RSPB-AI-T0 Intake Accepted Stop Cost Exceeds Value
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -16,7 +16,7 @@ Status: ACTIVE
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
-- Current T5-R5 bounded closure: `6284e5bd10a43c7aac5124f61bbf8ef42e72b0d2`; T5-R6 low-value closure: `83491ade13f5b9c7c986aa7584af03b285c91654`; T8 terminal reconciliation closure: `3b906862b7a08c0bc2396ae4326b56fab389d421`.
+- Current T5-R5 bounded closure: `6284e5bd10a43c7aac5124f61bbf8ef42e72b0d2`; T8 terminal reconciliation: `3b906862b`; RSPB-AI-T0 accepted material closure: `42935376a2745a5d3008fc1b116adda6363c58f8`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
@@ -158,7 +158,7 @@ Record accepted terminal CADP reconciliation and a clean documentation boundary 
 
 ## Next Allowed Move
 
-RSPB-AI-T0 dispatch is committed at `c937b696c`; next safe move is worker execution from the clean post-sync HEAD under WORKER_MUST_NOT_COMMIT.
+RSPB-AI-T0 is independently accepted at `42935376a` with `STOP_COST_EXCEEDS_VALUE`; next safe move is operator selection and governed startup for a different repository. No RSPB T1 is authorized.
 
 ## Active Boundary
 
@@ -191,22 +191,22 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T8 Closure Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T0 Closure Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT8TerminalReconciliationAcceptedRepositoryTransitionReady20260815.json`
+- `CVF_SESSION/state/entries/rspbAiT0DualCorpusIntakeAcceptedStopCostExceedsValue20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit approval to clear the private-provenance push
-backlog, select reverse-skill, and continue governed repository startup.
+Operator authorization: submit the RSPB-AI-T0 final value/cost decision for
+independent review and governed closure before moving to another repository.
 
-Authorized guard-maintenance scope: record RSPB-AI-T0 dispatch material parent
-`c937b696c` and the no-execution worker next move.
+Authorized guard-maintenance scope: record RSPB-AI-T0 accepted material parent
+`42935376a`, terminal STOP, parked reopen conditions, and next-repository move.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.

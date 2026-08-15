@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_2026-08-15.md",
-    "baselineSha256": "6e8eb87a9d8348027c18eb16a3e84bf19e0e86bd9bcd3aec8d1906cc3862c0da",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_2026-08-15.md",
-    "workOrderSha256": "9576a4eb12daa3fd520639e2b90dc3b1a71712008ddd35b9d6df3aa4cdddb89e"
+    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T0_REVERSE_SKILL_CAPABILITY_PREFLIGHT_BOOTSTRAP_DUAL_CORPUS_INTAKE_2026-08-15.md",
+    "baselineSha256": "83dc3a7b1e3a687eaa4771e1e23cdafe668398714b188942b25eb7cd2dd27379",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T0_REVERSE_SKILL_CAPABILITY_PREFLIGHT_BOOTSTRAP_DUAL_CORPUS_INTAKE_2026-08-15.md",
+    "workOrderSha256": "f57e5c02abcaa3ff0a01b2c3ec9df3907f4f733a701378b19fab184923dfcbee"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed",
-  "previousMode": "cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit",
+  "currentMode": "rspb_ai_t0_dual_corpus_intake_accepted_stop_cost_exceeds_value_repository_transition_ready",
+  "previousMode": "cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -14918,5 +14918,6 @@
   "cadpAiT5R6ReadOnlyAuthorizationConsumerValueDecisionClosedStopLowValue20260815": "CADP-AI-T5-R6 is independently accepted and closed STOP_LOW_VALUE at material commit 83491ade1. No current non-test consumer, concrete blocked workflow, or authoritative runtime metadata owner was found; base margin is -22 and sensitized margin is -26 against a required +12. CADP contract and authentication foundations remain accepted, but route, registry, runtime, provider/live/network, credentials, public sync, deployment, and production expansion are parked.",
   "cadpAiT8ClosureStateReconciliationDemandGatedReopenDispatch20260815": "CADP-AI-T8 is dispatched at material commit ac113073b as a documentation-only WORKER_MUST_NOT_COMMIT terminal reconciliation. The worker may edit exactly the CADP roadmap, historical finding current-disposition overlay, conditional reopen index, and worker return. Historical 140-row evidence must remain intact; no runtime, route, registry, checker wiring, catalog/GAP, public, deployment, production, or repository-transfer action is authorized.",
   "cadpAiT8TerminalReconciliationAcceptedRepositoryTransitionReady20260815": "CADP-AI-T8 is independently accepted closed bounded at material commit 3b906862b. The roadmap, 140-row finding overlay, and conditional reopen index are reconciled through T5-R6; the historical ledger segment is byte-identical. External CADP runtime is PARKED_DEMAND_GATED under six conjunctive reopen conditions. The current repository is cleanly documented for an operator-selected next repository, but no transfer, push, public sync, deployment, or production action was performed.",
-  "nextAllowedMove": "Treat CADP-AI-T8 as independently accepted closed bounded at material commit 3b906862b. CADP selective absorption is terminally reconciled; external runtime remains PARKED_DEMAND_GATED and may reopen only when all six objective conditions are proven in a fresh operator-approved work order. The next safe move is operator selection and governed startup for a different repository. No repository transfer, push, public sync, deployment, production, or CADP runtime expansion is authorized by this closure; latest closed numbered LHW wave remains LHW24."
+  "rspbAiT0DualCorpusIntakeAcceptedStopCostExceedsValue20260815": "RSPB-AI-T0 reverse-skill plus Capability Preflight Bootstrap dual-corpus intake is independently accepted with repair at material commit 42935376a. Exactly 764 files reconcile: upstream 559 and proposal 205, with zero unresolved and all recorded byte sizes and SHA-256 values matching source. Final decision is STOP_COST_EXCEEDS_VALUE. Three bounded candidates remain conditionally parked; no RSPB T1, source execution/import, runtime, checker wiring, package activation, public export, deployment, or production action is authorized.",
+  "nextAllowedMove": "Treat RSPB-AI-T0 as independently accepted at material commit 42935376a with final decision STOP_COST_EXCEEDS_VALUE. The 764-file dual corpus is fully reconciled; no RSPB runtime/package/checker implementation is authorized. The Capability Environment Snapshot, controlled acquisition runtime, and dependent checker set remain parked until a fresh source-verified work order proves a named current non-test consumer and concrete blocked workflow. The next safe move is operator selection and governed startup for a different repository. No push, public sync, deployment, production, or source-corpus execution is authorized by this closure; latest closed numbered LHW wave remains LHW24."
 }
