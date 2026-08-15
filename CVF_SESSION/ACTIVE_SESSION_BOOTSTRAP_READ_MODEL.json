@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cadp_ai_t6_r2_reviewer_accepted_closed_pass_bounded",
+  "currentMode": "cadp_ai_t5_r1_external_readout_authority_foundation_dispatch_authoring",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "CADP-AI-T6-R2 bounded live compatibility is independently accepted and materially committed at 2599ff10e. No CADP worker tranche is automatically released. The next allowed move is operator selection of a fresh governed objective. T5 implementation remains deferred for its documented missing authority prerequisites; any repeat provider call requires fresh current quota/toggle evidence and a new governed dispatch. Source/config mutation, CLI/MCP invocation, secret disclosure, public sync, deployment, production, full release-readiness, trusted-evidence readiness, provider-wide compatibility, billing settlement, and cross-runtime determinism remain parked. Latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "The next allowed move is dispatcher authoring of a fresh GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for CADP-AI-T5-R1 External Readout Authority Foundation. The packet must source-verify and bound the nine missing T5 prerequisite rows, select only contract/fixture/negative-proof foundation work that does not create an external entry point, and preserve the accepted T5 deferral until independent review proves the new foundation. MCP/CLI tool registration or invocation, external-agent launch, credentials, provider calls, state mutation, hooks/CI, public sync, deployment, production, and implementation-ready claims remain forbidden. Latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
