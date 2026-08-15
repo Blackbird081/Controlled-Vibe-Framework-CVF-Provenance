@@ -44,7 +44,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t6_blocked_environment_qwen_migration_required`
+  `cadp_ai_t6_environment_repaired_qwen_migration_required`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -53,17 +53,18 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t6_blocked_environment_qwen_migration_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh Qwen-Turbo deprecation migration packet; parked checkpoint=live retry, environment repair, T5 implementation, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t6_environment_repaired_qwen_migration_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh Qwen-Turbo deprecation migration packet; parked checkpoint=live retry, T5 implementation, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t6_blocked_environment_qwen_migration_required`
+`cadp_ai_t6_environment_repaired_qwen_migration_required`
 
 ## Purpose
 
 Record accepted blocked T6 evidence at `25c0b2217`: npm/npx were absent, the
 local negative gate did not run, and zero provider calls or quota were used.
-Next authority is a fresh Qwen-Turbo to `qwen-flash` deprecation migration.
+Environment repaired on complete NVM4W Node v22.17.0; npm/npx 10.9.2 resolve. Next authority is
+a fresh Qwen-Turbo to `qwen-flash` deprecation migration; live retry is parked.
 
 ## Scope / Target / Owner Boundary
 

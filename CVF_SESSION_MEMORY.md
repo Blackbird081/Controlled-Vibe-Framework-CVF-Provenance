@@ -45,19 +45,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t6_blocked_environment_qwen_migration_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh Qwen-Turbo deprecation migration packet; parked checkpoint=live retry, environment repair, T5 implementation, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t6_environment_repaired_qwen_migration_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh Qwen-Turbo deprecation migration packet; parked checkpoint=live retry, T5 implementation, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t6_blocked_environment_qwen_migration_required`
+`cadp_ai_t6_environment_repaired_qwen_migration_required`
 
-Current mode marker: `cadp_ai_t6_blocked_environment_qwen_migration_required`
-Current mode: `cadp_ai_t6_blocked_environment_qwen_migration_required`
-Previous mode: `cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`
+Current mode marker: `cadp_ai_t6_environment_repaired_qwen_migration_required`
+Current mode: `cadp_ai_t6_environment_repaired_qwen_migration_required`
+Previous mode: `cadp_ai_t6_blocked_environment_qwen_migration_required`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t6_blocked_environment_qwen_migration_required`
+Mode: `cadp_ai_t6_environment_repaired_qwen_migration_required`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -69,15 +69,17 @@ CADP-AI-T3B is independently accepted `CLOSED_PASS_BOUNDED` at `9a4920c92`.
 CADP-AI-T4 is independently accepted at `7dfee6e4d`. CADP-AI-T5D is accepted
 bounded and deferred at `ef84a1f6a`. CADP-AI-T7 selected hermetic scope is
 accepted at `a49cebd8a`. T6 blocked evidence is accepted at `25c0b2217`: npm/
-npx are absent, the local negative gate did not run, and zero provider calls
-or quota were consumed. Do not retry live. Author a fresh migration packet to
+npx were absent, the local negative gate did not run, and zero provider calls
+or quota were consumed. NVM4W was repaired by activating complete Node
+v22.17.0; PowerShell and Python now resolve npm/npx 10.9.2. Do not retry live.
+Author a fresh migration packet to
 replace active Qwen-Turbo authority with `qwen-flash` while preserving immutable
 historical receipts. T5 remains deferred. Latest closed
 numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-Live retry, environment repair, T5 adapter implementation, production TypeScript edits, existing-guard
+Live retry, T5 adapter implementation, production TypeScript edits, existing-guard
 edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation,
 CLI/MCP invocation, public sync,
 deployment, production, trusted-evidence readiness and cross-runtime
