@@ -1,5 +1,5 @@
 {
   "stateOrder": 2234,
   "stateKey": "rspbAiT0DualCorpusIntakeAcceptedStopCostExceedsValue20260815",
-  "value": "RSPB-AI-T0 reverse-skill plus Capability Preflight Bootstrap dual-corpus intake is independently accepted with repair at material commit 42935376a. Exactly 764 files reconcile: upstream 559 and proposal 205, with zero unresolved and all recorded byte sizes and SHA-256 values matching source. Final decision is STOP_COST_EXCEEDS_VALUE. Three bounded candidates remain conditionally parked; no RSPB T1, source execution/import, runtime, checker wiring, package activation, public export, deployment, or production action is authorized."
+  "value": "RSPB-AI-T0 reverse-skill plus Capability Preflight Bootstrap dual-corpus accounting remains valid at material commit 42935376a: exactly 764 files reconcile, upstream 559 and local synthesis 205, with zero unresolved. MODS-T0 at 3a40397df supersedes only the old whole-tranche STOP_COST_EXCEEDS_VALUE decision. The local pack is now classified as provenance-backed mixed-origin derived synthesis, non-authoritative until reviewed. Knowledge absorption proceeds selectively; direct bulk import is rejected; read-only snapshot runtime is staged for a fresh value probe; controlled acquisition and other mutating bootstrap remain parked."
 }

@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T0 Intake Accepted Stop Cost Exceeds Value
+# CVF Agent Handoff V59 - MODS-T0 Mixed-Origin Absorption Closed
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -16,7 +16,7 @@ Status: ACTIVE
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
-- Current T5-R5 bounded closure: `6284e5bd10a43c7aac5124f61bbf8ef42e72b0d2`; T8 terminal reconciliation: `3b906862b`; RSPB-AI-T0 accepted material closure: `42935376a2745a5d3008fc1b116adda6363c58f8`.
+- Current T5-R5 bounded closure: `6284e5bd10a43c7aac5124f61bbf8ef42e72b0d2`; T8 terminal reconciliation: `3b906862b`; MODS-T0 material closure: `3a40397df584264b4efa241cf88690d823e9a87f`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
@@ -40,7 +40,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
+  `mods_t0_mixed_origin_absorption_closed_rspb_selective_cadp_retrospective_complete`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -49,14 +49,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selection and governed startup for a different repository; parked checkpoint=CADP runtime expansion and repository transfer/push/public/deploy/production action.
+Startup acknowledged: current mode=`mods_t0_mixed_origin_absorption_closed_rspb_selective_cadp_retrospective_complete`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh governed Preflight owner-reconciliation and read-only snapshot value probe if selected; parked checkpoint=mutating acquisition, runtime activation, hook wiring, push/public/deploy/production.
 
 ## Current Mode
-`cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
+`mods_t0_mixed_origin_absorption_closed_rspb_selective_cadp_retrospective_complete`
 
 ## Purpose
 
-Record accepted terminal CADP reconciliation and a clean documentation boundary for selecting another repository.
+Record MODS-T0 closure, corrected RSPB selective absorption, and the bounded CADP retrospective.
 
 ## Scope / Target / Owner Boundary
 
@@ -158,7 +158,7 @@ Record accepted terminal CADP reconciliation and a clean documentation boundary 
 
 ## Next Allowed Move
 
-RSPB-AI-T0 is independently accepted at `42935376a` with `STOP_COST_EXCEEDS_VALUE`; next safe move is operator selection and governed startup for a different repository. No RSPB T1 is authorized.
+MODS-T0 is closed at `3a40397df`; closure metadata is `adb14ccba`. RSPB's whole-tranche STOP is superseded. The next eligible move is a fresh governed tranche for Preflight owner reconciliation and a read-only Capability Environment Snapshot value probe. Direct bulk import, mutating acquisition, runtime activation, and authority promotion remain unauthorized without their own evidence and review.
 
 ## Active Boundary
 
@@ -191,29 +191,29 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T0 Closure Sync
+## Core Guard Self-Protection Authorization - MODS-T0 Closure Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/rspbAiT0DualCorpusIntakeAcceptedStopCostExceedsValue20260815.json`
+- `CVF_SESSION/state/entries/rspbAiT0DualCorpusIntakeAcceptedStopCostExceedsValue20260815.json`; `CVF_SESSION/state/entries/modsT0MixedOriginAbsorptionClosure20260816.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: submit the RSPB-AI-T0 final value/cost decision for
-independent review and governed closure before moving to another repository.
+Operator authorization: repair CVF absorption SOT, reassess RSPB under the new
+standard, and audit CADP for the same provenance blind spot.
 
-Authorized guard-maintenance scope: record RSPB-AI-T0 accepted material parent
-`42935376a`, terminal STOP, parked reopen conditions, and next-repository move.
+Authorized guard-maintenance scope: record MODS-T0 closure, superseded RSPB
+whole-tranche STOP, bounded CADP retrospective, and staged next action.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records T8 bounded closure. It does not authorize
+This handoff records MODS-T0 bounded closure. It does not authorize
 route/registry adoption, runtime source or test mutation, MCP/CLI/HTTP invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
 trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
