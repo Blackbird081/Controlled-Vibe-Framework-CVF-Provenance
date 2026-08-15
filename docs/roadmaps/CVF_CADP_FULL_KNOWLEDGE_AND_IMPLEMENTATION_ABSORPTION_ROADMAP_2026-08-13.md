@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_T1_T2_T3A_T3B_T4_ACCEPTED_BOUNDED_T5_DECISION_ACCEPTED_DEFERRED_T6_NOT_SELECTED_PARKED_T7_ACCEPTED_CLOSED_DEFERRED_PRIVATE_ONLY
+Status: T0_T1_T2_T3A_T3B_T4_T6_ACCEPTED_BOUNDED_T5_DECISION_ACCEPTED_DEFERRED_T7_ACCEPTED_CLOSED_DEFERRED_PRIVATE_ONLY
 
 docType: roadmap
 
@@ -114,7 +114,7 @@ the preceding record, and no distribution or receipt may activate a capability.
 | T3B | integrate Model Gateway constraint projection | provider-neutral SaaS constraint metadata only | accepted T3A; fresh Model Gateway source verification and operator release | no secret resolution, provider call, or execution authority | ACCEPTED_BOUNDED |
 | T4 | complete machine enforcement | schema fixtures, drift checker, negative corpus suite, package-boundary tests | repeated/accepted invariant need; checker GC-018 | checker detects every named violation without false authority claim | ACCEPTED_BOUNDED_STANDALONE_UNWIRED |
 | T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | ACCEPTED_BOUNDED_DEFER_WITH_MISSING_AUTHORITY |
-| T6 | live compatibility proof | bounded real-provider/SaaS tests and receipts | credentials, cost ceiling, sandbox, live diagnostic and release work order | real provider evidence; no mocks for governance claim | PARKED_NOT_AUTHORIZED |
+| T6 | live compatibility proof | bounded real-provider/SaaS tests and receipts | credentials, cost ceiling, sandbox, live diagnostic and release work order | real provider evidence; no mocks for governance claim | ACCEPTED_LIVE_BOUNDED |
 | T7 | closure and public disposition | independent review, catalog/GAP projections, session sync, public export decision | all selected prior tranches accepted | zero unresolved selected-scope findings and explicit export disposition | ACCEPTED_CLOSED_BOUNDED_DEFERRED_PRIVATE_ONLY |
 
 ## T1 Implemented Contract Surface
@@ -170,7 +170,7 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 | deterministic claim hides ambient clock/randomness | receipt constructor accepts time explicitly and hashes canonical content |
 | adapter widens authority | T2/T3 cannot change false authority constants and need cross-owner negative tests |
 | schema/code drift | T4 adds fixtures and checker only after owner contract acceptance |
-| live/credential scope leaks into local tranche | T1-T4 remain hermetic; T6 requires separate live authorization |
+| live/credential scope leaks into local tranche | T1-T4 remain hermetic; T6 used one separately authorized, bounded, receipt-backed call |
 
 ## Reverse Architecture Projection Matrix
 
@@ -179,7 +179,7 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 | architecture catalog | DEFER_PENDING_ACCEPTANCE | add CADP composition capability only after T1 review | pending, not as-built |
 | system-chain GAP | UPDATE_EXISTING after review | F05/F06 and adapter boundaries remain planned | pending gap |
 | Guard Contract README/index | UPDATE_EXISTING in T1 review repair if required | barrel export exists; README claim waits for tests | pending |
-| conditional reopen index | UPDATE_EXISTING | operator condition met for T0/T1; T2-T6 remain conditional | governed routing |
+| conditional reopen index | UPDATE_EXISTING | operator condition met for T0/T1; T2-T4/T6 accepted bounded; T5 remains conditional | governed routing |
 
 ## Source Verification
 
@@ -203,7 +203,7 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 | Ledger terminal statuses | READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE |
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | inline Finding Resolution Matrix and tranche plan |
-| Unresolved items | zero corpus rows; T2-T6 implementation candidates remain parked |
+| Unresolved items | zero corpus rows; T5 implementation remains deferred; T6 is accepted live bounded |
 | Completion claim boundary | roadmap plus T1 pending-review state only |
 
 ## Corpus Completeness And Report Integrity
@@ -261,14 +261,14 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 
 | Field | Disposition |
 |---|---|
-| claimScope | finding resolution roadmap plus accepted bounded T1-T4 local implementation state, accepted T5 decision evidence, and accepted bounded T7 selected-scope closure |
+| claimScope | finding resolution roadmap plus accepted bounded T1-T4 local implementation state, accepted T5 decision evidence, accepted bounded T6 one-call live compatibility, and accepted bounded T7 selected-scope closure |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
-| receiptEvidence | N/A with reason: no runtime receipt claim |
-| actionEvidence | ACTION_EVIDENCE_PRESENT: T1-T3 package evidence plus T4 41-test static-checker suite and 8 independent probes |
-| invocationBoundary | local repository implementation and verification |
+| receiptEvidence | CVF_RECEIPT_PRESENT: accepted T6 R2 SOT3 and free-quota receipts for one exact-model call |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: T1-T3 package evidence, T4 41-test static-checker suite and 8 independent probes, plus T6 strict SOT3 admission |
+| invocationBoundary | local repository implementation and verification plus one separately authorized bounded Alibaba call |
 | interceptionBoundary | no runtime/provider interception claim |
-| claimLanguage | T1-T4 accepted bounded; T5 decision accepted as deferred with missing authority; T6 not selected and parked; T7 selected scope accepted closed with DEFERRED_PRIVATE_ONLY |
-| forbiddenExpansion | no live/provider/adapter/public/deploy/production/commit claim |
+| claimLanguage | T1-T4 accepted bounded; T5 decision accepted as deferred with missing authority; T6 accepted for one exact-model live compatibility observation; T7 selected scope accepted closed with DEFERRED_PRIVATE_ONLY |
+| forbiddenExpansion | no provider-wide compatibility, repeat-live, adapter, public, deploy, production, or billing claim |
 
 ## Next Allowed Move
 
@@ -276,8 +276,9 @@ T3A and T3B are independently accepted for hermetic, non-executing internal
 projections. T4 is independently accepted for a standalone, read-only checker.
 T7 selected hermetic scope is independently accepted closed bounded with
 `DEFERRED_PRIVATE_ONLY`. T5 implementation remains deferred for nine missing
-authority prerequisites. T6 was not selected and remains parked because its
-live prerequisites are absent. Await explicit operator direction; no further
+authority prerequisites. T6 is independently accepted for one bounded
+`qwen3.7-flash` live compatibility observation; repeat-live authority is not
+carried forward. Await explicit operator direction; no further
 CADP tranche or public action is auto-released. Adapter implementation,
 provider/live, credential access, quota mutation, CLI/MCP invocation, public
 sync, deployment, production, trusted-evidence readiness, and cross-runtime
@@ -293,13 +294,13 @@ provenance; a later public-safe projection needs explicit public-sync review.
 ## Claim Boundary
 
 This roadmap records bounded T0/T1/T2/T3A/T3B/T4 acceptance, bounded T5
-decision acceptance with implementation deferred for missing authority, and
-bounded T7 selected-scope closure with `DEFERRED_PRIVATE_ONLY`; T6 was not
-selected and remains parked.
+decision acceptance with implementation deferred for missing authority,
+bounded T6 one-call `qwen3.7-flash` compatibility acceptance, and bounded T7
+selected-scope closure with `DEFERRED_PRIVATE_ONLY`.
 T3A proves only a hermetic pre-execution eligibility projection with literal
 `executionAuthorized: false`; F11 remains closed only within the accepted
 hermetic scope. T3B proves only a local provider-neutral constraint projection
-with no execution authority. No provider compatibility, provider/live
-execution, credential access, quota mutation,
+with no execution authority. T6 proves only the captured exact-model call; no
+provider-wide compatibility, repeat-live authority, credential delegation, quota mutation,
 CLI/MCP, SaaS execution, deployment, production readiness, trusted-evidence
 readiness, cross-runtime determinism, or public export is claimed.

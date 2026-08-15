@@ -1,0 +1,12 @@
+{
+  "stage": "e2e_execution",
+  "class": "e2e_failed",
+  "retryable": false,
+  "userAction": "inspect_secret_safe_test_artifacts_before_retry",
+  "safeMessage": "The UI mock E2E suite failed; inspect the retained test artifacts before retrying.",
+  "provider": null,
+  "model": null,
+  "httpStatus": null,
+  "latencyMs": 61594,
+  "traceOrReceipt": null
+}
