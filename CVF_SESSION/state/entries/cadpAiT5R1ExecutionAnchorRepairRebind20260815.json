@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2204,
+  "stateKey": "cadpAiT5R1ExecutionAnchorRepairRebind20260815",
+  "value": "The T5-R1 execution-anchor defect is repaired at material commit 1b0dcc499. Worker preflight now compares full HEAD exactly to the clean execution-base SHA supplied in the orchestrator prompt; it no longer compares against the obsolete 576af12fb authoring base. The repaired work order also carries an explicit dispatch-time Required Artifact Manifest and passed pre-dispatch plus pre-commit 84/84. Current authority is rebound to baseline SHA-256 dff59bb57c37398fa1d6fcf67dadcc7ffecb46abf0c60f9c59bd6cbdcb53831f and work-order SHA-256 40e5180a318978bacd0da2d652b97e8b57f48c6fd3cf00c655c67ca10e4e7a15. The exact-six-path WORKER_MUST_NOT_COMMIT execution may now be dispatched."
+}

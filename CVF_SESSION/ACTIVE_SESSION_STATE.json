@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_2026-08-15.md",
-    "baselineSha256": "ff7b11f1d47cbf68c3feba0066e75e105dc40c4e5c5de581123982d0cfa54d60",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_2026-08-15.md",
-    "workOrderSha256": "3b9953d072e20313a4924936a93b663f69bbcdea494c69ebe0acb8d31340e5f4"
+    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md",
+    "baselineSha256": "dff59bb57c37398fa1d6fcf67dadcc7ffecb46abf0c60f9c59bd6cbdcb53831f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md",
+    "workOrderSha256": "40e5180a318978bacd0da2d652b97e8b57f48c6fd3cf00c655c67ca10e4e7a15"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring",
-  "previousMode": "cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit",
+  "currentMode": "cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit",
+  "previousMode": "cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -14902,5 +14902,6 @@
   "cadpAiT5R1AuthorityFoundationSelection20260815": "Operator directed repair of the Model Gateway TypeScript configuration and continuation into a new tranche. The typecheck-only outDir was removed and committed at 766c86d17; workspace TypeScript 5.9.3, TypeScript next 7.1.0-dev.20260813.1, and 252 Model Gateway tests passed. The next selected tranche is CADP-AI-T5-R1 External Readout Authority Foundation dispatch authoring. It may define source-verified owner/package, external caller identity, ingress/size, exact allowlist/redaction, deterministic error/receipt, replay/freshness, owner reconciliation, and negative-proof contracts needed by the accepted T5 deferral. It does not lift the invocation moratorium and may not implement or register an MCP/CLI adapter, invoke an external agent, resolve credentials, mutate state, call a provider, wire hooks/CI, public-sync, deploy, or claim implementation readiness.",
   "cadpAiT5R1AuthorityFoundationDispatch20260815": "CADP-AI-T5-R1 External Readout Authority Foundation is DISPATCH_READY at material commit 071e39100f8b93b7959505b0e3f22ed31f2b6030 after independent packet review repaired three worker-selected output names into an exact six-path manifest. Pre-dispatch autorun passed and material pre-commit passed 84/84. The no-commit worker may create only the exact pure TypeScript contract, focused test, append-only contract barrel exports, one append-only T4 fixture surface, the exact negative-proof plan, and the worker return. MCP/CLI implementation, registration or invocation, external-agent launch, credentials, provider/live/network action, state mutation, hooks/CI, public sync, deployment, production, moratorium lift, and implementation-ready claims remain forbidden. Independent reviewer owns acceptance, any GC-051 registry reconciliation, roadmap/session closure, and commits.",
   "cadpAiT5R1ExecutionAnchorRepairHold20260815": "Independent dispatch review found that the committed T5-R1 worker preflight still compared execution HEAD to the obsolete packet-authoring base 576af12fb. Worker dispatch is temporarily held while that one material authority defect is repaired. Current authority is temporarily returned to the already-closed T6-R2 packet so the T5-R1 work order can be corrected in an independently gated material commit without a stale current-authority hash. No worker implementation or external action is authorized during this repair hold.",
-  "nextAllowedMove": "Repair only the stale T5-R1 worker execution-base comparison so it requires exact match to the clean SHA supplied in the orchestrator prompt, independently gate and commit that material repair, then rebind current authority to the repaired hash before dispatching Claude. Worker implementation, MCP/CLI implementation or invocation, external-agent launch, credentials, provider/live/network action, mutation, hooks/CI, public sync, deployment, production, moratorium lift, and implementation-ready claims remain forbidden during the repair hold. Latest closed numbered LHW wave remains LHW24."
+  "cadpAiT5R1ExecutionAnchorRepairRebind20260815": "The T5-R1 execution-anchor defect is repaired at material commit 1b0dcc499. Worker preflight now compares full HEAD exactly to the clean execution-base SHA supplied in the orchestrator prompt; it no longer compares against the obsolete 576af12fb authoring base. The repaired work order also carries an explicit dispatch-time Required Artifact Manifest and passed pre-dispatch plus pre-commit 84/84. Current authority is rebound to baseline SHA-256 dff59bb57c37398fa1d6fcf67dadcc7ffecb46abf0c60f9c59bd6cbdcb53831f and work-order SHA-256 40e5180a318978bacd0da2d652b97e8b57f48c6fd3cf00c655c67ca10e4e7a15. The exact-six-path WORKER_MUST_NOT_COMMIT execution may now be dispatched.",
+  "nextAllowedMove": "Send the repaired committed CADP-AI-T5-R1 work order to one WORKER_MUST_NOT_COMMIT Claude worker and supply the final clean HEAD as its exact execution-base SHA. The worker must touch only the exact six-path Planned Artifact Manifest, run required pre-implementation and component evidence, leave HEAD unchanged and staging empty, and return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON. Independent Codex review owns repair, GC-051 registry reconciliation, roadmap/session closure, and commit. MCP/CLI implementation, registration or invocation, external-agent launch, credentials, provider/live/network action, mutation, hooks/CI, public sync, deployment, production, moratorium lift, and implementation-ready claims remain forbidden. Latest closed numbered LHW wave remains LHW24."
 }

@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring",
+  "currentMode": "cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Repair only the stale T5-R1 worker execution-base comparison so it requires exact match to the clean SHA supplied in the orchestrator prompt, independently gate and commit that material repair, then rebind current authority to the repaired hash before dispatching Claude. Worker implementation, MCP/CLI implementation or invocation, external-agent launch, credentials, provider/live/network action, mutation, hooks/CI, public sync, deployment, production, moratorium lift, and implementation-ready claims remain forbidden during the repair hold. Latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Send the repaired committed CADP-AI-T5-R1 work order to one WORKER_MUST_NOT_COMMIT Claude worker and supply the final clean HEAD as its exact execution-base SHA. The worker must touch only the exact six-path Planned Artifact Manifest, run required pre-implementation and component evidence, leave HEAD unchanged and staging empty, and return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON. Independent Codex review owns repair, GC-051 registry reconciliation, roadmap/session closure, and commit. MCP/CLI implementation, registration or invocation, external-agent launch, credentials, provider/live/network action, mutation, hooks/CI, public sync, deployment, production, moratorium lift, and implementation-ready claims remain forbidden. Latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_2026-08-15.md",
-    "baselineSha256": "ff7b11f1d47cbf68c3feba0066e75e105dc40c4e5c5de581123982d0cfa54d60",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_2026-08-15.md",
-    "workOrderSha256": "3b9953d072e20313a4924936a93b663f69bbcdea494c69ebe0acb8d31340e5f4"
+    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md",
+    "baselineSha256": "dff59bb57c37398fa1d6fcf67dadcc7ffecb46abf0c60f9c59bd6cbdcb53831f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md",
+    "workOrderSha256": "40e5180a318978bacd0da2d652b97e8b57f48c6fd3cf00c655c67ca10e4e7a15"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

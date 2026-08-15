@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2203,
+  "stateOrder": 2205,
   "stateKey": "nextAllowedMove",
-  "value": "Repair only the stale T5-R1 worker execution-base comparison so it requires exact match to the clean SHA supplied in the orchestrator prompt, independently gate and commit that material repair, then rebind current authority to the repaired hash before dispatching Claude. Worker implementation, MCP/CLI implementation or invocation, external-agent launch, credentials, provider/live/network action, mutation, hooks/CI, public sync, deployment, production, moratorium lift, and implementation-ready claims remain forbidden during the repair hold. Latest closed numbered LHW wave remains LHW24."
+  "value": "Send the repaired committed CADP-AI-T5-R1 work order to one WORKER_MUST_NOT_COMMIT Claude worker and supply the final clean HEAD as its exact execution-base SHA. The worker must touch only the exact six-path Planned Artifact Manifest, run required pre-implementation and component evidence, leave HEAD unchanged and staging empty, and return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON. Independent Codex review owns repair, GC-051 registry reconciliation, roadmap/session closure, and commit. MCP/CLI implementation, registration or invocation, external-agent launch, credentials, provider/live/network action, mutation, hooks/CI, public sync, deployment, production, moratorium lift, and implementation-ready claims remain forbidden. Latest closed numbered LHW wave remains LHW24."
 }
