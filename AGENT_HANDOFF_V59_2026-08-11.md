@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T5-R6 Closed Stop Low Value
+# CVF Agent Handoff V59 - CADP-AI-T8 Terminal Reconciliation Dispatched
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -16,7 +16,7 @@ Status: ACTIVE
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
-- Current T5-R3 bounded material closure: `6ae59fa88a0b1b233da976135b39654560d41c72`; T5-R4 contract closure: `af2f425d825f017a5ae77c8705fc5b96de56af72`; T5-R5 bounded material closure: `6284e5bd10a43c7aac5124f61bbf8ef42e72b0d2`; T5-R6 low-value material closure: `83491ade13f5b9c7c986aa7584af03b285c91654`.
+- Current T5-R4 contract closure: `af2f425d825f017a5ae77c8705fc5b96de56af72`; T5-R5 bounded closure: `6284e5bd10a43c7aac5124f61bbf8ef42e72b0d2`; T5-R6 low-value closure: `83491ade13f5b9c7c986aa7584af03b285c91654`; T8 reconciliation dispatch: `ac113073b5d093bb63a6c4220c0de52952d77f13`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
@@ -40,7 +40,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_closed_stop_low_value_runtime_expansion_parked`
+  `cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -49,14 +49,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_closed_stop_low_value_runtime_expansion_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=wait for objective consumer/owner evidence or a fresh operator-authorized tranche; parked checkpoint=CADP route/registry/runtime expansion, live/provider/public/deploy/production work.
+Startup acknowledged: current mode=`cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact four-path T8 terminal reconciliation; parked checkpoint=CADP runtime/route/registry and repository transfer, live/provider/public/deploy/production work.
 
 ## Current Mode
-`cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_closed_stop_low_value_runtime_expansion_parked`
+`cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`
 
 ## Purpose
 
-Record independent closure of the R6 decision as `STOP_LOW_VALUE` and park speculative CADP runtime expansion while preserving accepted foundations.
+Dispatch terminal documentation reconciliation so CADP can be left internally consistent before the operator changes repositories.
 
 ## Scope / Target / Owner Boundary
 
@@ -100,17 +100,18 @@ Record independent closure of the R6 decision as `STOP_LOW_VALUE` and park specu
   CADP drift remained 5/0, reviewer-fast passed 63/63, and pre-commit passed 84/84. No route or registry row was added.
 - T5-R6 decision-only dispatch passed pre-dispatch 76/76 and pre-commit 84/84 at `5110ea55d`; its stable proceed threshold is value at least cost plus 12 with all eight mandatory gates passing.
 - Independent review confirmed zero current non-test consumers, no authoritative runtime metadata owner, base margin `-22`, and sensitized margin `-26`; closure `83491ade1` accepts `STOP_LOW_VALUE`. Material pre-commit passed 84/84.
+- T8 dispatch `ac113073b` passed pre-dispatch 76/76 and pre-commit 84/84; worker scope is exactly three reconciliation documents plus one worker return, with historical rows preserved.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T5-R6 `REVIEWER_ACCEPTED_CLOSED_STOP_LOW_VALUE` at `83491ade1` |
-| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_2026-08-15.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_2026-08-15.md` |
-| workerReturnPath | `docs/reviews/CVF_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_WORKER_RETURN_2026-08-15.md` |
-| completionReviewPath | `docs/reviews/CVF_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_COMPLETION_2026-08-15.md` |
-| nextAuthorityRequirement | objective consumer/owner evidence and a fresh governed reopen packet |
+| authorityState | CADP-AI-T8 `REVIEWER_ACCEPTED_DISPATCH_READY` at `ac113073b` |
+| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_2026-08-15.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_2026-08-15.md` |
+| workerReturnPath | `docs/reviews/CVF_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_WORKER_RETURN_2026-08-15.md` |
+| completionReviewPath | reviewer-owned after worker handoff |
+| nextAuthorityRequirement | worker returns exact four-path reconciliation without committing |
 
 ## Closure Evidence
 
@@ -156,7 +157,7 @@ Record independent closure of the R6 decision as `STOP_LOW_VALUE` and park specu
 
 ## Next Allowed Move
 
-Treat R6 as closed `STOP_LOW_VALUE` at `83491ade1`. Do not open a CADP route, registry row, runtime consumer, or complete-system-chain implementation without objective changed evidence and a fresh governed packet.
+Execute T8 from `ac113073b`, preserving the 140 historical rows and changing only the exact four documentation paths. Runtime and repository transfer remain parked.
 
 ## Active Boundary
 
@@ -189,29 +190,29 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T5-R6 Low-Value Closure Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T8 Dispatch Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT5R6ReadOnlyAuthorizationConsumerValueDecisionClosedStopLowValue20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT8ClosureStateReconciliationDemandGatedReopenDispatch20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: return of the R6 worker handoff for independent
-reviewer/closer closure under the stop-if-value-is-low checkpoint.
+Operator authorization: explicit approval of terminal T8 reconciliation before
+changing repositories.
 
-Authorized guard-maintenance scope: record low-value material closure
-`83491ade1` and keep route, registry, and runtime expansion parked.
+Authorized guard-maintenance scope: record T8 dispatch `ac113073b` and keep
+runtime, repository transfer, and all external action parked.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records T5-R6 `STOP_LOW_VALUE` closure. It does not authorize
+This handoff records T8 documentation dispatch. It does not authorize
 route/registry adoption, runtime source or test mutation, MCP/CLI/HTTP invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
 trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
