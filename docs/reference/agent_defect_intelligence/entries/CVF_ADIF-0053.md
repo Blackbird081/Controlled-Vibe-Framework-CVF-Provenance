@@ -21,7 +21,7 @@ enforcementLevel: PARTIAL_CHECK
 checkerBindings: governance/compat/check_mixed_origin_derived_synthesis_absorption.py; governance/compat/check_external_absorption_value_conversion.py
 promotionState: RULE_AND_CHECK_EXIST
 supersedes: NONE
-lastVerifiedCommit: PENDING_MODS_T0_MATERIAL_COMMIT
+lastVerifiedCommit: 3a40397df
 roadmapSeedId: NONE
 ```
 

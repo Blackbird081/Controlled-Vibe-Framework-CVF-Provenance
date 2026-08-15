@@ -25,6 +25,8 @@ MODS-T0 dispatch commit `43d263d94`, current material diff, prior RSPB
 manifests/ledgers/audit, local preflight design, CADP R1/T1-T6 evidence, and
 the operator's provenance clarification.
 
+Material implementation commit: `3a40397df`.
+
 ## Scope / Methodology
 
 Reviewed source semantics before implementation; created a focused SOT and
