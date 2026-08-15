@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T6 Bounded Live Proof Dispatched
+# CVF Agent Handoff V59 - CADP-AI-T6 Blocked; Qwen Migration Required
 
 Memory class: active-handoff
 
@@ -11,7 +11,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current dispatch material marker: `1405017db`; prior T7 closure marker: `a49cebd8a`
+- Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current session-sync parent marker: `29133db38`
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
@@ -44,7 +44,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`
+  `cadp_ai_t6_blocked_environment_qwen_migration_required`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -53,17 +53,17 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send committed bounded T6 packet to one no-commit live-proof worker; parked checkpoint=T5 implementation, extra provider calls, source mutation, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t6_blocked_environment_qwen_migration_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh Qwen-Turbo deprecation migration packet; parked checkpoint=live retry, environment repair, T5 implementation, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`
+`cadp_ai_t6_blocked_environment_qwen_migration_required`
 
 ## Purpose
 
-Record the committed CADP-AI-T6 bounded live-proof dispatch at `1405017db`.
-One no-commit worker may run UI-mock E2E plus exactly one real SOT3 call after
-proving the official-price worst-case bound below US$1.
+Record accepted blocked T6 evidence at `25c0b2217`: npm/npx were absent, the
+local negative gate did not run, and zero provider calls or quota were used.
+Next authority is a fresh Qwen-Turbo to `qwen-flash` deprecation migration.
 
 ## Scope / Target / Owner Boundary
 
@@ -98,12 +98,12 @@ proving the official-price worst-case bound below US$1.
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T6 DISPATCH_READY at `1405017db`; worker must not commit |
+| authorityState | CADP-AI-T6 BLOCKED_ENVIRONMENT at `25c0b2217`; zero provider calls |
 | baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T6_LIVE_COMPATIBILITY_PROOF_2026-08-15.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T6_LIVE_COMPATIBILITY_PROOF_2026-08-15.md` |
 | workerReturnPath | `docs/reviews/CVF_CADP_AI_T6_LIVE_COMPATIBILITY_PROOF_WORKER_RETURN_2026-08-15.md` |
 | completionReviewPath | reviewer-owned after pending worker return |
-| nextAuthorityRequirement | execute exact five-path no-commit live proof; independent review before closure |
+| nextAuthorityRequirement | fresh deprecation migration packet; no live retry before migration and environment repair |
 
 ## Closure Evidence
 
@@ -149,10 +149,10 @@ proving the official-price worst-case bound below US$1.
 
 ## Next Allowed Move
 
-CADP-AI-T6 bounded live-proof dispatch is committed at `1405017db`. Send it to
-one no-commit worker. Establish the official-price worst-case bound below US$1,
-then run UI-mock E2E plus exactly one real SOT3 call. T5, extra provider calls,
-source mutation, public/deployment/production lanes remain parked.
+CADP-AI-T6 blocked evidence is accepted at `25c0b2217`; zero provider calls or
+quota were consumed. Do not retry. Author a fresh deprecation migration for
+active Qwen-Turbo authority to `qwen-flash`, preserving historical evidence.
+T5, live retry, public/deployment/production lanes remain parked.
 
 ## Active Boundary
 
@@ -163,7 +163,7 @@ source mutation, public/deployment/production lanes remain parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
 - T3A, T3B, T4, T5D, and selected T7 scope are closed bounded;
-  T5 implementation remains parked; only bounded T6 live evidence is open.
+  T5 implementation remains parked; T6 is blocked pending migration/toolchain repair.
 - MAO T1, DESIGN, BUILD, provider/live, public `main`, deploy, hosted smoke,
   secrets, store, production, and archive deletion remain parked.
 
@@ -185,7 +185,7 @@ Reason: the T6 live dispatch and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T6 Dispatch Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T6 Blocked Sync
 
 Protected paths:
 
@@ -193,25 +193,25 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT6LiveCompatibilityProofDispatch20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT6LiveCompatibilityProofBlocked20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator explicitly allowed T6 to use API keys for
-testing, with the reviewed bounded call/cost/secret controls.
+Operator authorization: the operator directed removal of Qwen-Turbo after the
+T6 worker returned blocked with zero provider calls.
 
-Authorized guard-maintenance scope: bind T6 dispatch at material commit
-`1405017db`, set the no-commit live-worker move, and keep T5 implementation,
-extra calls, production, hook wiring, CLI-MCP invocation/
+Authorized guard-maintenance scope: bind blocked evidence at material commit
+`25c0b2217`, set deprecation-migration authoring as next, and keep live retry,
+T5, production, hook wiring, CLI-MCP invocation/
 public/deployment/trusted-evidence/cross-runtime and unrelated lanes parked.
 
-Rollback boundary: revert this exact session-sync batch together with dispatch
-material commit `1405017db`; do not separate generated state from source
+Rollback boundary: revert this exact session-sync batch together with blocked
+evidence commit `25c0b2217`; do not separate generated state from source
 fragments.
 
 ## Claim Boundary
 
-This handoff records bounded T6 live-proof dispatch only. It does not claim or
+This handoff records bounded T6 blocked evidence only. It does not claim or
 authorize adapter implementation, MCP/CLI invocation, external-agent launch,
 runtime enforcement, provider compatibility, completed live behavior,
 cross-runtime determinism, trusted-evidence readiness, production source

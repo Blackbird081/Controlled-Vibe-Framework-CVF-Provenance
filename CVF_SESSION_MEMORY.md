@@ -45,19 +45,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send committed bounded T6 packet to one no-commit live-proof worker; parked checkpoint=T5 implementation, extra provider calls, source mutation, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t6_blocked_environment_qwen_migration_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh Qwen-Turbo deprecation migration packet; parked checkpoint=live retry, environment repair, T5 implementation, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`
+`cadp_ai_t6_blocked_environment_qwen_migration_required`
 
-Current mode marker: `cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t7_closed_pass_bounded_deferred_private_only_awaiting_operator_direction`
+Current mode marker: `cadp_ai_t6_blocked_environment_qwen_migration_required`
+Current mode: `cadp_ai_t6_blocked_environment_qwen_migration_required`
+Previous mode: `cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t6_blocked_environment_qwen_migration_required`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -68,15 +68,16 @@ CADP-AI-T3A is independently accepted `CLOSED_PASS_BOUNDED` at `f1dc9a6f7`.
 CADP-AI-T3B is independently accepted `CLOSED_PASS_BOUNDED` at `9a4920c92`.
 CADP-AI-T4 is independently accepted at `7dfee6e4d`. CADP-AI-T5D is accepted
 bounded and deferred at `ef84a1f6a`. CADP-AI-T7 selected hermetic scope is
-accepted at `a49cebd8a`. Operator selected T6; its repaired bounded live-proof
-packet is committed at `1405017db`. Send it to one no-commit worker. The worker
-must prove the official-price worst-case bound below US$1 before exactly one
-SOT3 call, or block without calling. T5 remains deferred. Latest closed
+accepted at `a49cebd8a`. T6 blocked evidence is accepted at `25c0b2217`: npm/
+npx are absent, the local negative gate did not run, and zero provider calls
+or quota were consumed. Do not retry live. Author a fresh migration packet to
+replace active Qwen-Turbo authority with `qwen-flash` while preserving immutable
+historical receipts. T5 remains deferred. Latest closed
 numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 
-T5 adapter implementation, any additional provider call, production TypeScript edits, existing-guard
+Live retry, environment repair, T5 adapter implementation, production TypeScript edits, existing-guard
 edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation,
 CLI/MCP invocation, public sync,
 deployment, production, trusted-evidence readiness and cross-runtime
