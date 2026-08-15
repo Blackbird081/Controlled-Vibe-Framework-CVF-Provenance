@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2228,
+  "stateOrder": 2230,
   "stateKey": "nextAllowedMove",
-  "value": "Execute CADP-AI-T5-R6 from the committed documentation-only packet at 5110ea55d. The worker may write only the named decision and worker-return files and must not commit. Select PROCEED_BOUNDED_SYSTEM_CHAIN only if every mandatory gate passes and the sensitivity-tested value margin is at least 12; otherwise select STOP_LOW_VALUE or BLOCKED_MISSING_PREREQUISITE. No route, registry row, runtime mutation, provider/live/network access, credentials, public sync, deployment, or production work is authorized. Independent review and any material commit remain reviewer/closer-owned; latest closed numbered LHW wave remains LHW24."
+  "value": "Treat CADP-AI-T5-R6 as independently closed STOP_LOW_VALUE at material commit 83491ade1. Do not open a CADP route, registry row, runtime consumer, or complete-system-chain implementation from the current evidence. Reopen only through a fresh governed packet when current source proves a real non-test consumer and blocked workflow, an authoritative metadata owner, and a bounded receipt/operator destination, or the operator explicitly authorizes reevaluation after material facts change. Provider/live/network, credentials, public sync, deployment, and production remain parked; latest closed numbered LHW wave remains LHW24."
 }

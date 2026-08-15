@@ -43,18 +43,18 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the bounded R6 value/cost decision; parked checkpoint=route/registry/runtime mutation, live/provider/public/deploy/production work.
+Startup acknowledged: current mode=`cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_closed_stop_low_value_runtime_expansion_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=wait for objective consumer/owner evidence or a fresh operator-authorized tranche; parked checkpoint=CADP route/registry/runtime expansion, live/provider/public/deploy/production work.
 
 ## Current Mode
 
-`cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_dispatched_worker_must_not_commit`
-Current mode marker: `cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred`
+`cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_closed_stop_low_value_runtime_expansion_parked`
+Current mode marker: `cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_closed_stop_low_value_runtime_expansion_parked`
+Current mode: `cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_closed_stop_low_value_runtime_expansion_parked`
+Previous mode: `cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_closed_stop_low_value_runtime_expansion_parked`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -92,7 +92,7 @@ closure at `6ae59fa88`: `authorizeRouteGovernanceProof` is selected only as the
 authentication-composition owner, not as CADP authorization or durable-receipt owner. T5-R4 contract hardening is independently accepted bounded at `af2f425d8`
 with operator-selected Option A, `CADP_FAIL_CLOSED_ON_INVALID_TOKEN`. T5-R5 implementation is independently accepted bounded at `6284e5bd1` after reviewer repair of the Auth.js fail-closed invocation and test-count evidence.
 TypeScript, 34/34 focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84 passed. No CADP route or registry row was added.
-R6 is dispatched at `5110ea55d` as a documentation-only value/cost decision. The worker may write only the named decision and worker-return files and must not commit. Proceed to a later bounded system-chain packet only if all mandatory gates pass and the sensitivity-tested value margin is at least 12; otherwise stop or report a missing prerequisite. No route, registry row, runtime mutation, provider/live/network, credentials, public/deploy/production work is authorized. Latest closed wave: `LHW24`.
+R6 is independently closed `STOP_LOW_VALUE` at `83491ade1`: no current non-test consumer, blocked workflow, or authoritative runtime metadata owner was found; base margin `-22` and sensitized margin `-26` both miss the required `+12`. Accepted foundations remain, but CADP route/registry/runtime expansion stays parked until objective reopen evidence or fresh operator authorization. Provider/live/network, credentials, public/deploy/production remain parked. Latest closed wave: `LHW24`.
 
 ## Parked Checkpoints
 
