@@ -2,7 +2,6 @@
 
 Memory class: active-session-front-door
 Status: ACTIVE
-
 Last compacted: 2026-08-11
 
 ## Startup Order
@@ -44,20 +43,18 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh source-verified dispatch after operator selects the next CADP tranche; parked checkpoint=production TypeScript, authentication, external runtime, provider/live, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact two-output T5-R3 no-commit documentation worker; parked checkpoint=source, tests, authentication execution, external runtime, provider/live, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`
-
-Current mode marker: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`
-Current mode: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`
-Previous mode: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit`
+`cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`
+Current mode marker: `cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`
+Current mode: `cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`
+Previous mode: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`
-
+Mode: `cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -90,8 +87,11 @@ focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84
 passed. T5-R2A checker hardening is independently accepted bounded at `4f359cd2d`;
 contract-source uniqueness remains fail-closed and T5-R1/T5-R2 now have independent
 shared-root export proof. Tests passed 45/45, CADP drift 5/0, reviewer-fast 63/63,
-and pre-commit 84/84. Next is an operator-selected fresh governed dispatch;
-production/auth/runtime/live/public/deploy/moratorium work remains parked. Latest closed wave: `LHW24`.
+and pre-commit 84/84. T5-R3 documentation-only owner adoption readiness is
+dispatched at `c5a442778`. Next, create only the exact audit and worker return
+from the committed work order, keep both unstaged/uncommitted, and return for
+independent review. Source/test/auth/runtime/live/public/deploy/moratorium work
+remains parked. Latest closed wave: `LHW24`.
 
 ## Parked Checkpoints
 

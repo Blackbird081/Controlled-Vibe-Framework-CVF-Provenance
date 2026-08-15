@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T5_R2A_SHARED_PACKAGE_ROOT_MULTI_SURFACE_EXPORT_DRIFT_PROOF_HARDENING_2026-08-15.md",
-    "baselineSha256": "08eb1386fbac871442e351cd79fc84d884cd2aa68fba64ccc6509ce8ce45db0e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R2A_SHARED_PACKAGE_ROOT_MULTI_SURFACE_EXPORT_DRIFT_PROOF_HARDENING_2026-08-15.md",
-    "workOrderSha256": "e3cce3f3d6b8e161be72bdb64c7b3e287abc518842c23512d555cb27468c9c08"
+    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T5_R3_EXTERNAL_AUTHENTICATION_OWNER_ADOPTION_READINESS_DECISION_2026-08-15.md",
+    "baselineSha256": "fea1d2dcaf7e766114906807c1c84df63d1529b2cce4af9d6b446710d7fbd375",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R3_EXTERNAL_AUTHENTICATION_OWNER_ADOPTION_READINESS_DECISION_2026-08-15.md",
+    "workOrderSha256": "57c43926a7e2857e80a45ac27f84602749c1cb96cfa9676f020b4c6f19d1e916"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred",
-  "previousMode": "cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit",
+  "currentMode": "cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit",
+  "previousMode": "cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
