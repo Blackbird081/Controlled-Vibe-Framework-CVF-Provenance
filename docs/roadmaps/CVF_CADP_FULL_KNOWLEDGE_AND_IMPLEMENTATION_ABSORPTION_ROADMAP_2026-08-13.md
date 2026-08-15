@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_T1_T2_T3A_T3B_T4_T5_R1_T5_R2_T6_ACCEPTED_BOUNDED_T5_RUNTIME_DEFERRED_T7_ACCEPTED_CLOSED_DEFERRED_PRIVATE_ONLY
+Status: T0_T1_T2_T3A_T3B_T4_T5_R1_R2_R2A_R3_R4_R5_ACCEPTED_BOUNDED_T5_R6_CLOSED_STOP_LOW_VALUE_EXTERNAL_RUNTIME_PARKED_DEMAND_GATED_T6_T7_ACCEPTED_CLOSED_DEFERRED_PRIVATE_ONLY
 
 docType: roadmap
 
@@ -113,7 +113,7 @@ the preceding record, and no distribution or receipt may activate a capability.
 | T3A | integrate the first downstream internal consumer | Execution Plane non-executing eligibility adapter and narrow SQLite-state ignore hygiene | accepted T2A; fresh source-verified work order; operator `next` direction | consumer tests prove no authority widening, invalid-before-valid replay preservation, and no raw secrets | ACCEPTED_BOUNDED |
 | T3B | integrate Model Gateway constraint projection | provider-neutral SaaS constraint metadata only | accepted T3A; fresh Model Gateway source verification and operator release | no secret resolution, provider call, or execution authority | ACCEPTED_BOUNDED |
 | T4 | complete machine enforcement | schema fixtures, drift checker, negative corpus suite, package-boundary tests | repeated/accepted invariant need; checker GC-018 | checker detects every named violation without false authority claim | ACCEPTED_BOUNDED_STANDALONE_UNWIRED |
-| T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | R1_R2_R2A_ACCEPTED_AND_R3_AUTH_COMPOSITION_OWNER_SELECTED_BOUNDED_IMPLEMENTATION_DEFERRED |
+| T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | R1_R2_R2A_R3_R4_R5_ACCEPTED_BOUNDED_R6_CLOSED_STOP_LOW_VALUE_EXTERNAL_RUNTIME_PARKED_DEMAND_GATED |
 | T6 | live compatibility proof | bounded real-provider/SaaS tests and receipts | credentials, cost ceiling, sandbox, live diagnostic and release work order | real provider evidence; no mocks for governance claim | ACCEPTED_LIVE_BOUNDED |
 | T7 | closure and public disposition | independent review, catalog/GAP projections, session sync, public export decision | all selected prior tranches accepted | zero unresolved selected-scope findings and explicit export disposition | ACCEPTED_CLOSED_BOUNDED_DEFERRED_PRIVATE_ONLY |
 
@@ -161,6 +161,59 @@ time, a CADP authorization layer, and an explicit proof-only versus durable
 receipt decision. No registry row, route, source/test change, authentication
 execution, transport registration, credential use, or moratorium lift is
 authorized by T5-R3.
+
+## T5-R4 Authentication Composition Contract Hardening Closure
+
+Worker return: `docs/reviews/CVF_CADP_AI_T5_R4_AUTHENTICATION_COMPOSITION_CONTRACT_HARDENING_WORKER_RETURN_2026-08-15.md`.
+
+The operator-selected Option A contract, `CADP_FAIL_CLOSED_ON_INVALID_TOKEN`,
+is accepted bounded at material commit `af2f425d8`. This closes the fourteen
+required contract questions left open by T5-R3 and selects a fail-closed
+invalid-token precedence for a future CADP authentication wrapper. No route,
+registry row, authentication execution, or transport registration is
+authorized by T5-R4. Reconciliation status:
+`IMPLEMENTED_BOUNDED_INTERNAL` (contract selection only, no runtime seam).
+
+## T5-R5 Authentication Composition Implementation Closure
+
+Worker return: `docs/reviews/CVF_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_WORKER_RETURN_2026-08-15.md`.
+
+The T5-R4 contract is implemented and accepted bounded at material commit
+`6284e5bd1` after reviewer repair of the Auth.js fail-closed invocation and
+test-count evidence: `authorizeCadpAuthenticationRequest`
+(`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cadp-authentication-policy.ts`)
+composes `authorizeRouteGovernanceProof` with `invalidTokenPrecedence:
+'FAIL_CLOSED'`, and `projectCadpAuthorization`
+(`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cadp-authorization.ts`)
+adds a literal-`false` CADP authorization projection. TypeScript, 34/34
+focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84
+passed. No CADP route or registry row was added; existing non-CADP route
+behavior and the five-route registry are unchanged. Reconciliation status:
+`IMPLEMENTED_FAIL_CLOSED_UNREACHABLE` (real, tested, fail-closed composition
+with zero current non-test caller; see T5-R6 below).
+
+## T5-R6 Read-Only Authorization And Consumer Value Seam Closure
+
+Decision: `docs/reviews/CVF_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_DECISION_2026-08-15.md`.
+Completion review: `docs/reviews/CVF_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_COMPLETION_2026-08-15.md`
+(`Status: REVIEWER_ACCEPTED_CLOSED_STOP_LOW_VALUE`, material commit
+`83491ade1`).
+
+Independent repository-wide search found zero current non-test consumers of
+`evaluateCadpExternalReadoutAdapter`, `authorizeCadpAuthenticationRequest`, or
+`projectCadpAuthorization`; `ROUTE_GOVERNANCE_PROOF_REGISTRY` has five
+non-CADP routes and no CADP row; and no authoritative runtime metadata owner
+is wired for CADP admission/assignment fields. The weighted value/cost
+scorecard produced a base margin of `10 - 32 = -22` and a sensitized margin of
+`7 - 33 = -26`, both far below the required `+12` threshold. Mandatory gates
+1, 2, 5, 6, and 8 failed; gates 3, 4, and 7 passed.
+
+`CLOSED_STOP_LOW_VALUE`. External CADP runtime expansion (transport
+registration, MCP/CLI adapter activation, CADP authorization/authority owner
+wiring, or a durable receipt/operator destination) is `PARKED_DEMAND_GATED`,
+not an authorized or implicitly required backlog item. See the Objective
+Reopen Contract in this roadmap's `Next Allowed Move` section below for the
+exact conjunctive conditions required before reopening.
 
 ## T1 Implemented Contract Surface
 
@@ -224,7 +277,7 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 | architecture catalog | DEFER_PENDING_ACCEPTANCE | add CADP composition capability only after T1 review | pending, not as-built |
 | system-chain GAP | UPDATE_EXISTING after review | F05/F06 and adapter boundaries remain planned | pending gap |
 | Guard Contract README/index | UPDATE_EXISTING in T1 review repair if required | barrel export exists; README claim waits for tests | pending |
-| conditional reopen index | UPDATE_EXISTING | T2-T4/T6 and T5-R1/R2/R2A are accepted bounded; T5-R3 selects a bounded auth-composition owner, while implementation remains conditional on explicit hardening/design authority and a fresh dispatch | governed routing |
+| conditional reopen index | UPDATE_EXISTING | T2-T4/T6 and T5-R1/R2/R2A/R4/R5 are accepted bounded; T5-R6 closes external CADP runtime expansion `CLOSED_STOP_LOW_VALUE` and reconciles the four CADP candidate-index rows plus the objective reopen contract | governed routing |
 
 ## Source Verification
 
@@ -240,11 +293,11 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 
 | Check | Current source evidence | Disposition |
 |---|---|---|
-| CADP route registry | `ROUTE_GOVERNANCE_PROOF_REGISTRY` contains five non-CADP routes | CADP route absent; no implementation claim |
-| authentication composition | `authorizeRouteGovernanceProof` composes service token and session | selected bounded for future design only |
-| CADP authorization | no reviewed mapping from authenticated identity to CADP authority fields | remains required and deferred |
-| durable receipt | route helper returns an in-memory proof and owns no persistence | remains an explicit future decision |
-| runtime/live/public action | T5-R3 changed documentation and governance evidence only | none authorized or observed |
+| CADP route registry | `ROUTE_GOVERNANCE_PROOF_REGISTRY` contains five non-CADP routes | CADP route absent; `PARKED_DEMAND_GATED`, not an implementation claim |
+| authentication composition | `authorizeCadpAuthenticationRequest` implements the T5-R4 fail-closed contract over `authorizeRouteGovernanceProof` | `IMPLEMENTED_FAIL_CLOSED_UNREACHABLE`: real and tested, but has zero current non-test caller |
+| CADP authorization | `projectCadpAuthorization` returns a literal-`false` authority projection; no reviewed mapping from authenticated identity to a populated CADP authority record exists | `IMPLEMENTED_FAIL_CLOSED_UNREACHABLE`: authorization owner selection is `PARKED_DEMAND_GATED` per T5-R6 gate 2 |
+| durable receipt | route helper returns an in-memory proof and owns no persistence | `PARKED_DEMAND_GATED` per T5-R6 gate 5; not an authorized backlog item |
+| runtime/live/public action | T5-R4/R5 changed CVF Web source under existing hermetic test coverage only; T5-R6 changed documentation/review evidence only | none authorized or observed |
 
 ## External Absorption Core
 
@@ -316,13 +369,13 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 
 | Field | Disposition |
 |---|---|
-| claimScope | finding resolution roadmap plus accepted bounded T1-T5-R3 local/decision state, accepted bounded T6 one-call live compatibility, and accepted bounded T7 selected-scope closure |
+| claimScope | finding resolution roadmap plus accepted bounded T1-T5-R5 local implementation state, T5-R6 closed stop-low-value external-runtime decision, accepted bounded T6 one-call live compatibility, and accepted bounded T7 selected-scope closure |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
 | receiptEvidence | CVF_RECEIPT_PRESENT: accepted T6 R2 SOT3 and free-quota receipts for one exact-model call |
-| actionEvidence | ACTION_EVIDENCE_PRESENT: T1-T3 package evidence, T4 41-test static-checker suite and 8 independent probes, plus T6 strict SOT3 admission |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: T1-T3 package evidence, T4 41-test static-checker suite and 8 independent probes, T5-R4/R5 focused test/drift/reviewer-fast/pre-commit evidence, T5-R6 independent consumer/route search and scorecard recomputation, plus T6 strict SOT3 admission |
 | invocationBoundary | local repository implementation and verification plus one separately authorized bounded Alibaba call |
 | interceptionBoundary | no runtime/provider interception claim |
-| claimLanguage | T1-T4 and T5-R1/R2/R2A accepted bounded; T5-R3 selects `authorizeRouteGovernanceProof` only as bounded auth-composition owner and leaves all implementation/hardening/runtime deferred; T6 accepted for one exact-model live compatibility observation; T7 selected scope accepted closed with DEFERRED_PRIVATE_ONLY |
+| claimLanguage | T1-T4 and T5-R1/R2/R2A/R4/R5 accepted bounded; T5-R6 independently closes external CADP runtime expansion `STOP_LOW_VALUE` and parks it demand-gated under the six-condition objective reopen contract; T6 accepted for one exact-model live compatibility observation; T7 selected scope accepted closed with DEFERRED_PRIVATE_ONLY |
 | forbiddenExpansion | no provider-wide compatibility, repeat-live, adapter, public, deploy, production, or billing claim |
 
 ## Next Allowed Move
@@ -335,19 +388,63 @@ also independently accepted bounded: contract-source uniqueness is preserved
 while T5-R1 and T5-R2 now carry independent module-qualified export drift proof
 over their shared package root. T5-R3 selects
 `authorizeRouteGovernanceProof` as a bounded authentication-composition owner,
-not an authorization or durable-receipt owner. Authentication implementation
-and any MCP/CLI/HTTP transport runtime remain deferred behind the accepted
-hardening/design preconditions and a fresh packet.
+not an authorization or durable-receipt owner. T5-R4 is independently accepted
+bounded: the operator-selected Option A contract,
+`CADP_FAIL_CLOSED_ON_INVALID_TOKEN`, is committed at `af2f425d8`. T5-R5 is
+independently accepted bounded: the fail-closed authentication wrapper and the
+literal-`false` CADP authorization projection are implemented and tested at
+`6284e5bd1`, with the existing five-route registry and non-CADP route behavior
+unchanged.
+
+T5-R6 is independently accepted `CLOSED_STOP_LOW_VALUE` at `83491ade1`: the
+accepted T5-R4/R5 foundations exist and are `IMPLEMENTED_FAIL_CLOSED_UNREACHABLE`,
+but external CADP runtime expansion (a route, a transport, an authorization
+owner, or a durable receipt destination) has no current non-test consumer, no
+concrete blocked workflow, and a value/cost margin far below the required
+threshold. This closes CADP's active implementation lane. External runtime is
+`PARKED_DEMAND_GATED`, not a pending or automatically required backlog item.
+
 T7 selected hermetic scope is independently accepted closed bounded with
 `DEFERRED_PRIVATE_ONLY`. T6 is independently accepted for one bounded
 `qwen3.7-flash` live compatibility observation; repeat-live authority is not
-carried forward. Await explicit operator direction; no further
-CADP implementation tranche or public action is auto-released. A fresh
-source-verified hardening/design packet may be authored only after operator
-selection. Adapter implementation,
+carried forward.
+
+### Objective Reopen Contract
+
+Reopen CADP external runtime expansion only when one fresh, operator-approved
+governed work order proves all six of the following conjunctively, per T8's
+paired baseline and work order:
+
+1. a named current non-test consumer;
+2. a concrete blocked workflow and operator-visible outcome;
+3. an authoritative metadata/authorization owner, not caller-supplied truth;
+4. a bounded receipt or operator destination;
+5. base and sensitized value-cost margins each at least `+12`;
+6. a fresh operator-approved work order scoped to the smallest required
+   surface.
+
+Absent all six conditions, CADP runtime expansion remains
+`PARKED_DEMAND_GATED`. This is not `pending implementation` and not
+`runtime work remains automatically required`; it is a deliberate stop with an
+explicit, evidence-gated reopen path.
+
+### Repository-Exit Statement
+
+This roadmap's CADP-AI state is terminal and internally consistent as of
+T5-R6/T8: accepted internal contract, authentication-composition, and
+authorization-projection foundations remain (`IMPLEMENTED_BOUNDED_INTERNAL`
+and `IMPLEMENTED_FAIL_CLOSED_UNREACHABLE`); external runtime expansion is
+`PARKED_DEMAND_GATED` under the six-condition objective reopen contract above;
+the 140-row historical corpus-intake ledger is preserved unchanged; and no
+route, registry row, runtime mutation, provider/live/network access,
+credentials, public sync, deployment, or production action is authorized. No
+further CADP implementation tranche or public action is auto-released. A
+fresh source-verified packet may be authored only after the reopen contract is
+met and the operator explicitly authorizes it. Adapter implementation,
 provider/live, credential access, quota mutation, CLI/MCP invocation, public
 sync, deployment, production, trusted-evidence readiness, and cross-runtime
-claims remain parked.
+claims remain parked. This statement is documentation-only and authorizes no
+repository transfer.
 
 ## Public Export Disposition
 
@@ -360,14 +457,22 @@ provenance; a later public-safe projection needs explicit public-sync review.
 
 This roadmap records bounded T0/T1/T2/T3A/T3B/T4 acceptance, bounded T5-R1
 foundation, T5-R2 pure adapter-contract acceptance, T5-R2A shared-root
-checker proof, and T5-R3 bounded authentication-composition owner selection
-with implementation and transport runtime deferred,
-bounded T6 one-call `qwen3.7-flash` compatibility acceptance, and bounded T7
-selected-scope closure with `DEFERRED_PRIVATE_ONLY`.
+checker proof, T5-R3 bounded authentication-composition owner selection,
+T5-R4 bounded fail-closed contract selection, T5-R5 bounded fail-closed
+authentication and literal-`false` authorization implementation, T5-R6
+independently accepted `CLOSED_STOP_LOW_VALUE` parking external CADP runtime
+expansion demand-gated, bounded T6 one-call `qwen3.7-flash` compatibility
+acceptance, and bounded T7 selected-scope closure with `DEFERRED_PRIVATE_ONLY`.
 T3A proves only a hermetic pre-execution eligibility projection with literal
 `executionAuthorized: false`; F11 remains closed only within the accepted
 hermetic scope. T3B proves only a local provider-neutral constraint projection
-with no execution authority. T6 proves only the captured exact-model call; no
-provider-wide compatibility, repeat-live authority, credential delegation, quota mutation,
+with no execution authority. T5-R5 proves only a hermetic, fail-closed
+authentication/authorization composition with zero current non-test caller;
+T5-R6 proves only that external runtime expansion lacks a current source-proven
+consumer, owner, and stable value margin, not that CADP has no foundational
+value. T6 proves only the captured exact-model call; no provider-wide
+compatibility, repeat-live authority, credential delegation, quota mutation,
 CLI/MCP, SaaS execution, deployment, production readiness, trusted-evidence
-readiness, cross-runtime determinism, or public export is claimed.
+readiness, cross-runtime determinism, or public export is claimed. No route,
+registry row, runtime mutation, catalog entry, GAP entry, or repository
+transfer is authorized by this reconciliation.

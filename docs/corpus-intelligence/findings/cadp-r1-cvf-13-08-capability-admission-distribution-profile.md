@@ -339,12 +339,45 @@ deferred and require a separately authorized integration and execution review.
 - Independent CADP-AI review records bounded acceptance and the open F11
   caller-self-attestation residual.
 
+## Current Disposition Overlay (T8, 2026-08-15)
+
+This overlay maps historical candidate groups above to their **current**
+CVF-side disposition as of accepted T5-R4/R5/R6 evidence. It adds no new file
+row, changes no historical `Processing status`, `Absorption status`, `Value
+disposition`, `Overlap disposition`, or `Conversion lane` cell in the 140-row
+ledger above, and does not alter the 140/2/57/9/72 aggregation totals. The
+overlay is current-state routing only; the historical ledger remains the
+controlling intake-time record.
+
+| Candidate group (source rows) | Historical disposition | Current CVF-side reconciliation | Current status token | Evidence |
+|---|---|---|---|---|
+| F01-F04, F08, F11, F12 contract kernel (rows underlying CADP-AI-contract-kernel) | `ADAPTED` / `DEFERRED`, `PACKAGE_CANDIDATE` | Implemented as the Guard Contract CADP composition contract; T5-R1/R2/R2A extended it with an authority foundation and a pure transport-neutral external-readout adapter | `IMPLEMENTED_BOUNDED_INTERNAL` | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/cadp-external-readout-adapter.contract.ts` |
+| F05, F08, F09, F11 work-order/observation reconciliation (row 55 `mapping-work-order.md` and related) | `DEFERRED`, `PACKAGE_CANDIDATE` / `NEW_FINDING` | Implemented and independently accepted at T2A-R1; grant v1 fail-closed, additive v2 binds to committed private-provenance Git blobs | `IMPLEMENTED_BOUNDED_INTERNAL` | `docs/reviews/CVF_CADP_AI_T2A_AUTHORITY_RECONCILIATION_COMPLETION_2026-08-13.md` |
+| F02, F06, F08 downstream consumer adapters (rows 1, 3, 5, 8, 22, 25 and related SaaS/owner-reconciliation rows) | `DEFERRED`, mixed `ENRICH_EXISTING`/`NEW_FINDING` | T3A hermetic non-executing Execution Plane eligibility adapter and T3B provider-neutral Model Gateway constraint projection; both accepted bounded, no execution authority | `IMPLEMENTED_BOUNDED_INTERNAL` | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/cadp.capability.consumer.contract.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/cadp.constraint.projection.contract.ts` |
+| F09 negative fixture and drift checker (audit-script/fixture rows in the CHECKER_CANDIDATE group) | `DEFERRED`, `CHECKER_CANDIDATE` | T4 static drift checker and negative fixture suite accepted bounded, standalone and unwired (no hook/CI wiring) | `IMPLEMENTED_BOUNDED_INTERNAL` | `governance/compat/check_cadp_authority_boundary_drift.py`; `governance/compat/fixtures/cadp_authority_boundary_contract.v1.json` |
+| authentication composition (no direct source row; CVF-native T5-R3/R4/R5 design and implementation) | N/A - CVF-native, not a corpus row | `authorizeRouteGovernanceProof` selected as auth-composition owner (T5-R3); `CADP_FAIL_CLOSED_ON_INVALID_TOKEN` contract selected (T5-R4); `authorizeCadpAuthenticationRequest` and `projectCadpAuthorization` implemented and tested (T5-R5) | `IMPLEMENTED_FAIL_CLOSED_UNREACHABLE` | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cadp-authentication-policy.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cadp-authorization.ts` |
+| F01-F04 candidate schemas and F05 capability-grant projection direct package adoption (rows 56-59) | `DEFERRED`, `PACKAGE_CANDIDATE` | No direct schema-file import is authorized; reusable invariants were selectively ported into the Guard Contract TypeScript contract, not the YAML schemas themselves | `REJECTED_DIRECT_IMPORT` | Finding Resolution Matrix F07 above; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` `CADP-AI-contract-kernel` row |
+| external CADP runtime seam: transport registration, MCP/CLI adapter activation, CADP authorization-owner wiring, durable receipt/operator destination | not present in the 140-row corpus; a T5 design question, not a source-file disposition | Independently decided `STOP_LOW_VALUE`: zero current non-test consumer, no authoritative runtime metadata owner, no durable receipt/operator destination, and a value/cost margin far below the required `+12` threshold | `PARKED_DEMAND_GATED` | `docs/reviews/CVF_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_COMPLETION_2026-08-15.md`; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` (six-condition objective reopen contract) |
+| F07 direct import/authority rows (rows 7, 30-35 and related roadmap/work-order/BUILD/FREEZE rows) | `REJECTED`, `REJECT_DIRECT_IMPORT` | No change; direct import remains rejected | `REJECTED_DIRECT_IMPORT` | Finding Resolution Matrix F07 above |
+| remaining `NO_NEW_VALUE` / `CONFIRMED_EXISTING` rows (fixtures, phase-packet self-evidence, owner-mapping duplicates) | `NO_NEW_VALUE` | No CVF-side action required; already owned by existing CVF surfaces | `NO_NEW_VALUE_TERMINAL` | Finding Resolution Matrix rows above |
+
+Reconciliation vocabulary used in this overlay only:
+`IMPLEMENTED_BOUNDED_INTERNAL`, `IMPLEMENTED_FAIL_CLOSED_UNREACHABLE`,
+`PARKED_DEMAND_GATED`, `REJECTED_DIRECT_IMPORT`; the additional
+`NO_NEW_VALUE_TERMINAL` token preserves the distinct historical no-new-value
+meaning instead of conflating it with direct-import rejection. No row above states
+`pending implementation` or `remains required` for the external runtime edge;
+that edge is explicitly `PARKED_DEMAND_GATED`, not an authorized or implied
+backlog item.
+
 ## Related Artifacts
 
 - `docs/corpus-intelligence/manifests/cadp-r1-cvf-13-08-capability-admission-distribution-profile.json`
 - `docs/corpus-intelligence/registry/entries/cadp-r1-cvf-13-08-capability-admission-distribution-profile.json`
 - `docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md`
 - `docs/reviews/CVF_CADP_AI_T1_INDEPENDENT_ADVERSARIAL_REVIEW_2026-08-13.md`
+- `docs/reviews/CVF_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_COMPLETION_2026-08-15.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`
 
 ## Claim Boundary
 
@@ -353,3 +386,7 @@ pending-review semantic classification for the current 140-file snapshot. It
 does not prove the source tests pass, establish upstream provenance, make the
 source canonical, implement or activate a schema/runtime/checker, call a
 provider, export publicly, deploy, or close CADP-R1 without independent review.
+The `Current Disposition Overlay` section added at T8 (2026-08-15) is a
+current-state routing layer only: it cites accepted T2A/T3A/T3B/T4/T5-R1
+through T5-R6 evidence and changes no historical row, terminal status, or
+aggregation total in the 140-row ledger above.

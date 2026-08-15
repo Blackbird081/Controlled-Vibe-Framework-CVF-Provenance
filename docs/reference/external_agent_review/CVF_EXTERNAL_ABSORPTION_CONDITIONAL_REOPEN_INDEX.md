@@ -80,11 +80,11 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 - Manifest hash: not generated; bounded index seed is path-listed and command-backed in the working session.
 - Processing ledger artifact or inline ledger: inline candidate index table in this file.
 - Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE
-- Reconciliation: manifest=13 source artifacts; ledger_terminal=34 indexed candidate rows plus 1 terminal source-family closure; exclusions=0; unresolved=0
+- Reconciliation: manifest=14 source artifacts; ledger_terminal=36 indexed candidate rows plus 1 terminal source-family closure; exclusions=0; unresolved=0
 - Unresolved files: 0
 - Declared exclusions: none
 - Unreadable or unsupported files: none
-- Aggregation check: 34 indexed candidate rows and 1 terminal source-family closure are sourced from 13 governed artifacts listed below.
+- Aggregation check: 36 indexed candidate rows and 1 terminal source-family closure are sourced from 14 governed artifacts listed below.
 - Drift check: future external absorption closeouts must update this file or state `NO_CONDITIONAL_REOPEN_INDEX_ENTRY_WITH_REASON`.
 - Output traceability: each indexed row names the source artifact and owner surface.
 - Adversarial verification: direct-import rejection alone is not accepted as no-value closure when CVF-native package, runtime, or checker value remains.
@@ -106,7 +106,8 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 | `docs/reference/CVF_MSEA_R85_GOP_Y_CVF_SOURCE_RECONCILIATION_MATRIX_2026-07-10.md` | Terminal 27-file `Gop y CVF` residual-value reconciliation | READ |
 | `docs/reference/external_agent_review/CVF_EAIC_KR_R1C_CVF_23_07_FINAL_OWNER_SURFACE_ABSORPTION_DECISION.md` | CVF 23.07 final owner-surface absorption reconciliation; source of the four R1C package/runtime/checker candidate rows below | READ |
 | `docs/audits/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md` | Pinned 107-file Pancake POS MCP upstream-plus-legacy re-intake; source of five conditionally parked CVF-native pattern rows | READ |
-| `docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md` | CADP-R1 full finding resolution; source of the four CADP integration rows below | READ |
+| `docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md` | CADP-R1 full finding resolution through T5-R6; source of the six CADP integration rows below | READ |
+| `docs/reviews/CVF_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_COMPLETION_2026-08-15.md` | CADP-AI T5-R6 independently accepted `CLOSED_STOP_LOW_VALUE`; source of the external-readout runtime-seam row and the six-condition objective reopen contract | READ |
 
 ## Candidate Index
 
@@ -142,10 +143,39 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 | `PPMCP-R1-compact-response-projection-runtime-candidate` | PPMCP-R1 upstream response projection and replay evidence | `RUNTIME_CANDIDATE` | Selective response shaping may reduce MCP result context cost; the source measured 26.8%-63.1% reduction across five tool/action pairs. | `PARKED_UNTIL_CONDITION` | Reopen only after an operator-authorized CVF MCP response-shaping layer exists and a fresh work order source-verifies a concrete context-budget or quota problem this pattern would solve. | Pending future CVF MCP response-shaping owner | Dependency installation, runtime response mutation, production cost claim |
 | `PPMCP-R1-display-id-resolver-runtime-candidate` | PPMCP-R1 upstream safe entity targeting | `RUNTIME_CANDIDATE` | Two-stage display-ID resolution with structured ambiguity and state errors may reduce destructive mutation against the wrong entity. | `PARKED_UNTIL_CONDITION` | Reopen only after a fresh runtime work order source-verifies a concrete CVF-native destructive-action-targeting need this pattern would address. | Pending future CVF safe-entity-targeting owner | Domain-specific code import, destructive runtime mutation |
 | `PPMCP-R1-replay-regression-checker-candidate` | PPMCP-R1 upstream replay and negative-mutation fixtures | `CHECKER_CANDIDATE` | Replay regression and negative mutation fixtures may harden a future MCP-adjacent adapter test surface. | `PARKED_UNTIL_CONDITION` | Reopen only after a repeated real defect in CVF MCP-adjacent adapter testing demonstrates a gap these patterns would have caught. | Pending future CVF MCP-adjacent test owner | Checker implementation, hook-chain wiring, CI mutation |
-| `CADP-AI-contract-kernel` | CADP-R1 F01-F04, F08, F11, F12 | `PACKAGE_CANDIDATE` | CVF-native admission, assignment, distribution, evidence and deterministic-receipt contract logic. | `T1_ACCEPTED_BOUNDED` | Round-6 independent review accepted the hermetic contract against R01-R28; F11 source authentication remains outside T1. | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.ts` | runtime consumer wiring, authenticated evidence ownership, catalog readiness overclaim |
-| `CADP-AI-work-order-observation-reconciliation` | CADP-R1 F05/F08/F09/F11 | `RUNTIME_CANDIDATE` | Exact owner-bound evidence plus granted-versus-observed work-order reconciliation across version, action, transport, resource, credentials, expiry, invocation and retry limits. | `T2A_ACCEPTED_BOUNDED` | T2A-R1 is independently accepted at material commit `944bfe852131f2ac0aa403254c33157820ba3ee5`; grant v1 remains fail-closed and additive v2 binds authority to committed private-provenance Git blobs with durable local replay state. | Guard Contract repository owner plus committed grant and SQLite replay state | provider/live action, cross-runtime determinism, trusted-evidence readiness |
-| `CADP-AI-downstream-consumer-adapters` | CADP-R1 F02/F06/F08 | `RUNTIME_CANDIDATE` | Internal execution-plane/model-gateway consumption and bounded SaaS constraint metadata without authority widening. | `T3A_T3B_ACCEPTED_BOUNDED` | T3A independently accepts only the hermetic non-executing Execution Plane eligibility consumer; T3B independently accepts only provider-neutral constraint metadata with no secret resolution, provider call, or execution authority. | Guard Contract plus `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/cadp.capability.consumer.contract.ts` and `EXTENSIONS/CVF_MODEL_GATEWAY/src/cadp.constraint.projection.contract.ts` | provider calls, credentials, CLI/MCP, SaaS execution, trusted-evidence readiness, cross-runtime determinism |
-| `CADP-AI-negative-fixture-and-drift-checker` | CADP-R1 F09 | `CHECKER_CANDIDATE` | Cross-owner negative fixtures and schema/contract drift detection machine-enforce the accepted bounded CADP invariants. | `T4_ACCEPTED_BOUNDED_STANDALONE_UNWIRED` | T4 independently accepted the strict fixture, read-only checker, focused negative suite, and package-boundary probes at material commit `7dfee6e4d`; it remains standalone and unwired. | `governance/compat/check_cadp_authority_boundary_drift.py`; `governance/compat/fixtures/cadp_authority_boundary_contract.v1.json`; focused checker tests | hook/autorun/CI wiring, full TypeScript compiler equivalence, provider/live behavior, public/deploy/production |
+| `CADP-AI-contract-kernel` | CADP-R1 F01-F04, F08, F11, F12 | `PACKAGE_CANDIDATE` | CVF-native admission, assignment, distribution, evidence and deterministic-receipt contract logic. | `T1_ACCEPTED_BOUNDED_IMPLEMENTED_BOUNDED_INTERNAL` | Round-6 independent review accepted the hermetic contract against R01-R28; F11 source authentication remains outside T1. T5-R1/R2/R2A extended it with an accepted bounded authority foundation and pure transport-neutral external-readout adapter. | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-admission-distribution-profile.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/cadp-external-readout-adapter.contract.ts` | runtime consumer wiring, authenticated evidence ownership, catalog readiness overclaim |
+| `CADP-AI-work-order-observation-reconciliation` | CADP-R1 F05/F08/F09/F11 | `RUNTIME_CANDIDATE` | Exact owner-bound evidence plus granted-versus-observed work-order reconciliation across version, action, transport, resource, credentials, expiry, invocation and retry limits. | `T2A_ACCEPTED_BOUNDED_IMPLEMENTED_BOUNDED_INTERNAL` | T2A-R1 is independently accepted at material commit `944bfe852131f2ac0aa403254c33157820ba3ee5`; grant v1 remains fail-closed and additive v2 binds authority to committed private-provenance Git blobs with durable local replay state. | Guard Contract repository owner plus committed grant and SQLite replay state | provider/live action, cross-runtime determinism, trusted-evidence readiness |
+| `CADP-AI-downstream-consumer-adapters` | CADP-R1 F02/F06/F08 | `RUNTIME_CANDIDATE` | Internal execution-plane/model-gateway consumption and bounded SaaS constraint metadata without authority widening. | `T3A_T3B_ACCEPTED_BOUNDED_IMPLEMENTED_BOUNDED_INTERNAL` | T3A independently accepts only the hermetic non-executing Execution Plane eligibility consumer; T3B independently accepts only provider-neutral constraint metadata with no secret resolution, provider call, or execution authority. | Guard Contract plus `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/cadp.capability.consumer.contract.ts` and `EXTENSIONS/CVF_MODEL_GATEWAY/src/cadp.constraint.projection.contract.ts` | provider calls, credentials, CLI/MCP, SaaS execution, trusted-evidence readiness, cross-runtime determinism |
+| `CADP-AI-negative-fixture-and-drift-checker` | CADP-R1 F09 | `CHECKER_CANDIDATE` | Cross-owner negative fixtures and schema/contract drift detection machine-enforce the accepted bounded CADP invariants. | `T4_ACCEPTED_BOUNDED_STANDALONE_UNWIRED_IMPLEMENTED_BOUNDED_INTERNAL` | T4 independently accepted the strict fixture, read-only checker, focused negative suite, and package-boundary probes at material commit `7dfee6e4d`; it remains standalone and unwired. | `governance/compat/check_cadp_authority_boundary_drift.py`; `governance/compat/fixtures/cadp_authority_boundary_contract.v1.json`; focused checker tests | hook/autorun/CI wiring, full TypeScript compiler equivalence, provider/live behavior, public/deploy/production |
+| `CADP-AI-authentication-composition` | CADP-AI T5-R3/R4/R5 | `RUNTIME_CANDIDATE` | Fail-closed authentication-composition wrapper and literal-`false` CADP authorization projection over the existing route-governance-proof owner. | `T5_R4_R5_ACCEPTED_BOUNDED_IMPLEMENTED_FAIL_CLOSED_UNREACHABLE` | T5-R4 selects the `CADP_FAIL_CLOSED_ON_INVALID_TOKEN` contract at `af2f425d8`; T5-R5 implements and tests it at `6284e5bd1`. Real and hermetic, but has zero current non-test caller. | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cadp-authentication-policy.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cadp-authorization.ts` | CADP route registration, transport activation, CLI/MCP invocation, credential delegation |
+| `CADP-AI-external-readout-runtime-seam` | CADP-AI T5-R6 | `RUNTIME_CANDIDATE` | A read-only CADP external-readout runtime seam (route, transport, CADP authorization owner, and durable receipt/operator destination) that would connect the accepted contract/authentication foundations above to an external or internal consumer. | `T5_R6_CLOSED_STOP_LOW_VALUE_PARKED_DEMAND_GATED` | Independently accepted `STOP_LOW_VALUE` at material commit `83491ade1`: zero current non-test consumer, no authoritative runtime metadata owner, no durable receipt/operator destination, and a value/cost margin (`base -22`, `sensitized -26`) far below the required `+12` threshold. Reopen requires all six conjunctive conditions in the Objective Reopen Contract below. | `docs/reviews/CVF_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_COMPLETION_2026-08-15.md` | CADP route registration, MCP/CLI transport activation, CADP authorization-owner wiring, durable receipt/operator destination, provider/live/network, credentials, public sync, deployment, production |
+
+## CADP External Runtime Objective Reopen Contract
+
+This contract governs only the `CADP-AI-external-readout-runtime-seam` row
+above. It does not govern the other four CADP rows, which remain accepted
+bounded internal foundations (`IMPLEMENTED_BOUNDED_INTERNAL` or
+`IMPLEMENTED_FAIL_CLOSED_UNREACHABLE`).
+
+Reopen CADP external runtime expansion (route registration, MCP/CLI transport
+activation, a CADP authorization owner, or a durable receipt/operator
+destination) only when one fresh, operator-approved governed work order proves
+all six of the following conjunctively:
+
+1. a named current non-test consumer;
+2. a concrete blocked workflow and operator-visible outcome;
+3. an authoritative metadata/authorization owner, not caller-supplied truth;
+4. a bounded receipt or operator destination;
+5. base and sensitized value-cost margins each at least `+12`;
+6. a fresh operator-approved work order scoped to the smallest required
+   surface.
+
+Absent all six conditions, this row remains `PARKED_DEMAND_GATED`. This is a
+deliberate stop with an explicit, evidence-gated reopen path, not a
+`pending implementation` or `runtime work remains automatically required`
+disposition. See `docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md`
+`Objective Reopen Contract` for the paired roadmap-side statement of the same
+six conditions.
 
 ## Terminal Source-Family Closures
 
