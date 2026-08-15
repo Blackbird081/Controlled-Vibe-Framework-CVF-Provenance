@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2237,
+  "stateKey": "rspbAiT1SnapshotValueProbeDispatch20260816",
+  "value": "RSPB-AI-T1 owner reconciliation and read-only Capability Environment Snapshot value probe is dispatched at cdfba38cb. It is a documentation-only WORKER_MUST_NOT_COMMIT tranche with exactly three worker-owned outputs. Direct import, candidate execution, acquisition/mutation, runtime activation, secrets, network/provider access, public sync, push, deployment, and production remain forbidden."
+}
