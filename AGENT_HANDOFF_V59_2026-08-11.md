@@ -202,11 +202,11 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit approval of terminal T8 reconciliation before
-changing repositories.
+Operator authorization: explicit approval to clear the private-provenance push
+backlog before changing repositories; aggregate range-shape debt only is waived.
 
-Authorized guard-maintenance scope: record T8 closure `3b906862b` and the
-no-transfer repository-transition boundary.
+Authorized guard-maintenance scope: record T8 closure `3b906862b`, latest local
+HEAD parent `2e3221cf4`, and the no-transfer repository-transition boundary.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
