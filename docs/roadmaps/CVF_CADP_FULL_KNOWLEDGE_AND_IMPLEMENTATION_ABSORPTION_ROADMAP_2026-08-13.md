@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: T0_T1_T2_T3A_T3B_T4_T6_ACCEPTED_BOUNDED_T5_DECISION_ACCEPTED_DEFERRED_T7_ACCEPTED_CLOSED_DEFERRED_PRIVATE_ONLY
+Status: T0_T1_T2_T3A_T3B_T4_T5_R1_T6_ACCEPTED_BOUNDED_T5_ADAPTER_DEFERRED_T7_ACCEPTED_CLOSED_DEFERRED_PRIVATE_ONLY
 
 docType: roadmap
 
@@ -113,9 +113,23 @@ the preceding record, and no distribution or receipt may activate a capability.
 | T3A | integrate the first downstream internal consumer | Execution Plane non-executing eligibility adapter and narrow SQLite-state ignore hygiene | accepted T2A; fresh source-verified work order; operator `next` direction | consumer tests prove no authority widening, invalid-before-valid replay preservation, and no raw secrets | ACCEPTED_BOUNDED |
 | T3B | integrate Model Gateway constraint projection | provider-neutral SaaS constraint metadata only | accepted T3A; fresh Model Gateway source verification and operator release | no secret resolution, provider call, or execution authority | ACCEPTED_BOUNDED |
 | T4 | complete machine enforcement | schema fixtures, drift checker, negative corpus suite, package-boundary tests | repeated/accepted invariant need; checker GC-018 | checker detects every named violation without false authority claim | ACCEPTED_BOUNDED_STANDALONE_UNWIRED |
-| T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | ACCEPTED_BOUNDED_DEFER_WITH_MISSING_AUTHORITY |
+| T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | R1_AUTHORITY_FOUNDATION_ACCEPTED_BOUNDED_ADAPTER_DEFERRED |
 | T6 | live compatibility proof | bounded real-provider/SaaS tests and receipts | credentials, cost ceiling, sandbox, live diagnostic and release work order | real provider evidence; no mocks for governance claim | ACCEPTED_LIVE_BOUNDED |
 | T7 | closure and public disposition | independent review, catalog/GAP projections, session sync, public export decision | all selected prior tranches accepted | zero unresolved selected-scope findings and explicit export disposition | ACCEPTED_CLOSED_BOUNDED_DEFERRED_PRIVATE_ONLY |
+
+## T5-R1 Authority Foundation Closure
+
+Independent completion review:
+`docs/reviews/CVF_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_COMPLETION_2026-08-15.md`.
+
+Rows 1-7 and 9 of the nine-row prerequisite foundation table are accepted
+bounded after reviewer repair and 121/121 focused/regression tests. Row 8
+remains `REMAINS_DEFERRED_WITH_REASON`: no package-root transport, MCP/CLI
+registration, authentication mechanism, credential resolution, or external
+invocation exists. The operator accepted the disclosed two-call reviewer test
+incident only as a closure waiver; the calls are not T5 evidence and confer no
+repeat-live authority. Adapter implementation and the external invocation
+moratorium remain unchanged.
 
 ## T1 Implemented Contract Surface
 
@@ -274,9 +288,12 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 
 T3A and T3B are independently accepted for hermetic, non-executing internal
 projections. T4 is independently accepted for a standalone, read-only checker.
+T5-R1 authority foundation is independently accepted bounded after reviewer
+repair and explicit operator disposition of the disclosed reviewer test
+incident; external adapter implementation and package-root transport remain
+deferred and require a fresh governed packet.
 T7 selected hermetic scope is independently accepted closed bounded with
-`DEFERRED_PRIVATE_ONLY`. T5 implementation remains deferred for nine missing
-authority prerequisites. T6 is independently accepted for one bounded
+`DEFERRED_PRIVATE_ONLY`. T6 is independently accepted for one bounded
 `qwen3.7-flash` live compatibility observation; repeat-live authority is not
 carried forward. Await explicit operator direction; no further
 CADP tranche or public action is auto-released. Adapter implementation,

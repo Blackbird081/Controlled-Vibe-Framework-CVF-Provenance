@@ -281,6 +281,31 @@ export {
 } from './capability-admission-distribution-profile.contract';
 
 export type {
+  CadpExternalReadoutIssueCode,
+  CadpExternalReadoutIssue,
+  CadpExternalReadoutValidationResult,
+  CadpExternalReadoutAllowlistedMetadata,
+  CadpExternalCallerIdentityInput,
+  CadpExternalReadoutIngressRequest,
+  CadpExternalReadoutFreshnessInput,
+  CadpExternalReadoutFreshnessDisposition,
+  CadpExternalReadoutFreshnessResult,
+  CadpExternalReadoutReceiptInput,
+  CadpExternalReadoutReceipt,
+} from './cadp-external-readout-foundation.contract';
+
+export {
+  CADP_EXTERNAL_READOUT_FOUNDATION_CONTRACT_VERSION,
+  CADP_EXTERNAL_READOUT_REDACTED_FIELD_NAMES,
+  validateCadpExternalCallerIdentityInput,
+  validateCadpExternalReadoutIngress,
+  redactCadpExternalReadoutPayload,
+  validateCadpExternalReadoutAllowlistedMetadata,
+  evaluateCadpExternalReadoutFreshness,
+  createDeterministicCadpExternalReadoutReceipt,
+} from './cadp-external-readout-foundation.contract';
+
+export type {
   CapabilityOwnerBindingIssueCode,
   CapabilityOwnerBindingIssue,
   CapabilityOwnerBindingResult,

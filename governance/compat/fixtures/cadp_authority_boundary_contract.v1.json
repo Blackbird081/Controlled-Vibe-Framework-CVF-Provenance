@@ -85,6 +85,37 @@
         "XMLHttpRequest",
         "process.env"
       ]
+    },
+    {
+      "surfaceId": "T5R1_EXTERNAL_READOUT_FOUNDATION",
+      "contractPath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/cadp-external-readout-foundation.contract.ts",
+      "packageRootPath": null,
+      "versionSymbol": "CADP_EXTERNAL_READOUT_FOUNDATION_CONTRACT_VERSION",
+      "versionValue": "cvf.cadp.externalReadoutFoundation.v1",
+      "falseAuthorityFields": [
+        "externalReadoutAuthorized",
+        "externalMutationAuthorized",
+        "externalActivationAuthorized",
+        "externalExecutionAuthorized",
+        "externalProviderCallAuthorized",
+        "externalCredentialResolutionAuthorized",
+        "receiptGrantsExecution",
+        "receiptGrantsMutation",
+        "receiptGrantsActivation"
+      ],
+      "requiredExportSymbols": [],
+      "requiredExportModule": null,
+      "forbiddenSeamTokens": [
+        "child_process",
+        "node:child_process",
+        "node:net",
+        "node:http",
+        "node:https",
+        "node:fs",
+        "fetch(",
+        "XMLHttpRequest",
+        "process.env"
+      ]
     }
   ]
 }

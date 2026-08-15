@@ -6600,6 +6600,55 @@
         "live-call authority conveyed by last-run status"
       ],
       "nextScanRecommendation": "Re-scan only if Playwright bookkeeping ownership, ignore policy, or the CADP release-bundle E2E path changes."
+    },
+    {
+      "id": "cadp-ai-t5-r1-external-readout-foundation",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CADP-AI-T5-R1 external readout authority foundation source and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/cadp-external-readout-foundation.contract.ts",
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/cadp-external-readout-foundation.contract.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CADP-AI-T5-R1",
+      "scanDate": "2026-08-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_WORKER_RETURN_2026-08-15.md",
+      "completionReviewPath": "docs/reviews/CVF_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_COMPLETION_2026-08-15.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "CADP_EXTERNAL_READOUT_FOUNDATION",
+        "CADP_EXTERNAL_IDENTITY_AND_INGRESS_SHAPE",
+        "CADP_EXTERNAL_METADATA_ALLOWLIST_AND_REDACTION",
+        "CADP_DETERMINISTIC_RECEIPT_AND_FRESHNESS",
+        "CADP_EXTERNAL_NEGATIVE_TESTS"
+      ],
+      "priorAbsorption": "T5-R1 adds a pure internal Guard Contract foundation for a possible future external readout: strict identity/ingress shapes, exact metadata allowlist, redaction rejection, freshness outcomes, deterministic receipts, and literal-false authority fields. Independent review repaired raw JSON serialization into a trap-free canonical frozen snapshot and added real-calendar validation. No adapter, transport, authentication mechanism, credential, provider call, mutation, or invocation authority exists.",
+      "findings": [
+        {
+          "id": "CADP-AI-T5-R1-F01",
+          "summary": "Initial receipt serialization invoked caller-controlled toJSON and did not provide canonical frozen snapshot semantics.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Retain the four reviewer-added canonicalization and timestamp regression tests; require a fresh governed packet before any adapter or transport work.",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "external authority flag true",
+        "caller-controlled toJSON invoked",
+        "mutable receipt payload reference",
+        "MCP or CLI transport registration",
+        "credential or provider invocation"
+      ],
+      "nextScanRecommendation": "Re-scan only if a separately authorized T5 adapter tranche changes these surfaces or opens authentication/transport composition."
     }
   ]
 }
