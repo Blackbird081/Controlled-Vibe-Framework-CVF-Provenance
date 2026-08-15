@@ -26,7 +26,7 @@ import { createOpenAiCompatibleExecuteAdapter as createNeutralAdapter } from "..
 
 const TRACE = "p4b-b-dry-run-trace-001";
 const PROVIDER = "alibaba";
-const MODEL = "qwen-turbo";
+const MODEL = "qwen-flash";
 
 function makeRef(): CredentialReference {
   return {

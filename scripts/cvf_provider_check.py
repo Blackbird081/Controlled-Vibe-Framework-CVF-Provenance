@@ -36,7 +36,7 @@ PROVIDERS = {
         "api_style": "google-generative-language",
     },
     "alibaba": {
-        "model": "qwen-turbo",
+        "model": "qwen-flash",
         "env_names": [
             "DASHSCOPE_API_KEY",
             "ALIBABA_API_KEY",

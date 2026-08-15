@@ -7,7 +7,7 @@ for 3 priority lanes. Compare against CP3A / Phase A direct-mode baselines
 to measure CVF governance overlay attribution.
 
 Priority lane order (per CP3B roadmap):
-  LANE-ALIBABA-004 : qwen-turbo          (ROUTER — only lane with direct miss)
+  LANE-ALIBABA-004 : qwen-flash          (ROUTER — only lane with direct miss)
   LANE-ALIBABA-001 : qwen3.5-122b-a10b   (highest-volume baseline)
   LANE-ALIBABA-003 : qvq-max             (verify UNSCORED pattern in governed mode)
 
@@ -31,7 +31,7 @@ EXECUTE_URL      = f'{CVF_WEB_BASE}/api/execute'
 
 # Lane definitions — model names must match what /api/execute forwards to Alibaba
 LANES = [
-    {'lane_id': 'LANE-ALIBABA-004', 'model': 'qwen-turbo',        'role': 'ROUTER'},
+    {'lane_id': 'LANE-ALIBABA-004', 'model': 'qwen-flash',        'role': 'ROUTER'},
     {'lane_id': 'LANE-ALIBABA-001', 'model': 'qwen3.5-122b-a10b', 'role': 'EXECUTOR'},
     {'lane_id': 'LANE-ALIBABA-003', 'model': 'qvq-max',           'role': 'ARBITER'},
 ]
@@ -299,3 +299,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# Text Encoding Exception: pre-existing non-ASCII text preserved unchanged; the QTDM-01 migration edited only the ASCII deprecated model identifier.

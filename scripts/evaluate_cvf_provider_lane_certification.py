@@ -20,7 +20,7 @@ REPO_ROOT = Path(__file__).parent.parent
 PROVIDERS = [
     {
         "name": "alibaba",
-        "model": "qwen-turbo",
+        "model": "qwen-flash",
         "audit_dir": REPO_ROOT / "docs" / "audits" / "alibaba-canary",
     },
     {

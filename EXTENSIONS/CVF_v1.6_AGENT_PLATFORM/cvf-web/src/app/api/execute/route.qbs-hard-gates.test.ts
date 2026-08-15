@@ -4,7 +4,7 @@ const verifySessionCookieMock = vi.hoisted(() => vi.fn());
 vi.mock('@/lib/middleware-auth', () => ({ verifySessionCookie: verifySessionCookieMock, withSessionAuditPayload: (_session: unknown, payload?: Record<string, unknown>) => payload }));
 import { POST } from './route';
 
-const base = { provider: 'alibaba', model: 'qwen-turbo', mode: 'governance', cvfPhase: 'PHASE B' };
+const base = { provider: 'alibaba', model: 'qwen-flash', mode: 'governance', cvfPhase: 'PHASE B' };
 
 describe('/api/execute QBS hard-gate remediation', () => {
   beforeEach(() => verifySessionCookieMock.mockResolvedValue({ userId: 'qbs-test-user', role: 'admin', teamId: 'qbs-test-team' }));

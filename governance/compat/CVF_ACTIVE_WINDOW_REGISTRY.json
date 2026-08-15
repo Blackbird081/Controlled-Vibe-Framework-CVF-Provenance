@@ -133,6 +133,18 @@
       "rotationScript": "scripts/cvf_active_archive.py",
       "protectionMode": "PERMANENT_ACTIVE_WINDOW",
       "status": "ACTIVE"
+    },
+    {
+      "id": "lhw23_model_registry_service_advisory_connector_active_reference",
+      "windowClass": "BINDING_REFERENCE_ACTIVE_WINDOW",
+      "activePath": "docs/reference/CVF_LHW23_T1_MODEL_REGISTRY_SERVICE_ADVISORY_CONNECTOR_SPEC_2026-05-31.md",
+      "archiveDir": "docs/reference/archive",
+      "archivePattern": "^CVF_LHW23_T1_MODEL_REGISTRY_SERVICE_ADVISORY_CONNECTOR_SPEC_2026-05-31\\.md$",
+      "rotationGuard": "governance/compat/check_active_archive_hygiene.py",
+      "rotationCheck": "governance/compat/check_active_archive_hygiene.py",
+      "rotationScript": "scripts/cvf_active_archive.py",
+      "protectionMode": "PERMANENT_ACTIVE_WINDOW",
+      "status": "ACTIVE"
     }
   ]
 }

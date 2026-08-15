@@ -173,7 +173,7 @@ Public-safe product wording:
 Boundaries that still matter:
 
 - one-provider non-coder value is proven on the Alibaba lane
-- multi-provider operability is proven on Alibaba `qwen-turbo` and DeepSeek `deepseek-chat`
+- historical multi-provider evidence exists for Alibaba and DeepSeek; Alibaba now targets `qwen-flash` pending fresh live proof, while DeepSeek `deepseek-chat` remains certified
 - W149 proved the full trusted-form corpus on Alibaba direct API `40/40`, Alibaba browser UI `40/40`, and a DeepSeek confirmatory subset `12/12`
 - provider speed, strength, reliability, and cost remain provider-lane economics chosen by the user
 - the public `Skill Library` front door is now synced to a governed subset, but benchmark truth still comes only from the `GC-044` trusted subset
@@ -336,7 +336,7 @@ Current posture on the active reference path:
 | Architecture baseline | `v3.7-W46T1 CLOSURE-ASSESSED` |
 | MC sequence | `MC1-MC5 FULLY COMPLETE` |
 | One-provider non-coder value | `PROVEN — governed path value proven on Alibaba lane` |
-| Multi-provider operability | `PROVEN — Alibaba qwen-turbo CERTIFIED (3/3 pass) + DeepSeek deepseek-chat CERTIFIED (3/3 pass)` |
+| Multi-provider operability | `HISTORICAL TWO-LANE EVIDENCE — Alibaba now targets qwen-flash pending fresh live proof; DeepSeek deepseek-chat remains CERTIFIED` |
 | Knowledge-native execute-path value | `PROVEN — injected 0.950 vs raw 0.175 (+0.775 delta)` |
 | Trusted-form non-coder corpus | `LIVE-USABLE — W149 Alibaba direct 40/40, Alibaba browser 40/40, DeepSeek confirmatory 12/12` |
 | Post-closure integration wave | `CVF ADDING NEW + Windows_Skill_Normalization INTEGRATED` |

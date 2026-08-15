@@ -5,7 +5,7 @@
   "sourceAuditEvidence": "docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_EVIDENCE_2026-07-10.json",
   "reviewerCompletion": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md",
   "reviewerCompletionMaterialCommit": "645df8b83",
-  "lastVerifiedDate": "2026-07-26",
+  "lastVerifiedDate": "2026-08-15",
   "maxAgeDays": 30,
   "reminderPolicy": "This machine map and its human companion record reviewer-accepted MSEA-R90 Audit A findings. Source-file drift and review age are detected automatically by governance/compat/check_system_chain_map_freshness.py. Detecting drift or age expiry never rewrites a lane's currentPosture or verdict automatically; only a fresh governed review may change those fields.",
   "lanes": [
@@ -30,7 +30,7 @@
         },
         {
           "path": "ARCHITECTURE.md",
-          "sha256": "4dbf1ea56200ba0869e4daf37f15fcdb84461cca07df0bcfc3982503d7887a4b",
+          "sha256": "0bd351c1d2ba6d769f9370d429d15b48e000ce0b3ee4bec747570a739dd890e2",
           "evidenceRole": "non-doctrine master-architecture narration, including the bounded SOT3 knowledge-authority path"
         },
         {
@@ -40,7 +40,7 @@
         },
         {
           "path": "docs/CVF_CORE_KNOWLEDGE_BASE.md",
-          "sha256": "8b18091c9f409091b79a922a9cf0ba61da3cd7e155b5bddbb7693f8677bbee8e",
+          "sha256": "1390aa75fc9cf882691c07e2a7ceac6edd62c0c0593609981d6a24e3201bf1d6",
           "evidenceRole": "non-doctrine module-map narration (5 Layers version stack)"
         },
         {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { buildExecutionPrompt } from './execute-prompt-contract';
 
-const base = { provider: 'alibaba' as const, model: 'qwen-turbo', mode: 'governance' as const, cvfPhase: 'PHASE B' };
+const base = { provider: 'alibaba' as const, model: 'qwen-flash', mode: 'governance' as const, cvfPhase: 'PHASE B' };
 
 describe('QBS family-aware ALLOW output contracts', () => {
   it('adds builder handoff detail requirements', () => {

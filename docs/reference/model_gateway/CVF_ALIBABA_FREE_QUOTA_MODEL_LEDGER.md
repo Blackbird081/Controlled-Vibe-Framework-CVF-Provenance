@@ -46,6 +46,14 @@ For the current operator key alias used in the 2026-06-18 diagnostic rerun,
 should not assume endpoint equivalence. If endpoint selection changes, record a
 fresh diagnostic before interpreting failures.
 
+## Canonical Alias Note
+
+The canonical DashScope runtime alias is `qwen-flash`, functionally equivalent
+to the official replacement snapshot `qwen-flash-2025-07-28` per the Alibaba
+Cloud Model Studio qwen-flash page. Active CVF surfaces use the `qwen-flash`
+alias; the snapshot identifier is retained only as the official version
+reference.
+
 ## Use-Before-Live-Test Rule
 
 1. Compare today's date to the `Expiration date` below.
@@ -89,7 +97,7 @@ alias record. Raw key values were not printed or committed.
 
 | Model code | Endpoint host | Result |
 |---|---|---|
-| `qwen-turbo` | `dashscope-intl.aliyuncs.com` | PASS |
+| `qwen-flash` | `dashscope-intl.aliyuncs.com` | NOT_RUN_PENDING_T6 |
 | `qwen3.7-plus` | `dashscope-intl.aliyuncs.com` | PASS |
 | `deepseek-v4-flash` | `dashscope-intl.aliyuncs.com` | PASS |
 | `qwen3.6-flash-2026-04-16` | `dashscope-intl.aliyuncs.com` | PASS |

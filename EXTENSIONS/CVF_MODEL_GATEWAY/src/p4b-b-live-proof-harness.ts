@@ -57,7 +57,7 @@ export type LiveProofFetch = OpenAiCompatibleFetch;
 export interface LiveProofHarnessOptions {
   /** Operator-selected provider id (e.g. "alibaba"). Not canonical scope. */
   providerId: string;
-  /** Operator-selected model id (e.g. "qwen-turbo"). */
+  /** Operator-selected model id (e.g. "qwen-flash"). */
   modelId: string;
   /** Method exercised through the bridge; must be supported in the registry. */
   method: ProviderMethodName;

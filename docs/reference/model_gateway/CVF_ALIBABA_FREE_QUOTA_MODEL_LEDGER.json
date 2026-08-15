@@ -165,9 +165,9 @@
   ],
   "diagnosticRerunSummary": [
     {
-      "modelCode": "qwen-turbo",
+      "modelCode": "qwen-flash",
       "endpointHost": "dashscope-intl.aliyuncs.com",
-      "result": "PASS"
+      "result": "NOT_RUN_PENDING_T6"
     },
     {
       "modelCode": "qwen3.7-plus",

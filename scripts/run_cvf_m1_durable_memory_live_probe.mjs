@@ -193,7 +193,7 @@ SUCCESS CRITERIA:
       priority: 'M1',
     },
     provider: 'alibaba',
-    model: 'qwen-turbo',
+    model: 'qwen-flash',
     mode: 'simple',
     action: 'analyze',
     aifMemoryReinjection: {

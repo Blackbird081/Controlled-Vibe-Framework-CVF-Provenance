@@ -41,12 +41,12 @@ describe("provider capability registry", () => {
   });
 
   it("returns registry-backed method contracts for known provider models", () => {
-    expect(getProviderMethodContract(PROVIDER_CAPABILITY_REGISTRY, "alibaba", "qwen-turbo")).toEqual({
+    expect(getProviderMethodContract(PROVIDER_CAPABILITY_REGISTRY, "alibaba", "qwen-flash")).toEqual({
       providerId: "alibaba",
-      modelId: "qwen-turbo",
+      modelId: "qwen-flash",
       supportedMethods: ["complete", "chat", "stream"],
       defaultMethod: "complete",
-      capabilityRef: "provider-capability/alibaba/qwen-turbo",
+      capabilityRef: "provider-capability/alibaba/qwen-flash",
     });
     expect(listRegistrySupportedMethods(PROVIDER_CAPABILITY_REGISTRY, "deepseek", "deepseek-chat"))
       .toEqual(["complete", "chat", "json_mode"]);
@@ -64,13 +64,13 @@ describe("provider capability registry", () => {
     expect(() => assertRegistryProviderMethodSupported(
       PROVIDER_CAPABILITY_REGISTRY,
       "alibaba",
-      "qwen-turbo",
+      "qwen-flash",
       "chat",
     )).not.toThrow();
     expect(() => assertRegistryProviderMethodSupported(
       PROVIDER_CAPABILITY_REGISTRY,
       "alibaba",
-      "qwen-turbo",
+      "qwen-flash",
       "complete",
     )).not.toThrow();
   });
@@ -79,7 +79,7 @@ describe("provider capability registry", () => {
     expect(() => assertRegistryProviderMethodSupported(
       PROVIDER_CAPABILITY_REGISTRY,
       "alibaba",
-      "qwen-turbo",
+      "qwen-flash",
       "tool_call",
     )).toThrow(UnsupportedMethodError);
     expect(() => assertRegistryProviderMethodSupported(

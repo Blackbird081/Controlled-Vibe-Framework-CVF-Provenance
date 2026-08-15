@@ -92,7 +92,7 @@ def build_blocked_receipt(
         },
         "providerProof": {
             "provider": "alibaba",
-            "model": "qwen-turbo",
+            "model": "qwen-flash",
             "keyAliasUsed": key_alias_used,
             "httpStatus": None,
             "success": False,

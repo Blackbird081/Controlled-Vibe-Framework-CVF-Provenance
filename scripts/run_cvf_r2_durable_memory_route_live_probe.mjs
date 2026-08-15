@@ -156,7 +156,7 @@ SUCCESS CRITERIA:
       priority: 'R2',
     },
     provider: 'alibaba',
-    model: 'qwen-turbo',
+    model: 'qwen-flash',
     mode: 'governance',
     cvfPhase: 'PHASE D',
     cvfRiskLevel: 'R1',

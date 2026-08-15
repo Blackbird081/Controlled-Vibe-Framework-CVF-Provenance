@@ -38,7 +38,7 @@ def _passing_a4_live_receipt() -> dict:
         "recoveryProviderCallCount": 1,
         "providerProof": {
             "provider": "alibaba",
-            "model": "qwen-turbo",
+            "model": "qwen-flash",
             "httpStatus": 200,
             "success": True,
             "latencyMs": 2000,

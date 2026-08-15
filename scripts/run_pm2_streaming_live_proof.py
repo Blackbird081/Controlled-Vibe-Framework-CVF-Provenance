@@ -1,7 +1,7 @@
 """
 CVF PM-2 Streaming Live Proof Script
 =====================================
-Calls Alibaba qwen-turbo with streaming (stream=True) and captures
+Calls Alibaba qwen-flash with streaming (stream=True) and captures
 SSE stream response with first-token latency.
 
 PROOF BOUNDARY: METHOD_PROOF_ONLY
@@ -49,7 +49,7 @@ def call_alibaba_streaming(api_key: str) -> dict:
     """Call Alibaba DashScope with streaming (stream=True)."""
     url = "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions"
     payload = {
-        "model": "qwen-turbo",
+        "model": "qwen-flash",
         "messages": [
             {"role": "user", "content": "Say hello in exactly 5 words."}
         ],
@@ -93,7 +93,7 @@ def call_alibaba_streaming(api_key: str) -> dict:
         full_output = "".join(chunks)
         return {
             "provider": "alibaba",
-            "model": "qwen-turbo",
+            "model": "qwen-flash",
             "method": "streaming",
             "http_status": status,
             "receipt_id": make_receipt("alibaba"),
@@ -106,11 +106,11 @@ def call_alibaba_streaming(api_key: str) -> dict:
             "evidenceMode": "live"
         }
     except urllib.error.HTTPError as e:
-        return {"provider":"alibaba","model":"qwen-turbo","method":"streaming",
+        return {"provider":"alibaba","model":"qwen-flash","method":"streaming",
                 "http_status":e.code,"receipt_id":make_receipt("alibaba"),
                 "error":str(e),"rawSecretPrinted":False,"decision":"DENY","evidenceMode":"live"}
     except Exception as e:
-        return {"provider":"alibaba","model":"qwen-turbo","method":"streaming",
+        return {"provider":"alibaba","model":"qwen-flash","method":"streaming",
                 "http_status":None,"receipt_id":make_receipt("alibaba"),
                 "error":str(e),"rawSecretPrinted":False,"decision":"UNKNOWN","evidenceMode":"live"}
 
@@ -120,7 +120,7 @@ def main():
         print("[PM-2] Set DASHSCOPE_API_KEY to run this proof.")
         sys.exit(1)
 
-    print("[PM-2] Calling Alibaba qwen-turbo streaming...")
+    print("[PM-2] Calling Alibaba qwen-flash streaming...")
     r = call_alibaba_streaming(ALIBABA_KEY)
     status = "PASS" if r.get("http_status") == 200 else "FAIL"
     print(f"  => {status} (HTTP {r.get('http_status')}, receipt {r.get('receipt_id')})")

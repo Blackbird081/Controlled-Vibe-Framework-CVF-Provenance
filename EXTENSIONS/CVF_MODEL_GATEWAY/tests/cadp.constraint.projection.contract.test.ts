@@ -19,7 +19,7 @@ const GRANT_ASSIGNMENT_ID = "cadp-ai-t2a-owner-binding";
 const ACTION_ID = "validateCompatibilityEvidence";
 
 const PROVIDER_ID = "alibaba";
-const MODEL_ID = "qwen-turbo";
+const MODEL_ID = "qwen-flash";
 const METHOD_NAME = "complete" as const;
 
 let handle: CapabilityOwnerHandle;
@@ -263,7 +263,7 @@ describe("cadp model gateway constraint projection", () => {
     expect(wideningResult.valid).toBe(false);
     expect(wideningResult.issues.some((issue) => issue.code === "MALFORMED_CONSTRAINTS")).toBe(true);
 
-    const providerPayload = { ...constraints(), headers: { authorization: "Bearer x" }, requestBody: { model: "qwen-turbo" } };
+    const providerPayload = { ...constraints(), headers: { authorization: "Bearer x" }, requestBody: { model: "qwen-flash" } };
     const payloadResult = evaluateCadpConstraintProjection(request({
       constraints: providerPayload as unknown as CadpConstraintProjectionConstraints,
     }));

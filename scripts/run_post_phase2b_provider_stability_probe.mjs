@@ -37,7 +37,7 @@ const secretKeyNames = [
 const providerSpecs = {
   alibaba: {
     provider: 'alibaba',
-    model: 'qwen-turbo',
+    model: 'qwen-flash',
     envNames: ['DASHSCOPE_API_KEY', 'ALIBABA_API_KEY', 'CVF_ALIBABA_API_KEY', 'CVF_BENCHMARK_ALIBABA_KEY'],
     canonicalEnv: 'DASHSCOPE_API_KEY',
   },
@@ -268,7 +268,7 @@ async function main() {
     await page.addInitScript((keys) => {
       localStorage.setItem('cvf_settings', JSON.stringify({
         providers: {
-          alibaba: { apiKey: keys.alibaba, enabled: Boolean(keys.alibaba), selectedModel: 'qwen-turbo' },
+          alibaba: { apiKey: keys.alibaba, enabled: Boolean(keys.alibaba), selectedModel: 'qwen-flash' },
           deepseek: { apiKey: keys.deepseek, enabled: Boolean(keys.deepseek), selectedModel: 'deepseek-chat' },
           openai: { apiKey: keys.openai, enabled: Boolean(keys.openai), selectedModel: 'gpt-4o' },
         },

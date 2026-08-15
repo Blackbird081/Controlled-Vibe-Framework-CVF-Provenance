@@ -84,7 +84,7 @@ describe.skipIf(!ALIBABA_API_KEY)('QBS lineage R1 real Alibaba evidence', () => 
         intent: generateIntent(template!, inputs),
         inputs,
         provider: 'alibaba',
-        model: 'qwen-turbo',
+        model: 'qwen-flash',
         mode: 'simple',
         cvfPhase: 'INTAKE',
         cvfRiskLevel: 'R1',

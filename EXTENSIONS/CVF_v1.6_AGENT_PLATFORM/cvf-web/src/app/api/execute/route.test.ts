@@ -505,7 +505,7 @@ describe('/api/execute', () => {
         expect(resolveExecutionMaxTokens('strategy_analysis')).toBe(2048);
         expect(resolveExecutionMaxTokens('operator_plan')).toBe(2048);
         expect(resolveExecutionMaxTokens('decision_memo')).toBe(2048);
-        expect(resolveExecutionMaxTokens('documentation', 'alibaba', 'qwen-turbo')).toBe(2048);
+        expect(resolveExecutionMaxTokens('documentation', 'alibaba', 'qwen-flash')).toBe(2048);
         expect(resolveExecutionMaxTokens('documentation', 'deepseek', 'deepseek-chat')).toBe(2048);
         expect(resolveExecutionMaxTokens('documentation', 'deepseek', 'deepseek-v4-pro')).toBe(3072);
         expect(resolveExecutionMaxTokens('feature_prioritization', 'deepseek', 'deepseek-v4-pro')).toBe(3072);
@@ -628,7 +628,7 @@ describe('/api/execute', () => {
             success: true,
             output: validOutput,
             provider: 'alibaba',
-            model: 'qwen-turbo',
+            model: 'qwen-flash',
         });
 
         const req = new Request('http://localhost/api/execute', {
