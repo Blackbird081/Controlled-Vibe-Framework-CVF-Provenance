@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T6-R2 Dispatched; Worker Must Not Commit
+# CVF Agent Handoff V59 - CADP-AI-T6-R2 Accepted Closed Pass Bounded
 
 Memory class: active-handoff
 
@@ -12,7 +12,8 @@ Status: ACTIVE
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
-- Current R2 session-sync marker: `e4e676393e90d4cc886bc673417be9debc81f673`
+- Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
+- Current R2 closure session-sync: `70b0801cb27780a0c2a9ec85d311d9cc5df1faaf`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
@@ -45,7 +46,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t6_r2_qwen3_7_flash_free_quota_live_retry_dispatched_worker_must_not_commit`
+  `cadp_ai_t6_r2_reviewer_accepted_closed_pass_bounded`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -54,18 +55,17 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t6_r2_qwen3_7_flash_free_quota_live_retry_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no-commit worker executes the accepted R2 free-quota packet from final clean HEAD; parked checkpoint=independent closure, T5, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t6_r2_reviewer_accepted_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selects a fresh governed objective; parked checkpoint=T5, repeat-live, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t6_r2_qwen3_7_flash_free_quota_live_retry_dispatched_worker_must_not_commit`
+`cadp_ai_t6_r2_reviewer_accepted_closed_pass_bounded`
 
 ## Purpose
 
-Record R2 dispatch at `5c21bf38e`: T6 targets `qwen3.7-flash`, snapshot
-`qwen3.7-flash-2026-07-15`, expiry `2026-10-22`. The worker must confirm Free
-Quota Only, use keys by reference, create exactly seven evidence paths, preserve
-the historical SOT3 receipt, and leave HEAD unchanged.
+Record R2 closure at `2599ff10e`: exact `qwen3.7-flash` completed one real
+SOT3 call with HTTP 200 and strict admission PASS. Historical evidence stayed
+byte-identical; the retained bundle FAIL prevents any full release claim.
 
 ## Scope / Target / Owner Boundary
 
@@ -75,7 +75,7 @@ the historical SOT3 receipt, and leave HEAD unchanged.
   of CADP-AI-T2A's independent review; cross-runtime determinism is not
   proven.
 - T3B and T4 are accepted bounded; T5D is accepted bounded and deferred; T7
-  selected scope is closed bounded; implementation, T6, runtime/provider/live, public sync, deploy and
+  selected scope and T6 are closed bounded; T5 implementation, repeat-live, public sync, deploy and
   production remain unopened.
 
 ## Latest Work / Changes
@@ -92,20 +92,20 @@ the historical SOT3 receipt, and leave HEAD unchanged.
   implemented a repository-owned committed-grant evidence seam, and passed
   independent review with 38 adversarial probe assertions across 9 mandated
   categories. Accepted `CLOSED_PASS_BOUNDED` for the current hermetic scope.
-- T6 review removed default live-E2E fan-out, selected `--e2e` plus one real
-  SOT3 call, narrowed provider-retention/secret claims, and passed pre-dispatch
-  76/76 plus material pre-commit 84/84.
+- T6 R2 completed one real exact-model SOT3 call; reviewer reconciled mock E2E
+  6/6 without another call, retained the original bundle FAIL, and closed the
+  bounded compatibility claim at `2599ff10e` after pre-commit 84/84.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T6 BLOCKED_ENVIRONMENT at `25c0b2217`; zero provider calls |
+| authorityState | CADP-AI-T6-R2 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `2599ff10e`; one cumulative call |
 | baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_2026-08-15.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_2026-08-15.md` |
 | workerReturnPath | `docs/reviews/CVF_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_WORKER_RETURN_2026-08-15.md` |
-| completionReviewPath | reviewer-owned after pending worker return |
-| nextAuthorityRequirement | no-commit R2 execution followed by independent review |
+| completionReviewPath | `docs/reviews/CVF_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_COMPLETION_2026-08-15.md` |
+| nextAuthorityRequirement | fresh operator-selected governed objective; repeat-live requires new dispatch |
 
 ## Closure Evidence
 
@@ -151,9 +151,9 @@ the historical SOT3 receipt, and leave HEAD unchanged.
 
 ## Next Allowed Move
 
-QTDM-01 remains closed bounded. Execute the accepted CADP-AI-T6-R2 work order
-from the final clean dispatcher HEAD; worker must not commit. T5 and
-public/deployment/production remain parked.
+QTDM-01 and CADP-AI-T6-R2 are closed bounded. No CADP worker is auto-released;
+await operator selection. T5, repeat-live, public/deployment/production remain
+parked.
 
 ## Active Boundary
 
@@ -164,7 +164,7 @@ public/deployment/production remain parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
 - T3A, T3B, T4, T5D, and selected T7 scope are closed bounded;
-  T5 implementation remains parked; T6 R2 awaits no-commit worker execution.
+  T5 implementation and repeat-live remain parked; T6 R2 is closed bounded.
 - MAO T1, DESIGN, BUILD, provider/live, public `main`, deploy, hosted smoke,
   secrets, store, production, and archive deletion remain parked.
 
@@ -182,11 +182,11 @@ this compact active handoff after the public staging push superseded that mode.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: the T6 live dispatch and continuity update concern private credentialed
+Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T6-R2 Dispatch Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T6-R2 Closure Sync
 
 Protected paths:
 
@@ -194,16 +194,16 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT6R2FreeQuotaLiveRetryDispatch20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT6R2LiveCompatibilityClosure20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: the operator directed removal of the deprecated model
 and separately permitted a future credentialed T6 test.
 
-Authorized guard-maintenance scope: bind R2 dispatch at material commit
-`5c21bf38e`, set exact no-commit R2 worker execution as next, and keep T5,
-source/config mutation, hook wiring, CLI-MCP invocation/
+Authorized guard-maintenance scope: bind R2 bounded closure at material commit
+`2599ff10e`, require fresh operator selection for next work, and keep T5,
+repeat-live, source/config mutation, hook wiring, CLI-MCP invocation/
 public/deployment/trusted-evidence/cross-runtime and unrelated lanes parked.
 
 Rollback boundary: revert this exact session-sync batch together with material
@@ -212,9 +212,9 @@ fragments.
 
 ## Claim Boundary
 
-This handoff records governed R2 dispatch authority only. It does not claim or
+This handoff records governed R2 bounded closure only. It does not claim or
 authorize adapter implementation, MCP/CLI invocation, external-agent launch,
 runtime enforcement, qwen3.7-flash compatibility, completed live behavior,
 cross-runtime determinism, trusted-evidence readiness, production source
-changes, hook wiring, completed T6 live proof, public sync, deployment, or
+changes, hook wiring, full release readiness, repeat-live, public sync, deployment, or
 production.
