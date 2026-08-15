@@ -45,19 +45,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and independently accept a fresh CADP-AI-T6 qwen3.7-flash live-retry dispatch; parked checkpoint=live execution until dispatch acceptance, T5 implementation, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no-commit worker executes the accepted R1 packet from final clean HEAD; parked checkpoint=independent closure, T5 implementation, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`
+`cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
 
-Current mode marker: `alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`
-Current mode: `alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`
-Previous mode: `qwen_turbo_deprecation_migration_closed_qwen_flash_live_revalidation_required`
+Current mode marker: `cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
+Current mode: `cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
+Previous mode: `alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`
 
 ## Next Allowed Move
 
-Mode: `alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`
+Mode: `cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -75,8 +75,10 @@ v22.17.0. QTDM-01 is independently closed bounded at `9f57a431b`: active
 surfaces target `qwen-flash`, historical live receipts do not transfer, and
 fresh live revalidation remains required. Operator quota evidence committed at
 `256fa5485` selects `qwen3.7-flash` (snapshot `qwen3.7-flash-2026-07-15`),
-expiry `2026-10-22`, for the next T6 dispatch. No provider call is authorized
-before that packet closes. T5 remains deferred. Latest closed wave: `LHW24`.
+expiry `2026-10-22`. R1 dispatch is accepted at `111ad52cc`; the next worker
+must follow its exact no-commit packet, verify node/npm/npx and official price,
+use keys only by reference, and return five-path evidence for independent
+review. T5 remains deferred. Latest closed wave: `LHW24`.
 
 ## Parked Checkpoints
 

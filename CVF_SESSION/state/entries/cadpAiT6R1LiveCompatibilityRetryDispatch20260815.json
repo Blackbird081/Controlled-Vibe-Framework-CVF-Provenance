@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2193,
+  "stateKey": "cadpAiT6R1LiveCompatibilityRetryDispatch20260815",
+  "value": "CADP-AI-T6-R1 qwen3.7-flash live compatibility retry dispatch is materially committed at 111ad52cc after the serial pre-dispatch autorun bundle PASS and material pre-commit 84/84 PASS. Canonical authority is the R1 baseline and work order. The worker must capture the final clean executionBaseHead, verify node/npm/npx in the same PowerShell shell, reverify current official Alibaba pricing, load one accepted API-key alias by reference without disclosure, target exact model qwen3.7-flash, run the exact release-gate command, create only the five governed evidence paths, leave staging empty and HEAD unchanged, and return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON. Maximum cumulative provider calls are 3, expected accepted count is 1, and total cost ceiling is US$1. T5, source/config mutation, CLI/MCP, public sync, deployment, production, and worker commit remain forbidden."
+}
