@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T5-R4 Contract-Hardening Closure
+# CVF Agent Handoff V59 - CADP-AI-T5-R5 Implementation Dispatch
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -16,7 +16,7 @@ Status: ACTIVE
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
-- Current T5-R2A bounded material closure: `4f359cd2d1994d7c900697b19a931c3f2337f28b`; T5-R3 bounded material closure: `6ae59fa88a0b1b233da976135b39654560d41c72`; T5-R4 contract-hardening material closure: `af2f425d825f017a5ae77c8705fc5b96de56af72`.
+- Current T5-R3 bounded material closure: `6ae59fa88a0b1b233da976135b39654560d41c72`; T5-R4 contract closure: `af2f425d825f017a5ae77c8705fc5b96de56af72`; T5-R5 implementation dispatch: `575008888d343989e0ef2c7c5f71f252672e29c3`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
@@ -40,7 +40,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t5_r4_authentication_composition_contract_accepted_bounded_implementation_deferred`
+  `cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -49,15 +49,15 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r4_authentication_composition_contract_accepted_bounded_implementation_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator-selected fresh implementation packet limited to accepted manifest items 1-5; parked checkpoint=source/test/auth/runtime implementation plus separate route/registry, live/provider/public/deploy/production work.
+Startup acknowledged: current mode=`cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact T5-R5 eleven-path no-commit implementation packet; parked checkpoint=route/registry, live/provider/public/deploy/production work.
 
 ## Current Mode
-`cadp_ai_t5_r4_authentication_composition_contract_accepted_bounded_implementation_deferred`
+`cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`
 
 ## Purpose
 
-Record T5-R4 contract-hardening bounded closure at `af2f425d8`; Option A,
-`CADP_FAIL_CLOSED_ON_INVALID_TOKEN`, is selected behind a fresh governed packet.
+Record T5-R5 implementation dispatch at `575008888`; worker may implement only
+the accepted Option A items 1-5 and must return without commit.
 
 ## Scope / Target / Owner Boundary
 
@@ -103,12 +103,12 @@ Record T5-R4 contract-hardening bounded closure at `af2f425d8`; Option A,
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T5-R4 `ACCEPTED_BY_REVIEWER_WITH_REPAIRS` at `af2f425d8` |
-| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T5_R4_AUTHENTICATION_COMPOSITION_CONTRACT_HARDENING_2026-08-15.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R4_AUTHENTICATION_COMPOSITION_CONTRACT_HARDENING_2026-08-15.md` |
-| workerReturnPath | `docs/reviews/CVF_CADP_AI_T5_R4_AUTHENTICATION_COMPOSITION_CONTRACT_HARDENING_WORKER_RETURN_2026-08-15.md` |
-| completionReviewPath | N/A with reason: corrected worker return safely carries the final decision |
-| nextAuthorityRequirement | operator-selected fresh implementation work order limited to accepted manifest items 1-5 |
+| authorityState | CADP-AI-T5-R5 `REVIEWER_ACCEPTED_DISPATCH_READY` at `575008888` |
+| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_2026-08-15.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_2026-08-15.md` |
+| workerReturnPath | `docs/reviews/CVF_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_WORKER_RETURN_2026-08-15.md` |
+| completionReviewPath | `docs/reviews/CVF_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_COMPLETION_2026-08-15.md` (optional) |
+| nextAuthorityRequirement | worker captures clean post-sync HEAD and executes exact eleven-path no-commit packet |
 
 ## Closure Evidence
 
@@ -154,11 +154,10 @@ Record T5-R4 contract-hardening bounded closure at `af2f425d8`; Option A,
 
 ## Next Allowed Move
 
-T5-R4 is accepted bounded at `af2f425d8` with Option A fixed. Next is only an
-operator-selected implementation packet limited to manifest items 1-5; a CADP
-registry row and product route require a separate route-specific packet. Source,
-tests, authentication, runtime, external invocation, public-sync, deployment,
-and production remain parked until separately authorized.
+Execute only the committed T5-R5 work order. Modify its ten source/test paths,
+create its worker return, run exact local checks, and return unstaged/uncommitted.
+Option A is mandatory. CADP route/registry, external invocation, public sync,
+deployment, and production remain parked.
 
 ## Active Boundary
 
@@ -191,29 +190,28 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T5-R4 Closure Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T5-R5 Dispatch Sync
 Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT5R4AuthenticationCompositionContractHardeningClosure20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT5R5AuthenticationCompositionImplementationDispatch20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit Option A selection followed by
-reviewer/closer-owned material commit and continuity closure.
+Operator authorization: explicit `next` instruction opening the accepted
+Option A implementation packet.
 
-Authorized guard-maintenance scope: record bounded material closure
-`af2f425d8`, the selected fail-closed policy, and the separately-authorized
-implementation boundary.
+Authorized guard-maintenance scope: record dispatch commit `575008888` and
+release only the exact no-commit T5-R5 worker phase.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records T5-R4 bounded documentation-contract closure. It does not authorize
+This handoff records T5-R5 bounded implementation dispatch. It does not authorize
 source or test mutation, authentication, MCP/CLI/HTTP invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
 trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
