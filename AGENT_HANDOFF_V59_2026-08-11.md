@@ -205,8 +205,8 @@ Protected paths:
 Operator authorization: repair CVF absorption SOT, reassess RSPB under the new
 standard, and audit CADP for the same provenance blind spot.
 
-Authorized guard-maintenance scope: record MODS-T0 closure, superseded RSPB
-whole-tranche STOP, bounded CADP retrospective, and staged next action.
+Authorized guard-maintenance scope: record MODS-T0 closure, normalize its
+lifecycle projection, superseded RSPB STOP, CADP retrospective, and next action.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
