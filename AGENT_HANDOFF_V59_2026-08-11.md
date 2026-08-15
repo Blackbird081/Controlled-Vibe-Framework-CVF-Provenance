@@ -158,7 +158,7 @@ Record accepted terminal CADP reconciliation and a clean documentation boundary 
 
 ## Next Allowed Move
 
-Treat T8 as closed at `3b906862b`; reverse-skill mirror registration is committed at `427a52639`; next safe move is the documentation-only RSPB-AI-T0 dispatch.
+RSPB-AI-T0 dispatch is committed at `c937b696c`; next safe move is worker execution from the clean post-sync HEAD under WORKER_MUST_NOT_COMMIT.
 
 ## Active Boundary
 
@@ -205,8 +205,8 @@ Protected paths:
 Operator authorization: explicit approval to clear the private-provenance push
 backlog, select reverse-skill, and continue governed repository startup.
 
-Authorized guard-maintenance scope: record T8 closure `3b906862b`, source-mirror
-registration parent `427a52639`, and the no-execution RSPB-AI-T0 next move.
+Authorized guard-maintenance scope: record RSPB-AI-T0 dispatch material parent
+`c937b696c` and the no-execution worker next move.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
