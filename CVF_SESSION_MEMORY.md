@@ -43,18 +43,18 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact four-path T8 terminal reconciliation; parked checkpoint=CADP runtime/route/registry and repository transfer, live/provider/public/deploy/production work.
+Startup acknowledged: current mode=`cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selection and governed startup for a different repository; parked checkpoint=CADP runtime expansion and any repository transfer/push/public/deploy/production action.
 
 ## Current Mode
 
-`cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`
-Current mode marker: `cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_closed_stop_low_value_runtime_expansion_parked`
+`cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
+Current mode marker: `cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
+Current mode: `cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
+Previous mode: `cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -92,7 +92,7 @@ closure at `6ae59fa88`: `authorizeRouteGovernanceProof` is selected only as the
 authentication-composition owner, not as CADP authorization or durable-receipt owner. T5-R4 contract hardening is independently accepted bounded at `af2f425d8`
 with operator-selected Option A, `CADP_FAIL_CLOSED_ON_INVALID_TOKEN`. T5-R5 implementation is independently accepted bounded at `6284e5bd1` after reviewer repair of the Auth.js fail-closed invocation and test-count evidence.
 TypeScript, 34/34 focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84 passed. No CADP route or registry row was added.
-R6 remains independently closed `STOP_LOW_VALUE` at `83491ade1`. T8 terminal reconciliation is dispatched at `ac113073b` with exactly four documentation paths: roadmap, finding overlay, conditional reopen index, and worker return. Preserve 140 historical rows and record external runtime as `PARKED_DEMAND_GATED`; no route, registry, runtime, checker wiring, repository transfer, provider/live/network, credentials, public/deploy/production is authorized. Latest closed wave: `LHW24`.
+T8 is independently accepted closed bounded at `3b906862b`. Roadmap, finding overlay, and conditional reopen index now agree through T5-R6; the 140-row ledger segment is byte-identical. External CADP runtime is `PARKED_DEMAND_GATED`. The repo is documented cleanly for operator selection of a different repository, but no transfer/push/public/deploy/production action occurred or is authorized. Latest closed wave: `LHW24`.
 
 ## Parked Checkpoints
 

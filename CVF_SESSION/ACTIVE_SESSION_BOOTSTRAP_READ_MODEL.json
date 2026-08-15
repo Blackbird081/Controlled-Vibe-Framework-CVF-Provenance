@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit",
+  "currentMode": "cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute CADP-AI-T8 from dispatch commit ac113073b as an exact four-path documentation-only no-commit reconciliation. Preserve all historical 140 ledger rows, reconcile roadmap and reopen index through T5-R6, and make external runtime explicitly PARKED_DEMAND_GATED under the six-condition reopen contract. No runtime, route, registry, checker wiring, catalog/GAP, public sync, deployment, production, or repository transfer is authorized. Independent review and material commit remain reviewer/closer-owned; latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Treat CADP-AI-T8 as independently accepted closed bounded at material commit 3b906862b. CADP selective absorption is terminally reconciled; external runtime remains PARKED_DEMAND_GATED and may reopen only when all six objective conditions are proven in a fresh operator-approved work order. The next safe move is operator selection and governed startup for a different repository. No repository transfer, push, public sync, deployment, production, or CADP runtime expansion is authorized by this closure; latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T8 Terminal Reconciliation Dispatched
+# CVF Agent Handoff V59 - CADP-AI-T8 Terminal Reconciliation Accepted
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -16,7 +16,7 @@ Status: ACTIVE
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
-- Current T5-R4 contract closure: `af2f425d825f017a5ae77c8705fc5b96de56af72`; T5-R5 bounded closure: `6284e5bd10a43c7aac5124f61bbf8ef42e72b0d2`; T5-R6 low-value closure: `83491ade13f5b9c7c986aa7584af03b285c91654`; T8 reconciliation dispatch: `ac113073b5d093bb63a6c4220c0de52952d77f13`.
+- Current T5-R5 bounded closure: `6284e5bd10a43c7aac5124f61bbf8ef42e72b0d2`; T5-R6 low-value closure: `83491ade13f5b9c7c986aa7584af03b285c91654`; T8 terminal reconciliation closure: `3b906862b7a08c0bc2396ae4326b56fab389d421`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
@@ -40,7 +40,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`
+  `cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -49,14 +49,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact four-path T8 terminal reconciliation; parked checkpoint=CADP runtime/route/registry and repository transfer, live/provider/public/deploy/production work.
+Startup acknowledged: current mode=`cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selection and governed startup for a different repository; parked checkpoint=CADP runtime expansion and repository transfer/push/public/deploy/production action.
 
 ## Current Mode
-`cadp_ai_t8_closure_state_reconciliation_demand_gated_reopen_dispatched_worker_must_not_commit`
+`cadp_ai_t8_terminal_reconciliation_accepted_bounded_repository_transition_ready_no_transfer_performed`
 
 ## Purpose
 
-Dispatch terminal documentation reconciliation so CADP can be left internally consistent before the operator changes repositories.
+Record accepted terminal CADP reconciliation and a clean documentation boundary for selecting another repository.
 
 ## Scope / Target / Owner Boundary
 
@@ -101,17 +101,18 @@ Dispatch terminal documentation reconciliation so CADP can be left internally co
 - T5-R6 decision-only dispatch passed pre-dispatch 76/76 and pre-commit 84/84 at `5110ea55d`; its stable proceed threshold is value at least cost plus 12 with all eight mandatory gates passing.
 - Independent review confirmed zero current non-test consumers, no authoritative runtime metadata owner, base margin `-22`, and sensitized margin `-26`; closure `83491ade1` accepts `STOP_LOW_VALUE`. Material pre-commit passed 84/84.
 - T8 dispatch `ac113073b` passed pre-dispatch 76/76 and pre-commit 84/84; worker scope is exactly three reconciliation documents plus one worker return, with historical rows preserved.
+- T8 is independently accepted at `3b906862b` after two bounded semantic corrections; the historical ledger segment hash remained identical and reviewer-fast passed 63/63.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T8 `REVIEWER_ACCEPTED_DISPATCH_READY` at `ac113073b` |
+| authorityState | CADP-AI-T8 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `3b906862b` |
 | baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_2026-08-15.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_2026-08-15.md` |
 | workerReturnPath | `docs/reviews/CVF_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_WORKER_RETURN_2026-08-15.md` |
-| completionReviewPath | reviewer-owned after worker handoff |
-| nextAuthorityRequirement | worker returns exact four-path reconciliation without committing |
+| completionReviewPath | `docs/reviews/CVF_CADP_AI_T8_CLOSURE_STATE_RECONCILIATION_AND_DEMAND_GATED_REOPEN_CONTRACT_COMPLETION_2026-08-15.md` |
+| nextAuthorityRequirement | operator selects another repository; fresh startup authority required there |
 
 ## Closure Evidence
 
@@ -157,7 +158,7 @@ Dispatch terminal documentation reconciliation so CADP can be left internally co
 
 ## Next Allowed Move
 
-Execute T8 from `ac113073b`, preserving the 140 historical rows and changing only the exact four documentation paths. Runtime and repository transfer remain parked.
+Treat T8 as closed bounded at `3b906862b`. The next safe move is operator selection and governed startup for another repository; no transfer action is implied.
 
 ## Active Boundary
 
@@ -190,29 +191,29 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T8 Dispatch Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T8 Closure Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT8ClosureStateReconciliationDemandGatedReopenDispatch20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT8TerminalReconciliationAcceptedRepositoryTransitionReady20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: explicit approval of terminal T8 reconciliation before
 changing repositories.
 
-Authorized guard-maintenance scope: record T8 dispatch `ac113073b` and keep
-runtime, repository transfer, and all external action parked.
+Authorized guard-maintenance scope: record T8 closure `3b906862b` and the
+no-transfer repository-transition boundary.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records T8 documentation dispatch. It does not authorize
+This handoff records T8 bounded closure. It does not authorize
 route/registry adoption, runtime source or test mutation, MCP/CLI/HTTP invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
 trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
