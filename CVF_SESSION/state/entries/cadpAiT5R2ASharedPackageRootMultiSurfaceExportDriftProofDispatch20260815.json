@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2212,
+  "stateKey": "cadpAiT5R2ASharedPackageRootMultiSurfaceExportDriftProofDispatch20260815",
+  "value": "CADP-AI-T5-R2A shared package-root multi-surface export drift proof hardening is dispatched at material commit 82f11ed55. The exact five-path WORKER_MUST_NOT_COMMIT tranche may update only the CADP drift checker, its focused unit test, its fixture, the T5-R2 negative-proof plan, and the pending worker return. It must preserve contractPath uniqueness, allow packageRootPath reuse across distinct surface IDs, validate every shared-root surface independently, and add exact T5-R2 package-root export proof. Production TypeScript, authentication, credentials, MCP/CLI/HTTP, provider/live/network action, mutation, hooks/CI, public sync, deployment, production, and moratorium lift remain forbidden."
+}

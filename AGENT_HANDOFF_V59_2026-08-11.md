@@ -1,8 +1,7 @@
-# CVF Agent Handoff V59 - CADP-AI-T5-R2 Bounded Adapter Closure
+# CVF Agent Handoff V59 - CADP-AI-T5-R2A Checker-Hardening Dispatch
 
 Memory class: active-handoff
 Status: ACTIVE
-
 ## Handoff Context
 
 - Repository: private provenance source of truth
@@ -16,6 +15,7 @@ Status: ACTIVE
 - Current T5-R1 dispatch material commit: `071e39100f8b93b7959505b0e3f22ed31f2b6030`
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
+- Current T5-R2A checker-hardening dispatch: `82f11ed55`
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
@@ -39,7 +39,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t5_r2_transport_neutral_adapter_foundation_accepted_bounded_runtime_deferred`
+  `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -48,17 +48,15 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r2_transport_neutral_adapter_foundation_accepted_bounded_runtime_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh source-verified dispatch after operator selects the next CADP tranche; parked checkpoint=authentication, external MCP/CLI/HTTP runtime, repeat-live, checker maintenance, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact T5-R2A five-path checker-hardening packet without commit; parked checkpoint=production TypeScript, authentication, external runtime, provider/live, public sync, deploy and production.
 
 ## Current Mode
-
-`cadp_ai_t5_r2_transport_neutral_adapter_foundation_accepted_bounded_runtime_deferred`
+`cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit`
 
 ## Purpose
 
-Record T6 bounded closure, the TS config fix, T5-R1 bounded foundation closure,
-and T5-R2 bounded contract-only closure at `ad76d7433`. Every authentication
-and external runtime entry point remains deferred.
+Record T5-R2 bounded closure at `ad76d7433` and T5-R2A checker-only shared-root
+proof dispatch at `82f11ed55`; authentication and external runtime remain deferred.
 
 ## Scope / Target / Owner Boundary
 
@@ -96,17 +94,20 @@ and external runtime entry point remains deferred.
   independently repaired and accepted bounded at `ad76d7433`. TypeScript,
   69/69 focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit
   84/84 passed. No auth, MCP/CLI/HTTP, or live authority follows.
+- T5-R2A source verification found a checker fixture-schema residual: distinct
+  surfaces cannot share one package root. Its exact five-path packet is
+  committed at `82f11ed55`; worker commit is forbidden.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T5-R2 `ACCEPTED_BOUNDED_CONTRACT_ONLY` at `ad76d7433`; external runtime deferred |
-| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T5_R2_TRANSPORT_NEUTRAL_EXTERNAL_READOUT_ADAPTER_FOUNDATION_2026-08-15.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R2_TRANSPORT_NEUTRAL_EXTERNAL_READOUT_ADAPTER_FOUNDATION_2026-08-15.md` |
-| workerReturnPath | `docs/reviews/CVF_CADP_AI_T5_R2_TRANSPORT_NEUTRAL_EXTERNAL_READOUT_ADAPTER_FOUNDATION_WORKER_RETURN_2026-08-15.md` |
-| completionReviewPath | `docs/reviews/CVF_CADP_AI_T5_R2_TRANSPORT_NEUTRAL_EXTERNAL_READOUT_ADAPTER_FOUNDATION_COMPLETION_2026-08-15.md` |
-| nextAuthorityRequirement | operator selects the next CADP tranche, followed by a fresh source-verified GC-018/work order |
+| authorityState | CADP-AI-T5-R2A `DISPATCHED_WORKER_MUST_NOT_COMMIT` at `82f11ed55` |
+| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T5_R2A_SHARED_PACKAGE_ROOT_MULTI_SURFACE_EXPORT_DRIFT_PROOF_HARDENING_2026-08-15.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R2A_SHARED_PACKAGE_ROOT_MULTI_SURFACE_EXPORT_DRIFT_PROOF_HARDENING_2026-08-15.md` |
+| workerReturnPath | `docs/reviews/CVF_CADP_AI_T5_R2A_SHARED_PACKAGE_ROOT_MULTI_SURFACE_EXPORT_DRIFT_PROOF_HARDENING_WORKER_RETURN_2026-08-15.md` |
+| completionReviewPath | reviewer-owned after worker return |
+| nextAuthorityRequirement | worker executes exact five-path manifest and returns without commit; reviewer owns acceptance and material commit |
 
 ## Closure Evidence
 
@@ -152,10 +153,9 @@ and external runtime entry point remains deferred.
 
 ## Next Allowed Move
 
-Await operator selection of the next CADP tranche, then author a fresh
-source-verified GC-018/work order before implementation. Authentication,
-MCP/CLI/HTTP, provider/live, credentials, checker-schema maintenance,
-public/deployment/production, and moratorium lift remain parked.
+Execute the exact T5-R2A five-path checker-hardening work order and return
+without commit; review and material commit are reviewer-owned. Production
+TypeScript, auth, external runtime/live, public/deploy/production remain parked.
 
 ## Active Boundary
 
@@ -188,7 +188,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T5-R2 Closure Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T5-R2A Dispatch Sync
 
 Protected paths:
 
@@ -197,22 +197,23 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/cadpAiT5R2TransportNeutralAdapterFoundationDispatch20260815.json`
 - `CVF_SESSION/state/entries/cadpAiT5R2TransportNeutralAdapterFoundationClosure20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT5R2ASharedPackageRootMultiSurfaceExportDriftProofDispatch20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator explicitly instructed continuation from
-the accepted T5-R1 state into the next governed tranche.
+Operator authorization: the operator explicitly instructed continuation after
+the accepted T5-R2 state; source verification narrowed it to T5-R2A checker hardening.
 
-Authorized guard-maintenance scope: record bounded T5-R2 material closure at
-`ad76d7433` and return to operator-selected fresh dispatch. External auth/runtime,
-repeat-live, checker maintenance, CLI-MCP/public/deployment and unrelated lanes remain parked.
+Authorized guard-maintenance scope: record T5-R2A dispatch at `82f11ed55` and
+open only its five-path checker lane. External auth/runtime, repeat-live,
+production TypeScript, CLI-MCP/public/deployment and unrelated lanes remain parked.
 
 Rollback boundary: revert this exact dispatch session-sync batch as one unit;
 do not separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records T5-R2 contract-only bounded acceptance. It does not
+This handoff records T5-R2A checker-hardening dispatch. It does not
 authorize authentication, MCP/CLI/HTTP invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
 trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
