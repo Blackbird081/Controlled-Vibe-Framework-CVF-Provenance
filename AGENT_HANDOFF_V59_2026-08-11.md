@@ -158,7 +158,7 @@ Record accepted terminal CADP reconciliation and a clean documentation boundary 
 
 ## Next Allowed Move
 
-Treat T8 as closed bounded at `3b906862b`. The next safe move is operator selection and governed startup for another repository; no transfer action is implied.
+Treat T8 as closed at `3b906862b`; reverse-skill mirror registration is committed at `427a52639`; next safe move is the documentation-only RSPB-AI-T0 dispatch.
 
 ## Active Boundary
 
@@ -203,10 +203,10 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: explicit approval to clear the private-provenance push
-backlog before changing repositories; aggregate range-shape debt only is waived.
+backlog, select reverse-skill, and continue governed repository startup.
 
-Authorized guard-maintenance scope: record T8 closure `3b906862b`, latest local
-HEAD parent `2e3221cf4`, and the no-transfer repository-transition boundary.
+Authorized guard-maintenance scope: record T8 closure `3b906862b`, source-mirror
+registration parent `427a52639`, and the no-execution RSPB-AI-T0 next move.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
