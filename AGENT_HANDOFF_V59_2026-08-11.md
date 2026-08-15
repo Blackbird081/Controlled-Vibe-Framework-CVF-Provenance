@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T5-R5 Implementation Dispatch
+# CVF Agent Handoff V59 - CADP-AI-T5-R5 Implementation Accepted Bounded
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -16,7 +16,7 @@ Status: ACTIVE
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
-- Current T5-R3 bounded material closure: `6ae59fa88a0b1b233da976135b39654560d41c72`; T5-R4 contract closure: `af2f425d825f017a5ae77c8705fc5b96de56af72`; T5-R5 implementation dispatch: `575008888d343989e0ef2c7c5f71f252672e29c3`.
+- Current T5-R3 bounded material closure: `6ae59fa88a0b1b233da976135b39654560d41c72`; T5-R4 contract closure: `af2f425d825f017a5ae77c8705fc5b96de56af72`; T5-R5 implementation dispatch: `575008888d343989e0ef2c7c5f71f252672e29c3`; T5-R5 bounded material closure: `6284e5bd10a43c7aac5124f61bbf8ef42e72b0d2`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
@@ -40,7 +40,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`
+  `cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -49,15 +49,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact T5-R5 eleven-path no-commit implementation packet; parked checkpoint=route/registry, live/provider/public/deploy/production work.
+Startup acknowledged: current mode=`cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selection or proposal of the next bounded tranche; parked checkpoint=concrete route/registry adoption, live/provider/public/deploy/production work.
 
 ## Current Mode
-`cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`
+`cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred`
 
 ## Purpose
 
-Record T5-R5 implementation dispatch at `575008888`; worker may implement only
-the accepted Option A items 1-5 and must return without commit.
+Record independent acceptance of T5-R5 at material commit `6284e5bd1` after bounded reviewer repairs; route and registry adoption remain deferred.
 
 ## Scope / Target / Owner Boundary
 
@@ -66,9 +65,8 @@ the accepted Option A items 1-5 and must return without commit.
 - F11 (`F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION`) is CLOSED_PASS_BOUNDED as
   of CADP-AI-T2A's independent review; cross-runtime determinism is not
   proven.
-- T3B and T4 are accepted bounded; T5D is accepted bounded and deferred; T7
-  selected scope and T6 are closed bounded; T5 implementation, repeat-live, public sync, deploy and
-  production remain unopened.
+- T3B and T4 are accepted bounded; T5D is accepted bounded and deferred; T7 selected scope and T6 are closed bounded; T5-R5 implementation is accepted bounded.
+- Route/registry adoption, repeat-live, public sync, deploy and production remain unopened.
 
 ## Latest Work / Changes
 
@@ -98,17 +96,19 @@ the accepted Option A items 1-5 and must return without commit.
 - T5-R2A dispatched the shared-root fixture residual at `82f11ed55` and is
   independently accepted bounded at `4f359cd2d` after an exact T5-R2 attribution
   regression, 45/45 tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84.
+- T5-R5 is independently accepted bounded at `6284e5bd1` after reviewer repair made Auth.js environment validation run before configuration construction and reconciled the focused receipt to 34/34 tests.
+  CADP drift remained 5/0, reviewer-fast passed 63/63, and pre-commit passed 84/84. No route or registry row was added.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T5-R5 `REVIEWER_ACCEPTED_DISPATCH_READY` at `575008888` |
+| authorityState | CADP-AI-T5-R5 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `6284e5bd1` |
 | baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_2026-08-15.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_2026-08-15.md` |
 | workerReturnPath | `docs/reviews/CVF_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_WORKER_RETURN_2026-08-15.md` |
 | completionReviewPath | `docs/reviews/CVF_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_COMPLETION_2026-08-15.md` (optional) |
-| nextAuthorityRequirement | worker captures clean post-sync HEAD and executes exact eleven-path no-commit packet |
+| nextAuthorityRequirement | operator selects a concrete route before any route/registry adoption packet is authored |
 
 ## Closure Evidence
 
@@ -154,10 +154,8 @@ the accepted Option A items 1-5 and must return without commit.
 
 ## Next Allowed Move
 
-Execute only the committed T5-R5 work order. Modify its ten source/test paths,
-create its worker return, run exact local checks, and return unstaged/uncommitted.
-Option A is mandatory. CADP route/registry, external invocation, public sync,
-deployment, and production remain parked.
+Treat T5-R5 as independently accepted bounded at `6284e5bd1`. Do not add a CADP route or registry row until the operator selects a concrete product route and a fresh governed packet bounds the adoption.
+External invocation, public sync, deployment, and production remain parked.
 
 ## Active Boundary
 
@@ -167,8 +165,8 @@ deployment, and production remain parked.
   unrelated lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
-- T3A, T3B, T4, T5D, and selected T7 scope are closed bounded;
-  T5 implementation and repeat-live remain parked; T6 R2 is closed bounded.
+- T3A, T3B, T4, T5D, T5-R5, and selected T7 scope are closed bounded;
+  route/registry adoption and repeat-live remain parked; T6 R2 is closed bounded.
 - MAO T1, DESIGN, BUILD, provider/live, public `main`, deploy, hosted smoke,
   secrets, store, production, and archive deletion remain parked.
 
@@ -190,29 +188,31 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T5-R5 Dispatch Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T5-R5 Closure Sync
 Protected paths:
 
+- `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/cadpAiT5R5AuthenticationCompositionImplementationAccepted20260815.json`
 - `CVF_SESSION/state/entries/cadpAiT5R5AuthenticationCompositionImplementationDispatch20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit `next` instruction opening the accepted
-Option A implementation packet.
+Operator authorization: explicit continuation through the accepted Option A
+implementation packet and reviewer/closer-owned material commit boundary.
 
-Authorized guard-maintenance scope: record dispatch commit `575008888` and
-release only the exact no-commit T5-R5 worker phase.
+Authorized guard-maintenance scope: record bounded material closure
+`6284e5bd1` and defer concrete route/registry adoption.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records T5-R5 bounded implementation dispatch. It does not authorize
-source or test mutation, authentication, MCP/CLI/HTTP invocation,
+This handoff records T5-R5 bounded implementation acceptance. It does not authorize
+route/registry adoption, further source or test mutation, MCP/CLI/HTTP invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
 trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.

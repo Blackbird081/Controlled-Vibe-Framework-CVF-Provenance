@@ -43,18 +43,18 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact T5-R5 eleven-path no-commit implementation packet; parked checkpoint=route/registry, live/provider/public/deploy/production work.
+Startup acknowledged: current mode=`cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selection or proposal of the next bounded tranche; parked checkpoint=concrete route/registry adoption, live/provider/public/deploy/production work.
 
 ## Current Mode
 
-`cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`
-Current mode marker: `cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t5_r4_authentication_composition_contract_accepted_bounded_implementation_deferred`
+`cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred`
+Current mode marker: `cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred`
+Current mode: `cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred`
+Previous mode: `cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -90,10 +90,9 @@ shared-root export proof. Tests passed 45/45, CADP drift 5/0, reviewer-fast 63/6
 and pre-commit 84/84. T5-R3 is independently accepted bounded as a decision-only
 closure at `6ae59fa88`: `authorizeRouteGovernanceProof` is selected only as the
 authentication-composition owner, not as CADP authorization or durable-receipt owner. T5-R4 contract hardening is independently accepted bounded at `af2f425d8`
-with operator-selected Option A, `CADP_FAIL_CLOSED_ON_INVALID_TOKEN`. T5-R5
-implementation is dispatched at `575008888`: execute only its ten source/test
-paths plus worker return, with no staging or commit. Route/registry and
-live/provider/public/deploy remain parked. Latest closed wave: `LHW24`.
+with operator-selected Option A, `CADP_FAIL_CLOSED_ON_INVALID_TOKEN`. T5-R5 implementation is independently accepted bounded at `6284e5bd1` after reviewer repair of the Auth.js fail-closed invocation and test-count evidence.
+TypeScript, 34/34 focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84 passed. No CADP route or registry row was added.
+Concrete route/registry adoption requires operator selection and a fresh governed packet; live/provider/public/deploy remain parked. Latest closed wave: `LHW24`.
 
 ## Parked Checkpoints
 

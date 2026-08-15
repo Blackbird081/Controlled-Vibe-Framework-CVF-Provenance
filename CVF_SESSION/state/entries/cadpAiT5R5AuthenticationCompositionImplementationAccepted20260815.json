@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2225,
+  "stateKey": "cadpAiT5R5AuthenticationCompositionImplementationAccepted20260815",
+  "value": "CADP-AI-T5-R5 authentication composition implementation is independently accepted bounded after reviewer repairs at material commit 6284e5bd1. The accepted code removes the service-token test bypass, injects deterministic proof time, enforces Option A CADP_FAIL_CLOSED_ON_INVALID_TOKEN through the CADP-only wrapper, fails Auth.js module initialization closed outside test/development when required configuration is missing, and provides a separate literal-false CADP authorization projection. TypeScript passed, five focused files passed 34/34 tests, CADP drift checked 5 surfaces with 0 violations, reviewer-fast passed 63/63, and pre-commit passed 84/84. No CADP route or registry row was added; route/registry, provider/live/network, credentials, public sync, deployment, and production remain parked."
+}
