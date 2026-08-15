@@ -13,6 +13,7 @@ Status: ACTIVE
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current session-sync parent marker: `4bcd9d565`
+- Current HEAD anchor: `2c7c16a247829efd8d02b8cadb9dbec9c426a57b` (SOT3 route targets `qwen3.7-flash`).
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
