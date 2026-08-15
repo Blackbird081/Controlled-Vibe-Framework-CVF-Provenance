@@ -36,9 +36,9 @@
     },
     {
       "id": "CADP-AI-T5-R2-F02",
-      "summary": "The CADP drift fixture schema permits only one surface to own the shared package-root path, so R2 package-root export is source/typecheck confirmed but not independently fixture-backed.",
-      "disposition": "DEFER_WITH_ROADMAP",
-      "nextAction": "Address shared package-root multi-surface proof only in a separately authorized checker-maintenance tranche if stronger independent export drift coverage is required.",
+      "summary": "CADP-AI-T5-R2A separated unique contract-source ownership from shareable package-root references, so R2 package-root exports are now independently fixture-backed and drift-attributed without weakening contractPath uniqueness.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Retain the shared-root positive proof, duplicate-contract negative, and exact T5-R2 missing-export attribution regression; authentication and transport runtime remain separately deferred.",
       "defectClass": "MACHINE_GATE_GAP",
       "learningLane": "GOVERNANCE_CONTROL_PLANE",
       "roadmapRef": "docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md"

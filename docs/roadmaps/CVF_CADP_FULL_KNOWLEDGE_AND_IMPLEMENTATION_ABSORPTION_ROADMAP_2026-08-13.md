@@ -139,12 +139,13 @@ Independent completion review:
 The pure Guard Contract adapter is accepted bounded after reviewer repair of
 the omitted candidate-metadata input, redaction/allowlist composition, and
 ambient fallback receipt ordinal. TypeScript, 69 focused T5-R1/R2 tests, and
-the five-surface CADP drift checker pass. The shared package-root fixture
-schema can independently bind only one surface to `src/index.ts`; T5-R1 keeps
-that proof, while R2 named exports are source/typecheck confirmed and the
-checker residual is explicitly deferred. No authentication owner, MCP/CLI/HTTP
-registration, credential resolution, provider call, mutation, external
-invocation, or moratorium lift is implemented or authorized.
+the five-surface CADP drift checker pass. CADP-AI-T5-R2A subsequently resolved
+the shared package-root fixture residual: unique contract-source ownership is
+preserved while T5-R1 and T5-R2 now carry independent module-qualified export
+proof over the same `src/index.ts` package root. This checker-only closure does
+not implement or authorize an authentication owner, MCP/CLI/HTTP registration,
+credential resolution, provider call, mutation, external invocation, or
+moratorium lift.
 
 ## T1 Implemented Contract Surface
 

@@ -157,9 +157,9 @@ class TempCorpusTestCase(unittest.TestCase):
 
 
 class TestRealRepositoryPositive(unittest.TestCase):
-    def test_real_repository_passes_with_three_surfaces_and_zero_violations(self) -> None:
+    def test_real_repository_passes_with_five_surfaces_and_zero_violations(self) -> None:
         report, violations = checker.run_checks(REPO_ROOT, REAL_FIXTURE_PATH)
-        self.assertEqual(report["checkedSurfaceCount"], 3)
+        self.assertEqual(report["checkedSurfaceCount"], 5)
         self.assertEqual(report["violationCount"], 0)
         self.assertEqual(violations, [])
 
@@ -175,7 +175,49 @@ class TestRealRepositoryPositive(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, msg=proc.stdout + proc.stderr)
         payload = json.loads(proc.stdout)
         self.assertEqual(payload["violationCount"], 0)
-        self.assertEqual(payload["checkedSurfaceCount"], 3)
+        self.assertEqual(payload["checkedSurfaceCount"], 5)
+
+    def test_real_t5r2_missing_shared_root_symbol_is_attributed_to_t5r2_only(self) -> None:
+        fixture_obj = json.loads(REAL_FIXTURE_PATH.read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory(prefix="cadp_t5r2_shared_root_") as tmpdir:
+            root = Path(tmpdir)
+            fixture_path = _fixture_path(root)
+            fixture_path.parent.mkdir(parents=True, exist_ok=True)
+            fixture_path.write_text(json.dumps(fixture_obj, indent=2), encoding="utf-8")
+
+            copied_paths: set[str] = set()
+            for surface in fixture_obj["surfaces"]:
+                for key in ("contractPath", "packageRootPath"):
+                    relative = surface[key]
+                    if relative is None or relative in copied_paths:
+                        continue
+                    copied_paths.add(relative)
+                    target = root / relative
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(REPO_ROOT / relative, target)
+
+            shared_root = root / "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts"
+            shared_root.write_text(
+                shared_root.read_text(encoding="utf-8").replace(
+                    "  evaluateCadpExternalReadoutAdapter,\n", "", 1,
+                ),
+                encoding="utf-8",
+            )
+
+            report, violations = checker.run_checks(root, fixture_path)
+            t5r2_codes = {
+                violation.code
+                for violation in violations
+                if violation.surface_id == "T5R2_EXTERNAL_READOUT_ADAPTER"
+            }
+            t5r1_codes = {
+                violation.code
+                for violation in violations
+                if violation.surface_id == "T5R1_EXTERNAL_READOUT_FOUNDATION"
+            }
+            self.assertEqual(report["checkedSurfaceCount"], 5)
+            self.assertIn("PACKAGE_EXPORT_DRIFT", t5r2_codes)
+            self.assertEqual(t5r1_codes, set())
 
 
 class TestGoodCorpusBaseline(TempCorpusTestCase):
@@ -279,13 +321,15 @@ class TestFixtureSchemaNegatives(TempCorpusTestCase):
         mutated["surfaces"][0]["forbiddenSeamTokens"] = []
         self._assert_schema_invalid(mutated)
 
-    def test_duplicate_package_root_path_is_schema_invalid(self) -> None:
+    def test_duplicate_contract_path_across_otherwise_distinct_surfaces_is_schema_invalid(self) -> None:
         mutated = copy.deepcopy(GOOD_FIXTURE)
         extra = copy.deepcopy(mutated["surfaces"][1])
-        extra["surfaceId"] = "T3B_DUPLICATE_ROOT"
-        extra["contractPath"] = "contracts/t3b.contract.ts"
+        extra["surfaceId"] = "T3B_DUPLICATE_CONTRACT"
         extra["versionSymbol"] = "T3B_VERSION"
         extra["versionValue"] = "v1"
+        # contractPath intentionally left identical to surfaces[1]'s owned
+        # contract-source path: contract-source ownership must stay unique
+        # even though packageRootPath sharing is now permitted.
         mutated["surfaces"].append(extra)
         self._assert_schema_invalid(mutated)
 
@@ -504,6 +548,97 @@ class TestPackageExportDrift(TempCorpusTestCase):
         report, violations = _run_checker_inprocess(self.root)
         t3a_codes = {v.code for v in violations if v.surface_id == "T3A_CONSUMER"}
         self.assertIn("PACKAGE_EXPORT_DRIFT", t3a_codes)
+
+
+class TestSharedPackageRoot(TempCorpusTestCase):
+    """CADP-AI-T5-R2A: two distinct surfaces may cite the same shared
+    package-root file while contract-source ownership stays unique; each
+    surface's own module-qualified export block is still checked
+    independently and export drift is attributed to the correct surface."""
+
+    T3B_CONTRACT_GOOD = """
+export const T3B_SHARED_ROOT_CONTRACT_VERSION = 'cvf.cadp.sharedRoot.v1' as const;
+
+export interface Projection {
+  readonly executionAuthorized: false;
+}
+
+function build(): Projection {
+  return {
+    executionAuthorized: false,
+  };
+}
+
+export function evaluateT3bSharedRoot() {}
+"""
+
+    SHARED_ROOT_INDEX_GOOD = """
+// T3A export block
+export {
+  CADP_CAPABILITY_CONSUMER_CONTRACT_VERSION,
+  evaluateCadpCapabilityConsumer,
+} from "./t3a.contract";
+
+// T3B export block (shares this same package-root file with T3A)
+export {
+  T3B_SHARED_ROOT_CONTRACT_VERSION,
+  evaluateT3bSharedRoot,
+} from "./t3b.contract";
+"""
+
+    def _build_shared_root_fixture(self) -> dict:
+        mutated = copy.deepcopy(GOOD_FIXTURE)
+        extra = copy.deepcopy(mutated["surfaces"][1])
+        extra["surfaceId"] = "T3B_SHARED_ROOT_CONSUMER"
+        extra["contractPath"] = "contracts/t3b.contract.ts"
+        extra["versionSymbol"] = "T3B_SHARED_ROOT_CONTRACT_VERSION"
+        extra["versionValue"] = "cvf.cadp.sharedRoot.v1"
+        extra["requiredExportSymbols"] = ["T3B_SHARED_ROOT_CONTRACT_VERSION", "evaluateT3bSharedRoot"]
+        extra["requiredExportModule"] = "./t3b.contract"
+        # packageRootPath is intentionally identical to surfaces[1]
+        # (T3A_CONSUMER), proving distinct surfaces may share one root file.
+        mutated["surfaces"].append(extra)
+        return mutated
+
+    def _write_shared_root_corpus(self, fixture_obj: dict) -> None:
+        _write_fixture(self.root, fixture_obj)
+        (self.root / "contracts" / "t3b.contract.ts").write_text(self.T3B_CONTRACT_GOOD, encoding="utf-8")
+        (self.root / "index.ts").write_text(self.SHARED_ROOT_INDEX_GOOD, encoding="utf-8")
+
+    def test_two_surfaces_share_one_package_root_with_distinct_modules_passes(self) -> None:
+        fixture_obj = self._build_shared_root_fixture()
+        self._write_shared_root_corpus(fixture_obj)
+        report, violations = _run_checker_inprocess(self.root)
+        self.assertEqual(report["checkedSurfaceCount"], 3)
+        self.assertEqual(violations, [], msg=report)
+
+    def test_shared_root_missing_module_is_attributed_to_correct_surface_only(self) -> None:
+        fixture_obj = self._build_shared_root_fixture()
+        self._write_shared_root_corpus(fixture_obj)
+        # Remove only the T3B export block; T3A's block over the same file
+        # must remain unaffected and clean.
+        (self.root / "index.ts").write_text(
+            "export {\n  CADP_CAPABILITY_CONSUMER_CONTRACT_VERSION,\n  evaluateCadpCapabilityConsumer,\n} from \"./t3a.contract\";\n",
+            encoding="utf-8",
+        )
+        report, violations = _run_checker_inprocess(self.root)
+        t3b_codes = {v.code for v in violations if v.surface_id == "T3B_SHARED_ROOT_CONSUMER"}
+        t3a_codes = {v.code for v in violations if v.surface_id == "T3A_CONSUMER"}
+        self.assertIn("PACKAGE_EXPORT_DRIFT", t3b_codes)
+        self.assertEqual(t3a_codes, set())
+
+    def test_shared_root_missing_symbol_is_attributed_to_correct_surface_only(self) -> None:
+        fixture_obj = self._build_shared_root_fixture()
+        self._write_shared_root_corpus(fixture_obj)
+        mutated_index = self.SHARED_ROOT_INDEX_GOOD.replace(
+            "  evaluateT3bSharedRoot,\n", "",
+        )
+        (self.root / "index.ts").write_text(mutated_index, encoding="utf-8")
+        report, violations = _run_checker_inprocess(self.root)
+        t3b_codes = {v.code for v in violations if v.surface_id == "T3B_SHARED_ROOT_CONSUMER"}
+        t3a_codes = {v.code for v in violations if v.surface_id == "T3A_CONSUMER"}
+        self.assertIn("PACKAGE_EXPORT_DRIFT", t3b_codes)
+        self.assertEqual(t3a_codes, set())
 
 
 class TestCliJsonEnforceOnCorpus(TempCorpusTestCase):

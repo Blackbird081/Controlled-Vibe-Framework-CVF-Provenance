@@ -226,7 +226,7 @@ def load_fixture(fixture_path: Path) -> tuple[dict[str, Any] | None, list[Violat
 
     validated_surfaces: list[dict[str, Any]] = []
     seen_ids: set[str] = set()
-    seen_paths: set[str] = set()
+    seen_contract_paths: set[str] = set()
     seen_version_symbols: set[str] = set()
     schema_ok = True
 
@@ -242,14 +242,13 @@ def load_fixture(fixture_path: Path) -> tuple[dict[str, Any] | None, list[Violat
             violations.append(Violation("FIXTURE_SCHEMA_INVALID", surface_id, f"$.surfaces[{index}].surfaceId", f"Duplicate surfaceId: {surface_id}."))
             schema_ok = False
             continue
-        package_root_path = (
-            validated["packageRootPath"].replace("\\", "/")
-            if validated["packageRootPath"] is not None
-            else None
-        )
-        owned_paths = [contract_path] + ([package_root_path] if package_root_path is not None else [])
-        duplicate_paths = sorted(path for path in owned_paths if path in seen_paths)
-        if duplicate_paths:
+        # contractPath ownership must stay unique per surface: two surfaces
+        # cannot share the same authority-owned contract-source file.
+        # packageRootPath is a discoverability reference, not an ownership
+        # claim, so distinct surfaces may cite the same shared package-root
+        # file; each surface's own export block is still checked
+        # independently by check_surface's module-qualified export lookup.
+        if contract_path in seen_contract_paths:
             violations.append(Violation("FIXTURE_SCHEMA_INVALID", surface_id, f"$.surfaces[{index}].contractPath", f"Duplicate contractPath: {contract_path}."))
             schema_ok = False
             continue
@@ -258,7 +257,7 @@ def load_fixture(fixture_path: Path) -> tuple[dict[str, Any] | None, list[Violat
             schema_ok = False
             continue
         seen_ids.add(surface_id)
-        seen_paths.update(owned_paths)
+        seen_contract_paths.add(contract_path)
         seen_version_symbols.add(version_symbol)
         validated_surfaces.append(validated)
 

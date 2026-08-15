@@ -200,7 +200,7 @@ Use this index to find prior findings by domain keyword.
 | CADP-R1-F11 | `CADP-R1 capability admission distribution profile` | A caller-created trusted index can still self-attest to evidence rank 5 | DEFER_WITH_ROADMAP - T2 owner binding released |
 | CADP-AI-T5-R1-F01 | `CADP-AI-T5-R1 external readout authority foundation source and tests` | Initial receipt serialization invoked caller-controlled `toJSON` and lacked canonical frozen snapshot semantics; reviewer repaired and regression-covered before closure | ACCEPT_WITH_BOUNDARY |
 | CADP-AI-T5-R2-F01 | `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | Worker omitted candidate metadata from the exact API and did not compose redaction/allowlist over it; reviewer repaired and regression-covered | ACCEPT_WITH_BOUNDARY |
-| CADP-AI-T5-R2-F02 | `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | Shared package-root path cannot be assigned to both T5-R1 and T5-R2 fixture surfaces under the current checker schema | DEFER_WITH_ROADMAP |
+| CADP-AI-T5-R2-F02 | `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | T5-R2A preserves unique contract-source ownership while independently checking T5-R1 and T5-R2 module-qualified exports over their shared package root | ACCEPT_WITH_BOUNDARY |
 
 ---
 

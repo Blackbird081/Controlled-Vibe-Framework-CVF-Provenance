@@ -123,7 +123,7 @@
     {
       "surfaceId": "T5R2_EXTERNAL_READOUT_ADAPTER",
       "contractPath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/cadp-external-readout-adapter.contract.ts",
-      "packageRootPath": null,
+      "packageRootPath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
       "versionSymbol": "CADP_EXTERNAL_READOUT_ADAPTER_CONTRACT_VERSION",
       "versionValue": "cvf.cadp.externalReadoutAdapter.v1",
       "falseAuthorityFields": [
@@ -137,8 +137,11 @@
         "externalProviderCallAuthorized",
         "externalCredentialResolutionAuthorized"
       ],
-      "requiredExportSymbols": [],
-      "requiredExportModule": null,
+      "requiredExportSymbols": [
+        "CADP_EXTERNAL_READOUT_ADAPTER_CONTRACT_VERSION",
+        "evaluateCadpExternalReadoutAdapter"
+      ],
+      "requiredExportModule": "./contracts/cadp-external-readout-adapter.contract",
       "forbiddenSeamTokens": [
         "child_process",
         "node:child_process",
