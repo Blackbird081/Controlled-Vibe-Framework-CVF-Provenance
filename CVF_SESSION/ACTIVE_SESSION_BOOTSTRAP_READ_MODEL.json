@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cadp_ai_t7_closed_pass_bounded_deferred_private_only_awaiting_operator_direction",
+  "currentMode": "cadp_ai_t6_live_proof_dispatched_worker_must_not_commit",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "CADP-AI-T7 selected hermetic scope is independently accepted CLOSED_PASS_BOUNDED and materially committed at a49cebd8a with Public Export Disposition DEFERRED_PRIVATE_ONLY. Await explicit operator direction. T5 external-agent adapter implementation remains deferred for 9 missing prerequisites; T6 live proof is not selected and remains parked. No new CADP tranche, adapter implementation, MCP/CLI invocation, provider/live, credentials, network, public sync, deployment, production, trusted-evidence readiness, or cross-runtime determinism action is auto-released. Latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Send the committed CADP-AI-T6 bounded live-proof packet at material commit 1405017db to one WORKER_MUST_NOT_COMMIT live-proof worker. Before any call, the worker must establish from a current official provider pricing source that the fixed one-call qwen-turbo request with max_tokens 4096 has a worst-case charge below US$1; otherwise return BLOCKED_WITH_REASON without calling. The authorized command selects --e2e, producing UI-mock E2E plus exactly one real SOT3 Alibaba/DashScope call and five worker-owned evidence/return paths. No retry, additional provider call, T5 adapter, MCP/CLI invocation, secret disclosure, source mutation, public sync, deployment, production, trusted-evidence readiness, or cross-runtime determinism action is authorized. Latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_2026-08-14.md",
-    "baselineSha256": "e5f09dff8f2271ea244d98bee5c1b7ac8d927203c354d2db7f8a963bf116d377",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_2026-08-14.md",
-    "workOrderSha256": "207ade68861c0cc0a3b8e2d94a242b6b512f65c78d6569b28f201eaa2559ea07"
+    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T6_LIVE_COMPATIBILITY_PROOF_2026-08-15.md",
+    "baselineSha256": "f37dbbad35ef6e0054d5c3b4cd633ccc7b6f2417f3ff343f9b8967f81aac2dd9",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T6_LIVE_COMPATIBILITY_PROOF_2026-08-15.md",
+    "workOrderSha256": "96ebb8556c4bbbe2241df250cd8c269953e2dbf9d48c28ea742910caad141132"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

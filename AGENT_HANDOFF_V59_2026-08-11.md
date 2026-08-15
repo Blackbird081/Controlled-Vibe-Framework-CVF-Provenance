@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T7 Closed Bounded Private
+# CVF Agent Handoff V59 - CADP-AI-T6 Bounded Live Proof Dispatched
 
 Memory class: active-handoff
 
@@ -11,7 +11,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current material closure marker: `a49cebd8a`; prior T5D closure marker: `ef84a1f6a`
+- Current dispatch material marker: `1405017db`; prior T7 closure marker: `a49cebd8a`
 - Current session-sync parent marker: `f78ec3a68`
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
@@ -44,7 +44,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t7_closed_pass_bounded_deferred_private_only_awaiting_operator_direction`
+  `cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -53,17 +53,17 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t7_closed_pass_bounded_deferred_private_only_awaiting_operator_direction`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit operator direction after bounded private T7 closure; parked checkpoint=T5 implementation, T6 live proof, provider/live, credentials, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send committed bounded T6 packet to one no-commit live-proof worker; parked checkpoint=T5 implementation, extra provider calls, source mutation, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t7_closed_pass_bounded_deferred_private_only_awaiting_operator_direction`
+`cadp_ai_t6_live_proof_dispatched_worker_must_not_commit`
 
 ## Purpose
 
-Record the independently accepted CADP-AI-T7 bounded hermetic closure at
-`a49cebd8a` with `DEFERRED_PRIVATE_ONLY`. No T5 implementation, T6 live proof,
-public action, provider/live action, or runtime expansion is released.
+Record the committed CADP-AI-T6 bounded live-proof dispatch at `1405017db`.
+One no-commit worker may run UI-mock E2E plus exactly one real SOT3 call after
+proving the official-price worst-case bound below US$1.
 
 ## Scope / Target / Owner Boundary
 
@@ -90,20 +90,20 @@ public action, provider/live action, or runtime expansion is released.
   implemented a repository-owned committed-grant evidence seam, and passed
   independent review with 38 adversarial probe assertions across 9 mandated
   categories. Accepted `CLOSED_PASS_BOUNDED` for the current hermetic scope.
-- T7 review reconciled seven selected lifecycle tranches plus T2A-R1, added a
-  bounded INTERFACE catalog source, closed two stale reopen rows, and passed
-  reviewer-fast 63/63 plus material pre-commit 84/84.
+- T6 review removed default live-E2E fan-out, selected `--e2e` plus one real
+  SOT3 call, narrowed provider-retention/secret claims, and passed pre-dispatch
+  76/76 plus material pre-commit 84/84.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T7 ACCEPTED_CLOSED_BOUNDED at `a49cebd8a`; `DEFERRED_PRIVATE_ONLY` |
-| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_2026-08-14.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_2026-08-14.md` |
-| workerReturnPath | `docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_WORKER_RETURN_2026-08-14.md` |
-| completionReviewPath | `docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_COMPLETION_2026-08-14.md` |
-| nextAuthorityRequirement | explicit operator direction for any new CADP tranche or previously parked lane |
+| authorityState | CADP-AI-T6 DISPATCH_READY at `1405017db`; worker must not commit |
+| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T6_LIVE_COMPATIBILITY_PROOF_2026-08-15.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T6_LIVE_COMPATIBILITY_PROOF_2026-08-15.md` |
+| workerReturnPath | `docs/reviews/CVF_CADP_AI_T6_LIVE_COMPATIBILITY_PROOF_WORKER_RETURN_2026-08-15.md` |
+| completionReviewPath | reviewer-owned after pending worker return |
+| nextAuthorityRequirement | execute exact five-path no-commit live proof; independent review before closure |
 
 ## Closure Evidence
 
@@ -149,10 +149,10 @@ public action, provider/live action, or runtime expansion is released.
 
 ## Next Allowed Move
 
-CADP-AI-T7 selected hermetic scope is accepted closed bounded at `a49cebd8a`
-with `DEFERRED_PRIVATE_ONLY`. Await explicit operator direction. T5 adapter
-implementation, T6, and all runtime/provider/live/credential/public/
-deployment/production lanes remain parked.
+CADP-AI-T6 bounded live-proof dispatch is committed at `1405017db`. Send it to
+one no-commit worker. Establish the official-price worst-case bound below US$1,
+then run UI-mock E2E plus exactly one real SOT3 call. T5, extra provider calls,
+source mutation, public/deployment/production lanes remain parked.
 
 ## Active Boundary
 
@@ -163,7 +163,7 @@ deployment/production lanes remain parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - Worker commit remained forbidden; independent reviewer created target commit.
 - T3A, T3B, T4, T5D, and selected T7 scope are closed bounded;
-  T5 implementation and T6 remain parked.
+  T5 implementation remains parked; only bounded T6 live evidence is open.
 - MAO T1, DESIGN, BUILD, provider/live, public `main`, deploy, hosted smoke,
   secrets, store, production, and archive deletion remain parked.
 
@@ -181,11 +181,11 @@ this compact active handoff after the public staging push superseded that mode.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: the T7 bounded closure and continuity update concern private hermetic
+Reason: the T6 live dispatch and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T7 Closure Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T6 Dispatch Sync
 
 Protected paths:
 
@@ -193,27 +193,27 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT7ClosureAndPublicDispositionClosure20260814.json`
+- `CVF_SESSION/state/entries/cadpAiT6LiveCompatibilityProofDispatch20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator returned `CLOSURE_READY_DEFERRED_PRIVATE_ONLY`,
-authorizing the bounded T7 reviewer/closer conversion and continuity sync.
+Operator authorization: the operator explicitly allowed T6 to use API keys for
+testing, with the reviewed bounded call/cost/secret controls.
 
-Authorized guard-maintenance scope: bind accepted T7 closure at material commit
-`a49cebd8a`, set awaiting-operator mode, and keep new CADP tranches, T5 implementation,
-T6, production, hook wiring, provider/live/credential/CLI-MCP invocation/
+Authorized guard-maintenance scope: bind T6 dispatch at material commit
+`1405017db`, set the no-commit live-worker move, and keep T5 implementation,
+extra calls, production, hook wiring, CLI-MCP invocation/
 public/deployment/trusted-evidence/cross-runtime and unrelated lanes parked.
 
-Rollback boundary: revert this exact session-sync batch together with closure
-material commit `a49cebd8a`; do not separate generated state from source
+Rollback boundary: revert this exact session-sync batch together with dispatch
+material commit `1405017db`; do not separate generated state from source
 fragments.
 
 ## Claim Boundary
 
-This handoff records bounded T7 hermetic closure only. It does not claim or
-authorize an adapter implementation, MCP/CLI invocation, external-agent launch, TypeScript
-semantics, runtime enforcement, provider compatibility, live behavior,
+This handoff records bounded T6 live-proof dispatch only. It does not claim or
+authorize adapter implementation, MCP/CLI invocation, external-agent launch,
+runtime enforcement, provider compatibility, completed live behavior,
 cross-runtime determinism, trusted-evidence readiness, production source
 changes, hook wiring, credential access, T6-T7, public sync, deployment, or
 production.
