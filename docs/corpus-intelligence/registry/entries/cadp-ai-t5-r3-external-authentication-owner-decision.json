@@ -1,0 +1,56 @@
+{
+  "registryOrder": 169,
+  "id": "cadp-ai-t5-r3-external-authentication-owner-decision",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "CADP-AI-T5-R3 external authentication owner adoption readiness source decision",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/service-token-auth.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/service-token-auth.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/learning-plane/readout/route.ts"
+  ],
+  "fileCount": 7,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "CADP-AI-T5-R3",
+  "scanDate": "2026-08-15",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_CADP_AI_T5_R3_EXTERNAL_AUTHENTICATION_OWNER_ADOPTION_READINESS_DECISION_WORKER_RETURN_2026-08-15.md",
+  "completionReviewPath": "docs/reviews/CVF_CADP_AI_T5_R3_EXTERNAL_AUTHENTICATION_OWNER_ADOPTION_READINESS_DECISION_COMPLETION_2026-08-15.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_CADP_AI_T5_R3_EXTERNAL_AUTHENTICATION_OWNER_ADOPTION_READINESS_DECISION_2026-08-15.md",
+  "verdicts": {
+    "gc047": "NOT_RUN",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "CADP_EXTERNAL_AUTHENTICATION_COMPOSITION_OWNER",
+    "SERVICE_TOKEN_SESSION_PRECEDENCE",
+    "ACTOR_AND_IMPERSONATION_PROVENANCE",
+    "DECISION_PROOF_VERSUS_DURABLE_RECEIPT",
+    "FAIL_CLOSED_AUTH_CONFIGURATION"
+  ],
+  "priorAbsorption": "T5-R3 selects authorizeRouteGovernanceProof only as the bounded authentication-composition owner for a possible future CADP ingress. Independent review corrected deny-actor disclosure, production-bypass, body-byte, fallback-precedence, deterministic-time, receipt, and future-manifest claims. No implementation or invocation authority exists.",
+  "findings": [
+    {
+      "id": "CADP-AI-T5-R3-F01",
+      "summary": "The existing route-governance proof helper is the strongest reusable authentication composition, but it is not a CADP authorization or durable-receipt owner and is not implementation-ready.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Require a fresh operator-selected hardening/design packet covering production configuration, service-token/session precedence, injected proof time, CADP authorization, explicit receipt persistence disposition, focused negative proof, and rollback before any registry row or route change.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "roadmapRef": "docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md"
+    }
+  ],
+  "negativeSearchTerms": [
+    "CADP route already registered",
+    "authentication implies CADP authorization",
+    "route governance proof is a durable receipt",
+    "invalid token exposes service actor hash",
+    "test shortcut proves production bypass"
+  ],
+  "nextScanRecommendation": "Re-scan only after a separately authorized authentication hardening/design or implementation tranche changes the named source surfaces."
+}

@@ -113,7 +113,7 @@ the preceding record, and no distribution or receipt may activate a capability.
 | T3A | integrate the first downstream internal consumer | Execution Plane non-executing eligibility adapter and narrow SQLite-state ignore hygiene | accepted T2A; fresh source-verified work order; operator `next` direction | consumer tests prove no authority widening, invalid-before-valid replay preservation, and no raw secrets | ACCEPTED_BOUNDED |
 | T3B | integrate Model Gateway constraint projection | provider-neutral SaaS constraint metadata only | accepted T3A; fresh Model Gateway source verification and operator release | no secret resolution, provider call, or execution authority | ACCEPTED_BOUNDED |
 | T4 | complete machine enforcement | schema fixtures, drift checker, negative corpus suite, package-boundary tests | repeated/accepted invariant need; checker GC-018 | checker detects every named violation without false authority claim | ACCEPTED_BOUNDED_STANDALONE_UNWIRED |
-| T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | R1_FOUNDATION_AND_R2_TRANSPORT_NEUTRAL_ADAPTER_ACCEPTED_BOUNDED_RUNTIME_DEFERRED |
+| T5 | optional external-agent adapter decision | CLI/MCP read/query interface or explicit rejection | accepted T3/T4 plus operator authorization | auth, ingress, mutation, redaction and dual-surface proof | R1_R2_R2A_ACCEPTED_AND_R3_AUTH_COMPOSITION_OWNER_SELECTED_BOUNDED_IMPLEMENTATION_DEFERRED |
 | T6 | live compatibility proof | bounded real-provider/SaaS tests and receipts | credentials, cost ceiling, sandbox, live diagnostic and release work order | real provider evidence; no mocks for governance claim | ACCEPTED_LIVE_BOUNDED |
 | T7 | closure and public disposition | independent review, catalog/GAP projections, session sync, public export decision | all selected prior tranches accepted | zero unresolved selected-scope findings and explicit export disposition | ACCEPTED_CLOSED_BOUNDED_DEFERRED_PRIVATE_ONLY |
 
@@ -146,6 +146,21 @@ proof over the same `src/index.ts` package root. This checker-only closure does
 not implement or authorize an authentication owner, MCP/CLI/HTTP registration,
 credential resolution, provider call, mutation, external invocation, or
 moratorium lift.
+
+## T5-R3 Authentication Owner Adoption Readiness Decision
+
+Independent completion review:
+`docs/reviews/CVF_CADP_AI_T5_R3_EXTERNAL_AUTHENTICATION_OWNER_ADOPTION_READINESS_DECISION_COMPLETION_2026-08-15.md`.
+
+`authorizeRouteGovernanceProof` is selected bounded as the existing CVF Web
+authentication-composition owner for a possible future CADP ingress. It is not
+the CADP authorization owner or durable-receipt owner. Current source still
+requires fail-closed session configuration, production-mode service-token
+negative proof, explicit invalid-token/session precedence, injected proof
+time, a CADP authorization layer, and an explicit proof-only versus durable
+receipt decision. No registry row, route, source/test change, authentication
+execution, transport registration, credential use, or moratorium lift is
+authorized by T5-R3.
 
 ## T1 Implemented Contract Surface
 
@@ -209,7 +224,7 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 | architecture catalog | DEFER_PENDING_ACCEPTANCE | add CADP composition capability only after T1 review | pending, not as-built |
 | system-chain GAP | UPDATE_EXISTING after review | F05/F06 and adapter boundaries remain planned | pending gap |
 | Guard Contract README/index | UPDATE_EXISTING in T1 review repair if required | barrel export exists; README claim waits for tests | pending |
-| conditional reopen index | UPDATE_EXISTING | T2-T4/T6 and T5-R1/R2/R2A are accepted bounded; T5 authentication/runtime remains conditional on a source-verified owner and fresh dispatch | governed routing |
+| conditional reopen index | UPDATE_EXISTING | T2-T4/T6 and T5-R1/R2/R2A are accepted bounded; T5-R3 selects a bounded auth-composition owner, while implementation remains conditional on explicit hardening/design authority and a fresh dispatch | governed routing |
 
 ## Source Verification
 
@@ -220,6 +235,16 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 | implementation-first absorption should target current CVF abstractions | `docs/reference/CVF_IMPLEMENTATION_FIRST_ABSORPTION_PATTERN_2026-06-08.md` | decision framework and CVF-first path | ACCEPT |
 | source evidence validation only checks presence at higher ranks | retained CADP `src/cvf_cadp/semantic_rules.py` | `_compatibility` | ACCEPT_AS_DEFECT_EVIDENCE |
 | source receipt uses ambient UUID and current time | retained CADP `src/cvf_cadp/receipts.py` | `make_receipt` | ACCEPT_AS_DEFECT_EVIDENCE |
+
+## Current Runtime Freshness Verification
+
+| Check | Current source evidence | Disposition |
+|---|---|---|
+| CADP route registry | `ROUTE_GOVERNANCE_PROOF_REGISTRY` contains five non-CADP routes | CADP route absent; no implementation claim |
+| authentication composition | `authorizeRouteGovernanceProof` composes service token and session | selected bounded for future design only |
+| CADP authorization | no reviewed mapping from authenticated identity to CADP authority fields | remains required and deferred |
+| durable receipt | route helper returns an in-memory proof and owns no persistence | remains an explicit future decision |
+| runtime/live/public action | T5-R3 changed documentation and governance evidence only | none authorized or observed |
 
 ## External Absorption Core
 
@@ -233,8 +258,8 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 | Ledger terminal statuses | READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE |
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | inline Finding Resolution Matrix and tranche plan |
-| Unresolved items | zero corpus rows; T5 authentication/runtime remains deferred; T6 is accepted live bounded |
-| Completion claim boundary | accepted bounded roadmap state through T5-R2A and selected T6/T7 scope only |
+| Unresolved items | zero corpus rows; T5-R3 owner selection is bounded while authentication integration/runtime remains deferred; T6 is accepted live bounded |
+| Completion claim boundary | accepted bounded roadmap state through T5-R3 decision and selected T6/T7 scope only |
 
 ## Corpus Completeness And Report Integrity
 
@@ -291,13 +316,13 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 
 | Field | Disposition |
 |---|---|
-| claimScope | finding resolution roadmap plus accepted bounded T1-T5-R2A local state, accepted bounded T6 one-call live compatibility, and accepted bounded T7 selected-scope closure |
+| claimScope | finding resolution roadmap plus accepted bounded T1-T5-R3 local/decision state, accepted bounded T6 one-call live compatibility, and accepted bounded T7 selected-scope closure |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
 | receiptEvidence | CVF_RECEIPT_PRESENT: accepted T6 R2 SOT3 and free-quota receipts for one exact-model call |
 | actionEvidence | ACTION_EVIDENCE_PRESENT: T1-T3 package evidence, T4 41-test static-checker suite and 8 independent probes, plus T6 strict SOT3 admission |
 | invocationBoundary | local repository implementation and verification plus one separately authorized bounded Alibaba call |
 | interceptionBoundary | no runtime/provider interception claim |
-| claimLanguage | T1-T4 and T5-R1/R2/R2A accepted bounded; T5 authentication/runtime remains deferred for missing owner authority; T6 accepted for one exact-model live compatibility observation; T7 selected scope accepted closed with DEFERRED_PRIVATE_ONLY |
+| claimLanguage | T1-T4 and T5-R1/R2/R2A accepted bounded; T5-R3 selects `authorizeRouteGovernanceProof` only as bounded auth-composition owner and leaves all implementation/hardening/runtime deferred; T6 accepted for one exact-model live compatibility observation; T7 selected scope accepted closed with DEFERRED_PRIVATE_ONLY |
 | forbiddenExpansion | no provider-wide compatibility, repeat-live, adapter, public, deploy, production, or billing claim |
 
 ## Next Allowed Move
@@ -308,13 +333,18 @@ T5-R1 authority foundation and the T5-R2 pure transport-neutral adapter
 contract are independently accepted bounded after reviewer repair. T5-R2A is
 also independently accepted bounded: contract-source uniqueness is preserved
 while T5-R1 and T5-R2 now carry independent module-qualified export drift proof
-over their shared package root. Authentication and any MCP/CLI/HTTP transport
-runtime remain deferred and require a source-verified owner plus fresh packet.
+over their shared package root. T5-R3 selects
+`authorizeRouteGovernanceProof` as a bounded authentication-composition owner,
+not an authorization or durable-receipt owner. Authentication implementation
+and any MCP/CLI/HTTP transport runtime remain deferred behind the accepted
+hardening/design preconditions and a fresh packet.
 T7 selected hermetic scope is independently accepted closed bounded with
 `DEFERRED_PRIVATE_ONLY`. T6 is independently accepted for one bounded
 `qwen3.7-flash` live compatibility observation; repeat-live authority is not
 carried forward. Await explicit operator direction; no further
-CADP tranche or public action is auto-released. Adapter implementation,
+CADP implementation tranche or public action is auto-released. A fresh
+source-verified hardening/design packet may be authored only after operator
+selection. Adapter implementation,
 provider/live, credential access, quota mutation, CLI/MCP invocation, public
 sync, deployment, production, trusted-evidence readiness, and cross-runtime
 claims remain parked.
@@ -329,8 +359,9 @@ provenance; a later public-safe projection needs explicit public-sync review.
 ## Claim Boundary
 
 This roadmap records bounded T0/T1/T2/T3A/T3B/T4 acceptance, bounded T5-R1
-foundation, T5-R2 pure adapter-contract acceptance, and T5-R2A shared-root
-checker proof with authentication and transport runtime deferred,
+foundation, T5-R2 pure adapter-contract acceptance, T5-R2A shared-root
+checker proof, and T5-R3 bounded authentication-composition owner selection
+with implementation and transport runtime deferred,
 bounded T6 one-call `qwen3.7-flash` compatibility acceptance, and bounded T7
 selected-scope closure with `DEFERRED_PRIVATE_ONLY`.
 T3A proves only a hermetic pre-execution eligibility projection with literal

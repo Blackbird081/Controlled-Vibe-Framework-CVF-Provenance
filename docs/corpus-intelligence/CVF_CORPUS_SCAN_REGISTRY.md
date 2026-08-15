@@ -201,6 +201,7 @@ Use this index to find prior findings by domain keyword.
 | CADP-AI-T5-R1-F01 | `CADP-AI-T5-R1 external readout authority foundation source and tests` | Initial receipt serialization invoked caller-controlled `toJSON` and lacked canonical frozen snapshot semantics; reviewer repaired and regression-covered before closure | ACCEPT_WITH_BOUNDARY |
 | CADP-AI-T5-R2-F01 | `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | Worker omitted candidate metadata from the exact API and did not compose redaction/allowlist over it; reviewer repaired and regression-covered | ACCEPT_WITH_BOUNDARY |
 | CADP-AI-T5-R2-F02 | `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | T5-R2A preserves unique contract-source ownership while independently checking T5-R1 and T5-R2 module-qualified exports over their shared package root | ACCEPT_WITH_BOUNDARY |
+| CADP-AI-T5-R3-F01 | `CADP-AI-T5-R3 external authentication owner adoption readiness source decision` | `authorizeRouteGovernanceProof` is selected only as the bounded authentication-composition owner; CADP authorization, hardened configuration, deterministic proof time, receipt persistence, route registration, and runtime remain separate | ACCEPT_WITH_BOUNDARY |
 
 ---
 
