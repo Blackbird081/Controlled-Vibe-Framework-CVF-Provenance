@@ -16,7 +16,7 @@ Status: ACTIVE
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
-- Current T5-R2A bounded material closure: `4f359cd2d1994d7c900697b19a931c3f2337f28b`; roadmap reconciliation: `234dc35ed`; current T5-R3 decision-only dispatch: `c5a442778`.
+- Current T5-R2A bounded material closure: `4f359cd2d1994d7c900697b19a931c3f2337f28b`; roadmap reconciliation: `234dc35ed`; current T5-R3 decision-only dispatch: `c5a442778`; current T5-R3 raw-byte authority-pin repair: `7383dd8cf2452be847932221b1c3ae9cbbbd6867`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
