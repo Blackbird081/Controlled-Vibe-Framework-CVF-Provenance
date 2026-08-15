@@ -1,7 +1,6 @@
 # ACTIVE SESSION FRONT DOOR
 
 Memory class: active-session-front-door
-
 Status: ACTIVE
 
 Last compacted: 2026-08-11
@@ -45,19 +44,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh governed T5-R2 dispatch for a bounded adapter decision/transport foundation; parked checkpoint=adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed T5-R2 exact-seven-path work order without committing; parked checkpoint=authentication, external MCP/CLI/HTTP runtime, repeat-live, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
+`cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
 
-Current mode marker: `cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
-Current mode: `cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
-Previous mode: `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
+Current mode marker: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
+Current mode: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
+Previous mode: `cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
+Mode: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -84,14 +83,17 @@ forward. Model Gateway TS-next compatibility is fixed at `766c86d17`. T5-R1
 authority foundation is independently accepted bounded at `7d96fa115` after
 reviewer canonical-receipt repair, 121/121 focused regressions, and operator
 disposition of the disclosed two-call reviewer test incident. The calls are not
-T5 evidence and grant no repeat-live authority. The next move is fresh T5-R2
-dispatch authoring only; adapter implementation remains deferred. Latest closed
-wave: `LHW24`.
+T5 evidence and grant no repeat-live authority. T5-R2's reviewed contract-only
+dispatch is committed at `2f6d02488`. The next move is worker execution of the
+exact-seven-path `WORKER_MUST_NOT_COMMIT` packet. Only a transport-neutral
+fail-closed adapter contract, focused proof, package-root exports, fixture,
+negative-proof plan, and pending return are open. Authentication, MCP/CLI/HTTP,
+provider/live, credentials, mutation, public, deploy, production, and the
+moratorium lift remain parked. Latest closed wave: `LHW24`.
 
 ## Parked Checkpoints
 
-Live retry, T5 adapter implementation, production TypeScript edits, existing-guard
-edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation,
+Live retry, external T5 adapter runtime, out-of-manifest production TypeScript edits, existing-guard edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation,
 CLI/MCP invocation, public sync,
 deployment, production, trusted-evidence readiness and cross-runtime
 determinism claims remain parked. T4 closed as standalone static checker work

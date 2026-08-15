@@ -38,7 +38,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
+  `cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -47,18 +47,17 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh governed T5-R2 dispatch for a bounded adapter decision/transport foundation; parked checkpoint=adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T5-R2 exact-seven-path work order without committing; parked checkpoint=authentication, external MCP/CLI/HTTP runtime, repeat-live, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
+`cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
 
 ## Purpose
 
-Record T6 bounded closure at `2599ff10e`, the TS config fix at `766c86d17`,
-and T5-R1 bounded authority-foundation closure at `7d96fa115`. Open only fresh
-T5-R2 dispatch authoring; adapter implementation and every external entry point
-remain deferred.
+Record T6 bounded closure, the TS config fix, T5-R1 bounded foundation closure,
+and committed T5-R2 contract-only dispatch at `2f6d02488`. Open only exact
+T5-R2 worker execution; every external entry point remains deferred.
 
 ## Scope / Target / Owner Boundary
 
@@ -92,21 +91,20 @@ remain deferred.
   names to an exact six-path manifest, passed pre-dispatch and pre-commit 84/84,
   and was materially committed at `071e39100`. Execution-anchor repair
   `1b0dcc499` removed the stale authoring-base comparison.
-- T5-R1 worker output was independently repaired for canonical receipt purity,
-  passed 121/121 focused regressions and the T4 drift checker, reconciled GC-051,
-  and closed bounded at `7d96fa115`. Operator accepted the disclosed two-call
-  reviewer test incident as a closure waiver only; no repeat-live authority.
+- T5-R1 closed bounded at `7d96fa115`; T5-R2 contract-only dispatch passed
+  pre-dispatch/pre-commit and committed at `2f6d02488`. Its worker owns exactly
+  seven paths, must not commit, and has no auth, MCP/CLI/HTTP, or live authority.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | CADP-AI-T5-R1 `ACCEPTED_CLOSED_PASS_BOUNDED` at `7d96fa115`; adapter deferred |
-| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_2026-08-15.md` |
-| workerReturnPath | `docs/reviews/CVF_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_WORKER_RETURN_2026-08-15.md` |
-| completionReviewPath | `docs/reviews/CVF_CADP_AI_T5_R1_EXTERNAL_READOUT_AUTHORITY_FOUNDATION_COMPLETION_2026-08-15.md` |
-| nextAuthorityRequirement | fresh GC-018 baseline and exact T5-R2 work order before any adapter/transport implementation |
+| authorityState | CADP-AI-T5-R2 `DISPATCHED_WORKER_MUST_NOT_COMMIT` at `2f6d02488`; external runtime deferred |
+| baselinePath | `docs/baselines/CVF_GC018_CADP_AI_T5_R2_TRANSPORT_NEUTRAL_EXTERNAL_READOUT_ADAPTER_FOUNDATION_2026-08-15.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R2_TRANSPORT_NEUTRAL_EXTERNAL_READOUT_ADAPTER_FOUNDATION_2026-08-15.md` |
+| workerReturnPath | `docs/reviews/CVF_CADP_AI_T5_R2_TRANSPORT_NEUTRAL_EXTERNAL_READOUT_ADAPTER_FOUNDATION_WORKER_RETURN_2026-08-15.md` |
+| completionReviewPath | N/A - reviewer-owned after worker return |
+| nextAuthorityRequirement | worker executes exact-seven-path manifest from current HEAD and returns pending review without commit |
 
 ## Closure Evidence
 
@@ -152,10 +150,11 @@ remain deferred.
 
 ## Next Allowed Move
 
-Author a fresh governed CADP-AI-T5-R2 dispatch packet for a bounded external
-readout adapter decision/transport foundation. Do not implement or register an
-adapter before independent packet review and commit. Repeat-live,
-public/deployment/production remain parked.
+Execute the committed CADP-AI-T5-R2 work order from current HEAD. Touch only
+its exact seven worker paths, run focused local/hermetic proof, keep staging
+empty and HEAD unchanged, then return pending review. Do not run package-wide
+or live tests. Authentication, MCP/CLI/HTTP, provider/live, credentials,
+public/deployment/production, and moratorium lift remain parked.
 
 ## Active Boundary
 
@@ -188,33 +187,31 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T5-R1 Repair Rebind Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T5-R2 Dispatch Sync
 
 Protected paths:
 
-- `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT5R1ExecutionAnchorRepairRebind20260815.json`
-- `CVF_SESSION/state/entries/cadpAiT5R1AuthorityFoundationClosure20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT5R2TransportNeutralAdapterFoundationDispatch20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator explicitly confirmed bounded T5-R1
-closure after disclosure of the reviewer-owned two-call test incident.
+Operator authorization: the operator explicitly instructed continuation from
+the accepted T5-R1 state into the next governed tranche.
 
-Authorized guard-maintenance scope: record T5-R1 bounded closure at `7d96fa115`
-and open only fresh T5-R2 dispatch authoring. All adapter implementation,
-repeat-live, CLI-MCP/public/deployment and unrelated lanes remain parked.
+Authorized guard-maintenance scope: record committed T5-R2 dispatch at
+`2f6d02488` and open only exact-seven-path, no-commit worker execution. External
+auth/runtime, repeat-live, CLI-MCP/public/deployment and unrelated lanes remain parked.
 
-Rollback boundary: revert this exact repair-rebind session-sync batch as one unit;
+Rollback boundary: revert this exact dispatch session-sync batch as one unit;
 do not separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records R2 and T5-R1 bounded closure. It does
-not claim or authorize adapter implementation, MCP/CLI invocation,
+This handoff records T5-R2 contract-only dispatch. It authorizes only the exact
+worker manifest and does not authorize authentication, MCP/CLI/HTTP invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
-trusted-evidence readiness, production source changes, hook wiring, full
-release readiness, repeat-live, public sync, deployment, or production.
+trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
+public sync, deployment, or production.
