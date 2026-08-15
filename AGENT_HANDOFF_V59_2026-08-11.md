@@ -13,7 +13,7 @@ Status: ACTIVE
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
-- Current T5-R1 repair-hold session-sync: `c10674db468f4de648d7b8bcdc090230c8155df0`
+- Current T5-R1 repair-rebind session-sync: `df350ac9a1d9106f114982a5a5d3c7061475848c`
 - Current T5-R1 dispatch material commit: `071e39100f8b93b7959505b0e3f22ed31f2b6030`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
@@ -37,7 +37,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring`
+  `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -46,11 +46,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=repair and rebind the stale T5-R1 execution-base check before Claude dispatch; parked checkpoint=worker implementation, adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send repaired exact-six-path T5-R1 work order to Claude with final clean execution base; parked checkpoint=adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring`
+`cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
 
 ## Purpose
 
@@ -89,7 +89,8 @@ external entry point remain deferred.
   bounded compatibility claim at `2599ff10e` after pre-commit 84/84.
 - T5-R1 dispatch was independently reviewed, repaired from three worker-selected
   names to an exact six-path manifest, passed pre-dispatch and pre-commit 84/84,
-  and was materially committed at `071e39100`.
+  and was materially committed at `071e39100`. Execution-anchor repair
+  `1b0dcc499` removed the stale authoring-base comparison.
 
 ## Current Authority
 
@@ -146,10 +147,10 @@ external entry point remain deferred.
 
 ## Next Allowed Move
 
-Repair only the stale T5-R1 execution-base comparison, gate and commit that
-material correction, then rebind its authority hash before Claude dispatch.
-Worker implementation, adapter implementation, repeat-live, public/deployment/
-production remain parked during this hold.
+Send the repaired T5-R1 work order to one no-commit Claude worker with the final
+clean HEAD supplied as exact execution base. The worker must return the exact
+six-path pending set for independent review. Adapter implementation, repeat-live,
+public/deployment/production remain parked.
 
 ## Active Boundary
 
@@ -182,7 +183,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T5-R1 Repair Hold Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T5-R1 Repair Rebind Sync
 
 Protected paths:
 
@@ -190,19 +191,19 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT5R1ExecutionAnchorRepairHold20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT5R1ExecutionAnchorRepairRebind20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: the operator directed removal of the deprecated model
 and separately permitted a future credentialed T6 test.
 
-Authorized guard-maintenance scope: temporarily hold T5-R1 worker dispatch,
-return current authority to closed T6-R2, and allow only the stale execution-
-anchor material repair before rebinding T5-R1. All implementation, repeat-live,
-CLI-MCP/public/deployment and unrelated lanes remain parked.
+Authorized guard-maintenance scope: rebind T5-R1 authority to the repaired
+work-order hash and reopen only exact-six-path no-commit worker execution. All
+adapter implementation, repeat-live, CLI-MCP/public/deployment and unrelated
+lanes remain parked.
 
-Rollback boundary: revert this exact repair-hold session-sync batch as one unit;
+Rollback boundary: revert this exact repair-rebind session-sync batch as one unit;
 do not separate generated state from source fragments.
 
 ## Claim Boundary
