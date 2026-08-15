@@ -45,19 +45,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send the committed exact-six-path T5-R1 work order to Claude; parked checkpoint=adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=repair and rebind the stale T5-R1 execution-base check before Claude dispatch; parked checkpoint=worker implementation, adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
+`cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring`
 
-Current mode marker: `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t5_r1_external_readout_authority_foundation_dispatch_authoring`
+Current mode marker: `cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring`
+Current mode: `cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring`
+Previous mode: `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -81,9 +81,10 @@ R2 is independently accepted `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at
 admission PASS, and historical receipt unchanged. The original bundle FAIL is
 retained and excludes full release readiness. No repeat-live authority carries
 forward. Model Gateway TS-next compatibility is fixed at `766c86d17`. T5-R1
-authority-foundation dispatch is committed at `071e39100`; the next move is one
-exact-six-path no-commit Claude worker execution. Adapter implementation remains
-deferred. Latest closed wave: `LHW24`.
+authority-foundation dispatch is committed at `071e39100`, but worker dispatch
+is held because its execution-base check still names the authoring base. Repair
+and rebind that one authority defect before Claude execution. Adapter
+implementation remains deferred. Latest closed wave: `LHW24`.
 
 ## Parked Checkpoints
 
