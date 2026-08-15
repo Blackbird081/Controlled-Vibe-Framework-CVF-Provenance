@@ -44,19 +44,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed T5-R2 exact-seven-path work order without committing; parked checkpoint=authentication, external MCP/CLI/HTTP runtime, repeat-live, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r2_transport_neutral_adapter_foundation_accepted_bounded_runtime_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh source-verified dispatch after operator selects the next CADP tranche; parked checkpoint=authentication, external MCP/CLI/HTTP runtime, repeat-live, checker maintenance, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
+`cadp_ai_t5_r2_transport_neutral_adapter_foundation_accepted_bounded_runtime_deferred`
 
-Current mode marker: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
+Current mode marker: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_accepted_bounded_runtime_deferred`
+Current mode: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_accepted_bounded_runtime_deferred`
+Previous mode: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_accepted_bounded_runtime_deferred`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -83,13 +83,15 @@ forward. Model Gateway TS-next compatibility is fixed at `766c86d17`. T5-R1
 authority foundation is independently accepted bounded at `7d96fa115` after
 reviewer canonical-receipt repair, 121/121 focused regressions, and operator
 disposition of the disclosed two-call reviewer test incident. The calls are not
-T5 evidence and grant no repeat-live authority. T5-R2's reviewed contract-only
-dispatch is committed at `2f6d02488`. The next move is worker execution of the
-exact-seven-path `WORKER_MUST_NOT_COMMIT` packet. Only a transport-neutral
-fail-closed adapter contract, focused proof, package-root exports, fixture,
-negative-proof plan, and pending return are open. Authentication, MCP/CLI/HTTP,
-provider/live, credentials, mutation, public, deploy, production, and the
-moratorium lift remain parked. Latest closed wave: `LHW24`.
+T5 evidence and grant no repeat-live authority. T5-R2 is independently
+accepted bounded at `ad76d7433` after reviewer repair of candidate-metadata
+composition and deterministic malformed-input receipts. TypeScript, 69/69
+focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84
+passed. The next move is a fresh source-verified governed dispatch only after
+the operator selects the next CADP tranche. Authentication, MCP/CLI/HTTP
+runtime, provider/live, credentials, mutation, checker-schema maintenance,
+public, deploy, production, and the moratorium lift remain parked. Latest
+closed wave: `LHW24`.
 
 ## Parked Checkpoints
 
@@ -107,12 +109,9 @@ a fresh, source-verified governed tranche.
 ## Targeted Lookup Rules
 
 - For complete canonical state, read `CVF_SESSION/ACTIVE_SESSION_STATE.json`.
-- For prior T2A closure narrative, read
-  `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`; do not
-  restate it here.
+- For prior T2A closure narrative, read `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`; do not restate it here.
 - For pre-2026-08-11 front-door history, read the front-door archive above.
-- For guard/task orientation, read
-  `docs/reference/guard_orientation/README.md`.
+- For guard/task orientation, read `docs/reference/guard_orientation/README.md`.
 
 ## Claim Boundary
 
