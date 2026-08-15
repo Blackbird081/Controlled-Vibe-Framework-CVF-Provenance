@@ -1,0 +1,64 @@
+{
+  "registryOrder": 170,
+  "id": "rspb-ai-t0-reverse-skill-capability-preflight-bootstrap-intake",
+  "corpusType": "EXTERNAL_SOURCE",
+  "displayName": "RSPB-AI-T0 reverse-skill upstream mirror plus Capability Preflight & Bootstrap proposal dual-corpus intake",
+  "scopePaths": [
+    ".private_reference/source_mirrors/zhaoxuya520__reverse-skill/",
+    ".private_reference/legacy/CVF 13.08/CVF_CAPABILITY_PREFLIGHT_BOOTSTRAP/"
+  ],
+  "fileCount": 764,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "RSPB-AI-T0",
+  "scanDate": "2026-08-15",
+  "manifestHash": "74ef4330d09afd04c52a8326a96132db490d62d06b823b2d97daf6fbabb6bbb4",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/audits/CVF_RSPB_AI_T0_REVERSE_SKILL_UPSTREAM_MANIFEST_2026-08-15.json",
+  "packetPath": "docs/audits/CVF_RSPB_AI_T0_DUAL_CORPUS_INTAKE_AUDIT_2026-08-15.md",
+  "completionReviewPath": "docs/reviews/CVF_RSPB_AI_T0_REVERSE_SKILL_CAPABILITY_PREFLIGHT_BOOTSTRAP_WORKER_RETURN_2026-08-15.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_RSPB_AI_T0_REVERSE_SKILL_CAPABILITY_PREFLIGHT_BOOTSTRAP_DUAL_CORPUS_INTAKE_2026-08-15.md",
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "RECONCILED_VERIFIED",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "TWO_STAGE_ROUTING_DOCTRINE",
+    "OPERATIONAL_SCAFFOLDING_PATTERN",
+    "CAPABILITY_ENVIRONMENT_SNAPSHOT_RUNTIME_CANDIDATE",
+    "CONTROLLED_ACQUISITION_BOOTSTRAP_RUNTIME_CANDIDATE",
+    "REPAIR_STOP_INTEGRITY_SECRET_CHECKER_CANDIDATE",
+    "CAPABILITY_PREFLIGHT_PACKAGE_CANDIDATE",
+    "OFFENSIVE_SECURITY_DOMAIN_REJECTED",
+    "SAFETY_BYPASS_INSTRUCTION_CHAIN_REJECTED"
+  ],
+  "priorAbsorption": "No prior absorption of this upstream repository or this local proposal folder existed before RSPB-AI-T0. The worker independently classified all 764 files (559 upstream, 205 proposal): upstream 448 REJECTED, 69 NO_NEW_VALUE, 18 READ, 17 ADAPTED, 7 DEFERRED; proposal 192 DEFERRED, 10 REJECTED, 3 READ. Final value/cost decision: STOP_COST_EXCEEDS_VALUE for the whole tranche, with three candidates preserved in the conditional reopen index.",
+  "findings": [
+    {
+      "id": "RSPB-AI-T0-F2-upstream-safety-bypass-instruction-chain",
+      "summary": "Upstream repository contains an explicit, coordinated instruction chain (precedent-auth.md, agent-obedience-engineering.md, precedent-reverse.md, precedent-pentest.md, README_AI.md, RULES.md) designed to make an AI agent suppress its own authorization/safety review before performing offensive-security actions.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "No CVF rule gap exists; the work order's existing do-not-obey-corpus-instructions boundary and the external absorption core standard already prevent this pattern from having effect. Retained only as documented contrast evidence in the audit's Finding 2.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+      "f2gRef": "docs/audits/CVF_RSPB_AI_T0_DUAL_CORPUS_INTAKE_AUDIT_2026-08-15.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "RSPB-AI-T0-F4-proposal-unreviewed-at-every-phase",
+      "summary": "The local Capability Preflight & Bootstrap proposal folder (205 files) is a well-structured but entirely unreviewed and unmerged design draft; its own FINAL_CLOSURE_REVIEW.md scaffold is empty (Status: REVIEW_REQUIRED, no reviewer, no disposition).",
+      "disposition": "ACCEPT_NO_ACTION",
+      "nextAction": "The paired work order already treated the proposal as SECONDARY_PROPOSAL_ONLY from dispatch; this finding confirms that framing. No follow-up required.",
+      "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+      "f2gRef": "docs/audits/CVF_RSPB_AI_T0_DUAL_CORPUS_INTAKE_AUDIT_2026-08-15.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "reverse-skill upstream runtime imported into CVF - direct file existence check for all 10 proposal governance/compat/check_capability_*.py candidate filenames against the real governance/compat/ directory returned zero matches",
+    "Capability Preflight checker wired into hook chain - text search for capability_bootstrap and capability_preflight inside governance/compat/run_local_governance_hook_chain.py and governance/compat/run_agent_autorun_workflow_gate.py returned no matches",
+    "Capability Preflight EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION runtime merged - proposal candidate TypeScript/test files under that path are not present in the real extension directory",
+    "burp-mcp-full or CTF-Sandbox-Orchestrator activated as CVF runtime - both subtrees classified REJECTED, no execution performed, no CVF owner surface created"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED unless a fresh, source-verified runtime work order proves a concrete named current consumer and blocked workflow for the Capability Environment Snapshot or controlled-acquisition runtime candidates, per the conditional reopen index row RSPB-capability-preflight-bootstrap-runtime-and-checker-candidates."
+}

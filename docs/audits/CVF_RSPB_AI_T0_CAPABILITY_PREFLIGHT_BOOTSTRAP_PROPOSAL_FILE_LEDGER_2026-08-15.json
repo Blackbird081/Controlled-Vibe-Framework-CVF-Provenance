@@ -1,0 +1,2096 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "RSPB-AI-T0",
+  "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+  "terminalStatusVocabulary": [
+    "READ",
+    "ADAPTED",
+    "DEFERRED",
+    "REJECTED",
+    "NO_NEW_VALUE",
+    "BLOCKED_UNREADABLE"
+  ],
+  "rowCount": 205,
+  "statusCounts": {
+    "DEFERRED": 192,
+    "READ": 3,
+    "REJECTED": 10
+  },
+  "semanticGroupCounts": {
+    "proposal-governance-cli-candidate-code": 8,
+    "proposal-mcp-server-candidate-code": 5,
+    "proposal-execution-plane-candidate-code": 47,
+    "proposal-guard-contract-candidate-code": 7,
+    "proposal-agent-platform-candidate-code": 20,
+    "proposal-baseline-scaffold": 1,
+    "proposal-evidence-scaffold": 1,
+    "proposal-assf-binding-contract-draft": 1,
+    "proposal-master-design-document": 2,
+    "proposal-contract-schema-design": 9,
+    "proposal-worked-case-example": 13,
+    "proposal-invalid-fixture-candidate": 8,
+    "proposal-valid-fixture-candidate": 6,
+    "proposal-policy-design": 8,
+    "proposal-platform-profile-candidate": 5,
+    "proposal-json-schema-candidate": 10,
+    "proposal-review-scaffold": 5,
+    "proposal-review-scaffold-unfilled": 1,
+    "proposal-roadmap-scaffold": 1,
+    "proposal-work-order-scaffold": 6,
+    "proposal-checker-candidate-code": 24,
+    "proposal-executable-script-candidate": 10,
+    "proposal-workspace-template-candidate": 7
+  },
+  "rows": [
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/capability_preflight/approve.command.ts",
+      "sha256": "dea347f84e62a6381df405ad9f2740b8826e7174e46de339f8645839d72f6d05",
+      "bytes": 548,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-governance-cli-candidate-code",
+      "rationale": "Proposal-authored candidate CLI code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition in the paired work order's Dual Agent Surface Matrix."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/capability_preflight/bootstrap.command.ts",
+      "sha256": "474cbdb53cdae8d24aff4b6127b4385251c90b80a702e488133234a6d44003fb",
+      "bytes": 501,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-governance-cli-candidate-code",
+      "rationale": "Proposal-authored candidate CLI code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition in the paired work order's Dual Agent Surface Matrix."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/capability_preflight/output.presenter.ts",
+      "sha256": "996d7c778baea7beb5f2ca073c9a6fa3915b0b34318bff4f6f1f6ba91267ad30",
+      "bytes": 667,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-governance-cli-candidate-code",
+      "rationale": "Proposal-authored candidate CLI code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition in the paired work order's Dual Agent Surface Matrix."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/capability_preflight/plan.command.ts",
+      "sha256": "64d5f238b062188f0769b6b5cf5b16c680ae23fbeeef52f8ebc6f8dbf88ca170",
+      "bytes": 244,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-governance-cli-candidate-code",
+      "rationale": "Proposal-authored candidate CLI code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition in the paired work order's Dual Agent Surface Matrix."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/capability_preflight/resolve.command.ts",
+      "sha256": "d29c59951f2ed2ad4bce0e8f1281e2378ef0649b82c691213eecc5703f071a1b",
+      "bytes": 555,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-governance-cli-candidate-code",
+      "rationale": "Proposal-authored candidate CLI code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition in the paired work order's Dual Agent Surface Matrix."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/capability_preflight/scan.command.ts",
+      "sha256": "580734db53b9051c7fa8dd2e5d959390552b13d465ec2a8e37b9531a2b9f789f",
+      "bytes": 379,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-governance-cli-candidate-code",
+      "rationale": "Proposal-authored candidate CLI code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition in the paired work order's Dual Agent Surface Matrix."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/capability_preflight/status.command.ts",
+      "sha256": "993f53b756c7407d5a8ed52a24bba0d93debcb6dd10721b0a2a0cbe92f732ac3",
+      "bytes": 522,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-governance-cli-candidate-code",
+      "rationale": "Proposal-authored candidate CLI code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition in the paired work order's Dual Agent Surface Matrix."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.2_GOVERNANCE_CLI/src/capability_preflight/verify.command.ts",
+      "sha256": "ee2fd6ede3bead999ef7e730fc0ed52fa39f48b6a07feab8643f06f2295c175c",
+      "bytes": 356,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-governance-cli-candidate-code",
+      "rationale": "Proposal-authored candidate CLI code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition in the paired work order's Dual Agent Surface Matrix."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/capability_preflight/capability.adapter.ts",
+      "sha256": "d1f025b841b0709d2cf1d7d54d38ebd1ecc991fffe1b3791a3b04d684d5f5ee6",
+      "bytes": 704,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-mcp-server-candidate-code",
+      "rationale": "Proposal-authored candidate MCP server code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition; no MCP activation authorized."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/capability_preflight/capability.approval.bridge.ts",
+      "sha256": "6a4a33581cbe94b2253765e76f6bf9eeee96d2d580597294cc9fdfb39737c304",
+      "bytes": 901,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-mcp-server-candidate-code",
+      "rationale": "Proposal-authored candidate MCP server code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition; no MCP activation authorized."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/capability_preflight/capability.receipt.bridge.ts",
+      "sha256": "641031022b71b32bdbc95fd8ef32e7a90172e64ccaca38c1992910b9fb6fab98",
+      "bytes": 587,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-mcp-server-candidate-code",
+      "rationale": "Proposal-authored candidate MCP server code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition; no MCP activation authorized."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/capability_preflight/capability.resources.ts",
+      "sha256": "74e79eb26e7e8486a891d6e2a1bb5699e04c2cfd9066c5fd775ae24c53112789",
+      "bytes": 500,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-mcp-server-candidate-code",
+      "rationale": "Proposal-authored candidate MCP server code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition; no MCP activation authorized."
+    },
+    {
+      "path": "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/capability_preflight/capability.tools.ts",
+      "sha256": "f27850c8ad44f8d81369747bb6242b19674eaf7483101e97655d5249da5ec32e",
+      "bytes": 959,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-mcp-server-candidate-code",
+      "rationale": "Proposal-authored candidate MCP server code/test scaffolding; unreviewed, external-adapter-shaped, aligns with EXTERNAL_AGENT_CLI_MCP deferred disposition; no MCP activation authorized."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/bootstrap.approval.test.ts",
+      "sha256": "4198fa492244d1ed9789b946ccc9238f488581f5f772562edcc6ed2ec9d18232",
+      "bytes": 652,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/bootstrap.executor.test.ts",
+      "sha256": "9d772ec39f2d234ae21c380c5dbf2e54e90ac01758cb349ddaaf07e1a3790c3e",
+      "bytes": 1425,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/bootstrap.planner.test.ts",
+      "sha256": "d1a0e79139142b8191c174a2d2f03d8b13f8c3e03af4fbae934be0cc2d01dddc",
+      "bytes": 986,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/bootstrap.rollback.test.ts",
+      "sha256": "d385e928b14838b9f7823728170d6c1af71dc6b5217b268cc9e4989b9cb56cdd",
+      "bytes": 466,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/bootstrap.verifier.test.ts",
+      "sha256": "1e49e45ffc077aaf1eabe14d894b9f5d49aecbb072e1d00ed599f4491d77dd2e",
+      "bytes": 602,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/candidate.router.test.ts",
+      "sha256": "7e2bc49145856f316912c895e891072203ddc025c646978594b6e8462d3484b8",
+      "bytes": 1239,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/case.projection.test.ts",
+      "sha256": "9f6f4ff58dd77a1475560e4863767d65b41667591df5e46c9ff43ebb069b355e",
+      "bytes": 701,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/dependency.closure.test.ts",
+      "sha256": "b47ed4e8cbac20ec94592b4c176dae1a9d318c2294cae561885688ca5426136e",
+      "bytes": 603,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/domain.evidence.projection.test.ts",
+      "sha256": "d6ff56c00f685b5f9d2132ab7f738664259b5bd51473aaec8163544af5d00031",
+      "bytes": 464,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/environment.snapshot.test.ts",
+      "sha256": "20610bff36c032a374d6c2818ae533a57a42e1a4a25b9b6020ba6bf0c6087f8a",
+      "bytes": 748,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/learning.candidate.test.ts",
+      "sha256": "2c204ab528e4daf49952f02abaa66f083ec4c353e790872a7f347eeed6b65848",
+      "bytes": 576,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/readiness.evaluator.test.ts",
+      "sha256": "99370faee4a98c4cb734b387487ccb4b1f093bd4c105513a7cf80062ae57197a",
+      "bytes": 715,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/repair.stop.test.ts",
+      "sha256": "3f5dfb27d40f3f913e02e0f2e002c900b3b3b3be57bbdf691daf6c0493de7530",
+      "bytes": 497,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/route.resolver.test.ts",
+      "sha256": "c07a7d2396ba7a908400753462dce4efb8105d766e93ca5258148a4622728b11",
+      "bytes": 783,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/__tests__/snapshot.freshness.test.ts",
+      "sha256": "858c6e7e9a260b3c44b909a985eede5f983eecbacfdd8e2f36079abef5c638fc",
+      "bytes": 398,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/adapters/cli.adapter.ts",
+      "sha256": "a02b40963e642558d9ffc892b836ce418f9ed51452ba1c51b343fed95c970932",
+      "bytes": 551,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/adapters/mcp.adapter.ts",
+      "sha256": "54e1a57ff4e0194ab82c8ae0bd7237f98c5620c3110c617c3bb245cd0c009ae2",
+      "bytes": 586,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/adapters/native.adapter.ts",
+      "sha256": "a5da1adbe7be9a67c999f5ed896f666251fd8d4bf59ec3a6d14c3e54dc04c974",
+      "bytes": 252,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/adapters/workspace.adapter.ts",
+      "sha256": "65be1e371f59dfa629754d38e8eed992314bf2b29b6bb6e5faab5e205ae2535b",
+      "bytes": 620,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/bootstrap.approval.ts",
+      "sha256": "c5f47455a2fb73e7ef07bf56910840243bad5acf0327e5e3397645ac6e565d31",
+      "bytes": 1838,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/bootstrap.executor.ts",
+      "sha256": "b67f02b39c784f0672a323304db2cc1c47fb54591b492b1a230485b31e4b4259",
+      "bytes": 3093,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/bootstrap.planner.ts",
+      "sha256": "5c3caf208e1b6031da904d65db2d4177a481e1cfd92402670a75776faa43eb5d",
+      "bytes": 3415,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/bootstrap.rollback.ts",
+      "sha256": "23b0974f48c157bf6d65d01ed6a5daf1c30da939f5fa9f3ba11abbf56997fe61",
+      "bytes": 706,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/bootstrap.verifier.ts",
+      "sha256": "28aa296440ba8ebfdce6acb9385b0a706075aef01f534c980cee1d1dc2b2b70e",
+      "bytes": 2441,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/candidate.router.ts",
+      "sha256": "a52dcfbef459e6c3a9f050f96d210505da0de0e426fdd7a16e601065b2a0b395",
+      "bytes": 2931,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/case.projection.ts",
+      "sha256": "228a98f146a1af0f55795ebd9d77ef9fbac6f472605b50927aabe68334de7d3c",
+      "bytes": 3718,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/dependency.closure.ts",
+      "sha256": "b4079252845077e412666e340e3eb9a788da2ec9c17e8067f0aef78b9e526538",
+      "bytes": 1100,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/domain.evidence.projection.ts",
+      "sha256": "58ab68a7e647ff12252325fba49f801ac68054f0cdd22e7cd66c883bde1e87b1",
+      "bytes": 1603,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/environment.scanner.ts",
+      "sha256": "a897d784da43a96102dbaab2c29532302414e1a8551a65ea04e0d95bae9983cf",
+      "bytes": 4294,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/environment.snapshot.ts",
+      "sha256": "dbcd54b33e7e69c91002025373eb345d5c0e8a89166c8a0499233725075ad772",
+      "bytes": 878,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/errors.ts",
+      "sha256": "08f26d0fa2687681977c67e0b4544b12ea0197c366d5003d13ea5b1c468eb43c",
+      "bytes": 620,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/index.ts",
+      "sha256": "1bb46b355ac95ab3b57a7b1a68f97c4bf1d5941971fb3ac2aeb0ab87b80d64aa",
+      "bytes": 1081,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/learning.candidate.ts",
+      "sha256": "f30c305dc15544f847f153f30fd6317e6c9d93d812f56d9b66887244c51431d1",
+      "bytes": 1870,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/readiness.evaluator.ts",
+      "sha256": "49d44a392b9cf7908b208aca6d330848fe6f9eb746607b7c6ae2b17588d806b1",
+      "bytes": 4217,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/receipt.adapter.ts",
+      "sha256": "1d601117770d1cb29701e197d50a946e29d690c1f2fd19431ad96eff8794fd8b",
+      "bytes": 702,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/repair.stop.ts",
+      "sha256": "bd047adb3e063a8d1ec055da89514baebab96a43211e40d9ba0528f6cd8e8bdf",
+      "bytes": 544,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/route.resolver.ts",
+      "sha256": "52382b9cdcbdd7d5ccd198bfe278af6bc8e1733e600288304f3f363c60ecac81",
+      "bytes": 3245,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/scanners/cli.scanner.ts",
+      "sha256": "efbc83345c85378cedd00f97815dd1cb8211975c2d1e6cb0a5d1664d0a2107f2",
+      "bytes": 2325,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/scanners/credential.binding.scanner.ts",
+      "sha256": "0c03404e601f1f47c173c116251ace63cf237b8cacd2fa8931b70f4592976f89",
+      "bytes": 575,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/scanners/linux.scanner.ts",
+      "sha256": "db0973e0fc14ba7516b8acee5bffd18e1d4bed79826dc95c7b21edd69071382f",
+      "bytes": 314,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/scanners/macos.scanner.ts",
+      "sha256": "715ce34817ee7e18795b2d99b16b3b4910858aaa78d7d09929262c43922c8310",
+      "bytes": 315,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/scanners/mcp.scanner.ts",
+      "sha256": "a1b099008662155f309818c7c5cf4114018dbdb0b65d2ba7b58622b898bd33e4",
+      "bytes": 1455,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/scanners/network.scanner.ts",
+      "sha256": "fd0ed585c05396c9761598a734fca2b00f192c233a1c742def23aea63f9a5b98",
+      "bytes": 769,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/scanners/sandbox.scanner.ts",
+      "sha256": "c72befbc89e99e7c92232266de502a104f22c9551e01f5191d51b1af23482c82",
+      "bytes": 368,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/scanners/windows.scanner.ts",
+      "sha256": "616fc3dd675530967ff6236d0af0bb7d04b5414f8a78546ceac004f2a56b9163",
+      "bytes": 404,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/snapshot.freshness.ts",
+      "sha256": "987e0f5b59f254e4060bb87ba07314786ec357c23904c966009860338d9d67cb",
+      "bytes": 1169,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/capability_preflight/types.ts",
+      "sha256": "636954821ac353d77d2eea991dada2076059777549fb40efcf74a5f3318aba1c",
+      "bytes": 6278,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-execution-plane-candidate-code",
+      "rationale": "Proposal-authored candidate TypeScript/test code under the Execution Plane Foundation extension path; not merged into or reviewed against the actual EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/ owner surface; treated as unreviewed candidate code, not accepted CVF source."
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/capability_preflight/capability.bootstrap.approval.contract.ts",
+      "sha256": "7c135e17fdf2f4760f2e38c29052225e43827f064a2765231f8338b45c0dddad",
+      "bytes": 2099,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-guard-contract-candidate-code",
+      "rationale": "Proposal-authored candidate contract/schema code under the Guard Contract extension path; unreviewed candidate, not merged into the actual Guard Contract SDK."
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/capability_preflight/capability.bootstrap.receipt.contract.ts",
+      "sha256": "f1fc867adb3eb95f0b64ba4d88ece7bec270e1ef1f9af36c30ee29c3b43650ff",
+      "bytes": 1364,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-guard-contract-candidate-code",
+      "rationale": "Proposal-authored candidate contract/schema code under the Guard Contract extension path; unreviewed candidate, not merged into the actual Guard Contract SDK."
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/capability_preflight/capability.case.projection.contract.ts",
+      "sha256": "940be5b9bd0b9e42317c029145dfbc7ac7d21947e812c3a1a4d28f4d496e78e2",
+      "bytes": 808,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-guard-contract-candidate-code",
+      "rationale": "Proposal-authored candidate contract/schema code under the Guard Contract extension path; unreviewed candidate, not merged into the actual Guard Contract SDK."
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/capability_preflight/capability.preflight.contract.ts",
+      "sha256": "305c0f787c3dba09f77cf29dc3b7929e062d2018f5719f9a0ed8fddd53d98500",
+      "bytes": 2918,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-guard-contract-candidate-code",
+      "rationale": "Proposal-authored candidate contract/schema code under the Guard Contract extension path; unreviewed candidate, not merged into the actual Guard Contract SDK."
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/capability_preflight/capability.readiness.contract.ts",
+      "sha256": "af7db8d2ccfd316b785be6a18b4c888ad1967b001b8bf535b5a2f0e0f9091ed9",
+      "bytes": 1272,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-guard-contract-candidate-code",
+      "rationale": "Proposal-authored candidate contract/schema code under the Guard Contract extension path; unreviewed candidate, not merged into the actual Guard Contract SDK."
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/capability_preflight/capability.repair.stop.contract.ts",
+      "sha256": "aad8f3a1174386bd076cc5bffa67e33b03cf582bd73efdf0045acc4bf402b3f9",
+      "bytes": 1317,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-guard-contract-candidate-code",
+      "rationale": "Proposal-authored candidate contract/schema code under the Guard Contract extension path; unreviewed candidate, not merged into the actual Guard Contract SDK."
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/capability_preflight/index.ts",
+      "sha256": "46fab32fe45593e813cb02c19e65baebf66b039f1837d74c263f4048c6088d50",
+      "bytes": 319,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-guard-contract-candidate-code",
+      "rationale": "Proposal-authored candidate contract/schema code under the Guard Contract extension path; unreviewed candidate, not merged into the actual Guard Contract SDK."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/capability-preflight/AcquisitionProgressCard.tsx",
+      "sha256": "53cf753c5ecc0a80f9f9675afc6799a9e8f8fa444163d0c02dc1d9e912e60124",
+      "bytes": 660,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/capability-preflight/ApprovalBoundaryCard.tsx",
+      "sha256": "e4e6a5e807951a5bc5de495c8b140b9d5d59dccb116011d68294679dc1cdf142",
+      "bytes": 1418,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/capability-preflight/BootstrapPlanCard.tsx",
+      "sha256": "a37b5c22517f5f25006e0505a3b0194fc2980791f534ad278ea7cf9e14da44a4",
+      "bytes": 1162,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/capability-preflight/CapabilityRouteCard.tsx",
+      "sha256": "e3f78405bf3e3e864e1689a71aff174a177b8dfb517a72ad57f525456f02bc65",
+      "bytes": 1126,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/capability-preflight/EnvironmentReadinessCard.tsx",
+      "sha256": "c96f5d2efe1b9d5b48f58be6c8f8e2ad93c1b99e597bb2803cd8de0399b75cc1",
+      "bytes": 1108,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/capability-preflight/EvidencePathCard.tsx",
+      "sha256": "91ede83d8c2ad0cafd3ac5af11b3652f04fb2923266f8891145c43e7c20349af",
+      "bytes": 939,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/capability-preflight/MissingDependencyCard.tsx",
+      "sha256": "8c1ffad1dafbb6abc6822b4ec0635f2f81ff6582742d0b1f13df730a901cf5c6",
+      "bytes": 687,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/capability-preflight/NextSafeActionCard.tsx",
+      "sha256": "e608d26d5087995e199db18c2455498eb16cb161b0272dc665b09aabc0dc76b8",
+      "bytes": 332,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/capability-preflight/RepairStopCard.tsx",
+      "sha256": "c1b82e07dcb3b2a85dacbc95da762d6555a2dd6b6b936b376ac0dbe3b4497a4a",
+      "bytes": 392,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/capability-preflight/VerificationResultCard.tsx",
+      "sha256": "bbeafb4d753435af85838d371bb00aba27b2bd302da6b1c27c96d4e078a22568",
+      "bytes": 748,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/data/capability-preflight/fixtures.ts",
+      "sha256": "87d0c48e989669b62268f45fbe6addf0f2378c545e416d2f280caabe3741d971",
+      "bytes": 1616,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/data/capability-preflight/labels.ts",
+      "sha256": "450862cceb3eb516c6576397b2a6a463542466f06404b77168aa8be7c19ac7d2",
+      "bytes": 814,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/capability-preflight/api.ts",
+      "sha256": "28a98c599523d4f29302b47a2bc6a8937f0ffd95b1a2a996870eb4ae1671c70f",
+      "bytes": 1187,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/capability-preflight/event-normalizer.ts",
+      "sha256": "839a37b741bf95d51028fbf9f5fb56b73f8fc9026edad70eb8e0568c8d54df52",
+      "bytes": 1340,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/capability-preflight/projection.ts",
+      "sha256": "cf6683ecf0f4f19b532615d1244fafec94352062a27a20a6de92984bdd43f76a",
+      "bytes": 2301,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/capability-preflight/accessibility.test.tsx",
+      "sha256": "f704358628e5d317617fc1e03034ac6257ddbc7a0c5dc2c3fc3df720e3d0b79b",
+      "bytes": 652,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/capability-preflight/approval-boundary.test.tsx",
+      "sha256": "e272d4d7291249acd0f8a5bb55bbd1c4a82113f72c6f1e3b60bc588d45dae48c",
+      "bytes": 701,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/capability-preflight/projection-authority.test.tsx",
+      "sha256": "80fe0552f6fd482988da4be5be63189cfd43e2ef04b4e86eadeb5d9a9189cf76",
+      "bytes": 441,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/capability-preflight/route-card.test.tsx",
+      "sha256": "cf0261d624c59257436a5f58507f1e6e71ced5fe370e91103b1dd4cc84668f5f",
+      "bytes": 503,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/types/capability-preflight.ts",
+      "sha256": "f3b3ab5a7cdcd493b28fdd8142120637f4b8af4dcbf0925840495b8f1d71c1ef",
+      "bytes": 1827,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-agent-platform-candidate-code",
+      "rationale": "Proposal-authored candidate code/test scaffolding under the Agent Platform extension path; unreviewed candidate, not merged into the actual platform."
+    },
+    {
+      "path": "docs/baselines/CVF_CAPABILITY_PREFLIGHT_BOOTSTRAP_BASELINE.md",
+      "sha256": "b9cac0315f642b2aa66f8ba1f5e4708b072f81dc1d6404f867a57b50ec32f149",
+      "bytes": 945,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-baseline-scaffold",
+      "rationale": "Proposal-authored GC-018-shaped baseline draft for its own future implementation; not an accepted CVF baseline, deferred pending a real value/cost decision (this audit)."
+    },
+    {
+      "path": "docs/evidence/capability_preflight_bootstrap/README.md",
+      "sha256": "54bf13f6227e7ec9e2729aaeb92c06da822441cd25c622e5998d71b8b87510da",
+      "bytes": 365,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-evidence-scaffold",
+      "rationale": "Proposal-authored evidence scaffold for its own future implementation; no runtime evidence exists behind it yet."
+    },
+    {
+      "path": "docs/reference/agent_system_skills/CVF_ASSF_PREFLIGHT_BINDING_CONTRACT.md",
+      "sha256": "984ec80802dbcfa304eaecc254963e976dceee9530982294c4fabfabaf1929d9",
+      "bytes": 1797,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-assf-binding-contract-draft",
+      "rationale": "Draft contract proposing how Capability Preflight binds to the existing ASSF package/resolver owner; not merged into the actual docs/reference/agent_system_skills/ owner surface, unreviewed design candidate."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/README.md",
+      "sha256": "41da41efc056a045e105858ad92eda0dec3145adce4a754a257b576fc7bc91e2",
+      "bytes": 23401,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "READ",
+      "semanticGroup": "proposal-master-design-document",
+      "rationale": "The proposal's own master design document (README, TREEVIEW-equivalent); DESIGN_LOCK_CANDIDATE status, implementation NOT_STARTED. Source of the proposal's own ABSORB/ADAPT/REJECT disposition of upstream, independently re-verified in this audit."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/TREEVIEW.md",
+      "sha256": "ed1a4def021a81a05813a49d35a6a0c2a73a9e40c310c62ddc6cba76448bb66c",
+      "bytes": 24768,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "READ",
+      "semanticGroup": "proposal-master-design-document",
+      "rationale": "Companion file-tree/ownership-map document to the proposal README; design-only, implementation NOT_STARTED."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/contracts/CVF_CAPABILITY_ACQUISITION_RECEIPT_CONTRACT.md",
+      "sha256": "f3b61bbbac32eebd6d4f762331cdf65495dccc263c50f9a8ced7aeb42185a91b",
+      "bytes": 1125,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-contract-schema-design",
+      "rationale": "Design-phase contract document (environment snapshot / route decision / readiness decision / bootstrap plan / acquisition receipt / case projection / evidence projection / learning candidate); PACKAGE_CANDIDATE-shaped design artifact, no runtime behind it, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/contracts/CVF_CAPABILITY_BOOTSTRAP_PLAN_CONTRACT.md",
+      "sha256": "c2e23597d8e337f30846a5617d2924bfc2ce9738775aaede577610546d831419",
+      "bytes": 1229,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-contract-schema-design",
+      "rationale": "Design-phase contract document (environment snapshot / route decision / readiness decision / bootstrap plan / acquisition receipt / case projection / evidence projection / learning candidate); PACKAGE_CANDIDATE-shaped design artifact, no runtime behind it, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/contracts/CVF_CAPABILITY_ENVIRONMENT_SNAPSHOT_CONTRACT.md",
+      "sha256": "b8e611e51be7058de8c1faf6a54cd303becb0d8535d4f08a3ef0d05e440fc1c4",
+      "bytes": 1816,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-contract-schema-design",
+      "rationale": "Design-phase contract document (environment snapshot / route decision / readiness decision / bootstrap plan / acquisition receipt / case projection / evidence projection / learning candidate); PACKAGE_CANDIDATE-shaped design artifact, no runtime behind it, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/contracts/CVF_CAPABILITY_LEARNING_CANDIDATE_CONTRACT.md",
+      "sha256": "f9796de47d68694f75317b954d9d7a2659c2d78aea3ce0e3e976374744059cab",
+      "bytes": 1069,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-contract-schema-design",
+      "rationale": "Design-phase contract document (environment snapshot / route decision / readiness decision / bootstrap plan / acquisition receipt / case projection / evidence projection / learning candidate); PACKAGE_CANDIDATE-shaped design artifact, no runtime behind it, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/contracts/CVF_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROFILE.md",
+      "sha256": "7f405e163eac1d3a93a928e919c483e6fb3a4e0a638ff96a35bb2d61f0e1d2bf",
+      "bytes": 3124,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-contract-schema-design",
+      "rationale": "Design-phase contract document (environment snapshot / route decision / readiness decision / bootstrap plan / acquisition receipt / case projection / evidence projection / learning candidate); PACKAGE_CANDIDATE-shaped design artifact, no runtime behind it, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/contracts/CVF_CAPABILITY_READINESS_DECISION_CONTRACT.md",
+      "sha256": "1ad9a5b3e852891dd3bb0229a872cc9b416a6ccab00b2c8111c271503342f02e",
+      "bytes": 1148,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-contract-schema-design",
+      "rationale": "Design-phase contract document (environment snapshot / route decision / readiness decision / bootstrap plan / acquisition receipt / case projection / evidence projection / learning candidate); PACKAGE_CANDIDATE-shaped design artifact, no runtime behind it, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/contracts/CVF_CAPABILITY_ROUTE_DECISION_CONTRACT.md",
+      "sha256": "c3320875086bbceb0c7e954a25ebc813d7e40472f0ad4adf79611254fcaeb586",
+      "bytes": 1249,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-contract-schema-design",
+      "rationale": "Design-phase contract document (environment snapshot / route decision / readiness decision / bootstrap plan / acquisition receipt / case projection / evidence projection / learning candidate); PACKAGE_CANDIDATE-shaped design artifact, no runtime behind it, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/contracts/CVF_CAPABILITY_RUNTIME_CASE_PROJECTION_CONTRACT.md",
+      "sha256": "0e15d733351cac157a44eb8f3edc8fa01a6da02a44a5a099f12f9d53e03aab35",
+      "bytes": 1105,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-contract-schema-design",
+      "rationale": "Design-phase contract document (environment snapshot / route decision / readiness decision / bootstrap plan / acquisition receipt / case projection / evidence projection / learning candidate); PACKAGE_CANDIDATE-shaped design artifact, no runtime behind it, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/contracts/CVF_DOMAIN_EVIDENCE_PROJECTION_CONTRACT.md",
+      "sha256": "2fc69e99b8f4cf07d2cc92655778afc4d5ec45e8c0e12b5648a7de514890729a",
+      "bytes": 959,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-contract-schema-design",
+      "rationale": "Design-phase contract document (environment snapshot / route decision / readiness decision / bootstrap plan / acquisition receipt / case projection / evidence projection / learning candidate); PACKAGE_CANDIDATE-shaped design artifact, no runtime behind it, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/README.md",
+      "sha256": "ee22d18207be8beacd16fdfc3ac7fc9e4ab79dc898f6272dc87afce2dccb1e99",
+      "bytes": 530,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/governed-mcp-server/ACQUISITION_RECEIPT.json",
+      "sha256": "66d4fdbd50957ea113b38e2598d9298b0bf9e21ff82b12605a03ee52765bc9d4",
+      "bytes": 1405,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/governed-mcp-server/APPROVAL_PROJECTION.json",
+      "sha256": "f59fe17ec4d3de8e6bbdef4fd64641ad5082085829a042f88d92a514f4e03430",
+      "bytes": 640,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/governed-mcp-server/BOOTSTRAP_PLAN.json",
+      "sha256": "be9f744108137a25343c5e4cd8512104efff28aeafa42f26f509df537115e573",
+      "bytes": 2018,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/governed-mcp-server/CASE_SUMMARY.md",
+      "sha256": "b0c6c807601d6ee8312e65f94e1dbff2e9fa3f5eb85c240d8dd6f7b8d5f4fd26",
+      "bytes": 369,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/local-tool-bootstrap/ACQUISITION_RECEIPT.json",
+      "sha256": "659094ce3455842873fad7e456909169c82efc285c104ee84545561ad99476a7",
+      "bytes": 1387,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/local-tool-bootstrap/BOOTSTRAP_PLAN.json",
+      "sha256": "c14bc46b8eff6cf2632d1511ff1fcf6e156677fee35613d000e024f7ad3fc25b",
+      "bytes": 2008,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/local-tool-bootstrap/CASE_SUMMARY.md",
+      "sha256": "e373e193547912132f9f430ff0035154a7e699ab77f0f8026a96b1d6f29a3773",
+      "bytes": 306,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/local-tool-bootstrap/EVIDENCE_INDEX.json",
+      "sha256": "40f82e4d26e4066e500a7f8e6a952c80e53fc7d8de569d4216cc69916c2d5b36",
+      "bytes": 243,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/read-only-cli/CAPABILITY_ROUTE.json",
+      "sha256": "40612e96de2ff7a8c7ad216d1462ad4635708409d71b2c1fd09cba8c842bbf23",
+      "bytes": 608,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/read-only-cli/CASE_SUMMARY.md",
+      "sha256": "5ea3762bf53c2d1f59895b91b0b15670609d4d3800541dc3f445cb61e42bc82a",
+      "bytes": 378,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/read-only-cli/ENVIRONMENT_SNAPSHOT.json",
+      "sha256": "12c0437765c41ab3dcc1e92076fdbed372e023d781c03d0bc18b50065f8b8cd2",
+      "bytes": 1078,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/examples/read-only-cli/READINESS_DECISION.json",
+      "sha256": "41a192a8b2cdd8c18ffdf0e3608cc9a027a21b5c837cb770f7970185cd180227",
+      "bytes": 410,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-worked-case-example",
+      "rationale": "Worked case-projection example (governed-mcp-server, local-tool-bootstrap, read-only-cli) showing the profile's proposed case-folder projection shape (CASE_SUMMARY.md plus JSON receipts/plans/snapshots); illustrative only, no runtime behind it, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/invalid/approval-plan-digest-mismatch.json",
+      "sha256": "7129b6e54db52134d8b128c1a0cfbf7632303e93d7534f0d5da6675c24838a49",
+      "bytes": 2863,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-invalid-fixture-candidate",
+      "rationale": "Worked invalid/negative-case JSON fixture (e.g. embedded-secret, integrity-mismatch, route-authority-escalation, self-promoted-learning); directly encodes the profile's stated invariants (no embedded credentials, no self-escalating authority) as concrete negative test data; CHECKER_CANDIDATE evidence, deferred pending a source-verified checker tranche."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/invalid/embedded-secret.json",
+      "sha256": "f90ad5939a91dd7b3e2ab6c8966632e497c997822477bd81d1058073d782e1f3",
+      "bytes": 140,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-invalid-fixture-candidate",
+      "rationale": "Worked invalid/negative-case JSON fixture (e.g. embedded-secret, integrity-mismatch, route-authority-escalation, self-promoted-learning); directly encodes the profile's stated invariants (no embedded credentials, no self-escalating authority) as concrete negative test data; CHECKER_CANDIDATE evidence, deferred pending a source-verified checker tranche."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/invalid/integrity-mismatch.json",
+      "sha256": "bcebabe222a2236e6fd98c7c5f4555853fd0891dfaa5bf1511da29ac5a3b8b7d",
+      "bytes": 3650,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-invalid-fixture-candidate",
+      "rationale": "Worked invalid/negative-case JSON fixture (e.g. embedded-secret, integrity-mismatch, route-authority-escalation, self-promoted-learning); directly encodes the profile's stated invariants (no embedded credentials, no self-escalating authority) as concrete negative test data; CHECKER_CANDIDATE evidence, deferred pending a source-verified checker tranche."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/invalid/out-of-scope-mutation.json",
+      "sha256": "583f44a68a644ad1f1d0dee879ebf0024858740b9ad52c706a7f39d72c6a7d4a",
+      "bytes": 4532,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-invalid-fixture-candidate",
+      "rationale": "Worked invalid/negative-case JSON fixture (e.g. embedded-secret, integrity-mismatch, route-authority-escalation, self-promoted-learning); directly encodes the profile's stated invariants (no embedded credentials, no self-escalating authority) as concrete negative test data; CHECKER_CANDIDATE evidence, deferred pending a source-verified checker tranche."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/invalid/route-authority-escalation.json",
+      "sha256": "fabdf725c10bbc129923eb90450b6b8e7d724ba4ef27d94d6530a46945832dda",
+      "bytes": 609,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-invalid-fixture-candidate",
+      "rationale": "Worked invalid/negative-case JSON fixture (e.g. embedded-secret, integrity-mismatch, route-authority-escalation, self-promoted-learning); directly encodes the profile's stated invariants (no embedded credentials, no self-escalating authority) as concrete negative test data; CHECKER_CANDIDATE evidence, deferred pending a source-verified checker tranche."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/invalid/self-promoted-learning.json",
+      "sha256": "6a1a5364b7279b4a570947e0f2d10b04f200098c7bec993efaa0383fae3d06ea",
+      "bytes": 793,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-invalid-fixture-candidate",
+      "rationale": "Worked invalid/negative-case JSON fixture (e.g. embedded-secret, integrity-mismatch, route-authority-escalation, self-promoted-learning); directly encodes the profile's stated invariants (no embedded credentials, no self-escalating authority) as concrete negative test data; CHECKER_CANDIDATE evidence, deferred pending a source-verified checker tranche."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/invalid/stale-snapshot.json",
+      "sha256": "6f2ca201c4e6e8d3183b88e8cc7ab791aaca4b728da4cbd5d1bcc2851a5848d6",
+      "bytes": 1079,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-invalid-fixture-candidate",
+      "rationale": "Worked invalid/negative-case JSON fixture (e.g. embedded-secret, integrity-mismatch, route-authority-escalation, self-promoted-learning); directly encodes the profile's stated invariants (no embedded credentials, no self-escalating authority) as concrete negative test data; CHECKER_CANDIDATE evidence, deferred pending a source-verified checker tranche."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/invalid/unverified-source.json",
+      "sha256": "0b3c58ff522fd76366cdc598f8869e61851ba913c0ce14e185ff402aed5b5d37",
+      "bytes": 1925,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-invalid-fixture-candidate",
+      "rationale": "Worked invalid/negative-case JSON fixture (e.g. embedded-secret, integrity-mismatch, route-authority-escalation, self-promoted-learning); directly encodes the profile's stated invariants (no embedded credentials, no self-escalating authority) as concrete negative test data; CHECKER_CANDIDATE evidence, deferred pending a source-verified checker tranche."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/valid/approval-required-mcp-server.json",
+      "sha256": "fa097e0bf7ae619c62a02519b5bcb95989a194c07de76d0d6f4c0cdcb52fadaa",
+      "bytes": 2002,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-valid-fixture-candidate",
+      "rationale": "Worked valid-case JSON fixture (e.g. ready-windows-cli, bootstrap-required-local-tool) illustrating the proposed contract shapes; TEST_CLAIM-maturity fixture with no test runner behind it in this corpus, deferred as CHECKER_CANDIDATE evidence."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/valid/bootstrap-required-local-tool.json",
+      "sha256": "1d23b8174ee9ef7085e6e112e5de3263de51c665275c60725dd5741abfd7e951",
+      "bytes": 1880,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-valid-fixture-candidate",
+      "rationale": "Worked valid-case JSON fixture (e.g. ready-windows-cli, bootstrap-required-local-tool) illustrating the proposed contract shapes; TEST_CLAIM-maturity fixture with no test runner behind it in this corpus, deferred as CHECKER_CANDIDATE evidence."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/valid/ready-windows-cli.json",
+      "sha256": "a6522d212ee1fa52592f4301b91df08ca386df309f0621af69ceffc650f2d01c",
+      "bytes": 1898,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-valid-fixture-candidate",
+      "rationale": "Worked valid-case JSON fixture (e.g. ready-windows-cli, bootstrap-required-local-tool) illustrating the proposed contract shapes; TEST_CLAIM-maturity fixture with no test runner behind it in this corpus, deferred as CHECKER_CANDIDATE evidence."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/valid/restricted-network-block.json",
+      "sha256": "5e5006be9e8a53c1169593f74c9ad0fb7c4f950936b3f25d11c348ddbcf6ff62",
+      "bytes": 1975,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-valid-fixture-candidate",
+      "rationale": "Worked valid-case JSON fixture (e.g. ready-windows-cli, bootstrap-required-local-tool) illustrating the proposed contract shapes; TEST_CLAIM-maturity fixture with no test runner behind it in this corpus, deferred as CHECKER_CANDIDATE evidence."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/valid/reviewed-learning-candidate.json",
+      "sha256": "d3b8238f567458cc10fa89c3f1bb0cc9aed62e8e1258ddc4af231556cca158c4",
+      "bytes": 787,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-valid-fixture-candidate",
+      "rationale": "Worked valid-case JSON fixture (e.g. ready-windows-cli, bootstrap-required-local-tool) illustrating the proposed contract shapes; TEST_CLAIM-maturity fixture with no test runner behind it in this corpus, deferred as CHECKER_CANDIDATE evidence."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/fixtures/valid/successful-acquisition-receipt.json",
+      "sha256": "0511bda22cbbb5a48111c92520bb5d9efd3370a9497038f78fc92c9de48348ba",
+      "bytes": 4364,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-valid-fixture-candidate",
+      "rationale": "Worked valid-case JSON fixture (e.g. ready-windows-cli, bootstrap-required-local-tool) illustrating the proposed contract shapes; TEST_CLAIM-maturity fixture with no test runner behind it in this corpus, deferred as CHECKER_CANDIDATE evidence."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/policies/CVF_CAPABILITY_BOOTSTRAP_APPROVAL_POLICY.md",
+      "sha256": "7e4c749012ae6a5d42cf93323cb44096bc56b71b07be413c0716f8fbc9e2e5b9",
+      "bytes": 989,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-policy-design",
+      "rationale": "Design-phase policy document (approval / learning-promotion / authority / repair-stop / route-ambiguity / secret-redaction / snapshot-freshness / source-integrity); doctrine-shaped, no runtime enforcement exists, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/policies/CVF_CAPABILITY_LEARNING_PROMOTION_POLICY.md",
+      "sha256": "1f49bdf6cf923447203dce4b53606aed7e4cdc32e986c01308e1662636209cbb",
+      "bytes": 894,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-policy-design",
+      "rationale": "Design-phase policy document (approval / learning-promotion / authority / repair-stop / route-ambiguity / secret-redaction / snapshot-freshness / source-integrity); doctrine-shaped, no runtime enforcement exists, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/policies/CVF_CAPABILITY_PREFLIGHT_AUTHORITY_POLICY.md",
+      "sha256": "ee4a4ccb55355a41a5f27554b8665cee0ccbfbd7d659cce44dedc99229f717ea",
+      "bytes": 1043,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-policy-design",
+      "rationale": "Design-phase policy document (approval / learning-promotion / authority / repair-stop / route-ambiguity / secret-redaction / snapshot-freshness / source-integrity); doctrine-shaped, no runtime enforcement exists, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/policies/CVF_CAPABILITY_REPAIR_STOP_POLICY.md",
+      "sha256": "6f434911ee3c4f5d62fe1a6895ba848cb4cf4d6b4f47241d39200513b20a8b38",
+      "bytes": 921,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-policy-design",
+      "rationale": "Design-phase policy document (approval / learning-promotion / authority / repair-stop / route-ambiguity / secret-redaction / snapshot-freshness / source-integrity); doctrine-shaped, no runtime enforcement exists, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/policies/CVF_CAPABILITY_ROUTE_AMBIGUITY_POLICY.md",
+      "sha256": "5bcc80f054a15bd87dfed6d75eb0454703a1a3284661b33a5691cd87b835348b",
+      "bytes": 987,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-policy-design",
+      "rationale": "Design-phase policy document (approval / learning-promotion / authority / repair-stop / route-ambiguity / secret-redaction / snapshot-freshness / source-integrity); doctrine-shaped, no runtime enforcement exists, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/policies/CVF_CAPABILITY_SECRET_REDACTION_POLICY.md",
+      "sha256": "50a59ed078255eb18847c8a282c644d445a59ca9d1af47cf1b57889e58e44546",
+      "bytes": 883,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-policy-design",
+      "rationale": "Design-phase policy document (approval / learning-promotion / authority / repair-stop / route-ambiguity / secret-redaction / snapshot-freshness / source-integrity); doctrine-shaped, no runtime enforcement exists, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/policies/CVF_CAPABILITY_SNAPSHOT_FRESHNESS_POLICY.md",
+      "sha256": "93503196d809589200610a5a3dd9a9cf3d4b63dc2257b5c4c680fc7f9c3c60d6",
+      "bytes": 927,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-policy-design",
+      "rationale": "Design-phase policy document (approval / learning-promotion / authority / repair-stop / route-ambiguity / secret-redaction / snapshot-freshness / source-integrity); doctrine-shaped, no runtime enforcement exists, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/policies/CVF_CAPABILITY_SOURCE_INTEGRITY_POLICY.md",
+      "sha256": "d538aa2dfb8c7c9b89e32708bee58547d2042c859a3e21a5f00dccae10719e1b",
+      "bytes": 936,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-policy-design",
+      "rationale": "Design-phase policy document (approval / learning-promotion / authority / repair-stop / route-ambiguity / secret-redaction / snapshot-freshness / source-integrity); doctrine-shaped, no runtime enforcement exists, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/profiles/linux-local.profile.json",
+      "sha256": "dc99aba8ce347a5aa1db92ed2b3cf40817a7afa2d48f84769335ff6e1e119173",
+      "bytes": 498,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-platform-profile-candidate",
+      "rationale": "Platform-specific (windows/linux/macos/offline/restricted-network) local profile JSON; RUNTIME_CANDIDATE-shaped configuration data, not consumed by any runtime in this corpus, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/profiles/macos-local.profile.json",
+      "sha256": "83933c1d85a68cc208288b51bbac020418d3b980fd1ff918cf01b43ca46960a3",
+      "bytes": 548,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-platform-profile-candidate",
+      "rationale": "Platform-specific (windows/linux/macos/offline/restricted-network) local profile JSON; RUNTIME_CANDIDATE-shaped configuration data, not consumed by any runtime in this corpus, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/profiles/offline-local.profile.json",
+      "sha256": "fa27a6ff87a68539060cdefaf3899f0c9f6b73442c08cfb1f6de091a7039e1cc",
+      "bytes": 457,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-platform-profile-candidate",
+      "rationale": "Platform-specific (windows/linux/macos/offline/restricted-network) local profile JSON; RUNTIME_CANDIDATE-shaped configuration data, not consumed by any runtime in this corpus, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/profiles/restricted-network.profile.json",
+      "sha256": "788ac3e38a8a7b07791900855d99b24b5cf642d4106188c7edbfdf2f092a571a",
+      "bytes": 511,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-platform-profile-candidate",
+      "rationale": "Platform-specific (windows/linux/macos/offline/restricted-network) local profile JSON; RUNTIME_CANDIDATE-shaped configuration data, not consumed by any runtime in this corpus, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/profiles/windows-local.profile.json",
+      "sha256": "eef14e3e69049b58f3797497c98861b7a7dadf4e751003aea404d1e9939b63b4",
+      "bytes": 628,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-platform-profile-candidate",
+      "rationale": "Platform-specific (windows/linux/macos/offline/restricted-network) local profile JSON; RUNTIME_CANDIDATE-shaped configuration data, not consumed by any runtime in this corpus, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/schemas/capability-acquisition-receipt.schema.json",
+      "sha256": "dec1c3d0c50d62b28c97ebc4dac87f18f1a472b4a5fcef7cba685cf2ef100d31",
+      "bytes": 4125,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-json-schema-candidate",
+      "rationale": "JSON Schema for a proposed contract type; CHECKER_CANDIDATE/PACKAGE_CANDIDATE-shaped structural definition, not wired to any validator or runtime, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/schemas/capability-bootstrap-approval.schema.json",
+      "sha256": "7e37cc41d1693afb2165127cbe462af495b9f5fea3980a6e793589e8fb75e44c",
+      "bytes": 2066,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-json-schema-candidate",
+      "rationale": "JSON Schema for a proposed contract type; CHECKER_CANDIDATE/PACKAGE_CANDIDATE-shaped structural definition, not wired to any validator or runtime, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/schemas/capability-bootstrap-plan.schema.json",
+      "sha256": "9fab5b55aae4d9e40cf52fc3e57f21db0b5bdc43d23866842936b783b3874546",
+      "bytes": 5579,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-json-schema-candidate",
+      "rationale": "JSON Schema for a proposed contract type; CHECKER_CANDIDATE/PACKAGE_CANDIDATE-shaped structural definition, not wired to any validator or runtime, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/schemas/capability-candidate-set.schema.json",
+      "sha256": "03cd64a391ac030e71b996044eb0bd203c45ea75eac2055046db9f047d681b46",
+      "bytes": 2148,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-json-schema-candidate",
+      "rationale": "JSON Schema for a proposed contract type; CHECKER_CANDIDATE/PACKAGE_CANDIDATE-shaped structural definition, not wired to any validator or runtime, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/schemas/capability-environment-snapshot.schema.json",
+      "sha256": "b32920e9a6136fbb8cf262c576a4108ce5839386df2b6c765290a61a44eae3ec",
+      "bytes": 5365,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-json-schema-candidate",
+      "rationale": "JSON Schema for a proposed contract type; CHECKER_CANDIDATE/PACKAGE_CANDIDATE-shaped structural definition, not wired to any validator or runtime, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/schemas/capability-learning-candidate.schema.json",
+      "sha256": "e0834efc80e657397877541ef9eb409efe25141ed31b06695c8cb0a9c31462ad",
+      "bytes": 2061,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-json-schema-candidate",
+      "rationale": "JSON Schema for a proposed contract type; CHECKER_CANDIDATE/PACKAGE_CANDIDATE-shaped structural definition, not wired to any validator or runtime, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/schemas/capability-readiness-decision.schema.json",
+      "sha256": "230c5e64a4bfbcef9d0abc0a30de31df5442ecb9d2357ae518710f02e771fe86",
+      "bytes": 1641,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-json-schema-candidate",
+      "rationale": "JSON Schema for a proposed contract type; CHECKER_CANDIDATE/PACKAGE_CANDIDATE-shaped structural definition, not wired to any validator or runtime, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/schemas/capability-route-decision.schema.json",
+      "sha256": "43194e0cfd5a5df149ae5d757e5ef96b3119435ca72d33e1661fdce1862a064e",
+      "bytes": 2594,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-json-schema-candidate",
+      "rationale": "JSON Schema for a proposed contract type; CHECKER_CANDIDATE/PACKAGE_CANDIDATE-shaped structural definition, not wired to any validator or runtime, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/schemas/capability-runtime-case.schema.json",
+      "sha256": "b03b25588976e97c245d80bf702faf53ddb0396135d1dd1318060cc3369418ca",
+      "bytes": 1458,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-json-schema-candidate",
+      "rationale": "JSON Schema for a proposed contract type; CHECKER_CANDIDATE/PACKAGE_CANDIDATE-shaped structural definition, not wired to any validator or runtime, deferred."
+    },
+    {
+      "path": "docs/reference/capability_preflight_bootstrap/schemas/domain-evidence-projection.schema.json",
+      "sha256": "471607cf26d0a52c50ab4c39d9b19b09ad2cd7c0726adab1707112db89fea644",
+      "bytes": 3700,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-json-schema-candidate",
+      "rationale": "JSON Schema for a proposed contract type; CHECKER_CANDIDATE/PACKAGE_CANDIDATE-shaped structural definition, not wired to any validator or runtime, deferred."
+    },
+    {
+      "path": "docs/reviews/capability_preflight_bootstrap/BOOTSTRAP_REVIEW.md",
+      "sha256": "b91af948edcc0442823cebeca5a05d52c04703e3225bd63ad5d51cd117701210",
+      "bytes": 527,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-review-scaffold",
+      "rationale": "Proposal-authored review-shaped draft; not independently reviewed or accepted CVF evidence."
+    },
+    {
+      "path": "docs/reviews/capability_preflight_bootstrap/CONTRACT_REVIEW.md",
+      "sha256": "52cab5a50acfd53bc24833f93f54ea145b1ec048e72abd83d010e330eeee4e05",
+      "bytes": 497,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-review-scaffold",
+      "rationale": "Proposal-authored review-shaped draft; not independently reviewed or accepted CVF evidence."
+    },
+    {
+      "path": "docs/reviews/capability_preflight_bootstrap/FINAL_CLOSURE_REVIEW.md",
+      "sha256": "387ee5c9a34f62eb378e063d2f389a68fe980ec6d713eed9c11ea4460bfab6bc",
+      "bytes": 494,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "READ",
+      "semanticGroup": "proposal-review-scaffold-unfilled",
+      "rationale": "Empty review scaffold with Status: REVIEW_REQUIRED and no reviewer, base commit, changed-set, or disposition filled in; independently confirms the proposal has never been reviewed or accepted, per work order Source Verification row."
+    },
+    {
+      "path": "docs/reviews/capability_preflight_bootstrap/PREFLIGHT_REVIEW.md",
+      "sha256": "90601b063d8710f6064d97c4646b01b53270642c8ed6128203a567bfe3964400",
+      "bytes": 527,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-review-scaffold",
+      "rationale": "Proposal-authored review-shaped draft; not independently reviewed or accepted CVF evidence."
+    },
+    {
+      "path": "docs/reviews/capability_preflight_bootstrap/PROJECTION_REVIEW.md",
+      "sha256": "3461fd3e52d967cf992cc96f24ac14899bb3d21d1236cea50bbbe843217d6c09",
+      "bytes": 512,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-review-scaffold",
+      "rationale": "Proposal-authored review-shaped draft; not independently reviewed or accepted CVF evidence."
+    },
+    {
+      "path": "docs/reviews/capability_preflight_bootstrap/README.md",
+      "sha256": "508bd64b46554cd8844155a96384885ac65bde25af0fb94f146fb6093e1b7087",
+      "bytes": 159,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-review-scaffold",
+      "rationale": "Proposal-authored review-shaped draft; not independently reviewed or accepted CVF evidence."
+    },
+    {
+      "path": "docs/roadmaps/CVF_CAPABILITY_PREFLIGHT_BOOTSTRAP_ROADMAP.md",
+      "sha256": "8692b995c4888d338effebe30992753de62c582ab0d3a4d55fd40f7f0a38fc4a",
+      "bytes": 1959,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-roadmap-scaffold",
+      "rationale": "Proposal-authored roadmap draft for its own phased implementation; not an accepted CVF roadmap, deferred pending value/cost decision."
+    },
+    {
+      "path": "docs/work_orders/capability_preflight_bootstrap/PHASE_1_CONTRACT_WORK_ORDER.md",
+      "sha256": "929dd7be69438c541b482a1f3bcd7fe1e9c1dc184315c94dd6160a0d624f17f7",
+      "bytes": 1153,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-work-order-scaffold",
+      "rationale": "Proposal-authored work-order-shaped drafts for its own future implementation phases; not dispatched, not accepted, deferred pending this audit's value/cost decision."
+    },
+    {
+      "path": "docs/work_orders/capability_preflight_bootstrap/PHASE_2_PREFLIGHT_WORK_ORDER.md",
+      "sha256": "5107f942328b5bc5c062b3dd777e25e6d71e638740306e43422d170b2197699d",
+      "bytes": 1145,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-work-order-scaffold",
+      "rationale": "Proposal-authored work-order-shaped drafts for its own future implementation phases; not dispatched, not accepted, deferred pending this audit's value/cost decision."
+    },
+    {
+      "path": "docs/work_orders/capability_preflight_bootstrap/PHASE_3_BOOTSTRAP_WORK_ORDER.md",
+      "sha256": "809e1959fbe304ea20b22ed7f6c7a6703c97deb9ee01a2a1038b5fdddbfedf8a",
+      "bytes": 1187,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-work-order-scaffold",
+      "rationale": "Proposal-authored work-order-shaped drafts for its own future implementation phases; not dispatched, not accepted, deferred pending this audit's value/cost decision."
+    },
+    {
+      "path": "docs/work_orders/capability_preflight_bootstrap/PHASE_4_PROJECTION_WORK_ORDER.md",
+      "sha256": "53758e131e26ad68cfe538c89efd23bdbcb88377f7cd0d049fd7d11e1c5e43f9",
+      "bytes": 1192,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-work-order-scaffold",
+      "rationale": "Proposal-authored work-order-shaped drafts for its own future implementation phases; not dispatched, not accepted, deferred pending this audit's value/cost decision."
+    },
+    {
+      "path": "docs/work_orders/capability_preflight_bootstrap/PHASE_5_CLOSURE_WORK_ORDER.md",
+      "sha256": "a281f2786d2819f6d03d4572797398afa718f22ab5fa4309965b7534c7a61ab6",
+      "bytes": 1096,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-work-order-scaffold",
+      "rationale": "Proposal-authored work-order-shaped drafts for its own future implementation phases; not dispatched, not accepted, deferred pending this audit's value/cost decision."
+    },
+    {
+      "path": "docs/work_orders/capability_preflight_bootstrap/README.md",
+      "sha256": "71cf7ad883362d0f23af804023a93638e39d1521172af831e000ed24b44abb22",
+      "bytes": 299,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-work-order-scaffold",
+      "rationale": "Proposal-authored work-order-shaped drafts for its own future implementation phases; not dispatched, not accepted, deferred pending this audit's value/cost decision."
+    },
+    {
+      "path": "governance/compat/check_capability_bootstrap_integrity.py",
+      "sha256": "ec71b46899a8eea2aba763930c20c44344101c4e790948f0252f26bfbdeb8f6c",
+      "bytes": 1760,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/check_capability_bootstrap_plan_binding.py",
+      "sha256": "c74471306df25df5fb79e4749fd56c231c01a2c34fa5321020d0c287ba7c5540",
+      "bytes": 1833,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/check_capability_bootstrap_receipt.py",
+      "sha256": "0d95100db04bbc205e0bf59ea0183d9efa31b0a31e9f27627b75ce7f2b18c09b",
+      "bytes": 2079,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/check_capability_bootstrap_secret_safety.py",
+      "sha256": "f1146451ba313ece7e49c26e6cf3b8345394eb581f834ec74505a8b6b4456886",
+      "bytes": 1903,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/check_capability_learning_promotion.py",
+      "sha256": "77df3bcd3892c89b5bb8da4429a54a8c58f0fbe0ed1ee8c0da280e73a7e05eef",
+      "bytes": 1744,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/check_capability_preflight_contract.py",
+      "sha256": "33628d1ea06dd67626939b8639195c07d0956e6b095a93a4f5c9bd0d439768ee",
+      "bytes": 3398,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/check_capability_projection_authority.py",
+      "sha256": "e3077b6c38e9452911bb8f58be3a3badf0c16af3e03aef6843f76754ef2fd38d",
+      "bytes": 1907,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/check_capability_repair_stop.py",
+      "sha256": "fa457ffe00dd4fadf728bcb4dd22faf0b3d9077c502727b37fdede01695b4a3b",
+      "bytes": 2155,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/check_capability_route_authority_separation.py",
+      "sha256": "5684252896d0569292e431285bfc8e947bf47a391092d7a1b7ebad688070d935",
+      "bytes": 1350,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/check_capability_snapshot_freshness.py",
+      "sha256": "45deb41d723c8c6c6440d179f3bf718252cbfa37861a19ada27e831cd50868e6",
+      "bytes": 1638,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/invalid/approval-plan-digest-mismatch.json",
+      "sha256": "7129b6e54db52134d8b128c1a0cfbf7632303e93d7534f0d5da6675c24838a49",
+      "bytes": 2863,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/invalid/embedded-secret.json",
+      "sha256": "f90ad5939a91dd7b3e2ab6c8966632e497c997822477bd81d1058073d782e1f3",
+      "bytes": 140,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/invalid/integrity-mismatch.json",
+      "sha256": "bcebabe222a2236e6fd98c7c5f4555853fd0891dfaa5bf1511da29ac5a3b8b7d",
+      "bytes": 3650,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/invalid/out-of-scope-mutation.json",
+      "sha256": "583f44a68a644ad1f1d0dee879ebf0024858740b9ad52c706a7f39d72c6a7d4a",
+      "bytes": 4532,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/invalid/route-authority-escalation.json",
+      "sha256": "fabdf725c10bbc129923eb90450b6b8e7d724ba4ef27d94d6530a46945832dda",
+      "bytes": 609,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/invalid/self-promoted-learning.json",
+      "sha256": "6a1a5364b7279b4a570947e0f2d10b04f200098c7bec993efaa0383fae3d06ea",
+      "bytes": 793,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/invalid/stale-snapshot.json",
+      "sha256": "6f2ca201c4e6e8d3183b88e8cc7ab791aaca4b728da4cbd5d1bcc2851a5848d6",
+      "bytes": 1079,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/invalid/unverified-source.json",
+      "sha256": "0b3c58ff522fd76366cdc598f8869e61851ba913c0ce14e185ff402aed5b5d37",
+      "bytes": 1925,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/valid/approval-required-mcp-server.json",
+      "sha256": "fa097e0bf7ae619c62a02519b5bcb95989a194c07de76d0d6f4c0cdcb52fadaa",
+      "bytes": 2002,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/valid/bootstrap-required-local-tool.json",
+      "sha256": "1d23b8174ee9ef7085e6e112e5de3263de51c665275c60725dd5741abfd7e951",
+      "bytes": 1880,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/valid/ready-windows-cli.json",
+      "sha256": "a6522d212ee1fa52592f4301b91df08ca386df309f0621af69ceffc650f2d01c",
+      "bytes": 1898,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/valid/restricted-network-block.json",
+      "sha256": "5e5006be9e8a53c1169593f74c9ad0fb7c4f950936b3f25d11c348ddbcf6ff62",
+      "bytes": 1975,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/valid/reviewed-learning-candidate.json",
+      "sha256": "d3b8238f567458cc10fa89c3f1bb0cc9aed62e8e1258ddc4af231556cca158c4",
+      "bytes": 787,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "governance/compat/fixtures/capability_preflight/valid/successful-acquisition-receipt.json",
+      "sha256": "0511bda22cbbb5a48111c92520bb5d9efd3370a9497038f78fc92c9de48348ba",
+      "bytes": 4364,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-checker-candidate-code",
+      "rationale": "Proposal-authored candidate governance checker Python source; unreviewed, not wired into the actual governance/compat/ hook chain; CHECKER_CANDIDATE classification, no checker wiring performed."
+    },
+    {
+      "path": "scripts/check_cvf_capability_preflight_bundle.py",
+      "sha256": "5ac070e3e409109fb7ff1c7eb6ae53c439ed2d36cba0a9fb37dfd5f37f89193f",
+      "bytes": 2153,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "proposal-executable-script-candidate",
+      "rationale": "Proposal-authored executable Python/PowerShell/Bash scripts for capability preflight/bootstrap/acquisition; not executed under this work order's no-execution boundary; direct import/activation rejected pending a fresh implementation work order."
+    },
+    {
+      "path": "scripts/cvf-capability-bootstrap.ps1",
+      "sha256": "dd4168d273ba917b9abe8be35b76ed52e0e04361d2045ba673e94444ff2880bc",
+      "bytes": 483,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "proposal-executable-script-candidate",
+      "rationale": "Proposal-authored executable Python/PowerShell/Bash scripts for capability preflight/bootstrap/acquisition; not executed under this work order's no-execution boundary; direct import/activation rejected pending a fresh implementation work order."
+    },
+    {
+      "path": "scripts/cvf-capability-bootstrap.sh",
+      "sha256": "e3a4f5aeb2071543a7941237061ee0bd6f43f1b60566b6de7b0c9164dd867d41",
+      "bytes": 146,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "proposal-executable-script-candidate",
+      "rationale": "Proposal-authored executable Python/PowerShell/Bash scripts for capability preflight/bootstrap/acquisition; not executed under this work order's no-execution boundary; direct import/activation rejected pending a fresh implementation work order."
+    },
+    {
+      "path": "scripts/cvf-capability-preflight.ps1",
+      "sha256": "6595396054ec8e3c49bc8e52a2fbf5579ce520b62e1b8dc47e7a0e30e6606b77",
+      "bytes": 498,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "proposal-executable-script-candidate",
+      "rationale": "Proposal-authored executable Python/PowerShell/Bash scripts for capability preflight/bootstrap/acquisition; not executed under this work order's no-execution boundary; direct import/activation rejected pending a fresh implementation work order."
+    },
+    {
+      "path": "scripts/cvf-capability-preflight.sh",
+      "sha256": "6ad68aedd91ed2e6167b27785fb0c867884337e884ee21231a73a979206e5cb8",
+      "bytes": 146,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "proposal-executable-script-candidate",
+      "rationale": "Proposal-authored executable Python/PowerShell/Bash scripts for capability preflight/bootstrap/acquisition; not executed under this work order's no-execution boundary; direct import/activation rejected pending a fresh implementation work order."
+    },
+    {
+      "path": "scripts/export_cvf_capability_case.py",
+      "sha256": "5026758e277f060c25a3f6d928f295506258ef6635e23adbdd0466a0e11731f3",
+      "bytes": 2870,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "proposal-executable-script-candidate",
+      "rationale": "Proposal-authored executable Python/PowerShell/Bash scripts for capability preflight/bootstrap/acquisition; not executed under this work order's no-execution boundary; direct import/activation rejected pending a fresh implementation work order."
+    },
+    {
+      "path": "scripts/inspect_cvf_capability_environment.py",
+      "sha256": "9b08d74ae8395baf69d51f6eaea022668da074ce594ea05650e6d79a604a6547",
+      "bytes": 2592,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "proposal-executable-script-candidate",
+      "rationale": "Proposal-authored executable Python/PowerShell/Bash scripts for capability preflight/bootstrap/acquisition; not executed under this work order's no-execution boundary; direct import/activation rejected pending a fresh implementation work order."
+    },
+    {
+      "path": "scripts/run_cvf_capability_bootstrap.py",
+      "sha256": "44e099da22897fe09cae42a0ce76b0851b5b93d068c01f2cd84a345633d8b4a6",
+      "bytes": 6381,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "proposal-executable-script-candidate",
+      "rationale": "Proposal-authored executable Python/PowerShell/Bash scripts for capability preflight/bootstrap/acquisition; not executed under this work order's no-execution boundary; direct import/activation rejected pending a fresh implementation work order."
+    },
+    {
+      "path": "scripts/run_cvf_capability_preflight.py",
+      "sha256": "fd7e04d17ebac78280cd7c80010ba60b05d0736535fe10ed2855f52dc9b01eb3",
+      "bytes": 6686,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "proposal-executable-script-candidate",
+      "rationale": "Proposal-authored executable Python/PowerShell/Bash scripts for capability preflight/bootstrap/acquisition; not executed under this work order's no-execution boundary; direct import/activation rejected pending a fresh implementation work order."
+    },
+    {
+      "path": "scripts/verify_cvf_capability_acquisition.py",
+      "sha256": "3ae1c2c9c6dc8f8de6592400527b5df81b7a1b2d19cec2006e11be0fc961ca4e",
+      "bytes": 2036,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "proposal-executable-script-candidate",
+      "rationale": "Proposal-authored executable Python/PowerShell/Bash scripts for capability preflight/bootstrap/acquisition; not executed under this work order's no-execution boundary; direct import/activation rejected pending a fresh implementation work order."
+    },
+    {
+      "path": "workspace_templates/capability_preflight/README.md",
+      "sha256": "a71d27f1af2644c4b0433c2ec1b46e6a638ef7ac5f783c6c60385591b7ebe02b",
+      "bytes": 356,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-workspace-template-candidate",
+      "rationale": "Proposal-authored workspace-template scaffold for a future Capability Preflight workspace; not an accepted CVF workspace template."
+    },
+    {
+      "path": "workspace_templates/capability_preflight/offline-local/BOOTSTRAP_POLICY.json",
+      "sha256": "f67970e293d2e4be0e51cd23704400fd8de673da486f54c0f8c1ef06d00ce7d7",
+      "bytes": 246,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-workspace-template-candidate",
+      "rationale": "Proposal-authored workspace-template scaffold for a future Capability Preflight workspace; not an accepted CVF workspace template."
+    },
+    {
+      "path": "workspace_templates/capability_preflight/offline-local/CAPABILITY_PROFILE.json",
+      "sha256": "28007b3c2db9b3d65efbc75a87965766d25ddb4fda1ebe1c9494b3539f4cef7d",
+      "bytes": 551,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-workspace-template-candidate",
+      "rationale": "Proposal-authored workspace-template scaffold for a future Capability Preflight workspace; not an accepted CVF workspace template."
+    },
+    {
+      "path": "workspace_templates/capability_preflight/restricted-network/BOOTSTRAP_POLICY.json",
+      "sha256": "4a82fbb7c0686c3eac165170b00c0959250d5c07f9d2952b28ec1c4af52d4ed3",
+      "bytes": 260,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-workspace-template-candidate",
+      "rationale": "Proposal-authored workspace-template scaffold for a future Capability Preflight workspace; not an accepted CVF workspace template."
+    },
+    {
+      "path": "workspace_templates/capability_preflight/restricted-network/CAPABILITY_PROFILE.json",
+      "sha256": "42a454615c3435c853d0b5ee100a0493fa36e4520eaa0b318a1fa08992344fb4",
+      "bytes": 619,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-workspace-template-candidate",
+      "rationale": "Proposal-authored workspace-template scaffold for a future Capability Preflight workspace; not an accepted CVF workspace template."
+    },
+    {
+      "path": "workspace_templates/capability_preflight/windows-local/BOOTSTRAP_POLICY.json",
+      "sha256": "6fcf2a844faa26199a94488f7005f0c8b99abf85923db2a3032d6c02bda353e4",
+      "bytes": 464,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-workspace-template-candidate",
+      "rationale": "Proposal-authored workspace-template scaffold for a future Capability Preflight workspace; not an accepted CVF workspace template."
+    },
+    {
+      "path": "workspace_templates/capability_preflight/windows-local/CAPABILITY_PROFILE.json",
+      "sha256": "e32a27a29a738bb7704564099e0d63c15552f287996a2e108879c119cc52cf5f",
+      "bytes": 667,
+      "mediaClass": "TEXT",
+      "corpusRole": "SECONDARY_PROPOSAL_INTERPRETATION",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "proposal-workspace-template-candidate",
+      "rationale": "Proposal-authored workspace-template scaffold for a future Capability Preflight workspace; not an accepted CVF workspace template."
+    }
+  ]
+}
