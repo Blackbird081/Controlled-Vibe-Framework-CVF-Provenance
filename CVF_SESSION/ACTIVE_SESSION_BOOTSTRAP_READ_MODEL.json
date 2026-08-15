@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred",
+  "currentMode": "cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_dispatched_worker_must_not_commit",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Treat CADP-AI-T5-R5 as independently accepted bounded at material commit 6284e5bd1. Do not add a CADP route or registry row until the operator selects a concrete product route and a fresh governed route-adoption packet bounds ownership, tests, and registry effects. Provider/live/network, credentials, public sync, deployment, and production remain parked. The next safe move is operator selection or proposal of the next bounded tranche; latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute CADP-AI-T5-R6 from the committed documentation-only packet at 5110ea55d. The worker may write only the named decision and worker-return files and must not commit. Select PROCEED_BOUNDED_SYSTEM_CHAIN only if every mandatory gate passes and the sensitivity-tested value margin is at least 12; otherwise select STOP_LOW_VALUE or BLOCKED_MISSING_PREREQUISITE. No route, registry row, runtime mutation, provider/live/network access, credentials, public sync, deployment, or production work is authorized. Independent review and any material commit remain reviewer/closer-owned; latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_2026-08-15.md",
-    "baselineSha256": "6f0d5114dd3d1b129c6f28bf41c037720f66ac07914e7ffb0248c670d01bd951",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_2026-08-15.md",
-    "workOrderSha256": "fa0e273280cc9eecb738f28d50769ec63a3511e88f37be228e9faee90f59be8e"
+    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_2026-08-15.md",
+    "baselineSha256": "89ccdd11c293ac4879fd93b89730f3d9e772dd77a8b2fe77178cea98c0fc1003",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_2026-08-15.md",
+    "workOrderSha256": "743c31c4ae37134561e1ac7f8141e305ad3ac4a4fb75d19f074256007a9de9e2"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

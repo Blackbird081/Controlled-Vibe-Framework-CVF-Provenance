@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_2026-08-15.md",
-    "baselineSha256": "6f0d5114dd3d1b129c6f28bf41c037720f66ac07914e7ffb0248c670d01bd951",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R5_AUTHENTICATION_COMPOSITION_IMPLEMENTATION_2026-08-15.md",
-    "workOrderSha256": "fa0e273280cc9eecb738f28d50769ec63a3511e88f37be228e9faee90f59be8e"
+    "baselinePath": "docs/baselines/CVF_GC018_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_2026-08-15.md",
+    "baselineSha256": "89ccdd11c293ac4879fd93b89730f3d9e772dd77a8b2fe77178cea98c0fc1003",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CADP_AI_T5_R6_READ_ONLY_AUTHORIZATION_AND_CONSUMER_VALUE_SEAM_2026-08-15.md",
+    "workOrderSha256": "743c31c4ae37134561e1ac7f8141e305ad3ac4a4fb75d19f074256007a9de9e2"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred",
-  "previousMode": "cadp_ai_t5_r5_authentication_composition_implementation_dispatched_worker_must_not_commit",
+  "currentMode": "cadp_ai_t5_r6_read_only_authorization_consumer_value_decision_dispatched_worker_must_not_commit",
+  "previousMode": "cadp_ai_t5_r5_authentication_composition_implementation_accepted_bounded_route_registration_deferred",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -14914,5 +14914,6 @@
   "cadpAiT5R4AuthenticationCompositionContractHardeningClosure20260815": "CADP-AI-T5-R4 authentication composition contract hardening is independently accepted bounded at material commit af2f425d8. The operator selected Option A, CADP_FAIL_CLOSED_ON_INVALID_TOKEN: a presented invalid service token must deny rather than fall through to a valid session for CADP. Reviewer repairs made source paths repo-local, reconciled five existing focused-test rows, and bounded the later implementation to exact manifest items 1-5 while deferring any registry row and product route to a separate route-specific packet. READY_FOR_BOUNDED_IMPLEMENTATION does not itself authorize source, test, authentication, runtime, provider/live/network, credential, public-sync, deployment, or production work.",
   "cadpAiT5R5AuthenticationCompositionImplementationDispatch20260815": "CADP-AI-T5-R5 source/test authentication composition implementation is dispatched at material commit 575008888. The later WORKER_MUST_NOT_COMMIT phase may modify exactly ten source/test paths and create the named worker return. It must remove the service-token test bypass, inject deterministic proof time, enforce Option A CADP_FAIL_CLOSED_ON_INVALID_TOKEN through a CADP-only wrapper, add fail-closed non-test/non-development Auth.js environment validation, and add a separate literal-false CADP authorization projection. A CADP route or registry row, durable persistence, provider/live/network, credential access, public sync, deployment, production, and worker commit remain forbidden.",
   "cadpAiT5R5AuthenticationCompositionImplementationAccepted20260815": "CADP-AI-T5-R5 authentication composition implementation is independently accepted bounded after reviewer repairs at material commit 6284e5bd1. The accepted code removes the service-token test bypass, injects deterministic proof time, enforces Option A CADP_FAIL_CLOSED_ON_INVALID_TOKEN through the CADP-only wrapper, fails Auth.js module initialization closed outside test/development when required configuration is missing, and provides a separate literal-false CADP authorization projection. TypeScript passed, five focused files passed 34/34 tests, CADP drift checked 5 surfaces with 0 violations, reviewer-fast passed 63/63, and pre-commit passed 84/84. No CADP route or registry row was added; route/registry, provider/live/network, credentials, public sync, deployment, and production remain parked.",
-  "nextAllowedMove": "Treat CADP-AI-T5-R5 as independently accepted bounded at material commit 6284e5bd1. Do not add a CADP route or registry row until the operator selects a concrete product route and a fresh governed route-adoption packet bounds ownership, tests, and registry effects. Provider/live/network, credentials, public sync, deployment, and production remain parked. The next safe move is operator selection or proposal of the next bounded tranche; latest closed numbered LHW wave remains LHW24."
+  "cadpAiT5R6ReadOnlyAuthorizationConsumerValueDecisionDispatch20260815": "CADP-AI-T5-R6 is dispatched at material commit 5110ea55d as a documentation-only, WORKER_MUST_NOT_COMMIT value/cost decision. Proceed only if all eight mandatory gates pass and the sensitivity-tested value margin is at least 12; otherwise STOP_LOW_VALUE or BLOCKED_MISSING_PREREQUISITE. No route, registry row, runtime mutation, provider/live/network access, credentials, public sync, deployment, or production work is authorized.",
+  "nextAllowedMove": "Execute CADP-AI-T5-R6 from the committed documentation-only packet at 5110ea55d. The worker may write only the named decision and worker-return files and must not commit. Select PROCEED_BOUNDED_SYSTEM_CHAIN only if every mandatory gate passes and the sensitivity-tested value margin is at least 12; otherwise select STOP_LOW_VALUE or BLOCKED_MISSING_PREREQUISITE. No route, registry row, runtime mutation, provider/live/network access, credentials, public sync, deployment, or production work is authorized. Independent review and any material commit remain reviewer/closer-owned; latest closed numbered LHW wave remains LHW24."
 }
