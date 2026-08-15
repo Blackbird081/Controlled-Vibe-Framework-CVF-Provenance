@@ -209,7 +209,7 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 | architecture catalog | DEFER_PENDING_ACCEPTANCE | add CADP composition capability only after T1 review | pending, not as-built |
 | system-chain GAP | UPDATE_EXISTING after review | F05/F06 and adapter boundaries remain planned | pending gap |
 | Guard Contract README/index | UPDATE_EXISTING in T1 review repair if required | barrel export exists; README claim waits for tests | pending |
-| conditional reopen index | UPDATE_EXISTING | operator condition met for T0/T1; T2-T4/T6 accepted bounded; T5 remains conditional | governed routing |
+| conditional reopen index | UPDATE_EXISTING | T2-T4/T6 and T5-R1/R2/R2A are accepted bounded; T5 authentication/runtime remains conditional on a source-verified owner and fresh dispatch | governed routing |
 
 ## Source Verification
 
@@ -233,8 +233,8 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 | Ledger terminal statuses | READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE |
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | inline Finding Resolution Matrix and tranche plan |
-| Unresolved items | zero corpus rows; T5 implementation remains deferred; T6 is accepted live bounded |
-| Completion claim boundary | roadmap plus T1 pending-review state only |
+| Unresolved items | zero corpus rows; T5 authentication/runtime remains deferred; T6 is accepted live bounded |
+| Completion claim boundary | accepted bounded roadmap state through T5-R2A and selected T6/T7 scope only |
 
 ## Corpus Completeness And Report Integrity
 
@@ -291,13 +291,13 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 
 | Field | Disposition |
 |---|---|
-| claimScope | finding resolution roadmap plus accepted bounded T1-T4 local implementation state, accepted T5 decision evidence, accepted bounded T6 one-call live compatibility, and accepted bounded T7 selected-scope closure |
+| claimScope | finding resolution roadmap plus accepted bounded T1-T5-R2A local state, accepted bounded T6 one-call live compatibility, and accepted bounded T7 selected-scope closure |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
 | receiptEvidence | CVF_RECEIPT_PRESENT: accepted T6 R2 SOT3 and free-quota receipts for one exact-model call |
 | actionEvidence | ACTION_EVIDENCE_PRESENT: T1-T3 package evidence, T4 41-test static-checker suite and 8 independent probes, plus T6 strict SOT3 admission |
 | invocationBoundary | local repository implementation and verification plus one separately authorized bounded Alibaba call |
 | interceptionBoundary | no runtime/provider interception claim |
-| claimLanguage | T1-T4 accepted bounded; T5 decision accepted as deferred with missing authority; T6 accepted for one exact-model live compatibility observation; T7 selected scope accepted closed with DEFERRED_PRIVATE_ONLY |
+| claimLanguage | T1-T4 and T5-R1/R2/R2A accepted bounded; T5 authentication/runtime remains deferred for missing owner authority; T6 accepted for one exact-model live compatibility observation; T7 selected scope accepted closed with DEFERRED_PRIVATE_ONLY |
 | forbiddenExpansion | no provider-wide compatibility, repeat-live, adapter, public, deploy, production, or billing claim |
 
 ## Next Allowed Move
@@ -305,11 +305,11 @@ inspection is not a substitute for executed tests and T1 stays pending review.
 T3A and T3B are independently accepted for hermetic, non-executing internal
 projections. T4 is independently accepted for a standalone, read-only checker.
 T5-R1 authority foundation and the T5-R2 pure transport-neutral adapter
-contract are independently accepted bounded after reviewer repair. The R2
-package-root exports exist, but independent multi-surface fixture proof remains
-deferred because the current checker schema permits only one owner per shared
-root path. Authentication and any MCP/CLI/HTTP transport runtime remain
-deferred and require a fresh governed packet.
+contract are independently accepted bounded after reviewer repair. T5-R2A is
+also independently accepted bounded: contract-source uniqueness is preserved
+while T5-R1 and T5-R2 now carry independent module-qualified export drift proof
+over their shared package root. Authentication and any MCP/CLI/HTTP transport
+runtime remain deferred and require a source-verified owner plus fresh packet.
 T7 selected hermetic scope is independently accepted closed bounded with
 `DEFERRED_PRIVATE_ONLY`. T6 is independently accepted for one bounded
 `qwen3.7-flash` live compatibility observation; repeat-live authority is not
@@ -329,8 +329,8 @@ provenance; a later public-safe projection needs explicit public-sync review.
 ## Claim Boundary
 
 This roadmap records bounded T0/T1/T2/T3A/T3B/T4 acceptance, bounded T5-R1
-foundation and T5-R2 pure adapter-contract acceptance with authentication and
-transport runtime deferred,
+foundation, T5-R2 pure adapter-contract acceptance, and T5-R2A shared-root
+checker proof with authentication and transport runtime deferred,
 bounded T6 one-call `qwen3.7-flash` compatibility acceptance, and bounded T7
 selected-scope closure with `DEFERRED_PRIVATE_ONLY`.
 T3A proves only a hermetic pre-execution eligibility projection with literal

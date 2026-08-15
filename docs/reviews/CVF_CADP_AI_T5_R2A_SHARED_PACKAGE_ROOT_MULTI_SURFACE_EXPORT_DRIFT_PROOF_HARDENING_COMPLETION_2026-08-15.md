@@ -68,6 +68,15 @@ matrix and corrected the return's T4/T5-R2A label. The classification update
 closes `CADP-AI-T5-R2-F02` as `RESOLVED_BY_T5_R2A` without widening any runtime
 claim.
 
+## Post-Closure Dependent Correction
+
+After the first material and continuity commits, continuation source review
+found that the roadmap's T5 closure section was current but its projection,
+corpus-summary, claim-language, next-move, and claim-boundary summaries still
+described T5 as wholly deferred or repeated the resolved shared-root residual.
+Review round two reconciles those dependent rows. It does not open
+authentication/runtime work or change the accepted implementation.
+
 ## Source Verification Block
 
 | Claimed item | Claim type | Source file | Verified section | Verified path or symbol | Owner | Disposition |
@@ -134,21 +143,21 @@ local static checker and governance evidence and performs no external action.
 
 ## Review Cost Telemetry And Stop Disposition
 
-- `reviewRoundCount`: 1
+- `reviewRoundCount`: 2
 - `workerRepairTurnCount`: 0
 - `newRootCauseCountThisRound`: 1
-- `dependentFindingCountThisRound`: 2
+- `dependentFindingCountThisRound`: 5
 - `elapsedReviewMinutes`: NOT_AVAILABLE_WITH_REASON: authoritative cross-tool wall-clock accounting is unavailable
 - `providerCallCount`: 0
 - `tokenOrQuotaUsage`: NOT_AVAILABLE_WITH_REASON: local tools expose no provider-neutral token ledger
-- `valueDelta`: added exact T5-R2 drift attribution proof and reconciled the resolved residual without expanding authority
+- `valueDelta`: added exact T5-R2 drift attribution proof and reconciled every active roadmap summary of the resolved residual without expanding authority
 - `stopDisposition`: COMPLETE_REVIEW
 - `preRepairAuditDisposition`: COMPLETE_BEFORE_FIRST_REPAIR
-- `materialCommitCount`: 1
-- `continuityCommitCount`: 1
-- `commitPlanDisposition`: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
-- `latencyDisposition`: WITHIN_FAST_PATH_TARGET
-- `avoidableDelayClass`: NONE
+- `materialCommitCount`: 2
+- `continuityCommitCount`: 2
+- `commitPlanDisposition`: EXCEPTION_WITH_REASON: a post-closure source read found dependent stale roadmap summaries that required a second material correction
+- `latencyDisposition`: LATENCY_BUDGET_EXCEEDED_WITH_REASON: the missed roadmap dependency required a second semantic review round
+- `avoidableDelayClass`: SEQUENTIAL_FINDING_CASCADE
 
 ## Checker Source Read-Ahead Block
 
