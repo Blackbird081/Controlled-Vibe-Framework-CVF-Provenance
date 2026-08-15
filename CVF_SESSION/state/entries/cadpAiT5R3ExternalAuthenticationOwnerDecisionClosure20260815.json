@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2217,
+  "stateKey": "cadpAiT5R3ExternalAuthenticationOwnerDecisionClosure20260815",
+  "value": "CADP-AI-T5-R3 external-authentication owner adoption readiness is independently accepted as REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED at material commit 6ae59fa88. The selected route is SELECT_ROUTE_GOVERNANCE_PROOF_OWNER_BOUNDED: authorizeRouteGovernanceProof may own authentication composition only, while CADP authorization, deterministic decision proof, and durable receipt ownership remain separate explicit responsibilities. Reviewer corrections cover body-text versus exact raw-byte claims, invalid service-token session fallback, deny-proof actorId null behavior, test-only NODE_ENV behavior, deterministic time injection, and the complete future source/test surface. This closure changes documentation, roadmap, and corpus intelligence only; it does not authorize or prove authentication implementation, source/test/route mutation, runtime/live/provider/network execution, durable persistence, public sync, deployment, or production readiness."
+}

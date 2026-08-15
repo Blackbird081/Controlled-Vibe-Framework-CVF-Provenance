@@ -43,18 +43,18 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact two-output T5-R3 no-commit documentation worker; parked checkpoint=source, tests, authentication execution, external runtime, provider/live, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r3_external_authentication_owner_decision_accepted_bounded_implementation_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator-selected fresh source-verified hardening or design dispatch only; parked checkpoint=authentication/source/test/route/runtime/live/provider/public/deploy/production implementation.
 
 ## Current Mode
 
-`cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`
-Current mode marker: `cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`
+`cadp_ai_t5_r3_external_authentication_owner_decision_accepted_bounded_implementation_deferred`
+Current mode marker: `cadp_ai_t5_r3_external_authentication_owner_decision_accepted_bounded_implementation_deferred`
+Current mode: `cadp_ai_t5_r3_external_authentication_owner_decision_accepted_bounded_implementation_deferred`
+Previous mode: `cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t5_r3_external_authentication_owner_adoption_readiness_decision_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t5_r3_external_authentication_owner_decision_accepted_bounded_implementation_deferred`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -87,11 +87,13 @@ focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84
 passed. T5-R2A checker hardening is independently accepted bounded at `4f359cd2d`;
 contract-source uniqueness remains fail-closed and T5-R1/T5-R2 now have independent
 shared-root export proof. Tests passed 45/45, CADP drift 5/0, reviewer-fast 63/63,
-and pre-commit 84/84. T5-R3 documentation-only owner adoption readiness is
-dispatched at `c5a442778`. Next, create only the exact audit and worker return
-from the committed work order, keep both unstaged/uncommitted, and return for
-independent review. Source/test/auth/runtime/live/public/deploy/moratorium work
-remains parked. Latest closed wave: `LHW24`.
+and pre-commit 84/84. T5-R3 is independently accepted bounded as a decision-only
+closure at `6ae59fa88`: `authorizeRouteGovernanceProof` is selected only as the
+authentication-composition owner, not as CADP authorization or durable-receipt
+owner. No implementation is auto-released. Next allowed move is only an
+operator-selected fresh source-verified hardening or design dispatch. Source,
+tests, routes, authentication execution, runtime/live/provider/network,
+public-sync, deploy and production remain parked. Latest closed wave: `LHW24`.
 
 ## Parked Checkpoints
 
@@ -114,6 +116,5 @@ a fresh, source-verified governed tranche.
 - For guard/task orientation, read `docs/reference/guard_orientation/README.md`.
 
 ## Claim Boundary
-
 This is a compact current-only pointer record. It carries no closed-tranche
 narrative; historical evidence lives in the dated archives listed above.
