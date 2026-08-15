@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2192,
+  "stateKey": "alibabaFreeQuotaModelRefresh20260815",
+  "value": "Operator-provided Alibaba Model Studio screenshots refreshed the governed free-quota inventory at material commit 256fa5485. The current T6 target is qwen3.7-flash with dated snapshot qwen3.7-flash-2026-07-15; both show Enabled, 1,000,000 / 1,000,000 remaining, and expiration 2026-10-22 at capture date 2026-08-15. The JSON and Markdown ledgers reconcile 16/16 visible model rows; Model Gateway TypeScript check and focused registry suite 11/11 PASS; material pre-commit 84/84 PASS. This is operator-supplied quota-selection evidence only. No provider API call, compatibility proof, quota consumption, credential disclosure, provider ranking, production-readiness, public-sync, deployment, or cross-runtime claim occurred."
+}

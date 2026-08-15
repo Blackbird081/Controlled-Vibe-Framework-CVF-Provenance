@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - Qwen Migration Closed; T6 Revalidation Required
+# CVF Agent Handoff V59 - Alibaba Quota Refreshed; T6 Dispatch Required
 
 Memory class: active-handoff
 
@@ -12,7 +12,7 @@ Status: ACTIVE
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
-- Current session-sync parent marker: `668bc6af5`
+- Current session-sync parent marker: `256fa5485`
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
@@ -44,7 +44,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `qwen_turbo_deprecation_migration_closed_qwen_flash_live_revalidation_required`
+  `alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -53,16 +53,16 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`qwen_turbo_deprecation_migration_closed_qwen_flash_live_revalidation_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and accept a fresh CADP-AI-T6 qwen-flash live-retry dispatch; parked checkpoint=live execution until dispatch acceptance, T5, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and accept a fresh CADP-AI-T6 qwen3.7-flash live-retry dispatch; parked checkpoint=live execution until dispatch acceptance, T5, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`qwen_turbo_deprecation_migration_closed_qwen_flash_live_revalidation_required`
+`alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`
 
 ## Purpose
 
-Record QTDM-01 bounded closure at `9f57a431b`: active surfaces now target
-`qwen-flash`; historical live receipts do not transfer and T6 remains required.
+Record the quota refresh at `256fa5485`: T6 now targets `qwen3.7-flash`,
+snapshot `qwen3.7-flash-2026-07-15`, with expiry `2026-10-22`.
 Environment repaired on complete NVM4W Node v22.17.0; npm/npx 10.9.2 resolve. QTDM-01
 dispatch is accepted at `a8d428239`; worker must not commit and live retry is parked.
 
@@ -150,10 +150,9 @@ dispatch is accepted at `a8d428239`; worker must not commit and live retry is pa
 
 ## Next Allowed Move
 
-QTDM-01 is independently closed bounded at `9f57a431b`. Author and
-independently accept a fresh CADP-AI-T6 retry dispatch targeting `qwen-flash`;
-do not run a provider call before that packet closes. T5 and public/deployment/
-production lanes remain parked.
+QTDM-01 remains closed bounded. Author and independently accept a fresh
+CADP-AI-T6 retry dispatch targeting `qwen3.7-flash`; do not run a provider call
+before that packet closes. T5 and public/deployment/production remain parked.
 
 ## Active Boundary
 
@@ -186,7 +185,7 @@ Reason: the T6 live dispatch and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - QTDM-01 Closure Sync
+## Core Guard Self-Protection Authorization - Alibaba Quota Refresh Sync
 
 Protected paths:
 
@@ -194,27 +193,27 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/qwenTurboDeprecationMigrationClosure20260815.json`
+- `CVF_SESSION/state/entries/alibabaFreeQuotaModelRefresh20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: the operator directed removal of the deprecated model
 and separately permitted a future credentialed T6 test.
 
-Authorized guard-maintenance scope: bind QTDM-01 closure at material commit
-`9f57a431b`, set fresh T6 retry dispatch authoring as next, and keep live
+Authorized guard-maintenance scope: bind quota refresh at material commit
+`256fa5485`, set fresh T6 retry dispatch authoring as next, and keep live
 execution until dispatch acceptance, T5, hook wiring, CLI-MCP invocation/
 public/deployment/trusted-evidence/cross-runtime and unrelated lanes parked.
 
 Rollback boundary: revert this exact session-sync batch together with material
-commit `9f57a431b`; do not separate generated state from source
+commit `256fa5485`; do not separate generated state from source
 fragments.
 
 ## Claim Boundary
 
-This handoff records bounded QTDM-01 closure only. It does not claim or
+This handoff records operator-supplied quota-selection evidence only. It does not claim or
 authorize adapter implementation, MCP/CLI invocation, external-agent launch,
-runtime enforcement, qwen-flash compatibility, completed live behavior,
+runtime enforcement, qwen3.7-flash compatibility, completed live behavior,
 cross-runtime determinism, trusted-evidence readiness, production source
 changes, hook wiring, credential access, T6-T7, public sync, deployment, or
 production.
