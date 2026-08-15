@@ -45,19 +45,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`qwen_turbo_deprecation_migration_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute QTDM-01 migration from the final clean HEAD and return uncommitted evidence; parked checkpoint=live retry, T5 implementation, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`qwen_turbo_deprecation_migration_closed_qwen_flash_live_revalidation_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and independently accept a fresh CADP-AI-T6 qwen-flash live-retry dispatch; parked checkpoint=live execution until dispatch acceptance, T5 implementation, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`qwen_turbo_deprecation_migration_dispatched_worker_must_not_commit`
+`qwen_turbo_deprecation_migration_closed_qwen_flash_live_revalidation_required`
 
-Current mode marker: `qwen_turbo_deprecation_migration_dispatched_worker_must_not_commit`
-Current mode: `qwen_turbo_deprecation_migration_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t6_environment_repaired_qwen_migration_required`
+Current mode marker: `qwen_turbo_deprecation_migration_closed_qwen_flash_live_revalidation_required`
+Current mode: `qwen_turbo_deprecation_migration_closed_qwen_flash_live_revalidation_required`
+Previous mode: `qwen_turbo_deprecation_migration_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `qwen_turbo_deprecation_migration_dispatched_worker_must_not_commit`
+Mode: `qwen_turbo_deprecation_migration_closed_qwen_flash_live_revalidation_required`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -71,11 +71,11 @@ bounded and deferred at `ef84a1f6a`. CADP-AI-T7 selected hermetic scope is
 accepted at `a49cebd8a`. T6 blocked evidence is accepted at `25c0b2217`: npm/
 npx were absent, the local negative gate did not run, and zero provider calls
 or quota were consumed. NVM4W was repaired by activating complete Node
-v22.17.0; PowerShell and Python now resolve npm/npx 10.9.2. QTDM-01 dispatch
-was independently repaired and accepted at `a8d428239`. Execute the bounded
-active migration to `qwen-flash`, preserve historical evidence, leave staging
-empty and do not commit. Live retry remains parked. T5 remains deferred. Latest closed
-numbered LHW wave: `LHW24`.
+v22.17.0. QTDM-01 is independently closed bounded at `9f57a431b`: active
+surfaces target `qwen-flash`, historical live receipts do not transfer, and
+fresh live revalidation remains required. Next author and independently accept
+a fresh CADP-AI-T6 retry dispatch; no provider call is authorized before that
+packet closes. T5 remains deferred. Latest closed numbered LHW wave: `LHW24`.
 
 ## Parked Checkpoints
 

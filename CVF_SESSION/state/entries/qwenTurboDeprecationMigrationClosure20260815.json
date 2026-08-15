@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2191,
+  "stateKey": "qwenTurboDeprecationMigrationClosure20260815",
+  "value": "QTDM-01 Qwen-Turbo deprecation migration was independently accepted CLOSED_PASS_BOUNDED_AFTER_REPAIR and materially committed at 9f57a431b2e0590b3940b6442008e7413b3eb54c. Active runtime, configuration, tests, scripts, and current documentation now target qwen-flash; the historical Alibaba live receipts were not transferred and qwen-flash remains EXPERIMENTAL / PENDING_LIVE_REVALIDATION. Evidence: Model Gateway 32 files and 252 tests PASS; CVF Web focused changed set 17 files and 251 tests PASS; extracted-provider regression 43/43 PASS; both TypeScript checks PASS; focused ASSF denial test 1/1 PASS; reviewer-fast 63/63 and material pre-commit 84/84 PASS. No provider API call, quota consumption, credential disclosure, certification, production-readiness, public-sync, deployment, or cross-runtime claim occurred. Review SHA-256 d21aafa8269fc22302ceb6325a012a713dc81be8e89d178274dbee52bc59aa8c."
+}
