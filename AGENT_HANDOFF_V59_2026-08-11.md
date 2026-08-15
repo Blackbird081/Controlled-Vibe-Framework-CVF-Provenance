@@ -13,7 +13,7 @@ Status: ACTIVE
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current session-sync parent marker: `4bcd9d565`
-- Current session-sync parent anchor: `876ff39a054260f362b29a0049e79cbc3d592684`; R1 material dispatch: `111ad52cc5096ea2ab8d39c917d412ed960e0109`.
+- Current R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R1 material dispatch: `111ad52cc5096ea2ab8d39c917d412ed960e0109`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
   `f4b99100e8d5f84313ebe9b41d410dcbb8df831c`
