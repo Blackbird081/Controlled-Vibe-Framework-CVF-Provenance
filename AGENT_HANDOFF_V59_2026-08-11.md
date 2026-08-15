@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - CADP-AI-T6-R2 Accepted Closed Pass Bounded
+# CVF Agent Handoff V59 - CADP-AI-T5-R1 Authority Foundation Authoring
 
 Memory class: active-handoff
 
@@ -13,7 +13,7 @@ Status: ACTIVE
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
-- Current R2 closure session-sync: `70b0801cb27780a0c2a9ec85d311d9cc5df1faaf`
+- Current T5-R1 selection session-sync: `2ebee4726e6486d72c18fa1dd92093adae9c1ce9`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
@@ -46,7 +46,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `cadp_ai_t6_r2_reviewer_accepted_closed_pass_bounded`
+  `cadp_ai_t5_r1_external_readout_authority_foundation_dispatch_authoring`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -55,17 +55,17 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t6_r2_reviewer_accepted_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator selects a fresh governed objective; parked checkpoint=T5, repeat-live, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r1_external_readout_authority_foundation_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh T5-R1 foundation GC-018 and no-commit work order; parked checkpoint=adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t6_r2_reviewer_accepted_closed_pass_bounded`
+`cadp_ai_t5_r1_external_readout_authority_foundation_dispatch_authoring`
 
 ## Purpose
 
-Record R2 closure at `2599ff10e`: exact `qwen3.7-flash` completed one real
-SOT3 call with HTTP 200 and strict admission PASS. Historical evidence stayed
-byte-identical; the retained bundle FAIL prevents any full release claim.
+Record T6 bounded closure at `2599ff10e` and the TS config fix at `766c86d17`.
+Open only T5-R1 authority-foundation dispatch authoring; adapter implementation
+and every external entry point remain deferred.
 
 ## Scope / Target / Owner Boundary
 
@@ -151,9 +151,9 @@ byte-identical; the retained bundle FAIL prevents any full release claim.
 
 ## Next Allowed Move
 
-QTDM-01 and CADP-AI-T6-R2 are closed bounded. No CADP worker is auto-released;
-await operator selection. T5, repeat-live, public/deployment/production remain
-parked.
+QTDM-01 and CADP-AI-T6-R2 are closed bounded. Author a fresh T5-R1 foundation
+GC-018 and no-commit work order. Adapter implementation, repeat-live, public/
+deployment/production remain parked.
 
 ## Active Boundary
 
@@ -186,7 +186,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - CADP-AI-T6-R2 Closure Sync
+## Core Guard Self-Protection Authorization - CADP-AI-T5-R1 Selection Sync
 
 Protected paths:
 
@@ -194,16 +194,16 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cadpAiT6R2LiveCompatibilityClosure20260815.json`
+- `CVF_SESSION/state/entries/cadpAiT5R1AuthorityFoundationSelection20260815.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: the operator directed removal of the deprecated model
 and separately permitted a future credentialed T6 test.
 
-Authorized guard-maintenance scope: bind R2 bounded closure at material commit
-`2599ff10e`, require fresh operator selection for next work, and keep T5,
-repeat-live, source/config mutation, hook wiring, CLI-MCP invocation/
+Authorized guard-maintenance scope: bind the TS compatibility fix at
+`766c86d17`, select T5-R1 foundation dispatch authoring, and keep adapter
+implementation, repeat-live, hook wiring, CLI-MCP invocation/
 public/deployment/trusted-evidence/cross-runtime and unrelated lanes parked.
 
 Rollback boundary: revert this exact session-sync batch together with material
@@ -212,7 +212,7 @@ fragments.
 
 ## Claim Boundary
 
-This handoff records governed R2 bounded closure only. It does not claim or
+This handoff records R2 bounded closure and T5-R1 authoring selection. It does not claim or
 authorize adapter implementation, MCP/CLI invocation, external-agent launch,
 runtime enforcement, qwen3.7-flash compatibility, completed live behavior,
 cross-runtime determinism, trusted-evidence readiness, production source
