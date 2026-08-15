@@ -45,19 +45,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no-commit worker executes the accepted R1 packet from final clean HEAD; parked checkpoint=independent closure, T5 implementation, CLI/MCP, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t6_r2_qwen3_7_flash_free_quota_live_retry_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no-commit worker executes the accepted R2 free-quota packet from final clean HEAD; parked checkpoint=independent closure, T5 implementation, CLI/MCP, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
+`cadp_ai_t6_r2_qwen3_7_flash_free_quota_live_retry_dispatched_worker_must_not_commit`
 
-Current mode marker: `cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
-Previous mode: `alibaba_quota_refreshed_qwen3_7_flash_t6_dispatch_required`
+Current mode marker: `cadp_ai_t6_r2_qwen3_7_flash_free_quota_live_retry_dispatched_worker_must_not_commit`
+Current mode: `cadp_ai_t6_r2_qwen3_7_flash_free_quota_live_retry_dispatched_worker_must_not_commit`
+Previous mode: `cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t6_r1_qwen3_7_flash_live_retry_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t6_r2_qwen3_7_flash_free_quota_live_retry_dispatched_worker_must_not_commit`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -75,10 +75,11 @@ v22.17.0. QTDM-01 is independently closed bounded at `9f57a431b`: active
 surfaces target `qwen-flash`, historical live receipts do not transfer, and
 fresh live revalidation remains required. Operator quota evidence committed at
 `256fa5485` selects `qwen3.7-flash` (snapshot `qwen3.7-flash-2026-07-15`),
-expiry `2026-10-22`. R1 dispatch is accepted at `111ad52cc`; the next worker
-must follow its exact no-commit packet, verify node/npm/npx and official price,
-use keys only by reference, and return five-path evidence for independent
-review. T5 remains deferred. Latest closed wave: `LHW24`.
+expiry `2026-10-22`. R1 blocked evidence is reviewer-accepted at `e85a1fa17`.
+R2 free-quota dispatch is committed at `5c21bf38e`; the next worker must follow
+its exact no-commit packet, preserve the historical SOT3 receipt, and return
+seven-path evidence for independent review. T5 remains deferred. Latest closed
+wave: `LHW24`.
 
 ## Parked Checkpoints
 
