@@ -45,19 +45,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send repaired exact-six-path T5-R1 work order to Claude with final clean execution base; parked checkpoint=adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author fresh governed T5-R2 dispatch for a bounded adapter decision/transport foundation; parked checkpoint=adapter implementation, repeat-live, CLI/MCP invocation, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
+`cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
 
-Current mode marker: `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t5_r1_dispatch_execution_anchor_repair_authoring`
+Current mode marker: `cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
+Current mode: `cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
+Previous mode: `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -81,10 +81,12 @@ R2 is independently accepted `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at
 admission PASS, and historical receipt unchanged. The original bundle FAIL is
 retained and excludes full release readiness. No repeat-live authority carries
 forward. Model Gateway TS-next compatibility is fixed at `766c86d17`. T5-R1
-authority-foundation dispatch is committed at `071e39100`; execution-anchor
-repair `1b0dcc499` now requires exact match to the clean SHA supplied in the
-orchestrator prompt. The next move is the exact-six-path no-commit Claude
-execution. Adapter implementation remains deferred. Latest closed wave: `LHW24`.
+authority foundation is independently accepted bounded at `7d96fa115` after
+reviewer canonical-receipt repair, 121/121 focused regressions, and operator
+disposition of the disclosed two-call reviewer test incident. The calls are not
+T5 evidence and grant no repeat-live authority. The next move is fresh T5-R2
+dispatch authoring only; adapter implementation remains deferred. Latest closed
+wave: `LHW24`.
 
 ## Parked Checkpoints
 

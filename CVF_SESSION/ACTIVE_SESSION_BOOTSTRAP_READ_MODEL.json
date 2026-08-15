@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cadp_ai_t5_r1_external_readout_authority_foundation_dispatched_worker_must_not_commit",
+  "currentMode": "cadp_ai_t5_r1_external_readout_authority_foundation_accepted_bounded_adapter_deferred",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Send the repaired committed CADP-AI-T5-R1 work order to one WORKER_MUST_NOT_COMMIT Claude worker and supply the final clean HEAD as its exact execution-base SHA. The worker must touch only the exact six-path Planned Artifact Manifest, run required pre-implementation and component evidence, leave HEAD unchanged and staging empty, and return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON. Independent Codex review owns repair, GC-051 registry reconciliation, roadmap/session closure, and commit. MCP/CLI implementation, registration or invocation, external-agent launch, credentials, provider/live/network action, mutation, hooks/CI, public sync, deployment, production, moratorium lift, and implementation-ready claims remain forbidden. Latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "CADP-AI-T5-R1 authority foundation is independently accepted bounded at material commit 7d96fa115 after reviewer repair, 121/121 focused regressions, T4 drift-check PASS, GC-051 reconciliation, and explicit operator disposition of the disclosed two-call reviewer test incident. The incident is not T5 evidence and grants no repeat-live authority. The next allowed move is fresh CADP-AI-T5-R2 dispatch authoring for a bounded external readout adapter decision/transport foundation; implementation remains forbidden until a reviewed GC-018 baseline and exact work order are committed. MCP/CLI registration or invocation, external-agent launch, credentials, provider/live/network action, mutation, hooks/CI, public sync, deployment, production, and moratorium lift remain forbidden. Latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
