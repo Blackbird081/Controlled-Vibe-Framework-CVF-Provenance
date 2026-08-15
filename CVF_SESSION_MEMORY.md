@@ -44,19 +44,19 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact T5-R2A five-path checker-hardening packet without commit; parked checkpoint=production TypeScript, authentication, external runtime, provider/live, public sync, deploy and production.
+Startup acknowledged: current mode=`cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh source-verified dispatch after operator selects the next CADP tranche; parked checkpoint=production TypeScript, authentication, external runtime, provider/live, public sync, deploy and production.
 
 ## Current Mode
 
-`cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit`
+`cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`
 
-Current mode marker: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit`
-Current mode: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit`
-Previous mode: `cadp_ai_t5_r2_transport_neutral_adapter_foundation_accepted_bounded_runtime_deferred`
+Current mode marker: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`
+Current mode: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`
+Previous mode: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit`
 
 ## Next Allowed Move
 
-Mode: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_dispatched_worker_must_not_commit`
+Mode: `cadp_ai_t5_r2a_shared_package_root_multi_surface_export_drift_proof_accepted_bounded_runtime_deferred`
 
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -87,12 +87,11 @@ T5 evidence and grant no repeat-live authority. T5-R2 is independently
 accepted bounded at `ad76d7433` after reviewer repair of candidate-metadata
 composition and deterministic malformed-input receipts. TypeScript, 69/69
 focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84
-passed. T5-R2A checker hardening is dispatched at `82f11ed55` with an exact
-five-path manifest. The worker may repair shared package-root multi-surface
-fixture proof and must return without commit. Production TypeScript,
-authentication, MCP/CLI/HTTP runtime, provider/live, credentials, hooks/CI,
-public, deploy, production, and the moratorium lift remain parked. Latest
-closed wave: `LHW24`.
+passed. T5-R2A checker hardening is independently accepted bounded at `4f359cd2d`;
+contract-source uniqueness remains fail-closed and T5-R1/T5-R2 now have independent
+shared-root export proof. Tests passed 45/45, CADP drift 5/0, reviewer-fast 63/63,
+and pre-commit 84/84. Next is an operator-selected fresh governed dispatch;
+production/auth/runtime/live/public/deploy/moratorium work remains parked. Latest closed wave: `LHW24`.
 
 ## Parked Checkpoints
 
