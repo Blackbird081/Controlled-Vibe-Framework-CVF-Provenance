@@ -1,0 +1,48 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": "docs/reviews/evidence/cadp-ai-t6-live-compatibility-release-gate-result-2026-08-15.json",
+      "sha256": "3871809ce45d9c9c76f234e6bf3cae12477e27ae4952eb30f5c10de1597eb449",
+      "sizeBytes": 2188
+    },
+    {
+      "path": "docs/reviews/evidence/cadp-ai-t6-live-compatibility-sot3-diagnostic-2026-08-15.json",
+      "sha256": "e13fb53a5e286c197df8e367e9d41e4ad57dada3ba6acea201e4271a2f83f9ef",
+      "sizeBytes": 822
+    },
+    {
+      "path": "docs/reviews/evidence/cadp-ai-t6-live-compatibility-e2e-diagnostic-2026-08-15.json",
+      "sha256": "6f77c6cdc768e80b69fbae974463ed8eb206df52b202be78ee10305f9fc83924",
+      "sizeBytes": 363
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-08-15T00:34:55.352315+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "fa5c766dee24b1749e0500d7a83280cf73af4a42",
+    "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.sot3-activation.alibaba.live.test.ts\n?? docs/reviews/evidence/cadp-ai-t6-live-compatibility-e2e-diagnostic-2026-08-15.json\n?? docs/reviews/evidence/cadp-ai-t6-live-compatibility-release-gate-result-2026-08-15.json\n?? docs/reviews/evidence/cadp-ai-t6-live-compatibility-sot3-diagnostic-2026-08-15.json",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_release_gate_bundle.py --e2e --sot3-diagnostic-output <path> --e2e-diagnostic-output <path> --json",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}
