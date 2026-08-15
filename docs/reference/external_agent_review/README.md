@@ -41,6 +41,7 @@ semantics.
 | `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | Central chain map connecting external/corpus/repo input, old blind-spot/corpus/legacy rules, external-agent review packets, returned-output absorption, GC-018, work orders, source verification, and autorun. |
 | `CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` | Central index for external-absorption package, runtime, checker, and value-parked candidates that retain CVF value but require concrete reopen evidence before future work. |
 | `CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` | Central external absorption standard, including overlap and novelty classification before new owner surfaces or follow-up lanes are opened. |
+| `CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md` | SOT for local packs combining upstream, public CVF, operator requirement, operator-agent co-design, and novel synthesis; separates value, import, runtime, and authority decisions. |
 | `.private_reference/source_mirrors/README.md` | Private-reference control plane for local cloned upstream repositories used as source authority during external absorption. |
 | `.private_reference/source_mirrors/INDEX.md` | Private source-mirror index linking upstream repos to derived external-agent packs and absorption lanes. |
 | `CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md` | Canonical distinction between public/simple workflow vocabulary and internal governed workflow-chain system. |
@@ -78,25 +79,29 @@ semantics.
    `.private_reference/source_mirrors/INDEX.md`. If only a derived
    external-agent pack exists and the upstream repo can be cloned, create or
    request a pinned source mirror before claiming full absorption.
-5. Start from `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md` when an external
+5. When the local pack includes operator requirements, operator-agent
+   co-design, or novel synthesis, apply
+   `CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md`; do not use
+   missing GitHub provenance or unmerged maturity as a no-value decision.
+6. Start from `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md` when an external
    agent review packet is needed.
-6. Run the checks in `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`.
-7. Use `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` as
+7. Run the checks in `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`.
+8. Use `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` as
    the bounded example for workflow-chain, MCP, and workspace review context.
-8. After the external agent returns output, classify every returned item through
+9. After the external agent returns output, classify every returned item through
     `CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` before creating a
     finding, standard, roadmap, work order, review, reference artifact, or
     operator decision.
-9. Before opening a new owner surface or follow-up lane, fill the
+10. Before opening a new owner surface or follow-up lane, fill the
    `## Overlap And Novelty Classification` section required by
    `CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; compare against existing CVF
    owner surfaces and use `CONFIRMED_EXISTING`, `ENRICH_EXISTING`,
    `NEW_FINDING`, `REJECT_DIRECT_IMPORT`, `NO_NEW_VALUE`, or
    `OWNER_SURFACE_NOT_FOUND`.
-10. If a closeout parks a package, runtime, checker, or valuable deferred item,
+11. If a closeout parks a package, runtime, checker, or valuable deferred item,
    add or update `CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`, cite an
    existing row, or state `NO_CONDITIONAL_REOPEN_INDEX_ENTRY_WITH_REASON`.
-11. For changed external-return absorption reviews, satisfy
+12. For changed external-return absorption reviews, satisfy
    `governance/compat/check_external_agent_absorption_table.py` before closure.
 
 ## Required Read Trigger

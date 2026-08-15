@@ -113,6 +113,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_external_absorption_value_conversion.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
+        "mixed-origin derived synthesis absorption",
+        ["python", "governance/compat/check_mixed_origin_derived_synthesis_absorption.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "external absorption overlap discipline",
         ["python", "governance/compat/check_external_absorption_overlap_discipline.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),

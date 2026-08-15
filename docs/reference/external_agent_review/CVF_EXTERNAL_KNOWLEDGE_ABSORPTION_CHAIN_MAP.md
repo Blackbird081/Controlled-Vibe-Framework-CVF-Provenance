@@ -75,6 +75,7 @@ Short form:
 | --- | --- | --- | --- |
 | Legacy source family | Knowledge Absorption Blind-Spot Control Block and legacy coverage index lookup | Existing plane, workflow-chain, roadmap, or reference owner | `ACCEPT_NOW`, `ACCEPT_AS_DOCTRINE`, `ACCEPT_AS_OWNER_MAP`, `DEFER_DEMAND_GATED`, `REJECT_DIRECT`, or `OUT_OF_SCOPE` |
 | External repo or copied folder | Root/folder lifecycle classification plus absorption map when retained | CVF-owned reference, map, roadmap, work order, package candidate, runtime candidate, or checker candidate | `ABSORB`, `ADAPT`, `DEFER`, `REJECT`, `BLOCK`, `PACKAGE_CANDIDATE`, `RUNTIME_CANDIDATE`, `CHECKER_CANDIDATE`, or `NO_PACKAGE_OR_RUNTIME_VALUE` |
+| Mixed-origin derived synthesis | `CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md` after upstream/source-mirror identification | Existing CVF owner or explicit candidate owner | independent knowledge, direct-import, runtime, and authority decisions |
 | External-agent packet request | External-agent review front door, context standard, packet template, and authoring checklist | External-agent review packet | `PACKET_READY`, `REWRITE_REQUIRED`, or `REJECT_RAW_REQUEST` |
 | External-agent returned output | External finding absorption workflow and Required Absorption Table | Finding, standard, roadmap, work order, review, or absorption map | Matrix disposition from the absorption workflow |
 | Public/simple CVF vocabulary | Public workflow-chain review context before using as evidence | Public-safe summary or governed internal standard | `QUESTION_OR_HYPOTHESIS` until source-verified |
@@ -89,6 +90,7 @@ Short form:
 | Provider-local memory boundary | `AGENTS.md` provider-specific memory boundary | Policy-bound; checked by review/gates where applicable |
 | Knowledge blind-spot prevention | `docs/reference/CVF_KNOWLEDGE_ABSORPTION_BLINDSPOT_PREVENTION_STANDARD_2026-06-01.md` | Binding standard; work-order evidence required when applicable |
 | External absorption core and value conversion | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py` | Machine-checked for changed external repo/copied-folder absorption artifacts, including package/runtime/checker opportunity classification |
+| Mixed-origin derived synthesis | `docs/reference/external_agent_review/CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md`; `governance/compat/check_mixed_origin_derived_synthesis_absorption.py` | Machine-checked evidence shape; semantic value remains reviewer-owned |
 | Corpus registry | `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | Machine-checked generated aggregate |
 | Legacy coverage visibility | `docs/reference/CVF_LEGACY_ABSORPTION_COVERAGE_INDEX_2026-06-13.md` | Governed reference index; not yet a universal router |
 | External review packet authoring | `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md` | Reference/checklist |

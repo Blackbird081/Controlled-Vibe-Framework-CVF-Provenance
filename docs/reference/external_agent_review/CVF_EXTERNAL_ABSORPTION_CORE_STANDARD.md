@@ -95,6 +95,13 @@ for upstream facts must prefer the pinned source mirror. The external-agent
 pack may still be used as comparison material, gap-finding input, or a
 secondary interpretation artifact.
 
+When a local pack was produced from upstream material, a public CVF snapshot,
+operator requirements, operator-agent co-design, or novel synthesis, do not
+collapse the whole pack into "secondary proposal" status. Apply
+`CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md`: classify origin
+per concept, keep the pack non-authoritative until reviewed, and validate each
+claim against the evidence type appropriate to that claim.
+
 Clone presence is not absorption evidence by itself. Absorption still requires
 the manifest, processing ledger, value-conversion matrix, owner-surface map,
 conditional reopen handling, and reviewer semantic value audit defined below.
@@ -277,6 +284,12 @@ audit the disposition ledger after all fast gates pass:
 - treat `run_worker_return_fast_gate.py` and the external absorption guards as
   necessary pre-review hygiene, not as proof that value-bearing files have been
   fully converted.
+- do not use `UNREVIEWED`, `UNMERGED`, or `UNPROVEN_BASELINE` as a no-value
+  rationale; those are maturity/authority facts;
+- keep knowledge absorption, direct import, runtime activation, and authority
+  promotion as separate decisions;
+- review a derived local pack as a composed system chain before using file
+  counts or full-runtime cost to decide its value.
 
 This rule is the reviewer-side complement to the value-conversion matrix. It
 closes the CGE-R1 lesson where a worker repaired gate-shape failures but still
@@ -292,6 +305,8 @@ Machine guards:
 `governance/compat/check_external_absorption_value_conversion.py`
 
 `governance/compat/check_external_absorption_overlap_discipline.py`
+
+`governance/compat/check_mixed_origin_derived_synthesis_absorption.py`
 
 The guard is forward-only and range-aware. It checks changed active governed
 Markdown artifacts that reference external absorption sources, external

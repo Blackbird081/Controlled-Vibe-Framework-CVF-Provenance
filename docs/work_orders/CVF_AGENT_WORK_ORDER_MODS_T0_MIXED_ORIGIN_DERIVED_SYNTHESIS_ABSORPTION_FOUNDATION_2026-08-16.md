@@ -207,14 +207,23 @@ closureBaseHead: 50b073541
 | CADP retrospective assessment | determine actual impact without reopening settled runtime facts by assumption |
 | completion review | record tests, changed set, claim boundary, and disposition |
 
+## Required Artifact Manifest
+
+| Required artifact | Required disposition |
+| --- | --- |
+| mixed-origin SOT and checker/test/bindings | implemented and passing |
+| RSPB corrective assessment and ledger/registry correction | materialized |
+| CADP retrospective | materialized with bounded impact decision |
+| completion and continuity evidence | recorded before final return |
+
 ## Core Guard Self-Protection Authorization
 
 | Field | Value |
 | --- | --- |
 | Operator authorization | Direct instruction on 2026-08-16 to repair foundation/SOT, reassess RSPB/preflight, and audit CADP. |
-| Protected paths | new checker/test; autorun catalog; pre-commit, pre-push, reviewer-fast catalogs. |
-| Authorized scope | evidence-shape enforcement and direct bindings for mixed-origin derived synthesis absorption. |
-| Rollback | revert the MODS-T0 material commit; no runtime or data migration side effect exists. |
+| Protected paths | `governance/compat/check_mixed_origin_derived_synthesis_absorption.py`; `governance/compat/test_check_mixed_origin_derived_synthesis_absorption.py`; `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/local_governance_hook_catalog_pre_commit.py`; `governance/compat/local_governance_hook_catalog_pre_push.py`; `governance/compat/local_governance_hook_catalog_reviewer_fast.py` |
+| Authorized guard-maintenance scope | evidence-shape enforcement and direct bindings for mixed-origin derived synthesis absorption. |
+| Rollback boundary | revert the MODS-T0 material commit; no runtime or data migration side effect exists. |
 
 ## Agent Handoff Contract Control Block
 

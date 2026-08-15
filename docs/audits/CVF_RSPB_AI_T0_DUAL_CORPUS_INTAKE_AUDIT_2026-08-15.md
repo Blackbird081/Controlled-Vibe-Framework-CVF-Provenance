@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACCEPTED_BY_REVIEWER_WITH_REPAIR
+Status: SUPERSEDED_IN_DECISION_BY_MODS_T0_CORRECTION
 
 docType: review
 
@@ -15,6 +15,17 @@ Self-declared worker-return artifact: no (this is the intake audit companion to 
 Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T0_REVERSE_SKILL_CAPABILITY_PREFLIGHT_BOOTSTRAP_DUAL_CORPUS_INTAKE_2026-08-15.md`
 
 External absorption core: REQUIRED
+
+## Supersession Notice
+
+The corpus inventory, hashes, per-file read accounting, and upstream safety
+rejections in this audit remain accepted evidence. Its single
+`STOP_COST_EXCEEDS_VALUE` decision and `SECONDARY_PROPOSAL_ONLY` framing are
+superseded by
+`docs/assessments/CVF_RSPB_AI_T0_MIXED_ORIGIN_CORRECTIVE_REASSESSMENT_2026-08-16.md`.
+The local pack is now classified as a provenance-backed mixed-origin derived
+synthesis candidate; knowledge, direct import, runtime, and authority are
+decided separately.
 
 ## Purpose
 

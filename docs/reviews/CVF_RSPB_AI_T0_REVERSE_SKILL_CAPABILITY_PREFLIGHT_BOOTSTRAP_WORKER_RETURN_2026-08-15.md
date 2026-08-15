@@ -18,6 +18,13 @@ dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T0_REVERSE_SKI
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
+## Later Corrective Review Notice
+
+This worker return remains valid evidence of the 764-file processing run. Its
+one-final-decision contract and local-pack framing were later found
+semantically defective and are superseded by
+`docs/assessments/CVF_RSPB_AI_T0_MIXED_ORIGIN_CORRECTIVE_REASSESSMENT_2026-08-16.md`.
+
 ## Purpose
 
 Report the completed no-commit, documentation-only dual-corpus intake for

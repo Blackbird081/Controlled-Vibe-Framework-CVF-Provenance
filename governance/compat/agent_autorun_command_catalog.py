@@ -208,6 +208,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "mixed-origin derived synthesis absorption",
+            "governance/compat/check_mixed_origin_derived_synthesis_absorption.py",
+            base,
+            head,
+        ),
+        _range_command(
             "external absorption overlap discipline",
             "governance/compat/check_external_absorption_overlap_discipline.py",
             base,

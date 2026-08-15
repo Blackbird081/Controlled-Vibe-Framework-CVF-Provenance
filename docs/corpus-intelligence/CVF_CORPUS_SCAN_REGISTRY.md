@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-08-15 (CADP-AI-T5-R2 bounded transport-neutral adapter acceptance)
+Last updated: 2026-08-16 (MODS-T0 mixed-origin RSPB correction)
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -19,6 +19,13 @@ Machine registry: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
 Registry authoring sources: `docs/corpus-intelligence/registry/`
 
 Generator: `governance/compat/generate_corpus_scan_registry.py`
+
+Current corrective projection: RSPB-AI-T0 retains its verified 764-file
+accounting and upstream safety/direct-import rejection. The local Capability
+Preflight & Bootstrap corpus is now classified as a provenance-backed
+mixed-origin derived-synthesis candidate, with selective knowledge absorption
+and staged runtime, per
+`docs/assessments/CVF_RSPB_AI_T0_MIXED_ORIGIN_CORRECTIVE_REASSESSMENT_2026-08-16.md`.
 
 ---
 

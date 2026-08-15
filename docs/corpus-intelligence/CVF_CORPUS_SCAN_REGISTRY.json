@@ -6766,7 +6766,7 @@
     {
       "id": "rspb-ai-t0-reverse-skill-capability-preflight-bootstrap-intake",
       "corpusType": "EXTERNAL_SOURCE",
-      "displayName": "RSPB-AI-T0 reverse-skill upstream mirror plus Capability Preflight & Bootstrap proposal dual-corpus intake",
+      "displayName": "RSPB-AI-T0 reverse-skill upstream mirror plus Capability Preflight & Bootstrap mixed-origin derived-synthesis intake",
       "scopePaths": [
         ".private_reference/source_mirrors/zhaoxuya520__reverse-skill/",
         ".private_reference/legacy/CVF 13.08/CVF_CAPABILITY_PREFLIGHT_BOOTSTRAP/"
@@ -6797,7 +6797,7 @@
         "OFFENSIVE_SECURITY_DOMAIN_REJECTED",
         "SAFETY_BYPASS_INSTRUCTION_CHAIN_REJECTED"
       ],
-      "priorAbsorption": "No prior absorption of this upstream repository or this local proposal folder existed before RSPB-AI-T0. The worker independently classified all 764 files (559 upstream, 205 proposal): upstream 448 REJECTED, 69 NO_NEW_VALUE, 18 READ, 17 ADAPTED, 7 DEFERRED; proposal 192 DEFERRED, 10 REJECTED, 3 READ. Final value/cost decision: STOP_COST_EXCEEDS_VALUE for the whole tranche, with three candidates preserved in the conditional reopen index.",
+      "priorAbsorption": "RSPB-AI-T0 reconciled all 764 files (559 upstream, 205 local). MODS-T0 preserves those counts and upstream safety/direct-import rejections but supersedes the collapsed whole-tranche STOP_COST_EXCEEDS_VALUE decision. The local corpus is a provenance-backed mixed-origin derived-synthesis candidate; corrected decision is PROCEED_SELECTIVELY with read-only runtime staged and mutating acquisition separately demand/authority gated.",
       "findings": [
         {
           "id": "RSPB-AI-T0-F2-upstream-safety-bypass-instruction-chain",
@@ -6810,9 +6810,9 @@
         },
         {
           "id": "RSPB-AI-T0-F4-proposal-unreviewed-at-every-phase",
-          "summary": "The local Capability Preflight & Bootstrap proposal folder (205 files) is a well-structured but entirely unreviewed and unmerged design draft; its own FINAL_CLOSURE_REVIEW.md scaffold is empty (Status: REVIEW_REQUIRED, no reviewer, no disposition).",
-          "disposition": "ACCEPT_NO_ACTION",
-          "nextAction": "The paired work order already treated the proposal as SECONDARY_PROPOSAL_ONLY from dispatch; this finding confirms that framing. No follow-up required.",
+          "summary": "The local Capability Preflight & Bootstrap folder (205 files) is a provenance-backed mixed-origin derived-synthesis candidate. Its pre-MODS review scaffold and unmerged state limit authority/readiness but do not determine value.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Apply the mixed-origin SOT and the MODS-T0 corrective assessment; selectively reconcile profile/contracts and probe the read-only environment snapshot before any mutating acquisition runtime.",
           "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
           "learningLane": "DOCUMENTATION_ONLY_LEARNING",
           "f2gRef": "docs/audits/CVF_RSPB_AI_T0_DUAL_CORPUS_INTAKE_AUDIT_2026-08-15.md#finding-to-governance-learning-disposition"
@@ -6824,7 +6824,7 @@
         "Capability Preflight EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION runtime merged - proposal candidate TypeScript/test files under that path are not present in the real extension directory",
         "burp-mcp-full or CTF-Sandbox-Orchestrator activated as CVF runtime - both subtrees classified REJECTED, no execution performed, no CVF owner surface created"
       ],
-      "nextScanRecommendation": "NONE_REQUIRED unless a fresh, source-verified runtime work order proves a concrete named current consumer and blocked workflow for the Capability Environment Snapshot or controlled-acquisition runtime candidates, per the conditional reopen index row RSPB-capability-preflight-bootstrap-runtime-and-checker-candidates."
+      "nextScanRecommendation": "No full corpus rescan is required. Use the MODS-T0 corrective assessment for selective owner reconciliation and a separately authorized read-only Capability Environment Snapshot value probe; keep controlled acquisition demand and authority gated."
     }
   ]
 }

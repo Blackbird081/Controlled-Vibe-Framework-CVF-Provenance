@@ -237,6 +237,13 @@ Status token rule for authors:
 
 Copy and complete the block below.
 
+For an intake that combines upstream material, public CVF input, operator
+requirements, operator-agent co-design, or novel synthesis, cite
+`docs/reference/external_agent_review/CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md`
+and include its provenance, decision-vector, and system-chain blocks. Do not
+use unreviewed/unmerged status as a value decision or one tranche-wide
+value/cost verdict across heterogeneous inputs.
+
 ```text
 # CVF Agent Work Order - <Scope>
 
