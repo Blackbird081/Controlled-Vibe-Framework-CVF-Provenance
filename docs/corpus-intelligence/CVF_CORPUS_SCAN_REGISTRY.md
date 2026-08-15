@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-08-15 (CADP-AI-T5-R1 bounded external-readout foundation acceptance)
+Last updated: 2026-08-15 (CADP-AI-T5-R2 bounded transport-neutral adapter acceptance)
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -129,6 +129,7 @@ prior scan here before starting new work.
 | `CADP-R1 capability admission distribution profile` | LEGACY_FOLDER | SCANNED_WITH_FINDINGS | CADP-R1 | 140 | 140/140 terminal ledger rows reconciled; T1 contract accepted bounded after R01-R28 review; F11 caller-self-attested trust remains open and routed to released T2 owner binding |
 | `CADP-AI-T3B Model Gateway constraint projection tests` | TEST_CORPUS | SCANNED | CADP-AI-T3B | 2 | Strict owner/projection/constraint boundary and package-root export coverage; all authorization flags remain false; no provider/live behavior claimed |
 | `CADP-AI-T5-R1 external readout authority foundation source and tests` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | CADP-AI-T5-R1 | 2 | Pure internal identity/ingress/allowlist/redaction/freshness/receipt foundation; reviewer repaired canonical snapshot and calendar validation; no adapter or transport authority |
+| `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | CADP-AI-T5-R2 | 2 | Pure always-rejecting adapter composition; reviewer repaired candidate-metadata stages and ambient receipt ordinal; no auth or transport runtime authority |
 | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | LEGACY_FOLDER | DEEP_CLASSIFIED | LRA-SA-T0 | 129 | All 129 entries are terminal with zero ARCHIVE_EVIDENCE_ONLY, unresolved, or DEFER_REQUIRES_NEW_AUTHORITY rows: 56 packages/ entries (54 same-hash + 2 changed-metadata) were exhaustively per-file semantically absorbed by LRA-SA-T0 into SUPERSEDED_BY_CURRENT_CVF_OWNER (20) or NO_NEW_VALUE (36); 18 V041-delta package entries are terminally REJECT_DIRECT_IMPORT_NO_OWNER after remediated per-row search -- 16 of 18 have a governed concept owner in CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md but NO_CURRENT_EXECUTABLE_OWNER; 39 review-artifacts/ entries are stale/corrupt dot-cvf runtime snapshots (REJECT_RAW_RUNTIME_STATE/REJECT_STALE_AUTHORITY); 6 untracked/ governance artifacts are SUPERSEDED by already-closed Core tranches |
 ---
 
@@ -198,6 +199,8 @@ Use this index to find prior findings by domain keyword.
 | CADP-R1-F01-F10-F12-F13 | `CADP-R1 capability admission distribution profile` | Corpus and selected T1 contract value are accepted with bounded scope; direct import remains rejected | ACCEPT_WITH_BOUNDARY |
 | CADP-R1-F11 | `CADP-R1 capability admission distribution profile` | A caller-created trusted index can still self-attest to evidence rank 5 | DEFER_WITH_ROADMAP - T2 owner binding released |
 | CADP-AI-T5-R1-F01 | `CADP-AI-T5-R1 external readout authority foundation source and tests` | Initial receipt serialization invoked caller-controlled `toJSON` and lacked canonical frozen snapshot semantics; reviewer repaired and regression-covered before closure | ACCEPT_WITH_BOUNDARY |
+| CADP-AI-T5-R2-F01 | `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | Worker omitted candidate metadata from the exact API and did not compose redaction/allowlist over it; reviewer repaired and regression-covered | ACCEPT_WITH_BOUNDARY |
+| CADP-AI-T5-R2-F02 | `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | Shared package-root path cannot be assigned to both T5-R1 and T5-R2 fixture surfaces under the current checker schema | DEFER_WITH_ROADMAP |
 
 ---
 

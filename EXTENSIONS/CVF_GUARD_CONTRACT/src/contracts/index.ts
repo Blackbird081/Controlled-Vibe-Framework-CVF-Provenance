@@ -306,6 +306,20 @@ export {
 } from './cadp-external-readout-foundation.contract';
 
 export type {
+  CadpExternalReadoutAdapterStage,
+  CadpExternalReadoutAdapterIssueCode,
+  CadpExternalReadoutAdapterIssue,
+  CadpExternalReadoutAdapterRequest,
+  CadpExternalReadoutAdapterRejectedPayload,
+  CadpExternalReadoutAdapterResponse,
+} from './cadp-external-readout-adapter.contract';
+
+export {
+  CADP_EXTERNAL_READOUT_ADAPTER_CONTRACT_VERSION,
+  evaluateCadpExternalReadoutAdapter,
+} from './cadp-external-readout-adapter.contract';
+
+export type {
   CapabilityOwnerBindingIssueCode,
   CapabilityOwnerBindingIssue,
   CapabilityOwnerBindingResult,

@@ -91,6 +91,47 @@ export {
 export type { CapabilityOwnerHandle, CapabilityOwnerBindingResult } from './contracts/capability-owner-binding.contract';
 export { bindCommittedCapabilityOwnerGrant } from './contracts/capability-owner-binding.contract';
 
+// CADP T5-R1 external-readout authority foundation (pure, contract-only).
+export type {
+  CadpExternalReadoutIssueCode,
+  CadpExternalReadoutIssue,
+  CadpExternalReadoutValidationResult,
+  CadpExternalReadoutAllowlistedMetadata,
+  CadpExternalCallerIdentityInput,
+  CadpExternalReadoutIngressRequest,
+  CadpExternalReadoutFreshnessInput,
+  CadpExternalReadoutFreshnessDisposition,
+  CadpExternalReadoutFreshnessResult,
+  CadpExternalReadoutReceiptInput,
+  CadpExternalReadoutReceipt,
+} from './contracts/cadp-external-readout-foundation.contract';
+export {
+  CADP_EXTERNAL_READOUT_FOUNDATION_CONTRACT_VERSION,
+  CADP_EXTERNAL_READOUT_REDACTED_FIELD_NAMES,
+  validateCadpExternalCallerIdentityInput,
+  validateCadpExternalReadoutIngress,
+  redactCadpExternalReadoutPayload,
+  validateCadpExternalReadoutAllowlistedMetadata,
+  evaluateCadpExternalReadoutFreshness,
+  createDeterministicCadpExternalReadoutReceipt,
+} from './contracts/cadp-external-readout-foundation.contract';
+
+// CADP T5-R2 transport-neutral external-readout adapter (pure, contract-only;
+// no MCP/CLI/HTTP registration, no authentication implementation, no external
+// invocation authority).
+export type {
+  CadpExternalReadoutAdapterStage,
+  CadpExternalReadoutAdapterIssueCode,
+  CadpExternalReadoutAdapterIssue,
+  CadpExternalReadoutAdapterRequest,
+  CadpExternalReadoutAdapterRejectedPayload,
+  CadpExternalReadoutAdapterResponse,
+} from './contracts/cadp-external-readout-adapter.contract';
+export {
+  CADP_EXTERNAL_READOUT_ADAPTER_CONTRACT_VERSION,
+  evaluateCadpExternalReadoutAdapter,
+} from './contracts/cadp-external-readout-adapter.contract';
+
 // Phase E receipt binding contract
 export type {
   ReceiptBindingDisposition,

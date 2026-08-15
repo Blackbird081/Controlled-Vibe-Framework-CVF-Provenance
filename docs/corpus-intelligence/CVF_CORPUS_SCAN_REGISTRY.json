@@ -6649,6 +6649,64 @@
         "credential or provider invocation"
       ],
       "nextScanRecommendation": "Re-scan only if a separately authorized T5 adapter tranche changes these surfaces or opens authentication/transport composition."
+    },
+    {
+      "id": "cadp-ai-t5-r2-transport-neutral-adapter",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CADP-AI-T5-R2 transport-neutral external readout adapter source and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/cadp-external-readout-adapter.contract.ts",
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/cadp-external-readout-adapter.contract.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CADP-AI-T5-R2",
+      "scanDate": "2026-08-15",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_CADP_AI_T5_R2_TRANSPORT_NEUTRAL_EXTERNAL_READOUT_ADAPTER_FOUNDATION_WORKER_RETURN_2026-08-15.md",
+      "completionReviewPath": "docs/reviews/CVF_CADP_AI_T5_R2_TRANSPORT_NEUTRAL_EXTERNAL_READOUT_ADAPTER_FOUNDATION_COMPLETION_2026-08-15.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CADP_AI_T5_R2_TRANSPORT_NEUTRAL_EXTERNAL_READOUT_ADAPTER_FOUNDATION_2026-08-15.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "CADP_EXTERNAL_READOUT_ADAPTER",
+        "CADP_EXTERNAL_FIXED_STAGE_ORDER",
+        "CADP_EXTERNAL_LITERAL_FALSE_AUTHORITY",
+        "CADP_EXTERNAL_NO_AUTH_REJECTION",
+        "CADP_EXTERNAL_ADAPTER_NEGATIVE_TESTS"
+      ],
+      "priorAbsorption": "T5-R2 adds a pure transport-neutral adapter contract over the accepted T5-R1 helpers. Independent review repaired the omitted candidate-metadata input and incorrect redaction/allowlist composition, removed ambient ordinal state from fallback receipt identity, and added deterministic malformed-input coverage. No authentication, transport registration, credential, provider call, mutation, or external invocation authority exists.",
+      "findings": [
+        {
+          "id": "CADP-AI-T5-R2-F01",
+          "summary": "Worker implementation omitted candidate metadata from the exact API and probed an empty allowlist record instead of composing redaction and allowlist validation over caller candidate metadata.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Retain reviewer-added composition and deterministic malformed-input regressions; require a fresh governed packet for authentication or transport runtime.",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        },
+        {
+          "id": "CADP-AI-T5-R2-F02",
+          "summary": "The CADP drift fixture schema permits only one surface to own the shared package-root path, so R2 package-root export is source/typecheck confirmed but not independently fixture-backed.",
+          "disposition": "DEFER_WITH_ROADMAP",
+          "nextAction": "Address shared package-root multi-surface proof only in a separately authorized checker-maintenance tranche if stronger independent export drift coverage is required.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "roadmapRef": "docs/roadmaps/CVF_CADP_FULL_KNOWLEDGE_AND_IMPLEMENTATION_ABSORPTION_ROADMAP_2026-08-13.md"
+        }
+      ],
+      "negativeSearchTerms": [
+        "accepted external readout without authentication",
+        "candidate metadata returned before authentication",
+        "ambient rejection ordinal",
+        "MCP or CLI transport registration",
+        "credential or provider invocation"
+      ],
+      "nextScanRecommendation": "Re-scan only if a separately authorized authentication, transport, or checker-maintenance tranche changes these surfaces."
     }
   ]
 }
