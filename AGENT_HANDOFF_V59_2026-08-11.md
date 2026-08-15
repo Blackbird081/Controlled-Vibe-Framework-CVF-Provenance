@@ -1,7 +1,6 @@
 # CVF Agent Handoff V59 - CADP-AI-T5-R1 Authority Foundation Authoring
 
 Memory class: active-handoff
-
 Status: ACTIVE
 
 ## Handoff Context
@@ -16,6 +15,7 @@ Status: ACTIVE
 - Current T5-R1 repair-rebind session-sync: `df350ac9a1d9106f114982a5a5d3c7061475848c`
 - Current T5-R1 dispatch material commit: `071e39100f8b93b7959505b0e3f22ed31f2b6030`
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
+- Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
 - CADP-AI-T2 accepted fail-closed checkpoint commit:
