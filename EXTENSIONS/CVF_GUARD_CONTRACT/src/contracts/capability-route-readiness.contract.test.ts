@@ -45,6 +45,34 @@ describe('capability route and readiness evidence kernel', () => {
     expect(result.executionAuthorized).toBe(false);
   });
 
+  it('does not let a zero material-score delta disable equal-score authority ambiguity', () => {
+    const result = evaluateCapabilityRoute(candidateSet([
+      candidate({ capabilityId: 'safe', packageId: 'safe' }),
+      candidate({
+        capabilityId: 'dangerous', packageId: 'dangerous', riskLevel: 'R3',
+        credentialScopeRefs: ['prod-secret'], networkDestinations: ['external.example'],
+        mutationKinds: ['DELETE'], irreversibleEffects: true, publicOrHumanEffects: true,
+      }),
+    ]), { now: NOW, materialScoreDelta: 0 });
+    expect(result.stage).toBe('AMBIGUOUS_ROUTE');
+    expect(result.ambiguityReasons).toEqual(expect.arrayContaining([
+      'RISK_LEVEL_DIFFERS', 'CREDENTIAL_SCOPE_DIFFERS', 'NETWORK_DESTINATIONS_DIFFER',
+      'MUTATION_SCOPE_DIFFERS', 'IRREVERSIBLE_EFFECTS_DIFFER', 'PUBLIC_OR_HUMAN_EFFECTS_DIFFER',
+    ]));
+    expect(result.issues).toEqual(expect.arrayContaining([expect.objectContaining({ code: 'MATERIAL_AUTHORITY_AMBIGUITY' })]));
+    expect(result.executionAuthorized).toBe(false);
+  });
+
+  it('requires full resolution for a single candidate with material authority', () => {
+    const route = evaluateCapabilityRoute(candidateSet([candidate({
+      riskLevel: 'R3', credentialScopeRefs: ['root'], networkDestinations: ['prod.example'],
+      mutationKinds: ['DROP_DB'], irreversibleEffects: true, publicOrHumanEffects: true,
+    })]), { now: NOW });
+    expect(route.stage).toBe('FULL_RESOLUTION_REQUIRED');
+    expect(route.issues).toContainEqual(expect.objectContaining({ code: 'MATERIAL_AUTHORITY_REVIEW_REQUIRED' }));
+    expect(evaluateCapabilityReadiness(route, readiness(), NOW)).toEqual(expect.objectContaining({ state: 'UNKNOWN', executionAuthorized: false }));
+  });
+
   it.each([
     ['risk', { riskLevel: 'R2' as const }, 'RISK_LEVEL_DIFFERS'],
     ['credentials', { credentialScopeRefs: ['secret-ref'] }, 'CREDENTIAL_SCOPE_DIFFERS'],
@@ -112,5 +140,18 @@ describe('capability route and readiness evidence kernel', () => {
   it('recognizes ready-with-existing-approval without treating it as execution authority', () => {
     const route = evaluateCapabilityRoute(candidateSet(), { now: NOW });
     expect(evaluateCapabilityReadiness(route, readiness({ approvalRequired: true, existingApprovalValid: true }), NOW)).toEqual(expect.objectContaining({ state: 'READY_WITH_EXISTING_APPROVAL', executionAuthorized: false }));
+  });
+
+  it('fails closed and sanitizes malformed readiness inputs instead of throwing', () => {
+    const route = evaluateCapabilityRoute(candidateSet(), { now: NOW });
+    const malformed = {
+      ...readiness({ readinessDecisionId: `unsafe\u0000id`, evidenceRefs: ['valid:ref', `bad\u0000ref`] }),
+      requiredDependencies: null,
+    } as unknown as CapabilityReadinessInput;
+    const result = evaluateCapabilityReadiness(route, malformed, NOW);
+    expect(result).toEqual(expect.objectContaining({
+      readinessDecisionId: 'invalid', state: 'UNKNOWN', blockingReasons: ['MALFORMED_READINESS_INPUT'],
+      evidenceRefs: ['valid:ref'], authorityStatus: 'EVIDENCE_ONLY', executionAuthorized: false,
+    }));
   });
 });

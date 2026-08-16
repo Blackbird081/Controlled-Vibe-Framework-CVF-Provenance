@@ -10,6 +10,17 @@ Date: 2026-08-16
 
 Batch ID: RSPB-AI-T4
 
+Prior closure status at `b571cd4b3` is not ratified. Independent review in
+`docs/reviews/CVF_LOCAL_SYNTHESIS_FIRST_LEARNING_AND_RSPB_AI_T4_INDEPENDENT_REVIEW_2026-08-16.md`
+found a HIGH zero-threshold ambiguity bypass and required repair.
+
+Worker verification incident: a package-wide test inherited an ambient
+Alibaba key and made two unintended provider calls. They are incident evidence
+only, not T4 proof, and grant no repeat-live authority. The repair evidence
+packet carries the secret-safe diagnostic and credential-cleared rerun. The
+Alibaba live tests now also require explicit `CVF_ALIBABA_LIVE_TEST=true` in
+addition to a key.
+
 Mixed-origin derived synthesis: REQUIRED
 
 ## Purpose
@@ -42,8 +53,10 @@ Every route and readiness result carries literal `executionAuthorized: false`.
 3. READY is environment evidence only. Ambiguous, unresolved, stale, unknown,
    policy, provenance, integrity, compatibility, credential, network, and
    sandbox states prevent optimistic readiness.
-4. Kernel tests pass 16/16; kernel-plus-export tests pass 50/50; TypeScript
-   validation passes.
+4. Repair tests pass 19/19, kernel/package regressions pass 65/65, and the
+   credential-cleared full package passes 597/597 with 5 live tests skipped.
+   TypeScript validation passes. Independent re-review accepted the repair in
+   `docs/reviews/CVF_RSPB_AI_T4_R1_FAIL_CLOSED_REPAIR_INDEPENDENT_REVIEW_2026-08-16.md`.
 
 ## Risk / Corrective Action
 
@@ -53,9 +66,9 @@ invoke capability code only through separately governed authority.
 
 ## Decision / Disposition
 
-`REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`. Keep the route/readiness kernel. Do
-not create a parallel router until a named consumer proves value beyond the
-existing ASSF/Execution Plane owners.
+`REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`. The distinct reviewer reproduced the
+zero-threshold, single-candidate authority, malformed-readiness,
+package-boundary, full-package, and TypeScript evidence without provider calls.
 
 ## Mixed-Origin Derived Synthesis Provenance
 
@@ -75,7 +88,7 @@ authorityStatus: NON_AUTHORITATIVE_UNTIL_REVIEWED
 |---|---|---|---|
 | Knowledge absorption | PROCEED_BOUNDED | selected eight-file cluster | single capability cluster |
 | Direct import | REJECT_DIRECT_IMPORT | CVF-native evaluator replaces weaker candidate code | no candidate execution |
-| Runtime activation | IMPLEMENT_CONTRACT_ONLY | 16/16 kernel tests; TypeScript PASS | pure evaluator only |
+| Runtime activation | IMPLEMENT_CONTRACT_ONLY | 19/19 repair tests; TypeScript PASS | pure evaluator only |
 | Authority promotion | NOT_AUTHORIZED | literal false authority fields | no router/transport/executor |
 
 ## System-Chain Value Review
@@ -88,6 +101,18 @@ authorityStatus: NON_AUTHORITATIVE_UNTIL_REVIEWED
 | router/transport/invocation | none | ASSF/Execution Plane consumer gap | CONDITIONAL | NOT_AUTHORIZED | demand-gated only |
 
 ## Absorption Efficiency And Provenance Reuse
+
+intakePriority: LOCAL_SYNTHESIZED_PACK_FIRST
+
+localSemanticInspection: FILE_AND_USE_CASE_CONTENT_REQUIRED
+
+mappingAction: DIRECT_WORK_ORDER_FOR_HIGH_FIT_CLUSTERS
+
+deliverySequence: WORK_ORDER_THEN_WORKER_THEN_INDEPENDENT_REVIEWER
+
+namePatternInference: FORBIDDEN_AS_VALUE_DISPOSITION
+
+upstreamConsultation: TARGETED_FOR_PROVENANCE_OR_GAP
 
 manifestLedgerReuse: REUSE_IF_FRESH
 
@@ -107,7 +132,7 @@ was performed.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_machine_closure_package.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_mixed_origin_derived_synthesis_absorption.py`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_public_export_disposition.py` |
-| literalTokensReviewed | closed status, provenance/decision/chain columns, efficiency controls, rescan/corpus fields, closure rows |
+| literalTokensReviewed | pending status, provenance/decision/chain columns, efficiency controls, rescan/corpus fields, closure rows |
 | gateRunPurpose | confirmatory evidence after bounded implementation |
 | claimBoundary | local route/readiness evidence kernel only |
 
@@ -115,7 +140,7 @@ was performed.
 
 | Field | Evidence |
 |---|---|
-| Actor | reviewer/closer implementing direct operator authorization |
+| Actor | original single-agent implementer; current fail-closed repair worker |
 | Provider or surface | local private provenance repository |
 | Session or invocation | RSPB-AI-T4, 2026-08-16 |
 | Working directory | repository root and Guard Contract package |
@@ -123,11 +148,11 @@ was performed.
 | Target paths | contract, test, two exports, review, two front doors, system-chain fingerprint |
 | Allowed scope source | operator `next` under learning commit `193c91404` |
 | Before status evidence | clean HEAD `844919a6c` |
-| After status evidence | bounded eight-path material tranche |
-| Diff evidence | `git diff --check`, 50/50 targeted tests, package check, governed gates |
-| Approval boundary | local implementation and private material closure |
+| After status evidence | prior closure rejected; bounded R1 repair independently accepted pending closer commit |
+| Diff evidence | `git diff --check`, 65/65 targeted tests, package check, governed gates |
+| Approval boundary | local implementation repair independently accepted for closer commit |
 | Claim boundary | no router/transport/executor, acquisition, provider, public, deploy, or production action |
-| Agent type | reviewer/closer |
+| Agent type | repair worker; independent reviewer remains separate |
 | Invocation ID | `rspb-ai-t4-route-readiness-kernel-2026-08-16` |
 | Expected manifest | eight material paths |
 | Actual changed set | verified before commit |
@@ -140,7 +165,7 @@ was performed.
 |---|---|
 | claimScope | deterministic route/readiness evidence evaluation |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
-| receiptEvidence | CVF_RECEIPT_PRESENT: 16/16 kernel tests, 50/50 kernel-plus-export tests, TypeScript PASS |
+| receiptEvidence | CVF_RECEIPT_PRESENT: 19/19 kernel tests, 65/65 kernel-plus-export tests, TypeScript PASS |
 | actionEvidence | ACTION_EVIDENCE_PRESENT: exact changed-path and diff evidence |
 | invocationBoundary | local source, tests, docs, private commit only |
 | interceptionBoundary | no shell/provider/runtime interception claim |
@@ -206,6 +231,9 @@ package was not treated as evidence of low value.
 |---|---|---|---|
 | authority separation | route and READY never authorize execution | literal false fields tested | PASS |
 | material ambiguity | authority-dimension differences escalate | six dimensions tested | PASS |
+| zero-threshold ambiguity | equal scores still compare material authority | adversarial threshold-zero regression independently reproduced | PASS |
+| absolute authority | single high-risk candidate cannot fast-route | material-authority review issue and UNKNOWN readiness independently reproduced | PASS |
+| malformed readiness | invalid arrays and unsafe identifiers fail closed | UNKNOWN sanitized output; no throw independently reproduced | PASS |
 | two-stage route | clear fast route; unresolved ties/dependencies escalate | positive and negative tests | PASS |
 | fail-closed readiness | blockers override approval/dependency optimism | precedence tests | PASS |
 | rationale/fallback | rejected reasons and activation condition visible | output assertions | PASS |
@@ -254,6 +282,8 @@ package was not treated as evidence of low value.
 | RSPB-T4-S1 | route ambiguity policy | close candidates may be chosen | ADAPTED | vary six material authority dimensions | PASS_ESCALATES |
 | RSPB-T4-S2 | readiness precedence | READY follows availability | ADAPTED | combine missing dependency with integrity failure | PASS_BLOCKS_INTEGRITY |
 | RSPB-T4-S3 | route checker | route is not authority | ADAPTED | inspect both route and readiness outputs | PASS_LITERAL_FALSE |
+| RSPB-T4-S4 | independent rejection | zero threshold bypassed ambiguity | REPAIR_REQUIRED | equal-score six-dimension divergence | PASS_ESCALATES_PENDING_REREVIEW |
+| RSPB-T4-S5 | independent rejection | lone high-risk candidate fast-routed | REPAIR_REQUIRED | absolute material-authority footprint | PASS_FULL_RESOLUTION_PENDING_REREVIEW |
 
 ## Corpus Completeness And Report Integrity
 
@@ -298,37 +328,39 @@ authority/precedence delta and leaves discovery/invocation with existing owners.
 Contradiction Handling Requirement: the candidate checkers were weaker than
 the T3 kernel and were rejected rather than counted as additional value.
 
-Claim Update: CONFIRMED_BOUNDED; consumer activation remains demand-gated.
+Claim Update: REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED for R1; consumer activation
+remains demand-gated and the defective pre-R1 closure claim remains superseded.
 
 ## Dual Agent Surface Matrix
 
 | Surface | Entry point | Authority boundary | Evidence | Status |
 |---|---|---|---|---|
-| INTERNAL_AGENT | Guard Contract imports | evidence only, literal false | 50/50 targeted tests | IMPLEMENTED_BOUNDED |
+| INTERNAL_AGENT | Guard Contract imports | evidence only, literal false | 65/65 targeted tests plus independent adversarial review | IMPLEMENTED_BOUNDED |
 | EXTERNAL_AGENT_CLI_MCP | none | no route/transport authority | no activation | DEFERRED |
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private-provenance material closure; no public sync or push authorized.
+Reason: private-provenance repair pending independent re-review; no public sync
+or push authorized.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | direct operator `next` | no standalone work order under single-pass learning | N/A with reason |
-| Completion or reviewer artifact | this review | `Status: REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
-| Roadmap state | RSPB selective cluster continuation | T4 bounded; consumer parked | PASS |
+| Work order status | independent-review corrective action | no retroactive work order; repair follows accepted finding and current session repair authority | N/A with reason |
+| Completion or reviewer artifact | this review plus independent R1 review | `Status: REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | RSPB selective cluster continuation | T4-R1 accepted; next cluster remains separately value-gated | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | predecessor entry unchanged | PASS |
 | Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | predecessor projection unchanged | PASS |
 | External evidence digest | External Artifact Hash Manifest | eight SHA-256 values | PASS |
 | System loop interlock | candidates -> route evidence -> readiness evidence -> separate authority | fail-closed boundary tested | PASS |
-| Session continuity | active handoff/state | post-material sync required | PASS |
+| Session continuity | active handoff/state | current mode already records review rejection and repair requirement | PASS |
 
 ## Claim Boundary
 
-This closure proves only local deterministic route/readiness evidence logic. It
+This bounded closure proves only local deterministic route/readiness evidence logic. It
 does not import or activate a router, grant approval/execution, invoke a
 capability, mutate state, use credentials/network/provider/live services,
 activate MCP/CLI, export publicly, deploy, or establish production readiness.

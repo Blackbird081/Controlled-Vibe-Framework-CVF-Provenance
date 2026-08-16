@@ -44,7 +44,7 @@ export interface CapabilityCandidateSet {
 }
 
 export interface CapabilityRouteIssue {
-  readonly code: 'MALFORMED_INPUT' | 'INVALID_FIELD' | 'DUPLICATE_CANDIDATE' | 'MATERIAL_AUTHORITY_AMBIGUITY' | 'DEPENDENCY_OR_CONFLICT_REVIEW_REQUIRED';
+  readonly code: 'MALFORMED_INPUT' | 'INVALID_FIELD' | 'DUPLICATE_CANDIDATE' | 'MATERIAL_AUTHORITY_AMBIGUITY' | 'MATERIAL_AUTHORITY_REVIEW_REQUIRED' | 'DEPENDENCY_OR_CONFLICT_REVIEW_REQUIRED';
   readonly path: string;
   readonly message: string;
 }
@@ -146,6 +146,15 @@ function materialAuthorityDifferences(left: CapabilityRouteCandidate, right: Cap
   return differences;
 }
 
+function hasMaterialAuthorityFootprint(candidate: CapabilityRouteCandidate): boolean {
+  return candidate.riskLevel !== 'R0'
+    || candidate.credentialScopeRefs.length > 0
+    || candidate.networkDestinations.length > 0
+    || candidate.mutationKinds.length > 0
+    || candidate.irreversibleEffects
+    || candidate.publicOrHumanEffects;
+}
+
 function validateCandidateSet(value: CapabilityCandidateSet, now: string): CapabilityRouteIssue[] {
   const issues: CapabilityRouteIssue[] = [];
   if (!isPlainRecord(value)) return [issue('MALFORMED_INPUT', '$.candidateSet', 'Candidate set must be a plain non-Proxy object.')];
@@ -184,14 +193,17 @@ export function evaluateCapabilityRoute(
     .sort((left, right) => right.score - left.score || left.capabilityId.localeCompare(right.capabilityId));
   const primary = candidates[0];
   const second = candidates[1];
-  const ambiguityReasons = primary && second && primary.score - second.score < threshold
+  const withinMaterialWindow = Boolean(primary && second && primary.score - second.score <= threshold);
+  const ambiguityReasons = primary && second && withinMaterialWindow
     ? materialAuthorityDifferences(primary, second) : [];
   if (ambiguityReasons.length) issues.push(issue('MATERIAL_AUTHORITY_AMBIGUITY', '$.candidateSet.candidates', ambiguityReasons.join(', ')));
   const requiresClosure = Boolean(primary && (primary.dependencies.length || primary.conflicts.length));
   if (requiresClosure) issues.push(issue('DEPENDENCY_OR_CONFLICT_REVIEW_REQUIRED', '$.candidateSet.candidates[0]', 'Primary candidate requires full dependency/conflict resolution.'));
+  const requiresAuthorityReview = Boolean(primary && hasMaterialAuthorityFootprint(primary));
+  if (requiresAuthorityReview) issues.push(issue('MATERIAL_AUTHORITY_REVIEW_REQUIRED', '$.candidateSet.candidates[0]', 'Primary candidate has a material authority footprint and cannot use fast routing.'));
   const stage: CapabilityRouteStage = !primary ? 'NO_CANDIDATE'
     : ambiguityReasons.length ? 'AMBIGUOUS_ROUTE'
-      : requiresClosure || Boolean(second && primary.score - second.score < threshold) ? 'FULL_RESOLUTION_REQUIRED'
+      : requiresClosure || requiresAuthorityReview || withinMaterialWindow ? 'FULL_RESOLUTION_REQUIRED'
         : 'FAST_ROUTE';
   return Object.freeze({
     schemaVersion: CAPABILITY_ROUTE_DECISION_VERSION,
@@ -255,11 +267,54 @@ function readinessResult(
   });
 }
 
+function validIdArray(value: unknown): value is readonly string[] {
+  return Array.isArray(value) && value.every(validId);
+}
+
+function validEvidenceState(value: unknown): value is boolean | null {
+  return value === true || value === false || value === null;
+}
+
+function validateReadinessInput(value: unknown): value is CapabilityReadinessInput {
+  if (!isPlainRecord(value)) return false;
+  if (!validId(value.readinessDecisionId) || !validId(value.snapshotId)) return false;
+  if (!validUtc(value.snapshotObservedAt) || !validUtc(value.snapshotExpiresAt)) return false;
+  if (!validIdArray(value.requiredDependencies) || !validIdArray(value.availableDependencies) || !validIdArray(value.evidenceRefs)) return false;
+  if (typeof value.approvalRequired !== 'boolean' || typeof value.existingApprovalValid !== 'boolean') return false;
+  return ['policyAllowed', 'provenanceVerified', 'integrityVerified', 'compatible', 'credentialsReady', 'networkReady', 'sandboxReady']
+    .every((field) => validEvidenceState(value[field]));
+}
+
+function malformedReadinessResult(
+  route: CapabilityRouteDecision,
+  input: unknown,
+  now: string,
+): CapabilityReadinessDecision {
+  const record: Record<string, unknown> = isPlainRecord(input) ? input : {};
+  const routeRecord: Record<string, unknown> = isPlainRecord(route) ? route : {};
+  return Object.freeze({
+    schemaVersion: CAPABILITY_READINESS_DECISION_VERSION,
+    readinessDecisionId: validId(record.readinessDecisionId) ? record.readinessDecisionId : 'invalid',
+    routeDecisionId: validId(routeRecord.routeDecisionId) ? routeRecord.routeDecisionId : 'invalid',
+    snapshotId: validId(record.snapshotId) ? record.snapshotId : 'invalid',
+    state: 'UNKNOWN',
+    missingDependencies: Object.freeze([]),
+    approvalRequirements: Object.freeze([]),
+    blockingReasons: Object.freeze(['MALFORMED_READINESS_INPUT']),
+    evidenceRefs: Object.freeze(Array.isArray(record.evidenceRefs) ? record.evidenceRefs.filter(validId) : []),
+    nextSafeAction: 'Collect missing evidence and reevaluate fail closed.',
+    evaluatedAt: validUtc(now) ? now : '1970-01-01T00:00:00Z',
+    authorityStatus: 'EVIDENCE_ONLY',
+    executionAuthorized: false,
+  });
+}
+
 export function evaluateCapabilityReadiness(
   route: CapabilityRouteDecision,
   input: CapabilityReadinessInput,
   now: string,
 ): CapabilityReadinessDecision {
+  if (!validateReadinessInput(input)) return malformedReadinessResult(route, input, now);
   const missing = input.requiredDependencies.filter((dependency) => !input.availableDependencies.includes(dependency));
   const checks: readonly [boolean, CapabilityReadinessState, string][] = [
     [input.integrityVerified === false, 'BLOCKED_INTEGRITY', 'INTEGRITY_FAILED'],
