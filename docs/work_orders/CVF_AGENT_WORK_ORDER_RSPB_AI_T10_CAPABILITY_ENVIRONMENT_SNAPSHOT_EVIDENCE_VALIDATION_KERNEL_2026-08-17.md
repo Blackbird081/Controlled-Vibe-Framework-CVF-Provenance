@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: RSPB-AI-T10
 
@@ -386,22 +386,22 @@ fields, and both barrels.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | dispatcher/orchestrator |
+| Actor | independent reviewer/closer |
 | Provider or surface | local private provenance repository |
-| Session or invocation | RSPB-AI-T10 dispatch authoring, 2026-08-17 |
+| Session or invocation | RSPB-AI-T10 bounded machine closure, 2026-08-17 |
 | Working directory | repository root |
-| Command or tool surface | governed reads, ledger selection, hashes, apply_patch, dispatch gates |
-| Target paths | paired T10 baseline and this work order |
+| Command or tool surface | governed review, hermetic tests, closure checker, session generator, local governance hook |
+| Target paths | this work order |
 | Allowed scope source | operator continuation instruction and active next move |
-| Before status evidence | clean worktree at HEAD `1a257b372e6e2952c507c90a9acfe34644a89868`; `git status --short` was empty before authoring |
-| After status evidence | two dispatch artifacts pending gate/commit |
+| Before status evidence | material, reviewer continuity, completion review, review sync, immutable closure-authority sync, and exact HEAD sync committed |
+| After status evidence | exact one-path machine-closure conversion staged for closer commit |
 | Diff evidence | `git diff --name-status` |
-| Approval boundary | dispatch authoring only; external worker receives no commit permission |
+| Approval boundary | reviewer/closer owns this bounded closure commit; worker made no commit |
 | Claim boundary | repo-local dispatch trace; no action/runtime/provider/public authority |
-| Agent type | dispatcher/orchestrator |
-| Invocation ID | `rspb-ai-t10-environment-snapshot-validation-dispatch-2026-08-17` |
-| Expected manifest | paired T10 baseline; this T10 work order |
-| Actual changed set | paired T10 baseline; this T10 work order |
+| Agent type | independent reviewer/closer |
+| Invocation ID | `rspb-ai-t10-environment-snapshot-validation-closure-2026-08-17` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_2026-08-17.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_2026-08-17.md` |
 | Manifest delta | MATCH |
 
 ## Delta Execution Claim Boundary Control Block
@@ -653,13 +653,47 @@ Reason: private implementation dispatch; no public-sync authority.
 
 ## Closure Checklist
 
-- [ ] Worker captures execution base and clean owned paths.
-- [ ] Six selected hashes match.
-- [ ] Exact five-path worker manifest matches.
-- [ ] Focused, composed regression, package, TypeScript, diff, and fast gates pass.
-- [ ] Worker returns uncommitted `COMPLETE_PENDING_REVIEW`.
-- [ ] Independent reviewer inspects full diff and reproduces adversarial proof.
-- [ ] Reviewer/closer alone decides material commit and continuity sync.
+- [x] Worker captured execution base and clean owned paths.
+- [x] Six selected hashes matched.
+- [x] Exact five-path worker manifest matched.
+- [x] Focused, composed regression, package, TypeScript, diff, and fast gates passed.
+- [x] Worker returned uncommitted `COMPLETE_PENDING_REVIEW`.
+- [x] Independent reviewer inspected the full diff, added three adversarial probes, and repaired three bounded defects.
+- [x] Reviewer/closer committed material `8de69410c`, reviewer continuity `d11676c42`, completion review `a3ee9229e`, review sync `a233e410b`, closure-authority sync `e57d2d5b9`, and exact HEAD sync `55ce4987a`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED`; checklist has no open item | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_COMPLETION_2026-08-17.md` | `REVIEWER_ACCEPTED_PENDING_CLOSER`; SHA-256 `a97e71bef013b0d19751ae184d6bce935b2ada6c74cd4a5e784660330554379a` | PASS |
+| Worker return | `docs/reviews/CVF_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_WORKER_RETURN_2026-08-17.md` | SHA-256 `6eeeffab3fc0a93ff42287f66cdd097e5c4aa54446aed62aec4f38b22cbab3eb`; worker made no commit | PASS |
+| Material | Guard Contract source, test, two barrels, fingerprint | commit `8de69410ca81eb3deed1f717528cc255bd7d98d3` | PASS |
+| Test evidence | focused, T4/T10 regression, package, TypeScript | 20/20; 39/39; 763 passed plus 5 skipped; TypeScript PASS | PASS |
+| System-chain freshness | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | hash-only reviewer refresh; posture/verdict unchanged; `CURRENT`, zero violations | PASS |
+| Roadmap state | RSPB bounded cluster continuation | N/A with reason: no separate roadmap row was opened | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row registry reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | local-first clusters remain routed to current CVF owners | PASS |
+| External evidence digest | worker return and completion review | worker SHA-256 `6eeeffab3fc0a93ff42287f66cdd097e5c4aa54446aed62aec4f38b22cbab3eb`; review SHA-256 `a97e71bef013b0d19751ae184d6bce935b2ada6c74cd4a5e784660330554379a`; generated 2026-08-17 | PASS |
+| System loop interlock | caller-supplied current T4 route plus strict snapshot and policy evidence | every action-authority literal false; no environment read, persistence, refresh, acquisition, mutation, or execution | PASS |
+| Provider/live evidence | none | zero calls; no proof claimed | N/A with reason |
+| Session continuity | active state, bootstrap, memory, handoff | reviewer sync `d11676c42`; review sync `a233e410b`; authority sync `e57d2d5b9`; HEAD sync `55ce4987a`; final closed-mode sync follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| current T4 acceptance | strict current route shape and unchanged readiness evaluator compose | PASS |
+| hostile input | Proxy, accessor, sparse, oversized, symbols, and Array subclasses fail closed | PASS |
+| route binding | workspace, snapshot reference, primary package/version, and supporting dependencies bind exactly | PASS |
+| dependency evidence | only AVAILABLE counts; missing/blocked/unknown remain unavailable with bounded reasons | PASS |
+| location evidence | CLI/native/package use path only; API/MCP use endpoint only | PASS |
+| freshness evidence | nonexistent, future, expired, and inverted timestamps reject | PASS |
+| network evidence | restricted/offline observations fail closed to `BLOCKED_NETWORK` | PASS |
+| secret evidence | raw assignments reject without echo; ordinary vocabulary does not false-positive | PASS |
+| authority outputs | all nine collection/persistence/read/action/refresh/task/network literals remain `false` | PASS |
+| both barrels | focused and package import proof passes | PASS |
+| runtime/provider receipt | none authorized or claimed | PASS |
 
 ## Execution Plan
 
