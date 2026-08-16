@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: RSPB-AI-T9
 
@@ -380,22 +380,22 @@ input mutation, false authority fields, and both barrels.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | dispatcher/orchestrator |
+| Actor | independent reviewer/closer |
 | Provider or surface | local private provenance repository |
-| Session or invocation | RSPB-AI-T9 dispatch authoring, 2026-08-16 |
+| Session or invocation | RSPB-AI-T9 bounded machine closure, 2026-08-16 |
 | Working directory | repository root |
-| Command or tool surface | governed reads, ledger selection, hashes, apply_patch, dispatch gates |
-| Target paths | paired T9 baseline and this work order |
+| Command or tool surface | governed review, hermetic tests, closure checker, session generator, local governance hook |
+| Target paths | this work order |
 | Allowed scope source | operator continuation instruction and active next move |
-| Before status evidence | clean worktree at HEAD `92bdf9e9c936ba43c6e2238134c1cd718edf794d`; `git status --short` was empty before authoring |
-| After status evidence | two dispatch artifacts pending gate/commit |
-| Diff evidence | `git diff --name-status` |
-| Approval boundary | dispatch authoring only; external worker receives no commit permission |
+| Before status evidence | accepted material, reviewer-accepted continuity, completion review, and review-HEAD sync committed |
+| After status evidence | exact one-path machine-closure conversion staged for closer commit |
+| Diff evidence | `git diff --cached --name-status` |
+| Approval boundary | reviewer/closer owns this bounded closure commit; worker made no commit |
 | Claim boundary | repo-local dispatch trace; no action/runtime/provider/public authority |
-| Agent type | dispatcher/orchestrator |
-| Invocation ID | `rspb-ai-t9-receipt-verification-dispatch-2026-08-16` |
-| Expected manifest | paired T9 baseline; this T9 work order |
-| Actual changed set | paired T9 baseline; this T9 work order |
+| Agent type | independent reviewer/closer |
+| Invocation ID | `rspb-ai-t9-receipt-verification-closure-2026-08-16` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T9_CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_AND_REPAIR_STOP_KERNEL_2026-08-16.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T9_CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_AND_REPAIR_STOP_KERNEL_2026-08-16.md` |
 | Manifest delta | MATCH |
 
 ## Delta Execution Claim Boundary Control Block
@@ -647,13 +647,46 @@ Reason: private implementation dispatch; no public-sync authority.
 
 ## Closure Checklist
 
-- [ ] Worker captures execution base and clean owned paths.
-- [ ] Nine selected hashes match.
-- [ ] Exact five-path worker manifest matches.
-- [ ] Focused, composed regression, package, TypeScript, diff, and fast gates pass.
-- [ ] Worker returns uncommitted `COMPLETE_PENDING_REVIEW`.
-- [ ] Independent reviewer inspects full diff and reproduces adversarial proof.
-- [ ] Reviewer/closer alone decides material commit and continuity sync.
+- [x] Worker captured execution base and clean owned paths.
+- [x] Nine selected hashes matched.
+- [x] Exact five-path worker manifest matched.
+- [x] Focused, composed regression, package, TypeScript, diff, and fast gates passed.
+- [x] Worker returned uncommitted `COMPLETE_PENDING_REVIEW`.
+- [x] Independent reviewer inspected the full diff, added four adversarial probes, and repaired three bounded defects.
+- [x] Reviewer/closer committed material at `5e5aeb8a4`, reviewer-accepted continuity at `fbeda02a9`, completion review at `d34dce4c5`, and completion-review sync at `2a09fcd92`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED`; checklist has no open item | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSPB_AI_T9_CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_AND_REPAIR_STOP_KERNEL_COMPLETION_2026-08-16.md` | `REVIEWER_ACCEPTED_PENDING_CLOSER`; SHA-256 `52a8f594fcd2a555a86b479165413cb14248a3e807e127a968addda253ac345c` | PASS |
+| Worker return | `docs/reviews/CVF_RSPB_AI_T9_CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_AND_REPAIR_STOP_KERNEL_WORKER_RETURN_2026-08-16.md` | SHA-256 `3f376a7111d5a9bd0d433591af3d01f3533eaa436141c5d506fba4954ec2631d`; worker made no commit | PASS |
+| Material | Guard Contract source, test, two barrels, fingerprint | commit `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3` | PASS |
+| Test evidence | focused, T3/T8/T9 regression, package, TypeScript | 42/42; 105/105; 743 passed plus 5 skipped; TypeScript PASS | PASS |
+| System-chain freshness | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | hash-only reviewer refresh; posture/verdict unchanged; `CURRENT`, zero violations | PASS |
+| Roadmap state | RSPB bounded cluster continuation | N/A with reason: no separate roadmap row was opened | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row registry reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | local-first clusters remain routed to current CVF owners | PASS |
+| External evidence digest | worker return and completion review | worker SHA-256 `3f376a7111d5a9bd0d433591af3d01f3533eaa436141c5d506fba4954ec2631d`; review SHA-256 `52a8f594fcd2a555a86b479165413cb14248a3e807e127a968addda253ac345c`; generated 2026-08-16 | PASS |
+| System loop interlock | caller-supplied current T3 plan plus T8 approval plus strict receipt | every action authority literal false; no persistence, acquisition, repair execution, or mutation | PASS |
+| Provider/live evidence | none | zero calls; no proof claimed | N/A with reason |
+| Session continuity | active state, bootstrap, memory, handoff | reviewer-accepted sync `fbeda02a9`; final closed-mode sync follows this machine closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| current T3/T8 acceptance | current evaluators compose at receipt start time | PASS |
+| hostile input | Proxy, accessor, sparse, oversized, and inherited Array-subclass hooks fail closed | PASS |
+| operation evidence | every non-rollback operation appears exactly once with `SUCCESS` | PASS |
+| mutation evidence | exact plan envelope; missing, extra, duplicate, and ambiguous entries reject | PASS |
+| artifact evidence | lowercase SHA-256 digest and version bind to authenticated plan | PASS |
+| secret evidence | raw assignments reject without echo; ordinary vocabulary does not false-positive | PASS |
+| repair projection | current T3 evaluator supplies `REPAIR_ALLOWED`, `ESCALATE`, or `STOP`; no repair authority follows | PASS |
+| authority outputs | receipt persistence, execution, acquisition, mutation, repair, rollback, task, and network literals remain `false` | PASS |
+| both barrels | focused import proof passes | PASS |
+| runtime/provider receipt | none authorized or claimed | PASS |
 
 ## Execution Plan
 
