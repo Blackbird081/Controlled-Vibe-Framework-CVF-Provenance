@@ -43,17 +43,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t8_approval_evidence_binding_kernel_dispatched_worker_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=send the committed T8 work order to one external no-commit worker, then return its uncommitted diff for independent review; parked checkpoint=approval issuance/replay store/nonce consumption, environment I/O, acquisition/network/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t8_approval_evidence_binding_kernel_reviewer_accepted_pending_closer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=completion review, work-order conversion, machine closure, and final continuity only; parked checkpoint=approval issuance/replay store/nonce consumption, environment I/O, acquisition/network/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `rspb_ai_t8_approval_evidence_binding_kernel_dispatched_worker_pending`
-Current mode: `rspb_ai_t8_approval_evidence_binding_kernel_dispatched_worker_pending`
-Previous mode: `rspb_ai_t7_profile_policy_kernel_closed_bounded_continue_cluster_selection`
+Current mode marker: `rspb_ai_t8_approval_evidence_binding_kernel_reviewer_accepted_pending_closer`
+Current mode: `rspb_ai_t8_approval_evidence_binding_kernel_reviewer_accepted_pending_closer`
+Previous mode: `rspb_ai_t8_approval_evidence_binding_kernel_dispatched_worker_pending`
 
 ## Next Allowed Move
 
-Mode: `rspb_ai_t8_approval_evidence_binding_kernel_dispatched_worker_pending`
+Mode: `rspb_ai_t8_approval_evidence_binding_kernel_reviewer_accepted_pending_closer`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -98,7 +98,7 @@ RSPB-AI-T6 is dispatched at `4789d1442ed280c91e3dd5e6e3c8995244db19ef` after pre
 RSPB-AI-T6 material plus disclosed reviewer repair is committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Evidence: focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, and zero provider/live calls. Next move is bounded closure/session synchronization only.
 RSPB-AI-T6 is `CLOSED_PASS_BOUNDED`; machine closure is committed at `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`. Its pure seam binds accepted T5 projection evidence to a provenance-bound pending learning candidate and the existing intake bridge. Continue with the next highest-value local cluster without restarting full-corpus proof; storage, promotion, mutation, runtime service, provider/live, public, and production authority remain unopened.
 RSPB-AI-T7 is `CLOSED_PASS_BOUNDED`: material and reviewer repair `63b2f7367`, completion review `25b19b3d5`, machine closure `055252ddb`. Evidence: focused 26/26, composed 57/57, package 650 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. Continue with the next highest-value local cluster without restarting full-corpus proof; all runtime/external authority remains parked.
-RSPB-AI-T8 is dispatched at `84ba2dd930807e88a46bb75c4239a8b8c5729dc9` after pre-dispatch 77/77 and pre-commit 85/85. Send its committed work order to one external `WORKER_MUST_NOT_COMMIT` worker. The worker owns exactly five paths; this independent reviewer/orchestrator owns full review, adversarial reproduction, expected barrel-fingerprint drift handling, any bounded repair, material commit, and closure. No approval issuance, replay storage/nonce consumption, I/O, acquisition, executor, action authority, provider/live, public, deploy, or production authority is opened.
+RSPB-AI-T8 is `REVIEWER_ACCEPTED_PENDING_CLOSER` at material commit `3a1fb03d1` after disclosed bounded reviewer repair. Evidence: focused 51/51, T3/T7 regression 38/38, package 701 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. Only completion review, work-order conversion, machine closure, and final continuity remain; all runtime/external authority stays parked.
 ## Parked Checkpoints
 
 Live retry, external T5 adapter runtime, out-of-manifest production TypeScript edits, existing-guard edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation, CLI/MCP invocation, public sync, deployment, production, trusted-evidence readiness and cross-runtime determinism claims remain parked.
