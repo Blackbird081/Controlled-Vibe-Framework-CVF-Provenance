@@ -389,3 +389,30 @@ export {
   reconcileControlledAcquisitionReceipt,
   evaluateControlledAcquisitionRepair,
 } from './controlled-acquisition.contract';
+
+export type {
+  ProjectionStalenessState,
+  FindingVerificationState,
+  FindingSeverity,
+  PathStepKind,
+  CapabilityCaseProjectionInput,
+  CanonicalEvidenceInput,
+  DomainFindingInput,
+  DomainPathStepInput,
+  DomainPathInput,
+  DomainEvidenceProjectionInput,
+  CaseEvidenceProjectionIssueCode,
+  CaseEvidenceProjectionIssue,
+  ProjectedFinding,
+  ProjectedPathStep,
+  ProjectedPath,
+  ProjectedEvidence,
+  CapabilityCaseEvidenceProjection,
+} from './capability-case-evidence-projection.contract';
+
+export {
+  CAPABILITY_CASE_EVIDENCE_PROJECTION_CONTRACT_VERSION,
+  CAPABILITY_CASE_PROJECTION_VERSION,
+  DOMAIN_EVIDENCE_PROJECTION_VERSION,
+  projectCapabilityCaseEvidence,
+} from './capability-case-evidence-projection.contract';
