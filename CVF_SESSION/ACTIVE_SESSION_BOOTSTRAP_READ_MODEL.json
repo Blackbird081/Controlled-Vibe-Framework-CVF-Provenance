@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t7_profile_policy_kernel_dispatched_external_worker_pending",
+  "currentMode": "rspb_ai_t7_profile_policy_kernel_reviewer_accepted_pending_closer",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T7 R1 retry is authorized after independent reproduction rejected the first BLOCKED_WITH_REASON claim: focused T4 passed 19/19 and the full Guard Contract passed 624 with 5 skipped under the same Vitest/Vite/Node versions. The work order removes the nonexistent config-file argument. Provide the amended canonical packet to one external no-commit worker. The worker edits exactly five paths and returns COMPLETE_PENDING_REVIEW; this independent reviewer/orchestrator then reviews and tests before any material commit. Profile loading, environment I/O, acquisition, network authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T7 implementation plus disclosed bounded reviewer repair is materially committed at 63b2f7367e9184da2ff18a74db163327809e2602 and independently accepted pending formal completion review and closer conversion. Evidence: focused 26/26, T3/T4 composed 57/57, full Guard Contract 650 passed with 5 skipped, TypeScript PASS, system-chain freshness CURRENT, worker-return fast gate COMPLIANT, reviewer-fast 64/64, pre-commit 85/85, and zero provider/live calls. Next move: record the completion review, convert the work order to bounded closure, then synchronize final continuity. Profile loading, environment I/O, acquisition, network/action authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
