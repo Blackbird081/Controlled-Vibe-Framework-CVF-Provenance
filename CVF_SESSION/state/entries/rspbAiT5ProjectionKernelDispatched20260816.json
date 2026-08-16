@@ -1,5 +1,5 @@
 {
   "stateOrder": 2249,
   "stateKey": "rspbAiT5ProjectionKernelDispatched20260816",
-  "value": "RSPB-AI-T5 is dispatched at 41c4c16d7 as a four-path WORKER_MUST_NOT_COMMIT projection-kernel tranche. It adapts a nine-file local-first cluster into a pure Guard Contract read model; no I/O, adapter, executor, provider/live, public, or production authority is opened. Next role is one implementation worker, followed by an independent reviewer."
+  "value": "RSPB-AI-T5-R1 is independently accepted and materially committed at 1b2c11c9fd1a9795cd9d5bcf17c10806e98273fb after one disclosed reviewer repair round. Evidence: 27/27 focused tests, 104/104 composed tests, 624 passed plus 5 skipped package tests, TypeScript PASS, 16/16 independent probes, and pre-commit 85/85. The absorbed nine-file local-first cluster now provides a pure runtime-testable Guard Contract projection seam; no I/O, adapter, executor, provider/live, public, or production authority is opened."
 }

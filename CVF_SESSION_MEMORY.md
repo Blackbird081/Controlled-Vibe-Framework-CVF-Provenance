@@ -43,17 +43,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t5_projection_kernel_dispatched_worker_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit T5 worker, then independent review; parked checkpoint=router/transport/executor activation, filesystem export, acquisition/mutation, credentials, MCP/network/provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t5_projection_kernel_accepted_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select the next highest-value local synthesis cluster and dispatch one bounded worker followed by a distinct reviewer; parked checkpoint=router/transport/executor activation, filesystem export, acquisition/mutation, credentials, MCP/network/provider/live, push/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `rspb_ai_t5_projection_kernel_dispatched_worker_pending`
-Current mode: `rspb_ai_t5_projection_kernel_dispatched_worker_pending`
-Previous mode: `rspb_ai_t4_r1_fail_closed_repair_accepted_bounded_continue_cluster_selection`
+Current mode marker: `rspb_ai_t5_projection_kernel_accepted_bounded_continue_cluster_selection`
+Current mode: `rspb_ai_t5_projection_kernel_accepted_bounded_continue_cluster_selection`
+Previous mode: `rspb_ai_t5_projection_kernel_dispatched_worker_pending`
 
 ## Next Allowed Move
 
-Mode: `rspb_ai_t5_projection_kernel_dispatched_worker_pending`
+Mode: `rspb_ai_t5_projection_kernel_accepted_bounded_continue_cluster_selection`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -93,7 +93,7 @@ with operator-selected Option A, `CADP_FAIL_CLOSED_ON_INVALID_TOKEN`. T5-R5 impl
 TypeScript, 34/34 focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84 passed. No CADP route or registry row was added.
 T8 is independently accepted closed bounded at `3b906862b`. Roadmap, finding overlay, and conditional reopen index now agree through T5-R6; the 140-row ledger segment is byte-identical. External CADP runtime is `PARKED_DEMAND_GATED`. The repo is documented cleanly for operator selection of a different repository, but no transfer/push/public/deploy/production action occurred or is authorized. Latest closed wave: `LHW24`.
 RSPB-AI-T1/T2 are accepted bounded at `d591c542a`/`44a74fa48`. T3 at `bdec9c1e7` adds the non-executing controlled-acquisition kernel. T4-R1 is independently accepted at `a2f874519`: zero-threshold ambiguity, absolute material-authority routing, malformed readiness, and ambient-key live-test activation are fail-closed. Evidence includes 19/19 focused, 65/65 boundary, 597/597 credential-cleared package tests, 14 independent probes, and zero reviewer live calls. The worker's two unintended Alibaba calls remain incident-only with no repeat-live authority. Continue only by the next local-first material-value cluster; executor/mutation remains separately governed.
-Mixed-origin absorption latency/value-preservation learning is enforced at `193c91404`: reuse fresh ledgers, review by capability cluster, preserve value until contradicted, skip extra value probes unless a named decision-changing gap exists, and keep the pass bounded. Continue selected-cluster absorption directly; do not restart value proof from zero. RSPB-AI-T5 is dispatched at `41c4c16d7` after 9/9 selected-source hash reconciliation, pre-dispatch 77/77, and pre-commit 85/85. Next move is exactly one no-commit worker on the four-path projection-kernel manifest, followed by a different independent reviewer. No adapter, file export, executor, provider/live, public, or production authority is opened.
+Mixed-origin absorption latency/value-preservation learning is enforced at `193c91404`: reuse fresh ledgers, review by capability cluster, preserve value until contradicted, skip extra value probes unless a named decision-changing gap exists, and keep the pass bounded. RSPB-AI-T5-R1 is independently accepted and materially committed at `1b2c11c9fd1a9795cd9d5bcf17c10806e98273fb` after one disclosed repair round, 27/27 focused tests, 104/104 composed tests, 624 passed plus 5 skipped package tests, 16/16 independent probes, and pre-commit 85/85. Continue with the next highest-value local synthesis cluster from the existing ledger; do not restart value proof from zero. No adapter, file export, executor, provider/live, public, or production authority is opened.
 
 ## Parked Checkpoints
 
