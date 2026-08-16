@@ -81,7 +81,7 @@
         },
         {
           "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
-          "sha256": "3654b12d160513896bb5505812cf6ca92a3310ecb5ce057862fdadcf5bcc194c",
+          "sha256": "9e2e45f2fb4051c613dd9d48e30179d64c05b79cc7fb39aeb63543f83b9dd460",
           "evidenceRole": "GC-001 real production caller (registerGuard) and GC-009 package barrel export"
         },
         {

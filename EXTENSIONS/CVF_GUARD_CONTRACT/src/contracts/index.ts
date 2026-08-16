@@ -425,6 +425,28 @@ export {
 } from './capability-bootstrap-approval-evidence.contract';
 
 export type {
+  CapabilityAcquisitionReceiptOperationStatus,
+  CapabilityAcquisitionReceiptRollbackStatus,
+  CapabilityAcquisitionReceiptVerificationStatus,
+  CapabilityAcquisitionReceiptOperationResult,
+  CapabilityAcquisitionReceiptMutation,
+  CapabilityAcquisitionReceiptArtifact,
+  CapabilityAcquisitionReceiptVerification,
+  CapabilityAcquisitionReceipt,
+  CapabilityAcquisitionReceiptVerificationInput,
+  CapabilityAcquisitionReceiptVerificationIssueCode,
+  CapabilityAcquisitionReceiptVerificationIssue,
+  CapabilityAcquisitionReceiptVerificationResult,
+} from './capability-acquisition-receipt-verification.contract';
+
+export {
+  CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_CONTRACT_VERSION,
+  CAPABILITY_ACQUISITION_RECEIPT_SCHEMA_VERSION,
+  CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_RESULT_VERSION,
+  evaluateCapabilityAcquisitionReceiptVerification,
+} from './capability-acquisition-receipt-verification.contract';
+
+export type {
   ProjectionStalenessState,
   FindingVerificationState,
   FindingSeverity,

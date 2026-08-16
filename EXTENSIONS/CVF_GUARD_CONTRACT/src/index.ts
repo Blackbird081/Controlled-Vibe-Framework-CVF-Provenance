@@ -144,6 +144,30 @@ export {
   evaluateCapabilityBootstrapApprovalEvidenceBinding,
 } from './contracts/capability-bootstrap-approval-evidence.contract';
 
+// RSPB-AI-T9 capability acquisition receipt verification and repair-stop
+// kernel (pure, contract-only; no receipt persistence, evidence collection,
+// rollback/repair execution, executor, or I/O authority).
+export type {
+  CapabilityAcquisitionReceiptOperationStatus,
+  CapabilityAcquisitionReceiptRollbackStatus,
+  CapabilityAcquisitionReceiptVerificationStatus,
+  CapabilityAcquisitionReceiptOperationResult,
+  CapabilityAcquisitionReceiptMutation,
+  CapabilityAcquisitionReceiptArtifact,
+  CapabilityAcquisitionReceiptVerification,
+  CapabilityAcquisitionReceipt,
+  CapabilityAcquisitionReceiptVerificationInput,
+  CapabilityAcquisitionReceiptVerificationIssueCode,
+  CapabilityAcquisitionReceiptVerificationIssue,
+  CapabilityAcquisitionReceiptVerificationResult,
+} from './contracts/capability-acquisition-receipt-verification.contract';
+export {
+  CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_CONTRACT_VERSION,
+  CAPABILITY_ACQUISITION_RECEIPT_SCHEMA_VERSION,
+  CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_RESULT_VERSION,
+  evaluateCapabilityAcquisitionReceiptVerification,
+} from './contracts/capability-acquisition-receipt-verification.contract';
+
 // RSPB-AI-T7 capability preflight profile policy selection kernel
 // (pure, contract-only; no profile loading, environment observation,
 // acquisition, network, or execution authority).
