@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2235,
+  "stateOrder": 2240,
   "stateKey": "nextAllowedMove",
-  "value": "RSPB-AI-T1 closed bounded at d591c542a with PROCEED_TO_IMPLEMENTATION_WORK_ORDER. The next move requires fresh explicit implementation authorization, then a new GC-018/work order bounded to enriching scripts/cvf_doctor.py with a secret-free non-mutating snapshot mode, isolated AVAILABLE/MISSING/UNKNOWN plus TTL/redaction tests, and a pre-dispatch consumer for expensive release/live workflows. Do not import or execute the local candidate scanner. Acquisition/mutation, credentials, network/provider, public sync, push, deployment, and production remain parked. Latest closed numbered LHW wave remains LHW24."
+  "value": "Execute the committed RSPB-AI-T2 work order at 0af246b4f as a WORKER_MUST_NOT_COMMIT implementation. Worker may change exactly scripts/cvf_doctor.py, scripts/run_cvf_release_gate_bundle.py, scripts/test_cvf_doctor_snapshot.py, and the named worker return. Return COMPLETE_PENDING_REVIEW for independent review/commit. Candidate implementation use, acquisition/mutation, secrets/raw paths, network/provider/live, public sync, push, deployment, production, staging, and worker commit remain forbidden. Latest closed numbered LHW wave remains LHW24."
 }

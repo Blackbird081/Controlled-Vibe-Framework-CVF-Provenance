@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2239,
+  "stateKey": "rspbAiT2SnapshotDoctorEnrichmentDispatched20260816",
+  "value": "RSPB-AI-T2 capability snapshot doctor-enrichment implementation is dispatched at 0af246b4f. The exact no-commit worker manifest is scripts/cvf_doctor.py, scripts/run_cvf_release_gate_bundle.py, scripts/test_cvf_doctor_snapshot.py, and the named worker return. The worker must implement a secret-free non-mutating AVAILABLE/MISSING/UNKNOWN snapshot with five-minute TTL/redaction and an early release-bundle short-circuit. Candidate implementation use, acquisition/mutation, secrets/raw paths, network/provider/live, public sync, push, deployment, production, staging, and worker commit remain forbidden."
+}

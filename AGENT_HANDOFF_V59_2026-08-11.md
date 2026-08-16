@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T1 Snapshot Value Probe Closed
+# CVF Agent Handoff V59 - RSPB-AI-T2 Snapshot Doctor Enrichment Dispatched
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -16,7 +16,7 @@ Status: ACTIVE
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
-- Current T5-R5 bounded closure: `6284e5bd1`; T8 terminal reconciliation: `3b906862b`; MODS-T0 closure: `3a40397df`; RSPB-AI-T1 closure: `d591c542a`.
+- Current T5-R5 bounded closure: `6284e5bd1`; T8 terminal reconciliation: `3b906862b`; RSPB-AI-T1 closure: `d591c542a`; RSPB-AI-T2 dispatch: `0af246b4f`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
@@ -40,7 +40,7 @@ Status: ACTIVE
 - Target reviewer closure commit:
   `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
-  `rspb_ai_t1_snapshot_value_probe_closed_proceed_checkpoint_required`
+  `rspb_ai_t2_snapshot_doctor_enrichment_dispatched_pending_worker`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -49,14 +49,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t1_snapshot_value_probe_closed_proceed_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh implementation authorization, then bounded doctor-enrichment work-order authoring; parked checkpoint=runtime edits, candidate import/execution, acquisition/mutation, secrets/network/provider, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t2_snapshot_doctor_enrichment_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed RSPB-AI-T2 as a four-output no-commit worker; parked checkpoint=candidate implementation use, acquisition/mutation, secrets/raw paths, network/provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t1_snapshot_value_probe_closed_proceed_checkpoint_required`
+`rspb_ai_t2_snapshot_doctor_enrichment_dispatched_pending_worker`
 
 ## Purpose
 
-Record independent bounded closure of the RSPB-AI-T1 owner reconciliation and read-only snapshot value probe.
+Record committed dispatch authority for the bounded RSPB-AI-T2 doctor snapshot implementation.
 
 ## Scope / Target / Owner Boundary
 
@@ -107,12 +107,12 @@ Record independent bounded closure of the RSPB-AI-T1 owner reconciliation and re
 
 | Field | Value |
 |---|---|
-| authorityState | RSPB-AI-T1 reviewer-accepted bounded closure at `d591c542a` |
-| baselinePath | `docs/baselines/CVF_GC018_RSPB_AI_T1_CAPABILITY_PREFLIGHT_OWNER_RECONCILIATION_AND_READ_ONLY_SNAPSHOT_VALUE_PROBE_2026-08-16.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T1_CAPABILITY_PREFLIGHT_OWNER_RECONCILIATION_AND_READ_ONLY_SNAPSHOT_VALUE_PROBE_2026-08-16.md` |
-| workerReturnPath | `docs/reviews/CVF_RSPB_AI_T1_PREFLIGHT_OWNER_RECONCILIATION_AND_SNAPSHOT_VALUE_PROBE_WORKER_RETURN_2026-08-16.md` |
-| completionReviewPath | `docs/reviews/CVF_RSPB_AI_T1_CAPABILITY_PREFLIGHT_OWNER_RECONCILIATION_AND_READ_ONLY_SNAPSHOT_VALUE_PROBE_COMPLETION_2026-08-16.md` |
-| nextAuthorityRequirement | fresh explicit authorization before a doctor-enrichment implementation work order |
+| authorityState | RSPB-AI-T2 implementation dispatch at `0af246b4f` |
+| baselinePath | `docs/baselines/CVF_GC018_RSPB_AI_T2_CAPABILITY_ENVIRONMENT_SNAPSHOT_DOCTOR_ENRICHMENT_AND_PRE_DISPATCH_CONSUMER_IMPLEMENTATION_2026-08-16.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T2_CAPABILITY_ENVIRONMENT_SNAPSHOT_DOCTOR_ENRICHMENT_AND_PRE_DISPATCH_CONSUMER_IMPLEMENTATION_2026-08-16.md` |
+| workerReturnPath | `docs/reviews/CVF_RSPB_AI_T2_CAPABILITY_ENVIRONMENT_SNAPSHOT_DOCTOR_ENRICHMENT_AND_PRE_DISPATCH_CONSUMER_IMPLEMENTATION_WORKER_RETURN_2026-08-16.md` |
+| completionReviewPath | reviewer-owned and not created at dispatch |
+| nextAuthorityRequirement | worker executes exact four-path manifest without staging or commit |
 
 ## Closure Evidence
 
@@ -158,7 +158,7 @@ Record independent bounded closure of the RSPB-AI-T1 owner reconciliation and re
 
 ## Next Allowed Move
 
-RSPB-AI-T1 closed at `d591c542a` with `PROCEED_TO_IMPLEMENTATION_WORK_ORDER`. Next requires fresh explicit implementation authorization, then a new GC-018/work order limited to enriching `scripts/cvf_doctor.py` and tests. Candidate import/execution, acquisition/mutation, secrets/network/provider, public sync, push, deployment, and production remain forbidden.
+Execute RSPB-AI-T2 committed at `0af246b4f` as a no-commit worker. Writable outputs are `scripts/cvf_doctor.py`, `scripts/run_cvf_release_gate_bundle.py`, `scripts/test_cvf_doctor_snapshot.py`, and the named worker return. Return `COMPLETE_PENDING_REVIEW`; candidate implementation use, acquisition/mutation, secrets/raw paths, network/provider/live, public sync, push, deployment, production, staging, and worker commit remain forbidden.
 
 ## Active Boundary
 
@@ -191,30 +191,29 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T1 Closure Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T2 Dispatch Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/rspbAiT1SnapshotValueProbeClosedProceed20260816.json`
+- `CVF_SESSION/state/entries/rspbAiT2SnapshotDoctorEnrichmentDispatched20260816.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: continue with the next governed tranche selected by
-the MODS-T0 closure.
+Operator authorization: explicit `next` instruction opening RSPB-AI-T2.
 
-Authorized guard-maintenance scope: record committed RSPB-AI-T1 closure,
-bounded proceed decision, and implementation-authorization checkpoint.
+Authorized guard-maintenance scope: record committed RSPB-AI-T2 dispatch,
+exact worker manifest, no-commit boundary, and next allowed move.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records RSPB-AI-T1 bounded closure. It does not authorize
-route/registry adoption, runtime source or test mutation, MCP/CLI/HTTP invocation,
+This handoff records RSPB-AI-T2 dispatch. It authorizes only the exact worker
+source/test manifest and does not authorize route/registry adoption, MCP/CLI/HTTP invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
 trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
