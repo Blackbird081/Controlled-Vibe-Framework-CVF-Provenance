@@ -125,6 +125,25 @@ export {
   evaluateCapabilityReadiness,
 } from './contracts/capability-route-readiness.contract';
 
+// RSPB-AI-T8 capability bootstrap approval evidence binding kernel (pure,
+// contract-only; no approval issuance, replay storage/consumption, executor,
+// or I/O authority).
+export type {
+  CapabilityBootstrapApprovalEnvelopeClass,
+  CapabilityBootstrapMutationEnvelopeEntry,
+  CapabilityBootstrapApprovalEvidence,
+  CapabilityBootstrapApprovalEvidenceBindingInput,
+  CapabilityBootstrapApprovalEvidenceIssueCode,
+  CapabilityBootstrapApprovalEvidenceIssue,
+  CapabilityBootstrapApprovalEvidenceBindingResult,
+} from './contracts/capability-bootstrap-approval-evidence.contract';
+export {
+  CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_CONTRACT_VERSION,
+  CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_SCHEMA_VERSION,
+  CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_RESULT_VERSION,
+  evaluateCapabilityBootstrapApprovalEvidenceBinding,
+} from './contracts/capability-bootstrap-approval-evidence.contract';
+
 // RSPB-AI-T7 capability preflight profile policy selection kernel
 // (pure, contract-only; no profile loading, environment observation,
 // acquisition, network, or execution authority).

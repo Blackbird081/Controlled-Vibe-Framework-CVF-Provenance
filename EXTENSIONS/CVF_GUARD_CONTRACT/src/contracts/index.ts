@@ -408,6 +408,23 @@ export {
 } from './capability-preflight-profile-policy.contract';
 
 export type {
+  CapabilityBootstrapApprovalEnvelopeClass,
+  CapabilityBootstrapMutationEnvelopeEntry,
+  CapabilityBootstrapApprovalEvidence,
+  CapabilityBootstrapApprovalEvidenceBindingInput,
+  CapabilityBootstrapApprovalEvidenceIssueCode,
+  CapabilityBootstrapApprovalEvidenceIssue,
+  CapabilityBootstrapApprovalEvidenceBindingResult,
+} from './capability-bootstrap-approval-evidence.contract';
+
+export {
+  CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_CONTRACT_VERSION,
+  CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_SCHEMA_VERSION,
+  CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_RESULT_VERSION,
+  evaluateCapabilityBootstrapApprovalEvidenceBinding,
+} from './capability-bootstrap-approval-evidence.contract';
+
+export type {
   ProjectionStalenessState,
   FindingVerificationState,
   FindingSeverity,
