@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md",
     "baselineSha256": "ed0b1ab13f126ec4d7947ff95ea2e704be665a87f5df78a5770100e0059ebac7",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md",
-    "workOrderSha256": "062b0226a12c86cf1dcb97b658b0ba921246642227e3dc10bb8d28183aa1b9a8"
+    "workOrderSha256": "1cb0682922a8f54c2d8ed0cb324d2d2ffd498001201c92c91cb4b8478003cdfb"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

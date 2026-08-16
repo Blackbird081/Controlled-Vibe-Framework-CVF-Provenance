@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: RSPB-AI-T8
 
@@ -358,22 +358,22 @@ nonce claim boundary, secrets, determinism, input mutation, and both barrels.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | dispatching reviewer/orchestrator; external worker pending |
+| Actor | independent reviewer/closer |
 | Provider or surface | local private provenance repository |
-| Session or invocation | RSPB-AI-T8 dispatch, 2026-08-16 |
+| Session or invocation | RSPB-AI-T8 bounded machine closure, 2026-08-16 |
 | Working directory | repository root |
-| Command or tool surface | governed reads, local hashes, negative search, scaffold, dispatch gates |
-| Target paths | paired baseline and this work order |
+| Command or tool surface | governed review, hermetic tests, closure checker, session generator, local governance hook |
+| Target paths | this work order plus four closure-digest continuity surfaces |
 | Allowed scope source | operator continuation under external-worker/independent-reviewer rule |
-| Before status evidence | clean worktree at dispatch base |
-| After status evidence | exactly baseline and work order pending |
-| Diff evidence | `git diff --name-status` |
-| Approval boundary | worker may edit five paths and may not commit |
+| Before status evidence | accepted material, reviewer-accepted continuity, completion review, and review-HEAD sync committed |
+| After status evidence | exact five-path machine-closure batch staged for closer commit |
+| Diff evidence | `git diff --cached --name-status` |
+| Approval boundary | reviewer/closer owns this bounded closure commit; worker made no commit |
 | Claim boundary | no approval, store, I/O, action authority, provider/live, public, or production |
-| Agent type | independent reviewer/orchestrator dispatching external worker |
-| Invocation ID | `rspb-ai-t8-approval-binding-dispatch-2026-08-16` |
-| Expected manifest | `docs/baselines/CVF_GC018_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md` |
+| Agent type | independent reviewer/closer |
+| Invocation ID | `rspb-ai-t8-approval-binding-closure-2026-08-16` |
+| Expected manifest | `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md` |
+| Actual changed set | `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md` |
 | Manifest delta | MATCH |
 
 ## Delta Execution Claim Boundary Control Block
@@ -579,13 +579,45 @@ Reason: private implementation dispatch; no public-sync authority.
 
 ## Closure Checklist
 
-- [ ] Worker captures execution base and clean owned paths.
-- [ ] Eight selected hashes match.
-- [ ] Exact five-path worker manifest matches.
-- [ ] Focused, regression, package, TypeScript, diff, and fast gates pass.
-- [ ] Worker returns uncommitted `COMPLETE_PENDING_REVIEW`.
-- [ ] Independent reviewer inspects full diff and reproduces adversarial proof.
-- [ ] Reviewer/closer alone decides material commit and continuity sync.
+- [x] Worker captured execution base and clean owned paths.
+- [x] Eight selected hashes matched.
+- [x] Exact five-path worker manifest matched.
+- [x] Focused, regression, package, TypeScript, diff, and fast gates passed.
+- [x] Worker returned uncommitted `COMPLETE_PENDING_REVIEW`.
+- [x] Independent reviewer inspected the full diff, found one material root gap, repaired bounded fail-closed behavior, and reproduced adversarial proof.
+- [x] Reviewer/closer committed material at `3a1fb03d1`, reviewer-accepted continuity at `73dc60269`, and completion review at `187a2effc`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED`; checklist has no open item | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_COMPLETION_2026-08-16.md` | `REVIEWER_ACCEPTED_PENDING_CLOSER`; SHA-256 `d806d5b2d345012a6543819641bf30369ef4837ac11defeadcc3ead061e2e7b8` | PASS |
+| Worker return | `docs/reviews/CVF_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_WORKER_RETURN_2026-08-16.md` | SHA-256 `3c6ec4f74f42ff9b7f1b51c2e967071f7380380db8e278320d489c889979dad2`; worker made no commit | PASS |
+| Material | Guard Contract source, test, two barrels, fingerprint | commit `3a1fb03d1846dc6e9cecfc5a09f55a4c89c2d433` | PASS |
+| Test evidence | focused, T3/T7 regression, package, TypeScript | 51/51; 38/38; 701 passed plus 5 skipped; TypeScript PASS | PASS |
+| System-chain freshness | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | hash-only reviewer refresh; posture/verdict unchanged; `CURRENT`, zero violations | PASS |
+| Roadmap state | RSPB bounded cluster continuation | N/A with reason: no separate roadmap row was opened | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row registry reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | local-first clusters remain routed to current CVF owners | PASS |
+| External evidence digest | worker return and completion review | worker SHA-256 `3c6ec4f74f42ff9b7f1b51c2e967071f7380380db8e278320d489c889979dad2`; review SHA-256 `d806d5b2d345012a6543819641bf30369ef4837ac11defeadcc3ead061e2e7b8`; generated 2026-08-16 | PASS |
+| System loop interlock | caller-supplied current T3 plan plus approval evidence -> pure T8 binding | all authority literals false; replay check required; no issuance, storage, I/O, executor, or mutation | PASS |
+| Provider/live evidence | none | zero calls; no proof claimed | N/A with reason |
+| Session continuity | active state, bootstrap, memory, handoff | reviewer-accepted sync `73dc60269`; final closed-mode sync follows this machine closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| current T3 plan acceptance | exact shape plus current T3 semantic result required | PASS |
+| nested hostile input | Proxy/accessor/sparse/oversized/extra-key structures reject before unsafe access | PASS |
+| plan and approval binding | plan ID/digest, workspace, actor, optional work order, and expiry checked | PASS |
+| mutation envelope | exact normalized set; missing/extra/duplicate/ambiguous rejected | PASS |
+| replay boundary | nonce is validated but never stored/consumed; `replayCheckRequired=true` | PASS |
+| evidence leakage | raw nonce, descriptions, source, operations, hostile keys/targets, and secrets not echoed | PASS |
+| authority outputs | approval/execution/acquisition/mutation/task/network literals remain `false` | PASS |
+| both barrels | focused import proof passes | PASS |
+| runtime/provider receipt | none authorized or claimed | PASS |
 
 ## Execution Plan
 
