@@ -1,5 +1,5 @@
 {
   "stateOrder": 2244,
   "stateKey": "nextAllowedMove",
-  "value": "RSPB-AI-T2 is independently accepted CLOSED_PASS_BOUNDED at material commit 44a74fa48. Mixed-origin absorption learning is enforced at 193c91404: reuse fresh ledgers, review by capability cluster, preserve value until contradicted, skip extra value probes unless a named decision-changing gap exists, and keep latency single-pass bounded. Continue absorption directly by selected value cluster; controlled acquisition execution/mutation, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden until separately authorized. Latest closed numbered LHW wave remains LHW24."
+  "value": "RSPB-AI-T3 Controlled Acquisition Contract Kernel is accepted CLOSED_PASS_BOUNDED at material commit bdec9c1e7. Continue CVF_CAPABILITY_PREFLIGHT_BOOTSTRAP absorption directly by the next selected value cluster under learning commit 193c91404; reuse the fresh ledger and do not add another value-probe round unless a named decision-changing gap exists. Any acquisition executor or actual mutation, credential, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden until separately authorized. Latest closed numbered LHW wave remains LHW24."
 }

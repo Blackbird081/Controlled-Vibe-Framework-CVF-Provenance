@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2245,
+  "stateKey": "rspbAiT3ControlledAcquisitionContractKernelClosed20260816",
+  "value": "RSPB-AI-T3 is accepted CLOSED_PASS_BOUNDED at material commit bdec9c1e7940d8c3cba387ac2af214eda256a807. A CVF-native Guard Contract kernel now provides canonical plan digests, exact approval binding, fail-closed source/integrity/mutation checks, receipt reconciliation, and bounded repair-stop decisions. Evidence: 12/12 kernel tests, 46/46 kernel-plus-export tests, TypeScript check, reviewer-fast 64/64, and pre-commit 85/85. It has no executor and grants no acquisition/mutation authority. One broad package-suite attempt auto-enabled an ambient-key Alibaba lane: two direct assertions passed and the governed-pipeline test returned BLOCKED; no retry occurred and it is excluded from kernel evidence."
+}
