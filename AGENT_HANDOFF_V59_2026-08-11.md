@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T3 Controlled Acquisition Kernel Closed Bounded
+# CVF Agent Handoff V59 - RSPB-AI-T4 Route Readiness Kernel Closed Bounded
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -16,7 +16,7 @@ Status: ACTIVE
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
-- Current T5-R5 bounded closure: `6284e5bd1`; T8 terminal reconciliation: `3b906862b`; RSPB-AI-T1 closure: `d591c542a`; RSPB-AI-T2 bounded material closure: `44a74fa48`; RSPB-AI-T3 bounded material closure: `bdec9c1e7940d8c3cba387ac2af214eda256a807`.
+- Current T5-R5 bounded closure: `6284e5bd1`; T8 terminal reconciliation: `3b906862b`; RSPB-AI-T1 closure: `d591c542a`; RSPB-AI-T2 closure: `44a74fa48`; RSPB-AI-T3 closure: `bdec9c1e7`; RSPB-AI-T4 closure: `b571cd4b39e72ecabc72d40a9ab4bca25b1e15ba`.
 - Mixed-origin absorption latency/value-preservation learning: `193c9140447003244a3e5cc896c323ba911bdcff`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
@@ -36,7 +36,7 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Active mode:
-  `rspb_ai_t3_controlled_acquisition_contract_kernel_closed_bounded_continue_cluster_selection`
+  `rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -45,14 +45,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t3_controlled_acquisition_contract_kernel_closed_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=continue CVF_CAPABILITY_PREFLIGHT_BOOTSTRAP by the next selected value cluster with fresh-ledger reuse; parked checkpoint=acquisition executor/mutation, credentials, MCP/network/provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=continue by the next material-value cluster or stop when remaining clusters duplicate current owners; parked checkpoint=router/transport/executor activation, acquisition/mutation, credentials, MCP/network/provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t3_controlled_acquisition_contract_kernel_closed_bounded_continue_cluster_selection`
+`rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection`
 
 ## Purpose
 
-Record bounded closure of the RSPB-AI-T3 controlled-acquisition contract kernel and preserve direct next-cluster continuation.
+Record bounded closure of the RSPB-AI-T4 route/readiness evidence kernel and preserve value-gated next-cluster continuation.
 
 ## Scope / Target / Owner Boundary
 
@@ -100,15 +100,16 @@ Record bounded closure of the RSPB-AI-T3 controlled-acquisition contract kernel 
 - T8 is independently accepted at `3b906862b` after two bounded semantic corrections; the historical ledger segment hash remained identical and reviewer-fast passed 63/63.
 - Operator-directed RSPB learning `193c91404` requires fresh-ledger reuse, capability-cluster review, value preservation, and named-gap-only re-probing in one bounded pass.
 - RSPB-AI-T3 is accepted at `bdec9c1e7`. Guard Contract now evaluates canonical plan digests, exact approval binding, source/integrity/mutation envelopes, receipts, and repair-stop decisions without executing acquisition. Focused kernel-plus-export tests pass 46/46, TypeScript passes, reviewer-fast passes 64/64, and pre-commit passes 85/85.
+- RSPB-AI-T4 is accepted at `b571cd4b3`. Guard Contract now evaluates two-stage routes, material authority ambiguity, rationale/fallbacks, and fail-closed readiness without activating a router or consumer. Kernel-plus-export tests pass 50/50; TypeScript, reviewer-fast 64/64, and pre-commit 85/85 pass.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | RSPB-AI-T3 bounded contract-kernel closure at `bdec9c1e7` |
-| completionReviewPath | `docs/reviews/CVF_RSPB_AI_T3_CONTROLLED_ACQUISITION_CONTRACT_KERNEL_COMPLETION_2026-08-16.md` |
-| completionReviewSha256 | `a6f0ecf916e861d4f36146b07e7e7092d1eb8fbea2fdb8327ddc8b236e87b150` |
-| nextAuthorityRequirement | continue by selected non-executing value cluster; separate authorization required for any executor/mutation |
+| authorityState | RSPB-AI-T4 bounded route/readiness kernel closure at `b571cd4b3` |
+| completionReviewPath | `docs/reviews/CVF_RSPB_AI_T4_CAPABILITY_ROUTE_AND_READINESS_EVIDENCE_KERNEL_COMPLETION_2026-08-16.md` |
+| completionReviewSha256 | `7aff7319778a4f37a46c7dbd0fbe5ba04091edd22f09eda0e9ca1a5b582c061a` |
+| nextAuthorityRequirement | next selected cluster only if material value exceeds overlap; separate authority for router/transport/executor |
 
 ## Closure Evidence
 
@@ -154,7 +155,7 @@ Record bounded closure of the RSPB-AI-T3 controlled-acquisition contract kernel 
 
 ## Next Allowed Move
 
-RSPB-AI-T3 is closed bounded at `bdec9c1e7`. Continue the current local pack directly by the next selected value cluster under `193c91404`; reuse the fresh ledger and do not restart value proof. Any acquisition executor or actual mutation, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden until separately authorized.
+RSPB-AI-T4 is closed bounded at `b571cd4b3`. Continue under `193c91404` only with the next cluster that adds material value beyond current CVF owners; otherwise stop cleanly. Router/transport/executor activation, acquisition/mutation, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden until separately authorized.
 
 ## Active Boundary
 
@@ -187,20 +188,20 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T3 Closure Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T4 Closure Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/rspbAiT3ControlledAcquisitionContractKernelClosed20260816.json`
+- `CVF_SESSION/state/entries/rspbAiT4RouteReadinessEvidenceKernelClosed20260816.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit instruction to continue absorbing `CVF_CAPABILITY_PREFLIGHT_BOOTSTRAP` under the already-enforced latency/value-preservation learning.
+Operator authorization: explicit `next` under the enforced latency/value-preservation learning.
 
-Authorized guard-maintenance scope: record committed RSPB-AI-T3 bounded
+Authorized guard-maintenance scope: record committed RSPB-AI-T4 bounded
 closure, reviewer evidence, and direct next-cluster continuation.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
@@ -208,7 +209,7 @@ separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records RSPB-AI-T3 bounded contract-kernel closure. It does not authorize an acquisition executor, actual acquisition/mutation, MCP/network/provider/live invocation,
+This handoff records RSPB-AI-T4 bounded route/readiness-kernel closure. It does not authorize a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
 trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
