@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T8 Reviewer Accepted Pending Closer
+# CVF Agent Handoff V59 - RSPB-AI-T8 Closed Bounded Continue Cluster Selection
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local review HEAD before this handoff sync: `187a2effc0146a1f8ab0fa6e27cda9c08c5e71f8`.
+- Current local closure HEAD before this handoff sync: `de246c5194dabec1585b55dfb98ae17e5ea8ae16`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -32,8 +32,8 @@ Status: ACTIVE
 - RSPB-AI-T6 bounded dispatch: `4789d1442ed280c91e3dd5e6e3c8995244db19ef`.
 - RSPB-AI-T6 accepted material plus bounded reviewer repair: `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1`; machine closure packet: `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`.
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
-- RSPB-AI-T8 dispatch `84ba2dd930807e88a46bb75c4239a8b8c5729dc9`; accepted material plus reviewer repair `3a1fb03d1846dc6e9cecfc5a09f55a4c89c2d433`; completion review `187a2effc0146a1f8ab0fa6e27cda9c08c5e71f8`.
-- Active mode: `rspb_ai_t8_approval_evidence_binding_kernel_reviewer_accepted_pending_closer`
+- RSPB-AI-T8 dispatch `84ba2dd930807e88a46bb75c4239a8b8c5729dc9`; accepted material plus reviewer repair `3a1fb03d1846dc6e9cecfc5a09f55a4c89c2d433`; completion review `187a2effc0146a1f8ab0fa6e27cda9c08c5e71f8`; machine closure `de246c5194dabec1585b55dfb98ae17e5ea8ae16`.
+- Active mode: `rspb_ai_t8_approval_evidence_binding_kernel_closed_bounded_continue_cluster_selection`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -42,15 +42,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t8_approval_evidence_binding_kernel_reviewer_accepted_pending_closer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=completion review, work-order conversion, machine closure, and final continuity only; parked checkpoint=approval issuance/replay store/nonce consumption, environment I/O, acquisition/network/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t8_approval_evidence_binding_kernel_closed_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select the next highest-value local synthesis cluster and dispatch one external no-commit worker followed by this independent reviewer/orchestrator; parked checkpoint=approval issuance/replay store/nonce consumption, environment I/O, acquisition/network/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t8_approval_evidence_binding_kernel_reviewer_accepted_pending_closer`
+`rspb_ai_t8_approval_evidence_binding_kernel_closed_bounded_continue_cluster_selection`
 
 ## Purpose
 
-Record independent T8 acceptance and route only closer-owned completion,
-work-order conversion, machine closure, and final continuity.
+Record T8 bounded closure and return to local-first cluster selection.
 
 ## Scope / Target / Owner Boundary
 
@@ -103,15 +102,15 @@ work-order conversion, machine closure, and final continuity.
 - RSPB-AI-T6 is dispatched at `4789d1442ed280c91e3dd5e6e3c8995244db19ef` after pre-dispatch 77/77 and pre-commit 85/85. Its external worker is restricted to four paths, must not stage or commit, and must return `COMPLETE_PENDING_REVIEW`; the current orchestrator/reviewer owns independent diff inspection, test reproduction, adversarial review, closure, and material commit.
 - RSPB-AI-T6 implementation plus disclosed bounded reviewer repair is materially committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 - RSPB-AI-T7 is `CLOSED_PASS_BOUNDED`: material plus reviewer repair `63b2f7367`, completion review `25b19b3d5`, machine closure `055252ddb`; focused 26/26, composed 57/57, package 650 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
-- RSPB-AI-T8 is `REVIEWER_ACCEPTED_PENDING_CLOSER` at material commit `3a1fb03d1846dc6e9cecfc5a09f55a4c89c2d433`. Disclosed reviewer repair closed current-T3 semantic, nested hostile-input, issue-leakage, temporal, normalized-envelope, and barrel-proof gaps. Focused 51/51, regression 38/38, package 701 plus 5 skipped, TypeScript, freshness, reviewer-fast 64/64, and pre-commit 85/85 passed with zero provider/live calls.
+- RSPB-AI-T8 is `CLOSED_PASS_BOUNDED`: material plus reviewer repair `3a1fb03d1`, completion review `187a2effc`, machine closure `de246c519`; focused 51/51, regression 38/38, package 701 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 
 ## Current Authority
 | Field | Value |
 |---|---|
-| authorityState | RSPB-AI-T8 REVIEWER_ACCEPTED_PENDING_CLOSER at `3a1fb03d1846dc6e9cecfc5a09f55a4c89c2d433` |
+| authorityState | RSPB-AI-T8 CLOSED_PASS_BOUNDED; material `3a1fb03d1846dc6e9cecfc5a09f55a4c89c2d433`; closure `de246c5194dabec1585b55dfb98ae17e5ea8ae16` |
 | baselinePath | `docs/baselines/CVF_GC018_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md` |
-| nextAuthorityRequirement | completion review, work-order conversion, machine closure, and final continuity only |
+| nextAuthorityRequirement | external no-commit worker return plus independent review; separate authority for approval issuance/replay storage/I/O/acquisition/mutation/executor |
 
 ## Closure Evidence
 
@@ -190,7 +189,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T8 Closure Digest Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T8 Final Closure Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
@@ -206,13 +205,14 @@ Protected paths:
 - `CVF_SESSION/state/entries/rspbAiT7ProfilePolicyKernelClosed20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelDispatched20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelReviewerAccepted20260816.json`
+- `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelClosed20260816.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: operator explicitly assigned this agent as reviewer/orchestrator and another agent as implementation worker.
-Authorized guard-maintenance scope: refresh the closed work-order authority digest and record only the bounded closer conversion.
+Authorized guard-maintenance scope: record final T8 bounded closure and route only the next local-first cluster selection.
 Rollback boundary: revert this exact session-sync batch as one unit; do not separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records RSPB-AI-T8 reviewer acceptance only. It does not authorize approval issuance, replay storage or nonce consumption, profile loading, environment I/O, a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
+This handoff records RSPB-AI-T8 bounded closure only. It does not authorize approval issuance, replay storage or nonce consumption, profile loading, environment I/O, a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
