@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_completion_review_committed_pending_work_order_closure",
+  "currentMode": "rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_closed_bounded_continue_cluster_selection",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T10 accepted material is committed at 8de69410ca81eb3deed1f717528cc255bd7d98d3 and independent completion review at a3ee9229eb5d9fad012dbc27e80d730d817074aa. Next move: convert the work order to bounded machine closure, then perform final continuity synchronization. Environment scanning or reading, snapshot persistence, acquisition, mutation, action authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T10 is CLOSED_PASS_BOUNDED with material 8de69410ca81eb3deed1f717528cc255bd7d98d3, completion review a3ee9229eb5d9fad012dbc27e80d730d817074aa, and machine closure a32169417. Next move: select the next highest-value local synthesis cluster from the accepted 205-file ledger without restarting full-corpus proof, then create its bounded baseline/work order and dispatch one external no-commit worker followed by this independent reviewer/orchestrator. Environment scanning or reading, snapshot persistence, acquisition, mutation, action authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
