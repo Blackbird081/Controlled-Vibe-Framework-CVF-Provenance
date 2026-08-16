@@ -21,7 +21,7 @@ enforcementLevel: PARTIAL_CHECK
 checkerBindings: governance/compat/check_mixed_origin_derived_synthesis_absorption.py; governance/compat/check_external_absorption_value_conversion.py
 promotionState: RULE_AND_CHECK_EXIST
 supersedes: NONE
-lastVerifiedCommit: 3a40397df
+lastVerifiedCommit: PENDING_CURRENT_HARDENING_COMMIT
 roadmapSeedId: NONE
 ```
 
@@ -122,3 +122,41 @@ Reason: private provenance learning; no public-sync action authorized.
 This entry records the defect and partial machine protection. It does not prove
 semantic correctness or authorize source import, runtime, provider, public, or
 production behavior.
+
+## Absorption Latency And Value-Preservation Addendum - 2026-08-16
+
+The RSPB-AI-T2 continuation exposed a second expression of the same defect:
+after provenance and value had already been reconciled, the orchestrator began
+opening another value-probe layer for controlled acquisition. This repeated
+semantic adjudication, increased latency, and again treated the co-designed
+local pack as if it needed to establish value from zero.
+
+The canonical repair is now explicit and machine checked: reuse fresh
+manifest/ledger evidence; review by `CAPABILITY_CLUSTER`; preserve value until
+contradicted; skip additional value probes unless a named decision-changing gap
+exists; and keep the review within `SINGLE_PASS_BOUNDED`. Risk in one mutating
+component may not suppress lower-risk contract/checker value in the same
+system chain.
+
+### Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | reviewer/closer governance hardening role |
+| Provider or surface | local private provenance repository |
+| Session or invocation | RSPB absorption latency/value-preservation correction, 2026-08-16 |
+| Working directory | repository root |
+| Command or tool surface | governed source reads, apply_patch, focused checker tests, governance gates, Git |
+| Target paths | mixed-origin standard, checker, tests, work-order template, this ADIF entry, paired learning review |
+| Allowed scope source | operator instruction to prevent future agents from repeating circular external-repo absorption |
+| Before status evidence | rule prevented maturity-as-value but did not require ledger reuse, cluster review, or bounded re-probing |
+| After status evidence | normative controls and negative regression tests enforce all three boundaries |
+| Diff evidence | final material diff and committed-range gate |
+| Approval boundary | governance learning and machine enforcement only |
+| Claim boundary | no external code execution, runtime mutation, provider/live, public sync, deployment, or production |
+| Agent type | reviewer/closer |
+| Invocation ID | `rspb-absorption-latency-learning-20260816` |
+| Expected manifest | six bounded governance-learning paths |
+| Actual changed set | reconciled in paired learning review |
+| Manifest delta | PENDING_FINAL_GATE |
+| Deletion or rename disposition | N/A with reason: no deletion or rename authorized |

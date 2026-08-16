@@ -240,6 +240,14 @@ Copy and complete the block below.
 For an intake that combines upstream material, public CVF input, operator
 requirements, operator-agent co-design, or novel synthesis, cite
 `docs/reference/external_agent_review/CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md`
+
+For mixed-origin local packs, reuse a fresh reconciled manifest/ledger and
+review by capability cluster. Do not require per-file semantic re-adjudication
+or an additional value-probe tranche unless a named freshness, integrity,
+origin, owner, or decision-changing gap is recorded. The applicable work order
+must carry the `## Absorption Efficiency And Provenance Reuse` controls from
+that standard. Mutating-runtime risk may park the executor without suppressing
+lower-risk contract, doctrine, schema, fixture, or checker absorption.
 and include its provenance, decision-vector, and system-chain blocks. Do not
 use unreviewed/unmerged status as a value decision or one tranche-wide
 value/cost verdict across heterogeneous inputs.

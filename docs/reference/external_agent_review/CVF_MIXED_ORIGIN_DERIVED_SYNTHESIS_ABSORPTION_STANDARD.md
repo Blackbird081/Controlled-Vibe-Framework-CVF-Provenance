@@ -115,6 +115,40 @@ runtime does not erase doctrine, contract, schema, fixture, checker, or package
 value. Compare the cost of each selected conversion lane with the value of that
 lane; do not compare documentation absorption against the cost of full runtime.
 
+## Absorption Efficiency And Provenance Reuse
+
+For a local pack produced through operator-agent co-design, a reconciled
+manifest and terminal ledger are reusable evidence. A later tranche SHALL NOT
+repeat per-file provenance classification or require the pack to prove value
+from zero unless a named freshness, integrity, origin, or owner contradiction
+is recorded.
+
+Every applicable artifact must declare these machine-readable controls:
+
+```text
+manifestLedgerReuse: REUSE_IF_FRESH
+semanticReviewUnit: CAPABILITY_CLUSTER
+defaultValuePosture: PRESERVE_UNTIL_CONTRADICTED
+additionalValueProbe: SKIP_UNLESS_NAMED_GAP
+latencyBudget: SINGLE_PASS_BOUNDED
+```
+
+`manifestLedgerReuse` may instead be `REFRESH_WITH_NAMED_DRIFT` or
+`NOT_AVAILABLE_WITH_REASON`. `additionalValueProbe` may instead be
+`REQUIRED_WITH_NAMED_GAP`. Any non-default value must name its drift, gap, or
+reason in the same section.
+
+The default review unit is the capability cluster or system-chain component,
+not every file independently. File-level ledgers remain completeness evidence;
+they must not force repeated semantic adjudication after reconciliation.
+Contract, doctrine, schema, policy, fixture, checker, and runtime decisions
+must be separated. Risk in a mutating executor may park execution without
+parking the non-mutating contract or checker value around it.
+
+An additional value-probe tranche is justified only by a named unresolved
+question that can materially change the decision. `Unreviewed`, `not yet in an
+owner path`, or `needs more confidence` are insufficient by themselves.
+
 ## Required System-Chain Value Review
 
 Evaluate local derived synthesis as a composed capability chain before using
@@ -169,8 +203,8 @@ Forward, range-aware enforcement:
 
 The guard applies to this standard and changed governed artifacts carrying
 `Mixed-origin derived synthesis: REQUIRED`. It requires provenance, separate
-decision axes, system-chain review, exact authority tokens, and rejects common
-maturity-as-value phrasing.
+decision axes, system-chain review, provenance-reuse/latency controls, exact
+authority tokens, and rejects common maturity-as-value phrasing.
 
 ## External Absorption Core
 

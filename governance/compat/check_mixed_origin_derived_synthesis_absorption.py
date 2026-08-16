@@ -20,6 +20,7 @@ MARKER = "Mixed-origin derived synthesis: REQUIRED"
 PROVENANCE_SECTION = "## Mixed-Origin Derived Synthesis Provenance"
 DECISION_SECTION = "## Absorption Decision Vector"
 CHAIN_SECTION = "## System-Chain Value Review"
+EFFICIENCY_SECTION = "## Absorption Efficiency And Provenance Reuse"
 ARTIFACT_CLASS = "artifactClass: PROVENANCE_BACKED_DERIVED_SYNTHESIS_CANDIDATE"
 AUTHORITY_STATUS = "authorityStatus: NON_AUTHORITATIVE_UNTIL_REVIEWED"
 
@@ -48,6 +49,13 @@ MATURITY_VALUE_RE = re.compile(
     r"(?:NO_NEW_VALUE|STOP_COST_EXCEEDS_VALUE|REJECT(?:ED)?).{0,100}"
     r"(?:UNREVIEWED|UNMERGED|UNPROVEN_BASELINE)", re.IGNORECASE,
 )
+EFFICIENCY_CONTROLS = {
+    "manifestLedgerReuse": {"REUSE_IF_FRESH", "REFRESH_WITH_NAMED_DRIFT", "NOT_AVAILABLE_WITH_REASON"},
+    "semanticReviewUnit": {"CAPABILITY_CLUSTER"},
+    "defaultValuePosture": {"PRESERVE_UNTIL_CONTRADICTED"},
+    "additionalValueProbe": {"SKIP_UNLESS_NAMED_GAP", "REQUIRED_WITH_NAMED_GAP"},
+    "latencyBudget": {"SINGLE_PASS_BOUNDED"},
+}
 
 
 def _git(args: list[str]) -> tuple[int, str]:
@@ -140,7 +148,10 @@ def check_text(path: str, text: str) -> list[dict[str, str]]:
     if not _governed(normalized) or (normalized != STANDARD_PATH and MARKER not in text):
         return []
     violations: list[dict[str, str]] = []
-    required = (MARKER, PROVENANCE_SECTION, DECISION_SECTION, CHAIN_SECTION, ARTIFACT_CLASS, AUTHORITY_STATUS)
+    required = (
+        MARKER, PROVENANCE_SECTION, DECISION_SECTION, CHAIN_SECTION,
+        EFFICIENCY_SECTION, ARTIFACT_CLASS, AUTHORITY_STATUS,
+    )
     for token in required:
         if token not in text:
             violations.append({"path": normalized, "type": "mixed_origin_required_marker_missing", "message": f"missing `{token}`"})
@@ -175,6 +186,15 @@ def check_text(path: str, text: str) -> list[dict[str, str]]:
     violations.extend(problems)
     if len(rows) < 2 and chain:
         violations.append({"path": normalized, "type": "mixed_origin_system_chain_row_missing", "message": "system-chain review needs at least one component row"})
+
+    efficiency = _section(text, EFFICIENCY_SECTION)
+    if efficiency:
+        for key, allowed in EFFICIENCY_CONTROLS.items():
+            match = re.search(rf"(?m)^\s*{re.escape(key)}:\s*([A-Z][A-Z0-9_]*)\s*$", efficiency)
+            if not match:
+                violations.append({"path": normalized, "type": "mixed_origin_efficiency_control_missing", "message": f"missing `{key}` control"})
+            elif match.group(1) not in allowed:
+                violations.append({"path": normalized, "type": "mixed_origin_efficiency_control_invalid", "message": f"invalid `{key}` value `{match.group(1)}`"})
 
     if MATURITY_VALUE_RE.search(text):
         violations.append({"path": normalized, "type": "mixed_origin_maturity_used_as_value", "message": "maturity token is coupled to a no-value/reject/stop decision"})

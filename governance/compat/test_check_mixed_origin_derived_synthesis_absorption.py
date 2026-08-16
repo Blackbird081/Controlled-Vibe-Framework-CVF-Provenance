@@ -42,6 +42,14 @@ authorityStatus: NON_AUTHORITATIVE_UNTIL_REVIEWED
 | Chain component | Evidence path | Existing CVF owner/gap | Value disposition | Readiness disposition | Next action |
 |---|---|---|---|---|---|
 | snapshot | docs/reference/example.md | owner gap | ADAPT_CANDIDATE | UNPROVEN | open bounded work order |
+
+## Absorption Efficiency And Provenance Reuse
+
+manifestLedgerReuse: REUSE_IF_FRESH
+semanticReviewUnit: CAPABILITY_CLUSTER
+defaultValuePosture: PRESERVE_UNTIL_CONTRADICTED
+additionalValueProbe: SKIP_UNLESS_NAMED_GAP
+latencyBudget: SINGLE_PASS_BOUNDED
 """
 
 
@@ -71,6 +79,22 @@ class MixedOriginDerivedSynthesisTests(unittest.TestCase):
     def test_maturity_as_value_fails(self) -> None:
         text = VALID + "\nUNMERGED therefore STOP_COST_EXCEEDS_VALUE\n"
         self.assertTrue(any(v["type"] == "mixed_origin_maturity_used_as_value" for v in self.check(text)))
+
+    def test_missing_efficiency_section_fails(self) -> None:
+        text = VALID.replace("## Absorption Efficiency And Provenance Reuse", "## Removed Efficiency")
+        self.assertTrue(any(v["type"] == "mixed_origin_required_marker_missing" for v in self.check(text)))
+
+    def test_per_file_semantic_review_unit_fails(self) -> None:
+        text = VALID.replace("semanticReviewUnit: CAPABILITY_CLUSTER", "semanticReviewUnit: PER_FILE")
+        self.assertTrue(any(v["type"] == "mixed_origin_efficiency_control_invalid" for v in self.check(text)))
+
+    def test_unbounded_reprobe_fails(self) -> None:
+        text = VALID.replace("additionalValueProbe: SKIP_UNLESS_NAMED_GAP", "additionalValueProbe: ALWAYS_REPROBE")
+        self.assertTrue(any(v["type"] == "mixed_origin_efficiency_control_invalid" for v in self.check(text)))
+
+    def test_named_gap_reprobe_is_allowed(self) -> None:
+        text = VALID.replace("additionalValueProbe: SKIP_UNLESS_NAMED_GAP", "additionalValueProbe: REQUIRED_WITH_NAMED_GAP")
+        self.assertEqual([], self.check(text))
 
     def test_unrelated_doc_is_ignored(self) -> None:
         self.assertEqual([], MODULE.check_text("docs/assessments/CVF_OTHER.md", "# Other"))
