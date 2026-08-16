@@ -45,6 +45,12 @@ authorityStatus: NON_AUTHORITATIVE_UNTIL_REVIEWED
 
 ## Absorption Efficiency And Provenance Reuse
 
+intakePriority: LOCAL_SYNTHESIZED_PACK_FIRST
+localSemanticInspection: FILE_AND_USE_CASE_CONTENT_REQUIRED
+mappingAction: DIRECT_WORK_ORDER_FOR_HIGH_FIT_CLUSTERS
+deliverySequence: WORK_ORDER_THEN_WORKER_THEN_INDEPENDENT_REVIEWER
+namePatternInference: FORBIDDEN_AS_VALUE_DISPOSITION
+upstreamConsultation: TARGETED_FOR_PROVENANCE_OR_GAP
 manifestLedgerReuse: REUSE_IF_FRESH
 semanticReviewUnit: CAPABILITY_CLUSTER
 defaultValuePosture: PRESERVE_UNTIL_CONTRADICTED
@@ -95,6 +101,26 @@ class MixedOriginDerivedSynthesisTests(unittest.TestCase):
     def test_named_gap_reprobe_is_allowed(self) -> None:
         text = VALID.replace("additionalValueProbe: SKIP_UNLESS_NAMED_GAP", "additionalValueProbe: REQUIRED_WITH_NAMED_GAP")
         self.assertEqual([], self.check(text))
+
+    def test_local_pack_must_be_first_semantic_input(self) -> None:
+        text = VALID.replace("LOCAL_SYNTHESIZED_PACK_FIRST", "UPSTREAM_FIRST")
+        self.assertTrue(any(v["type"] == "mixed_origin_efficiency_control_invalid" for v in self.check(text)))
+
+    def test_filename_pattern_scan_cannot_replace_content_review(self) -> None:
+        text = VALID.replace("FILE_AND_USE_CASE_CONTENT_REQUIRED", "NAME_PATTERN_SCAN")
+        self.assertTrue(any(v["type"] == "mixed_origin_efficiency_control_invalid" for v in self.check(text)))
+
+    def test_high_fit_cluster_routes_directly_to_work_order(self) -> None:
+        text = VALID.replace("DIRECT_WORK_ORDER_FOR_HIGH_FIT_CLUSTERS", "MORE_VALUE_PROBES")
+        self.assertTrue(any(v["type"] == "mixed_origin_efficiency_control_invalid" for v in self.check(text)))
+
+    def test_independent_reviewer_sequence_is_required(self) -> None:
+        text = VALID.replace("WORK_ORDER_THEN_WORKER_THEN_INDEPENDENT_REVIEWER", "WORKER_SELF_REVIEWS")
+        self.assertTrue(any(v["type"] == "mixed_origin_efficiency_control_invalid" for v in self.check(text)))
+
+    def test_upstream_consultation_is_targeted(self) -> None:
+        text = VALID.replace("TARGETED_FOR_PROVENANCE_OR_GAP", "FULL_RESCAN_ALWAYS")
+        self.assertTrue(any(v["type"] == "mixed_origin_efficiency_control_invalid" for v in self.check(text)))
 
     def test_unrelated_doc_is_ignored(self) -> None:
         self.assertEqual([], MODULE.check_text("docs/assessments/CVF_OTHER.md", "# Other"))

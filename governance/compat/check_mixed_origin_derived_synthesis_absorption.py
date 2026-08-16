@@ -55,6 +55,12 @@ EFFICIENCY_CONTROLS = {
     "defaultValuePosture": {"PRESERVE_UNTIL_CONTRADICTED"},
     "additionalValueProbe": {"SKIP_UNLESS_NAMED_GAP", "REQUIRED_WITH_NAMED_GAP"},
     "latencyBudget": {"SINGLE_PASS_BOUNDED"},
+    "intakePriority": {"LOCAL_SYNTHESIZED_PACK_FIRST"},
+    "localSemanticInspection": {"FILE_AND_USE_CASE_CONTENT_REQUIRED"},
+    "mappingAction": {"DIRECT_WORK_ORDER_FOR_HIGH_FIT_CLUSTERS"},
+    "deliverySequence": {"WORK_ORDER_THEN_WORKER_THEN_INDEPENDENT_REVIEWER"},
+    "namePatternInference": {"FORBIDDEN_AS_VALUE_DISPOSITION"},
+    "upstreamConsultation": {"TARGETED_FOR_PROVENANCE_OR_GAP"},
 }
 
 

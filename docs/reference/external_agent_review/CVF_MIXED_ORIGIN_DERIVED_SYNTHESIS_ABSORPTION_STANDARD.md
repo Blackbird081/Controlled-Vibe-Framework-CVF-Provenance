@@ -117,6 +117,45 @@ lane; do not compare documentation absorption against the cost of full runtime.
 
 ## Absorption Efficiency And Provenance Reuse
 
+Local packs produced through operator-agent co-design are the first semantic
+input, not a secondary appendix to the upstream repository. Review the local
+pack first because it already contains an informed CVF adaptation hypothesis;
+use upstream material to verify provenance, resolve contradictions, or deepen
+parts whose fit, safety, or correctness remains uncertain.
+
+Every applicable artifact must also declare:
+
+```text
+intakePriority: LOCAL_SYNTHESIZED_PACK_FIRST
+localSemanticInspection: FILE_AND_USE_CASE_CONTENT_REQUIRED
+mappingAction: DIRECT_WORK_ORDER_FOR_HIGH_FIT_CLUSTERS
+deliverySequence: WORK_ORDER_THEN_WORKER_THEN_INDEPENDENT_REVIEWER
+namePatternInference: FORBIDDEN_AS_VALUE_DISPOSITION
+upstreamConsultation: TARGETED_FOR_PROVENANCE_OR_GAP
+```
+
+`FILE_AND_USE_CASE_CONTENT_REQUIRED` means the single bounded semantic pass
+must inspect the substantive contents, detailed examples, and use cases of the
+local files that contribute to a selected capability cluster. A file or group
+must not receive `NO_NEW_VALUE`, `REJECT`, or `DEFER` merely from its filename,
+directory name, extension, generated-code appearance, or broad pattern count.
+This does not require repeated per-file adjudication: the reconciled ledger may
+be reused, and related files may be mapped and implemented as one capability
+cluster when their content evidence remains traceable.
+
+When a local cluster maps cleanly to an existing CVF owner and has material
+value, the default next action is a bounded work order for that mapping. A
+`WORKER_MUST_NOT_COMMIT` worker performs the implementation, then a distinct
+reviewer independently inspects the diff, reruns or extends relevant tests,
+and records acceptance or repair findings. Machine checks run by the worker do
+not substitute for independent review, and closure or material commit must not
+be claimed before that review is accepted.
+
+Upstream inspection remains required for claims attributed to upstream and is
+expanded when local content is contradictory, safety-sensitive, provenance-
+unclear, or materially misaligned with a current CVF owner. It is not a gate
+that forces the locally synthesized value to prove itself from zero.
+
 For a local pack produced through operator-agent co-design, a reconciled
 manifest and terminal ledger are reusable evidence. A later tranche SHALL NOT
 repeat per-file provenance classification or require the pack to prove value
@@ -286,6 +325,29 @@ implementation evidence.
 Contradiction Or Gap Disposition: semantic truth remains reviewer-owned.
 
 Claim Update: mixed-origin synthesis is now a first-class intake category.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | governance worker role |
+| Provider or surface | local private provenance repository |
+| Session or invocation | local-synthesis-first absorption learning, 2026-08-16 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, apply_patch, focused Python tests and compatibility gates |
+| Target paths | this standard plus the bounded learning batch |
+| Allowed scope source | operator instruction to prioritize detailed local synthesized value and retain independent review |
+| Before status evidence | local-pack value preservation existed without enforced local-first and distinct-reviewer controls |
+| After status evidence | six local-first routing controls added; independent review reproduced focused tests 16/16 and reviewer-fast 64/64 and accepted Target A pending closer commit |
+| Diff evidence | `git diff --name-status` and focused guard output |
+| Approval boundary | mixed-origin absorption process and evidence shape only |
+| Claim boundary | no candidate implementation, runtime/provider/live, commit, public sync, deployment, or production |
+| Agent type | worker |
+| Invocation ID | `local-synthesis-first-learning-20260816` |
+| Expected manifest | bounded five-path learning batch |
+| Actual changed set | standard; work-order template; checker; checker test; learning record |
+| Manifest delta | zero |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
 
 ## Claim Boundary
 
