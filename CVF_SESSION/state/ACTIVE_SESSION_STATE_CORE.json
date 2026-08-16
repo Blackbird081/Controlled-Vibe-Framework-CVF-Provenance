@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T5_CAPABILITY_CASE_AND_DOMAIN_EVIDENCE_PROJECTION_KERNEL_2026-08-16.md",
-    "baselineSha256": "7fb7735f64e677cb61733919f3191d30c271a7d42dd7cc07453b8facb9e85dcd",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T5_CAPABILITY_CASE_AND_DOMAIN_EVIDENCE_PROJECTION_KERNEL_2026-08-16.md",
-    "workOrderSha256": "4442955093180e903c35bc390c6cdacf6b2610c7aec8f748a34700efaca811d4"
+    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T6_CAPABILITY_PROJECTION_TO_LEARNING_CANDIDATE_INTAKE_SEAM_2026-08-16.md",
+    "baselineSha256": "7700a15f10fd84db3cc2dcda879a2ad1497bd3c54ac4f5a0c5432956f48ce082",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T6_CAPABILITY_PROJECTION_TO_LEARNING_CANDIDATE_INTAKE_SEAM_2026-08-16.md",
+    "workOrderSha256": "17039f59cfa1a1c39d9443a0245b5dc2798e132f809c06792f273d7fcf6f397e"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "rspb_ai_t5_projection_kernel_accepted_bounded_continue_cluster_selection",
-  "previousMode": "rspb_ai_t5_projection_kernel_dispatched_worker_pending",
+  "currentMode": "rspb_ai_t6_learning_candidate_intake_seam_dispatched_worker_pending",
+  "previousMode": "rspb_ai_t5_projection_kernel_accepted_bounded_continue_cluster_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
