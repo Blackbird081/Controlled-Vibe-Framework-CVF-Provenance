@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: RSPB-AI-T7
 
@@ -645,12 +645,40 @@ Reason: private worker dispatch; no push or public-sync authority.
 
 ## Closure Checklist
 
-- [ ] Worker captured execution base and clean owned paths.
-- [ ] Eight selected hashes match.
-- [ ] Exact five-path manifest matches.
-- [ ] Focused, T3/T4 regression, package, TypeScript, diff, and fast gates pass.
-- [ ] Worker returns uncommitted `COMPLETE_PENDING_REVIEW`.
-- [ ] Independent reviewer reproduces evidence and decides acceptance/repair.
+- [x] Worker captured execution base and clean owned paths.
+- [x] Eight selected hashes matched.
+- [x] Exact five-path worker manifest matched.
+- [x] Focused 26/26, composed 57/57, package 650 plus 5 skipped, TypeScript, diff, freshness, and fast gates passed.
+- [x] Worker returned uncommitted `COMPLETE_PENDING_REVIEW`.
+- [x] Independent reviewer inspected the full diff, repaired two fail-closed gaps, reproduced proof, and issued `REVIEWER_ACCEPTED_PENDING_CLOSER`.
+- [x] Reviewer/closer committed accepted material at `63b2f7367e9184da2ff18a74db163327809e2602`, reviewer-accepted continuity at `97bf0dd9f`, completion review at `25b19b3d5`, and review HEAD sync at `fc435ca5d`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED`; checklist has no open item | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_COMPLETION_2026-08-16.md` | `REVIEWER_ACCEPTED_PENDING_CLOSER`; SHA-256 `044468d626c4c5dc12c6ad986718132f85d9a109d46f27bb4bff7b6220acba3a` | PASS |
+| Worker return | `docs/reviews/CVF_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_WORKER_RETURN_2026-08-16.md` | SHA-256 `54217b7adef978b9f1b004bbc79984788313b818cfbfa45326a54aff59f396c6`; no worker commit | PASS |
+| Test evidence | Guard Contract focused, composed, package, TypeScript | 26/26; 57/57; 650 passed plus 5 skipped; TypeScript PASS; zero provider/live calls | PASS |
+| System-chain freshness | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | reviewer-governed hash refresh; semantic posture/verdict unchanged; `CURRENT`, zero violations | PASS |
+| Roadmap state | RSPB bounded cluster chain | N/A with reason: no separate roadmap row was opened; active continuity and the accepted 205-row ledger own continuation | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row registry reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | local-first cluster remains routed to the existing Guard Contract owner | PASS |
+| External evidence digest | worker return and completion review | worker SHA-256 `54217b7adef978b9f1b004bbc79984788313b818cfbfa45326a54aff59f396c6`; review SHA-256 `044468d626c4c5dc12c6ad986718132f85d9a109d46f27bb4bff7b6220acba3a`; generated 2026-08-16 | PASS |
+| System loop interlock | caller-supplied profile catalog plus optional T4 evidence -> pure T7 constraints | all authority literals false; no loading, I/O, executor, or mutation | PASS |
+| Session continuity | active state, bootstrap, memory, handoff | reviewer-accepted sync `97bf0dd9f`; final closure sync updates work-order digest | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| exact selected profile | exact requested ID plus platform membership | PASS |
+| risk TTL | positive bounded monotonic R0-R3 map | PASS |
+| malformed/ambiguous T4 evidence | fail-closed `REJECTED` with explicit issue | PASS |
+| hostile Proxy/accessor array | rejected before trap/getter read | PASS |
+| execution/acquisition/network/task/mutation authority | literal `false` on every return path | PASS |
+| runtime/provider receipt | none authorized | PASS |
 
 ## Execution Plan
 

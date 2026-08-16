@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_2026-08-16.md",
     "baselineSha256": "c6dab7ed1c0bd63189a7cfd085e18e2618c59ffdb3476157c7b1b445ed09e4bc",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_2026-08-16.md",
-    "workOrderSha256": "2b46c5af77ac2c2c0d2eeb64b199ed0c3af37111911fc898e0ff89e321a44ec5"
+    "workOrderSha256": "427061542caf6de7fadf5ba6aa830d94abeeed7d5a34e44ef5f1dd1f9fdd0a96"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
