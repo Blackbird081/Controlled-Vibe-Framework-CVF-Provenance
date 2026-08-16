@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_reviewer_accepted_pending_completion_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=create the independent T10 completion review from accepted material `8de69410c`, then perform bounded work-order conversion, machine closure, and final continuity sync; parked checkpoint=environment scanning, snapshot persistence, acquisition/network/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_completion_review_committed_pending_work_order_closure`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=convert the T10 work order to bounded closure against material `8de69410c` and completion review `a3ee9229e`, then perform final continuity sync; parked checkpoint=environment scanning, snapshot persistence, acquisition/network/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_reviewer_accepted_pending_completion_review`
-Current mode: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_reviewer_accepted_pending_completion_review`
-Previous mode: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_dispatched_external_worker_pending_review`
+Current mode marker: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_completion_review_committed_pending_work_order_closure`
+Current mode: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_completion_review_committed_pending_work_order_closure`
+Previous mode: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_reviewer_accepted_pending_completion_review`
 
 ## Next Allowed Move
 
-Mode: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_reviewer_accepted_pending_completion_review`
+Mode: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_completion_review_committed_pending_work_order_closure`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -97,7 +97,7 @@ RSPB-AI-T6 is dispatched at `4789d1442ed280c91e3dd5e6e3c8995244db19ef` after pre
 RSPB-AI-T6 material plus disclosed reviewer repair is committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Evidence: focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, and zero provider/live calls. Next move is bounded closure/session synchronization only.
 RSPB-AI-T6 is `CLOSED_PASS_BOUNDED`; machine closure is committed at `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`. Its pure seam binds accepted T5 projection evidence to a provenance-bound pending learning candidate and the existing intake bridge. Continue with the next highest-value local cluster without restarting full-corpus proof; storage, promotion, mutation, runtime service, provider/live, public, and production authority remain unopened.
 RSPB-AI-T7 is `CLOSED_PASS_BOUNDED`: material and reviewer repair `63b2f7367`, completion review `25b19b3d5`, machine closure `055252ddb`. Evidence: focused 26/26, composed 57/57, package 650 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. Continue with the next highest-value local cluster without restarting full-corpus proof; all runtime/external authority remains parked.
-RSPB-AI-T10 implementation plus disclosed bounded reviewer repair is materially committed at `8de69410c` and independently accepted pending closer. Independent probes repaired nonexistent-calendar normalization, optimistic restricted/offline network projection, and contradictory AVAILABLE API/MCP path-plus-endpoint evidence. Evidence: focused 20/20, T4/T10 composed 39/39, package 763 passed plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. Next move is the completion review and bounded closure sequence; no environment scanning, persistence, runtime/external authority, provider/live, public, or production action is opened.
+RSPB-AI-T10 accepted material is committed at `8de69410c` and independent completion review at `a3ee9229e`. Evidence remains focused 20/20, T4/T10 composed 39/39, package 763 passed plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. Next move is bounded work-order conversion and final continuity; no environment scanning, persistence, runtime/external authority, provider/live, public, or production action is opened.
 RSPB-AI-T9 is `CLOSED_PASS_BOUNDED`: material and reviewer repair `5e5aeb8a4`, completion review `d34dce4c5`, machine closure `b78651eac`. Evidence: focused 42/42, T3/T8/T9 composed 105/105, package 743 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. Continue with the next highest-value local cluster without restarting full-corpus proof; all runtime/external authority remains parked.
 ## Parked Checkpoints
 
