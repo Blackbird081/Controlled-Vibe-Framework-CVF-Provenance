@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection",
+  "currentMode": "rspb_ai_t4_independent_review_rejected_repair_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T4 Route And Readiness Evidence Kernel is accepted CLOSED_PASS_BOUNDED at material commit b571cd4b3. Continue CVF_CAPABILITY_PREFLIGHT_BOOTSTRAP directly by the next selected value cluster under learning commit 193c91404, or stop when remaining clusters add no material value beyond current CVF owners. Reuse the fresh ledger; no extra value-probe round without a named decision-changing gap. Router/transport/executor activation, acquisition/mutation, credentials, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden until separately authorized. Latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Independent review at docs/reviews/CVF_LOCAL_SYNTHESIS_FIRST_LEARNING_AND_RSPB_AI_T4_INDEPENDENT_REVIEW_2026-08-16.md rejects RSPB-AI-T4 pending repair: materialScoreDelta=0 can bypass material-authority ambiguity, single-candidate high-risk handling lacks a decision, and prior completion evidence overstated independent closure. Next allowed move is one bounded T4 repair with adversarial tests and truthful completion evidence, followed by a distinct independent re-review. Do not continue to another CVF_CAPABILITY_PREFLIGHT_BOOTSTRAP cluster until T4 is accepted or explicitly parked. Router/transport/executor activation, acquisition/mutation, credentials, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden. Latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

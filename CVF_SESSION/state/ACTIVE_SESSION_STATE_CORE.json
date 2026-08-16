@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection",
-  "previousMode": "rspb_ai_t3_controlled_acquisition_contract_kernel_closed_bounded_continue_cluster_selection",
+  "currentMode": "rspb_ai_t4_independent_review_rejected_repair_required",
+  "previousMode": "rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

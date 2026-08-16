@@ -43,17 +43,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=continue by the next material-value cluster or stop when remaining clusters duplicate current owners; parked checkpoint=router/transport/executor activation, acquisition/mutation, credentials, MCP/network/provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t4_independent_review_rejected_repair_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=bounded T4 repair plus adversarial tests and independent re-review; parked checkpoint=next absorption cluster and router/transport/executor activation, acquisition/mutation, credentials, MCP/network/provider/live, push/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection`
-Current mode: `rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection`
-Previous mode: `rspb_ai_t3_controlled_acquisition_contract_kernel_closed_bounded_continue_cluster_selection`
+Current mode marker: `rspb_ai_t4_independent_review_rejected_repair_required`
+Current mode: `rspb_ai_t4_independent_review_rejected_repair_required`
+Previous mode: `rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection`
 
 ## Next Allowed Move
 
-Mode: `rspb_ai_t4_route_readiness_evidence_kernel_closed_bounded_continue_cluster_selection`
+Mode: `rspb_ai_t4_independent_review_rejected_repair_required`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -92,7 +92,7 @@ authentication-composition owner, not as CADP authorization or durable-receipt o
 with operator-selected Option A, `CADP_FAIL_CLOSED_ON_INVALID_TOKEN`. T5-R5 implementation is independently accepted bounded at `6284e5bd1` after reviewer repair of the Auth.js fail-closed invocation and test-count evidence.
 TypeScript, 34/34 focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84 passed. No CADP route or registry row was added.
 T8 is independently accepted closed bounded at `3b906862b`. Roadmap, finding overlay, and conditional reopen index now agree through T5-R6; the 140-row ledger segment is byte-identical. External CADP runtime is `PARKED_DEMAND_GATED`. The repo is documented cleanly for operator selection of a different repository, but no transfer/push/public/deploy/production action occurred or is authorized. Latest closed wave: `LHW24`.
-RSPB-AI-T1/T2 are accepted bounded at `d591c542a`/`44a74fa48`. T3 at `bdec9c1e7` adds the non-executing controlled-acquisition kernel. T4 at `b571cd4b3` adds route/readiness evidence with two-stage escalation, material-authority ambiguity, rationale/fallback visibility, fail-closed precedence, and literal `executionAuthorized=false`; 16/16 kernel tests, 50/50 kernel-plus-export tests, TypeScript, reviewer-fast 64/64, and pre-commit 85/85 pass. Continue only while another cluster adds material value beyond current owners; executor/mutation remains separately governed.
+RSPB-AI-T1/T2 are accepted bounded at `d591c542a`/`44a74fa48`. T3 at `bdec9c1e7` adds the non-executing controlled-acquisition kernel. T4 material exists at `b571cd4b3`, but independent review now rejects closure: `materialScoreDelta=0` can bypass material-authority ambiguity, single-candidate high-risk behavior is unresolved, and the prior closure-role claim was inaccurate. Local-synthesis-first learning is independently accepted at `7f948cbaa`. Repair and independent re-review T4 before selecting another cluster; executor/mutation remains separately governed.
 Mixed-origin absorption latency/value-preservation learning is enforced at `193c91404`: reuse fresh ledgers, review by capability cluster, preserve value until contradicted, skip extra value probes unless a named decision-changing gap exists, and keep the pass bounded. Continue selected-cluster absorption directly; do not restart value proof from zero.
 
 ## Parked Checkpoints
