@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2256,
+  "stateKey": "rspbAiT8ApprovalEvidenceBindingKernelDispatched20260816",
+  "value": "RSPB-AI-T8 approval-evidence binding baseline and work order are committed at 84ba2dd930807e88a46bb75c4239a8b8c5729dc9. Pre-dispatch passed 77/77 and pre-commit passed 85/85. The external implementation worker is restricted to exactly five paths, must not stage or commit, and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. The current independent reviewer/orchestrator owns full-diff inspection, adversarial proof reproduction, expected barrel-fingerprint drift handling, bounded repair decision, material commit, and closure. The kernel is evidence-only; approval issuance, replay storage or nonce consumption, acquisition, mutation, action authority, executor, I/O, provider/live, public, deploy, and production remain forbidden."
+}
