@@ -43,18 +43,18 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t1_snapshot_value_probe_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed RSPB-AI-T1 as a three-output no-commit worker; parked checkpoint=candidate execution, acquisition/mutation, runtime activation, secrets/network/provider, hook wiring, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t1_snapshot_value_probe_closed_proceed_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh implementation authorization, then author a bounded doctor-enrichment work order; parked checkpoint=runtime edits, candidate execution/import, acquisition/mutation, secrets/network/provider, push/public/deploy/production.
 
 ## Current Mode
 
-`rspb_ai_t1_snapshot_value_probe_dispatched_pending_worker`
-Current mode marker: `rspb_ai_t1_snapshot_value_probe_dispatched_pending_worker`
-Current mode: `rspb_ai_t1_snapshot_value_probe_dispatched_pending_worker`
-Previous mode: `mods_t0_mixed_origin_absorption_closed_rspb_selective_cadp_retrospective_complete`
+`rspb_ai_t1_snapshot_value_probe_closed_proceed_checkpoint_required`
+Current mode marker: `rspb_ai_t1_snapshot_value_probe_closed_proceed_checkpoint_required`
+Current mode: `rspb_ai_t1_snapshot_value_probe_closed_proceed_checkpoint_required`
+Previous mode: `rspb_ai_t1_snapshot_value_probe_dispatched_pending_worker`
 
 ## Next Allowed Move
 
-Mode: `rspb_ai_t1_snapshot_value_probe_dispatched_pending_worker`
+Mode: `rspb_ai_t1_snapshot_value_probe_closed_proceed_checkpoint_required`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -93,7 +93,7 @@ authentication-composition owner, not as CADP authorization or durable-receipt o
 with operator-selected Option A, `CADP_FAIL_CLOSED_ON_INVALID_TOKEN`. T5-R5 implementation is independently accepted bounded at `6284e5bd1` after reviewer repair of the Auth.js fail-closed invocation and test-count evidence.
 TypeScript, 34/34 focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84 passed. No CADP route or registry row was added.
 T8 is independently accepted closed bounded at `3b906862b`. Roadmap, finding overlay, and conditional reopen index now agree through T5-R6; the 140-row ledger segment is byte-identical. External CADP runtime is `PARKED_DEMAND_GATED`. The repo is documented cleanly for operator selection of a different repository, but no transfer/push/public/deploy/production action occurred or is authorized. Latest closed wave: `LHW24`.
-RSPB-AI-T1 is dispatched at `cdfba38cb` as a documentation-only `WORKER_MUST_NOT_COMMIT` tranche. The worker may create exactly three named outputs and may collect only bounded non-secret command availability/version observations. Independent review owns the final proceed/stop/defer decision. Candidate execution, acquisition/mutation, runtime activation, secrets/network/provider access, hook wiring, push, public sync, deployment, and production remain parked.
+RSPB-AI-T1 is independently accepted bounded at `d591c542a`. Reviewer closure resolved the local dependency graph to 20/20 with zero unresolved, found the existing runtime owner at `scripts/cvf_doctor.py`, and selected `PROCEED_TO_IMPLEMENTATION_WORK_ORDER`. This opens work-order authoring only. Fresh explicit implementation authorization is required before runtime/test edits; direct candidate import/execution, acquisition/mutation, secrets/network/provider access, push, public sync, deployment, and production remain parked.
 
 ## Parked Checkpoints
 
