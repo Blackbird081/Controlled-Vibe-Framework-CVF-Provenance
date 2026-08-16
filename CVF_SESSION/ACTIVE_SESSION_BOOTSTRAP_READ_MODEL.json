@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t8_approval_evidence_binding_kernel_closed_bounded_continue_cluster_selection",
+  "currentMode": "rspb_ai_t9_capability_acquisition_receipt_verification_and_repair_stop_kernel_closed_bounded_continue_cluster_selection",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T8 is CLOSED_PASS_BOUNDED. Material and bounded reviewer repair are committed at 3a1fb03d1846dc6e9cecfc5a09f55a4c89c2d433; completion review at 187a2effc0146a1f8ab0fa6e27cda9c08c5e71f8; machine closure at de246c5194dabec1585b55dfb98ae17e5ea8ae16. The pure Guard Contract seam binds current T3 plan semantics to approval evidence while every authority literal remains false and replay consumption remains external. Next move: continue local-synthesis-first absorption by selecting the next highest-value cluster from the accepted 205-file ledger without restarting full-corpus proof. Use one external no-commit worker followed by this independent reviewer/orchestrator. Approval issuance, replay storage or nonce consumption, acquisition, mutation, action authority, executor, I/O, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T9 is CLOSED_PASS_BOUNDED. Material plus bounded reviewer repair is committed at 5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3; completion review at d34dce4c534164e72800734ae7ba4dd61d556823; machine closure at b78651eacbc04398dc852c700488b6dbf75a51af. Next move: select the next highest-value local synthesis cluster from the accepted 205-file ledger without restarting full-corpus proof, dispatch one external no-commit worker, then retain this independent reviewer/orchestrator. Receipt persistence, approval issuance, replay storage or nonce consumption, acquisition, mutation, action authority, executor, I/O, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md",
-    "baselineSha256": "ed0b1ab13f126ec4d7947ff95ea2e704be665a87f5df78a5770100e0059ebac7",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T8_CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_BINDING_KERNEL_2026-08-16.md",
-    "workOrderSha256": "1cb0682922a8f54c2d8ed0cb324d2d2ffd498001201c92c91cb4b8478003cdfb"
+    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T9_CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_AND_REPAIR_STOP_KERNEL_2026-08-16.md",
+    "baselineSha256": "395f62f0f89b2006fe44fd744fa71d347a958a0d4db422e2b7071114253fcd13",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T9_CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_AND_REPAIR_STOP_KERNEL_2026-08-16.md",
+    "workOrderSha256": "7130ff6325251dd229b20f8877b476bd556330d6df8f0f79f01ece3822633d6f"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
