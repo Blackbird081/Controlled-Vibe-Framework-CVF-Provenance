@@ -5,7 +5,7 @@
   "sourceAuditEvidence": "docs/audits/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_EVIDENCE_2026-07-10.json",
   "reviewerCompletion": "docs/reviews/CVF_MSEA_R90_SYSTEM_CHAIN_AUDIT_A_COMPLETION_2026-07-10.md",
   "reviewerCompletionMaterialCommit": "645df8b83",
-  "lastVerifiedDate": "2026-08-15",
+  "lastVerifiedDate": "2026-08-16",
   "maxAgeDays": 30,
   "reminderPolicy": "This machine map and its human companion record reviewer-accepted MSEA-R90 Audit A findings. Source-file drift and review age are detected automatically by governance/compat/check_system_chain_map_freshness.py. Detecting drift or age expiry never rewrites a lane's currentPosture or verdict automatically; only a fresh governed review may change those fields.",
   "lanes": [
@@ -194,18 +194,18 @@
       "planeRange": "RUNTIME_GUARD class (GC-001..GC-014) and CI_REPO_GATE class (186 governance/compat/check_*.py checkers)",
       "currentPosture": "PARTIAL",
       "verdict": "PARTIAL_OPERATOR_VISIBILITY_BY_ENFORCEMENT_CLASS",
-      "implementedBy": "scripts/cvf_doctor.py; governance/compat/run_agent_autorun_workflow_gate.py; governance/compat/run_local_governance_hook_chain.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts",
-      "invokedBy": "operator runs scripts/cvf_doctor.py directly; autorun receipts are written by run_agent_autorun_workflow_gate.py at each phase run; Web Operations dispatches jobs from web-governance-jobs.ts JOB_DEFINITIONS",
-      "testedBy": "CLI aggregate/per-check human-readable PASS/FAIL output confirmed by direct source read for both the autorun gate and the hook chain; Web job registry confirmed to expose exactly 5 job types with exactly 1 named governance/compat checker wired directly (docs_governance_check -> check_docs_governance_compat.py)",
-      "evidenceOwner": "the receipt file itself; scripts/cvf_doctor.py source; web-governance-jobs.ts JOB_DEFINITIONS",
+      "implementedBy": "scripts/cvf_doctor.py; scripts/run_cvf_release_gate_bundle.py; governance/compat/run_agent_autorun_workflow_gate.py; governance/compat/run_local_governance_hook_chain.py; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts",
+      "invokedBy": "operator runs scripts/cvf_doctor.py directly; the release bundle consumes its bounded capability snapshot before expensive checks; autorun receipts are written by run_agent_autorun_workflow_gate.py at each phase run; Web Operations dispatches jobs from web-governance-jobs.ts JOB_DEFINITIONS",
+      "testedBy": "42/42 hermetic snapshot and release short-circuit tests; 38/38 existing SOT3 release integration tests; direct secret-safe capability-snapshot CLI invocation; CLI aggregate/per-check human-readable PASS/FAIL output confirmed by direct source read for both the autorun gate and the hook chain; Web job registry confirmed to expose exactly 5 job types with exactly 1 named governance/compat checker wired directly (docs_governance_check -> check_docs_governance_compat.py)",
+      "evidenceOwner": "the receipt file itself; scripts/cvf_doctor.py source; scripts/test_cvf_doctor_snapshot.py; web-governance-jobs.ts JOB_DEFINITIONS",
       "operatorSurface": "MIXED: CI_REPO_GATE class evidence surfaces via CI job logs, local terminal stdout, and raw JSON receipt files; RUNTIME_GUARD class evidence surfaces via the confirmed Web governance dashboard route",
       "knownGaps": "No unified Web inventory/readout exists for all 186 governance/compat checker scripts; only a bounded 5-job-type subset is exposed, with exactly one checker wired directly into a job definition.",
       "nextReviewAction": "Any unified readout belongs in a fresh Deliverable B or maintenance packet after separate operator authorization; not authorized by this map.",
       "sourceFingerprints": [
         {
           "path": "scripts/cvf_doctor.py",
-          "sha256": "c30d272dc444761cfd90d6953b60b2c52b54c7d396fc9e8ebef6ff8e6dc6a689",
-          "evidenceRole": "CLI human-readable operator readout"
+          "sha256": "ca63a09f1f68ad9245fd8aaa108440709f83f54c946c7c414efc65725aabe33e",
+          "evidenceRole": "CLI human-readable operator readout plus secret-safe capability environment snapshot"
         },
         {
           "path": "governance/compat/run_agent_autorun_workflow_gate.py",

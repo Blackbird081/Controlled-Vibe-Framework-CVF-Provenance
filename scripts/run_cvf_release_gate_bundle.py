@@ -43,6 +43,7 @@ from types import SimpleNamespace
 
 from build_cvf_live_evidence_manifest import build_manifest as build_live_evidence_manifest
 from _local_env import bootstrap_repo_env
+import cvf_doctor
 
 REPO_ROOT = Path(__file__).parent.parent
 CVF_WEB = REPO_ROOT / "EXTENSIONS" / "CVF_v1.6_AGENT_PLATFORM" / "cvf-web"
@@ -161,6 +162,38 @@ def is_allowed_secret_line(path: Path, line: str) -> bool:
 # ---------------------------------------------------------------------------
 # Individual checks
 # ---------------------------------------------------------------------------
+
+def check_capability_preflight(dry_run: bool) -> CheckResult:
+    """Capability environment preflight: a bounded, secret-free, non-mutating
+    early check that observes git/python/node/npm/npx availability via
+    `cvf_doctor.py`'s isolated snapshot builder before any expensive release
+    work runs.
+
+    This is read-only evidence, never execution/mutation/deployment
+    authority. On non-dry-run FAIL, the caller (main()) short-circuits the
+    rest of the expensive check sequence. Dry-run never executes anything for
+    real and is marked SKIP.
+    """
+    name = "Capability environment preflight"
+    if dry_run:
+        return CheckResult(
+            name, "SKIP",
+            "dry-run - would run: python scripts/cvf_doctor.py --capability-snapshot --json",
+        )
+
+    payload, _exit_code = cvf_doctor.run_capability_snapshot_cli()
+    ready = payload.get("ready", False)
+    reason = payload.get("readinessReason", "")
+    command_summary = [
+        f"{c['name']}:{c['availability']}" for c in payload.get("commands", [])
+    ]
+    if ready:
+        return CheckResult(name, "PASS", "Capability environment preflight PASS", command_summary)
+    message = "Capability environment preflight FAIL"
+    if reason:
+        message = f"{message}: {reason}"
+    return CheckResult(name, "FAIL", message, command_summary)
+
 
 def check_web_build(dry_run: bool) -> CheckResult:
     name = "Web build (npm run build)"
@@ -625,13 +658,47 @@ def main() -> None:
         print(f"\nCVF Release Gate Bundle — DRY RUN ({today})")
         print("The following checks would run:\n")
 
-    results: list[CheckResult] = [
+    # Capability environment preflight runs first, before any expensive
+    # check. On a real (non-dry-run) FAIL, every expensive check below
+    # (build, typecheck, provider readiness, secrets scan, E2E, SOT3) is
+    # skipped entirely -- they must not be invoked -- and the bundle returns
+    # a secret-safe FAIL result containing only the preflight CheckResult.
+    # On PASS, or in --dry-run mode (preflight itself never executes for
+    # real and is marked SKIP), the existing check sequence and mandatory
+    # SOT3 live-proof policy run completely unchanged.
+    preflight_result = check_capability_preflight(args.dry_run)
+    results: list[CheckResult] = [preflight_result]
+
+    if not args.dry_run and preflight_result.status == "FAIL":
+        payload = result_payload(results, today, sot3=None)
+        if args.output:
+            write_json_payload(payload, args.output)
+        if args.e2e_diagnostic_output:
+            args.e2e_diagnostic_output.parent.mkdir(parents=True, exist_ok=True)
+            args.e2e_diagnostic_output.write_text("null\n", encoding="utf-8")
+        if args.manifest_output:
+            evidence_paths = [args.output]
+            if args.e2e_diagnostic_output and args.e2e_diagnostic_output.exists():
+                evidence_paths.append(args.e2e_diagnostic_output)
+            write_live_evidence_manifest(
+                evidence_paths,
+                args.manifest_output,
+                build_secret_safe_rerun_command(args),
+                args.manifest_anchor_id,
+                args.manifest_anchor_url,
+            )
+        if args.json_out:
+            sys.exit(json_output(payload))
+        else:
+            sys.exit(print_results(results, today))
+
+    results.extend([
         check_web_build(args.dry_run),
         check_ts_typecheck(args.dry_run),
         check_provider_readiness(args.dry_run, args.mock),
         check_secrets(args.dry_run),
         check_docs_governance(),
-    ]
+    ])
 
     if args.e2e:
         results.append(check_e2e(args.dry_run, live=False))

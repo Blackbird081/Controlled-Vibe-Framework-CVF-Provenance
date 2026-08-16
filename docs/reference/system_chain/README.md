@@ -174,6 +174,17 @@ laneId: `EVIDENCE_TO_OPERATOR_SURFACE`
 
 **Posture: PARTIAL.** Verdict: `PARTIAL_OPERATOR_VISIBILITY_BY_ENFORCEMENT_CLASS`.
 
+RSPB-AI-T2 adds a bounded local seam to this lane: `scripts/cvf_doctor.py
+--capability-snapshot --json` emits a schema-versioned, five-minute,
+secret-safe observation of exactly `git`, `python`, `node`, `npm`, and `npx`.
+`scripts/run_cvf_release_gate_bundle.py` consumes that snapshot before
+expensive checks and fails closed without invoking them when the snapshot is
+not ready. Independent review passed 42/42 hermetic snapshot/short-circuit
+tests and 38/38 existing SOT3 integration tests. This is deterministic local
+evidence only; it grants no execution, mutation, approval, live-provider,
+deployment, or production authority and does not raise this lane above
+`PARTIAL`.
+
 `RUNTIME_GUARD` class evidence (GC-001 through GC-014) has a confirmed Web
 UI route at
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance`.

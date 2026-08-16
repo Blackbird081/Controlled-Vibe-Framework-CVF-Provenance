@@ -4,12 +4,15 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import shutil
 import socket
 import subprocess
 import sys
 import tempfile
-from dataclasses import asdict, dataclass
+import uuid
+from dataclasses import asdict, dataclass, field
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from _local_env import bootstrap_repo_env
@@ -66,6 +69,357 @@ def path_writable(path: Path) -> bool:
 
 def has_any_env_key(names: list[str]) -> bool:
     return any(os.environ.get(name, "").strip() for name in names)
+
+
+# ---------------------------------------------------------------------------
+# Capability environment snapshot (read-only, secret-free, non-mutating).
+#
+# This section is fully isolated from the full-mode doctor above: it never
+# calls bootstrap_repo_env(), build_checks(), is_port_listening(), or
+# path_writable(). It observes only a small fixed allow-list of local
+# commands (git/python/node/npm/npx) via discovery plus a bounded --version
+# probe, and it never grants capability, execution, mutation, activation, or
+# approval authority -- it is evidence only, per the accepted Minimal
+# CVF-Native Snapshot Contract at
+# docs/reference/capability_preflight_bootstrap/CVF_CAPABILITY_PREFLIGHT_OWNER_RECONCILIATION_CONTRACT.md.
+# ---------------------------------------------------------------------------
+
+SNAPSHOT_TTL_SECONDS = 300  # fixed 5-minute TTL, per the minimal contract
+SNAPSHOT_SCHEMA_VERSION = "cvf.capabilityEnvironmentSnapshot.v1"
+
+SNAPSHOT_COMMANDS: tuple[str, ...] = ("git", "python", "node", "npm", "npx")
+
+SNAPSHOT_SCOPE = "WORKSPACE_LOCAL"
+SNAPSHOT_OBSERVATION_CLASS = "READ_ONLY_CLI_AVAILABILITY_VERSION"
+
+AVAILABILITY_AVAILABLE = "AVAILABLE"
+AVAILABILITY_MISSING = "MISSING"
+AVAILABILITY_UNKNOWN = "UNKNOWN"
+
+# Redacted path-class enum. The snapshot never emits a raw absolute
+# executable path; it emits one of these coarse, non-identifying classes.
+PATH_CLASS_SYSTEM_PATH = "SYSTEM_PATH"
+PATH_CLASS_PROJECT_LOCAL = "PROJECT_LOCAL"
+PATH_CLASS_USER_PATH = "USER_PATH"
+PATH_CLASS_UNKNOWN_PATH_CLASS = "UNKNOWN_PATH_CLASS"
+PATH_CLASS_NOT_DISCOVERED = "NOT_DISCOVERED"
+
+VERIFICATION_PASS = "PASS"
+VERIFICATION_WARN = "WARN"
+VERIFICATION_FAIL = "FAIL"
+VERIFICATION_UNKNOWN = "UNKNOWN"
+
+VERSION_TEXT_MAX_LENGTH = 80
+
+
+@dataclass
+class CommandObservation:
+    name: str
+    availability: str
+    pathClass: str
+    version: str = ""
+
+
+@dataclass
+class CapabilitySnapshot:
+    schemaVersion: str
+    snapshotId: str
+    observedAt: str
+    expiresAt: str
+    scope: str
+    observationClass: str
+    ttlSeconds: int
+    commands: list[CommandObservation] = field(default_factory=list)
+    verificationStatus: str = VERIFICATION_UNKNOWN
+    reasons: list[str] = field(default_factory=list)
+
+
+def classify_path_class(resolved_path: str) -> str:
+    """Maps a resolved executable path to a coarse, non-identifying class.
+
+    Never returns or embeds the raw path itself.
+    """
+    if not resolved_path:
+        return PATH_CLASS_NOT_DISCOVERED
+    try:
+        normalized = resolved_path.replace("\\", "/").lower()
+    except Exception:
+        return PATH_CLASS_UNKNOWN_PATH_CLASS
+    try:
+        repo_root_normalized = str(REPO_ROOT).replace("\\", "/").lower()
+    except Exception:
+        repo_root_normalized = ""
+    if repo_root_normalized and normalized.startswith(repo_root_normalized):
+        return PATH_CLASS_PROJECT_LOCAL
+    system_markers = (
+        "/usr/bin", "/usr/local/bin", "/bin/", "windows/system32",
+        "program files", "/opt/",
+    )
+    if any(marker in normalized for marker in system_markers):
+        return PATH_CLASS_SYSTEM_PATH
+    user_markers = ("/home/", "/users/", "appdata", ".local/bin", ".nvm")
+    if any(marker in normalized for marker in user_markers):
+        return PATH_CLASS_USER_PATH
+    return PATH_CLASS_UNKNOWN_PATH_CLASS
+
+
+def bound_version_text(raw: str) -> str:
+    """Returns one bounded line or a redaction marker for unsafe output."""
+    if not raw:
+        return ""
+    single_line = raw.strip().splitlines()[0] if raw.strip() else ""
+    lowered = single_line.lower()
+    unsafe_markers = ("secret", "token", "credential", "api_key", "apikey", "path=")
+    repo_root = str(REPO_ROOT).replace("\\", "/").lower()
+    normalized = single_line.replace("\\", "/")
+    contains_absolute_path = bool(
+        re.search(r"(?:^|\s)(?:[A-Za-z]:/|/(?:[^\s]+))", normalized)
+    )
+    if (
+        any(marker in lowered for marker in unsafe_markers)
+        or (repo_root and repo_root in normalized.lower())
+        or contains_absolute_path
+    ):
+        return "[REDACTED_UNSAFE_VERSION_OUTPUT]"
+    return single_line[:VERSION_TEXT_MAX_LENGTH]
+
+
+def observe_command(
+    name: str,
+    *,
+    which_fn=shutil.which,
+    version_probe_fn=None,
+) -> CommandObservation:
+    """Observes a single command's availability, redacted path class, and a
+    bounded version string.
+
+    `which_fn` and `version_probe_fn` are injectable call sites so tests can
+    be fully hermetic (no real subprocess/PATH dependency required). If
+    `version_probe_fn` is None, a default bounded subprocess probe is used.
+    `version_probe_fn(resolved_path: str) -> str` must return the raw
+    version output on success and raise on failure/timeout/non-zero/unusable
+    output; the caller here classifies any exception as UNKNOWN.
+    """
+    resolved_path = which_fn(name)
+    if not resolved_path:
+        return CommandObservation(
+            name=name,
+            availability=AVAILABILITY_MISSING,
+            pathClass=PATH_CLASS_NOT_DISCOVERED,
+            version="",
+        )
+
+    path_class = classify_path_class(resolved_path)
+    probe = version_probe_fn or _default_version_probe
+    try:
+        raw_version = probe(resolved_path)
+        if not raw_version or not raw_version.strip():
+            raise ValueError("empty or unusable version probe output")
+    except Exception:
+        return CommandObservation(
+            name=name,
+            availability=AVAILABILITY_UNKNOWN,
+            pathClass=path_class,
+            version="",
+        )
+
+    return CommandObservation(
+        name=name,
+        availability=AVAILABILITY_AVAILABLE,
+        pathClass=path_class,
+        version=bound_version_text(raw_version),
+    )
+
+
+def _default_version_probe(resolved_path: str) -> str:
+    """Bounded, timeout-guarded --version probe. Never invoked in hermetic
+    tests, which inject `version_probe_fn` instead."""
+    result = subprocess.run(
+        [resolved_path, "--version"],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        timeout=10,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"version probe returned non-zero: {result.returncode}")
+    output = (result.stdout or result.stderr or "").strip()
+    if not output:
+        raise ValueError("version probe produced no usable output")
+    return output
+
+
+def build_capability_snapshot(
+    *,
+    commands: tuple[str, ...] = SNAPSHOT_COMMANDS,
+    now_fn=None,
+    which_fn=shutil.which,
+    version_probe_fn=None,
+    id_fn=None,
+) -> CapabilitySnapshot:
+    """Pure, injectable snapshot builder.
+
+    Does NOT call bootstrap_repo_env(), build_checks(), is_port_listening(),
+    path_writable(), or any mutating/network-adjacent helper. `now_fn` and
+    `id_fn` are injectable so tests can assert exact observedAt/expiresAt and
+    a stable/predictable snapshot identity without real clock/uuid calls.
+    """
+    now = (now_fn or (lambda: datetime.now(timezone.utc)))()
+    observed_at = now
+    expires_at = now + timedelta(seconds=SNAPSHOT_TTL_SECONDS)
+    snapshot_id = (id_fn or (lambda: str(uuid.uuid4())))()
+
+    observations = [
+        observe_command(name, which_fn=which_fn, version_probe_fn=version_probe_fn)
+        for name in commands
+    ]
+
+    reasons: list[str] = []
+    missing = [o.name for o in observations if o.availability == AVAILABILITY_MISSING]
+    unknown = [o.name for o in observations if o.availability == AVAILABILITY_UNKNOWN]
+    if missing:
+        reasons.append(f"missing command(s): {', '.join(missing)}")
+    if unknown:
+        reasons.append(f"unknown/unverifiable command(s): {', '.join(unknown)}")
+
+    if missing:
+        verification_status = VERIFICATION_FAIL
+    elif unknown:
+        verification_status = VERIFICATION_WARN
+    elif not observations:
+        verification_status = VERIFICATION_UNKNOWN
+        reasons.append("no commands observed")
+    else:
+        verification_status = VERIFICATION_PASS
+
+    return CapabilitySnapshot(
+        schemaVersion=SNAPSHOT_SCHEMA_VERSION,
+        snapshotId=snapshot_id,
+        observedAt=observed_at.isoformat(),
+        expiresAt=expires_at.isoformat(),
+        scope=SNAPSHOT_SCOPE,
+        observationClass=SNAPSHOT_OBSERVATION_CLASS,
+        ttlSeconds=SNAPSHOT_TTL_SECONDS,
+        commands=observations,
+        verificationStatus=verification_status,
+        reasons=reasons,
+    )
+
+
+def _parse_iso_timestamp(value: str) -> datetime | None:
+    if not value or not isinstance(value, str):
+        return None
+    try:
+        parsed = datetime.fromisoformat(value)
+    except (ValueError, TypeError):
+        return None
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        return None
+    return parsed
+
+
+def verify_snapshot_freshness(
+    snapshot: CapabilitySnapshot,
+    *,
+    now_fn=None,
+) -> tuple[bool, str]:
+    """Pure freshness verification with no side effects.
+
+    Returns (is_fresh, reason). An expired snapshot or malformed/unparseable
+    time is fail-closed (`is_fresh=False`) with an explicit reason string --
+    never silently treated as fresh. Freshness alone never grants execution,
+    mutation, activation, approval, or owner authority.
+    """
+    now = (now_fn or (lambda: datetime.now(timezone.utc)))()
+    if now.tzinfo is None or now.utcoffset() is None:
+        return False, "malformed_or_unparseable_current_time"
+
+    if snapshot.schemaVersion != SNAPSHOT_SCHEMA_VERSION:
+        return False, "unsupported_snapshot_schema_version"
+
+    if snapshot.ttlSeconds != SNAPSHOT_TTL_SECONDS:
+        return False, "snapshot_ttl_mismatch"
+
+    expires_at = _parse_iso_timestamp(snapshot.expiresAt)
+    if expires_at is None:
+        return False, "malformed_or_unparseable_expiresAt"
+
+    observed_at = _parse_iso_timestamp(snapshot.observedAt)
+    if observed_at is None:
+        return False, "malformed_or_unparseable_observedAt"
+
+    if expires_at - observed_at != timedelta(seconds=SNAPSHOT_TTL_SECONDS):
+        return False, "snapshot_ttl_window_mismatch"
+
+    if observed_at > now:
+        return False, "snapshot_observed_in_future"
+
+    if now > expires_at:
+        return False, "snapshot_expired"
+
+    return True, ""
+
+
+def snapshot_is_ready(snapshot: CapabilitySnapshot, *, now_fn=None) -> tuple[bool, str]:
+    """Aggregate readiness: fresh AND every observed command is AVAILABLE.
+
+    Fail-closed: any MISSING/UNKNOWN command, or an expired/malformed
+    snapshot, makes this non-ready with an explicit reason. This is evidence
+    about observed local state only; it never grants capability, execution,
+    mutation, activation, or approval authority.
+    """
+    fresh, freshness_reason = verify_snapshot_freshness(snapshot, now_fn=now_fn)
+    if not fresh:
+        return False, freshness_reason
+
+    command_names = tuple(command.name for command in snapshot.commands)
+    if command_names != SNAPSHOT_COMMANDS:
+        return False, "snapshot_command_set_mismatch"
+
+    not_available = [
+        c.name for c in snapshot.commands if c.availability != AVAILABILITY_AVAILABLE
+    ]
+    if not_available:
+        return False, f"command(s) not AVAILABLE: {', '.join(not_available)}"
+
+    if not snapshot.commands:
+        return False, "no commands observed"
+
+    if snapshot.verificationStatus != VERIFICATION_PASS:
+        return False, "snapshot_verification_not_pass"
+
+    return True, ""
+
+
+def snapshot_to_payload(snapshot: CapabilitySnapshot, *, now_fn=None) -> dict:
+    """Serializes the snapshot to a secret-safe JSON-ready dict.
+
+    Never includes a raw absolute executable path, raw repository absolute
+    path, PATH listing, environment-variable name/value, credential
+    value/status, or raw subprocess output beyond one bounded version line.
+    """
+    ready, readiness_reason = snapshot_is_ready(snapshot, now_fn=now_fn)
+    payload = asdict(snapshot)
+    payload["ready"] = ready
+    if readiness_reason:
+        payload["readinessReason"] = readiness_reason
+    return payload
+
+
+def run_capability_snapshot_cli(*, now_fn=None, which_fn=shutil.which, version_probe_fn=None) -> tuple[dict, int]:
+    """Builds a snapshot, serializes it, and computes the CLI exit code.
+
+    Exits 0 only when the snapshot is fresh AND all five commands are
+    AVAILABLE. Any MISSING/UNKNOWN/expired/malformed state exits non-zero --
+    this is real environment evidence, not a bug.
+    """
+    snapshot = build_capability_snapshot(
+        now_fn=now_fn, which_fn=which_fn, version_probe_fn=version_probe_fn
+    )
+    payload = snapshot_to_payload(snapshot, now_fn=now_fn)
+    exit_code = 0 if payload["ready"] else 1
+    return payload, exit_code
 
 
 def build_checks() -> list[DoctorCheck]:
@@ -203,7 +557,30 @@ def summarize(checks: list[DoctorCheck]) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description="CVF fresh-clone/runtime readiness doctor.")
     parser.add_argument("--json", action="store_true", help="Output JSON.")
+    parser.add_argument(
+        "--capability-snapshot",
+        action="store_true",
+        help=(
+            "Emit a read-only, secret-free capability environment snapshot "
+            "(git/python/node/npm/npx availability, redacted path class, "
+            "bounded version, and TTL-based freshness) instead of running "
+            "the full doctor. Fully isolated from env bootstrap and the "
+            "full-mode checks: it is evidence only, never authority."
+        ),
+    )
     args = parser.parse_args()
+
+    if args.capability_snapshot:
+        payload, exit_code = run_capability_snapshot_cli()
+        if args.json:
+            print(json.dumps(payload, indent=2))
+        else:
+            print(f"CVF Capability Snapshot: {'READY' if payload['ready'] else 'NOT_READY'}")
+            for command in payload["commands"]:
+                print(f"[{command['availability']}] {command['name']}: {command['version']}")
+            if payload.get("readinessReason"):
+                print(f"  -> {payload['readinessReason']}")
+        return exit_code
 
     loaded_env_files = bootstrap_repo_env()
     checks = build_checks()
