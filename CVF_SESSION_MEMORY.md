@@ -43,17 +43,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t6_learning_candidate_intake_seam_reviewer_accepted_pending_closer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=closer converts the accepted T6 review into bounded closure and synchronizes continuity; parked checkpoint=storage/promotion/mutation, router/transport/executor activation, credentials, MCP/network/provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t6_learning_candidate_intake_seam_closed_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select the next highest-value local synthesis cluster and dispatch one external no-commit worker followed by this independent reviewer/orchestrator; parked checkpoint=storage/promotion/mutation, router/transport/executor activation, credentials, MCP/network/provider/live, push/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `rspb_ai_t6_learning_candidate_intake_seam_reviewer_accepted_pending_closer`
-Current mode: `rspb_ai_t6_learning_candidate_intake_seam_reviewer_accepted_pending_closer`
-Previous mode: `rspb_ai_t6_learning_candidate_intake_seam_dispatched_worker_pending`
+Current mode marker: `rspb_ai_t6_learning_candidate_intake_seam_closed_bounded_continue_cluster_selection`
+Current mode: `rspb_ai_t6_learning_candidate_intake_seam_closed_bounded_continue_cluster_selection`
+Previous mode: `rspb_ai_t6_learning_candidate_intake_seam_reviewer_accepted_pending_closer`
 
 ## Next Allowed Move
 
-Mode: `rspb_ai_t6_learning_candidate_intake_seam_reviewer_accepted_pending_closer`
+Mode: `rspb_ai_t6_learning_candidate_intake_seam_closed_bounded_continue_cluster_selection`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -96,6 +96,7 @@ RSPB-AI-T1/T2 are accepted bounded at `d591c542a`/`44a74fa48`. T3 at `bdec9c1e7`
 Mixed-origin absorption latency/value-preservation learning is enforced at `193c91404`: reuse fresh ledgers, review by capability cluster, preserve value until contradicted, skip extra value probes unless a named decision-changing gap exists, and keep the pass bounded. RSPB-AI-T5-R1 is independently accepted and materially committed at `1b2c11c9fd1a9795cd9d5bcf17c10806e98273fb` after one disclosed repair round, 27/27 focused tests, 104/104 composed tests, 624 passed plus 5 skipped package tests, 16/16 independent probes, and pre-commit 85/85. Continue with the next highest-value local synthesis cluster from the existing ledger; do not restart value proof from zero. No adapter, file export, executor, provider/live, public, or production authority is opened.
 RSPB-AI-T6 is dispatched at `4789d1442ed280c91e3dd5e6e3c8995244db19ef` after pre-dispatch 77/77 and pre-commit 85/85. The external worker may edit only the exact four-path manifest and must return `COMPLETE_PENDING_REVIEW` without staging or committing. The current orchestrator/reviewer will independently inspect the diff, reproduce tests, and run adversarial probes before any repair, acceptance, closure, or material commit. The seam remains pure and proposal-only; no storage, promotion, mutation, runtime service, provider/live, public, or production authority is opened.
 RSPB-AI-T6 material plus disclosed reviewer repair is committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Evidence: focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, and zero provider/live calls. Next move is bounded closure/session synchronization only.
+RSPB-AI-T6 is `CLOSED_PASS_BOUNDED`; machine closure is committed at `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`. Its pure seam binds accepted T5 projection evidence to a provenance-bound pending learning candidate and the existing intake bridge. Continue with the next highest-value local cluster without restarting full-corpus proof; storage, promotion, mutation, runtime service, provider/live, public, and production authority remain unopened.
 
 ## Parked Checkpoints
 

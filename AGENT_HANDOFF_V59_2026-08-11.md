@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T6 Reviewer Accepted Pending Closer
+# CVF Agent Handoff V59 - RSPB-AI-T6 Closed Bounded Continue Cluster Selection
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local HEAD before this handoff sync: `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1`.
+- Current local HEAD before this handoff sync: `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -37,8 +37,8 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - RSPB-AI-T6 bounded dispatch: `4789d1442ed280c91e3dd5e6e3c8995244db19ef`.
-- RSPB-AI-T6 accepted material plus bounded reviewer repair: `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1`.
-- Active mode: `rspb_ai_t6_learning_candidate_intake_seam_reviewer_accepted_pending_closer`
+- RSPB-AI-T6 accepted material plus bounded reviewer repair: `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1`; machine closure packet: `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`.
+- Active mode: `rspb_ai_t6_learning_candidate_intake_seam_closed_bounded_continue_cluster_selection`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -47,10 +47,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t6_learning_candidate_intake_seam_reviewer_accepted_pending_closer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=closer converts the accepted T6 review into bounded closure and synchronizes continuity; parked checkpoint=storage/promotion/mutation, router/transport/executor activation, credentials, MCP/network/provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t6_learning_candidate_intake_seam_closed_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select the next highest-value local synthesis cluster and dispatch one external no-commit worker followed by this independent reviewer/orchestrator; parked checkpoint=storage/promotion/mutation, router/transport/executor activation, credentials, MCP/network/provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t6_learning_candidate_intake_seam_reviewer_accepted_pending_closer`
+`rspb_ai_t6_learning_candidate_intake_seam_closed_bounded_continue_cluster_selection`
 
 ## Purpose
 
@@ -106,12 +106,13 @@ Record bounded T6 dispatch and route execution to one external no-commit worker 
 - RSPB-AI-T5-R1 is independently accepted and materially committed at `1b2c11c9fd1a9795cd9d5bcf17c10806e98273fb` after one disclosed reviewer repair round. Evidence: 27/27 focused, 104/104 composed, 624 passed plus 5 skipped package tests, TypeScript PASS, 16/16 independent probes, pre-commit 85/85, and zero review/closure provider calls.
 - RSPB-AI-T6 is dispatched at `4789d1442ed280c91e3dd5e6e3c8995244db19ef` after pre-dispatch 77/77 and pre-commit 85/85. Its external worker is restricted to four paths, must not stage or commit, and must return `COMPLETE_PENDING_REVIEW`; the current orchestrator/reviewer owns independent diff inspection, test reproduction, adversarial review, closure, and material commit.
 - RSPB-AI-T6 implementation plus disclosed bounded reviewer repair is materially committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
+- RSPB-AI-T6 is `CLOSED_PASS_BOUNDED`; the work order carries a complete machine closure package and the next move returns to bounded local-first cluster selection.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | RSPB-AI-T6 REVIEWER_ACCEPTED_PENDING_CLOSER at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` |
+| authorityState | RSPB-AI-T6 CLOSED_PASS_BOUNDED; material `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1`; review sync `8c5965be1bdc7ba9cea1d542d188b1abb00cf164` |
 | baselinePath | `docs/baselines/CVF_GC018_RSPB_AI_T6_CAPABILITY_PROJECTION_TO_LEARNING_CANDIDATE_INTAKE_SEAM_2026-08-16.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T6_CAPABILITY_PROJECTION_TO_LEARNING_CANDIDATE_INTAKE_SEAM_2026-08-16.md` |
 | nextAuthorityRequirement | worker return plus independent review; separate authority for storage/promotion/router/transport/executor |
@@ -193,7 +194,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T6 Reviewer-Accepted Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T6 Final Closure Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
@@ -203,6 +204,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/rspbAiT6LearningCandidateIntakeSeamDispatched20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT6LearningCandidateIntakeSeamReviewerAccepted20260816.json`
+- `CVF_SESSION/state/entries/rspbAiT6LearningCandidateIntakeSeamClosed20260816.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator explicitly assigned this agent as reviewer/orchestrator and another agent as implementation worker.
@@ -213,8 +215,6 @@ Rollback boundary: revert this exact session-sync batch as one unit; do not sepa
 
 ## Claim Boundary
 
-This handoff records RSPB-AI-T6 reviewer acceptance pending closer only. It does not
-authorize a router, transport, executor, filesystem case export, actual acquisition/mutation, MCP/network/provider/live invocation,
-external-agent launch, runtime enforcement, cross-runtime determinism,
-trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
+This handoff records RSPB-AI-T6 bounded closure only. It does not authorize a router, transport, executor, filesystem case export, actual acquisition/mutation, MCP/network/provider/live invocation,
+external-agent launch, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
