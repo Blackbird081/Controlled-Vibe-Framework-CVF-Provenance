@@ -18,6 +18,8 @@ work order and paired GC-018 baseline. The worker return remains historical
 worker-time evidence; this review relies on direct diff inspection and
 independently reproduced commands.
 
+Work order: `CVF_AGENT_WORK_ORDER_RSPB_AI_T6_CAPABILITY_PROJECTION_TO_LEARNING_CANDIDATE_INTAKE_SEAM_2026-08-16.md`.
+
 ## Scope / Methodology
 
 Confirmed the exact four-path worker manifest, read the complete source/test

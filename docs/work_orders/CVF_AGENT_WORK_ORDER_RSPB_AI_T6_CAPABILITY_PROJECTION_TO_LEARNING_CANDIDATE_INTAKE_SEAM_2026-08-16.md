@@ -1,6 +1,6 @@
 # CVF Agent Work Order - RSPB-AI-T6 Capability Projection To Learning Candidate Intake Seam
 Memory class: governed-worker-dispatch
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Batch ID: RSPB-AI-T6
 Dispatch base head: `6a66a37e11faa59c54d6bcbca244f2714adbcddc`
 dispatchBaseHead: `6a66a37e11faa59c54d6bcbca244f2714adbcddc`
@@ -684,12 +684,38 @@ Reason: private implementation dispatch; worker may not push or public-sync.
 
 ## Closure Checklist
 
-- [ ] Worker captured execution base and clean owned paths.
-- [ ] Exact four-path manifest matched.
-- [ ] Focused, bridge, package, and TypeScript checks passed.
-- [ ] Worker return passed fast gate and remained uncommitted.
-- [ ] Independent reviewer reproduced evidence and issued a verdict.
-- [ ] Reviewer/closer alone committed accepted material and continuity.
+- [x] Worker captured execution base and clean owned paths.
+- [x] Exact four-path manifest matched.
+- [x] Focused 60/60, bridge 3/3, direct package, and TypeScript checks passed.
+- [x] Worker return passed fast gate and remained uncommitted at handoff.
+- [x] Independent reviewer reproduced evidence, disclosed a bounded repair, and issued `REVIEWER_ACCEPTED_PENDING_CLOSER`.
+- [x] Reviewer/closer committed accepted material at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and review/continuity at `8c5965be1bdc7ba9cea1d542d188b1abb00cf164`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED`; checklist has no open item | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSPB_AI_T6_CAPABILITY_PROJECTION_TO_LEARNING_CANDIDATE_INTAKE_SEAM_COMPLETION_2026-08-16.md` | `REVIEWER_ACCEPTED_PENDING_CLOSER`; SHA-256 `961ae55e82d003652724923cc9d75b0207e38bc045a8efcbe0276ecf59fbe052`; accepted material `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` | PASS |
+| Test evidence | Learning Plane focused, bridge, package, TypeScript | 60/60; 3/3; direct package exit 0; TypeScript PASS; zero provider/live calls | PASS |
+| Roadmap state | RSPB bounded cluster chain | N/A with reason: no separate roadmap row was opened; active continuity and the 205-row ledger own continuation | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row registry reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | accepted cluster routing remains bound to the existing Learning Plane owner; closure packet records the exact implementation surface | PASS |
+| External evidence digest | worker return and completion review | worker SHA-256 `2701bf7b6fb6afeb8bd243c1d465636451262e68a3ef15875957fc8d9b299555`; review SHA-256 `961ae55e82d003652724923cc9d75b0207e38bc045a8efcbe0276ecf59fbe052`; eight selected records; generated 2026-08-16 | PASS |
+| System loop interlock | T5 projection -> T6 learning candidate -> existing intake bridge | pure in-memory candidate; pending/null/false; no storage, promotion, mutation, or executor | PASS |
+| Session continuity | active state, bootstrap read model, session memory, active handoff | reviewer-accepted sync `8c5965be1bdc7ba9cea1d542d188b1abb00cf164`; closure sync updates exact work-order digest | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Candidate review state | `PENDING` | `PENDING` | PASS |
+| Promotion target | `null` | `null` | PASS |
+| Autonomous mutation | `false` | `false` | PASS |
+| Independent review required | `true` | `true` | PASS |
+| Governance work order required | `true` | `true` | PASS |
+| Intake disposition | `RUNTIME_LEARNING_CANDIDATE` | `RUNTIME_LEARNING_CANDIDATE` | PASS |
+| Runtime/provider receipt | none authorized | none created; zero provider/live calls | PASS |
 
 ## Return-To-Orchestrator Conditions
 
