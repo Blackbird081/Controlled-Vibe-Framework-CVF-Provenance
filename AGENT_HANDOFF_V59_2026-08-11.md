@@ -189,21 +189,18 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T5 Acceptance Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T5 Final Closure
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/rspbAiT5ProjectionKernelDispatched20260816.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator supplied the distinct T5-R1 accepting verdict and continued the established closer workflow.
 
-Authorized guard-maintenance scope: record bounded T5-R1 acceptance at
-`1b2c11c9fd1a9795cd9d5bcf17c10806e98273fb` and route the next local-first cluster.
+Authorized guard-maintenance scope: close the T5 work order and index, refresh
+its exact authority digest, and preserve the already accepted next-move route.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.

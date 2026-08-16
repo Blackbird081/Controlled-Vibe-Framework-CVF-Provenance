@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: RSPB-AI-T5
 
@@ -451,6 +451,13 @@ packet, do not modify, stage, revert, or absorb them.
 The exact four worker-owned writable paths are required. No deletion, rename,
 generated file, snapshot, lockfile, or additional documentation is allowed.
 
+| Path | Required at handoff |
+| --- | --- |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-case-evidence-projection.contract.ts` | Yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-case-evidence-projection.contract.test.ts` | Yes |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts` | Yes |
+| `docs/reviews/CVF_RSPB_AI_T5_CAPABILITY_CASE_AND_DOMAIN_EVIDENCE_PROJECTION_KERNEL_WORKER_RETURN_2026-08-16.md` | Yes |
+
 ## Forbidden Path Manifest
 
 Everything outside the four worker-owned paths is read-only, including T1-T4
@@ -701,12 +708,48 @@ Reason: private implementation dispatch; push and public sync are forbidden.
 
 ## Closure Checklist
 
-- [ ] Worker captured execution base and clean owned paths.
-- [ ] Exact four-path implementation manifest matched.
-- [ ] Focused and package tests passed with live disabled.
-- [ ] Worker return passed its fast gate and remained uncommitted.
-- [ ] Independent reviewer returned an explicit verdict.
-- [ ] Reviewer/closer committed material and continuity separately if accepted.
+- [x] Worker captured execution base and clean owned paths.
+- [x] Exact four-path implementation manifest matched.
+- [x] Focused and package tests passed with live disabled.
+- [x] Worker return passed its fast gate and remained uncommitted.
+- [x] Independent reviewer returned `REVIEWER_ACCEPTED_PENDING_CLOSER`.
+- [x] Reviewer/closer committed material at `1b2c11c9fd1a9795cd9d5bcf17c10806e98273fb` and continuity at `668509f66a91544db1aa5269e76a8ed38219177d`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED`; required checklist has no open item | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSPB_AI_T5_CAPABILITY_CASE_AND_DOMAIN_EVIDENCE_PROJECTION_KERNEL_COMPLETION_2026-08-16.md`; `docs/reviews/CVF_RSPB_AI_T5_R1_FAIL_CLOSED_REPAIR_INDEPENDENT_REVIEW_2026-08-16.md` | closer receipt plus verdict `REVIEWER_ACCEPTED_PENDING_CLOSER`; material commit `1b2c11c9fd1a9795cd9d5bcf17c10806e98273fb` | PASS |
+| Roadmap state | `docs/reference/capability_preflight_bootstrap/README.md` | N/A with reason: this standalone bounded cluster opened no roadmap row and is indexed by its capability owner | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row registry reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | projection seam recorded in current surfaces | PASS |
+| External evidence digest | worker return and independent review | worker return sha256 `b92b68de499545cdfd561642eb12699e6c4f541606ce894368a4fd13b30f6cb8`; review sha256 `2872a5e0233be07e5e55007768a4ac717e3ae90f6272e93faa7a2b9b3ead25c5`; nine local records; private boundary; generated 2026-08-16 | PASS |
+| System loop interlock | T3 controlled-acquisition; T4 route/readiness; T5 projection | T3 and T4 evidence feed T5; output remains `PROJECTION_ONLY` and cannot execute or mutate authority | PASS |
+| Session continuity | active state, bootstrap read model, active handoff | acceptance commit `668509f66a91544db1aa5269e76a8ed38219177d`; final work-order digest refreshed atomically | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Authority notice | `PROJECTION_ONLY` | `PROJECTION_ONLY` | PASS |
+| Authority mutation | `false` | `false` | PASS |
+| Execution authorization | no `true` authorization | no `true` authorization | PASS |
+| Focused tests | all mandated cases pass | 27/27 | PASS |
+| Composed tests | all T3/T4/T5 cases pass | 104/104 | PASS |
+| Full package | no failure with live disabled | 624 passed, 5 skipped | PASS |
+| Independent probes | all reviewer probes pass | 16/16 | PASS |
+| Provider/live calls | zero | zero | PASS |
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+
+Atomicity reason: the final closed work-order digest is a current-authority field, so the work order, capability index, source state, generated continuity views, and authorization carrier must close together to avoid a stale-hash intermediate state.
+
+Rollback boundary: revert this exact closure batch as one unit; do not separate the governed artifact digest from its source or generated continuity views.
+
+Exact changed manifest: `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `docs/reference/capability_preflight_bootstrap/README.md`; `docs/reviews/CVF_RSPB_AI_T5_CAPABILITY_CASE_AND_DOMAIN_EVIDENCE_PROJECTION_KERNEL_COMPLETION_2026-08-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T5_CAPABILITY_CASE_AND_DOMAIN_EVIDENCE_PROJECTION_KERNEL_2026-08-16.md`.
 
 ## Return-To-Orchestrator Conditions
 

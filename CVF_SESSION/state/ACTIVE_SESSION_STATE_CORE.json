@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T5_CAPABILITY_CASE_AND_DOMAIN_EVIDENCE_PROJECTION_KERNEL_2026-08-16.md",
     "baselineSha256": "7fb7735f64e677cb61733919f3191d30c271a7d42dd7cc07453b8facb9e85dcd",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T5_CAPABILITY_CASE_AND_DOMAIN_EVIDENCE_PROJECTION_KERNEL_2026-08-16.md",
-    "workOrderSha256": "6ce524d73df435a041b3c0f2335b3517dee8f511e9ca0b099efb2089b5c23b51"
+    "workOrderSha256": "4442955093180e903c35bc390c6cdacf6b2610c7aec8f748a34700efaca811d4"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

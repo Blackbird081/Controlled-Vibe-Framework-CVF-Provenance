@@ -25,17 +25,24 @@ script or package owner; this folder does not grant execution authority.
   material-authority ambiguity, explicit rationale/fallbacks, and fail-closed
   readiness precedence. Route and READY outputs remain evidence only and
   expose literal `executionAuthorized: false`.
+- `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-case-evidence-projection.contract.ts`
+  is the absorbed RSPB-AI-T5 projection kernel. It composes T3 acquisition and
+  T4 route/readiness evidence into deterministic, traceable, secret-safe case
+  projections while preserving literal `PROJECTION_ONLY` authority and no
+  execution or mutation grant.
 
 ## Scope / Applies To
 
-Applies to owner reconciliation, bounded environment-snapshot design, and
-future work orders that enrich the existing CVF runtime doctor.
+Applies to owner reconciliation, bounded environment-snapshot design,
+projection-only capability-case evidence, and future work orders that enrich
+the existing CVF runtime doctor.
 
 ## Claim Boundary
 
 The read-only snapshot seam is implemented in the existing
 `scripts/cvf_doctor.py` owner. The controlled-acquisition contract kernel is
 runtime-testable in Guard Contract. Route/readiness evidence is also
+runtime-testable there, and the case/evidence projection seam is
 runtime-testable there, but no candidate router or transport was imported.
 Any executor and any actual
 acquisition, mutation, credential, network, provider, public-sync, deployment,
