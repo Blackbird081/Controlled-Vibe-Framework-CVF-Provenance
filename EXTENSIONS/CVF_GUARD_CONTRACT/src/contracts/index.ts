@@ -358,6 +358,27 @@ export type {
   ControlledAcquisitionRepairDecision,
 } from './controlled-acquisition.contract';
 
+export type {
+  CapabilityRiskLevel,
+  CapabilityRouteStage,
+  CapabilityReadinessState,
+  CapabilityRouteCandidate,
+  CapabilityCandidateSet,
+  CapabilityRouteIssue,
+  CapabilityRouteDecision,
+  CapabilityRouteEvaluationOptions,
+  CapabilityReadinessInput,
+  CapabilityReadinessDecision,
+} from './capability-route-readiness.contract';
+
+export {
+  CAPABILITY_ROUTE_READINESS_CONTRACT_VERSION,
+  CAPABILITY_ROUTE_DECISION_VERSION,
+  CAPABILITY_READINESS_DECISION_VERSION,
+  evaluateCapabilityRoute,
+  evaluateCapabilityReadiness,
+} from './capability-route-readiness.contract';
+
 export {
   CONTROLLED_ACQUISITION_CONTRACT_VERSION,
   CONTROLLED_ACQUISITION_PLAN_VERSION,

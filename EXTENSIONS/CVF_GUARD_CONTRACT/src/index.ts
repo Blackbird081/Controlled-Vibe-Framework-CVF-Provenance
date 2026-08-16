@@ -108,6 +108,23 @@ export {
   evaluateControlledAcquisitionRepair,
 } from './contracts/controlled-acquisition.contract';
 
+export type {
+  CapabilityRouteCandidate,
+  CapabilityCandidateSet,
+  CapabilityRouteIssue,
+  CapabilityRouteDecision,
+  CapabilityRouteEvaluationOptions,
+  CapabilityReadinessInput,
+  CapabilityReadinessDecision,
+  CapabilityRouteStage,
+  CapabilityReadinessState,
+} from './contracts/capability-route-readiness.contract';
+export {
+  CAPABILITY_ROUTE_READINESS_CONTRACT_VERSION,
+  evaluateCapabilityRoute,
+  evaluateCapabilityReadiness,
+} from './contracts/capability-route-readiness.contract';
+
 // CADP T5-R1 external-readout authority foundation (pure, contract-only).
 export type {
   CadpExternalReadoutIssueCode,
