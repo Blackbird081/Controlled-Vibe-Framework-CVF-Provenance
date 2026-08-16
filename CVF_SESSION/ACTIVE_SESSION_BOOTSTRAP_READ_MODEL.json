@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t9_capability_acquisition_receipt_verification_and_repair_stop_kernel_closed_bounded_continue_cluster_selection",
+  "currentMode": "rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_dispatched_external_worker_pending_review",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T9 is CLOSED_PASS_BOUNDED. Material plus bounded reviewer repair is committed at 5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3; completion review at d34dce4c534164e72800734ae7ba4dd61d556823; machine closure at b78651eacbc04398dc852c700488b6dbf75a51af. Next move: select the next highest-value local synthesis cluster from the accepted 205-file ledger without restarting full-corpus proof, dispatch one external no-commit worker, then retain this independent reviewer/orchestrator. Receipt persistence, approval issuance, replay storage or nonce consumption, acquisition, mutation, action authority, executor, I/O, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T10 environment-snapshot evidence-validation baseline and work order are committed at a722bcbc5dff58a951140f4f334be50c1526f517 after selected-hash 6/6, pre-dispatch 77/77, and pre-commit 85/85 PASS. Next move: the external implementation worker captures executionBaseHead, edits exactly the five authorized paths, does not stage or commit, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. The current reviewer/orchestrator then independently inspects and probes the full diff. Environment scanning or reading, snapshot persistence, acquisition, mutation, action authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T9_CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_AND_REPAIR_STOP_KERNEL_2026-08-16.md",
-    "baselineSha256": "395f62f0f89b2006fe44fd744fa71d347a958a0d4db422e2b7071114253fcd13",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T9_CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_AND_REPAIR_STOP_KERNEL_2026-08-16.md",
-    "workOrderSha256": "7130ff6325251dd229b20f8877b476bd556330d6df8f0f79f01ece3822633d6f"
+    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_2026-08-17.md",
+    "baselineSha256": "a0f2465b76cfc1b71b24718f5311c25c78d42124e8c9a0d8c5bed2e180f6d417",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_2026-08-17.md",
+    "workOrderSha256": "01f1e76c060df214fcc7571e8c485e67d7540c11e25733525e086c20a7e58537"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

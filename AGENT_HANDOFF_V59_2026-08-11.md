@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T9 Closed Bounded Continue Cluster Selection
+# CVF Agent Handoff V59 - RSPB-AI-T10 External Worker Pending Review
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local machine-closure HEAD before this handoff sync: `b78651eacbc04398dc852c700488b6dbf75a51af`.
+- Current local T10 dispatch HEAD before this handoff sync: `a722bcbc5dff58a951140f4f334be50c1526f517`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -32,9 +32,9 @@ Status: ACTIVE
 - RSPB-AI-T6 bounded dispatch: `4789d1442ed280c91e3dd5e6e3c8995244db19ef`.
 - RSPB-AI-T6 accepted material plus bounded reviewer repair: `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1`; machine closure packet: `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`.
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
-- RSPB-AI-T8 dispatch `84ba2dd930807e88a46bb75c4239a8b8c5729dc9`; accepted material plus reviewer repair `3a1fb03d1846dc6e9cecfc5a09f55a4c89c2d433`; completion review `187a2effc0146a1f8ab0fa6e27cda9c08c5e71f8`; machine closure `de246c5194dabec1585b55dfb98ae17e5ea8ae16`.
+- RSPB-AI-T10 environment-snapshot evidence-validation dispatch `a722bcbc5dff58a951140f4f334be50c1526f517`; selected hashes 6/6, pre-dispatch 77/77, pre-commit 85/85; external worker owns exactly five paths and must not commit.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Active mode: `rspb_ai_t9_capability_acquisition_receipt_verification_and_repair_stop_kernel_closed_bounded_continue_cluster_selection`
+- Active mode: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_dispatched_external_worker_pending_review`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -43,14 +43,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t9_capability_acquisition_receipt_verification_and_repair_stop_kernel_closed_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select the next highest-value local synthesis cluster and dispatch one external no-commit worker followed by this independent reviewer/orchestrator; parked checkpoint=receipt persistence, approval issuance/replay store/nonce consumption, environment I/O, acquisition/network/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_dispatched_external_worker_pending_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=external worker executes the exact five-path T10 work order without staging or committing, then this reviewer/orchestrator independently inspects and probes the diff; parked checkpoint=environment scanning, snapshot persistence, acquisition/network/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t9_capability_acquisition_receipt_verification_and_repair_stop_kernel_closed_bounded_continue_cluster_selection`
+`rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_dispatched_external_worker_pending_review`
 
 ## Purpose
 
-Record T9 bounded closure and return to local-first cluster selection.
+Record T10 bounded dispatch and external no-commit worker handoff.
 
 ## Scope / Target / Owner Boundary
 
@@ -103,16 +103,16 @@ Record T9 bounded closure and return to local-first cluster selection.
 - RSPB-AI-T6 is dispatched at `4789d1442ed280c91e3dd5e6e3c8995244db19ef` after pre-dispatch 77/77 and pre-commit 85/85. Its external worker is restricted to four paths, must not stage or commit, and must return `COMPLETE_PENDING_REVIEW`; the current orchestrator/reviewer owns independent diff inspection, test reproduction, adversarial review, closure, and material commit.
 - RSPB-AI-T6 implementation plus disclosed bounded reviewer repair is materially committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 - RSPB-AI-T7 is `CLOSED_PASS_BOUNDED`: material plus reviewer repair `63b2f7367`, completion review `25b19b3d5`, machine closure `055252ddb`; focused 26/26, composed 57/57, package 650 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
-- RSPB-AI-T8 is `CLOSED_PASS_BOUNDED`: material plus reviewer repair `3a1fb03d1`, completion review `187a2effc`, machine closure `de246c519`; focused 51/51, regression 38/38, package 701 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
+- RSPB-AI-T10 is dispatched at `a722bcbc5`: selected environment-snapshot hashes 6/6, pre-dispatch 77/77, pre-commit 85/85. The external worker owns exactly five paths, cannot stage or commit, and returns pending review; this independent reviewer/orchestrator retains inspection, probes, repair, acceptance, commit, and closure.
 - RSPB-AI-T9 is `CLOSED_PASS_BOUNDED`: material plus disclosed bounded reviewer repair `5e5aeb8a4`, completion review `d34dce4c5`, machine closure `b78651eac`. Probes repaired inherited Array-subclass hook execution, missing artifact-version binding, and secret-detector false positives. Evidence: focused 42/42, T3/T8/T9 composed 105/105, package 743 passed plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 
 ## Current Authority
 | Field | Value |
 |---|---|
-| authorityState | RSPB-AI-T9 CLOSED_PASS_BOUNDED; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af` |
-| baselinePath | `docs/baselines/CVF_GC018_RSPB_AI_T9_CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_AND_REPAIR_STOP_KERNEL_2026-08-16.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T9_CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_AND_REPAIR_STOP_KERNEL_2026-08-16.md` |
-| nextAuthorityRequirement | select the next accepted-ledger local cluster; separate authority for receipt persistence, approval issuance/replay storage, I/O, acquisition, mutation, repair execution, or executor |
+| authorityState | RSPB-AI-T10 DISPATCHED_EXTERNAL_WORKER_PENDING_REVIEW; dispatch `a722bcbc5dff58a951140f4f334be50c1526f517` |
+| baselinePath | `docs/baselines/CVF_GC018_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_2026-08-17.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_2026-08-17.md` |
+| nextAuthorityRequirement | worker exact five-path pending return, then independent reviewer disposition; separate authority for environment scanning, persistence, I/O, acquisition, mutation, refresh execution, or executor |
 
 ## Closure Evidence
 
@@ -158,7 +158,7 @@ Record T9 bounded closure and return to local-first cluster selection.
 
 ## Next Allowed Move
 
-Select the next highest-value local synthesis cluster from the accepted 205-file ledger without restarting full-corpus proof. Dispatch one external no-commit worker, then retain this independent reviewer/orchestrator. Receipt persistence, environment I/O, acquisition, network/action authority, executor, rollback/repair execution, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden.
+External worker executes the exact five-path RSPB-AI-T10 work order, captures `executionBaseHead`, does not stage or commit, and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. This reviewer/orchestrator then independently inspects and probes the full diff. Environment scanning or reading, snapshot persistence, acquisition, network/action authority, executor, refresh execution, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden.
 
 ## Active Boundary
 
@@ -191,7 +191,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T9 Final Closure Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T10 Dispatch Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
@@ -202,7 +202,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelDispatched20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelReviewerAccepted20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelClosed20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT7ProfilePolicyKernelDispatched20260816.json`
+- `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelDispatched20260817.json`
 - `CVF_SESSION/state/entries/rspbAiT7ProfilePolicyKernelReviewerAccepted20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT7ProfilePolicyKernelClosed20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelDispatched20260816.json`
@@ -210,11 +210,11 @@ Protected paths:
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelClosed20260816.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: operator explicitly assigned this agent as reviewer/orchestrator and another agent as implementation worker.
-Authorized guard-maintenance scope: record final T9 bounded closure and route only the next local-first cluster selection.
+Authorized guard-maintenance scope: record T10 bounded dispatch and route only its external no-commit worker handoff.
 Rollback boundary: revert this exact session-sync batch as one unit; do not separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records RSPB-AI-T9 bounded closure only. It does not authorize receipt persistence, approval issuance, replay storage or nonce consumption, profile loading, environment I/O, a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
-external-agent launch, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
+This handoff records RSPB-AI-T10 bounded dispatch and one exact-scope external no-commit worker handoff only. It does not authorize environment scanning, snapshot persistence, profile loading, environment I/O, a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
+external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
