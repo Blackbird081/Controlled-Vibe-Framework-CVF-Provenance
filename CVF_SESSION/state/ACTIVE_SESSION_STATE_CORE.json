@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_2026-08-16.md",
     "baselineSha256": "c6dab7ed1c0bd63189a7cfd085e18e2618c59ffdb3476157c7b1b445ed09e4bc",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_2026-08-16.md",
-    "workOrderSha256": "f112321a32b2d66e556cf2f20121845ac8558aa5c5b2382e5d64f8094a0f5e12"
+    "workOrderSha256": "2b46c5af77ac2c2c0d2eeb64b199ed0c3af37111911fc898e0ff89e321a44ec5"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,7 +106,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
   "currentMode": "rspb_ai_t7_profile_policy_kernel_dispatched_external_worker_pending",
-  "previousMode": "rspb_ai_t6_learning_candidate_intake_seam_closed_bounded_continue_cluster_selection",
+  "previousMode": "rspb_ai_t6_learning_candidate_intake_seam_finalized_bounded_continue_cluster_selection",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

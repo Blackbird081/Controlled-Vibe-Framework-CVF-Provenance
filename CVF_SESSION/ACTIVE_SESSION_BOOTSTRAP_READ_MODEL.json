@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "rspb_ai_t7_profile_policy_kernel_dispatched_external_worker_pending",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T7 profile-policy kernel dispatch is committed at 1bc5164d5. Next move: provide the canonical T7 work order to one external worker. The worker must capture executionBaseHead, edit exactly the five allowed paths, run the required hermetic proofs, make zero external service calls, and return COMPLETE_PENDING_REVIEW without staging or committing. This reviewer/orchestrator then independently inspects the full diff, reproduces tests, and runs adversarial probes before any repair, acceptance, closure, or material commit. Profile loading, environment I/O, acquisition, network authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T7 R1 retry is authorized after independent reproduction rejected the first BLOCKED_WITH_REASON claim: focused T4 passed 19/19 and the full Guard Contract passed 624 with 5 skipped under the same Vitest/Vite/Node versions. The work order removes the nonexistent config-file argument. Provide the amended canonical packet to one external no-commit worker. The worker edits exactly five paths and returns COMPLETE_PENDING_REVIEW; this independent reviewer/orchestrator then reviews and tests before any material commit. Profile loading, environment I/O, acquisition, network authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_2026-08-16.md",
     "baselineSha256": "c6dab7ed1c0bd63189a7cfd085e18e2618c59ffdb3476157c7b1b445ed09e4bc",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_2026-08-16.md",
-    "workOrderSha256": "f112321a32b2d66e556cf2f20121845ac8558aa5c5b2382e5d64f8094a0f5e12"
+    "workOrderSha256": "2b46c5af77ac2c2c0d2eeb64b199ed0c3af37111911fc898e0ff89e321a44ec5"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -49,7 +49,7 @@ Startup acknowledged: current mode=`rspb_ai_t7_profile_policy_kernel_dispatched_
 
 Current mode marker: `rspb_ai_t7_profile_policy_kernel_dispatched_external_worker_pending`
 Current mode: `rspb_ai_t7_profile_policy_kernel_dispatched_external_worker_pending`
-Previous mode: `rspb_ai_t6_learning_candidate_intake_seam_closed_bounded_continue_cluster_selection`
+Previous mode: `rspb_ai_t6_learning_candidate_intake_seam_finalized_bounded_continue_cluster_selection`
 
 ## Next Allowed Move
 
@@ -97,7 +97,7 @@ Mixed-origin absorption latency/value-preservation learning is enforced at `193c
 RSPB-AI-T6 is dispatched at `4789d1442ed280c91e3dd5e6e3c8995244db19ef` after pre-dispatch 77/77 and pre-commit 85/85. The external worker may edit only the exact four-path manifest and must return `COMPLETE_PENDING_REVIEW` without staging or committing. The current orchestrator/reviewer will independently inspect the diff, reproduce tests, and run adversarial probes before any repair, acceptance, closure, or material commit. The seam remains pure and proposal-only; no storage, promotion, mutation, runtime service, provider/live, public, or production authority is opened.
 RSPB-AI-T6 material plus disclosed reviewer repair is committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Evidence: focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, and zero provider/live calls. Next move is bounded closure/session synchronization only.
 RSPB-AI-T6 is `CLOSED_PASS_BOUNDED`; machine closure is committed at `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`. Its pure seam binds accepted T5 projection evidence to a provenance-bound pending learning candidate and the existing intake bridge. Continue with the next highest-value local cluster without restarting full-corpus proof; storage, promotion, mutation, runtime service, provider/live, public, and production authority remain unopened.
-RSPB-AI-T7 is dispatched at `1bc5164d5`. The external worker is restricted to five paths, must not stage or commit, and must return `COMPLETE_PENDING_REVIEW`; this reviewer/orchestrator owns independent diff inspection, proof reproduction, adversarial probes, closure, and any material commit. No profile loading, environment I/O, acquisition, network/action authority, executor, adapter, provider/live, public, or production authority is opened.
+RSPB-AI-T7 R1 retry is authorized after independent reproduction rejected the first blocked claim: focused T4 passed 19/19 and full Guard Contract passed 624 with 5 skipped under the reported dependency versions. The amended packet removes the nonexistent config argument. The external worker remains restricted to five paths, must not stage or commit, and must return `COMPLETE_PENDING_REVIEW`; this reviewer/orchestrator owns independent diff inspection, proof reproduction, adversarial probes, final disposition, and any material commit.
 ## Parked Checkpoints
 
 Live retry, external T5 adapter runtime, out-of-manifest production TypeScript edits, existing-guard edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation, CLI/MCP invocation, public sync, deployment, production, trusted-evidence readiness and cross-runtime determinism claims remain parked.

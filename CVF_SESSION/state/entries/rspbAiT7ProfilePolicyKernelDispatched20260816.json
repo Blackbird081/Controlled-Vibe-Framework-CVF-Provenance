@@ -1,5 +1,5 @@
 {
   "stateOrder": 2253,
   "stateKey": "rspbAiT7ProfilePolicyKernelDispatched20260816",
-  "value": "RSPB-AI-T7 dispatch baseline and work order are committed at 1bc5164d5 after pre-dispatch 77/77 and pre-commit 85/85 passed. The selected eight-file local-first cluster targets one pure Guard Contract profile-policy selection kernel that composes with the accepted T2/T3/T4 chain without loading files or granting action authority. Worker scope is exactly five paths and WORKER_MUST_NOT_COMMIT; the independent reviewer/orchestrator owns review, adversarial probes, any bounded repair, closure, and material commit."
+  "value": "RSPB-AI-T7 dispatch baseline and work order are committed at 1bc5164d5 after pre-dispatch 77/77 and pre-commit 85/85 passed. The first blocked return was independently rejected because focused T4 passed 19/19 and the full Guard Contract passed 624 with 5 skipped under the reported dependency versions. R1 removes the nonexistent config-file argument and authorizes a fresh no-commit worker retry. Worker scope remains exactly five paths; the independent reviewer/orchestrator owns review, adversarial probes, bounded repair, final disposition, and material commit."
 }

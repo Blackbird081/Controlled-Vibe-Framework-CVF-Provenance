@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local HEAD before this handoff sync: `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`.
+- Current local HEAD before this handoff sync: `47990795639dad8aa7e552764c0f8bfcc87380c8`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -107,8 +107,7 @@ Record bounded T7 dispatch and route execution to one external no-commit worker 
 - RSPB-AI-T5-R1 is independently accepted and materially committed at `1b2c11c9fd1a9795cd9d5bcf17c10806e98273fb` after one disclosed reviewer repair round. Evidence: 27/27 focused, 104/104 composed, 624 passed plus 5 skipped package tests, TypeScript PASS, 16/16 independent probes, pre-commit 85/85, and zero review/closure provider calls.
 - RSPB-AI-T6 is dispatched at `4789d1442ed280c91e3dd5e6e3c8995244db19ef` after pre-dispatch 77/77 and pre-commit 85/85. Its external worker is restricted to four paths, must not stage or commit, and must return `COMPLETE_PENDING_REVIEW`; the current orchestrator/reviewer owns independent diff inspection, test reproduction, adversarial review, closure, and material commit.
 - RSPB-AI-T6 implementation plus disclosed bounded reviewer repair is materially committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
-- RSPB-AI-T6 is `CLOSED_PASS_BOUNDED`; the work order carries a complete machine closure package and the next move returns to bounded local-first cluster selection.
-- RSPB-AI-T7 dispatch is committed at `1bc5164d5` after pre-dispatch 77/77 and pre-commit 85/85. It selects the detailed local profile/policy cluster for a pure Guard Contract kernel with an exact five-path no-commit worker manifest.
+- RSPB-AI-T7 R1 retry follows independent rejection of the first blocked claim: focused T4 passed 19/19 and full Guard Contract passed 624 with 5 skipped. The amended packet removes the nonexistent config argument and retains the exact five-path no-commit manifest.
 
 ## Current Authority
 
@@ -163,7 +162,7 @@ Record bounded T7 dispatch and route execution to one external no-commit worker 
 
 ## Next Allowed Move
 
-Provide the canonical RSPB-AI-T7 work order to one external worker. The worker captures executionBaseHead, edits exactly five paths, runs all required hermetic proofs, and returns `COMPLETE_PENDING_REVIEW` without staging or committing. This independent reviewer/orchestrator then inspects the full diff and reproduces/adversarially extends proof before any repair, acceptance, closure, or material commit. Profile loading, environment I/O, acquisition, network/action authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden.
+Provide the amended canonical RSPB-AI-T7 work order to one external worker. The worker captures executionBaseHead, edits exactly five paths, runs the corrected hermetic proofs, and returns `COMPLETE_PENDING_REVIEW` without staging or committing. This independent reviewer/orchestrator then inspects the full diff and reproduces/adversarially extends proof before any repair, acceptance, final disposition, or material commit. Profile loading, environment I/O, acquisition, network/action authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden.
 
 ## Active Boundary
 
