@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2248,
+  "stateKey": "rspbAiT4R1FailClosedRepairAccepted20260816",
+  "value": "RSPB-AI-T4-R1 is independently accepted CLOSED_PASS_BOUNDED at material commit a2f874519. The repair closes the zero-threshold ambiguity bypass, absolute single-candidate material-authority fast route, malformed readiness throw/echo behavior, and ambient-key automatic Alibaba live-test activation. Two unintended pre-repair verification calls remain incident-only and are not closure or repeat-live evidence."
+}

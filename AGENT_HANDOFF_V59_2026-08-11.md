@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T4 Independent Review Rejected Repair Required
+# CVF Agent Handoff V59 - RSPB-AI-T4-R1 Fail-Closed Repair Accepted Bounded
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local HEAD before this continuity sync: `7f948cbaadf4ecce6db0c4c04bde1510940c31a0`.
+- Current local HEAD before this continuity sync: `a2f874519`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -17,7 +17,7 @@ Status: ACTIVE
 - Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
-- Current T5-R5 bounded closure: `6284e5bd1`; T8 terminal reconciliation: `3b906862b`; RSPB-AI-T1 closure: `d591c542a`; RSPB-AI-T2 closure: `44a74fa48`; RSPB-AI-T3 closure: `bdec9c1e7`; RSPB-AI-T4 material: `b571cd4b39e72ecabc72d40a9ab4bca25b1e15ba`, independent closure rejected pending repair.
+- Current T5-R5 bounded closure: `6284e5bd1`; T8 terminal reconciliation: `3b906862b`; RSPB-AI-T1 closure: `d591c542a`; RSPB-AI-T2 closure: `44a74fa48`; RSPB-AI-T3 closure: `bdec9c1e7`; RSPB-AI-T4-R1 accepted repair: `a2f874519`.
 - Mixed-origin absorption latency/value-preservation learning: `193c9140447003244a3e5cc896c323ba911bdcff`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
@@ -37,7 +37,7 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Active mode:
-  `rspb_ai_t4_independent_review_rejected_repair_required`
+  `rspb_ai_t4_r1_fail_closed_repair_accepted_bounded_continue_cluster_selection`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -46,14 +46,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t4_independent_review_rejected_repair_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=bounded T4 repair and independent re-review; parked checkpoint=next absorption cluster plus router/transport/executor activation, acquisition/mutation, credentials, MCP/network/provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t4_r1_fail_closed_repair_accepted_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=next local-first material-value cluster or stop cleanly; parked checkpoint=router/transport/executor activation, acquisition/mutation, credentials, MCP/network/provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t4_independent_review_rejected_repair_required`
+`rspb_ai_t4_r1_fail_closed_repair_accepted_bounded_continue_cluster_selection`
 
 ## Purpose
 
-Record independent rejection of the prior T4 closure claim and preserve a bounded repair-before-continuation boundary.
+Record independent acceptance of the T4-R1 fail-closed repair and preserve local-first value-gated continuation.
 
 ## Scope / Target / Owner Boundary
 
@@ -101,13 +101,13 @@ Record independent rejection of the prior T4 closure claim and preserve a bounde
 - T8 is independently accepted at `3b906862b` after two bounded semantic corrections; the historical ledger segment hash remained identical and reviewer-fast passed 63/63.
 - Operator-directed RSPB learning `193c91404` requires fresh-ledger reuse, capability-cluster review, value preservation, and named-gap-only re-probing in one bounded pass.
 - RSPB-AI-T3 is accepted at `bdec9c1e7`. Guard Contract now evaluates canonical plan digests, exact approval binding, source/integrity/mutation envelopes, receipts, and repair-stop decisions without executing acquisition. Focused kernel-plus-export tests pass 46/46, TypeScript passes, reviewer-fast passes 64/64, and pre-commit passes 85/85.
-- RSPB-AI-T4 material exists at `b571cd4b3`, but independent review rejects closure because zero threshold bypasses ambiguity, single-candidate high-risk behavior is unresolved, and prior evidence lacked a distinct reviewer. The hermetic tests remain valid only for covered cases.
+- RSPB-AI-T4-R1 is independently accepted at `a2f874519`. Zero-threshold equal-score authority differences escalate, absolute material-authority candidates cannot fast-route, malformed readiness fails closed, and Alibaba live tests require explicit opt-in plus a key. Two unintended worker verification calls remain incident-only and grant no repeat-live authority.
 
 ## Current Authority
 
 | Field | Value |
 |---|---|
-| authorityState | RSPB-AI-T4 REVIEW_REJECTED_REPAIR_REQUIRED; material remains at `b571cd4b3` |
+| authorityState | RSPB-AI-T4-R1 CLOSED_PASS_BOUNDED at `a2f874519` |
 | completionReviewPath | `docs/reviews/CVF_RSPB_AI_T4_CAPABILITY_ROUTE_AND_READINESS_EVIDENCE_KERNEL_COMPLETION_2026-08-16.md` |
 | completionReviewSha256 | `7aff7319778a4f37a46c7dbd0fbe5ba04091edd22f09eda0e9ca1a5b582c061a` |
 | nextAuthorityRequirement | next selected cluster only if material value exceeds overlap; separate authority for router/transport/executor |
@@ -156,7 +156,7 @@ Record independent rejection of the prior T4 closure claim and preserve a bounde
 
 ## Next Allowed Move
 
-RSPB-AI-T4 is not independently closed. Perform one bounded repair for the reviewer findings, rerun adversarial and package evidence, and obtain distinct independent re-review before another absorption cluster. Router/transport/executor activation, acquisition/mutation, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden.
+RSPB-AI-T4-R1 is independently closed bounded at `a2f874519`. Continue only by the next local-first, detailed-content-inspected cluster that adds material value beyond current CVF owners; otherwise stop cleanly. Router/transport/executor activation, acquisition/mutation, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden.
 
 ## Active Boundary
 
@@ -189,31 +189,32 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T4 Review Rejection Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T4-R1 Acceptance Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/rspbAiT4IndependentReviewRejectedRepairRequired20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT4RouteReadinessEvidenceKernelClosed20260816.json`
+- `CVF_SESSION/state/entries/rspbAiT4R1FailClosedRepairAccepted20260816.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator supplied the independent review return for
-closer processing after explicitly requiring reviewer independence.
+Operator authorization: operator supplied the independent R1 re-review return
+for closer processing after explicitly requiring reviewer independence.
 
-Authorized guard-maintenance scope: supersede the prior self-closure claim with
-the independent rejection, block next-cluster continuation, and route one
-bounded T4 repair plus independent re-review.
+Authorized guard-maintenance scope: record bounded R1 acceptance at
+`a2f874519`, preserve the incident-only two-call disclosure, and permit only
+value-gated local-first continuation or a clean stop.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records RSPB-AI-T4 independent-review rejection and repair-required status. It does not authorize a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
+This handoff records bounded RSPB-AI-T4-R1 independent-review acceptance. The
+disclosed two provider calls remain incident-only evidence and grant no repeat
+authority. It does not authorize a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
 trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
