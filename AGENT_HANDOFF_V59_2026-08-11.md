@@ -209,7 +209,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelClosed20260816.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: operator explicitly assigned this agent as reviewer/orchestrator and another agent as implementation worker.
-Authorized guard-maintenance scope: record T10 completion review and route only its bounded work-order closure and final continuity.
+Authorized guard-maintenance scope: record T10 completion review, pivot current authority to that immutable review, and route only bounded work-order closure and final continuity.
 Rollback boundary: revert this exact session-sync batch as one unit; do not separate generated state from source fragments.
 
 ## Claim Boundary

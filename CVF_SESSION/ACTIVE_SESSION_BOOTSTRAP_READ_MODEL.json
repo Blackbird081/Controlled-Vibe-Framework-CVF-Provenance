@@ -10,8 +10,8 @@
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_2026-08-17.md",
     "baselineSha256": "a0f2465b76cfc1b71b24718f5311c25c78d42124e8c9a0d8c5bed2e180f6d417",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_2026-08-17.md",
-    "workOrderSha256": "01f1e76c060df214fcc7571e8c485e67d7540c11e25733525e086c20a7e58537"
+    "workOrderPath": "docs/reviews/CVF_RSPB_AI_T10_CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_VALIDATION_KERNEL_COMPLETION_2026-08-17.md",
+    "workOrderSha256": "a97e71bef013b0d19751ae184d6bce935b2ada6c74cd4a5e784660330554379a"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
