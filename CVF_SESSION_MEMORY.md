@@ -47,7 +47,6 @@ Startup acknowledged: current mode=`rspb_ai_t2_snapshot_doctor_enrichment_closed
 
 ## Current Mode
 
-`rspb_ai_t2_snapshot_doctor_enrichment_closed_bounded_operator_selection_required`
 Current mode marker: `rspb_ai_t2_snapshot_doctor_enrichment_closed_bounded_operator_selection_required`
 Current mode: `rspb_ai_t2_snapshot_doctor_enrichment_closed_bounded_operator_selection_required`
 Previous mode: `rspb_ai_t2_snapshot_doctor_enrichment_dispatched_pending_worker`
@@ -94,6 +93,7 @@ with operator-selected Option A, `CADP_FAIL_CLOSED_ON_INVALID_TOKEN`. T5-R5 impl
 TypeScript, 34/34 focused tests, CADP drift 5/0, reviewer-fast 63/63, and pre-commit 84/84 passed. No CADP route or registry row was added.
 T8 is independently accepted closed bounded at `3b906862b`. Roadmap, finding overlay, and conditional reopen index now agree through T5-R6; the 140-row ledger segment is byte-identical. External CADP runtime is `PARKED_DEMAND_GATED`. The repo is documented cleanly for operator selection of a different repository, but no transfer/push/public/deploy/production action occurred or is authorized. Latest closed wave: `LHW24`.
 RSPB-AI-T1 is independently accepted bounded at `d591c542a`. RSPB-AI-T2 is independently accepted bounded at `44a74fa48`: the schema-versioned local five-command snapshot and fail-closed release preflight passed 42/42 focused tests, 38/38 SOT3 integration regressions, reviewer-fast 64/64, and pre-commit 85/85; no live/provider call occurred. Next requires operator selection: stop/switch repository or authorize a fresh value assessment for the separately parked controlled-acquisition candidate. Candidate implementation use, acquisition/mutation, MCP/network/provider/live, push, public sync, deployment, and production remain parked.
+Mixed-origin absorption latency/value-preservation learning is enforced at `193c91404`: reuse fresh ledgers, review by capability cluster, preserve value until contradicted, skip extra value probes unless a named decision-changing gap exists, and keep the pass bounded. Continue selected-cluster absorption directly; do not restart value proof from zero.
 
 ## Parked Checkpoints
 

@@ -17,6 +17,7 @@ Status: ACTIVE
 - Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
 - Current T5-R2A checker-hardening dispatch: `82f11ed55`
 - Current T5-R5 bounded closure: `6284e5bd1`; T8 terminal reconciliation: `3b906862b`; RSPB-AI-T1 closure: `d591c542a`; RSPB-AI-T2 bounded material closure: `44a74fa48a6dc8e0eb865fd5632ccf6585716f72`.
+- Mixed-origin absorption latency/value-preservation learning: `193c9140447003244a3e5cc896c323ba911bdcff`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
 - R1 reviewer anchor: `e85a1fa17eae99654edb522839a91d756cfe54e3`; R2 material dispatch: `5c21bf38e233113b9d88ea88cf02ceeab72e3b49`.
 - CADP-AI-T2A dispatch=`03444a17d`; packet repairs through `a635b49df`.
@@ -34,11 +35,6 @@ Status: ACTIVE
   `3a032e40bb83eeda1da8c40b817d70f75c7a094d`
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
-- Target repository: `shift-operations-workspace`
-- Target execution base:
-  `0b835be3ff1ac1fbd1c95e365471887202d718b5`
-- Target reviewer closure commit:
-  `da85889097e36eefd5379b6577a10eac8079f57d`
 - Active mode:
   `rspb_ai_t2_snapshot_doctor_enrichment_closed_bounded_operator_selection_required`
 - LPCI1-REF-T1A Amendment 2 authority:
@@ -102,6 +98,7 @@ Record independent bounded closure of the RSPB-AI-T2 doctor snapshot implementat
 - Independent review confirmed zero current non-test consumers, no authoritative runtime metadata owner, base margin `-22`, and sensitized margin `-26`; closure `83491ade1` accepts `STOP_LOW_VALUE`. Material pre-commit passed 84/84.
 - T8 dispatch `ac113073b` passed pre-dispatch 76/76 and pre-commit 84/84; worker scope is exactly three reconciliation documents plus one worker return, with historical rows preserved.
 - T8 is independently accepted at `3b906862b` after two bounded semantic corrections; the historical ledger segment hash remained identical and reviewer-fast passed 63/63.
+- Operator-directed RSPB learning `193c91404` requires fresh-ledger reuse, capability-cluster review, value preservation, and named-gap-only re-probing in one bounded pass.
 
 ## Current Authority
 
@@ -159,6 +156,7 @@ Record independent bounded closure of the RSPB-AI-T2 doctor snapshot implementat
 ## Next Allowed Move
 
 RSPB-AI-T2 is closed bounded at `44a74fa48`. Operator may select stop/switch repository or authorize a fresh value-assessment work order for the separately parked controlled-acquisition candidate. Candidate implementation use, acquisition/mutation, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden until separately authorized.
+For the current local pack, continue directly by selected value cluster under `193c91404`; do not repeat per-file adjudication or restart value proof from zero.
 
 ## Active Boundary
 
@@ -200,10 +198,11 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/rspbAiT2SnapshotDoctorEnrichmentDispatched20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT2SnapshotDoctorEnrichmentClosed20260816.json`
+- `CVF_SESSION/state/entries/mixedOriginAbsorptionLatencyLearning20260816.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit `next` instruction and returned successful RSPB-AI-T2 worker implementation.
+Operator authorization: explicit `next` instruction, returned successful RSPB-AI-T2 worker implementation, and explicit instruction to make absorption latency/value-preservation learning durable for all future agents.
 
 Authorized guard-maintenance scope: record committed RSPB-AI-T2 bounded
 closure, reviewer evidence, and the operator-selection next boundary.
