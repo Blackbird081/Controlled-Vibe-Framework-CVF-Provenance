@@ -472,3 +472,29 @@ export {
   DOMAIN_EVIDENCE_PROJECTION_VERSION,
   projectCapabilityCaseEvidence,
 } from './capability-case-evidence-projection.contract';
+
+export type {
+  CapabilityDependencyKind,
+  CapabilityDependencyAvailability,
+  CapabilityDependencyVerificationLevel,
+  CapabilityNetworkMode,
+  CapabilitySandboxStatus,
+  CapabilityCredentialBindingStatus,
+  CapabilitySnapshotVerificationStatus,
+  CapabilityEnvironmentSnapshotPackage,
+  CapabilityEnvironmentSnapshotDependency,
+  CapabilityEnvironmentSnapshot,
+  CapabilityEnvironmentSnapshotReadinessPolicyEvidence,
+  CapabilityEnvironmentSnapshotEvidenceInput,
+  CapabilityEnvironmentSnapshotEvidenceIssueCode,
+  CapabilityEnvironmentSnapshotEvidenceIssue,
+  CapabilityEnvironmentSnapshotEvidenceStatus,
+  CapabilityEnvironmentSnapshotEvidenceResult,
+} from './capability-environment-snapshot-evidence.contract';
+
+export {
+  CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_CONTRACT_VERSION,
+  CAPABILITY_ENVIRONMENT_SNAPSHOT_VERSION,
+  CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_RESULT_VERSION,
+  evaluateCapabilityEnvironmentSnapshotEvidence,
+} from './capability-environment-snapshot-evidence.contract';

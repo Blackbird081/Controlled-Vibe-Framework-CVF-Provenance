@@ -228,6 +228,33 @@ export {
   evaluateCadpExternalReadoutAdapter,
 } from './contracts/cadp-external-readout-adapter.contract';
 
+// RSPB-AI-T10 environment-snapshot evidence validation (pure, in-memory,
+// evidence-only; no observation, persistence, refresh, or action authority).
+export type {
+  CapabilityDependencyKind,
+  CapabilityDependencyAvailability,
+  CapabilityDependencyVerificationLevel,
+  CapabilityNetworkMode,
+  CapabilitySandboxStatus,
+  CapabilityCredentialBindingStatus,
+  CapabilitySnapshotVerificationStatus,
+  CapabilityEnvironmentSnapshotPackage,
+  CapabilityEnvironmentSnapshotDependency,
+  CapabilityEnvironmentSnapshot,
+  CapabilityEnvironmentSnapshotReadinessPolicyEvidence,
+  CapabilityEnvironmentSnapshotEvidenceInput,
+  CapabilityEnvironmentSnapshotEvidenceIssueCode,
+  CapabilityEnvironmentSnapshotEvidenceIssue,
+  CapabilityEnvironmentSnapshotEvidenceStatus,
+  CapabilityEnvironmentSnapshotEvidenceResult,
+} from './contracts/capability-environment-snapshot-evidence.contract';
+export {
+  CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_CONTRACT_VERSION,
+  CAPABILITY_ENVIRONMENT_SNAPSHOT_VERSION,
+  CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_RESULT_VERSION,
+  evaluateCapabilityEnvironmentSnapshotEvidence,
+} from './contracts/capability-environment-snapshot-evidence.contract';
+
 // Phase E receipt binding contract
 export type {
   ReceiptBindingDisposition,
