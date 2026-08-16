@@ -91,6 +91,23 @@ export {
 export type { CapabilityOwnerHandle, CapabilityOwnerBindingResult } from './contracts/capability-owner-binding.contract';
 export { bindCommittedCapabilityOwnerGrant } from './contracts/capability-owner-binding.contract';
 
+export type {
+  ControlledAcquisitionPlan,
+  ControlledAcquisitionApproval,
+  ControlledAcquisitionReceipt,
+  ControlledAcquisitionAuthorizationResult,
+  ControlledAcquisitionReceiptResult,
+  ControlledAcquisitionRepairInput,
+  ControlledAcquisitionRepairDecision,
+} from './contracts/controlled-acquisition.contract';
+export {
+  CONTROLLED_ACQUISITION_CONTRACT_VERSION,
+  computeControlledAcquisitionPlanDigest,
+  evaluateControlledAcquisitionAuthorization,
+  reconcileControlledAcquisitionReceipt,
+  evaluateControlledAcquisitionRepair,
+} from './contracts/controlled-acquisition.contract';
+
 // CADP T5-R1 external-readout authority foundation (pure, contract-only).
 export type {
   CadpExternalReadoutIssueCode,

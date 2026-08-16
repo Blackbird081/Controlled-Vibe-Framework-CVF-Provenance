@@ -339,3 +339,32 @@ export {
   readBoundGrantIdentity,
   reconcileGrantWithObservation,
 } from './capability-owner-binding.contract';
+
+export type {
+  AcquisitionOperationPhase,
+  AcquisitionAction,
+  AcquisitionMutationKind,
+  ControlledAcquisitionOperation,
+  ControlledAcquisitionMutation,
+  ControlledAcquisitionPlan,
+  ControlledAcquisitionApproval,
+  ControlledAcquisitionIssueCode,
+  ControlledAcquisitionIssue,
+  ControlledAcquisitionAuthorizationResult,
+  ControlledAcquisitionOperationResult,
+  ControlledAcquisitionReceipt,
+  ControlledAcquisitionReceiptResult,
+  ControlledAcquisitionRepairInput,
+  ControlledAcquisitionRepairDecision,
+} from './controlled-acquisition.contract';
+
+export {
+  CONTROLLED_ACQUISITION_CONTRACT_VERSION,
+  CONTROLLED_ACQUISITION_PLAN_VERSION,
+  CONTROLLED_ACQUISITION_APPROVAL_VERSION,
+  CONTROLLED_ACQUISITION_RECEIPT_VERSION,
+  computeControlledAcquisitionPlanDigest,
+  evaluateControlledAcquisitionAuthorization,
+  reconcileControlledAcquisitionReceipt,
+  evaluateControlledAcquisitionRepair,
+} from './controlled-acquisition.contract';
