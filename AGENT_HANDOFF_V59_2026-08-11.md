@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local closure HEAD before this handoff sync: `de246c5194dabec1585b55dfb98ae17e5ea8ae16`.
+- Current local dispatch HEAD before this handoff sync: `3e8e7c55db59869211148a53892bbe67aaefb2d2`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -33,6 +33,7 @@ Status: ACTIVE
 - RSPB-AI-T6 accepted material plus bounded reviewer repair: `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1`; machine closure packet: `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`.
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T8 dispatch `84ba2dd930807e88a46bb75c4239a8b8c5729dc9`; accepted material plus reviewer repair `3a1fb03d1846dc6e9cecfc5a09f55a4c89c2d433`; completion review `187a2effc0146a1f8ab0fa6e27cda9c08c5e71f8`; machine closure `de246c5194dabec1585b55dfb98ae17e5ea8ae16`.
+- RSPB-AI-T9 receipt-verification and repair-stop kernel dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; worker commit remains forbidden and execution/review evidence is not yet returned.
 - Active mode: `rspb_ai_t8_approval_evidence_binding_kernel_closed_bounded_continue_cluster_selection`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
@@ -103,6 +104,7 @@ Record T8 bounded closure and return to local-first cluster selection.
 - RSPB-AI-T6 implementation plus disclosed bounded reviewer repair is materially committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 - RSPB-AI-T7 is `CLOSED_PASS_BOUNDED`: material plus reviewer repair `63b2f7367`, completion review `25b19b3d5`, machine closure `055252ddb`; focused 26/26, composed 57/57, package 650 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 - RSPB-AI-T8 is `CLOSED_PASS_BOUNDED`: material plus reviewer repair `3a1fb03d1`, completion review `187a2effc`, machine closure `de246c519`; focused 51/51, regression 38/38, package 701 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
+- RSPB-AI-T9 is dispatched at `3e8e7c55d` after pre-dispatch 77/77 and pre-commit 85/85. The external worker may edit only the exact five-path manifest, must not stage or commit, and must return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. This reviewer/orchestrator retains independent diff inspection, test reproduction, adversarial probing, bounded repair, acceptance, and closure authority. No receipt persistence, evidence collection, acquisition, rollback, repair execution, executor, I/O, provider/live, public, or production authority is opened.
 
 ## Current Authority
 | Field | Value |
