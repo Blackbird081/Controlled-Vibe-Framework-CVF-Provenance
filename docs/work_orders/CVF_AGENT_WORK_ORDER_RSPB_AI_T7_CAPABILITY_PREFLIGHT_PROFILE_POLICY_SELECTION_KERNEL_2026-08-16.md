@@ -128,6 +128,31 @@ authority expansion named in Forbidden Actions requires a new checkpoint.
 Repair allowed-scope defects directly. Return only for a source contradiction,
 forbidden-path need, or missing authority that makes safe completion impossible.
 
+## Reviewer Blocked-Return Disposition - R1
+
+Disposition: `REVIEW_REJECTED_RETRY_REQUIRED`.
+
+The first worker returned `BLOCKED_WITH_REASON` at execution base
+`592368d370e8ae40ebe039ff647d7a9b9f81b114`. Independent reviewer
+reproduction disproved the claimed package-wide Vitest/Vite incompatibility:
+
+- `npx vitest run src/contracts/capability-route-readiness.contract.test.ts`
+  passed 19/19 under Node v22.17.0, Vitest 1.6.1, and Vite 5.4.21;
+- `npm test` passed 40/40 files, 624 tests, with 5 intentionally skipped;
+- no dependency edit, install, network access, or provider call was required.
+
+The original command incorrectly named a nonexistent local config file. This
+R1 amendment removes that argument from all focused commands. A missing
+optional config file is not evidence of a broken test toolchain. The retrying
+worker must execute the exact corrected commands from the package directory
+and may claim a dependency blocker only if the direct package script also
+fails and the raw output supports that conclusion.
+
+Reviewer documentation repair disclosure: before preserving the blocked
+return, the reviewer added only its missing Mandatory Blind-Spot Control and
+External Repository Absorption Entry Control sections. No worker command,
+finding, status, or implementation claim was changed.
+
 ## ADIF Defect Registry Disclosure
 
 Resolver query: taskClass=`external-absorption-implementation`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
@@ -313,8 +338,8 @@ and truthful pending `git status --short`. Do not claim closure.
 Run separately from `EXTENSIONS/CVF_GUARD_CONTRACT`:
 
 ```powershell
-npx vitest run src/contracts/capability-preflight-profile-policy.contract.test.ts --config vitest.config.ts
-npx vitest run src/contracts/controlled-acquisition.contract.test.ts src/contracts/capability-route-readiness.contract.test.ts --config vitest.config.ts
+npx vitest run src/contracts/capability-preflight-profile-policy.contract.test.ts
+npx vitest run src/contracts/controlled-acquisition.contract.test.ts src/contracts/capability-route-readiness.contract.test.ts
 npm test
 npm run check
 ```
