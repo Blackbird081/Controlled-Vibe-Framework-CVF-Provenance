@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T4-R1 Fail-Closed Repair Accepted Bounded
+# CVF Agent Handoff V59 - RSPB-AI-T5 Projection Kernel Dispatched
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local HEAD before this continuity sync: `a2f874519`.
+- Current local HEAD before this continuity sync: `41c4c16d7`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -37,7 +37,7 @@ Status: ACTIVE
 - SOPR-CP1-A1 amendment authority commit:
   `e468bb7748b53e0d925bfbbad9700703bc89d412`
 - Active mode:
-  `rspb_ai_t4_r1_fail_closed_repair_accepted_bounded_continue_cluster_selection`
+  `rspb_ai_t5_projection_kernel_dispatched_worker_pending`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -46,14 +46,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t4_r1_fail_closed_repair_accepted_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=next local-first material-value cluster or stop cleanly; parked checkpoint=router/transport/executor activation, acquisition/mutation, credentials, MCP/network/provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t5_projection_kernel_dispatched_worker_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit T5 worker, then independent review; parked checkpoint=router/transport/executor activation, filesystem export, acquisition/mutation, credentials, MCP/network/provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t4_r1_fail_closed_repair_accepted_bounded_continue_cluster_selection`
+`rspb_ai_t5_projection_kernel_dispatched_worker_pending`
 
 ## Purpose
 
-Record independent acceptance of the T4-R1 fail-closed repair and preserve local-first value-gated continuation.
+Record the bounded T5 projection-kernel dispatch and route one no-commit worker followed by independent review.
 
 ## Scope / Target / Owner Boundary
 
@@ -102,6 +102,7 @@ Record independent acceptance of the T4-R1 fail-closed repair and preserve local
 - Operator-directed RSPB learning `193c91404` requires fresh-ledger reuse, capability-cluster review, value preservation, and named-gap-only re-probing in one bounded pass.
 - RSPB-AI-T3 is accepted at `bdec9c1e7`. Guard Contract now evaluates canonical plan digests, exact approval binding, source/integrity/mutation envelopes, receipts, and repair-stop decisions without executing acquisition. Focused kernel-plus-export tests pass 46/46, TypeScript passes, reviewer-fast passes 64/64, and pre-commit passes 85/85.
 - RSPB-AI-T4-R1 is independently accepted at `a2f874519`. Zero-threshold equal-score authority differences escalate, absolute material-authority candidates cannot fast-route, malformed readiness fails closed, and Alibaba live tests require explicit opt-in plus a key. Two unintended worker verification calls remain incident-only and grant no repeat-live authority.
+- RSPB-AI-T5 dispatch is committed at `41c4c16d7`. The selected nine-file local-first case/domain projection cluster is hash-reconciled 9/9 and routed to an exact four-path no-commit Guard Contract implementation. Pre-dispatch passed 77/77 and pre-commit passed 85/85.
 
 ## Current Authority
 
@@ -156,7 +157,7 @@ Record independent acceptance of the T4-R1 fail-closed repair and preserve local
 
 ## Next Allowed Move
 
-RSPB-AI-T4-R1 is independently closed bounded at `a2f874519`. Continue only by the next local-first, detailed-content-inspected cluster that adds material value beyond current CVF owners; otherwise stop cleanly. Router/transport/executor activation, acquisition/mutation, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden.
+Dispatch exactly one RSPB-AI-T5 no-commit worker using the committed baseline and work order at `41c4c16d7`. After `COMPLETE_PENDING_REVIEW`, route the pending four-path diff to a different independent reviewer. Router/transport/executor activation, filesystem case export, acquisition/mutation, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden.
 
 ## Active Boundary
 
@@ -189,32 +190,29 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T4-R1 Acceptance Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T5 Dispatch Sync
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/rspbAiT4R1FailClosedRepairAccepted20260816.json`
+- `CVF_SESSION/state/entries/rspbAiT5ProjectionKernelDispatched20260816.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator supplied the independent R1 re-review return
-for closer processing after explicitly requiring reviewer independence.
+Operator authorization: operator instructed `next` after bounded T4-R1 closure.
 
-Authorized guard-maintenance scope: record bounded R1 acceptance at
-`a2f874519`, preserve the incident-only two-call disclosure, and permit only
-value-gated local-first continuation or a clean stop.
+Authorized guard-maintenance scope: record T5 dispatch at `41c4c16d7` and route
+one no-commit worker followed by a different independent reviewer.
 
 Rollback boundary: revert this exact session-sync batch as one unit; do not
 separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records bounded RSPB-AI-T4-R1 independent-review acceptance. The
-disclosed two provider calls remain incident-only evidence and grant no repeat
-authority. It does not authorize a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
+This handoff records RSPB-AI-T5 dispatch only. It does not accept worker output
+or authorize a router, transport, executor, filesystem case export, actual acquisition/mutation, MCP/network/provider/live invocation,
 external-agent launch, runtime enforcement, cross-runtime determinism,
 trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
