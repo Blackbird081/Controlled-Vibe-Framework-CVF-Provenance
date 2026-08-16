@@ -1,14 +1,14 @@
 # CVF RSPB-AI-T7 Worker Return - Capability Preflight Profile Policy Selection Kernel
 
 Memory class: FULL_RECORD
-Status: BLOCKED_WITH_REASON
+Status: COMPLETE_PENDING_REVIEW
 Date: 2026-08-16
 docType: review
 Batch ID: RSPB-AI-T7
 Self-declared worker-return artifact: yes
 Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_2026-08-16.md`
 dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_2026-08-16.md`
-executionBaseHead: `592368d370e8ae40ebe039ff647d7a9b9f81b114`
+executionBaseHead: `97f5a712789ca2dadb5079097a538af7fb50d107`
 rawMemoryReleased=false
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
@@ -41,127 +41,167 @@ contractProfile: WORKER_RETURN_FULL_GATE_V1
 
 ## Purpose
 
-Execute the RSPB-AI-T7 no-commit worker packet for the Capability Preflight
-Profile Policy Selection Kernel. Complete the required first reads, capture the
-execution base and initial status, recompute the eight selected source hashes,
-and then run the required hermetic proofs before returning an uncommitted
-pending handoff. This return records a blocking pre-existing test-infrastructure
-defect that makes safe completion impossible.
+Execute the RSPB-AI-T7 R1 no-commit worker packet. Implement a deterministic,
+fail-closed profile-policy selection kernel in the Guard Contract, cover it
+with adversarial focused tests, export it through both barrels, run every
+required hermetic proof, and return an uncommitted pending handoff for
+independent review. This R1 return also corrects the R1-predecessor blocked
+diagnosis: the package test toolchain was never broken.
 
 ## Scope / Methodology
 
 1. Read all required continuity, guard orientation, authority, work order,
-   baseline, and literal-format surfaces.
-2. Captured executionBaseHead `592368d370e8ae40ebe039ff647d7a9b9f81b114` and an
+   baseline, literal-format, and checker-source surfaces.
+2. Captured executionBaseHead `97f5a712789ca2dadb5079097a538af7fb50d107` and an
    initial clean `git status --short`.
 3. Recomputed SHA-256 for the exact eight selected cluster files and confirmed
    byte-for-byte match with the paired baseline Selected Cluster Evidence.
-4. Read the current T3/T4 owners and both Guard Contract barrels to confirm the
-   intended export surface and coding conventions.
-5. Attempted the required focused, regression, and full-package vitest proofs.
-   Every vitest invocation fails with `No test suite found in file` before any
-   test body executes.
-6. Diagnosed the failure as a pre-existing toolchain incompatibility between the
-   package pinned `vitest@1.6.1` and the resolved `vite@5.4.21`, independent of
-   this worker. TypeScript no-emit still passes.
-7. No implementation files were authored because the required tests cannot run
-   and therefore no acceptance evidence could be produced.
+4. Implemented a pure TypeScript module at
+   `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.ts`
+   that validates caller-provided unknown input, selects an exact requested
+   profile by id and platform membership, derives a risk-scoped TTL and
+   normalized constraints, and keeps every action-authority literal false.
+5. Authored a focused adversarial suite at
+   `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.test.ts`
+   covering five positive profiles, malformed/proxy/accessor/sparse/unbounded
+   input, unknown keys, duplicate and unknown profiles, platform mismatch, TTL
+   ordering and bounds, offline/restricted network constraints, privilege
+   policy, secret-like content, control characters, unsafe path fragments,
+   non-lowercase digests, stale or malformed T4 evidence, binding, determinism,
+   input immutability, and all authority literals.
+6. Exported the bounded public surface through both
+   `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts` and
+   `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` without changing existing
+   behavior.
+7. Ran the corrected verification commands without any config flag, using the
+   package-local Node v22.17.0, Vitest 1.6.1, and Vite 5.4.21.
+8. Prepared this worker return under WORKER_MUST_NOT_COMMIT with zero staged
+   or committed changes.
 
 ## Findings / Position
 
 1. Eight selected SHA-256 digests match the paired baseline exactly, including
    byte counts. No drift.
-2. `git rev-parse HEAD` is `592368d370e8ae40ebe039ff647d7a9b9f81b114`; initial
-   worktree is clean with no pre-existing owned-path changes.
-3. The package's verification commands from the work order cannot run. The
-   command `npx vitest run <test> --config vitest.config.ts` fails first because
-   no `vitest.config.ts` exists inside `EXTENSIONS/CVF_GUARD_CONTRACT`, then
-   without the flag every test file reports `No test suite found in file`.
-4. `npm test` (which runs `vitest run --pool forks`) reports
-   `No test suite found in file` for all 40 test files. The failure reproduces
-   under both Node v22.17.0 and Node v22.14.0, and reproduces identically in the
-   sibling `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` package. This is a global
-   vitest/vite toolchain defect, not a per-file or per-worker defect.
-5. `npm run check` (TypeScript no-emit) passes, which isolates the failure to
-   vitest collection, not to TypeScript or source content.
-6. The root cause is a version incompatibility: the package pins `vitest@1.6.1`
-   with a caret `vite` range resolved to `vite@5.4.21`. This combination is
-   known to break test collection with the observed error. Repair requires
-   editing package files and running a package install, both forbidden to this
-   worker and network-gated.
+2. `git rev-parse HEAD` is `97f5a712789ca2dadb5079097a538af7fb50d107`; initial
+   worktree is clean.
+3. The kernel selects each of the five profiles deterministically without
+   ambient OS detection, derives the correct risk-scoped TTL, and keeps
+   `executionAuthorized`, `acquisitionAuthorized`, `networkAuthorized`,
+   `taskAuthorityGranted`, and `mutationAuthorized` literal false on every
+   return path.
+4. Focused tests pass 23/23. T3/T4 regression passes 31/31. Full package
+   passes 41 files, 647 tests, with 5 intentionally skipped. TypeScript no-emit
+   passes with zero errors.
+5. R1 root-cause correction: the predecessor blocked return claimed a
+   package-wide Vitest/Vite incompatibility. That diagnosis was wrong. The
+   observed `No test suite found in file` was caused by running vitest through
+   the shell wrapper that ships with this worker host, not by the package
+   dependency versions. The exact corrected command
+   `npx vitest run src/contracts/capability-route-readiness.contract.test.ts`
+   passes 19/19 under Node v22.17.0, Vitest 1.6.1, and Vite 5.4.21, and
+   `npm test` passes 40/40 baseline files. No dependency edit, install, network
+   access, or provider call was required.
+6. Worker-return fast gate worker-relevant checks all pass (corpus registry
+   drift, epistemic process, worker-return quality gate, diff whitespace). The
+   bundled reviewer-fast chain reports one expected SOURCE_DRIFT on
+   `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` because this worker added the
+   required barrel export to a fingerprinted source. Per the system-chain
+   freshness standard, fingerprint refresh is reviewer/closer-owned and follows
+   a governed review; the worker does not edit the map.
 
 ## Risk / Corrective Action
 
-- Risk: writing implementation code that cannot be verified by tests would hand
-  unverified artifacts to the reviewer and could mask real defects.
-  Corrective action: return BLOCKED_WITH_REASON without authoring unverified
-  implementation files.
-- Risk: the environment defect is pre-existing and could be mistaken for a
-  worker regression.
-  Corrective action: this return records the exact reproduction evidence and the
-  clean worktree so the orchestrator can attribute the defect correctly.
-- Risk: an orchestrator re-dispatch could repeat the same blocked path.
-  Corrective action: the reviewer/orchestrator must first repair the Guard
-  Contract dependency pins (pin a vitest-compatible `vite` such as `5.3.x`, or
-  upgrade `vitest`) and reinstall before re-dispatching this worker packet.
+- Risk: hostile or malformed inputs could attempt prototype pollution, accessor
+  side effects, secret leaking, or TTL/network/privilege escalation.
+  Corrective action: strict plain-record and accessor rejection, proxy
+  rejection, unknown-key rejection, control-character and secret-signal
+  rejection, path-fragment rejection, bounded strings and arrays, TTL ordering
+  and bound checks, and offline/restricted network constraint enforcement.
+- Risk: a caller could treat a selected profile as network or execution
+  authority.
+  Corrective action: every result keeps all five authority literals false and
+  the selected profile is documented as constraints only.
+- Risk: stale or malformed T4 evidence could be strengthened into authority.
+  Corrective action: T4 evidence is validated for exact schema version,
+  freshness, issue-free state, literal false authority, and route binding; any
+  failure fails closed.
+- Risk: the predecessor blocked return mis-attributed a shell-wrapper failure
+  to the dependency toolchain.
+  Corrective action: this return records the exact reproduction evidence and
+  the corrected root cause so the reviewer can attribute the incident correctly.
 
 ## Decision / Disposition
 
-BLOCKED_WITH_REASON. The required focused, T3/T4 regression, and full-package
-tests cannot run because of a pre-existing vitest/vite version incompatibility.
-No implementation was authored and no acceptance evidence can be produced.
-Worktree is left with only this worker return uncommitted.
+COMPLETE_PENDING_REVIEW. All five paths in the Work-Order Fulfillment Manifest
+are implemented, tested, and verified. Worktree is left uncommitted for
+independent reviewer inspection and adversarial probing.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_rescan_intelligence_hardening.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_epistemic_process_packet.py` |
-| literalTokensReviewed | Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Decision / Disposition; Checker Source Read-Ahead Block; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Claim Boundary; git status --short; Changed Files; Command Evidence; No-Commit Statement; BLOCKED_WITH_REASON; WORKER_MUST_NOT_COMMIT; DEFERRED_PRIVATE_ONLY; CLAIM_REJECTED_NO_RECEIPT; CLAIM_REJECTED_NO_ACTION |
+| literalTokensReviewed | Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Decision / Disposition; Checker Source Read-Ahead Block; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Claim Boundary; git status --short; Changed Files; Command Evidence; No-Commit Statement; COMPLETE_PENDING_REVIEW; WORKER_MUST_NOT_COMMIT; DEFERRED_PRIVATE_ONLY; CLAIM_REJECTED_NO_RECEIPT; ACTION_EVIDENCE_PRESENT |
 | gateRunPurpose | confirmation and evidence after reading checker source ahead of writing |
 | claimBoundary | read-ahead covers structural and schema validation only; it does not assert implementation correctness or test success |
+
+## Reviewer Post-Handoff Addendum
+
+The independent reviewer inspected the complete five-path worker diff before
+editing. Review found two fail-closed gaps: Proxy/accessor arrays could be
+read, and malformed T4 issue/state/stage values could be accepted. The
+reviewer repaired only the authorized source/test paths, added three durable
+adversarial cases (26/26 focused), reproduced 57/57 T3/T4 composed tests,
+650 passing package tests with 5 intentional skips, and a clean TypeScript
+check. The reviewer then substantively re-reviewed the fingerprinted
+`CONTRACT_TO_RUNTIME` lane. The additive contract-only barrel export changes
+neither its `PARTIAL` posture nor its
+`PARTIAL_RUNTIME_CONNECTION_FULL_INVENTORY` verdict, so the reviewer refreshed
+only the cited package-root SHA-256 in the system-chain map. The freshness
+checker subsequently reported `CURRENT` with zero violations. This addendum
+does not rewrite or supersede the worker-time command evidence above.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
-| Actor | external delegated worker role |
+| Actor | external delegated worker role, followed by independent reviewer/closer for bounded repair and freshness review |
 | Provider or surface | local private provenance repository |
 | Session or invocation | RSPB-AI-T7 Capability Preflight Profile Policy Selection Kernel, 2026-08-16 |
 | Working directory | `D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | governed reads, SHA-256 recomputation, vitest and TypeScript invocations, git status/diff |
-| Target paths | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.test.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts`; `docs/reviews/CVF_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_WORKER_RETURN_2026-08-16.md` |
-| Allowed scope source | RSPB-AI-T7 Work Order Allowed Paths and Write Ownership |
-| Before status evidence | clean owned paths at HEAD `592368d370e8ae40ebe039ff647d7a9b9f81b114` |
-| After status evidence | only this worker return is untracked; no other path touched |
-| Diff evidence | `git diff --name-status` against `592368d370e8ae40ebe039ff647d7a9b9f81b114` shows no tracked changes |
-| Approval boundary | worker limited to five paths without commit authority; blocker requires orchestrator dependency repair |
+| Command or tool surface | governed reads, SHA-256 recomputation, TypeScript and vitest invocations, git status/diff |
+| Target paths | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.test.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts`; `docs/reviews/CVF_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_WORKER_RETURN_2026-08-16.md`; reviewer-owned `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` |
+| Allowed scope source | RSPB-AI-T7 Work Order Allowed Paths and Write Ownership; Reviewer Closure Conversion; `CVF_SYSTEM_CHAIN_FRESHNESS_STANDARD` governed-review rule |
+| Before status evidence | clean worktree at HEAD `97f5a712789ca2dadb5079097a538af7fb50d107` |
+| After status evidence | five worker paths plus one disclosed reviewer-owned freshness-map path; no other path touched |
+| Diff evidence | `git diff --name-status` against `97f5a712789ca2dadb5079097a538af7fb50d107` |
+| Approval boundary | worker remained limited to five paths without commit authority; independent reviewer owns bounded repair, freshness refresh, and material commit |
 | Claim boundary | no profile loading, environment I/O, acquisition, network, provider, live, or public sync authority |
 | Agent type | external worker |
-| Invocation ID | `rspb-ai-t7-worker-execution-2026-08-16` |
-| Expected manifest | N/A with reason: no implementation deliverable was produced because work was blocked before implementation |
-| Actual changed set | N/A with reason: only this worker return was written |
-| Manifest delta | N/A with reason: manifest comparison does not apply to a blocked pre-implementation return |
+| Invocation ID | `rspb-ai-t7-worker-r1-execution-2026-08-16` |
+| Expected manifest | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.test.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts`; `docs/reviews/CVF_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_WORKER_RETURN_2026-08-16.md`; `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` |
+| Actual changed set | `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.test.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts`; `docs/reviews/CVF_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_WORKER_RETURN_2026-08-16.md`; `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` |
+| Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this batch |
 
 ## Delta Execution Claim Boundary Control Block
 
 | Field | Value |
 | --- | --- |
-| claimScope | RSPB-AI-T7 profile-policy kernel dispatch, blocked before implementation |
-| claimDisposition | CLAIM_REJECTED: no execution, control, or enforcement claim is made |
+| claimScope | pure profile-policy selection contract, focused tests, and two barrel exports |
+| claimDisposition | CLAIM_REJECTED: no execution, persistence, or enforcement claim |
 | receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: no runtime receipt is created or consumed |
-| actionEvidence | CLAIM_REJECTED_NO_ACTION: no implementation or runtime action was executed |
-| invocationBoundary | local vitest and TypeScript invocations plus SHA-256 recomputation only |
-| interceptionBoundary | no shell, IDE, filesystem, environment, network, adapter, proxy, or provider interception |
-| claimLanguage | blocked-worker-return evidence pending orchestrator dependency repair |
-| forbiddenExpansion | profile loading, acquisition, network, executor, credentials, provider/live, public, deploy, production |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: five changed files and test verification outputs |
+| invocationBoundary | explicit TypeScript function calls with caller-supplied data only |
+| interceptionBoundary | no wrapper, proxy, filesystem, environment, network, adapter, or provider interception |
+| claimLanguage | deterministic contract candidate pending independent review |
+| forbiddenExpansion | profile loading, scanning, acquisition, executor, network, credentials, provider/live, public, deploy, production |
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private worker dispatch; worker may not push or public-sync.
+Reason: private implementation tranche; worker may not push or public-sync.
 
 ## External Knowledge Intake Routing
 
@@ -187,16 +227,16 @@ Reason: private worker dispatch; worker may not push or public-sync.
 | Ledger terminal statuses | READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE |
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | Guard Contract T3/T4 and T2 doctor owner |
-| Unresolved items | 0 processing rows; implementation pending after environment repair |
+| Unresolved items | 0 processing rows; implementation pending review |
 | Completion claim boundary | selected-cluster worker dispatch only; no full scan or authority activation |
 
 ## Mandatory Blind-Spot Control Block
 
-The selected eight local files were read at content and use-case level and
-their hashes were recomputed. The blocked disposition concerns only the
-worker's test-run diagnosis; it does not downgrade the local cluster's value,
-replace file-level inspection with name-pattern inference, or reopen the full
-205-file corpus.
+All eight selected files were read at content and use-case level and their
+hashes were recomputed. The kernel adapts only the profile/policy constraints
+into CVF-native pure TypeScript; direct loading of local JSON and ambient
+platform inference remain rejected. File-level inspection, not name-pattern
+inference, is the value basis for this cluster.
 
 ## External Repository Absorption Entry Control
 
@@ -207,8 +247,8 @@ replace file-level inspection with name-pattern inference, or reopen the full
 | Enumeration or manifest plan | accepted 205-file ledger and named eight-file cluster |
 | Per-file terminal-ledger plan | exact hashes in paired baseline; all eight matched |
 | Owner or overlap route | T2/T3/T4 owners and Guard Contract |
-| Value-disposition route | pure profile kernel remains selected; direct loading remains rejected |
-| Claim boundary | blocked-run evidence only; no full scan, direct import, or authority activation |
+| Value-disposition route | pure profile kernel implemented; direct loading rejected |
+| Claim boundary | no full scan, direct import, persistence, or authority activation |
 
 ## External Absorption Value Conversion Matrix
 
@@ -252,7 +292,7 @@ replace file-level inspection with name-pattern inference, or reopen the full
 
 | Routing lane | Handling |
 | --- | --- |
-| DO_NOW | exact five-path implementation after environment repair |
+| DO_NOW | pure module, tests, two barrel exports, worker return |
 | SEPARATE_RUNTIME_TRANCHE | file loading or environment observation |
 | STRATEGIC_OPERATOR_DECISION | action authority |
 | OUT_OF_SCOPE | external services, public, production |
@@ -283,68 +323,75 @@ replace file-level inspection with name-pattern inference, or reopen the full
 - Aggregation check: 8 + 197 = 205.
 - Drift check: eight selected hashes recomputed and matched the baseline.
 - Output traceability: cluster maps to five worker paths.
-- Adversarial verification: not executed because the test runner cannot collect tests.
+- Adversarial verification: platform, TTL, network, secrets, authority, hostile inputs, and determinism tested.
 - Corpus verdict: PARTIAL
 
 ## Finding-To-Governance Learning Disposition
 
 | Finding | Defect class | Learning lane | Disposition | Next control action |
 | --- | --- | --- | --- | --- |
-| Guard Contract vitest collection fails under vitest 1.6.1 plus vite 5.4.21 | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | orchestrator pins a compatible vite or upgrades vitest before re-dispatch |
+| Shell-wrapper invocation of vitest produced a false dependency-blocker diagnosis | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | verify vitest via the package-local PowerShell path before claiming a toolchain blocker |
 
 Runtime/provider/cost learning lane: N/A_WITH_REASON - no provider, live, or billed operation authorized.
 
 ## Epistemic Process Block
 
 - Epistemic Process Applicability: BOUNDED_GOVERNANCE_IMPLEMENTATION
-- Expected result / prediction: the eight selected hashes would match and all
-  required hermetic proofs would run cleanly before a pending return.
-- Evidence Comparison: eight hashes match the baseline and TypeScript no-emit
-  passes, but every vitest invocation fails with `No test suite found in file`
-  across both Node versions and both packages.
-- Contradiction or gap disposition: the work order assumes a runnable vitest
-  toolchain, but the installed vitest/vite combination is broken; the gap is
-  environmental and outside the worker's five-path authority.
-- Claim update: RSPB-AI-T7 is blocked before implementation and requires an
-  orchestrator dependency repair before a fresh worker pass.
+- Expected result / prediction: a small pure Guard Contract kernel plus tests
+  would satisfy the profile-policy seam with zero authority expansion.
+- Evidence Comparison: eight hashes match; focused 23/23, T3/T4 regression 31/31,
+  full package 647 passed plus 5 skipped, and TypeScript no-emit all pass; the
+  predecessor vitest/vite blocker was disproved by a direct package-local run.
+- Contradiction or gap disposition: direct JSON loading and ambient detection
+  remain rejected; only pure validation and constraint projection proceed.
+- Claim update: RSPB-AI-T7 R1 is implemented and returns pending independent
+  review.
 
 ## Worker Experience Retrospective
 
 WORKER_EXPERIENCE_RETRO:
-frictionLevel: BLOCKING
+frictionLevel: MEDIUM
 frictionType: OTHER
-observedStep: running the required vitest focused, regression, and full-package proofs
-preventiveControlCandidate: CHECKER
+observedStep: running vitest through the host shell wrapper first produced a false No test suite found diagnosis before the package-local PowerShell path was used
+preventiveControlCandidate: HELPER_DIAGNOSTIC
 
 ## Claim Boundary
 
-This worker return records the RSPB-AI-T7 blocker and the pre-implementation
-evidence only. It does not claim any implementation was produced, any test
-passed, any authority was opened, or any runtime, provider, live, public,
-deployment, or production behavior exists. No profile loading, environment
-observation, acquisition, network access, mutation, or commit occurred.
+This worker return records the RSPB-AI-T7 R1 implementation and verification
+only. It does not claim review acceptance, closure, or any runtime, provider,
+live, public, deployment, or production behavior. No profile loading,
+environment observation, acquisition, network access, mutation, or commit
+occurred.
 
 ## git status --short
 
 ```
-?? docs/reviews/CVF_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_WORKER_RETURN_2026-08-16.md
+ M EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts
+ M EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts
+?? EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.ts
+?? EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.test.ts
+ M docs/reviews/CVF_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_WORKER_RETURN_2026-08-16.md
 ```
 
 ## Changed Files
 
-- `docs/reviews/CVF_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_WORKER_RETURN_2026-08-16.md` (NEW)
+- `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.ts` (NEW)
+- `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-preflight-profile-policy.contract.test.ts` (NEW)
+- `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts` (MODIFIED)
+- `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` (MODIFIED)
+- `docs/reviews/CVF_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_WORKER_RETURN_2026-08-16.md` (MODIFIED)
 
 ## Command Evidence
 
-- `git rev-parse HEAD` (repo root): PASS - `592368d370e8ae40ebe039ff647d7a9b9f81b114`.
-- `git status --short` (repo root): PASS - clean before this return was written.
+- `git rev-parse HEAD` (repo root): PASS - `97f5a712789ca2dadb5079097a538af7fb50d107`.
+- `git status --short` (repo root): PASS - clean before R1 edits.
 - SHA-256 recomputation of the eight selected files (Python, repo root): PASS - all eight match the paired baseline byte counts and digests.
-- `npx vitest run src/contracts/capability-route-readiness.contract.test.ts --config vitest.config.ts` (cwd `EXTENSIONS/CVF_GUARD_CONTRACT`): FAIL - the config file does not exist.
-- `npx vitest run src/contracts/capability-route-readiness.contract.test.ts` (cwd `EXTENSIONS/CVF_GUARD_CONTRACT`): FAIL - `No test suite found in file`.
-- `npm test` (cwd `EXTENSIONS/CVF_GUARD_CONTRACT`): FAIL - all 40 test files report `No test suite found in file`.
+- `npx vitest run src/contracts/capability-preflight-profile-policy.contract.test.ts` (cwd `EXTENSIONS/CVF_GUARD_CONTRACT`): PASS - 23 passed (23 tests in 1 file).
+- `npx vitest run src/contracts/controlled-acquisition.contract.test.ts src/contracts/capability-route-readiness.contract.test.ts` (cwd `EXTENSIONS/CVF_GUARD_CONTRACT`): PASS - 31 passed (31 tests in 2 files).
+- `npm test` (cwd `EXTENSIONS/CVF_GUARD_CONTRACT`): PASS - 41 files, 647 passed, 5 skipped.
 - `npm run check` (cwd `EXTENSIONS/CVF_GUARD_CONTRACT`): PASS - TypeScript no-emit reports zero errors.
-- Node v22.17.0 and Node v22.14.0 focused repro (cwd `EXTENSIONS/CVF_GUARD_CONTRACT`): FAIL - both reproduce `No test suite found in file`.
-- Sibling focused repro (cwd `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION`): FAIL - same `No test suite found in file`.
+- `git diff --check` (repo root): PASS - no trailing whitespace or merge conflict markers.
+- `python governance/compat/run_worker_return_fast_gate.py` (repo root): PARTIAL PASS - worker-relevant checks pass (corpus registry drift, epistemic process, worker-return quality gate, diff whitespace); the bundled reviewer-fast chain reports one expected SOURCE_DRIFT on `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` from the required barrel export, with fingerprint refresh reviewer/closer-owned.
 
 Zero external service calls, zero provider/live calls, and zero network
 operations were performed by this worker.
@@ -352,6 +399,6 @@ operations were performed by this worker.
 ## No-Commit Statement
 
 WORKER_MUST_NOT_COMMIT honored: HEAD unchanged at
-`592368d370e8ae40ebe039ff647d7a9b9f81b114`; no git add, git commit, git stage,
-git push, or git merge was performed. The worktree carries only this worker
-return uncommitted for independent orchestrator review.
+`97f5a712789ca2dadb5079097a538af7fb50d107`; no git add, git commit, git stage,
+git push, or git merge was performed. The worktree carries only the five
+manifest paths uncommitted for independent orchestrator review.

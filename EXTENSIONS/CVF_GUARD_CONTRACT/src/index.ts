@@ -125,6 +125,25 @@ export {
   evaluateCapabilityReadiness,
 } from './contracts/capability-route-readiness.contract';
 
+// RSPB-AI-T7 capability preflight profile policy selection kernel
+// (pure, contract-only; no profile loading, environment observation,
+// acquisition, network, or execution authority).
+export type {
+  CapabilityPreflightRiskLevel,
+  CapabilityPreflightNetworkMode,
+  CapabilityPreflightPrivilegePolicy,
+  CapabilityPreflightProfile,
+  CapabilityPreflightProfilePolicyInput,
+  CapabilityPreflightProfilePolicyIssueCode,
+  CapabilityPreflightProfilePolicyIssue,
+  CapabilityPreflightProfilePolicyResult,
+} from './contracts/capability-preflight-profile-policy.contract';
+export {
+  CAPABILITY_PREFLIGHT_PROFILE_POLICY_CONTRACT_VERSION,
+  CAPABILITY_PREFLIGHT_PROFILE_POLICY_RESULT_VERSION,
+  evaluateCapabilityPreflightProfilePolicy,
+} from './contracts/capability-preflight-profile-policy.contract';
+
 // CADP T5-R1 external-readout authority foundation (pure, contract-only).
 export type {
   CadpExternalReadoutIssueCode,

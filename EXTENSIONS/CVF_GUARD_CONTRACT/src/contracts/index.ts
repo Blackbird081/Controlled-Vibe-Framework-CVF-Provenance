@@ -391,6 +391,23 @@ export {
 } from './controlled-acquisition.contract';
 
 export type {
+  CapabilityPreflightRiskLevel,
+  CapabilityPreflightNetworkMode,
+  CapabilityPreflightPrivilegePolicy,
+  CapabilityPreflightProfile,
+  CapabilityPreflightProfilePolicyInput,
+  CapabilityPreflightProfilePolicyIssueCode,
+  CapabilityPreflightProfilePolicyIssue,
+  CapabilityPreflightProfilePolicyResult,
+} from './capability-preflight-profile-policy.contract';
+
+export {
+  CAPABILITY_PREFLIGHT_PROFILE_POLICY_CONTRACT_VERSION,
+  CAPABILITY_PREFLIGHT_PROFILE_POLICY_RESULT_VERSION,
+  evaluateCapabilityPreflightProfilePolicy,
+} from './capability-preflight-profile-policy.contract';
+
+export type {
   ProjectionStalenessState,
   FindingVerificationState,
   FindingSeverity,
