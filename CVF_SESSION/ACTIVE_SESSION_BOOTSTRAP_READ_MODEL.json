@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t6_learning_candidate_intake_seam_closed_bounded_continue_cluster_selection",
+  "currentMode": "rspb_ai_t7_profile_policy_kernel_dispatched_external_worker_pending",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T6 is CLOSED_PASS_BOUNDED. Material plus disclosed reviewer repair is committed at 2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1; review/continuity evidence is committed at 8c5965be1bdc7ba9cea1d542d188b1abb00cf164; machine closure packet is committed at 145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15. The pure Learning Plane seam now binds accepted T5 projection evidence to a provenance-bound pending candidate and existing intake bridge without storage, promotion, mutation, or execution authority. Next move: continue local-synthesis-first absorption by selecting the next highest-value cluster from the existing 205-file ledger; do not restart full-corpus proof. Use one external no-commit worker followed by this independent reviewer/orchestrator. Router, transport, executor, credentials, MCP/network/provider/live, public sync, push, deployment, and production remain forbidden. Latest closed numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T7 profile-policy kernel dispatch is committed at 1bc5164d5. Next move: provide the canonical T7 work order to one external worker. The worker must capture executionBaseHead, edit exactly the five allowed paths, run the required hermetic proofs, make zero external service calls, and return COMPLETE_PENDING_REVIEW without staging or committing. This reviewer/orchestrator then independently inspects the full diff, reproduces tests, and runs adversarial probes before any repair, acceptance, closure, or material commit. Profile loading, environment I/O, acquisition, network authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest closed numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T6_CAPABILITY_PROJECTION_TO_LEARNING_CANDIDATE_INTAKE_SEAM_2026-08-16.md",
-    "baselineSha256": "7700a15f10fd84db3cc2dcda879a2ad1497bd3c54ac4f5a0c5432956f48ce082",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T6_CAPABILITY_PROJECTION_TO_LEARNING_CANDIDATE_INTAKE_SEAM_2026-08-16.md",
-    "workOrderSha256": "69cfcb3bd2ac0562269e5cfa083ddcac96997d6846b8ff98d2aeb68666168dd4"
+    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_2026-08-16.md",
+    "baselineSha256": "c6dab7ed1c0bd63189a7cfd085e18e2618c59ffdb3476157c7b1b445ed09e4bc",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T7_CAPABILITY_PREFLIGHT_PROFILE_POLICY_SELECTION_KERNEL_2026-08-16.md",
+    "workOrderSha256": "f112321a32b2d66e556cf2f20121845ac8558aa5c5b2382e5d64f8094a0f5e12"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
