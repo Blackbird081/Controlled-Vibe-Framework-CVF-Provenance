@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local HEAD before this handoff sync: `63b2f7367e9184da2ff18a74db163327809e2602`.
+- Current local HEAD before this handoff sync: `25b19b3d554900ffbcf90a6e4a07545173bfda72`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -39,7 +39,7 @@ Status: ACTIVE
 - RSPB-AI-T6 bounded dispatch: `4789d1442ed280c91e3dd5e6e3c8995244db19ef`.
 - RSPB-AI-T6 accepted material plus bounded reviewer repair: `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1`; machine closure packet: `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`.
 - RSPB-AI-T7 profile-policy dispatch: `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`.
-- RSPB-AI-T7 accepted material plus bounded reviewer repair: `63b2f7367e9184da2ff18a74db163327809e2602`.
+- RSPB-AI-T7 accepted material plus bounded reviewer repair: `63b2f7367e9184da2ff18a74db163327809e2602`; completion review: `25b19b3d554900ffbcf90a6e4a07545173bfda72`.
 - Active mode: `rspb_ai_t7_profile_policy_kernel_reviewer_accepted_pending_closer`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
