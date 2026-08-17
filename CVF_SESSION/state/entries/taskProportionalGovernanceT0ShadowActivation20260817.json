@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2268,
+  "stateKey": "taskProportionalGovernanceT0ShadowActivation20260817",
+  "value": "TPGR-T0 shadow routing is independently accepted and active at material commit 06ef6c043. Canonical standard, registry/schema, deterministic router, range checker, 15 focused routing tests, and shadow bindings in autorun, pre-commit, reviewer-fast, and pre-push are present. Final evidence: 55/55 focused/catalog tests, reviewer-fast 65/65, material pre-commit 86/86, core self-protection compliant, and carrier budget compliant. Every valid or rejected receipt keeps selectiveExecutionAuthorized=false and RUN_FULL_LEGACY_BUNDLE. The next absorption tranche is the first required use; T11 is explicitly pre-activation. TPGR-T1 through TPGR-T4, selective gate execution, runtime/provider/live/public/deploy effects remain unauthorized."
+}

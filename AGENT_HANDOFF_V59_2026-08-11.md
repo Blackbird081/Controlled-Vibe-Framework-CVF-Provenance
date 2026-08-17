@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local T11 machine-closure HEAD before this exact sync: `c09116add`.
+- Current local TPGR-T0 material HEAD before this continuity sync: `06ef6c043`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -34,7 +34,7 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Active mode: `rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next`
+- Active mode: `tpgr_t0_shadow_active_next_absorption_tranche_selection`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -43,10 +43,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=upgrade the task-proportional governance and absorption redesign into mandatory rules and machine gates before the next absorption tranche; parked checkpoint=runtime, environment I/O, acquisition/install/mutation/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`tpgr_t0_shadow_active_next_absorption_tranche_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select the next high-value local cluster and author the first post-activation TPGR-governed work order; parked checkpoint=worker execution, runtime, environment I/O, acquisition/install/mutation/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next`
+`tpgr_t0_shadow_active_next_absorption_tranche_selection`
 
 ## Purpose
 
@@ -198,7 +198,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/taskProportionalGovernanceT0ShadowActivation20260817.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelDispatched20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelReviewerAccepted20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelClosed20260816.json`
@@ -215,6 +215,6 @@ Rollback boundary: revert this exact session-sync batch as one unit; do not sepa
 
 ## Claim Boundary
 
-This handoff records RSPB-AI-T11 bounded closure and the next rule-implementation route only. It does not authorize template loading/copying, workspace materialization, environment scanning, snapshot persistence, profile loading, environment I/O, a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
+This handoff records RSPB-AI-T11 bounded closure and accepted TPGR-T0 shadow routing. It authorizes classification and mandatory manifest checking only, never selective gate execution. It does not authorize template loading/copying, workspace materialization, environment scanning, snapshot persistence, profile loading, environment I/O, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
