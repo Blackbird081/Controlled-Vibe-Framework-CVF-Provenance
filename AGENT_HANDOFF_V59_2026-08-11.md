@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T14 Dispatched Pending Worker
+# CVF Agent Handoff V59 - RSPB-AI-T14 Reviewer Accepted Pending Closer
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -7,7 +7,6 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current RSPB-AI-T14 dispatch HEAD: `ccc15d89345af977656dc66b0ab8cf274d0a0b92`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -34,7 +33,8 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Active mode: `rspb_ai_t14_capability_preflight_advisory_operator_projection_kernel_dispatched_pending_worker`
+- Current material HEAD: `6fc8f9872117f3fbadf3240569b92686c4f24809`.
+- Active mode: `rspb_ai_t14_reviewer_accepted_pending_closer`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -43,10 +43,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t14_capability_preflight_advisory_operator_projection_kernel_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed T14 work order to one external no-commit worker, then reviewer independently verifies the return; parked checkpoint=UI/API/callback/approval/action execution, registry/generated-index changes, package loading, runtime, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t14_reviewer_accepted_pending_closer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=complete T14 closure, then plan-only Task-Proportional Governance redesign for Claude critique; parked checkpoint=T15, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t14_capability_preflight_advisory_operator_projection_kernel_dispatched_pending_worker`
+`rspb_ai_t14_reviewer_accepted_pending_closer`
 
 ## Purpose
 
@@ -110,10 +110,10 @@ Record the TPGR-governed T14 dispatch and constrain the next move to external no
 ## Current Authority
 | Field | Value |
 |---|---|
-| authorityState | RSPB-AI-T14 DISPATCH_READY at `ccc15d89345af977656dc66b0ab8cf274d0a0b92`; independent worker execution/review pending |
+| authorityState | RSPB-AI-T14 REVIEWER_ACCEPTED_PENDING_CLOSER at material commit `6fc8f9872117f3fbadf3240569b92686c4f24809` |
 | baselinePath | `docs/baselines/CVF_GC018_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md` |
-| nextAuthorityRequirement | exact-five-path external no-commit worker return, then independent reviewer inspection/proof/acceptance; separate authority remains required for every UI/runtime/external effect |
+| nextAuthorityRequirement | T14 work-order finality and final continuity only; then plan-only Task-Proportional Governance redesign for Claude critique; do not open T15 |
 
 ## Closure Evidence
 
@@ -159,7 +159,7 @@ Record the TPGR-governed T14 dispatch and constrain the next move to external no
 
 ## Next Allowed Move
 
-RSPB-AI-T14 is dispatched at `ccc15d89345af977656dc66b0ab8cf274d0a0b92`. The operator manually transfers the committed work order to one external worker. Worker scope is exactly five paths, no stage/commit, with `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; the current reviewer/orchestrator independently owns inspection, hostile proof, bounded repair, acceptance, commit, and closure. Seven selected hashes matched and all files were fully read; direct UI/effectful import was rejected. Route is P2_BOUNDED/ROUTED_SHADOW with selective execution false. UI/API/callback/approval/action execution, registry/generated-index changes, package loading, runtime, provider/live, public, deploy, and production remain forbidden.
+RSPB-AI-T14 is reviewer-accepted at material commit `6fc8f9872117f3fbadf3240569b92686c4f24809`. Complete work-order finality and final continuity only. Then draft a plan-only second Task-Proportional Governance upgrade for operator transfer to Claude critique before implementation. Preserve CVF authority and rigorous new-knowledge absorption, but reuse the accepted 205-file ledger and treat the local co-designed synthesis corpus differently from a raw external repository. Do not open T15. UI/runtime/provider/live/public/deploy/production remain forbidden.
 
 ## Active Boundary
 
