@@ -548,3 +548,26 @@ export {
   ASSF_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_RESULT_VERSION,
   evaluateAssfCapabilityPreflightCandidateBinding,
 } from './assf-capability-preflight-candidate-binding.contract';
+
+export type {
+  CapabilityPreflightAdvisoryProjectionInput,
+  CapabilityPreflightAdvisoryProjectionIssueCode,
+  CapabilityPreflightAdvisoryProjectionIssue,
+  CapabilityPreflightAdvisoryProjectionStatus,
+  CapabilityAdvisoryRouteView,
+  CapabilityAdvisoryReadinessView,
+  CapabilityAdvisoryApprovalPresence,
+  CapabilityAdvisoryApprovalBoundaryView,
+  CapabilityAdvisoryFindingView,
+  CapabilityAdvisoryPathStepView,
+  CapabilityAdvisoryPathView,
+  CapabilityAdvisoryEvidencePresence,
+  CapabilityAdvisoryEvidenceView,
+  CapabilityPreflightAdvisoryProjectionResult,
+} from './capability-preflight-advisory-projection.contract';
+
+export {
+  CAPABILITY_PREFLIGHT_ADVISORY_PROJECTION_CONTRACT_VERSION,
+  CAPABILITY_PREFLIGHT_ADVISORY_PROJECTION_RESULT_VERSION,
+  evaluateCapabilityPreflightAdvisoryProjection,
+} from './capability-preflight-advisory-projection.contract';

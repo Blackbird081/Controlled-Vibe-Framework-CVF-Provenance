@@ -314,6 +314,33 @@ export {
   evaluateAssfCapabilityPreflightCandidateBinding,
 } from './contracts/assf-capability-preflight-candidate-binding.contract';
 
+// RSPB-AI-T14 capability preflight advisory operator projection kernel (pure,
+// in-memory composition of caller-supplied T4/T5/T8/T10 evidence only; no UI
+// rendering, API, callback, approval submission, next-action execution,
+// package loading, runtime, provider/live, or public authority). Every
+// authority/action output is the literal false on every path.
+export type {
+  CapabilityPreflightAdvisoryProjectionInput,
+  CapabilityPreflightAdvisoryProjectionIssueCode,
+  CapabilityPreflightAdvisoryProjectionIssue,
+  CapabilityPreflightAdvisoryProjectionStatus,
+  CapabilityAdvisoryRouteView,
+  CapabilityAdvisoryReadinessView,
+  CapabilityAdvisoryApprovalPresence,
+  CapabilityAdvisoryApprovalBoundaryView,
+  CapabilityAdvisoryFindingView,
+  CapabilityAdvisoryPathStepView,
+  CapabilityAdvisoryPathView,
+  CapabilityAdvisoryEvidencePresence,
+  CapabilityAdvisoryEvidenceView,
+  CapabilityPreflightAdvisoryProjectionResult,
+} from './contracts/capability-preflight-advisory-projection.contract';
+export {
+  CAPABILITY_PREFLIGHT_ADVISORY_PROJECTION_CONTRACT_VERSION,
+  CAPABILITY_PREFLIGHT_ADVISORY_PROJECTION_RESULT_VERSION,
+  evaluateCapabilityPreflightAdvisoryProjection,
+} from './contracts/capability-preflight-advisory-projection.contract';
+
 // Phase E receipt binding contract
 export type {
   ReceiptBindingDisposition,
