@@ -1,5 +1,4 @@
-# CVF Agent Handoff V59 - T14 Closed, TPGR Second Upgrade Plan Pending Critique
-
+# CVF Agent Handoff V59 - TPGR Second Upgrade External Critique Pending
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -33,8 +32,8 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Current T14 closure HEAD: `b890a459f27a5d08c2301011f7b550c74adc0e32`.
-- Active mode: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`
+- Current TPGR critique-plan HEAD: `b6bee448ce4ccc69b5969315d00255ca9100f1be`.
+- Active mode: `task_proportional_governance_second_upgrade_external_critique_pending`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -43,10 +42,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_plan_pending_claude_critique`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=draft critique-ready TPGR plan only; parked checkpoint=T15 and implementation before critique/operator approval, plus UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_external_critique_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed TPGR plan to Claude and returns the critique for CVF reconciliation; parked checkpoint=T15 and implementation before critique/operator approval, plus UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_plan_pending_claude_critique`
+`task_proportional_governance_second_upgrade_external_critique_pending`
 
 ## Purpose
 
@@ -159,7 +158,7 @@ Record the TPGR-governed T14 dispatch and constrain the next move to external no
 
 ## Next Allowed Move
 
-RSPB-AI-T14 is `CLOSED_PASS_BOUNDED`: material `6fc8f9872117f3fbadf3240569b92686c4f24809`, reviewer acceptance/completion `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94`. Next move is plan-only: design the second Task-Proportional Governance upgrade for operator transfer to Claude critique. Preserve CVF authority and rigorous knowledge absorption, reuse the accepted 205-file ledger, and distinguish local co-designed synthesis from raw external intake. No implementation or T15 before critique and operator approval. UI/runtime/provider/live/public/deploy/production remain forbidden.
+The second Task-Proportional Governance upgrade critique plan is committed at `b6bee448ce4ccc69b5969315d00255ca9100f1be`; SHA-256 `6cc0cde0dd98b6dbc79aa9bd01357e24fcc4657860c67e5aa1ca7ec1c7882653`. Next move is operator transfer of `docs/assessments/CVF_TASK_PROPORTIONAL_GOVERNANCE_SECOND_UPGRADE_EXTERNAL_CRITIQUE_PLAN_2026-08-17.md` to Claude, then return of the critique for CVF reconciliation and operator decision. No implementation or T15 before that decision. UI/runtime/provider/live/public/deploy/production remain forbidden.
 
 ## Active Boundary
 
@@ -192,26 +191,27 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T14 Dispatch Sync
+## Core Guard Self-Protection Authorization - TPGR Critique Handoff
+
 Protected paths:
+
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/taskProportionalGovernanceT0ShadowActivation20260817.json`; `CVF_SESSION/state/entries/rspbAiT13AssfPackageMetadataToCapabilityPreflightCandidateBindingKernelClosed20260817.json`; `CVF_SESSION/state/entries/rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelDispatched20260817.json`
-- `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelDispatched20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelReviewerAccepted20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelClosed20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelDispatched20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelReviewerAccepted20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelCompletionReview20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelClosed20260817.json`; `CVF_SESSION/state/entries/rspbAiT11CapabilityWorkspaceProfileBootstrapPolicyBundleValidationKernelDispatched20260817.json`; `CVF_SESSION/state/entries/rspbAiT11CapabilityWorkspaceProfileBootstrapPolicyBundleValidationKernelClosed20260817.json`
-- `CVF_SESSION/state/entries/rspbAiT7ProfilePolicyKernelReviewerAccepted20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT7ProfilePolicyKernelClosed20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelDispatched20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelReviewerAccepted20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelClosed20260816.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/taskProportionalGovernanceSecondUpgradeCritiquePlanCommitted20260817.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator explicitly assigned this agent as reviewer/orchestrator, requested the next tranche, and retains manual transfer of the work order to the external worker.
-Authorized guard-maintenance scope: bind the committed T14 dispatch and route the next move to exact-manifest no-commit worker execution plus independent review.
-Rollback boundary: revert this exact session-sync batch as one unit; do not separate generated state from source fragments.
+
+Operator authorization: the operator requested the next step after T14 and
+previously fixed that step as a critique-ready TPGR plan before implementation.
+
+Authorized guard-maintenance scope: continuity-only transition from plan
+authoring to external critique pending, binding the exact committed plan and
+its SHA-256.
+
+Rollback boundary: revert this exact continuity batch as one unit; do not
+separate generated state from its source fragments.
 
 ## Claim Boundary
 

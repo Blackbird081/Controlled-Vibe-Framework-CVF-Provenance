@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_plan_pending_claude_critique`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=draft the plan-only Task-Proportional Governance redesign for Claude critique; parked checkpoint=T15 and all implementation until critique/operator approval, plus UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_external_critique_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed TPGR second-upgrade plan to Claude and returns the critique for CVF reconciliation; parked checkpoint=T15 and all implementation until critique/operator approval, plus UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`
-Current mode: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`
-Previous mode: `rspb_ai_t14_reviewer_accepted_pending_closer`
+Current mode marker: `task_proportional_governance_second_upgrade_external_critique_pending`
+Current mode: `task_proportional_governance_second_upgrade_external_critique_pending`
+Previous mode: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`
 
 ## Next Allowed Move
 
-Mode: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`; T14 is closed; draft the critique-ready plan only, do not implement and do not open T15.
+Mode: `task_proportional_governance_second_upgrade_external_critique_pending`; plan `docs/assessments/CVF_TASK_PROPORTIONAL_GOVERNANCE_SECOND_UPGRADE_EXTERNAL_CRITIQUE_PLAN_2026-08-17.md` is committed at `b6bee448c`; operator transfers it to Claude and returns the critique for CVF reconciliation. Do not implement and do not open T15.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
