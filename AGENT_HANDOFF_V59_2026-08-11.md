@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T11 Pending Independent Review
+# CVF Agent Handoff V59 - RSPB-AI-T11 Closed Bounded TPGR Rules Next
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local T11 material HEAD before this handoff sync: `a54fc8e32`.
+- Current local T11 completion-review HEAD before this closure sync: `431724e74`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -34,7 +34,7 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Active mode: `rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
+- Active mode: `rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -43,14 +43,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independently review the exact five-path no-commit T11 worker return, repair only bounded defects, then decide acceptance and closure; parked checkpoint=template loading/copying, workspace materialization, environment scanning/read, snapshot persistence, acquisition/install/mutation/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=upgrade the task-proportional governance and absorption redesign into mandatory rules and machine gates before the next absorption tranche; parked checkpoint=runtime, environment I/O, acquisition/install/mutation/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
+`rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next`
 
 ## Purpose
 
-Record T11 external-worker return and independent-review authority without widening the pure contract scope.
+Record T11 bounded closure and route the next governed move to task-proportional governance rule implementation.
 
 ## Scope / Target / Owner Boundary
 
@@ -159,7 +159,7 @@ Record T11 external-worker return and independent-review authority without widen
 
 ## Next Allowed Move
 
-Select the next highest-value local synthesis cluster from the accepted 205-file ledger without restarting full-corpus proof, then create its bounded baseline/work order and dispatch one external no-commit worker followed by this independent reviewer/orchestrator. Environment scanning or reading, snapshot persistence, acquisition, network/action authority, executor, refresh execution, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden.
+Upgrade `docs/assessments/CVF_TASK_PROPORTIONAL_GOVERNANCE_AND_ABSORPTION_PROCESS_REDESIGN_2026-08-17.md` from design-only status into mandatory standards, machine checks, and earliest applicable phase gates before selecting or dispatching the next absorption tranche. T11 is excluded from the new-rule tranche count. Runtime, environment I/O, acquisition, network/action authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden.
 
 ## Active Boundary
 
@@ -192,7 +192,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T11 Dispatch Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T11 Closure Sync
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -202,19 +202,19 @@ Protected paths:
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelDispatched20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelReviewerAccepted20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelClosed20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelDispatched20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelReviewerAccepted20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelCompletionReview20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelClosed20260817.json`; `CVF_SESSION/state/entries/rspbAiT11CapabilityWorkspaceProfileBootstrapPolicyBundleValidationKernelDispatched20260817.json`
+- `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelDispatched20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelReviewerAccepted20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelCompletionReview20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelClosed20260817.json`; `CVF_SESSION/state/entries/rspbAiT11CapabilityWorkspaceProfileBootstrapPolicyBundleValidationKernelDispatched20260817.json`; `CVF_SESSION/state/entries/rspbAiT11CapabilityWorkspaceProfileBootstrapPolicyBundleValidationKernelClosed20260817.json`
 - `CVF_SESSION/state/entries/rspbAiT7ProfilePolicyKernelReviewerAccepted20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT7ProfilePolicyKernelClosed20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelDispatched20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelReviewerAccepted20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelClosed20260816.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator explicitly assigned this agent as reviewer/orchestrator and will manually transfer the work order to another implementation worker.
-Authorized guard-maintenance scope: record the committed T11 dispatch and manual external-worker handoff only.
+Operator authorization: operator explicitly assigned this agent as reviewer/orchestrator and instructed it to complete T11 before upgrading the task-proportional redesign into rules.
+Authorized guard-maintenance scope: record bounded T11 closure and route the next move to mandatory task-proportional governance implementation only.
 Rollback boundary: revert this exact session-sync batch as one unit; do not separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records RSPB-AI-T11 bounded dispatch and manual external-worker transfer only. It does not authorize template loading/copying, workspace materialization, environment scanning, snapshot persistence, profile loading, environment I/O, a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
+This handoff records RSPB-AI-T11 bounded closure and the next rule-implementation route only. It does not authorize template loading/copying, workspace materialization, environment scanning, snapshot persistence, profile loading, environment I/O, a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.

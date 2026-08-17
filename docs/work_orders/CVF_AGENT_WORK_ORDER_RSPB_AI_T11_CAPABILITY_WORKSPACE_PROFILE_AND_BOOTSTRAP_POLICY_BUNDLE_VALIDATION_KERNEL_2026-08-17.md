@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: RSPB-AI-T11
 
@@ -388,23 +388,23 @@ execution base and use that exact clean head; disclose the distinction.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | external delegated implementation worker |
+| Actor | external delegated implementation worker followed by independent reviewer/closer and session-sync steward |
 | Provider or surface | local private provenance repository |
-| Session or invocation | RSPB-AI-T11 bounded implementation, 2026-08-17 |
+| Session or invocation | RSPB-AI-T11 bounded implementation and closure, 2026-08-17 |
 | Working directory | repository root |
-| Command or tool surface | governed source/test authoring and local hermetic verification |
-| Target paths | exact five-path fulfillment manifest |
-| Allowed scope source | this committed work order and paired baseline |
+| Command or tool surface | governed source/test authoring, independent hermetic verification, completion review, and closure continuity sync |
+| Target paths | this work-order conversion plus seven closure continuity paths named in the active handoff authorization |
+| Allowed scope source | this work order, paired baseline, Reviewer Closure Conversion, and operator-assigned reviewer/orchestrator authority |
 | Before status evidence | HEAD `bee6b22aa112e476e66f629c630e16f4806e8f88`; clean worktree before packet authoring; worker must separately capture a clean execution head and clean/absent owned paths |
-| After status evidence | exact five unstaged/uncommitted paths required |
+| After status evidence | bounded material/review commits followed by this eight-path machine-closure batch |
 | Diff evidence | `git diff --name-status` and `git diff --check` |
-| Approval boundary | worker cannot stage or commit; reviewer owns acceptance/closure |
+| Approval boundary | worker did not stage or commit; reviewer owns accepted commits and bounded closure |
 | Claim boundary | pure caller-supplied contract only |
-| Agent type | external implementation worker |
-| Invocation ID | `rspb-ai-t11-workspace-policy-bundle-worker-2026-08-17` |
-| Expected manifest | exact five paths above |
-| Actual changed set | worker must record exact output |
-| Manifest delta | MATCH_REQUIRED |
+| Agent type | external implementation worker plus Codex reviewer/closer |
+| Invocation ID | `rspb-ai-t11-workspace-policy-bundle-closure-2026-08-17` |
+| Expected manifest | `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/rspbAiT11CapabilityWorkspaceProfileBootstrapPolicyBundleValidationKernelClosed20260817.json`; `CVF_SESSION_MEMORY.md`; this work order |
+| Actual changed set | `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/rspbAiT11CapabilityWorkspaceProfileBootstrapPolicyBundleValidationKernelClosed20260817.json`; `CVF_SESSION_MEMORY.md`; this work order |
+| Manifest delta | MATCH |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -602,12 +602,44 @@ RSPB 205-file ledger and neither claims nor changes legacy-coverage index rows.
 
 ## Closure Checklist
 
-- [ ] Worker captured execution base and clean owned paths.
-- [ ] Seven hashes match the paired baseline.
-- [ ] Exact five-path manifest matches and remains unstaged/uncommitted.
-- [ ] Focused, composed, package, TypeScript, diff, and fast gates pass.
-- [ ] Worker returns `COMPLETE_PENDING_REVIEW`.
-- [ ] Independent reviewer accepts or rejects with evidence.
+- [x] Worker captured execution base `52c8a62b7fe62367ecddfa6fe9dd42be59160cc5` and clean owned paths.
+- [x] Seven hashes matched the paired baseline.
+- [x] Exact five-path worker manifest matched; worker left it unstaged/uncommitted.
+- [x] Focused 26/26, T7/T11 52/52, package 789 plus 5 skipped, TypeScript, diff, worker-return fast gate, reviewer-fast 64/64, and pre-commit 85/85 passed.
+- [x] Worker returned `COMPLETE_PENDING_REVIEW` without committing.
+- [x] Independent reviewer repaired one bounded hostile-array defect and accepted material `a54fc8e32b7cf05342db16c060c4c9a1b2413976`; completion review `431724e7485532914984e8c86aeaaf3d1fcbad8e`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_RSPB_AI_T11_CAPABILITY_WORKSPACE_PROFILE_AND_BOOTSTRAP_POLICY_BUNDLE_VALIDATION_KERNEL_WORKER_RETURN_2026-08-17.md` | SHA-256 `d77356a1ab42e9247826d4dc91444b3632781ce6642cf17dba1cd0a3360978e2`; no worker commit | PASS |
+| Material | Guard Contract T11 source/test/exports and system-chain map | commit `a54fc8e32b7cf05342db16c060c4c9a1b2413976` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSPB_AI_T11_CAPABILITY_WORKSPACE_PROFILE_AND_BOOTSTRAP_POLICY_BUNDLE_VALIDATION_KERNEL_COMPLETION_2026-08-17.md` | commit `431724e7485532914984e8c86aeaaf3d1fcbad8e`; SHA-256 `52d2181341c3c1a1ff515a39f8340a14e9ed3b75905f22dcbd8dd4548541d06c` | PASS |
+| Tests and gates | Guard Contract package and governance hooks | 26/26; 52/52; 789 plus 5 skipped; TypeScript PASS; reviewer-fast 64/64; pre-commit 85/85 | PASS |
+| System chain | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | `CONTRACT_TO_RUNTIME` hash refreshed; posture/verdict unchanged; CURRENT | PASS |
+| Roadmap state | RSPB bounded cluster continuation | no separate roadmap row opened | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row ledger reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | local-first cluster routing unchanged | PASS |
+| External evidence digest | worker return and completion review | worker SHA-256 `d77356a1ab42e9247826d4dc91444b3632781ce6642cf17dba1cd0a3360978e2`; review SHA-256 `52d2181341c3c1a1ff515a39f8340a14e9ed3b75905f22dcbd8dd4548541d06c` | PASS |
+| System loop interlock | T7 selection plus T11 bundle validator | all ten authority fields false; no I/O/materialization/action | PASS |
+| Session continuity | active core, generated aggregate/bootstrap, memory, handoff, closed entry | closed mode and task-proportional-rules next move aligned | PASS |
+| Provider/live evidence | none | zero calls; none claimed | N/A with reason |
+| Next governed move | task-proportional redesign assessment | mandatory rules before next tranche; T11 excluded from new-rule tranche count | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| exact profile/policy binding | `capability-bootstrap.<profileId>` and selected T7 evidence | PASS |
+| posture variants | OFFLINE, RESTRICTED, and NORMAL invariants reject weakening | PASS |
+| hostile input | Proxy, accessor, symbol, sparse, oversized, subclass, and polluted inputs fail closed | PASS |
+| bounded execution cost | oversized sparse length rejects before dense traversal | PASS |
+| safe workspace evidence | only literal `${WORKSPACE_ROOT}` boundary and safe credential reference IDs | PASS |
+| deterministic evidence | input unchanged; repeated results equal; outputs frozen | PASS |
+| authority outputs | all ten materialization/read/action grants literal false | PASS |
+| runtime/provider receipt | none authorized or claimed | PASS |
 
 ## Epistemic Process Block
 
@@ -618,16 +650,19 @@ initializer or execution owner.
 
 ### Evidence Comparison
 
-T7 validates selection; the cluster adds a missing strict bootstrap-policy and
-workspace-boundary binding.
+T7 selection was preserved. Independent review found that oversized sparse
+arrays were bounded after traversal; one source/test repair now rejects before
+caller-length iteration.
 
 ### Contradiction Or Gap Disposition
 
-PROCEED_BOUNDED; fail closed and defer all materialization/action behavior.
+REPAIRED_BOUNDED; fail closed and defer all materialization/action behavior.
 
 ### Claim Update
 
-Implementation remains pending worker execution and independent review.
+Implementation is independently accepted and closed bounded at material commit
+`a54fc8e32b7cf05342db16c060c4c9a1b2413976` with review commit
+`431724e7485532914984e8c86aeaaf3d1fcbad8e`.
 
 ## Public Export Disposition
 

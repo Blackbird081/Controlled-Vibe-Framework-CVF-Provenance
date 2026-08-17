@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review",
+  "currentMode": "rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T11 workspace-profile/bootstrap-policy bundle-validation baseline and work order are committed at 8996a4e0e74856e293ee5ba36fa310b57f50a030 after seven selected hashes matched, pre-dispatch passed 77/77, and pre-commit passed 85/85. Next move: operator copies the committed T11 work order to one external implementation worker; worker captures its execution base, edits exactly five authorized paths, does not stage or commit, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. This current orchestrator/reviewer then independently inspects, tests, repairs within bounds, accepts or rejects, commits accepted material, and closes. Candidate file loading/copying, workspace materialization, filesystem/environment reads, persistence, acquisition, installation, mutation, action authority, executor, credentials, adapters, provider/live, public sync, push, deployment, and production remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T11 is CLOSED_PASS_BOUNDED: material a54fc8e32b7cf05342db16c060c4c9a1b2413976 and completion review 431724e7485532914984e8c86aeaaf3d1fcbad8e, after one bounded oversized-array repair. Evidence: focused 26/26, T7/T11 52/52, package 789 plus 5 skipped, TypeScript PASS, system-chain CURRENT, reviewer-fast 64/64, pre-commit 85/85, and zero provider/live calls. Next move: upgrade the 2026-08-17 task-proportional governance and absorption redesign from DESIGN_COMPLETE_PENDING_IMPLEMENTATION into mandatory standards, machine checks, and earliest applicable phase gates before dispatching the next absorption tranche; T11 does not count as a tranche governed by the new rules. Runtime, environment I/O, acquisition, mutation, action authority, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T11_CAPABILITY_WORKSPACE_PROFILE_AND_BOOTSTRAP_POLICY_BUNDLE_VALIDATION_KERNEL_2026-08-17.md",
     "baselineSha256": "d6fd118a48199f9673ab845bddd9c0fb9bb801956e0f721fd0e305f2e50f4226",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T11_CAPABILITY_WORKSPACE_PROFILE_AND_BOOTSTRAP_POLICY_BUNDLE_VALIDATION_KERNEL_2026-08-17.md",
-    "workOrderSha256": "2d70b32bdc6efb632de7931b371f612148f94fc9415e498b83de7e889a212489"
+    "workOrderSha256": "767a432b262a29b730d3cfa73b0eb8bf7cbc5a2c8391af71e5650424b0a7cee8"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

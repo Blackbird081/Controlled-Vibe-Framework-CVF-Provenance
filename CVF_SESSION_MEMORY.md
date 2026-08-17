@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator manually copies the committed T11 work order to one external no-commit worker, then this independent reviewer/orchestrator reviews and closes; parked checkpoint=candidate loading/copying, workspace materialization, filesystem/environment reads, persistence, acquisition/install/mutation/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=upgrade the task-proportional governance and absorption redesign into mandatory standards, machine checks, and earliest phase gates before the next absorption tranche; parked checkpoint=runtime, environment I/O, acquisition/install/mutation/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
-Current mode: `rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
-Previous mode: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_closed_bounded_continue_cluster_selection`
+Current mode marker: `rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next`
+Current mode: `rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next`
+Previous mode: `rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
 
 ## Next Allowed Move
 
-Mode: `rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
+Mode: `rspb_ai_t11_closed_bounded_task_proportional_governance_rules_implementation_next`
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
