@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator manually transfers the committed T12 work order to one exact-five-path no-commit external worker, then this reviewer independently reviews; parked checkpoint=runtime, environment I/O, rollback/executor, acquisition/install/mutation/action authority, credentials, adapters, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_reviewer_accepted_pending_closer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=commit T12 completion review, convert the work order to closed bounded, and finalize continuity; parked checkpoint=runtime, environment I/O, rollback/executor, acquisition/install/mutation/action authority, credentials, adapters, provider/live, push/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
-Current mode: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
-Previous mode: `tpgr_t0_shadow_active_next_absorption_tranche_selection`
+Current mode marker: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_reviewer_accepted_pending_closer`
+Current mode: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_reviewer_accepted_pending_closer`
+Previous mode: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
 
 ## Next Allowed Move
 
-Mode: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`; T12 is DISPATCH_READY at `141aaf1d6`, is the first post-activation TPGR work order, and retains the full legacy gate because T0 selective execution remains forbidden.
+Mode: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_reviewer_accepted_pending_closer`; T12 material plus bounded reviewer repair is accepted at `bd1187c84`; completion review, closed work order and final continuity remain.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
