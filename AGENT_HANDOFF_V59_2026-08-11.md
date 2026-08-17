@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local T12 completion-review HEAD before this machine-closure sync: `f280f82ef39d017512835e453f76cb5f30cb7326`.
+- Current local T12 machine-closure HEAD before the next dispatch: `c5ad52456eda067d7616dff657753ca4388639bf`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
