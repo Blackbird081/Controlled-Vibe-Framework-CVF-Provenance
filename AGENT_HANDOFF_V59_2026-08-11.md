@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR Generalized R2G Reviewer Repair Pending
+# CVF Agent Handoff V59 - TPGR Generalized R2G Closed Pending R3 Decision
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -32,8 +32,8 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Current TPGR generalized R2G material HEAD: `94c13660ef3697d65d1151d6ccafb805cdadbaba`.
-- Active mode: `task_proportional_governance_second_upgrade_generalized_r2_material_committed_reviewer_repair_pending`
+- Current TPGR generalized R2G accepted material HEAD: `6dae3bc20ed9f6b6ab809e7b05f2847e9e1a2629`.
+- Active mode: `task_proportional_governance_second_upgrade_generalized_r2_closed_pending_r3_operator_decision`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -42,14 +42,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_generalized_r2_material_committed_reviewer_repair_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=reviewer corrects the bounded checker-command count defect, reruns range gates, and closes continuity; parked checkpoint=R3-R9, T15, rule/checker/registry/catalog implementation, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_generalized_r2_closed_pending_r3_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator may authorize a fresh governed R3 threshold-design dispatch or independently resume RSPB cluster selection; parked checkpoint=R3 implementation until explicit approval, R4-R9, T15, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_generalized_r2_material_committed_reviewer_repair_pending`
+`task_proportional_governance_second_upgrade_generalized_r2_closed_pending_r3_operator_decision`
 
 ## Purpose
 
-Record committed R2G assessment material and constrain the next move to one bounded independent-review repair before closure or any implementation.
+Record independently accepted R2G feasibility closure and constrain R3 to a fresh explicit operator decision and governed dispatch.
 
 ## Scope / Target / Owner Boundary
 
@@ -109,10 +109,10 @@ Record committed R2G assessment material and constrain the next move to one boun
 ## Current Authority
 | Field | Value |
 |---|---|
-| authorityState | TPGR-R2G generalized absorption-routing feasibility assessment dispatched; worker return pending independent review |
+| authorityState | TPGR-R2G `CLOSED_PASS_BOUNDED`; final disposition `PROCEED_TO_THRESHOLD_DESIGN`; R3 not authorized |
 | baselinePath | `docs/baselines/CVF_GC018_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md` |
-| nextAuthorityRequirement | external worker executes exact two-output documentation assessment without stage/commit and returns `COMPLETE_PENDING_REVIEW`; do not open R3 or T15 |
+| nextAuthorityRequirement | operator explicitly authorizes fresh R3 threshold-design dispatch; alternatively resume independent RSPB cluster selection |
 
 ## Closure Evidence
 
@@ -158,7 +158,7 @@ Record committed R2G assessment material and constrain the next move to one boun
 
 ## Next Allowed Move
 
-R2G assessment and worker return are committed at `94c13660ef3697d65d1151d6ccafb805cdadbaba` with the exact two-path manifest. Independent review confirmed the 170-entry registry distribution and 193 checker files, but found that 80 catalog command rows contain 79 direct checker invocations plus one automation-assist wrapper; the recorded `113 catalog-unwired` inference must be corrected to 114 not-directly-referenced checker files with no indirect-use conclusion. Next move is this bounded two-file reviewer repair, range-gate reproduction, material commit, and separate final continuity sync. R3-R9, T15, and implementation remain forbidden.
+R2G is `CLOSED_PASS_BOUNDED`. Original two-file material is `94c13660ef3697d65d1151d6ccafb805cdadbaba`; independent reviewer repair is `6dae3bc20ed9f6b6ab809e7b05f2847e9e1a2629`. Registry distribution is 170 exact; checker evidence is 193 files, 80 pre-implementation command rows, 79 direct checker invocations, one automation-assist wrapper, and 114 checker files not directly referenced. Worker-return fast and both material pre-commit bundles passed; final disposition remains `PROCEED_TO_THRESHOLD_DESIGN`. Next move is operator decision on a fresh R3 dispatch or independent RSPB cluster selection. R3 is not authorized by this closure; R4-R9, T15, and implementation remain forbidden.
 
 ## Active Boundary
 
@@ -191,7 +191,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - TPGR Generalized R2G Repair Handoff
+## Core Guard Self-Protection Authorization - TPGR Generalized R2G Closure Handoff
 
 Protected paths:
 
@@ -200,21 +200,21 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrR2gGeneralizedAbsorptionRoutingFeasibilityAssessmentReviewerRepairPending20260818.json`
+- `CVF_SESSION/state/entries/tpgrR2gGeneralizedAbsorptionRoutingFeasibilityAssessmentClosed20260818.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: the operator requested reusable future-repository
 absorption governance and returned the requested second external critique.
 
 Authorized guard-maintenance scope: continuity-only transition to generalized
-R2G material committed with one bounded reviewer repair pending, binding the
-exact material HEAD, defect, and still-parked implementation boundary.
+R2G closed pending R3 operator decision, binding both material commits,
+corrected evidence hashes, final disposition, and parked implementation.
 
 Rollback boundary: revert this exact continuity batch as one unit; do not
 separate generated state from its source fragments.
 
 ## Claim Boundary
 
-This handoff authorizes only the bounded two-file reviewer repair, verification, material commit, and final continuity sync. It authorizes no R3-R9 implementation, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
+This handoff records bounded R2G closure and authorizes only an operator decision on a fresh R3 dispatch or independent RSPB cluster selection. It authorizes no R3-R9 implementation, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
