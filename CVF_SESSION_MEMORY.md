@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decides whether to authorize R2 read-only feasibility assessment, modify the revised plan, or reject the upgrade; parked checkpoint=R2-R9, T15, rules/checkers/catalog edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decides whether to authorize generalized R2G feasibility, modify its plan, or reject the upgrade; parked checkpoint=R2G-R9, T15, rules/checkers/registries/catalog edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`
-Current mode: `task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`
-Previous mode: `task_proportional_governance_second_upgrade_external_critique_pending`
+Current mode marker: `task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`
+Current mode: `task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`
+Previous mode: `task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`
 
 ## Next Allowed Move
 
-Mode: `task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`; critique and reconciliation/revised plan are committed at `cb53aad75`. Operator decides `APPROVE_R2_READ_ONLY_FEASIBILITY_ASSESSMENT`, `MODIFY_REVISED_PLAN`, or `REJECT_TPGR_SECOND_UPGRADE`. R2 and all implementation remain unauthorized; do not open T15.
+Mode: `task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`; generalization critique and CVF R2G rescope are committed at `2e7f98609`. Operator decides `APPROVE_GENERALIZED_R2_FEASIBILITY_ASSESSMENT`, `MODIFY_GENERALIZED_R2_PLAN`, or `REJECT_TPGR_SECOND_UPGRADE`. R2G and all implementation remain unauthorized; do not open T15.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

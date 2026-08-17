@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR Revised Plan Pending Operator Decision
+# CVF Agent Handoff V59 - TPGR Generalized R2G Pending Operator Decision
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -32,8 +32,8 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Current TPGR critique-reconciliation HEAD: `cb53aad7546d3529ede88987525d6007468eeb63`.
-- Active mode: `task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`
+- Current TPGR generalization-reconciliation HEAD: `2e7f986095cf50a990344c443c47b3090df41095`.
+- Active mode: `task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -42,14 +42,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decides on R2 read-only feasibility only; parked checkpoint=R2-R9, T15, rule/checker/catalog implementation, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decides on generalized R2G feasibility only; parked checkpoint=R2G-R9, T15, rule/checker/registry/catalog implementation, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`
+`task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`
 
 ## Purpose
 
-Record the reconciled TPGR revised plan and constrain the next move to an explicit operator decision before R2 or implementation.
+Record the generalized TPGR/absorption boundary and constrain the next move to an explicit operator decision before R2G or implementation.
 
 ## Scope / Target / Owner Boundary
 
@@ -158,7 +158,7 @@ Record the reconciled TPGR revised plan and constrain the next move to an explic
 
 ## Next Allowed Move
 
-External critique and CVF reconciliation/revised plan are committed at `cb53aad7546d3529ede88987525d6007468eeb63`. Revised-plan SHA-256: `3f4f922f083d499a6c8c908e6c30b564cb808e2dceeeebe14d885e129a513582`. Next move is operator decision: approve R2 read-only feasibility, modify the revised plan, or reject the upgrade. R2-R9, rule/checker/catalog changes, T15, UI/runtime/provider/live/public/deploy/production remain forbidden until separately authorized.
+Generalization critique and CVF reconciliation/R2G rescope are committed at `2e7f986095cf50a990344c443c47b3090df41095`. Rescope SHA-256: `96b4bf3b3728d1fca5204e8aba4e6481b52c2c57bb7b40e3ae2db0cedeee5aef`. Next move is operator decision: approve generalized R2G feasibility, modify its plan, or reject the upgrade. R2G-R9, rule/checker/registry/catalog changes, T15, UI/runtime/provider/live/public/deploy/production remain forbidden until separately authorized.
 
 ## Active Boundary
 
@@ -191,7 +191,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - TPGR Revised Plan Decision Handoff
+## Core Guard Self-Protection Authorization - TPGR Generalized R2G Decision Handoff
 
 Protected paths:
 
@@ -200,21 +200,21 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/taskProportionalGovernanceSecondUpgradeCritiqueReconciled20260817.json`
+- `CVF_SESSION/state/entries/taskProportionalGovernanceSecondUpgradeGeneralizationReconciled20260817.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator requested the next step after T14 and
-previously required external critique and reconciliation before implementation.
+Operator authorization: the operator requested reusable future-repository
+absorption governance and returned the requested second external critique.
 
-Authorized guard-maintenance scope: continuity-only transition from external
-critique pending to revised-plan operator decision pending, binding the exact
-committed reconciliation and its SHA-256.
+Authorized guard-maintenance scope: continuity-only transition to generalized
+R2G operator decision pending, binding the exact committed reconciliation and
+its SHA-256.
 
 Rollback boundary: revert this exact continuity batch as one unit; do not
 separate generated state from its source fragments.
 
 ## Claim Boundary
 
-This handoff records a revised TPGR plan pending operator decision. It authorizes no R2 assessment, implementation, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
+This handoff records a generalized R2G plan pending operator decision. It authorizes no R2G assessment, implementation, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2280,
+  "stateKey": "taskProportionalGovernanceSecondUpgradeGeneralizationReconciled20260817",
+  "value": "The second TPGR generalization critique and CVF reconciliation/R2G rescope are committed at 2e7f986095cf50a990344c443c47b3090df41095. Original external return SHA-256 is f27d420ccc1c56a7d62fa35c4fd4c8684b7ab0d99e7ff316bfe7185dbd9122db; normalized critique SHA-256 is f969f6a64df66dd3e151b822cff88d72547cec59b0e272e5f856036bd256a0cc; reconciliation SHA-256 is 96b4bf3b3728d1fca5204e8aba4e6481b52c2c57bb7b40e3ae2db0cedeee5aef. CVF accepts SPLIT_TPGR_AND_ABSORPTION_ARCHITECTURE as a responsibility boundary and REVISE_R2_SCOPE_BEFORE_APPROVAL with corrections: 170 registry entries are governed-use evidence, not production proof; named inputs do not automatically require corpus registration; delta drift targets the earliest affected node; completion vocabulary is scoped rather than globally retroactive. Next authority is operator decision on generalized R2G only; R2G-R9, selective execution, T15, rule/checker/registry/catalog changes, source intake, runtime/provider/live/public/deploy/production remain unauthorized."
+}
