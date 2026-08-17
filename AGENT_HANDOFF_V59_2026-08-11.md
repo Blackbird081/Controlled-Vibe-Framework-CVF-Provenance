@@ -104,6 +104,7 @@ Record T10 bounded closure and return to local-first cluster selection.
 - RSPB-AI-T6 implementation plus disclosed bounded reviewer repair is materially committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 - RSPB-AI-T7 is `CLOSED_PASS_BOUNDED`: material plus reviewer repair `63b2f7367`, completion review `25b19b3d5`, machine closure `055252ddb`; focused 26/26, composed 57/57, package 650 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 - RSPB-AI-T10 is `CLOSED_PASS_BOUNDED`: material plus disclosed reviewer repair `8de69410c`, completion review `a3ee9229e`, machine closure `a32169417`. Probes repaired nonexistent-calendar normalization, optimistic restricted/offline network projection, and contradictory AVAILABLE API/MCP path-plus-endpoint evidence. Evidence: focused 20/20, T4/T10 composed 39/39, package 763 passed plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
+- RSPB-AI-T11 is dispatched at `8996a4e0e74856e293ee5ba36fa310b57f50a030`: seven profile/policy hashes matched, pre-dispatch 77/77 and pre-commit 85/85 passed. Operator manually copies the committed work order to one external no-commit worker; worker owns exactly five paths and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`, then this current independent reviewer/orchestrator owns review, bounded repair, acceptance, commit, and closure. Loading/copying templates, workspace materialization, filesystem/environment reads, persistence, acquisition/install/mutation/action, runtime/provider/live/public/deploy/production remain forbidden.
 - RSPB-AI-T9 is `CLOSED_PASS_BOUNDED`: material plus disclosed bounded reviewer repair `5e5aeb8a4`, completion review `d34dce4c5`, machine closure `b78651eac`. Probes repaired inherited Array-subclass hook execution, missing artifact-version binding, and secret-detector false positives. Evidence: focused 42/42, T3/T8/T9 composed 105/105, package 743 passed plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 
 ## Current Authority
@@ -191,7 +192,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T10 Reviewer Acceptance Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T11 Dispatch Sync
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -201,19 +202,19 @@ Protected paths:
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelDispatched20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelReviewerAccepted20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelClosed20260816.json`
-- `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelDispatched20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelReviewerAccepted20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelCompletionReview20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelClosed20260817.json`
+- `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelDispatched20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelReviewerAccepted20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelCompletionReview20260817.json`; `CVF_SESSION/state/entries/rspbAiT10CapabilityEnvironmentSnapshotEvidenceValidationKernelClosed20260817.json`; `CVF_SESSION/state/entries/rspbAiT11CapabilityWorkspaceProfileBootstrapPolicyBundleValidationKernelDispatched20260817.json`
 - `CVF_SESSION/state/entries/rspbAiT7ProfilePolicyKernelReviewerAccepted20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT7ProfilePolicyKernelClosed20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelDispatched20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelReviewerAccepted20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelClosed20260816.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator explicitly assigned this agent as reviewer/orchestrator and another agent as implementation worker.
-Authorized guard-maintenance scope: record T10 bounded closure and route only the next local-first cluster selection.
+Operator authorization: operator explicitly assigned this agent as reviewer/orchestrator and will manually transfer the work order to another implementation worker.
+Authorized guard-maintenance scope: record the committed T11 dispatch and manual external-worker handoff only.
 Rollback boundary: revert this exact session-sync batch as one unit; do not separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records RSPB-AI-T10 bounded closure and return to local-first cluster selection only. It does not authorize environment scanning, snapshot persistence, profile loading, environment I/O, a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
+This handoff records RSPB-AI-T11 bounded dispatch and manual external-worker transfer only. It does not authorize template loading/copying, workspace materialization, environment scanning, snapshot persistence, profile loading, environment I/O, a router, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
