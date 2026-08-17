@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t13_closed_bounded_next_absorption_tranche_selection",
+  "currentMode": "rspb_ai_t14_capability_preflight_advisory_operator_projection_kernel_dispatched_pending_worker",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T13 is CLOSED_PASS_BOUNDED with material 737ae97fb3e2fb29524019df04b29f8f4b618a5c and completion review f232eeeecf70f9a175eb8028a648130f86c8823d. Reviewer proof: focused 39/39, composed T7/T12/T13 93/93, full package 856 passed plus 5 skipped, TypeScript PASS, system-chain CURRENT, worker-return fast PASS, reviewer-fast 65/65, material pre-commit 86/86, and zero provider/live calls. Candidate projection, ACTIVE UAT gating, revoked-Proxy safety, packet shape, and freshness were repaired. Next move: select the next non-duplicate high-value capability cluster from the reconciled 205-file local ledger and author a fresh source-verified TPGR-governed work order. Selective execution remains forbidden. Registry/index reads, package-body reads, activation/loading/resolution/execution/mutation, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T14 is DISPATCH_READY at ccc15d89345af977656dc66b0ab8cf274d0a0b92. Seven selected advisory-projection source files matched their accepted T0 ledger hashes and were fully read; direct import was rejected because the proposal uses coercive any mapping, React callbacks, and action semantics. Pre-dispatch passed 78/78 and dispatch pre-commit passed 86/86. Next move: the operator manually transfers the committed T14 work order to one external worker; worker scope is exactly five paths, no stage/commit, with COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON, after which the current reviewer/orchestrator independently owns inspection, hostile proof, bounded repair, acceptance, commit, and closure. Route is P2_BOUNDED/ROUTED_SHADOW and selective execution remains false. UI rendering, API/callback/approval/action execution, registry/generated-index changes, package loading, runtime, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_2026-08-17.md",
-    "baselineSha256": "87ce30f0415ffda2afe99a18e25b91c6d3ca55551f14d802864504c55e106e66",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_2026-08-17.md",
-    "workOrderSha256": "32892d1b9c23b8b0076f92864bb1caa9e2f6cee9fc4d3da5f616825f2a2984c8"
+    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md",
+    "baselineSha256": "df8bed687541be91dfddf8213806bd3090b35909e1193b1ba4dddc5bf28d385a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md",
+    "workOrderSha256": "8e7bad9f89217bde45688cb096eb5fe090dbab2aa456af880a6c28eb3b94b5c7"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

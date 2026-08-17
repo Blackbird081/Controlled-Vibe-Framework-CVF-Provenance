@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2275,
+  "stateKey": "rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelDispatched20260817",
+  "value": "RSPB-AI-T14 is DISPATCH_READY at ccc15d89345af977656dc66b0ab8cf274d0a0b92 from dispatch base 8b7838356939f3fd79101c936a861aecb1aface5. Seven selected advisory-projection source files totaling 7935 bytes matched the accepted T0 ledger and were fully read. Direct import was rejected because the candidate uses coercive any mapping, React callbacks, and action semantics. TPGR routes P2_BOUNDED/ROUTED_SHADOW with selective execution false and the full legacy gate retained. Pre-dispatch passed 78/78 and pre-commit passed 86/86. The external worker is limited to exactly five paths, may not stage or commit, and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; independent reviewer inspection, hostile proof, repair, acceptance, commit, and closure remain pending."
+}
