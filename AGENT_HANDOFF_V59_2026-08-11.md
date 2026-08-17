@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local T11 review base HEAD before this handoff sync: `52c8a62b7`.
+- Current local T11 material HEAD before this handoff sync: `a54fc8e32`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -104,7 +104,7 @@ Record T11 external-worker return and independent-review authority without widen
 - RSPB-AI-T6 implementation plus disclosed bounded reviewer repair is materially committed at `2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1` and independently accepted pending closer. Focused 60/60, bridge 3/3, direct full package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 - RSPB-AI-T7 is `CLOSED_PASS_BOUNDED`: material plus reviewer repair `63b2f7367`, completion review `25b19b3d5`, machine closure `055252ddb`; focused 26/26, composed 57/57, package 650 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 - RSPB-AI-T10 is `CLOSED_PASS_BOUNDED`: material plus disclosed reviewer repair `8de69410c`, completion review `a3ee9229e`, machine closure `a32169417`. Probes repaired nonexistent-calendar normalization, optimistic restricted/offline network projection, and contradictory AVAILABLE API/MCP path-plus-endpoint evidence. Evidence: focused 20/20, T4/T10 composed 39/39, package 763 passed plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
-- RSPB-AI-T11 is dispatched at `8996a4e0e74856e293ee5ba36fa310b57f50a030`: seven profile/policy hashes matched, pre-dispatch 77/77 and pre-commit 85/85 passed. Operator manually copies the committed work order to one external no-commit worker; worker owns exactly five paths and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`, then this current independent reviewer/orchestrator owns review, bounded repair, acceptance, commit, and closure. Loading/copying templates, workspace materialization, filesystem/environment reads, persistence, acquisition/install/mutation/action, runtime/provider/live/public/deploy/production remain forbidden.
+- RSPB-AI-T11 is materially accepted at `a54fc8e32b7cf05342db16c060c4c9a1b2413976` after one bounded oversized-array repair. Focused 26/26, T7/T11 52/52, package 789 plus 5 skipped, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, and system-chain freshness CURRENT. Completion review and closed-mode continuity remain closer-owned. Loading/copying templates, workspace materialization, filesystem/environment reads, persistence, acquisition/install/mutation/action, runtime/provider/live/public/deploy/production remain forbidden.
 - RSPB-AI-T9 is `CLOSED_PASS_BOUNDED`: material plus disclosed bounded reviewer repair `5e5aeb8a4`, completion review `d34dce4c5`, machine closure `b78651eac`. Probes repaired inherited Array-subclass hook execution, missing artifact-version binding, and secret-detector false positives. Evidence: focused 42/42, T3/T8/T9 composed 105/105, package 743 passed plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 
 ## Current Authority
