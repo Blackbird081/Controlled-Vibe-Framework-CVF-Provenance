@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t12_closed_bounded_next_absorption_tranche_selection",
+  "currentMode": "rspb_ai_t13_assf_package_metadata_to_capability_preflight_candidate_binding_kernel_dispatched_pending_worker",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T12 is CLOSED_PASS_BOUNDED with material bd1187c8402da94d3bf47a6df7e3b31dad3ae02f and completion review f280f82ef39d017512835e453f76cb5f30cb7326. Reviewer proof: focused 28/28, composed T9-T12 116/116, full package 817 passed plus 5 skipped, TypeScript PASS, system-chain freshness CURRENT, reviewer-fast 65/65, material pre-commit 86/86, and zero provider/live calls. T12 is the first closed post-activation TPGR-T0 tranche; selective execution remains forbidden. Next move: select the next high-value capability cluster from the reconciled 205-file local ledger and author a fresh source-verified TPGR-governed work order, rejecting duplicate/NO_NEW_VALUE clusters before dispatch. Runtime/environment I/O, rollback/executor, acquisition/install/mutation/action authority, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T13 is DISPATCH_READY at c8d6f016b2a1ed33abf1b250ca785aab56dcf9c0. The selected one-file ASSF package-metadata-to-capability-preflight binding source matched SHA-256 984ec80802dbcfa304eaecc254963e976dceee9530982294c4fabfabaf1929d9; integrity, secret-safety, and learning-promotion candidates were rejected as duplicate/NO_NEW_VALUE. Pre-dispatch passed 78/78 and dispatch pre-commit passed 86/86. Next move: the operator manually transfers the committed work order to one external worker; worker scope is exactly five paths, no stage/commit, with COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON, after which the current reviewer/orchestrator independently owns inspection, hostile proof, bounded repair, acceptance, commit, and closure. Route is P2_BOUNDED/ROUTED_SHADOW and selective execution remains false. Registry/index reads, package-body reads, activation/loading/resolution/execution/mutation, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md",
-    "baselineSha256": "32deac6daad5d2db12426d330a69c04dfc70840e17f0206f06ee3e855ff97da0",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md",
-    "workOrderSha256": "c58a4ac4ccba5e5fddc03412a32cc8116d075c38abe2c09eb2ca8105b1482f25"
+    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_2026-08-17.md",
+    "baselineSha256": "87ce30f0415ffda2afe99a18e25b91c6d3ca55551f14d802864504c55e106e66",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_2026-08-17.md",
+    "workOrderSha256": "22ac686d1d966909bf52cf72b869e259d518b9a38b7ed8fa9507760d990d39c1"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
