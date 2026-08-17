@@ -33,7 +33,7 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Current reviewer-acceptance HEAD: `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94`.
+- Current T14 closure HEAD: `b890a459f27a5d08c2301011f7b550c74adc0e32`.
 - Active mode: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
