@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T10 Closed Bounded Continue Cluster Selection
+# CVF Agent Handoff V59 - RSPB-AI-T11 Pending Independent Review
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current local T10 machine-closure HEAD before this handoff sync: `a32169417`.
+- Current local T11 review base HEAD before this handoff sync: `52c8a62b7`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -34,7 +34,7 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Active mode: `rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_closed_bounded_continue_cluster_selection`
+- Active mode: `rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -43,14 +43,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_closed_bounded_continue_cluster_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select the next highest-value local synthesis cluster from the accepted 205-file ledger without restarting full-corpus proof, then dispatch one external no-commit worker followed by this independent reviewer/orchestrator; parked checkpoint=environment scanning, snapshot persistence, acquisition/network/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independently review the exact five-path no-commit T11 worker return, repair only bounded defects, then decide acceptance and closure; parked checkpoint=template loading/copying, workspace materialization, environment scanning/read, snapshot persistence, acquisition/install/mutation/action authority, executor, credentials, adapters, provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t10_capability_environment_snapshot_evidence_validation_kernel_closed_bounded_continue_cluster_selection`
+`rspb_ai_t11_capability_workspace_profile_bootstrap_policy_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
 
 ## Purpose
 
-Record T10 bounded closure and return to local-first cluster selection.
+Record T11 external-worker return and independent-review authority without widening the pure contract scope.
 
 ## Scope / Target / Owner Boundary
 
