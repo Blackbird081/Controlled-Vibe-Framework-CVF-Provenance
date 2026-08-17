@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "tpgr_t0_shadow_active_next_absorption_tranche_selection",
+  "currentMode": "rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_dispatched_manual_external_worker_pending_review",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "TPGR-T0 shadow routing is ACTIVE at material commit 06ef6c043. The canonical standard, closed manifest schema, deterministic fail-closed router, range checker, focused proof, and four earliest-phase catalog bindings are accepted; 55/55 focused/catalog tests, reviewer-fast 65/65, and material pre-commit 86/86 passed. Selective execution remains forbidden and every receipt retains RUN_FULL_LEGACY_BUNDLE. Next move: select the next high-value capability cluster from the reconciled 205-file local ledger and author one fresh source-verified absorption work order carrying a valid cvf.taskGovernanceManifest.v1 block; T11 is pre-activation and does not count. Worker execution remains parked until that packet is independently reviewed and committed. Runtime/environment I/O, acquisition/install/mutation/action authority, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T12 is DISPATCH_READY at material commit 141aaf1d6588dab089f33bd611581fc66a167701 and is the first post-activation TPGR-T0 work order. The operator may manually transfer the committed T12 work order to one external worker. That worker is restricted to the exact five-path manifest, must not stage or commit, and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; this reviewer/orchestrator independently owns diff inspection, proof reproduction, bounded repair, acceptance, commit, and closure. TPGR-T0 remains shadow-only: selectiveExecutionAuthorized=false and RUN_FULL_LEGACY_BUNDLE remains mandatory. Runtime/environment I/O, rollback/executor, acquisition/install/mutation/action authority, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T11_CAPABILITY_WORKSPACE_PROFILE_AND_BOOTSTRAP_POLICY_BUNDLE_VALIDATION_KERNEL_2026-08-17.md",
-    "baselineSha256": "d6fd118a48199f9673ab845bddd9c0fb9bb801956e0f721fd0e305f2e50f4226",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T11_CAPABILITY_WORKSPACE_PROFILE_AND_BOOTSTRAP_POLICY_BUNDLE_VALIDATION_KERNEL_2026-08-17.md",
-    "workOrderSha256": "767a432b262a29b730d3cfa73b0eb8bf7cbc5a2c8391af71e5650424b0a7cee8"
+    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md",
+    "baselineSha256": "32deac6daad5d2db12426d330a69c04dfc70840e17f0206f06ee3e855ff97da0",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md",
+    "workOrderSha256": "d6f7135c1a52288a6550625a75b18e4eab804f6bb1c02dbe67641354c118c26c"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
