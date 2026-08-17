@@ -296,14 +296,13 @@ Independently recomputed at `executionBaseHead` by direct import of
 
 The 193-file count and the 80-command executed count are different
 measurements by design: 193 counts every checker script that exists on
-disk; 80 counts only the commands the pre-implementation phase catalog
-actually wires into its run. This is the `catalog-unwired` distinction the
-R2G reconciliation and the external critique both required to be kept
-exact rather than collapsed into a single "orphan checker" claim. This
-worksheet does not attempt to enumerate the exact non-implementation
-disposition of every one of the 113 catalog-unwired checkers; that is a
-separate, larger classification task outside this assessment's bounded
-scope.
+disk; 80 counts command rows in the pre-implementation phase catalog.
+Independent reviewer parsing found that 79 of those rows directly invoke a
+distinct `check_*.py` script and one invokes the automation-assist wrapper.
+Therefore 114 checker files are not directly referenced by that phase's
+command rows. This direct-reference count does not classify indirect use,
+dead code, or phase applicability. The worksheet does not attempt that
+larger classification task.
 
 ## Current Full-Gate Sample
 
@@ -470,12 +469,13 @@ Interface Candidate section; a design that adds a sixth fact, restates a
 manifest/ledger field, or introduces a second registry should be treated as
 a stop-condition trigger even if this assessment did not observe one.
 
-Secondary risk: the 113 catalog-unwired checkers (193 total minus 80 wired
-into the pre-implementation phase) were not individually classified by this
+Secondary risk: 114 checker files are not directly referenced by the
+pre-implementation catalog's command rows (193 total checker files minus 79
+distinct directly invoked checker scripts; the eightieth command is the
+automation-assist wrapper). They were not individually classified by this
 bounded assessment. A future R3+ or catalog-maintenance tranche should not
-assume every catalog-unwired checker is either dead code or a phase-gap;
-that determination is out of this assessment's scope and must not be
-inferred from the counts recorded here.
+assume each is dead code, indirectly unwired, or a phase gap; that
+determination is out of scope and cannot be inferred from these counts.
 
 Tertiary risk: this assessment's A2 and A3 worksheets both cite prior
 audits whose own status lines record supersession or pending-closer state

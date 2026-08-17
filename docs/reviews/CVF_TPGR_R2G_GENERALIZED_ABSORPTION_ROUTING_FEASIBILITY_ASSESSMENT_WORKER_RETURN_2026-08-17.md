@@ -104,11 +104,12 @@ No unrepaired risk remains in the worker's own scope. Two residual risks
 are recorded for reviewer attention rather than repaired by the worker,
 since repairing them would exceed the worker's exact two-path manifest:
 
-1. the 113 catalog-unwired checkers (193 total `check_*.py` files minus 80
-   wired into the pre-implementation phase) were not individually
-   classified by this bounded assessment; a future tranche must not assume
-   every catalog-unwired checker is dead code or a phase gap from this
-   worker return's counts alone.
+1. 114 checker files are not directly referenced by pre-implementation
+   catalog command rows: 193 total `check_*.py` files minus 79 distinct
+   directly invoked checker scripts; the eightieth command invokes the
+   automation-assist wrapper. They were not individually classified by this
+   bounded assessment; no dead-code, indirect-use, or phase-gap conclusion
+   follows from this direct-reference count alone.
 2. archetypes A2 and A3 cite source documents whose own top status lines
    record supersession (`SUPERSEDED_IN_DECISION_BY_MODS_T0_CORRECTION`) or
    pending-closer state (`REVIEWER_ACCEPTED_PENDING_CLOSER`); this worker
@@ -376,3 +377,22 @@ was performed by this worker. Reviewer/closer owns material commit.
 | Work order status | `dispatchWorkOrder: docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md`, work order `Status: DISPATCH_READY` | N/A with reason: reviewer/closer owns closure conversion; work order remains dispatch-shaped, not closed by this worker return |
 | Changed set | `## Actual Changed Set` | exactly two authorized paths, both untracked |
 | Gate evidence | the Gate Evidence and Command Evidence sections | all five verification commands PASS |
+
+## Independent Reviewer Addendum
+
+Reviewer disposition: `ACCEPTED_WITH_BOUNDED_REPAIR`.
+
+The reviewer independently parsed the 170-entry corpus registry and matched
+the worker's full type/status distribution, re-globbed 193 `check_*.py`
+files, and parsed the pre-implementation command catalog. That catalog has
+80 command rows but only 79 distinct direct `check_*.py` invocations; its
+remaining row invokes `run_agent_automation_assist.py`. The worker's
+`193 - 80 = 113 catalog-unwired checkers` statement was therefore repaired
+to the precise direct-reference result of 114. This correction changes no
+A1-A6 worksheet result, stop-condition result, or final disposition.
+
+The reviewer also reproduced the exact two-path commit range, task route
+`COMPLIANT` result, and range-aware governance checks. Material commit
+`94c13660e` required a separate continuity repair before this bounded
+two-file correction could be committed without mixing material and session
+state. Final closure still requires a separate continuity sync afterward.
