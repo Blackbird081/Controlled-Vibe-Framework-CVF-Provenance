@@ -527,3 +527,24 @@ export {
   CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_RESULT_VERSION,
   evaluateCapabilityBootstrapClosureEvidenceBundle,
 } from './capability-bootstrap-closure-evidence-bundle.contract';
+
+export type {
+  AssfPackageLifecycleStatus,
+  AssfPackageRiskLevel,
+  AssfCliMcpDisposition,
+  AssfCandidateApprovalState,
+  AssfCandidateUatState,
+  AssfCandidateCertificationState,
+  AssfPackageMetadata,
+  AssfCapabilityPreflightCandidateBindingInput,
+  AssfCapabilityPreflightCandidateBindingIssueCode,
+  AssfCapabilityPreflightCandidateBindingIssue,
+  AssfCapabilityPreflightCandidateBindingStatus,
+  AssfCapabilityPreflightCandidateBindingResult,
+} from './assf-capability-preflight-candidate-binding.contract';
+
+export {
+  ASSF_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_CONTRACT_VERSION,
+  ASSF_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_RESULT_VERSION,
+  evaluateAssfCapabilityPreflightCandidateBinding,
+} from './assf-capability-preflight-candidate-binding.contract';

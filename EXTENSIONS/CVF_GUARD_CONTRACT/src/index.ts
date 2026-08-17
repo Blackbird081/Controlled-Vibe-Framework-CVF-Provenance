@@ -289,6 +289,31 @@ export {
   evaluateCapabilityBootstrapClosureEvidenceBundle,
 } from './contracts/capability-bootstrap-closure-evidence-bundle.contract';
 
+// RSPB-AI-T13 ASSF package metadata to capability-preflight candidate binding
+// kernel (pure, in-memory; no registry/index read, package activation,
+// loading, instruction-body read, execution, mutation, external adapter,
+// provider/live, public, or deployment authority). authorityStatus is the
+// literal CANDIDATE_ONLY on every path.
+export type {
+  AssfPackageLifecycleStatus,
+  AssfPackageRiskLevel,
+  AssfCliMcpDisposition,
+  AssfCandidateApprovalState,
+  AssfCandidateUatState,
+  AssfCandidateCertificationState,
+  AssfPackageMetadata,
+  AssfCapabilityPreflightCandidateBindingInput,
+  AssfCapabilityPreflightCandidateBindingIssueCode,
+  AssfCapabilityPreflightCandidateBindingIssue,
+  AssfCapabilityPreflightCandidateBindingStatus,
+  AssfCapabilityPreflightCandidateBindingResult,
+} from './contracts/assf-capability-preflight-candidate-binding.contract';
+export {
+  ASSF_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_CONTRACT_VERSION,
+  ASSF_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_RESULT_VERSION,
+  evaluateAssfCapabilityPreflightCandidateBinding,
+} from './contracts/assf-capability-preflight-candidate-binding.contract';
+
 // Phase E receipt binding contract
 export type {
   ReceiptBindingDisposition,
