@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision",
+  "currentMode": "task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "The TPGR generalization critique and CVF reconciliation/R2G rescope are committed at 2e7f986095cf50a990344c443c47b3090df41095. Reconciliation path docs/reviews/CVF_TPGR_SECOND_UPGRADE_GENERALIZATION_CRITIQUE_RECONCILIATION_AND_R2_RESCOPE_2026-08-17.md has SHA-256 96b4bf3b3728d1fca5204e8aba4e6481b52c2c57bb7b40e3ae2db0cedeee5aef. Next move is operator decision only: APPROVE_GENERALIZED_R2_FEASIBILITY_ASSESSMENT, MODIFY_GENERALIZED_R2_PLAN, or REJECT_TPGR_SECOND_UPGRADE. R2G and all later stages remain unauthorized until that decision. Do not open T15 or modify rules/checkers/registries/catalogs; runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Generalized TPGR R2G baseline and no-commit work order are committed at 618dfe0b092133fa2b294232a9737e3c60000267. Next move is operator transfer of the work order to an external worker starting from the clean post-dispatch continuity HEAD. The worker must write exactly the two authorized outputs, must not stage or commit, and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. R3-R9, T15, rules/checkers/registries/catalogs, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md",
-    "baselineSha256": "df8bed687541be91dfddf8213806bd3090b35909e1193b1ba4dddc5bf28d385a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md",
-    "workOrderSha256": "01e8118f5e5a96673d66dab6a503a7adc933c240a3f4c95c9db64970040cf81a"
+    "baselinePath": "docs/baselines/CVF_GC018_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md",
+    "baselineSha256": "c9642558b1bdf38f1d2e3bc6392ab1214dbebc35ae7869ef33fc7df9b4ad5e6a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md",
+    "workOrderSha256": "f484f3ed18c09e4e3f6aa0bc289c2d3b5fe6c72bc853c66052e02970d01b32fe"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

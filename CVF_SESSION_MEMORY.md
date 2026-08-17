@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decides whether to authorize generalized R2G feasibility, modify its plan, or reject the upgrade; parked checkpoint=R2G-R9, T15, rules/checkers/registries/catalog edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed generalized R2G work order to a no-commit external worker; parked checkpoint=R3-R9, T15, rules/checkers/registries/catalog edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`
-Current mode: `task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`
-Previous mode: `task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`
+Current mode marker: `task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`
+Current mode: `task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`
+Previous mode: `task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`
 
 ## Next Allowed Move
 
-Mode: `task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`; generalization critique and CVF R2G rescope are committed at `2e7f98609`. Operator decides `APPROVE_GENERALIZED_R2_FEASIBILITY_ASSESSMENT`, `MODIFY_GENERALIZED_R2_PLAN`, or `REJECT_TPGR_SECOND_UPGRADE`. R2G and all implementation remain unauthorized; do not open T15.
+Mode: `task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`; generalized R2G baseline/work order are committed at `618dfe0b0`. Operator transfers the work order to an external worker that must create exactly two authorized outputs without stage/commit and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. R3-R9 and T15 remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

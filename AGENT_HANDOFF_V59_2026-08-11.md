@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR Generalized R2G Pending Operator Decision
+# CVF Agent Handoff V59 - TPGR Generalized R2G Dispatched Pending Worker Return
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -32,8 +32,8 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Current TPGR generalization-reconciliation HEAD: `2e7f986095cf50a990344c443c47b3090df41095`.
-- Active mode: `task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`
+- Current TPGR generalized R2G dispatch HEAD: `618dfe0b092133fa2b294232a9737e3c60000267`.
+- Active mode: `task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -42,14 +42,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decides on generalized R2G feasibility only; parked checkpoint=R2G-R9, T15, rule/checker/registry/catalog implementation, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed R2G work order to a no-commit external worker; parked checkpoint=R3-R9, T15, rule/checker/registry/catalog implementation, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`
+`task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`
 
 ## Purpose
 
-Record the generalized TPGR/absorption boundary and constrain the next move to an explicit operator decision before R2G or implementation.
+Record the generalized TPGR/absorption boundary and constrain the next move to the dispatched documentation-only R2G feasibility assessment before any implementation.
 
 ## Scope / Target / Owner Boundary
 
@@ -109,10 +109,10 @@ Record the generalized TPGR/absorption boundary and constrain the next move to a
 ## Current Authority
 | Field | Value |
 |---|---|
-| authorityState | RSPB-AI-T14 CLOSED_PASS_BOUNDED; plan-only TPGR second upgrade pending Claude critique |
-| baselinePath | `docs/baselines/CVF_GC018_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md` |
-| nextAuthorityRequirement | author critique-ready TPGR redesign plan only; Claude critique and operator approval precede implementation; do not open T15 |
+| authorityState | TPGR-R2G generalized absorption-routing feasibility assessment dispatched; worker return pending independent review |
+| baselinePath | `docs/baselines/CVF_GC018_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md` |
+| nextAuthorityRequirement | external worker executes exact two-output documentation assessment without stage/commit and returns `COMPLETE_PENDING_REVIEW`; do not open R3 or T15 |
 
 ## Closure Evidence
 
@@ -158,7 +158,7 @@ Record the generalized TPGR/absorption boundary and constrain the next move to a
 
 ## Next Allowed Move
 
-Generalization critique and CVF reconciliation/R2G rescope are committed at `2e7f986095cf50a990344c443c47b3090df41095`. Rescope SHA-256: `96b4bf3b3728d1fca5204e8aba4e6481b52c2c57bb7b40e3ae2db0cedeee5aef`. Next move is operator decision: approve generalized R2G feasibility, modify its plan, or reject the upgrade. R2G-R9, rule/checker/registry/catalog changes, T15, UI/runtime/provider/live/public/deploy/production remain forbidden until separately authorized.
+Generalized R2G baseline and no-commit work order are committed at `618dfe0b092133fa2b294232a9737e3c60000267`. Baseline SHA-256: `c9642558b1bdf38f1d2e3bc6392ab1214dbebc35ae7869ef33fc7df9b4ad5e6a`; work-order SHA-256: `f484f3ed18c09e4e3f6aa0bc289c2d3b5fe6c72bc853c66052e02970d01b32fe`. Next move is operator transfer to the external worker, which must start clean from the post-dispatch continuity HEAD, write exactly the two authorized outputs, not stage or commit, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. R3-R9, rule/checker/registry/catalog changes, T15, UI/runtime/provider/live/public/deploy/production remain forbidden.
 
 ## Active Boundary
 
@@ -191,7 +191,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - TPGR Generalized R2G Decision Handoff
+## Core Guard Self-Protection Authorization - TPGR Generalized R2G Dispatch Handoff
 
 Protected paths:
 
@@ -200,21 +200,21 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/taskProportionalGovernanceSecondUpgradeGeneralizationReconciled20260817.json`
+- `CVF_SESSION/state/entries/tpgrR2gGeneralizedAbsorptionRoutingFeasibilityAssessmentDispatched20260817.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: the operator requested reusable future-repository
 absorption governance and returned the requested second external critique.
 
 Authorized guard-maintenance scope: continuity-only transition to generalized
-R2G operator decision pending, binding the exact committed reconciliation and
-its SHA-256.
+R2G dispatched pending worker return, binding the exact committed baseline,
+work order, hashes, and worker-no-commit boundary.
 
 Rollback boundary: revert this exact continuity batch as one unit; do not
 separate generated state from its source fragments.
 
 ## Claim Boundary
 
-This handoff records a generalized R2G plan pending operator decision. It authorizes no R2G assessment, implementation, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
+This handoff authorizes only the dispatched documentation-only R2G assessment and exact worker outputs. It authorizes no R3-R9 implementation, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
