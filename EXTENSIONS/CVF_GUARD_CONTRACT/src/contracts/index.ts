@@ -498,3 +498,18 @@ export {
   CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_RESULT_VERSION,
   evaluateCapabilityEnvironmentSnapshotEvidence,
 } from './capability-environment-snapshot-evidence.contract';
+
+export type {
+  CapabilityWorkspaceBootstrapProfile,
+  CapabilityWorkspaceBootstrapPolicy,
+  CapabilityWorkspaceBootstrapPolicyBundleInput,
+  CapabilityWorkspaceBootstrapPolicyBundleIssueCode,
+  CapabilityWorkspaceBootstrapPolicyBundleIssue,
+  CapabilityWorkspaceBootstrapPolicyBundleResult,
+} from './capability-workspace-bootstrap-policy-bundle.contract';
+
+export {
+  CAPABILITY_WORKSPACE_BOOTSTRAP_POLICY_BUNDLE_CONTRACT_VERSION,
+  CAPABILITY_WORKSPACE_BOOTSTRAP_POLICY_BUNDLE_RESULT_VERSION,
+  evaluateCapabilityWorkspaceBootstrapPolicyBundle,
+} from './capability-workspace-bootstrap-policy-bundle.contract';

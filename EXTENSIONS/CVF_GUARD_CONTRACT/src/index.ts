@@ -255,6 +255,23 @@ export {
   evaluateCapabilityEnvironmentSnapshotEvidence,
 } from './contracts/capability-environment-snapshot-evidence.contract';
 
+// RSPB-AI-T11 capability workspace profile / bootstrap policy bundle
+// validation kernel (pure, in-memory; no loading, materialization,
+// persistence, install, acquisition, network, execution, or action authority).
+export type {
+  CapabilityWorkspaceBootstrapProfile,
+  CapabilityWorkspaceBootstrapPolicy,
+  CapabilityWorkspaceBootstrapPolicyBundleInput,
+  CapabilityWorkspaceBootstrapPolicyBundleIssueCode,
+  CapabilityWorkspaceBootstrapPolicyBundleIssue,
+  CapabilityWorkspaceBootstrapPolicyBundleResult,
+} from './contracts/capability-workspace-bootstrap-policy-bundle.contract';
+export {
+  CAPABILITY_WORKSPACE_BOOTSTRAP_POLICY_BUNDLE_CONTRACT_VERSION,
+  CAPABILITY_WORKSPACE_BOOTSTRAP_POLICY_BUNDLE_RESULT_VERSION,
+  evaluateCapabilityWorkspaceBootstrapPolicyBundle,
+} from './contracts/capability-workspace-bootstrap-policy-bundle.contract';
+
 // Phase E receipt binding contract
 export type {
   ReceiptBindingDisposition,
