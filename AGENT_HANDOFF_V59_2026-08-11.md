@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current RSPB-AI-T13 completion-review HEAD before machine closure: `f232eeeecf70f9a175eb8028a648130f86c8823d`.
+- Current RSPB-AI-T13 machine-closure parent before this handoff-only sync: `db5176e478cba160effada28f4d6c57691835bbe`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
