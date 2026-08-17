@@ -513,3 +513,17 @@ export {
   CAPABILITY_WORKSPACE_BOOTSTRAP_POLICY_BUNDLE_RESULT_VERSION,
   evaluateCapabilityWorkspaceBootstrapPolicyBundle,
 } from './capability-workspace-bootstrap-policy-bundle.contract';
+
+export type {
+  CapabilityBootstrapClosureEvidenceBundleInput,
+  CapabilityBootstrapClosureEvidenceBundleIssueCode,
+  CapabilityBootstrapClosureEvidenceBundleIssue,
+  CapabilityBootstrapClosureEvidenceBundleStatus,
+  CapabilityBootstrapClosureEvidenceBundleResult,
+} from './capability-bootstrap-closure-evidence-bundle.contract';
+
+export {
+  CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_CONTRACT_VERSION,
+  CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_RESULT_VERSION,
+  evaluateCapabilityBootstrapClosureEvidenceBundle,
+} from './capability-bootstrap-closure-evidence-bundle.contract';

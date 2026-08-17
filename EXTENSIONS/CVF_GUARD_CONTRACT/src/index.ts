@@ -272,6 +272,23 @@ export {
   evaluateCapabilityWorkspaceBootstrapPolicyBundle,
 } from './contracts/capability-workspace-bootstrap-policy-bundle.contract';
 
+// RSPB-AI-T12 capability bootstrap closure evidence bundle validation kernel
+// (pure, in-memory composition of the current T9/T10/T11 evaluators only; no
+// loading, rollback, execution, mutation, provider/live, public, or
+// deployment authority).
+export type {
+  CapabilityBootstrapClosureEvidenceBundleInput,
+  CapabilityBootstrapClosureEvidenceBundleIssueCode,
+  CapabilityBootstrapClosureEvidenceBundleIssue,
+  CapabilityBootstrapClosureEvidenceBundleStatus,
+  CapabilityBootstrapClosureEvidenceBundleResult,
+} from './contracts/capability-bootstrap-closure-evidence-bundle.contract';
+export {
+  CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_CONTRACT_VERSION,
+  CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_RESULT_VERSION,
+  evaluateCapabilityBootstrapClosureEvidenceBundle,
+} from './contracts/capability-bootstrap-closure-evidence-bundle.contract';
+
 // Phase E receipt binding contract
 export type {
   ReceiptBindingDisposition,
