@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_external_critique_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed TPGR second-upgrade plan to Claude and returns the critique for CVF reconciliation; parked checkpoint=T15 and all implementation until critique/operator approval, plus UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decides whether to authorize R2 read-only feasibility assessment, modify the revised plan, or reject the upgrade; parked checkpoint=R2-R9, T15, rules/checkers/catalog edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `task_proportional_governance_second_upgrade_external_critique_pending`
-Current mode: `task_proportional_governance_second_upgrade_external_critique_pending`
-Previous mode: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`
+Current mode marker: `task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`
+Current mode: `task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`
+Previous mode: `task_proportional_governance_second_upgrade_external_critique_pending`
 
 ## Next Allowed Move
 
-Mode: `task_proportional_governance_second_upgrade_external_critique_pending`; plan `docs/assessments/CVF_TASK_PROPORTIONAL_GOVERNANCE_SECOND_UPGRADE_EXTERNAL_CRITIQUE_PLAN_2026-08-17.md` is committed at `b6bee448c`; operator transfers it to Claude and returns the critique for CVF reconciliation. Do not implement and do not open T15.
+Mode: `task_proportional_governance_second_upgrade_revised_plan_pending_operator_decision`; critique and reconciliation/revised plan are committed at `cb53aad75`. Operator decides `APPROVE_R2_READ_ONLY_FEASIBILITY_ASSESSMENT`, `MODIFY_REVISED_PLAN`, or `REJECT_TPGR_SECOND_UPGRADE`. R2 and all implementation remain unauthorized; do not open T15.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
