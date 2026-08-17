@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T13 Dispatched Pending Worker
+# CVF Agent Handoff V59 - RSPB-AI-T13 Reviewer Accepted Pending Closer
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -7,7 +7,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Current RSPB-AI-T13 dispatch HEAD: `c8d6f016b2a1ed33abf1b250ca785aab56dcf9c0`.
+- Current RSPB-AI-T13 accepted material HEAD: `737ae97fb3e2fb29524019df04b29f8f4b618a5c`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
@@ -34,7 +34,7 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Active mode: `rspb_ai_t13_assf_package_metadata_to_capability_preflight_candidate_binding_kernel_dispatched_pending_worker`
+- Active mode: `rspb_ai_t13_assf_package_metadata_to_capability_preflight_candidate_binding_kernel_reviewer_accepted_pending_closer`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -43,14 +43,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t13_assf_package_metadata_to_capability_preflight_candidate_binding_kernel_dispatched_pending_worker`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator manually transfers the committed T13 work order to one external no-commit worker, then reviewer independently verifies the return; parked checkpoint=registry/index and package-body reads, activation/loading/resolution/execution/mutation, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t13_assf_package_metadata_to_capability_preflight_candidate_binding_kernel_reviewer_accepted_pending_closer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author reviewer-owned completion review, then close work order and continuity; parked checkpoint=registry/index and package-body reads, activation/loading/resolution/execution/mutation, provider/live, push/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t13_assf_package_metadata_to_capability_preflight_candidate_binding_kernel_dispatched_pending_worker`
+`rspb_ai_t13_assf_package_metadata_to_capability_preflight_candidate_binding_kernel_reviewer_accepted_pending_closer`
 
 ## Purpose
 
-Record the TPGR-governed T13 dispatch and constrain the next move to external no-commit worker execution followed by independent review.
+Record independent T13 acceptance and constrain the next move to completion review, work-order conversion, and continuity closure.
 
 ## Scope / Target / Owner Boundary
 
@@ -110,10 +110,10 @@ Record the TPGR-governed T13 dispatch and constrain the next move to external no
 ## Current Authority
 | Field | Value |
 |---|---|
-| authorityState | RSPB-AI-T13 DISPATCH_READY at `c8d6f016b2a1ed33abf1b250ca785aab56dcf9c0`; independent worker execution/review pending |
+| authorityState | RSPB-AI-T13 REVIEWER_ACCEPTED_PENDING_CLOSER; repaired material `737ae97fb3e2fb29524019df04b29f8f4b618a5c` |
 | baselinePath | `docs/baselines/CVF_GC018_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_2026-08-17.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_2026-08-17.md` |
-| nextAuthorityRequirement | exact-five-path external no-commit worker return, then independent reviewer inspection/proof/acceptance; separate authority remains required for every runtime/external effect |
+| nextAuthorityRequirement | reviewer-owned completion review, work-order closure conversion, and final continuity; separate authority remains required for every runtime/external effect |
 
 ## Closure Evidence
 
@@ -159,7 +159,7 @@ Record the TPGR-governed T13 dispatch and constrain the next move to external no
 
 ## Next Allowed Move
 
-RSPB-AI-T13 is dispatched at `c8d6f016b2a1ed33abf1b250ca785aab56dcf9c0`. The operator manually transfers the committed work order to one external worker. Worker scope is exactly five paths, no stage/commit, with `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; the current reviewer/orchestrator independently owns inspection, hostile proof, bounded repair, acceptance, commit, and closure. The selected one-file ASSF binding hash matched; integrity, secret-safety, and learning-promotion candidates were rejected `NO_NEW_VALUE`. Route is P2_BOUNDED/ROUTED_SHADOW with selective execution false. Registry/index reads, package-body reads, activation/loading/resolution/execution/mutation, provider/live, public, deploy, and production remain forbidden.
+RSPB-AI-T13 is independently accepted pending closer at material `737ae97fb3e2fb29524019df04b29f8f4b618a5c` after bounded repair of candidate-field projection, ACTIVE UAT gating, revoked-Proxy-array safety, and worker-return evidence. Proof: focused 39/39, composed T7/T12/T13 93/93, full package 856 passed plus 5 skipped, TypeScript PASS, freshness CURRENT, worker-return fast PASS, reviewer-fast 65/65, pre-commit 86/86, zero provider/live calls. Next move is reviewer-owned completion review, work-order conversion, and final continuity. Registry/index reads, package-body reads, activation/loading/resolution/execution/mutation, provider/live, public, deploy, and production remain forbidden.
 
 ## Active Boundary
 
@@ -192,13 +192,13 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - RSPB-AI-T13 Dispatch Sync
+## Core Guard Self-Protection Authorization - RSPB-AI-T13 Reviewer Acceptance Sync
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/taskProportionalGovernanceT0ShadowActivation20260817.json`; `CVF_SESSION/state/entries/rspbAiT12CapabilityBootstrapClosureEvidenceBundleValidationKernelDispatched20260817.json`; `CVF_SESSION/state/entries/rspbAiT12CapabilityBootstrapClosureEvidenceBundleValidationKernelReviewerAccepted20260817.json`; `CVF_SESSION/state/entries/rspbAiT12CapabilityBootstrapClosureEvidenceBundleValidationKernelClosed20260817.json`; `CVF_SESSION/state/entries/rspbAiT13AssfPackageMetadataToCapabilityPreflightCandidateBindingKernelDispatched20260817.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/taskProportionalGovernanceT0ShadowActivation20260817.json`; `CVF_SESSION/state/entries/rspbAiT12CapabilityBootstrapClosureEvidenceBundleValidationKernelDispatched20260817.json`; `CVF_SESSION/state/entries/rspbAiT12CapabilityBootstrapClosureEvidenceBundleValidationKernelReviewerAccepted20260817.json`; `CVF_SESSION/state/entries/rspbAiT12CapabilityBootstrapClosureEvidenceBundleValidationKernelClosed20260817.json`; `CVF_SESSION/state/entries/rspbAiT13AssfPackageMetadataToCapabilityPreflightCandidateBindingKernelDispatched20260817.json`; `CVF_SESSION/state/entries/rspbAiT13AssfPackageMetadataToCapabilityPreflightCandidateBindingKernelReviewerAccepted20260817.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelDispatched20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelReviewerAccepted20260816.json`
 - `CVF_SESSION/state/entries/rspbAiT9CapabilityAcquisitionReceiptVerificationKernelClosed20260816.json`
@@ -210,11 +210,11 @@ Protected paths:
 - `CVF_SESSION/state/entries/rspbAiT8ApprovalEvidenceBindingKernelClosed20260816.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: operator explicitly assigned this agent as reviewer/orchestrator, requested the next tranche, and retains manual transfer of the work order to the external worker.
-Authorized guard-maintenance scope: bind the committed T13 dispatch and route the next move to exact-manifest no-commit worker execution plus independent review.
+Authorized guard-maintenance scope: bind accepted T13 material and route the next move to reviewer-owned completion review and final closure.
 Rollback boundary: revert this exact session-sync batch as one unit; do not separate generated state from source fragments.
 
 ## Claim Boundary
 
-This handoff records RSPB-AI-T13 dispatched under accepted TPGR-T0 shadow routing. It authorizes only exact-manifest no-commit implementation and independent review, never selective gate execution. It does not authorize registry/index or package-body reads, package activation/loading/resolution, environment scanning, persistence, environment I/O, rollback, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
+This handoff records RSPB-AI-T13 reviewer accepted pending closer under TPGR-T0 shadow routing. It authorizes only completion review, work-order conversion, and final continuity, never selective gate execution. It does not authorize registry/index or package-body reads, package activation/loading/resolution, environment scanning, persistence, environment I/O, rollback, transport, executor, actual acquisition/mutation, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
