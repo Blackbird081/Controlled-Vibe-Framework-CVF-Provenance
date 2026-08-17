@@ -2,13 +2,13 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: RSPB-AI-T12
 
 Dispatch base head: `f8598b9fd194cc215fc1687239887ea61a277216`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `f280f82ef39d017512835e453f76cb5f30cb7326`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -222,8 +222,13 @@ executor, adapter, filesystem/environment/network/provider/public/session work.
 
 ## Required Artifact Manifest
 
-All five paths above must be present, unstaged, uncommitted, and the only
-worker changes at return.
+| Required artifact | Closure evidence |
+| --- | --- |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-bootstrap-closure-evidence-bundle.contract.ts` | material commit `bd1187c84` |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-bootstrap-closure-evidence-bundle.contract.test.ts` | 28/28 focused; material commit `bd1187c84` |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts` | exact T12 export at `bd1187c84` |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` | exact T12 export at `bd1187c84` |
+| `docs/reviews/CVF_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_WORKER_RETURN_2026-08-17.md` | worker return plus disclosed reviewer correction at `bd1187c84` |
 
 ## Functional Contract
 
@@ -310,32 +315,33 @@ workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
 ## Verification Commands
 
-Use package-local Vitest/TypeScript commands already proven by T11, then:
+Use package-local Vitest/TypeScript commands already proven by T11, then the
+current checker interface:
 
 ```powershell
-python governance/compat/run_worker_return_fast_gate.py --base <executionBaseHead> --head HEAD --focus EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/capability-bootstrap-closure-evidence-bundle.contract.test.ts
+python governance/compat/run_worker_return_fast_gate.py
 ```
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
-| Actor | dispatcher/reviewer |
+| Actor | independent closer |
 | Provider or surface | local private provenance repository |
-| Session or invocation | RSPB-AI-T12 dispatch, 2026-08-17 |
-| Working directory | repository root at `f8598b9fd` |
-| Command or tool surface | governed reads, full selected-file reads, hashes, overlap search, packet authoring |
-| Target paths | paired T12 baseline and work order |
-| Allowed scope source | active next move plus operator `next` |
-| Before status evidence | clean worktree at `f8598b9fd` |
-| After status evidence | exact two packet paths |
-| Diff evidence | status/diff and pre-dispatch gate |
-| Approval boundary | dispatch authority only |
-| Claim boundary | no worker execution yet |
-| Agent type | dispatcher/reviewer |
-| Invocation ID | `rspb-ai-t12-dispatch-2026-08-17` |
-| Expected manifest | `docs/baselines/CVF_GC018_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md` |
+| Session or invocation | RSPB-AI-T12 machine closure, 2026-08-17 |
+| Working directory | repository root at completion review `f280f82ef` |
+| Command or tool surface | completion evidence inspection, machine closure and local governance gates, Git |
+| Target paths | this closed work order |
+| Allowed scope source | Reviewer Closure Conversion and active closer next move |
+| Before status evidence | clean worktree at completion review `f280f82ef` |
+| After status evidence | only this closed work order pending |
+| Diff evidence | `git status --short`; `git diff --check`; `git diff --name-status` |
+| Approval boundary | bounded machine closure only |
+| Claim boundary | pure evidence contract; no runtime or external authority |
+| Agent type | closer |
+| Invocation ID | `rspb-ai-t12-machine-closure-2026-08-17` |
+| Expected manifest | `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/rspbAiT12CapabilityBootstrapClosureEvidenceBundleValidationKernelClosed20260817.json`; `CVF_SESSION_MEMORY.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md` |
+| Actual changed set | `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/rspbAiT12CapabilityBootstrapClosureEvidenceBundleValidationKernelClosed20260817.json`; `CVF_SESSION_MEMORY.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
@@ -504,12 +510,44 @@ two exports and one worker return; no foundation/index relocation or split.
 
 ## Closure Checklist
 
-Reviewer verifies exact diff, semantics, tests, gates, system-chain freshness,
-work-order closure conversion and separate continuity sync.
+- [x] Worker returned exact five paths without stage or commit at execution base `6c2091841e82750bd4ff3ca8370246c050635c72`.
+- [x] Reviewer read the complete diff and repaired cross-record binding, raw-NUL, and return-packet defects.
+- [x] Material plus disclosed bounded repair committed at `bd1187c8402da94d3bf47a6df7e3b31dad3ae02f`.
+- [x] Completion review committed at `f280f82ef39d017512835e453f76cb5f30cb7326`.
+- [x] Focused 28/28, composed 116/116, package 817 plus 5 skipped, TypeScript, freshness, reviewer-fast 65/65, and material pre-commit 86/86 passed.
+- [x] No I/O, rollback, execution, acquisition, mutation, provider/live, public, deploy, or production effect occurred.
 
 ## Machine Closure Package
 
-Pending worker return and independent reviewer acceptance.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_WORKER_RETURN_2026-08-17.md` | SHA-256 `a116a3baf05b7448094893d4dbc166b1c6225d5de321f1d667be684b12fc7e4e`; no worker commit | PASS |
+| Material | Guard Contract T12 source/test/barrels, worker return, and system-chain map | commit `bd1187c8402da94d3bf47a6df7e3b31dad3ae02f` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_COMPLETION_2026-08-17.md` | commit `f280f82ef39d017512835e453f76cb5f30cb7326`; SHA-256 `5f22f436b99027f74bcf1f58b3ccbf907978ed7de9ffc5c81ff4b4b8f75cd287` | PASS |
+| Tests and gates | completion review | focused 28/28; composed 116/116; package 817 passed plus 5 skipped; TypeScript PASS; reviewer-fast 65/65; pre-commit 86/86 | PASS |
+| System chain | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | root barrel fingerprint refreshed; posture and verdict unchanged; freshness CURRENT | PASS |
+| Roadmap state | RSPB bounded cluster continuation | no separate roadmap row opened; T12 closes one bounded ledger-derived tranche | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row ledger reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | local-first cluster routing remains unchanged | PASS |
+| External evidence digest | worker return and completion review | SHA-256 `a116a3baf05b7448094893d4dbc166b1c6225d5de321f1d667be684b12fc7e4e`; SHA-256 `5f22f436b99027f74bcf1f58b3ccbf907978ed7de9ffc5c81ff4b4b8f75cd287` | PASS |
+| System loop interlock | T9 receipt, T10 snapshot, T11 policy, and T12 closure | shared identities/context bound; all authority fields false; no I/O or action | PASS |
+| Session continuity | active core, generated aggregate, bootstrap, memory, handoff, and closed entry | closed mode and next bounded-selection move aligned | PASS |
+| Provider/live evidence | none | zero provider, live, network, or external calls | N/A with reason |
+| Next governed move | next TPGR-governed high-value cluster | source-verified work order; duplicate and `NO_NEW_VALUE` rejection before dispatch | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Upstream acceptance | T9 `VERIFIED_SUCCESS_EVIDENCE`; T10 `VALIDATED_READY_EVIDENCE`; T11 `VALIDATED_POLICY_EVIDENCE` | PASS |
+| Refreshed snapshot identity | T9 receipt `refreshedSnapshotId` equals T10 `snapshotId` | PASS |
+| Plan and route identity | accepted plan dependency equals route primary package | PASS |
+| Workspace and profile context | workspace, profile, platform, and network values are mutually bound | PASS |
+| Hostile input rejection | Proxy, accessor, symbol, sparse, oversized, control, and NUL inputs fail closed | PASS |
+| Deterministic evidence | caller inputs unchanged; repeated outputs equal; nested outputs frozen | PASS |
+| Authority outputs | execution, rollback, materialization, and promotion grants are literal false | PASS |
+| Runtime/provider receipt | none authorized or claimed | PASS |
 
 ## Epistemic Process Block
 
@@ -519,15 +557,18 @@ A pure T9-T11 composition should close the evidence gap without action power.
 
 ### Evidence Comparison
 
-Current owners cover individual records but no exact combined closure result.
+The worker added the missing combined result, but reviewer probes found absent
+receipt/snapshot and snapshot/profile-context bindings.
 
 ### Contradiction Or Gap Disposition
 
-Dependency-closure duplicate was rejected; only the composition gap proceeds.
+REPAIRED_BOUNDED: four hostile binding cases, one raw-NUL cleanup, worker-return
+evidence repair, and a hash-only system-chain refresh are committed.
 
 ### Claim Update
 
-Implementation is authorized within the exact-five pure boundary.
+Implementation is independently accepted and closed bounded at material commit
+`bd1187c84`; no runtime or external authority follows.
 
 ## Public Export Disposition
 
@@ -535,8 +576,8 @@ DEFERRED_PRIVATE_ONLY
 
 ## Return-To-Orchestrator Conditions
 
-Return `COMPLETE_PENDING_REVIEW` when all evidence passes; otherwise return
-`BLOCKED_WITH_REASON` naming the exact non-repairable boundary.
+SATISFIED: worker returned `COMPLETE_PENDING_REVIEW`; independent review,
+bounded repair, material commit, completion review, and machine closure passed.
 
 ## Claim Boundary
 

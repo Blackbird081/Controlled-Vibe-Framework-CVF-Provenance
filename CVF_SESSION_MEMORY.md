@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_reviewer_accepted_pending_closer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=commit T12 completion review, convert the work order to closed bounded, and finalize continuity; parked checkpoint=runtime, environment I/O, rollback/executor, acquisition/install/mutation/action authority, credentials, adapters, provider/live, push/public/deploy/production.
+Startup acknowledged: current mode=`rspb_ai_t12_closed_bounded_next_absorption_tranche_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select the next high-value local cluster and author a fresh source-verified TPGR-governed work order; parked checkpoint=runtime, environment I/O, rollback/executor, acquisition/install/mutation/action authority, credentials, adapters, provider/live, push/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_reviewer_accepted_pending_closer`
-Current mode: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_reviewer_accepted_pending_closer`
-Previous mode: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_dispatched_manual_external_worker_pending_review`
+Current mode marker: `rspb_ai_t12_closed_bounded_next_absorption_tranche_selection`
+Current mode: `rspb_ai_t12_closed_bounded_next_absorption_tranche_selection`
+Previous mode: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_reviewer_accepted_pending_closer`
 
 ## Next Allowed Move
 
-Mode: `rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_reviewer_accepted_pending_closer`; T12 material plus bounded reviewer repair is accepted at `bd1187c84`; completion review, closed work order and final continuity remain.
+Mode: `rspb_ai_t12_closed_bounded_next_absorption_tranche_selection`; T12 is closed bounded at material `bd1187c84` and review `f280f82ef`; select the next high-value local cluster under TPGR-T0, with selective execution still forbidden.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

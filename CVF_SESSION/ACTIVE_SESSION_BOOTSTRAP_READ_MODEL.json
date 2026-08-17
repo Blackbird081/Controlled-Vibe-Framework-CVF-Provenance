@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t12_capability_bootstrap_closure_evidence_bundle_validation_kernel_reviewer_accepted_pending_closer",
+  "currentMode": "rspb_ai_t12_closed_bounded_next_absorption_tranche_selection",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T12 is independently repaired and reviewer-accepted at material commit bd1187c8402da94d3bf47a6df7e3b31dad3ae02f. Reviewer proof: focused 28/28, composed T9-T12 116/116, full package 817 passed plus 5 skipped, TypeScript PASS, system-chain freshness CURRENT, worker-return fast gate PASS with reviewer-fast 65/65, and material pre-commit 86/86. Next move: commit the completion review, convert the work order to CLOSED_PASS_BOUNDED with machine closure evidence, then perform final continuity sync. TPGR-T0 remains shadow-only and selective execution remains forbidden. Runtime/environment I/O, rollback/executor, acquisition/install/mutation/action authority, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T12 is CLOSED_PASS_BOUNDED with material bd1187c8402da94d3bf47a6df7e3b31dad3ae02f and completion review f280f82ef39d017512835e453f76cb5f30cb7326. Reviewer proof: focused 28/28, composed T9-T12 116/116, full package 817 passed plus 5 skipped, TypeScript PASS, system-chain freshness CURRENT, reviewer-fast 65/65, material pre-commit 86/86, and zero provider/live calls. T12 is the first closed post-activation TPGR-T0 tranche; selective execution remains forbidden. Next move: select the next high-value capability cluster from the reconciled 205-file local ledger and author a fresh source-verified TPGR-governed work order, rejecting duplicate/NO_NEW_VALUE clusters before dispatch. Runtime/environment I/O, rollback/executor, acquisition/install/mutation/action authority, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md",
     "baselineSha256": "32deac6daad5d2db12426d330a69c04dfc70840e17f0206f06ee3e855ff97da0",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T12_CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_VALIDATION_KERNEL_2026-08-17.md",
-    "workOrderSha256": "d6f7135c1a52288a6550625a75b18e4eab804f6bb1c02dbe67641354c118c26c"
+    "workOrderSha256": "c58a4ac4ccba5e5fddc03412a32cc8116d075c38abe2c09eb2ca8105b1482f25"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
