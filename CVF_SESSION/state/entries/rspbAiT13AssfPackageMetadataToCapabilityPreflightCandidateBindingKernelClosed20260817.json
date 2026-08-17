@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2274,
+  "stateKey": "rspbAiT13AssfPackageMetadataToCapabilityPreflightCandidateBindingKernelClosed20260817",
+  "value": "RSPB-AI-T13 is CLOSED_PASS_BOUNDED with material commit 737ae97fb3e2fb29524019df04b29f8f4b618a5c and completion review f232eeeecf70f9a175eb8028a648130f86c8823d. Proof: focused 39/39, composed T7/T12/T13 93/93, full Guard Contract 856 passed plus 5 skipped, TypeScript PASS, system-chain freshness CURRENT, worker-return fast PASS, reviewer-fast 65/65, pre-commit 86/86, and zero provider/live calls. The pure evaluator preserves bounded ASSF candidate metadata while every authority grant remains false; no registry, resolver, loader, activation, execution, adapter, provider/live, public, deploy, or production authority follows."
+}

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t13_assf_package_metadata_to_capability_preflight_candidate_binding_kernel_reviewer_accepted_pending_closer",
+  "currentMode": "rspb_ai_t13_closed_bounded_next_absorption_tranche_selection",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T13 is REVIEWER_ACCEPTED_PENDING_CLOSER at repaired material commit 737ae97fb3e2fb29524019df04b29f8f4b618a5c. Independent review repaired missing candidate-field projection, ACTIVE UAT gating, revoked-Proxy-array exception safety, worker-return evidence, and reviewer-owned system-chain freshness. Proof: focused 39/39, composed T7/T12/T13 93/93, full package 856 passed plus 5 skipped, TypeScript PASS, system-chain CURRENT, worker-return fast PASS, reviewer-fast 65/65, material pre-commit 86/86, zero provider/live calls. Next move: author and commit reviewer-owned completion review, then convert the work order to CLOSED_PASS_BOUNDED and synchronize final continuity. TPGR selective execution remains false. Registry/index reads, package-body reads, activation/loading/resolution/execution/mutation, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T13 is CLOSED_PASS_BOUNDED with material 737ae97fb3e2fb29524019df04b29f8f4b618a5c and completion review f232eeeecf70f9a175eb8028a648130f86c8823d. Reviewer proof: focused 39/39, composed T7/T12/T13 93/93, full package 856 passed plus 5 skipped, TypeScript PASS, system-chain CURRENT, worker-return fast PASS, reviewer-fast 65/65, material pre-commit 86/86, and zero provider/live calls. Candidate projection, ACTIVE UAT gating, revoked-Proxy safety, packet shape, and freshness were repaired. Next move: select the next non-duplicate high-value capability cluster from the reconciled 205-file local ledger and author a fresh source-verified TPGR-governed work order. Selective execution remains forbidden. Registry/index reads, package-body reads, activation/loading/resolution/execution/mutation, provider/live, public sync, push, deploy, and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_2026-08-17.md",
     "baselineSha256": "87ce30f0415ffda2afe99a18e25b91c6d3ca55551f14d802864504c55e106e66",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_2026-08-17.md",
-    "workOrderSha256": "22ac686d1d966909bf52cf72b869e259d518b9a38b7ed8fa9507760d990d39c1"
+    "workOrderSha256": "32892d1b9c23b8b0076f92864bb1caa9e2f6cee9fc4d3da5f616825f2a2984c8"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -2,13 +2,13 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: RSPB-AI-T13
 
 Dispatch base head: `f25420cf2d852a653206bb901b06f10267eb13ae`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `f232eeeecf70f9a175eb8028a648130f86c8823d`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -240,11 +240,11 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 
 | Artifact | Required worker action |
 | --- | --- |
-| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/assf-capability-preflight-candidate-binding.contract.ts` | create pure strict evaluator |
-| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/assf-capability-preflight-candidate-binding.contract.test.ts` | create focused hostile and lifecycle tests |
-| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts` | export T13 exactly once |
-| `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` | export T13 exactly once |
-| `docs/reviews/CVF_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_WORKER_RETURN_2026-08-17.md` | create complete no-commit worker return |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/assf-capability-preflight-candidate-binding.contract.ts` | accepted at material commit `737ae97fb3e2fb29524019df04b29f8f4b618a5c` |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/assf-capability-preflight-candidate-binding.contract.test.ts` | reviewer-corrected 39/39 focused; material commit `737ae97fb3e2fb29524019df04b29f8f4b618a5c` |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/contracts/index.ts` | T13 export accepted at material commit |
+| `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` | T13 export accepted; system-chain fingerprint CURRENT |
+| `docs/reviews/CVF_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_WORKER_RETURN_2026-08-17.md` | worker return plus disclosed reviewer correction at material commit |
 
 Forbidden: every sixth path; candidate or ASSF edits/imports; registry/index,
 resolver, loader, checker, session, package-body, adapter, runtime, provider/live,
@@ -602,11 +602,39 @@ and one worker return; no foundation/index relocation or split.
 
 ## Closure Checklist
 
-- [ ] Worker records a clean execution base and matching selected hash.
-- [ ] Worker changes exactly five allowed paths with staging empty and HEAD unchanged.
-- [ ] Focused, T7/T12 regression, package, TypeScript, and return gates pass.
-- [ ] Independent reviewer inspects semantics and hostile boundaries.
-- [ ] Reviewer alone owns any bounded fix, stage, commit, completion review, and closure.
+- [x] Worker recorded clean execution base `5b8f0e5e76d2c1624e5e60fd46010082fbd334cf` and matching selected hash.
+- [x] Worker changed exactly five allowed paths with staging empty and HEAD unchanged.
+- [x] Focused 39/39, composed T7/T12/T13 93/93, package 856 plus 5 skipped, TypeScript, freshness, worker-return fast, reviewer-fast 65/65, and material pre-commit 86/86 passed.
+- [x] Independent reviewer inspected semantics and hostile boundaries and disclosed bounded repair.
+- [x] Reviewer alone owned bounded fixes, staging, material commit `737ae97fb3e2fb29524019df04b29f8f4b618a5c`, completion review `f232eeeecf70f9a175eb8028a648130f86c8823d`, and closure.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_WORKER_RETURN_2026-08-17.md` | SHA-256 `3a8c5eedfa6ec2ab788fb60083364542a9126b088a7b36d8b67bbee86f6ed671`; no worker commit | PASS |
+| Material | Guard Contract T13 source/test/barrels/return and freshness | commit `737ae97fb3e2fb29524019df04b29f8f4b618a5c`; pre-commit 86/86 | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSPB_AI_T13_ASSF_PACKAGE_METADATA_TO_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_KERNEL_COMPLETION_2026-08-17.md` | commit `f232eeeecf70f9a175eb8028a648130f86c8823d`; SHA-256 `19a8187429e9de1af51e4deeb0cc624dc7d0d7da468c990b683c240633fd979c` | PASS |
+| Tests and gates | completion review | focused 39/39; composed 93/93; package 856 passed plus 5 skipped; TypeScript PASS; reviewer-fast 65/65; pre-commit 86/86 | PASS |
+| Roadmap state | RSPB bounded cluster continuation | no separate roadmap row opened; T13 closes one bounded ledger-derived tranche | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row ledger reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | local-first cluster routing remains unchanged | PASS |
+| External evidence digest | worker return and completion review | SHA-256 `3a8c5eedfa6ec2ab788fb60083364542a9126b088a7b36d8b67bbee86f6ed671`; SHA-256 `19a8187429e9de1af51e4deeb0cc624dc7d0d7da468c990b683c240633fd979c` | PASS |
+| System loop interlock | T13 result boundary | candidate-only output; all action grants false | PASS |
+| Session continuity | same closure batch | closed mode and bounded next-cluster selection | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Worker handoff | `COMPLETE_PENDING_REVIEW`; execution base matched; no worker commit | PASS |
+| Candidate metadata projection | lifecycle, approval/UAT/certification, task classes, risk/authority ceiling, external disposition, and capability boundary retained | PASS |
+| ACTIVE lifecycle gate | approval `APPROVED`, UAT `PASSED`, certification `CERTIFIED` required before routing eligibility | PASS |
+| Hostile input rejection | Proxy, revoked Proxy array, accessor, inherited, symbol, sparse, oversized, secret, control, and NUL inputs fail closed | PASS |
+| Deterministic evidence | caller inputs unchanged; repeated outputs equal; nested outputs frozen | PASS |
+| Authority outputs | `CANDIDATE_ONLY`; all ten action-authority grants literal false | PASS |
+| Runtime/provider receipt | none authorized or claimed | PASS |
 
 ## Epistemic Process Block
 
@@ -627,7 +655,9 @@ caller-supplied metadata and false grants.
 
 ### Claim Update
 
-Implementation remains pending independent worker execution and reviewer proof.
+Implementation is independently accepted and closed bounded at material commit
+`737ae97fb3e2fb29524019df04b29f8f4b618a5c` and completion review
+`f232eeeecf70f9a175eb8028a648130f86c8823d`.
 
 ## Public Export Disposition
 
@@ -635,8 +665,8 @@ DEFERRED_PRIVATE_ONLY
 
 ## Return-To-Orchestrator Conditions
 
-Return only `COMPLETE_PENDING_REVIEW` with exact-five uncommitted evidence or
-`BLOCKED_WITH_REASON` with the concrete source/scope blocker.
+SATISFIED: worker returned `COMPLETE_PENDING_REVIEW`; independent review,
+bounded repair, material commit, completion review, and machine closure passed.
 
 ## Claim Boundary
 
