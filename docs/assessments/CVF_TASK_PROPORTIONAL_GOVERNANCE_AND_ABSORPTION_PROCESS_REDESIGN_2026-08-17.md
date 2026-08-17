@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DESIGN_COMPLETE_PENDING_IMPLEMENTATION
+Status: TPGR_T0_SHADOW_ACTIVE
 
 docType: assessment
 
@@ -339,6 +339,24 @@ The first implementation tranche is TPGR-T0 only: registry, schema, dry-run
 router, focused tests and shadow receipts. It must not skip or reorder any
 current gate. Selective execution remains unauthorized until TPGR-T2 and its
 equivalence evidence are independently accepted.
+
+## TPGR-T0 Implementation Update
+
+TPGR-T0 is implemented as mandatory shadow routing for active work orders
+created after the activation commit. Its canonical owner is
+`docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md`;
+the machine registry, closed manifest schema, deterministic router and
+fail-closed range checker live under `governance/compat/`.
+
+This update does not authorize selective gate execution. Every accepted or
+rejected TPGR-T0 receipt preserves `RUN_FULL_LEGACY_BUNDLE`, and all existing
+autorun phases remain present and ordered. T11 predates activation and is not
+counted as evidence of the new rule. The first post-activation tranche must
+carry a valid embedded routing manifest and will be the first governed use.
+
+TPGR-T0 was independently accepted after focused proof and the complete
+reviewer-fast compatibility chain passed. TPGR-T1 through TPGR-T4 remain
+unimplemented.
 
 ## Acceptance Criteria For Implementation
 

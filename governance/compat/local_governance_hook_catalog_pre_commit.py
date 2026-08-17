@@ -17,6 +17,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
         ),
         (
+            "task-proportional governance shadow route",
+            ["python", "governance/compat/check_task_governance_route.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "governed file size compatibility",
             ["python", "governance/compat/check_governed_file_size.py", "--enforce"],
         ),

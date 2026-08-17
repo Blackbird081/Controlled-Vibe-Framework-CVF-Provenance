@@ -114,7 +114,7 @@ entry points:
 | Reviewer / closure | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md` |
 | Session-sync | active handoff; `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
 | ADIF defect disclosure | `governance/compat/check_adif_defect_registry_disclosure.py` |
-| Corpus scan / absorption | `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md` |
+| Corpus scan / absorption / proportional routing | `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`; `docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md` |
 | File size / maintainability | `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md` |
 | Encoding / symbol discipline | `docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md` |
 | Autorun / commit steward | `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md` |

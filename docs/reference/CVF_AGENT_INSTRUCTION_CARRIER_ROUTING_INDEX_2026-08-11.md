@@ -94,6 +94,7 @@ owner and bindingClass.
 | Mandatory Text Encoding And Symbol Discipline | `docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md` | ROUTE |
 | Mandatory JSON Generated Aggregate Discipline | `docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md` | ROUTE |
 | Mandatory Agent Autorun Workflow Control | `docs/reference/CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md` | ROUTE |
+| Mandatory Task-Proportional Governance Routing | `docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md` | ROUTE |
 | Mandatory Agent Handoff Boundary Contract Guard | `docs/reference/agent_handoff/README.md` | ROUTE |
 | Mandatory Agent Interaction Workspace Design Boundary | `docs/reference/agent_workspace/README.md` | ROUTE |
 | Mandatory Agent Workspace State Generated Aggregate Guard | `governance/compat/check_agent_workspace_state.py` | RETAIN_LITERAL |

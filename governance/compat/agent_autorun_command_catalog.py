@@ -63,6 +63,10 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             "core guard self-protection",
             ("python", "governance/compat/check_core_guard_self_protection.py", "--base", base, "--head", head, "--enforce"),
         ),
+        GateCommand(
+            "task-proportional governance shadow route",
+            ("python", "governance/compat/check_task_governance_route.py", "--base", base, "--head", head, "--enforce"),
+        ),
         _range_command(
             "docs governance compatibility",
             "governance/compat/check_docs_governance_compat.py",

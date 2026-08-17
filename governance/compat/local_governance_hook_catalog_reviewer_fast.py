@@ -17,6 +17,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
     ),
     (
+        "task-proportional governance shadow route",
+        ["python", "governance/compat/check_task_governance_route.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "docs governance compatibility",
         ["python", "governance/compat/check_docs_governance_compat.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
