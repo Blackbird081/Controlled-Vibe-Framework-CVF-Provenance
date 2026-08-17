@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "rspb_ai_t14_reviewer_accepted_pending_closer",
+  "currentMode": "task_proportional_governance_second_upgrade_plan_pending_claude_critique",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RSPB-AI-T14 is REVIEWER_ACCEPTED_PENDING_CLOSER at material commit 6fc8f9872117f3fbadf3240569b92686c4f24809. Completion review is authored; next move is work-order finality and final continuity only. After T14 closes, do not open T15: draft a plan-only second upgrade of Task-Proportional Governance for operator transfer to Claude critique before any implementation. The plan must preserve CVF as source authority and rigorous new-knowledge absorption while distinguishing the co-designed local synthesis corpus from a raw external repository, reusing the accepted 205-file ledger, and eliminating repeated per-tranche full absorption ceremony unless a decision-changing gap requires it. UI/runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RSPB-AI-T14 is CLOSED_PASS_BOUNDED at material commit 6fc8f9872117f3fbadf3240569b92686c4f24809 and reviewer-acceptance/completion commit f0c16ee85ca6f9a35524f9712941d53d7b0b6a94. Do not open T15. Next move is plan-only: draft a second upgrade of Task-Proportional Governance for operator transfer to Claude critique before any implementation. Preserve CVF as source authority and rigorous new-knowledge absorption; distinguish the co-designed local synthesis corpus from a raw external repository; reuse the accepted 205-file manifest/ledger and prior file-level proof; route later work by task kind, novelty, risk, owner overlap, and decision-changing uncertainty; require full rescan or full guard bundles only on explicit triggers. UI/runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md",
     "baselineSha256": "df8bed687541be91dfddf8213806bd3090b35909e1193b1ba4dddc5bf28d385a",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md",
-    "workOrderSha256": "8e7bad9f89217bde45688cb096eb5fe090dbab2aa456af880a6c28eb3b94b5c7"
+    "workOrderSha256": "01e8118f5e5a96673d66dab6a503a7adc933c240a3f4c95c9db64970040cf81a"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

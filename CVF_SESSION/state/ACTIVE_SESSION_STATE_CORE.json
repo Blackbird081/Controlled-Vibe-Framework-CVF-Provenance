@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md",
     "baselineSha256": "df8bed687541be91dfddf8213806bd3090b35909e1193b1ba4dddc5bf28d385a",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md",
-    "workOrderSha256": "8e7bad9f89217bde45688cb096eb5fe090dbab2aa456af880a6c28eb3b94b5c7"
+    "workOrderSha256": "01e8118f5e5a96673d66dab6a503a7adc933c240a3f4c95c9db64970040cf81a"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "rspb_ai_t14_reviewer_accepted_pending_closer",
-  "previousMode": "rspb_ai_t14_capability_preflight_advisory_operator_projection_kernel_dispatched_pending_worker",
+  "currentMode": "task_proportional_governance_second_upgrade_plan_pending_claude_critique",
+  "previousMode": "rspb_ai_t14_reviewer_accepted_pending_closer",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

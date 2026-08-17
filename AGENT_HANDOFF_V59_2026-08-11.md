@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - RSPB-AI-T14 Reviewer Accepted Pending Closer
+# CVF Agent Handoff V59 - T14 Closed, TPGR Second Upgrade Plan Pending Critique
 
 Memory class: active-handoff
 Status: ACTIVE
@@ -33,8 +33,8 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Current material HEAD: `6fc8f9872117f3fbadf3240569b92686c4f24809`.
-- Active mode: `rspb_ai_t14_reviewer_accepted_pending_closer`
+- Current reviewer-acceptance HEAD: `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94`.
+- Active mode: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -43,10 +43,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t14_reviewer_accepted_pending_closer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=complete T14 closure, then plan-only Task-Proportional Governance redesign for Claude critique; parked checkpoint=T15, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_plan_pending_claude_critique`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=draft critique-ready TPGR plan only; parked checkpoint=T15 and implementation before critique/operator approval, plus UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`rspb_ai_t14_reviewer_accepted_pending_closer`
+`task_proportional_governance_second_upgrade_plan_pending_claude_critique`
 
 ## Purpose
 
@@ -110,10 +110,10 @@ Record the TPGR-governed T14 dispatch and constrain the next move to external no
 ## Current Authority
 | Field | Value |
 |---|---|
-| authorityState | RSPB-AI-T14 REVIEWER_ACCEPTED_PENDING_CLOSER at material commit `6fc8f9872117f3fbadf3240569b92686c4f24809` |
+| authorityState | RSPB-AI-T14 CLOSED_PASS_BOUNDED; plan-only TPGR second upgrade pending Claude critique |
 | baselinePath | `docs/baselines/CVF_GC018_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md` |
-| nextAuthorityRequirement | T14 work-order finality and final continuity only; then plan-only Task-Proportional Governance redesign for Claude critique; do not open T15 |
+| nextAuthorityRequirement | author critique-ready TPGR redesign plan only; Claude critique and operator approval precede implementation; do not open T15 |
 
 ## Closure Evidence
 
@@ -159,7 +159,7 @@ Record the TPGR-governed T14 dispatch and constrain the next move to external no
 
 ## Next Allowed Move
 
-RSPB-AI-T14 is reviewer-accepted at material commit `6fc8f9872117f3fbadf3240569b92686c4f24809`. Complete work-order finality and final continuity only. Then draft a plan-only second Task-Proportional Governance upgrade for operator transfer to Claude critique before implementation. Preserve CVF authority and rigorous new-knowledge absorption, but reuse the accepted 205-file ledger and treat the local co-designed synthesis corpus differently from a raw external repository. Do not open T15. UI/runtime/provider/live/public/deploy/production remain forbidden.
+RSPB-AI-T14 is `CLOSED_PASS_BOUNDED`: material `6fc8f9872117f3fbadf3240569b92686c4f24809`, reviewer acceptance/completion `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94`. Next move is plan-only: design the second Task-Proportional Governance upgrade for operator transfer to Claude critique. Preserve CVF authority and rigorous knowledge absorption, reuse the accepted 205-file ledger, and distinguish local co-designed synthesis from raw external intake. No implementation or T15 before critique and operator approval. UI/runtime/provider/live/public/deploy/production remain forbidden.
 
 ## Active Boundary
 

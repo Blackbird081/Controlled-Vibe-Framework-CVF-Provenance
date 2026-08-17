@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: RSPB-AI-T14
 
@@ -234,7 +234,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | closureOwner | current orchestrator/reviewer |
 | workerCommitPermission | FORBIDDEN |
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
 | Artifact | Required worker action |
 | --- | --- |
@@ -244,7 +244,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts` | export public types/constants/evaluator |
 | `docs/reviews/CVF_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_WORKER_RETURN_2026-08-17.md` | create checker-safe worker return |
 
-## Required Artifact Manifest
+## Worker Final Manifest Constraint
 
 Worker final status must show exactly the five paths above, all unstaged. No
 generated, package-lock, cache, coverage, IDE, provider-memory, or side-channel
@@ -312,14 +312,14 @@ Focused tests must cover at least:
 
 ## Acceptance Criteria
 
-- [ ] Seven selected hashes match and files were fully read.
-- [ ] Exact five-path manifest is satisfied with no stage/commit.
-- [ ] Pure advisory projection passes focused and composed hostile tests.
-- [ ] All authority/action outputs remain literal false.
-- [ ] Full package tests and TypeScript pass.
-- [ ] Worker-return fast gate passes, except the explicitly reviewer-owned
+- [x] Seven selected hashes match and files were fully read.
+- [x] Exact worker five-path manifest was satisfied with no worker stage/commit; reviewer disclosed the bounded type-only split.
+- [x] Pure advisory projection passes focused and composed hostile tests.
+- [x] All authority/action outputs remain literal false.
+- [x] Full package tests and TypeScript pass.
+- [x] Worker-return fast gate passes after reviewer-owned
       system-chain freshness delta may be recorded as pending reviewer repair.
-- [ ] Zero provider/live/network/API/browser calls occur.
+- [x] Zero provider/live/network/API/browser calls occur.
 
 ## Execution Plan
 
@@ -634,12 +634,12 @@ destructive work, or any authority change.
 
 ## Closure Checklist
 
-- [ ] Worker returns a checker-safe full packet with actual five-path status.
-- [ ] Worker does not stage or commit.
-- [ ] Reviewer independently reproduces focused/composed/full/TypeScript proof.
-- [ ] Reviewer resolves root-barrel system-chain freshness separately.
-- [ ] Pre-closure uses a non-empty committed material range.
-- [ ] Continuity synchronization follows the accepted material commit.
+- [x] Worker returned a checker-repaired full packet; reviewer disclosed one type-only maintainability split.
+- [x] Worker did not stage or commit.
+- [x] Reviewer independently reproduced focused/composed/full/TypeScript proof.
+- [x] Reviewer resolved root-barrel system-chain freshness separately.
+- [x] Pre-closure used non-empty material commit `6fc8f9872117f3fbadf3240569b92686c4f24809`.
+- [x] Continuity synchronization followed the accepted material commit.
 
 ## Legacy Absorption Coverage Index Disposition
 
@@ -649,23 +649,29 @@ created or changed by T14.
 
 ## Machine Closure Package
 
-| Artifact | Dispatch state | Closure owner | Requirement |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| baseline | filed | reviewer | retain source/hash decision |
-| work order | dispatch ready | reviewer | reconcile finality |
-| worker return | pending | worker then reviewer | full-gate shape |
-| completion review | pending | reviewer | independent verdict |
-| continuity | unchanged at dispatch | reviewer | update following accepted material commit only |
+| Work order status | this artifact | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_WORKER_RETURN_2026-08-17.md` | SHA-256 `b39a321e871fac7626f5e57ae6b33ecfaf93cdb06f541f8cb89b6cc8060835df`; no worker commit | PASS |
+| Material | Guard Contract T14 source/test/types/barrels/return and freshness | commit `6fc8f9872117f3fbadf3240569b92686c4f24809`; pre-commit 86/86 | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_COMPLETION_2026-08-17.md` | reviewer acceptance commit `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94` | PASS |
+| Tests and gates | completion review | focused 38/38; composed 155/155; package 894 passed plus 5 skipped; TypeScript PASS; reviewer-fast 65/65; pre-commit 86/86 | PASS |
+| Roadmap state | RSPB bounded cluster continuation | no T15 opened; next mode is plan-only TPGR redesign pending critique | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row ledger reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | local-first cluster routing remains unchanged by T14 | PASS |
+| External evidence digest | worker return and completion review | `sha256=b39a321e871fac7626f5e57ae6b33ecfaf93cdb06f541f8cb89b6cc8060835df`; completion commit `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94` | PASS |
+| System loop interlock | T14 result boundary | advisory-only output; all action grants false | PASS |
+| Session continuity | `CVF_SESSION/state/entries/rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelClosed20260817.json` | generated aggregate check | PASS |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Dispatch evidence | Closure evidence | Status |
 | --- | --- | --- | --- |
-| source selection | seven hashes in baseline | worker recomputation | PENDING_WORKER |
-| pure implementation | functional contract | diff/tests | PENDING_WORKER |
-| no authority/action | literal-false requirements | hostile review | PENDING_REVIEW |
-| no commit | commit mode | Git status/range | PENDING_REVIEW |
-| no live/provider | forbidden scope | trace and independent inspection | PENDING_REVIEW |
+| source selection | seven hashes in baseline | worker recomputation | PASS |
+| pure implementation | functional contract | focused 38/38; composed 155/155; package 894 plus 5 skipped | PASS |
+| no authority/action | literal-false requirements | hostile review and retained tests | PASS |
+| no commit | commit mode | worker HEAD unchanged; reviewer-owned commits | PASS |
+| no live/provider | forbidden scope | trace and independent inspection | PASS |
 
 ## Public Export Disposition
 

@@ -2,7 +2,7 @@
 
 Memory class: governed-completion-review
 
-Status: REVIEWER_ACCEPTED_PENDING_CLOSER
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-08-17
 
@@ -61,11 +61,12 @@ freshness is `CURRENT`; map posture and semantic verdict were not changed.
 
 ## Decision / Disposition
 
-`REVIEWER_ACCEPTED_PENDING_CLOSER`.
+`CLOSED_PASS_BOUNDED`.
 
 The repaired kernel is materially committed at
-`6fc8f9872117f3fbadf3240569b92686c4f24809`. Work-order finality and session
-continuity remain closer-owned.
+`6fc8f9872117f3fbadf3240569b92686c4f24809`; reviewer acceptance and completion
+are committed at `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94`. Work-order finality and final
+continuity are completed by the closure commit that updates this status.
 
 ## Independently Reproduced Evidence
 
@@ -125,13 +126,19 @@ material commit only after repair and full gates passed.
 
 ## Machine Closure Package
 
-| Closure item | Evidence | Final status |
-| --- | --- | --- |
-| material | commit `6fc8f9872117f3fbadf3240569b92686c4f24809` | PASS |
-| review | this completion review | PASS |
-| work-order conversion | closer next action | PENDING |
-| system-chain freshness | `CURRENT`, posture/verdict unchanged | PASS |
-| final continuity | closer next action | PENDING |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_WORKER_RETURN_2026-08-17.md` | SHA-256 `b39a321e871fac7626f5e57ae6b33ecfaf93cdb06f541f8cb89b6cc8060835df`; no worker commit | PASS |
+| Material | Guard Contract T14 source/test/types/barrels/return and freshness | commit `6fc8f9872117f3fbadf3240569b92686c4f24809`; pre-commit 86/86 | PASS |
+| Completion or reviewer artifact | this completion review | reviewer acceptance commit `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94` | PASS |
+| Tests and gates | this completion review | focused 38/38; composed 155/155; package 894 passed plus 5 skipped; TypeScript PASS; reviewer-fast 65/65; pre-commit 86/86 | PASS |
+| Roadmap state | RSPB bounded cluster continuation | no T15 opened; next mode is plan-only TPGR redesign pending critique | N/A with reason |
+| Registry JSON | `docs/audits/CVF_RSPB_AI_T0_CAPABILITY_PREFLIGHT_BOOTSTRAP_PROPOSAL_FILE_LEDGER_2026-08-15.json` | accepted 205-row ledger reused without reclassification | PASS |
+| Registry Markdown | `docs/reference/capability_preflight_bootstrap/README.md` | local-first cluster routing remains unchanged by T14 | PASS |
+| External evidence digest | worker return and completion review | `sha256=b39a321e871fac7626f5e57ae6b33ecfaf93cdb06f541f8cb89b6cc8060835df`; completion commit `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94` | PASS |
+| System loop interlock | T14 result boundary | advisory-only output; all action grants false | PASS |
+| Session continuity | `CVF_SESSION/state/entries/rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelClosed20260817.json` | generated aggregate check | PASS |
 
 ## Finding-To-Governance Learning Disposition
 
@@ -153,14 +160,14 @@ material commit only after repair and full gates passed.
 | Target paths | completion review plus reviewer-acceptance continuity sources and generated state listed in Actual changed set |
 | Allowed scope source | work-order Reviewer Closure Conversion and operator-assigned reviewer/orchestrator role |
 | Before status evidence | clean worktree at material commit `6fc8f9872` |
-| After status evidence | completion review plus seven reviewer-acceptance continuity paths pending; generated aggregate regenerated from sources |
+| After status evidence | work-order closure, completion finality, and seven final-continuity paths pending; generated aggregate regenerated from sources |
 | Diff evidence | `git status --short`; `git diff --check`; `git diff --name-status` |
 | Approval boundary | review acceptance only; work-order conversion and final continuity remain separate |
 | Claim boundary | pure evidence contract only; no UI/runtime/external authority |
 | Agent type | Codex |
 | Invocation ID | `rspb-ai-t14-independent-review-2026-08-17` |
-| Expected manifest | `docs/reviews/CVF_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_COMPLETION_2026-08-17.md`; `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelReviewerAccepted20260817.json`; `CVF_SESSION_MEMORY.md` |
-| Actual changed set | `docs/reviews/CVF_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_COMPLETION_2026-08-17.md`; `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelReviewerAccepted20260817.json`; `CVF_SESSION_MEMORY.md` |
+| Expected manifest | `docs/reviews/CVF_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_COMPLETION_2026-08-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md`; `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelClosed20260817.json`; `CVF_SESSION_MEMORY.md` |
+| Actual changed set | `docs/reviews/CVF_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_COMPLETION_2026-08-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T14_CAPABILITY_PREFLIGHT_ADVISORY_OPERATOR_PROJECTION_KERNEL_2026-08-17.md`; `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelClosed20260817.json`; `CVF_SESSION_MEMORY.md` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename |
 
@@ -225,6 +232,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelReviewerAccepted20260817.json`
+- `CVF_SESSION/state/entries/rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelClosed20260817.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: the operator assigned this agent as T14

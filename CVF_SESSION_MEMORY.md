@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`rspb_ai_t14_reviewer_accepted_pending_closer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=complete T14 work-order finality and continuity, then plan-only Task-Proportional Governance redesign for Claude critique; parked checkpoint=T15, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_plan_pending_claude_critique`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=draft the plan-only Task-Proportional Governance redesign for Claude critique; parked checkpoint=T15 and all implementation until critique/operator approval, plus UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `rspb_ai_t14_reviewer_accepted_pending_closer`
-Current mode: `rspb_ai_t14_reviewer_accepted_pending_closer`
-Previous mode: `rspb_ai_t14_capability_preflight_advisory_operator_projection_kernel_dispatched_pending_worker`
+Current mode marker: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`
+Current mode: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`
+Previous mode: `rspb_ai_t14_reviewer_accepted_pending_closer`
 
 ## Next Allowed Move
 
-Mode: `rspb_ai_t14_reviewer_accepted_pending_closer`; material `6fc8f9872`; complete closure only, then draft the plan-only Task-Proportional Governance redesign for Claude critique; do not open T15.
+Mode: `task_proportional_governance_second_upgrade_plan_pending_claude_critique`; T14 is closed; draft the critique-ready plan only, do not implement and do not open T15.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -97,7 +97,7 @@ RSPB-AI-T6 material plus disclosed reviewer repair is committed at `2529cc8d3d71
 RSPB-AI-T6 is `CLOSED_PASS_BOUNDED`; machine closure is committed at `145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15`. Its pure seam binds accepted T5 projection evidence to a provenance-bound pending learning candidate and the existing intake bridge. Continue with the next highest-value local cluster without restarting full-corpus proof; storage, promotion, mutation, runtime service, provider/live, public, and production authority remain unopened.
 RSPB-AI-T7 is `CLOSED_PASS_BOUNDED`: material and reviewer repair `63b2f7367`, completion review `25b19b3d5`, machine closure `055252ddb`. Evidence: focused 26/26, composed 57/57, package 650 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. Continue with the next highest-value local cluster without restarting full-corpus proof; all runtime/external authority remains parked.
 RSPB-AI-T13 is `CLOSED_PASS_BOUNDED`: material `737ae97fb3e2fb29524019df04b29f8f4b618a5c`, completion review `f232eeeecf70f9a175eb8028a648130f86c8823d`. Reviewer repaired projection completeness, ACTIVE UAT gating, revoked-Proxy safety, packet shape, and freshness. Evidence: focused 39/39, composed 93/93, package 856 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 65/65, pre-commit 86/86, zero provider/live calls. Continue with the next non-duplicate high-value cluster from the existing ledger; all runtime/external authority remains parked.
-RSPB-AI-T14 is `REVIEWER_ACCEPTED_PENDING_CLOSER` at material commit `6fc8f9872117f3fbadf3240569b92686c4f24809`. Reviewer repair added direct T10 composition, exact identity/approval/evidence binding, stale-case and hostile-array controls, checker-safe packet evidence, and a type-only maintainability split without exception. Evidence: focused 38/38, composed 155/155, package 894 plus 5 skipped, TypeScript PASS, freshness CURRENT, worker-return fast PASS, pre-commit 86/86, zero provider/live calls. Complete closure only; then plan a second Task-Proportional Governance upgrade for Claude critique, not T15.
+RSPB-AI-T14 is `CLOSED_PASS_BOUNDED`: material `6fc8f9872117f3fbadf3240569b92686c4f24809`, reviewer acceptance/completion `f0c16ee85ca6f9a35524f9712941d53d7b0b6a94`. Evidence: focused 38/38, composed 155/155, package 894 plus 5 skipped, TypeScript PASS, freshness CURRENT, worker-return fast PASS, pre-commit 86/86, zero provider/live calls. Next is a plan-only second Task-Proportional Governance upgrade for Claude critique; do not open T15 or implement before operator approval.
 RSPB-AI-T9 is `CLOSED_PASS_BOUNDED`: material and reviewer repair `5e5aeb8a4`, completion review `d34dce4c5`, machine closure `b78651eac`. Evidence: focused 42/42, T3/T8/T9 composed 105/105, package 743 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. Continue with the next highest-value local cluster without restarting full-corpus proof; all runtime/external authority remains parked.
 ## Parked Checkpoints
 
