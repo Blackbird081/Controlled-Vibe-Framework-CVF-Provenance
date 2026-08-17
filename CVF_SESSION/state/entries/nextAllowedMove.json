@@ -1,5 +1,5 @@
 {
   "stateOrder": 2244,
   "stateKey": "nextAllowedMove",
-  "value": "Generalized TPGR R2G baseline and no-commit work order are committed at 618dfe0b092133fa2b294232a9737e3c60000267. Next move is operator transfer of the work order to an external worker starting from the clean post-dispatch continuity HEAD. The worker must write exactly the two authorized outputs, must not stage or commit, and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. R3-R9, T15, rules/checkers/registries/catalogs, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "R2G assessment and worker return are committed at 94c13660ef3697d65d1151d6ccafb805cdadbaba. Independent review confirmed the exact two-path range, 170-entry registry distribution, and 193 checker files, but found that 80 pre-implementation catalog command rows contain 79 direct checker invocations plus one automation-assist wrapper. Next move is a bounded two-file reviewer repair from 113 to 114 not-directly-referenced checker files, range-gate reproduction, material commit, and separate final continuity sync. R3-R9, T15, rules/checkers/registries/catalogs, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

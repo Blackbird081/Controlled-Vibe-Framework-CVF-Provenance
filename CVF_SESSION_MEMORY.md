@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed generalized R2G work order to a no-commit external worker; parked checkpoint=R3-R9, T15, rules/checkers/registries/catalog edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_generalized_r2_material_committed_reviewer_repair_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=reviewer applies one bounded two-file count repair, reruns range gates, and closes continuity; parked checkpoint=R3-R9, T15, rules/checkers/registries/catalog edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`
-Current mode: `task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`
-Previous mode: `task_proportional_governance_second_upgrade_generalized_r2_pending_operator_decision`
+Current mode marker: `task_proportional_governance_second_upgrade_generalized_r2_material_committed_reviewer_repair_pending`
+Current mode: `task_proportional_governance_second_upgrade_generalized_r2_material_committed_reviewer_repair_pending`
+Previous mode: `task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `task_proportional_governance_second_upgrade_generalized_r2_dispatched_pending_worker_return`; generalized R2G baseline/work order are committed at `618dfe0b0`. Operator transfers the work order to an external worker that must create exactly two authorized outputs without stage/commit and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. R3-R9 and T15 remain unauthorized.
+Mode: `task_proportional_governance_second_upgrade_generalized_r2_material_committed_reviewer_repair_pending`; exact two-file R2G material is committed at `94c13660e`. Independent review found only the bounded `113` versus `114` direct-reference count defect; reviewer repair and final continuity remain. R3-R9 and T15 remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
