@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR R5 Closed And R6 Dispatch Authorized
+# CVF Agent Handoff V59 - TPGR R6 Closed And R7 Dispatch Authorized
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -33,7 +33,7 @@ Status: ACTIVE
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
 - Current TPGR R3 accepted material: `b029e61de9c44bcb428debb2627d283995a53966`; empty read-budget registry expiry repair: `b692fc92ef8985c1a93dfd2396b7fd96786e95ef`; R4 accepted material: `dbdc0888e`; R5 accepted material: `d8699b713`.
-- Active mode: `task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_dispatched_pending_worker_return`
+- Active mode: `task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -42,14 +42,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed R6 work order to one no-commit external worker; parked checkpoint=R6 implementation, R7-R9, T15, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh documentation-only R7 design dispatch; parked checkpoint=R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_dispatched_pending_worker_return`
+`task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`
 
 ## Purpose
 
-Record independently accepted R5 design closure and authorize only a fresh documentation-only R6 dispatch while keeping implementation and external-effect authority parked.
+Record independently accepted R6 design closure and authorize only a fresh documentation-only R7 design dispatch while keeping implementation, canary execution, and external-effect authority parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -109,10 +109,10 @@ Record independently accepted R5 design closure and authorize only a fresh docum
 ## Current Authority
 | Field | Value |
 |---|---|
-| authorityState | TPGR-R6 documentation-only design dispatched at `7f4e3dc80`; pending no-commit worker return |
+| authorityState | TPGR-R6 `CLOSED_PASS_BOUNDED` at `27e87a1ca`; final disposition `PROCEED_TO_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN` |
 | baselinePath | `docs/baselines/CVF_GC018_TPGR_R6_HISTORICAL_SEEDED_DEFECT_SHADOW_REPLAY_AND_MIGRATION_DESIGN_2026-08-18.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R6_HISTORICAL_SEEDED_DEFECT_SHADOW_REPLAY_AND_MIGRATION_DESIGN_2026-08-18.md` |
-| nextAuthorityRequirement | worker must stay within the exact two-output manifest and return for independent review; no implementation authority follows |
+| nextAuthorityRequirement | standing operator authority permits a fresh documentation-only R7 design dispatch; no implementation or canary-execution authority follows |
 
 ## Closure Evidence
 
@@ -158,7 +158,7 @@ Record independently accepted R5 design closure and authorize only a fresh docum
 
 ## Next Allowed Move
 
-TPGR-R6 documentation-only historical seeded-defect shadow replay and migration design is dispatched at `7f4e3dc80`. Baseline SHA-256 is `a09d24f8b0482c347e1c191881ad7de154edf53a57bd4e0b90566946ff513b5e`; work-order SHA-256 is `e9cdb7b2e787bfa89b6f3d4fb6e5f4d00b9fb5174e32ac22674cbb6ad15330e4`. Pre-dispatch 78/78, reviewer-fast 65/65, commit-steward, and pre-commit 86/86 passed. Transfer the committed work order to one no-commit worker. The worker may create only the named assessment and worker return, then report `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. R6 implementation, R7-R9, T15, selective execution, protected edits, new source intake, runtime/provider/live/public/deploy/production remain forbidden.
+TPGR-R6 is `CLOSED_PASS_BOUNDED` at `27e87a1ca`. Accepted assessment SHA-256 is `fc35e871b3623809cfacbf3ad0d4f4c2f19cf40b694d1b85089fd88734590a8a`; worker-return SHA-256 is `4c3fa07cda0d63664f88fd84ebd3e34b6677922277393547724db3e8b57a0efd`. Reviewer independently confirmed 6/6 fixtures, 15/15 seeded cases, 0/6 false-positive activations, 8/8 plus 6/6 migration fields, and repaired H3 to `ESCALATE_FOR_REVIEW` because current receipt identity was not proven. Worker-return fast 65/65, pre-implementation 80/80, commit-steward, and pre-commit 86/86 passed. Final disposition is `PROCEED_TO_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN`; standing operator authority permits a fresh documentation-only R7 design dispatch. R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, new source intake, runtime/provider/live/public/deploy/production remain forbidden.
 
 ## Active Boundary
 
@@ -191,7 +191,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - TPGR R6 Dispatch Continuity
+## Core Guard Self-Protection Authorization - TPGR R6 Closure Continuity
 
 Protected paths:
 
@@ -200,21 +200,21 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrR6HistoricalSeededDefectShadowReplayAndMigrationDesignDispatched20260818.json`
+- `CVF_SESSION/state/entries/tpgrR6HistoricalSeededDefectShadowReplayAndMigrationDesignClosed20260818.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: standing authority was explicitly granted on 2026-08-18
 to continue CVF-compliant work without repeated micro-approval.
 
-Authorized guard-maintenance scope: continuity-only transition to R6
-documentation-only dispatch pending worker return, binding committed dispatch,
-exact hashes, next move, and parked implementation.
+Authorized guard-maintenance scope: continuity-only transition to R6 closed
+with R7 documentation-only design dispatch authorized, binding accepted
+material, exact hashes, final disposition, next move, and parked implementation.
 
 Rollback boundary: revert this exact continuity batch as one unit; do not
 separate generated state from its source fragments.
 
 ## Claim Boundary
 
-This handoff records bounded R6 documentation-only design dispatch only. It authorizes the exact no-commit worker outputs but no R6 implementation, R7-R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
+This handoff records bounded R6 documentation-only design closure only. It authorizes a fresh documentation-only R7 design dispatch but no R7 implementation/canary execution, R8-R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
