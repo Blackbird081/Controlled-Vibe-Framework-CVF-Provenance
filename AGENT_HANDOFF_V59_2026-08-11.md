@@ -32,7 +32,7 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Current TPGR generalized R2G accepted material HEAD: `6dae3bc20ed9f6b6ab809e7b05f2847e9e1a2629`.
+- Current TPGR generalized R2G accepted material HEAD: `6dae3bc20ed9f6b6ab809e7b05f2847e9e1a2629`; empty read-budget registry expiry repair: `b692fc92ef8985c1a93dfd2396b7fd96786e95ef`.
 - Active mode: `task_proportional_governance_second_upgrade_generalized_r2_closed_pending_r3_operator_decision`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
@@ -191,7 +191,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - TPGR Generalized R2G Closure Handoff
+## Core Guard Self-Protection Authorization - TPGR R2G And Expiry Repair Handoff
 
 Protected paths:
 
@@ -203,15 +203,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/tpgrR2gGeneralizedAbsorptionRoutingFeasibilityAssessmentClosed20260818.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator requested reusable future-repository
-absorption governance and returned the requested second external critique.
+Operator authorization: the operator requested reusable future-repository absorption governance and explicitly issued
+`AUTHORIZE_EMPTY_READ_BUDGET_REGISTRY_EXPIRY_REPAIR` on 2026-08-18.
 
-Authorized guard-maintenance scope: continuity-only transition to generalized
-R2G closed pending R3 operator decision, binding both material commits,
-corrected evidence hashes, final disposition, and parked implementation.
+Authorized guard-maintenance scope: preserve the generalized R2G closure and
+record the bounded empty-registry expiry repair commit without changing mode,
+next-move authority, or parked implementation.
 
-Rollback boundary: revert this exact continuity batch as one unit; do not
-separate generated state from its source fragments.
+Rollback boundary: revert only this handoff-sync commit; do not revert the
+accepted R2G evidence or the independently authorized repair material.
 
 ## Claim Boundary
 
