@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2287,
+  "stateKey": "tpgrR4ShadowInterfaceAndClaimVocabularyDesignClosed20260818",
+  "value": "TPGR-R4 is CLOSED_PASS_BOUNDED at dbdc0888e. The accepted assessment SHA-256 is 76d1db0faaf58ed6425bef14e8b235fdec17f8c9b40c2297e70a4408742e2797; the accepted worker-return SHA-256 is 30f99983a8a30d8ddcab61a772f565640baccd0927afe77a8cbf59677702ec4a. Reviewer independently confirmed the exact two-path manifest, eight interface fields, eight exact claim tokens, ten hostile cases, and zero protected or external-effect changes, then made one consolidated bounded repair: a bare NO_NEW_VALUE disposition no longer counts as semantic-read proof; SOURCE_REGISTERED maps to S0; drift cases name FULL_LAYER_A_REQUIRED; re-earned post-delta claims require fresh canonical-owner evidence; CURRENT eligibility requires all eight fields. Worker-return fast PASS, reviewer-fast 65/65 PASS, full pre-implementation 80/80 PASS, commit-steward PASS, and pre-commit 86/86 PASS. Final disposition PROCEED_TO_R5_SHADOW_COMMAND_AND_RECEIPT_INVALIDATION. R5 requires a fresh governed dispatch and grants no implementation authority from this closure."
+}

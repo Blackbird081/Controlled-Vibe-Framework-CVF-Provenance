@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r4_shadow_interface_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed R4 work order to one no-commit design worker; parked checkpoint=R5-R9, T15, implementation, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r4_shadow_interface_design_closed_r5_dispatch_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh documentation-only R5 dispatch under standing operator authorization; parked checkpoint=R5 implementation, R6-R9, T15, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `task_proportional_governance_second_upgrade_r4_shadow_interface_design_dispatched_pending_worker_return`
-Current mode: `task_proportional_governance_second_upgrade_r4_shadow_interface_design_dispatched_pending_worker_return`
-Previous mode: `task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision`
+Current mode marker: `task_proportional_governance_second_upgrade_r4_shadow_interface_design_closed_r5_dispatch_authorized`
+Current mode: `task_proportional_governance_second_upgrade_r4_shadow_interface_design_closed_r5_dispatch_authorized`
+Previous mode: `task_proportional_governance_second_upgrade_r4_shadow_interface_design_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `task_proportional_governance_second_upgrade_r4_shadow_interface_design_dispatched_pending_worker_return`; R4 design is dispatched at `0827bec73` under `WORKER_MUST_NOT_COMMIT`. Transfer the committed work order to one external design worker, who must start from the clean post-continuity HEAD, create exactly the two named outputs, leave them uncommitted, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. R5-R9 and all implementation/external-effect authority remain parked.
+Mode: `task_proportional_governance_second_upgrade_r4_shadow_interface_design_closed_r5_dispatch_authorized`; R4 is `CLOSED_PASS_BOUNDED` at `dbdc0888e` after one consolidated reviewer repair. Final disposition is `PROCEED_TO_R5_SHADOW_COMMAND_AND_RECEIPT_INVALIDATION`. Standing operator authorization permits a fresh documentation-only R5 dispatch; R5 implementation and all external effects remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
