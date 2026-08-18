@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "task_proportional_governance_second_upgrade_generalized_r2_closed_pending_r3_operator_decision",
+  "currentMode": "task_proportional_governance_second_upgrade_r3_threshold_design_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Generalized TPGR R2G is CLOSED_PASS_BOUNDED: original two-file material 94c13660ef3697d65d1151d6ccafb805cdadbaba and independent reviewer repair 6dae3bc20ed9f6b6ab809e7b05f2847e9e1a2629. Final disposition is PROCEED_TO_THRESHOLD_DESIGN. Next move is an operator decision to authorize a fresh governed R3 threshold-design dispatch, or independent resumption of the RSPB cluster-selection lane. R3 is not authorized by this closure; R4-R9, T15, rules/checkers/registries/catalogs, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "TPGR-R3 threshold-design baseline and no-commit work order are committed at 57c3101112b46624c69a063f82b33cfa2ea8a0f7. Next move is operator transfer of the complete committed work order to one WORKER_MUST_NOT_COMMIT design worker. The worker must capture the clean post-continuity executionBaseHead, create exactly the two authorized documentation outputs, leave them unstaged and uncommitted, and return COMPLETE_PENDING_REVIEW. R4-R9, T15, implementation, selective execution, protected governance edits, source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md",
-    "baselineSha256": "c9642558b1bdf38f1d2e3bc6392ab1214dbebc35ae7869ef33fc7df9b4ad5e6a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md",
-    "workOrderSha256": "f484f3ed18c09e4e3f6aa0bc289c2d3b5fe6c72bc853c66052e02970d01b32fe"
+    "baselinePath": "docs/baselines/CVF_GC018_TPGR_R3_ARCHETYPE_THRESHOLD_PROOF_DIVERGENCE_AND_ROLLBACK_FLOOR_DESIGN_2026-08-18.md",
+    "baselineSha256": "c55bf6edde0b83b51479580cc50d825115e541208669ddc7e9d8df80846cedc8",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R3_ARCHETYPE_THRESHOLD_PROOF_DIVERGENCE_AND_ROLLBACK_FLOOR_DESIGN_2026-08-18.md",
+    "workOrderSha256": "4cd762c18d015eeb7d2a5c8e3c62a8af4d8543d5c68278b3c610852623d87065"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

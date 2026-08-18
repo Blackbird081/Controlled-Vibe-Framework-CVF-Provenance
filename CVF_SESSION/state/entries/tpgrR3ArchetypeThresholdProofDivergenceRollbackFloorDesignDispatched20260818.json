@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2284,
+  "stateKey": "tpgrR3ArchetypeThresholdProofDivergenceRollbackFloorDesignDispatched20260818",
+  "value": "Operator authorized AUTHORIZE_FRESH_R3_THRESHOLD_DESIGN_DISPATCH. Documentation-only GC-018 baseline and WORKER_MUST_NOT_COMMIT work order are committed at 57c3101112b46624c69a063f82b33cfa2ea8a0f7 after pre-dispatch 78/78, reviewer-fast 65/65, commit-steward PASS, and pre-commit 86/86. Baseline SHA-256 is c55bf6edde0b83b51479580cc50d825115e541208669ddc7e9d8df80846cedc8; work-order SHA-256 is 4cd762c18d015eeb7d2a5c8e3c62a8af4d8543d5c68278b3c610852623d87065. Worker scope is exactly the R3 assessment and worker-return documentation paths. R4-R9, T15, implementation, selective execution, protected governance edits, new source intake, runtime/provider/live/public/deploy/production remain unauthorized."
+}

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2244,
   "stateKey": "nextAllowedMove",
-  "value": "Generalized TPGR R2G is CLOSED_PASS_BOUNDED: original two-file material 94c13660ef3697d65d1151d6ccafb805cdadbaba and independent reviewer repair 6dae3bc20ed9f6b6ab809e7b05f2847e9e1a2629. Final disposition is PROCEED_TO_THRESHOLD_DESIGN. Next move is an operator decision to authorize a fresh governed R3 threshold-design dispatch, or independent resumption of the RSPB cluster-selection lane. R3 is not authorized by this closure; R4-R9, T15, rules/checkers/registries/catalogs, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "TPGR-R3 threshold-design baseline and no-commit work order are committed at 57c3101112b46624c69a063f82b33cfa2ea8a0f7. Next move is operator transfer of the complete committed work order to one WORKER_MUST_NOT_COMMIT design worker. The worker must capture the clean post-continuity executionBaseHead, create exactly the two authorized documentation outputs, leave them unstaged and uncommitted, and return COMPLETE_PENDING_REVIEW. R4-R9, T15, implementation, selective execution, protected governance edits, source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
