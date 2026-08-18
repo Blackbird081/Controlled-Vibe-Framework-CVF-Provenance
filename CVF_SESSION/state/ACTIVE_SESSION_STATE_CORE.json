@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_TPGR_R3_ARCHETYPE_THRESHOLD_PROOF_DIVERGENCE_AND_ROLLBACK_FLOOR_DESIGN_2026-08-18.md",
-    "baselineSha256": "c55bf6edde0b83b51479580cc50d825115e541208669ddc7e9d8df80846cedc8",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R3_ARCHETYPE_THRESHOLD_PROOF_DIVERGENCE_AND_ROLLBACK_FLOOR_DESIGN_2026-08-18.md",
-    "workOrderSha256": "4cd762c18d015eeb7d2a5c8e3c62a8af4d8543d5c68278b3c610852623d87065"
+    "baselinePath": "docs/baselines/CVF_GC018_TPGR_R4_SHADOW_INTERFACE_AND_CLAIM_VOCABULARY_DESIGN_2026-08-18.md",
+    "baselineSha256": "799d1b38e08fa5f04c0a3154e460a6bd1f60dd74d0c6fdfd03f5e4184aaf2dc4",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R4_SHADOW_INTERFACE_AND_CLAIM_VOCABULARY_DESIGN_2026-08-18.md",
+    "workOrderSha256": "864361acebde08f965de13b7b3d04368761afd873b815d58856a8274ab5b00cd"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision",
-  "previousMode": "task_proportional_governance_second_upgrade_r3_threshold_design_dispatched_pending_worker_return",
+  "currentMode": "task_proportional_governance_second_upgrade_r4_shadow_interface_design_dispatched_pending_worker_return",
+  "previousMode": "task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

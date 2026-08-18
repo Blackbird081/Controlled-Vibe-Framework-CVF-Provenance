@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR Generalized R2G Closed Pending R3 Decision
+# CVF Agent Handoff V59 - TPGR R4 Design Dispatched Pending Worker Return
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -32,8 +32,8 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Current TPGR R3 accepted material HEAD: `b029e61de9c44bcb428debb2627d283995a53966`; empty read-budget registry expiry repair: `b692fc92ef8985c1a93dfd2396b7fd96786e95ef`.
-- Active mode: `task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision`
+- Current TPGR R3 accepted material: `b029e61de9c44bcb428debb2627d283995a53966`; empty read-budget registry expiry repair: `b692fc92ef8985c1a93dfd2396b7fd96786e95ef`; R4 design dispatch: `0827bec73797d008ebf691ac13f5cf5d915c6c32`.
+- Active mode: `task_proportional_governance_second_upgrade_r4_shadow_interface_design_dispatched_pending_worker_return`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -42,14 +42,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decides whether to authorize fresh R4 shadow-interface design or park TPGR; parked checkpoint=R4-R9, T15, implementation, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r4_shadow_interface_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed R4 work order to one no-commit design worker; parked checkpoint=R5-R9, T15, implementation, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision`
+`task_proportional_governance_second_upgrade_r4_shadow_interface_design_dispatched_pending_worker_return`
 
 ## Purpose
 
-Record independently accepted R2G feasibility closure and constrain R3 to a fresh explicit operator decision and governed dispatch.
+Record independently accepted R3 closure and the bounded R4 design dispatch while keeping implementation and external-effect authority parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -109,10 +109,10 @@ Record independently accepted R2G feasibility closure and constrain R3 to a fres
 ## Current Authority
 | Field | Value |
 |---|---|
-| authorityState | TPGR-R2G `CLOSED_PASS_BOUNDED`; final disposition `PROCEED_TO_THRESHOLD_DESIGN`; R3 not authorized |
-| baselinePath | `docs/baselines/CVF_GC018_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R2G_GENERALIZED_ABSORPTION_ROUTING_FEASIBILITY_ASSESSMENT_2026-08-17.md` |
-| nextAuthorityRequirement | operator explicitly authorizes fresh R3 threshold-design dispatch; alternatively resume independent RSPB cluster selection |
+| authorityState | TPGR-R4 design `DISPATCHED_PENDING_WORKER_RETURN`; commit mode `WORKER_MUST_NOT_COMMIT` |
+| baselinePath | `docs/baselines/CVF_GC018_TPGR_R4_SHADOW_INTERFACE_AND_CLAIM_VOCABULARY_DESIGN_2026-08-18.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R4_SHADOW_INTERFACE_AND_CLAIM_VOCABULARY_DESIGN_2026-08-18.md` |
+| nextAuthorityRequirement | operator transfers the committed work order; worker returns exactly two uncommitted outputs for independent review |
 
 ## Closure Evidence
 
@@ -158,7 +158,7 @@ Record independently accepted R2G feasibility closure and constrain R3 to a fres
 
 ## Next Allowed Move
 
-TPGR-R3 is `CLOSED_PASS_BOUNDED` at `b029e61de9c44bcb428debb2627d283995a53966` after one bounded reviewer repair adding all six required per-archetype unresolved-uncertainty fields. Evidence: worker-return fast PASS, reviewer-fast 65/65, full pre-implementation 80/80, pre-commit 86/86, and independently reproduced checker counts. Final disposition is `PROCEED_TO_R4_SHADOW_INTERFACE_DESIGN`. Next move is an operator decision on a fresh R4 design dispatch or parking TPGR; R4 is not authorized by this closure, and R4-R9, T15, implementation, selective execution, protected edits, source intake, runtime/provider/live/public/deploy/production remain forbidden.
+TPGR-R4 shadow-interface and claim-vocabulary design is dispatched at `0827bec73797d008ebf691ac13f5cf5d915c6c32`. Pre-dispatch 78/78, reviewer-fast 65/65, commit-steward dispatch preflight, and pre-commit 86/86 passed. Next move is transfer of the committed work order to one no-commit external design worker. The worker must begin at the clean post-continuity HEAD, create exactly the two authorized outputs, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. R5-R9, T15, implementation, selective execution, protected edits, source intake, runtime/provider/live/public/deploy/production remain forbidden.
 
 ## Active Boundary
 
@@ -191,7 +191,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - TPGR R3 Closure Continuity
+## Core Guard Self-Protection Authorization - TPGR R4 Dispatch Continuity
 
 Protected paths:
 
@@ -200,21 +200,21 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrR3ArchetypeThresholdProofDivergenceRollbackFloorDesignClosed20260818.json`
+- `CVF_SESSION/state/entries/tpgrR4ShadowInterfaceAndClaimVocabularyDesignDispatched20260818.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: `AUTHORIZE_FRESH_R3_THRESHOLD_DESIGN_DISPATCH` and
-`AUTHORIZE_EMPTY_READ_BUDGET_REGISTRY_EXPIRY_REPAIR` were explicitly issued.
+Operator authorization: standing authority was explicitly granted on 2026-08-18
+to continue CVF-compliant work without repeated micro-approval.
 
-Authorized guard-maintenance scope: continuity-only transition to R3 closed
-pending R4 operator decision, binding accepted material, reviewer repair,
-hashes, final disposition, next move, and parked implementation.
+Authorized guard-maintenance scope: continuity-only transition to R4 design
+dispatched pending worker return, binding dispatch commit, exact hashes, next
+move, reviewer ownership, and parked implementation.
 
 Rollback boundary: revert this exact continuity batch as one unit; do not
 separate generated state from its source fragments.
 
 ## Claim Boundary
 
-This handoff records bounded R3 design closure only. It authorizes no R3 implementation, R4-R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
+This handoff records bounded R4 design dispatch only. It authorizes no implementation, R5-R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
