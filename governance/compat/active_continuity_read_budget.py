@@ -130,7 +130,9 @@ def surface_target_budget(is_root_handoff: bool) -> tuple[int, int]:
     )
 
 
-def _validate_migration_top_level(migration: dict[str, Any], today: dt.date) -> list[str]:
+def _validate_migration_top_level(
+    migration: dict[str, Any], today: dt.date, *, enforce_expiry: bool
+) -> list[str]:
     violations: list[str] = []
     top_fields = set(migration.keys())
     for label, delta in (
@@ -158,7 +160,7 @@ def _validate_migration_top_level(migration: dict[str, Any], today: dt.date) -> 
         except ValueError:
             violations.append(f"{READ_BUDGET_MIGRATION_PATH} expiresOn must be a valid ISO date")
         else:
-            if expires_date < today:
+            if enforce_expiry and expires_date < today:
                 violations.append(
                     f"{READ_BUDGET_MIGRATION_PATH} expiresOn {expires_on} is expired as of {today.isoformat()}"
                 )
@@ -251,9 +253,16 @@ def validate_read_budget_migration_registry(
     if not isinstance(migration, dict):
         return [f"{READ_BUDGET_MIGRATION_PATH} top-level value must be a JSON object"]
 
-    violations = _validate_migration_top_level(migration, today)
-
     entries = migration.get("entries")
+    # Expiry constrains active migration debt, not an empty registry. Keep
+    # schema/date validation fail-closed, and enforce the date whenever the
+    # entries value is malformed or carries one or more debt rows.
+    violations = _validate_migration_top_level(
+        migration,
+        today,
+        enforce_expiry=not isinstance(entries, list) or bool(entries),
+    )
+
     if not isinstance(entries, list):
         return violations + [f"{READ_BUDGET_MIGRATION_PATH} entries must be a list"]
 
