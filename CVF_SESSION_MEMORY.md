@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r3_threshold_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed R3 work order to one no-commit worker; parked checkpoint=R4-R9, T15, implementation, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decides whether to authorize a fresh R4 shadow-interface design dispatch or park TPGR; parked checkpoint=R4-R9, T15, implementation, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `task_proportional_governance_second_upgrade_r3_threshold_design_dispatched_pending_worker_return`
-Current mode: `task_proportional_governance_second_upgrade_r3_threshold_design_dispatched_pending_worker_return`
-Previous mode: `task_proportional_governance_second_upgrade_generalized_r2_closed_pending_r3_operator_decision`
+Current mode marker: `task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision`
+Current mode: `task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision`
+Previous mode: `task_proportional_governance_second_upgrade_r3_threshold_design_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `task_proportional_governance_second_upgrade_r3_threshold_design_dispatched_pending_worker_return`; R3 baseline and no-commit work order are committed at `57c310111`. Transfer the complete work order to one design worker; the worker captures the clean post-continuity HEAD, creates exactly two authorized documentation outputs without staging or committing, and returns `COMPLETE_PENDING_REVIEW`.
+Mode: `task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision`; R3 is `CLOSED_PASS_BOUNDED` at `b029e61de` after one bounded reviewer repair. Final disposition is `PROCEED_TO_R4_SHADOW_INTERFACE_DESIGN`; R4 still requires a fresh operator decision and governed dispatch.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

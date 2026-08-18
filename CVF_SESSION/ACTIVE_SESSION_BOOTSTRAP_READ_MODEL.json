@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "task_proportional_governance_second_upgrade_r3_threshold_design_dispatched_pending_worker_return",
+  "currentMode": "task_proportional_governance_second_upgrade_r3_threshold_design_closed_pending_r4_operator_decision",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "TPGR-R3 threshold-design baseline and no-commit work order are committed at 57c3101112b46624c69a063f82b33cfa2ea8a0f7. Next move is operator transfer of the complete committed work order to one WORKER_MUST_NOT_COMMIT design worker. The worker must capture the clean post-continuity executionBaseHead, create exactly the two authorized documentation outputs, leave them unstaged and uncommitted, and return COMPLETE_PENDING_REVIEW. R4-R9, T15, implementation, selective execution, protected governance edits, source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "TPGR-R3 is CLOSED_PASS_BOUNDED at b029e61de9c44bcb428debb2627d283995a53966 after one bounded reviewer repair adding the six required per-archetype unresolved-uncertainty fields. Final disposition is PROCEED_TO_R4_SHADOW_INTERFACE_DESIGN. Next move is an operator decision to authorize a fresh governed R4 shadow-interface design dispatch or park the TPGR lane; independent RSPB cluster selection remains separate. R4-R9, T15, implementation, selective execution, protected governance edits, source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
