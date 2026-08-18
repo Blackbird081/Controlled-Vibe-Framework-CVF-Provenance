@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR R4 Closed And R5 Dispatch Authorized
+# CVF Agent Handoff V59 - TPGR R5 Design Dispatched Pending Worker Return
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -32,8 +32,8 @@ Status: ACTIVE
 - RSPB-AI-T7 dispatch `1bc5164d52eb654a29fe49ad0057ec7e6967cf0f`; accepted material plus reviewer repair `63b2f7367e9184da2ff18a74db163327809e2602`; completion review `25b19b3d554900ffbcf90a6e4a07545173bfda72`; machine closure `055252ddbd4bc98c2f274d4302fe71557cb2ddda`.
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
-- Current TPGR R3 accepted material: `b029e61de9c44bcb428debb2627d283995a53966`; empty read-budget registry expiry repair: `b692fc92ef8985c1a93dfd2396b7fd96786e95ef`; R4 accepted material: `dbdc0888e`.
-- Active mode: `task_proportional_governance_second_upgrade_r4_shadow_interface_design_closed_r5_dispatch_authorized`
+- Current TPGR R3 accepted material: `b029e61de9c44bcb428debb2627d283995a53966`; empty read-budget registry expiry repair: `b692fc92ef8985c1a93dfd2396b7fd96786e95ef`; R4 accepted material: `dbdc0888e`; R5 design dispatch: `3e79f7f4e`.
+- Active mode: `task_proportional_governance_second_upgrade_r5_shadow_command_receipt_design_dispatched_pending_worker_return`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -42,14 +42,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r4_shadow_interface_design_closed_r5_dispatch_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh documentation-only R5 dispatch under standing operator authorization; parked checkpoint=R5 implementation, R6-R9, T15, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r5_shadow_command_receipt_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator transfers the committed R5 work order to one no-commit design worker; parked checkpoint=R5 implementation, R6-R9, T15, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_r4_shadow_interface_design_closed_r5_dispatch_authorized`
+`task_proportional_governance_second_upgrade_r5_shadow_command_receipt_design_dispatched_pending_worker_return`
 
 ## Purpose
 
-Record independently accepted R4 design closure and authorize only a fresh documentation-only R5 dispatch while keeping implementation and external-effect authority parked.
+Record independently accepted R4 design closure and the bounded R5 documentation-only design dispatch while keeping implementation and external-effect authority parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -109,10 +109,10 @@ Record independently accepted R4 design closure and authorize only a fresh docum
 ## Current Authority
 | Field | Value |
 |---|---|
-| authorityState | TPGR-R4 `CLOSED_PASS_BOUNDED`; final disposition `PROCEED_TO_R5_SHADOW_COMMAND_AND_RECEIPT_INVALIDATION` |
-| baselinePath | `docs/baselines/CVF_GC018_TPGR_R4_SHADOW_INTERFACE_AND_CLAIM_VOCABULARY_DESIGN_2026-08-18.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R4_SHADOW_INTERFACE_AND_CLAIM_VOCABULARY_DESIGN_2026-08-18.md` |
-| nextAuthorityRequirement | standing operator authority permits a fresh documentation-only R5 dispatch; no implementation authority follows |
+| authorityState | TPGR-R5 design `DISPATCHED_PENDING_WORKER_RETURN`; commit mode `WORKER_MUST_NOT_COMMIT` |
+| baselinePath | `docs/baselines/CVF_GC018_TPGR_R5_SHADOW_COMMAND_APPLICABILITY_AND_RECEIPT_INVALIDATION_DESIGN_2026-08-18.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R5_SHADOW_COMMAND_APPLICABILITY_AND_RECEIPT_INVALIDATION_DESIGN_2026-08-18.md` |
+| nextAuthorityRequirement | operator transfers the committed work order; worker returns exactly two uncommitted outputs for independent review |
 
 ## Closure Evidence
 
@@ -158,7 +158,7 @@ Record independently accepted R4 design closure and authorize only a fresh docum
 
 ## Next Allowed Move
 
-TPGR-R4 is `CLOSED_PASS_BOUNDED` at `dbdc0888e` after one consolidated reviewer repair closing corpus semantic-proof, stage-mapping, drift-route, and eligibility gaps. Final hashes: assessment `76d1db0faaf58ed6425bef14e8b235fdec17f8c9b40c2297e70a4408742e2797`; worker return `30f99983a8a30d8ddcab61a772f565640baccd0927afe77a8cbf59677702ec4a`. Worker-return fast, reviewer-fast 65/65, pre-implementation 80/80, commit-steward, and pre-commit 86/86 passed. Final disposition is `PROCEED_TO_R5_SHADOW_COMMAND_AND_RECEIPT_INVALIDATION`; standing operator authority permits a fresh documentation-only R5 dispatch. R5 implementation, R6-R9, T15, selective execution, protected edits, source intake, runtime/provider/live/public/deploy/production remain forbidden.
+TPGR-R5 shadow command-applicability and receipt-invalidation design is dispatched at `3e79f7f4e` under `WORKER_MUST_NOT_COMMIT`. Baseline SHA-256 is `c6f65175c54a8bd65a8ca60a9eaaa0ef243fd266c5f6004caf67719530ed7d33`; work-order SHA-256 is `f28618bedb52c65ee98be6bd1aaf345ebcd607391df86906c43652dab0c9fdee`. Pre-dispatch 78/78, reviewer-fast 65/65, commit-steward dispatch preflight, and pre-commit 86/86 passed. Next move is transfer of the committed work order to one no-commit external design worker. The worker must begin at the clean post-continuity HEAD, create exactly the two authorized outputs, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. R5 implementation, R6-R9, T15, selective execution, protected edits, new source intake, runtime/provider/live/public/deploy/production remain forbidden.
 
 ## Active Boundary
 
@@ -191,7 +191,7 @@ Reason: the T6 live closure and continuity update concern private credentialed
 governance work. Prior public-sync evidence remains preserved at public
 branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
 
-## Core Guard Self-Protection Authorization - TPGR R4 Closure Continuity
+## Core Guard Self-Protection Authorization - TPGR R5 Dispatch Continuity
 
 Protected paths:
 
@@ -200,21 +200,21 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrR4ShadowInterfaceAndClaimVocabularyDesignClosed20260818.json`
+- `CVF_SESSION/state/entries/tpgrR5ShadowCommandApplicabilityAndReceiptInvalidationDesignDispatched20260818.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: standing authority was explicitly granted on 2026-08-18
 to continue CVF-compliant work without repeated micro-approval.
 
-Authorized guard-maintenance scope: continuity-only transition to R4 closed
-with R5 documentation-only dispatch authorized, binding accepted material,
-exact hashes, final disposition, next move, and parked implementation.
+Authorized guard-maintenance scope: continuity-only transition to R5 design
+dispatched pending worker return, binding dispatch commit, exact hashes, next
+move, reviewer ownership, and parked implementation.
 
 Rollback boundary: revert this exact continuity batch as one unit; do not
 separate generated state from its source fragments.
 
 ## Claim Boundary
 
-This handoff records bounded R4 design closure only. It authorizes a fresh documentation-only R5 dispatch but no R5 implementation, R6-R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
+This handoff records bounded R5 documentation-only design dispatch only. It authorizes no R5 implementation, R6-R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
