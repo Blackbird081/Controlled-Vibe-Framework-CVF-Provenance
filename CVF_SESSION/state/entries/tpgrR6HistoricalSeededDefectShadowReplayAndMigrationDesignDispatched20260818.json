@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2290,
+  "stateKey": "tpgrR6HistoricalSeededDefectShadowReplayAndMigrationDesignDispatched20260818",
+  "value": "TPGR-R6 documentation-only historical seeded-defect shadow replay and migration design is dispatched at 7f4e3dc80 from R5 final disposition PROCEED_TO_R6_SHADOW_REPLAY_AND_MIGRATION_DESIGN and the operator's standing CVF-governed authorization. The exact baseline SHA-256 is a09d24f8b0482c347e1c191881ad7de154edf53a57bd4e0b90566946ff513b5e; the exact work-order SHA-256 is e9cdb7b2e787bfa89b6f3d4fb6e5f4d00b9fb5174e32ac22674cbb6ad15330e4. Pre-dispatch 78/78, reviewer-fast 65/65, commit-steward dispatch preflight PASS, and pre-commit 86/86 passed. The no-commit worker may create only the two named design outputs and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. R6 implementation, R7-R9, T15, selective execution, protected edits, new source intake, runtime/provider/live/public/deploy/production remain unauthorized."
+}

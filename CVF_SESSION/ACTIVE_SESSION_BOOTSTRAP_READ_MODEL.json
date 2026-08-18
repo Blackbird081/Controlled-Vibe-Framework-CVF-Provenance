@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "task_proportional_governance_second_upgrade_r5_shadow_command_receipt_design_closed_r6_dispatch_authorized",
+  "currentMode": "task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "TPGR-R5 is CLOSED_PASS_BOUNDED at d8699b713 after one consolidated reviewer repair to receipt identity binding, phase-aware cost accounting, and worker evidence consistency. Final disposition is PROCEED_TO_R6_SHADOW_REPLAY_AND_MIGRATION_DESIGN. Under the operator's standing CVF-governed authorization, the next allowed move is a fresh documentation-only R6 dispatch; R6 implementation is not authorized by R5 closure. R7-R9, T15, selective execution, protected governance edits, new source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "TPGR-R6 documentation-only historical seeded-defect shadow replay and migration design is dispatched at 7f4e3dc80. The next allowed move is transfer of the committed R6 work order to one no-commit external worker, who may create only the named assessment and worker-return paths and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer owns independent replay, acceptance, repair if bounded, commit, and continuity. R6 implementation, R7-R9, T15, selective execution, protected governance edits outside the two worker paths, new source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
