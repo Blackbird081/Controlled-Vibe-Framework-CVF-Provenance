@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_TPGR_R5_SHADOW_COMMAND_APPLICABILITY_AND_RECEIPT_INVALIDATION_DESIGN_2026-08-18.md",
-    "baselineSha256": "c6f65175c54a8bd65a8ca60a9eaaa0ef243fd266c5f6004caf67719530ed7d33",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R5_SHADOW_COMMAND_APPLICABILITY_AND_RECEIPT_INVALIDATION_DESIGN_2026-08-18.md",
-    "workOrderSha256": "f28618bedb52c65ee98be6bd1aaf345ebcd607391df86906c43652dab0c9fdee"
+    "baselinePath": "docs/baselines/CVF_GC018_TPGR_R6_HISTORICAL_SEEDED_DEFECT_SHADOW_REPLAY_AND_MIGRATION_DESIGN_2026-08-18.md",
+    "baselineSha256": "a09d24f8b0482c347e1c191881ad7de154edf53a57bd4e0b90566946ff513b5e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R6_HISTORICAL_SEEDED_DEFECT_SHADOW_REPLAY_AND_MIGRATION_DESIGN_2026-08-18.md",
+    "workOrderSha256": "e9cdb7b2e787bfa89b6f3d4fb6e5f4d00b9fb5174e32ac22674cbb6ad15330e4"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

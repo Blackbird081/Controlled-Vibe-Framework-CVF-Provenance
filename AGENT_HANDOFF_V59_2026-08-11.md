@@ -187,9 +187,7 @@ this compact active handoff after the public staging push superseded that mode.
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: the T6 live closure and continuity update concern private credentialed
-governance work. Prior public-sync evidence remains preserved at public
-branch `lpci1-ref-staging@021f8b852`; this batch makes no new public change.
+Reason: private governance continuity only; prior public evidence remains at `lpci1-ref-staging@021f8b852`, with no new public change.
 
 ## Core Guard Self-Protection Authorization - TPGR R6 Closure Continuity
 
@@ -203,15 +201,13 @@ Protected paths:
 - `CVF_SESSION/state/entries/tpgrR6HistoricalSeededDefectShadowReplayAndMigrationDesignClosed20260818.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: standing authority was explicitly granted on 2026-08-18
-to continue CVF-compliant work without repeated micro-approval.
+Operator authorization: standing CVF-governed authority granted 2026-08-18.
 
-Authorized guard-maintenance scope: continuity-only transition to R6 closed
-with R7 documentation-only design dispatch authorized, binding accepted
-material, exact hashes, final disposition, next move, and parked implementation.
+Authorized guard-maintenance scope: R6 closure continuity, exact hashes, R7 design-dispatch authority, and parked implementation.
 
-Rollback boundary: revert this exact continuity batch as one unit; do not
-separate generated state from its source fragments.
+Post-closure repair: bootstrap authority still referenced R5. Update Core and regenerate active state/bootstrap only; no other authority fact or R7 expansion.
+
+Rollback boundary: revert this continuity batch as one unit.
 
 ## Claim Boundary
 
