@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR R6 Closed And R7 Dispatch Authorized
+# CVF Agent Handoff V59 - TPGR R7 Dispatched Pending Worker Return
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -42,10 +42,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh documentation-only R7 design dispatch; parked checkpoint=R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=external no-commit execution of the exact R7 two-output manifest followed by independent review; parked checkpoint=R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`
+`task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_dispatched_pending_worker_return`
 
 ## Purpose
 
@@ -161,7 +161,7 @@ Continuity parent anchor: `6f7736d99494d9d5183e11e7e1b3b1c9fcb3d933`.
 
 ## Next Allowed Move
 
-TPGR-R6 is `CLOSED_PASS_BOUNDED` at `27e87a1ca`. Accepted assessment SHA-256 is `fc35e871b3623809cfacbf3ad0d4f4c2f19cf40b694d1b85089fd88734590a8a`; worker-return SHA-256 is `4c3fa07cda0d63664f88fd84ebd3e34b6677922277393547724db3e8b57a0efd`. Reviewer independently confirmed 6/6 fixtures, 15/15 seeded cases, 0/6 false-positive activations, 8/8 plus 6/6 migration fields, and repaired H3 to `ESCALATE_FOR_REVIEW` because current receipt identity was not proven. Worker-return fast 65/65, pre-implementation 80/80, commit-steward, and pre-commit 86/86 passed. Final disposition is `PROCEED_TO_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN`; standing operator authority permits a fresh documentation-only R7 design dispatch. R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, new source intake, runtime/provider/live/public/deploy/production remain forbidden.
+TPGR-R7 documentation-only design is dispatched at `555066418`. Paired authority hashes are baseline `782ad852e358c4d98bcf44c218d803414a00dbb70936b8eb6cc9b5783c8064e9` and work order `c8d8975e561613e7cb8ae257b895c80075e3d63735baad0d893dbb7786ec1458`. Next is exact-manifest external worker execution: create only the R7 assessment and worker return, leave both unstaged/uncommitted, then return for independent review. R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, new source intake, runtime/provider/live/public/deploy/production remain forbidden.
 
 ## Active Boundary
 
@@ -192,7 +192,7 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private governance continuity only; prior public evidence remains at `lpci1-ref-staging@021f8b852`, with no new public change.
 
-## Core Guard Self-Protection Authorization - TPGR R6 Closure Continuity
+## Core Guard Self-Protection Authorization - TPGR R7 Dispatch Continuity
 
 Protected paths:
 
@@ -201,19 +201,17 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrR6HistoricalSeededDefectShadowReplayAndMigrationDesignClosed20260818.json`
+- `CVF_SESSION/state/entries/tpgrR7DualRunCanaryAndRollbackRehearsalDesignDispatched20260818.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: standing CVF-governed authority granted 2026-08-18.
 
-Authorized guard-maintenance scope: R6 closure continuity, exact hashes, R7 design-dispatch authority, and parked implementation.
-
-Post-closure repair: bootstrap authority still referenced R5. Update Core and regenerate active state/bootstrap only; no other authority fact or R7 expansion.
+Authorized guard-maintenance scope: R7 dispatch continuity, exact authority hashes, worker-return boundary, and parked implementation.
 
 Rollback boundary: revert this continuity batch as one unit.
 
 ## Claim Boundary
 
-This handoff records bounded R6 documentation-only design closure only. It authorizes a fresh documentation-only R7 design dispatch but no R7 implementation/canary execution, R8-R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
+This handoff records bounded R7 documentation-only design dispatch only. It authorizes exact-manifest no-commit worker execution but no R7 implementation/canary execution, R8-R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.

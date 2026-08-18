@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh documentation-only R7 design dispatch under standing operator authorization; parked checkpoint=R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=external no-commit worker execution of the exact R7 two-output manifest, followed by independent review; parked checkpoint=R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`
-Current mode: `task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`
-Previous mode: `task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_dispatched_pending_worker_return`
+Current mode marker: `task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_dispatched_pending_worker_return`
+Current mode: `task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_dispatched_pending_worker_return`
+Previous mode: `task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`
 
 ## Next Allowed Move
 
-Mode: `task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`; R6 is `CLOSED_PASS_BOUNDED` at `27e87a1ca` after one disclosed reviewer fail-closed repair to H3. Final disposition is `PROCEED_TO_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN`. A fresh documentation-only R7 design dispatch is authorized; implementation/canary execution and all external effects remain parked.
+Mode: `task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_dispatched_pending_worker_return`; R7 documentation-only design is dispatched at `555066418`. The next allowed move is exact-manifest execution by one external no-commit worker, producing only the R7 assessment and worker return, followed by independent reviewer closure. Implementation/canary execution and all external effects remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
