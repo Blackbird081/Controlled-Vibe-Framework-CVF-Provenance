@@ -107,6 +107,9 @@ Record independently accepted R6 design closure and authorize only a fresh docum
 - RSPB-AI-T9 is `CLOSED_PASS_BOUNDED`: material plus disclosed bounded reviewer repair `5e5aeb8a4`, completion review `d34dce4c5`, machine closure `b78651eac`. Probes repaired inherited Array-subclass hook execution, missing artifact-version binding, and secret-detector false positives. Evidence: focused 42/42, T3/T8/T9 composed 105/105, package 743 passed plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls.
 
 ## Current Authority
+
+Continuity parent anchor: `6f7736d99494d9d5183e11e7e1b3b1c9fcb3d933`.
+
 | Field | Value |
 |---|---|
 | authorityState | TPGR-R6 `CLOSED_PASS_BOUNDED` at `27e87a1ca`; final disposition `PROCEED_TO_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN` |
