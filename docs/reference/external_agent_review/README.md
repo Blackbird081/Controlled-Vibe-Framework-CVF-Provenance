@@ -37,6 +37,7 @@ semantics.
 
 | Reference | Role |
 |---|---|
+| `CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md` | Identity, version compatibility, precedence, and snapshot-freshness contract for the public compact guide and portable expanded packet. |
 | `CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md` | Standard for giving external agents enough context to review CVF without exposing private provenance source. |
 | `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | Central chain map connecting external/corpus/repo input, old blind-spot/corpus/legacy rules, external-agent review packets, returned-output absorption, GC-018, work orders, source verification, and autorun. |
 | `CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` | Central index for external-absorption package, runtime, checker, and value-parked candidates that retain CVF value but require concrete reopen evidence before future work. |
@@ -105,6 +106,12 @@ semantics.
    `governance/compat/check_external_agent_absorption_table.py` before closure.
 
 ## Operator-Local External-Agent Round-Trip Kit Recognition
+
+The public `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md` is the compact
+projection of protocol `cvf.external-agent-round-trip`. The operator-local
+four-file packet is its expanded portable representation. Their version,
+compatibility, precedence, and freshness rules are owned by
+`CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md`.
 
 The operator may give an external agent a portable four-file packet outside
 this repository:
