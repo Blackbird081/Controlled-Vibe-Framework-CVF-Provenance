@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MCP_KAR_T5_APPROVAL_REFERENCE_REQUEST_BINDING_CONTRACT_IMPLEMENTATION_2026-08-24.md",
-    "baselineSha256": "f31635a171f622f2fcea037ca3e583753dd5febd3c4861c2db14616dbffd9da0",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T5_APPROVAL_REFERENCE_REQUEST_BINDING_CONTRACT_IMPLEMENTATION_2026-08-24.md",
-    "workOrderSha256": "5a434cf9fe08994d4416c7d3c3cf5021c5ca0c55bcddc1ec899e6d8642c8b688"
+    "baselinePath": "docs/baselines/CVF_GC018_MCP_KAR_T6_T8_RESIDUAL_PROTOCOL_OWNER_VALUE_DECISION_2026-08-24.md",
+    "baselineSha256": "f4a6301ca39aebe2594fdf1615a507a6a28a9543f11c801de83f977d46bac286",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T6_T8_RESIDUAL_PROTOCOL_OWNER_VALUE_DECISION_2026-08-24.md",
+    "workOrderSha256": "06c8f1c056d8b6def302044f52d356740471f17bb5ecf0d2710bcd62f5b0da81"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mcp_kar_t5_approval_reference_request_binding_contract_implementation_closed_pass_bounded",
-  "previousMode": "mcp_kar_t5_approval_reference_request_binding_contract_implementation_dispatched_pending_worker_return",
+  "currentMode": "mcp_kar_t6_t8_residual_protocol_owner_value_decision_dispatched_pending_worker_return",
+  "previousMode": "mcp_kar_t5_approval_reference_request_binding_contract_implementation_closed_pass_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
