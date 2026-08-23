@@ -6832,7 +6832,9 @@
       "displayName": "MCP-KAR-T0 official Model Context Protocol upstream plus external redesign mixed-origin intake",
       "scopePaths": [
         ".private_reference/source_mirrors/modelcontextprotocol__modelcontextprotocol/",
-        ".private_reference/legacy/CVF 13.08/CVF_MCP_KNOWLEDGE_ABSORPTION_REDESIGN/"
+        ".private_reference/legacy/CVF 13.08/CVF_MCP_KNOWLEDGE_ABSORPTION_REDESIGN/",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mcp.protocol.invariant.profile.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mcp.protocol.invariant.profile.test.ts"
       ],
       "fileCount": 993,
       "status": "SCANNED_WITH_FINDINGS",
@@ -6866,24 +6868,24 @@
         {
           "id": "MCP-KAR-T0-F1",
           "summary": "Pinned MCP 2026-07-28 retains exact per-request version, capability, error, subscription, MRTR, cache, authorization, and transport invariants not fully converted by the external packet.",
-          "disposition": "DEFER_PHASED",
-          "nextAction": "Open one bounded documentation/contract T1 for the operator-selected source-verified normative invariant and negative-conformance profile.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Retain the MCP-KAR-T1 pure local profile and source mapping after reviewer acceptance; any MCP runtime or package activation requires a fresh dispatch.",
           "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
           "learningLane": "GOVERNANCE_CONTROL_PLANE",
           "f2gRef": "docs/reviews/CVF_MCP_KAR_T0_DUAL_CORPUS_INTAKE_WORKER_RETURN_2026-08-23.md#finding-to-governance-learning-disposition",
           "roadmapRef": null,
-          "workOrderRef": null
+          "workOrderRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md"
         },
         {
           "id": "MCP-KAR-T0-F2",
           "summary": "External policy and request schemas accept selected fail-open cross-field contradictions and their negative fixtures are not mapped as executable schema instances.",
-          "disposition": "DEFER_PHASED",
-          "nextAction": "Repair or replace schemas only inside a fresh source-verified test tranche with executed negative evidence.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use the MCP-KAR-T1 typed negative suite as the accepted fail-closed replacement for the selected schema gaps; broader schema or checker work requires a fresh dispatch.",
           "defectClass": "MACHINE_GATE_GAP",
           "learningLane": "GOVERNANCE_CONTROL_PLANE",
           "f2gRef": "docs/reviews/CVF_MCP_KAR_T0_DUAL_CORPUS_INTAKE_WORKER_RETURN_2026-08-23.md#finding-to-governance-learning-disposition",
           "roadmapRef": null,
-          "workOrderRef": null
+          "workOrderRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md"
         },
         {
           "id": "MCP-KAR-T0-F3",
@@ -6913,7 +6915,7 @@
         "execution or installation of upstream modelcontextprotocol repository - not performed",
         "external-agent packet treated as upstream authority - explicitly rejected"
       ],
-      "nextScanRecommendation": "Do not rescan the 993-file corpus. Reuse the immutable receipt and terminal ledgers; if the operator selects T1, fully reread and rehash only the named 2026-07-28 normative/schema cluster plus affected current CVF owners."
+      "nextScanRecommendation": "Do not rescan the 993-file corpus. Reuse the immutable receipt, terminal ledgers, MCP-KAR-T1 source mapping, and local negative suite; reverify only named pinned files and affected owners for a separately authorized follow-on."
     }
   ]
 }

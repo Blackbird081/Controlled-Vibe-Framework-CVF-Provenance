@@ -35,6 +35,18 @@ export {
   MCPBusinessAdapterContract,
   createMCPBusinessAdapterContract,
 } from "./mcp.business.adapter.contract";
+
+// MCP-KAR-T1 - pure MCP 2026-07-28 normative invariant profile
+export { MCP_PROTOCOL_VERSION_2026_07_28, MCPProtocolInvariantProfile,
+  createMCPProtocolInvariantProfile } from "./mcp.protocol.invariant.profile";
+export type {
+  MCPProtocolInvariantRuleId, MCPProtocolInvariantDecisionCode,
+  MCPProtocolJsonRpcErrorCode, MCPProtocolRequestProfile,
+  MCPDiscoveryEvidenceProfile, MCPSubscriptionProfile, MCPResultProfile,
+  MCPCacheProfile, MCPAuthorizationProfile, MCPHttpMirrorProfile,
+  MCPProtocolInvariantProfileInput, MCPProtocolInvariantViolation,
+  MCPProtocolInvariantDecision,
+} from "./mcp.protocol.invariant.profile";
 export type {
   MCPBusinessRiskClass,
   MCPBusinessMutationType,
