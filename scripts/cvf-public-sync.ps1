@@ -463,6 +463,35 @@ if ($NoCommit) {
     exit 0
 }
 
+# Fail closed before `git add -A`: tests and local tooling may leave runtime,
+# receipt, cache, or evidence files in the public worktree. Only files owned by
+# this exact projection are eligible for staging.
+$authorizedPending = [System.Collections.Generic.HashSet[string]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+)
+foreach ($path in $allowedFiles) {
+    [void]$authorizedPending.Add(($path -replace '/', '\'))
+}
+foreach ($mapping in $MAPPED_FILES) {
+    [void]$authorizedPending.Add(($mapping.Destination -replace '/', '\'))
+}
+[void]$authorizedPending.Add('EXTENSIONS\CVF_GUARD_CONTRACT\src\index.ts')
+[void]$authorizedPending.Add('docs\reference\system_architecture_catalog\CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json')
+
+$pendingPaths = @(
+    git diff --name-only
+    git diff --cached --name-only
+    git ls-files --others --exclude-standard
+) | Where-Object { $_ } | Sort-Object -Unique
+$unexpectedPending = @(
+    $pendingPaths | Where-Object {
+        -not $authorizedPending.Contains(($_ -replace '/', '\'))
+    }
+)
+if ($unexpectedPending.Count -gt 0) {
+    throw "Public-sync worktree contains paths not owned by this projection: $($unexpectedPending -join ', ')"
+}
+
 $govHead = git -C $GOVERNANCE_ROOT rev-parse --short HEAD
 $govMsg  = git -C $GOVERNANCE_ROOT log -1 --pretty=%s
 
