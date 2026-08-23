@@ -104,6 +104,47 @@ semantics.
 12. For changed external-return absorption reviews, satisfy
    `governance/compat/check_external_agent_absorption_table.py` before closure.
 
+## Operator-Local External-Agent Round-Trip Kit Recognition
+
+The operator may give an external agent a portable four-file packet outside
+this repository:
+
+- `CVF_EXTERNAL_AGENT_BOOTSTRAP_INSTRUCTIONS.md`;
+- `CVF_CONTEXT_BRIEF.md`;
+- `CVF_CURRENT_PUBLIC_SNAPSHOT.md`;
+- `CVF_EXTERNAL_AGENT_RETURN_CONTRACT.md`.
+
+These files are non-authoritative orientation and return-shape aids. Their
+presence does not prove that the external agent followed them and does not
+replace current CVF source verification.
+
+When a returned repo or folder contains
+`EXTERNAL_AGENT_RETURN_MANIFEST.json` with schema
+`cvf.externalAgentReturn.v1`, treat it as a structured mixed-origin derived
+synthesis candidate and apply this fast-intake order:
+
+1. preserve the exact returned root and record its stable identity;
+2. validate the return-manifest JSON and authority tokens
+   `PROVENANCE_BACKED_DERIVED_SYNTHESIS_CANDIDATE` and
+   `NON_AUTHORITATIVE_UNTIL_REVIEWED`;
+3. verify `FILE_INVENTORY.sha256` against a hidden/no-ignore enumeration and
+   reconcile declared exclusions;
+4. verify pinned public CVF and upstream commits, paths, licenses, origins,
+   dependencies, test evidence, and claim boundary;
+5. reuse a fresh reconciled manifest/ledger as candidate evidence, while
+   independently sampling semantic claims and all high-risk/value-bearing
+   groups; do not require the pack to prove value from zero without a named
+   drift, integrity, origin, or owner contradiction;
+6. route the pack through the mixed-origin standard, returned-finding workflow,
+   owner/overlap classification, value-conversion matrix, and conditional
+   reopen handling before any CVF-native promotion.
+
+Missing or invalid return artifacts reduce intake confidence but do not erase
+the source pack's possible value. Record the defect and fall back to the normal
+full manifest/ledger route. The portable packet accelerates evidence intake;
+it never grants direct import, implementation, runtime, provider, public, or
+production authority.
+
 ## Required Read Trigger
 
 Read this folder when a task:
@@ -115,6 +156,8 @@ Read this folder when a task:
 - consumes corpus, legacy, public/simple, or external repo input before
   implementation planning;
 - compares a derived external-agent pack against its upstream repository;
+- receives a repo or folder carrying schema `cvf.externalAgentReturn.v1` or
+  the portable external-agent round-trip filenames above;
 - notices an external agent treating a public/simple lifecycle as internal CVF
   workflow-chain authority;
 - needs to decide what can be public context without publishing private
