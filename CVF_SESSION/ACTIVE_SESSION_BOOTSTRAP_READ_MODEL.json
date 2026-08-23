@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_closed_pass_bounded",
+  "currentMode": "mcp_kar_t5_approval_reference_request_binding_owner_value_decision_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MCP-KAR-T4 is reviewer-accepted closed bounded at material commit 43aea7a18. Under the operator's autonomous absorption authorization, open only the next decision-first MCP-KAR tranche for approval-reference request binding and replay semantics; establish exact current owner, value, contract-only claim boundary, and a terminal proceed-or-stop decision before any implementation. Runtime bridge, durable replay prevention claim without a durable owner, package, transport, external fixture import, schema repair, provider/live, public/deploy/production, TPGR-R8, R9, R8 implementation, P0/P1 activation, real canary/selective execution, and T15 remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute only committed MCP-KAR-T5 decision dispatch c0aaf8218: one no-commit worker may create the exact approval-reference request-binding owner/value decision return. The worker must distinguish bounded caller-supplied contract validation from durable replay prevention; no implementation is authorized. Runtime bridge, persistence, durable replay prevention claim without a durable owner, package, transport, external fixture import, schema repair, provider/live, public/deploy/production, TPGR-R8, R9, R8 implementation, P0/P1 activation, real canary/selective execution, and T15 remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MCP_KAR_T4_FORM_MODE_ELICITATION_SENSITIVE_DATA_GUARD_IMPLEMENTATION_2026-08-24.md",
-    "baselineSha256": "ee3ad9c6f726bc7f0b31842024d124e550fbe79e7e392efd7cddea6210cbc727",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T4_FORM_MODE_ELICITATION_SENSITIVE_DATA_GUARD_IMPLEMENTATION_2026-08-24.md",
-    "workOrderSha256": "30234e643c0a9250996133e6de963f3591b933b63cf33f883be172022d7d070f"
+    "baselinePath": "docs/baselines/CVF_GC018_MCP_KAR_T5_APPROVAL_REFERENCE_REQUEST_BINDING_OWNER_VALUE_DECISION_2026-08-24.md",
+    "baselineSha256": "36a9875701390f133014ddce21ca96dc1f3cc5645c6540037a5eac672eacb734",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T5_APPROVAL_REFERENCE_REQUEST_BINDING_OWNER_VALUE_DECISION_2026-08-24.md",
+    "workOrderSha256": "d98afe590c10b08018e33e85305a5df6136cf6a6a2e201f59fff29b0bbc2b43d"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

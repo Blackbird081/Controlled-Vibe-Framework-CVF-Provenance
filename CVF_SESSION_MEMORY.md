@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=open the decision-first approval-reference request-binding/replay tranche under autonomous absorption authority; parked checkpoint=runtime/durable replay claim without an owner, package/transport, schema repair, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_t5_approval_reference_request_binding_owner_value_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T5 decision dispatch and return one no-commit owner/value decision; parked checkpoint=implementation, runtime/persistence/durable replay claim without an owner, package/transport, schema repair, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_closed_pass_bounded`
-Current mode: `mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_closed_pass_bounded`
-Previous mode: `mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_dispatched_pending_worker_return`
+Current mode marker: `mcp_kar_t5_approval_reference_request_binding_owner_value_decision_dispatched_pending_worker_return`
+Current mode: `mcp_kar_t5_approval_reference_request_binding_owner_value_decision_dispatched_pending_worker_return`
+Previous mode: `mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_closed_pass_bounded`; T4 is accepted at `43aea7a18` with focused 36/36, package 1846/1846, TypeScript, reviewer-fast, and zero external effects. Open only the next decision-first approval-reference request-binding/replay tranche; do not implement until that decision closes.
+Mode: `mcp_kar_t5_approval_reference_request_binding_owner_value_decision_dispatched_pending_worker_return`; execute only committed T5 decision dispatch `c0aaf8218`, create one uncommitted worker return, and preserve the contract-only/durable-state claim boundary.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
