@@ -169,6 +169,8 @@ $DENY_PATTERNS = @(
     '^EXTENSIONS[/\\]CVF_GUARD_CONTRACT[/\\]src[/\\]contracts[/\\](?:assf-capability-preflight|cadp-|capability-|controlled-acquisition)[^/\\]*\.ts$',
     '^EXTENSIONS[/\\]CVF_GUARD_CONTRACT[/\\]src[/\\]contracts[/\\](?:index|contracts\.phase1r\.test|contracts\.phase2b-runtime-coherence\.test)\.ts$',
     '^EXTENSIONS[/\\]CVF_GUARD_CONTRACT[/\\]src[/\\](?:index|package\.boundary\.test)\.ts$',
+    '^EXTENSIONS[/\\]CVF_EXECUTION_PLANE_FOUNDATION[/\\](?:src[/\\](?:index|cadp\.capability\.consumer\.contract)|tests[/\\]cadp\.capability\.consumer\.contract\.test)\.ts$',
+    '^EXTENSIONS[/\\]CVF_MODEL_GATEWAY[/\\](?:src[/\\](?:index|cadp\.constraint\.projection\.contract)|tests[/\\]cadp\.constraint\.projection\.contract\.test)\.ts$',
     '^governance[/\\]compat[/\\](?:test_)?check_mixed_origin_derived_synthesis_absorption\.py$',
     '^governance[/\\]compat[/\\](?:agent_autorun_command_catalog|local_governance_hook_catalog_(?:pre_commit|pre_push|reviewer_fast))\.py$',
     '^docs[/\\]reference[/\\](?:CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19|guard_orientation[/\\]README)\.md$',
