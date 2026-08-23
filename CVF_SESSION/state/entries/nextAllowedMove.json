@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2253,
+  "stateOrder": 2254,
   "stateKey": "nextAllowedMove",
-  "value": "MCP-KAR-T7-T8 implementation is reviewer-accepted at 3f9c03cbe with 68/68 focused and 1899/1899 package tests. Open only the final MCP-KAR-T9 bounded exhaustion reconciliation dispatch: reuse immutable T0 receipt/manifests/ledgers without source rescan; reconcile all 993 rows and 35 semantic groups; record T1-T8 outcomes; repair conditional-reopen index count drift and add objective T2/T6 reopen rows; update the existing MCP-KAR corpus-registry source entry and regenerate its aggregate only if authorized by the exact manifest. No source/runtime/package/provider/public effect is permitted. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute only committed MCP-KAR-T9 final bounded exhaustion reconciliation dispatch 0b5ec88cd: one no-commit worker may change exactly the final reference, 35-group route ledger, conditional reopen index, existing MCP-KAR corpus-registry source entry, generated registry aggregate, and one worker return. Reuse immutable T0 evidence without external-source rescan; preserve 226 deferred rows and T2/T6 objective reopen lanes. No source/runtime/package/provider/public effect is permitted. Latest finalized numbered LHW wave remains LHW24."
 }
