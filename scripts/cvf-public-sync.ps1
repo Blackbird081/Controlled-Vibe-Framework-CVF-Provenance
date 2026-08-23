@@ -171,6 +171,11 @@ $DENY_PATTERNS = @(
     '^EXTENSIONS[/\\]CVF_GUARD_CONTRACT[/\\]src[/\\](?:index|package\.boundary\.test)\.ts$',
     '^EXTENSIONS[/\\]CVF_EXECUTION_PLANE_FOUNDATION[/\\](?:src[/\\](?:index|cadp\.capability\.consumer\.contract)|tests[/\\]cadp\.capability\.consumer\.contract\.test)\.ts$',
     '^EXTENSIONS[/\\]CVF_MODEL_GATEWAY[/\\](?:src[/\\](?:index|cadp\.constraint\.projection\.contract)|tests[/\\]cadp\.constraint\.projection\.contract\.test)\.ts$',
+    '^EXTENSIONS[/\\](?:CVF_EXECUTION_PLANE_FOUNDATION|CVF_MODEL_GATEWAY)[/\\]tests[/\\]cadp\.package\.root\.exports\.test\.ts$',
+    '^EXTENSIONS[/\\]CVF_v1\.6_AGENT_PLATFORM[/\\]cvf-web[/\\]src[/\\]lib[/\\]cadp-(?:authentication-policy|authorization)(?:\.test)?\.ts$',
+    '^governance[/\\]compat[/\\](?:test_)?check_cadp_authority_boundary_drift\.py$',
+    '^governance[/\\]compat[/\\]fixtures[/\\]cadp_authority_boundary_contract\.v1\.json$',
+    '^docs[/\\]reference[/\\]system_architecture_catalog[/\\]entries[/\\]interface\.cadp_capability_admission_distribution_profile\.v1\.json$',
     '^governance[/\\]compat[/\\](?:test_)?check_mixed_origin_derived_synthesis_absorption\.py$',
     '^governance[/\\]compat[/\\](?:agent_autorun_command_catalog|local_governance_hook_catalog_(?:pre_commit|pre_push|reviewer_fast))\.py$',
     '^docs[/\\]reference[/\\](?:CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19|guard_orientation[/\\]README)\.md$',
@@ -394,6 +399,20 @@ foreach ($mapping in $MAPPED_FILES) {
     }
     Copy-Item -Force $src $dst
     $copied++
+}
+
+# Rebuild generated catalog output from the public projection's own compact
+# entries. The provenance aggregate may include private/deferred entries that
+# this allowlist correctly omits, so copying that aggregate verbatim would
+# leave the public projection internally inconsistent.
+$catalogGenerator = Join-Path $PUBLIC_SYNC_ROOT 'governance\compat\generate_as_built_system_catalog.py'
+if (-not (Test-Path $catalogGenerator -PathType Leaf)) {
+    throw "Public catalog generator not found: $catalogGenerator"
+}
+Write-Host 'Regenerating public as-built catalog aggregate...' -ForegroundColor Yellow
+& python $catalogGenerator --target catalog --json
+if ($LASTEXITCODE -ne 0) {
+    throw "Public catalog aggregate generation failed with exit code $LASTEXITCODE"
 }
 
 Write-Host "  Copied : $copied"
