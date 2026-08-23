@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2250,
+  "stateOrder": 2251,
   "stateKey": "nextAllowedMove",
-  "value": "Execute only committed MCP-KAR-T6-T8 residual decision dispatch eee3d1eb2: one no-commit worker may create exactly one decision return with explicit T6, T7, and T8 sub-dispositions plus aggregate COMPLETE_RESIDUAL_DECISION_SET. No implementation is authorized. T6 discovery drift requires a bound immutable admission owner; T7/T8 may only select pure defensive legacy guards that create no filesystem, sampling runtime, or parallel approval authority. All runtime/external-effect and held lanes remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MCP-KAR-T6-T8 decisions are reviewer-accepted at 93763c127: T6 stops for no bound admission snapshot owner; T7/T8 proceed only as pure defensive legacy guards. Open one combined exact-manifest implementation dispatch for MCP-PR-012 roots hints-not-authority and MCP-PR-013 sampling capability/tool-result sequencing in the existing MCP profile reference/source/test/export paths plus one worker return. No roots discovery/filesystem authority, sampling runtime, model invocation, or parallel approval authority is permitted. All external-effect and held lanes remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
 }

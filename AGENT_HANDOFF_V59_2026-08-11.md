@@ -37,7 +37,7 @@ Status: ACTIVE
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`; external round-trip kit intake convention: `535a4fff5`.
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
-- MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6-T8 residual decision dispatch is committed at `eee3d1eb2`. Active mode: `mcp_kar_t6_t8_residual_protocol_owner_value_decision_dispatched_pending_worker_return`.
+- MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6-T8 decisions are accepted at `93763c127` with T6 stop and T7/T8 proceed candidates. Active mode: `mcp_kar_t6_t8_residual_protocol_owner_value_decision_closed_t6_stop_t7_t8_proceed_guard_candidates`.
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -46,10 +46,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_t6_t8_residual_protocol_owner_value_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T6-T8 decision dispatch and return one uncommitted packet; parked checkpoint=implementation, runtime/persistence/package/transport, schema repair, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_t6_t8_residual_protocol_owner_value_decision_closed_t6_stop_t7_t8_proceed_guard_candidates`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=open one combined exact-manifest T7/T8 defensive guard implementation dispatch; parked checkpoint=T6 discovery implementation, filesystem/sampling runtime, parallel approval authority, package/transport, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
 
 ## Current Mode
-`mcp_kar_t6_t8_residual_protocol_owner_value_decision_dispatched_pending_worker_return`
+`mcp_kar_t6_t8_residual_protocol_owner_value_decision_closed_t6_stop_t7_t8_proceed_guard_candidates`
 
 ## Purpose
 
@@ -116,14 +116,14 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Current Authority
 
-Continuity parent anchor: `eee3d1eb2`.
+Continuity parent anchor: `93763c127`.
 
 | Field | Value |
 |---|---|
-| authorityState | MCP-KAR-T6-T8 decision dispatched at `eee3d1eb2`; one no-commit decision return pending; TPGR-R8 hold unchanged |
+| authorityState | MCP-KAR-T6-T8 decisions accepted at `93763c127`; T6 stopped, combined T7/T8 guard dispatch may open; TPGR-R8 hold unchanged |
 | baselinePath | `docs/baselines/CVF_GC018_MCP_KAR_T6_T8_RESIDUAL_PROTOCOL_OWNER_VALUE_DECISION_2026-08-24.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T6_T8_RESIDUAL_PROTOCOL_OWNER_VALUE_DECISION_2026-08-24.md` |
-| nextAuthorityRequirement | one return with explicit T6/T7/T8 sub-dispositions and aggregate terminal token; no implementation |
+| nextAuthorityRequirement | combined exact four-owner-path T7/T8 implementation dispatch plus one return; no filesystem/sampling runtime or parallel approval owner |
 
 ## Closure Evidence
 
@@ -169,7 +169,7 @@ Continuity parent anchor: `eee3d1eb2`.
 
 ## Next Allowed Move
 
-Execute only committed MCP-KAR-T6-T8 decision dispatch `eee3d1eb2`: one uncommitted return with three explicit sub-dispositions and the aggregate terminal outcome. No implementation is authorized until reviewer closure. MCP-KAR schema repair remains held at `STOP_NO_NAMED_CONSUMER`; TPGR-R8 and all runtime/package/transport/public restrictions remain unchanged.
+Open only one combined MCP-KAR-T7/T8 defensive guard implementation dispatch for the existing profile reference/source/test/export paths plus one return. T6 remains stopped. No roots discovery/filesystem authority, sampling runtime, or parallel approval owner is authorized. TPGR-R8 and all runtime/package/transport/public restrictions remain unchanged.
 
 ## Active Boundary
 
