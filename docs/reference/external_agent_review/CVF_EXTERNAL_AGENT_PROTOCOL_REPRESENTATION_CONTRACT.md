@@ -104,7 +104,7 @@ sufficient proof of live `HEAD`; use an exact Git ref query when available.
 The governed refresh command is:
 
 ```powershell
-.\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot
+.\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot
 ```
 
 It performs no push. It requires a clean public-sync `main`, verifies that its

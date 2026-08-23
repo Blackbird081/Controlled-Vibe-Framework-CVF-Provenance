@@ -4,10 +4,10 @@ Refreshes the reusable CVF external-agent packet, prepares a repo-specific
 task capsule, or validates a returned folder.
 
 .EXAMPLE
-.\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot
+.\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot
 
 .EXAMPLE
-.\Update-CVF-External-Agent-Packet.ps1 -Mode PrepareTask `
+.\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode PrepareTask `
   -TaskId mcp-review-002 -Title 'Review MCP repository' `
   -Objective 'Create an absorption-ready source pack' `
   -WorkingMode SOURCE_PACK_PREPARATION `
@@ -16,7 +16,7 @@ task capsule, or validates a returned folder.
   -OutputRoot 'D:\UNG DUNG AI\EXTERNAL_RETURNS\MCP_REVIEW_002'
 
 .EXAMPLE
-.\Update-CVF-External-Agent-Packet.ps1 -Mode ValidateReturn `
+.\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode ValidateReturn `
   -ReturnRoot 'D:\UNG DUNG AI\EXTERNAL_RETURNS\MCP_REVIEW_002'
 #>
 [CmdletBinding()]
@@ -39,7 +39,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+$repoRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $tool = Join-Path $repoRoot 'scripts\external_agent_packet.py'
 $ownerIndex = Join-Path $repoRoot 'docs\reference\external_agent_review\CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json'
 

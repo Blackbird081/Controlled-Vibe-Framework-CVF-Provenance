@@ -134,7 +134,7 @@ the public owner-surface index, a refresh receipt, and, for a specific task,
 repo/task; never reuse a previous capsule by merely editing its title.
 
 After a public update is pushed, run
-`.\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot`. The command
+`.\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot`. The command
 must prove the public-sync checkout equals live `origin/main` before changing
 the operator-local snapshot. Before sending a packet for a repo-specific task,
 use `-Mode PrepareTask` with an immutable upstream commit. On return, use
