@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mcp_kar_t5_approval_reference_request_binding_owner_value_decision_dispatched_pending_worker_return",
+  "currentMode": "mcp_kar_t5_approval_reference_request_binding_owner_value_decision_closed_proceed_contract_candidate",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute only committed MCP-KAR-T5 decision dispatch c0aaf8218: one no-commit worker may create the exact approval-reference request-binding owner/value decision return. The worker must distinguish bounded caller-supplied contract validation from durable replay prevention; no implementation is authorized. Runtime bridge, persistence, durable replay prevention claim without a durable owner, package, transport, external fixture import, schema repair, provider/live, public/deploy/production, TPGR-R8, R9, R8 implementation, P0/P1 activation, real canary/selective execution, and T15 remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MCP-KAR-T5 decision is reviewer-accepted at c7388c127 with PROCEED_APPROVAL_BINDING_CONTRACT. Under the operator's autonomous absorption authorization, open one separate exact-manifest implementation dispatch limited to mcp.business.adapter.contract.ts, its paired test, src/index.ts, and one worker return. The implementation may validate caller-supplied request/decision/time/consumed state with explicit now; it must not claim issuance, persistence, atomic consumption, or durable replay prevention. Runtime bridge, package, transport, external fixture import, provider/live, public/deploy/production, and all held lanes remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
