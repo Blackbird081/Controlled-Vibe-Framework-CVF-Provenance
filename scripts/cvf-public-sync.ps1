@@ -402,6 +402,34 @@ foreach ($mapping in $MAPPED_FILES) {
     $copied++
 }
 
+# Project the Guard Contract barrel from its canonical source while removing
+# only export statements whose referenced contract module is intentionally
+# absent from the public projection. This preserves public runtime exports
+# (including the mandatory gateway) without leaking private capability grants.
+$guardIndexSource = Join-Path $GOVERNANCE_ROOT 'EXTENSIONS\CVF_GUARD_CONTRACT\src\index.ts'
+$guardIndexDestination = Join-Path $PUBLIC_SYNC_ROOT 'EXTENSIONS\CVF_GUARD_CONTRACT\src\index.ts'
+$guardIndexContent = Get-Content -LiteralPath $guardIndexSource -Raw
+$missingGuardModules = [System.Collections.Generic.List[string]]::new()
+$guardExportPattern = "(?ms)^export(?:\s+type)?\s*\{.*?\}\s+from\s+'(?<module>\./contracts/[^']+)';\s*\r?\n"
+$guardIndexProjected = [regex]::Replace($guardIndexContent, $guardExportPattern, {
+    param($match)
+    $module = $match.Groups['module'].Value
+    $relativeModule = ($module.Substring(2) -replace '/', '\') + '.ts'
+    $publicModule = Join-Path (Split-Path $guardIndexDestination -Parent) $relativeModule
+    if (-not (Test-Path $publicModule -PathType Leaf)) {
+        $missingGuardModules.Add($module)
+        return ''
+    }
+    return $match.Value
+})
+if ($missingGuardModules.Count -eq 0) {
+    throw 'Expected at least one private/deferred Guard Contract module to be removed from the public barrel.'
+}
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+[System.IO.File]::WriteAllText($guardIndexDestination, $guardIndexProjected, $utf8NoBom)
+$copied++
+Write-Host "Projected public Guard Contract barrel; removed $($missingGuardModules.Count) absent module export blocks." -ForegroundColor Yellow
+
 # Rebuild generated catalog output from the public projection's own compact
 # entries. The provenance aggregate may include private/deferred entries that
 # this allowlist correctly omits, so copying that aggregate verbatim would
