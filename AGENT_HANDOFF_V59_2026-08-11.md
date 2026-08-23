@@ -36,7 +36,7 @@ Status: ACTIVE
 - Current TPGR R7 accepted material: `723382cfc373f8da8971326733f0ed4c074066f1`.
 - Current TPGR R7 closure continuity: `9bbc6bf31014608633380d36e70f8319e2483e87`.
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`; external round-trip kit intake convention: `535a4fff5`.
-- External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper path repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; public candidate: `864c4e0e6139f3e32067dea41f43f240e505c0d8` (not pushed).
+- External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - Active mode: `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
@@ -67,7 +67,7 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Latest Work / Changes
 
-- External-agent protocol v1.1 material `65f6224cb62345d84ed3dd7e27081b800df5a02a` plus wrapper-path repair `4161ec158883ab89453495e8f3543bfb9d947cca` implements fail-closed live-public refresh, task capsule, owner index, Gate A/B, semantic validator/receipt, operator entrypoint, and six tests. Public candidate `864c4e0e6139f3e32067dea41f43f240e505c0d8` is clean but unpushed. `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` carries v1.1 plus owner index; its audit anchor stays live `b7204787` until push plus governed refresh. MCP absorption remains unopened.
+- External-agent protocol v1.1 material `65f6224cb62345d84ed3dd7e27081b800df5a02a` plus wrapper repair `4161ec158883ab89453495e8f3543bfb9d947cca` is exported at public `864c4e0e6139f3e32067dea41f43f240e505c0d8`. The governed mode refreshed `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` to that live SHA with receipt SHA-256 `04044eef5377b6250c040b04952a03dfff742980a3b8ee70f0ce467920df2570` and zero packet-hash mismatches. MCP absorption remains unopened.
 - Independent review accepted T1 against R01-R28 with bounded scope and kept
   the reproducible F11 residual explicit.
 - TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64;
@@ -191,11 +191,11 @@ this compact active handoff after the public staging push superseded that mode.
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
+EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-Public candidate commit: `864c4e0e6139f3e32067dea41f43f240e505c0d8` (local only; push not authorized in this tranche).
+Public-sync commit: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 Public artifact paths: `docs/guides/external-agent-review-guide.md`; `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md`; `docs/reference/CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json`.
-Prior exported protocol v1.0 anchor: `b7204787dfa83768824dcc7d8f309f12a13c8993`.
+Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `04044eef5377b6250c040b04952a03dfff742980a3b8ee70f0ce467920df2570`.
 
 ## Core Guard Self-Protection Authorization - External Agent Protocol V1.1 Continuity
 
@@ -205,10 +205,10 @@ Protected paths:
 
 Operator authorization: explicit 2026-08-23 instruction to implement protocol improvements before MCP absorption and add latest-public snapshot refresh for the operator-local packet.
 
-Authorized guard-maintenance scope: record v1.1 material, unpushed public candidate, local packet state, and post-push refresh checkpoint; do not alter TPGR-R8 or open MCP absorption.
+Authorized guard-maintenance scope: record v1.1 material, completed public export, verified local packet refresh, and receipt; do not alter TPGR-R8 or open MCP absorption.
 
 Rollback boundary: revert this continuity batch as one unit.
 
 ## Claim Boundary
 
-This handoff records bounded R8 design closure/hold plus repo-local external-agent protocol v1.1 and an unpushed public candidate. It authorizes no public push, MCP absorption, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, registry activation, package loading, environment scan, persistence, runtime, MCP/network/provider/live invocation, external-agent runtime authority, deployment, or production.
+This handoff records bounded R8 design closure/hold plus completed external-agent protocol v1.1 public export and packet refresh. It authorizes no further public push, MCP absorption, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, registry activation, package loading, environment scan, persistence, runtime, MCP/network/provider/live invocation, external-agent runtime authority, deployment, or production.
