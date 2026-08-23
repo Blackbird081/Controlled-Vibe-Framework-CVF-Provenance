@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "task_proportional_governance_second_upgrade_r8_p0_p1_allowlist_decision_design_dispatched_pending_worker_return",
+  "currentMode": "task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "TPGR-R8 documentation-only design is dispatched at e91e5d127 under the paired baseline and work order. The next allowed move is exact-manifest execution by one external no-commit worker, producing only the R8 assessment and worker return, followed by independent reviewer closure. R8 implementation, P0/P1 activation, real canary or selective execution, R9, T15, protected governance implementation edits, new source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "TPGR-R8 is CLOSED_PASS_BOUNDED at 859f851ac with final disposition HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE: P0 0/6, P1 6/6. The lane remains held until fresh governed OBSERVED_CURRENT dual-run evidence exists for an exact identity, H3 binding is current where applicable, independent review accepts that evidence, and the operator grants fresh authority. No R9, R8 implementation, P0/P1 activation, real canary/selective execution, protected governance implementation edit, source intake, runtime/provider/live/public/deploy/production action is currently authorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

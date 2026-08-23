@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR R8 Dispatched Pending Worker Return
+# CVF Agent Handoff V59 - TPGR R8 Closed Hold Pending Observed Evidence
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -36,7 +36,7 @@ Status: ACTIVE
 - Current TPGR R7 accepted material: `723382cfc373f8da8971326733f0ed4c074066f1`.
 - Current TPGR R7 closure continuity: `9bbc6bf31014608633380d36e70f8319e2483e87`.
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`.
-- Active mode: `task_proportional_governance_second_upgrade_r8_p0_p1_allowlist_decision_design_dispatched_pending_worker_return`
+- Active mode: `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -45,14 +45,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r8_p0_p1_allowlist_decision_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=external no-commit execution of the exact R8 two-output manifest followed by independent review; parked checkpoint=R8 implementation, P0/P1 activation, real canary/selective execution, R9, T15, protected implementation edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=hold until fresh exact-identity observed dual-run evidence, applicable current H3 binding, independent review, and fresh operator authority; parked checkpoint=R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, protected implementation edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_r8_p0_p1_allowlist_decision_design_dispatched_pending_worker_return`
+`task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
 
 ## Purpose
 
-Record the committed documentation-only R8 P0/P1 allowlist-decision design dispatch and route only its exact no-commit worker execution while keeping implementation, activation, real canary/selective execution, and external-effect authority parked.
+Record independently accepted R8 closure with an empty P0 allowlist and hold the lane until observed current evidence satisfies every recorded reopen condition.
 
 ## Scope / Target / Owner Boundary
 
@@ -115,10 +115,10 @@ Continuity parent anchor: `6f7736d99494d9d5183e11e7e1b3b1c9fcb3d933`.
 
 | Field | Value |
 |---|---|
-| authorityState | TPGR-R8 documentation-only design dispatched at `e91e5d127`; pending exact-manifest no-commit worker return |
+| authorityState | TPGR-R8 `CLOSED_PASS_BOUNDED` at `859f851ac`; P0 0/6, P1 6/6; final disposition `HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE` |
 | baselinePath | `docs/baselines/CVF_GC018_TPGR_R8_P0_P1_ALLOWLIST_DECISION_DESIGN_2026-08-23.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R8_P0_P1_ALLOWLIST_DECISION_DESIGN_2026-08-23.md` |
-| nextAuthorityRequirement | worker must stay within the exact two-output manifest and return for independent review; no implementation or activation authority follows |
+| nextAuthorityRequirement | fresh exact-identity `OBSERVED_CURRENT` dual-run evidence, applicable current H3 binding, independent review, and fresh operator authority are all required before reopen |
 
 ## Closure Evidence
 
@@ -164,7 +164,7 @@ Continuity parent anchor: `6f7736d99494d9d5183e11e7e1b3b1c9fcb3d933`.
 
 ## Next Allowed Move
 
-TPGR-R8 documentation-only design is dispatched at `e91e5d127`. Paired authority hashes are baseline `4dd26d44651f891bea561feb499666d97725fa2b43ece136be0a38b3de61313d` and work order `0a35879278264821c5699f25238e6748348f24f9b1953cdfeb79971320f8c533`. Pre-dispatch 78/78 and pre-commit 86/86 passed. Next is exact-manifest external worker execution: create only the R8 assessment and worker return, leave both unstaged/uncommitted, then return for independent review. The worker must preserve honest evidence-state labels and may return an empty P0 allowlist. R8 implementation, P0/P1 activation, real canary/selective execution, R9, T15, protected implementation edits, new source intake, runtime/provider/live/public/deploy/production remain forbidden.
+TPGR-R8 is `CLOSED_PASS_BOUNDED` at `859f851ac`. Accepted assessment SHA-256 is `4392429c04b0434740b315402b37b1109564e9ad3d614c571fc7a68c0547bcc3`; accepted worker-return SHA-256 is `52a8ee8a655a137ed6a046ac73d881f365d63dfda34bd19c1f4b03e28b16f0fd`. Independent review confirmed P0 0/6, P1 6/6, 8/8 hostile cases, 12/12 negative designs, strict H3 binding, honest evidence-state labels, Tier 1 ambiguity default, separated costs, zero legacy suppression/added enforcement, and zero-edit R9 manifest. Reviewer repaired the circular activation-as-admission predicate and evidence-shape tokens without changing the hold result. Worker-return fast 65/65, pre-implementation 80/80, commit-steward, pre-closure 78/78, and pre-commit 86/86 passed. Final disposition is `HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE`. Reopen requires fresh exact-identity observed evidence, applicable current H3 binding, independent review, and fresh operator authority; R9 and all implementation/external effects remain forbidden.
 
 ## Active Boundary
 
@@ -195,7 +195,7 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private governance continuity only; prior public evidence remains at `lpci1-ref-staging@021f8b852`, with no new public change.
 
-## Core Guard Self-Protection Authorization - TPGR R8 Dispatch Continuity
+## Core Guard Self-Protection Authorization - TPGR R8 Closure Hold Continuity
 
 Protected paths:
 
@@ -204,17 +204,17 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrR8P0P1AllowlistDecisionDesignDispatched20260823.json`
+- `CVF_SESSION/state/entries/tpgrR8P0P1AllowlistDecisionDesignClosedHold20260823.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: explicit roadmap-continuation authority granted 2026-08-23.
 
-Authorized guard-maintenance scope: R8 dispatch continuity, exact authority hashes, worker-return boundary, and parked implementation/activation.
+Authorized guard-maintenance scope: R8 closure/hold continuity, accepted material hashes, exact reopen conditions, and parked R9/implementation/activation.
 
 Rollback boundary: revert this continuity batch as one unit.
 
 ## Claim Boundary
 
-This handoff records bounded R8 documentation-only design dispatch only. It authorizes exact-manifest no-commit worker execution but no R8 implementation, P0/P1 activation, real canary/selective execution, R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index implementation changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
+This handoff records bounded R8 documentation-only design closure and hold only. It authorizes no R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index implementation changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
