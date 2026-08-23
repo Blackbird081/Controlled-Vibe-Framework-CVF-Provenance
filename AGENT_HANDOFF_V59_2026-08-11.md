@@ -6,7 +6,6 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`
-- Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -37,6 +36,7 @@ Status: ACTIVE
 - Current TPGR R7 closure continuity: `9bbc6bf31014608633380d36e70f8319e2483e87`.
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`; external round-trip kit intake convention: `535a4fff5`.
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
+- MCP-KAR-T0 pinned dual-corpus intake dispatch: `9fca1ce4e`; upstream authority `https://github.com/modelcontextprotocol/modelcontextprotocol.git` pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; receipt total 993 files.
 - Active mode: `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
@@ -46,7 +46,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=hold until fresh exact-identity observed dual-run evidence, applicable current H3 binding, independent review, and fresh operator authority; parked checkpoint=R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, protected implementation edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute MCP-KAR-T0 documentation-only semantic intake while TPGR-R8 remains held; parked checkpoint=R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, source execution/direct import, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
@@ -67,7 +67,8 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Latest Work / Changes
 
-- External-agent protocol v1.1 material `65f6224cb62345d84ed3dd7e27081b800df5a02a` plus wrapper repair `4161ec158883ab89453495e8f3543bfb9d947cca` is exported at public `864c4e0e6139f3e32067dea41f43f240e505c0d8`. The governed mode refreshed `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` to that live SHA with receipt SHA-256 `04044eef5377b6250c040b04952a03dfff742980a3b8ee70f0ce467920df2570` and zero packet-hash mismatches. MCP absorption remains unopened.
+- External-agent protocol v1.1 material `65f6224cb62345d84ed3dd7e27081b800df5a02a` plus wrapper repair `4161ec158883ab89453495e8f3543bfb9d947cca` is exported at public `864c4e0e6139f3e32067dea41f43f240e505c0d8`. The governed mode refreshed `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` to that live SHA with receipt SHA-256 `04044eef5377b6250c040b04952a03dfff742980a3b8ee70f0ce467920df2570` and zero packet-hash mismatches.
+- Operator opened MCP-KAR-T0 as a separate documentation-only absorption lane. Dispatch commit `9fca1ce4e` records an ignored pinned source mirror, 885-file upstream manifest, 108-file mixed-origin derived manifest, combined 993-file receipt, receipt-only deferred ledgers, corpus registry entry, baseline, and work order. Pre-dispatch 78/78 and commit-hook content gates passed; semantic classification remains pending and no upstream or derived code was run.
 - Independent review accepted T1 against R01-R28 with bounded scope and kept
   the reproducible F11 residual explicit.
 - TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64;
@@ -166,7 +167,7 @@ Continuity parent anchor: `6f7736d99494d9d5183e11e7e1b3b1c9fcb3d933`.
 
 ## Next Allowed Move
 
-TPGR-R8 is `CLOSED_PASS_BOUNDED` at `859f851ac`. Accepted assessment SHA-256 is `4392429c04b0434740b315402b37b1109564e9ad3d614c571fc7a68c0547bcc3`; accepted worker-return SHA-256 is `52a8ee8a655a137ed6a046ac73d881f365d63dfda34bd19c1f4b03e28b16f0fd`. Independent review confirmed P0 0/6, P1 6/6, 8/8 hostile cases, 12/12 negative designs, strict H3 binding, honest evidence-state labels, Tier 1 ambiguity default, separated costs, zero legacy suppression/added enforcement, and zero-edit R9 manifest. Reviewer repaired the circular activation-as-admission predicate and evidence-shape tokens without changing the hold result. Worker-return fast 65/65, pre-implementation 80/80, commit-steward, pre-closure 78/78, and pre-commit 86/86 passed. Final disposition is `HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE`. Reopen requires fresh exact-identity observed evidence, applicable current H3 binding, independent review, and fresh operator authority; R9 and all implementation/external effects remain forbidden.
+TPGR-R8 remains `CLOSED_PASS_BOUNDED` at `859f851ac` with final disposition `HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE`; its reopen requirements and all R9/implementation restrictions are unchanged. The only active move is MCP-KAR-T0 semantic intake under `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T0_OFFICIAL_MCP_AND_EXTERNAL_REDESIGN_DUAL_CORPUS_INTAKE_2026-08-23.md`: read and classify the pinned upstream plus secondary derived corpus, reconcile current CVF owners, and return a bounded value-cost decision. No implementation follows without a fresh operator checkpoint.
 
 ## Active Boundary
 
@@ -175,6 +176,7 @@ TPGR-R8 is `CLOSED_PASS_BOUNDED` at `859f851ac`. Accepted assessment SHA-256 is 
   `lpci1-ref-staging`. Public `main`, Netlify deploy, production, and every
   unrelated lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
+- MCP-KAR-T0 source mirror is read-only and pinned; the external-agent redesign is secondary mixed-origin evidence. No dependency install, build, test, schema generation, source execution, direct import, MCP activation, runtime/provider/account use, package/checker wiring, or public sync is authorized.
 - Worker commit remained forbidden; independent reviewer created target commit.
 - T3A, T3B, T4, T5D, T5-R5, and selected T7 scope are closed bounded;
   route/registry adoption and repeat-live remain parked; T6 R2 is closed bounded.
@@ -197,18 +199,22 @@ Public-sync commit: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 Public artifact paths: `docs/guides/external-agent-review-guide.md`; `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md`; `docs/reference/CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json`.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `04044eef5377b6250c040b04952a03dfff742980a3b8ee70f0ce467920df2570`.
 
-## Core Guard Self-Protection Authorization - External Agent Protocol V1.1 Continuity
+## Core Guard Self-Protection Authorization - Protocol V1.1 And MCP-KAR-T0 Continuity
 
 Protected paths:
-
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 
-Operator authorization: explicit 2026-08-23 instruction to implement protocol improvements before MCP absorption and add latest-public snapshot refresh for the operator-local packet.
+Operator authorization: explicit 2026-08-23 instructions to complete protocol
+v1.1/local-packet refresh, begin absorption, and use the supplied official
+upstream repository URL.
 
-Authorized guard-maintenance scope: record v1.1 material, completed public export, verified local packet refresh, and receipt; do not alter TPGR-R8 or open MCP absorption.
+Authorized guard-maintenance scope: preserve the completed protocol v1.1 public
+export/local receipt and record MCP-KAR-T0 dispatch `9fca1ce4e`, pinned source,
+993-file receipt, documentation-only next move, and unchanged TPGR-R8 hold.
+Do not alter state structure or open implementation/external-effect lanes.
 
-Rollback boundary: revert this continuity batch as one unit.
+Rollback boundary: revert this continuity-only batch as one unit.
 
 ## Claim Boundary
 
-This handoff records bounded R8 design closure/hold plus completed external-agent protocol v1.1 public export and packet refresh. It authorizes no further public push, MCP absorption, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, registry activation, package loading, environment scan, persistence, runtime, MCP/network/provider/live invocation, external-agent runtime authority, deployment, or production.
+This handoff records bounded R8 design closure/hold, completed external-agent protocol v1.1 public export/packet refresh, and the MCP-KAR-T0 documentation-only semantic intake dispatch. It authorizes no public push, source execution, direct import, MCP runtime invocation, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, package/checker activation, persistence, provider/live invocation, deployment, or production.
