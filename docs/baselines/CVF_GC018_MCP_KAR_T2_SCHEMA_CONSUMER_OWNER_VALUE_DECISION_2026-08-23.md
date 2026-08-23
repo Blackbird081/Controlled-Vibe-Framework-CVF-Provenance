@@ -183,3 +183,8 @@ This baseline authorizes one local, documentation-only value and ownership
 decision. It does not authorize schema repair, schema adoption, source import,
 dependency changes, MCP runtime/package activation, transport, provider/live
 use, public sync, deployment, production, TPGR-R8 reopen, or R9.
+
+## Dispatch Continuity
+
+Material dispatch commit: `b6ba4489c838192a1dadabf3d4d9d62692d7d91d`.
+The active state projection now routes only to the no-commit T2 decision.

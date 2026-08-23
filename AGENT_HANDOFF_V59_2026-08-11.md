@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Marker compatibility commit: `3688e95a965964f3047b30b7ba4126fabf471f05`.
+- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current T2 dispatch: `b6ba4489c838192a1dadabf3d4d9d62692d7d91d`.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -37,7 +37,7 @@ Status: ACTIVE
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`; external round-trip kit intake convention: `535a4fff5`.
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
-- Active mode: `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
+- Active mode: `mcp_kar_t2_schema_consumer_owner_value_decision_dispatched_pending_worker_return`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -46,10 +46,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report MCP-KAR-T1 bounded closure and await operator selection for any follow-on; parked checkpoint=R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, MCP runtime/package, UI/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_t2_schema_consumer_owner_value_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed local-only T2 decision and return one uncommitted worker packet; parked checkpoint=schema implementation, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, MCP runtime/package, UI/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
+`mcp_kar_t2_schema_consumer_owner_value_decision_dispatched_pending_worker_return`
 
 ## Purpose
 
@@ -118,10 +118,10 @@ Continuity parent anchor: `6f7736d99494d9d5183e11e7e1b3b1c9fcb3d933`.
 
 | Field | Value |
 |---|---|
-| authorityState | TPGR-R8 `CLOSED_PASS_BOUNDED` at `859f851ac`; P0 0/6, P1 6/6; final disposition `HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE` |
-| baselinePath | `docs/baselines/CVF_GC018_TPGR_R8_P0_P1_ALLOWLIST_DECISION_DESIGN_2026-08-23.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R8_P0_P1_ALLOWLIST_DECISION_DESIGN_2026-08-23.md` |
-| nextAuthorityRequirement | fresh exact-identity `OBSERVED_CURRENT` dual-run evidence, applicable current H3 binding, independent review, and fresh operator authority are all required before reopen |
+| authorityState | MCP-KAR-T2 dispatched at `b6ba4489c`; TPGR-R8 hold unchanged |
+| baselinePath | `docs/baselines/CVF_GC018_MCP_KAR_T2_SCHEMA_CONSUMER_OWNER_VALUE_DECISION_2026-08-23.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T2_SCHEMA_CONSUMER_OWNER_VALUE_DECISION_2026-08-23.md` |
+| nextAuthorityRequirement | one local-only no-commit T2 decision return; schema implementation and runtime remain separately gated |
 
 ## Closure Evidence
 
@@ -167,7 +167,7 @@ Continuity parent anchor: `6f7736d99494d9d5183e11e7e1b3b1c9fcb3d933`.
 
 ## Next Allowed Move
 
-TPGR-R8 remains `CLOSED_PASS_BOUNDED` at `859f851ac` with final disposition `HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE`; its reopen requirements and all R9 restrictions are unchanged. MCP-KAR-T1 is reviewer-accepted and materially closed at `c179e656a`; any further MCP absorption, runtime/package work, or public export requires a fresh operator-selected tranche.
+Execute MCP-KAR-T2 only from dispatch `b6ba4489c`: decide whether the four deferred schemas have a named current non-test consumer and accepted owner, then return one uncommitted packet. TPGR-R8 and all runtime/package/public restrictions remain unchanged.
 
 ## Active Boundary
 
@@ -199,18 +199,17 @@ Public-sync commit: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 Public artifact paths: `docs/guides/external-agent-review-guide.md`; `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md`; `docs/reference/CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json`.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `04044eef5377b6250c040b04952a03dfff742980a3b8ee70f0ce467920df2570`.
 
-## Core Guard Self-Protection Authorization - Protocol V1.1 And MCP-KAR-T1 Continuity
+## Core Guard Self-Protection Authorization - Protocol V1.1 And MCP-KAR-T2 Continuity
 
 Protected paths:
-- `AGENT_HANDOFF_V59_2026-08-11.md`
+- `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit 2026-08-23 instructions to complete protocol
-v1.1/local-packet refresh, begin absorption, and use the supplied official
-upstream repository URL.
+Operator authorization: explicit 2026-08-23 protocol/absorption instructions
+plus the 2026-08-23 `next tranche` selection.
 
 Authorized guard-maintenance scope: preserve protocol v1.1 export/local receipt,
-record T0 closure `79e588b0` and T1 dispatch `adf7b36d2`, and expose only the
-bounded pure local invariant/conformance next move under unchanged TPGR-R8 hold.
+record T0/T1 closure and T2 dispatch `b6ba4489c`, regenerate governed active
+state projections, and expose only the bounded local decision next move.
 Do not alter state structure or open MCP runtime/external-effect lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.

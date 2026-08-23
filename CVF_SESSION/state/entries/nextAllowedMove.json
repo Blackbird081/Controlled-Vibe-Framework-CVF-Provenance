@@ -1,5 +1,5 @@
 {
   "stateOrder": 2244,
   "stateKey": "nextAllowedMove",
-  "value": "TPGR-R8 is CLOSED_PASS_BOUNDED at 859f851ac with final disposition HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE: P0 0/6, P1 6/6. The lane remains held until fresh governed OBSERVED_CURRENT dual-run evidence exists for an exact identity, H3 binding is current where applicable, independent review accepts that evidence, and the operator grants fresh authority. No R9, R8 implementation, P0/P1 activation, real canary/selective execution, protected governance implementation edit, source intake, runtime/provider/live/public/deploy/production action is currently authorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute MCP-KAR-T2 only from committed dispatch b6ba4489c: perform the local documentation-only named-consumer and owner-value decision for four deferred schema candidates, create exactly one uncommitted worker return, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. TPGR-R8 remains held; schema implementation, source import, MCP runtime/package/transport, provider/live, public/deploy/production, R9, R8 implementation, P0/P1 activation, real canary/selective execution, and T15 remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
 }
