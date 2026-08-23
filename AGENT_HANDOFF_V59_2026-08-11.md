@@ -36,6 +36,7 @@ Status: ACTIVE
 - Current TPGR R7 accepted material: `723382cfc373f8da8971326733f0ed4c074066f1`.
 - Current TPGR R7 closure continuity: `9bbc6bf31014608633380d36e70f8319e2483e87`.
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`; external round-trip kit intake convention: `535a4fff5`.
+- External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; public candidate: `864c4e0e6139f3e32067dea41f43f240e505c0d8` (not pushed).
 - Active mode: `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
@@ -66,7 +67,7 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Latest Work / Changes
 
-- External-agent round-trip guidance was exported to public `main` at `3b031fec35473e6ee6a554c4c72400e7a23b06c5`; representation identity/compatibility governance is committed at `84b884b08`, with public candidate `b7204787` not yet exported.
+- External-agent protocol v1.1 is implemented at `65f6224cb62345d84ed3dd7e27081b800df5a02a`: fail-closed live-public refresh, task capsule, owner index, Gate A/B, semantic validator/receipt, operator entrypoint, and six tests. Public candidate `864c4e0e6139f3e32067dea41f43f240e505c0d8` is clean but unpushed. `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` carries v1.1 plus the owner index; its audit anchor stays live `b7204787` until push plus governed refresh. MCP absorption remains unopened.
 - Independent review accepted T1 against R01-R28 with bounded scope and kept
   the reproducible F11 residual explicit.
 - TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64;
@@ -190,31 +191,24 @@ this compact active handoff after the public staging push superseded that mode.
 
 ## Public Export Disposition
 
-EXPORTED
+BLOCKED_MISSING_PUBLIC_ARTIFACTS
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-Public-sync commit: `3b031fec35473e6ee6a554c4c72400e7a23b06c5`
-Public artifact paths: `README.md`; `docs/guides/external-agent-review-guide.md`; `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md`.
+Public candidate commit: `864c4e0e6139f3e32067dea41f43f240e505c0d8` (local only; push not authorized in this tranche).
+Public artifact paths: `docs/guides/external-agent-review-guide.md`; `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md`; `docs/reference/CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json`.
+Prior exported protocol v1.0 anchor: `b7204787dfa83768824dcc7d8f309f12a13c8993`.
 
-## Core Guard Self-Protection Authorization - TPGR R8 Closure Hold Continuity
+## Core Guard Self-Protection Authorization - External Agent Protocol V1.1 Continuity
 
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrR8P0P1AllowlistDecisionDesignClosedHold20260823.json`
-- `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit roadmap-continuation authority granted 2026-08-23.
+Operator authorization: explicit 2026-08-23 instruction to implement protocol improvements before MCP absorption and add latest-public snapshot refresh for the operator-local packet.
 
-Authorized guard-maintenance scope: R8 closure/hold continuity, accepted material hashes, exact reopen conditions, and parked R9/implementation/activation.
+Authorized guard-maintenance scope: record v1.1 material, unpushed public candidate, local packet state, and post-push refresh checkpoint; do not alter TPGR-R8 or open MCP absorption.
 
 Rollback boundary: revert this continuity batch as one unit.
 
 ## Claim Boundary
 
-This handoff records bounded R8 documentation-only design closure and hold only. It authorizes no R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index implementation changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
-external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
-public sync, deployment, or production.
+This handoff records bounded R8 design closure/hold plus repo-local external-agent protocol v1.1 and an unpushed public candidate. It authorizes no public push, MCP absorption, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, registry activation, package loading, environment scan, persistence, runtime, MCP/network/provider/live invocation, external-agent runtime authority, deployment, or production.
