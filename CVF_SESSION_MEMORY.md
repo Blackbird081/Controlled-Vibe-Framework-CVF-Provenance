@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_closed_proceed_guard_candidate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=hold implementation and await a fresh operator-selected tranche; parked checkpoint=implementation, schema repair, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T4 exact-manifest local implementation and return uncommitted evidence; parked checkpoint=runtime/package/transport, schema repair, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_closed_proceed_guard_candidate`
-Current mode: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_closed_proceed_guard_candidate`
-Previous mode: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_dispatched_pending_worker_return`
+Current mode marker: `mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_dispatched_pending_worker_return`
+Current mode: `mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_dispatched_pending_worker_return`
+Previous mode: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_closed_proceed_guard_candidate`
 
 ## Next Allowed Move
 
-Mode: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_closed_proceed_guard_candidate`; T3 closed bounded at `c62f926f2`; hold implementation and await fresh operator selection while all runtime/external-effect restrictions remain held.
+Mode: `mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_dispatched_pending_worker_return`; execute only committed T4 dispatch `c5e1a09`, create one uncommitted worker return, and preserve all runtime/external-effect restrictions.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

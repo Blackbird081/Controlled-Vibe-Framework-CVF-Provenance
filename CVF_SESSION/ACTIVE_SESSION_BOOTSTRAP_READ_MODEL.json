@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_closed_proceed_guard_candidate",
+  "currentMode": "mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MCP-KAR-T3 owner/value decision is reviewer-accepted closed bounded at c62f926f2 with PROCEED_ELICITATION_GUARD. Hold implementation and await a fresh operator selection. A later separately authorized tranche may touch only the four-path reference/source/test/export manifest recorded in the T3 return, with pure local verification and no runtime bridge, package, transport, external fixture import, provider/live, public, deploy, or production action. MCP-KAR schema repair remains held at STOP_NO_NAMED_CONSUMER; TPGR-R8, R9, R8 implementation, P0/P1 activation, real canary/selective execution, and T15 remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute only committed MCP-KAR-T4 dispatch c5e1a09: one no-commit worker may implement MCP-PR-011 in the exact four-path reference/source/test/export manifest and create one worker return. Verification is pure local; unknown or malformed requested-data categories fail closed, sensitive form categories reject, sensitive URL mode and ordinary contact/profile form mode remain accepted, and existing rules remain unchanged. Runtime bridge, package, transport, external fixture import, schema repair, provider/live, public/deploy/production, TPGR-R8, R9, R8 implementation, P0/P1 activation, real canary/selective execution, and T15 remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MCP_KAR_T3_FORM_MODE_ELICITATION_SENSITIVE_DATA_OWNER_VALUE_DECISION_2026-08-24.md",
-    "baselineSha256": "556e69f1c877a075273d741a6925d7b082a5270ad508c4d772330cb74323a9d1",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T3_FORM_MODE_ELICITATION_SENSITIVE_DATA_OWNER_VALUE_DECISION_2026-08-24.md",
-    "workOrderSha256": "d6338489294e8dac829916696950a879fcdc64125dd88ae4914e31a80935585b"
+    "baselinePath": "docs/baselines/CVF_GC018_MCP_KAR_T4_FORM_MODE_ELICITATION_SENSITIVE_DATA_GUARD_IMPLEMENTATION_2026-08-24.md",
+    "baselineSha256": "ee3ad9c6f726bc7f0b31842024d124e550fbe79e7e392efd7cddea6210cbc727",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T4_FORM_MODE_ELICITATION_SENSITIVE_DATA_GUARD_IMPLEMENTATION_2026-08-24.md",
+    "workOrderSha256": "30234e643c0a9250996133e6de963f3591b933b63cf33f883be172022d7d070f"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
