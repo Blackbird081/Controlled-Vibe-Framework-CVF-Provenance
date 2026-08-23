@@ -158,6 +158,8 @@ $DENY_PATTERNS = @(
     '^docs[/\\]baselines[/\\]',
     '^docs[/\\]reviews[/\\]',
     '^docs[/\\]roadmaps[/\\]',
+    '^docs[/\\]reference[/\\]archive[/\\]',
+    '^docs[/\\]reference[/\\]CVF_EXTERNAL_AGENT_ROUND_TRIP_PUBLIC_SYNC_RECORD_',
     '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_BUILD_EVIDENCE_2026-07-23\.md$',
     '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_INDEPENDENT_REVIEW_2026-07-23\.md$',
     '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_INDEPENDENT_REVIEW_FINDINGS_2026-07-23\.md$',
@@ -219,6 +221,22 @@ function Test-Denied {
     foreach ($pattern in $DENY_PATTERNS) {
         if ($RelPath -match $pattern) { return $true }
     }
+
+    # A governed artifact that explicitly declares a non-export disposition is
+    # private by contract even when it sits below an otherwise allowed tree.
+    # Limit the search to the artifact's own disposition section so standards
+    # and templates that merely document the vocabulary remain exportable.
+    $sourcePath = Join-Path $GOVERNANCE_ROOT $RelPath
+    if ($RelPath -match '\.md$' -and (Test-Path $sourcePath -PathType Leaf)) {
+        $content = Get-Content -LiteralPath $sourcePath -Raw
+        $sectionPattern = '(?ms)^## Public Export Disposition\s*\r?\n(?<body>.*?)(?=^##\s|\z)'
+        $section = [regex]::Match($content, $sectionPattern)
+        if ($section.Success -and
+            $section.Groups['body'].Value -match '(?m)^\s*(?:Disposition:\s*)?`?(?:DEFERRED_PRIVATE_ONLY|BLOCKED_MISSING_PUBLIC_ARTIFACTS)`?\s*$') {
+            return $true
+        }
+    }
+
     return $false
 }
 
