@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_t9_final_bounded_exhaustion_reconciliation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T9 exact six-path reconciliation dispatch and return one uncommitted packet; parked checkpoint=T2 schema repair, T6 discovery implementation, filesystem/sampling runtime, parallel approval authority, package/transport, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_complete_absorption_bounded_closed`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no further MCP-KAR work unless a new immutable upstream pin or objective T2/T6 reopen condition plus operator authorization exists; parked checkpoint=T2 schema repair, T6 discovery implementation, filesystem/sampling runtime, parallel approval authority, package/transport, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `mcp_kar_t9_final_bounded_exhaustion_reconciliation_dispatched_pending_worker_return`
-Current mode: `mcp_kar_t9_final_bounded_exhaustion_reconciliation_dispatched_pending_worker_return`
-Previous mode: `mcp_kar_t7_t8_defensive_legacy_protocol_guards_closed_pass_bounded_t9_reconciliation_next`
+Current mode marker: `mcp_kar_complete_absorption_bounded_closed`
+Current mode: `mcp_kar_complete_absorption_bounded_closed`
+Previous mode: `mcp_kar_t9_final_bounded_exhaustion_reconciliation_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `mcp_kar_t9_final_bounded_exhaustion_reconciliation_dispatched_pending_worker_return`; execute only committed dispatch `0b5ec88cd` and create one uncommitted exact six-path worker return.
+Mode: `mcp_kar_complete_absorption_bounded_closed`; material closure `52d058ae6` reconciles all 993 rows in 35 semantic groups to 331 retained/evidence, 226 deferred/reopen, and 436 reject/no-value routes, with 0 unmapped. No further MCP-KAR work is allowed without a new immutable upstream pin or an objective T2/T6 reopen condition plus operator authorization.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

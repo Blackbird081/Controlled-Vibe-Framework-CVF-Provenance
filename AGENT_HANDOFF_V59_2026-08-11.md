@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current continuity parent: `2a6e8b3630d1e9fb6e008cb5235d0baf763b671f`.
+- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current continuity parent: `52d058ae6705ca850d549e458ceec5f59426defe`.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -37,7 +37,7 @@ Status: ACTIVE
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`; external round-trip kit intake convention: `535a4fff5`.
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
-- MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6 is stopped at decision `93763c127`; T7/T8 implementation is accepted at `3f9c03cbe`; final T9 dispatch is committed at `0b5ec88cd`. Active mode: `mcp_kar_t9_final_bounded_exhaustion_reconciliation_dispatched_pending_worker_return`.
+- MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6 is stopped at decision `93763c127`; T7/T8 implementation is accepted at `3f9c03cbe`; final T9 reconciliation is accepted at material commit `52d058ae6`. Active mode: `mcp_kar_complete_absorption_bounded_closed`.
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -46,10 +46,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_t9_final_bounded_exhaustion_reconciliation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T9 exact six-path reconciliation dispatch and return one uncommitted packet; parked checkpoint=T2 schema repair, T6 discovery implementation, filesystem/sampling runtime, parallel approval authority, package/transport, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_complete_absorption_bounded_closed`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no further MCP-KAR work unless a new immutable upstream pin or objective T2/T6 reopen condition plus operator authorization exists; parked checkpoint=T2 schema repair, T6 discovery implementation, filesystem/sampling runtime, parallel approval authority, package/transport, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
 
 ## Current Mode
-`mcp_kar_t9_final_bounded_exhaustion_reconciliation_dispatched_pending_worker_return`
+`mcp_kar_complete_absorption_bounded_closed`
 
 ## Purpose
 
@@ -71,6 +71,7 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 - MCP-KAR-T0 classified all 993 files and closed `PROCEED_SELECTIVELY` at `79e588b0`; operator-selected T1 closed at `c179e656a` with a pure local ten-rule profile, stable reference, eight-path registry reconciliation, and negative tests. No upstream code ran and no runtime/package/public effect occurred.
 - MCP-KAR-T2 is reviewer-accepted `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at material commit `5de1ecc98bf2f6aefecb7dd1e7aa0c203c409ef6`. Fresh exact-identity searches found zero current non-test consumers, no current owner accepted schema responsibility, and all five repair gates failed; terminal decision is `STOP_NO_NAMED_CONSUMER`. No schema, source, runtime, package, provider/live, or external action occurred.
 - MCP-KAR-T4 is reviewer-accepted `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at material commit `43aea7a18`. `MCP-PR-011` rejects sensitive form-mode category metadata and malformed mode/category input while allowing sensitive URL metadata and ordinary contact/profile form metadata. Focused 36/36, package 1846/1846, TypeScript, reviewer-fast, and diff hygiene passed with zero provider/live or runtime calls.
+- MCP-KAR-T9 is reviewer-accepted `COMPLETE_BOUNDED_DISPOSITION` at material commit `52d058ae6`. The immutable T0 corpus reconciles all 993 rows across 35 semantic groups: 331 retained/evidence, 226 deferred/reopen, 436 reject/no-value, and 0 unmapped. Conditional reopen inventory is exact at 15 seed artifacts, 39 candidate rows, and 1 terminal closure; no external rescan or source/runtime/package/provider/public effect occurred.
 - Independent review accepted T1 against R01-R28 with bounded scope and kept
   the reproducible F11 residual explicit.
 - TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64;
@@ -116,14 +117,14 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Current Authority
 
-Continuity parent anchor: `0b5ec88cd`.
+Continuity parent anchor: `52d058ae6705ca850d549e458ceec5f59426defe`.
 
 | Field | Value |
 |---|---|
-| authorityState | MCP-KAR-T9 final bounded exhaustion reconciliation dispatched at `0b5ec88cd`; one no-commit six-path worker return pending; T2/T6 and TPGR-R8 holds unchanged |
+| authorityState | MCP-KAR final bounded absorption closed at material commit `52d058ae6`; T2/T6 objective reopen conditions and TPGR-R8 hold remain unchanged |
 | baselinePath | `docs/baselines/CVF_GC018_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_2026-08-24.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_2026-08-24.md` |
-| nextAuthorityRequirement | one exact six-path reconciliation return using immutable T0 ledgers; no source rescan or implementation |
+| nextAuthorityRequirement | none for the current MCP-KAR route; a new immutable upstream pin or objective T2/T6 reopen condition plus operator authorization is required |
 
 ## Closure Evidence
 
@@ -169,7 +170,7 @@ Continuity parent anchor: `0b5ec88cd`.
 
 ## Next Allowed Move
 
-Execute only committed MCP-KAR-T9 dispatch `0b5ec88cd`: one no-commit worker may change exactly the final reference, route ledger, reopen index, existing MCP-KAR registry source, generated aggregate, and one return. Reuse immutable T0 evidence and do not rescan external sources or modify source/runtime/package/provider/public surfaces. T2, T6, TPGR-R8, and all held restrictions remain unchanged.
+MCP-KAR final bounded absorption is closed at `52d058ae6`. Do not perform further MCP-KAR work unless a new immutable upstream pin or an objective T2/T6 reopen condition is present and the operator authorizes a new governed tranche. Source/runtime/package/transport/provider/live/public/deploy/production restrictions and TPGR-R8 hold remain unchanged.
 
 ## Active Boundary
 

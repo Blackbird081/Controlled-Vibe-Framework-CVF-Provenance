@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2254,
+  "stateOrder": 2255,
   "stateKey": "nextAllowedMove",
-  "value": "Execute only committed MCP-KAR-T9 final bounded exhaustion reconciliation dispatch 0b5ec88cd: one no-commit worker may change exactly the final reference, 35-group route ledger, conditional reopen index, existing MCP-KAR corpus-registry source entry, generated registry aggregate, and one worker return. Reuse immutable T0 evidence without external-source rescan; preserve 226 deferred rows and T2/T6 objective reopen lanes. No source/runtime/package/provider/public effect is permitted. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MCP-KAR final bounded absorption is closed at material commit 52d058ae6: all 993 rows across 35 semantic groups reconcile to 331 retained/evidence, 226 deferred/reopen, and 436 reject/no-value routes, with 0 unmapped. No further MCP-KAR work is allowed unless a new immutable upstream pin or an objective T2/T6 reopen condition is present and the operator authorizes a new governed tranche. Source/runtime/package/transport/provider/live/public/deploy/production lanes remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
 }
