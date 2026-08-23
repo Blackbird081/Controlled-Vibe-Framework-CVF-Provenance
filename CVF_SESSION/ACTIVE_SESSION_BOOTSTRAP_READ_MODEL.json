@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_dispatched_pending_worker_return",
+  "currentMode": "mcp_kar_t4_form_mode_elicitation_sensitive_data_guard_implementation_closed_pass_bounded",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute only committed MCP-KAR-T4 dispatch c5e1a09: one no-commit worker may implement MCP-PR-011 in the exact four-path reference/source/test/export manifest and create one worker return. Verification is pure local; unknown or malformed requested-data categories fail closed, sensitive form categories reject, sensitive URL mode and ordinary contact/profile form mode remain accepted, and existing rules remain unchanged. Runtime bridge, package, transport, external fixture import, schema repair, provider/live, public/deploy/production, TPGR-R8, R9, R8 implementation, P0/P1 activation, real canary/selective execution, and T15 remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MCP-KAR-T4 is reviewer-accepted closed bounded at material commit 43aea7a18. Under the operator's autonomous absorption authorization, open only the next decision-first MCP-KAR tranche for approval-reference request binding and replay semantics; establish exact current owner, value, contract-only claim boundary, and a terminal proceed-or-stop decision before any implementation. Runtime bridge, durable replay prevention claim without a durable owner, package, transport, external fixture import, schema repair, provider/live, public/deploy/production, TPGR-R8, R9, R8 implementation, P0/P1 activation, real canary/selective execution, and T15 remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
