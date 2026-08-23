@@ -38,6 +38,9 @@ semantics.
 | Reference | Role |
 |---|---|
 | `CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md` | Identity, version compatibility, precedence, and snapshot-freshness contract for the public compact guide and portable expanded packet. |
+| `CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json` | Public-safe bounded owner-discovery projection consumed by the packet refresh workflow. |
+| `CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json` | Strict top-level shape for the generated per-task capsule. |
+| `scripts/external_agent_packet.py` | Fail-closed snapshot refresh, task-capsule generation, and semantic return validation. |
 | `CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md` | Standard for giving external agents enough context to review CVF without exposing private provenance source. |
 | `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | Central chain map connecting external/corpus/repo input, old blind-spot/corpus/legacy rules, external-agent review packets, returned-output absorption, GC-018, work orders, source verification, and autorun. |
 | `CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` | Central index for external-absorption package, runtime, checker, and value-parked candidates that retain CVF value but require concrete reopen evidence before future work. |
@@ -124,6 +127,18 @@ this repository:
 These files are non-authoritative orientation and return-shape aids. Their
 presence does not prove that the external agent followed them and does not
 replace current CVF source verification.
+
+Protocol `1.1.0` keeps these four files stable and adds generated supplements:
+the public owner-surface index, a refresh receipt, and, for a specific task,
+`CVF_EXTERNAL_AGENT_TASK_CAPSULE.json`. Generate a new capsule for every new
+repo/task; never reuse a previous capsule by merely editing its title.
+
+After a public update is pushed, run
+`.\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot`. The command
+must prove the public-sync checkout equals live `origin/main` before changing
+the operator-local snapshot. Before sending a packet for a repo-specific task,
+use `-Mode PrepareTask` with an immutable upstream commit. On return, use
+`-Mode ValidateReturn` to create an independent semantic validation receipt.
 
 When a returned repo or folder contains
 `EXTERNAL_AGENT_RETURN_MANIFEST.json` with schema

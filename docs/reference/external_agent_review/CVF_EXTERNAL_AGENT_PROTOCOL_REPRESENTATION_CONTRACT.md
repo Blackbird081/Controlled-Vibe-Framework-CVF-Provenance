@@ -21,6 +21,8 @@ CVF authority, publish private provenance, or authorize external effects.
 
 Canonical protocol identifier: `cvf.external-agent-round-trip`.
 
+Current version: `1.1.0`.
+
 Current compatible major: `1`.
 
 Every representation must expose these fields:
@@ -50,6 +52,31 @@ The portable companion set is:
 - `CVF_CURRENT_PUBLIC_SNAPSHOT.md`;
 - `CVF_EXTERNAL_AGENT_RETURN_CONTRACT.md`.
 
+Two generated supplements may accompany the stable four-file set:
+
+- `CVF_PUBLIC_OWNER_SURFACE_INDEX.json`, copied from the public-safe owner
+  projection for bounded owner discovery;
+- `CVF_EXTERNAL_AGENT_TASK_CAPSULE.json`, generated for one exact task and
+  source repository. It must be regenerated rather than reused for another
+  repository.
+
+`CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json` records the public commit and
+hashes produced by the latest packet refresh. These supplements do not become
+CVF authority and do not change the four stable entry files.
+
+## Gate A And Gate B
+
+External implementation uses two ordered gates:
+
+1. Gate A (`SOURCE_OWNER_OVERLAP`) verifies immutable source identity, license
+   expression and source, current CVF owner surface, and overlap/novelty
+   disposition before design or code.
+2. Gate B (`DESIGN_CODE_TEST`) opens only after Gate A passes and requires
+   implementation/design evidence plus executed negative semantic tests.
+
+A large packet, JSON Schema pass, or positive example does not substitute for
+either gate.
+
 ## Selection And Precedence
 
 1. When only the public repository is supplied, use the public compact
@@ -73,6 +100,17 @@ facts across commits without labeling both identities.
 
 Cached browser, search, or commit-history surfaces are discovery aids, not
 sufficient proof of live `HEAD`; use an exact Git ref query when available.
+
+The governed refresh command is:
+
+```powershell
+.\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot
+```
+
+It performs no push. It requires a clean public-sync `main`, verifies that its
+HEAD equals live `origin/main`, then refreshes the operator-local snapshot,
+owner index, and receipt. A local public candidate that has not been pushed is
+therefore rejected instead of being labeled live public state.
 
 ## Update Rule
 
