@@ -45,7 +45,8 @@ export type {
   MCPDiscoveryEvidenceProfile, MCPSubscriptionProfile, MCPResultProfile,
   MCPCacheProfile, MCPAuthorizationProfile, MCPHttpMirrorProfile,
   MCPElicitationMode, MCPElicitationRequestedDataCategory,
-  MCPElicitationProfile,
+  MCPElicitationProfile, MCPRootUriScheme, MCPRootsAuthorityClaim, MCPRootsHintEvidenceProfile,
+  MCPSamplingCapability, MCPSamplingStructuralContent, MCPSamplingStructuralMessage, MCPSamplingSequenceEvidenceProfile,
   MCPProtocolInvariantProfileInput, MCPProtocolInvariantViolation,
   MCPProtocolInvariantDecision,
 } from "./mcp.protocol.invariant.profile";

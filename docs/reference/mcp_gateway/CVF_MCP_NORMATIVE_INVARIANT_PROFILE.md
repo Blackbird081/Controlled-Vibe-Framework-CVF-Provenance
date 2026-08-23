@@ -10,7 +10,7 @@ Date: 2026-08-23
 
 ## Purpose
 
-Define the CVF-native interpretation of eleven selected normative MCP
+Define the CVF-native interpretation of thirteen selected normative MCP
 `2026-07-28` invariants. The profile gives local contract and test owners a
 stable fail-closed vocabulary without importing an upstream implementation or
 claiming MCP interoperability.
@@ -51,6 +51,8 @@ authorization, approval, identity, or execution authority.
 | `MCP-PR-009` | `docs/specification/2026-07-28/basic/authorization/index.mdx`, Resource Parameter and Token Handling | a token must target the intended MCP server audience | `TOKEN_AUDIENCE_MISMATCH` |
 | `MCP-PR-010` | `docs/specification/2026-07-28/basic/transports/streamable-http.mdx`, Header Validation | mirrored HTTP header and request-body values must agree | `HEADER_MISMATCH`, JSON-RPC `-32020` |
 | `MCP-PR-011` | `docs/specification/2026-07-28/client/elicitation.mdx`, Form Mode and Security Considerations | form-mode elicitation rejects password, API-key, access-token, and payment-credential categories; unknown or malformed category metadata fails closed; URL mode may carry known sensitive categories outside the form surface | `UNSAFE_ELICITATION_REQUEST` |
+| `MCP-PR-012` | `docs/specification/2026-07-28/client/roots.mdx`, overview and Security Considerations | deprecated roots are caller-validated informational hints only; malformed or non-file root evidence and any authorization, containment, confinement, or filesystem-authority claim fail closed | `ROOTS_HINT_AUTHORITY_VIOLATION` |
+| `MCP-PR-013` | `docs/specification/2026-07-28/client/sampling.mdx`, Tools in Sampling and Tool Use and Result Balance | deprecated tool-enabled sampling requires declared `sampling.tools`; unique tool-use IDs correlate exactly once to the immediately following results-only user message | `SAMPLING_SEQUENCE_VIOLATION` |
 
 All source paths in the table are relative to the pinned source mirror root:
 `.private_reference/source_mirrors/modelcontextprotocol__modelcontextprotocol/`.
@@ -71,6 +73,24 @@ All source paths in the table are relative to the pinned source mirror root:
   unknown, non-string, or otherwise malformed category metadata. URL mode
   accepts known sensitive categories because collection occurs outside the
   form surface. Ordinary `contact` and `profile` form categories remain valid.
+- Roots admission receives only structural evidence: whether roots were
+  presented, the closed URI-scheme classification `file`, caller-owned consent
+  and path-validation confirmations, and the closed authority-claim vocabulary
+  `hints-only`, `authorization`, `containment`, `confinement`, and
+  `filesystem-authority`. It receives no path or URI value and performs no
+  discovery, enumeration, normalization, resolution, opening, access, or
+  containment operation. Only complete `hints-only` evidence passes.
+- Sampling admission receives only capability names, message roles, structural
+  content kinds, bounded correlation IDs, and an optional precomputed
+  `MCPBusinessApprovalDecision`. It receives no prompt, tool input/result
+  payload, model name, provider handle, transport, or execution callback.
+  Tool-less sampling is accepted. Tool use requires `sampling.tools`, unique
+  IDs, and exactly one matching result per use in the adjacent user message;
+  that message may contain only tool results. Unknown, duplicate, missing,
+  mismatched, mixed-content, malformed, and intervening cases fail closed.
+- A supplied `existingApprovalDisposition` remains an immutable structural
+  disposition owned by `MCPBusinessAdapterContract`; this profile neither
+  derives nor changes it, and profile acceptance is not approval authority.
 - The profile never converts discovery, cache, MRTR, or protocol metadata into
   approval or authorization.
 
@@ -84,7 +104,9 @@ discovery use, subscription ordering/correlation, MRTR terminal misreading,
 unsafe caching, audience mismatch, and HTTP header/body mismatch.
 It also covers all four sensitive form categories, malformed and unknown form
 metadata, sensitive URL-mode categories, ordinary contact/profile form
-categories, and the unchanged accepted composite profile.
+categories, roots hints and authority/malformed cases, sampling capability,
+correlation, adjacency, results-only and malformed cases, and accepted
+composite profiles with absent or complete legacy evidence.
 
 Passing these tests proves only the local contract decisions. It does not prove
 wire compatibility, transport behavior, security deployment, or conformance of
@@ -100,6 +122,7 @@ an external MCP implementation.
 ## Claim Boundary
 
 This profile is a private, local reference and deterministic decision contract.
-It does not execute or intercept MCP traffic, validate a live peer, activate a
-package, grant authority, call a provider, publish a public artifact, deploy,
-or establish production readiness.
+It does not execute or intercept MCP traffic, validate a live peer, inspect or
+act on a filesystem path, invoke a model or tool, run a sampling loop, derive
+approval, activate a package, grant authority, call a provider, publish a
+public artifact, deploy, or establish production readiness.

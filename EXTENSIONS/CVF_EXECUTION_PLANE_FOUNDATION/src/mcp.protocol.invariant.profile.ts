@@ -1,3 +1,5 @@
+import type { MCPBusinessApprovalDecision } from "./mcp.business.adapter.contract";
+
 export const MCP_PROTOCOL_VERSION_2026_07_28 = "2026-07-28" as const;
 
 export type MCPProtocolInvariantRuleId =
@@ -11,7 +13,9 @@ export type MCPProtocolInvariantRuleId =
   | "MCP-PR-008"
   | "MCP-PR-009"
   | "MCP-PR-010"
-  | "MCP-PR-011";
+  | "MCP-PR-011"
+  | "MCP-PR-012"
+  | "MCP-PR-013";
 
 export type MCPProtocolInvariantDecisionCode =
   | "INVALID_PARAMS"
@@ -24,7 +28,9 @@ export type MCPProtocolInvariantDecisionCode =
   | "UNSAFE_CACHE_HINT"
   | "TOKEN_AUDIENCE_MISMATCH"
   | "HEADER_MISMATCH"
-  | "UNSAFE_ELICITATION_REQUEST";
+  | "UNSAFE_ELICITATION_REQUEST"
+  | "ROOTS_HINT_AUTHORITY_VIOLATION"
+  | "SAMPLING_SEQUENCE_VIOLATION";
 
 export type MCPProtocolJsonRpcErrorCode = -32602 | -32020 | -32021 | -32022;
 
@@ -91,6 +97,44 @@ export interface MCPElicitationProfile {
   requestedDataCategories: readonly MCPElicitationRequestedDataCategory[];
 }
 
+export type MCPRootUriScheme = "file";
+
+export type MCPRootsAuthorityClaim =
+  | "hints-only"
+  | "authorization"
+  | "containment"
+  | "confinement"
+  | "filesystem-authority";
+
+export interface MCPRootsHintEvidenceProfile {
+  rootsPresented: true;
+  rootUriSchemes: readonly MCPRootUriScheme[];
+  callerConsentConfirmed: true;
+  callerPathValidationConfirmed: true;
+  authorityClaim: MCPRootsAuthorityClaim;
+}
+
+export type MCPSamplingCapability = "sampling" | "sampling.tools";
+
+export type MCPSamplingStructuralContent =
+  | { type: "text" }
+  | { type: "image" }
+  | { type: "audio" }
+  | { type: "tool_use"; id: string }
+  | { type: "tool_result"; toolUseId: string };
+
+export interface MCPSamplingStructuralMessage {
+  role: "user" | "assistant";
+  content: readonly MCPSamplingStructuralContent[];
+}
+
+export interface MCPSamplingSequenceEvidenceProfile {
+  toolsRequested: boolean;
+  declaredCapabilities: readonly MCPSamplingCapability[];
+  messages: readonly MCPSamplingStructuralMessage[];
+  existingApprovalDisposition?: MCPBusinessApprovalDecision;
+}
+
 export interface MCPProtocolInvariantProfileInput {
   request: MCPProtocolRequestProfile;
   discovery?: MCPDiscoveryEvidenceProfile;
@@ -100,6 +144,8 @@ export interface MCPProtocolInvariantProfileInput {
   authorization?: MCPAuthorizationProfile;
   http?: MCPHttpMirrorProfile;
   elicitation?: MCPElicitationProfile;
+  rootsHintEvidence?: MCPRootsHintEvidenceProfile;
+  samplingSequenceEvidence?: MCPSamplingSequenceEvidenceProfile;
 }
 
 export interface MCPProtocolInvariantViolation {
@@ -126,6 +172,8 @@ export class MCPProtocolInvariantProfile {
     this.checkAuthorization(input.authorization, violations);
     this.checkHttpMirrors(input.http, violations);
     this.checkElicitation(input.elicitation, violations);
+    this.checkRootsHints(input.rootsHintEvidence, violations);
+    this.checkSamplingSequence(input.samplingSequenceEvidence, violations);
     return { accepted: violations.length === 0, violations };
   }
 
@@ -333,6 +381,200 @@ export class MCPProtocolInvariantProfile {
       });
     }
   }
+
+  private checkRootsHints(
+    roots: MCPRootsHintEvidenceProfile | undefined,
+    violations: MCPProtocolInvariantViolation[],
+  ): void {
+    if (!roots) return;
+
+    const candidate: unknown = roots;
+    const validShape = isExactRecord(candidate, [
+      "rootsPresented",
+      "rootUriSchemes",
+      "callerConsentConfirmed",
+      "callerPathValidationConfirmed",
+      "authorityClaim",
+    ]);
+    const schemes: unknown = validShape ? candidate.rootUriSchemes : undefined;
+    const validSchemes = Array.isArray(schemes)
+      && schemes.length > 0
+      && schemes.every((scheme) => scheme === "file");
+    const validHintsOnlyEvidence = validShape
+      && candidate.rootsPresented === true
+      && validSchemes
+      && candidate.callerConsentConfirmed === true
+      && candidate.callerPathValidationConfirmed === true
+      && candidate.authorityClaim === "hints-only";
+
+    if (!validHintsOnlyEvidence) {
+      violations.push({
+        ruleId: "MCP-PR-012",
+        decisionCode: "ROOTS_HINT_AUTHORITY_VIOLATION",
+        reason: "legacy roots evidence is malformed, non-file, or claims path authority beyond caller-owned hints",
+      });
+    }
+  }
+
+  private checkSamplingSequence(
+    sampling: MCPSamplingSequenceEvidenceProfile | undefined,
+    violations: MCPProtocolInvariantViolation[],
+  ): void {
+    if (!sampling) return;
+
+    if (!isValidSamplingEvidence(sampling)) {
+      violations.push({
+        ruleId: "MCP-PR-013",
+        decisionCode: "SAMPLING_SEQUENCE_VIOLATION",
+        reason: "legacy sampling evidence has invalid capability metadata or tool-use/result sequencing",
+      });
+    }
+  }
+}
+
+const STRUCTURAL_ID = /^[A-Za-z][A-Za-z0-9._:-]{0,127}$/;
+const SAMPLING_CAPABILITIES: readonly MCPSamplingCapability[] = [
+  "sampling",
+  "sampling.tools",
+];
+const APPROVAL_DISPOSITIONS: readonly MCPBusinessApprovalDecision[] = [
+  "allow",
+  "allow_with_receipt",
+  "requires_approval",
+  "deny",
+];
+
+function isValidSamplingEvidence(value: unknown): value is MCPSamplingSequenceEvidenceProfile {
+  if (!isPlainRecord(value)) return false;
+  const allowedKeys = [
+    "toolsRequested",
+    "declaredCapabilities",
+    "messages",
+    "existingApprovalDisposition",
+  ];
+  if (!hasOnlyKeys(value, allowedKeys)) return false;
+  if (typeof value.toolsRequested !== "boolean") return false;
+  if (
+    !Array.isArray(value.declaredCapabilities)
+    || value.declaredCapabilities.some(
+      (capability) => !SAMPLING_CAPABILITIES.includes(capability as MCPSamplingCapability),
+    )
+    || new Set(value.declaredCapabilities).size !== value.declaredCapabilities.length
+  ) return false;
+  if (
+    value.existingApprovalDisposition !== undefined
+    && !APPROVAL_DISPOSITIONS.includes(
+      value.existingApprovalDisposition as MCPBusinessApprovalDecision,
+    )
+  ) return false;
+  if (!Array.isArray(value.messages)) return false;
+  if (!value.declaredCapabilities.includes("sampling")) return false;
+  if (value.toolsRequested && !value.declaredCapabilities.includes("sampling.tools")) return false;
+
+  const messages = value.messages;
+  const seenToolUseIds = new Set<string>();
+  for (let index = 0; index < messages.length; index += 1) {
+    const message = messages[index];
+    if (!isValidSamplingMessage(message)) return false;
+    const toolUses = message.content.filter(
+      (content): content is Extract<MCPSamplingStructuralContent, { type: "tool_use" }> => (
+        content.type === "tool_use"
+      ),
+    );
+    const toolResults = message.content.filter(
+      (content): content is Extract<MCPSamplingStructuralContent, { type: "tool_result" }> => (
+        content.type === "tool_result"
+      ),
+    );
+
+    if (toolResults.length > 0) {
+      if (message.role !== "user" || toolResults.length !== message.content.length) return false;
+      const previous = messages[index - 1];
+      if (!previous || !isValidSamplingMessage(previous) || previous.role !== "assistant") return false;
+      const previousUses = previous.content.filter(
+        (content): content is Extract<MCPSamplingStructuralContent, { type: "tool_use" }> => (
+          content.type === "tool_use"
+        ),
+      );
+      if (!hasExactToolResultCorrelation(previousUses, toolResults)) return false;
+    }
+
+    if (toolUses.length > 0) {
+      if (
+        message.role !== "assistant"
+        || !value.toolsRequested
+        || !value.declaredCapabilities.includes("sampling.tools")
+      ) return false;
+      for (const toolUse of toolUses) {
+        if (seenToolUseIds.has(toolUse.id)) return false;
+        seenToolUseIds.add(toolUse.id);
+      }
+      const next = messages[index + 1];
+      if (!next || next.role !== "user" || !isValidSamplingMessage(next)) return false;
+      const nextResults = next.content.filter(
+        (content): content is Extract<MCPSamplingStructuralContent, { type: "tool_result" }> => (
+          content.type === "tool_result"
+        ),
+      );
+      if (nextResults.length !== next.content.length) return false;
+      if (!hasExactToolResultCorrelation(toolUses, nextResults)) return false;
+    }
+  }
+  return true;
+}
+
+function isValidSamplingMessage(value: unknown): value is MCPSamplingStructuralMessage {
+  if (!isExactRecord(value, ["role", "content"])) return false;
+  if (value.role !== "user" && value.role !== "assistant") return false;
+  if (!Array.isArray(value.content) || value.content.length === 0) return false;
+  return value.content.every((content) => {
+    if (!isPlainRecord(content) || typeof content.type !== "string") return false;
+    if (content.type === "tool_use") {
+      return isExactRecord(content, ["type", "id"])
+        && typeof content.id === "string"
+        && STRUCTURAL_ID.test(content.id);
+    }
+    if (content.type === "tool_result") {
+      return isExactRecord(content, ["type", "toolUseId"])
+        && typeof content.toolUseId === "string"
+        && STRUCTURAL_ID.test(content.toolUseId);
+    }
+    return ["text", "image", "audio"].includes(content.type)
+      && isExactRecord(content, ["type"]);
+  });
+}
+
+function hasExactToolResultCorrelation(
+  uses: readonly Extract<MCPSamplingStructuralContent, { type: "tool_use" }>[],
+  results: readonly Extract<MCPSamplingStructuralContent, { type: "tool_result" }>[],
+): boolean {
+  if (uses.length === 0 || uses.length !== results.length) return false;
+  const useIds = uses.map((use) => use.id);
+  const resultIds = results.map((result) => result.toolUseId);
+  if (new Set(useIds).size !== useIds.length || new Set(resultIds).size !== resultIds.length) {
+    return false;
+  }
+  const expected = new Set(useIds);
+  return resultIds.every((id) => expected.has(id));
+}
+
+function isPlainRecord(value: unknown): value is Record<string, unknown> {
+  if (value === null || typeof value !== "object" || Array.isArray(value)) return false;
+  const prototype = Object.getPrototypeOf(value);
+  return prototype === Object.prototype || prototype === null;
+}
+
+function isExactRecord(
+  value: unknown,
+  expectedKeys: readonly string[],
+): value is Record<string, unknown> {
+  return isPlainRecord(value)
+    && Object.keys(value).length === expectedKeys.length
+    && Object.keys(value).every((key) => expectedKeys.includes(key));
+}
+
+function hasOnlyKeys(value: Record<string, unknown>, allowedKeys: readonly string[]): boolean {
+  return Object.keys(value).every((key) => allowedKeys.includes(key));
 }
 
 export function createMCPProtocolInvariantProfile(): MCPProtocolInvariantProfile {

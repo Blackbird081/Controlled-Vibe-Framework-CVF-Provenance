@@ -54,7 +54,7 @@ function expectRule(
 }
 
 describe("MCPProtocolInvariantProfile", () => {
-  it("accepts a composite profile satisfying all eleven rules", () => {
+  it("accepts a composite profile satisfying all thirteen rules when optional legacy evidence is absent", () => {
     expect(evaluate({})).toEqual({ accepted: true, violations: [] });
   });
 
@@ -231,5 +231,269 @@ describe("MCPProtocolInvariantProfile", () => {
         requestedDataCategories: ["contact", "profile"],
       },
     })).toEqual({ accepted: true, violations: [] });
+  });
+
+  it("accepts bounded roots as caller-validated hints without receiving path values", () => {
+    expect(evaluate({
+      rootsHintEvidence: {
+        rootsPresented: true,
+        rootUriSchemes: ["file", "file"],
+        callerConsentConfirmed: true,
+        callerPathValidationConfirmed: true,
+        authorityClaim: "hints-only",
+      },
+    })).toEqual({ accepted: true, violations: [] });
+  });
+
+  it.each(["authorization", "containment", "confinement", "filesystem-authority"] as const)(
+    "rejects the roots %s authority claim",
+    (authorityClaim) => {
+      const result = evaluate({
+        rootsHintEvidence: {
+          rootsPresented: true,
+          rootUriSchemes: ["file"],
+          callerConsentConfirmed: true,
+          callerPathValidationConfirmed: true,
+          authorityClaim,
+        },
+      });
+      expectRule(result, "MCP-PR-012");
+      expect(
+        result.violations.find((violation) => violation.ruleId === "MCP-PR-012")?.decisionCode,
+      ).toBe("ROOTS_HINT_AUTHORITY_VIOLATION");
+    },
+  );
+
+  it.each([
+    ["empty roots", { rootUriSchemes: [] }],
+    ["non-file root", { rootUriSchemes: ["https"] }],
+    ["missing caller consent", { callerConsentConfirmed: false }],
+    ["missing caller path validation", { callerPathValidationConfirmed: false }],
+    ["roots not presented", { rootsPresented: false }],
+    ["unknown authority claim", { authorityClaim: "workspace-boundary" }],
+    ["unknown field", { payload: "not-accepted" }],
+  ])("fails closed for malformed roots evidence: %s", (_name, override) => {
+    const result = evaluate({
+      rootsHintEvidence: {
+        rootsPresented: true,
+        rootUriSchemes: ["file"],
+        callerConsentConfirmed: true,
+        callerPathValidationConfirmed: true,
+        authorityClaim: "hints-only",
+        ...override,
+      } as unknown as MCPProtocolInvariantProfileInput["rootsHintEvidence"],
+    });
+    expectRule(result, "MCP-PR-012");
+  });
+
+  it("accepts bounded tool-less sampling evidence", () => {
+    expect(evaluate({
+      samplingSequenceEvidence: {
+        toolsRequested: false,
+        declaredCapabilities: ["sampling"],
+        messages: [
+          { role: "user", content: [{ type: "text" }] },
+          { role: "assistant", content: [{ type: "text" }] },
+        ],
+        existingApprovalDisposition: "deny",
+      },
+    })).toEqual({ accepted: true, violations: [] });
+  });
+
+  it("accepts parallel tool uses with exact adjacent results-only correlation", () => {
+    expect(evaluate({
+      samplingSequenceEvidence: {
+        toolsRequested: true,
+        declaredCapabilities: ["sampling", "sampling.tools"],
+        messages: [
+          { role: "user", content: [{ type: "text" }] },
+          {
+            role: "assistant",
+            content: [
+              { type: "text" },
+              { type: "tool_use", id: "call.paris" },
+              { type: "tool_use", id: "call.london" },
+            ],
+          },
+          {
+            role: "user",
+            content: [
+              { type: "tool_result", toolUseId: "call.london" },
+              { type: "tool_result", toolUseId: "call.paris" },
+            ],
+          },
+          { role: "assistant", content: [{ type: "text" }] },
+        ],
+        existingApprovalDisposition: "allow_with_receipt",
+      },
+    })).toEqual({ accepted: true, violations: [] });
+  });
+
+  it("rejects tool-enabled sampling without the nested sampling.tools capability", () => {
+    const result = evaluate({
+      samplingSequenceEvidence: {
+        toolsRequested: true,
+        declaredCapabilities: ["sampling"],
+        messages: [],
+      },
+    });
+    expectRule(result, "MCP-PR-013");
+    expect(
+      result.violations.find((violation) => violation.ruleId === "MCP-PR-013")?.decisionCode,
+    ).toBe("SAMPLING_SEQUENCE_VIOLATION");
+  });
+
+  it.each([
+    [
+      "duplicate tool-use IDs",
+      [
+        {
+          role: "assistant",
+          content: [
+            { type: "tool_use", id: "call.1" },
+            { type: "tool_use", id: "call.1" },
+          ],
+        },
+        { role: "user", content: [{ type: "tool_result", toolUseId: "call.1" }] },
+      ],
+    ],
+    [
+      "missing tool result",
+      [
+        {
+          role: "assistant",
+          content: [
+            { type: "tool_use", id: "call.1" },
+            { type: "tool_use", id: "call.2" },
+          ],
+        },
+        { role: "user", content: [{ type: "tool_result", toolUseId: "call.1" }] },
+      ],
+    ],
+    [
+      "mismatched tool result",
+      [
+        { role: "assistant", content: [{ type: "tool_use", id: "call.1" }] },
+        { role: "user", content: [{ type: "tool_result", toolUseId: "call.unknown" }] },
+      ],
+    ],
+    [
+      "duplicate tool result",
+      [
+        { role: "assistant", content: [{ type: "tool_use", id: "call.1" }] },
+        {
+          role: "user",
+          content: [
+            { type: "tool_result", toolUseId: "call.1" },
+            { type: "tool_result", toolUseId: "call.1" },
+          ],
+        },
+      ],
+    ],
+    [
+      "mixed result content",
+      [
+        { role: "assistant", content: [{ type: "tool_use", id: "call.1" }] },
+        {
+          role: "user",
+          content: [
+            { type: "tool_result", toolUseId: "call.1" },
+            { type: "text" },
+          ],
+        },
+      ],
+    ],
+    [
+      "intervening message",
+      [
+        { role: "assistant", content: [{ type: "tool_use", id: "call.1" }] },
+        { role: "assistant", content: [{ type: "text" }] },
+        { role: "user", content: [{ type: "tool_result", toolUseId: "call.1" }] },
+      ],
+    ],
+    [
+      "unknown standalone result",
+      [{ role: "user", content: [{ type: "tool_result", toolUseId: "call.unknown" }] }],
+    ],
+  ])("fails closed for sampling sequence violation: %s", (_name, messages) => {
+    const result = evaluate({
+      samplingSequenceEvidence: {
+        toolsRequested: true,
+        declaredCapabilities: ["sampling", "sampling.tools"],
+        messages,
+      } as unknown as MCPProtocolInvariantProfileInput["samplingSequenceEvidence"],
+    });
+    expectRule(result, "MCP-PR-013");
+  });
+
+  it.each([
+    ["unknown capability", { declaredCapabilities: ["sampling.unknown"] }],
+    ["missing basic sampling capability", { declaredCapabilities: [] }],
+    ["duplicate capability", { declaredCapabilities: ["sampling", "sampling"] }],
+    ["unknown role", { messages: [{ role: "system", content: [{ type: "text" }] }] }],
+    ["empty message content", { messages: [{ role: "user", content: [] }] }],
+    ["unknown content type", { messages: [{ role: "user", content: [{ type: "secret" }] }] }],
+    ["raw content field", { messages: [{ role: "user", content: [{ type: "text", text: "raw" }] }] }],
+    ["malformed approval disposition", { existingApprovalDisposition: "APPROVE" }],
+  ])("fails closed for malformed sampling evidence: %s", (_name, override) => {
+    const result = evaluate({
+      samplingSequenceEvidence: {
+        toolsRequested: false,
+        declaredCapabilities: ["sampling"],
+        messages: [{ role: "user", content: [{ type: "text" }] }],
+        ...override,
+      } as unknown as MCPProtocolInvariantProfileInput["samplingSequenceEvidence"],
+    });
+    expectRule(result, "MCP-PR-013");
+  });
+
+  it("accepts a complete thirteen-rule composite with both legacy evidence profiles", () => {
+    expect(evaluate({
+      elicitation: {
+        elicitationMode: "form",
+        requestedDataCategories: ["contact"],
+      },
+      rootsHintEvidence: {
+        rootsPresented: true,
+        rootUriSchemes: ["file"],
+        callerConsentConfirmed: true,
+        callerPathValidationConfirmed: true,
+        authorityClaim: "hints-only",
+      },
+      samplingSequenceEvidence: {
+        toolsRequested: true,
+        declaredCapabilities: ["sampling", "sampling.tools"],
+        messages: [
+          { role: "assistant", content: [{ type: "tool_use", id: "call.composite" }] },
+          { role: "user", content: [{ type: "tool_result", toolUseId: "call.composite" }] },
+        ],
+        existingApprovalDisposition: "requires_approval",
+      },
+    })).toEqual({ accepted: true, violations: [] });
+  });
+
+  it("returns both defensive legacy violations alongside an unchanged prior-rule violation", () => {
+    const result = evaluate({
+      authorization: {
+        tokenAudience: "https://wrong.example.test",
+        intendedAudience: "https://mcp.example.test",
+      },
+      rootsHintEvidence: {
+        rootsPresented: true,
+        rootUriSchemes: ["https"],
+        callerConsentConfirmed: true,
+        callerPathValidationConfirmed: true,
+        authorityClaim: "hints-only",
+      } as unknown as MCPProtocolInvariantProfileInput["rootsHintEvidence"],
+      samplingSequenceEvidence: {
+        toolsRequested: true,
+        declaredCapabilities: ["sampling"],
+        messages: [],
+      },
+    });
+
+    expectRule(result, "MCP-PR-009");
+    expectRule(result, "MCP-PR-012");
+    expectRule(result, "MCP-PR-013");
   });
 });
