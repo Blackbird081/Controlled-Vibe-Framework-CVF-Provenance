@@ -6835,7 +6835,7 @@
         ".private_reference/legacy/CVF 13.08/CVF_MCP_KNOWLEDGE_ABSORPTION_REDESIGN/"
       ],
       "fileCount": 993,
-      "status": "PARTIALLY_SCANNED",
+      "status": "SCANNED_WITH_FINDINGS",
       "scanWave": "MCP-KAR-T0",
       "scanDate": "2026-08-23",
       "manifestHash": "fb3b313dd136095352598f575cc54f46d7fc8a6440fd0cdc2fdc493902780c35",
@@ -6846,23 +6846,74 @@
       "completionReviewPath": "docs/reviews/CVF_MCP_KAR_T0_DUAL_CORPUS_INTAKE_WORKER_RETURN_2026-08-23.md",
       "gcBaselineRef": "docs/baselines/CVF_GC018_MCP_KAR_T0_OFFICIAL_MCP_AND_EXTERNAL_REDESIGN_DUAL_CORPUS_INTAKE_2026-08-23.md",
       "verdicts": {
-        "gc047": "PARTIAL",
-        "gc048": "PARTIAL",
-        "gc050": "NOT_RUN"
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "COMPLETE_VERIFIED",
+        "gc050": "PASS"
       },
       "semanticRegions": [
-        "UPSTREAM_PROTOCOL_AUTHORITY_PENDING_CLASSIFICATION",
-        "EXTERNAL_DERIVED_SYNTHESIS_PENDING_RECONCILIATION",
-        "CVF_OWNER_OVERLAP_PENDING_MAPPING"
+        "MCP_2026_07_28_NORMATIVE_INVARIANTS",
+        "CURRENT_SCHEMA_AND_CONFORMANCE_FIXTURES",
+        "LEGACY_COMPATIBILITY_EVIDENCE",
+        "DRAFT_AND_SEP_FRESHNESS_WATCHLIST",
+        "TRANSPORT_AUTHORIZATION_AND_SUBSCRIPTION_SECURITY",
+        "MRTR_REINTAKE_AND_STRUCTURED_RESULTS",
+        "EXTERNAL_ARCHITECTURE_AND_CONTRACT_SYNTHESIS",
+        "EXTERNAL_SCHEMA_AND_NEGATIVE_TEST_REPAIR",
+        "CVF_OWNER_OVERLAP_AND_VALUE_COST"
       ],
       "priorAbsorption": "No accepted MCP-KAR absorption exists. The external-agent folder passed byte-level inventory checks but failed the strengthened return-contract evidence gate and remains secondary evidence only.",
-      "findings": [],
+      "findings": [
+        {
+          "id": "MCP-KAR-T0-F1",
+          "summary": "Pinned MCP 2026-07-28 retains exact per-request version, capability, error, subscription, MRTR, cache, authorization, and transport invariants not fully converted by the external packet.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Open one bounded documentation/contract T1 for the operator-selected source-verified normative invariant and negative-conformance profile.",
+          "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MCP_KAR_T0_DUAL_CORPUS_INTAKE_WORKER_RETURN_2026-08-23.md#finding-to-governance-learning-disposition",
+          "roadmapRef": null,
+          "workOrderRef": null
+        },
+        {
+          "id": "MCP-KAR-T0-F2",
+          "summary": "External policy and request schemas accept selected fail-open cross-field contradictions and their negative fixtures are not mapped as executable schema instances.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Repair or replace schemas only inside a fresh source-verified test tranche with executed negative evidence.",
+          "defectClass": "MACHINE_GATE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_MCP_KAR_T0_DUAL_CORPUS_INTAKE_WORKER_RETURN_2026-08-23.md#finding-to-governance-learning-disposition",
+          "roadmapRef": null,
+          "workOrderRef": null
+        },
+        {
+          "id": "MCP-KAR-T0-F3",
+          "summary": "The external packet is a useful architecture and authority-boundary index but remains secondary mixed-origin evidence rather than a replacement for pinned upstream semantics.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Retain verified mappings and supersede stale source, license, owner, and test-evidence claims through the T0 audit.",
+          "defectClass": "UNVERIFIED_CLAIM",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+          "f2gRef": null,
+          "roadmapRef": null,
+          "workOrderRef": null
+        },
+        {
+          "id": "MCP-KAR-T0-F4",
+          "summary": "Upstream build tooling, executable client/server code, foreign instructions, blogs, site assets, and generated duplicates do not justify direct CVF import.",
+          "disposition": "REJECT",
+          "nextAction": "Keep the pinned mirror as reference evidence only; do not install, execute, or copy these surfaces.",
+          "defectClass": "DOCUMENTATION_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+          "f2gRef": null,
+          "roadmapRef": null,
+          "workOrderRef": null
+        }
+      ],
       "negativeSearchTerms": [
         "direct import of external MCP redesign into CVF - not authorized",
         "execution or installation of upstream modelcontextprotocol repository - not performed",
         "external-agent packet treated as upstream authority - explicitly rejected"
       ],
-      "nextScanRecommendation": "Complete file-level semantic ledgers, upstream-to-derived claim verification, CVF owner/overlap mapping, and value-cost disposition before any CVF-native conversion tranche."
+      "nextScanRecommendation": "Do not rescan the 993-file corpus. Reuse the immutable receipt and terminal ledgers; if the operator selects T1, fully reread and rehash only the named 2026-07-28 normative/schema cluster plus affected current CVF owners."
     }
   ]
 }

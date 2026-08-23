@@ -12,9 +12,13 @@
   ],
   "rowCount": 108,
   "statusCounts": {
-    "DEFERRED": 108
+    "ADAPTED": 45,
+    "DEFERRED": 23,
+    "NO_NEW_VALUE": 13,
+    "READ": 22,
+    "REJECTED": 5
   },
-  "readEvidenceBoundary": "Hashing and metadata enumeration only; no semantic full-read claim.",
+  "readEvidenceBoundary": "All 108 files were byte-read, hash-reconciled, text-decoded, and JSON parsed where applicable. Semantic acceptance remains source- and owner-bounded per row.",
   "rows": [
     {
       "path": "CLAIM_BOUNDARY.md",
@@ -22,9 +26,12 @@
       "bytes": 2689,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "CORRECT_AUTHORITY_BOUNDARY",
+      "rationale": "Boundary is directionally consistent with CVF: external synthesis is advisory and opens no implementation, runtime, public, or production authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:CLAIM_BOUNDARY.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "DECISION_LOG.md",
@@ -32,9 +39,12 @@
       "bytes": 2704,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:DECISION_LOG.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/AUDIT_ANCHOR.md",
@@ -42,9 +52,12 @@
       "bytes": 3422,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "STALE_OR_INSUFFICIENT_SOURCE_EVIDENCE",
+      "rationale": "Secondary evidence is not acceptable as submitted: upstream commit/CVF anchor freshness, license statement, or structured return evidence is stale or insufficient; pinned T0 evidence supersedes it.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/AUDIT_ANCHOR.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/AUTHORITY_BOUNDARY.md",
@@ -52,9 +65,12 @@
       "bytes": 1154,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "CORRECT_AUTHORITY_BOUNDARY",
+      "rationale": "Boundary is directionally consistent with CVF: external synthesis is advisory and opens no implementation, runtime, public, or production authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/AUTHORITY_BOUNDARY.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/DECISION_REGISTER.md",
@@ -62,9 +78,12 @@
       "bytes": 1705,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/DECISION_REGISTER.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/PACKET_CHARTER.md",
@@ -72,9 +91,12 @@
       "bytes": 2030,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/PACKET_CHARTER.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/SOURCE_AND_EVIDENCE_RULES.md",
@@ -82,9 +104,12 @@
       "bytes": 1274,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/SOURCE_AND_EVIDENCE_RULES.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/TERMINOLOGY_AND_STABLE_IDENTITIES.md",
@@ -92,9 +117,12 @@
       "bytes": 2127,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/TERMINOLOGY_AND_STABLE_IDENTITIES.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/CVF_CURRENT_MCP_SURFACE_INVENTORY.md",
@@ -102,9 +130,12 @@
       "bytes": 1816,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/CVF_CURRENT_MCP_SURFACE_INVENTORY.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/CVF_CURRENT_OWNER_INVENTORY.md",
@@ -112,9 +143,12 @@
       "bytes": 1880,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/CVF_CURRENT_OWNER_INVENTORY.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/CVF_MCP_PUBLIC_CLAIM_INVENTORY.md",
@@ -122,9 +156,12 @@
       "bytes": 1330,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/CVF_MCP_PUBLIC_CLAIM_INVENTORY.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/MCP_SECURITY_ASSUMPTION_BASELINE.md",
@@ -132,9 +169,12 @@
       "bytes": 1101,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/MCP_SECURITY_ASSUMPTION_BASELINE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/MCP_SPEC_VERSION_MATRIX.md",
@@ -142,9 +182,12 @@
       "bytes": 1259,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/MCP_SPEC_VERSION_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/MCP_UPSTREAM_REPOSITORY_MANIFEST.md",
@@ -152,9 +195,12 @@
       "bytes": 3080,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "STALE_OR_INSUFFICIENT_SOURCE_EVIDENCE",
+      "rationale": "Secondary evidence is not acceptable as submitted: upstream commit/CVF anchor freshness, license statement, or structured return evidence is stale or insufficient; pinned T0 evidence supersedes it.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/MCP_UPSTREAM_REPOSITORY_MANIFEST.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/SOURCE_EVIDENCE_LEDGER.md",
@@ -162,9 +208,12 @@
       "bytes": 3878,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "STALE_OR_INSUFFICIENT_SOURCE_EVIDENCE",
+      "rationale": "Secondary evidence is not acceptable as submitted: upstream commit/CVF anchor freshness, license statement, or structured return evidence is stale or insufficient; pinned T0 evidence supersedes it.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/SOURCE_EVIDENCE_LEDGER.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/DOCUMENTATION_AND_CLAIM_DRIFT_REGISTER.md",
@@ -172,9 +221,12 @@
       "bytes": 1143,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/DOCUMENTATION_AND_CLAIM_DRIFT_REGISTER.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/GOVERNANCE_AND_ENFORCEMENT_GAP_MATRIX.md",
@@ -182,9 +234,12 @@
       "bytes": 1603,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/GOVERNANCE_AND_ENFORCEMENT_GAP_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/IDENTITY_AND_CONTEXT_GAP_MATRIX.md",
@@ -192,9 +247,12 @@
       "bytes": 1287,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/IDENTITY_AND_CONTEXT_GAP_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/IMPLEMENTATION_DRIFT_REGISTER.md",
@@ -203,8 +261,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/IMPLEMENTATION_DRIFT_REGISTER.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/PROTOCOL_GAP_MATRIX.md",
@@ -212,9 +273,12 @@
       "bytes": 2608,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/PROTOCOL_GAP_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/RISK_PRIORITIZATION_MATRIX.md",
@@ -222,9 +286,12 @@
       "bytes": 3550,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "DISPOSITION_AND_VALUE_HYPOTHESIS",
+      "rationale": "Useful semantic index and value hypothesis; individual claims remain governed by pinned-source verification and the corrected T0 audit.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/RISK_PRIORITIZATION_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/SECURITY_AND_TRUST_GAP_MATRIX.md",
@@ -232,9 +299,12 @@
       "bytes": 2098,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/SECURITY_AND_TRUST_GAP_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/VERSION_AND_COMPATIBILITY_GAP_MATRIX.md",
@@ -242,9 +312,12 @@
       "bytes": 1512,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/VERSION_AND_COMPATIBILITY_GAP_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/ABSORB_DECISIONS.md",
@@ -252,9 +325,12 @@
       "bytes": 1365,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "DISPOSITION_AND_VALUE_HYPOTHESIS",
+      "rationale": "Useful semantic index and value hypothesis; individual claims remain governed by pinned-source verification and the corrected T0 audit.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/ABSORB_DECISIONS.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/ADAPT_DECISIONS.md",
@@ -262,9 +338,12 @@
       "bytes": 1131,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "DISPOSITION_AND_VALUE_HYPOTHESIS",
+      "rationale": "Useful semantic index and value hypothesis; individual claims remain governed by pinned-source verification and the corrected T0 audit.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/ADAPT_DECISIONS.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/BLOCK_DECISIONS.md",
@@ -272,9 +351,12 @@
       "bytes": 858,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "DISPOSITION_AND_VALUE_HYPOTHESIS",
+      "rationale": "Useful semantic index and value hypothesis; individual claims remain governed by pinned-source verification and the corrected T0 audit.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/BLOCK_DECISIONS.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/DEFER_DECISIONS.md",
@@ -282,9 +364,12 @@
       "bytes": 854,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "DISPOSITION_AND_VALUE_HYPOTHESIS",
+      "rationale": "Useful semantic index and value hypothesis; individual claims remain governed by pinned-source verification and the corrected T0 audit.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/DEFER_DECISIONS.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/EXTERNAL_TO_CVF_TRANSLATION_MAP.md",
@@ -292,9 +377,12 @@
       "bytes": 1799,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/EXTERNAL_TO_CVF_TRANSLATION_MAP.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/KNOWLEDGE_ABSORPTION_MATRIX.md",
@@ -302,9 +390,12 @@
       "bytes": 5936,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "DISPOSITION_AND_VALUE_HYPOTHESIS",
+      "rationale": "Useful semantic index and value hypothesis; individual claims remain governed by pinned-source verification and the corrected T0 audit.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/KNOWLEDGE_ABSORPTION_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/NO_NEW_VALUE_DECISIONS.md",
@@ -312,9 +403,12 @@
       "bytes": 773,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "DISPOSITION_AND_VALUE_HYPOTHESIS",
+      "rationale": "Useful semantic index and value hypothesis; individual claims remain governed by pinned-source verification and the corrected T0 audit.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/NO_NEW_VALUE_DECISIONS.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/REJECT_DECISIONS.md",
@@ -322,9 +416,12 @@
       "bytes": 1495,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "DISPOSITION_AND_VALUE_HYPOTHESIS",
+      "rationale": "Useful semantic index and value hypothesis; individual claims remain governed by pinned-source verification and the corrected T0 audit.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/REJECT_DECISIONS.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/CROSS_OWNER_RESPONSIBILITY_MATRIX.md",
@@ -333,8 +430,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "OWNER_MAP_RECONCILIATION_REQUIRED",
+      "rationale": "Useful owner hypothesis, but Adapter/Guard responsibility allocation is internally inconsistent and requires composition with current CVF owners before promotion.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/CROSS_OWNER_RESPONSIBILITY_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/CVF_OWNER_MAP.md",
@@ -343,8 +443,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "OWNER_MAP_RECONCILIATION_REQUIRED",
+      "rationale": "Useful owner hypothesis, but Adapter/Guard responsibility allocation is internally inconsistent and requires composition with current CVF owners before promotion.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/CVF_OWNER_MAP.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/EXISTING_CONTRACT_REUSE_MATRIX.md",
@@ -352,9 +455,12 @@
       "bytes": 1179,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/EXISTING_CONTRACT_REUSE_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/LEGACY_MCP_SURFACE_DISPOSITION.md",
@@ -362,9 +468,12 @@
       "bytes": 1972,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/LEGACY_MCP_SURFACE_DISPOSITION.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/NON_DUPLICATION_AND_AUTHORITY_CHECK.md",
@@ -373,8 +482,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "OWNER_MAP_RECONCILIATION_REQUIRED",
+      "rationale": "Useful owner hypothesis, but Adapter/Guard responsibility allocation is internally inconsistent and requires composition with current CVF owners before promotion.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/NON_DUPLICATION_AND_AUTHORITY_CHECK.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/NORTHBOUND_SOUTHBOUND_BOUNDARY.md",
@@ -382,9 +494,12 @@
       "bytes": 938,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/NORTHBOUND_SOUTHBOUND_BOUNDARY.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/PARKED_LANE_REGISTER.md",
@@ -392,9 +507,12 @@
       "bytes": 940,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "CORRECT_AUTHORITY_BOUNDARY",
+      "rationale": "Boundary is directionally consistent with CVF: external synthesis is advisory and opens no implementation, runtime, public, or production authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/PARKED_LANE_REGISTER.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_DISCOVERY_ADMISSION_CONTRACT.md",
@@ -402,9 +520,12 @@
       "bytes": 1398,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_DISCOVERY_ADMISSION_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_ENFORCEMENT_GATEWAY_CONTRACT.md",
@@ -412,9 +533,12 @@
       "bytes": 1475,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_ENFORCEMENT_GATEWAY_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_IDENTITY_CONTEXT_RESOLUTION_CONTRACT.md",
@@ -422,9 +546,12 @@
       "bytes": 1426,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_IDENTITY_CONTEXT_RESOLUTION_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_INTERACTION_AND_ELICITATION_CONTRACT.md",
@@ -432,9 +559,12 @@
       "bytes": 1603,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_INTERACTION_AND_ELICITATION_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_LEGACY_COMPATIBILITY_CONTRACT.md",
@@ -442,9 +572,12 @@
       "bytes": 1190,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_LEGACY_COMPATIBILITY_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_PROTOCOL_ADAPTER_CONTRACT.md",
@@ -452,9 +585,12 @@
       "bytes": 1644,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_PROTOCOL_ADAPTER_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_REQUEST_ENVELOPE_CONTRACT.md",
@@ -462,9 +598,12 @@
       "bytes": 1715,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_REQUEST_ENVELOPE_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_STRUCTURED_RESULT_CONTRACT.md",
@@ -472,9 +611,12 @@
       "bytes": 1282,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_STRUCTURED_RESULT_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_SUBSCRIPTION_CONTROL_CONTRACT.md",
@@ -482,9 +624,12 @@
       "bytes": 1212,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_SUBSCRIPTION_CONTROL_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_TASK_WORK_ORDER_BINDING_CONTRACT.md",
@@ -492,9 +637,12 @@
       "bytes": 1156,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_TASK_WORK_ORDER_BINDING_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_TRACE_AND_RECEIPT_CONTRACT.md",
@@ -502,9 +650,12 @@
       "bytes": 1214,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_TRACE_AND_RECEIPT_CONTRACT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_TRANSPORT_AND_SANDBOX_PROFILE.md",
@@ -512,9 +663,12 @@
       "bytes": 1320,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_TRANSPORT_AND_SANDBOX_PROFILE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/DATA_AND_STATE_MIGRATION_PLAN.md",
@@ -523,8 +677,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/DATA_AND_STATE_MIGRATION_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/FAIL_CLOSED_REMEDIATION_PLAN.md",
@@ -533,8 +690,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/FAIL_CLOSED_REMEDIATION_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/IMPLEMENTATION_SEQUENCE.md",
@@ -543,8 +703,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/IMPLEMENTATION_SEQUENCE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/MCP_ENFORCEMENT_GATEWAY_PLAN.md",
@@ -553,8 +716,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/MCP_ENFORCEMENT_GATEWAY_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/MCP_SERVER_REPOSITIONING_PLAN.md",
@@ -563,8 +729,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/MCP_SERVER_REPOSITIONING_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/MODERN_AND_LEGACY_ADAPTER_PLAN.md",
@@ -573,8 +742,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/MODERN_AND_LEGACY_ADAPTER_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/ROLLBACK_AND_COMPENSATION_PLAN.md",
@@ -583,8 +755,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/ROLLBACK_AND_COMPENSATION_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/SEVEN_STEP_PHASE_RECONCILIATION_PLAN.md",
@@ -592,9 +767,12 @@
       "bytes": 923,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/SEVEN_STEP_PHASE_RECONCILIATION_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/SOURCE_CHANGE_PLAN.md",
@@ -603,8 +781,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/SOURCE_CHANGE_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/TARGET_ARCHITECTURE.md",
@@ -612,9 +793,12 @@
       "bytes": 836,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/TARGET_ARCHITECTURE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/ACCEPTANCE_MATRIX.md",
@@ -622,9 +806,12 @@
       "bytes": 1482,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "DISPOSITION_AND_VALUE_HYPOTHESIS",
+      "rationale": "Useful semantic index and value hypothesis; individual claims remain governed by pinned-source verification and the corrected T0 audit.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/ACCEPTANCE_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/AUTHORITY_BYPASS_TEST_PLAN.md",
@@ -632,9 +819,12 @@
       "bytes": 744,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "UNEXECUTED_TEST_DESIGN_CANDIDATE",
+      "rationale": "Test design has reusable coverage value, but no MCP interoperability or negative semantic execution was supplied; retain as candidate evidence design only.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/AUTHORITY_BYPASS_TEST_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/CLAIM_TO_EVIDENCE_MATRIX.md",
@@ -642,9 +832,12 @@
       "bytes": 1041,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "BOUNDED_PACKET_EVIDENCE",
+      "rationale": "Evidence boundary directly read and retained: static parsing/positive validation only, with zero MCP runtime/provider proof and no independent CVF acceptance.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/CLAIM_TO_EVIDENCE_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/DISCOVERY_DRIFT_TEST_PLAN.md",
@@ -652,9 +845,12 @@
       "bytes": 583,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "UNEXECUTED_TEST_DESIGN_CANDIDATE",
+      "rationale": "Test design has reusable coverage value, but no MCP interoperability or negative semantic execution was supplied; retain as candidate evidence design only.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/DISCOVERY_DRIFT_TEST_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/LIVE_PROOF_BOUNDARY.md",
@@ -662,9 +858,12 @@
       "bytes": 631,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "BOUNDED_PACKET_EVIDENCE",
+      "rationale": "Evidence boundary directly read and retained: static parsing/positive validation only, with zero MCP runtime/provider proof and no independent CVF acceptance.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/LIVE_PROOF_BOUNDARY.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/NEGATIVE_TEST_MATRIX.md",
@@ -672,9 +871,12 @@
       "bytes": 788,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "UNEXECUTED_TEST_DESIGN_CANDIDATE",
+      "rationale": "Test design has reusable coverage value, but no MCP interoperability or negative semantic execution was supplied; retain as candidate evidence design only.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/NEGATIVE_TEST_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/PROTOCOL_INTEROPERABILITY_MATRIX.md",
@@ -682,9 +884,12 @@
       "bytes": 888,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/PROTOCOL_INTEROPERABILITY_MATRIX.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/REVIEW_CHECKLIST.md",
@@ -692,9 +897,12 @@
       "bytes": 1014,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/REVIEW_CHECKLIST.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/SECURITY_TEST_PLAN.md",
@@ -702,9 +910,12 @@
       "bytes": 767,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "UNEXECUTED_TEST_DESIGN_CANDIDATE",
+      "rationale": "Test design has reusable coverage value, but no MCP interoperability or negative semantic execution was supplied; retain as candidate evidence design only.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/SECURITY_TEST_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/SIDE_EFFECT_RECONCILIATION_TEST_PLAN.md",
@@ -712,9 +923,12 @@
       "bytes": 556,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "UNEXECUTED_TEST_DESIGN_CANDIDATE",
+      "rationale": "Test design has reusable coverage value, but no MCP interoperability or negative semantic execution was supplied; retain as candidate evidence design only.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/SIDE_EFFECT_RECONCILIATION_TEST_PLAN.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/EXECUTIVE_DECISION_MEMO.md",
@@ -722,9 +936,12 @@
       "bytes": 938,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/EXECUTIVE_DECISION_MEMO.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/FREEZE_CRITERIA.md",
@@ -732,9 +949,12 @@
       "bytes": 1059,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/FREEZE_CRITERIA.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/IMPLEMENTATION_AUTHORIZATION_BOUNDARY.md",
@@ -743,8 +963,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/IMPLEMENTATION_AUTHORIZATION_BOUNDARY.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/NEXT_ALLOWED_MOVE.md",
@@ -752,9 +975,12 @@
       "bytes": 424,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "CORRECT_AUTHORITY_BOUNDARY",
+      "rationale": "Boundary is directionally consistent with CVF: external synthesis is advisory and opens no implementation, runtime, public, or production authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/NEXT_ALLOWED_MOVE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/OPEN_QUESTIONS_AND_DISSENT.md",
@@ -762,9 +988,12 @@
       "bytes": 1367,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/OPEN_QUESTIONS_AND_DISSENT.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/OWNER_APPROVAL_RECORD.md",
@@ -772,9 +1001,12 @@
       "bytes": 665,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/OWNER_APPROVAL_RECORD.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/PUBLIC_DISPOSITION.md",
@@ -782,9 +1014,12 @@
       "bytes": 647,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "CORRECT_AUTHORITY_BOUNDARY",
+      "rationale": "Boundary is directionally consistent with CVF: external synthesis is advisory and opens no implementation, runtime, public, or production authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/PUBLIC_DISPOSITION.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/REOPEN_CONDITIONS.md",
@@ -792,9 +1027,12 @@
       "bytes": 939,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/REOPEN_CONDITIONS.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/approval_required_example.json",
@@ -803,8 +1041,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "POSITIVE_FIXTURE_DEPENDENT_ON_SCHEMA_REPAIR",
+      "rationale": "Positive fixture parsed successfully but cannot establish governance behavior and remains dependent on schema repair plus negative validation.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/approval_required_example.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/denied_invocation_example.json",
@@ -813,8 +1054,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "POSITIVE_FIXTURE_DEPENDENT_ON_SCHEMA_REPAIR",
+      "rationale": "Positive fixture parsed successfully but cannot establish governance behavior and remains dependent on schema repair plus negative validation.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/denied_invocation_example.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/discovery_admission_example.json",
@@ -823,8 +1067,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "POSITIVE_FIXTURE_DEPENDENT_ON_SCHEMA_REPAIR",
+      "rationale": "Positive fixture parsed successfully but cannot establish governance behavior and remains dependent on schema repair plus negative validation.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/discovery_admission_example.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/legacy_request_example.json",
@@ -833,8 +1080,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "POSITIVE_FIXTURE_DEPENDENT_ON_SCHEMA_REPAIR",
+      "rationale": "Positive fixture parsed successfully but cannot establish governance behavior and remains dependent on schema repair plus negative validation.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/legacy_request_example.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/modern_request_example.json",
@@ -843,8 +1093,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "POSITIVE_FIXTURE_DEPENDENT_ON_SCHEMA_REPAIR",
+      "rationale": "Positive fixture parsed successfully but cannot establish governance behavior and remains dependent on schema repair plus negative validation.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/modern_request_example.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/missing_work_order.json",
@@ -852,9 +1105,12 @@
       "bytes": 398,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "NEGATIVE_SEMANTIC_TEST_CANDIDATE",
+      "rationale": "Negative scenario has reusable fail-closed test value, but the packet did not execute semantic rejection checks; retain as a repaired T1 candidate only.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/missing_work_order.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/reused_approval_reference.json",
@@ -862,9 +1118,12 @@
       "bytes": 501,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "NEGATIVE_SEMANTIC_TEST_CANDIDATE",
+      "rationale": "Negative scenario has reusable fail-closed test value, but the packet did not execute semantic rejection checks; retain as a repaired T1 candidate only.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/reused_approval_reference.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/schema_drift_after_admission.json",
@@ -872,9 +1131,12 @@
       "bytes": 470,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "NEGATIVE_SEMANTIC_TEST_CANDIDATE",
+      "rationale": "Negative scenario has reusable fail-closed test value, but the packet did not execute semantic rejection checks; retain as a repaired T1 candidate only.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/schema_drift_after_admission.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/secret_requested_by_form_elicitation.json",
@@ -882,9 +1144,12 @@
       "bytes": 443,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "NEGATIVE_SEMANTIC_TEST_CANDIDATE",
+      "rationale": "Negative scenario has reusable fail-closed test value, but the packet did not execute semantic rejection checks; retain as a repaired T1 candidate only.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/secret_requested_by_form_elicitation.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/self_asserted_operator_role.json",
@@ -892,9 +1157,12 @@
       "bytes": 413,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "NEGATIVE_SEMANTIC_TEST_CANDIDATE",
+      "rationale": "Negative scenario has reusable fail-closed test value, but the packet did not execute semantic rejection checks; retain as a repaired T1 candidate only.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/self_asserted_operator_role.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/side_effect_exceeds_grant.json",
@@ -902,9 +1170,12 @@
       "bytes": 462,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "NEGATIVE_SEMANTIC_TEST_CANDIDATE",
+      "rationale": "Negative scenario has reusable fail-closed test value, but the packet did not execute semantic rejection checks; retain as a repaired T1 candidate only.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/side_effect_exceeds_grant.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/unknown_phase.json",
@@ -912,9 +1183,12 @@
       "bytes": 407,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "NEGATIVE_SEMANTIC_TEST_CANDIDATE",
+      "rationale": "Negative scenario has reusable fail-closed test value, but the packet did not execute semantic rejection checks; retain as a repaired T1 candidate only.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/unknown_phase.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/unknown_risk.json",
@@ -922,9 +1196,12 @@
       "bytes": 343,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "NEGATIVE_SEMANTIC_TEST_CANDIDATE",
+      "rationale": "Negative scenario has reusable fail-closed test value, but the packet did not execute semantic rejection checks; retain as a repaired T1 candidate only.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/unknown_risk.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_discovery_snapshot.schema.json",
@@ -933,8 +1210,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "SCHEMA_REPAIR_CANDIDATE",
+      "rationale": "Schema parsed but external validation proved structure/positive shape only; cross-field fail-closed holes require repair and executed negative evidence before adoption.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_discovery_snapshot.schema.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_execution_receipt.schema.json",
@@ -943,8 +1223,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "SCHEMA_REPAIR_CANDIDATE",
+      "rationale": "Schema parsed but external validation proved structure/positive shape only; cross-field fail-closed holes require repair and executed negative evidence before adoption.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_execution_receipt.schema.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_policy_decision.schema.json",
@@ -953,8 +1236,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "SCHEMA_REPAIR_CANDIDATE",
+      "rationale": "Schema parsed but external validation proved structure/positive shape only; cross-field fail-closed holes require repair and executed negative evidence before adoption.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_policy_decision.schema.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_request_envelope.schema.json",
@@ -963,8 +1249,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "SCHEMA_REPAIR_CANDIDATE",
+      "rationale": "Schema parsed but external validation proved structure/positive shape only; cross-field fail-closed holes require repair and executed negative evidence before adoption.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_request_envelope.schema.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/README.md",
@@ -972,9 +1261,12 @@
       "bytes": 23267,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/README.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/ABSORPTION_DECISION_TEMPLATE.md",
@@ -982,9 +1274,12 @@
       "bytes": 466,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/templates/ABSORPTION_DECISION_TEMPLATE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/CONTRACT_TEMPLATE.md",
@@ -992,9 +1287,12 @@
       "bytes": 406,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "ARCHITECTURE_OR_PROTOCOL_DELTA_CANDIDATE",
+      "rationale": "Contains reusable architecture/boundary semantics; retain only the portions verified against the pinned upstream and current CVF owner surfaces.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/templates/CONTRACT_TEMPLATE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/GAP_RECORD_TEMPLATE.md",
@@ -1002,9 +1300,12 @@
       "bytes": 351,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/templates/GAP_RECORD_TEMPLATE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/MIGRATION_STEP_TEMPLATE.md",
@@ -1013,8 +1314,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "semanticGroup": "IMPLEMENTATION_PLAN_WITHOUT_AUTHORITY",
+      "rationale": "Plan directly read; implementation, mutation, checker wiring, runtime, and migration remain outside T0 and require a fresh operator-authorized tranche.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/templates/MIGRATION_STEP_TEMPLATE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/REVIEW_AND_FREEZE_TEMPLATE.md",
@@ -1022,9 +1326,12 @@
       "bytes": 476,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/templates/REVIEW_AND_FREEZE_TEMPLATE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/TEST_CASE_TEMPLATE.md",
@@ -1032,9 +1339,12 @@
       "bytes": 440,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "ADAPTED",
+      "semanticGroup": "UNEXECUTED_TEST_DESIGN_CANDIDATE",
+      "rationale": "Test design has reusable coverage value, but no MCP interoperability or negative semantic execution was supplied; retain as candidate evidence design only.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/mcp_gateway/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/templates/TEST_CASE_TEMPLATE.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "docs/reference/mcp_knowledge_absorption_redesign/TREEVIEW.md",
@@ -1042,9 +1352,12 @@
       "bytes": 8410,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:docs/reference/mcp_knowledge_absorption_redesign/TREEVIEW.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "EXTERNAL_AGENT_RETURN_MANIFEST.json",
@@ -1052,9 +1365,12 @@
       "bytes": 38979,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "STALE_OR_INSUFFICIENT_SOURCE_EVIDENCE",
+      "rationale": "Secondary evidence is not acceptable as submitted: upstream commit/CVF anchor freshness, license statement, or structured return evidence is stale or insufficient; pinned T0 evidence supersedes it.",
+      "readMethod": "JSON_PARSED",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:EXTERNAL_AGENT_RETURN_MANIFEST.json; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "FILE_INVENTORY.sha256",
@@ -1062,9 +1378,12 @@
       "bytes": 17291,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "EXTERNAL_PACKET_CONTEXT",
+      "rationale": "Directly read as secondary mixed-origin synthesis; retained only as context and not promoted to CVF authority.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:FILE_INVENTORY.sha256; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "README.md",
@@ -1072,9 +1391,12 @@
       "bytes": 3774,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "PACKET_PROCESS_OR_DUPLICATE_GOVERNANCE",
+      "rationale": "Directly read; packet-process prose duplicates current CVF governance and adds no separate owner or implementation value.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:README.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "SOURCE_MANIFEST.md",
@@ -1082,9 +1404,12 @@
       "bytes": 3069,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "REJECTED",
+      "semanticGroup": "STALE_OR_INSUFFICIENT_SOURCE_EVIDENCE",
+      "rationale": "Secondary evidence is not acceptable as submitted: upstream commit/CVF anchor freshness, license statement, or structured return evidence is stale or insufficient; pinned T0 evidence supersedes it.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:SOURCE_MANIFEST.md; verify against pinned upstream and current CVF owner"
     },
     {
       "path": "TEST_EVIDENCE.md",
@@ -1092,9 +1417,20 @@
       "bytes": 2497,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
-      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+      "terminalStatus": "READ",
+      "semanticGroup": "BOUNDED_PACKET_EVIDENCE",
+      "rationale": "Evidence boundary directly read and retained: static parsing/positive validation only, with zero MCP runtime/provider proof and no independent CVF acceptance.",
+      "readMethod": "UTF8_DIRECT_READ",
+      "ownerSurface": "docs/reference/external_agent_review/",
+      "evidence": "external:TEST_EVIDENCE.md; verify against pinned upstream and current CVF owner"
     }
-  ]
+  ],
+  "processingEvidence": {
+    "byteRead": 108,
+    "jsonParsed": 18,
+    "utf8ReplacementReads": 0,
+    "hashDrift": 0,
+    "unreadable": 0,
+    "authorityRole": "SECONDARY_MIXED_ORIGIN_ONLY"
+  }
 }
