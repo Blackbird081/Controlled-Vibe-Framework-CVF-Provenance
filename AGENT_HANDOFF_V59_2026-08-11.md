@@ -66,7 +66,7 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Latest Work / Changes
 
-- External-agent round-trip guidance was exported to public `main` at `3b031fec35473e6ee6a554c4c72400e7a23b06c5`; provenance was fast-forwarded to `4b5f30d84ab4d0a87c6ed62caeb22c787bd23aaa`, then the bounded export evidence record was committed at `0d9aef814`.
+- External-agent round-trip guidance was exported to public `main` at `3b031fec35473e6ee6a554c4c72400e7a23b06c5`; representation identity/compatibility governance is committed at `84b884b08`, with public candidate `b7204787` not yet exported.
 - Independent review accepted T1 against R01-R28 with bounded scope and kept
   the reproducible F11 residual explicit.
 - TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64;
