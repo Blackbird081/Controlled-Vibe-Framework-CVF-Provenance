@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_t2_schema_consumer_owner_value_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed MCP-KAR-T2 local decision and return one uncommitted worker packet; parked checkpoint=schema implementation, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_t2_schema_consumer_owner_value_decision_closed_stop_no_named_consumer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=hold schema repair and await a fresh operator-selected tranche; parked checkpoint=schema implementation, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `mcp_kar_t2_schema_consumer_owner_value_decision_dispatched_pending_worker_return`
-Current mode: `mcp_kar_t2_schema_consumer_owner_value_decision_dispatched_pending_worker_return`
-Previous mode: `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
+Current mode marker: `mcp_kar_t2_schema_consumer_owner_value_decision_closed_stop_no_named_consumer`
+Current mode: `mcp_kar_t2_schema_consumer_owner_value_decision_closed_stop_no_named_consumer`
+Previous mode: `mcp_kar_t2_schema_consumer_owner_value_decision_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `mcp_kar_t2_schema_consumer_owner_value_decision_dispatched_pending_worker_return`; execute only the committed T2 documentation decision from `b6ba4489c`, create one uncommitted worker return, and preserve the TPGR-R8 hold plus all runtime/external-effect restrictions.
+Mode: `mcp_kar_t2_schema_consumer_owner_value_decision_closed_stop_no_named_consumer`; hold schema repair after reviewer-accepted material commit `5de1ecc98`, preserve the objective reopen gates, and await a fresh operator-selected tranche while TPGR-R8 and all runtime/external-effect restrictions remain held.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
