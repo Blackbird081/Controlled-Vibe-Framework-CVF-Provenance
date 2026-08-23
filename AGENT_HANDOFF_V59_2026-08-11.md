@@ -67,7 +67,7 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Latest Work / Changes
 
-- External-agent protocol v1.1 material `65f6224cb62345d84ed3dd7e27081b800df5a02a` plus wrapper repair `4161ec158883ab89453495e8f3543bfb9d947cca` is exported at public `864c4e0e6139f3e32067dea41f43f240e505c0d8`. The governed mode refreshed `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` to that live SHA with receipt SHA-256 `04044eef5377b6250c040b04952a03dfff742980a3b8ee70f0ce467920df2570` and zero packet-hash mismatches. Public-sync repairs through `04e20522d314a5c312519bf2c804b49fece4a8bc` now project a public-safe Guard barrel and fail closed on private-bound bundles; the candidate remains locally committed but unpushed pending final verification.
+- External-agent protocol v1.1 remains live. Public-sync hardening through `7b7b00a76d73f44939c8b2bf987b15e5893ed5a0` projects a public-safe Guard barrel, rejects unowned pending artifacts, and pushed the independently accepted allowlisted surface to public `d1042ab0b2f044ca99fa3c812e38e33631b20869`; `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` was refreshed to that live SHA with receipt SHA-256 `1adb0bbdc397a97da178b8af6288a2380365e7256a7b32baf313a39567de9eb6` and zero packet-hash mismatches.
 - MCP-KAR-T0 classified all 993 files and closed `PROCEED_SELECTIVELY` at `79e588b0`; operator-selected T1 closed at `c179e656a` with a pure local ten-rule profile, stable reference, eight-path registry reconciliation, and negative tests. No upstream code ran and no runtime/package/public effect occurred.
 - MCP-KAR-T2 is reviewer-accepted `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at material commit `5de1ecc98bf2f6aefecb7dd1e7aa0c203c409ef6`. Fresh exact-identity searches found zero current non-test consumers, no current owner accepted schema responsibility, and all five repair gates failed; terminal decision is `STOP_NO_NAMED_CONSUMER`. No schema, source, runtime, package, provider/live, or external action occurred.
 - MCP-KAR-T4 is reviewer-accepted `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at material commit `43aea7a18`. `MCP-PR-011` rejects sensitive form-mode category metadata and malformed mode/category input while allowing sensitive URL metadata and ordinary contact/profile form metadata. Focused 36/36, package 1846/1846, TypeScript, reviewer-fast, and diff hygiene passed with zero provider/live or runtime calls.
@@ -198,9 +198,9 @@ this compact active handoff after the public staging push superseded that mode.
 
 EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-Public-sync commit: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
-Public artifact paths: `docs/guides/external-agent-review-guide.md`; `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md`; `docs/reference/CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json`.
-Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `04044eef5377b6250c040b04952a03dfff742980a3b8ee70f0ce467920df2570`.
+Public-sync commit: `d1042ab0b2f044ca99fa3c812e38e33631b20869`.
+Public artifact paths: `AGENTS.md`; `AGENT_HANDOFF.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts`; `docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json`; `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md`.
+Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `1adb0bbdc397a97da178b8af6288a2380365e7256a7b32baf313a39567de9eb6`.
 
 ## Core Guard Self-Protection Authorization - Protocol V1.1 And MCP-KAR-T4 Closure Continuity
 
