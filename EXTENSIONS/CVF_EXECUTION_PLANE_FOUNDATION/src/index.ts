@@ -55,6 +55,7 @@ export type {
   MCPBusinessTransport,
   MCPBusinessApprovalDecision,
   MCPBusinessResultStatus,
+  MCPBusinessCallerSuppliedApprovalEvidence,
   MCPBusinessToolContract,
   MCPBusinessToolInvocationRequest,
   MCPBusinessApprovalGateResult,
