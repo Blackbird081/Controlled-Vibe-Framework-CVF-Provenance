@@ -1,0 +1,1100 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "MCP-KAR-T0",
+  "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+  "terminalStatusVocabulary": [
+    "READ",
+    "ADAPTED",
+    "DEFERRED",
+    "REJECTED",
+    "NO_NEW_VALUE",
+    "BLOCKED_UNREADABLE"
+  ],
+  "rowCount": 108,
+  "statusCounts": {
+    "DEFERRED": 108
+  },
+  "readEvidenceBoundary": "Hashing and metadata enumeration only; no semantic full-read claim.",
+  "rows": [
+    {
+      "path": "CLAIM_BOUNDARY.md",
+      "sha256": "f4d135f86f039644ed1e7021594918b1b7823f60af34b9ddc05ae7fcde216fd3",
+      "bytes": 2689,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "DECISION_LOG.md",
+      "sha256": "572ba8013f53e0953f85dc2d7c3c8b8bf2abf8809c2a8cd30c508cccb1e202c5",
+      "bytes": 2704,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/AUDIT_ANCHOR.md",
+      "sha256": "fe5055d9e2d165b86f2af9d0f2c3c2d2bad7eff7c76651a88f8892d8c8173a17",
+      "bytes": 3422,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/AUTHORITY_BOUNDARY.md",
+      "sha256": "d6f6538c40af9a807cb07a8f6109dfd297c1d953f568c5afcdf2d3bae6205d23",
+      "bytes": 1154,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/DECISION_REGISTER.md",
+      "sha256": "747234bd89fbc60deeb2b4d64c146881fd8b0df1fe4baf27376ee161f2f14970",
+      "bytes": 1705,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/PACKET_CHARTER.md",
+      "sha256": "c636623e024bef25f6a7198204aef90e3eecbcf460bcd09fc6591ce71055feb2",
+      "bytes": 2030,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/SOURCE_AND_EVIDENCE_RULES.md",
+      "sha256": "5b3cf6d3632deb9ad15fd43eb10258ca6ff2e8e34ac17726a3e2cc23acdb452b",
+      "bytes": 1274,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/00_PACKET_CONTROL/TERMINOLOGY_AND_STABLE_IDENTITIES.md",
+      "sha256": "321573d9fff6fbb001611ed8aa813e4f312669d6670294a9cf9a27457dc13093",
+      "bytes": 2127,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/CVF_CURRENT_MCP_SURFACE_INVENTORY.md",
+      "sha256": "9d7f91cf6ab14c6a948417fbb719550f0637e84a7456af3a4b878d1d83a0bf7b",
+      "bytes": 1816,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/CVF_CURRENT_OWNER_INVENTORY.md",
+      "sha256": "8a8526e6e23cd536038393bd9f27a8a4aead9dde9b334bb8b7580510732ff177",
+      "bytes": 1880,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/CVF_MCP_PUBLIC_CLAIM_INVENTORY.md",
+      "sha256": "fe3cf006449c78c604640118c542f106808e351f02fe9da3fe1547d8de2e7906",
+      "bytes": 1330,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/MCP_SECURITY_ASSUMPTION_BASELINE.md",
+      "sha256": "04bd764e8e38243e1d02077da6c8044ce813e107bb59f9a82add5df8c5862744",
+      "bytes": 1101,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/MCP_SPEC_VERSION_MATRIX.md",
+      "sha256": "fd4e2ab399415878f00799a988b6aea2394f1e5aabed90ccde33ce8ed189ea3c",
+      "bytes": 1259,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/MCP_UPSTREAM_REPOSITORY_MANIFEST.md",
+      "sha256": "f6a6a00ef6bbdbdac690c5b02617c64f5f02357c9213183920e431e307bd100b",
+      "bytes": 3080,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/01_SOURCE_BASELINE/SOURCE_EVIDENCE_LEDGER.md",
+      "sha256": "d505f7ad01be3a51d213b241188f7833242d131e1705f61f16ab27d7587083a9",
+      "bytes": 3878,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/DOCUMENTATION_AND_CLAIM_DRIFT_REGISTER.md",
+      "sha256": "cff9e966a963745044991e7a214bca3567a0a13bcfdb3209af2f70f9d74ec790",
+      "bytes": 1143,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/GOVERNANCE_AND_ENFORCEMENT_GAP_MATRIX.md",
+      "sha256": "685cf6e19c8a91ce25970b3aa310a9779b1535a7e5c707cd2c850a58d97b4e53",
+      "bytes": 1603,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/IDENTITY_AND_CONTEXT_GAP_MATRIX.md",
+      "sha256": "8221f3ac43d936a98e2af811e25d7f74556ca3aee09fd20a69a50dd553241660",
+      "bytes": 1287,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/IMPLEMENTATION_DRIFT_REGISTER.md",
+      "sha256": "e06976430b3454ba7ce6280ffa48dc9833b8635eec818fe7a37e430a5d39da24",
+      "bytes": 4588,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/PROTOCOL_GAP_MATRIX.md",
+      "sha256": "a30e3724871195c032238c92b324e96c9921c552f2366db9bc51c7ed88dde187",
+      "bytes": 2608,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/RISK_PRIORITIZATION_MATRIX.md",
+      "sha256": "c69325a9679fa44b2226126efa12553b6125774669df56fbf9ddc8643004f44c",
+      "bytes": 3550,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/SECURITY_AND_TRUST_GAP_MATRIX.md",
+      "sha256": "4d39dd728ac9112672ace7f742fc9448c82a37f0243e155aea6c65f52cedbbd8",
+      "bytes": 2098,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/02_GAP_AUDIT/VERSION_AND_COMPATIBILITY_GAP_MATRIX.md",
+      "sha256": "ca279ca107c83fc5af28bc2dc27ecf3ae070931cc5300b9f07c43e1b7fb8f820",
+      "bytes": 1512,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/ABSORB_DECISIONS.md",
+      "sha256": "ace931999a838fb53a8ba5a951aa47e03a3ddaba49108cc2532c62b5c90426b8",
+      "bytes": 1365,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/ADAPT_DECISIONS.md",
+      "sha256": "a5dcfb4e5dfd24e1ca7d380ccebb7199d5d3192a50036a3be076a69f9a86a1cc",
+      "bytes": 1131,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/BLOCK_DECISIONS.md",
+      "sha256": "d17bc0751f95c9dc52925f6562862ac13e32d622734cebd89b01200fc6f25349",
+      "bytes": 858,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/DEFER_DECISIONS.md",
+      "sha256": "db126ad29692660c4a34c6a56ca629f4e2f917e4a8c324e65581cf6531a6c2c3",
+      "bytes": 854,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/EXTERNAL_TO_CVF_TRANSLATION_MAP.md",
+      "sha256": "51e9a379538ef6779c4b0e0c95819292614deb7984c6788ab5fd348c6ee064e9",
+      "bytes": 1799,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/KNOWLEDGE_ABSORPTION_MATRIX.md",
+      "sha256": "609decde06e18ce380053eac83f19de59d373a1945840db310627f58e0af30fd",
+      "bytes": 5936,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/NO_NEW_VALUE_DECISIONS.md",
+      "sha256": "31a3e0602242a4ec405511aeb1845693343f4b643c8694b1595023ab72a9baf6",
+      "bytes": 773,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/03_ABSORPTION_DECISIONS/REJECT_DECISIONS.md",
+      "sha256": "22d45a31e9b98170db5da6526bcc3020d60e13693e317d235824347ef1290449",
+      "bytes": 1495,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/CROSS_OWNER_RESPONSIBILITY_MATRIX.md",
+      "sha256": "4beefafd3dbe0a80df74469e4c6cda6cf76ed0f698f471e2ba04c226d6035ec7",
+      "bytes": 1059,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/CVF_OWNER_MAP.md",
+      "sha256": "682225ebd046414b103d8627cf32f5628933793647cb822abfc417033642bc42",
+      "bytes": 1909,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/EXISTING_CONTRACT_REUSE_MATRIX.md",
+      "sha256": "e986f6f6082d590ffb5bd29f08fb6522d6398aadbdc2a76a0118e1c12e514af3",
+      "bytes": 1179,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/LEGACY_MCP_SURFACE_DISPOSITION.md",
+      "sha256": "3ebf770a1c74553a39dc47a25e151a44c60aa3272fa957ab52a483f858e1eb4d",
+      "bytes": 1972,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/NON_DUPLICATION_AND_AUTHORITY_CHECK.md",
+      "sha256": "6a11929f73e5d7c58d1362eca230f1b4e75b82b0607252481288afea46b64605",
+      "bytes": 1058,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/NORTHBOUND_SOUTHBOUND_BOUNDARY.md",
+      "sha256": "5af214ddabe12891dabe1abee9e353bd03068af91c676a921efc21f0db61ee3b",
+      "bytes": 938,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/04_OWNER_RECONCILIATION/PARKED_LANE_REGISTER.md",
+      "sha256": "2e921ced8ba0b822afdccddbe4d53d2109f53ad52e3aef7320383df29358d0a0",
+      "bytes": 940,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_DISCOVERY_ADMISSION_CONTRACT.md",
+      "sha256": "0e224f621b698f7d574d5310d149815b2502b2cfc80ad6c46fa6598f85279c04",
+      "bytes": 1398,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_ENFORCEMENT_GATEWAY_CONTRACT.md",
+      "sha256": "0c0c2eb86060d810f23ab68a47517bfabd803a3c2cfac07437491557f30cde0d",
+      "bytes": 1475,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_IDENTITY_CONTEXT_RESOLUTION_CONTRACT.md",
+      "sha256": "65b6d27e45c966cc297c324585596947eb5eef4b7f5f752befdb937db61a797b",
+      "bytes": 1426,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_INTERACTION_AND_ELICITATION_CONTRACT.md",
+      "sha256": "ce3b7d48a39916ea1b5a8af215b6f28b644ff3f289b119cc3aa2ad9d3c3a2201",
+      "bytes": 1603,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_LEGACY_COMPATIBILITY_CONTRACT.md",
+      "sha256": "0c575d482f7c32edf70970b071e0ebf8329c758d0a7f066fd3f060ca1e10416b",
+      "bytes": 1190,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_PROTOCOL_ADAPTER_CONTRACT.md",
+      "sha256": "d8f1f5034d5ea87c5380fe330262db002c5aa309d7b876e643d10119b05678ae",
+      "bytes": 1644,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_REQUEST_ENVELOPE_CONTRACT.md",
+      "sha256": "da9f12a8f39176f78d478df8053a8209672e5ec44ea51d2b6808fd61880b9c99",
+      "bytes": 1715,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_STRUCTURED_RESULT_CONTRACT.md",
+      "sha256": "f4adbc157ed48fb80a36d7672da13dda1800adfec7d4e69010e85803d81bf432",
+      "bytes": 1282,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_SUBSCRIPTION_CONTROL_CONTRACT.md",
+      "sha256": "1bf7b5fdbb20b8fb94162cbc7a744941b001f0609689f4ba0c59a7c2e0d993ba",
+      "bytes": 1212,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_TASK_WORK_ORDER_BINDING_CONTRACT.md",
+      "sha256": "caf72176c4cb3bfa80453c9d79629cfb59cfcaa55922df7f627e89717ab4cc5b",
+      "bytes": 1156,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_TRACE_AND_RECEIPT_CONTRACT.md",
+      "sha256": "3a8b8a1c1577efba2d80643f17f65638f1920f5bb0596e211351740aad2d80c0",
+      "bytes": 1214,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/05_CVF_NATIVE_CONTRACTS/CVF_MCP_TRANSPORT_AND_SANDBOX_PROFILE.md",
+      "sha256": "f887eb77911036789a97eedfaf67fe096bc5fb170d4fc5ab6272ec0e67c7fda9",
+      "bytes": 1320,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/DATA_AND_STATE_MIGRATION_PLAN.md",
+      "sha256": "41ba389c7c04be587d45619a8db56af0992f45078112a46e1572f0edf035b4e0",
+      "bytes": 743,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/FAIL_CLOSED_REMEDIATION_PLAN.md",
+      "sha256": "3ac857ad4854ab2e4f6d77910af4a6096e7a76de10b264d7c6f93e3fa533736b",
+      "bytes": 824,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/IMPLEMENTATION_SEQUENCE.md",
+      "sha256": "ccf8b23fc68dc871066fac17a97c0ea49794278ee8b7e795f61e52b1b9fbdf7e",
+      "bytes": 1063,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/MCP_ENFORCEMENT_GATEWAY_PLAN.md",
+      "sha256": "b25aac9dcb49aace44daf33d0108a564087b5fb2252350292662c366d8d6e08b",
+      "bytes": 748,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/MCP_SERVER_REPOSITIONING_PLAN.md",
+      "sha256": "5ff98b3b132328f9861113bc71af9266e7451f85a3e829f444fb3987dd32f0e8",
+      "bytes": 985,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/MODERN_AND_LEGACY_ADAPTER_PLAN.md",
+      "sha256": "0456b344aee55c4ad2dc69c022807c35df27203fa1453c9b21cb99ed07a82049",
+      "bytes": 712,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/ROLLBACK_AND_COMPENSATION_PLAN.md",
+      "sha256": "417bd9a269635b48ea7be0f5de736025380bc5d02e09281ca714f8adacd94df6",
+      "bytes": 769,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/SEVEN_STEP_PHASE_RECONCILIATION_PLAN.md",
+      "sha256": "522137761fab48d5ab22d1379d61af72222d3b5709a522b55e17a91dc3ec260d",
+      "bytes": 923,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/SOURCE_CHANGE_PLAN.md",
+      "sha256": "8d278f565e5a19816210845862a9e26308a56c4592a4e92213df4534d3f67ff8",
+      "bytes": 1478,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/06_REDESIGN_AND_MIGRATION/TARGET_ARCHITECTURE.md",
+      "sha256": "6a21dab1b50e995a1ecac701d759890f5e2b02afaf9e76120db4d04b05b81f4c",
+      "bytes": 836,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/ACCEPTANCE_MATRIX.md",
+      "sha256": "6d9e9763de39066f81dfff9dd490656f1e615d4ab37d938bfce4210ea2c964c2",
+      "bytes": 1482,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/AUTHORITY_BYPASS_TEST_PLAN.md",
+      "sha256": "6399e0c14b3fb9f8429d71ba92e580cf23178370c9e3ecdcc24cb2e3a00da305",
+      "bytes": 744,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/CLAIM_TO_EVIDENCE_MATRIX.md",
+      "sha256": "997024640a40eda5e03a21e4e2ea40fcc8e4a5e59c71894d0d6cf0972bbf42c3",
+      "bytes": 1041,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/DISCOVERY_DRIFT_TEST_PLAN.md",
+      "sha256": "dfac0994fa39aae755ba8fe6c53408ca9ff98f9be80f4eafadd08aa63d9fd269",
+      "bytes": 583,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/LIVE_PROOF_BOUNDARY.md",
+      "sha256": "fe143467949ea8746d60620e14fdbf0350cfda3e797ab97a481c1403f4aacdaa",
+      "bytes": 631,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/NEGATIVE_TEST_MATRIX.md",
+      "sha256": "4b973b70d92d86d2441c880d5193df1b1bd9b22e0c9eeec299ff5677ad820819",
+      "bytes": 788,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/PROTOCOL_INTEROPERABILITY_MATRIX.md",
+      "sha256": "2ea31cd2bf876b04267e4c5344e1cadc070de68351299b79457ee136ef11a0b7",
+      "bytes": 888,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/REVIEW_CHECKLIST.md",
+      "sha256": "88d5ffb4f2b98fbcc10903d4c117b325576b4c5bd8758d92a5991a8c26903e9f",
+      "bytes": 1014,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/SECURITY_TEST_PLAN.md",
+      "sha256": "fadf1d6d7279f8ebf675730f2499b77ad43f26adb286e6fdeb6e1b070d880721",
+      "bytes": 767,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/07_VALIDATION_AND_EVIDENCE/SIDE_EFFECT_RECONCILIATION_TEST_PLAN.md",
+      "sha256": "87eec625e9eb77939837d5f7425700a6acf4643a73dd185c03e42d0d7b487872",
+      "bytes": 556,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/EXECUTIVE_DECISION_MEMO.md",
+      "sha256": "bc1be1a0fc29db37e485592a3a5418fb9874b004f320bc0e3a4c0c25b1e6cc7d",
+      "bytes": 938,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/FREEZE_CRITERIA.md",
+      "sha256": "4fc83d2dbd98fe89c3b01c74c13486c72b48007789bc585edf406527121e8547",
+      "bytes": 1059,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/IMPLEMENTATION_AUTHORIZATION_BOUNDARY.md",
+      "sha256": "5a9ff05598c6bd3c716ccf8eaa1d2b82d08a19ea18ab87dbaf532d750e52e4dc",
+      "bytes": 678,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/NEXT_ALLOWED_MOVE.md",
+      "sha256": "2281f00acfaa69e294337a1ec9f2686b2f5736871d6caa3929d2929b376cbc60",
+      "bytes": 424,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/OPEN_QUESTIONS_AND_DISSENT.md",
+      "sha256": "11bea3298c264c80698c52d062c34f5e4971da7f0367c5627590c88eaecce7d1",
+      "bytes": 1367,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/OWNER_APPROVAL_RECORD.md",
+      "sha256": "bf6a6bf546d663218c038358a475db38efa33ca7afa496b3a644193b5598ac08",
+      "bytes": 665,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/PUBLIC_DISPOSITION.md",
+      "sha256": "f1012ed1da026e857a62972dd5ce0e284a43eed50cb2a68aa742196520a81aa0",
+      "bytes": 647,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/08_DECISION_AND_FREEZE/REOPEN_CONDITIONS.md",
+      "sha256": "830091ec61adbf40885ca0253c607de9036480cb57a8f14c991e322828cbefe0",
+      "bytes": 939,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/approval_required_example.json",
+      "sha256": "c101cb6bb4628d33a63aab7f9df8a7464b1f7180e4640806ceecf8c373e60052",
+      "bytes": 599,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/denied_invocation_example.json",
+      "sha256": "29338cef192d9009aab24cb4dd1299c557521d5092cca22d1dc26a4e9cb02d6d",
+      "bytes": 497,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/discovery_admission_example.json",
+      "sha256": "23bd0bfcff62d4c25d1c46cc281b2a393d5b8275b9c3886d82c537ebf7535a9c",
+      "bytes": 835,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/legacy_request_example.json",
+      "sha256": "932573cc34cb30de0bf8a2ecb0dfbde5ee55c285f59d13756212e037388e40e7",
+      "bytes": 1969,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/examples/modern_request_example.json",
+      "sha256": "0a276404556013f03f13525ba791bcdb322585cb8a06340bb676f07a4e4faf0b",
+      "bytes": 1843,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/missing_work_order.json",
+      "sha256": "c5c2223d49b4a5ec993ce4bc77a605b4044878846812a9f5fc184620a7b68edb",
+      "bytes": 398,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/reused_approval_reference.json",
+      "sha256": "6cad76aa4f55744fcbfda40bfd3da1301edfe00dbc4d200057bf61bb2032941b",
+      "bytes": 501,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/schema_drift_after_admission.json",
+      "sha256": "04c7da5747090fe4b318fdc3cad89f97382b36756963a11cc5f10b4bce19d041",
+      "bytes": 470,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/secret_requested_by_form_elicitation.json",
+      "sha256": "fcd542fbefe328ba0238d160e9c3f4a6249743b250939209f7ed45dd29337395",
+      "bytes": 443,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/self_asserted_operator_role.json",
+      "sha256": "7b0b11bb1cbce85b60a36a19eb2671f82992dfd0de3e45b44470a79c8cfc2c41",
+      "bytes": 413,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/side_effect_exceeds_grant.json",
+      "sha256": "5c831cfcf3169b315c430dbf882d981d1892baa48afa7b616bf580f0c042056e",
+      "bytes": 462,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/unknown_phase.json",
+      "sha256": "17a84a9a865d21d3ba1d9f8cdec6ecc7d6859125221d144ba53af784cb0375d3",
+      "bytes": 407,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/negative_cases/unknown_risk.json",
+      "sha256": "0e240bd4ff84b4d1a1a66163b2852cf2c2d8ca6a93a3bb51e8c31217ecb40520",
+      "bytes": 343,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_discovery_snapshot.schema.json",
+      "sha256": "1923ca391b73b315ac37981a033310bfaac2eac8478cd65330854cfec51edbb8",
+      "bytes": 2711,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_execution_receipt.schema.json",
+      "sha256": "d257c0b3e0e0d5d6427445c66cf0f63d9868eeb6968debb00a2da66896e7420a",
+      "bytes": 3842,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_policy_decision.schema.json",
+      "sha256": "ead1d9dbb31ce3fbf46444967c4fbfb78d14b162e9e811585bacf652e3275d29",
+      "bytes": 1480,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/fixtures/schemas/cvf_mcp_request_envelope.schema.json",
+      "sha256": "6227e0cf89616c1fe71f79bf35497db736135495d60987317a4e83d4c51e3cdb",
+      "bytes": 6301,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/README.md",
+      "sha256": "e46ff59d911661209a036de6d4aaf95707f073caad6114bf38108e557ea68ba0",
+      "bytes": 23267,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/ABSORPTION_DECISION_TEMPLATE.md",
+      "sha256": "4104ab987137140ab2b5867019a0ae035cce07c8c7b12907840f2ac6bbfe5312",
+      "bytes": 466,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/CONTRACT_TEMPLATE.md",
+      "sha256": "ec2b50d6858dda5cca86910087a8bd41d17031ffe0260bd3efca725014ccdf74",
+      "bytes": 406,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/GAP_RECORD_TEMPLATE.md",
+      "sha256": "cec40837929deb41b031feb6c11ed5f51d6128de5b4b65edc2f13c6ca8ced684",
+      "bytes": 351,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/MIGRATION_STEP_TEMPLATE.md",
+      "sha256": "ad023791085f4f9e7f850d1131d933bddfd599aa1951f8d45865d7def0bfae2e",
+      "bytes": 405,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/REVIEW_AND_FREEZE_TEMPLATE.md",
+      "sha256": "ac9a6d2d59297947d01ca2fa335d0c8780cd8c08d1dd71f01dee7bf42f8fb318",
+      "bytes": 476,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/templates/TEST_CASE_TEMPLATE.md",
+      "sha256": "ff9d46d688a01122c6b974929538a6d3e3245a978db99ca8c5129656962736f6",
+      "bytes": 440,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "docs/reference/mcp_knowledge_absorption_redesign/TREEVIEW.md",
+      "sha256": "af21ab2c72e72c22c68b553ee622f3d66e4d4fc5ea72479dc99f3ab220c77834",
+      "bytes": 8410,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "EXTERNAL_AGENT_RETURN_MANIFEST.json",
+      "sha256": "c4e9bd2e44f445de66ef87af7319a476a8abf6b55bef703d4a1ca560ebdd7b70",
+      "bytes": 38979,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "FILE_INVENTORY.sha256",
+      "sha256": "a9e12ed0835ec470204e1779bd12daabe60f3a449cac4c1fb4a60400f7b93a89",
+      "bytes": 17291,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "README.md",
+      "sha256": "f2620a10d203867bb8c819c50c3041933afe2b8028f88349f303401e1be7c70d",
+      "bytes": 3774,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "SOURCE_MANIFEST.md",
+      "sha256": "9e8aefcf15e4f3833049f8ba618d3ab3464c4b36e67820bcc5d70cd80a2cd7e5",
+      "bytes": 3069,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    },
+    {
+      "path": "TEST_EVIDENCE.md",
+      "sha256": "9d0955bf7639e601f252f72c1a9a425eee12184d7ef332c929b81f45fbc7a277",
+      "bytes": 2497,
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "terminalStatus": "DEFERRED",
+      "semanticGroup": "PENDING_SEMANTIC_CLASSIFICATION",
+      "rationale": "Receipt-only row; external-agent synthesis requires upstream and CVF-owner verification before disposition."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "registryOrder": 171,
+  "id": "mcp-kar-t0-official-mcp-external-redesign-dual-corpus-intake",
+  "corpusType": "EXTERNAL_SOURCE",
+  "displayName": "MCP-KAR-T0 official Model Context Protocol upstream plus external redesign mixed-origin intake",
+  "scopePaths": [
+    ".private_reference/source_mirrors/modelcontextprotocol__modelcontextprotocol/",
+    ".private_reference/legacy/CVF 13.08/CVF_MCP_KNOWLEDGE_ABSORPTION_REDESIGN/"
+  ],
+  "fileCount": 993,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "MCP-KAR-T0",
+  "scanDate": "2026-08-23",
+  "manifestHash": "fb3b313dd136095352598f575cc54f46d7fc8a6440fd0cdc2fdc493902780c35",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/audits/CVF_MCP_KAR_T0_DUAL_CORPUS_RECEIPT_2026-08-23.json",
+  "packetPath": "docs/audits/CVF_MCP_KAR_T0_ABSORPTION_AUDIT_2026-08-23.md",
+  "completionReviewPath": "docs/reviews/CVF_MCP_KAR_T0_DUAL_CORPUS_INTAKE_WORKER_RETURN_2026-08-23.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_MCP_KAR_T0_OFFICIAL_MCP_AND_EXTERNAL_REDESIGN_DUAL_CORPUS_INTAKE_2026-08-23.md",
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "PARTIAL",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "UPSTREAM_PROTOCOL_AUTHORITY_PENDING_CLASSIFICATION",
+    "EXTERNAL_DERIVED_SYNTHESIS_PENDING_RECONCILIATION",
+    "CVF_OWNER_OVERLAP_PENDING_MAPPING"
+  ],
+  "priorAbsorption": "No accepted MCP-KAR absorption exists. The external-agent folder passed byte-level inventory checks but failed the strengthened return-contract evidence gate and remains secondary evidence only.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "direct import of external MCP redesign into CVF - not authorized",
+    "execution or installation of upstream modelcontextprotocol repository - not performed",
+    "external-agent packet treated as upstream authority - explicitly rejected"
+  ],
+  "nextScanRecommendation": "Complete file-level semantic ledgers, upstream-to-derived claim verification, CVF owner/overlap mapping, and value-cost disposition before any CVF-native conversion tranche."
+}

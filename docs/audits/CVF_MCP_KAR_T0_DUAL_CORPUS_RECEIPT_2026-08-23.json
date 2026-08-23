@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "cvf.corpusReceipt.v1",
+  "batchId": "MCP-KAR-T0",
+  "status": "INVENTORIED_PENDING_SEMANTIC_REVIEW",
+  "snapshotTime": "2026-08-23T00:00:00+07:00",
+  "corpora": [
+    {
+      "role": "PINNED_UPSTREAM_AUTHORITY",
+      "root": ".private_reference/source_mirrors/modelcontextprotocol__modelcontextprotocol/",
+      "fileCount": 885,
+      "manifestPath": "docs/audits/CVF_MCP_KAR_T0_UPSTREAM_MANIFEST_2026-08-23.json",
+      "ledgerPath": "docs/audits/CVF_MCP_KAR_T0_UPSTREAM_FILE_LEDGER_2026-08-23.json",
+      "manifestHash": "558c9266ca682604529db65c4f09d736623fca3e0da943e65dd835cc8c85db58"
+    },
+    {
+      "role": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+      "root": ".private_reference/legacy/CVF 13.08/CVF_MCP_KNOWLEDGE_ABSORPTION_REDESIGN/",
+      "fileCount": 108,
+      "manifestPath": "docs/audits/CVF_MCP_KAR_T0_EXTERNAL_REDESIGN_MANIFEST_2026-08-23.json",
+      "ledgerPath": "docs/audits/CVF_MCP_KAR_T0_EXTERNAL_REDESIGN_FILE_LEDGER_2026-08-23.json",
+      "manifestHash": "b698b5c5a3dc3cde67d14eebb3a936898a5d02d9bc26f3d70803e8d10b04d9ba"
+    }
+  ],
+  "totalFileCount": 993,
+  "combinedManifestHashAlgorithm": "sha256",
+  "combinedManifestHashInput": "sorted role-prefixed paths newline-joined with trailing newline",
+  "combinedManifestHash": "fb3b313dd136095352598f575cc54f46d7fc8a6440fd0cdc2fdc493902780c35",
+  "semanticReadStatus": "PENDING",
+  "claimBoundary": "Inventory, byte hashes, and receipt identity only; no semantic full-read, correctness, value, implementation, runtime, provider, public, or production claim."
+}
