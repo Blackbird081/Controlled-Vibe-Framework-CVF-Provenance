@@ -36,7 +36,7 @@ Status: ACTIVE
 - Current TPGR R7 closure continuity: `9bbc6bf31014608633380d36e70f8319e2483e87`.
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`; external round-trip kit intake convention: `535a4fff5`.
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
-- MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus mandatory GC-051 output amendment `2bedaa05f` authorize the bounded invariant/conformance worker.
+- MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
 - Active mode: `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
@@ -46,7 +46,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute bounded MCP-KAR-T1 pure local invariant profile and negative conformance while TPGR-R8 remains held; parked checkpoint=R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, MCP runtime/package, UI/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report MCP-KAR-T1 bounded closure and await operator selection for any follow-on; parked checkpoint=R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, MCP runtime/package, UI/provider/live/public/deploy/production.
 
 ## Current Mode
 `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
@@ -68,7 +68,7 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 ## Latest Work / Changes
 
 - External-agent protocol v1.1 material `65f6224cb62345d84ed3dd7e27081b800df5a02a` plus wrapper repair `4161ec158883ab89453495e8f3543bfb9d947cca` is exported at public `864c4e0e6139f3e32067dea41f43f240e505c0d8`. The governed mode refreshed `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` to that live SHA with receipt SHA-256 `04044eef5377b6250c040b04952a03dfff742980a3b8ee70f0ce467920df2570` and zero packet-hash mismatches.
-- MCP-KAR-T0 classified all 993 files and closed `PROCEED_SELECTIVELY` at `79e588b0`; operator selected T1, whose baseline/work order commit `adf7b36d2` passed 78/78 pre-dispatch and 86/86 commit-hook checks. T1 permits only a pure local profile, reference mapping, and negative tests; no upstream code runs.
+- MCP-KAR-T0 classified all 993 files and closed `PROCEED_SELECTIVELY` at `79e588b0`; operator-selected T1 closed at `c179e656a` with a pure local ten-rule profile, stable reference, eight-path registry reconciliation, and negative tests. No upstream code ran and no runtime/package/public effect occurred.
 - Independent review accepted T1 against R01-R28 with bounded scope and kept
   the reproducible F11 residual explicit.
 - TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64;
@@ -167,7 +167,7 @@ Continuity parent anchor: `6f7736d99494d9d5183e11e7e1b3b1c9fcb3d933`.
 
 ## Next Allowed Move
 
-TPGR-R8 remains `CLOSED_PASS_BOUNDED` at `859f851ac` with final disposition `HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE`; its reopen requirements and all R9 restrictions are unchanged. The only active move is MCP-KAR-T1 under `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md`: implement the ten pure decision rules, source mapping, and provider-free negative conformance tests, then return uncommitted for review.
+TPGR-R8 remains `CLOSED_PASS_BOUNDED` at `859f851ac` with final disposition `HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE`; its reopen requirements and all R9 restrictions are unchanged. MCP-KAR-T1 is reviewer-accepted and materially closed at `c179e656a`; any further MCP absorption, runtime/package work, or public export requires a fresh operator-selected tranche.
 
 ## Active Boundary
 
@@ -176,7 +176,7 @@ TPGR-R8 remains `CLOSED_PASS_BOUNDED` at `859f851ac` with final disposition `HOL
   `lpci1-ref-staging`. Public `main`, Netlify deploy, production, and every
   unrelated lane are parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
-- MCP-KAR-T1 may read only the pinned selected source cluster and may implement only its six-output manifest. No dependency change, source execution/direct import, MCP runtime or package activation, provider/account use, public sync, deploy, or production is authorized.
+- MCP-KAR-T1 used only the pinned selected source cluster and closed its eight-output reviewer-repaired manifest at `c179e656a`. No dependency change, source execution/direct import, MCP runtime or package activation, provider/account use, public sync, deploy, or production was authorized or performed.
 - Worker commit remained forbidden; independent reviewer created target commit.
 - T3A, T3B, T4, T5D, T5-R5, and selected T7 scope are closed bounded;
   route/registry adoption and repeat-live remain parked; T6 R2 is closed bounded.
@@ -217,4 +217,4 @@ Rollback boundary: revert this continuity-only batch as one unit.
 
 ## Claim Boundary
 
-This handoff records bounded R8 design closure/hold, completed external-agent protocol v1.1 export/refresh, MCP-KAR-T0 selective closure, and MCP-KAR-T1 pure local dispatch. It authorizes no public push, source execution/direct import, MCP runtime/package invocation, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, persistence, provider/live invocation, deployment, or production.
+This handoff records bounded R8 design closure/hold, completed external-agent protocol v1.1 export/refresh, MCP-KAR-T0 selective closure, and MCP-KAR-T1 bounded material closure at `c179e656a`. It authorizes no follow-on/public push, source execution/direct import, MCP runtime/package invocation, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, persistence, provider/live invocation, deployment, or production.
