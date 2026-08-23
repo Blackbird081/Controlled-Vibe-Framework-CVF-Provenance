@@ -36,7 +36,7 @@ Status: ACTIVE
 - Current TPGR R7 accepted material: `723382cfc373f8da8971326733f0ed4c074066f1`.
 - Current TPGR R7 closure continuity: `9bbc6bf31014608633380d36e70f8319e2483e87`.
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`; external round-trip kit intake convention: `535a4fff5`.
-- External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; public candidate: `864c4e0e6139f3e32067dea41f43f240e505c0d8` (not pushed).
+- External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper path repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; public candidate: `864c4e0e6139f3e32067dea41f43f240e505c0d8` (not pushed).
 - Active mode: `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
@@ -67,7 +67,7 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Latest Work / Changes
 
-- External-agent protocol v1.1 is implemented at `65f6224cb62345d84ed3dd7e27081b800df5a02a`: fail-closed live-public refresh, task capsule, owner index, Gate A/B, semantic validator/receipt, operator entrypoint, and six tests. Public candidate `864c4e0e6139f3e32067dea41f43f240e505c0d8` is clean but unpushed. `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` carries v1.1 plus the owner index; its audit anchor stays live `b7204787` until push plus governed refresh. MCP absorption remains unopened.
+- External-agent protocol v1.1 material `65f6224cb62345d84ed3dd7e27081b800df5a02a` plus wrapper-path repair `4161ec158883ab89453495e8f3543bfb9d947cca` implements fail-closed live-public refresh, task capsule, owner index, Gate A/B, semantic validator/receipt, operator entrypoint, and six tests. Public candidate `864c4e0e6139f3e32067dea41f43f240e505c0d8` is clean but unpushed. `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` carries v1.1 plus owner index; its audit anchor stays live `b7204787` until push plus governed refresh. MCP absorption remains unopened.
 - Independent review accepted T1 against R01-R28 with bounded scope and kept
   the reproducible F11 residual explicit.
 - TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64;
