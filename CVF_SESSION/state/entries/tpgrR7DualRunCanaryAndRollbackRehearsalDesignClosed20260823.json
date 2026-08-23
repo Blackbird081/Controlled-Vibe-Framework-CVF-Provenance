@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2293,
+  "stateKey": "tpgrR7DualRunCanaryAndRollbackRehearsalDesignClosed20260823",
+  "value": "TPGR-R7 is CLOSED_PASS_BOUNDED at 723382cfc. The accepted assessment SHA-256 is ca58d33e218e9c3160a49edb450eaf3f71454e0f5641e928a17b1d07615538ca; the accepted worker-return SHA-256 is 000f867606e9c39837791876e9cbb4e2a9ac6fcd5999b12296c5ece0773c3a49. Reviewer independently confirmed six canary design cases, six deterministic mismatch classes, four Tier 1 plus three Tier 2 rollback rehearsals, ten negative-test designs, exact H3 fail-closed identity binding, separated cost/value labels, zero legacy suppression, zero TPGR-added enforcement, and zero selective execution authority. Commit-steward, worker-return fast 65/65, pre-closure 78/78, and pre-commit 86/86 passed. Final disposition PROCEED_TO_R8_P0_P1_ALLOWLIST_DECISION_DESIGN authorizes only a fresh governed documentation-only R8 dispatch after operator selection; no implementation, P0/P1 activation, real canary, or selective execution authority follows."
+}

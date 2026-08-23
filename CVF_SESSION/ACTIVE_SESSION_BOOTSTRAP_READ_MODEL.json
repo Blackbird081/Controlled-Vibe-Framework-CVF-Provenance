@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_dispatched_pending_worker_return",
+  "currentMode": "task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_closed_r8_dispatch_authorized",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "TPGR-R7 documentation-only design is dispatched at 555066418 under the paired baseline and work order. The next allowed move is exact-manifest execution by one external no-commit worker, producing only the R7 assessment and worker return, followed by independent reviewer closure. R7 implementation/canary execution, R8-R9, T15, selective execution, protected governance edits, new source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "TPGR-R7 is CLOSED_PASS_BOUNDED at 723382cfc. The accepted assessment SHA-256 is ca58d33e218e9c3160a49edb450eaf3f71454e0f5641e928a17b1d07615538ca and the accepted worker-return SHA-256 is 000f867606e9c39837791876e9cbb4e2a9ac6fcd5999b12296c5ece0773c3a49. Final disposition is PROCEED_TO_R8_P0_P1_ALLOWLIST_DECISION_DESIGN. The operator authorized roadmap continuation on 2026-08-23; the next allowed move is a fresh documentation-only R8 design dispatch. R8 implementation, P0/P1 activation, real canary or selective execution, R9, T15, protected governance implementation edits, new source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

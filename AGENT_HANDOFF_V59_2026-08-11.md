@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR R7 Dispatched Pending Worker Return
+# CVF Agent Handoff V59 - TPGR R7 Closed And R8 Dispatch Authorized
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -34,7 +34,7 @@ Status: ACTIVE
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
 - Current TPGR R3 accepted material: `b029e61de9c44bcb428debb2627d283995a53966`; empty read-budget registry expiry repair: `b692fc92ef8985c1a93dfd2396b7fd96786e95ef`; R4 accepted material: `dbdc0888e`; R5 accepted material: `d8699b713`.
 - Current TPGR R7 accepted material: `723382cfc373f8da8971326733f0ed4c074066f1`.
-- Active mode: `task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`
+- Active mode: `task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_closed_r8_dispatch_authorized`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -43,14 +43,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=external no-commit execution of the exact R7 two-output manifest followed by independent review; parked checkpoint=R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_closed_r8_dispatch_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh documentation-only R8 P0/P1 allowlist-decision design dispatch; parked checkpoint=R8 implementation, P0/P1 activation, real canary/selective execution, R9, T15, protected implementation edits, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
-`task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_dispatched_pending_worker_return`
+`task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_closed_r8_dispatch_authorized`
 
 ## Purpose
 
-Record independently accepted R6 design closure and authorize only a fresh documentation-only R7 design dispatch while keeping implementation, canary execution, and external-effect authority parked.
+Record independently accepted R7 design closure and operator-authorized continuation to a fresh documentation-only R8 P0/P1 allowlist-decision design dispatch while keeping implementation, activation, real canary/selective execution, and external-effect authority parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -113,10 +113,10 @@ Continuity parent anchor: `6f7736d99494d9d5183e11e7e1b3b1c9fcb3d933`.
 
 | Field | Value |
 |---|---|
-| authorityState | TPGR-R6 `CLOSED_PASS_BOUNDED` at `27e87a1ca`; final disposition `PROCEED_TO_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN` |
-| baselinePath | `docs/baselines/CVF_GC018_TPGR_R6_HISTORICAL_SEEDED_DEFECT_SHADOW_REPLAY_AND_MIGRATION_DESIGN_2026-08-18.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R6_HISTORICAL_SEEDED_DEFECT_SHADOW_REPLAY_AND_MIGRATION_DESIGN_2026-08-18.md` |
-| nextAuthorityRequirement | standing operator authority permits a fresh documentation-only R7 design dispatch; no implementation or canary-execution authority follows |
+| authorityState | TPGR-R7 `CLOSED_PASS_BOUNDED` at `723382cfc`; final disposition `PROCEED_TO_R8_P0_P1_ALLOWLIST_DECISION_DESIGN` |
+| baselinePath | `docs/baselines/CVF_GC018_TPGR_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN_2026-08-18.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN_2026-08-18.md` |
+| nextAuthorityRequirement | operator authorized roadmap continuation on 2026-08-23; fresh documentation-only R8 design dispatch is allowed, with implementation and activation still parked |
 
 ## Closure Evidence
 
@@ -162,7 +162,7 @@ Continuity parent anchor: `6f7736d99494d9d5183e11e7e1b3b1c9fcb3d933`.
 
 ## Next Allowed Move
 
-TPGR-R7 documentation-only design is dispatched at `555066418`. Paired authority hashes are baseline `782ad852e358c4d98bcf44c218d803414a00dbb70936b8eb6cc9b5783c8064e9` and work order `c8d8975e561613e7cb8ae257b895c80075e3d63735baad0d893dbb7786ec1458`. Next is exact-manifest external worker execution: create only the R7 assessment and worker return, leave both unstaged/uncommitted, then return for independent review. R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, new source intake, runtime/provider/live/public/deploy/production remain forbidden.
+TPGR-R7 is `CLOSED_PASS_BOUNDED` at `723382cfc`. Accepted assessment SHA-256 is `ca58d33e218e9c3160a49edb450eaf3f71454e0f5641e928a17b1d07615538ca`; accepted worker-return SHA-256 is `000f867606e9c39837791876e9cbb4e2a9ac6fcd5999b12296c5ece0773c3a49`. Reviewer independently confirmed 6/6 canary cases, 6/6 mismatch classes, 4 Tier 1 plus 3 Tier 2 rollback rehearsals, 10/10 negative-test designs, strict H3 binding, separated cost/value labels, zero legacy suppression, zero TPGR-added enforcement, and zero selective-execution authority. Commit-steward, worker-return fast 65/65, pre-closure 78/78, and pre-commit 86/86 passed. Final disposition is `PROCEED_TO_R8_P0_P1_ALLOWLIST_DECISION_DESIGN`; the operator authorized roadmap continuation on 2026-08-23. Next is a fresh documentation-only R8 design dispatch. R8 implementation, P0/P1 activation, real canary/selective execution, R9, T15, protected implementation edits, new source intake, runtime/provider/live/public/deploy/production remain forbidden.
 
 ## Active Boundary
 
@@ -193,7 +193,7 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private governance continuity only; prior public evidence remains at `lpci1-ref-staging@021f8b852`, with no new public change.
 
-## Core Guard Self-Protection Authorization - TPGR R7 Dispatch Continuity
+## Core Guard Self-Protection Authorization - TPGR R7 Closure Continuity
 
 Protected paths:
 
@@ -202,17 +202,17 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrR7DualRunCanaryAndRollbackRehearsalDesignDispatched20260818.json`
+- `CVF_SESSION/state/entries/tpgrR7DualRunCanaryAndRollbackRehearsalDesignClosed20260823.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: standing CVF-governed authority granted 2026-08-18.
+Operator authorization: explicit roadmap-continuation authority granted 2026-08-23.
 
-Authorized guard-maintenance scope: R7 dispatch continuity, exact authority hashes, worker-return boundary, and parked implementation.
+Authorized guard-maintenance scope: R7 closure continuity, accepted material hashes, R8 documentation-only design-dispatch authority, and parked implementation/activation.
 
 Rollback boundary: revert this continuity batch as one unit.
 
 ## Claim Boundary
 
-This handoff records bounded R7 documentation-only design dispatch only. It authorizes exact-manifest no-commit worker execution but no R7 implementation/canary execution, R8-R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
+This handoff records bounded R7 documentation-only design closure only. It authorizes a fresh documentation-only R8 design dispatch but no R8 implementation, P0/P1 activation, real canary/selective execution, R9, T15, or selective gate execution. It does not authorize UI/API/callback/approval/action execution, registry/generated-index implementation changes, package loading, environment scanning, persistence, runtime, MCP/network/provider/live invocation,
 external-agent runtime authority, runtime enforcement, cross-runtime determinism, trusted-evidence readiness, hook wiring, full release readiness, repeat-live,
 public sync, deployment, or production.
