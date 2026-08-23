@@ -36,7 +36,35 @@
     "EXTERNAL_SCHEMA_AND_NEGATIVE_TEST_REPAIR",
     "CVF_OWNER_OVERLAP_AND_VALUE_COST"
   ],
-  "priorAbsorption": "No accepted MCP-KAR absorption exists. The external-agent folder passed byte-level inventory checks but failed the strengthened return-contract evidence gate and remains secondary evidence only.",
+  "priorAbsorption": "Accepted bounded MCP-KAR absorption now includes T1, T4, T5, T7, and T8 material; T3 was consumed by T4; T2 and T6 remain stopped behind objective reopen conditions. The external-agent folder remains secondary evidence only and no direct import, source execution, runtime, or package activation occurred.",
+  "downstreamReconciliation": {
+    "batchId": "MCP-KAR-T9",
+    "status": "COMPLETE_BOUNDED_DISPOSITION",
+    "referencePath": "docs/reference/mcp_gateway/CVF_MCP_KAR_FINAL_EXHAUSTION_RECONCILIATION.md",
+    "routeLedgerPath": "docs/audits/CVF_MCP_KAR_FINAL_EXHAUSTION_ROUTE_LEDGER_2026-08-24.json",
+    "semanticGroupCount": 35,
+    "routeCounts": {
+      "retainedEvidence": 331,
+      "deferredReopen": 226,
+      "rejectedNoValue": 436
+    },
+    "knowledgeMap": {
+      "mapped": 767,
+      "deferred": 226,
+      "unmapped": 0
+    },
+    "t1T8OutcomeCounts": {
+      "materialized": 5,
+      "consumed": 1,
+      "stopped": 2
+    },
+    "conditionalReopenIds": [
+      "MCP-KAR-T2-schema-conformance-repair",
+      "MCP-KAR-T6-bound-discovery-admission"
+    ],
+    "noRescan": true,
+    "claimBoundary": "Downstream bounded disposition only; original fileCount, scanWave, scanDate, manifest identity/hash, and snapshot evidence remain unchanged."
+  },
   "findings": [
     {
       "id": "MCP-KAR-T0-F1",
@@ -88,5 +116,5 @@
     "execution or installation of upstream modelcontextprotocol repository - not performed",
     "external-agent packet treated as upstream authority - explicitly rejected"
   ],
-  "nextScanRecommendation": "Do not rescan the 993-file corpus. Reuse the immutable receipt, terminal ledgers, MCP-KAR-T1 source mapping, and local negative suite; reverify only named pinned files and affected owners for a separately authorized follow-on."
+  "nextScanRecommendation": "Do not rescan the 993-file corpus. T9 exhausts the current bounded disposition route through 35 semantic groups; reuse the immutable receipt and terminal ledgers. Reopen only the indexed T2 or T6 candidate after its objective conditions hold, or perform a new intake for a newly selected immutable upstream pin."
 }
