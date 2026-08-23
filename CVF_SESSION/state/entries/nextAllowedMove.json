@@ -1,5 +1,5 @@
 {
   "stateOrder": 2244,
   "stateKey": "nextAllowedMove",
-  "value": "TPGR-R7 is CLOSED_PASS_BOUNDED at 723382cfc. The accepted assessment SHA-256 is ca58d33e218e9c3160a49edb450eaf3f71454e0f5641e928a17b1d07615538ca and the accepted worker-return SHA-256 is 000f867606e9c39837791876e9cbb4e2a9ac6fcd5999b12296c5ece0773c3a49. Final disposition is PROCEED_TO_R8_P0_P1_ALLOWLIST_DECISION_DESIGN. The operator authorized roadmap continuation on 2026-08-23; the next allowed move is a fresh documentation-only R8 design dispatch. R8 implementation, P0/P1 activation, real canary or selective execution, R9, T15, protected governance implementation edits, new source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "TPGR-R8 documentation-only design is dispatched at e91e5d127 under the paired baseline and work order. The next allowed move is exact-manifest execution by one external no-commit worker, producing only the R8 assessment and worker return, followed by independent reviewer closure. R8 implementation, P0/P1 activation, real canary or selective execution, R9, T15, protected governance implementation edits, new source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

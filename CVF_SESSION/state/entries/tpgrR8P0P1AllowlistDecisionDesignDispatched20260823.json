@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2294,
+  "stateKey": "tpgrR8P0P1AllowlistDecisionDesignDispatched20260823",
+  "value": "TPGR-R8 documentation-only design dispatch is materially committed at e91e5d127. Authority is the paired R8 baseline SHA-256 4dd26d44651f891bea561feb499666d97725fa2b43ece136be0a38b3de61313d and work order SHA-256 0a35879278264821c5699f25238e6748348f24f9b1953cdfeb79971320f8c533. The worker may create exactly the R8 assessment and worker-return paths, must not stage or commit, must keep design-time and projected evidence distinct from observed current evidence, and must preserve the full legacy bundle as sole controller. R8 implementation, allowlist activation, real canary/selective execution, R9, T15, protected implementation edits, source intake, and external effects remain unauthorized."
+}

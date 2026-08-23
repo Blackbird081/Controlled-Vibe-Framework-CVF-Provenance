@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "task_proportional_governance_second_upgrade_r7_dual_run_canary_rollback_design_closed_r8_dispatch_authorized",
+  "currentMode": "task_proportional_governance_second_upgrade_r8_p0_p1_allowlist_decision_design_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "TPGR-R7 is CLOSED_PASS_BOUNDED at 723382cfc. The accepted assessment SHA-256 is ca58d33e218e9c3160a49edb450eaf3f71454e0f5641e928a17b1d07615538ca and the accepted worker-return SHA-256 is 000f867606e9c39837791876e9cbb4e2a9ac6fcd5999b12296c5ece0773c3a49. Final disposition is PROCEED_TO_R8_P0_P1_ALLOWLIST_DECISION_DESIGN. The operator authorized roadmap continuation on 2026-08-23; the next allowed move is a fresh documentation-only R8 design dispatch. R8 implementation, P0/P1 activation, real canary or selective execution, R9, T15, protected governance implementation edits, new source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "TPGR-R8 documentation-only design is dispatched at e91e5d127 under the paired baseline and work order. The next allowed move is exact-manifest execution by one external no-commit worker, producing only the R8 assessment and worker return, followed by independent reviewer closure. R8 implementation, P0/P1 activation, real canary or selective execution, R9, T15, protected governance implementation edits, new source intake, runtime/provider/live/public/deploy/production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_TPGR_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN_2026-08-18.md",
-    "baselineSha256": "782ad852e358c4d98bcf44c218d803414a00dbb70936b8eb6cc9b5783c8064e9",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN_2026-08-18.md",
-    "workOrderSha256": "c8d8975e561613e7cb8ae257b895c80075e3d63735baad0d893dbb7786ec1458"
+    "baselinePath": "docs/baselines/CVF_GC018_TPGR_R8_P0_P1_ALLOWLIST_DECISION_DESIGN_2026-08-23.md",
+    "baselineSha256": "4dd26d44651f891bea561feb499666d97725fa2b43ece136be0a38b3de61313d",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_R8_P0_P1_ALLOWLIST_DECISION_DESIGN_2026-08-23.md",
+    "workOrderSha256": "0a35879278264821c5699f25238e6748348f24f9b1953cdfeb79971320f8c533"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
