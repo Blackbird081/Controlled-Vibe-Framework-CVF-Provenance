@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_t6_t8_residual_protocol_owner_value_decision_closed_t6_stop_t7_t8_proceed_guard_candidates`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=open one combined exact-manifest T7/T8 defensive guard implementation dispatch; parked checkpoint=T6 discovery implementation, filesystem/sampling runtime, parallel approval authority, package/transport, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_t7_t8_defensive_legacy_protocol_guards_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T7/T8 implementation dispatch and return one uncommitted exact-manifest packet; parked checkpoint=T6 discovery implementation, filesystem/sampling runtime, parallel approval authority, package/transport, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `mcp_kar_t6_t8_residual_protocol_owner_value_decision_closed_t6_stop_t7_t8_proceed_guard_candidates`
-Current mode: `mcp_kar_t6_t8_residual_protocol_owner_value_decision_closed_t6_stop_t7_t8_proceed_guard_candidates`
-Previous mode: `mcp_kar_t6_t8_residual_protocol_owner_value_decision_dispatched_pending_worker_return`
+Current mode marker: `mcp_kar_t7_t8_defensive_legacy_protocol_guards_implementation_dispatched_pending_worker_return`
+Current mode: `mcp_kar_t7_t8_defensive_legacy_protocol_guards_implementation_dispatched_pending_worker_return`
+Previous mode: `mcp_kar_t6_t8_residual_protocol_owner_value_decision_closed_t6_stop_t7_t8_proceed_guard_candidates`
 
 ## Next Allowed Move
 
-Mode: `mcp_kar_t6_t8_residual_protocol_owner_value_decision_closed_t6_stop_t7_t8_proceed_guard_candidates`; decisions accepted at `93763c127`. Open only one combined exact-manifest T7/T8 defensive guard implementation dispatch.
+Mode: `mcp_kar_t7_t8_defensive_legacy_protocol_guards_implementation_dispatched_pending_worker_return`; execute only committed dispatch `da18195f2` and create one uncommitted exact-manifest worker return.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
