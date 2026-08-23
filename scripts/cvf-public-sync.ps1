@@ -173,6 +173,7 @@ $DENY_PATTERNS = @(
     '^EXTENSIONS[/\\]CVF_MODEL_GATEWAY[/\\](?:src[/\\](?:index|cadp\.constraint\.projection\.contract)|tests[/\\]cadp\.constraint\.projection\.contract\.test)\.ts$',
     '^EXTENSIONS[/\\](?:CVF_EXECUTION_PLANE_FOUNDATION|CVF_MODEL_GATEWAY)[/\\]tests[/\\]cadp\.package\.root\.exports\.test\.ts$',
     '^EXTENSIONS[/\\]CVF_v1\.6_AGENT_PLATFORM[/\\]cvf-web[/\\]src[/\\]lib[/\\]cadp-(?:authentication-policy|authorization)(?:\.test)?\.ts$',
+    '^EXTENSIONS[/\\]CVF_LEARNING_PLANE_FOUNDATION[/\\](?:src[/\\](?:index|capability-learning-candidate-projection)|tests[/\\]capability-learning-candidate-projection\.test)\.ts$',
     '^governance[/\\]compat[/\\](?:test_)?check_cadp_authority_boundary_drift\.py$',
     '^governance[/\\]compat[/\\]fixtures[/\\]cadp_authority_boundary_contract\.v1\.json$',
     '^docs[/\\]reference[/\\]system_architecture_catalog[/\\]entries[/\\]interface\.cadp_capability_admission_distribution_profile\.v1\.json$',
