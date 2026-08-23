@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_t5_approval_reference_request_binding_owner_value_decision_closed_proceed_contract_candidate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=open one exact-manifest T5 contract-only implementation dispatch; parked checkpoint=runtime/persistence/atomic consumption/durable replay claim, package/transport, schema repair, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_t5_approval_reference_request_binding_contract_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T5 exact-manifest contract-only implementation and return uncommitted evidence; parked checkpoint=runtime/persistence/atomic consumption/durable replay claim, package/transport, schema repair, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `mcp_kar_t5_approval_reference_request_binding_owner_value_decision_closed_proceed_contract_candidate`
-Current mode: `mcp_kar_t5_approval_reference_request_binding_owner_value_decision_closed_proceed_contract_candidate`
-Previous mode: `mcp_kar_t5_approval_reference_request_binding_owner_value_decision_dispatched_pending_worker_return`
+Current mode marker: `mcp_kar_t5_approval_reference_request_binding_contract_implementation_dispatched_pending_worker_return`
+Current mode: `mcp_kar_t5_approval_reference_request_binding_contract_implementation_dispatched_pending_worker_return`
+Previous mode: `mcp_kar_t5_approval_reference_request_binding_owner_value_decision_closed_proceed_contract_candidate`
 
 ## Next Allowed Move
 
-Mode: `mcp_kar_t5_approval_reference_request_binding_owner_value_decision_closed_proceed_contract_candidate`; T5 decision is accepted at `c7388c127`. Open only the separate exact three-path contract-only implementation dispatch.
+Mode: `mcp_kar_t5_approval_reference_request_binding_contract_implementation_dispatched_pending_worker_return`; execute only committed dispatch `5181d6a88` and preserve all durable-state/runtime exclusions.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

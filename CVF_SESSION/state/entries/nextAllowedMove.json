@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2247,
+  "stateOrder": 2248,
   "stateKey": "nextAllowedMove",
-  "value": "MCP-KAR-T5 decision is reviewer-accepted at c7388c127 with PROCEED_APPROVAL_BINDING_CONTRACT. Under the operator's autonomous absorption authorization, open one separate exact-manifest implementation dispatch limited to mcp.business.adapter.contract.ts, its paired test, src/index.ts, and one worker return. The implementation may validate caller-supplied request/decision/time/consumed state with explicit now; it must not claim issuance, persistence, atomic consumption, or durable replay prevention. Runtime bridge, package, transport, external fixture import, provider/live, public/deploy/production, and all held lanes remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute only committed MCP-KAR-T5 implementation dispatch 5181d6a88: one no-commit worker may edit the exact business-adapter source, paired test, index export, and create one worker return. Validation is caller-supplied and deterministic with explicit now; issuance, persistence, lookup, atomic consumption, durable replay prevention, runtime bridge, package, transport, external fixture import, provider/live, public/deploy/production, and all held lanes remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
 }
