@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed MCP-KAR-T3 decision-only dispatch and write one uncommitted worker return; parked checkpoint=implementation, schema repair, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/runtime/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_closed_proceed_guard_candidate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=hold implementation and await a fresh operator-selected tranche; parked checkpoint=implementation, schema repair, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/runtime/provider/live/public/deploy/production.
 
 ## Current Mode
 
-Current mode marker: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_dispatched_pending_worker_return`
-Current mode: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_dispatched_pending_worker_return`
-Previous mode: `mcp_kar_t2_schema_consumer_owner_value_decision_closed_stop_no_named_consumer`
+Current mode marker: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_closed_proceed_guard_candidate`
+Current mode: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_closed_proceed_guard_candidate`
+Previous mode: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_dispatched_pending_worker_return`; execute only committed decision dispatch `ab1eef37b`, produce exactly one uncommitted worker return, and keep implementation plus all runtime/external-effect restrictions held.
+Mode: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_closed_proceed_guard_candidate`; T3 closed bounded at `c62f926f2`; hold implementation and await fresh operator selection while all runtime/external-effect restrictions remain held.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
