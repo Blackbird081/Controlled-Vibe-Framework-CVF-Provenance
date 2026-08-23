@@ -37,7 +37,7 @@ Status: ACTIVE
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`; external round-trip kit intake convention: `535a4fff5`.
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
-- Active mode: `mcp_kar_t2_schema_consumer_owner_value_decision_closed_stop_no_named_consumer`
+- MCP-KAR-T3 decision dispatched at `ab1eef37b49cd5e3e72405b599e86e2b99218cae`; implementation remains unopened. Active mode: `mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_dispatched_pending_worker_return`.
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
@@ -46,10 +46,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_t2_schema_consumer_owner_value_decision_closed_stop_no_named_consumer`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=hold schema repair and await a fresh operator-selected tranche; parked checkpoint=schema implementation, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, MCP runtime/package, UI/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed MCP-KAR-T3 decision-only dispatch and write one uncommitted worker return; parked checkpoint=implementation, schema repair, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, MCP runtime/package, UI/provider/live/public/deploy/production.
 
 ## Current Mode
-`mcp_kar_t2_schema_consumer_owner_value_decision_closed_stop_no_named_consumer`
+`mcp_kar_t3_form_mode_elicitation_sensitive_data_owner_value_decision_dispatched_pending_worker_return`
 
 ## Purpose
 
@@ -115,14 +115,14 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Current Authority
 
-Continuity parent anchor: `5de1ecc98bf2f6aefecb7dd1e7aa0c203c409ef6`.
+Continuity parent anchor: `ab1eef37b49cd5e3e72405b599e86e2b99218cae`.
 
 | Field | Value |
 |---|---|
-| authorityState | MCP-KAR-T2 closed at `5de1ecc98` with `STOP_NO_NAMED_CONSUMER`; TPGR-R8 hold unchanged |
-| baselinePath | `docs/baselines/CVF_GC018_MCP_KAR_T2_SCHEMA_CONSUMER_OWNER_VALUE_DECISION_2026-08-23.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T2_SCHEMA_CONSUMER_OWNER_VALUE_DECISION_2026-08-23.md` |
-| nextAuthorityRequirement | fresh operator-selected tranche; schema repair may reopen only after all five recorded consumer/owner/value/verification/manifest gates pass |
+| authorityState | MCP-KAR-T3 decision-only dispatch committed at `ab1eef37b`; worker return pending; TPGR-R8 hold unchanged |
+| baselinePath | `docs/baselines/CVF_GC018_MCP_KAR_T3_FORM_MODE_ELICITATION_SENSITIVE_DATA_OWNER_VALUE_DECISION_2026-08-24.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T3_FORM_MODE_ELICITATION_SENSITIVE_DATA_OWNER_VALUE_DECISION_2026-08-24.md` |
+| nextAuthorityRequirement | one uncommitted worker return using an allowed terminal token; parent reviewer/closer owns any later material and continuity commit |
 
 ## Closure Evidence
 
@@ -168,7 +168,7 @@ Continuity parent anchor: `5de1ecc98bf2f6aefecb7dd1e7aa0c203c409ef6`.
 
 ## Next Allowed Move
 
-Hold MCP-KAR schema repair at `STOP_NO_NAMED_CONSUMER` after material commit `5de1ecc98`. Await a fresh operator-selected tranche. Reopen only when an exact current non-test consumer, explicit current owner acceptance, non-duplicate value, local deterministic verification route, and exact repair manifest with negative proof all exist. TPGR-R8 and all runtime/package/public restrictions remain unchanged.
+Execute only committed MCP-KAR-T3 dispatch `ab1eef37b`: inspect the pinned rule and current CVF owner surfaces, then write exactly one uncommitted worker return with `PROCEED_ELICITATION_GUARD` or `STOP_DUPLICATE_OR_NO_OWNER`. Do not implement. MCP-KAR schema repair remains held at `STOP_NO_NAMED_CONSUMER`; TPGR-R8 and all runtime/package/public restrictions remain unchanged.
 
 ## Active Boundary
 
@@ -200,21 +200,19 @@ Public-sync commit: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 Public artifact paths: `docs/guides/external-agent-review-guide.md`; `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md`; `docs/reference/CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json`.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `04044eef5377b6250c040b04952a03dfff742980a3b8ee70f0ce467920df2570`.
 
-## Core Guard Self-Protection Authorization - Protocol V1.1 And MCP-KAR-T2 Continuity
+## Core Guard Self-Protection Authorization - Protocol V1.1 And MCP-KAR-T3 Dispatch Continuity
 
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit 2026-08-23 protocol/absorption instructions
-plus the 2026-08-23 `next tranche` selection.
+Operator authorization: 2026-08-23 protocol/absorption and `next tranche` instructions; 2026-08-24 `tiep tuc` (`continue`) with explicit multi-role/subagent authority.
 
-Authorized guard-maintenance scope: preserve protocol v1.1 export/local receipt,
-record T0/T1 closure and T2 stop decision `5de1ecc98`, regenerate governed active
-state projections, and expose only the bounded hold plus operator-selection next move.
+Authorized guard-maintenance scope: preserve protocol v1.1 export/local receipt; record T0/T1 closure, T2 stop `5de1ecc98`, and T3 dispatch `ab1eef37b`;
+regenerate active projections and expose only the bounded pending-worker-return next move.
 Do not alter state structure or open MCP runtime/external-effect lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
 ## Claim Boundary
 
-This handoff records bounded R8 design closure/hold, completed external-agent protocol v1.1 export/refresh, MCP-KAR-T0 selective closure, MCP-KAR-T1 bounded material closure at `c179e656a`, and MCP-KAR-T2 `STOP_NO_NAMED_CONSUMER` closure at `5de1ecc98`. It authorizes no follow-on/public push, schema repair, source execution/direct import, MCP runtime/package invocation, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, persistence, provider/live invocation, deployment, or production.
+This handoff records bounded R8 design closure/hold, completed external-agent protocol v1.1 export/refresh, MCP-KAR-T0 selective closure, MCP-KAR-T1 bounded material closure at `c179e656a`, MCP-KAR-T2 `STOP_NO_NAMED_CONSUMER` closure at `5de1ecc98`, and MCP-KAR-T3 decision-only dispatch at `ab1eef37b`. It authorizes only one uncommitted T3 worker return; no implementation, follow-on/public push, schema repair, source execution/direct import, MCP runtime/package invocation, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, persistence, provider/live invocation, deployment, or production is authorized.
