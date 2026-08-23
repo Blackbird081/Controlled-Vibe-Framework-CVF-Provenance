@@ -66,6 +66,7 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Latest Work / Changes
 
+- External-agent round-trip guidance was exported to public `main` at `3b031fec35473e6ee6a554c4c72400e7a23b06c5`; provenance was fast-forwarded to `4b5f30d84ab4d0a87c6ed62caeb22c787bd23aaa`, then the bounded export evidence record was committed at `0d9aef814`.
 - Independent review accepted T1 against R01-R28 with bounded scope and kept
   the reproducible F11 residual explicit.
 - TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64;
@@ -181,9 +182,7 @@ TPGR-R8 is `CLOSED_PASS_BOUNDED` at `859f851ac`. Accepted assessment SHA-256 is 
 
 ## Completion Review
 
-CADP-AI-T7 completion review:
-`docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_COMPLETION_2026-08-14.md`.
-SHA-256: `a7653e85ca4b172218f3f9efb4e9ad884fbaad343817b50a1c9be232e0fe4c74`.
+CADP-AI-T7 completion review: `docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_COMPLETION_2026-08-14.md`; SHA-256: `a7653e85ca4b172218f3f9efb4e9ad884fbaad343817b50a1c9be232e0fe4c74`.
 
 Prior pre-push dispatch-sync authorization and operation trace remain preserved
 in Git history through session-sync commit `0b1046dfc`; they are omitted from
@@ -191,9 +190,10 @@ this compact active handoff after the public staging push superseded that mode.
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
-
-Reason: private governance continuity only; prior public evidence remains at `lpci1-ref-staging@021f8b852`, with no new public change.
+EXPORTED
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+Public-sync commit: `3b031fec35473e6ee6a554c4c72400e7a23b06c5`
+Public artifact paths: `README.md`; `docs/guides/external-agent-review-guide.md`; `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md`.
 
 ## Core Guard Self-Protection Authorization - TPGR R8 Closure Hold Continuity
 
