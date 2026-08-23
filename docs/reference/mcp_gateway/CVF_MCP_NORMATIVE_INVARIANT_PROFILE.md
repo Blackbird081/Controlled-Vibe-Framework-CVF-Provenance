@@ -10,7 +10,7 @@ Date: 2026-08-23
 
 ## Purpose
 
-Define the CVF-native interpretation of ten selected normative MCP
+Define the CVF-native interpretation of eleven selected normative MCP
 `2026-07-28` invariants. The profile gives local contract and test owners a
 stable fail-closed vocabulary without importing an upstream implementation or
 claiming MCP interoperability.
@@ -50,6 +50,7 @@ authorization, approval, identity, or execution authority.
 | `MCP-PR-008` | `docs/specification/2026-07-28/server/utilities/caching.mdx`, Cacheable Model and Security Considerations | TTL/scope governs freshness and reuse only; public scope cannot expose user-specific data | `UNSAFE_CACHE_HINT` |
 | `MCP-PR-009` | `docs/specification/2026-07-28/basic/authorization/index.mdx`, Resource Parameter and Token Handling | a token must target the intended MCP server audience | `TOKEN_AUDIENCE_MISMATCH` |
 | `MCP-PR-010` | `docs/specification/2026-07-28/basic/transports/streamable-http.mdx`, Header Validation | mirrored HTTP header and request-body values must agree | `HEADER_MISMATCH`, JSON-RPC `-32020` |
+| `MCP-PR-011` | `docs/specification/2026-07-28/client/elicitation.mdx`, Form Mode and Security Considerations | form-mode elicitation rejects password, API-key, access-token, and payment-credential categories; unknown or malformed category metadata fails closed; URL mode may carry known sensitive categories outside the form surface | `UNSAFE_ELICITATION_REQUEST` |
 
 All source paths in the table are relative to the pinned source mirror root:
 `.private_reference/source_mirrors/modelcontextprotocol__modelcontextprotocol/`.
@@ -62,6 +63,14 @@ All source paths in the table are relative to the pinned source mirror root:
   defines them; CVF-only decisions use named local decision codes.
 - Multiple violated invariants may be returned together; acceptance requires
   zero violations.
+- Elicitation admission receives only a closed requested-data category
+  vocabulary: `password`, `api-key`, `access-token`, `payment-credential`,
+  `contact`, and `profile`. It receives no requested value, credential,
+  payload, storage handle, or logging field.
+- Form mode rejects the four sensitive categories and fails closed for empty,
+  unknown, non-string, or otherwise malformed category metadata. URL mode
+  accepts known sensitive categories because collection occurs outside the
+  form surface. Ordinary `contact` and `profile` form categories remain valid.
 - The profile never converts discovery, cache, MRTR, or protocol metadata into
   approval or authorization.
 
@@ -73,6 +82,9 @@ It includes one accepted composite profile and negative cases for missing
 metadata, unsupported version/capability, unnegotiated extension, untrusted
 discovery use, subscription ordering/correlation, MRTR terminal misreading,
 unsafe caching, audience mismatch, and HTTP header/body mismatch.
+It also covers all four sensitive form categories, malformed and unknown form
+metadata, sensitive URL-mode categories, ordinary contact/profile form
+categories, and the unchanged accepted composite profile.
 
 Passing these tests proves only the local contract decisions. It does not prove
 wire compatibility, transport behavior, security deployment, or conformance of

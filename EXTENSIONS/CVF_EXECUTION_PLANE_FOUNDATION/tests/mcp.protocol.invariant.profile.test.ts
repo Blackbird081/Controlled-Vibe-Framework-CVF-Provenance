@@ -54,7 +54,7 @@ function expectRule(
 }
 
 describe("MCPProtocolInvariantProfile", () => {
-  it("accepts a composite profile satisfying all ten rules", () => {
+  it("accepts a composite profile satisfying all eleven rules", () => {
     expect(evaluate({})).toEqual({ accepted: true, violations: [] });
   });
 
@@ -154,5 +154,82 @@ describe("MCPProtocolInvariantProfile", () => {
       },
     });
     expectRule(result, "MCP-PR-010", -32020);
+  });
+
+  it.each(["password", "api-key", "access-token", "payment-credential"] as const)(
+    "rejects the sensitive %s category in form-mode elicitation",
+    (category) => {
+      const result = evaluate({
+        elicitation: {
+          elicitationMode: "form",
+          requestedDataCategories: [category],
+        },
+      });
+      expectRule(result, "MCP-PR-011");
+      expect(
+        result.violations.find((violation) => violation.ruleId === "MCP-PR-011")?.decisionCode,
+      ).toBe("UNSAFE_ELICITATION_REQUEST");
+    },
+  );
+
+  it.each([
+    ["unknown category", ["private-key"]],
+    ["non-string category", [42]],
+    ["empty category list", []],
+    ["non-array category container", "contact"],
+  ])("fails closed for a malformed form-mode %s", (_name, requestedDataCategories) => {
+    const result = evaluate({
+      elicitation: {
+        elicitationMode: "form",
+        requestedDataCategories,
+      } as unknown as MCPProtocolInvariantProfileInput["elicitation"],
+    });
+    expectRule(result, "MCP-PR-011");
+  });
+
+  it.each([
+    ["unknown mode", "inline"],
+    ["non-string mode", 42],
+  ])("fails closed for an %s", (_name, elicitationMode) => {
+    const result = evaluate({
+      elicitation: {
+        elicitationMode,
+        requestedDataCategories: ["contact"],
+      } as unknown as MCPProtocolInvariantProfileInput["elicitation"],
+    });
+    expectRule(result, "MCP-PR-011");
+  });
+
+  it.each(["password", "api-key", "access-token", "payment-credential"] as const)(
+    "accepts the sensitive %s category in URL-mode elicitation",
+    (category) => {
+      expect(evaluate({
+        elicitation: {
+          elicitationMode: "url",
+          requestedDataCategories: [category],
+        },
+      })).toEqual({ accepted: true, violations: [] });
+    },
+  );
+
+  it.each(["contact", "profile"] as const)(
+    "accepts the ordinary %s category in form-mode elicitation",
+    (category) => {
+      expect(evaluate({
+        elicitation: {
+          elicitationMode: "form",
+          requestedDataCategories: [category],
+        },
+      })).toEqual({ accepted: true, violations: [] });
+    },
+  );
+
+  it("preserves prior composite acceptance when ordinary form elicitation is present", () => {
+    expect(evaluate({
+      elicitation: {
+        elicitationMode: "form",
+        requestedDataCategories: ["contact", "profile"],
+      },
+    })).toEqual({ accepted: true, violations: [] });
   });
 });

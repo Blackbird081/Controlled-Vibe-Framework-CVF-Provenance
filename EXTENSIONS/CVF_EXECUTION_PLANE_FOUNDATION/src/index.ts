@@ -44,6 +44,8 @@ export type {
   MCPProtocolJsonRpcErrorCode, MCPProtocolRequestProfile,
   MCPDiscoveryEvidenceProfile, MCPSubscriptionProfile, MCPResultProfile,
   MCPCacheProfile, MCPAuthorizationProfile, MCPHttpMirrorProfile,
+  MCPElicitationMode, MCPElicitationRequestedDataCategory,
+  MCPElicitationProfile,
   MCPProtocolInvariantProfileInput, MCPProtocolInvariantViolation,
   MCPProtocolInvariantDecision,
 } from "./mcp.protocol.invariant.profile";

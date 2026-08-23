@@ -10,7 +10,8 @@ export type MCPProtocolInvariantRuleId =
   | "MCP-PR-007"
   | "MCP-PR-008"
   | "MCP-PR-009"
-  | "MCP-PR-010";
+  | "MCP-PR-010"
+  | "MCP-PR-011";
 
 export type MCPProtocolInvariantDecisionCode =
   | "INVALID_PARAMS"
@@ -22,7 +23,8 @@ export type MCPProtocolInvariantDecisionCode =
   | "INPUT_REQUIRED_CONTINUATION_VIOLATION"
   | "UNSAFE_CACHE_HINT"
   | "TOKEN_AUDIENCE_MISMATCH"
-  | "HEADER_MISMATCH";
+  | "HEADER_MISMATCH"
+  | "UNSAFE_ELICITATION_REQUEST";
 
 export type MCPProtocolJsonRpcErrorCode = -32602 | -32020 | -32021 | -32022;
 
@@ -74,6 +76,21 @@ export interface MCPHttpMirrorProfile {
   nameBody?: string;
 }
 
+export type MCPElicitationMode = "form" | "url";
+
+export type MCPElicitationRequestedDataCategory =
+  | "password"
+  | "api-key"
+  | "access-token"
+  | "payment-credential"
+  | "contact"
+  | "profile";
+
+export interface MCPElicitationProfile {
+  elicitationMode: MCPElicitationMode;
+  requestedDataCategories: readonly MCPElicitationRequestedDataCategory[];
+}
+
 export interface MCPProtocolInvariantProfileInput {
   request: MCPProtocolRequestProfile;
   discovery?: MCPDiscoveryEvidenceProfile;
@@ -82,6 +99,7 @@ export interface MCPProtocolInvariantProfileInput {
   cache?: MCPCacheProfile;
   authorization?: MCPAuthorizationProfile;
   http?: MCPHttpMirrorProfile;
+  elicitation?: MCPElicitationProfile;
 }
 
 export interface MCPProtocolInvariantViolation {
@@ -107,6 +125,7 @@ export class MCPProtocolInvariantProfile {
     this.checkCache(input.cache, violations);
     this.checkAuthorization(input.authorization, violations);
     this.checkHttpMirrors(input.http, violations);
+    this.checkElicitation(input.elicitation, violations);
     return { accepted: violations.length === 0, violations };
   }
 
@@ -268,6 +287,49 @@ export class MCPProtocolInvariantProfile {
         decisionCode: "HEADER_MISMATCH",
         jsonRpcErrorCode: -32020,
         reason: "required HTTP mirror header does not match the request body",
+      });
+    }
+  }
+
+  private checkElicitation(
+    elicitation: MCPElicitationProfile | undefined,
+    violations: MCPProtocolInvariantViolation[],
+  ): void {
+    if (!elicitation) return;
+
+    const knownCategories: readonly MCPElicitationRequestedDataCategory[] = [
+      "password",
+      "api-key",
+      "access-token",
+      "payment-credential",
+      "contact",
+      "profile",
+    ];
+    const sensitiveFormCategories: readonly MCPElicitationRequestedDataCategory[] = [
+      "password",
+      "api-key",
+      "access-token",
+      "payment-credential",
+    ];
+    const categories: unknown = elicitation.requestedDataCategories;
+    const categoriesAreKnown = Array.isArray(categories)
+      && categories.length > 0
+      && categories.every(
+        (category) => typeof category === "string" && knownCategories.includes(
+          category as MCPElicitationRequestedDataCategory,
+        ),
+      );
+    const hasSensitiveFormCategory = categoriesAreKnown
+      && elicitation.elicitationMode === "form"
+      && categories.some((category) => sensitiveFormCategories.includes(category));
+    const modeIsKnown = elicitation.elicitationMode === "form"
+      || elicitation.elicitationMode === "url";
+
+    if (!modeIsKnown || !categoriesAreKnown || hasSensitiveFormCategory) {
+      violations.push({
+        ruleId: "MCP-PR-011",
+        decisionCode: "UNSAFE_ELICITATION_REQUEST",
+        reason: "elicitation mode and requested-data categories are invalid or unsafe for form collection",
       });
     }
   }
