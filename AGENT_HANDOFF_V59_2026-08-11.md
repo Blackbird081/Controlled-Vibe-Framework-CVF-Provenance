@@ -35,7 +35,7 @@ Status: ACTIVE
 - Current TPGR R3 accepted material: `b029e61de9c44bcb428debb2627d283995a53966`; empty read-budget registry expiry repair: `b692fc92ef8985c1a93dfd2396b7fd96786e95ef`; R4 accepted material: `dbdc0888e`; R5 accepted material: `d8699b713`.
 - Current TPGR R7 accepted material: `723382cfc373f8da8971326733f0ed4c074066f1`.
 - Current TPGR R7 closure continuity: `9bbc6bf31014608633380d36e70f8319e2483e87`.
-- Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`.
+- Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`.
 - Active mode: `task_proportional_governance_second_upgrade_r8_closed_hold_empty_p0_pending_observed_dual_run_evidence`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
