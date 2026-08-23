@@ -33,6 +33,7 @@ Status: ACTIVE
 - RSPB-AI-T10 dispatch `a722bcbc5`; accepted material plus disclosed bounded reviewer repair `8de69410c`; completion review `a3ee9229e`; machine closure `a32169417`.
 - RSPB-AI-T9 dispatch `3e8e7c55db59869211148a53892bbe67aaefb2d2`; accepted material plus disclosed bounded reviewer repair `5e5aeb8a4ca800ba2f66036865db3fd3bb3031a3`; completion review `d34dce4c534164e72800734ae7ba4dd61d556823`; machine closure `b78651eacbc04398dc852c700488b6dbf75a51af`.
 - Current TPGR R3 accepted material: `b029e61de9c44bcb428debb2627d283995a53966`; empty read-budget registry expiry repair: `b692fc92ef8985c1a93dfd2396b7fd96786e95ef`; R4 accepted material: `dbdc0888e`; R5 accepted material: `d8699b713`.
+- Current TPGR R7 accepted material: `723382cfc373f8da8971326733f0ed4c074066f1`.
 - Active mode: `task_proportional_governance_second_upgrade_r6_shadow_replay_migration_design_closed_r7_dispatch_authorized`
 - LPCI1-REF-T1A Amendment 2 authority:
   `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
