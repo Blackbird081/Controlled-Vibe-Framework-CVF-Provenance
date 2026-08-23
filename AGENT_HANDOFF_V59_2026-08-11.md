@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed.
+- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Marker compatibility commit: `3688e95a965964f3047b30b7ba4126fabf471f05`.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
