@@ -70,6 +70,7 @@ external redesign schema or upstream implementation.
     "docs/work_orders/",
     "docs/reference/mcp_gateway/",
     "docs/reviews/",
+    "docs/corpus-intelligence/",
     "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/",
     "CVF_SESSION/"
   ],
@@ -366,6 +367,8 @@ provider/live use, or any follow-on tranche.
 | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/index.ts` | export only the new contract and types |
 | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mcp.protocol.invariant.profile.test.ts` | add positive and required negative conformance cases |
 | `docs/reviews/CVF_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_WORKER_RETURN_2026-08-23.md` | record execution, gates, changed set, boundaries, and no-commit evidence |
+| `docs/corpus-intelligence/registry/entries/mcp-kar-t0-official-mcp-external-redesign-dual-corpus-intake.json` | add exact T1 source/test owner paths and close the selected T0 findings without changing the 993-file source count |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | regenerate from source entries and verify zero drift |
 
 ## Worker Return Packet Shape Contract
 
@@ -446,20 +449,20 @@ legacy absorption row.
 | --- | --- |
 | Actor | current CVF agent acting as dispatcher |
 | Provider or surface | local filesystem and Git |
-| Session or invocation | MCP-KAR-T1 dispatch on 2026-08-23 |
+| Session or invocation | MCP-KAR-T1 GC-051 coverage dispatch amendment on 2026-08-23 |
 | Working directory | private provenance repository root |
 | Command or tool surface | read-only source inspection, scaffold helper, ADIF resolver, apply-patch edits, provider-free gates |
-| Target paths | `docs/baselines/CVF_GC018_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md` |
-| Allowed scope source | operator T1 selection after MCP-KAR-T0 and paired baseline |
-| Before status evidence | clean worktree at `6490b36143256c1b4835af97ede4af03c41cabb6` |
-| After status evidence | two uncommitted dispatch artifacts pending gates |
+| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md` |
+| Allowed scope source | operator T1 selection, paired baseline, and mandatory GC-051 coverage finding from reviewer-fast |
+| Before status evidence | worker changes safely stashed; clean worktree at amendment base `dce1ff61119c034017615cae2019db6dc4b1a98b` |
+| After status evidence | one work-order amendment pending dispatch gates |
 | Diff evidence | `git diff --name-status` plus untracked-file inventory |
 | Approval boundary | private local dispatch only; no push or public sync |
 | Claim boundary | dispatch evidence only; no implementation or runtime proof |
 | Agent type | single agent in sequential governed roles |
-| Invocation ID | `mcp-kar-t1-dispatch-2026-08-23` |
-| Expected manifest | `docs/baselines/CVF_GC018_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md` |
+| Invocation ID | `mcp-kar-t1-gc051-dispatch-amendment-2026-08-23` |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T1_2026_07_28_NORMATIVE_INVARIANT_PROFILE_2026-08-23.md` |
 | Manifest delta | MATCH |
 
 ## Delta Execution Claim Boundary Control Block
@@ -477,7 +480,7 @@ legacy absorption row.
 
 ## Claim Boundary
 
-This work order authorizes only the six exact worker outputs and provider-free
+This work order authorizes only the eight exact worker outputs and provider-free
 verification above. It does not authorize MCP execution or certification,
 network/provider/account use, dependency changes, package activation, public
 sync, deployment, production, or repository-boundary changes.
