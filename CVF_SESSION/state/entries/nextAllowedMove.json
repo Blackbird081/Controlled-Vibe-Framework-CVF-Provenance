@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2255,
+  "stateOrder": 2297,
   "stateKey": "nextAllowedMove",
-  "value": "MCP-KAR final bounded absorption is closed at material commit 52d058ae6: all 993 rows across 35 semantic groups reconcile to 331 retained/evidence, 226 deferred/reopen, and 436 reject/no-value routes, with 0 unmapped. No further MCP-KAR work is allowed unless a new immutable upstream pin or an objective T2/T6 reopen condition is present and the operator authorizes a new governed tranche. Source/runtime/package/transport/provider/live/public/deploy/production lanes remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute only RFR-R1 from dispatch commit 8434963c5 under WORKER_MUST_NOT_COMMIT. The external implementation worker may change exactly the five paths in the R1 work order and must return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON with HEAD unchanged and staging empty. The current orchestrator/reviewer owns review, allowed repairs, closure and material commit. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
 }

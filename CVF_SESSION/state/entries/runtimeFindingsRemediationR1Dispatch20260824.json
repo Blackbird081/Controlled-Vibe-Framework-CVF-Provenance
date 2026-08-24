@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2296,
+  "stateKey": "runtimeFindingsRemediationR1Dispatch20260824",
+  "value": "RFR-R1 is dispatched at material commit 8434963c513ec0f39695b2c963dc7ecfa7020bc4. The accepted review classifies F1, F5 and conditional F8 as HIGH and sequences R1-R6 without creating new subsystems. R1 alone is active: typed accepted-SPEC and valid bounded-WORK-ORDER evidence must become a mandatory mutating-BUILD prerequisite in the existing Guard Contract. External worker is WORKER_MUST_NOT_COMMIT and limited to the exact five-path manifest; current orchestrator/reviewer owns independent review and commit."
+}

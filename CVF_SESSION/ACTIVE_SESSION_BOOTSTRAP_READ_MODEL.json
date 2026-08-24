@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mcp_kar_complete_absorption_bounded_closed",
+  "currentMode": "runtime_findings_remediation_r1_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MCP-KAR final bounded absorption is closed at material commit 52d058ae6: all 993 rows across 35 semantic groups reconcile to 331 retained/evidence, 226 deferred/reopen, and 436 reject/no-value routes, with 0 unmapped. No further MCP-KAR work is allowed unless a new immutable upstream pin or an objective T2/T6 reopen condition is present and the operator authorizes a new governed tranche. Source/runtime/package/transport/provider/live/public/deploy/production lanes remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute only RFR-R1 from dispatch commit 8434963c5 under WORKER_MUST_NOT_COMMIT. The external implementation worker may change exactly the five paths in the R1 work order and must return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON with HEAD unchanged and staging empty. The current orchestrator/reviewer owns review, allowed repairs, closure and material commit. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_2026-08-24.md",
-    "baselineSha256": "3bca7e6af175827390bf0fe71a47d5cd01bdd9e5e5544f3aa56e69e09019696d",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_2026-08-24.md",
-    "workOrderSha256": "523cb49b7d8a1f53101eb34a6f11eb52d38f7530f4198cc2c776024d3e8a547b"
+    "baselinePath": "docs/baselines/CVF_GC018_RFR_R1_BUILD_AUTHORITY_CLOSURE_2026-08-24.md",
+    "baselineSha256": "6a505e7ea4734356baa2e95674638d74a0874cac5a5c5664811a0a1da298c1cc",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R1_BUILD_AUTHORITY_CLOSURE_2026-08-24.md",
+    "workOrderSha256": "8e824e0635893ff4d1356a51e6fce58015b81e1db2593bb9879d3f6dd6d6549d"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

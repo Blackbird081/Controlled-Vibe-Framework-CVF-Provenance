@@ -37,31 +37,27 @@ Status: ACTIVE
 - Current TPGR R8 dispatch material: `e91e5d1276db45d475abdd5043eb791affdc50eb`; dispatch continuity: `b35e71574`; accepted hold material: `859f851ac`; closure hold continuity: `80c20b82a`; external round-trip kit intake convention: `535a4fff5`.
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
-- MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6 is stopped at decision `93763c127`; T7/T8 implementation is accepted at `3f9c03cbe`; final T9 reconciliation is accepted at material commit `52d058ae6`. Active mode: `mcp_kar_complete_absorption_bounded_closed`.
-- LPCI1-REF-T1A Amendment 2 authority:
-  `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
+- MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6 is stopped at decision `93763c127`; T7/T8 implementation is accepted at `3f9c03cbe`; final T9 reconciliation is accepted at material commit `52d058ae6`.
+- RFR-R1 runtime finding remediation is dispatched at material commit `8434963c5`; only the exact five-path no-commit external worker execution is active.
+- LPCI1-REF-T1A Amendment 2 authority: `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
-- Prior handoff (archive-qualified):
-  `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
+- Prior handoff (archive-qualified): `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mcp_kar_complete_absorption_bounded_closed`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no further MCP-KAR work unless a new immutable upstream pin or objective T2/T6 reopen condition plus operator authorization exists; parked checkpoint=T2 schema repair, T6 discovery implementation, filesystem/sampling runtime, parallel approval authority, package/transport, R9, R8 implementation, P0/P1 activation, real canary/selective execution, T15, UI/provider/live/public/deploy/production.
+Startup acknowledged: current mode=`runtime_findings_remediation_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=RFR-R1 no-commit external worker execution and return only; parked checkpoint=R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
 
 ## Current Mode
-`mcp_kar_complete_absorption_bounded_closed`
+`runtime_findings_remediation_r1_dispatched_pending_worker_return`
 
 ## Purpose
 
-Record independently accepted R8 closure with an empty P0 allowlist and hold the lane until observed current evidence satisfies every recorded reopen condition.
+Record the RFR-R1 dispatch boundary after verified runtime findings review while preserving prior MCP-KAR closure and all parked lanes.
 
 ## Scope / Target / Owner Boundary
 
-- CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded
-  scope.
-- F11 (`F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION`) is CLOSED_PASS_BOUNDED as
-  of CADP-AI-T2A's independent review; cross-runtime determinism is not
-  proven.
+- CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
+- F11 (`F11_RESIDUAL_OPEN_CALLER_SELF_ATTESTATION`) is CLOSED_PASS_BOUNDED as of CADP-AI-T2A's independent review; cross-runtime determinism is not proven.
 - T3B and T4 are accepted bounded; T5D is accepted bounded and deferred; T7 selected scope and T6 are closed bounded; T5-R5 implementation is accepted bounded.
 - Route/registry adoption, repeat-live, public sync, deploy and production remain unopened.
 
@@ -72,8 +68,7 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 - MCP-KAR-T2 is reviewer-accepted `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at material commit `5de1ecc98bf2f6aefecb7dd1e7aa0c203c409ef6`. Fresh exact-identity searches found zero current non-test consumers, no current owner accepted schema responsibility, and all five repair gates failed; terminal decision is `STOP_NO_NAMED_CONSUMER`. No schema, source, runtime, package, provider/live, or external action occurred.
 - MCP-KAR-T4 is reviewer-accepted `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at material commit `43aea7a18`. `MCP-PR-011` rejects sensitive form-mode category metadata and malformed mode/category input while allowing sensitive URL metadata and ordinary contact/profile form metadata. Focused 36/36, package 1846/1846, TypeScript, reviewer-fast, and diff hygiene passed with zero provider/live or runtime calls.
 - MCP-KAR-T9 is reviewer-accepted `COMPLETE_BOUNDED_DISPOSITION` at material commit `52d058ae6`. The immutable T0 corpus reconciles all 993 rows across 35 semantic groups: 331 retained/evidence, 226 deferred/reopen, 436 reject/no-value, and 0 unmapped. Conditional reopen inventory is exact at 15 seed artifacts, 39 candidate rows, and 1 terminal closure; no external rescan or source/runtime/package/provider/public effect occurred.
-- Independent review accepted T1 against R01-R28 with bounded scope and kept
-  the reproducible F11 residual explicit.
+- Independent review accepted T1 against R01-R28 with bounded scope and kept the reproducible F11 residual explicit.
 - TypeScript no-emit passed; focused CADP/package-boundary proof passed 64/64;
   hermetic package proof passed 474 with 5 skipped.
 - Reviewer-fast passed 63/63 and material pre-commit passed 84/84.
@@ -117,14 +112,14 @@ Record independently accepted R8 closure with an empty P0 allowlist and hold the
 
 ## Current Authority
 
-Continuity parent anchor: `52d058ae6705ca850d549e458ceec5f59426defe`.
+Continuity parent anchor: `8434963c513ec0f39695b2c963dc7ecfa7020bc4`.
 
 | Field | Value |
 |---|---|
-| authorityState | MCP-KAR final bounded absorption closed at material commit `52d058ae6`; T2/T6 objective reopen conditions and TPGR-R8 hold remain unchanged |
-| baselinePath | `docs/baselines/CVF_GC018_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_2026-08-24.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_2026-08-24.md` |
-| nextAuthorityRequirement | none for the current MCP-KAR route; a new immutable upstream pin or objective T2/T6 reopen condition plus operator authorization is required |
+| authorityState | RFR-R1 dispatched pending no-commit external worker return at material commit `8434963c5` |
+| baselinePath | `docs/baselines/CVF_GC018_RFR_R1_BUILD_AUTHORITY_CLOSURE_2026-08-24.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R1_BUILD_AUTHORITY_CLOSURE_2026-08-24.md` |
+| nextAuthorityRequirement | execute only the exact R1 worker manifest; R2 requires accepted R1 closure |
 
 ## Closure Evidence
 
@@ -170,7 +165,7 @@ Continuity parent anchor: `52d058ae6705ca850d549e458ceec5f59426defe`.
 
 ## Next Allowed Move
 
-MCP-KAR final bounded absorption is closed at `52d058ae6`. Do not perform further MCP-KAR work unless a new immutable upstream pin or an objective T2/T6 reopen condition is present and the operator authorizes a new governed tranche. Source/runtime/package/transport/provider/live/public/deploy/production restrictions and TPGR-R8 hold remain unchanged.
+Execute only RFR-R1 from dispatch commit `8434963c5` under `WORKER_MUST_NOT_COMMIT`. The external worker changes exactly the five work-order paths and returns `COMPLETE_PENDING_INDEPENDENT_REVIEW` or `BLOCKED_WITH_REASON`; the current orchestrator/reviewer owns review and commit. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
 
 ## Active Boundary
 
@@ -202,16 +197,20 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - Protocol V1.1 And MCP-KAR-T4 Closure Continuity
+## Core Guard Self-Protection Authorization - RFR-R1 Dispatch Continuity
 
 Protected paths:
-- `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V59_2026-08-11.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/runtimeFindingsRemediationR1Dispatch20260824.json`
+- `CVF_SESSION_MEMORY.md`
 
-Operator authorization: 2026-08-23 protocol/absorption and `next tranche`; 2026-08-24 continue/multi-role authority plus explicit public-sync incident learning and recurrence-fix instruction.
+Operator authorization: the operator's explicit 2026-08-24 direction to execute the runtime-findings remediation plan after assigning separate worker and orchestrator/reviewer roles.
 
-Authorized guard-maintenance scope: preserve protocol v1.1 export/local receipt; record T2 stop `5de1ecc98`, T3 closure `c62f926f2`, and T4 closure `43aea7a18`;
-regenerate active projections and expose only the bounded decision-first next move.
-Do not alter state structure or open MCP runtime/external-effect lanes.
+Authorized guard-maintenance scope: record RFR-R1 dispatch commit `8434963c5`, bind the accepted R1 baseline/work order as current authority, regenerate active projections, and expose only the no-commit external-worker return as the next move. Do not alter state structure or open R2-R6, provider/live, credential, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
