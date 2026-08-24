@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R6 review material: `39ba8f31f`.
+- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7A dispatch material: `5458c5847`.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -38,21 +38,21 @@ Status: ACTIVE
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
 - MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6 is stopped at decision `93763c127`; T7/T8 implementation is accepted at `3f9c03cbe`; final T9 reconciliation is accepted at material commit `52d058ae6`.
-- RFR-R1 is closed at `a67034370`; RFR-R2 at `84d44889f`; RFR-R3 at `a18ba512f`; RFR-R4 at `8ec399aa5`; RFR-R5 at `82a0073b2`; RFR-R6 audit accepted with remediation required.
+- RFR-R1 is closed at `a67034370`; RFR-R2 at `84d44889f`; RFR-R3 at `a18ba512f`; RFR-R4 at `8ec399aa5`; RFR-R5 at `82a0073b2`; RFR-R6 audit accepted; RFR-R7A dispatched at `5458c5847`.
 - LPCI1-REF-T1A Amendment 2 authority: `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified): `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r6_review_complete_repair_decision_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decision on fresh owner-specific remediation authority; parked checkpoint=source repair, compatibility mechanism, installation, provider/live/network, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r7a_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator copies committed R7A packet to one exact-manifest no-commit worker; parked checkpoint=R7B, Guard Contract and Model Gateway edits, installation, provider/live/network, credentials, deployment, public sync and push.
 
 ## Current Mode
-`runtime_findings_remediation_r6_review_complete_repair_decision_required`
+`runtime_findings_remediation_r7a_dispatched_pending_worker_return`
 
 ## Purpose
 
-Record bounded RFR-R6 audit acceptance with remediation required while preserving RFR-R1-R5, prior MCP-KAR closure, and all parked lanes.
+Record bounded RFR-R7A canonical MCP Guard Engine dispatch while preserving RFR-R1-R6, prior MCP-KAR closure, R7B hold and all external-effect parking.
 
 ## Scope / Target / Owner Boundary
 
@@ -112,14 +112,14 @@ Record bounded RFR-R6 audit acceptance with remediation required while preservin
 
 ## Current Authority
 
-Continuity parent anchor: `39ba8f31f`.
+Continuity parent anchor: `5458c5847`.
 
 | Field | Value |
 |---|---|
-| authorityState | RFR-R6 audit evidence accepted; roadmap closure withheld pending fresh repair authority |
-| baselinePath | `docs/baselines/CVF_GC018_RFR_R6_CROSS_OWNER_ADVERSARIAL_REAUDIT_2026-08-24.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R6_CROSS_OWNER_ADVERSARIAL_REAUDIT_2026-08-24.md` |
-| nextAuthorityRequirement | operator decision on fresh owner-specific remediation tranches for the two reproduced defects |
+| authorityState | RFR-R7A canonical MCP Guard Engine adoption dispatched at `5458c5847` |
+| baselinePath | `docs/baselines/CVF_GC018_RFR_R7A_CANONICAL_MCP_GUARD_ENGINE_ADOPTION_2026-08-24.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R7A_CANONICAL_MCP_GUARD_ENGINE_ADOPTION_2026-08-24.md` |
+| nextAuthorityRequirement | one no-commit worker returns exact-manifest R7A implementation evidence for independent review |
 
 ## Closure Evidence
 
@@ -166,7 +166,7 @@ Continuity parent anchor: `39ba8f31f`.
 
 ## Next Allowed Move
 
-RFR-R6 audit evidence is independently accepted, but roadmap closure is withheld. Operator decision is required before fresh owner-specific remediation tranches may repair the stale MCP guard-engine fork or optional-field seam; source repair and all external effects remain unauthorized.
+RFR-R7A is dispatched at `5458c5847`. Operator may copy the committed work order to one `WORKER_MUST_NOT_COMMIT` worker. Worker owns exactly 14 MCP source/test paths plus the named return; R7B, forbidden owner surfaces and all external effects remain unauthorized.
 
 ## Active Boundary
 
@@ -198,7 +198,7 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - RFR-R6 Review Continuity
+## Core Guard Self-Protection Authorization - RFR-R7A Dispatch Continuity
 
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
@@ -206,12 +206,12 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/runtimeFindingsRemediationR6ReviewDisposition20260824.json`
+- `CVF_SESSION/state/entries/runtimeFindingsRemediationR7ADispatch20260824.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record independent RFR-R6 audit acceptance, retained findings and the fresh-repair decision checkpoint. Do not alter state structure or open source repair, installation, provider/live/network, credential, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record committed RFR-R7A dispatch, exact worker manifest, R7B dependency hold and independent review boundary. Do not alter state structure or open forbidden owner, installation, provider/live/network, credential, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
