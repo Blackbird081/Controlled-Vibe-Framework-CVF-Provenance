@@ -190,9 +190,9 @@ MCP-KAR final bounded absorption is closed at `52d058ae6`. Do not perform furthe
 
 CADP-AI-T7 completion review: `docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_COMPLETION_2026-08-14.md`; SHA-256: `a7653e85ca4b172218f3f9efb4e9ad884fbaad343817b50a1c9be232e0fe4c74`.
 
-Public-sync latency learning is committed at `29c573a2d`: one-shot candidate
-preflight now runs before review/staging; focused tests and all 86 commit guards
-passed. The public clone remained clean; no new public commit or push was made.
+Mandatory public-sync enforcement is committed at `447032449`: local hook plus
+exact-SHA GitHub status precede main promotion. Candidate `c8490100f6a9` failed
+closed on remote URL normalization; public main remained at `d1042ab0b2f0`.
 
 ## Public Export Disposition
 
