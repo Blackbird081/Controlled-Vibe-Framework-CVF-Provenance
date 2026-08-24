@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r1_amendment_1_reviewer_repair`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact committed RFR-R1 Amendment 1 reviewer repair and closure; parked checkpoint=R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator direction, with R2 the next eligible governed tranche; parked checkpoint=R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r1_amendment_1_reviewer_repair`
-Current mode: `runtime_findings_remediation_r1_amendment_1_reviewer_repair`
-Previous mode: `runtime_findings_remediation_r1_dispatched_pending_worker_return`
+Current mode marker: `runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`
+Current mode: `runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`
+Previous mode: `runtime_findings_remediation_r1_amendment_1_reviewer_repair`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r1_amendment_1_reviewer_repair`; Amendment 1 authority `598ec24b1` is current. Execute only the exact amended reviewer repair, independent proof, material commit and separate continuity sync. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
+Mode: `runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`; RFR-R1 is `CLOSED_PASS_BOUNDED` at material commit `a670343706c4fa21427a55a9c2ba464b9cef6cd4`. Evidence: 41/41 focused, 122/122 composed, 936 passed plus 5 skipped package tests, TypeScript PASS, system-chain freshness CURRENT, worker-return fast PASS, reviewer-fast 65/65, and pre-commit 86/86. Await fresh operator direction; R2 is next eligible but not dispatched. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

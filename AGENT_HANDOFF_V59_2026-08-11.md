@@ -38,21 +38,21 @@ Status: ACTIVE
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
 - MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6 is stopped at decision `93763c127`; T7/T8 implementation is accepted at `3f9c03cbe`; final T9 reconciliation is accepted at material commit `52d058ae6`.
-- RFR-R1 Amendment 1 authority is committed at `598ec24b1`; only the exact amended reviewer repair and closure are active after the external worker's valid blocked return.
+- RFR-R1 Amendment 1 authority is committed at `598ec24b1`; bounded implementation and reviewer closure are materially committed at `a670343706c4fa21427a55a9c2ba464b9cef6cd4`.
 - LPCI1-REF-T1A Amendment 2 authority: `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified): `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r1_amendment_1_reviewer_repair`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=exact RFR-R1 Amendment 1 reviewer repair, proof and closure; parked checkpoint=R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator direction, with R2 the next eligible governed tranche; parked checkpoint=R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
 
 ## Current Mode
-`runtime_findings_remediation_r1_amendment_1_reviewer_repair`
+`runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`
 
 ## Purpose
 
-Record the RFR-R1 dispatch boundary after verified runtime findings review while preserving prior MCP-KAR closure and all parked lanes.
+Record RFR-R1 bounded closure after independent Amendment 1 review while preserving prior MCP-KAR closure and all parked lanes.
 
 ## Scope / Target / Owner Boundary
 
@@ -112,17 +112,18 @@ Record the RFR-R1 dispatch boundary after verified runtime findings review while
 
 ## Current Authority
 
-Continuity parent anchor: `598ec24b16c30f19647f45c565f4a634172f9b83`.
+Continuity parent anchor: `a670343706c4fa21427a55a9c2ba464b9cef6cd4`.
 
 | Field | Value |
 |---|---|
-| authorityState | RFR-R1 Amendment 1 reviewer repair active at authority commit `598ec24b1` |
+| authorityState | RFR-R1 `CLOSED_PASS_BOUNDED` at material commit `a670343706c4fa21427a55a9c2ba464b9cef6cd4` |
 | baselinePath | `docs/baselines/CVF_GC018_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md` |
-| nextAuthorityRequirement | execute only the exact amended reviewer manifest; R2 requires accepted R1 closure |
+| nextAuthorityRequirement | R2 requires a fresh operator decision and governed baseline/work-order dispatch before implementation |
 
 ## Closure Evidence
 
+- RFR-R1 is `CLOSED_PASS_BOUNDED` at `a670343706c4fa21427a55a9c2ba464b9cef6cd4`; completion review `docs/reviews/CVF_RFR_R1_BUILD_AUTHORITY_CLOSURE_COMPLETION_2026-08-24.md`; proof: 41/41 focused, 122/122 composed, 936 passed plus 5 skipped, TypeScript PASS, freshness CURRENT, worker-return fast PASS, reviewer-fast 65/65, pre-commit 86/86.
 - Downstream P4-A1 closure:
   `ffe1c5b500f2f27f4166ded97423c4fc76354c67`.
 - P4-A1 exact36 BUILD:
@@ -165,7 +166,7 @@ Continuity parent anchor: `598ec24b16c30f19647f45c565f4a634172f9b83`.
 
 ## Next Allowed Move
 
-Execute only RFR-R1 Amendment 1 from authority commit `598ec24b1`. The current orchestrator/reviewer restores the preserved worker diff, repairs exactly the amended source/test/system-chain/evidence manifest, runs independent proof, owns the material commit, and synchronizes continuity separately. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
+RFR-R1 is closed bounded at material commit `a670343706c4fa21427a55a9c2ba464b9cef6cd4`. Await fresh operator direction. R2 immutable mandatory-core closure is the next eligible governed tranche and requires fresh baseline/work-order dispatch before implementation. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
 
 ## Active Boundary
 
@@ -210,7 +211,7 @@ Protected paths:
 
 Operator authorization: the operator's explicit 2026-08-24 `next` direction after the reviewer proposed the exact RFR-R1 Amendment 1 scope.
 
-Authorized guard-maintenance scope: record Amendment 1 authority commit `598ec24b1`, bind the Amendment 1 baseline/work order as current authority, regenerate active projections, and expose only the exact reviewer repair and closure as the next move. Do not alter state structure or open R2-R6, provider/live, credential, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record RFR-R1 bounded material closure `a670343706c4fa21427a55a9c2ba464b9cef6cd4`, regenerate active projections, and expose only the fresh-operator-decision boundary with R2 as the next eligible governed tranche. Do not alter state structure or open R2-R6 implementation, provider/live, credential, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
