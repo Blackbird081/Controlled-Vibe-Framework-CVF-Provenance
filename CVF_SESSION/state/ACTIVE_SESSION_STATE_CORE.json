@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RFR_R3_NATIVE_MCP_ADMISSION_2026-08-24.md",
-    "baselineSha256": "d19fda85f20c19d5648f1d04f8bcbc3491930d57f8de04396bf1ddd0e7196b2c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R3_NATIVE_MCP_ADMISSION_2026-08-24.md",
-    "workOrderSha256": "225d2b0754418ded4441bb8813ae0137bc9fec4aed9dbecd6ce43dac790baf29"
+    "baselinePath": "docs/baselines/CVF_GC018_RFR_R4_MATERIAL_CONTEXT_MANIFEST_2026-08-24.md",
+    "baselineSha256": "fdf218f6a1dff809245db51f6a0a974e089ec74f91237a555f9985e1948d43d6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R4_MATERIAL_CONTEXT_MANIFEST_2026-08-24.md",
+    "workOrderSha256": "da36634763a7f36bd45374ca0fccd53587f916adaaa6876ef4fa442afe41b8f9"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "runtime_findings_remediation_r3_closed_pass_bounded_r4_pending_fresh_dispatch",
-  "previousMode": "runtime_findings_remediation_r3_dispatched_pending_worker_return",
+  "currentMode": "runtime_findings_remediation_r4_dispatched_pending_worker_return",
+  "previousMode": "runtime_findings_remediation_r3_closed_pass_bounded_r4_pending_fresh_dispatch",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
