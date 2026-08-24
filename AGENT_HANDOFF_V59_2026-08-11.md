@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R6 review base: `f6f396867`.
+- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R6 review material: `39ba8f31f`.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -112,7 +112,7 @@ Record bounded RFR-R6 audit acceptance with remediation required while preservin
 
 ## Current Authority
 
-Continuity parent anchor: `f6f396867`.
+Continuity parent anchor: `39ba8f31f`.
 
 | Field | Value |
 |---|---|
