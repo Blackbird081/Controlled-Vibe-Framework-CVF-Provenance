@@ -32,6 +32,7 @@ $ErrorActionPreference = 'Stop'
 $GOVERNANCE_ROOT  = Split-Path -Parent $PSScriptRoot
 $PUBLIC_SYNC_ROOT = 'D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync'
 $PUBLIC_REMOTE    = 'https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git'
+$PUBLIC_BRANCH    = 'main'
 
 # Allowlist: directory trees that may be synced
 $ALLOWED_TREES = @(
@@ -448,6 +449,45 @@ Write-Host "  Copied : $copied"
 Write-Host "  Denied : $denied"
 Write-Host ''
 
+# Run one general, current-candidate preflight before review or staging. This
+# replaces ad-hoc use of private hooks and stale range-pinned policy profiles.
+# The temporary ownership manifest is outside both repositories and is always
+# removed, including on a fail-closed result.
+$authorizedPending = [System.Collections.Generic.HashSet[string]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+)
+foreach ($path in $allowedFiles) {
+    [void]$authorizedPending.Add(($path -replace '\\', '/'))
+}
+foreach ($mapping in $MAPPED_FILES) {
+    [void]$authorizedPending.Add(($mapping.Destination -replace '\\', '/'))
+}
+[void]$authorizedPending.Add('EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts')
+[void]$authorizedPending.Add('docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json')
+
+$ownershipManifest = Join-Path ([System.IO.Path]::GetTempPath()) ("cvf-public-sync-owned-{0}.json" -f [guid]::NewGuid())
+$preflight = Join-Path $GOVERNANCE_ROOT 'scripts\check_cvf_public_sync_candidate.py'
+try {
+    [System.IO.File]::WriteAllText(
+        $ownershipManifest,
+        (@($authorizedPending) | Sort-Object | ConvertTo-Json),
+        $utf8NoBom
+    )
+    Write-Host 'Running one-shot public candidate preflight...' -ForegroundColor Yellow
+    & python $preflight `
+        --public-root $PUBLIC_SYNC_ROOT `
+        --authorized-paths-json $ownershipManifest `
+        --expected-remote $PUBLIC_REMOTE `
+        --expected-branch $PUBLIC_BRANCH `
+        --json
+    if ($LASTEXITCODE -ne 0) {
+        throw "Public candidate preflight failed with exit code $LASTEXITCODE"
+    }
+}
+finally {
+    Remove-Item -LiteralPath $ownershipManifest -Force -ErrorAction SilentlyContinue
+}
+
 # Commit
 Set-Location $PUBLIC_SYNC_ROOT
 
@@ -461,35 +501,6 @@ if ($NoCommit) {
     Write-Host 'Public-sync worktree updated. Skipping commit and push (-NoCommit).' -ForegroundColor Yellow
     Write-Host "Review pending changes in: $PUBLIC_SYNC_ROOT" -ForegroundColor Yellow
     exit 0
-}
-
-# Fail closed before `git add -A`: tests and local tooling may leave runtime,
-# receipt, cache, or evidence files in the public worktree. Only files owned by
-# this exact projection are eligible for staging.
-$authorizedPending = [System.Collections.Generic.HashSet[string]]::new(
-    [System.StringComparer]::OrdinalIgnoreCase
-)
-foreach ($path in $allowedFiles) {
-    [void]$authorizedPending.Add(($path -replace '/', '\'))
-}
-foreach ($mapping in $MAPPED_FILES) {
-    [void]$authorizedPending.Add(($mapping.Destination -replace '/', '\'))
-}
-[void]$authorizedPending.Add('EXTENSIONS\CVF_GUARD_CONTRACT\src\index.ts')
-[void]$authorizedPending.Add('docs\reference\system_architecture_catalog\CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json')
-
-$pendingPaths = @(
-    git diff --name-only
-    git diff --cached --name-only
-    git ls-files --others --exclude-standard
-) | Where-Object { $_ } | Sort-Object -Unique
-$unexpectedPending = @(
-    $pendingPaths | Where-Object {
-        -not $authorizedPending.Contains(($_ -replace '/', '\'))
-    }
-)
-if ($unexpectedPending.Count -gt 0) {
-    throw "Public-sync worktree contains paths not owned by this projection: $($unexpectedPending -join ', ')"
 }
 
 $govHead = git -C $GOVERNANCE_ROOT rev-parse --short HEAD
