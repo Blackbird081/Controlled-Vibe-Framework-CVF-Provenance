@@ -101,3 +101,10 @@ def test_remote_baseline_rejects_dependency_regression_in_committed_candidate(tm
     manifest.write_text("[]", encoding="utf-8")
     result = subject.check(args(root, manifest, baseline_ref="baseline"))
     assert any(item["code"] == "MISSING_RELATIVE_DEPENDENCY" for item in result["violations"])
+
+
+def test_accepts_equivalent_github_remote_without_dot_git(tmp_path: Path) -> None:
+    root, manifest = fixture(tmp_path)
+    run(root, "git", "remote", "set-url", "origin", REMOTE.removesuffix(".git"))
+    manifest.write_text("[]", encoding="utf-8")
+    assert subject.check(args(root, manifest))["status"] == "PASS"
