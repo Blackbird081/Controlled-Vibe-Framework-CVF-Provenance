@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current continuity parent: `52d058ae6705ca850d549e458ceec5f59426defe`.
+- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R3 review base: `16a8de37986440829659bb4d4b8ba25678392dd1`.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -211,7 +211,7 @@ Protected paths:
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record RFR-R3 dispatch commit `10bcf4de7`, exact authority hashes and no-commit worker next move, regenerate active projections, and stop pending worker return. Do not alter state structure or open R4-R6, provider/live, credential, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record RFR-R3 dispatch commit `10bcf4de7`, exact authority hashes, no-commit worker next move, and current review base `16a8de379`; regenerate active projections and stop pending independent review. Do not alter state structure or open R4-R6, provider/live, credential, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
