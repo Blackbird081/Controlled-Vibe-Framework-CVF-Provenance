@@ -29,8 +29,8 @@ def fixture(tmp_path: Path) -> tuple[Path, Path]:
     return root, manifest
 
 
-def args(root: Path, manifest: Path) -> argparse.Namespace:
-    return argparse.Namespace(public_root=str(root), authorized_paths_json=str(manifest), expected_remote=REMOTE, expected_branch="main", json=True)
+def args(root: Path, manifest: Path, baseline_ref: str = "HEAD") -> argparse.Namespace:
+    return argparse.Namespace(public_root=str(root), authorized_paths_json=str(manifest), expected_remote=REMOTE, expected_branch="main", baseline_ref=baseline_ref, json=True)
 
 
 def test_passes_owned_candidate_with_closed_dependency(tmp_path: Path) -> None:
@@ -85,3 +85,19 @@ def test_reports_preexisting_missing_dependency_without_blocking(tmp_path: Path)
     result = subject.check(args(root, manifest))
     assert result["status"] == "PASS"
     assert result["baselineDebtCount"] == 1
+
+
+def test_remote_baseline_rejects_dependency_regression_in_committed_candidate(tmp_path: Path) -> None:
+    root, manifest = fixture(tmp_path)
+    (root / "src").mkdir()
+    (root / "src" / "dep.ts").write_text("export const ok = true;\n", encoding="utf-8")
+    (root / "src" / "index.ts").write_text("export { ok } from './dep';\n", encoding="utf-8")
+    run(root, "git", "add", "src")
+    run(root, "git", "commit", "-m", "closed source")
+    run(root, "git", "branch", "baseline")
+    (root / "src" / "dep.ts").unlink()
+    run(root, "git", "add", "-A")
+    run(root, "git", "commit", "-m", "broken candidate")
+    manifest.write_text("[]", encoding="utf-8")
+    result = subject.check(args(root, manifest, baseline_ref="baseline"))
+    assert any(item["code"] == "MISSING_RELATIVE_DEPENDENCY" for item in result["violations"])

@@ -54,6 +54,11 @@ Classification: `WORKER_EXECUTION_ERROR`, `ORCHESTRATOR_PACKET_GAP`,
    as non-blocking baseline debt. A candidate that adds a missing edge or
    removes a previously present target fails; the gate must not turn unrelated
    historical cleanup into an unbounded prerequisite for the current push.
+8. A public `main` update must carry the server-side
+   `public-sync-preflight` status for the exact commit SHA. The exporter pushes
+   a candidate branch first, waits for that GitHub Actions result, and only
+   then promotes the identical commit. Branch protection applies to admins;
+   local `--no-verify` cannot bypass the server requirement.
 
 ## Machine Binding
 
@@ -61,6 +66,9 @@ Classification: `WORKER_EXECUTION_ERROR`, `ORCHESTRATOR_PACKET_GAP`,
 `scripts/cvf-public-sync.ps1` invokes it after projection-owned generation and
 before the `-NoCommit` return or staging. Focused tests live at
 `scripts/test_check_cvf_public_sync_candidate.py`.
+`scripts/cvf-public-pre-push-hook.sh` is mapped to public
+`.githooks/pre-push` and supplies local fail-fast enforcement;
+`.github/workflows/public-sync-preflight.yml` supplies the server status.
 
 Required failure codes include `UNOWNED_PENDING_PATH`,
 `GENERATED_OR_RUNTIME_RESIDUE`, `DIFF_HYGIENE`,

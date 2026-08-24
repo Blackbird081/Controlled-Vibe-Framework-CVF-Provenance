@@ -71,15 +71,15 @@ def module_candidate_paths(source_rel: str, specifier: str) -> list[str]:
     return candidates
 
 
-def baseline_already_missing(root: Path, source_rel: str, specifier: str) -> bool:
-    old_source = git(root, "show", f"HEAD:{source_rel}")
+def baseline_already_missing(root: Path, baseline_ref: str, source_rel: str, specifier: str) -> bool:
+    old_source = git(root, "show", f"{baseline_ref}:{source_rel}")
     if old_source.returncode != 0:
         return False
     old_specifiers = {match.group("path") for match in RELATIVE_SPECIFIER.finditer(old_source.stdout)}
     if specifier not in old_specifiers:
         return False
     return not any(
-        git(root, "cat-file", "-e", f"HEAD:{candidate}").returncode == 0
+        git(root, "cat-file", "-e", f"{baseline_ref}:{candidate}").returncode == 0
         for candidate in module_candidate_paths(source_rel, specifier)
     )
 
@@ -93,7 +93,7 @@ def check(args: argparse.Namespace) -> dict[str, object]:
         return {"status": "REJECT", "violations": violations, "pendingPaths": []}
 
     branch = git(root, "branch", "--show-current").stdout.strip()
-    if branch != args.expected_branch:
+    if args.expected_branch and branch != args.expected_branch:
         violations.append({"code": "WRONG_BRANCH", "detail": f"expected {args.expected_branch}; found {branch or 'detached'}"})
 
     remote = git(root, "remote", "get-url", "origin")
@@ -136,7 +136,7 @@ def check(args: argparse.Namespace) -> dict[str, object]:
             specifier = match.group("path")
             if not module_exists(source, specifier):
                 finding = {"code": "MISSING_RELATIVE_DEPENDENCY", "detail": f"{rel} -> {specifier}"}
-                if baseline_already_missing(root, rel, specifier):
+                if baseline_already_missing(root, args.baseline_ref, rel, specifier):
                     baseline_debt.append(finding)
                 else:
                     violations.append(finding)
@@ -146,6 +146,7 @@ def check(args: argparse.Namespace) -> dict[str, object]:
         "pendingPaths": pending,
         "pendingPathCount": len(pending),
         "sourceFilesChecked": len(source_paths),
+        "baselineRef": args.baseline_ref,
         "baselineDebt": baseline_debt,
         "baselineDebtCount": len(baseline_debt),
         "violations": violations,
@@ -157,7 +158,8 @@ def main() -> int:
     parser.add_argument("--public-root", required=True)
     parser.add_argument("--authorized-paths-json")
     parser.add_argument("--expected-remote", required=True)
-    parser.add_argument("--expected-branch", default="main")
+    parser.add_argument("--expected-branch")
+    parser.add_argument("--baseline-ref", default="HEAD")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     try:

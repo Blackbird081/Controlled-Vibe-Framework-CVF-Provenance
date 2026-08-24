@@ -58,7 +58,8 @@ together, then verify broader suites only in a disposable clean worktree.
 
 ## Remediation
 
-Use only the public-sync-specific candidate preflight. Consolidate its full
+Use only the public-sync-specific candidate preflight. Require the exact-SHA
+GitHub status through protected `main`, including for admins. Consolidate its full
 violation set before review. Reject unowned or generated pending paths and
 missing relative dependencies before `-NoCommit`, staging, commit, or push.
 Use a disposable exact-candidate worktree for broader tests and require fresh
@@ -73,7 +74,7 @@ authority before selecting any live/provider test.
 | Session or invocation | public-sync latency learning, 2026-08-24 |
 | Working directory | repository root |
 | Command or tool surface | git evidence inspection, exporter source read, focused pytest |
-| Target paths | entry, entries front door, one-shot standard, exporter, preflight, focused tests |
+| Target paths | entry, one-shot standard, exporter, preflight, focused tests, local pre-push hook, GitHub Actions gate |
 | Allowed scope source | operator instruction to convert the incident into learning and prevent recurrence |
 | Before status evidence | public sync required serial dependency repairs and runtime residue cleanup before an approximately eight-second push |
 | After status evidence | exporter invokes one consolidated fail-closed preflight before review or staging |
@@ -82,8 +83,8 @@ authority before selecting any live/provider test.
 | Claim boundary | partial machine prevention of named projection defects; no universal semantic-completeness claim |
 | Agent type | worker |
 | Invocation ID | `public-sync-one-shot-learning-2026-08-24` |
-| Expected manifest | `docs/reference/CVF_PUBLIC_SYNC_ONE_SHOT_PREFLIGHT_STANDARD_2026-08-24.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0054.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `scripts/check_cvf_public_sync_candidate.py`; `scripts/cvf-public-sync.ps1`; `scripts/test_check_cvf_public_sync_candidate.py` |
-| Actual changed set | `docs/reference/CVF_PUBLIC_SYNC_ONE_SHOT_PREFLIGHT_STANDARD_2026-08-24.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0054.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `scripts/check_cvf_public_sync_candidate.py`; `scripts/cvf-public-sync.ps1`; `scripts/test_check_cvf_public_sync_candidate.py` |
+| Expected manifest | `.github/workflows/public-sync-preflight.yml`; `docs/reference/CVF_PUBLIC_SYNC_ONE_SHOT_PREFLIGHT_STANDARD_2026-08-24.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0054.md`; `scripts/check_cvf_public_sync_candidate.py`; `scripts/cvf-public-pre-push-hook.sh`; `scripts/cvf-public-sync.ps1`; `scripts/test_check_cvf_public_sync_candidate.py` |
+| Actual changed set | `.github/workflows/public-sync-preflight.yml`; `docs/reference/CVF_PUBLIC_SYNC_ONE_SHOT_PREFLIGHT_STANDARD_2026-08-24.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0054.md`; `scripts/check_cvf_public_sync_candidate.py`; `scripts/cvf-public-pre-push-hook.sh`; `scripts/cvf-public-sync.ps1`; `scripts/test_check_cvf_public_sync_candidate.py` |
 | Manifest delta | MATCH |
 
 ## Public Export Disposition

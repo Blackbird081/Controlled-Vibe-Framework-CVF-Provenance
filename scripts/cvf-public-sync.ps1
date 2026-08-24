@@ -33,6 +33,7 @@ $GOVERNANCE_ROOT  = Split-Path -Parent $PSScriptRoot
 $PUBLIC_SYNC_ROOT = 'D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync'
 $PUBLIC_REMOTE    = 'https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git'
 $PUBLIC_BRANCH    = 'main'
+$PUBLIC_REPO      = 'Blackbird081/Controlled-Vibe-Framework-CVF'
 
 # Allowlist: directory trees that may be synced
 $ALLOWED_TREES = @(
@@ -70,6 +71,7 @@ $ALLOWED_ROOT_FILES = @(
 $ALLOWED_SCRIPT_FILES = @(
     'scripts\bootstrap_foundations.ps1',
     'scripts\bootstrap_foundations.sh',
+    'scripts\check_cvf_public_sync_candidate.py',
     'scripts\check_cvf_workspace_agent_enforcement.ps1',
     'scripts\check_cvf_workspace_new_project_enforcement.ps1',
     'scripts\ingest_cvf_downstream_knowledge.ps1',
@@ -113,6 +115,10 @@ $MAPPED_FILES = @(
     @{
         Source      = 'scripts\install_cvf_workspace_root_wrappers_public.ps1'
         Destination = 'scripts\install_cvf_workspace_root_wrappers.ps1'
+    }
+    @{
+        Source      = 'scripts\cvf-public-pre-push-hook.sh'
+        Destination = '.githooks\pre-push'
     }
 )
 
@@ -529,8 +535,41 @@ Write-Host ''
 
 # Push
 if (-not $NoPush) {
-    Write-Host "Pushing to $PUBLIC_REMOTE ..." -ForegroundColor Yellow
-    git push origin main
+    if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
+        throw 'GitHub CLI is required for mandatory server-side public-sync verification.'
+    }
+    git config core.hooksPath .githooks
+    $candidateSha = git rev-parse HEAD
+    $candidateBranch = "cvf-public-sync-candidate-$($candidateSha.Substring(0, 12))"
+    Write-Host "Pushing candidate branch $candidateBranch ..." -ForegroundColor Yellow
+    git push origin "HEAD:refs/heads/$candidateBranch"
+    if ($LASTEXITCODE -ne 0) {
+        throw "Candidate branch push failed with exit code $LASTEXITCODE"
+    }
+
+    $runId = $null
+    for ($attempt = 0; $attempt -lt 12 -and -not $runId; $attempt++) {
+        Start-Sleep -Seconds 5
+        $runs = gh run list --repo $PUBLIC_REPO --workflow public-sync-preflight.yml --branch $candidateBranch --limit 10 --json databaseId,headSha | ConvertFrom-Json
+        $matchingRun = $runs | Where-Object { $_.headSha -eq $candidateSha } | Select-Object -First 1
+        if ($matchingRun) { $runId = $matchingRun.databaseId }
+    }
+    if (-not $runId) {
+        throw "No GitHub preflight run appeared for candidate $candidateSha"
+    }
+
+    Write-Host "Waiting for mandatory GitHub preflight run $runId ..." -ForegroundColor Yellow
+    gh run watch $runId --repo $PUBLIC_REPO --exit-status
+    if ($LASTEXITCODE -ne 0) {
+        throw "Mandatory GitHub preflight failed for candidate $candidateSha"
+    }
+
+    Write-Host "Promoting verified commit to protected main ..." -ForegroundColor Yellow
+    git push origin "HEAD:$PUBLIC_BRANCH"
+    if ($LASTEXITCODE -ne 0) {
+        throw "Protected main push failed with exit code $LASTEXITCODE"
+    }
+    git push origin --delete $candidateBranch
     Write-Host ''
     Write-Host 'Public sync complete.' -ForegroundColor Green
 } else {
