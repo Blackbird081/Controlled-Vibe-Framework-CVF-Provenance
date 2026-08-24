@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_R4_ACCEPTED_BOUNDED_PENDING_MATERIAL_COMMIT
+Status: ACTIVE_R7A_CLOSED_R7B_READY_FOR_DISPATCH
 
 docType: roadmap
 
@@ -64,8 +64,8 @@ open implementation tranches here.
 | R4 | R3 independently accepted | 58/58 focused, 288/288 package, TypeScript and reviewer proof; all material context classes and invocation/receipt bindings exact | F5 `CLOSED_PASS_BOUNDED` at `8ec399aa50158474c3d5ccf0c3cd9d33bfaf72f0` |
 | R5 | R4 independently accepted | Safety Runtime 61/61, adapter focused 49/49, package 91/91, TypeScript and reviewer adversarial proof across all eight dimensions | F9 `CLOSED_PASS_BOUNDED` at `82a0073b2fca002fd7999ed70905166295946515` |
 | R6 | R5 independently accepted | complete finding matrix, negative suite, manifest reconciliation and reviewer gates | `AUDIT_COMPLETE_REMEDIATION_REQUIRED`: F3/F4/F7/F9 closed; F1/F2/F5/F6/F8/F10 retained with reason; roadmap closure withheld |
-| R7A | R6 audit accepted; operator approved recommended split | make all MCP production roots adopt canonical `cvf-guard-contract`; preserve MCP-local session phase without a replacement factory | `DISPATCH_READY_PENDING_MATERIAL_COMMIT`: Defect A only |
-| R7B | R7A independently accepted | repair optional-field composition seam while preserving strict fail-closed material-context validation | `HOLD_DEPENDENCY_GATED`: no worker dispatch until R7A closure evidence is committed |
+| R7A | R6 audit accepted; operator approved recommended split | make all MCP production roots adopt canonical `cvf-guard-contract`; preserve MCP-local session phase without a replacement factory | `CLOSED_PASS_BOUNDED`: canonical roots adopted; self-attestation/action-label findings closed after one repair round; 777/780 package tests with only three R7B failures |
+| R7B | R7A independently accepted and material closure committed | repair optional-field composition seam while preserving strict fail-closed material-context validation | `READY_FOR_FRESH_DISPATCH_PACKET`: dependency satisfied by R7A material closure |
 
 No tranche begins from worker assertion alone. Repair round three escalates to
 operator/design review instead of silently widening scope.
@@ -82,10 +82,13 @@ defects: live MCP admission bypasses the canonical guard contract through a
 stale local fork, and the R4/R3 optional-field seam fails 3 of 31 focused MCP
 tests. No implementation repair or external effect is released. Fresh
 remediation authority is required before either source owner may be edited.
-The operator approved the recommended split. R7A is freshly source-verified
-and dispatch-ready pending its material packet commit; R7B remains held until
-R7A is independently accepted. No source edit or external effect is released
-by this roadmap transition.
+The operator approved the recommended split. R7A is independently accepted
+after one consolidated repair round: all production engine/factory roots use
+the canonical contract, launcher self-attestation is removed, action labels
+are truthful, and unsupported authority remains fail-closed. R7B may receive a
+fresh bounded dispatch packet after the R7A material closure commit. No live,
+provider, deployment, public-sync or push effect is released by this roadmap
+transition.
 
 ## Acceptance Criteria
 

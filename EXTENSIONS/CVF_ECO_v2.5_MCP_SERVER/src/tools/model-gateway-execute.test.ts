@@ -5,7 +5,7 @@ import {
   MODEL_GATEWAY_EXECUTE_ADAPTER_CONTRACT,
   MODEL_GATEWAY_EXECUTE_TOOL,
 } from './model-gateway-execute';
-import { createGuardEngine } from '../guards/index';
+import { createGuardEngine } from 'cvf-guard-contract';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 
 const VALID_INPUT = {
@@ -317,14 +317,19 @@ describe('cvf_model_gateway_execute -- registered MCP tool composition', () => {
     return registered[MODEL_GATEWAY_EXECUTE_TOOL];
   }
 
-  it('wires the server-owned native engine so a real ALLOW reaches the executor', async () => {
+  it('wires the server-owned native engine so a real OPERATOR ALLOW reaches the executor with a truthful execute action', async () => {
+    // OPERATOR is genuinely authorized to `execute` in phase BUILD under the
+    // canonical authority_gate matrix (AUTHORITY_MATRIX.OPERATOR.BUILD
+    // includes 'execute'), so this proves at least one honestly-labeled role
+    // still legitimately reaches ALLOW - the fix does not leave every caller
+    // fail-closed indiscriminately.
     const server = new McpServer({ name: 'test-server', version: '0.0.0' });
     const engine = createGuardEngine();
     const execute = vi.fn().mockResolvedValue({ receipt: { decision: 'selected' } });
     registerModelGatewayExecuteTool(server, engine, { execute });
 
     const handler = getRegisteredTool(server).handler;
-    const response = await handler(VALID_INPUT);
+    const response = await handler({ ...VALID_INPUT, agentRole: 'OPERATOR' });
     const parsed = JSON.parse(response.content[0].text);
 
     expect(parsed.accepted).toBe(true);
@@ -346,24 +351,52 @@ describe('cvf_model_gateway_execute -- registered MCP tool composition', () => {
     expect(parsed.accepted).toBe(false);
     expect(parsed.executorCalled).toBe(false);
     expect(parsed.admissionEvidence.decision).toBe('BLOCK');
-    expect(parsed.admissionEvidence.blockedBy).toBe('risk_gate');
     expect(execute).not.toHaveBeenCalled();
   });
 
-  it('wires the server-owned native engine so a real R2 ESCALATE stops before the executor', async () => {
+  it('AI_AGENT/orchestrator execution is genuinely BLOCKED by authority_gate at every risk level, not converted to ALLOW by a synthetic "code" prefix', async () => {
+    // With the truthful "execute" action label, AI_AGENT (which also covers
+    // an ORCHESTRATOR caller via normalizeNativeRole) has no 'execute' verb
+    // in its BUILD authority cell, so authority_gate genuinely blocks it -
+    // even at the lowest risk class, where the prior "code"-prefixed label
+    // would have reached ALLOW. This is the real behavior the semantic
+    // action-laundering repair is required to produce.
     const server = new McpServer({ name: 'test-server', version: '0.0.0' });
     const engine = createGuardEngine();
     const execute = vi.fn();
     registerModelGatewayExecuteTool(server, engine, { execute });
 
     const handler = getRegisteredTool(server).handler;
-    const response = await handler({ ...VALID_INPUT, requestRiskClass: 'high' });
-    const parsed = JSON.parse(response.content[0].text);
+    const agentResponse = await handler({ ...VALID_INPUT, agentRole: 'AI_AGENT', requestRiskClass: 'low' });
+    const orchestratorResponse = await handler({ ...VALID_INPUT, agentRole: 'ORCHESTRATOR', requestRiskClass: 'low' });
+    const agentParsed = JSON.parse(agentResponse.content[0].text);
+    const orchestratorParsed = JSON.parse(orchestratorResponse.content[0].text);
 
-    expect(parsed.accepted).toBe(false);
-    expect(parsed.executorCalled).toBe(false);
-    expect(parsed.admissionEvidence.decision).toBe('ESCALATE');
+    expect(agentParsed.accepted).toBe(false);
+    expect(agentParsed.executorCalled).toBe(false);
+    expect(agentParsed.admissionEvidence.decision).toBe('BLOCK');
+    expect(agentParsed.admissionEvidence.blockedBy).toBe('authority_gate');
+    expect(orchestratorParsed.accepted).toBe(false);
+    expect(orchestratorParsed.executorCalled).toBe(false);
+    expect(orchestratorParsed.admissionEvidence.decision).toBe('BLOCK');
+    expect(orchestratorParsed.admissionEvidence.blockedBy).toBe('authority_gate');
     expect(execute).not.toHaveBeenCalled();
+  });
+
+  it('does not depend on a "code" token: the admission action text carries no "code" verb', async () => {
+    const server = new McpServer({ name: 'test-server', version: '0.0.0' });
+    const engine = createGuardEngine();
+    const evaluateSpy = vi.spyOn(engine, 'evaluate');
+    const execute = vi.fn().mockResolvedValue({ receipt: { decision: 'selected' } });
+    registerModelGatewayExecuteTool(server, engine, { execute });
+
+    const handler = getRegisteredTool(server).handler;
+    await handler({ ...VALID_INPUT, agentRole: 'OPERATOR' });
+
+    expect(evaluateSpy).toHaveBeenCalledOnce();
+    const [calledContext] = evaluateSpy.mock.calls[0];
+    expect(calledContext.action).not.toMatch(/\bcode\b/);
+    expect(calledContext.action).toMatch(/\bexecute\b/);
   });
 
   it('remains fail-closed by default when no admission engine or executor is supplied', async () => {

@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RFR_R7A_CANONICAL_MCP_GUARD_ENGINE_ADOPTION_2026-08-24.md",
     "baselineSha256": "dd9a6c81182b2fbdf695c1039f26919bdf7bf52474e3dfc6cca5acd9d19db31f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R7A_CANONICAL_MCP_GUARD_ENGINE_ADOPTION_2026-08-24.md",
-    "workOrderSha256": "976e82b962d7f70e17a9c1af5a298815f7a41cd4d8d4459268eab99db1f1fb8d"
+    "workOrderSha256": "e8f08154811897f2bace671ac92f02ada3c41f6e941497b7c1045c239f56551a"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

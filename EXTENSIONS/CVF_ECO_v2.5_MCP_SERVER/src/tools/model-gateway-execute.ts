@@ -1,7 +1,7 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
 import { withMcpToolAudit } from '../audit/mcp-tool-audit.js';
-import type { GuardRuntimeEngine } from '../guards/engine.js';
+import type { GuardRuntimeEngine } from 'cvf-guard-contract';
 import type { GuardRequestContext } from '../guards/types.js';
 
 export const MODEL_GATEWAY_EXECUTE_TOOL = 'cvf_model_gateway_execute' as const;
@@ -167,13 +167,26 @@ function normalizeNativeRiskLevel(requestRiskClass: ModelGatewayExecuteInput['re
  * caller-supplied policy field.
  */
 function buildAdmissionContext(traceId: string, role: string, riskClass: ModelGatewayExecuteInput['requestRiskClass']): GuardRequestContext {
+  // The action is truthfully labeled "execute": this native admission check
+  // gates an actual Model Gateway execution call, not code authoring. Using
+  // the truthful verb means the canonical authority_gate matrix decides this
+  // honestly: OPERATOR is authorized to `execute` in phase BUILD
+  // (AUTHORITY_MATRIX.OPERATOR.BUILD includes 'execute'), so an OPERATOR
+  // caller can genuinely reach ALLOW. AI_AGENT (which also covers an
+  // ORCHESTRATOR caller via normalizeNativeRole) has no `execute` verb in
+  // its BUILD cell, so an AI_AGENT/ORCHESTRATOR caller is truthfully BLOCKED
+  // by authority_gate rather than being relabeled with an allow-listed verb
+  // (such as "code") purely to obtain ALLOW. This is not a permissive
+  // default: risk_gate/phase_gate/authority_gate still evaluate this
+  // context and can still BLOCK/ESCALATE it on their own independent
+  // grounds even for an OPERATOR caller.
   return {
     requestId: `mcp-mgw-${traceId}`,
     phase: 'BUILD',
     riskLevel: normalizeNativeRiskLevel(riskClass),
     role: normalizeNativeRole(role),
     agentId: `mcp-caller-${traceId}`,
-    action: 'execute model gateway request',
+    action: 'execute: model gateway request',
     traceHash: traceId,
   };
 }

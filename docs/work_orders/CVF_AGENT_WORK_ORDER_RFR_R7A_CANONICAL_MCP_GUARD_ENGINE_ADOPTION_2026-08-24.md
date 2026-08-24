@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -323,14 +323,14 @@ Epistemic Process Block; Claim Boundary; git status --short; Changed Files;
 Worker Experience Retrospective; Command Evidence; No-Commit Statement; Machine
 Closure Package.
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
-| Artifact | Required worker action |
-| --- | --- |
-| 14 existing MCP source/test paths | modify only when required; list terminal disposition for every allowed path |
-| canonical adoption regression test | create and prove static plus dynamic invariants |
-| worker return | create at exact path with full gate profile |
-| all forbidden paths | remain byte-unchanged |
+| Artifact | Required worker action | Final status |
+| --- | --- | --- |
+| 14 existing MCP source/test paths | modify only when required; list terminal disposition for every allowed path | PASS |
+| canonical adoption regression test | create and prove static plus dynamic invariants | PASS |
+| worker return | create at exact path with full gate profile | PASS |
+| all forbidden paths | remain byte-unchanged | PASS |
 
 ## Agent Handoff Contract Control Block
 
@@ -341,7 +341,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | dispatcher -> one implementation worker -> independent reviewer/closer |
 | phase | R7A implementation pending |
-| baseHeadFor(phase) | dispatchBaseHead=`fddcfedf5a41a04f71a2b3228f662c399f5e2e6e`; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=`fddcfedf5a41a04f71a2b3228f662c399f5e2e6e`; executionBaseHead=`aa3861f0ef013ad7f28b75d6365d5425b31afa44`; closureBaseHead=`aa3861f0ef013ad7f28b75d6365d5425b31afa44` |
 | changedSetScope(phase) | exact Write Ownership manifest |
 | traceScope(phase, actor) | worker records all commands and file deltas; reviewer independently reproduces decisive probes |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT; reviewer/closer only |
@@ -426,7 +426,8 @@ containment, and run reviewer-fast before any commit or R7B release.
 - Contradiction or gap disposition: canonical engine lacks session-phase
   methods, so the packet explicitly routes phase state to MCP/CLI rather than
   assuming interface equivalence.
-- Claim update: R7A is dispatch-ready, not implemented or accepted.
+- Claim update: R7A is independently accepted and closed bounded after one
+  repair round; no provider/live or production-readiness claim is added.
 
 ## External Knowledge Intake Routing
 
@@ -493,6 +494,28 @@ generated aggregate, path relocation or index owner is created or moved.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance tranche; no public-sync action is authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RFR_R7A_CANONICAL_MCP_GUARD_ENGINE_ADOPTION_COMPLETION_2026-08-24.md` | reviewer verdict `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_RUNTIME_FINDINGS_CLOSURE_ROADMAP_2026-08-24.md` | R7A closed and R7B ready for fresh dispatch | PASS |
+| Registry JSON | `CVF_SESSION/corpus_scan_registry/` owner surfaces | BLOCKED with reason: no corpus-registry mutation is authorized or required by this runtime-composition tranche | BLOCKED with reason |
+| Registry Markdown | `CVF_SESSION/corpus_scan_registry/` owner surfaces | BLOCKED with reason: no corpus-registry mutation is authorized or required by this runtime-composition tranche | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external evidence was consumed | N/A with reason | N/A with reason |
+| System loop interlock | R7A closure evidence feeds R7B dependency release | material closure commit | PASS |
+| Session continuity | separately governed active state and handoff sync | continuity commit after material closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| canonical production engine/factory | all seven production roots use `cvf-guard-contract` | PASS |
+| immutable mandatory core | mandatory IDs cannot be removed, disabled or mutated through returned views | PASS |
+| missing BUILD authority | real launcher path blocks before downstream action | PASS |
+| receipt claim boundary | deterministic local receipt tests only; no external interception or live execution claim | PASS |
 
 ## Claim Boundary
 

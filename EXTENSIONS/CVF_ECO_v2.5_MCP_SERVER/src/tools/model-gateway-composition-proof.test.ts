@@ -5,7 +5,7 @@ import {
   MODEL_GATEWAY_EXECUTE_TOOL,
   type ModelGatewayExecutorPort,
 } from './model-gateway-execute';
-import { createGuardEngine } from '../guards/index';
+import { createGuardEngine } from 'cvf-guard-contract';
 import { CredentialBoundary, type CredentialReference } from '../../../CVF_MODEL_GATEWAY/src/credential-boundary';
 import { GatewayReceiptBuilder } from '../../../CVF_MODEL_GATEWAY/src/gateway-receipt';
 import { ProviderHealthMonitor } from '../../../CVF_MODEL_GATEWAY/src/provider-health';
