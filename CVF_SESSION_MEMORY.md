@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r3_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=give the committed R3 work order at `10bcf4de7` to one external no-commit worker and await its governed return; parked checkpoint=R4-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r3_closed_pass_bounded_r4_pending_fresh_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=source-verify F5 and author a fresh R4 dispatch under standing roadmap authority; parked checkpoint=R5-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r3_dispatched_pending_worker_return`
-Current mode: `runtime_findings_remediation_r3_dispatched_pending_worker_return`
-Previous mode: `runtime_findings_remediation_r2_closed_pass_bounded_r3_pending_fresh_operator_direction`
+Current mode marker: `runtime_findings_remediation_r3_closed_pass_bounded_r4_pending_fresh_dispatch`
+Current mode: `runtime_findings_remediation_r3_closed_pass_bounded_r4_pending_fresh_dispatch`
+Previous mode: `runtime_findings_remediation_r3_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r3_dispatched_pending_worker_return`; RFR-R3 native MCP admission authority is committed at `10bcf4de7` after author-fast, pre-dispatch 78/78, and pre-commit 86/86 passed with zero provider/live calls. Give the exact work order to one external no-commit worker; it must capture the repository HEAD present at worker start, verify five hashes, edit exactly six paths, and return for independent review. R4-R6 and all external-effect lanes remain unauthorized.
+Mode: `runtime_findings_remediation_r3_closed_pass_bounded_r4_pending_fresh_dispatch`; RFR-R3 is independently closed bounded at `a18ba512f` after one consolidated reviewer repair. Evidence: focused 31/31, MCP package 748/748, TypeScript build PASS, reviewer-fast 65/65, pre-commit 86/86, zero provider/live calls. Under standing roadmap authority, source-verify F5 and author a fresh R4 dispatch; R5-R6 and all external-effect lanes remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
