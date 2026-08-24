@@ -190,9 +190,9 @@ MCP-KAR final bounded absorption is closed at `52d058ae6`. Do not perform furthe
 
 CADP-AI-T7 completion review: `docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_COMPLETION_2026-08-14.md`; SHA-256: `a7653e85ca4b172218f3f9efb4e9ad884fbaad343817b50a1c9be232e0fe4c74`.
 
-Prior pre-push dispatch-sync authorization and operation trace remain preserved
-in Git history through session-sync commit `0b1046dfc`; they are omitted from
-this compact active handoff after the public staging push superseded that mode.
+Public-sync latency learning is committed at `29c573a2d`: one-shot candidate
+preflight now runs before review/staging; focused tests and all 86 commit guards
+passed. The public clone remained clean; no new public commit or push was made.
 
 ## Public Export Disposition
 
@@ -207,7 +207,7 @@ Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`
 
-Operator authorization: 2026-08-23 protocol/absorption and `next tranche` instructions; 2026-08-24 `tiep tuc` (`continue`) with explicit multi-role/subagent authority.
+Operator authorization: 2026-08-23 protocol/absorption and `next tranche`; 2026-08-24 continue/multi-role authority plus explicit public-sync incident learning and recurrence-fix instruction.
 
 Authorized guard-maintenance scope: preserve protocol v1.1 export/local receipt; record T2 stop `5de1ecc98`, T3 closure `c62f926f2`, and T4 closure `43aea7a18`;
 regenerate active projections and expose only the bounded decision-first next move.
