@@ -301,6 +301,7 @@ export type {
   GatewayEmbeddingRequest,
   GatewayEmbeddingResponse,
   GatewayHealthResponse,
+  GatewayMaterialContextManifestDisposition,
   UnifiedGatewayInterfaceContract,
 } from "./unified-gateway-interface-contract";
 export { UNIFIED_GATEWAY_INTERFACE_CONTRACT_VERSION } from "./unified-gateway-interface-contract";
@@ -319,6 +320,24 @@ export {
   ProviderExecutionBridge,
   PROVIDER_EXECUTION_BRIDGE_VERSION,
 } from "./provider-execution-bridge";
+
+export type {
+  MaterialContextClass,
+  MaterialContextEntry,
+  MaterialContextEntryStatus,
+  MaterialContextManifest,
+  MaterialContextManifestBuildResult,
+  MaterialContextManifestFailure,
+  MaterialContextManifestFailureReason,
+  MaterialContextManifestSuccess,
+  MaterialContextInvocationBinding,
+} from "./material-context-manifest";
+export {
+  buildMaterialContextManifest,
+  MATERIAL_CONTEXT_MANIFEST_VERSION,
+  MATERIAL_CONTEXT_TRANSFORMATION_VERSION,
+  validateMaterialContextManifest,
+} from "./material-context-manifest";
 
 export type {
   CredentialBoundOpenAiCompatibleAdapterOptions,

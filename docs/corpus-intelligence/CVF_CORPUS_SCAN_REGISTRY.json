@@ -6944,6 +6944,46 @@
         "external-agent packet treated as upstream authority - explicitly rejected"
       ],
       "nextScanRecommendation": "Do not rescan the 993-file corpus. T9 exhausts the current bounded disposition route through 35 semantic groups; reuse the immutable receipt and terminal ledgers. Reopen only the indexed T2 or T6 candidate after its objective conditions hold, or perform a new intake for a newly selected immutable upstream pin."
+    },
+    {
+      "id": "rfr-r4-material-context-manifest",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "RFR-R4 Model Gateway material context manifest source and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/material-context-manifest.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/material-context-manifest.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "scanWave": "RFR-R4",
+      "scanDate": "2026-08-24",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RFR_R4_MATERIAL_CONTEXT_MANIFEST_WORKER_RETURN_2026-08-24.md",
+      "completionReviewPath": "docs/reviews/CVF_RFR_R4_MATERIAL_CONTEXT_MANIFEST_COMPLETION_2026-08-24.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_RFR_R4_MATERIAL_CONTEXT_MANIFEST_2026-08-24.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "MODEL_GATEWAY_INVOCATION_CONTEXT_PROVENANCE",
+        "SECRET_SAFE_DETERMINISTIC_CANONICALIZATION",
+        "PRE_ADAPTER_MANIFEST_AND_RECEIPT_BINDING"
+      ],
+      "priorAbsorption": "RFR-R4 introduces these CVF-owned paths; there is no external corpus or direct-import lineage.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw prompt retained in manifest - not found",
+        "raw system prompt retained in manifest - not found",
+        "raw metadata value retained in manifest - not found",
+        "credential secret resolution - not present",
+        "provider or network invocation in manifest module/tests - not present"
+      ],
+      "nextScanRecommendation": "Reuse the RFR-R4 completion review and focused adversarial tests; rescan only if the manifest schema, canonicalization, or bridge binding changes."
     }
   ]
 }

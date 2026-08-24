@@ -97,11 +97,11 @@ Allowed integrity claims:
 
 Forbidden truth overclaims:
 
-- treating a hash as proof that the statement inside the file is correct;
-- treating approval as proof that the underlying fact is true;
-- treating LLM agreement as independent verification;
-- treating a receipt as proof beyond the action it records;
-- treating a copied truth pack as authority after its source changed.
+- forbidden: treating a hash as proof that the statement inside the file is correct;
+- forbidden: treating approval as proof that the underlying fact is true;
+- forbidden: treating LLM agreement as independent verification;
+- forbidden: treating a receipt as proof beyond the action it records;
+- forbidden: treating a copied truth pack as authority after its source changed.
 
 ## LLM Output Is Not Self-Trusting
 
@@ -302,11 +302,51 @@ exports, or change MLW3 learning behavior.
 | TKG-T3 | static checker candidate for provenance-collapse, unlabeled important claims, or integrity-overclaim language | TKG-T2 field reconciliation plus fresh GC-018 |
 | TKG-RUNTIME | Truth Kernel runtime, evidence database, obligation registry, verifier service, monitor, AGT gateway, hypervisor, circuit breaker, package import, or adapter work | explicit operator authorization, fresh GC-018, source verification, tests, and live proof if governance behavior is claimed |
 
+## RFR-R4 Model Gateway Manifest Reconciliation
+
+RFR-R4 adds `EXTENSIONS/CVF_MODEL_GATEWAY/src/material-context-manifest.ts`, a
+Model Gateway-owned, in-memory, secret-safe manifest that inventories the
+material invocation context (prompt, system prompt, metadata, policy, and
+routing context) of a single `ProviderExecutionBridge.execute` call. It
+records `contextClass`, `sourceReference`, `sourceVersion`, `authorityLabel`,
+`transformationMethod`/`transformationVersion`, `invocationScope`,
+`traceBinding`, `sensitivity`, `status`, and a deterministic content digest
+per entry. The root binds the exact request trace, selected provider/model,
+adapter-input digest, and a self-digest before adapter invocation; the returned
+receipt points back to that manifest digest. Missing, malformed, incomplete,
+field-altered, or trace/invocation-mismatched evidence causes the adapter to be
+called zero times. Every precondition stop exposes an explicit manifest
+disposition rather than relying on field absence.
+
+This is a bounded, source-verified adaptation of this contract's evidence
+record vocabulary into one existing Model Gateway owner surface. It is not
+the Truth Kernel runtime, not an evidence database, not an obligation
+registry, and not a `TKG-RUNTIME` tranche; the Truth Kernel and this
+reference contract are otherwise unchanged, and no database, independent
+verifier, live-proof, public, or production claim follows from it.
+
+| Field | Value |
+|---|---|
+| Owner surface | `EXTENSIONS/CVF_MODEL_GATEWAY/src/material-context-manifest.ts` |
+| Bound integration point | `ProviderExecutionBridge.execute`, pre-adapter seam |
+| Vocabulary adapted | evidence record minimum field set (this contract, Evidence Record Minimum) |
+| Invocation binding | trace, selected provider/model, adapter-input digest, manifest digest, receipt metadata digest |
+| Failure boundary | hostile/cyclic/accessor/sparse/symbol/oversized material and any manifest-field drift fail closed before adapter invocation |
+| Runtime scope | one Model Gateway execute call; in-memory only; no persistence, queue, or registry |
+| Disposition | `ADAPT_WITH_BOUNDARY`; Model Gateway-owned, not Truth Kernel-owned |
+
+EPISTEMIC_PROCESS_NA_WITH_REASON: this section is a factual reference-contract
+reconciliation recording a bounded implementation's existing test/build
+evidence (see the paired RFR-R4 worker return); it is not itself an
+evidence-heavy claim packet requiring its own Expected Result / Evidence
+Comparison / Contradiction Or Gap Disposition structure.
+
 ## Source Verification Block
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Source fact type | Disposition |
 |---|---|---|---|---|---|---|
 | TKG-T0 selected TKG-T1 as the next CVF-owned contract tranche | `docs/roadmaps/CVF_TKG_T0_AGENT_GOVERNANCE_TRUTH_KERNEL_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md` | Purpose; Proposed Roadmap | `AUTHOR_TKG_T1_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT` | TKG-T0 roadmap | VALUE_SET | ACCEPT |
+| RFR-R4 material context manifest is Model Gateway-owned, not Truth Kernel runtime | `EXTENSIONS/CVF_MODEL_GATEWAY/src/material-context-manifest.ts` | module header; `buildMaterialContextManifest` | `buildMaterialContextManifest` | Model Gateway | EXISTS | ACCEPT |
 | Current CVF already has enterprise evidence-pack discipline | `docs/reference/CVF_ENTERPRISE_EVIDENCE_PACK.md` | Evidence Pack Principles; Minimum Evidence Set | CVF Enterprise Evidence Pack | CVF owner surface | EXISTS | ACCEPT |
 | Current CVF already has evidence-to-truth learning signal routing | `docs/reference/CVF_MLW3_EVIDENCE_TO_TRUTH_LEARNING_SIGNAL_PIPELINE_2026-06-05.md` | Purpose; Workflow; Failure Modes | `cvf.mlw3.evidenceToTruthLearningSignalPipeline.v1` | CVF owner surface | EXISTS | ACCEPT |
 | Current CVF already has release truth packet boundary language | `docs/reference/CVF_RELEASE_CANDIDATE_TRUTH_PACKET_2026-04-21.md` | Purpose; Claim Boundary; What Is Proven | CVF Release Candidate Truth Packet | CVF owner surface | EXISTS | ACCEPT |

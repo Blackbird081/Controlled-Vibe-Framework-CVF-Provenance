@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_R3_ACCEPTED_BOUNDED_PENDING_MATERIAL_COMMIT
+Status: ACTIVE_R4_ACCEPTED_BOUNDED_PENDING_MATERIAL_COMMIT
 
 docType: roadmap
 
@@ -60,8 +60,8 @@ open implementation tranches here.
 | R0 | operator remediation instruction | review, roadmap, R1 GC-018/work order; pre-dispatch gates | R1 dispatch committed |
 | R1 | R0 committed | 41/41 guard tests, 122/122 composed tests, 936 package tests plus 5 skips, TypeScript and reviewer gates pass | F1 `CLOSED_PASS_BOUNDED` at `a670343706c4fa21427a55a9c2ba464b9cef6cd4` |
 | R2 | R1 independently accepted | 62/62 focused tests, 949 package tests plus 5 skips, TypeScript, freshness, file-size and reviewer-fast pass | F2-F4 `CLOSED_PASS_BOUNDED` at `84d44889fe2724e574241b5fb74d371e900fd6e3` |
-| R3 | R2 independently accepted | 31/31 focused, 748/748 package, TypeScript and reviewer proof; caller policy cannot authorize | F8 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_PENDING_MATERIAL_COMMIT` |
-| R4 | R3 independently accepted | all material context classes resolve to source/version/authority/transformation/scope/invocation | F5 closed or repair packet |
+| R3 | R2 independently accepted | 31/31 focused, 748/748 package, TypeScript and reviewer proof; caller policy cannot authorize | F8 `CLOSED_PASS_BOUNDED` at `a18ba512f` |
+| R4 | R3 independently accepted | 58/58 focused, 288/288 package, TypeScript and reviewer proof; all material context classes and invocation/receipt bindings exact | F5 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_PENDING_MATERIAL_COMMIT` |
 | R5 | R4 independently accepted | filesystem/network/process/environment/credential/IPC/persistence/host claims tested | F9 closed or repair packet |
 | R6 | R5 independently accepted | complete finding matrix, negative suite, manifest reconciliation and reviewer gates | roadmap closure decision |
 
@@ -72,8 +72,9 @@ operator/design review instead of silently widening scope.
 
 R1 is closed bounded at `a670343706c4fa21427a55a9c2ba464b9cef6cd4`.
 R2 is closed bounded at `84d44889fe2724e574241b5fb74d371e900fd6e3`.
-R3 is independently accepted bounded pending its reviewer-owned material
-commit and separate continuity sync. R4-R6 remain dependency-gated.
+R3 is independently closed bounded at `a18ba512f`. R4 is independently
+accepted bounded pending its reviewer-owned material commit and separate
+continuity sync. R5-R6 remain dependency-gated.
 Workers operate as `WORKER_MUST_NOT_COMMIT`; the current agent owns
 orchestration and independent review/closure.
 
@@ -120,26 +121,27 @@ authorized by this roadmap.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R3_NATIVE_MCP_ADMISSION_2026-08-24.md` | committed authority `10bcf4de7` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_RFR_R3_NATIVE_MCP_ADMISSION_COMPLETION_2026-08-24.md` | bounded reviewer acceptance pending material identity | PASS |
-| Roadmap state | `docs/roadmaps/CVF_RUNTIME_FINDINGS_CLOSURE_ROADMAP_2026-08-24.md` | R3 accepted bounded; R4 remains dependency-gated | PASS |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate matches per-entry sources; R3 adds no corpus entry | PASS |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R4_MATERIAL_CONTEXT_MANIFEST_2026-08-24.md` | committed authority `9660fb5a1` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RFR_R4_MATERIAL_CONTEXT_MANIFEST_COMPLETION_2026-08-24.md` | bounded reviewer acceptance pending material identity | PASS |
+| Roadmap state | `docs/roadmaps/CVF_RUNTIME_FINDINGS_CLOSURE_ROADMAP_2026-08-24.md` | R4 accepted bounded; R5 remains dependency-gated | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate covers both new R4 source/test paths | PASS |
 | Registry Markdown | `docs/roadmaps/CVF_RUNTIME_FINDINGS_CLOSURE_ROADMAP_2026-08-24.md` | canonical human-readable tranche state | PASS |
-| External evidence digest | N/A | no external evidence was used for RFR-R3 remediation | N/A with reason: local source and test evidence only |
-| System loop interlock | this roadmap | R4-R6 dependency order remains closed and external effects remain parked | PASS |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | exact RFR-R3 material SHA must follow the material commit | BLOCKED with reason: material commit identity is not available pre-commit |
+| External evidence digest | N/A | no external evidence was used for RFR-R4 remediation beyond governed worker return | N/A with reason: local source and test evidence only |
+| System loop interlock | this roadmap | R5-R6 dependency order remains closed and external effects remain parked | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | exact RFR-R4 material SHA must follow the material commit | BLOCKED with reason: material commit identity is not available pre-commit |
 | R1 BUILD authority | `docs/reviews/CVF_RFR_R1_BUILD_AUTHORITY_CLOSURE_COMPLETION_2026-08-24.md` | material commit `a670343706c4fa21427a55a9c2ba464b9cef6cd4` | PASS_BOUNDED |
 | R2 immutable mandatory core | `docs/reviews/CVF_RFR_R2_IMMUTABLE_MANDATORY_CORE_COMPLETION_2026-08-24.md` | material commit `84d44889f`; reviewer repair included | PASS_BOUNDED |
-| R3 native MCP admission | `docs/reviews/CVF_RFR_R3_NATIVE_MCP_ADMISSION_COMPLETION_2026-08-24.md` | 31 focused; 748 package pass; reviewer repair included | PASS_BOUNDED_PENDING_MATERIAL_COMMIT |
-| R4-R6 | later tranche authority | dependency chain remains closed | PARKED_DEPENDENCY_GATED |
+| R3 native MCP admission | `docs/reviews/CVF_RFR_R3_NATIVE_MCP_ADMISSION_COMPLETION_2026-08-24.md` | material `a18ba512f`; 31 focused; 748 package pass; reviewer repair included | PASS_BOUNDED |
+| R4 material context manifest | `docs/reviews/CVF_RFR_R4_MATERIAL_CONTEXT_MANIFEST_COMPLETION_2026-08-24.md` | 58 focused; 288 package pass; reviewer repair included | PASS_BOUNDED_PENDING_MATERIAL_COMMIT |
+| R5-R6 | later tranche authority | dependency chain remains closed | PARKED_DEPENDENCY_GATED |
 | external effects | roadmap boundary | zero provider/live/public/deploy/push actions | PARKED |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Required value | Observed value | Status |
 | --- | --- | --- | --- |
-| MCP admission evidence | caller policy cannot authorize; invalid/non-ALLOW calls executor zero times | 31/31 focused tests pass | PASS |
-| Package proof | MCP package remains green | 748/748 package tests pass | PASS |
+| material-context evidence | exact complete manifest; hostile/invalid input calls adapter zero times | 58/58 focused tests pass | PASS |
+| Package proof | Model Gateway package remains green | 288/288 package tests pass | PASS |
 | Material identity | exact reviewed commit recorded in continuity | unavailable until material commit is created | BLOCKED with reason: post-material continuity sync owns the SHA receipt |
 
 ## External Knowledge Intake Routing
