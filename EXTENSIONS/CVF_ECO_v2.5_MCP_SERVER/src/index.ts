@@ -440,7 +440,7 @@ server.tool(
 );
 
 registerModelGatewayExecutePreviewTool(server);
-registerModelGatewayExecuteTool(server);
+registerModelGatewayExecuteTool(server, engine);
 
 // --- Delta-T1: cvf_preflight_governance_action -----------------------
 // Durable, secret-safe pre-action governance receipt. The audit JSON is
