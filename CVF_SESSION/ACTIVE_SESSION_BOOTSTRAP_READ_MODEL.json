@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "runtime_findings_remediation_r3_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Give the committed RFR-R3 work order at 10bcf4de78ee37a9b60d3b6bf9e83cfa16b74c36 to one external no-commit worker. The worker must capture that committed HEAD, verify all five pinned hashes, edit exactly the six authorized paths, run all required local proof, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without staging or committing. The current orchestrator remains independent reviewer/closer. R4-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Give the RFR-R3 work order whose authority commit is 10bcf4de78ee37a9b60d3b6bf9e83cfa16b74c36 to one external no-commit worker. The worker must capture the repository HEAD actually present at worker start as executionBaseHead, verify all five pinned hashes, edit exactly the six authorized paths, run all required local proof, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without staging or committing. The current orchestrator remains independent reviewer/closer. R4-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -166,7 +166,7 @@ Continuity parent anchor: `10bcf4de78ee37a9b60d3b6bf9e83cfa16b74c36`.
 
 ## Next Allowed Move
 
-RFR-R3 native MCP admission is dispatched at `10bcf4de7`. Give the committed work order to one external no-commit worker; it must capture that HEAD, verify five hashes, edit exactly six paths, run all required local proof, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. The current orchestrator remains reviewer/closer. R4-R6 and all external effects remain unauthorized.
+RFR-R3 native MCP admission authority is committed at `10bcf4de7`. Give the exact work order to one external no-commit worker; it must capture the repository HEAD present at worker start, verify five hashes, edit exactly six paths, run all required local proof, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. The current orchestrator remains reviewer/closer. R4-R6 and all external effects remain unauthorized.
 
 ## Active Boundary
 

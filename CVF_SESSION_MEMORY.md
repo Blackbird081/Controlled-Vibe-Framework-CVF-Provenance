@@ -52,7 +52,7 @@ Previous mode: `runtime_findings_remediation_r2_closed_pass_bounded_r3_pending_f
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r3_dispatched_pending_worker_return`; RFR-R3 native MCP admission dispatch is committed at `10bcf4de7` after author-fast, pre-dispatch 78/78, and pre-commit 86/86 passed with zero provider/live calls. Give the exact committed work order to one external no-commit worker; it must capture that HEAD, verify five hashes, edit exactly six paths, and return for independent review. R4-R6 and all external-effect lanes remain unauthorized.
+Mode: `runtime_findings_remediation_r3_dispatched_pending_worker_return`; RFR-R3 native MCP admission authority is committed at `10bcf4de7` after author-fast, pre-dispatch 78/78, and pre-commit 86/86 passed with zero provider/live calls. Give the exact work order to one external no-commit worker; it must capture the repository HEAD present at worker start, verify five hashes, edit exactly six paths, and return for independent review. R4-R6 and all external-effect lanes remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
