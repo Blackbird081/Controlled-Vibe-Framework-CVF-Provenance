@@ -38,21 +38,21 @@ Status: ACTIVE
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
 - MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6 is stopped at decision `93763c127`; T7/T8 implementation is accepted at `3f9c03cbe`; final T9 reconciliation is accepted at material commit `52d058ae6`.
-- RFR-R1 Amendment 1 authority is committed at `598ec24b1`; bounded implementation and reviewer closure are materially committed at `a670343706c4fa21427a55a9c2ba464b9cef6cd4`.
+- RFR-R1 is closed bounded at `a67034370`; RFR-R2 immutable mandatory-core no-commit worker authority is committed at `fb8e7d0f4`.
 - LPCI1-REF-T1A Amendment 2 authority: `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified): `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator direction, with R2 the next eligible governed tranche; parked checkpoint=R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r2_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=give the committed R2 packet to one external no-commit worker and await its return; parked checkpoint=R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
 
 ## Current Mode
-`runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`
+`runtime_findings_remediation_r2_dispatched_pending_worker_return`
 
 ## Purpose
 
-Record RFR-R1 bounded closure after independent Amendment 1 review while preserving prior MCP-KAR closure and all parked lanes.
+Record the bounded RFR-R2 external-worker dispatch while preserving RFR-R1 closure, prior MCP-KAR closure, and all parked lanes.
 
 ## Scope / Target / Owner Boundary
 
@@ -112,14 +112,14 @@ Record RFR-R1 bounded closure after independent Amendment 1 review while preserv
 
 ## Current Authority
 
-Continuity parent anchor: `a670343706c4fa21427a55a9c2ba464b9cef6cd4`.
+Continuity parent anchor: `fb8e7d0f4`.
 
 | Field | Value |
 |---|---|
-| authorityState | RFR-R1 `CLOSED_PASS_BOUNDED` at material commit `a670343706c4fa21427a55a9c2ba464b9cef6cd4` |
-| baselinePath | `docs/baselines/CVF_GC018_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md` |
-| nextAuthorityRequirement | R2 requires a fresh operator decision and governed baseline/work-order dispatch before implementation |
+| authorityState | RFR-R2 dispatched to one external no-commit worker at `fb8e7d0f4` |
+| baselinePath | `docs/baselines/CVF_GC018_RFR_R2_IMMUTABLE_MANDATORY_CORE_2026-08-24.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R2_IMMUTABLE_MANDATORY_CORE_2026-08-24.md` |
+| nextAuthorityRequirement | worker executes exact six-path manifest; current orchestrator independently reviews and owns any accepted commit |
 
 ## Closure Evidence
 
@@ -166,7 +166,7 @@ Continuity parent anchor: `a670343706c4fa21427a55a9c2ba464b9cef6cd4`.
 
 ## Next Allowed Move
 
-RFR-R1 is closed bounded at material commit `a670343706c4fa21427a55a9c2ba464b9cef6cd4`. Await fresh operator direction. R2 immutable mandatory-core closure is the next eligible governed tranche and requires fresh baseline/work-order dispatch before implementation. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
+Give the committed RFR-R2 work order from `fb8e7d0f4` to one external implementation worker and await `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. The worker must verify hashes, edit exactly six paths, and never stage or commit. The current orchestrator remains independent reviewer/closer. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
 
 ## Active Boundary
 
@@ -198,7 +198,7 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - RFR-R1 Amendment 1 Continuity
+## Core Guard Self-Protection Authorization - RFR-R2 Dispatch Continuity
 
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
@@ -206,12 +206,12 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/runtimeFindingsRemediationR1Dispatch20260824.json`
+- `CVF_SESSION/state/entries/runtimeFindingsRemediationR2Dispatch20260824.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: the operator's explicit 2026-08-24 `next` direction after the reviewer proposed the exact RFR-R1 Amendment 1 scope.
+Operator authorization: the operator's explicit 2026-08-24 instruction to continue R2 under the prior external-worker/current-reviewer rules.
 
-Authorized guard-maintenance scope: record RFR-R1 bounded material closure `a670343706c4fa21427a55a9c2ba464b9cef6cd4`, regenerate active projections, and expose only the fresh-operator-decision boundary with R2 as the next eligible governed tranche. Do not alter state structure or open R2-R6 implementation, provider/live, credential, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record RFR-R2 dispatch commit `fb8e7d0f4`, bind its paired baseline/work order as current authority, regenerate active projections, and expose only the exact external no-commit worker return as next move. Do not alter state structure or open R3-R6, provider/live, credential, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 

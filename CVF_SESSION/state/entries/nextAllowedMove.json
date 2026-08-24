@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2297,
+  "stateOrder": 2298,
   "stateKey": "nextAllowedMove",
-  "value": "RFR-R1 is closed bounded at material commit a670343706c4fa21427a55a9c2ba464b9cef6cd4. Await a fresh operator decision; R2 immutable mandatory-core closure is the next eligible governed tranche and must receive fresh baseline/work-order dispatch before implementation. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Give the committed RFR-R2 work order from dispatch commit fb8e7d0f4 to one external implementation worker. The worker must capture that committed HEAD, verify the five source hashes, modify exactly the six authorized paths, never stage or commit, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. The current orchestrator remains independent reviewer/closer. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
 }

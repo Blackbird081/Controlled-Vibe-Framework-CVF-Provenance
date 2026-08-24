@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator direction, with R2 the next eligible governed tranche; parked checkpoint=R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r2_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=give the committed R2 packet to one external no-commit worker and await its return; parked checkpoint=R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`
-Current mode: `runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`
-Previous mode: `runtime_findings_remediation_r1_amendment_1_reviewer_repair`
+Current mode marker: `runtime_findings_remediation_r2_dispatched_pending_worker_return`
+Current mode: `runtime_findings_remediation_r2_dispatched_pending_worker_return`
+Previous mode: `runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch`; RFR-R1 is `CLOSED_PASS_BOUNDED` at material commit `a670343706c4fa21427a55a9c2ba464b9cef6cd4`. Evidence: 41/41 focused, 122/122 composed, 936 passed plus 5 skipped package tests, TypeScript PASS, system-chain freshness CURRENT, worker-return fast PASS, reviewer-fast 65/65, and pre-commit 86/86. Await fresh operator direction; R2 is next eligible but not dispatched. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
+Mode: `runtime_findings_remediation_r2_dispatched_pending_worker_return`; RFR-R2 authority is committed at `fb8e7d0f4`. Give the committed work order to one external worker; it owns exactly six paths, must not stage or commit, and returns for independent review. Pre-dispatch passed 78/78 and dispatch pre-commit passed 86/86. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

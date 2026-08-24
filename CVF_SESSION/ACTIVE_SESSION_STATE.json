@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md",
-    "baselineSha256": "6ee9112b65492dcbaf30b00357f5d92d2e95ceadcf014ab000ee808dd119559d",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md",
-    "workOrderSha256": "1485ffef84eb7a443589a437226555849b4b077e39f2db1de86aa2b030c45b67"
+    "baselinePath": "docs/baselines/CVF_GC018_RFR_R2_IMMUTABLE_MANDATORY_CORE_2026-08-24.md",
+    "baselineSha256": "2a2c122e772748598ab0e73b2cba23abe27759b515bc3279769c6720ea3f5f47",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R2_IMMUTABLE_MANDATORY_CORE_2026-08-24.md",
+    "workOrderSha256": "5c4ffe5a09eade54f21b630731403a88e89dc6a5beb7521e1f113172cee40d41"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch",
-  "previousMode": "runtime_findings_remediation_r1_amendment_1_reviewer_repair",
+  "currentMode": "runtime_findings_remediation_r2_dispatched_pending_worker_return",
+  "previousMode": "runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -14977,5 +14977,6 @@
   "tpgrR8P0P1AllowlistDecisionDesignDispatched20260823": "TPGR-R8 documentation-only design dispatch is materially committed at e91e5d127. Authority is the paired R8 baseline SHA-256 4dd26d44651f891bea561feb499666d97725fa2b43ece136be0a38b3de61313d and work order SHA-256 0a35879278264821c5699f25238e6748348f24f9b1953cdfeb79971320f8c533. The worker may create exactly the R8 assessment and worker-return paths, must not stage or commit, must keep design-time and projected evidence distinct from observed current evidence, and must preserve the full legacy bundle as sole controller. R8 implementation, allowlist activation, real canary/selective execution, R9, T15, protected implementation edits, source intake, and external effects remain unauthorized.",
   "tpgrR8P0P1AllowlistDecisionDesignClosedHold20260823": "TPGR-R8 is CLOSED_PASS_BOUNDED at 859f851ac with accepted assessment SHA-256 4392429c04b0434740b315402b37b1109564e9ad3d614c571fc7a68c0547bcc3 and worker-return SHA-256 52a8ee8a655a137ed6a046ac73d881f365d63dfda34bd19c1f4b03e28b16f0fd. Independent review confirmed P0 0/6, P1 6/6, 8/8 hostile admission cases, 12/12 negative-test designs, strict H3 binding, honest evidence-state labels, Tier 1 default for ambiguity, separated cost/value labels, zero legacy suppression or added enforcement, and a zero-edit R9 manifest. Reviewer repaired a circular activation-as-admission predicate and worker evidence-shape tokens without changing the hold result. Worker-return fast 65/65, pre-implementation 80/80, commit-steward PASS, pre-closure 78/78, and pre-commit 86/86 passed. Final disposition HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE. Reopen requires fresh exact-identity OBSERVED_CURRENT dual-run evidence, applicable current H3 binding, independent review, and fresh operator authority.",
   "runtimeFindingsRemediationR1Dispatch20260824": "RFR-R1 is CLOSED_PASS_BOUNDED at material commit a670343706c4fa21427a55a9c2ba464b9cef6cd4 after Amendment 1 authority 598ec24b16c30f19647f45c565f4a634172f9b83 resolved the original five-path manifest contradiction. The mandatory shared factory now enforces fail-closed BUILD authority, AgentExecutionRuntime propagates typed evidence, the CONTRACT_TO_RUNTIME fingerprint is CURRENT, and the corrected worker return plus completion review preserve the bounded claim. Evidence: 41/41 focused, 122/122 composed, 936 passed plus 5 skipped package tests, TypeScript PASS, worker-return fast PASS, reviewer-fast 65/65, and pre-commit 86/86. R2 is eligible only for a fresh governed dispatch; R3-R6 and every external-effect lane remain parked.",
-  "nextAllowedMove": "RFR-R1 is closed bounded at material commit a670343706c4fa21427a55a9c2ba464b9cef6cd4. Await a fresh operator decision; R2 immutable mandatory-core closure is the next eligible governed tranche and must receive fresh baseline/work-order dispatch before implementation. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
+  "runtimeFindingsRemediationR2Dispatch20260824": "RFR-R2 immutable mandatory-core baseline and no-commit work order are committed at fb8e7d0f4. Authority closes only verified F2-F4 through existing GuardRuntimeEngine and MandatoryGateway owners. The external worker may modify exactly engine.ts, index.test.ts, mandatory-gateway.ts, mandatory-gateway.test.ts, the reviewed CONTRACT_TO_RUNTIME system-chain map, and the R2 worker return. Source hashes are pinned; pre-dispatch passed 78/78 and material pre-commit passed 86/86. The worker must not stage or commit. The current orchestrator owns independent review, bounded repair, material commit, and separate continuity sync. R3-R6 and every external-effect lane remain parked.",
+  "nextAllowedMove": "Give the committed RFR-R2 work order from dispatch commit fb8e7d0f4 to one external implementation worker. The worker must capture that committed HEAD, verify the five source hashes, modify exactly the six authorized paths, never stage or commit, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. The current orchestrator remains independent reviewer/closer. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
 }

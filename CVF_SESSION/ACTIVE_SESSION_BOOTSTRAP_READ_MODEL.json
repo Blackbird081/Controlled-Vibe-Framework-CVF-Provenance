@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "runtime_findings_remediation_r1_closed_pass_bounded_r2_pending_fresh_dispatch",
+  "currentMode": "runtime_findings_remediation_r2_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RFR-R1 is closed bounded at material commit a670343706c4fa21427a55a9c2ba464b9cef6cd4. Await a fresh operator decision; R2 immutable mandatory-core closure is the next eligible governed tranche and must receive fresh baseline/work-order dispatch before implementation. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Give the committed RFR-R2 work order from dispatch commit fb8e7d0f4 to one external implementation worker. The worker must capture that committed HEAD, verify the five source hashes, modify exactly the six authorized paths, never stage or commit, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. The current orchestrator remains independent reviewer/closer. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md",
-    "baselineSha256": "6ee9112b65492dcbaf30b00357f5d92d2e95ceadcf014ab000ee808dd119559d",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md",
-    "workOrderSha256": "1485ffef84eb7a443589a437226555849b4b077e39f2db1de86aa2b030c45b67"
+    "baselinePath": "docs/baselines/CVF_GC018_RFR_R2_IMMUTABLE_MANDATORY_CORE_2026-08-24.md",
+    "baselineSha256": "2a2c122e772748598ab0e73b2cba23abe27759b515bc3279769c6720ea3f5f47",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R2_IMMUTABLE_MANDATORY_CORE_2026-08-24.md",
+    "workOrderSha256": "5c4ffe5a09eade54f21b630731403a88e89dc6a5beb7521e1f113172cee40d41"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
