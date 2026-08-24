@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r5_closed_pass_bounded_r6_pending_fresh_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh R6 source verification and bounded dispatch authoring under standing roadmap authority; parked checkpoint=R6 implementation/closure before dispatch, further absorption, unrelated feature work, installation, provider/live/network, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r6_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator copies committed R6 packet to one exact-one-path no-commit audit worker; parked checkpoint=source repair, further absorption, unrelated feature work, installation, provider/live/network, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r5_closed_pass_bounded_r6_pending_fresh_dispatch`
-Current mode: `runtime_findings_remediation_r5_closed_pass_bounded_r6_pending_fresh_dispatch`
-Previous mode: `runtime_findings_remediation_r5_dispatched_pending_worker_return`
+Current mode marker: `runtime_findings_remediation_r6_dispatched_pending_worker_return`
+Current mode: `runtime_findings_remediation_r6_dispatched_pending_worker_return`
+Previous mode: `runtime_findings_remediation_r5_closed_pass_bounded_r6_pending_fresh_dispatch`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r5_closed_pass_bounded_r6_pending_fresh_dispatch`; RFR-R5 is independently closed bounded at material `82a0073b2fca002fd7999ed70905166295946515` after reviewer repair. Proof passed Safety Runtime 61/61, adapter focused 49/49, adapter package 91/91, strict TypeScript and pre-commit 86/86. Next is fresh R6 source verification and bounded dispatch authoring only; R6 implementation and all external-effect lanes remain unauthorized until a committed packet exists.
+Mode: `runtime_findings_remediation_r6_dispatched_pending_worker_return`; RFR-R5 remains independently closed bounded at `82a0073b2`. RFR-R6 terminal cross-owner audit is dispatched at `5a9047032` after pre-dispatch 78/78 and pre-commit 86/86. Operator may copy the committed packet to one worker whose only write is the named worker-return; all implementation and external-effect lanes remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
