@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=source-verify F9 and author a fresh R5 dispatch under standing roadmap authority; parked checkpoint=R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r5_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator copies the committed R5 packet to one no-commit implementation worker; parked checkpoint=R6, further absorption, unrelated feature work, installation, provider/live/network, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`
-Current mode: `runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`
-Previous mode: `runtime_findings_remediation_r4_dispatched_pending_worker_return`
+Current mode marker: `runtime_findings_remediation_r5_dispatched_pending_worker_return`
+Current mode: `runtime_findings_remediation_r5_dispatched_pending_worker_return`
+Previous mode: `runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`; RFR-R4 is independently closed bounded at `8ec399aa5` after one consolidated reviewer repair. Evidence: focused 58/58, Model Gateway package 288/288, TypeScript, GC-051, reviewer-fast 65/65, pre-commit 86/86, zero provider/live calls. Under standing roadmap authority, source-verify F9 and author a fresh R5 dispatch; R6 and all external-effect lanes remain unauthorized.
+Mode: `runtime_findings_remediation_r5_dispatched_pending_worker_return`; RFR-R5 is freshly dispatched at `76e0c8289`. The committed exact-eight packet requires truthful eight-dimensional isolation profiles, default fail-closed security admission, explicit best-effort intent and no inherited host environment. Operator may copy the packet to one no-commit worker; current orchestrator reviews independently. R6 and all external-effect lanes remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

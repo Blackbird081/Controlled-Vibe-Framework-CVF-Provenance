@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch",
+  "currentMode": "runtime_findings_remediation_r5_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RFR-R4 is independently closed bounded at material commit 8ec399aa50158474c3d5ccf0c3cd9d33bfaf72f0. Under the operator's standing dependency-ordered roadmap authority, source-verify finding F9 and its current execution/isolation owners, then author and commit a fresh RFR-R5 GC-018 baseline and no-commit worker order before any R5 implementation. R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RFR-R5 is freshly dispatched at commit 76e0c8289 through docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R5_ISOLATION_GUARANTEE_ADMISSION_2026-08-24.md. The operator may copy the complete committed packet to one WORKER_MUST_NOT_COMMIT implementation worker. The worker must execute exactly the eight authorized paths and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; the current orchestrator remains independent reviewer/closer. R6, further absorption, unrelated feature work, dependency installation, provider/live/network, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RFR_R4_MATERIAL_CONTEXT_MANIFEST_2026-08-24.md",
-    "baselineSha256": "fdf218f6a1dff809245db51f6a0a974e089ec74f91237a555f9985e1948d43d6",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R4_MATERIAL_CONTEXT_MANIFEST_2026-08-24.md",
-    "workOrderSha256": "da36634763a7f36bd45374ca0fccd53587f916adaaa6876ef4fa442afe41b8f9"
+    "baselinePath": "docs/baselines/CVF_GC018_RFR_R5_ISOLATION_GUARANTEE_ADMISSION_2026-08-24.md",
+    "baselineSha256": "60604ed4b6de710e6d67f1787c4c5c972f8e764bd78818ac7bdfdcc02e80e1a2",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R5_ISOLATION_GUARANTEE_ADMISSION_2026-08-24.md",
+    "workOrderSha256": "51a6c788248c83b6275349d53010acd14a2283850aa54c5b7de0b5f7f4b6afe3"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

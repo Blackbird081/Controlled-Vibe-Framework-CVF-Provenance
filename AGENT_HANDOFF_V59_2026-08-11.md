@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R4 material closure: `8ec399aa5`.
+- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R5 dispatch: `76e0c8289`.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -38,21 +38,21 @@ Status: ACTIVE
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
 - MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6 is stopped at decision `93763c127`; T7/T8 implementation is accepted at `3f9c03cbe`; final T9 reconciliation is accepted at material commit `52d058ae6`.
-- RFR-R1 is closed at `a67034370`; RFR-R2 at `84d44889f`; RFR-R3 at `a18ba512f`; RFR-R4 material-context manifest is independently closed bounded at `8ec399aa5`.
+- RFR-R1 is closed at `a67034370`; RFR-R2 at `84d44889f`; RFR-R3 at `a18ba512f`; RFR-R4 at `8ec399aa5`; RFR-R5 isolation-guarantee admission is freshly dispatched at `76e0c8289`.
 - LPCI1-REF-T1A Amendment 2 authority: `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified): `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=source-verify F9 and author a fresh R5 dispatch under standing roadmap authority; parked checkpoint=R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r5_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator copies the committed R5 packet to one no-commit implementation worker; parked checkpoint=R6, further absorption, unrelated feature work, installation, provider/live/network, credentials, deployment, public sync and push.
 
 ## Current Mode
-`runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`
+`runtime_findings_remediation_r5_dispatched_pending_worker_return`
 
 ## Purpose
 
-Record bounded RFR-R4 independent closure while preserving RFR-R1/R2/R3, prior MCP-KAR closure, and all parked lanes.
+Record bounded RFR-R5 dispatch while preserving RFR-R1/R2/R3/R4, prior MCP-KAR closure, and all parked lanes.
 
 ## Scope / Target / Owner Boundary
 
@@ -116,7 +116,7 @@ Continuity parent anchor: `8ec399aa5`.
 
 | Field | Value |
 |---|---|
-| authorityState | RFR-R4 independently closed bounded at `8ec399aa5` |
+| authorityState | RFR-R5 freshly dispatched at `76e0c8289` |
 | baselinePath | `docs/baselines/CVF_GC018_RFR_R4_MATERIAL_CONTEXT_MANIFEST_2026-08-24.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R4_MATERIAL_CONTEXT_MANIFEST_2026-08-24.md` |
 | nextAuthorityRequirement | source-verify F9 and author a fresh R5 baseline/work order under standing roadmap authority |
@@ -166,7 +166,7 @@ Continuity parent anchor: `8ec399aa5`.
 
 ## Next Allowed Move
 
-RFR-R4 is independently closed bounded at `8ec399aa5` with focused 58/58, package 288/288, TypeScript, GC-051, reviewer-fast and pre-commit PASS. Under standing roadmap authority, source-verify F9 and author a fresh R5 baseline/work order before implementation. R6 and all external effects remain unauthorized.
+RFR-R5 is freshly dispatched at `76e0c8289`. Operator may copy `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R5_ISOLATION_GUARANTEE_ADMISSION_2026-08-24.md` to one no-commit implementation worker. The worker returns for independent review; R6 and all external effects remain unauthorized.
 
 ## Active Boundary
 
@@ -198,7 +198,7 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - RFR-R4 Closure Continuity
+## Core Guard Self-Protection Authorization - RFR-R5 Dispatch Continuity
 
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
@@ -206,12 +206,12 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/runtimeFindingsRemediationR4Closure20260824.json`
+- `CVF_SESSION/state/entries/runtimeFindingsRemediationR5Dispatch20260824.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record RFR-R4 material commit `8ec399aa5`, bounded proof and reviewer repair, regenerate active projections, and stop before R5 implementation pending a fresh dispatch. Do not alter state structure or open R6, provider/live, credential, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record RFR-R5 dispatch commit `76e0c8289`, exact-eight no-commit worker route and bounded proof requirements, regenerate active projections, and stop pending worker return. Do not alter state structure or open R6, installation, provider/live/network, credential, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
