@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2300,
+  "stateOrder": 2302,
   "stateKey": "nextAllowedMove",
-  "value": "RFR-R2 is independently closed bounded at material commit 84d44889fe2724e574241b5fb74d371e900fd6e3 after one disclosed reviewer repair. Await fresh operator direction; R3 native MCP admission is the next dependency-eligible governed tranche and must receive a fresh source-verified baseline/work-order dispatch before implementation. R4-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Give the committed RFR-R3 work order at 10bcf4de78ee37a9b60d3b6bf9e83cfa16b74c36 to one external no-commit worker. The worker must capture that committed HEAD, verify all five pinned hashes, edit exactly the six authorized paths, run all required local proof, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without staging or committing. The current orchestrator remains independent reviewer/closer. R4-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "runtime_findings_remediation_r2_closed_pass_bounded_r3_pending_fresh_operator_direction",
+  "currentMode": "runtime_findings_remediation_r3_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RFR-R2 is independently closed bounded at material commit 84d44889fe2724e574241b5fb74d371e900fd6e3 after one disclosed reviewer repair. Await fresh operator direction; R3 native MCP admission is the next dependency-eligible governed tranche and must receive a fresh source-verified baseline/work-order dispatch before implementation. R4-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Give the committed RFR-R3 work order at 10bcf4de78ee37a9b60d3b6bf9e83cfa16b74c36 to one external no-commit worker. The worker must capture that committed HEAD, verify all five pinned hashes, edit exactly the six authorized paths, run all required local proof, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without staging or committing. The current orchestrator remains independent reviewer/closer. R4-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RFR_R2_IMMUTABLE_MANDATORY_CORE_2026-08-24.md",
-    "baselineSha256": "2a2c122e772748598ab0e73b2cba23abe27759b515bc3279769c6720ea3f5f47",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R2_IMMUTABLE_MANDATORY_CORE_2026-08-24.md",
-    "workOrderSha256": "5c4ffe5a09eade54f21b630731403a88e89dc6a5beb7521e1f113172cee40d41"
+    "baselinePath": "docs/baselines/CVF_GC018_RFR_R3_NATIVE_MCP_ADMISSION_2026-08-24.md",
+    "baselineSha256": "d19fda85f20c19d5648f1d04f8bcbc3491930d57f8de04396bf1ddd0e7196b2c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R3_NATIVE_MCP_ADMISSION_2026-08-24.md",
+    "workOrderSha256": "225d2b0754418ded4441bb8813ae0137bc9fec4aed9dbecd6ce43dac790baf29"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

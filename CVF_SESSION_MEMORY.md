@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r2_closed_pass_bounded_r3_pending_fresh_operator_direction`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator direction before any R3 dispatch; parked checkpoint=R4-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r3_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=give the committed R3 work order at `10bcf4de7` to one external no-commit worker and await its governed return; parked checkpoint=R4-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r2_closed_pass_bounded_r3_pending_fresh_operator_direction`
-Current mode: `runtime_findings_remediation_r2_closed_pass_bounded_r3_pending_fresh_operator_direction`
-Previous mode: `runtime_findings_remediation_r2_dispatched_pending_worker_return`
+Current mode marker: `runtime_findings_remediation_r3_dispatched_pending_worker_return`
+Current mode: `runtime_findings_remediation_r3_dispatched_pending_worker_return`
+Previous mode: `runtime_findings_remediation_r2_closed_pass_bounded_r3_pending_fresh_operator_direction`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r2_closed_pass_bounded_r3_pending_fresh_operator_direction`; RFR-R2 is independently closed bounded at material commit `84d44889f` after one disclosed malformed-action reviewer repair. Evidence: focused 62/62, package 949 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 65/65, pre-commit 86/86, zero provider/live calls. Await fresh operator direction before any R3 dispatch; R4-R6 and all external-effect lanes remain unauthorized.
+Mode: `runtime_findings_remediation_r3_dispatched_pending_worker_return`; RFR-R3 native MCP admission dispatch is committed at `10bcf4de7` after author-fast, pre-dispatch 78/78, and pre-commit 86/86 passed with zero provider/live calls. Give the exact committed work order to one external no-commit worker; it must capture that HEAD, verify five hashes, edit exactly six paths, and return for independent review. R4-R6 and all external-effect lanes remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
