@@ -176,8 +176,8 @@ MCP-KAR final bounded absorption is closed at `52d058ae6`. Do not perform furthe
 
 - T1 Amendment 2 is closed at `0247f7347`; LPCI1 Web parking baseline is
   committed at `8791b9b23`. Candidate `021f8b852` is pushed only to
-  `lpci1-ref-staging`. Public `main`, Netlify deploy, production, and every
-  unrelated lane are parked.
+  `lpci1-ref-staging`. Public `main` contains only the approved enforcement
+  sync at `9c0183293`; Netlify, production, and unrelated lanes remain parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - MCP-KAR-T1 used only the pinned selected source cluster and closed its eight-output reviewer-repaired manifest at `c179e656a`. No dependency change, source execution/direct import, MCP runtime or package activation, provider/account use, public sync, deploy, or production was authorized or performed.
 - Worker commit remained forbidden; independent reviewer created target commit.
@@ -190,17 +190,17 @@ MCP-KAR final bounded absorption is closed at `52d058ae6`. Do not perform furthe
 
 CADP-AI-T7 completion review: `docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_COMPLETION_2026-08-14.md`; SHA-256: `a7653e85ca4b172218f3f9efb4e9ad884fbaad343817b50a1c9be232e0fe4c74`.
 
-Mandatory public-sync enforcement is committed at `447032449`: local hook plus
-exact-SHA GitHub status precede main promotion. Candidate `c8490100f6a9` failed
-closed on remote URL normalization; public main remained at `d1042ab0b2f0`.
+Mandatory enforcement is closed through `96a6cdfe4`: local hook plus strict
+exact-SHA GitHub status precede main promotion and apply to admins. Successful
+run `32678623700` promoted public `9c0183293`; force-push/delete are disabled.
 
 ## Public Export Disposition
 
 EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-Public-sync commit: `d1042ab0b2f044ca99fa3c812e38e33631b20869`.
-Public artifact paths: `AGENTS.md`; `AGENT_HANDOFF.md`; `EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts`; `docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json`; `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md`.
-Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `1adb0bbdc397a97da178b8af6288a2380365e7256a7b32baf313a39567de9eb6`.
+Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
+Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
+Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
 ## Core Guard Self-Protection Authorization - Protocol V1.1 And MCP-KAR-T4 Closure Continuity
 
@@ -217,4 +217,4 @@ Rollback boundary: revert this continuity-only batch as one unit.
 
 ## Claim Boundary
 
-This handoff records MCP-KAR-T0/T1 closure, T2 stop `5de1ecc98`, T3 bounded proceed decision `c62f926f2`, and T4 local guard closure `43aea7a18`. It authorizes only a decision-first approval-reference request-binding/replay tranche next; no implementation before that decision and no runtime/package/transport, durable replay claim without a durable owner, public push, schema repair, source execution/direct import, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, persistence, provider/live invocation, deployment, or production.
+This handoff records MCP-KAR closure plus mandatory public-sync enforcement through public `9c0183293`. It authorizes no further public push and no runtime/package/transport, durable replay claim without a durable owner, schema repair, source execution/direct import, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, persistence, provider/live invocation, deployment, or production.
