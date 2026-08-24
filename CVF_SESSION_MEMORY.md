@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r6_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator copies committed R6 packet to one exact-one-path no-commit audit worker; parked checkpoint=source repair, further absorption, unrelated feature work, installation, provider/live/network, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r6_review_complete_repair_decision_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decision on fresh owner-specific remediation authority for two reproduced R6 defects; parked checkpoint=source repair, compatibility mechanism, installation, provider/live/network, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r6_dispatched_pending_worker_return`
-Current mode: `runtime_findings_remediation_r6_dispatched_pending_worker_return`
-Previous mode: `runtime_findings_remediation_r5_closed_pass_bounded_r6_pending_fresh_dispatch`
+Current mode marker: `runtime_findings_remediation_r6_review_complete_repair_decision_required`
+Current mode: `runtime_findings_remediation_r6_review_complete_repair_decision_required`
+Previous mode: `runtime_findings_remediation_r6_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r6_dispatched_pending_worker_return`; RFR-R5 remains independently closed bounded at `82a0073b2`. RFR-R6 terminal cross-owner audit is dispatched at `5a9047032` after pre-dispatch 78/78 and pre-commit 86/86. Operator may copy the committed packet to one worker whose only write is the named worker-return; all implementation and external-effect lanes remain unauthorized.
+Mode: `runtime_findings_remediation_r6_review_complete_repair_decision_required`; RFR-R6 audit evidence is independently accepted, but roadmap closure is withheld. F3/F4/F7/F9 are closed; F1/F2/F5/F6/F8/F10 are retained with reason. Reviewer probes reproduced the stale MCP guard-engine fork and the 3/31 optional-field composition regression. Next move is an operator decision on fresh owner-specific remediation tranches; implementation and external-effect lanes remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

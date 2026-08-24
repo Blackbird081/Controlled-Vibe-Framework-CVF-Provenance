@@ -63,7 +63,7 @@ open implementation tranches here.
 | R3 | R2 independently accepted | 31/31 focused, 748/748 package, TypeScript and reviewer proof; caller policy cannot authorize | F8 `CLOSED_PASS_BOUNDED` at `a18ba512f` |
 | R4 | R3 independently accepted | 58/58 focused, 288/288 package, TypeScript and reviewer proof; all material context classes and invocation/receipt bindings exact | F5 `CLOSED_PASS_BOUNDED` at `8ec399aa50158474c3d5ccf0c3cd9d33bfaf72f0` |
 | R5 | R4 independently accepted | Safety Runtime 61/61, adapter focused 49/49, package 91/91, TypeScript and reviewer adversarial proof across all eight dimensions | F9 `CLOSED_PASS_BOUNDED` at `82a0073b2fca002fd7999ed70905166295946515` |
-| R6 | R5 independently accepted | complete finding matrix, negative suite, manifest reconciliation and reviewer gates | `DISPATCH_READY_PENDING_MATERIAL_COMMIT`: terminal roadmap closure decision only |
+| R6 | R5 independently accepted | complete finding matrix, negative suite, manifest reconciliation and reviewer gates | `AUDIT_COMPLETE_REMEDIATION_REQUIRED`: F3/F4/F7/F9 closed; F1/F2/F5/F6/F8/F10 retained with reason; roadmap closure withheld |
 
 No tranche begins from worker assertion alone. Repair round three escalates to
 operator/design review instead of silently widening scope.
@@ -74,11 +74,12 @@ R1 is closed bounded at `a670343706c4fa21427a55a9c2ba464b9cef6cd4`.
 R2 is closed bounded at `84d44889fe2724e574241b5fb74d371e900fd6e3`.
 R3 is independently closed bounded at `a18ba512f`. R4 is independently closed
 bounded at `8ec399aa5`. R5 is independently closed bounded at `82a0073b2` with
-continuity `ad5edc2b4`. R6 is freshly source-verified and dispatch-ready pending
-the dispatcher-owned material commit; its worker may write only one no-commit
-evidence return. No implementation repair or external effect is released.
-Workers operate as `WORKER_MUST_NOT_COMMIT`; the current agent owns
-orchestration and independent review/closure.
+continuity `ad5edc2b4`. The reviewer accepts R6 as a completed read-only audit,
+but withholds roadmap closure after independently reproducing two source
+defects: live MCP admission bypasses the canonical guard contract through a
+stale local fork, and the R4/R3 optional-field seam fails 3 of 31 focused MCP
+tests. No implementation repair or external effect is released. Fresh
+remediation authority is required before either source owner may be edited.
 
 ## Acceptance Criteria
 

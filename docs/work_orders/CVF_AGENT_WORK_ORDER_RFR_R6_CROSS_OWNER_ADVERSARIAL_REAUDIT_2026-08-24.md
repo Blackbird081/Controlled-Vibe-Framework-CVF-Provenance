@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_REMEDIATION_REQUIRED
 
 docType: work_order
 
@@ -19,6 +19,15 @@ Worker: one delegated audit worker
 Reviewer/closer: current independent orchestrator/reviewer/closer
 
 Worker return path: `docs/reviews/CVF_RFR_R6_CROSS_OWNER_ADVERSARIAL_REAUDIT_WORKER_RETURN_2026-08-24.md`
+
+## Reviewer Disposition
+
+The exact-one worker return was independently reviewed and accepted as audit
+evidence. R6 closes its read-only adversarial re-audit duty, but does not close
+the runtime-findings roadmap: the reviewer reproduced the live MCP stale
+guard-engine fork and the R4/R3 optional-field composition regression. Source
+repair remains outside this work order and requires fresh governed remediation
+authority. No external effect is released.
 
 ## Dispatch Prompt Envelope
 
