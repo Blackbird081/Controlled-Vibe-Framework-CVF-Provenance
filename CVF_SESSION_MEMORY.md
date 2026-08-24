@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=RFR-R1 no-commit external worker execution and return only; parked checkpoint=R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r1_amendment_1_reviewer_repair`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact committed RFR-R1 Amendment 1 reviewer repair and closure; parked checkpoint=R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r1_dispatched_pending_worker_return`
-Current mode: `runtime_findings_remediation_r1_dispatched_pending_worker_return`
-Previous mode: `mcp_kar_complete_absorption_bounded_closed`
+Current mode marker: `runtime_findings_remediation_r1_amendment_1_reviewer_repair`
+Current mode: `runtime_findings_remediation_r1_amendment_1_reviewer_repair`
+Previous mode: `runtime_findings_remediation_r1_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r1_dispatched_pending_worker_return`; RFR-R1 material dispatch `8434963c5` is current authority. Execute only the exact five-path no-commit worker packet and return for independent review. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
+Mode: `runtime_findings_remediation_r1_amendment_1_reviewer_repair`; Amendment 1 authority `598ec24b1` is current. Execute only the exact amended reviewer repair, independent proof, material commit and separate continuity sync. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

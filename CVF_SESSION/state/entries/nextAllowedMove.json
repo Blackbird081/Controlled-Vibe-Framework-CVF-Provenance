@@ -1,5 +1,5 @@
 {
   "stateOrder": 2297,
   "stateKey": "nextAllowedMove",
-  "value": "Execute only RFR-R1 from dispatch commit 8434963c5 under WORKER_MUST_NOT_COMMIT. The external implementation worker may change exactly the five paths in the R1 work order and must return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON with HEAD unchanged and staging empty. The current orchestrator/reviewer owns review, allowed repairs, closure and material commit. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute only the committed RFR-R1 Amendment 1 reviewer repair from authority commit 598ec24b1. Restore and verify the preserved worker diff; repair exactly the amended Guard Contract/runtime/test/system-chain/evidence manifest; run focused, full-package, TypeScript, freshness, worker-return, reviewer and pre-commit proof; create the reviewer-owned material commit; then synchronize continuity separately. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
 }

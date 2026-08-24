@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "runtime_findings_remediation_r1_dispatched_pending_worker_return",
+  "currentMode": "runtime_findings_remediation_r1_amendment_1_reviewer_repair",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute only RFR-R1 from dispatch commit 8434963c5 under WORKER_MUST_NOT_COMMIT. The external implementation worker may change exactly the five paths in the R1 work order and must return COMPLETE_PENDING_INDEPENDENT_REVIEW or BLOCKED_WITH_REASON with HEAD unchanged and staging empty. The current orchestrator/reviewer owns review, allowed repairs, closure and material commit. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute only the committed RFR-R1 Amendment 1 reviewer repair from authority commit 598ec24b1. Restore and verify the preserved worker diff; repair exactly the amended Guard Contract/runtime/test/system-chain/evidence manifest; run focused, full-package, TypeScript, freshness, worker-return, reviewer and pre-commit proof; create the reviewer-owned material commit; then synchronize continuity separately. R2-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RFR_R1_BUILD_AUTHORITY_CLOSURE_2026-08-24.md",
-    "baselineSha256": "6a505e7ea4734356baa2e95674638d74a0874cac5a5c5664811a0a1da298c1cc",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R1_BUILD_AUTHORITY_CLOSURE_2026-08-24.md",
-    "workOrderSha256": "8e824e0635893ff4d1356a51e6fce58015b81e1db2593bb9879d3f6dd6d6549d"
+    "baselinePath": "docs/baselines/CVF_GC018_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md",
+    "baselineSha256": "6ee9112b65492dcbaf30b00357f5d92d2e95ceadcf014ab000ee808dd119559d",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md",
+    "workOrderSha256": "1485ffef84eb7a443589a437226555849b4b077e39f2db1de86aa2b030c45b67"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

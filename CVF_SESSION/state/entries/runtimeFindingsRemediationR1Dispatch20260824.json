@@ -1,5 +1,5 @@
 {
   "stateOrder": 2296,
   "stateKey": "runtimeFindingsRemediationR1Dispatch20260824",
-  "value": "RFR-R1 is dispatched at material commit 8434963c513ec0f39695b2c963dc7ecfa7020bc4. The accepted review classifies F1, F5 and conditional F8 as HIGH and sequences R1-R6 without creating new subsystems. R1 alone is active: typed accepted-SPEC and valid bounded-WORK-ORDER evidence must become a mandatory mutating-BUILD prerequisite in the existing Guard Contract. External worker is WORKER_MUST_NOT_COMMIT and limited to the exact five-path manifest; current orchestrator/reviewer owns independent review and commit."
+  "value": "RFR-R1 Amendment 1 authority is committed at 598ec24b16c30f19647f45c565f4a634172f9b83 after the external worker correctly returned BLOCKED_WITH_REASON from the original five-path manifest. The current orchestrator/reviewer may repair exactly the original implementation plus index tests, AgentExecutionRuntime source/tests, the reviewed CONTRACT_TO_RUNTIME fingerprint, worker evidence, completion review and the R1-only roadmap transition. Mandatory shared-factory enforcement must remain unconditional. R2-R6 and every external-effect lane remain parked."
 }
