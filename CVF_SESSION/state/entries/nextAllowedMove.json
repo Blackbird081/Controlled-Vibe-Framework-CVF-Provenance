@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2306,
+  "stateOrder": 2308,
   "stateKey": "nextAllowedMove",
-  "value": "RFR-R4 is dispatched at material commit 9660fb5a1e1508e6c73931a6056f023cd324cdc9. Give the committed R4 work order to one external no-commit worker. The worker must capture actual HEAD/status at start, verify the five required source hashes and three absent new paths, edit exactly eight authorized paths, run the required hermetic proof, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without staging, committing or pushing. The orchestrator/reviewer then independently inspects and reproduces the result. R5-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "RFR-R4 is independently closed bounded at material commit 8ec399aa50158474c3d5ccf0c3cd9d33bfaf72f0. Under the operator's standing dependency-ordered roadmap authority, source-verify finding F9 and its current execution/isolation owners, then author and commit a fresh RFR-R5 GC-018 baseline and no-commit worker order before any R5 implementation. R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24."
 }

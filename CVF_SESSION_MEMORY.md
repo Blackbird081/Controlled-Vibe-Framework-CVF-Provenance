@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r4_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed R4 work order to one external no-commit worker and await its governed return; parked checkpoint=R5-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=source-verify F9 and author a fresh R5 dispatch under standing roadmap authority; parked checkpoint=R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r4_dispatched_pending_worker_return`
-Current mode: `runtime_findings_remediation_r4_dispatched_pending_worker_return`
-Previous mode: `runtime_findings_remediation_r3_closed_pass_bounded_r4_pending_fresh_dispatch`
+Current mode marker: `runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`
+Current mode: `runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`
+Previous mode: `runtime_findings_remediation_r4_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r4_dispatched_pending_worker_return`; RFR-R4 is freshly dispatched at `9660fb5a1` with paired GC-018 baseline/work order, exact-eight manifest, five source hashes, three required absent paths, hermetic proof, and no-commit role split. Transfer the committed order to one external worker, then independently review its return. R5-R6 and all external-effect lanes remain unauthorized.
+Mode: `runtime_findings_remediation_r4_closed_pass_bounded_r5_pending_fresh_dispatch`; RFR-R4 is independently closed bounded at `8ec399aa5` after one consolidated reviewer repair. Evidence: focused 58/58, Model Gateway package 288/288, TypeScript, GC-051, reviewer-fast 65/65, pre-commit 86/86, zero provider/live calls. Under standing roadmap authority, source-verify F9 and author a fresh R5 dispatch; R6 and all external-effect lanes remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
