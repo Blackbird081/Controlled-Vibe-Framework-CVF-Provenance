@@ -68,7 +68,10 @@ contract and WorkerThread adapter.
     "docs/reference/CVF_PREPUBLIC_RUNTIME_ADAPTER_HUB_EXPORT_SURFACE_2026-04-03.md",
     "docs/reviews/",
     "docs/baselines/",
-    "docs/work_orders/"
+    "docs/work_orders/",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json"
   ],
   "claims": ["F9 typed and tested isolation-guarantee admission"],
   "requiredProof": ["eight-dimensional matrix", "focused adapter tests", "Runtime Adapter Hub package tests", "TypeScript", "worker-return fast gate", "independent review"],
@@ -303,7 +306,8 @@ split a required command from its PASS, BLOCKED or N/A-with-reason result.
 ```powershell
 git rev-parse HEAD
 git status --short --untracked-files=all
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 0ee6e76b6 --head HEAD
+$rfrR5ExecutionBaseHead = git rev-parse HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base $rfrR5ExecutionBaseHead --head HEAD
 python governance/compat/run_adif_defect_resolver.py --task-class implementation --role worker --lifecycle-phase pre-execution --json
 npm test -- --run tests/adapters.test.ts
 npm test
@@ -397,6 +401,12 @@ Finding-To-Governance Learning Disposition, Epistemic Process Block, Machine
 Closure Package, Public Export Disposition and Claim Boundary. Use explicit
 N/A-with-reason where applicable.
 
+Atomic packet-shape terms required in the returned artifact: `Findings / Position`;
+`Delta Execution Claim Boundary Control Block`; `executionBaseHead`;
+`git status --short`; `Rescan Intelligence Hardening`; `Machine Closure Package`.
+Every conditional section must be completed or state `N/A with reason`; omission
+is forbidden.
+
 ## Reviewer Closure Conversion
 
 | Field | Value |
@@ -439,6 +449,25 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | freshnessVerificationMode | deterministic local source/test inspection |
 | reason | R5 changes local admission behavior; no provider/live assertion is made |
 | requiredFutureAction | independent reviewer reruns local tests; live proof remains N/A |
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: dispatcher-only correction of the current
+authority hash after repairing this committed packet's pre-implementation
+anchor and atomic worker-return terms. These paths are not worker-owned and do
+not widen the exact-eight implementation manifest.
+
+Protected paths:
+
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authorization: standing dependency-ordered roadmap continuation and
+the dispatcher/reviewer obligation to repair an in-scope gate failure.
+
+Rollback boundary: revert only this packet correction and its generated
+authority-hash projections if rejected; do not revert accepted RFR-R1-R4 work.
 
 ## Foundation Storage Layout Block
 

@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RFR_R5_ISOLATION_GUARANTEE_ADMISSION_2026-08-24.md",
     "baselineSha256": "60604ed4b6de710e6d67f1787c4c5c972f8e764bd78818ac7bdfdcc02e80e1a2",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R5_ISOLATION_GUARANTEE_ADMISSION_2026-08-24.md",
-    "workOrderSha256": "51a6c788248c83b6275349d53010acd14a2283850aa54c5b7de0b5f7f4b6afe3"
+    "workOrderSha256": "1cb115d90c3eae582eabb9e6f8df23ba6044ef3d2be45ff30a3aafad5e5c0e31"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
