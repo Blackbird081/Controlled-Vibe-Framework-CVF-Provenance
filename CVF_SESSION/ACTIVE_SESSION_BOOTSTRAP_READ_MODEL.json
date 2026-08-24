@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "runtime_findings_remediation_r2_dispatched_pending_worker_return",
+  "currentMode": "runtime_findings_remediation_r2_closed_pass_bounded_r3_pending_fresh_operator_direction",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Give the committed RFR-R2 work order from dispatch commit fb8e7d0f4 to one external implementation worker. The worker must capture that committed HEAD, verify the five source hashes, modify exactly the six authorized paths, never stage or commit, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. The current orchestrator remains independent reviewer/closer. R3-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RFR-R2 is independently closed bounded at material commit 84d44889fe2724e574241b5fb74d371e900fd6e3 after one disclosed reviewer repair. Await fresh operator direction; R3 native MCP admission is the next dependency-eligible governed tranche and must receive a fresh source-verified baseline/work-order dispatch before implementation. R4-R6, further absorption, unrelated feature work, provider/live, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
