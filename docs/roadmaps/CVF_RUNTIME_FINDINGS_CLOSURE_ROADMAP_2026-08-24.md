@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_R1_DISPATCH
+Status: ACTIVE_R1_PASS_BOUNDED_R2_PENDING_FRESH_DISPATCH
 
 docType: roadmap
 
@@ -58,7 +58,7 @@ open implementation tranches here.
 | Order | Entry criteria | Required proof | Exit state |
 |---|---|---|---|
 | R0 | operator remediation instruction | review, roadmap, R1 GC-018/work order; pre-dispatch gates | R1 dispatch committed |
-| R1 | R0 committed | missing/rejected/expired/revoked/out-of-scope cases block; package tests pass | F1 closed or repair packet |
+| R1 | R0 committed | 41/41 guard tests, 122/122 composed tests, 936 package tests plus 5 skips, TypeScript and reviewer gates pass | F1 `CLOSED_PASS_BOUNDED` through Amendment 1; material commit pending |
 | R2 | R1 independently accepted | object-reference mutation, config mutation and collision attacks reject | F2-F4 closed or repair packet |
 | R3 | R2 independently accepted | direct/caller-policy MCP paths cannot execute; native admission and receipt tests pass | F8 closed or repair packet |
 | R4 | R3 independently accepted | all material context classes resolve to source/version/authority/transformation/scope/invocation | F5 closed or repair packet |
@@ -70,9 +70,11 @@ operator/design review instead of silently widening scope.
 
 ## Dispatch Boundary
 
-Only R1 is dispatchable now. R2-R6 remain dependency-gated and require fresh
-source verification, GC-018 and work order after the preceding completion is
-committed. Workers operate as `WORKER_MUST_NOT_COMMIT`; the current agent owns
+R1 is independently accepted bounded through Amendment 1 pending its
+reviewer-owned material commit. After that commit and separate continuity sync,
+R2 may receive fresh source verification, GC-018 and a work order; R2 is not
+implemented or dispatched by this transition. R3-R6 remain dependency-gated.
+Workers operate as `WORKER_MUST_NOT_COMMIT`; the current agent owns
 orchestration and independent review/closure.
 
 ## Acceptance Criteria
@@ -111,8 +113,33 @@ authorized by this roadmap.
 | F1 | `RULE_GAP` | Guard Contract evaluation | R1 |
 | F2-F4 | `MACHINE_GATE_GAP` | registration/bootstrap/config | R2 |
 | F8 | `MACHINE_GATE_GAP` | MCP invocation admission | R3 |
-| F5 | `EVIDENCE_GAP` | Model Gateway invocation assembly | R4 |
-| F9 | `REPRESENTATION_GAP` | execution adapter admission | R5 |
+| F5 | `RUNTIME_SIGNAL_GAP` | Model Gateway invocation assembly | R4 |
+| F9 | `RUNTIME_SIGNAL_GAP` | execution adapter admission | R5 |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R1_BUILD_AUTHORITY_CLOSURE_AMENDMENT_1_2026-08-24.md` | committed authority `598ec24b16c30f19647f45c565f4a634172f9b83` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RFR_R1_BUILD_AUTHORITY_CLOSURE_COMPLETION_2026-08-24.md` | bounded reviewer acceptance pending material identity | PASS |
+| Roadmap state | `docs/roadmaps/CVF_RUNTIME_FINDINGS_CLOSURE_ROADMAP_2026-08-24.md` | R1 accepted bounded; R2 pending fresh dispatch | PASS |
+| Registry JSON | `docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json` | system-chain freshness state `CURRENT` | PASS |
+| Registry Markdown | `docs/roadmaps/CVF_RUNTIME_FINDINGS_CLOSURE_ROADMAP_2026-08-24.md` | canonical human-readable tranche state | PASS |
+| External evidence digest | N/A | no external evidence was used for RFR-R1 remediation | N/A with reason: local source and test evidence only |
+| System loop interlock | this roadmap | R2-R6 dependency order remains closed and external effects remain parked | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | exact RFR-R1 material SHA must follow the material commit | BLOCKED with reason: material commit identity is not available pre-commit |
+| R1 BUILD authority | `docs/reviews/CVF_RFR_R1_BUILD_AUTHORITY_CLOSURE_COMPLETION_2026-08-24.md` | 41 focused; 122 composed; 936 package pass plus 5 skip | PASS_BOUNDED_PENDING_MATERIAL_COMMIT |
+| R2 immutable mandatory core | fresh R2 GC-018/work order | no implementation receipt yet | PENDING_FRESH_DISPATCH |
+| R3-R6 | later tranche authority | dependency chain remains closed | PARKED_DEPENDENCY_GATED |
+| external effects | roadmap boundary | zero provider/live/public/deploy/push actions | PARKED |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Guard evidence | mandatory BUILD-authority closure | 41/41 focused tests pass | PASS |
+| Package proof | shared and runtime composition remain green | 122/122 composed and 936 pass plus 5 skip package-wide | PASS |
+| Material identity | exact reviewed commit recorded in continuity | unavailable until material commit is created | BLOCKED with reason: post-material continuity sync owns the SHA receipt |
 
 ## External Knowledge Intake Routing
 

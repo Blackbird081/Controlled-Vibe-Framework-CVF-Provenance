@@ -36,9 +36,9 @@ function ctx(overrides?: Partial<GuardRequestContext>): GuardRequestContext {
 }
 
 describe('createGuardEngine', () => {
-  it('creates engine with 8 hardened default guards', () => {
+  it('creates engine with 9 hardened default guards', () => {
     const engine = createGuardEngine();
-    expect(engine.getGuardCount()).toBe(8);
+    expect(engine.getGuardCount()).toBe(9);
   });
 
   it('registers all canonical guard IDs', () => {
@@ -49,6 +49,7 @@ describe('createGuardEngine', () => {
       'phase_gate',
       'risk_gate',
       'authority_gate',
+      'build_authority',
       'mutation_budget',
       'file_scope',
       'scope_guard',
@@ -60,7 +61,7 @@ describe('createGuardEngine', () => {
     const engine = createGuardEngine();
     const result = engine.evaluate(ctx({ phase: 'REVIEW', role: 'REVIEWER', action: 'read report' }));
     expect(result.finalDecision).toBe('ALLOW');
-    expect(result.results.length).toBe(8);
+    expect(result.results.length).toBe(9);
   });
 
   it('blocks modifying action without ai_commit', () => {
