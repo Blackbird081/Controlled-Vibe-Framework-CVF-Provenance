@@ -6984,6 +6984,49 @@
         "provider or network invocation in manifest module/tests - not present"
       ],
       "nextScanRecommendation": "Reuse the RFR-R4 completion review and focused adversarial tests; rescan only if the manifest schema, canonicalization, or bridge binding changes."
+    },
+    {
+      "id": "rfr-r5-isolation-guarantee-admission",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "RFR-R5 isolation guarantee admission source, package, and tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.7.1_SAFETY_RUNTIME/package.json",
+        "EXTENSIONS/CVF_v1.7.1_SAFETY_RUNTIME/simulation/sandbox.isolation.contract.ts",
+        "EXTENSIONS/CVF_v1.7.1_SAFETY_RUNTIME/tests/sandbox.isolation.contract.test.ts",
+        "EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/index.ts",
+        "EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/package.json",
+        "EXTENSIONS/CVF_v1.7.3_RUNTIME_ADAPTER_HUB/tests/adapters.test.ts"
+      ],
+      "fileCount": 6,
+      "status": "SCANNED",
+      "scanWave": "RFR-R5",
+      "scanDate": "2026-08-24",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_RFR_R5_ISOLATION_GUARANTEE_ADMISSION_WORKER_RETURN_2026-08-24.md",
+      "completionReviewPath": "docs/reviews/CVF_RFR_R5_ISOLATION_GUARANTEE_ADMISSION_COMPLETION_2026-08-24.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_RFR_R5_ISOLATION_GUARANTEE_ADMISSION_2026-08-24.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "ISOLATION_GUARANTEE_PROFILE_AND_REQUIREMENTS",
+        "FAIL_CLOSED_ADMISSION_AND_COMPLETE_EVIDENCE",
+        "WORKER_THREAD_ENVIRONMENT_BOUNDARY"
+      ],
+      "priorAbsorption": "RFR-R5 extends existing CVF Safety Runtime and Runtime Adapter Hub paths; no external corpus or direct-import lineage is claimed.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "physical containment guarantee - not claimed",
+        "host environment inheritance - removed from worker and child path",
+        "executor-forged isolation admission - overridden by canonical contract",
+        "provider or network invocation - not present"
+      ],
+      "nextScanRecommendation": "Reuse the RFR-R5 completion review and adversarial suites; rescan only when isolation dimensions, executor admission, or worker environment behavior changes."
     }
   ]
 }
