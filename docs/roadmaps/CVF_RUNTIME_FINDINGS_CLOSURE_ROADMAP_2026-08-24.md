@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_R7B_DISPATCHED_PENDING_WORKER_RETURN
+Status: ACTIVE_R7B_CLOSED_R7C_READY_FOR_DISPATCH
 
 docType: roadmap
 
@@ -65,7 +65,8 @@ open implementation tranches here.
 | R5 | R4 independently accepted | Safety Runtime 61/61, adapter focused 49/49, package 91/91, TypeScript and reviewer adversarial proof across all eight dimensions | F9 `CLOSED_PASS_BOUNDED` at `82a0073b2fca002fd7999ed70905166295946515` |
 | R6 | R5 independently accepted | complete finding matrix, negative suite, manifest reconciliation and reviewer gates | `AUDIT_COMPLETE_REMEDIATION_REQUIRED`: F3/F4/F7/F9 closed; F1/F2/F5/F6/F8/F10 retained with reason; roadmap closure withheld |
 | R7A | R6 audit accepted; operator approved recommended split | make all MCP production roots adopt canonical `cvf-guard-contract`; preserve MCP-local session phase without a replacement factory | `CLOSED_PASS_BOUNDED`: canonical roots adopted; self-attestation/action-label findings closed after one repair round; 777/780 package tests with only three R7B failures |
-| R7B | R7A independently accepted and material closure committed | repair optional-field composition seam while preserving strict fail-closed material-context validation | `DISPATCHED_PENDING_WORKER_RETURN`: exact-two implementation files plus one no-commit worker return |
+| R7B | R7A independently accepted and material closure committed | repair optional-field composition seam while preserving strict fail-closed material-context validation | `CLOSED_PASS_BOUNDED`: two true optional-field failures closed; Model Gateway 301/301; exact one stale positive-role composition test routed to R7C |
+| R7C | R7B independently accepted and material closure committed | reconcile the one stale real-engine positive-path role fixture with the accepted R7A truthful-action invariant | `READY_FOR_FRESH_TEST_ONLY_DISPATCH`: Guard Contract and runtime source remain forbidden |
 
 No tranche begins from worker assertion alone. Repair round three escalates to
 operator/design review instead of silently widening scope.
@@ -94,6 +95,12 @@ R7A material closure is committed at `1512374e8` and its continuity sync at
 `e66a21554`. The fresh R7B packet dated 2026-08-25 authorizes only the existing
 Model Gateway manifest source, its dedicated test and one no-commit return.
 The unchanged MCP composition proof is acceptance evidence, not worker scope.
+
+Independent R7B review found that only two of the three retained failures were
+caused by optional-own-`undefined`. The third test asks the canonical engine to
+ALLOW `AI_AGENT` execution, contradicting R7A's accepted truthful-action proof.
+R7B closes its validator owner bounded; R7C is a fresh test-only reconciliation
+and must not add `execute` to AI-agent authority or relabel the runtime action.
 
 ## Acceptance Criteria
 

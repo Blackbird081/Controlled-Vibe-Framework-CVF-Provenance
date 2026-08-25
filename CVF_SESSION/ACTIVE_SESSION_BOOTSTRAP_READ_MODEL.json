@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RFR_R7B_OPTIONAL_FIELD_COMPOSITION_SEAM_2026-08-25.md",
     "baselineSha256": "b8345fdaa9cf42d1b8df4032c711e01218a097b1340d9a7b2077da26b48fdf0c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R7B_OPTIONAL_FIELD_COMPOSITION_SEAM_2026-08-25.md",
-    "workOrderSha256": "8c4bfe98817cb5960eeb9da904434f632939e50cc9918eed3932cd471a60380d"
+    "workOrderSha256": "bd5c733439dd81255182fd49b292ad49ae32b92052b38b56579ec15b0dc14f18"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

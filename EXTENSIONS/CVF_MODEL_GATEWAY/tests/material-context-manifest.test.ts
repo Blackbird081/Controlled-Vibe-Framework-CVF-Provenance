@@ -275,6 +275,182 @@ describe("buildMaterialContextManifest", () => {
     expect(routingMismatch.ok).toBe(false);
   });
 
+  it("normalizes own systemPrompt: undefined to the same absence as omission", () => {
+    const omitted = buildMaterialContextManifest(makeRequest());
+    const ownUndefined = buildMaterialContextManifest(makeRequest({ systemPrompt: undefined }));
+    expect(omitted.ok).toBe(true);
+    expect(ownUndefined.ok).toBe(true);
+    if (!omitted.ok || !ownUndefined.ok) return;
+    const omittedEntry = omitted.manifest.entries.find((e) => e.contextClass === "systemPrompt")!;
+    const ownUndefinedEntry = ownUndefined.manifest.entries.find(
+      (e) => e.contextClass === "systemPrompt",
+    )!;
+    expect(ownUndefinedEntry.status).toBe("absent");
+    expect(ownUndefinedEntry.contentDigest).toBeNull();
+    expect(ownUndefinedEntry.status).toBe(omittedEntry.status);
+    expect(ownUndefinedEntry.contentDigest).toBe(omittedEntry.contentDigest);
+  });
+
+  it("normalizes own metadata: undefined to the same absence as omission", () => {
+    const omitted = buildMaterialContextManifest(makeRequest());
+    const ownUndefined = buildMaterialContextManifest(makeRequest({ metadata: undefined }));
+    expect(omitted.ok).toBe(true);
+    expect(ownUndefined.ok).toBe(true);
+    if (!omitted.ok || !ownUndefined.ok) return;
+    const ownUndefinedEntry = ownUndefined.manifest.entries.find(
+      (e) => e.contextClass === "metadata",
+    )!;
+    expect(ownUndefinedEntry.status).toBe("absent");
+    expect(ownUndefinedEntry.contentDigest).toBeNull();
+  });
+
+  it("normalizes own routing: undefined to the same absence as omission", () => {
+    // routing is optional at the field level even though its nested shape,
+    // when present, requires a matching traceId.
+    const request = makeRequest();
+    delete (request as unknown as Record<string, unknown>).routing;
+    (request as unknown as Record<string, unknown>).routing = undefined;
+    const result = buildMaterialContextManifest(request);
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    const routingEntry = result.manifest.entries.find((e) => e.contextClass === "routing")!;
+    expect(routingEntry.status).toBe("absent");
+    expect(routingEntry.contentDigest).toBeNull();
+  });
+
+  it("normalizes all three optional own-undefined fields together, matching full omission", () => {
+    const omittedRequest = makeRequest();
+    delete (omittedRequest as unknown as Record<string, unknown>).routing;
+    const omitted = buildMaterialContextManifest(omittedRequest);
+    const request = makeRequest();
+    (request as unknown as Record<string, unknown>).systemPrompt = undefined;
+    (request as unknown as Record<string, unknown>).metadata = undefined;
+    (request as unknown as Record<string, unknown>).routing = undefined;
+    const allOwnUndefined = buildMaterialContextManifest(request);
+    expect(omitted.ok).toBe(true);
+    expect(allOwnUndefined.ok).toBe(true);
+    if (!omitted.ok || !allOwnUndefined.ok) return;
+    for (const contextClass of ["systemPrompt", "metadata", "routing"] as const) {
+      const omittedEntry = omitted.manifest.entries.find((e) => e.contextClass === contextClass)!;
+      const ownUndefinedEntry = allOwnUndefined.manifest.entries.find(
+        (e) => e.contextClass === contextClass,
+      )!;
+      expect(ownUndefinedEntry.status).toBe(omittedEntry.status);
+      expect(ownUndefinedEntry.contentDigest).toBe(omittedEntry.contentDigest);
+    }
+  });
+
+  it("produces identical manifest and adapter-input digests for omission versus own-undefined", () => {
+    const omitted = buildMaterialContextManifest(makeRequest());
+    const request = makeRequest();
+    (request as unknown as Record<string, unknown>).systemPrompt = undefined;
+    (request as unknown as Record<string, unknown>).metadata = undefined;
+    const ownUndefined = buildMaterialContextManifest(request);
+    expect(omitted.ok).toBe(true);
+    expect(ownUndefined.ok).toBe(true);
+    if (!omitted.ok || !ownUndefined.ok) return;
+    expect(ownUndefined.manifest.adapterInputDigest).toBe(omitted.manifest.adapterInputDigest);
+    expect(ownUndefined.manifest.manifestDigest).toBe(omitted.manifest.manifestDigest);
+  });
+
+  it("still rejects required traceId supplied as an own undefined value", () => {
+    const request = makeRequest();
+    (request as unknown as Record<string, unknown>).traceId = undefined;
+    const result = buildMaterialContextManifest(request);
+    expect(result.ok).toBe(false);
+    expect(asFailure(result).detail).toContain("invalid_string_field:traceId");
+  });
+
+  it("still rejects required prompt supplied as an own undefined value", () => {
+    const request = makeRequest();
+    (request as unknown as Record<string, unknown>).prompt = undefined;
+    const result = buildMaterialContextManifest(request);
+    expect(result.ok).toBe(false);
+    expect(asFailure(result).detail).toContain("invalid_string_field:prompt");
+  });
+
+  it("still rejects required policy supplied as an own undefined value", () => {
+    // policy itself stays present (required fields never normalize an own
+    // `undefined` to absence); its own-undefined value then fails the nested
+    // trace-binding read against a non-object source.
+    const request = makeRequest();
+    (request as unknown as Record<string, unknown>).policy = undefined;
+    const result = buildMaterialContextManifest(request);
+    expect(result.ok).toBe(false);
+    expect(asFailure(result).detail).toContain("invalid_request_object");
+  });
+
+  it("still rejects a missing required descriptor the same way as before", () => {
+    const request = makeRequest();
+    delete (request as unknown as Record<string, unknown>).traceId;
+    const result = buildMaterialContextManifest(request);
+    expect(result.ok).toBe(false);
+    expect(asFailure(result).detail).toContain("missing_required_field:traceId");
+  });
+
+  it("still rejects required binding providerId/modelId supplied as own undefined values", () => {
+    const request = makeRequest();
+    const providerUndefined = buildBoundMaterialContextManifest(request, {
+      providerId: undefined as unknown as string,
+      modelId: "test-model",
+    });
+    const modelUndefined = buildBoundMaterialContextManifest(request, {
+      providerId: "test-provider",
+      modelId: undefined as unknown as string,
+    });
+    expect(providerUndefined.ok).toBe(false);
+    expect(modelUndefined.ok).toBe(false);
+    expect(asFailure(providerUndefined).detail).toContain("invalid_string_field:providerId");
+    expect(asFailure(modelUndefined).detail).toContain("invalid_string_field:modelId");
+  });
+
+  it("rejects an optional accessor returning undefined without invoking the getter", () => {
+    let getterCalls = 0;
+    const request = makeRequest();
+    Object.defineProperty(request, "systemPrompt", {
+      enumerable: true,
+      get() {
+        getterCalls += 1;
+        return undefined;
+      },
+    });
+    const result = buildMaterialContextManifest(request);
+    expect(result.ok).toBe(false);
+    expect(asFailure(result).detail).toContain("unsupported_accessor_field:systemPrompt");
+    expect(getterCalls).toBe(0);
+  });
+
+  it("still rejects optional null and wrong-type non-undefined systemPrompt values", () => {
+    const nullResult = buildMaterialContextManifest(
+      makeRequest({ systemPrompt: null as unknown as string }),
+    );
+    const numberResult = buildMaterialContextManifest(
+      makeRequest({ systemPrompt: 42 as unknown as string }),
+    );
+    expect(nullResult.ok).toBe(false);
+    expect(numberResult.ok).toBe(false);
+    expect(asFailure(nullResult).detail).toContain("invalid_string_field:systemPrompt");
+    expect(asFailure(numberResult).detail).toContain("invalid_string_field:systemPrompt");
+  });
+
+  it("still rejects hostile prototype-chain / inherited optional fields", () => {
+    const base = { systemPrompt: "inherited-should-not-be-admitted" };
+    const request = Object.create(base) as GatewayExecuteRequest;
+    Object.assign(request, {
+      traceId: TRACE_ID,
+      prompt: "Hello, world",
+      policy: { traceId: TRACE_ID, policyResult: "allow", reason: "test_allow" },
+      routing: {
+        traceId: TRACE_ID,
+        preferredProviderId: "test-provider",
+        requestedModelId: "test-model",
+      },
+    });
+    const result = buildMaterialContextManifest(request);
+    expect(result.ok).toBe(false);
+    expect(asFailure(result).detail).toContain("invalid_request_object");
+  });
+
   it("never contains raw prompt, system prompt, or metadata values in the serialized manifest", () => {
     const secretLikePrompt = "the actual raw prompt text should never appear";
     const request = makeRequest({

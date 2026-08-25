@@ -202,6 +202,14 @@ function readDataField(
   if (descriptor.get || descriptor.set || !("value" in descriptor)) {
     reject(`unsupported_accessor_field:${field}`);
   }
+  if (!required && descriptor.value === undefined) {
+    // An optional own data property explicitly set to `undefined` carries no
+    // material distinct from an omitted property; normalize both to the same
+    // explicit-absence representation. Required fields never take this path,
+    // so an own `undefined` required value still reaches present-value
+    // validation and fails it exactly as today.
+    return { present: false, value: undefined };
+  }
   return { present: true, value: descriptor.value };
 }
 

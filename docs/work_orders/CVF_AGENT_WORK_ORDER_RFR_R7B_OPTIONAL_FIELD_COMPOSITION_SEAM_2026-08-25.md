@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -174,7 +174,7 @@ read/test-only or reviewer-owned.
 | --- | --- | --- |
 | `EXTENSIONS/CVF_MODEL_GATEWAY/src/material-context-manifest.ts` | `d1e28b6e29373ac355887f1f3e4ad5d6a28c20406b18ee96b6f53b062f2eeb5c` | edit |
 | `EXTENSIONS/CVF_MODEL_GATEWAY/tests/material-context-manifest.test.ts` | `b6897be896961b8e65177f7f578f906f906e894283bb03fae53c125b19cc2e33` | edit |
-| `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-composition-proof.test.ts` | `52b00ddf27b0879cd523fe826eb0914482a374f65a7b6e92b3839dde98f7d994` | read/test only; must remain byte-identical |
+| `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-composition-proof.test.ts` | `52b00ddf27b0879cd523fe826eb0914482a374f65a7b6e92b3839dde98f7d994` | read/test only; MATCH required by recomputed SHA-256 |
 
 Hash drift before the worker's first edit is `BLOCKED_WITH_REASON`; do not
 silently adapt this packet to a different base.
@@ -349,7 +349,7 @@ Closure Package.
 Fulfillment is exact: the following required artifact manifest and proof
 manifest must reconcile without substitution.
 
-### Required Artifact Manifest
+## Required Artifact Manifest
 
 | Artifact | Required worker action | Final status |
 | --- | --- | --- |
@@ -383,6 +383,12 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | reviewerOwnedClosurePaths | worker return; this work order; roadmap; optional completion review; separately governed continuity |
 | closureOwner | current independent reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
+
+Reviewer closure result: implementation accepted bounded. Optional-own
+`undefined` normalization closes the two failures actually owned by this
+tranche. The remaining real-engine positive-path test uses `AI_AGENT` while
+expecting ALLOW, contradicting the accepted R7A `AI_AGENT` BLOCK / `OPERATOR`
+ALLOW invariant; it is routed to fresh test-only R7C authority.
 
 ## Review Gate
 
@@ -513,6 +519,32 @@ aggregate, relocation or index owner is created or moved.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance tranche; no public-sync action is authorized.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RFR_R7B_OPTIONAL_FIELD_COMPOSITION_SEAM_COMPLETION_2026-08-25.md` | reviewer verdict `CLOSED_PASS_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_RFR_R7B_OPTIONAL_FIELD_COMPOSITION_SEAM_WORKER_RETURN_2026-08-25.md` | worker block accepted as correct escalation; implementation accepted bounded | PASS |
+| Model Gateway proof | focused 71/71; package 301/301; TypeScript PASS | independent reviewer run | PASS |
+| MCP containment | focused 31/32; package 779/780; build PASS | exact one stale R7C fixture remains | PASS_BOUNDED |
+| Roadmap state | `docs/roadmaps/CVF_RUNTIME_FINDINGS_CLOSURE_ROADMAP_2026-08-24.md` | R7B closed; R7C ready for fresh dispatch | PASS |
+| Registry JSON | `CVF_SESSION/corpus_scan_registry/` owner surfaces | no registry mutation authorized or required for existing implementation paths | BLOCKED with reason |
+| Registry Markdown | `CVF_SESSION/corpus_scan_registry/` owner surfaces | no registry mutation authorized or required for existing implementation paths | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external evidence consumed | no external digest exists | N/A with reason |
+| System loop interlock | roadmap R7B row and R7C dependency | bounded residual feeds fresh test-only tranche | PASS |
+| Public export | this file | `DEFERRED_PRIVATE_ONLY` | PASS |
+| Session continuity | separately governed state/handoff sync after material commit | excluded from material closure commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| optional own undefined | exact omission-equivalent absence and digest | PASS |
+| required/accessor/prototype boundaries | remain fail-closed | PASS |
+| unchanged MCP proof | byte-identical; two R7B-owned failures close | PASS_BOUNDED |
+| truthful runtime roles | AI_AGENT/ORCHESTRATOR remain BLOCK; OPERATOR remains ALLOW | PASS |
 
 ## Claim Boundary
 
