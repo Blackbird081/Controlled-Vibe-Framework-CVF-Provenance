@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eafr_r5_dispatched_pending_worker_return",
+  "currentMode": "eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EAFR-R5 retrieval evidence semantics is source-verified and dispatched at material commit 32299b05212d21c464c9b49ff97c58b4ef8c1667 after pre-dispatch 78/78 and pre-commit 86/86 PASS. The next allowed move is exact eight-path no-commit worker execution and COMPLETE_PENDING_REVIEW return under the committed baseline/work order. R1C remains mandatory before R6; R6 and RFR final reconciliation remain parked. No live/provider/network, credential, graph-route, reinjection-expansion, deployment, public-sync or push authority is open. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EAFR-R5 retrieval evidence semantics is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 04a5cf40e3a396404b1aff0816534e4d8a6a1567 after bounded test repair, focused LPF 66/66, focused Web 20/20, safe LPF 1943/1943, reviewer-fast 65/65 and pre-commit 86/86 PASS. Six unintended provider calls caused by a contradictory required command are disclosed, excluded from acceptance and grant no repeat-live authority. The next allowed move is fresh EAFR-R1C source verification and dispatch authoring; R1C remains mandatory before R6. R6 and RFR final reconciliation remain parked. No live/provider/network, credential, graph-route, reinjection-expansion, deployment, public-sync or push authority is open. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

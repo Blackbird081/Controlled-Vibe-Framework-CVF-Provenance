@@ -8,7 +8,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
-- EAFR-R3 is independently accepted at `5f0f9f9106da627f8db5c5036c7fb82222f2e121`; R4 private provider-current claim reconciliation is independently accepted `CLOSED_PASS_BOUNDED` at `55d48516689e60332e7efd4e07286ab3c03c8336` after reviewer repair, focused 17/17, reviewer-fast 65/65 and pre-commit 86/86, with zero provider/live calls.
+- EAFR-R3 is independently accepted at `5f0f9f9106da627f8db5c5036c7fb82222f2e121`; R4 is accepted at `55d48516689e60332e7efd4e07286ab3c03c8336`; R5 is accepted `CLOSED_PASS_BOUNDED` at `04a5cf40e3a396404b1aff0816534e4d8a6a1567` after reviewer repair, focused LPF 66/66, focused Web 20/20, safe LPF 1943/1943, reviewer-fast 65/65 and pre-commit 86/86. Six unintended provider calls are disclosed, excluded and grant no repeat authority. R1C remains mandatory before R6.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -48,14 +48,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r5_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed exact eight-path EAFR-R5 work order without commit and return COMPLETE_PENDING_REVIEW; parked checkpoint=R1C before R6, RFR final reconciliation, R6 and all external effects.
+Startup acknowledged: current mode=`eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R1C source verification and dispatch authoring; parked checkpoint=R6, RFR final reconciliation and all external effects.
 
 ## Current Mode
-`eafr_r5_dispatched_pending_worker_return`
+`eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring`
 
 ## Purpose
 
-Preserve the source-verified R5 dispatch and allow only exact eight-path no-commit worker execution for retrieval evidence semantics. R1C remains mandatory before R6; R6 and all external effects remain parked.
+Preserve the reviewer-accepted bounded R5 closure and allow only fresh R1C source verification and dispatch authoring. R1C remains mandatory before R6; R6 and all external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -66,7 +66,7 @@ Preserve the source-verified R5 dispatch and allow only exact eight-path no-comm
 
 ## Latest Work / Changes
 
-- EAFR-R5 retrieval evidence semantics is source-verified and dispatched at `32299b05212d21c464c9b49ff97c58b4ef8c1667`. Pre-dispatch passed 78/78 and material pre-commit passed 86/86. The worker owns exactly eight paths, must not stage or commit, and must preserve lexical relevance as non-authority, finite `[0,1]` trust admission, summary-only readout, and all graph/adapter/reinjection boundaries.
+- EAFR-R5 retrieval evidence semantics is reviewer-accepted bounded at `04a5cf40e3a396404b1aff0816534e4d8a6a1567`. Reviewer repaired raw overflow transport proof; focused LPF 66/66, focused Web 20/20, safe LPF 1943/1943, reviewer-fast 65/65 and pre-commit 86/86 passed. Six unintended provider calls caused by a contradictory required command are incident-only, excluded from acceptance and grant no repeat authority.
 - External-agent protocol v1.1 remains live. Public-sync hardening through `7b7b00a76d73f44939c8b2bf987b15e5893ed5a0` projects a public-safe Guard barrel, rejects unowned pending artifacts, and pushed the independently accepted allowlisted surface to public `d1042ab0b2f044ca99fa3c812e38e33631b20869`; `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` was refreshed to that live SHA with receipt SHA-256 `1adb0bbdc397a97da178b8af6288a2380365e7256a7b32baf313a39567de9eb6` and zero packet-hash mismatches.
 - MCP-KAR-T0 classified all 993 files and closed `PROCEED_SELECTIVELY` at `79e588b0`; operator-selected T1 closed at `c179e656a` with a pure local ten-rule profile, stable reference, eight-path registry reconciliation, and negative tests. No upstream code ran and no runtime/package/public effect occurred.
 - MCP-KAR-T2 is reviewer-accepted `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at material commit `5de1ecc98bf2f6aefecb7dd1e7aa0c203c409ef6`. Fresh exact-identity searches found zero current non-test consumers, no current owner accepted schema responsibility, and all five repair gates failed; terminal decision is `STOP_NO_NAMED_CONSUMER`. No schema, source, runtime, package, provider/live, or external action occurred.
@@ -116,18 +116,18 @@ Preserve the source-verified R5 dispatch and allow only exact eight-path no-comm
 
 ## Current Authority
 
-Continuity parent anchor: `32299b052`.
+Continuity parent anchor: `04a5cf40e`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R5 retrieval evidence semantics `DISPATCH_READY` at `32299b052` |
+| authorityState | EAFR-R5 retrieval evidence semantics `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `04a5cf40e` |
 | baselinePath | `docs/baselines/CVF_GC018_EAFR_R5_RETRIEVAL_EVIDENCE_SEMANTICS_AND_ADMISSION_BOUNDARY_2026-08-25.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R5_RETRIEVAL_EVIDENCE_SEMANTICS_AND_ADMISSION_BOUNDARY_2026-08-25.md` |
-| nextAuthorityRequirement | exact eight-path no-commit worker return followed by independent review |
+| nextAuthorityRequirement | fresh source verification and dispatch authoring for mandatory EAFR-R1C |
 
 ## Closure Evidence
 
-- EAFR-R5 dispatch: paired baseline/work order committed at `32299b052`; source-verified semantics keep lexical match non-authoritative, require finite `[0,1]` trust for admitted evidence, reject malformed HTTP trust before workflow construction, and preserve summary-only plus graph/adapter/reinjection boundaries. Pre-dispatch 78/78 and pre-commit 86/86 passed.
+- EAFR-R5 completion: `docs/reviews/CVF_EAFR_R5_RETRIEVAL_EVIDENCE_SEMANTICS_AND_ADMISSION_BOUNDARY_COMPLETION_2026-08-25.md`; material commit `04a5cf40e`; accepted after raw-overflow test repair with LPF 66/66, Web 20/20, safe LPF 1943/1943, reviewer-fast 65/65 and pre-commit 86/86. Six unintended provider calls are disclosed and excluded; R1C remains mandatory before R6.
 - EAFR-R4 completion review: `docs/reviews/CVF_EAFR_R4_PRIVATE_PROVIDER_CURRENT_CLAIM_MANIFEST_RECONCILIATION_COMPLETION_2026-08-25.md`; material commit `55d485166`; accepted after disclosed reviewer repair with 29 classified entries, zero unmapped, 17/17 focused tests, reviewer-fast 65/65, pre-commit 86/86 and zero provider/live calls. R1C debt remains mandatory before R6.
 - RFR-R1/R2/R3/R4 are `CLOSED_PASS_BOUNDED` through `8ec399aa5`. RFR-R5 is independently `CLOSED_PASS_BOUNDED` at `82a0073b2fca002fd7999ed70905166295946515`; reviewer repaired hostile profile/requirement handling, platform binding, immutable snapshots, canonical receipt rebinding and worker/child environment isolation. Proof: Safety Runtime 61/61, adapter 49/49, package 91/91, strict TypeScript, reviewer-fast and pre-commit 86/86; zero provider/live calls.
 - Downstream P4-A1 closure: `ffe1c5b500f2f27f4166ded97423c4fc76354c67`.
@@ -167,7 +167,7 @@ Continuity parent anchor: `32299b052`.
 
 ## Next Allowed Move
 
-EAFR-R5 is dispatched at `32299b052`. Execute only the committed exact eight-path no-commit work order and return `COMPLETE_PENDING_REVIEW`; independent review remains required before closure. R1C remains mandatory before R6; R6 and RFR final reconciliation remain parked.
+EAFR-R5 is accepted bounded at `04a5cf40e`. The next allowed move is fresh EAFR-R1C source verification and dispatch authoring. R1C remains mandatory before R6; R6 and RFR final reconciliation remain parked, and the disclosed provider-call incident grants no repeat-live authority.
 
 ## Active Boundary
 
@@ -199,7 +199,7 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - EAFR-R5 Dispatch Continuity
+## Core Guard Self-Protection Authorization - EAFR-R5 Closure Continuity
 
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
@@ -211,7 +211,7 @@ Protected paths:
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record R5 dispatch at `32299b052`, release only exact eight-path no-commit worker execution, and preserve R1C/R6/RFR checkpoints. Do not alter state structure or open live/provider/network, credential, graph-route, reinjection-expansion, installation, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record R5 bounded closure at `04a5cf40e`, release only fresh R1C source verification and dispatch authoring, and preserve R6/RFR checkpoints. Record the six-call incident without granting repeat authority. Do not alter state structure or open live/provider/network, credential, graph-route, reinjection-expansion, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
