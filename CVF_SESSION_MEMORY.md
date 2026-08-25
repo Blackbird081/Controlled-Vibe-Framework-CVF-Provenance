@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r1d_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed exact four-path EAFR-R1D work order without commit and return COMPLETE_PENDING_REVIEW; parked checkpoint=BuildAuthority reconciliation, R6, RFR and all external effects.
+Startup acknowledged: current mode=`eafr_r1d_reviewer_accepted_closed_r6_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R6 source verification and dispatch authoring for terminal EAFR reconciliation; parked checkpoint=RFR and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r1d_dispatched_pending_worker_return`
-Current mode: `eafr_r1d_dispatched_pending_worker_return`
-Previous mode: `eafr_r1c_reviewer_accepted_closed_r1d_dispatch_authoring`
+Current mode marker: `eafr_r1d_reviewer_accepted_closed_r6_dispatch_authoring`
+Current mode: `eafr_r1d_reviewer_accepted_closed_r6_dispatch_authoring`
+Previous mode: `eafr_r1d_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `eafr_r1d_dispatched_pending_worker_return`; R1D is dispatched at `a8fb75235` after independent 8/8 hash verification, safe suite 3525 pass/2 named BuildAuthority failures, pre-dispatch 78/78 and pre-commit 86/86 PASS. Execute only the committed exact four-path no-commit work order and return `COMPLETE_PENDING_REVIEW`. BuildAuthority, R6, RFR, build, provider/live/network, credentials, dependency/lockfile/environment, production runtime, deployment, public sync and push remain parked.
+Mode: `eafr_r1d_reviewer_accepted_closed_r6_dispatch_authoring`; R1D is accepted bounded at `87d3ddd40`: both barriers pass, focused guard 6/6, TypeScript PASS, safe suite 3525 pass/2 named BuildAuthority failures, reviewer-fast 65/65 and pre-commit 86/86. One worker OpenAI call is disclosed and excluded; reviewer calls zero. Author only fresh R6 terminal-reconciliation authority next. RFR, build, provider/live, public sync, deployment and push remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

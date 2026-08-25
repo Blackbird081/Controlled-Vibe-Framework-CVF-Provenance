@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2326,
+  "stateOrder": 2327,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R1D non-live runner provider exclusion is source-verified and dispatched at material commit a8fb75235 after independent 8/8 hash verification, safe Web suite 3525 passed with two named BuildAuthority failures, pre-dispatch 78/78 and pre-commit 86/86 PASS. The next allowed move is exact four-path no-commit worker execution and COMPLETE_PENDING_REVIEW return under the committed baseline/work order. Provider/live/network, credentials, build, dependency/lockfile/environment, production runtime, public-sync, deployment and push are forbidden. BuildAuthority, R6 and RFR remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R1D is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 87d3ddd40 after selection and activation barriers passed, focused guard 6/6, TypeScript PASS, safe Web suite 3525 passed with two named BuildAuthority failures, reviewer-fast 65/65 and pre-commit 86/86. One worker OpenAI call is disclosed, excluded and grants no repeat-live authority; reviewer provider-call count is zero. The next allowed move is fresh EAFR-R6 source verification and dispatch authoring to reconcile all accepted closures, the BuildAuthority Web gap and all recorded provider-call incidents before any RFR resume decision. RFR, build, live/provider, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
