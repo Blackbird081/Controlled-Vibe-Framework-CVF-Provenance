@@ -48,14 +48,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r1d_reviewer_accepted_closed_r6_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R6 source verification and dispatch authoring for terminal EAFR reconciliation; parked checkpoint=RFR and all external effects.
+Startup acknowledged: current mode=`eafr_r1e_reviewer_accepted_closed_r6_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R6 source verification and dispatch authoring for terminal EAFR reconciliation; parked checkpoint=RFR and all external effects.
 
 ## Current Mode
-`eafr_r1d_reviewer_accepted_closed_r6_dispatch_authoring`
+`eafr_r1e_reviewer_accepted_closed_r6_dispatch_authoring`
 
 ## Purpose
 
-Preserve the reviewer-accepted bounded R1D closure and allow only fresh R6 source verification/dispatch authoring for terminal EAFR reconciliation. RFR and all external effects remain parked.
+Preserve the reviewer-accepted bounded R1E provider-execution authority closure and allow only fresh R6 source verification/dispatch authoring for terminal EAFR reconciliation. RFR and all external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -66,6 +66,7 @@ Preserve the reviewer-accepted bounded R1D closure and allow only fresh R6 sourc
 
 ## Latest Work / Changes
 
+- EAFR-R1E is reviewer-accepted `CLOSED_PASS_BOUNDED` at `8007e269f`. Worker/subagent provider execution defaults to `FORBIDDEN`; CVF-owned paths require an orchestrator-issued subject/delegation/provider/call/expiry-bound grant. Contract 42/42, Web 12/12, TypeScript, reviewer-fast 66/66 and pre-commit 87/87 pass with zero R1E provider calls. R6 source verification/dispatch authoring is next.
 - EAFR-R1D is reviewer-accepted `CLOSED_PASS_BOUNDED` at `87d3ddd40` after one disclosed guard repair. Selection and activation barriers pass; focused guard 6/6, TypeScript, safe suite 3525 pass/2 named BuildAuthority failures, reviewer-fast 65/65 and pre-commit 86/86 pass. One worker OpenAI call is incident-only; reviewer calls zero. R6 terminal-reconciliation dispatch authoring is next.
 - External-agent protocol v1.1 remains live. Public-sync hardening through `7b7b00a76d73f44939c8b2bf987b15e5893ed5a0` projects a public-safe Guard barrel, rejects unowned pending artifacts, and pushed the independently accepted allowlisted surface to public `d1042ab0b2f044ca99fa3c812e38e33631b20869`; `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` was refreshed to that live SHA with receipt SHA-256 `1adb0bbdc397a97da178b8af6288a2380365e7256a7b32baf313a39567de9eb6` and zero packet-hash mismatches.
 - MCP-KAR-T0 classified all 993 files and closed `PROCEED_SELECTIVELY` at `79e588b0`; operator-selected T1 closed at `c179e656a` with a pure local ten-rule profile, stable reference, eight-path registry reconciliation, and negative tests. No upstream code ran and no runtime/package/public effect occurred.
@@ -116,17 +117,18 @@ Preserve the reviewer-accepted bounded R1D closure and allow only fresh R6 sourc
 
 ## Current Authority
 
-Continuity parent anchor: `87d3ddd40`.
+Continuity parent anchor: `8007e269f`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R1D non-live runner provider exclusion `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `87d3ddd40` |
+| authorityState | EAFR-R1E orchestrator provider-execution authority `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `8007e269f` |
 | baselinePath | `docs/baselines/CVF_GC018_EAFR_R1D_NON_LIVE_RUNNER_PROVIDER_EXCLUSION_2026-08-25.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R1D_NON_LIVE_RUNNER_PROVIDER_EXCLUSION_2026-08-25.md` |
 | nextAuthorityRequirement | fresh source verification and dispatch authoring for EAFR-R6 terminal reconciliation |
 
 ## Closure Evidence
 
+- EAFR-R1E completion: `docs/reviews/CVF_EAFR_R1E_ORCHESTRATOR_PROVIDER_EXECUTION_AUTHORITY_COMPLETION_2026-08-25.md`; material commit `8007e269f`; default deny, bounded grant and pre-network guard accepted with 42/42 plus 12/12 focused tests, reviewer-fast 66/66, pre-commit 87/87 and zero provider calls.
 - EAFR-R1D completion: `docs/reviews/CVF_EAFR_R1D_NON_LIVE_RUNNER_PROVIDER_EXCLUSION_COMPLETION_2026-08-25.md`; material commit `87d3ddd40`; both barriers pass, focused guard 6/6, TypeScript green, safe suite 3525 pass/2 named fail. One worker OpenAI call is disclosed and excluded. R6 must reconcile BuildAuthority and all incident records.
 - EAFR-R4 completion review: `docs/reviews/CVF_EAFR_R4_PRIVATE_PROVIDER_CURRENT_CLAIM_MANIFEST_RECONCILIATION_COMPLETION_2026-08-25.md`; material commit `55d485166`; accepted after disclosed reviewer repair with 29 classified entries, zero unmapped, 17/17 focused tests, reviewer-fast 65/65, pre-commit 86/86 and zero provider/live calls. R1C debt remains mandatory before R6.
 - RFR-R1/R2/R3/R4 are `CLOSED_PASS_BOUNDED` through `8ec399aa5`. RFR-R5 is independently `CLOSED_PASS_BOUNDED` at `82a0073b2fca002fd7999ed70905166295946515`; reviewer repaired hostile profile/requirement handling, platform binding, immutable snapshots, canonical receipt rebinding and worker/child environment isolation. Proof: Safety Runtime 61/61, adapter 49/49, package 91/91, strict TypeScript, reviewer-fast and pre-commit 86/86; zero provider/live calls.
@@ -167,7 +169,7 @@ Continuity parent anchor: `87d3ddd40`.
 
 ## Next Allowed Move
 
-EAFR-R1D is accepted bounded at `87d3ddd40`. The next allowed move is fresh EAFR-R6 source verification and dispatch authoring to reconcile accepted closures, BuildAuthority and all provider-call incidents before deciding whether RFR may resume. RFR and all external effects remain parked.
+EAFR-R1E is accepted bounded at `8007e269f`. The next allowed move is fresh EAFR-R6 source verification and dispatch authoring to reconcile accepted closures, BuildAuthority and all provider-call incidents before deciding whether RFR may resume. RFR and all external effects remain parked.
 
 ## Active Boundary
 
@@ -199,19 +201,13 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - EAFR-R1D Closure Continuity
+## Core Guard Self-Protection Authorization - EAFR-R1E Closure Continuity
 
-Protected paths:
-- `AGENT_HANDOFF_V59_2026-08-11.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION_MEMORY.md`
+Protected paths: `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR1EOrchestratorProviderExecutionAuthorityClosure20260825.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record R1D bounded closure at `87d3ddd40`, release only fresh R6 source verification/dispatch authoring, and preserve the RFR checkpoint. Record the worker OpenAI call without repeat authority. Do not alter state structure or open build, live/provider/network, credential, production-runtime, installation, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record R1E bounded closure at `8007e269f`, release only fresh R6 source verification/dispatch authoring, and preserve the RFR checkpoint. Record the new default-deny provider-execution grant rule without opening provider authority. Do not alter state structure or open build, ungranted live/provider/network, credential, production-runtime, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 

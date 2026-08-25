@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2327,
+  "stateOrder": 2328,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R1D is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 87d3ddd40 after selection and activation barriers passed, focused guard 6/6, TypeScript PASS, safe Web suite 3525 passed with two named BuildAuthority failures, reviewer-fast 65/65 and pre-commit 86/86. One worker OpenAI call is disclosed, excluded and grants no repeat-live authority; reviewer provider-call count is zero. The next allowed move is fresh EAFR-R6 source verification and dispatch authoring to reconcile all accepted closures, the BuildAuthority Web gap and all recorded provider-call incidents before any RFR resume decision. RFR, build, live/provider, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R1E is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 8007e269f. Worker/subagent provider execution now defaults to FORBIDDEN and requires an orchestrator-issued subject/delegation/provider/call/expiry-bound grant on CVF-owned paths; contract 42/42, Web 12/12, reviewer-fast 66/66 and pre-commit 87/87 passed with zero R1E provider calls. The next allowed move is fresh EAFR-R6 source verification and dispatch authoring to reconcile all accepted closures, the BuildAuthority Web gap and all recorded provider-call incidents before any RFR resume decision. RFR, build, ungranted live/provider, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

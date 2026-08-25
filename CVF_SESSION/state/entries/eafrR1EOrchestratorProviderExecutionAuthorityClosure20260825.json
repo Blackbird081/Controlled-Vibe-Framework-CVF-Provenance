@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2327,
+  "stateKey": "eafrR1EOrchestratorProviderExecutionAuthorityClosure20260825",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED",
+    "materialCommit": "8007e269f",
+    "completionReview": "docs/reviews/CVF_EAFR_R1E_ORCHESTRATOR_PROVIDER_EXECUTION_AUTHORITY_COMPLETION_2026-08-25.md",
+    "roadmap": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+    "providerExecutionDefault": "FORBIDDEN",
+    "grantIssuer": "ORCHESTRATOR",
+    "proof": "control-plane 42/42; Web 12/12; TypeScript PASS; provider checker 4/4; reviewer-fast 66/66; pre-commit 87/87; zero provider calls",
+    "nextAllowedMove": "Fresh EAFR-R6 source verification and dispatch authoring only.",
+    "claimBoundary": "CVF-owned delegation and provider/test paths only; no universal host firewall claim and no ungranted provider/live, build, public-sync, deployment or push authority."
+  }
+}
