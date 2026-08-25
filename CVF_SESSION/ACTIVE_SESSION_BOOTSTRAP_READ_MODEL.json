@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "runtime_findings_remediation_r7b_closed_r7c_dispatch_preparation",
+  "currentMode": "runtime_findings_remediation_r7c_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "RFR-R7B optional-field composition repair is independently accepted CLOSED_PASS_BOUNDED and materially committed at 79ca7e542. Model Gateway passes 301/301 and two causally related MCP failures are closed; MCP remains 779/780 because one positive real-engine test uses AI_AGENT while expecting ALLOW, contradicting accepted R7A semantics. Next allowed move is a fresh test-only R7C packet that reconciles that fixture using an already authorized positive-path role while forbidding Guard Contract, authority matrix, action-label and runtime-source changes. Installation, provider/live/network, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "RFR-R7C truthful-role composition proof is dispatched at material commit 3f25dc0f1 with pre-dispatch 78/78 and pre-commit 86/86 PASS. The operator may copy docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_2026-08-25.md to one WORKER_MUST_NOT_COMMIT test-only worker. Worker scope is exactly one MCP composition test plus docs/reviews/CVF_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_WORKER_RETURN_2026-08-25.md. Production source, Guard Contract, authority matrix, action labels, Model Gateway, installation, provider/live/network, credentials, deployment, public sync and push remain unauthorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RFR_R7B_OPTIONAL_FIELD_COMPOSITION_SEAM_2026-08-25.md",
-    "baselineSha256": "b8345fdaa9cf42d1b8df4032c711e01218a097b1340d9a7b2077da26b48fdf0c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R7B_OPTIONAL_FIELD_COMPOSITION_SEAM_2026-08-25.md",
-    "workOrderSha256": "bd5c733439dd81255182fd49b292ad49ae32b92052b38b56579ec15b0dc14f18"
+    "baselinePath": "docs/baselines/CVF_GC018_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_2026-08-25.md",
+    "baselineSha256": "deafa6a20b9d45c8a29191b74994efd343d7204152e6582aee89e7f8b4f88652",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_2026-08-25.md",
+    "workOrderSha256": "884f00fa0648e4e8924a28ef245b5e3ff791a1c1f9c765673c567ecca0eea255"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
