@@ -6,6 +6,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
+- Current EAFR archive-hygiene commit: `0fcc1dc20fea066fa7c123b9566c60ae0345e291`; historical advisory bytes are retained under `docs/reviews/archive/` with `.md.txt` suffix and remain non-authoritative.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -210,7 +211,7 @@ Protected paths:
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record committed RFR-R7C bounded closure at `92b7d6ec6`, exact deterministic proof and the documentation-only final-reconciliation next move. Do not alter state structure or open production/Guard Contract/runtime authority, installation, provider/live/network, credential, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record archive hygiene at `0fcc1dc20` without changing the current mode or next-move authority. Do not alter state structure or open production/Guard Contract/runtime authority, installation, provider/live/network, credential, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
