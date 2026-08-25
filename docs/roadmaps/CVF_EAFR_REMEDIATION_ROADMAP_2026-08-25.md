@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R2_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_R3_READY_FOR_DISPATCH_AUTHORING
+Status: ACTIVE_R3_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_R4_READY_FOR_DISPATCH_AUTHORING
 
 Date: 2026-08-25
 
@@ -55,7 +55,7 @@ its own work.
 | EAFR-R1A | make the package non-live test runner exclude both `.live.test.ts` and `.live.test.tsx`, then reconcile the R1 incident | R1 implementation accepted | REVIEWER_ACCEPTED_COMPLETE_BOUNDED at `ef142bfb2` |
 | EAFR-R1B | adjudicate exact execution-base variance against the parent R1 acceptance authority | R1A accepted and prior A/B evidence committed | REVIEWER_ACCEPTED_FAIL_CLOSED_ADJUDICATION at `fc10c8e65`; subsequent explicit operator waiver closes R1 without changing R1B's evidence finding |
 | EAFR-R2 | make durable-memory HTTP writes and authority inputs fail closed | R1 bounded waiver closure, R1A accepted, and R1B adjudication accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; 26/26 focused; package/typecheck debt remains R1C-owned |
-| EAFR-R3 | reconcile the memory-plane map to accepted as-built behavior | R2 accepted | REQUIRED_NEXT_DISPATCH_AUTHORING |
+| EAFR-R3 | reconcile the memory-plane map to accepted as-built behavior | R2 accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; 46/46 focused; worker-return fast and reviewer-fast 65/65 PASS |
 | EAFR-R4 | replace partial provider-current claims with a complete private manifest | R3 accepted | HOLD_DEPENDENCY |
 | EAFR-R5 | decide and prove retrieval evidence semantics without weakening admission | R4 accepted | HOLD_DEPENDENCY |
 | EAFR-R1C | repair or freshly adjudicate the waived typecheck, full non-live-suite, and build debt | explicit R1 waiver | HOLD_UNTIL_BEFORE_R6 |
@@ -111,12 +111,12 @@ and a final reconciliation before the parked checkpoint is reconsidered.
 
 ## Current Runtime Freshness Verification
 
-Current source was independently reviewed on 2026-08-25 after R2 worker return.
-The memory-write route now requires finite `[0,1]` provenance, binds session or
-verified service-token identity and resolved role before store construction,
-and denies false or missing caller policy intent. This is local source/test
-acceptance only; the roadmap makes no deployment, exposure, live-provider, or
-production claim.
+Current source was independently reviewed on 2026-08-25 after R3 worker return.
+The Memory Plane map now records the bounded local AIF execute-request path,
+execute-route durable read and successful-output write, and authenticated HTTP
+durable write while preserving configuration, readout, MPI-T2, federated and
+adapter boundaries. This is local source/test acceptance only; the roadmap
+makes no deployment, exposure, live-provider, or production claim.
 
 ## Checker Source Read-Ahead Block
 
@@ -144,11 +144,11 @@ any runtime behavior.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | EAFR tranche packets | R1/R1A/R1B historical packets and R2 dispatch committed | PASS |
-| Completion or reviewer artifact | R2 completion review | reviewer-accepted bounded closure recorded | PASS |
-| Roadmap state | this file | R2 accepted bounded; R3 ready only for fresh dispatch authoring | PASS |
+| Work order status | EAFR tranche packets | R1-R3 committed dispatch authority | PASS |
+| Completion or reviewer artifact | R3 completion review | reviewer-accepted bounded closure recorded | PASS |
+| Roadmap state | this file | R3 accepted bounded; R4 ready only for fresh dispatch authoring | PASS |
 | Registry JSON | N/A with reason: no registry mutation | no applicability | BLOCKED |
 | Registry Markdown | N/A with reason: no registry projection | no applicability | BLOCKED |
 | External evidence digest | archived corrected external report | input only, not authority | N/A with reason |
-| System loop interlock | R1 -> R2; R1C -> R6 | fail-closed dependencies explicit | PASS |
+| System loop interlock | R3 -> R4; R1C -> R6 | fail-closed dependencies explicit | PASS |
 | Session continuity | separate post-material sync | required after material commit | PASS |
