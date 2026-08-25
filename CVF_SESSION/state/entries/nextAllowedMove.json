@@ -1,5 +1,5 @@
 {
   "stateOrder": 2318,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R1A is independently closed bounded at ef142bfb2 after exact static 312/0 proof and one disclosed reviewer repair. EAFR-R1 remains accepted but blocked because its literal full-suite, typecheck and build criteria are non-green despite exact pre-existing variance. Author and commit a documentation-only EAFR-R1B variance-authority adjudication packet before R2. EAFR-R2 through R6 and RFR final reconciliation remain parked. No repeat-live, provider/network, credential, deployment, public-sync, push or worker commit authority is open. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R1B documentation-only variance-authority adjudication is dispatched at 8fd5fa346. Delegate exactly that packet to a no-commit worker and await its one-path return. R1 remains accepted but blocked; R1A is closed bounded at ef142bfb2. EAFR-R2 through R6 and RFR final reconciliation remain parked. No tests/build, environment or credential access, repeat-live, provider/network, deployment, public-sync, push or worker commit authority is open. Latest finalized numbered LHW wave remains LHW24."
 }

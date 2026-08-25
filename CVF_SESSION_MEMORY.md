@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r1b_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and commit documentation-only EAFR-R1B variance-authority adjudication packet; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, repeat-live/provider/network, credentials, installation, deployment, public sync and push.
+Startup acknowledged: current mode=`eafr_r1b_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegate committed EAFR-R1B packet at 8fd5fa346 to its no-commit documentation worker and await return; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, tests/build, repeat-live/provider/network, credentials, installation, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `eafr_r1b_dispatch_authoring`
-Current mode: `eafr_r1b_dispatch_authoring`
+Current mode marker: `eafr_r1b_dispatched_pending_worker_return`
+Current mode: `eafr_r1b_dispatched_pending_worker_return`
 Previous mode: `runtime_findings_remediation_r7c_closed_final_reconciliation_preparation`
 
 ## Next Allowed Move
 
-Mode: `eafr_r1b_dispatch_authoring`; EAFR-R1A is independently closed bounded at `ef142bfb2`, while R1 remains accepted but blocked on literal full-suite/typecheck/build criteria despite exact pre-existing variance. Author and commit only a documentation-only R1B authority adjudication packet before R2. RFR final reconciliation and EAFR-R2 through R6 remain parked; repeat-live/provider/network, credentials, deployment, public sync, push and worker commit remain unauthorized.
+Mode: `eafr_r1b_dispatched_pending_worker_return`; documentation-only R1B is committed at `8fd5fa346`. Delegate exactly that packet to its no-commit worker and await the one-path return. R1 remains blocked and R1A remains closed bounded at `ef142bfb2`. RFR final reconciliation and EAFR-R2 through R6 remain parked; tests/build, environment/credential access, repeat-live/provider/network, deployment, public sync, push and worker commit remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
