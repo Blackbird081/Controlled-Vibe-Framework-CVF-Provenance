@@ -83,10 +83,10 @@ describe("package.json test-script live-test extension boundary (EAFR-R1A)", () 
     );
   });
 
-  it("test:live uses explicit live mode and a working live-test filter", () => {
+  it("test:live is list-only and cannot execute provider-capable tests", () => {
     const pkg = readPackageJson();
     expect(pkg.scripts["test:live"]).toBe(
-      "vitest run --mode live live.test --fileParallelism=false"
+      "vitest list --mode live live.test --filesOnly"
     );
   });
 

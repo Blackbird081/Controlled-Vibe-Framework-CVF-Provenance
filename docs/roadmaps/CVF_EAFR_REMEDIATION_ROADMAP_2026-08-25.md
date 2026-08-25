@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R1D_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_R6_READY_FOR_SOURCE_VERIFICATION
+Status: ACTIVE_R1E_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_R6_READY_FOR_SOURCE_VERIFICATION
 
 Date: 2026-08-25
 
@@ -60,7 +60,8 @@ its own work.
 | EAFR-R5 | decide and prove retrieval evidence semantics without weakening admission | R4 accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; focused LPF 66/66 and Web 20/20; safe LPF package 1943/1943; six unintended provider calls disclosed and excluded from acceptance |
 | EAFR-R1C | repair or freshly adjudicate the waived typecheck, full non-live-suite, and build debt | explicit R1 waiver and R5 accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; typecheck green; safe suite 3525 pass/2 named BuildAuthority failures; build freshly blocked; five OpenAI calls disclosed and excluded |
 | EAFR-R1D | make the cvf-web non-live runner exclude ambient-key real-provider integration tests and reconcile the R1C five-call incident | R1C accepted bounded | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; selection and activation barriers pass; focused guard 6/6; safe suite 3525 pass/2 named fail; one worker OpenAI call disclosed and excluded |
-| EAFR-R6 | independently reconcile closures, including the BuildAuthority Web gap and provider-call incidents, and decide whether parked RFR may resume | R1/R1A/R1B, R2-R5, R1C and R1D accepted | READY_FOR_FRESH_SOURCE_VERIFICATION_AND_DISPATCH_AUTHORING |
+| EAFR-R1E | separate live-test selection from provider execution authority and make every worker/subagent provider call require an orchestrator-issued bounded grant | second accidental worker provider call after R1D | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; default deny contract, pre-network guard, list-only live script, 42/42 plus 12/12 focused tests and reviewer-fast 66/66 PASS; zero provider calls |
+| EAFR-R6 | independently reconcile closures, including the BuildAuthority Web gap and provider-call incidents, and decide whether parked RFR may resume | R1/R1A/R1B, R2-R5, R1C, R1D and R1E accepted | READY_FOR_FRESH_SOURCE_VERIFICATION_AND_DISPATCH_AUTHORING_AFTER_CONTINUITY_SYNC |
 
 ## Design Controls
 
@@ -70,6 +71,9 @@ its own work.
 - A worker never closes its own tranche and never commits in this roadmap.
 - Provider/live proof is used only when a later work order explicitly requires
   it and carries diagnostic, secret, quota, and external-effect controls.
+- Worker/subagent provider execution defaults to `FORBIDDEN`; API keys and
+  live-test selection are not authority. Any exception requires a bounded,
+  expiring grant issued by the orchestrator and enforced before network I/O.
 - Documentation is updated only after corresponding runtime behavior is
   accepted; documentation never substitutes for runtime proof.
 
@@ -123,6 +127,13 @@ are disclosed, excluded and grant no repeat-live authority. This is bounded
 local source/test acceptance, not provider, build, deployment or production
 proof.
 
+R1E now separates live selection from provider execution. Worker/subagent
+provider authority defaults to forbidden, and CVF-owned provider traffic needs
+an orchestrator-issued subject/delegation/provider/call/expiry-bound grant.
+Focused contract and web tests, TypeScript, list-only discovery and the 66-check
+reviewer-fast gate pass with zero R1E provider calls. This remains bounded to
+CVF-owned execution paths and is not universal host network isolation.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
@@ -151,9 +162,9 @@ any runtime behavior.
 | --- | --- | --- | --- |
 | Work order status | EAFR tranche packets | R1-R5 and R1C committed dispatch authority | PASS |
 | Completion or reviewer artifact | R1C completion review | bounded closure, named residuals and incident recorded | PASS |
-| Roadmap state | this file | R1C accepted bounded; R1D ready only for fresh dispatch authoring | PASS |
+| Roadmap state | this file | R1E accepted bounded; R6 ready after continuity sync | PASS |
 | Registry JSON | system-chain map | `ARCHITECTURE.md` fingerprint refreshed; freshness CURRENT | PASS |
 | Registry Markdown | N/A with reason: no registry projection | no applicability | BLOCKED |
 | External evidence digest | archived corrected external report | input only, not authority | N/A with reason |
-| System loop interlock | R1C -> R1D -> R6 | fail-closed dependencies explicit | PASS |
+| System loop interlock | R1D incident -> R1E authority control -> R6 | fail-closed dependencies explicit | PASS |
 | Session continuity | separate post-material sync | required after material commit | PASS |

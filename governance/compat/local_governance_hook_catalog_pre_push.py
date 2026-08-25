@@ -4,6 +4,10 @@
 from __future__ import annotations
 
 PRE_PUSH_CHECKS: list[tuple[str, list[str]]] = [
+    (
+        "subagent provider execution authority",
+        ["python", "governance/compat/check_subagent_provider_execution_authority.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
         (
             "closure packaging preflight",
             ["python", "governance/compat/check_closure_packaging_preflight.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],

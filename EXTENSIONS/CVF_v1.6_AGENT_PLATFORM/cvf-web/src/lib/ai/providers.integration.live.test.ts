@@ -11,18 +11,21 @@ const openaiKey = process.env.OPENAI_API_KEY;
 const geminiKey = process.env.GOOGLE_AI_API_KEY;
 const claudeKey = process.env.ANTHROPIC_API_KEY;
 
-// EAFR-R1D activation barrier. These cases perform real, billable provider
-// requests. An available API key is NOT sufficient to activate them: the shared
-// test setup loads `.env.local` into `process.env`, so a key is present in
-// ordinary local runs without anyone intending live traffic. Activation
-// therefore requires an explicit opt-in that no default run sets. When the
-// opt-in is absent the cases skip; they never fail for lack of it.
-const liveProviderCallsAllowed = process.env.CVF_ALLOW_LIVE_TESTS === '1';
+// Selection is not execution authority. Even under `--mode live`, provider
+// cases skip unless an orchestrator injects the complete grant envelope. The
+// shared fetch guard independently validates every binding and call budget
+// before network traffic.
+const providerExecutionGrantPresent = Boolean(
+    process.env.CVF_PROVIDER_EXECUTION_GRANT_JSON &&
+    process.env.CVF_PROVIDER_EXECUTION_GRANT_ID &&
+    process.env.CVF_AGENT_ID &&
+    process.env.CVF_DELEGATION_ID
+);
 
 describe('AI provider integration (real)', () => {
-    const testOpenAI = liveProviderCallsAllowed && openaiKey ? it : it.skip;
-    const testGemini = liveProviderCallsAllowed && geminiKey ? it : it.skip;
-    const testClaude = liveProviderCallsAllowed && claudeKey ? it : it.skip;
+    const testOpenAI = providerExecutionGrantPresent && openaiKey ? it : it.skip;
+    const testGemini = providerExecutionGrantPresent && geminiKey ? it : it.skip;
+    const testClaude = providerExecutionGrantPresent && claudeKey ? it : it.skip;
 
     testOpenAI('executes OpenAI provider', { timeout: 60000 }, async () => {
         const result = await executeAI('openai', openaiKey as string, prompt, options);

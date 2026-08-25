@@ -14,7 +14,7 @@
     "test": "vitest",
     "test:run": "vitest run --exclude \"src/**/*.live.test.ts\" --exclude \"src/**/*.live.test.tsx\"",
     "test:coverage": "vitest run --coverage --exclude \"src/**/*.live.test.ts\" --exclude \"src/**/*.live.test.tsx\"",
-    "test:live": "vitest run --mode live live.test --fileParallelism=false",
+    "test:live": "vitest list --mode live live.test --filesOnly",
     "test:e2e": "playwright test"
   },
   "dependencies": {

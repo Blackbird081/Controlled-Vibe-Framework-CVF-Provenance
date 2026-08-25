@@ -17,6 +17,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
         ),
         (
+            "subagent provider execution authority",
+            ["python", "governance/compat/check_subagent_provider_execution_authority.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "task-proportional governance shadow route",
             ["python", "governance/compat/check_task_governance_route.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

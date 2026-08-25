@@ -64,6 +64,10 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             ("python", "governance/compat/check_core_guard_self_protection.py", "--base", base, "--head", head, "--enforce"),
         ),
         GateCommand(
+            "subagent provider execution authority",
+            ("python", "governance/compat/check_subagent_provider_execution_authority.py", "--base", base, "--head", head, "--enforce"),
+        ),
+        GateCommand(
             "task-proportional governance shadow route",
             ("python", "governance/compat/check_task_governance_route.py", "--base", base, "--head", head, "--enforce"),
         ),
