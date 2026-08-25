@@ -48,14 +48,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R7 source verification and dispatch authoring only; parked checkpoint=RFR and all external effects.
+Startup acknowledged: current mode=`eafr_r7_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=bounded no-commit EAFR-R7 worker execution followed by independent review; parked checkpoint=RFR, provider/live/network, build, BuildAuthority repair and all external effects.
 
 ## Current Mode
-`eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring`
+`eafr_r7_dispatched_pending_worker_return`
 
 ## Purpose
 
-Preserve the accepted blocked R6 closure and allow only fresh R7 source verification/dispatch authoring. RFR and all external effects remain parked.
+Preserve the accepted blocked R6 closure and the committed R7 worker dispatch. Allow only bounded no-commit R7 execution followed by independent review. RFR and all external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
