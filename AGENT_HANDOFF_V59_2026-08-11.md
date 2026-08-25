@@ -6,7 +6,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
-- EAFR-R1 dispatch `4c5040573`, Amendment 1 `742b1acef`, accepted material with blocked closure `bb49266fd`, and R1A repair dispatch `6c4ce68f2`; delegate only that no-commit packet.
+- EAFR-R1 accepted material remains blocked at `bb49266fd`; R1A non-live runner repair is independently closed bounded at `ef142bfb2`; author only the documentation-only R1B variance-authority adjudication packet next.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -46,14 +46,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r1a_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegate committed EAFR-R1A packet at 6c4ce68f2 to its no-commit worker and await return; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, repeat-live/provider/network, credentials, installation, deployment, public sync and push.
+Startup acknowledged: current mode=`eafr_r1b_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and commit documentation-only EAFR-R1B variance-authority adjudication packet; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, repeat-live/provider/network, credentials, installation, deployment, public sync and push.
 
 ## Current Mode
-`eafr_r1a_dispatched_pending_worker_return`
+`eafr_r1b_dispatch_authoring`
 
 ## Purpose
 
-Preserve bounded RFR-R7C closure while its final reconciliation remains parked, and route only the committed EAFR-R1A no-commit repair packet. All later EAFR tranches and external effects remain parked.
+Preserve bounded RFR-R7C closure while its final reconciliation remains parked, record R1A bounded closure, and author only the documentation-only R1B variance-authority adjudication packet. All later EAFR tranches and external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -167,7 +167,7 @@ Continuity parent anchor: `92b7d6ec6`.
 
 ## Next Allowed Move
 
-EAFR-R1 implementation is accepted at `bb49266fd`, but closure is blocked by the non-live runner `.tsx` activation incident. R1A dispatch is committed at `6c4ce68f2`; delegate exactly that packet to its no-commit worker and await return. R2-R6 and RFR final reconciliation remain parked.
+EAFR-R1A is independently closed bounded at `ef142bfb2`; R1 remains accepted but blocked because its literal full-suite/typecheck/build criteria are non-green despite exact pre-existing variance. Author and commit only the documentation-only R1B authority adjudication packet before R2. R2-R6 and RFR final reconciliation remain parked.
 
 ## Active Boundary
 
@@ -211,7 +211,7 @@ Protected paths:
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record committed EAFR-R1A dispatch at `6c4ce68f2`, update current mode and next move to its no-commit worker return, and preserve the parked RFR/R2-R6 checkpoints. Do not alter state structure or open repeat-live/provider/network, credentials, installation, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record R1A bounded closure at `ef142bfb2`, update current mode and next move to documentation-only R1B dispatch authoring, and preserve the parked RFR/R2-R6 checkpoints. Do not alter state structure or open repeat-live/provider/network, credentials, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 

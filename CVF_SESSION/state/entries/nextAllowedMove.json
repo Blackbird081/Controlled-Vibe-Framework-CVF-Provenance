@@ -1,5 +1,5 @@
 {
   "stateOrder": 2318,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R1 implementation is reviewer-accepted but closure remains blocked at material commit bb49266fd because the package non-live runner activated a tracked .live.test.tsx Alibaba test. EAFR-R1A dispatch is committed at 6c4ce68f2; delegate exactly that packet to a no-commit worker and await its return. EAFR-R2 through R6 and RFR final reconciliation remain parked. No repeat-live, provider/network, credential, deployment, public-sync, push or worker commit authority is open. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R1A is independently closed bounded at ef142bfb2 after exact static 312/0 proof and one disclosed reviewer repair. EAFR-R1 remains accepted but blocked because its literal full-suite, typecheck and build criteria are non-green despite exact pre-existing variance. Author and commit a documentation-only EAFR-R1B variance-authority adjudication packet before R2. EAFR-R2 through R6 and RFR final reconciliation remain parked. No repeat-live, provider/network, credential, deployment, public-sync, push or worker commit authority is open. Latest finalized numbered LHW wave remains LHW24."
 }
