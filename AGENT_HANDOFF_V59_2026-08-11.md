@@ -66,6 +66,7 @@ Preserve the accepted blocked R6 closure and the committed R7 worker dispatch. A
 
 ## Latest Work / Changes
 
+- EAFR-R7 dispatch handoff mode alignment was repaired at `eaa35a7b7`; its parent is dispatch continuity `b58f9b6cb`. This is continuity-only and changes no R7 evidence or authority.
 - EAFR-R6 is reviewer-accepted `CLOSED_BLOCKED` at `2bc2b2d0d`. Four P1 provider-authority bypass classes remain; full Web proof is 3511 pass/22 named fail, focused 38/38, reviewer-fast 66/66 and pre-commit 87/87 with zero R6 provider calls. RFR remains parked; R7 dispatch authoring is next.
 - EAFR-R1D is reviewer-accepted `CLOSED_PASS_BOUNDED` at `87d3ddd40` after one disclosed guard repair. Selection and activation barriers pass; focused guard 6/6, TypeScript, safe suite 3525 pass/2 named BuildAuthority failures, reviewer-fast 65/65 and pre-commit 86/86 pass. One worker OpenAI call is incident-only; reviewer calls zero. R6 terminal-reconciliation dispatch authoring is next.
 - External-agent protocol v1.1 remains live. Public-sync hardening through `7b7b00a76d73f44939c8b2bf987b15e5893ed5a0` projects a public-safe Guard barrel, rejects unowned pending artifacts, and pushed the independently accepted allowlisted surface to public `d1042ab0b2f044ca99fa3c812e38e33631b20869`; `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` was refreshed to that live SHA with receipt SHA-256 `1adb0bbdc397a97da178b8af6288a2380365e7256a7b32baf313a39567de9eb6` and zero packet-hash mismatches.
