@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r2_dispatch_authoring_after_r1_waiver`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and dispatch source-verified EAFR-R2 after R1 bounded waiver closure at ee268fa5b; parked checkpoint=R1C before R6, RFR final reconciliation, R3-R6 and all external effects.
+Startup acknowledged: current mode=`eafr_r2_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegate committed EAFR-R2 packet at bcb381539 to its no-commit worker and await return; parked checkpoint=R1C before R6, RFR final reconciliation, R3-R6 and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r2_dispatch_authoring_after_r1_waiver`
-Current mode: `eafr_r2_dispatch_authoring_after_r1_waiver`
+Current mode marker: `eafr_r2_dispatched_pending_worker_return`
+Current mode: `eafr_r2_dispatched_pending_worker_return`
 Previous mode: `runtime_findings_remediation_r7c_closed_final_reconciliation_preparation`
 
 ## Next Allowed Move
 
-Mode: `eafr_r2_dispatch_authoring_after_r1_waiver`; R1 is closed bounded by the explicit operator waiver at `ee268fa5b`, with R1C repair debt mandatory before R6. Author and dispatch only EAFR-R2. R3-R6, RFR final reconciliation, live/provider/network, credentials, deployment, public sync and push remain parked.
+Mode: `eafr_r2_dispatched_pending_worker_return`; R2 is committed at `bcb381539`. Delegate exactly its three-path no-commit packet and await return. R1C, R3-R6, RFR final reconciliation, live/provider/network, credentials, deployment, public sync and push remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

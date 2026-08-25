@@ -46,14 +46,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r2_dispatch_authoring_after_r1_waiver`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and dispatch source-verified EAFR-R2 after R1 bounded waiver closure at ee268fa5b; parked checkpoint=R1C before R6, RFR final reconciliation, R3-R6 and all external effects.
+Startup acknowledged: current mode=`eafr_r2_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegate committed EAFR-R2 packet at bcb381539 to its no-commit worker and await return; parked checkpoint=R1C before R6, RFR final reconciliation, R3-R6 and all external effects.
 
 ## Current Mode
-`eafr_r2_dispatch_authoring_after_r1_waiver`
+`eafr_r2_dispatched_pending_worker_return`
 
 ## Purpose
 
-Preserve bounded RFR-R7C closure while its final reconciliation remains parked, preserve the R1/R1A/R1B closure chain, and author only the source-verified R2 dispatch. R1C remains mandatory before R6; all later EAFR tranches and external effects remain parked.
+Preserve the R1/R1A/R1B closure chain and delegate only the committed R2 no-commit packet. R1C remains mandatory before R6; all later EAFR tranches and external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -167,7 +167,7 @@ Continuity parent anchor: `92b7d6ec6`.
 
 ## Next Allowed Move
 
-EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; the failed package criteria and absent build-equivalence proof remain named R1C debt before R6. R1A remains closed bounded at `ef142bfb2`, and R1B adjudication remains accepted at `fc10c8e65`. Author and dispatch only R2; R3-R6 and RFR final reconciliation remain parked.
+EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1C debt remains mandatory before R6. EAFR-R2 is dispatched at `bcb381539`; delegate exactly its three-path no-commit packet and await return. R3-R6 and RFR final reconciliation remain parked.
 
 ## Active Boundary
 
@@ -211,7 +211,7 @@ Protected paths:
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record R1 bounded waiver closure at `ee268fa5b`, update current mode and next move to R2 dispatch authoring, and preserve R1C/R3-R6/RFR checkpoints. Do not alter state structure or open live/provider/network, credential, installation, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record R2 dispatch at `bcb381539`, route only its no-commit worker return, and preserve R1C/R3-R6/RFR checkpoints. Do not alter state structure or open live/provider/network, credential, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 

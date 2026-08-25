@@ -1,5 +1,5 @@
 {
   "stateOrder": 2318,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R1 is closed bounded by explicit operator waiver at ee268fa5b; its three waived criteria remain named R1C debt before R6. Next allowed move is source-verified EAFR-R2 baseline/work-order authoring and dispatch for the durable-memory HTTP write authority boundary. R3-R6 and RFR final reconciliation remain parked. No live/provider/network, credential, deployment, public-sync or push authority is open. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R2 durable-memory HTTP write hardening is dispatched at bcb381539. Delegate exactly the committed three-path WORKER_MUST_NOT_COMMIT packet and await its return. R1C remains mandatory before R6; R3-R6 and RFR final reconciliation remain parked. No live/provider/network, credential, deployment, public-sync, push or worker commit authority is open. Latest finalized numbered LHW wave remains LHW24."
 }
