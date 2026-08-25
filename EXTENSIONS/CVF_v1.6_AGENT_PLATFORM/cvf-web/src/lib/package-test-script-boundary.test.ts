@@ -83,10 +83,10 @@ describe("package.json test-script live-test extension boundary (EAFR-R1A)", () 
     );
   });
 
-  it("test:live explicitly includes both patterns and retains --fileParallelism=false", () => {
+  it("test:live uses explicit live mode and a working live-test filter", () => {
     const pkg = readPackageJson();
     expect(pkg.scripts["test:live"]).toBe(
-      'vitest run "src/**/*.live.test.ts" "src/**/*.live.test.tsx" --fileParallelism=false'
+      "vitest run --mode live live.test --fileParallelism=false"
     );
   });
 
@@ -117,13 +117,13 @@ describe("package.json test-script live-test extension boundary (EAFR-R1A)", () 
     expect([...extensions].sort()).toEqual(["ts", "tsx"]);
   });
 
-  it("current tracked live-test counts match the known EAFR-R1A baseline (33 .ts + 1 .tsx)", () => {
+  it("current tracked live-test counts match the post-EAFR-R1D baseline (34 .ts + 1 .tsx)", () => {
     const liveTestPaths = enumerateLiveTestFilenames(SRC_ROOT);
     const tsCount = liveTestPaths.filter((p) => extensionOf(p) === "ts").length;
     const tsxCount = liveTestPaths.filter((p) => extensionOf(p) === "tsx").length;
 
-    expect(tsCount).toBe(33);
+    expect(tsCount).toBe(34);
     expect(tsxCount).toBe(1);
-    expect(liveTestPaths.length).toBe(34);
+    expect(liveTestPaths.length).toBe(35);
   });
 });

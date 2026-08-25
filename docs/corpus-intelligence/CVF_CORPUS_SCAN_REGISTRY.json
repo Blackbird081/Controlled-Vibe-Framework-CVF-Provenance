@@ -7027,6 +7027,48 @@
         "provider or network invocation - not present"
       ],
       "nextScanRecommendation": "Reuse the RFR-R5 completion review and adversarial suites; rescan only when isolation dimensions, executor admission, or worker environment behavior changes."
+    },
+    {
+      "id": "eafr-r1d-cvf-web-vitest-config",
+      "corpusType": "PROJECT_SOURCE",
+      "displayName": "CVF web Vitest selection configuration for EAFR-R1D",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "EAFR-R1D",
+      "scanDate": "2026-08-25",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R1D_NON_LIVE_RUNNER_PROVIDER_EXCLUSION_2026-08-25.md",
+      "completionReviewPath": "docs/reviews/CVF_EAFR_R1D_NON_LIVE_RUNNER_PROVIDER_EXCLUSION_COMPLETION_2026-08-25.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_EAFR_R1D_NON_LIVE_RUNNER_PROVIDER_EXCLUSION_2026-08-25.md",
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "N/A",
+        "gc050": "CLASSIFIED_STRUCTURAL_PASS"
+      },
+      "semanticRegions": [
+        "TEST_SELECTION_BOUNDARY",
+        "LIVE_PROVIDER_ACTIVATION_BOUNDARY"
+      ],
+      "priorAbsorption": "EAFR-R1D uses this configuration to exclude live/provider tests by default and propagate one explicit live opt-in decision to test workers.",
+      "findings": [
+        {
+          "id": "EAFR-R1D-F1",
+          "summary": "Default test selection previously admitted an ambient-key real-provider integration test because no configuration-level live exclusion existed.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Retain the config-level selection barrier and explicit activation opt-in; treat it as a local test control rather than a credential-hygiene proof.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "RUNTIME_BEHAVIOR_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "default live-test selection",
+        "ambient provider key as sole activation signal"
+      ],
+      "nextScanRecommendation": "Re-scan if the Vitest include/exclude model, live-test naming convention, or provider-test activation contract changes."
     }
   ]
 }

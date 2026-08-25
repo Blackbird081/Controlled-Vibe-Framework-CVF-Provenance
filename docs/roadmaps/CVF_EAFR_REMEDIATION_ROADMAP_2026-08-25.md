@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R1C_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_R1D_READY_FOR_DISPATCH_AUTHORING
+Status: ACTIVE_R1D_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_R6_READY_FOR_SOURCE_VERIFICATION
 
 Date: 2026-08-25
 
@@ -59,8 +59,8 @@ its own work.
 | EAFR-R4 | replace partial provider-current claims with a complete private manifest | R3 accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; 29 classified active entries, zero unmapped; focused 17/17 and reviewer-fast 65/65 PASS; broad debt remains R1C-owned |
 | EAFR-R5 | decide and prove retrieval evidence semantics without weakening admission | R4 accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; focused LPF 66/66 and Web 20/20; safe LPF package 1943/1943; six unintended provider calls disclosed and excluded from acceptance |
 | EAFR-R1C | repair or freshly adjudicate the waived typecheck, full non-live-suite, and build debt | explicit R1 waiver and R5 accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; typecheck green; safe suite 3525 pass/2 named BuildAuthority failures; build freshly blocked; five OpenAI calls disclosed and excluded |
-| EAFR-R1D | make the cvf-web non-live runner exclude ambient-key real-provider integration tests and reconcile the R1C five-call incident | R1C accepted bounded | READY_FOR_FRESH_DISPATCH_AUTHORING; mandatory before R6 |
-| EAFR-R6 | independently reconcile closures, including the BuildAuthority Web gap, and decide whether parked RFR may resume | R1/R1A/R1B, R2-R5 and R1C accepted, and R1D accepted | HOLD_DEPENDENCY |
+| EAFR-R1D | make the cvf-web non-live runner exclude ambient-key real-provider integration tests and reconcile the R1C five-call incident | R1C accepted bounded | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; selection and activation barriers pass; focused guard 6/6; safe suite 3525 pass/2 named fail; one worker OpenAI call disclosed and excluded |
+| EAFR-R6 | independently reconcile closures, including the BuildAuthority Web gap and provider-call incidents, and decide whether parked RFR may resume | R1/R1A/R1B, R2-R5, R1C and R1D accepted | READY_FOR_FRESH_SOURCE_VERIFICATION_AND_DISPATCH_AUTHORING |
 
 ## Design Controls
 
