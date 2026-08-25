@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R4_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_R5_READY_FOR_DISPATCH_AUTHORING
+Status: ACTIVE_R5_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_R1C_READY_FOR_DISPATCH_AUTHORING
 
 Date: 2026-08-25
 
@@ -57,8 +57,8 @@ its own work.
 | EAFR-R2 | make durable-memory HTTP writes and authority inputs fail closed | R1 bounded waiver closure, R1A accepted, and R1B adjudication accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; 26/26 focused; package/typecheck debt remains R1C-owned |
 | EAFR-R3 | reconcile the memory-plane map to accepted as-built behavior | R2 accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; 46/46 focused; worker-return fast and reviewer-fast 65/65 PASS |
 | EAFR-R4 | replace partial provider-current claims with a complete private manifest | R3 accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; 29 classified active entries, zero unmapped; focused 17/17 and reviewer-fast 65/65 PASS; broad debt remains R1C-owned |
-| EAFR-R5 | decide and prove retrieval evidence semantics without weakening admission | R4 accepted | HOLD_DEPENDENCY |
-| EAFR-R1C | repair or freshly adjudicate the waived typecheck, full non-live-suite, and build debt | explicit R1 waiver | HOLD_UNTIL_BEFORE_R6 |
+| EAFR-R5 | decide and prove retrieval evidence semantics without weakening admission | R4 accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; focused LPF 66/66 and Web 20/20; safe LPF package 1943/1943; six unintended provider calls disclosed and excluded from acceptance |
+| EAFR-R1C | repair or freshly adjudicate the waived typecheck, full non-live-suite, and build debt | explicit R1 waiver and R5 accepted | READY_FOR_FRESH_DISPATCH_AUTHORING; mandatory before R6 |
 | EAFR-R6 | independently reconcile closures and decide whether parked RFR may resume | R1/R1A/R1B, R2-R5 accepted, and R1C debt resolved or freshly adjudicated | HOLD_DEPENDENCY |
 
 ## Design Controls
@@ -111,13 +111,15 @@ and a final reconciliation before the parked checkpoint is reconsidered.
 
 ## Current Runtime Freshness Verification
 
-Current source was independently reviewed on 2026-08-25 after R4 worker return
-and bounded reviewer repair. The private provider-current manifest accounts for
-29 active entries with zero unmapped; active docs, UI metadata and the provider
-API now project Alibaba/OpenAI as experimental and DeepSeek as certified. Dated
-historical evidence remains preserved. This is local source/test acceptance
-only; the roadmap makes no fresh certification, deployment, exposure,
-live-provider or production claim.
+Current source was independently reviewed on 2026-08-25 after R5 worker return
+and bounded reviewer repair. Retrieval evidence now requires finite trust in
+the closed interval `[0,1]` before selection on ordinary, KGR and injected graph
+paths, and the authenticated readout route rejects malformed trust before
+workflow construction. Lexical relevance remains subordinate to actor, scope,
+privacy, lifecycle and trust admission. Six unintended provider calls caused by
+a contradictory broad command are disclosed and excluded from acceptance; they
+grant no repeat-live authority. This is bounded local source/test acceptance,
+not provider, deployment, exposure or production proof.
 
 ## Checker Source Read-Ahead Block
 
@@ -145,11 +147,11 @@ any runtime behavior.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | EAFR tranche packets | R1-R4 committed dispatch authority | PASS |
-| Completion or reviewer artifact | R4 completion review | reviewer-accepted bounded closure recorded | PASS |
-| Roadmap state | this file | R4 accepted bounded; R5 ready only for fresh dispatch authoring | PASS |
+| Work order status | EAFR tranche packets | R1-R5 committed dispatch authority | PASS |
+| Completion or reviewer artifact | R5 completion review | reviewer-accepted bounded closure and incident recorded | PASS |
+| Roadmap state | this file | R5 accepted bounded; R1C ready only for fresh dispatch authoring | PASS |
 | Registry JSON | system-chain map | `ARCHITECTURE.md` fingerprint refreshed; freshness CURRENT | PASS |
 | Registry Markdown | N/A with reason: no registry projection | no applicability | BLOCKED |
 | External evidence digest | archived corrected external report | input only, not authority | N/A with reason |
-| System loop interlock | R4 -> R5; R1C -> R6 | fail-closed dependencies explicit | PASS |
+| System loop interlock | R5 -> R1C -> R6 | fail-closed dependencies explicit | PASS |
 | Session continuity | separate post-material sync | required after material commit | PASS |

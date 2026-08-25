@@ -262,7 +262,77 @@ Gate rule categories for reads:
 - result filtering by scope and sensitivity;
 - denial receipt issued when any gate check fails.
 
-Gate categories are doc-only contract classifications. They do not implement or activate a runtime gate until a future source-verified work order creates them.
+Gate categories above remain doc-only contract classifications, with one bounded exception recorded in `Retrieval Evidence Semantics` below: actor validation, scope validation, sensitivity/privacy filtering, blocked-lifecycle filtering and candidate trust validity are source-verified in the local LPF retrieval policy and the authenticated Web readout route. Receipt recording, denial-receipt emission, retention policy checks, sensitivity classification and rebuild verification remain doc-only and do not implement or activate a runtime gate until a future source-verified work order creates them.
+
+## Retrieval Evidence Semantics
+
+This section owns the CVF verdict on what retrieval evidence selection means and
+what it does not mean. It is source-verified against the local LPF retrieval
+policy and the authenticated Web readout route named in the coverage table
+below. It creates no new owner surface, receipt runtime, vector store, graph
+route wiring or external adapter behavior.
+
+### Lexical Relevance Boundary
+
+Lexical matching is a case-insensitive contiguous substring relevance heuristic
+over a candidate summary plus its optional content. A query that trims to an
+empty string matches every otherwise eligible candidate.
+
+A lexical match is relevance selection only. It is not actor authorization, not
+scope authorization, not privacy clearance, not lifecycle clearance, not truth,
+not trust, not hostility, and not permission for any downstream action. A
+lexical hit can never satisfy or bypass an admission gate that precedes it.
+
+### Trust Metadata Boundary
+
+Candidate `auditTrust` is bounded ranking metadata only. It is valid exactly
+when the value is a finite number inside the closed interval `[0,1]`.
+
+- `0` and `1` are valid boundary values.
+- Missing, null, string, `NaN`, positive infinity, negative infinity,
+  below-zero and above-one values are invalid wherever the runtime boundary can
+  represent them.
+- Invalid trust is excluded with the stable candidate reason
+  `invalid_audit_trust`. It is never clamped, coerced, ranked, packaged or
+  returned as admitted evidence.
+- Every candidate admitted to a selected set, including locally derived KGR
+  evidence and injected graph evidence, must carry valid trust metadata.
+- Ranking never retroactively satisfies an earlier admission gate.
+
+### Admission And Ranking Order
+
+```text
+actor gate -> candidate scope/privacy/lifecycle/trust admission
+           -> method relevance selection -> method ranking -> result cap
+           -> summary-only packaging/readout
+```
+
+Actor denial is the first whole-request gate. For ordinary retrieval the
+candidate exclusion precedence is out-of-scope, privacy, blocked lifecycle,
+invalid trust, then relevance. Valid audit-trust ranking descends by trust and
+then by creation time. At the authenticated HTTP readout boundary, a candidate
+carrying malformed or out-of-range trust rejects the whole request before any
+workflow projection is constructed; boundary values `0` and `1` are accepted and
+reach the normal sanitized readout. The readout projection continues to strip
+raw candidate content and to return `rawMemoryReleased=false` and
+`canReinject=false`.
+
+### Runtime Coverage Versus Doc-Only Remainder
+
+| Rule | Coverage | Source-verified boundary |
+|---|---|---|
+| Lexical relevance is not authority | BOUNDED_LOCAL_RUNTIME | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-retrieval-policy.test.ts` |
+| Finite closed-interval trust validity for admitted evidence | BOUNDED_LOCAL_RUNTIME | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-retrieval-policy.test.ts` |
+| Malformed trust rejected at the authenticated HTTP boundary | BOUNDED_LOCAL_RUNTIME | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.test.ts` |
+| Actor, scope, privacy and lifecycle admission precede relevance | BOUNDED_LOCAL_RUNTIME | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts` |
+| Retrieval receipt and denial receipt emission | DOC_ONLY | no runtime receipt writer exists |
+| Retention class and sensitivity classification enforcement | DOC_ONLY | no runtime classifier or retention engine exists |
+| Rebuild and partial-rebuild verification | DOC_ONLY | no runtime rebuild verifier exists |
+| External CLI/MCP adapter read behavior | DOC_ONLY | MPI-T3 contract only; `adapterContractOnly=true` |
+
+The bounded runtime rows above describe local admission behavior only. They
+claim no exploit proof, no privilege gain, no provider behavior, no deployment
+posture and no production exposure.
 
 ## Privacy, Retention, And Redaction Boundary
 

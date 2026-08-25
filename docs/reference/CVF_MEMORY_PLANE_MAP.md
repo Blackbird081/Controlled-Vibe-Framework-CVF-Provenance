@@ -125,10 +125,21 @@ or provider outcome.
 
 - **Status:** RUNNING -- authenticated, summary-only, RAW-sentinel guarded.
 - **Route:** POST /api/memory/readout (local Next.js route).
-- **Auth:** verifyServiceTokenRequest OR verifySessionCookie; 401 if neither. Source: `route.ts` lines 136-163.
+- **Auth:** verifyServiceTokenRequest OR verifySessionCookie; 401 if neither. Source: `route.ts` lines 143-170.
+- **Candidate trust admission (EAFR-R5):** candidate `auditTrust` must be a finite number in the closed interval `[0,1]` before `buildMemoryRuntimeReadout` is called; malformed or out-of-range trust rejects the whole request with HTTP 400 and no success projection, and boundary values `0` and `1` are accepted. Trust is never clamped or coerced. Source: `route.ts` lines 58-60, 97. Authentication still runs before body processing.
 - **Projection:** buildMemoryRuntimeReadout strips candidate content; sets rawMemoryReleased=false, canReinject=false. Source: `memory-runtime-readout.ts` lines 15-54.
-- **Response shape:** { success:true, routeVersion, memoryRuntimeReadout, rawMemoryReleased:false, canReinject:false }. Source: `route.ts` lines 198-204.
-- **RAW sentinel:** RAW_MEMORY_CONTENT_MUST_NOT_LEAK -- HTTP 500 if serialized projection contains it. Source: `route.ts` lines 7, 193-196.
+- **Response shape:** { success:true, routeVersion, memoryRuntimeReadout, rawMemoryReleased:false, canReinject:false }. Source: `route.ts` lines 205-211.
+- **RAW sentinel:** RAW_MEMORY_CONTENT_MUST_NOT_LEAK -- HTTP 500 if serialized projection contains it. Source: `route.ts` lines 7, 200-203.
+- **Accepted admission and ranking order (EAFR-R5):** actor gate -> candidate
+  scope/privacy/lifecycle/trust admission -> method relevance selection -> method
+  ranking -> result cap -> summary-only packaging/readout. Lexical matching is a
+  case-insensitive contiguous substring relevance heuristic only and is never
+  authority, trust, truth, hostility or permission; ranking never retroactively
+  satisfies an earlier admission gate. Invalid candidate trust is excluded with
+  the stable reason `invalid_audit_trust`. Owner surface for this verdict is the
+  T1 contract section `Retrieval Evidence Semantics` in
+  `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md`.
+  Source: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts`.
 - **Operational contract:** `docs/reference/CVF_MEMORY_PLANE_OPERATIONAL_CONTRACT_2026-06-01.md` (MKG7, PENDING documentation-only).
 - **MPI gap:** Corpus Scan Registry findings have a bounded MPI-T2 helper but are not route-wired; route wiring remains a separate later tranche. This MPI-T2 boundary is unchanged by the EAFR-R3 reconciliation and is a different surface from the durable-memory and AIF paths recorded below.
 - **Scope of the fixed readout invariants:** the `rawMemoryReleased=false` and
@@ -290,7 +301,7 @@ or provider outcome.
 
 | Surface | Status | Reason |
 |---|---|---|
-| LPF Memory runtime readout route + projection | RUNNING | active authenticated web route; summary-only |
+| LPF Memory runtime readout route + projection | RUNNING | active authenticated web route; summary-only; EAFR-R5 requires finite `[0,1]` candidate `auditTrust` before projection, rejecting malformed trust with HTTP 400; no route wiring, adapter, graph or reinjection expansion |
 | Corpus Scan Registry / GC-051 | RUNNING (generated) | generated aggregate over per-entry sources |
 | LSC helper readout (run_agent_automation_assist.py) | RUNNING (stdout only) | Python helper reads signalReadout; no mutation |
 | KGR1 local LPF graph retrieval | RUNNING (bounded local) | KGR1 CLOSED_PASS_BOUNDED; local store/builder |
@@ -357,33 +368,35 @@ governed, and raw memory remains unreleased.
 
 | Field | Evidence |
 |---|---|
-| Actor | no-commit documentation reconciliation worker |
+| Actor | no-commit retrieval-policy boundary worker |
 | Provider or surface | local private provenance repository |
-| Session or invocation | EAFR-R3 Memory Plane as-built reconciliation, 2026-08-25 |
-| Working directory | repository root and `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` |
-| Command or tool surface | source reads, SHA-256 recomputation, focused Vitest, `rg` token searches, governance gates |
-| Target paths | `docs/reference/CVF_MEMORY_PLANE_MAP.md`; `docs/reviews/CVF_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_WORKER_RETURN_2026-08-25.md` |
-| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_2026-08-25.md`; `docs/baselines/CVF_GC018_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_2026-08-25.md` |
-| Before status evidence | clean worktree at HEAD `ffab5f876e583bf74b6feb5a1f3f9352cf7051f7`; empty staging; all nine pinned source hashes matched |
-| After status evidence | map records durable-memory route reachability, the authenticated HTTP durable write route, and the AIF execute-request reinjection surface as bounded local surfaces with cited sources |
-| Diff evidence | `git diff --name-status` shows exactly this map as the only modified tracked path |
-| Approval boundary | exact two-path local documentation reconciliation only |
-| Claim boundary | map remains POINTER_RECORD navigation; no deployment, production, public, vector-storage, cross-runtime, provider, adapter, registry-write, or MPI-T6 expansion |
+| Session or invocation | EAFR-R5 Retrieval Evidence Semantics And Admission Boundary, 2026-08-25 |
+| Working directory | repository root, `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION` and `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web` |
+| Command or tool surface | source reads, SHA-256 recomputation, focused Vitest, package typechecks, safe non-live suites, `rg` token searches, governance gates |
+| Target paths | `docs/reference/CVF_MEMORY_PLANE_MAP.md` as path 7 of the exact eight-path EAFR-R5 worker manifest |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R5_RETRIEVAL_EVIDENCE_SEMANTICS_AND_ADMISSION_BOUNDARY_2026-08-25.md`; `docs/baselines/CVF_GC018_EAFR_R5_RETRIEVAL_EVIDENCE_SEMANTICS_AND_ADMISSION_BOUNDARY_2026-08-25.md` |
+| Before status evidence | clean worktree at executionBaseHead `b45b2252471bf7ef7251746b830516b8fe5ea4cf`; empty staging; all eleven pinned source hashes matched |
+| After status evidence | map records the accepted EAFR-R5 admission and ranking order, the finite `[0,1]` candidate trust boundary at the authenticated readout route, and refreshed cited `route.ts` line numbers |
+| Diff evidence | `git diff --name-status` shows this map inside the exact eight-path worker manifest and no other path |
+| Approval boundary | exact eight-path local implementation and existing-owner reconciliation only |
+| Claim boundary | map remains POINTER_RECORD navigation; no deployment, production, public, vector-storage, cross-runtime, provider, adapter, registry-write, graph route wiring, reinjection, or MPI-T6 expansion |
 | Agent type | worker |
-| Invocation ID | eafr-r3-memory-plane-as-built-reconciliation-worker-2026-08-25 |
-| Expected manifest | `docs/reference/CVF_MEMORY_PLANE_MAP.md`; `docs/reviews/CVF_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_WORKER_RETURN_2026-08-25.md` |
-| Actual changed set | modified `docs/reference/CVF_MEMORY_PLANE_MAP.md`; new untracked `docs/reviews/CVF_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_WORKER_RETURN_2026-08-25.md` |
+| Invocation ID | eafr-r5-retrieval-evidence-semantics-worker-2026-08-25 |
+| Expected manifest | `docs/reference/CVF_MEMORY_PLANE_MAP.md` as path 7 of the exact eight-path EAFR-R5 worker manifest |
+| Actual changed set | modified `docs/reference/CVF_MEMORY_PLANE_MAP.md` within the exact eight-path EAFR-R5 worker manifest |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename occurred in this reconciliation |
 
-Historical MPI-T5 trace record (2026-06-27, superseded as the current trace by
-the EAFR-R3 row set above): Codex reviewer/closer reconciled this map at HEAD
-`33f7ab42` to record the MPI-T5 local static checker, with no runtime, source
-or test path changed.
+Historical trace records, superseded as the current trace by the EAFR-R5 row set
+above and preserved as lineage only: EAFR-R3 (2026-08-25) reconciled this map at
+HEAD `ffab5f876` to record durable-memory route reachability, the authenticated
+HTTP durable write route and the AIF execute-request reinjection surface; MPI-T5
+(2026-06-27) reconciled this map at HEAD `33f7ab42` to record the MPI-T5 local
+static checker, with no runtime, source or test path changed.
 
-This EAFR-R3 change is documentation-only and touches exactly two paths: this
-map and the paired worker return named above. No code, test, policy, roadmap,
-registry, generated state, or session-state path was changed.
+This EAFR-R5 change touches this map only within the exact eight-path worker
+manifest named in the governing work order. No roadmap, registry, generated
+state, checker, package or session-state path was changed.
 
 ## Public Export Disposition
 
