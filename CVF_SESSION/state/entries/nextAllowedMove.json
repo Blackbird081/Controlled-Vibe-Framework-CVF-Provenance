@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2330,
+  "stateOrder": 2332,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R6 dispatch is committed at c3c7ed691 with baseline SHA-256 52e7297f6 and work-order SHA-256 d2e11d539. The next allowed move is only the no-commit R6 worker reconciliation: source inspection and non-provider tests, endpoint-surface coverage matrix, incident ledger, P0/P1 classification and one RFR resume-or-blocked verdict. providerExecutionAuthority is FORBIDDEN; caller-supplied/configurable endpoints and out-of-process harnesses must remain NOT_COVERED/P1 unless stronger evidence escalates them. RFR, build, provider/live, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R6 is reviewer-accepted CLOSED_BLOCKED at material commit 2bc2b2d0d. Four P1 provider-authority bypass classes remain: mainland DashScope, endpoint env overrides, caller-supplied adapter endpoints and out-of-process harnesses. RFR resume remains blocked. The next allowed move is fresh EAFR-R7 source verification and dispatch authoring only for fail-closed provider-egress repair; no R7 implementation authority exists. Build, provider/live, RFR resume, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

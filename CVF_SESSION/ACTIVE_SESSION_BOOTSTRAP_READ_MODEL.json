@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eafr_r6_dispatched_pending_worker_return",
+  "currentMode": "eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EAFR-R6 dispatch is committed at c3c7ed691 with baseline SHA-256 52e7297f6 and work-order SHA-256 d2e11d539. The next allowed move is only the no-commit R6 worker reconciliation: source inspection and non-provider tests, endpoint-surface coverage matrix, incident ledger, P0/P1 classification and one RFR resume-or-blocked verdict. providerExecutionAuthority is FORBIDDEN; caller-supplied/configurable endpoints and out-of-process harnesses must remain NOT_COVERED/P1 unless stronger evidence escalates them. RFR, build, provider/live, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EAFR-R6 is reviewer-accepted CLOSED_BLOCKED at material commit 2bc2b2d0d. Four P1 provider-authority bypass classes remain: mainland DashScope, endpoint env overrides, caller-supplied adapter endpoints and out-of-process harnesses. RFR resume remains blocked. The next allowed move is fresh EAFR-R7 source verification and dispatch authoring only for fail-closed provider-egress repair; no R7 implementation authority exists. Build, provider/live, RFR resume, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

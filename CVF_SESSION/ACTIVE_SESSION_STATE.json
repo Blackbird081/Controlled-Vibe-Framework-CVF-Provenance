@@ -105,7 +105,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r6_dispatched_pending_worker_return",
+  "currentMode": "eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring",
   "previousMode": "eafr_r1d_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -15012,5 +15012,17 @@
     "nextAllowedMove": "Execute the no-commit R6 worker only and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
     "claimBoundary": "Decision and reconciliation only; no provider/live call, source repair, build, RFR resume, public-sync, deployment, push or worker commit."
   },
-  "nextAllowedMove": "EAFR-R6 dispatch is committed at c3c7ed691 with baseline SHA-256 52e7297f6 and work-order SHA-256 d2e11d539. The next allowed move is only the no-commit R6 worker reconciliation: source inspection and non-provider tests, endpoint-surface coverage matrix, incident ledger, P0/P1 classification and one RFR resume-or-blocked verdict. providerExecutionAuthority is FORBIDDEN; caller-supplied/configurable endpoints and out-of-process harnesses must remain NOT_COVERED/P1 unless stronger evidence escalates them. RFR, build, provider/live, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "eafrR6ClosureReconciliationAcceptedBlocked20260826": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_BLOCKED",
+    "materialCommit": "2bc2b2d0d",
+    "completionReview": "docs/reviews/CVF_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_COMPLETION_2026-08-26.md",
+    "workerReturn": "docs/reviews/CVF_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_WORKER_RETURN_2026-08-26.md",
+    "rfrVerdict": "RECOMMEND_RFR_RESUME_BLOCKED",
+    "unresolvedP1Classes": 4,
+    "proof": "TypeScript PASS; focused 38/38; Web full suite 3511 pass/22 named fail; reviewer-fast 66/66; pre-commit 87/87; zero R6 provider calls",
+    "reviewerRepair": "Matrix configurable/caller endpoints changed to exact NOT_COVERED and adapter defaults/overrides split into separate rows.",
+    "nextAllowedMove": "Fresh EAFR-R7 source verification and dispatch authoring only.",
+    "claimBoundary": "No RFR resume, R7 implementation, provider/live, build, public-sync, deployment or push authority."
+  },
+  "nextAllowedMove": "EAFR-R6 is reviewer-accepted CLOSED_BLOCKED at material commit 2bc2b2d0d. Four P1 provider-authority bypass classes remain: mainland DashScope, endpoint env overrides, caller-supplied adapter endpoints and out-of-process harnesses. RFR resume remains blocked. The next allowed move is fresh EAFR-R7 source verification and dispatch authoring only for fail-closed provider-egress repair; no R7 implementation authority exists. Build, provider/live, RFR resume, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

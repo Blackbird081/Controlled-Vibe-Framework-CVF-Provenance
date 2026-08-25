@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2331,
+  "stateKey": "eafrR6ClosureReconciliationAcceptedBlocked20260826",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_BLOCKED",
+    "materialCommit": "2bc2b2d0d",
+    "completionReview": "docs/reviews/CVF_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_COMPLETION_2026-08-26.md",
+    "workerReturn": "docs/reviews/CVF_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_WORKER_RETURN_2026-08-26.md",
+    "rfrVerdict": "RECOMMEND_RFR_RESUME_BLOCKED",
+    "unresolvedP1Classes": 4,
+    "proof": "TypeScript PASS; focused 38/38; Web full suite 3511 pass/22 named fail; reviewer-fast 66/66; pre-commit 87/87; zero R6 provider calls",
+    "reviewerRepair": "Matrix configurable/caller endpoints changed to exact NOT_COVERED and adapter defaults/overrides split into separate rows.",
+    "nextAllowedMove": "Fresh EAFR-R7 source verification and dispatch authoring only.",
+    "claimBoundary": "No RFR resume, R7 implementation, provider/live, build, public-sync, deployment or push authority."
+  }
+}
