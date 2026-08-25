@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eafr_r1_review_blocked_r1a_dispatch_authoring",
+  "currentMode": "eafr_r1a_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EAFR-R1 implementation is reviewer-accepted but closure is blocked at material commit bb49266fd because the package non-live runner activated a tracked .live.test.tsx Alibaba test. Author and commit only the bounded EAFR-R1A package-script/static-test dispatch, then delegate it to a no-commit worker. EAFR-R2 through R6 and RFR final reconciliation remain parked. No repeat-live, provider/network, credential, deployment, public-sync, push or worker commit authority is open. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EAFR-R1 implementation is reviewer-accepted but closure remains blocked at material commit bb49266fd because the package non-live runner activated a tracked .live.test.tsx Alibaba test. EAFR-R1A dispatch is committed at 6c4ce68f2; delegate exactly that packet to a no-commit worker and await its return. EAFR-R2 through R6 and RFR final reconciliation remain parked. No repeat-live, provider/network, credential, deployment, public-sync, push or worker commit authority is open. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R1_AIF_REINJECTION_PROVENANCE_FAIL_CLOSED_2026-08-25.md",
-    "baselineSha256": "572d360267c2470a5582f3a1171af59b6a6504f5456ed8320af70ed0c0858afb",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R1_AIF_REINJECTION_PROVENANCE_FAIL_CLOSED_2026-08-25.md",
-    "workOrderSha256": "425de3b0c4b8f571da5923c20c6153e6680e15734b42f53fb1b480b9ee72cefe"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R1A_NON_LIVE_TEST_RUNNER_EXTENSION_COVERAGE_2026-08-25.md",
+    "baselineSha256": "a3f351691a5bd92a466342d0eb9e93ef2745c443911a78a3b60b08d7e3f9171f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R1A_NON_LIVE_TEST_RUNNER_EXTENSION_COVERAGE_2026-08-25.md",
+    "workOrderSha256": "c462af10679539020bc76b5fdd8886597b29142d782b2878b228a489e22f66c8"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
