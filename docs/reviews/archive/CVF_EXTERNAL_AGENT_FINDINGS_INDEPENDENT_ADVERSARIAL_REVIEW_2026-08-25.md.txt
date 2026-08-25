@@ -1,0 +1,516 @@
+# CVF External Agent Findings Independent Adversarial Review
+
+Memory class: FULL_RECORD
+
+Status: ADVISORY_REVIEW_COMPLETE_PENDING_ORCHESTRATOR_DISPOSITION
+
+docType: adversarial_review
+
+Date: 2026-08-25
+
+NOT_CVF_SOURCE
+
+This file is an independent response for the author of the two advisory
+documents named below. It grants no implementation, closure, commit, push,
+provider-call, or public-sync authority.
+
+## Purpose
+
+Record a reproducible adversarial review of the verification report and
+remediation proposal, with special attention to citation integrity, runtime
+reachability, owner routing, severity, missed findings, and CVF process
+conformance.
+
+## Target / Source
+
+Reviewed advisory inputs:
+
+- `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_VERIFICATION_REPORT_2026-08-25.md`
+  - expected and observed SHA-256:
+    `f54970da01fbbb136bd742997991b7879300604378e6cd6ce06557bc8f339928`
+- `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_REMEDIATION_PROPOSAL_2026-08-25.md`
+  - expected and observed SHA-256:
+    `a0ca747a579ca826854d29807db8f9f75b76b83e2744aa3e84ee9f8c0a5862ac`
+
+Repository comparison range:
+
+- stated review base: `7a4c9fd8fbaf4eb6dc0911f668fc4a2e9753d2ae`
+- handoff HEAD: `416a38bf159cea0105234f307fffd94d8bf5ac0c`
+
+The two reviewed documents are advisory inputs only. All counterclaims below
+are re-verified against CVF-owned source or runtime files.
+
+## Scope / Methodology
+
+The review was read-only until the operator explicitly requested this response
+file. The review used:
+
+1. SHA-256 recomputation for both advisory inputs.
+2. `git diff --name-only` across the stated base and handoff HEAD for all
+   load-bearing cited files.
+3. Direct line reads for every citation listed as load-bearing in the review
+   request.
+4. Local pattern searches for fail-open defaults, caller-supplied trust and
+   authority fields, provider certification claims, runtime route reachability,
+   and owner surfaces.
+5. Independent network verification limited to the official arXiv page for
+   `2608.21230`.
+6. Read-only execution of the worker-return fast gate to determine whether the
+   two advisory inputs are conformant as governed review artifacts.
+
+No implementation, test edit, dependency installation, provider invocation,
+stage, commit, or push was performed.
+
+## Bottom Line / Position
+
+Verdict: MATERIALLY_FLAWED
+
+The documents contain useful and reproducible evidence for provider-claim
+drift, the durable-store `provenanceScore ?? 1` default, and caller-supplied
+`auditTrust`. They are nevertheless materially flawed because they:
+
+1. miss a live authenticated HTTP route that constructs the durable store and
+   writes with an omitted provenance score;
+2. miss a second fail-open provenance default on an AIF memory reinjection path
+   that reaches the provider system prompt;
+3. incorrectly state that GC-022 exists only in archived artifacts; and
+4. route a proposed new contract to a reconciliation matrix even though an
+   existing source-derived replay contract already owns read/write gate
+   categories.
+
+The remediation proposal must not be promoted into a work order without a
+corrected reachability model, owner map, source manifest, and tranche sequence.
+
+## Citation Audit
+
+| Claim | Cited location | Result | Discrepancy or context |
+| --- | --- | --- | --- |
+| `qwen-flash` EXPERIMENTAL, DeepSeek CERTIFIED, OpenAI EXPERIMENTAL | `docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md:46-48` | VERIFIED | Exact reproduction. |
+| Architecture says Alibaba and DeepSeek are certified | `ARCHITECTURE.md:5` | VERIFIED_WITH_CONTEXT | Same file says Alibaba targets `qwen-flash` pending fresh proof at `ARCHITECTURE.md:21,259`. |
+| Alibaba is the primary certified lane | `ARCHITECTURE.md:162`; `README.md:111` | VERIFIED | Contradicts the current readiness matrix. |
+| Public snapshot certifies `qwen-turbo` | external local snapshot lines 99-101 | VERIFIED_WITH_BOUNDARY | It is a stale current-public projection if treated as current; historical certification evidence is not thereby invalidated. |
+| Durable store uses `provenanceScore ?? 1` | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts:249` | VERIFIED | Exact reproduction. |
+| Threshold is 0.7, only lower values are rejected, default is persisted | same file `:98,262,287` | VERIFIED | Exact reproduction. |
+| MinerU has fail-closed precedent | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-python-receipt-bridge.test.ts:141,153`; `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-memory-rag-route-release.test.ts:185` | VERIFIED | Original documents abbreviated the path but cited the correct tests and lines. |
+| `matchesQuery` substring-matches record text | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts:98-104` | VERIFIED_WITH_LIMIT | The code proves caller/record-shaped relevance, not an attacker or exploit. |
+| `auditTrust` drives rank | same file `:244-256` | VERIFIED | Exact reproduction. |
+| `auditTrust` originates from graph confidence in package adapters | same file `:77,92` | VERIFIED_WITH_CONTEXT | The HTTP readout route has a separate caller-supplied origin. |
+| HTTP caller supplies `auditTrust`, type check only | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts:19-28,82-100` | VERIFIED | Exact reproduction. |
+| Readout route requires session or signed service token | same file `:135-163` | VERIFIED | Exact reproduction. |
+| `web-runtime.ts` only re-exports the store | `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/web-runtime.ts:8-11` | VERIFIED_BUT_INSUFFICIENT | This does not establish absence of other live callers. |
+| Only archived GC-022 artifacts exist | verification report `:146-157` | CONTRADICTED | Active GC-022 surfaces exist at `governance/toolkit/05_OPERATION/CVF_MEMORY_GOVERNANCE_GUARD.md:3-5`, `docs/reference/CVF_MEMORY_RECORD_CLASSIFICATION.md:5,63-66`, and `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md:7,59`. |
+| EVEROS-T2 matrix is the current memory owner | `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md:5,53` | PARTIAL | It is an active reconciliation reference, but line 53 delegates current inventory/runtime status to `docs/reference/CVF_MEMORY_PLANE_MAP.md`. |
+
+No load-bearing cited source changed between the stated base and handoff HEAD.
+The decisive write route and reinjection files also existed at the stated base,
+so their omission is not explained by post-review source drift.
+
+The one citation claim that does not reproduce is the assertion that only
+archived GC-022 artifacts exist.
+
+## Findings
+
+### F1 - A live durable-memory HTTP write path was missed
+
+Document conclusion:
+
+> The durable store is an exported, constructible API surface. No live write
+> path was traced.
+
+This is wrong.
+
+Evidence:
+
+- The HTTP body declares `provenanceScore?: number` at
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/write/route.ts:24`.
+- Validation permits omission and preserves it as `undefined` at the same file
+  `:100-115,125-134`.
+- The route requires a session or signed service token at `:151-178`.
+- The authenticated caller supplies `actorAuthorized` and `policyDecision`,
+  which are used as the policy gate at `:202-208`.
+- When the store path is configured, the route constructs the file-backed store
+  and calls `write` at `:211-233`.
+- The store converts the omitted value to `1` and persists it at
+  `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts:249,287`.
+
+Corrected claim: the defect is reachable through an authenticated HTTP write
+route when the durable-store path is configured. Deployment, external exposure,
+and exploitation remain unproven.
+
+### F2 - A second fail-open provenance default reaches model context
+
+Both documents missed:
+
+- AIF memory items accept optional provenance at
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/aif-memory-reinjection.ts:3-18`.
+- Missing provenance is treated as `1` at `:99`.
+- Eligible summaries are placed into a prompt block at `:103-136`.
+- The block is converted into a governed reinjection system prompt at `:149-150`.
+- The execute route evaluates the request and attaches the block to the system
+  prompt at
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts:744-753`.
+- The enriched prompt is sent to the provider at `:784-790` and reused on
+  retry at `:840-844`.
+
+`rawMemoryReleased=false` on the separate readout route does not bound this
+path. This is summary-only model context, not raw-memory release, but it can
+still influence provider output.
+
+### F3 - GC-022 status and owner resolution are incorrect
+
+The verification report says only archived GC-022 artifacts exist, and the
+proposal repeats that premise. Active authority contradicts it:
+
+- `governance/toolkit/05_OPERATION/CVF_MEMORY_GOVERNANCE_GUARD.md:3-5`
+  identifies GC-022 as an active durable-memory classification contract.
+- `docs/reference/CVF_MEMORY_RECORD_CLASSIFICATION.md:5,63-66` is the canonical
+  memory-record classification reference.
+- `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md:7,59` is the canonical
+  ownership map and registers the current GC-022 guard, reference, and checker.
+
+GC-022 owns record-classification semantics; it does not necessarily own
+retrieval admission, runtime write authorization, or TruthReference semantics.
+The correct disposition is distributed-owner reconciliation, not replacement
+of GC-022 by the EVEROS-T2 matrix.
+
+### F4 - The proposed admission contract duplicates an existing owner
+
+The proposal recommends a new contract document owned by the EVEROS-T2 matrix.
+However:
+
+- `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md:244-265`
+  already defines memory write/read access-gate categories.
+- `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md:79-80`
+  already routes receipt taxonomy and memory access gate rules to that T1
+  contract.
+
+The remedy should enrich and reconcile the existing contract and Memory Plane
+Map. It should not create a second contract owner.
+
+### F5 - The canonical Memory Plane Map is stale
+
+The current map says durable writes are unwired and that no route imports the
+store as a write path:
+
+- `docs/reference/CVF_MEMORY_PLANE_MAP.md:64,73`
+- `docs/reference/CVF_MEMORY_PLANE_MAP.md:98-104`
+- `docs/reference/CVF_MEMORY_PLANE_MAP.md:166`
+
+Those claims conflict with the live write route at
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/write/route.ts:221-233`.
+Because the EVEROS-T2 matrix delegates current runtime status to this map at
+`CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md:53`, the stale map
+is a material owner-state reconciliation defect.
+
+### F6 - Provider remediation scope is incomplete
+
+The provider drift finding is real, but Tranche A does not enumerate all
+current claim surfaces. Additional active surfaces include:
+
+- `README.md:14,272`
+- `docs/guides/CVF_QUICK_ORIENTATION.md:8,93`
+- `docs/guides/CVF_DEMO_SCRIPT_2026-04-21.md:151`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-lane-metadata.ts:10-29`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/providers/route.ts:8-17`
+
+The two runtime projections also mark OpenAI CERTIFIED, contrary to OpenAI
+EXPERIMENTAL in
+`docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md:48,65-68`.
+
+Historical receipts and closed historical packets must remain unchanged. The
+Qwen migration explicitly separates active substitution from historical
+preservation at
+`docs/work_orders/CVF_AGENT_WORK_ORDER_QWEN_TURBO_DEPRECATION_MIGRATION_2026-08-15.md:34-37,166-172`.
+
+### F7 - `matchesQuery` is not proven to be a P1 defect
+
+`matchesQuery` performs lexical relevance filtering at
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts:98-104`.
+That mechanism can be shaped by caller-provided or record-carried text, but the
+cited code does not prove malicious admission, privilege gain, downstream
+action, or exploitability. Calling both fields attacker-controlled is stronger
+than the evidence.
+
+Recommended disposition: P2 advisory or unproven threat-model gap unless a
+source/admission path demonstrates hostile records crossing an authority
+boundary.
+
+### F8 - `auditTrust` impact is narrower than P1 evidence currently proves
+
+The HTTP route accepts caller-supplied `auditTrust` with type-only validation at
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts:82-100`,
+and ranking uses it at
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts:244-256`.
+
+However, the readout route sanitizes candidate content and explicitly returns
+`rawMemoryReleased:false` and `canReinject:false` at
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts:193-204`.
+No downstream action path from this route was traced.
+
+Recommended disposition: range validation is sound, but security impact remains
+P2 or unproven until the selected readout is shown to drive an authorization,
+provider prompt, or execution decision.
+
+## Severity Disposition
+
+| Finding | Document rating | Independent rating | Reason |
+| --- | --- | --- | --- |
+| Provider current-claim drift | P0 | P0 | Outward/current claims contradict the canonical readiness matrix. |
+| Durable-store provenance default | P1, pre-activation | P1, reachable | Live authenticated write route exists; production deployment remains unproven. |
+| AIF reinjection provenance default | missed | P1; P0 candidate | Missing provenance can reach provider system context; P0 requires deployment/exposure evidence. |
+| Caller-supplied `auditTrust` | P1 | P2 or impact unproven | It changes authenticated readout order, but no action/reinjection path was traced. |
+| `matchesQuery` | P1 | P2 advisory or unproven | Lexical relevance alone is not an authority bypass. |
+| GC-022 owner status | advisory | P1 documentation/routing defect | Wrong owner routing can create duplicate contracts or direct edits to the wrong surface. |
+
+## Overclaim And Underclaim Audit
+
+Overclaims:
+
+- `GC-022 is archived` is factually false; see F3.
+- `No live write path was traced` is false; see F1.
+- `both attacker-controllable` is not supported by the cited retrieval function;
+  authenticated caller control is supported, hostile exploitation is not.
+- `the store is pre-activation` is incompatible with the write route and the
+  stale Memory Plane Map.
+
+Underclaims:
+
+- Durable-store reachability is described as unknown even though the HTTP write
+  route exists.
+- The summary-only/raw-release discussion omits the AIF reinjection path that
+  reaches provider context.
+- Tranche A understates the number of active provider-claim projections.
+
+No defect found in the explicit non-claims: neither document claims an exploited
+production vulnerability, production readiness, or a proven defense against
+memory poisoning.
+
+## Required Corrective Action
+
+Before either advisory input is used to dispatch implementation:
+
+1. Replace the pre-activation/no-live-write conclusion with the bounded live
+   route finding in F1.
+2. Add the AIF reinjection fail-open finding in F2 and give it an independent
+   remediation/test manifest.
+3. Correct the GC-022 claim and produce a distributed owner map covering record
+   classification, current runtime status, read/write gate doctrine, and runtime
+   enforcement.
+4. Reconcile `docs/reference/CVF_MEMORY_PLANE_MAP.md` with the live write route.
+5. Expand provider Tranche A to all active current-claim and runtime projection
+   surfaces while excluding historical evidence.
+6. Reclassify `matchesQuery` and `auditTrust` based on demonstrated impact, not
+   only attacker-shaped input language.
+7. Reuse the existing T1 source-derived replay contract rather than opening a
+   second admission-contract owner.
+8. Put any implementation through a paired baseline and work order, a
+   no-commit worker, and independent reviewer closure.
+
+## Proposal Disposition
+
+| Proposed tranche | Disposition | Required correction |
+| --- | --- | --- |
+| A - public claim reconciliation | ACCEPT_DIRECTION_EXPAND_SCOPE | Add all active docs, badges, guides, provider API status, and UI metadata; preserve historical receipts. |
+| B - durable store fail-closed provenance | ACCEPT_SEMANTICS_REFRAME_REACHABILITY | Treat the route as live source, include boundary self-attestation and map reconciliation, and do not justify a breaking change by pre-activation. |
+| C - retrieval seam hardening | PARTIAL_ACCEPT_REUSE_OWNER | Range-check is sound; attacker/impact claims need proof; enrich the existing T1 contract rather than create a new owner. |
+| D - memory language alignment | BLOCK_OWNER_MAP_INCORRECT | GC-022 remains active and the EVEROS-T2 matrix is not the sole owner. |
+| E - bounded evaluation | DEFER_OWNER_NOT_RESOLVED | Reuse an existing evaluation owner if one is source-verified; otherwise do not create a new plane. |
+
+Corrected sequence:
+
+1. Reconcile owner/runtime status and open bounded treatment for the live write
+   and reinjection findings.
+2. Repair outward provider claims across the complete active manifest.
+3. Fail-close provenance independently at durable write and reinjection seams.
+4. Bound or derive trust/authority fields at authenticated request boundaries.
+5. Align language on the existing owner surfaces.
+6. Add evaluation only after its owner is identified.
+
+Runtime containment and provider-claim reconciliation may proceed in parallel;
+the reinjection defect should not wait for completion of all documentation work.
+
+## Decision / Recommendation
+
+Decision: RETURN_FOR_MATERIAL_CORRECTION
+
+The verification report and proposal should remain untracked advisory inputs.
+They should not be accepted as a governed baseline, work order, closure packet,
+or implementation authority in their current form.
+
+The author should return a corrected verification report and proposal that
+resolve F1 through F8, preserve explicit non-claims, and pass the applicable
+review-artifact gates before orchestrator intake.
+
+## External Knowledge Intake Routing
+
+Canonical chain map:
+`docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`
+
+| Field | Value |
+| --- | --- |
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | external-agent returned output |
+| Chain map route | comparison and adversarial verification only; no absorption or authority promotion |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |
+| Owner surface | existing CVF runtime, readiness, memory-map, GC-022, and T1 contract sources cited in this review |
+| Disposition | COMPARISON_ONLY_NO_ABSORPTION; RETURN_FOR_MATERIAL_CORRECTION |
+| Claim boundary | the reviewed outputs remain NOT_CVF_SOURCE and grant no implementation or closure authority |
+
+## Finding-To-Governance Learning Disposition
+
+| Finding group | Defect class | Learning lane | Disposition | Next action |
+| --- | --- | --- | --- | --- |
+| Missed live write and reinjection reachability | ORCHESTRATOR_PACKET_GAP | RUNTIME_BEHAVIOR_LEARNING | DESIGN_REVIEW_REQUIRED | Correct the verification source graph before dispatch. |
+| False archived-only GC-022 claim and duplicate-owner risk | RULE_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Apply the canonical ownership hierarchy and existing-owner reuse rule. |
+| Incomplete provider current-claim manifest | ORCHESTRATOR_PACKET_GAP | PROVIDER_OUTPUT_LEARNING | DESIGN_REVIEW_REQUIRED | Enumerate active claim projections before authorizing edits. |
+| Governed review shape failures in the two advisory inputs | WORKER_EXECUTION_ERROR | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | Re-author through the existing review-artifact and intake-routing requirements. |
+
+No new governance rule or checker is authorized by this review. The reusable
+controls already exist; the immediate failure is application and source
+coverage.
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+The challenged documents predicted that the durable store had no traced live
+write path, GC-022 was archived, the EVEROS-T2 matrix resolved the active owner,
+and the material retrieval risks were limited to the documented provenance,
+substring, and audit-trust findings.
+
+### Evidence Comparison
+
+Direct source tracing contradicted the live-path, archived-owner, and complete
+finding-set predictions. It confirmed the core provider drift, durable-store
+default, ranking scalar, authentication, and arXiv evidence.
+
+### Contradiction Or Gap Disposition
+
+- Live write contradiction: MATERIAL_CORRECTION_REQUIRED.
+- Reinjection omission: NEW_MATERIAL_FINDING.
+- GC-022 contradiction: MATERIAL_CORRECTION_REQUIRED.
+- Existing contract overlap: OWNER_REUSE_REQUIRED.
+- Provider surface omissions: MANIFEST_EXPANSION_REQUIRED.
+- `matchesQuery` and `auditTrust` impact: DOWNGRADE_OR_PROVE_IMPACT.
+
+### Claim Update
+
+The documents move from apparently sound-with-corrections to
+MATERIALLY_FLAWED. Their verified evidence remains usable as advisory input,
+but their runtime model, owner model, and remediation plan are not dispatch
+ready.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+| --- | --- |
+| applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_finding_to_governance_learning.py` |
+| literalTokensReviewed | Purpose; Target / Source; Scope / Methodology; Findings; Required Corrective Action; Decision / Recommendation; External Knowledge Intake Routing field rows; Expected Result / Prediction; Evidence Comparison; Contradiction Or Gap Disposition; Claim Update; Agent Operation Trace labels; NOT_CVF_SOURCE |
+| gateRunPurpose | Confirmatory evidence after source review and packet authoring, not first discovery of required shape. |
+| claimBoundary | Read-ahead evidence covers this advisory review shape only; it does not prove semantic correctness, authorize implementation, or cure defects in the two separately authored input files. |
+
+## Process Conformance
+
+The two advisory inputs may exist as temporary NOT_CVF_SOURCE scratch artifacts,
+but they are not conformant for commit as governed review packets.
+
+Read-only command:
+
+```text
+python governance/compat/run_worker_return_fast_gate.py
+```
+
+Observed result before this response file was authored:
+
+- worker-return fast gate: VIOLATION;
+- epistemic process packet missing required evidence-comparison fields;
+- reviewer-fast failed agent packet authority/encoding, markdown structural
+  completeness, checker read-ahead, agent operation trace, external knowledge
+  routing, and epistemic process sub-gates.
+
+This response does not modify or cure either input artifact. Their conformance
+status must be assessed independently after their author repairs them.
+
+## arXiv Verification
+
+The official abstract page at `https://arxiv.org/abs/2608.21230` was reachable.
+It supports the seven figures challenged by the review request: LongMemEval,
+1.2 percent poisoning, accuracy reduction from 0.850 to 0.300, zero of 360
+plain poison records rejected, p=0.80 for default provenance weighting, the
+four-stage screening result, and bounded occupancy as a proposal rather than a
+proven CVF defense.
+
+No external page other than the official arXiv record was used.
+
+## What Could Not Be Verified
+
+- Whether the memory routes are deployed or externally reachable.
+- Whether the durable-store environment path is configured in any deployment.
+- Whether any production exploit or hostile caller exists.
+- The exact public remote commit represented by the local public snapshot.
+- Every out-of-repository consumer of the exported store factory.
+- Formal whole-program taint completeness for every trust or authority scalar.
+- A canonical existing owner for the optional evaluation tranche.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+This private-provenance advisory review is not a public export. No public-sync
+artifact, commit, remote, or push is authorized or claimed.
+
+## Delta Execution Claim Boundary Control Block
+
+| Field | Disposition |
+| --- | --- |
+| claimScope | independent advisory review of two untracked finding documents |
+| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE: source verification and proposal critique only |
+| receiptEvidence | N/A with reason: no runtime receipt was created or consumed |
+| actionEvidence | N/A with reason: no implementation or external effect was executed |
+| invocationBoundary | local file reads, local git inspection, local read-only checkers, and official arXiv verification |
+| interceptionBoundary | no IDE, shell, git, filesystem, provider, MCP, or network interception claim |
+| claimLanguage | verified local source facts and bounded advisory conclusions only |
+| forbiddenExpansion | no implementation, provider/live proof, production finding, closure, commit, push, public-sync, package activation, or universal poisoning-defense claim |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+| --- | --- |
+| Actor | independent reviewer/orchestrator |
+| Provider or surface | local private provenance workspace |
+| Session or invocation | external findings adversarial review response, 2026-08-25 |
+| Working directory | repository root |
+| Command or tool surface | local reads, SHA-256, git diff/status, rg, official arXiv read, apply_patch, and governance checks |
+| Target paths | `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_INDEPENDENT_ADVERSARIAL_REVIEW_2026-08-25.md` |
+| Allowed scope source | operator explicitly requested creation of a rebuttal file for the author after accepting the read-only review |
+| Before status evidence | the two reviewed advisory inputs were untracked; no independent rebuttal file existed |
+| After status evidence | one new independent advisory review file records the corrected evidence and required response |
+| Diff evidence | final `git status --short`, `git diff --no-index /dev/null` equivalent inspection through untracked file read, and direct checker results |
+| Approval boundary | create this response file only; do not edit the two source documents, runtime, tests, governance owners, or session state |
+| Claim boundary | advisory response only; no authority, implementation, closure, commit, push, or public export |
+| Agent type | independent reviewer/orchestrator |
+| Invocation ID | `external-findings-independent-adversarial-review-2026-08-25` |
+| Expected manifest | `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_INDEPENDENT_ADVERSARIAL_REVIEW_2026-08-25.md`; `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_REMEDIATION_PROPOSAL_2026-08-25.md`; `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_VERIFICATION_REPORT_2026-08-25.md` |
+| Actual changed set | `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_INDEPENDENT_ADVERSARIAL_REVIEW_2026-08-25.md`; `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_REMEDIATION_PROPOSAL_2026-08-25.md`; `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_VERIFICATION_REPORT_2026-08-25.md` |
+| Manifest delta | MATCH; the latter two files were pre-existing untracked review inputs and were not modified by this invocation |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Claim Boundary
+
+Verified here:
+
+- the cited local source behavior and contradictions listed above;
+- hash identity of the two advisory inputs;
+- absence of load-bearing cited-file drift across the stated Git range;
+- the official arXiv abstract evidence; and
+- the observed read-only governance-gate failures.
+
+Not claimed:
+
+- exploited production vulnerability;
+- deployed-route exposure;
+- live provider proof;
+- production readiness;
+- prevention, solution, or guaranteed resistance to memory poisoning;
+- authorization or closure of any remediation tranche; or
+- public export readiness.

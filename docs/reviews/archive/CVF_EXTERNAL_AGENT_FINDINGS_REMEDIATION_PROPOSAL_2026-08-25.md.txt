@@ -1,0 +1,535 @@
+# CVF External Agent Findings — Remediation Proposal
+
+Memory class: NOT_CVF_SOURCE (provider-local proposal aid)
+
+Status: PROPOSAL_ONLY_NO_AUTHORITY_GRANTED
+
+docType: remediation_proposal
+
+Date: 2026-08-25
+
+Author: independent local session (Claude Code), read-only analysis
+
+Proposal base HEAD: `7a4c9fd8fbaf4eb6dc0911f668fc4a2e9753d2ae`
+
+Paired evidence: `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_VERIFICATION_REPORT_2026-08-25.md`
+
+## 0. What This Document Is And Is Not
+
+This is a **proposal**. It grants no implementation authority, opens no
+tranche, and closes nothing. Every design below must still pass through the
+normal CVF path — paired baseline, work order, `WORKER_MUST_NOT_COMMIT`
+worker, independent reviewer/closer — exactly as RFR-R6 through R7C did.
+
+It does not modify source, tests, governance surfaces, or session state.
+
+Findings are established in the paired verification report. This document only
+answers: *given those verified findings, what should be done, in what order,
+by which existing owner, and what must deliberately not be done.*
+
+## 1. Two Additional Facts Resolved Since The Verification Report
+
+The verification report left two items unresolved and flagged them as blocking.
+Both were resolved by targeted read-only inspection before writing this
+proposal. They materially change the recommended plan.
+
+### 1.1 Durable store reachability — narrowed
+
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/web-runtime.ts` lines 8-11:
+
+```ts
+export {
+  createFileBackedDurableMemoryStore,
+  DURABLE_MEMORY_STORE_VERSION,
+} from "./durable-memory-store";
+```
+
+This is a **re-export**, not an instantiation. `web-runtime.ts` publishes the
+factory as public API; it does not itself construct a store or perform a write.
+
+Consequence: the external agent's "pre-activation" framing is **closer to
+correct than the verification report allowed**. The correct characterization is
+narrower than either prior statement:
+
+> The durable store is an **exported, constructible API surface** with a
+> fail-open provenance default. No live write path was traced. Any consumer
+> that calls the exported factory inherits the defect.
+
+This is not an exploited production vulnerability. It is also not inert: the
+defect is reachable by any current or future caller of a published export.
+Severity stays P1; the justification changes from "may be wired" to "is
+publicly constructible."
+
+### 1.2 Current memory-governance owner — identified
+
+GC-022 is archived (verification report §4). The current owner is:
+
+- `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md`
+  — `Status: ACTIVE_REFERENCE`, `matrixVersion: cvf.memoryFoundation.ownerSurfaceReconciliation.everosT2.v1`, Batch ID `EVEROS-T2`
+- sibling: `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_LEDGER_SCHEMA_BOUNDARY.md`
+
+Notably, that matrix already carries `rawMemoryReleased=false` as a header
+invariant and already declares that it "does not add a runtime, index,
+generated aggregate, checker, provider proof, adapter, public export, or
+MPI-T6 runtime."
+
+Consequence: **Tranche B of the verification report is now largely discharged.**
+The memory-language alignment work has a live owner and does not require a new
+one. This is a strong argument against creating anything new here.
+
+## 2. Design Principles Governing Every Proposal Below
+
+These are constraints on the solutions, derived from verified CVF doctrine and
+from the external agent's own anti-duplication rules.
+
+| Principle | Consequence for this proposal |
+| --- | --- |
+| No new owner where one exists | every change below lands in an existing file |
+| Storage class ≠ epistemic status ≠ retrieval authority | never encode truth in a storage field |
+| Integrity ≠ truth; provenance ≠ truth | no scalar may be renamed into a truth claim |
+| Fail closed on absent evidence | omission must never outrank explicit low trust |
+| Reuse in-repo precedent over invention | MinerU fail-closed pattern already exists |
+| Derived surfaces are repaired at their source | fix generators, not exported snapshots |
+| Public claims bind to model identity, not vendor | certification is per-model, per-receipt |
+
+One additional principle, specific to this proposal:
+
+> **Prefer the smallest change that makes the defect impossible to express.**
+> A guard that must be remembered is weaker than a type that cannot be written.
+
+## 3. Tranche A — Public Claim Reconciliation (P0)
+
+### 3.1 Problem restated
+
+Public surface certifies `qwen-turbo` (a model with an existing deprecation
+tranche) while the current lane `qwen-flash` is `EXPERIMENTAL` with "fresh T6
+live proof pending." Broad wording in three private surfaces compounds it.
+
+### 3.2 Why this is P0 and first
+
+Every other finding is internal. This one is **outward-facing**: it is the
+statement a third party reads before trusting the framework. A certification
+claim attached to the wrong model identity is the most damaging class of
+inaccuracy this repository can emit, and it is the cheapest to fix.
+
+### 3.3 Repository targeting — decide before any edit
+
+This is the single most important sequencing decision, and it is an operator
+call, not an agent call.
+
+| Surface | Repository | Editable from this workspace? |
+| --- | --- | --- |
+| `ARCHITECTURE.md:5`, `:162` | private provenance | yes |
+| `README.md:111` | private provenance | yes |
+| `CVF_CURRENT_PUBLIC_SNAPSHOT.md:99` | packet at `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` | derived — see §3.4 |
+| public `PROVIDERS.md`, public README | public repo | **no** — separate authorization required |
+
+This workspace's push remote is `DISABLED_PROVENANCE_ARCHIVE_DO_NOT_PUSH_FROM_THIS_WORKSPACE`.
+Per `CLAUDE.md`, public-sync requires separate authorization and an explicit
+file list. **Do not attempt public repair as a side effect of private repair.**
+
+Recommended split: one private tranche now; one public-sync tranche later,
+separately authorized, after the private source of truth is correct.
+
+### 3.4 Fix the generator, not the artifact
+
+`CVF_CURRENT_PUBLIC_SNAPSHOT.md` is a generated projection — its sibling
+receipt records `packetFileHashes` and a `publicCommit` binding. Editing it
+directly would produce a hash-valid artifact carrying a stale assertion, which
+is precisely the failure mode the external agent named `SEMANTIC_SNAPSHOT_DRIFT`.
+
+Required order:
+
+1. correct the authoritative private wording;
+2. locate and correct whatever emits the snapshot's §5 provider block;
+3. regenerate the packet;
+4. re-verify hashes and the refresh receipt.
+
+Step 2 requires a read-only search for the emitter. If no generator exists and
+the packet is hand-maintained, that itself is a finding to record — do not
+silently hand-patch.
+
+### 3.5 Proposed wording change
+
+Replace vendor-level certification language with model-bound language. Concrete
+proposal for the three private lines:
+
+| Path | Current | Proposed |
+| --- | --- | --- |
+| `ARCHITECTURE.md:5` | "certified Alibaba + DeepSeek provider lanes" | "one certified provider lane (DeepSeek `deepseek-chat`) and additional experimental lanes" |
+| `ARCHITECTURE.md:162` | "Alibaba/DashScope is the primary certified release lane" | "DeepSeek `deepseek-chat` is the current certified release lane; Alibaba `qwen-flash` is the current target lane pending fresh live proof" |
+| `README.md:111` | same "primary certified release lane" claim | same correction, retaining W149/W152 history as *historical* evidence explicitly labelled as such |
+
+The readiness matrix at `docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md`
+is the owner and should **not** change — it is already correct. All other
+surfaces conform to it.
+
+### 3.6 Historical evidence must survive
+
+Do not delete W149/W152/`qwen-turbo` receipts. Relabel them as historical.
+The readiness matrix already models this correctly at line 46 ("not
+transferable to the new model") — reuse that exact framing rather than
+inventing new vocabulary.
+
+### 3.7 Optional: bounded consistency guard
+
+The external agent proposed a static checker binding readiness owner ↔ README ↔
+ARCHITECTURE ↔ snapshot. This is sound **but should not be built in Tranche A**.
+
+Rationale: a checker encodes an invariant. Encoding an invariant while the
+underlying statements are still wrong risks freezing the wrong shape. Build it
+only after §3.5 lands, and only by extending an existing claim-consistency
+checker if one exists. Do not create a new metadata registry or validation
+subsystem for this — the external agent's own constraint, and it is correct.
+
+## 4. Tranche B — Durable Store Fail-Closed Provenance (P1)
+
+### 4.1 Problem restated
+
+`durable-memory-store.ts:249` — `input.provenanceScore ?? 1` — converts absent
+provenance into maximum provenance, which then passes the `>= 0.7` threshold at
+line 262 and is persisted at line 287.
+
+### 4.2 Why the obvious fix is wrong
+
+The tempting fix is `?? 0`. **Do not do this.** It substitutes one magic scalar
+for another and makes absent provenance indistinguishable from *explicitly
+measured zero provenance*. Those are different epistemic states and must remain
+distinguishable — this is the "do not replace the problem with another magic
+scalar" constraint, and it is correct.
+
+### 4.3 Proposed design — make the defect unexpressible
+
+Preferred approach, in order of strength:
+
+**Option 1 (strongest, recommended): make the field required at the type level.**
+
+```ts
+// current
+provenanceScore?: number;
+// proposed
+provenanceScore: number;
+```
+
+Then remove the `?? 1` fallback entirely and validate explicitly:
+
+```ts
+if (typeof input.provenanceScore !== "number" || !Number.isFinite(input.provenanceScore)) {
+  // reject: missing_provenance_score
+}
+```
+
+Why this is best: it converts a runtime guard into a compile-time
+impossibility. A caller cannot forget what the type will not let them omit.
+This is the "smallest change that makes the defect impossible to express"
+principle from §2.
+
+Cost: it is a breaking change to `DurableMemoryWriteInput`. That cost is
+acceptable **because the store is pre-activation** (§1.1) — there is no live
+caller to break. This is precisely the window in which such a change is cheap,
+and that window closes on activation. This is the strongest argument for doing
+it now rather than later.
+
+**Option 2 (fallback, if a caller genuinely requires optionality):** keep the
+field optional but treat absence as a distinct rejected state, never as a
+value:
+
+```ts
+const exclusionReason =
+  input.provenanceScore === undefined ? "missing_provenance_score"
+  : !Number.isFinite(input.provenanceScore) ? "invalid_provenance_score"
+  : input.provenanceScore < MIN_PROVENANCE_SCORE ? "low_provenance_score"
+  : undefined;
+```
+
+Note this yields **three** distinct reasons, not one. Absent, invalid, and
+low-but-measured are different facts and the receipt should say which.
+
+### 4.4 Reuse existing in-repo precedent
+
+Do not invent this pattern. It already exists and passes:
+
+- `tests/mineru-python-receipt-bridge.test.ts:141` — `"fails closed when provenanceScore is missing (undefined)"`
+- `tests/mineru-python-receipt-bridge.test.ts:153` — fails closed on non-finite
+- `tests/mineru-memory-rag-route-release.test.ts:185` — fails closed on non-finite
+
+Mirror these test names and shapes in `tests/durable-memory-store.test.ts`.
+Consistency with a sibling owner is itself a governance value here — the defect
+exists *because* two sibling owners diverged.
+
+### 4.5 Required tests
+
+| Case | Expected |
+| --- | --- |
+| `provenanceScore` omitted entirely | rejected, reason distinguishes *missing* |
+| `provenanceScore: undefined` explicitly | rejected, same reason |
+| `provenanceScore: NaN` / `Infinity` | rejected, reason distinguishes *invalid* |
+| `provenanceScore: 0` | rejected as *low*, not as *missing* |
+| `provenanceScore: 0.7` | accepted (boundary retained) |
+| existing passing cases | unchanged — no regression |
+
+The boundary case matters: the current threshold is `< 0.7` rejects, so `0.7`
+accepts. Do not silently change the threshold while fixing the default.
+
+### 4.6 Explicit non-goal
+
+Do **not** introduce runtime provenance enums mirroring Truth Foundation's
+documentation-only labels. The external agent flagged this and is correct: that
+would create a second provenance vocabulary without owner authorization.
+
+## 5. Tranche C — Retrieval Seam Hardening (P1)
+
+This tranche addresses the composed defect: relevance and rank are both decided
+by record-carried data (verification report §6.2, §6.3).
+
+### 5.1 `matchesQuery` — relevance is attacker-shapeable
+
+`memory-retrieval-policy.ts:98-104` decides relevance by substring-matching the
+query against `summary + content` — both attacker-controllable.
+
+Honest assessment: **this cannot be fully fixed inside the retrieval policy.**
+Substring relevance is a legitimate retrieval mechanism; the vulnerability is
+that relevance is being treated as though it implied *eligibility*. The real
+fix is architectural, not a string-matching tweak.
+
+Proposed minimal change: leave `matchesQuery` as a **relevance** function, and
+stop letting relevance alone carry a record into decision-bearing context. That
+is the admission-boundary work in §5.3. A cosmetic change to the matcher would
+create false assurance.
+
+Recommended immediate action: **document the property** in the retrieval policy
+owner — that query relevance is attacker-shapeable by construction and is not
+an eligibility signal. Documentation of a known-bounded property is a legitimate
+CVF outcome and is cheaper and more honest than a partial technical fix.
+
+### 5.2 `auditTrust` — narrow the semantics, do not delete
+
+Verified provenance of the scalar's values:
+
+| Line | Origin | What it actually measures |
+| --- | --- | --- |
+| `memory-retrieval-policy.ts:77` | `graphConfidenceToAuditTrust(node.confidence)` | graph extraction confidence |
+| `memory-retrieval-policy.ts:92` | `node.confidence` (KGR, passed through) | extraction confidence |
+| `memory-retrieval-attribution.ts:26-28` | consumed | rendered as `high_trust` / `medium_trust` |
+
+The defect is a **vocabulary conflation**: an extraction-confidence number is
+displayed as a trust judgement. Per arXiv:2608.21230, default provenance/trust
+weighting was statistically indistinguishable from no defense (p=0.80) — so the
+scalar should not be relied on as a defense regardless.
+
+Proposed: **rename to what it measures**, e.g. `extractionConfidence`, and
+change the attribution labels from `high_trust`/`medium_trust` to
+confidence-based wording. Do not delete the scalar — it has legitimate ranking
+use. Do not add a replacement "truth score" — that repeats the error.
+
+Caution: this is a rename across a public-ish contract surface. It requires the
+same owner check as §4.3. If the rename is too costly, the minimum acceptable
+alternative is documenting the exact semantics at the field declaration, so no
+future reader mistakes confidence for verification.
+
+### 5.2a Addendum — the scalar is caller-supplied at an HTTP boundary
+
+Added after a delayed search completed. This changes the priority and the shape
+of the fix, and answers open question §10.4 negatively.
+
+Verified in
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts`:
+
+| Line | Fact |
+| --- | --- |
+| 19-28 | `candidates[]` with `auditTrust: number` is part of the **HTTP request body** |
+| 90 | validation is `typeof cand.auditTrust !== 'number'` — type only |
+| 99 | value passes through unchanged |
+| 135-163 | route requires session cookie **or** signed service token; `401` otherwise |
+
+So `auditTrust` is **not** package-internal. On this route it is not derived
+from graph/KGR confidence at all — an authenticated caller states it directly,
+and only its numeric type is checked. No range check, no provenance binding.
+
+This is structurally the same defect the RFR-R7A reviewer rejected as
+self-attestation (R7A-F2): a caller supplying the evidence that decides its own
+standing. The precedent for how CVF resolves this already exists in-repo.
+
+Revised recommendation for §5.2, replacing "rename or document":
+
+1. **Bound the value at the boundary.** Reject `auditTrust` outside `[0,1]`.
+   A type check that accepts `1e9` or `-5` is not validation. This is a
+   contained, non-breaking change to `validateBody`.
+2. **Do not let a caller-supplied scalar drive rank.** Either derive the ranking
+   value server-side, or mark caller-supplied candidates as a distinct,
+   lower-authority class that cannot outrank server-derived ones.
+3. **Then** apply the rename from §5.2 — with the boundary understood, the
+   honest name is clearer: on this route the value is a *caller assertion*, not
+   an extraction confidence and certainly not audited trust.
+
+Sequencing note: item 1 is cheap and independently valuable; it should land even
+if items 2-3 are deferred. Item 2 is the real fix and is design work.
+
+Non-claim: the route is authenticated, so this is **not** an unauthenticated
+public poisoning endpoint, and no exploit was executed. Authentication bounds
+*who* may assert; it does not make the assertion true.
+
+### 5.3 Epistemic admission boundary — propose contract, defer implementation
+
+The external agent's §8 proposes distinguishing:
+
+```text
+stored → retrieved → policy-eligible → epistemically-qualified → decision-eligible
+```
+
+This is the correct direction and mirrors CVF's existing
+`discovered ≠ admitted ≠ authorized ≠ invoked` discipline.
+
+**Recommendation: specify it, do not build it yet.** Reasons:
+
+1. It touches the Memory ↔ SOT3 boundary, which has its own owners
+   (Refinery, Truth Kernel, TruthReceipt/TruthReference, Flow).
+2. Building it before Tranche A/B land would mean designing an admission gate
+   on top of a store that still accepts unattested writes — the gate would
+   inherit bad inputs.
+3. The retrieval layer must not mint a `TruthReference`. Getting that boundary
+   wrong creates a second truth owner, the single most damaging outcome
+   available here.
+
+Proposed deliverable for this tranche: a **contract document only**, owned by
+`docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md`
+(the identified active owner, §1.2), specifying the state distinction and
+explicitly stating that memory may *reference* an existing TruthReference but
+may never *create or qualify* one.
+
+Preserve `rawMemoryReleased = false` and `canReinject = false` throughout. Do
+not change them in this tranche.
+
+## 6. Tranche D — Memory Language Alignment (P2)
+
+Owner: the EVEROS-T2 matrix identified in §1.2 — **not** archived GC-022.
+
+Proposed alignment, per the external agent's §4, which is doctrinally correct:
+
+```text
+Memory is a governed repository of records, observations, claims,
+references, history, and durable evidence. A stored assertion becomes
+truth-qualified only through the appropriate source/truth authority.
+```
+
+Preserve `FULL_RECORD` / `SUMMARY_RECORD` / `POINTER_RECORD` unchanged — those
+are storage classes and must not be conflated with epistemic state.
+
+Reconcile the term "source authority" where it appears in memory docs:
+
+> Memory/source authority may establish *what was observed or recorded*. It does
+> not establish the *semantic truth* of the recorded assertion.
+
+Low risk, documentation-only, no runtime effect. Sequenced last because it is
+the least urgent, not because it is unimportant.
+
+## 7. Tranche E — Bounded Evaluation (P2, optional)
+
+Only if an existing evaluation/benchmark owner is identified. **Do not create a
+new Evaluation Plane** — this is a hard constraint.
+
+If built, the acceptance bar must include **retained utility**, not only poison
+suppression. arXiv:2608.21230's central result is that defenses strong enough
+to block poison also suppressed legitimate untrusted evidence — accuracy fell to
+0.0417 with zero evidence recall when answer-bearing evidence arrived untrusted.
+A defense measured only on poison-blocking would reproduce that failure and
+report it as success.
+
+Minimum fixture set worth building, ordered by what current CVF state makes
+testable:
+
+| Fixture | Tests which verified defect |
+| --- | --- |
+| record omitting provenance metadata | §4 fail-closed default |
+| query-shaped false memory | §5.1 relevance shapeability |
+| correct-but-untrusted evidence | §5.2 scalar suppression risk |
+| conflicting records (15 vs 20 playlists) | conflict handling |
+| stale formerly-correct record | lifecycle state handling |
+| same claim via several derived sources | duplicate-lineage collapse |
+
+**Bounded occupancy stays `EXPERIMENT_ONLY`.** Do not hard-code
+`untrusted <= 20%` or any universal ratio. The paper proposes it as a direction;
+it is not a proven CVF defense, and encoding it as an invariant would be exactly
+the overclaim the external agent's §16 and §19 forbid.
+
+## 8. Recommended Sequencing
+
+```text
+A. Public claim reconciliation        P0  outward-facing, cheapest, no dependencies
+        ↓
+B. Durable store fail-closed          P1  window closes on activation
+        ↓
+C. Retrieval seam hardening           P1  depends on B (gate needs clean inputs)
+        ↓
+D. Memory language alignment          P2  owner known, documentation-only
+        ↓
+E. Bounded evaluation                 P2  optional, needs existing eval owner
+```
+
+Rationale for A first: it is outward-facing and has no dependency on any other
+tranche. Rationale for B second: §1.1 establishes the store is pre-activation
+and publicly constructible — the cost of a breaking type change is at its
+minimum now and rises permanently once a live caller exists.
+
+Each tranche should be a separate governed packet. Do not bundle. The RFR chain
+(R6 → R7A → R7B → R7C) demonstrated that bundling defects of different root
+causes produces exactly the misattribution that R7B had to correct.
+
+## 9. What I Recommend Against
+
+Stated explicitly so a reviewer can disagree with a specific position rather
+than an absence.
+
+| Rejected action | Reason |
+| --- | --- |
+| `provenanceScore ?? 0` | replaces one magic scalar with another; loses the missing/measured-zero distinction |
+| Editing `CVF_CURRENT_PUBLIC_SNAPSHOT.md` directly | produces a hash-valid stale artifact; fix the generator |
+| Editing archived GC-022 | creates a false authority trail; owner is the EVEROS-T2 matrix |
+| Building the consistency checker in Tranche A | encodes an invariant while the statements are still wrong |
+| Deleting `auditTrust` | it has legitimate ranking use; the defect is vocabulary, not existence |
+| Adding a replacement "truth score" | repeats the conflation the paper measured as ineffective |
+| Cosmetic `matchesQuery` tweak | creates false assurance; the real fix is the admission boundary |
+| Implementing admission gate before B | gate inherits unattested writes |
+| Hard-coding bounded occupancy | unproven for CVF; contradicts claim discipline |
+| Any push from this workspace | push remote disabled by policy; public sync separately authorized |
+| Bundling tranches | reproduces the R7B misattribution failure |
+
+## 10. Open Questions For The Operator
+
+These require a decision I cannot make from repository state alone.
+
+1. **Repository target for Tranche A.** Private only now, or coordinated
+   private-then-public? Public sync needs separate authorization.
+2. **Snapshot generator.** Does an emitter exist for the packet's §5 provider
+   block, or is the packet hand-maintained? Determines whether §3.4 is a
+   generator fix or a process finding.
+3. **`DurableMemoryWriteInput` breaking change.** Is Option 1 (required field)
+   acceptable, or does a known caller require Option 2? §1.1 suggests Option 1
+   is safe, but I did not enumerate every external consumer.
+4. ~~**`auditTrust` rename cost.** Is the field referenced outside this
+   package?~~ **RESOLVED — see §5.2a.** Yes: it crosses into
+   `cvf-web/src/app/api/memory/readout/route.ts` as a caller-supplied HTTP body
+   field with type-only validation. The remaining decision is not whether to
+   rename, but whether to accept recommendation §5.2a item 2 (stop letting a
+   caller-supplied scalar drive rank), which is design work.
+5. **Evaluation owner.** Does an existing benchmark owner exist that can host
+   Tranche E without creating a new plane? If not, Tranche E should be dropped
+   rather than accommodated.
+
+## 11. Claim Boundary
+
+Proven by the paired verification report and the two additions in §1: the
+file/line facts cited throughout, reproducible at HEAD
+`7a4c9fd8fbaf4eb6dc0911f668fc4a2e9753d2ae`.
+
+Proposal only, not proven: every design, sequencing choice, and cost estimate
+in §3 through §9. None has been implemented or tested.
+
+Explicitly **not** claimed: no implementation authority; no tranche opened or
+closed; no runtime, provider, live-proof, deployment, public-sync, or
+production-readiness claim; no assertion that these changes would make CVF
+resistant to memory poisoning; no claim that any defect described is an
+exploited production vulnerability.
+
+This document is `NOT_CVF_SOURCE`. It is a proposal for operator and reviewer
+decision and confers no authority to act.

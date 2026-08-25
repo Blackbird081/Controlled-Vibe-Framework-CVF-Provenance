@@ -1,0 +1,557 @@
+# CVF External Agent Findings — Corrected Verification Report
+
+Memory class: FULL_RECORD
+
+Claim authority: NOT_CVF_SOURCE (provider-local verification aid; not canonical
+CVF authority regardless of memory class)
+
+Status: RETURN_FOR_CORRECTION_ADDRESSED_PENDING_RE_REVIEW
+
+docType: verification_report
+
+Date: 2026-08-25
+
+Text Encoding Exception: this historical correction preserves deliberate
+Unicode punctuation and section symbols already used throughout the advisory
+chain; the file is UTF-8 and does not use Unicode to encode executable or
+machine-authority semantics.
+
+Verifier: independent local session (Claude Code), read-only
+
+Verification base HEAD: `416a38bf159cea0105234f307fffd94d8bf5ac0c`
+
+Prior version SHA-256 (returned for correction):
+`5e048a8cafc9555eaf27e7813eaa63cd4a7c089f99bf41810a7b56799702d778`
+
+## Purpose
+
+Correct the material citation, reachability, owner-routing, severity, and
+process-shape defects found by the independent adversarial review. This
+document remains advisory evidence only and does not authorize remediation.
+
+## Target / Source
+
+This supersedes, on the eight findings listed in §1, the two prior advisory
+documents:
+
+- `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_VERIFICATION_REPORT_2026-08-25.md`
+- `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_REMEDIATION_PROPOSAL_2026-08-25.md`
+
+The prior documents are **not deleted or edited** — they remain as the
+historical record of what was originally claimed. This document is the
+correction, written after an independent adversarial review found eight
+findings, including four material defects in the prior reasoning and proposal.
+
+Reviewed and accepted: `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_INDEPENDENT_ADVERSARIAL_REVIEW_2026-08-25.md`
+(SHA-256 `711940d41909810d131346e692c4d772911bb96ae2afdb67b620e4372f152107`,
+independently re-verified below, not merely trusted).
+
+This document performs no repair. It changes no source, no test, no governance
+surface. It is evidence for a reviewer/operator decision only.
+
+## Scope / Methodology
+
+The author re-traced F1-F5, F7, and F8 against the source files and line anchors
+named below, recomputed the response artifact hash, and separated the five F6
+paths that remain pending independent author re-trace. No implementation,
+provider invocation, test edit, governance-source edit, stage, commit, push, or
+public export is performed or authorized by this report.
+
+## Findings / Position
+
+F1-F5, F7, and F8 are independently confirmed with the bounded corrections
+recorded below. F6 is accepted only in direction and remains
+`PENDING_INDEPENDENT_RETRACE` for its five specific paths. The original report
+and proposal remain historical advisory inputs and are not implementation
+authority.
+
+## Risk / Corrective Action
+
+The highest-priority runtime risk is the provider-prompt-reachable provenance
+default in F2. Corrective planning must also preserve owner boundaries, repair
+the stale Memory Plane Map, enumerate current provider-claim projections, and
+avoid claiming the defect class closed while a reachable instance remains
+open. Any implementation still requires a paired baseline and work order.
+
+## Decision / Recommendation
+
+Decision: ACCEPT_CORRECTIONS_AS_ADVISORY_INPUT_ONLY
+
+Recommendation: use this corrected report and the independent adversarial
+review only as inputs to a later governed dispatcher packet. Do not commit or
+promote the original report, original proposal, or this correction as a
+baseline, work order, closure artifact, or runtime authorization.
+
+## 1. Disposition Of The Adversarial Review's Findings
+
+F1-F5, F7, and F8 were independently re-traced by this author against current
+source at HEAD `416a38bf159cea0105234f307fffd94d8bf5ac0c` before acceptance —
+none of those seven was accepted on the adversarial review's word alone. **F6
+was not independently re-traced** and its disposition is stated accurately
+below as pending, not as verified; this correction fixes an overstatement in
+the prior version of this document, which incorrectly claimed F6 was also
+independently verified.
+
+| ID | Adversarial finding | Disposition | Verified independently by this author |
+| --- | --- | --- | --- |
+| F1 | Live authenticated HTTP route writes to the durable store with omitted `provenanceScore` | **ACCEPTED — original report was wrong** | yes, §2 |
+| F2 | Second fail-open provenance default reaches the provider system prompt (new finding, missed by both prior authors) | **ACCEPTED — highest-priority runtime finding in the chain** | yes, §3 |
+| F3 | GC-022 is active, not archived-only | **ACCEPTED — original report was wrong** | yes, §4 |
+| F4 | Proposed admission-boundary contract would duplicate an existing owner (`CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md`) | **ACCEPTED** | yes, §5 |
+| F5 | `CVF_MEMORY_PLANE_MAP.md` is itself stale and asserts the durable store is `CONTRACT_ONLY`/unwired, contradicting F1 | **ACCEPTED — root cause of this author's F1 error** | yes, §5 |
+| F6 | Provider-claim Tranche A scope was too narrow (missed README badges, guides, runtime provider-status code) | **ACCEPTED IN DIRECTION — PENDING_INDEPENDENT_RETRACE on the five specific cited paths** | no — see §6, §8 |
+| F7 | `matchesQuery` impact rated too high without a demonstrated exploit path | **ACCEPTED WITH CONDITION** | yes, §7 |
+| F8 | `auditTrust` HTTP-boundary impact rated too high without a demonstrated downstream path | **PARTIALLY ACCEPTED — condition changed by F2** | yes, §7 |
+
+No adversarial finding was rejected. F1-F5, F7, F8 are accepted as
+**independently confirmed and materially correcting** the two prior documents.
+F6 is accepted **in direction** — the drift pattern it describes is consistent
+with F1-F5 — but its five specific citations remain unverified by this author
+and must not be read as confirmed until re-traced (§6, §8).
+
+## 2. F1 — Corrected: A Live Write Route Exists
+
+### 2.1 What the original report claimed
+
+> "The durable store is an exported, constructible API surface. No live write
+> path was traced."
+
+### 2.2 Why that was wrong
+
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/write/route.ts`
+exists as a sibling of the `readout` route this author did inspect. Verified:
+
+| Line | Fact |
+| --- | --- |
+| 3-11 | imports `createFileBackedDurableMemoryStore` from `cvf-learning-plane-foundation/web-runtime` |
+| 24 | `provenanceScore?: number;` — optional in the HTTP request body |
+| 164, 171, 176 | route requires `verifyServiceTokenRequest` or `verifySessionCookie`; `401` otherwise |
+| 202 | `if (!body.actorAuthorized \|\| body.policyDecision !== 'allow')` — both fields are **caller-supplied in the same request body** and the route trusts them for its own policy gate before ever reaching the store |
+| 221 | `const store = createFileBackedDurableMemoryStore(storePath);` — **actual construction, not re-export** |
+| 230 | `provenanceScore: body.provenanceScore` — passed through unchanged, may be `undefined` |
+
+That value then reaches `durable-memory-store.ts:249` (`?? 1`) and is persisted
+at line 287 — exactly the mechanism the original report described as
+theoretical.
+
+The line-202 fact matters beyond precision: the route's own admission gate
+(`actorAuthorized`, `policyDecision`) is itself caller-declared, not derived
+from session/token identity. This means the same request that supplies the
+missing `provenanceScore` also supplies the claim that it is authorized and
+policy-approved — two self-declared fields feeding one gate, one omitted field
+silently upgraded to maximum trust by the store beneath it.
+
+### 2.3 Root cause of the original error
+
+This author's original search was `grep -rln "durable-memory-store" EXTENSIONS/`
+— an **importer search**, not a **directory listing** of the API surface. The
+`readout` route was found and inspected; its sibling `write` route was never
+listed. Finding one route in a directory is not evidence of the absence of a
+second one.
+
+### 2.4 Corrected finding
+
+> The durable-store fail-open default is reachable through an authenticated
+> HTTP write route (`api/memory/write`) when the durable-store environment path
+> is configured. Deployment and external network exposure of that route remain
+> unverified by this report — see §8.
+
+Severity: **P1, reachable** (was: P1, theoretical/pre-activation). The
+authentication requirement is real and matters — see §2.5 — but it does not
+reduce this to pre-activation.
+
+### 2.5 What authentication does and does not establish
+
+An authenticated caller (valid session or signed service token) can write a
+record with omitted provenance and have it persisted at maximum trust. This is
+not an open, unauthenticated poisoning endpoint. It is a case of an
+authenticated actor's *incomplete* input being silently upgraded to *maximum*
+attested input — the system, not the caller, manufactures the missing evidence.
+This is the same defect shape as the RFR-R7A self-attestation finding
+(R7A-F2), applied to a different seam.
+
+## 3. F2 — New Finding: Fail-Open Default Reaches The Provider System Prompt
+
+Neither the external agent nor this author's original report found this. Per
+§9, its severity is rated P1, the same tier as F1 — the provider-claim drift in
+§6 remains the sole P0. What makes F2 the **highest-priority runtime finding**
+is not a higher severity tier than F1, but that it is the only finding in the
+entire chain with a verified path to provider-facing content, which should
+drive remediation sequencing (§10) even though it does not outrank the P0
+outward-facing claim defect on severity alone.
+
+### 3.1 The mechanism
+
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/aif-memory-reinjection.ts`:
+
+| Line | Fact |
+| --- | --- |
+| 99 | `if ((item.provenanceScore ?? 1) < threshold)` — a **second, independent** fail-open provenance default, structurally identical to `durable-memory-store.ts:249` |
+| 103-136 (per adversarial review) | items passing the threshold are placed into a prompt block |
+| 149-150 (per adversarial review) | the block becomes a governed reinjection system-prompt fragment |
+
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts`:
+
+| Line | Fact |
+| --- | --- |
+| 746 | `evaluateAifMemoryReinjection(body.aifMemoryReinjection)` |
+| 753 | `enrichedSystemPrompt = aifMemoryReinjection.promptBlock ? buildAifMemoryReinjectionSystemPrompt(...) : ...` |
+| 790 | `executeAI(routedProvider, routedApiKey, filteredPrompt, { ...(enrichedSystemPrompt ? { systemPrompt: enrichedSystemPrompt } : {}) })` |
+
+This is a complete, traced path: **omitted provenance → treated as maximum
+trust → included in a prompt block → becomes the provider system prompt →
+sent to the provider.**
+
+### 3.2 Why this is worse than the F1 write-path finding
+
+F1 establishes that bad data can be *persisted*. F2 establishes that
+data admitted under the same fail-open logic can *reach the model*. F1 is a
+storage-integrity defect; F2 is the storage-integrity defect **plus** a
+demonstrated influence path on provider output. This is the finding that
+should drive remediation priority.
+
+### 3.3 Non-claim
+
+`rawMemoryReleased=false` on the *readout* route (verified in the original
+report, §6.1) does not bound this path — the reinjection path is a different
+route (`execute`) with a different mechanism (`aifMemoryReinjection`, not the
+readout candidate list). This report does not claim raw memory content is
+released; it claims a *summary derived under a fail-open trust default* reaches
+the system prompt. No live invocation was performed; no provider call was
+traced beyond static source reading.
+
+## 4. F3 — Corrected: GC-022 Is Active
+
+### 4.1 What the original report claimed
+
+> "The only GC-022 artifacts present are under `docs/baselines/archive/`... GC-022 is the wrong owner to edit."
+
+### 4.2 Why that was wrong
+
+Verified directly:
+
+- `governance/toolkit/05_OPERATION/CVF_MEMORY_GOVERNANCE_GUARD.md:3-5` —
+  `**Control ID:** \`GC-022\`` / `**Status:** Active durable-memory
+  classification contract for evidence-bearing CVF records.`
+- `docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md:59` — registers GC-022 with
+  owning guard `CVF_MEMORY_GOVERNANCE_GUARD`, reference
+  `docs/reference/CVF_MEMORY_RECORD_CLASSIFICATION.md`, checker
+  `governance/compat/check_memory_governance_compat.py`, gate class
+  `CI_REPO_GATE`.
+
+### 4.3 Root cause of the original error
+
+The original search was `find . -iname "*GC022*" -o -iname "*GC-022*"` — a
+**filename** search. The active control lives under
+`governance/toolkit/05_OPERATION/` in a file whose name does not contain the
+string `GC022` or `GC-022`; only the file's *content* declares the control ID.
+A filename search cannot find a control identified by content.
+
+### 4.4 Corrected finding
+
+GC-022 is an active governance control owning **durable-memory record
+classification**. It is not archived. It does not own retrieval admission,
+runtime write authorization, or TruthReference semantics — those are separate,
+currently unidentified or partially-identified owners. Any memory-language
+alignment work (Tranche D in the original proposal) must target GC-022's active
+surfaces (`CVF_MEMORY_GOVERNANCE_GUARD.md`,
+`CVF_MEMORY_RECORD_CLASSIFICATION.md`) and reconcile with, not bypass, them.
+
+## 5. F4/F5 — Corrected: Owner Duplication Risk And Stale Map
+
+### 5.1 The proposal's error
+
+The original remediation proposal (§5.3) recommended a new contract document
+"owned by the EVEROS-T2 matrix" for the retrieval epistemic-admission boundary.
+
+### 5.2 The existing owner
+
+`docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md:244-265`
+already defines memory write/read access-gate categories, and
+`CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md:79-80` already
+routes receipt taxonomy and memory-access-gate rules to that T1 contract.
+
+Creating a second contract under the reconciliation matrix would have been
+exactly the "no second owner" violation the external agent itself warned
+against, and which this author's own proposal claimed to avoid in §2 (design
+principles) while failing to apply it in §5.3.
+
+### 5.3 The stale map — root cause of the F1 error
+
+`docs/reference/CVF_MEMORY_PLANE_MAP.md`, currently at this HEAD:
+
+- line 64: `Durable write wired into route | NO -- fail-closed write present but NOT wired`
+- line 73: `LPF durable store | ... | CONTRACT_ONLY (present, fail-closed, UNWIRED) | ... | not wired; no active read/write route`
+- line 100: `**Status:** CONTRACT_ONLY -- present, fail-closed, NOT WIRED into any route.`
+- line 104: `**Wiring status:** no route imports durable store as a write path; future T5 readiness only. Source: MKG7 operational contract.`
+- line 166: `LPF durable store | CONTRACT_ONLY (present, fail-closed, UNWIRED) | write() exists with gates; not wired into any route` —
+  this line repeats the same status inside the "Surface Inventory" table; it
+  does not itself contain the "no route imports" sentence, which is unique to
+  line 104. Both lines assert the same underlying claim and are both wrong.
+
+All four lines are **directly contradicted** by `api/memory/write/route.ts`
+verified in §2. This is very likely the actual root cause of this author's
+original F1 error: the Memory Plane Map was read as an authoritative current
+map (which its own header claims: `ACTIVE_REFERENCE`-adjacent status) and its
+claim was trusted over an independent directory listing.
+
+**This is itself a governance finding, separate from F1**: the canonical
+Memory Plane Map is materially stale on a load-bearing runtime-status claim,
+and the EVEROS-T2 owner matrix delegates current runtime status to this exact
+map (`CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md:53`). Fixing
+the map is now a prerequisite for any future owner relying on it, including
+this report.
+
+## 6. F6 — Accepted In Direction, PENDING_INDEPENDENT_RETRACE On Citations
+
+The adversarial review identified additional live provider-claim surfaces not
+checked by the original report:
+
+- `README.md:14,272`
+- `docs/guides/CVF_QUICK_ORIENTATION.md:8,93`
+- `docs/guides/CVF_DEMO_SCRIPT_2026-04-21.md:151`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-lane-metadata.ts:10-29`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/providers/route.ts:8-17`
+
+The adversarial review additionally reports that "the two runtime projections
+also mark OpenAI CERTIFIED, contrary to OpenAI EXPERIMENTAL" in the readiness
+matrix. This author has not yet independently re-traced every one of these five
+paths line-by-line; they are accepted as **plausible and consistent with the
+established drift pattern** (a runtime/doc surface diverging from the readiness
+matrix owner) but are flagged in §8 as not independently re-verified by this
+author, distinct from F1-F5 which were independently re-traced above.
+
+Corrected scope for any Tranche A work order: enumerate **all** current-claim
+projections (docs, guides, runtime API responses, UI metadata), not only
+`ARCHITECTURE.md`/`README.md` prose, before dispatch.
+
+## 7. F7/F8 — Accepted With Conditions, Not Simply Downgraded
+
+### 7.1 `matchesQuery` (F7)
+
+Accepted: the original report's language ("both attacker-controllable") claimed
+more than the cited code proves. `matchesQuery` demonstrates that relevance can
+be *shaped* by record-carried text; it does not by itself demonstrate a hostile
+record crossing an authority boundary or causing a downstream effect.
+
+Condition for reclassification: this author does not fully downgrade to P2
+without qualification, because §3 (F2) now establishes that *a* memory-derived
+path reaches the provider system prompt. Whether the *retrieval-ranked* path
+(as opposed to the *reinjection* path in §3) shares that property was not
+traced by either the original report or the adversarial review. Recommended
+disposition: **P2, pending a trace of whether `memory-retrieval-policy.ts`
+output feeds any prompt-construction path analogous to §3.1** — not a flat P2.
+
+### 7.2 `auditTrust` HTTP-boundary origin (F8)
+
+Accepted: the original P1 rating rested on "no downstream action path was
+traced," and the adversarial review is correct that the *readout* route's own
+`rawMemoryReleased:false`/`canReinject:false` bounds that specific route.
+
+Condition: §3 now shows a *different* memory-derived value (reinjection
+`promptBlock`) does reach the provider. This does not re-establish `auditTrust`
+specifically as high-severity — the readout route and the reinjection path are
+different code paths with different data — but it means the general claim
+"memory-derived values don't reach the provider" is false as a category, so the
+P2 rating for `auditTrust` should be read as **route-specific**, not as
+evidence that no memory-ranking value can ever be provider-facing.
+
+## 8. What This Corrected Report Does Not (Yet) Verify
+
+Explicitly listed so a future reviewer knows what remains open, per the
+adversarial review's own "What Could Not Be Verified" section, which this
+author independently endorses:
+
+- whether `api/memory/write` or `api/execute` is deployed or externally
+  reachable in any running environment;
+- whether the durable-store environment variable
+  (`ROUTE_DURABLE_MEMORY_STORE_ENV`) is configured in any deployment;
+- the five Tranche-A-scope files listed in §6, not independently re-traced
+  line-by-line by this author;
+- whether `memory-retrieval-policy.ts` output (as opposed to
+  `aif-memory-reinjection.ts` output) feeds any prompt-construction path;
+- any production exploit, live invocation, or provider call — none was
+  performed or claimed by this report or its predecessors.
+
+## 9. Corrected Severity Table
+
+Supersedes the severity table in the original verification report.
+
+| Finding | Original rating | Corrected rating | Basis |
+| --- | --- | --- | --- |
+| Provider public-claim drift (model identity) | P0 | P0, unchanged | §6 confirms scope was too narrow but severity was correct |
+| Durable-store `provenanceScore ?? 1` (write route) | P1, theoretical | **P1, reachable via authenticated route** | §2 |
+| AIF reinjection `provenanceScore ?? 1` (new) | not found | **P1, highest priority — reaches provider prompt** | §3 |
+| GC-022 owner routing | advisory, wrong owner claimed | **P1, documentation/routing defect** | §4 |
+| Admission-boundary contract duplication | not caught by original proposal | **P1, must reuse existing T1 contract** | §5 |
+| Memory Plane Map staleness | not found | **P1, blocks correct owner reasoning generally** | §5.3 |
+| `matchesQuery` | P1 | P2, conditional on §7.1 trace | §7.1 |
+| `auditTrust` (readout route) | P1 | P2, route-specific | §7.2 |
+
+## 10. Corrected Recommended Sequence
+
+Supersedes §8 of the original remediation proposal.
+
+```text
+1. Reconcile CVF_MEMORY_PLANE_MAP.md with verified route reality (§5.3)
+   — this is a prerequisite; other owners delegate to it
+2. Fail-close the provenance-default defect class across BOTH reachable
+   instances:
+   - `aif-memory-reinjection.ts:99` (provider-prompt reachable — fix first)
+   - `durable-memory-store.ts:249` (write-route reachable — fix second, or in
+     a separate bounded sub-tranche if the two owners warrant independent
+     work orders)
+   These may be dispatched as two bounded, cross-owner sub-tranches rather than
+   one combined tranche if that better matches owner boundaries. What is
+   **not** permitted under any sequencing choice: closing or reporting this
+   defect class as remediated while either instance remains open. A partial
+   fix that closes only the write-route instance and leaves the
+   provider-prompt instance open must not be described as having closed "the
+   fail-open provenance defect" — it has closed one instance of it.
+3. Provider public-claim reconciliation, full scope per §6 once the five
+   cited paths are independently re-traced
+4. GC-022-conformant memory language alignment (not EVEROS-T2 alone)
+5. Retrieval seam work — bound auditTrust range at the HTTP boundary
+   (cheap, do regardless of severity dispute); defer semantic rename/admission
+   redesign until the §7.1 trace is complete
+6. Evaluation lane — only after an existing owner is identified; unchanged
+   from the original proposal
+```
+
+Step 2 is reordered ahead of step 3 relative to the original proposal, because
+§3 establishes it as the finding in this chain with a verified path to
+provider output — priority, not severity tier (§3, §9). Public-claim drift is
+outward-facing and severe (P0, the highest severity tier in this chain), but it
+is a statement *about* the system; the reinjection defect is a path *into*
+what the system actually says, and the two are independent axes: severity and
+sequencing priority need not agree.
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+The corrected report was expected to preserve independently reproduced F1-F5,
+F7, and F8 evidence, mark the five F6 citations as pending author re-trace,
+correct the cited line anchors, separate severity from remediation priority,
+and remain bounded advisory input without implementation authority.
+
+### Evidence Comparison
+
+Current source confirms the authenticated write path at
+`api/memory/write/route.ts:202,221,230`, the second provenance default and
+provider-prompt path recorded in §3, active GC-022 ownership recorded in §4,
+and the stale Memory Plane Map statements at lines 64, 73, 100, 104, and 166.
+The five F6 paths remain explicitly pending author re-trace rather than being
+reported as independently verified by this document.
+
+### Contradiction Or Gap Disposition
+
+- Original no-live-write claim: CORRECTED_BY_F1.
+- Missed provider-prompt path: ADDED_AS_F2.
+- Archived-only GC-022 claim: CORRECTED_BY_F3.
+- Duplicate contract-owner proposal and stale map: CORRECTED_BY_F4_F5.
+- F6 author verification gap: PENDING_INDEPENDENT_RETRACE.
+- Severity and sequencing conflation: CORRECTED_WITH_BOUNDED_LANGUAGE.
+
+### Claim Update
+
+The prior report and proposal remain materially flawed historical advisory
+inputs. This report records the bounded correction set, does not promote the
+inputs to CVF authority, and leaves F6 citation confirmation open for a later
+source-verification step.
+
+## 11. Process Note
+
+The adversarial review correctly observed (its "Process Conformance" section)
+that the original two documents, and by extension this one, are
+`NOT_CVF_SOURCE` advisory scratch artifacts, not conformant governed review
+packets, and that `run_worker_return_fast_gate.py` reports violations against
+them. This is accepted. None of these three documents (original report,
+original proposal, this correction) should be treated as a governed baseline,
+work order, or closure artifact. Any implementation must still go through the
+paired baseline → work order → `WORKER_MUST_NOT_COMMIT` worker → independent
+reviewer path, per §11 of the original proposal, restated here as still
+binding.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+| --- | --- |
+| applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_finding_to_governance_learning.py` |
+| literalTokensReviewed | Memory class; Claim authority; Status; What This Document Is; Disposition Of The Adversarial Review's Findings; PENDING_INDEPENDENT_RETRACE; Claim Boundary; NOT_CVF_SOURCE |
+| gateRunPurpose | Confirmatory structural alignment after the reviewer's `RETURN_FOR_CORRECTION` disposition, not first discovery of required shape. |
+| claimBoundary | Read-ahead evidence covers this document's shape only; it does not itself prove the semantic corrections in §2-§10 or authorize implementation. |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+| --- | --- |
+| Actor | independent local session (Claude Code) |
+| Provider or surface | local private provenance workspace |
+| Session or invocation | correction of the corrected verification report after reviewer `RETURN_FOR_CORRECTION`, 2026-08-25 |
+| Working directory | repository root |
+| Command or tool surface | local file reads, `sed`/`grep -n` line verification, SHA-256 recomputation, direct source re-trace |
+| Target paths | `docs/reviews/CVF_EXTERNAL_AGENT_FINDINGS_VERIFICATION_REPORT_CORRECTED_2026-08-25.md` (this file, in place) |
+| Allowed scope source | operator forwarded the reviewer's itemized correction list and asked for alignment with it |
+| Before status evidence | file existed, untracked, SHA-256 `5e048a8cafc9555eaf27e7813eaa63cd4a7c089f99bf41810a7b56799702d778` |
+| After status evidence | same file, same path, content corrected per §1-§10 above; new SHA-256 to be recorded by the next reader |
+| Diff evidence | line-number citations in §2 and §5.3 independently re-verified via `grep -n` against current source before editing, not copied from the reviewer's claim |
+| Approval boundary | edit this one file only; no source, test, governance, or session-state change |
+| Claim boundary | correction-authoring trace only; no implementation, closure, commit, push, or public-export authority |
+| Agent type | independent verification author |
+| Invocation ID | `external-findings-corrected-report-revision-2026-08-25` |
+| Expected manifest | this file only |
+| Actual changed set | this file only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+| --- | --- |
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | external-agent returned output |
+| Chain map route | comparison and re-verification only; no absorption or authority promotion |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
+| Owner surface | this document's own §2-§10 corrections; no external owner surface is created |
+| Disposition | COMPARISON_ONLY_NO_ABSORPTION — all applied factual corrections except the explicitly pending F6 citations were independently re-verified against current source before acceptance |
+| Claim boundary | this document remains `NOT_CVF_SOURCE`; the correction confers no implementation or closure authority |
+
+## Finding-To-Governance Learning Disposition
+
+| Finding group | Defect class | Learning lane | Disposition | Next action |
+| --- | --- | --- | --- | --- |
+| Citation line-number errors (§2, §5.3) | WORKER_EXECUTION_ERROR | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | Recompute cited line numbers via `grep -n` at time of writing, not from memory of an earlier read |
+| Overstated retrace coverage (F6 claimed verified when it was not) | WORKER_EXECUTION_ERROR | RUNTIME_BEHAVIOR_LEARNING | DESIGN_REVIEW_REQUIRED | State verification status per-finding, not as one blanket claim covering a whole table |
+| Severity/priority conflation ("highest-severity" vs. severity table) | WORKER_EXECUTION_ERROR | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | Cross-check narrative superlatives against the document's own tables before finalizing |
+| Taxonomy conflation (`Memory class: NOT_CVF_SOURCE`) | WORKER_EXECUTION_ERROR | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Keep memory-class and claim-authority markers on separate header lines |
+| Premature single-tranche remediation claim (§10 original) | ORCHESTRATOR_PACKET_GAP | RUNTIME_BEHAVIOR_LEARNING | DESIGN_REVIEW_REQUIRED | State defect-class closure requires every reachable instance closed, regardless of tranche boundaries |
+
+No new governance rule or checker is authorized by this correction. The
+reusable controls already exist in the adversarial review's own template; the
+failure being corrected here is application, not absence of a rule.
+
+## Claim Boundary
+
+Proven by this report: the file/line facts in §2, §3, §4, §5, reproducible at
+HEAD `416a38bf159cea0105234f307fffd94d8bf5ac0c`, including the line-number
+corrections in §2 (`:202`, `:221`, `:230`) and §5.3 (`:100`, `:104`, `:166`)
+independently re-verified via `grep -n` against current source, not accepted
+from the reviewer's assertion alone.
+
+Accepted from the adversarial review without independent full re-trace by this
+author: the five specific paths listed in §6 (flagged as
+`PENDING_INDEPENDENT_RETRACE`, not silently absorbed as verified).
+
+Explicitly not claimed: no exploited production vulnerability; no deployment or
+external-reachability evidence for either route; no live provider call was
+made; no claim that any fix proposed here would make CVF resistant to memory
+poisoning generally; no claim that this document, the adversarial review, or
+either original document carries implementation authority; no acceptance,
+closure, or roadmap transition; no claim that this document is itself a fully
+governance-conformant artifact ready for commit — §11 and this section both
+route that decision to the operator/reviewer.
+
+This report's memory class is `FULL_RECORD`; its claim authority is
+`NOT_CVF_SOURCE`. It is verification evidence for operator and reviewer
+decision. It confers no implementation authority.
