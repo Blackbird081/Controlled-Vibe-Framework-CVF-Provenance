@@ -8,7 +8,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
-- EAFR-R3 exact two-path no-commit documentation dispatch is committed at `86d922f505d4d9e947aa561b907923c3140b3384`; worker may edit only the Memory Plane map and R3 worker return.
+- EAFR-R3 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `5f0f9f9106da627f8db5c5036c7fb82222f2e121`; focused 46/46, reviewer-fast 65/65 and pre-commit 86/86 passed with zero provider/live calls.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -48,14 +48,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r3_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed exact two-path EAFR-R3 no-commit work order at 86d922f50 and return pending review; parked checkpoint=R1C before R6, RFR final reconciliation, R4-R6 and all external effects.
+Startup acknowledged: current mode=`eafr_r3_reviewer_accepted_closed_r4_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh source-verified EAFR-R4 baseline/work order after R3 bounded closure at 5f0f9f910; parked checkpoint=R1C before R6, RFR final reconciliation, R5-R6 and all external effects.
 
 ## Current Mode
-`eafr_r3_dispatched_pending_worker_return`
+`eafr_r3_reviewer_accepted_closed_r4_dispatch_authoring`
 
 ## Purpose
 
-Execute only the committed exact two-path R3 documentation reconciliation and return it uncommitted for independent review. R1C remains mandatory before R6; R4-R6 and all external effects remain parked.
+Preserve the R3 bounded closure, then author only a fresh source-verified R4 dispatch packet for the complete private provider-current manifest. R1C remains mandatory before R6; R5-R6 and all external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -115,18 +115,18 @@ Execute only the committed exact two-path R3 documentation reconciliation and re
 
 ## Current Authority
 
-Continuity parent anchor: `86d922f50`.
+Continuity parent anchor: `5f0f9f910`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R3 documentation reconciliation `DISPATCH_READY` at `86d922f50` |
+| authorityState | EAFR-R3 Memory Plane reconciliation `CLOSED_PASS_BOUNDED` at `5f0f9f910` |
 | baselinePath | `docs/baselines/CVF_GC018_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_2026-08-25.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_2026-08-25.md` |
-| nextAuthorityRequirement | exact two-path no-commit worker execution and `COMPLETE_PENDING_REVIEW` return |
+| nextAuthorityRequirement | fresh source verification plus GC-018 baseline/work order for EAFR-R4 dispatch |
 
 ## Closure Evidence
 
-- EAFR-R2 completion review: `docs/reviews/CVF_EAFR_R2_DURABLE_MEMORY_HTTP_WRITE_AUTHORITY_FAIL_CLOSED_COMPLETION_2026-08-25.md`; material commit `fdf53b841`; reviewer repaired false `actorAuthorized` admission, corrected zero-provenance evidence, and accepted bounded with 26/26 focused, reviewer-fast 65/65, pre-commit 86/86, zero provider/live calls. Typecheck/full-suite failures remain outside R2 and R1C-owned.
+- EAFR-R3 completion review: `docs/reviews/CVF_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_COMPLETION_2026-08-25.md`; material commit `5f0f9f910`; accepted with no repair after 46/46 focused tests, reviewer-fast 65/65, pre-commit 86/86 and zero provider/live calls. R1C debt remains mandatory before R6.
 
 - RFR-R1/R2/R3/R4 are `CLOSED_PASS_BOUNDED` through `8ec399aa5`. RFR-R5 is independently `CLOSED_PASS_BOUNDED` at `82a0073b2fca002fd7999ed70905166295946515`; reviewer repaired hostile profile/requirement handling, platform binding, immutable snapshots, canonical receipt rebinding and worker/child environment isolation. Proof: Safety Runtime 61/61, adapter 49/49, package 91/91, strict TypeScript, reviewer-fast and pre-commit 86/86; zero provider/live calls.
 - Downstream P4-A1 closure:
@@ -167,7 +167,7 @@ Continuity parent anchor: `86d922f50`.
 
 ## Next Allowed Move
 
-EAFR-R3 dispatch is committed at `86d922f50`. Execute only the exact two-path no-commit work order, then return `COMPLETE_PENDING_REVIEW`; R1C remains mandatory before R6, while R4-R6 and RFR final reconciliation remain parked.
+EAFR-R3 is independently accepted bounded at `5f0f9f910`. Author only a fresh source-verified EAFR-R4 baseline/work order next; do not implement R4 before that packet is committed. R1C remains mandatory before R6; R5-R6 and RFR final reconciliation remain parked.
 
 ## Active Boundary
 

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r3_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed exact two-path EAFR-R3 no-commit work order at 86d922f50 and return pending review; parked checkpoint=R1C before R6, RFR final reconciliation, R4-R6 and all external effects.
+Startup acknowledged: current mode=`eafr_r3_reviewer_accepted_closed_r4_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh source-verified EAFR-R4 baseline/work order after R3 bounded closure at 5f0f9f910; parked checkpoint=R1C before R6, RFR final reconciliation, R5-R6 and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r3_dispatched_pending_worker_return`
-Current mode: `eafr_r3_dispatched_pending_worker_return`
-Previous mode: `eafr_r2_reviewer_accepted_closed_r3_dispatch_authoring`
+Current mode marker: `eafr_r3_reviewer_accepted_closed_r4_dispatch_authoring`
+Current mode: `eafr_r3_reviewer_accepted_closed_r4_dispatch_authoring`
+Previous mode: `eafr_r3_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `eafr_r3_dispatched_pending_worker_return`; the R3 source-verified baseline/work order are committed at `86d922f50`. Execute only the exact two-path no-commit documentation reconciliation and return `COMPLETE_PENDING_REVIEW`; R1C, R4-R6, RFR final reconciliation, live/provider/network, credentials, deployment, public sync and push remain parked.
+Mode: `eafr_r3_reviewer_accepted_closed_r4_dispatch_authoring`; R3 is independently accepted bounded at `5f0f9f910` with 46/46 focused proof. Author only a fresh source-verified R4 baseline/work order next; R4 implementation remains held until commit. R1C, R5-R6, RFR final reconciliation, live/provider/network, credentials, deployment, public sync and push remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
