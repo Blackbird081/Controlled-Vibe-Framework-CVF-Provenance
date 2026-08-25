@@ -8,6 +8,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
+- EAFR-R3 exact two-path no-commit documentation dispatch is committed at `86d922f505d4d9e947aa561b907923c3140b3384`; worker may edit only the Memory Plane map and R3 worker return.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -47,14 +48,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r2_reviewer_accepted_closed_r3_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh source-verified EAFR-R3 baseline/work order after R2 bounded closure at fdf53b841; parked checkpoint=R1C before R6, RFR final reconciliation, R4-R6 and all external effects.
+Startup acknowledged: current mode=`eafr_r3_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed exact two-path EAFR-R3 no-commit work order at 86d922f50 and return pending review; parked checkpoint=R1C before R6, RFR final reconciliation, R4-R6 and all external effects.
 
 ## Current Mode
-`eafr_r2_reviewer_accepted_closed_r3_dispatch_authoring`
+`eafr_r3_dispatched_pending_worker_return`
 
 ## Purpose
 
-Preserve the R1/R1A/R1B closure chain and R2 bounded acceptance, then author only the fresh source-verified R3 dispatch packet. R1C remains mandatory before R6; R4-R6 and all external effects remain parked.
+Execute only the committed exact two-path R3 documentation reconciliation and return it uncommitted for independent review. R1C remains mandatory before R6; R4-R6 and all external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -114,14 +115,14 @@ Preserve the R1/R1A/R1B closure chain and R2 bounded acceptance, then author onl
 
 ## Current Authority
 
-Continuity parent anchor: `fdf53b841`.
+Continuity parent anchor: `86d922f50`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R2 durable-memory HTTP write hardening `CLOSED_PASS_BOUNDED` at `fdf53b841` |
-| baselinePath | `docs/baselines/CVF_GC018_EAFR_R2_DURABLE_MEMORY_HTTP_WRITE_AUTHORITY_FAIL_CLOSED_2026-08-25.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R2_DURABLE_MEMORY_HTTP_WRITE_AUTHORITY_FAIL_CLOSED_2026-08-25.md` |
-| nextAuthorityRequirement | fresh source verification plus GC-018 baseline/work order for EAFR-R3 dispatch |
+| authorityState | EAFR-R3 documentation reconciliation `DISPATCH_READY` at `86d922f50` |
+| baselinePath | `docs/baselines/CVF_GC018_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_2026-08-25.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_2026-08-25.md` |
+| nextAuthorityRequirement | exact two-path no-commit worker execution and `COMPLETE_PENDING_REVIEW` return |
 
 ## Closure Evidence
 
@@ -166,7 +167,7 @@ Continuity parent anchor: `fdf53b841`.
 
 ## Next Allowed Move
 
-EAFR-R2 is independently accepted bounded at `fdf53b841`. Author only a fresh source-verified EAFR-R3 baseline/work order next; do not implement R3 before that packet is committed. R1C remains mandatory before R6; R4-R6 and RFR final reconciliation remain parked.
+EAFR-R3 dispatch is committed at `86d922f50`. Execute only the exact two-path no-commit work order, then return `COMPLETE_PENDING_REVIEW`; R1C remains mandatory before R6, while R4-R6 and RFR final reconciliation remain parked.
 
 ## Active Boundary
 
