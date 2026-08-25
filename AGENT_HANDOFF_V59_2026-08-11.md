@@ -6,7 +6,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
-- Current EAFR archive-hygiene commit: `0fcc1dc20fea066fa7c123b9566c60ae0345e291`; historical advisory bytes are retained under `docs/reviews/archive/` with `.md.txt` suffix and remain non-authoritative.
+- Current EAFR-R1 dispatch authority: `4c5040573258f24918c6dd44045bd2517d83f181`.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -46,14 +46,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r7c_closed_final_reconciliation_preparation`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=prepare a documentation-only final machine-closure reconciliation; parked checkpoint=implementation/authority/external-schema changes, installation, provider/live/network, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`eafr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegated no-commit EAFR-R1 implementation and worker return; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, provider/live/network, API keys, installation, deployment, public sync and push.
 
 ## Current Mode
-`runtime_findings_remediation_r7c_closed_final_reconciliation_preparation`
+`eafr_r1_dispatched_pending_worker_return`
 
 ## Purpose
 
-Record bounded RFR-R7C closure while preserving truthful role authority, prior MCP-KAR closure and all external-effect parking, then route only the roadmap's final documentation reconciliation.
+Preserve bounded RFR-R7C closure while its final reconciliation remains parked, and route only the committed EAFR-R1 no-commit worker implementation. All later EAFR tranches and external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -167,7 +167,7 @@ Continuity parent anchor: `92b7d6ec6`.
 
 ## Next Allowed Move
 
-RFR-R7C is independently accepted at `92b7d6ec6`. Prepare a fresh documentation-only final reconciliation for the roadmap's stale historical machine-closure rows; do not reopen implementation, authority, external schema or external effects.
+EAFR-R1 is dispatched at `4c5040573`. The delegated worker may implement only the two owned AIF helper/test paths and create `docs/reviews/CVF_EAFR_R1_AIF_REINJECTION_PROVENANCE_FAIL_CLOSED_WORKER_RETURN_2026-08-25.md`, without committing. Return only `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
 ## Active Boundary
 
@@ -211,7 +211,7 @@ Protected paths:
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record archive hygiene at `0fcc1dc20` without changing the current mode or next-move authority. Do not alter state structure or open production/Guard Contract/runtime authority, installation, provider/live/network, credential, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record committed EAFR-R1 dispatch at `4c5040573`, update the current mode and next move to the no-commit worker return, and preserve the parked RFR checkpoint. Do not alter state structure or open later EAFR tranches, provider/live/network, API keys, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
