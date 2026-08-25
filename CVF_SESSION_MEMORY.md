@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r1c_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed exact thirteen-path EAFR-R1C work order without commit and return COMPLETE_PENDING_REVIEW; parked checkpoint=R6, RFR final reconciliation and all external effects.
+Startup acknowledged: current mode=`eafr_r1c_reviewer_accepted_closed_r1d_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R1D source verification and dispatch authoring for Web runner safety; parked checkpoint=BuildAuthority reconciliation, R6, RFR and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r1c_dispatched_pending_worker_return`
-Current mode: `eafr_r1c_dispatched_pending_worker_return`
-Previous mode: `eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring`
+Current mode marker: `eafr_r1c_reviewer_accepted_closed_r1d_dispatch_authoring`
+Current mode: `eafr_r1c_reviewer_accepted_closed_r1d_dispatch_authoring`
+Previous mode: `eafr_r1c_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `eafr_r1c_dispatched_pending_worker_return`; R1C is dispatched at `45dcade0e` after independent source/hash verification, pre-dispatch 78/78 and pre-commit 86/86. Execute only the committed exact thirteen-path no-commit work order and return `COMPLETE_PENDING_REVIEW`. LPF `npm test`, build, Playwright, live/provider/network, credentials, production-source/configuration/package/checker edits, deployment, public sync and push are forbidden. R6 and RFR final reconciliation remain parked.
+Mode: `eafr_r1c_reviewer_accepted_closed_r1d_dispatch_authoring`; R1C is accepted bounded at `3c51ac5e`: TypeScript PASS, safe suite 3525 pass/2 named BuildAuthority failures, reviewer-fast 65/65 and pre-commit 86/86. Five unintended OpenAI calls from the nominal non-live runner are disclosed, excluded and grant no repeat authority. Author only a fresh R1D runner-safety packet next. BuildAuthority, R6, RFR, build, live/provider/network, credentials, production source, deployment, public sync and push remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

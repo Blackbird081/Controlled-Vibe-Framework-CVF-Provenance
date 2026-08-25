@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2324,
+  "stateOrder": 2325,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R1C waived package debt repair and adjudication is source-verified and dispatched at material commit 45dcade0e after pre-dispatch 78/78 and pre-commit 86/86 PASS. The next allowed move is exact thirteen-path no-commit worker execution and COMPLETE_PENDING_REVIEW return under the committed baseline/work order. LPF npm test, build, live/provider/network, credentials, Playwright, production-source/configuration/package/checker edits, deployment, public-sync and push are forbidden. R6 and RFR final reconciliation remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R1C package debt repair/adjudication is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 3c51ac5e after TypeScript PASS, safe Web suite 3525 passed with two named BuildAuthority failures, reviewer-fast 65/65 and pre-commit 86/86. Five unintended OpenAI calls caused by the nominal non-live runner are disclosed, excluded and grant no repeat-live authority. The next allowed move is fresh EAFR-R1D source verification and dispatch authoring to make that runner exclude ambient-key real-provider integration tests. BuildAuthority remains mandatory R6 input; R6 and RFR remain parked. No build, live/provider/network, credential, production-source, deployment, public-sync or push authority is open. Latest finalized numbered LHW wave remains LHW24."
 }
