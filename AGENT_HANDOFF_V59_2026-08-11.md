@@ -8,7 +8,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
-- EAFR-R3 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `5f0f9f9106da627f8db5c5036c7fb82222f2e121`; focused 46/46, reviewer-fast 65/65 and pre-commit 86/86 passed with zero provider/live calls.
+- EAFR-R3 is independently accepted `CLOSED_PASS_BOUNDED` at `5f0f9f9106da627f8db5c5036c7fb82222f2e121`; R4 complete private provider-current claim manifest reconciliation is dispatched no-commit at `4d5ffe8d4c50935177c61a1ce0153b14defa0f0b` after pre-dispatch 78/78 and pre-commit 86/86, with zero provider/live calls.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -48,14 +48,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r3_reviewer_accepted_closed_r4_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh source-verified EAFR-R4 baseline/work order after R3 bounded closure at 5f0f9f910; parked checkpoint=R1C before R6, RFR final reconciliation, R5-R6 and all external effects.
+Startup acknowledged: current mode=`eafr_r4_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed EAFR-R4 packet at 4d5ffe8d4 as an exact eleven-path no-commit worker and return for independent review; parked checkpoint=R1C before R6, RFR final reconciliation, R5-R6 and all external effects.
 
 ## Current Mode
-`eafr_r3_reviewer_accepted_closed_r4_dispatch_authoring`
+`eafr_r4_dispatched_pending_worker_return`
 
 ## Purpose
 
-Preserve the R3 bounded closure, then author only a fresh source-verified R4 dispatch packet for the complete private provider-current manifest. R1C remains mandatory before R6; R5-R6 and all external effects remain parked.
+Execute only the committed R4 exact eleven-path no-commit packet for the complete private provider-current manifest, then return for independent review. R1C remains mandatory before R6; R5-R6 and all external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -115,14 +115,14 @@ Preserve the R3 bounded closure, then author only a fresh source-verified R4 dis
 
 ## Current Authority
 
-Continuity parent anchor: `5f0f9f910`.
+Continuity parent anchor: `4d5ffe8d4`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R3 Memory Plane reconciliation `CLOSED_PASS_BOUNDED` at `5f0f9f910` |
-| baselinePath | `docs/baselines/CVF_GC018_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_2026-08-25.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R3_MEMORY_PLANE_AS_BUILT_RECONCILIATION_2026-08-25.md` |
-| nextAuthorityRequirement | fresh source verification plus GC-018 baseline/work order for EAFR-R4 dispatch |
+| authorityState | EAFR-R4 provider-current claim reconciliation `DISPATCHED_PENDING_WORKER_RETURN` at `4d5ffe8d4` |
+| baselinePath | `docs/baselines/CVF_GC018_EAFR_R4_PRIVATE_PROVIDER_CURRENT_CLAIM_MANIFEST_RECONCILIATION_2026-08-25.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R4_PRIVATE_PROVIDER_CURRENT_CLAIM_MANIFEST_RECONCILIATION_2026-08-25.md` |
+| nextAuthorityRequirement | exact eleven-path no-commit worker execution and independent reviewer return |
 
 ## Closure Evidence
 
@@ -167,7 +167,7 @@ Continuity parent anchor: `5f0f9f910`.
 
 ## Next Allowed Move
 
-EAFR-R3 is independently accepted bounded at `5f0f9f910`. Author only a fresh source-verified EAFR-R4 baseline/work order next; do not implement R4 before that packet is committed. R1C remains mandatory before R6; R5-R6 and RFR final reconciliation remain parked.
+EAFR-R4 dispatch is committed at `4d5ffe8d4`. Execute exactly the eleven authorized paths as a no-commit worker and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`; independent review owns acceptance and commit. R1C remains mandatory before R6; R5-R6 and RFR final reconciliation remain parked.
 
 ## Active Boundary
 
@@ -211,7 +211,7 @@ Protected paths:
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record R2 bounded closure at `fdf53b841`, release only R3 source verification and dispatch authoring, and preserve R1C/R4-R6/RFR checkpoints. Do not alter state structure or open live/provider/network, credential, installation, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record R4 dispatch at `4d5ffe8d4`, release only exact eleven-path no-commit R4 worker execution, and preserve R1C/R5-R6/RFR checkpoints. Do not alter state structure or open live/provider/network, credential, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
