@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: BLOCKED_R1_EXPLICIT_OPERATOR_WAIVER_OR_NAMED_REPAIR_REQUIRED
+Status: ACTIVE_R2_SOURCE_VERIFICATION_AND_DISPATCH
 
 Date: 2026-08-25
 
@@ -51,14 +51,15 @@ its own work.
 
 | Tranche | Objective | Dependency | Status |
 | --- | --- | --- | --- |
-| EAFR-R1 | reject missing or non-finite AIF item provenance before prompt composition | archive hygiene `0fcc1dc20` | REVIEWER_ACCEPTED_BLOCKED_WITH_REASON: implementation accepted; R1A repaired the live-runner incident; literal package/check/build criteria remain non-green |
+| EAFR-R1 | reject missing or non-finite AIF item provenance before prompt composition | archive hygiene `0fcc1dc20` | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_BY_EXPLICIT_OPERATOR_WAIVER: focused implementation accepted; three non-green package criteria preserved as R1C debt |
 | EAFR-R1A | make the package non-live test runner exclude both `.live.test.ts` and `.live.test.tsx`, then reconcile the R1 incident | R1 implementation accepted | REVIEWER_ACCEPTED_COMPLETE_BOUNDED at `ef142bfb2` |
-| EAFR-R1B | adjudicate exact execution-base variance against the parent R1 acceptance authority | R1A accepted and prior A/B evidence committed | REVIEWER_ACCEPTED_BLOCKED_WITH_REASON: canonical explicit operator-waiver route exists but is unexercised; build equivalence remains unproven |
-| EAFR-R2 | make durable-memory HTTP writes and authority inputs fail closed | R1, R1A and R1B accepted | HOLD_DEPENDENCY |
+| EAFR-R1B | adjudicate exact execution-base variance against the parent R1 acceptance authority | R1A accepted and prior A/B evidence committed | REVIEWER_ACCEPTED_FAIL_CLOSED_ADJUDICATION at `fc10c8e65`; subsequent explicit operator waiver closes R1 without changing R1B's evidence finding |
+| EAFR-R2 | make durable-memory HTTP writes and authority inputs fail closed | R1 bounded waiver closure, R1A accepted, and R1B adjudication accepted | REQUIRED_NEXT |
 | EAFR-R3 | reconcile the memory-plane map to accepted as-built behavior | R2 accepted | HOLD_DEPENDENCY |
 | EAFR-R4 | replace partial provider-current claims with a complete private manifest | R3 accepted | HOLD_DEPENDENCY |
 | EAFR-R5 | decide and prove retrieval evidence semantics without weakening admission | R4 accepted | HOLD_DEPENDENCY |
-| EAFR-R6 | independently reconcile closures and decide whether parked RFR may resume | R1, R1A, R1B and R2-R5 accepted | HOLD_DEPENDENCY |
+| EAFR-R1C | repair or freshly adjudicate the waived typecheck, full non-live-suite, and build debt | explicit R1 waiver | HOLD_UNTIL_BEFORE_R6 |
+| EAFR-R6 | independently reconcile closures and decide whether parked RFR may resume | R1/R1A/R1B, R2-R5 accepted, and R1C debt resolved or freshly adjudicated | HOLD_DEPENDENCY |
 
 ## Design Controls
 
@@ -108,6 +109,14 @@ Roadmap verification consists of tranche-specific focused/full tests,
 governance phase gates, exact manifests, reviewer decisions, committed hashes,
 and a final reconciliation before the parked checkpoint is reconsidered.
 
+## Current Runtime Freshness Verification
+
+Current source was re-inspected on 2026-08-25 before R2 dispatch authoring.
+The memory-write route still declares optional provenance and forwards caller-
+supplied authority fields to the durable store. This is dispatch source
+freshness only; the roadmap makes no runtime execution, deployment, exposure,
+or production claim.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
@@ -129,3 +138,16 @@ authorized.
 This roadmap authorizes bounded dispatch authoring and dependency sequencing.
 It does not itself implement, test, live-prove, deploy, publish, push, or close
 any runtime behavior.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | EAFR tranche packets | R1/R1A/R1B historical packets committed; R2 pending fresh dispatch | PASS |
+| Completion or reviewer artifact | R1 explicit-waiver closure | bounded closure recorded | PASS |
+| Roadmap state | this file | ACTIVE_R2_SOURCE_VERIFICATION_AND_DISPATCH | PASS |
+| Registry JSON | N/A with reason: no registry mutation | no applicability | BLOCKED |
+| Registry Markdown | N/A with reason: no registry projection | no applicability | BLOCKED |
+| External evidence digest | archived corrected external report | input only, not authority | N/A with reason |
+| System loop interlock | R1 -> R2; R1C -> R6 | fail-closed dependencies explicit | PASS |
+| Session continuity | separate post-material sync | required after material commit | PASS |
