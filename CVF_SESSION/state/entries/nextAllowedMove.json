@@ -1,5 +1,5 @@
 {
   "stateOrder": 2318,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R1B is reviewer-accepted blocked at material commit fc10c8e65. Independent review found the canonical explicit operator-waiver route but no conforming waiver naming failed criteria, reason, scope and follow-up owner; build equivalence also remains unproven. Next allowed move is an explicit human/operator waiver with those fields or separately authorized named repair tranches. EAFR-R2 through R6 and RFR final reconciliation remain parked. No tests/build, environment or credential access, repeat-live, provider/network, deployment, public-sync or push authority is open. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R1 is closed bounded by explicit operator waiver at ee268fa5b; its three waived criteria remain named R1C debt before R6. Next allowed move is source-verified EAFR-R2 baseline/work-order authoring and dispatch for the durable-memory HTTP write authority boundary. R3-R6 and RFR final reconciliation remain parked. No live/provider/network, credential, deployment, public-sync or push authority is open. Latest finalized numbered LHW wave remains LHW24."
 }

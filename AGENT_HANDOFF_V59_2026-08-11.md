@@ -6,7 +6,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
-- EAFR-R1 remains blocked at `bb49266fd`; R1A closes bounded at `ef142bfb2`; R1B is reviewer-accepted blocked at `fc10c8e65` after correction of a missed canonical explicit operator-waiver route.
+- EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -46,14 +46,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r1_blocked_pending_explicit_operator_waiver_or_named_repair`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=obtain a conforming explicit human/operator waiver or separately authorize named repair tranches after R1B reviewer closure at fc10c8e65; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, tests/build, repeat-live/provider/network, credentials, installation, deployment, public sync and push.
+Startup acknowledged: current mode=`eafr_r2_dispatch_authoring_after_r1_waiver`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and dispatch source-verified EAFR-R2 after R1 bounded waiver closure at ee268fa5b; parked checkpoint=R1C before R6, RFR final reconciliation, R3-R6 and all external effects.
 
 ## Current Mode
-`eafr_r1_blocked_pending_explicit_operator_waiver_or_named_repair`
+`eafr_r2_dispatch_authoring_after_r1_waiver`
 
 ## Purpose
 
-Preserve bounded RFR-R7C closure while its final reconciliation remains parked, preserve R1A bounded closure, and hold after the reviewer-accepted R1B fail-closed decision until a conforming explicit human/operator waiver or separately authorized named repair tranche exists. All later EAFR tranches and external effects remain parked.
+Preserve bounded RFR-R7C closure while its final reconciliation remains parked, preserve the R1/R1A/R1B closure chain, and author only the source-verified R2 dispatch. R1C remains mandatory before R6; all later EAFR tranches and external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -167,7 +167,7 @@ Continuity parent anchor: `92b7d6ec6`.
 
 ## Next Allowed Move
 
-EAFR-R1B is reviewer-accepted blocked at `fc10c8e65`. Independent review found the existing canonical operator-waiver mechanism but no conforming waiver; the failed package criteria and absent build-equivalence proof remain open. R1 remains blocked and R1A remains closed bounded at `ef142bfb2`. R2-R6 and RFR final reconciliation remain parked.
+EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; the failed package criteria and absent build-equivalence proof remain named R1C debt before R6. R1A remains closed bounded at `ef142bfb2`, and R1B adjudication remains accepted at `fc10c8e65`. Author and dispatch only R2; R3-R6 and RFR final reconciliation remain parked.
 
 ## Active Boundary
 
@@ -211,7 +211,7 @@ Protected paths:
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record reviewer-accepted blocked R1B closure at `fc10c8e65`, update current mode and next move to the explicit human/operator waiver or separately authorized named-repair checkpoint, and preserve the parked RFR/R2-R6 checkpoints. Do not alter state structure or open tests/build, environment/credential, repeat-live/provider/network, installation, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record R1 bounded waiver closure at `ee268fa5b`, update current mode and next move to R2 dispatch authoring, and preserve R1C/R3-R6/RFR checkpoints. Do not alter state structure or open live/provider/network, credential, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r1_blocked_pending_explicit_operator_waiver_or_named_repair`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=obtain a conforming explicit human/operator waiver or separately authorize named repair tranches after R1B reviewer closure at fc10c8e65; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, tests/build, repeat-live/provider/network, credentials, installation, deployment, public sync and push.
+Startup acknowledged: current mode=`eafr_r2_dispatch_authoring_after_r1_waiver`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and dispatch source-verified EAFR-R2 after R1 bounded waiver closure at ee268fa5b; parked checkpoint=R1C before R6, RFR final reconciliation, R3-R6 and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r1_blocked_pending_explicit_operator_waiver_or_named_repair`
-Current mode: `eafr_r1_blocked_pending_explicit_operator_waiver_or_named_repair`
+Current mode marker: `eafr_r2_dispatch_authoring_after_r1_waiver`
+Current mode: `eafr_r2_dispatch_authoring_after_r1_waiver`
 Previous mode: `runtime_findings_remediation_r7c_closed_final_reconciliation_preparation`
 
 ## Next Allowed Move
 
-Mode: `eafr_r1_blocked_pending_explicit_operator_waiver_or_named_repair`; R1B is reviewer-accepted blocked at `fc10c8e65`. The canonical explicit operator-waiver route exists, but no conforming human/operator waiver names the failed criteria, reason, scope and follow-up owner, and build equivalence remains unproven. RFR final reconciliation and EAFR-R2 through R6 remain parked; tests/build, environment/credential access, repeat-live/provider/network, deployment, public sync and push remain unauthorized.
+Mode: `eafr_r2_dispatch_authoring_after_r1_waiver`; R1 is closed bounded by the explicit operator waiver at `ee268fa5b`, with R1C repair debt mandatory before R6. Author and dispatch only EAFR-R2. R3-R6, RFR final reconciliation, live/provider/network, credentials, deployment, public sync and push remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
