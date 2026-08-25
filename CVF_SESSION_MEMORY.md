@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegated no-commit EAFR-R1 worker implementation and return; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, provider/live/network, API keys, installation, deployment, public sync and push.
+Startup acknowledged: current mode=`eafr_r1_review_blocked_r1a_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and commit bounded EAFR-R1A dispatch, then delegate its no-commit worker; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, repeat-live/provider/network, credentials, installation, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `eafr_r1_dispatched_pending_worker_return`
-Current mode: `eafr_r1_dispatched_pending_worker_return`
+Current mode marker: `eafr_r1_review_blocked_r1a_dispatch_authoring`
+Current mode: `eafr_r1_review_blocked_r1a_dispatch_authoring`
 Previous mode: `runtime_findings_remediation_r7c_closed_final_reconciliation_preparation`
 
 ## Next Allowed Move
 
-Mode: `eafr_r1_dispatched_pending_worker_return`; EAFR-R1 dispatch is committed at `4c5040573`. A delegated worker may edit only the AIF reinjection helper/test and create the named no-commit return. RFR final reconciliation and later EAFR tranches remain parked; provider/live/network, API keys, deployment, public sync, push and worker commit remain unauthorized for R1.
+Mode: `eafr_r1_review_blocked_r1a_dispatch_authoring`; EAFR-R1 implementation is accepted at `bb49266fd` but closure is blocked by the disclosed non-live-runner `.tsx` activation incident. Author and commit only bounded EAFR-R1A package-script/static-test dispatch, then delegate its no-commit worker. RFR final reconciliation and EAFR-R2 through R6 remain parked; repeat-live/provider/network, credentials, deployment, public sync, push and worker commit remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

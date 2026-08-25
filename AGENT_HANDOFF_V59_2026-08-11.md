@@ -6,7 +6,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
-- Current EAFR-R1 dispatch authority: `4c5040573258f24918c6dd44045bd2517d83f181`; execution-anchor Amendment 1: `742b1acef4561ff4af8a91d543aece4af62e9977`.
+- EAFR-R1 dispatch `4c5040573`, Amendment 1 `742b1acef`, and accepted material with blocked closure `bb49266fd`; the disclosed non-live runner `.tsx` activation incident makes R1A dispatch authoring the only open move.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -46,10 +46,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegated no-commit EAFR-R1 implementation and worker return; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, provider/live/network, API keys, installation, deployment, public sync and push.
+Startup acknowledged: current mode=`eafr_r1_review_blocked_r1a_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and commit bounded EAFR-R1A dispatch, then delegate its no-commit worker; parked checkpoint=RFR final reconciliation, EAFR-R2 through R6, repeat-live/provider/network, credentials, installation, deployment, public sync and push.
 
 ## Current Mode
-`eafr_r1_dispatched_pending_worker_return`
+`eafr_r1_review_blocked_r1a_dispatch_authoring`
 
 ## Purpose
 
@@ -167,7 +167,7 @@ Continuity parent anchor: `92b7d6ec6`.
 
 ## Next Allowed Move
 
-EAFR-R1 is dispatched at `4c5040573`. The delegated worker may implement only the two owned AIF helper/test paths and create `docs/reviews/CVF_EAFR_R1_AIF_REINJECTION_PROVENANCE_FAIL_CLOSED_WORKER_RETURN_2026-08-25.md`, without committing. Return only `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+EAFR-R1 implementation is accepted at `bb49266fd`, but closure is blocked by the non-live runner `.tsx` activation incident. Author and commit only the bounded EAFR-R1A package-script/static-test dispatch, then delegate its no-commit worker. R2-R6 and RFR final reconciliation remain parked.
 
 ## Active Boundary
 
@@ -211,7 +211,7 @@ Protected paths:
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record committed EAFR-R1 dispatch at `4c5040573`, update the current mode and next move to the no-commit worker return, and preserve the parked RFR checkpoint. Do not alter state structure or open later EAFR tranches, provider/live/network, API keys, installation, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record EAFR-R1 accepted material with blocked closure at `bb49266fd`, update current mode and next move to bounded R1A dispatch authoring, and preserve the parked RFR/R2-R6 checkpoints. Do not alter state structure or open repeat-live/provider/network, credentials, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
