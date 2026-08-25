@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r7_dispatched_pending_worker_return",
-  "previousMode": "eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring",
+  "currentMode": "eafr_r7_reviewer_accepted_closed_blocked_r8_source_verification",
+  "previousMode": "eafr_r7_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15035,5 +15035,16 @@
     "nextAllowedMove": "Bounded no-commit R7 worker execution, then independent reviewer adjudication.",
     "claimBoundary": "No provider/live/network call, build, RFR resume, BuildAuthority repair, public-sync, deployment or push authority. Any unresolved P1 row keeps RFR parked."
   },
-  "nextAllowedMove": "EAFR-R7 fail-closed provider-egress repair is dispatched at fa84b5581 under WORKER_MUST_NOT_COMMIT. The next allowed move is bounded no-commit worker execution against the committed R7 baseline and work order, followed by independent reviewer adjudication. Provider/live/network calls, build, RFR resume, BuildAuthority repair, public-sync, deployment and push remain parked. Any UNRESOLVED P1 row keeps RFR blocked. Latest finalized numbered LHW wave remains LHW24."
+  "eafrR7FailClosedProviderEgressRepairAcceptedBlocked20260826": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_BLOCKED",
+    "materialCommit": "74cf99354",
+    "completionReview": "docs/reviews/CVF_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_COMPLETION_2026-08-26.md",
+    "workerReturn": "docs/reviews/CVF_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "proof": "Focused 26/26; TypeScript PASS; full non-live 3465 pass/88 named fail; worker-return fast 66/66; pre-commit 87/87; zero provider calls.",
+    "reviewerRepair": "Denied protocol-relative external destinations, added blob/file coverage, corrected post-test arithmetic, and repaired dispatch handoff mode drift.",
+    "blockers": "Ambient Upstash external-store use in non-live tests and unguarded adapter fetch injection.",
+    "nextAllowedMove": "Fresh EAFR-R8 source verification and dispatch authoring only.",
+    "claimBoundary": "No R8 implementation, provider/live/network call, build, RFR resume, BuildAuthority repair, public-sync, deployment or push authority."
+  },
+  "nextAllowedMove": "EAFR-R7 is reviewer-accepted CLOSED_BLOCKED at material commit 74cf99354. The fail-closed repair is retained; focused 26/26 and TypeScript pass, while full non-live proof remains 3465 pass/88 named fail because ambient Upstash egress is blocked. The adapter fetch-injection residual also remains. The next allowed move is fresh EAFR-R8 source verification and dispatch authoring only for non-live external-store isolation and adapter-boundary closure. Provider/live/network calls, build, RFR resume, BuildAuthority repair, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

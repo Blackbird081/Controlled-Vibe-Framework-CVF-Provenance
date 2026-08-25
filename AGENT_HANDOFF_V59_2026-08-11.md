@@ -48,14 +48,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r7_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=bounded no-commit EAFR-R7 worker execution followed by independent review; parked checkpoint=RFR, provider/live/network, build, BuildAuthority repair and all external effects.
+Startup acknowledged: current mode=`eafr_r7_reviewer_accepted_closed_blocked_r8_source_verification`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R8 source verification and dispatch authoring only; parked checkpoint=RFR, R8 implementation, provider/live/network, build, BuildAuthority repair and all external effects.
 
 ## Current Mode
-`eafr_r7_dispatched_pending_worker_return`
+`eafr_r7_reviewer_accepted_closed_blocked_r8_source_verification`
 
 ## Purpose
 
-Preserve the accepted blocked R6 closure and the committed R7 worker dispatch. Allow only bounded no-commit R7 execution followed by independent review. RFR and all external effects remain parked.
+Preserve the accepted blocked R7 closure and allow only fresh R8 source verification/dispatch authoring. RFR, R8 implementation and all external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -66,6 +66,7 @@ Preserve the accepted blocked R6 closure and the committed R7 worker dispatch. A
 
 ## Latest Work / Changes
 
+- EAFR-R7 is reviewer-accepted `CLOSED_BLOCKED` at material commit `74cf99354`: the fail-closed guard is retained after protocol-relative reviewer repair; focused 26/26 and TypeScript pass; full non-live is 3465 pass/88 named fail because ambient Upstash egress is blocked. The adapter injection residual remains. R8 source verification/dispatch authoring is next; RFR stays parked.
 - EAFR-R7 dispatch handoff mode alignment was repaired at `eaa35a7b7`; its parent is dispatch continuity `b58f9b6cb`. This is continuity-only and changes no R7 evidence or authority.
 - EAFR-R6 is reviewer-accepted `CLOSED_BLOCKED` at `2bc2b2d0d`. Four P1 provider-authority bypass classes remain; full Web proof is 3511 pass/22 named fail, focused 38/38, reviewer-fast 66/66 and pre-commit 87/87 with zero R6 provider calls. RFR remains parked; R7 dispatch authoring is next.
 - EAFR-R1D is reviewer-accepted `CLOSED_PASS_BOUNDED` at `87d3ddd40` after one disclosed guard repair. Selection and activation barriers pass; focused guard 6/6, TypeScript, safe suite 3525 pass/2 named BuildAuthority failures, reviewer-fast 65/65 and pre-commit 86/86 pass. One worker OpenAI call is incident-only; reviewer calls zero. R6 terminal-reconciliation dispatch authoring is next.
@@ -118,14 +119,14 @@ Preserve the accepted blocked R6 closure and the committed R7 worker dispatch. A
 
 ## Current Authority
 
-Continuity parent anchor: `fa84b5581`.
+Continuity parent anchor: `74cf99354`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R7 `DISPATCHED_PENDING_WORKER_RETURN` at `fa84b5581` |
+| authorityState | EAFR-R7 `REVIEWER_ACCEPTED_CLOSED_BLOCKED` at `74cf99354` |
 | baselinePath | `docs/baselines/CVF_GC018_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_2026-08-26.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_2026-08-26.md` |
-| nextAuthorityRequirement | bounded no-commit R7 worker execution, then independent reviewer adjudication |
+| nextAuthorityRequirement | fresh EAFR-R8 source verification and dispatch authoring only |
 
 ## Closure Evidence
 
@@ -171,7 +172,7 @@ Continuity parent anchor: `fa84b5581`.
 
 ## Next Allowed Move
 
-EAFR-R7 is dispatched at `fa84b5581`. The next allowed move is bounded no-commit worker execution under the committed packet, followed by independent reviewer adjudication. Any unresolved P1 row keeps RFR blocked; provider/live/network, build, BuildAuthority repair and all external effects remain parked.
+EAFR-R7 is accepted closed blocked at `74cf99354`. The next allowed move is fresh R8 source verification/dispatch authoring only for ambient external-store isolation and adapter-boundary closure. RFR, R8 implementation, provider/live/network, build, BuildAuthority repair and all external effects remain parked.
 
 ## Active Boundary
 
@@ -203,13 +204,13 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - EAFR-R7 Dispatch Continuity
+## Core Guard Self-Protection Authorization - EAFR-R7 Blocked Closure Continuity
 
-Protected paths: `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR7FailClosedProviderEgressRepairDispatch20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+Protected paths: `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR7FailClosedProviderEgressRepairAcceptedBlocked20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record the committed R7 dispatch at `fa84b5581`, release only bounded no-commit worker execution and independent review, and preserve the RFR checkpoint. Do not alter state structure or open provider/live/network, build, BuildAuthority repair, credential, production-runtime, installation, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record R7 blocked closure at `74cf99354`, release only fresh R8 source verification/dispatch authoring, and preserve the RFR checkpoint. Do not alter state structure or open R8 implementation, provider/live/network, build, BuildAuthority repair, credential, production-runtime, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
