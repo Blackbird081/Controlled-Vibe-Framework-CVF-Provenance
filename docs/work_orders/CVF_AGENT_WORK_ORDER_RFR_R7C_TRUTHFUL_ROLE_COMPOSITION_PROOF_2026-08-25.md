@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -338,12 +338,37 @@ verify hashes and run reviewer-fast before commit.
 
 ## Closure Checklist
 
-- exact-two worker manifest;
-- focused 32/32 and package 780/780;
-- build and hashes pass;
-- no production/authority change;
-- worker HEAD unchanged/staging empty;
-- independent reviewer decision recorded.
+- [x] exact-two worker manifest;
+- [x] focused 32/32 and package 780/780;
+- [x] build and hashes pass;
+- [x] no production/authority change;
+- [x] worker HEAD unchanged/staging empty;
+- [x] independent reviewer decision recorded in
+  `docs/reviews/CVF_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_COMPLETION_2026-08-25.md`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_COMPLETION_2026-08-25.md` | reviewer verdict | PASS |
+| Worker return | `docs/reviews/CVF_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_WORKER_RETURN_2026-08-25.md` | reviewer accepted | PASS |
+| Implementation | MCP composition proof test | case-local OPERATOR input | PASS |
+| Deterministic proof | focused, package and build commands | 32/32; 780/780; build PASS | PASS |
+| Roadmap state | runtime findings roadmap | R7C closed; final reconciliation remains active | PASS |
+| Registry JSON | corpus registry aggregate | no registry mutation authorized for R7C | BLOCKED with reason |
+| Registry Markdown | corpus registry human projection | no registry mutation authorized for R7C | BLOCKED with reason |
+| External evidence digest | N/A with reason: no external evidence consumed | no digest | N/A with reason |
+| System loop interlock | R7B-to-R7C dependency | stale role residual closed | PASS |
+| Session continuity | separate post-material sync | not part of worker or material closure | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| truthful authorized positive role | case-local OPERATOR with `execute` | PASS |
+| negative role semantics retained | AI-agent and orchestrator BLOCK tests pass | PASS |
+| deterministic package proof | 780/780 | PASS |
 
 ## Agent Operation Trace Block
 

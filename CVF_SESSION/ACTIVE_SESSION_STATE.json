@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_2026-08-25.md",
     "baselineSha256": "deafa6a20b9d45c8a29191b74994efd343d7204152e6582aee89e7f8b4f88652",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_2026-08-25.md",
-    "workOrderSha256": "884f00fa0648e4e8924a28ef245b5e3ff791a1c1f9c765673c567ecca0eea255"
+    "workOrderSha256": "decbbbef5437143d1d74801b49a40d6d2c7d1ff0ff27915959ca1b84ed043f5d"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

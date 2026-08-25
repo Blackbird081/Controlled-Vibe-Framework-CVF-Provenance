@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_R7C_DISPATCHED_PENDING_WORKER_RETURN
+Status: ACTIVE_R7C_CLOSED_PENDING_FINAL_RECONCILIATION
 
 docType: roadmap
 
@@ -66,7 +66,7 @@ open implementation tranches here.
 | R6 | R5 independently accepted | complete finding matrix, negative suite, manifest reconciliation and reviewer gates | `AUDIT_COMPLETE_REMEDIATION_REQUIRED`: F3/F4/F7/F9 closed; F1/F2/F5/F6/F8/F10 retained with reason; roadmap closure withheld |
 | R7A | R6 audit accepted; operator approved recommended split | make all MCP production roots adopt canonical `cvf-guard-contract`; preserve MCP-local session phase without a replacement factory | `CLOSED_PASS_BOUNDED`: canonical roots adopted; self-attestation/action-label findings closed after one repair round; 777/780 package tests with only three R7B failures |
 | R7B | R7A independently accepted and material closure committed | repair optional-field composition seam while preserving strict fail-closed material-context validation | `CLOSED_PASS_BOUNDED`: two true optional-field failures closed; Model Gateway 301/301; exact one stale positive-role composition test routed to R7C |
-| R7C | R7B independently accepted and material closure committed | reconcile the one stale real-engine positive-path role fixture with the accepted R7A truthful-action invariant | `DISPATCHED_PENDING_WORKER_RETURN`: exact one MCP test edit plus one return; Guard Contract/runtime source forbidden |
+| R7C | R7B independently accepted and material closure committed | reconcile the one stale real-engine positive-path role fixture with the accepted R7A truthful-action invariant | `CLOSED_PASS_BOUNDED`: case-local OPERATOR input; composition 7/7, execute 25/25, package 780/780; production and authority sources unchanged |
 
 No tranche begins from worker assertion alone. Repair round three escalates to
 operator/design review instead of silently widening scope.
@@ -101,6 +101,20 @@ caused by optional-own-`undefined`. The third test asks the canonical engine to
 ALLOW `AI_AGENT` execution, contradicting R7A's accepted truthful-action proof.
 R7B closes its validator owner bounded; R7C is a fresh test-only reconciliation
 and must not add `execute` to AI-agent authority or relabel the runtime action.
+
+Independent R7C review accepts the case-local OPERATOR role reconciliation.
+The canonical real engine now proves the positive bridge path with a role that
+is genuinely authorized for truthful `execute`, while the shared AI-agent
+fixture and all BLOCK paths remain intact. Focused proof is 32/32, the full MCP
+package is 780/780, TypeScript build passes, both pinned authority/read-only
+hashes match, and reviewer-fast is 65/65. This repairs the R6 residual chain
+boundedly: R7A closed the stale admission owner (F1/F2/F6 and the admission
+portion of F8/F10), R7B closed the optional-field seam (F5 and the remaining
+composition portion of F8/F10), and R7C closes the stale positive test
+contract. No provider/live, deployment, public-sync, production-readiness, or
+external-schema expansion claim follows. A separate reviewer-owned final
+reconciliation must refresh the historical machine-closure package before the
+roadmap itself may change to a closed-equivalent status.
 
 ## Acceptance Criteria
 
@@ -157,7 +171,7 @@ authorized by this roadmap.
 | R2 immutable mandatory core | `docs/reviews/CVF_RFR_R2_IMMUTABLE_MANDATORY_CORE_COMPLETION_2026-08-24.md` | material commit `84d44889f`; reviewer repair included | PASS_BOUNDED |
 | R3 native MCP admission | `docs/reviews/CVF_RFR_R3_NATIVE_MCP_ADMISSION_COMPLETION_2026-08-24.md` | material `a18ba512f`; 31 focused; 748 package pass; reviewer repair included | PASS_BOUNDED |
 | R4 material context manifest | `docs/reviews/CVF_RFR_R4_MATERIAL_CONTEXT_MANIFEST_COMPLETION_2026-08-24.md` | 58 focused; 288 package pass; reviewer repair included | PASS_BOUNDED_PENDING_MATERIAL_COMMIT |
-| R5-R6 | later tranche authority | dependency chain remains closed | PARKED_DEPENDENCY_GATED |
+| R5-R7C | bounded remediation chain | R5 and R6 evidence plus R7A/R7B/R7C closures | PASS_BOUNDED |
 | external effects | roadmap boundary | zero provider/live/public/deploy/push actions | PARKED |
 
 ## Acceptance Receipt Assertion Matrix

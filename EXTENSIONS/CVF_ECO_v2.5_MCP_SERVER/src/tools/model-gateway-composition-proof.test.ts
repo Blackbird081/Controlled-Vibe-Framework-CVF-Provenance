@@ -175,9 +175,17 @@ describe('MCP to Model Gateway composition proof', () => {
   });
 
   it('wires the real server-owned native engine end to end and reaches the bridge only on ALLOW', async () => {
+    // OPERATOR is genuinely authorized to `execute` in phase BUILD under the
+    // canonical authority_gate matrix (AUTHORITY_MATRIX.OPERATOR.BUILD
+    // includes 'execute'), matching the precedent already proved in
+    // model-gateway-execute.test.ts. VALID_INPUT itself intentionally carries
+    // agentRole: 'AI_AGENT' for the other cases in this file that exercise
+    // AI-agent/orchestrator BLOCK behavior, so this case uses a case-local
+    // override rather than mutating the shared fixture.
     const { executor, adapterExecute } = makeCompositionExecutor();
     const engine = createGuardEngine();
-    const result = await executeModelGatewayAdapter(VALID_INPUT, engine, executor);
+    const operatorInput = { ...VALID_INPUT, agentRole: 'OPERATOR' as const };
+    const result = await executeModelGatewayAdapter(operatorInput, engine, executor);
 
     expect(result.accepted).toBe(true);
     expect(result.executorCalled).toBe(true);
