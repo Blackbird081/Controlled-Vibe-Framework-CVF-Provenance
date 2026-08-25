@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r7a_closed_r7b_dispatch_preparation`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and commit a fresh GC-018 R7B exact-manifest no-commit worker packet; parked checkpoint=installation, provider/live/network, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r7b_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator copies the committed R7B exact-manifest packet to one no-commit worker; parked checkpoint=installation, provider/live/network, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r7a_closed_r7b_dispatch_preparation`
-Current mode: `runtime_findings_remediation_r7a_closed_r7b_dispatch_preparation`
-Previous mode: `runtime_findings_remediation_r7a_dispatched_pending_worker_return`
+Current mode marker: `runtime_findings_remediation_r7b_dispatched_pending_worker_return`
+Current mode: `runtime_findings_remediation_r7b_dispatched_pending_worker_return`
+Previous mode: `runtime_findings_remediation_r7a_closed_r7b_dispatch_preparation`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r7a_closed_r7b_dispatch_preparation`; RFR-R7A canonical MCP Guard Engine adoption is independently accepted `CLOSED_PASS_BOUNDED` and materially committed at `1512374e8` after pre-commit 86/86. The exact three retained composition failures are routed to R7B. Next allowed move is a fresh GC-018 R7B exact-manifest no-commit dispatch packet; all external-effect lanes remain unauthorized.
+Mode: `runtime_findings_remediation_r7b_dispatched_pending_worker_return`; RFR-R7B optional-field composition repair is dispatched at `171f2c357` after pre-dispatch 78/78 and pre-commit 86/86. Operator may copy the committed packet to one no-commit worker with exactly two Model Gateway edits plus one return; the MCP proof stays read/test-only. All external-effect lanes remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
