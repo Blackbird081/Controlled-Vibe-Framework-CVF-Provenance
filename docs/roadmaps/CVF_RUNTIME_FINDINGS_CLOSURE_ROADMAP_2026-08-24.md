@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_R7B_CLOSED_R7C_READY_FOR_DISPATCH
+Status: ACTIVE_R7C_DISPATCHED_PENDING_WORKER_RETURN
 
 docType: roadmap
 
@@ -66,7 +66,7 @@ open implementation tranches here.
 | R6 | R5 independently accepted | complete finding matrix, negative suite, manifest reconciliation and reviewer gates | `AUDIT_COMPLETE_REMEDIATION_REQUIRED`: F3/F4/F7/F9 closed; F1/F2/F5/F6/F8/F10 retained with reason; roadmap closure withheld |
 | R7A | R6 audit accepted; operator approved recommended split | make all MCP production roots adopt canonical `cvf-guard-contract`; preserve MCP-local session phase without a replacement factory | `CLOSED_PASS_BOUNDED`: canonical roots adopted; self-attestation/action-label findings closed after one repair round; 777/780 package tests with only three R7B failures |
 | R7B | R7A independently accepted and material closure committed | repair optional-field composition seam while preserving strict fail-closed material-context validation | `CLOSED_PASS_BOUNDED`: two true optional-field failures closed; Model Gateway 301/301; exact one stale positive-role composition test routed to R7C |
-| R7C | R7B independently accepted and material closure committed | reconcile the one stale real-engine positive-path role fixture with the accepted R7A truthful-action invariant | `READY_FOR_FRESH_TEST_ONLY_DISPATCH`: Guard Contract and runtime source remain forbidden |
+| R7C | R7B independently accepted and material closure committed | reconcile the one stale real-engine positive-path role fixture with the accepted R7A truthful-action invariant | `DISPATCHED_PENDING_WORKER_RETURN`: exact one MCP test edit plus one return; Guard Contract/runtime source forbidden |
 
 No tranche begins from worker assertion alone. Repair round three escalates to
 operator/design review instead of silently widening scope.
