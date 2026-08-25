@@ -6,7 +6,7 @@ Status: ACTIVE
 - Repository: private provenance source of truth
 - Branch: `main`
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
-- Current EAFR-R1 dispatch authority: `4c5040573258f24918c6dd44045bd2517d83f181`.
+- Current EAFR-R1 dispatch authority: `4c5040573258f24918c6dd44045bd2517d83f181`; dispatch continuity: `fda60640cf068ac55ad3b7250680c84ffe5d3308`.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
