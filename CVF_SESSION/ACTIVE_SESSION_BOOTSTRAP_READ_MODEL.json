@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring",
+  "currentMode": "eafr_r1c_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EAFR-R5 retrieval evidence semantics is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 04a5cf40e3a396404b1aff0816534e4d8a6a1567 after bounded test repair, focused LPF 66/66, focused Web 20/20, safe LPF 1943/1943, reviewer-fast 65/65 and pre-commit 86/86 PASS. Six unintended provider calls caused by a contradictory required command are disclosed, excluded from acceptance and grant no repeat-live authority. The next allowed move is fresh EAFR-R1C source verification and dispatch authoring; R1C remains mandatory before R6. R6 and RFR final reconciliation remain parked. No live/provider/network, credential, graph-route, reinjection-expansion, deployment, public-sync or push authority is open. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EAFR-R1C waived package debt repair and adjudication is source-verified and dispatched at material commit 45dcade0e after pre-dispatch 78/78 and pre-commit 86/86 PASS. The next allowed move is exact thirteen-path no-commit worker execution and COMPLETE_PENDING_REVIEW return under the committed baseline/work order. LPF npm test, build, live/provider/network, credentials, Playwright, production-source/configuration/package/checker edits, deployment, public-sync and push are forbidden. R6 and RFR final reconciliation remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R5_RETRIEVAL_EVIDENCE_SEMANTICS_AND_ADMISSION_BOUNDARY_2026-08-25.md",
-    "baselineSha256": "bf6f36fec4a063220eb40ce7014e3aad37478d36c74604826984d1305356e503",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R5_RETRIEVAL_EVIDENCE_SEMANTICS_AND_ADMISSION_BOUNDARY_2026-08-25.md",
-    "workOrderSha256": "65d1ec643f5be0f7417c5dc61435e6bd6e159a2c6dacb4d5c2ec16374595babe"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R1C_WAIVED_PACKAGE_DEBT_REPAIR_AND_ADJUDICATION_2026-08-25.md",
+    "baselineSha256": "4b8364ef1e64ed75305bdc701251e286f5b4a6393e8fcfdb712c24e3f5d82f78",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R1C_WAIVED_PACKAGE_DEBT_REPAIR_AND_ADJUDICATION_2026-08-25.md",
+    "workOrderSha256": "fbe02b8cdedb907c2214b921ecadc121b29e3ce17c2844874c51f12f31de1b2b"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

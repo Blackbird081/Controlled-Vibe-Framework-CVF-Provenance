@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R5_RETRIEVAL_EVIDENCE_SEMANTICS_AND_ADMISSION_BOUNDARY_2026-08-25.md",
-    "baselineSha256": "bf6f36fec4a063220eb40ce7014e3aad37478d36c74604826984d1305356e503",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R5_RETRIEVAL_EVIDENCE_SEMANTICS_AND_ADMISSION_BOUNDARY_2026-08-25.md",
-    "workOrderSha256": "65d1ec643f5be0f7417c5dc61435e6bd6e159a2c6dacb4d5c2ec16374595babe"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R1C_WAIVED_PACKAGE_DEBT_REPAIR_AND_ADJUDICATION_2026-08-25.md",
+    "baselineSha256": "4b8364ef1e64ed75305bdc701251e286f5b4a6393e8fcfdb712c24e3f5d82f78",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R1C_WAIVED_PACKAGE_DEBT_REPAIR_AND_ADJUDICATION_2026-08-25.md",
+    "workOrderSha256": "fbe02b8cdedb907c2214b921ecadc121b29e3ce17c2844874c51f12f31de1b2b"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring",
-  "previousMode": "eafr_r5_dispatched_pending_worker_return",
+  "currentMode": "eafr_r1c_dispatched_pending_worker_return",
+  "previousMode": "eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

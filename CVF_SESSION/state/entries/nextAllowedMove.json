@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2323,
+  "stateOrder": 2324,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R5 retrieval evidence semantics is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 04a5cf40e3a396404b1aff0816534e4d8a6a1567 after bounded test repair, focused LPF 66/66, focused Web 20/20, safe LPF 1943/1943, reviewer-fast 65/65 and pre-commit 86/86 PASS. Six unintended provider calls caused by a contradictory required command are disclosed, excluded from acceptance and grant no repeat-live authority. The next allowed move is fresh EAFR-R1C source verification and dispatch authoring; R1C remains mandatory before R6. R6 and RFR final reconciliation remain parked. No live/provider/network, credential, graph-route, reinjection-expansion, deployment, public-sync or push authority is open. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R1C waived package debt repair and adjudication is source-verified and dispatched at material commit 45dcade0e after pre-dispatch 78/78 and pre-commit 86/86 PASS. The next allowed move is exact thirteen-path no-commit worker execution and COMPLETE_PENDING_REVIEW return under the committed baseline/work order. LPF npm test, build, live/provider/network, credentials, Playwright, production-source/configuration/package/checker edits, deployment, public-sync and push are forbidden. R6 and RFR final reconciliation remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

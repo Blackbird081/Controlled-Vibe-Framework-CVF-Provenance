@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R1C source verification and dispatch authoring; parked checkpoint=R6, RFR final reconciliation and all external effects.
+Startup acknowledged: current mode=`eafr_r1c_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed exact thirteen-path EAFR-R1C work order without commit and return COMPLETE_PENDING_REVIEW; parked checkpoint=R6, RFR final reconciliation and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring`
-Current mode: `eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring`
-Previous mode: `eafr_r5_dispatched_pending_worker_return`
+Current mode marker: `eafr_r1c_dispatched_pending_worker_return`
+Current mode: `eafr_r1c_dispatched_pending_worker_return`
+Previous mode: `eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring`
 
 ## Next Allowed Move
 
-Mode: `eafr_r5_reviewer_accepted_closed_r1c_dispatch_authoring`; R5 retrieval evidence semantics is accepted bounded at `04a5cf40e` after reviewer repair, focused LPF 66/66, focused Web 20/20, safe LPF 1943/1943, reviewer-fast 65/65 and pre-commit 86/86. Six unintended provider calls from a contradictory required command are disclosed, excluded and grant no repeat authority. Author only a fresh R1C packet next. R6, RFR final reconciliation, live/provider/network, credentials, graph-route or reinjection expansion, deployment, public sync and push remain parked.
+Mode: `eafr_r1c_dispatched_pending_worker_return`; R1C is dispatched at `45dcade0e` after independent source/hash verification, pre-dispatch 78/78 and pre-commit 86/86. Execute only the committed exact thirteen-path no-commit work order and return `COMPLETE_PENDING_REVIEW`. LPF `npm test`, build, Playwright, live/provider/network, credentials, production-source/configuration/package/checker edits, deployment, public sync and push are forbidden. R6 and RFR final reconciliation remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
