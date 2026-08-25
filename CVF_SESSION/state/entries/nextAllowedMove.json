@@ -1,5 +1,5 @@
 {
   "stateOrder": 2318,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R1B documentation-only variance-authority adjudication is dispatched at 8fd5fa346. Delegate exactly that packet to a no-commit worker and await its one-path return. R1 remains accepted but blocked; R1A is closed bounded at ef142bfb2. EAFR-R2 through R6 and RFR final reconciliation remain parked. No tests/build, environment or credential access, repeat-live, provider/network, deployment, public-sync, push or worker commit authority is open. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R1B is reviewer-accepted blocked at material commit fc10c8e65. Independent review found the canonical explicit operator-waiver route but no conforming waiver naming failed criteria, reason, scope and follow-up owner; build equivalence also remains unproven. Next allowed move is an explicit human/operator waiver with those fields or separately authorized named repair tranches. EAFR-R2 through R6 and RFR final reconciliation remain parked. No tests/build, environment or credential access, repeat-live, provider/network, deployment, public-sync or push authority is open. Latest finalized numbered LHW wave remains LHW24."
 }

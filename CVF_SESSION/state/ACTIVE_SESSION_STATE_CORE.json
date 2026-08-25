@@ -105,7 +105,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r1b_dispatched_pending_worker_return",
+  "currentMode": "eafr_r1_blocked_pending_explicit_operator_waiver_or_named_repair",
   "previousMode": "runtime_findings_remediation_r7c_closed_final_reconciliation_preparation",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
