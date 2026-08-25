@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R1C_WAIVED_PACKAGE_DEBT_REPAIR_AND_ADJUDICATION_2026-08-25.md",
-    "baselineSha256": "4b8364ef1e64ed75305bdc701251e286f5b4a6393e8fcfdb712c24e3f5d82f78",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R1C_WAIVED_PACKAGE_DEBT_REPAIR_AND_ADJUDICATION_2026-08-25.md",
-    "workOrderSha256": "fbe02b8cdedb907c2214b921ecadc121b29e3ce17c2844874c51f12f31de1b2b"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R1D_NON_LIVE_RUNNER_PROVIDER_EXCLUSION_2026-08-25.md",
+    "baselineSha256": "f6c9e72de6d220d939d33d9d91127c28e6850ac3d3bc44a425f5629eca0a662d",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R1D_NON_LIVE_RUNNER_PROVIDER_EXCLUSION_2026-08-25.md",
+    "workOrderSha256": "7e13b339c1c63235d449f97376b1c3d5a198411b5276a70434ab3e1a26fe4e2f"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r1c_reviewer_accepted_closed_r1d_dispatch_authoring",
-  "previousMode": "eafr_r1c_dispatched_pending_worker_return",
+  "currentMode": "eafr_r1d_dispatched_pending_worker_return",
+  "previousMode": "eafr_r1c_reviewer_accepted_closed_r1d_dispatch_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -14988,5 +14988,5 @@
   "runtimeFindingsRemediationR6Dispatch20260824": "RFR-R6 terminal cross-owner adversarial re-audit is dispatched at material commit 5a9047032 after pre-dispatch 78/78 and material pre-commit 86/86 PASS. The paired source-verified GC-018 baseline and work order require one no-commit audit worker to reconcile F1-F10 to CLOSED, RETAINED_WITH_REASON or BLOCKED_WITH_REASON using fresh Guard Engine, Model Gateway, MCP, Safety Runtime and Runtime Adapter Hub local evidence. Worker may create exactly one return path and may not repair source/tests, stage, commit, install dependencies, invoke provider/live/network, access credentials, deploy, public-sync or push. R5 remains independently closed bounded at 82a0073b2fca002fd7999ed70905166295946515.",
   "runtimeFindingsRemediationR6ReviewDisposition20260824": "Independent reviewer accepted the RFR-R6 worker return as valid audit evidence and withheld roadmap closure. Closed findings: F3, F4, F7, F9. Retained with reason: F1, F2, F5, F6, F8, F10. Reviewer-owned source inspection and negative probes reproduced both decisive defects: live MCP entrypoints use a stale six-guard local fork instead of the declared canonical cvf-guard-contract, and the MCP-to-Model-Gateway optional systemPrompt seam fails 3 of 31 focused tests. R6 authorizes no implementation repair or external effect; fresh owner-specific remediation authority is required.",
   "runtimeFindingsRemediationR7ADispatch20260824": "Operator approved the recommended R7A/R7B split. RFR-R7A canonical MCP Guard Engine adoption is dispatched at material commit 5458c5847b9c6067e680168a4fd0ae9722292852 after pre-dispatch 78/78 and material pre-commit 86/86 PASS. One no-commit worker may change exactly 14 named MCP source/test paths and one worker return to replace production stale-fork engine consumption with direct cvf-guard-contract adoption while keeping session phase as MCP/CLI-local state. R7B remains held until independent R7A acceptance; no Guard Contract, Model Gateway, install, provider/live/network, credential, deploy, public-sync or push authority is released.",
-  "nextAllowedMove": "EAFR-R1C package debt repair/adjudication is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 3c51ac5e after TypeScript PASS, safe Web suite 3525 passed with two named BuildAuthority failures, reviewer-fast 65/65 and pre-commit 86/86. Five unintended OpenAI calls caused by the nominal non-live runner are disclosed, excluded and grant no repeat-live authority. The next allowed move is fresh EAFR-R1D source verification and dispatch authoring to make that runner exclude ambient-key real-provider integration tests. BuildAuthority remains mandatory R6 input; R6 and RFR remain parked. No build, live/provider/network, credential, production-source, deployment, public-sync or push authority is open. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "EAFR-R1D non-live runner provider exclusion is source-verified and dispatched at material commit a8fb75235 after independent 8/8 hash verification, safe Web suite 3525 passed with two named BuildAuthority failures, pre-dispatch 78/78 and pre-commit 86/86 PASS. The next allowed move is exact four-path no-commit worker execution and COMPLETE_PENDING_REVIEW return under the committed baseline/work order. Provider/live/network, credentials, build, dependency/lockfile/environment, production runtime, public-sync, deployment and push are forbidden. BuildAuthority, R6 and RFR remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
