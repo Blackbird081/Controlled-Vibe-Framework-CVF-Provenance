@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R7 source verification and dispatch authoring only; parked checkpoint=RFR and all external effects.
+Startup acknowledged: current mode=`eafr_r7_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=bounded no-commit EAFR-R7 worker execution followed by independent review; parked checkpoint=RFR, provider/live/network, build, BuildAuthority repair and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring`
-Current mode: `eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring`
-Previous mode: `eafr_r6_dispatched_pending_worker_return`
+Current mode marker: `eafr_r7_dispatched_pending_worker_return`
+Current mode: `eafr_r7_dispatched_pending_worker_return`
+Previous mode: `eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring`
 
 ## Next Allowed Move
 
-Mode: `eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring`; R6 is accepted blocked at `2bc2b2d0d` with four unresolved P1 provider-authority bypass classes. RFR resume is blocked. Author only fresh R7 source verification/dispatch for fail-closed provider-egress repair. R7 implementation, build, provider/live, public sync, deployment and push remain parked.
+Mode: `eafr_r7_dispatched_pending_worker_return`; R7 fail-closed provider-egress repair is dispatched at `fa84b5581` under `WORKER_MUST_NOT_COMMIT`. Execute only the bounded local worker packet, then return for independent review. Provider/live/network calls, build, RFR resume, BuildAuthority repair, public sync, deployment and push remain parked. Any `UNRESOLVED` P1 row keeps RFR blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

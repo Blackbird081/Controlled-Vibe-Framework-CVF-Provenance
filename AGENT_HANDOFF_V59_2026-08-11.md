@@ -117,14 +117,14 @@ Preserve the accepted blocked R6 closure and allow only fresh R7 source verifica
 
 ## Current Authority
 
-Continuity parent anchor: `2bc2b2d0d`.
+Continuity parent anchor: `fa84b5581`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R6 `REVIEWER_ACCEPTED_CLOSED_BLOCKED` at `2bc2b2d0d` |
-| baselinePath | `docs/baselines/CVF_GC018_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_2026-08-26.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_2026-08-26.md` |
-| nextAuthorityRequirement | fresh source verification and dispatch authoring for EAFR-R7 only |
+| authorityState | EAFR-R7 `DISPATCHED_PENDING_WORKER_RETURN` at `fa84b5581` |
+| baselinePath | `docs/baselines/CVF_GC018_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_2026-08-26.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_2026-08-26.md` |
+| nextAuthorityRequirement | bounded no-commit R7 worker execution, then independent reviewer adjudication |
 
 ## Closure Evidence
 
@@ -170,7 +170,7 @@ Continuity parent anchor: `2bc2b2d0d`.
 
 ## Next Allowed Move
 
-EAFR-R6 is accepted blocked at `2bc2b2d0d`. The next allowed move is fresh R7 source verification/dispatch authoring only; RFR and all external effects remain parked.
+EAFR-R7 is dispatched at `fa84b5581`. The next allowed move is bounded no-commit worker execution under the committed packet, followed by independent reviewer adjudication. Any unresolved P1 row keeps RFR blocked; provider/live/network, build, BuildAuthority repair and all external effects remain parked.
 
 ## Active Boundary
 
@@ -202,13 +202,13 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - EAFR-R6 Blocked Closure Continuity
+## Core Guard Self-Protection Authorization - EAFR-R7 Dispatch Continuity
 
-Protected paths: `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR6ClosureReconciliationAcceptedBlocked20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+Protected paths: `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR7FailClosedProviderEgressRepairDispatch20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record R6 blocked closure at `2bc2b2d0d`, release only R7 source verification/dispatch authoring, and preserve the RFR checkpoint. Do not alter state structure or open R7 implementation, build, live/provider/network, credential, production-runtime, installation, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record the committed R7 dispatch at `fa84b5581`, release only bounded no-commit worker execution and independent review, and preserve the RFR checkpoint. Do not alter state structure or open provider/live/network, build, BuildAuthority repair, credential, production-runtime, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 

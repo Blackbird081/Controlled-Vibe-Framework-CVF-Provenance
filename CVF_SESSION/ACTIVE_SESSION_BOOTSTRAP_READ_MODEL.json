@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eafr_r6_reviewer_accepted_closed_blocked_r7_dispatch_authoring",
+  "currentMode": "eafr_r7_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EAFR-R6 is reviewer-accepted CLOSED_BLOCKED at material commit 2bc2b2d0d. Four P1 provider-authority bypass classes remain: mainland DashScope, endpoint env overrides, caller-supplied adapter endpoints and out-of-process harnesses. RFR resume remains blocked. The next allowed move is fresh EAFR-R7 source verification and dispatch authoring only for fail-closed provider-egress repair; no R7 implementation authority exists. Build, provider/live, RFR resume, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EAFR-R7 fail-closed provider-egress repair is dispatched at fa84b5581 under WORKER_MUST_NOT_COMMIT. The next allowed move is bounded no-commit worker execution against the committed R7 baseline and work order, followed by independent reviewer adjudication. Provider/live/network calls, build, RFR resume, BuildAuthority repair, public-sync, deployment and push remain parked. Any UNRESOLVED P1 row keeps RFR blocked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_2026-08-26.md",
-    "baselineSha256": "52e7297f619849ee27ccbe7376132e68a02ab3849fcf0b0d9fb8fd68cb104337",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_2026-08-26.md",
-    "workOrderSha256": "d2e11d5391325987387dcd9abb665609b195921e890a5fb6f989e419a6f9e003"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_2026-08-26.md",
+    "baselineSha256": "24467a9d64a1c51ef019f463e7b3151966d23534f108d306777dd31d4bd88459",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_2026-08-26.md",
+    "workOrderSha256": "03dfff66e85ca36beffca97e96a38f1cb5308fe0f736a405c3e5aa63c4496f8d"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

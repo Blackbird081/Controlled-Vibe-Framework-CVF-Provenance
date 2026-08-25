@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2332,
+  "stateOrder": 2334,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R6 is reviewer-accepted CLOSED_BLOCKED at material commit 2bc2b2d0d. Four P1 provider-authority bypass classes remain: mainland DashScope, endpoint env overrides, caller-supplied adapter endpoints and out-of-process harnesses. RFR resume remains blocked. The next allowed move is fresh EAFR-R7 source verification and dispatch authoring only for fail-closed provider-egress repair; no R7 implementation authority exists. Build, provider/live, RFR resume, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R7 fail-closed provider-egress repair is dispatched at fa84b5581 under WORKER_MUST_NOT_COMMIT. The next allowed move is bounded no-commit worker execution against the committed R7 baseline and work order, followed by independent reviewer adjudication. Provider/live/network calls, build, RFR resume, BuildAuthority repair, public-sync, deployment and push remain parked. Any UNRESOLVED P1 row keeps RFR blocked. Latest finalized numbered LHW wave remains LHW24."
 }

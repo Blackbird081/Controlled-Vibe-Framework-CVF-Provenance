@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2333,
+  "stateKey": "eafrR7FailClosedProviderEgressRepairDispatch20260826",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "materialCommit": "fa84b5581",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_2026-08-26.md",
+    "baselineSha256": "24467a9d64a1c51ef019f463e7b3151966d23534f108d306777dd31d4bd88459",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_2026-08-26.md",
+    "workOrderSha256": "03dfff66e85ca36beffca97e96a38f1cb5308fe0f736a405c3e5aa63c4496f8d",
+    "proof": "Independent source inspection confirmed the unknown-host fail-open branch and identity-registry endpoint gap; pre-dispatch 79/79 and pre-commit 87/87 passed; zero provider calls.",
+    "nextAllowedMove": "Bounded no-commit R7 worker execution, then independent reviewer adjudication.",
+    "claimBoundary": "No provider/live/network call, build, RFR resume, BuildAuthority repair, public-sync, deployment or push authority. Any unresolved P1 row keeps RFR parked."
+  }
+}
