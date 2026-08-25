@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`runtime_findings_remediation_r7c_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator copies the committed R7C test-only packet to one no-commit worker; parked checkpoint=production/Guard Contract/runtime authority changes, installation, provider/live/network, credentials, deployment, public sync and push.
+Startup acknowledged: current mode=`runtime_findings_remediation_r7c_closed_final_reconciliation_preparation`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=prepare a documentation-only final machine-closure reconciliation for the runtime-findings roadmap; parked checkpoint=implementation/authority/external-schema changes, installation, provider/live/network, credentials, deployment, public sync and push.
 
 ## Current Mode
 
-Current mode marker: `runtime_findings_remediation_r7c_dispatched_pending_worker_return`
-Current mode: `runtime_findings_remediation_r7c_dispatched_pending_worker_return`
-Previous mode: `runtime_findings_remediation_r7b_closed_r7c_dispatch_preparation`
+Current mode marker: `runtime_findings_remediation_r7c_closed_final_reconciliation_preparation`
+Current mode: `runtime_findings_remediation_r7c_closed_final_reconciliation_preparation`
+Previous mode: `runtime_findings_remediation_r7c_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `runtime_findings_remediation_r7c_dispatched_pending_worker_return`; RFR-R7C truthful-role composition proof is dispatched at `3f25dc0f1` after pre-dispatch 78/78 and pre-commit 86/86. Operator may copy the committed test-only packet to one no-commit worker; production/authority and all external effects remain unauthorized.
+Mode: `runtime_findings_remediation_r7c_closed_final_reconciliation_preparation`; RFR-R7C is independently accepted and materially committed at `92b7d6ec6` after focused 32/32, package 780/780, build PASS, reviewer-fast 65/65 and pre-commit 86/86. Prepare a fresh documentation-only final machine-closure reconciliation; implementation/authority and all external effects remain unauthorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
