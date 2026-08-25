@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2328,
+  "stateOrder": 2330,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R1E is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 8007e269f. Worker/subagent provider execution now defaults to FORBIDDEN and requires an orchestrator-issued subject/delegation/provider/call/expiry-bound grant on CVF-owned paths; contract 42/42, Web 12/12, reviewer-fast 66/66 and pre-commit 87/87 passed with zero R1E provider calls. The next allowed move is fresh EAFR-R6 source verification and dispatch authoring to reconcile all accepted closures, the BuildAuthority Web gap and all recorded provider-call incidents before any RFR resume decision. RFR, build, ungranted live/provider, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R6 dispatch is committed at c3c7ed691 with baseline SHA-256 52e7297f6 and work-order SHA-256 d2e11d539. The next allowed move is only the no-commit R6 worker reconciliation: source inspection and non-provider tests, endpoint-surface coverage matrix, incident ledger, P0/P1 classification and one RFR resume-or-blocked verdict. providerExecutionAuthority is FORBIDDEN; caller-supplied/configurable endpoints and out-of-process harnesses must remain NOT_COVERED/P1 unless stronger evidence escalates them. RFR, build, provider/live, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

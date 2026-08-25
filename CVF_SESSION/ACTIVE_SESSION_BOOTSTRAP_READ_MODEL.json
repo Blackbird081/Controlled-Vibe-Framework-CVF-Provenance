@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eafr_r1e_reviewer_accepted_closed_r6_dispatch_authoring",
+  "currentMode": "eafr_r6_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EAFR-R1E is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 8007e269f. Worker/subagent provider execution now defaults to FORBIDDEN and requires an orchestrator-issued subject/delegation/provider/call/expiry-bound grant on CVF-owned paths; contract 42/42, Web 12/12, reviewer-fast 66/66 and pre-commit 87/87 passed with zero R1E provider calls. The next allowed move is fresh EAFR-R6 source verification and dispatch authoring to reconcile all accepted closures, the BuildAuthority Web gap and all recorded provider-call incidents before any RFR resume decision. RFR, build, ungranted live/provider, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EAFR-R6 dispatch is committed at c3c7ed691 with baseline SHA-256 52e7297f6 and work-order SHA-256 d2e11d539. The next allowed move is only the no-commit R6 worker reconciliation: source inspection and non-provider tests, endpoint-surface coverage matrix, incident ledger, P0/P1 classification and one RFR resume-or-blocked verdict. providerExecutionAuthority is FORBIDDEN; caller-supplied/configurable endpoints and out-of-process harnesses must remain NOT_COVERED/P1 unless stronger evidence escalates them. RFR, build, provider/live, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R1D_NON_LIVE_RUNNER_PROVIDER_EXCLUSION_2026-08-25.md",
-    "baselineSha256": "f6c9e72de6d220d939d33d9d91127c28e6850ac3d3bc44a425f5629eca0a662d",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R1D_NON_LIVE_RUNNER_PROVIDER_EXCLUSION_2026-08-25.md",
-    "workOrderSha256": "7e13b339c1c63235d449f97376b1c3d5a198411b5276a70434ab3e1a26fe4e2f"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_2026-08-26.md",
+    "baselineSha256": "52e7297f619849ee27ccbe7376132e68a02ab3849fcf0b0d9fb8fd68cb104337",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_2026-08-26.md",
+    "workOrderSha256": "d2e11d5391325987387dcd9abb665609b195921e890a5fb6f989e419a6f9e003"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
