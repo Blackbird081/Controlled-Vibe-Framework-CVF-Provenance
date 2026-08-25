@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2337,
+  "stateKey": "eafrR8ExternalStoreIsolationAdapterBoundaryDispatch20260826",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "materialCommit": "60635ed19",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_2026-08-26.md",
+    "baselineSha256": "f799139a7660dcb6fc0908c111652969f04f13f3793646e44fe39290ac0edc50",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_2026-08-26.md",
+    "workOrderSha256": "b0031f0218862ced4f54abdc4a6b788d82ac3dd3dbba27515db53f8adda28544",
+    "reviewerRepair": "Added the existing Model Gateway adapter test to Write Ownership and pinned inputs so required adapter proof is executable without manifest violation.",
+    "proof": "Pre-dispatch 79/79 and pre-commit 87/87 passed; zero provider, network or external-store calls.",
+    "nextAllowedMove": "Bounded no-commit R8 worker execution, then independent reviewer adjudication.",
+    "claimBoundary": "No provider/live/network or external-store call, build, RFR resume, BuildAuthority repair, public-sync, deployment or push authority."
+  }
+}

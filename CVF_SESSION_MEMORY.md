@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r7_reviewer_accepted_closed_blocked_r8_source_verification`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R8 source verification and dispatch authoring only; parked checkpoint=RFR, R8 implementation, provider/live/network, build, BuildAuthority repair and all external effects.
+Startup acknowledged: current mode=`eafr_r8_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=bounded no-commit EAFR-R8 worker execution followed by independent review; parked checkpoint=RFR, provider/live/network and external-store calls, build, BuildAuthority repair and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r7_reviewer_accepted_closed_blocked_r8_source_verification`
-Current mode: `eafr_r7_reviewer_accepted_closed_blocked_r8_source_verification`
-Previous mode: `eafr_r7_dispatched_pending_worker_return`
+Current mode marker: `eafr_r8_dispatched_pending_worker_return`
+Current mode: `eafr_r8_dispatched_pending_worker_return`
+Previous mode: `eafr_r7_reviewer_accepted_closed_blocked_r8_source_verification`
 
 ## Next Allowed Move
 
-Mode: `eafr_r7_reviewer_accepted_closed_blocked_r8_source_verification`; R7 is accepted closed blocked at `74cf99354`. The fail-closed control is retained, but ambient Upstash external-store use and the adapter fetch-injection residual keep RFR parked. Author only fresh R8 source verification/dispatch; R8 implementation, provider/live/network calls, build, BuildAuthority repair, public sync, deployment and push remain parked.
+Mode: `eafr_r8_dispatched_pending_worker_return`; R8 is dispatched at `60635ed19` under `WORKER_MUST_NOT_COMMIT`. Execute only the bounded local packet, then return for independent review. Provider/live/network and external-store calls, build, RFR resume, BuildAuthority repair, public sync, deployment and push remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
