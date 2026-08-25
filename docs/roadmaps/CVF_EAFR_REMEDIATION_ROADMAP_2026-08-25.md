@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R1E_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED_R6_READY_FOR_SOURCE_VERIFICATION
+Status: ACTIVE_R6_REVIEWER_ACCEPTED_CLOSED_BLOCKED_R7_REPAIR_DISPATCH_AUTHORING
 
 Date: 2026-08-25
 
@@ -61,7 +61,8 @@ its own work.
 | EAFR-R1C | repair or freshly adjudicate the waived typecheck, full non-live-suite, and build debt | explicit R1 waiver and R5 accepted | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; typecheck green; safe suite 3525 pass/2 named BuildAuthority failures; build freshly blocked; five OpenAI calls disclosed and excluded |
 | EAFR-R1D | make the cvf-web non-live runner exclude ambient-key real-provider integration tests and reconcile the R1C five-call incident | R1C accepted bounded | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; selection and activation barriers pass; focused guard 6/6; safe suite 3525 pass/2 named fail; one worker OpenAI call disclosed and excluded |
 | EAFR-R1E | separate live-test selection from provider execution authority and make every worker/subagent provider call require an orchestrator-issued bounded grant | second accidental worker provider call after R1D | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; default deny contract, pre-network guard, list-only live script, 42/42 plus 12/12 focused tests and reviewer-fast 66/66 PASS; zero provider calls |
-| EAFR-R6 | independently reconcile closures, including the BuildAuthority Web gap and provider-call incidents, and decide whether parked RFR may resume | R1/R1A/R1B, R2-R5, R1C, R1D and R1E accepted | READY_FOR_FRESH_SOURCE_VERIFICATION_AND_DISPATCH_AUTHORING_AFTER_CONTINUITY_SYNC |
+| EAFR-R6 | independently reconcile closures, including the BuildAuthority Web gap and provider-call incidents, and decide whether parked RFR may resume | R1/R1A/R1B, R2-R5, R1C, R1D and R1E accepted | REVIEWER_ACCEPTED_CLOSED_BLOCKED; four unresolved P1 provider-authority bypass classes; RFR resume blocked |
+| EAFR-R7 | repair provider-execution authority coverage across endpoint constants, configurable/caller endpoints and out-of-process harness boundaries | R6 accepted blocked | READY_FOR_FRESH_SOURCE_VERIFICATION_AND_DISPATCH_AUTHORING; no implementation authority |
 
 ## Design Controls
 
@@ -99,6 +100,8 @@ current `DISPATCH_READY` row may enter worker execution.
 - R5 records a bounded design verdict plus executable proof for any admitted
   retrieval evidence.
 - R6 contains no unresolved P0/P1 row before the parked roadmap can resume.
+- R7 removes or explicitly fail-closes every R6 P1 provider-authority bypass
+  class before RFR can be reconsidered.
 
 ## Risk / Corrective Action
 
@@ -134,6 +137,13 @@ Focused contract and web tests, TypeScript, list-only discovery and the 66-check
 reviewer-fast gate pass with zero R1E provider calls. This remains bounded to
 CVF-owned execution paths and is not universal host network isolation.
 
+R6 independently re-derived all ten closures and accepted the worker's blocked
+verdict after one reviewer matrix repair. Fresh Web proof is 313 files and 3533
+tests with exactly 20 PVV pre-network denials plus two named BuildAuthority
+failures. Four P1 bypass classes remain: mainland DashScope, endpoint env
+overrides, caller-supplied adapter endpoints and out-of-process harnesses.
+RFR remains parked; R7 source verification/dispatch authoring is next.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
@@ -162,9 +172,9 @@ any runtime behavior.
 | --- | --- | --- | --- |
 | Work order status | EAFR tranche packets | R1-R5 and R1C committed dispatch authority | PASS |
 | Completion or reviewer artifact | R1C completion review | bounded closure, named residuals and incident recorded | PASS |
-| Roadmap state | this file | R1E accepted bounded; R6 ready after continuity sync | PASS |
+| Roadmap state | this file | R6 accepted blocked; R7 dispatch authoring next; RFR parked | PASS |
 | Registry JSON | system-chain map | `ARCHITECTURE.md` fingerprint refreshed; freshness CURRENT | PASS |
 | Registry Markdown | N/A with reason: no registry projection | no applicability | BLOCKED |
 | External evidence digest | archived corrected external report | input only, not authority | N/A with reason |
-| System loop interlock | R1D incident -> R1E authority control -> R6 | fail-closed dependencies explicit | PASS |
+| System loop interlock | R1D incident -> R1E authority control -> R6 blocked -> R7 repair | fail-closed dependencies explicit | PASS |
 | Session continuity | separate post-material sync | required after material commit | PASS |
