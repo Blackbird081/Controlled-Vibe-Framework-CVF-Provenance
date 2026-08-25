@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r4_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed EAFR-R4 packet at 4d5ffe8d4 as an exact eleven-path no-commit worker and return for independent review; parked checkpoint=R1C before R6, RFR final reconciliation, R5-R6 and all external effects.
+Startup acknowledged: current mode=`eafr_r4_reviewer_accepted_closed_r5_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh source-verified EAFR-R5 baseline/work order after R4 bounded closure at 55d485166; parked checkpoint=R1C before R6, RFR final reconciliation, R6 and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r4_dispatched_pending_worker_return`
-Current mode: `eafr_r4_dispatched_pending_worker_return`
-Previous mode: `eafr_r3_reviewer_accepted_closed_r4_dispatch_authoring`
+Current mode marker: `eafr_r4_reviewer_accepted_closed_r5_dispatch_authoring`
+Current mode: `eafr_r4_reviewer_accepted_closed_r5_dispatch_authoring`
+Previous mode: `eafr_r4_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `eafr_r4_dispatched_pending_worker_return`; R4 dispatch is committed at `4d5ffe8d4` after pre-dispatch 78/78 and pre-commit 86/86. Execute exactly its eleven-path no-commit worker scope and return for independent review. R1C, R5-R6, RFR final reconciliation, live/provider/network, credentials, deployment, public sync and push remain parked.
+Mode: `eafr_r4_reviewer_accepted_closed_r5_dispatch_authoring`; R4 is independently accepted bounded at `55d485166` after disclosed reviewer repair, 17/17 focused proof, reviewer-fast 65/65 and pre-commit 86/86. Author only a fresh source-verified R5 baseline/work order next; implementation remains held until commit. R1C, R6, RFR final reconciliation, live/provider/network, credentials, deployment, public sync and push remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
