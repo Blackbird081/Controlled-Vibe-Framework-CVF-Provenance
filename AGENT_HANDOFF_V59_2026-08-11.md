@@ -7,6 +7,7 @@ Status: ACTIVE
 - Branch: `main`
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
+- EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
 - External agent memory files: non-canonical convenience only.
 - Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
 - Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
@@ -46,14 +47,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r2_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegate committed EAFR-R2 packet at bcb381539 to its no-commit worker and await return; parked checkpoint=R1C before R6, RFR final reconciliation, R3-R6 and all external effects.
+Startup acknowledged: current mode=`eafr_r2_reviewer_accepted_closed_r3_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh source-verified EAFR-R3 baseline/work order after R2 bounded closure at fdf53b841; parked checkpoint=R1C before R6, RFR final reconciliation, R4-R6 and all external effects.
 
 ## Current Mode
-`eafr_r2_dispatched_pending_worker_return`
+`eafr_r2_reviewer_accepted_closed_r3_dispatch_authoring`
 
 ## Purpose
 
-Preserve the R1/R1A/R1B closure chain and delegate only the committed R2 no-commit packet. R1C remains mandatory before R6; all later EAFR tranches and external effects remain parked.
+Preserve the R1/R1A/R1B closure chain and R2 bounded acceptance, then author only the fresh source-verified R3 dispatch packet. R1C remains mandatory before R6; R4-R6 and all external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -113,16 +114,18 @@ Preserve the R1/R1A/R1B closure chain and delegate only the committed R2 no-comm
 
 ## Current Authority
 
-Continuity parent anchor: `92b7d6ec6`.
+Continuity parent anchor: `fdf53b841`.
 
 | Field | Value |
 |---|---|
-| authorityState | RFR-R7C truthful-role composition proof `CLOSED_PASS_BOUNDED` at `92b7d6ec6` |
-| baselinePath | `docs/baselines/CVF_GC018_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_2026-08-25.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_2026-08-25.md` |
-| nextAuthorityRequirement | fresh documentation-only authority for final roadmap machine-closure reconciliation |
+| authorityState | EAFR-R2 durable-memory HTTP write hardening `CLOSED_PASS_BOUNDED` at `fdf53b841` |
+| baselinePath | `docs/baselines/CVF_GC018_EAFR_R2_DURABLE_MEMORY_HTTP_WRITE_AUTHORITY_FAIL_CLOSED_2026-08-25.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R2_DURABLE_MEMORY_HTTP_WRITE_AUTHORITY_FAIL_CLOSED_2026-08-25.md` |
+| nextAuthorityRequirement | fresh source verification plus GC-018 baseline/work order for EAFR-R3 dispatch |
 
 ## Closure Evidence
+
+- EAFR-R2 completion review: `docs/reviews/CVF_EAFR_R2_DURABLE_MEMORY_HTTP_WRITE_AUTHORITY_FAIL_CLOSED_COMPLETION_2026-08-25.md`; material commit `fdf53b841`; reviewer repaired false `actorAuthorized` admission, corrected zero-provenance evidence, and accepted bounded with 26/26 focused, reviewer-fast 65/65, pre-commit 86/86, zero provider/live calls. Typecheck/full-suite failures remain outside R2 and R1C-owned.
 
 - RFR-R1/R2/R3/R4 are `CLOSED_PASS_BOUNDED` through `8ec399aa5`. RFR-R5 is independently `CLOSED_PASS_BOUNDED` at `82a0073b2fca002fd7999ed70905166295946515`; reviewer repaired hostile profile/requirement handling, platform binding, immutable snapshots, canonical receipt rebinding and worker/child environment isolation. Proof: Safety Runtime 61/61, adapter 49/49, package 91/91, strict TypeScript, reviewer-fast and pre-commit 86/86; zero provider/live calls.
 - Downstream P4-A1 closure:
@@ -132,10 +135,6 @@ Continuity parent anchor: `92b7d6ec6`.
 - Independent accepted review:
   `d56b835d9c72ec706fc3b8d293aaf85a147ecd6f62c20cfa1afc29baed52ef22`.
 - Findings/waivers: `NONE/NONE`.
-- Worker return SHA-256:
-  `b4bfb93418b7179ef7db98b85aef077101309077f850fc77ff71d15daf5e971f`.
-- Target completion review SHA-256:
-  `fb55e9ee55f225e68cd40b33afc8b7205a99ab561022bc25f20720e9c23dd85c`.
 - Target final evidence: 17 focused tests and 605 full CVF tests passed;
   workspace doctor reported 24 passed plus one bounded legacy warning.
 - Core material closure pre-commit: 84/84 PASS.
@@ -167,7 +166,7 @@ Continuity parent anchor: `92b7d6ec6`.
 
 ## Next Allowed Move
 
-EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1C debt remains mandatory before R6. EAFR-R2 is dispatched at `bcb381539`; delegate exactly its three-path no-commit packet and await return. R3-R6 and RFR final reconciliation remain parked.
+EAFR-R2 is independently accepted bounded at `fdf53b841`. Author only a fresh source-verified EAFR-R3 baseline/work order next; do not implement R3 before that packet is committed. R1C remains mandatory before R6; R4-R6 and RFR final reconciliation remain parked.
 
 ## Active Boundary
 
@@ -211,7 +210,7 @@ Protected paths:
 
 Operator authorization: the operator's standing dependency-ordered roadmap continuation under CVF role separation.
 
-Authorized guard-maintenance scope: record R2 dispatch at `bcb381539`, route only its no-commit worker return, and preserve R1C/R3-R6/RFR checkpoints. Do not alter state structure or open live/provider/network, credential, installation, deployment, public-sync or push lanes.
+Authorized guard-maintenance scope: record R2 bounded closure at `fdf53b841`, release only R3 source verification and dispatch authoring, and preserve R1C/R4-R6/RFR checkpoints. Do not alter state structure or open live/provider/network, credential, installation, deployment, public-sync or push lanes.
 
 Rollback boundary: revert this continuity-only batch as one unit.
 
