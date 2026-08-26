@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_R7C_CLOSED_PENDING_FINAL_RECONCILIATION
+Status: CLOSED_PASS_BOUNDED_FINAL_RECONCILIATION_COMPLETE
 
 docType: roadmap
 
@@ -112,9 +112,9 @@ boundedly: R7A closed the stale admission owner (F1/F2/F6 and the admission
 portion of F8/F10), R7B closed the optional-field seam (F5 and the remaining
 composition portion of F8/F10), and R7C closes the stale positive test
 contract. No provider/live, deployment, public-sync, production-readiness, or
-external-schema expansion claim follows. A separate reviewer-owned final
-reconciliation must refresh the historical machine-closure package before the
-roadmap itself may change to a closed-equivalent status.
+external-schema expansion claim follows. A reviewer-owned final reconciliation
+refreshed the historical machine-closure package on 2026-08-26. RFR is
+terminally closed bounded; no successor repair tranche is admitted here.
 
 ## Acceptance Criteria
 
@@ -159,19 +159,23 @@ authorized by this roadmap.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R4_MATERIAL_CONTEXT_MANIFEST_2026-08-24.md` | committed authority `9660fb5a1` | PASS |
-| Completion or reviewer artifact | `docs/reviews/CVF_RFR_R4_MATERIAL_CONTEXT_MANIFEST_COMPLETION_2026-08-24.md` | bounded reviewer acceptance pending material identity | PASS |
-| Roadmap state | `docs/roadmaps/CVF_RUNTIME_FINDINGS_CLOSURE_ROADMAP_2026-08-24.md` | R4 accepted bounded; R5 remains dependency-gated | PASS |
-| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate covers both new R4 source/test paths | PASS |
-| Registry Markdown | `docs/roadmaps/CVF_RUNTIME_FINDINGS_CLOSURE_ROADMAP_2026-08-24.md` | canonical human-readable tranche state | PASS |
-| External evidence digest | N/A | no external evidence was used for RFR-R4 remediation beyond governed worker return | N/A with reason: local source and test evidence only |
-| System loop interlock | this roadmap | R5-R6 dependency order remains closed and external effects remain parked | PASS |
-| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | exact RFR-R4 material SHA must follow the material commit | BLOCKED with reason: material commit identity is not available pre-commit |
+| Work order status | R1-R7C governed work orders | every implementation work order has a closed-equivalent status; R6 is a completed audit | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_RFR_FINAL_RECONCILIATION_AND_ROADMAP_CLOSURE_2026-08-26.md` | final reviewer verdict `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED_FINAL_RECONCILIATION_COMPLETE` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no corpus scan/classification mutation is authorized or required by this runtime-roadmap reconciliation | BLOCKED with reason |
+| Registry Markdown | this roadmap | human-readable R1-R7C terminal reconciliation | PASS |
+| External evidence digest | N/A | no external evidence was consumed by the local final reconciliation | N/A with reason |
+| System loop interlock | R6 retained findings -> R7A/R7B/R7C closure chain | every retained R6 finding maps to accepted local source/test evidence; no successor RFR tranche remains | PASS |
+| Session continuity | `CVF_SESSION/ACTIVE_SESSION_STATE.json` and active front doors | separately governed continuity sync follows the final material closure commit | PASS |
 | R1 BUILD authority | `docs/reviews/CVF_RFR_R1_BUILD_AUTHORITY_CLOSURE_COMPLETION_2026-08-24.md` | material commit `a670343706c4fa21427a55a9c2ba464b9cef6cd4` | PASS_BOUNDED |
 | R2 immutable mandatory core | `docs/reviews/CVF_RFR_R2_IMMUTABLE_MANDATORY_CORE_COMPLETION_2026-08-24.md` | material commit `84d44889f`; reviewer repair included | PASS_BOUNDED |
 | R3 native MCP admission | `docs/reviews/CVF_RFR_R3_NATIVE_MCP_ADMISSION_COMPLETION_2026-08-24.md` | material `a18ba512f`; 31 focused; 748 package pass; reviewer repair included | PASS_BOUNDED |
-| R4 material context manifest | `docs/reviews/CVF_RFR_R4_MATERIAL_CONTEXT_MANIFEST_COMPLETION_2026-08-24.md` | 58 focused; 288 package pass; reviewer repair included | PASS_BOUNDED_PENDING_MATERIAL_COMMIT |
-| R5-R7C | bounded remediation chain | R5 and R6 evidence plus R7A/R7B/R7C closures | PASS_BOUNDED |
+| R4 material context manifest | `docs/reviews/CVF_RFR_R4_MATERIAL_CONTEXT_MANIFEST_COMPLETION_2026-08-24.md` | material `8ec399aa5`; 58 focused; 288 package pass; reviewer repair included | PASS_BOUNDED |
+| R5 isolation proof | R5 completion evidence | material `82a0073b2`; Safety Runtime 61/61; adapter 49/49; package 91/91 | PASS_BOUNDED |
+| R6 adversarial re-audit | `docs/reviews/CVF_RFR_R6_CROSS_OWNER_ADVERSARIAL_REAUDIT_WORKER_RETURN_2026-08-24.md` | audit `39ba8f31f`; six retained rows routed to the bounded R7 chain | PASS |
+| R7A canonical MCP guard adoption | R7A completion evidence | material `1512374e8`; canonical roots adopted; only isolated R7B residuals remained | PASS_BOUNDED |
+| R7B optional-field seam | R7B completion evidence | material `79ca7e542`; Model Gateway 301/301; one stale test routed to R7C | PASS_BOUNDED |
+| R7C truthful role proof | R7C completion evidence | material `92b7d6ec6`; focused 32/32; MCP 780/780; TypeScript PASS | PASS_BOUNDED |
 | external effects | roadmap boundary | zero provider/live/public/deploy/push actions | PARKED |
 
 ## Acceptance Receipt Assertion Matrix
@@ -180,7 +184,8 @@ authorized by this roadmap.
 | --- | --- | --- | --- |
 | material-context evidence | exact complete manifest; hostile/invalid input calls adapter zero times | 58/58 focused tests pass | PASS |
 | Package proof | Model Gateway package remains green | 288/288 package tests pass | PASS |
-| Material identity | exact reviewed commit recorded in continuity | unavailable until material commit is created | BLOCKED with reason: post-material continuity sync owns the SHA receipt |
+| Material identities | exact accepted material identities exist for R1-R7C | `a67034370`, `84d44889f`, `a18ba512f`, `8ec399aa5`, `82a0073b2`, `1512374e8`, `79ca7e542`, `92b7d6ec6` | PASS |
+| Finding reconciliation | every F1-F10 row has a terminal bounded disposition | F3/F4/F7/F9 closed before R7; F1/F2/F5/F6/F8/F10 closed through R7A-R7C | PASS |
 
 ## External Knowledge Intake Routing
 
@@ -218,6 +223,7 @@ later explicit public-sync disposition and sibling-clone proof.
 
 ## Claim Boundary
 
-This roadmap authorizes bounded local remediation sequencing. It does not claim
-that any finding is fixed, that later tranches are dispatched, or that the
-private repository may be pushed to the public remote.
+This roadmap records bounded local remediation closure for the exact F1-F10
+finding set and cited repository-local proofs. It does not claim live-provider,
+deployment, production-readiness, public-export, or public-push readiness and
+does not authorize a successor RFR repair tranche.
