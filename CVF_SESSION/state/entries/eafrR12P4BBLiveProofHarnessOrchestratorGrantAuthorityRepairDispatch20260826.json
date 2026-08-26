@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2351,
+  "stateKey": "eafrR12P4BBLiveProofHarnessOrchestratorGrantAuthorityRepairDispatch20260826",
+  "value": {
+    "status": "DISPATCH_READY_COMMITTED_AWAITING_WORKER_HANDOFF",
+    "materialCommit": "cfd7e203b",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_BASELINE_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_2026-08-26.md",
+    "roadmap": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+    "workerReturn": "docs/reviews/CVF_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "workerManifest": "Harness, direct runner, focused test, gateway package.json, new gateway package-lock.json, and one worker return only.",
+    "proof": "Pre-dispatch 79/79 and pre-commit plus hook 87/87 passed; zero provider, network, credential, store, live, public, deployment or push effect.",
+    "nextAllowedMove": "Transfer the exact committed R12 packet to one no-commit worker for offline-only implementation and non-live proof, then yield for independent review.",
+    "claimBoundary": "R12 dispatch only. Worker provider authority is FORBIDDEN; RFR and TPGR implementation remain parked."
+  }
+}

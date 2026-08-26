@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_BASELINE_2026-08-26.md",
-    "baselineSha256": "657748a27793bc4a3d360f95d59aabe9465bc11ef192555a1ef1099432d024bb",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_2026-08-26.md",
-    "workOrderSha256": "b965b19534f0544bd0232c0f15093b52778e6859ac1843c1743bef1a377e6f1a"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_BASELINE_2026-08-26.md",
+    "baselineSha256": "7a41cc0adf6531d2f5e5e488a08a0e0fd2225dc6d60c9f65247135c3d122265a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_2026-08-26.md",
+    "workOrderSha256": "76e54ad25355d11a0537eeabc48087c93c053376e65049398116608d61198dc8"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch",
-  "previousMode": "eafr_r11_dispatch_ready_committed_awaiting_worker_handoff",
+  "currentMode": "eafr_r12_dispatch_ready_committed_awaiting_worker_handoff",
+  "previousMode": "eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

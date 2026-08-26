@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2350,
+  "stateOrder": 2352,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R11 is reviewer-accepted CLOSED_BLOCKED at material commit 820b677d8. Three original P1 rows are resolved fail-closed; the directly invocable P4B-B live-proof harness remains one current P1 because liveAuthorized true can reach secret resolution without the existing R1E orchestrator-grant evaluator. The next allowed move is source verification and dispatch authoring for exactly one consolidated EAFR-R12 repair covering the harness, direct runner, focused non-live tests, and only the minimal existing-owner consumption edge. RFR execution, TPGR implementation, live/provider/network/credential/store calls, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R12 is dispatch-ready and committed at cfd7e203b. The next allowed move is one no-commit worker implementation under the exact paired packet: add the offline local foundation dependency and lock, require the existing R1E evaluator in the P4B-B harness and direct runner before env/credential/fetch/bridge access, prove the denial matrix with injected non-live tests, run package check and worker-return fast gate, and yield with HEAD unchanged and staging empty. Provider/live/network/credential/store calls, RFR execution, TPGR implementation, public sync, deployment and push remain parked. No EAFR successor is pre-authorized. Latest finalized numbered LHW wave remains LHW24."
 }

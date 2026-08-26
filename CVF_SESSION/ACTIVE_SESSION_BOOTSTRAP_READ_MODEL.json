@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch",
+  "currentMode": "eafr_r12_dispatch_ready_committed_awaiting_worker_handoff",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EAFR-R11 is reviewer-accepted CLOSED_BLOCKED at material commit 820b677d8. Three original P1 rows are resolved fail-closed; the directly invocable P4B-B live-proof harness remains one current P1 because liveAuthorized true can reach secret resolution without the existing R1E orchestrator-grant evaluator. The next allowed move is source verification and dispatch authoring for exactly one consolidated EAFR-R12 repair covering the harness, direct runner, focused non-live tests, and only the minimal existing-owner consumption edge. RFR execution, TPGR implementation, live/provider/network/credential/store calls, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EAFR-R12 is dispatch-ready and committed at cfd7e203b. The next allowed move is one no-commit worker implementation under the exact paired packet: add the offline local foundation dependency and lock, require the existing R1E evaluator in the P4B-B harness and direct runner before env/credential/fetch/bridge access, prove the denial matrix with injected non-live tests, run package check and worker-return fast gate, and yield with HEAD unchanged and staging empty. Provider/live/network/credential/store calls, RFR execution, TPGR implementation, public sync, deployment and push remain parked. No EAFR successor is pre-authorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_BASELINE_2026-08-26.md",
-    "baselineSha256": "657748a27793bc4a3d360f95d59aabe9465bc11ef192555a1ef1099432d024bb",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_2026-08-26.md",
-    "workOrderSha256": "b965b19534f0544bd0232c0f15093b52778e6859ac1843c1743bef1a377e6f1a"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_BASELINE_2026-08-26.md",
+    "baselineSha256": "7a41cc0adf6531d2f5e5e488a08a0e0fd2225dc6d60c9f65247135c3d122265a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_2026-08-26.md",
+    "workOrderSha256": "76e54ad25355d11a0537eeabc48087c93c053376e65049398116608d61198dc8"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

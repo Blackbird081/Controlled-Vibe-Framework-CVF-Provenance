@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author exactly one consolidated R12 harness/runner grant-repair dispatch after accepted R11 `820b677d8`; parked checkpoint=R12 implementation, RFR execution, TPGR implementation and all external effects.
+Startup acknowledged: current mode=`eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit R12 worker under committed packet `cfd7e203b`; parked checkpoint=provider/live/network/credential effects, RFR execution, TPGR implementation and any EAFR successor.
 
 ## Current Mode
 
-Current mode marker: `eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch`
-Current mode: `eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch`
-Previous mode: `eafr_r11_dispatch_ready_committed_awaiting_worker_handoff`
+Current mode marker: `eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`
+Current mode: `eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`
+Previous mode: `eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch`
 
 ## Next Allowed Move
 
-Mode: `eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch`; R11 closure material is committed at `820b677d8`. Three P1 rows are resolved fail-closed; the directly invocable P4B-B harness remains one current P1 because caller `liveAuthorized: true` can reach secret resolution without the R1E evaluator. The next allowed move is authoring exactly one consolidated R12 dispatch for harness, runner, focused non-live tests and only the minimal existing-owner consumption edge. RFR, TPGR implementation and all external effects remain parked.
+Mode: `eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`; R12 is committed at `cfd7e203b` after pre-dispatch 79/79 and pre-commit plus hook 87/87. The next allowed move is one no-commit worker implementing the exact offline package edge, harness/runner R1E evaluator gate and injected denial matrix, then yielding for independent review. Provider/live/network/credential/store effects, RFR, TPGR implementation and any successor remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
