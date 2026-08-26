@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_R2_DISPATCHED_EXECUTION_PLANE_GRANT_CONTEXT_CALLER_REPAIR
+Status: LPCI1_WEB_R2_REVIEWER_ACCEPTED_CLOSED_BLOCKED_R3_FINAL_AUTH_BUILD_DEPLOY_REPAIR_AUTHORING
 
 docType: roadmap
 
@@ -31,6 +31,13 @@ push, Netlify deploy and hosted smoke remain parked.
 
 R2 dispatch update: the only successor is
 `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md`.
+R2 review update: the authority-context repair is accepted bounded after one
+reviewer proof correction; focused 39/39, Execution Plane 1911/1911, Web
+focused 62/62, and all TypeScript checks pass. Exact production build reaches
+successful Webpack compilation and TypeScript, then fails closed because the
+build environment lacks the five mandatory Auth.js variables. Admit at most
+one consolidated R3 final auth-build-deploy repair; weakening the production
+Auth.js invariant and all unrelated successors remain forbidden.
 It must propagate the canonical orchestrator grant context, prove denial before
 secret-bearing environment or call-budget effects, and restore exact non-live
 production build exit zero. It authorizes no live call or public effect.

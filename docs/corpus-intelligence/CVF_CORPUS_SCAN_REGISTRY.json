@@ -7229,6 +7229,48 @@
         "External Integration import from lpci-safe"
       ],
       "nextScanRecommendation": "Re-scan only if the LPCI safe entrypoint, receipt identity subpath, package exports, or installed-package build composition changes."
+    },
+    {
+      "id": "lpci1-web-r2-execution-grant-caller-authority",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "LPCI1 Web R2 Execution Plane provider-grant caller authority repair",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/package-lock.json",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/package.json",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/scripts/run-mao-live-provider-value-pilot.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/live.provider.value.pilot.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.live.provider.value.pilot.test.ts"
+      ],
+      "fileCount": 5,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LPCI1-WEB-R2",
+      "scanDate": "2026-08-27",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_WORKER_RETURN_2026-08-26.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "PROVIDER_EXECUTION_GRANT_CALLER_PREFLIGHT",
+        "LIVE_CALL_CONSUMPTION_ACCOUNTING",
+        "RUNNER_PRE_SECRET_AUTHORITY_GATE"
+      ],
+      "priorAbsorption": "LPCI1 Web R2 composes the canonical Control Plane provider-execution evaluator into both Execution Plane live caller paths and the runner before ledger claim or environment loading. Offline checks and tests pass; exact production build remains blocked by required Auth.js build/deploy configuration.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "liveAuthorized without provider execution grant",
+        "ledger claim before provider authority preflight",
+        "loadEnvLocal before provider authority evaluation",
+        "revision call outside maxCalls"
+      ],
+      "nextScanRecommendation": "Re-scan only if the MAO live caller grant shape, ledger ordinal semantics, runner environment ordering, or Control Plane evaluator contract changes."
     }
   ]
 }
