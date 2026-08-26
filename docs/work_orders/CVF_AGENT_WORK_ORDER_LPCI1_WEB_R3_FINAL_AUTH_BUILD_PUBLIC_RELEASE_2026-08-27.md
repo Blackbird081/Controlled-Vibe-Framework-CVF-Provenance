@@ -539,6 +539,24 @@ cannot resolve. Add exactly one `npm ci` step with working directory
 path is admitted and the exact manifest remains 45 paths. Repeat both
 exact-SHA server gates; the prior candidate remains forbidden from promotion.
 
+## Reviewer Amendment 4 Exact Hosted-Build Manifest
+
+Netlify deploy `6a8f4da837f87b0008019fb3` for exact public commit
+`32315f3dcf8d123cf1792ad14e4dd2df9ff2ada6` ended in `error` without publish.
+The detailed authenticated log is unavailable, so do not claim its exact error
+line. Source and clean-runner evidence establish that `netlify.toml` omits the
+sibling package install sequence required by the green GitHub build.
+
+Add exactly root `netlify.toml` to the public manifest, bringing the cumulative
+count from 45 to 46. Its build command may only mirror the green CI install
+order for Control Plane, Model Gateway, Learning Plane, Guard Contract and
+Execution Plane before the existing Web build. Preserve base, publish path,
+environment-name handling, plugin, redirects and headers. No other path,
+secret read, provider call, runtime change, threshold change or successor is
+authorized. Run public-sync preflight, push a replacement candidate, promote
+the identical SHA, and require successful Netlify publish plus safe hosted GET
+smoke. This remains LPCI1-WEB-R3 and admits no R4.
+
 ## Foundation Storage Layout Block
 
 N/A with reason: R3 projects existing package-owned source files into the

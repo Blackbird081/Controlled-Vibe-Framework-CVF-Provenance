@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current execution HEAD before final R3 coverage-margin proof: `e3180f2d3d02cb67a54b284fb3ada06f60610221`
+- Repository: private provenance source of truth; current execution HEAD before Amendment 4 authority sync: `a4f11de4243333e4dad66215b5d6f165cf45ae3f`
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=clear the exact nine-path server lint debt and release the 45-path R3 candidate only after new exact-SHA server gates; parked checkpoint=promotion of 9373818c, weakening the zero-warning gate, auth weakening, secret-value access, provider calls, R4 and unrelated work.
+Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_4_netlify_build_recovery`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=repair only the Netlify clean-runner install contract and publish/smoke the exact 46-path R3 candidate; parked checkpoint=claiming the unavailable exact Netlify log line, secret-value access, provider calls, R4 and unrelated work.
 
 ## Current Mode
-`lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery`
+`lpci1_web_r3_reviewer_amendment_4_netlify_build_recovery`
 
 ## Purpose
 

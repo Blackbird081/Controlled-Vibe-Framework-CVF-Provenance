@@ -165,6 +165,26 @@ dependencies. The already-authorized workflow path may add exactly one
 install/build. No package, lockfile, import, runtime or manifest expansion is
 authorized; the cumulative public manifest remains 45 paths.
 
+## Reviewer Amendment 4 - Netlify Clean-Runner Dependency Install
+
+Public SHA `32315f3dcf8d123cf1792ad14e4dd2df9ff2ada6` passed both
+exact-SHA GitHub server gates and was promoted, but Netlify deploy
+`6a8f4da837f87b0008019fb3` failed before publish. Public deploy metadata proves
+the exact commit and error state; detailed build logs require unavailable
+authenticated UI access. Source verification shows root `netlify.toml` runs
+only the Web build from the Web base, while the clean GitHub runner required
+the sibling foundation install sequence before that same build could resolve
+Execution Plane's declared Control Plane dependency.
+
+Treat this as a source-backed hosted build-contract omission, with the exact
+Netlify error line not claimed. Add only root `netlify.toml` as public path 46
+and make its build command install the five sibling packages in the already
+server-proven CI order before `npm run build`. Do not alter production variables,
+plugins, redirects, runtime code or package versions. The replacement SHA must
+pass public-sync preflight and retain the green Web-CI ancestor, then Netlify
+must publish that exact SHA before hosted smoke. This remains terminal R3, not
+R4 or a new roadmap.
+
 ## Non-Goals
 
 - no private docs, reviews, roadmaps, session state, registries or governance

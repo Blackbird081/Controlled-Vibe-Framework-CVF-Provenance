@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "baselineSha256": "0b3a1d22679a9b9de3a061f9e0426fa630c35155f9895e11d986bc20a47adc69",
+    "baselineSha256": "e4bc5929687f61e8059d6841d9d65cf19580bf7266fbba21ee1ea83af4523165",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "workOrderSha256": "ec000b38bfda6ee55a4afa9f2478ccf436b23f7aeb448c517bdb0445e9385d2e"
+    "workOrderSha256": "338348573d5e5c7a75b615b2f6108e4f1097caf139d52d844e2550930725951e"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery",
-  "previousMode": "lpci1_web_r3_reviewer_amendment_2_security_recovery",
+  "currentMode": "lpci1_web_r3_reviewer_amendment_4_netlify_build_recovery",
+  "previousMode": "lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15318,5 +15318,5 @@
     "successorBoundary": "R3 is the single terminal release tranche; no R4 is authorized.",
     "reviewerAmendment": "Amendment 1 recovered the 24-path provenance candidate. Amendment 2 rejects candidate 819d8acf after ten Web CI audit findings and authorizes one exact 36-path zero-audit dependency, provenance-bound HMAC-test, CI-contract, and bounded coverage-behavior correction inside the same terminal R3."
   },
-  "nextAllowedMove": "Execute LPCI1 Web R3 Reviewer Amendment 3 directly: add the one missing Execution Plane npm ci workflow step on the existing 45-path manifest, then promote only after both exact-SHA server gates pass. Candidates 9373818c and e291f899, gate weakening, auth weakening, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "Execute LPCI1 Web R3 Reviewer Amendment 4 directly: update only netlify.toml so the hosted clean runner mirrors the green sibling-package install sequence, then publish and smoke an exact 46-path replacement SHA. Failed deploy 6a8f4da8, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2377,
   "stateKey": "nextAllowedMove",
-  "value": "Execute LPCI1 Web R3 Reviewer Amendment 3 directly: add the one missing Execution Plane npm ci workflow step on the existing 45-path manifest, then promote only after both exact-SHA server gates pass. Candidates 9373818c and e291f899, gate weakening, auth weakening, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute LPCI1 Web R3 Reviewer Amendment 4 directly: update only netlify.toml so the hosted clean runner mirrors the green sibling-package install sequence, then publish and smoke an exact 46-path replacement SHA. Failed deploy 6a8f4da8, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
 }
