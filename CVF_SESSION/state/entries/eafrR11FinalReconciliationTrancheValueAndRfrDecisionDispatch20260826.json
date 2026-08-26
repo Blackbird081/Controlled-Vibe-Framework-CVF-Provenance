@@ -1,0 +1,22 @@
+{
+  "stateOrder": 2349,
+  "stateKey": "eafrR11FinalReconciliationTrancheValueAndRfrDecisionDispatch20260826",
+  "value": {
+    "status": "DISPATCH_READY_COMMITTED_AWAITING_WORKER_HANDOFF",
+    "materialCommit": "a94d14b18c495cbfff8355eb8c72c6af8aa34cfe",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_BASELINE_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_2026-08-26.md",
+    "roadmap": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+    "workerReturn": "docs/reviews/CVF_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_WORKER_RETURN_2026-08-26.md",
+    "workerManifest": "Create exactly one worker return; no existing file modification, deletion, rename, staging, commit, runtime command, live proof or external effect.",
+    "decisionVocabulary": [
+      "EAFR_CLOSED_PASS_BOUNDED_RFR_MAY_BE_RECONSIDERED",
+      "EAFR_CLOSED_BLOCKED_CONSOLIDATED_REPAIR_REQUIRED"
+    ],
+    "successorCap": "Zero by default; at most one consolidated repair candidate for current source-backed P0/P1. More than one irreducible owner/risk bundle requires fresh authority.",
+    "learningRoute": "Evaluate one bounded TPGR owner upgrade for tranche admission/continuation marginal value across remediation, external absorption and project delivery; no parallel framework or implementation in R11.",
+    "proof": "Pre-dispatch 79/79 and pre-commit 87/87 passed; commit hook passed 87/87; zero provider, network, external-store, credential, live, build, release, public-sync, deployment or push action occurred.",
+    "nextAllowedMove": "Transfer the committed R11 packet to a no-commit reconciliation worker. Worker proves ancestry/state/hashes, creates one return, runs the worker-return fast gate, and yields COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "claimBoundary": "Final reconciliation dispatch only. RFR execution, runtime repair and TPGR implementation remain separately governed and parked."
+  }
+}

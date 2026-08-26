@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eafr_r10_reviewer_accepted_closed_pass_bounded_pending_final_reconciliation_dispatch",
+  "currentMode": "eafr_r11_dispatch_ready_committed_awaiting_worker_handoff",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EAFR-R10 is independently reviewer-accepted CLOSED_PASS_BOUNDED at material commit 58995408545471d26f82fed1ffb3454124eef284 after two disclosed reviewer repairs. Focused proof passed foundation 57/57, gateway 30/30, Web guard 26/26, all three package checks, worker-return fast, reviewer-fast 66/66, and pre-commit 87/87 with zero provider, network, external-store, credential, live, deployment, public-sync, or push action. The next allowed move is authoring a fresh GC-018 final EAFR reconciliation packet that re-evaluates every R6 P1 row and decides whether RFR may resume; it is not RFR execution. Live-store wiring, provider/live/network/external-store calls, credential access, package/config edits, RFR, BuildAuthority, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EAFR-R11 final reconciliation is dispatch-ready and committed at a94d14b18c495cbfff8355eb8c72c6af8aa34cfe. The next allowed move is one no-commit documentation/source reconciliation worker return under the exact R11 packet after ancestry, clean-state, empty-staging and pinned-hash proof. The worker must reconcile all four R6 P1 rows, select one EAFR final disposition, and may recommend at most one consolidated repair candidate only for a current P0/P1. It also evaluates one bounded TPGR owner upgrade for tranche admission/continuation value across remediation, external absorption and project delivery. Worker staging/commit, runtime/test edits, RFR execution, TPGR implementation, live-store wiring, provider/live/network/external-store calls, credentials, package/config edits, BuildAuthority, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_BASELINE_2026-08-26.md",
-    "baselineSha256": "27c3aebcfa2189887fa03803a65265f6850a78ee04374ff19fdc2002b6a3aebb",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_2026-08-26.md",
-    "workOrderSha256": "611b9e4b07c4ded5110694c5bf74b1ce4555caa1a92ff05df2af66e288fc9ebc"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_BASELINE_2026-08-26.md",
+    "baselineSha256": "657748a27793bc4a3d360f95d59aabe9465bc11ef192555a1ef1099432d024bb",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_2026-08-26.md",
+    "workOrderSha256": "b965b19534f0544bd0232c0f15093b52778e6859ac1843c1743bef1a377e6f1a"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
