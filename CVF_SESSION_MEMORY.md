@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no-commit TPGR-TV1 worker return then independent review; parked checkpoint=TV2/TV3, TPGR-R9, selective execution, provider/live/network/credential/store effects, absorption, app/project execution, public sync, deployment and push.
+Startup acknowledged: current mode=`tpgr_tv1_reviewer_accepted_tv2_operator_decision_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh operator decision on one bounded TV2 shadow implementation; parked checkpoint=TV2 execution until that decision, TV3, TPGR-R9, selective execution and all external effects.
 
 ## Current Mode
 
-Current mode marker: `tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return`
-Current mode: `tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return`
+Current mode marker: `tpgr_tv1_reviewer_accepted_tv2_operator_decision_required`
+Current mode: `tpgr_tv1_reviewer_accepted_tv2_operator_decision_required`
 Previous mode: `eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`
 
 ## Next Allowed Move
 
-Mode: `tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return`; RFR is terminally closed at `20bbb071c`, and the additive TPGR-TV roadmap plus TV1 no-commit design packet is committed at `2d6622c40`. The next allowed move is the exact TV1 worker return followed by independent review. Risk remains the governance floor; value decides start/continue/consolidate/park/stop. TV2/TV3, TPGR-R9, selective execution and all external effects remain parked.
+Mode: `tpgr_tv1_reviewer_accepted_tv2_operator_decision_required`; TPGR-TV1 is independently accepted with one consolidated reviewer repair at material commit `5084910ce`. The next allowed move is a fresh operator decision whether to authorize one bounded TV2 shadow implementation using only the existing TPGR owner set. TV2 is not dispatched; TV3, TPGR-R9, selective execution and all external effects remain parked, and no TV4 is allowed.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

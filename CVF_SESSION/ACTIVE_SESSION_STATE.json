@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return",
-  "previousMode": "eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered",
+  "currentMode": "tpgr_tv1_reviewer_accepted_tv2_operator_decision_required",
+  "previousMode": "tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15184,5 +15184,17 @@
     "proof": "pre-dispatch 79/79 PASS; pre-commit 87/87 PASS; zero external effects.",
     "claimBoundary": "Documentation-only TV1 design dispatch; no selective execution, provider/live action, absorption, app/project execution, deployment, public sync or push."
   },
-  "nextAllowedMove": "RFR is terminally closed bounded at 20bbb071c and TPGR-TV1 design dispatch is committed at 2d6622c40. The next allowed move is the no-commit TV1 worker return at docs/reviews/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_WORKER_RETURN_2026-08-26.md, followed only by independent reviewer/closer evaluation. TV2, TV3, TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "tpgrTV1TrancheValueAdmissionDesignAccepted20260826": {
+    "status": "REVIEWER_ACCEPTED_PROCEED_TO_TV2_SHADOW_IMPLEMENTATION_DECISION_REQUIRED",
+    "materialCommit": "5084910cecd33dbf876c6cd597365d72cb9987b6",
+    "assessment": "docs/assessments/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md",
+    "assessmentSha256": "fd507236dd3739ce30502f2e679d48a6ed2636dfd42128df2ffc864b26366445",
+    "workerReturn": "docs/reviews/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_WORKER_RETURN_2026-08-26.md",
+    "workerReturnSha256": "a8c52d860f46a4e07f2061c59f7cb4e1321af68e07001794c189cf8be7dc2f3b",
+    "reviewerRepair": "Separated finding/value evidence; typed root-cause identity; explicit invalid-input handling; authority-sourced cap; serious-finding cap escalation; governed override; existing checker owner only.",
+    "proof": "worker-return fast and reviewer-fast 66/66 PASS; task route COMPLIANT with selective execution false and RUN_FULL_LEGACY_BUNDLE; pre-implementation 81/81 PASS; material pre-commit 87/87 PASS.",
+    "successorBoundary": "TV2 requires a fresh operator decision and exact shadow-only dispatch; TV3 remains value-gated; no TV4.",
+    "claimBoundary": "Accepted documentation design only; no TV2 dispatch, owner-surface implementation, selective execution, TPGR-R9, external effect, public sync, deployment or push."
+  },
+  "nextAllowedMove": "TPGR-TV1 is independently accepted with one consolidated reviewer repair at material commit 5084910ce. The next allowed move is a fresh operator decision whether to authorize one bounded TV2 shadow implementation using only the existing TPGR standard, work-order template, manifest schema, router and checker owner set. TV2 is not dispatched; TV3, TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed. Latest finalized numbered LHW wave remains LHW24."
 }
