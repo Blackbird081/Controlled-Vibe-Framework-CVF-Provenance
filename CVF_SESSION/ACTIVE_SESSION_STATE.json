@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md",
-    "baselineSha256": "a292ba8b7c57bdd9edcb5ae8a991e7beee5916e882434436878c9e3e399d212e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md",
-    "workOrderSha256": "c90b0fffea35a1f88c9c417e4ecd4a36fc6aadae046159c0b08eae986023d776"
+    "baselinePath": "docs/baselines/CVF_GC018_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_2026-08-26.md",
+    "baselineSha256": "a2ce243024ad97f497c0193bc0a896ee55b77634f7160bd21e28fa678bd1ce29",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_2026-08-26.md",
+    "workOrderSha256": "f5c75f0eb506955efc26b97ae776a12b388b4434e1c054c2164781b23d863323"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "tpgr_tv1_reviewer_accepted_tv2_operator_decision_required",
-  "previousMode": "tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return",
+  "currentMode": "tpgr_tv2_shadow_implementation_dispatched_pending_worker_return",
+  "previousMode": "tpgr_tv1_reviewer_accepted_tv2_operator_decision_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15196,5 +15196,20 @@
     "successorBoundary": "TV2 requires a fresh operator decision and exact shadow-only dispatch; TV3 remains value-gated; no TV4.",
     "claimBoundary": "Accepted documentation design only; no TV2 dispatch, owner-surface implementation, selective execution, TPGR-R9, external effect, public sync, deployment or push."
   },
-  "nextAllowedMove": "TPGR-TV1 is independently accepted with one consolidated reviewer repair at material commit 5084910ce. The next allowed move is a fresh operator decision whether to authorize one bounded TV2 shadow implementation using only the existing TPGR standard, work-order template, manifest schema, router and checker owner set. TV2 is not dispatched; TV3, TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed. Latest finalized numbered LHW wave remains LHW24."
+  "tpgrTV2TrancheValueAdmissionShadowImplementationDispatched20260826": {
+    "status": "DISPATCH_READY_COMMITTED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_TPGR_TRANCHE_VALUE_ADMISSION_GOVERNANCE_ROADMAP_2026-08-26.md",
+    "baseline": "docs/baselines/CVF_GC018_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_2026-08-26.md",
+    "dispatchCommit": "8bd43f98a72978e72302d6897a2275d2e788f33f",
+    "baselineSha256": "a2ce243024ad97f497c0193bc0a896ee55b77634f7160bd21e28fa678bd1ce29",
+    "workOrderSha256": "f5c75f0eb506955efc26b97ae776a12b388b4434e1c054c2164781b23d863323",
+    "workerReturn": "docs/reviews/CVF_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md",
+    "workerBoundary": "WORKER_MUST_NOT_COMMIT; exact seven existing owners/tests plus one worker return; no ninth path.",
+    "successorBoundary": "TV2 ordinal 2 of cap 3; TV3 requires independent acceptance and fresh value proof; no TV4.",
+    "interlocks": "Shadow-only; selective execution false; RUN_FULL_LEGACY_BUNDLE; TPGR-R8 hold unchanged.",
+    "proof": "pre-dispatch 79/79 PASS; route COMPLIANT P3_ELEVATED; pre-commit 87/87 PASS; zero external effects.",
+    "claimBoundary": "Dispatch only; no implemented behavior, TV3, TPGR-R9, provider/live action, public sync, deployment or push."
+  },
+  "nextAllowedMove": "TPGR-TV2 shadow implementation dispatch is committed at 8bd43f98a. The next allowed move is the exact no-commit TV2 worker execution and return at docs/reviews/CVF_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md, followed only by independent reviewer/closer evaluation. TV3, TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed. Latest finalized numbered LHW wave remains LHW24."
 }
