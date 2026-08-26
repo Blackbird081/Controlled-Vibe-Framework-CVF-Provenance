@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "tpgr_tranche_value_roadmap_closed_bounded_no_successor",
+  "currentMode": "lpci1_web_r1_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "The TPGR tranche-value roadmap is CLOSED_PASS_BOUNDED at terminal commit 48c97491f with CLOSE_ROADMAP_BOUNDED, ordinal 3 of cap 3 and no TV4. No successor work remains inside this roadmap. The next allowed move is a fresh operator selection of a separately justified high-value roadmap or explicit parking; no automatic tranche may be inferred. TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute exactly the no-commit worker scope in docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md and return the named worker artifact for independent review. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store calls and scope expansion remain parked until private implementation closure and a fresh reviewer/operator checkpoint. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md",
-    "baselineSha256": "1e20cc08739b22f9d236ddfd325c6461bc6529d99b7da5c83c19213f0a59af0c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md",
-    "workOrderSha256": "b54c39c99106552cb5e8694f314d2db77d70787bcc04e191ce36e3ab610132aa"
+    "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
+    "baselineSha256": "e9fcdbeb98f540faa7a18589a1e56a219e801725a803f35eb6e149a6f079b098",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
+    "workOrderSha256": "a98272f5f409d5c801072d7483b9f354bbc1ff15a955b971f9bc175c029ecd68"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

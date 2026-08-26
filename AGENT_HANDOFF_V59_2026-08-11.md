@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR Tranche Value Roadmap Closed Bounded
+# CVF Agent Handoff V59 - LPCI1 Web R1 Hosted Build Repair Dispatched
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -34,19 +34,18 @@ Status: ACTIVE
 - MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6 is stopped at decision `93763c127`; T7/T8 implementation is accepted at `3f9c03cbe`; final T9 reconciliation is accepted at material commit `52d058ae6`.
 - RFR-R1 is closed at `a67034370`; RFR-R2 at `84d44889f`; RFR-R3 at `a18ba512f`; RFR-R4 at `8ec399aa5`; RFR-R5 at `82a0073b2`; RFR-R6 audit accepted; RFR-R7A at `1512374e8`; RFR-R7B at `79ca7e542`; RFR-R7C at `92b7d6ec6`; final roadmap closure at `20bbb071c`.
 - LPCI1-REF-T1A Amendment 2 authority: `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
-- Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified): `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`tpgr_tranche_value_roadmap_closed_bounded_no_successor`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh operator selection of a separately justified high-value roadmap or explicit parking; parked checkpoint=TV4, TPGR-R9, selective execution and all external effects.
+Startup acknowledged: current mode=`lpci1_web_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact no-commit LPCI1 Web R1 work order and return its named worker artifact; parked checkpoint=public sync, push, Netlify deploy, hosted smoke and all provider/live/external effects.
 
 ## Current Mode
-`tpgr_tranche_value_roadmap_closed_bounded_no_successor`
+`lpci1_web_r1_dispatched_pending_worker_return`
 
 ## Purpose
 
-Carry the terminal TPGR tranche-value roadmap closure at `48c97491f`. No successor remains inside this roadmap; only a fresh operator-selected high-value roadmap or explicit parking is allowed. TV4, TPGR-R9, selective execution and all external effects remain parked.
+Carry LPCI1 Web R1 dispatch `4b8d436c4` for the production build-composition repair. The only next move is the exact private no-commit worker scope; public export, push, Netlify deploy, hosted smoke and all provider/live/external effects remain parked for independent review and a fresh operator checkpoint.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -111,17 +110,18 @@ Carry the terminal TPGR tranche-value roadmap closure at `48c97491f`. No success
 
 ## Current Authority
 
-Continuity parent anchor: `48c97491f`.
+Continuity parent anchor: `4b8d436c4`.
 
 | Field | Value |
 |---|---|
-| authorityState | TPGR tranche-value roadmap `CLOSED_PASS_BOUNDED` at `48c97491f` |
-| baselinePath | `docs/baselines/CVF_GC018_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md` |
-| nextAuthorityRequirement | fresh operator selection of a separately justified high-value roadmap or explicit parking; no TV4 |
+| authorityState | LPCI1 Web R1 `DISPATCHED_PENDING_WORKER_RETURN` at `4b8d436c4` |
+| baselinePath | `docs/baselines/CVF_GC018_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md` |
+| nextAuthorityRequirement | exact no-commit implementation and named worker return; independent reviewer owns any material commit or external checkpoint |
 
 ## Closure Evidence
 
+- LPCI1 Web R1 dispatched at `4b8d436c4` after exact public-tip build reproduction showed the LPCI route importing a non-package-safe Model Gateway root barrel. A fully reverted transpilation probe exposed five transitive monorepo-relative resolution failures. Pre-dispatch 79/79 and dispatch pre-commit 87/87 PASS; public-sync worktree remained clean and no provider/live call occurred.
 - TPGR tranche-value roadmap is terminally `CLOSED_PASS_BOUNDED` at `48c97491f` after accepted TV3 material `3b3f944ff`; C1 evidence repaired to `HISTORICAL_BOUNDED`; both rows `MATCH`, false-stop/false-continue 0/0; focused 43/43, reviewer-fast 66/66 and material/closure pre-commit 87/87 PASS; zero provider/live calls; ordinal 3/3 and no TV4.
 - TPGR-TV2 dispatch and accepted shadow implementation: dispatch `8bd43f98a`; worker return plus Independent Reviewer Addendum at `docs/reviews/CVF_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md`; accepted material `227f3d950`; 43 focused tests, pre-implementation 81/81, reviewer-fast 66/66 and pre-commit 87/87 PASS; zero provider/live calls.
 - TPGR-TV1 accepted design: assessment at `docs/assessments/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md`; worker return and Independent Reviewer Addendum at `docs/reviews/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_WORKER_RETURN_2026-08-26.md`; material `5084910ce`; one consolidated semantic repair; fast/reviewer-fast 66/66, task route COMPLIANT, pre-implementation 81/81 and material pre-commit 87/87 PASS; no provider/live call.
@@ -169,14 +169,14 @@ Continuity parent anchor: `48c97491f`.
 
 ## Next Allowed Move
 
-The TPGR tranche-value roadmap is terminally `CLOSED_PASS_BOUNDED` at `48c97491f`; no successor remains inside it. The next move requires fresh operator selection of a separately justified high-value roadmap or explicit parking. TPGR-R9, selective execution, provider/live/network/credential/store effects, absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed.
+Execute exactly `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md` with `WORKER_MUST_NOT_COMMIT`, then return `docs/reviews/CVF_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_WORKER_RETURN_2026-08-26.md` for independent review. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store effects and scope expansion remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
-- T1 Amendment 2 is closed at `0247f7347`; LPCI1 Web parking baseline is
-  committed at `8791b9b23`. Candidate `021f8b852` is pushed only to
-  `lpci1-ref-staging`. Public `main` contains only the approved enforcement
-  sync at `9c0183293`; Netlify, production, and unrelated lanes remain parked.
+- T1 Amendment 2 is closed at `0247f7347`; LPCI1 Web re-entry R1 dispatch is
+  committed at `4b8d436c4`. Public `main` remains `9c0183293`; its exact
+  production build failure is reproduced locally while an older Netlify deploy
+  remains served. Public mutation, push, deploy and hosted smoke remain parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - MCP-KAR-T1 used only the pinned selected source cluster and closed its eight-output reviewer-repaired manifest at `c179e656a`. No dependency change, source execution/direct import, MCP runtime or package activation, provider/account use, public sync, deploy, or production was authorized or performed.
 - Worker commit remained forbidden; independent reviewer created target commit.
@@ -200,19 +200,19 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - TPGR Roadmap Closure Continuity
+## Core Guard Self-Protection Authorization - LPCI1 Web R1 Dispatch Continuity
 
-Authorized guard-maintenance scope: record terminal roadmap closure `48c97491f`, bind ordinal 3/3 and the no-successor result, require fresh operator roadmap selection, and keep TV4 and all external effects parked.
+Authorized guard-maintenance scope: record LPCI1 Web R1 dispatch `4b8d436c4`, bind the exact no-commit worker next move, and keep public/export/live/external effects parked.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrTrancheValueRoadmapClosedBounded20260826.json`
+- `CVF_SESSION/state/entries/lpci1WebR1HostedBuildCompositionRepairDispatched20260826.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator approved the capped terminal pilot and delegated independent review/closure; terminal closure now forbids successor proliferation.
-Rollback boundary: revert only this roadmap-closure continuity batch if rejected; retain accepted TV3 material and terminal roadmap commit.
+Operator authorization: operator directed return to the parked roadmap and supplied the exact public GitHub/Netlify production target; implementation remains bounded by the accepted R1 work order.
+Rollback boundary: revert only this dispatch-continuity batch if rejected; retain dispatch material `4b8d436c4` and the prior TPGR terminal closure.
 Not authorized: TV4, TPGR-R9, selective execution, provider/live/network/external-store calls, credentials, absorption, app/project execution, public sync, deployment or push.
 
 ## Claim Boundary

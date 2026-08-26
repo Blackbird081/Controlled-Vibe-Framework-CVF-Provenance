@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2367,
+  "stateOrder": 2369,
   "stateKey": "nextAllowedMove",
-  "value": "The TPGR tranche-value roadmap is CLOSED_PASS_BOUNDED at terminal commit 48c97491f with CLOSE_ROADMAP_BOUNDED, ordinal 3 of cap 3 and no TV4. No successor work remains inside this roadmap. The next allowed move is a fresh operator selection of a separately justified high-value roadmap or explicit parking; no automatic tranche may be inferred. TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute exactly the no-commit worker scope in docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md and return the named worker artifact for independent review. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store calls and scope expansion remain parked until private implementation closure and a fresh reviewer/operator checkpoint. Latest finalized numbered LHW wave remains LHW24."
 }

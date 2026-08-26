@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`tpgr_tranche_value_roadmap_closed_bounded_no_successor`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh operator selection of a separately justified high-value roadmap or explicit parking; parked checkpoint=TV4, TPGR-R9, selective execution and all external effects.
+Startup acknowledged: current mode=`lpci1_web_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact no-commit LPCI1 Web R1 work order and return its named worker artifact; parked checkpoint=public sync, push, Netlify deploy, hosted smoke and all provider/live/external effects.
 
 ## Current Mode
 
-Current mode marker: `tpgr_tranche_value_roadmap_closed_bounded_no_successor`
-Current mode: `tpgr_tranche_value_roadmap_closed_bounded_no_successor`
-Previous mode: `tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending`
+Current mode marker: `lpci1_web_r1_dispatched_pending_worker_return`
+Current mode: `lpci1_web_r1_dispatched_pending_worker_return`
+Previous mode: `tpgr_tranche_value_roadmap_closed_bounded_no_successor`
 
 ## Next Allowed Move
 
-Mode: `tpgr_tranche_value_roadmap_closed_bounded_no_successor`; the roadmap is terminally `CLOSED_PASS_BOUNDED` at `48c97491f` with `CLOSE_ROADMAP_BOUNDED`, ordinal 3 of cap 3 and no TV4. The next move requires fresh operator selection of a separately justified high-value roadmap or explicit parking. TPGR-R9, selective execution and all external effects remain parked.
+Mode: `lpci1_web_r1_dispatched_pending_worker_return`. Execute exactly `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md` with `WORKER_MUST_NOT_COMMIT`, then return the named worker artifact for independent review. Public sync, push, Netlify deploy, hosted smoke, provider/live/network/credential/store calls and scope expansion remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

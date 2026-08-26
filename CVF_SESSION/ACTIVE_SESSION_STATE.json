@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md",
-    "baselineSha256": "1e20cc08739b22f9d236ddfd325c6461bc6529d99b7da5c83c19213f0a59af0c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md",
-    "workOrderSha256": "b54c39c99106552cb5e8694f314d2db77d70787bcc04e191ce36e3ab610132aa"
+    "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
+    "baselineSha256": "e9fcdbeb98f540faa7a18589a1e56a219e801725a803f35eb6e149a6f079b098",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
+    "workOrderSha256": "a98272f5f409d5c801072d7483b9f354bbc1ff15a955b971f9bc175c029ecd68"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "tpgr_tranche_value_roadmap_closed_bounded_no_successor",
-  "previousMode": "tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending",
+  "currentMode": "lpci1_web_r1_dispatched_pending_worker_return",
+  "previousMode": "tpgr_tranche_value_roadmap_closed_bounded_no_successor",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15261,5 +15261,16 @@
     "successorBoundary": "Ordinal 3 of cap 3 complete; no TV4 or implicit successor; future serious independent need requires a new roadmap.",
     "claimBoundary": "Closed bounded governance roadmap only; no selective execution, TPGR-R9 resume, class activation, external effect, public sync, deployment or push."
   },
-  "nextAllowedMove": "The TPGR tranche-value roadmap is CLOSED_PASS_BOUNDED at terminal commit 48c97491f with CLOSE_ROADMAP_BOUNDED, ordinal 3 of cap 3 and no TV4. No successor work remains inside this roadmap. The next allowed move is a fresh operator selection of a separately justified high-value roadmap or explicit parking; no automatic tranche may be inferred. TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "lpci1WebR1HostedBuildCompositionRepairDispatched20260826": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
+    "dispatchCommit": "4b8d436c485b001f181a6fe4c695884c4fca826b",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "finding": "Public main 9c018329 cannot complete the cvf-web production build because LPCI imports the Model Gateway root barrel, whose TypeScript and monorepo-relative dependency graph are not package-safe for the hosted Next.js build.",
+    "proof": "Exact public-tip local build reproduced the parse failure; a reverted transpilation probe exposed five transitive monorepo-relative resolution failures; pre-dispatch 79/79 and dispatch pre-commit 87/87 passed.",
+    "boundary": "Private no-commit implementation only; no public-sync mutation, push, deploy, hosted smoke, provider/live/network/credential/store call or scope expansion."
+  },
+  "nextAllowedMove": "Execute exactly the no-commit worker scope in docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md and return the named worker artifact for independent review. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store calls and scope expansion remain parked until private implementation closure and a fresh reviewer/operator checkpoint. Latest finalized numbered LHW wave remains LHW24."
 }
