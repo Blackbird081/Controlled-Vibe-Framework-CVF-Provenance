@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R11_CLOSED_BLOCKED_R12_CONSOLIDATED_REPAIR_REQUIRED
+Status: CLOSED_PASS_BOUNDED_R12_ACCEPTED_RFR_MAY_BE_RECONSIDERED_SEPARATELY
 
 Date: 2026-08-25
 
@@ -68,7 +68,7 @@ consolidated when one repair boundary can prove them safely.
 | EAFR-R9 | source-verify and govern bounded external-store execution authority plus the shared adapter destination-policy owner | R8 accepted blocked | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; sibling external-store grant design and exact gateway-owned destination-policy interface accepted after two bounded reviewer corrections; implementation remains separately governed |
 | EAFR-R10 | implement the accepted sibling external-store authority contract and one shared gateway-owned adapter destination policy without live-store wiring | R9 accepted bounded | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; exact policy interface restored after reviewer repair; focused 57/57 + 30/30 + 26/26 and three package checks pass; live-store wiring remains unopened |
 | EAFR-R11 | perform final whole-roadmap reconciliation, decide whether RFR may be reconsidered, and classify the tranche-admission/continuation value learning | R10 accepted bounded at `589954085` with continuity `92f1fab6a` | REVIEWER_ACCEPTED_CLOSED_BLOCKED; rows 1-3 resolved fail-closed; P4B-B live-proof harness remains one current P1 because caller `liveAuthorized: true` can reach secret resolution without the existing R1E orchestrator-grant evaluator; exactly one consolidated R12 repair is required; RFR remains parked |
-| EAFR-R12 | make the P4B-B live-proof harness and direct runner require the existing R1E orchestrator grant before secret resolution or bridge execution | R11 reviewer-accepted blocked at `820b677d8`; continuity `6820d4796` | READY_FOR_WORKER; one consolidated source/test/package-edge repair only; existing R1E contract/evaluator must be reused; no live proof, credential access, external effect, RFR execution or TPGR implementation |
+| EAFR-R12 | make the P4B-B live-proof harness and direct runner require the existing R1E orchestrator grant before secret resolution or bridge execution | R11 reviewer-accepted blocked at `820b677d8`; continuity `6820d4796` | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED at `1e31db99a`; reviewer repaired candidate-level ordering, grant-budget accounting and unauthorized-provider receipt resolution; typecheck, focused 24/24, package 339/339, corrected-base 81/81 and reviewer-fast 66/66 pass; zero live calls; no successor |
 
 ## Design Controls
 
@@ -202,6 +202,17 @@ bridge access with non-live tests, and create no parallel authority type. The
 tranche-economics learning is routed to one later bounded TPGR owner design
 review, not another EAFR successor. RFR remains parked through R12 closure.
 
+R12 is independently accepted closed bounded at `1e31db99a`. The existing R1E
+grant/evaluator now gates the harness and each runner candidate before
+candidate environment, endpoint, credential, fetch or bridge access. Reviewer
+repairs also prevent a denied candidate from consuming call budget and prevent
+receipt generation from resolving an unauthorized provider endpoint. Local
+proof is typecheck PASS, focused 24/24, package 339/339, corrected-base autorun
+81/81 and reviewer-fast 66/66, with zero provider/live/credential calls. EAFR
+has no remaining source-backed P0/P1 and no successor. The parked RFR may now
+be reconsidered only through a separate bounded authority decision; this does
+not execute RFR. TPGR implementation remains separately parked.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
@@ -228,11 +239,23 @@ any runtime behavior.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | EAFR tranche packets | R1-R11 terminal; R12 pending one consolidated dispatch | PASS |
-| Completion or reviewer artifact | accepted R6-R11 reviews | three original P1 rows resolved; one harness authority P1 retained for R12 | PASS |
-| Roadmap state | this file | R11 accepted closed blocked; R12 is the only allowed successor; RFR parked | PASS |
+| Work order status | EAFR tranche packets | R1-R12 terminal; R12 accepted at `1e31db99a` | PASS |
+| Completion or reviewer artifact | accepted R6-R12 reviews/returns | all four original P1 classes resolved fail-closed; R12 reviewer repairs disclosed | PASS |
+| Roadmap state | this file | EAFR closed bounded; successor count zero; RFR may be reconsidered separately but is not executed here | PASS |
 | Registry JSON | system-chain map | `ARCHITECTURE.md` fingerprint refreshed; freshness CURRENT | PASS |
 | Registry Markdown | N/A with reason: no registry projection | no applicability | BLOCKED |
 | External evidence digest | archived corrected external report | input only, not authority | N/A with reason |
-| System loop interlock | R1D incident -> R1E authority -> R6 P1 inventory -> R7-R10 repair chain -> R11 final decision -> one R12 repair | fail-closed dependencies and one-successor cap explicit | PASS |
+| System loop interlock | R1D incident -> R1E authority -> R6 P1 inventory -> R7-R10 repair chain -> R11 final decision -> R12 terminal repair | fail-closed dependencies satisfied; one-successor cap honored; no R13 | PASS |
 | Session continuity | separate post-material sync | required after material commit | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| R12 material identity | independently reviewed commit | `1e31db99a` | PASS |
+| Candidate authority order | evaluator denial before candidate environment/endpoint/credential/fetch/bridge access | runner and harness source plus focused denial test | PASS |
+| Call-budget isolation | grant-denied candidate consumes zero provider-call budget | `consumesProviderCall` regression assertion | PASS |
+| Local verification | TypeScript and all gateway tests green | focused 24/24; package 339/339 | PASS |
+| Governance verification | corrected execution base and reviewer gates green | autorun 81/81; reviewer-fast 66/66; pre-commit 87/87 | PASS |
+| External-effect boundary | zero provider/live/network/credential/store call | zero observed; no live receipt claimed | PASS |
+| Successor and RFR boundary | no EAFR successor; RFR decision separately governed | zero successors; reconsideration only, no execution | PASS |
