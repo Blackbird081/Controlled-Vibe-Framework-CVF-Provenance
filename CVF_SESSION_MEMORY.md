@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r2_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the exact committed R2 packet at `56a63b57d` to one no-commit worker and await independent review; parked checkpoint=public sync, push, Netlify deploy, hosted smoke, all provider/live/external effects and unrelated successors.
+Startup acknowledged: current mode=`lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and gate one consolidated R3 final Auth.js build-and-deploy repair; parked checkpoint=implementation before committed authority, public mutation, provider/live model calls and unrelated successors.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_r2_dispatched_pending_worker_return`
-Current mode: `lpci1_web_r2_dispatched_pending_worker_return`
-Previous mode: `lpci1_web_r1_reviewer_accepted_closed_blocked_r2_dispatch_authoring`
+Current mode marker: `lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`
+Current mode: `lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`
+Previous mode: `lpci1_web_r2_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_r2_dispatched_pending_worker_return`. R1 material `f7f5cf1ef` remains accepted blocked after fixing package composition. R2 is committed at `56a63b57d`; transfer only that no-commit packet to one worker for offline caller repair and fake-only proof, then await independent review. Public sync, push, Netlify deploy, hosted smoke, all provider/live/external effects and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`. R2 is accepted blocked at `92c96a04d`: grant caller authority is repaired, but exact production build fails closed on missing Auth.js production variables. Author exactly one consolidated R3 packet preserving that invariant and covering build configuration plus separately governed public projection and hosted proof. Implementation/public mutation before committed authority, provider/live model calls and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

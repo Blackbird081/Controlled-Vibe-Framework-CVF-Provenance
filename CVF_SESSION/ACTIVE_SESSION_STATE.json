@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_r2_dispatched_pending_worker_return",
-  "previousMode": "lpci1_web_r1_reviewer_accepted_closed_blocked_r2_dispatch_authoring",
+  "currentMode": "lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring",
+  "previousMode": "lpci1_web_r2_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15293,5 +15293,16 @@
     "workerBoundary": "WORKER_MUST_NOT_COMMIT; offline fake-only proof; no provider/live/network/credential/store call.",
     "claimBoundary": "R2 repairs only the two Execution Plane grant-context caller sites and runner preflight. Public sync, push, Netlify deploy, hosted smoke and unrelated successors remain parked."
   },
-  "nextAllowedMove": "Transfer the exact committed LPCI1 Web R2 packet at 56a63b57d to one no-commit worker. The worker may perform only the offline grant-context caller repair and fake-only proof authorized by the R2 work order, then must yield the named worker return for independent review. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store calls and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "lpci1WebR2GrantCallerRepairClosedBlocked20260827": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_BLOCKED",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
+    "materialCommit": "92c96a04df5de4e147b3f3509917a1f8d127afe7",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "workerReturnSha256": "959ed32f4d7518ec9f4e7fcdeb54bfbe6932c9b731b6d03f6765c1e1e82b2874",
+    "acceptedProof": "Focused Execution Plane 39/39, full package 1911/1911, Web focused 62/62, all three TypeScript checks, reviewer-fast 66/66 and pre-commit 87/87 PASS.",
+    "reviewerRepair": "Replaced a false mid-lane-expiry proof with deterministic revision call-budget exhaustion and added runner source-order regression proof.",
+    "blocker": "Exact production build compiles and completes TypeScript, then intentionally fails closed because the build environment lacks five required Auth.js production variables.",
+    "successorBoundary": "At most one consolidated R3 may preserve the Auth.js invariant, configure build/deploy variables by secret reference, prove exact build, and complete governed public projection plus hosted verification."
+  },
+  "nextAllowedMove": "Author and gate exactly one consolidated LPCI1 Web R3 final Auth.js build-and-deploy repair packet from accepted blocked R2 material 92c96a04d. R3 must preserve the production fail-closed invariant, use secret references without disclosure, prove exact production build exit zero, and separately govern public-sync projection, push, Netlify deployment, and hosted smoke. No implementation or public mutation begins before committed R3 authority; unrelated successors and provider/live model calls remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

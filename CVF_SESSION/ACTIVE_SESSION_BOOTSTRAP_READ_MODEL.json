@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_r2_dispatched_pending_worker_return",
+  "currentMode": "lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Transfer the exact committed LPCI1 Web R2 packet at 56a63b57d to one no-commit worker. The worker may perform only the offline grant-context caller repair and fake-only proof authorized by the R2 work order, then must yield the named worker return for independent review. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store calls and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and gate exactly one consolidated LPCI1 Web R3 final Auth.js build-and-deploy repair packet from accepted blocked R2 material 92c96a04d. R3 must preserve the production fail-closed invariant, use secret references without disclosure, prove exact production build exit zero, and separately govern public-sync projection, push, Netlify deployment, and hosted smoke. No implementation or public mutation begins before committed R3 authority; unrelated successors and provider/live model calls remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
