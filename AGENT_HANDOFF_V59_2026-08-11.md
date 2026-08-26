@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Current continuity HEAD before EAFR-R9 dispatch repair: `56342e8f540a6808a124900ee0982c1b54722903`.
+- Current R9 reviewer-repaired material dispatch: `85a6f809e`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
@@ -49,14 +49,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r9_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independent reviewer/closer evaluation of the R9 worker return once it exists; parked checkpoint=RFR, provider/live/network and external-store calls, build, BuildAuthority repair and all external effects.
+Startup acknowledged: current mode=`eafr_r9_reviewer_repaired_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no-commit R9 worker execution and return for independent review; parked checkpoint=RFR, provider/live/network and external-store calls, build, BuildAuthority repair and all external effects.
 
 ## Current Mode
-`eafr_r9_dispatched_pending_worker_return`
+`eafr_r9_reviewer_repaired_dispatched_pending_worker_return`
 
 ## Purpose
 
-Preserve the accepted blocked R8 closure and release only fresh R9 source verification and dispatch authoring. RFR and all external effects remain parked.
+Preserve the accepted blocked R8 closure and release only the reviewer-repaired R9 no-commit design-decision worker. RFR and all external effects remain parked.
 
 ## Scope / Target / Owner Boundary
 
@@ -67,7 +67,7 @@ Preserve the accepted blocked R8 closure and release only fresh R9 source verifi
 
 ## Latest Work / Changes
 
-- EAFR-R9 is dispatched at material commit `cec7a67ca` after fresh source verification: the no-commit worker must decide, without implementing, an external-store execution grant design mirroring `ProviderExecutionGrant`/`evaluateProviderExecutionAuthority`, and one Adapter Destination Policy Owner disposition for the gateway adapter's injected-fetch residual, given the gateway package's zero-dependency boundary. Pre-dispatch autorun gate COMPLIANT, pre-commit 87/87, zero provider/external-store calls; write ownership is exactly one worker-return path. EAFR-R8 is reviewer-accepted `CLOSED_BLOCKED` at material commit `fe0ea5937` after the reviewer added the missing injected storage append/read proof. Evidence: Web focused 97/97, gateway 7/7, both TypeScript checks PASS, full Web 3538/3560 with 22 named residual failures, worker-return fast COMPLIANT and pre-commit 87/87. Ambient Upstash construction is isolated; bounded live-store authority and the adapter injected-fetch residual remain.
+- EAFR-R9 reviewer-repaired dispatch is committed at `85a6f809e`: the mutable-roadmap hash trap is removed, the existing cvf-web to cvf-model-gateway dependency is source-verified, and gateway-local destination-policy ownership is the leading candidate. The no-commit worker decides both design dispositions without implementation. Pre-dispatch COMPLIANT, material pre-commit 87/87, zero provider/external-store calls; write ownership is exactly one worker-return path. EAFR-R8 remains reviewer-accepted `CLOSED_BLOCKED` at `fe0ea5937`.
 - EAFR-R8 is dispatched at `60635ed19` after reviewer repaired its test-manifest gap. Packet SHA-256 values are `f799139a7660dcb6fc0908c111652969f04f13f3793646e44fe39290ac0edc50` and `b0031f0218862ced4f54abdc4a6b788d82ac3dd3dbba27515db53f8adda28544`; pre-dispatch 79/79 and pre-commit 87/87 passed with zero external calls.
 - EAFR-R7 is reviewer-accepted `CLOSED_BLOCKED` at material commit `74cf99354`: the fail-closed guard is retained after protocol-relative reviewer repair; focused 26/26 and TypeScript pass; full non-live is 3465 pass/88 named fail because ambient Upstash egress is blocked. The adapter injection residual remains. R8 source verification/dispatch authoring is next; RFR stays parked.
 - EAFR-R7 dispatch handoff mode alignment was repaired at `eaa35a7b7`; its parent is dispatch continuity `b58f9b6cb`. This is continuity-only and changes no R7 evidence or authority.
@@ -122,14 +122,14 @@ Preserve the accepted blocked R8 closure and release only fresh R9 source verifi
 
 ## Current Authority
 
-Continuity parent anchor: `cec7a67ca`.
+Continuity parent anchor: `85a6f809e`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R9 `DISPATCHED` at `cec7a67ca`, following R8 `REVIEWER_ACCEPTED_CLOSED_BLOCKED` at `fe0ea5937` |
+| authorityState | EAFR-R9 `REVIEWER_REPAIRED_DISPATCHED` at `85a6f809e`, following original dispatch `cec7a67ca` and R8 closure `fe0ea5937` |
 | baselinePath | `docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md` |
-| nextAuthorityRequirement | independent reviewer/closer evaluation of the R9 worker return once it exists |
+| nextAuthorityRequirement | no-commit R9 worker execution, then independent reviewer/closer evaluation |
 
 ## Closure Evidence
 
@@ -176,7 +176,7 @@ Continuity parent anchor: `cec7a67ca`.
 
 ## Next Allowed Move
 
-EAFR-R9 is dispatched at `cec7a67ca` after fresh source verification, following R8's accepted `CLOSED_BLOCKED` closure at `fe0ea5937`. The next allowed move is independent reviewer/closer evaluation of the R9 worker return once it exists. RFR, provider/live/network and external-store calls, build, BuildAuthority repair, package-dependency edits and all external effects remain parked.
+EAFR-R9 reviewer-repaired dispatch is committed at `85a6f809e` after removing the mutable-roadmap hash trap and adding the existing cvf-web to gateway dependency evidence. The next allowed move is no-commit R9 worker execution and return for independent review. RFR, provider/live/network and external-store calls, build, BuildAuthority repair, package-dependency edits and all external effects remain parked.
 
 ## Active Boundary
 
