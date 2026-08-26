@@ -203,7 +203,7 @@ statement. Partial proof is not completion.
 ```powershell
 git status --short
 git -C "D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync" status --short
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a6cc271895cfc015c049e3d0731fff7e99b894e9 --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 python scripts/check_cvf_public_sync_candidate.py --public-root "D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync" --expected-remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git --baseline-ref origin/main --json
 python governance/compat/run_worker_return_fast_gate.py
 ```
@@ -254,10 +254,14 @@ Operation Trace Block; Delta Execution Claim Boundary Control Block; Public
 Export Disposition; Claim Boundary; git status --short; Changed Files; Command
 Evidence; No-Commit Statement. Record `executionBaseHead` at start.
 
+requiredTerms: Purpose | Scope / Methodology | Findings / Position | Risk / Corrective Action | Claim Boundary | Agent Operation Trace Block | Delta Execution Claim Boundary Control Block | Public Export Disposition | executionBaseHead | git status --short
+
 Conditional sections must be present with evidence or `N/A with reason`:
 External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus
 Completeness And Report Integrity; Finding-To-Governance Learning Disposition;
 Epistemic Process Block; Machine Closure Package.
+
+conditionalTerms: External Knowledge Intake Routing | Rescan Intelligence Hardening | Corpus Completeness And Report Integrity | Finding-To-Governance Learning Disposition | Epistemic Process Block | Machine Closure Package | N/A with reason
 
 ## Reviewer Closure Conversion
 
