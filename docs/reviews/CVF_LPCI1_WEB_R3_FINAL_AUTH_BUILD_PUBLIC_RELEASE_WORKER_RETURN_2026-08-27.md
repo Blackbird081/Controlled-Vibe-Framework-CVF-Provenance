@@ -658,8 +658,13 @@ tokens after HMAC became mandatory, and a live `.tsx` proof escaped the
 non-live exclusion glob. These are CI-contract corrections only; runtime
 service-token verification remains fail closed.
 
+Coverage then passed all 3,471 non-live tests but disclosed 79.79% function
+coverage against the unchanged 80% gate. Reviewer disposition is to add one
+bounded home-surface interaction test rather than lower the gate or re-admit a
+live provider proof into unit/coverage execution.
+
 Disposition: continue the same terminal R3 under Reviewer Amendment 2 with the
-exact 34-path manifest. Do not create R4, promote `819d8acf`, weaken HMAC,
+exact 35-path manifest. Do not create R4, promote `819d8acf`, weaken HMAC,
 read hosted secret values, or call a provider. Release requires a new exact SHA
 passing dependency audit, build, unit tests, coverage, public-sync preflight,
 Web CI, Netlify deployment, and hosted smoke.

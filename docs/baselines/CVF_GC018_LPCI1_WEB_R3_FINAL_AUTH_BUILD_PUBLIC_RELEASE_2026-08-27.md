@@ -131,7 +131,11 @@ runtime authorization change is allowed.
 GitHub Actions may receive synthetic, non-secret build-only Auth.js values in
 `.github/workflows/cvf-web-ci.yml` so its production build exercises the same
 composition gate as local proof. These values must be literals with no hosted
-credential meaning. The amended public manifest is exactly 34 paths. A new
+credential meaning. Removing the accidentally admitted live `.tsx` proof
+revealed real function coverage of 79.79% against the 80% gate. Do not lower
+the threshold or re-admit the live proof. Add one behavioral test at
+`src/components/home-surface-controls.test.tsx` covering keyboard/click and
+intent-front-door handlers. The amended public manifest is exactly 35 paths. A new
 candidate SHA must pass audit, build, tests, coverage, public-sync preflight and
 server-side Web CI before identical-SHA promotion; `819d8acf` remains rejected.
 

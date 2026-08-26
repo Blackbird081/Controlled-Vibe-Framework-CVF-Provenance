@@ -474,7 +474,7 @@ tranche and admits no R4.
 ## Reviewer Amendment 2 Exact Security-Recovery Manifest
 
 This reviewer-owned correction remains LPCI1-WEB-R3 and supersedes the
-24-path count with exactly 34 public paths. The original 24 paths remain
+24-path count with exactly 35 public paths. The original 24 paths remain
 authorized. Add exactly:
 
 - `.github/workflows/cvf-web-ci.yml`
@@ -487,6 +487,7 @@ authorized. Add exactly:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/knowledge/ingest/w116-cp5-delta.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/intake/route.governance.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/qbs/front-door-clarification/route.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/home-surface-controls.test.tsx`
 
 For the seven test paths, apply only their source delta from `3c51ac5e6`.
 For already allowlisted `route.test.ts`, `lpci/query/route.test.ts`, and
@@ -498,6 +499,8 @@ read, runtime auth weakening, or unrelated dependency modernization is allowed.
 The workflow edit is limited to synthetic build-only Auth.js variables and the
 package-script edit is limited to excluding both `.live.test.ts` and
 `.live.test.tsx` from non-live unit and coverage commands. The reviewer must
+preserve the 80% function threshold; the home-surface test may cover only
+existing TemplateCard, CategoryTabs, and IntentEntry user interactions. The reviewer must
 create a new candidate commit, push only the candidate branch, wait for both
 exact-SHA server gates, and promote that identical SHA only on clean results.
 
