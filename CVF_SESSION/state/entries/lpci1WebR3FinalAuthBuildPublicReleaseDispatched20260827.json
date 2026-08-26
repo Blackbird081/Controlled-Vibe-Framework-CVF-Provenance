@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2376,
+  "stateKey": "lpci1WebR3FinalAuthBuildPublicReleaseDispatched20260827",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
+    "baselineSha256": "7b4ff5f42cf7e0cc131015b8de96a8ac3e62b32a204c88b3e18005ea8cce4094",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
+    "workOrderSha256": "27df52216718966b19a959609b23435789a9d32b8604d0e1ecfa0e4cbb07c7f4",
+    "dispatchCommit": "51b3baa4a15dd1db95409d12cddb9aca938533f8",
+    "workerBoundary": "No-commit worker may prepare only the exact allowlisted public-sync candidate, run local offline checks and synthetic Auth.js build proof, and author the named private worker return.",
+    "reviewerBoundary": "Only the independent reviewer may commit, push, observe Netlify deployment, perform hosted smoke, and decide terminal closure.",
+    "proof": "Pre-dispatch autorun 79/79, commit-steward preflight PASS, and material pre-commit hook 87/87; zero public mutation, push, deploy, provider call or secret-value read.",
+    "successorBoundary": "R3 is the single terminal release tranche; no R4 is authorized."
+  }
+}

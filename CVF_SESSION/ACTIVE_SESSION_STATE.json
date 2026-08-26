@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
-    "baselineSha256": "0750074f8927a62114d81c184f8696e4a0e20fdcd118b23ac6f30a1cbd0e57fc",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
-    "workOrderSha256": "7113d66d13af4d1baf7dac7419680e4306504e449a199b56205f3ba2057077f5"
+    "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
+    "baselineSha256": "7b4ff5f42cf7e0cc131015b8de96a8ac3e62b32a204c88b3e18005ea8cce4094",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
+    "workOrderSha256": "27df52216718966b19a959609b23435789a9d32b8604d0e1ecfa0e4cbb07c7f4"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring",
-  "previousMode": "lpci1_web_r2_dispatched_pending_worker_return",
+  "currentMode": "lpci1_web_r3_dispatched_pending_worker_return",
+  "previousMode": "lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15304,5 +15304,18 @@
     "blocker": "Exact production build compiles and completes TypeScript, then intentionally fails closed because the build environment lacks five required Auth.js production variables.",
     "successorBoundary": "At most one consolidated R3 may preserve the Auth.js invariant, configure build/deploy variables by secret reference, prove exact build, and complete governed public projection plus hosted verification."
   },
-  "nextAllowedMove": "Author and gate exactly one consolidated LPCI1 Web R3 final Auth.js build-and-deploy repair packet from accepted blocked R2 material 92c96a04d. R3 must preserve the production fail-closed invariant, use secret references without disclosure, prove exact production build exit zero, and separately govern public-sync projection, push, Netlify deployment, and hosted smoke. No implementation or public mutation begins before committed R3 authority; unrelated successors and provider/live model calls remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "lpci1WebR3FinalAuthBuildPublicReleaseDispatched20260827": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
+    "baselineSha256": "7b4ff5f42cf7e0cc131015b8de96a8ac3e62b32a204c88b3e18005ea8cce4094",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
+    "workOrderSha256": "27df52216718966b19a959609b23435789a9d32b8604d0e1ecfa0e4cbb07c7f4",
+    "dispatchCommit": "51b3baa4a15dd1db95409d12cddb9aca938533f8",
+    "workerBoundary": "No-commit worker may prepare only the exact allowlisted public-sync candidate, run local offline checks and synthetic Auth.js build proof, and author the named private worker return.",
+    "reviewerBoundary": "Only the independent reviewer may commit, push, observe Netlify deployment, perform hosted smoke, and decide terminal closure.",
+    "proof": "Pre-dispatch autorun 79/79, commit-steward preflight PASS, and material pre-commit hook 87/87; zero public mutation, push, deploy, provider call or secret-value read.",
+    "successorBoundary": "R3 is the single terminal release tranche; no R4 is authorized."
+  },
+  "nextAllowedMove": "Transfer committed LPCI1 Web R3 dispatch 51b3baa4a to the no-commit Claude worker. The worker proves ancestry, prepares only the exact allowlisted public-sync candidate, runs offline package checks and the process-local synthetic Auth.js production build, authors the named worker return, and yields COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with both HEADs and staging areas unchanged. Commit, push, deploy observation, hosted smoke, secret-value access, provider calls, R4 and unrelated work remain reviewer-controlled or parked. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and gate one consolidated R3 final Auth.js build-and-deploy repair; parked checkpoint=implementation before committed authority, public mutation, provider/live model calls and unrelated successors.
+Startup acknowledged: current mode=`lpci1_web_r3_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed R3 packet to the no-commit Claude worker; parked checkpoint=worker commit/push/deploy, secret-value access, provider calls, R4 and unrelated successors.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`
-Current mode: `lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`
-Previous mode: `lpci1_web_r2_dispatched_pending_worker_return`
+Current mode marker: `lpci1_web_r3_dispatched_pending_worker_return`
+Current mode: `lpci1_web_r3_dispatched_pending_worker_return`
+Previous mode: `lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`. R2 is accepted blocked at `92c96a04d`: grant caller authority is repaired, but exact production build fails closed on missing Auth.js production variables. Author exactly one consolidated R3 packet preserving that invariant and covering build configuration plus separately governed public projection and hosted proof. Implementation/public mutation before committed authority, provider/live model calls and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `lpci1_web_r3_dispatched_pending_worker_return`. R3 authority is committed at `51b3baa4a`. Transfer the complete packet to the no-commit Claude worker for the exact allowlisted public candidate, offline checks, process-local synthetic Auth.js build, and named worker return. Worker commit/push/deploy, hosted smoke, secret-value access, provider calls, R4 and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

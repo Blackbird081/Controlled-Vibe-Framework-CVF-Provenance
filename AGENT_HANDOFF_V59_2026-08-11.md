@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and gate one consolidated R3 final Auth.js build-and-deploy repair; parked checkpoint=implementation before committed authority, public mutation, provider/live model calls and unrelated successors.
+Startup acknowledged: current mode=`lpci1_web_r3_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed R3 packet to the no-commit Claude worker; parked checkpoint=worker commit/push/deploy, secret-value access, provider calls, R4 and unrelated successors.
 
 ## Current Mode
-`lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring`
+`lpci1_web_r3_dispatched_pending_worker_return`
 
 ## Purpose
 
@@ -200,20 +200,20 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - LPCI1 Web R2 Closed-Blocked Continuity
+## Core Guard Self-Protection Authorization - LPCI1 Web R3 Dispatch Continuity
 
-Authorized guard-maintenance scope: record accepted blocked R2 material `92c96a04d`, bind exactly one consolidated R3 dispatch-authoring next move, and keep implementation/public mutation before authority plus unrelated successors parked.
+Authorized guard-maintenance scope: record R3 dispatch `51b3baa4a`, bind the no-commit worker return next move, and keep commit/push/deploy plus unrelated successors parked.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/lpci1WebR2GrantCallerRepairClosedBlocked20260827.json`
+- `CVF_SESSION/state/entries/lpci1WebR3FinalAuthBuildPublicReleaseDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator authorized serious roadmap repair; accepted blocked R2 admits one consolidated R3 dispatch and no unrelated successor.
-Rollback boundary: revert only this R2 closure-continuity batch if rejected; retain R2 material `92c96a04d` and prior evidence.
-Not authorized: TV4, TPGR-R9, selective execution, provider/live/network/external-store calls, credentials, absorption, app/project execution, public sync, deployment or push.
+Operator authorization: operator supplied the six Netlify credential-reference names and authorized continuing the terminal R3 workflow; no R4.
+Rollback boundary: revert only this R3 dispatch-continuity batch if rejected; retain material dispatch `51b3baa4a` and prior evidence.
+Not authorized: worker commit/push/deploy, hosted smoke, secret-value access, provider/live/network calls, R4, absorption or unrelated work.
 
 ## Claim Boundary
 

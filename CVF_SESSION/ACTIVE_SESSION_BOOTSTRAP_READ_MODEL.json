@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_r2_reviewer_accepted_closed_blocked_r3_dispatch_authoring",
+  "currentMode": "lpci1_web_r3_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Author and gate exactly one consolidated LPCI1 Web R3 final Auth.js build-and-deploy repair packet from accepted blocked R2 material 92c96a04d. R3 must preserve the production fail-closed invariant, use secret references without disclosure, prove exact production build exit zero, and separately govern public-sync projection, push, Netlify deployment, and hosted smoke. No implementation or public mutation begins before committed R3 authority; unrelated successors and provider/live model calls remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Transfer committed LPCI1 Web R3 dispatch 51b3baa4a to the no-commit Claude worker. The worker proves ancestry, prepares only the exact allowlisted public-sync candidate, runs offline package checks and the process-local synthetic Auth.js production build, authors the named worker return, and yields COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with both HEADs and staging areas unchanged. Commit, push, deploy observation, hosted smoke, secret-value access, provider calls, R4 and unrelated work remain reviewer-controlled or parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
-    "baselineSha256": "0750074f8927a62114d81c184f8696e4a0e20fdcd118b23ac6f30a1cbd0e57fc",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
-    "workOrderSha256": "7113d66d13af4d1baf7dac7419680e4306504e449a199b56205f3ba2057077f5"
+    "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
+    "baselineSha256": "7b4ff5f42cf7e0cc131015b8de96a8ac3e62b32a204c88b3e18005ea8cce4094",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
+    "workOrderSha256": "27df52216718966b19a959609b23435789a9d32b8604d0e1ecfa0e4cbb07c7f4"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
