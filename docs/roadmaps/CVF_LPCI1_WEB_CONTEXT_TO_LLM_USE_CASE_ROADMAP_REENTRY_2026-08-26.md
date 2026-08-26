@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_R3_REVIEWER_AMENDMENT_1_ACTIVE
+Status: LPCI1_WEB_R3_CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -18,6 +18,41 @@ Date: 2026-08-26
 | claimBoundary | accepted bounded UC-01 evidence plus operator-directed roadmap parking; no hosted, deployment, production, non-public, full-document, vector/RAG, or persistence-release claim |
 
 ## Current Assessment And Parking Decision
+
+### 2026-08-27 Terminal R3 Closure
+
+R3 is `CLOSED_PASS_BOUNDED` at public commit
+`a0ef5923d100b02c43294815ac9d01d8db20e8b8`. Exact 46-path public-sync
+preflight passed, Netlify deploy `6a8f535e6e1655000873655b` published the
+same SHA, and safe GET smoke returned HTTP 200 for `/landing`,
+`/api/auth/providers`, and `/api/auth/session`. The completion review is
+`docs/reviews/CVF_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_COMPLETION_2026-08-27.md`.
+No R4 is admitted. Existing dependency audit debt is a separate disposition
+candidate and does not reopen this roadmap by itself.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md` | terminal public disposition EXPORTED | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_COMPLETION_2026-08-27.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `Status: LPCI1_WEB_R3_CLOSED_PASS_BOUNDED` | PASS |
+| Public commit | public Git repository | `a0ef5923d100b02c43294815ac9d01d8db20e8b8` | PASS |
+| Hosted deploy | Netlify deploy metadata | `6a8f535e6e1655000873655b`, state `ready` | PASS |
+| Hosted smoke | landing and Auth.js read endpoints | three HTTP 200 responses | PASS |
+| Registry JSON | N/A with reason: no corpus scan was performed | no registry mutation required | BLOCKED with reason |
+| Session continuity | active generated state and front doors | terminal R3 mode | PASS |
+| Registry Markdown | this roadmap | human-readable terminal R3 reconciliation | PASS |
+| External evidence digest | N/A with reason: no external source artifact was absorbed | deploy metadata is a receipt, not authority | N/A with reason |
+| System loop interlock | R1 package repair through R3 hosted closure | terminal chain complete; no R4 | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| public identity | exact promoted commit | `a0ef5923d100b02c43294815ac9d01d8db20e8b8` | PASS |
+| hosted publish | same commit reaches ready | deploy `6a8f535e6e1655000873655b` ready | PASS |
+| hosted smoke | landing and auth read endpoints return 200 | three HTTP 200 responses | PASS |
 
 ### 2026-08-27 R3 Reviewer Amendment 1
 
@@ -662,23 +697,96 @@ Chain map reference: `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDG
 | Disposition | NOT_APPLICABLE_WITH_REASON |
 | Claim boundary | no external-repository or third-party absorption occurs in this documentation-only roadmap |
 
+## External Absorption Core
+
+| Field | Value |
+|---|---|
+| Standard | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` |
+| Input root or repository | N/A with reason: this roadmap consumed no external repository or copied folder |
+| Enumeration command | N/A with reason: no external corpus was admitted |
+| Manifest artifact or inline manifest | N/A with reason: no external corpus exists |
+| Processing ledger artifact or inline ledger | this N/A disposition is the complete inline ledger |
+| Ledger terminal statuses | READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE; observed status NO_NEW_VALUE |
+| Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE; observed disposition NO_NEW_VALUE |
+| Owner-surface map | `docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md` and its baseline, work order and completion review |
+| Unresolved items | zero external absorption items |
+| Completion claim boundary | no external corpus, direct import, package candidate, runtime candidate or completeness claim |
+
+## Corpus Completeness And Report Integrity
+
+- Corpus task class: external absorption applicability check.
+
+- Corpus root: N/A with reason: no external corpus.
+
+- Snapshot time: 2026-08-27 terminal closure.
+
+- Enumeration command: `rg --files --hidden --no-ignore` applicability probe; no external corpus root was admitted.
+
+- Manifest artifact or inline manifest: N/A with reason: no corpus.
+
+- Manifest hash: N/A with reason: no manifest.
+
+- Processing ledger artifact or inline ledger: this blocked disposition.
+
+- Allowed terminal statuses: READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE.
+
+- Reconciliation: manifest=0, ledger_terminal=0, exclusions=0, unresolved=0.
+
+- Unresolved files: 0
+
+- Declared exclusions: external corpus processing, because none was in scope.
+
+- Unreadable or unsupported files: 0
+
+- Aggregation check: N/A with reason: no aggregate.
+
+- Drift check: N/A with reason: no corpus snapshot.
+
+- Output traceability: terminal R3 evidence maps to the completion review.
+
+- Adversarial verification: checker-enforced blocked claim boundary.
+
+- Corpus verdict: BLOCKED - no external corpus was admitted for processing
+
+## External Absorption Value Conversion Matrix
+
+| Source item | Value extracted | Conversion lane | CVF target surface | Next governed action | Runtime/package boundary |
+|---|---|---|---|---|---|
+| no source | none | DOCTRINE_ADAPTED | this roadmap | none | no activation |
+| no source | absence of admissible external package value | PACKAGE_CANDIDATE | this roadmap | reject absent source | no package |
+| no source | absence of admissible external runtime value | RUNTIME_CANDIDATE | this roadmap | reject absent source | no runtime |
+| no source | absence of admissible external checker value | CHECKER_CANDIDATE | this roadmap | reject absent source | no checker |
+| no source | none | REJECT_DIRECT_IMPORT | this roadmap | retain local owners | no import |
+| no source | none | NO_PACKAGE_OR_RUNTIME_VALUE | this roadmap | none | no activation |
+
+## Overlap And Novelty Classification
+
+| Source item or group | Existing CVF owner surface checked | Overlap disposition | Novelty / delta | Action |
+|---|---|---|---|---|
+| no external source admitted | `docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md` | NO_NEW_VALUE | NO_NEW_VALUE: no external delta | retain local owner surfaces |
+
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: private provenance intake with internal source citations; no
-public-safe export packet or public-sync authority exists for this roadmap.
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public-sync commit: `a0ef5923d100b02c43294815ac9d01d8db20e8b8`
+
+Public artifact paths: exact 46-path LPCI1 Web R3 manifest. Private roadmap,
+baseline, work order, review and session evidence remain private provenance.
 
 ## Claim Boundary
 
 This roadmap began as a documentation-only context-to-LLM use-case intake and
 now records independently accepted D1 DESIGN, B2 BUILD, one provider-binding
 live proof, one signed synthetic-public full-route proof, release hardening,
-hosted-operations documentation remediation, and a clean read-only public
-pre-push candidate. It is parked by operator priority. It does not establish
+hosted-operations documentation remediation, bounded public export and a
+successful Netlify publish with safe hosted smoke. It is terminally closed.
+It does not establish
 restricted/confidential access, a real UC-02 corpus path, full-document
-retrieval, semantic/vector RAG, hosted store liveness, deployment, public
-availability, production operation, or production readiness. Re-entry reuses
+retrieval, semantic/vector RAG, hosted store liveness, successful real OAuth
+sign-in, provider/model behavior, or full production readiness. Re-entry reuses
 the accepted baseline and checks only named deltas; every new implementation,
 live, hosted, push, deploy, or production action still requires fresh scoped
 authority.

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2377,
   "stateKey": "nextAllowedMove",
-  "value": "Execute LPCI1 Web R3 Reviewer Amendment 6 directly: move only the Netlify base and install/build paths to repository root, explicitly install Web after sibling packages, then publish and smoke an exact 46-path replacement SHA. If it still fails without readable log, stop. Further speculation, dependency upgrades, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "value": "LPCI1 Web R3 is closed at public SHA a0ef5923d100b02c43294815ac9d01d8db20e8b8 and Netlify deploy 6a8f535e6e1655000873655b. Select a fresh high-value roadmap outside this terminal lane. R4, speculative hosted amendments, dependency upgrades without fresh security disposition, secret-value access and provider calls remain forbidden. Latest finalized numbered LHW wave remains LHW24."
 }

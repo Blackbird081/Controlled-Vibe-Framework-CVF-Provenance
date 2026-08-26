@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current execution HEAD before Amendment 6 implementation: `ca0fc7cdb72350535d0533a52a6f05b25d2d9564`
+- Repository: private provenance source of truth; current execution HEAD before terminal R3 closure: `476fc65042363e6c82aaa138d8bfbd4bf7252157`
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_6_netlify_monorepo_root`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=move only the Netlify build base/order to monorepo root, then publish/smoke the exact 46-path R3 candidate; parked checkpoint=any further speculative amendment without readable log, dependency upgrades, secret-value access, provider calls, R4 and unrelated work.
+Startup acknowledged: current mode=`lpci1_web_r3_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select a fresh high-value roadmap outside LPCI1 Web R3; parked checkpoint=LPCI1 Web R4, speculative hosted amendments, dependency upgrades without fresh security disposition, secret-value access and provider calls.
 
 ## Current Mode
-`lpci1_web_r3_reviewer_amendment_6_netlify_monorepo_root`
+`lpci1_web_r3_closed_pass_bounded`
 
 ## Purpose
 

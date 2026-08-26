@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -327,10 +327,15 @@ authentication-route smoke, roadmap terminal closure and session sync.
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
+EXPORTED
 
-Reason: the worker may prepare but cannot publish. Only reviewer evidence may
-convert this to `EXPORTED`.
+Public remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public commit: `a0ef5923d100b02c43294815ac9d01d8db20e8b8`
+
+Exported artifacts: exact 46-path manifest authorized by this work order.
+Netlify deploy `6a8f535e6e1655000873655b` published the same SHA and hosted
+smoke passed.
 
 ## Agent Operation Trace Block
 
@@ -600,3 +605,32 @@ smoke. This remains LPCI1-WEB-R3 and admits no R4.
 N/A with reason: R3 projects existing package-owned source files into the
 public-sync clone and creates no new durable governance foundation, storage
 layout, index or locator.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_COMPLETION_2026-08-27.md` | terminal reviewer decision | PASS |
+| Roadmap state | `docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md` | terminal R3 state | PASS |
+| Registry JSON | N/A with reason: no corpus scan | no registry mutation | BLOCKED with reason |
+| Registry Markdown | completion review | terminal reconciliation | PASS |
+| External evidence digest | N/A with reason: no external source artifact was absorbed | deploy metadata is receipt only | N/A with reason |
+| System loop interlock | R1 through R3 chain | no R4 remains | PASS |
+| Session continuity | active generated state | terminal R3 mode | PASS |
+
+## Current Runtime Freshness Verification
+
+The terminal public runtime was freshly verified at exact public commit
+`a0ef5923d100b02c43294815ac9d01d8db20e8b8`: Netlify deploy
+`6a8f535e6e1655000873655b` reached `ready`, and the landing plus two Auth.js
+read endpoints returned HTTP 200. No absent, not-implemented or hardcoded
+runtime claim is made beyond the explicit claim boundary.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| public identity | promoted SHA equals deploy SHA | `a0ef5923d100b02c43294815ac9d01d8db20e8b8` | PASS |
+| hosted publish | exact deploy reaches ready | `6a8f535e6e1655000873655b`, ready | PASS |
+| hosted smoke | three named GET endpoints return 200 | three HTTP 200 responses | PASS |

@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "baselineSha256": "23d1a993d69d10ce8a599ebd7889ab3af93334702b0a027a36e013fbc7e70612",
+    "baselineSha256": "aea2938739d6cc1e164db1b29df422d107aa8f5c2e1e15ff82e771c507f566f9",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "workOrderSha256": "ec51723adb18025dad5b41ee2d5f2356fd1f16bade7d6b7b07b351793e257e1d"
+    "workOrderSha256": "182350437f4e7c3deb8eee583145f9dc46ed706a9cc848c7f11b7f183572ba60"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,7 +105,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_r3_reviewer_amendment_6_netlify_monorepo_root",
+  "currentMode": "lpci1_web_r3_closed_pass_bounded",
   "previousMode": "lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_6_netlify_monorepo_root`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=move only the Netlify build base/order to monorepo root, then publish/smoke the exact 46-path R3 candidate; parked checkpoint=any further speculative amendment without readable log, dependency upgrades, secret-value access, provider calls, R4 and unrelated work.
+Startup acknowledged: current mode=`lpci1_web_r3_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select a fresh high-value roadmap outside LPCI1 Web R3; parked checkpoint=LPCI1 Web R4, speculative hosted amendments, dependency upgrades without fresh security disposition, secret-value access and provider calls.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_r3_reviewer_amendment_6_netlify_monorepo_root`
-Current mode: `lpci1_web_r3_reviewer_amendment_6_netlify_monorepo_root`
-Previous mode: `lpci1_web_r3_reviewer_amendment_5_netlify_node_alignment`
+Current mode marker: `lpci1_web_r3_closed_pass_bounded`
+Current mode: `lpci1_web_r3_closed_pass_bounded`
+Previous mode: `lpci1_web_r3_reviewer_amendment_6_netlify_monorepo_root`
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_r3_reviewer_amendment_6_netlify_monorepo_root`. Public SHA `a57d495c` passed the 46-path public-sync gate but Netlify deploy `6a8f5252` failed before publish. Netlify's canonical monorepo order installs dependencies in `base` before the build command; move only the build base/order to repository root, explicitly install Web after siblings, and publish the Web `.next` path. If this exact replacement still fails without readable log, stop. Further speculation, dependency upgrades, secret-value access, provider calls, R4 and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `lpci1_web_r3_closed_pass_bounded`. Public SHA `a0ef5923d100b02c43294815ac9d01d8db20e8b8` passed the exact 46-path preflight and Netlify deploy `6a8f535e6e1655000873655b` published it successfully. Safe smoke returned HTTP 200 for landing and both Auth.js read endpoints. R3 is terminally closed; no R4 is admitted. Select a fresh high-value roadmap separately. Dependency upgrades without fresh security disposition, secret-value access and provider calls remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

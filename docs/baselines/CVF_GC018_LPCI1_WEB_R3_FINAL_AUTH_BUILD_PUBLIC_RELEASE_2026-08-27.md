@@ -275,10 +275,14 @@ and zero-provider statement, and reviewer-only public commit/deploy receipts.
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
+EXPORTED
 
-Reason: export becomes `EXPORTED` only after reviewer-owned public commit,
-push, successful Netlify deploy and hosted smoke evidence exist.
+Public remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public commit: `a0ef5923d100b02c43294815ac9d01d8db20e8b8`
+
+Exported artifacts: exact 46-path manifest governed by this baseline. Netlify
+deploy `6a8f535e6e1655000873655b` published the same SHA and hosted smoke passed.
 
 ## Claim Boundary
 
