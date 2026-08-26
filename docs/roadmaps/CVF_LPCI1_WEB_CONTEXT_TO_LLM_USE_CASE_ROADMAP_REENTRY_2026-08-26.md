@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_R1_CLOSED_BLOCKED_EXECUTION_PLANE_CALLER_REPAIR_REQUIRED
+Status: LPCI1_WEB_R2_DISPATCHED_EXECUTION_PLANE_GRANT_CONTEXT_CALLER_REPAIR
 
 docType: roadmap
 
@@ -28,6 +28,12 @@ suites passing. Exact build exit zero remains blocked by two pre-existing
 Execution Plane caller sites that do not supply the EAFR-R12 grant context.
 That P1 compatibility repair is the only eligible successor; public sync,
 push, Netlify deploy and hosted smoke remain parked.
+
+R2 dispatch update: the only successor is
+`docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md`.
+It must propagate the canonical orchestrator grant context, prove denial before
+secret-bearing environment or call-budget effects, and restore exact non-live
+production build exit zero. It authorizes no live call or public effect.
 
 The operator selected the production hosted-operation plane and supplied the
 exact public repository, Netlify project `vibcode`, and production domain
