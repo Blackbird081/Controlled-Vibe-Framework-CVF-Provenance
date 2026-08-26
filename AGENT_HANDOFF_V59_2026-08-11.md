@@ -5,6 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
+- Current continuity HEAD before EAFR-R9 dispatch repair: `56342e8f540a6808a124900ee0982c1b54722903`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
@@ -194,7 +195,6 @@ EAFR-R9 is dispatched at `cec7a67ca` after fresh source verification, following 
 ## Completion Review
 
 CADP-AI-T7 completion review: `docs/reviews/CVF_CADP_AI_T7_CLOSURE_AND_PUBLIC_DISPOSITION_COMPLETION_2026-08-14.md`; SHA-256: `a7653e85ca4b172218f3f9efb4e9ad884fbaad343817b50a1c9be232e0fe4c74`.
-
 Mandatory enforcement is closed through `96a6cdfe4`: local hook plus strict
 exact-SHA GitHub status precede main promotion and apply to admins. Successful
 run `32678623700` promoted public `9c0183293`; force-push/delete are disabled.
@@ -207,12 +207,12 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - EAFR-R9 Dispatch Continuity
+## Core Guard Self-Protection Authorization - EAFR-R9 Dispatch And Review Repair
 
-Authorized guard-maintenance scope: record R9 `DISPATCHED` at `cec7a67ca`, release only independent reviewer/closer evaluation of the R9 worker return, and keep RFR parked.
+Authorized guard-maintenance scope: record R9 `DISPATCHED` at `cec7a67ca`, repair every reviewer-found dispatch defect before worker handoff, synchronize corrected authority, and keep RFR parked.
 Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR9ExternalStoreGrantAndAdapterPolicyDispatched20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V59_2026-08-11.md`.
-Operator authorization: standing reviewer/closer and dependency-ordered EAFR authority.
-Rollback boundary: revert only this continuity batch; retain `cec7a67ca`, `fe0ea5937`, `60635ed19`, `785940501`, and earlier EAFR history.
+Operator authorization: operator directed the current orchestrator/reviewer to clean every dispatch finding before handing the corrected packet to the Claude worker role.
+Rollback boundary: revert only the R9 dispatch-repair and continuity batches if rejected; retain `cec7a67ca`, `fe0ea5937`, `60635ed19`, `785940501`, and earlier EAFR history.
 Not authorized: provider/live/network/external-store calls, credentials, build, RFR, BuildAuthority, package-dependency edits, runtime, public sync, deployment or push.
 
 ## Claim Boundary
