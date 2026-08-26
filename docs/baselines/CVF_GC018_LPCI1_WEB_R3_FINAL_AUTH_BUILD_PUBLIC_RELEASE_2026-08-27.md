@@ -157,6 +157,14 @@ manifest becomes exactly 45 paths. The replacement candidate must repeat both
 exact-SHA server gates before identical-SHA promotion. This correction is a
 release-gate recovery, not R4 or a new roadmap.
 
+After the zero-warning correction passed server lint, the same clean runner
+exposed a dependency-install omission at build: Execution Plane declares
+`cvf-control-plane-foundation` but the workflow never installs Execution Plane
+dependencies. The already-authorized workflow path may add exactly one
+`npm ci` step for `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION` before the Web
+install/build. No package, lockfile, import, runtime or manifest expansion is
+authorized; the cumulative public manifest remains 45 paths.
+
 ## Non-Goals
 
 - no private docs, reviews, roadmaps, session state, registries or governance

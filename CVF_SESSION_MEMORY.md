@@ -52,7 +52,7 @@ Previous mode: `lpci1_web_r3_reviewer_amendment_2_security_recovery`
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery`. Candidate `9373818c` is rejected after Web CI enforced zero warnings. Clear only the 23 reported warnings on nine added paths inside the same terminal R3; promote only a new identical SHA after public-sync preflight and Web CI pass. Gate weakening, auth weakening, secret-value access, provider calls, R4 and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery`. Candidate `9373818c` failed server lint; its replacement `e291f899` passed lint but exposed the missing Execution Plane dependency-install step during server build. Add only that workflow step inside the same 45-path terminal R3; promote only a new identical SHA after public-sync preflight and Web CI pass. Gate weakening, auth weakening, secret-value access, provider calls, R4 and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

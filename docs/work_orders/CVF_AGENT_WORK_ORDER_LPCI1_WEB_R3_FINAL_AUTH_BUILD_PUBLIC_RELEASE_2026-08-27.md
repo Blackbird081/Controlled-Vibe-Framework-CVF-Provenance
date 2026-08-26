@@ -531,6 +531,14 @@ threshold, workflow lint command or any other path. Create and push a new
 candidate SHA, rerun both server gates, and promote only that identical SHA on
 success. This amendment remains LPCI1-WEB-R3 and admits no R4.
 
+Server build after lint PASS exposed one more clean-runner contract gap on the
+already-authorized `.github/workflows/cvf-web-ci.yml`: Execution Plane package
+dependencies are not installed, so its declared local Control Plane dependency
+cannot resolve. Add exactly one `npm ci` step with working directory
+`EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION` before Web install/build. No new
+path is admitted and the exact manifest remains 45 paths. Repeat both
+exact-SHA server gates; the prior candidate remains forbidden from promotion.
+
 ## Foundation Storage Layout Block
 
 N/A with reason: R3 projects existing package-owned source files into the
