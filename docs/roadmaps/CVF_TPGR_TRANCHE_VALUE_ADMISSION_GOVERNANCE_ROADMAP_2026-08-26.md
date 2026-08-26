@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_TV2_DISPATCH_READY
+Status: ACTIVE_TV3_DISPATCH_READY_TERMINAL
 
 docType: roadmap
 
@@ -67,16 +67,16 @@ Any extra need must be independently justified as a new roadmap, not appended.
   "roadmapId": "TPGR-TV",
   "declaredCap": 3,
   "authorizedOrdinals": [1, 2, 3],
-  "currentAuthorizedOrdinal": 2,
+  "currentAuthorizedOrdinal": 3,
   "noTv4": true,
-  "authorityDisposition": "TV2_OPERATOR_AUTHORIZED_SHADOW_ONLY"
+  "authorityDisposition": "TV3_OPERATOR_AUTHORIZED_TERMINAL_COMPARISON_ONLY"
 }
 ```
 
-This committed roadmap block is the authority source for TV2 cap and ordinal
-validation. A candidate manifest may reference it but may not redefine it.
-TV3 remains separately value-gated despite appearing in `authorizedOrdinals`;
-the array defines the hard ceiling, not automatic successor authority.
+This committed roadmap block is the authority source for TV3 cap and ordinal
+validation. A candidate record may reference it but may not redefine it. TV3
+is the final authorized ordinal; the array defines the hard ceiling and no TV4
+or implicit successor exists.
 
 ## Mandatory Admission Record
 
@@ -106,11 +106,11 @@ eligible for a consolidated repair even when its economic return is unknown.
 
 ## Dispatch Boundary
 
-TV1 is independently accepted at material commit `5084910ce`. The operator's
-2026-08-26 continuation instruction authorizes dispatch authoring for TV2's
-single bounded shadow implementation. TV2 implementation remains no-commit
-worker scope under its exact work order. TV3 still requires independent TV2
-acceptance plus a fresh value disposition; no TV4 exists.
+TV1 is independently accepted at `5084910ce`; TV2 is independently accepted
+with bounded reviewer repairs at `227f3d950`. The operator's 2026-08-26 fresh
+continuation decision authorizes TV3 as one comparison-only, no-commit worker
+pass. TV3 may recommend terminal closure or park further evidence collection;
+it may not modify implementation owners. No TV4 exists.
 
 ## Acceptance Criteria
 
@@ -165,6 +165,6 @@ Reason: private foundational governance roadmap; no public-sync receipt exists.
 
 ## Claim Boundary
 
-This roadmap authorizes TV1 documentation design only. It does not implement a
-tranche admission gate, reduce mandatory governance, activate selective
-execution, resume TPGR-R9, or authorize any external effect.
+This roadmap authorizes the terminal TV3 comparison-only worker pass. It does
+not reduce mandatory governance, activate selective execution, resume
+TPGR-R9, modify implementation owners, or authorize any external effect.
