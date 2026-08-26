@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current execution HEAD before Amendment 5 implementation: `26de846ff9e603594fca9302bdb1f97b27860256`
+- Repository: private provenance source of truth; current execution HEAD before Amendment 6 authority sync: `2086971e4a0b9081357164cbc4d18d0d8cf55b3e`
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_5_netlify_node_alignment`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=align only Netlify Node 20 to the green Node 22 build runtime, then publish/smoke the exact 46-path R3 candidate; parked checkpoint=claiming the unavailable exact Netlify log line, dependency upgrades, secret-value access, provider calls, R4 and unrelated work.
+Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_6_netlify_monorepo_root`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=move only the Netlify build base/order to monorepo root, then publish/smoke the exact 46-path R3 candidate; parked checkpoint=any further speculative amendment without readable log, dependency upgrades, secret-value access, provider calls, R4 and unrelated work.
 
 ## Current Mode
-`lpci1_web_r3_reviewer_amendment_5_netlify_node_alignment`
+`lpci1_web_r3_reviewer_amendment_6_netlify_monorepo_root`
 
 ## Purpose
 

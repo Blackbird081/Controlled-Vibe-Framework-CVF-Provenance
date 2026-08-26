@@ -1,5 +1,5 @@
 {
   "stateOrder": 2377,
   "stateKey": "nextAllowedMove",
-  "value": "Execute LPCI1 Web R3 Reviewer Amendment 5 directly: change only netlify.toml NODE_VERSION from 20 to the green Node 22 runtime, then publish and smoke an exact 46-path replacement SHA. Dependency upgrades, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute LPCI1 Web R3 Reviewer Amendment 6 directly: move only the Netlify base and install/build paths to repository root, explicitly install Web after sibling packages, then publish and smoke an exact 46-path replacement SHA. If it still fails without readable log, stop. Further speculation, dependency upgrades, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
 }

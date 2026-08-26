@@ -201,6 +201,24 @@ base, publish path, plugin, redirects, headers, auth invariants and secrets.
 Require a replacement exact SHA, public-sync PASS, successful Netlify publish
 and safe hosted smoke. This remains R3 and admits no R4.
 
+## Reviewer Amendment 6 - Netlify Monorepo Root Build
+
+Node-aligned public SHA `a57d495c87738dafec88026f31613423aafbd72e`
+passed the exact 46-path public-sync gate, while Netlify deploy
+`6a8f5252174df600082fbd96` again ended in `error` before publish. Netlify's
+canonical monorepo documentation states that dependency discovery and install
+occur in the configured base directory before the build command, and recommends
+repository-root base for monorepos. The existing Web-subdirectory base therefore
+runs automatic Web dependency installation before the sibling bootstrap command.
+
+Keep the manifest at exactly 46 paths and change only root `netlify.toml`: use
+the repository root as base, express all install/build paths from that root,
+explicitly install Web dependencies after the five sibling packages, and make
+the publish directory the Web `.next` path relative to root. Preserve Node 22,
+plugin, redirects, headers, auth invariants and secrets. If this replacement
+still fails without a readable exact log, stop; do not open another speculative
+amendment. This remains terminal R3 and admits no R4.
+
 ## Non-Goals
 
 - no private docs, reviews, roadmaps, session state, registries or governance

@@ -557,6 +557,26 @@ authorized. Run public-sync preflight, push a replacement candidate, promote
 the identical SHA, and require successful Netlify publish plus safe hosted GET
 smoke. This remains LPCI1-WEB-R3 and admits no R4.
 
+## Reviewer Amendment 6 Exact Monorepo Root Build
+
+Node-aligned SHA `a57d495c87738dafec88026f31613423aafbd72e` passed the
+46-path public-sync preflight, but Netlify deploy
+`6a8f5252174df600082fbd96` ended in `error` before publish. Netlify's canonical
+monorepo contract performs dependency discovery and install in `base` before
+the build command and recommends repository-root base for monorepos. The
+current Web-subdirectory base therefore orders automatic Web install before
+the sibling bootstrap command.
+
+Keep the manifest at exactly 46 paths and change only root `netlify.toml`:
+remove the Web base so repository root is used; rewrite the five sibling
+install paths from root; add explicit Web `npm ci` before the Web build; run
+the Web build with `npm --prefix`; and set publish to the Web `.next` path
+relative to root. Preserve Node 22 and every plugin, redirect, header, auth and
+secret boundary. No dependency, lockfile, source, threshold, provider call or
+successor is authorized. If the resulting exact SHA still fails without a
+readable log, stop and require authenticated log evidence. This remains R3 and
+admits no R4.
+
 ## Reviewer Amendment 5 Exact Hosted Runtime
 
 Replacement SHA `df7eb5df779c881685e4a70ac82efc319d2848f6` passed the
