@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eafr_r9_reviewer_accepted_closed_pass_bounded_pending_implementation_dispatch",
+  "currentMode": "eafr_r10_dispatch_ready_committed_awaiting_worker_handoff",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EAFR-R9 is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 7767c728f. The accepted decisions are a sibling external-store execution grant/evaluator and cvf-model-gateway ownership of the exact adapter-destination-policy interface. Two bounded reviewer corrections fixed the dependency claim and made the interface implementation-addressable. Worker-return fast and reviewer-fast passed 66/66; material pre-commit passed 87/87; zero provider/live/network/external-store/build/runtime action occurred. The next allowed move is fresh GC-018 and source-verified work-order authoring for a separately named implementation tranche only; implementation remains parked until that packet is committed. RFR, provider/live/network and external-store calls, build, BuildAuthority repair, package-dependency edits, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EAFR-R10 implementation dispatch is ready and committed at ebdfdbd29. The packet owns exactly ten source/test paths plus one no-commit worker return and implements only the accepted sibling external-store contract/evaluator plus one gateway-owned three-variant destination policy. The next allowed move is worker execution under the committed R10 work order after proving ebdfdbd29 ancestry, clean scope, absent new paths, and pinned hashes. The worker must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without staging or committing. Deliberate live-store wiring, provider/live/network/external-store calls, credential access, package/config edits, RFR, BuildAuthority, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
-    "baselineSha256": "01a43c0cef8aaa7a5bf257194a132ffea8a9eeda400b54676cd212f9b7cbca59",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
-    "workOrderSha256": "cf4400a5ba0f61ecfe21dd82597a6da78fe2ca50146230448207716669764607"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_BASELINE_2026-08-26.md",
+    "baselineSha256": "27c3aebcfa2189887fa03803a65265f6850a78ee04374ff19fdc2002b6a3aebb",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_2026-08-26.md",
+    "workOrderSha256": "1e207200494450fbd69f98cc2b25065df6ddb13ae38a5304a3de71ff11d11705"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
