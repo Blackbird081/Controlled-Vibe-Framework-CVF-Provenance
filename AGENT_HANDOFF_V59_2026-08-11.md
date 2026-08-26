@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR TV2 Accepted Pending TV3 Value Decision
+# CVF Agent Handoff V59 - TPGR TV3 Terminal Comparison Dispatched
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -39,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh operator value decision on the capped TV3 pilot; parked checkpoint=TV3 execution until that decision, TPGR-R9, selective execution and all external effects.
+Startup acknowledged: current mode=`tpgr_tv3_terminal_comparison_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit TV3 worker return followed by independent terminal review; parked checkpoint=TV4, TPGR-R9, selective execution and all external effects.
 
 ## Current Mode
-`tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`
+`tpgr_tv3_terminal_comparison_dispatched_pending_worker_return`
 
 ## Purpose
 
-Carry independently accepted TV2 shadow implementation and bounded reviewer repairs. Allow only a fresh operator value decision on the capped TV3 pilot; parking is valid. TV3, TPGR-R9, selective execution and all external effects remain parked.
+Carry the terminal TV3 dispatch at `85a99c1bb`. Allow exactly one no-commit worker return for the two pinned retrospective comparisons, followed by independent terminal review. TV4, TPGR-R9, selective execution and all external effects remain parked.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -111,19 +111,19 @@ Carry independently accepted TV2 shadow implementation and bounded reviewer repa
 
 ## Current Authority
 
-Continuity parent anchor: `227f3d950`.
+Continuity parent anchor: `85a99c1bb`.
 
 | Field | Value |
 |---|---|
-| authorityState | TPGR-TV2 `REVIEWER_ACCEPTED_WITH_BOUNDED_REPAIR` at `227f3d950` |
-| baselinePath | `docs/baselines/CVF_GC018_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_2026-08-26.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_2026-08-26.md` |
-| nextAuthorityRequirement | fresh operator value decision before any TV3 dispatch; parking is allowed |
+| authorityState | TPGR-TV3 `DISPATCHED_PENDING_WORKER_RETURN` at `85a99c1bb` |
+| baselinePath | `docs/baselines/CVF_GC018_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md` |
+| nextAuthorityRequirement | one no-commit worker return, then independent terminal close-or-park review; no TV4 |
 
 ## Closure Evidence
 
-- TPGR-TV2 accepted shadow implementation: worker return plus Independent Reviewer Addendum at `docs/reviews/CVF_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md`; material `227f3d950`; authority commit/blob binding and stale-serious fail-closed repairs; 43 focused tests, pre-implementation 81/81, reviewer-fast 66/66, pre-commit 87/87 PASS; zero provider/live calls.
-- TPGR-TV2 shadow dispatch: roadmap authority plus paired baseline/work order committed at `8bd43f98a`; exact eight-path worker manifest; pre-dispatch 79/79, P3 route COMPLIANT and pre-commit 87/87 PASS; zero external effects.
+- TPGR-TV3 terminal comparison dispatch: roadmap ordinal 3 plus paired baseline/work order committed at `85a99c1bb`; exactly two retrospective comparisons, one worker-return path, `WORKER_MUST_NOT_COMMIT`; task route COMPLIANT, pre-dispatch 79/79 and pre-commit 87/87 PASS; zero external effects; no TV4.
+- TPGR-TV2 dispatch and accepted shadow implementation: dispatch `8bd43f98a`; worker return plus Independent Reviewer Addendum at `docs/reviews/CVF_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md`; accepted material `227f3d950`; 43 focused tests, pre-implementation 81/81, reviewer-fast 66/66 and pre-commit 87/87 PASS; zero provider/live calls.
 - TPGR-TV1 accepted design: assessment at `docs/assessments/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md`; worker return and Independent Reviewer Addendum at `docs/reviews/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_WORKER_RETURN_2026-08-26.md`; material `5084910ce`; one consolidated semantic repair; fast/reviewer-fast 66/66, task route COMPLIANT, pre-implementation 81/81 and material pre-commit 87/87 PASS; no provider/live call.
 - EAFR-R12 closure: worker return at `docs/reviews/CVF_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_WORKER_RETURN_2026-08-26.md`; material `1e31db99a`; disclosed reviewer repairs; focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 PASS; zero external calls; no R13.
 - EAFR-R8 completion: `docs/reviews/CVF_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_COMPLETION_2026-08-26.md`; material commit `fe0ea5937`; accepted blocked after reviewer repair with ambient isolation retained, injected rate/store fake proof, and two authority residuals keeping RFR parked.
@@ -169,7 +169,7 @@ Continuity parent anchor: `227f3d950`.
 
 ## Next Allowed Move
 
-TPGR-TV2 is independently accepted at `227f3d950`. The next move is a fresh operator value decision whether the capped two-comparison TV3 pilot is worth its time, latency and quota cost; parking it is a valid terminal outcome. TV3 is not dispatched. TPGR-R9, selective execution, provider/live/network/credential/store effects, absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed.
+TPGR-TV3 is dispatched at `85a99c1bb`. The next move is exactly one no-commit worker return at `docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md`, followed by independent reviewer/closer verification and one terminal roadmap disposition: `CLOSE_ROADMAP_BOUNDED` or `PARK_EVIDENCE_COLLECTION`. TPGR-R9, selective execution, provider/live/network/credential/store effects, absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed.
 
 ## Active Boundary
 
@@ -200,20 +200,20 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - TPGR-TV2 Acceptance Continuity
+## Core Guard Self-Protection Authorization - TPGR-TV3 Dispatch Continuity
 
-Authorized guard-maintenance scope: record accepted TV2 material `227f3d950`, bind reviewer proof, set the next move to a fresh TV3 value decision, and keep TV3 execution and all external effects parked.
+Authorized guard-maintenance scope: record terminal TV3 dispatch material `85a99c1bb`, bind the one-output worker boundary, set the next move to worker return plus independent terminal review, and keep TV4 and all external effects parked.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrTV2TrancheValueAdmissionShadowImplementationAccepted20260826.json`
+- `CVF_SESSION/state/entries/tpgrTV3TerminalTwoComparisonPilotDispatched20260826.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator authorized the orchestrator/reviewer to clean serious findings and continue TV2 while preventing low-value tranche proliferation.
-Rollback boundary: revert only this TV2 acceptance-continuity batch if rejected; retain accepted material and prior dispatch history.
-Not authorized: TV3, TPGR-R9, selective execution, provider/live/network/external-store calls, credentials, absorption, app/project execution, public sync, deployment or push.
+Operator authorization: operator explicitly approved the capped TV3 terminal pilot after TV2 acceptance; tranche-value governance still forbids low-value successor proliferation.
+Rollback boundary: revert only this TV3 dispatch-continuity batch if rejected; retain material dispatch and prior accepted history.
+Not authorized: TV4, TPGR-R9, selective execution, provider/live/network/external-store calls, credentials, absorption, app/project execution, public sync, deployment or push.
 
 ## Claim Boundary
 

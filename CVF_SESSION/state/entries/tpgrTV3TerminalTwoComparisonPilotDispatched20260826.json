@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2362,
+  "stateKey": "tpgrTV3TerminalTwoComparisonPilotDispatched20260826",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_TPGR_TRANCHE_VALUE_ADMISSION_GOVERNANCE_ROADMAP_2026-08-26.md",
+    "baseline": "docs/baselines/CVF_GC018_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md",
+    "materialCommit": "85a99c1bba70e8bf5b758d746bc045d23362f97b",
+    "baselineSha256": "1e20cc08739b22f9d236ddfd325c6461bc6529d99b7da5c83c19213f0a59af0c",
+    "workOrderSha256": "b54c39c99106552cb5e8694f314d2db77d70787bcc04e191ce36e3ab610132aa",
+    "workerReturn": "docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md",
+    "proof": "Task-governance route COMPLIANT; pre-dispatch 79/79 PASS; material pre-commit 87/87 PASS; zero provider/live calls.",
+    "scope": "Exactly two retrospective comparisons: EAFR-R11 remediation and MCP-KAR-T2 absorption/project boundary. Worker may create only the named worker return and must not stage or commit.",
+    "terminalBoundary": "Independent reviewer/closer must choose CLOSE_ROADMAP_BOUNDED or PARK_EVIDENCE_COLLECTION. No TV4.",
+    "claimBoundary": "Decision evidence only; no implementation expansion, provider/live effect, source absorption, app/project execution, public sync, deployment or push."
+  }
+}

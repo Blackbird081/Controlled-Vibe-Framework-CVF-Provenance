@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh operator value decision on the capped TV3 pilot; parked checkpoint=TV3 execution until that decision, TPGR-R9, selective execution and all external effects.
+Startup acknowledged: current mode=`tpgr_tv3_terminal_comparison_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit TV3 worker return followed by independent terminal review; parked checkpoint=TV4, TPGR-R9, selective execution and all external effects.
 
 ## Current Mode
 
-Current mode marker: `tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`
-Current mode: `tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`
-Previous mode: `tpgr_tv2_shadow_implementation_dispatched_pending_worker_return`
+Current mode marker: `tpgr_tv3_terminal_comparison_dispatched_pending_worker_return`
+Current mode: `tpgr_tv3_terminal_comparison_dispatched_pending_worker_return`
+Previous mode: `tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`
 
 ## Next Allowed Move
 
-Mode: `tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`; TV2 is independently accepted with bounded reviewer repairs at `227f3d950`. The next allowed move is a fresh operator value decision whether the two-comparison TV3 pilot is worth its cost; parking is valid. TV3 is not dispatched, and TPGR-R9, selective execution and all external effects remain parked; no TV4 is allowed.
+Mode: `tpgr_tv3_terminal_comparison_dispatched_pending_worker_return`; TV3 is dispatched at `85a99c1bb`. The next allowed move is exactly one no-commit worker return for the two pinned retrospective comparisons, then independent reviewer/closer verification and terminal `CLOSE_ROADMAP_BOUNDED` or `PARK_EVIDENCE_COLLECTION`. TV4, TPGR-R9, selective execution and all external effects remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

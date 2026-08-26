@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_2026-08-26.md",
-    "baselineSha256": "a2ce243024ad97f497c0193bc0a896ee55b77634f7160bd21e28fa678bd1ce29",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_2026-08-26.md",
-    "workOrderSha256": "f5c75f0eb506955efc26b97ae776a12b388b4434e1c054c2164781b23d863323"
+    "baselinePath": "docs/baselines/CVF_GC018_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md",
+    "baselineSha256": "1e20cc08739b22f9d236ddfd325c6461bc6529d99b7da5c83c19213f0a59af0c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md",
+    "workOrderSha256": "b54c39c99106552cb5e8694f314d2db77d70787bcc04e191ce36e3ab610132aa"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required",
-  "previousMode": "tpgr_tv2_shadow_implementation_dispatched_pending_worker_return",
+  "currentMode": "tpgr_tv3_terminal_comparison_dispatched_pending_worker_return",
+  "previousMode": "tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15223,5 +15223,19 @@
     "interlocks": "Shadow-only; valueDispositionAuthoritative false; selective execution false; RUN_FULL_LEGACY_BUNDLE; TPGR-R8 hold unchanged.",
     "claimBoundary": "Accepted local shadow implementation only; no TV3, TPGR-R9, provider/live effect, public sync, deployment or push."
   },
-  "nextAllowedMove": "TPGR-TV2 is independently accepted with bounded reviewer repairs at material commit 227f3d950. The next allowed move is a fresh operator value decision whether the capped TV3 two-comparison pilot is worth its time, latency and quota cost. TV3 is not dispatched; parking it is an allowed terminal outcome. TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed. Latest finalized numbered LHW wave remains LHW24."
+  "tpgrTV3TerminalTwoComparisonPilotDispatched20260826": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_TPGR_TRANCHE_VALUE_ADMISSION_GOVERNANCE_ROADMAP_2026-08-26.md",
+    "baseline": "docs/baselines/CVF_GC018_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md",
+    "materialCommit": "85a99c1bba70e8bf5b758d746bc045d23362f97b",
+    "baselineSha256": "1e20cc08739b22f9d236ddfd325c6461bc6529d99b7da5c83c19213f0a59af0c",
+    "workOrderSha256": "b54c39c99106552cb5e8694f314d2db77d70787bcc04e191ce36e3ab610132aa",
+    "workerReturn": "docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md",
+    "proof": "Task-governance route COMPLIANT; pre-dispatch 79/79 PASS; material pre-commit 87/87 PASS; zero provider/live calls.",
+    "scope": "Exactly two retrospective comparisons: EAFR-R11 remediation and MCP-KAR-T2 absorption/project boundary. Worker may create only the named worker return and must not stage or commit.",
+    "terminalBoundary": "Independent reviewer/closer must choose CLOSE_ROADMAP_BOUNDED or PARK_EVIDENCE_COLLECTION. No TV4.",
+    "claimBoundary": "Decision evidence only; no implementation expansion, provider/live effect, source absorption, app/project execution, public sync, deployment or push."
+  },
+  "nextAllowedMove": "TPGR-TV3 terminal two-comparison pilot is dispatched at material commit 85a99c1bb. The next allowed move is one no-commit worker return at docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md, followed by independent reviewer/closer verification and exactly one terminal roadmap disposition: CLOSE_ROADMAP_BOUNDED or PARK_EVIDENCE_COLLECTION. No TV4, implementation expansion, provider/live/network/credential/store call, source absorption, app/project execution, public sync, deployment or push is authorized. Latest finalized numbered LHW wave remains LHW24."
 }
