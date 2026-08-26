@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: reusable template for scoped agent execution orders.
+Status: reusable template for scoped agent execution orders. providerExecutionAuthority: FORBIDDEN (skeleton prose; a real dispatch declares its own).
 
 Text Encoding Exception: em dash and standard punctuation used in governance prose
 
@@ -452,7 +452,8 @@ Rules:
 - every required roadmap field must appear in the output artifact or in the
   New Doc-Only Fields table;
 - `PASS` is allowed only after the final artifact exists and has been checked;
-- missing rows block dispatch or closure.
+- missing rows block dispatch or closure;
+- optional `trancheValue` object in the manifest JSON follows the TPGR standard's Tranche Admission And Continuation Value section and its schema; omitted, routing is unchanged and its shadow output stays non-authoritative.
 
 ## 6C. Worker Autonomy / No-Question Rule
 
