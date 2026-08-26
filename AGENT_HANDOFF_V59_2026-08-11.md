@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current execution HEAD before Amendment 1 commit: `c3bfd52ed0b86a3693f9c7c66e87873dc395fc1b`
+- Repository: private provenance source of truth; current execution HEAD before final manifest correction: `f6ef3df4c`
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,7 +38,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_1_execution`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the 23-path provenance-delta reviewer recovery and release only on clean proof; parked checkpoint=33-file CADP expansion, plain npm install, secret-value access, provider calls, R4 and unrelated work.
+Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_1_execution`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the 24-path provenance-delta reviewer recovery and release only on clean proof; parked checkpoint=33-file CADP expansion, plain npm install, secret-value access, provider calls, R4 and unrelated work.
 
 ## Current Mode
 `lpci1_web_r3_reviewer_amendment_1_execution`
@@ -202,7 +202,7 @@ Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL
 
 ## Core Guard Self-Protection Authorization - LPCI1 Web R3 Amendment Continuity
 
-Authorized guard-maintenance scope: bind corrected R3 reviewer execution, exact authority hashes and the 23-path provenance-delta next move; retain no-R4 boundary.
+Authorized guard-maintenance scope: bind corrected R3 reviewer execution, exact authority hashes and the 24-path provenance-delta next move; retain no-R4 boundary.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`

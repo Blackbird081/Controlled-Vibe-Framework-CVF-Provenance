@@ -154,6 +154,7 @@ Public-sync repository, exact candidate allowlist:
 - `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/live.provider.value.pilot.ts`
 - `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.live.provider.value.pilot.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/next.config.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/provider-binding.ts`
 
@@ -192,6 +193,8 @@ provenance deltas:
   Guard Contract `src/package.boundary.test.ts`;
 - `92c96a04d`: the five allowlisted Execution Plane paths;
 - `5c86f6d77`: only the ten-line export delta in Model Gateway `src/index.ts`.
+- `3c51ac5e6`: only the fail-closed 401 expectation delta in Web LPCI
+  `query/route.test.ts`.
 
 New files use their exact introducing-commit post-image. A path whose public
 blob equals the relevant source commit's parent may use the exact source commit
@@ -201,7 +204,7 @@ contract cluster, documentation or registry. Do not run plain `npm install`;
 existing local dependencies may be relinked without network only by a command
 whose offline behavior is explicit and whose tracked delta remains allowlisted.
 
-Amended public allowlist count: 23 paths. This amendment is part of R3 and
+Amended public allowlist count: 24 paths. This amendment is part of R3 and
 admits no R4.
 
 ## Auth Build Proof

@@ -57,9 +57,9 @@ not reliable. These count claims are rejected. The command/result narrative is
 retained as worker evidence, but this adjudication controls the accepted facts.
 
 Reviewer recovery remains inside the same terminal R3. Amendment 1 uses exact
-source-commit deltas, adds only `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`,
-and authorizes no 33-file cluster, R4, second worker, secret read or provider
-call.
+source-commit deltas, adds `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts` plus the
+single stale route-test expectation repaired at `3c51ac5e6`, and authorizes no
+33-file cluster, R4, second worker, secret read or provider call.
 
 ## Mixed Protected-Path Atomicity Authorization
 
