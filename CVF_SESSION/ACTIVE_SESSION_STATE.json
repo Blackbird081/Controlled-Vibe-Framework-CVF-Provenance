@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r8_dispatched_pending_worker_return",
-  "previousMode": "eafr_r7_reviewer_accepted_closed_blocked_r8_source_verification",
+  "currentMode": "eafr_r8_reviewer_accepted_closed_blocked_r9_source_verification",
+  "previousMode": "eafr_r8_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15058,5 +15058,19 @@
     "nextAllowedMove": "Bounded no-commit R8 worker execution, then independent reviewer adjudication.",
     "claimBoundary": "No provider/live/network or external-store call, build, RFR resume, BuildAuthority repair, public-sync, deployment or push authority."
   },
-  "nextAllowedMove": "EAFR-R8 non-live external-store isolation and adapter-boundary repair is dispatched at 60635ed19 under WORKER_MUST_NOT_COMMIT. The next allowed move is bounded no-commit worker execution against the committed R8 packet, followed by independent reviewer adjudication. Provider/live/network and external-store calls, build, RFR resume, BuildAuthority repair, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "eafrR8ExternalStoreIsolationAcceptedBlocked20260826": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_BLOCKED",
+    "materialCommit": "fe0ea5937",
+    "completionReview": "docs/reviews/CVF_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_COMPLETION_2026-08-26.md",
+    "workerReturn": "docs/reviews/CVF_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_WORKER_RETURN_2026-08-26.md",
+    "reviewerRepair": "Added the missing injected Redis storage append/read proof and removed misleading fake terminology.",
+    "proof": "Web focused 97/97, gateway 7/7, both TypeScript checks PASS, full Web 3538/3560 with 22 named residual failures, worker-return fast COMPLIANT and pre-commit 87/87 PASS.",
+    "blockedResiduals": [
+      "No bounded orchestrator-issued external-store execution grant exists in the R7 guard.",
+      "The gateway adapter can still call a permissive injected fetch against an unrecognised destination."
+    ],
+    "nextAllowedMove": "Fresh EAFR-R9 source verification and dispatch authoring only.",
+    "claimBoundary": "No provider/live/network or external-store call, build, RFR resume, BuildAuthority repair, public-sync, deployment or push authority."
+  },
+  "nextAllowedMove": "EAFR-R8 is reviewer-accepted CLOSED_BLOCKED at material commit fe0ea5937 after one bounded reviewer repair. Non-live ambient Upstash construction is isolated and injected rate-limit/storage fake proof passes; full Web proof is 3538 pass/22 named fail. A bounded external-store execution grant and the gateway adapter injected-fetch boundary remain unresolved. The next allowed move is fresh EAFR-R9 source verification and dispatch authoring only. Provider/live/network and external-store calls, build, RFR resume, BuildAuthority repair, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
