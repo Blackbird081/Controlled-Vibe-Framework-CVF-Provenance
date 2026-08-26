@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Current R9 reviewer-repaired material dispatch: `85a6f809e`; session-sync parent: `12f1ba0d7`.
+- Current R9 reviewer-accepted bounded material closure: `7767c728f`; session-sync parent pending this continuity commit.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
@@ -49,15 +49,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r9_reviewer_repaired_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no-commit R9 worker execution and return for independent review; parked checkpoint=RFR, provider/live/network and external-store calls, build, BuildAuthority repair and all external effects.
+Startup acknowledged: current mode=`eafr_r9_reviewer_accepted_closed_pass_bounded_pending_implementation_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh GC-018 and source-verified implementation work-order authoring only; parked checkpoint=implementation until committed dispatch, RFR, provider/live/network and external-store calls, build, BuildAuthority repair and all external effects.
 
 ## Current Mode
-`eafr_r9_reviewer_repaired_dispatched_pending_worker_return`
+`eafr_r9_reviewer_accepted_closed_pass_bounded_pending_implementation_dispatch`
 
 ## Purpose
 
-Preserve the accepted blocked R8 closure and release only the reviewer-repaired R9 no-commit design-decision worker. RFR and all external effects remain parked.
-
+Preserve R9's accepted bounded design closure and allow only fresh implementation-packet authoring. Implementation, RFR and all external effects remain parked.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -67,7 +66,7 @@ Preserve the accepted blocked R8 closure and release only the reviewer-repaired 
 
 ## Latest Work / Changes
 
-- EAFR-R9 reviewer-repaired dispatch is committed at `85a6f809e`: the mutable-roadmap hash trap is removed, the existing cvf-web to cvf-model-gateway dependency is source-verified, and gateway-local destination-policy ownership is the leading candidate. The no-commit worker decides both design dispositions without implementation. Pre-dispatch COMPLIANT, material pre-commit 87/87, zero provider/external-store calls; write ownership is exactly one worker-return path. EAFR-R8 remains reviewer-accepted `CLOSED_BLOCKED` at `fe0ea5937`.
+- EAFR-R9 is reviewer-accepted `CLOSED_PASS_BOUNDED` at `7767c728f`: sibling external-store execution authority and the exact gateway-owned adapter destination-policy interface are accepted after two bounded reviewer corrections. Worker-return fast/reviewer-fast passed 66/66, material pre-commit passed 87/87, GC-051 covers the seven named source paths, and zero external/runtime action occurred. Implementation requires a fresh committed packet. EAFR-R8 remains reviewer-accepted `CLOSED_BLOCKED` at `fe0ea5937`.
 - EAFR-R8 is dispatched at `60635ed19` after reviewer repaired its test-manifest gap. Packet SHA-256 values are `f799139a7660dcb6fc0908c111652969f04f13f3793646e44fe39290ac0edc50` and `b0031f0218862ced4f54abdc4a6b788d82ac3dd3dbba27515db53f8adda28544`; pre-dispatch 79/79 and pre-commit 87/87 passed with zero external calls.
 - EAFR-R7 is reviewer-accepted `CLOSED_BLOCKED` at material commit `74cf99354`: the fail-closed guard is retained after protocol-relative reviewer repair; focused 26/26 and TypeScript pass; full non-live is 3465 pass/88 named fail because ambient Upstash egress is blocked. The adapter injection residual remains. R8 source verification/dispatch authoring is next; RFR stays parked.
 - EAFR-R7 dispatch handoff mode alignment was repaired at `eaa35a7b7`; its parent is dispatch continuity `b58f9b6cb`. This is continuity-only and changes no R7 evidence or authority.
@@ -122,17 +121,18 @@ Preserve the accepted blocked R8 closure and release only the reviewer-repaired 
 
 ## Current Authority
 
-Continuity parent anchor: `85a6f809e`.
+Continuity parent anchor: `7767c728f`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R9 `REVIEWER_REPAIRED_DISPATCHED` at `85a6f809e`, following original dispatch `cec7a67ca` and R8 closure `fe0ea5937` |
+| authorityState | EAFR-R9 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `7767c728f`, following repaired dispatch `85a6f809e` and R8 closure `fe0ea5937` |
 | baselinePath | `docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md` |
-| nextAuthorityRequirement | no-commit R9 worker execution, then independent reviewer/closer evaluation |
+| nextAuthorityRequirement | fresh GC-018 and source-verified work order for a separately named implementation tranche |
 
 ## Closure Evidence
 
+- EAFR-R9 worker return and reviewer decision: `docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md`; material commit `7767c728f`; accepted bounded after two reviewer corrections, with implementation separately governed and RFR parked.
 - EAFR-R8 completion: `docs/reviews/CVF_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_COMPLETION_2026-08-26.md`; material commit `fe0ea5937`; accepted blocked after reviewer repair with ambient isolation retained, injected rate/store fake proof, and two authority residuals keeping RFR parked.
 - EAFR-R6 completion: `docs/reviews/CVF_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_COMPLETION_2026-08-26.md`; material commit `2bc2b2d0d`; accepted blocked with four unresolved P1 classes, RFR parked and R7 dispatch authoring next.
 - EAFR-R1E completion: `docs/reviews/CVF_EAFR_R1E_ORCHESTRATOR_PROVIDER_EXECUTION_AUTHORITY_COMPLETION_2026-08-25.md`; material commit `8007e269f`; default deny, bounded grant and pre-network guard accepted with 42/42 plus 12/12 focused tests, reviewer-fast 66/66, pre-commit 87/87 and zero provider calls.
@@ -176,7 +176,7 @@ Continuity parent anchor: `85a6f809e`.
 
 ## Next Allowed Move
 
-EAFR-R9 reviewer-repaired dispatch is committed at `85a6f809e` after removing the mutable-roadmap hash trap and adding the existing cvf-web to gateway dependency evidence. The next allowed move is no-commit R9 worker execution and return for independent review. RFR, provider/live/network and external-store calls, build, BuildAuthority repair, package-dependency edits and all external effects remain parked.
+EAFR-R9 is reviewer-accepted bounded at `7767c728f`. The next allowed move is fresh GC-018 and source-verified work-order authoring for a separately named implementation tranche only. Implementation remains parked until that packet is committed; RFR, provider/live/network and external-store calls, build, BuildAuthority repair, package-dependency edits and all external effects remain parked.
 
 ## Active Boundary
 
@@ -207,13 +207,13 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - EAFR-R9 Dispatch And Review Repair
+## Core Guard Self-Protection Authorization - EAFR-R9 Review Closure
 
-Authorized guard-maintenance scope: record R9 `DISPATCHED` at `cec7a67ca`, repair every reviewer-found dispatch defect before worker handoff, synchronize corrected authority, and keep RFR parked.
-Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR9ExternalStoreGrantAndAdapterPolicyDispatched20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V59_2026-08-11.md`.
-Operator authorization: operator directed the current orchestrator/reviewer to clean every dispatch finding before handing the corrected packet to the Claude worker role.
-Rollback boundary: revert only the R9 dispatch-repair and continuity batches if rejected; retain `cec7a67ca`, `fe0ea5937`, `60635ed19`, `785940501`, and earlier EAFR history.
-Not authorized: provider/live/network/external-store calls, credentials, build, RFR, BuildAuthority, package-dependency edits, runtime, public sync, deployment or push.
+Authorized guard-maintenance scope: record R9 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `7767c728f`, synchronize the accepted decisions and next implementation-packet boundary, and keep RFR parked.
+Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR9ExternalStoreGrantAndAdapterPolicyAcceptedBounded20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V59_2026-08-11.md`.
+Operator authorization: operator assigned the current agent as orchestrator/reviewer with authority to clean the R9 findings and close the worker return.
+Rollback boundary: revert only the R9 review-closure material and continuity batches if rejected; retain the repaired dispatch `85a6f809e`, original dispatch `cec7a67ca`, R8 closure `fe0ea5937`, and earlier EAFR history.
+Not authorized: implementation before a committed work order, provider/live/network/external-store calls, credentials, build, RFR, BuildAuthority, package-dependency edits, public sync, deployment or push.
 
 ## Claim Boundary
 

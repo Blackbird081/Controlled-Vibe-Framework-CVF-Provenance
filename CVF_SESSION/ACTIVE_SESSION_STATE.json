@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
     "baselineSha256": "01a43c0cef8aaa7a5bf257194a132ffea8a9eeda400b54676cd212f9b7cbca59",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
-    "workOrderSha256": "401939bb05bdac65446ece2ffb6c87d96f1bd08a2728f9d47a0ff1b6e87fdb2b"
+    "workOrderSha256": "cf4400a5ba0f61ecfe21dd82597a6da78fe2ca50146230448207716669764607"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r9_reviewer_repaired_dispatched_pending_worker_return",
-  "previousMode": "eafr_r9_dispatched_pending_worker_return",
+  "currentMode": "eafr_r9_reviewer_accepted_closed_pass_bounded_pending_implementation_dispatch",
+  "previousMode": "eafr_r9_reviewer_repaired_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15085,5 +15085,19 @@
     "nextAllowedMove": "No-commit worker execution, then independent reviewer/closer evaluation of the R9 worker return; no implementation authority is granted by this dispatch.",
     "claimBoundary": "No provider/live/network or external-store call, build, RFR resume, BuildAuthority repair, package-dependency edit, public-sync, deployment or push authority."
   },
-  "nextAllowedMove": "EAFR-R9 reviewer-repaired dispatch is committed at 85a6f809e after removing the mutable-roadmap hash trap and adding the existing cvf-web to cvf-model-gateway dependency evidence. The no-commit worker must decide, without implementing, an external-store grant design and one Adapter Destination Policy Owner disposition; gateway-local ownership is the leading candidate and may be rejected only with a source-backed disqualifying rule. Pre-dispatch is COMPLIANT and material pre-commit passed 87/87 with zero provider/external-store calls. The next allowed move is no-commit worker execution and return for independent review. Provider/live/network and external-store calls, build, RFR resume, BuildAuthority repair, package-dependency edits, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "eafrR9ExternalStoreGrantAndAdapterPolicyAcceptedBounded20260826": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED",
+    "materialCommit": "7767c728fcc81190867c9ec825b6a18ba340c219",
+    "dispatchCommit": "85a6f809e",
+    "workerReturn": "docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "roadmap": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+    "corpusRegistryEntry": "docs/corpus-intelligence/registry/entries/eafr-r9-authority-and-destination-policy-source-surfaces.json",
+    "decisions": "Accept a sibling ExternalStoreExecutionGrant/evaluateExternalStoreExecutionAuthority design and DESIGNATED_SHARED_PACKAGE_OWNER=cvf-model-gateway with exact adapter-destination-policy.ts interface.",
+    "reviewRepairs": "Corrected the gateway dependency claim to distinguish zero runtime/local-workspace dependencies from four tooling devDependencies, and replaced a non-binding destination-policy example with an exact module, type, function signature, and consumer normalization contract.",
+    "proof": "All 13 pinned hashes matched; worker-return fast and reviewer-fast 66/66 passed; material pre-commit 87/87 passed; GC-051 aggregate covers 175 corpora; zero provider, network, external-store, live, build, or runtime action occurred.",
+    "nextAllowedMove": "Author and validate a fresh GC-018 baseline and source-verified work order for a separately named implementation tranche only; implementation remains parked until that packet is committed.",
+    "claimBoundary": "Design closure only. RFR, provider/live/network and external-store calls, build, BuildAuthority repair, runtime implementation, package-dependency edits, public-sync, deployment and push remain parked."
+  },
+  "nextAllowedMove": "EAFR-R9 is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 7767c728f. The accepted decisions are a sibling external-store execution grant/evaluator and cvf-model-gateway ownership of the exact adapter-destination-policy interface. Two bounded reviewer corrections fixed the dependency claim and made the interface implementation-addressable. Worker-return fast and reviewer-fast passed 66/66; material pre-commit passed 87/87; zero provider/live/network/external-store/build/runtime action occurred. The next allowed move is fresh GC-018 and source-verified work-order authoring for a separately named implementation tranche only; implementation remains parked until that packet is committed. RFR, provider/live/network and external-store calls, build, BuildAuthority repair, package-dependency edits, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
