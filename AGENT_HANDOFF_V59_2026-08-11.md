@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR TV3 Terminal Comparison Dispatched
+# CVF Agent Handoff V59 - TPGR TV3 Accepted Pending Roadmap Closure
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -39,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`tpgr_tv3_terminal_comparison_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit TV3 worker return followed by independent terminal review; parked checkpoint=TV4, TPGR-R9, selective execution and all external effects.
+Startup acknowledged: current mode=`tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=roadmap-only terminal closure then final continuity sync; parked checkpoint=TV4, TPGR-R9, selective execution and all external effects.
 
 ## Current Mode
-`tpgr_tv3_terminal_comparison_dispatched_pending_worker_return`
+`tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending`
 
 ## Purpose
 
-Carry the terminal TV3 dispatch at `85a99c1bb`. Allow exactly one no-commit worker return for the two pinned retrospective comparisons, followed by independent terminal review. TV4, TPGR-R9, selective execution and all external effects remain parked.
+Carry independently accepted TV3 material `3b3f944ff` and its bounded evidence-label repair. Allow only the prepared roadmap terminal-closure batch followed by final continuity sync. TV4, TPGR-R9, selective execution and all external effects remain parked.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -111,18 +111,18 @@ Carry the terminal TV3 dispatch at `85a99c1bb`. Allow exactly one no-commit work
 
 ## Current Authority
 
-Continuity parent anchor: `85a99c1bb`.
+Continuity parent anchor: `3b3f944ff`.
 
 | Field | Value |
 |---|---|
-| authorityState | TPGR-TV3 `DISPATCHED_PENDING_WORKER_RETURN` at `85a99c1bb` |
+| authorityState | TPGR-TV3 `REVIEWER_ACCEPTED_WITH_BOUNDED_REPAIR` at `3b3f944ff` |
 | baselinePath | `docs/baselines/CVF_GC018_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_2026-08-26.md` |
-| nextAuthorityRequirement | one no-commit worker return, then independent terminal close-or-park review; no TV4 |
+| nextAuthorityRequirement | roadmap-only `CLOSED_PASS_BOUNDED` / `CLOSE_ROADMAP_BOUNDED` closure; no TV4 |
 
 ## Closure Evidence
 
-- TPGR-TV3 terminal comparison dispatch: roadmap ordinal 3 plus paired baseline/work order committed at `85a99c1bb`; exactly two retrospective comparisons, one worker-return path, `WORKER_MUST_NOT_COMMIT`; task route COMPLIANT, pre-dispatch 79/79 and pre-commit 87/87 PASS; zero external effects; no TV4.
+- TPGR-TV3 accepted terminal comparison: worker return plus Independent Reviewer Addendum at `docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md`; material `3b3f944ff`; C1 evidence repaired to `HISTORICAL_BOUNDED`; both rows `MATCH`, false-stop/false-continue 0/0; focused 43/43, reviewer-fast 66/66 and pre-commit 87/87 PASS; zero provider/live calls; no TV4.
 - TPGR-TV2 dispatch and accepted shadow implementation: dispatch `8bd43f98a`; worker return plus Independent Reviewer Addendum at `docs/reviews/CVF_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md`; accepted material `227f3d950`; 43 focused tests, pre-implementation 81/81, reviewer-fast 66/66 and pre-commit 87/87 PASS; zero provider/live calls.
 - TPGR-TV1 accepted design: assessment at `docs/assessments/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md`; worker return and Independent Reviewer Addendum at `docs/reviews/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_WORKER_RETURN_2026-08-26.md`; material `5084910ce`; one consolidated semantic repair; fast/reviewer-fast 66/66, task route COMPLIANT, pre-implementation 81/81 and material pre-commit 87/87 PASS; no provider/live call.
 - EAFR-R12 closure: worker return at `docs/reviews/CVF_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_WORKER_RETURN_2026-08-26.md`; material `1e31db99a`; disclosed reviewer repairs; focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 PASS; zero external calls; no R13.
@@ -169,7 +169,7 @@ Continuity parent anchor: `85a99c1bb`.
 
 ## Next Allowed Move
 
-TPGR-TV3 is dispatched at `85a99c1bb`. The next move is exactly one no-commit worker return at `docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md`, followed by independent reviewer/closer verification and one terminal roadmap disposition: `CLOSE_ROADMAP_BOUNDED` or `PARK_EVIDENCE_COLLECTION`. TPGR-R9, selective execution, provider/live/network/credential/store effects, absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed.
+TPGR-TV3 is independently accepted at `3b3f944ff`. The next move is the prepared roadmap-only terminal closure to `CLOSED_PASS_BOUNDED` with `CLOSE_ROADMAP_BOUNDED`, followed by final continuity sync. TPGR-R9, selective execution, provider/live/network/credential/store effects, absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed.
 
 ## Active Boundary
 
@@ -200,19 +200,19 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - TPGR-TV3 Dispatch Continuity
+## Core Guard Self-Protection Authorization - TPGR-TV3 Acceptance Continuity
 
-Authorized guard-maintenance scope: record terminal TV3 dispatch material `85a99c1bb`, bind the one-output worker boundary, set the next move to worker return plus independent terminal review, and keep TV4 and all external effects parked.
+Authorized guard-maintenance scope: record accepted TV3 material `3b3f944ff`, bind the bounded evidence-label repair, set the next move to roadmap-only terminal closure, and keep TV4 and all external effects parked.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/tpgrTV3TerminalTwoComparisonPilotDispatched20260826.json`
+- `CVF_SESSION/state/entries/tpgrTV3TerminalTwoComparisonPilotAccepted20260826.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator explicitly approved the capped TV3 terminal pilot after TV2 acceptance; tranche-value governance still forbids low-value successor proliferation.
-Rollback boundary: revert only this TV3 dispatch-continuity batch if rejected; retain material dispatch and prior accepted history.
+Operator authorization: operator approved the capped terminal pilot and delegated independent review/closure; tranche-value governance forbids successor proliferation.
+Rollback boundary: revert only this TV3 acceptance-continuity batch if rejected; retain accepted material and prior dispatch history.
 Not authorized: TV4, TPGR-R9, selective execution, provider/live/network/external-store calls, credentials, absorption, app/project execution, public sync, deployment or push.
 
 ## Claim Boundary

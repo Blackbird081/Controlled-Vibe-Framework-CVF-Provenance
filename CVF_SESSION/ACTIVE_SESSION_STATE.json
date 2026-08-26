@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "tpgr_tv3_terminal_comparison_dispatched_pending_worker_return",
-  "previousMode": "tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required",
+  "currentMode": "tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending",
+  "previousMode": "tpgr_tv3_terminal_comparison_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15237,5 +15237,17 @@
     "terminalBoundary": "Independent reviewer/closer must choose CLOSE_ROADMAP_BOUNDED or PARK_EVIDENCE_COLLECTION. No TV4.",
     "claimBoundary": "Decision evidence only; no implementation expansion, provider/live effect, source absorption, app/project execution, public sync, deployment or push."
   },
-  "nextAllowedMove": "TPGR-TV3 terminal two-comparison pilot is dispatched at material commit 85a99c1bb. The next allowed move is one no-commit worker return at docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md, followed by independent reviewer/closer verification and exactly one terminal roadmap disposition: CLOSE_ROADMAP_BOUNDED or PARK_EVIDENCE_COLLECTION. No TV4, implementation expansion, provider/live/network/credential/store call, source absorption, app/project execution, public sync, deployment or push is authorized. Latest finalized numbered LHW wave remains LHW24."
+  "tpgrTV3TerminalTwoComparisonPilotAccepted20260826": {
+    "status": "REVIEWER_ACCEPTED_WITH_BOUNDED_REPAIR",
+    "roadmap": "docs/roadmaps/CVF_TPGR_TRANCHE_VALUE_ADMISSION_GOVERNANCE_ROADMAP_2026-08-26.md",
+    "workerReturn": "docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md",
+    "materialCommit": "3b3f944ff110245d91502c8e21e65b1b88faabe3",
+    "workerReturnSha256": "c8faae810c7a9ca93f7c8747c61172706e488cf54c93fa06308452967bc3dd66",
+    "reviewerRepair": "C1 finding evidence corrected from OBSERVED to HISTORICAL_BOUNDED because EAFR-R12 already repaired current source; corrected evaluator rerun preserved CONSOLIDATE.",
+    "proof": "Eight pinned hashes and both ancestry links PASS; focused 43/43 PASS; worker-return/reviewer-fast 66/66 PASS; material pre-commit 87/87 PASS; zero provider/live calls.",
+    "terminalDisposition": "CLOSE_ROADMAP_BOUNDED",
+    "successorBoundary": "Roadmap-only terminal closure remains; no TV4 or implicit successor.",
+    "claimBoundary": "Accepted comparison evidence only; no implementation, class activation, provider/live effect, public sync, deployment or push."
+  },
+  "nextAllowedMove": "TPGR-TV3 is independently accepted with one bounded evidence-label repair at material commit 3b3f944ff. The next allowed move is the already-prepared reviewer-owned roadmap-only terminal closure to CLOSED_PASS_BOUNDED with disposition CLOSE_ROADMAP_BOUNDED, followed by a separate final continuity sync. No TV4, implementation expansion, provider/live/network/credential/store call, source absorption, app/project execution, public sync, deployment or push is authorized. Latest finalized numbered LHW wave remains LHW24."
 }

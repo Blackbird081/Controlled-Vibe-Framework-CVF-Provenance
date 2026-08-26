@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "tpgr_tv3_terminal_comparison_dispatched_pending_worker_return",
+  "currentMode": "tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "TPGR-TV3 terminal two-comparison pilot is dispatched at material commit 85a99c1bb. The next allowed move is one no-commit worker return at docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md, followed by independent reviewer/closer verification and exactly one terminal roadmap disposition: CLOSE_ROADMAP_BOUNDED or PARK_EVIDENCE_COLLECTION. No TV4, implementation expansion, provider/live/network/credential/store call, source absorption, app/project execution, public sync, deployment or push is authorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "TPGR-TV3 is independently accepted with one bounded evidence-label repair at material commit 3b3f944ff. The next allowed move is the already-prepared reviewer-owned roadmap-only terminal closure to CLOSED_PASS_BOUNDED with disposition CLOSE_ROADMAP_BOUNDED, followed by a separate final continuity sync. No TV4, implementation expansion, provider/live/network/credential/store call, source absorption, app/project execution, public sync, deployment or push is authorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
