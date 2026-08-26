@@ -8,7 +8,7 @@ Work order ID: EAFR-R9
 
 Date: 2026-08-26
 
-dispatchBaseHead: `f357d8e50fce8397d613dc597af56aab5bf7c98f`
+dispatchBaseHead: `52736f4493361088494ce6396262095d3bbdc0a9`
 
 executionBaseHead: worker must capture actual HEAD and require this committed packet as ancestor
 
@@ -23,6 +23,10 @@ Reviewer/closer: current independent orchestrator/reviewer
 Worker: external-store grant and adapter destination-policy worker role
 
 ## Dispatch Prompt Envelope
+
+originalDispatchCommit: `cec7a67ca0664295e6def40e71ea212489218baa`
+
+reviewerRepairDisposition: `REVIEW_REJECTED_REPAIR_APPLIED`
 
 Batch ID: EAFR-R9-EXTERNAL-STORE-GRANT-AND-ADAPTER-POLICY.
 
@@ -41,9 +45,9 @@ call and edits no source or test file, so no orchestrator provider grant is
 requested, issued, or consumed.
 
 Current-time notes: R8 is accepted `CLOSED_BLOCKED` at material commit
-`fe0ea5937` and session-recorded at `f357d8e50`; the R7/R8 fail-closed guard is
+`fe0ea5937` and session-recorded before repair base `52736f449`; the R7/R8 fail-closed guard is
 retained; the external-store grant and adapter destination-policy residuals
-were verified at dispatch head `f357d8e50`.
+were reverified at repair base `52736f449`.
 
 Do-not-misread notes: designing a grant contract or naming a destination-policy
 owner is not the same as implementing either. Drafting source code, a package
@@ -134,8 +138,8 @@ repairs, closes, and commits.
 
 ## Pre-Flight Checks
 
-Confirm clean worktree, empty staging, actual HEAD, committed dispatch
-ancestry, all pinned hashes, absent worker-return path, and zero live-test
+Confirm clean worktree, empty staging, actual HEAD, committed repaired-dispatch
+ancestry, all immutable-input pinned hashes, absent worker-return path, and zero live-test
 selection. Capture the current denial-reason and dependency-manifest state
 before any read. Hash drift or an existing return path blocks before
 authoring.
@@ -160,21 +164,25 @@ baseline, work order, public clone, or deployment path.
 
 | Path | SHA-256 |
 | --- | --- |
-| `docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md` | `a44fd863fcd82cce367274d20c9f6e061a7d2a8dcd521e20aa61e6ff32e527e6` |
 | `docs/reviews/CVF_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_COMPLETION_2026-08-26.md` | `775a8785de820c8e2bbe163d2045e922a94956fc8dd13f58a121fb446943c5c4` |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts` | `2e4f869bb6d912db9a480b0d178be62bce457991f90f485da13d13f72bc237f5` |
 | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts` | `75f342ce7e09815af99b3ac778b980373986bc54f39608ca3aecf4e823082c74` |
 | `EXTENSIONS/CVF_MODEL_GATEWAY/src/openai-compatible-execute-adapter.ts` | `22f264e8e3a8b6cb74d74fad8ae353a6d052a0a4fa2442a7581bcd69169d53c4` |
 | `EXTENSIONS/CVF_MODEL_GATEWAY/tests/openai-compatible-execute-adapter.test.ts` | `c04cb4f5391d7dd0096e45d52837be4d20fa257627ce9159d4e0735e3ea06886` |
 | `EXTENSIONS/CVF_MODEL_GATEWAY/package.json` | `e872962581b31772fbbd4a338723877abef1d2db889c763a261e5c7662cfdd61` |
+| `EXTENSIONS/CVF_MODEL_GATEWAY/README.md` | `b0b287624aa473c5908155b107d7416874626be737b605d044f4617e92f57ee9` |
+| `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts` | `5ae505e2b23e2701ba4ab9673f677ea5872e2bac27a434ab18def3a528e26f22` |
 | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/package.json` | `d5137fe031a17857ad31117ecbc4e9a922ab46cfd8209672a76cff864a5febc3` |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json` | `ed166c492657ab0600af7043f17c2d11b5ca75b52109ef6f3f036bd8c0bd8868` |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/rate-limit.ts` | `3d0bd39f2f45e734bc9b87351ccce810a1d9854208789f1d775e072aae563ad5` |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts` | `d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6` |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts` | `bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27` |
 
-The new worker-return path must be absent. Every hash is calculated at
-`f357d8e50`; mismatch returns `BLOCKED_WITH_REASON` before any decision is
-recorded.
+The new worker-return path must be absent. Every hash in this table is
+calculated at repair base `52736f449`; mismatch returns `BLOCKED_WITH_REASON`
+before any decision is recorded. The active roadmap is intentionally verified
+by committed authority and ancestry rather than exact current-file hash because
+session synchronization legitimately updates its dispatch-status row.
 
 ## Verified Prior State
 
@@ -184,7 +192,9 @@ Verified at dispatch head. The worker must re-derive and report divergence:
 | --- | --- | --- |
 | provider-execution grant contract exists, scoped to `provider` only | `delegation.contract.ts` lines 5-91 | REUSE_AS_PRECEDENT |
 | `classifyDestination` exists only in a test-only file | `provider-execution-guard.ts` line 118 | NAME_AS_RESIDUAL |
-| gateway package has zero runtime/workspace dependencies | `EXTENSIONS/CVF_MODEL_GATEWAY/package.json` | NAME_AS_BLOCKING_FACT |
+| gateway package has zero declared runtime/workspace dependencies | `EXTENSIONS/CVF_MODEL_GATEWAY/package.json` | REJECT_INCOMING_DEPENDENCY_DESIGNS |
+| cvf-web already depends on cvf-model-gateway | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json` | TEST_GATEWAY_AS_SHARED_OWNER |
+| gateway is the approved official gateway surface and runtime-primitives implementation owner | `EXTENSIONS/CVF_MODEL_GATEWAY/README.md` | TEST_GATEWAY_AS_SHARED_OWNER |
 | adapter calls injected fetch with no destination check | `openai-compatible-execute-adapter.ts` lines 47-70 | UNCHANGED_RESIDUAL |
 
 R9 owns only the design-decision output. Editing any of the above files is out
@@ -203,10 +213,13 @@ of scope, and reporting a design as implemented would be false.
 - `classifyDestination`'s logic (protocol/hostname classification) is
   conceptually destination-general, but its concrete implementation lives only
   inside `cvf-web`'s test tree and is invisible to any other package;
-- the gateway package was authored with zero dependencies by design, so any
-  shared-owner disposition that requires the gateway to import from
-  `cvf-web` or `cvf-control-plane-foundation` is a new package-boundary
-  decision, not a code change alone;
+- the gateway package declares no runtime dependency, so a design that makes
+  it import from `cvf-web` or `cvf-control-plane-foundation` is a new
+  package-boundary decision;
+- `cvf-web` already depends on `cvf-model-gateway`, so gateway-local ownership
+  requires no new dependency edge: the adapter can call the policy locally and
+  the Web guard can consume the same exported interface through its current
+  dependency;
 - copying `classifyDestination`'s logic into the gateway would create the
   exact forbidden second permit list the R8 work order already named.
 
@@ -242,14 +255,14 @@ logic into a second permit list and not by silently re-accepting the residual.
 Acceptable dispositions, in preference order:
 
 - **DESIGNATED_SHARED_PACKAGE_OWNER**: source-verify and name the exact shared
-  package (existing or newly justified) both `cvf-web` and
-  `EXTENSIONS/CVF_MODEL_GATEWAY` can depend on without violating either
-  package's existing boundary, and state the precise interface the adapter
-  would call. Adding the dependency edge and moving the function is
-  implementation, deferred to the follow-on work order.
+  package and interface. Test `cvf-model-gateway` first because the adapter can
+  call a local module and cvf-web already depends on the gateway package.
+  Creating/exporting the module and replacing the test-only owner is
+  implementation deferred to the follow-on work order.
 - **BOUNDED_WITH_NAMED_RESIDUAL**: no such shared owner can be source-verified
-  inside the current package boundaries without a change this work order does
-  not authorize. Name the blocking condition and the exact authority required.
+  after the gateway candidate is tested against current owner/package rules.
+  Name the disqualifying source, blocking condition, and exact authority
+  required. The gateway's empty dependency list alone is not a valid blocker.
 
 `ACCEPTED_AS_IS` and silent carry-forward are forbidden. The residual was
 accepted once in R7 and again in R8; R9 exists to either name its shared owner
@@ -302,11 +315,13 @@ every pinned runtime file rather than a behavioral test.
 
 - Assign exactly one disposition from the Adapter Destination Policy Owner
   Contract.
+- Inspect the cvf-web dependency on `cvf-model-gateway`, the gateway package
+  role, and its export barrel before deciding.
 - If `DESIGNATED_SHARED_PACKAGE_OWNER`, name the exact package path and the
   exact function/interface the adapter would call.
 - If `BOUNDED_WITH_NAMED_RESIDUAL`, name the exact blocking condition (for
-  example, the gateway package's zero-dependency boundary) and the exact
-  authority a follow-on work order would need.
+  example, a cited owner rule that disqualifies gateway-local policy ownership)
+  and the exact authority a follow-on work order would need.
 
 ## Adversarial Proof Matrix
 
@@ -315,7 +330,8 @@ every pinned runtime file rather than a behavioral test.
 | worker edits a source or test file to "prove" the design | write-ownership boundary | forbidden; only the worker-return path may be created |
 | grant design widens `ProviderExecutionGrant`'s existing behavior for provider callers | precedent-preservation rule | forbidden; existing callers must be unaffected |
 | destination-policy owner recommends copying classification logic into the gateway | shared-owner rule | forbidden; must name a shared package or return bounded |
-| owner disposition claims the gateway can already import cvf-web or cvf-control-plane-foundation | package-boundary fact | forbidden; gateway package.json shows zero dependencies |
+| owner disposition makes the gateway import cvf-web or cvf-control-plane-foundation | package-boundary fact | forbidden without fresh dependency authority; gateway-local ownership requires neither import |
+| owner disposition ignores the existing cvf-web to gateway dependency | owner-reachability evidence | forbidden; test gateway-local ownership before returning a residual |
 | provider registry keyed by `providerId` proposed as the destination-policy owner | R6 false-green rule | forbidden; destination classification must remain endpoint-keyed |
 | ambient credential or test-selection flag proposed as a valid external-store grant | no-ambient-authority rule | forbidden; only an orchestrator-authored grant object is valid |
 | a design decision is reported as already implemented | scope honesty | forbidden; this tranche is decision-only |
@@ -340,7 +356,7 @@ every pinned runtime file rather than a behavioral test.
 {
   "schemaVersion": "cvf.taskGovernanceManifest.v1",
   "taskId": "EAFR-R9",
-  "requestedProfile": "P2_BOUNDED",
+    "requestedProfile": "P3_ELEVATED",
   "classification": {
     "taskKind": "DOC_CHANGE",
     "authorityImpact": "NONE",
@@ -354,7 +370,10 @@ every pinned runtime file rather than a behavioral test.
   "pathFamilies": [
     "docs/reviews/",
     "docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
-    "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md"
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json"
   ],
   "claims": ["a bounded external-store grant design and one adapter destination-policy owner disposition are source-verified and recorded, with zero implementation"],
   "requiredProof": ["source citations", "unchanged runtime/package hashes", "grant design decision", "adapter owner disposition", "hashes", "worker-return fast gate", "independent review"],
@@ -399,8 +418,8 @@ store, since no runtime file changes in this tranche.
    absence, and pinned hashes.
 2. Read `delegation.contract.ts` and record Decision A's precedent citations
    and proposed design.
-3. Read the gateway package manifest and adapter source and record Decision
-   B's disposition.
+3. Read both package manifests, the gateway README/export barrel, and adapter
+   source; test gateway-local policy ownership before recording Decision B.
 4. Confirm no runtime/package hash changed.
 5. Write the worker return, run the fast gate, and return without staging or
    committing.
@@ -470,6 +489,8 @@ only
 | the orchestrator-grant contract and evaluator already exist for provider execution | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts` | lines 5-14, 48-55, 57-91 | ProviderExecutionGrant; ProviderExecutionRequest; evaluateProviderExecutionAuthority | cvf-control-plane-foundation delegation contract | ACCEPT |
 | `classifyDestination` is defined only in a test-only file | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts` | line 118 | classifyDestination | cvf-web provider execution guard | ACCEPT |
 | the gateway package declares zero runtime or local workspace dependencies | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_MODEL_GATEWAY/package.json` | `dependencies`/`devDependencies` fields | cvf-model-gateway package manifest | cvf-model-gateway | ACCEPT |
+| cvf-web already depends on cvf-model-gateway | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json` | dependencies entry | cvf-model-gateway | cvf-web package manifest | ACCEPT |
+| cvf-model-gateway is the approved official gateway surface and a gateway-runtime implementation owner | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_MODEL_GATEWAY/README.md` | package role and current-cycle execution class | CVF_MODEL_GATEWAY | cvf-model-gateway README | ACCEPT |
 | the adapter still calls a caller-injected fetch with no destination check | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_MODEL_GATEWAY/src/openai-compatible-execute-adapter.ts` | `execute()` body, lines 47-70 | createOpenAiCompatibleExecuteAdapter | OpenAI-compatible execute adapter | ACCEPT |
 
 ## Checker Source Read-Ahead Block
@@ -501,7 +522,7 @@ Returned defects: NONE_RETURNED
 | --- | --- | --- |
 | exact R9 baseline, work-order and return paths | all absent before dispatch authoring | PASS |
 | token search | `EAFR-R9` existed only in the EAFR roadmap's next-tranche row and the R8 completion review's corrective-lane text | PASS |
-| shared-owner candidate survey | `cvf-control-plane-foundation` exists and is consumed by cvf-web; the gateway package declares zero dependencies on it or any local package | PASS |
+| shared-owner candidate survey | cvf-web already depends on cvf-model-gateway; the adapter is local to that gateway; gateway-local ownership is reachable without a new dependency edge | PASS |
 | collision decision | create at most the one worker-return path; no new helper module, contract file, or package | PASS |
 
 ## Dual Agent Surface Matrix
@@ -520,7 +541,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | no-commit worker plus independent reviewer |
 | phase | dispatch pending worker return |
-| baseHeadFor(phase) | dispatchBaseHead=f357d8e50; executionBaseHead=worker captures; closureBaseHead=reviewer captures |
+| baseHeadFor(phase) | dispatchBaseHead=52736f449; executionBaseHead=worker captures; closureBaseHead=reviewer captures |
 | changedSetScope(phase) | one worker-return path only |
 | traceScope(phase, actor) | external-store grant design and adapter destination-policy owner decision |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT |
@@ -603,11 +624,31 @@ evidence.
 | Protected storage paths | memory foundation filenames, folder front door, generated aggregates and indexes remain unchanged |
 | Follow-up condition | any new stable foundation file, split, relocation, or generated-state edit needs separate authorization |
 
-## Operator Checkpoint
+## Operator Authority Boundary
 
 operator.checkpoint.waiver: none. Provider/live/network, build, credential
 access, RFR resumption, BuildAuthority repair, package-dependency edits,
 public sync, deployment, and push all require fresh explicit authority.
+
+## Core Guard Self-Protection Authorization - R9 Dispatch Repair State Hashes
+
+Authorized guard-maintenance scope: update only the active-authority hashes
+for the reviewer-repaired baseline and work order, regenerate the aggregate,
+and preserve the current mode until the material repair commit exists.
+
+Protected paths: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`.
+
+Operator authorization: operator directed the current orchestrator/reviewer to
+clean every R9 dispatch finding before worker handoff.
+
+Rollback boundary: revert only the R9 dispatch-repair hash synchronization if
+the repaired material packet is rejected; retain prior EAFR closure history.
+
+Not authorized: worker source/test/package edits, provider/live/network or
+external-store calls, credentials, build, RFR, BuildAuthority repair, public
+sync, deployment or push.
 
 ## Commit Prompt Readiness
 
@@ -620,16 +661,16 @@ public sync, deployment, and push all require fresh explicit authority.
 
 | Field | Evidence |
 | --- | --- |
-| Actor | dispatcher/orchestrator |
+| Actor | dispatcher/orchestrator plus independent reviewer repair |
 | Provider or surface | private local repository |
-| Session or invocation | EAFR-R9 dispatch authoring, 2026-08-26 |
+| Session or invocation | EAFR-R9 dispatch authoring and reviewer repair, 2026-08-26 |
 | Working directory | repository root |
-| Command or tool surface | source reads, searches, hashes, scaffold, ADIF resolver, packet authoring and gates |
+| Command or tool surface | source reads, searches, hashes, scaffold, ADIF resolver, packet authoring, reviewer repair and gates |
 | Target paths | R9 baseline and work order |
 | Allowed scope source | accepted R8 completion review corrective lane and EAFR roadmap |
-| Before status evidence | clean worktree at HEAD `f357d8e50fce8397d613dc597af56aab5bf7c98f`; staging empty |
-| After status evidence | two dispatch artifacts pending commit |
-| Diff evidence | `git diff --name-status` over exact dispatch document set |
+| Before status evidence | clean worktree at repair base `52736f4493361088494ce6396262095d3bbdc0a9`; staging empty |
+| After status evidence | corrected baseline and work order pending material repair commit |
+| Diff evidence | direct diff over the two exact dispatch documents; mutable roadmap pin removed; omitted dependency evidence added |
 | Approval boundary | R9 dispatch only |
 | Claim boundary | no worker implementation, live, provider, external-store, build, or public effect |
 | Agent type | dispatcher |
@@ -682,27 +723,29 @@ refresh.
 - Epistemic Process Applicability: HIGH_EVIDENCE
 - Expected Result / Prediction: inspection would show a real, reusable grant
   precedent for provider execution but no equivalent for external-store
-  destinations, and a real package-boundary gap blocking a naive shared-owner
-  fix.
-- Evidence Comparison: that held precisely. `ProviderExecutionGrant` and
-  `evaluateProviderExecutionAuthority` are real, typed to `provider` only, and
-  the gateway package's zero-dependency manifest is the exact mechanism
-  preventing today's adapter from reaching any shared classification logic.
+  destinations; independent review would also test whether the claimed
+  package-boundary blocker survives the complete dependency direction.
+- Evidence Comparison: the grant precedent held. The original package-blocker
+  claim did not: cvf-web already depends on cvf-model-gateway, the adapter is
+  local to that gateway, and the gateway is the approved runtime-primitives
+  implementation owner. Gateway-local destination-policy ownership is
+  therefore a real candidate requiring no new dependency edge.
 - Contradiction or Gap Disposition: the tempting resolution is to copy
   `classifyDestination`'s logic directly into the gateway adapter, which would
   appear to close the residual immediately while creating the forbidden
   second permit list. This packet forbids that explicitly and requires a
   named shared-owner decision or an honest bounded residual instead.
-- Claim Update: R9 is ready for bounded no-commit worker execution after this
-  packet is committed. A `BOUNDED_WITH_NAMED_RESIDUAL` outcome on Decision B is
-  an acceptable honest result.
+- Claim Update: R9 is ready for bounded no-commit worker execution after the
+  reviewer-repaired packet is committed and continuity is synchronized. A
+  `BOUNDED_WITH_NAMED_RESIDUAL` outcome on Decision B is acceptable only with a
+  source-backed rule that actually disqualifies gateway-local ownership.
 
 ## Finding-To-Governance Learning Disposition
 
 | Finding | Defect class | Learning lane | Disposition | Next control action |
 | --- | --- | --- | --- | --- |
 | the orchestrator-grant pattern proven for provider execution has no destination-general or external-store-scoped analogue | GOVERNANCE_CONTROL_PLANE_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | R9 names the exact extension shape; implementation remains a separate, later-authorized tranche |
-| a shared destination-classification owner cannot be reached by the gateway adapter without a new package-dependency edge | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | R9 names the owner or the blocking package-boundary fact; a future work order may open the dependency edge under fresh authority |
+| the original dispatch omitted the existing cvf-web to gateway dependency and overstated the package-edge blocker | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | TEMPLATE_UPDATED | repaired packet makes gateway-local ownership the leading source-verified candidate and permits a residual only with a real disqualifying source |
 
 ## Machine Closure Package
 

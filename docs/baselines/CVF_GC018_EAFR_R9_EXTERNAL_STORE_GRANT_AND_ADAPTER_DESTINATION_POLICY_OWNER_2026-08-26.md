@@ -6,7 +6,13 @@ Status: DISPATCH_READY
 
 Batch ID: EAFR-R9-EXTERNAL-STORE-GRANT-AND-ADAPTER-POLICY
 
-Dispatch base head: `f357d8e50fce8397d613dc597af56aab5bf7c98f`
+Dispatch base head: `52736f4493361088494ce6396262095d3bbdc0a9`
+
+Original dispatch provenance: `cec7a67ca0664295e6def40e71ea212489218baa`
+
+Reviewer repair reason: remove a self-invalidating mutable-roadmap hash pin,
+restore final-HEAD choreography, and add the omitted existing dependency
+evidence that makes `cvf-model-gateway` a real shared-owner candidate.
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -72,8 +78,8 @@ Returned defects: NONE_RETURNED
 
 ## Current Runtime Freshness Verification
 
-Verified directly at HEAD `f357d8e50fce8397d613dc597af56aab5bf7c98f` on
-2026-08-26, after R8 session-sync closure:
+Verified directly at repair base `52736f4493361088494ce6396262095d3bbdc0a9`
+on 2026-08-26:
 
 - the R7/R8 fail-closed guard (`classifyDestination` in
   `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts`)
@@ -95,12 +101,19 @@ Verified directly at HEAD `f357d8e50fce8397d613dc597af56aab5bf7c98f` on
 - `classifyDestination` itself is defined only inside the test-only file
   `cvf-web/src/test/provider-execution-guard.ts`; it is not exported from any
   shared package and is not importable outside `cvf-web`'s test tree;
-- `EXTENSIONS/CVF_MODEL_GATEWAY/package.json` declares zero runtime or local
-  workspace dependencies (`devDependencies` only: `@types/node`,
-  `@vitest/coverage-v8`, `typescript`, `vitest`); the gateway package cannot
-  import `cvf-control-plane-foundation`, `cvf-web`, or any other local package
-  without a new dependency edit, which is itself an out-of-manifest,
-  cross-package authority change;
+- `EXTENSIONS/CVF_MODEL_GATEWAY/package.json` declares no runtime or local
+  workspace dependency, so a design that makes the gateway import from
+  `cvf-web` or `cvf-control-plane-foundation` would require a separately
+  authorized package-boundary change;
+- the reverse direction is already present:
+  `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json` declares
+  `cvf-model-gateway` as a local dependency, so the gateway package itself is
+  a source-verified candidate owner that the adapter can call locally and the
+  Web guard can consume through its existing dependency edge;
+- `EXTENSIONS/CVF_MODEL_GATEWAY/README.md` identifies the package as the
+  approved official gateway surface and an implementation owner for gateway
+  runtime primitives; this does not select the final interface, but it rejects
+  the earlier assumption that no shared owner is reachable today;
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/openai-compatible-execute-adapter.ts`
   still calls a caller-supplied `fetchImpl` directly in `execute()` (lines
   53-70), with no destination check of any kind before invoking it; this is
@@ -110,10 +123,9 @@ Verified directly at HEAD `f357d8e50fce8397d613dc597af56aab5bf7c98f` on
   this baseline's manifest may extend;
 - the R8 work order's Adapter Boundary Contract already forbids copying
   `classifyDestination`'s logic into a second permit list; R9 must therefore
-  either (a) source-verify and dispatch a shared package both `cvf-web` and
-  `EXTENSIONS/CVF_MODEL_GATEWAY` can depend on, or (b) return
-  `BOUNDED_WITH_NAMED_RESIDUAL` again, this time naming the missing package
-  edge itself as the blocking condition, not merely the missing logic.
+  test `cvf-model-gateway` as the leading shared-owner candidate and may return
+  `BOUNDED_WITH_NAMED_RESIDUAL` only if a source-backed authority or package
+  rule actually disqualifies it.
 
 No live, provider, network, credential, build, or package-dependency command is
 authorized by this baseline. R9 changes source-verification and dispatch
@@ -132,6 +144,8 @@ posture, and it does not itself add a package dependency, move
 | the guard already imports the grant contract from the shared foundation package | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts` | import block, lines 1-4 | evaluateProviderExecutionAuthority; ProviderExecutionGrant | cvf-web provider execution guard | ACCEPT |
 | `classifyDestination` is defined only in a test-only file and is not exported from any shared package | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts` | file scope; no barrel or package export of this symbol exists | classifyDestination | cvf-web provider execution guard | ACCEPT |
 | the gateway package declares zero runtime or local workspace dependencies | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_MODEL_GATEWAY/package.json` | `dependencies`/`devDependencies` fields | cvf-model-gateway package manifest | cvf-model-gateway | ACCEPT |
+| cvf-web already depends on cvf-model-gateway | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json` | dependencies entry | cvf-model-gateway | cvf-web package manifest | ACCEPT |
+| cvf-model-gateway is the approved official gateway surface and a gateway-runtime implementation owner | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_MODEL_GATEWAY/README.md` | package role and current-cycle execution class | CVF_MODEL_GATEWAY | cvf-model-gateway README | ACCEPT |
 | the adapter still calls a caller-injected fetch with no destination check | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_MODEL_GATEWAY/src/openai-compatible-execute-adapter.ts` | `execute()` body, lines 47-70 | createOpenAiCompatibleExecuteAdapter | OpenAI-compatible execute adapter | ACCEPT |
 | the existing focused adapter test file is the only extensible test path for R9 | RUNTIME_SOURCE_FACT | `EXTENSIONS/CVF_MODEL_GATEWAY/tests/openai-compatible-execute-adapter.test.ts` | file scope | adapter focused test suite | cvf-model-gateway tests | ACCEPT |
 
@@ -172,17 +186,16 @@ logic into a second permit list and not by silently re-accepting the residual.
 Acceptable dispositions, in preference order:
 
 - **DESIGNATED_SHARED_PACKAGE_OWNER**: R9 source-verifies and names the exact
-  shared package (existing or newly justified) both `cvf-web` and
-  `EXTENSIONS/CVF_MODEL_GATEWAY` can depend on without violating either
-  package's existing boundary, and states the precise interface the adapter
-  would call. Adding the dependency edge and moving the function is
-  implementation, deferred to the follow-on work order; R9 decides and records
-  the owner only.
+  shared package and interface. `cvf-model-gateway` is the leading candidate:
+  the adapter can call a local policy module and cvf-web already has the
+  dependency required to consume its exported interface. Creating and
+  exporting that module, then replacing the test-only owner, is implementation
+  deferred to the follow-on work order; R9 decides and records the owner only.
 - **BOUNDED_WITH_NAMED_RESIDUAL**: no such shared owner can be source-verified
-  inside the current package boundaries without a change this baseline does
-  not authorize (for example, a new shared package, or a dependency edit to an
-  existing one). The blocking condition and the exact authority required must
-  be named.
+  after the gateway candidate is tested against current owner and package
+  rules. The disqualifying source, blocking condition, and exact authority
+  required must be named. The gateway's empty dependency list alone is not a
+  valid blocker because local gateway ownership needs no incoming dependency.
 
 `ACCEPTED_AS_IS` and silent carry-forward are forbidden dispositions. The
 residual was accepted once in R7 and again in R8; R9 exists to either name its
