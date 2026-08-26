@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_TV1_DISPATCH_READY
+Status: ACTIVE_TV2_DISPATCH_READY
 
 docType: roadmap
 
@@ -59,6 +59,25 @@ Cost reduction can select `CONSOLIDATE`, `PARK_LOW_VALUE`, or
 Hard successor cap: three tranches total (`TV1`-`TV3`). No TV4 is authorized.
 Any extra need must be independently justified as a new roadmap, not appended.
 
+## Tranche Successor Authority
+
+```json
+{
+  "schemaVersion": "cvf.trancheSuccessorAuthority.v1",
+  "roadmapId": "TPGR-TV",
+  "declaredCap": 3,
+  "authorizedOrdinals": [1, 2, 3],
+  "currentAuthorizedOrdinal": 2,
+  "noTv4": true,
+  "authorityDisposition": "TV2_OPERATOR_AUTHORIZED_SHADOW_ONLY"
+}
+```
+
+This committed roadmap block is the authority source for TV2 cap and ordinal
+validation. A candidate manifest may reference it but may not redefine it.
+TV3 remains separately value-gated despite appearing in `authorizedOrdinals`;
+the array defines the hard ceiling, not automatic successor authority.
+
 ## Mandatory Admission Record
 
 TV1 must design at least these fields: outcome/consumer, severity, evidence
@@ -87,9 +106,11 @@ eligible for a consolidated repair even when its economic return is unknown.
 
 ## Dispatch Boundary
 
-Only TV1 documentation design is dispatched. TV2 and TV3 require independent
-acceptance of their predecessor and an explicit value disposition. No
-implementation path is writable under TV1.
+TV1 is independently accepted at material commit `5084910ce`. The operator's
+2026-08-26 continuation instruction authorizes dispatch authoring for TV2's
+single bounded shadow implementation. TV2 implementation remains no-commit
+worker scope under its exact work order. TV3 still requires independent TV2
+acceptance plus a fresh value disposition; no TV4 exists.
 
 ## Acceptance Criteria
 
