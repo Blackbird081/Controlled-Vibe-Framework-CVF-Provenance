@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=roadmap-only terminal closure then final continuity sync; parked checkpoint=TV4, TPGR-R9, selective execution and all external effects.
+Startup acknowledged: current mode=`tpgr_tranche_value_roadmap_closed_bounded_no_successor`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh operator selection of a separately justified high-value roadmap or explicit parking; parked checkpoint=TV4, TPGR-R9, selective execution and all external effects.
 
 ## Current Mode
 
-Current mode marker: `tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending`
-Current mode: `tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending`
-Previous mode: `tpgr_tv3_terminal_comparison_dispatched_pending_worker_return`
+Current mode marker: `tpgr_tranche_value_roadmap_closed_bounded_no_successor`
+Current mode: `tpgr_tranche_value_roadmap_closed_bounded_no_successor`
+Previous mode: `tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending`
 
 ## Next Allowed Move
 
-Mode: `tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending`; TV3 is independently accepted with one bounded evidence-label repair at `3b3f944ff`. The next allowed move is the prepared roadmap-only terminal closure to `CLOSED_PASS_BOUNDED` / `CLOSE_ROADMAP_BOUNDED`, then final continuity sync. TV4, TPGR-R9, selective execution and all external effects remain parked.
+Mode: `tpgr_tranche_value_roadmap_closed_bounded_no_successor`; the roadmap is terminally `CLOSED_PASS_BOUNDED` at `48c97491f` with `CLOSE_ROADMAP_BOUNDED`, ordinal 3 of cap 3 and no TV4. The next move requires fresh operator selection of a separately justified high-value roadmap or explicit parking. TPGR-R9, selective execution and all external effects remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2365,
+  "stateOrder": 2367,
   "stateKey": "nextAllowedMove",
-  "value": "TPGR-TV3 is independently accepted with one bounded evidence-label repair at material commit 3b3f944ff. The next allowed move is the already-prepared reviewer-owned roadmap-only terminal closure to CLOSED_PASS_BOUNDED with disposition CLOSE_ROADMAP_BOUNDED, followed by a separate final continuity sync. No TV4, implementation expansion, provider/live/network/credential/store call, source absorption, app/project execution, public sync, deployment or push is authorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "The TPGR tranche-value roadmap is CLOSED_PASS_BOUNDED at terminal commit 48c97491f with CLOSE_ROADMAP_BOUNDED, ordinal 3 of cap 3 and no TV4. No successor work remains inside this roadmap. The next allowed move is a fresh operator selection of a separately justified high-value roadmap or explicit parking; no automatic tranche may be inferred. TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

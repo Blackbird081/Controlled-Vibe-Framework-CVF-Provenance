@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2366,
+  "stateKey": "tpgrTrancheValueRoadmapClosedBounded20260826",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "roadmap": "docs/roadmaps/CVF_TPGR_TRANCHE_VALUE_ADMISSION_GOVERNANCE_ROADMAP_2026-08-26.md",
+    "terminalCommit": "48c97491f62a9603be6d1b1c6c57e3a7de9074ea",
+    "roadmapSha256": "a172819994c3de3627fc53c764100bc4699932074526ee64309aa79d4709c379",
+    "workerReturn": "docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md",
+    "workerReturnMaterialCommit": "3b3f944ff110245d91502c8e21e65b1b88faabe3",
+    "terminalDisposition": "CLOSE_ROADMAP_BOUNDED",
+    "proof": "C1 and C2 MATCH; false-stop/false-continue 0/0; focused 43/43, reviewer-fast 66/66 and both material/closure pre-commit 87/87 PASS; zero provider/live calls.",
+    "successorBoundary": "Ordinal 3 of cap 3 complete; no TV4 or implicit successor; future serious independent need requires a new roadmap.",
+    "claimBoundary": "Closed bounded governance roadmap only; no selective execution, TPGR-R9 resume, class activation, external effect, public sync, deployment or push."
+  }
+}

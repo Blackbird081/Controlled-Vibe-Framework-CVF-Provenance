@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending",
-  "previousMode": "tpgr_tv3_terminal_comparison_dispatched_pending_worker_return",
+  "currentMode": "tpgr_tranche_value_roadmap_closed_bounded_no_successor",
+  "previousMode": "tpgr_tv3_reviewer_accepted_terminal_roadmap_closure_pending",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15249,5 +15249,17 @@
     "successorBoundary": "Roadmap-only terminal closure remains; no TV4 or implicit successor.",
     "claimBoundary": "Accepted comparison evidence only; no implementation, class activation, provider/live effect, public sync, deployment or push."
   },
-  "nextAllowedMove": "TPGR-TV3 is independently accepted with one bounded evidence-label repair at material commit 3b3f944ff. The next allowed move is the already-prepared reviewer-owned roadmap-only terminal closure to CLOSED_PASS_BOUNDED with disposition CLOSE_ROADMAP_BOUNDED, followed by a separate final continuity sync. No TV4, implementation expansion, provider/live/network/credential/store call, source absorption, app/project execution, public sync, deployment or push is authorized. Latest finalized numbered LHW wave remains LHW24."
+  "tpgrTrancheValueRoadmapClosedBounded20260826": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "roadmap": "docs/roadmaps/CVF_TPGR_TRANCHE_VALUE_ADMISSION_GOVERNANCE_ROADMAP_2026-08-26.md",
+    "terminalCommit": "48c97491f62a9603be6d1b1c6c57e3a7de9074ea",
+    "roadmapSha256": "a172819994c3de3627fc53c764100bc4699932074526ee64309aa79d4709c379",
+    "workerReturn": "docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md",
+    "workerReturnMaterialCommit": "3b3f944ff110245d91502c8e21e65b1b88faabe3",
+    "terminalDisposition": "CLOSE_ROADMAP_BOUNDED",
+    "proof": "C1 and C2 MATCH; false-stop/false-continue 0/0; focused 43/43, reviewer-fast 66/66 and both material/closure pre-commit 87/87 PASS; zero provider/live calls.",
+    "successorBoundary": "Ordinal 3 of cap 3 complete; no TV4 or implicit successor; future serious independent need requires a new roadmap.",
+    "claimBoundary": "Closed bounded governance roadmap only; no selective execution, TPGR-R9 resume, class activation, external effect, public sync, deployment or push."
+  },
+  "nextAllowedMove": "The TPGR tranche-value roadmap is CLOSED_PASS_BOUNDED at terminal commit 48c97491f with CLOSE_ROADMAP_BOUNDED, ordinal 3 of cap 3 and no TV4. No successor work remains inside this roadmap. The next allowed move is a fresh operator selection of a separately justified high-value roadmap or explicit parking; no automatic tranche may be inferred. TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
