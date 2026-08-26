@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_REENTRY_R1_DISPATCHED_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR
+Status: LPCI1_WEB_R1_CLOSED_BLOCKED_EXECUTION_PLANE_CALLER_REPAIR_REQUIRED
 
 docType: roadmap
 
@@ -20,6 +20,14 @@ Date: 2026-08-26
 ## Current Assessment And Parking Decision
 
 ### 2026-08-26 Delta-Only Re-Entry
+
+Reviewer closure update: R1 is `REVIEWER_ACCEPTED_CLOSED_BLOCKED`. The narrow
+LPCI package composition removes the original Webpack parse failure and all
+five monorepo-relative resolution failures, with focused and touched-package
+suites passing. Exact build exit zero remains blocked by two pre-existing
+Execution Plane caller sites that do not supply the EAFR-R12 grant context.
+That P1 compatibility repair is the only eligible successor; public sync,
+push, Netlify deploy and hosted smoke remain parked.
 
 The operator selected the production hosted-operation plane and supplied the
 exact public repository, Netlify project `vibcode`, and production domain

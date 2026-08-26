@@ -7181,6 +7181,54 @@
         "runtime consumer of ExternalStoreExecutionGrant"
       ],
       "nextScanRecommendation": "Re-scan these named surfaces only when the authority contract, destination policy, adapter enforcement, or Web guard consumer changes."
+    },
+    {
+      "id": "lpci1-web-r1-package-safe-build-composition",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "LPCI1 Web R1 package-safe Model Gateway and Guard Contract build composition",
+      "scopePaths": [
+        "EXTENSIONS/CVF_GUARD_CONTRACT/package.json",
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/package.boundary.test.ts",
+        "EXTENSIONS/CVF_GUARD_CONTRACT/src/receipt-identity.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/package.json",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/package-lock.json",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/gateway-receipt.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/lpci-safe.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/lpci-safe.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/next.config.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/query/route.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/provider-binding.ts"
+      ],
+      "fileCount": 11,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "LPCI1-WEB-R1",
+      "scanDate": "2026-08-26",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_WORKER_RETURN_2026-08-26.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "PACKAGE_SAFE_LPCI_ENTRYPOINT",
+        "GUARD_RECEIPT_IDENTITY_DEPENDENCY",
+        "NEXTJS_TRANSPILE_BOUNDARY"
+      ],
+      "priorAbsorption": "LPCI1 Web R1 replaces the broad Model Gateway root import with a narrow LPCI entrypoint and replaces a monorepo-relative Guard Contract dependency with a declared package subpath. Local package and focused tests only; the exact production build remains blocked by an unrelated Execution Plane caller defect.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "LPCI import from cvf-model-gateway root barrel",
+        "monorepo-relative Guard Contract import from gateway-receipt",
+        "Runtime Adapter Hub import from lpci-safe",
+        "External Integration import from lpci-safe"
+      ],
+      "nextScanRecommendation": "Re-scan only if the LPCI safe entrypoint, receipt identity subpath, package exports, or installed-package build composition changes."
     }
   ]
 }
