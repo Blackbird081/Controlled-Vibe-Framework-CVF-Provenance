@@ -1,5 +1,5 @@
 {
   "stateOrder": 2377,
   "stateKey": "nextAllowedMove",
-  "value": "Execute LPCI1 Web R3 Reviewer Amendment 1 directly: construct the 24-path public candidate from exact LPCI provenance deltas, independently run offline checks/tests and the process-local synthetic Auth.js build, then only on clean proof commit and push public main, observe Netlify, and perform hosted smoke. The 33-file CADP cluster, plain npm install, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute LPCI1 Web R3 Reviewer Amendment 3 directly: clear the 23 server lint warnings on the exact nine added paths without weakening the zero-warning gate, build a new exact 45-path public candidate, and promote only after both exact-SHA server gates pass. Candidate 9373818c, auth weakening, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
 }

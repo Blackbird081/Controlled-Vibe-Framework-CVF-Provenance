@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current execution HEAD before Amendment 2 final manifest reconciliation: `f929f6db4ca1fca8956259031841571977d1cc11`
+- Repository: private provenance source of truth; current execution HEAD before Amendment 3 authority sync: `addaffae9681fab0ca2c0e36f2140dfa810f6dbf`
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_2_security_recovery`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact 34-path R3 security/CI correction and release only after new exact-SHA server gates; parked checkpoint=promotion of 819d8acf, auth weakening, secret-value access, provider calls, R4 and unrelated work.
+Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=clear the exact nine-path server lint debt and release the 45-path R3 candidate only after new exact-SHA server gates; parked checkpoint=promotion of 9373818c, weakening the zero-warning gate, auth weakening, secret-value access, provider calls, R4 and unrelated work.
 
 ## Current Mode
-`lpci1_web_r3_reviewer_amendment_2_security_recovery`
+`lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery`
 
 ## Purpose
 

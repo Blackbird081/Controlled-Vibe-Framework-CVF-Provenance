@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "lpci1_web_r3_reviewer_amendment_2_security_recovery",
+  "currentMode": "lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute LPCI1 Web R3 Reviewer Amendment 1 directly: construct the 24-path public candidate from exact LPCI provenance deltas, independently run offline checks/tests and the process-local synthetic Auth.js build, then only on clean proof commit and push public main, observe Netlify, and perform hosted smoke. The 33-file CADP cluster, plain npm install, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute LPCI1 Web R3 Reviewer Amendment 3 directly: clear the 23 server lint warnings on the exact nine added paths without weakening the zero-warning gate, build a new exact 45-path public candidate, and promote only after both exact-SHA server gates pass. Candidate 9373818c, auth weakening, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "baselineSha256": "7e2cdc2a7115ef27277260111ddafa0bbd67345ac222900de6422a726029bdb8",
+    "baselineSha256": "eb9788566055d85f8aa43d4857f17e69c29963a09db9d0029dfa0a534d904c21",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "workOrderSha256": "69a8396167921ea432ce15063092f80fbee7c306843f0bf0e930110a48679881"
+    "workOrderSha256": "959bf0301997d3da9a5de6308410d7c0e601f88052776e8ac9db0c4ae90e6cc9"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

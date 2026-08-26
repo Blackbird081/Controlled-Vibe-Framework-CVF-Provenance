@@ -505,6 +505,32 @@ existing TemplateCard, CategoryTabs, and IntentEntry user interactions. The revi
 create a new candidate commit, push only the candidate branch, wait for both
 exact-SHA server gates, and promote that identical SHA only on clean results.
 
+## Reviewer Amendment 3 Exact Zero-Warning Manifest
+
+Candidate `9373818caa33be9d424d1abaea9dbe9224281a56` is rejected
+after exact-SHA server Web CI found 23 lint warnings under the existing
+`--max-warnings=0` contract. Preserve that contract and add exactly these nine
+public paths to the prior 36-path manifest:
+
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/home/page.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/workspace/page.test.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.sot3-activation.alibaba.live.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/CompactHeader.test.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/admin/AdminImpersonationControls.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/home/HomeBrowseExperience.tsx`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/hooks/useExecute.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/sot3-activation-evidence-readout.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/sot3-activation-evidence-store.test.ts`
+
+The cumulative amended manifest is exactly 45 paths. Allowed changes are only
+removal of reported unused imports and obsolete lint directives, explicit
+consumption of intentionally omitted integrity hashes, and replacement of the
+two internal location assignments with `useRouter().push()`. Do not alter the
+live-test exclusion, provider behavior, authentication decisions, coverage
+threshold, workflow lint command or any other path. Create and push a new
+candidate SHA, rerun both server gates, and promote only that identical SHA on
+success. This amendment remains LPCI1-WEB-R3 and admits no R4.
+
 ## Foundation Storage Layout Block
 
 N/A with reason: R3 projects existing package-owned source files into the

@@ -139,6 +139,24 @@ intent-front-door handlers. The amended public manifest is exactly 36 paths. A n
 candidate SHA must pass audit, build, tests, coverage, public-sync preflight and
 server-side Web CI before identical-SHA promotion; `819d8acf` remains rejected.
 
+## Reviewer Amendment 3 - Zero-Warning Server-Lint Recovery
+
+Candidate `9373818caa33be9d424d1abaea9dbe9224281a56` passed the
+exact-SHA public-sync preflight and dependency audit, but server-side Web CI
+correctly stopped at `eslint --max-warnings=0` on 23 warnings across nine
+cvf-web paths. Promotion of that SHA is forbidden. Local lint evidence that
+reported zero errors while tolerating warnings was insufficient for the
+server contract.
+
+Keep the zero-warning server gate unchanged. Within this same terminal R3, the
+reviewer may remove only the reported unused imports/directives/bindings and
+replace the two lint-rejected internal `window.location.href` navigations with
+the canonical Next.js router. No behavior, auth invariant, threshold, live-test
+selection or runtime authorization may be weakened. The cumulative public
+manifest becomes exactly 45 paths. The replacement candidate must repeat both
+exact-SHA server gates before identical-SHA promotion. This correction is a
+release-gate recovery, not R4 or a new roadmap.
+
 ## Non-Goals
 
 - no private docs, reviews, roadmaps, session state, registries or governance
