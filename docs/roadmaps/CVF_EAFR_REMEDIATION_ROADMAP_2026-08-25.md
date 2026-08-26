@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R11_READY_FINAL_RECONCILIATION
+Status: ACTIVE_R11_CLOSED_BLOCKED_R12_CONSOLIDATED_REPAIR_REQUIRED
 
 Date: 2026-08-25
 
@@ -67,7 +67,8 @@ consolidated when one repair boundary can prove them safely.
 | EAFR-R8 | isolate ambient external datastore configuration from non-live tests and close the unguarded adapter fetch-injection residual | R7 accepted blocked | REVIEWER_ACCEPTED_CLOSED_BLOCKED; ambient datastore isolation and injected-fake proofs accepted after reviewer repair; live-store grant and adapter injection residual remain blocked |
 | EAFR-R9 | source-verify and govern bounded external-store execution authority plus the shared adapter destination-policy owner | R8 accepted blocked | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; sibling external-store grant design and exact gateway-owned destination-policy interface accepted after two bounded reviewer corrections; implementation remains separately governed |
 | EAFR-R10 | implement the accepted sibling external-store authority contract and one shared gateway-owned adapter destination policy without live-store wiring | R9 accepted bounded | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; exact policy interface restored after reviewer repair; focused 57/57 + 30/30 + 26/26 and three package checks pass; live-store wiring remains unopened |
-| EAFR-R11 | perform final whole-roadmap reconciliation, decide whether RFR may be reconsidered, and classify the tranche-admission/continuation value learning | R10 accepted bounded at `589954085` with continuity `92f1fab6a` | READY_FOR_WORKER; documentation/source evidence only; zero-or-one consolidated successor rule; RFR remains parked |
+| EAFR-R11 | perform final whole-roadmap reconciliation, decide whether RFR may be reconsidered, and classify the tranche-admission/continuation value learning | R10 accepted bounded at `589954085` with continuity `92f1fab6a` | REVIEWER_ACCEPTED_CLOSED_BLOCKED; rows 1-3 resolved fail-closed; P4B-B live-proof harness remains one current P1 because caller `liveAuthorized: true` can reach secret resolution without the existing R1E orchestrator-grant evaluator; exactly one consolidated R12 repair is required; RFR remains parked |
+| EAFR-R12 | make the P4B-B live-proof harness and direct runner require the existing R1E orchestrator grant before secret resolution or bridge execution | R11 reviewer-accepted blocked | PENDING_DISPATCH; one consolidated source/test repair only; existing R1E contract/evaluator must be reused; no live proof, credential access, external effect, RFR execution or TPGR implementation |
 
 ## Design Controls
 
@@ -120,6 +121,9 @@ current `DISPATCH_READY` row may enter worker execution.
 - R11 must reconcile all four R6 P1 rows against current source and accepted
   R7-R10 evidence, select one final EAFR disposition, and permit at most one
   consolidated repair successor when a current P0/P1 remains.
+- R12 must deny before secret resolution and bridge execution for every absent,
+  forbidden, malformed, mismatched, expired or exhausted R1E grant; direct
+  invocation and `liveAuthorized: true` cannot manufacture authority.
 
 ## Risk / Corrective Action
 
@@ -189,11 +193,14 @@ checks pass. Final reconciliation remains necessary because the original R6
 out-of-process harness row was classified outside R7 remit rather than
 terminally reconciled against the later orchestrator-grant rule.
 
-R11 is the final decision tranche. It performs named-source reconciliation,
-not another full suite or live run. It also determines whether the observed
-tranche-economics gap belongs in one later bounded TPGR owner upgrade across
-remediation, external absorption and project delivery. RFR remains parked
-until independent R11 closure.
+R11 closed blocked after named-source reconciliation found one remaining P1:
+the directly invocable P4B-B live-proof harness can resolve a credential on a
+caller boolean without the existing R1E evaluator. Exactly one consolidated
+R12 repair is therefore admitted. R12 must reuse the foundation-owned R1E
+grant/evaluator across the harness and runner, prove denial before secret or
+bridge access with non-live tests, and create no parallel authority type. The
+tranche-economics learning is routed to one later bounded TPGR owner design
+review, not another EAFR successor. RFR remains parked through R12 closure.
 
 ## Checker Source Read-Ahead Block
 
@@ -221,11 +228,11 @@ any runtime behavior.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | EAFR tranche packets | R1-R10 terminal; R11 ready final reconciliation | PASS |
-| Completion or reviewer artifact | accepted R6-R10 reviews | four P1 rows and repair chain retained for R11 | PASS |
-| Roadmap state | this file | R10 accepted bounded; R11 final reconciliation next; RFR parked | PASS |
+| Work order status | EAFR tranche packets | R1-R11 terminal; R12 pending one consolidated dispatch | PASS |
+| Completion or reviewer artifact | accepted R6-R11 reviews | three original P1 rows resolved; one harness authority P1 retained for R12 | PASS |
+| Roadmap state | this file | R11 accepted closed blocked; R12 is the only allowed successor; RFR parked | PASS |
 | Registry JSON | system-chain map | `ARCHITECTURE.md` fingerprint refreshed; freshness CURRENT | PASS |
 | Registry Markdown | N/A with reason: no registry projection | no applicability | BLOCKED |
 | External evidence digest | archived corrected external report | input only, not authority | N/A with reason |
-| System loop interlock | R1D incident -> R1E authority -> R6 P1 inventory -> R7-R10 repair chain -> R11 final decision | fail-closed dependencies and successor cap explicit | PASS |
+| System loop interlock | R1D incident -> R1E authority -> R6 P1 inventory -> R7-R10 repair chain -> R11 final decision -> one R12 repair | fail-closed dependencies and one-successor cap explicit | PASS |
 | Session continuity | separate post-material sync | required after material commit | PASS |
