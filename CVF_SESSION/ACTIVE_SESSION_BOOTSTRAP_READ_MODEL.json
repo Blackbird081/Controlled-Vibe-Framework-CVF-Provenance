@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eafr_r11_dispatch_ready_committed_awaiting_worker_handoff",
+  "currentMode": "eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EAFR-R11 final reconciliation is dispatch-ready and committed at a94d14b18c495cbfff8355eb8c72c6af8aa34cfe. The next allowed move is one no-commit documentation/source reconciliation worker return under the exact R11 packet after ancestry, clean-state, empty-staging and pinned-hash proof. The worker must reconcile all four R6 P1 rows, select one EAFR final disposition, and may recommend at most one consolidated repair candidate only for a current P0/P1. It also evaluates one bounded TPGR owner upgrade for tranche admission/continuation value across remediation, external absorption and project delivery. Worker staging/commit, runtime/test edits, RFR execution, TPGR implementation, live-store wiring, provider/live/network/external-store calls, credentials, package/config edits, BuildAuthority, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EAFR-R11 is reviewer-accepted CLOSED_BLOCKED at material commit 820b677d8. Three original P1 rows are resolved fail-closed; the directly invocable P4B-B live-proof harness remains one current P1 because liveAuthorized true can reach secret resolution without the existing R1E orchestrator-grant evaluator. The next allowed move is source verification and dispatch authoring for exactly one consolidated EAFR-R12 repair covering the harness, direct runner, focused non-live tests, and only the minimal existing-owner consumption edge. RFR execution, TPGR implementation, live/provider/network/credential/store calls, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

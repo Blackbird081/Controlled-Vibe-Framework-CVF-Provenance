@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r11_dispatch_ready_committed_awaiting_worker_handoff",
-  "previousMode": "eafr_r10_reviewer_accepted_closed_pass_bounded_pending_final_reconciliation_dispatch",
+  "currentMode": "eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch",
+  "previousMode": "eafr_r11_dispatch_ready_committed_awaiting_worker_handoff",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15129,7 +15129,7 @@
     "claimBoundary": "R10 closes only the sibling external-store authority contract/evaluator and shared adapter destination-policy implementation tranche. It does not authorize live-store wiring, runtime store use, RFR, BuildAuthority, or any external effect."
   },
   "eafrR11FinalReconciliationTrancheValueAndRfrDecisionDispatch20260826": {
-    "status": "DISPATCH_READY_COMMITTED_AWAITING_WORKER_HANDOFF",
+    "status": "REVIEWER_ACCEPTED_CLOSED_BLOCKED_CONSOLIDATED_REPAIR_REQUIRED",
     "materialCommit": "a94d14b18c495cbfff8355eb8c72c6af8aa34cfe",
     "baseline": "docs/baselines/CVF_GC018_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_BASELINE_2026-08-26.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_2026-08-26.md",
@@ -15142,9 +15142,9 @@
     ],
     "successorCap": "Zero by default; at most one consolidated repair candidate for current source-backed P0/P1. More than one irreducible owner/risk bundle requires fresh authority.",
     "learningRoute": "Evaluate one bounded TPGR owner upgrade for tranche admission/continuation marginal value across remediation, external absorption and project delivery; no parallel framework or implementation in R11.",
-    "proof": "Pre-dispatch 79/79 and pre-commit 87/87 passed; commit hook passed 87/87; zero provider, network, external-store, credential, live, build, release, public-sync, deployment or push action occurred.",
-    "nextAllowedMove": "Transfer the committed R11 packet to a no-commit reconciliation worker. Worker proves ancestry/state/hashes, creates one return, runs the worker-return fast gate, and yields COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
-    "claimBoundary": "Final reconciliation dispatch only. RFR execution, runtime repair and TPGR implementation remain separately governed and parked."
+    "proof": "Reviewer independently confirmed the one-file no-commit return, current harness and runner gap, and worker-return fast gate; repaired overbroad claims and the incomplete successor manifest; closure material is committed at 820b677d8 with pre-commit and hook 87/87 PASS and zero external calls.",
+    "nextAllowedMove": "Author exactly one consolidated EAFR-R12 dispatch for the P4B-B harness and direct runner to reuse the existing R1E grant/evaluator before secret resolution or bridge execution.",
+    "claimBoundary": "R11 reconciliation closure only. R12 implementation, RFR execution and TPGR implementation remain separately governed and parked."
   },
-  "nextAllowedMove": "EAFR-R11 final reconciliation is dispatch-ready and committed at a94d14b18c495cbfff8355eb8c72c6af8aa34cfe. The next allowed move is one no-commit documentation/source reconciliation worker return under the exact R11 packet after ancestry, clean-state, empty-staging and pinned-hash proof. The worker must reconcile all four R6 P1 rows, select one EAFR final disposition, and may recommend at most one consolidated repair candidate only for a current P0/P1. It also evaluates one bounded TPGR owner upgrade for tranche admission/continuation value across remediation, external absorption and project delivery. Worker staging/commit, runtime/test edits, RFR execution, TPGR implementation, live-store wiring, provider/live/network/external-store calls, credentials, package/config edits, BuildAuthority, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "EAFR-R11 is reviewer-accepted CLOSED_BLOCKED at material commit 820b677d8. Three original P1 rows are resolved fail-closed; the directly invocable P4B-B live-proof harness remains one current P1 because liveAuthorized true can reach secret resolution without the existing R1E orchestrator-grant evaluator. The next allowed move is source verification and dispatch authoring for exactly one consolidated EAFR-R12 repair covering the harness, direct runner, focused non-live tests, and only the minimal existing-owner consumption edge. RFR execution, TPGR implementation, live/provider/network/credential/store calls, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

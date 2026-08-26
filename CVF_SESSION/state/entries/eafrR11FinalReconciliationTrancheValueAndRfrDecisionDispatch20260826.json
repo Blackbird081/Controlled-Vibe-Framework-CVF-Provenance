@@ -2,7 +2,7 @@
   "stateOrder": 2349,
   "stateKey": "eafrR11FinalReconciliationTrancheValueAndRfrDecisionDispatch20260826",
   "value": {
-    "status": "DISPATCH_READY_COMMITTED_AWAITING_WORKER_HANDOFF",
+    "status": "REVIEWER_ACCEPTED_CLOSED_BLOCKED_CONSOLIDATED_REPAIR_REQUIRED",
     "materialCommit": "a94d14b18c495cbfff8355eb8c72c6af8aa34cfe",
     "baseline": "docs/baselines/CVF_GC018_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_BASELINE_2026-08-26.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R11_FINAL_RECONCILIATION_TRANCHE_VALUE_AND_RFR_DECISION_2026-08-26.md",
@@ -15,8 +15,8 @@
     ],
     "successorCap": "Zero by default; at most one consolidated repair candidate for current source-backed P0/P1. More than one irreducible owner/risk bundle requires fresh authority.",
     "learningRoute": "Evaluate one bounded TPGR owner upgrade for tranche admission/continuation marginal value across remediation, external absorption and project delivery; no parallel framework or implementation in R11.",
-    "proof": "Pre-dispatch 79/79 and pre-commit 87/87 passed; commit hook passed 87/87; zero provider, network, external-store, credential, live, build, release, public-sync, deployment or push action occurred.",
-    "nextAllowedMove": "Transfer the committed R11 packet to a no-commit reconciliation worker. Worker proves ancestry/state/hashes, creates one return, runs the worker-return fast gate, and yields COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
-    "claimBoundary": "Final reconciliation dispatch only. RFR execution, runtime repair and TPGR implementation remain separately governed and parked."
+    "proof": "Reviewer independently confirmed the one-file no-commit return, current harness and runner gap, and worker-return fast gate; repaired overbroad claims and the incomplete successor manifest; closure material is committed at 820b677d8 with pre-commit and hook 87/87 PASS and zero external calls.",
+    "nextAllowedMove": "Author exactly one consolidated EAFR-R12 dispatch for the P4B-B harness and direct runner to reuse the existing R1E grant/evaluator before secret resolution or bridge execution.",
+    "claimBoundary": "R11 reconciliation closure only. R12 implementation, RFR execution and TPGR implementation remain separately governed and parked."
   }
 }

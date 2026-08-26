@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r11_dispatch_ready_committed_awaiting_worker_handoff`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=R11 one-file no-commit final reconciliation worker under committed packet `a94d14b18`; parked checkpoint=runtime repair, RFR execution, TPGR implementation, live-store wiring, provider/live/network/external-store calls, credentials, package/config edits, BuildAuthority and all external effects.
+Startup acknowledged: current mode=`eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author exactly one consolidated R12 harness/runner grant-repair dispatch after accepted R11 `820b677d8`; parked checkpoint=R12 implementation, RFR execution, TPGR implementation and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r11_dispatch_ready_committed_awaiting_worker_handoff`
-Current mode: `eafr_r11_dispatch_ready_committed_awaiting_worker_handoff`
-Previous mode: `eafr_r10_reviewer_accepted_closed_pass_bounded_pending_final_reconciliation_dispatch`
+Current mode marker: `eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch`
+Current mode: `eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch`
+Previous mode: `eafr_r11_dispatch_ready_committed_awaiting_worker_handoff`
 
 ## Next Allowed Move
 
-Mode: `eafr_r11_dispatch_ready_committed_awaiting_worker_handoff`; the final-reconciliation packet is committed at `a94d14b18` after pre-dispatch 79/79 and pre-commit 87/87. The next allowed move is one no-commit worker return reconciling every R6 P1, selecting one final EAFR disposition, and evaluating one bounded TPGR value-gate owner upgrade. Default successor count is zero; only a current P0/P1 may justify one consolidated repair candidate. Runtime/test repair, RFR execution, TPGR implementation, live-store wiring and all external effects remain parked.
+Mode: `eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch`; R11 closure material is committed at `820b677d8`. Three P1 rows are resolved fail-closed; the directly invocable P4B-B harness remains one current P1 because caller `liveAuthorized: true` can reach secret resolution without the R1E evaluator. The next allowed move is authoring exactly one consolidated R12 dispatch for harness, runner, focused non-live tests and only the minimal existing-owner consumption edge. RFR, TPGR implementation and all external effects remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
