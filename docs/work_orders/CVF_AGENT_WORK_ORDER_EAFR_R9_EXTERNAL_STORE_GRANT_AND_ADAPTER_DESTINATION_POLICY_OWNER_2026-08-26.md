@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED
 
 Work order ID: EAFR-R9
 
@@ -12,7 +12,7 @@ dispatchBaseHead: `52736f4493361088494ce6396262095d3bbdc0a9`
 
 executionBaseHead: worker must capture actual HEAD and require this committed packet as ancestor
 
-closureBaseHead: reviewer captures the committed dispatch head
+closureBaseHead: `40fec48eca08ccc39a7cfb75b555ae116e738420`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -369,6 +369,8 @@ every pinned runtime file rather than a behavioral test.
   },
   "pathFamilies": [
     "docs/reviews/",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+    "docs/corpus-intelligence/registry/entries/eafr-r9-authority-and-destination-policy-source-surfaces.json",
     "docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
     "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
     "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
@@ -540,7 +542,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | --- | --- |
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | no-commit worker plus independent reviewer |
-| phase | dispatch pending worker return |
+| phase | reviewer accepted closed bounded |
 | baseHeadFor(phase) | dispatchBaseHead=52736f449; executionBaseHead=worker captures; closureBaseHead=reviewer captures |
 | changedSetScope(phase) | one worker-return path only |
 | traceScope(phase, actor) | external-store grant design and adapter destination-policy owner decision |
@@ -563,6 +565,30 @@ real sections.
 | adapter destination-policy owner | assign one disposition with real supporting citations |
 | worker return | record complete uncommitted evidence, both decisions and honest scope-boundary reporting |
 
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+| --- | --- |
+| Runtime/source paths checked | `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts`; `EXTENSIONS/CVF_MODEL_GATEWAY/package.json`; `EXTENSIONS/CVF_MODEL_GATEWAY/src/openai-compatible-execute-adapter.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts`; all 13 immutable Source Verification paths pinned above |
+| Current source result | MATCH: all 13 pinned SHA-256 values were independently recomputed at review time and matched; `ProviderExecutionGrant` and `evaluateProviderExecutionAuthority` remain provider-scoped; the only located `classifyDestination` implementation remains the cvf-web test helper |
+| Dependency result | MATCH: cvf-web declares `cvf-model-gateway` as `file:../../CVF_MODEL_GATEWAY`; the gateway declares no runtime `dependencies` and no local-workspace dependency, while declaring four tooling `devDependencies` |
+| Adapter result | MATCH: `openai-compatible-execute-adapter.ts` still invokes its injected `fetchImpl` with the configured endpoint string and no shared destination-policy module is present |
+| Runtime behavior claimed | N/A_WITH_REASON: R9 accepts two design dispositions only and changes no runtime source |
+| Provider/live proof claimed | N/A_WITH_REASON: no runtime-governance behavior, provider execution, external-store access, or release-quality proof is claimed |
+| Implementation disposition | NOT_IMPLEMENTED_BY_DESIGN: the external-store authority contract/evaluator and gateway-owned destination classifier require a separately committed implementation work order |
+| Public-sync claimed | N/A_WITH_REASON: private provenance closure only |
+| Freshness disposition | PASS - current sources support the bounded design decisions and confirm that implementation remains absent |
+
+## Required Artifact Manifest
+
+| Artifact path | Required at handoff | Final disposition |
+| --- | --- | --- |
+| `docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md` | yes | present and source-verified |
+| `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md` | yes | reviewer-converted closed bounded |
+| `docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md` | yes | reviewer-accepted after bounded correction |
+| `docs/corpus-intelligence/registry/entries/eafr-r9-authority-and-destination-policy-source-surfaces.json` | yes | bounded source-coverage entry created after pre-commit enforcement |
+| `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | yes | regenerated from per-entry sources |
+
 ## Worker Return Packet Shape Contract
 
 workerReturnPath: `docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md`
@@ -584,7 +610,7 @@ relabeling.
 
 | Field | Value |
 | --- | --- |
-| completionReviewPath | `docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_COMPLETION_2026-08-26.md` |
+| completionReviewPath | NOT_CREATED_OPTIONAL_WITH_REASON: reviewer decision is recorded in the worker return |
 | reviewerOwnedClosurePaths | worker return, optional completion review, EAFR roadmap and continuity |
 | closureOwner | independent reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
@@ -669,7 +695,7 @@ sync, deployment or push.
 | Target paths | R9 baseline and work order |
 | Allowed scope source | accepted R8 completion review corrective lane and EAFR roadmap |
 | Before status evidence | clean worktree at repair base `52736f4493361088494ce6396262095d3bbdc0a9`; staging empty |
-| After status evidence | corrected baseline and work order pending material repair commit |
+| After status evidence | reviewer-repaired dispatch committed at `85a6f809e`; worker return independently accepted after two bounded documentation corrections |
 | Diff evidence | direct diff over the two exact dispatch documents; mutable roadmap pin removed; omitted dependency evidence added |
 | Approval boundary | R9 dispatch only |
 | Claim boundary | no worker implementation, live, provider, external-store, build, or public effect |
@@ -749,15 +775,16 @@ refresh.
 
 ## Machine Closure Package
 
-| Surface | R9 closure requirement |
-| --- | --- |
-| Work order | reviewer converts pending dispatch state only after acceptance |
-| Completion/reviewer artifact | reviewer-owned decision with citations, dispositions, diff and claim boundary |
-| Roadmap | R9 accepted or blocked; RFR remains parked |
-| Registry JSON/Markdown | N/A with reason: no corpus/generated registry classification changes |
-| External evidence digest | N/A with reason: no external dataset is consumed |
-| System loop interlock | R7 -> R8 -> R9 -> follow-on implementation decision remains explicit |
-| Session continuity | separate post-material sync required |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | repaired R9 worker return | reviewer decision and two disclosed corrections | PASS |
+| Roadmap state | EAFR roadmap | R9 accepted bounded; implementation separately governed | PASS |
+| Registry JSON | EAFR-R9 per-entry source plus generated aggregate | seven bounded source paths and two deferred findings | PASS |
+| Registry Markdown | N/A with reason: no registry projection changes | none | BLOCKED with reason: not applicable |
+| External evidence digest | N/A with reason: no external dataset consumed | none | N/A with reason |
+| System loop interlock | R7 to R8 to R9 to future implementation dispatch | explicit dependency chain | PASS |
+| Session continuity | separate post-material synchronization | material commit required first | BLOCKED with reason: material commit pending |
 
 ## Public Export Disposition
 
@@ -771,8 +798,10 @@ public-sync authority.
 This work order authorizes only bounded source verification and design
 decisions across two named residuals. It authorizes no provider, live,
 network, credential, build, dependency, environment-file, guard,
-configuration, checker, roadmap, registry, public-sync, deployment, or push
+configuration, checker, public-sync, deployment, or push
 action, no RFR resumption, no BuildAuthority repair, and no implementation of
 the grant contract, the evaluator, the shared package, or the adapter change.
+The only registry action is the GC-051 bounded source-coverage entry and its
+generated aggregate required by pre-commit enforcement.
 Naming a design decision is not a security proof and makes no claim about
 credential hygiene, past traffic, or production readiness.

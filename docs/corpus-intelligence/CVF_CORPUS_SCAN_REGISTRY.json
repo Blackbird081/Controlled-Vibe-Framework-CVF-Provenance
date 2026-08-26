@@ -7069,6 +7069,72 @@
         "ambient provider key as sole activation signal"
       ],
       "nextScanRecommendation": "Re-scan if the Vitest include/exclude model, live-test naming convention, or provider-test activation contract changes."
+    },
+    {
+      "id": "eafr-r9-authority-and-destination-policy-source-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "EAFR-R9 external-store authority and adapter destination-policy source surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/package.json",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/README.md",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/openai-compatible-execute-adapter.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts"
+      ],
+      "fileCount": 7,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "EAFR-R9",
+      "scanDate": "2026-08-26",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "EXTERNAL_STORE_EXECUTION_AUTHORITY",
+        "ADAPTER_DESTINATION_POLICY_OWNERSHIP",
+        "PACKAGE_DEPENDENCY_DIRECTION"
+      ],
+      "priorAbsorption": "EAFR-R9 used these named current sources for bounded design decisions only: a sibling external-store execution grant and a gateway-owned adapter destination-policy interface. No implementation or complete corpus scan occurred.",
+      "findings": [
+        {
+          "id": "EAFR-R9-F1",
+          "summary": "The provider-execution grant pattern has no external-store-scoped sibling contract or evaluator.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Implement the accepted sibling contract only under a separately committed implementation work order.",
+          "defectClass": "RULE_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md#finding-to-governance-learning-disposition",
+          "roadmapRef": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+          "workOrderRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md"
+        },
+        {
+          "id": "EAFR-R9-F2",
+          "summary": "Destination classification remains test-local while the gateway adapter can invoke an injected fetch implementation with its configured endpoint.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Create the accepted gateway-owned policy module and wire both consumers only under a separately committed implementation work order.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md#finding-to-governance-learning-disposition",
+          "roadmapRef": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+          "workOrderRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md"
+        }
+      ],
+      "negativeSearchTerms": [
+        "external-store-scoped execution grant or evaluator in delegation.contract.ts",
+        "gateway-local rule disqualifying adapter destination-policy ownership",
+        "reverse cvf-model-gateway dependency on cvf-web"
+      ],
+      "nextScanRecommendation": "Re-scan these named surfaces when a separately governed implementation tranche changes the authority contract, gateway policy module, adapter wiring, or cvf-web consumer."
     }
   ]
 }
