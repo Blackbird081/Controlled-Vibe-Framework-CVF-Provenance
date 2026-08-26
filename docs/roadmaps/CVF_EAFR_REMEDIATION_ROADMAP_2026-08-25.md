@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R10_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED
+Status: ACTIVE_R11_READY_FINAL_RECONCILIATION
 
 Date: 2026-08-25
 
@@ -43,9 +43,10 @@ use of credentials, and resuming the parked RFR checkpoint before EAFR closes.
 
 ## Non-Goals
 
-This roadmap does not combine tranches, pre-approve live calls, treat advisory
-history as authority, or permit a worker to review, close, commit, or publish
-its own work.
+This roadmap does not combine unrelated owner/risk boundaries, pre-approve
+live calls, treat advisory history as authority, or permit a worker to review,
+close, commit, or publish its own work. Related P0/P1 findings should be
+consolidated when one repair boundary can prove them safely.
 
 ## Proposed Tranches
 
@@ -66,6 +67,7 @@ its own work.
 | EAFR-R8 | isolate ambient external datastore configuration from non-live tests and close the unguarded adapter fetch-injection residual | R7 accepted blocked | REVIEWER_ACCEPTED_CLOSED_BLOCKED; ambient datastore isolation and injected-fake proofs accepted after reviewer repair; live-store grant and adapter injection residual remain blocked |
 | EAFR-R9 | source-verify and govern bounded external-store execution authority plus the shared adapter destination-policy owner | R8 accepted blocked | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; sibling external-store grant design and exact gateway-owned destination-policy interface accepted after two bounded reviewer corrections; implementation remains separately governed |
 | EAFR-R10 | implement the accepted sibling external-store authority contract and one shared gateway-owned adapter destination policy without live-store wiring | R9 accepted bounded | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; exact policy interface restored after reviewer repair; focused 57/57 + 30/30 + 26/26 and three package checks pass; live-store wiring remains unopened |
+| EAFR-R11 | perform final whole-roadmap reconciliation, decide whether RFR may be reconsidered, and classify the tranche-admission/continuation value learning | R10 accepted bounded at `589954085` with continuity `92f1fab6a` | READY_FOR_WORKER; documentation/source evidence only; zero-or-one consolidated successor rule; RFR remains parked |
 
 ## Design Controls
 
@@ -80,6 +82,10 @@ its own work.
   expiring grant issued by the orchestrator and enforced before network I/O.
 - Documentation is updated only after corresponding runtime behavior is
   accepted; documentation never substitutes for runtime proof.
+- Risk determines the minimum governance posture; marginal value determines
+  whether non-critical work starts or continues. Current P0/P1 safety defects
+  cannot be parked for cost, while related findings sharing an owner/risk
+  boundary must be consolidated instead of generating micro-tranches.
 
 ## Design Control Gate
 
@@ -111,6 +117,9 @@ current `DISPATCH_READY` row may enter worker execution.
 - R9 must preserve R8 non-live isolation while source-verifying a bounded,
   orchestrator-issued external-store grant and a non-duplicated owner for
   adapter destination policy; selection flags remain non-authoritative.
+- R11 must reconcile all four R6 P1 rows against current source and accepted
+  R7-R10 evidence, select one final EAFR disposition, and permit at most one
+  consolidated repair successor when a current P0/P1 remains.
 
 ## Risk / Corrective Action
 
@@ -171,6 +180,21 @@ guard has no bounded external-store execution grant and the gateway adapter
 still accepts an unobserved injected fetch. RFR remains parked; only R9 source
 verification and dispatch authoring is released.
 
+R9 independently accepts the sibling external-store authority contract design
+and exact gateway-owned destination-policy interface. R10 implements both
+without live-store wiring and closes the injected adapter destination boundary
+after reviewer restores the exact two-symbol public interface. Focused
+foundation 57/57, gateway 30/30 and Web guard 26/26 plus all three package
+checks pass. Final reconciliation remains necessary because the original R6
+out-of-process harness row was classified outside R7 remit rather than
+terminally reconciled against the later orchestrator-grant rule.
+
+R11 is the final decision tranche. It performs named-source reconciliation,
+not another full suite or live run. It also determines whether the observed
+tranche-economics gap belongs in one later bounded TPGR owner upgrade across
+remediation, external absorption and project delivery. RFR remains parked
+until independent R11 closure.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
@@ -197,11 +221,11 @@ any runtime behavior.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | EAFR tranche packets | R1-R5 and R1C committed dispatch authority | PASS |
-| Completion or reviewer artifact | R1C completion review | bounded closure, named residuals and incident recorded | PASS |
-| Roadmap state | this file | R8 accepted blocked; R9 source verification next; RFR parked | PASS |
+| Work order status | EAFR tranche packets | R1-R10 terminal; R11 ready final reconciliation | PASS |
+| Completion or reviewer artifact | accepted R6-R10 reviews | four P1 rows and repair chain retained for R11 | PASS |
+| Roadmap state | this file | R10 accepted bounded; R11 final reconciliation next; RFR parked | PASS |
 | Registry JSON | system-chain map | `ARCHITECTURE.md` fingerprint refreshed; freshness CURRENT | PASS |
 | Registry Markdown | N/A with reason: no registry projection | no applicability | BLOCKED |
 | External evidence digest | archived corrected external report | input only, not authority | N/A with reason |
-| System loop interlock | R1D incident -> R1E authority control -> R6 blocked -> R7 blocked -> R8 blocked -> R9 | fail-closed dependencies explicit | PASS |
+| System loop interlock | R1D incident -> R1E authority -> R6 P1 inventory -> R7-R10 repair chain -> R11 final decision | fail-closed dependencies and successor cap explicit | PASS |
 | Session continuity | separate post-material sync | required after material commit | PASS |
