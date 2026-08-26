@@ -1,0 +1,14 @@
+{
+  "stateOrder": 2370,
+  "stateKey": "lpci1WebR1PackageCompositionClosedBlocked20260826",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_BLOCKED",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
+    "materialCommit": "f7f5cf1ef5731e7e6579af8454a240436ed796a3",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "workerReturnSha256": "b4ab9b7566b9633f33b2789f17a24c89daebcede64395a593818cd0aedb543c3",
+    "acceptedProof": "Original Webpack parse failure and five monorepo-relative resolution failures removed; Model Gateway 343/343, Guard Contract 949/949 with 5 skipped, cvf-web focused 62/62, reviewer-fast 66/66 and pre-commit 87/87 PASS.",
+    "blocker": "Exact production build remains non-zero because two Execution Plane live-proof caller sites omit the EAFR-R12 provider grant context.",
+    "successorBoundary": "Exactly one authority-sensitive R2 caller repair may be authored; public/live/external effects and unrelated successors remain parked."
+  }
+}

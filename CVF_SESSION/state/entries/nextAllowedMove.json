@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2369,
+  "stateOrder": 2371,
   "stateKey": "nextAllowedMove",
-  "value": "Execute exactly the no-commit worker scope in docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md and return the named worker artifact for independent review. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store calls and scope expansion remain parked until private implementation closure and a fresh reviewer/operator checkpoint. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Author and gate exactly one LPCI1 Web R2 no-commit dispatch for the Execution Plane live-proof grant-context caller repair identified by accepted blocked R1 material f7f5cf1ef. No implementation may begin before that packet is committed. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store calls and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
