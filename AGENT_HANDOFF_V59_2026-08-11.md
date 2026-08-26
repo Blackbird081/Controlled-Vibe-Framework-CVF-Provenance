@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth
 - Branch: `main`
-- Current R10 implementation dispatch material: `ebdfdbd29f8958bf8fea90ec85900a9bfdf02151`; R9 reviewer-accepted bounded material closure: `7767c728f`.
+- Current R10 implementation dispatch material: `ebdfdbd29f8958bf8fea90ec85900a9bfdf02151`; dispatch continuity anchor: `8752a84f406d9ccbdf39cf8aed33c26b178aa3bf`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
@@ -121,7 +121,7 @@ Preserve R9's accepted design and hand the committed R10 implementation packet t
 
 ## Current Authority
 
-Continuity parent anchor: `ebdfdbd29`.
+Continuity parent anchor: `8752a84f4`.
 
 | Field | Value |
 |---|---|
