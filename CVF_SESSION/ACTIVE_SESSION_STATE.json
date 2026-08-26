@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "baselineSha256": "b65493dd404bd7359b227e78fc20d6c20bb94d7abd9e38e73f9e67c662bf980d",
+    "baselineSha256": "7e2cdc2a7115ef27277260111ddafa0bbd67345ac222900de6422a726029bdb8",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "workOrderSha256": "0d859ad86bbb218603be5b1a7c36c7f8eda6f7af201a8c0a9ae65e6d752f588f"
+    "workOrderSha256": "69a8396167921ea432ce15063092f80fbee7c306843f0bf0e930110a48679881"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -15308,15 +15308,15 @@
     "status": "REVIEWER_AMENDMENT_2_SECURITY_RECOVERY_ACTIVE",
     "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
     "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "baselineSha256": "b65493dd404bd7359b227e78fc20d6c20bb94d7abd9e38e73f9e67c662bf980d",
+    "baselineSha256": "7e2cdc2a7115ef27277260111ddafa0bbd67345ac222900de6422a726029bdb8",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "workOrderSha256": "0d859ad86bbb218603be5b1a7c36c7f8eda6f7af201a8c0a9ae65e6d752f588f",
+    "workOrderSha256": "69a8396167921ea432ce15063092f80fbee7c306843f0bf0e930110a48679881",
     "dispatchCommit": "51b3baa4a15dd1db95409d12cddb9aca938533f8",
     "workerBoundary": "No-commit worker may prepare only the exact allowlisted public-sync candidate, run local offline checks and synthetic Auth.js build proof, and author the named private worker return.",
     "reviewerBoundary": "Only the independent reviewer may commit, push, observe Netlify deployment, perform hosted smoke, and decide terminal closure.",
     "proof": "Pre-dispatch autorun 79/79, commit-steward preflight PASS, and material pre-commit hook 87/87; zero public mutation, push, deploy, provider call or secret-value read.",
     "successorBoundary": "R3 is the single terminal release tranche; no R4 is authorized.",
-    "reviewerAmendment": "Amendment 1 recovered the 24-path provenance candidate. Amendment 2 rejects candidate 819d8acf after ten Web CI audit findings and authorizes one exact 35-path zero-audit dependency, provenance-bound HMAC-test, CI-contract, and bounded coverage-behavior correction inside the same terminal R3."
+    "reviewerAmendment": "Amendment 1 recovered the 24-path provenance candidate. Amendment 2 rejects candidate 819d8acf after ten Web CI audit findings and authorizes one exact 36-path zero-audit dependency, provenance-bound HMAC-test, CI-contract, and bounded coverage-behavior correction inside the same terminal R3."
   },
   "nextAllowedMove": "Execute LPCI1 Web R3 Reviewer Amendment 1 directly: construct the 24-path public candidate from exact LPCI provenance deltas, independently run offline checks/tests and the process-local synthetic Auth.js build, then only on clean proof commit and push public main, observe Netlify, and perform hosted smoke. The 33-file CADP cluster, plain npm install, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
 }

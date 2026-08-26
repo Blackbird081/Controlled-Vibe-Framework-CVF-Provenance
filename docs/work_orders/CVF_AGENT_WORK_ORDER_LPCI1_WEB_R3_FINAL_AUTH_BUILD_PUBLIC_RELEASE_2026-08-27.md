@@ -474,7 +474,7 @@ tranche and admits no R4.
 ## Reviewer Amendment 2 Exact Security-Recovery Manifest
 
 This reviewer-owned correction remains LPCI1-WEB-R3 and supersedes the
-24-path count with exactly 35 public paths. The original 24 paths remain
+24-path count with exactly 36 public paths. The original 24 paths remain
 authorized. Add exactly:
 
 - `.github/workflows/cvf-web-ci.yml`
@@ -482,6 +482,7 @@ authorized. Add exactly:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.knowledge.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/override/route.governance.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/knowledge/ingest/route.test.ts`
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/knowledge/ingest/w116-cp5-delta.test.ts`
@@ -490,7 +491,7 @@ authorized. Add exactly:
 - `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/home-surface-controls.test.tsx`
 
 For the seven test paths, apply only their source delta from `3c51ac5e6`.
-For already allowlisted `route.test.ts`, `lpci/query/route.test.ts`, and
+For already allowlisted `lpci/query/route.test.ts` and
 `provider-binding.test.ts`, the same commit delta may replace the earlier
 partial projection where applicable. Dependency resolution may access the npm
 registry but must not use `--force`; no provider API, OAuth flow, hosted secret

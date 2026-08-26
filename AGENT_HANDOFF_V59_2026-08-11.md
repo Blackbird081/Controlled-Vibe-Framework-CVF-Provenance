@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current execution HEAD before Amendment 2 coverage test material: `82c774648c5f8e0c19c184fd7f8247bf94fd4b2f`
+- Repository: private provenance source of truth; current execution HEAD before Amendment 2 final manifest reconciliation: `f929f6db4ca1fca8956259031841571977d1cc11`
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
