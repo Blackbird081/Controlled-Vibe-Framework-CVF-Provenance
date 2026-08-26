@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
     "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "08d2f493bede8f1e914d8b0a5cd7342d144ab58c32ddd9e8cd0654a012df2a7f"
+    "workOrderSha256": "c32d030b945aa84045a0ef9454a6d8e06b732811dc0d85bd95211c5bdfb2fb44"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -15324,11 +15324,13 @@
     "baseline": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
     "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "08d2f493bede8f1e914d8b0a5cd7342d144ab58c32ddd9e8cd0654a012df2a7f",
-    "dispatchCommit": "a6cc27189b45f1ccbeee631c4731be33f9defab4",
+    "workOrderSha256": "c32d030b945aa84045a0ef9454a6d8e06b732811dc0d85bd95211c5bdfb2fb44",
+    "dispatchCommit": "a6cc271895cfc015c049e3d0731fff7e99b894e9",
+    "amendmentCommit": "145e980249ee6e779e8fa88021c1960e74a79a5e",
+    "finalContractCommit": "0a27c596c6dbbfdb5909fd152226d47eb4e0abfd",
     "workerBoundary": "One no-commit worker may edit only the four named public workflows, the static CI runner and its focused test, plus the named private worker return.",
     "reviewerBoundary": "Only the independent reviewer may commit or push public changes and evaluate exact-SHA server results.",
-    "proof": "Pre-dispatch 79/79 and dispatch pre-commit 87/87 passed; continuity debt was isolated in eb60e89d3; zero public write, secret read or provider call.",
+    "proof": "Pre-dispatch 79/79 and both dispatch/amendment pre-commit runs 87/87 passed; continuity debt was isolated in eb60e89d3; zero public write, secret read or provider call.",
     "successorBoundary": "Exactly one PCIT-R1 return is admitted; no automatic R2. Genuine product defects remain blocking and require a fresh operator decision."
   },
   "nextAllowedMove": "PCIT-R1 is dispatched at a6cc27189 for one no-commit public CI truthfulness and corpus-boundary reconciliation return. The worker may edit only the named workflow/runner allowlist and must leave genuine product defects blocking. Commit, push, deploy, secrets, provider calls, dependency upgrades, product-source repair, automatic R2 and unrelated parked lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24."

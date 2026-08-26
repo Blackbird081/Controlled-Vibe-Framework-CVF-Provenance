@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; PCIT-R1 public CI truthfulness dispatch: `a6cc27189b45f1ccbeee631c4731be33f9defab4`; next move is exactly one no-commit worker return.
+- Repository: private provenance source of truth; PCIT-R1 dispatch: `a6cc271895cfc015c049e3d0731fff7e99b894e9`; final execution-contract amendment: `0a27c596c6dbbfdb5909fd152226d47eb4e0abfd`; next move is exactly one no-commit worker return.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.

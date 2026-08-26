@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
     "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "08d2f493bede8f1e914d8b0a5cd7342d144ab58c32ddd9e8cd0654a012df2a7f"
+    "workOrderSha256": "c32d030b945aa84045a0ef9454a6d8e06b732811dc0d85bd95211c5bdfb2fb44"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
