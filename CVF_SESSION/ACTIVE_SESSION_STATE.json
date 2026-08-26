@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "tpgr_tv2_shadow_implementation_dispatched_pending_worker_return",
-  "previousMode": "tpgr_tv1_reviewer_accepted_tv2_operator_decision_required",
+  "currentMode": "tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required",
+  "previousMode": "tpgr_tv2_shadow_implementation_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15211,5 +15211,17 @@
     "proof": "pre-dispatch 79/79 PASS; route COMPLIANT P3_ELEVATED; pre-commit 87/87 PASS; zero external effects.",
     "claimBoundary": "Dispatch only; no implemented behavior, TV3, TPGR-R9, provider/live action, public sync, deployment or push."
   },
-  "nextAllowedMove": "TPGR-TV2 shadow implementation dispatch is committed at 8bd43f98a. The next allowed move is the exact no-commit TV2 worker execution and return at docs/reviews/CVF_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md, followed only by independent reviewer/closer evaluation. TV3, TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed. Latest finalized numbered LHW wave remains LHW24."
+  "tpgrTV2TrancheValueAdmissionShadowImplementationAccepted20260826": {
+    "status": "REVIEWER_ACCEPTED_WITH_BOUNDED_REPAIR",
+    "roadmap": "docs/roadmaps/CVF_TPGR_TRANCHE_VALUE_ADMISSION_GOVERNANCE_ROADMAP_2026-08-26.md",
+    "workerReturn": "docs/reviews/CVF_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md",
+    "materialCommit": "227f3d950032ca41015d124d3fbbd85774f2526d",
+    "workerReturnSha256": "ee5c97bfc4458a6bb6b8b24ab5ba8a80ebce13d36635e23c22ced778deb21dd4",
+    "reviewerRepairs": "Bound authority to an ancestor commit and exact Git blob; stale serious records now park before positive decisions; exact SHA-256 and UNKNOWN-cost schema constraints; frozen omitted-receipt digest; same-packet core authorization.",
+    "proof": "43 focused tests PASS; pre-implementation 81/81 PASS; worker-return/reviewer-fast 66/66 PASS; pre-commit 87/87 PASS; committed pre-closure passed all material checks with only the expected pre-sync handoff marker pending; zero provider/live calls.",
+    "successorBoundary": "TV3 requires a fresh operator value decision and is not dispatched; parking is valid; no TV4.",
+    "interlocks": "Shadow-only; valueDispositionAuthoritative false; selective execution false; RUN_FULL_LEGACY_BUNDLE; TPGR-R8 hold unchanged.",
+    "claimBoundary": "Accepted local shadow implementation only; no TV3, TPGR-R9, provider/live effect, public sync, deployment or push."
+  },
+  "nextAllowedMove": "TPGR-TV2 is independently accepted with bounded reviewer repairs at material commit 227f3d950. The next allowed move is a fresh operator value decision whether the capped TV3 two-comparison pilot is worth its time, latency and quota cost. TV3 is not dispatched; parking it is an allowed terminal outcome. TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "tpgr_tv2_shadow_implementation_dispatched_pending_worker_return",
+  "currentMode": "tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "TPGR-TV2 shadow implementation dispatch is committed at 8bd43f98a. The next allowed move is the exact no-commit TV2 worker execution and return at docs/reviews/CVF_TPGR_TV2_TRANCHE_VALUE_ADMISSION_SHADOW_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md, followed only by independent reviewer/closer evaluation. TV3, TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "TPGR-TV2 is independently accepted with bounded reviewer repairs at material commit 227f3d950. The next allowed move is a fresh operator value decision whether the capped TV3 two-comparison pilot is worth its time, latency and quota cost. TV3 is not dispatched; parking it is an allowed terminal outcome. TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. No TV4 is allowed. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`tpgr_tv2_shadow_implementation_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=exact no-commit TV2 worker return then independent review; parked checkpoint=TV3, TPGR-R9, selective execution and all external effects.
+Startup acknowledged: current mode=`tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh operator value decision on the capped TV3 pilot; parked checkpoint=TV3 execution until that decision, TPGR-R9, selective execution and all external effects.
 
 ## Current Mode
 
-Current mode marker: `tpgr_tv2_shadow_implementation_dispatched_pending_worker_return`
-Current mode: `tpgr_tv2_shadow_implementation_dispatched_pending_worker_return`
-Previous mode: `tpgr_tv1_reviewer_accepted_tv2_operator_decision_required`
+Current mode marker: `tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`
+Current mode: `tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`
+Previous mode: `tpgr_tv2_shadow_implementation_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `tpgr_tv2_shadow_implementation_dispatched_pending_worker_return`; the exact TV2 no-commit packet is committed at `8bd43f98a`. The next allowed move is the bounded TV2 worker return followed by independent review. TV3, TPGR-R9, selective execution and all external effects remain parked; no TV4 is allowed.
+Mode: `tpgr_tv2_reviewer_accepted_tv3_operator_value_decision_required`; TV2 is independently accepted with bounded reviewer repairs at `227f3d950`. The next allowed move is a fresh operator value decision whether the two-comparison TV3 pilot is worth its cost; parking is valid. TV3 is not dispatched, and TPGR-R9, selective execution and all external effects remain parked; no TV4 is allowed.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
