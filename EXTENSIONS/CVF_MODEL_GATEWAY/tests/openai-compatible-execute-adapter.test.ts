@@ -150,22 +150,15 @@ describe("OpenAI-compatible execute adapter", () => {
     })).rejects.toThrow("OpenAI-compatible provider request failed");
   });
 
-  // EAFR-R8 adapter boundary residual (BOUNDED_WITH_NAMED_RESIDUAL, disposition
-  // recorded in the R8 worker return). This adapter calls its injected
-  // `fetchImpl` directly rather than `globalThis.fetch`, so the cvf-web
-  // provider-execution-guard installed in the shared test setup -- which wraps
-  // `globalThis.fetch` -- cannot observe or deny calls made through it. That
-  // guard's destination-classification logic (`classifyDestination`,
-  // `PROVIDER_HOSTS`) lives only in `cvf-web/src/test/`, a downstream consumer
-  // of this package, not the reverse; importing it here would invert the
-  // package dependency direction and is exactly the "second permit list" the
-  // R8 work order forbids. No shared, gateway-owned classification source
-  // currently exists for this package to import instead. This test documents
-  // the bypass as a fact about current behavior, not an approval of it: any
-  // permissive fetchImpl, regardless of the endpoint it targets, is honoured.
-  it("[EAFR-R8-RESIDUAL] an injected fetchImpl bypasses guard-based destination classification entirely", async () => {
+  // EAFR-R10. Closes the EAFR-R8 adapter boundary residual: the adapter now
+  // classifies its configured endpoint through the shared, gateway-owned
+  // classifyAdapterDestination policy before ever invoking the injected
+  // fetchImpl, so an unrecognised or external-store destination is denied
+  // before any network I/O regardless of which fetch implementation the
+  // caller supplies.
+  it("[EAFR-R10] denies an unrecognised endpoint before the injected fetch is called", async () => {
     const unrecognisedEndpoint = "https://not-a-recognised-provider.example.invalid/v1/chat/completions";
-    const fetchImpl = successFetch("bypassed the guard");
+    const fetchImpl = successFetch("must not be reached");
     const adapter = createOpenAiCompatibleExecuteAdapter({
       providerId: "openai",
       modelId: "gpt-4o",
@@ -174,22 +167,95 @@ describe("OpenAI-compatible execute adapter", () => {
       fetchImpl,
     });
 
+    await expect(adapter.execute({
+      traceId: "trace-r10-deny",
+      providerId: "openai",
+      modelId: "gpt-4o",
+      prompt: "question",
+    })).rejects.toThrow("CVF_ADAPTER_DESTINATION_DENIED");
+    expect(fetchImpl).not.toHaveBeenCalled();
+  });
+
+  it("[EAFR-R10] denies an external-store endpoint before the injected fetch is called", async () => {
+    const upstashEndpoint = "https://balanced-shrew-118656.upstash.io/some/path";
+    const fetchImpl = successFetch("must not be reached");
+    const adapter = createOpenAiCompatibleExecuteAdapter({
+      providerId: "openai",
+      modelId: "gpt-4o",
+      endpoint: upstashEndpoint,
+      secret: "fake-test-secret",
+      fetchImpl,
+    });
+
+    await expect(adapter.execute({
+      traceId: "trace-r10-store-deny",
+      providerId: "openai",
+      modelId: "gpt-4o",
+      prompt: "question",
+    })).rejects.toThrow("CVF_ADAPTER_DESTINATION_DENIED");
+    expect(fetchImpl).not.toHaveBeenCalled();
+  });
+
+  it("[EAFR-R10] denies a covered provider endpoint whose identity does not match configured providerId, before fetch", async () => {
+    const fetchImpl = successFetch("must not be reached");
+    const adapter = createOpenAiCompatibleExecuteAdapter({
+      providerId: "openai",
+      modelId: "gpt-4o",
+      // A real, recognised provider endpoint, but for a different provider
+      // than the adapter is configured with.
+      endpoint: "https://api.anthropic.com/v1/chat/completions",
+      secret: "fake-test-secret",
+      fetchImpl,
+    });
+
+    await expect(adapter.execute({
+      traceId: "trace-r10-provider-mismatch",
+      providerId: "openai",
+      modelId: "gpt-4o",
+      prompt: "question",
+    })).rejects.toThrow("CVF_ADAPTER_DESTINATION_DENIED");
+    expect(fetchImpl).not.toHaveBeenCalled();
+  });
+
+  it("[EAFR-R10] permits a matching provider endpoint through to the injected fetch", async () => {
+    const fetchImpl = successFetch("matching provider permitted");
+    const adapter = createOpenAiCompatibleExecuteAdapter({
+      providerId: "openai",
+      modelId: "gpt-4o",
+      endpoint: "https://api.openai.com/v1/chat/completions",
+      secret: "fake-test-secret",
+      fetchImpl,
+    });
+
     const result = await adapter.execute({
-      traceId: "trace-r8-residual",
+      traceId: "trace-r10-provider-match",
       providerId: "openai",
       modelId: "gpt-4o",
       prompt: "question",
     });
 
-    // The adapter has no opinion about the endpoint's trustworthiness; it
-    // forwards whatever fetchImpl the caller supplies to whatever endpoint the
-    // caller supplies. This is the residual: closing it requires either a
-    // shared, gateway-owned destination policy this adapter can consult, or an
-    // architectural change so the guard can observe adapter-level fetch calls.
-    expect(fetchImpl).toHaveBeenCalledWith(
-      unrecognisedEndpoint,
-      expect.anything(),
-    );
-    expect(result.text).toBe("bypassed the guard");
+    expect(fetchImpl).toHaveBeenCalledOnce();
+    expect(result.text).toBe("matching provider permitted");
+  });
+
+  it("[EAFR-R10] permits a non-provider (relative path) compatibility endpoint through to the injected fetch", async () => {
+    const fetchImpl = successFetch("non-provider permitted");
+    const adapter = createOpenAiCompatibleExecuteAdapter({
+      providerId: "openai",
+      modelId: "gpt-4o",
+      endpoint: "/api/local-openai-compatible-proxy",
+      secret: "fake-test-secret",
+      fetchImpl,
+    });
+
+    const result = await adapter.execute({
+      traceId: "trace-r10-non-provider",
+      providerId: "openai",
+      modelId: "gpt-4o",
+      prompt: "question",
+    });
+
+    expect(fetchImpl).toHaveBeenCalledOnce();
+    expect(result.text).toBe("non-provider permitted");
   });
 });

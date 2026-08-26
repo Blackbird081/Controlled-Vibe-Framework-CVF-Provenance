@@ -1,14 +1,18 @@
 import { describe, expect, it, vi } from 'vitest';
 import {
+  ALIBABA_DASHSCOPE_INTL_ENDPOINT,
   ALIBABA_DASHSCOPE_MAINLAND_ENDPOINT,
   resolveAlibabaDashScopeEndpoint,
 } from 'cvf-model-gateway';
 import {
   classifyDestination,
   createProviderExecutionFetchGuard,
-  knownProviderHostnames,
-  providerForHostname,
 } from './provider-execution-guard';
+
+// EAFR-R10. classifyDestination is a thin Request-to-URL compatibility
+// wrapper over the exact public gateway policy interface. Diagnostic helper
+// exports are intentionally unnecessary: tests exercise the public
+// three-variant classifier directly.
 
 const grant = JSON.stringify({
   authority: 'ORCHESTRATOR_GRANT_REQUIRED',
@@ -127,13 +131,19 @@ describe('endpoint authority derivation', () => {
     // Negative derivation test: the mainland hostname appears nowhere in the
     // guard source as a literal. It is covered only because the gateway
     // exports the constant it is derived from.
-    const mainlandHostname = new URL(ALIBABA_DASHSCOPE_MAINLAND_ENDPOINT).hostname;
-    expect(providerForHostname(mainlandHostname)).toBe('alibaba');
+    expect(classifyDestination(ALIBABA_DASHSCOPE_MAINLAND_ENDPOINT)).toEqual({
+      kind: 'provider',
+      provider: 'alibaba',
+    });
   });
 
   it('covers both DashScope endpoints rather than inferring from provider identity', () => {
-    expect(providerForHostname('dashscope-intl.aliyuncs.com')).toBe('alibaba');
-    expect(providerForHostname('dashscope.aliyuncs.com')).toBe('alibaba');
+    expect(classifyDestination(ALIBABA_DASHSCOPE_INTL_ENDPOINT)).toEqual({
+      kind: 'provider', provider: 'alibaba',
+    });
+    expect(classifyDestination(ALIBABA_DASHSCOPE_MAINLAND_ENDPOINT)).toEqual({
+      kind: 'provider', provider: 'alibaba',
+    });
   });
 
   it('denies the mainland endpoint without a grant, exactly as the intl endpoint is denied', async () => {
@@ -146,15 +156,18 @@ describe('endpoint authority derivation', () => {
   });
 
   it('recognises every derived and declared provider hostname', () => {
-    expect(knownProviderHostnames()).toEqual([
-      'api.anthropic.com',
-      'api.deepseek.com',
-      'api.openai.com',
-      'dashscope-intl.aliyuncs.com',
-      'dashscope.aliyuncs.com',
-      'generativelanguage.googleapis.com',
-      'openrouter.ai',
-    ]);
+    const expected = [
+      ['https://api.anthropic.com/v1/messages', 'claude'],
+      ['https://api.deepseek.com/v1/chat/completions', 'deepseek'],
+      ['https://api.openai.com/v1/chat/completions', 'openai'],
+      [ALIBABA_DASHSCOPE_INTL_ENDPOINT, 'alibaba'],
+      [ALIBABA_DASHSCOPE_MAINLAND_ENDPOINT, 'alibaba'],
+      ['https://generativelanguage.googleapis.com/v1beta/models', 'gemini'],
+      ['https://openrouter.ai/api/v1/chat/completions', 'openrouter'],
+    ];
+    for (const [endpoint, provider] of expected) {
+      expect(classifyDestination(endpoint)).toEqual({ kind: 'provider', provider });
+    }
   });
 });
 

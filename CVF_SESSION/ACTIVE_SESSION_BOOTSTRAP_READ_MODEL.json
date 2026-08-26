@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_BASELINE_2026-08-26.md",
     "baselineSha256": "27c3aebcfa2189887fa03803a65265f6850a78ee04374ff19fdc2002b6a3aebb",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_2026-08-26.md",
-    "workOrderSha256": "1e207200494450fbd69f98cc2b25065df6ddb13ae38a5304a3de71ff11d11705"
+    "workOrderSha256": "611b9e4b07c4ded5110694c5bf74b1ce4555caa1a92ff05df2af66e288fc9ebc"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED
 
 Work order ID: EAFR-R10
 
@@ -11,6 +11,8 @@ Date: 2026-08-26
 dispatchBaseHead: `45684c86e804b2e5a5ac8ed581c57336bc93e5c8`
 
 executionBaseHead: worker must capture actual HEAD and require the committed packet as ancestor
+
+closureBaseHead: `f24811243a091226eda81930e4f4fd042bf83059`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -264,16 +266,16 @@ From `EXTENSIONS/CVF_MODEL_GATEWAY`:
 From `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web`:
 
 1. `npm run test:run -- src/test/provider-execution-guard.test.ts`
-2. `npm run typecheck`
+2. `npm run check`
 
 From repository root:
 
 1. exact `git diff --name-status` and `git status --short --untracked-files=all`
 2. `python governance/compat/run_worker_return_fast_gate.py`
 
-If a package script name is absent despite the pinned manifest, return
-blocked; do not substitute a broader or live command. Individual checker
-substitution for the worker-return fast gate is forbidden.
+Use the exact package scripts declared by the pinned manifests. Do not
+substitute a broader or live command. Individual checker substitution for the
+worker-return fast gate is forbidden.
 
 ## Acceptance Criteria
 
@@ -562,6 +564,27 @@ operator.checkpoint.waiver: none. API keys do not imply authority. Provider,
 live, network, external-store, credential, RFR, BuildAuthority, package/config,
 public sync, deployment and push remain parked.
 
+## Core Guard Self-Protection Authorization - R10 Reviewer Repair Hashes
+
+Authorized guard-maintenance scope: update only R10 current-authority hashes
+after the reviewer corrects the dispatcher command and converts this work
+order to accepted closure; regenerate session aggregates without changing the
+pre-material mode.
+
+Protected paths: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`.
+
+Operator authorization: operator assigned the current agent full
+orchestrator/reviewer authority to clean worker findings and close the packet.
+
+Rollback boundary: revert only the R10 reviewer material/continuity batches;
+retain committed dispatch `ebdfdbd29` and R9 history.
+
+Not authorized: provider/live/network/external-store calls, credentials,
+live-store wiring, package/config edits, RFR, BuildAuthority, public sync,
+deployment or push.
+
 ## Commit Prompt Readiness
 
 - worker commit: forbidden;
@@ -653,6 +676,19 @@ Reason: targeted named-file implementation, not an intake refresh or corpus scan
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance implementation tranche; no public-sync authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | repaired R10 worker return | reviewer decision and two disclosed corrections | PASS |
+| Roadmap state | `docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md` | R10 accepted bounded; live-store wiring unopened | PASS |
+| Registry JSON | R10 GC-051 per-entry source plus generated aggregate | ten named source/test paths covered | PASS |
+| Registry Markdown | N/A with reason: no Markdown registry projection exists | JSON registry is canonical | BLOCKED with reason: not applicable |
+| External evidence digest | N/A with reason: no external evidence consumed | none | N/A with reason |
+| System loop interlock | R8 residual to R9 design to R10 implementation | explicit dependency chain and focused proof | PASS |
+| Session continuity | separate post-material synchronization | material commit required first | BLOCKED with reason: material commit pending |
 
 ## Claim Boundary
 

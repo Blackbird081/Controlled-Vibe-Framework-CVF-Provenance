@@ -349,6 +349,9 @@ export {
   createOpenAiCompatibleExecuteAdapter,
 } from "./openai-compatible-execute-adapter";
 
+export type { AdapterDestinationDecision } from "./adapter-destination-policy";
+export { classifyAdapterDestination } from "./adapter-destination-policy";
+
 export type {
   ProviderAdapterConformanceStatus,
   ProviderAdapterConformanceInput,

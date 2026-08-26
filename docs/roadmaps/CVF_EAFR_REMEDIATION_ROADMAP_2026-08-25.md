@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R10_DISPATCH_READY_COMMITTED_AWAITING_WORKER_HANDOFF
+Status: ACTIVE_R10_REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED
 
 Date: 2026-08-25
 
@@ -65,7 +65,7 @@ its own work.
 | EAFR-R7 | repair provider-execution authority coverage across endpoint constants, configurable/caller endpoints and out-of-process harness boundaries | R6 accepted blocked | REVIEWER_ACCEPTED_CLOSED_BLOCKED; fail-closed repair retained; Upstash non-live egress and adapter injection residual keep RFR parked |
 | EAFR-R8 | isolate ambient external datastore configuration from non-live tests and close the unguarded adapter fetch-injection residual | R7 accepted blocked | REVIEWER_ACCEPTED_CLOSED_BLOCKED; ambient datastore isolation and injected-fake proofs accepted after reviewer repair; live-store grant and adapter injection residual remain blocked |
 | EAFR-R9 | source-verify and govern bounded external-store execution authority plus the shared adapter destination-policy owner | R8 accepted blocked | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; sibling external-store grant design and exact gateway-owned destination-policy interface accepted after two bounded reviewer corrections; implementation remains separately governed |
-| EAFR-R10 | implement the accepted sibling external-store authority contract and one shared gateway-owned adapter destination policy without live-store wiring | R9 accepted bounded | DISPATCH_READY_COMMITTED_AWAITING_WORKER_HANDOFF; exact no-commit packet committed at `ebdfdbd29`; worker must prove this ancestry before execution |
+| EAFR-R10 | implement the accepted sibling external-store authority contract and one shared gateway-owned adapter destination policy without live-store wiring | R9 accepted bounded | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; exact policy interface restored after reviewer repair; focused 57/57 + 30/30 + 26/26 and three package checks pass; live-store wiring remains unopened |
 
 ## Design Controls
 

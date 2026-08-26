@@ -7135,6 +7135,52 @@
         "reverse cvf-model-gateway dependency on cvf-web"
       ],
       "nextScanRecommendation": "Re-scan these named surfaces when a separately governed implementation tranche changes the authority contract, gateway policy module, adapter wiring, or cvf-web consumer."
+    },
+    {
+      "id": "eafr-r10-authority-and-shared-destination-policy-implementation-source-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "EAFR-R10 external-store authority and shared adapter destination-policy implementation source surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/control.plane.coordination.barrel.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/delegation.contract.test.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/adapter-destination-policy.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/openai-compatible-execute-adapter.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/adapter-destination-policy.test.ts",
+        "EXTENSIONS/CVF_MODEL_GATEWAY/tests/openai-compatible-execute-adapter.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/provider-execution-guard.test.ts"
+      ],
+      "fileCount": 10,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "EAFR-R10",
+      "scanDate": "2026-08-26",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_BASELINE_2026-08-26.md",
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "EXTERNAL_STORE_EXECUTION_AUTHORITY",
+        "ADAPTER_DESTINATION_POLICY_OWNERSHIP",
+        "INJECTED_FETCH_FAIL_CLOSED_BOUNDARY"
+      ],
+      "priorAbsorption": "EAFR-R10 implemented the R9-accepted sibling external-store authority evaluator and exact gateway-owned adapter destination classifier across ten named source/test files. Focused local fake-based proof only; no complete corpus or live-store claim.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "second destination permit list outside adapter-destination-policy.ts",
+        "providerForHostname public gateway barrel export",
+        "runtime consumer of ExternalStoreExecutionGrant"
+      ],
+      "nextScanRecommendation": "Re-scan these named surfaces only when the authority contract, destination policy, adapter enforcement, or Web guard consumer changes."
     }
   ]
 }
