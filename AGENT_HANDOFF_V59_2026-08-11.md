@@ -48,10 +48,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r8_reviewer_accepted_closed_blocked_r9_source_verification`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R9 source verification and dispatch authoring only; parked checkpoint=RFR, provider/live/network and external-store calls, build, BuildAuthority repair and all external effects.
+Startup acknowledged: current mode=`eafr_r9_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independent reviewer/closer evaluation of the R9 worker return once it exists; parked checkpoint=RFR, provider/live/network and external-store calls, build, BuildAuthority repair and all external effects.
 
 ## Current Mode
-`eafr_r8_reviewer_accepted_closed_blocked_r9_source_verification`
+`eafr_r9_dispatched_pending_worker_return`
 
 ## Purpose
 
@@ -66,7 +66,7 @@ Preserve the accepted blocked R8 closure and release only fresh R9 source verifi
 
 ## Latest Work / Changes
 
-- EAFR-R8 is reviewer-accepted `CLOSED_BLOCKED` at material commit `fe0ea5937` after the reviewer added the missing injected storage append/read proof. Evidence: Web focused 97/97, gateway 7/7, both TypeScript checks PASS, full Web 3538/3560 with 22 named residual failures, worker-return fast COMPLIANT and pre-commit 87/87. Ambient Upstash construction is isolated; bounded live-store authority and the adapter injected-fetch residual remain. R9 source verification/dispatch authoring is next; RFR stays parked.
+- EAFR-R9 is dispatched at material commit `cec7a67ca` after fresh source verification: the no-commit worker must decide, without implementing, an external-store execution grant design mirroring `ProviderExecutionGrant`/`evaluateProviderExecutionAuthority`, and one Adapter Destination Policy Owner disposition for the gateway adapter's injected-fetch residual, given the gateway package's zero-dependency boundary. Pre-dispatch autorun gate COMPLIANT, pre-commit 87/87, zero provider/external-store calls; write ownership is exactly one worker-return path. EAFR-R8 is reviewer-accepted `CLOSED_BLOCKED` at material commit `fe0ea5937` after the reviewer added the missing injected storage append/read proof. Evidence: Web focused 97/97, gateway 7/7, both TypeScript checks PASS, full Web 3538/3560 with 22 named residual failures, worker-return fast COMPLIANT and pre-commit 87/87. Ambient Upstash construction is isolated; bounded live-store authority and the adapter injected-fetch residual remain.
 - EAFR-R8 is dispatched at `60635ed19` after reviewer repaired its test-manifest gap. Packet SHA-256 values are `f799139a7660dcb6fc0908c111652969f04f13f3793646e44fe39290ac0edc50` and `b0031f0218862ced4f54abdc4a6b788d82ac3dd3dbba27515db53f8adda28544`; pre-dispatch 79/79 and pre-commit 87/87 passed with zero external calls.
 - EAFR-R7 is reviewer-accepted `CLOSED_BLOCKED` at material commit `74cf99354`: the fail-closed guard is retained after protocol-relative reviewer repair; focused 26/26 and TypeScript pass; full non-live is 3465 pass/88 named fail because ambient Upstash egress is blocked. The adapter injection residual remains. R8 source verification/dispatch authoring is next; RFR stays parked.
 - EAFR-R7 dispatch handoff mode alignment was repaired at `eaa35a7b7`; its parent is dispatch continuity `b58f9b6cb`. This is continuity-only and changes no R7 evidence or authority.
@@ -121,14 +121,14 @@ Preserve the accepted blocked R8 closure and release only fresh R9 source verifi
 
 ## Current Authority
 
-Continuity parent anchor: `fe0ea5937`.
+Continuity parent anchor: `cec7a67ca`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R8 `REVIEWER_ACCEPTED_CLOSED_BLOCKED` at `fe0ea5937` |
-| baselinePath | `docs/baselines/CVF_GC018_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_2026-08-26.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_2026-08-26.md` |
-| nextAuthorityRequirement | fresh R9 source verification and dispatch authoring only |
+| authorityState | EAFR-R9 `DISPATCHED` at `cec7a67ca`, following R8 `REVIEWER_ACCEPTED_CLOSED_BLOCKED` at `fe0ea5937` |
+| baselinePath | `docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md` |
+| nextAuthorityRequirement | independent reviewer/closer evaluation of the R9 worker return once it exists |
 
 ## Closure Evidence
 
@@ -175,7 +175,7 @@ Continuity parent anchor: `fe0ea5937`.
 
 ## Next Allowed Move
 
-EAFR-R8 is accepted `CLOSED_BLOCKED` at `fe0ea5937`. The next allowed move is fresh EAFR-R9 source verification and dispatch authoring only. RFR, provider/live/network and external-store calls, build, BuildAuthority repair and all external effects remain parked.
+EAFR-R9 is dispatched at `cec7a67ca` after fresh source verification, following R8's accepted `CLOSED_BLOCKED` closure at `fe0ea5937`. The next allowed move is independent reviewer/closer evaluation of the R9 worker return once it exists. RFR, provider/live/network and external-store calls, build, BuildAuthority repair, package-dependency edits and all external effects remain parked.
 
 ## Active Boundary
 
@@ -207,13 +207,13 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - EAFR-R8 Blocked Closure Continuity
+## Core Guard Self-Protection Authorization - EAFR-R9 Dispatch Continuity
 
-Authorized guard-maintenance scope: record R8 `CLOSED_BLOCKED` at `fe0ea5937`, release only R9 source verification/dispatch authoring, and keep RFR parked.
-Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR8ExternalStoreIsolationAcceptedBlocked20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V59_2026-08-11.md`.
+Authorized guard-maintenance scope: record R9 `DISPATCHED` at `cec7a67ca`, release only independent reviewer/closer evaluation of the R9 worker return, and keep RFR parked.
+Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR9ExternalStoreGrantAndAdapterPolicyDispatched20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V59_2026-08-11.md`.
 Operator authorization: standing reviewer/closer and dependency-ordered EAFR authority.
-Rollback boundary: revert only this continuity batch; retain `fe0ea5937`, `60635ed19`, `785940501`, and earlier EAFR history.
-Not authorized: provider/live/network/external-store calls, credentials, build, RFR, BuildAuthority, runtime, public sync, deployment or push.
+Rollback boundary: revert only this continuity batch; retain `cec7a67ca`, `fe0ea5937`, `60635ed19`, `785940501`, and earlier EAFR history.
+Not authorized: provider/live/network/external-store calls, credentials, build, RFR, BuildAuthority, package-dependency edits, runtime, public sync, deployment or push.
 
 ## Claim Boundary
 

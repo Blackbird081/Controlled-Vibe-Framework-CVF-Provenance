@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2340,
+  "stateOrder": 2342,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R8 is reviewer-accepted CLOSED_BLOCKED at material commit fe0ea5937 after one bounded reviewer repair. Non-live ambient Upstash construction is isolated and injected rate-limit/storage fake proof passes; full Web proof is 3538 pass/22 named fail. A bounded external-store execution grant and the gateway adapter injected-fetch boundary remain unresolved. The next allowed move is fresh EAFR-R9 source verification and dispatch authoring only. Provider/live/network and external-store calls, build, RFR resume, BuildAuthority repair, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R9 is dispatched at material commit cec7a67ca after fresh source verification. The no-commit worker must decide, without implementing, an external-store execution grant design mirroring ProviderExecutionGrant/evaluateProviderExecutionAuthority, and one Adapter Destination Policy Owner disposition for the gateway adapter's injected-fetch residual. Pre-dispatch autorun gate is COMPLIANT and pre-commit passed 87/87 with zero provider/external-store calls. The next allowed move is independent reviewer/closer evaluation of the R9 worker return once it exists. Provider/live/network and external-store calls, build, RFR resume, BuildAuthority repair, package-dependency edits, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

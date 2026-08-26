@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_2026-08-26.md",
-    "baselineSha256": "f799139a7660dcb6fc0908c111652969f04f13f3793646e44fe39290ac0edc50",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_2026-08-26.md",
-    "workOrderSha256": "b0031f0218862ced4f54abdc4a6b788d82ac3dd3dbba27515db53f8adda28544"
+    "baselinePath": "docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "baselineSha256": "2383c7f2cc5e41a38576a09ee50c0d13157e1b644bc000cf8d127e645d93d2c9",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "workOrderSha256": "57bbcaf06c1642c19bbbcd78cc497050b04d7804e99b730a99091bad2dbae0dc"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r8_reviewer_accepted_closed_blocked_r9_source_verification",
-  "previousMode": "eafr_r8_dispatched_pending_worker_return",
+  "currentMode": "eafr_r9_dispatched_pending_worker_return",
+  "previousMode": "eafr_r8_reviewer_accepted_closed_blocked_r9_source_verification",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15072,5 +15072,17 @@
     "nextAllowedMove": "Fresh EAFR-R9 source verification and dispatch authoring only.",
     "claimBoundary": "No provider/live/network or external-store call, build, RFR resume, BuildAuthority repair, public-sync, deployment or push authority."
   },
-  "nextAllowedMove": "EAFR-R8 is reviewer-accepted CLOSED_BLOCKED at material commit fe0ea5937 after one bounded reviewer repair. Non-live ambient Upstash construction is isolated and injected rate-limit/storage fake proof passes; full Web proof is 3538 pass/22 named fail. A bounded external-store execution grant and the gateway adapter injected-fetch boundary remain unresolved. The next allowed move is fresh EAFR-R9 source verification and dispatch authoring only. Provider/live/network and external-store calls, build, RFR resume, BuildAuthority repair, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "eafrR9ExternalStoreGrantAndAdapterPolicyDispatched20260826": {
+    "status": "DISPATCHED",
+    "materialCommit": "cec7a67ca",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "dispatchBaseHead": "f357d8e50fce8397d613dc597af56aab5bf7c98f",
+    "proof": "Pre-dispatch autorun gate COMPLIANT; pre-commit 87/87 PASS; zero provider or external-store calls.",
+    "scope": "Source-verify and dispatch a no-commit worker to decide, without implementing: (a) an external-store execution grant design mirroring ProviderExecutionGrant/evaluateProviderExecutionAuthority in EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts, and (b) one Adapter Destination Policy Owner disposition for the gateway adapter's injected-fetch residual, given the gateway package's zero-dependency boundary.",
+    "writeOwnership": "Exactly one path: docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md",
+    "nextAllowedMove": "Independent reviewer/closer evaluation of the R9 worker return once it exists; no implementation authority is granted by this dispatch.",
+    "claimBoundary": "No provider/live/network or external-store call, build, RFR resume, BuildAuthority repair, package-dependency edit, public-sync, deployment or push authority."
+  },
+  "nextAllowedMove": "EAFR-R9 is dispatched at material commit cec7a67ca after fresh source verification. The no-commit worker must decide, without implementing, an external-store execution grant design mirroring ProviderExecutionGrant/evaluateProviderExecutionAuthority, and one Adapter Destination Policy Owner disposition for the gateway adapter's injected-fetch residual. Pre-dispatch autorun gate is COMPLIANT and pre-commit passed 87/87 with zero provider/external-store calls. The next allowed move is independent reviewer/closer evaluation of the R9 worker return once it exists. Provider/live/network and external-store calls, build, RFR resume, BuildAuthority repair, package-dependency edits, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

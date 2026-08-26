@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R8_REVIEWER_ACCEPTED_CLOSED_BLOCKED_R9_SOURCE_VERIFICATION
+Status: ACTIVE_R9_DISPATCHED_PENDING_WORKER_RETURN
 
 Date: 2026-08-25
 
@@ -64,7 +64,7 @@ its own work.
 | EAFR-R6 | independently reconcile closures, including the BuildAuthority Web gap and provider-call incidents, and decide whether parked RFR may resume | R1/R1A/R1B, R2-R5, R1C, R1D and R1E accepted | REVIEWER_ACCEPTED_CLOSED_BLOCKED; four unresolved P1 provider-authority bypass classes; RFR resume blocked |
 | EAFR-R7 | repair provider-execution authority coverage across endpoint constants, configurable/caller endpoints and out-of-process harness boundaries | R6 accepted blocked | REVIEWER_ACCEPTED_CLOSED_BLOCKED; fail-closed repair retained; Upstash non-live egress and adapter injection residual keep RFR parked |
 | EAFR-R8 | isolate ambient external datastore configuration from non-live tests and close the unguarded adapter fetch-injection residual | R7 accepted blocked | REVIEWER_ACCEPTED_CLOSED_BLOCKED; ambient datastore isolation and injected-fake proofs accepted after reviewer repair; live-store grant and adapter injection residual remain blocked |
-| EAFR-R9 | source-verify and govern bounded external-store execution authority plus the shared adapter destination-policy owner | R8 accepted blocked | READY_FOR_FRESH_SOURCE_VERIFICATION_AND_DISPATCH_AUTHORING; no implementation authority |
+| EAFR-R9 | source-verify and govern bounded external-store execution authority plus the shared adapter destination-policy owner | R8 accepted blocked | DISPATCHED at `cec7a67ca`; worker decides an external-store grant design and an adapter destination-policy owner disposition only; no implementation authority |
 
 ## Design Controls
 

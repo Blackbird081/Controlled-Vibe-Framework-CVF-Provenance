@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r8_reviewer_accepted_closed_blocked_r9_source_verification`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh EAFR-R9 source verification and dispatch authoring only; parked checkpoint=RFR, provider/live/network and external-store calls, build, BuildAuthority repair and all external effects.
+Startup acknowledged: current mode=`eafr_r9_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independent reviewer/closer evaluation of the R9 worker return once it exists; parked checkpoint=RFR, provider/live/network and external-store calls, build, BuildAuthority repair and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r8_reviewer_accepted_closed_blocked_r9_source_verification`
-Current mode: `eafr_r8_reviewer_accepted_closed_blocked_r9_source_verification`
-Previous mode: `eafr_r8_dispatched_pending_worker_return`
+Current mode marker: `eafr_r9_dispatched_pending_worker_return`
+Current mode: `eafr_r9_dispatched_pending_worker_return`
+Previous mode: `eafr_r8_reviewer_accepted_closed_blocked_r9_source_verification`
 
 ## Next Allowed Move
 
-Mode: `eafr_r8_reviewer_accepted_closed_blocked_r9_source_verification`; R8 is accepted `CLOSED_BLOCKED` at `fe0ea5937` after one bounded reviewer repair. The next allowed move is fresh R9 source verification and dispatch authoring only for a bounded external-store grant and shared adapter destination-policy ownership. Provider/live/network and external-store calls, build, RFR resume, BuildAuthority repair, public sync, deployment and push remain parked.
+Mode: `eafr_r9_dispatched_pending_worker_return`; R9 is dispatched at `cec7a67ca` after fresh source verification following R8's `CLOSED_BLOCKED` acceptance at `fe0ea5937`. The no-commit worker must decide, without implementing, an external-store execution grant design and one Adapter Destination Policy Owner disposition. Pre-dispatch autorun gate is COMPLIANT and pre-commit passed 87/87. Provider/live/network and external-store calls, build, RFR resume, BuildAuthority repair, package-dependency edits, public sync, deployment and push remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

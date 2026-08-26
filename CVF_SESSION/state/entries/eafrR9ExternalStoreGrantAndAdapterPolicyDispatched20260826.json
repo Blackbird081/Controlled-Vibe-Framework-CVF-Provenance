@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2341,
+  "stateKey": "eafrR9ExternalStoreGrantAndAdapterPolicyDispatched20260826",
+  "value": {
+    "status": "DISPATCHED",
+    "materialCommit": "cec7a67ca",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "dispatchBaseHead": "f357d8e50fce8397d613dc597af56aab5bf7c98f",
+    "proof": "Pre-dispatch autorun gate COMPLIANT; pre-commit 87/87 PASS; zero provider or external-store calls.",
+    "scope": "Source-verify and dispatch a no-commit worker to decide, without implementing: (a) an external-store execution grant design mirroring ProviderExecutionGrant/evaluateProviderExecutionAuthority in EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts, and (b) one Adapter Destination Policy Owner disposition for the gateway adapter's injected-fetch residual, given the gateway package's zero-dependency boundary.",
+    "writeOwnership": "Exactly one path: docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md",
+    "nextAllowedMove": "Independent reviewer/closer evaluation of the R9 worker return once it exists; no implementation authority is granted by this dispatch.",
+    "claimBoundary": "No provider/live/network or external-store call, build, RFR resume, BuildAuthority repair, package-dependency edit, public-sync, deployment or push authority."
+  }
+}
