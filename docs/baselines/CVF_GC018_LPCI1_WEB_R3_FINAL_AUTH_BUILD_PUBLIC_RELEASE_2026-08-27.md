@@ -1,0 +1,152 @@
+# CVF GC-018 Baseline - LPCI1 Web R3 Final Auth Build Public Release
+
+Memory class: FULL_RECORD
+
+Status: ACTIVE_DISPATCH_BASELINE
+
+docType: baseline
+
+Date: 2026-08-27
+
+Batch ID: LPCI1-WEB-R3-FINAL-AUTH-BUILD-PUBLIC-RELEASE
+
+## Decision / Proposed Tranche
+
+Proceed with exactly one terminal R3 containing a no-commit public-candidate
+worker phase and reviewer-owned publication phase. No R4 is admitted.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+| --- | --- |
+| applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_task_governance_route.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_delta_execution_claim_boundary.py` |
+| literalTokensReviewed | dispatch lifecycle, exact manifest, public disposition, no-commit and trace fields |
+| gateRunPurpose | confirm terminal public-release packet shape after source verification; this is evidence confirmation, not first discovery |
+| claimBoundary | checker conformance is not build, push, deploy or hosted evidence |
+
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`Public sync`, role=`dispatcher`, lifecyclePhase=`pre-implementation`
+
+Returned defects: NONE_RETURNED
+
+| Field | Value |
+| --- | --- |
+| Resolver command | `python governance/compat/run_adif_defect_resolver.py --task-class "Public sync" --role dispatcher --lifecycle-phase pre-implementation` |
+| Returned defect count | 0 |
+| Returned defects | NONE_RETURNED |
+| Disclosed defectIds | none |
+| Dispatch impact | exact public boundary, no-commit worker and reviewer-only publication remain mandatory |
+
+## Purpose
+
+Close the one remaining LPCI1 Web hosted-release blocker without weakening the
+accepted production authentication invariant or exporting private provenance.
+R2 material `92c96a04d` repairs the provider-grant caller chain. The exact Web
+build now compiles and typechecks, then fails closed because production requires
+`NEXTAUTH_SECRET`, `GITHUB_ID`, `GITHUB_SECRET`, `GOOGLE_ID`, and
+`GOOGLE_SECRET`.
+
+Operator evidence dated 2026-08-27 confirms all six production names now exist
+in Netlify at all scopes and all deploy contexts: the five required variables
+plus `NEXTAUTH_URL`. Values were never disclosed to an agent.
+
+## Authorization / Decision
+
+Decision: `PROCEED_ONE_CONSOLIDATED_R3`.
+
+R3 contains one local no-commit worker phase followed by one independent
+reviewer release phase. This is one tranche, not two successors. The worker may
+prepare only the exact dependency-closed public candidate and non-secret build
+proof. Only the reviewer may commit, push, trigger/observe Netlify, or declare
+public export.
+
+## Source Verification
+
+| Fact | Verified path or symbol | Disposition |
+| --- | --- | --- |
+| production auth fails closed on five names | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/auth.ts`; `validateAuthEnvironmentInvariants` | PRESERVE |
+| root Netlify build targets cvf-web | `netlify.toml`; build base and command | REUSE |
+| public remote owner | sibling public-sync clone `origin` | VERIFIED_PUBLIC_BOUNDARY |
+| public auth source and root Netlify config already match private | `src/auth.ts`; root `netlify.toml` | NO_PROJECTION_NEEDED |
+| public clone lacks R1/R2 grant/safe-entrypoint chain | exact private/public SHA-256 comparison over named files | PROJECT_BOUNDED_CHAIN |
+| R1 accepted blocked material | `f7f5cf1ef` | INPUT |
+| R2 accepted blocked material | `92c96a04d` | INPUT |
+| Control Plane grant owner | `ProviderExecutionGrant`; `evaluateProviderExecutionAuthority` | OWNER_DEPENDENCY |
+| Model Gateway grant harness | `runLiveProof`; `LiveProofHarnessOptions` | OWNER_DEPENDENCY |
+
+## Scope
+
+Private worker output is the named worker return only. Public-sync candidate
+scope is the exact allowlist in the paired work order. The worker may copy the
+current private form of an allowlisted file into the sibling public clone only
+after confirming the public baseline is clean and the destination path is
+tracked or explicitly authorized as new.
+
+## Non-Goals
+
+- no private docs, reviews, roadmaps, session state, registries or governance
+  internals enter public-sync;
+- no OAuth secret value is read, printed, copied into source, logs or evidence;
+- no weakening, bypass or removal of `validateAuthEnvironmentInvariants`;
+- no provider/model live call;
+- no worker commit, push, Netlify mutation or deploy trigger;
+- no R4 or unrelated cleanup.
+
+## Build And Secret Boundary
+
+Local build proof may use process-local synthetic non-empty values named
+`NEXTAUTH_SECRET`, `GITHUB_ID`, `GITHUB_SECRET`, `GOOGLE_ID`, and
+`GOOGLE_SECRET`, plus `NEXTAUTH_URL=https://cvfcoding.vn`. Synthetic values
+prove build composition only and must not be written to a file or described as
+production credentials. Netlify values remain opaque and reviewer-observed by
+name/status only.
+
+## Public Projection Boundary
+
+The public candidate must be prepared only in
+`D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync` on
+branch `main`, remote
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`.
+The private provenance repository must never be pushed.
+
+## Acceptance Criteria
+
+- public candidate contains only the exact allowlist;
+- public-sync preflight returns PASS with zero new missing relative dependency;
+- Guard Contract, Control Plane, Model Gateway and Execution Plane checks and
+  relevant focused tests pass in the public candidate;
+- cvf-web TypeScript and focused LPCI tests pass;
+- production build with process-local synthetic auth variables exits zero;
+- worker leaves both repositories uncommitted and staging empty;
+- reviewer independently re-verifies, commits public candidate, pushes public
+  `main`, observes Netlify success and performs `/landing` plus auth endpoint
+  smoke without exposing secrets;
+- roadmap closes with no R4.
+
+## Risk And Stop Conditions
+
+Stop on any unowned path, missing dependency outside the allowlist, secret
+value exposure, auth-invariant weakening, generated residue, provider call,
+public remote mismatch, non-main public branch, or build failure. A stop is not
+authority to widen scope.
+
+## Evidence
+
+Record exact private/public HEADs, remote/branch/status, allowlisted manifest,
+hash comparison, public-sync preflight, check/test/build counts, zero-secret
+and zero-provider statement, and reviewer-only public commit/deploy receipts.
+
+## Public Export Disposition
+
+BLOCKED_MISSING_PUBLIC_ARTIFACTS
+
+Reason: export becomes `EXPORTED` only after reviewer-owned public commit,
+push, successful Netlify deploy and hosted smoke evidence exist.
+
+## Claim Boundary
+
+This baseline authorizes one consolidated final release repair. It does not
+authorize a worker commit, push, deploy, credential read, provider call,
+private-repository publication, production-readiness claim before hosted proof,
+or any successor beyond R3.
