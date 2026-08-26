@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_4_netlify_build_recovery`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=repair only the Netlify clean-runner install contract and publish/smoke the exact 46-path R3 candidate; parked checkpoint=claiming the unavailable exact Netlify log line, secret-value access, provider calls, R4 and unrelated work.
+Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_5_netlify_node_alignment`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=align only Netlify Node 20 to the green Node 22 build runtime, then publish/smoke the exact 46-path R3 candidate; parked checkpoint=claiming the unavailable exact Netlify log line, dependency upgrades, secret-value access, provider calls, R4 and unrelated work.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_r3_reviewer_amendment_4_netlify_build_recovery`
-Current mode: `lpci1_web_r3_reviewer_amendment_4_netlify_build_recovery`
-Previous mode: `lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery`
+Current mode marker: `lpci1_web_r3_reviewer_amendment_5_netlify_node_alignment`
+Current mode: `lpci1_web_r3_reviewer_amendment_5_netlify_node_alignment`
+Previous mode: `lpci1_web_r3_reviewer_amendment_4_netlify_build_recovery`
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_r3_reviewer_amendment_4_netlify_build_recovery`. Public SHA `32315f3d` passed both GitHub gates but Netlify deploy `6a8f4da8` failed before publish because the hosted build contract omits the sibling install sequence required by the clean runner. Update only root `netlify.toml`, preserve all runtime/auth boundaries, and close only after an exact 46-path replacement SHA publishes and passes hosted smoke. Secret-value access, provider calls, R4 and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `lpci1_web_r3_reviewer_amendment_5_netlify_node_alignment`. Public SHA `df7eb5df` passed the 46-path public-sync gate but Netlify deploy `6a8f4fce` failed before publish. Reviewer reproduction proves configured Node 20 fails during the native Learning Plane install before Web compilation, while the exact build is green under Node 22. Change only root `netlify.toml` from Node 20 to Node 22, preserve all runtime/auth boundaries, and close only after a replacement exact SHA publishes and passes hosted smoke. Dependency upgrades, secret-value access, provider calls, R4 and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

@@ -185,6 +185,22 @@ pass public-sync preflight and retain the green Web-CI ancestor, then Netlify
 must publish that exact SHA before hosted smoke. This remains terminal R3, not
 R4 or a new roadmap.
 
+## Reviewer Amendment 5 - Netlify Node Runtime Alignment
+
+Replacement public SHA `df7eb5df779c881685e4a70ac82efc319d2848f6`
+passed the exact 46-path public-sync gate, while Netlify deploy
+`6a8f4fcee9cb860008f7a0f1` again ended in `error` before publish. A local
+reproduction using the configured Node 20 runtime failed during Learning Plane
+`better-sqlite3` installation before Web compilation; the already-green local
+and GitHub Web build used Node 22. This is bounded evidence for hosted build
+runtime mismatch, not a claim about Netlify's unavailable exact error line.
+
+Keep the public manifest at exactly 46 paths and change only root
+`netlify.toml` from Node 20 to Node 22. Preserve the Amendment 4 build command,
+base, publish path, plugin, redirects, headers, auth invariants and secrets.
+Require a replacement exact SHA, public-sync PASS, successful Netlify publish
+and safe hosted smoke. This remains R3 and admits no R4.
+
 ## Non-Goals
 
 - no private docs, reviews, roadmaps, session state, registries or governance

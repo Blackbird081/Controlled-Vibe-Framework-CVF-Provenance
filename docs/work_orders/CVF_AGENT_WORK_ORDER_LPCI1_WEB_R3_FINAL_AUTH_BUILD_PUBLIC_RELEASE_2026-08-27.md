@@ -557,6 +557,24 @@ authorized. Run public-sync preflight, push a replacement candidate, promote
 the identical SHA, and require successful Netlify publish plus safe hosted GET
 smoke. This remains LPCI1-WEB-R3 and admits no R4.
 
+## Reviewer Amendment 5 Exact Hosted Runtime
+
+Replacement SHA `df7eb5df779c881685e4a70ac82efc319d2848f6` passed the
+46-path public-sync preflight, but Netlify deploy
+`6a8f4fcee9cb860008f7a0f1` ended in `error` before publish. The authenticated
+Netlify error line remains unavailable and must not be claimed. A reviewer
+reproduction with the configured Node 20 runtime fails before Web compilation
+while installing Learning Plane's native `better-sqlite3`; the same exact
+command is green under Node 22, matching the green GitHub Web runner.
+
+Keep the cumulative manifest at exactly 46 paths. Change only root
+`netlify.toml` build environment `NODE_VERSION` from `20` to `22`; preserve the
+Amendment 4 command and every other field. No dependency upgrade, lockfile,
+runtime source, secret access, provider call, threshold change or successor is
+authorized. Push a replacement candidate, require public-sync PASS, promote
+the identical SHA and require successful Netlify publish plus safe hosted GET
+smoke. This remains LPCI1-WEB-R3 and admits no R4.
+
 ## Foundation Storage Layout Block
 
 N/A with reason: R3 projects existing package-owned source files into the

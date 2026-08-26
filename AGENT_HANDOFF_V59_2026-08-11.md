@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current execution HEAD before Amendment 4 implementation: `3a8483edb147bf806e9f566d5eb2147fe86689c7`
+- Repository: private provenance source of truth; current execution HEAD before Amendment 5 authority sync: `15a2ea392bd6497724048079aae4c50009728466`
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_4_netlify_build_recovery`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=repair only the Netlify clean-runner install contract and publish/smoke the exact 46-path R3 candidate; parked checkpoint=claiming the unavailable exact Netlify log line, secret-value access, provider calls, R4 and unrelated work.
+Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_5_netlify_node_alignment`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=align only Netlify Node 20 to the green Node 22 build runtime, then publish/smoke the exact 46-path R3 candidate; parked checkpoint=claiming the unavailable exact Netlify log line, dependency upgrades, secret-value access, provider calls, R4 and unrelated work.
 
 ## Current Mode
-`lpci1_web_r3_reviewer_amendment_4_netlify_build_recovery`
+`lpci1_web_r3_reviewer_amendment_5_netlify_node_alignment`
 
 ## Purpose
 
