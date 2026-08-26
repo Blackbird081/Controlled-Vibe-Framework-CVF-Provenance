@@ -149,4 +149,47 @@ describe("OpenAI-compatible execute adapter", () => {
       prompt: "question",
     })).rejects.toThrow("OpenAI-compatible provider request failed");
   });
+
+  // EAFR-R8 adapter boundary residual (BOUNDED_WITH_NAMED_RESIDUAL, disposition
+  // recorded in the R8 worker return). This adapter calls its injected
+  // `fetchImpl` directly rather than `globalThis.fetch`, so the cvf-web
+  // provider-execution-guard installed in the shared test setup -- which wraps
+  // `globalThis.fetch` -- cannot observe or deny calls made through it. That
+  // guard's destination-classification logic (`classifyDestination`,
+  // `PROVIDER_HOSTS`) lives only in `cvf-web/src/test/`, a downstream consumer
+  // of this package, not the reverse; importing it here would invert the
+  // package dependency direction and is exactly the "second permit list" the
+  // R8 work order forbids. No shared, gateway-owned classification source
+  // currently exists for this package to import instead. This test documents
+  // the bypass as a fact about current behavior, not an approval of it: any
+  // permissive fetchImpl, regardless of the endpoint it targets, is honoured.
+  it("[EAFR-R8-RESIDUAL] an injected fetchImpl bypasses guard-based destination classification entirely", async () => {
+    const unrecognisedEndpoint = "https://not-a-recognised-provider.example.invalid/v1/chat/completions";
+    const fetchImpl = successFetch("bypassed the guard");
+    const adapter = createOpenAiCompatibleExecuteAdapter({
+      providerId: "openai",
+      modelId: "gpt-4o",
+      endpoint: unrecognisedEndpoint,
+      secret: "fake-test-secret",
+      fetchImpl,
+    });
+
+    const result = await adapter.execute({
+      traceId: "trace-r8-residual",
+      providerId: "openai",
+      modelId: "gpt-4o",
+      prompt: "question",
+    });
+
+    // The adapter has no opinion about the endpoint's trustworthiness; it
+    // forwards whatever fetchImpl the caller supplies to whatever endpoint the
+    // caller supplies. This is the residual: closing it requires either a
+    // shared, gateway-owned destination policy this adapter can consult, or an
+    // architectural change so the guard can observe adapter-level fetch calls.
+    expect(fetchImpl).toHaveBeenCalledWith(
+      unrecognisedEndpoint,
+      expect.anything(),
+    );
+    expect(result.text).toBe("bypassed the guard");
+  });
 });

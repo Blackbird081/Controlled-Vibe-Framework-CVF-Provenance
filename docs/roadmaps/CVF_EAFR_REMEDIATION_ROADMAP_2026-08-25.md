@@ -2,7 +2,7 @@
 
 Memory class: SUMMARY_RECORD
 
-Status: ACTIVE_R7_REVIEWER_ACCEPTED_CLOSED_BLOCKED_R8_SOURCE_VERIFICATION
+Status: ACTIVE_R8_REVIEWER_ACCEPTED_CLOSED_BLOCKED_R9_SOURCE_VERIFICATION
 
 Date: 2026-08-25
 
@@ -63,7 +63,8 @@ its own work.
 | EAFR-R1E | separate live-test selection from provider execution authority and make every worker/subagent provider call require an orchestrator-issued bounded grant | second accidental worker provider call after R1D | REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED; default deny contract, pre-network guard, list-only live script, 42/42 plus 12/12 focused tests and reviewer-fast 66/66 PASS; zero provider calls |
 | EAFR-R6 | independently reconcile closures, including the BuildAuthority Web gap and provider-call incidents, and decide whether parked RFR may resume | R1/R1A/R1B, R2-R5, R1C, R1D and R1E accepted | REVIEWER_ACCEPTED_CLOSED_BLOCKED; four unresolved P1 provider-authority bypass classes; RFR resume blocked |
 | EAFR-R7 | repair provider-execution authority coverage across endpoint constants, configurable/caller endpoints and out-of-process harness boundaries | R6 accepted blocked | REVIEWER_ACCEPTED_CLOSED_BLOCKED; fail-closed repair retained; Upstash non-live egress and adapter injection residual keep RFR parked |
-| EAFR-R8 | isolate ambient external datastore configuration from non-live tests and close the unguarded adapter fetch-injection residual | R7 accepted blocked | READY_FOR_FRESH_SOURCE_VERIFICATION_AND_DISPATCH_AUTHORING; no implementation authority |
+| EAFR-R8 | isolate ambient external datastore configuration from non-live tests and close the unguarded adapter fetch-injection residual | R7 accepted blocked | REVIEWER_ACCEPTED_CLOSED_BLOCKED; ambient datastore isolation and injected-fake proofs accepted after reviewer repair; live-store grant and adapter injection residual remain blocked |
+| EAFR-R9 | source-verify and govern bounded external-store execution authority plus the shared adapter destination-policy owner | R8 accepted blocked | READY_FOR_FRESH_SOURCE_VERIFICATION_AND_DISPATCH_AUTHORING; no implementation authority |
 
 ## Design Controls
 
@@ -106,6 +107,9 @@ current `DISPATCH_READY` row may enter worker execution.
 - R8 proves non-live tests cannot use ambient external datastore credentials,
   exercises Redis behavior through an injected fake, and closes or explicitly
   blocks the adapter's unguarded fetch-injection residual.
+- R9 must preserve R8 non-live isolation while source-verifying a bounded,
+  orchestrator-issued external-store grant and a non-duplicated owner for
+  adapter destination policy; selection flags remain non-authoritative.
 
 ## Risk / Corrective Action
 
@@ -155,6 +159,17 @@ green. Full non-live proof is 313 files and 3553 tests: 3465 pass and 88 fail;
 from ambient local environment. R7 closes blocked, the adapter injection
 residual remains, and R8 source verification/dispatch authoring is next.
 
+R8 unconditionally clears ambient Upstash selectors and credentials from the
+non-live test process, retains the R7 default deny, and proves rate-limit plus
+storage Redis seams with injected in-process fakes. Independent proof is 97/97
+focused, both package typechecks pass, and the full non-live suite selects 314
+files and 3560 tests with 3538 passing and 22 named residual failures. The
+worker's second return still omitted injected storage operation proof; the
+reviewer repaired that test before acceptance. R8 closes blocked because the
+guard has no bounded external-store execution grant and the gateway adapter
+still accepts an unobserved injected fetch. RFR remains parked; only R9 source
+verification and dispatch authoring is released.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
@@ -183,9 +198,9 @@ any runtime behavior.
 | --- | --- | --- | --- |
 | Work order status | EAFR tranche packets | R1-R5 and R1C committed dispatch authority | PASS |
 | Completion or reviewer artifact | R1C completion review | bounded closure, named residuals and incident recorded | PASS |
-| Roadmap state | this file | R7 accepted blocked; R8 source verification next; RFR parked | PASS |
+| Roadmap state | this file | R8 accepted blocked; R9 source verification next; RFR parked | PASS |
 | Registry JSON | system-chain map | `ARCHITECTURE.md` fingerprint refreshed; freshness CURRENT | PASS |
 | Registry Markdown | N/A with reason: no registry projection | no applicability | BLOCKED |
 | External evidence digest | archived corrected external report | input only, not authority | N/A with reason |
-| System loop interlock | R1D incident -> R1E authority control -> R6 blocked -> R7 blocked -> R8 | fail-closed dependencies explicit | PASS |
+| System loop interlock | R1D incident -> R1E authority control -> R6 blocked -> R7 blocked -> R8 blocked -> R9 | fail-closed dependencies explicit | PASS |
 | Session continuity | separate post-material sync | required after material commit | PASS |
