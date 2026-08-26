@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - LPCI1 Web R1 Closed Blocked R2 Dispatch Authoring
+# CVF Agent Handoff V59 - LPCI1 Web R2 Dispatched Pending Worker Return
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -38,14 +38,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r1_reviewer_accepted_closed_blocked_r2_dispatch_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and gate exactly one R2 no-commit Execution Plane grant-context caller repair; parked checkpoint=implementation before committed dispatch, public sync, push, Netlify deploy, hosted smoke and all provider/live/external effects.
+Startup acknowledged: current mode=`lpci1_web_r2_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed R2 packet at `56a63b57d` to one no-commit worker and await independent review; parked checkpoint=public sync, push, Netlify deploy, hosted smoke, all provider/live/external effects and unrelated successors.
 
 ## Current Mode
-`lpci1_web_r1_reviewer_accepted_closed_blocked_r2_dispatch_authoring`
+`lpci1_web_r2_dispatched_pending_worker_return`
 
 ## Purpose
 
-Carry accepted blocked LPCI1 Web R1 material `f7f5cf1ef`. The package-composition target is repaired; exactly one R2 dispatch may address the two Execution Plane authority-context caller sites. Implementation before committed R2 authority and all public/live/external effects remain parked.
+Carry accepted blocked LPCI1 Web R1 material `f7f5cf1ef` and committed R2 dispatch `56a63b57d`. Exactly one no-commit worker may repair the two Execution Plane authority-context caller sites under offline fake-only proof; public/live/external effects and unrelated successors remain parked.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -110,14 +110,14 @@ Carry accepted blocked LPCI1 Web R1 material `f7f5cf1ef`. The package-compositio
 
 ## Current Authority
 
-Continuity parent anchor: `f7f5cf1ef`.
+Continuity parent anchor: `56a63b57d`.
 
 | Field | Value |
 |---|---|
-| authorityState | LPCI1 Web R1 `REVIEWER_ACCEPTED_CLOSED_BLOCKED` at `f7f5cf1ef` |
-| baselinePath | `docs/baselines/CVF_GC018_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md` |
-| nextAuthorityRequirement | author and commit one bounded R2 no-commit caller-repair packet before implementation |
+| authorityState | LPCI1 Web R2 `DISPATCHED_PENDING_WORKER_RETURN` at `56a63b57d` |
+| baselinePath | `docs/baselines/CVF_GC018_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md` |
+| nextAuthorityRequirement | one no-commit offline worker return followed by independent review |
 
 ## Closure Evidence
 
@@ -200,19 +200,19 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - LPCI1 Web R1 Closed-Blocked Continuity
+## Core Guard Self-Protection Authorization - LPCI1 Web R2 Dispatch Continuity
 
-Authorized guard-maintenance scope: record accepted blocked R1 material `f7f5cf1ef`, bind exactly one R2 dispatch-authoring next move, and keep implementation-before-authority plus public/live/external effects parked.
+Authorized guard-maintenance scope: record committed R2 dispatch `56a63b57d`, bind exactly one no-commit offline worker next move, and keep public/live/external effects plus unrelated successors parked.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/lpci1WebR1PackageCompositionClosedBlocked20260826.json`
+- `CVF_SESSION/state/entries/lpci1WebR2ExecutionPlaneGrantContextCallerRepairDispatched20260826.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator authorized serious roadmap repair; source-backed R1 review admits exactly one bounded R2 dispatch and no unrelated successor.
-Rollback boundary: revert only this R1 closure-continuity batch if rejected; retain material `f7f5cf1ef` and prior dispatch evidence.
+Operator authorization: operator authorized serious roadmap repair; committed R2 admits exactly one bounded no-commit worker execution and no unrelated successor.
+Rollback boundary: revert only this R2 dispatch-continuity batch if rejected; retain R1 material `f7f5cf1ef` and R2 dispatch `56a63b57d`.
 Not authorized: TV4, TPGR-R9, selective execution, provider/live/network/external-store calls, credentials, absorption, app/project execution, public sync, deployment or push.
 
 ## Claim Boundary

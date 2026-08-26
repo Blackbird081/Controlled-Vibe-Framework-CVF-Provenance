@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
-    "baselineSha256": "e9fcdbeb98f540faa7a18589a1e56a219e801725a803f35eb6e149a6f079b098",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
-    "workOrderSha256": "a98272f5f409d5c801072d7483b9f354bbc1ff15a955b971f9bc175c029ecd68"
+    "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
+    "baselineSha256": "0750074f8927a62114d81c184f8696e4a0e20fdcd118b23ac6f30a1cbd0e57fc",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
+    "workOrderSha256": "7113d66d13af4d1baf7dac7419680e4306504e449a199b56205f3ba2057077f5"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_r1_reviewer_accepted_closed_blocked_r2_dispatch_authoring",
-  "previousMode": "lpci1_web_r1_dispatched_pending_worker_return",
+  "currentMode": "lpci1_web_r2_dispatched_pending_worker_return",
+  "previousMode": "lpci1_web_r1_reviewer_accepted_closed_blocked_r2_dispatch_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15282,5 +15282,16 @@
     "blocker": "Exact production build remains non-zero because two Execution Plane live-proof caller sites omit the EAFR-R12 provider grant context.",
     "successorBoundary": "Exactly one authority-sensitive R2 caller repair may be authored; public/live/external effects and unrelated successors remain parked."
   },
-  "nextAllowedMove": "Author and gate exactly one LPCI1 Web R2 no-commit dispatch for the Execution Plane live-proof grant-context caller repair identified by accepted blocked R1 material f7f5cf1ef. No implementation may begin before that packet is committed. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store calls and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "lpci1WebR2ExecutionPlaneGrantContextCallerRepairDispatched20260826": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
+    "dispatchCommit": "56a63b57d",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "gateEvidence": "Pre-dispatch 79/79 and material pre-commit 87/87 PASS.",
+    "workerBoundary": "WORKER_MUST_NOT_COMMIT; offline fake-only proof; no provider/live/network/credential/store call.",
+    "claimBoundary": "R2 repairs only the two Execution Plane grant-context caller sites and runner preflight. Public sync, push, Netlify deploy, hosted smoke and unrelated successors remain parked."
+  },
+  "nextAllowedMove": "Transfer the exact committed LPCI1 Web R2 packet at 56a63b57d to one no-commit worker. The worker may perform only the offline grant-context caller repair and fake-only proof authorized by the R2 work order, then must yield the named worker return for independent review. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store calls and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
