@@ -471,6 +471,36 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 Value disposition: `CONTINUE_HIGH_VALUE`; this is the single terminal release
 tranche and admits no R4.
 
+## Reviewer Amendment 2 Exact Security-Recovery Manifest
+
+This reviewer-owned correction remains LPCI1-WEB-R3 and supersedes the
+24-path count with exactly 34 public paths. The original 24 paths remain
+authorized. Add exactly:
+
+- `.github/workflows/cvf-web-ci.yml`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.knowledge.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/override/route.governance.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/knowledge/ingest/route.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/knowledge/ingest/w116-cp5-delta.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/lpci/intake/route.governance.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/qbs/front-door-clarification/route.test.ts`
+
+For the seven test paths, apply only their source delta from `3c51ac5e6`.
+For already allowlisted `route.test.ts`, `lpci/query/route.test.ts`, and
+`provider-binding.test.ts`, the same commit delta may replace the earlier
+partial projection where applicable. Dependency resolution may access the npm
+registry but must not use `--force`; no provider API, OAuth flow, hosted secret
+read, runtime auth weakening, or unrelated dependency modernization is allowed.
+
+The workflow edit is limited to synthetic build-only Auth.js variables and the
+package-script edit is limited to excluding both `.live.test.ts` and
+`.live.test.tsx` from non-live unit and coverage commands. The reviewer must
+create a new candidate commit, push only the candidate branch, wait for both
+exact-SHA server gates, and promote that identical SHA only on clean results.
+
 ## Foundation Storage Layout Block
 
 N/A with reason: R3 projects existing package-owned source files into the

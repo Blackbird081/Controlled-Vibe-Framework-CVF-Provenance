@@ -638,3 +638,28 @@ changes for reviewer inspection. The private repository contains exactly one
 new untracked file, this worker return, left uncommitted for independent
 reviewer/dispatcher decision on the next-action options named in Public
 Export Disposition above.
+
+## Independent Reviewer Amendment 2 Adjudication
+
+The provenance-delta candidate was independently assembled and committed in
+the public-sync clone as `819d8acf62b73a4ff84c960940941a3ea53cec29`.
+Local checks, focused tests, public-sync preflight, and a synthetic production
+build passed. The exact-SHA Public Sync Preflight run `33001537986` passed,
+but Web CI run `33001537934` stopped at dependency audit with ten findings:
+two critical, seven high, and one moderate. The SHA is rejected for promotion.
+
+Non-force remediation in a disposable exact-SHA worktree produced zero audit
+findings by pinning Next.js/Auth.js/docx and matching eslint-config-next to the
+smallest verified fixed versions. TypeScript, lint with zero errors, focused
+LPCI tests, and a 121-page production build passed. Once the audit blocker was
+removed, full test execution also exposed public projection drift already
+repaired in private commit `3c51ac5e6`: stale tests used unsigned service
+tokens after HMAC became mandatory, and a live `.tsx` proof escaped the
+non-live exclusion glob. These are CI-contract corrections only; runtime
+service-token verification remains fail closed.
+
+Disposition: continue the same terminal R3 under Reviewer Amendment 2 with the
+exact 34-path manifest. Do not create R4, promote `819d8acf`, weaken HMAC,
+read hosted secret values, or call a provider. Release requires a new exact SHA
+passing dependency audit, build, unit tests, coverage, public-sync preflight,
+Web CI, Netlify deployment, and hosted smoke.

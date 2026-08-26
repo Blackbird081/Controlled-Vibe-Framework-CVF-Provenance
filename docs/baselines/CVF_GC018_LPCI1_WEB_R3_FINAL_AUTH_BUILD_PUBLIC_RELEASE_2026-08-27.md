@@ -104,6 +104,37 @@ enforces. No other path or historical delta is admitted.
 This correction changes the public candidate from 22 to 24 exact paths. It
 does not weaken Auth.js, authorize secrets/provider calls, or open a successor.
 
+## Reviewer Amendment 2 - Security-Gate And CI Contract Recovery
+
+The exact-SHA candidate `819d8acf62b73a4ff84c960940941a3ea53cec29`
+passed the public-sync preflight but the Web CI dependency audit found ten
+published vulnerabilities, including two critical and seven high findings.
+Promotion of that SHA is forbidden. This is a serious release blocker inside
+R3, not authority for R4 or a new roadmap.
+
+The reviewer may update only cvf-web `package.json` and `package-lock.json` to
+the smallest registry-resolved zero-audit set proven locally: `next@16.3.3`,
+`eslint-config-next@16.3.3`, `next-auth@5.0.0-beta.32`, and `docx@9.7.1`, plus
+non-force transitive lockfile remediation. The production build must preserve
+the existing Auth.js fail-closed invariant.
+
+Once audit advanced, full CI exposed pre-existing public test-contract drift:
+seven test files still presented unsigned service tokens although the current
+runtime requires HMAC timestamp/signature, and the unit-test scripts excluded
+only `.live.test.ts` while one live proof uses `.live.test.tsx`. The exact HMAC
+test corrections are already provenance-owned by private commit `3c51ac5e6`;
+apply only its deltas for the seven newly admitted test paths plus the already
+allowlisted execute/query/provider-binding test paths. Update the two package
+scripts to exclude both TypeScript extensions. No unsigned-token bypass or
+runtime authorization change is allowed.
+
+GitHub Actions may receive synthetic, non-secret build-only Auth.js values in
+`.github/workflows/cvf-web-ci.yml` so its production build exercises the same
+composition gate as local proof. These values must be literals with no hosted
+credential meaning. The amended public manifest is exactly 34 paths. A new
+candidate SHA must pass audit, build, tests, coverage, public-sync preflight and
+server-side Web CI before identical-SHA promotion; `819d8acf` remains rejected.
+
 ## Non-Goals
 
 - no private docs, reviews, roadmaps, session state, registries or governance

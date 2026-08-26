@@ -2,17 +2,17 @@
   "stateOrder": 2376,
   "stateKey": "lpci1WebR3FinalAuthBuildPublicReleaseDispatched20260827",
   "value": {
-    "status": "REVIEWER_AMENDMENT_1_ACTIVE",
+    "status": "REVIEWER_AMENDMENT_2_SECURITY_RECOVERY_ACTIVE",
     "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
     "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "baselineSha256": "b6b8b816b76010ec202a2f044305a17a745d3c9c9f0d652fb673703a13324617",
+    "baselineSha256": "4c00fc3a84185bd2531a08fb4dae3e8a2bd5b4492a450bed0b07c067e4c5a307",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "workOrderSha256": "424ccac564c1bc6497bd724eb64fa95f7f1e20cd54fda43eaa9689e1a68e492b",
+    "workOrderSha256": "df0bd0b309b548801f1d00df9237c767c9cb745847d30db0cf2290f786eed2c7",
     "dispatchCommit": "51b3baa4a15dd1db95409d12cddb9aca938533f8",
     "workerBoundary": "No-commit worker may prepare only the exact allowlisted public-sync candidate, run local offline checks and synthetic Auth.js build proof, and author the named private worker return.",
     "reviewerBoundary": "Only the independent reviewer may commit, push, observe Netlify deployment, perform hosted smoke, and decide terminal closure.",
     "proof": "Pre-dispatch autorun 79/79, commit-steward preflight PASS, and material pre-commit hook 87/87; zero public mutation, push, deploy, provider call or secret-value read.",
     "successorBoundary": "R3 is the single terminal release tranche; no R4 is authorized.",
-    "reviewerAmendment": "Accept blocked diagnostic; reject 33-file CADP expansion and worker execution compliance; recover via 24 exact provenance-delta paths including the omitted Model Gateway root export and one stale fail-closed Web route-test expectation."
+    "reviewerAmendment": "Amendment 1 recovered the 24-path provenance candidate. Amendment 2 rejects candidate 819d8acf after ten Web CI audit findings and authorizes one exact 34-path zero-audit dependency plus provenance-bound HMAC-test and CI-contract correction inside the same terminal R3."
   }
 }

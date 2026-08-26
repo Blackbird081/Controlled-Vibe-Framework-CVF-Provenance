@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_1_execution`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the 24-path provenance-delta reviewer recovery and release only on clean proof; parked checkpoint=33-file CADP expansion, plain npm install, secret-value access, provider calls, R4 and unrelated work.
+Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_2_security_recovery`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact 34-path R3 security/CI correction and release only after new exact-SHA server gates; parked checkpoint=promotion of 819d8acf, auth weakening, secret-value access, provider calls, R4 and unrelated work.
 
 ## Current Mode
 
-Current mode marker: `lpci1_web_r3_reviewer_amendment_1_execution`
-Current mode: `lpci1_web_r3_reviewer_amendment_1_execution`
-Previous mode: `lpci1_web_r3_dispatched_pending_worker_return`
+Current mode marker: `lpci1_web_r3_reviewer_amendment_2_security_recovery`
+Current mode: `lpci1_web_r3_reviewer_amendment_2_security_recovery`
+Previous mode: `lpci1_web_r3_reviewer_amendment_1_execution`
 
 ## Next Allowed Move
 
-Mode: `lpci1_web_r3_reviewer_amendment_1_execution`. The blocked worker diagnostic is accepted but its 33-file remedy and execution-compliance claims are rejected. Execute the corrected 24-path provenance-delta public candidate directly; commit/push/Netlify/hosted smoke only after independent clean proof. Plain npm install, secret-value access, provider calls, R4 and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `lpci1_web_r3_reviewer_amendment_2_security_recovery`. Candidate `819d8acf` is rejected after Web CI found ten dependency vulnerabilities. Execute the exact 34-path zero-audit and HMAC-test/CI-contract correction inside the same R3; promote only a new identical SHA after public-sync preflight and Web CI pass. Auth weakening, secret-value access, provider calls, R4 and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
