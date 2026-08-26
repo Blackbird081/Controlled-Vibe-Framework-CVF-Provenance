@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r10_dispatch_ready_committed_awaiting_worker_handoff`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=R10 no-commit worker execution under committed packet `ebdfdbd29`; parked checkpoint=live-store wiring, RFR, provider/live/network/external-store calls, credentials, package/config edits, BuildAuthority and all external effects.
+Startup acknowledged: current mode=`eafr_r10_reviewer_accepted_closed_pass_bounded_pending_final_reconciliation_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh GC-018 final EAFR reconciliation packet authoring after R10 closure `589954085`; parked checkpoint=live-store wiring, RFR execution, provider/live/network/external-store calls, credentials, package/config edits, BuildAuthority and all external effects.
 
 ## Current Mode
 
-Current mode marker: `eafr_r10_dispatch_ready_committed_awaiting_worker_handoff`
-Current mode: `eafr_r10_dispatch_ready_committed_awaiting_worker_handoff`
-Previous mode: `eafr_r9_reviewer_accepted_closed_pass_bounded_pending_implementation_dispatch`
+Current mode marker: `eafr_r10_reviewer_accepted_closed_pass_bounded_pending_final_reconciliation_dispatch`
+Current mode: `eafr_r10_reviewer_accepted_closed_pass_bounded_pending_final_reconciliation_dispatch`
+Previous mode: `eafr_r10_dispatch_ready_committed_awaiting_worker_handoff`
 
 ## Next Allowed Move
 
-Mode: `eafr_r10_dispatch_ready_committed_awaiting_worker_handoff`; the source-verified R10 baseline and no-commit work order are committed at `ebdfdbd29` after 87/87 pre-commit checks. The next allowed move is worker execution under that exact packet after ancestry, clean-scope, absent-path and pinned-hash checks. The worker implements only the sibling external-store contract/evaluator and the gateway-owned three-variant destination policy across the exact ten source/test paths, authors one worker return, and yields without staging or committing. Live-store wiring, RFR, provider/live/network/external-store calls, credentials, package/config edits, BuildAuthority, public sync, deployment and push remain parked.
+Mode: `eafr_r10_reviewer_accepted_closed_pass_bounded_pending_final_reconciliation_dispatch`; R10 is independently accepted bounded at material commit `589954085` after two disclosed reviewer repairs, focused proof, worker-return fast, reviewer-fast 66/66 and pre-commit 87/87. The next allowed move is authoring a fresh GC-018 final EAFR reconciliation packet that re-evaluates every R6 P1 row and decides whether RFR may resume. This does not authorize RFR execution. Live-store wiring, RFR, provider/live/network/external-store calls, credentials, package/config edits, BuildAuthority, public sync, deployment and push remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

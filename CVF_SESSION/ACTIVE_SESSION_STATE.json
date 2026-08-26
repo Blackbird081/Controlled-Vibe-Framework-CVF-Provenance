@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r10_dispatch_ready_committed_awaiting_worker_handoff",
-  "previousMode": "eafr_r9_reviewer_accepted_closed_pass_bounded_pending_implementation_dispatch",
+  "currentMode": "eafr_r10_reviewer_accepted_closed_pass_bounded_pending_final_reconciliation_dispatch",
+  "previousMode": "eafr_r10_dispatch_ready_committed_awaiting_worker_handoff",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15111,5 +15111,22 @@
     "nextAllowedMove": "Transfer the committed packet to the no-commit worker. The worker proves ebdfdbd29 ancestry, implements the exact manifest, runs focused local fake-based tests and typechecks, runs the worker-return fast gate, and yields COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without staging or committing.",
     "claimBoundary": "Implementation dispatch only. The external-store contract is not live-store authority; runtime store wiring and every external effect remain parked."
   },
-  "nextAllowedMove": "EAFR-R10 implementation dispatch is ready and committed at ebdfdbd29. The packet owns exactly ten source/test paths plus one no-commit worker return and implements only the accepted sibling external-store contract/evaluator plus one gateway-owned three-variant destination policy. The next allowed move is worker execution under the committed R10 work order after proving ebdfdbd29 ancestry, clean scope, absent new paths, and pinned hashes. The worker must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without staging or committing. Deliberate live-store wiring, provider/live/network/external-store calls, credential access, package/config edits, RFR, BuildAuthority, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "eafrR10AuthorityAndSharedDestinationPolicyImplementationAcceptedBounded20260826": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "ebdfdbd29f8958bf8fea90ec85900a9bfdf02151",
+    "materialCommit": "58995408545471d26f82fed1ffb3454124eef284",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_BASELINE_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_2026-08-26.md",
+    "roadmap": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+    "workerReturn": "docs/reviews/CVF_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md",
+    "corpusRegistryEntry": "docs/corpus-intelligence/registry/entries/eafr-r10-authority-and-shared-destination-policy-implementation-source-surfaces.json",
+    "reviewerRepairs": [
+      "Corrected the work-order Web verification command from nonexistent npm run typecheck to the pinned package's npm run check and disclosed the worker's noncompliant substitution.",
+      "Removed providerForHostname and knownProviderHostnames from the gateway public surface so the implementation matches R9's exact two-symbol public interface."
+    ],
+    "proof": "Foundation focused 57/57, gateway focused 30/30, Web guard 26/26, all three package checks, worker-return fast, reviewer-fast 66/66, and pre-commit 87/87 passed. Material commit hook also passed 87/87. Zero provider, network, external-store, credential, live, deployment, public-sync, or push action occurred.",
+    "nextAllowedMove": "Author a fresh GC-018 final EAFR reconciliation packet that independently re-evaluates all R6 P1 rows and decides whether RFR may resume. Do not execute RFR as part of that dispatch.",
+    "claimBoundary": "R10 closes only the sibling external-store authority contract/evaluator and shared adapter destination-policy implementation tranche. It does not authorize live-store wiring, runtime store use, RFR, BuildAuthority, or any external effect."
+  },
+  "nextAllowedMove": "EAFR-R10 is independently reviewer-accepted CLOSED_PASS_BOUNDED at material commit 58995408545471d26f82fed1ffb3454124eef284 after two disclosed reviewer repairs. Focused proof passed foundation 57/57, gateway 30/30, Web guard 26/26, all three package checks, worker-return fast, reviewer-fast 66/66, and pre-commit 87/87 with zero provider, network, external-store, credential, live, deployment, public-sync, or push action. The next allowed move is authoring a fresh GC-018 final EAFR reconciliation packet that re-evaluates every R6 P1 row and decides whether RFR may resume; it is not RFR execution. Live-store wiring, provider/live/network/external-store calls, credential access, package/config edits, RFR, BuildAuthority, public-sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
