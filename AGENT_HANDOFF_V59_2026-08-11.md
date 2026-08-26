@@ -42,7 +42,7 @@ Status: ACTIVE
 - External-agent protocol v1.1 material: `65f6224cb62345d84ed3dd7e27081b800df5a02a`; wrapper repair: `4161ec158883ab89453495e8f3543bfb9d947cca`; pre-export continuity: `45ed6b55328b6cd98a96d08787479f6b96d5b75d`; public export: `864c4e0e6139f3e32067dea41f43f240e505c0d8`.
 - MCP-KAR-T0 pinned intake closed selectively at `79e588b0912ea6e8731140f21b90baebf3b7c099`; upstream `https://github.com/modelcontextprotocol/modelcontextprotocol.git` is pinned at `5f5440bb26a62e2cf3440b92da5a667efa03b267`; T1 dispatch `adf7b36d2` plus GC-051 amendment `2bedaa05f` closed at material commit `c179e656ac0477dcee5a1283e25b109f6e391b3dd` with 19/19 focused and 1829/1829 package tests.
 - MCP-KAR-T3/T4/T5 are accepted through `76a13ca70`; T6 is stopped at decision `93763c127`; T7/T8 implementation is accepted at `3f9c03cbe`; final T9 reconciliation is accepted at material commit `52d058ae6`.
-- RFR-R1 is closed at `a67034370`; RFR-R2 at `84d44889f`; RFR-R3 at `a18ba512f`; RFR-R4 at `8ec399aa5`; RFR-R5 at `82a0073b2`; RFR-R6 audit accepted; RFR-R7A accepted at `1512374e8`; RFR-R7B accepted at `79ca7e542`; RFR-R7C accepted at `92b7d6ec6`.
+- RFR-R1 is closed at `a67034370`; RFR-R2 at `84d44889f`; RFR-R3 at `a18ba512f`; RFR-R4 at `8ec399aa5`; RFR-R5 at `82a0073b2`; RFR-R6 audit accepted; RFR-R7A at `1512374e8`; RFR-R7B at `79ca7e542`; RFR-R7C at `92b7d6ec6`; final roadmap closure at `20bbb071c`.
 - LPCI1-REF-T1A Amendment 2 authority: `e2868dd4614145884a5c276578e5512f42af72a1`; predecessor blocker: `7c0a1982b`
 - Latest closed numbered LHW wave: `LHW24`; public export: `DEFERRED_PRIVATE_ONLY`
 - Prior handoff (archive-qualified): `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md`
