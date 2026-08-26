@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2352,
+  "stateKey": "eafrR12P4BBLiveProofHarnessOrchestratorGrantAuthorityRepairAcceptedBounded20260826",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED",
+    "materialCommit": "1e31db99a",
+    "roadmapClosureCommit": "fae74ca77",
+    "workerReturn": "docs/reviews/CVF_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "reviewerRepairs": "Added candidate-level evaluator enforcement before alias/endpoint access, prevented grant-denied candidates from consuming call budget, reused only the already-gated Alibaba attempt host in receipts, aligned evaluator time, and repaired the governed worker-return packet/evidence base.",
+    "proof": "TypeScript PASS; focused 24/24; gateway package 339/339; corrected-base pre-implementation 81/81; reviewer-fast 66/66; pre-commit 87/87; zero provider, live, network, credential or store calls.",
+    "successorDisposition": "ZERO_EAFR_SUCCESSORS; no R13 authorized.",
+    "nextAllowedMove": "A separately authorized bounded RFR reconsideration decision may now evaluate whether to resume RFR; do not execute RFR in session sync.",
+    "claimBoundary": "R12 closes the final source-backed EAFR P1 only. No live proof, provider/credential/store access, RFR execution, TPGR implementation, public sync, deployment or push authority."
+  }
+}

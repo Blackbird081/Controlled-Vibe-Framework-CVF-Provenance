@@ -49,14 +49,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit R12 worker under committed packet `cfd7e203b`; parked checkpoint=provider/live/network/credential effects, RFR execution, TPGR implementation and any EAFR successor.
+Startup acknowledged: current mode=`eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=separately authorized bounded RFR reconsideration decision only; parked checkpoint=RFR execution, provider/live/network/credential/store effects, TPGR implementation, public sync, deployment, push and any EAFR successor.
 
 ## Current Mode
-`eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`
+`eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`
 
 ## Purpose
 
-Transfer the sole committed R12 P1 repair packet to one no-commit worker. Independent review owns closure; RFR, TPGR implementation and all external effects remain parked.
+Carry the reviewer-accepted terminal R12 state and allow only a separately authorized bounded RFR reconsideration decision. RFR execution, TPGR implementation, every external effect and every EAFR successor remain parked.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -66,7 +66,7 @@ Transfer the sole committed R12 P1 repair packet to one no-commit worker. Indepe
 
 ## Latest Work / Changes
 
-- EAFR-R12 is dispatched at `cfd7e203b`: exact offline local foundation dependency/lock, harness, direct runner, focused denial-matrix test and one worker-return manifest. Pre-dispatch 79/79 and pre-commit plus hook 87/87 passed. Worker provider authority is forbidden; no successor is pre-authorized.
+- EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
 - EAFR-R8 is dispatched at `60635ed19` after reviewer repaired its test-manifest gap. Packet SHA-256 values are `f799139a7660dcb6fc0908c111652969f04f13f3793646e44fe39290ac0edc50` and `b0031f0218862ced4f54abdc4a6b788d82ac3dd3dbba27515db53f8adda28544`; pre-dispatch 79/79 and pre-commit 87/87 passed with zero external calls.
 - EAFR-R7 is reviewer-accepted `CLOSED_BLOCKED` at material commit `74cf99354`: the fail-closed guard is retained after protocol-relative reviewer repair; focused 26/26 and TypeScript pass; full non-live is 3465 pass/88 named fail because ambient Upstash egress is blocked. The adapter injection residual remains. R8 source verification/dispatch authoring is next; RFR stays parked.
 - EAFR-R7 dispatch handoff mode alignment was repaired at `eaa35a7b7`; its parent is dispatch continuity `b58f9b6cb`. This is continuity-only and changes no R7 evidence or authority.
@@ -125,14 +125,14 @@ Continuity parent anchor: `cfd7e203b`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R12 `DISPATCH_READY_COMMITTED_AWAITING_WORKER_HANDOFF` at `cfd7e203b` |
+| authorityState | EAFR-R12 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `1e31db99a` |
 | baselinePath | `docs/baselines/CVF_GC018_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_BASELINE_2026-08-26.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_2026-08-26.md` |
-| nextAuthorityRequirement | one no-commit worker implements exact R12 manifest and yields for review |
+| nextAuthorityRequirement | separate bounded RFR reconsideration authority decision; no RFR execution |
 
 ## Closure Evidence
 
-- EAFR-R12 dispatch: paired packet and roadmap at `cfd7e203b`; pre-dispatch 79/79 and pre-commit plus hook 87/87 PASS; exact hashes are carried in current state. Worker return is absent; all external effects and RFR remain parked.
+- EAFR-R12 closure: worker return at `docs/reviews/CVF_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_WORKER_RETURN_2026-08-26.md`; material `1e31db99a`; disclosed reviewer repairs; focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 PASS; zero external calls; no R13.
 - EAFR-R8 completion: `docs/reviews/CVF_EAFR_R8_NON_LIVE_EXTERNAL_STORE_ISOLATION_AND_ADAPTER_BOUNDARY_COMPLETION_2026-08-26.md`; material commit `fe0ea5937`; accepted blocked after reviewer repair with ambient isolation retained, injected rate/store fake proof, and two authority residuals keeping RFR parked.
 - EAFR-R6 completion: `docs/reviews/CVF_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_COMPLETION_2026-08-26.md`; material commit `2bc2b2d0d`; accepted blocked with four unresolved P1 classes, RFR parked and R7 dispatch authoring next.
 - EAFR-R1E completion: `docs/reviews/CVF_EAFR_R1E_ORCHESTRATOR_PROVIDER_EXECUTION_AUTHORITY_COMPLETION_2026-08-25.md`; material commit `8007e269f`; default deny, bounded grant and pre-network guard accepted with 42/42 plus 12/12 focused tests, reviewer-fast 66/66, pre-commit 87/87 and zero provider calls.
@@ -176,7 +176,7 @@ Continuity parent anchor: `cfd7e203b`.
 
 ## Next Allowed Move
 
-EAFR-R12 is dispatch-ready and committed at `cfd7e203b`. The next allowed move is one no-commit worker: add the offline local dependency/lock, require the existing R1E evaluator before env/credential/fetch/bridge access in harness and runner, prove the injected denial matrix, and yield. Provider/live/network/credential effects, RFR, TPGR implementation and any successor remain parked.
+EAFR-R12 is reviewer-accepted closed bounded at `1e31db99a`; EAFR has zero remaining source-backed P0/P1 findings and zero authorized successors. The next allowed move is a separately authorized bounded RFR reconsideration decision only. Provider/live/network/credential/store effects, RFR execution, TPGR implementation, public sync, deployment and push remain parked.
 
 ## Active Boundary
 
@@ -207,13 +207,13 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - EAFR-R12 Dispatch Continuity
+## Core Guard Self-Protection Authorization - EAFR-R12 Closure Continuity
 
-Authorized guard-maintenance scope: record committed R12 dispatch `cfd7e203b`, synchronize exact authority paths/hashes and one no-commit worker next move, and keep all external effects parked.
-Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR12P4BBLiveProofHarnessOrchestratorGrantAuthorityRepairDispatch20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V59_2026-08-11.md`.
+Authorized guard-maintenance scope: record accepted R12 material `1e31db99a`, synchronize terminal EAFR state and one decision-only RFR reconsideration next move, and keep all external effects parked.
+Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR12P4BBLiveProofHarnessOrchestratorGrantAuthorityRepairAcceptedBounded20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V59_2026-08-11.md`.
 Operator authorization: operator accepted the cross-domain tranche-value learning and authorized serious-finding repair without low-value tranche proliferation.
-Rollback boundary: revert only the R12 dispatch-continuity batch if rejected; retain R12 material dispatch, accepted R11 closure and earlier EAFR history.
-Not authorized: live-store wiring, provider/live/network/external-store calls, credentials, build, RFR, BuildAuthority, package/config edits, public sync, deployment or push.
+Rollback boundary: revert only the R12 closure-continuity batch if rejected; retain accepted R12 material and earlier EAFR history.
+Not authorized: live-store wiring, provider/live/network/external-store calls, credentials, build, RFR execution, TPGR implementation, BuildAuthority, package/config edits, public sync, deployment or push.
 
 ## Claim Boundary
 

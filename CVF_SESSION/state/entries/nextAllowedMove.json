@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2352,
+  "stateOrder": 2353,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R12 is dispatch-ready and committed at cfd7e203b. The next allowed move is one no-commit worker implementation under the exact paired packet: add the offline local foundation dependency and lock, require the existing R1E evaluator in the P4B-B harness and direct runner before env/credential/fetch/bridge access, prove the denial matrix with injected non-live tests, run package check and worker-return fast gate, and yield with HEAD unchanged and staging empty. Provider/live/network/credential/store calls, RFR execution, TPGR implementation, public sync, deployment and push remain parked. No EAFR successor is pre-authorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EAFR-R12 is reviewer-accepted closed bounded at 1e31db99a after disclosed reviewer repairs. EAFR has zero remaining source-backed P0/P1 findings and zero authorized successors. The next allowed move is a separately authorized bounded RFR reconsideration decision only; do not execute RFR as part of continuity. Provider/live/network/credential/store calls, TPGR implementation, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

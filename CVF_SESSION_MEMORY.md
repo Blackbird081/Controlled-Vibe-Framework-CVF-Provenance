@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit R12 worker under committed packet `cfd7e203b`; parked checkpoint=provider/live/network/credential effects, RFR execution, TPGR implementation and any EAFR successor.
+Startup acknowledged: current mode=`eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=separately authorized bounded RFR reconsideration decision only; parked checkpoint=RFR execution, provider/live/network/credential/store effects, TPGR implementation, public sync, deployment, push and any EAFR successor.
 
 ## Current Mode
 
-Current mode marker: `eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`
-Current mode: `eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`
-Previous mode: `eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch`
+Current mode marker: `eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`
+Current mode: `eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`
+Previous mode: `eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`
 
 ## Next Allowed Move
 
-Mode: `eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`; R12 is committed at `cfd7e203b` after pre-dispatch 79/79 and pre-commit plus hook 87/87. The next allowed move is one no-commit worker implementing the exact offline package edge, harness/runner R1E evaluator gate and injected denial matrix, then yielding for independent review. Provider/live/network/credential/store effects, RFR, TPGR implementation and any successor remain parked.
+Mode: `eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`; R12 is reviewer-accepted at `1e31db99a` after candidate-level authority, call-budget and receipt-resolution repairs. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed with zero external calls. EAFR has no remaining source-backed P0/P1 and no successor. The next allowed move is a separately authorized bounded RFR reconsideration decision only; RFR execution and TPGR implementation remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

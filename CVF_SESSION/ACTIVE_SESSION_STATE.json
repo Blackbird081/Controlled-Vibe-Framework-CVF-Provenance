@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eafr_r12_dispatch_ready_committed_awaiting_worker_handoff",
-  "previousMode": "eafr_r11_reviewer_accepted_closed_blocked_pending_r12_dispatch",
+  "currentMode": "eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered",
+  "previousMode": "eafr_r12_dispatch_ready_committed_awaiting_worker_handoff",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15158,5 +15158,16 @@
     "nextAllowedMove": "Transfer the exact committed R12 packet to one no-commit worker for offline-only implementation and non-live proof, then yield for independent review.",
     "claimBoundary": "R12 dispatch only. Worker provider authority is FORBIDDEN; RFR and TPGR implementation remain parked."
   },
-  "nextAllowedMove": "EAFR-R12 is dispatch-ready and committed at cfd7e203b. The next allowed move is one no-commit worker implementation under the exact paired packet: add the offline local foundation dependency and lock, require the existing R1E evaluator in the P4B-B harness and direct runner before env/credential/fetch/bridge access, prove the denial matrix with injected non-live tests, run package check and worker-return fast gate, and yield with HEAD unchanged and staging empty. Provider/live/network/credential/store calls, RFR execution, TPGR implementation, public sync, deployment and push remain parked. No EAFR successor is pre-authorized. Latest finalized numbered LHW wave remains LHW24."
+  "eafrR12P4BBLiveProofHarnessOrchestratorGrantAuthorityRepairAcceptedBounded20260826": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED",
+    "materialCommit": "1e31db99a",
+    "roadmapClosureCommit": "fae74ca77",
+    "workerReturn": "docs/reviews/CVF_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "reviewerRepairs": "Added candidate-level evaluator enforcement before alias/endpoint access, prevented grant-denied candidates from consuming call budget, reused only the already-gated Alibaba attempt host in receipts, aligned evaluator time, and repaired the governed worker-return packet/evidence base.",
+    "proof": "TypeScript PASS; focused 24/24; gateway package 339/339; corrected-base pre-implementation 81/81; reviewer-fast 66/66; pre-commit 87/87; zero provider, live, network, credential or store calls.",
+    "successorDisposition": "ZERO_EAFR_SUCCESSORS; no R13 authorized.",
+    "nextAllowedMove": "A separately authorized bounded RFR reconsideration decision may now evaluate whether to resume RFR; do not execute RFR in session sync.",
+    "claimBoundary": "R12 closes the final source-backed EAFR P1 only. No live proof, provider/credential/store access, RFR execution, TPGR implementation, public sync, deployment or push authority."
+  },
+  "nextAllowedMove": "EAFR-R12 is reviewer-accepted closed bounded at 1e31db99a after disclosed reviewer repairs. EAFR has zero remaining source-backed P0/P1 findings and zero authorized successors. The next allowed move is a separately authorized bounded RFR reconsideration decision only; do not execute RFR as part of continuity. Provider/live/network/credential/store calls, TPGR implementation, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
