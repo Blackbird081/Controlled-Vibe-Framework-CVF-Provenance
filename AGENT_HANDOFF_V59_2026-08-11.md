@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; terminal LPCI1 Web R3 material and continuity commit: `56c77c42416adee59752b285add6f66dad8458d4`; next move is a fresh high-value roadmap outside that closed lane.
+- Repository: private provenance source of truth; PCIT-R1 public CI truthfulness dispatch: `a6cc27189b45f1ccbeee631c4731be33f9defab4`; next move is exactly one no-commit worker return.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select a fresh high-value roadmap outside LPCI1 Web R3; parked checkpoint=LPCI1 Web R4, speculative hosted amendments, dependency upgrades without fresh security disposition, secret-value access and provider calls.
+Startup acknowledged: current mode=`pcit_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exactly one PCIT-R1 no-commit worker return; parked checkpoint=product-source repair, dependency upgrade, automatic R2, public write, secrets and provider calls.
 
 ## Current Mode
-`lpci1_web_r3_closed_pass_bounded`
+`pcit_r1_dispatched_pending_worker_return`
 
 ## Purpose
 
@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-Author and gate exactly one R2 no-commit packet for the Execution Plane grant-context caller repair. No implementation begins before committed authority. Public-sync mutation, push, Netlify deploy, hosted smoke, provider/live/network/credential/store effects and unrelated successors remain parked. Latest finalized numbered LHW wave remains LHW24.
+Execute exactly one PCIT-R1 no-commit worker return under dispatch `a6cc27189`. The worker may change only the named public workflows/static runner and its focused test plus the private return. Genuine product defects remain blocking. Commit, push, deploy, secrets, provider calls, dependency upgrades, product-source repair, automatic R2 and unrelated parked lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -200,21 +200,21 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - LPCI1 Web R3 Amendment Continuity
+## Core Guard Self-Protection Authorization - PCIT-R1 Dispatch Continuity
 
-Authorized guard-maintenance scope: bind corrected R3 reviewer execution, exact authority hashes and the 24-path provenance-delta next move; retain no-R4 boundary.
+Authorized guard-maintenance scope: bind committed PCIT-R1 authority hashes, dispatched mode and exact no-commit next move after terminal LPCI1 Web R3 closure.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/lpci1WebR3FinalAuthBuildPublicReleaseDispatched20260827.json`
+- `CVF_SESSION/state/entries/pcitR1PublicCiTruthfulnessDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: standing serious-finding authority permits correcting R3 without a new tranche; six Netlify names remain opaque.
-Rollback boundary: revert the exact mixed amendment/state manifest atomically; retain original R3 dispatch and clean public baseline.
-Not authorized: 33-file CADP expansion, plain npm install, secret-value access, provider/live calls, R4, absorption or unrelated work.
+Operator authorization: operator selected and authorized the next high-value roadmap; continuity sync is mandatory after committed dispatch.
+Rollback boundary: revert the exact PCIT-R1 continuity manifest atomically; retain committed dispatch and terminal R3 evidence.
+Not authorized: product-source repair, dependency upgrade, automatic R2, public write, secret-value access, provider/live calls or unrelated work.
 
 ## Claim Boundary
 
-This handoff records MCP-KAR closure plus mandatory public-sync enforcement through public `9c0183293`. It authorizes no further public push and no runtime/package/transport, durable replay claim without a durable owner, schema repair, source execution/direct import, R9, R8 implementation, P0/P1 activation, canary/selective execution, T15, UI/API/action execution, persistence, provider/live invocation, deployment, or production.
+This handoff records PCIT-R1 dispatch only. It authorizes one no-commit workflow/runner candidate and no product source, dependency, secret, provider/live, commit, push, deploy, production claim, automatic R2 or unrelated parked lane.

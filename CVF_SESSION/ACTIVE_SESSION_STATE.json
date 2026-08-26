@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "baselineSha256": "aea2938739d6cc1e164db1b29df422d107aa8f5c2e1e15ff82e771c507f566f9",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R3_FINAL_AUTH_BUILD_PUBLIC_RELEASE_2026-08-27.md",
-    "workOrderSha256": "182350437f4e7c3deb8eee583145f9dc46ed706a9cc848c7f11b7f183572ba60"
+    "baselinePath": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "08d2f493bede8f1e914d8b0a5cd7342d144ab58c32ddd9e8cd0654a012df2a7f"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "lpci1_web_r3_closed_pass_bounded",
-  "previousMode": "lpci1_web_r3_reviewer_amendment_3_zero_warning_recovery",
+  "currentMode": "pcit_r1_dispatched_pending_worker_return",
+  "previousMode": "lpci1_web_r3_closed_pass_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15318,5 +15318,18 @@
     "successorBoundary": "R3 is the single terminal release tranche; no R4 is authorized.",
     "reviewerAmendment": "Amendment 1 recovered the 24-path provenance candidate. Amendment 2 rejects candidate 819d8acf after ten Web CI audit findings and authorizes one exact 36-path zero-audit dependency, provenance-bound HMAC-test, CI-contract, and bounded coverage-behavior correction inside the same terminal R3."
   },
-  "nextAllowedMove": "LPCI1 Web R3 is closed at public SHA a0ef5923d100b02c43294815ac9d01d8db20e8b8 and Netlify deploy 6a8f535e6e1655000873655b. Select a fresh high-value roadmap outside this terminal lane. R4, speculative hosted amendments, dependency upgrades without fresh security disposition, secret-value access and provider calls remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "pcitR1PublicCiTruthfulnessDispatched20260827": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_ROADMAP_2026-08-27.md",
+    "baseline": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "08d2f493bede8f1e914d8b0a5cd7342d144ab58c32ddd9e8cd0654a012df2a7f",
+    "dispatchCommit": "a6cc27189b45f1ccbeee631c4731be33f9defab4",
+    "workerBoundary": "One no-commit worker may edit only the four named public workflows, the static CI runner and its focused test, plus the named private worker return.",
+    "reviewerBoundary": "Only the independent reviewer may commit or push public changes and evaluate exact-SHA server results.",
+    "proof": "Pre-dispatch 79/79 and dispatch pre-commit 87/87 passed; continuity debt was isolated in eb60e89d3; zero public write, secret read or provider call.",
+    "successorBoundary": "Exactly one PCIT-R1 return is admitted; no automatic R2. Genuine product defects remain blocking and require a fresh operator decision."
+  },
+  "nextAllowedMove": "PCIT-R1 is dispatched at a6cc27189 for one no-commit public CI truthfulness and corpus-boundary reconciliation return. The worker may edit only the named workflow/runner allowlist and must leave genuine product defects blocking. Commit, push, deploy, secrets, provider calls, dependency upgrades, product-source repair, automatic R2 and unrelated parked lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24."
 }

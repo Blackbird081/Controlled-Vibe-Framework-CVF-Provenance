@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2378,
+  "stateKey": "pcitR1PublicCiTruthfulnessDispatched20260827",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_ROADMAP_2026-08-27.md",
+    "baseline": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "08d2f493bede8f1e914d8b0a5cd7342d144ab58c32ddd9e8cd0654a012df2a7f",
+    "dispatchCommit": "a6cc27189b45f1ccbeee631c4731be33f9defab4",
+    "workerBoundary": "One no-commit worker may edit only the four named public workflows, the static CI runner and its focused test, plus the named private worker return.",
+    "reviewerBoundary": "Only the independent reviewer may commit or push public changes and evaluate exact-SHA server results.",
+    "proof": "Pre-dispatch 79/79 and dispatch pre-commit 87/87 passed; continuity debt was isolated in eb60e89d3; zero public write, secret read or provider call.",
+    "successorBoundary": "Exactly one PCIT-R1 return is admitted; no automatic R2. Genuine product defects remain blocking and require a fresh operator decision."
+  }
+}
