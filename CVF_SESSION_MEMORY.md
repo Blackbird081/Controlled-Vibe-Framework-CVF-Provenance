@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=separately authorized bounded RFR reconsideration decision only; parked checkpoint=RFR execution, provider/live/network/credential/store effects, TPGR implementation, public sync, deployment, push and any EAFR successor.
+Startup acknowledged: current mode=`tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no-commit TPGR-TV1 worker return then independent review; parked checkpoint=TV2/TV3, TPGR-R9, selective execution, provider/live/network/credential/store effects, absorption, app/project execution, public sync, deployment and push.
 
 ## Current Mode
 
-Current mode marker: `eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`
-Current mode: `eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`
+Current mode marker: `tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return`
+Current mode: `tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return`
 Previous mode: `eafr_r12_dispatch_ready_committed_awaiting_worker_handoff`
 
 ## Next Allowed Move
 
-Mode: `eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`; R12 is reviewer-accepted at `1e31db99a` after candidate-level authority, call-budget and receipt-resolution repairs. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed with zero external calls. EAFR has no remaining source-backed P0/P1 and no successor. The next allowed move is a separately authorized bounded RFR reconsideration decision only; RFR execution and TPGR implementation remain parked.
+Mode: `tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return`; RFR is terminally closed at `20bbb071c`, and the additive TPGR-TV roadmap plus TV1 no-commit design packet is committed at `2d6622c40`. The next allowed move is the exact TV1 worker return followed by independent review. Risk remains the governance floor; value decides start/continue/consolidate/park/stop. TV2/TV3, TPGR-R9, selective execution and all external effects remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

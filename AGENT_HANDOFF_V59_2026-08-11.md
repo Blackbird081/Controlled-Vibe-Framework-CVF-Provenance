@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - TPGR R8 Closed Hold Pending Observed Evidence
+# CVF Agent Handoff V59 - TPGR TV1 Dispatched Pending Worker Return
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -11,13 +11,6 @@ Status: ACTIVE
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
 - EAFR-R3 is independently accepted at `5f0f9f9106da627f8db5c5036c7fb82222f2e121`; R4 is accepted at `55d48516689e60332e7efd4e07286ab3c03c8336`; R5 is accepted `CLOSED_PASS_BOUNDED` at `04a5cf40e3a396404b1aff0816534e4d8a6a1567` after reviewer repair, focused LPF 66/66, focused Web 20/20, safe LPF 1943/1943, reviewer-fast 65/65 and pre-commit 86/86. Six unintended provider calls are disclosed, excluded and grant no repeat authority. R1C remains mandatory before R6.
 - External agent memory files: non-canonical convenience only.
-- Current blocked-evidence marker: `25c0b2217`; T6 dispatch marker: `1405017db`
-- Current R2 material closure: `2599ff10e253f1a48e6b0ebab7dc68dc4637c7d0`
-- Current T5-R1 repair-rebind session-sync: `df350ac9a1d9106f114982a5a5d3c7061475848c`
-- Current T5-R1 dispatch material commit: `071e39100f8b93b7959505b0e3f22ed31f2b6030`
-- Current T5-R1 bounded material closure: `7d96fa115eece9e76b913d4568e49e9c1c3f4dab`
-- Current T5-R2 bounded material closure: `ad76d743337a6f62315451a8901452a1f68e62a0`
-- Current T5-R2A checker-hardening dispatch: `82f11ed55`
 - Current T5-R5 bounded closure: `6284e5bd1`; T8 terminal reconciliation: `3b906862b`; RSPB-AI-T1 closure: `d591c542a`; RSPB-AI-T2 closure: `44a74fa48`; RSPB-AI-T3 closure: `bdec9c1e7`; RSPB-AI-T4-R1 accepted repair: `a2f874519`.
 - Mixed-origin absorption latency/value-preservation learning: `193c9140447003244a3e5cc896c323ba911bdcff`.
 - Current T5-R1 closure session-sync parent: `25acd54a456394358241ee28c12ab3ca2f202d95`
@@ -49,14 +42,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=separately authorized bounded RFR reconsideration decision only; parked checkpoint=RFR execution, provider/live/network/credential/store effects, TPGR implementation, public sync, deployment, push and any EAFR successor.
+Startup acknowledged: current mode=`tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=no-commit TV1 worker return then independent review; parked checkpoint=TV2/TV3, TPGR-R9, selective execution and all external effects.
 
 ## Current Mode
-`eafr_r12_reviewer_accepted_closed_pass_bounded_rfr_may_be_reconsidered`
+`tpgr_tv1_tranche_value_admission_design_dispatched_pending_worker_return`
 
 ## Purpose
 
-Carry the reviewer-accepted terminal R12 state and allow only a separately authorized bounded RFR reconsideration decision. RFR execution, TPGR implementation, every external effect and every EAFR successor remain parked.
+Carry terminal RFR closure and committed TPGR-TV1 design dispatch. Allow only the exact no-commit TV1 assessment/worker return followed by independent review. TV2/TV3, TPGR-R9, selective execution and all external effects remain parked.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -121,14 +114,14 @@ Carry the reviewer-accepted terminal R12 state and allow only a separately autho
 
 ## Current Authority
 
-Continuity parent anchor: `cfd7e203b`.
+Continuity parent anchor: `2d6622c40`.
 
 | Field | Value |
 |---|---|
-| authorityState | EAFR-R12 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `1e31db99a` |
-| baselinePath | `docs/baselines/CVF_GC018_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_BASELINE_2026-08-26.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R12_P4B_B_LIVE_PROOF_HARNESS_ORCHESTRATOR_GRANT_AUTHORITY_REPAIR_2026-08-26.md` |
-| nextAuthorityRequirement | separate bounded RFR reconsideration authority decision; no RFR execution |
+| authorityState | TPGR-TV1 `DISPATCH_READY_COMMITTED_PENDING_WORKER_RETURN` at `2d6622c40` |
+| baselinePath | `docs/baselines/CVF_GC018_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md` |
+| nextAuthorityRequirement | exact no-commit TV1 worker return, then independent reviewer/closer evaluation |
 
 ## Closure Evidence
 
@@ -176,7 +169,7 @@ Continuity parent anchor: `cfd7e203b`.
 
 ## Next Allowed Move
 
-EAFR-R12 is reviewer-accepted closed bounded at `1e31db99a`; EAFR has zero remaining source-backed P0/P1 findings and zero authorized successors. The next allowed move is a separately authorized bounded RFR reconsideration decision only. Provider/live/network/credential/store effects, RFR execution, TPGR implementation, public sync, deployment and push remain parked.
+RFR is terminally closed bounded at `20bbb071c`; TPGR-TV1 documentation-only design dispatch is committed at `2d6622c40` with a hard TV1-TV3 successor cap and no TV4. The next move is the exact no-commit TV1 worker return, then independent review. TV2/TV3, TPGR-R9, selective execution, provider/live/network/credential/store effects, absorption, app/project execution, public sync, deployment and push remain parked.
 
 ## Active Boundary
 
@@ -207,13 +200,20 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - EAFR-R12 Closure Continuity
+## Core Guard Self-Protection Authorization - TPGR-TV1 Dispatch Continuity
 
-Authorized guard-maintenance scope: record accepted R12 material `1e31db99a`, synchronize terminal EAFR state and one decision-only RFR reconsideration next move, and keep all external effects parked.
-Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/eafrR12P4BBLiveProofHarnessOrchestratorGrantAuthorityRepairAcceptedBounded20260826.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `AGENT_HANDOFF_V59_2026-08-11.md`.
+Authorized guard-maintenance scope: record terminal RFR closure `20bbb071c` and committed TPGR-TV1 dispatch `2d6622c40`, bind exact packet hashes, set the next move to one no-commit worker return, and keep all successors/external effects parked.
+Protected paths:
+- `AGENT_HANDOFF_V59_2026-08-11.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/tpgrTV1TrancheValueAdmissionDesignDispatched20260826.json`
+- `CVF_SESSION_MEMORY.md`
 Operator authorization: operator accepted the cross-domain tranche-value learning and authorized serious-finding repair without low-value tranche proliferation.
-Rollback boundary: revert only the R12 closure-continuity batch if rejected; retain accepted R12 material and earlier EAFR history.
-Not authorized: live-store wiring, provider/live/network/external-store calls, credentials, build, RFR execution, TPGR implementation, BuildAuthority, package/config edits, public sync, deployment or push.
+Rollback boundary: revert only this TV1 dispatch-continuity batch if rejected; retain terminal RFR and committed TV1 dispatch material.
+Not authorized: TV2/TV3, TPGR-R9, selective execution, provider/live/network/external-store calls, credentials, absorption, app/project execution, build, package/config edits, public sync, deployment or push.
 
 ## Claim Boundary
 

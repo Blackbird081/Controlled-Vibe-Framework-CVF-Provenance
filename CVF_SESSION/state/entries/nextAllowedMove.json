@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2353,
+  "stateOrder": 2355,
   "stateKey": "nextAllowedMove",
-  "value": "EAFR-R12 is reviewer-accepted closed bounded at 1e31db99a after disclosed reviewer repairs. EAFR has zero remaining source-backed P0/P1 findings and zero authorized successors. The next allowed move is a separately authorized bounded RFR reconsideration decision only; do not execute RFR as part of continuity. Provider/live/network/credential/store calls, TPGR implementation, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "RFR is terminally closed bounded at 20bbb071c and TPGR-TV1 design dispatch is committed at 2d6622c40. The next allowed move is the no-commit TV1 worker return at docs/reviews/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_WORKER_RETURN_2026-08-26.md, followed only by independent reviewer/closer evaluation. TV2, TV3, TPGR-R9, selective execution, provider/live/network/credential/store calls, source absorption, app/project execution, public sync, deployment and push remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

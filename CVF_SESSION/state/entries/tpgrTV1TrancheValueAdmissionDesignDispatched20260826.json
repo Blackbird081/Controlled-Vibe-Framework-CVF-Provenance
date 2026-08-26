@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2354,
+  "stateKey": "tpgrTV1TrancheValueAdmissionDesignDispatched20260826",
+  "value": {
+    "status": "DISPATCH_READY_COMMITTED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_TPGR_TRANCHE_VALUE_ADMISSION_GOVERNANCE_ROADMAP_2026-08-26.md",
+    "baseline": "docs/baselines/CVF_GC018_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md",
+    "dispatchCommit": "2d6622c40",
+    "baselineSha256": "a292ba8b7c57bdd9edcb5ae8a991e7beee5916e882434436878c9e3e399d212e",
+    "workOrderSha256": "c90b0fffea35a1f88c9c417e4ecd4a36fc6aadae046159c0b08eae986023d776",
+    "workerReturn": "docs/reviews/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_WORKER_RETURN_2026-08-26.md",
+    "workerBoundary": "WORKER_MUST_NOT_COMMIT; exactly one assessment and one worker return; no owner implementation.",
+    "successorCap": "TV1-TV3 maximum; no TV4; TV2/TV3 require independent predecessor acceptance and fresh value disposition.",
+    "interlocks": "Risk floor and full legacy bundle remain unchanged; TPGR-R8 remains HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE.",
+    "proof": "pre-dispatch 79/79 PASS; pre-commit 87/87 PASS; zero external effects.",
+    "claimBoundary": "Documentation-only TV1 design dispatch; no selective execution, provider/live action, absorption, app/project execution, deployment, public sync or push."
+  }
+}
