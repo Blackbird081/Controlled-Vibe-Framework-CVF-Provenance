@@ -83,6 +83,25 @@ current private form of an allowlisted file into the sibling public clone only
 after confirming the public baseline is clean and the destination path is
 tracked or explicitly authorized as new.
 
+## Reviewer Amendment 1 - Provenance-Delta Recovery
+
+The first worker return is accepted as a blocked diagnostic but not as a
+candidate. Independent review proved that copying current private post-images
+mixed later CADP changes into LPCI R3. Pulling the resulting 33-file Guard
+Contract cluster would be unrelated scope inflation and is forbidden.
+
+The same terminal R3 may recover without another worker or R4 by applying only
+the exact code deltas introduced by source commits `8007e269f`, `1e31db99a`,
+`f7f5cf1ef`, and `92c96a04d`. For
+`EXTENSIONS/CVF_GUARD_CONTRACT/src/package.boundary.test.ts`, apply only the
+12 LPCI R1 lines from `f7f5cf1ef`, not that commit's full post-image. Add the
+ten-line Model Gateway root export delta from original LPCI binding commit
+`5c86f6d77` to repair a previously omitted public dependency. No other path or
+historical delta is admitted.
+
+This correction changes the public candidate from 22 to 23 exact paths. It
+does not weaken Auth.js, authorize secrets/provider calls, or open a successor.
+
 ## Non-Goals
 
 - no private docs, reviews, roadmaps, session state, registries or governance

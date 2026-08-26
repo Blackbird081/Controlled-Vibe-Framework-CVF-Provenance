@@ -142,6 +142,7 @@ Public-sync repository, exact candidate allowlist:
 - `EXTENSIONS/CVF_MODEL_GATEWAY/package.json`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/package-lock.json`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/scripts/run-p4b-b-live-proof.ts`
+- `EXTENSIONS/CVF_MODEL_GATEWAY/src/index.ts`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/gateway-receipt.ts`
 - `EXTENSIONS/CVF_MODEL_GATEWAY/src/lpci-safe.ts`
@@ -177,6 +178,31 @@ matching public destination. Do not copy commit history or any private docs.
 Run `npm install --package-lock-only` only inside an allowlisted package and
 only if required to reconcile an allowlisted lockfile; do not upgrade unrelated
 dependencies.
+
+### Reviewer Amendment 1 - Superseding Recovery Method
+
+The original current-post-image copy method is rejected for reviewer recovery
+because it imported later unrelated CADP content. The independent reviewer may
+prepare the candidate directly, without another worker, using only these exact
+provenance deltas:
+
+- `8007e269f`: the three allowlisted Control Plane paths;
+- `1e31db99a`: the Model Gateway package/lock, harness, runner and focused test;
+- `f7f5cf1ef`: the allowlisted R1 paths, with only its 12-line delta applied to
+  Guard Contract `src/package.boundary.test.ts`;
+- `92c96a04d`: the five allowlisted Execution Plane paths;
+- `5c86f6d77`: only the ten-line export delta in Model Gateway `src/index.ts`.
+
+New files use their exact introducing-commit post-image. A path whose public
+blob equals the relevant source commit's parent may use the exact source commit
+post-image. Model Gateway package and lockfile changes are applied in order
+`1e31db99a` then `f7f5cf1ef`. Do not project any later private post-image, CADP
+contract cluster, documentation or registry. Do not run plain `npm install`;
+existing local dependencies may be relinked without network only by a command
+whose offline behavior is explicit and whose tracked delta remains allowlisted.
+
+Amended public allowlist count: 23 paths. This amendment is part of R3 and
+admits no R4.
 
 ## Auth Build Proof
 
@@ -430,7 +456,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
     "delegation": "MULTI_ROLE_NO_COMMIT",
     "novelty": "OWNER_COMPOSITION"
   },
-  "pathFamilies": ["EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION", "EXTENSIONS/CVF_GUARD_CONTRACT", "EXTENSIONS/CVF_MODEL_GATEWAY", "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION", "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web", "docs/baselines", "docs/roadmaps", "docs/reviews"],
+  "pathFamilies": ["AGENT_HANDOFF_V59_2026-08-11.md", "CVF_SESSION", "CVF_SESSION_MEMORY.md", "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION", "EXTENSIONS/CVF_GUARD_CONTRACT", "EXTENSIONS/CVF_MODEL_GATEWAY", "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION", "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web", "docs/baselines", "docs/roadmaps", "docs/reviews"],
   "claims": ["dependency-closed public candidate builds without weakening Auth.js"],
   "requiredProof": ["package checks", "focused tests", "synthetic production build", "public-sync preflight", "independent review"],
   "operatorCheckpoints": ["secret exposure", "remote mismatch", "scope expansion"],

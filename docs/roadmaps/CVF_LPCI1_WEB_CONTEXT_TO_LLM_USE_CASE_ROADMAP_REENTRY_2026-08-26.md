@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: LPCI1_WEB_R3_DISPATCHED_FINAL_AUTH_BUILD_PUBLIC_RELEASE
+Status: LPCI1_WEB_R3_REVIEWER_AMENDMENT_1_ACTIVE
 
 docType: roadmap
 
@@ -18,6 +18,14 @@ Date: 2026-08-26
 | claimBoundary | accepted bounded UC-01 evidence plus operator-directed roadmap parking; no hosted, deployment, production, non-public, full-document, vector/RAG, or persistence-release claim |
 
 ## Current Assessment And Parking Decision
+
+### 2026-08-27 R3 Reviewer Amendment 1
+
+The blocked worker diagnostic is accepted, but its proposed 33-file expansion
+is rejected as unrelated CADP scope. R3 remains the single terminal tranche.
+Reviewer recovery is authorized through provenance-bound LPCI source deltas
+plus the one omitted Model Gateway root export path; no second worker, R4 or
+unrelated dependency cluster is admitted.
 
 ### 2026-08-26 Delta-Only Re-Entry
 

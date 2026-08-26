@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth
+- Repository: private provenance source of truth; current execution HEAD before Amendment 1 commit: `c3bfd52ed0b86a3693f9c7c66e87873dc395fc1b`
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`lpci1_web_r3_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed R3 packet to the no-commit Claude worker; parked checkpoint=worker commit/push/deploy, secret-value access, provider calls, R4 and unrelated successors.
+Startup acknowledged: current mode=`lpci1_web_r3_reviewer_amendment_1_execution`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the 23-path provenance-delta reviewer recovery and release only on clean proof; parked checkpoint=33-file CADP expansion, plain npm install, secret-value access, provider calls, R4 and unrelated work.
 
 ## Current Mode
-`lpci1_web_r3_dispatched_pending_worker_return`
+`lpci1_web_r3_reviewer_amendment_1_execution`
 
 ## Purpose
 
@@ -200,9 +200,9 @@ Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
 Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
 Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
 
-## Core Guard Self-Protection Authorization - LPCI1 Web R3 Dispatch Continuity
+## Core Guard Self-Protection Authorization - LPCI1 Web R3 Amendment Continuity
 
-Authorized guard-maintenance scope: record R3 dispatch `51b3baa4a`, bind the no-commit worker return next move, and keep commit/push/deploy plus unrelated successors parked.
+Authorized guard-maintenance scope: bind corrected R3 reviewer execution, exact authority hashes and the 23-path provenance-delta next move; retain no-R4 boundary.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -211,9 +211,9 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lpci1WebR3FinalAuthBuildPublicReleaseDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator supplied the six Netlify credential-reference names and authorized continuing the terminal R3 workflow; no R4.
-Rollback boundary: revert only this R3 dispatch-continuity batch if rejected; retain material dispatch `51b3baa4a` and prior evidence.
-Not authorized: worker commit/push/deploy, hosted smoke, secret-value access, provider/live/network calls, R4, absorption or unrelated work.
+Operator authorization: standing serious-finding authority permits correcting R3 without a new tranche; six Netlify names remain opaque.
+Rollback boundary: revert the exact mixed amendment/state manifest atomically; retain original R3 dispatch and clean public baseline.
+Not authorized: 33-file CADP expansion, plain npm install, secret-value access, provider/live calls, R4, absorption or unrelated work.
 
 ## Claim Boundary
 

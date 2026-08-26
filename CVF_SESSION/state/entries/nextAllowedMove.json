@@ -1,5 +1,5 @@
 {
   "stateOrder": 2377,
   "stateKey": "nextAllowedMove",
-  "value": "Transfer committed LPCI1 Web R3 dispatch 51b3baa4a to the no-commit Claude worker. The worker proves ancestry, prepares only the exact allowlisted public-sync candidate, runs offline package checks and the process-local synthetic Auth.js production build, authors the named worker return, and yields COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with both HEADs and staging areas unchanged. Commit, push, deploy observation, hosted smoke, secret-value access, provider calls, R4 and unrelated work remain reviewer-controlled or parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute LPCI1 Web R3 Reviewer Amendment 1 directly: construct the 23-path public candidate from exact LPCI provenance deltas, independently run offline checks/tests and the process-local synthetic Auth.js build, then only on clean proof commit and push public main, observe Netlify, and perform hosted smoke. The 33-file CADP cluster, plain npm install, secret-value access, provider calls, R4 and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24."
 }
