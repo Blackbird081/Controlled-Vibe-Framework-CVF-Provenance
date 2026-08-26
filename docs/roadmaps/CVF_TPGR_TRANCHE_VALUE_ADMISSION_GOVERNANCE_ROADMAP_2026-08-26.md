@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_TV3_DISPATCH_READY_TERMINAL
+Status: CLOSED_PASS_BOUNDED
 
 docType: roadmap
 
@@ -69,7 +69,7 @@ Any extra need must be independently justified as a new roadmap, not appended.
   "authorizedOrdinals": [1, 2, 3],
   "currentAuthorizedOrdinal": 3,
   "noTv4": true,
-  "authorityDisposition": "TV3_OPERATOR_AUTHORIZED_TERMINAL_COMPARISON_ONLY"
+  "authorityDisposition": "TV3_COMPLETED_ROADMAP_CLOSED_NO_SUCCESSOR"
 }
 ```
 
@@ -107,10 +107,71 @@ eligible for a consolidated repair even when its economic return is unknown.
 ## Dispatch Boundary
 
 TV1 is independently accepted at `5084910ce`; TV2 is independently accepted
-with bounded reviewer repairs at `227f3d950`. The operator's 2026-08-26 fresh
-continuation decision authorizes TV3 as one comparison-only, no-commit worker
-pass. TV3 may recommend terminal closure or park further evidence collection;
-it may not modify implementation owners. No TV4 exists.
+with bounded reviewer repairs at `227f3d950`. TV3 is independently accepted
+with one bounded evidence-label repair at material commit `3b3f944ff`. Its two
+comparisons both match their accepted historical outcomes with zero observed
+false stops and zero observed false continues. The terminal disposition is
+`CLOSE_ROADMAP_BOUNDED`. No TV4 exists.
+
+## Terminal Closure
+
+Disposition: `CLOSE_ROADMAP_BOUNDED`.
+
+The terminal worker return is
+`docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md`,
+materially committed at `3b3f944ff110245d91502c8e21e65b1b88faabe3`
+with SHA-256
+`c8faae810c7a9ca93f7c8747c61172706e488cf54c93fa06308452967bc3dd66`.
+Independent review corrected C1 from `OBSERVED` to `HISTORICAL_BOUNDED`
+because EAFR-R12 had already repaired the current source, then reproduced the
+same `CONSOLIDATE` result. C2 remains comparison-only and activates no
+absorption, app, or project class. Focused tests passed 43/43,
+worker-return/reviewer-fast passed 66/66, material pre-commit passed 87/87,
+and provider/live call count was zero.
+
+The roadmap delivered its bounded design, shadow implementation, and terminal
+two-case calibration. Further remediation findings require a separately
+justified new roadmap; they cannot be appended as TV4.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | N/A with reason: immutable terminal dispatch evidence is not mutated in the roadmap-only closure batch | its one-return execution contract completed at material `3b3f944ff` | N/A with reason: roadmap-only closure ownership |
+| Completion or reviewer artifact | `docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md` | Independent Reviewer Addendum: `REVIEWER_ACCEPTED_WITH_BOUNDED_REPAIR` | PASS |
+| Roadmap state | this roadmap | top-level `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Terminal worker/reviewer artifact | `docs/reviews/CVF_TPGR_TV3_TERMINAL_TWO_COMPARISON_PILOT_WORKER_RETURN_2026-08-26.md` | material `3b3f944ff`; SHA-256 `c8faae810c7a9ca93f7c8747c61172706e488cf54c93fa06308452967bc3dd66` | PASS |
+| Comparison contract | terminal worker/reviewer artifact | exactly C1 remediation and C2 absorption/project boundary; both `MATCH` | PASS |
+| Error counts | terminal worker/reviewer artifact comparison table | false-stop 0; false-continue 0 | PASS |
+| Hard cap | this roadmap `Tranche Successor Authority` block | ordinal 3 of cap 3; `noTv4: true` | PASS |
+| External effects | terminal worker/reviewer artifact command and claim evidence | zero provider/live/network/store/public/deploy effects | PASS |
+| Registry JSON | N/A with reason: TV3 creates or changes no registry | exact one-file material commit `3b3f944ff` contains only the reviewer-accepted return | PASS |
+| Registry Markdown | N/A with reason: TV3 creates or changes no registry | exact one-file material commit `3b3f944ff` contains only the reviewer-accepted return | PASS |
+| External evidence digest | N/A with reason: no external input was introduced | eight pinned committed local-input SHA-256 values independently matched | N/A with reason: no external artifact |
+| System loop interlock | this roadmap hard cap and claim boundary | ordinal 3 of cap 3; TV4 and every external-effect lane remain forbidden | PASS |
+| Session continuity | active bootstrap, front door, state sources/aggregate and handoff | separate post-closure continuity batch required | N/A with reason: separate post-closure batch |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| terminal disposition | exactly `CLOSE_ROADMAP_BOUNDED` or `PARK_EVIDENCE_COLLECTION` | `CLOSE_ROADMAP_BOUNDED` | PASS |
+| comparison count | exactly two pinned comparisons | C1 remediation plus C2 absorption/project boundary | PASS |
+| false-decision counts | false-stop 0 and false-continue 0 | 0 and 0 | PASS |
+| evaluator receipt | verified authority and non-authoritative shadow result | committed cap 3/ordinal 3; C1 `CONSOLIDATE`; authoritative flag false | PASS |
+| class activation | none for absorption/app/project | C2 documentary mapping only | PASS |
+| external effects | zero | zero provider/live/network/store/public/deploy calls or writes | PASS |
+
+## Current Runtime Freshness Verification
+
+| Field | Value |
+| --- | --- |
+| runtimeClaimPresent | NO; the zero-call statement is execution evidence, not a claim that provider runtime or registries are absent |
+| runtimeMutationAuthorized | NO |
+| freshnessVerificationMode | CURRENT_SOURCE_BOUNDARY_READ |
+| currentOwnerAccounting | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and `PROVIDER_CAPABILITY_REGISTRY` exist and remain outside this documentation-only closure |
+| reason | TV3 compares committed governance decisions and makes no runtime behavior, provider-routing, or production-readiness claim |
+| requiredFutureAction | any future runtime/provider behavior claim requires separate authority and the mandatory real-provider live proof |
 
 ## Acceptance Criteria
 
@@ -165,6 +226,7 @@ Reason: private foundational governance roadmap; no public-sync receipt exists.
 
 ## Claim Boundary
 
-This roadmap authorizes the terminal TV3 comparison-only worker pass. It does
-not reduce mandatory governance, activate selective execution, resume
-TPGR-R9, modify implementation owners, or authorize any external effect.
+This closed roadmap records the terminal TV3 comparison-only pass. It does not
+reduce mandatory governance, activate selective execution, resume TPGR-R9,
+modify implementation owners, authorize any external effect, or authorize a
+TV4 or implicit successor.
