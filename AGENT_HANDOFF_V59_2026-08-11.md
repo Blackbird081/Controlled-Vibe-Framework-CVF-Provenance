@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_l1_closed_pass_bounded_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value gate only; parked checkpoint=MV-3, UAA, provider/live, public sync, deployment, push, secrets and the 751-line soft-size advisory.
+Startup acknowledged: current mode=`eacq_fv_mv3_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact two-path MV3 no-commit work order; parked checkpoint=UAA, provider/live, public sync, deployment, push, secrets, runtime-owner changes and the 751-line soft-size advisory.
 
 ## Current Mode
-`eacq_fv_l1_closed_pass_bounded_pending_next_value_gate`
+`eacq_fv_mv3_dispatched_pending_no_commit_worker_return`
 
 ## Purpose
 
@@ -111,14 +111,14 @@ Carry terminal MPA-AI-T0 evidence, the absorbed EACQ-FV-R0 critique, and the rev
 
 ## Current Authority
 
-EACQ-FV-L1 dispatch: `9e7a0b035`; material: `573fe1707`; intermediate continuity: `7d61063a0`; closure: `1c6112d47`.
+EACQ-FV-L1 is closed at material `573fe1707` and closure `1c6112d47`. EACQ-FV-MV3 dispatch: `19079228f`.
 
 | Field | Value |
 |---|---|
-| authorityState | EACQ-FV-L1 `CLOSED_PASS_BOUNDED` at closure `1c6112d47` |
-| baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_2026-08-28.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_2026-08-28.md` |
-| nextAuthorityRequirement | fresh value gate only; no automatic successor |
+| authorityState | EACQ-FV-MV3 dispatched pending exact no-commit worker return at `19079228f` |
+| baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_2026-08-28.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_2026-08-28.md` |
+| nextAuthorityRequirement | exact two-path worker return, then independent review; no automatic successor |
 
 ## Closure Evidence
 
@@ -170,7 +170,7 @@ EACQ-FV-L1 dispatch: `9e7a0b035`; material: `573fe1707`; intermediate continuity
 
 ## Next Allowed Move
 
-EACQ-FV-L1 is `CLOSED_PASS_BOUNDED`: material `573fe1707`, intermediate continuity `7d61063a0`, and closure `1c6112d47`. Two reviewer-found MEDIUM correctness repairs are disclosed. Evidence: 16/16 focused tests, 158/158 dispatch-quality regressions, worker-return/reviewer-fast PASS, exact material-range 79/79, and closure pre-commit 87/87. No automatic successor is authorized. The next move is a fresh value gate only. MV-3, UAA, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction, the 751-line soft-size advisory, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-MV3 passed the fresh serious/source-backed/non-duplicate/value-exceeds-cost gate and is dispatched at `19079228f`; pre-dispatch 79/79 and commit hook 87/87 passed. Execute the paired no-commit order using capsule SHA-256 `bc3d83996f7f9f316651939c7051794760429727a501235b8fb776f1d4638fda`. The worker may return exactly the existing absorption-core standard and the named MV3 worker return, must capture start/finish timestamps, and must leave staging empty. Independent review is required before commit. UAA, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction, the 751-line advisory, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-L1 material `573fe1707`, closure `1c6112d47`, exact current authority paths/hashes, and fresh-value-gate-only posture.
+Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-MV3 dispatch `19079228f`, exact current authority paths/hashes, capsule hash, and no-commit worker-return posture.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -213,8 +213,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: operator continued the orchestrator/reviewer lane; the three-repeat finding passed the fresh value gate and opened only this bounded L1 dispatch.
-Rollback boundary: revert this final closure continuity atomically while retaining dispatch `9e7a0b035`, material `573fe1707`, closure `1c6112d47`, EV-1 closure, MV-1/MV-2 closure, and all prior history.
+Rollback boundary: revert this MV3 dispatch continuity atomically while retaining dispatch `19079228f`, L1 closure, EV-1 closure, MV-1/MV-2 closure, and all prior history.
 Not authorized: worker commit, MV-3, UAA execution, autorun/runtime-owner mutation, rule/index/hook/catalog mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
 ## Claim Boundary
 
-This handoff records EACQ-FV-L1 `CLOSED_PASS_BOUNDED` and fresh-value-gate-only authority. It authorizes no further implementation, automatic successor, causal quality claim, runtime range-shape owner change, MV-3, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, compaction, soft-advisory work, or unrelated lane.
+This handoff records bounded EACQ-FV-MV3 no-commit execution authority only. It authorizes no automatic successor, causal quality claim, new checker/standard/index owner, corpus reclassification, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, compaction, soft-advisory work, or unrelated lane.
