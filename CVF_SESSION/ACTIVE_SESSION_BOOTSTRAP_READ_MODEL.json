@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eacq_fv_mv1_dispatched_awaiting_worker_return",
+  "currentMode": "eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EACQ-FV-MV1 GC-018, source-verified no-commit work order, and roadmap dispatch status are committed at e694c0337 after 87/87 pre-commit gates passed. Next allowed move is the delegated worker executing only docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV1_CONDITIONAL_REOPEN_INDEX_ENFORCEMENT_2026-08-27.md and returning exactly the new checker, focused test module, and worker-return packet unstaged and uncommitted. The internal reviewer then independently reviews and owns any repair, commit, completion, and continuity update. MV-2, MV-3, UAA-G1/G2/G3, existing-rule/index/hook/catalog/session mutation by the worker, provider/live calls, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-MV1 is independently accepted CLOSED_PASS_BOUNDED at material commit f202f351fccba436c15a666facefc438be5bdac9 and closure commit 1e002a52b after bounded reviewer repair. Exact three-path worker scope and no-commit discipline passed; focused evidence is 33/33, the actual dispatch range has zero conditional-index violations, reviewer-fast passed, and material and closure pre-commit gates passed 87/87. The checker remains standalone and unwired. Next allowed move is operator selection through the serious, source-backed, non-duplicate, value-exceeds-time/latency/quota gate: stop, request bounded correction, or separately authorize fresh MV-2 or MV-3 dispatch authoring. No successor is automatic. UAA-G1/G2/G3, rule/index/hook/catalog mutation, provider/live calls, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

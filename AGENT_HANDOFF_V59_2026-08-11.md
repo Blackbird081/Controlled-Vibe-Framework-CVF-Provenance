@@ -4,7 +4,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
-- Current private-provenance material HEAD: `e694c0337`; EACQ-FV-MV1 dispatch is committed after operator authorization and 87/87 pre-commit gates; MPA-AI-T0 closure remains `19c223ce06d579cfe16fb7feb4ff8996363797ab`.
+- Current private-provenance closure HEAD: `1e002a52b`; governed material commit: `f202f351f`; EACQ-FV-MV1 is independently accepted closed bounded after reviewer repair, 33/33 focused tests, and 87/87 material and closure pre-commit gates; MPA-AI-T0 closure remains `19c223ce06d579cfe16fb7feb4ff8996363797ab`.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_mv1_dispatched_awaiting_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegated no-commit worker executes the committed EACQ-FV-MV1 work order and returns exactly three unstaged paths; parked checkpoint=MV-2/MV-3, UAA-G1/G2/G3, hook/index/standard mutation, public sync, deployment, secrets and providers.
+Startup acknowledged: current mode=`eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator value-gate selection of stop, bounded correction, or separately authorized MV-2/MV-3 dispatch authoring; parked checkpoint=automatic successors, UAA-G1/G2/G3, hook/index/standard mutation, public sync, deployment, secrets and providers.
 
 ## Current Mode
-`eacq_fv_mv1_dispatched_awaiting_worker_return`
+`eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate`
 
 ## Purpose
 
@@ -111,7 +111,7 @@ Carry terminal MPA-AI-T0 evidence, the absorbed EACQ-FV-R0 critique, and the rev
 
 ## Current Authority
 
-Current material parent for continuity sync: `e694c0337`; prior continuity repair: `f10c3e418`.
+Current closure parent for continuity sync: `1e002a52b`; governed material commit: `f202f351f`; prior continuity repair: `75e21242b`.
 
 | Field | Value |
 |---|---|
@@ -170,7 +170,7 @@ Current material parent for continuity sync: `e694c0337`; prior continuity repai
 
 ## Next Allowed Move
 
-EACQ-FV-MV1 GC-018, source-verified no-commit work order, and roadmap dispatch status are committed at `e694c0337`; 87/87 pre-commit gates passed. Next allowed move is the delegated worker executing only `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV1_CONDITIONAL_REOPEN_INDEX_ENFORCEMENT_2026-08-27.md` and returning exactly the new checker, focused test module, and worker-return packet unstaged and uncommitted. The internal reviewer then owns independent review, bounded repair, commit, completion, and continuity. Keep MV-2/MV-3, UAA-G1/G2/G3, existing-rule/index/hook/catalog/session mutation by the worker, provider/live calls, public sync, deploy, push, secrets, and unrelated work parked. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-MV1 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `f202f351fccba436c15a666facefc438be5bdac9` after bounded reviewer repair. The exact no-commit manifest passed; focused evidence is 33/33, the actual dispatch range has zero violations, reviewer-fast passed, and material pre-commit passed 87/87. The checker remains standalone and unwired. Next allowed move is operator selection of stop, bounded correction, or separately authorized MV-2/MV-3 dispatch authoring under the serious, source-backed, non-duplicate, value-exceeds-cost gate. Keep automatic successors, UAA-G1/G2/G3, rule/index/hook/catalog mutation, provider/live calls, public sync, deploy, push, secrets, and unrelated work parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-MV1 dispatch `e694c0337`, current authority hashes, active mode, and worker-return-only next move.
+Authorized guard-maintenance scope: retain prior closures and bind accepted EACQ-FV-MV1 material `f202f351f`, completion evidence, active mode, and operator-value-gate-only next move.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -212,9 +212,9 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: approve the revised roadmap, appoint the internal orchestrator/reviewer, and dispatch a delegated no-commit worker for bounded MV-1 implementation.
-Rollback boundary: revert this continuity update atomically while retaining committed EACQ-FV-MV1 dispatch and prior MPA-AI-T0 closure.
-Not authorized: worker edits outside the three paths, worker commit, MV-2/MV-3, rule/index/hook/catalog mutation, UAA execution, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
+Operator authorization: reviewer/closer independently reviews, repairs within the bounded owner set, commits, closes, and synchronizes MV-1.
+Rollback boundary: revert this closure continuity atomically while retaining material commit `f202f351f`, dispatch evidence, and prior MPA-AI-T0 closure.
+Not authorized: automatic MV-2/MV-3, rule/index/hook/catalog mutation, UAA execution, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
 ## Claim Boundary
 
-This handoff records operator-approved EACQ-FV-MV1 dispatch while preserving the MPA utility cluster behind a conjunctive conditional-reopen gate. It authorizes only the committed three-path no-commit worker scope and no successor, benchmark, provider/live action, public mutation, deploy, production/effectiveness claim, or unrelated lane.
+This handoff records bounded EACQ-FV-MV1 closure while preserving the MPA utility cluster behind a conjunctive conditional-reopen gate. It authorizes no automatic successor, benchmark, hook/catalog wiring, provider/live action, public mutation, deploy, production/effectiveness claim, or unrelated lane.
