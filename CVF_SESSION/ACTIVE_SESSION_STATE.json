@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_INTAKE_2026-08-27.md",
-    "baselineSha256": "907b36d7b794c1f5d14a5e67c7bef2d34dc7f3633ad8287d10068480abc87368",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_INTAKE_2026-08-27.md",
-    "workOrderSha256": "882a0b84e20b7879bbd6bb0caf078c42457c501e7a533ca51416eb526c22ea25"
+    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_MV1_CONDITIONAL_REOPEN_INDEX_ENFORCEMENT_2026-08-27.md",
+    "baselineSha256": "fb6e24565deda643576f2ecbbd049eb5ab5037c3bdda1cb0a152b202ce711b79",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV1_CONDITIONAL_REOPEN_INDEX_ENFORCEMENT_2026-08-27.md",
+    "workOrderSha256": "3b4523c5c24042e77ef0a3e9e74e156c02919d722bb0f3c9a49bc7479acd7b37"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval",
-  "previousMode": "eacq_fv_roadmap_proposed_pending_external_adversarial_review",
+  "currentMode": "eacq_fv_mv1_dispatched_awaiting_worker_return",
+  "previousMode": "eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "EACQ-FV-R0 external review, 14-finding disposition, minimum viable roadmap revision, conditional reopen repair, RAG source-verification registry evidence, and handback provenance clarifications are committed through 5f7b8f0d8. Next allowed move is operator approval, rejection, or requested revision of the revised roadmap only. If approved, author a fresh MV-1 GC-018 and source-verified work order; approval does not itself authorize implementation. MV-2, MV-3, UAA-G1/G2/G3, task-capsule/schema/generator/checker mutation, provider/live calls, public sync, deploy, secrets, and unrelated work remain parked. The MPA utility cluster remains indexed as DEFERRED_FORWARD_VALUE_PRESERVED behind conjunctive reopen evidence. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-MV1 GC-018, source-verified no-commit work order, and roadmap dispatch status are committed at e694c0337 after 87/87 pre-commit gates passed. Next allowed move is the delegated worker executing only docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV1_CONDITIONAL_REOPEN_INDEX_ENFORCEMENT_2026-08-27.md and returning exactly the new checker, focused test module, and worker-return packet unstaged and uncommitted. The internal reviewer then independently reviews and owns any repair, commit, completion, and continuity update. MV-2, MV-3, UAA-G1/G2/G3, existing-rule/index/hook/catalog/session mutation by the worker, provider/live calls, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",

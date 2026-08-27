@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decision on the revised EACQ-FV roadmap only; parked checkpoint=MV-1 implementation, MV-2/MV-3, UAA-G1/G2/G3, public sync, deployment, secrets and providers.
+Startup acknowledged: current mode=`eacq_fv_mv1_dispatched_awaiting_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegated no-commit worker executes the committed EACQ-FV-MV1 work order and returns exactly three unstaged paths; parked checkpoint=MV-2/MV-3, UAA-G1/G2/G3, hook/index/standard mutation, public sync, deployment, secrets and providers.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`
-Current mode: `eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`; previous mode marker: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`
-Previous mode: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`
+Current mode marker: `eacq_fv_mv1_dispatched_awaiting_worker_return`
+Current mode: `eacq_fv_mv1_dispatched_awaiting_worker_return`; previous mode marker: `eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`
+Previous mode: `eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`. EACQ-FV-R0 review absorption, revision, and handback provenance clarification are committed through `5f7b8f0d8`; all 14 findings are dispositioned and the MPA utility cluster is indexed as `DEFERRED_FORWARD_VALUE_PRESERVED`. Next: operator approval, rejection, or requested revision of the revised roadmap only. If approved, author a fresh MV-1 GC-018 and source-verified work order; approval does not authorize implementation. Keep MV-2/MV-3, UAA-G1/G2/G3, task-capsule/schema/generator/checker mutation, provider/live calls, public sync, deploy, secrets, and unrelated work parked.
+Mode: `eacq_fv_mv1_dispatched_awaiting_worker_return`. EACQ-FV-MV1 GC-018, source-verified no-commit work order, and roadmap dispatch status are committed at `e694c0337`; 87/87 pre-commit gates passed. Next: the delegated worker executes only the committed MV-1 work order and returns exactly the new checker, focused test module, and worker-return packet unstaged and uncommitted. The internal reviewer owns independent review, bounded repair, commit, completion, and continuity. Keep MV-2/MV-3, UAA-G1/G2/G3, existing-rule/index/hook/catalog/session mutation by the worker, provider/live calls, public sync, deploy, push, secrets, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
