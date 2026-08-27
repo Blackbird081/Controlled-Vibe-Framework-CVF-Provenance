@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_mv3_dispatched_pending_no_commit_worker_return",
-  "previousMode": "eacq_fv_l1_closed_pass_bounded_pending_next_value_gate",
+  "currentMode": "eacq_fv_mv3_material_accepted_pending_closure",
+  "previousMode": "eacq_fv_mv3_dispatched_pending_no_commit_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "EACQ-FV-MV3 is dispatched at 19079228f after the fresh serious/source-backed/non-duplicate/value-exceeds-cost gate selected it over UAA and the soft-size advisory. Execute the paired no-commit work order using task capsule SHA-256 bc3d83996f7f9f316651939c7051794760429727a501235b8fb776f1d4638fda. The worker may change exactly the existing absorption-core standard and the named MV3 worker return, must capture start/finish timestamps, and must leave staging empty. Independent review is required before commit. UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-MV3 material is independently accepted at 6a9887196 after three bounded reviewer repairs. Focused tests 7/7, core guard, worker-return fast gate, reviewer-return commit-steward preflight, and material pre-commit 87/87 passed. Because material reviewer findings required repairs, author the named MV3 completion review, convert the work order and roadmap to bounded closure, and run committed-range pre-closure before a separate final session sync. The repeated dispatch-range/packet-shape finding remains a value-gated learning candidate only. UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",

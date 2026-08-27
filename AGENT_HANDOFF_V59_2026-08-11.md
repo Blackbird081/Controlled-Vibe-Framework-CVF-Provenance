@@ -170,7 +170,7 @@ EACQ-FV-L1 is closed at material `573fe1707` and closure `1c6112d47`. EACQ-FV-MV
 
 ## Next Allowed Move
 
-EACQ-FV-MV3 passed the fresh serious/source-backed/non-duplicate/value-exceeds-cost gate and is dispatched at `19079228f`; pre-dispatch 79/79 and commit hook 87/87 passed. Execute the paired no-commit order using capsule SHA-256 `bc3d83996f7f9f316651939c7051794760429727a501235b8fb776f1d4638fda`. The worker may return exactly the existing absorption-core standard and the named MV3 worker return, must capture start/finish timestamps, and must leave staging empty. Independent review is required before commit. UAA, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction, the 751-line advisory, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-MV3 material is independently accepted at `6a9887196` after three bounded reviewer repairs: positive-owner wording, negative-example evidence scope, and pinned-command failure count/scope. Focused tests 7/7, core guard, worker-return fast gate, reviewer-return commit-steward preflight, and material pre-commit 87/87 passed. Author the named completion review, convert the work order and roadmap to bounded closure, run committed-range pre-closure, and then perform a separate final session sync. The repeated dispatch-range/packet-shape finding remains a fresh-value-gated learning candidate only. UAA, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction, the 751-line advisory, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-MV3 dispatch `19079228f`, exact current authority paths/hashes, capsule hash, and no-commit worker-return posture.
+Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-MV3 accepted material `6a9887196`, exact current authority paths/hashes, reviewer repairs, and pending bounded closure posture.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -212,9 +212,9 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator continued the orchestrator/reviewer lane; the three-repeat finding passed the fresh value gate and opened only this bounded L1 dispatch.
-Rollback boundary: revert this MV3 dispatch continuity atomically while retaining dispatch `19079228f`, L1 closure, EV-1 closure, MV-1/MV-2 closure, and all prior history.
-Not authorized: worker commit, MV-3, UAA execution, autorun/runtime-owner mutation, rule/index/hook/catalog mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
+Operator authorization: operator continued the orchestrator/reviewer/closer lane; the accepted MV3 work order authorizes reviewer repair, material commit, completion review when findings require it, and bounded closure only.
+Rollback boundary: revert this MV3 material-acceptance continuity atomically while retaining dispatch `19079228f`, L1 closure, EV-1 closure, MV-1/MV-2 closure, and all prior history.
+Not authorized: UAA execution, successor implementation, autorun/runtime-owner mutation, rule/index/hook/catalog mutation beyond the accepted semantic delta, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
 ## Claim Boundary
 
-This handoff records bounded EACQ-FV-MV3 no-commit execution authority only. It authorizes no automatic successor, causal quality claim, new checker/standard/index owner, corpus reclassification, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, compaction, soft-advisory work, or unrelated lane.
+This handoff records bounded EACQ-FV-MV3 material acceptance pending closure. It authorizes no automatic successor, causal quality claim, new checker/standard/index owner, corpus reclassification, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, compaction, soft-advisory work, or unrelated lane.

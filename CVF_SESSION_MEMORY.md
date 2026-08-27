@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_mv3_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact two-path MV3 no-commit work order; parked checkpoint=UAA, provider/live, public sync, deployment, push, secrets, runtime-owner changes and the 751-line soft-size advisory.
+Startup acknowledged: current mode=`eacq_fv_mv3_material_accepted_pending_closure`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author MV3 completion review and bounded closure from accepted material `6a9887196`; parked checkpoint=UAA, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction and the 751-line soft-size advisory.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_mv3_dispatched_pending_no_commit_worker_return`
-Current mode: `eacq_fv_mv3_dispatched_pending_no_commit_worker_return`; previous mode marker: `eacq_fv_l1_closed_pass_bounded_pending_next_value_gate`
-Previous mode: `eacq_fv_l1_closed_pass_bounded_pending_next_value_gate`
+Current mode marker: `eacq_fv_mv3_material_accepted_pending_closure`
+Current mode: `eacq_fv_mv3_material_accepted_pending_closure`; previous mode marker: `eacq_fv_mv3_dispatched_pending_no_commit_worker_return`
+Previous mode: `eacq_fv_mv3_dispatched_pending_no_commit_worker_return`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_mv3_dispatched_pending_no_commit_worker_return`. MV3 passed the fresh value gate and is dispatched at `19079228f`; pre-dispatch 79/79 and commit hook 87/87 passed. Next: execute the paired no-commit order with capsule hash `bc3d83996f7f9f316651939c7051794760429727a501235b8fb776f1d4638fda`, return exactly the existing absorption-core standard plus the named MV3 worker return, capture start/finish timestamps, and leave staging empty. Independent review is mandatory. Keep UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction, the 751-line advisory, and unrelated work parked.
+Mode: `eacq_fv_mv3_material_accepted_pending_closure`. MV3 material is independently accepted at `6a9887196` after three bounded reviewer repairs. Evidence: focused tests 7/7, core guard, worker-return fast gate, reviewer-return commit-steward preflight, and material pre-commit 87/87 PASS. Next: author the named completion review, convert the work order and roadmap to bounded closure, run committed-range pre-closure, and then perform a separate final session sync. The repeated dispatch-range/packet-shape finding is preserved only as a fresh-value-gated learning candidate. Keep UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction, the 751-line advisory, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
