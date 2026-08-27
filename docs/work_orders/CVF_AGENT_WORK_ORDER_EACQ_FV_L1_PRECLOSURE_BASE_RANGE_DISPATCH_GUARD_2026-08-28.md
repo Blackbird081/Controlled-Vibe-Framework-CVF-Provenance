@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Work order ID: EACQ-FV-L1
 
@@ -497,17 +497,17 @@ aggregate, storage relocation, or index-bearing foundation is created.
 
 ## Review Gate
 
-Review opens only after the exact uncommitted three-path return. Acceptance
-requires independent malformed-capsule probes, full focused tests, exact
-manifest/staging verification, and an honest effectiveness classification.
+Independent review accepted the exact three-path return after two bounded
+MEDIUM correctness repairs. Final evidence is recorded in the completion
+review and material commit `573fe1707`.
 
 ## Closure Checklist
 
-- [ ] exact three worker paths and empty staging independently confirmed;
-- [ ] unsafe literal and symbolic dispatch-base cases independently rejected;
-- [ ] safe pre-implementation, distinct-base, prose-only, and absent-command cases preserved;
-- [ ] focused and applicable governance gates pass after final edit;
-- [ ] evidence classification avoids causal uplift and leaves MV-3/UAA parked.
+- [x] exact three worker paths and empty staging independently confirmed;
+- [x] unsafe literal and symbolic dispatch-base cases independently rejected;
+- [x] safe pre-implementation, distinct-base, prose-only, and absent-command cases preserved;
+- [x] focused and applicable governance gates pass after final edit;
+- [x] evidence classification avoids causal uplift and leaves MV-3/UAA parked.
 
 ## Return-To-Orchestrator Conditions
 
@@ -522,8 +522,38 @@ learning tranche; the next human checkpoint is any successor/MV-3 admission.
 
 DEFERRED_PRIVATE_ONLY
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this artifact | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_COMPLETION_2026-08-28.md` | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | EACQ-FV roadmap | MV-3 and UAA remain parked | PASS |
+| Dispatch authority | paired baseline, work order, and capsule | commit `9e7a0b035` | PASS |
+| Worker return | named L1 worker return | no-commit handback plus reviewer addendum | PASS |
+| Material | exact three implementation paths | commit `573fe1707` | PASS |
+| Deterministic verification | focused/family/fast/pre-commit/pre-closure | 16/16; 158/158; PASS; 87/87; 79/79 | PASS |
+| Session continuity | active sources and generated aggregate | material sync `7d61063a0`; final closed sync follows | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | generated aggregate discipline | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; active handoff | material-bound state; final closed sync follows | PASS |
+| System loop interlock | completion claim boundary | MV-3/UAA and compaction remain parked | PASS |
+| External evidence digest | N/A with reason: deterministic local task | no provider/runtime receipt | N/A WITH REASON |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Worker return | independently reviewed | accepted with two MEDIUM repairs | PASS |
+| Material identity | exact accepted commit | `573fe1707` | PASS |
+| Focused verification | all cases pass | 16/16 PASS | PASS |
+| Family regression | no dispatch-quality regression | 158/158 PASS | PASS |
+| Runtime receipt | N/A with reason: local document-validation task | none produced | N/A_WITH_REASON |
+| Query acceptance | N/A with reason: no external query or provider action | none produced | N/A_WITH_REASON |
+
 ## Claim Boundary
 
-This order authorizes exactly one three-path, local, no-commit L1 task. It
-does not prove causal quality uplift, open MV-3/UAA, call a provider, mutate
-external/public surfaces, stage, commit, push, deploy, or claim production use.
+This order is terminally fulfilled at material commit `573fe1707` and the
+paired completion review. It proves bounded early rejection of the named
+stale-base command shape after two reviewer repairs. It does not prove causal
+quality uplift, open MV-3/UAA or compaction, call a provider, mutate external/
+public surfaces, push, deploy, or claim production use.

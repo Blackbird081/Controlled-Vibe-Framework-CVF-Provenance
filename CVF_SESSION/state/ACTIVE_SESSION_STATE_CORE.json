@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_2026-08-28.md",
     "baselineSha256": "bd0916cc48bfa9eaff5b3c1db240313035c1f425196b14b7ac3a1a7f19b33e3d",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_2026-08-28.md",
-    "workOrderSha256": "235822ff6a1908796f97e26490ff076a9a555cde8e7cdb75432a0ae10167ae01"
+    "workOrderSha256": "05c9c0a039d72c00704709057d341e3313d2035dbc7a133013bad2ad12e7bb2c"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
