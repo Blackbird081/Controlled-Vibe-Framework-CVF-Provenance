@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=apply the fresh serious/source-backed/non-duplicate/value-exceeds-cost gate before selecting another candidate; parked checkpoint=UAA, repeated dispatch-range/packet-shape learning, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction and the 751-line soft-size advisory.
+Startup acknowledged: current mode=`eacq_fv_l2_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact three-path L2 no-commit worker packet dispatched at `fd5f4ad9d`; parked checkpoint=UAA, the 751-line soft-size advisory, checker/autorun/template/session mutation, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction and unrelated work.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate`
-Current mode: `eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate`; previous mode marker: `eacq_fv_mv3_material_accepted_pending_closure`
-Previous mode: `eacq_fv_mv3_material_accepted_pending_closure`
+Current mode marker: `eacq_fv_l2_dispatched_pending_no_commit_worker_return`
+Current mode: `eacq_fv_l2_dispatched_pending_no_commit_worker_return`; previous mode marker: `eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate`
+Previous mode: `eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate`. MV3 is independently closed bounded at `7feda7966` with material `6a9887196` after two MEDIUM and one LOW reviewer repair. MV1/MV2/MV3 are closed and no successor opens automatically. Next: apply the fresh serious/source-backed/non-duplicate/value-exceeds-time-latency-quota gate before selecting another candidate. Keep UAA, the repeated dispatch-range/packet-shape learning candidate, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction, the 751-line advisory, and unrelated work parked.
+Mode: `eacq_fv_l2_dispatched_pending_no_commit_worker_return`. The fresh value gate admitted the recurrent execution-base/packet-shape scaffold defect and parked UAA plus the 751-line soft-size advisory. L2 dispatch is committed at `fd5f4ad9d`; execute only the exact three-path no-commit work order, capture `executionBaseHead` from clean committed HEAD after session sync, and return for independent review. Checker/autorun/template/session mutation, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction, and unrelated work remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
