@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=Claude executes the exact committed EV-1 capsule/work order and returns three unstaged paths; parked checkpoint=MV-3, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
+Startup acknowledged: current mode=`eacq_fv_ev1_material_accepted_pending_completion_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author EV-1 completion review after accepted material `dd1694dab`, then final continuity sync; parked checkpoint=range-shape learning candidate, MV-3, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return`
-Current mode: `eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return`; previous mode marker: `eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate`
-Previous mode: `eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate`
+Current mode marker: `eacq_fv_ev1_material_accepted_pending_completion_review`
+Current mode: `eacq_fv_ev1_material_accepted_pending_completion_review`; previous mode marker: `eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return`
+Previous mode: `eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return`. EACQ-FV-EV1 is dispatch-ready at authority commit `c3d4e7636` with a schema-valid 6,376-byte task capsule and pre-dispatch 79/79 PASS. Next: Claude executes the exact paired capsule/work order, changes only schema, focused tests, and the named worker return, then leaves staging empty. Codex independently reviews five malformed cases and classifies the bounded evidence. MV-3, UAA, provider/live, external packet mutation, public sync, deploy, push, secrets, and unrelated work remain parked.
+Mode: `eacq_fv_ev1_material_accepted_pending_completion_review`. EACQ-FV-EV1 material is accepted at `dd1694dab`: schema meta-valid, committed capsule valid, five negative probes rejected, 58/58 focused tests, reviewer-fast PASS, and material pre-commit 87/87. Two LOW evidence-prose repairs and zero implementation repairs yield provisional `PROMISING` non-causal evidence; latency is not precisely measured. Next: write the bounded completion review and final continuity sync. Keep the recurring range-shape learning candidate, MV-3, UAA, provider/live, external packet mutation, public sync, deploy, push, secrets, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
