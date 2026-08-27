@@ -1,16 +1,16 @@
-# USR-001: Model Selection
+# USR-055: Architecture Review
 Text Encoding Exception: preserves source-faithful Unicode from accepted skill metadata.
 
 > **Type:** User Skill
-> **Domain:** Ai Ml Evaluation
-> **Difficulty:** Medium
+> **Domain:** Technical Review
+> **Difficulty:** Advanced
 > **Status:** Active
 
 ---
 
 ## Source
 
-→ [01_model_selection.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/ai_ml_evaluation/01_model_selection.skill.md)
+→ [02_architecture_review.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/technical_review/02_architecture_review.skill.md)
 
 ---
 
@@ -20,7 +20,7 @@ Text Encoding Exception: preserves source-faithful Unicode from accepted skill m
 |-------|-------|
 | Risk Level | R1 |
 | Allowed Roles | User, Reviewer |
-| Allowed Phases | Discovery, Design, Review |
+| Allowed Phases | Build, Review |
 | Decision Scope | Tactical |
 | Autonomy | Auto + Audit |
 

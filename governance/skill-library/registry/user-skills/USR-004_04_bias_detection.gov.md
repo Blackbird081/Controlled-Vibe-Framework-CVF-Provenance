@@ -1,8 +1,9 @@
 # USR-004: Bias Detection
+Text Encoding Exception: preserves source-faithful Unicode from accepted skill metadata.
 
-> **Type:** User Skill  
-> **Domain:** Ai Ml Evaluation  
-> **Difficulty:** Advanced  
+> **Type:** User Skill
+> **Domain:** Ai Ml Evaluation
+> **Difficulty:** Advanced
 > **Status:** Active
 
 ---

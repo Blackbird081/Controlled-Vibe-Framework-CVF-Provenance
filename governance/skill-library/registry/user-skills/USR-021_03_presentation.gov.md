@@ -1,16 +1,16 @@
-# USR-001: Model Selection
+# USR-021: Presentation
 Text Encoding Exception: preserves source-faithful Unicode from accepted skill metadata.
 
 > **Type:** User Skill
-> **Domain:** Ai Ml Evaluation
-> **Difficulty:** Medium
+> **Domain:** Content Creation
+> **Difficulty:** Easy
 > **Status:** Active
 
 ---
 
 ## Source
 
-→ [01_model_selection.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/ai_ml_evaluation/01_model_selection.skill.md)
+→ [03_presentation.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/content_creation/03_presentation.skill.md)
 
 ---
 
@@ -18,11 +18,11 @@ Text Encoding Exception: preserves source-faithful Unicode from accepted skill m
 
 | Field | Value |
 |-------|-------|
-| Risk Level | R1 |
+| Risk Level | R0 |
 | Allowed Roles | User, Reviewer |
-| Allowed Phases | Discovery, Design, Review |
-| Decision Scope | Tactical |
-| Autonomy | Auto + Audit |
+| Allowed Phases | Discovery, Design, Build |
+| Decision Scope | Informational |
+| Autonomy | Auto |
 
 ---
 

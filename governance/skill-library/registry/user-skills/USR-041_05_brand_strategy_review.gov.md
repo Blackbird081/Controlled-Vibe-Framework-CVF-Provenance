@@ -1,8 +1,8 @@
-# USR-001: Model Selection
+# USR-041: Brand Voice Consistency
 Text Encoding Exception: preserves source-faithful Unicode from accepted skill metadata.
 
 > **Type:** User Skill
-> **Domain:** Ai Ml Evaluation
+> **Domain:** Marketing Seo
 > **Difficulty:** Medium
 > **Status:** Active
 
@@ -10,7 +10,7 @@ Text Encoding Exception: preserves source-faithful Unicode from accepted skill m
 
 ## Source
 
-→ [01_model_selection.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/ai_ml_evaluation/01_model_selection.skill.md)
+→ [05_brand_strategy_review.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/marketing_seo/05_brand_strategy_review.skill.md)
 
 ---
 
@@ -20,7 +20,7 @@ Text Encoding Exception: preserves source-faithful Unicode from accepted skill m
 |-------|-------|
 | Risk Level | R1 |
 | Allowed Roles | User, Reviewer |
-| Allowed Phases | Discovery, Design, Review |
+| Allowed Phases | Discovery, Design |
 | Decision Scope | Tactical |
 | Autonomy | Auto + Audit |
 

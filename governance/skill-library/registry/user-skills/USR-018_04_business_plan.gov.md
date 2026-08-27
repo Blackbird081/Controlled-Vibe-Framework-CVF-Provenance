@@ -1,16 +1,16 @@
-# USR-001: Model Selection
+# USR-018: Business Plan
 Text Encoding Exception: preserves source-faithful Unicode from accepted skill metadata.
 
 > **Type:** User Skill
-> **Domain:** Ai Ml Evaluation
-> **Difficulty:** Medium
+> **Domain:** Business Analysis
+> **Difficulty:** Easy
 > **Status:** Active
 
 ---
 
 ## Source
 
-→ [01_model_selection.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/ai_ml_evaluation/01_model_selection.skill.md)
+→ [04_business_plan.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/business_analysis/04_business_plan.skill.md)
 
 ---
 
@@ -20,7 +20,7 @@ Text Encoding Exception: preserves source-faithful Unicode from accepted skill m
 |-------|-------|
 | Risk Level | R1 |
 | Allowed Roles | User, Reviewer |
-| Allowed Phases | Discovery, Design, Review |
+| Allowed Phases | Discovery |
 | Decision Scope | Tactical |
 | Autonomy | Auto + Audit |
 

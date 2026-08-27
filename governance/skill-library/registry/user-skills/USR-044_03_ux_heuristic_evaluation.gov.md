@@ -1,8 +1,8 @@
-# USR-001: Model Selection
+# USR-044: UX Heuristic Evaluation
 Text Encoding Exception: preserves source-faithful Unicode from accepted skill metadata.
 
 > **Type:** User Skill
-> **Domain:** Ai Ml Evaluation
+> **Domain:** Product Ux
 > **Difficulty:** Medium
 > **Status:** Active
 
@@ -10,7 +10,7 @@ Text Encoding Exception: preserves source-faithful Unicode from accepted skill m
 
 ## Source
 
-→ [01_model_selection.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/ai_ml_evaluation/01_model_selection.skill.md)
+→ [03_ux_heuristic_evaluation.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/product_ux/03_ux_heuristic_evaluation.skill.md)
 
 ---
 

@@ -1,16 +1,16 @@
-# USR-001: Model Selection
+# USR-027: Job Description
 Text Encoding Exception: preserves source-faithful Unicode from accepted skill metadata.
 
 > **Type:** User Skill
-> **Domain:** Ai Ml Evaluation
-> **Difficulty:** Medium
+> **Domain:** Hr Operations
+> **Difficulty:** Easy
 > **Status:** Active
 
 ---
 
 ## Source
 
-→ [01_model_selection.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/ai_ml_evaluation/01_model_selection.skill.md)
+→ [01_job_description.skill.md](../../../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/hr_operations/01_job_description.skill.md)
 
 ---
 
@@ -18,11 +18,11 @@ Text Encoding Exception: preserves source-faithful Unicode from accepted skill m
 
 | Field | Value |
 |-------|-------|
-| Risk Level | R1 |
+| Risk Level | R2 |
 | Allowed Roles | User, Reviewer |
-| Allowed Phases | Discovery, Design, Review |
+| Allowed Phases | Discovery, Review |
 | Decision Scope | Tactical |
-| Autonomy | Auto + Audit |
+| Autonomy | Human confirmation required |
 
 ---
 
