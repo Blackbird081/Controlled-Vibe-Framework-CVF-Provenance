@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_roadmap_proposed_pending_external_adversarial_review",
-  "previousMode": "mpa_ai_t0_closed_stop_no_new_value",
+  "currentMode": "eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval",
+  "previousMode": "eacq_fv_roadmap_proposed_pending_external_adversarial_review",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "EACQ-FV is proposed and committed at 0da3b4c4d252652db1862a1f276be36ffc15c04c. Next allowed move is design-only adversarial critique by the operator-selected external reviewer (currently Claude), followed by a finding-disposition packet and operator decision. No R1 implementation, task-capsule/schema/generator/checker change, UAA-G1/G2/G3 execution, provider/live call, public sync, deploy, or secret access is authorized. The MPA utility-under-attack cluster remains indexed as DEFERRED_HIGH_POTENTIAL_FORWARD_SIGNAL; UAA-G1 may open only after roadmap critique and operator acceptance, with later gates separately authorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-R0 external review, 14-finding disposition, minimum viable roadmap revision, conditional reopen repair, and RAG source-verification registry evidence are committed at 69ff52a6ee9905c756c17cee0ce8787e47ed756a. Next allowed move is operator approval, rejection, or requested revision of the revised roadmap only. If approved, author a fresh MV-1 GC-018 and source-verified work order; approval does not itself authorize implementation. MV-2, MV-3, UAA-G1/G2/G3, task-capsule/schema/generator/checker mutation, provider/live calls, public sync, deploy, secrets, and unrelated work remain parked. The MPA utility cluster remains indexed as DEFERRED_FORWARD_VALUE_PRESERVED behind conjunctive reopen evidence. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",

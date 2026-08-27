@@ -1,10 +1,10 @@
-# CVF Agent Handoff V59 - EACQ-FV Proposed Pending External Review
+# CVF Agent Handoff V59 - EACQ-FV R0 Absorbed Pending Operator Approval
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
-- Current private-provenance material HEAD: `0da3b4c4d252652db1862a1f276be36ffc15c04c`; EACQ-FV roadmap is proposed pending external adversarial review; MPA-AI-T0 closure remains `19c223ce06d579cfe16fb7feb4ff8996363797ab`.
+- Current private-provenance material HEAD: `69ff52a6ee9905c756c17cee0ce8787e47ed756a`; EACQ-FV-R0 review is absorbed and the revised roadmap awaits operator approval; MPA-AI-T0 closure remains `19c223ce06d579cfe16fb7feb4ff8996363797ab`.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -39,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_roadmap_proposed_pending_external_adversarial_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=design-only external adversarial critique of EACQ-FV; parked checkpoint=all implementation, UAA-G1/G2/G3 execution, public sync, deployment, secrets and providers.
+Startup acknowledged: current mode=`eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decision on the revised EACQ-FV roadmap only; parked checkpoint=MV-1 implementation, MV-2/MV-3, UAA-G1/G2/G3, public sync, deployment, secrets and providers.
 
 ## Current Mode
-`eacq_fv_roadmap_proposed_pending_external_adversarial_review`
+`eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`
 
 ## Purpose
 
-Carry terminal MPA-AI-T0 evidence and the proposed EACQ-FV review-first roadmap without opening implementation automatically.
+Carry terminal MPA-AI-T0 evidence, the absorbed EACQ-FV-R0 critique, and the revised minimum viable roadmap without opening implementation automatically.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -111,14 +111,14 @@ Carry terminal MPA-AI-T0 evidence and the proposed EACQ-FV review-first roadmap 
 
 ## Current Authority
 
-Current material parent for continuity sync: `0da3b4c4d252652db1862a1f276be36ffc15c04c`; prior continuity repair: `8ad3ab958`.
+Current material parent for continuity sync: `69ff52a6ee9905c756c17cee0ce8787e47ed756a`; prior continuity repair: `e5504f4d4916b8befe4126b2585f4d1f7d3d52ae`.
 
 | Field | Value |
 |---|---|
-| authorityState | EACQ-FV roadmap `PROPOSED_PENDING_EXTERNAL_ADVERSARIAL_REVIEW`; prior MPA-AI-T0 closure retained |
+| authorityState | EACQ-FV roadmap `REVISED_PENDING_OPERATOR_APPROVAL`; prior MPA-AI-T0 closure retained |
 | baselinePath | `docs/baselines/CVF_GC018_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_INTAKE_2026-08-27.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_INTAKE_2026-08-27.md` |
-| nextAuthorityRequirement | external reviewer critique, finding disposition, and operator acceptance before any bounded work order |
+| nextAuthorityRequirement | operator approval before authoring a fresh bounded MV-1 GC-018/work order; approval is not implementation authority |
 
 ## Closure Evidence
 
@@ -170,7 +170,7 @@ Current material parent for continuity sync: `0da3b4c4d252652db1862a1f276be36ffc
 
 ## Next Allowed Move
 
-EACQ-FV is proposed at `0da3b4c4d252652db1862a1f276be36ffc15c04c`. Next, the operator-selected external reviewer (currently Claude; normative role `external reviewer`) may perform design-only adversarial critique. Return a source-backed finding-disposition packet for operator decision. Do not implement R1+, change task-capsule/schema/generator/checkers, execute UAA-G1/G2/G3, call providers, sync public surfaces, deploy, or access secrets. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-R0 external review, 14-finding disposition, revised minimum viable roadmap, conditional reopen repair, and RAG source-verification registry evidence are committed at `69ff52a6ee9905c756c17cee0ce8787e47ed756a`. Next allowed move is operator approval, rejection, or requested revision of the revised roadmap only. If approved, author a fresh MV-1 GC-018 and source-verified work order; approval does not authorize implementation. Keep MV-2/MV-3, UAA-G1/G2/G3, task-capsule/schema/generator/checker mutation, provider/live calls, public sync, deploy, secrets, and unrelated work parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV material `0da3b4c4d252652db1862a1f276be36ffc15c04c`, current authority hashes, active mode, and bounded critique-only next move.
+Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-R0 absorbed material `69ff52a6ee9905c756c17cee0ce8787e47ed756a`, current authority hashes, active mode, and operator-decision-only next move.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -212,9 +212,9 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: roadmap design is approved; the operator requires Claude critique before implementation.
-Rollback boundary: revert this continuity update atomically while retaining EACQ-FV material and prior MPA-AI-T0 closure.
-Not authorized: R1+ implementation, capsule/schema/generator/checker mutation, UAA execution, public mutation, deployment, secret-value access, provider/live calls, or unrelated work.
+Operator authorization: absorb the returned Claude critique, disposition all findings, revise the roadmap/index, commit provenance, then stop for operator approval.
+Rollback boundary: revert this continuity update atomically while retaining EACQ-FV-R0 material and prior MPA-AI-T0 closure.
+Not authorized: MV-1 implementation, MV-2/MV-3, capsule/schema/generator/checker mutation, UAA execution, public mutation, deployment, secret-value access, provider/live calls, or unrelated work.
 ## Claim Boundary
 
-This handoff records EACQ-FV as proposed review-only planning material and preserves the MPA utility cluster in the conditional reopen index. It authorizes external critique only, not implementation, benchmark execution, provider/live action, public mutation, deploy, production/effectiveness claims, or an unrelated lane.
+This handoff records EACQ-FV-R0 review absorption and the revised roadmap pending operator approval, while preserving the MPA utility cluster behind a conjunctive conditional-reopen gate. It authorizes no implementation, benchmark execution, provider/live action, public mutation, deploy, production/effectiveness claim, or unrelated lane.

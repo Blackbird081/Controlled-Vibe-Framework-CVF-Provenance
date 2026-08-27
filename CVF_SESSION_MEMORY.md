@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_roadmap_proposed_pending_external_adversarial_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=design-only external adversarial critique of EACQ-FV; parked checkpoint=implementation, UAA-G1/G2/G3 execution, public sync, deployment, secrets and providers.
+Startup acknowledged: current mode=`eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decision on the revised EACQ-FV roadmap only; parked checkpoint=MV-1 implementation, MV-2/MV-3, UAA-G1/G2/G3, public sync, deployment, secrets and providers.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`
-Current mode: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`; previous mode marker: `mpa_ai_t0_closed_stop_no_new_value`
-Previous mode: `mpa_ai_t0_closed_stop_no_new_value`
+Current mode marker: `eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`
+Current mode: `eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`; previous mode marker: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`
+Previous mode: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`. EACQ-FV is proposed at `0da3b4c4d252652db1862a1f276be36ffc15c04c`; the MPA utility cluster is now preserved in the conditional reopen index as `DEFERRED_HIGH_POTENTIAL_FORWARD_SIGNAL`. Next: the operator-selected external reviewer (currently Claude; normative role `external reviewer`) performs design-only adversarial critique and returns source-backed finding dispositions for operator decision. Do not implement R1+, mutate task-capsule/schema/generator/checkers, execute UAA-G1/G2/G3, call providers, sync public surfaces, deploy, or access secrets.
+Mode: `eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`. EACQ-FV-R0 review absorption and revision are committed at `69ff52a6ee9905c756c17cee0ce8787e47ed756a`; all 14 findings are dispositioned and the MPA utility cluster is indexed as `DEFERRED_FORWARD_VALUE_PRESERVED`. Next: operator approval, rejection, or requested revision of the revised roadmap only. If approved, author a fresh MV-1 GC-018 and source-verified work order; approval does not authorize implementation. Keep MV-2/MV-3, UAA-G1/G2/G3, task-capsule/schema/generator/checker mutation, provider/live calls, public sync, deploy, secrets, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

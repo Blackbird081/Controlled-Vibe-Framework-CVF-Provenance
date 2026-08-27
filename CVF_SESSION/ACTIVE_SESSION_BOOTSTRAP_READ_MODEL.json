@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eacq_fv_roadmap_proposed_pending_external_adversarial_review",
+  "currentMode": "eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EACQ-FV is proposed and committed at 0da3b4c4d252652db1862a1f276be36ffc15c04c. Next allowed move is design-only adversarial critique by the operator-selected external reviewer (currently Claude), followed by a finding-disposition packet and operator decision. No R1 implementation, task-capsule/schema/generator/checker change, UAA-G1/G2/G3 execution, provider/live call, public sync, deploy, or secret access is authorized. The MPA utility-under-attack cluster remains indexed as DEFERRED_HIGH_POTENTIAL_FORWARD_SIGNAL; UAA-G1 may open only after roadmap critique and operator acceptance, with later gates separately authorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-R0 external review, 14-finding disposition, minimum viable roadmap revision, conditional reopen repair, and RAG source-verification registry evidence are committed at 69ff52a6ee9905c756c17cee0ce8787e47ed756a. Next allowed move is operator approval, rejection, or requested revision of the revised roadmap only. If approved, author a fresh MV-1 GC-018 and source-verified work order; approval does not itself authorize implementation. MV-2, MV-3, UAA-G1/G2/G3, task-capsule/schema/generator/checker mutation, provider/live calls, public sync, deploy, secrets, and unrelated work remain parked. The MPA utility cluster remains indexed as DEFERRED_FORWARD_VALUE_PRESERVED behind conjunctive reopen evidence. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
