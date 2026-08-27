@@ -1,5 +1,5 @@
 {
   "stateOrder": 2379,
   "stateKey": "nextAllowedMove",
-  "value": "Execute PSRR-R1 scope amendment 2 only: add one exact public-surface manifest allowlist entry for the already committed PSRR GC-019 artifact, then run local public-surface, foundational and preflight checks and fresh exact-SHA hosted proof. Do not change the artifact, generator, records, validator, workflows, product, AGT family, merge, deploy, secrets or providers. AGT roadmap authoring resumes only after this direct closure blocker is repaired. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute PSRR-R1 scope amendment 2 only: add two exact public-surface manifest allowlist entries for the already committed PSRR GC-019 artifact and the generated USR-048 filename glob collision, then run local public-surface, foundational and preflight checks and fresh exact-SHA hosted proof. Do not change the artifact, generator, records, validator, workflows, product, AGT family, merge, deploy, secrets or providers. AGT roadmap authoring resumes only after this direct closure blocker is repaired. Latest finalized numbered LHW wave remains LHW24."
 }

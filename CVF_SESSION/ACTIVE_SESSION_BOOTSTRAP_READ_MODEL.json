@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "psrr_r1_sa2_public_export_repair_authorized",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute PSRR-R1 scope amendment 2 only: add one exact public-surface manifest allowlist entry for the already committed PSRR GC-019 artifact, then run local public-surface, foundational and preflight checks and fresh exact-SHA hosted proof. Do not change the artifact, generator, records, validator, workflows, product, AGT family, merge, deploy, secrets or providers. AGT roadmap authoring resumes only after this direct closure blocker is repaired. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute PSRR-R1 scope amendment 2 only: add two exact public-surface manifest allowlist entries for the already committed PSRR GC-019 artifact and the generated USR-048 filename glob collision, then run local public-surface, foundational and preflight checks and fresh exact-SHA hosted proof. Do not change the artifact, generator, records, validator, workflows, product, AGT family, merge, deploy, secrets or providers. AGT roadmap authoring resumes only after this direct closure blocker is repaired. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

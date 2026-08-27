@@ -12,27 +12,28 @@ Decision owner: operator authority exercised by the orchestrator/reviewer under 
 
 ## Purpose
 
-Authorize exactly one same-roadmap public-surface allowlist entry after hosted
+Authorize exactly two same-roadmap public-surface allowlist entries after hosted
 runs at public SHA `01d27608` proved that the required PSRR GC-019 artifact is
 also blocked by the public-surface policy solely because it lives under the
-normally private `docs/reviews` family. This is closure repair, not a successor
-tranche.
+normally private `docs/reviews` family, and the first local rerun proved the
+valid generated `USR-048_claude_design_handoff.gov.md` name collides with the
+broad private-handoff glob. This is one closure repair, not a successor tranche.
 
 ## Decision / Baseline / Proposed Tranche
 
-Decision: approve one exact-path manifest entry. Baseline: public SHA
+Decision: approve two exact-path manifest entries. Baseline: public SHA
 `01d27608f1a1151bf642de24baf2ead8960331e7`, Documentation & Testing run
 `33052498416`, Static CI run `33052498419`, and Public Surface run
 `33052498450`. Proposed tranche: none; PSRR-R1-SA2 is a same-roadmap amendment.
 
 ## Target / Source
 
-- Target: one exact entry in `governance/public-surface-manifest.json` for the already committed PSRR GC-019 artifact.
+- Target: two exact entries in `governance/public-surface-manifest.json` for the already committed PSRR GC-019 artifact and generated USR-048 record.
 - Source: `scripts/check_public_surface.py`, `governance/public-surface-manifest.json`, and the hosted failures above.
 
 ## Scope / Applies To
 
-Reviewer may add only the exact GC-019 artifact path with a public-safe reason,
+Reviewer may add only the two named exact paths with public-safe reasons,
 commit and push it, run local public-surface/foundational/preflight checks, and
 obtain fresh exact-SHA hosted proof. The artifact, generator, registry records,
 validator, workflows, product source, and all other allowlist entries are
@@ -51,6 +52,7 @@ export-boundary defect.
 |---|---|---|---|---|---|---|
 | the public surface blocks the GC-019 artifact by family | hosted finding | canonical public-sync source at SHA `01d27608` | `BLOCKED_GLOBS`; run `33052498419` | `BLOCKED_GLOBS` | public-surface checker | ACCEPT |
 | exact public exceptions are manifest-owned | checker contract | canonical public-sync source at SHA `01d27608` | `allowlist` | `allowlist` | public-surface policy manifest | ACCEPT |
+| USR-048 is blocked only by a filename glob collision | local checker finding | canonical public-sync source at SHA `01d27608` | first SA2 rerun | `USR-048_claude_design_handoff.gov.md` | public-surface checker | ACCEPT |
 | GC-019 remains required for the material commit range | hosted finding | `governance/compat/check_foundational_guard_surfaces.py` | structural change audit guard | `_check_structural_change_audit_guard` | foundational guard | ACCEPT |
 
 ## Checker Source Read-Ahead Block
@@ -76,7 +78,7 @@ export-boundary defect.
 | Before status evidence | private clean at `80a79500e`; public clean at `01d27608` |
 | After status evidence | one committed private amendment before public manifest repair |
 | Diff evidence | `git diff --name-status` |
-| Approval boundary | one exact manifest entry; no AGT repair, workflow change, merge, or deploy |
+| Approval boundary | two exact manifest entries; no AGT repair, workflow change, merge, or deploy |
 | Claim boundary | scope authorization only, not repair success |
 | Agent type | orchestrator/reviewer |
 | Invocation ID | `psrr-r1-sa2-public-allowlist-2026-08-27` |
@@ -93,7 +95,7 @@ manifest entry is intended for export.
 
 ## Claim Boundary
 
-This amendment authorizes one exact public manifest entry and its
+This amendment authorizes two exact public manifest entries and their
 reviewer-owned commit, push, and proof. It authorizes no broader private-review
 export, validator weakening, workflow/source-skill/AGT/product change, merge,
 deployment, secret or provider use, or successor roadmap.

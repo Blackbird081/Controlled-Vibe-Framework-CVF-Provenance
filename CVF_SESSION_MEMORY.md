@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`psrr_r1_sa2_public_export_repair_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one exact public-surface manifest entry and fresh proof; parked checkpoint=AGT work, workflow/product change, PR 4 merge, deploy, PSRR-R2, secrets and providers.
+Startup acknowledged: current mode=`psrr_r1_sa2_public_export_repair_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=two exact public-surface manifest entries and fresh proof; parked checkpoint=AGT work, workflow/product change, PR 4 merge, deploy, PSRR-R2, secrets and providers.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `psrr_r1_sa2_public_export_repair_authorized`. Hosted fan-out at public SHA `01d27608` proves the required GC-019 review is blocked by public-surface policy because it is under `docs/reviews`. Add one exact manifest allowlist entry, then rerun local and exact-SHA hosted proof. AGT work, workflow/product change, PR 4 merge, deploy, PSRR-R2, secrets, providers and unrelated lanes remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `psrr_r1_sa2_public_export_repair_authorized`. Hosted fan-out at public SHA `01d27608` proves the required GC-019 review is blocked by public-surface policy; local rerun also proves the valid USR-048 filename collides with `*HANDOFF*`. Add exactly those two manifest entries, then rerun local and exact-SHA hosted proof. AGT work, workflow/product change, PR 4 merge, deploy, PSRR-R2, secrets, providers and unrelated lanes remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

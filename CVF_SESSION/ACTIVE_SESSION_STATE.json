@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute PSRR-R1 scope amendment 2 only: add one exact public-surface manifest allowlist entry for the already committed PSRR GC-019 artifact, then run local public-surface, foundational and preflight checks and fresh exact-SHA hosted proof. Do not change the artifact, generator, records, validator, workflows, product, AGT family, merge, deploy, secrets or providers. AGT roadmap authoring resumes only after this direct closure blocker is repaired. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute PSRR-R1 scope amendment 2 only: add two exact public-surface manifest allowlist entries for the already committed PSRR GC-019 artifact and the generated USR-048 filename glob collision, then run local public-surface, foundational and preflight checks and fresh exact-SHA hosted proof. Do not change the artifact, generator, records, validator, workflows, product, AGT family, merge, deploy, secrets or providers. AGT roadmap authoring resumes only after this direct closure blocker is repaired. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
