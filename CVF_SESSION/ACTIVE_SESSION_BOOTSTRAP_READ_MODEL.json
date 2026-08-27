@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "psrr_r1_dispatched_pending_worker_return",
+  "currentMode": "psrr_r1_closed_blocked_agt_registry_selected",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute PSRR-R1 under dispatch commit b3115315a as one no-commit worker pass. Worker may change only the public user-registry generator, one focused generator test, its exact generated user-skills family, and the named private return. Test failure atomicity in isolated output before real reconciliation; never mutate the cleaner, validator, workflow or source skills. Reviewer owns commit, push and exact-SHA hosted proof. PR 4 merge, deploy, secrets, providers, PSRR-R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "PSRR-R1 is reviewer-accepted and exported at public SHA 01d27608; its USR registry is exact and GC-019 is green. Hosted run 33052498416 remains red only on the separately owned AGT-021 through AGT-034 registry structure and dependent Status Check. The next allowed move is to author one single-tranche AGT registry reconciliation roadmap with no validator weakening, workflow change, merge, deploy, secret or provider use. Do not create PSRR-R2. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

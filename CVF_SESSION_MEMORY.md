@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`psrr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit PSRR-R1 worker return, then independent review; parked checkpoint=validator/workflow/source-skill mutation, PR 4 merge, deploy, PSRR-R2, secrets, providers and branch-policy bypass.
+Startup acknowledged: current mode=`psrr_r1_closed_blocked_agt_registry_selected`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one single-tranche AGT registry reconciliation roadmap; parked checkpoint=validator weakening, workflow change, PR 4 merge, deploy, PSRR-R2, secrets and providers.
 
 ## Current Mode
 
-Current mode marker: `psrr_r1_dispatched_pending_worker_return`
-Current mode: `psrr_r1_dispatched_pending_worker_return`; previous mode marker: `pcit_r1_bd1_closed_bounded_registry_debt_parked`
+Current mode marker: `psrr_r1_closed_blocked_agt_registry_selected`
+Current mode: `psrr_r1_closed_blocked_agt_registry_selected`; previous mode marker: `psrr_r1_dispatched_pending_worker_return`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `psrr_r1_dispatched_pending_worker_return`. PSRR-R1 dispatch is committed at `b3115315a`; one no-commit worker may change the public generator, one focused test, exact generated user-registry family and named private return. The existing generator is the proven owner for 62 sources but must gain dry-run/check/output-dir, failure atomicity and bounded stale deletion before real reconciliation. Reviewer owns commit, public push and exact-SHA hosted proof. Validator/workflow/source-skill changes, PR 4 merge, deploy, PSRR-R2, secrets, providers and unrelated lanes remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `psrr_r1_closed_blocked_agt_registry_selected`. PSRR-R1 is reviewer-accepted and exported at public SHA `01d27608`; 62/62 USR records reconcile, GC-019 is green, and hosted run `33052498416` remains red only on AGT-021 through AGT-034 plus dependent Status Check. Next author one single-tranche AGT registry reconciliation roadmap. Validator weakening, workflow change, PR 4 merge, deploy, PSRR-R2, secrets, providers and unrelated lanes remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

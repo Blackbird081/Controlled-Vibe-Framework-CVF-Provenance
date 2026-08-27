@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "psrr_r1_dispatched_pending_worker_return",
-  "previousMode": "pcit_r1_bd1_closed_bounded_registry_debt_parked",
+  "currentMode": "psrr_r1_closed_blocked_agt_registry_selected",
+  "previousMode": "psrr_r1_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute PSRR-R1 under dispatch commit b3115315a as one no-commit worker pass. Worker may change only the public user-registry generator, one focused generator test, its exact generated user-skills family, and the named private return. Test failure atomicity in isolated output before real reconciliation; never mutate the cleaner, validator, workflow or source skills. Reviewer owns commit, push and exact-SHA hosted proof. PR 4 merge, deploy, secrets, providers, PSRR-R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "PSRR-R1 is reviewer-accepted and exported at public SHA 01d27608; its USR registry is exact and GC-019 is green. Hosted run 33052498416 remains red only on the separately owned AGT-021 through AGT-034 registry structure and dependent Status Check. The next allowed move is to author one single-tranche AGT registry reconciliation roadmap with no validator weakening, workflow change, merge, deploy, secret or provider use. Do not create PSRR-R2. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",

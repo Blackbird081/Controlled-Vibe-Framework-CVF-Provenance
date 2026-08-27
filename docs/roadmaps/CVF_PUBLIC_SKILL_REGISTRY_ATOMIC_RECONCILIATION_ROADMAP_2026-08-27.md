@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: PSRR_R1_DISPATCH_READY_SINGLE_TRANCHE_CAP
+Status: ROADMAP_CLOSED_BLOCKED_AGT_REGISTRY_DEBT
 
 Date: 2026-08-27
 
@@ -138,16 +138,25 @@ Claim boundary: generated user-registry parity, not package productionization.
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
+EXPORTED
 
-Reason: PSRR-R1 is private dispatch authority. Public export requires an
-independently accepted public commit and exact-SHA hosted proof.
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public commit: `01d27608f1a1151bf642de24baf2ead8960331e7`
+
+Public artifact path:
+`docs/reviews/CVF_GC019_PSRR_R1_GENERATED_USER_REGISTRY_STRUCTURAL_CHANGE_REVIEW_2026-08-27.md`
+
+Hosted run `33052498416` accepts the PSRR user-registry and GC-019 surfaces but
+remains red only for the separately owned AGT registry family and dependent
+Status Check.
 
 ## Next Allowed Move
 
-Execute exactly PSRR-R1 under the paired GC-018 baseline and work order. Close
-after one accepted exact-parity candidate or one honest blocker. Do not create
-PSRR-R2.
+PSRR-R1 is closed with its USR outcome accepted and exported. The next allowed
+move is a separately governed, single-tranche AGT registry reconciliation
+roadmap because exact-SHA hosted evidence proves that family is now the sole
+remaining required-check blocker. Do not create PSRR-R2, merge or deploy.
 
 ## Claim Boundary
 

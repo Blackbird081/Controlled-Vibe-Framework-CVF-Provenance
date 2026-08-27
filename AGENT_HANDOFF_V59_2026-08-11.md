@@ -1,9 +1,9 @@
-# CVF Agent Handoff V59 - PSRR-R1 Atomic Registry Reconciliation Dispatched
+# CVF Agent Handoff V59 - PSRR-R1 Closed, AGT Registry Selected
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; PSRR-R1 dispatch HEAD: `b3115315ae8918874943865ef4c139e3ef72d014`; public execution base: `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`; PR 4 remains unmerged pending atomic registry reconciliation.
+- Repository: private provenance source of truth; current pre-closure HEAD: `aa7e401a2292077b737db15fb93ab8071e4a94d4`; public accepted SHA: `01d27608f1a1151bf642de24baf2ead8960331e7`; PR 4 remains unmerged pending AGT registry reconciliation.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,14 +38,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`psrr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit PSRR-R1 worker return, then independent review; parked checkpoint=validator/workflow/source-skill mutation, PR 4 merge, deploy, PSRR-R2, secrets, providers and branch-policy bypass.
+Startup acknowledged: current mode=`psrr_r1_closed_blocked_agt_registry_selected`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one single-tranche AGT registry reconciliation roadmap; parked checkpoint=validator weakening, workflow change, PR 4 merge, deploy, PSRR-R2, secrets and providers.
 
 ## Current Mode
-`psrr_r1_dispatched_pending_worker_return`
+`psrr_r1_closed_blocked_agt_registry_selected`
 
 ## Purpose
 
-Carry PSRR-R1 single-tranche dispatch authority. One no-commit worker may make the existing user-registry generator safely own exact 62-source parity and reconcile only its generated family; reviewer owns any public commit, push and hosted proof.
+Carry PSRR-R1 bounded closure and select the sole remaining hosted blocker for one separately governed AGT registry reconciliation roadmap.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-Execute PSRR-R1 under `b3115315a`: one no-commit worker may change only the public user-registry generator, one focused test, exact generated user records/index and the named private return. Isolated failure-atomicity proof must precede real reconciliation. Reviewer owns commit, push and exact-SHA hosted proof. PR 4 merge, deploy, validator/workflow/source-skill mutation, PSRR-R2, secrets, providers and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
+PSRR-R1 is accepted and exported at public SHA `01d27608`; USR and GC-019 checks are green. Author one single-tranche AGT registry reconciliation roadmap for AGT-021 through AGT-034, now the sole hosted required-check blocker. PR 4 merge, deploy, validator weakening, workflow change, PSRR-R2, secrets, providers and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -217,4 +217,4 @@ Not authorized: validator/workflow/source-skill mutation, arbitrary deletion, PS
 
 ## Claim Boundary
 
-This handoff records PSRR-R1 dispatch only. It authorizes no arbitrary registry action, validator/workflow/source-skill change, secret/provider/live action, PR merge, deploy, production claim, PSRR-R2 or unrelated parked lane.
+This handoff records PSRR-R1 bounded closure and AGT roadmap selection only. It authorizes no arbitrary registry action, validator weakening, workflow/source-skill change, secret/provider/live action, PR merge, deploy, production claim, PSRR-R2 or unrelated parked lane.
