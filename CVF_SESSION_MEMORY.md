@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator chooses park or one bounded blocker-disposition packet; parked checkpoint=product edits, PR merge, R2, secrets, providers and branch-policy bypass.
+Startup acknowledged: current mode=`pcit_r1_bd1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit BD1 worker return, then independent review; parked checkpoint=registry/product/workflow edits, commit, push, merge, deploy, hosted rerun, R2, secrets, providers and branch-policy bypass.
 
 ## Current Mode
 
-Current mode marker: `pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`
-Current mode: `pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`; previous mode marker: `pcit_r1_sa1_dispatched_pending_worker_return`
+Current mode marker: `pcit_r1_bd1_dispatched_pending_worker_return`
+Current mode: `pcit_r1_bd1_dispatched_pending_worker_return`; previous mode marker: `pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`. SA1 is reviewer-accepted at private evidence commit `06643ac4b`; public candidate `bbea31745` makes Documentation & Testing truthfully fail closed. PR 4 remains unmerged. The operator may park PCIT-R1 or authorize one bounded disposition packet for registry defects, four SDK assertions and the separately classified runtime-page nondeterminism candidate. Product edits, R2, secrets, providers, merge and branch-policy bypass remain parked pending that decision. Latest finalized numbered LHW wave remains LHW24.
+Mode: `pcit_r1_bd1_dispatched_pending_worker_return`. BD1 authority is committed at `bac5a6284`; one no-commit worker may change at most three named public test files and the named private return. Registry, validator, generator, cleaner, product and workflow surfaces remain read-only. Independent review follows the return; commit, push, merge, deploy, hosted rerun, R2, secrets, providers and branch-policy bypass remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

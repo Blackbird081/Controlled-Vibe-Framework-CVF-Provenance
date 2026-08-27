@@ -2,7 +2,7 @@
   "stateOrder": 2378,
   "stateKey": "pcitR1PublicCiTruthfulnessDispatched20260827",
   "value": {
-    "status": "SA1_REVIEWED_ACCEPTED_TRUTHFUL_BLOCKERS",
+    "status": "BD1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_ROADMAP_2026-08-27.md",
     "baseline": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
     "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
@@ -11,12 +11,15 @@
     "dispatchCommit": "a6cc271895cfc015c049e3d0731fff7e99b894e9",
     "amendmentCommit": "145e980249ee6e779e8fa88021c1960e74a79a5e",
     "finalContractCommit": "0a27c596c6dbbfdb5909fd152226d47eb4e0abfd",
-    "workerBoundary": "One no-commit worker may edit only the four named public workflows, the static CI runner and its focused test, plus the named private worker return.",
+    "workerBoundary": "One no-commit BD1 worker may edit at most three named public test files plus the named private return. Product, workflow, registry, validator, generator and cleaner surfaces are read-only.",
     "reviewerBoundary": "Reviewer accepted SA1 workflow truthfulness at private evidence commit 06643ac4b and public candidate bbea31745. PR 4 remains unmerged because genuine registry and SDK assertion failures remain; a separate runtime-page hosted nondeterminism candidate is also parked.",
     "proof": "Exact-SHA Documentation & Testing run 33042997497 proves 20 successful executions, registry failure, 61/65 SDK unit assertions passing and fail-closed Status Check. CVF CI is green; CVF CI Pipeline run 33042997505 has one runtime-page UI failure after 3454 passes and 43 skips, while focused local rerun passes 3/3. No secret read or provider call occurred.",
     "scopeAmendmentDispatch": "8da22aafd",
     "scopeAmendmentBaseline": "docs/baselines/CVF_GC018_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
     "scopeAmendmentWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
-    "successorBoundary": "Operator must choose PARK_PCIT_R1 or authorize one bounded blocker-disposition packet. No product edit, PR merge, automatic R2 or additional owner surface is authorized by SA1 acceptance alone."
+    "blockerDispositionDispatch": "bac5a6284",
+    "blockerDispositionBaseline": "docs/baselines/CVF_GC018_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_2026-08-27.md",
+    "blockerDispositionWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_2026-08-27.md",
+    "successorBoundary": "Next move is the one no-commit BD1 worker return followed by independent review. Registry or product mutation, PR merge, automatic R2 and any additional owner remain forbidden."
   }
 }
