@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; PCIT-R1 dispatch: `a6cc271895cfc015c049e3d0731fff7e99b894e9`; final execution-contract amendment: `0a27c596c6dbbfdb5909fd152226d47eb4e0abfd`; next move is exactly one no-commit worker return.
+- Repository: private provenance source of truth; PCIT-R1 reviewer blocker: `92ae3460a68925aa416ffcb1f170e739cfeda015`; PR 4 remains unmerged; operator approved one documentation-testing.yml-only scope amendment pending dispatch.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pcit_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exactly one PCIT-R1 no-commit worker return; parked checkpoint=product-source repair, dependency upgrade, automatic R2, public write, secrets and provider calls.
+Startup acknowledged: current mode=`pcit_r1_scope_amendment_approved_pending_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and commit PCIT-R1-SA1 for documentation-testing.yml only; parked checkpoint=additional owner surfaces, product/dependency changes, R2, secrets, providers and branch-policy bypass.
 
 ## Current Mode
-`pcit_r1_dispatched_pending_worker_return`
+`pcit_r1_scope_amendment_approved_pending_dispatch`
 
 ## Purpose
 
@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-Execute exactly one PCIT-R1 no-commit worker return under dispatch `a6cc27189`. The worker may change only the named public workflows/static runner and its focused test plus the private return. Genuine product defects remain blocking. Commit, push, deploy, secrets, provider calls, dependency upgrades, product-source repair, automatic R2 and unrelated parked lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
+Author and commit one PCIT-R1-SA1 scope-amendment dispatch for `.github/workflows/documentation-testing.yml` only, then execute one no-commit worker return. PR 4 remains unmerged and public `main` unchanged. Additional owner surfaces, product/dependency changes, secrets, providers, Netlify configuration, branch-policy bypass, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 

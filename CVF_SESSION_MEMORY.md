@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pcit_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exactly one PCIT-R1 no-commit worker return; parked checkpoint=product-source repair, dependency upgrade, automatic R2, public write, secrets and provider calls.
+Startup acknowledged: current mode=`pcit_r1_scope_amendment_approved_pending_dispatch`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and commit PCIT-R1-SA1 for documentation-testing.yml only; parked checkpoint=additional owner surfaces, product/dependency changes, R2, secrets, providers and branch-policy bypass.
 
 ## Current Mode
 
-Current mode marker: `pcit_r1_dispatched_pending_worker_return`
-Current mode: `pcit_r1_dispatched_pending_worker_return`
+Current mode marker: `pcit_r1_scope_amendment_approved_pending_dispatch`
+Current mode: `pcit_r1_scope_amendment_approved_pending_dispatch`; previous mode marker: `pcit_r1_dispatched_pending_worker_return`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `pcit_r1_dispatched_pending_worker_return`. Dispatch commit `a6cc27189` authorizes exactly one no-commit public CI truthfulness and corpus-boundary worker return. Allowed writes are the named public workflow/runner cluster plus one private return. Genuine product defects must remain blocking. Commit, push, deploy, product-source repair, dependency upgrade, automatic R2, secrets and provider calls remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `pcit_r1_scope_amendment_approved_pending_dispatch`. Reviewer evidence `92ae3460a` records that PR 4 remains unmerged after exact-SHA hosted proof exposed documentation-testing.yml outside the original allowlist. The operator approved one same-roadmap amendment for that owner only. Additional owners, product/dependency changes, R2, secrets, providers and branch-policy bypass remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

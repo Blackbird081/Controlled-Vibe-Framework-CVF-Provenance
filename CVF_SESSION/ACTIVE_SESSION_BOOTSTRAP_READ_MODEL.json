@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "pcit_r1_dispatched_pending_worker_return",
+  "currentMode": "pcit_r1_scope_amendment_approved_pending_dispatch",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "PCIT-R1 is dispatched at a6cc27189 for one no-commit public CI truthfulness and corpus-boundary reconciliation return. The worker may edit only the named workflow/runner allowlist and must leave genuine product defects blocking. Commit, push, deploy, secrets, provider calls, dependency upgrades, product-source repair, automatic R2 and unrelated parked lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and commit one PCIT-R1-SA1 scope-amendment dispatch for documentation-testing.yml only, then execute one no-commit worker return. PR 4 remains unmerged; public main remains unchanged. Product source, dependencies, secrets, providers, Netlify configuration, branch-policy bypass, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
