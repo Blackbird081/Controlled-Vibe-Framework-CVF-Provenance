@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "agtr_r1_dispatched_pending_worker_return",
+  "currentMode": "agtr_r1_closed_pass_bounded",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute AGTR-R1 under dispatch commit d46443ee3 as one no-commit worker pass. The worker may edit only AGT-021 through AGT-034 in the private registry, their exact public mirrors, and the named private worker return. Preserve documented semantics through a fourteen-row ledger, require byte-identical mirror pairs, public full validator PASS and private AGT-only zero errors. Validator, index, workflows, source skills and product paths are read-only. No commit, push, merge, deploy, secret or provider use, and no AGTR-R2. Independent reviewer owns acceptance and materialization. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "AGTR-R1 is terminally CLOSED_PASS_BOUNDED. Private material commit 25bd8647069c8be3a944f330af1d77a1ca5ecdeb, private closure commit e536e1059 and public SHA af957e279a8118b152d957a29f5731c6304a86bf are accepted; all eight exact-SHA hosted runs across seven relevant workflows passed. Select the next roadmap only through fresh source verification and tranche-value admission from already parked evidence. Do not create AGTR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. No secret or provider use is authorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
-    "baselineSha256": "dcbb0b0d7ee06cf89bca9c219e102740472aa01a53beae4bfd8fb8ccf266eabb",
+    "baselineSha256": "f10fc630e483a8a097480c90cbbf5eed3b3c3e6ef535d4315f4cfc2fc70210e5",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "3183c325f34fb932641de7e404104202e9a14805b182d361172429f2cb529a8b"
+    "workOrderSha256": "b2b47325456834d47a7d7d8161d73e2705fed302a1579c0ed6ed28a0877dfcff"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

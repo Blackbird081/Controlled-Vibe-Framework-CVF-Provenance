@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agtr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one no-commit AGTR-R1 worker pass; parked checkpoint=validator/index/workflow/source-skill/product change, commit, push, PR merge, deploy, AGTR-R2, secrets and providers.
+Startup acknowledged: current mode=`agtr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection from parked evidence; parked checkpoint=automatic AGTR-R2, PR merge, deploy, secrets and providers.
 
 ## Current Mode
 
-Current mode marker: `agtr_r1_dispatched_pending_worker_return`
-Current mode: `agtr_r1_dispatched_pending_worker_return`; previous mode marker: `psrr_r1_closed_blocked_agt_registry_selected`
+Current mode marker: `agtr_r1_closed_pass_bounded`
+Current mode: `agtr_r1_closed_pass_bounded`; previous mode marker: `agtr_r1_dispatched_pending_worker_return`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `agtr_r1_dispatched_pending_worker_return`. Execute AGTR-R1 under dispatch commit `d46443ee3` as one no-commit worker pass. Only AGT-021 through AGT-034 in private, their exact public mirrors, and the named private return are writable. Preserve semantics through a fourteen-row ledger; require byte-identical pairs, public full validator PASS and private AGT-only zero errors. Validator, index, workflows, source skills and product paths are read-only. Commit, push, merge, deploy, AGTR-R2, secrets, providers and unrelated lanes remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `agtr_r1_closed_pass_bounded`. AGTR-R1 closed at private material `25bd86470`, private closure `e536e1059`, and public `af957e27`; all eight exact-SHA hosted runs passed. Select the next roadmap only through fresh source verification and tranche-value admission from parked evidence. Do not create AGTR-R2 automatically. PR merge, deployment, secrets and providers remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

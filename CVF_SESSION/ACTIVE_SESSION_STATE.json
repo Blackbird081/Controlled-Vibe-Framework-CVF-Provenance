@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
-    "baselineSha256": "dcbb0b0d7ee06cf89bca9c219e102740472aa01a53beae4bfd8fb8ccf266eabb",
+    "baselineSha256": "f10fc630e483a8a097480c90cbbf5eed3b3c3e6ef535d4315f4cfc2fc70210e5",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "3183c325f34fb932641de7e404104202e9a14805b182d361172429f2cb529a8b"
+    "workOrderSha256": "b2b47325456834d47a7d7d8161d73e2705fed302a1579c0ed6ed28a0877dfcff"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "agtr_r1_dispatched_pending_worker_return",
-  "previousMode": "psrr_r1_closed_blocked_agt_registry_selected",
+  "currentMode": "agtr_r1_closed_pass_bounded",
+  "previousMode": "agtr_r1_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute AGTR-R1 under dispatch commit d46443ee3 as one no-commit worker pass. The worker may edit only AGT-021 through AGT-034 in the private registry, their exact public mirrors, and the named private worker return. Preserve documented semantics through a fourteen-row ledger, require byte-identical mirror pairs, public full validator PASS and private AGT-only zero errors. Validator, index, workflows, source skills and product paths are read-only. No commit, push, merge, deploy, secret or provider use, and no AGTR-R2. Independent reviewer owns acceptance and materialization. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "AGTR-R1 is terminally CLOSED_PASS_BOUNDED. Private material commit 25bd8647069c8be3a944f330af1d77a1ca5ecdeb, private closure commit e536e1059 and public SHA af957e279a8118b152d957a29f5731c6304a86bf are accepted; all eight exact-SHA hosted runs across seven relevant workflows passed. Select the next roadmap only through fresh source verification and tranche-value admission from already parked evidence. Do not create AGTR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. No secret or provider use is authorized. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15358,17 +15358,22 @@
     "successorBoundary": "No automatic PSRR-R2. Reviewer owns any commit, public push and exact-SHA hosted proof; PR merge and deploy remain separate actions after required checks are green."
   },
   "agtrR1AgentSkillRegistryStructuralReconciliationDispatched20260827": {
-    "status": "AGTR_R1_DISPATCHED_PENDING_WORKER_RETURN",
+    "status": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED",
     "roadmap": "docs/roadmaps/CVF_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_ROADMAP_2026-08-27.md",
     "baseline": "docs/baselines/CVF_GC018_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
-    "baselineSha256": "dcbb0b0d7ee06cf89bca9c219e102740472aa01a53beae4bfd8fb8ccf266eabb",
+    "baselineSha256": "f10fc630e483a8a097480c90cbbf5eed3b3c3e6ef535d4315f4cfc2fc70210e5",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "3183c325f34fb932641de7e404104202e9a14805b182d361172429f2cb529a8b",
+    "workOrderSha256": "b2b47325456834d47a7d7d8161d73e2705fed302a1579c0ed6ed28a0877dfcff",
     "dispatchCommit": "d46443ee322652609c6336950fbbce2c5636f563",
     "privateExecutionBase": "22c28f04b625c3902091c8ecd6d169a64b447c25",
     "publicExecutionBase": "d27d3db261404e8f594f130702ca7ef2c86a0ee7",
-    "evidence": "Public Governance Registry Validation has 89 errors confined to AGT-021 through AGT-034. The fourteen private/public records are byte-identical before repair; AGT-020 is a structural exemplar only, and no AGT generator or alternate semantic owner was found.",
+    "materialCommit": "25bd8647069c8be3a944f330af1d77a1ca5ecdeb",
+    "closureCommit": "e536e1059",
+    "publicCommit": "af957e279a8118b152d957a29f5731c6304a86bf",
+    "workerReturn": "docs/reviews/CVF_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_WORKER_RETURN_2026-08-27.md",
+    "completionReview": "docs/reviews/CVF_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_COMPLETION_2026-08-27.md",
+    "evidence": "Reviewer resolved AGT-021 autonomy conflict conservatively, all fourteen private/public SHA-256 pairs match, public validator and surface scan pass, private target-family errors are zero, reviewer-fast passed 66/66, material pre-commit passed 87/87, and all eight exact-SHA hosted runs across seven relevant workflows passed.",
     "workerBoundary": "One no-commit worker may repair only the fourteen private records, their fourteen exact public mirrors, and the named private return. Semantic ambiguity stops the lane.",
-    "successorBoundary": "No automatic AGTR-R2. Reviewer owns semantic acceptance, commits, public push and exact-SHA hosted proof; PR merge and deploy remain separate operator actions."
+    "successorBoundary": "AGTR-R1 is terminally closed. No automatic AGTR-R2; fresh value-gated roadmap selection only. PR merge and deployment remain separate operator actions."
   }
 }

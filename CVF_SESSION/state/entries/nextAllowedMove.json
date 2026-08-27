@@ -1,5 +1,5 @@
 {
   "stateOrder": 2379,
   "stateKey": "nextAllowedMove",
-  "value": "Execute AGTR-R1 under dispatch commit d46443ee3 as one no-commit worker pass. The worker may edit only AGT-021 through AGT-034 in the private registry, their exact public mirrors, and the named private worker return. Preserve documented semantics through a fourteen-row ledger, require byte-identical mirror pairs, public full validator PASS and private AGT-only zero errors. Validator, index, workflows, source skills and product paths are read-only. No commit, push, merge, deploy, secret or provider use, and no AGTR-R2. Independent reviewer owns acceptance and materialization. Latest finalized numbered LHW wave remains LHW24."
+  "value": "AGTR-R1 is terminally CLOSED_PASS_BOUNDED. Private material commit 25bd8647069c8be3a944f330af1d77a1ca5ecdeb, private closure commit e536e1059 and public SHA af957e279a8118b152d957a29f5731c6304a86bf are accepted; all eight exact-SHA hosted runs across seven relevant workflows passed. Select the next roadmap only through fresh source verification and tranche-value admission from already parked evidence. Do not create AGTR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. No secret or provider use is authorized. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agtr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one no-commit AGTR-R1 worker pass; parked checkpoint=validator/index/workflow/source-skill/product change, commit, push, PR merge, deploy, AGTR-R2, secrets and providers.
+Startup acknowledged: current mode=`agtr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection from parked evidence; parked checkpoint=automatic AGTR-R2, PR merge, deploy, secrets and providers.
 
 ## Current Mode
-`agtr_r1_dispatched_pending_worker_return`
+`agtr_r1_closed_pass_bounded`
 
 ## Purpose
 
@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-Execute AGTR-R1 under dispatch commit `d46443ee3` as one no-commit worker pass. Only AGT-021 through AGT-034 in private, their exact public mirrors, and the named private return are writable. Preserve semantics through a fourteen-row ledger; require byte-identical pairs, public full validator PASS and private AGT-only zero errors. Validator, index, workflows, source skills and product paths are read-only. Commit, push, merge, deploy, AGTR-R2, secrets, providers and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
+AGTR-R1 is terminally `CLOSED_PASS_BOUNDED`: private material commit `25bd8647069c8be3a944f330af1d77a1ca5ecdeb`, private closure commit `e536e1059`, public commit `af957e279a8118b152d957a29f5731c6304a86bf`, and all eight exact-SHA hosted runs passed. Select the next roadmap only through fresh source verification and tranche-value admission from parked evidence. No automatic AGTR-R2. PR merge, deploy, secrets and providers remain forbidden. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -197,8 +197,8 @@ run `32678623700` promoted public `9c0183293`; force-push/delete are disabled.
 EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
 Public-sync branch: `pcit-r1-public-ci-truthfulness`.
-Public-sync commit: `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`.
-Public artifact paths: two BD1 test repairs and two bounded Python 3.9 annotation-compatibility repairs; branch export only, not merge, deploy or public-main readiness.
+Public-sync commit: `af957e279a8118b152d957a29f5731c6304a86bf`.
+Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records; branch export only, not merge, deploy or public-main readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
 
 ## Core Guard Self-Protection Authorization - AGTR-R1 Dispatch Continuity
 
@@ -217,4 +217,4 @@ Not authorized: validator/index/workflow/source-skill/product mutation, arbitrar
 
 ## Claim Boundary
 
-This handoff records AGTR-R1 dispatch only. It authorizes one no-commit fourteen-pair candidate and named return, with no arbitrary registry action, validator/index/workflow/source-skill/product change, secret/provider/live action, commit, push, PR merge, deploy, production claim, AGTR-R2 or unrelated parked lane.
+This handoff records terminal AGTR-R1 bounded closure at private closure commit `e536e1059`. It authorizes no arbitrary registry action, validator/index/workflow/source-skill/product change, secret/provider/live action, PR merge, deploy, production claim, automatic AGTR-R2 or unrelated parked lane.
