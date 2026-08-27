@@ -4,7 +4,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
-- MPA-AI-T0 execution base: `6f3045fea4e07fb9e00c485120aba6faa3e5eece`; dispatch authority: `201dae7222260e0983cbc7653c79fc3c14bc07a6`.
+- Current private-provenance HEAD: `19c223ce06d579cfe16fb7feb4ff8996363797ab`; MPA-AI-T0 execution base: `6f3045fea4e07fb9e00c485120aba6faa3e5eece`; dispatch authority: `201dae7222260e0983cbc7653c79fc3c14bc07a6`.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
