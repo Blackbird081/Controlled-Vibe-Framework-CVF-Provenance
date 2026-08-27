@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_MV2_EXTERNAL_AGENT_TASK_CAPSULE_CONTEXT_2026-08-27.md",
-    "baselineSha256": "c50d0c4cfab232b475983dcaf3ac88c11556eb2a0317fabbd8d9b01bfaefd8d0",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV2_EXTERNAL_AGENT_TASK_CAPSULE_CONTEXT_2026-08-27.md",
-    "workOrderSha256": "90a5c58f7bc7ff1ac959b7bfc422efc61c3ef8da7d06f76eab14f139eb7caede"
+    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md",
+    "baselineSha256": "6080e4fa8cdff6e9e6af2223ef62c1c8c6791fe1ff574d5746c45564d55bad82",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md",
+    "workOrderSha256": "bc4db31fc4b10df44deec9d711f6d2dac23fe9efb8b8d02082cf3ab7286493d6"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate",
-  "previousMode": "eacq_fv_mv2_dispatched_awaiting_worker_return",
+  "currentMode": "eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return",
+  "previousMode": "eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

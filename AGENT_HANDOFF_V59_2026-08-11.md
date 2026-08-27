@@ -1,10 +1,10 @@
-# CVF Agent Handoff V59 - EACQ-FV MV-2 Closed Pending Effectiveness Evidence Gate
+# CVF Agent Handoff V59 - EACQ-FV EV-1 Dispatched Awaiting Capsule-Enhanced Worker Return
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
-- Current private-provenance closure HEAD: `162902211`; governed material commit: `5826b33ae`; EACQ-FV-MV2 is independently accepted closed bounded after two reviewer repairs, 47/47 focused tests, worker-return/reviewer-fast PASS, and material/closure pre-commit 87/87; dispatch remains `437d59a48`.
+- Current EV-1 dispatch authority HEAD: `c3d4e7636`; EACQ-FV-MV2 remains independently accepted at material `5826b33ae` and closure `162902211`; EV-1 is one capsule-enhanced evidence task with a schema-valid 6,376-byte capsule and pre-dispatch 79/79 PASS.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator may stop or authorize one bounded capsule-enhanced comparable external coding task to collect effectiveness evidence; parked checkpoint=MV-3 until that evidence exists, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
+Startup acknowledged: current mode=`eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=Claude executes the exact committed EV-1 capsule/work order and returns three unstaged paths; parked checkpoint=MV-3, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
 
 ## Current Mode
-`eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate`
+`eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return`
 
 ## Purpose
 
@@ -115,9 +115,9 @@ Current closure parent for continuity sync: `162902211`; governed material commi
 
 | Field | Value |
 |---|---|
-| authorityState | EACQ-FV-MV2 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`; effectiveness unproved |
-| baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_MV2_EXTERNAL_AGENT_TASK_CAPSULE_CONTEXT_2026-08-27.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV2_EXTERNAL_AGENT_TASK_CAPSULE_CONTEXT_2026-08-27.md` |
+| authorityState | EACQ-FV-EV1 `DISPATCH_READY`; capsule-enhanced effectiveness evidence pending |
+| baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md` |
 | nextAuthorityRequirement | operator authorization for one comparable capsule-enhanced evidence task; no MV-3 until evidence exists |
 
 ## Closure Evidence
@@ -170,7 +170,7 @@ Current closure parent for continuity sync: `162902211`; governed material commi
 
 ## Next Allowed Move
 
-EACQ-FV-MV2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `5826b33ae` and closure commit `162902211` after reviewer repair of unsafe repo-relative path validation and legacy-route dependency widening. Final evidence is 47/47 focused tests, PowerShell syntax PASS, worker-return/reviewer-fast PASS, and material/closure pre-commit 87/87. Next allowed move is operator selection of stop or one bounded capsule-enhanced comparable external coding task to collect first-return repair, owner-overlap, boundary, negative-test, latency, and context-size evidence. MV-3 remains parked until that evidence changes its value decision. No provider/live, external packet-folder mutation, public sync, deployment, push, UAA, or automatic successor is authorized. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-EV1 is `DISPATCH_READY` at authority commit `c3d4e7636`. Next allowed move is Claude executing the exact committed task capsule and work order, modifying only the capsule schema and focused packet tests, creating the named worker return, and leaving staging empty. Codex then independently probes the five malformed cases and classifies this one-task evidence without causal overclaim. MV-3 remains parked until reviewed evidence changes its value decision. No provider/live, external packet-folder mutation, public sync, deployment, push, UAA, or automatic successor is authorized. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind accepted EACQ-FV-MV2 material `5826b33ae`, completion evidence, closed mode, and effectiveness-evidence-gated next move.
+Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-EV1 dispatch authority `c3d4e7636`, exact current authority paths/hashes, dispatched mode, and worker-return-gated next move.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -217,4 +217,4 @@ Rollback boundary: revert this closure continuity atomically while retaining mat
 Not authorized: MV-3 before effectiveness evidence, UAA execution, rule/index/hook/catalog mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
 ## Claim Boundary
 
-This handoff records bounded EACQ-FV-MV2 closure only. It authorizes no automatic successor, measured quality claim, MV-3 before evidence, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, or unrelated lane.
+This handoff records bounded EACQ-FV-EV1 dispatch only. It authorizes no worker commit, automatic successor, measured quality claim, MV-3 before reviewed evidence, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, or unrelated lane.

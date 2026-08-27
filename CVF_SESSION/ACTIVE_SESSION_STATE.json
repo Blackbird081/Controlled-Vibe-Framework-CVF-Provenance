@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_MV2_EXTERNAL_AGENT_TASK_CAPSULE_CONTEXT_2026-08-27.md",
-    "baselineSha256": "c50d0c4cfab232b475983dcaf3ac88c11556eb2a0317fabbd8d9b01bfaefd8d0",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV2_EXTERNAL_AGENT_TASK_CAPSULE_CONTEXT_2026-08-27.md",
-    "workOrderSha256": "90a5c58f7bc7ff1ac959b7bfc422efc61c3ef8da7d06f76eab14f139eb7caede"
+    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md",
+    "baselineSha256": "6080e4fa8cdff6e9e6af2223ef62c1c8c6791fe1ff574d5746c45564d55bad82",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md",
+    "workOrderSha256": "bc4db31fc4b10df44deec9d711f6d2dac23fe9efb8b8d02082cf3ab7286493d6"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate",
-  "previousMode": "eacq_fv_mv2_dispatched_awaiting_worker_return",
+  "currentMode": "eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return",
+  "previousMode": "eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "EACQ-FV-MV2 is independently accepted CLOSED_PASS_BOUNDED at material commit 5826b33ae and closure commit 162902211 after reviewer repair of unsafe repo-relative path validation and legacy-route dependency widening. Final evidence is 47/47 focused tests, PowerShell syntax PASS, worker-return/reviewer-fast PASS, and material/closure pre-commit 87/87. Next allowed move is operator selection of stop or authorization of one bounded capsule-enhanced comparable external coding task to collect first-return repair, owner-overlap, boundary, negative-test, latency, and context-size evidence. MV-3 remains parked until that evidence changes its value decision. UAA-G1/G2/G3, provider/live calls, external packet-folder mutation, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-EV1 capsule-enhanced owner-map evidence task is DISPATCH_READY at authority commit c3d4e7636. The worker must follow the paired committed capsule and work order, modify exactly the capsule schema and focused packet tests, create exactly the named worker return, and leave all changes unstaged and uncommitted. The reviewer then independently probes five malformed cases and classifies the single-task evidence as PROMISING, NEUTRAL, or NEGATIVE without causal uplift. MV-3 and UAA-G1/G2/G3 remain parked; provider/live calls, external packet-folder mutation, public sync, deploy, push, secrets, and unrelated work remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
