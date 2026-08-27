@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`agtr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection from parked evidence; parked checkpoint=automatic AGTR-R2, PR merge, deploy, secrets and providers.
+Startup acknowledged: current mode=`pprr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one no-commit private registry provenance reconciliation; parked checkpoint=public mutation, commit, push, merge, deploy, PPRR-R2, secrets and providers.
 
 ## Current Mode
 
-Current mode marker: `agtr_r1_closed_pass_bounded`
-Current mode: `agtr_r1_closed_pass_bounded`; previous mode marker: `agtr_r1_dispatched_pending_worker_return`
+Current mode marker: `pprr_r1_dispatched_pending_worker_return`
+Current mode: `pprr_r1_dispatched_pending_worker_return`; previous mode marker: `agtr_r1_closed_pass_bounded`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `agtr_r1_closed_pass_bounded`. AGTR-R1 closed at private material `25bd86470`, private closure `e536e1059`, corrective evidence `43374a138`, and public `af957e27`; all eight exact-SHA hosted runs passed. Select the next roadmap only through fresh source verification and tranche-value admission from parked evidence. Do not create AGTR-R2 automatically. PR merge, deployment, secrets and providers remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `pprr_r1_dispatched_pending_worker_return`. Execute PPRR-R1 at dispatch `bf7946c81` as one no-commit private generated-registry pass using read-only public SHA `af957e27`. Require identical 62-path sources, 65 exact owner hashes, full validator PASS and idempotence. Public mutation, commit/push, merge, deployment, PPRR-R2, secrets and providers remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

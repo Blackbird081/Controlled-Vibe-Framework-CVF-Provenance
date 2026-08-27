@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2382,
+  "stateKey": "pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827",
+  "value": {
+    "status": "PPRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_ROADMAP_2026-08-27.md",
+    "baseline": "docs/baselines/CVF_GC018_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "ad1e9ca2684f5d99ef4945cd9035da447c20cde6b7b220cbfd6446fbc35e1313",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "a94b2f5a0834c98b9c22e64561220954c69dde3d57b317801fce8f1a00afb716",
+    "dispatchCommit": "bf7946c815a86e848af1532eb7586f31af33bef9",
+    "privateExecutionBase": "91fff28bb72235489aafe95883385efe761962de",
+    "publicReadOnlySource": "af957e279a8118b152d957a29f5731c6304a86bf",
+    "evidence": "Both repositories expose the identical 62-path source-skill manifest. Private has 335 generated USR records, the old generator, no focused test and a failing unchanged validator; accepted public has 62 records, the repaired generator/test and a passing unchanged validator.",
+    "workerBoundary": "One no-commit worker may change only the private generator, focused test, generated USR family/index and named return. Public is read-only. Deletion is limited to exact manifest-stale private USR records.",
+    "successorBoundary": "No automatic PPRR-R2. Independent reviewer owns acceptance and private materialization; public mutation, merge, deployment, secrets and providers remain forbidden."
+  }
+}
