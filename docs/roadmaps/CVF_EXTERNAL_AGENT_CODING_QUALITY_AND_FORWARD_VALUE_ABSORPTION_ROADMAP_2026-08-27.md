@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MV3_DISPATCHED_PENDING_NO_COMMIT_WORKER_RETURN
+Status: CLOSED_PASS_BOUNDED_PENDING_NEXT_VALUE_GATE
 
 docType: roadmap
 
@@ -74,9 +74,10 @@ worker. MV-1 and MV-2 are closed bounded. A later capsule evidence tranche and
 the repeated pre-closure-range learning tranche are also closed bounded. On
 2026-08-28 the operator requested the next value-gated move; MV-3 alone passed
 the fresh serious/source-backed/non-duplicate/value-exceeds-cost gate and is
-dispatched under its paired GC-018 baseline and work order. UAA, provider,
-public, runtime and the soft-size advisory remain parked. Provider identity is
-not normative authority.
+now independently accepted `CLOSED_PASS_BOUNDED` at material `6a9887196` after
+three disclosed reviewer repairs. UAA, provider, public, runtime, the repeated
+dispatch-range learning candidate, and the soft-size advisory remain parked.
+Provider identity is not normative authority.
 
 ## Scope
 
@@ -306,7 +307,7 @@ single run.
 | EACQ-FV-R0 | external adversarial critique and CVF disposition | governed review input, 14-row disposition, revised roadmap/index | COMPLETE; operator approved revision 2026-08-27 |
 | EACQ-FV-MV1 | enforce existing Conditional Reopen Index Rule | one checker adapting FPC/KIOD patterns, negative MPA fixture, focused tests; no hook wiring unless separately authorized | CLOSED_PASS_BOUNDED |
 | EACQ-FV-MV2 | enrich existing task capsule | four fields, validation, docs/tests, offline/staleness-aware production path | CLOSED_PASS_BOUNDED |
-| EACQ-FV-MV3 | add forward-value delta to existing semantic audit | two questions, deterministic group selection, two secondary dispositions | DISPATCHED_PENDING_NO_COMMIT_WORKER_RETURN under fresh GC-018/work order dated 2026-08-28 |
+| EACQ-FV-MV3 | add forward-value delta to existing semantic audit | two questions, deterministic group selection, two secondary dispositions | CLOSED_PASS_BOUNDED at material `6a9887196`; completion review dated 2026-08-28 |
 | UAA-G1/G2 option | future provider-free contract plus retrieval evaluation | one separately authorized work order with two exit decisions | named seam, reproducible scoring, then distinct useful retrieval signal or stop |
 | UAA-G3 option | future model/provider evaluation | index row only until separately authorized | G2 PASS plus fresh GC-018, owner, budget and operator authorization |
 
@@ -618,8 +619,7 @@ planned tranches to MV-1/MV-2/MV-3, while UAA remains a gated option. Later
 comparison stops or revises the design if repair cost, latency, or defect rate
 does not improve.
 
-Claim Update: MV-1 and MV-2 are closed bounded; MV-3 alone is dispatched under
-a fresh value gate. No external-agent causal quality uplift or
+Claim Update: MV-1, MV-2, and MV-3 are closed bounded. No external-agent causal quality uplift or
 utility-under-attack effectiveness is claimed.
 
 ## Fail Conditions
@@ -658,18 +658,39 @@ Stop or return for redesign if:
 | Actual changed set | external review input, finding disposition, roadmap, conditional reopen index, RAG registry source entry, generated corpus registry |
 | Manifest delta | MATCH |
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired MV3 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | named MV3 completion review | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | this roadmap | `CLOSED_PASS_BOUNDED_PENDING_NEXT_VALUE_GATE` | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | generated active-state aggregate | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; active handoff | accepted-material sync; final closure sync follows | PASS |
+| External evidence digest | N/A with reason: local deterministic doctrine task | no provider/runtime receipt | N/A with reason |
+| System loop interlock | this claim boundary | no automatic successor | PASS |
+| Session continuity | active continuity surfaces | material sync `951af1759`; final closure sync follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| MV3 closure | independently reviewed | accepted after three bounded repairs | PASS |
+| Material identity | exact accepted commit | `6a9887196` | PASS |
+| Runtime receipt | N/A with reason: no runtime/provider execution | none produced | N/A_WITH_REASON |
+| Public export | deferred private only | no public artifact/remote evidence | N/A_WITH_REASON |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
 Reason: MV3 is a private-provenance doctrine delta. No public-sync remote,
-public commit or public artifact path is authorized by this dispatch.
+public commit or public artifact path is authorized by this closure.
 
 ## Claim Boundary
 
 This artifact records a source-verified minimum viable revision, preserves one
-deferred candidate cluster, and currently authorizes only the bounded MV-3
-dispatch. It does not prove improved external-agent coding quality, execute
+deferred candidate cluster, and closes MV-1/MV-2/MV-3 bounded. It does not prove improved external-agent coding quality, execute
 UAA-G1/G2/G3, establish a security threshold, call a provider, modify public
 artifacts, deploy, or make a production-readiness claim. No successor opens
 automatically.

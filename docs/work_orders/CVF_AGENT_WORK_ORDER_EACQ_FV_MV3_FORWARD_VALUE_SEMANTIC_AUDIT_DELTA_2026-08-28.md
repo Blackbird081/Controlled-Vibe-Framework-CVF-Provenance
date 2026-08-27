@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Work order ID: EACQ-FV-MV3
 
@@ -390,13 +390,13 @@ and roadmap MV3 requirements, then adversarially tests all four examples.
 
 ## Closure Checklist
 
-- [ ] capsule and all source pins match;
-- [ ] exact two worker paths and empty staging independently confirmed;
-- [ ] no existing semantic-audit doctrine duplicated or weakened;
-- [ ] deterministic selection and both secondary dispositions satisfy evidence predicates;
-- [ ] MPA remains parked and no UAA/index/runtime/public scope opens;
-- [ ] focused regression, fast gate and applicable governance checks pass;
-- [ ] effectiveness evidence is classified independently and non-causally.
+- [x] capsule and all source pins match;
+- [x] exact two worker paths and empty staging independently confirmed;
+- [x] no existing semantic-audit doctrine duplicated or weakened;
+- [x] deterministic selection and both secondary dispositions satisfy evidence predicates;
+- [x] MPA remains parked and no UAA/index/runtime/public scope opens;
+- [x] focused regression, fast gate and applicable governance checks pass;
+- [x] effectiveness evidence is classified independently and non-causally.
 
 ## Return-To-Orchestrator Conditions
 
@@ -480,7 +480,7 @@ successor admission.
 
 | Finding | Defect class | Learning lane | Disposition | Next action |
 | --- | --- | --- | --- | --- |
-| prior review could miss forward-looking value until operator prompted reconsideration | RULE_GAP_BOUNDED | GOVERNANCE_CONTROL_PLANE | MV3_DISPATCHED | add only the accepted semantic-audit delta and independently review it |
+| prior review could miss forward-looking value until operator prompted reconsideration | RULE_GAP_BOUNDED | GOVERNANCE_CONTROL_PLANE | MV3_CLOSED_PASS_BOUNDED | accepted semantic-audit delta is independently reviewed and closed |
 | one prior capsule task lacked exact timing | RUNTIME_SIGNAL_GAP | COST_ECONOMICS_LEARNING | EVIDENCE_COLLECTION_ONLY | capture timestamps in this return; do not open runtime work |
 
 ## Rescan Intelligence Hardening
@@ -503,6 +503,28 @@ relocation, aggregate, registry or index-bearing foundation is created.
 NOT_APPLICABLE_WITH_REASON: MV3 enriches the current semantic-audit owner and
 does not create or reassess a legacy foundation/workflow-chain coverage index.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | named MV3 completion review | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | EACQ-FV roadmap | MV1/MV2/MV3 closed; UAA parked | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | generated active-state aggregate | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; active handoff | accepted-material sync; final closure sync follows | PASS |
+| External evidence digest | N/A with reason: local deterministic doctrine task | no provider/runtime receipt | N/A with reason |
+| System loop interlock | this claim boundary | no automatic successor | PASS |
+| Session continuity | active continuity surfaces | material sync `951af1759`; final closure sync follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Worker return | independently reviewed | accepted after three bounded repairs | PASS |
+| Material identity | exact accepted commit | `6a9887196` | PASS |
+| Runtime receipt | N/A with reason: no runtime/provider execution | none produced | N/A_WITH_REASON |
+| Public export | deferred private only | no public artifact/remote evidence | N/A_WITH_REASON |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
@@ -518,8 +540,8 @@ worker-return fast gate and clean staging. Session-sync is a separate commit.
 
 ## Claim Boundary
 
-This order authorizes exactly one no-commit MV3 doctrine delta and its worker
-return. It does not prove improved external-agent quality, create machine
+This order authorized exactly one no-commit MV3 doctrine delta and its worker
+return and is now closed bounded. It does not prove improved external-agent quality, create machine
 enforcement, reclassify the MPA ledger, open UAA, activate runtime, call a
 provider, access credentials, mutate external/public state, push, deploy or
 claim security/production readiness. No successor opens automatically.
