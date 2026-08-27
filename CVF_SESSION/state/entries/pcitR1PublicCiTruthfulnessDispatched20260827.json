@@ -21,7 +21,7 @@
     "blockerDispositionBaseline": "docs/baselines/CVF_GC018_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_2026-08-27.md",
     "blockerDispositionWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_2026-08-27.md",
     "workerReturn": "docs/reviews/CVF_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_WORKER_RETURN_2026-08-27.md",
-    "privateReviewerEvidenceCommit": "c08f8a8918d527a061e472823c594d3304eee811",
+    "privateReviewerEvidenceCommit": "8480ed51f",
     "publicFinalCommit": "86b1e728d8363e66c700ffdde9c2f6c02c93ed1e",
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."

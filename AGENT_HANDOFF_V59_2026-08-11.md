@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current private reviewer evidence HEAD: `c08f8a8918d527a061e472823c594d3304eee811`; BD1 dispatch: `bac5a6284`; final public candidate: `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`; PR 4 remains unmerged on parked registry debt.
+- Repository: private provenance source of truth; current private reviewer evidence HEAD: `8480ed51f`; BD1 dispatch: `bac5a6284`; final public candidate: `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`; PR 4 remains unmerged on parked registry debt.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
