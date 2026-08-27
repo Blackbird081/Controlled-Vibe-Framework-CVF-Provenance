@@ -356,6 +356,86 @@ def test_owner_path_symbol_and_competing_owners_preserved_exactly(tmp_path: Path
     assert owner["competingOwnersChecked"] == ["none found"]
 
 
+# --- EACQ-FV-EV1: owner-map competing-owner evidence hardening ------------
+
+
+def test_owner_missing_competing_owners_checked_fails(tmp_path: Path) -> None:
+    groups = _valid_context_groups()
+    del groups["ownerMap"]["owners"][0]["competingOwnersChecked"]
+    args = _base_task_args(tmp_path)
+    with pytest.raises(PacketError, match="strict schema validation"):
+        create_capsule(args, "a" * 40, source_posture=SOURCE_POSTURE_LIVE, context_groups=groups)
+
+
+def test_owner_empty_competing_owners_checked_fails(tmp_path: Path) -> None:
+    groups = _valid_context_groups()
+    groups["ownerMap"]["owners"][0]["competingOwnersChecked"] = []
+    args = _base_task_args(tmp_path)
+    with pytest.raises(PacketError, match="strict schema validation"):
+        create_capsule(args, "a" * 40, source_posture=SOURCE_POSTURE_LIVE, context_groups=groups)
+
+
+@pytest.mark.parametrize("blank_item", [" ", "\t", "  \t  ", "\n"])
+def test_owner_whitespace_only_competing_owners_item_fails(tmp_path: Path, blank_item: str) -> None:
+    groups = _valid_context_groups()
+    groups["ownerMap"]["owners"][0]["competingOwnersChecked"] = [blank_item]
+    args = _base_task_args(tmp_path)
+    with pytest.raises(PacketError, match="strict schema validation"):
+        create_capsule(args, "a" * 40, source_posture=SOURCE_POSTURE_LIVE, context_groups=groups)
+
+
+def test_owner_duplicate_competing_owners_item_fails(tmp_path: Path) -> None:
+    groups = _valid_context_groups()
+    groups["ownerMap"]["owners"][0]["competingOwnersChecked"] = ["same finding", "same finding"]
+    args = _base_task_args(tmp_path)
+    with pytest.raises(PacketError, match="strict schema validation"):
+        create_capsule(args, "a" * 40, source_posture=SOURCE_POSTURE_LIVE, context_groups=groups)
+
+
+def test_owner_exact_duplicate_owner_record_fails(tmp_path: Path) -> None:
+    groups = _valid_context_groups()
+    groups["ownerMap"]["owners"].append(dict(groups["ownerMap"]["owners"][0]))
+    args = _base_task_args(tmp_path)
+    with pytest.raises(PacketError, match="strict schema validation"):
+        create_capsule(args, "a" * 40, source_posture=SOURCE_POSTURE_LIVE, context_groups=groups)
+
+
+def test_owner_valid_non_blank_competing_owners_evidence_still_passes(tmp_path: Path) -> None:
+    groups = _valid_context_groups()
+    args = _base_task_args(tmp_path)
+    capsule = create_capsule(args, "a" * 40, source_posture=SOURCE_POSTURE_LIVE, context_groups=groups)
+    schema = _load_capsule_schema()
+    jsonschema.Draft202012Validator(schema, format_checker=jsonschema.FormatChecker()).validate(capsule)
+    assert capsule["ownerMap"]["owners"][0]["competingOwnersChecked"] == ["none found"]
+
+
+def test_owner_two_distinct_owner_records_still_pass(tmp_path: Path) -> None:
+    groups = _valid_context_groups()
+    second_owner = dict(groups["ownerMap"]["owners"][0])
+    second_owner["path"] = "scripts/test_external_agent_packet.py"
+    second_owner["symbol"] = "_valid_context_groups"
+    second_owner["competingOwnersChecked"] = ["distinct from first owner"]
+    groups["ownerMap"]["owners"].append(second_owner)
+    args = _base_task_args(tmp_path)
+    capsule = create_capsule(args, "a" * 40, source_posture=SOURCE_POSTURE_LIVE, context_groups=groups)
+    schema = _load_capsule_schema()
+    jsonschema.Draft202012Validator(schema, format_checker=jsonschema.FormatChecker()).validate(capsule)
+    assert len(capsule["ownerMap"]["owners"]) == 2
+
+
+def test_paired_ev1_task_capsule_validates_against_current_schema() -> None:
+    """The committed EACQ-FV-EV1 task capsule JSON must itself validate
+    against the schema this tranche hardens, proving the dispatcher's own
+    ownerMap evidence satisfies the new requirement."""
+    capsule_path = Path("docs/work_orders/CVF_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_TASK_CAPSULE_2026-08-28.json")
+    capsule = json.loads(capsule_path.read_text(encoding="utf-8"))
+    schema = _load_capsule_schema()
+    jsonschema.Draft202012Validator(schema, format_checker=jsonschema.FormatChecker()).validate(capsule)
+    for owner in capsule["ownerMap"]["owners"]:
+        assert owner["competingOwnersChecked"]
+        assert all(item.strip() for item in owner["competingOwnersChecked"])
+
+
 def test_invariants_and_forbidden_transitions_preserved_exactly(tmp_path: Path) -> None:
     groups = _valid_context_groups()
     args = _base_task_args(tmp_path)
