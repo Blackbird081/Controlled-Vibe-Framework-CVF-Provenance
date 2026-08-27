@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_2026-08-27.md",
-    "baselineSha256": "8a8408493dc5598d313546c4e5ac950533e8a25effdb5d0afe0341dc4909fe69",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_2026-08-27.md",
-    "workOrderSha256": "2c38f7f68bf6e5af53a726fd75770eb498728581cd487aaf59c6a35673d4e21a"
+    "baselinePath": "docs/baselines/CVF_GC018_PSRR_R1_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "eb66794d4dd9595c7e3d57b899e7e7a3379e7294a41bca81c026fb6bb955cfa4",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PSRR_R1_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "ec5a46b340639118031613d2adff87c0e5d6b03a70bd4e936b70285efe657d50"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "pcit_r1_bd1_closed_bounded_registry_debt_parked",
-  "previousMode": "pcit_r1_bd1_dispatched_pending_worker_return",
+  "currentMode": "psrr_r1_dispatched_pending_worker_return",
+  "previousMode": "pcit_r1_bd1_closed_bounded_registry_debt_parked",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,5 +15343,18 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "PCIT-R1-BD1 is closed bounded with exact-SHA hosted proof at public commit 86b1e728; the two test-drift families and Python 3.9 compatibility defect are closed. PR 4 remains open and unmerged because the required Documentation & Testing gate correctly fails closed on parked registry debt. Do not bulk-clean or regenerate the registry: PARK_CANONICAL_OWNER_NOT_PROVEN remains until one explicit operator decision authorizes a separately bounded owner/reconciliation packet. No automatic R2 or successor tranche. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "Execute PSRR-R1 under dispatch commit b3115315a as one no-commit worker pass. Worker may change only the public user-registry generator, one focused generator test, its exact generated user-skills family, and the named private return. Test failure atomicity in isolated output before real reconciliation; never mutate the cleaner, validator, workflow or source skills. Reviewer owns commit, push and exact-SHA hosted proof. PR 4 merge, deploy, secrets, providers, PSRR-R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
+    "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
+    "baseline": "docs/baselines/CVF_GC018_PSRR_R1_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "eb66794d4dd9595c7e3d57b899e7e7a3379e7294a41bca81c026fb6bb955cfa4",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PSRR_R1_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "ec5a46b340639118031613d2adff87c0e5d6b03a70bd4e936b70285efe657d50",
+    "dispatchCommit": "b3115315ae8918874943865ef4c139e3ef72d014",
+    "publicExecutionBase": "86b1e728d8363e66c700ffdde9c2f6c02c93ed1e",
+    "evidence": "The existing generator owns 62 source projections but leaves stale records; the public registry has 335 records. Read-only name reconciliation finds six retained names, 329 stale names and 56 new names. Hosted run 33047367938 is red only on registry validation and its dependent fail-closed status job.",
+    "workerBoundary": "One no-commit worker may edit the public generator, one focused test, exact generated user records/index, and the named private return. Generated deletion is limited to manifest-stale USR records after isolated failure-atomicity proof.",
+    "successorBoundary": "No automatic PSRR-R2. Reviewer owns any commit, public push and exact-SHA hosted proof; PR merge and deploy remain separate actions after required checks are green."
+  }
 }

@@ -1,9 +1,9 @@
-# CVF Agent Handoff V59 - PCIT-R1 BD1 Closed Bounded Registry Debt Parked
+# CVF Agent Handoff V59 - PSRR-R1 Atomic Registry Reconciliation Dispatched
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current private reviewer evidence HEAD: `8480ed51f`; BD1 dispatch: `bac5a6284`; final public candidate: `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`; PR 4 remains unmerged on parked registry debt.
+- Repository: private provenance source of truth; PSRR-R1 dispatch HEAD: `b3115315ae8918874943865ef4c139e3ef72d014`; public execution base: `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`; PR 4 remains unmerged pending atomic registry reconciliation.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,14 +38,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pcit_r1_bd1_closed_bounded_registry_debt_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator may select a new high-value roadmap or explicitly authorize one bounded registry-owner packet; parked checkpoint=bulk registry cleanup/regeneration, PR 4 merge, deploy, R2, secrets, providers and branch-policy bypass.
+Startup acknowledged: current mode=`psrr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit PSRR-R1 worker return, then independent review; parked checkpoint=validator/workflow/source-skill mutation, PR 4 merge, deploy, PSRR-R2, secrets, providers and branch-policy bypass.
 
 ## Current Mode
-`pcit_r1_bd1_closed_bounded_registry_debt_parked`
+`psrr_r1_dispatched_pending_worker_return`
 
 ## Purpose
 
-Carry accepted blocked LPCI1 Web R2 material `92c96a04d`. Exactly one consolidated R3 dispatch may preserve the Auth.js production invariant, configure build/deploy secrets by reference, prove exact build, and separately govern public projection plus hosted verification; unrelated successors and provider/live model calls remain parked.
+Carry PSRR-R1 single-tranche dispatch authority. One no-commit worker may make the existing user-registry generator safely own exact 62-source parity and reconcile only its generated family; reviewer owns any public commit, push and hosted proof.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-PCIT-R1-BD1 is closed bounded. Public SHA `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e` passes both test-drift families, Web/build/coverage, and Python 3.9/3.10/3.11; Documentation & Testing remains red only because registry validation and its dependent status check fail closed. PR 4 remains open and unmerged. Registry disposition is `PARK_CANONICAL_OWNER_NOT_PROVEN`: no bulk cleanup/regeneration and no automatic R2 or successor tranche. The operator may select a different high-value roadmap, or explicitly authorize one separately bounded registry-owner/reconciliation packet. Latest finalized numbered LHW wave remains LHW24.
+Execute PSRR-R1 under `b3115315a`: one no-commit worker may change only the public user-registry generator, one focused test, exact generated user records/index and the named private return. Isolated failure-atomicity proof must precede real reconciliation. Reviewer owns commit, push and exact-SHA hosted proof. PR 4 merge, deploy, validator/workflow/source-skill mutation, PSRR-R2, secrets, providers and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -200,21 +200,21 @@ Public-sync branch: `pcit-r1-public-ci-truthfulness`.
 Public-sync commit: `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`.
 Public artifact paths: two BD1 test repairs and two bounded Python 3.9 annotation-compatibility repairs; branch export only, not merge, deploy or public-main readiness.
 
-## Core Guard Self-Protection Authorization - PCIT-R1 Dispatch Continuity
+## Core Guard Self-Protection Authorization - PSRR-R1 Dispatch Continuity
 
-Authorized guard-maintenance scope: bind PCIT-R1-BD1 bounded closure, exact public hosted proof, parked registry disposition and the no-automatic-successor boundary.
+Authorized guard-maintenance scope: bind committed PSRR-R1 authority hashes, dispatched mode, exact no-commit next move and no-automatic-successor boundary.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/pcitR1PublicCiTruthfulnessDispatched20260827.json`
+- `CVF_SESSION/state/entries/psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator selected PCIT-R1 and approved its bounded amendments; continuity sync is mandatory after reviewer closure.
-Rollback boundary: revert the exact PCIT-R1 closure continuity manifest atomically; retain committed dispatch, reviewer evidence and public hosted proof.
-Not authorized: bulk registry mutation, dependency upgrade, automatic R2, PR merge, deployment, secret-value access, provider/live calls or unrelated work.
+Operator authorization: operator selected the next roadmap and standing high-value-finding authority admits this single bounded registry lane; continuity sync is mandatory after dispatch.
+Rollback boundary: revert the exact PSRR-R1 continuity manifest atomically; retain committed dispatch and prior PCIT evidence.
+Not authorized: validator/workflow/source-skill mutation, arbitrary deletion, PSRR-R2, PR merge, deployment, secret-value access, provider/live calls or unrelated work.
 
 ## Claim Boundary
 
-This handoff records PCIT-R1-BD1 bounded closure and truthful parked registry debt. It authorizes no bulk registry action, dependency change, secret/provider/live action, PR merge, deploy, production claim, automatic R2 or unrelated parked lane.
+This handoff records PSRR-R1 dispatch only. It authorizes no arbitrary registry action, validator/workflow/source-skill change, secret/provider/live action, PR merge, deploy, production claim, PSRR-R2 or unrelated parked lane.

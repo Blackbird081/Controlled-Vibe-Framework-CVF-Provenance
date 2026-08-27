@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pcit_r1_bd1_closed_bounded_registry_debt_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator may select a new high-value roadmap or explicitly authorize one bounded registry-owner packet; parked checkpoint=bulk registry cleanup/regeneration, PR 4 merge, deploy, R2, secrets, providers and branch-policy bypass.
+Startup acknowledged: current mode=`psrr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit PSRR-R1 worker return, then independent review; parked checkpoint=validator/workflow/source-skill mutation, PR 4 merge, deploy, PSRR-R2, secrets, providers and branch-policy bypass.
 
 ## Current Mode
 
-Current mode marker: `pcit_r1_bd1_closed_bounded_registry_debt_parked`
-Current mode: `pcit_r1_bd1_closed_bounded_registry_debt_parked`; previous mode marker: `pcit_r1_bd1_dispatched_pending_worker_return`
+Current mode marker: `psrr_r1_dispatched_pending_worker_return`
+Current mode: `psrr_r1_dispatched_pending_worker_return`; previous mode marker: `pcit_r1_bd1_closed_bounded_registry_debt_parked`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `pcit_r1_bd1_closed_bounded_registry_debt_parked`. BD1 closed the SDK and runtime test-drift families plus the serious Python 3.9 compatibility defect at public SHA `86b1e728`; exact hosted Web/build/coverage and Python matrix proof is green. PR 4 remains open and unmerged because Documentation & Testing correctly fails closed on the genuine 335-record/62-source registry debt. Registry disposition is `PARK_CANONICAL_OWNER_NOT_PROVEN`: no bulk clean/regenerate and no automatic R2 or successor tranche. The operator may select a different high-value roadmap, or explicitly authorize one separately bounded registry-owner/reconciliation packet. Latest finalized numbered LHW wave remains LHW24.
+Mode: `psrr_r1_dispatched_pending_worker_return`. PSRR-R1 dispatch is committed at `b3115315a`; one no-commit worker may change the public generator, one focused test, exact generated user-registry family and named private return. The existing generator is the proven owner for 62 sources but must gain dry-run/check/output-dir, failure atomicity and bounded stale deletion before real reconciliation. Reviewer owns commit, public push and exact-SHA hosted proof. Validator/workflow/source-skill changes, PR 4 merge, deploy, PSRR-R2, secrets, providers and unrelated lanes remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
