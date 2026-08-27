@@ -1,10 +1,10 @@
-# CVF Agent Handoff V59 - EACQ-FV EV-1 Material Accepted Pending Completion Review
+# CVF Agent Handoff V59 - EACQ-FV EV-1 Closed Pending Next Value Gate
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
-- Current EV-1 material HEAD: `dd1694dab`; implementation required zero code repair and two LOW evidence-prose repairs; independent schema probes PASS, 58/58 focused tests, reviewer-fast PASS, and material pre-commit 87/87. Dispatch authority remains `c3d4e7636`.
+- Current EV-1 closure HEAD: `c921a7528`; material `dd1694dab`; zero implementation repair, two LOW evidence-prose repairs, independent schema probes PASS, 58/58 tests, material-only pre-closure 79/79, and material/closure pre-commit 87/87. Dispatch authority remains `c3d4e7636`.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_ev1_material_accepted_pending_completion_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author bounded EV-1 completion review after material `dd1694dab`, then final continuity sync; parked checkpoint=range-shape learning candidate, MV-3, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
+Startup acknowledged: current mode=`eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator stop or fresh value gate on repeated pre-closure base-range mismatch; parked checkpoint=its implementation, MV-3, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
 
 ## Current Mode
-`eacq_fv_ev1_material_accepted_pending_completion_review`
+`eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`
 
 ## Purpose
 
@@ -115,7 +115,7 @@ Current closure parent for continuity sync: `162902211`; governed material commi
 
 | Field | Value |
 |---|---|
-| authorityState | EACQ-FV-EV1 material `REVIEWER_ACCEPTED_PENDING_COMPLETION_REVIEW`; provisional effectiveness `PROMISING_NON_CAUSAL` |
+| authorityState | EACQ-FV-EV1 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`; effectiveness `PROMISING_NON_CAUSAL` |
 | baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md` |
 | nextAuthorityRequirement | operator authorization for one comparable capsule-enhanced evidence task; no MV-3 until evidence exists |
@@ -170,7 +170,7 @@ Current closure parent for continuity sync: `162902211`; governed material commi
 
 ## Next Allowed Move
 
-EACQ-FV-EV1 material is independently accepted at `dd1694dab` after zero implementation repair and two LOW evidence-prose repairs. Independent schema probes, 58/58 tests, reviewer-fast, and material pre-commit all pass. Next allowed move is the bounded completion review and final continuity sync. Capsule effectiveness is provisionally `PROMISING` but non-causal; latency was not precisely instrumented. The recurring pre-closure range-shape issue is only a later value-gated governance-learning candidate. MV-3 remains parked. No provider/live, external packet mutation, public sync, deployment, push, UAA, or automatic successor is authorized. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-EV1 is independently `CLOSED_PASS_BOUNDED` at material `dd1694dab` and closure `c921a7528`. Evidence passes 58/58 tests, reviewer-fast, 79/79 material-only pre-closure, and 87/87 on both commits. Effectiveness is `PROMISING_NON_CAUSAL`; latency is unmeasured. Next allowed move is operator stop or fresh value gate on the repeated pre-closure base-range mismatch as a machine-check/phase-placement candidate. Its implementation and MV-3 remain parked. No provider/live, external packet mutation, public sync, deployment, push, UAA, or automatic successor is authorized. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-EV1 material `dd1694dab`, exact current authority paths/hashes, pending-completion-review mode, and closure-gated next move.
+Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-EV1 material `dd1694dab`, closure `c921a7528`, exact current authority paths/hashes, closed mode, and next value gate.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -217,4 +217,4 @@ Rollback boundary: revert this closure continuity atomically while retaining mat
 Not authorized: MV-3 before effectiveness evidence, UAA execution, rule/index/hook/catalog mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
 ## Claim Boundary
 
-This handoff records bounded EACQ-FV-EV1 material acceptance pending completion review. It authorizes no automatic successor, causal quality claim, range-shape remediation, MV-3, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, or unrelated lane.
+This handoff records bounded EACQ-FV-EV1 closure and one promising non-causal evidence point. It authorizes no automatic successor, causal quality claim, range-shape remediation, MV-3, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, or unrelated lane.

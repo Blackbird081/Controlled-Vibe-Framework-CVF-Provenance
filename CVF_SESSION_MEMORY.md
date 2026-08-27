@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_ev1_material_accepted_pending_completion_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author EV-1 completion review after accepted material `dd1694dab`, then final continuity sync; parked checkpoint=range-shape learning candidate, MV-3, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
+Startup acknowledged: current mode=`eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator stop or fresh value gate on the repeated pre-closure base-range mismatch; parked checkpoint=its implementation, MV-3, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_ev1_material_accepted_pending_completion_review`
-Current mode: `eacq_fv_ev1_material_accepted_pending_completion_review`; previous mode marker: `eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return`
-Previous mode: `eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return`
+Current mode marker: `eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`
+Current mode: `eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`; previous mode marker: `eacq_fv_ev1_material_accepted_pending_completion_review`
+Previous mode: `eacq_fv_ev1_material_accepted_pending_completion_review`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_ev1_material_accepted_pending_completion_review`. EACQ-FV-EV1 material is accepted at `dd1694dab`: schema meta-valid, committed capsule valid, five negative probes rejected, 58/58 focused tests, reviewer-fast PASS, and material pre-commit 87/87. Two LOW evidence-prose repairs and zero implementation repairs yield provisional `PROMISING` non-causal evidence; latency is not precisely measured. Next: write the bounded completion review and final continuity sync. Keep the recurring range-shape learning candidate, MV-3, UAA, provider/live, external packet mutation, public sync, deploy, push, secrets, and unrelated work parked.
+Mode: `eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`. EACQ-FV-EV1 is closed at material `dd1694dab` and closure `c921a7528`: zero implementation repair, two LOW prose repairs, schema meta-valid, five negative probes rejected, 58/58 tests, reviewer-fast PASS, material-only pre-closure 79/79, and both commits 87/87. Effectiveness is `PROMISING_NON_CAUSAL`; latency is unmeasured and one task does not open MV-3. Next: operator stop or fresh value gate on the repeated pre-closure base-range mismatch. Keep its implementation, MV-3, UAA, provider/live, external packet mutation, public sync, deploy, push, secrets, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

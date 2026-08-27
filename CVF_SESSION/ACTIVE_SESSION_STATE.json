@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_ev1_material_accepted_pending_completion_review",
-  "previousMode": "eacq_fv_ev1_dispatched_awaiting_capsule_enhanced_worker_return",
+  "currentMode": "eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate",
+  "previousMode": "eacq_fv_ev1_material_accepted_pending_completion_review",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "EACQ-FV-EV1 material is independently accepted at commit dd1694dab after two LOW evidence-prose repairs and zero implementation repair. Independent evidence: schema meta-validation PASS; committed capsule valid; all five negative cases rejected; 58/58 focused tests; worker-return/reviewer-fast PASS; material pre-commit 87/87. Capsule effectiveness is provisionally PROMISING but non-causal and latency was not precisely instrumented. Next allowed move is authoring the bounded EV-1 completion review, then final continuity sync. The recurring pre-closure base-range mismatch is preserved as a source-backed governance-learning candidate for a later value gate, not opened automatically. MV-3, UAA-G1/G2/G3, provider/live, external packet mutation, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-EV1 is independently CLOSED_PASS_BOUNDED at material commit dd1694dab and closure commit c921a7528 after zero implementation repair and two LOW evidence-prose repairs. Evidence: schema meta-validation PASS, real committed capsule valid, all five negative cases rejected, 58/58 focused tests, worker-return/reviewer-fast PASS, material-only pre-closure 79/79, and material/closure pre-commit 87/87. Capsule effectiveness classification is PROMISING_NON_CAUSAL; precise latency remains unavailable and one task does not authorize MV-3. Next allowed move is operator stop or a fresh value gate on the repeated MV-1/MV-2/EV-1 pre-closure base-range mismatch as a MACHINE_CHECK_CANDIDATE/PHASE_GATE_PLACEMENT_GAP; no implementation opens automatically. MV-3, UAA-G1/G2/G3, provider/live, external packet mutation, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
