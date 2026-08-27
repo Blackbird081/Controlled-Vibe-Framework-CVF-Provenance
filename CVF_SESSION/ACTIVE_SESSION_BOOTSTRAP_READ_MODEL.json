@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate",
+  "currentMode": "eacq_fv_l1_dispatched_pending_no_commit_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EACQ-FV-EV1 is independently CLOSED_PASS_BOUNDED at material commit dd1694dab and closure commit c921a7528 after zero implementation repair and two LOW evidence-prose repairs. Evidence: schema meta-validation PASS, real committed capsule valid, all five negative cases rejected, 58/58 focused tests, worker-return/reviewer-fast PASS, material-only pre-closure 79/79, and material/closure pre-commit 87/87. Capsule effectiveness classification is PROMISING_NON_CAUSAL; precise latency remains unavailable and one task does not authorize MV-3. Next allowed move is operator stop or a fresh value gate on the repeated MV-1/MV-2/EV-1 pre-closure base-range mismatch as a MACHINE_CHECK_CANDIDATE/PHASE_GATE_PLACEMENT_GAP; no implementation opens automatically. MV-3, UAA-G1/G2/G3, provider/live, external packet mutation, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-L1 passed the fresh value gate because the same stale pre-closure dispatch-base command failed in MV-1, MV-2, and EV-1 while the rule and runtime owner already existed but pre-dispatch prevention did not. The exact three-artifact dispatch packet is committed at 9e7a0b035 after pre-implementation and pre-dispatch PASS. Next allowed move is operator manual copy/paste of the committed L1 work order to one WORKER_MUST_NOT_COMMIT implementation worker. The worker modifies only the dispatch-quality range module, creates the focused test and worker return, captures executionBaseHead from the final session-sync HEAD, leaves staging empty, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer alone commits accepted material and runs pre-closure on the exact material range. MV-3, UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md",
-    "baselineSha256": "6080e4fa8cdff6e9e6af2223ef62c1c8c6791fe1ff574d5746c45564d55bad82",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md",
-    "workOrderSha256": "fbeb358d5016465536e0d5229aeccbcfaf6aae177436dcd11490419396b7141c"
+    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_2026-08-28.md",
+    "baselineSha256": "bd0916cc48bfa9eaff5b3c1db240313035c1f425196b14b7ac3a1a7f19b33e3d",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_2026-08-28.md",
+    "workOrderSha256": "235822ff6a1908796f97e26490ff076a9a555cde8e7cdb75432a0ae10167ae01"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

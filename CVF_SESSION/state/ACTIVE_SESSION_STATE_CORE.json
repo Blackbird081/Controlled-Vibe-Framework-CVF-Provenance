@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md",
-    "baselineSha256": "6080e4fa8cdff6e9e6af2223ef62c1c8c6791fe1ff574d5746c45564d55bad82",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md",
-    "workOrderSha256": "fbeb358d5016465536e0d5229aeccbcfaf6aae177436dcd11490419396b7141c"
+    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_2026-08-28.md",
+    "baselineSha256": "bd0916cc48bfa9eaff5b3c1db240313035c1f425196b14b7ac3a1a7f19b33e3d",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_2026-08-28.md",
+    "workOrderSha256": "235822ff6a1908796f97e26490ff076a9a555cde8e7cdb75432a0ae10167ae01"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate",
-  "previousMode": "eacq_fv_ev1_material_accepted_pending_completion_review",
+  "currentMode": "eacq_fv_l1_dispatched_pending_no_commit_worker_return",
+  "previousMode": "eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

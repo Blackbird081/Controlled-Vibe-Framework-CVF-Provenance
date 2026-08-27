@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator stop or fresh value gate on the repeated pre-closure base-range mismatch; parked checkpoint=its implementation, MV-3, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
+Startup acknowledged: current mode=`eacq_fv_l1_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator sends the committed L1 work order to one no-commit worker; parked checkpoint=review/commit, MV-3, UAA, provider/live, public sync, deployment, push and secrets.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`
-Current mode: `eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`; previous mode marker: `eacq_fv_ev1_material_accepted_pending_completion_review`
-Previous mode: `eacq_fv_ev1_material_accepted_pending_completion_review`
+Current mode marker: `eacq_fv_l1_dispatched_pending_no_commit_worker_return`
+Current mode: `eacq_fv_l1_dispatched_pending_no_commit_worker_return`; previous mode marker: `eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`
+Previous mode: `eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`. EACQ-FV-EV1 is closed at material `dd1694dab` and closure `c921a7528`: zero implementation repair, two LOW prose repairs, schema meta-valid, five negative probes rejected, 58/58 tests, reviewer-fast PASS, material-only pre-closure 79/79, and both commits 87/87. Effectiveness is `PROMISING_NON_CAUSAL`; latency is unmeasured and one task does not open MV-3. Next: operator stop or fresh value gate on the repeated pre-closure base-range mismatch. Keep its implementation, MV-3, UAA, provider/live, external packet mutation, public sync, deploy, push, secrets, and unrelated work parked.
+Mode: `eacq_fv_l1_dispatched_pending_no_commit_worker_return`. The repeated MV-1/MV-2/EV-1 stale-base finding passed the fresh value gate and the exact L1 baseline/work-order/capsule packet is committed at `9e7a0b035`; pre-implementation and pre-dispatch gates pass. Next: operator manually sends the committed L1 work order to one no-commit worker. Worker scope is exactly the dispatch-quality range module, one focused test, and one return; execution starts from the final session-sync HEAD, staging stays empty, and reviewer alone commits accepted material and runs exact material-range pre-closure. Keep MV-3, UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

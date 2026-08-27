@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator stop or fresh value gate on repeated pre-closure base-range mismatch; parked checkpoint=its implementation, MV-3, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
+Startup acknowledged: current mode=`eacq_fv_l1_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator sends committed L1 work order to one no-commit worker; parked checkpoint=review/commit, MV-3, UAA, provider/live, public sync, deployment, push and secrets.
 
 ## Current Mode
-`eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`
+`eacq_fv_l1_dispatched_pending_no_commit_worker_return`
 
 ## Purpose
 
@@ -115,7 +115,7 @@ Current closure parent for continuity sync: `162902211`; governed material commi
 
 | Field | Value |
 |---|---|
-| authorityState | EACQ-FV-EV1 `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`; effectiveness `PROMISING_NON_CAUSAL` |
+| authorityState | EACQ-FV-L1 `DISPATCH_READY` at `9e7a0b035`; exact no-commit worker pending |
 | baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md` |
 | nextAuthorityRequirement | operator authorization for one comparable capsule-enhanced evidence task; no MV-3 until evidence exists |
@@ -170,7 +170,7 @@ Current closure parent for continuity sync: `162902211`; governed material commi
 
 ## Next Allowed Move
 
-EACQ-FV-EV1 is independently `CLOSED_PASS_BOUNDED` at material `dd1694dab` and closure `c921a7528`. Evidence passes 58/58 tests, reviewer-fast, 79/79 material-only pre-closure, and 87/87 on both commits. Effectiveness is `PROMISING_NON_CAUSAL`; latency is unmeasured. Next allowed move is operator stop or fresh value gate on the repeated pre-closure base-range mismatch as a machine-check/phase-placement candidate. Its implementation and MV-3 remain parked. No provider/live, external packet mutation, public sync, deployment, push, UAA, or automatic successor is authorized. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-L1 passed the fresh value gate after the same stale pre-closure dispatch-base command recurred in MV-1, MV-2, and EV-1. The exact baseline, work order, and task capsule are committed at `9e7a0b035`; pre-implementation and pre-dispatch gates pass. Next allowed move is operator manual copy/paste of the committed L1 work order to one `WORKER_MUST_NOT_COMMIT` implementation worker. The worker captures `executionBaseHead` from the final session-sync HEAD, changes exactly the dispatch-quality range module, focused test, and return, leaves staging empty, and yields for independent review. Reviewer alone commits and runs pre-closure on the exact material range. MV-3, UAA, provider/live, public sync, deployment, push, secrets, runtime-owner changes, and automatic successors remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-EV1 material `dd1694dab`, closure `c921a7528`, exact current authority paths/hashes, closed mode, and next value gate.
+Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-L1 dispatch `9e7a0b035`, exact current authority paths/hashes, dispatched mode, and no-commit worker handoff.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -212,9 +212,9 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: reviewer/closer independently reviewed, repaired within the bounded owner set, committed, closed, and synchronized MV-2.
-Rollback boundary: revert this closure continuity atomically while retaining material commit `5826b33ae`, dispatch evidence, MV-1 closure, and prior MPA-AI-T0 closure.
-Not authorized: MV-3 before effectiveness evidence, UAA execution, rule/index/hook/catalog mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
+Operator authorization: operator continued the orchestrator/reviewer lane; the three-repeat finding passed the fresh value gate and opened only this bounded L1 dispatch.
+Rollback boundary: revert this dispatch continuity atomically while retaining dispatch commit `9e7a0b035`, EV-1 closure, MV-1/MV-2 closure, and all prior history.
+Not authorized: worker commit, MV-3, UAA execution, autorun/runtime-owner mutation, rule/index/hook/catalog mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
 ## Claim Boundary
 
-This handoff records bounded EACQ-FV-EV1 closure and one promising non-causal evidence point. It authorizes no automatic successor, causal quality claim, range-shape remediation, MV-3, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, or unrelated lane.
+This handoff records bounded EACQ-FV-L1 dispatch authority only. It authorizes one exact no-commit worker implementation and no worker commit, automatic successor, causal quality claim, runtime range-shape owner change, MV-3, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, or unrelated lane.
