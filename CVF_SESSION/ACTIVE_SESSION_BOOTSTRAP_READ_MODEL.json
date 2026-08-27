@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "psrr_r1_closed_blocked_agt_registry_selected",
+  "currentMode": "agtr_r1_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "PSRR-R1 is reviewer-accepted and exported at final public SHA d27d3db2. Hosted Documentation run 33053902261 has only Governance Registry Validation and dependent Status Check red; Public Surface 33053902181, Static CI 33053902347 and Public Sync Preflight 33053902251 pass. The next allowed move is one single-tranche AGT-021 through AGT-034 structural reconciliation roadmap. No validator weakening, workflow change, merge, deploy, secret or provider use. Do not create PSRR-R2. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute AGTR-R1 under dispatch commit d46443ee3 as one no-commit worker pass. The worker may edit only AGT-021 through AGT-034 in the private registry, their exact public mirrors, and the named private worker return. Preserve documented semantics through a fourteen-row ledger, require byte-identical mirror pairs, public full validator PASS and private AGT-only zero errors. Validator, index, workflows, source skills and product paths are read-only. No commit, push, merge, deploy, secret or provider use, and no AGTR-R2. Independent reviewer owns acceptance and materialization. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_PSRR_R1_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_2026-08-27.md",
-    "baselineSha256": "eb66794d4dd9595c7e3d57b899e7e7a3379e7294a41bca81c026fb6bb955cfa4",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PSRR_R1_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "ec5a46b340639118031613d2adff87c0e5d6b03a70bd4e936b70285efe657d50"
+    "baselinePath": "docs/baselines/CVF_GC018_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "dcbb0b0d7ee06cf89bca9c219e102740472aa01a53beae4bfd8fb8ccf266eabb",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "3183c325f34fb932641de7e404104202e9a14805b182d361172429f2cb529a8b"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_PSRR_R1_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_2026-08-27.md",
-    "baselineSha256": "eb66794d4dd9595c7e3d57b899e7e7a3379e7294a41bca81c026fb6bb955cfa4",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PSRR_R1_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "ec5a46b340639118031613d2adff87c0e5d6b03a70bd4e936b70285efe657d50"
+    "baselinePath": "docs/baselines/CVF_GC018_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "dcbb0b0d7ee06cf89bca9c219e102740472aa01a53beae4bfd8fb8ccf266eabb",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "3183c325f34fb932641de7e404104202e9a14805b182d361172429f2cb529a8b"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "psrr_r1_closed_blocked_agt_registry_selected",
-  "previousMode": "psrr_r1_sa2_public_export_repair_authorized",
+  "currentMode": "agtr_r1_dispatched_pending_worker_return",
+  "previousMode": "psrr_r1_closed_blocked_agt_registry_selected",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "PSRR-R1 is reviewer-accepted and exported at final public SHA d27d3db2. Hosted Documentation run 33053902261 has only Governance Registry Validation and dependent Status Check red; Public Surface 33053902181, Static CI 33053902347 and Public Sync Preflight 33053902251 pass. The next allowed move is one single-tranche AGT-021 through AGT-034 structural reconciliation roadmap. No validator weakening, workflow change, merge, deploy, secret or provider use. Do not create PSRR-R2. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute AGTR-R1 under dispatch commit d46443ee3 as one no-commit worker pass. The worker may edit only AGT-021 through AGT-034 in the private registry, their exact public mirrors, and the named private worker return. Preserve documented semantics through a fourteen-row ledger, require byte-identical mirror pairs, public full validator PASS and private AGT-only zero errors. Validator, index, workflows, source skills and product paths are read-only. No commit, push, merge, deploy, secret or provider use, and no AGTR-R2. Independent reviewer owns acceptance and materialization. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15356,5 +15356,19 @@
     "evidence": "The existing generator owns 62 source projections but leaves stale records; the public registry has 335 records. Read-only name reconciliation finds six retained names, 329 stale names and 56 new names. Hosted run 33047367938 is red only on registry validation and its dependent fail-closed status job.",
     "workerBoundary": "One no-commit worker may edit the public generator, one focused test, exact generated user records/index, and the named private return. Generated deletion is limited to manifest-stale USR records after isolated failure-atomicity proof.",
     "successorBoundary": "No automatic PSRR-R2. Reviewer owns any commit, public push and exact-SHA hosted proof; PR merge and deploy remain separate actions after required checks are green."
+  },
+  "agtrR1AgentSkillRegistryStructuralReconciliationDispatched20260827": {
+    "status": "AGTR_R1_DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_ROADMAP_2026-08-27.md",
+    "baseline": "docs/baselines/CVF_GC018_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "dcbb0b0d7ee06cf89bca9c219e102740472aa01a53beae4bfd8fb8ccf266eabb",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "3183c325f34fb932641de7e404104202e9a14805b182d361172429f2cb529a8b",
+    "dispatchCommit": "d46443ee322652609c6336950fbbce2c5636f563",
+    "privateExecutionBase": "22c28f04b625c3902091c8ecd6d169a64b447c25",
+    "publicExecutionBase": "d27d3db261404e8f594f130702ca7ef2c86a0ee7",
+    "evidence": "Public Governance Registry Validation has 89 errors confined to AGT-021 through AGT-034. The fourteen private/public records are byte-identical before repair; AGT-020 is a structural exemplar only, and no AGT generator or alternate semantic owner was found.",
+    "workerBoundary": "One no-commit worker may repair only the fourteen private records, their fourteen exact public mirrors, and the named private return. Semantic ambiguity stops the lane.",
+    "successorBoundary": "No automatic AGTR-R2. Reviewer owns semantic acceptance, commits, public push and exact-SHA hosted proof; PR merge and deploy remain separate operator actions."
   }
 }

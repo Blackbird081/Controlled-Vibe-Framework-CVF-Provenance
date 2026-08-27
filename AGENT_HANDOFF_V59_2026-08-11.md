@@ -1,9 +1,9 @@
-# CVF Agent Handoff V59 - PSRR-R1 Closed, AGT Registry Selected
+# CVF Agent Handoff V59 - AGTR-R1 Structural Reconciliation Dispatched
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current SA2 authority HEAD: `03d39215d`; final public PSRR SHA: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
+- Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,14 +38,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`psrr_r1_closed_blocked_agt_registry_selected`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one single-tranche AGT registry reconciliation roadmap; parked checkpoint=validator weakening, workflow change, PR 4 merge, deploy, PSRR-R2, secrets and providers.
+Startup acknowledged: current mode=`agtr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one no-commit AGTR-R1 worker pass; parked checkpoint=validator/index/workflow/source-skill/product change, commit, push, PR merge, deploy, AGTR-R2, secrets and providers.
 
 ## Current Mode
-`psrr_r1_closed_blocked_agt_registry_selected`
+`agtr_r1_dispatched_pending_worker_return`
 
 ## Purpose
 
-Carry PSRR-R1 bounded closure at final public SHA `d27d3db2` and select one separately governed AGT structural reconciliation roadmap.
+Carry AGTR-R1 dispatch authority for one bounded no-commit repair of the fourteen mirrored AGT records while preserving their documented semantics.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-PSRR-R1 is accepted and exported at public SHA `d27d3db2`; Public Surface, Static CI and Public Sync Preflight pass, while Documentation run `33053902261` fails only AGT registry validation and dependent Status Check. Author one single-tranche AGT-021 through AGT-034 structural reconciliation roadmap. PR 4 merge, deploy, validator weakening, workflow/product change, PSRR-R2, secrets, providers and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
+Execute AGTR-R1 under dispatch commit `d46443ee3` as one no-commit worker pass. Only AGT-021 through AGT-034 in private, their exact public mirrors, and the named private return are writable. Preserve semantics through a fourteen-row ledger; require byte-identical pairs, public full validator PASS and private AGT-only zero errors. Validator, index, workflows, source skills and product paths are read-only. Commit, push, merge, deploy, AGTR-R2, secrets, providers and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -200,21 +200,21 @@ Public-sync branch: `pcit-r1-public-ci-truthfulness`.
 Public-sync commit: `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`.
 Public artifact paths: two BD1 test repairs and two bounded Python 3.9 annotation-compatibility repairs; branch export only, not merge, deploy or public-main readiness.
 
-## Core Guard Self-Protection Authorization - PSRR-R1 Dispatch Continuity
+## Core Guard Self-Protection Authorization - AGTR-R1 Dispatch Continuity
 
-Authorized guard-maintenance scope: bind committed PSRR-R1 authority hashes, dispatched mode, exact no-commit next move and no-automatic-successor boundary.
+Authorized guard-maintenance scope: bind committed AGTR-R1 authority hashes, dispatched mode, exact no-commit next move and no-automatic-successor boundary.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827.json`
+- `CVF_SESSION/state/entries/agtrR1AgentSkillRegistryStructuralReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator selected the next roadmap and standing high-value-finding authority admits this single bounded registry lane; continuity sync is mandatory after dispatch.
-Rollback boundary: revert the exact PSRR-R1 continuity manifest atomically; retain committed dispatch and prior PCIT evidence.
-Not authorized: validator/workflow/source-skill mutation, arbitrary deletion, PSRR-R2, PR merge, deployment, secret-value access, provider/live calls or unrelated work.
+Operator authorization: operator instructed continuation and standing high-value-finding authority admits this single bounded registry lane; continuity sync is mandatory after dispatch.
+Rollback boundary: revert the exact AGTR-R1 continuity manifest atomically; retain committed dispatch and prior PSRR evidence.
+Not authorized: validator/index/workflow/source-skill/product mutation, arbitrary deletion, AGTR-R2, commit, push, PR merge, deployment, secret-value access, provider/live calls or unrelated work.
 
 ## Claim Boundary
 
-This handoff records PSRR-R1 bounded closure and AGT roadmap selection only. It authorizes no arbitrary registry action, validator weakening, workflow/source-skill change, secret/provider/live action, PR merge, deploy, production claim, PSRR-R2 or unrelated parked lane.
+This handoff records AGTR-R1 dispatch only. It authorizes one no-commit fourteen-pair candidate and named return, with no arbitrary registry action, validator/index/workflow/source-skill/product change, secret/provider/live action, commit, push, PR merge, deploy, production claim, AGTR-R2 or unrelated parked lane.

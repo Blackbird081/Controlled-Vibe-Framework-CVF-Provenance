@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2381,
+  "stateKey": "agtrR1AgentSkillRegistryStructuralReconciliationDispatched20260827",
+  "value": {
+    "status": "AGTR_R1_DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_ROADMAP_2026-08-27.md",
+    "baseline": "docs/baselines/CVF_GC018_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "dcbb0b0d7ee06cf89bca9c219e102740472aa01a53beae4bfd8fb8ccf266eabb",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "3183c325f34fb932641de7e404104202e9a14805b182d361172429f2cb529a8b",
+    "dispatchCommit": "d46443ee322652609c6336950fbbce2c5636f563",
+    "privateExecutionBase": "22c28f04b625c3902091c8ecd6d169a64b447c25",
+    "publicExecutionBase": "d27d3db261404e8f594f130702ca7ef2c86a0ee7",
+    "evidence": "Public Governance Registry Validation has 89 errors confined to AGT-021 through AGT-034. The fourteen private/public records are byte-identical before repair; AGT-020 is a structural exemplar only, and no AGT generator or alternate semantic owner was found.",
+    "workerBoundary": "One no-commit worker may repair only the fourteen private records, their fourteen exact public mirrors, and the named private return. Semantic ambiguity stops the lane.",
+    "successorBoundary": "No automatic AGTR-R2. Reviewer owns semantic acceptance, commits, public push and exact-SHA hosted proof; PR merge and deploy remain separate operator actions."
+  }
+}

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`psrr_r1_closed_blocked_agt_registry_selected`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one single-tranche AGT registry reconciliation roadmap; parked checkpoint=validator weakening, workflow change, PR 4 merge, deploy, PSRR-R2, secrets and providers.
+Startup acknowledged: current mode=`agtr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one no-commit AGTR-R1 worker pass; parked checkpoint=validator/index/workflow/source-skill/product change, commit, push, PR merge, deploy, AGTR-R2, secrets and providers.
 
 ## Current Mode
 
-Current mode marker: `psrr_r1_closed_blocked_agt_registry_selected`
-Current mode: `psrr_r1_closed_blocked_agt_registry_selected`; previous mode marker: `psrr_r1_sa2_public_export_repair_authorized`
+Current mode marker: `agtr_r1_dispatched_pending_worker_return`
+Current mode: `agtr_r1_dispatched_pending_worker_return`; previous mode marker: `psrr_r1_closed_blocked_agt_registry_selected`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `psrr_r1_closed_blocked_agt_registry_selected`. PSRR-R1 is accepted and exported at final public SHA `d27d3db2`; hosted Documentation run `33053902261` is red only on AGT registry validation and dependent Status Check, while Public Surface, Static CI and Public Sync Preflight pass. Next author one single-tranche AGT-021 through AGT-034 structural reconciliation roadmap. Validator weakening, workflow change, PR 4 merge, deploy, PSRR-R2, secrets, providers and unrelated lanes remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `agtr_r1_dispatched_pending_worker_return`. Execute AGTR-R1 under dispatch commit `d46443ee3` as one no-commit worker pass. Only AGT-021 through AGT-034 in private, their exact public mirrors, and the named private return are writable. Preserve semantics through a fourteen-row ledger; require byte-identical pairs, public full validator PASS and private AGT-only zero errors. Validator, index, workflows, source skills and product paths are read-only. Commit, push, merge, deploy, AGTR-R2, secrets, providers and unrelated lanes remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
