@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator value-gate selection of stop, bounded correction, or separately authorized MV-2/MV-3 dispatch authoring; parked checkpoint=all automatic successors, UAA-G1/G2/G3, hook/index/standard mutation, public sync, deployment, secrets and providers.
+Startup acknowledged: current mode=`eacq_fv_mv2_dispatched_awaiting_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegated worker executes the committed MV-2 six-path no-commit order and returns for independent review; parked checkpoint=MV-3, UAA-G1/G2/G3, automatic successors, provider/live, public sync, deployment, push and secrets.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate`
-Current mode: `eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate`; previous mode marker: `eacq_fv_mv1_dispatched_awaiting_worker_return`
-Previous mode: `eacq_fv_mv1_dispatched_awaiting_worker_return`
+Current mode marker: `eacq_fv_mv2_dispatched_awaiting_worker_return`
+Current mode: `eacq_fv_mv2_dispatched_awaiting_worker_return`; previous mode marker: `eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate`
+Previous mode: `eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate`. EACQ-FV-MV1 is independently accepted at material commit `f202f351fccba436c15a666facefc438be5bdac9` and closure commit `1e002a52b` after bounded reviewer repair. Exact no-commit scope passed; focused tests are 33/33, actual dispatch range is compliant, reviewer-fast passed, and material and closure pre-commit gates passed 87/87. The checker remains standalone and unwired. Next: operator selects stop, bounded correction, or separately authorized MV-2/MV-3 dispatch authoring through the serious, source-backed, non-duplicate, value-exceeds-cost gate. Keep automatic successors, UAA-G1/G2/G3, rule/index/hook/catalog mutation, provider/live calls, public sync, deploy, push, secrets, and unrelated work parked.
+Mode: `eacq_fv_mv2_dispatched_awaiting_worker_return`. EACQ-FV-MV2 dispatch is committed at `437d59a48` after the serious, source-backed, non-duplicate, value-exceeds-cost gate; pre-dispatch passed 79/79 and pre-commit passed 87/87. Next: delegated worker executes exactly the six-path `WORKER_MUST_NOT_COMMIT` order and returns for independent review. MV-3 remains parked until capsule-enhanced comparison evidence exists. Keep UAA, provider/live, external packet-folder mutation, public sync, deploy, push, secrets, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

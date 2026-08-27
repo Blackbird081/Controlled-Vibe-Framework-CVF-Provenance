@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate",
+  "currentMode": "eacq_fv_mv2_dispatched_awaiting_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EACQ-FV-MV1 is independently accepted CLOSED_PASS_BOUNDED at material commit f202f351fccba436c15a666facefc438be5bdac9 and closure commit 1e002a52b after bounded reviewer repair. Exact three-path worker scope and no-commit discipline passed; focused evidence is 33/33, the actual dispatch range has zero conditional-index violations, reviewer-fast passed, and material and closure pre-commit gates passed 87/87. The checker remains standalone and unwired. Next allowed move is operator selection through the serious, source-backed, non-duplicate, value-exceeds-time/latency/quota gate: stop, request bounded correction, or separately authorize fresh MV-2 or MV-3 dispatch authoring. No successor is automatic. UAA-G1/G2/G3, rule/index/hook/catalog mutation, provider/live calls, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-MV2 dispatch is committed at 437d59a48 after the serious, source-backed, non-duplicate, value-exceeds-time/latency/quota gate; pre-dispatch passed 79/79 and pre-commit passed 87/87. The selected lane enriches the existing strict task capsule with four context groups and an explicit offline pinned-not-live-verified creation path. Next allowed move is delegated worker execution of the exact six-path WORKER_MUST_NOT_COMMIT order followed by independent semantic review. MV-3 remains parked until capsule-enhanced comparison evidence exists. UAA-G1/G2/G3, provider/live calls, external packet-folder mutation, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_MV1_CONDITIONAL_REOPEN_INDEX_ENFORCEMENT_2026-08-27.md",
-    "baselineSha256": "fb6e24565deda643576f2ecbbd049eb5ab5037c3bdda1cb0a152b202ce711b79",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV1_CONDITIONAL_REOPEN_INDEX_ENFORCEMENT_2026-08-27.md",
-    "workOrderSha256": "3b4523c5c24042e77ef0a3e9e74e156c02919d722bb0f3c9a49bc7479acd7b37"
+    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_MV2_EXTERNAL_AGENT_TASK_CAPSULE_CONTEXT_2026-08-27.md",
+    "baselineSha256": "c50d0c4cfab232b475983dcaf3ac88c11556eb2a0317fabbd8d9b01bfaefd8d0",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV2_EXTERNAL_AGENT_TASK_CAPSULE_CONTEXT_2026-08-27.md",
+    "workOrderSha256": "90a5c58f7bc7ff1ac959b7bfc422efc61c3ef8da7d06f76eab14f139eb7caede"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
