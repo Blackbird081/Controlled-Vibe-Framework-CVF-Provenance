@@ -12,9 +12,11 @@
   ],
   "rowCount": 50,
   "statusCounts": {
-    "DEFERRED": 50
+    "READ": 8,
+    "DEFERRED": 8,
+    "NO_NEW_VALUE": 34
   },
-  "readEvidenceBoundary": "All 50 paths and bytes were independently enumerated and SHA-256 hashed. Semantic reading, source-paper verification, current-owner reconciliation, and value decisions remain pending.",
+  "readEvidenceBoundary": "All 50 files were read in full; JSON and JSONL artifacts were structurally parsed; the packet manifest reconciled 49 declared payload files plus the manifest itself; paper-attributed claims were independently verified against arXiv:2608.21230; current-owner overlap was checked against EAFR, Memory Foundation, Truth Foundation, the durable store, and the execute-route prompt path.",
   "rows": [
     {
       "path": "00_SHARED/CVF_ABSORPTION_PRINCIPLES.md",
@@ -22,12 +24,12 @@
       "bytes": 1191,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:00_SHARED/CVF_ABSORPTION_PRINCIPLES.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "CROSS_OWNER_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; non-duplication, scalar-not-truth, lineage/currentness, and advisory-versus-strict distinctions restate current Truth Foundation, Memory Foundation, SOT3, and EAFR doctrine.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/memory_foundation/; docs/reference/truth_foundation/",
+      "evidence": "local:00_SHARED/CVF_ABSORPTION_PRINCIPLES.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "00_SHARED/CVF_MEMORY_EPISTEMIC_STATE_MODEL.md",
@@ -35,12 +37,12 @@
       "bytes": 1977,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:00_SHARED/CVF_MEMORY_EPISTEMIC_STATE_MODEL.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "CROSS_OWNER_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; non-duplication, scalar-not-truth, lineage/currentness, and advisory-versus-strict distinctions restate current Truth Foundation, Memory Foundation, SOT3, and EAFR doctrine.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/memory_foundation/; docs/reference/truth_foundation/",
+      "evidence": "local:00_SHARED/CVF_MEMORY_EPISTEMIC_STATE_MODEL.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "00_SHARED/CVF_NON_DUPLICATION_GUARD.md",
@@ -48,12 +50,12 @@
       "bytes": 1079,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:00_SHARED/CVF_NON_DUPLICATION_GUARD.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "CROSS_OWNER_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; non-duplication, scalar-not-truth, lineage/currentness, and advisory-versus-strict distinctions restate current Truth Foundation, Memory Foundation, SOT3, and EAFR doctrine.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/memory_foundation/; docs/reference/truth_foundation/",
+      "evidence": "local:00_SHARED/CVF_NON_DUPLICATION_GUARD.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "00_SHARED/CVF_RETRIEVAL_AUTHORITY_MATRIX.md",
@@ -61,12 +63,12 @@
       "bytes": 1438,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:00_SHARED/CVF_RETRIEVAL_AUTHORITY_MATRIX.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "CROSS_OWNER_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; non-duplication, scalar-not-truth, lineage/currentness, and advisory-versus-strict distinctions restate current Truth Foundation, Memory Foundation, SOT3, and EAFR doctrine.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/memory_foundation/; docs/reference/truth_foundation/",
+      "evidence": "local:00_SHARED/CVF_RETRIEVAL_AUTHORITY_MATRIX.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_ACCEPTANCE.md",
@@ -74,12 +76,12 @@
       "bytes": 866,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_ACCEPTANCE.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "EPISTEMIC_ADMISSION_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; the stored/retrieved/policy-eligible versus truth-qualified distinction and contract-only recommendation were already recorded in the 2026-08-25 external-findings remediation lineage and current Truth/Memory contracts.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md",
+      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_ACCEPTANCE.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_CONTRACT.md",
@@ -87,12 +89,12 @@
       "bytes": 1617,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_CONTRACT.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "EPISTEMIC_ADMISSION_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; the stored/retrieved/policy-eligible versus truth-qualified distinction and contract-only recommendation were already recorded in the 2026-08-25 external-findings remediation lineage and current Truth/Memory contracts.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md",
+      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_CONTRACT.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_SPEC.md",
@@ -100,12 +102,12 @@
       "bytes": 2180,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_SPEC.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "EPISTEMIC_ADMISSION_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; the stored/retrieved/policy-eligible versus truth-qualified distinction and contract-only recommendation were already recorded in the 2026-08-25 external-findings remediation lineage and current Truth/Memory contracts.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md",
+      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_SPEC.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_WORK_ORDER.md",
@@ -113,12 +115,12 @@
       "bytes": 1376,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_WORK_ORDER.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "EPISTEMIC_ADMISSION_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; the stored/retrieved/policy-eligible versus truth-qualified distinction and contract-only recommendation were already recorded in the 2026-08-25 external-findings remediation lineage and current Truth/Memory contracts.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md",
+      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_WORK_ORDER.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "01_MEMORY_EPISTEMIC_ADMISSION/README.md",
@@ -126,12 +128,12 @@
       "bytes": 430,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/README.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "EPISTEMIC_ADMISSION_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; the stored/retrieved/policy-eligible versus truth-qualified distinction and contract-only recommendation were already recorded in the 2026-08-25 external-findings remediation lineage and current Truth/Memory contracts.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md",
+      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/README.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "01_MEMORY_EPISTEMIC_ADMISSION/tests/CVF_EPISTEMIC_ADMISSION_TEST_MATRIX.md",
@@ -139,12 +141,12 @@
       "bytes": 829,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/tests/CVF_EPISTEMIC_ADMISSION_TEST_MATRIX.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "EPISTEMIC_ADMISSION_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; the stored/retrieved/policy-eligible versus truth-qualified distinction and contract-only recommendation were already recorded in the 2026-08-25 external-findings remediation lineage and current Truth/Memory contracts.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md",
+      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/tests/CVF_EPISTEMIC_ADMISSION_TEST_MATRIX.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "01_MEMORY_EPISTEMIC_ADMISSION/tests/epistemic_admission_cases.jsonl",
@@ -152,12 +154,12 @@
       "bytes": 1658,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/tests/epistemic_admission_cases.jsonl"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "EPISTEMIC_ADMISSION_DOCTRINE_OVERLAP",
+      "rationale": "Fully read; the stored/retrieved/policy-eligible versus truth-qualified distinction and contract-only recommendation were already recorded in the 2026-08-25 external-findings remediation lineage and current Truth/Memory contracts.",
+      "readMethod": "FULL_SEMANTIC_READ_AND_STRUCTURED_PARSE",
+      "ownerSurface": "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md",
+      "evidence": "local:01_MEMORY_EPISTEMIC_ADMISSION/tests/epistemic_admission_cases.jsonl; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_ACCEPTANCE.md",
@@ -165,12 +167,12 @@
       "bytes": 660,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_ACCEPTANCE.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP",
+      "rationale": "Fully read; source authority, provenance labels, currentness/conflict, integrity-is-not-truth, and reference-not-copy rules already have canonical Truth/Memory owners; proposed runtime fields remain unproven design.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
+      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_ACCEPTANCE.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_CONTRACT.md",
@@ -178,12 +180,12 @@
       "bytes": 1018,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_CONTRACT.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP",
+      "rationale": "Fully read; source authority, provenance labels, currentness/conflict, integrity-is-not-truth, and reference-not-copy rules already have canonical Truth/Memory owners; proposed runtime fields remain unproven design.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
+      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_CONTRACT.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_SPEC.md",
@@ -191,12 +193,12 @@
       "bytes": 1249,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_SPEC.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP",
+      "rationale": "Fully read; source authority, provenance labels, currentness/conflict, integrity-is-not-truth, and reference-not-copy rules already have canonical Truth/Memory owners; proposed runtime fields remain unproven design.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
+      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_SPEC.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_WORK_ORDER.md",
@@ -204,12 +206,12 @@
       "bytes": 1041,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_WORK_ORDER.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP",
+      "rationale": "Fully read; source authority, provenance labels, currentness/conflict, integrity-is-not-truth, and reference-not-copy rules already have canonical Truth/Memory owners; proposed runtime fields remain unproven design.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
+      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_WORK_ORDER.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_SOURCE_LINEAGE_RULES.md",
@@ -217,12 +219,12 @@
       "bytes": 941,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_SOURCE_LINEAGE_RULES.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP",
+      "rationale": "Fully read; source authority, provenance labels, currentness/conflict, integrity-is-not-truth, and reference-not-copy rules already have canonical Truth/Memory owners; proposed runtime fields remain unproven design.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
+      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_SOURCE_LINEAGE_RULES.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_TRUTH_REFERENCE_BINDING.md",
@@ -230,12 +232,12 @@
       "bytes": 1013,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_TRUTH_REFERENCE_BINDING.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP",
+      "rationale": "Fully read; source authority, provenance labels, currentness/conflict, integrity-is-not-truth, and reference-not-copy rules already have canonical Truth/Memory owners; proposed runtime fields remain unproven design.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
+      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_TRUTH_REFERENCE_BINDING.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/README.md",
@@ -243,12 +245,12 @@
       "bytes": 437,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/README.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP",
+      "rationale": "Fully read; source authority, provenance labels, currentness/conflict, integrity-is-not-truth, and reference-not-copy rules already have canonical Truth/Memory owners; proposed runtime fields remain unproven design.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
+      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/README.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/tests/CVF_TRACEABILITY_TEST_MATRIX.md",
@@ -256,12 +258,12 @@
       "bytes": 552,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/tests/CVF_TRACEABILITY_TEST_MATRIX.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP",
+      "rationale": "Fully read; source authority, provenance labels, currentness/conflict, integrity-is-not-truth, and reference-not-copy rules already have canonical Truth/Memory owners; proposed runtime fields remain unproven design.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
+      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/tests/CVF_TRACEABILITY_TEST_MATRIX.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/tests/retrieval_traceability_cases.jsonl",
@@ -269,12 +271,12 @@
       "bytes": 1310,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/tests/retrieval_traceability_cases.jsonl"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP",
+      "rationale": "Fully read; source authority, provenance labels, currentness/conflict, integrity-is-not-truth, and reference-not-copy rules already have canonical Truth/Memory owners; proposed runtime fields remain unproven design.",
+      "readMethod": "FULL_SEMANTIC_READ_AND_STRUCTURED_PARSE",
+      "ownerSurface": "docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md",
+      "evidence": "local:02_RETRIEVAL_TRUTH_TRACEABILITY/tests/retrieval_traceability_cases.jsonl; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_ADVERSARIAL_TRUST_ACCEPTANCE.md",
@@ -282,12 +284,12 @@
       "bytes": 652,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_ADVERSARIAL_TRUST_ACCEPTANCE.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "SCALAR_TRUST_PROVENANCE_OVERLAP",
+      "rationale": "Fully read; the scalar-default, caller-trust, and ranking-boundary risks duplicate the source-verified EAFR R1/R2/R5 chain and current Memory Foundation admission semantics.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_ADVERSARIAL_TRUST_ACCEPTANCE.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_ADVERSARIAL_TRUST_WORK_ORDER.md",
@@ -295,12 +297,12 @@
       "bytes": 716,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_ADVERSARIAL_TRUST_WORK_ORDER.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "SCALAR_TRUST_PROVENANCE_OVERLAP",
+      "rationale": "Fully read; the scalar-default, caller-trust, and ranking-boundary risks duplicate the source-verified EAFR R1/R2/R5 chain and current Memory Foundation admission semantics.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_ADVERSARIAL_TRUST_WORK_ORDER.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_AUDITTRUST_PROVENANCE_EVAL_PLAN.md",
@@ -308,12 +310,12 @@
       "bytes": 1177,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_AUDITTRUST_PROVENANCE_EVAL_PLAN.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "SCALAR_TRUST_PROVENANCE_OVERLAP",
+      "rationale": "Fully read; the scalar-default, caller-trust, and ranking-boundary risks duplicate the source-verified EAFR R1/R2/R5 chain and current Memory Foundation admission semantics.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_AUDITTRUST_PROVENANCE_EVAL_PLAN.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_SCALAR_TRUST_FAILURE_MODES.md",
@@ -321,12 +323,12 @@
       "bytes": 1213,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_SCALAR_TRUST_FAILURE_MODES.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "SCALAR_TRUST_PROVENANCE_OVERLAP",
+      "rationale": "Fully read; the scalar-default, caller-trust, and ranking-boundary risks duplicate the source-verified EAFR R1/R2/R5 chain and current Memory Foundation admission semantics.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_SCALAR_TRUST_FAILURE_MODES.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_SCALAR_TRUST_PROVENANCE_EVAL_SPEC.md",
@@ -334,12 +336,12 @@
       "bytes": 1628,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_SCALAR_TRUST_PROVENANCE_EVAL_SPEC.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "SCALAR_TRUST_PROVENANCE_OVERLAP",
+      "rationale": "Fully read; the scalar-default, caller-trust, and ranking-boundary risks duplicate the source-verified EAFR R1/R2/R5 chain and current Memory Foundation admission semantics.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_SCALAR_TRUST_PROVENANCE_EVAL_SPEC.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/README.md",
@@ -347,12 +349,12 @@
       "bytes": 369,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/README.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "SCALAR_TRUST_PROVENANCE_OVERLAP",
+      "rationale": "Fully read; the scalar-default, caller-trust, and ranking-boundary risks duplicate the source-verified EAFR R1/R2/R5 chain and current Memory Foundation admission semantics.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/README.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/tests/CVF_TRUST_PROVENANCE_TEST_MATRIX.md",
@@ -360,12 +362,12 @@
       "bytes": 636,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/tests/CVF_TRUST_PROVENANCE_TEST_MATRIX.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "SCALAR_TRUST_PROVENANCE_OVERLAP",
+      "rationale": "Fully read; the scalar-default, caller-trust, and ranking-boundary risks duplicate the source-verified EAFR R1/R2/R5 chain and current Memory Foundation admission semantics.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/tests/CVF_TRUST_PROVENANCE_TEST_MATRIX.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/tests/trust_provenance_scenarios.jsonl",
@@ -373,12 +375,12 @@
       "bytes": 1027,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/tests/trust_provenance_scenarios.jsonl"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "SCALAR_TRUST_PROVENANCE_OVERLAP",
+      "rationale": "Fully read; the scalar-default, caller-trust, and ranking-boundary risks duplicate the source-verified EAFR R1/R2/R5 chain and current Memory Foundation admission semantics.",
+      "readMethod": "FULL_SEMANTIC_READ_AND_STRUCTURED_PARSE",
+      "ownerSurface": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+      "evidence": "local:03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/tests/trust_provenance_scenarios.jsonl; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "04_UTILITY_UNDER_ATTACK/CVF_BENIGN_UNTRUSTED_EVIDENCE_TEST_PLAN.md",
@@ -387,11 +389,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:04_UTILITY_UNDER_ATTACK/CVF_BENIGN_UNTRUSTED_EVIDENCE_TEST_PLAN.md"
+      "semanticGroup": "UTILITY_UNDER_ATTACK_BENCHMARK_CANDIDATE",
+      "rationale": "Useful bounded fixture and metric design, but it supplies no CVF run result and does not establish a new serious finding; reopen only under a separately selected evaluation owner and value gate.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "future existing-owner evaluation tranche; no new Evaluation Plane",
+      "evidence": "local:04_UTILITY_UNDER_ATTACK/CVF_BENIGN_UNTRUSTED_EVIDENCE_TEST_PLAN.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "04_UTILITY_UNDER_ATTACK/CVF_MEMORY_POISONING_BENCHMARK_MATRIX.md",
@@ -400,11 +402,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:04_UTILITY_UNDER_ATTACK/CVF_MEMORY_POISONING_BENCHMARK_MATRIX.md"
+      "semanticGroup": "UTILITY_UNDER_ATTACK_BENCHMARK_CANDIDATE",
+      "rationale": "Useful bounded fixture and metric design, but it supplies no CVF run result and does not establish a new serious finding; reopen only under a separately selected evaluation owner and value gate.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "future existing-owner evaluation tranche; no new Evaluation Plane",
+      "evidence": "local:04_UTILITY_UNDER_ATTACK/CVF_MEMORY_POISONING_BENCHMARK_MATRIX.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_ACCEPTANCE.md",
@@ -413,11 +415,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_ACCEPTANCE.md"
+      "semanticGroup": "UTILITY_UNDER_ATTACK_BENCHMARK_CANDIDATE",
+      "rationale": "Useful bounded fixture and metric design, but it supplies no CVF run result and does not establish a new serious finding; reopen only under a separately selected evaluation owner and value gate.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "future existing-owner evaluation tranche; no new Evaluation Plane",
+      "evidence": "local:04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_ACCEPTANCE.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_EVAL_SPEC.md",
@@ -426,11 +428,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_EVAL_SPEC.md"
+      "semanticGroup": "UTILITY_UNDER_ATTACK_BENCHMARK_CANDIDATE",
+      "rationale": "Useful bounded fixture and metric design, but it supplies no CVF run result and does not establish a new serious finding; reopen only under a separately selected evaluation owner and value gate.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "future existing-owner evaluation tranche; no new Evaluation Plane",
+      "evidence": "local:04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_EVAL_SPEC.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_WORK_ORDER.md",
@@ -439,11 +441,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_WORK_ORDER.md"
+      "semanticGroup": "UTILITY_UNDER_ATTACK_BENCHMARK_CANDIDATE",
+      "rationale": "Useful bounded fixture and metric design, but it supplies no CVF run result and does not establish a new serious finding; reopen only under a separately selected evaluation owner and value gate.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "future existing-owner evaluation tranche; no new Evaluation Plane",
+      "evidence": "local:04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_WORK_ORDER.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "04_UTILITY_UNDER_ATTACK/fixtures/utility_under_attack_scenarios.jsonl",
@@ -452,11 +454,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:04_UTILITY_UNDER_ATTACK/fixtures/utility_under_attack_scenarios.jsonl"
+      "semanticGroup": "UTILITY_UNDER_ATTACK_BENCHMARK_CANDIDATE",
+      "rationale": "Useful bounded fixture and metric design, but it supplies no CVF run result and does not establish a new serious finding; reopen only under a separately selected evaluation owner and value gate.",
+      "readMethod": "FULL_SEMANTIC_READ_AND_STRUCTURED_PARSE",
+      "ownerSurface": "future existing-owner evaluation tranche; no new Evaluation Plane",
+      "evidence": "local:04_UTILITY_UNDER_ATTACK/fixtures/utility_under_attack_scenarios.jsonl; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "04_UTILITY_UNDER_ATTACK/metrics/CVF_UTILITY_UNDER_ATTACK_METRICS_SCHEMA.json",
@@ -465,11 +467,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:04_UTILITY_UNDER_ATTACK/metrics/CVF_UTILITY_UNDER_ATTACK_METRICS_SCHEMA.json"
+      "semanticGroup": "UTILITY_UNDER_ATTACK_BENCHMARK_CANDIDATE",
+      "rationale": "Useful bounded fixture and metric design, but it supplies no CVF run result and does not establish a new serious finding; reopen only under a separately selected evaluation owner and value gate.",
+      "readMethod": "FULL_SEMANTIC_READ_AND_STRUCTURED_PARSE",
+      "ownerSurface": "future existing-owner evaluation tranche; no new Evaluation Plane",
+      "evidence": "local:04_UTILITY_UNDER_ATTACK/metrics/CVF_UTILITY_UNDER_ATTACK_METRICS_SCHEMA.json; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "04_UTILITY_UNDER_ATTACK/README.md",
@@ -478,11 +480,11 @@
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
       "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:04_UTILITY_UNDER_ATTACK/README.md"
+      "semanticGroup": "UTILITY_UNDER_ATTACK_BENCHMARK_CANDIDATE",
+      "rationale": "Useful bounded fixture and metric design, but it supplies no CVF run result and does not establish a new serious finding; reopen only under a separately selected evaluation owner and value gate.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "future existing-owner evaluation tranche; no new Evaluation Plane",
+      "evidence": "local:04_UTILITY_UNDER_ATTACK/README.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "05_INTEGRATION/CVF_AGENT_RETURN_CONTRACT.md",
@@ -490,12 +492,12 @@
       "bytes": 1800,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:05_INTEGRATION/CVF_AGENT_RETURN_CONTRACT.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "INTEGRATION_GUIDANCE_OVERLAP",
+      "rationale": "Fully read; phased work orders, return shape, owner map, and no-overclaim guidance are secondary synthesis that duplicates current governed workflow and owner routing.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "AGENTS.md; current work-order and external-absorption standards",
+      "evidence": "local:05_INTEGRATION/CVF_AGENT_RETURN_CONTRACT.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "05_INTEGRATION/CVF_CHANGESET_CHECKLIST.md",
@@ -503,12 +505,12 @@
       "bytes": 781,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:05_INTEGRATION/CVF_CHANGESET_CHECKLIST.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "INTEGRATION_GUIDANCE_OVERLAP",
+      "rationale": "Fully read; phased work orders, return shape, owner map, and no-overclaim guidance are secondary synthesis that duplicates current governed workflow and owner routing.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "AGENTS.md; current work-order and external-absorption standards",
+      "evidence": "local:05_INTEGRATION/CVF_CHANGESET_CHECKLIST.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "05_INTEGRATION/CVF_NO_OVERCLAIM_CHECKLIST.md",
@@ -516,12 +518,12 @@
       "bytes": 792,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:05_INTEGRATION/CVF_NO_OVERCLAIM_CHECKLIST.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "INTEGRATION_GUIDANCE_OVERLAP",
+      "rationale": "Fully read; phased work orders, return shape, owner map, and no-overclaim guidance are secondary synthesis that duplicates current governed workflow and owner routing.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "AGENTS.md; current work-order and external-absorption standards",
+      "evidence": "local:05_INTEGRATION/CVF_NO_OVERCLAIM_CHECKLIST.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "05_INTEGRATION/CVF_OWNER_PATCH_MAP.md",
@@ -529,12 +531,12 @@
       "bytes": 1741,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:05_INTEGRATION/CVF_OWNER_PATCH_MAP.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "INTEGRATION_GUIDANCE_OVERLAP",
+      "rationale": "Fully read; phased work orders, return shape, owner map, and no-overclaim guidance are secondary synthesis that duplicates current governed workflow and owner routing.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "AGENTS.md; current work-order and external-absorption standards",
+      "evidence": "local:05_INTEGRATION/CVF_OWNER_PATCH_MAP.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "05_INTEGRATION/CVF_PHASED_IMPLEMENTATION_PLAN.md",
@@ -542,12 +544,12 @@
       "bytes": 1759,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:05_INTEGRATION/CVF_PHASED_IMPLEMENTATION_PLAN.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "INTEGRATION_GUIDANCE_OVERLAP",
+      "rationale": "Fully read; phased work orders, return shape, owner map, and no-overclaim guidance are secondary synthesis that duplicates current governed workflow and owner routing.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "AGENTS.md; current work-order and external-absorption standards",
+      "evidence": "local:05_INTEGRATION/CVF_PHASED_IMPLEMENTATION_PLAN.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "05_INTEGRATION/CVF_TEST_GATE_PLAN.md",
@@ -555,12 +557,12 @@
       "bytes": 1350,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:05_INTEGRATION/CVF_TEST_GATE_PLAN.md"
+      "terminalStatus": "NO_NEW_VALUE",
+      "semanticGroup": "INTEGRATION_GUIDANCE_OVERLAP",
+      "rationale": "Fully read; phased work orders, return shape, owner map, and no-overclaim guidance are secondary synthesis that duplicates current governed workflow and owner routing.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "AGENTS.md; current work-order and external-absorption standards",
+      "evidence": "local:05_INTEGRATION/CVF_TEST_GATE_PLAN.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "AGENT_HANDOFF_PROMPT.md",
@@ -568,12 +570,12 @@
       "bytes": 1362,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:AGENT_HANDOFF_PROMPT.md"
+      "terminalStatus": "READ",
+      "semanticGroup": "PACKET_PROVENANCE_AND_CLAIM_BOUNDARY",
+      "rationale": "Read in full as packet provenance, scope, or navigation evidence; no source instruction was executed and empirical claims were independently checked against arXiv:2608.21230.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md",
+      "evidence": "local:AGENT_HANDOFF_PROMPT.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "AGENT_INGEST_INSTRUCTIONS.md",
@@ -581,12 +583,12 @@
       "bytes": 1392,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:AGENT_INGEST_INSTRUCTIONS.md"
+      "terminalStatus": "READ",
+      "semanticGroup": "PACKET_PROVENANCE_AND_CLAIM_BOUNDARY",
+      "rationale": "Read in full as packet provenance, scope, or navigation evidence; no source instruction was executed and empirical claims were independently checked against arXiv:2608.21230.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md",
+      "evidence": "local:AGENT_INGEST_INSTRUCTIONS.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "CLAIM_BOUNDARY.md",
@@ -594,12 +596,12 @@
       "bytes": 1418,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:CLAIM_BOUNDARY.md"
+      "terminalStatus": "READ",
+      "semanticGroup": "PACKET_PROVENANCE_AND_CLAIM_BOUNDARY",
+      "rationale": "Read in full as packet provenance, scope, or navigation evidence; no source instruction was executed and empirical claims were independently checked against arXiv:2608.21230.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md",
+      "evidence": "local:CLAIM_BOUNDARY.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "OWNER_MAPPING.md",
@@ -607,12 +609,12 @@
       "bytes": 2286,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:OWNER_MAPPING.md"
+      "terminalStatus": "READ",
+      "semanticGroup": "PACKET_PROVENANCE_AND_CLAIM_BOUNDARY",
+      "rationale": "Read in full as packet provenance, scope, or navigation evidence; no source instruction was executed and empirical claims were independently checked against arXiv:2608.21230.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md",
+      "evidence": "local:OWNER_MAPPING.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "PACKET_MANIFEST.json",
@@ -620,12 +622,12 @@
       "bytes": 9994,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:PACKET_MANIFEST.json"
+      "terminalStatus": "READ",
+      "semanticGroup": "PACKET_PROVENANCE_AND_CLAIM_BOUNDARY",
+      "rationale": "Read in full as packet provenance, scope, or navigation evidence; no source instruction was executed and empirical claims were independently checked against arXiv:2608.21230.",
+      "readMethod": "FULL_SEMANTIC_READ_AND_STRUCTURED_PARSE",
+      "ownerSurface": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md",
+      "evidence": "local:PACKET_MANIFEST.json; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "README.md",
@@ -633,12 +635,12 @@
       "bytes": 3013,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:README.md"
+      "terminalStatus": "READ",
+      "semanticGroup": "PACKET_PROVENANCE_AND_CLAIM_BOUNDARY",
+      "rationale": "Read in full as packet provenance, scope, or navigation evidence; no source instruction was executed and empirical claims were independently checked against arXiv:2608.21230.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md",
+      "evidence": "local:README.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "SOURCE_BASIS.md",
@@ -646,12 +648,12 @@
       "bytes": 3130,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:SOURCE_BASIS.md"
+      "terminalStatus": "READ",
+      "semanticGroup": "PACKET_PROVENANCE_AND_CLAIM_BOUNDARY",
+      "rationale": "Read in full as packet provenance, scope, or navigation evidence; no source instruction was executed and empirical claims were independently checked against arXiv:2608.21230.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md",
+      "evidence": "local:SOURCE_BASIS.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     },
     {
       "path": "TREEVIEW.md",
@@ -659,12 +661,12 @@
       "bytes": 3061,
       "mediaClass": "TEXT_OR_STRUCTURED",
       "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
-      "terminalStatus": "DEFERRED",
-      "semanticGroup": "PENDING_FULL_READ_AND_OWNER_RECONCILIATION",
-      "rationale": "Inventory receipt only; semantic classification pending governed T0 execution.",
-      "readMethod": "HASH_ONLY_AT_DISPATCH",
-      "ownerSurface": "PENDING_OWNER_RECONCILIATION",
-      "evidence": "local:TREEVIEW.md"
+      "terminalStatus": "READ",
+      "semanticGroup": "PACKET_PROVENANCE_AND_CLAIM_BOUNDARY",
+      "rationale": "Read in full as packet provenance, scope, or navigation evidence; no source instruction was executed and empirical claims were independently checked against arXiv:2608.21230.",
+      "readMethod": "FULL_SEMANTIC_READ",
+      "ownerSurface": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md",
+      "evidence": "local:TREEVIEW.md; current-owner-and-primary-source comparison recorded in MPA-AI-T0 audit"
     }
   ]
 }

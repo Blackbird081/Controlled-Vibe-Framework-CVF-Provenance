@@ -1,10 +1,10 @@
-# CVF Agent Handoff V59 - MPA-AI-T0 Dispatched
+# CVF Agent Handoff V59 - MPA-AI-T0 Closed Stop No New Value
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
-- Current provenance HEAD / MPA-AI-T0 dispatch: `201dae7222260e0983cbc7653c79fc3c14bc07a6`.
+- MPA-AI-T0 execution base: `6f3045fea4e07fb9e00c485120aba6faa3e5eece`; dispatch authority: `201dae7222260e0983cbc7653c79fc3c14bc07a6`.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -39,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpa_ai_t0_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute bounded 50-file MPA-AI-T0 intake and value gate; parked checkpoint=automatic successor roadmap, implementation, public sync, deployment, secrets and providers.
+Startup acknowledged: current mode=`mpa_ai_t0_closed_stop_no_new_value`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap or source-intake selection only; parked checkpoint=memory-poisoning utility benchmark, automatic successor roadmap, implementation, public sync, deployment, secrets and providers.
 
 ## Current Mode
-`mpa_ai_t0_dispatched_pending_worker_return`
+`mpa_ai_t0_closed_stop_no_new_value`
 
 ## Purpose
 
-Carry terminal PPRR-R1 closure evidence while executing the operator-authorized MPA-AI-T0 local-corpus absorption through a fresh value gate without opening implementation automatically.
+Carry terminal PPRR-R1 closure evidence and the reviewer-accepted MPA-AI-T0 `STOP_NO_NEW_VALUE` result without opening implementation automatically.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -57,7 +57,7 @@ Carry terminal PPRR-R1 closure evidence while executing the operator-authorized 
 ## Latest Work / Changes
 
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
-- EAFR-R8 is dispatched at `60635ed19` after reviewer repaired its test-manifest gap. Packet SHA-256 values are `f799139a7660dcb6fc0908c111652969f04f13f3793646e44fe39290ac0edc50` and `b0031f0218862ced4f54abdc4a6b788d82ac3dd3dbba27515db53f8adda28544`; pre-dispatch 79/79 and pre-commit 87/87 passed with zero external calls.
+- MPA-AI-T0 is reviewer-accepted `STOP_NO_NEW_VALUE`: all 50 local mixed-origin files are classified, arXiv:2608.21230 claims are bounded at the primary source, the serious memory-to-prompt path duplicates EAFR/Memory/Truth ownership, and the eight-file utility benchmark is parked demand-gated with zero provider/live calls.
 - EAFR-R7 is reviewer-accepted `CLOSED_BLOCKED` at material commit `74cf99354`: the fail-closed guard is retained after protocol-relative reviewer repair; focused 26/26 and TypeScript pass; full non-live is 3465 pass/88 named fail because ambient Upstash egress is blocked. The adapter injection residual remains. R8 source verification/dispatch authoring is next; RFR stays parked.
 - EAFR-R7 dispatch handoff mode alignment was repaired at `eaa35a7b7`; its parent is dispatch continuity `b58f9b6cb`. This is continuity-only and changes no R7 evidence or authority.
 - EAFR-R6 is reviewer-accepted `CLOSED_BLOCKED` at `2bc2b2d0d`. Four P1 provider-authority bypass classes remain; full Web proof is 3511 pass/22 named fail, focused 38/38, reviewer-fast 66/66 and pre-commit 87/87 with zero R6 provider calls. RFR remains parked; R7 dispatch authoring is next.
@@ -115,10 +115,10 @@ Handoff sync parent: `6c77f4183`; continuity parent anchor: `92c96a04d`.
 
 | Field | Value |
 |---|---|
-| authorityState | LPCI1 Web R2 `REVIEWER_ACCEPTED_CLOSED_BLOCKED` at `92c96a04d` |
-| baselinePath | `docs/baselines/CVF_GC018_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md` |
-| nextAuthorityRequirement | author and commit exactly one consolidated R3 packet before implementation or public mutation |
+| authorityState | MPA-AI-T0 reviewer-accepted `STOP_NO_NEW_VALUE` closure batch |
+| baselinePath | `docs/baselines/CVF_GC018_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_INTAKE_2026-08-27.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_INTAKE_2026-08-27.md` |
+| nextAuthorityRequirement | fresh operator-selected value-gated roadmap or source intake; no automatic MPA successor |
 
 ## Closure Evidence
 

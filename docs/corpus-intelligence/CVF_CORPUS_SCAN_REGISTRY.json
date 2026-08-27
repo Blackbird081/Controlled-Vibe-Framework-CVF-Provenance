@@ -7280,18 +7280,20 @@
         ".private_reference/legacy/CVF 13.08/CVF_MEMORY_POISONING_ABSORPTION/"
       ],
       "fileCount": 50,
-      "status": "NOT_STARTED",
+      "status": "SCANNED_WITH_FINDINGS",
       "scanWave": "MPA-AI-T0",
       "scanDate": "2026-08-27",
-      "manifestHash": null,
-      "manifestPath": null,
-      "packetPath": null,
-      "completionReviewPath": null,
-      "gcBaselineRef": null,
+      "manifestHash": "7bcdc612aaf99e7323de9b1236474c1e9ebf8a6b326d3e19ada649a1b57f9e10",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+      "manifestPath": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_MANIFEST_2026-08-27.json",
+      "packetPath": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md",
+      "completionReviewPath": "docs/reviews/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_WORKER_RETURN_2026-08-27.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_INTAKE_2026-08-27.md",
       "verdicts": {
-        "gc047": "NOT_RUN",
-        "gc048": "NOT_RUN",
-        "gc050": "NOT_RUN"
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+        "gc050": "PASS"
       },
       "semanticRegions": [
         "memory-epistemic-admission",
@@ -7300,10 +7302,34 @@
         "utility-under-memory-attack",
         "mixed-origin-derived-synthesis"
       ],
-      "priorAbsorption": "No exact registry entry or governed absorption packet for CVF_MEMORY_POISONING_ABSORPTION was found at scan-open time. The source is an operator-supplied local folder written through operator and external-agent exchange, not a GitHub repository or pinned upstream mirror.",
-      "findings": [],
-      "negativeSearchTerms": [],
-      "nextScanRecommendation": "Create the governed MPA-AI-T0 dispatch packet, record immutable local manifest evidence, fully classify all 50 files, reconcile overlap against current CVF owners, and apply the serious/source-backed/non-duplicate/value-exceeds-cost gate before any absorption or implementation."
+      "priorAbsorption": "No prior exact-folder intake existed. Semantic comparison found that the serious provenance, prompt-reach, and epistemic-admission concerns were already absorbed through the 2026-08-25 EAFR lineage and are represented by current Memory Foundation, Truth Foundation, and Memory Plane Map owners.",
+      "findings": [
+        {
+          "id": "MPA-AI-T0-F1-known-serious-memory-admission-risk",
+          "summary": "Current source confirms a serious model-output to durable-memory to system-prompt path with scalar provenance one, but the same risk and admission boundary were already source-mapped and absorbed by EAFR and current Memory/Truth owners.",
+          "disposition": "ACCEPT_NO_ACTION",
+          "nextAction": "Do not open a duplicate roadmap; reopen only if fresh evidence identifies a distinct reachable decision-bearing consumer or deployment exposure not adjudicated by the existing lineage.",
+          "defectClass": "N/A",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+          "f2gRef": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "MPA-AI-T0-F2-utility-under-attack-benchmark",
+          "summary": "The local utility-under-attack schemas and fixtures are a coherent evaluation candidate, but no CVF benchmark was run and present marginal value does not exceed execution, review, latency, and quota cost.",
+          "disposition": "DEFER_DEMAND_GATED",
+          "nextAction": "Reconsider only after a named evaluation owner defines a CVF workload, baseline, attack budget, correctness rubric, provider budget, and source-backed expected value.",
+          "defectClass": "UNVERIFIED_CLAIM",
+          "learningLane": "COST_ECONOMICS_LEARNING",
+          "f2gRef": "docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "fresh non-duplicate MPA implementation finding (not established)",
+        "CVF utility-under-memory-attack benchmark result (not run)",
+        "bounded occupancy defense validated by arXiv:2608.21230 (not built or evaluated)",
+        "automatic successor roadmap authority (not granted)"
+      ],
+      "nextScanRecommendation": "Do not rescan this unchanged packet. Reuse the immutable manifest and ledger; reopen only on named source drift, a distinct current consumer/deployment finding outside prior EAFR coverage, or an operator-approved evaluation proposal that passes the value/cost gate."
     }
   ]
 }

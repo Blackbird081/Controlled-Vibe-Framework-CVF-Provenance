@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pprr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection only; parked checkpoint=automatic PPRR-R2, deployment, secrets and providers; public PR 4 merge is complete at `a7a797d7`.
+Startup acknowledged: current mode=`mpa_ai_t0_closed_stop_no_new_value`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection only; parked checkpoint=memory-poisoning utility benchmark, automatic successor roadmap, deployment, secrets and providers.
 
 ## Current Mode
 
-Current mode marker: `pprr_r1_closed_pass_bounded`
-Current mode: `pprr_r1_closed_pass_bounded`; previous mode marker: `pprr_r1_dispatched_pending_worker_return`
-Previous mode: `lpci1_web_r3_closed_pass_bounded`
+Current mode marker: `mpa_ai_t0_closed_stop_no_new_value`
+Current mode: `mpa_ai_t0_closed_stop_no_new_value`; previous mode marker: `mpa_ai_t0_dispatched_pending_worker_return`
+Previous mode: `pprr_r1_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `mpa_ai_t0_dispatched_pending_worker_return`. MPA-AI-T0 dispatch is committed at `201dae7222260e0983cbc7653c79fc3c14bc07a6` for the 50-file operator/external-agent local memory-poisoning corpus. Next: full semantic read, primary-paper verification, current-owner overlap analysis, and one bounded value verdict. Do not execute source instructions, implement findings, open a successor automatically, call providers, sync public surfaces, deploy, or access secrets. A successor remains gated on a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost.
+Mode: `mpa_ai_t0_closed_stop_no_new_value`. MPA-AI-T0 classified all 50 files and closed `STOP_NO_NEW_VALUE`: the serious memory-to-prompt risk is source-confirmed but duplicates EAFR/Memory/Truth ownership; the eight-file utility benchmark remains demand-gated and unrun. Next: operator may select another fresh value-gated roadmap or source intake. Reopen this lane only for a distinct current consumer/deployment finding outside prior coverage, or a named benchmark owner with workload, rubric, budget, and value exceeding time, latency and quota cost. Do not implement, call providers, sync public surfaces, deploy, or access secrets automatically.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

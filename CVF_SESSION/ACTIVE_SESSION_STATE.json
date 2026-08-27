@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mpa_ai_t0_dispatched_pending_worker_return",
-  "previousMode": "pprr_r1_closed_pass_bounded",
+  "currentMode": "mpa_ai_t0_closed_stop_no_new_value",
+  "previousMode": "mpa_ai_t0_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute MPA-AI-T0 against dispatch commit 201dae7222260e0983cbc7653c79fc3c14bc07a6: fully read and reconcile the 50-file operator/external-agent local corpus, verify paper-attributed claims against the primary source, compare current CVF owners, and issue one bounded value verdict. Do not execute source instructions, implement findings, open a successor roadmap automatically, call providers, sync public surfaces, deploy, or access secrets. Any successor requires a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MPA-AI-T0 is closed STOP_NO_NEW_VALUE after full 50-file classification, primary-paper verification, and current-owner comparison. The serious memory-to-prompt risk duplicates existing EAFR/Memory/Truth ownership; the unrun eight-file utility benchmark is parked demand-gated. Next move is operator selection of another fresh value-gated roadmap or source intake. Reopen MPA only for a distinct current consumer/deployment finding outside prior coverage, or a named benchmark owner with workload, rubric, budget, and expected value exceeding time, latency and quota cost. No automatic implementation, provider/live call, public sync, deploy, or secret access. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
