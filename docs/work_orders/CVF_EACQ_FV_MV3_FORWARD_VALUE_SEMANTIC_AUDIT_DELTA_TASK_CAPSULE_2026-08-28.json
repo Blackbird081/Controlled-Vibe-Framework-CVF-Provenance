@@ -1,0 +1,150 @@
+{
+  "schema": "cvf.externalAgentTaskCapsule.v1",
+  "protocolVersion": "1.1.0",
+  "projectionOf": "cvf.external-agent-round-trip",
+  "generatedAt": "2026-08-28T15:30:00+07:00",
+  "task": {
+    "id": "eacq-fv-mv3-forward-value-semantic-audit-delta",
+    "title": "EACQ-FV MV3 Forward-Value Semantic Audit Delta",
+    "objective": "Append the bounded forward-value delta to the existing Reviewer Semantic Value Audit so valuable deferred or apparently duplicate ideas cannot be silently discarded without deterministic review.",
+    "workingMode": "EXTEND_SUPPLIED_REPOSITORY",
+    "outputRoot": "docs/reviews/CVF_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_WORKER_RETURN_2026-08-28.md",
+    "nonGoals": [
+      "Do not create a new standard, checker, vocabulary family, or absorption mechanism.",
+      "Do not reclassify the 50-file MPA ledger or open UAA-G1, UAA-G2, or UAA-G3.",
+      "Do not modify roadmap, session, hook, catalog, runtime, provider, public, or deployment surfaces.",
+      "Do not commit, stage, push, publish, deploy, call providers, or use credentials."
+    ]
+  },
+  "cvfPublicSource": {
+    "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+    "sourcePosture": "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
+  },
+  "sourceRepositories": [
+    {
+      "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+      "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+      "usage": "REFERENCE_AND_ANALYSIS"
+    }
+  ],
+  "gateA": {
+    "name": "SOURCE_OWNER_OVERLAP",
+    "requiredBefore": "DESIGN_OR_CODE",
+    "requiredEvidence": [
+      "Read the existing Reviewer Semantic Value Audit, EACQ-FV roadmap Forward-Value Review Control, R0 critique and disposition, and the MPA audit.",
+      "Confirm current doctrine already owns overlap, maturity, authority, direct-import, and composed-system review.",
+      "Confirm the only authorized delta is two questions, deterministic group selection, and two secondary dispositions.",
+      "Confirm no parallel forward-value standard or current owner exists."
+    ],
+    "terminalStates": ["PASS", "RETURN_FOR_REPAIR", "BLOCKED"]
+  },
+  "gateB": {
+    "name": "DESIGN_CODE_TEST",
+    "opensOnlyWhen": "gateA=PASS",
+    "requiredEvidence": [
+      "Append the delta inside the existing Reviewer Semantic Value Audit section.",
+      "Cover every DEFERRED group and deterministic ownerless-or-five-row NO_NEW_VALUE or REJECTED groups in stable semantic-group order.",
+      "Define only FORWARD_VALUE_PRESERVED and NO_FORWARD_VALUE without changing terminal ledger status.",
+      "Include one positive and one negative example and prove the MPA cluster is preserved without reopening it.",
+      "Run the external-absorption core regression and worker-return fast gate."
+    ]
+  },
+  "authorityEnvelope": {
+    "commit": false,
+    "push": false,
+    "publication": false,
+    "deployment": false,
+    "providerCalls": false,
+    "credentials": false,
+    "destructiveActions": false
+  },
+  "protectedPaths": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "dispatch base eb11b05f9 and paired MV3 work order",
+      "regenerateWhen": "dispatch base, write ownership, pinned sources, or authority envelope changes"
+    },
+    "paths": [
+      "AGENTS.md",
+      "CVF_SESSION/",
+      "governance/compat/",
+      "docs/roadmaps/",
+      "docs/baselines/",
+      "docs/work_orders/",
+      "docs/audits/",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md",
+      "docs/reference/external_agent_review/README.md"
+    ]
+  },
+  "ownerMap": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "pinned SHA-256 hashes in the MV3 work order",
+      "regenerateWhen": "absorption core standard, EACQ-FV roadmap, R0 disposition, or MPA audit changes"
+    },
+    "owners": [
+      {
+        "path": "docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md",
+        "symbol": "Reviewer Semantic Value Audit",
+        "version": "SHA-256 8f9ca8cb509b6ebdfe2dda5922d319e5803d856c8972c48ac0dbb73a715d2988",
+        "competingOwnersChecked": ["The EACQ-FV roadmap is planning authority only; this standard remains the canonical semantic-audit owner."]
+      },
+      {
+        "path": "docs/roadmaps/CVF_EXTERNAL_AGENT_CODING_QUALITY_AND_FORWARD_VALUE_ABSORPTION_ROADMAP_2026-08-27.md",
+        "symbol": "Forward-Value Review Control and MV-3 trace",
+        "version": "SHA-256 1010d4d97a1e3061fb3297aa2bcb849345239ac6297092d5563ffd6c22ad44f7",
+        "competingOwnersChecked": ["The roadmap defines the bounded delta but must not become a second semantic-audit standard."]
+      }
+    ]
+  },
+  "invariants": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "R0 accepted revision and MV1/MV2/L1 closures",
+      "regenerateWhen": "Reviewer Semantic Value Audit or forward-value control changes"
+    },
+    "mustPreserve": [
+      "Preserve all existing semantic-audit bullets verbatim unless a direct contradiction requires escalation.",
+      "Keep forward-value disposition orthogonal to terminal ledger status, maturity, authority, and implementation readiness.",
+      "Require a current conditional-reopen index row with owner and conjunctive evidence trigger for FORWARD_VALUE_PRESERVED.",
+      "Keep review order deterministic and sampling-free for the named group classes."
+    ],
+    "forbiddenTransitions": [
+      "Do not promote speculative novelty into CVF authority or implementation readiness.",
+      "Do not add more than the two approved secondary dispositions.",
+      "Do not create a new standard/checker or mutate the existing conditional-reopen index.",
+      "Do not stage or commit worker changes."
+    ]
+  },
+  "verification": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "final unstaged worker diff against execution base",
+      "regenerateWhen": "any standard or worker-return line changes after verification"
+    },
+    "focusedTests": [
+      "python -m pytest governance/compat/test_check_external_absorption_core.py -q",
+      "python governance/compat/check_external_absorption_core.py --base eb11b05f9 --head HEAD --enforce",
+      "python governance/compat/run_worker_return_fast_gate.py"
+    ],
+    "negativeCases": [
+      "A DEFERRED group without an indexed conjunctive reopen condition cannot receive FORWARD_VALUE_PRESERVED.",
+      "A NO_NEW_VALUE group without an exact owner or source-backed no-value reason cannot receive NO_FORWARD_VALUE."
+    ],
+    "deterministicChecks": [
+      "All DEFERRED groups are selected.",
+      "Ownerless or at-least-five-row NO_NEW_VALUE and REJECTED groups are selected in stable semantic-group ID order.",
+      "The MPA utility cluster is a positive example and remains parked.",
+      "An exact-owner duplicate is a negative example.",
+      "git diff --check",
+      "git diff --name-only",
+      "git diff --cached --name-only",
+      "git status --short"
+    ],
+    "requiredOutputs": [
+      "docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md",
+      "docs/reviews/CVF_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_WORKER_RETURN_2026-08-28.md"
+    ]
+  }
+}

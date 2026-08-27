@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: MV1_DISPATCH_READY
+Status: MV3_DISPATCHED_PENDING_NO_COMMIT_WORKER_RETURN
 
 docType: roadmap
 
@@ -68,11 +68,15 @@ EACQ-FV-R0 external adversarial review is complete with verdict
 disposition. All 14 findings are routed in the paired disposition packet and
 the four blocking design defects are repaired in this revision.
 
-The operator approved this revised roadmap on 2026-08-27 and assigned Codex as
-orchestrator/reviewer and Claude as the no-commit implementation worker. That
-approval opens only EACQ-FV-MV1 under the fresh bounded GC-018 baseline and
-work order dated 2026-08-27. MV-2, MV-3, benchmarks, provider, public, and
-runtime work remain closed. Provider identity is not normative authority.
+The operator approved this revised roadmap on 2026-08-27 and assigned an
+internal orchestrator/reviewer plus a delegated no-commit implementation
+worker. MV-1 and MV-2 are closed bounded. A later capsule evidence tranche and
+the repeated pre-closure-range learning tranche are also closed bounded. On
+2026-08-28 the operator requested the next value-gated move; MV-3 alone passed
+the fresh serious/source-backed/non-duplicate/value-exceeds-cost gate and is
+dispatched under its paired GC-018 baseline and work order. UAA, provider,
+public, runtime and the soft-size advisory remain parked. Provider identity is
+not normative authority.
 
 ## Scope
 
@@ -300,19 +304,20 @@ single run.
 | Tranche | Objective | Allowed output | Blocking exit |
 |---|---|---|---|
 | EACQ-FV-R0 | external adversarial critique and CVF disposition | governed review input, 14-row disposition, revised roadmap/index | COMPLETE; operator approved revision 2026-08-27 |
-| EACQ-FV-MV1 | enforce existing Conditional Reopen Index Rule | one checker adapting FPC/KIOD patterns, negative MPA fixture, focused tests; no hook wiring unless separately authorized | DISPATCH_READY under fresh GC-018/work order; changed closeout cannot lose a parked candidate; negative MPA case fails |
-| EACQ-FV-MV2 | enrich existing task capsule | four fields, validation, docs/tests, offline/staleness-aware production path | backward-compatible validated capsule with named consumers and no mandatory live refresh |
-| EACQ-FV-MV3 | add forward-value delta to existing semantic audit | two questions, deterministic group selection, two secondary dispositions | no duplicate doctrine and no discretionary sampling |
+| EACQ-FV-MV1 | enforce existing Conditional Reopen Index Rule | one checker adapting FPC/KIOD patterns, negative MPA fixture, focused tests; no hook wiring unless separately authorized | CLOSED_PASS_BOUNDED |
+| EACQ-FV-MV2 | enrich existing task capsule | four fields, validation, docs/tests, offline/staleness-aware production path | CLOSED_PASS_BOUNDED |
+| EACQ-FV-MV3 | add forward-value delta to existing semantic audit | two questions, deterministic group selection, two secondary dispositions | DISPATCHED_PENDING_NO_COMMIT_WORKER_RETURN under fresh GC-018/work order dated 2026-08-28 |
 | UAA-G1/G2 option | future provider-free contract plus retrieval evaluation | one separately authorized work order with two exit decisions | named seam, reproducible scoring, then distinct useful retrieval signal or stop |
 | UAA-G3 option | future model/provider evaluation | index row only until separately authorized | G2 PASS plus fresh GC-018, owner, budget and operator authorization |
 
 Each implementation tranche requires its own source verification, baseline,
-work order, worker return, independent review, and closure evidence. Operator
-approval has opened MV-1 dispatch only through
-`docs/baselines/CVF_GC018_EACQ_FV_MV1_CONDITIONAL_REOPEN_INDEX_ENFORCEMENT_2026-08-27.md`
+work order, worker return, independent review, and closure evidence. Current
+authority opens MV-3 only through
+`docs/baselines/CVF_GC018_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_2026-08-28.md`
 and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV1_CONDITIONAL_REOPEN_INDEX_ENFORCEMENT_2026-08-27.md`.
-MV-1 does not authorize MV-2/MV-3 or either utility execution gate.
+`docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_2026-08-28.md`.
+MV-3 does not authorize either utility execution gate or any automatic
+successor.
 
 ## Acceptance Criteria
 
@@ -613,15 +618,15 @@ planned tranches to MV-1/MV-2/MV-3, while UAA remains a gated option. Later
 comparison stops or revises the design if repair cost, latency, or defect rate
 does not improve.
 
-Claim Update: roadmap revision approved and MV-1 dispatch opened; no
-external-agent quality uplift or utility-under-attack effectiveness is
-claimed.
+Claim Update: MV-1 and MV-2 are closed bounded; MV-3 alone is dispatched under
+a fresh value gate. No external-agent causal quality uplift or
+utility-under-attack effectiveness is claimed.
 
 ## Fail Conditions
 
 Stop or return for redesign if:
 
-- the committed MV-1 dispatch packet or no-commit role boundary is absent;
+- the committed MV-3 dispatch packet or no-commit role boundary is absent;
 - capsule additions have no named consumer or freshness rule;
 - either of the two forward-value labels lacks its required owner/index proof;
 - a deferred candidate lacks an objective reopen condition;
@@ -657,13 +662,14 @@ Stop or return for redesign if:
 
 DEFERRED_PRIVATE_ONLY
 
-The roadmap has completed external critique and finding disposition and now
-opens private MV-1 dispatch only. It is not eligible for public export.
+Reason: MV3 is a private-provenance doctrine delta. No public-sync remote,
+public commit or public artifact path is authorized by this dispatch.
 
 ## Claim Boundary
 
 This artifact records a source-verified minimum viable revision, preserves one
-deferred candidate cluster, and authorizes only the bounded MV-1 dispatch. It
-does not prove improved external-agent coding quality, authorize MV-2/MV-3,
-execute UAA-G1/G2/G3, establish a security threshold, call a provider, modify
-public artifacts, deploy, or make a production-readiness claim.
+deferred candidate cluster, and currently authorizes only the bounded MV-3
+dispatch. It does not prove improved external-agent coding quality, execute
+UAA-G1/G2/G3, establish a security threshold, call a provider, modify public
+artifacts, deploy, or make a production-readiness claim. No successor opens
+automatically.
