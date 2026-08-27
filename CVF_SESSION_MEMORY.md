@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`psrr_r1_closed_blocked_agt_registry_selected`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one single-tranche AGT registry reconciliation roadmap; parked checkpoint=validator weakening, workflow change, PR 4 merge, deploy, PSRR-R2, secrets and providers.
+Startup acknowledged: current mode=`psrr_r1_sa2_public_export_repair_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one exact public-surface manifest entry and fresh proof; parked checkpoint=AGT work, workflow/product change, PR 4 merge, deploy, PSRR-R2, secrets and providers.
 
 ## Current Mode
 
-Current mode marker: `psrr_r1_closed_blocked_agt_registry_selected`
-Current mode: `psrr_r1_closed_blocked_agt_registry_selected`; previous mode marker: `psrr_r1_dispatched_pending_worker_return`
+Current mode marker: `psrr_r1_sa2_public_export_repair_authorized`
+Current mode: `psrr_r1_sa2_public_export_repair_authorized`; previous mode marker: `psrr_r1_closed_blocked_agt_registry_selected`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `psrr_r1_closed_blocked_agt_registry_selected`. PSRR-R1 is reviewer-accepted and exported at public SHA `01d27608`; 62/62 USR records reconcile, GC-019 is green, and hosted run `33052498416` remains red only on AGT-021 through AGT-034 plus dependent Status Check. Next author one single-tranche AGT registry reconciliation roadmap. Validator weakening, workflow change, PR 4 merge, deploy, PSRR-R2, secrets, providers and unrelated lanes remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `psrr_r1_sa2_public_export_repair_authorized`. Hosted fan-out at public SHA `01d27608` proves the required GC-019 review is blocked by public-surface policy because it is under `docs/reviews`. Add one exact manifest allowlist entry, then rerun local and exact-SHA hosted proof. AGT work, workflow/product change, PR 4 merge, deploy, PSRR-R2, secrets, providers and unrelated lanes remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

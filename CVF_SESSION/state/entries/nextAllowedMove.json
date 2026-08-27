@@ -1,5 +1,5 @@
 {
   "stateOrder": 2379,
   "stateKey": "nextAllowedMove",
-  "value": "PSRR-R1 is reviewer-accepted and exported at public SHA 01d27608; its USR registry is exact and GC-019 is green. Hosted run 33052498416 remains red only on the separately owned AGT-021 through AGT-034 registry structure and dependent Status Check. The next allowed move is to author one single-tranche AGT registry reconciliation roadmap with no validator weakening, workflow change, merge, deploy, secret or provider use. Do not create PSRR-R2. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute PSRR-R1 scope amendment 2 only: add one exact public-surface manifest allowlist entry for the already committed PSRR GC-019 artifact, then run local public-surface, foundational and preflight checks and fresh exact-SHA hosted proof. Do not change the artifact, generator, records, validator, workflows, product, AGT family, merge, deploy, secrets or providers. AGT roadmap authoring resumes only after this direct closure blocker is repaired. Latest finalized numbered LHW wave remains LHW24."
 }

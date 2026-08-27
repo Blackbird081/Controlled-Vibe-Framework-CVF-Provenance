@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "psrr_r1_closed_blocked_agt_registry_selected",
-  "previousMode": "psrr_r1_dispatched_pending_worker_return",
+  "currentMode": "psrr_r1_sa2_public_export_repair_authorized",
+  "previousMode": "psrr_r1_closed_blocked_agt_registry_selected",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "PSRR-R1 is reviewer-accepted and exported at public SHA 01d27608; its USR registry is exact and GC-019 is green. Hosted run 33052498416 remains red only on the separately owned AGT-021 through AGT-034 registry structure and dependent Status Check. The next allowed move is to author one single-tranche AGT registry reconciliation roadmap with no validator weakening, workflow change, merge, deploy, secret or provider use. Do not create PSRR-R2. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute PSRR-R1 scope amendment 2 only: add one exact public-surface manifest allowlist entry for the already committed PSRR GC-019 artifact, then run local public-surface, foundational and preflight checks and fresh exact-SHA hosted proof. Do not change the artifact, generator, records, validator, workflows, product, AGT family, merge, deploy, secrets or providers. AGT roadmap authoring resumes only after this direct closure blocker is repaired. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
