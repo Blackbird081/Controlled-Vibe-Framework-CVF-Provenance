@@ -8,7 +8,16 @@ docType: external_review_input
 
 Date: 2026-08-27
 
-Original handback SHA-1: `bb6f74709155786eec3f5d1363f56bf06600be14`
+Original handback byte-stream SHA-1 (not a Git blob/object ID):
+`bb6f74709155786eec3f5d1363f56bf06600be14`
+
+Path normalization rationale: the original private legacy-root literal in the
+F-05 citation was normalized to the descriptive label `private-reference
+legacy utility source` when this review was governed. This avoids presenting a
+private provenance root as active CVF authority or accidentally treating the
+preserved review as a new source-intake instruction. The relative utility path,
+fixture count, byte arithmetic, and ledger citation are unchanged; the original
+root remains reconstructible from the governed MPA manifest and file ledger.
 
 ## Purpose
 

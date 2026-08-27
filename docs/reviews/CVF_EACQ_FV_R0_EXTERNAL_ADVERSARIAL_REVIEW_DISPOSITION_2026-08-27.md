@@ -31,8 +31,16 @@ Roadmap under review:
 Material reviewed by the external reviewer:
 `0da3b4c4d252652db1862a1f276be36ffc15c04c`.
 
-Original untracked handback SHA-1:
-`bb6f74709155786eec3f5d1363f56bf06600be14`.
+Original untracked handback byte-stream SHA-1:
+`bb6f74709155786eec3f5d1363f56bf06600be14`. This digest identifies the
+uncommitted returned text before the governed preservation envelope was added;
+it is not a Git blob/object ID or commit identifier.
+
+The F-05 private legacy-root literal was intentionally normalized in the
+preserved review for provenance and authority hygiene. Its relative source
+path, nine fixture rows, approximate size, exact byte arithmetic, and governed
+manifest/ledger trace remain unchanged, so the finding evidence and conclusion
+are unaffected.
 
 ## Scope / Methodology
 
