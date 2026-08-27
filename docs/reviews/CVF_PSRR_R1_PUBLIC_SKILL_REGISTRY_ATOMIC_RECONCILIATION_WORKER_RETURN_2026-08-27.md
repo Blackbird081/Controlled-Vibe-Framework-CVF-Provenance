@@ -272,7 +272,7 @@ EXPORTED
 
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
 
-Public commit: `01d27608f1a1151bf642de24baf2ead8960331e7`
+Public commit: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`
 
 Public artifact path: public-sync `docs\reviews\CVF_GC019_PSRR_R1_GENERATED_USER_REGISTRY_STRUCTURAL_CHANGE_REVIEW_2026-08-27.md`.
 
@@ -813,6 +813,9 @@ The reviewer committed and pushed the material reconciliation as
 direct GC-019 packaging blocker, so bounded scope amendment 1 authorized one
 structural review artifact. That artifact was committed and pushed as final
 public SHA `01d27608f1a1151bf642de24baf2ead8960331e7`.
+Scope amendment 2 then repaired two exact public-surface glob collisions in
+final public SHA `d27d3db261404e8f594f130702ca7ef2c86a0ee7` without changing the accepted
+artifact or generated registry.
 
 Hosted Documentation & Testing run `33052498416` at that exact SHA proves
 Foundational Guard Surfaces and all other observed independent jobs pass.
@@ -825,3 +828,10 @@ or merge-ready claim.
 Final claim: PSRR-R1's user-registry reconciliation and export are accepted;
 the roadmap closes honestly blocked from overall CI green by the isolated AGT
 registry family. No merge, deploy, provider call or secret access occurred.
+
+Fresh final-SHA proof at `d27d3db2` is hosted run `33053902261`: every
+independent job passes except Governance Registry Validation and its dependent
+Status Check. Public Surface run `33053902181`, Static CI run `33053902347`,
+and Public Sync Preflight run `33053902251` all pass. This supersedes the
+intermediate public-surface blocker while preserving the AGT-only closure
+boundary.

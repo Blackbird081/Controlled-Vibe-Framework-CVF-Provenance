@@ -1,9 +1,9 @@
-# CVF Agent Handoff V59 - PSRR-R1 Public Export Repair Authorized
+# CVF Agent Handoff V59 - PSRR-R1 Closed, AGT Registry Selected
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; current SA2 authority HEAD: `2816e9b11`; public repair base: `01d27608f1a1151bf642de24baf2ead8960331e7`; PR 4 remains unmerged.
+- Repository: private provenance source of truth; current SA2 authority HEAD: `03d39215d`; final public PSRR SHA: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,14 +38,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`psrr_r1_sa2_public_export_repair_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=two exact public-surface manifest entries and fresh proof; parked checkpoint=AGT work, workflow/product change, PR 4 merge, deploy, PSRR-R2, secrets and providers.
+Startup acknowledged: current mode=`psrr_r1_closed_blocked_agt_registry_selected`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one single-tranche AGT registry reconciliation roadmap; parked checkpoint=validator weakening, workflow change, PR 4 merge, deploy, PSRR-R2, secrets and providers.
 
 ## Current Mode
-`psrr_r1_sa2_public_export_repair_authorized`
+`psrr_r1_closed_blocked_agt_registry_selected`
 
 ## Purpose
 
-Carry PSRR-R1 scope amendment 2 for two exact public-surface allowlist entries and fresh hosted proof before any AGT roadmap work.
+Carry PSRR-R1 bounded closure at final public SHA `d27d3db2` and select one separately governed AGT structural reconciliation roadmap.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-Execute PSRR-R1-SA2 only: allowlist the exact committed GC-019 review and generated USR-048 glob-collision paths, run local public-surface/foundational/preflight checks, commit, push and obtain fresh exact-SHA hosted proof. AGT work, PR 4 merge, deploy, validator/workflow/product change, PSRR-R2, secrets, providers and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
+PSRR-R1 is accepted and exported at public SHA `d27d3db2`; Public Surface, Static CI and Public Sync Preflight pass, while Documentation run `33053902261` fails only AGT registry validation and dependent Status Check. Author one single-tranche AGT-021 through AGT-034 structural reconciliation roadmap. PR 4 merge, deploy, validator weakening, workflow/product change, PSRR-R2, secrets, providers and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -217,4 +217,4 @@ Not authorized: validator/workflow/source-skill mutation, arbitrary deletion, PS
 
 ## Claim Boundary
 
-This handoff records PSRR-R1-SA2 exact-path export repair only. It authorizes no broader private evidence export, AGT action, validator weakening, workflow/source-skill change, secret/provider/live action, PR merge, deploy, production claim, PSRR-R2 or unrelated parked lane.
+This handoff records PSRR-R1 bounded closure and AGT roadmap selection only. It authorizes no arbitrary registry action, validator weakening, workflow/source-skill change, secret/provider/live action, PR merge, deploy, production claim, PSRR-R2 or unrelated parked lane.

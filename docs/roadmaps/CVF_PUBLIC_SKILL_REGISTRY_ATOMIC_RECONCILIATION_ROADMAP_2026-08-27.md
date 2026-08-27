@@ -142,12 +142,12 @@ EXPORTED
 
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
 
-Public commit: `01d27608f1a1151bf642de24baf2ead8960331e7`
+Public commit: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`
 
 Public artifact path:
 `docs/reviews/CVF_GC019_PSRR_R1_GENERATED_USER_REGISTRY_STRUCTURAL_CHANGE_REVIEW_2026-08-27.md`
 
-Hosted run `33052498416` accepts the PSRR user-registry and GC-019 surfaces but
+Hosted run `33053902261` accepts the PSRR user-registry and GC-019 surfaces but
 remains red only for the separately owned AGT registry family and dependent
 Status Check.
 
