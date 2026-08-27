@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_l1_material_accepted_pending_completion_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=reviewer closure conversion and exact material-range proof only; parked checkpoint=MV-3, UAA, provider/live, public sync, deployment, push and secrets.
+Startup acknowledged: current mode=`eacq_fv_l1_closed_pass_bounded_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value gate only; parked checkpoint=MV-3, UAA, provider/live, public sync, deployment, push, secrets and the 751-line soft-size advisory.
 
 ## Current Mode
-`eacq_fv_l1_material_accepted_pending_completion_review`
+`eacq_fv_l1_closed_pass_bounded_pending_next_value_gate`
 
 ## Purpose
 
@@ -111,14 +111,14 @@ Carry terminal MPA-AI-T0 evidence, the absorbed EACQ-FV-R0 critique, and the rev
 
 ## Current Authority
 
-Current closure parent for continuity sync: `162902211`; governed material commit: `5826b33ae`; MV-2 dispatch: `437d59a48`; MV-1 closure: `1e002a52b`.
+EACQ-FV-L1 dispatch: `9e7a0b035`; material: `573fe1707`; intermediate continuity: `7d61063a0`; closure: `1c6112d47`.
 
 | Field | Value |
 |---|---|
-| authorityState | EACQ-FV-L1 material accepted at `573fe1707`; completion review pending |
-| baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md` |
-| nextAuthorityRequirement | operator authorization for one comparable capsule-enhanced evidence task; no MV-3 until evidence exists |
+| authorityState | EACQ-FV-L1 `CLOSED_PASS_BOUNDED` at closure `1c6112d47` |
+| baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_2026-08-28.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_2026-08-28.md` |
+| nextAuthorityRequirement | fresh value gate only; no automatic successor |
 
 ## Closure Evidence
 
@@ -170,7 +170,7 @@ Current closure parent for continuity sync: `162902211`; governed material commi
 
 ## Next Allowed Move
 
-EACQ-FV-L1 material is independently accepted at `573fe1707` after two reviewer-found MEDIUM correctness repairs. Evidence: 16/16 focused tests, 158/158 dispatch-quality regressions, worker-return/reviewer-fast PASS, pre-commit 87/87, and exact three paths. The range-module 751-line soft advisory is disclosed without opening a successor. Next allowed move is completion review, work-order closure conversion, exact material-range pre-closure rerun, closure commit, and final session sync only. MV-3, UAA, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-L1 is `CLOSED_PASS_BOUNDED`: material `573fe1707`, intermediate continuity `7d61063a0`, and closure `1c6112d47`. Two reviewer-found MEDIUM correctness repairs are disclosed. Evidence: 16/16 focused tests, 158/158 dispatch-quality regressions, worker-return/reviewer-fast PASS, exact material-range 79/79, and closure pre-commit 87/87. No automatic successor is authorized. The next move is a fresh value gate only. MV-3, UAA, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction, the 751-line soft-size advisory, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-L1 accepted material `573fe1707`, exact current authority paths/hashes, and pending reviewer closure.
+Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-L1 material `573fe1707`, closure `1c6112d47`, exact current authority paths/hashes, and fresh-value-gate-only posture.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -213,8 +213,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: operator continued the orchestrator/reviewer lane; the three-repeat finding passed the fresh value gate and opened only this bounded L1 dispatch.
-Rollback boundary: revert this dispatch continuity atomically while retaining dispatch commit `9e7a0b035`, EV-1 closure, MV-1/MV-2 closure, and all prior history.
+Rollback boundary: revert this final closure continuity atomically while retaining dispatch `9e7a0b035`, material `573fe1707`, closure `1c6112d47`, EV-1 closure, MV-1/MV-2 closure, and all prior history.
 Not authorized: worker commit, MV-3, UAA execution, autorun/runtime-owner mutation, rule/index/hook/catalog mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
 ## Claim Boundary
 
-This handoff records bounded EACQ-FV-L1 material acceptance and closure-only authority. It authorizes no further implementation, automatic successor, causal quality claim, runtime range-shape owner change, MV-3, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, or unrelated lane.
+This handoff records EACQ-FV-L1 `CLOSED_PASS_BOUNDED` and fresh-value-gate-only authority. It authorizes no further implementation, automatic successor, causal quality claim, runtime range-shape owner change, MV-3, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, compaction, soft-advisory work, or unrelated lane.

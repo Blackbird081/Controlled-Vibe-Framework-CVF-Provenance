@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_l1_material_accepted_pending_completion_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=reviewer closure conversion and exact material-range proof only; parked checkpoint=MV-3, UAA, provider/live, public sync, deployment, push and secrets.
+Startup acknowledged: current mode=`eacq_fv_l1_closed_pass_bounded_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value gate only; parked checkpoint=MV-3, UAA, provider/live, public sync, deployment, push, secrets and the 751-line soft-size advisory.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_l1_material_accepted_pending_completion_review`
-Current mode: `eacq_fv_l1_material_accepted_pending_completion_review`; previous mode marker: `eacq_fv_l1_dispatched_pending_no_commit_worker_return`
-Previous mode: `eacq_fv_l1_dispatched_pending_no_commit_worker_return`
+Current mode marker: `eacq_fv_l1_closed_pass_bounded_pending_next_value_gate`
+Current mode: `eacq_fv_l1_closed_pass_bounded_pending_next_value_gate`; previous mode marker: `eacq_fv_l1_material_accepted_pending_completion_review`
+Previous mode: `eacq_fv_l1_material_accepted_pending_completion_review`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_l1_material_accepted_pending_completion_review`. L1 material is accepted at `573fe1707` after two reviewer-found MEDIUM repairs. Evidence: 16/16 focused, 158/158 family regression, worker-return/reviewer-fast PASS, pre-commit 87/87, exact three paths. Next: completion review, work-order closure conversion, exact material-range pre-closure rerun, closure commit, and final continuity sync only. The range-module soft-size advisory is disclosed and does not open compaction. Keep MV-3, UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, and unrelated work parked.
+Mode: `eacq_fv_l1_closed_pass_bounded_pending_next_value_gate`. L1 is closed at material `573fe1707` and closure `1c6112d47` after two disclosed reviewer-found MEDIUM repairs. Evidence: 16/16 focused, 158/158 family regression, worker-return/reviewer-fast PASS, exact material-range 79/79, closure pre-commit 87/87. No successor opens automatically. Next: fresh value gate only. Keep MV-3, UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction, the 751-line soft-size advisory, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

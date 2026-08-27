@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_l1_material_accepted_pending_completion_review",
-  "previousMode": "eacq_fv_l1_dispatched_pending_no_commit_worker_return",
+  "currentMode": "eacq_fv_l1_closed_pass_bounded_pending_next_value_gate",
+  "previousMode": "eacq_fv_l1_material_accepted_pending_completion_review",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "EACQ-FV-L1 material is independently accepted at 573fe1707 after two reviewer-found MEDIUM correctness repairs: inline-code HEAD normalization and top-level dispatch-base precedence over unrelated historical inline bindings. Evidence: 16/16 focused tests, 158/158 dispatch-quality regressions, worker-return/reviewer-fast PASS, pre-commit 87/87, and exact three-path manifest. The range module has a disclosed soft-size advisory but no policy violation. Next allowed move is reviewer completion review, work-order closure conversion, exact material-range pre-closure rerun after this continuity sync, closure commit, and final session sync only. MV-3, UAA, provider/live, public sync, deploy, push, secrets, autorun/runtime-owner changes, automatic compaction work, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-L1 is CLOSED_PASS_BOUNDED: material 573fe1707, intermediate continuity 7d61063a0, and closure 1c6112d47. Two reviewer-found MEDIUM correctness repairs are disclosed. Evidence: 16/16 focused tests, 158/158 dispatch-quality regressions, worker-return/reviewer-fast PASS, exact material-range 79/79, and closure pre-commit 87/87. No automatic successor is authorized. The next move is a fresh value gate only; MV-3, UAA, provider/live, public sync, deploy, push, secrets, autorun/runtime-owner changes, automatic compaction, the 751-line soft-size advisory, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
