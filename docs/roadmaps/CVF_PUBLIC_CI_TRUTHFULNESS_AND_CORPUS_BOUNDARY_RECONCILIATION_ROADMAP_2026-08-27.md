@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: PCIT_R1_DISPATCH_READY_SINGLE_TRANCHE_CAP
+Status: ROADMAP_CLOSED_PASS_BOUNDED_REGISTRY_DEBT_PARKED
 
 Date: 2026-08-27
 
@@ -133,26 +133,43 @@ private-history export, broad governance redesign, or automatic successor.
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
-
-Reason: this roadmap is private dispatch authority. Any accepted workflow or
-runner delta must be committed and pushed separately from the public-sync
-clone by the independent reviewer before an `EXPORTED` claim exists.
+Disposition: `EXPORTED`
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+Public-sync branch: `pcit-r1-public-ci-truthfulness`
+Public-sync commits: `bbea31745`, `94732b6f`, `8b9c4a67`, `86b1e728`
+Public artifact paths: public workflows/bootstrap repairs, two bounded test
+repairs and two Python 3.9 compatibility repairs recorded by the PCIT worker
+return. Public catalog paths: N/A with reason: CI truthfulness has no catalog
+surface. PR `#4` remains open and unmerged on separately parked registry debt.
 
 ## Next Allowed Move
 
-Execute exactly PCIT-R1 under the paired GC-018 baseline and work order. On
-return, independently review the evidence. Close the roadmap after one accepted
-public candidate or one honest blocker. Do not create R2 unless a fresh
-operator decision cites a distinct source-backed P0/P1 product defect and its
-incremental value.
+PCIT-R1 and BD1 are closed bounded at private evidence commit `8480ed51f` and
+public exact-SHA candidate `86b1e728`. The two test-drift families, Web/build
+proof and Python 3.9 compatibility defect are closed. Registry validation
+remains truthfully red and is transferred, without automatic continuation, to
+the separately selected PSRR-R1 roadmap. There is no PCIT-R2.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_2026-08-27.md` | dispatch status plus terminal reviewer return | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_WORKER_RETURN_2026-08-27.md` | final disposition and exact hosted table | PASS |
+| Roadmap state | this roadmap | `Status: ROADMAP_CLOSED_PASS_BOUNDED_REGISTRY_DEBT_PARKED` | PASS |
+| Registry JSON | N/A with reason: PCIT changed no JSON registry | blocked until PSRR-R1 resolves the generated registry family | BLOCKED with reason: no applicable PCIT JSON registry owner |
+| Registry Markdown | `governance/skill-library/registry/user-skills/INDEX.md` | mutation transferred to separately authorized PSRR-R1 | BLOCKED with reason: 335/62 generated-registry debt remains outside PCIT |
+| External evidence digest | N/A with reason: GitHub run/job IDs are recorded directly in the reviewer artifact | no separate digest required | N/A with reason |
+| System loop interlock | N/A with reason: PCIT changed no system-loop contract | no interlock mutation | N/A with reason |
+| Session continuity | `CVF_SESSION/state/entries/pcitR1PublicCiTruthfulnessDispatched20260827.json` | closure status and parked registry disposition | PASS |
 
 ## Claim Boundary
 
-This roadmap authorizes one no-commit public CI reconciliation candidate. It
-does not authorize commit, push, deployment, provider/live use, secret access,
-product-source repair, dependency upgrade, CI weakening, or a claim that the
-current public CI is green.
+This roadmap records bounded public CI reconciliation and exact-SHA proof. It
+does not claim the aggregate Documentation & Testing workflow is green: its
+registry family remains truthfully red and transfers only through separately
+authorized PSRR-R1. No merge, deploy, provider/live, secret, CI weakening or
+automatic PCIT successor is authorized.
 
 ## Checker Source Read-Ahead Block
 
