@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pcit_r1_sa1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one PCIT-R1-SA1 no-commit return for documentation-testing.yml only; parked checkpoint=additional owners, product/dependency changes, R2, secrets, providers, merge and branch-policy bypass.
+Startup acknowledged: current mode=`pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator chooses park or one bounded blocker-disposition packet; parked checkpoint=product edits, PR merge, R2, secrets, providers and branch-policy bypass.
 
 ## Current Mode
 
-Current mode marker: `pcit_r1_sa1_dispatched_pending_worker_return`
-Current mode: `pcit_r1_sa1_dispatched_pending_worker_return`; previous mode marker: `pcit_r1_scope_amendment_approved_pending_dispatch`
+Current mode marker: `pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`
+Current mode: `pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`; previous mode marker: `pcit_r1_sa1_dispatched_pending_worker_return`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `pcit_r1_sa1_dispatched_pending_worker_return`. Dispatch `8da22aafd` authorizes one no-commit worker to change documentation-testing.yml and the named private return only. PR 4 remains unmerged. Additional owners, product/dependency changes, R2, secrets, providers, merge and branch-policy bypass remain parked.
+Mode: `pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`. SA1 is reviewer-accepted at private evidence commit `06643ac4b`; public candidate `bbea31745` makes Documentation & Testing truthfully fail closed. PR 4 remains unmerged. The operator may park PCIT-R1 or authorize one bounded disposition packet for registry defects, four SDK assertions and the separately classified runtime-page nondeterminism candidate. Product edits, R2, secrets, providers, merge and branch-policy bypass remain parked pending that decision. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

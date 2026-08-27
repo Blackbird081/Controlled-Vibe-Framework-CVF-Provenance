@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; PCIT-R1-SA1 dispatch: `8da22aafd`; reviewer blocker: `92ae3460a`; PR 4 remains unmerged; next move is one documentation-testing.yml-only no-commit return.
+- Repository: private provenance source of truth; PCIT-R1-SA1 reviewer evidence: `06643ac4b`; final public candidate: `bbea31745`; PR 4 remains unmerged; next move is an operator park-or-bounded-disposition decision.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pcit_r1_sa1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one PCIT-R1-SA1 no-commit return for documentation-testing.yml only; parked checkpoint=additional owners, product/dependency changes, R2, secrets, providers, merge and branch-policy bypass.
+Startup acknowledged: current mode=`pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator chooses park or one bounded blocker-disposition packet; parked checkpoint=product edits, PR merge, R2, secrets, providers and branch-policy bypass.
 
 ## Current Mode
-`pcit_r1_sa1_dispatched_pending_worker_return`
+`pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`
 
 ## Purpose
 
@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-Execute exactly one PCIT-R1-SA1 no-commit worker return under dispatch `8da22aafd`. Public write ownership is `.github/workflows/documentation-testing.yml` only; private write ownership is the named amendment return. PR 4 remains unmerged and public `main` unchanged. Additional owners, product/dependency changes, secrets, providers, merge, branch-policy bypass, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
+Operator checkpoint only: choose `PARK_PCIT_R1` or authorize one bounded blocker-disposition packet covering registry content defects, four SDK assertions and the separately classified runtime-page nondeterminism candidate. SA1 evidence is committed at `06643ac4b`; public SHA `bbea31745` is pushed to PR 4 and truthfully fail-closed. PR 4 remains unmerged and public `main` unchanged. Product edits, secrets, providers, merge, branch-policy bypass, R2 and unrelated lanes remain forbidden pending that decision. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -217,4 +217,4 @@ Not authorized: product-source repair, dependency upgrade, automatic R2, public 
 
 ## Claim Boundary
 
-This handoff records PCIT-R1 dispatch only. It authorizes one no-commit workflow/runner candidate and no product source, dependency, secret, provider/live, commit, push, deploy, production claim, automatic R2 or unrelated parked lane.
+This handoff records PCIT-R1-SA1 reviewer acceptance with truthful blockers. It authorizes no product source, dependency, secret, provider/live, merge, deploy, production claim, automatic R2 or unrelated parked lane.

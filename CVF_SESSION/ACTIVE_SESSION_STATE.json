@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "pcit_r1_sa1_dispatched_pending_worker_return",
-  "previousMode": "pcit_r1_scope_amendment_approved_pending_dispatch",
+  "currentMode": "pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision",
+  "previousMode": "pcit_r1_sa1_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15319,7 +15319,7 @@
     "reviewerAmendment": "Amendment 1 recovered the 24-path provenance candidate. Amendment 2 rejects candidate 819d8acf after ten Web CI audit findings and authorizes one exact 36-path zero-audit dependency, provenance-bound HMAC-test, CI-contract, and bounded coverage-behavior correction inside the same terminal R3."
   },
   "pcitR1PublicCiTruthfulnessDispatched20260827": {
-    "status": "SA1_DISPATCHED_PENDING_WORKER_RETURN",
+    "status": "SA1_REVIEWED_ACCEPTED_TRUTHFUL_BLOCKERS",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_ROADMAP_2026-08-27.md",
     "baseline": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
     "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
@@ -15329,12 +15329,12 @@
     "amendmentCommit": "145e980249ee6e779e8fa88021c1960e74a79a5e",
     "finalContractCommit": "0a27c596c6dbbfdb5909fd152226d47eb4e0abfd",
     "workerBoundary": "One no-commit worker may edit only the four named public workflows, the static CI runner and its focused test, plus the named private worker return.",
-    "reviewerBoundary": "Reviewer accepted the five-path candidate at public commit 910665e62, but PR 4 remains unmerged after hosted proof exposed documentation-testing.yml outside the original allowlist.",
-    "proof": "Reviewer evidence commit 92ae3460a records local 8/8 proof, public preflight success, exact-SHA PR run 33036642522 and the out-of-scope public/private corpus mismatch. No production merge, secret read or provider call occurred.",
+    "reviewerBoundary": "Reviewer accepted SA1 workflow truthfulness at private evidence commit 06643ac4b and public candidate bbea31745. PR 4 remains unmerged because genuine registry and SDK assertion failures remain; a separate runtime-page hosted nondeterminism candidate is also parked.",
+    "proof": "Exact-SHA Documentation & Testing run 33042997497 proves 20 successful executions, registry failure, 61/65 SDK unit assertions passing and fail-closed Status Check. CVF CI is green; CVF CI Pipeline run 33042997505 has one runtime-page UI failure after 3454 passes and 43 skips, while focused local rerun passes 3/3. No secret read or provider call occurred.",
     "scopeAmendmentDispatch": "8da22aafd",
     "scopeAmendmentBaseline": "docs/baselines/CVF_GC018_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
     "scopeAmendmentWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
-    "successorBoundary": "Exactly one PCIT-R1-SA1 no-commit return is admitted for documentation-testing.yml. No automatic R2 or additional owner surface is authorized."
+    "successorBoundary": "Operator must choose PARK_PCIT_R1 or authorize one bounded blocker-disposition packet. No product edit, PR merge, automatic R2 or additional owner surface is authorized by SA1 acceptance alone."
   },
-  "nextAllowedMove": "Execute exactly one PCIT-R1-SA1 no-commit worker return under dispatch 8da22aafd. Public write ownership is documentation-testing.yml only; private write ownership is the named amendment return. PR 4 remains unmerged and public main unchanged. Additional owners, product/dependency changes, secrets, providers, branch-policy bypass, merge, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "Operator checkpoint only: choose PARK_PCIT_R1 or authorize one bounded blocker-disposition packet covering registry content defects, four SDK assertions and the separately classified runtime-page nondeterminism candidate. PR 4 remains open and unmerged at public SHA bbea31745; public main is unchanged. Product edits, merge, R2, secrets, providers, branch-policy bypass and unrelated lanes remain forbidden pending that decision. Latest finalized numbered LHW wave remains LHW24."
 }

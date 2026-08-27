@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "pcit_r1_sa1_dispatched_pending_worker_return",
+  "currentMode": "pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute exactly one PCIT-R1-SA1 no-commit worker return under dispatch 8da22aafd. Public write ownership is documentation-testing.yml only; private write ownership is the named amendment return. PR 4 remains unmerged and public main unchanged. Additional owners, product/dependency changes, secrets, providers, branch-policy bypass, merge, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Operator checkpoint only: choose PARK_PCIT_R1 or authorize one bounded blocker-disposition packet covering registry content defects, four SDK assertions and the separately classified runtime-page nondeterminism candidate. PR 4 remains open and unmerged at public SHA bbea31745; public main is unchanged. Product edits, merge, R2, secrets, providers, branch-policy bypass and unrelated lanes remain forbidden pending that decision. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

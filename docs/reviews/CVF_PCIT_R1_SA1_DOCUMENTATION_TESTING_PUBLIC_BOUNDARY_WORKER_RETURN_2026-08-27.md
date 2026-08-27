@@ -408,6 +408,15 @@ four SDK skill-contract assertions. They should be handled, if authorized,
 as one consolidated high-value owner decision rather than separate automatic
 tranches.
 
+Separate PR-wide observation: exact-SHA `CVF CI Pipeline` run `33042997505`
+reported one runtime-page UI test failure after 3,454 passes and 43 skips. The
+test asserted final explanatory copy while the rendered page was still in its
+loading state. The same product code was hosted-green at the preceding SHA,
+and an independent focused local rerun passed 3/3. Reviewer classification is
+`HOSTED_NONDETERMINISM_CANDIDATE`, outside SA1 and distinct from the two
+Documentation & Testing product blockers. It remains a merge checkpoint, not
+an automatic new tranche or a basis for suppressing the test.
+
 Reviewer Public Export Disposition: `BLOCKED_MISSING_PUBLIC_ARTIFACTS`.
 Reason: the candidate is pushed to the named public PR branch, but the PR is
 intentionally unmerged while genuine product findings remain blocking; no
