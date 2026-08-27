@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: AGTR-R1
 
@@ -158,9 +158,26 @@ push either repository; reviewer owns materialization and hosted proof.
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
+EXPORTED
 
-Reason: no accepted AGTR public commit or exact-SHA hosted proof exists.
+Reason: the fourteen accepted records were exported byte-identically at public
+commit `af957e279a8118b152d957a29f5731c6304a86bf`; exact-SHA Public Surface,
+Documentation & Testing, Static CI, CVF CI, CVF CI Pipeline, CVF v1.6 Web CI,
+and Public Sync Preflight all passed. PR merge and deployment remain outside
+this closure.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_WORKER_RETURN_2026-08-27.md` | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`; private material `25bd8647069c8be3a944f330af1d77a1ca5ecdeb` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_ROADMAP_2026-08-27.md` | `CLOSED_PASS_BOUNDED`; no AGTR-R2 | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | AGTR-R1 closed evidence and next-move state | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md` | closed-mode continuity | PASS |
+| External evidence digest | exact-SHA hosted runs listed in Public Export Disposition | ordered run-ID digest `sha256:a7b0afa9ab3156ca9ea540d36a52e04bda0d13902d9952e97ce1720d042170a7`; public SHA `af957e279a8118b152d957a29f5731c6304a86bf`; all relevant runs success | PASS |
+| System loop interlock | AGTR one-tranche cap | terminal close; automatic AGTR-R2 forbidden | PASS |
+| Session continuity | bootstrap, front door, active state and handoff | `agtr_r1_closed_pass_bounded` | PASS |
 
 ## Claim Boundary
 

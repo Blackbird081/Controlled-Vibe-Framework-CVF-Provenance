@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: AGTR-R1
 
@@ -207,14 +207,14 @@ material commit/public push. A green shallow validator alone is insufficient.
 
 ## Closure Checklist
 
-- [ ] fourteen semantic ledger rows complete
-- [ ] fourteen private repairs and fourteen exact public mirrors only
-- [ ] public validator PASS
-- [ ] private AGT error count zero
-- [ ] public surface and preflight PASS
-- [ ] both staging areas empty and HEADs unchanged
-- [ ] worker return fast gate PASS
-- [ ] no commit/push/provider/secret/merge/deploy
+- [x] fourteen semantic ledger rows complete
+- [x] fourteen private repairs and fourteen exact public mirrors only
+- [x] public validator PASS
+- [x] private AGT error count zero
+- [x] public surface and preflight PASS
+- [x] worker staging empty and execution HEADs unchanged
+- [x] worker return fast gate PASS
+- [x] worker performed no commit/push/provider/secret/merge/deploy; reviewer-owned material commits and public push are proven separately, with no provider/secret/merge/deploy
 
 ## Return-To-Orchestrator Conditions
 
@@ -511,10 +511,36 @@ push. Worker performs no public commit or network publication.
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
+EXPORTED
 
-Reason: worker output is an uncommitted candidate. Independent reviewer-owned
-public commit and exact-SHA hosted proof do not yet exist.
+Reason: independent review accepted the bounded repair at private commit
+`25bd8647069c8be3a944f330af1d77a1ca5ecdeb`; the fourteen public mirrors were
+pushed at `af957e279a8118b152d957a29f5731c6304a86bf`, where all eight hosted runs
+covering the seven relevant workflows passed. No merge or deployment was
+performed.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_WORKER_RETURN_2026-08-27.md` | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`; private material `25bd8647069c8be3a944f330af1d77a1ca5ecdeb` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_ROADMAP_2026-08-27.md` | `CLOSED_PASS_BOUNDED`; no AGTR-R2 | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | AGTR-R1 closed evidence and next-move state | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md` | closed-mode continuity | PASS |
+| External evidence digest | exact-SHA hosted runs listed in Public Export Disposition | ordered run-ID digest `sha256:a7b0afa9ab3156ca9ea540d36a52e04bda0d13902d9952e97ce1720d042170a7`; public SHA `af957e279a8118b152d957a29f5731c6304a86bf`; all relevant runs success | PASS |
+| System loop interlock | AGTR one-tranche cap | terminal close; automatic AGTR-R2 forbidden | PASS |
+| Session continuity | bootstrap, front door, active state and handoff | `agtr_r1_closed_pass_bounded` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| public registry validation | PASS | Documentation & Testing `33058254830` PASS at exact public SHA | PASS |
+| public surface | PASS | `33058254845` PASS | PASS |
+| public-sync preflight | PASS | push `33058250461` and PR `33058254795` PASS | PASS |
+| wider hosted checks | PASS | Static CI, CVF CI, CI Pipeline and Web CI all PASS | PASS |
+| semantic preservation | reviewer accepted | fourteen-row ledger reviewed; AGT-021 conflict explicitly reconciled | PASS |
 
 ## Claim Boundary
 

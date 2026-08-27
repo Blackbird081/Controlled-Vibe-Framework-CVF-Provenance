@@ -165,12 +165,15 @@ not performed by this worker run.
 
 ## Public Export Disposition
 
-`BLOCKED_MISSING_PUBLIC_ARTIFACTS` — reason: no accepted commit or hosted
-proof exists yet for this batch. The public repo's working tree now holds the
-byte-identical repaired files, but nothing is staged or committed, no PR
-exists, and no CI run has validated the change in a hosted context. This
-disposition holds regardless of the local validator success reported below;
-local pass is not hosted/accepted proof.
+`EXPORTED` — independent review accepted the bounded repair at private commit
+`25bd8647069c8be3a944f330af1d77a1ca5ecdeb`. The fourteen public mirrors were
+committed and pushed at `af957e279a8118b152d957a29f5731c6304a86bf` on
+`pcit-r1-public-ci-truthfulness` to
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`. Exact-SHA
+hosted proof passed: Public Sync Preflight `33058250461` and `33058254795`,
+Public Surface `33058254845`, Documentation & Testing `33058254830`, Static CI
+`33058254860`, CVF CI `33058254846`, CVF CI Pipeline `33058254884`, and CVF
+v1.6 Web CI `33058254898`. PR merge and deployment were not performed.
 
 ## Status
 
@@ -476,7 +479,7 @@ and repaired only this return's machine-required packet shape. No validator,
 index, workflow, source skill, product, dependency, secret or provider surface
 was changed. Final acceptance remains conditional on fresh local gates,
 private/public byte identity, material commits, public push and exact-SHA
-hosted proof.
+hosted proof. Final reviewer disposition: `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`.
 
 ## External Knowledge Intake Routing
 

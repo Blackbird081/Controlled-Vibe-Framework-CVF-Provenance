@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: AGTR_R1_DISPATCH_READY_SINGLE_TRANCHE_CAP
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-08-27
 
@@ -139,16 +139,51 @@ Claim boundary: registry structure, not package productionization.
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
+EXPORTED
 
-Reason: AGTR-R1 is private dispatch authority. Export requires independent
-acceptance, a public commit, and exact-SHA hosted proof.
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public-sync commit: `af957e279a8118b152d957a29f5731c6304a86bf` on
+`pcit-r1-public-ci-truthfulness`.
+
+Public artifact paths: the fourteen byte-identical AGT records named in the
+AGTR-R1 work order. Exact-SHA hosted proof passed: Public Sync Preflight
+`33058250461` and `33058254795`, Public Surface `33058254845`, Documentation
+& Testing `33058254830`, Static CI `33058254860`, CVF CI `33058254846`, CVF
+CI Pipeline `33058254884`, and CVF v1.6 Web CI `33058254898`.
+
+## Closure Evidence
+
+- Independent reviewer repaired the worker packet and resolved AGT-021's
+  conflicting autonomy evidence conservatively to twice-corroborated
+  `Auto + Audit`, with the conflict retained explicitly.
+- Private material commit: `25bd8647069c8be3a944f330af1d77a1ca5ecdeb`.
+- Public material commit: `af957e279a8118b152d957a29f5731c6304a86bf`.
+- Fourteen private/public SHA-256 pairs match; public registry validation and
+  public-surface scan pass; private target-family error count is zero.
+- Worker-return fast gate passed, reviewer-fast passed 66/66, and private
+  material pre-commit passed 87/87.
+- No secret, provider, live call, dependency, validator, workflow, product,
+  merge, deployment, or Netlify action occurred.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_2026-08-27.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_WORKER_RETURN_2026-08-27.md` | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`; private material `25bd8647069c8be3a944f330af1d77a1ca5ecdeb` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_ROADMAP_2026-08-27.md` | `CLOSED_PASS_BOUNDED`; no AGTR-R2 | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | AGTR-R1 closed evidence and next-move state | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md` | closed-mode continuity | PASS |
+| External evidence digest | exact-SHA hosted runs listed in Public Export Disposition | ordered run-ID digest `sha256:a7b0afa9ab3156ca9ea540d36a52e04bda0d13902d9952e97ce1720d042170a7`; public SHA `af957e279a8118b152d957a29f5731c6304a86bf`; all relevant runs success | PASS |
+| System loop interlock | AGTR one-tranche cap | terminal close; automatic AGTR-R2 forbidden | PASS |
+| Session continuity | bootstrap, front door, active state and handoff | `agtr_r1_closed_pass_bounded` | PASS |
 
 ## Next Allowed Move
 
-Execute exactly AGTR-R1 under its paired GC-018 baseline and work order. Close
-after one accepted mirrored candidate or one honest semantic-recovery blocker.
-Do not create AGTR-R2.
+AGTR-R1 is terminally closed. Do not create AGTR-R2 automatically. The next
+move is a fresh, value-gated roadmap selection from already parked evidence;
+PR merge and deployment remain explicit operator checkpoints.
 
 ## Claim Boundary
 
