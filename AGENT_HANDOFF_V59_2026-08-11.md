@@ -110,7 +110,7 @@ Carry terminal PPRR-R1 closure evidence and route the next action through a fres
 
 ## Current Authority
 
-Handoff sync parent: `c81855f314fb8503b6a01bc2b79bb3390a3a2995`; continuity parent anchor: `92c96a04d`.
+Handoff sync parent: `6c77f4183`; continuity parent anchor: `92c96a04d`.
 
 | Field | Value |
 |---|---|
