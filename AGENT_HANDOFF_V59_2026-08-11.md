@@ -4,7 +4,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
-- Current private-provenance material HEAD: `69ff52a6ee9905c756c17cee0ce8787e47ed756a`; EACQ-FV-R0 review is absorbed and the revised roadmap awaits operator approval; MPA-AI-T0 closure remains `19c223ce06d579cfe16fb7feb4ff8996363797ab`.
+- Current private-provenance material HEAD: `5f7b8f0d8`; EACQ-FV-R0 review is absorbed with provenance clarifications and the revised roadmap awaits operator approval; MPA-AI-T0 closure remains `19c223ce06d579cfe16fb7feb4ff8996363797ab`.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -111,7 +111,7 @@ Carry terminal MPA-AI-T0 evidence, the absorbed EACQ-FV-R0 critique, and the rev
 
 ## Current Authority
 
-Current material parent for continuity sync: `69ff52a6ee9905c756c17cee0ce8787e47ed756a`; prior continuity repair: `e5504f4d4916b8befe4126b2585f4d1f7d3d52ae`.
+Current material parent for continuity sync: `5f7b8f0d8`; prior continuity repair: `7dad56eda`.
 
 | Field | Value |
 |---|---|
@@ -170,7 +170,7 @@ Current material parent for continuity sync: `69ff52a6ee9905c756c17cee0ce8787e47
 
 ## Next Allowed Move
 
-EACQ-FV-R0 external review, 14-finding disposition, revised minimum viable roadmap, conditional reopen repair, and RAG source-verification registry evidence are committed at `69ff52a6ee9905c756c17cee0ce8787e47ed756a`. Next allowed move is operator approval, rejection, or requested revision of the revised roadmap only. If approved, author a fresh MV-1 GC-018 and source-verified work order; approval does not authorize implementation. Keep MV-2/MV-3, UAA-G1/G2/G3, task-capsule/schema/generator/checker mutation, provider/live calls, public sync, deploy, secrets, and unrelated work parked. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-R0 external review, 14-finding disposition, revised minimum viable roadmap, conditional reopen repair, RAG source-verification registry evidence, and handback provenance clarifications are committed through `5f7b8f0d8`. Next allowed move is operator approval, rejection, or requested revision of the revised roadmap only. If approved, author a fresh MV-1 GC-018 and source-verified work order; approval does not authorize implementation. Keep MV-2/MV-3, UAA-G1/G2/G3, task-capsule/schema/generator/checker mutation, provider/live calls, public sync, deploy, secrets, and unrelated work parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-R0 absorbed material `69ff52a6ee9905c756c17cee0ce8787e47ed756a`, current authority hashes, active mode, and operator-decision-only next move.
+Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-R0 absorbed material plus provenance clarification `5f7b8f0d8`, current authority hashes, active mode, and operator-decision-only next move.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`

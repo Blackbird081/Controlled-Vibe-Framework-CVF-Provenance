@@ -52,7 +52,7 @@ Previous mode: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`. EACQ-FV-R0 review absorption and revision are committed at `69ff52a6ee9905c756c17cee0ce8787e47ed756a`; all 14 findings are dispositioned and the MPA utility cluster is indexed as `DEFERRED_FORWARD_VALUE_PRESERVED`. Next: operator approval, rejection, or requested revision of the revised roadmap only. If approved, author a fresh MV-1 GC-018 and source-verified work order; approval does not authorize implementation. Keep MV-2/MV-3, UAA-G1/G2/G3, task-capsule/schema/generator/checker mutation, provider/live calls, public sync, deploy, secrets, and unrelated work parked.
+Mode: `eacq_fv_r0_absorbed_revised_roadmap_pending_operator_approval`. EACQ-FV-R0 review absorption, revision, and handback provenance clarification are committed through `5f7b8f0d8`; all 14 findings are dispositioned and the MPA utility cluster is indexed as `DEFERRED_FORWARD_VALUE_PRESERVED`. Next: operator approval, rejection, or requested revision of the revised roadmap only. If approved, author a fresh MV-1 GC-018 and source-verified work order; approval does not authorize implementation. Keep MV-2/MV-3, UAA-G1/G2/G3, task-capsule/schema/generator/checker mutation, provider/live calls, public sync, deploy, secrets, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
