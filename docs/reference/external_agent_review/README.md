@@ -133,6 +133,51 @@ the public owner-surface index, a refresh receipt, and, for a specific task,
 `CVF_EXTERNAL_AGENT_TASK_CAPSULE.json`. Generate a new capsule for every new
 repo/task; never reuse a previous capsule by merely editing its title.
 
+### Task-Proportional Context Groups (EACQ-FV-MV2)
+
+The capsule schema additively carries four optional root context groups:
+`protectedPaths`, `ownerMap`, `invariants`, and `verification`. Every group is
+strict (`additionalProperties: false`) and carries `consumers` (one or more of
+`worker`, `reviewer`, `return validator` - role/interface names, never a
+provider name) and a `freshness` object naming the current `anchor` source and
+the exact `regenerateWhen` condition that makes the group stale.
+
+| Group | Content | Consumer purpose |
+| --- | --- | --- |
+| `protectedPaths` | Exact repo-relative paths or path families the worker must not mutate. | Worker scope enforcement before edits. |
+| `ownerMap` | Current owner path/symbol/version and competing owners already checked. | Worker/reviewer duplicate-implementation prevention. |
+| `invariants` | Must-preserve behaviors and explicit forbidden transitions. | Worker/reviewer correctness boundary. |
+| `verification` | Exact focused tests, negative cases, deterministic checks, and required outputs. | Worker execution and reviewer/return-validator acceptance evidence. |
+
+The generator never invents owner facts or silently fills a missing group; a
+capsule for `BUILD_NEW_REPOSITORY` or `EXTEND_SUPPLIED_REPOSITORY` fails
+closed before write if any of the four groups is absent. `REVIEW_ONLY`,
+`DESIGN_ONLY`, and `SOURCE_PACK_PREPARATION` are proportionally exempt because
+those modes do not mutate a target repository, so a protected-path/owner-map/
+invariant contract has no referent yet; they may still carry the groups if
+supplied.
+
+### Live Versus Offline Source Posture
+
+`cvfPublicSource.sourcePosture` distinguishes how the pinned CVF public commit
+was established:
+
+- `VERIFIED_LIVE_PUBLIC_MAIN_AT_CREATION` - the existing `prepare-task` route,
+  which calls `refresh_snapshot` first and proves the public-sync worktree
+  equals live `origin/main` before capsule creation;
+- `OPERATOR_PINNED_NOT_LIVE_VERIFIED` - the new `create-capsule-offline` route
+  (CLI subcommand `create-capsule-offline`; wrapper mode `PrepareTaskOffline`),
+  which takes an operator-supplied `--cvf-public-commit` and a local
+  `--context-file` JSON holding the four context groups, and makes zero
+  network or Git-remote calls. It does not read or reuse a prior refresh
+  receipt as current truth.
+
+Both routes validate the assembled capsule against the strict schema before
+writing; an invalid offline context file fails before any existing capsule
+file is overwritten. `refresh-snapshot`, the live `prepare-task` route without
+a context file, and `validate-return` are unchanged and remain backward
+compatible.
+
 After a public update is pushed, run
 `.\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot`. The command
 must prove the public-sync checkout equals live `origin/main` before changing
@@ -189,6 +234,10 @@ Read this folder when a task:
 
 This front door is a reference index. It does not make private provenance files
 public, and it does not authorize public-sync or external-facing readiness.
+The task-capsule four context groups and offline creation route documented
+above are a local context contract only; they make no claim of improved
+external-agent coding quality, no universal enforcement claim, no provider or
+MCP runtime-adapter claim, and no measured-uplift claim.
 
 ## External Absorption Core
 

@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS
 Refreshes the reusable CVF external-agent packet, prepares a repo-specific
-task capsule, or validates a returned folder.
+task capsule (live or offline), or validates a returned folder.
 
 .EXAMPLE
 .\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot
@@ -16,12 +16,27 @@ task capsule, or validates a returned folder.
   -OutputRoot 'D:\UNG DUNG AI\EXTERNAL_RETURNS\MCP_REVIEW_002'
 
 .EXAMPLE
+.\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode PrepareTaskOffline `
+  -PacketRoot 'D:\UNG DUNG AI\EXTERNAL_AGENT_READ' `
+  -CvfPublicCommit '1111111111111111111111111111111111111111' `
+  -ContextFile 'D:\UNG DUNG AI\context.json' `
+  -TaskId coding-task-003 -Title 'Extend module X' `
+  -Objective 'Add feature Y' `
+  -WorkingMode EXTEND_SUPPLIED_REPOSITORY `
+  -SourceRepository 'https://github.com/example/repo.git' `
+  -SourceCommit '2222222222222222222222222222222222222222' `
+  -OutputRoot 'D:\UNG DUNG AI\EXTERNAL_RETURNS\CODING_TASK_003'
+
+This mode makes zero network or Git-remote calls; -CvfPublicCommit is an
+operator-pinned commit, not live-verified against public origin/main.
+
+.EXAMPLE
 .\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode ValidateReturn `
   -ReturnRoot 'D:\UNG DUNG AI\EXTERNAL_RETURNS\MCP_REVIEW_002'
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet('RefreshSnapshot', 'PrepareTask', 'ValidateReturn')]
+    [ValidateSet('RefreshSnapshot', 'PrepareTask', 'PrepareTaskOffline', 'ValidateReturn')]
     [string]$Mode = 'RefreshSnapshot',
     [string]$PublicRepoPath = 'D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync',
     [string]$PacketRoot = 'D:\UNG DUNG AI\EXTERNAL_AGENT_READ',
@@ -34,6 +49,8 @@ param(
     [string]$SourceCommit,
     [string]$OutputRoot,
     [string[]]$NonGoal = @(),
+    [string]$ContextFile,
+    [string]$CvfPublicCommit,
     [string]$ReturnRoot,
     [string]$Receipt
 )
@@ -51,6 +68,18 @@ if ($Mode -eq 'RefreshSnapshot') {
     }
     $arguments = @($tool, 'prepare-task', '--public-repo', $PublicRepoPath, '--packet-root', $PacketRoot,
         '--owner-index-source', $ownerIndex, '--task-id', $TaskId, '--title', $Title, '--objective', $Objective,
+        '--working-mode', $WorkingMode, '--source-repository', $SourceRepository, '--source-commit', $SourceCommit,
+        '--output-root', $OutputRoot)
+    foreach ($item in $NonGoal) { $arguments += @('--non-goal', $item) }
+    if ($ContextFile) { $arguments += @('--context-file', $ContextFile) }
+    & python @arguments
+} elseif ($Mode -eq 'PrepareTaskOffline') {
+    foreach ($required in @('PacketRoot', 'CvfPublicCommit', 'ContextFile', 'TaskId', 'Title', 'Objective', 'SourceRepository', 'SourceCommit', 'OutputRoot')) {
+        if (-not (Get-Variable -Name $required -ValueOnly)) { throw "$required is required for PrepareTaskOffline" }
+    }
+    $arguments = @($tool, 'create-capsule-offline', '--packet-root', $PacketRoot,
+        '--cvf-public-commit', $CvfPublicCommit, '--context-file', $ContextFile,
+        '--task-id', $TaskId, '--title', $Title, '--objective', $Objective,
         '--working-mode', $WorkingMode, '--source-repository', $SourceRepository, '--source-commit', $SourceCommit,
         '--output-root', $OutputRoot)
     foreach ($item in $NonGoal) { $arguments += @('--non-goal', $item) }

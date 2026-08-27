@@ -24,6 +24,24 @@ from zoneinfo import ZoneInfo
 PROTOCOL_VERSION = "1.1.0"
 PROTOCOL_ID = "cvf.external-agent-round-trip"
 PUBLIC_REPOSITORY = "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git"
+CAPSULE_SCHEMA_PATH = Path(__file__).resolve().parent.parent / "docs" / "reference" / "external_agent_review" / "CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json"
+
+# Source-posture literals for cvfPublicSource.sourcePosture. These are the
+# atomic serialized values every consumer must match exactly; do not assemble
+# them from fragments.
+SOURCE_POSTURE_LIVE = "VERIFIED_LIVE_PUBLIC_MAIN_AT_CREATION"
+SOURCE_POSTURE_OFFLINE = "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
+
+# Working modes that require the four context groups (protectedPaths,
+# ownerMap, invariants, verification) because they involve writing code
+# against a real repository. REVIEW_ONLY, DESIGN_ONLY, and
+# SOURCE_PACK_PREPARATION are proportionally exempt: they do not mutate a
+# repository, so an owner map / protected-path / invariant contract has no
+# referent yet. This mirrors the schema's own `if/then` requirement.
+CONTEXT_REQUIRED_MODES = ("BUILD_NEW_REPOSITORY", "EXTEND_SUPPLIED_REPOSITORY")
+
+CONTEXT_GROUP_NAMES = ("protectedPaths", "ownerMap", "invariants", "verification")
+CONSUMER_ROLES = ("worker", "reviewer", "return validator")
 PACKET_FILES = (
     "CVF_EXTERNAL_AGENT_BOOTSTRAP_INSTRUCTIONS.md",
     "CVF_CONTEXT_BRIEF.md",
@@ -169,11 +187,61 @@ def refresh_snapshot(public_repo: Path, packet_root: Path, owner_index_source: P
     return receipt
 
 
-def create_capsule(args: argparse.Namespace, public_sha: str) -> dict[str, Any]:
+def _load_capsule_schema() -> dict[str, Any]:
+    return json.loads(CAPSULE_SCHEMA_PATH.read_text(encoding="utf-8"))
+
+
+def _validate_capsule(capsule: dict[str, Any]) -> None:
+    """Validate a capsule against the governed strict schema before any write.
+    Raises PacketError (not a bare jsonschema exception) so callers can fail
+    closed without partially writing an existing capsule file."""
+    try:
+        import jsonschema
+    except ModuleNotFoundError as exc:
+        raise PacketError(
+            "capsule validation requires the jsonschema package; "
+            "refresh-snapshot and validate-return remain standard-library-only"
+        ) from exc
+    schema = _load_capsule_schema()
+    try:
+        jsonschema.Draft202012Validator(schema, format_checker=jsonschema.FormatChecker()).validate(capsule)
+    except jsonschema.ValidationError as exc:
+        raise PacketError(f"capsule failed strict schema validation: {exc.message}") from exc
+
+
+def load_context_groups(context_file: Path) -> dict[str, Any]:
+    """Load and structurally validate the four task-proportional context
+    groups from an operator-authored local JSON file. Raises PacketError on
+    any missing file, invalid JSON, unknown group, or non-object shape;
+    per-field strict validation happens later via the full capsule schema so
+    there is exactly one source of truth for group shape."""
+    if not context_file.is_file():
+        raise PacketError(f"context file not found: {context_file}")
+    try:
+        raw = json.loads(context_file.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise PacketError(f"context file is invalid JSON: {exc}") from exc
+    if not isinstance(raw, dict):
+        raise PacketError("context file must contain a JSON object")
+    unknown = sorted(set(raw) - set(CONTEXT_GROUP_NAMES))
+    if unknown:
+        raise PacketError(f"context file has unknown group(s): {', '.join(unknown)}")
+    return raw
+
+
+def create_capsule(
+    args: argparse.Namespace,
+    public_sha: str,
+    *,
+    source_posture: str = SOURCE_POSTURE_LIVE,
+    context_groups: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     if not SHA40.fullmatch(args.source_commit):
         raise PacketError("--source-commit must be a lowercase 40-character Git SHA")
+    if source_posture not in (SOURCE_POSTURE_LIVE, SOURCE_POSTURE_OFFLINE):
+        raise PacketError(f"unknown source posture: {source_posture}")
     stamp = _now()
-    capsule = {
+    capsule: dict[str, Any] = {
         "schema": "cvf.externalAgentTaskCapsule.v1",
         "protocolVersion": PROTOCOL_VERSION,
         "projectionOf": PROTOCOL_ID,
@@ -186,7 +254,7 @@ def create_capsule(args: argparse.Namespace, public_sha: str) -> dict[str, Any]:
             "outputRoot": args.output_root,
             "nonGoals": args.non_goal,
         },
-        "cvfPublicSource": {"repository": PUBLIC_REPOSITORY, "commit": public_sha},
+        "cvfPublicSource": {"repository": PUBLIC_REPOSITORY, "commit": public_sha, "sourcePosture": source_posture},
         "sourceRepositories": [{"repository": args.source_repository, "commit": args.source_commit, "usage": "REFERENCE_AND_ANALYSIS"}],
         "gateA": {
             "name": "SOURCE_OWNER_OVERLAP",
@@ -209,8 +277,31 @@ def create_capsule(args: argparse.Namespace, public_sha: str) -> dict[str, Any]:
             "destructiveActions": False,
         },
     }
+    if context_groups:
+        for group_name in CONTEXT_GROUP_NAMES:
+            if group_name in context_groups:
+                capsule[group_name] = context_groups[group_name]
+    if args.working_mode in CONTEXT_REQUIRED_MODES:
+        missing = sorted(set(CONTEXT_GROUP_NAMES) - set(capsule))
+        if missing:
+            raise PacketError(
+                f"working mode {args.working_mode} requires all four context groups; "
+                f"missing: {', '.join(missing)}"
+            )
+    _validate_capsule(capsule)
     _write_json(Path(args.packet_root) / "CVF_EXTERNAL_AGENT_TASK_CAPSULE.json", capsule)
     return capsule
+
+
+def create_capsule_offline(args: argparse.Namespace) -> dict[str, Any]:
+    """Create a task capsule from an operator-pinned public commit and a
+    local context-groups JSON file, with zero network or Git-remote access.
+    Fails before writing (via create_capsule's pre-write validation) rather
+    than overwriting an existing capsule with invalid output."""
+    if not SHA40.fullmatch(args.cvf_public_commit):
+        raise PacketError("--cvf-public-commit must be a lowercase 40-character Git SHA")
+    context_groups = load_context_groups(Path(args.context_file))
+    return create_capsule(args, args.cvf_public_commit, source_posture=SOURCE_POSTURE_OFFLINE, context_groups=context_groups)
 
 
 def _safe_rel_path(value: str) -> bool:
@@ -401,6 +492,27 @@ def _build_parser() -> argparse.ArgumentParser:
     prepare.add_argument("--source-commit", required=True)
     prepare.add_argument("--output-root", required=True)
     prepare.add_argument("--non-goal", action="append", default=[])
+    prepare.add_argument(
+        "--context-file",
+        help="local JSON file with protectedPaths/ownerMap/invariants/verification groups; "
+        "required for BUILD_NEW_REPOSITORY and EXTEND_SUPPLIED_REPOSITORY working modes",
+    )
+
+    offline = sub.add_parser(
+        "create-capsule-offline",
+        help="create a task capsule from an operator-pinned public commit with zero network/Git-remote access",
+    )
+    offline.add_argument("--packet-root", required=True)
+    offline.add_argument("--cvf-public-commit", required=True, help="operator-pinned 40-char public CVF commit SHA; not live-verified")
+    offline.add_argument("--context-file", required=True, help="local JSON file with the four context groups")
+    offline.add_argument("--task-id", required=True)
+    offline.add_argument("--title", required=True)
+    offline.add_argument("--objective", required=True)
+    offline.add_argument("--working-mode", required=True, choices=("REVIEW_ONLY", "DESIGN_ONLY", "BUILD_NEW_REPOSITORY", "EXTEND_SUPPLIED_REPOSITORY", "SOURCE_PACK_PREPARATION"))
+    offline.add_argument("--source-repository", required=True)
+    offline.add_argument("--source-commit", required=True)
+    offline.add_argument("--output-root", required=True)
+    offline.add_argument("--non-goal", action="append", default=[])
 
     validate = sub.add_parser("validate-return", help="validate a returned external-agent folder")
     validate.add_argument("--return-root", required=True)
@@ -414,12 +526,26 @@ def main(argv: list[str] | None = None) -> int:
         if args.command in {"refresh-snapshot", "prepare-task"}:
             receipt = refresh_snapshot(Path(args.public_repo), Path(args.packet_root), Path(args.owner_index_source))
             if args.command == "prepare-task":
-                create_capsule(args, receipt["publicCommit"])
+                context_groups = load_context_groups(Path(args.context_file)) if args.context_file else None
+                create_capsule(args, receipt["publicCommit"], source_posture=SOURCE_POSTURE_LIVE, context_groups=context_groups)
                 capsule_path = Path(args.packet_root) / "CVF_EXTERNAL_AGENT_TASK_CAPSULE.json"
                 receipt["taskCapsuleSha256"] = hashlib.sha256(capsule_path.read_bytes()).hexdigest()
                 receipt["taskId"] = args.task_id
                 _write_json(Path(args.packet_root) / "CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json", receipt)
             print(json.dumps(receipt, indent=2, sort_keys=True))
+            return 0
+        if args.command == "create-capsule-offline":
+            capsule = create_capsule_offline(args)
+            capsule_path = Path(args.packet_root) / "CVF_EXTERNAL_AGENT_TASK_CAPSULE.json"
+            result = {
+                "schema": "cvf.externalAgentCapsuleOfflineCreationReceipt.v1",
+                "status": "CREATED_OFFLINE_PINNED_NOT_LIVE_VERIFIED",
+                "taskCapsuleSha256": hashlib.sha256(capsule_path.read_bytes()).hexdigest(),
+                "taskId": args.task_id,
+                "sourcePosture": capsule["cvfPublicSource"]["sourcePosture"],
+                "claimBoundary": "Proves offline capsule creation from an operator-pinned commit only; no live public-main verification, network, provider, or Git-remote call.",
+            }
+            print(json.dumps(result, indent=2, sort_keys=True))
             return 0
         root = Path(args.return_root)
         receipt_path = Path(args.receipt) if args.receipt else root.parent / f"{root.name}.RETURN_VALIDATION_RECEIPT.json"
