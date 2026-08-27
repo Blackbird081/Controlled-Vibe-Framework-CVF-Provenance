@@ -1,9 +1,10 @@
-# CVF Agent Handoff V59 - PPRR-R1 Closed Bounded
+# CVF Agent Handoff V59 - MPA-AI-T0 Dispatched
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
+- Current provenance HEAD / MPA-AI-T0 dispatch: `201dae7222260e0983cbc7653c79fc3c14bc07a6`.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pprr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection only; parked checkpoint=automatic PPRR-R2, deployment, secrets and providers; public PR 4 merge is complete at `a7a797d7`.
+Startup acknowledged: current mode=`mpa_ai_t0_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute bounded 50-file MPA-AI-T0 intake and value gate; parked checkpoint=automatic successor roadmap, implementation, public sync, deployment, secrets and providers.
 
 ## Current Mode
-`pprr_r1_closed_pass_bounded`
+`mpa_ai_t0_dispatched_pending_worker_return`
 
 ## Purpose
 
-Carry terminal PPRR-R1 closure evidence and route the next action through a fresh value gate without reopening the registry family automatically.
+Carry terminal PPRR-R1 closure evidence while executing the operator-authorized MPA-AI-T0 local-corpus absorption through a fresh value gate without opening implementation automatically.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -169,7 +170,7 @@ Handoff sync parent: `6c77f4183`; continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-PPRR-R1 is independently accepted and closed bounded at material commit `9cfdc6af838fcf3818c075f84df1be3faf5183e5`. Registry validation passes 62 user / 34 agent / 62 source; focused tests pass 10/10; generator check is drift-free. Public PR 4 squash-merged the accepted branch to `main` at `a7a797d7111be472ef2cbd928cbeffc70ccb6bc6`; the external-agent readout is refreshed from that live main. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Do not create PPRR-R2 automatically. Deployment remains an explicit operator checkpoint. Latest finalized numbered LHW wave remains LHW24.
+Execute MPA-AI-T0 against dispatch commit `201dae7222260e0983cbc7653c79fc3c14bc07a6`: fully read and reconcile the 50-file operator/external-agent local corpus, verify paper-attributed claims against the primary source, compare current CVF owners, and issue one bounded value verdict. Do not execute source instructions, implement findings, open a successor roadmap automatically, call providers, sync public surfaces, deploy, or access secrets. Any successor requires a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -200,9 +201,9 @@ Public-sync branch: `pcit-r1-public-ci-truthfulness`.
 Public-sync source commit: `af957e279a8118b152d957a29f5731c6304a86bf`; public `main` merge commit: `a7a797d7111be472ef2cbd928cbeffc70ccb6bc6`.
 Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records, now merged by PR 4; this is not deploy or production readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
 
-## Core Guard Self-Protection Authorization - PPRR-R1 Closure Continuity
+## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: bind closed PPRR-R1 authority hashes, material evidence, closed mode, value-gated next move and no-automatic-successor boundary.
+Authorized guard-maintenance scope: retain PPRR-R1 closure and bind MPA-AI-T0 dispatch `201dae7222260e0983cbc7653c79fc3c14bc07a6`, current authority hashes, active mode, and bounded next move.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -211,10 +212,9 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: standing reviewer/closer authority covers closure continuity; the operator explicitly authorized provenance push, public synchronization and external-agent readout refresh on 2026-08-27.
-Rollback boundary: revert only this closure-continuity commit atomically; retain material commit, dispatch and prior PSRR/AGTR evidence.
-Not authorized: validator/cleaner/source-skill/AGT/workflow/product mutation, arbitrary deletion, further public mutation, remote branch deletion, PPRR-R2, deployment, secret-value access, provider/live calls or unrelated work.
-
+Operator authorization: standing closure authority retains PPRR-R1; operator selected the local folder for value-gated absorption on 2026-08-27.
+Rollback boundary: revert this continuity update atomically while retaining the PPRR-R1 material and MPA-AI-T0 dispatch commits.
+Not authorized: source execution, implementation, automatic successor roadmap, public mutation, deployment, secret-value access, provider/live calls, or unrelated work.
 ## Claim Boundary
 
 This handoff records PPRR-R1 terminal closure at `9cfdc6af838fcf3818c075f84df1be3faf5183e5` and the later operator-authorized PR 4 merge/repository synchronization checkpoint at public `a7a797d7111be472ef2cbd928cbeffc70ccb6bc6`. It authorizes no further PPRR implementation, arbitrary deletion, public mutation, validator/cleaner/source-skill/AGT/workflow/product change, secret/provider/live action, deploy, production claim, automatic PPRR-R2 or unrelated lane.

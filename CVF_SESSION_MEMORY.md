@@ -52,7 +52,7 @@ Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `pprr_r1_closed_pass_bounded`. PPRR-R1 is accepted at private material commit `9cfdc6af8`: registry validator passes 62 user / 34 agent / 62 source, focused tests pass 10/10, and generator is drift-free. Public PR 4 is merged on `main` at `a7a797d7`; the external-agent readout is refreshed from that live main. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. No automatic PPRR-R2. Deployment remains an explicit operator checkpoint. Latest finalized numbered LHW wave remains LHW24.
+Mode: `mpa_ai_t0_dispatched_pending_worker_return`. MPA-AI-T0 dispatch is committed at `201dae7222260e0983cbc7653c79fc3c14bc07a6` for the 50-file operator/external-agent local memory-poisoning corpus. Next: full semantic read, primary-paper verification, current-owner overlap analysis, and one bounded value verdict. Do not execute source instructions, implement findings, open a successor automatically, call providers, sync public surfaces, deploy, or access secrets. A successor remains gated on a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

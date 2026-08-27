@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_2026-08-27.md",
-    "baselineSha256": "c87c3c95f568439b922544c5dbc1f245ee734ab35e76c38dfb7abc5bbf0455dc",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "4a691bc2dc336ca7ddba33d93c041293c0eea87e2f0721a9ae4dfbc3239f3a6d"
+    "baselinePath": "docs/baselines/CVF_GC018_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_INTAKE_2026-08-27.md",
+    "baselineSha256": "907b36d7b794c1f5d14a5e67c7bef2d34dc7f3633ad8287d10068480abc87368",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_INTAKE_2026-08-27.md",
+    "workOrderSha256": "882a0b84e20b7879bbd6bb0caf078c42457c501e7a533ca51416eb526c22ea25"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "pprr_r1_closed_pass_bounded",
-  "previousMode": "pprr_r1_dispatched_pending_worker_return",
+  "currentMode": "mpa_ai_t0_dispatched_pending_worker_return",
+  "previousMode": "pprr_r1_closed_pass_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "PPRR-R1 is closed bounded at material commit 9cfdc6af838fcf3818c075f84df1be3faf5183e5. Public PR 4 is merged on main at a7a797d7111be472ef2cbd928cbeffc70ccb6bc6 and external-agent readout is refreshed from that live main. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Do not create PPRR-R2 automatically. Deployment remains an explicit operator checkpoint. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute MPA-AI-T0 against dispatch commit 201dae7222260e0983cbc7653c79fc3c14bc07a6: fully read and reconcile the 50-file operator/external-agent local corpus, verify paper-attributed claims against the primary source, compare current CVF owners, and issue one bounded value verdict. Do not execute source instructions, implement findings, open a successor roadmap automatically, call providers, sync public surfaces, deploy, or access secrets. Any successor requires a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
